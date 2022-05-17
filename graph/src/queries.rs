@@ -116,7 +116,11 @@ impl Graph {
     ///
     /// # Arguments
     /// * node_type: Option<NodeTypeT> - The node type to retrieve count of.
-    pub(crate) fn get_unchecked_node_count_from_node_type_id(
+    /// 
+    /// # Safety
+    /// If the provided value is not within the graph's vocabulary
+    /// the method will panic.
+    pub unsafe fn get_unchecked_node_count_from_node_type_id(
         &self,
         node_type: Option<NodeTypeT>,
     ) -> NodeT {
@@ -410,7 +414,7 @@ impl Graph {
     /// assert!(graph.get_edge_id_from_node_ids(0, 100000000).is_err());
     /// ```
     pub fn get_edge_id_from_node_ids(&self, src: NodeT, dst: NodeT) -> Result<EdgeT> {
-        match self.destinations.as_ref().as_ref().zip((*self.cumulative_node_degrees).as_ref().as_ref() ){
+        match self.destinations.as_ref().as_ref(){
             None => match self
             .edges
             .rank(self.encode_edge(src, dst))
@@ -418,13 +422,12 @@ impl Graph {
                 Some(edge_id) => Ok(edge_id),
                 None => Err(format!("The edge composed by the source node {} and destination node {} does not exist in this graph.", src, dst))
             },
-            Some((dsts, outbounds)) => {
+            Some(dsts) => {
                 self.validate_node_id(src)?;
-                let start = outbounds[src as usize] as usize;
-                let end = outbounds[src as usize + 1] as usize;
-                match dsts[start..end].binary_search(&dst) {
+                let (start, end) = unsafe{self.get_unchecked_minmax_edge_ids_from_source_node_id(src)};
+                match dsts[(start as usize)..(end as usize)].binary_search(&dst) {
                     Ok(local_idx) => {
-                        Ok((start + local_idx) as EdgeT)
+                        Ok(start + local_idx as EdgeT)
                     }
                     Err(_) => {
                         Err(format!("The edge composed by the source node {} and destination node {} does not exist in this graph.", src, dst))
@@ -432,7 +435,6 @@ impl Graph {
                 }
             }
         }
-        
     }
 
     #[inline(always)]
@@ -2076,7 +2078,10 @@ impl Graph {
     ///
     /// # Arguments
     /// * `curie_prefixes`: &str - Prefix of the source node names.
-    pub fn get_node_names_from_node_curie_prefixes(&self, curie_prefixes: Vec<&str>) -> Vec<String> {
+    pub fn get_node_names_from_node_curie_prefixes(
+        &self,
+        curie_prefixes: Vec<&str>,
+    ) -> Vec<String> {
         self.par_iter_node_names_from_node_curie_prefixes(curie_prefixes)
             .collect()
     }
@@ -2097,10 +2102,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the provided separator is empty.
-    pub fn get_node_names_prefixes(
-        &self,
-        separator: Option<&str>,
-    ) -> Result<Vec<String>> {
+    pub fn get_node_names_prefixes(&self, separator: Option<&str>) -> Result<Vec<String>> {
         self.par_iter_node_names_prefixes(separator)
             .map(|iter| iter.collect())
     }

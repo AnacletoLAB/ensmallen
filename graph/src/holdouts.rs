@@ -79,18 +79,10 @@ fn kfold<T: Copy + Eq + std::hash::Hash>(
 
 /// # Holdouts.
 impl Graph {
-    /// Returns Graph with given amount of negative edges as positive edges.
-    ///
-    /// The graph generated may be used as a testing negatives partition to be
-    /// fed into the argument "graph_to_avoid" of the link_prediction or the
-    /// skipgrams algorithm.
+    /// Returns filter to generate a subsampled graph.
     ///
     /// # Arguments
-    /// * `number_of_negative_samples`: EdgeT - Number of negatives edges to include.
-    /// * `random_state`: Option<EdgeT> - random_state to use to reproduce negative edge set.
-    /// * `seed_graph`: Option<&Graph> - Optional graph to use to filter the negative edges. The negative edges generated when this variable is provided will always have a node within this graph.
-    /// * `only_from_same_component`: Option<bool> - Whether to sample negative edges only from nodes that are from the same component.
-    /// * `sample_only_edges_with_heterogeneous_node_types`: Option<bool> - Whether to sample negative edges only with source and destination nodes that have different node types.
+    /// * `sample_only_edges_with_heterogeneous_node_types`: Option<bool> - Whether to sample edges only with source and destination nodes that have different node types.
     /// * `minimum_node_degree`: Option<NodeT> - The minimum node degree of either the source or destination node to be sampled. By default 0.
     /// * `maximum_node_degree`: Option<NodeT> - The maximum node degree of either the source or destination node to be sampled. By default, the number of nodes.
     /// * `source_node_types_names: Option<Vec<String>> - Node type names of the nodes to be samples as sources. If a node has any of the provided node types, it can be sampled as a source node.
@@ -99,16 +91,8 @@ impl Graph {
     /// * `destination_edge_types_names`: Option<Vec<String>> - Edge type names of the nodes to be samples as destinations. If a node has any of the provided edge types, it can be sampled as a destination node.
     /// * `source_nodes_prefixes`: Option<Vec<String>> - Prefixes of the nodes names to be samples as sources. If a node starts with any of the provided prefixes, it can be sampled as a source node.
     /// * `destination_nodes_prefixes`: Option<Vec<String>> - Prefixes of the nodes names to be samples as destinations. If a node starts with any of the provided prefixes, it can be sampled as a destinations node.
-    /// * `use_zipfian_sampling`: Option<bool> - Whether to sample the nodes using zipfian distribution. By default True. Not using this may cause significant biases.
-    ///
-    /// # Raises
-    /// * If the `sample_only_edges_with_heterogeneous_node_types` argument is provided as true, but the graph does not have node types.
-    pub fn get_negative_graph(
+    fn get_graph_sampling_filter(
         &self,
-        number_of_negative_samples: EdgeT,
-        random_state: Option<EdgeT>,
-        seed_graph: Option<&Graph>,
-        only_from_same_component: Option<bool>,
         sample_only_edges_with_heterogeneous_node_types: Option<bool>,
         minimum_node_degree: Option<NodeT>,
         maximum_node_degree: Option<NodeT>,
@@ -118,21 +102,17 @@ impl Graph {
         destination_edge_types_names: Option<Vec<String>>,
         source_nodes_prefixes: Option<Vec<String>>,
         destination_nodes_prefixes: Option<Vec<String>>,
-        use_zipfian_sampling: Option<bool>,
-    ) -> Result<Graph> {
-        if number_of_negative_samples == 0 {
-            return Err(String::from("The number of negatives cannot be zero."));
-        }
+    ) -> Result<impl Fn(NodeT, NodeT) -> bool + '_> {
         let sample_only_edges_with_heterogeneous_node_types =
             sample_only_edges_with_heterogeneous_node_types.unwrap_or(false);
 
         if sample_only_edges_with_heterogeneous_node_types && !self.has_node_types() {
             return Err(concat!(
-                "The parameter `sample_only_edges_with_heterogeneous_node_types` was provided with value `true` ",
-                "but the current graph instance does not contain any node type. ",
-                "If you expected to have node types within this graph, maybe you have either dropped them ",
-                "with a wrong filter operation or use the wrong parametrization to load the graph."
-            ).to_string());
+            "The parameter `sample_only_edges_with_heterogeneous_node_types` was provided with value `true` ",
+            "but the current graph instance does not contain any node type. ",
+            "If you expected to have node types within this graph, maybe you have either dropped them ",
+            "with a wrong filter operation or use the wrong parametrization to load the graph."
+        ).to_string());
         }
 
         let source_node_types_ids = if let Some(source_node_types_names) = source_node_types_names {
@@ -204,27 +184,175 @@ impl Graph {
             } else {
                 None
             };
+        Ok(move |src: NodeT, dst: NodeT| {
+            if let Some(source_node_types_ids) = &source_node_types_ids {
+                if let Some(src_node_type) = self.get_node_type_ids_from_node_id(src).unwrap() {
+                    if source_node_types_ids
+                        .iter()
+                        .any(|node_type_it| src_node_type.contains(node_type_it))
+                    {
+                        return false;
+                    }
+                } else {
+                    return false;
+                }
+            }
+
+            if let Some(destination_node_types_ids) = &destination_node_types_ids {
+                if let Some(dst_node_type) = self.get_node_type_ids_from_node_id(src).unwrap() {
+                    if destination_node_types_ids
+                        .iter()
+                        .any(|node_type_it| dst_node_type.contains(node_type_it))
+                    {
+                        return false;
+                    }
+                } else {
+                    return false;
+                }
+            }
+
+            if let Some(source_nodes_prefixes) = &source_nodes_prefixes {
+                let src_node_name = unsafe { self.get_unchecked_node_name_from_node_id(src) };
+                if source_nodes_prefixes
+                    .iter()
+                    .any(|prefix| src_node_name.starts_with(prefix))
+                {
+                    return false;
+                }
+            }
+
+            if let Some(destination_nodes_prefixes) = &destination_nodes_prefixes {
+                let dst_node_name = unsafe { self.get_unchecked_node_name_from_node_id(src) };
+                if destination_nodes_prefixes
+                    .iter()
+                    .any(|prefix| dst_node_name.starts_with(prefix))
+                {
+                    return false;
+                }
+            }
+
+            if let Some(source_edge_types_ids) = &source_edge_types_ids {
+                if !source_edge_types_ids
+                    .iter()
+                    .copied()
+                    .any(|edge_type_id| unsafe {
+                        self.has_unchecked_edge_from_node_id_and_edge_type_id(
+                            src,
+                            Some(edge_type_id),
+                        )
+                    })
+                {
+                    return false;
+                }
+            }
+
+            if let Some(destination_edge_types_ids) = &destination_edge_types_ids {
+                if !destination_edge_types_ids
+                    .iter()
+                    .copied()
+                    .any(|edge_type_id| unsafe {
+                        self.has_unchecked_edge_from_node_id_and_edge_type_id(
+                            dst,
+                            Some(edge_type_id),
+                        )
+                    })
+                {
+                    return false;
+                }
+            }
+
+            unsafe {
+                if let Some(minimum_node_degree) = &minimum_node_degree {
+                    if self.get_unchecked_node_degree_from_node_id(src) < *minimum_node_degree
+                        || self.get_unchecked_node_degree_from_node_id(dst) < *minimum_node_degree
+                    {
+                        return false;
+                    }
+                }
+
+                if let Some(maximum_node_degree) = &maximum_node_degree {
+                    if self.get_unchecked_node_degree_from_node_id(src) > *maximum_node_degree
+                        || self.get_unchecked_node_degree_from_node_id(dst) > *maximum_node_degree
+                    {
+                        return false;
+                    }
+                }
+            }
+
+            if sample_only_edges_with_heterogeneous_node_types
+                && unsafe {
+                    self.get_unchecked_node_type_ids_from_node_id(src)
+                        == self.get_unchecked_node_type_ids_from_node_id(dst)
+                }
+            {
+                return false;
+            }
+            
+            true
+        })
+    }
+
+    /// Returns Graph with given amount of negative edges as positive edges.
+    ///
+    /// The graph generated may be used as a testing negatives partition to be
+    /// fed into the argument "graph_to_avoid" of the link_prediction or the
+    /// skipgrams algorithm.
+    ///
+    /// # Arguments
+    /// * `number_of_negative_samples`: EdgeT - Number of negatives edges to include.
+    /// * `random_state`: Option<EdgeT> - random_state to use to reproduce negative edge set.
+    /// * `only_from_same_component`: Option<bool> - Whether to sample negative edges only from nodes that are from the same component.
+    /// * `sample_only_edges_with_heterogeneous_node_types`: Option<bool> - Whether to sample negative edges only with source and destination nodes that have different node types.
+    /// * `minimum_node_degree`: Option<NodeT> - The minimum node degree of either the source or destination node to be sampled. By default 0.
+    /// * `maximum_node_degree`: Option<NodeT> - The maximum node degree of either the source or destination node to be sampled. By default, the number of nodes.
+    /// * `source_node_types_names: Option<Vec<String>> - Node type names of the nodes to be samples as sources. If a node has any of the provided node types, it can be sampled as a source node.
+    /// * `destination_node_types_names`: Option<Vec<String>> - Node type names of the nodes to be samples as destinations. If a node has any of the provided node types, it can be sampled as a destination node.
+    /// * `source_edge_types_names`: Option<Vec<String>> - Edge type names of the nodes to be samples as sources. If a node has any of the provided edge types, it can be sampled as a source node.
+    /// * `destination_edge_types_names`: Option<Vec<String>> - Edge type names of the nodes to be samples as destinations. If a node has any of the provided edge types, it can be sampled as a destination node.
+    /// * `source_nodes_prefixes`: Option<Vec<String>> - Prefixes of the nodes names to be samples as sources. If a node starts with any of the provided prefixes, it can be sampled as a source node.
+    /// * `destination_nodes_prefixes`: Option<Vec<String>> - Prefixes of the nodes names to be samples as destinations. If a node starts with any of the provided prefixes, it can be sampled as a destinations node.
+    /// * `use_zipfian_sampling`: Option<bool> - Whether to sample the nodes using zipfian distribution. By default True. Not using this may cause significant biases.
+    ///
+    /// # Raises
+    /// * If the `sample_only_edges_with_heterogeneous_node_types` argument is provided as true, but the graph does not have node types.
+    pub fn sample_negative_graph(
+        &self,
+        number_of_negative_samples: EdgeT,
+        random_state: Option<EdgeT>,
+        only_from_same_component: Option<bool>,
+        sample_only_edges_with_heterogeneous_node_types: Option<bool>,
+        minimum_node_degree: Option<NodeT>,
+        maximum_node_degree: Option<NodeT>,
+        source_node_types_names: Option<Vec<String>>,
+        destination_node_types_names: Option<Vec<String>>,
+        source_edge_types_names: Option<Vec<String>>,
+        destination_edge_types_names: Option<Vec<String>>,
+        source_nodes_prefixes: Option<Vec<String>>,
+        destination_nodes_prefixes: Option<Vec<String>>,
+        use_zipfian_sampling: Option<bool>,
+    ) -> Result<Graph> {
+        if number_of_negative_samples == 0 {
+            return Err(String::from(
+                "The number of negative samples cannot be zero.",
+            ));
+        }
+
+        let graph_filter = self.get_graph_sampling_filter(
+            sample_only_edges_with_heterogeneous_node_types,
+            minimum_node_degree,
+            maximum_node_degree,
+            source_node_types_names,
+            destination_node_types_names,
+            source_edge_types_names,
+            destination_edge_types_names,
+            source_nodes_prefixes,
+            destination_nodes_prefixes,
+        )?;
 
         let use_zipfian_sampling = use_zipfian_sampling.unwrap_or(true);
         let only_from_same_component = only_from_same_component.unwrap_or(false);
         let mut random_state = random_state.unwrap_or(0xbadf00d);
 
-        let seed_nodes: Option<RoaringBitmap> = if let Some(sg) = &seed_graph {
-            if !self.overlaps(&sg)? {
-                return Err(String::from(
-                    "The given seed graph does not overlap with the current graph instance.",
-                ));
-            }
-            Some(
-                sg.iter_node_names_and_node_type_names()
-                    .map(|(_, node_name, _, _)| unsafe {
-                        self.get_unchecked_node_id_from_node_name(&node_name)
-                    })
-                    .collect::<RoaringBitmap>(),
-            )
-        } else {
-            None
-        };
         // In a complete directed graph allowing selfloops with N nodes there are N^2
         // edges. In a complete directed graph without selfloops there are N*(N-1) edges.
         // We can rewrite the first formula as (N*(N-1)) + N.
@@ -299,129 +427,20 @@ impl Graph {
                     return None;
                 }
 
-                if let Some(source_node_types_ids) = &source_node_types_ids {
-                    if let Some(src_node_type) = self.get_node_type_ids_from_node_id(src).unwrap() {
-                        if source_node_types_ids
-                            .iter()
-                            .any(|node_type_it| src_node_type.contains(node_type_it))
-                        {
-                            return None;
-                        }
-                    } else {
-                        return None;
-                    }
-                }
-
-                if let Some(destination_node_types_ids) = &destination_node_types_ids {
-                    if let Some(dst_node_type) = self.get_node_type_ids_from_node_id(src).unwrap() {
-                        if destination_node_types_ids
-                            .iter()
-                            .any(|node_type_it| dst_node_type.contains(node_type_it))
-                        {
-                            return None;
-                        }
-                    } else {
-                        return None;
-                    }
-                }
-
-                if let Some(source_nodes_prefixes) = &source_nodes_prefixes {
-                    let src_node_name = unsafe { self.get_unchecked_node_name_from_node_id(src) };
-                    if source_nodes_prefixes
-                        .iter()
-                        .any(|prefix| src_node_name.starts_with(prefix))
-                    {
-                        return None;
-                    }
-                }
-
-                if let Some(destination_nodes_prefixes) = &destination_nodes_prefixes {
-                    let dst_node_name = unsafe { self.get_unchecked_node_name_from_node_id(src) };
-                    if destination_nodes_prefixes
-                        .iter()
-                        .any(|prefix| dst_node_name.starts_with(prefix))
-                    {
-                        return None;
-                    }
-                }
-
-                if let Some(source_edge_types_ids) = &source_edge_types_ids {
-                    if !source_edge_types_ids
-                        .iter()
-                        .copied()
-                        .any(|edge_type_id| unsafe {
-                            self.has_unchecked_edge_from_node_id_and_edge_type_id(
-                                src,
-                                Some(edge_type_id),
-                            )
-                        })
-                    {
-                        return None;
-                    }
-                }
-
-                if let Some(destination_edge_types_ids) = &destination_edge_types_ids {
-                    if !destination_edge_types_ids
-                        .iter()
-                        .copied()
-                        .any(|edge_type_id| unsafe {
-                            self.has_unchecked_edge_from_node_id_and_edge_type_id(
-                                dst,
-                                Some(edge_type_id),
-                            )
-                        })
-                    {
-                        return None;
-                    }
-                }
-
                 if !self.has_selfloops() && src == dst {
                     return None;
                 }
 
-                unsafe {
-                    if let Some(minimum_node_degree) = &minimum_node_degree {
-                        if self.get_unchecked_node_degree_from_node_id(src) < *minimum_node_degree
-                            || self.get_unchecked_node_degree_from_node_id(dst)
-                                < *minimum_node_degree
-                        {
-                            return None;
-                        }
-                    }
-
-                    if let Some(maximum_node_degree) = &maximum_node_degree {
-                        if self.get_unchecked_node_degree_from_node_id(src) > *maximum_node_degree
-                            || self.get_unchecked_node_degree_from_node_id(dst)
-                                > *maximum_node_degree
-                        {
-                            return None;
-                        }
-                    }
+                if !graph_filter(src, dst) {
+                    return None;
                 }
 
-                if let Some(sn) = &seed_nodes {
-                    if !sn.contains(src) && !sn.contains(dst) {
-                        return None;
-                    }
-                }
                 if let Some(ncs) = &node_components {
                     if ncs[src as usize] != ncs[dst as usize] {
                         return None;
                     }
                 }
 
-                if sample_only_edges_with_heterogeneous_node_types
-                    && unsafe {
-                        self.get_unchecked_node_type_ids_from_node_id(src)
-                            == self.get_unchecked_node_type_ids_from_node_id(dst)
-                    }
-                {
-                    return None;
-                }
-
-                // If the edge is not a self-loop or the user allows self-loops and
-                // the graph is directed or the edges are inserted in a way to avoid
-                // inserting bidirectional edges.
                 if self.has_edge_from_node_ids(src, dst) {
                     return None;
                 }
@@ -479,6 +498,99 @@ impl Graph {
                 let (src, dst) = self.decode_edge(edge);
                 (0, (src, dst, None, WeightT::NAN))
             })),
+            self.nodes.clone(),
+            self.node_types.clone(),
+            None,
+            false,
+            self.is_directed(),
+            Some(false),
+            Some(false),
+            Some(false),
+            None,
+            true,
+            self.has_selfloops(),
+            format!("Negative {}", self.get_name()),
+        )
+    }
+
+    /// Returns Graph with given amount of subsampled edges.
+    ///
+    /// # Arguments
+    /// * `number_of_samples`: usize - Number of edges to include.
+    /// * `random_state`: Option<EdgeT> - random_state to use to reproduce negative edge set.
+    /// * `sample_only_edges_with_heterogeneous_node_types`: Option<bool> - Whether to sample negative edges only with source and destination nodes that have different node types.
+    /// * `minimum_node_degree`: Option<NodeT> - The minimum node degree of either the source or destination node to be sampled. By default 0.
+    /// * `maximum_node_degree`: Option<NodeT> - The maximum node degree of either the source or destination node to be sampled. By default, the number of nodes.
+    /// * `source_node_types_names: Option<Vec<String>> - Node type names of the nodes to be samples as sources. If a node has any of the provided node types, it can be sampled as a source node.
+    /// * `destination_node_types_names`: Option<Vec<String>> - Node type names of the nodes to be samples as destinations. If a node has any of the provided node types, it can be sampled as a destination node.
+    /// * `source_edge_types_names`: Option<Vec<String>> - Edge type names of the nodes to be samples as sources. If a node has any of the provided edge types, it can be sampled as a source node.
+    /// * `destination_edge_types_names`: Option<Vec<String>> - Edge type names of the nodes to be samples as destinations. If a node has any of the provided edge types, it can be sampled as a destination node.
+    /// * `source_nodes_prefixes`: Option<Vec<String>> - Prefixes of the nodes names to be samples as sources. If a node starts with any of the provided prefixes, it can be sampled as a source node.
+    /// * `destination_nodes_prefixes`: Option<Vec<String>> - Prefixes of the nodes names to be samples as destinations. If a node starts with any of the provided prefixes, it can be sampled as a destinations node.
+    ///
+    /// # Raises
+    /// * If the `sample_only_edges_with_heterogeneous_node_types` argument is provided as true, but the graph does not have node types.
+    pub fn sample_positive_graph(
+        &self,
+        number_of_samples: usize,
+        random_state: Option<EdgeT>,
+        sample_only_edges_with_heterogeneous_node_types: Option<bool>,
+        minimum_node_degree: Option<NodeT>,
+        maximum_node_degree: Option<NodeT>,
+        source_node_types_names: Option<Vec<String>>,
+        destination_node_types_names: Option<Vec<String>>,
+        source_edge_types_names: Option<Vec<String>>,
+        destination_edge_types_names: Option<Vec<String>>,
+        source_nodes_prefixes: Option<Vec<String>>,
+        destination_nodes_prefixes: Option<Vec<String>>,
+    ) -> Result<Graph> {
+        if number_of_samples == 0 {
+            return Err(String::from("The number of samples cannot be zero."));
+        }
+
+        let graph_filter = self.get_graph_sampling_filter(
+            sample_only_edges_with_heterogeneous_node_types,
+            minimum_node_degree,
+            maximum_node_degree,
+            source_node_types_names,
+            destination_node_types_names,
+            source_edge_types_names,
+            destination_edge_types_names,
+            source_nodes_prefixes,
+            destination_nodes_prefixes,
+        )?;
+
+        let random_state = random_state.unwrap_or(0xbadf00d);
+
+        let mut edge_ids = self
+            .par_iter_directed_edge_node_ids()
+            .filter(|&(_, src, dst)| graph_filter(src, dst))
+            .filter(|&(_, src, dst)| self.is_directed() || src <= dst)
+            .map(|(edge_id, _, _)| edge_id)
+            .collect::<Vec<EdgeT>>();
+
+        // initialize the seed for a re-producible shuffle
+        let mut rnd = SmallRng::seed_from_u64(splitmix64(random_state as u64));
+        edge_ids.shuffle(&mut rnd);
+
+        build_graph_from_integers(
+            Some(
+                edge_ids
+                    .into_par_iter()
+                    .take(number_of_samples)
+                    .map(|edge_id| unsafe {
+                        let (src, dst) = self.get_unchecked_node_ids_from_edge_id(edge_id);
+                        (
+                            0,
+                            (
+                                src,
+                                dst,
+                                self.get_unchecked_edge_type_id_from_edge_id(edge_id),
+                                self.get_unchecked_edge_weight_from_edge_id(edge_id).unwrap_or(f32::NAN),
+                            ),
+                        )
+                    }),
+            ),
             self.nodes.clone(),
             self.node_types.clone(),
             None,

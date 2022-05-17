@@ -440,12 +440,10 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<()>
                         "the source node ID {} to the destination node ID {} ",
                         "the symmetric edge does not exist.\n",
                         "This error is likely caused by some mis-parametrization ",
-                        "in a method that is expected to produce a simmetric graph.\n",
-                        "The complete set of edges in the graph is:\n{:?}"
+                        "in a method that is expected to produce a simmetric graph.",
                     ),
                     src_node_id,
-                    dst_node_id,
-                    graph.get_edge_node_ids(true)
+                    dst_node_id
                 );
             });
     }
@@ -1787,15 +1785,33 @@ pub fn test_kfold(graph: &mut Graph, _verbose: Option<bool>) -> Result<()> {
 }
 
 pub fn test_negative_edges_generation(graph: &mut Graph, verbose: Option<bool>) -> Result<()> {
+    let number_of_edges = graph.get_edges_number().min(10) as usize;
+    let positives = graph.sample_positive_graph(
+        number_of_edges,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+    )?;
+
+    assert_eq!(positives.get_edges_number() as usize, number_of_edges);
+    assert!(positives.overlaps(graph)?);
+    assert!(graph.contains(&positives)?);
+
     for only_from_same_component in &[true, false] {
         // If the graph is very sparse, this takes a lot of time
         // and makes the test suite very slow.
         if *only_from_same_component && graph.get_number_of_directed_edges() < 100 {
             continue;
         }
-        let negatives = graph.get_negative_graph(
+        let negatives = graph.sample_negative_graph(
             graph.get_edges_number(),
-            None,
             None,
             Some(*only_from_same_component),
             None,
