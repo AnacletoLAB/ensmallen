@@ -1,4 +1,4 @@
-use graph::{Graph, ThreadDataRaceAware};
+use graph::{EdgeTypeT, Graph, NodeT, ThreadDataRaceAware};
 use indicatif::ProgressIterator;
 use indicatif::{ProgressBar, ProgressStyle};
 use rayon::prelude::*;
@@ -116,8 +116,8 @@ impl TransE {
             .to_string());
         }
 
-        let expected_edge_embedding_size =
-            self.embedding_size * graph.get_edge_types_number().unwrap() as usize;
+        let edge_types_number = graph.get_edge_types_number().unwrap() as usize;
+        let expected_edge_embedding_size = self.embedding_size * edge_types_number;
 
         if edge_type_embedding.len() != expected_edge_embedding_size {
             return Err(format!(
@@ -243,6 +243,22 @@ impl TransE {
             } else {
                 (1.0, 1.0, 1.0, 1.0)
             };
+            let src_prior = unsafe { graph.get_unchecked_node_degree_from_node_id(src as NodeT) }
+                as f32
+                / nodes_number as f32;
+            let dst_prior = unsafe { graph.get_unchecked_node_degree_from_node_id(dst as NodeT) }
+                as f32
+                / nodes_number as f32;
+            let not_src_prior =
+                unsafe { graph.get_unchecked_node_degree_from_node_id(not_src as NodeT) } as f32
+                    / nodes_number as f32;
+            let not_dst_prior =
+                unsafe { graph.get_unchecked_node_degree_from_node_id(not_dst as NodeT) } as f32
+                    / nodes_number as f32;
+            let edge_type_prior = unsafe {
+                graph.get_unchecked_edge_count_from_edge_type_id(Some(edge_type as EdgeTypeT))
+            } as f32
+                / edge_types_number as f32;
 
             src_embedding
                 .iter_mut()
@@ -270,11 +286,12 @@ impl TransE {
                         if loss > -self.relu_bias {
                             positive_distance *= learning_rate;
                             negative_distance *= learning_rate;
-                            *src_feature -= positive_distance;
-                            *dst_feature += positive_distance;
-                            *not_src_feature += negative_distance;
-                            *not_dst_feature -= negative_distance;
-                            *edge_type_feature -= positive_distance - negative_distance;
+                            *src_feature -= positive_distance / src_prior;
+                            *dst_feature += positive_distance / dst_prior;
+                            *not_src_feature += negative_distance / not_src_prior;
+                            *not_dst_feature -= negative_distance / not_dst_prior;
+                            *edge_type_feature -=
+                                (positive_distance - negative_distance) / edge_type_prior;
                         }
                     },
                 );
