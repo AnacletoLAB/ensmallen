@@ -116,7 +116,7 @@ impl Graph {
     ///
     /// # Arguments
     /// * node_type: Option<NodeTypeT> - The node type to retrieve count of.
-    /// 
+    ///
     /// # Safety
     /// If the provided value is not within the graph's vocabulary
     /// the method will panic.
@@ -1358,7 +1358,9 @@ impl Graph {
         node_type_id: Option<NodeTypeT>,
     ) -> Result<NodeT> {
         self.validate_node_type_id(node_type_id)
-            .map(|node_type_id| self.get_unchecked_node_count_from_node_type_id(node_type_id))
+            .map(|node_type_id| unsafe {
+                self.get_unchecked_node_count_from_node_type_id(node_type_id)
+            })
     }
 
     /// Return number of nodes with given node type name.

@@ -1182,7 +1182,8 @@ pub fn test_dijkstra(graph: &mut Graph, _verbose: Option<bool>) -> Result<()> {
                         // my be infinite, and therefore the epsilon check
                         // may not be enough.
                         src_to_dst_distance.is_infinite() && dst_to_src_distance.is_infinite()
-                            || (src_to_dst_distance - dst_to_src_distance).abs() < WeightT::EPSILON * 10.0,
+                            || (src_to_dst_distance - dst_to_src_distance).abs()
+                                < WeightT::EPSILON * 10.0,
                         concat!(
                             "The path from source to destination has distance {} ",
                             "while the distance from destination to source has ",
@@ -1920,7 +1921,7 @@ pub fn test_embiggen_preprocessing(graph: &mut Graph, _verbose: Option<bool>) ->
                 Some(false),
                 None,
                 None,
-                None
+                None,
             )
             .unwrap()
             .collect::<Vec<_>>();
@@ -2325,11 +2326,13 @@ pub fn test_clone_and_setters(graph: &mut Graph, _verbose: Option<bool>) -> Resu
         1,
         "Number of node types of the graph is not 1."
     );
-    assert_eq!(
+    unsafe {
+        assert_eq!(
         clone.get_unchecked_node_count_from_node_type_id(Some(0)),
         graph.get_nodes_number(),
         "Number of nodes with the unique node type does not match number of nodes in the graph."
     );
+    }
 
     Ok(())
 }
