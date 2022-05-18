@@ -16,6 +16,8 @@ mod glove;
 pub(crate) use glove::*;
 mod transe;
 pub(crate) use transe::*;
+mod kgtranse;
+pub(crate) use kgtranse::*;
 mod edge_file_writer;
 mod hash;
 mod node_file_writer;
@@ -42,6 +44,7 @@ fn models(_py: Python, _m: &PyModule) -> PyResult<()> {
     _m.add_class::<CBOW>()?;
     _m.add_class::<GloVe>()?;
     _m.add_class::<TransE>()?;
+    _m.add_class::<KGTransE>()?;
     _m.add_class::<SkipGram>()?;
     _m.add_class::<SPINE>()?;
     _m.add_class::<WeightedSPINE>()?;
