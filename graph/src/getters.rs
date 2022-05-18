@@ -1545,4 +1545,67 @@ impl Graph {
             },
         )
     }
+
+    /// Returns 1D single labeled node types ids vector.
+    ///
+    /// # Raises
+    /// * If the graph has multilabel node types.
+    pub fn get_single_label_node_type_ids(
+        &self,
+        unknown_node_types_value: Option<NodeTypeT>,
+    ) -> Result<Vec<NodeTypeT>> {
+        if self.has_multilabel_node_types()? {
+            return Err(concat!(
+                "This method should only be used on graphs with single-labelled ",
+                "node types. In this graph there are nodes with multi-label node ",
+                "types."
+            )
+            .to_string());
+        }
+        let unknown_node_types_value = unknown_node_types_value.unwrap_or(0);
+        let mut single_label_node_type_ids = vec![0; self.get_nodes_number() as usize];
+        self.must_have_node_types().map(|node_types| {
+            node_types
+                .ids
+                .par_iter()
+                .zip(single_label_node_type_ids.par_iter_mut())
+                .for_each(|(node_type_ids, target)| match node_type_ids {
+                    Some(node_type_ids) => {
+                        *target = node_type_ids[0];
+                    }
+                    None => {
+                        *target = unknown_node_types_value;
+                    }
+                })
+        })?;
+        Ok(single_label_node_type_ids)
+    }
+
+    /// Returns 1D binarized node types ids vector.
+    pub fn get_boolean_node_type_ids(
+        &self,
+        target_value: Option<NodeTypeT>,
+        unknown_node_types_value: Option<NodeTypeT>,
+    ) -> Result<Vec<bool>> {
+        let target_value = target_value.unwrap_or(1);
+        let unknown_node_types_value = unknown_node_types_value.unwrap_or(0);
+        let mut boolean_node_type_ids = vec![false; self.get_nodes_number() as usize];
+        self.must_have_node_types().map(|node_types| {
+            node_types
+                .ids
+                .par_iter()
+                .zip(boolean_node_type_ids.par_iter_mut())
+                .filter(|(node_type_ids, _)| match node_type_ids {
+                    Some(node_type_ids) => node_type_ids
+                        .iter()
+                        .copied()
+                        .any(|node_type_id| node_type_id == target_value),
+                    None => target_value == unknown_node_types_value,
+                })
+                .for_each(|(_, target)| {
+                    *target = true;
+                })
+        })?;
+        Ok(boolean_node_type_ids)
+    }
 }

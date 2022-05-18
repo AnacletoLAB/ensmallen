@@ -1,0 +1,9 @@
+<html>
+<head><title>Index of /wikidatawiki/entities/20220516/</title></head>
+<body bgcolor="white">
+<h1>Index of /wikidatawiki/entities/20220516/</h1><hr><pre><a href="../">../</a>
+<a href="wikidata-20220516-all.json.gz">wikidata-20220516-all.json.gz</a>                      18-May-2022 18:48        112204497210
+<a href="wikidata-20220516-md5sums.txt">wikidata-20220516-md5sums.txt</a>                      18-May-2022 20:25                  64
+<a href="wikidata-20220516-sha1sums.txt">wikidata-20220516-sha1sums.txt</a>                     18-May-2022 21:21                  72
+</pre><hr></body>
+</html>

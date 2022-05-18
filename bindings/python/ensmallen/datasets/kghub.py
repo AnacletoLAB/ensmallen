@@ -2,6 +2,41 @@
 from ensmallen import Graph  # pylint: disable=import-error
 from .automatic_graph_retrieval import AutomaticallyRetrievedGraph
 
+def SLDB(
+    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
+    load_edge_weights = True, auto_enable_tradeoffs = True,
+    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
+    cache_sys_var = "GRAPH_CACHE_DIR", version = "20220517", **kwargs
+) -> Graph:
+    """Return sldb graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    load_nodes = True
+        Load node names or use numeric range
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "20220517"
+        Version to retrieve	
+		The available versions are:
+			- 20220517	
+	
+	
+    """
+    return AutomaticallyRetrievedGraph(
+        "SLDB", version, "kghub", directed, preprocess, load_nodes,
+        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
+        cache_path, cache_sys_var, kwargs
+    )()
+
 def KGMicrobe(
     directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
@@ -49,44 +84,6 @@ def KGMicrobe(
     """
     return AutomaticallyRetrievedGraph(
         "KGMicrobe", version, "kghub", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
-    )()
-
-def KGOntoML(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "graphml", **kwargs
-) -> Graph:
-    """Return KG-OntoML graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    load_nodes = True
-        Load node names or use numeric range
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "graphml"
-        Version to retrieve	
-		The available versions are:
-			- 20220304
-			- 20220414
-			- current
-			- graphml	
-	
-	
-    """
-    return AutomaticallyRetrievedGraph(
-        "KGOntoML", version, "kghub", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
     )()
@@ -142,6 +139,7 @@ def KGIDG(
 			- 20220329
 			- 20220401
 			- 20220501
+			- 20220512
 			- current	
 	
 	
@@ -182,6 +180,10 @@ def KGPhenio(
 			- 20220428
 			- 20220429
 			- 20220504
+			- 20220506
+			- 20220511
+			- 20220513
+			- 20220516
 			- current	
 	
 	

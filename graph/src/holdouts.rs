@@ -157,8 +157,8 @@ impl Graph {
             Some(
                 source_edge_types_names
                     .into_iter()
-                    .map(|node_type_name| {
-                        self.get_node_type_id_from_node_type_name(&node_type_name)
+                    .map(|edge_type_name| {
+                        self.get_edge_type_id_from_edge_type_name(Some(&edge_type_name)).map(|et| et.unwrap())
                     })
                     .collect::<Result<Vec<EdgeTypeT>>>()?,
             )
@@ -176,8 +176,8 @@ impl Graph {
                 Some(
                     destination_edge_types_names
                         .into_iter()
-                        .map(|node_type_name| {
-                            self.get_node_type_id_from_node_type_name(&node_type_name)
+                        .map(|edge_type_name| {
+                            self.get_edge_type_id_from_edge_type_name(Some(&edge_type_name)).map(|et| et.unwrap())
                         })
                         .collect::<Result<Vec<EdgeTypeT>>>()?,
                 )

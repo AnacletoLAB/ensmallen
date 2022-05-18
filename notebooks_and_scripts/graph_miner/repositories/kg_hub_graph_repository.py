@@ -24,7 +24,8 @@ class KGHubGraphRepository(GraphRepository):
             "kg-microbe": "KGMicrobe",
             "KG-IDG": "KGIDG",
             "kg-phenio": "KGPhenio",
-            "eco-kg": "EcoKG"
+            "eco-kg": "EcoKG",
+            "sldb": "SLDB"
         }
         root_pattern = "https://kg-hub.berkeleybop.io/{lower_graph_name}/index.html"
         graph_url_pattern = "https://kg-hub.berkeleybop.io/{lower_graph_name}/{version}/{graph_name}.tar.gz"
