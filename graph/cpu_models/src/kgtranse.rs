@@ -1,3 +1,4 @@
+use core::slice::IterMut;
 use graph::{EdgeTypeT, Graph, NodeT, ThreadDataRaceAware};
 use indicatif::ProgressIterator;
 use indicatif::{ProgressBar, ProgressStyle};
@@ -10,6 +11,19 @@ pub struct TransE {
     renormalize: bool,
     relu_bias: f32,
     random_state: u64,
+}
+
+struct Multizip<T>(Vec<T>);
+
+impl<T> Iterator for Multizip<T>
+where
+    T: Iterator,
+{
+    type Item = Vec<T::Item>;
+
+    fn next(&mut self) -> Option<Self::Item> {
+        self.0.iter_mut().map(Iterator::next).collect()
+    }
 }
 
 impl TransE {
@@ -63,6 +77,7 @@ impl TransE {
     /// `graph`: &Graph - The graph to embed
     /// `node_embedding`: &mut [f32] - The memory area where to write the node embedding.
     /// `edge_type_embedding`: &mut [f32] - The optional memory area where to write the edge type embedding.
+    /// `node_type_embedding`: &mut [f32] - The optional memory area where to write the node type embedding.
     /// `epochs`: Option<usize> - The number of epochs to run the model for, by default 10.
     /// `learning_rate`: Option<f32> - The learning rate to update the gradient, by default 0.01.
     /// `learning_rate_decay`: Option<f32> - Factor to reduce the learning rate for at each epoch. By default 0.9.
@@ -78,6 +93,7 @@ impl TransE {
         graph: &Graph,
         node_embedding: &mut [f32],
         edge_type_embedding: &mut [f32],
+        node_type_embedding: &mut [f32],
         epochs: Option<usize>,
         learning_rate: Option<f32>,
         learning_rate_decay: Option<f32>,
@@ -89,6 +105,7 @@ impl TransE {
         let mut learning_rate = learning_rate.unwrap_or(0.001) / scale_factor;
         let learning_rate_decay = learning_rate_decay.unwrap_or(0.9);
         let mut random_state = splitmix64(self.random_state);
+        let number_of_directed_edges = graph.get_number_of_directed_edges();
 
         if !graph.has_edge_types() {
             return Err(concat!(
@@ -127,11 +144,47 @@ impl TransE {
             ));
         }
 
+        if !graph.has_node_types() {
+            return Err(concat!(
+                "The node types should be used, but the provided ",
+                "graph does not contain node types."
+            )
+            .to_string());
+        }
+
+        if graph.has_unknown_node_types().unwrap() {
+            return Err(concat!(
+                "The node types should be used, but the provided ",
+                "graph contains unknown node types and it is not ",
+                "well-defined how to use them."
+            )
+            .to_string());
+        }
+
+        if graph.has_homogeneous_node_types().unwrap() {
+            return Err(concat!(
+                "The node types should be used, but the provided ",
+                "graph contains exclusively a single node type ",
+                "making using node types useless."
+            )
+            .to_string());
+        }
+
+        let node_types_number = graph.get_node_types_number().unwrap() as usize;
+        let expected_node_embedding_size = self.embedding_size * node_types_number;
+
+        if node_type_embedding.len() != expected_node_embedding_size {
+            return Err(format!(
+                "The given memory allocation for the node type embeddings is {} long but we expect {}.",
+                node_type_embedding.len(),
+                expected_node_embedding_size
+            ));
+        }
+
         if !graph.has_nodes() {
             return Err("The provided graph does not have any node.".to_string());
         }
 
-        let number_of_directed_edges = graph.get_number_of_directed_edges();
         let nodes_number = graph.get_nodes_number();
         let expected_node_embedding_size = self.embedding_size * nodes_number as usize;
 
@@ -193,6 +246,7 @@ impl TransE {
 
         let shared_node_embedding = ThreadDataRaceAware::new(node_embedding);
         let shared_edge_type_embedding = ThreadDataRaceAware::new(edge_type_embedding);
+        let shared_node_type_embedding = ThreadDataRaceAware::new(node_type_embedding);
 
         // Depending whether verbosity was requested by the user
         // we create or not a visible progress bar to show the progress
@@ -261,15 +315,63 @@ impl TransE {
             } as f32
                 / number_of_directed_edges as f32;
 
+            let node_type_priors = [src, dst]
+                .iter()
+                .copied()
+                .map(|node_id| {
+                    unsafe { graph.get_unchecked_node_type_ids_from_node_id(node_id as NodeT) }
+                        .unwrap()
+                        .iter()
+                        .copied()
+                        .map(|node_type_id| unsafe {
+                            graph.get_unchecked_node_count_from_node_type_id(Some(node_type_id))
+                                as f32
+                                / nodes_number as f32
+                        })
+                        .collect::<Vec<f32>>()
+                })
+                .collect::<Vec<Vec<f32>>>();
+
+            let src_node_types_number = node_type_priors[0].len() as f32;
+            let dst_node_types_number = node_type_priors[1].len() as f32;
+
+            let node_type_slices = Multizip(
+                [src, dst]
+                    .iter()
+                    .copied()
+                    .map(|node_id| {
+                        Multizip(
+                            unsafe {
+                                graph.get_unchecked_node_type_ids_from_node_id(node_id as NodeT)
+                            }
+                            .unwrap()
+                            .iter()
+                            .copied()
+                            .map(|node_type_id| unsafe {
+                                (&mut (*shared_node_type_embedding.get())[(node_type_id as usize
+                                    * self.embedding_size)
+                                    ..((node_type_id as usize + 1) * self.embedding_size)])
+                                    .iter_mut()
+                            })
+                            .collect::<Vec<IterMut<f32>>>(),
+                        )
+                    })
+                    .collect::<Vec<Multizip<IterMut<f32>>>>(),
+            );
+
             src_embedding
                 .iter_mut()
                 .zip(not_src_embedding.iter_mut())
                 .zip(dst_embedding.iter_mut().zip(not_dst_embedding.iter_mut()))
                 .zip(edge_type_embedding.iter_mut())
+                .zip(node_type_slices)
                 .for_each(
                     |(
-                        ((src_feature, not_src_feature), (dst_feature, not_dst_feature)),
-                        edge_type_feature,
+                        (
+                            ((src_feature, not_src_feature), (dst_feature, not_dst_feature)),
+                            edge_type_feature,
+                        ),
+                        mut node_type_slices,
                     )| {
                         if self.renormalize {
                             *src_feature /= src_norm;
@@ -282,17 +384,44 @@ impl TransE {
                             *src_feature + *edge_type_feature - *dst_feature;
                         let mut negative_distance =
                             *not_src_feature + *edge_type_feature - *not_dst_feature;
+
+                        node_type_slices[0]
+                            .iter()
+                            .zip(node_type_slices[1].iter())
+                            .for_each(|(src_node_type_feature, dst_node_type_feature)| {
+                                positive_distance += **src_node_type_feature
+                                    / src_node_types_number
+                                    - **dst_node_type_feature;
+                                negative_distance += **src_node_type_feature
+                                    / src_node_types_number
+                                    - **dst_node_type_feature;
+                            });
+
                         let loss = positive_distance.powf(2.0) - negative_distance.powf(2.0);
 
                         if loss > -self.relu_bias {
                             positive_distance *= learning_rate;
                             negative_distance *= learning_rate;
+                            let delta = positive_distance - negative_distance;
                             *src_feature -= positive_distance / src_prior;
                             *dst_feature += positive_distance / dst_prior;
                             *not_src_feature += negative_distance / not_src_prior;
                             *not_dst_feature -= negative_distance / not_dst_prior;
-                            *edge_type_feature -=
-                                (positive_distance - negative_distance) / edge_type_prior;
+                            *edge_type_feature -= delta / edge_type_prior;
+                            node_type_slices[1]
+                                .iter_mut()
+                                .zip(node_type_priors[1].iter().copied())
+                                .for_each(|(src_node_type_feature, src_node_type_prior)| {
+                                    **src_node_type_feature -=
+                                        delta / src_node_types_number / src_node_type_prior;
+                                });
+                            node_type_slices[1]
+                                .iter_mut()
+                                .zip(node_type_priors[1].iter().copied())
+                                .for_each(|(dst_node_type_feature, dst_node_type_prior)| {
+                                    **dst_node_type_feature -=
+                                        delta / dst_node_types_number / dst_node_type_prior;
+                                });
                         }
                     },
                 );
