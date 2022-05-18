@@ -6,7 +6,7 @@ use rayon::prelude::*;
 use vec_rand::{random_f32, splitmix64};
 
 #[derive(Clone, Debug)]
-pub struct TransE {
+pub struct KGTransE {
     embedding_size: usize,
     renormalize: bool,
     relu_bias: f32,
@@ -26,8 +26,8 @@ where
     }
 }
 
-impl TransE {
-    /// Return new instance of TransE model.
+impl KGTransE {
+    /// Return new instance of KGTransE model.
     ///
     /// # Arguments
     /// `embedding_size`: Option<usize> - Size of the embedding.
@@ -65,7 +65,7 @@ impl TransE {
         self.embedding_size
     }
 
-    /// Computes in the provided slice of embedding the TransE node and edge type embedding.
+    /// Computes in the provided slice of embedding the KGTransE node and edge type embedding.
     ///
     /// # Implementative details
     /// This implementation is NOT thread safe, that is, different threads may try
@@ -254,7 +254,7 @@ impl TransE {
         let epochs_progress_bar = if verbose {
             let pb = ProgressBar::new(epochs as u64);
             pb.set_style(ProgressStyle::default_bar().template(
-                "TransE Epochs {msg} {spinner:.green} [{elapsed_precise}] [{bar:40.cyan/blue}] ({pos}/{len}, ETA {eta})",
+                "KGTransE Epochs {msg} {spinner:.green} [{elapsed_precise}] [{bar:40.cyan/blue}] ({pos}/{len}, ETA {eta})",
             ));
             pb
         } else {
