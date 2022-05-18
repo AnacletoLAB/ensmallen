@@ -95,7 +95,7 @@ pub fn get_next_matching(data: &[u8], start_char: u8, end_char: u8) -> (&[u8], &
             counter -= 1;
         }
 
-        if char == b'\\'{
+        if char == b'\\' || char == b'-' {
             is_escaped ^= true;
         } else {
             is_escaped = false;

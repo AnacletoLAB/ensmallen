@@ -140,13 +140,12 @@ impl Parse for Function {
         assert!(data.starts_with(b"("));
 
         let args = parse!(data, Args);
-
         let mut return_type = None;
         if data.starts_with(b"->") {
             data = &data[2..];
             return_type = Some(parse!(data, Type));
         }
-        
+
         // parse the body
         let (data, mut body_content) = get_next_matching(data, b'{', b'}');
         body_content = skip_whitespace(body_content);
