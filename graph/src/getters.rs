@@ -580,6 +580,52 @@ impl Graph {
         })
     }
 
+    /// Return the directed source node IDs with known edge types.
+    pub fn get_directed_source_nodes_with_known_edge_types(&self) -> Result<Vec<NodeT>> {
+        self.must_have_edge_types().map(|_| {
+            self.edge_types
+                .as_ref()
+                .as_ref()
+                .map(|ets| {
+                    ets.ids
+                        .par_iter()
+                        .zip(self.par_iter_directed_source_node_ids())
+                        .filter_map(|(et, source_node_id)| {
+                            if et.is_some() {
+                                Some(source_node_id)
+                            } else {
+                                None
+                            }
+                        })
+                        .collect()
+                })
+                .unwrap()
+        })
+    }
+
+    /// Return the directed destination node IDs with known edge types.
+    pub fn get_directed_destination_nodes_with_known_edge_types(&self) -> Result<Vec<NodeT>> {
+        self.must_have_edge_types().map(|_| {
+            self.edge_types
+                .as_ref()
+                .as_ref()
+                .map(|ets| {
+                    ets.ids
+                        .par_iter()
+                        .zip(self.par_iter_directed_destination_node_ids())
+                        .filter_map(|(et, destination_node_id)| {
+                            if et.is_some() {
+                                Some(destination_node_id)
+                            } else {
+                                None
+                            }
+                        })
+                        .collect()
+                })
+                .unwrap()
+        })
+    }
+
     /// Return the unique edge type IDs of the graph edges.
     ///
     /// # Example

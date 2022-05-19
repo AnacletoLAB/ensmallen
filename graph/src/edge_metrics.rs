@@ -610,8 +610,18 @@ impl Graph {
     }
 
     /// Returns number of currently supported edge metrics.
-    pub fn get_number_of_available_edge_metrics(&self) -> u64 {
+    pub fn get_number_of_available_edge_metrics(&self) -> usize {
         4
+    }
+
+    /// Returns names of currently supported edge metrics.
+    pub fn get_available_edge_metrics_names(&self) -> Vec<&str> {
+        vec![
+            "Adamic Adar",
+            "Jaccard Coefficient",
+            "Resource allocation index",
+            "Preferential attachment"
+        ]
     }
 
     /// Returns all the implemented edge metrics for the two given node IDs.

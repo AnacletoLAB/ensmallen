@@ -158,7 +158,8 @@ impl Graph {
                 source_edge_types_names
                     .into_iter()
                     .map(|edge_type_name| {
-                        self.get_edge_type_id_from_edge_type_name(Some(&edge_type_name)).map(|et| et.unwrap())
+                        self.get_edge_type_id_from_edge_type_name(Some(&edge_type_name))
+                            .map(|et| et.unwrap())
                     })
                     .collect::<Result<Vec<EdgeTypeT>>>()?,
             )
@@ -177,7 +178,8 @@ impl Graph {
                     destination_edge_types_names
                         .into_iter()
                         .map(|edge_type_name| {
-                            self.get_edge_type_id_from_edge_type_name(Some(&edge_type_name)).map(|et| et.unwrap())
+                            self.get_edge_type_id_from_edge_type_name(Some(&edge_type_name))
+                                .map(|et| et.unwrap())
                         })
                         .collect::<Result<Vec<EdgeTypeT>>>()?,
                 )
@@ -287,7 +289,7 @@ impl Graph {
             {
                 return false;
             }
-            
+
             true
         })
     }
@@ -311,6 +313,7 @@ impl Graph {
     /// * `destination_edge_types_names`: Option<Vec<String>> - Edge type names of the nodes to be samples as destinations. If a node has any of the provided edge types, it can be sampled as a destination node.
     /// * `source_nodes_prefixes`: Option<Vec<String>> - Prefixes of the nodes names to be samples as sources. If a node starts with any of the provided prefixes, it can be sampled as a source node.
     /// * `destination_nodes_prefixes`: Option<Vec<String>> - Prefixes of the nodes names to be samples as destinations. If a node starts with any of the provided prefixes, it can be sampled as a destinations node.
+    /// * `graph_to_avoid`: Option<&Graph> - Compatible graph whose edges are not to be sampled.
     /// * `use_zipfian_sampling`: Option<bool> - Whether to sample the nodes using zipfian distribution. By default True. Not using this may cause significant biases.
     ///
     /// # Raises
@@ -329,12 +332,22 @@ impl Graph {
         destination_edge_types_names: Option<Vec<String>>,
         source_nodes_prefixes: Option<Vec<String>>,
         destination_nodes_prefixes: Option<Vec<String>>,
+        graph_to_avoid: Option<&Graph>,
         use_zipfian_sampling: Option<bool>,
     ) -> Result<Graph> {
         if number_of_negative_samples == 0 {
             return Err(String::from(
                 "The number of negative samples cannot be zero.",
             ));
+        }
+
+        if let Some(graph_to_avoid) = graph_to_avoid.as_ref(){
+            if !self.has_compatible_node_vocabularies(graph_to_avoid) {
+                return Err(concat!(
+                    "The current graph instance does not share a compatible ",
+                    "vocabulary with the provided graph to avoid."
+                ).to_string())
+            }
         }
 
         let graph_filter = self.get_graph_sampling_filter(
@@ -435,6 +448,12 @@ impl Graph {
                     return None;
                 }
 
+                if let Some(graph_to_avoid) = &graph_to_avoid{
+                    if graph_to_avoid.has_edge_from_node_ids(src, dst) {
+                        return None;
+                    }
+                }
+
                 if let Some(ncs) = &node_components {
                     if ncs[src as usize] != ncs[dst as usize] {
                         return None;
@@ -527,6 +546,7 @@ impl Graph {
     /// * `destination_edge_types_names`: Option<Vec<String>> - Edge type names of the nodes to be samples as destinations. If a node has any of the provided edge types, it can be sampled as a destination node.
     /// * `source_nodes_prefixes`: Option<Vec<String>> - Prefixes of the nodes names to be samples as sources. If a node starts with any of the provided prefixes, it can be sampled as a source node.
     /// * `destination_nodes_prefixes`: Option<Vec<String>> - Prefixes of the nodes names to be samples as destinations. If a node starts with any of the provided prefixes, it can be sampled as a destinations node.
+    /// * `edge_type_names`: Option<Vec<Option<String>>> - Edge type names of the edges to sample. Only edges with ANY of these edge types will be kept.
     ///
     /// # Raises
     /// * If the `sample_only_edges_with_heterogeneous_node_types` argument is provided as true, but the graph does not have node types.
@@ -543,6 +563,7 @@ impl Graph {
         destination_edge_types_names: Option<Vec<String>>,
         source_nodes_prefixes: Option<Vec<String>>,
         destination_nodes_prefixes: Option<Vec<String>>,
+        edge_type_names: Option<Vec<Option<String>>>,
     ) -> Result<Graph> {
         if number_of_samples == 0 {
             return Err(String::from("The number of samples cannot be zero."));
@@ -560,13 +581,26 @@ impl Graph {
             destination_nodes_prefixes,
         )?;
 
+        let edge_type_ids = if let Some(edge_type_names) = edge_type_names {
+            Some(self.get_edge_type_ids_from_edge_type_names(edge_type_names)?)
+        } else {
+            None
+        };
+
         let random_state = random_state.unwrap_or(0xbadf00d);
 
         let mut edge_ids = self
-            .par_iter_directed_edge_node_ids()
-            .filter(|&(_, src, dst)| graph_filter(src, dst))
-            .filter(|&(_, src, dst)| self.is_directed() || src <= dst)
-            .map(|(edge_id, _, _)| edge_id)
+            .par_iter_directed_edge_node_ids_and_edge_type_id_and_edge_weight()
+            .filter(|&(_, src, dst, _, _)| graph_filter(src, dst))
+            .filter(|(_, _, _, edge_type_id, _)| {
+                edge_type_ids.as_ref().map_or(true, |edge_type_ids| {
+                    edge_type_ids
+                        .iter()
+                        .any(|this_edge_type_id| this_edge_type_id == edge_type_id)
+                })
+            })
+            .filter(|&(_, src, dst, _, _)| self.is_directed() || src <= dst)
+            .map(|(edge_id, _, _, _, _)| edge_id)
             .collect::<Vec<EdgeT>>();
 
         // initialize the seed for a re-producible shuffle
@@ -586,15 +620,19 @@ impl Graph {
                                 src,
                                 dst,
                                 self.get_unchecked_edge_type_id_from_edge_id(edge_id),
-                                self.get_unchecked_edge_weight_from_edge_id(edge_id).unwrap_or(f32::NAN),
+                                self.get_unchecked_edge_weight_from_edge_id(edge_id)
+                                    .unwrap_or(f32::NAN),
                             ),
                         )
                     }),
             ),
             self.nodes.clone(),
             self.node_types.clone(),
-            None,
-            false,
+            self.edge_types
+                .as_ref()
+                .as_ref()
+                .map(|ets| ets.vocabulary.clone()),
+            self.has_edge_weights(),
             self.is_directed(),
             Some(false),
             Some(false),
@@ -602,7 +640,7 @@ impl Graph {
             None,
             true,
             self.has_selfloops(),
-            format!("Negative {}", self.get_name()),
+            format!("Subsampled {}", self.get_name()),
         )
     }
 

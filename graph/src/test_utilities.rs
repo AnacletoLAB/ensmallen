@@ -1799,6 +1799,7 @@ pub fn test_negative_edges_generation(graph: &mut Graph, verbose: Option<bool>) 
         None,
         None,
         None,
+        None,
     )?;
 
     assert_eq!(positives.get_edges_number() as usize, number_of_edges);
@@ -1815,6 +1816,7 @@ pub fn test_negative_edges_generation(graph: &mut Graph, verbose: Option<bool>) 
             graph.get_edges_number(),
             None,
             Some(*only_from_same_component),
+            None,
             None,
             None,
             None,
@@ -1913,13 +1915,12 @@ pub fn test_embiggen_preprocessing(graph: &mut Graph, _verbose: Option<bool>) ->
         graph
             .link_prediction_degrees(
                 0,
-                Some(256),
+                256,
                 Some(true),
-                Some(0.3),
+                0.3,
                 Some(false),
                 Some(10),
-                Some(false),
-                None,
+                false,
                 None,
                 None,
             )
@@ -1928,18 +1929,15 @@ pub fn test_embiggen_preprocessing(graph: &mut Graph, _verbose: Option<bool>) ->
         graph
             .get_edge_prediction_mini_batch(
                 0,
-                Some(256),
-                Some(0.4),
+                256,
+                0.4,
+                false,
+                false,
+                false,
                 None,
                 None,
                 None,
-                Some(false),
-                Some(false),
-                Some(10),
-                Some(false),
-                None,
-                None,
-                None,
+                None
             )
             .unwrap()
             .collect::<Vec<_>>();
