@@ -362,9 +362,17 @@ impl Graph {
                     self.get_unchecked_node_ids_from_edge_id(self.get_random_edge_id(random_state));
                 return (
                     src,
-                    self.get_unchecked_edge_prediction_node_type_ids(src),
+                    if return_node_types {
+                        self.get_unchecked_edge_prediction_node_type_ids(src)
+                    } else {
+                        None
+                    },
                     dst,
-                    self.get_unchecked_edge_prediction_node_type_ids(dst),
+                    if return_node_types {
+                        self.get_unchecked_edge_prediction_node_type_ids(dst)
+                    } else {
+                        None
+                    },
                     if return_edge_metrics {
                         Some(self.get_unchecked_all_edge_metrics_from_node_ids(src, dst, true))
                     } else {
