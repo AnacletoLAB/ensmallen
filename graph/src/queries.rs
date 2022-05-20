@@ -2108,4 +2108,17 @@ impl Graph {
         self.par_iter_node_names_prefixes(separator)
             .map(|iter| iter.collect())
     }
+
+    /// Returns mapping from the current graph node names to the other provided graph node names.
+    ///
+    /// # Arguments
+    /// * `other`: &Graph - The other graph to which remap the node names.
+    ///
+    /// # Raises
+    /// * If the graph is not contained in the provided other graph.
+    pub fn get_node_ids_mapping_from_graph(&self, other: &Graph) -> Result<Vec<NodeT>> {
+        self.par_iter_node_names()
+            .map(|node_name| other.get_node_id_from_node_name(&node_name))
+            .collect()
+    }
 }
