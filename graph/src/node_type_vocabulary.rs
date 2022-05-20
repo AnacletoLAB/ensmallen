@@ -125,7 +125,7 @@ impl NodeTypeVocabulary {
         self.update_min_max_count();
     }
 
-    fn update_min_max_count(&mut self) {
+    pub fn update_min_max_count(&mut self) {
         self.min_count = self.counts.par_iter().copied().min().unwrap_or(0);
         self.max_count = self.counts.par_iter().copied().max().unwrap_or(0);
         self.max_multilabel_count = self
@@ -311,6 +311,20 @@ impl NodeTypeVocabulary {
     /// Return a reference to the underlaying ids vector.
     pub fn get_ids(&self) -> &[Option<Vec<NodeTypeT>>] {
         self.ids.as_slice()
+    }
+
+    pub fn add_node_type_name_inplace(&mut self, node_type_name: String) -> Result<NodeTypeT> {
+        if self.get(&node_type_name).is_some() {
+            return Err(format!(
+                concat!("The given node type name {} already exists in the graph."),
+                node_type_name
+            ));
+        }
+        let node_type_id = unsafe { self.vocabulary.unchecked_insert(node_type_name) };
+        self.counts.push(0);
+        self.min_count = 0;
+
+        Ok(node_type_id)
     }
 
     /// Remove a node type from the vocabulary

@@ -1316,8 +1316,6 @@ impl Graph {
 
     /// Return node type ID curresponding to given node type name.
     ///
-    /// If None is given as an node type ID, None is returned.
-    ///
     /// # Arguments
     /// * `node_type_name`: &str - The node type name whose ID is to be returned.
     ///

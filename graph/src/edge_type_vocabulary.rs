@@ -178,4 +178,17 @@ impl EdgeTypeVocabulary {
         self.vocabulary
             .unchecked_remove_values(edge_type_ids_to_remove)
     }
+
+    pub fn add_edge_type_name_inplace(&mut self, edge_type_name: String) -> Result<EdgeTypeT> {
+        if self.get(&edge_type_name).is_some() {
+            return Err(format!(
+                concat!("The given edge type name {} already exists in the graph."),
+                edge_type_name
+            ));
+        }
+        let edge_type_id = unsafe { self.vocabulary.unchecked_insert(edge_type_name) };
+        self.counts.push(0);
+
+        Ok(edge_type_id)
+    }
 }

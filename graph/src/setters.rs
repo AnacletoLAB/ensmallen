@@ -4,7 +4,7 @@ use rayon::iter::IndexedParallelIterator;
 use rayon::iter::IntoParallelIterator;
 use rayon::iter::IntoParallelRefMutIterator;
 use rayon::iter::ParallelIterator;
-use std::sync::atomic::{AtomicU32, AtomicU64, Ordering};
+use std::sync::atomic::{AtomicI64, AtomicU32, AtomicU64, Ordering};
 
 impl Graph {
     /// Set the name of the graph.
@@ -187,6 +187,333 @@ impl Graph {
         Ok(self)
     }
 
+    /// Assigns inplace given node type id to the nodes with given prefixes.
+    ///
+    /// # Arguments
+    /// * `node_type_id`: NodeTypeT - The node type ID to assign.
+    /// * `node_name_prefixes`: Vec<String> - The node name prefixes to check for.
+    ///
+    /// # Raises
+    /// * If the given list of node name prefixes is empty.
+    ///
+    pub fn add_node_type_id_from_node_name_prefixes_inplace(
+        &mut self,
+        node_type_id: NodeTypeT,
+        node_name_prefixes: Vec<String>,
+    ) -> Result<&Graph> {
+        if node_name_prefixes.is_empty() {
+            return Err("The provided list of node name prefixes is empty!".to_string());
+        }
+
+        // check that the values are in the range of node type ids
+        self.validate_node_type_id(Some(node_type_id))?;
+
+        let self2 = unsafe { &*(self as *mut Self) };
+
+        if let Some(node_types) = Arc::make_mut(&mut self.node_types) {
+            // Counter of how many new nodes have known type (aka how many nodes we addded)
+            let new_known_nodes = AtomicU32::new(0);
+
+            // Iter over each node and update its node
+            let total_added = node_types
+                .ids
+                .par_iter_mut()
+                .zip(self2.par_iter_node_names())
+                .map(|(node_type_ids, node_name)| {
+                    if node_name_prefixes
+                        .iter()
+                        .any(|prefix| node_name.starts_with(prefix))
+                    {
+                        if node_type_ids.is_none() {
+                            let _ = node_type_ids.insert(vec![node_type_id]);
+                            new_known_nodes.fetch_add(1, Ordering::SeqCst);
+                        } else {
+                            node_type_ids.as_mut().map(|value| {
+                                value.push(node_type_id);
+                                value.sort_unstable();
+                            });
+                        }
+                        1
+                    } else {
+                        0
+                    }
+                })
+                .sum::<NodeT>();
+            node_types.counts[node_type_id as usize] += total_added;
+            node_types.unknown_count -= new_known_nodes.load(Ordering::SeqCst);
+            node_types.update_min_max_count();
+        }
+        Ok(self)
+    }
+
+    /// Replaces inplace given edge type id to the nodes with given source and destination node type IDs.
+    ///
+    /// # Arguments
+    /// * `edge_type_id`: EdgeTypeT - The edge type ID to replace with.
+    /// * `source_node_type_ids`: Vec<Option<NodeTypeT>> - Node types of the source nodes. When an edge has a source node with any of this node types, we may change its edge type if also the destination nodes have the correct node types.
+    /// * `destination_node_type_ids`: Vec<Option<NodeTypeT>> - Node types of the destination nodes. When an edge has a destination node with any of this node types, we may change its edge type if also the source nodes have the correct node types.
+    ///
+    /// # Raises
+    /// * If the given list of node name prefixes is empty.
+    ///
+    pub fn replace_edge_type_id_from_edge_node_type_ids_inplace(
+        &mut self,
+        edge_type_id: EdgeTypeT,
+        source_node_type_ids: Vec<Option<NodeTypeT>>,
+        destination_node_type_ids: Vec<Option<NodeTypeT>>,
+    ) -> Result<&Graph> {
+        if source_node_type_ids.is_empty() {
+            return Err("The provided list of source node type IDs is empty!".to_string());
+        }
+        if destination_node_type_ids.is_empty() {
+            return Err("The provided list of destination node type IDs is empty!".to_string());
+        }
+
+        // check that the values are in the range of node type ids
+        self.validate_edge_type_id(Some(edge_type_id))?;
+        let source_node_type_ids = self.validate_node_type_ids(source_node_type_ids)?;
+        let destination_node_type_ids = self.validate_node_type_ids(destination_node_type_ids)?;
+        let count_changes = self
+            .iter_unique_edge_type_ids()?
+            .map(|_| AtomicI64::new(0))
+            .collect::<Vec<_>>();
+
+        let self2 = unsafe { &*(self as *mut Self) };
+
+        if let Some(edge_types) = Arc::make_mut(&mut self.edge_types) {
+            // Counter of how many new edges have known type (aka how many edges we addded)
+            let new_known_edges = AtomicU64::new(0);
+
+            // Iter over each edge and update its edge
+            edge_types
+                .ids
+                .par_iter_mut()
+                .zip(self2.par_iter_directed_edges())
+                .for_each(|(old_edge_type_id, (_, src, _, dst, _))| unsafe {
+                    let (src_node_type_ids, dst_node_type_ids) =
+                        if self2.is_directed() || src <= dst {
+                            (
+                                self2.get_unchecked_node_type_ids_from_node_id(src),
+                                self2.get_unchecked_node_type_ids_from_node_id(dst),
+                            )
+                        } else {
+                            (
+                                self2.get_unchecked_node_type_ids_from_node_id(dst),
+                                self2.get_unchecked_node_type_ids_from_node_id(src),
+                            )
+                        };
+                    let found_source = match src_node_type_ids {
+                        Some(src_node_type_ids) => src_node_type_ids.iter().any(|node_type_id| {
+                            source_node_type_ids.contains(&Some(*node_type_id))
+                        }),
+                        None => source_node_type_ids.contains(&None),
+                    };
+                    let found_destination = match dst_node_type_ids {
+                        Some(dst_node_type_ids) => dst_node_type_ids.iter().any(|node_type_id| {
+                            destination_node_type_ids.contains(&Some(*node_type_id))
+                        }),
+                        None => destination_node_type_ids.contains(&None),
+                    };
+                    if found_source && found_destination {
+                        count_changes[edge_type_id as usize].fetch_sub(1, Ordering::SeqCst);
+                        match old_edge_type_id {
+                            Some(old_edge_type_id) => {
+                                count_changes[*old_edge_type_id as usize]
+                                    .fetch_sub(1, Ordering::SeqCst);
+                                *old_edge_type_id = edge_type_id;
+                            }
+                            None => {
+                                let _ = old_edge_type_id.insert(edge_type_id);
+                                new_known_edges.fetch_add(1, Ordering::SeqCst);
+                            }
+                        }
+                    }
+                });
+            edge_types
+                .counts
+                .iter_mut()
+                .zip(count_changes.iter())
+                .for_each(|(count, delta)| {
+                    *count = (*count as i64 + delta.load(Ordering::SeqCst)) as EdgeT;
+                });
+            edge_types.unknown_count -= new_known_edges.load(Ordering::SeqCst);
+        }
+        Ok(self)
+    }
+
+    /// Replaces given edge type id to the nodes with given source and destination node type IDs.
+    ///
+    /// # Arguments
+    /// * `edge_type_id`: EdgeTypeT - The edge type ID to replace with.
+    /// * `source_node_type_ids`: Vec<Option<NodeTypeT>> - Node types of the source nodes. When an edge has a source node with any of this node types, we may change its edge type if also the destination nodes have the correct node types.
+    /// * `destination_node_type_ids`: Vec<Option<NodeTypeT>> - Node types of the destination nodes. When an edge has a destination node with any of this node types, we may change its edge type if also the source nodes have the correct node types.
+    ///
+    /// # Raises
+    /// * If the given list of node name prefixes is empty.
+    ///
+    pub fn replace_edge_type_id_from_edge_node_type_ids(
+        &mut self,
+        edge_type_id: EdgeTypeT,
+        source_node_type_ids: Vec<Option<NodeTypeT>>,
+        destination_node_type_ids: Vec<Option<NodeTypeT>>,
+    ) -> Result<Graph> {
+        let mut graph = self.clone();
+        graph.replace_edge_type_id_from_edge_node_type_ids_inplace(
+            edge_type_id,
+            source_node_type_ids,
+            destination_node_type_ids,
+        )?;
+        Ok(graph)
+    }
+
+    /// Assigns given node type id to the nodes with given prefixes.
+    ///
+    /// # Arguments
+    /// * `node_type_id`: NodeTypeT - The node type ID to assign.
+    /// * `node_name_prefixes`: Vec<String> - The node name prefixes to check for.
+    ///
+    /// # Raises
+    /// * If the given list of node name prefixes is empty.
+    ///
+    pub fn add_node_type_id_from_node_name_prefixes(
+        &self,
+        node_type_id: NodeTypeT,
+        node_name_prefixes: Vec<String>,
+    ) -> Result<Graph> {
+        let mut graph = self.clone();
+        graph.add_node_type_id_from_node_name_prefixes_inplace(node_type_id, node_name_prefixes)?;
+        Ok(graph)
+    }
+
+    /// Add node type name to the graph in place.
+    ///
+    /// # Arguments
+    /// * `node_type_name`: &str - The node type name to add.
+    ///
+    /// # Raises
+    /// * If the given node type name already exists in the graph.
+    ///
+    pub fn add_node_type_name_inplace(&mut self, node_type_name: String) -> Result<NodeTypeT> {
+        if let Some(node_types) = Arc::make_mut(&mut self.node_types) {
+            node_types.add_node_type_name_inplace(node_type_name)
+        } else {
+            unreachable!("Something has gone horribly wrong.")
+        }
+    }
+
+    /// Assigns inplace given node type name to the nodes with given prefixes.
+    ///
+    /// # Arguments
+    /// * `node_type_name`: &str - The node type ID to assign.
+    /// * `node_name_prefixes`: Vec<String> - The node name prefixes to check for.
+    ///
+    /// # Raises
+    /// * If the given list of node name prefixes is empty.
+    ///
+    pub fn add_node_type_name_from_node_name_prefixes_inplace(
+        &mut self,
+        node_type_name: String,
+        node_name_prefixes: Vec<String>,
+    ) -> Result<&Graph> {
+        let node_type_id = match self.get_node_type_id_from_node_type_name(&node_type_name) {
+            Ok(node_type_id) => node_type_id,
+            Err(_) => self.add_node_type_name_inplace(node_type_name)?,
+        };
+        self.add_node_type_id_from_node_name_prefixes_inplace(node_type_id, node_name_prefixes)
+    }
+
+    /// Add edge type name to the graph in place.
+    ///
+    /// # Arguments
+    /// * `edge_type_name`: &str - The edge type name to add.
+    ///
+    /// # Raises
+    /// * If the given edge type name already exists in the graph.
+    ///
+    pub fn add_edge_type_name_inplace(&mut self, edge_type_name: String) -> Result<EdgeTypeT> {
+        if let Some(edge_types) = Arc::make_mut(&mut self.edge_types) {
+            edge_types.add_edge_type_name_inplace(edge_type_name)
+        } else {
+            unreachable!("Something has gone horribly wrong.")
+        }
+    }
+
+    /// Replaces inplace given edge type name to the nodes with given source and destination node type names.
+    ///
+    /// # Arguments
+    /// * `edge_type_name`: String - The edge type name to replace with.
+    /// * `source_node_type_names`: Vec<Option<String>> - Node types of the source nodes. When an edge has a source node with any of this node types, we may change its edge type if also the destination nodes have the correct node types.
+    /// * `destination_node_type_names`: Vec<Option<String>> - Node types of the destination nodes. When an edge has a destination node with any of this node types, we may change its edge type if also the source nodes have the correct node types.
+    ///
+    /// # Raises
+    /// * If the given list of node name prefixes is empty.
+    ///
+    pub fn replace_edge_type_name_from_edge_node_type_names_inplace(
+        &mut self,
+        edge_type_name: String,
+        source_node_type_names: Vec<Option<String>>,
+        destination_node_type_names: Vec<Option<String>>,
+    ) -> Result<&Graph> {
+        let edge_type_id = match self.get_edge_type_id_from_edge_type_name(Some(&edge_type_name)) {
+            Ok(edge_type_id) => edge_type_id.unwrap(),
+            Err(_) => self.add_edge_type_name_inplace(edge_type_name)?,
+        };
+        let source_node_type_ids =
+            self.get_node_type_ids_from_node_type_names(source_node_type_names)?;
+        let destination_node_type_ids =
+            self.get_node_type_ids_from_node_type_names(destination_node_type_names)?;
+        self.replace_edge_type_id_from_edge_node_type_ids_inplace(
+            edge_type_id,
+            source_node_type_ids,
+            destination_node_type_ids,
+        )
+    }
+
+    /// Replaces given edge type name to the nodes with given source and destination node type names.
+    ///
+    /// # Arguments
+    /// * `edge_type_name`: String - The edge type name to replace with.
+    /// * `source_node_type_names`: Vec<Option<String>> - Node types of the source nodes. When an edge has a source node with any of this node types, we may change its edge type if also the destination nodes have the correct node types.
+    /// * `destination_node_type_names`: Vec<Option<String>> - Node types of the destination nodes. When an edge has a destination node with any of this node types, we may change its edge type if also the source nodes have the correct node types.
+    ///
+    /// # Raises
+    /// * If the given list of node name prefixes is empty.
+    ///
+    pub fn replace_edge_type_name_from_edge_node_type_names(
+        &mut self,
+        edge_type_name: String,
+        source_node_type_names: Vec<Option<String>>,
+        destination_node_type_names: Vec<Option<String>>,
+    ) -> Result<Graph> {
+        let mut graph = self.clone();
+        graph.replace_edge_type_name_from_edge_node_type_names_inplace(
+            edge_type_name,
+            source_node_type_names,
+            destination_node_type_names
+        )?;
+        Ok(graph)
+    }
+
+    /// Assigns given node type name to the nodes with given prefixes.
+    ///
+    /// # Arguments
+    /// * `node_type_name`: &str - The node type ID to assign.
+    /// * `node_name_prefixes`: Vec<String> - The node name prefixes to check for.
+    ///
+    /// # Raises
+    /// * If the given list of node name prefixes is empty.
+    ///
+    pub fn add_node_type_name_from_node_name_prefixes(
+        &self,
+        node_type_name: String,
+        node_name_prefixes: Vec<String>,
+    ) -> Result<Graph> {
+        let mut graph = self.clone();
+        let node_type_id = graph.add_node_type_name_inplace(node_type_name)?;
+        graph.add_node_type_id_from_node_name_prefixes_inplace(node_type_id, node_name_prefixes)?;
+        Ok(graph)
+    }
+
     /// Remove homogeneous node types from all nodes.
     ///
     /// If any given node remains with no node type, that node is labeled
@@ -215,10 +542,9 @@ impl Graph {
         edge_type_ids_to_remove: Vec<EdgeTypeT>,
     ) -> Result<&mut Graph> {
         self.must_have_edge_types()?;
-
         self.must_not_be_multigraph().map_err(|_| {
             concat!(
-                "The method remove_edge_type_id does not support multigraphs because ",
+                "The method remove_inplace_edge_type_ids does not support multigraphs because ",
                 "setting the edge types of all edges to a single one in this type",
                 "of graphs will cause a multigraph to collapse to an homogeneous ",
                 "graph, leading to multiple undefined behaviours, such as loosing ",
@@ -301,13 +627,14 @@ impl Graph {
     /// * If the given node type name does not exists in the graph.
     ///
     pub fn remove_inplace_node_type_names(&mut self, node_type_names: Vec<&str>) -> Result<&Graph> {
-        let node_type_ids = node_type_names.into_iter().map(|node_type_name|{
-            self.get_node_type_id_from_node_type_name(node_type_name)
-        }).collect::<Result<Vec<NodeTypeT>>>()?;
+        let node_type_ids = node_type_names
+            .into_iter()
+            .map(|node_type_name| self.get_node_type_id_from_node_type_name(node_type_name))
+            .collect::<Result<Vec<NodeTypeT>>>()?;
         self.remove_inplace_node_type_ids(node_type_ids)?;
         Ok(self)
     }
-    
+
     /// Remove given node type name from all nodes.
     ///
     /// If any given node remains with no node type, that node is labeled
@@ -487,7 +814,6 @@ impl Graph {
     pub fn remove_node_type_name(&self, node_type_name: &str) -> Result<Graph> {
         self.remove_node_type_names(vec![node_type_name])
     }
-    
 
     /// Remove given edge type name from all edges.
     ///
