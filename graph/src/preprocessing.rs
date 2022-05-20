@@ -344,7 +344,7 @@ impl Graph {
             ).to_string());
         }
 
-        if sample_only_edges_with_heterogeneous_node_types && self.has_homogeneous_node_types() {
+        if sample_only_edges_with_heterogeneous_node_types && self.has_homogeneous_node_types().unwrap() {
             return Err(concat!(
                 "The parameter `sample_only_edges_with_heterogeneous_node_types` was provided with value `true` ",
                 "but the current graph instance has homogeneous node types, that is all the nodes have ",
