@@ -12,14 +12,34 @@ impl Graph {
     /// # Arguments
     /// * `node_ids_to_keep`: Option<Vec<NodeT>> - List of node IDs to keep during filtering.
     /// * `node_ids_to_filter`: Option<Vec<NodeT>> - List of node IDs to remove during filtering.
-    /// * `node_names_to_keep_from_graph`: Option<Graph> - Graph whose nodes are to be kept.
-    /// * `node_names_to_remove_from_graph`: Option<Graph> - Graph whose nodes are to be removed.
+    /// * `node_names_to_keep_from_graph`: Option<&Graph> - Graph whose nodes are to be kept.
+    /// * `node_names_to_remove_from_graph`: Option<&Graph> - Graph whose nodes are to be removed.
     /// * `node_prefixes_to_keep`: Option<Vec<String>> - List of node prefixes to keep during filtering.
     /// * `node_prefixes_to_remove`: Option<Vec<String>> - List of node prefixes to remove during filtering.
     /// * `node_type_ids_to_keep`: Option<Vec<Option<Vec<NodeTypeT>>>> - List of node type IDs to keep during filtering. The node types must match entirely the given node types vector provided.
     /// * `node_type_ids_to_filter`: Option<Vec<Option<Vec<NodeTypeT>>>> - List of node type IDs to remove during filtering. The node types must match entirely the given node types vector provided.
     /// * `node_type_id_to_keep`: Option<Vec<Option<NodeTypeT>>> - List of node type IDs to keep during filtering. Any of node types must match with one of the node types given.
     /// * `node_type_id_to_filter`: Option<Vec<Option<NodeTypeT>>> - List of node type IDs to remove during filtering. Any of node types must match with one of the node types given.
+    /// * `source_node_ids_to_keep`: Option<Vec<NodeT>> - List of source node IDs to keep during filtering.
+    /// * `source_node_ids_to_filter`: Option<Vec<NodeT>> - List of source node IDs to remove during filtering.
+    /// * `source_node_names_to_keep_from_graph`: Option<&Graph> - Graph whose nodes are to be kept when they are source nodes in this graph instance.
+    /// * `source_node_names_to_remove_from_graph`: Option<&Graph> - Graph whose nodes are to be removed when they are source nodes in this graph instance.
+    /// * `source_node_prefixes_to_keep`: Option<Vec<String>> - List of source node prefixes to keep during filtering.
+    /// * `source_node_prefixes_to_remove`: Option<Vec<String>> - List of source node prefixes to remove during filtering.
+    /// * `source_node_type_ids_to_keep`: Option<Vec<Option<Vec<NodeTypeT>>>> - List of source node type IDs to keep during filtering. The node types must match entirely the given node types vector provided.
+    /// * `source_node_type_ids_to_filter`: Option<Vec<Option<Vec<NodeTypeT>>>> - List of source node type IDs to remove during filtering. The node types must match entirely the given node types vector provided.
+    /// * `source_node_type_id_to_keep`: Option<Vec<Option<NodeTypeT>>> - List of source node type IDs to keep during filtering. Any of source node types must match with one of the node types given.
+    /// * `source_node_type_id_to_filter`: Option<Vec<Option<NodeTypeT>>> - List of source node type IDs to remove during filtering. Any of source node types must match with one of the node types given.
+    /// * `destination_node_ids_to_keep`: Option<Vec<NodeT>> - List of destination node IDs to keep during filtering.
+    /// * `destination_node_ids_to_filter`: Option<Vec<NodeT>> - List of destination node IDs to remove during filtering.
+    /// * `destination_node_names_to_keep_from_graph`: Option<&Graph> - Graph whose nodes are to be kept when they are destination nodes in this graph instance.
+    /// * `destination_node_names_to_remove_from_graph`: Option<&Graph> - Graph whose nodes are to be removed when they are destination nodes in this graph instance.
+    /// * `destination_node_prefixes_to_keep`: Option<Vec<String>> - List of destination node prefixes to keep during filtering.
+    /// * `destination_node_prefixes_to_remove`: Option<Vec<String>> - List of destination node prefixes to remove during filtering.
+    /// * `destination_node_type_ids_to_keep`: Option<Vec<Option<Vec<NodeTypeT>>>> - List of destination node type IDs to keep during filtering. The node types must match entirely the given node types vector provided.
+    /// * `destination_node_type_ids_to_filter`: Option<Vec<Option<Vec<NodeTypeT>>>> - List of destination node type IDs to remove during filtering. The node types must match entirely the given node types vector provided.
+    /// * `destination_node_type_id_to_keep`: Option<Vec<Option<NodeTypeT>>> - List of destination node type IDs to keep during filtering. Any of destination node types must match with one of the node types given.
+    /// * `destination_node_type_id_to_filter`: Option<Vec<Option<NodeTypeT>>> - List of destination node type IDs to remove during filtering. Any of destination node types must match with one of the node types given.
     /// * `edge_ids_to_keep`: Option<Vec<EdgeT>> - List of edge IDs to keep during filtering.
     /// * `edge_ids_to_filter`: Option<Vec<EdgeT>> - List of edge IDs to remove during filtering.
     /// * `edge_node_ids_to_keep`: Option<Vec<(NodeT, NodeT)>> - List of tuple of node IDs to keep during filtering.
@@ -28,6 +48,8 @@ impl Graph {
     /// * `edge_type_ids_to_filter`: Option<Vec<Option<EdgeTypeT>>> - List of edge type IDs to remove during filtering.
     /// * `min_edge_weight`: Option<WeightT> - Minimum edge weight. Values lower than this are removed.
     /// * `max_edge_weight`: Option<WeightT> - Maximum edge weight. Values higher than this are removed.
+    /// * `min_node_degree`: Option<NodeT> - Minimum node degree. Values lower than this are removed.
+    /// * `max_node_degree`: Option<NodeT> - Maximum node degree. Values higher than this are removed.
     /// * `filter_singleton_nodes`: Option<bool> - Whether to filter out singleton nodes.
     /// * `filter_singleton_nodes_with_selfloop`: Option<bool> - Whether to filter out singleton nodes with selfloops.
     /// * `filter_selfloops`: Option<bool> - Whether to filter out selfloops.
@@ -51,14 +73,34 @@ impl Graph {
         &self,
         node_ids_to_keep: Option<Vec<NodeT>>,
         node_ids_to_filter: Option<Vec<NodeT>>,
-        node_names_to_keep_from_graph: Option<Graph>,
-        node_names_to_remove_from_graph: Option<Graph>,
+        node_names_to_keep_from_graph: Option<&Graph>,
+        node_names_to_remove_from_graph: Option<&Graph>,
         node_prefixes_to_keep: Option<Vec<String>>,
         node_prefixes_to_remove: Option<Vec<String>>,
         node_type_ids_to_keep: Option<Vec<Option<Vec<NodeTypeT>>>>,
         node_type_ids_to_filter: Option<Vec<Option<Vec<NodeTypeT>>>>,
         node_type_id_to_keep: Option<Vec<Option<NodeTypeT>>>,
         node_type_id_to_filter: Option<Vec<Option<NodeTypeT>>>,
+        source_node_ids_to_keep: Option<Vec<NodeT>>,
+        source_node_ids_to_filter: Option<Vec<NodeT>>,
+        source_node_names_to_keep_from_graph: Option<&Graph>,
+        source_node_names_to_remove_from_graph: Option<&Graph>,
+        source_node_prefixes_to_keep: Option<Vec<String>>,
+        source_node_prefixes_to_remove: Option<Vec<String>>,
+        source_node_type_ids_to_keep: Option<Vec<Option<Vec<NodeTypeT>>>>,
+        source_node_type_ids_to_filter: Option<Vec<Option<Vec<NodeTypeT>>>>,
+        source_node_type_id_to_keep: Option<Vec<Option<NodeTypeT>>>,
+        source_node_type_id_to_filter: Option<Vec<Option<NodeTypeT>>>,
+        destination_node_ids_to_keep: Option<Vec<NodeT>>,
+        destination_node_ids_to_filter: Option<Vec<NodeT>>,
+        destination_node_names_to_keep_from_graph: Option<&Graph>,
+        destination_node_names_to_remove_from_graph: Option<&Graph>,
+        destination_node_prefixes_to_keep: Option<Vec<String>>,
+        destination_node_prefixes_to_remove: Option<Vec<String>>,
+        destination_node_type_ids_to_keep: Option<Vec<Option<Vec<NodeTypeT>>>>,
+        destination_node_type_ids_to_filter: Option<Vec<Option<Vec<NodeTypeT>>>>,
+        destination_node_type_id_to_keep: Option<Vec<Option<NodeTypeT>>>,
+        destination_node_type_id_to_filter: Option<Vec<Option<NodeTypeT>>>,
         edge_ids_to_keep: Option<Vec<EdgeT>>,
         edge_ids_to_filter: Option<Vec<EdgeT>>,
         edge_node_ids_to_keep: Option<Vec<(NodeT, NodeT)>>,
@@ -67,6 +109,8 @@ impl Graph {
         edge_type_ids_to_filter: Option<Vec<Option<EdgeTypeT>>>,
         min_edge_weight: Option<WeightT>,
         max_edge_weight: Option<WeightT>,
+        min_node_degree: Option<NodeT>,
+        max_node_degree: Option<NodeT>,
         filter_singleton_nodes: Option<bool>,
         filter_singleton_nodes_with_selfloop: Option<bool>,
         filter_selfloops: Option<bool>,
@@ -102,6 +146,8 @@ impl Graph {
                 node_names_to_remove_from_graph.is_some(),
                 node_prefixes_to_keep.is_some(),
                 node_prefixes_to_remove.is_some(),
+                min_node_degree.is_some(),
+                max_node_degree.is_some(),
                 filter_singleton_nodes && self.has_singleton_nodes(),
                 filter_singleton_nodes_with_selfloop && self.has_singleton_nodes_with_selfloops(),
             ]
@@ -116,6 +162,26 @@ impl Graph {
                 edge_node_ids_to_filter.is_some(),
                 edge_type_ids_to_keep.is_some(),
                 edge_type_ids_to_filter.is_some(),
+                source_node_ids_to_keep.is_some(),
+                source_node_ids_to_filter.is_some(),
+                source_node_type_ids_to_keep.is_some(),
+                source_node_type_ids_to_filter.is_some(),
+                source_node_type_id_to_keep.is_some(),
+                source_node_type_id_to_filter.is_some(),
+                source_node_names_to_keep_from_graph.is_some(),
+                source_node_names_to_remove_from_graph.is_some(),
+                source_node_prefixes_to_keep.is_some(),
+                source_node_prefixes_to_remove.is_some(),
+                destination_node_ids_to_keep.is_some(),
+                destination_node_ids_to_filter.is_some(),
+                destination_node_type_ids_to_keep.is_some(),
+                destination_node_type_ids_to_filter.is_some(),
+                destination_node_type_id_to_keep.is_some(),
+                destination_node_type_id_to_filter.is_some(),
+                destination_node_names_to_keep_from_graph.is_some(),
+                destination_node_names_to_remove_from_graph.is_some(),
+                destination_node_prefixes_to_keep.is_some(),
+                destination_node_prefixes_to_remove.is_some(),
                 (min_edge_weight.is_some() || max_edge_weight.is_some()) && self.has_edge_weights(),
                 filter_selfloops && self.has_selfloops(),
                 filter_parallel_edges && self.is_multigraph(),
@@ -126,6 +192,127 @@ impl Graph {
 
         let min_edge_weight = min_edge_weight.unwrap_or(WeightT::NEG_INFINITY);
         let max_edge_weight = max_edge_weight.unwrap_or(WeightT::INFINITY);
+
+        let generic_node_filter = |(
+            node_id,
+            node_name,
+            node_type_ids,
+            node_names_to_keep_from_graph,
+            node_names_to_remove_from_graph,
+            node_prefixes_to_keep,
+            node_prefixes_to_remove,
+            node_type_ids_to_keep,
+            node_type_ids_to_filter,
+            node_type_id_to_keep,
+            node_type_id_to_filter,
+        ): (
+            &NodeT,
+            &String,
+            Option<&Vec<NodeTypeT>>,
+            Option<&Graph>,
+            Option<&Graph>,
+            Option<&Vec<String>>,
+            Option<&Vec<String>>,
+            Option<&Vec<Option<Vec<NodeTypeT>>>>,
+            Option<&Vec<Option<Vec<NodeTypeT>>>>,
+            Option<&Vec<Option<NodeTypeT>>>,
+            Option<&Vec<Option<NodeTypeT>>>,
+        )| {
+            node_ids_to_keep
+                .as_ref()
+                .map_or(true, |nitk| nitk.contains(node_id))
+                && node_ids_to_filter
+                    .as_ref()
+                    .map_or(true, |nitf| !nitf.contains(node_id))
+                && node_names_to_keep_from_graph
+                    .as_ref()
+                    .map_or(true, |g| g.has_node_name(node_name))
+                && node_names_to_remove_from_graph
+                    .as_ref()
+                    .map_or(true, |g| !g.has_node_name(node_name))
+                && node_prefixes_to_keep.as_ref().map_or(true, |nptk| {
+                    nptk.iter().any(|prefix| node_name.starts_with(prefix))
+                })
+                && node_prefixes_to_remove.as_ref().map_or(true, |nptk| {
+                    !nptk.iter().any(|prefix| node_name.starts_with(prefix))
+                })
+                && node_type_ids_to_keep.as_ref().map_or(true, |ntitk| {
+                    ntitk.contains(&node_type_ids.map(|x| x.clone()))
+                })
+                && node_type_ids_to_filter.as_ref().map_or(true, |ntitf| {
+                    !ntitf.contains(&node_type_ids.map(|x| x.clone()))
+                })
+                && node_type_id_to_keep
+                    .as_ref()
+                    .map_or(true, |ntitk| match node_type_ids {
+                        Some(node_type_ids) => node_type_ids
+                            .iter()
+                            .any(|node_type_id| ntitk.contains(&Some(*node_type_id))),
+                        None => ntitk.contains(&None),
+                    })
+                && !node_type_id_to_filter
+                    .as_ref()
+                    .map_or(false, |ntitf| match node_type_ids {
+                        Some(node_type_ids) => node_type_ids
+                            .iter()
+                            .any(|node_type_id| ntitf.contains(&Some(*node_type_id))),
+                        None => ntitf.contains(&None),
+                    })
+        };
+
+        let source_node_filter = |node_id, node_name, node_type_ids| {
+            generic_node_filter((
+                node_id,
+                node_name,
+                node_type_ids,
+                source_node_names_to_keep_from_graph,
+                source_node_names_to_remove_from_graph,
+                source_node_prefixes_to_keep.as_ref(),
+                source_node_prefixes_to_remove.as_ref(),
+                source_node_type_ids_to_keep.as_ref(),
+                source_node_type_ids_to_filter.as_ref(),
+                source_node_type_id_to_keep.as_ref(),
+                source_node_type_id_to_filter.as_ref(),
+            ))
+        };
+
+        let destination_node_filter = |node_id, node_name, node_type_ids| {
+            generic_node_filter((
+                node_id,
+                node_name,
+                node_type_ids,
+                destination_node_names_to_keep_from_graph,
+                destination_node_names_to_remove_from_graph,
+                destination_node_prefixes_to_keep.as_ref(),
+                destination_node_prefixes_to_remove.as_ref(),
+                destination_node_type_ids_to_keep.as_ref(),
+                destination_node_type_ids_to_filter.as_ref(),
+                destination_node_type_id_to_keep.as_ref(),
+                destination_node_type_id_to_filter.as_ref(),
+            ))
+        };
+
+        let node_filter = |node_id, node_name, node_type_ids| {
+            generic_node_filter(
+                (node_id,
+                node_name,
+                node_type_ids,
+                node_names_to_keep_from_graph,
+                node_names_to_remove_from_graph,
+                node_prefixes_to_keep.as_ref(),
+                node_prefixes_to_remove.as_ref(),
+                node_type_ids_to_keep.as_ref(),
+                node_type_ids_to_filter.as_ref(),
+                node_type_id_to_keep.as_ref(),
+                node_type_id_to_filter.as_ref(),)
+            )
+                && !(filter_singleton_nodes && unsafe{self.is_unchecked_singleton_from_node_id(*node_id)})
+                && !(filter_singleton_nodes
+                    && filter_selfloops
+                    && unsafe{self.is_unchecked_singleton_with_selfloops_from_node_id(*node_id)}) &&
+                // If singleton nodes with selfloops need to be filtered out
+                (!filter_singleton_nodes_with_selfloop || unsafe{!self.is_unchecked_singleton_with_selfloops_from_node_id(*node_id)})
+        };
 
         let edge_filter = |(edge_id, src, dst, edge_type_id, weight): &(
             EdgeT,
@@ -158,60 +345,6 @@ impl Graph {
             weight.map_or(true, |weight| weight >= min_edge_weight && weight <= max_edge_weight)
         };
 
-        let node_filter = |(node_id, node_name, node_type_ids, _): &(
-            NodeT,
-            String,
-            Option<&Vec<NodeTypeT>>,
-            Option<Vec<String>>,
-        )| {
-            node_ids_to_keep
-                .as_ref()
-                .map_or(true, |nitk| nitk.contains(node_id))
-                && node_ids_to_filter
-                    .as_ref()
-                    .map_or(true, |nitf| !nitf.contains(node_id))
-                && node_names_to_keep_from_graph
-                .as_ref()
-                .map_or(true, |g| g.has_node_name(node_name))
-                && node_names_to_remove_from_graph
-                    .as_ref()
-                    .map_or(true, |g| !g.has_node_name(node_name))
-                && node_prefixes_to_keep
-                .as_ref()
-                .map_or(true, |nptk| nptk.iter().any(|prefix| node_name.starts_with(prefix)))
-                && node_prefixes_to_remove
-                    .as_ref()
-                    .map_or(true, |nptk| !nptk.iter().any(|prefix| node_name.starts_with(prefix)))
-                && node_type_ids_to_keep
-                    .as_ref()
-                    .map_or(true, |ntitk| ntitk.contains(&node_type_ids.map(|x| x.clone())))
-                && node_type_ids_to_filter
-                    .as_ref()
-                    .map_or(true, |ntitf| !ntitf.contains(&node_type_ids.map(|x| x.clone())))
-                && node_type_id_to_keep
-                    .as_ref()
-                    .map_or(true, |ntitk| match node_type_ids {
-                        Some(node_type_ids) => node_type_ids
-                            .iter()
-                            .any(|node_type_id| ntitk.contains(&Some(*node_type_id))),
-                        None => ntitk.contains(&None),
-                    })
-                && !node_type_id_to_filter
-                    .as_ref()
-                    .map_or(false, |ntitf| match node_type_ids {
-                        Some(node_type_ids) => node_type_ids
-                            .iter()
-                            .any(|node_type_id| ntitf.contains(&Some(*node_type_id))),
-                        None => ntitf.contains(&None),
-                    })
-                && !(filter_singleton_nodes && unsafe{self.is_unchecked_singleton_from_node_id(*node_id)})
-                && !(filter_singleton_nodes
-                    && filter_selfloops
-                    && unsafe{self.is_unchecked_singleton_with_selfloops_from_node_id(*node_id)}) &&
-                // If singleton nodes with selfloops need to be filtered out
-                (!filter_singleton_nodes_with_selfloop || unsafe{!self.is_unchecked_singleton_with_selfloops_from_node_id(*node_id)})
-        };
-
         let mut edges_number = self.get_number_of_directed_edges();
 
         if filter_parallel_edges {
@@ -227,9 +360,23 @@ impl Graph {
             (false, false) => Ok(self.clone()),
             (false, true) => build_graph_from_integers(
                 Some(
-                    self.par_iter_directed_edge_node_ids_and_edge_type_id_and_edge_weight()
-                        .filter(edge_filter)
-                        .map(|(_, src, dst, edge_type, weight)| {
+                    self.par_iter_directed_edge_node_names_and_edge_type_name_and_edge_weight()
+                        .filter(
+                            |(edge_id, src, src_name, dst, dst_name, edge_type, _, weight)| unsafe {
+                                edge_filter(&(*edge_id, *src, *dst, *edge_type, *weight))
+                                    && source_node_filter(
+                                        src,
+                                        src_name,
+                                        self.get_unchecked_node_type_ids_from_node_id(*src),
+                                    )
+                                    && destination_node_filter(
+                                        dst,
+                                        dst_name,
+                                        self.get_unchecked_node_type_ids_from_node_id(*dst),
+                                    )
+                            },
+                        )
+                        .map(|(_, src, _, dst, _, edge_type, _, weight)| {
                             // We use 0 as index because this edge list
                             // is filtered and therefore there will be gaps
                             // in between the various edges and we cannot build
@@ -257,13 +404,15 @@ impl Graph {
                 let nodes_iterator: ItersWrapper<_, std::iter::Empty<_>, _> =
                     ItersWrapper::Parallel(
                         self.par_iter_node_names_and_node_type_names()
-                            .filter(node_filter)
+                            .filter(|(node_id, node_name, node_type_id, _)| {
+                                node_filter(node_id, node_name, *node_type_id)
+                            })
                             .map(|(_, node_name, _, node_types)| {
                                 Ok((0 as usize, (node_name, node_types)))
                             }),
                     );
                 let edges_iterator: ItersWrapper<_, std::iter::Empty<_>, _> = ItersWrapper::Parallel(
-                    self.par_iter_edge_node_names_and_edge_type_name_and_edge_weight(true)
+                    self.par_iter_directed_edge_node_names_and_edge_type_name_and_edge_weight()
                         .filter(
                             |(
                                 edge_id,
@@ -276,18 +425,26 @@ impl Graph {
                                 weight,
                             )| unsafe {
                                 edge_filter(&(*edge_id, *src, *dst, *edge_type, *weight))
-                                    && node_filter(&(
-                                        *src,
-                                        src_name.clone(),
+                                    && node_filter(
+                                        src,
+                                        src_name,
                                         self.get_unchecked_node_type_ids_from_node_id(*src),
-                                        None,
-                                    ))
-                                    && node_filter(&(
-                                        *dst,
-                                        dst_name.clone(),
+                                    )
+                                    && node_filter(
+                                        dst,
+                                        dst_name,
                                         self.get_unchecked_node_type_ids_from_node_id(*dst),
-                                        None,
-                                    ))
+                                    )  &&
+                                    source_node_filter(
+                                        src,
+                                        src_name,
+                                        self.get_unchecked_node_type_ids_from_node_id(*src),
+                                    ) &&
+                                    destination_node_filter(
+                                        dst,
+                                        dst_name,
+                                        self.get_unchecked_node_type_ids_from_node_id(*dst),
+                                    )
                             },
                         )
                         .map(|(_, _, src_name, _, dst_name, _, edge_type_name, weight)| {
@@ -342,20 +499,42 @@ impl Graph {
     /// # Arguments
     /// * `node_names_to_keep`: Option<Vec<&str>> - List of node names to keep during filtering.
     /// * `node_names_to_filter`: Option<Vec<&str>> - List of node names to remove during filtering.
-    /// * `node_names_to_keep_from_graph`: Option<Graph> - Graph whose nodes are to be kept.
-    /// * `node_names_to_remove_from_graph`: Option<Graph> - Graph whose nodes are to be removed.
+    /// * `node_names_to_keep_from_graph`: Option<&Graph> - Graph whose nodes are to be kept.
+    /// * `node_names_to_remove_from_graph`: Option<&Graph> - Graph whose nodes are to be removed.
     /// * `node_prefixes_to_keep`: Option<Vec<String>> - List of node prefixes to keep during filtering.
     /// * `node_prefixes_to_remove`: Option<Vec<String>> - List of node prefixes to remove during filtering.
     /// * `node_type_names_to_keep`: Option<Vec<Option<Vec<&str>>>> - List of node type names to keep during filtering. The node types must match entirely the given node types vector provided.
     /// * `node_type_names_to_filter`: Option<Vec<Option<Vec<&str>>>> - List of node type names to remove during filtering. The node types must match entirely the given node types vector provided.
     /// * `node_type_name_to_keep`: Option<Vec<Option<String>>> - List of node type name to keep during filtering. Any of node types must match with one of the node types given.
     /// * `node_type_name_to_filter`: Option<Vec<Option<String>>> - List of node type name to remove during filtering. Any of node types must match with one of the node types given.
+    /// * `source_node_names_to_keep`: Option<Vec<&str>> - List of source node names to keep during filtering.
+    /// * `source_node_names_to_filter`: Option<Vec<&str>> - List of source node names to remove during filtering.
+    /// * `source_node_names_to_keep_from_graph`: Option<&Graph> - Graph whose nodes are to be kept when they are source nodes.
+    /// * `source_node_names_to_remove_from_graph`: Option<&Graph> - Graph whose nodes are to be removed when they are source nodes.
+    /// * `source_node_prefixes_to_keep`: Option<Vec<String>> - List of source node prefixes to keep during filtering.
+    /// * `source_node_prefixes_to_remove`: Option<Vec<String>> - List of source node prefixes to remove during filtering.
+    /// * `source_node_type_names_to_keep`: Option<Vec<Option<Vec<&str>>>> - List of node type names of source nodes to keep during filtering. The node types must match entirely the given node types vector provided.
+    /// * `source_node_type_names_to_filter`: Option<Vec<Option<Vec<&str>>>> - List of node type names of source nodes to remove during filtering. The node types must match entirely the given node types vector provided.
+    /// * `source_node_type_name_to_keep`: Option<Vec<Option<String>>> - List of node type name of source nodes to keep during filtering. Any of node types must match with one of the node types given.
+    /// * `source_node_type_name_to_filter`: Option<Vec<Option<String>>> - List of node type name of source nodes to remove during filtering. Any of node types must match with one of the node types given.
+    /// * `destination_node_names_to_keep`: Option<Vec<&str>> - List of destination node names to keep during filtering.
+    /// * `destination_node_names_to_filter`: Option<Vec<&str>> - List of destination node names to remove during filtering.
+    /// * `destination_node_names_to_keep_from_graph`: Option<&Graph> - Graph whose nodes are to be kept when they are destination nodes.
+    /// * `destination_node_names_to_remove_from_graph`: Option<&Graph> - Graph whose nodes are to be removed when they are destination nodes.
+    /// * `destination_node_prefixes_to_keep`: Option<Vec<String>> - List of destination node prefixes to keep during filtering.
+    /// * `destination_node_prefixes_to_remove`: Option<Vec<String>> - List of destination node prefixes to remove during filtering.
+    /// * `destination_node_type_names_to_keep`: Option<Vec<Option<Vec<&str>>>> - List of node type names of destination nodes to keep during filtering. The node types must match entirely the given node types vector provided.
+    /// * `destination_node_type_names_to_filter`: Option<Vec<Option<Vec<&str>>>> - List of node type names of destination nodes to remove during filtering. The node types must match entirely the given node types vector provided.
+    /// * `destination_node_type_name_to_keep`: Option<Vec<Option<String>>> - List of node type name of destination nodes to keep during filtering. Any of node types must match with one of the node types given.
+    /// * `destination_node_type_name_to_filter`: Option<Vec<Option<String>>> - List of node type name of destination nodes to remove during filtering. Any of node types must match with one of the node types given.
     /// * `edge_node_names_to_keep`: Option<Vec<(&str, &str)>> - List of tuple of node names to keep during filtering.
     /// * `edge_node_names_to_filter`: Option<Vec<(&str, &str)>> - List of tuple of node names to remove during filtering.
     /// * `edge_type_names_to_keep`: Option<Vec<Option<String>>> - List of edge type names to keep during filtering.
     /// * `edge_type_names_to_filter`: Option<Vec<Option<String>>> - List of edge type names to remove during filtering.
     /// * `min_edge_weight`: Option<WeightT> - Minimum edge weight. Values lower than this are removed.
     /// * `max_edge_weight`: Option<WeightT> - Maximum edge weight. Values higher than this are removed.
+    /// * `min_node_degree`: Option<NodeT> - Minimum node degree. Values lower than this are removed.
+    /// * `max_node_degree`: Option<NodeT> - Maximum node degree. Values higher than this are removed.
     /// * `filter_singleton_nodes`: Option<bool> - Whether to filter out singletons.
     /// * `filter_singleton_nodes_with_selfloop`: Option<bool> - Whether to filter out singleton nodes with selfloops.
     /// * `filter_selfloops`: Option<bool> - Whether to filter out selfloops.
@@ -379,20 +558,42 @@ impl Graph {
         &self,
         node_names_to_keep: Option<Vec<&str>>,
         node_names_to_filter: Option<Vec<&str>>,
-        node_names_to_keep_from_graph: Option<Graph>,
-        node_names_to_remove_from_graph: Option<Graph>,
+        node_names_to_keep_from_graph: Option<&Graph>,
+        node_names_to_remove_from_graph: Option<&Graph>,
         node_prefixes_to_keep: Option<Vec<String>>,
         node_prefixes_to_remove: Option<Vec<String>>,
         node_type_names_to_keep: Option<Vec<Option<Vec<&str>>>>,
         node_type_names_to_filter: Option<Vec<Option<Vec<&str>>>>,
         node_type_name_to_keep: Option<Vec<Option<String>>>,
         node_type_name_to_filter: Option<Vec<Option<String>>>,
+        source_node_names_to_keep: Option<Vec<&str>>,
+        source_node_names_to_filter: Option<Vec<&str>>,
+        source_node_names_to_keep_from_graph: Option<&Graph>,
+        source_node_names_to_remove_from_graph: Option<&Graph>,
+        source_node_prefixes_to_keep: Option<Vec<String>>,
+        source_node_prefixes_to_remove: Option<Vec<String>>,
+        source_node_type_names_to_keep: Option<Vec<Option<Vec<&str>>>>,
+        source_node_type_names_to_filter: Option<Vec<Option<Vec<&str>>>>,
+        source_node_type_name_to_keep: Option<Vec<Option<String>>>,
+        source_node_type_name_to_filter: Option<Vec<Option<String>>>,
+        destination_node_names_to_keep: Option<Vec<&str>>,
+        destination_node_names_to_filter: Option<Vec<&str>>,
+        destination_node_names_to_keep_from_graph: Option<&Graph>,
+        destination_node_names_to_remove_from_graph: Option<&Graph>,
+        destination_node_prefixes_to_keep: Option<Vec<String>>,
+        destination_node_prefixes_to_remove: Option<Vec<String>>,
+        destination_node_type_names_to_keep: Option<Vec<Option<Vec<&str>>>>,
+        destination_node_type_names_to_filter: Option<Vec<Option<Vec<&str>>>>,
+        destination_node_type_name_to_keep: Option<Vec<Option<String>>>,
+        destination_node_type_name_to_filter: Option<Vec<Option<String>>>,
         edge_node_names_to_keep: Option<Vec<(&str, &str)>>,
         edge_node_names_to_filter: Option<Vec<(&str, &str)>>,
         edge_type_names_to_keep: Option<Vec<Option<String>>>,
         edge_type_names_to_filter: Option<Vec<Option<String>>>,
         min_edge_weight: Option<WeightT>,
         max_edge_weight: Option<WeightT>,
+        min_node_degree: Option<NodeT>,
+        max_node_degree: Option<NodeT>,
         filter_singleton_nodes: Option<bool>,
         filter_singleton_nodes_with_selfloop: Option<bool>,
         filter_selfloops: Option<bool>,
@@ -425,6 +626,58 @@ impl Graph {
             node_type_name_to_filter.map_or(Ok::<_, String>(None), |ntntf| {
                 Ok(Some(self.get_node_type_ids_from_node_type_names(ntntf)?))
             })?,
+            source_node_names_to_keep.map_or(Ok::<_, String>(None), |nntk| {
+                Ok(Some(self.get_node_ids_from_node_names(nntk)?))
+            })?,
+            source_node_names_to_filter.map_or(Ok::<_, String>(None), |nntf| {
+                Ok(Some(self.get_node_ids_from_node_names(nntf)?))
+            })?,
+            source_node_names_to_keep_from_graph,
+            source_node_names_to_remove_from_graph,
+            source_node_prefixes_to_keep,
+            source_node_prefixes_to_remove,
+            source_node_type_names_to_keep.map_or(Ok::<_, String>(None), |ntntk| {
+                Ok(Some(
+                    self.get_multiple_node_type_ids_from_node_type_names(ntntk)?,
+                ))
+            })?,
+            source_node_type_names_to_filter.map_or(Ok::<_, String>(None), |ntntf| {
+                Ok(Some(
+                    self.get_multiple_node_type_ids_from_node_type_names(ntntf)?,
+                ))
+            })?,
+            source_node_type_name_to_keep.map_or(Ok::<_, String>(None), |ntntf| {
+                Ok(Some(self.get_node_type_ids_from_node_type_names(ntntf)?))
+            })?,
+            source_node_type_name_to_filter.map_or(Ok::<_, String>(None), |ntntf| {
+                Ok(Some(self.get_node_type_ids_from_node_type_names(ntntf)?))
+            })?,
+            destination_node_names_to_keep.map_or(Ok::<_, String>(None), |nntk| {
+                Ok(Some(self.get_node_ids_from_node_names(nntk)?))
+            })?,
+            destination_node_names_to_filter.map_or(Ok::<_, String>(None), |nntf| {
+                Ok(Some(self.get_node_ids_from_node_names(nntf)?))
+            })?,
+            destination_node_names_to_keep_from_graph,
+            destination_node_names_to_remove_from_graph,
+            destination_node_prefixes_to_keep,
+            destination_node_prefixes_to_remove,
+            destination_node_type_names_to_keep.map_or(Ok::<_, String>(None), |ntntk| {
+                Ok(Some(
+                    self.get_multiple_node_type_ids_from_node_type_names(ntntk)?,
+                ))
+            })?,
+            destination_node_type_names_to_filter.map_or(Ok::<_, String>(None), |ntntf| {
+                Ok(Some(
+                    self.get_multiple_node_type_ids_from_node_type_names(ntntf)?,
+                ))
+            })?,
+            destination_node_type_name_to_keep.map_or(Ok::<_, String>(None), |ntntf| {
+                Ok(Some(self.get_node_type_ids_from_node_type_names(ntntf)?))
+            })?,
+            destination_node_type_name_to_filter.map_or(Ok::<_, String>(None), |ntntf| {
+                Ok(Some(self.get_node_type_ids_from_node_type_names(ntntf)?))
+            })?,
             None,
             None,
             edge_node_names_to_keep.map_or(Ok::<_, String>(None), |enntk| {
@@ -441,6 +694,8 @@ impl Graph {
             })?,
             min_edge_weight,
             max_edge_weight,
+            min_node_degree,
+            max_node_degree,
             filter_singleton_nodes,
             filter_singleton_nodes_with_selfloop,
             filter_selfloops,
@@ -465,6 +720,28 @@ impl Graph {
             None,
             None,
             Some(vec![None]),
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
             None,
             None,
             None,
@@ -510,6 +787,28 @@ impl Graph {
             None,
             None,
             None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
         )
         .unwrap()
     }
@@ -520,6 +819,28 @@ impl Graph {
     ///
     pub fn remove_singleton_nodes(&self) -> Graph {
         self.filter_from_ids(
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
             None,
             None,
             None,
@@ -575,6 +896,28 @@ impl Graph {
             None,
             None,
             None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
         )
     }
 
@@ -589,6 +932,28 @@ impl Graph {
         self.filter_from_ids(
             None,
             Some(node_ids_to_filter),
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
             None,
             None,
             None,
@@ -648,6 +1013,28 @@ impl Graph {
             None,
             None,
             None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
         )
         .unwrap()
     }
@@ -658,6 +1045,28 @@ impl Graph {
     ///
     pub fn remove_singleton_nodes_with_selfloops(&self) -> Graph {
         self.filter_from_ids(
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
             None,
             None,
             None,
@@ -708,6 +1117,28 @@ impl Graph {
             None,
             None,
             None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
             Some(true),
             Some(true),
             None,
@@ -740,6 +1171,28 @@ impl Graph {
             None,
             None,
             None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
             Some(true),
             None,
         )
@@ -749,6 +1202,28 @@ impl Graph {
     /// Returns new graph without parallel edges.
     pub fn remove_parallel_edges(&self) -> Graph {
         self.filter_from_ids(
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
             None,
             None,
             None,
