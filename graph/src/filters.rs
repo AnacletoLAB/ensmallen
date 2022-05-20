@@ -287,6 +287,22 @@ impl Graph {
             )
         };
 
+        let edge_node_filters =
+            |src, src_name, src_node_type_ids, dst, dst_name, dst_node_type_ids| {
+                if self.is_directed() {
+                    source_node_filter(src, src_name, src_node_type_ids)
+                        && destination_node_filter(dst, dst_name, dst_node_type_ids)
+                } else {
+                    if src > dst {
+                        source_node_filter(dst, dst_name, dst_node_type_ids)
+                            && destination_node_filter(src, src_name, src_node_type_ids)
+                    } else {
+                        source_node_filter(src, src_name, src_node_type_ids)
+                            && destination_node_filter(dst, dst_name, dst_node_type_ids)
+                    }
+                }
+            };
+
         let node_filter = |node_id, node_name, node_type_ids| {
             min_node_degree.as_ref().map_or(true, |&min_node_degree| unsafe {
                 self.get_unchecked_node_degree_from_node_id(node_id) >= min_node_degree
@@ -365,12 +381,10 @@ impl Graph {
                         .filter(
                             |(edge_id, src, src_name, dst, dst_name, edge_type, _, weight)| unsafe {
                                 edge_filter(*edge_id, *src, *dst, *edge_type, *weight)
-                                    && source_node_filter(
+                                    && edge_node_filters(
                                         *src,
                                         src_name.clone(),
                                         self.get_unchecked_node_type_ids_from_node_id(*src),
-                                    )
-                                    && destination_node_filter(
                                         *dst,
                                         dst_name.clone(),
                                         self.get_unchecked_node_type_ids_from_node_id(*dst),
@@ -436,12 +450,10 @@ impl Graph {
                                         dst_name.clone(),
                                         self.get_unchecked_node_type_ids_from_node_id(*dst),
                                     )  &&
-                                    source_node_filter(
+                                    edge_node_filters(
                                         *src,
                                         src_name.clone(),
                                         self.get_unchecked_node_type_ids_from_node_id(*src),
-                                    ) &&
-                                    destination_node_filter(
                                         *dst,
                                         dst_name.clone(),
                                         self.get_unchecked_node_type_ids_from_node_id(*dst),
