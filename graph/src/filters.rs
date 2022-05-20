@@ -132,26 +132,19 @@ impl Graph {
         let filter_selfloops = filter_selfloops.unwrap_or(false);
         let filter_parallel_edges = filter_parallel_edges.unwrap_or(false);
 
-        let node_ids_to_keep: Option<HashSet<NodeT>> = node_ids_to_keep
-            .map(|node_ids_to_keep| node_ids_to_keep.into_iter().collect());
-        let node_ids_to_remove: Option<HashSet<NodeT>> = node_ids_to_remove
-            .map(|node_ids_to_remove| node_ids_to_remove.into_iter().collect());
+        let node_ids_to_keep: Option<HashSet<NodeT>> =
+            node_ids_to_keep.map(|node_ids_to_keep| node_ids_to_keep.into_iter().collect());
+        let node_ids_to_remove: Option<HashSet<NodeT>> =
+            node_ids_to_remove.map(|node_ids_to_remove| node_ids_to_remove.into_iter().collect());
         let source_node_ids_to_keep: Option<HashSet<NodeT>> = source_node_ids_to_keep
             .map(|source_node_ids_to_keep| source_node_ids_to_keep.into_iter().collect());
-        let source_node_ids_to_remove: Option<HashSet<NodeT>> =
-            source_node_ids_to_remove.map(|source_node_ids_to_remove| {
-                source_node_ids_to_remove.into_iter().collect()
-            });
+        let source_node_ids_to_remove: Option<HashSet<NodeT>> = source_node_ids_to_remove
+            .map(|source_node_ids_to_remove| source_node_ids_to_remove.into_iter().collect());
         let destination_node_ids_to_keep: Option<HashSet<NodeT>> = destination_node_ids_to_keep
-            .map(|destination_node_ids_to_keep| {
-                destination_node_ids_to_keep.into_iter().collect()
-            });
+            .map(|destination_node_ids_to_keep| destination_node_ids_to_keep.into_iter().collect());
         let destination_node_ids_to_remove: Option<HashSet<NodeT>> = destination_node_ids_to_remove
             .map(|destination_node_ids_to_remove| {
-                destination_node_ids_to_remove
-                    .into_iter()
-                    
-                    .collect()
+                destination_node_ids_to_remove.into_iter().collect()
             });
 
         let has_node_filters = self.has_nodes()
@@ -214,51 +207,49 @@ impl Graph {
         let max_edge_weight = max_edge_weight.unwrap_or(WeightT::INFINITY);
 
         fn generic_node_filter(
-                node_id: NodeT,
-                node_name: String,
-                node_type_ids: Option<&Vec<NodeTypeT>>,
-                node_ids_to_keep: Option<&HashSet<NodeTypeT>>,
-                node_ids_to_remove: Option<&HashSet<NodeTypeT>>,
-                node_names_to_keep_from_graph: Option<&Graph>,
-                node_names_to_remove_from_graph: Option<&Graph>,
-                node_prefixes_to_keep: Option<&Vec<String>>,
-                node_prefixes_to_remove: Option<&Vec<String>>,
-                node_type_ids_to_keep: Option<&Vec<Option<Vec<NodeTypeT>>>>,
-                node_type_ids_to_remove: Option<&Vec<Option<Vec<NodeTypeT>>>>,
-                node_type_id_to_keep: Option<&Vec<Option<NodeTypeT>>>,
-                node_type_id_to_remove: Option<&Vec<Option<NodeTypeT>>>
-            ) -> bool {
-                      
-                node_ids_to_keep.map_or(true, |nitk| nitk.contains(&node_id))
-                    && node_ids_to_remove
-                        .map_or(true, |nitf| !nitf.contains(&node_id))
-                    && node_names_to_keep_from_graph.map_or(true, |g| g.has_node_name(&node_name))
-                    && node_names_to_remove_from_graph.map_or(true, |g| !g.has_node_name(&node_name))
-                    && node_prefixes_to_keep.map_or(true, |nptk| {
-                        nptk.iter().any(|prefix| node_name.starts_with(prefix))
-                    })
-                    && node_prefixes_to_remove.map_or(true, |nptk| {
-                        !nptk.iter().any(|prefix| node_name.starts_with(prefix))
-                    })
-                    && node_type_ids_to_keep.map_or(true, |ntitk| {
-                        ntitk.contains(&node_type_ids.map(|x| x.clone()))
-                    })
-                    && node_type_ids_to_remove.map_or(true, |ntitf| {
-                        !ntitf.contains(&node_type_ids.map(|x| x.clone()))
-                    })
-                    && node_type_id_to_keep.map_or(true, |ntitk| match node_type_ids {
-                        Some(node_type_ids) => node_type_ids
-                            .iter()
-                            .any(|node_type_id| ntitk.contains(&Some(*node_type_id))),
-                        None => ntitk.contains(&None),
-                    })
-                    && !node_type_id_to_remove.map_or(false, |ntitf| match node_type_ids {
-                        Some(node_type_ids) => node_type_ids
-                            .iter()
-                            .any(|node_type_id| ntitf.contains(&Some(*node_type_id))),
-                        None => ntitf.contains(&None),
-                    })
-            }
+            node_id: NodeT,
+            node_name: String,
+            node_type_ids: Option<&Vec<NodeTypeT>>,
+            node_ids_to_keep: Option<&HashSet<NodeTypeT>>,
+            node_ids_to_remove: Option<&HashSet<NodeTypeT>>,
+            node_names_to_keep_from_graph: Option<&Graph>,
+            node_names_to_remove_from_graph: Option<&Graph>,
+            node_prefixes_to_keep: Option<&Vec<String>>,
+            node_prefixes_to_remove: Option<&Vec<String>>,
+            node_type_ids_to_keep: Option<&Vec<Option<Vec<NodeTypeT>>>>,
+            node_type_ids_to_remove: Option<&Vec<Option<Vec<NodeTypeT>>>>,
+            node_type_id_to_keep: Option<&Vec<Option<NodeTypeT>>>,
+            node_type_id_to_remove: Option<&Vec<Option<NodeTypeT>>>,
+        ) -> bool {
+            node_ids_to_keep.map_or(true, |nitk| nitk.contains(&node_id))
+                && node_ids_to_remove.map_or(true, |nitf| !nitf.contains(&node_id))
+                && node_names_to_keep_from_graph.map_or(true, |g| g.has_node_name(&node_name))
+                && node_names_to_remove_from_graph.map_or(true, |g| !g.has_node_name(&node_name))
+                && node_prefixes_to_keep.map_or(true, |nptk| {
+                    nptk.iter().any(|prefix| node_name.starts_with(prefix))
+                })
+                && node_prefixes_to_remove.map_or(true, |nptk| {
+                    !nptk.iter().any(|prefix| node_name.starts_with(prefix))
+                })
+                && node_type_ids_to_keep.map_or(true, |ntitk| {
+                    ntitk.contains(&node_type_ids.map(|x| x.clone()))
+                })
+                && node_type_ids_to_remove.map_or(true, |ntitf| {
+                    !ntitf.contains(&node_type_ids.map(|x| x.clone()))
+                })
+                && node_type_id_to_keep.map_or(true, |ntitk| match node_type_ids {
+                    Some(node_type_ids) => node_type_ids
+                        .iter()
+                        .any(|node_type_id| ntitk.contains(&Some(*node_type_id))),
+                    None => ntitk.contains(&None),
+                })
+                && !node_type_id_to_remove.map_or(false, |ntitf| match node_type_ids {
+                    Some(node_type_ids) => node_type_ids
+                        .iter()
+                        .any(|node_type_id| ntitf.contains(&Some(*node_type_id))),
+                    None => ntitf.contains(&None),
+                })
+        }
 
         let source_node_filter = |node_id, node_name, node_type_ids| {
             generic_node_filter(
@@ -297,6 +288,12 @@ impl Graph {
         };
 
         let node_filter = |node_id, node_name, node_type_ids| {
+            min_node_degree.as_ref().map_or(true, |&min_node_degree| unsafe {
+                self.get_unchecked_node_degree_from_node_id(node_id) >= min_node_degree
+            }) &&
+            max_node_degree.as_ref().map_or(true, |&max_node_degree| unsafe {
+                self.get_unchecked_node_degree_from_node_id(node_id) <= max_node_degree
+            }) &&
             generic_node_filter(
                 node_id,
                 node_name,
@@ -320,7 +317,11 @@ impl Graph {
                 (!filter_singleton_nodes_with_selfloop || unsafe{!self.is_unchecked_singleton_with_selfloops_from_node_id(node_id)})
         };
 
-        let edge_filter = |edge_id: EdgeT, src, dst, edge_type_id: Option<EdgeTypeT>, weight: Option<WeightT>| {
+        let edge_filter = |edge_id: EdgeT,
+                           src,
+                           dst,
+                           edge_type_id: Option<EdgeTypeT>,
+                           weight: Option<WeightT>| {
             edge_ids_to_keep.as_ref().map_or(true, |edge_ids| edge_ids.contains(&edge_id)) &&
             edge_ids_to_remove.as_ref().map_or(true, |edge_ids| !edge_ids.contains(&edge_id)) &&
             // If parallel edges need to be filtered out.
