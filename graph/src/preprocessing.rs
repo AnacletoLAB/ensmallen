@@ -344,6 +344,16 @@ impl Graph {
             ).to_string());
         }
 
+        if sample_only_edges_with_heterogeneous_node_types && self.has_homogeneous_node_types() {
+            return Err(concat!(
+                "The parameter `sample_only_edges_with_heterogeneous_node_types` was provided with value `true` ",
+                "but the current graph instance has homogeneous node types, that is all the nodes have ",
+                "the same node type. ",
+                "If you expected to have heterogeneous node types within this graph, maybe you have either dropped them ",
+                "with a wrong filter operation or use the wrong parametrization to load the graph."
+            ).to_string());
+        }
+
         if negative_samples_rate < 0.0
             || negative_samples_rate > 1.0
             || !negative_samples_rate.is_finite()

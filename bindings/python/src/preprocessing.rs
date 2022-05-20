@@ -1050,7 +1050,7 @@ impl Graph {
     }
 
     #[text_signature = "($self, normalize, verbose)"]
-    /// Returns all available edge prediction metrics for given edges.
+    /// Returns all available edge prediction metrics for all the edges.
     ///
     /// The metrics returned are, in order:
     /// - Adamic Adar index
