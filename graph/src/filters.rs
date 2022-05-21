@@ -289,17 +289,12 @@ impl Graph {
 
         let edge_node_filters =
             |src, src_name, src_node_type_ids, dst, dst_name, dst_node_type_ids| {
-                if self.is_directed() {
+                if self.is_directed() || src <= dst{
                     source_node_filter(src, src_name, src_node_type_ids)
                         && destination_node_filter(dst, dst_name, dst_node_type_ids)
                 } else {
-                    if src > dst {
-                        source_node_filter(dst, dst_name, dst_node_type_ids)
-                            && destination_node_filter(src, src_name, src_node_type_ids)
-                    } else {
-                        source_node_filter(src, src_name, src_node_type_ids)
-                            && destination_node_filter(dst, dst_name, dst_node_type_ids)
-                    }
+                    source_node_filter(dst, dst_name, dst_node_type_ids)
+                        && destination_node_filter(src, src_name, src_node_type_ids)
                 }
             };
 

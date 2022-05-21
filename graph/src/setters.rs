@@ -315,7 +315,7 @@ impl Graph {
                         None => destination_node_type_ids.contains(&None),
                     };
                     if found_source && found_destination {
-                        count_changes[edge_type_id as usize].fetch_sub(1, Ordering::SeqCst);
+                        count_changes[edge_type_id as usize].fetch_add(1, Ordering::SeqCst);
                         match old_edge_type_id {
                             Some(old_edge_type_id) => {
                                 count_changes[*old_edge_type_id as usize]
