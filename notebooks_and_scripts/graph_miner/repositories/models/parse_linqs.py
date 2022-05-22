@@ -39,7 +39,7 @@ def get_words_data(
     
     # Filtering graph
     filtered_graph = graph.filter_from_names(
-        node_type_name_to_filter=["Word"],
+        node_type_name_to_remove=["Word"],
     ).remove_edge_weights().remove_edge_types()
     # Check if there are unavailable nodes.
     unavailable_nodes = list(set(filtered_graph.get_node_names()) - set(node_features.index))
