@@ -2,6 +2,7 @@ use super::types::*;
 use super::*;
 use num_traits::Pow;
 use num_traits::Zero;
+use rayon::prelude::*;
 
 /// # Properties and measurements of the graph
 impl Graph {
@@ -313,7 +314,7 @@ impl Graph {
     ///
     /// # Implementation details
     /// Since the Adamic/Adar Index is only defined for graph not containing
-    /// node traps (nodes without any outbound edge) and must support all kind
+    /// node traps (nodes without any outbound edge) and must subgraph all kind
     /// of graphs, the sinks node are excluded from
     /// the computation because they would result in an infinity.
     ///
@@ -348,7 +349,7 @@ impl Graph {
     ///
     /// # Implementation details
     /// Since the Adamic/Adar Index is only defined for graph not containing
-    /// node traps (nodes without any outbound edge) and must support all kind
+    /// node traps (nodes without any outbound edge) and must subgraph all kind
     /// of graphs, the sinks node are excluded from
     /// the computation because they would result in an infinity.
     ///
@@ -380,7 +381,7 @@ impl Graph {
     ///
     /// # Implementation details
     /// Since the Adamic/Adar Index is only defined for graph not containing
-    /// node traps (nodes without any outbound edge) and must support all kind
+    /// node traps (nodes without any outbound edge) and must subgraph all kind
     /// of graphs, the sinks node are excluded from
     /// the computation because they would result in an infinity.
     ///
@@ -418,7 +419,7 @@ impl Graph {
     /// # Implementation details
     /// Since the Resource Allocation Index is only defined for graph not
     /// containing node traps (nodes without any outbound edge) and
-    /// must support all kind of graphs, the sinks node are excluded from
+    /// must subgraph all kind of graphs, the sinks node are excluded from
     /// the computation because they would result in an infinity.
     ///
     /// # Safety
@@ -454,7 +455,7 @@ impl Graph {
     /// # Implementation details
     /// Since the Resource Allocation Index is only defined for graph not
     /// containing node traps (nodes without any outbound edge) and
-    /// must support all kind of graphs, the sinks node are excluded from
+    /// must subgraph all kind of graphs, the sinks node are excluded from
     /// the computation because they would result in an infinity.
     ///
     /// # Safety
@@ -490,7 +491,7 @@ impl Graph {
     /// # Implementation details
     /// Since the Resource Allocation Index is only defined for graph not
     /// containing node traps (nodes without any outbound edge) and
-    /// must support all kind of graphs, the sinks node are excluded from
+    /// must subgraph all kind of graphs, the sinks node are excluded from
     /// the computation because they would result in an infinity.
     ///
     /// # Raises
@@ -523,7 +524,7 @@ impl Graph {
     /// # Implementation details
     /// Since the Resource Allocation Index is only defined for graph not
     /// containing node traps (nodes without any outbound edge) and
-    /// must support all kind of graphs, the sinks node are excluded from
+    /// must subgraph all kind of graphs, the sinks node are excluded from
     /// the computation because they would result in an infinity.
     ///
     /// # Raises
@@ -556,7 +557,7 @@ impl Graph {
     /// # Implementation details
     /// Since the Resource Allocation Index is only defined for graph not
     /// containing node traps (nodes without any outbound edge) and
-    /// must support all kind of graphs, the sinks node are excluded from
+    /// must subgraph all kind of graphs, the sinks node are excluded from
     /// the computation because they would result in an infinity.
     ///
     /// # Raises
@@ -590,7 +591,7 @@ impl Graph {
     /// # Implementation details
     /// Since the Resource Allocation Index is only defined for graph not
     /// containing node traps (nodes without any outbound edge) and
-    /// must support all kind of graphs, the sinks node are excluded from
+    /// must subgraph all kind of graphs, the sinks node are excluded from
     /// the computation because they would result in an infinity.
     ///
     /// # Raises
@@ -609,18 +610,18 @@ impl Graph {
         })
     }
 
-    /// Returns number of currently supported edge metrics.
+    /// Returns number of currently subgraphed edge metrics.
     pub fn get_number_of_available_edge_metrics(&self) -> usize {
         4
     }
 
-    /// Returns names of currently supported edge metrics.
+    /// Returns names of currently subgraphed edge metrics.
     pub fn get_available_edge_metrics_names(&self) -> Vec<&str> {
         vec![
             "Adamic Adar",
             "Jaccard Coefficient",
             "Resource allocation index",
-            "Preferential attachment"
+            "Preferential attachment",
         ]
     }
 
@@ -661,5 +662,252 @@ impl Graph {
                 normalize,
             ),
         ]
+    }
+
+    /// Returns parallel iterator on Preferential Attachment for all edges.
+    ///
+    /// # Arguments
+    /// `normalize`: Option<bool> - Whether to normalize the edge prediction metrics. By default, true.
+    /// `subgraph`: Option<&Graph> - Optional subgraph whose edges are to be used when computing the Preferential Attachment.
+    ///
+    /// # Raises
+    /// * If the provided subgraph graph does not share a compatible vocabulary with the current graph instance.
+    pub fn par_iter_preferential_attachment_scores<'a>(
+        &'a self,
+        normalize: Option<bool>,
+        subgraph: Option<&'a Graph>,
+    ) -> Result<impl IndexedParallelIterator<Item = f32> + 'a> {
+        let subgraph = if let Some(subgraph) = subgraph {
+            self.must_share_node_vocabulary(subgraph)?;
+            subgraph
+        } else {
+            &self
+        };
+        let normalize = normalize.unwrap_or(true);
+        Ok(subgraph.par_iter_directed_edge_node_ids().map(
+            move |(_, source_node_id, destination_node_id)| unsafe {
+                self.get_unchecked_preferential_attachment_from_node_ids(
+                    source_node_id,
+                    destination_node_id,
+                    normalize
+                )
+            },
+        ))
+    }
+
+    /// Returns Preferential Attachment for all edges.
+    ///
+    /// # Arguments
+    /// `normalize`: Option<bool> - Whether to normalize the edge prediction metrics. By default, true.
+    /// `subgraph`: Option<&Graph> - Optional subgraph whose edges are to be used when computing the Preferential Attachment.
+    ///
+    /// # Raises
+    /// * If the provided subgraph graph does not share a compatible vocabulary with the current graph instance.
+    pub fn get_preferential_attachment_scores(
+        &self,
+        normalize: Option<bool>,
+        subgraph: Option<&Graph>,
+    ) -> Result<Vec<f32>> {
+        self.par_iter_preferential_attachment_scores(normalize, subgraph)
+            .map(|iter| {
+                let mut result = Vec::with_capacity(iter.len());
+                iter.collect_into_vec(&mut result);
+                result
+            })
+    }
+
+    /// Returns parallel iterator on Resource Allocation index for all edges.
+    ///
+    /// # Arguments
+    /// `subgraph`: Option<&Graph> - Optional subgraph whose edges are to be used when computing the Resource Allocation index.
+    ///
+    /// # Raises
+    /// * If the provided subgraph graph does not share a compatible vocabulary with the current graph instance.
+    pub fn par_iter_resource_allocation_index_scores<'a>(
+        &'a self,
+        subgraph: Option<&'a Graph>,
+    ) -> Result<impl IndexedParallelIterator<Item = f32> + 'a> {
+        let subgraph = if let Some(subgraph) = subgraph {
+            self.must_share_node_vocabulary(subgraph)?;
+            subgraph
+        } else {
+            &self
+        };
+        Ok(subgraph.par_iter_directed_edge_node_ids().map(
+            move |(_, source_node_id, destination_node_id)| unsafe {
+                self.get_unchecked_resource_allocation_index_from_node_ids(
+                    source_node_id,
+                    destination_node_id,
+                )
+            },
+        ))
+    }
+
+    /// Returns Resource Allocation index for all edges.
+    ///
+    /// # Arguments
+    /// `subgraph`: Option<&Graph> - Optional subgraph whose edges are to be used when computing the Resource Allocation index.
+    ///
+    /// # Raises
+    /// * If the provided subgraph graph does not share a compatible vocabulary with the current graph instance.
+    pub fn get_resource_allocation_index_scores(
+        &self,
+        subgraph: Option<&Graph>,
+    ) -> Result<Vec<f32>> {
+        self.par_iter_resource_allocation_index_scores(subgraph)
+            .map(|iter| {
+                let mut result = Vec::with_capacity(iter.len());
+                iter.collect_into_vec(&mut result);
+                result
+            })
+    }
+
+    /// Returns parallel iterator on Jaccard Coefficient for all edges.
+    ///
+    /// # Arguments
+    /// `subgraph`: Option<&Graph> - Optional subgraph whose edges are to be used when computing the Jaccard Coefficient.
+    ///
+    /// # Raises
+    /// * If the provided subgraph graph does not share a compatible vocabulary with the current graph instance.
+    pub fn par_iter_jaccard_coefficient_scores<'a>(
+        &'a self,
+        subgraph: Option<&'a Graph>,
+    ) -> Result<impl IndexedParallelIterator<Item = f32> + 'a> {
+        let subgraph = if let Some(subgraph) = subgraph {
+            self.must_share_node_vocabulary(subgraph)?;
+            subgraph
+        } else {
+            &self
+        };
+        Ok(subgraph.par_iter_directed_edge_node_ids().map(
+            move |(_, source_node_id, destination_node_id)| unsafe {
+                self.get_unchecked_jaccard_coefficient_from_node_ids(
+                    source_node_id,
+                    destination_node_id,
+                )
+            },
+        ))
+    }
+
+    /// Returns Jaccard Coefficient for all edges.
+    ///
+    /// # Arguments
+    /// `subgraph`: Option<&Graph> - Optional subgraph whose edges are to be used when computing the Jaccard Coefficient.
+    ///
+    /// # Raises
+    /// * If the provided subgraph graph does not share a compatible vocabulary with the current graph instance.
+    pub fn get_jaccard_coefficient_scores(&self, subgraph: Option<&Graph>) -> Result<Vec<f32>> {
+        self.par_iter_jaccard_coefficient_scores(subgraph)
+            .map(|iter| {
+                let mut result = Vec::with_capacity(iter.len());
+                iter.collect_into_vec(&mut result);
+                result
+            })
+    }
+
+    /// Returns parallel iterator on Adamic-Adar for all edges.
+    ///
+    /// # Arguments
+    /// `subgraph`: Option<&Graph> - Optional subgraph whose edges are to be used when computing the Adamic-Adar.
+    ///
+    /// # Raises
+    /// * If the provided subgraph graph does not share a compatible vocabulary with the current graph instance.
+    pub fn par_iter_adamic_adar_scores<'a>(
+        &'a self,
+        subgraph: Option<&'a Graph>,
+    ) -> Result<impl IndexedParallelIterator<Item = f32> + 'a> {
+        let subgraph = if let Some(subgraph) = subgraph {
+            self.must_share_node_vocabulary(subgraph)?;
+            subgraph
+        } else {
+            &self
+        };
+        Ok(subgraph.par_iter_directed_edge_node_ids().map(
+            move |(_, source_node_id, destination_node_id)| unsafe {
+                self.get_unchecked_adamic_adar_index_from_node_ids(
+                    source_node_id,
+                    destination_node_id,
+                )
+            },
+        ))
+    }
+
+    /// Returns Adamic-Adar for all edges.
+    ///
+    /// # Arguments
+    /// `subgraph`: Option<&Graph> - Optional subgraph whose edges are to be used when computing the Adamic-Adar.
+    ///
+    /// # Raises
+    /// * If the provided subgraph graph does not share a compatible vocabulary with the current graph instance.
+    pub fn get_adamic_adar_scores(&self, subgraph: Option<&Graph>) -> Result<Vec<f32>> {
+        self.par_iter_adamic_adar_scores(subgraph).map(|iter| {
+            let mut result = Vec::with_capacity(iter.len());
+            iter.collect_into_vec(&mut result);
+            result
+        })
+    }
+
+    /// Returns parallel iterator on all available edge metrics for all edges.
+    ///
+    /// The metrics returned are, in order:
+    /// - Adamic-Adar
+    /// - Jaccard Coefficient
+    /// - Resource Allocation index
+    /// - Preferential attachment score
+    ///
+    /// # Arguments
+    /// `normalize`: Option<bool> - Whether to normalize the edge prediction metrics. By default, true.
+    /// `subgraph`: Option<&Graph> - Optional subgraph whose edges are to be used when computing the metrics.
+    ///
+    /// # Raises
+    /// * If the provided subgraph graph does not share a compatible vocabulary with the current graph instance.
+    pub fn par_iter_all_edge_metrics<'a>(
+        &'a self,
+        normalize: Option<bool>,
+        subgraph: Option<&'a Graph>,
+    ) -> Result<impl IndexedParallelIterator<Item = Vec<f32>> + 'a> {
+        let normalize = normalize.unwrap_or(true);
+        let subgraph = if let Some(subgraph) = subgraph {
+            self.must_share_node_vocabulary(subgraph)?;
+            subgraph
+        } else {
+            &self
+        };
+        Ok(subgraph.par_iter_directed_edge_node_ids().map(
+            move |(_, source_node_id, destination_node_id)| unsafe {
+                self.get_unchecked_all_edge_metrics_from_node_ids(
+                    source_node_id,
+                    destination_node_id,
+                    normalize,
+                )
+            },
+        ))
+    }
+
+    /// Returns all available edge metrics for all edges.
+    ///
+    /// The metrics returned are, in order:
+    /// - Adamic-Adar
+    /// - Jaccard Coefficient
+    /// - Resource Allocation index
+    /// - Preferential attachment score
+    ///
+    /// # Arguments
+    /// `normalize`: Option<bool> - Whether to normalize the edge prediction metrics. By default, true.
+    /// `subgraph`: Option<&Graph> - Optional subgraph whose edges are to be used when computing the metrics.
+    ///
+    /// # Raises
+    /// * If the provided subgraph graph does not share a compatible vocabulary with the current graph instance.
+    pub fn get_all_edge_metrics(
+        &self,
+        normalize: Option<bool>,
+        subgraph: Option<&Graph>,
+    ) -> Result<Vec<Vec<f32>>> {
+        self.par_iter_all_edge_metrics(normalize, subgraph)
+            .map(|iter| {
+                let mut result = Vec::with_capacity(iter.len());
+                iter.collect_into_vec(&mut result);
+                result
+            })
     }
 }

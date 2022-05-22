@@ -91,8 +91,9 @@ impl Graph {
     /// * `destination_edge_types_names`: Option<Vec<String>> - Edge type names of the nodes to be samples as destinations. If a node has any of the provided edge types, it can be sampled as a destination node.
     /// * `source_nodes_prefixes`: Option<Vec<String>> - Prefixes of the nodes names to be samples as sources. If a node starts with any of the provided prefixes, it can be sampled as a source node.
     /// * `destination_nodes_prefixes`: Option<Vec<String>> - Prefixes of the nodes names to be samples as destinations. If a node starts with any of the provided prefixes, it can be sampled as a destinations node.
-    fn get_graph_sampling_filter(
-        &self,
+    /// * `support`: Option<&Graph> - Parent graph of this subgraph, defining the `true` topology of the graph. Node degrees and connected components are sampled from this support graph when provided. Useful when sampling negative edges for a test graph. In this latter case, the support graph should be the training graph.
+    fn get_graph_sampling_filter<'a>(
+        &'a self,
         sample_only_edges_with_heterogeneous_node_types: Option<bool>,
         minimum_node_degree: Option<NodeT>,
         maximum_node_degree: Option<NodeT>,
@@ -102,6 +103,7 @@ impl Graph {
         destination_edge_types_names: Option<Vec<String>>,
         source_nodes_prefixes: Option<Vec<String>>,
         destination_nodes_prefixes: Option<Vec<String>>,
+        support: &'a Graph
     ) -> Result<impl Fn(NodeT, NodeT) -> bool + '_> {
         let sample_only_edges_with_heterogeneous_node_types =
             sample_only_edges_with_heterogeneous_node_types.unwrap_or(false);
@@ -275,16 +277,16 @@ impl Graph {
 
             unsafe {
                 if let Some(minimum_node_degree) = &minimum_node_degree {
-                    if self.get_unchecked_node_degree_from_node_id(src) < *minimum_node_degree
-                        || self.get_unchecked_node_degree_from_node_id(dst) < *minimum_node_degree
+                    if support.get_unchecked_node_degree_from_node_id(src) < *minimum_node_degree
+                        || support.get_unchecked_node_degree_from_node_id(dst) < *minimum_node_degree
                     {
                         return false;
                     }
                 }
 
                 if let Some(maximum_node_degree) = &maximum_node_degree {
-                    if self.get_unchecked_node_degree_from_node_id(src) > *maximum_node_degree
-                        || self.get_unchecked_node_degree_from_node_id(dst) > *maximum_node_degree
+                    if support.get_unchecked_node_degree_from_node_id(src) > *maximum_node_degree
+                        || support.get_unchecked_node_degree_from_node_id(dst) > *maximum_node_degree
                     {
                         return false;
                     }
@@ -324,6 +326,7 @@ impl Graph {
     /// * `source_nodes_prefixes`: Option<Vec<String>> - Prefixes of the nodes names to be samples as sources. If a node starts with any of the provided prefixes, it can be sampled as a source node.
     /// * `destination_nodes_prefixes`: Option<Vec<String>> - Prefixes of the nodes names to be samples as destinations. If a node starts with any of the provided prefixes, it can be sampled as a destinations node.
     /// * `graph_to_avoid`: Option<&Graph> - Compatible graph whose edges are not to be sampled.
+    /// * `support`: Option<&Graph> - Parent graph of this subgraph, defining the `true` topology of the graph. Node degrees and connected components are sampled from this support graph when provided. Useful when sampling negative edges for a test graph. In this latter case, the support graph should be the training graph.
     /// * `use_zipfian_sampling`: Option<bool> - Whether to sample the nodes using zipfian distribution. By default True. Not using this may cause significant biases.
     ///
     /// # Raises
@@ -343,6 +346,7 @@ impl Graph {
         source_nodes_prefixes: Option<Vec<String>>,
         destination_nodes_prefixes: Option<Vec<String>>,
         graph_to_avoid: Option<&Graph>,
+        support: Option<&Graph>,
         use_zipfian_sampling: Option<bool>,
     ) -> Result<Graph> {
         if number_of_negative_samples == 0 {
@@ -352,13 +356,14 @@ impl Graph {
         }
 
         if let Some(graph_to_avoid) = graph_to_avoid.as_ref(){
-            if !self.has_compatible_node_vocabularies(graph_to_avoid) {
-                return Err(concat!(
-                    "The current graph instance does not share a compatible ",
-                    "vocabulary with the provided graph to avoid."
-                ).to_string())
-            }
+            self.must_share_node_vocabulary(graph_to_avoid)?;
         }
+
+        if let Some(support) = support.as_ref(){
+            self.must_share_node_vocabulary(support)?;
+        }
+
+        let support = support.unwrap_or(&self);
 
         let graph_filter = self.get_graph_sampling_filter(
             sample_only_edges_with_heterogeneous_node_types,
@@ -370,6 +375,7 @@ impl Graph {
             destination_edge_types_names,
             source_nodes_prefixes,
             destination_nodes_prefixes,
+            support
         )?;
 
         let use_zipfian_sampling = use_zipfian_sampling.unwrap_or(true);
@@ -389,7 +395,7 @@ impl Graph {
 
         // whether to sample negative edges only from the same connected component.
         let (node_components, mut complete_edges_number) = if only_from_same_component {
-            let node_components = self.get_node_connected_component_ids(Some(false));
+            let node_components = support.get_node_connected_component_ids(Some(false));
             let complete_edges_number: EdgeT = Counter::init(node_components.clone())
                 .into_iter()
                 .map(|(_, nodes_number): (_, &usize)| {
@@ -557,6 +563,7 @@ impl Graph {
     /// * `source_nodes_prefixes`: Option<Vec<String>> - Prefixes of the nodes names to be samples as sources. If a node starts with any of the provided prefixes, it can be sampled as a source node.
     /// * `destination_nodes_prefixes`: Option<Vec<String>> - Prefixes of the nodes names to be samples as destinations. If a node starts with any of the provided prefixes, it can be sampled as a destinations node.
     /// * `edge_type_names`: Option<Vec<Option<String>>> - Edge type names of the edges to sample. Only edges with ANY of these edge types will be kept.
+    /// * `support`: Option<&Graph> - Parent graph of this subgraph, defining the `true` topology of the graph. Node degrees are sampled from this support graph when provided. Useful when sampling positive edges for a test graph. In this latter case, the support graph should be the training graph.
     ///
     /// # Raises
     /// * If the `sample_only_edges_with_heterogeneous_node_types` argument is provided as true, but the graph does not have node types.
@@ -574,10 +581,17 @@ impl Graph {
         source_nodes_prefixes: Option<Vec<String>>,
         destination_nodes_prefixes: Option<Vec<String>>,
         edge_type_names: Option<Vec<Option<String>>>,
+        support: Option<&Graph>
     ) -> Result<Graph> {
         if number_of_samples == 0 {
             return Err(String::from("The number of samples cannot be zero."));
         }
+
+        if let Some(support) = support.as_ref(){
+            self.must_share_node_vocabulary(support)?;
+        }
+
+        let support = support.unwrap_or(&self);
 
         let graph_filter = self.get_graph_sampling_filter(
             sample_only_edges_with_heterogeneous_node_types,
@@ -589,6 +603,7 @@ impl Graph {
             destination_edge_types_names,
             source_nodes_prefixes,
             destination_nodes_prefixes,
+            support
         )?;
 
         let edge_type_ids = if let Some(edge_type_names) = edge_type_names {

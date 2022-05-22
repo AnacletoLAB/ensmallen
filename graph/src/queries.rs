@@ -2119,4 +2119,10 @@ impl Graph {
             .map(|node_name| other.get_node_id_from_node_name(&node_name))
             .collect()
     }
+
+    /// Returns the degree of every node in the provided subgraph.
+    pub fn get_non_zero_subgraph_node_degrees(&self, subgraph: &Graph) -> Result<Vec<NodeT>> {
+        self.par_iter_non_zero_subgraph_node_degrees(subgraph)
+            .map(|iter| iter.collect())
+    }
 }

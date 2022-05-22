@@ -9,4 +9,9 @@ import requests
 )
 def get_cached_page(url: str) -> str:
     """Returns text from the given page url."""
-    return requests.get(url).text
+    no_cache_header = {
+        'Cache-Control': 'no-cache',
+        "Cache-Control": "no-cache",
+        "Pragma": "no-cache"
+    }
+    return requests.get(url, headers=no_cache_header).text

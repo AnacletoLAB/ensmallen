@@ -904,4 +904,37 @@ impl Graph {
                     })
             })
     }
+
+    /// Return parallel iterator on the unweighted non-zero node degrees of the given subgraph.
+    ///
+    /// # Implementation details
+    /// The non-zero aspect of this iterator refers to the degrees of the subgraph, which
+    /// will generally be lower than the original graph and may include a considerable
+    /// amount of disconnected nodes, which we want to ignore in this use case.
+    /// Do note that zero degrees will be returned when the node have degree zero also
+    /// in the original graph.
+    /// 
+    /// # Arguments
+    /// * `subgraph`: &Graph - The subgraph whose node degrees are to be retrieved.
+    ///
+    pub fn par_iter_non_zero_subgraph_node_degrees<'a>(
+        &'a self,
+        subgraph: &'a Graph,
+    ) -> Result<impl ParallelIterator<Item = NodeT> + 'a> {
+        self.must_share_node_vocabulary(subgraph)?;
+        Ok(subgraph
+            .par_iter_node_ids()
+            .filter_map(move |node_id| unsafe {
+                let degree = self.get_unchecked_node_degree_from_node_id(node_id);
+                if degree == 0{
+                    Some(degree)
+                } else {
+                    if subgraph.get_unchecked_node_degree_from_node_id(node_id) > 0 {
+                        Some(degree)
+                    } else {
+                        None
+                    }
+                }
+            }))
+    }
 }

@@ -27,7 +27,7 @@ class KGHubGraphRepository(GraphRepository):
             "eco-kg": "EcoKG",
             "sldb": "SLDB"
         }
-        root_pattern = "https://kg-hub.berkeleybop.io/{lower_graph_name}/index.html"
+        root_pattern = "https://kg-hub.berkeleybop.io/{lower_graph_name}/"
         graph_url_pattern = "https://kg-hub.berkeleybop.io/{lower_graph_name}/{version}/{graph_name}.tar.gz"
 
         for graph_name in graph_names_mapping:

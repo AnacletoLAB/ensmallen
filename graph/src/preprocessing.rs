@@ -344,7 +344,9 @@ impl Graph {
             ).to_string());
         }
 
-        if sample_only_edges_with_heterogeneous_node_types && self.has_exclusively_homogeneous_node_types().unwrap() {
+        if sample_only_edges_with_heterogeneous_node_types
+            && self.has_exclusively_homogeneous_node_types().unwrap()
+        {
             return Err(concat!(
                 "The parameter `sample_only_edges_with_heterogeneous_node_types` was provided with value `true` ",
                 "but the current graph instance has exclusively homogeneous node types, that is all the nodes have ",
@@ -451,7 +453,6 @@ impl Graph {
         }))
     }
 
-    #[manual_binding]
     /// Returns n-ple with terms used for training a siamese network.
     ///
     /// # Arguments
@@ -494,7 +495,6 @@ impl Graph {
         })
     }
 
-    #[manual_binding]
     /// Returns n-ple with terms used for training a kgsiamese network.
     ///
     /// # Arguments
@@ -540,7 +540,6 @@ impl Graph {
             })
     }
 
-    #[manual_binding]
     /// Returns n-ple with index to build numpy array, source node, source node type, destination node, destination node type.
     ///
     /// # Arguments
@@ -599,7 +598,6 @@ impl Graph {
             }))
     }
 
-    #[manual_binding]
     /// Returns triple with the degrees of source nodes, destination nodes and labels for training model for link prediction.
     /// This method is just for setting the lowerbound on the simplest possible model.
     ///
@@ -657,90 +655,6 @@ impl Graph {
                 label,
             )
         }))
-    }
-
-    #[manual_binding]
-    /// Returns all available edge prediction metrics for given edges.
-    ///
-    /// The metrics returned are, in order:
-    /// - Adamic Adar index
-    /// - Jaccard Coefficient
-    /// - Resource Allocation index
-    /// - Preferential attachment score
-    ///
-    /// # Arguments
-    /// `source_node_ids`: Vec<NodeT> - List of source node IDs.
-    /// `destination_node_ids`: Vec<NodeT> - List of destination node IDs.
-    /// `normalize`: Option<bool> - Whether to normalize the edge prediction metrics.
-    /// `verbose`: Option<bool> - Whether to show a loading bar.
-    ///
-    /// # Implementative details
-    /// We do not check whether node IDs exist in the graph or not
-    /// in this method because it would take too much time.
-    ///
-    /// # Safety
-    /// If one of the given nodes does not exists in the graph, i.e. that is
-    /// higher than the number of nodes in the graph, the method will panic
-    /// and crash. Additionally, we also do not check if the two provided
-    /// lists have the same length.
-    ///
-    pub unsafe fn par_iter_unchecked_edge_prediction_metrics(
-        &self,
-        source_node_ids: Vec<NodeT>,
-        destination_node_ids: Vec<NodeT>,
-        normalize: Option<bool>,
-        verbose: Option<bool>,
-    ) -> impl IndexedParallelIterator<Item = Vec<f32>> + '_ {
-        let normalize = normalize.unwrap_or(true);
-        let verbose = verbose.unwrap_or(true);
-        let pb = get_loading_bar(verbose, "Computing edge metrics", source_node_ids.len());
-        source_node_ids
-            .into_par_iter()
-            .zip(destination_node_ids.into_par_iter())
-            .progress_with(pb)
-            .map(move |(source_node_id, destination_node_id)| {
-                self.get_unchecked_all_edge_metrics_from_node_ids(
-                    source_node_id,
-                    destination_node_id,
-                    normalize,
-                )
-            })
-    }
-
-    #[manual_binding]
-    /// Returns all available edge prediction metrics for all edges.
-    ///
-    /// The metrics returned are, in order:
-    /// - Adamic Adar index
-    /// - Jaccard Coefficient
-    /// - Resource Allocation index
-    /// - Preferential attachment score
-    ///
-    /// # Arguments
-    /// `normalize`: Option<bool> - Whether to normalize the edge prediction metrics.
-    /// `verbose`: Option<bool> - Whether to show a loading bar.
-    ///
-    pub fn par_iter_edge_prediction_metrics(
-        &self,
-        normalize: Option<bool>,
-        verbose: Option<bool>,
-    ) -> impl IndexedParallelIterator<Item = Vec<f32>> + '_ {
-        let normalize = normalize.unwrap_or(true);
-        let verbose = verbose.unwrap_or(true);
-        let pb = get_loading_bar(
-            verbose,
-            "Computing edge metrics",
-            self.get_number_of_directed_edges() as usize,
-        );
-        self.par_iter_directed_edge_node_ids()
-            .progress_with(pb)
-            .map(move |(_, source_node_id, destination_node_id)| unsafe {
-                self.get_unchecked_all_edge_metrics_from_node_ids(
-                    source_node_id,
-                    destination_node_id,
-                    normalize,
-                )
-            })
     }
 
     #[fuzz_type(iterations: Option<u8>)]

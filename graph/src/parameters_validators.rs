@@ -594,4 +594,20 @@ impl Graph {
         }
         Ok(())
     }
+
+    /// Raises an error if the provided graph does not a node vocabulary compatible with the current graph instance.
+    ///
+    /// # Raises
+    /// * If the provided graph does not share a compatible node vocabulary with the current instance.
+    pub fn must_share_node_vocabulary(&self, other: &Graph) -> Result<()> {
+        if !self.has_compatible_node_vocabularies(other) {
+            return Err(
+                concat!(
+                    "The provided graph does not share a node vocaulary that is ",
+                    "compatible with the current graph instance."
+                ).to_string()
+            );
+        }
+        Ok(())
+    }
 }

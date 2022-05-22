@@ -1,0 +1,2042 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Wikimedia Downloads</title>
+<link rel="stylesheet" type="text/css" href="/dumps.css" />
+</head>
+<body>
+<div class="lang-list-button-wrapper">
+            <h1>Wikimedia Downloads</h1>
+            <p>
+                Please note that we have rate limited downloaders and we are capping the
+                number of per-ip connections to 2. This will help to ensure that everyone
+                can access the files with reasonable download times.  Clients that try to
+                evade these limits may be blocked.
+            </p>
+            <p>
+                <strong>Please consider using a <a href="/mirrors.html">mirror</a> for
+                downloading these dumps.</strong>
+            </p>
+            <p>The following kinds of downloads are available:</p>
+            <dl>
+                <dt>Database backup dumps (current page)</dt>
+                <dd>
+                    A complete copy of all Wikimedia wikis, in the form of wikitext source
+                    and metadata embedded in XML. A number of
+                    raw database tables in SQL form are also available.
+                </dd>
+                <dd>
+                    These snapshots are provided at the very least monthly and usually
+                    twice a month. If you are a regular user of these dumps,
+                    please consider subscribing to
+                    <a href="https://lists.wikimedia.org/postorius/lists/xmldatadumps-l.lists.wikimedia.org/">
+                    xmldatadumps-l</a> for regular updates.
+                </dd>
+                <dt><a href="/other/static_html_dumps/">Static HTML dumps</a></dt>
+                <dd>A copy of all pages from all Wikipedia wikis, in HTML form.</dd>
+                <dt><a href="dvd.html">DVD distributions</a></dt>
+                <dd>Available for some Wikipedia editions.</dd>
+                <dt>Image tarballs</dt>
+                <dd>There are currently no image dumps available.</dd>
+            </dl>
+            <h2>Legal</h2>
+            <dl>
+                <dt>App Guidelines</dt>
+                <dd>
+                    <a href="https://foundation.wikimedia.org/wiki/Developer_app_guidelines">
+                    Guidelines for developers</a> on how to properly reuse
+                    Wikimedia data, trademarks, and content.
+                </dd>
+                <dt>Copyright licensing</dt>
+                <dd><a href="/legal.html">Copyright licensing information</a> for these dumps.</dd>
+                <dt>Privacy</dt>
+                <dd>
+                    The <a href="https://meta.wikimedia.org/wiki/Privacy_policy">
+                    privacy policy</a> for Wikimedia Foundation websites.
+                </dd>
+            </dl>
+            <h2>Sql/XML dumps issues</h2>
+            <p>
+              Files are provided in various formats, including gzipped sql, json or xml, bzipped xml,
+              and 7zipped xml. Older versions of the 7zip decoder on Windows are known to have
+              <a href="https://phabricator.wikimedia.org/T208647">problems</a> with some bz2-format
+              files for larger wikis; we recommend the use of bzip2 for Windows for these cases.
+              7zip 20.00 alpha (x64) on Win10 LTSC 2019 and later versions should work properly.
+              Please report problems with these dumps on Phabricator and add the
+              <a href="https://phabricator.wikimedia.org/project/profile/1519/">Dumps-generation</a> tag.
+            </p>
+            <div class="visualClear"></div>
+            <div class="status">
+                Dumps are in progress...
+            </div>
+            <div class="otherindexlink">
+                Also view sorted by <a href="backup-index-bydb.html">wiki name</a>
+            </div>
+            <ul>
+                <li>2022-05-22 11:20:59 <a href="wikidatawiki/20220520">wikidatawiki</a>: <span class='in-progress'>Dump in progress</span></li>
+<ul><li class='in-progress'><span class='updates'>2022-05-22 08:18:26</span> <span class='status'>in-progress</span> <span class='title'><big><b>Recombine articles, templates, media/file descriptions, and primary meta-pages.</b></big></span><ul><li class='file'>wikidatawiki-20220520-pages-articles.xml.bz2 25.2 GB (written) </li></ul></li></ul>
+<li>2022-05-22 11:20:59 <a href="cebwiki/20220520">cebwiki</a>: <span class='in-progress'>Dump in progress</span></li>
+<ul><li class='in-progress'><span class='updates'>2022-05-21 14:40:36</span> <span class='status'>in-progress</span> <span class='title'>Extracted page abstracts for Yahoo</span><ul><li class='file'>cebwiki-20220520-abstract.xml.gz 101.7 MB (written) </li></ul></li></ul>
+<li>2022-05-22 06:44:37 <a href="enwiktionary/20220520">enwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-22 04:30:13 <a href="commonswiki/20220520">commonswiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-22 03:13:26 <a href="zhwiki/20220520">zhwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-22 02:20:25 <a href="shwiki/20220520">shwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-22 02:01:10 <a href="viwiki/20220520">viwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-22 01:38:30 <a href="ruwikinews/20220520">ruwikinews</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-22 01:05:44 <a href="srwiki/20220520">srwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-22 01:00:11 <a href="fawiki/20220520">fawiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-22 00:58:32 <a href="enwiki/20220520">enwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 23:35:42 <a href="svwiki/20220520">svwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 23:28:29 <a href="ruwiki/20220520">ruwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 23:00:41 <a href="ukwiki/20220520">ukwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 22:53:14 <a href="frwiki/20220520">frwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 22:34:20 <a href="frwiktionary/20220520">frwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 22:10:21 <a href="nlwiki/20220520">nlwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 21:28:33 <a href="zhwiktionary/20220520">zhwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 21:27:06 <a href="plwiki/20220520">plwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 21:18:32 <a href="ptwiki/20220520">ptwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 20:23:42 <a href="itwiki/20220520">itwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 20:21:00 <a href="ruwiktionary/20220520">ruwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 20:07:30 <a href="metawiki/20220520">metawiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 19:49:42 <a href="jawiki/20220520">jawiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 19:46:17 <a href="eswiki/20220520">eswiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 19:36:25 <a href="warwiki/20220520">warwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 19:32:09 <a href="kowiki/20220520">kowiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 19:23:19 <a href="dewiki/20220520">dewiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 18:59:50 <a href="idwiki/20220520">idwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 18:36:37 <a href="cawiki/20220520">cawiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 18:30:50 <a href="arzwiki/20220520">arzwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 18:19:06 <a href="mediawikiwiki/20220520">mediawikiwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 18:05:42 <a href="huwiki/20220520">huwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 17:59:54 <a href="hewiki/20220520">hewiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 17:41:47 <a href="mgwiktionary/20220520">mgwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 17:35:43 <a href="nowiki/20220520">nowiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 17:29:26 <a href="cswiki/20220520">cswiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 17:24:01 <a href="arwiki/20220520">arwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 17:21:10 <a href="fiwiki/20220520">fiwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 17:16:33 <a href="trwiki/20220520">trwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 17:12:47 <a href="rowiki/20220520">rowiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 17:06:32 <a href="ruwikisource/20220520">ruwikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 17:03:07 <a href="specieswiki/20220520">specieswiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 16:49:43 <a href="zhwikisource/20220520">zhwikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 16:42:18 <a href="enwikisource/20220520">enwikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 16:18:50 <a href="dewiktionary/20220520">dewiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 16:10:30 <a href="hywiki/20220520">hywiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 15:58:29 <a href="frwikisource/20220520">frwikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 15:47:11 <a href="bgwiki/20220520">bgwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 15:30:16 <a href="nlwiktionary/20220520">nlwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 15:28:35 <a href="bnwiki/20220520">bnwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 15:27:25 <a href="eswiktionary/20220520">eswiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 15:27:04 <a href="elwiki/20220520">elwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 15:25:54 <a href="euwiki/20220520">euwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 15:20:20 <a href="bewiki/20220520">bewiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 15:19:59 <a href="dawiki/20220520">dawiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 15:19:44 <a href="thwiki/20220520">thwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 15:18:32 <a href="mswiki/20220520">mswiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 15:17:28 <a href="eowiki/20220520">eowiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 15:15:59 <a href="shwiktionary/20220520">shwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 15:15:24 <a href="bgwiktionary/20220520">bgwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 15:14:33 <a href="elwiktionary/20220520">elwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 15:10:33 <a href="cewiki/20220520">cewiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 15:00:43 <a href="svwiktionary/20220520">svwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 14:57:50 <a href="plwiktionary/20220520">plwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 14:55:15 <a href="kuwiktionary/20220520">kuwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 14:49:14 <a href="incubatorwiki/20220520">incubatorwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 14:45:47 <a href="zh_min_nanwiki/20220520">zh_min_nanwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 14:45:44 <a href="urwiki/20220520">urwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 14:43:50 <a href="ttwiki/20220520">ttwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 14:38:29 <a href="etwiki/20220520">etwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 14:37:56 <a href="simplewiki/20220520">simplewiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 14:36:37 <a href="hiwiki/20220520">hiwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 14:36:20 <a href="glwiki/20220520">glwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 14:35:47 <a href="hrwiki/20220520">hrwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 14:30:52 <a href="skwiki/20220520">skwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 14:30:10 <a href="mkwiki/20220520">mkwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 14:29:47 <a href="azwiki/20220520">azwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 14:29:50 <a href="kawiki/20220520">kawiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 14:29:37 <a href="ltwiktionary/20220520">ltwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 14:27:33 <a href="dewikisource/20220520">dewikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 14:21:30 <a href="uzwiki/20220520">uzwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 14:20:08 <a href="hewikisource/20220520">hewikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 14:19:53 <a href="itwiktionary/20220520">itwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 14:19:27 <a href="slwiki/20220520">slwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 14:19:00 <a href="plwikisource/20220520">plwikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 14:18:54 <a href="mlwiki/20220520">mlwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 14:18:00 <a href="kkwiki/20220520">kkwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 14:12:19 <a href="ltwiki/20220520">ltwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 14:07:36 <a href="tawiki/20220520">tawiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 14:05:35 <a href="lvwiki/20220520">lvwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 14:04:51 <a href="huwiktionary/20220520">huwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 14:04:06 <a href="enwikinews/20220520">enwikinews</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 13:59:09 <a href="bswiki/20220520">bswiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 13:54:58 <a href="nnwiki/20220520">nnwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 13:53:35 <a href="tawiktionary/20220520">tawiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 13:52:44 <a href="astwiki/20220520">astwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 13:51:04 <a href="fiwiktionary/20220520">fiwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 13:49:35 <a href="trwiktionary/20220520">trwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 13:48:24 <a href="enwikibooks/20220520">enwikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 13:47:44 <a href="tewiki/20220520">tewiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 13:46:51 <a href="kowiktionary/20220520">kowiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 13:46:26 <a href="cywiki/20220520">cywiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 13:42:00 <a href="itwikisource/20220520">itwikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 13:40:27 <a href="srwiktionary/20220520">srwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 13:39:20 <a href="hywiktionary/20220520">hywiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 13:38:24 <a href="afwiki/20220520">afwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 13:38:25 <a href="cawiktionary/20220520">cawiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 13:36:40 <a href="azbwiki/20220520">azbwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 13:34:33 <a href="iowiktionary/20220520">iowiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 13:34:08 <a href="enwikiquote/20220520">enwikiquote</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 13:34:10 <a href="ptwiktionary/20220520">ptwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 13:34:01 <a href="sawiktionary/20220520">sawiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 13:33:43 <a href="bnwikisource/20220520">bnwikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 13:33:02 <a href="vowiki/20220520">vowiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 13:31:47 <a href="minwiki/20220520">minwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 13:31:38 <a href="sqwiki/20220520">sqwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 13:30:36 <a href="zh_yuewiki/20220520">zh_yuewiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 13:29:32 <a href="lawiki/20220520">lawiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 13:28:22 <a href="enwikivoyage/20220520">enwikivoyage</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 13:26:55 <a href="mrwiki/20220520">mrwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 13:26:24 <a href="eswikisource/20220520">eswikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 13:25:17 <a href="mywiki/20220520">mywiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 13:24:28 <a href="viwiktionary/20220520">viwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 13:24:21 <a href="ptwikibooks/20220520">ptwikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 13:24:13 <a href="tlwiki/20220520">tlwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 13:23:05 <a href="knwiktionary/20220520">knwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 13:21:26 <a href="tgwiki/20220520">tgwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 13:21:15 <a href="be_x_oldwiki/20220520">be_x_oldwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 13:20:50 <a href="testwikidatawiki/20220520">testwikidatawiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 13:20:33 <a href="jawiktionary/20220520">jawiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 13:20:17 <a href="tawikisource/20220520">tawikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 13:20:16 <a href="thwiktionary/20220520">thwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 13:18:12 <a href="ocwiki/20220520">ocwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 13:17:22 <a href="enwikiversity/20220520">enwikiversity</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 13:16:20 <a href="idwiktionary/20220520">idwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 13:14:47 <a href="loginwiki/20220520">loginwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 13:14:17 <a href="rowiktionary/20220520">rowiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 13:13:13 <a href="ckbwiki/20220520">ckbwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 13:11:26 <a href="itwikiquote/20220520">itwikiquote</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 13:10:56 <a href="lbwiki/20220520">lbwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 13:10:30 <a href="bawiki/20220520">bawiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 13:10:25 <a href="nowiktionary/20220520">nowiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 13:10:03 <a href="uzwiktionary/20220520">uzwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 13:09:42 <a href="hiwiktionary/20220520">hiwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 13:08:26 <a href="fawiktionary/20220520">fawiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 13:07:35 <a href="newwiki/20220520">newwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 13:07:08 <a href="vecwiki/20220520">vecwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 13:06:45 <a href="iswiki/20220520">iswiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 13:04:04 <a href="dewikibooks/20220520">dewikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 13:04:09 <a href="sourceswiki/20220520">sourceswiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 13:03:23 <a href="sawikisource/20220520">sawikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 13:03:12 <a href="kywiki/20220520">kywiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 13:03:10 <a href="tewiktionary/20220520">tewiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 13:01:28 <a href="ptwikisource/20220520">ptwikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:59:56 <a href="scowiki/20220520">scowiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:59:27 <a href="ukwikisource/20220520">ukwikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:58:43 <a href="ukwiktionary/20220520">ukwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:58:35 <a href="arwikisource/20220520">arwikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:58:34 <a href="dewikivoyage/20220520">dewikivoyage</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:58:01 <a href="lmowiki/20220520">lmowiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:58:00 <a href="newiki/20220520">newiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:57:59 <a href="pawiki/20220520">pawiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:55:51 <a href="pmswiki/20220520">pmswiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:55:19 <a href="mlwiktionary/20220520">mlwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:55:06 <a href="cvwiki/20220520">cvwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:54:48 <a href="frwikiversity/20220520">frwikiversity</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:54:12 <a href="szlwiki/20220520">szlwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:54:05 <a href="srwikinews/20220520">srwikinews</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:53:55 <a href="slwikisource/20220520">slwikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:53:46 <a href="liwiki/20220520">liwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:53:37 <a href="huwikibooks/20220520">huwikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:53:30 <a href="zh_classicalwiki/20220520">zh_classicalwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:53:22 <a href="ptwikinews/20220520">ptwikinews</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:53:07 <a href="quwiki/20220520">quwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:52:39 <a href="iowiki/20220520">iowiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:52:13 <a href="iswiktionary/20220520">iswiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:52:03 <a href="plwikiquote/20220520">plwikiquote</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:51:28 <a href="wuuwiki/20220520">wuuwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:51:23 <a href="tewikisource/20220520">tewikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:51:20 <a href="yowiki/20220520">yowiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:51:15 <a href="testwiki/20220520">testwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:50:48 <a href="oswiki/20220520">oswiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:50:37 <a href="skrwiktionary/20220520">skrwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:50:32 <a href="knwiki/20220520">knwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:49:50 <a href="wawiktionary/20220520">wawiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:49:07 <a href="zhwikinews/20220520">zhwikinews</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:48:53 <a href="elwikisource/20220520">elwikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:48:22 <a href="orwiki/20220520">orwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:48:16 <a href="kmwiki/20220520">kmwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:48:18 <a href="sahwiki/20220520">sahwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:47:48 <a href="mlwikisource/20220520">mlwikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:47:42 <a href="tgwiktionary/20220520">tgwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:47:35 <a href="wawiki/20220520">wawiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:47:28 <a href="viwikisource/20220520">viwikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:47:05 <a href="jvwiki/20220520">jvwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:47:07 <a href="zhwikibooks/20220520">zhwikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:47:00 officewiki (private data): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:46:37 <a href="mgwiki/20220520">mgwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:46:24 <a href="nlwikisource/20220520">nlwikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:46:14 <a href="trwikiquote/20220520">trwikiquote</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:46:13 <a href="zhwikivoyage/20220520">zhwikivoyage</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:46:05 <a href="zh_min_nanwiktionary/20220520">zh_min_nanwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:45:46 <a href="thwikisource/20220520">thwikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:45:31 <a href="nowikisource/20220520">nowikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:45:32 <a href="vlswiki/20220520">vlswiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:45:20 <a href="sowiki/20220520">sowiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:44:47 <a href="frwikivoyage/20220520">frwikivoyage</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:44:30 <a href="zhwikiversity/20220520">zhwikiversity</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:44:14 <a href="ndswiktionary/20220520">ndswiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:44:08 <a href="udmwiki/20220520">udmwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:43:57 <a href="cywiktionary/20220520">cywiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:43:50 <a href="zuwiki/20220520">zuwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:43:33 <a href="vecwikisource/20220520">vecwikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:43:29 <a href="orwikisource/20220520">orwikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:43:18 <a href="zeawiki/20220520">zeawiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:43:07 <a href="jvwiktionary/20220520">jvwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:43:07 <a href="nsowiki/20220520">nsowiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:42:46 <a href="fowiki/20220520">fowiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:42:41 <a href="smwiktionary/20220520">smwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:42:40 <a href="xalwiki/20220520">xalwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:42:39 <a href="trwikisource/20220520">trwikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:42:38 <a href="ruwikiversity/20220520">ruwikiversity</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:42:10 <a href="huwikisource/20220520">huwikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:42:10 <a href="kmwiktionary/20220520">kmwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:42:07 <a href="omwiki/20220520">omwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:42:06 <a href="ruwikivoyage/20220520">ruwikivoyage</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:41:57 <a href="ugwiktionary/20220520">ugwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:41:56 <a href="wikimania2014wiki/20220520">wikimania2014wiki</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:41:52 <a href="shnwiki/20220520">shnwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:41:51 <a href="yiwikisource/20220520">yiwikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:41:39 techconductwiki (private data): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:41:31 <a href="brwiki/20220520">brwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:41:34 <a href="tswiki/20220520">tswiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:41:29 <a href="zhwikiquote/20220520">zhwikiquote</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:41:27 <a href="zh_min_nanwikisource/20220520">zh_min_nanwikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:41:16 <a href="zawiki/20220520">zawiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:41:15 <a href="tkwiki/20220520">tkwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:41:06 <a href="fywiki/20220520">fywiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:41:06 <a href="stwiki/20220520">stwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:41:05 <a href="wowikiquote/20220520">wowikiquote</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:41:02 <a href="sahwikiquote/20220520">sahwikiquote</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:40:58 <a href="skwikibooks/20220520">skwikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:40:58 <a href="wbwikimedia/20220520">wbwikimedia</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:40:51 <a href="zawikibooks/20220520">zawikibooks</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:40:42 <a href="tewikiquote/20220520">tewikiquote</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:40:33 <a href="bpywiki/20220520">bpywiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:40:31 <a href="srwikibooks/20220520">srwikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:40:19 <a href="hrwiktionary/20220520">hrwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:39:56 <a href="pwnwiki/20220520">pwnwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:39:49 <a href="zh_min_nanwikiquote/20220520">zh_min_nanwikiquote</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:39:42 <a href="ugwikiquote/20220520">ugwikiquote</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:39:23 <a href="wikimania2006wiki/20220520">wikimania2006wiki</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:39:14 <a href="ruwikimedia/20220520">ruwikimedia</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:39:11 <a href="mrwikiquote/20220520">mrwikiquote</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:39:09 <a href="nowikimedia/20220520">nowikimedia</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:39:09 <a href="urwikibooks/20220520">urwikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:39:05 <a href="mgwikibooks/20220520">mgwikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:38:58 <a href="anwiki/20220520">anwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:39:01 <a href="iswikibooks/20220520">iswikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:39:01 <a href="lawikisource/20220520">lawikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:38:54 <a href="ugwiki/20220520">ugwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:38:53 <a href="zawikiquote/20220520">zawikiquote</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:38:51 <a href="thwikinews/20220520">thwikinews</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:38:49 <a href="pcdwiki/20220520">pcdwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:38:45 <a href="furwiki/20220520">furwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:38:48 <a href="pawiktionary/20220520">pawiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:38:40 <a href="knwikibooks/20220520">knwikibooks</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:38:39 <a href="liwikisource/20220520">liwikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:38:26 <a href="dewikiversity/20220520">dewikiversity</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:38:25 <a href="cswiktionary/20220520">cswiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:38:28 <a href="ngwiki/20220520">ngwiki</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:38:23 <a href="hywikibooks/20220520">hywikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:38:06 <a href="liwiktionary/20220520">liwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:38:07 <a href="plwikimedia/20220520">plwikimedia</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:37:58 <a href="kwwiktionary/20220520">kwwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:38:02 <a href="wikimania2010wiki/20220520">wikimania2010wiki</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:37:47 <a href="quwikibooks/20220520">quwikibooks</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:37:42 <a href="cswikisource/20220520">cswikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:37:40 <a href="iawiki/20220520">iawiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:37:36 <a href="tswiktionary/20220520">tswiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:37:26 <a href="romdwikimedia/20220520">romdwikimedia</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:37:12 <a href="hzwiki/20220520">hzwiki</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:37:09 <a href="mhwiktionary/20220520">mhwiktionary</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:37:08 <a href="nawikibooks/20220520">nawikibooks</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:37:09 <a href="ruwikiquote/20220520">ruwikiquote</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:36:44 <a href="krwiki/20220520">krwiki</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:36:45 <a href="sgwiktionary/20220520">sgwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:36:46 <a href="viwikiquote/20220520">viwikiquote</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:36:34 <a href="svwikisource/20220520">svwikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:36:26 <a href="viwikivoyage/20220520">viwikivoyage</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:36:14 <a href="itwikibooks/20220520">itwikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:36:14 <a href="kwwikiquote/20220520">kwwikiquote</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:36:04 <a href="gomwiktionary/20220520">gomwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:36:04 <a href="hsbwiktionary/20220520">hsbwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:36:00 <a href="nahwiki/20220520">nahwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:35:49 <a href="smnwiki/20220520">smnwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:35:36 <a href="trwikimedia/20220520">trwikimedia</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:35:36 <a href="yiwiki/20220520">yiwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:35:25 <a href="ukwikibooks/20220520">ukwikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:35:13 <a href="snwiki/20220520">snwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:35:03 <a href="simplewikiquote/20220520">simplewikiquote</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:34:58 <a href="rmywiki/20220520">rmywiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:34:55 <a href="sawikiquote/20220520">sawikiquote</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:34:39 <a href="klwiktionary/20220520">klwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:34:38 <a href="inhwiki/20220520">inhwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:34:36 <a href="muswiki/20220520">muswiki</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:34:32 <a href="shiwiki/20220520">shiwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:34:32 <a href="ruwikibooks/20220520">ruwikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:34:29 <a href="ukwikinews/20220520">ukwikinews</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:34:26 <a href="ukwikivoyage/20220520">ukwikivoyage</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:34:18 <a href="wikimania2005wiki/20220520">wikimania2005wiki</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:34:05 <a href="miwiktionary/20220520">miwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:34:05 <a href="suwikiquote/20220520">suwikiquote</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:33:58 <a href="eewiki/20220520">eewiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:33:59 <a href="lnwikibooks/20220520">lnwikibooks</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:33:50 <a href="fawikibooks/20220520">fawikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:33:49 <a href="tumwiki/20220520">tumwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:33:49 <a href="yiwiktionary/20220520">yiwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:33:37 <a href="mywikibooks/20220520">mywikibooks</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:33:22 <a href="rowikivoyage/20220520">rowikivoyage</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:32:37 <a href="azwikibooks/20220520">azwikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:32:41 <a href="olowiki/20220520">olowiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:32:38 <a href="sewikibooks/20220520">sewikibooks</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:32:31 <a href="snwiktionary/20220520">snwiktionary</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:32:15 <a href="tlwikibooks/20220520">tlwikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:32:10 <a href="lawikibooks/20220520">lawikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:32:09 <a href="mhwiki/20220520">mhwiki</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:32:00 <a href="iiwiki/20220520">iiwiki</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:31:55 <a href="hywwiki/20220520">hywwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:31:58 <a href="tkwikiquote/20220520">tkwikiquote</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:31:52 <a href="tawikinews/20220520">tawikinews</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:31:46 <a href="lgwiki/20220520">lgwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:31:45 <a href="wikimania2017wiki/20220520">wikimania2017wiki</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:31:38 <a href="lrcwiki/20220520">lrcwiki</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:31:33 <a href="kswikibooks/20220520">kswikibooks</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:31:22 <a href="rmwiktionary/20220520">rmwiktionary</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:31:18 legalteamwiki (private data): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:31:17 <a href="ilowiki/20220520">ilowiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:31:18 <a href="sswiktionary/20220520">sswiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:31:01 <a href="yowikibooks/20220520">yowikibooks</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:30:51 <a href="euwikisource/20220520">euwikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:30:54 <a href="skrwiki/20220520">skrwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:30:51 <a href="svwikinews/20220520">svwikinews</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:30:41 <a href="arywiki/20220520">arywiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:30:39 <a href="eowikivoyage/20220520">eowikivoyage</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:30:40 <a href="nqowiki/20220520">nqowiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:30:21 <a href="bawikibooks/20220520">bawikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:30:23 <a href="pntwiki/20220520">pntwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:30:18 <a href="iswikiquote/20220520">iswikiquote</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:30:08 <a href="dinwiki/20220520">dinwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:30:05 <a href="nahwikibooks/20220520">nahwikibooks</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:29:58 <a href="map_bmswiki/20220520">map_bmswiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:29:54 <a href="ocwiktionary/20220520">ocwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:29:46 <a href="elwikiquote/20220520">elwikiquote</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:29:43 <a href="mlwikiquote/20220520">mlwikiquote</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:29:32 <a href="htwiki/20220520">htwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:29:34 <a href="zawiktionary/20220520">zawiktionary</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:29:30 <a href="uzwikiquote/20220520">uzwikiquote</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:29:12 <a href="simplewikibooks/20220520">simplewikibooks</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:29:07 <a href="euwikiquote/20220520">euwikiquote</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:29:07 <a href="iewikibooks/20220520">iewikibooks</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:29:10 <a href="sewiki/20220520">sewiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:29:07 <a href="shnwiktionary/20220520">shnwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:29:06 <a href="rowikiquote/20220520">rowikiquote</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:28:56 <a href="mswikibooks/20220520">mswikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:28:56 <a href="scnwiktionary/20220520">scnwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:28:52 <a href="jawikisource/20220520">jawikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:28:35 <a href="wikimania2015wiki/20220520">wikimania2015wiki</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:28:26 <a href="tawikibooks/20220520">tawikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:28:17 <a href="bhwiki/20220520">bhwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:28:18 <a href="swwiki/20220520">swwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:28:17 <a href="zuwikibooks/20220520">zuwikibooks</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:28:08 <a href="nowikiquote/20220520">nowikiquote</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:28:03 <a href="wikimania2012wiki/20220520">wikimania2012wiki</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:27:44 <a href="hewikibooks/20220520">hewikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:27:41 <a href="bswikibooks/20220520">bswikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:27:40 <a href="eswikibooks/20220520">eswikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:27:33 <a href="dvwiki/20220520">dvwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:27:33 <a href="ikwiki/20220520">ikwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:27:29 <a href="nrmwiki/20220520">nrmwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:27:31 <a href="sqwikinews/20220520">sqwikinews</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:27:26 <a href="wikimania2018wiki/20220520">wikimania2018wiki</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:26:59 <a href="aswiktionary/20220520">aswiktionary</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:27:03 <a href="satwiki/20220520">satwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:27:00 <a href="kywikibooks/20220520">kywikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:26:53 <a href="itwikivoyage/20220520">itwikivoyage</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:26:51 <a href="test2wiki/20220520">test2wiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:26:43 <a href="amwikiquote/20220520">amwikiquote</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:26:32 <a href="bmwikibooks/20220520">bmwikibooks</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:26:21 <a href="zuwiktionary/20220520">zuwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:26:12 <a href="pa_uswikimedia/20220520">pa_uswikimedia</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:25:56 <a href="tenwiki/20220520">tenwiki</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:25:46 <a href="frwikiquote/20220520">frwikiquote</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:25:48 <a href="mrjwiki/20220520">mrjwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:25:49 <a href="uawikimedia/20220520">uawikimedia</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:25:28 <a href="ndswiki/20220520">ndswiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:25:24 <a href="knwikiquote/20220520">knwikiquote</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:25:18 <a href="cowiktionary/20220520">cowiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:25:08 <a href="astwikiquote/20220520">astwikiquote</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:25:05 <a href="tiwiki/20220520">tiwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:24:43 <a href="cowikibooks/20220520">cowikibooks</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:24:48 <a href="ttwikibooks/20220520">ttwikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:24:36 <a href="tgwikibooks/20220520">tgwikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:24:24 <a href="lvwikibooks/20220520">lvwikibooks</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:24:23 <a href="lvwiktionary/20220520">lvwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:24:10 arbcom_fiwiki (private data): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:24:10 <a href="myvwiki/20220520">myvwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:24:00 <a href="kjwiki/20220520">kjwiki</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:23:55 <a href="cswikiquote/20220520">cswikiquote</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:23:53 <a href="cawikinews/20220520">cawikinews</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:23:58 <a href="pflwiki/20220520">pflwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:23:49 <a href="biwikibooks/20220520">biwikibooks</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:23:53 <a href="rswikimedia/20220520">rswikimedia</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:23:41 <a href="awawiki/20220520">awawiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:23:40 <a href="wikimaniawiki/20220520">wikimaniawiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:23:28 <a href="yowiktionary/20220520">yowiktionary</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:23:18 <a href="kawikiquote/20220520">kawikiquote</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:23:02 <a href="kowikiquote/20220520">kowikiquote</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:23:05 <a href="swwikibooks/20220520">swwikibooks</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:22:57 <a href="vewiki/20220520">vewiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:22:52 <a href="thwikibooks/20220520">thwikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:22:49 <a href="ptwikiversity/20220520">ptwikiversity</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:22:35 <a href="hsbwiki/20220520">hsbwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:22:22 <a href="pnbwiki/20220520">pnbwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:22:03 checkuserwiki (private data): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:22:03 <a href="ganwiki/20220520">ganwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:21:53 <a href="roa_rupwiki/20220520">roa_rupwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:21:48 <a href="tpiwiki/20220520">tpiwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:21:29 <a href="altwiki/20220520">altwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:21:30 <a href="kowikisource/20220520">kowikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:21:31 <a href="nzwikimedia/20220520">nzwikimedia</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:21:24 <a href="hiwikiquote/20220520">hiwikiquote</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:21:20 <a href="cawikiquote/20220520">cawikiquote</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:21:23 <a href="pihwiki/20220520">pihwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:21:19 <a href="mtwiktionary/20220520">mtwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:21:17 <a href="kswikiquote/20220520">kswikiquote</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:21:14 <a href="yuewiktionary/20220520">yuewiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:21:05 <a href="bgwikibooks/20220520">bgwikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:21:11 <a href="sowiktionary/20220520">sowiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:21:03 <a href="hewikivoyage/20220520">hewikivoyage</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:20:57 <a href="etwiktionary/20220520">etwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:20:52 <a href="siwiki/20220520">siwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:20:45 <a href="kwwiki/20220520">kwwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:20:41 <a href="dsbwiki/20220520">dsbwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:20:38 <a href="bowiki/20220520">bowiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:20:30 <a href="kuwikibooks/20220520">kuwikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:20:29 <a href="kuwikiquote/20220520">kuwikiquote</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:20:27 <a href="klwiki/20220520">klwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:20:15 <a href="sgwiki/20220520">sgwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:20:04 <a href="emlwiki/20220520">emlwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:20:00 <a href="skwikisource/20220520">skwikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:19:37 <a href="wowiktionary/20220520">wowiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:19:28 <a href="eowikibooks/20220520">eowikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:19:31 <a href="qualitywiki/20220520">qualitywiki</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:19:07 <a href="maiwikimedia/20220520">maiwikimedia</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:19:07 <a href="vowikibooks/20220520">vowikibooks</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:18:55 <a href="apiportalwiki/20220520">apiportalwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:18:58 <a href="mznwiki/20220520">mznwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:18:49 <a href="dawikiquote/20220520">dawikiquote</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:18:37 <a href="rnwiki/20220520">rnwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:18:21 <a href="brwikiquote/20220520">brwikiquote</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:18:21 <a href="tkwiktionary/20220520">tkwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:18:06 <a href="aawiktionary/20220520">aawiktionary</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:18:07 arbcom_ruwiki (private data): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:18:06 <a href="knwikisource/20220520">knwikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:18:00 <a href="hiwikisource/20220520">hiwikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:17:55 <a href="itwikiversity/20220520">itwikiversity</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:17:46 <a href="lezwiki/20220520">lezwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:17:28 <a href="miwikibooks/20220520">miwikibooks</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:17:32 <a href="xhwiki/20220520">xhwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:17:23 stewardwiki (private data): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:17:16 <a href="aswikibooks/20220520">aswikibooks</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:17:16 <a href="mywiktionary/20220520">mywiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:17:03 <a href="uzwikibooks/20220520">uzwikibooks</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:17:01 <a href="nostalgiawiki/20220520">nostalgiawiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:16:54 <a href="fawikinews/20220520">fawikinews</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:16:35 <a href="astwikibooks/20220520">astwikibooks</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:16:42 <a href="sswiki/20220520">sswiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:16:35 <a href="cowiki/20220520">cowiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:16:34 <a href="nds_nlwiki/20220520">nds_nlwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:16:32 <a href="omwiktionary/20220520">omwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:16:19 <a href="mkwikisource/20220520">mkwikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:16:09 <a href="gawiktionary/20220520">gawiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:16:08 <a href="hawiktionary/20220520">hawiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:16:02 <a href="dtywiki/20220520">dtywiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:15:56 collabwiki (private data): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:15:49 <a href="cawikisource/20220520">cawikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:15:31 <a href="roa_tarawiki/20220520">roa_tarawiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:15:17 <a href="stqwiki/20220520">stqwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:15:08 <a href="xhwikibooks/20220520">xhwikibooks</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:15:01 <a href="guwiki/20220520">guwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:14:54 <a href="aawiki/20220520">aawiki</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:14:58 <a href="srwikisource/20220520">srwikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:14:44 <a href="chywiki/20220520">chywiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:14:38 <a href="aywikibooks/20220520">aywikibooks</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:14:19 <a href="rowikisource/20220520">rowikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:14:10 <a href="jawikiquote/20220520">jawikiquote</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:14:08 <a href="rwwiki/20220520">rwwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:14:00 <a href="rmwikibooks/20220520">rmwikibooks</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:13:56 <a href="scwiki/20220520">scwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:13:51 <a href="lldwiki/20220520">lldwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:13:31 <a href="crwiktionary/20220520">crwiktionary</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:13:38 <a href="wikimania2008wiki/20220520">wikimania2008wiki</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:13:25 <a href="mswiktionary/20220520">mswiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:13:21 <a href="kywikiquote/20220520">kywikiquote</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:13:19 <a href="idwikisource/20220520">idwikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:13:22 <a href="vowiktionary/20220520">vowiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:13:12 <a href="twwiktionary/20220520">twwiktionary</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:13:05 ilwikimedia (private data): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:12:56 <a href="crhwiki/20220520">crhwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:12:56 execwiki (private data): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:12:56 <a href="newiktionary/20220520">newiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:12:27 <a href="guwwiki/20220520">guwwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:12:16 <a href="kiwiki/20220520">kiwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:12:01 <a href="dewikiquote/20220520">dewikiquote</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:11:59 <a href="gawiki/20220520">gawiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:11:47 <a href="votewiki/20220520">votewiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:11:41 <a href="niawiktionary/20220520">niawiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:11:36 <a href="nawikiquote/20220520">nawikiquote</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:11:34 internalwiki (private data): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:11:30 <a href="rmwiki/20220520">rmwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:11:16 fdcwiki (private data): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:11:20 <a href="slwikiversity/20220520">slwikiversity</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:11:06 <a href="sdwiktionary/20220520">sdwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:11:00 iegcomwiki (private data): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:10:59 <a href="lawikiquote/20220520">lawikiquote</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:10:57 <a href="swwiktionary/20220520">swwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:10:41 <a href="shywiktionary/20220520">shywiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:10:36 <a href="ndswikiquote/20220520">ndswikiquote</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:10:36 <a href="tewikibooks/20220520">tewikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:10:26 <a href="cbk_zamwiki/20220520">cbk_zamwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:10:28 <a href="tcywiki/20220520">tcywiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:10:25 <a href="szywiki/20220520">szywiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:10:20 <a href="sqwikibooks/20220520">sqwikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:10:04 <a href="suwiki/20220520">suwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:09:35 <a href="lbwiktionary/20220520">lbwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:09:21 <a href="extwiki/20220520">extwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:09:25 <a href="simplewiktionary/20220520">simplewiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:09:20 <a href="fiwikiquote/20220520">fiwikiquote</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:09:21 <a href="jbowiki/20220520">jbowiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:09:10 <a href="sdwikinews/20220520">sdwikinews</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:08:49 <a href="azwikiquote/20220520">azwikiquote</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:08:44 <a href="avkwiki/20220520">avkwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:08:47 <a href="mnwiki/20220520">mnwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:08:39 <a href="kuwiki/20220520">kuwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:08:32 <a href="ocwikibooks/20220520">ocwikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:08:24 movementroleswiki (private data): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:08:23 <a href="sqwikiquote/20220520">sqwikiquote</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:08:14 <a href="dawikibooks/20220520">dawikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:08:12 <a href="mdfwiki/20220520">mdfwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:08:01 <a href="mkwikimedia/20220520">mkwikimedia</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:07:51 <a href="glkwiki/20220520">glkwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:07:50 <a href="idwikimedia/20220520">idwikimedia</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:07:48 <a href="elwikibooks/20220520">elwikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:07:48 <a href="papwiki/20220520">papwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:07:41 <a href="mtwiki/20220520">mtwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:07:23 <a href="orwiktionary/20220520">orwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:07:23 <a href="slwikibooks/20220520">slwikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:07:12 <a href="eswikiquote/20220520">eswikiquote</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:07:09 <a href="shnwikivoyage/20220520">shnwikivoyage</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:07:00 <a href="cswikinews/20220520">cswikinews</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:06:58 <a href="pswiki/20220520">pswiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:06:57 <a href="nahwiktionary/20220520">nahwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:06:57 <a href="pnbwiktionary/20220520">pnbwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:06:47 <a href="testcommonswiki/20220520">testcommonswiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:06:46 <a href="tywiki/20220520">tywiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:06:38 <a href="gvwiki/20220520">gvwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:06:39 <a href="tetwiki/20220520">tetwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:06:23 <a href="arwikiquote/20220520">arwikiquote</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:06:26 <a href="glwiktionary/20220520">glwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:06:27 <a href="nawiki/20220520">nawiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:06:18 <a href="strategywiki/20220520">strategywiki</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:06:01 <a href="lbewiki/20220520">lbewiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:06:00 <a href="lfnwiki/20220520">lfnwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:05:56 <a href="chrwiktionary/20220520">chrwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:06:02 <a href="tyvwiki/20220520">tyvwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:05:57 <a href="thwikiquote/20220520">thwikiquote</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:05:33 <a href="kaawiki/20220520">kaawiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:05:29 <a href="bswikiquote/20220520">bswikiquote</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:05:20 <a href="cywikisource/20220520">cywikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:05:24 <a href="trvwiki/20220520">trvwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:05:14 <a href="fiwikivoyage/20220520">fiwikivoyage</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:04:57 <a href="eowiktionary/20220520">eowiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:04:46 <a href="arwikinews/20220520">arwikinews</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:04:45 <a href="alswiki/20220520">alswiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:04:47 <a href="scnwiki/20220520">scnwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:04:41 <a href="nywiki/20220520">nywiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:04:13 <a href="eswikinews/20220520">eswikinews</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:04:02 wikimaniateamwiki (private data): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:03:56 <a href="niawiki/20220520">niawiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:03:58 <a href="vecwiktionary/20220520">vecwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:03:55 <a href="sawikibooks/20220520">sawikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:03:47 <a href="bgwikisource/20220520">bgwikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:03:46 <a href="guwikisource/20220520">guwikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:03:34 <a href="kmwikibooks/20220520">kmwikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:03:31 <a href="kbpwiki/20220520">kbpwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:03:28 <a href="fowiktionary/20220520">fowiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:03:20 <a href="diqwiktionary/20220520">diqwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:03:22 <a href="trwikivoyage/20220520">trwikivoyage</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:03:14 <a href="brwikimedia/20220520">brwikimedia</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:03:01 <a href="mlwikibooks/20220520">mlwikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:02:56 <a href="iewiki/20220520">iewiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:02:58 wg_enwiki (private data): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:02:38 <a href="hrwikisource/20220520">hrwikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:02:35 <a href="anwiktionary/20220520">anwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:02:27 <a href="ttwikiquote/20220520">ttwikiquote</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:02:24 <a href="nowikinews/20220520">nowikinews</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:02:15 <a href="rnwiktionary/20220520">rnwiktionary</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:02:08 <a href="bewiktionary/20220520">bewiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:02:01 <a href="lijwiki/20220520">lijwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:01:55 <a href="madwiki/20220520">madwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:01:56 <a href="newikibooks/20220520">newikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:01:52 <a href="siwiktionary/20220520">siwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:01:40 <a href="ffwiki/20220520">ffwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:01:28 <a href="dewikinews/20220520">dewikinews</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:01:24 <a href="glwikibooks/20220520">glwikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:01:19 <a href="fjwiktionary/20220520">fjwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:01:23 <a href="wikimania2011wiki/20220520">wikimania2011wiki</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:01:08 <a href="xhwiktionary/20220520">xhwiktionary</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:00:52 <a href="hifwiki/20220520">hifwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:00:56 <a href="usabilitywiki/20220520">usabilitywiki</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:00:54 <a href="tkwikibooks/20220520">tkwikibooks</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:00:47 <a href="hywikisource/20220520">hywikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:00:46 <a href="sqwiktionary/20220520">sqwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:00:37 <a href="gdwiki/20220520">gdwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:00:28 <a href="glwikiquote/20220520">glwikiquote</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:00:23 <a href="wikimania2009wiki/20220520">wikimania2009wiki</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:00:08 <a href="iewiktionary/20220520">iewiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:00:09 <a href="wawikibooks/20220520">wawikibooks</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:59:55 <a href="aywiki/20220520">aywiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:59:46 <a href="akwiki/20220520">akwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:59:40 <a href="lowiktionary/20220520">lowiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:59:18 <a href="chwiki/20220520">chwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:59:16 <a href="chwikibooks/20220520">chwikibooks</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:59:21 <a href="sawiki/20220520">sawiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:58:50 <a href="bowiktionary/20220520">bowiktionary</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:58:51 <a href="hewiktionary/20220520">hewiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:58:48 <a href="atjwiki/20220520">atjwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:58:40 <a href="piwiktionary/20220520">piwiktionary</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:58:34 <a href="kkwikiquote/20220520">kkwikiquote</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:58:22 <a href="hiwikibooks/20220520">hiwikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:58:21 <a href="mxwikimedia/20220520">mxwikimedia</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:58:16 <a href="lnwiki/20220520">lnwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:58:12 <a href="foundationwiki/20220520">foundationwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:58:09 <a href="donatewiki/20220520">donatewiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:57:52 <a href="mnwiktionary/20220520">mnwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:57:31 <a href="cvwikibooks/20220520">cvwikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:57:22 <a href="etwikiquote/20220520">etwikiquote</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:57:20 <a href="amwikimedia/20220520">amwikimedia</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:57:20 <a href="etwikisource/20220520">etwikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:57:21 <a href="ngwikimedia/20220520">ngwikimedia</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:57:11 <a href="acewiki/20220520">acewiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:57:10 <a href="lbwikiquote/20220520">lbwikiquote</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:57:01 <a href="howiki/20220520">howiki</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:56:59 <a href="kowikibooks/20220520">kowikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:56:53 <a href="gnwikibooks/20220520">gnwikibooks</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:56:44 <a href="angwikibooks/20220520">angwikibooks</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:56:45 <a href="chwiktionary/20220520">chwiktionary</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:56:44 <a href="frpwiki/20220520">frpwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:56:45 <a href="jawikivoyage/20220520">jawikivoyage</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:56:38 <a href="bjnwiki/20220520">bjnwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:56:42 <a href="plwikibooks/20220520">plwikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:56:28 <a href="fowikisource/20220520">fowikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:56:28 <a href="koiwiki/20220520">koiwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:56:15 <a href="bhwiktionary/20220520">bhwiktionary</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:56:06 <a href="mnwwiki/20220520">mnwwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:55:54 <a href="huwikinews/20220520">huwikinews</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:55:45 <a href="nlwikinews/20220520">nlwikinews</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:55:25 <a href="bnwikibooks/20220520">bnwikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:55:13 <a href="frwikinews/20220520">frwikinews</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:55:04 <a href="fawikivoyage/20220520">fawikivoyage</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:54:54 <a href="dagwiki/20220520">dagwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:54:54 <a href="ltwikiquote/20220520">ltwikiquote</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:54:48 <a href="cowikimedia/20220520">cowikimedia</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:54:49 <a href="nvwiki/20220520">nvwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:54:36 <a href="elwikinews/20220520">elwikinews</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:54:40 <a href="nlwikimedia/20220520">nlwikimedia</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:54:18 <a href="hakwiki/20220520">hakwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:54:06 grantswiki (private data): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:53:55 <a href="etwikibooks/20220520">etwikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:53:47 <a href="biwiki/20220520">biwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:53:48 <a href="pamwiki/20220520">pamwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:53:35 <a href="brwikisource/20220520">brwikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:53:23 <a href="kywiktionary/20220520">kywiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:53:04 <a href="aawikibooks/20220520">aawikibooks</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:53:04 <a href="gorwiki/20220520">gorwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:53:02 <a href="csbwiki/20220520">csbwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:52:32 <a href="kawiktionary/20220520">kawiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:52:26 <a href="azwiktionary/20220520">azwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:52:16 <a href="amwiki/20220520">amwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:52:10 <a href="glwikisource/20220520">glwikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:51:55 <a href="minwiktionary/20220520">minwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:51:49 <a href="amiwiki/20220520">amiwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:51:49 <a href="plwikinews/20220520">plwikinews</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:51:42 <a href="angwiki/20220520">angwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:51:44 <a href="skwikiquote/20220520">skwikiquote</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:51:42 <a href="tawikiquote/20220520">tawikiquote</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:51:06 <a href="mnwwiktionary/20220520">mnwwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:51:00 <a href="suwiktionary/20220520">suwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:50:57 <a href="nnwiktionary/20220520">nnwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:50:38 <a href="maiwiki/20220520">maiwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:50:02 <a href="gvwiktionary/20220520">gvwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:50:03 <a href="kswiki/20220520">kswiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:49:48 <a href="csbwiktionary/20220520">csbwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:49:06 <a href="biwiktionary/20220520">biwiktionary</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:48:52 <a href="bmwiktionary/20220520">bmwiktionary</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:48:53 <a href="plwikivoyage/20220520">plwikivoyage</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:48:44 <a href="euwikibooks/20220520">euwikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:48:45 <a href="outreachwiki/20220520">outreachwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:48:36 <a href="gdwiktionary/20220520">gdwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:48:12 <a href="hawwiki/20220520">hawwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:48:04 <a href="cawikibooks/20220520">cawikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:48:01 <a href="kshwiki/20220520">kshwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:47:41 <a href="ltwikibooks/20220520">ltwikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:47:41 <a href="ptwikimedia/20220520">ptwikimedia</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:47:32 <a href="ndswikibooks/20220520">ndswikibooks</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:47:22 <a href="lnwiktionary/20220520">lnwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:47:10 <a href="bxrwiki/20220520">bxrwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:46:57 <a href="pawikibooks/20220520">pawikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:46:33 <a href="bewikiquote/20220520">bewikiquote</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:45:55 <a href="guwikibooks/20220520">guwikibooks</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:45:42 <a href="arwiktionary/20220520">arwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:45:40 <a href="mhrwiki/20220520">mhrwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:45:25 <a href="idwikibooks/20220520">idwikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:45:24 <a href="liwikibooks/20220520">liwikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:45:25 <a href="ukwikiquote/20220520">ukwikiquote</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:45:16 <a href="wikimania2013wiki/20220520">wikimania2013wiki</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:45:00 <a href="barwiki/20220520">barwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:44:28 <a href="xmfwiki/20220520">xmfwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:44:19 <a href="bnwikivoyage/20220520">bnwikivoyage</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:43:57 <a href="afwikiquote/20220520">afwikiquote</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:43:30 <a href="frrwiki/20220520">frrwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:43:27 <a href="cawikimedia/20220520">cawikimedia</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:43:32 <a href="thankyouwiki/20220520">thankyouwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:43:17 <a href="eswikivoyage/20220520">eswikivoyage</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:43:10 <a href="gnwiktionary/20220520">gnwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:43:06 <a href="suwikibooks/20220520">suwikibooks</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:42:48 <a href="quwikiquote/20220520">quwikiquote</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:42:29 <a href="cowikiquote/20220520">cowikiquote</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:42:08 <a href="viwikibooks/20220520">viwikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:42:04 <a href="ptwikiquote/20220520">ptwikiquote</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:42:01 <a href="quwiktionary/20220520">quwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:41:30 <a href="lmowiktionary/20220520">lmowiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:41:18 <a href="hywikiquote/20220520">hywikiquote</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:41:05 <a href="mrwikisource/20220520">mrwikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:40:49 <a href="sdwiki/20220520">sdwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:40:48 <a href="sewikimedia/20220520">sewikimedia</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:40:44 <a href="skwiktionary/20220520">skwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:40:34 <a href="fawikiquote/20220520">fawikiquote</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:40:30 arbcom_cswiki (private data): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:39:59 <a href="fiwikisource/20220520">fiwikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:39:38 <a href="grwikimedia/20220520">grwikimedia</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:39:26 <a href="wikimania2007wiki/20220520">wikimania2007wiki</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:39:03 <a href="mnwikibooks/20220520">mnwikibooks</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:38:29 <a href="napwiki/20220520">napwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:38:25 <a href="bnwiktionary/20220520">bnwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:37:56 <a href="frwikibooks/20220520">frwikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:37:56 <a href="pswikivoyage/20220520">pswikivoyage</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:37:50 <a href="avwiktionary/20220520">avwiktionary</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:37:44 <a href="trwikibooks/20220520">trwikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:37:10 <a href="slwiktionary/20220520">slwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:37:05 otrs_wikiwiki (private data): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:36:59 <a href="kvwiki/20220520">kvwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:36:51 <a href="jawikiversity/20220520">jawikiversity</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:36:49 ecwikimedia (private data): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:35:41 <a href="svwikivoyage/20220520">svwikivoyage</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:35:35 <a href="nlwikivoyage/20220520">nlwikivoyage</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:35:33 <a href="siwikibooks/20220520">siwikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:35:31 searchcomwiki (private data): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:35:03 <a href="mkwiktionary/20220520">mkwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:34:52 <a href="pawikisource/20220520">pawikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:34:44 arbcom_dewiki (private data): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:34:45 <a href="pdcwiki/20220520">pdcwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:34:37 <a href="pagwiki/20220520">pagwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:34:23 noboard_chapterswikimedia (private data): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:34:07 <a href="euwiktionary/20220520">euwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:34:01 <a href="cdowiki/20220520">cdowiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:33:51 <a href="hiwikiversity/20220520">hiwikiversity</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:33:42 <a href="itwikinews/20220520">itwikinews</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:33:19 <a href="aswiki/20220520">aswiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:33:08 <a href="rowikinews/20220520">rowikinews</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:33:04 <a href="fawikisource/20220520">fawikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:32:55 <a href="iswikisource/20220520">iswikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:32:05 id_internalwikimedia (private data): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:32:09 <a href="ugwikibooks/20220520">ugwikibooks</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:32:07 <a href="vepwiki/20220520">vepwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:31:54 <a href="slwikiquote/20220520">slwikiquote</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:31:52 <a href="urwiktionary/20220520">urwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:31:31 <a href="mwlwiki/20220520">mwlwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:31:22 <a href="towiktionary/20220520">towiktionary</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:31:15 <a href="mrwikibooks/20220520">mrwikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:30:40 <a href="mrwiktionary/20220520">mrwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:30:37 <a href="taywiki/20220520">taywiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:30:27 <a href="banwiki/20220520">banwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:29:52 <a href="arwikibooks/20220520">arwikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:29:58 <a href="wawikisource/20220520">wawikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:29:31 <a href="tpiwiktionary/20220520">tpiwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:29:08 <a href="dawikisource/20220520">dawikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:29:06 <a href="jvwikisource/20220520">jvwikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:29:03 <a href="srwikiquote/20220520">srwikiquote</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:28:47 <a href="sahwikisource/20220520">sahwikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:28:33 <a href="lawiktionary/20220520">lawiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:28:33 <a href="ltgwiki/20220520">ltgwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:28:29 <a href="kswiktionary/20220520">kswiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:28:12 <a href="bat_smgwiki/20220520">bat_smgwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:28:12 <a href="iuwiki/20220520">iuwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:27:41 <a href="guwiktionary/20220520">guwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:27:21 <a href="roa_rupwiktionary/20220520">roa_rupwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:27:10 <a href="avwiki/20220520">avwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:27:08 <a href="iawikibooks/20220520">iawikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:27:01 <a href="bugwiki/20220520">bugwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:26:57 <a href="smwiki/20220520">smwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:26:41 <a href="jamwiki/20220520">jamwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:26:41 <a href="tnwiki/20220520">tnwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:26:07 <a href="kawikibooks/20220520">kawikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:26:00 <a href="hifwiktionary/20220520">hifwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:25:49 <a href="lbwikibooks/20220520">lbwikibooks</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:25:35 <a href="brwiktionary/20220520">brwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:25:24 <a href="zh_min_nanwikibooks/20220520">zh_min_nanwikibooks</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:25:16 <a href="ptwikivoyage/20220520">ptwikivoyage</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:25:16 <a href="srnwiki/20220520">srnwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:24:53 <a href="iuwiktionary/20220520">iuwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:24:42 <a href="dvwiktionary/20220520">dvwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:24:31 <a href="dawiktionary/20220520">dawiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:24:29 <a href="scwiktionary/20220520">scwiktionary</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:24:23 <a href="ladwiki/20220520">ladwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:24:21 <a href="tnwiktionary/20220520">tnwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:23:58 <a href="hewikiquote/20220520">hewikiquote</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:23:46 <a href="huwikiquote/20220520">huwikiquote</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:23:38 <a href="hiwikimedia/20220520">hiwikimedia</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:23:32 <a href="cywikiquote/20220520">cywikiquote</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:23:27 <a href="lowiki/20220520">lowiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:23:25 <a href="pswikibooks/20220520">pswikibooks</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:23:11 <a href="eswikiversity/20220520">eswikiversity</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:22:53 <a href="fiwikiversity/20220520">fiwikiversity</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:22:51 <a href="hawiki/20220520">hawiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:22:35 <a href="fjwiki/20220520">fjwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:22:35 <a href="nlwikiquote/20220520">nlwikiquote</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:22:32 <a href="hewikinews/20220520">hewikinews</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:22:05 <a href="afwiktionary/20220520">afwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:22:04 <a href="gewikimedia/20220520">gewikimedia</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:21:59 <a href="nowikibooks/20220520">nowikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:21:15 <a href="crwiki/20220520">crwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:21:06 <a href="krwikiquote/20220520">krwikiquote</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:20:49 <a href="bowikibooks/20220520">bowikibooks</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:20:49 <a href="kowikiversity/20220520">kowikiversity</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:20:46 <a href="iawiktionary/20220520">iawiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:20:35 <a href="svwikibooks/20220520">svwikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:20:28 <a href="liwikinews/20220520">liwikinews</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:20:16 <a href="mniwiki/20220520">mniwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:19:59 <a href="gotwikibooks/20220520">gotwikibooks</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:20:00 <a href="svwikiversity/20220520">svwikiversity</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:19:51 <a href="nnwikiquote/20220520">nnwikiquote</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:19:50 <a href="wowiki/20220520">wowiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:19:30 <a href="eowikiquote/20220520">eowikiquote</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:19:03 <a href="kkwikibooks/20220520">kkwikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:18:47 <a href="svwikiquote/20220520">svwikiquote</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:18:20 <a href="bmwikiquote/20220520">bmwikiquote</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:18:03 <a href="crwikiquote/20220520">crwikiquote</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:17:57 <a href="gcrwiki/20220520">gcrwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:17:33 <a href="fywikibooks/20220520">fywikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:17:18 <a href="dzwiktionary/20220520">dzwiktionary</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:16:44 <a href="cswikiversity/20220520">cswikiversity</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:16:42 <a href="jbowiktionary/20220520">jbowiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:16:19 arbcom_nlwiki (private data): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:16:11 <a href="cswikibooks/20220520">cswikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:15:30 <a href="ikwiktionary/20220520">ikwiktionary</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:14:27 <a href="napwikisource/20220520">napwikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:14:13 <a href="piwiki/20220520">piwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:14:08 <a href="gawikiquote/20220520">gawikiquote</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:14:04 <a href="wikimania2016wiki/20220520">wikimania2016wiki</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:13:35 <a href="rwwiktionary/20220520">rwwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:12:40 <a href="mkwikibooks/20220520">mkwikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:12:07 <a href="lijwikisource/20220520">lijwikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:12:03 <a href="tiwiktionary/20220520">tiwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:11:31 <a href="bgwikinews/20220520">bgwikinews</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:11:26 <a href="hrwikiquote/20220520">hrwikiquote</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:10:11 <a href="guwikiquote/20220520">guwikiquote</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:09:58 <a href="rowikibooks/20220520">rowikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:09:19 <a href="angwikisource/20220520">angwikisource</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:09:11 <a href="pmswikisource/20220520">pmswikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:09:02 <a href="nycwikimedia/20220520">nycwikimedia</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:08:42 <a href="dzwiki/20220520">dzwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:07:38 <a href="bclwiktionary/20220520">bclwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:07:30 <a href="aswikisource/20220520">aswikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:06:36 <a href="angwiktionary/20220520">angwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:06:31 <a href="abwiki/20220520">abwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:05:28 <a href="cywikibooks/20220520">cywikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:05:13 <a href="bmwiki/20220520">bmwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:04:38 <a href="gnwiki/20220520">gnwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:04:26 ombudsmenwiki (private data): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:04:12 <a href="elwikiversity/20220520">elwikiversity</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:03:14 <a href="abwiktionary/20220520">abwiktionary</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:03:00 projectcomwiki (private data): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:03:00 <a href="tlwiktionary/20220520">tlwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:02:30 <a href="bgwikiquote/20220520">bgwikiquote</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:02:09 <a href="vowikiquote/20220520">vowikiquote</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:01:07 <a href="bewikisource/20220520">bewikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:01:02 <a href="amwiktionary/20220520">amwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:01:01 <a href="bswikinews/20220520">bswikinews</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:00:06 <a href="liwikiquote/20220520">liwikiquote</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:58:35 <a href="banwikisource/20220520">banwikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:58:28 <a href="eowikinews/20220520">eowikinews</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:58:10 <a href="towiki/20220520">towiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:58:03 <a href="miwiki/20220520">miwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:57:42 <a href="akwikibooks/20220520">akwikibooks</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:57:31 <a href="gawikibooks/20220520">gawikibooks</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:56:06 <a href="arcwiki/20220520">arcwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:56:05 spcomwiki (private data): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:55:49 <a href="angwikiquote/20220520">angwikiquote</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:55:26 chapcomwiki (private data): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:54:58 <a href="bclwiki/20220520">bclwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:54:53 sysop_itwiki (private data): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:54:35 <a href="krcwiki/20220520">krcwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:53:50 <a href="advisorywiki/20220520">advisorywiki</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:53:41 <a href="arwikimedia/20220520">arwikimedia</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:53:13 <a href="bdwikimedia/20220520">bdwikimedia</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:52:22 <a href="etwikimedia/20220520">etwikimedia</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:52:12 <a href="jawikinews/20220520">jawikinews</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:52:05 <a href="igwiki/20220520">igwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:51:40 <a href="bswiktionary/20220520">bswiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:50:39 <a href="novwiki/20220520">novwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:49:52 <a href="elwikivoyage/20220520">elwikivoyage</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:49:25 <a href="trwikinews/20220520">trwikinews</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:49:16 <a href="gagwiki/20220520">gagwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:48:45 <a href="adywiki/20220520">adywiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:48:41 <a href="kowikinews/20220520">kowikinews</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:48:17 <a href="diqwiki/20220520">diqwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:47:23 <a href="bswikisource/20220520">bswikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:47:17 advisorswiki (private data): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:47:09 <a href="hrwikibooks/20220520">hrwikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:47:00 arbcom_enwiki (private data): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:46:17 <a href="ttwiktionary/20220520">ttwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:45:16 <a href="arwikiversity/20220520">arwikiversity</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:45:13 <a href="ltwikisource/20220520">ltwikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:44:47 <a href="idwikiquote/20220520">idwikiquote</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:44:45 <a href="fiwikinews/20220520">fiwikinews</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:42:40 <a href="betawikiversity/20220520">betawikiversity</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:42:35 <a href="aywiktionary/20220520">aywiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:42:04 <a href="bewikimedia/20220520">bewikimedia</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:41:54 <a href="jawikibooks/20220520">jawikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:40:19 <a href="kgwiki/20220520">kgwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:39:56 <a href="gomwiki/20220520">gomwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:39:10 <a href="bewikibooks/20220520">bewikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:38:49 <a href="afwikibooks/20220520">afwikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:38:15 <a href="akwiktionary/20220520">akwiktionary</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:37:16 <a href="nlwikibooks/20220520">nlwikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:37:13 <a href="hiwikivoyage/20220520">hiwikivoyage</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:36:52 <a href="cnwikimedia/20220520">cnwikimedia</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:36:29 <a href="chrwiki/20220520">chrwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:36:29 <a href="fiwikibooks/20220520">fiwikibooks</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:35:31 chairwiki (private data): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:35:06 boardwiki (private data): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:34:06 electcomwiki (private data): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:33:24 boardgovcomwiki (private data): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:32:43 <a href="fiu_vrowiki/20220520">fiu_vrowiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:32:22 <a href="ruewiki/20220520">ruewiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:31:56 <a href="kabwiki/20220520">kabwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:31:43 transitionteamwiki (private data): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:30:30 <a href="gotwiki/20220520">gotwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:29:14 <a href="htwikisource/20220520">htwikisource</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:29:14 <a href="stwiktionary/20220520">stwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:28:06 <a href="azwikisource/20220520">azwikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:27:59 <a href="fywiktionary/20220520">fywiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:27:12 <a href="astwiktionary/20220520">astwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:27:12 <a href="urwikiquote/20220520">urwikiquote</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:26:43 <a href="kkwiktionary/20220520">kkwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:25:23 <a href="pswiktionary/20220520">pswiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:24:18 <a href="eowikisource/20220520">eowikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:23:36 <a href="fiwikimedia/20220520">fiwikimedia</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:21:46 <a href="cuwiki/20220520">cuwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:21:41 <a href="punjabiwikimedia/20220520">punjabiwikimedia</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:19:51 <a href="nawiktionary/20220520">nawiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:19:18 <a href="twwiki/20220520">twwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:19:13 <a href="mniwiktionary/20220520">mniwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:18:49 auditcomwiki (private data): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:17:54 <a href="kbdwiki/20220520">kbdwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:16:46 <a href="chowiki/20220520">chowiki</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:16:17 <a href="dkwikimedia/20220520">dkwikimedia</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 10:15:54 <a href="kcgwiki/20220520">kcgwiki</a>: <span class='done'>Dump complete</span></li>
+
+            </ul>
+        </div>
+</body>
+</html>
