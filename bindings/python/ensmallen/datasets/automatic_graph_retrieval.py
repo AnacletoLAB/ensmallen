@@ -143,6 +143,7 @@ class AutomaticallyRetrievedGraph:
         self._load_node_types = load_node_types
         self._load_edge_weights = load_edge_weights
         self._name = name
+        self._repository = repository
         self._version = version
         self._auto_enable_tradeoffs = auto_enable_tradeoffs
         self._sort_tmp_dir = sort_tmp_dir
@@ -291,11 +292,27 @@ class AutomaticallyRetrievedGraph:
 
     def download(self):
         if not os.path.exists(self.get_preprocessed_graph_directory_path()):
-            # Download the necessary data
-            self._downloader.download(
-                self._graph["urls"],
-                self.get_adjusted_graph_paths()
-            )
+            try:
+                # Download the necessary data
+                self._downloader.download(
+                    self._graph["urls"],
+                    self.get_adjusted_graph_paths()
+                )
+            except Exception as e:
+                raise RuntimeError(
+                    f"Something went wrong while downloading the graph {self._name}, "
+                    f"version {self._version}, "
+                    f"retrieved from the {self._repository} repository. "
+                    "In this step, we are trying to download data provided from "
+                    "third parties, and such data may now be offline or moved. "
+                    "Please do investigate what has happened at the URLs reported "
+                    "below in this error message and "
+                    "do open up an issue in the Ensmallen's GitHub repository reporting also the complete"
+                    "exception of this error to help us keep the automatic graph retrieval "
+                    "in good shape. Thank you!"
+                    "Specifically, we were trying to download the following urls: "
+                    f"{self._graph['urls']}"
+                ) from e
 
     def __call__(self) -> Graph:
         """Return Graph containing required graph."""
@@ -354,175 +371,190 @@ class AutomaticallyRetrievedGraph:
             ) and node_path is not None
 
             if not self.is_preprocessed():
-                (
-                    node_types_number,
-                    nodes_number,
-                    edge_types_number,
-                    edges_number
-                ) = edge_list_utils.build_optimal_lists_files(
-                    # NOTE: the following parameters are supported by the parser, but
-                    # so far we have not encountered a single use case where we actually used them.  
-                    # original_node_type_path,
-                    # original_node_type_list_separator,
-                    # original_node_types_column_number,
-                    # original_node_types_column,
-                    # original_numeric_node_type_ids,
-                    # original_minimum_node_type_id,
-                    # original_node_type_list_header,
-                    # original_node_type_list_support_balanced_quotes,
-                    # original_node_type_list_rows_to_skip,
-                    # original_node_type_list_max_rows_number,
-                    # original_node_type_list_comment_symbol,
-                    # original_load_node_type_list_in_parallel,
-                    # original_node_type_list_is_correct,
-                    # node_types_number,
-                    target_node_type_list_path=target_node_type_list_path,
-                    target_node_type_list_separator='\t',
-                    target_node_type_list_node_types_column_number=0,
-                    original_node_path=node_path,
-                    original_node_list_header=graph_arguments.get(
-                        "node_list_header"
-                    ),
-                    original_node_list_support_balanced_quotes=graph_arguments.get(
-                        "node_list_support_balanced_quotes"
-                    ),
-                    node_list_rows_to_skip=graph_arguments.get(
-                        "node_list_rows_to_skip"
-                    ),
-                    node_list_is_correct=graph_arguments.get(
-                        "node_list_is_correct"
-                    ),
-                    node_list_max_rows_number=graph_arguments.get(
-                        "node_list_max_rows_number"
-                    ),
-                    node_list_comment_symbol=graph_arguments.get(
-                        "node_list_comment_symbol"
-                    ),
-                    default_node_type=graph_arguments.get(
-                        "default_node_type"
-                    ),
-                    original_nodes_column_number=graph_arguments.get(
-                        "nodes_column_number"
-                    ),
-                    original_nodes_column=graph_arguments.get(
-                        "nodes_column"
-                    ),
-                    original_node_types_separator=graph_arguments.get(
-                        "node_types_separator"
-                    ),
-                    original_node_list_separator=graph_arguments.get(
-                        "node_list_separator"
-                    ),
-                    original_node_list_node_types_column_number=graph_arguments.get(
-                        "node_list_node_types_column_number"
-                    ),
-                    original_node_list_node_types_column=graph_arguments.get(
-                        "node_list_node_types_column"
-                    ),
-                    nodes_number=graph_arguments.get("nodes_number"),
-                    # original_minimum_node_id,
-                    # original_numeric_node_ids,
-                    # original_node_list_numeric_node_type_ids,
-                    original_skip_node_types_if_unavailable=True,
-                    # It make sense to load the node list in parallel only when
-                    # you have to preprocess the node types, since otherwise the nodes number
-                    # would be unknown.
-                    original_load_node_list_in_parallel=target_node_type_list_path is not None,
-                    maximum_node_id=graph_arguments.get(
-                        "maximum_node_id"
-                    ),
-                    target_node_path=target_node_path,
-                    target_node_list_separator='\t',
-                    target_nodes_column=graph_arguments.get(
-                        "nodes_column"
-                    ),
-                    target_nodes_column_number=0,
-                    target_node_list_node_types_column_number=1,
-                    target_node_types_separator="|",
-                    # original_edge_type_path,
-                    # original_edge_type_list_separator,
-                    # original_edge_types_column_number,
-                    # original_edge_types_column,
-                    # original_numeric_edge_type_ids,
-                    # original_minimum_edge_type_id,
-                    # original_edge_type_list_header,
-                    # edge_type_list_rows_to_skip,
-                    # edge_type_list_max_rows_number,
-                    # edge_type_list_comment_symbol,
-                    # load_edge_type_list_in_parallel=True,
-                    # edge_type_list_is_correct,
-                    # edge_types_number,
-                    target_edge_type_list_path=target_edge_type_list_path,
-                    target_edge_type_list_separator='\t',
-                    target_edge_type_list_edge_types_column_number=0,
-                    original_edge_path=os.path.join(
-                        self._cache_path, graph_arguments["edge_path"]),
-                    original_edge_list_header=graph_arguments.get(
-                        "edge_list_header"
-                    ),
-                    original_edge_list_support_balanced_quotes=graph_arguments.get(
-                        "edge_list_support_balanced_quotes"
-                    ),
-                    original_edge_list_separator=graph_arguments.get(
-                        "edge_list_separator"
-                    ),
-                    original_sources_column_number=graph_arguments.get(
-                        "sources_column_number"
-                    ),
-                    original_sources_column=graph_arguments.get(
-                        "sources_column"
-                    ),
-                    original_destinations_column_number=graph_arguments.get(
-                        "destinations_column_number"
-                    ),
-                    original_destinations_column=graph_arguments.get(
-                        "destinations_column"
-                    ),
-                    original_edge_list_edge_types_column_number=graph_arguments.get(
-                        "edge_list_edge_types_column_number"
-                    ),
-                    original_edge_list_edge_types_column=graph_arguments.get(
-                        "edge_list_edge_types_column"
-                    ),
-                    default_edge_type=graph_arguments.get(
-                        "default_edge_type"
-                    ),
-                    original_weights_column_number=graph_arguments.get(
-                        "weights_column_number"
-                    ),
-                    original_weights_column=graph_arguments.get(
-                        "weights_column"
-                    ),
-                    default_weight=graph_arguments.get(
-                        "default_weight"
-                    ),
-                    original_edge_list_numeric_node_ids=graph_arguments.get(
-                        "edge_list_numeric_node_ids"
-                    ),
-                    skip_weights_if_unavailable=graph_arguments.get(
-                        "skip_weights_if_unavailable"
-                    ),
-                    skip_edge_types_if_unavailable=graph_arguments.get(
-                        "skip_edge_types_if_unavailable"
-                    ),
-                    edge_list_comment_symbol=graph_arguments.get(
-                        "edge_list_comment_symbol"
-                    ),
-                    edge_list_max_rows_number=graph_arguments.get(
-                        "edge_list_max_rows_number"
-                    ),
-                    edge_list_rows_to_skip=graph_arguments.get(
-                        "edge_list_rows_to_skip"
-                    ),
-                    load_edge_list_in_parallel=True,
-                    edges_number=graph_arguments.get("edges_number"),
-                    target_edge_path=target_edge_path,
-                    target_edge_list_separator='\t',
-                    sort_temporary_directory=self._sort_tmp_dir,
-                    directed=self._directed,
-                    verbose=self._verbose > 0,
-                    name=self._name,
-                )
+                try:
+                    (
+                        node_types_number,
+                        nodes_number,
+                        edge_types_number,
+                        edges_number
+                    ) = edge_list_utils.build_optimal_lists_files(
+                        # NOTE: the following parameters are supported by the parser, but
+                        # so far we have not encountered a single use case where we actually used them.  
+                        # original_node_type_path,
+                        # original_node_type_list_separator,
+                        # original_node_types_column_number,
+                        # original_node_types_column,
+                        # original_numeric_node_type_ids,
+                        # original_minimum_node_type_id,
+                        # original_node_type_list_header,
+                        # original_node_type_list_support_balanced_quotes,
+                        # original_node_type_list_rows_to_skip,
+                        # original_node_type_list_max_rows_number,
+                        # original_node_type_list_comment_symbol,
+                        # original_load_node_type_list_in_parallel,
+                        # original_node_type_list_is_correct,
+                        # node_types_number,
+                        target_node_type_list_path=target_node_type_list_path,
+                        target_node_type_list_separator='\t',
+                        target_node_type_list_node_types_column_number=0,
+                        original_node_path=node_path,
+                        original_node_list_header=graph_arguments.get(
+                            "node_list_header"
+                        ),
+                        original_node_list_support_balanced_quotes=graph_arguments.get(
+                            "node_list_support_balanced_quotes"
+                        ),
+                        node_list_rows_to_skip=graph_arguments.get(
+                            "node_list_rows_to_skip"
+                        ),
+                        node_list_is_correct=graph_arguments.get(
+                            "node_list_is_correct"
+                        ),
+                        node_list_max_rows_number=graph_arguments.get(
+                            "node_list_max_rows_number"
+                        ),
+                        node_list_comment_symbol=graph_arguments.get(
+                            "node_list_comment_symbol"
+                        ),
+                        default_node_type=graph_arguments.get(
+                            "default_node_type"
+                        ),
+                        original_nodes_column_number=graph_arguments.get(
+                            "nodes_column_number"
+                        ),
+                        original_nodes_column=graph_arguments.get(
+                            "nodes_column"
+                        ),
+                        original_node_types_separator=graph_arguments.get(
+                            "node_types_separator"
+                        ),
+                        original_node_list_separator=graph_arguments.get(
+                            "node_list_separator"
+                        ),
+                        original_node_list_node_types_column_number=graph_arguments.get(
+                            "node_list_node_types_column_number"
+                        ),
+                        original_node_list_node_types_column=graph_arguments.get(
+                            "node_list_node_types_column"
+                        ),
+                        nodes_number=graph_arguments.get("nodes_number"),
+                        # original_minimum_node_id,
+                        # original_numeric_node_ids,
+                        # original_node_list_numeric_node_type_ids,
+                        original_skip_node_types_if_unavailable=True,
+                        # It make sense to load the node list in parallel only when
+                        # you have to preprocess the node types, since otherwise the nodes number
+                        # would be unknown.
+                        original_load_node_list_in_parallel=target_node_type_list_path is not None,
+                        maximum_node_id=graph_arguments.get(
+                            "maximum_node_id"
+                        ),
+                        target_node_path=target_node_path,
+                        target_node_list_separator='\t',
+                        target_nodes_column=graph_arguments.get(
+                            "nodes_column"
+                        ),
+                        target_nodes_column_number=0,
+                        target_node_list_node_types_column_number=1,
+                        target_node_types_separator="|",
+                        # original_edge_type_path,
+                        # original_edge_type_list_separator,
+                        # original_edge_types_column_number,
+                        # original_edge_types_column,
+                        # original_numeric_edge_type_ids,
+                        # original_minimum_edge_type_id,
+                        # original_edge_type_list_header,
+                        # edge_type_list_rows_to_skip,
+                        # edge_type_list_max_rows_number,
+                        # edge_type_list_comment_symbol,
+                        # load_edge_type_list_in_parallel=True,
+                        # edge_type_list_is_correct,
+                        # edge_types_number,
+                        target_edge_type_list_path=target_edge_type_list_path,
+                        target_edge_type_list_separator='\t',
+                        target_edge_type_list_edge_types_column_number=0,
+                        original_edge_path=os.path.join(
+                            self._cache_path, graph_arguments["edge_path"]),
+                        original_edge_list_header=graph_arguments.get(
+                            "edge_list_header"
+                        ),
+                        original_edge_list_support_balanced_quotes=graph_arguments.get(
+                            "edge_list_support_balanced_quotes"
+                        ),
+                        original_edge_list_separator=graph_arguments.get(
+                            "edge_list_separator"
+                        ),
+                        original_sources_column_number=graph_arguments.get(
+                            "sources_column_number"
+                        ),
+                        original_sources_column=graph_arguments.get(
+                            "sources_column"
+                        ),
+                        original_destinations_column_number=graph_arguments.get(
+                            "destinations_column_number"
+                        ),
+                        original_destinations_column=graph_arguments.get(
+                            "destinations_column"
+                        ),
+                        original_edge_list_edge_types_column_number=graph_arguments.get(
+                            "edge_list_edge_types_column_number"
+                        ),
+                        original_edge_list_edge_types_column=graph_arguments.get(
+                            "edge_list_edge_types_column"
+                        ),
+                        default_edge_type=graph_arguments.get(
+                            "default_edge_type"
+                        ),
+                        original_weights_column_number=graph_arguments.get(
+                            "weights_column_number"
+                        ),
+                        original_weights_column=graph_arguments.get(
+                            "weights_column"
+                        ),
+                        default_weight=graph_arguments.get(
+                            "default_weight"
+                        ),
+                        original_edge_list_numeric_node_ids=graph_arguments.get(
+                            "edge_list_numeric_node_ids"
+                        ),
+                        skip_weights_if_unavailable=graph_arguments.get(
+                            "skip_weights_if_unavailable"
+                        ),
+                        skip_edge_types_if_unavailable=graph_arguments.get(
+                            "skip_edge_types_if_unavailable"
+                        ),
+                        edge_list_comment_symbol=graph_arguments.get(
+                            "edge_list_comment_symbol"
+                        ),
+                        edge_list_max_rows_number=graph_arguments.get(
+                            "edge_list_max_rows_number"
+                        ),
+                        edge_list_rows_to_skip=graph_arguments.get(
+                            "edge_list_rows_to_skip"
+                        ),
+                        load_edge_list_in_parallel=True,
+                        edges_number=graph_arguments.get("edges_number"),
+                        target_edge_path=target_edge_path,
+                        target_edge_list_separator='\t',
+                        sort_temporary_directory=self._sort_tmp_dir,
+                        directed=self._directed,
+                        verbose=self._verbose > 0,
+                        name=self._name,
+                    )
+                except Exception as e:
+                    raise RuntimeError(
+                        f"Something went wrong while preprocessing the graph {self._name}, "
+                        f"version {self._version}, "
+                        f"retrieved from the {self._repository} repository. "
+                        "This is NOT the loading step, but a preprocessing step "
+                        "that loads remote data from third parties. "
+                        "As such there may have been some changes in the remote data "
+                        "that may have made them incompatible with the current "
+                        "expected parametrization. "
+                        "Do open up an issue in the Ensmallen's GitHub repository reporting also the complete"
+                        "exception of this error to help us keep the automatic graph retrieval "
+                        "in good shape. Thank you!"
+                    ) from e
                 # Store the obtained metadata
                 self.store_preprocessed_metadata(
                     node_types_number,
@@ -592,29 +624,42 @@ class AutomaticallyRetrievedGraph:
             else:
                 edge_weights_arguments = {}
 
-            # Load the graph
-            graph = Graph.from_csv(**{
-                **metadata,
-                **nodes_arguments,
-                **edge_types_arguments,
-                **edge_weights_arguments,
+            try:
+                # Load the graph
+                graph = Graph.from_csv(**{
+                    **metadata,
+                    **nodes_arguments,
+                    **edge_types_arguments,
+                    **edge_weights_arguments,
 
-                "edge_path": target_edge_path,
-                "edge_list_header": False,
-                "sources_column_number": 0,
-                "destinations_column_number": 1,
-                "edge_list_numeric_node_ids": True,
-                "edge_list_is_complete": True,
-                "edge_list_may_contain_duplicates": False,
-                "edge_list_is_sorted": True,
-                "edge_list_is_correct": True,
-                "edges_number": metadata["edges_number"],
-                "nodes_number": metadata["nodes_number"],
-                "may_have_singletons": may_have_singletons,
-                "verbose": self._verbose > 0,
-                "directed": self._directed,
-                "name": self._name,
-            })
+                    "edge_path": target_edge_path,
+                    "edge_list_header": False,
+                    "sources_column_number": 0,
+                    "destinations_column_number": 1,
+                    "edge_list_numeric_node_ids": True,
+                    "edge_list_is_complete": True,
+                    "edge_list_may_contain_duplicates": False,
+                    "edge_list_is_sorted": True,
+                    "edge_list_is_correct": True,
+                    "edges_number": metadata["edges_number"],
+                    "nodes_number": metadata["nodes_number"],
+                    "may_have_singletons": may_have_singletons,
+                    "verbose": self._verbose > 0,
+                    "directed": self._directed,
+                    "name": self._name,
+                })
+            except Exception as e:
+                raise RuntimeError(
+                    f"Something went wrong while loading the graph {self._name}, "
+                    f"version {self._version}, "
+                    f"retrieved from the {self._repository} repository. "
+                    "Do note that the preprocessing step of the graph has "
+                    "completed without apparent errors. "
+                    "This is likely something wrong with the Ensmallen library "
+                    "so do please open an issue about the error you have encountered "
+                    "in the Ensmallen's GitHub repository reporting also the complete "
+                    "exception of this error. Thank you!"
+                ) from e
         else:
             # Otherwise just load the graph.
             graph = Graph.from_csv(**{
