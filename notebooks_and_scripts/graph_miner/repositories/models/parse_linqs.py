@@ -60,7 +60,7 @@ def get_words_data(
             )
             # Aligning node features with filtered graph node names.
             filtered_graph = filtered_graph.filter_from_names(
-                node_names_to_filter=unavailable_nodes
+                node_names_to_remove=unavailable_nodes
             )
             node_features = node_features.loc[filtered_graph.get_node_names()]
         else:
