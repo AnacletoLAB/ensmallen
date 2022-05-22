@@ -276,6 +276,22 @@ impl Graph {
             }))
     }
 
+    /// Returns whether the nodes have exclusively homogenous node types.
+    ///
+    /// # Raises
+    /// * If the graph does not have node types.
+    pub fn has_exclusively_homogeneous_node_types(&self) -> Result<bool> {
+        Ok(self
+            .node_types
+            .as_ref()
+            .as_ref()
+            .map_or(false, |node_type_ids| {
+                node_type_ids.counts.iter().all(|&node_type_count| {
+                    node_type_count == 0 || node_type_count == self.get_nodes_number()
+                })
+            }))
+    }
+
     /// Returns whether the nodes have an homogenous node ontology.
     pub fn has_homogeneous_node_ontologies(&self) -> Result<bool> {
         let first_node_ontology = self.get_ontology_from_node_id(0)?;
