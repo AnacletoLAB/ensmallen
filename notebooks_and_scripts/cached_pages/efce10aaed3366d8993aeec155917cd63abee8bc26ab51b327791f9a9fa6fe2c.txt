@@ -22,10 +22,7 @@
     <h5>Directories</h5>
     <ul>
       <li>
-	<a href="https://kg-hub.berkeleybop.io/sldb/20220517">20220517</a>
-      </li>
-      <li>
-        <a href="https://kg-hub.berkeleybop.io/sldb/20220517">20220520</a>
+	<a href="https://kg-hub.berkeleybop.io/sldb/20220522">20220522</a>
       </li>
     </ul>
 

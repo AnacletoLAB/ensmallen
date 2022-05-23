@@ -74,10 +74,11 @@
                 Also view sorted by <a href="backup-index-bydb.html">wiki name</a>
             </div>
             <ul>
-                <li>2022-05-22 11:20:59 <a href="wikidatawiki/20220520">wikidatawiki</a>: <span class='in-progress'>Dump in progress</span></li>
-<ul><li class='in-progress'><span class='updates'>2022-05-22 08:18:26</span> <span class='status'>in-progress</span> <span class='title'><big><b>Recombine articles, templates, media/file descriptions, and primary meta-pages.</b></big></span><ul><li class='file'>wikidatawiki-20220520-pages-articles.xml.bz2 25.2 GB (written) </li></ul></li></ul>
-<li>2022-05-22 11:20:59 <a href="cebwiki/20220520">cebwiki</a>: <span class='in-progress'>Dump in progress</span></li>
-<ul><li class='in-progress'><span class='updates'>2022-05-21 14:40:36</span> <span class='status'>in-progress</span> <span class='title'>Extracted page abstracts for Yahoo</span><ul><li class='file'>cebwiki-20220520-abstract.xml.gz 101.7 MB (written) </li></ul></li></ul>
+                <li>2022-05-23 17:20:14 <a href="wikidatawiki/20220520">wikidatawiki</a>: <span class='in-progress'>Dump in progress</span></li>
+<ul><li class='in-progress'><span class='updates'>2022-05-23 17:20:12</span> <span class='status'>in-progress</span> <span class='title'>Recombine multiple bz2 streams</span><ul><li class='missing'>wikidatawiki-20220520-pages-articles-multistream.xml.bz2</li>
+<li class='missing'>wikidatawiki-20220520-pages-articles-multistream-index.txt.bz2</li></ul></li></ul>
+<li>2022-05-22 21:36:26 <a href="cebwiki/20220520">cebwiki</a>: <span class='done'>Dump complete</span></li>
+
 <li>2022-05-22 06:44:37 <a href="enwiktionary/20220520">enwiktionary</a>: <span class='done'>Dump complete</span></li>
 
 <li>2022-05-22 04:30:13 <a href="commonswiki/20220520">commonswiki</a>: <span class='done'>Dump complete</span></li>
@@ -388,9 +389,9 @@
 
 <li>2022-05-21 12:59:27 <a href="ukwikisource/20220520">ukwikisource</a>: <span class='done'>Dump complete</span></li>
 
-<li>2022-05-21 12:58:43 <a href="ukwiktionary/20220520">ukwiktionary</a>: <span class='done'>Dump complete</span></li>
-
 <li>2022-05-21 12:58:35 <a href="arwikisource/20220520">arwikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:58:43 <a href="ukwiktionary/20220520">ukwiktionary</a>: <span class='done'>Dump complete</span></li>
 
 <li>2022-05-21 12:58:34 <a href="dewikivoyage/20220520">dewikivoyage</a>: <span class='done'>Dump complete</span></li>
 
@@ -546,9 +547,9 @@
 
 <li>2022-05-21 12:41:27 <a href="zh_min_nanwikisource/20220520">zh_min_nanwikisource</a>: <span class='done'>Dump complete</span></li>
 
-<li>2022-05-21 12:41:16 <a href="zawiki/20220520">zawiki</a>: <span class='done'>Dump complete</span></li>
-
 <li>2022-05-21 12:41:15 <a href="tkwiki/20220520">tkwiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:41:16 <a href="zawiki/20220520">zawiki</a>: <span class='done'>Dump complete</span></li>
 
 <li>2022-05-21 12:41:06 <a href="fywiki/20220520">fywiki</a>: <span class='done'>Dump complete</span></li>
 
@@ -628,9 +629,9 @@
 
 <li>2022-05-21 12:38:02 <a href="wikimania2010wiki/20220520">wikimania2010wiki</a> (closed): <span class='done'>Dump complete</span></li>
 
-<li>2022-05-21 12:37:47 <a href="quwikibooks/20220520">quwikibooks</a> (closed): <span class='done'>Dump complete</span></li>
-
 <li>2022-05-21 12:37:42 <a href="cswikisource/20220520">cswikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:37:47 <a href="quwikibooks/20220520">quwikibooks</a> (closed): <span class='done'>Dump complete</span></li>
 
 <li>2022-05-21 12:37:40 <a href="iawiki/20220520">iawiki</a>: <span class='done'>Dump complete</span></li>
 
@@ -792,9 +793,9 @@
 
 <li>2022-05-21 12:29:30 <a href="uzwikiquote/20220520">uzwikiquote</a>: <span class='done'>Dump complete</span></li>
 
-<li>2022-05-21 12:29:12 <a href="simplewikibooks/20220520">simplewikibooks</a> (closed): <span class='done'>Dump complete</span></li>
-
 <li>2022-05-21 12:29:07 <a href="euwikiquote/20220520">euwikiquote</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:29:12 <a href="simplewikibooks/20220520">simplewikibooks</a> (closed): <span class='done'>Dump complete</span></li>
 
 <li>2022-05-21 12:29:07 <a href="iewikibooks/20220520">iewikibooks</a> (closed): <span class='done'>Dump complete</span></li>
 
@@ -1016,15 +1017,15 @@
 
 <li>2022-05-21 12:17:32 <a href="xhwiki/20220520">xhwiki</a>: <span class='done'>Dump complete</span></li>
 
-<li>2022-05-21 12:17:23 stewardwiki (private data): <span class='done'>Dump complete</span></li>
-
 <li>2022-05-21 12:17:16 <a href="aswikibooks/20220520">aswikibooks</a> (closed): <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:17:23 stewardwiki (private data): <span class='done'>Dump complete</span></li>
 
 <li>2022-05-21 12:17:16 <a href="mywiktionary/20220520">mywiktionary</a>: <span class='done'>Dump complete</span></li>
 
-<li>2022-05-21 12:17:03 <a href="uzwikibooks/20220520">uzwikibooks</a> (closed): <span class='done'>Dump complete</span></li>
-
 <li>2022-05-21 12:17:01 <a href="nostalgiawiki/20220520">nostalgiawiki</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:17:03 <a href="uzwikibooks/20220520">uzwikibooks</a> (closed): <span class='done'>Dump complete</span></li>
 
 <li>2022-05-21 12:16:54 <a href="fawikinews/20220520">fawikinews</a>: <span class='done'>Dump complete</span></li>
 
@@ -1150,9 +1151,9 @@
 
 <li>2022-05-21 12:09:21 <a href="extwiki/20220520">extwiki</a>: <span class='done'>Dump complete</span></li>
 
-<li>2022-05-21 12:09:25 <a href="simplewiktionary/20220520">simplewiktionary</a>: <span class='done'>Dump complete</span></li>
-
 <li>2022-05-21 12:09:20 <a href="fiwikiquote/20220520">fiwikiquote</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:09:25 <a href="simplewiktionary/20220520">simplewiktionary</a>: <span class='done'>Dump complete</span></li>
 
 <li>2022-05-21 12:09:21 <a href="jbowiki/20220520">jbowiki</a>: <span class='done'>Dump complete</span></li>
 
@@ -1282,9 +1283,9 @@
 
 <li>2022-05-21 12:02:58 wg_enwiki (private data): <span class='done'>Dump complete</span></li>
 
-<li>2022-05-21 12:02:38 <a href="hrwikisource/20220520">hrwikisource</a>: <span class='done'>Dump complete</span></li>
-
 <li>2022-05-21 12:02:35 <a href="anwiktionary/20220520">anwiktionary</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 12:02:38 <a href="hrwikisource/20220520">hrwikisource</a>: <span class='done'>Dump complete</span></li>
 
 <li>2022-05-21 12:02:27 <a href="ttwikiquote/20220520">ttwikiquote</a> (closed): <span class='done'>Dump complete</span></li>
 
@@ -1370,9 +1371,9 @@
 
 <li>2022-05-21 11:57:31 <a href="cvwikibooks/20220520">cvwikibooks</a>: <span class='done'>Dump complete</span></li>
 
-<li>2022-05-21 11:57:22 <a href="etwikiquote/20220520">etwikiquote</a>: <span class='done'>Dump complete</span></li>
-
 <li>2022-05-21 11:57:20 <a href="amwikimedia/20220520">amwikimedia</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:57:22 <a href="etwikiquote/20220520">etwikiquote</a>: <span class='done'>Dump complete</span></li>
 
 <li>2022-05-21 11:57:20 <a href="etwikisource/20220520">etwikisource</a>: <span class='done'>Dump complete</span></li>
 
@@ -1636,9 +1637,9 @@
 
 <li>2022-05-21 11:33:19 <a href="aswiki/20220520">aswiki</a>: <span class='done'>Dump complete</span></li>
 
-<li>2022-05-21 11:33:08 <a href="rowikinews/20220520">rowikinews</a>: <span class='done'>Dump complete</span></li>
-
 <li>2022-05-21 11:33:04 <a href="fawikisource/20220520">fawikisource</a>: <span class='done'>Dump complete</span></li>
+
+<li>2022-05-21 11:33:08 <a href="rowikinews/20220520">rowikinews</a>: <span class='done'>Dump complete</span></li>
 
 <li>2022-05-21 11:32:55 <a href="iswikisource/20220520">iswikisource</a>: <span class='done'>Dump complete</span></li>
 

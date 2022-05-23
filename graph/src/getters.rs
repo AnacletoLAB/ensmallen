@@ -1220,7 +1220,37 @@ impl Graph {
     /// # Raises
     /// * If there are no node types in the graph.
     pub fn get_node_ids_from_node_type_id(&self, node_type_id: NodeTypeT) -> Result<Vec<NodeT>> {
-        self.iter_node_ids_from_node_type_id(node_type_id)
+        self.par_iter_node_ids_from_node_type_id(node_type_id)
+            .map(|x| x.collect())
+    }
+
+    /// Returns node IDs of the nodes with given node type IDs.
+    ///
+    /// # Arguments
+    /// * `node_type_ids`: Vec<Option<NodeTypeT>> - The node type ID to filter for.
+    ///
+    /// # Raises
+    /// * If there are no node types in the graph.
+    pub fn get_node_ids_from_node_type_ids(
+        &self,
+        node_type_ids: Vec<Option<NodeTypeT>>,
+    ) -> Result<Vec<NodeT>> {
+        self.par_iter_node_ids_from_node_type_ids(node_type_ids)
+            .map(|x| x.collect())
+    }
+
+    /// Returns node IDs of the nodes with given node type names.
+    ///
+    /// # Arguments
+    /// * `node_type_names`: Vec<Option<String>> - The node type ID to filter for.
+    ///
+    /// # Raises
+    /// * If there are no node types in the graph.
+    pub fn get_node_ids_from_node_type_names(
+        &self,
+        node_type_names: Vec<Option<String>>,
+    ) -> Result<Vec<NodeT>> {
+        self.par_iter_node_ids_from_node_type_ids(self.get_node_type_ids_from_node_type_names(node_type_names)?)
             .map(|x| x.collect())
     }
 

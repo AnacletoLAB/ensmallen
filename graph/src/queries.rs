@@ -914,6 +914,24 @@ impl Graph {
             .map(|edge_id| unsafe { self.get_unchecked_edge_type_id_from_edge_id(edge_id) })
     }
 
+    /// Returns edge type from given edge node IDs.
+    ///
+    /// # Arguments
+    /// * `src`: NodeT - Source node ID of the node of interest.
+    /// * `dst`: NodeT - Destination node ID of the node of interest.
+    ///
+    /// # Raises
+    /// * If the provided nodes do not form an edge.
+    ///
+    pub fn get_edge_type_id_from_edge_node_ids(
+        &self,
+        src: NodeT,
+        dst: NodeT,
+    ) -> Result<Option<EdgeTypeT>> {
+        self.must_have_edge_types()?;
+        self.get_edge_type_id_from_edge_id(self.get_edge_id_from_node_ids(src, dst)?)
+    }
+
     /// Returns result of option with the node type of the given node id.
     ///
     /// # Arguments

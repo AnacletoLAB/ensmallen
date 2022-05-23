@@ -1506,7 +1506,7 @@ impl Graph {
     /// Returns parallel iterator over node IDs of the nodes with given node type ID.
     ///
     /// # Argument
-    /// * `node_type_id`: node_type_id - The node type ID to filter for.
+    /// * `node_type_id`: NodeTypeT - The node type ID to filter for.
     ///
     /// # Raises
     /// * If there are no node types in the graph.
@@ -1531,6 +1531,39 @@ impl Graph {
                         None
                     }
                 })
+        })
+    }
+
+    /// Returns parallel iterator over node IDs of the nodes with given node type IDs.
+    ///
+    /// # Argument
+    /// * `node_type_ids`: Vec<Option<NodeTypeT>> - The node type ID to filter for.
+    ///
+    /// # Raises
+    /// * If there are no node types in the graph.
+    /// * If the given node type IDs does not exist in the current graph instance.
+    pub fn par_iter_node_ids_from_node_type_ids(
+        &self,
+        node_type_ids: Vec<Option<NodeTypeT>>,
+    ) -> Result<impl ParallelIterator<Item = NodeT> + '_> {
+        let node_type_ids = self.validate_node_type_ids(node_type_ids)?;
+        self.must_have_node_types().map(|node_types| {
+            node_types.ids.par_iter().enumerate().filter_map(
+                move |(node_id, this_node_type_ids)| {
+                    if match this_node_type_ids {
+                        Some(this_node_type_ids) => {
+                            this_node_type_ids.iter().any(|&node_type_id| {
+                                node_type_ids.contains(&Some(node_type_id))
+                            })
+                        },
+                        None => node_type_ids.contains(&None)
+                    } {
+                        Some(node_id as NodeT)
+                    } else {
+                        None
+                    }
+                },
+            )
         })
     }
 
