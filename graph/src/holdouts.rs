@@ -227,7 +227,7 @@ impl Graph {
 
             if let Some(source_nodes_prefixes) = &source_nodes_prefixes {
                 let src_node_name = unsafe { self.get_unchecked_node_name_from_node_id(src) };
-                if source_nodes_prefixes
+                if !source_nodes_prefixes
                     .iter()
                     .any(|prefix| src_node_name.starts_with(prefix))
                 {
@@ -237,7 +237,7 @@ impl Graph {
 
             if let Some(destination_nodes_prefixes) = &destination_nodes_prefixes {
                 let dst_node_name = unsafe { self.get_unchecked_node_name_from_node_id(src) };
-                if destination_nodes_prefixes
+                if !destination_nodes_prefixes
                     .iter()
                     .any(|prefix| dst_node_name.starts_with(prefix))
                 {
