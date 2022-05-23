@@ -201,7 +201,7 @@ impl Graph {
         Ok(move |src: NodeT, dst: NodeT| {
             if let Some(source_node_types_ids) = &source_node_types_ids {
                 if let Some(src_node_type) = self.get_node_type_ids_from_node_id(src).unwrap() {
-                    if source_node_types_ids
+                    if !source_node_types_ids
                         .iter()
                         .any(|node_type_it| src_node_type.contains(node_type_it))
                     {
@@ -214,7 +214,7 @@ impl Graph {
 
             if let Some(destination_node_types_ids) = &destination_node_types_ids {
                 if let Some(dst_node_type) = self.get_node_type_ids_from_node_id(src).unwrap() {
-                    if destination_node_types_ids
+                    if !destination_node_types_ids
                         .iter()
                         .any(|node_type_it| dst_node_type.contains(node_type_it))
                     {
