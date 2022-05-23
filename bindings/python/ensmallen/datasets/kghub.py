@@ -6,7 +6,7 @@ def SLDB(
     directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "20220520", **kwargs
+    cache_sys_var = "GRAPH_CACHE_DIR", version = "20220522", **kwargs
 ) -> Graph:
     """Return sldb graph	
 
@@ -24,11 +24,10 @@ def SLDB(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "20220520"
+    version = "20220522"
         Version to retrieve	
 		The available versions are:
-			- 20220517
-			- 20220520	
+			- 20220522	
 	
 	
     """
