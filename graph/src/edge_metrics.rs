@@ -679,7 +679,7 @@ impl Graph {
     ///
     /// # Safety
     /// If the given node IDs do not exist in the graph this method will panic.
-    pub fn get_all_edge_metrics_from_node_ids_tuple(
+    pub fn get_all_edge_metrics_from_node_ids(
         &self,
         source_node_ids: Vec<NodeT>,
         destination_node_ids: Vec<NodeT>,
@@ -691,7 +691,7 @@ impl Graph {
             .map(|(src, dst)| {
                 self.validate_node_id(src)?;
                 self.validate_node_id(dst)?;
-                Ok(unsafe { self.get_unchecked_all_edge_metrics_from_node_ids_tuple(src, dst) })
+                Ok(unsafe { self.get_unchecked_all_edge_metrics_from_node_ids_tuple(src, dst, normalize) })
             })
             .collect::<Result<Vec<f32>>>()
     }
