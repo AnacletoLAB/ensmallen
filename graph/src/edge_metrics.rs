@@ -640,7 +640,7 @@ impl Graph {
     ///
     /// # Safety
     /// If the given node IDs do not exist in the graph this method will panic.
-    pub unsafe fn get_unchecked_all_edge_metrics_from_node_ids(
+    pub unsafe fn get_unchecked_all_edge_metrics_from_node_ids_tuple(
         &self,
         source_node_id: NodeT,
         destination_node_id: NodeT,
@@ -662,6 +662,38 @@ impl Graph {
                 normalize,
             ),
         ]
+    }
+
+    /// Returns all the implemented edge metrics for the vectors source and destination node IDs.
+    ///
+    /// Specifically, the returned values are:
+    /// * Adamic Adar
+    /// * Jaccard coefficient
+    /// * Resource allocation index
+    /// * Preferential attachment
+    ///
+    /// # Arguments
+    /// * `source_node_ids`: Vec<NodeT> - Node ID of the first node.
+    /// * `destination_node_ids`: Vec<NodeT> - Node ID of the second node.
+    /// * `normalize`: bool - Whether to normalize within 0 to 1.
+    ///
+    /// # Safety
+    /// If the given node IDs do not exist in the graph this method will panic.
+    pub fn get_all_edge_metrics_from_node_ids_tuple(
+        &self,
+        source_node_ids: Vec<NodeT>,
+        destination_node_ids: Vec<NodeT>,
+        normalize: bool,
+    ) -> Result<Vec<f32>> {
+        source_node_ids
+            .into_par_iter()
+            .zip(destination_node_ids.into_par_iter())
+            .map(|(src, dst)| {
+                self.validate_node_id(src)?;
+                self.validate_node_id(dst)?;
+                Ok(unsafe { self.get_unchecked_all_edge_metrics_from_node_ids_tuple(src, dst) })
+            })
+            .collect::<Result<Vec<f32>>>()
     }
 
     /// Returns parallel iterator on Preferential Attachment for all edges.
@@ -689,7 +721,7 @@ impl Graph {
                 self.get_unchecked_preferential_attachment_from_node_ids(
                     source_node_id,
                     destination_node_id,
-                    normalize
+                    normalize,
                 )
             },
         ))
@@ -875,7 +907,7 @@ impl Graph {
         };
         Ok(subgraph.par_iter_directed_edge_node_ids().map(
             move |(_, source_node_id, destination_node_id)| unsafe {
-                self.get_unchecked_all_edge_metrics_from_node_ids(
+                self.get_unchecked_all_edge_metrics_from_node_ids_tuple(
                     source_node_id,
                     destination_node_id,
                     normalize,

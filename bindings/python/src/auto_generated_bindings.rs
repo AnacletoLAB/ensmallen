@@ -14405,7 +14405,7 @@ impl Graph {
     /// Safety
     /// ------
     /// If the given node IDs do not exist in the graph this method will panic.
-    pub unsafe fn get_unchecked_all_edge_metrics_from_node_ids(
+    pub unsafe fn get_unchecked_all_edge_metrics_from_node_ids_tuple(
         &self,
         source_node_id: NodeT,
         destination_node_id: NodeT,
@@ -14414,7 +14414,7 @@ impl Graph {
         let gil = pyo3::Python::acquire_gil();
         to_ndarray_1d!(
             gil,
-            self.inner.get_unchecked_all_edge_metrics_from_node_ids(
+            self.inner.get_unchecked_all_edge_metrics_from_node_ids_tuple(
                 source_node_id.into(),
                 destination_node_id.into(),
                 normalize.into()
@@ -15780,7 +15780,7 @@ pub const GRAPH_METHODS_NAMES: &[&str] = &[
     "get_weighted_resource_allocation_index_from_node_names",
     "get_number_of_available_edge_metrics",
     "get_available_edge_metrics_names",
-    "get_unchecked_all_edge_metrics_from_node_ids",
+    "get_unchecked_all_edge_metrics_from_node_ids_tuple",
     "get_preferential_attachment_scores",
     "get_resource_allocation_index_scores",
     "get_jaccard_coefficient_scores",

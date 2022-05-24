@@ -386,7 +386,7 @@ impl Graph {
                         None
                     },
                     if return_edge_metrics {
-                        Some(self.get_unchecked_all_edge_metrics_from_node_ids(src, dst, true))
+                        Some(self.get_unchecked_all_edge_metrics_from_node_ids_tuple(src, dst, true))
                     } else {
                         None
                     },
@@ -434,7 +434,7 @@ impl Graph {
                         None
                     },
                     if return_edge_metrics {
-                        Some(self.get_unchecked_all_edge_metrics_from_node_ids(src, dst, true))
+                        Some(self.get_unchecked_all_edge_metrics_from_node_ids_tuple(src, dst, true))
                     } else {
                         None
                     },
@@ -590,7 +590,7 @@ impl Graph {
                         None
                     },
                     if return_edge_metrics {
-                        Some(self.get_unchecked_all_edge_metrics_from_node_ids(src, dst, true))
+                        Some(self.get_unchecked_all_edge_metrics_from_node_ids_tuple(src, dst, true))
                     } else {
                         None
                     },
