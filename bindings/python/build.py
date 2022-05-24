@@ -11,6 +11,7 @@ import hashlib
 import argparse
 import platform
 import subprocess
+import multiprocessing as mp
 import glob
 from json.decoder import JSONDecodeError
 
@@ -273,7 +274,9 @@ resulting_wheels = []
 ################################################################################
 # Compile all the targets
 ################################################################################
-for target_name, target_settings in settings["targets"].items():
+
+def compile_target(args):
+    target_name, target_settings = args
     logging.info("%s settings: %s", target_name, target_settings)
 
     build_dir = join(target_settings["build_dir"])
@@ -296,6 +299,12 @@ for target_name, target_settings in settings["targets"].items():
         },
         cwd=build_dir,
     )
+
+with mp.Pool(mp.cpu_count()) as pool:
+    list(pool.imap(
+        compile_target,
+        settings["targets"].items()
+    ))
 
 ################################################################################
 # Copy the file to the other wheel
