@@ -1,7 +1,10 @@
 use crate::constructors::{
     build_graph_from_integers, build_graph_from_strings_without_type_iterators,
 };
-use rayon::{iter::{IndexedParallelIterator, IntoParallelIterator, ParallelIterator}, slice::ParallelSliceMut};
+use rayon::{
+    iter::{IndexedParallelIterator, IntoParallelIterator, ParallelIterator},
+    slice::ParallelSliceMut,
+};
 
 use super::*;
 use itertools::Itertools;
@@ -117,9 +120,14 @@ fn generic_string_operator(
     // The following is necessary to ensure the node disctionaries are consistent
     // across multiple runs.
     let mut nodes = nodes_iterator.collect::<Result<Vec<_>>>()?;
-    nodes.par_sort_unstable_by(|a, b| a.1.0.cmp(&b.1.0));
+    nodes.par_sort_unstable_by(|a, b| (&a.1 .0).cmp(&(b.1 .0)));
     let number_of_nodes = nodes.len() as NodeT;
-    let nodes_iterator: ItersWrapper<_, std::iter::Empty<_>, _> = ItersWrapper::Parallel(nodes.into_par_iter().map(|values| Ok(values)));
+    let nodes_iterator: ItersWrapper<_, std::iter::Empty<_>, _> = ItersWrapper::Parallel(
+        nodes
+            .into_par_iter()
+            .enumerate()
+            .map(|(node_id, values)| Ok((node_id, values.1))),
+    );
 
     build_graph_from_strings_without_type_iterators(
         main.has_node_types() || other.has_node_types(),
