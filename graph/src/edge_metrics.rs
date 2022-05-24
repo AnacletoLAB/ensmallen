@@ -684,16 +684,18 @@ impl Graph {
         source_node_ids: Vec<NodeT>,
         destination_node_ids: Vec<NodeT>,
         normalize: bool,
-    ) -> Result<Vec<f32>> {
+    ) -> Result<Vec<Vec<f32>>> {
         source_node_ids
             .into_par_iter()
             .zip(destination_node_ids.into_par_iter())
             .map(|(src, dst)| {
                 self.validate_node_id(src)?;
                 self.validate_node_id(dst)?;
-                Ok(unsafe { self.get_unchecked_all_edge_metrics_from_node_ids_tuple(src, dst, normalize) })
+                Ok(unsafe {
+                    self.get_unchecked_all_edge_metrics_from_node_ids_tuple(src, dst, normalize)
+                })
             })
-            .collect::<Result<Vec<f32>>>()
+            .collect::<Result<Vec<Vec<f32>>>>()
     }
 
     /// Returns parallel iterator on Preferential Attachment for all edges.
