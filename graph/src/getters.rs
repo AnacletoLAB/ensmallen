@@ -743,7 +743,7 @@ impl Graph {
     pub fn get_known_node_types_mask(&self) -> Result<Vec<bool>> {
         self.must_have_node_types()?;
         Ok(unsafe {
-            self.iter_unchecked_node_type_ids()
+            self.par_iter_unchecked_node_type_ids()
                 .map(|nt| nt.is_some())
                 .collect()
         })
@@ -756,8 +756,34 @@ impl Graph {
     pub fn get_unknown_node_types_mask(&self) -> Result<Vec<bool>> {
         self.must_have_node_types()?;
         Ok(unsafe {
-            self.iter_unchecked_node_type_ids()
+            self.par_iter_unchecked_node_type_ids()
                 .map(|nt| nt.is_none())
+                .collect()
+        })
+    }
+
+    /// Returns boolean mask of known edge types.
+    ///
+    /// # Raises
+    /// * If the graph does not have edge types.
+    pub fn get_known_edge_types_mask(&self) -> Result<Vec<bool>> {
+        self.must_have_edge_types()?;
+        Ok(unsafe {
+            self.par_iter_unchecked_edge_type_ids()
+                .map(|et| et.is_some())
+                .collect()
+        })
+    }
+
+    /// Returns boolean mask of unknown edge types.
+    ///
+    /// # Raises
+    /// * If the graph does not have edge types.
+    pub fn get_unknown_edge_types_mask(&self) -> Result<Vec<bool>> {
+        self.must_have_edge_types()?;
+        Ok(unsafe {
+            self.par_iter_unchecked_edge_type_ids()
+                .map(|et| et.is_none())
                 .collect()
         })
     }
@@ -775,7 +801,9 @@ impl Graph {
     /// # Raises
     /// * If the graph does not have node types.
     pub fn get_one_hot_encoded_known_node_types(&self) -> Result<Vec<Vec<bool>>> {
-        Ok(self.iter_one_hot_encoded_known_node_type_ids()?.collect())
+        Ok(self
+            .par_iter_one_hot_encoded_known_node_type_ids()?
+            .collect())
     }
 
     /// Returns one-hot encoded edge types.
@@ -1250,8 +1278,10 @@ impl Graph {
         &self,
         node_type_names: Vec<Option<String>>,
     ) -> Result<Vec<NodeT>> {
-        self.par_iter_node_ids_from_node_type_ids(self.get_node_type_ids_from_node_type_names(node_type_names)?)
-            .map(|x| x.collect())
+        self.par_iter_node_ids_from_node_type_ids(
+            self.get_node_type_ids_from_node_type_names(node_type_names)?,
+        )
+        .map(|x| x.collect())
     }
 
     /// Returns node names of the nodes with given node type ID.
@@ -1657,6 +1687,30 @@ impl Graph {
         Ok(single_label_node_type_ids)
     }
 
+    /// Returns 1D known single labeled node types ids vector.
+    ///
+    /// # Raises
+    /// * If the graph has multilabel node types.
+    pub fn get_known_single_label_node_type_ids(&self) -> Result<Vec<NodeTypeT>> {
+        if self.has_multilabel_node_types()? {
+            return Err(concat!(
+                "This method should only be used on graphs with single-labelled ",
+                "node types. In this graph there are nodes with multi-label node ",
+                "types."
+            )
+            .to_string());
+        }
+        self.must_have_node_types().map(|node_types| {
+            node_types
+                .ids
+                .par_iter()
+                .filter_map(|node_type_ids| {
+                    node_type_ids.as_ref().map(|node_type_ids| node_type_ids[0])
+                })
+                .collect()
+        })
+    }
+
     /// Returns 1D binarized node types ids vector.
     pub fn get_boolean_node_type_ids(
         &self,
@@ -1683,5 +1737,23 @@ impl Graph {
                 })
         })?;
         Ok(boolean_node_type_ids)
+    }
+
+    /// Returns 1D binarized known node types ids vector.
+    pub fn get_known_boolean_node_type_ids(&self, target_value: NodeTypeT) -> Result<Vec<bool>> {
+        self.must_have_node_types().map(|node_types| {
+            node_types
+                .ids
+                .par_iter()
+                .filter_map(|node_type_ids| {
+                    node_type_ids.as_ref().map(|node_type_ids| {
+                        node_type_ids
+                            .iter()
+                            .copied()
+                            .any(|node_type_id| node_type_id == target_value)
+                    })
+                })
+                .collect()
+        })
     }
 }

@@ -1919,7 +1919,7 @@ pub fn test_embiggen_preprocessing(graph: &mut Graph, _verbose: Option<bool>) ->
                 0,
                 256,
                 Some(true),
-                0.3,
+                Some(0.3),
                 Some(false),
                 Some(10),
                 false,
@@ -1930,7 +1930,7 @@ pub fn test_embiggen_preprocessing(graph: &mut Graph, _verbose: Option<bool>) ->
             .collect::<Vec<_>>();
         graph
             .get_edge_prediction_mini_batch(
-                0, 256, 0.4, false, false, false, None, None, None, None,
+                0, 256, false, false, false, None, None, None, None, None,
             )
             .unwrap()
             .collect::<Vec<_>>();
@@ -2601,7 +2601,7 @@ pub fn default_test_suite(graph: &mut Graph, verbose: Option<bool>) -> Result<()
     );
     test_mut_graph!(
         graph,
-        get_random_walk_normalized_laplacian_transformed_graph,
+        get_left_normalized_laplacian_transformed_graph,
         verbose
     );
     test_mut_graph!(graph, to_upper_triangular, verbose);

@@ -17,9 +17,21 @@ impl Graph {
         0..self.get_nodes_number()
     }
 
-    /// Return parallel iterator on the node of the graph.
+    /// Return iterator on the edge IDs of the graph.
+    pub fn iter_directed_edge_ids(&self) -> impl Iterator<Item = EdgeT> + '_ {
+        0..self.get_number_of_directed_edges()
+    }
+
+    /// Return indexed parallel iterator on the node of the graph.
     pub fn par_iter_node_ids(&self) -> impl IndexedParallelIterator<Item = NodeT> + '_ {
         (0..self.get_nodes_number()).into_par_iter()
+    }
+
+    /// Return indexed parallel iterator on the edge IDs of the graph.
+    pub fn par_iter_directed_edge_ids(&self) -> impl IndexedParallelIterator<Item = EdgeT> + '_ {
+        (0..self.get_number_of_directed_edges() as usize)
+            .into_par_iter()
+            .map(|edge_id| edge_id as EdgeT)
     }
 
     /// Return iterator on the node names of the graph.
@@ -639,6 +651,42 @@ impl Graph {
             .map(move |node_id| self.get_unchecked_node_type_ids_from_node_id(node_id))
     }
 
+    /// Return parallel indexed iterator on the node type IDs.
+    ///
+    /// # Safety
+    /// If the graph does not contain node types, this iterator will be an
+    /// iterator over None values.
+    pub unsafe fn par_iter_unchecked_node_type_ids(
+        &self,
+    ) -> impl IndexedParallelIterator<Item = Option<&Vec<NodeTypeT>>> + '_ {
+        self.par_iter_node_ids()
+            .map(move |node_id| self.get_unchecked_node_type_ids_from_node_id(node_id))
+    }
+
+    /// Return iterator on the edge type IDs.
+    ///
+    /// # Safety
+    /// If the graph does not contain edge types, this iterator will be an
+    /// iterator over None values.
+    pub unsafe fn iter_unchecked_edge_type_ids(
+        &self,
+    ) -> impl Iterator<Item = Option<EdgeTypeT>> + '_ {
+        self.iter_directed_edge_ids()
+            .map(move |edge_id| self.get_unchecked_edge_type_id_from_edge_id(edge_id))
+    }
+
+    /// Return parallel indexed iterator on the edge type IDs.
+    ///
+    /// # Safety
+    /// If the graph does not contain edge types, this iterator will be an
+    /// iterator over None values.
+    pub unsafe fn par_iter_unchecked_edge_type_ids(
+        &self,
+    ) -> impl IndexedParallelIterator<Item = Option<EdgeTypeT>> + '_ {
+        self.par_iter_directed_edge_ids()
+            .map(move |edge_id| self.get_unchecked_edge_type_id_from_edge_id(edge_id))
+    }
+
     /// Return iterator on the one-hot encoded node type IDs.
     ///
     /// # Raises
@@ -665,12 +713,12 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph does not contain node types.
-    pub fn iter_one_hot_encoded_known_node_type_ids(
+    pub fn par_iter_one_hot_encoded_known_node_type_ids(
         &self,
-    ) -> Result<impl Iterator<Item = Vec<bool>> + '_> {
+    ) -> Result<impl ParallelIterator<Item = Vec<bool>> + '_> {
         let node_types_number = self.get_node_types_number()?;
         Ok(unsafe {
-            self.iter_unchecked_node_type_ids()
+            self.par_iter_unchecked_node_type_ids()
                 .filter_map(move |maybe_node_types| {
                     if let Some(node_types) = maybe_node_types {
                         let mut dummies = vec![false; node_types_number as usize];
@@ -1551,12 +1599,10 @@ impl Graph {
             node_types.ids.par_iter().enumerate().filter_map(
                 move |(node_id, this_node_type_ids)| {
                     if match this_node_type_ids {
-                        Some(this_node_type_ids) => {
-                            this_node_type_ids.iter().any(|&node_type_id| {
-                                node_type_ids.contains(&Some(node_type_id))
-                            })
-                        },
-                        None => node_type_ids.contains(&None)
+                        Some(this_node_type_ids) => this_node_type_ids
+                            .iter()
+                            .any(|&node_type_id| node_type_ids.contains(&Some(node_type_id))),
+                        None => node_type_ids.contains(&None),
                     } {
                         Some(node_id as NodeT)
                     } else {

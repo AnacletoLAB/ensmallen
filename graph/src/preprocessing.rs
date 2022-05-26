@@ -291,10 +291,10 @@ impl Graph {
     /// # Arguments
     /// * `random_state`: u64 - Random state of the batch to generate.
     /// * `batch_size`: usize - The maximal size of the batch to generate,
-    /// * `negative_samples_rate`: f64 - The component of netagetive samples to use.
     /// * `return_node_types`: bool - Whether to return the source and destination nodes node types.
     /// * `return_edge_metrics`: bool - Whether to return the edge metrics available for both positive and negative edges.
     /// * `sample_only_edges_with_heterogeneous_node_types`: bool - Whether to sample negative edges only with source and destination nodes that have different node types.
+    /// * `negative_samples_rate`: Option<f64> - The component of netagetive samples to use.
     /// * `avoid_false_negatives`: Option<bool> - Whether to remove the false negatives when generated. It should be left to false, as it has very limited impact on the training, but enabling this will slow things down.
     /// * `maximal_sampling_attempts`: Option<usize> - Number of attempts to execute to sample the negative edges.
     /// * `use_zipfian_sampling`: Option<bool> - Whether to sample the nodes using zipfian distribution. By default True. Not using this may cause significant biases.
@@ -305,16 +305,14 @@ impl Graph {
     /// * If node types are requested but the graph does not contain any.
     /// * If the `sample_only_edges_with_heterogeneous_node_types` argument is provided as true, but the graph does not have node types.
     ///
-    /// TODO! When returning only known edges, add the possibility for balanced
-    /// edge types.
     pub fn get_edge_prediction_mini_batch<'a>(
         &'a self,
         mut random_state: u64,
         batch_size: usize,
-        negative_samples_rate: f64,
         return_node_types: bool,
         return_edge_metrics: bool,
         sample_only_edges_with_heterogeneous_node_types: bool,
+        negative_samples_rate: Option<f64>,
         avoid_false_negatives: Option<bool>,
         maximal_sampling_attempts: Option<usize>,
         use_zipfian_sampling: Option<bool>,
@@ -356,14 +354,26 @@ impl Graph {
             ).to_string());
         }
 
-        if negative_samples_rate < 0.0
-            || negative_samples_rate > 1.0
-            || !negative_samples_rate.is_finite()
+        let negative_samples_threshold = if let Some(negative_samples_rate) = &negative_samples_rate
         {
-            return Err("Negative sample must be a posive real value between 0 and 1.".to_string());
-        }
+            if *negative_samples_rate < 0.0
+                || *negative_samples_rate > 1.0
+                || !negative_samples_rate.is_finite()
+            {
+                return Err(format!(
+                    concat!(
+                        "Negative sample must be a posive ",
+                        "real value between 0 and 1. ",
+                        "You have provided {}."
+                    ),
+                    *negative_samples_rate
+                ));
+            }
+            (negative_samples_rate * u64::MAX as f64).ceil() as u64
+        } else {
+            0
+        };
 
-        let negative_samples_threshold = (negative_samples_rate * u64::MAX as f64).ceil() as u64;
         random_state = splitmix64(random_state);
 
         Ok((0..batch_size).into_par_iter().map(move |i| unsafe {
@@ -386,7 +396,9 @@ impl Graph {
                         None
                     },
                     if return_edge_metrics {
-                        Some(self.get_unchecked_all_edge_metrics_from_node_ids_tuple(src, dst, true))
+                        Some(
+                            self.get_unchecked_all_edge_metrics_from_node_ids_tuple(src, dst, true),
+                        )
                     } else {
                         None
                     },
@@ -434,7 +446,9 @@ impl Graph {
                         None
                     },
                     if return_edge_metrics {
-                        Some(self.get_unchecked_all_edge_metrics_from_node_ids_tuple(src, dst, true))
+                        Some(
+                            self.get_unchecked_all_edge_metrics_from_node_ids_tuple(src, dst, true),
+                        )
                     } else {
                         None
                     },
@@ -547,6 +561,7 @@ impl Graph {
     /// * `graph`: &Graph - The graph from which to extract the edge IDs.
     /// * `batch_size`: usize - The maximal size of the batch to generate,
     /// * `return_node_types`: bool - Whether to return the source and destination nodes node types.
+    /// * `return_edge_types`: bool - Whether to return the edge types.
     /// * `return_edge_metrics`: bool - Whether to return the edge metrics.
     ///
     /// # Raises
@@ -559,6 +574,7 @@ impl Graph {
         graph: &'a Graph,
         batch_size: usize,
         return_node_types: bool,
+        return_edge_types: bool,
         return_edge_metrics: bool,
     ) -> Result<
         impl IndexedParallelIterator<
@@ -567,10 +583,17 @@ impl Graph {
                     Option<Vec<NodeTypeT>>,
                     NodeT,
                     Option<Vec<NodeTypeT>>,
+                    Option<EdgeTypeT>,
                     Option<Vec<f32>>,
                 ),
             > + 'a,
     > {
+        if return_node_types {
+            self.must_have_known_node_types()?;
+        }
+        if return_edge_types {
+            self.must_have_known_edge_types()?;
+        }
         Ok((batch_size * idx
             ..(batch_size * (idx + 1)).min(graph.get_number_of_directed_edges() as usize))
             .into_par_iter()
@@ -589,8 +612,16 @@ impl Graph {
                     } else {
                         None
                     },
+                    if return_edge_types {
+                        self.get_edge_type_id_from_edge_node_ids(src, dst)
+                            .unwrap_or(None)
+                    } else {
+                        None
+                    },
                     if return_edge_metrics {
-                        Some(self.get_unchecked_all_edge_metrics_from_node_ids_tuple(src, dst, true))
+                        Some(
+                            self.get_unchecked_all_edge_metrics_from_node_ids_tuple(src, dst, true),
+                        )
                     } else {
                         None
                     },
@@ -606,7 +637,7 @@ impl Graph {
     /// * `idx`: u64 - The index of the batch to generate, behaves like a random random_state,
     /// * `batch_size`: usize - The maximal size of the batch to generate,
     /// * `normalize`: bool - Divide the degrees by the max, this way the values are in [0, 1],
-    /// * `negative_samples`: f64 - The component of netagetive samples to use,
+    /// * `negative_samples`: Option<f64> - The component of netagetive samples to use,
     /// * `avoid_false_negatives`: bool - Whether to remove the false negatives when generated. It should be left to false, as it has very limited impact on the training, but enabling this will slow things down.
     /// * `maximal_sampling_attempts`: usize - Number of attempts to execute to sample the negative edges.
     /// * `shuffle`: Option<bool> - Whether to shuffle the samples within the batch.
@@ -621,7 +652,7 @@ impl Graph {
         random_state: u64,
         batch_size: usize,
         normalize: Option<bool>,
-        negative_samples: f64,
+        negative_samples: Option<f64>,
         avoid_false_negatives: Option<bool>,
         maximal_sampling_attempts: Option<usize>,
         sample_only_edges_with_heterogeneous_node_types: bool,
@@ -631,10 +662,10 @@ impl Graph {
         let iter = self.get_edge_prediction_mini_batch(
             random_state,
             batch_size,
-            negative_samples,
             false,
             false,
             sample_only_edges_with_heterogeneous_node_types,
+            negative_samples,
             avoid_false_negatives,
             maximal_sampling_attempts,
             use_zipfian_sampling,

@@ -138,8 +138,8 @@ impl Graph {
             + self.get_nodes_number() as EdgeT
     }
 
-    /// Returns unweighted random walk normalized laplacian transformation of the graph.
-    pub fn get_random_walk_normalized_laplacian_transformed_graph(&self) -> Graph {
+    /// Returns unweighted left laplacian transformation of the graph.
+    pub fn get_left_normalized_laplacian_transformed_graph(&self) -> Graph {
         self.get_transformed_graph(
             |graph, src, _| {
                 -1.0 / unsafe { graph.get_unchecked_node_degree_from_node_id(src) as WeightT }
@@ -149,13 +149,40 @@ impl Graph {
         )
     }
 
-    /// Returns unweighted random walk laplacian COO matrix representation of the graph.
-    pub fn iter_random_walk_normalized_laplacian_coo_matrix(
+    /// Returns unweighted left laplacian COO matrix representation of the graph.
+    pub fn iter_left_normalized_laplacian_coo_matrix(
         &self,
     ) -> impl Iterator<Item = (NodeT, NodeT, WeightT)> + '_ {
         self.iter_transformed_coo_matrix(
             |graph, src, _| {
                 -1.0 / unsafe { graph.get_unchecked_node_degree_from_node_id(src) as WeightT }
+            },
+            |_, _| 1.0,
+        )
+    }
+
+    /// Returns unweighted right normalized laplacian transformation of the graph.
+    pub fn get_right_normalized_laplacian_transformed_graph(&self) -> Graph {
+        self.get_transformed_graph(
+            |graph, _, dst| {
+                -1.0 / (unsafe {
+                    graph.get_unchecked_node_degree_from_node_id(dst) as WeightT + 1.0
+                })
+            },
+            |_, _| 1.0,
+            true,
+        )
+    }
+
+    /// Returns unweighted right laplacian COO matrix representation of the graph.
+    pub fn iter_right_normalized_laplacian_coo_matrix(
+        &self,
+    ) -> impl Iterator<Item = (NodeT, NodeT, WeightT)> + '_ {
+        self.iter_transformed_coo_matrix(
+            |graph, _, dst| {
+                -1.0 / (unsafe {
+                    graph.get_unchecked_node_degree_from_node_id(dst) as WeightT + 1.0
+                })
             },
             |_, _| 1.0,
         )
@@ -216,25 +243,6 @@ impl Graph {
             },
             |_, _| 1.0,
             self.is_directed(),
-        ))
-    }
-
-    /// Returns unweighted symmetric normalized transformation of the graph.
-    ///
-    /// # Raises
-    /// * The graph must be undirected, as we do not currently support this transformation for directed graphs.
-    pub fn iter_symmetric_normalized_coo_matrix(
-        &self,
-    ) -> Result<impl Iterator<Item = (NodeT, NodeT, WeightT)> + '_> {
-        self.must_be_undirected()?;
-        Ok(self.iter_transformed_coo_matrix(
-            |graph, src, dst| unsafe {
-                (1.0 / ((graph.get_unchecked_node_degree_from_node_id(src) as f64
-                    * graph.get_unchecked_node_degree_from_node_id(dst) as f64)
-                    as f64)
-                    .sqrt()) as WeightT
-            },
-            |_, _| 1.0,
         ))
     }
 }
