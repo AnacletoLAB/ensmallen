@@ -173,10 +173,10 @@ fn get_okapi_tfidf_weighted_textual_embedding(
 ) -> PyResult<Py<PyAny>> {
     let tokens = pe!(rust_get_tokenized_csv(
         path,
+        pretrained_model_name_or_path.as_str(),
         columns,
         separator,
         header,
-        Some(pretrained_model_name_or_path.as_str()),
     ))?;
     let rows_number = tokens.len();
     let gil = pyo3::Python::acquire_gil();

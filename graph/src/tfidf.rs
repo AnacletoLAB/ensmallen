@@ -152,24 +152,20 @@ impl Tokens {
 ///
 /// # Arguments
 /// * `path`: &str - The path to be processed.
+/// * `tokenizer_path`: &str - Path to the tokenizer.json file.
 /// * `columns`: Option<Vec<String>> - The columns to be read. If none are given, all the columns will be used.
 /// * `separator`: Option<char> - The separator for the CSV.
 /// * `header`: Option<bool> - Whether to skip the header.
-/// * `pretrained_model_name_or_path`: Option<&str> - Name of the tokenizer model to be retrieved.
 ///
 pub fn get_tokenized_csv(
     path: &str,
+    tokenizer_path: &str,
     columns: Option<Vec<String>>,
     separator: Option<char>,
     header: Option<bool>,
-    pretrained_model_name_or_path: Option<&str>,
 ) -> Result<Tokens> {
-    // Set the pretrained model if none where given
-    let pretrained_model_name_or_path =
-        pretrained_model_name_or_path.unwrap_or("bert-base-uncased");
     // Retrieve the pretrained tokenizer from HuggngFace
-    let tokenizer = Tokenizer::from_pretrained(pretrained_model_name_or_path, None)
-        .map_err(|err| err.to_string())?;
+    let tokenizer = Tokenizer::from_file(tokenizer_path).map_err(|err| err.to_string())?;
     // Get the tokens size
     let vocabulary_size = tokenizer.get_vocab_size(false);
     // Create the parallel CSV reader
