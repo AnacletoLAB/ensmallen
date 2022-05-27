@@ -27,6 +27,7 @@ if is_x86_64():
         from .ensmallen_haswell import models  # pylint: disable=import-error
         from .ensmallen_haswell import Graph  # pylint: disable=import-error
         from .ensmallen_haswell import edge_list_utils  # pylint: disable=import-error
+        from .ensmallen_haswell import express_measures  # pylint: disable=import-error
     else:
         warnings.warn(
             (
@@ -44,6 +45,7 @@ if is_x86_64():
             from .ensmallen_core2 import models  # pylint: disable=import-error
             from .ensmallen_core2 import Graph  # pylint: disable=import-error
             from .ensmallen_core2 import edge_list_utils  # pylint: disable=import-error
+            from .ensmallen_haswell import express_measures  # pylint: disable=import-error
         else:
             raise ValueError(
                 (
@@ -63,6 +65,7 @@ elif is_arm():
     from .ensmallen_default import models  # pylint: disable=import-error
     from .ensmallen_default import Graph  # pylint: disable=import-error
     from .ensmallen_default import edge_list_utils  # pylint: disable=import-error
+    from .ensmallen_haswell import express_measures  # pylint: disable=import-error
 else:
     raise ValueError("The arch '{}' is not currently supproted by ensmallen's init file.".format(platform.machine()))
 
