@@ -84,16 +84,24 @@ def get_okapi_tfidf_weighted_textual_embedding(
     verbose: bool = True
         Whether to show the loading bars
     """
+    # Retrieving the tokenizer and building the necessary metadata
+    from transformers import AutoTokenizer
+    tokenizer_path = f"okapi_tfidf_weighted_textual_embedding/{pretrained_model_name_or_path}"
+    AutoTokenizer.from_pretrained(
+        pretrained_model_name_or_path
+    ).save_pretrained(tokenizer_path)
+        
     # Retrieve the requested pretrained word embedding.
     word_embedding = get_precomputed_word_embedding(
         pretrained_model_name_or_path=pretrained_model_name_or_path,
         bert_model_kwargs=bert_model_kwargs
     )
+    
     # Compute the weighted embedding
     return preprocessing.get_okapi_tfidf_weighted_textual_embedding(
         path=path,
         embedding=word_embedding,
-        pretrained_model_name_or_path=pretrained_model_name_or_path,
+        pretrained_model_name_or_path=tokenizer_path,
         k1=k1,
         b=b,
         columns=columns,
