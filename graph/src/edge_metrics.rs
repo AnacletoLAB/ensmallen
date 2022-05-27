@@ -664,6 +664,36 @@ impl Graph {
         ]
     }
 
+    /// Returns all the implemented edge metrics for the two given node IDs.
+    ///
+    /// Specifically, the returned values are:
+    /// * Adamic Adar
+    /// * Jaccard coefficient
+    /// * Resource allocation index
+    /// * Preferential attachment
+    ///
+    /// # Arguments
+    /// * `source_node_id`: NodeT - Node ID of the first node.
+    /// * `destination_node_id`: NodeT - Node ID of the second node.
+    /// * `normalize`: bool - Whether to normalize within 0 to 1.
+    ///
+    /// # Raises
+    /// * If the provided node IDs do not exist in the current graph instance.
+    pub fn get_all_edge_metrics_from_node_ids_tuple(
+        &self,
+        source_node_id: NodeT,
+        destination_node_id: NodeT,
+        normalize: bool,
+    ) -> Result<Vec<f32>> {
+        Ok(unsafe {
+            self.get_unchecked_all_edge_metrics_from_node_ids_tuple(
+                self.validate_node_id(source_node_id)?,
+                self.validate_node_id(destination_node_id)?,
+                normalize,
+            )
+        })
+    }
+
     /// Returns all the implemented edge metrics for the vectors source and destination node IDs.
     ///
     /// Specifically, the returned values are:

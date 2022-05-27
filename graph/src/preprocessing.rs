@@ -298,6 +298,7 @@ impl Graph {
     /// * `avoid_false_negatives`: Option<bool> - Whether to remove the false negatives when generated. It should be left to false, as it has very limited impact on the training, but enabling this will slow things down.
     /// * `maximal_sampling_attempts`: Option<usize> - Number of attempts to execute to sample the negative edges.
     /// * `use_zipfian_sampling`: Option<bool> - Whether to sample the nodes using zipfian distribution. By default True. Not using this may cause significant biases.
+    /// * `support`: Option<&'a Graph> - Graph to use to compute the edge metrics. When not provided, the current graph (self) is used.
     /// * `graph_to_avoid`: &'a Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,
     ///
     /// # Raises
@@ -316,6 +317,7 @@ impl Graph {
         avoid_false_negatives: Option<bool>,
         maximal_sampling_attempts: Option<usize>,
         use_zipfian_sampling: Option<bool>,
+        support: Option<&'a Graph>,
         graph_to_avoid: Option<&'a Graph>,
     ) -> Result<
         impl IndexedParallelIterator<
@@ -329,6 +331,7 @@ impl Graph {
                 ),
             > + 'a,
     > {
+        let support = support.unwrap_or(&self);
         let avoid_false_negatives = avoid_false_negatives.unwrap_or(false);
         let maximal_sampling_attempts = maximal_sampling_attempts.unwrap_or(10_000);
         let use_zipfian_sampling = use_zipfian_sampling.unwrap_or(true);
@@ -397,7 +400,9 @@ impl Graph {
                     },
                     if return_edge_metrics {
                         Some(
-                            self.get_unchecked_all_edge_metrics_from_node_ids_tuple(src, dst, true),
+                            support
+                                .get_all_edge_metrics_from_node_ids_tuple(src, dst, true)
+                                .unwrap(),
                         )
                     } else {
                         None
@@ -420,7 +425,7 @@ impl Graph {
                     )
                 };
 
-                if avoid_false_negatives && self.has_edge_from_node_ids(src, dst)
+                if avoid_false_negatives && support.has_edge_from_node_ids(src, dst)
                     || sample_only_edges_with_heterogeneous_node_types && {
                         self.get_unchecked_node_type_ids_from_node_id(src)
                             == self.get_unchecked_node_type_ids_from_node_id(dst)
@@ -447,7 +452,9 @@ impl Graph {
                     },
                     if return_edge_metrics {
                         Some(
-                            self.get_unchecked_all_edge_metrics_from_node_ids_tuple(src, dst, true),
+                            support
+                                .get_all_edge_metrics_from_node_ids_tuple(src, dst, true)
+                                .unwrap(),
                         )
                     } else {
                         None
@@ -643,6 +650,7 @@ impl Graph {
     /// * `shuffle`: Option<bool> - Whether to shuffle the samples within the batch.
     /// * `sample_only_edges_with_heterogeneous_node_types`: Option<bool> - Whether to sample negative edges only with source and destination nodes that have different node types.
     /// * `use_zipfian_sampling`: Option<bool> - Whether to sample the nodes using zipfian distribution. By default True. Not using this may cause significant biases.
+    /// * `support`: Option<&'a Graph> - Graph to use to compute the edge metrics. When not provided, the current graph (self) is used.
     /// * `graph_to_avoid`: &'a Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,
     ///
     /// # Raises
@@ -657,6 +665,7 @@ impl Graph {
         maximal_sampling_attempts: Option<usize>,
         sample_only_edges_with_heterogeneous_node_types: bool,
         use_zipfian_sampling: Option<bool>,
+        support: Option<&'a Graph>,
         graph_to_avoid: Option<&'a Graph>,
     ) -> Result<impl ParallelIterator<Item = (f64, f64, bool)> + 'a> {
         let iter = self.get_edge_prediction_mini_batch(
@@ -669,6 +678,7 @@ impl Graph {
             avoid_false_negatives,
             maximal_sampling_attempts,
             use_zipfian_sampling,
+            support,
             graph_to_avoid,
         )?;
 

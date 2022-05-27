@@ -530,6 +530,9 @@ impl Graph {
     /// use_zipfian_sampling: bool = True
     ///     Whether to sample the negative edges following a zipfian distribution.
     ///     By default True.
+    /// support: Optional[Graph]
+    ///     Graph to use to compute the edge metrics.
+    ///     When not provided, the current graph (self) is used.
     /// graph_to_avoid: Optional[Graph]
     ///     The graph whose edges are to be avoided during the generation of false negatives,
     ///
@@ -552,6 +555,7 @@ impl Graph {
         avoid_false_negatives: Option<bool>,
         maximal_sampling_attempts: Option<usize>,
         use_zipfian_sampling: Option<bool>,
+        support: Option<&Graph>,
         graph_to_avoid: Option<&Graph>,
     ) -> PyResult<(
         Py<PyArray1<NodeT>>,
@@ -565,6 +569,8 @@ impl Graph {
 
         let graph_to_avoid: Option<&graph::Graph> =
             graph_to_avoid.as_ref().map(|ensmallen| &ensmallen.inner);
+        let support: Option<&graph::Graph> =
+            support.as_ref().map(|ensmallen| &ensmallen.inner);
         let par_iter = pe!(self.inner.get_edge_prediction_mini_batch(
             random_state,
             batch_size,
@@ -575,6 +581,7 @@ impl Graph {
             avoid_false_negatives,
             maximal_sampling_attempts,
             use_zipfian_sampling,
+            support,
             graph_to_avoid,
         ))?;
 
