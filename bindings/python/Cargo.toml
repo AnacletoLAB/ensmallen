@@ -39,6 +39,7 @@ features = ["extension-module", "abi3-py36"]
 env_logger = "0.8.1"
 graph = { path = "../../graph" }
 cpu_models = { path = "../../graph/cpu_models" }
+express_measures = { path = "../../graph/express_measures" }
 tags = { path = "../../graph/tags" }
 numpy = "0.13.1"
 rand = {version="0.7", features = ["small_rng"] }

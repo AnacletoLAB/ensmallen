@@ -10,6 +10,9 @@ use tags::*;
 
 mod macros;
 pub(crate) use crate::macros::*;
+mod express_measures;
+pub(crate) use crate::express_measures::*;
+
 mod cbow;
 pub(crate) use cbow::*;
 mod glove;
