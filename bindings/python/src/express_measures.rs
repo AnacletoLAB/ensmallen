@@ -21,8 +21,8 @@ fn express_measures(_py: Python, m: &PyModule) -> PyResult<()> {
 ///
 fn cosine_similarity_from_indices_unchecked(
     matrix: Py<PyArray2<f32>>,
-    sources: Py<PyArray1<usize>>,
-    destinations: Py<PyArray1<usize>>,
+    sources: Py<PyArray1<u32>>,
+    destinations: Py<PyArray1<u32>>,
 ) -> PyResult<Py<PyArray1<f32>>> {
     let gil = pyo3::Python::acquire_gil();
     let matrix = matrix.as_ref(gil.python());

@@ -1,12 +1,13 @@
+use core::fmt::Debug;
 use core::intrinsics::unlikely;
 use num_traits::{Float, Unsigned};
 use rayon::prelude::*;
 
 pub trait ThreadFloat: Float + Send + Sync + Copy {}
-pub trait ThreadUnsigned: Unsigned + Send + Sync + Copy + Into<usize> {}
+pub trait ThreadUnsigned: Unsigned + Send + Sync + Copy + TryInto<usize> + Debug {}
 
 impl<T> ThreadFloat for T where T: Float + Send + Sync + Copy {}
-impl<T> ThreadUnsigned for T where T: Unsigned + Send + Sync + Copy + Into<usize> {}
+impl<T> ThreadUnsigned for T where T: Unsigned + Send + Sync + Copy + TryInto<usize> + Debug {}
 
 /// Returns the cosine similarity between the two provided vectors computed sequentially.
 ///
@@ -183,7 +184,10 @@ pub unsafe fn cosine_similarity_from_indices_unchecked<F: ThreadFloat, I: Thread
     sources: &[I],
     destinations: &[I],
     dimension: usize,
-) -> Result<(), String> {
+) -> Result<(), String>
+where
+    <I as TryInto<usize>>::Error: Debug,
+{
     if matrix.is_empty() {
         return Err("The provided matrix is empty!".to_string());
     }
@@ -236,8 +240,8 @@ pub unsafe fn cosine_similarity_from_indices_unchecked<F: ThreadFloat, I: Thread
                 .zip(destinations.par_iter().copied()),
         )
         .for_each(|(similarity, (src, dst))| {
-            let src: usize = src.into();
-            let dst: usize = dst.into();
+            let src: usize = src.try_into().unwrap();
+            let dst: usize = dst.try_into().unwrap();
 
             if unlikely(src == dst) {
                 *similarity = F::one();
