@@ -144,8 +144,8 @@ use half::f16;
 /// embedding: np.ndarray
 ///     The numpy array to use for the dictionary.
 ///     This must be compatible with the provided pretrained_model_name_or_path!
-/// pretrained_model_name_or_path: str
-///     Name of the tokenizer model to be retrieved.
+/// tokenizer_path: str
+///     Path to the tokenizer to use.
 /// k1: Optional[float]
 ///     The default parameter for k1, tipically between 1.2 and 2.0.
 /// b: Optional[float]
@@ -163,7 +163,7 @@ use half::f16;
 fn get_okapi_tfidf_weighted_textual_embedding(
     path: &str,
     embedding: Py<PyArray2<f32>>,
-    pretrained_model_name_or_path: String,
+    tokenizer_path: String,
     k1: Option<f32>,
     b: Option<f32>,
     columns: Option<Vec<String>>,
@@ -173,7 +173,7 @@ fn get_okapi_tfidf_weighted_textual_embedding(
 ) -> PyResult<Py<PyAny>> {
     let tokens = pe!(rust_get_tokenized_csv(
         path,
-        pretrained_model_name_or_path.as_str(),
+        tokenizer_path.as_str(),
         columns,
         separator,
         header,

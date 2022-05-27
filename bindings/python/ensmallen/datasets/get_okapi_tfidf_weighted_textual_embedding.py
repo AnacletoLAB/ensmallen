@@ -101,7 +101,7 @@ def get_okapi_tfidf_weighted_textual_embedding(
     return preprocessing.get_okapi_tfidf_weighted_textual_embedding(
         path=path,
         embedding=word_embedding,
-        pretrained_model_name_or_path=tokenizer_path,
+        tokenizer_path=f"{tokenizer_path}/tokenizer.json",
         k1=k1,
         b=b,
         columns=columns,
