@@ -569,8 +569,7 @@ impl Graph {
 
         let graph_to_avoid: Option<&graph::Graph> =
             graph_to_avoid.as_ref().map(|ensmallen| &ensmallen.inner);
-        let support: Option<&graph::Graph> =
-            support.as_ref().map(|ensmallen| &ensmallen.inner);
+        let support: Option<&graph::Graph> = support.as_ref().map(|ensmallen| &ensmallen.inner);
         let par_iter = pe!(self.inner.get_edge_prediction_mini_batch(
             random_state,
             batch_size,
