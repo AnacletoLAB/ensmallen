@@ -272,11 +272,11 @@ impl EdgePredictionPerceptron {
                                 }
 
                                 let exponentiated_dot = dot.exp();
-                                let mut variation = -exponentiated_dot / (exponentiated_dot + 1.0).powf(2.0);
-                                if label {
-                                    variation += 1.0;
-                                }
-                                variation *= self.learning_rate;
+
+                                let variation = if label { -1.0 } else { exponentiated_dot - 1.0 }
+                                    / (exponentiated_dot + 1.0)
+                                    * self.learning_rate;
+
                                 edge_embedding.iter_mut().for_each(|edge_feature| {
                                     *edge_feature *= variation;
                                 });
