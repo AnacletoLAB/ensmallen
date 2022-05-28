@@ -8,6 +8,7 @@ edition = "2021"
 [dependencies]
 vec_rand = { git = "https://github.com/zommiommy/vec_rand", branch = "master" }
 graph = {path = "../"}
+express_measures = {path = "../express_measures"}
 indicatif = {version="0.16.0", features = ["rayon"]}
 rayon = "1.1"
 num = "0.4.0"
