@@ -195,7 +195,6 @@ impl EdgePredictionPerceptron {
         self.validate_features(graph, node_features, dimension)?;
 
         let mut random_state: u64 = splitmix64(self.random_state);
-        let scale_factor: f32 = (dimension as f32).sqrt();
         let verbose: bool = verbose.unwrap_or(true);
 
         // Initialize the model with weights and bias in the range (-1 / sqrt(k), +1 / sqrt(k))
@@ -204,6 +203,7 @@ impl EdgePredictionPerceptron {
         };
         let edge_dimension =
             get_edge_embedding_method_dimensionality(self.edge_embedding_method_name, dimension);
+        let scale_factor: f32 = (edge_dimension as f32).sqrt();
         self.weights = (0..edge_dimension)
             .map(|i| get_random_weight(i))
             .collect::<Vec<f32>>();
@@ -374,7 +374,7 @@ impl EdgePredictionPerceptron {
             ));
         }
 
-        let scale_factor: f32 = (dimension as f32).sqrt();
+        let scale_factor: f32 = (edge_dimension as f32).sqrt();
         let method = self.get_edge_embedding_method();
 
         predictions
