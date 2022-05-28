@@ -4,7 +4,7 @@ use core::fmt::Debug;
 use core::intrinsics::unlikely;
 use rayon::prelude::*;
 
-/// Returns the cosine similarity between the two provided vectors computed sequentially.
+/// Returns the dot product between the two provided vectors computed sequentially.
 ///
 /// # Arguments
 /// * `src_features`: &[F] - The first feature.
@@ -12,41 +12,21 @@ use rayon::prelude::*;
 ///
 /// # Safety
 /// If the two features have different sizes, we will compute
-/// the cosine similarity upwards to when the minimum size.
+/// the dot product upwards to when the minimum size.
 /// No warning will be raised.
-pub unsafe fn cosine_similarity_sequential_unchecked<F: ThreadFloat>(
+pub unsafe fn dot_product_sequential_unchecked<F: ThreadFloat>(
     src_features: &[F],
     dst_features: &[F],
 ) -> F {
-    let (total_dot_products, total_squared_src_features, total_squared_dst_features) = src_features
+    src_features
         .iter()
         .zip(dst_features.iter())
-        .map(|(&src_feature, &dst_feature)| {
-            (
-                src_feature * dst_feature,
-                src_feature * src_feature,
-                dst_feature * dst_feature,
-            )
-        })
-        .reduce(
-            |(total_dot_products, total_squared_src_features, total_squared_dst_features),
-             (dot_products, squared_src_features, squared_dst_features)| {
-                (
-                    total_dot_products + dot_products,
-                    total_squared_src_features + squared_src_features,
-                    total_squared_dst_features + squared_dst_features,
-                )
-            },
-        )
-        .unwrap();
-
-    let src_features_norm = total_squared_src_features.sqrt();
-    let dst_features_norm = total_squared_dst_features.sqrt();
-
-    total_dot_products / (src_features_norm * dst_features_norm + F::epsilon())
+        .map(|(&src_feature, &dst_feature)| src_feature * dst_feature)
+        .reduce(|total_dot_products, dot_products| total_dot_products + dot_products)
+        .unwrap()
 }
 
-/// Returns the cosine similarity between the two provided vectors computed in parallel.
+/// Returns the dot product between the two provided vectors computed in parallel.
 ///
 /// # Arguments
 /// * `src_features`: &[F] - The first feature.
@@ -54,41 +34,23 @@ pub unsafe fn cosine_similarity_sequential_unchecked<F: ThreadFloat>(
 ///
 /// # Safety
 /// If the two features have different sizes, we will compute
-/// the cosine similarity upwards to when the minimum size.
+/// the dot product upwards to when the minimum size.
 /// No warning will be raised.
-pub unsafe fn cosine_similarity_parallel_unchecked<F: ThreadFloat>(
+pub unsafe fn dot_product_parallel_unchecked<F: ThreadFloat>(
     src_features: &[F],
     dst_features: &[F],
 ) -> F {
-    let (total_dot_products, total_squared_src_features, total_squared_dst_features) = src_features
+    src_features
         .par_iter()
         .zip(dst_features.par_iter())
-        .map(|(&src_feature, &dst_feature)| {
-            (
-                src_feature * dst_feature,
-                src_feature * src_feature,
-                dst_feature * dst_feature,
-            )
-        })
+        .map(|(&src_feature, &dst_feature)| src_feature * dst_feature)
         .reduce(
-            || (F::zero(), F::zero(), F::zero()),
-            |(total_dot_products, total_squared_src_features, total_squared_dst_features),
-             (dot_products, squared_src_features, squared_dst_features)| {
-                (
-                    total_dot_products + dot_products,
-                    total_squared_src_features + squared_src_features,
-                    total_squared_dst_features + squared_dst_features,
-                )
-            },
-        );
-
-    let src_features_norm = total_squared_src_features.sqrt();
-    let dst_features_norm = total_squared_dst_features.sqrt();
-
-    total_dot_products / (src_features_norm * dst_features_norm + F::epsilon())
+            || F::zero(),
+            |total_dot_products, dot_products| total_dot_products + dot_products,
+        )
 }
 
-/// Returns the cosine similarity between the two provided vectors computed sequentially.
+/// Returns the dot product between the two provided vectors computed sequentially.
 ///
 /// # Arguments
 /// * `src_features`: &[F] - The first feature.
@@ -97,15 +59,15 @@ pub unsafe fn cosine_similarity_parallel_unchecked<F: ThreadFloat>(
 /// # Raises
 /// * If one of the two vectors are empty.
 /// * If the two vectors have different sizes.
-pub fn cosine_similarity_sequential<F: ThreadFloat>(
+pub fn dot_product_sequential<F: ThreadFloat>(
     src_features: &[F],
     dst_features: &[F],
 ) -> Result<F, String> {
     validate_features(src_features, dst_features)?;
-    Ok(unsafe { cosine_similarity_sequential_unchecked(src_features, dst_features) })
+    Ok(unsafe { dot_product_sequential_unchecked(src_features, dst_features) })
 }
 
-/// Returns the cosine similarity between the two provided vectors computed in parallel.
+/// Returns the dot product between the two provided vectors computed in parallel.
 ///
 /// # Arguments
 /// * `src_features`: &[F] - The first feature.
@@ -114,15 +76,15 @@ pub fn cosine_similarity_sequential<F: ThreadFloat>(
 /// # Raises
 /// * If one of the two vectors are empty.
 /// * If the two vectors have different sizes.
-pub fn cosine_similarity_parallel<F: ThreadFloat>(
+pub fn dot_product_parallel<F: ThreadFloat>(
     src_features: &[F],
     dst_features: &[F],
 ) -> Result<F, String> {
     validate_features(src_features, dst_features)?;
-    Ok(unsafe { cosine_similarity_parallel_unchecked(src_features, dst_features) })
+    Ok(unsafe { dot_product_parallel_unchecked(src_features, dst_features) })
 }
 
-/// Write the cosine similarity in the provided slice.
+/// Write the dot product in the provided slice.
 ///
 /// # Arguments
 /// * `similarities`: &mut [F] - Vector where to store the computed similarities.
@@ -139,7 +101,7 @@ pub fn cosine_similarity_parallel<F: ThreadFloat>(
 /// # Safety
 /// If the source and destination indices have values higher
 /// than the provided matrix, the method will panic.
-pub unsafe fn cosine_similarity_from_indices_unchecked<F: ThreadFloat, I: ThreadUnsigned>(
+pub unsafe fn dot_product_from_indices_unchecked<F: ThreadFloat, I: ThreadUnsigned>(
     similarities: &mut [F],
     matrix: &[F],
     sources: &[I],
@@ -166,7 +128,7 @@ where
                 *similarity = F::one();
             }
 
-            *similarity = cosine_similarity_sequential_unchecked(
+            *similarity = dot_product_sequential_unchecked(
                 &matrix[src * dimension..(src + 1) * dimension],
                 &matrix[dst * dimension..(dst + 1) * dimension],
             );
