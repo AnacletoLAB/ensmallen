@@ -1930,7 +1930,7 @@ pub fn test_embiggen_preprocessing(graph: &mut Graph, _verbose: Option<bool>) ->
             .unwrap()
             .collect::<Vec<_>>();
         graph
-            .get_edge_prediction_mini_batch(
+            .par_iter_attributed_edge_prediction_mini_batch(
                 0, 256, false, false, false, None, None, None, None, None, None,
             )
             .unwrap()

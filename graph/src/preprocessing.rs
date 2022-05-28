@@ -291,8 +291,6 @@ impl Graph {
     /// # Arguments
     /// * `random_state`: u64 - Random state of the batch to generate.
     /// * `batch_size`: usize - The maximal size of the batch to generate,
-    /// * `return_node_types`: bool - Whether to return the source and destination nodes node types.
-    /// * `return_edge_metrics`: bool - Whether to return the edge metrics available for both positive and negative edges.
     /// * `sample_only_edges_with_heterogeneous_node_types`: bool - Whether to sample negative edges only with source and destination nodes that have different node types.
     /// * `negative_samples_rate`: Option<f64> - The component of netagetive samples to use.
     /// * `avoid_false_negatives`: Option<bool> - Whether to remove the false negatives when generated. It should be left to false, as it has very limited impact on the training, but enabling this will slow things down.
@@ -306,12 +304,10 @@ impl Graph {
     /// * If node types are requested but the graph does not contain any.
     /// * If the `sample_only_edges_with_heterogeneous_node_types` argument is provided as true, but the graph does not have node types.
     ///
-    pub fn get_edge_prediction_mini_batch<'a>(
+    pub fn par_iter_edge_prediction_mini_batch<'a>(
         &'a self,
         mut random_state: u64,
         batch_size: usize,
-        return_node_types: bool,
-        return_edge_metrics: bool,
         sample_only_edges_with_heterogeneous_node_types: bool,
         negative_samples_rate: Option<f64>,
         avoid_false_negatives: Option<bool>,
@@ -319,18 +315,7 @@ impl Graph {
         use_zipfian_sampling: Option<bool>,
         support: Option<&'a Graph>,
         graph_to_avoid: Option<&'a Graph>,
-    ) -> Result<
-        impl IndexedParallelIterator<
-                Item = (
-                    NodeT,
-                    Option<Vec<NodeTypeT>>,
-                    NodeT,
-                    Option<Vec<NodeTypeT>>,
-                    Option<Vec<f32>>,
-                    bool,
-                ),
-            > + 'a,
-    > {
+    ) -> Result<impl IndexedParallelIterator<Item = (NodeT, NodeT, bool)> + 'a> {
         let support = support.unwrap_or(&self);
         let avoid_false_negatives = avoid_false_negatives.unwrap_or(false);
         let maximal_sampling_attempts = maximal_sampling_attempts.unwrap_or(10_000);
@@ -385,30 +370,7 @@ impl Graph {
                 random_state = splitmix64(random_state);
                 let (src, dst) =
                     self.get_unchecked_node_ids_from_edge_id(self.get_random_edge_id(random_state));
-                return (
-                    src,
-                    if return_node_types {
-                        self.get_unchecked_edge_prediction_node_type_ids(src)
-                    } else {
-                        None
-                    },
-                    dst,
-                    if return_node_types {
-                        self.get_unchecked_edge_prediction_node_type_ids(dst)
-                    } else {
-                        None
-                    },
-                    if return_edge_metrics {
-                        Some(
-                            support
-                                .get_all_edge_metrics_from_node_ids_tuple(src, dst, true)
-                                .unwrap(),
-                        )
-                    } else {
-                        None
-                    },
-                    true,
-                );
+                return (src, dst, true);
             }
 
             for _ in 0..maximal_sampling_attempts {
@@ -437,16 +399,91 @@ impl Graph {
                     continue;
                 }
 
-                return (
+                return (src, dst, false);
+            }
+
+            panic!(
+                concat!(
+                    "Executed more than {} attempts to sample a negative edge.\n",
+                    "If your graph is so small that you see this error, you may want to consider ",
+                    "using one of the edge embedding transformer from the Embiggen library."
+                ),
+                maximal_sampling_attempts
+            );
+        }))
+    }
+
+    #[manual_binding]
+    /// Returns n-ple with index to build numpy array, source node, source node type, destination node, destination node type, edge type and whether this edge is real or artificial.
+    ///
+    /// # Arguments
+    /// * `random_state`: u64 - Random state of the batch to generate.
+    /// * `batch_size`: usize - The maximal size of the batch to generate,
+    /// * `return_node_types`: bool - Whether to return the source and destination nodes node types.
+    /// * `return_edge_metrics`: bool - Whether to return the edge metrics available for both positive and negative edges.
+    /// * `sample_only_edges_with_heterogeneous_node_types`: bool - Whether to sample negative edges only with source and destination nodes that have different node types.
+    /// * `negative_samples_rate`: Option<f64> - The component of netagetive samples to use.
+    /// * `avoid_false_negatives`: Option<bool> - Whether to remove the false negatives when generated. It should be left to false, as it has very limited impact on the training, but enabling this will slow things down.
+    /// * `maximal_sampling_attempts`: Option<usize> - Number of attempts to execute to sample the negative edges.
+    /// * `use_zipfian_sampling`: Option<bool> - Whether to sample the nodes using zipfian distribution. By default True. Not using this may cause significant biases.
+    /// * `support`: Option<&'a Graph> - Graph to use to compute the edge metrics. When not provided, the current graph (self) is used.
+    /// * `graph_to_avoid`: &'a Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,
+    ///
+    /// # Raises
+    /// * If the given amount of negative samples is not a positive finite real value.
+    /// * If node types are requested but the graph does not contain any.
+    /// * If the `sample_only_edges_with_heterogeneous_node_types` argument is provided as true, but the graph does not have node types.
+    ///
+    pub fn par_iter_attributed_edge_prediction_mini_batch<'a>(
+        &'a self,
+        random_state: u64,
+        batch_size: usize,
+        return_node_types: bool,
+        return_edge_metrics: bool,
+        sample_only_edges_with_heterogeneous_node_types: bool,
+        negative_samples_rate: Option<f64>,
+        avoid_false_negatives: Option<bool>,
+        maximal_sampling_attempts: Option<usize>,
+        use_zipfian_sampling: Option<bool>,
+        support: Option<&'a Graph>,
+        graph_to_avoid: Option<&'a Graph>,
+    ) -> Result<
+        impl IndexedParallelIterator<
+                Item = (
+                    NodeT,
+                    Option<Vec<NodeTypeT>>,
+                    NodeT,
+                    Option<Vec<NodeTypeT>>,
+                    Option<Vec<f32>>,
+                    bool,
+                ),
+            > + 'a,
+    > {
+        let support = support.unwrap_or(&self);
+
+        Ok(self
+            .par_iter_edge_prediction_mini_batch(
+                random_state,
+                batch_size,
+                sample_only_edges_with_heterogeneous_node_types,
+                negative_samples_rate,
+                avoid_false_negatives,
+                maximal_sampling_attempts,
+                use_zipfian_sampling,
+                Some(&support),
+                graph_to_avoid,
+            )?
+            .map(move |(src, dst, label)| {
+                (
                     src,
                     if return_node_types {
-                        self.get_unchecked_edge_prediction_node_type_ids(src)
+                        unsafe { self.get_unchecked_edge_prediction_node_type_ids(src) }
                     } else {
                         None
                     },
                     dst,
                     if return_node_types {
-                        self.get_unchecked_edge_prediction_node_type_ids(dst)
+                        unsafe { self.get_unchecked_edge_prediction_node_type_ids(dst) }
                     } else {
                         None
                     },
@@ -459,19 +496,9 @@ impl Graph {
                     } else {
                         None
                     },
-                    false,
-                );
-            }
-
-            panic!(
-                concat!(
-                    "Executed more than {} attempts to sample a negative edge.\n",
-                    "If your graph is so small that you see this error, you may want to consider ",
-                    "using one of the edge embedding transformer from the Embiggen library."
-                ),
-                maximal_sampling_attempts
-            );
-        }))
+                    label,
+                )
+            }))
     }
 
     /// Returns n-ple with terms used for training a siamese network.
@@ -668,7 +695,7 @@ impl Graph {
         support: Option<&'a Graph>,
         graph_to_avoid: Option<&'a Graph>,
     ) -> Result<impl ParallelIterator<Item = (f64, f64, bool)> + 'a> {
-        let iter = self.get_edge_prediction_mini_batch(
+        let iter = self.par_iter_attributed_edge_prediction_mini_batch(
             random_state,
             batch_size,
             false,
