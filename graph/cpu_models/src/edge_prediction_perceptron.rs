@@ -26,6 +26,24 @@ pub fn get_edge_embedding_method_dimensionality(
     }
 }
 
+pub fn get_edge_embedding_method_name_from_string(
+    candidate_method_name: &str,
+) -> Result<EdgeEmbeddingMethods, String> {
+    match candidate_method_name {
+        "CosineSimilarity" => Ok(EdgeEmbeddingMethods::CosineSimilarity),
+        "EuclideanDistance" => Ok(EdgeEmbeddingMethods::EuclideanDistance),
+        "Hadamard" => Ok(EdgeEmbeddingMethods::Hadamard),
+        _ => Err(format!(
+            concat!(
+                "The provided edge embedding method name {} is not supported. ",
+                "The supported edge embedding method names are `CosineSimilarity`, ",
+                "`EuclideanDistance` and `Hadamard`."
+            ),
+            candidate_method_name
+        ))
+    }
+}
+
 #[derive(Clone, Debug)]
 pub struct EdgePredictionPerceptron {
     /// The name of the method to use to compute the edge embedding.
