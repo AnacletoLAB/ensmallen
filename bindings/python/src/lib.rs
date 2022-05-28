@@ -15,6 +15,9 @@ pub(crate) use crate::express_measures::*;
 
 mod cbow;
 pub(crate) use cbow::*;
+mod edge_prediction_perceptron;
+pub(crate) use edge_prediction_perceptron::*;
+
 mod glove;
 pub(crate) use glove::*;
 mod transe;
@@ -51,6 +54,7 @@ fn models(_py: Python, _m: &PyModule) -> PyResult<()> {
     _m.add_class::<SkipGram>()?;
     _m.add_class::<SPINE>()?;
     _m.add_class::<WeightedSPINE>()?;
+    _m.add_class::<EdgePredictionPerceptron>()?;
     Ok(())
 }
 
