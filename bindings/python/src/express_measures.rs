@@ -10,7 +10,7 @@ fn express_measures(_py: Python, m: &PyModule) -> PyResult<()> {
 
 #[module(preprocessing)]
 #[pyfunction()]
-#[text_signature = "(path, embedding, pretrained_model_name_or_path, k1, b, columns, separator, header, verbose)"]
+#[text_signature = "(matrix, sources, destinations)"]
 /// Returns embedding of all the term in given CSV weighted by OKAPI/TFIDF.
 ///
 /// Arguments
