@@ -398,8 +398,7 @@ impl EdgePredictionPerceptron {
                 } else if dot_product > 10.0 {
                     *prediction = 1.0;
                 } else {
-                    let exponentiated_dot_product = dot_product.exp();
-                    *prediction = exponentiated_dot_product / (1.0 + exponentiated_dot_product);
+                    *prediction = 1.0 / (1.0 + (-dot_product).exp());
                 }
             });
 
