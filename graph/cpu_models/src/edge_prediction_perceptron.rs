@@ -122,6 +122,28 @@ impl EdgePredictionPerceptron {
         })
     }
 
+    /// Returns the weights of the model.
+    pub fn get_weights(&self) -> Result<Vec<f32>, String> {
+        if self.weights.is_empty() {
+            return Err(concat!(
+                "This model has not been trained yet. ",
+                "You should call the `.fit` method first."
+            ).to_string());
+        }
+        Ok(self.weights.clone())
+    }
+
+    /// Returns the bias of the model.
+    pub fn get_bias(&self) -> Result<f32, String> {
+        if self.weights.is_empty() {
+            return Err(concat!(
+                "This model has not been trained yet. ",
+                "You should call the `.fit` method first."
+            ).to_string());
+        }
+        Ok(self.bias)
+    }
+
     fn validate_features(
         &self,
         graph: &Graph,

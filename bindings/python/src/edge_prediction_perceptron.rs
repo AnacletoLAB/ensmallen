@@ -123,6 +123,19 @@ impl EdgePredictionPerceptron {
         ))
     }
 
+    #[text_signature = "($self)"]
+    /// Returns the weights of the model.
+    fn get_weights(&self) -> PyResult<Py<PyArray1<f32>>> {
+        let gil = pyo3::Python::acquire_gil();
+        Ok(to_ndarray_1d!(gil, pe!(self.inner.get_weights())?, f32))
+    }
+
+    #[text_signature = "($self)"]
+    /// Returns the bias of the model.
+    fn get_bias(&self) -> PyResult<f32> {
+        pe!(self.inner.get_bias())
+    }
+
     #[args(py_kwargs = "**")]
     #[text_signature = "($self, graph, node_features)"]
     /// Return numpy array with edge predictions for provided graph.
@@ -134,7 +147,7 @@ impl EdgePredictionPerceptron {
     /// node_features: np.ndarray
     ///     A node features numpy array.
     fn predict(
-        &mut self,
+        &self,
         graph: &Graph,
         node_features: Py<PyArray2<f32>>,
     ) -> PyResult<Py<PyArray1<f32>>> {
