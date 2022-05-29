@@ -256,7 +256,10 @@ impl EdgePredictionPerceptron {
                                     [src * edge_dimension..(src + 1) * edge_dimension];
                                 let dst_features = &node_features
                                     [dst * edge_dimension..(dst + 1) * edge_dimension];
-                                (method(src_features, dst_features), label)
+                                (
+                                    method(src_features, dst_features),
+                                    if label { 1.0 } else { 0.0 },
+                                )
                             })
                             .filter_map(|(mut edge_embedding, label)| {
                                 let dot = unsafe {
@@ -271,8 +274,8 @@ impl EdgePredictionPerceptron {
 
                                 let exponentiated_dot = dot.exp();
 
-                                let variation = if label { 1.0 } else { 1.0 - exponentiated_dot}
-                                    / (exponentiated_dot + 1.0)
+                                let variation = (label
+                                    - exponentiated_dot / (exponentiated_dot + 1.0))
                                     * self.learning_rate;
 
                                 edge_embedding.iter_mut().for_each(|edge_feature| {

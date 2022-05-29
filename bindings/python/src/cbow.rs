@@ -4,7 +4,7 @@ use numpy::PyArray2;
 ///
 #[pyclass]
 #[derive(Debug, Clone)]
-#[text_signature = "(*, embedding_size, window_size, clipping_value, number_of_negative_samples, log_sigmoid, siamese, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, max_neighbours, random_state, iterations, dense_node_mapping, normalize_by_degree, stochastic_downsample_by_degree, normalize_learning_rate_by_degree, use_zipfian_sampling)"]
+#[text_signature = "(*, embedding_size, window_size, clipping_value, number_of_negative_samples, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, max_neighbours, random_state, iterations, dense_node_mapping, normalize_by_degree, stochastic_downsample_by_degree, normalize_learning_rate_by_degree, use_zipfian_sampling)"]
 pub struct CBOW {
     pub inner: cpu_models::CBOW,
 }
@@ -38,10 +38,6 @@ impl CBOW {
     ///     By default, `6.0`, where the loss is already close to zero.
     /// number_of_negative_samples: Optional[int] = 5
     ///     Number of negative samples to extract for each context.
-    /// log_sigmoid: Optional[bool] = True
-    ///     Whether to use the model using a sigmoid or log sigmoid. By default, log sigmoid.
-    /// siamese: Optional[bool] = False
-    ///     Whether to use the model in Siamese mode, using half the weights and therefore half the memory.
     /// walk_length: Optional[int] = 32
     ///     Maximal length of the random walk.
     ///     On graphs without traps, all walks have this length.
@@ -100,8 +96,6 @@ impl CBOW {
                 "window_size",
                 "clipping_value",
                 "number_of_negative_samples",
-                "log_sigmoid",
-                "siamese",
                 "stochastic_downsample_by_degree",
                 "normalize_learning_rate_by_degree",
                 "use_zipfian_sampling",
@@ -118,8 +112,6 @@ impl CBOW {
                 extract_value_rust_result!(kwargs, "window_size", usize),
                 extract_value_rust_result!(kwargs, "clipping_value", f32),
                 extract_value_rust_result!(kwargs, "number_of_negative_samples", usize),
-                extract_value_rust_result!(kwargs, "log_sigmoid", bool),
-                extract_value_rust_result!(kwargs, "siamese", bool),
                 extract_value_rust_result!(kwargs, "stochastic_downsample_by_degree", bool),
                 extract_value_rust_result!(kwargs, "normalize_learning_rate_by_degree", bool),
                 extract_value_rust_result!(kwargs, "use_zipfian_sampling", bool),
