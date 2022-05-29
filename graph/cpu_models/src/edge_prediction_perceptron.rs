@@ -6,6 +6,7 @@ use graph::{Graph, NodeT};
 use indicatif::ProgressIterator;
 use indicatif::{ProgressBar, ProgressStyle};
 use rayon::prelude::*;
+use std::intrinsics::unlikely;
 use vec_rand::{random_f32, splitmix64};
 
 #[derive(Clone, Debug, Copy)]
@@ -298,11 +299,9 @@ impl EdgePredictionPerceptron {
 
                                 let exponentiated_dot = dot.exp();
 
-                                let mut variation = -exponentiated_dot / (exponentiated_dot + 1.0);
-                                if label {
-                                    variation += 1.0;
-                                }
-                                variation *= self.learning_rate;
+                                let variation = -if label { 1.0 } else { exponentiated_dot }
+                                    / (exponentiated_dot + 1.0)
+                                    * self.learning_rate;
 
                                 edge_embedding.iter_mut().for_each(|edge_feature| {
                                     *edge_feature *= variation;
@@ -335,6 +334,9 @@ impl EdgePredictionPerceptron {
                                     (total_weights_gradient, total_bias_gradient, total_samples)
                                 },
                             );
+                        if unlikely(total_samples == 0) {
+                            return Ok(());
+                        }
                         let total_samples = total_samples as f32;
                         self.bias += total_bias_gradient / total_samples;
                         self.weights

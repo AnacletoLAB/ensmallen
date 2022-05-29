@@ -1,3 +1,4 @@
+#![feature(core_intrinsics)]
 mod cbow;
 mod glove;
 mod skipgram;
