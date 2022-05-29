@@ -128,7 +128,8 @@ impl EdgePredictionPerceptron {
             return Err(concat!(
                 "This model has not been trained yet. ",
                 "You should call the `.fit` method first."
-            ).to_string());
+            )
+            .to_string());
         }
         Ok(self.weights.clone())
     }
@@ -139,7 +140,8 @@ impl EdgePredictionPerceptron {
             return Err(concat!(
                 "This model has not been trained yet. ",
                 "You should call the `.fit` method first."
-            ).to_string());
+            )
+            .to_string());
         }
         Ok(self.bias)
     }
@@ -323,8 +325,7 @@ impl EdgePredictionPerceptron {
                                     )
                                 };
 
-                                let variation = if label { prediction - 1.0 } else { prediction }
-                                    * self.learning_rate;
+                                let variation = if label { prediction - 1.0 } else { prediction };
 
                                 edge_embedding.iter_mut().for_each(|edge_feature| {
                                     *edge_feature *= variation;
@@ -360,13 +361,13 @@ impl EdgePredictionPerceptron {
                         if unlikely(total_samples == 0) {
                             return Ok(());
                         }
-                        let total_samples = total_samples as f32;
-                        self.bias += total_bias_gradient / total_samples;
+                        let total_samples = total_samples as f32 / self.learning_rate;
+                        self.bias -= total_bias_gradient / total_samples;
                         self.weights
                             .par_iter_mut()
                             .zip(total_weights_gradient.into_par_iter())
                             .for_each(|(weight, total_weight_gradient)| {
-                                *weight += total_weight_gradient / total_samples;
+                                *weight -= total_weight_gradient / total_samples;
                             });
                         Ok(())
                     })
