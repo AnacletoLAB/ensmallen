@@ -2,7 +2,7 @@ use express_measures::{
     cosine_similarity_sequential_unchecked, dot_product_sequential_unchecked,
     euclidean_distance_sequential_unchecked,
 };
-use graph::Graph;
+use graph::{Graph, NodeT};
 use indicatif::ProgressIterator;
 use indicatif::{ProgressBar, ProgressStyle};
 use rayon::prelude::*;
@@ -174,6 +174,36 @@ impl EdgePredictionPerceptron {
         }
     }
 
+    /// Returns the dot product for the provided nodes, edge embedding method and current model.
+    ///
+    /// # Arguments
+    /// `src`: NodeT - The source node whose features are to be extracted.
+    /// `dst`: NodeT - The destination node whose features are to be extracted.
+    /// `node_features`: &[f32] - The node features to use.
+    /// `dimension`: usize - The dimension of the provided node features.
+    /// `edge_embedding_method`: fn - Callback to the edge embedding method to use.
+    ///
+    /// # Safety
+    /// In this method we do not execute any checks such as whether the
+    /// node features are compatible with the provided node IDs, and therefore
+    /// improper parametrization may lead to panic or undefined behaviour.
+    unsafe fn get_unsafe_dot_product(
+        &self,
+        src: NodeT,
+        dst: NodeT,
+        node_features: &[f32],
+        dimension: usize,
+        method: fn(&[f32], &[f32]) -> Vec<f32>,
+    ) -> (Vec<f32>, f32) {
+        let src = src as usize;
+        let dst = dst as usize;
+        let src_features = &node_features[src * dimension..(src + 1) * dimension];
+        let dst_features = &node_features[dst * dimension..(dst + 1) * dimension];
+        let edge_embedding = method(src_features, dst_features);
+        let dot = dot_product_sequential_unchecked(&edge_embedding, &self.weights) + self.bias;
+        (edge_embedding, dot)
+    }
+
     /// Fit the edge prediction perceptron model on the provided graph and node features.
     ///
     /// # Arguments
@@ -249,22 +279,16 @@ impl EdgePredictionPerceptron {
                                 support,
                                 graph_to_avoid,
                             )?
-                            .map(|(src, dst, label)| {
-                                let src: usize = src as usize;
-                                let dst: usize = dst as usize;
-                                let src_features = &node_features
-                                    [src * edge_dimension..(src + 1) * edge_dimension];
-                                let dst_features = &node_features
-                                    [dst * edge_dimension..(dst + 1) * edge_dimension];
-                                (
-                                    method(src_features, dst_features),
-                                    if label { 1.0 } else { 0.0 },
-                                )
-                            })
-                            .filter_map(|(mut edge_embedding, label)| {
-                                let dot = unsafe {
-                                    dot_product_sequential_unchecked(&edge_embedding, &self.weights)
-                                } + self.bias;
+                            .filter_map(|(src, dst, label)| {
+                                let (mut edge_embedding, dot) = unsafe {
+                                    self.get_unsafe_dot_product(
+                                        src,
+                                        dst,
+                                        node_features,
+                                        dimension,
+                                        method,
+                                    )
+                                };
 
                                 // If the current signal is already quite strong, it does not make sense
                                 // to update the loss function as we may start cause propagating NaNs.
@@ -274,13 +298,16 @@ impl EdgePredictionPerceptron {
 
                                 let exponentiated_dot = dot.exp();
 
-                                let variation = (label
-                                    - exponentiated_dot / (exponentiated_dot + 1.0))
-                                    * self.learning_rate;
+                                let mut variation = -exponentiated_dot / (exponentiated_dot + 1.0);
+                                if label {
+                                    variation += 1.0;
+                                }
+                                variation *= self.learning_rate;
 
                                 edge_embedding.iter_mut().for_each(|edge_feature| {
                                     *edge_feature *= variation;
                                 });
+
                                 Some((edge_embedding, variation, 1))
                             })
                             .reduce(
@@ -382,16 +409,10 @@ impl EdgePredictionPerceptron {
             .par_iter_mut()
             .zip(graph.par_iter_directed_edge_node_ids())
             .for_each(|(prediction, (_, src, dst))| {
-                let src = src as usize;
-                let dst = dst as usize;
-                let src_features = &node_features[src * edge_dimension..(src + 1) * edge_dimension];
-                let dst_features = &node_features[dst * edge_dimension..(dst + 1) * edge_dimension];
                 let dot_product = unsafe {
-                    dot_product_sequential_unchecked(
-                        &method(src_features, dst_features),
-                        &self.weights,
-                    )
-                } + self.bias;
+                    self.get_unsafe_dot_product(src, dst, node_features, dimension, method)
+                        .1
+                };
                 // The following if-else are needed to ensure numerical stability.
                 if dot_product < -10.0 {
                     *prediction = 0.0;
