@@ -204,7 +204,6 @@ impl EdgePredictionPerceptron {
         };
         let edge_dimension =
             get_edge_embedding_method_dimensionality(self.edge_embedding_method_name, dimension);
-        let edge_scale_factor: f32 = (edge_dimension as f32).sqrt();
         self.weights = (0..edge_dimension)
             .map(|i| get_random_weight(i))
             .collect::<Vec<f32>>();
@@ -262,8 +261,7 @@ impl EdgePredictionPerceptron {
                             .filter_map(|(mut edge_embedding, label)| {
                                 let dot = unsafe {
                                     dot_product_sequential_unchecked(&edge_embedding, &self.weights)
-                                } / edge_scale_factor
-                                    + self.bias;
+                                } + self.bias;
 
                                 // If the current signal is already quite strong, it does not make sense
                                 // to update the loss function as we may start cause propagating NaNs.
@@ -273,7 +271,7 @@ impl EdgePredictionPerceptron {
 
                                 let exponentiated_dot = dot.exp();
 
-                                let variation = if label { -1.0 } else { exponentiated_dot - 1.0 }
+                                let variation = if label { 1.0 } else { 1.0 - exponentiated_dot}
                                     / (exponentiated_dot + 1.0)
                                     * self.learning_rate;
 
@@ -375,7 +373,6 @@ impl EdgePredictionPerceptron {
             ));
         }
 
-        let edge_scale_factor: f32 = (edge_dimension as f32).sqrt();
         let method = self.get_edge_embedding_method();
 
         predictions
@@ -390,7 +387,7 @@ impl EdgePredictionPerceptron {
                     dot_product_sequential_unchecked(
                         &method(src_features, dst_features),
                         &self.weights,
-                    ) / edge_scale_factor
+                    )
                 } + self.bias;
                 // The following if-else are needed to ensure numerical stability.
                 if dot_product < -10.0 {
