@@ -22,8 +22,7 @@ pub unsafe fn dot_product_sequential_unchecked<F: ThreadFloat>(
         .iter()
         .zip(dst_features.iter())
         .map(|(&src_feature, &dst_feature)| src_feature * dst_feature)
-        .reduce(|total_dot_products, dot_products| total_dot_products + dot_products)
-        .unwrap()
+        .sum()
 }
 
 /// Returns the dot product between the two provided vectors computed in parallel.

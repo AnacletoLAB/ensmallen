@@ -6,7 +6,6 @@ use graph::{Graph, NodeT};
 use indicatif::ProgressIterator;
 use indicatif::{ProgressBar, ProgressStyle};
 use rayon::prelude::*;
-use std::intrinsics::unlikely;
 use vec_rand::{random_f32, splitmix64};
 
 #[derive(Clone, Debug, Copy)]
@@ -227,16 +226,7 @@ impl EdgePredictionPerceptron {
         let edge_embedding = method(src_features, dst_features);
         let dot = dot_product_sequential_unchecked(&edge_embedding, &self.weights) + self.bias;
 
-        // The following if-else are needed to ensure numerical stability.
-        let prediction = if dot < -6.0 {
-            0.0
-        } else if dot > 6.0 {
-            1.0
-        } else {
-            1.0 / (1.0 + (-dot).exp())
-        };
-
-        (edge_embedding, prediction)
+        (edge_embedding, 1.0 / (1.0 + (-dot).exp()))
     }
 
     /// Fit the edge prediction perceptron model on the provided graph and node features.
@@ -326,7 +316,7 @@ impl EdgePredictionPerceptron {
                                     )
                                 };
 
-                                let variation = if label { 1.0 - prediction } else { prediction };
+                                let variation = if label { prediction - 1.0 } else { prediction };
 
                                 edge_embedding.iter_mut().for_each(|edge_feature| {
                                     *edge_feature *= variation;
@@ -356,12 +346,12 @@ impl EdgePredictionPerceptron {
                                     (total_weights_gradient, total_bias_gradient)
                                 },
                             );
-                        self.bias += total_bias_gradient * batch_learning_rate;
+                        self.bias -= total_bias_gradient * batch_learning_rate;
                         self.weights
                             .par_iter_mut()
                             .zip(total_weights_gradient.into_par_iter())
                             .for_each(|(weight, total_weight_gradient)| {
-                                *weight += total_weight_gradient * batch_learning_rate;
+                                *weight -= total_weight_gradient * batch_learning_rate;
                             });
                         Ok(())
                     })

@@ -22,8 +22,7 @@ pub unsafe fn squared_euclidean_distance_sequential_unchecked<F: ThreadFloat>(
         .iter()
         .zip(dst_features.iter())
         .map(|(&src_feature, &dst_feature)| src_feature * src_feature - dst_feature * dst_feature)
-        .reduce(|a, b| a + b)
-        .unwrap()
+        .sum()
 }
 
 /// Returns the euclidean distance between the two provided vectors computed sequentially.
@@ -61,7 +60,7 @@ pub unsafe fn squared_euclidean_distance_parallel_unchecked<F: ThreadFloat>(
         .par_iter()
         .zip(dst_features.par_iter())
         .map(|(&src_feature, &dst_feature)| src_feature * src_feature - dst_feature * dst_feature)
-        .reduce(|| F::zero(), |total, partial| total + partial)
+        .sum()
 }
 
 /// Returns the euclidean distance between the two provided vectors computed in parallel.
