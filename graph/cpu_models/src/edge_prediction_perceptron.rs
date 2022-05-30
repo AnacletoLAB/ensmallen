@@ -356,12 +356,12 @@ impl EdgePredictionPerceptron {
                                     (total_weights_gradient, total_bias_gradient)
                                 },
                             );
-                        self.bias -= total_bias_gradient * batch_learning_rate;
+                        self.bias += total_bias_gradient * batch_learning_rate;
                         self.weights
                             .par_iter_mut()
                             .zip(total_weights_gradient.into_par_iter())
                             .for_each(|(weight, total_weight_gradient)| {
-                                *weight -= total_weight_gradient * batch_learning_rate;
+                                *weight += total_weight_gradient * batch_learning_rate;
                             });
                         Ok(())
                     })
