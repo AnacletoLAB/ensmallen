@@ -9,7 +9,10 @@ use crate::types::*;
 /// # Raises
 /// * If one of the two vectors are empty.
 /// * If the two vectors have different sizes.
-pub(crate) fn validate_features<F: ThreadFloat>(src_features: &[F], dst_features: &[F]) -> Result<(), String> {
+pub(crate) fn validate_features<F: ThreadFloat>(
+    src_features: &[F],
+    dst_features: &[F],
+) -> Result<(), String> {
     if src_features.is_empty() {
         return Err(concat!("The provided source features are an empty slice. ").to_string());
     }
@@ -24,6 +27,35 @@ pub(crate) fn validate_features<F: ThreadFloat>(src_features: &[F], dst_features
             ),
             src_features.len(),
             dst_features.len()
+        ));
+    }
+    Ok(())
+}
+
+/// Validates whether the two provided vector lengths are compatible.
+///
+/// # Arguments
+/// * `ground_truth_len`: usize - The length of the ground truths vector.
+/// * `predictions_len`: usize - The length of the predictions vector.
+pub(crate) fn validate_vectors_length(
+    ground_truth_len: usize,
+    predictions_len: usize,
+) -> Result<(), String> {
+    if ground_truth_len == 0 {
+        return Err("The provided ground truths vector is empty!".to_string());
+    }
+    if predictions_len == 0 {
+        return Err("The provided predictions vector is empty!".to_string());
+    }
+    if ground_truth_len != predictions_len {
+        return Err(format!(
+            concat!(
+                "The provided ground truth have length `{}` ",
+                "but the provided predictions have length `{}`. ",
+                "The two vectors should have the same length."
+            ),
+            ground_truth_len,
+            predictions_len,
         ));
     }
     Ok(())
