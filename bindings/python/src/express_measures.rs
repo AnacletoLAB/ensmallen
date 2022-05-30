@@ -6,6 +6,14 @@ use pyo3::wrap_pyfunction;
 fn express_measures(_py: Python, m: &PyModule) -> PyResult<()> {
     m.add_wrapped(wrap_pyfunction!(cosine_similarity_from_indices_unchecked))?;
     m.add_wrapped(wrap_pyfunction!(binary_accuracy_score))?;
+    m.add_wrapped(wrap_pyfunction!(accuracy_score_u8))?;
+    m.add_wrapped(wrap_pyfunction!(accuracy_score_u16))?;
+    m.add_wrapped(wrap_pyfunction!(accuracy_score_u32))?;
+    m.add_wrapped(wrap_pyfunction!(accuracy_score_u64))?;
+    m.add_wrapped(wrap_pyfunction!(accuracy_score_i8))?;
+    m.add_wrapped(wrap_pyfunction!(accuracy_score_i16))?;
+    m.add_wrapped(wrap_pyfunction!(accuracy_score_i32))?;
+    m.add_wrapped(wrap_pyfunction!(accuracy_score_i64))?;
     Ok(())
 }
 
@@ -50,24 +58,24 @@ fn cosine_similarity_from_indices_unchecked(
 }
 
 /// Returns accuracy score on the provided 1D numpy array.
-/// 
+///
 /// # Arguments
 /// * `ground_truth`: Py<PyArray1<T>> - 1D Numpy array with the ground truths classes.
 /// * `predictions`: Py<PyArray1<T>> - 1D Numpy array with the predicted classes.
 fn generic_accuracy_score<T>(
-    ground_truth: Py<PyArray1<T>>,
+    ground_truths: Py<PyArray1<T>>,
     predictions: Py<PyArray1<T>>,
 ) -> PyResult<f32>
 where
     T: numpy::Element + Eq + Send + Sync,
 {
     let gil = pyo3::Python::acquire_gil();
-    let ground_truth = ground_truth.as_ref(gil.python());
-    let ground_truth_ref = unsafe { ground_truth.as_slice().unwrap() };
+    let ground_truths = ground_truths.as_ref(gil.python());
+    let ground_truths_ref = unsafe { ground_truths.as_slice().unwrap() };
     let predictions = predictions.as_ref(gil.python());
     let predictions_ref = unsafe { predictions.as_slice().unwrap() };
     pe!(::express_measures::accuracy_score(
-        ground_truth_ref,
+        ground_truths_ref,
         predictions_ref,
     ))
 }
@@ -75,7 +83,7 @@ where
 #[module(preprocessing)]
 #[pyfunction()]
 #[text_signature = "(ground_truths, predictions)"]
-/// Returns the accuracy score of the given predictions against the provided ground truth.
+/// Returns the accuracy score of the given inary predictions against the provided binary ground truth.
 ///
 /// # Arguments
 /// ground_truths: np.ndarray
@@ -87,5 +95,149 @@ fn binary_accuracy_score(
     ground_truths: Py<PyArray1<bool>>,
     predictions: Py<PyArray1<bool>>,
 ) -> PyResult<f32> {
-    generic_accuracy_score(ground_truth, predictions)
+    generic_accuracy_score(ground_truths, predictions)
+}
+
+#[module(preprocessing)]
+#[pyfunction()]
+#[text_signature = "(ground_truths, predictions)"]
+/// Returns the accuracy score of the given predictions against the provided ground truth.
+///
+/// # Arguments
+/// ground_truths: np.ndarray
+///     U8 1D Numpy array with the ground truths classes.
+/// predictions: np.ndarray
+///     U8 1D Numpy array with the predicted classes.
+///
+fn accuracy_score_u8(
+    ground_truths: Py<PyArray1<u8>>,
+    predictions: Py<PyArray1<u8>>,
+) -> PyResult<f32> {
+    generic_accuracy_score(ground_truths, predictions)
+}
+
+#[module(preprocessing)]
+#[pyfunction()]
+#[text_signature = "(ground_truths, predictions)"]
+/// Returns the accuracy score of the given predictions against the provided ground truth.
+///
+/// # Arguments
+/// ground_truths: np.ndarray
+///     U16 1D Numpy array with the ground truths classes.
+/// predictions: np.ndarray
+///     U16 1D Numpy array with the predicted classes.
+///
+fn accuracy_score_u16(
+    ground_truths: Py<PyArray1<u16>>,
+    predictions: Py<PyArray1<u16>>,
+) -> PyResult<f32> {
+    generic_accuracy_score(ground_truths, predictions)
+}
+
+#[module(preprocessing)]
+#[pyfunction()]
+#[text_signature = "(ground_truths, predictions)"]
+/// Returns the accuracy score of the given predictions against the provided ground truth.
+///
+/// # Arguments
+/// ground_truths: np.ndarray
+///     U32 1D Numpy array with the ground truths classes.
+/// predictions: np.ndarray
+///     U32 1D Numpy array with the predicted classes.
+///
+fn accuracy_score_u32(
+    ground_truths: Py<PyArray1<u32>>,
+    predictions: Py<PyArray1<u32>>,
+) -> PyResult<f32> {
+    generic_accuracy_score(ground_truths, predictions)
+}
+
+#[module(preprocessing)]
+#[pyfunction()]
+#[text_signature = "(ground_truths, predictions)"]
+/// Returns the accuracy score of the given predictions against the provided ground truth.
+///
+/// # Arguments
+/// ground_truths: np.ndarray
+///     U64 1D Numpy array with the ground truths classes.
+/// predictions: np.ndarray
+///     U64 1D Numpy array with the predicted classes.
+///
+fn accuracy_score_u64(
+    ground_truths: Py<PyArray1<u64>>,
+    predictions: Py<PyArray1<u64>>,
+) -> PyResult<f32> {
+    generic_accuracy_score(ground_truths, predictions)
+}
+
+#[module(preprocessing)]
+#[pyfunction()]
+#[text_signature = "(ground_truths, predictions)"]
+/// Returns the accuracy score of the given predictions against the provided ground truth.
+///
+/// # Arguments
+/// ground_truths: np.ndarray
+///     i8 1D Numpy array with the ground truths classes.
+/// predictions: np.ndarray
+///     i8 1D Numpy array with the predicted classes.
+///
+fn accuracy_score_i8(
+    ground_truths: Py<PyArray1<i8>>,
+    predictions: Py<PyArray1<i8>>,
+) -> PyResult<f32> {
+    generic_accuracy_score(ground_truths, predictions)
+}
+
+#[module(preprocessing)]
+#[pyfunction()]
+#[text_signature = "(ground_truths, predictions)"]
+/// Returns the accuracy score of the given predictions against the provided ground truth.
+///
+/// # Arguments
+/// ground_truths: np.ndarray
+///     i16 1D Numpy array with the ground truths classes.
+/// predictions: np.ndarray
+///     i16 1D Numpy array with the predicted classes.
+///
+fn accuracy_score_i16(
+    ground_truths: Py<PyArray1<i16>>,
+    predictions: Py<PyArray1<i16>>,
+) -> PyResult<f32> {
+    generic_accuracy_score(ground_truths, predictions)
+}
+
+#[module(preprocessing)]
+#[pyfunction()]
+#[text_signature = "(ground_truths, predictions)"]
+/// Returns the accuracy score of the given predictions against the provided ground truth.
+///
+/// # Arguments
+/// ground_truths: np.ndarray
+///     i32 1D Numpy array with the ground truths classes.
+/// predictions: np.ndarray
+///     i32 1D Numpy array with the predicted classes.
+///
+fn accuracy_score_i32(
+    ground_truths: Py<PyArray1<i32>>,
+    predictions: Py<PyArray1<i32>>,
+) -> PyResult<f32> {
+    generic_accuracy_score(ground_truths, predictions)
+}
+
+#[module(preprocessing)]
+#[pyfunction()]
+#[text_signature = "(ground_truths, predictions)"]
+/// Returns the accuracy score of the given predictions against the provided ground truth.
+///
+/// # Arguments
+/// ground_truths: np.ndarray
+///     i64 1D Numpy array with the ground truths classes.
+/// predictions: np.ndarray
+///     i64 1D Numpy array with the predicted classes.
+///
+fn accuracy_score_i64(
+    ground_truths: Py<PyArray1<i64>>,
+    predictions: Py<PyArray1<i64>>,
+) -> PyResult<f32> {
+    generic_accuracy_score(ground_truths, predictions)
 }
