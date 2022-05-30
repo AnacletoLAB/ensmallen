@@ -298,14 +298,14 @@ impl EdgePredictionPerceptron {
                                 random_state,
                                 self.number_of_edges_per_mini_batch,
                                 self.sample_only_edges_with_heterogeneous_node_types,
-                                Some(1.0),
+                                Some(0.5),
                                 Some(true),
                                 None,
                                 Some(true),
                                 support,
                                 graph_to_avoid,
                             )?
-                            .filter_map(|(src, dst, label)| {
+                            .map(|(src, dst, label)| {
                                 let (mut edge_embedding, prediction) = unsafe {
                                     self.get_unsafe_prediction(
                                         src,
@@ -322,7 +322,7 @@ impl EdgePredictionPerceptron {
                                     *edge_feature *= variation;
                                 });
 
-                                Some((edge_embedding, variation))
+                                (edge_embedding, variation)
                             })
                             .reduce(
                                 || (vec![0.0; edge_dimension], 0.0),
