@@ -1758,7 +1758,7 @@ impl Graph {
 
     /// Returns report on the isomorphic edge types of the graph.
     unsafe fn get_isomorphic_edge_types_report(&self) -> String {
-        let mut isomorphic_edge_types = self.get_isomorphic_edge_type_ids_groups(Some(100)).unwrap();
+        let mut isomorphic_edge_types = self.get_isomorphic_edge_type_ids_groups(Some(20)).unwrap();
         isomorphic_edge_types.par_sort_unstable_by(|a, b| {
             (self.get_unchecked_number_of_edges_from_edge_type_id(b[0]) as usize * b.len()).cmp(
                 &(self.get_unchecked_number_of_edges_from_edge_type_id(a[0]) as usize * a.len()),
@@ -1777,7 +1777,7 @@ impl Graph {
                     "edge types suggests a potential modelling error in the pipeline ",
                     "that has produced this graph. {isomorphic_edge_types_number} isomorphic edge types groups ",
                     "were detected in this graph. ",
-                    "We currently compute and display the isomorphic edge types with at least 100 edges.",
+                    "We currently compute and display the isomorphic edge types with at least 20 edges.",
                     "</p>",
                     "<ol>",
                     "{isomorphic_edge_types_description}",

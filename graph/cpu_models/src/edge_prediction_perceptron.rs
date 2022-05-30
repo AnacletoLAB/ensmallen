@@ -294,6 +294,7 @@ impl EdgePredictionPerceptron {
             .ceil() as usize;
 
         let method = self.get_edge_embedding_method();
+        let batch_learning_rate: f32 = self.learning_rate / self.number_of_edges_per_mini_batch as f32;
 
         // We start to loop over the required amount of epochs.
         (0..self.number_of_epochs)
@@ -302,7 +303,7 @@ impl EdgePredictionPerceptron {
                 (0..number_of_batches_per_epoch)
                     .map(|_| {
                         random_state = splitmix64(random_state);
-                        let (total_weights_gradient, total_bias_gradient, total_samples) = graph
+                        let (total_weights_gradient, total_bias_gradient) = graph
                             .par_iter_edge_prediction_mini_batch(
                                 random_state,
                                 self.number_of_edges_per_mini_batch,
@@ -325,26 +326,24 @@ impl EdgePredictionPerceptron {
                                     )
                                 };
 
-                                let variation = if label { prediction - 1.0 } else { prediction };
+                                let variation = if label { 1.0 - prediction } else { prediction };
 
                                 edge_embedding.iter_mut().for_each(|edge_feature| {
                                     *edge_feature *= variation;
                                 });
 
-                                Some((edge_embedding, variation, 1))
+                                Some((edge_embedding, variation))
                             })
                             .reduce(
-                                || (vec![0.0; edge_dimension], 0.0, 0),
+                                || (vec![0.0; edge_dimension], 0.0),
                                 |(
                                     mut total_weights_gradient,
                                     mut total_bias_gradient,
-                                    mut total_samples,
-                                ): (Vec<f32>, f32, usize),
+                                ): (Vec<f32>, f32),
                                  (
                                     partial_weights_gradient,
                                     partial_bias_gradient,
-                                    partial_samples,
-                                ): (Vec<f32>, f32, usize)| {
+                                ): (Vec<f32>, f32)| {
                                     total_weights_gradient
                                         .iter_mut()
                                         .zip(partial_weights_gradient.into_iter())
@@ -354,20 +353,15 @@ impl EdgePredictionPerceptron {
                                             },
                                         );
                                     total_bias_gradient += partial_bias_gradient;
-                                    total_samples += partial_samples;
-                                    (total_weights_gradient, total_bias_gradient, total_samples)
+                                    (total_weights_gradient, total_bias_gradient)
                                 },
                             );
-                        if unlikely(total_samples == 0) {
-                            return Ok(());
-                        }
-                        let total_samples = total_samples as f32 / self.learning_rate;
-                        self.bias -= total_bias_gradient / total_samples;
+                        self.bias -= total_bias_gradient * batch_learning_rate;
                         self.weights
                             .par_iter_mut()
                             .zip(total_weights_gradient.into_par_iter())
                             .for_each(|(weight, total_weight_gradient)| {
-                                *weight -= total_weight_gradient / total_samples;
+                                *weight -= total_weight_gradient * batch_learning_rate;
                             });
                         Ok(())
                     })

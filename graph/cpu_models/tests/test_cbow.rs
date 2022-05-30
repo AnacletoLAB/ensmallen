@@ -26,15 +26,7 @@ fn test_cbow_on_cora() -> Result<(), String> {
     )
     .unwrap();
     let mut embedding = vec![0.0; embedding_size * cora.get_nodes_number() as usize];
-    cbow.fit_transform(
-        &cora,
-        embedding.as_mut_slice(),
-        Some(10),
-        None,
-        Some(1024),
-        None,
-        None,
-    )?;
+    cbow.fit_transform(&cora, embedding.as_mut_slice(), Some(10), None, None, None)?;
 
     let writer = CSVFileWriter::new("cora_embedding.tsv")
         .set_separator(Some('\t'))
