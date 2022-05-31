@@ -8,3 +8,4 @@ edition = "2021"
 [dependencies]
 rayon = "1.5"
 num-traits = "0.2"
+unzip-n = "0.1"

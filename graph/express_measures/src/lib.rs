@@ -4,10 +4,10 @@ mod dot;
 mod euclidean_distance;
 mod types;
 mod validation;
-mod accuracy;
+mod metrics;
 
 pub use cosine_similarity::*;
-pub use accuracy::*;
+pub use metrics::*;
 pub use dot::*;
 pub use euclidean_distance::*;
 pub use types::*;
