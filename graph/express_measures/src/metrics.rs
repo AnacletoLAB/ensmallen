@@ -1,5 +1,4 @@
 use crate::validation::*;
-use num_traits::Zero;
 use rayon::prelude::*;
 use std::collections::HashMap;
 use unzip_n::unzip_n;
@@ -7,7 +6,7 @@ use unzip_n::unzip_n;
 unzip_n!(pub(crate) 3);
 
 #[derive(Debug, Clone, Copy)]
-struct BinaryConfusionMatrix {
+pub struct BinaryConfusionMatrix {
     true_positives: usize,
     true_negatives: usize,
     false_positives: usize,
@@ -291,7 +290,7 @@ impl BinaryConfusionMatrix {
     }
 
     /// Returns hashmap with all available binary metrics.
-    pub fn get_all_binary_metrics(&self) -> HashMap<&str, f32> {
+    pub fn get_all_binary_metrics(&self) -> HashMap<String, f32> {
         [
             ("accuracy", self.get_binary_accuracy()),
             ("recall", self.get_binary_recall()),
@@ -340,6 +339,9 @@ impl BinaryConfusionMatrix {
             ),
         ]
         .into_iter()
+        .map(|(name, result)| {
+            (name.to_string(), result)
+        })
         .collect()
     }
 }
@@ -413,8 +415,8 @@ pub fn get_binary_auroc(ground_truths: &[bool], predictions: &[f32]) -> Result<f
 
     // We compute the comulative sum of the positive labels.
     let positive_labels_running_sum: Vec<usize> = reverse_predictions_index
-        .iter()
-        .map(|&index| ground_truths[index])
+        .into_iter()
+        .map(|index| ground_truths[index])
         .scan(0, |current_total, label| {
             if label {
                 *current_total += 1;
@@ -429,13 +431,10 @@ pub fn get_binary_auroc(ground_truths: &[bool], predictions: &[f32]) -> Result<f
     let total_negatives = number_of_predictions - total_positives;
 
     // And finally, we can compute the AUC integral.
-    Ok(reverse_predictions_index
-        .par_windows(2)
-        .zip(positive_labels_running_sum.par_windows(2))
+    Ok(positive_labels_running_sum.par_windows(2)
         .enumerate()
-        .map(|(i, (indices_window, positive_labels_sum_window))| {
+        .map(|(i, positive_labels_sum_window)| {
             (
-                i,
                 positive_labels_sum_window[0],
                 positive_labels_sum_window[1],
                 i + 1 - positive_labels_sum_window[0],
@@ -444,7 +443,6 @@ pub fn get_binary_auroc(ground_truths: &[bool], predictions: &[f32]) -> Result<f
         })
         .map(
             |(
-                i,
                 previous_true_positive,
                 current_true_positive,
                 previous_false_positive,

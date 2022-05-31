@@ -2,13 +2,130 @@ use super::*;
 use numpy::{PyArray1, PyArray2};
 use pyo3::wrap_pyfunction;
 
+macro_rules! impl_express_measures {
+    ($(($method_name:ident, $function_name:ident),)*) => {
+        
 #[pymodule]
-fn express_measures(_py: Python, m: &PyModule) -> PyResult<()> {
+pub fn express_measures(_py: Python, m: &PyModule) -> PyResult<()> {
+    m.add_class::<BinaryConfusionMatrix>()?;
+    $(
+        m.add_wrapped(wrap_pyfunction!($function_name))?;
+    )*
+    m.add_wrapped(wrap_pyfunction!(all_binary_metrics))?;
+    m.add_wrapped(wrap_pyfunction!(binary_auroc))?;
     m.add_wrapped(wrap_pyfunction!(cosine_similarity_from_indices_unchecked))?;
     Ok(())
 }
 
-#[module(preprocessing)]
+#[pyclass]
+#[derive(Debug, Clone)]
+pub struct BinaryConfusionMatrix {
+    pub inner: ::express_measures::BinaryConfusionMatrix,
+}
+
+#[pymethods]
+impl BinaryConfusionMatrix {
+$(
+    #[automatically_generated_binding]
+    #[text_signature = "($self)"]
+    /// Return the $function_name
+    pub fn $method_name(&self) -> f32 {
+        self.inner.$method_name() as f32
+    }
+)*
+
+#[automatically_generated_binding]
+#[text_signature = "($self)"]
+/// Return a dictionary with all the binary metrics
+pub fn get_all_binary_metrics(&self) -> HashMap<String, f32> {
+    self.inner.get_all_binary_metrics()
+}
+}
+
+$(
+    #[module(express_measures)]
+    #[pyfunction()]
+    #[text_signature = "(ground_truths, predictions)"]
+    /// Returns the $function_name of the given binary predictions against the provided binary ground truth.
+    ///
+    /// # Arguments
+    /// ground_truths: np.ndarray
+    ///     Boolean 1D Numpy array with the ground truths classes.
+    /// predictions: np.ndarray
+    ///     Boolean 1D Numpy array with the predicted classes.
+    ///
+    fn $function_name(
+        ground_truths: Py<PyArray1<bool>>,
+        predictions: Py<PyArray1<bool>>,
+    ) -> PyResult<f32> {
+        let gil = pyo3::Python::acquire_gil();
+        let ground_truths = ground_truths.as_ref(gil.python());
+        let ground_truths_ref = unsafe { ground_truths.as_slice().unwrap() };
+        let predictions = predictions.as_ref(gil.python());
+        let predictions_ref = unsafe { predictions.as_slice().unwrap() };
+
+        Ok(pe!(::express_measures::BinaryConfusionMatrix::from_slices(
+            ground_truths_ref,
+            predictions_ref,    
+        ))?.$method_name() as f32)
+    }
+)*
+
+#[module(express_measures)]
+#[pyfunction()]
+#[text_signature = "(ground_truths, predictions)"]
+/// Returns the $function_name of the given binary predictions against the provided binary ground truth.
+///
+/// # Arguments
+/// ground_truths: np.ndarray
+///     Boolean 1D Numpy array with the ground truths classes.
+/// predictions: np.ndarray
+///     Boolean 1D Numpy array with the predicted classes.
+///
+fn all_binary_metrics(
+    ground_truths: Py<PyArray1<bool>>,
+    predictions: Py<PyArray1<bool>>,
+) -> PyResult<HashMap<String, f32>> {
+    let gil = pyo3::Python::acquire_gil();
+    let ground_truths = ground_truths.as_ref(gil.python());
+    let ground_truths_ref = unsafe { ground_truths.as_slice().unwrap() };
+    let predictions = predictions.as_ref(gil.python());
+    let predictions_ref = unsafe { predictions.as_slice().unwrap() };
+
+    Ok(pe!(::express_measures::BinaryConfusionMatrix::from_slices(
+        ground_truths_ref,
+        predictions_ref,    
+    ))?.get_all_binary_metrics())
+}
+
+#[module(express_measures)]
+#[pyfunction()]
+#[text_signature = "(ground_truths, predictions)"]
+/// Returns the binary auroc of the given predictions against the provided binary ground truth.
+///
+/// # Arguments
+/// ground_truths: np.ndarray
+///     Boolean 1D Numpy array with the ground truths classes.
+/// predictions: np.ndarray
+///     Boolean 1D Numpy array with the predicted classes.
+///
+fn binary_auroc(
+    ground_truths: Py<PyArray1<bool>>,
+    predictions: Py<PyArray1<f32>>,
+) -> PyResult<f32> {
+    let gil = pyo3::Python::acquire_gil();
+    let ground_truths = ground_truths.as_ref(gil.python());
+    let ground_truths_ref = unsafe { ground_truths.as_slice().unwrap() };
+    let predictions = predictions.as_ref(gil.python());
+    let predictions_ref = unsafe { predictions.as_slice().unwrap() };
+
+    pe!(::express_measures::get_binary_auroc(
+        ground_truths_ref,
+        predictions_ref,    
+    ))
+}
+
+#[module(express_measures)]
 #[pyfunction()]
 #[text_signature = "(matrix, sources, destinations)"]
 /// Returns cosine similarity of the provided source and destinations using the provided features.
@@ -46,4 +163,42 @@ fn cosine_similarity_from_indices_unchecked(
         )
     })?;
     Ok(similarities.to_owned())
+}
+
+    };
+}
+
+impl_express_measures!{
+    (get_number_of_true_positives, number_of_true_positives),
+    (get_number_of_true_negatives, number_of_true_negatives),
+    (get_number_of_false_positives, number_of_false_positives),
+    (get_number_of_false_negatives, number_of_false_negatives),
+    (get_number_of_positive_values, number_of_positive_values),
+    (get_number_of_negative_values, number_of_negative_values),
+    (get_number_of_positive_predictions, number_of_positive_predictions),
+    (get_number_of_negative_predictions, number_of_negative_predictions),
+    (get_number_of_correct_predictions, number_of_correct_predictions),
+    (get_number_of_incorrect_predictions, number_of_incorrect_predictions),
+    (get_number_of_samples, number_of_samples),
+    (get_binary_accuracy, binary_accuracy),
+    (get_binary_recall, binary_recall),
+    (get_binary_specificity, binary_specificity),
+    (get_binary_miss_rate, binary_miss_rate),
+    (get_binary_fall_out, binary_fall_out),
+    (get_binary_informedness, binary_informedness),
+    (get_binary_prevalence_threshold, binary_prevalence_threshold),
+    (get_binary_prevalence, binary_prevalence),
+    (get_binary_balanced_accuracy, binary_balanced_accuracy),
+    (get_binary_precision, binary_precision),
+    (get_binary_false_discovery_rate, binary_false_discovery_rate),
+    (get_binary_false_omission_rate, binary_false_omission_rate),
+    (get_binary_negative_predictive_value, binary_negative_predictive_value),
+    (get_binary_positive_likelyhood_ratio, binary_positive_likelyhood_ratio),
+    (get_binary_negative_likelyhood_ratio, binary_negative_likelyhood_ratio),
+    (get_binary_markedness, binary_markedness),
+    (get_binary_diagnostic_odds_ratio, binary_diagnostic_odds_ratio),
+    (get_binary_f1_score, binary_f1_score),
+    (get_binary_fowlkes_mallows_index, binary_fowlkes_mallows_index),
+    (get_binary_threat_score, binary_threat_score),
+    (get_binary_matthews_correlation_coefficient, binary_matthews_correlation_coefficient),
 }
