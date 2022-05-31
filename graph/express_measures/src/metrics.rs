@@ -2,6 +2,7 @@ use crate::validation::*;
 use rayon::prelude::*;
 use std::collections::HashMap;
 use unzip_n::unzip_n;
+use core::fmt::Debug;
 
 unzip_n!(pub(crate) 3);
 
@@ -473,38 +474,45 @@ pub fn get_binary_auprc(
 ///
 /// # Raises
 /// * When the slices are not compatible (i.e. do not have the same length).
-fn get_binary_auc(
+fn get_binary_auc_generic<Index>(
     ground_truths: &[bool], 
     predictions: &[f32], 
     curve: fn(previous: &BinaryConfusionMatrix, current: &BinaryConfusionMatrix) -> f32,
-) -> Result<f32, String> {
-    // First, we check that the two vectors have the expected length.
-    validate_vectors_length(ground_truths.len(), predictions.len())?;
+) -> Result<f32, String> 
+where
+    usize:TryFrom<Index>,
+    Index: TryFrom<usize> + Send + Debug + Sync + Copy,
+    <Index as TryFrom<usize>>::Error: Debug,
+    <Index as TryInto<usize>>::Error: Debug,
+{
 
     // Secondly, we sort the provided predictions by decreasing
     // order, using a reverse index.
-    let mut reverse_predictions_index: Vec<usize> = (0..ground_truths.len()).collect();
-    reverse_predictions_index.par_sort_unstable_by(|&a, &b| {
-        predictions[b]
-            .partial_cmp(&predictions[a])
+    let mut reverse_predictions_index: Vec<Index> = (0..ground_truths.len())
+        .map(|i| Index::try_from(i).unwrap())
+        .collect();
+
+    reverse_predictions_index.par_sort_unstable_by(|a, b| {
+        predictions[usize::try_from(*b).unwrap()]
+            .partial_cmp(&predictions[usize::try_from(*a).unwrap()])
             .unwrap_or(std::cmp::Ordering::Equal)
     });
 
     // We compute the comulative sum of the positive labels.
-    let positive_labels_running_sum: Vec<usize> = reverse_predictions_index
+    let positive_labels_running_sum: Vec<Index> = reverse_predictions_index
         .into_iter()
-        .map(|index| ground_truths[index])
+        .map(|index| ground_truths[usize::try_from(index).unwrap()])
         .scan(0, |current_total, label| {
             if label {
                 *current_total += 1;
             }
-            Some(*current_total)
+            Some(Index::try_from(*current_total).unwrap())
         })
         .collect();
     
     // We get the total positives and negatives.
     let number_of_predictions = positive_labels_running_sum.len();
-    let total_positives = *positive_labels_running_sum.last().unwrap();
+    let total_positives = usize::try_from(*positive_labels_running_sum.last().unwrap()).unwrap();
     let total_negatives = number_of_predictions - total_positives;
 
     if total_positives == 0 {
@@ -529,13 +537,13 @@ fn get_binary_auc(
                 total_positives,
                 total_negatives,
                 i + 1,
-                positive_labels_sum_window[0],
+                usize::try_from(positive_labels_sum_window[0]).unwrap(),
             );
             let current = BinaryConfusionMatrix::form_auc_values(
                 total_positives,
                 total_negatives,
                 i + 2,
-                positive_labels_sum_window[1],
+                usize::try_from(positive_labels_sum_window[1]).unwrap(),
             );
 
             curve(
@@ -545,4 +553,33 @@ fn get_binary_auc(
         })
         .sum::<f32>()
     )
+}
+
+/// Returns binary auc score for the provided ground truths and predictions, 
+/// of the curve specified by the callable `curve`.
+/// 
+/// # Arguments
+/// * `ground_truths`: &[bool] - The ground truths binary values.
+/// * `predictions`: &[f32] - The predictions binary values.
+/// * `curve`:  fn(previous: &BinaryConfusionMatrix, current: &BinaryConfusionMatrix) -> f32 - 
+///     The function that, given the previous and current binary confusion metrices,
+///     (at the variation of the threshold), should compute the area of this slice
+///     of the curve. E.g for AUPRC it should compute the difference of recall
+///     multiplied by the current precision.
+///
+/// # Raises
+/// * When the slices are not compatible (i.e. do not have the same length).
+fn get_binary_auc(
+    ground_truths: &[bool], 
+    predictions: &[f32], 
+    curve: fn(previous: &BinaryConfusionMatrix, current: &BinaryConfusionMatrix) -> f32,
+) -> Result<f32, String> {
+    // First, we check that the two vectors have the expected length.
+    validate_vectors_length(ground_truths.len(), predictions.len())?;
+
+    if ground_truths.len() < u32::MAX as usize {
+        get_binary_auc_generic::<u32>(ground_truths, predictions, curve)
+    } else {
+        get_binary_auc_generic::<u64>(ground_truths, predictions, curve)
+    }
 }
