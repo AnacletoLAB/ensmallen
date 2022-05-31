@@ -391,7 +391,7 @@ impl core::iter::Sum<Self> for BinaryConfusionMatrix {
 ///
 /// # Raises
 /// * When the slices are not compatible (i.e. do not have the same length).
-pub fn get_binary_auroc(ground_truths: &[bool], predictions: &[f32]) -> Result<f32, String> {
+pub fn get_binary_auroc(ground_truths: &[bool], predictions: &[f32]) -> Result<f64, String> {
     get_binary_auc(
         ground_truths,
         predictions,
@@ -402,7 +402,7 @@ pub fn get_binary_auroc(ground_truths: &[bool], predictions: &[f32]) -> Result<f
                     - previous.get_number_of_false_positives())) as f32
         },
         |matrix: &BinaryConfusionMatrix| {
-            (matrix.get_number_of_positive_values() * matrix.get_number_of_negative_values()) as f32
+            (matrix.get_number_of_positive_values() * matrix.get_number_of_negative_values()) as f64
                 * 2.0
         },
     )
@@ -416,7 +416,7 @@ pub fn get_binary_auroc(ground_truths: &[bool], predictions: &[f32]) -> Result<f
 ///
 /// # Raises
 /// * When the slices are not compatible (i.e. do not have the same length).
-pub fn get_binary_auprc(ground_truths: &[bool], predictions: &[f32]) -> Result<f32, String> {
+pub fn get_binary_auprc(ground_truths: &[bool], predictions: &[f32]) -> Result<f64, String> {
     get_binary_auc(
         ground_truths,
         predictions,
@@ -426,7 +426,7 @@ pub fn get_binary_auprc(ground_truths: &[bool], predictions: &[f32]) -> Result<f
                 * (current.get_number_of_true_positives() - previous.get_number_of_true_positives())
                     as f32
         },
-        |matrix: &BinaryConfusionMatrix| (matrix.get_number_of_positive_values()) as f32 * 2.0,
+        |matrix: &BinaryConfusionMatrix| (matrix.get_number_of_positive_values()) as f64 * 2.0,
     )
 }
 
@@ -453,8 +453,8 @@ fn get_binary_auc_generic<Index>(
     ground_truths: &[bool],
     predictions: &[f32],
     curve: fn(previous: &BinaryConfusionMatrix, current: &BinaryConfusionMatrix) -> f32,
-    normalizzation_value: fn(matrix: &BinaryConfusionMatrix) -> f32,
-) -> Result<f32, String>
+    normalizzation_value: fn(matrix: &BinaryConfusionMatrix) -> f64,
+) -> Result<f64, String>
 where
     usize: TryFrom<Index>,
     Index: TryFrom<usize> + Send + Debug + Sync + Copy,
@@ -531,9 +531,9 @@ where
                 usize::try_from(positive_labels_sum_window[1]).unwrap(),
             );
 
-            curve(&previous, &current)
+            curve(&previous, &current) as f64
         })
-        .sum::<f32>()
+        .sum::<f64>() 
         / normalizzation_value(&final_matrix))
 }
 
@@ -560,8 +560,8 @@ fn get_binary_auc(
     ground_truths: &[bool],
     predictions: &[f32],
     curve: fn(previous: &BinaryConfusionMatrix, current: &BinaryConfusionMatrix) -> f32,
-    normalizzation_value: fn(matrix: &BinaryConfusionMatrix) -> f32,
-) -> Result<f32, String> {
+    normalizzation_value: fn(matrix: &BinaryConfusionMatrix) -> f64,
+) -> Result<f64, String> {
     // First, we check that the two vectors have the expected length.
     validate_vectors_length(ground_truths.len(), predictions.len())?;
 

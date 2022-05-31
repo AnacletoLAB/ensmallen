@@ -113,7 +113,7 @@ fn all_binary_metrics(
 fn binary_auroc(
     ground_truths: Py<PyArray1<bool>>,
     predictions: Py<PyArray1<f32>>,
-) -> PyResult<f32> {
+) -> PyResult<f64> {
     let gil = pyo3::Python::acquire_gil();
     let ground_truths = ground_truths.as_ref(gil.python());
     let ground_truths_ref = unsafe { ground_truths.as_slice().unwrap() };
@@ -140,7 +140,7 @@ fn binary_auroc(
 fn binary_auprc(
     ground_truths: Py<PyArray1<bool>>,
     predictions: Py<PyArray1<f32>>,
-) -> PyResult<f32> {
+) -> PyResult<f64> {
     let gil = pyo3::Python::acquire_gil();
     let ground_truths = ground_truths.as_ref(gil.python());
     let ground_truths_ref = unsafe { ground_truths.as_slice().unwrap() };
