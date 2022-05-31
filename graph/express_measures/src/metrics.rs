@@ -429,9 +429,11 @@ pub fn get_binary_auroc(
         predictions,
         |previous: &BinaryConfusionMatrix, current: &BinaryConfusionMatrix| {
             // trapezoidal approximation for rinneman integral
-            (current.get_binary_recall() + previous.get_binary_recall()) *
-                (current.get_binary_fall_out() - previous.get_binary_fall_out()) 
-                / 2.0
+            ((current.get_number_of_true_positives() + previous.get_number_of_true_positives()) *
+                (current.get_number_of_false_positives() - previous.get_number_of_false_positives())) as f32
+        },
+        |matrix: &BinaryConfusionMatrix| {
+            (matrix.get_number_of_positive_values() * matrix.get_number_of_negative_values()) as f32 * 2.0
         }
     )
 }
@@ -454,8 +456,10 @@ pub fn get_binary_auprc(
         |previous: &BinaryConfusionMatrix, current: &BinaryConfusionMatrix| {
             // trapezoidal approximation for rinneman integral
             (current.get_binary_precision() + previous.get_binary_precision()) *
-                (current.get_binary_recall() - previous.get_binary_recall()) 
-                / 2.0
+                (current.get_number_of_true_positives() - previous.get_number_of_true_positives()) as f32
+        },
+        |matrix: &BinaryConfusionMatrix| {
+            (matrix.get_number_of_positive_values()) as f32 * 2.0
         }
     )
 }
@@ -471,6 +475,11 @@ pub fn get_binary_auprc(
 ///     (at the variation of the threshold), should compute the area of this slice
 ///     of the curve. E.g for AUPRC it should compute the difference of recall
 ///     multiplied by the current precision.
+/// * `normalizzation_value`: fn(matrix: &BinaryConfusionMatrix) -> f32 - 
+///     Divide the final result by the value returned by this function.
+///     Its input is the binary confusion matrix computed with the lowest possible
+///     threshold. This can be used to optimize metrics by factoring out invariant
+///     factors.
 ///
 /// # Raises
 /// * When the slices are not compatible (i.e. do not have the same length).
@@ -478,6 +487,7 @@ fn get_binary_auc_generic<Index>(
     ground_truths: &[bool], 
     predictions: &[f32], 
     curve: fn(previous: &BinaryConfusionMatrix, current: &BinaryConfusionMatrix) -> f32,
+    normalizzation_value: fn(matrix: &BinaryConfusionMatrix) -> f32,
 ) -> Result<f32, String> 
 where
     usize:TryFrom<Index>,
@@ -529,6 +539,13 @@ where
         ).to_string());
     }
 
+    let final_matrix = BinaryConfusionMatrix::form_auc_values(
+        total_positives,
+        total_negatives,
+        number_of_predictions,
+        total_positives,
+    );
+
     // And finally, we can compute the AUC integral.
     Ok(positive_labels_running_sum.par_windows(2)
         .enumerate()
@@ -551,7 +568,7 @@ where
                 &current,
             )
         })
-        .sum::<f32>()
+        .sum::<f32>() / normalizzation_value(&final_matrix)
     )
 }
 
@@ -566,6 +583,11 @@ where
 ///     (at the variation of the threshold), should compute the area of this slice
 ///     of the curve. E.g for AUPRC it should compute the difference of recall
 ///     multiplied by the current precision.
+/// * `normalizzation_value`: fn(matrix: &BinaryConfusionMatrix) -> f32 - 
+///     Divide the final result by the value returned by this function.
+///     Its input is the binary confusion matrix computed with the lowest possible
+///     threshold. This can be used to optimize metrics by factoring out invariant
+///     factors.
 ///
 /// # Raises
 /// * When the slices are not compatible (i.e. do not have the same length).
@@ -573,13 +595,14 @@ fn get_binary_auc(
     ground_truths: &[bool], 
     predictions: &[f32], 
     curve: fn(previous: &BinaryConfusionMatrix, current: &BinaryConfusionMatrix) -> f32,
+    normalizzation_value: fn(matrix: &BinaryConfusionMatrix) -> f32,
 ) -> Result<f32, String> {
     // First, we check that the two vectors have the expected length.
     validate_vectors_length(ground_truths.len(), predictions.len())?;
 
     if ground_truths.len() < u32::MAX as usize {
-        get_binary_auc_generic::<u32>(ground_truths, predictions, curve)
+        get_binary_auc_generic::<u32>(ground_truths, predictions, curve, normalizzation_value)
     } else {
-        get_binary_auc_generic::<u64>(ground_truths, predictions, curve)
+        get_binary_auc_generic::<u64>(ground_truths, predictions, curve, normalizzation_value)
     }
 }
