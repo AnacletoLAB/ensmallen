@@ -51,6 +51,30 @@ impl BinaryConfusionMatrix {
         }
     }
 
+    /// Create a new Binary Confusion matrix from the provided iterators
+    /// 
+    /// # Arguments
+    /// * `ground_truth_iter`: impl IndexedParallelIterator<Item=bool> - The ground truths binary values.
+    /// * `predictions_iter`:impl IndexedParallelIterator<Item=bool> - The predictions binary values.
+    ///
+    /// # Raises
+    /// * When the slices are not compatible (i.e. do not have the same length).
+    pub fn from_indexed_par_iter<I1, I2>(
+        ground_truth_iter: I1,
+        predictions_iter: I2,
+    ) -> Result<Self, String> 
+    where
+        I1: IndexedParallelIterator<Item=bool>,
+        I2: IndexedParallelIterator<Item=bool>,
+    {
+        validate_vectors_length(ground_truth_iter.len(), predictions_iter.len())?;
+        Ok(ground_truth_iter.zip(predictions_iter)
+            .map(|(ground_truth, prediction)| {
+                BinaryConfusionMatrix::from_tuple(ground_truth, prediction)
+            })
+            .sum())
+    }
+
     /// Create a new Binary Confusion Matrix from the provided slices.
     ///
     /// # Arguments
@@ -59,19 +83,37 @@ impl BinaryConfusionMatrix {
     ///
     /// # Raises
     /// * When the slices are not compatible (i.e. do not have the same length).
-    pub fn from_slices(
+    pub fn from_binary_slices(
         ground_truths: &[bool],
         predictions: &[bool],
-    ) -> Result<BinaryConfusionMatrix, String> {
-        validate_vectors_length(ground_truths.len(), predictions.len())?;
-        Ok(ground_truths
-            .par_iter()
-            .copied()
-            .zip(predictions.par_iter().copied())
-            .map(|(ground_truth, prediction)| {
-                BinaryConfusionMatrix::from_tuple(ground_truth, prediction)
+    ) -> Result<Self, String> {
+        Self::from_indexed_par_iter(
+            ground_truths.par_iter().copied(),
+            predictions.par_iter().copied(),
+        )
+    }
+
+    /// Create a new Binary Confusion Matrix from the provided slices.
+    ///
+    /// # Arguments
+    /// * `ground_truths`: &[bool] - The ground truths binary values.
+    /// * `predictions`: &[f32] - The predictions probabilities.
+    /// * `threshold`: f32 - The probability cut-off we use to ditinguis between
+    ///     positive and negative values. 
+    ///
+    /// # Raises
+    /// * When the slices are not compatible (i.e. do not have the same length).
+    pub fn from_probabilities_slices(
+        ground_truths: &[bool],
+        predictions: &[f32],
+        threshold: f32,
+    ) -> Result<Self, String> {
+        Self::from_indexed_par_iter(
+            ground_truths.par_iter().copied(),
+            predictions.par_iter().map(|probability| {
+                *probability > threshold
             })
-            .sum())
+        )
     }
 
     /// Returns the total number of true positive values.
@@ -150,127 +192,127 @@ impl BinaryConfusionMatrix {
     }
 
     /// Returns the accuracy.
-    pub fn get_binary_accuracy(&self) -> f32 {
-        self.get_number_of_correct_predictions() as f32 / self.get_number_of_samples() as f32
+    pub fn get_binary_accuracy(&self) -> f64 {
+        self.get_number_of_correct_predictions() as f64 / self.get_number_of_samples() as f64
     }
 
     /// Returns the binary recall.
-    pub fn get_binary_recall(&self) -> f32 {
+    pub fn get_binary_recall(&self) -> f64 {
         if !self.has_positive_samples() {
-            return f32::NAN;
+            return f64::NAN;
         }
-        self.get_number_of_true_positives() as f32 / self.get_number_of_positive_values() as f32
+        self.get_number_of_true_positives() as f64 / self.get_number_of_positive_values() as f64
     }
 
     /// Returns the binary specificity.
-    pub fn get_binary_specificity(&self) -> f32 {
+    pub fn get_binary_specificity(&self) -> f64 {
         if !self.has_negative_samples() {
-            return f32::NAN;
+            return f64::NAN;
         }
-        self.get_number_of_true_negatives() as f32 / self.get_number_of_negative_values() as f32
+        self.get_number_of_true_negatives() as f64 / self.get_number_of_negative_values() as f64
     }
 
     /// Returns the binary miss rate.
-    pub fn get_binary_miss_rate(&self) -> f32 {
+    pub fn get_binary_miss_rate(&self) -> f64 {
         1.0 - self.get_binary_recall()
     }
 
     /// Returns the binary fall-out.
-    pub fn get_binary_fall_out(&self) -> f32 {
+    pub fn get_binary_fall_out(&self) -> f64 {
         1.0 - self.get_binary_specificity()
     }
 
     /// Returns the binary informedness.
-    pub fn get_binary_informedness(&self) -> f32 {
+    pub fn get_binary_informedness(&self) -> f64 {
         self.get_binary_recall() + self.get_binary_specificity() - 1.0
     }
 
     /// Returns the binary prevalence threshold.
-    pub fn get_binary_prevalence_threshold(&self) -> f32 {
+    pub fn get_binary_prevalence_threshold(&self) -> f64 {
         ((self.get_binary_recall() * self.get_binary_fall_out()).sqrt()
             - self.get_binary_fall_out())
             / (self.get_binary_recall() - self.get_binary_fall_out())
     }
 
     /// Returns the binary prevalence.
-    pub fn get_binary_prevalence(&self) -> f32 {
-        self.get_number_of_positive_values() as f32 / self.get_number_of_samples() as f32
+    pub fn get_binary_prevalence(&self) -> f64 {
+        self.get_number_of_positive_values() as f64 / self.get_number_of_samples() as f64
     }
 
     /// Returns the binary balanced accuracy.
-    pub fn get_binary_balanced_accuracy(&self) -> f32 {
+    pub fn get_binary_balanced_accuracy(&self) -> f64 {
         (self.get_binary_recall() + self.get_binary_specificity()) / 2.0
     }
 
     /// Returns the binary precision.
-    pub fn get_binary_precision(&self) -> f32 {
+    pub fn get_binary_precision(&self) -> f64 {
         if !self.has_positive_predictions() {
-            return f32::NAN;
+            return f64::NAN;
         }
-        self.get_number_of_true_positives() as f32
-            / self.get_number_of_positive_predictions() as f32
+        self.get_number_of_true_positives() as f64
+            / self.get_number_of_positive_predictions() as f64
     }
 
     /// Returns the binary false discovery rate.
-    pub fn get_binary_false_discovery_rate(&self) -> f32 {
+    pub fn get_binary_false_discovery_rate(&self) -> f64 {
         1.0 - self.get_binary_precision()
     }
 
     /// Returns the binary false omission rate.
-    pub fn get_binary_false_omission_rate(&self) -> f32 {
+    pub fn get_binary_false_omission_rate(&self) -> f64 {
         if !self.has_negative_predictions() {
-            return f32::NAN;
+            return f64::NAN;
         }
-        self.get_number_of_false_negatives() as f32
-            / self.get_number_of_negative_predictions() as f32
+        self.get_number_of_false_negatives() as f64
+            / self.get_number_of_negative_predictions() as f64
     }
 
     /// Returns the binary negative predictive value.
-    pub fn get_binary_negative_predictive_value(&self) -> f32 {
+    pub fn get_binary_negative_predictive_value(&self) -> f64 {
         1.0 - self.get_binary_false_omission_rate()
     }
 
     /// Returns the binary positive likelyhood ratio.
-    pub fn get_binary_positive_likelyhood_ratio(&self) -> f32 {
+    pub fn get_binary_positive_likelyhood_ratio(&self) -> f64 {
         self.get_binary_recall() / self.get_binary_fall_out()
     }
 
     /// Returns the binary negative likelyhood ratio.
-    pub fn get_binary_negative_likelyhood_ratio(&self) -> f32 {
+    pub fn get_binary_negative_likelyhood_ratio(&self) -> f64 {
         self.get_binary_miss_rate() / self.get_binary_specificity()
     }
 
     /// Returns the binary markedness.
-    pub fn get_binary_markedness(&self) -> f32 {
+    pub fn get_binary_markedness(&self) -> f64 {
         self.get_binary_precision() + self.get_binary_negative_predictive_value() - 1.0
     }
 
     /// Returns the binary diagnostic odds ratio.
-    pub fn get_binary_diagnostic_odds_ratio(&self) -> f32 {
+    pub fn get_binary_diagnostic_odds_ratio(&self) -> f64 {
         self.get_binary_positive_likelyhood_ratio() / self.get_binary_negative_likelyhood_ratio()
     }
 
     /// Returns the binary F1 score
-    pub fn get_binary_f1_score(&self) -> f32 {
-        (2 * self.get_number_of_true_positives()) as f32
+    pub fn get_binary_f1_score(&self) -> f64 {
+        (2 * self.get_number_of_true_positives()) as f64
             / (2 * self.get_number_of_true_positives() + self.get_number_of_incorrect_predictions())
-                as f32
+                as f64
     }
 
     /// Returns the binary Fowlkes-Mallows index
-    pub fn get_binary_fowlkes_mallows_index(&self) -> f32 {
+    pub fn get_binary_fowlkes_mallows_index(&self) -> f64 {
         (self.get_binary_precision() * self.get_binary_recall()).sqrt()
     }
 
     /// Returns the binary Threat score.
-    pub fn get_binary_threat_score(&self) -> f32 {
-        self.get_number_of_true_positives() as f32
+    pub fn get_binary_threat_score(&self) -> f64 {
+        self.get_number_of_true_positives() as f64
             / (self.get_number_of_true_positives() + self.get_number_of_incorrect_predictions())
-                as f32
+                as f64
     }
 
     /// Returns the binary Matthews correlation coefficient.
-    pub fn get_binary_matthews_correlation_coefficient(&self) -> f32 {
+    pub fn get_binary_matthews_correlation_coefficient(&self) -> f64 {
         (self.get_binary_recall()
             * self.get_binary_specificity()
             * self.get_binary_precision()
@@ -284,7 +326,7 @@ impl BinaryConfusionMatrix {
     }
 
     /// Returns hashmap with all available binary metrics.
-    pub fn get_all_binary_metrics(&self) -> HashMap<String, f32> {
+    pub fn get_all_binary_metrics(&self) -> HashMap<String, f64> {
         [
             ("accuracy", self.get_binary_accuracy()),
             ("recall", self.get_binary_recall()),
@@ -399,7 +441,7 @@ pub fn get_binary_auroc(ground_truths: &[bool], predictions: &[f32]) -> Result<f
             // trapezoidal approximation for rinneman integral
             ((current.get_number_of_true_positives() + previous.get_number_of_true_positives())
                 * (current.get_number_of_false_positives()
-                    - previous.get_number_of_false_positives())) as f32
+                    - previous.get_number_of_false_positives())) as f64
         },
         |matrix: &BinaryConfusionMatrix| {
             (matrix.get_number_of_positive_values() * matrix.get_number_of_negative_values()) as f64
@@ -424,7 +466,7 @@ pub fn get_binary_auprc(ground_truths: &[bool], predictions: &[f32]) -> Result<f
             // trapezoidal approximation for rinneman integral
             (current.get_binary_precision() + previous.get_binary_precision())
                 * (current.get_number_of_true_positives() - previous.get_number_of_true_positives())
-                    as f32
+                    as f64
         },
         |matrix: &BinaryConfusionMatrix| (matrix.get_number_of_positive_values()) as f64 * 2.0,
     )
@@ -436,12 +478,12 @@ pub fn get_binary_auprc(ground_truths: &[bool], predictions: &[f32]) -> Result<f
 /// # Arguments
 /// * `ground_truths`: &[bool] - The ground truths binary values.
 /// * `predictions`: &[f32] - The predictions binary values.
-/// * `curve`:  fn(previous: &BinaryConfusionMatrix, current: &BinaryConfusionMatrix) -> f32 -
+/// * `curve`:  fn(previous: &BinaryConfusionMatrix, current: &BinaryConfusionMatrix) -> f64 -
 ///     The function that, given the previous and current binary confusion metrices,
 ///     (at the variation of the threshold), should compute the area of this slice
 ///     of the curve. E.g for AUPRC it should compute the difference of recall
 ///     multiplied by the current precision.
-/// * `normalizzation_value`: fn(matrix: &BinaryConfusionMatrix) -> f32 -
+/// * `normalizzation_value`: fn(matrix: &BinaryConfusionMatrix) -> f64 -
 ///     Divide the final result by the value returned by this function.
 ///     Its input is the binary confusion matrix computed with the lowest possible
 ///     threshold. This can be used to optimize metrics by factoring out invariant
@@ -452,7 +494,7 @@ pub fn get_binary_auprc(ground_truths: &[bool], predictions: &[f32]) -> Result<f
 fn get_binary_auc_generic<Index>(
     ground_truths: &[bool],
     predictions: &[f32],
-    curve: fn(previous: &BinaryConfusionMatrix, current: &BinaryConfusionMatrix) -> f32,
+    curve: fn(previous: &BinaryConfusionMatrix, current: &BinaryConfusionMatrix) -> f64,
     normalizzation_value: fn(matrix: &BinaryConfusionMatrix) -> f64,
 ) -> Result<f64, String>
 where
@@ -531,7 +573,7 @@ where
                 usize::try_from(positive_labels_sum_window[1]).unwrap(),
             );
 
-            curve(&previous, &current) as f64
+            curve(&previous, &current)
         })
         .sum::<f64>() 
         / normalizzation_value(&final_matrix))
@@ -543,12 +585,12 @@ where
 /// # Arguments
 /// * `ground_truths`: &[bool] - The ground truths binary values.
 /// * `predictions`: &[f32] - The predictions binary values.
-/// * `curve`:  fn(previous: &BinaryConfusionMatrix, current: &BinaryConfusionMatrix) -> f32 -
+/// * `curve`:  fn(previous: &BinaryConfusionMatrix, current: &BinaryConfusionMatrix) -> f64 -
 ///     The function that, given the previous and current binary confusion metrices,
 ///     (at the variation of the threshold), should compute the area of this slice
 ///     of the curve. E.g for AUPRC it should compute the difference of recall
 ///     multiplied by the current precision.
-/// * `normalizzation_value`: fn(matrix: &BinaryConfusionMatrix) -> f32 -
+/// * `normalizzation_value`: fn(matrix: &BinaryConfusionMatrix) -> f64 -
 ///     Divide the final result by the value returned by this function.
 ///     Its input is the binary confusion matrix computed with the lowest possible
 ///     threshold. This can be used to optimize metrics by factoring out invariant
@@ -559,7 +601,7 @@ where
 fn get_binary_auc(
     ground_truths: &[bool],
     predictions: &[f32],
-    curve: fn(previous: &BinaryConfusionMatrix, current: &BinaryConfusionMatrix) -> f32,
+    curve: fn(previous: &BinaryConfusionMatrix, current: &BinaryConfusionMatrix) -> f64,
     normalizzation_value: fn(matrix: &BinaryConfusionMatrix) -> f64,
 ) -> Result<f64, String> {
     // First, we check that the two vectors have the expected length.

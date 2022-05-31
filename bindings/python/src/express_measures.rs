@@ -4,7 +4,7 @@ use pyo3::wrap_pyfunction;
 
 macro_rules! impl_express_measures {
     ($(($method_name:ident, $function_name:ident),)*) => {
-        
+
 #[pymodule]
 pub fn express_measures(_py: Python, m: &PyModule) -> PyResult<()> {
     m.add_class::<BinaryConfusionMatrix>()?;
@@ -30,17 +30,17 @@ $(
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
     /// Return the $function_name
-    pub fn $method_name(&self) -> f32 {
-        self.inner.$method_name() as f32
+    pub fn $method_name(&self) -> f64 {
+        self.inner.$method_name() as f64
     }
 )*
 
-#[automatically_generated_binding]
-#[text_signature = "($self)"]
-/// Return a dictionary with all the binary metrics
-pub fn get_all_binary_metrics(&self) -> HashMap<String, f32> {
-    self.inner.get_all_binary_metrics()
-}
+    #[automatically_generated_binding]
+    #[text_signature = "($self)"]
+    /// Return a dictionary with all the binary metrics
+    pub fn get_all_binary_metrics(&self) -> HashMap<String, f64> {
+        self.inner.get_all_binary_metrics()
+    }
 }
 
 $(
@@ -49,26 +49,58 @@ $(
     #[text_signature = "(ground_truths, predictions)"]
     /// Returns the $function_name of the given binary predictions against the provided binary ground truth.
     ///
-    /// # Arguments
+    /// Arguments
+    /// ---------
     /// ground_truths: np.ndarray
     ///     Boolean 1D Numpy array with the ground truths classes.
     /// predictions: np.ndarray
-    ///     Boolean 1D Numpy array with the predicted classes.
+    ///     Boolean 1D Numpy array with the predicted classes or the prediction
+    ///     probabilities.
+    /// threshold: float = 0.5
+    ///     The cuttoff probability we use to distinguis positives from negatives.
+    ///
+    /// Raises
+    /// ------
+    /// ValueError: if you expressely pass a threshold but the given predictions
+    ///     are already bools.
     ///
     fn $function_name(
         ground_truths: Py<PyArray1<bool>>,
-        predictions: Py<PyArray1<bool>>,
-    ) -> PyResult<f32> {
+        predictions: Py<PyAny>,
+        threshold: Option<f32>
+    ) -> PyResult<f64> {
         let gil = pyo3::Python::acquire_gil();
         let ground_truths = ground_truths.as_ref(gil.python());
         let ground_truths_ref = unsafe { ground_truths.as_slice().unwrap() };
         let predictions = predictions.as_ref(gil.python());
-        let predictions_ref = unsafe { predictions.as_slice().unwrap() };
 
-        Ok(pe!(::express_measures::BinaryConfusionMatrix::from_slices(
-            ground_truths_ref,
-            predictions_ref,    
-        ))?.$method_name() as f32)
+        let matrix = if let Ok(casted_pred) = <&PyArray1<f32>>::extract(&predictions) {
+            ::express_measures::BinaryConfusionMatrix::from_probabilities_slices(
+                ground_truths_ref,
+                unsafe{casted_pred.as_slice().unwrap()},
+                threshold.unwrap_or(0.5),
+            )
+        } else if let Ok(casted_pred) = <&PyArray1<bool>>::extract(&predictions){
+            if threshold.is_some() {
+                return pe!(Err(format!(concat!(
+                    "Cannot compute $fuction_name on boolean predictions with threshold {}.",
+                    "If you want to use boolean predictions remove the threshold.",
+                    ), threshold.unwrap(),
+                )));
+            }
+
+            ::express_measures::BinaryConfusionMatrix::from_binary_slices(
+               ground_truths_ref,
+               unsafe{casted_pred.as_slice().unwrap()},
+           )
+        } else {
+            Err(format!(
+                "Invalid prediction type '{}' the predictions can only be numpy 1D arrays with dtype either np.float32 of bool",
+                pe!(predictions.get_type().name().map_err(|error| error.to_string()))?
+            ))
+        };
+
+        Ok(pe!(matrix)?.$method_name() as f64)
     }
 )*
 
@@ -77,26 +109,58 @@ $(
 #[text_signature = "(ground_truths, predictions)"]
 /// Returns the $function_name of the given binary predictions against the provided binary ground truth.
 ///
-/// # Arguments
+/// Arguments
+/// ---------
 /// ground_truths: np.ndarray
 ///     Boolean 1D Numpy array with the ground truths classes.
 /// predictions: np.ndarray
-///     Boolean 1D Numpy array with the predicted classes.
+///     Boolean 1D Numpy array with the predicted classes or the prediction
+///     probabilities.
+/// threshold: float = 0.5
+///     The cuttoff probability we use to distinguis positives from negatives.
+///
+/// Raises
+/// ------
+/// ValueError: if you expressely pass a threshold but the given predictions
+///     are already bools.
 ///
 fn all_binary_metrics(
     ground_truths: Py<PyArray1<bool>>,
     predictions: Py<PyArray1<bool>>,
-) -> PyResult<HashMap<String, f32>> {
+    threshold: Option<f32>
+) -> PyResult<HashMap<String, f64>> {
     let gil = pyo3::Python::acquire_gil();
     let ground_truths = ground_truths.as_ref(gil.python());
     let ground_truths_ref = unsafe { ground_truths.as_slice().unwrap() };
     let predictions = predictions.as_ref(gil.python());
-    let predictions_ref = unsafe { predictions.as_slice().unwrap() };
 
-    Ok(pe!(::express_measures::BinaryConfusionMatrix::from_slices(
-        ground_truths_ref,
-        predictions_ref,    
-    ))?.get_all_binary_metrics())
+    let matrix = if let Ok(casted_pred) = <&PyArray1<f32>>::extract(&predictions) {
+        ::express_measures::BinaryConfusionMatrix::from_probabilities_slices(
+            ground_truths_ref,
+            unsafe{casted_pred.as_slice().unwrap()},
+            threshold.unwrap_or(0.5),
+        )
+    } else if let Ok(casted_pred) = <&PyArray1<bool>>::extract(&predictions){
+        if threshold.is_some() {
+            return pe!(Err(format!(concat!(
+                "Cannot compute $fuction_name on boolean predictions with threshold {}.",
+                "If you want to use boolean predictions remove the threshold.",
+                ), threshold.unwrap(),
+            )));
+        }
+
+        ::express_measures::BinaryConfusionMatrix::from_binary_slices(
+           ground_truths_ref,
+           unsafe{casted_pred.as_slice().unwrap()},
+       )
+    } else {
+        Err(format!(
+            "Invalid prediction type '{}' the predictions can only be numpy 1D arrays with dtype either np.float32 of bool",
+            pe!(predictions.get_type().name().map_err(|error| error.to_string()))?
+        ))
+    };
+
+    Ok(pe!(matrix)?.get_all_binary_metrics())
 }
 
 #[module(express_measures)]
@@ -104,7 +168,8 @@ fn all_binary_metrics(
 #[text_signature = "(ground_truths, predictions)"]
 /// Returns the binary auroc of the given predictions against the provided binary ground truth.
 ///
-/// # Arguments
+/// Arguments
+/// ---------
 /// ground_truths: np.ndarray
 ///     Boolean 1D Numpy array with the ground truths classes.
 /// predictions: np.ndarray
@@ -122,7 +187,7 @@ fn binary_auroc(
 
     pe!(::express_measures::get_binary_auroc(
         ground_truths_ref,
-        predictions_ref,    
+        predictions_ref,
     ))
 }
 
@@ -131,7 +196,8 @@ fn binary_auroc(
 #[text_signature = "(ground_truths, predictions)"]
 /// Returns the binary auprc of the given predictions against the provided binary ground truth.
 ///
-/// # Arguments
+/// Arguments
+/// ---------
 /// ground_truths: np.ndarray
 ///     Boolean 1D Numpy array with the ground truths classes.
 /// predictions: np.ndarray
@@ -149,7 +215,7 @@ fn binary_auprc(
 
     pe!(::express_measures::get_binary_auprc(
         ground_truths_ref,
-        predictions_ref,    
+        predictions_ref,
     ))
 }
 
@@ -196,7 +262,7 @@ fn cosine_similarity_from_indices_unchecked(
     };
 }
 
-impl_express_measures!{
+impl_express_measures! {
     (get_number_of_true_positives, number_of_true_positives),
     (get_number_of_true_negatives, number_of_true_negatives),
     (get_number_of_false_positives, number_of_false_positives),
