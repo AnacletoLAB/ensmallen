@@ -13,6 +13,7 @@ pub fn express_measures(_py: Python, m: &PyModule) -> PyResult<()> {
     )*
     m.add_wrapped(wrap_pyfunction!(all_binary_metrics))?;
     m.add_wrapped(wrap_pyfunction!(binary_auroc))?;
+    m.add_wrapped(wrap_pyfunction!(binary_auprc))?;
     m.add_wrapped(wrap_pyfunction!(cosine_similarity_from_indices_unchecked))?;
     Ok(())
 }
@@ -120,6 +121,33 @@ fn binary_auroc(
     let predictions_ref = unsafe { predictions.as_slice().unwrap() };
 
     pe!(::express_measures::get_binary_auroc(
+        ground_truths_ref,
+        predictions_ref,    
+    ))
+}
+
+#[module(express_measures)]
+#[pyfunction()]
+#[text_signature = "(ground_truths, predictions)"]
+/// Returns the binary auprc of the given predictions against the provided binary ground truth.
+///
+/// # Arguments
+/// ground_truths: np.ndarray
+///     Boolean 1D Numpy array with the ground truths classes.
+/// predictions: np.ndarray
+///     Boolean 1D Numpy array with the predicted classes.
+///
+fn binary_auprc(
+    ground_truths: Py<PyArray1<bool>>,
+    predictions: Py<PyArray1<f32>>,
+) -> PyResult<f32> {
+    let gil = pyo3::Python::acquire_gil();
+    let ground_truths = ground_truths.as_ref(gil.python());
+    let ground_truths_ref = unsafe { ground_truths.as_slice().unwrap() };
+    let predictions = predictions.as_ref(gil.python());
+    let predictions_ref = unsafe { predictions.as_slice().unwrap() };
+
+    pe!(::express_measures::get_binary_auprc(
         ground_truths_ref,
         predictions_ref,    
     ))

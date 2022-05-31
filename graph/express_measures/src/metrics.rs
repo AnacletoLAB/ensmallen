@@ -58,6 +58,25 @@ impl BinaryConfusionMatrix {
         }
     }
 
+    /// Compute the binary confusion matrix from the values we have in the
+    /// compute_auc method. This is for internal uses only and is not intedned
+    /// to be exposed.
+    fn form_auc_values(
+        total_positives: usize, 
+        total_negatives: usize, 
+        current_total_samples: usize, 
+        current_total_positives: usize
+    ) -> Self {
+        let false_positives = current_total_samples - current_total_positives;
+        BinaryConfusionMatrix{
+            true_positives:  current_total_positives,
+            false_negatives: total_positives - current_total_positives,
+
+            false_positives: false_positives,
+            true_negatives:  total_negatives - false_positives,
+        }
+    }
+
     /// Create a new Binary Confusion Matrix from the provided slices.
     ///
     /// # Arguments
@@ -396,11 +415,69 @@ impl core::iter::Sum<Self> for BinaryConfusionMatrix {
 /// 
 /// # Arguments
 /// * `ground_truths`: &[bool] - The ground truths binary values.
-/// * `predictions`: &[bool] - The predictions binary values.
+/// * `predictions`: &[f32] - The predictions binary values.
 ///
 /// # Raises
 /// * When the slices are not compatible (i.e. do not have the same length).
-pub fn get_binary_auroc(ground_truths: &[bool], predictions: &[f32]) -> Result<f32, String> {
+pub fn get_binary_auroc(
+    ground_truths: &[bool], 
+    predictions: &[f32], 
+) -> Result<f32, String> {
+    get_binary_auc(
+        ground_truths, 
+        predictions,
+        |previous: &BinaryConfusionMatrix, current: &BinaryConfusionMatrix| {
+            // trapezoidal approximation for rinneman integral
+            (current.get_binary_recall() + previous.get_binary_recall()) *
+                (current.get_binary_fall_out() - previous.get_binary_fall_out()) 
+                / 2.0
+        }
+    )
+}
+
+/// Returns binary auprc score for the provided ground truths and predictions.
+/// 
+/// # Arguments
+/// * `ground_truths`: &[bool] - The ground truths binary values.
+/// * `predictions`: &[f32] - The predictions binary values.
+///
+/// # Raises
+/// * When the slices are not compatible (i.e. do not have the same length).
+pub fn get_binary_auprc(
+    ground_truths: &[bool], 
+    predictions: &[f32], 
+) -> Result<f32, String> {
+    get_binary_auc(
+        ground_truths, 
+        predictions,
+        |previous: &BinaryConfusionMatrix, current: &BinaryConfusionMatrix| {
+            // trapezoidal approximation for rinneman integral
+            (current.get_binary_precision() + previous.get_binary_precision()) *
+                (current.get_binary_recall() - previous.get_binary_recall()) 
+                / 2.0
+        }
+    )
+}
+
+/// Returns binary auc score for the provided ground truths and predictions, 
+/// of the curve specified by the callable `curve`.
+/// 
+/// # Arguments
+/// * `ground_truths`: &[bool] - The ground truths binary values.
+/// * `predictions`: &[f32] - The predictions binary values.
+/// * `curve`:  fn(previous: &BinaryConfusionMatrix, current: &BinaryConfusionMatrix) -> f32 - 
+///     The function that, given the previous and current binary confusion metrices,
+///     (at the variation of the threshold), should compute the area of this slice
+///     of the curve. E.g for AUPRC it should compute the difference of recall
+///     multiplied by the current precision.
+///
+/// # Raises
+/// * When the slices are not compatible (i.e. do not have the same length).
+fn get_binary_auc(
+    ground_truths: &[bool], 
+    predictions: &[f32], 
+    curve: fn(previous: &BinaryConfusionMatrix, current: &BinaryConfusionMatrix) -> f32,
+) -> Result<f32, String> {
     // First, we check that the two vectors have the expected length.
     validate_vectors_length(ground_truths.len(), predictions.len())?;
 
@@ -427,31 +504,45 @@ pub fn get_binary_auroc(ground_truths: &[bool], predictions: &[f32]) -> Result<f
     
     // We get the total positives and negatives.
     let number_of_predictions = positive_labels_running_sum.len();
-    let total_positives = positive_labels_running_sum.last().unwrap();
+    let total_positives = *positive_labels_running_sum.last().unwrap();
     let total_negatives = number_of_predictions - total_positives;
+
+    if total_positives == 0 {
+        return Err(concat!(
+            "We could not compute the given AUC because the given data ",
+            "has no posive labels",
+        ).to_string());
+    }
+
+    if total_negatives == 0 {
+        return Err(concat!(
+            "We could not compute the given AUC because the given data ",
+            "has no negative labels",
+        ).to_string());
+    }
 
     // And finally, we can compute the AUC integral.
     Ok(positive_labels_running_sum.par_windows(2)
         .enumerate()
         .map(|(i, positive_labels_sum_window)| {
-            (
+            let previous = BinaryConfusionMatrix::form_auc_values(
+                total_positives,
+                total_negatives,
+                i + 1,
                 positive_labels_sum_window[0],
+            );
+            let current = BinaryConfusionMatrix::form_auc_values(
+                total_positives,
+                total_negatives,
+                i + 2,
                 positive_labels_sum_window[1],
-                i + 1 - positive_labels_sum_window[0],
-                i + 1 - positive_labels_sum_window[1],
+            );
+
+            curve(
+                &previous,
+                &current,
             )
         })
-        .map(
-            |(
-                previous_true_positive,
-                current_true_positive,
-                previous_false_positive,
-                current_false_positive,
-            )| {
-                (current_true_positive - previous_true_positive)
-                    * (current_false_positive - previous_false_positive)
-            },
-        )
-        .sum::<usize>() as f32
-        / (2 * total_positives * total_negatives) as f32)
+        .sum::<f32>()
+    )
 }
