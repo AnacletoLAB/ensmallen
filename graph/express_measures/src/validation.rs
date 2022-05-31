@@ -54,8 +54,7 @@ pub(crate) fn validate_vectors_length(
                 "but the provided predictions have length `{}`. ",
                 "The two vectors should have the same length."
             ),
-            ground_truth_len,
-            predictions_len,
+            ground_truth_len, predictions_len,
         ));
     }
     Ok(())
