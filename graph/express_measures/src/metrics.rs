@@ -103,10 +103,10 @@ impl BinaryConfusionMatrix {
     ///
     /// # Raises
     /// * When the slices are not compatible (i.e. do not have the same length).
-    pub fn from_probabilities_slices(
+    pub fn from_probabilities_slices<F: PartialOrd + Send + Sync>(
         ground_truths: &[bool],
-        predictions: &[f32],
-        threshold: f32,
+        predictions: &[F],
+        threshold: F,
     ) -> Result<Self, String> {
         Self::from_indexed_par_iter(
             ground_truths.par_iter().copied(),
@@ -433,7 +433,7 @@ impl core::iter::Sum<Self> for BinaryConfusionMatrix {
 ///
 /// # Raises
 /// * When the slices are not compatible (i.e. do not have the same length).
-pub fn get_binary_auroc(ground_truths: &[bool], predictions: &[f32]) -> Result<f64, String> {
+pub fn get_binary_auroc<F: PartialOrd + Send + Sync + Into<f64>>(ground_truths: &[bool], predictions: &[F]) -> Result<f64, String> {
     get_binary_auc(
         ground_truths,
         predictions,
@@ -458,7 +458,7 @@ pub fn get_binary_auroc(ground_truths: &[bool], predictions: &[f32]) -> Result<f
 ///
 /// # Raises
 /// * When the slices are not compatible (i.e. do not have the same length).
-pub fn get_binary_auprc(ground_truths: &[bool], predictions: &[f32]) -> Result<f64, String> {
+pub fn get_binary_auprc<F: PartialOrd + Send + Sync>(ground_truths: &[bool], predictions: &[F]) -> Result<f64, String> {
     get_binary_auc(
         ground_truths,
         predictions,
@@ -491,9 +491,9 @@ pub fn get_binary_auprc(ground_truths: &[bool], predictions: &[f32]) -> Result<f
 ///
 /// # Raises
 /// * When the slices are not compatible (i.e. do not have the same length).
-fn get_binary_auc_generic<Index>(
+fn get_binary_auc_generic<Index, F: PartialOrd + Send + Sync>(
     ground_truths: &[bool],
-    predictions: &[f32],
+    predictions: &[F],
     curve: fn(previous: &BinaryConfusionMatrix, current: &BinaryConfusionMatrix) -> f64,
     normalizzation_value: fn(matrix: &BinaryConfusionMatrix) -> f64,
 ) -> Result<f64, String>
@@ -598,9 +598,9 @@ where
 ///
 /// # Raises
 /// * When the slices are not compatible (i.e. do not have the same length).
-fn get_binary_auc(
+fn get_binary_auc<F: PartialOrd + Send + Sync>(
     ground_truths: &[bool],
-    predictions: &[f32],
+    predictions: &[F],
     curve: fn(previous: &BinaryConfusionMatrix, current: &BinaryConfusionMatrix) -> f64,
     normalizzation_value: fn(matrix: &BinaryConfusionMatrix) -> f64,
 ) -> Result<f64, String> {
@@ -608,8 +608,8 @@ fn get_binary_auc(
     validate_vectors_length(ground_truths.len(), predictions.len())?;
 
     if ground_truths.len() < u32::MAX as usize {
-        get_binary_auc_generic::<u32>(ground_truths, predictions, curve, normalizzation_value)
+        get_binary_auc_generic::<u32, F>(ground_truths, predictions, curve, normalizzation_value)
     } else {
-        get_binary_auc_generic::<u64>(ground_truths, predictions, curve, normalizzation_value)
+        get_binary_auc_generic::<u64, F>(ground_truths, predictions, curve, normalizzation_value)
     }
 }

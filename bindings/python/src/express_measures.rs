@@ -67,7 +67,7 @@ $(
     fn $function_name(
         ground_truths: Py<PyArray1<bool>>,
         predictions: Py<PyAny>,
-        threshold: Option<f32>
+        threshold: Option<f64>
     ) -> PyResult<f64> {
         let gil = pyo3::Python::acquire_gil();
         let ground_truths = ground_truths.as_ref(gil.python());
@@ -75,6 +75,12 @@ $(
         let predictions = predictions.as_ref(gil.python());
 
         let matrix = if let Ok(casted_pred) = <&PyArray1<f32>>::extract(&predictions) {
+            ::express_measures::BinaryConfusionMatrix::from_probabilities_slices(
+                ground_truths_ref,
+                unsafe{casted_pred.as_slice().unwrap()},
+                threshold.unwrap_or(0.5) as f32,
+            )
+        } else if let Ok(casted_pred) = <&PyArray1<f64>>::extract(&predictions) {
             ::express_measures::BinaryConfusionMatrix::from_probabilities_slices(
                 ground_truths_ref,
                 unsafe{casted_pred.as_slice().unwrap()},
@@ -127,7 +133,7 @@ $(
 fn all_binary_metrics(
     ground_truths: Py<PyArray1<bool>>,
     predictions: Py<PyAny>,
-    threshold: Option<f32>
+    threshold: Option<f64>
 ) -> PyResult<HashMap<String, f64>> {
     let gil = pyo3::Python::acquire_gil();
     let ground_truths = ground_truths.as_ref(gil.python());
@@ -135,6 +141,12 @@ fn all_binary_metrics(
     let predictions = predictions.as_ref(gil.python());
 
     let matrix = if let Ok(casted_pred) = <&PyArray1<f32>>::extract(&predictions) {
+        ::express_measures::BinaryConfusionMatrix::from_probabilities_slices(
+            ground_truths_ref,
+            unsafe{casted_pred.as_slice().unwrap()},
+            threshold.unwrap_or(0.5) as f32,
+        )
+    } else if let Ok(casted_pred) = <&PyArray1<f64>>::extract(&predictions) {
         ::express_measures::BinaryConfusionMatrix::from_probabilities_slices(
             ground_truths_ref,
             unsafe{casted_pred.as_slice().unwrap()},
@@ -177,18 +189,29 @@ fn all_binary_metrics(
 ///
 fn binary_auroc(
     ground_truths: Py<PyArray1<bool>>,
-    predictions: Py<PyArray1<f32>>,
+    predictions: Py<PyAny>,
 ) -> PyResult<f64> {
     let gil = pyo3::Python::acquire_gil();
     let ground_truths = ground_truths.as_ref(gil.python());
     let ground_truths_ref = unsafe { ground_truths.as_slice().unwrap() };
     let predictions = predictions.as_ref(gil.python());
-    let predictions_ref = unsafe { predictions.as_slice().unwrap() };
 
-    pe!(::express_measures::get_binary_auroc(
-        ground_truths_ref,
-        predictions_ref,
-    ))
+    pe!(if let Ok(casted_pred) = <&PyArray1<f32>>::extract(&predictions) {
+        ::express_measures::get_binary_auroc(
+            ground_truths_ref,
+            unsafe{casted_pred.as_slice().unwrap()},
+        )
+    } else if let Ok(casted_pred) = <&PyArray1<f64>>::extract(&predictions) {
+        ::express_measures::get_binary_auroc(
+            ground_truths_ref,
+            unsafe{casted_pred.as_slice().unwrap()},
+        )
+    } else {
+        Err(format!(
+            "Invalid prediction type '{}' the predictions can only be numpy 1D arrays with dtype either np.float32 of bool",
+            pe!(predictions.get_type().name().map_err(|error| error.to_string()))?
+        ))
+    })
 }
 
 #[module(express_measures)]
@@ -205,18 +228,29 @@ fn binary_auroc(
 ///
 fn binary_auprc(
     ground_truths: Py<PyArray1<bool>>,
-    predictions: Py<PyArray1<f32>>,
+    predictions: Py<PyAny>,
 ) -> PyResult<f64> {
     let gil = pyo3::Python::acquire_gil();
     let ground_truths = ground_truths.as_ref(gil.python());
     let ground_truths_ref = unsafe { ground_truths.as_slice().unwrap() };
     let predictions = predictions.as_ref(gil.python());
-    let predictions_ref = unsafe { predictions.as_slice().unwrap() };
 
-    pe!(::express_measures::get_binary_auprc(
-        ground_truths_ref,
-        predictions_ref,
-    ))
+    pe!(if let Ok(casted_pred) = <&PyArray1<f32>>::extract(&predictions) {
+        ::express_measures::get_binary_auprc(
+            ground_truths_ref,
+            unsafe{casted_pred.as_slice().unwrap()},
+        )
+    } else if let Ok(casted_pred) = <&PyArray1<f64>>::extract(&predictions) {
+        ::express_measures::get_binary_auprc(
+            ground_truths_ref,
+            unsafe{casted_pred.as_slice().unwrap()},
+        )
+    } else {
+        Err(format!(
+            "Invalid prediction type '{}' the predictions can only be numpy 1D arrays with dtype either np.float32 of bool",
+            pe!(predictions.get_type().name().map_err(|error| error.to_string()))?
+        ))
+    })
 }
 
 #[module(express_measures)]
