@@ -126,7 +126,7 @@ $(
 ///
 fn all_binary_metrics(
     ground_truths: Py<PyArray1<bool>>,
-    predictions: Py<PyArray1<bool>>,
+    predictions: Py<PyAny>,
     threshold: Option<f32>
 ) -> PyResult<HashMap<String, f64>> {
     let gil = pyo3::Python::acquire_gil();
