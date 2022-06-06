@@ -13,7 +13,7 @@ use std::{fs::File, io::BufWriter};
 /// * `nodes_column_number`: usize - The rank of the column with the nodes names.
 /// * `node_types_column`: String - The name of the nodes type column.
 /// * `node_types_column_number`: usize - The rank of the column with the nodes types.
-/// * `node_types_separator`: String - Separator to split the node types.
+/// * `node_types_separator`: Option<String> - Separator to split the node types.
 /// * `node_descriptions_column`: Option<String> - The name of the nodes descriptions column.
 /// * `node_descriptions_column_number`: Option<usize> - The rank of the column with the nodes descriptions.
 /// * `numeric_node_type_ids`: bool - Whether the node type IDs should be written out as numeric.
@@ -52,7 +52,7 @@ impl NodeFileWriter {
             nodes_column_number: 0,
             node_types_column: None,
             node_types_column_number: None,
-            node_types_separator: None,
+            node_types_separator: Some("|".to_string()),
             node_descriptions_column: None,
             node_descriptions_column_number: None,
             numeric_node_type_ids: false,

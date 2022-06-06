@@ -103,6 +103,12 @@
 	<a href="https://kg-hub.berkeleybop.io/kg-idg/20220512">20220512</a>
       </li>
       <li>
+	<a href="https://kg-hub.berkeleybop.io/kg-idg/20220525">20220525</a>
+      </li>
+      <li>
+	<a href="https://kg-hub.berkeleybop.io/kg-idg/20220601">20220601</a>
+      </li>
+      <li>
 	<a href="https://kg-hub.berkeleybop.io/kg-idg/current">current</a>
       </li>
     </ul>
