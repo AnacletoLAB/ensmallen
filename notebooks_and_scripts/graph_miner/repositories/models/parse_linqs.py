@@ -1,20 +1,24 @@
-"""Methods to parse the incidence matrix from LINQS."""
 import re
 import os
 import pandas as pd
 import numpy as np
 from typing import Tuple
 from ensmallen import Graph
-from tqdm.auto import tqdm
+import warnings
 
 
-def get_words_data(graph: Graph) -> Tuple[Graph, pd.DataFrame]:
+def get_words_data(
+    graph: Graph,
+    remove_nodes_without_features: bool = True,
+) -> Tuple[Graph, pd.DataFrame]:
     """Return dataframe with words features.
 
     Parameters
     --------------------
-    graph: Graph,
+    graph: Graph
         Graph containing the words features to be extracted.
+    remove_nodes_without_features: bool = True
+        Whether to remove the nodes without known node features.
 
     Returns
     --------------------
@@ -29,15 +33,47 @@ def get_words_data(graph: Graph) -> Tuple[Graph, pd.DataFrame]:
             graph.get_node_name_from_node_id(dst): graph.get_edge_weight_from_node_ids(src, dst) if graph.has_edge_weights() else 1.0
             for dst in graph.get_neighbour_node_ids_from_node_id(src)
         }
-        for src, node_name in enumerate(tqdm(graph.get_node_names(), desc="Extracting words features"))
+        for src, node_name in enumerate(graph.get_node_names())
         if word_node_type in graph.get_node_type_ids_from_node_id(src)
     }).fillna(0.0)
+    
     # Filtering graph
     filtered_graph = graph.filter_from_names(
-        node_type_name_to_filter=["Word"]
+        node_type_name_to_remove=["Word"],
     ).remove_edge_weights().remove_edge_types()
-    # Aligning node features with filtered graph node names.
-    node_features = node_features.loc[filtered_graph.get_node_names()]
+    # Check if there are unavailable nodes.
+    unavailable_nodes = list(set(filtered_graph.get_node_names()) - set(node_features.index))
+    if len(unavailable_nodes) > 0:
+        # If requested, compute the set of nodes to remove because
+        # we do not have known features for these nodes in CiteSeer.
+        if remove_nodes_without_features:
+            warnings.warn(
+                (
+                    "Note that some nodes did not come with node features! "
+                    "As requested, these nodes will be removed. "
+                    "If you want to change this behaviour, set the `remove_nodes_without_features` parameter to false.\n"
+                    "Specifically, the names of the nodes without features are:\n"
+                    "\t{}"
+                ).format(
+                    "\n\t".join(unavailable_nodes)
+                )
+            )
+            # Aligning node features with filtered graph node names.
+            filtered_graph = filtered_graph.filter_from_names(
+                node_names_to_remove=unavailable_nodes
+            )
+            node_features = node_features.loc[filtered_graph.get_node_names()]
+        else:
+            warnings.warn(
+                (
+                    "Note that some nodes did not come with node features! "
+                    "Specifically, the names of the nodes without features are:\n"
+                    "\t{}"
+                ).format(
+                    "\n\t - ".join(unavailable_nodes)
+                )
+            )
+
     # Returning elaborared graph and node features.
     return (filtered_graph, node_features)
 
@@ -74,7 +110,7 @@ def parse_linqs_pubmed_incidence_matrix(
     with open(cites_path) as f:
         cites = f.read()
 
-    separator = "\t"
+    separator = '\t'
 
     edge_list_file = open(edge_path, "w")
     node_list_file = open(node_path, "w")
@@ -156,7 +192,7 @@ def parse_linqs_incidence_matrix(
     # Loading the content file (incidence matrix)
     content = pd.read_csv(
         content_path,
-        sep="\t",
+        sep='\t',
         header=None,
         index_col=0,
         dtype=str
@@ -164,7 +200,7 @@ def parse_linqs_incidence_matrix(
     # Loading the citations file (edge list)
     cities = pd.read_csv(
         cites_path,
-        sep="\t",
+        sep='\t',
         header=None,
         dtype=str
     )
@@ -210,6 +246,6 @@ def parse_linqs_incidence_matrix(
         })
     ]).reset_index(drop=True)
     # Storing the generated node list
-    node_list.to_csv(node_path, sep="\t", index=False)
+    node_list.to_csv(node_path, sep='\t', index=False)
     # Storing the generated edge list
-    edge_list.to_csv(edge_path, sep="\t", index=False)
+    edge_list.to_csv(edge_path, sep='\t', index=False)

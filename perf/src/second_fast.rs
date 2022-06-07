@@ -16,7 +16,7 @@ pub fn second_order_walker(graph: &Graph) -> Result<WalksParameters, String> {
 
 fn main() {
     let edges_reader = EdgeFileReader::new("/home/zom/complete_string.tsv".to_string()).unwrap()
-        .set_separator(Some("\t".to_string())).unwrap()
+        .set_separator(Some('\t'.to_string())).unwrap()
         .set_sources_column_number(Some(0)).unwrap()
         .set_destinations_column_number(Some(1)).unwrap()
         .set_weights_column_number(Some(2)).unwrap()
@@ -28,5 +28,5 @@ fn main() {
     graph.enable(Some(true), Some(true), Some(true)).unwrap();
 
     let walker = second_order_walker(&graph).unwrap();
-    let _ = graph.iter_complete_walks( &walker).unwrap().collect::<Vec<Vec<NodeT>>>();
+    let _ = graph.par_iter_complete_walks( &walker).unwrap().collect::<Vec<Vec<NodeT>>>();
 }   

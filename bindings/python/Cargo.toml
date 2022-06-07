@@ -1,7 +1,7 @@
 [package]
 edition = "2018"
 name = "ensmallen"
-version = "0.6.6"
+version = "0.7.0"
 license = "MIT"
 repository= "https://github.com/LucaCappelletti94/ensmallen"
 authors = [
@@ -16,13 +16,15 @@ keywords = ["python", "rust", "graph", "random", "walk"]
 requires-python = ">=3.6"
 requires-dist = [
     "toml~=0.10.0",
-    "downloaders",
-    "compress_json",
-    "environments_utils",
-    "userinput",
+    "downloaders>=1.0.15",
+    "compress_json>=1.0.6",
+    "userinput>=1.0.17",
+    "cache_decorator>=2.0.13",
     "tqdm",
     "pandas",
-    "py-cpuinfo"
+    "transformers",
+    "py-cpuinfo",
+    "environments_utils>=1.0.4"
 ]
 
 [lib]
@@ -31,11 +33,13 @@ crate-type = ["cdylib"]
 
 [dependencies.pyo3]
 version = "0.13.2"
-features = ["extension-module"]
+features = ["extension-module", "abi3-py36"]
 
 [dependencies]
 env_logger = "0.8.1"
 graph = { path = "../../graph" }
+cpu_models = { path = "../../graph/cpu_models" }
+express_measures = { path = "../../graph/express_measures" }
 tags = { path = "../../graph/tags" }
 numpy = "0.13.1"
 rand = {version="0.7", features = ["small_rng"] }
@@ -45,6 +49,7 @@ markdown = "0.3"
 rayon = "1.5.0"
 ctrlc = "3.1.7"
 roaring = { git = "https://github.com/zommiommy/roaring-rs", branch = "master" }
+half = "1.8.2"
 
 [profile.release]
 debug = false             # Include debug info.

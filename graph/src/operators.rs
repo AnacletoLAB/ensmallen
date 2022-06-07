@@ -1,9 +1,13 @@
-use rayon::iter::{IntoParallelIterator, ParallelIterator, IndexedParallelIterator};
 use crate::constructors::{
     build_graph_from_integers, build_graph_from_strings_without_type_iterators,
 };
+use rayon::{
+    iter::{IndexedParallelIterator, IntoParallelIterator, ParallelIterator},
+    slice::ParallelSliceMut,
+};
 
 use super::*;
+use itertools::Itertools;
 use std::ops;
 
 fn build_operator_graph_name(main: &Graph, other: &Graph, operator: String) -> String {
@@ -31,9 +35,9 @@ fn generic_string_operator(
     // deny_graph: right hand edges "deny list"
     // must_have_graph: right hand edges "must have list
     let edges_iterator: ItersWrapper<_, std::iter::Empty<_>, _> =
-        ItersWrapper::Parallel(graphs.into_par_iter().flat_map_iter(
+        ItersWrapper::Parallel(graphs.into_par_iter().flat_map(
             |(one, deny_graph, must_have_graph)| {
-                one.iter_edge_node_names_and_edge_type_name_and_edge_weight(main.directed)
+                one.par_iter_directed_edge_node_names_and_edge_type_name_and_edge_weight()
                     .filter(move |(_, _, src_name, _, dst_name, _, edge_type_name, _)| {
                         // If the secondary graph is given
                         // we filter out the edges that were previously added to avoid
@@ -75,31 +79,60 @@ fn generic_string_operator(
 
     // Chaining node types in a way that merges the information between
     // two node type sets where one of the two has some unknown node types
-    let nodes_iterator: ItersWrapper<_, std::iter::Empty<_>, _> =
-        ItersWrapper::Parallel(
-            main.par_iter_node_names_and_node_type_names()
-                .map(|(_, node_name, _, node_type_names)| {
-                    let node_type_names =
-                        match node_type_names {
-                            Some(ntns) => Some(ntns),
-                            None => other.get_node_id_from_node_name(&node_name).ok().and_then(
-                                |node_id| other.get_node_type_names_from_node_id(node_id).unwrap(),
-                            ),
-                        };
-                    Ok((0, (node_name, node_type_names)))
-                })
-                .chain(other.par_iter_node_names_and_node_type_names().filter_map(
-                    |(_, node_name, _, node_type_names)| match main.has_node_name(&node_name) {
-                        true => None,
-                        false => Some(Ok((0, (node_name, node_type_names)))),
-                    },
-                )),
-        );
+    let nodes_iterator: ItersWrapper<_, std::iter::Empty<_>, _> = ItersWrapper::Parallel(
+        main.par_iter_node_names_and_node_type_names()
+            .map(|(_, node_name, _, node_type_names)| {
+                // We retrieve the node type names of the other graph, if the node
+                // even exists in the other graph.
+                let other_node_type_names = other
+                    .get_node_type_names_from_node_name(&node_name)
+                    .unwrap_or(None);
+                // According to whether the current node has one or node type names
+                // in the current main graph or one or more of the other graphs
+                // we need to merge this properly.
+                let node_type_names = match (node_type_names, other_node_type_names) {
+                    // In the first case, the node types are present in both source graphs.
+                    // In this use case we need to merge the two node types.
+                    (Some(main_ntns), Some(other_ntns)) => Some(
+                        main_ntns
+                            .into_iter()
+                            .chain(other_ntns.into_iter())
+                            .unique()
+                            .collect::<Vec<String>>(),
+                    ),
+                    // If it is present only in the first one, we keep only the first one.
+                    (Some(main_ntns), None) => Some(main_ntns),
+                    // If it is present only in the second one, we keep only the secondo one.
+                    (None, Some(other_ntns)) => Some(other_ntns),
+                    // If it is not present in either, we can only return None.
+                    (None, None) => None,
+                };
+                Ok((0, (node_name, node_type_names)))
+            })
+            .chain(other.par_iter_node_names_and_node_type_names().filter_map(
+                |(_, node_name, _, node_type_names)| match main.has_node_name(&node_name) {
+                    true => None,
+                    false => Some(Ok((0, (node_name, node_type_names)))),
+                },
+            )),
+    );
+
+    // The following is necessary to ensure the node disctionaries are consistent
+    // across multiple runs.
+    let mut nodes = nodes_iterator.collect::<Result<Vec<_>>>()?;
+    nodes.par_sort_unstable_by(|a, b| (&a.1 .0).cmp(&(b.1 .0)));
+    let number_of_nodes = nodes.len() as NodeT;
+    let nodes_iterator: ItersWrapper<_, std::iter::Empty<_>, _> = ItersWrapper::Parallel(
+        nodes
+            .into_par_iter()
+            .enumerate()
+            .map(|(node_id, values)| Ok((node_id, values.1))),
+    );
 
     build_graph_from_strings_without_type_iterators(
-        main.has_node_types(),
+        main.has_node_types() || other.has_node_types(),
         Some(nodes_iterator),
-        None,
+        Some(number_of_nodes),
         true,
         false,
         false,
@@ -171,7 +204,7 @@ fn generic_integer_operator(
                     })
             });
 
-    let node_types = match (&main.node_types, &other.node_types) {
+    let node_types = match (&*main.node_types, &*other.node_types) {
         (Some(mnts), Some(onts)) => Some(match mnts == onts {
             true => mnts.clone(),
             false => {
@@ -195,8 +228,11 @@ fn generic_integer_operator(
     build_graph_from_integers(
         Some(edges_iterator),
         main.nodes.clone(),
-        node_types,
-        main.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
+        Arc::new(node_types),
+        main.edge_types
+            .as_ref()
+            .as_ref()
+            .map(|ets| ets.vocabulary.clone()),
         main.has_edge_weights(),
         main.is_directed(),
         Some(true),
@@ -235,12 +271,6 @@ impl<'a, 'b> Graph {
             ));
         }
 
-        if self.has_node_types() != other.has_node_types() {
-            return Err(String::from(
-                "Both graphs need to have node types or neither can.",
-            ));
-        }
-
         if self.has_edge_types() != other.has_edge_types() {
             return Err(String::from(
                 "Both graphs need to have edge types or neither can.",
@@ -252,6 +282,38 @@ impl<'a, 'b> Graph {
 }
 
 impl Graph {
+    /// Returns whether the graphs share the same nodes.
+    ///
+    /// # Arguments
+    /// * `other`: &Graph - The other graph.
+    pub fn has_compatible_node_vocabularies(&self, other: &Graph) -> bool {
+        self.nodes == other.nodes
+    }
+
+    /// Returns whether the graphs share the same node types or absence thereof.
+    ///
+    /// # Arguments
+    /// * `other`: &Graph - The other graph.
+    pub fn has_compatible_node_types_vocabularies(&self, other: &Graph) -> bool {
+        match (&*self.node_types, &*other.node_types) {
+            (Some(snts), Some(onts)) => snts.vocabulary == onts.vocabulary,
+            (None, None) => true,
+            _ => false,
+        }
+    }
+
+    /// Returns whether the graphs share the same edge types or absence thereof.
+    ///
+    /// # Arguments
+    /// * `other`: &Graph - The other graph.
+    pub fn has_compatible_edge_types_vocabularies(&self, other: &Graph) -> bool {
+        match (&*self.edge_types, &*other.edge_types) {
+            (Some(sets), Some(oets)) => sets.vocabulary == oets.vocabulary,
+            (None, None) => true,
+            _ => false,
+        }
+    }
+
     /// Return true if the graphs are compatible.
     ///
     /// # Arguments
@@ -265,20 +327,9 @@ impl Graph {
     /// * If one of the two graphs has edge types and the other does not.
     pub fn is_compatible(&self, other: &Graph) -> Result<bool> {
         self.validate_operator_terms(other)?;
-        if self.nodes != other.nodes {
-            return Ok(false);
-        }
-        if let (Some(snts), Some(onts)) = (&self.node_types, &other.node_types) {
-            if snts.vocabulary != onts.vocabulary {
-                return Ok(false);
-            }
-        }
-        if let (Some(sets), Some(oets)) = (&self.edge_types, &other.edge_types) {
-            if sets.vocabulary != oets.vocabulary {
-                return Ok(false);
-            }
-        }
-        Ok(true)
+        Ok(self.has_compatible_node_vocabularies(other)
+            & self.has_compatible_node_types_vocabularies(other)
+            & self.has_compatible_edge_types_vocabularies(other))
     }
 
     /// Return true if the graphs share the same adjacency matrix.
@@ -289,7 +340,7 @@ impl Graph {
         if self.nodes != other.nodes {
             return Ok(false);
         }
-        if self.get_directed_edges_number() != other.get_directed_edges_number() {
+        if self.get_number_of_directed_edges() != other.get_number_of_directed_edges() {
             return Ok(false);
         }
         if self.get_selfloops_number() != other.get_selfloops_number() {

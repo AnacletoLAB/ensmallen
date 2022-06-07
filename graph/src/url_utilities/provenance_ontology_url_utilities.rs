@@ -8,7 +8,7 @@ use super::*;
 ///
 /// # Example
 /// To validate a node you can use:
-/// ```rust
+/// ```ignore
 /// # use graph::*;
 /// let this_library_node_name = "prov:Agent";
 /// let not_this_library_node_name = "PizzaQuattroStagioni";
@@ -21,7 +21,7 @@ pub fn is_valid_provenance_ontology_node_name(node_name: &str) -> bool {
         Some(&["PROV"]),
         None,
         Some(":"),
-        Some("AG"),
+        None,
         None,
         None,
     )

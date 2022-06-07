@@ -8,7 +8,7 @@ use super::*;
 ///
 /// # Example
 /// To validate a node you can use:
-/// ```rust
+/// ```ignore
 /// # use graph::*;
 /// let this_library_node_name = "PHARMGKB:PA164722583";
 /// let not_this_library_node_name = "PizzaQuattroStagioni";
@@ -19,11 +19,11 @@ pub fn is_valid_pharmgkb_node_name(node_name: &str) -> bool {
     is_valid_node_name_from_seeds(
         node_name,
         Some(&["PHARMGKB"]),
-        None,
+        Some(20),
         Some(":"),
         Some("PA"),
-        None,
-        None,
+        Some(11),
+        Some(9),
     )
     .is_ok()
 }

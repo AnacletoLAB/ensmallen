@@ -9,9 +9,6 @@
                 "cites_path": "citeseer/citeseer/citeseer.cites",
                 "content_path": "citeseer/citeseer/citeseer.content"
             },
-            "imports": [
-                "from .parse_linqs import parse_linqs_incidence_matrix"
-            ],
             "references": [
                 "getoor2005link",
                 "sen2008collective"
@@ -29,9 +26,6 @@
                 "cites_path": "cora/cora/cora.cites",
                 "content_path": "cora/cora/cora.content"
             },
-            "imports": [
-                "from .parse_linqs import parse_linqs_incidence_matrix"
-            ],
             "references": [
                 "getoor2005link",
                 "sen2008collective"
@@ -49,9 +43,6 @@
                 "cites_path": "Pubmed-Diabetes/Pubmed-Diabetes/data/Pubmed-Diabetes.DIRECTED.cites.tab",
                 "content_path": "Pubmed-Diabetes/Pubmed-Diabetes/data/Pubmed-Diabetes.NODE.paper.tab"
             },
-            "imports": [
-                "from .parse_linqs import parse_linqs_pubmed_incidence_matrix"
-            ],
             "references": [
                 "namata2012query"
             ],

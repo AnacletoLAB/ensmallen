@@ -1,4 +1,6 @@
 use super::*;
+use rayon::iter::IntoParallelRefIterator;
+use rayon::iter::ParallelIterator;
 use std::collections::hash_map::DefaultHasher;
 use std::hash::{Hash, Hasher};
 
@@ -19,7 +21,6 @@ pub struct NodeTypeVocabulary {
     /// TODO: update this value in a way that is always correct and minimal.
     pub max_multilabel_count: NodeTypeT,
     pub unknown_count: NodeT,
-    pub multilabel: bool,
 }
 
 #[derive(Debug, Clone)]
@@ -81,9 +82,6 @@ impl NodeTypeVocabulary {
         ids: Vec<Option<Vec<NodeTypeT>>>,
         vocabulary: Vocabulary<NodeTypeT>,
     ) -> NodeTypeVocabulary {
-        let multilabel = ids
-            .iter()
-            .any(|node_types| node_types.as_ref().map_or(false, |nts| nts.len() > 1));
         let mut vocabvec = NodeTypeVocabulary {
             ids,
             vocabulary,
@@ -92,7 +90,6 @@ impl NodeTypeVocabulary {
             max_count: 0,
             max_multilabel_count: 0,
             unknown_count: NodeT::from_usize(0),
-            multilabel,
         };
         vocabvec.build_counts();
         vocabvec
@@ -123,15 +120,20 @@ impl NodeTypeVocabulary {
                 None => self.unknown_count += NodeT::from_usize(1),
             }
         }
-        self.multilabel = max_multilabel_count > 1;
         self.max_multilabel_count = max_multilabel_count;
         self.counts = counts;
         self.update_min_max_count();
     }
 
-    fn update_min_max_count(&mut self) {
-        self.min_count = self.counts.iter().cloned().min().unwrap_or(0);
-        self.max_count = self.counts.iter().cloned().max().unwrap_or(0);
+    pub fn update_min_max_count(&mut self) {
+        self.min_count = self.counts.par_iter().copied().min().unwrap_or(0);
+        self.max_count = self.counts.par_iter().copied().max().unwrap_or(0);
+        self.max_multilabel_count = self
+            .ids
+            .par_iter()
+            .map(|nt| nt.as_ref().map_or(0, |nt| nt.len()))
+            .max()
+            .unwrap_or(0) as NodeTypeT;
     }
 
     /// Returns ids of given values inserted.
@@ -153,7 +155,6 @@ impl NodeTypeVocabulary {
                     .map(|value| self.vocabulary.unchecked_insert(value.into()))
                     .collect::<Vec<NodeTypeT>>();
 
-                self.multilabel = self.multilabel || ids.len() > 1;
                 self.max_multilabel_count = self.max_multilabel_count.max(ids.len() as NodeTypeT);
 
                 // Push the sorted IDs
@@ -208,7 +209,6 @@ impl NodeTypeVocabulary {
                         values
                     ));
                 }
-                self.multilabel = self.multilabel || ids.len() > 1;
                 self.max_multilabel_count = self.max_multilabel_count.max(ids.len() as NodeTypeT);
                 // Push the sorted IDs
                 self.ids.push(Some(ids.clone()));
@@ -228,7 +228,7 @@ impl NodeTypeVocabulary {
 
     /// Returns whether the node types are multi-label or not.
     pub fn is_multilabel(&self) -> bool {
-        self.multilabel
+        self.max_multilabel_count > 1
     }
 
     /// Returns number of minimum node-count.
@@ -275,12 +275,9 @@ impl NodeTypeVocabulary {
     /// Returns string name of given id.
     ///
     /// # Arguments
-    ///
     /// * `ids`: Vec<NodeTypeT> - Node Type IDs to be translated.
-    pub fn unchecked_translate_vector(&self, ids: Vec<NodeTypeT>) -> Vec<String> {
-        ids.into_iter()
-            .map(|id| self.unchecked_translate(id))
-            .collect()
+    pub fn unchecked_translate_vector(&self, ids: &[NodeTypeT]) -> Vec<String> {
+        ids.iter().map(|&id| self.unchecked_translate(id)).collect()
     }
 
     /// Returns string name of given id.
@@ -309,6 +306,25 @@ impl NodeTypeVocabulary {
     /// Return length of the vocabulary.    
     pub fn len(&self) -> usize {
         self.counts.len()
+    }
+
+    /// Return a reference to the underlaying ids vector.
+    pub fn get_ids(&self) -> &[Option<Vec<NodeTypeT>>] {
+        self.ids.as_slice()
+    }
+
+    pub fn add_node_type_name_inplace(&mut self, node_type_name: String) -> Result<NodeTypeT> {
+        if self.get(&node_type_name).is_some() {
+            return Err(format!(
+                concat!("The given node type name {} already exists in the graph."),
+                node_type_name
+            ));
+        }
+        let node_type_id = unsafe { self.vocabulary.unchecked_insert(node_type_name) };
+        self.counts.push(0);
+        self.min_count = 0;
+
+        Ok(node_type_id)
     }
 
     /// Remove a node type from the vocabulary

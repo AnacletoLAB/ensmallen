@@ -43,7 +43,10 @@ impl Graph {
             ),
             self.nodes.clone(),
             self.node_types.clone(),
-            self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
+            self.edge_types
+                .as_ref()
+                .as_ref()
+                .map(|ets| ets.vocabulary.clone()),
             self.has_edge_weights(),
             true,
             Some(true),
@@ -78,7 +81,10 @@ impl Graph {
             ),
             self.nodes.clone(),
             self.node_types.clone(),
-            self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
+            self.edge_types
+                .as_ref()
+                .as_ref()
+                .map(|ets| ets.vocabulary.clone()),
             self.has_edge_weights(),
             true,
             Some(true),
@@ -113,7 +119,10 @@ impl Graph {
             ),
             self.nodes.clone(),
             self.node_types.clone(),
-            self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
+            self.edge_types
+                .as_ref()
+                .as_ref()
+                .map(|ets| ets.vocabulary.clone()),
             self.has_edge_weights(),
             self.is_directed(),
             Some(true),
@@ -149,7 +158,10 @@ impl Graph {
             ),
             self.nodes.clone(),
             self.node_types.clone(),
-            self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
+            self.edge_types
+                .as_ref()
+                .as_ref()
+                .map(|ets| ets.vocabulary.clone()),
             self.has_edge_weights(),
             self.is_directed(),
             Some(true),
@@ -185,7 +197,10 @@ impl Graph {
             ),
             self.nodes.clone(),
             self.node_types.clone(),
-            self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
+            self.edge_types
+                .as_ref()
+                .as_ref()
+                .map(|ets| ets.vocabulary.clone()),
             self.has_edge_weights(),
             self.is_directed(),
             Some(true),
@@ -216,7 +231,10 @@ impl Graph {
             ),
             self.nodes.clone(),
             self.node_types.clone(),
-            self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
+            self.edge_types
+                .as_ref()
+                .as_ref()
+                .map(|ets| ets.vocabulary.clone()),
             self.has_edge_weights(),
             self.is_directed(),
             Some(true),
@@ -246,13 +264,16 @@ impl Graph {
             ),
             self.nodes.clone(),
             self.node_types.clone(),
-            self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
+            self.edge_types
+                .as_ref()
+                .as_ref()
+                .map(|ets| ets.vocabulary.clone()),
             self.has_edge_weights(),
             self.is_directed(),
             Some(true),
             Some(false),
             Some(false),
-            Some(self.get_directed_edges_number()),
+            Some(self.get_number_of_directed_edges()),
             self.has_singleton_nodes(),
             self.has_singleton_nodes_with_selfloops(),
             self.get_name(),
@@ -281,13 +302,18 @@ impl Graph {
             })),
             self.nodes.clone(),
             self.node_types.clone(),
-            self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
+            self.edge_types
+                .as_ref()
+                .as_ref()
+                .map(|ets| ets.vocabulary.clone()),
             self.has_edge_weights(),
             self.is_directed(),
             Some(true),
             Some(false),
             Some(false),
-            Some((self.get_nodes_number() as EdgeT).pow(2) - self.get_unique_directed_edges_number()),
+            Some(
+                (self.get_nodes_number() as EdgeT).pow(2) - self.get_unique_directed_edges_number(),
+            ),
             true,
             true,
             self.get_name(),

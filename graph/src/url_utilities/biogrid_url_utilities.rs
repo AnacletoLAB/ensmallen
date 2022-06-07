@@ -6,7 +6,7 @@ use super::*;
 ///
 /// # Example
 /// To validate a node you can use:
-/// ```rust
+/// ```ignore
 /// # use graph::*;
 /// let biogrid_node_name = "BIOGRID:106534";
 /// let not_biogrid_node_name = "PizzaQuattroStagioni";

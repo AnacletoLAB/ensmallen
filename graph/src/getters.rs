@@ -26,7 +26,7 @@ impl Graph {
         } else {
             info!("Executing undirected parallel version of connected components.");
             let (_, components_number, min_component_size, max_component_size) =
-                self.connected_components(verbose).unwrap();
+                self.get_connected_components(verbose).unwrap();
             (components_number, min_component_size, max_component_size)
         }
     }
@@ -187,7 +187,7 @@ impl Graph {
                 "The mean of the node degrees is not defined on an empty graph".to_string(),
             );
         }
-        Ok(self.get_directed_edges_number() as f64 / self.get_nodes_number() as f64)
+        Ok(self.get_number_of_directed_edges() as f64 / self.get_nodes_number() as f64)
     }
 
     /// Returns weighted mean node degree of the graph.
@@ -209,7 +209,7 @@ impl Graph {
     /// println!("The number of undirected edges of the graph is  {}", graph.get_undirected_edges_number());
     /// ```
     pub fn get_undirected_edges_number(&self) -> EdgeT {
-        (self.get_directed_edges_number() - self.get_selfloops_number()) / 2
+        (self.get_number_of_directed_edges() - self.get_selfloops_number()) / 2
             + self.get_selfloops_number()
     }
 
@@ -234,7 +234,7 @@ impl Graph {
     /// ```
     pub fn get_edges_number(&self) -> EdgeT {
         match self.directed {
-            true => self.get_directed_edges_number(),
+            true => self.get_number_of_directed_edges(),
             false => self.get_undirected_edges_number(),
         }
     }
@@ -314,11 +314,7 @@ impl Graph {
     /// println!("The node with maximum node degree of the graph is {}.", unsafe{graph.get_unchecked_most_central_node_id()});
     /// ```
     pub unsafe fn get_unchecked_most_central_node_id(&self) -> NodeT {
-        self.par_iter_node_degrees()
-            .enumerate()
-            .max_by(|(_, degree_a), (_, degree_b)| degree_a.cmp(degree_b))
-            .unwrap()
-            .0 as NodeT
+        self.par_iter_node_degrees().argmax().unwrap().0 as NodeT
     }
 
     /// Returns maximum node degree of the graph.
@@ -378,7 +374,7 @@ impl Graph {
         if !self.has_edges() {
             return Err("The self-loops rate is not defined for graphs without edges.".to_string());
         }
-        Ok(self.get_selfloops_number() as f64 / self.get_directed_edges_number() as f64)
+        Ok(self.get_selfloops_number() as f64 / self.get_number_of_directed_edges() as f64)
     }
     /// Return name of the graph.
     ///
@@ -391,7 +387,7 @@ impl Graph {
     /// ```
     ///
     pub fn get_name(&self) -> String {
-        self.name.clone()
+        self.name.to_string()
     }
 
     #[cache_property(trap_nodes_number)]
@@ -421,7 +417,7 @@ impl Graph {
 
     /// Return vector on the (non unique) directed source nodes of the graph.
     pub fn get_directed_source_node_ids(&self) -> Vec<NodeT> {
-        let mut sources = vec![0 as NodeT; self.get_directed_edges_number() as usize];
+        let mut sources = vec![0 as NodeT; self.get_number_of_directed_edges() as usize];
         self.par_iter_directed_source_node_ids()
             .collect_into_vec(&mut sources);
         sources
@@ -447,7 +443,7 @@ impl Graph {
 
     /// Return vector on the (non unique) directed destination nodes of the graph.
     pub fn get_directed_destination_node_ids(&self) -> Vec<NodeT> {
-        let mut destinations = vec![0 as NodeT; self.get_directed_edges_number() as usize];
+        let mut destinations = vec![0 as NodeT; self.get_number_of_directed_edges() as usize];
         self.par_iter_directed_destination_node_ids()
             .collect_into_vec(&mut destinations);
         destinations
@@ -486,7 +482,7 @@ impl Graph {
     /// Return vector with the node predicted ontology.
     ///
     /// # Implementative details
-    /// The node with an unknown ontology will have None as an URL.
+    /// The node with an unknown ontology will have None as an ontology.
     ///
     /// # How to add new ontologies
     /// If you need another ontology to be added, just do a pull request
@@ -499,6 +495,64 @@ impl Graph {
         node_urls
     }
 
+    /// Return node ontology for the provided node name, if available.
+    ///
+    /// # Implementative details
+    /// The node with an unknown ontology will have None as an ontology.
+    ///
+    /// # Arguments
+    /// * `node_name`: &str - The node name to query for.
+    ///
+    pub unsafe fn get_unchecked_ontology_from_node_name(&self, node_name: &str) -> Option<String> {
+        get_node_repository_from_node_name(&node_name)
+            .ok()
+            .map(|ontology| ontology.to_string())
+    }
+
+    /// Return node ontology for the provided node id, if available.
+    ///
+    /// # Implementative details
+    /// The node with an unknown ontology will have None as an ontology.
+    ///
+    /// # Arguments
+    /// * `node_id`: NodeT - The node id to query for.
+    ///
+    pub unsafe fn get_unchecked_ontology_from_node_id(&self, node_id: NodeT) -> Option<String> {
+        self.get_unchecked_ontology_from_node_name(
+            &self.get_unchecked_node_name_from_node_id(node_id),
+        )
+    }
+
+    /// Return node ontology for the provided node name, if available.
+    ///
+    /// # Implementative details
+    /// The node with an unknown ontology will have None as an ontology.
+    ///
+    /// # Arguments
+    /// * `node_name`: &str - The node name to query for.
+    ///
+    /// # Raises
+    /// * If the provided node name does not exist in the current graph.
+    pub fn get_ontology_from_node_name(&self, node_name: &str) -> Result<Option<String>> {
+        self.get_node_id_from_node_name(node_name)?;
+        Ok(unsafe { self.get_unchecked_ontology_from_node_name(node_name) })
+    }
+
+    /// Return node ontology for the provided node id, if available.
+    ///
+    /// # Implementative details
+    /// The node with an unknown ontology will have None as an ontology.
+    ///
+    /// # Arguments
+    /// * `node_id`: NodeT - The node id to query for.
+    ///
+    /// # Raises
+    /// * If the provided node ID does not exist in the current graph.
+    pub fn get_ontology_from_node_id(&self, node_id: NodeT) -> Result<Option<String>> {
+        self.validate_node_id(node_id)
+            .map(|node_id| unsafe { self.get_unchecked_ontology_from_node_id(node_id) })
+    }
+
     /// Return vector with the sorted nodes Ids.
     pub fn get_node_ids(&self) -> Vec<NodeT> {
         self.iter_node_ids().collect()
@@ -506,8 +560,70 @@ impl Graph {
 
     /// Return the edge types of the edges.
     pub fn get_edge_type_ids(&self) -> Result<Vec<Option<EdgeTypeT>>> {
-        self.must_have_edge_types()
-            .map(|_| self.edge_types.as_ref().map(|ets| ets.ids.clone()).unwrap())
+        self.must_have_edge_types().map(|_| {
+            self.edge_types
+                .as_ref()
+                .as_ref()
+                .map(|ets| ets.ids.clone())
+                .unwrap()
+        })
+    }
+
+    /// Return the known edge types of the edges, dropping unknown ones.
+    pub fn get_known_edge_type_ids(&self) -> Result<Vec<EdgeTypeT>> {
+        self.must_have_edge_types().map(|_| {
+            self.edge_types
+                .as_ref()
+                .as_ref()
+                .map(|ets| ets.ids.par_iter().copied().filter_map(|et| et).collect())
+                .unwrap()
+        })
+    }
+
+    /// Return the directed source node IDs with known edge types.
+    pub fn get_directed_source_nodes_with_known_edge_types(&self) -> Result<Vec<NodeT>> {
+        self.must_have_edge_types().map(|_| {
+            self.edge_types
+                .as_ref()
+                .as_ref()
+                .map(|ets| {
+                    ets.ids
+                        .par_iter()
+                        .zip(self.par_iter_directed_source_node_ids())
+                        .filter_map(|(et, source_node_id)| {
+                            if et.is_some() {
+                                Some(source_node_id)
+                            } else {
+                                None
+                            }
+                        })
+                        .collect()
+                })
+                .unwrap()
+        })
+    }
+
+    /// Return the directed destination node IDs with known edge types.
+    pub fn get_directed_destination_nodes_with_known_edge_types(&self) -> Result<Vec<NodeT>> {
+        self.must_have_edge_types().map(|_| {
+            self.edge_types
+                .as_ref()
+                .as_ref()
+                .map(|ets| {
+                    ets.ids
+                        .par_iter()
+                        .zip(self.par_iter_directed_destination_node_ids())
+                        .filter_map(|(et, destination_node_id)| {
+                            if et.is_some() {
+                                Some(destination_node_id)
+                            } else {
+                                None
+                            }
+                        })
+                        .collect()
+                })
+                .unwrap()
+        })
     }
 
     /// Return the unique edge type IDs of the graph edges.
@@ -531,6 +647,7 @@ impl Graph {
     pub fn get_edge_type_names(&self) -> Result<Vec<Option<String>>> {
         self.must_have_edge_types().map(|_| {
             self.edge_types
+                .as_ref()
                 .as_ref()
                 .map(|ets| {
                     ets.ids
@@ -563,7 +680,7 @@ impl Graph {
     /// ```
     pub fn get_edge_weights(&self) -> Result<Vec<WeightT>> {
         self.must_have_edge_weights()?;
-        Ok(self.weights.clone().unwrap())
+        Ok((*self.weights).clone().unwrap())
     }
 
     /// Return the weighted indegree (total weighted inbound edge weights) for each node.
@@ -610,8 +727,13 @@ impl Graph {
     /// ```
     ///
     pub fn get_node_type_ids(&self) -> Result<Vec<Option<Vec<NodeTypeT>>>> {
-        self.must_have_node_types()
-            .map(|_| self.node_types.as_ref().map(|nts| nts.ids.clone()).unwrap())
+        self.must_have_node_types().map(|_| {
+            self.node_types
+                .as_ref()
+                .as_ref()
+                .map(|nts| nts.ids.clone())
+                .unwrap()
+        })
     }
 
     /// Returns boolean mask of known node types.
@@ -621,7 +743,7 @@ impl Graph {
     pub fn get_known_node_types_mask(&self) -> Result<Vec<bool>> {
         self.must_have_node_types()?;
         Ok(unsafe {
-            self.iter_unchecked_node_type_ids()
+            self.par_iter_unchecked_node_type_ids()
                 .map(|nt| nt.is_some())
                 .collect()
         })
@@ -634,8 +756,34 @@ impl Graph {
     pub fn get_unknown_node_types_mask(&self) -> Result<Vec<bool>> {
         self.must_have_node_types()?;
         Ok(unsafe {
-            self.iter_unchecked_node_type_ids()
+            self.par_iter_unchecked_node_type_ids()
                 .map(|nt| nt.is_none())
+                .collect()
+        })
+    }
+
+    /// Returns boolean mask of known edge types.
+    ///
+    /// # Raises
+    /// * If the graph does not have edge types.
+    pub fn get_known_edge_types_mask(&self) -> Result<Vec<bool>> {
+        self.must_have_edge_types()?;
+        Ok(unsafe {
+            self.par_iter_unchecked_edge_type_ids()
+                .map(|et| et.is_some())
+                .collect()
+        })
+    }
+
+    /// Returns boolean mask of unknown edge types.
+    ///
+    /// # Raises
+    /// * If the graph does not have edge types.
+    pub fn get_unknown_edge_types_mask(&self) -> Result<Vec<bool>> {
+        self.must_have_edge_types()?;
+        Ok(unsafe {
+            self.par_iter_unchecked_edge_type_ids()
+                .map(|et| et.is_none())
                 .collect()
         })
     }
@@ -653,7 +801,9 @@ impl Graph {
     /// # Raises
     /// * If the graph does not have node types.
     pub fn get_one_hot_encoded_known_node_types(&self) -> Result<Vec<Vec<bool>>> {
-        Ok(self.iter_one_hot_encoded_known_node_type_ids()?.collect())
+        Ok(self
+            .par_iter_one_hot_encoded_known_node_type_ids()?
+            .collect())
     }
 
     /// Returns one-hot encoded edge types.
@@ -761,13 +911,31 @@ impl Graph {
             .collect()
     }
 
-    /// Return vector with the sorted directed edge Ids.
+    /// Return vector with the sorted directed edge node IDs.
     pub fn get_directed_edge_node_ids(&self) -> Vec<Vec<NodeT>> {
-        let mut edge_ids = vec![vec![0; 2]; self.get_directed_edges_number() as usize];
+        let mut edge_node_ids = vec![vec![0; 2]; self.get_number_of_directed_edges() as usize];
         self.par_iter_directed_edge_node_ids()
             .map(|(_, src, dst)| vec![src, dst])
-            .collect_into_vec(&mut edge_ids);
-        edge_ids
+            .collect_into_vec(&mut edge_node_ids);
+        edge_node_ids
+    }
+
+    /// Return vector with the sorted directed triples with (source, edge_type, destination) IDs.
+    ///
+    /// # Raises
+    /// * If the graph does not contain edge types.
+    pub fn get_directed_edge_triples_ids(&self) -> Result<Vec<Vec<NodeT>>> {
+        self.must_have_edge_types()?;
+        Ok(self
+            .par_iter_directed_edge_node_ids_and_edge_type_id()
+            .filter_map(|(_, src, dst, edge_type)| {
+                if let Some(edge_type) = edge_type {
+                    Some(vec![src, edge_type as NodeT, dst])
+                } else {
+                    None
+                }
+            })
+            .collect::<Vec<Vec<NodeT>>>())
     }
 
     /// Return vector with the sorted edge names.
@@ -783,11 +951,29 @@ impl Graph {
     /// Return vector with the sorted directed edge names.
     pub fn get_directed_edge_node_names(&self) -> Vec<(String, String)> {
         let mut edge_names =
-            vec![("".to_string(), "".to_string()); self.get_directed_edges_number() as usize];
+            vec![("".to_string(), "".to_string()); self.get_number_of_directed_edges() as usize];
         self.par_iter_directed_edges()
             .map(|(_, _, src_name, _, dst_name)| (src_name, dst_name))
             .collect_into_vec(&mut edge_names);
         edge_names
+    }
+
+    /// Return vector with the sorted directed triples with (source, edge_type, destination) names.
+    ///
+    /// # Raises
+    /// * If the graph does not contain edge types.
+    pub fn get_directed_edge_triples_names(&self) -> Result<Vec<Vec<String>>> {
+        self.must_have_edge_types()?;
+        Ok(self
+            .par_iter_directed_edge_node_names_and_edge_type_name()
+            .filter_map(|(_, _, src, _, dst, _, edge_type)| {
+                if let Some(edge_type) = edge_type {
+                    Some(vec![src, edge_type, dst])
+                } else {
+                    None
+                }
+            })
+            .collect::<Vec<Vec<String>>>())
     }
 
     /// Returns number of nodes with unknown node type.
@@ -866,6 +1052,30 @@ impl Graph {
                 .map(|node_type_count| (node_type_count == 1) as NodeTypeT)
                 .sum()
         })
+    }
+
+    /// Returns number of homogeneous node types.
+    ///
+    /// # Raises
+    /// * If the graph does not have node types.
+    pub fn get_homogeneous_node_types_number(&self) -> Result<NodeTypeT> {
+        Ok(self.par_iter_homogeneous_node_type_ids()?.count() as NodeTypeT)
+    }
+
+    /// Returns list of homogeneous node type IDs.
+    ///
+    /// # Raises
+    /// * If the graph does not have node types.
+    pub fn get_homogeneous_node_type_ids(&self) -> Result<Vec<NodeTypeT>> {
+        Ok(self.par_iter_homogeneous_node_type_ids()?.collect())
+    }
+
+    /// Returns list of homogeneous node type names.
+    ///
+    /// # Raises
+    /// * If the graph does not have node types.
+    pub fn get_homogeneous_node_type_names(&self) -> Result<Vec<String>> {
+        Ok(self.par_iter_homogeneous_node_type_names()?.collect())
     }
 
     /// Returns vector of singleton node types IDs.
@@ -978,9 +1188,9 @@ impl Graph {
     ///
     /// # Raises
     /// * If there are no edge types in the graph.
-    pub fn get_edge_ids_with_unknown_edge_types_mask(&self) -> Result<Vec<bool>> {
+    pub fn get_edges_with_unknown_edge_types_mask(&self) -> Result<Vec<bool>> {
         self.iter_edge_ids_with_unknown_edge_types().map(|x| {
-            let mut mask = vec![false; self.get_directed_edges_number() as usize];
+            let mut mask = vec![false; self.get_number_of_directed_edges() as usize];
             x.for_each(|id| {
                 mask[id as usize] = true;
             });
@@ -993,9 +1203,9 @@ impl Graph {
     ///
     /// # Raises
     /// * If there are no edge types in the graph.
-    pub fn get_edge_ids_with_known_edge_types_mask(&self) -> Result<Vec<bool>> {
+    pub fn get_edges_with_known_edge_types_mask(&self) -> Result<Vec<bool>> {
         self.iter_edge_ids_with_known_edge_types().map(|x| {
-            let mut mask = vec![false; self.get_directed_edges_number() as usize];
+            let mut mask = vec![false; self.get_number_of_directed_edges() as usize];
             x.for_each(|id| {
                 mask[id as usize] = true;
             });
@@ -1030,6 +1240,86 @@ impl Graph {
             .map(|x| x.collect())
     }
 
+    /// Returns node IDs of the nodes with given node type ID.
+    ///
+    /// # Arguments
+    /// * `node_type_id`: NodeTypeT - The node type ID to filter for.
+    ///
+    /// # Raises
+    /// * If there are no node types in the graph.
+    pub fn get_node_ids_from_node_type_id(&self, node_type_id: NodeTypeT) -> Result<Vec<NodeT>> {
+        self.par_iter_node_ids_from_node_type_id(node_type_id)
+            .map(|x| x.collect())
+    }
+
+    /// Returns node IDs of the nodes with given node type IDs.
+    ///
+    /// # Arguments
+    /// * `node_type_ids`: Vec<Option<NodeTypeT>> - The node type ID to filter for.
+    ///
+    /// # Raises
+    /// * If there are no node types in the graph.
+    pub fn get_node_ids_from_node_type_ids(
+        &self,
+        node_type_ids: Vec<Option<NodeTypeT>>,
+    ) -> Result<Vec<NodeT>> {
+        self.par_iter_node_ids_from_node_type_ids(node_type_ids)
+            .map(|x| x.collect())
+    }
+
+    /// Returns node IDs of the nodes with given node type names.
+    ///
+    /// # Arguments
+    /// * `node_type_names`: Vec<Option<String>> - The node type ID to filter for.
+    ///
+    /// # Raises
+    /// * If there are no node types in the graph.
+    pub fn get_node_ids_from_node_type_names(
+        &self,
+        node_type_names: Vec<Option<String>>,
+    ) -> Result<Vec<NodeT>> {
+        self.par_iter_node_ids_from_node_type_ids(
+            self.get_node_type_ids_from_node_type_names(node_type_names)?,
+        )
+        .map(|x| x.collect())
+    }
+
+    /// Returns node names of the nodes with given node type ID.
+    ///
+    /// # Arguments
+    /// * `node_type_id`: NodeTypeT - The node type ID to filter for.
+    ///
+    /// # Raises
+    /// * If there are no node types in the graph.
+    pub fn get_node_names_from_node_type_id(&self, node_type_id: NodeTypeT) -> Result<Vec<String>> {
+        self.iter_node_names_from_node_type_id(node_type_id)
+            .map(|x| x.collect())
+    }
+
+    /// Returns node IDs of the nodes with given node type name.
+    ///
+    /// # Arguments
+    /// * `node_type_name`: &str - The node type ID to filter for.
+    ///
+    /// # Raises
+    /// * If there are no node types in the graph.
+    pub fn get_node_ids_from_node_type_name(&self, node_type_name: &str) -> Result<Vec<NodeT>> {
+        self.iter_node_ids_from_node_type_name(node_type_name)
+            .map(|x| x.collect())
+    }
+
+    /// Returns node names of the nodes with given node type name.
+    ///
+    /// # Arguments
+    /// * `node_type_name`: &str - The node type ID to filter for.
+    ///
+    /// # Raises
+    /// * If there are no node types in the graph.
+    pub fn get_node_names_from_node_type_name(&self, node_type_name: &str) -> Result<Vec<String>> {
+        self.iter_node_names_from_node_type_name(node_type_name)
+            .map(|x| x.collect())
+    }
+
     /// Returns node names of the nodes with known node types
     ///
     /// # Raises
@@ -1044,7 +1334,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If there are no node types in the graph.
-    pub fn get_node_ids_with_unknown_node_types_mask(&self) -> Result<Vec<bool>> {
+    pub fn get_nodes_with_unknown_node_types_mask(&self) -> Result<Vec<bool>> {
         self.iter_node_ids_with_unknown_node_types().map(|x| {
             let mut mask = vec![false; self.get_nodes_number() as usize];
             x.for_each(|id| {
@@ -1059,7 +1349,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If there are no node types in the graph.
-    pub fn get_node_ids_with_known_node_types_mask(&self) -> Result<Vec<bool>> {
+    pub fn get_nodes_with_known_node_types_mask(&self) -> Result<Vec<bool>> {
         self.iter_node_ids_with_known_node_types().map(|x| {
             let mut mask = vec![false; self.get_nodes_number() as usize];
             x.for_each(|id| {
@@ -1074,7 +1364,7 @@ impl Graph {
     /// # Raises
     /// * If there are no edge types in the graph.
     pub fn get_known_edge_types_number(&self) -> Result<EdgeT> {
-        Ok(self.get_directed_edges_number() - self.get_unknown_edge_types_number()?)
+        Ok(self.get_number_of_directed_edges() - self.get_unknown_edge_types_number()?)
     }
 
     /// Returns rate of unknown edge types over total edges number.
@@ -1084,7 +1374,7 @@ impl Graph {
     pub fn get_unknown_edge_types_rate(&self) -> Result<f64> {
         self.get_unknown_edge_types_number()
             .map(|unknown_edge_types_number| {
-                unknown_edge_types_number as f64 / self.get_directed_edges_number() as f64
+                unknown_edge_types_number as f64 / self.get_number_of_directed_edges() as f64
             })
     }
 
@@ -1095,7 +1385,7 @@ impl Graph {
     pub fn get_known_edge_types_rate(&self) -> Result<f64> {
         self.get_known_edge_types_number()
             .map(|known_edge_types_number| {
-                known_edge_types_number as f64 / self.get_directed_edges_number() as f64
+                known_edge_types_number as f64 / self.get_number_of_directed_edges() as f64
             })
     }
 
@@ -1153,12 +1443,12 @@ impl Graph {
     pub fn get_node_connected_component_ids(&self, verbose: Option<bool>) -> Vec<NodeT> {
         match self.directed {
             true => self.spanning_arborescence_kruskal(verbose).1,
-            false => self.connected_components(verbose).unwrap().0,
+            false => self.get_connected_components(verbose).unwrap().0,
         }
     }
 
     /// Returns number of directed edges in the graph.
-    pub fn get_directed_edges_number(&self) -> EdgeT {
+    pub fn get_number_of_directed_edges(&self) -> EdgeT {
         self.edges.len() as EdgeT
     }
 
@@ -1239,12 +1529,12 @@ impl Graph {
 
     /// Return number of edges that have multigraph syblings.
     pub fn get_parallel_edges_number(&self) -> EdgeT {
-        self.get_directed_edges_number() - self.get_unique_directed_edges_number()
+        self.get_number_of_directed_edges() - self.get_unique_directed_edges_number()
     }
 
     /// Return vector with node cumulative_node_degrees, that is the comulative node degree.
     pub fn get_cumulative_node_degrees(&self) -> Vec<EdgeT> {
-        self.cumulative_node_degrees.as_ref().map_or_else(
+        self.cumulative_node_degrees.as_ref().as_ref().map_or_else(
             || {
                 let mut cumulative_node_degrees = vec![0; self.get_nodes_number() as usize];
                 self.par_iter_comulative_node_degrees()
@@ -1257,7 +1547,7 @@ impl Graph {
 
     /// Return vector with
     pub fn get_reciprocal_sqrt_degrees(&self) -> Vec<WeightT> {
-        self.reciprocal_sqrt_degrees.as_ref().map_or_else(
+        self.reciprocal_sqrt_degrees.as_ref().as_ref().map_or_else(
             || {
                 let mut reciprocal_sqrt_degrees = vec![0.0; self.get_nodes_number() as usize];
                 self.par_iter_reciprocal_sqrt_degrees()
@@ -1360,5 +1650,110 @@ impl Graph {
                 iter_unique_node_type_names_and_counts.collect()
             },
         )
+    }
+
+    /// Returns 1D single labeled node types ids vector.
+    ///
+    /// # Raises
+    /// * If the graph has multilabel node types.
+    pub fn get_single_label_node_type_ids(
+        &self,
+        unknown_node_types_value: Option<NodeTypeT>,
+    ) -> Result<Vec<NodeTypeT>> {
+        if self.has_multilabel_node_types()? {
+            return Err(concat!(
+                "This method should only be used on graphs with single-labelled ",
+                "node types. In this graph there are nodes with multi-label node ",
+                "types."
+            )
+            .to_string());
+        }
+        let unknown_node_types_value = unknown_node_types_value.unwrap_or(0);
+        let mut single_label_node_type_ids = vec![0; self.get_nodes_number() as usize];
+        self.must_have_node_types().map(|node_types| {
+            node_types
+                .ids
+                .par_iter()
+                .zip(single_label_node_type_ids.par_iter_mut())
+                .for_each(|(node_type_ids, target)| match node_type_ids {
+                    Some(node_type_ids) => {
+                        *target = node_type_ids[0];
+                    }
+                    None => {
+                        *target = unknown_node_types_value;
+                    }
+                })
+        })?;
+        Ok(single_label_node_type_ids)
+    }
+
+    /// Returns 1D known single labeled node types ids vector.
+    ///
+    /// # Raises
+    /// * If the graph has multilabel node types.
+    pub fn get_known_single_label_node_type_ids(&self) -> Result<Vec<NodeTypeT>> {
+        if self.has_multilabel_node_types()? {
+            return Err(concat!(
+                "This method should only be used on graphs with single-labelled ",
+                "node types. In this graph there are nodes with multi-label node ",
+                "types."
+            )
+            .to_string());
+        }
+        self.must_have_node_types().map(|node_types| {
+            node_types
+                .ids
+                .par_iter()
+                .filter_map(|node_type_ids| {
+                    node_type_ids.as_ref().map(|node_type_ids| node_type_ids[0])
+                })
+                .collect()
+        })
+    }
+
+    /// Returns 1D binarized node types ids vector.
+    pub fn get_boolean_node_type_ids(
+        &self,
+        target_value: Option<NodeTypeT>,
+        unknown_node_types_value: Option<NodeTypeT>,
+    ) -> Result<Vec<bool>> {
+        let target_value = target_value.unwrap_or(1);
+        let unknown_node_types_value = unknown_node_types_value.unwrap_or(0);
+        let mut boolean_node_type_ids = vec![false; self.get_nodes_number() as usize];
+        self.must_have_node_types().map(|node_types| {
+            node_types
+                .ids
+                .par_iter()
+                .zip(boolean_node_type_ids.par_iter_mut())
+                .filter(|(node_type_ids, _)| match node_type_ids {
+                    Some(node_type_ids) => node_type_ids
+                        .iter()
+                        .copied()
+                        .any(|node_type_id| node_type_id == target_value),
+                    None => target_value == unknown_node_types_value,
+                })
+                .for_each(|(_, target)| {
+                    *target = true;
+                })
+        })?;
+        Ok(boolean_node_type_ids)
+    }
+
+    /// Returns 1D binarized known node types ids vector.
+    pub fn get_known_boolean_node_type_ids(&self, target_value: NodeTypeT) -> Result<Vec<bool>> {
+        self.must_have_node_types().map(|node_types| {
+            node_types
+                .ids
+                .par_iter()
+                .filter_map(|node_type_ids| {
+                    node_type_ids.as_ref().map(|node_type_ids| {
+                        node_type_ids
+                            .iter()
+                            .copied()
+                            .any(|node_type_id| node_type_id == target_value)
+                    })
+                })
+                .collect()
+        })
     }
 }

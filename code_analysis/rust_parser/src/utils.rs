@@ -80,6 +80,7 @@ pub fn get_next_matching(data: &[u8], start_char: u8, end_char: u8) -> (&[u8], &
     let mut index = 0;
 
     // byte pointer that is increased at each cycle 
+    let mut is_escaped = false;
     let mut tmp_data = data;
     while !tmp_data.is_empty() {
 
@@ -87,14 +88,19 @@ pub fn get_next_matching(data: &[u8], start_char: u8, end_char: u8) -> (&[u8], &
         let char = next_char!(tmp_data);
 
         // Update the counter
-        if char == start_char {
+        if !is_escaped && char == start_char {
             counter += 1;
         }
-        if char == end_char {
+        if !is_escaped && char == end_char {
             counter -= 1;
         }
 
-        // 
+        if char == b'\\' || char == b'-' {
+            is_escaped ^= true;
+        } else {
+            is_escaped = false;
+        }
+
         index += 1;
 
         // If the counter is 0 it means that we encountered the same number of

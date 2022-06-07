@@ -54,7 +54,7 @@ impl Graph {
                     "Computing which components are to keep for the graph {}",
                     &self.name
                 ),
-                self.get_directed_edges_number() as usize,
+                self.get_number_of_directed_edges() as usize,
             );
 
             self.iter_edge_node_ids_and_edge_type_id(self.directed)
@@ -91,8 +91,8 @@ impl Graph {
                 });
         }
 
-        let nodes_iterator: ItersWrapper<_, std::iter::Empty<_>, _> =
-            ItersWrapper::Parallel(self.par_iter_node_names_and_node_type_names().filter_map(
+        let nodes_iterator: ItersWrapper<_, _, rayon::iter::Empty<_>> =
+            ItersWrapper::Sequential(self.iter_node_names_and_node_type_names().filter_map(
                 |(node_id, node_name, _, node_type_names)| {
                     match keep_components.contains(components_vector[node_id as usize]) {
                         // We put as row 0 as it will not be dense because of the filter
@@ -124,14 +124,9 @@ impl Graph {
                 ),
         );
 
-        // TODO if a vector of offsets of removed edges is kept, it is possible
-        // to build the filtered version in parallell sorted without memory peaks.
         build_graph_from_strings_without_type_iterators(
             self.has_node_types(),
             Some(nodes_iterator),
-            // Since we remove components, we do not know how many
-            // nodes we will end up with.
-            // TODO: precompute the number of nodes that are expected to remain.
             None,
             true,
             false,
@@ -144,8 +139,11 @@ impl Graph {
             Some(true),
             Some(true),
             Some(false),
-            // TODO: as aforementioned in the previous todos, it is possible to get this to work
-            // as sorted with the proper offsets precomputed.
+            // Even though the edges are sortof
+            // sorted, the filtering procedure makes
+            // it impossible to actually know the edge ID
+            // of each edge, and therefore it is not possible
+            // to construct the graph in parallel directly.
             Some(false),
             None,
             None,

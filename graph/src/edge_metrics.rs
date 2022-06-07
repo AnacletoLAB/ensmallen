@@ -2,6 +2,7 @@ use super::types::*;
 use super::*;
 use num_traits::Pow;
 use num_traits::Zero;
+use rayon::prelude::*;
 
 /// # Properties and measurements of the graph
 impl Graph {
@@ -9,32 +10,32 @@ impl Graph {
     ///
     /// # Safety
     /// If the graph does not contain nodes, the return value will be undefined.
-    pub unsafe fn get_unchecked_minimum_preferential_attachment(&self) -> f64 {
-        (self.get_unchecked_minimum_node_degree() as f64).pow(2)
+    pub unsafe fn get_unchecked_minimum_preferential_attachment(&self) -> f32 {
+        (self.get_unchecked_minimum_node_degree() as f32).pow(2)
     }
 
     /// Returns the maximum unweighted preferential attachment score.
     ///
     /// # Safety
     /// If the graph does not contain nodes, the return value will be undefined.
-    pub unsafe fn get_unchecked_maximum_preferential_attachment(&self) -> f64 {
-        (self.get_unchecked_maximum_node_degree() as f64).pow(2)
+    pub unsafe fn get_unchecked_maximum_preferential_attachment(&self) -> f32 {
+        (self.get_unchecked_maximum_node_degree() as f32).pow(2)
     }
 
     /// Returns the minumum weighted preferential attachment score.
     ///
     /// # Safety
     /// If the graph does not contain nodes, the return value will be undefined.
-    pub unsafe fn get_unchecked_weighted_minimum_preferential_attachment(&self) -> f64 {
-        (self.get_weighted_minimum_node_degree().clone().unwrap() as f64).pow(2)
+    pub unsafe fn get_unchecked_weighted_minimum_preferential_attachment(&self) -> f32 {
+        (self.get_weighted_minimum_node_degree().clone().unwrap() as f32).pow(2)
     }
 
     /// Returns the maximum weighted preferential attachment score.
     ///
     /// # Safety
     /// If the graph does not contain nodes, the return value will be undefined.
-    pub unsafe fn get_unchecked_weighted_maximum_preferential_attachment(&self) -> f64 {
-        (self.get_weighted_maximum_node_degree().clone().unwrap() as f64).pow(2)
+    pub unsafe fn get_unchecked_weighted_maximum_preferential_attachment(&self) -> f32 {
+        (self.get_weighted_maximum_node_degree().clone().unwrap() as f32).pow(2)
     }
 
     /// Returns the unweighted preferential attachment from the given node IDs.
@@ -52,10 +53,10 @@ impl Graph {
         source_node_id: NodeT,
         destination_node_id: NodeT,
         normalize: bool,
-    ) -> f64 {
+    ) -> f32 {
         let mut preferential_attachment_score =
-            self.get_unchecked_node_degree_from_node_id(source_node_id) as f64
-                * self.get_unchecked_node_degree_from_node_id(destination_node_id) as f64;
+            self.get_unchecked_node_degree_from_node_id(source_node_id) as f32
+                * self.get_unchecked_node_degree_from_node_id(destination_node_id) as f32;
         if normalize {
             let min_preferential_attachment_score =
                 self.get_unchecked_minimum_preferential_attachment();
@@ -83,7 +84,7 @@ impl Graph {
         source_node_id: NodeT,
         destination_node_id: NodeT,
         normalize: bool,
-    ) -> Result<f64> {
+    ) -> Result<f32> {
         Ok(unsafe {
             self.get_unchecked_preferential_attachment_from_node_ids(
                 self.validate_node_id(source_node_id)?,
@@ -108,7 +109,7 @@ impl Graph {
         first_node_name: &str,
         second_node_name: &str,
         normalize: bool,
-    ) -> Result<f64> {
+    ) -> Result<f32> {
         Ok(unsafe {
             self.get_unchecked_preferential_attachment_from_node_ids(
                 self.get_node_id_from_node_name(first_node_name)?,
@@ -134,10 +135,10 @@ impl Graph {
         source_node_id: NodeT,
         destination_node_id: NodeT,
         normalize: bool,
-    ) -> f64 {
+    ) -> f32 {
         let mut preferential_attachment_score =
-            self.get_unchecked_weighted_node_degree_from_node_id(source_node_id) as f64
-                * self.get_unchecked_weighted_node_degree_from_node_id(destination_node_id) as f64;
+            self.get_unchecked_weighted_node_degree_from_node_id(source_node_id) as f32
+                * self.get_unchecked_weighted_node_degree_from_node_id(destination_node_id) as f32;
         if normalize {
             let min_preferential_attachment_score =
                 self.get_unchecked_weighted_minimum_preferential_attachment();
@@ -165,7 +166,7 @@ impl Graph {
         source_node_id: NodeT,
         destination_node_id: NodeT,
         normalize: bool,
-    ) -> Result<f64> {
+    ) -> Result<f32> {
         self.must_have_edge_weights()?;
         Ok(unsafe {
             self.get_unchecked_weighted_preferential_attachment_from_node_ids(
@@ -191,7 +192,7 @@ impl Graph {
         first_node_name: &str,
         second_node_name: &str,
         normalize: bool,
-    ) -> Result<f64> {
+    ) -> Result<f32> {
         self.must_have_edge_weights()?;
         Ok(unsafe {
             self.get_unchecked_weighted_preferential_attachment_from_node_ids(
@@ -226,18 +227,24 @@ impl Graph {
         &self,
         source_node_id: NodeT,
         destination_node_id: NodeT,
-    ) -> f64 {
-        self.iter_unchecked_neighbour_node_ids_intersection_from_source_node_ids(
-            source_node_id,
-            destination_node_id,
-        )
-        .count() as f64
-            / self
-                .iter_unchecked_neighbour_node_ids_union_from_source_node_ids(
-                    source_node_id,
-                    destination_node_id,
-                )
-                .count() as f64
+    ) -> f32 {
+        let union = self
+            .iter_unchecked_neighbour_node_ids_union_from_source_node_ids(
+                source_node_id,
+                destination_node_id,
+            )
+            .count() as f32;
+        let intersection = self
+            .iter_unchecked_neighbour_node_ids_intersection_from_source_node_ids(
+                source_node_id,
+                destination_node_id,
+            )
+            .count() as f32;
+        if union.is_zero() {
+            0.0
+        } else {
+            intersection / union
+        }
     }
 
     /// Returns the Jaccard index for the two given nodes from the given node IDs.
@@ -263,7 +270,7 @@ impl Graph {
         &self,
         source_node_id: NodeT,
         destination_node_id: NodeT,
-    ) -> Result<f64> {
+    ) -> Result<f32> {
         Ok(unsafe {
             self.get_unchecked_jaccard_coefficient_from_node_ids(
                 self.validate_node_id(source_node_id)?,
@@ -289,7 +296,7 @@ impl Graph {
         &self,
         first_node_name: &str,
         second_node_name: &str,
-    ) -> Result<f64> {
+    ) -> Result<f32> {
         Ok(unsafe {
             self.get_unchecked_jaccard_coefficient_from_node_ids(
                 self.get_node_id_from_node_name(first_node_name)?,
@@ -307,7 +314,7 @@ impl Graph {
     ///
     /// # Implementation details
     /// Since the Adamic/Adar Index is only defined for graph not containing
-    /// node traps (nodes without any outbound edge) and must support all kind
+    /// node traps (nodes without any outbound edge) and must subgraph all kind
     /// of graphs, the sinks node are excluded from
     /// the computation because they would result in an infinity.
     ///
@@ -322,14 +329,14 @@ impl Graph {
         &self,
         source_node_id: NodeT,
         destination_node_id: NodeT,
-    ) -> f64 {
+    ) -> f32 {
         self.iter_unchecked_neighbour_node_ids_intersection_from_source_node_ids(
             source_node_id,
             destination_node_id,
         )
         .map(|node_id| self.get_unchecked_node_degree_from_node_id(node_id))
         .filter(|&node_degree| node_degree > 1)
-        .map(|node_degree| 1.0 / (node_degree as f64).ln())
+        .map(|node_degree| 1.0 / (node_degree as f32).ln())
         .sum()
     }
 
@@ -342,7 +349,7 @@ impl Graph {
     ///
     /// # Implementation details
     /// Since the Adamic/Adar Index is only defined for graph not containing
-    /// node traps (nodes without any outbound edge) and must support all kind
+    /// node traps (nodes without any outbound edge) and must subgraph all kind
     /// of graphs, the sinks node are excluded from
     /// the computation because they would result in an infinity.
     ///
@@ -356,7 +363,7 @@ impl Graph {
         &self,
         source_node_id: NodeT,
         destination_node_id: NodeT,
-    ) -> Result<f64> {
+    ) -> Result<f32> {
         Ok(unsafe {
             self.get_unchecked_adamic_adar_index_from_node_ids(
                 self.validate_node_id(source_node_id)?,
@@ -374,7 +381,7 @@ impl Graph {
     ///
     /// # Implementation details
     /// Since the Adamic/Adar Index is only defined for graph not containing
-    /// node traps (nodes without any outbound edge) and must support all kind
+    /// node traps (nodes without any outbound edge) and must subgraph all kind
     /// of graphs, the sinks node are excluded from
     /// the computation because they would result in an infinity.
     ///
@@ -388,7 +395,7 @@ impl Graph {
         &self,
         first_node_name: &str,
         second_node_name: &str,
-    ) -> Result<f64> {
+    ) -> Result<f32> {
         Ok(unsafe {
             self.get_unchecked_adamic_adar_index_from_node_ids(
                 self.get_node_id_from_node_name(first_node_name)?,
@@ -412,7 +419,7 @@ impl Graph {
     /// # Implementation details
     /// Since the Resource Allocation Index is only defined for graph not
     /// containing node traps (nodes without any outbound edge) and
-    /// must support all kind of graphs, the sinks node are excluded from
+    /// must subgraph all kind of graphs, the sinks node are excluded from
     /// the computation because they would result in an infinity.
     ///
     /// # Safety
@@ -422,14 +429,14 @@ impl Graph {
         &self,
         source_node_id: NodeT,
         destination_node_id: NodeT,
-    ) -> f64 {
+    ) -> f32 {
         self.iter_unchecked_neighbour_node_ids_intersection_from_source_node_ids(
             source_node_id,
             destination_node_id,
         )
         .map(|node_id| self.get_unchecked_node_degree_from_node_id(node_id))
         .filter(|&node_degree| node_degree > 0)
-        .map(|node_degree| 1.0 / node_degree as f64)
+        .map(|node_degree| 1.0 / node_degree as f32)
         .sum()
     }
 
@@ -448,7 +455,7 @@ impl Graph {
     /// # Implementation details
     /// Since the Resource Allocation Index is only defined for graph not
     /// containing node traps (nodes without any outbound edge) and
-    /// must support all kind of graphs, the sinks node are excluded from
+    /// must subgraph all kind of graphs, the sinks node are excluded from
     /// the computation because they would result in an infinity.
     ///
     /// # Safety
@@ -458,14 +465,14 @@ impl Graph {
         &self,
         source_node_id: NodeT,
         destination_node_id: NodeT,
-    ) -> f64 {
+    ) -> f32 {
         self.iter_unchecked_neighbour_node_ids_intersection_from_source_node_ids(
             source_node_id,
             destination_node_id,
         )
         .map(|node_id| self.get_unchecked_weighted_node_degree_from_node_id(node_id))
         .filter(|&node_degree| !node_degree.is_zero())
-        .map(|node_degree| 1.0 / node_degree as f64)
+        .map(|node_degree| 1.0 / node_degree as f32)
         .sum()
     }
 
@@ -484,7 +491,7 @@ impl Graph {
     /// # Implementation details
     /// Since the Resource Allocation Index is only defined for graph not
     /// containing node traps (nodes without any outbound edge) and
-    /// must support all kind of graphs, the sinks node are excluded from
+    /// must subgraph all kind of graphs, the sinks node are excluded from
     /// the computation because they would result in an infinity.
     ///
     /// # Raises
@@ -493,7 +500,7 @@ impl Graph {
         &self,
         source_node_id: NodeT,
         destination_node_id: NodeT,
-    ) -> Result<f64> {
+    ) -> Result<f32> {
         Ok(unsafe {
             self.get_unchecked_resource_allocation_index_from_node_ids(
                 self.validate_node_id(source_node_id)?,
@@ -517,7 +524,7 @@ impl Graph {
     /// # Implementation details
     /// Since the Resource Allocation Index is only defined for graph not
     /// containing node traps (nodes without any outbound edge) and
-    /// must support all kind of graphs, the sinks node are excluded from
+    /// must subgraph all kind of graphs, the sinks node are excluded from
     /// the computation because they would result in an infinity.
     ///
     /// # Raises
@@ -526,7 +533,7 @@ impl Graph {
         &self,
         first_node_name: &str,
         second_node_name: &str,
-    ) -> Result<f64> {
+    ) -> Result<f32> {
         Ok(unsafe {
             self.get_unchecked_resource_allocation_index_from_node_ids(
                 self.get_node_id_from_node_name(first_node_name)?,
@@ -550,7 +557,7 @@ impl Graph {
     /// # Implementation details
     /// Since the Resource Allocation Index is only defined for graph not
     /// containing node traps (nodes without any outbound edge) and
-    /// must support all kind of graphs, the sinks node are excluded from
+    /// must subgraph all kind of graphs, the sinks node are excluded from
     /// the computation because they would result in an infinity.
     ///
     /// # Raises
@@ -559,7 +566,7 @@ impl Graph {
         &self,
         source_node_id: NodeT,
         destination_node_id: NodeT,
-    ) -> Result<f64> {
+    ) -> Result<f32> {
         self.must_have_edge_weights()?;
         Ok(unsafe {
             self.get_unchecked_weighted_resource_allocation_index_from_node_ids(
@@ -584,7 +591,7 @@ impl Graph {
     /// # Implementation details
     /// Since the Resource Allocation Index is only defined for graph not
     /// containing node traps (nodes without any outbound edge) and
-    /// must support all kind of graphs, the sinks node are excluded from
+    /// must subgraph all kind of graphs, the sinks node are excluded from
     /// the computation because they would result in an infinity.
     ///
     /// # Raises
@@ -593,7 +600,7 @@ impl Graph {
         &self,
         first_node_name: &str,
         second_node_name: &str,
-    ) -> Result<f64> {
+    ) -> Result<f32> {
         self.must_have_edge_weights()?;
         Ok(unsafe {
             self.get_unchecked_weighted_resource_allocation_index_from_node_ids(
@@ -601,6 +608,21 @@ impl Graph {
                 self.get_node_id_from_node_name(second_node_name)?,
             )
         })
+    }
+
+    /// Returns number of currently subgraphed edge metrics.
+    pub fn get_number_of_available_edge_metrics(&self) -> usize {
+        4
+    }
+
+    /// Returns names of currently subgraphed edge metrics.
+    pub fn get_available_edge_metrics_names(&self) -> Vec<&str> {
+        vec![
+            "Adamic Adar",
+            "Jaccard Coefficient",
+            "Resource allocation index",
+            "Preferential attachment",
+        ]
     }
 
     /// Returns all the implemented edge metrics for the two given node IDs.
@@ -618,12 +640,12 @@ impl Graph {
     ///
     /// # Safety
     /// If the given node IDs do not exist in the graph this method will panic.
-    pub unsafe fn get_unchecked_all_edge_metrics_from_node_ids(
+    pub unsafe fn get_unchecked_all_edge_metrics_from_node_ids_tuple(
         &self,
         source_node_id: NodeT,
         destination_node_id: NodeT,
         normalize: bool,
-    ) -> Vec<f64> {
+    ) -> Vec<f32> {
         vec![
             self.get_unchecked_adamic_adar_index_from_node_ids(source_node_id, destination_node_id),
             self.get_unchecked_jaccard_coefficient_from_node_ids(
@@ -640,5 +662,316 @@ impl Graph {
                 normalize,
             ),
         ]
+    }
+
+    /// Returns all the implemented edge metrics for the two given node IDs.
+    ///
+    /// Specifically, the returned values are:
+    /// * Adamic Adar
+    /// * Jaccard coefficient
+    /// * Resource allocation index
+    /// * Preferential attachment
+    ///
+    /// # Arguments
+    /// * `source_node_id`: NodeT - Node ID of the first node.
+    /// * `destination_node_id`: NodeT - Node ID of the second node.
+    /// * `normalize`: bool - Whether to normalize within 0 to 1.
+    ///
+    /// # Raises
+    /// * If the provided node IDs do not exist in the current graph instance.
+    pub fn get_all_edge_metrics_from_node_ids_tuple(
+        &self,
+        source_node_id: NodeT,
+        destination_node_id: NodeT,
+        normalize: bool,
+    ) -> Result<Vec<f32>> {
+        Ok(unsafe {
+            self.get_unchecked_all_edge_metrics_from_node_ids_tuple(
+                self.validate_node_id(source_node_id)?,
+                self.validate_node_id(destination_node_id)?,
+                normalize,
+            )
+        })
+    }
+
+    /// Returns all the implemented edge metrics for the vectors source and destination node IDs.
+    ///
+    /// Specifically, the returned values are:
+    /// * Adamic Adar
+    /// * Jaccard coefficient
+    /// * Resource allocation index
+    /// * Preferential attachment
+    ///
+    /// # Arguments
+    /// * `source_node_ids`: Vec<NodeT> - Node ID of the first node.
+    /// * `destination_node_ids`: Vec<NodeT> - Node ID of the second node.
+    /// * `normalize`: bool - Whether to normalize within 0 to 1.
+    ///
+    /// # Safety
+    /// If the given node IDs do not exist in the graph this method will panic.
+    pub fn get_all_edge_metrics_from_node_ids(
+        &self,
+        source_node_ids: Vec<NodeT>,
+        destination_node_ids: Vec<NodeT>,
+        normalize: bool,
+    ) -> Result<Vec<Vec<f32>>> {
+        source_node_ids
+            .into_par_iter()
+            .zip(destination_node_ids.into_par_iter())
+            .map(|(src, dst)| {
+                self.validate_node_id(src)?;
+                self.validate_node_id(dst)?;
+                Ok(unsafe {
+                    self.get_unchecked_all_edge_metrics_from_node_ids_tuple(src, dst, normalize)
+                })
+            })
+            .collect::<Result<Vec<Vec<f32>>>>()
+    }
+
+    /// Returns parallel iterator on Preferential Attachment for all edges.
+    ///
+    /// # Arguments
+    /// `normalize`: Option<bool> - Whether to normalize the edge prediction metrics. By default, true.
+    /// `subgraph`: Option<&Graph> - Optional subgraph whose edges are to be used when computing the Preferential Attachment.
+    ///
+    /// # Raises
+    /// * If the provided subgraph graph does not share a compatible vocabulary with the current graph instance.
+    pub fn par_iter_preferential_attachment_scores<'a>(
+        &'a self,
+        normalize: Option<bool>,
+        subgraph: Option<&'a Graph>,
+    ) -> Result<impl IndexedParallelIterator<Item = f32> + 'a> {
+        let subgraph = if let Some(subgraph) = subgraph {
+            self.must_share_node_vocabulary(subgraph)?;
+            subgraph
+        } else {
+            &self
+        };
+        let normalize = normalize.unwrap_or(true);
+        Ok(subgraph.par_iter_directed_edge_node_ids().map(
+            move |(_, source_node_id, destination_node_id)| unsafe {
+                self.get_unchecked_preferential_attachment_from_node_ids(
+                    source_node_id,
+                    destination_node_id,
+                    normalize,
+                )
+            },
+        ))
+    }
+
+    /// Returns Preferential Attachment for all edges.
+    ///
+    /// # Arguments
+    /// `normalize`: Option<bool> - Whether to normalize the edge prediction metrics. By default, true.
+    /// `subgraph`: Option<&Graph> - Optional subgraph whose edges are to be used when computing the Preferential Attachment.
+    ///
+    /// # Raises
+    /// * If the provided subgraph graph does not share a compatible vocabulary with the current graph instance.
+    pub fn get_preferential_attachment_scores(
+        &self,
+        normalize: Option<bool>,
+        subgraph: Option<&Graph>,
+    ) -> Result<Vec<f32>> {
+        self.par_iter_preferential_attachment_scores(normalize, subgraph)
+            .map(|iter| {
+                let mut result = Vec::with_capacity(iter.len());
+                iter.collect_into_vec(&mut result);
+                result
+            })
+    }
+
+    /// Returns parallel iterator on Resource Allocation index for all edges.
+    ///
+    /// # Arguments
+    /// `subgraph`: Option<&Graph> - Optional subgraph whose edges are to be used when computing the Resource Allocation index.
+    ///
+    /// # Raises
+    /// * If the provided subgraph graph does not share a compatible vocabulary with the current graph instance.
+    pub fn par_iter_resource_allocation_index_scores<'a>(
+        &'a self,
+        subgraph: Option<&'a Graph>,
+    ) -> Result<impl IndexedParallelIterator<Item = f32> + 'a> {
+        let subgraph = if let Some(subgraph) = subgraph {
+            self.must_share_node_vocabulary(subgraph)?;
+            subgraph
+        } else {
+            &self
+        };
+        Ok(subgraph.par_iter_directed_edge_node_ids().map(
+            move |(_, source_node_id, destination_node_id)| unsafe {
+                self.get_unchecked_resource_allocation_index_from_node_ids(
+                    source_node_id,
+                    destination_node_id,
+                )
+            },
+        ))
+    }
+
+    /// Returns Resource Allocation index for all edges.
+    ///
+    /// # Arguments
+    /// `subgraph`: Option<&Graph> - Optional subgraph whose edges are to be used when computing the Resource Allocation index.
+    ///
+    /// # Raises
+    /// * If the provided subgraph graph does not share a compatible vocabulary with the current graph instance.
+    pub fn get_resource_allocation_index_scores(
+        &self,
+        subgraph: Option<&Graph>,
+    ) -> Result<Vec<f32>> {
+        self.par_iter_resource_allocation_index_scores(subgraph)
+            .map(|iter| {
+                let mut result = Vec::with_capacity(iter.len());
+                iter.collect_into_vec(&mut result);
+                result
+            })
+    }
+
+    /// Returns parallel iterator on Jaccard Coefficient for all edges.
+    ///
+    /// # Arguments
+    /// `subgraph`: Option<&Graph> - Optional subgraph whose edges are to be used when computing the Jaccard Coefficient.
+    ///
+    /// # Raises
+    /// * If the provided subgraph graph does not share a compatible vocabulary with the current graph instance.
+    pub fn par_iter_jaccard_coefficient_scores<'a>(
+        &'a self,
+        subgraph: Option<&'a Graph>,
+    ) -> Result<impl IndexedParallelIterator<Item = f32> + 'a> {
+        let subgraph = if let Some(subgraph) = subgraph {
+            self.must_share_node_vocabulary(subgraph)?;
+            subgraph
+        } else {
+            &self
+        };
+        Ok(subgraph.par_iter_directed_edge_node_ids().map(
+            move |(_, source_node_id, destination_node_id)| unsafe {
+                self.get_unchecked_jaccard_coefficient_from_node_ids(
+                    source_node_id,
+                    destination_node_id,
+                )
+            },
+        ))
+    }
+
+    /// Returns Jaccard Coefficient for all edges.
+    ///
+    /// # Arguments
+    /// `subgraph`: Option<&Graph> - Optional subgraph whose edges are to be used when computing the Jaccard Coefficient.
+    ///
+    /// # Raises
+    /// * If the provided subgraph graph does not share a compatible vocabulary with the current graph instance.
+    pub fn get_jaccard_coefficient_scores(&self, subgraph: Option<&Graph>) -> Result<Vec<f32>> {
+        self.par_iter_jaccard_coefficient_scores(subgraph)
+            .map(|iter| {
+                let mut result = Vec::with_capacity(iter.len());
+                iter.collect_into_vec(&mut result);
+                result
+            })
+    }
+
+    /// Returns parallel iterator on Adamic-Adar for all edges.
+    ///
+    /// # Arguments
+    /// `subgraph`: Option<&Graph> - Optional subgraph whose edges are to be used when computing the Adamic-Adar.
+    ///
+    /// # Raises
+    /// * If the provided subgraph graph does not share a compatible vocabulary with the current graph instance.
+    pub fn par_iter_adamic_adar_scores<'a>(
+        &'a self,
+        subgraph: Option<&'a Graph>,
+    ) -> Result<impl IndexedParallelIterator<Item = f32> + 'a> {
+        let subgraph = if let Some(subgraph) = subgraph {
+            self.must_share_node_vocabulary(subgraph)?;
+            subgraph
+        } else {
+            &self
+        };
+        Ok(subgraph.par_iter_directed_edge_node_ids().map(
+            move |(_, source_node_id, destination_node_id)| unsafe {
+                self.get_unchecked_adamic_adar_index_from_node_ids(
+                    source_node_id,
+                    destination_node_id,
+                )
+            },
+        ))
+    }
+
+    /// Returns Adamic-Adar for all edges.
+    ///
+    /// # Arguments
+    /// `subgraph`: Option<&Graph> - Optional subgraph whose edges are to be used when computing the Adamic-Adar.
+    ///
+    /// # Raises
+    /// * If the provided subgraph graph does not share a compatible vocabulary with the current graph instance.
+    pub fn get_adamic_adar_scores(&self, subgraph: Option<&Graph>) -> Result<Vec<f32>> {
+        self.par_iter_adamic_adar_scores(subgraph).map(|iter| {
+            let mut result = Vec::with_capacity(iter.len());
+            iter.collect_into_vec(&mut result);
+            result
+        })
+    }
+
+    /// Returns parallel iterator on all available edge metrics for all edges.
+    ///
+    /// The metrics returned are, in order:
+    /// - Adamic-Adar
+    /// - Jaccard Coefficient
+    /// - Resource Allocation index
+    /// - Preferential attachment score
+    ///
+    /// # Arguments
+    /// `normalize`: Option<bool> - Whether to normalize the edge prediction metrics. By default, true.
+    /// `subgraph`: Option<&Graph> - Optional subgraph whose edges are to be used when computing the metrics.
+    ///
+    /// # Raises
+    /// * If the provided subgraph graph does not share a compatible vocabulary with the current graph instance.
+    pub fn par_iter_all_edge_metrics<'a>(
+        &'a self,
+        normalize: Option<bool>,
+        subgraph: Option<&'a Graph>,
+    ) -> Result<impl IndexedParallelIterator<Item = Vec<f32>> + 'a> {
+        let normalize = normalize.unwrap_or(true);
+        let subgraph = if let Some(subgraph) = subgraph {
+            self.must_share_node_vocabulary(subgraph)?;
+            subgraph
+        } else {
+            &self
+        };
+        Ok(subgraph.par_iter_directed_edge_node_ids().map(
+            move |(_, source_node_id, destination_node_id)| unsafe {
+                self.get_unchecked_all_edge_metrics_from_node_ids_tuple(
+                    source_node_id,
+                    destination_node_id,
+                    normalize,
+                )
+            },
+        ))
+    }
+
+    /// Returns all available edge metrics for all edges.
+    ///
+    /// The metrics returned are, in order:
+    /// - Adamic-Adar
+    /// - Jaccard Coefficient
+    /// - Resource Allocation index
+    /// - Preferential attachment score
+    ///
+    /// # Arguments
+    /// `normalize`: Option<bool> - Whether to normalize the edge prediction metrics. By default, true.
+    /// `subgraph`: Option<&Graph> - Optional subgraph whose edges are to be used when computing the metrics.
+    ///
+    /// # Raises
+    /// * If the provided subgraph graph does not share a compatible vocabulary with the current graph instance.
+    pub fn get_all_edge_metrics(
+        &self,
+        normalize: Option<bool>,
+        subgraph: Option<&Graph>,
+    ) -> Result<Vec<Vec<f32>>> {
+        self.par_iter_all_edge_metrics(normalize, subgraph)
+            .map(|iter| {
+                let mut result = Vec::with_capacity(iter.len());
+                iter.collect_into_vec(&mut result);
+                result
+            })
     }
 }

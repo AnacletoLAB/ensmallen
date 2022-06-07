@@ -13,7 +13,7 @@ impl Graph {
         vector_sources: Option<bool>,
         vector_destinations: Option<bool>,
         vector_cumulative_node_degrees: Option<bool>,
-        vector_reciprocal_sqrt_degrees: Option<bool>
+        vector_reciprocal_sqrt_degrees: Option<bool>,
     ) -> Result<()> {
         let vector_sources = vector_sources.unwrap_or(false);
         let vector_destinations = vector_destinations.unwrap_or(true);
@@ -22,40 +22,40 @@ impl Graph {
 
         if vector_destinations {
             if self.destinations.is_none() {
-                self.destinations = Some(self.get_directed_destination_node_ids());
+                self.destinations = Arc::new(Some(self.get_directed_destination_node_ids()));
             }
         } else {
-            self.destinations = None;
+            self.destinations = Arc::new(None);
         }
         if vector_sources {
             if self.sources.is_none() {
-                self.sources = Some(self.get_directed_source_node_ids());
+                self.sources = Arc::new(Some(self.get_directed_source_node_ids()));
             }
         } else {
-            self.sources = None;
+            self.sources = Arc::new(None);
         }
         if vector_cumulative_node_degrees {
             if self.cumulative_node_degrees.is_none() {
-                self.cumulative_node_degrees = Some(self.get_cumulative_node_degrees());
+                self.cumulative_node_degrees = Arc::new(Some(self.get_cumulative_node_degrees()));
             }
         } else {
-            self.cumulative_node_degrees = None;
+            self.cumulative_node_degrees = Arc::new(None);
         }
         if vector_reciprocal_sqrt_degrees {
             if self.reciprocal_sqrt_degrees.is_none() {
-                self.reciprocal_sqrt_degrees = Some(self.get_reciprocal_sqrt_degrees());
+                self.reciprocal_sqrt_degrees = Arc::new(Some(self.get_reciprocal_sqrt_degrees()));
             }
         } else {
-            self.reciprocal_sqrt_degrees = None;
+            self.reciprocal_sqrt_degrees = Arc::new(None);
         }
         Ok(())
     }
 
     /// Disable all extra perks, reducing memory impact but incresing time requirements.
     pub fn disable_all(&mut self) {
-        self.destinations = None;
-        self.sources = None;
-        self.cumulative_node_degrees = None;
-        self.reciprocal_sqrt_degrees = None;
+        self.destinations = Arc::new(None);
+        self.sources = Arc::new(None);
+        self.cumulative_node_degrees = Arc::new(None);
+        self.reciprocal_sqrt_degrees = Arc::new(None);
     }
 }

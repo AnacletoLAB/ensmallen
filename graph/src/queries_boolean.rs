@@ -17,7 +17,20 @@ impl Graph {
     pub unsafe fn is_unchecked_connected_from_node_id(&self, node_id: NodeT) -> bool {
         self.connected_nodes
             .as_ref()
+            .as_ref()
             .map_or(true, |connected_nodes| connected_nodes[node_id as usize])
+    }
+
+    /// Returns boolean representing if given node is not a singleton nor a singleton with selfloop.
+    ///
+    /// # Arguments
+    /// * `node_id`: NodeT - The node to be checked for.
+    ///
+    /// # Raises
+    /// If the given node ID does not exists in the graph.
+    pub fn is_connected_from_node_id(&self, node_id: NodeT) -> Result<bool> {
+        self.validate_node_id(node_id)
+            .map(|node_id| unsafe { self.is_unchecked_connected_from_node_id(node_id) })
     }
 
     /// Returns boolean representing if given node is a singleton or a singleton with selfloop.
@@ -284,6 +297,7 @@ impl Graph {
     pub unsafe fn is_unchecked_trap_node_from_node_id(&self, node_id: NodeT) -> bool {
         self.connected_nodes
             .as_ref()
+            .as_ref()
             .map_or(!self.has_singleton_nodes(), |connected_nodes| {
                 connected_nodes[node_id as usize]
             })
@@ -376,5 +390,43 @@ impl Graph {
     ) -> bool {
         self.get_edge_id_from_node_names_and_edge_type_name(src_name, dst_name, edge_type_name)
             .is_ok()
+    }
+
+    /// Returns whether a given node ID has at least an edge of the given edge type.
+    ///
+    /// # Arguments
+    /// * `src`: NodeT - The source node of which to check connected edges' type.
+    /// * `edge_type_id`: Option<EdgeTypeT> - The edge type to look for.
+    ///
+    /// # Raises
+    /// * If the given source node does not exist in the current graph.
+    /// * If the given edge type does not exist in the current graph.
+    pub fn has_edge_from_node_id_and_edge_type_id(
+        &self,
+        src: NodeT,
+        edge_type_id: Option<EdgeTypeT>,
+    ) -> Result<bool> {
+        self.validate_edge_type_id(edge_type_id)?;
+        Ok(self
+            .iter_edge_type_id_from_source_node_id(src)?
+            .any(|neighbour_edge_type_id| neighbour_edge_type_id == edge_type_id))
+    }
+
+    /// Returns whether a given node ID has at least an edge of the given edge type.
+    ///
+    /// # Arguments
+    /// * `src`: NodeT - The source node of which to check connected edges' type.
+    /// * `edge_type_id`: Option<EdgeTypeT> - The edge type to look for.
+    ///
+    /// # Safety
+    /// When
+    pub unsafe fn has_unchecked_edge_from_node_id_and_edge_type_id(
+        &self,
+        src: NodeT,
+        edge_type_id: Option<EdgeTypeT>,
+    ) -> bool {
+        self
+            .iter_unchecked_edge_type_id_from_source_node_id(src)
+            .any(|neighbour_edge_type_id| neighbour_edge_type_id == edge_type_id)
     }
 }

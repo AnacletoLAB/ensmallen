@@ -8,7 +8,7 @@ use super::*;
 ///
 /// # Example
 /// To validate a node you can use:
-/// ```rust
+/// ```ignore
 /// # use graph::*;
 /// let this_library_node_name = "UMLS:C1843632";
 /// let not_this_library_node_name = "PizzaQuattroStagioni";
@@ -21,9 +21,9 @@ pub fn is_valid_unified_medical_language_system_node_name(node_name: &str) -> bo
         Some(&["UMLS"]),
         Some(13),
         Some(":"),
-        Some("C"),
-        Some(8),
         None,
+        Some(8),
+        Some(7),
     )
     .is_ok()
 }

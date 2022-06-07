@@ -18,6 +18,7 @@ pub struct SingleWalkParameters {
     pub(crate) walk_length: u64,
     pub(crate) weights: WalkWeights,
     pub(crate) max_neighbours: Option<NodeT>,
+    pub(crate) normalize_by_degree: bool,
 }
 
 #[derive(Clone, Debug, PartialEq)]
@@ -118,7 +119,8 @@ impl SingleWalkParameters {
         Ok(SingleWalkParameters {
             walk_length,
             weights: WalkWeights::default(),
-            max_neighbours: None,
+            max_neighbours: Some(100),
+            normalize_by_degree: false,
         })
     }
 
@@ -133,7 +135,16 @@ impl SingleWalkParameters {
     /// assert!(weights.is_first_order_walk());
     /// ```
     pub fn is_first_order_walk(&self) -> bool {
-        self.weights.is_first_order_walk()
+        self.weights.is_first_order_walk() && !self.normalize_by_degree
+    }
+}
+
+impl Default for WalksParameters {
+    /// Create a default WalksParameters object.
+    ///
+    /// By default the object is parametrized for a simple first-order walk.
+    fn default() -> Self {
+        WalksParameters::new(32).unwrap()
     }
 }
 
@@ -207,6 +218,11 @@ impl WalksParameters {
         self.iterations
     }
 
+    /// Return the length of the random walk.
+    pub fn get_random_walk_length(&self) -> u64 {
+        self.single_walk_parameters.walk_length
+    }
+
     /// Set the maximum neighbours number to consider, making the walk probabilistic.
     ///
     /// # Arguments
@@ -241,10 +257,20 @@ impl WalksParameters {
         Ok(self)
     }
 
+    /// Set whether the walk destination nodes weights should be weighted by the destination node degree.
+    ///
+    /// # Arguments
+    /// * `normalize_by_degree`: Option<NodeT> - Number of neighbours to consider for each extraction.
+    pub fn set_normalize_by_degree(mut self, normalize_by_degree: Option<bool>) -> WalksParameters {
+        if let Some(normalize_by_degree) = normalize_by_degree {
+            self.single_walk_parameters.normalize_by_degree = normalize_by_degree;
+        }
+        self
+    }
+
     /// Set the random_state.
     ///
     /// # Arguments
-    ///
     /// * `random_state`: Option<usize> - random_state for reproducible random walks.
     ///
     pub fn set_random_state(mut self, random_state: Option<usize>) -> WalksParameters {
@@ -252,6 +278,11 @@ impl WalksParameters {
             self.random_state = splitmix64(s as u64) as NodeT;
         }
         self
+    }
+
+    /// Return the random_state used in the walks.
+    pub fn get_random_state(&self) -> NodeT {
+        self.random_state
     }
 
     /// Set the dense_node_mapping.

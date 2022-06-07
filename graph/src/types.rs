@@ -9,11 +9,11 @@ use std::str::FromStr;
 /// Type used to index the Nodes.
 pub type NodeT = u32;
 /// Type used to index the Node Types.
-pub type NodeTypeT = u16;
+pub type NodeTypeT = u32;
 /// Type used to index the Edges.
 pub type EdgeT = u64;
 /// Type used to index the Edge Types.
-pub type EdgeTypeT = u16;
+pub type EdgeTypeT = u32;
 /// Type used for the weights of the edges.
 pub type WeightT = f32;
 /// Type used for the parameters of the walk such as the return weight (p),
@@ -98,7 +98,7 @@ macro_rules! macro_impl_to_from_usize {
 
 macro_impl_to_from_usize!(u8 u16 u32 u64 usize);
 
-pub(crate) struct ThreadDataRaceAware<T> {
+pub struct ThreadDataRaceAware<T> {
     pub(crate) value: UnsafeCell<T>,
 }
 
@@ -106,8 +106,16 @@ unsafe impl<T> Sync for ThreadDataRaceAware<T> {}
 
 impl<T> ThreadDataRaceAware<T> {
     pub fn new(value: T) -> ThreadDataRaceAware<T> {
-        ThreadDataRaceAware{
-            value: std::cell::UnsafeCell::new(value)
+        ThreadDataRaceAware {
+            value: std::cell::UnsafeCell::new(value),
         }
+    }
+
+    pub fn get(&self) -> *mut T {
+        self.value.get()
+    }
+
+    pub fn into_inner(self) -> T {
+        self.value.into_inner()
     }
 }

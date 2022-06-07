@@ -1,12 +1,13 @@
 use super::*;
 use atomic_float::AtomicF64;
 use bitvec::prelude::*;
+use hashbrown::HashMap;
 use indicatif::{ParallelProgressIterator, ProgressIterator};
 use itertools::Itertools;
 use num_traits::Pow;
 use rayon::prelude::*;
-use std::collections::{HashMap, VecDeque};
-use vec_rand::xorshift::xorshift;
+use std::collections::VecDeque;
+use vec_rand::splitmix64;
 
 #[manual_binding]
 /// Return training batches for Word2Vec models.
@@ -52,77 +53,6 @@ pub fn word2vec<'a>(
     })
 }
 
-#[manual_binding]
-/// Return triple with CSR representation of cooccurrence matrix.
-///
-/// The first vector has the sources, the second vector the destinations
-/// and the third one contains the min-max normalized frequencies.
-///
-/// # Arguments
-///
-/// * `sequences`: impl ParallelIterator<Item = Vec<NodeT>> - the sequence of sequences of integers to preprocess.
-/// * `window_size`: Option<usize> - Window size to consider for the sequences.
-/// * `verbose`: Option<bool> - Whether to show the progress bars. The default behaviour is false.
-///     
-pub fn cooccurence_matrix(
-    sequences: impl ParallelIterator<Item = Vec<NodeT>>,
-    window_size: usize,
-    number_of_sequences: usize,
-    verbose: Option<bool>,
-) -> Result<(usize, impl Iterator<Item = (NodeT, NodeT, f64)>)> {
-    let verbose = verbose.unwrap_or(false);
-    let mut cooccurence_matrix: HashMap<(NodeT, NodeT), f64> = HashMap::new();
-    let mut max_frequency = 0.0;
-    let pb1 = get_loading_bar(verbose, "Computing frequencies", number_of_sequences);
-
-    // TODO!: Avoid this collect and create the cooccurrence matrix in a parallel way.
-    // We are currently working on this but is terribly non-trivial,
-    // as most parallel implementations end up being slower than sequential
-    // ones or require massive amounts of additional memory.
-    let vec = sequences.collect::<Vec<Vec<NodeT>>>();
-    vec.iter().progress_with(pb1).for_each(|sequence| {
-        let walk_length = sequence.len();
-        for (central_index, &central_word_id) in sequence.iter().enumerate() {
-            let upperbound = std::cmp::min(1 + window_size, walk_length - central_index);
-
-            for distance in 1..upperbound {
-                let context_id = sequence[central_index + distance];
-
-                let (smaller, bigger) = (
-                    std::cmp::min(central_word_id, context_id),
-                    std::cmp::max(central_word_id, context_id),
-                );
-
-                let freq = 1.0 / distance as f64;
-
-                // Get the current value for this pair of nodes
-                let ptr = cooccurence_matrix
-                    .entry((smaller, bigger))
-                    .and_modify(|e| *e += freq)
-                    .or_insert(freq);
-                // Update the max
-                if *ptr > max_frequency {
-                    max_frequency = *ptr;
-                }
-            }
-        }
-    });
-
-    let number_of_elements = cooccurence_matrix.len();
-    let pb2 = get_loading_bar(
-        verbose,
-        "Converting mapping into CSR matrix",
-        cooccurence_matrix.len(),
-    );
-    Ok((
-        number_of_elements,
-        cooccurence_matrix
-            .into_iter()
-            .progress_with(pb2)
-            .map(move |((word, context), frequency)| (word, context, frequency / max_frequency)),
-    ))
-}
-
 /// # Preprocessing for ML algorithms on graph.
 impl Graph {
     #[manual_binding]
@@ -153,7 +83,7 @@ impl Graph {
         window_size: usize,
     ) -> Result<impl ParallelIterator<Item = (Vec<NodeT>, NodeT)> + 'a> {
         Ok(word2vec(
-            self.iter_random_walks(quantity, walk_parameters)?,
+            self.par_iter_random_walks(quantity, walk_parameters)?,
             window_size,
         ))
     }
@@ -165,25 +95,42 @@ impl Graph {
     /// and the third one contains the min-max normalized frequencies.
     ///
     /// # Arguments
-    ///
     /// * `walks_parameters`: &'a WalksParameters - the walks parameters.
     /// * `window_size`: usize - Window size to consider for the sequences.
-    /// * `verbose`: Option<bool> - Whether to show the progress bars. The default behaviour is false.
-    ///     
-    pub fn cooccurence_matrix<'a>(
+    pub fn par_iter_cooccurence_matrix<'a>(
         &'a self,
         walks_parameters: &'a WalksParameters,
         window_size: usize,
-        verbose: Option<bool>,
-    ) -> Result<(usize, impl Iterator<Item = (NodeT, NodeT, f64)> + 'a)> {
-        self.must_have_edges()?;
-        let walks = self.iter_complete_walks(walks_parameters)?;
-        cooccurence_matrix(
-            walks,
-            window_size,
-            (self.get_unique_source_nodes_number() * walks_parameters.iterations) as usize,
-            verbose,
-        )
+    ) -> Result<impl ParallelIterator<Item = (NodeT, NodeT, f32)> + 'a> {
+        Ok(self
+            .par_iter_complete_walks(walks_parameters)?
+            .flat_map(move |sequence| {
+                let mut cooccurence_matrix: HashMap<(NodeT, NodeT), f32> = HashMap::new();
+                let mut total = 0.0;
+                (0..sequence.len())
+                    .map(|position| {
+                        (
+                            sequence[position],
+                            &sequence[(position.saturating_sub(window_size)
+                                ..(position + window_size).min(sequence.len()))],
+                        )
+                    })
+                    .for_each(|(central_id, context)| {
+                        context.iter().copied().for_each(|context_id| {
+                            // Get the current value for this pair of nodes
+                            cooccurence_matrix
+                                .entry((central_id, context_id))
+                                .and_modify(|e| *e += 1.0)
+                                .or_insert(1.0);
+                            total += 1.0;
+                        });
+                    });
+                cooccurence_matrix
+                    .into_par_iter()
+                    .map(move |((central_id, context_id), freq)| {
+                        (central_id, context_id, freq / total)
+                    })
+            }))
     }
 
     #[manual_binding]
@@ -216,7 +163,7 @@ impl Graph {
         return_edge_weights: Option<bool>,
         max_neighbours: Option<NodeT>,
     ) -> Result<
-        impl IndexedParallelIterator<Item = ((Vec<NodeT>, Option<Vec<WeightT>>), Vec<NodeTypeT>)> + '_,
+        impl IndexedParallelIterator<Item = ((Vec<NodeT>, Option<Vec<WeightT>>), &Vec<NodeTypeT>)> + '_,
     > {
         if let Some(return_edge_weights) = return_edge_weights {
             if return_edge_weights {
@@ -241,21 +188,21 @@ impl Graph {
             )
             .to_string());
         }
-        let idx = splitmix64(idx);
+        let random_state = splitmix64(idx);
         Ok((0..batch_size).into_par_iter().map(move |i| unsafe {
-            let mut sample = xorshift(idx.wrapping_mul(splitmix64(i as u64)));
+            let mut random_state = splitmix64(random_state + i as u64);
             let (node_id, node_type_ids) = loop {
-                let node_id = sample as u32 % nodes_number;
-                let node_type_ids = self.get_unchecked_node_type_id_from_node_id(node_id);
+                random_state = splitmix64(random_state);
+                let node_id = self.get_random_node(random_state);
+                let node_type_ids = self.get_unchecked_node_type_ids_from_node_id(node_id);
                 if node_type_ids.is_some() {
                     break (node_id, node_type_ids.unwrap());
                 }
-                sample = xorshift(sample);
             };
             let (min_edge_id, max_edge_id, destinations, probabilistic_indices) = self
                 .get_unchecked_edges_and_destinations_from_source_node_id(
                     max_neighbours,
-                    idx,
+                    random_state,
                     node_id,
                 );
             let mut destinations = self
@@ -282,205 +229,179 @@ impl Graph {
         }))
     }
 
+    unsafe fn get_unchecked_edge_prediction_node_type_ids(
+        &self,
+        node_id: NodeT,
+    ) -> Option<Vec<NodeTypeT>> {
+        Some(
+            match (
+                self.get_unchecked_node_type_ids_from_node_id(node_id),
+                self.has_multilabel_node_types().unwrap(),
+            ) {
+                (None, false) => {
+                    if self.has_unknown_node_types().unwrap() {
+                        vec![0]
+                    } else {
+                        unreachable!(concat!(
+                            "In a graph without unknown node types it is not possible ",
+                            "to have `None` node types."
+                        ));
+                    }
+                }
+                (None, true) => {
+                    if self.has_unknown_node_types().unwrap() {
+                        vec![0; self.get_maximum_multilabel_count().unwrap() as usize]
+                    } else {
+                        unreachable!(concat!(
+                            "In a graph without unknown node types it is not possible ",
+                            "to have `None` node types."
+                        ));
+                    }
+                }
+                (Some(node_type_ids), false) => {
+                    let mut node_type_ids = node_type_ids.clone();
+                    if self.has_unknown_node_types().unwrap() {
+                        node_type_ids.iter_mut().for_each(|node_type_id| {
+                            *node_type_id += 1;
+                        });
+                        node_type_ids
+                    } else {
+                        node_type_ids
+                    }
+                }
+                (Some(node_type_ids), true) => {
+                    let mut padded_node_type_ids =
+                        vec![0; self.get_maximum_multilabel_count().unwrap() as usize];
+                    node_type_ids
+                        .into_iter()
+                        .zip(padded_node_type_ids.iter_mut())
+                        .for_each(|(node_type, target)| {
+                            // We need to add one because we need to reserve 0 for the mask.
+                            *target = node_type + 1;
+                        });
+                    padded_node_type_ids
+                }
+            },
+        )
+    }
+
     #[manual_binding]
     /// Returns n-ple with index to build numpy array, source node, source node type, destination node, destination node type, edge type and whether this edge is real or artificial.
     ///
     /// # Arguments
-    /// * `idx`: u64 - The index of the batch to generate, behaves like a random random_state,
-    /// * `batch_size`: Option<usize> - The maximal size of the batch to generate,
+    /// * `random_state`: u64 - Random state of the batch to generate.
+    /// * `batch_size`: usize - The maximal size of the batch to generate,
+    /// * `sample_only_edges_with_heterogeneous_node_types`: bool - Whether to sample negative edges only with source and destination nodes that have different node types.
     /// * `negative_samples_rate`: Option<f64> - The component of netagetive samples to use.
-    /// * `return_node_types`: Option<bool> - Whether to return the source and destination nodes node types.
-    /// * `return_edge_types`: Option<bool> - Whether to return the edge types. The negative edges edge type will be samples at random.
-    /// * `return_edge_metrics`: Option<bool> - Whether to return the edge metrics.
     /// * `avoid_false_negatives`: Option<bool> - Whether to remove the false negatives when generated. It should be left to false, as it has very limited impact on the training, but enabling this will slow things down.
     /// * `maximal_sampling_attempts`: Option<usize> - Number of attempts to execute to sample the negative edges.
-    /// * `shuffle`: Option<bool> - Whether to shuffle the samples within the batch.
+    /// * `use_zipfian_sampling`: Option<bool> - Whether to sample the nodes using zipfian distribution. By default True. Not using this may cause significant biases.
+    /// * `support`: Option<&'a Graph> - Graph to use to compute the edge metrics. When not provided, the current graph (self) is used.
     /// * `graph_to_avoid`: &'a Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,
     ///
     /// # Raises
     /// * If the given amount of negative samples is not a positive finite real value.
     /// * If node types are requested but the graph does not contain any.
-    /// * If node types are requested but the graph contains unknown node types.
-    /// * If edge types are requested but the graph does not contain any.
-    /// * If edge types are requested but the graph contains unknown edge types.
+    /// * If the `sample_only_edges_with_heterogeneous_node_types` argument is provided as true, but the graph does not have node types.
     ///
-    /// TODO! Add the possibility for returning only known edges
-    /// TODO! When returning only known edges, add the possibility for balanced
-    /// edge types.
-    pub fn get_edge_prediction_mini_batch<'a>(
+    pub fn par_iter_edge_prediction_mini_batch<'a>(
         &'a self,
-        idx: u64,
-        batch_size: Option<usize>,
+        mut random_state: u64,
+        batch_size: usize,
+        sample_only_edges_with_heterogeneous_node_types: bool,
         negative_samples_rate: Option<f64>,
-        return_node_types: Option<bool>,
-        return_edge_types: Option<bool>,
-        return_edge_metrics: Option<bool>,
         avoid_false_negatives: Option<bool>,
         maximal_sampling_attempts: Option<usize>,
-        shuffle: Option<bool>,
+        use_zipfian_sampling: Option<bool>,
+        support: Option<&'a Graph>,
         graph_to_avoid: Option<&'a Graph>,
-    ) -> Result<
-        impl IndexedParallelIterator<
-                Item = (
-                    NodeT,
-                    Option<Vec<NodeTypeT>>,
-                    NodeT,
-                    Option<Vec<NodeTypeT>>,
-                    Option<Vec<f64>>,
-                    Option<EdgeTypeT>,
-                    bool,
-                ),
-            > + 'a,
-    > {
-        let batch_size = batch_size.unwrap_or(1024);
-        let negative_samples_rate = negative_samples_rate.unwrap_or(0.5);
+    ) -> Result<impl IndexedParallelIterator<Item = (NodeT, NodeT, bool)> + 'a> {
+        let support = support.unwrap_or(&self);
         let avoid_false_negatives = avoid_false_negatives.unwrap_or(false);
         let maximal_sampling_attempts = maximal_sampling_attempts.unwrap_or(10_000);
-        let shuffle = shuffle.unwrap_or(true);
+        let use_zipfian_sampling = use_zipfian_sampling.unwrap_or(true);
 
-        let return_node_types = return_node_types.unwrap_or(false);
-        let (maximum_node_types_number, multi_label) = if return_node_types {
-            self.must_not_contain_unknown_node_types()?;
-            (
-                self.get_maximum_multilabel_count()? as usize,
-                self.has_multilabel_node_types()?,
-            )
-        } else {
-            (0, false)
-        };
+        if sample_only_edges_with_heterogeneous_node_types && !self.has_node_types() {
+            return Err(concat!(
+                "The parameter `sample_only_edges_with_heterogeneous_node_types` was provided with value `true` ",
+                "but the current graph instance does not contain any node type. ",
+                "If you expected to have node types within this graph, maybe you have either dropped them ",
+                "with a wrong filter operation or use the wrong parametrization to load the graph."
+            ).to_string());
+        }
 
-        let return_edge_types = return_edge_types.unwrap_or(false);
-        let return_edge_metrics = return_edge_metrics.unwrap_or(false);
-        let edge_types_number = if return_edge_types {
-            self.must_not_contain_unknown_edge_types()?;
-            self.get_edge_types_number()?
+        if sample_only_edges_with_heterogeneous_node_types
+            && self.has_exclusively_homogeneous_node_types().unwrap()
+        {
+            return Err(concat!(
+                "The parameter `sample_only_edges_with_heterogeneous_node_types` was provided with value `true` ",
+                "but the current graph instance has exclusively homogeneous node types, that is all the nodes have ",
+                "the same node type. ",
+                "If you expected to have heterogeneous node types within this graph, maybe you have either dropped them ",
+                "with a wrong filter operation or use the wrong parametrization to load the graph."
+            ).to_string());
+        }
+
+        let negative_samples_threshold = if let Some(negative_samples_rate) = &negative_samples_rate
+        {
+            if *negative_samples_rate < 0.0
+                || *negative_samples_rate > 1.0
+                || !negative_samples_rate.is_finite()
+            {
+                return Err(format!(
+                    concat!(
+                        "Negative sample must be a posive ",
+                        "real value between 0 and 1. ",
+                        "You have provided {}."
+                    ),
+                    *negative_samples_rate
+                ));
+            }
+            (negative_samples_rate * u64::MAX as f64).ceil() as u64
         } else {
             0
         };
 
-        if negative_samples_rate < 0.0
-            || negative_samples_rate > 1.0
-            || !negative_samples_rate.is_finite()
-        {
-            return Err("Negative sample must be a posive real value between 0 and 1.".to_string());
-        }
-
-        let negative_samples_threshold = (negative_samples_rate * u64::MAX as f64).ceil() as u64;
-        let expected_negative_samples_number =
-            (batch_size as f64 * negative_samples_rate).ceil() as usize;
-        let expected_positive_samples_number = batch_size - expected_negative_samples_number;
-
-        let edges_number = self.get_directed_edges_number();
-        let nodes_number = self.get_nodes_number();
-
-        let does_not_require_resampling = !(avoid_false_negatives || graph_to_avoid.is_some());
-
-        let get_node_type_ids =
-            move |node_id: NodeT| -> Option<Vec<NodeTypeT>> {
-                if return_node_types {
-                    let node_type_ids =
-                        unsafe { self.get_unchecked_node_type_id_from_node_id(node_id) };
-                    if multi_label {
-                        let mut padded_node_type_ids = vec![0; maximum_node_types_number];
-                        node_type_ids.unwrap().into_iter().enumerate().for_each(
-                            |(i, node_type)| {
-                                // We need to add one because we need to reserve 0 for the mask.
-                                padded_node_type_ids[i] = node_type + 1;
-                            },
-                        );
-                        Some(padded_node_type_ids)
-                    } else {
-                        node_type_ids
-                    }
-                } else {
-                    None
-                }
-            };
-
-        let get_edge_metrics = move |src: NodeT, dst: NodeT| -> Option<Vec<f64>> {
-            if return_edge_metrics {
-                Some(unsafe { self.get_unchecked_all_edge_metrics_from_node_ids(src, dst, true) })
-            } else {
-                None
-            }
-        };
-
-        let idx = splitmix64(idx);
+        random_state = splitmix64(random_state);
 
         Ok((0..batch_size).into_par_iter().map(move |i| unsafe {
-            let mut sampled = xorshift(idx.wrapping_mul(splitmix64(i as u64)));
-            if shuffle && sampled > negative_samples_threshold
-                || !shuffle && i < expected_positive_samples_number
-            {
-                let edge_id = sampled % edges_number;
-                let (src, dst) = self.get_unchecked_node_ids_from_edge_id(edge_id);
-                let edge_type = if return_edge_types {
-                    self.get_unchecked_edge_type_id_from_edge_id(edge_id)
-                } else {
-                    None
-                };
-                return (
-                    src,
-                    get_node_type_ids(src),
-                    dst,
-                    get_node_type_ids(dst),
-                    get_edge_metrics(src, dst),
-                    edge_type,
-                    true,
-                );
+            let mut random_state = splitmix64(random_state + i as u64);
+            if random_state > negative_samples_threshold {
+                random_state = splitmix64(random_state);
+                let (src, dst) =
+                    self.get_unchecked_node_ids_from_edge_id(self.get_random_edge_id(random_state));
+                return (src, dst, true);
             }
-            if does_not_require_resampling {
-                // split the random u64 into 2 u32 and mod them to have
-                // usable nodes (this is slightly biased towards low values)
-                let src = (sampled & 0xffffffff) as u32 % nodes_number;
-                let dst = (sampled >> 32) as u32 % nodes_number;
-                let edge_type = if return_edge_types {
-                    Some(sampled as EdgeTypeT % edge_types_number)
-                } else {
-                    None
-                };
 
-                return (
-                    src,
-                    get_node_type_ids(src),
-                    dst,
-                    get_node_type_ids(dst),
-                    get_edge_metrics(src, dst),
-                    edge_type,
-                    false,
-                );
-            }
             for _ in 0..maximal_sampling_attempts {
-                // split the random u64 into 2 u32 and mod them to have
-                // usable nodes (this is slightly biased towards low values)
-                let src = (sampled & 0xffffffff) as u32 % nodes_number;
-                let dst = (sampled >> 32) as u32 % nodes_number;
+                random_state = splitmix64(random_state);
+                let (src, dst) = if use_zipfian_sampling {
+                    (
+                        self.get_random_zipfian_node(random_state),
+                        self.get_random_zipfian_node(random_state.wrapping_mul(2)),
+                    )
+                } else {
+                    (
+                        self.get_random_node(random_state),
+                        self.get_random_node(random_state.wrapping_mul(2)),
+                    )
+                };
 
-                if avoid_false_negatives && self.has_edge_from_node_ids(src, dst)
+                if avoid_false_negatives && support.has_edge_from_node_ids(src, dst)
+                    || sample_only_edges_with_heterogeneous_node_types && {
+                        self.get_unchecked_node_type_ids_from_node_id(src)
+                            == self.get_unchecked_node_type_ids_from_node_id(dst)
+                    }
                     || graph_to_avoid
                         .as_ref()
                         .map_or(false, |g| g.has_edge_from_node_ids(src, dst))
                 {
-                    sampled = xorshift(sampled);
                     continue;
                 }
 
-                let edge_type = if return_edge_types {
-                    Some(sampled as EdgeTypeT % edge_types_number)
-                } else {
-                    None
-                };
-
-                return (
-                    src,
-                    get_node_type_ids(src),
-                    dst,
-                    get_node_type_ids(dst),
-                    get_edge_metrics(src, dst),
-                    edge_type,
-                    false,
-                );
+                return (src, dst, false);
             }
+
             panic!(
                 concat!(
                     "Executed more than {} attempts to sample a negative edge.\n",
@@ -493,6 +414,255 @@ impl Graph {
     }
 
     #[manual_binding]
+    /// Returns n-ple with index to build numpy array, source node, source node type, destination node, destination node type, edge type and whether this edge is real or artificial.
+    ///
+    /// # Arguments
+    /// * `random_state`: u64 - Random state of the batch to generate.
+    /// * `batch_size`: usize - The maximal size of the batch to generate,
+    /// * `return_node_types`: bool - Whether to return the source and destination nodes node types.
+    /// * `return_edge_metrics`: bool - Whether to return the edge metrics available for both positive and negative edges.
+    /// * `sample_only_edges_with_heterogeneous_node_types`: bool - Whether to sample negative edges only with source and destination nodes that have different node types.
+    /// * `negative_samples_rate`: Option<f64> - The component of netagetive samples to use.
+    /// * `avoid_false_negatives`: Option<bool> - Whether to remove the false negatives when generated. It should be left to false, as it has very limited impact on the training, but enabling this will slow things down.
+    /// * `maximal_sampling_attempts`: Option<usize> - Number of attempts to execute to sample the negative edges.
+    /// * `use_zipfian_sampling`: Option<bool> - Whether to sample the nodes using zipfian distribution. By default True. Not using this may cause significant biases.
+    /// * `support`: Option<&'a Graph> - Graph to use to compute the edge metrics. When not provided, the current graph (self) is used.
+    /// * `graph_to_avoid`: &'a Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,
+    ///
+    /// # Raises
+    /// * If the given amount of negative samples is not a positive finite real value.
+    /// * If node types are requested but the graph does not contain any.
+    /// * If the `sample_only_edges_with_heterogeneous_node_types` argument is provided as true, but the graph does not have node types.
+    ///
+    pub fn par_iter_attributed_edge_prediction_mini_batch<'a>(
+        &'a self,
+        random_state: u64,
+        batch_size: usize,
+        return_node_types: bool,
+        return_edge_metrics: bool,
+        sample_only_edges_with_heterogeneous_node_types: bool,
+        negative_samples_rate: Option<f64>,
+        avoid_false_negatives: Option<bool>,
+        maximal_sampling_attempts: Option<usize>,
+        use_zipfian_sampling: Option<bool>,
+        support: Option<&'a Graph>,
+        graph_to_avoid: Option<&'a Graph>,
+    ) -> Result<
+        impl IndexedParallelIterator<
+                Item = (
+                    NodeT,
+                    Option<Vec<NodeTypeT>>,
+                    NodeT,
+                    Option<Vec<NodeTypeT>>,
+                    Option<Vec<f32>>,
+                    bool,
+                ),
+            > + 'a,
+    > {
+        let support = support.unwrap_or(&self);
+
+        Ok(self
+            .par_iter_edge_prediction_mini_batch(
+                random_state,
+                batch_size,
+                sample_only_edges_with_heterogeneous_node_types,
+                negative_samples_rate,
+                avoid_false_negatives,
+                maximal_sampling_attempts,
+                use_zipfian_sampling,
+                Some(&support),
+                graph_to_avoid,
+            )?
+            .map(move |(src, dst, label)| {
+                (
+                    src,
+                    if return_node_types {
+                        unsafe { self.get_unchecked_edge_prediction_node_type_ids(src) }
+                    } else {
+                        None
+                    },
+                    dst,
+                    if return_node_types {
+                        unsafe { self.get_unchecked_edge_prediction_node_type_ids(dst) }
+                    } else {
+                        None
+                    },
+                    if return_edge_metrics {
+                        Some(
+                            support
+                                .get_all_edge_metrics_from_node_ids_tuple(src, dst, true)
+                                .unwrap(),
+                        )
+                    } else {
+                        None
+                    },
+                    label,
+                )
+            }))
+    }
+
+    /// Returns n-ple with terms used for training a siamese network.
+    ///
+    /// # Arguments
+    /// * `random_state`: u64 - The random state to reproduce the batch.
+    /// * `batch_size`: usize - The maximal size of the batch to generate,
+    /// * `use_zipfian_sampling`: Option<bool> - Whether to sample the nodes using zipfian distribution. By default True. Not using this may cause significant biases.
+    ///
+    pub fn par_iter_siamese_mini_batch(
+        &self,
+        random_state: u64,
+        batch_size: usize,
+        use_zipfian_sampling: Option<bool>,
+    ) -> impl IndexedParallelIterator<Item = (NodeT, NodeT, NodeT, NodeT, Option<EdgeTypeT>)> + '_
+    {
+        let use_zipfian_sampling = use_zipfian_sampling.unwrap_or(true);
+        let random_state = splitmix64(random_state);
+        (0..batch_size).into_par_iter().map(move |i| unsafe {
+            let mut random_state = splitmix64(random_state + i as u64);
+            let edge_id = self.get_random_edge_id(random_state);
+            let (src, dst) = self.get_unchecked_node_ids_from_edge_id(edge_id);
+            random_state = splitmix64(random_state);
+            let (not_src, not_dst) = if use_zipfian_sampling {
+                (
+                    self.get_random_zipfian_node(random_state),
+                    self.get_random_zipfian_node(random_state.wrapping_mul(2)),
+                )
+            } else {
+                (
+                    self.get_random_node(random_state),
+                    self.get_random_node(random_state.wrapping_mul(2)),
+                )
+            };
+            (
+                src,
+                dst,
+                not_src,
+                not_dst,
+                self.get_unchecked_edge_type_id_from_edge_id(edge_id),
+            )
+        })
+    }
+
+    /// Returns n-ple with terms used for training a kgsiamese network.
+    ///
+    /// # Arguments
+    /// * `random_state`: u64 - The random state to reproduce the batch.
+    /// * `batch_size`: usize - The maximal size of the batch to generate,
+    /// * `use_zipfian_sampling`: Option<bool> - Whether to sample the nodes using zipfian distribution. By default True. Not using this may cause significant biases.
+    ///
+    pub fn par_iter_kgsiamese_mini_batch(
+        &self,
+        random_state: u64,
+        batch_size: usize,
+        use_zipfian_sampling: Option<bool>,
+    ) -> impl IndexedParallelIterator<
+        Item = (
+            NodeT,
+            NodeT,
+            NodeT,
+            NodeT,
+            Option<Vec<NodeTypeT>>,
+            Option<Vec<NodeTypeT>>,
+            Option<Vec<NodeTypeT>>,
+            Option<Vec<NodeTypeT>>,
+            Option<EdgeTypeT>,
+        ),
+    > + '_ {
+        self.par_iter_siamese_mini_batch(random_state, batch_size, use_zipfian_sampling)
+            .map(move |(src, dst, not_src, not_dst, edge_type)| unsafe {
+                (
+                    src,
+                    dst,
+                    not_src,
+                    not_dst,
+                    self.get_unchecked_node_type_ids_from_node_id(src)
+                        .map(|x| x.clone()),
+                    self.get_unchecked_node_type_ids_from_node_id(dst)
+                        .map(|x| x.clone()),
+                    self.get_unchecked_node_type_ids_from_node_id(not_src)
+                        .map(|x| x.clone()),
+                    self.get_unchecked_node_type_ids_from_node_id(not_dst)
+                        .map(|x| x.clone()),
+                    edge_type,
+                )
+            })
+    }
+
+    /// Returns n-ple with index to build numpy array, source node, source node type, destination node, destination node type.
+    ///
+    /// # Arguments
+    /// * `idx`: usize - The index of the batch to generate,
+    /// * `graph`: &Graph - The graph from which to extract the edge IDs.
+    /// * `batch_size`: usize - The maximal size of the batch to generate,
+    /// * `return_node_types`: bool - Whether to return the source and destination nodes node types.
+    /// * `return_edge_types`: bool - Whether to return the edge types.
+    /// * `return_edge_metrics`: bool - Whether to return the edge metrics.
+    ///
+    /// # Raises
+    /// * If node types are requested but the graph does not contain any.
+    /// * If edge types are requested but the graph does not contain any.
+    ///
+    pub fn get_edge_prediction_chunk_mini_batch<'a>(
+        &'a self,
+        idx: usize,
+        graph: &'a Graph,
+        batch_size: usize,
+        return_node_types: bool,
+        return_edge_types: bool,
+        return_edge_metrics: bool,
+    ) -> Result<
+        impl IndexedParallelIterator<
+                Item = (
+                    NodeT,
+                    Option<Vec<NodeTypeT>>,
+                    NodeT,
+                    Option<Vec<NodeTypeT>>,
+                    Option<EdgeTypeT>,
+                    Option<Vec<f32>>,
+                ),
+            > + 'a,
+    > {
+        if return_node_types {
+            self.must_have_known_node_types()?;
+        }
+        if return_edge_types {
+            self.must_have_known_edge_types()?;
+        }
+        Ok((batch_size * idx
+            ..(batch_size * (idx + 1)).min(graph.get_number_of_directed_edges() as usize))
+            .into_par_iter()
+            .map(move |edge_id| unsafe {
+                let (src, dst) = graph.get_unchecked_node_ids_from_edge_id(edge_id as u64);
+                (
+                    src,
+                    if return_node_types {
+                        self.get_unchecked_edge_prediction_node_type_ids(src)
+                    } else {
+                        None
+                    },
+                    dst,
+                    if return_node_types {
+                        self.get_unchecked_edge_prediction_node_type_ids(dst)
+                    } else {
+                        None
+                    },
+                    if return_edge_types {
+                        self.get_edge_type_id_from_edge_node_ids(src, dst)
+                            .unwrap_or(None)
+                    } else {
+                        None
+                    },
+                    if return_edge_metrics {
+                        Some(
+                            self.get_unchecked_all_edge_metrics_from_node_ids_tuple(src, dst, true),
+                        )
+                    } else {
+                        None
+                    },
+                )
+            }))
+    }
+
     /// Returns triple with the degrees of source nodes, destination nodes and labels for training model for link prediction.
     /// This method is just for setting the lowerbound on the simplest possible model.
     ///
@@ -501,35 +671,41 @@ impl Graph {
     /// * `idx`: u64 - The index of the batch to generate, behaves like a random random_state,
     /// * `batch_size`: usize - The maximal size of the batch to generate,
     /// * `normalize`: bool - Divide the degrees by the max, this way the values are in [0, 1],
-    /// * `negative_samples`: f64 - The component of netagetive samples to use,
+    /// * `negative_samples`: Option<f64> - The component of netagetive samples to use,
     /// * `avoid_false_negatives`: bool - Whether to remove the false negatives when generated. It should be left to false, as it has very limited impact on the training, but enabling this will slow things down.
     /// * `maximal_sampling_attempts`: usize - Number of attempts to execute to sample the negative edges.
     /// * `shuffle`: Option<bool> - Whether to shuffle the samples within the batch.
+    /// * `sample_only_edges_with_heterogeneous_node_types`: Option<bool> - Whether to sample negative edges only with source and destination nodes that have different node types.
+    /// * `use_zipfian_sampling`: Option<bool> - Whether to sample the nodes using zipfian distribution. By default True. Not using this may cause significant biases.
+    /// * `support`: Option<&'a Graph> - Graph to use to compute the edge metrics. When not provided, the current graph (self) is used.
     /// * `graph_to_avoid`: &'a Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,
     ///
     /// # Raises
     /// * If the given amount of negative samples is not a positive finite real value.
     pub fn link_prediction_degrees<'a>(
         &'a self,
-        idx: u64,
-        batch_size: Option<usize>,
+        random_state: u64,
+        batch_size: usize,
         normalize: Option<bool>,
         negative_samples: Option<f64>,
         avoid_false_negatives: Option<bool>,
         maximal_sampling_attempts: Option<usize>,
-        shuffle: Option<bool>,
+        sample_only_edges_with_heterogeneous_node_types: bool,
+        use_zipfian_sampling: Option<bool>,
+        support: Option<&'a Graph>,
         graph_to_avoid: Option<&'a Graph>,
     ) -> Result<impl ParallelIterator<Item = (f64, f64, bool)> + 'a> {
-        let iter = self.get_edge_prediction_mini_batch(
-            idx,
+        let iter = self.par_iter_attributed_edge_prediction_mini_batch(
+            random_state,
             batch_size,
+            false,
+            false,
+            sample_only_edges_with_heterogeneous_node_types,
             negative_samples,
-            Some(false),
-            Some(false),
-            Some(false),
             avoid_false_negatives,
             maximal_sampling_attempts,
-            shuffle,
+            use_zipfian_sampling,
+            support,
             graph_to_avoid,
         )?;
 
@@ -540,97 +716,13 @@ impl Graph {
             false => 1.0,
         };
 
-        Ok(iter.map(move |(src, _, dst, _, _, _, label)| unsafe {
+        Ok(iter.map(move |(src, _, dst, _, _, label)| unsafe {
             (
                 self.get_unchecked_node_degree_from_node_id(src) as f64 / max_degree,
                 self.get_unchecked_node_degree_from_node_id(dst) as f64 / max_degree,
                 label,
             )
         }))
-    }
-
-    #[manual_binding]
-    /// Returns all available edge prediction metrics for given edges.
-    ///
-    /// The metrics returned are, in order:
-    /// - Adamic Adar index
-    /// - Jaccard Coefficient
-    /// - Resource Allocation index
-    /// - Preferential attachment score
-    ///
-    /// # Arguments
-    /// `source_node_ids`: Vec<NodeT> - List of source node IDs.
-    /// `destination_node_ids`: Vec<NodeT> - List of destination node IDs.
-    /// `normalize`: Option<bool> - Whether to normalize the edge prediction metrics.
-    /// `verbose`: Option<bool> - Whether to show a loading bar.
-    ///
-    /// # Implementative details
-    /// We do not check whether node IDs exist in the graph or not
-    /// in this method because it would take too much time.
-    ///
-    /// # Safety
-    /// If one of the given nodes does not exists in the graph, i.e. that is
-    /// higher than the number of nodes in the graph, the method will panic
-    /// and crash. Additionally, we also do not check if the two provided
-    /// lists have the same length.
-    ///
-    pub unsafe fn par_iter_unchecked_edge_prediction_metrics(
-        &self,
-        source_node_ids: Vec<NodeT>,
-        destination_node_ids: Vec<NodeT>,
-        normalize: Option<bool>,
-        verbose: Option<bool>,
-    ) -> impl IndexedParallelIterator<Item = Vec<f64>> + '_ {
-        let normalize = normalize.unwrap_or(true);
-        let verbose = verbose.unwrap_or(true);
-        let pb = get_loading_bar(verbose, "Computing edge metrics", source_node_ids.len());
-        source_node_ids
-            .into_par_iter()
-            .zip(destination_node_ids.into_par_iter())
-            .progress_with(pb)
-            .map(move |(source_node_id, destination_node_id)| {
-                self.get_unchecked_all_edge_metrics_from_node_ids(
-                    source_node_id,
-                    destination_node_id,
-                    normalize,
-                )
-            })
-    }
-
-    #[manual_binding]
-    /// Returns all available edge prediction metrics for all edges.
-    ///
-    /// The metrics returned are, in order:
-    /// - Adamic Adar index
-    /// - Jaccard Coefficient
-    /// - Resource Allocation index
-    /// - Preferential attachment score
-    ///
-    /// # Arguments
-    /// `normalize`: Option<bool> - Whether to normalize the edge prediction metrics.
-    /// `verbose`: Option<bool> - Whether to show a loading bar.
-    ///
-    pub fn par_iter_edge_prediction_metrics(
-        &self,
-        normalize: Option<bool>,
-        verbose: Option<bool>,
-    ) -> impl IndexedParallelIterator<Item = Vec<f64>> + '_ {
-        let normalize = normalize.unwrap_or(true);
-        let verbose = verbose.unwrap_or(true);
-        let pb = get_loading_bar(
-            verbose,
-            "Computing edge metrics",
-            self.get_directed_edges_number() as usize,
-        );
-        self.par_iter_directed_edge_node_ids()
-            .progress_with(pb)
-            .map(move |(_, source_node_id, destination_node_id)| unsafe {
-                self.get_unchecked_all_edge_metrics_from_node_ids(
-                    source_node_id,
-                    destination_node_id,
-                    normalize,
-                )
-            })
     }
 
     #[fuzz_type(iterations: Option<u8>)]

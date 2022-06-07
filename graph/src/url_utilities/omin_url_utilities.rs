@@ -7,7 +7,7 @@ use super::*;
 ///
 /// # Example
 /// To validate a node you can use:
-/// ```rust
+/// ```ignore
 /// # use graph::*;
 /// let omim_node_name = "OMIM:611636";
 /// let not_omim_node_name = "PizzaQuattroStagioni";

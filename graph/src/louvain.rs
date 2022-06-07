@@ -105,7 +105,7 @@ impl Graph {
             .get_total_edge_weights()
             // If the graph does not start as a weighted graph, we use the default weight
             // that was provided by the user.
-            .unwrap_or_else(|_| self.get_directed_edges_number() as f64);
+            .unwrap_or_else(|_| self.get_number_of_directed_edges() as f64);
         // We need also the double of the total edge weights.
         let total_edge_weights_doubled = total_edge_weights * 2.0;
         // Since we also need it, we also compute the total edge weights squared.
@@ -340,8 +340,8 @@ impl Graph {
                         }
                     }),
             ),
-            Vocabulary::from_range(0..communities_number),
-            None,
+            Arc::new(Vocabulary::from_range(0..communities_number)),
+            Arc::new(None),
             None,
             true,
             self.is_directed(),
@@ -429,7 +429,7 @@ impl Graph {
             .get_total_edge_weights()
             // If the graph does not start as a weighted graph, we use the default weight
             // that was provided by the user.
-            .unwrap_or_else(|_| self.get_directed_edges_number() as f64);
+            .unwrap_or_else(|_| self.get_number_of_directed_edges() as f64);
         // Lambda to set the logic of filtering nodes of the single node community
         // ony one time.
         let have_same_community = |src: &NodeT, dst: &NodeT| -> bool {
@@ -454,8 +454,7 @@ impl Graph {
                 .filter(|(_, src, dst)| have_same_community(src, dst))
                 .map(|(_, src, dst)| compute_modularity(src, dst, 1.0))
                 .sum::<f64>()
-        } / (factor
-            * total_edge_weights))
+        } / (factor * total_edge_weights))
     }
 
     /// Returns the directed modularity of the graph from the given memberships.

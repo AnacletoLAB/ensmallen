@@ -34,26 +34,25 @@ macro_rules! extract_value {
     };
 }
 
-// TODO: create a cleaner way.
 #[macro_export]
 macro_rules! extract_value_rust_result {
     ($kwargs: ident, $key: literal, $_type: ty) => {
-        $kwargs
+        pe!($kwargs
             .get_item($key)
-            .map_or(Ok::<_, String>(None), |value| {
+            .map_or(Ok::<_, PyErr>(None), |value| {
                 Ok(if value.get_type().name().unwrap() == "NoneType" {
                     None
                 } else {
-                    Some(value.extract::<$_type>().map_err(|_| {
+                    Some(pe!(value.extract::<$_type>().map_err(|_| {
                         format!(
                             "The value passed as parameter {} cannot be casted from {} to {}.",
                             $key,
                             value.get_type().name().unwrap(),
                             stringify!($_type)
                         )
-                    })?)
+                    }))?)
                 })
-            })?
+            }))?
     };
 }
 
@@ -85,6 +84,7 @@ macro_rules! to_ndarray_2d {
     };
 }
 
+/// Return the parameters valid when building a walk parameter object.
 pub fn build_walk_parameters_list<'a>(parameters: &[&'a str]) -> Vec<&'a str> {
     let default = &[
         "return_weight",
@@ -95,6 +95,8 @@ pub fn build_walk_parameters_list<'a>(parameters: &[&'a str]) -> Vec<&'a str> {
         "random_state",
         "iterations",
         "dense_node_mapping",
+        "normalize_by_degree",
+        "walk_length",
     ];
     default
         .into_iter()

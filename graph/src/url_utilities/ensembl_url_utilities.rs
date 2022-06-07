@@ -7,7 +7,7 @@ use super::*;
 ///
 /// # Example
 /// To validate a node you can use:
-/// ```rust
+/// ```ignore
 /// # use graph::*;
 /// let ensembl_node_name1 = "ENSEMBL:ENSACAG00000000017";
 /// let ensembl_node_name2 = "ENSACAG00000000017";
@@ -26,7 +26,7 @@ pub fn is_valid_ensembl_node_name(node_name: &str) -> bool {
         Some(":"),
         Some("ENS"),
         None,
-        None,
+        Some(11),
     )
     .is_ok()
 }

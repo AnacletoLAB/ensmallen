@@ -123,6 +123,21 @@ impl Graph {
         )
     }
 
+    /// Returns whether the graph has constant non-zero node degrees.
+    pub fn has_constant_non_zero_node_degrees(&self) -> bool {
+        let maximum_node_degree = self.get_maximum_node_degree().unwrap_or(0);
+        let minimum_node_degree = self.get_minimum_node_degree().unwrap_or(0);
+        // If the graph is empty or the graph is completely homogeneous we return True.
+        if maximum_node_degree == 0 || minimum_node_degree == minimum_node_degree {
+            return true;
+        }
+        // Otherwise we search for a node degree that is non-zero
+        // and different from the maximum node degree.
+        self.par_iter_node_degrees().all(|node_degree|{
+            node_degree == 0 || node_degree == maximum_node_degree
+        })
+    }
+
     /// Returns boolean representing whether graph has negative weights.
     ///
     /// # Example
@@ -161,7 +176,7 @@ impl Graph {
     /// ```rust
     /// let string_ppi_with_selfloops = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// assert!(string_ppi_with_selfloops.has_selfloops());
-    /// let string_ppi_without_selfloops = string_ppi_with_selfloops.drop_selfloops();
+    /// let string_ppi_without_selfloops = string_ppi_with_selfloops.remove_selfloops();
     /// assert!(!string_ppi_without_selfloops.has_selfloops());
     /// ```
     ///
@@ -176,7 +191,7 @@ impl Graph {
     /// ```rust
     /// # let graph_with_singletons = graph::test_utilities::load_ppi(true, true, true, false, false, false);
     /// assert!(graph_with_singletons.has_disconnected_nodes());
-    /// let graph_without_singletons = graph_with_singletons.drop_singleton_nodes();
+    /// let graph_without_singletons = graph_with_singletons.remove_singleton_nodes();
     /// assert!(!graph_without_singletons.has_disconnected_nodes());
     /// ```
     pub fn has_disconnected_nodes(&self) -> bool {
@@ -189,7 +204,7 @@ impl Graph {
     /// ```rust
     /// # let graph_with_singletons = graph::test_utilities::load_ppi(true, true, true, false, false, false);
     /// assert!(graph_with_singletons.has_singleton_nodes());
-    /// let graph_without_singletons = graph_with_singletons.drop_singleton_nodes();
+    /// let graph_without_singletons = graph_with_singletons.remove_singleton_nodes();
     /// assert!(!graph_without_singletons.has_singleton_nodes());
     /// ```
     pub fn has_singleton_nodes(&self) -> bool {
@@ -264,7 +279,40 @@ impl Graph {
     /// # Raises
     /// * If the graph does not have node types.
     pub fn has_homogeneous_node_types(&self) -> Result<bool> {
-        Ok(self.get_node_types_number()? == 1)
+        Ok(self
+            .node_types
+            .as_ref()
+            .as_ref()
+            .map_or(false, |node_type_ids| {
+                node_type_ids
+                    .counts
+                    .iter()
+                    .any(|&node_type_count| node_type_count == self.get_nodes_number())
+            }))
+    }
+
+    /// Returns whether the nodes have exclusively homogenous node types.
+    ///
+    /// # Raises
+    /// * If the graph does not have node types.
+    pub fn has_exclusively_homogeneous_node_types(&self) -> Result<bool> {
+        Ok(self
+            .node_types
+            .as_ref()
+            .as_ref()
+            .map_or(false, |node_type_ids| {
+                node_type_ids.counts.iter().all(|&node_type_count| {
+                    node_type_count == 0 || node_type_count == self.get_nodes_number()
+                })
+            }))
+    }
+
+    /// Returns whether the nodes have an homogenous node ontology.
+    pub fn has_homogeneous_node_ontologies(&self) -> Result<bool> {
+        let first_node_ontology = self.get_ontology_from_node_id(0)?;
+        Ok(self
+            .par_iter_node_ontologies()
+            .all(|ontology| ontology == first_node_ontology))
     }
 
     /// Returns whether the edges have an homogenous edge type.
@@ -332,6 +380,18 @@ impl Graph {
     /// Return if there are multiple edges between two nodes
     pub fn is_multigraph(&self) -> bool {
         self.get_parallel_edges_number() > 0
+    }
+
+    /// Return whether at least a node has a known ontology.
+    pub fn has_node_ontologies(&self) -> bool {
+        self.par_iter_node_ontologies()
+            .any(|ontology| ontology.is_some())
+    }
+
+    /// Return whether at least a node has an unknown ontology.
+    pub fn has_unknown_node_ontologies(&self) -> bool {
+        self.par_iter_node_ontologies()
+            .any(|ontology| ontology.is_none())
     }
 
     #[cache_property(nodes_sorted_by_decreasing_outbound_node_degree)]
@@ -412,5 +472,25 @@ impl Graph {
             self.get_unchecked_node_degree_from_node_id(node_id)
                 >= self.get_unchecked_node_degree_from_node_id(node_id - 1)
         })
+    }
+
+    /// Returns whether the destinations time-memory tradeoff is enabled.
+    pub fn has_destinations_tradeoff_enabled(&self) -> bool {
+        self.destinations.is_some()
+    }
+
+    /// Returns whether the sources time-memory tradeoff is enabled.
+    pub fn has_sources_tradeoff_enabled(&self) -> bool {
+        self.sources.is_some()
+    }
+
+    /// Returns whether the cumulative_node_degrees time-memory tradeoff is enabled.
+    pub fn has_cumulative_node_degrees_tradeoff_enabled(&self) -> bool {
+        self.cumulative_node_degrees.is_some()
+    }
+
+    /// Returns whether the reciprocal_sqrt_degrees time-memory tradeoff is enabled.
+    pub fn has_reciprocal_sqrt_degrees_tradeoff_enabled(&self) -> bool {
+        self.reciprocal_sqrt_degrees.is_some()
     }
 }

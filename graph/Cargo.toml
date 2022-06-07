@@ -20,15 +20,19 @@ linecount= "0.1.0"
 criterion = "0.3"
 
 [dependencies]
+libc = "0.2.109"
 crossbeam = "0.8.0"
 log = "0.4.8"
+regex = "1.5.4"
+lazy_static="1.4.0"
 env_logger = "0.7.1"
 rayon = "1.1"
 serde = "1.0.130"
 rand = {version="0.7", features = ["small_rng"] }
 itertools = "0.10.0"
 permutation = "0.2.5"
-counter = "0.5.2"
+tokenizers = "0.11.0"
+counter = "=0.5.2"
 is_sorted = "0.1.1"
 derive-getters = "0.1.0"
 bitvec = {version="0.22", features=["atomic"]}
@@ -42,6 +46,8 @@ atomic_float = "0.1.0"
 num-traits = "0.2.14"
 v_htmlescape = "0.13.1"
 linked_hash_set = "0.1.4"
+hashbrown = {version="0.12.1", features=["rayon"]}
+funty = "1.2.0"
 indicatif = {version="0.16.0", features = ["rayon"]}
 arbitrary = { version = "0.4.5", features = ["derive"] }
 roaring = { git = "https://github.com/zommiommy/roaring-rs", branch = "master" }
@@ -52,6 +58,9 @@ atoi_radix10 = { git = "https://github.com/gilescope/atoi_radix10"}
 
 [target.'cfg(unix)'.dependencies]
 nix = "0.22.0"
+
+[target.'cfg(windows)'.dependencies]
+windows = { version = "0.28.0", features = ["alloc",  "Win32_System_Memory", "Win32_Storage_FileSystem", "Win32_Foundation", "Win32_Security"]}
 
 [profile.release]
 opt-level = 3

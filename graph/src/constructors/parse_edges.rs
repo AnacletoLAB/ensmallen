@@ -33,9 +33,7 @@ macro_rules! parse_unsorted_edge_list {
         let edges_number = $unsorted_edge_list.len();
         // We create the empty vectors for edge types and weights
         $(
-            let $results = ThreadDataRaceAware {
-                value: std::cell::UnsafeCell::new(vec![$default; edges_number]),
-            };
+            let $results = ThreadDataRaceAware::new(vec![$default; edges_number]);
         )*
         // We also create the builder for the elias fano
         let node_bits = get_node_bits($nodes_number as NodeT);
@@ -177,9 +175,7 @@ macro_rules! parse_sorted_string_edge_list {
         let mut node_parser = EdgeNodeNamesParser::new($nodes);
         // First we create the weights and edge types vectors
         $(
-            let $results = ThreadDataRaceAware {
-                value: std::cell::UnsafeCell::new(vec![$default; $edges_number as usize]),
-            };
+            let $results = ThreadDataRaceAware::new(vec![$default; $edges_number as usize]);
         )*
         // We also create the builder for the elias fano
         let node_bits = get_node_bits($nodes_number as NodeT);
@@ -282,9 +278,7 @@ macro_rules! parse_sorted_integer_edge_list {
     ) => {{
         // First we create the weights and edge types vectors
         $(
-            let $results = ThreadDataRaceAware {
-                value: std::cell::UnsafeCell::new(vec![$default; $edges_number as usize]),
-            };
+            let $results = ThreadDataRaceAware::new(vec![$default; $edges_number as usize]);
         )*
         // We also create the builder for the elias fano
         let node_bits = get_node_bits($nodes_number as NodeT);
@@ -464,10 +458,11 @@ pub(crate) fn parse_string_edges(
         (false, true, false) => EdgeNodeNamesParser::get_unchecked,
         (false, false, false) => EdgeNodeNamesParser::get,
         (_, true, true) => EdgeNodeNamesParser::to_numeric_unchecked,
-        (_, false, true) => EdgeNodeNamesParser::to_numeric,
+        (true, false, true) => EdgeNodeNamesParser::to_numeric_with_insertion,
+        (false, false, true) => EdgeNodeNamesParser::to_numeric_checked,
     };
 
-    let edge_types_vocabulary = edge_types_vocabulary.unwrap_or(Vocabulary::new());
+    let edge_types_vocabulary = edge_types_vocabulary.unwrap_or(Vocabulary::new(true));
 
     // Here we handle the collection of the iterator
     // in a way to collect only non-None values and hence avoid

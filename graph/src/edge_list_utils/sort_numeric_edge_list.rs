@@ -1,4 +1,5 @@
 use crate::{EdgeFileReader, Result};
+use std::path::PathBuf;
 
 /// Sort given numeric edge list in place using the sort command.
 ///
@@ -10,7 +11,7 @@ use crate::{EdgeFileReader, Result};
 /// # Arguments
 /// * `path`: &str - The path from where to load the edge list.
 /// * `target_path`: &str - The where to store the edge list.
-/// * `separator`: Option<String> - The separator for the rows in the edge list.
+/// * `separator`: Option<char> - The separator for the rows in the edge list.
 /// * `header`: Option<bool> - Whether the edge list has an header.
 /// * `sources_column`: Option<String> - The column name to use for the source nodes.
 /// * `sources_column_number`: Option<usize> - The column number to use for the source nodes.
@@ -20,11 +21,12 @@ use crate::{EdgeFileReader, Result};
 /// * `edge_types_column_number`: Option<usize> - The column number to use for the edge types.
 /// * `rows_to_skip`: Option<usize> - Number of rows to skip in the edge list.
 /// * `skip_edge_types_if_unavailable`: Option<bool> - Whether to automatically skip the edge types if they are not available.
+/// * `sort_temporary_directory`: Option<String> - Where to store the temporary files that are created during parallel sorting.
 ///
 pub fn sort_numeric_edge_list(
     path: &str,
     target_path: &str,
-    separator: Option<String>,
+    separator: Option<char>,
     header: Option<bool>,
     sources_column: Option<String>,
     sources_column_number: Option<usize>,
@@ -34,6 +36,7 @@ pub fn sort_numeric_edge_list(
     edge_types_column_number: Option<usize>,
     rows_to_skip: Option<usize>,
     skip_edge_types_if_unavailable: Option<bool>,
+    sort_temporary_directory: Option<String>,
 ) -> Result<()> {
     if cfg!(target_os = "windows") {
         return Err(concat!(
@@ -68,6 +71,14 @@ pub fn sort_numeric_edge_list(
         .to_string());
     }
 
+    // get the directory of the target_path, this will be the default
+    // for the sort temportary files. If the user give some absurd path
+    // that doesn't have a parent, we default to the current directory.
+    let target_folder = PathBuf::from(target_path)
+        .parent()
+        .map(|x| x.to_str().unwrap().to_string())
+        .unwrap_or(".".into());
+
     let arguments = vec![
         // We specify the separator of the fields
         format!("--field-separator={}", file_reader.get_separator()),
@@ -88,6 +99,10 @@ pub fn sort_numeric_edge_list(
         } else {
             "".to_owned()
         },
+        format!(
+            "--temporary-directory={}",
+            sort_temporary_directory.unwrap_or(target_folder)
+        ),
         // The values in the keys are numeric
         "--numeric-sort".to_owned(),
         // We want to remove duplicates
@@ -105,7 +120,17 @@ pub fn sort_numeric_edge_list(
 
     // We check if the operation went fine.
     match sort_command_status {
-        Ok(_) => Ok(()),
+        Ok(command_status) => match command_status.exit_ok() {
+            Ok(_) => Ok(()),
+            Err(_) => Err(concat!(
+                "Something went wrong while parsing the edge list file, often ",
+                "it is caused by limited space on disk on the interested device.\n",
+                "An error from the sort routine should have been printed on the terminal ",
+                "where you are executing this command. If you are on a Jupyter Notebook, ",
+                "control the kernel of the Jupyter."
+            )
+            .to_string()),
+        },
         Err(_) => Err("Could not execute sort inplace on the provided edge list.".to_owned()),
     }
 }
@@ -119,7 +144,7 @@ pub fn sort_numeric_edge_list(
 ///
 /// # Arguments
 /// * `path`: &str - The path from where to load the edge list.
-/// * `separator`: Option<String> - The separator for the rows in the edge list.
+/// * `separator`: Option<char> - The separator for the rows in the edge list.
 /// * `header`: Option<bool> - Whether the edge list has an header.
 /// * `sources_column`: Option<String> - The column name to use for the source nodes.
 /// * `sources_column_number`: Option<usize> - The column number to use for the source nodes.
@@ -129,10 +154,11 @@ pub fn sort_numeric_edge_list(
 /// * `edge_types_column_number`: Option<usize> - The column number to use for the edge types.
 /// * `rows_to_skip`: Option<usize> - Number of rows to skip in the edge list.
 /// * `skip_edge_types_if_unavailable`: Option<bool> - Whether to automatically skip the edge types if they are not available.
+/// * `sort_temporary_directory`: Option<String> - Where to store the temporary files that are created during parallel sorting.
 ///
 pub fn sort_numeric_edge_list_inplace(
     path: &str,
-    separator: Option<String>,
+    separator: Option<char>,
     header: Option<bool>,
     sources_column: Option<String>,
     sources_column_number: Option<usize>,
@@ -142,6 +168,7 @@ pub fn sort_numeric_edge_list_inplace(
     edge_types_column_number: Option<usize>,
     rows_to_skip: Option<usize>,
     skip_edge_types_if_unavailable: Option<bool>,
+    sort_temporary_directory: Option<String>,
 ) -> Result<()> {
     sort_numeric_edge_list(
         path,
@@ -156,5 +183,6 @@ pub fn sort_numeric_edge_list_inplace(
         edge_types_column_number,
         rows_to_skip,
         skip_edge_types_if_unavailable,
+        sort_temporary_directory,
     )
 }

@@ -6,21 +6,21 @@ impl Graph {
     /// Returns set of edges forming the spanning tree of given graph.
     ///
     /// Parameters
-    /// ------------------------
-    /// verbose: bool = True,
+    /// ----------
+    /// verbose: bool = True
     ///     Wether to show a loading bar.
     ///
     /// Raises
-    /// ------------------------
-    /// ValueError,
+    /// ------
+    /// ValueError
     ///     If the given graph is not undirected.
     ///
     /// Returns
-    /// ------------------------
+    /// -------
     /// Numpy array of tuples of NodeIds forming the spanning tree.
     ///
     /// References
-    /// ------------------------
+    /// ----------
     /// This is the implementaiton of the algorithm presented in the paper
     /// A Fast, Parallel Spanning Tree Algorithm for Symmetric Multiprocessors
     /// by David A. Bader and Guojing Cong.

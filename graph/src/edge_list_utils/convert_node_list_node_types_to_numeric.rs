@@ -3,15 +3,65 @@ use crate::{
     TypeFileReader, TypeFileWriter, Vocabulary,
 };
 
+/// Converts the node list at given path to numeric saving in stream to file. Furthermore, returns the number of nodes that were written and their node types if any.
+///
+/// # Arguments
+/// `original_node_type_path`: Option<String> - Path to the original list of node types.
+/// `original_node_type_list_separator`: Option<char> - Separator to be used for the original node type list.
+/// `original_node_types_column_number`: Option<usize> - Number of the node types column to be used for the original node types list.
+/// `original_node_types_column`: Option<String> - Name of the node types column to be used for the original node types list.
+/// `node_types_number`: Option<NodeTypeT> - Number of node types present in the provided original list of node types. If provided, it will allow to make assumptions and to load the node types faster.
+/// `original_numeric_node_type_ids`: Option<bool> - Whether to load the node types as numeric.
+/// `original_minimum_node_type_id`: Option<NodeTypeT> - The minimum numeric node type ID. If provided, it will allow for additional assumptions in the creation of the node types vocabulary.
+/// `original_node_type_list_header`: Option<bool> - Whether the provided node type list has a header.
+/// `original_node_type_list_support_balanced_quotes`: Option<bool> - Whether to support balanced quotes while reading the node type list.
+/// `original_node_type_list_rows_to_skip`: Option<usize> - Number of rows to skip before starting to parse the file for the provided node type list file.
+/// `original_node_type_list_is_correct`: Option<bool> - Whether is it safe to assume that the provided node type list is correct.
+/// `original_node_type_list_max_rows_number`: Option<usize> - Maximum number of rows to be read in the provided original node type list.
+/// `original_node_type_list_comment_symbol`: Option<String> - Symbol to be used to skip rows starting with it.
+/// `original_load_node_type_list_in_parallel`: Option<bool> - Whether to load the node type list in parallel.
+/// `target_node_type_list_path`: Option<String> - Path where to store the parsed node types (if any).
+/// `target_node_type_list_separator`: Option<char> - Separator to be used for the target node type list.
+/// `target_node_type_list_header`: Option<bool> - Whether to add header when writing the target node type list.
+/// `target_node_type_list_node_types_column`: Option<String> - Name of the column of the node types in the target node type list.
+/// `target_node_type_list_node_types_column_number`: Option<usize> - Number of the column of the node types in the target node type list.
+/// `original_node_path`: String - Path to the original list of nodes.
+/// `original_node_list_separator`: Option<char> - Separator to be used for rows of the original node list.
+/// `original_node_list_header`: Option<bool> - Whether to expect a header in the original node list file.
+/// `original_node_list_support_balanced_quotes`: Option<bool> - Whether to support balanced quotes while reading the node list.
+/// `node_list_rows_to_skip`: Option<usize> - Number of rows to skip before starting to parse the original node list.
+/// `node_list_max_rows_number`: Option<usize> - Maximum number of rows to read from the origina node list.
+/// `node_list_comment_symbol`: Option<String> - Symbol to use to skip rows starting with it in the original node list.
+/// `default_node_type`: Option<String> - Default node type to be used when none are provided or are missing for some nodes.
+/// `original_nodes_column_number`: Option<usize> - Number of the column for the node name in the original node list.
+/// `original_nodes_column`: Option<String> - Name of the column for the node name in the original node list.
+/// `original_node_types_separator`: Option<char> - Separator to be used for the node types within the original node list.
+/// `original_node_list_node_types_column_number`: Option<usize> - Number of the column for the node types in the original node list.
+/// `original_node_list_node_types_column`: Option<String> - Name of the column for the node types in the original node list.
+/// `original_minimum_node_id`: Option<NodeT> - The minimum numeric node ID. If provided, it will allow for additional assumptions in the creation of the nodes vocabulary.
+/// `original_numeric_node_ids`: Option<bool> - Whether to load the node names as numeric.
+/// `original_node_list_numeric_node_type_ids`: Option<bool> - Whether to load the node type names from the original node list as numeric.
+/// `original_skip_node_types_if_unavailable`: Option<bool> - Whether to skip the node types if the provided node types column is not provided.
+/// `target_node_path`: String - Path where to store the target node paths.
+/// `target_node_list_separator`: Option<char> - Separator to be used for the target node list.
+/// `target_node_list_header`: Option<bool> - Whether to add an header to the target node list.
+/// `target_nodes_column_number`: Option<usize> - Number of the column where to store the node names.
+/// `target_nodes_column`: Option<String> - Name of the column where to store the node names.
+/// `target_node_types_separator`: Option<char> - Separator to be used for the node types within the target node list.
+/// `target_node_list_node_types_column_number`: Option<usize> - Number for the column with the node type names within the target node list.
+/// `target_node_list_node_types_column`: Option<String> - Name for the column with the node type names within the target node list.
+/// `nodes_number`: Option<NodeT> - Number of the nodes in the original node list.
+///
 pub fn convert_node_list_node_types_to_numeric(
     original_node_type_path: Option<String>,
-    original_node_type_list_separator: Option<String>,
+    original_node_type_list_separator: Option<char>,
     original_node_types_column_number: Option<usize>,
     original_node_types_column: Option<String>,
     node_types_number: Option<NodeTypeT>,
     original_numeric_node_type_ids: Option<bool>,
     original_minimum_node_type_id: Option<NodeTypeT>,
     original_node_type_list_header: Option<bool>,
+    original_node_type_list_support_balanced_quotes: Option<bool>,
     original_node_type_list_rows_to_skip: Option<usize>,
     original_node_type_list_is_correct: Option<bool>,
     original_node_type_list_max_rows_number: Option<usize>,
@@ -19,21 +69,22 @@ pub fn convert_node_list_node_types_to_numeric(
     original_load_node_type_list_in_parallel: Option<bool>,
 
     target_node_type_list_path: Option<String>,
-    target_node_type_list_separator: Option<String>,
+    target_node_type_list_separator: Option<char>,
     target_node_type_list_header: Option<bool>,
     target_node_type_list_node_types_column: Option<String>,
     target_node_type_list_node_types_column_number: Option<usize>,
 
     original_node_path: String,
-    original_node_list_separator: Option<String>,
+    original_node_list_separator: Option<char>,
     original_node_list_header: Option<bool>,
+    original_node_list_support_balanced_quotes: Option<bool>,
     node_list_rows_to_skip: Option<usize>,
     node_list_max_rows_number: Option<usize>,
     node_list_comment_symbol: Option<String>,
     default_node_type: Option<String>,
     original_nodes_column_number: Option<usize>,
     original_nodes_column: Option<String>,
-    original_node_types_separator: Option<String>,
+    original_node_types_separator: Option<char>,
     original_node_list_node_types_column_number: Option<usize>,
     original_node_list_node_types_column: Option<String>,
     original_minimum_node_id: Option<NodeT>,
@@ -42,11 +93,11 @@ pub fn convert_node_list_node_types_to_numeric(
     original_skip_node_types_if_unavailable: Option<bool>,
 
     target_node_path: String,
-    target_node_list_separator: Option<String>,
+    target_node_list_separator: Option<char>,
     target_node_list_header: Option<bool>,
     target_nodes_column_number: Option<usize>,
     target_nodes_column: Option<String>,
-    target_node_types_separator: Option<String>,
+    target_node_types_separator: Option<char>,
     target_node_list_node_types_column_number: Option<usize>,
     target_node_list_node_types_column: Option<String>,
     nodes_number: Option<NodeT>,
@@ -56,6 +107,7 @@ pub fn convert_node_list_node_types_to_numeric(
             let node_type_file_reader = TypeFileReader::new(Some(original_node_type_path))?
                 .set_comment_symbol(original_node_type_list_comment_symbol)?
                 .set_header(original_node_type_list_header)?
+                .set_support_balanced_quotes(original_node_type_list_support_balanced_quotes)?
                 .set_max_rows_number(original_node_type_list_max_rows_number)?
                 .set_rows_to_skip(original_node_type_list_rows_to_skip)?
                 .set_separator(original_node_type_list_separator)?
@@ -72,17 +124,18 @@ pub fn convert_node_list_node_types_to_numeric(
                 Some(node_type_file_reader.has_numeric_type_ids()),
                 node_type_file_reader.get_minimum_type_id(),
                 true,
-                original_node_type_list_is_correct
+                original_node_type_list_is_correct,
             )?
             .unwrap();
             node_types_vocabulary
         } else {
-            Vocabulary::new()
+            Vocabulary::new(true)
         };
 
     let nodes_reader: NodeFileReader = NodeFileReader::new(Some(original_node_path))?
         .set_comment_symbol(node_list_comment_symbol)?
         .set_header(original_node_list_header)?
+        .set_support_balanced_quotes(original_node_list_support_balanced_quotes)?
         .set_max_rows_number(node_list_max_rows_number)?
         .set_rows_to_skip(node_list_rows_to_skip)?
         .set_separator(original_node_list_separator)?
@@ -141,7 +194,7 @@ pub fn convert_node_list_node_types_to_numeric(
                             .map(|node_type_name| unsafe {
                                 node_types.unchecked_insert(node_type_name)
                             })
-                            .collect()
+                            .collect::<Vec<NodeTypeT>>()
                     }),
                     maybe_node_type_names,
                 )
@@ -160,8 +213,7 @@ pub fn convert_node_list_node_types_to_numeric(
         node_type_writer.dump_iterator(
             Some(node_types.len()),
             node_types
-                .iter_keys()
-                .enumerate()
+                .iter()
                 .map(|(node_type_id, node_type_name)| (node_type_id as NodeTypeT, node_type_name)),
         )?;
     }

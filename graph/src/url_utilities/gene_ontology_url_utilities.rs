@@ -7,7 +7,7 @@ use super::*;
 ///
 /// # Example
 /// To validate a node you can use:
-/// ```rust
+/// ```ignore
 /// # use graph::*;
 /// let go_node_name1 = "GO:0043281PHENOTYPE";
 /// let go_node_name2 = "GO:0043281";

@@ -32,7 +32,7 @@ impl Graph {
         &self,
         random_state: u64,
     ) -> impl Iterator<Item = (EdgeT, NodeT, NodeT)> + '_ {
-        let edges_number = self.get_directed_edges_number();
+        let edges_number = self.get_number_of_directed_edges();
         // We execute two times the xorshift to improve the randomness of the seed.
         let updated_random_state = rand_u64(rand_u64(splitmix64(random_state)));
         (updated_random_state..edges_number + updated_random_state).filter_map(move |i| {
@@ -62,7 +62,7 @@ impl Graph {
         let pb = get_loading_bar(
             verbose,
             format!("Building random spanning tree for {}", self.name).as_ref(),
-            self.get_directed_edges_number() as usize,
+            self.get_number_of_directed_edges() as usize,
         );
         let result: Box<dyn Iterator<Item = (NodeT, NodeT)>> =
             if let (Some(uet), _) = (undesired_edge_types, &self.edge_types) {
@@ -190,7 +190,10 @@ impl Graph {
             }
             let src_component = components[src as usize];
             let dst_component = components[dst as usize];
-            match (src_component == NODE_NOT_PRESENT, dst_component == NODE_NOT_PRESENT) {
+            match (
+                src_component == NODE_NOT_PRESENT,
+                dst_component == NODE_NOT_PRESENT,
+            ) {
                 // If neither nodes have a component, they must be inserted
                 // both in the components vector and in the tree.
                 // The edge must be added to the three.
@@ -252,7 +255,8 @@ impl Graph {
                 }
                 // If only one node has a component, the second node must be added.
                 _ => {
-                    let (component_id, not_inserted_node) = match src_component == NODE_NOT_PRESENT {
+                    let (component_id, not_inserted_node) = match src_component == NODE_NOT_PRESENT
+                    {
                         true => (components_remapping[dst_component as usize], src),
                         false => (components_remapping[src_component as usize], dst),
                     };
@@ -438,9 +442,7 @@ impl Graph {
         let active_nodes_number = AtomicUsize::new(0);
         let completed = AtomicBool::new(false);
         let total_inserted_edges = AtomicUsize::new(0);
-        let thread_safe_parents = ThreadDataRaceAware {
-            value: std::cell::UnsafeCell::new(&mut parents),
-        };
+        let thread_safe_parents = ThreadDataRaceAware::new(&mut parents);
 
         pool.scope(|s| {
             // for each leaf of the previous stub tree start a DFS keeping track
@@ -558,7 +560,7 @@ impl Graph {
     /// # Raises
     /// * If the given graph is directed.
     /// * If the system configuration does not allow for the creation of the thread pool.
-    pub fn connected_components(
+    pub fn get_connected_components(
         &self,
         verbose: Option<bool>,
     ) -> Result<(Vec<NodeT>, NodeT, NodeT, NodeT)> {
@@ -593,15 +595,9 @@ impl Graph {
         let active_nodes_number = AtomicUsize::new(0);
         let current_component_size = AtomicU32::new(0);
         let completed = AtomicBool::new(false);
-        let thread_safe_min_component_size = ThreadDataRaceAware {
-            value: std::cell::UnsafeCell::new(&mut min_component_size),
-        };
-        let thread_safe_max_component_size = ThreadDataRaceAware {
-            value: std::cell::UnsafeCell::new(&mut max_component_size),
-        };
-        let thread_safe_components_number = ThreadDataRaceAware {
-            value: std::cell::UnsafeCell::new(&mut components_number),
-        };
+        let thread_safe_min_component_size = ThreadDataRaceAware::new(&mut min_component_size);
+        let thread_safe_max_component_size = ThreadDataRaceAware::new(&mut max_component_size);
+        let thread_safe_components_number = ThreadDataRaceAware::new(&mut components_number);
 
         // since we were able to build a stub tree with cpu.len() leafs,
         // we spawn the treads and make anyone of them build the sub-trees.

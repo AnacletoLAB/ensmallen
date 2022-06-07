@@ -67,7 +67,7 @@ pub fn load_ppi(
                 .set_default_node_type(Some("default".to_string()))
                 .set_ignore_duplicates(Some(true))
                 .unwrap()
-                .set_separator(Some("\t".to_string()))
+                .set_separator(Some('\t'))
                 .unwrap()
                 .set_nodes_column(Some("id".to_string()))
                 .unwrap()
@@ -97,7 +97,7 @@ pub fn load_ppi(
         .unwrap()
         .set_rows_to_skip(Some(0))
         .unwrap()
-        .set_separator(None::<String>)
+        .set_separator(None::<char>)
         .unwrap()
         .set_sources_column(Some("subject".to_string()))
         .unwrap()
@@ -160,7 +160,7 @@ pub fn load_cora() -> Graph {
     let graph_name = "Cora".to_owned();
     let edges_reader = EdgeFileReader::new("tests/data/cora/edges.tsv")
         .unwrap()
-        .set_separator(Some("\t".to_string()))
+        .set_separator(Some('\t'))
         .unwrap()
         .set_verbose(Some(false))
         .set_sources_column(Some("subject"))
@@ -171,7 +171,7 @@ pub fn load_cora() -> Graph {
         .unwrap();
     let nodes_reader = NodeFileReader::new(Some("tests/data/cora/nodes.tsv".to_owned()))
         .unwrap()
-        .set_separator(Some("\t".to_string()))
+        .set_separator(Some('\t'))
         .unwrap()
         .set_nodes_column(Some("id"))
         .unwrap()
@@ -217,18 +217,18 @@ pub fn second_order_walker(
 }
 
 fn validate_vocabularies(graph: &Graph) {
-    if let Some(ets) = &graph.edge_types {
+    if let Some(ets) = &*graph.edge_types {
         assert_eq!(!ets.ids.is_empty(), graph.has_edge_types(),
             "We expected that if the graph has edge types then it cannot be empty. The report of the graph is:\n{:?}",
             graph.textual_report()
         );
     }
 
-    if let Some(nts) = &graph.node_types {
+    if let Some(nts) = &*graph.node_types {
         assert_eq!(!nts.ids.is_empty(), graph.has_node_types());
     }
 
-    if let Some(ws) = &graph.weights {
+    if let Some(ws) = &*graph.weights {
         assert_eq!(
             !ws.is_empty(), graph.has_edge_weights(),
             concat!(
@@ -440,12 +440,10 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<()>
                         "the source node ID {} to the destination node ID {} ",
                         "the symmetric edge does not exist.\n",
                         "This error is likely caused by some mis-parametrization ",
-                        "in a method that is expected to produce a simmetric graph.\n",
-                        "The complete set of edges in the graph is:\n{:?}"
+                        "in a method that is expected to produce a simmetric graph.",
                     ),
                     src_node_id,
-                    dst_node_id,
-                    graph.get_edge_node_ids(true)
+                    dst_node_id
                 );
             });
     }
@@ -532,7 +530,7 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<()>
                             - graph
                                 .get_unchecked_edge_weight_from_node_ids(dst_node_id, src_node_id))
                         .abs()
-                            < WeightT::EPSILON,
+                            < WeightT::EPSILON * 10.0,
                         concat!(
                             "In an undirected graph, we expect for the edge weights to be symmetrical ",
                             "but in the provided graph there has been found a case where the edge ",
@@ -644,7 +642,7 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<()>
                     "any. The graph contains {} edges and would have seemed to contain ",
                     "{} edges with known edge types."
                 ),
-                graph.get_directed_edges_number(),
+                graph.get_number_of_directed_edges(),
                 graph.get_known_edge_types_number().unwrap()
             );
             assert!(graph.get_edge_ids_with_known_edge_types().unwrap().len() > 0);
@@ -897,7 +895,7 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<()>
     );
 
     assert!(
-        graph.get_edge_type_id_from_edge_id(graph.get_directed_edges_number() + 1).is_err(),
+        graph.get_edge_type_id_from_edge_id(graph.get_number_of_directed_edges() + 1).is_err(),
         "Given graph does not raise an exception when a edge's edge type greater than the number of available edges is requested."
     );
 
@@ -957,7 +955,7 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<()>
     if !graph.is_directed() {
         // Checking that the connected components are a dense range.
         let (connected_components, total_connected_components, _, _) =
-            graph.connected_components(verbose).unwrap();
+            graph.get_connected_components(verbose).unwrap();
         let actual_components_number = connected_components.iter().unique().count() as NodeT;
         assert_eq!(
             actual_components_number,
@@ -1039,7 +1037,7 @@ pub fn test_node_centralities(graph: &mut Graph, verbose: Option<bool>) -> Resul
         .enumerate()
         .for_each(|(node_id, value)| {
             if unsafe { graph.is_unchecked_singleton_from_node_id(node_id as NodeT) } {
-                assert!(value.abs() < f64::EPSILON);
+                assert!(value.abs() < f32::EPSILON);
             }
         });
     Ok(())
@@ -1184,7 +1182,8 @@ pub fn test_dijkstra(graph: &mut Graph, _verbose: Option<bool>) -> Result<()> {
                         // my be infinite, and therefore the epsilon check
                         // may not be enough.
                         src_to_dst_distance.is_infinite() && dst_to_src_distance.is_infinite()
-                            || (src_to_dst_distance - dst_to_src_distance).abs() < WeightT::EPSILON,
+                            || (src_to_dst_distance - dst_to_src_distance).abs()
+                                < WeightT::EPSILON * 10.0,
                         concat!(
                             "The path from source to destination has distance {} ",
                             "while the distance from destination to source has ",
@@ -1327,7 +1326,7 @@ pub fn test_all_paths(graph: &mut Graph, verbose: Option<bool>) -> Result<()> {
 }
 
 pub fn test_selfloops(graph: &mut Graph, verbose: Option<bool>) -> Result<()> {
-    assert!(!graph.drop_selfloops().has_selfloops());
+    assert!(!graph.remove_selfloops().has_selfloops());
     assert_eq!(
         graph.add_selfloops(None, Some(1.0)).is_ok(),
         graph.has_edge_weights()
@@ -1424,83 +1423,83 @@ pub fn test_random_walks(graph: &mut Graph, _verbose: Option<bool>) -> Result<()
         for mode in 0..2 {
             if mode == 1 {
                 graph.enable(None, None, None, None)?;
-                if let Some(cumulative_node_degrees) = &graph.cumulative_node_degrees {
+                if let Some(cumulative_node_degrees) = &*graph.cumulative_node_degrees {
                     assert_eq!(
                         cumulative_node_degrees.len(),
                         graph.get_nodes_number() as usize,
                         "Length of cumulative_node_degrees does not match number of nodes in the graph."
                     );
                 }
-                if let Some(destinations) = &graph.destinations {
+                if let Some(destinations) = &*graph.destinations {
                     assert_eq!(
                         destinations.len(),
-                        graph.get_directed_edges_number() as usize,
+                        graph.get_number_of_directed_edges() as usize,
                         "Length of destinations does not match number of edges in the graph."
                     );
                 }
             }
             assert_eq!(
                 graph
-                    .iter_random_walks(1, &walker)
+                    .par_iter_random_walks(1, &walker)
                     .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
                 graph
-                    .iter_random_walks(1, &walker)
+                    .par_iter_random_walks(1, &walker)
                     .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
                 "Walks of first order are not reproducible!"
             );
 
             assert_eq!(
                 graph
-                    .iter_random_walks(1, &second_order_walker(&graph, 2.0, 2.0)?)
+                    .par_iter_random_walks(1, &second_order_walker(&graph, 2.0, 2.0)?)
                     .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
                 graph
-                    .iter_random_walks(1, &second_order_walker(&graph, 2.0, 2.0)?)
+                    .par_iter_random_walks(1, &second_order_walker(&graph, 2.0, 2.0)?)
                     .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
                 "Walks of second order are not reproducible!"
             );
 
             assert_eq!(
                 graph
-                    .iter_complete_walks(&walker)
+                    .par_iter_complete_walks(&walker)
                     .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
                 graph
-                    .iter_complete_walks(&walker)
+                    .par_iter_complete_walks(&walker)
                     .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
                 "Complete first order walks are not reproducible!"
             );
 
             assert_eq!(
                 graph
-                    .iter_complete_walks(&second_order_walker(&graph, 2.0, 2.0)?)
+                    .par_iter_complete_walks(&second_order_walker(&graph, 2.0, 2.0)?)
                     .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
                 graph
-                    .iter_complete_walks(&second_order_walker(&graph, 2.0, 2.0)?)
-                    .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
-                "Complete second order walks are not reproducible!"
-            );
-
-            assert_eq!(
-                graph
-                    .iter_complete_walks(&second_order_walker(&graph, 2.0, 1.0)?)
-                    .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
-                graph
-                    .iter_complete_walks(&second_order_walker(&graph, 2.0, 1.0)?)
+                    .par_iter_complete_walks(&second_order_walker(&graph, 2.0, 2.0)?)
                     .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
                 "Complete second order walks are not reproducible!"
             );
 
             assert_eq!(
                 graph
-                    .iter_complete_walks(&second_order_walker(&graph, 1.0, 2.0)?)
+                    .par_iter_complete_walks(&second_order_walker(&graph, 2.0, 1.0)?)
                     .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
                 graph
-                    .iter_complete_walks(&second_order_walker(&graph, 1.0, 2.0)?)
+                    .par_iter_complete_walks(&second_order_walker(&graph, 2.0, 1.0)?)
+                    .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
+                "Complete second order walks are not reproducible!"
+            );
+
+            assert_eq!(
+                graph
+                    .par_iter_complete_walks(&second_order_walker(&graph, 1.0, 2.0)?)
+                    .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
+                graph
+                    .par_iter_complete_walks(&second_order_walker(&graph, 1.0, 2.0)?)
                     .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
                 "Complete second order walks are not reproducible!"
             );
         }
     } else {
-        assert!(graph.iter_complete_walks(&walker).is_err());
+        assert!(graph.par_iter_complete_walks(&walker).is_err());
     }
     Ok(())
 }
@@ -1508,7 +1507,7 @@ pub fn test_random_walks(graph: &mut Graph, _verbose: Option<bool>) -> Result<()
 pub fn test_edge_holdouts(graph: &Graph, verbose: Option<bool>) -> Result<()> {
     if !graph.has_edge_types() {
         assert!(graph
-            .connected_holdout(0.8, None, Some(vec![None]), Some(false), None)
+            .connected_holdout(0.8, None, Some(vec![None]), Some(false), None, None, None)
             .is_err());
     }
     for include_all_edge_types in &[false, true] {
@@ -1521,8 +1520,15 @@ pub fn test_edge_holdouts(graph: &Graph, verbose: Option<bool>) -> Result<()> {
             verbose,
         )?;
         default_holdout_test_suite(graph, &train, &test)?;
-        let (train, test) =
-            graph.connected_holdout(0.8, None, None, Some(*include_all_edge_types), verbose)?;
+        let (train, test) = graph.connected_holdout(
+            0.8,
+            None,
+            None,
+            Some(*include_all_edge_types),
+            None,
+            None,
+            verbose,
+        )?;
         assert_eq!(graph.get_nodes_number(), train.get_nodes_number());
         assert_eq!(graph.get_nodes_number(), test.get_nodes_number());
 
@@ -1622,7 +1628,7 @@ pub fn test_edge_holdouts(graph: &Graph, verbose: Option<bool>) -> Result<()> {
 
 pub fn test_remove_components(graph: &mut Graph, verbose: Option<bool>) -> Result<()> {
     if graph.get_connected_components_number(verbose).0 > 1 {
-        let without_selfloops = graph.drop_selfloops();
+        let without_selfloops = graph.remove_selfloops();
 
         assert_eq!(
             graph.get_connected_components_number(verbose),
@@ -1673,7 +1679,7 @@ pub fn test_remove_components(graph: &mut Graph, verbose: Option<bool>) -> Resul
             None,
             verbose,
         )?;
-        let without_selfloops = test.drop_selfloops();
+        let without_selfloops = test.remove_selfloops();
         assert_eq!(
             without_selfloops.get_connected_components_number(verbose).0,
             1,
@@ -1780,18 +1786,49 @@ pub fn test_kfold(graph: &mut Graph, _verbose: Option<bool>) -> Result<()> {
 }
 
 pub fn test_negative_edges_generation(graph: &mut Graph, verbose: Option<bool>) -> Result<()> {
+    let number_of_edges = graph.get_edges_number().min(10) as usize;
+    let positives = graph.sample_positive_graph(
+        number_of_edges,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+    )?;
+
+    assert_eq!(positives.get_edges_number() as usize, number_of_edges);
+    assert!(positives.overlaps(graph)?);
+    assert!(graph.contains(&positives)?);
+
     for only_from_same_component in &[true, false] {
         // If the graph is very sparse, this takes a lot of time
         // and makes the test suite very slow.
-        if *only_from_same_component && graph.get_directed_edges_number() < 100 {
+        if *only_from_same_component && graph.get_number_of_directed_edges() < 100 {
             continue;
         }
-        let negatives = graph.sample_negatives(
+        let negatives = graph.sample_negative_graph(
             graph.get_edges_number(),
             None,
-            None,
             Some(*only_from_same_component),
-            verbose,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
         )?;
         assert_eq!(
             graph.get_edges_number(),
@@ -1829,7 +1866,7 @@ pub fn test_dump_graph(graph: &mut Graph, verbose: Option<bool>) -> Result<()> {
     let node_file = random_path(None);
     let nodes_writer = NodeFileWriter::new(node_file.clone())
         .set_verbose(verbose)
-        .set_separator(Some("\t".to_string()))?
+        .set_separator(Some('\t'))?
         .set_header(Some(true))
         .set_node_types_column_number(Some(4))
         .set_nodes_column_number(Some(6))
@@ -1841,7 +1878,7 @@ pub fn test_dump_graph(graph: &mut Graph, verbose: Option<bool>) -> Result<()> {
     let edges_file = random_path(None);
     let edges_writer = EdgeFileWriter::new(edges_file.clone())
         .set_verbose(verbose)
-        .set_separator(Some("\t".to_string()))?
+        .set_separator(Some('\t'))?
         .set_header(Some(true))
         .set_edge_types_column(Some("edge_types".to_owned()))
         .set_destinations_column_number(Some(3))
@@ -1858,12 +1895,9 @@ pub fn test_dump_graph(graph: &mut Graph, verbose: Option<bool>) -> Result<()> {
     Ok(())
 }
 
-pub fn test_embiggen_preprocessing(graph: &mut Graph, verbose: Option<bool>) -> Result<()> {
+pub fn test_embiggen_preprocessing(graph: &mut Graph, _verbose: Option<bool>) -> Result<()> {
     let walker = first_order_walker(&graph)?;
     if !graph.directed {
-        let (terms_number, iterator) = graph.cooccurence_matrix(&walker, 3, verbose)?;
-        assert_eq!(terms_number, iterator.count());
-
         let window_size = 3;
         let batch_size = 256;
         let data = graph
@@ -1883,28 +1917,21 @@ pub fn test_embiggen_preprocessing(graph: &mut Graph, verbose: Option<bool>) -> 
         graph
             .link_prediction_degrees(
                 0,
-                Some(256),
+                256,
                 Some(true),
                 Some(0.3),
                 Some(false),
                 Some(10),
-                Some(false),
+                false,
+                None,
+                None,
                 None,
             )
             .unwrap()
             .collect::<Vec<_>>();
         graph
-            .get_edge_prediction_mini_batch(
-                0,
-                Some(256),
-                Some(0.4),
-                None,
-                None,
-                Some(false),
-                Some(false),
-                Some(10),
-                Some(false),
-                None,
+            .par_iter_attributed_edge_prediction_mini_batch(
+                0, 256, false, false, false, None, None, None, None, None, None,
             )
             .unwrap()
             .collect::<Vec<_>>();
@@ -2002,15 +2029,19 @@ pub fn test_nodelabel_holdouts(graph: &mut Graph, _verbose: Option<bool>) -> Res
             "The re-merged holdouts does not contain the original graph."
         );
         assert!(
-            train.node_types.as_ref().map_or(false, |train_nts| {
-                test.node_types.as_ref().map_or(false, |test_nts| {
-                    train_nts.ids.iter().zip(test_nts.ids.iter()).all(
-                        |(train_node_type, test_node_type)| {
-                            !(train_node_type.is_some() && test_node_type.is_some())
-                        },
-                    )
-                })
-            }),
+            train
+                .node_types
+                .as_ref()
+                .as_ref()
+                .map_or(false, |train_nts| {
+                    test.node_types.as_ref().as_ref().map_or(false, |test_nts| {
+                        train_nts.ids.iter().zip(test_nts.ids.iter()).all(
+                            |(train_node_type, test_node_type)| {
+                                !(train_node_type.is_some() && test_node_type.is_some())
+                            },
+                        )
+                    })
+                }),
             "The train and test node-label graphs are overlapping!"
         );
     }
@@ -2020,7 +2051,7 @@ pub fn test_nodelabel_holdouts(graph: &mut Graph, _verbose: Option<bool>) -> Res
 pub fn test_edgelabel_holdouts(graph: &mut Graph, _verbose: Option<bool>) -> Result<()> {
     for use_stratification in [true, false].iter() {
         if *use_stratification && graph.has_singleton_edge_types()?
-            || graph.get_directed_edges_number() - graph.get_unknown_edge_types_number()? < 2
+            || graph.get_number_of_directed_edges() - graph.get_unknown_edge_types_number()? < 2
             || !graph.has_edge_types()
         {
             assert!(graph
@@ -2033,15 +2064,19 @@ pub fn test_edgelabel_holdouts(graph: &mut Graph, _verbose: Option<bool>) -> Res
         assert!(train.has_unknown_edge_types()?);
         assert!(test.has_unknown_edge_types()?);
         assert!(
-            train.edge_types.as_ref().map_or(false, |train_nts| {
-                test.edge_types.as_ref().map_or(false, |test_nts| {
-                    train_nts.ids.iter().zip(test_nts.ids.iter()).all(
-                        |(train_edge_type, test_edge_type)| {
-                            !(train_edge_type.is_some() && test_edge_type.is_some())
-                        },
-                    )
-                })
-            }),
+            train
+                .edge_types
+                .as_ref()
+                .as_ref()
+                .map_or(false, |train_nts| {
+                    test.edge_types.as_ref().as_ref().map_or(false, |test_nts| {
+                        train_nts.ids.iter().zip(test_nts.ids.iter()).all(
+                            |(train_edge_type, test_edge_type)| {
+                                !(train_edge_type.is_some() && test_edge_type.is_some())
+                            },
+                        )
+                    })
+                }),
             "The train and test edge-label graphs are overlapping!"
         );
     }
@@ -2052,7 +2087,9 @@ pub fn test_graph_filter(graph: &Graph, _verbose: Option<bool>) -> Result<()> {
     let unfiltered = graph
         .filter_from_ids(
             None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-            None, None, None, None,
+            None, None, None, None, None, None, None, None, None, None, None, None, None, None,
+            None, None, None, None, None, None, None, None, None, None, None, None, None, None,
+            None, None,
         )
         .unwrap();
     assert_eq!(&unfiltered, graph);
@@ -2074,6 +2111,32 @@ pub fn test_graph_filter(graph: &Graph, _verbose: Option<bool>) -> Result<()> {
             None,
             None,
             None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
         )
         .is_err());
     for node_name in graph.iter_node_names().take(10) {
@@ -2081,6 +2144,32 @@ pub fn test_graph_filter(graph: &Graph, _verbose: Option<bool>) -> Result<()> {
         let graph_without_given_name_result = graph.filter_from_names(
             None,
             Some(vec![node_name.as_str()]),
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
             None,
             None,
             None,
@@ -2130,6 +2219,32 @@ pub fn test_graph_filter(graph: &Graph, _verbose: Option<bool>) -> Result<()> {
             None,
             None,
             None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
         );
         assert!(
             graph_with_given_name_result.is_ok(),
@@ -2160,7 +2275,33 @@ pub fn test_graph_filter(graph: &Graph, _verbose: Option<bool>) -> Result<()> {
             None,
             None,
             None,
+            None,
+            None,
+            None,
+            None,
             Some(vec![Some(node_type_name.clone())]),
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
             None,
             None,
             None,
@@ -2257,7 +2398,7 @@ pub fn test_clone_and_setters(graph: &mut Graph, _verbose: Option<bool>) -> Resu
     if !graph.is_multigraph() {
         assert_eq!(
             unsafe{clone.get_unchecked_edge_count_from_edge_type_id(Some(0))},
-            graph.get_directed_edges_number(),
+            graph.get_number_of_directed_edges(),
             "Number of edges with the unique edge type does not match number of edges in the graph."
         );
     }
@@ -2267,11 +2408,13 @@ pub fn test_clone_and_setters(graph: &mut Graph, _verbose: Option<bool>) -> Resu
         1,
         "Number of node types of the graph is not 1."
     );
-    assert_eq!(
+    unsafe {
+        assert_eq!(
         clone.get_unchecked_node_count_from_node_type_id(Some(0)),
         graph.get_nodes_number(),
         "Number of nodes with the unique node type does not match number of nodes in the graph."
     );
+    }
 
     Ok(())
 }
@@ -2459,7 +2602,7 @@ pub fn default_test_suite(graph: &mut Graph, verbose: Option<bool>) -> Result<()
     );
     test_mut_graph!(
         graph,
-        get_random_walk_normalized_laplacian_transformed_graph,
+        get_left_normalized_laplacian_transformed_graph,
         verbose
     );
     test_mut_graph!(graph, to_upper_triangular, verbose);

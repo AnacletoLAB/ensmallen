@@ -1,0 +1,18 @@
+[package]
+name = "cuda_kernels"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+
+[profile.release]
+debug = false             # Include debug info.
+overflow-checks = false 
+opt-level = 3
+lto = "fat"
+codgen-units=1
+#inline-threshold=1000000

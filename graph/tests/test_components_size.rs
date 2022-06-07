@@ -11,10 +11,20 @@ fn test_components_size() {
         .unwrap()
         .set_header(Some(false))
         .unwrap()
-        .set_separator(Some(",".to_string()))
+        .set_separator(Some(','))
         .unwrap()
+        .set_parallel(Some(false))
         .set_verbose(Some(false))
         .set_numeric_node_ids(Some(true));
+
+    println!(
+        "{:?}",
+        edges_reader
+            .clone()
+            .read_lines()
+            .unwrap()
+            .collect::<Vec<_>>()
+    );
 
     let g = Graph::from_file_readers(
         Some(edges_reader),
@@ -34,7 +44,7 @@ fn test_components_size() {
     for _ in 0..n {
         pb.inc(1);
         let (components, _components_number, smallest, biggest) =
-            g.connected_components(None).unwrap();
+            g.get_connected_components(None).unwrap();
         assert!(
             biggest >= smallest,
             "smallest: {} biggest: {}",
@@ -65,7 +75,7 @@ fn test_components_size() {
     }
 
     let (components, number_of_components, smallest, biggest) =
-        g.connected_components(None).unwrap();
+        g.get_connected_components(None).unwrap();
 
     assert_eq!(components, [0, 0, 1, 1, 2, 2].to_vec());
     assert_eq!(number_of_components, 3);

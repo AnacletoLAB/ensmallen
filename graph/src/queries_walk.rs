@@ -62,7 +62,7 @@ impl Graph {
         max_edge_id: EdgeT,
         destinations: &'a Option<Vec<NodeT>>,
     ) -> &'a [NodeT] {
-        match (&self.destinations, destinations) {
+        match (self.destinations.as_ref().as_ref(), destinations) {
             (_, Some(dsts)) => dsts.as_slice(),
             (Some(dsts), None) => &dsts[min_edge_id as usize..max_edge_id as usize],
             _ => unreachable!(

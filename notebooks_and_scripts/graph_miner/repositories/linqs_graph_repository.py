@@ -1,16 +1,8 @@
 """Sub-module handling the retrieval and building of graphs from LINQSGraphRepository."""
 from typing import List, Dict
 import os
-import requests
-from bs4 import BeautifulSoup
-import pandas as pd
-import shutil
 import compress_json
 from .graph_repository import GraphRepository
-from .models.parse_linqs import (
-    parse_linqs_incidence_matrix,
-    parse_linqs_pubmed_incidence_matrix
-)
 
 
 class LINQSGraphRepository(GraphRepository):
@@ -19,10 +11,6 @@ class LINQSGraphRepository(GraphRepository):
         """Create new String Graph Repository object."""
         super().__init__()
         self._data = compress_json.local_load("linqs.json")
-        self._parse = {
-            "parse_linqs_incidence_matrix": parse_linqs_incidence_matrix,
-            "parse_linqs_pubmed_incidence_matrix": parse_linqs_pubmed_incidence_matrix
-        }
 
     def build_stored_graph_name(self, partial_graph_name: str) -> str:
         """Return built graph name.
@@ -81,20 +69,6 @@ class LINQSGraphRepository(GraphRepository):
         The path from where to load the edge files.
         """
         return "edges.tsv"
-
-    def get_imports(self, graph_name: str, version: str) -> str:
-        """Return imports to be added to model file.
-
-        Parameters
-        -----------------------
-        graph_name: str,
-            Name of the graph.
-
-        Returns
-        -----------------------
-        Imports.
-        """
-        return "\n".join(self._data[graph_name][version]["imports"])
 
     def get_description(self, graph_name: str, version: str) -> str:
         """Return description to be added to model file.
@@ -170,7 +144,7 @@ class LINQSGraphRepository(GraphRepository):
             "edge_list_edge_types_column": "edge_type",
             "node_list_node_types_column": "node_type",
             "nodes_column": "id",
-            "name":graph_name,
+            "name": graph_name,
             "edge_list_separator": "\t",
             "node_list_separator": "\t",
             "skip_weights_if_unavailable": True,
@@ -268,11 +242,11 @@ class LINQSGraphRepository(GraphRepository):
     def build_all(self):
         """Build graph retrieval methods."""
         super().build_all()
-        shutil.copyfile(
-            "graph_miner/repositories/models/parse_linqs.py",
-            os.path.join(
-                "../bindings/python/ensmallen/datasets",
-                self.repository_package_name,
-                "parse_linqs.py"
-            )
+        target_directory_path = os.path.join(
+            "../bindings/python/ensmallen/datasets",
+            self.repository_package_name,
         )
+        file_path = "{}.py".format(target_directory_path)
+        with open(file_path, "a") as f:
+            with open("graph_miner/repositories/models/parse_linqs.py", "r") as original:
+                f.write(original.read())

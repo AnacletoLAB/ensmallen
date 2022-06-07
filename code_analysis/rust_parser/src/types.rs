@@ -56,14 +56,14 @@ impl Default for Type {
 impl Type {
     /// Iff this is a simple type, return the name of it
     /// otherwise panic
-    pub fn get_name(&self) -> String {
+    pub fn get_name(&self) -> Option<String> {
         match self {
             Type::SimpleType {
                 name,
                 ..
-            } => name.to_string(),
-            Type::None => "()".to_string(),
-            _ => unreachable!("A struct cannot have a type which is not simple"),
+            } => Some(name.to_string()),
+            Type::None => Some("()".to_string()),
+            _ => None,
         }
     }
 }
@@ -243,7 +243,8 @@ impl Parse for Type {
                 let (inner, mut args_content) = get_next_matching(data, b'(', b')');
                 data = inner;
                 let mut args = Vec::new();
-                loop {
+                args_content = skip_whitespace(args_content);
+                while !args_content.is_empty() {
                     args_content = skip_whitespace(args_content);
                     if args_content.starts_with(b",") {
                         args_content = skip_whitespace(&args_content[1..]);
@@ -261,6 +262,7 @@ impl Parse for Type {
                         arg_modifier: modifier,
                         arg_type: arg_type,
                     });
+                    args_content = skip_whitespace(args_content);
                 }
 
                 // skip the )
@@ -271,7 +273,6 @@ impl Parse for Type {
                     data = &data[2..];
                     return_type = Some(Box::new(parse!(data, Type)));
                 }
-        
                 Type::FnType{
                     args:args,
                     return_type: return_type,

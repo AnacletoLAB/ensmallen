@@ -32,7 +32,7 @@ FromStringsParameters {
     skip_edge_types_if_unavailable: None,
     may_have_singletons: false,
     may_have_singleton_with_selfloops: true,
-    name: "\t",
+    name: '\t',
     edges_iterator_is_parallel: false,
     edge_types_iterator_is_parallel: false,
     nodes_iterator_is_parallel: false,

@@ -36,7 +36,11 @@ impl Parse for Static {
         let mut result = Static::default();
         result.visibility = parse!(data, Visibility);
         // skip "Static"
-        data = &data[6..];
+        data = skip_whitespace(&data[6..]);
+
+        if data.starts_with(b"ref") {
+            data = skip_whitespace(&data[3..]);
+        }
 
         // parse the name
         result.name = parse!(data, Identifier).into();

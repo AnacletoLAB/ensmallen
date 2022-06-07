@@ -1,0 +1,26 @@
+FROM quay.io/pypa/manylinux2014_x86_64
+
+ENV PATH /root/.cargo/bin:$PATH
+# Add all supported python versions
+ENV PATH /opt/python/cp36-cp36m/bin/:$PATH
+ENV PATH /opt/python/cp37-cp37m/bin/:$PATH
+ENV PATH /opt/python/cp38-cp38m/bin/:$PATH
+ENV PATH /opt/python/cp39-cp39m/bin/:$PATH
+# Otherwise `cargo new` errors
+ENV USER root
+
+RUN curl https://sh.rustup.rs -sSf | sh -s -- -y \
+    && python3 -m pip install --no-cache-dir cffi \
+    && mkdir /io
+
+ADD . /maturin/
+
+# Install the required rust version
+RUN rustup default nightly
+
+RUN cargo install maturin --version="=0.12.4"
+
+RUN yum install -y openssl-devel
+RUN pip install twine
+
+WORKDIR /io

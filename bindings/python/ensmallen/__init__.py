@@ -1,63 +1,74 @@
 """Module offering fast graph processing and graph datasets."""
+import logging
+import warnings
+import platform
+from environments_utils import is_x86_64, is_arm
 
-import os
-from .compilation_flags import FLAGS, TARGET_TRIPLE, OS, CPU_ARCH
+if is_x86_64():
+    import cpuinfo
+    
+    HASWELL_FLAGS = [
+        "avx2",
+        "bmi2",
+        "popcnt",
+    ]
+    CORE2_AVX_FLAGS = [
+        "ssse3", 
+        "fxsr", 
+        "cx16", #"cmpxchg16b"
+    ]
 
-# Check that the OS and the CPU Arch match, this should be already done by pip
-# but better check twice
-if os.uname().sysname.lower().strip() != OS.lower().strip() \
-        or os.uname().machine.lower().strip() != CPU_ARCH.lower().strip():
-    raise ValueError((
-        "This version of the library was compiled for '{}' assuming the "
-        "following flags '{}'. You should't have been able to install this as "
-        "pip should have already catched this error. "
-        "Please open an Issue on Github detailing the installation process "
-        "you used so we can debug it."
-    ).format(TARGET_TRIPLE, FLAGS)
-    )
+    unavailable_flags = set(HASWELL_FLAGS) - set(cpuinfo.get_cpu_info()["flags"])
 
-import cpuinfo
+    if len(unavailable_flags) == 0:
+        logging.info("Ensmallen is using Haswell")
+        from .ensmallen_haswell import preprocessing  # pylint: disable=import-error
+        from .ensmallen_haswell import models  # pylint: disable=import-error
+        from .ensmallen_haswell import Graph  # pylint: disable=import-error
+        from .ensmallen_haswell import edge_list_utils  # pylint: disable=import-error
+        from .ensmallen_haswell import express_measures  # pylint: disable=import-error
+    else:
+        warnings.warn(
+            (
+                "Ensmallen is compiled for the Intel Haswell architecture (2013)."
+                "On the current machine, the flags '{}' are required but '{}' are not available.\n"
+                "The library will use a slower but more compatible version (Intel Core2 2006)."
+            ).format(HASWELL_FLAGS, unavailable_flags)
+        )
 
-# In some systems cpuinfo is not able to detect some flags no matter what.
-# In order to avoid false positives, we remove by default these flags.
-collision_flags = {
-    'ermsb',
-    'xsaveopt',
-    'xsavec',
-    'xsaves',
-    'cmpxchg16b'
-}
+        unavailable_flags = set(CORE2_AVX_FLAGS) - set(cpuinfo.get_cpu_info()["flags"])
 
-unavailable_flags = set(FLAGS) - set(cpuinfo.get_cpu_info()["flags"]) - collision_flags
+        if len(unavailable_flags) == 0:
+            logging.info("Ensmallen is using Core2")
+            from .ensmallen_core2 import preprocessing  # pylint: disable=import-error
+            from .ensmallen_core2 import models  # pylint: disable=import-error
+            from .ensmallen_core2 import Graph  # pylint: disable=import-error
+            from .ensmallen_core2 import edge_list_utils  # pylint: disable=import-error
+            from .ensmallen_haswell import express_measures  # pylint: disable=import-error
+        else:
+            raise ValueError(
+                (
+                    "On the current machine, the flags '{}' are not available.\n"
+                    "This library was compiled assuming that the following instruction "
+                    "sets are available: {}\n"
+                    "You can solve this issue by manually compiling ensmallen tailoring"
+                    " it to your hardware following the guides on our Github repository."
+                    " Ensmallen has no strict dependancy on any flag or cpu_arch as it "
+                    "can be compiled for any arch supported by LLVM (Arm, AArch64, Mips,"
+                    " ...).\n"
+                ).format(unavailable_flags, CORE2_AVX_FLAGS)
+            )
+elif is_arm():
+    logging.info("Ensmallen is using Default Arm")
+    from .ensmallen_default import preprocessing  # pylint: disable=import-error
+    from .ensmallen_default import models  # pylint: disable=import-error
+    from .ensmallen_default import Graph  # pylint: disable=import-error
+    from .ensmallen_default import edge_list_utils  # pylint: disable=import-error
+    from .ensmallen_haswell import express_measures  # pylint: disable=import-error
+else:
+    raise ValueError("The arch '{}' is not currently supproted by ensmallen's init file.".format(platform.machine()))
 
-if len(unavailable_flags) > 0:
-    raise ValueError(
-        (
-            "On the current machine, the flags '{}' are not available.\n"
-            "This library was compiled assuming that the following instruction "
-            "sets are available: {}\n"
-            "You can solve this issue by manually compiling ensmallen tailoring"
-            " it to your hardware following the guides on our Github repository."
-            " Ensmallen has no strict dependancy on any flag or cpu_arch as it "
-            "can be compiled for any arch supported by LLVM (Arm, AArch64, Mips,"
-            " ...).\n"
-            "In particular, the pip pre-compiled versions are aimed to x86_64"
-            "Cpus with architecture newer or equal to Haswell (2013)."
-            "This is done because we heavily explioit both SSE and AVX "
-            "instructions which allows great speed-ups of several core routines"
-            "and providing pre-compiled versions for all cpu arches with "
-            "all flags combinations for all operating systems would have a "
-            "prohibitive cost."
-        ).format(unavailable_flags, FLAGS)
-    )
-
-
-from .ensmallen import preprocessing  # pylint: disable=import-error
-from .ensmallen import Graph  # pylint: disable=import-error
-from .ensmallen import edge_list_utils  # pylint: disable=import-error
-
-# The import of dataset should ALWAYS be under the imports from the compiled bindings
 # Because otherwise it generate a Circular import and crash
 from . import datasets
 
-__all__ = ["edge_list_utils", "Graph", "preprocessing", "datasets"]
+__all__ = ["edge_list_utils", "Graph", "preprocessing", "models", "datasets"]

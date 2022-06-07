@@ -9,12 +9,13 @@
 
 #![warn(unused_macros)]
 #![feature(is_sorted)]
+#![feature(string_remove_matches)]
 #![feature(map_first_last)]
+#![feature(exit_status_error)]
 #![feature(core_intrinsics)]
 #![type_length_limit = "3764086"]
 #![feature(exclusive_range_pattern)]
-#![feature(option_result_unwrap_unchecked)]
-#![feature(macro_attributes_in_derive_output)]
+use std::sync::Arc;
 
 mod vocabulary;
 pub use self::vocabulary::*;
@@ -48,8 +49,6 @@ mod parameters_validators;
 pub use self::parameters_validators::*;
 mod getters_boolean;
 pub use self::getters_boolean::*;
-mod replace;
-pub use self::replace::*;
 
 mod dijkstra;
 pub use self::dijkstra::*;
@@ -63,6 +62,7 @@ pub use self::utils::*;
 mod bitmaps;
 mod centrality;
 mod dense;
+mod distributions;
 mod edge_list_utils;
 mod edge_lists;
 mod edge_metrics;
@@ -71,6 +71,7 @@ mod getters;
 mod graph;
 mod hash;
 mod holdouts;
+mod isomorphism;
 mod iter_queries;
 mod iters;
 mod laplacian;
@@ -120,6 +121,7 @@ pub use self::trees::*;
 pub use self::types::*;
 pub use self::walks::*;
 pub use self::walks_parameters::*;
+pub use isomorphism::*;
 pub use preprocessing::*;
 pub use tfidf::*;
 
@@ -149,3 +151,27 @@ pub use nodes_sampling::*;
 
 mod subgraphs;
 pub use subgraphs::*;
+
+mod chains;
+pub use chains::*;
+
+mod tendrils;
+pub use tendrils::*;
+
+mod circles;
+pub use circles::*;
+
+mod stars;
+pub use stars::*;
+
+mod node_tuples;
+pub use node_tuples::*;
+
+mod dendritic_tree;
+pub use dendritic_tree::*;
+
+mod cliques;
+pub use cliques::*;
+
+mod graphs_from_edge_lists;
+pub use graphs_from_edge_lists::*;

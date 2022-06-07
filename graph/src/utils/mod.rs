@@ -2,6 +2,11 @@ use super::*;
 use indicatif::{ProgressBar, ProgressStyle};
 use rayon::ThreadPool;
 
+use num_traits::pow::Pow;
+
+mod mmap;
+pub use mmap::*;
+
 mod method_caller;
 pub use method_caller::*;
 
@@ -16,6 +21,12 @@ pub use iters_wrapper::ItersWrapper;
 
 mod argmax_argmin;
 pub use argmax_argmin::*;
+
+mod minmax;
+pub use minmax::*;
+
+mod splitter;
+pub use splitter::*;
 
 mod clonable_unsafe_cell;
 pub(crate) use clonable_unsafe_cell::*;
@@ -188,27 +199,86 @@ impl Graph {
 /// The weight can be validated as follows:
 /// ```rust
 /// # use graph::utils::parse_weight;
-/// assert!(parse_weight("0.0".to_string()).is_ok());
-/// assert!(parse_weight("-1.0".to_string()).is_ok());
-/// assert!(parse_weight("2.0".to_string()).is_ok());
-/// assert!(parse_weight("2ghgjh.0".to_string()).is_err());
-/// assert_eq!(parse_weight("2.0".to_string()).unwrap(), 2.0);
+/// assert!(parse_weight("0.0").is_ok());
+/// assert!(parse_weight("-1.0").is_ok());
+/// assert!(parse_weight("2.0").is_ok());
+/// assert!(parse_weight("2ghgjh.0").is_err());
+/// assert_eq!(parse_weight("2.0").unwrap(), 2.0);
 /// ```
 ///
-pub fn parse_weight(weight: String) -> Result<WeightT> {
+pub fn parse_weight(weight: &str) -> Result<WeightT> {
     weight
         .parse::<WeightT>()
-        .map_err(|_| format!("Cannot parse weight {} as a float.", weight))
+        .map_err(|_| format!("Cannot parse weight `{}` as a float.", weight))
 }
 
-
 /// Convert a strig to integer ASSUMING IT IS CORRECT
-pub fn atoi_c(val: &str) -> u32 {
+pub unsafe fn atoi_c(val: &str) -> u32 {
     let mut result: u32 = 0;
     for b in val.as_bytes() {
         result = result * 10 + (*b - b'0') as u32;
     }
     result
+}
+
+/// Return given number converted to a human readable value.
+///
+/// # Arguments
+/// `number`: usize - The value to convert into a human readable string.
+pub(crate) fn to_human_readable_high_integer(number: usize) -> String {
+    let (exponent, unit) = match number {
+        0..1_000 => return number.to_string(),
+        1_000..1_000_000 => (1, "K"),
+        1_000_000..1_000_000_000 => (2, "M"),
+        1_000_000_000..1_000_000_000_000 => (3, "G"),
+        _ => (4, "T"),
+    };
+    format!(
+        "{amount:.2}{unit}",
+        amount = number as f64 / (1000.0 as f64).pow(exponent),
+        unit = unit
+    )
+}
+
+/// Returns given list in a uman readable format.
+///
+/// # Safety
+/// If the list is empty the method will raise a panic.
+///
+/// # Arguments
+/// `elements`: &[String] - The elements to format.
+/// `max_number_of_elements`: Option<usize> - Maximum number of elements to display.
+pub unsafe fn get_unchecked_formatted_list(
+    elements: &[String],
+    max_number_of_elements: Option<usize>,
+) -> String {
+    let max_number_of_elements = max_number_of_elements.unwrap_or(elements.len());
+    if elements.is_empty() {
+        panic!("Cannot format a list with no elements.");
+    }
+    if elements.len() == 1 {
+        return elements.first().unwrap().clone();
+    }
+    let all_minus_last: String = elements[0..elements.len() - 1]
+        .iter()
+        .cloned()
+        .take(max_number_of_elements)
+        .collect::<Vec<String>>()
+        .join(", ");
+    format!(
+        "{all_minus_last} and {last}",
+        all_minus_last = all_minus_last,
+        last = if elements.len() <= max_number_of_elements {
+            elements.last().unwrap().clone()
+        } else {
+            let remaining_values = elements.len() - max_number_of_elements;
+            if remaining_values == 1 {
+                "another one".to_string()
+            } else {
+                format!("other {}", to_human_readable_high_integer(remaining_values))
+            }
+        }
+    )
 }
 
 pub trait ToAtomicVec<T> {
@@ -217,7 +287,6 @@ pub trait ToAtomicVec<T> {
 pub trait RemoveAtomicVec<T> {
     fn remove_atomic(self: Self) -> Vec<T>;
 }
-
 
 #[macro_export]
 /// Create a vector of atomic using a default value.
@@ -236,7 +305,7 @@ macro_rules! impl_to_atomic_vec {
                 unsafe { std::mem::transmute::<Vec<$atomic_type>, Vec<$normal_type>>(self) }
             }
         }
-    }
+    };
 }
 
 impl_to_atomic_vec!(std::sync::atomic::AtomicU8, u8);

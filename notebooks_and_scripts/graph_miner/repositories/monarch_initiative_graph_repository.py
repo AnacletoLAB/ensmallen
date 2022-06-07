@@ -13,7 +13,34 @@ class MonarchInitiativeGraphRepository(GraphRepository):
     def __init__(self):
         """Create new String Graph Repository object."""
         super().__init__()
+        # We load the data that cannot be automatically scraped
         self._data = compress_json.local_load("monarch_initiative.json")
+        # The arguments keys used to load this graph
+        general_kwargs = {
+            "sources_column": "subject",
+            "destinations_column": "object",
+            "edge_list_edge_types_column": "predicate",
+            "nodes_column": "id",
+            "node_list_node_types_column": "category",
+            "node_types_separator": "|",
+            "name": "Monarch"
+        }
+        # We extend the data through scraping the Google Bucket
+        base_url = "https://storage.googleapis.com/monarch-ingest/"
+        xml = pd.read_xml(base_url).fillna("NaN")
+        xml = xml[xml.Key.str.endswith("/monarch-kg.tar.gz")]
+        for path in xml.Key:
+            version = path.split("/")[0]
+            self._data["Monarch"][version] = {
+                "urls": [
+                    base_url + path
+                ],
+                "arguments": {
+                    "edge_path": "monarch-kg/monarch-kg_edges.tsv",
+                    "node_path": "monarch-kg/monarch-kg_nodes.tsv",
+                    **general_kwargs
+                }
+            }
 
     def build_stored_graph_name(self, partial_graph_name: str) -> str:
         """Return built graph name.

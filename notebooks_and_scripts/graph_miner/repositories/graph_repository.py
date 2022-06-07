@@ -1,22 +1,23 @@
 """Class providing an abstract graph repository."""
 from typing import List, Dict, Set
-import pandas as pd
 import os
 import json
 import compress_json
-import datetime
-import shutil
 from glob import glob
-from ensmallen import Graph
 from tqdm.auto import tqdm
-from environments_utils import is_notebook
-from IPython.display import display
-from .custom_exceptions import UnsupportedGraphException
 
 
 class GraphRepository:
     def __init__(self):
         """Create new Graph Repository object."""
+        with open(
+            "{}/models/{}.py".format(
+                os.path.dirname(os.path.abspath(__file__)),
+                self.get_graph_retrieval_file()
+            ),
+            "r"
+        ) as f:
+            self._graph_method_model = f.read()
 
     def build_stored_graph_name(self, partial_graph_name: str) -> str:
         """Return built graph name.
@@ -378,7 +379,8 @@ class GraphRepository:
         for graph_name in tqdm(
             self.get_uncached_graph_list(),
             desc="Retrieving graphs for {}".format(self.name),
-            leave=False
+            leave=False,
+            dynamic_ncols=True
         ):
             self.store_graph_data(
                 {
@@ -390,7 +392,6 @@ class GraphRepository:
                         version=version,
                         graph_method_name=self.build_stored_graph_name(
                             graph_name),
-                        datetime=str(datetime.datetime.now()),
                         urls=self.get_graph_urls(graph_name, version),
                         paths=self.get_graph_paths(graph_name, version),
                         references=self.get_graph_references(
@@ -428,11 +429,15 @@ class GraphRepository:
         ) as f:
             return f.read().format("\n\n".join(references))
 
+    def get_graph_retrieval_file(self) -> str:
+        """Return graph retrieval file."""
+        return "graph_retrieval_file"
+
     def format_versions(self, versions: List[str]) -> str:
         """Return versions available."""
         if versions == ["latest"]:
             return ""
-        return "\t\nThe available versions are:\n{}".format("\n".join([
+        return "\n\tThe available versions are:\n{}".format("\n".join([
             "\t\t- {}".format(version)
             for version in versions
         ]))
@@ -478,7 +483,7 @@ class GraphRepository:
         --------------------
         Formatted text.
         """
-        return "\t" + "\n\t".join(text.split("\n"))
+        return '\t' + "\n\t".join(text.split("\n"))
 
     def format_callbacks_data(self, graph_name: str, version: str) -> str:
         """Return formatted callbacks data.
@@ -512,7 +517,8 @@ class GraphRepository:
         graph_name: str,
         graph_method_name: str,
         references: List[str],
-        versions: List[str]
+        versions: List[str],
+        has_unique_references: bool
     ) -> str:
         """Return formatted model.
 
@@ -527,37 +533,35 @@ class GraphRepository:
         ---------------------
         Formatted model of the report.
         """
-        with open(
-            "{}/models/graph_retrieval_file.py".format(
-                os.path.dirname(os.path.abspath(__file__))),
-            "r"
-        ) as f:
-            return f.read().format(
-                graph_method_name=graph_method_name,
-                repository_package_name=self.repository_package_name,
-                graph_name=graph_name,
-                repository_name=self.get_formatted_repository_name(),
-                imports=self.get_imports(graph_name, versions[-1]),
-                callbacks_data=self.format_callbacks_data(
-                    graph_name,
-                    versions[-1]
-                ),
-                description=self.format_lines(
-                    self.get_description(graph_name, versions[-1])
-                ),
-                tabbed_description=self.add_tabs(
-                    self.format_lines(self.get_description(
-                        graph_name, versions[-1]))
-                ),
-                references=self.format_references(references),
-                tabbed_references=self.add_tabs(
-                    self.format_references(references)
-                ),
-                default_version="latest" if "latest" in versions else versions[-1],
-                available_graph_versions=self.add_tabs(
-                    self.format_versions(versions)
-                ),
-            )
+        return self._graph_method_model.format(
+            graph_method_name=graph_method_name,
+            repository_package_name=self.repository_package_name,
+            graph_name=graph_name,
+            repository_name=self.get_formatted_repository_name(),
+            callbacks_data=self.format_callbacks_data(
+                graph_name,
+                versions[-1]
+            ),
+            description=self.format_lines(
+                self.get_description(graph_name, versions[-1])
+            ),
+            tabbed_description=self.add_tabs(
+                self.format_lines(self.get_description(
+                    graph_name, versions[-1]))
+            ),
+            references=self.format_references(references),
+            tabbed_references="" if has_unique_references else self.add_tabs(
+                "\n\n{}".format(self.format_references(references))
+            ),
+            default_version="latest" if "latest" in versions else versions[-1],
+            available_graph_versions=self.add_tabs(
+                self.format_versions(versions)
+            ),
+        )
+
+    def get_automatic_graph_retrieval_import(self) -> str:
+        """Return what should be imported as automatic graph retrieval class."""
+        return "from .automatic_graph_retrieval import AutomaticallyRetrievedGraph"
 
     def format_init_file(
         self,
@@ -606,13 +610,14 @@ class GraphRepository:
 
     def build_all(self):
         """Build graph retrieval methods."""
-        graph_method_names = []
-        graph_file_names = []
         target_directory_path = os.path.join(
             "../bindings/python/ensmallen/datasets",
             self.repository_package_name,
         )
-        os.makedirs(target_directory_path, exist_ok=True)
+        file_path = "{}.py".format(target_directory_path)
+
+        imports = []
+
         for graph_data_path in tqdm(
             glob(os.path.join(
                 os.path.dirname(os.path.abspath(__file__)),
@@ -626,41 +631,74 @@ class GraphRepository:
             graph_data = compress_json.load(graph_data_path)
             first_graph_version_data = list(graph_data.values())[0]
             graph_name = first_graph_version_data["graph_name"]
+            packages_to_import = self.get_imports(
+                graph_name, list(graph_data.keys())[-1])
+            if packages_to_import:
+                imports.append(packages_to_import)
+
+        imports = list(set(imports))
+
+        first_references = list(compress_json.load(glob(os.path.join(
+            os.path.dirname(os.path.abspath(__file__)),
+            "graph_repositories",
+            self.get_formatted_repository_name(),
+            "*.json.gz"
+        ))[0]).values())[0]["references"]
+
+        has_unique_references = all(
+            list(compress_json.load(path).values())[
+                0]["references"] == first_references
+            for path in glob(os.path.join(
+                os.path.dirname(os.path.abspath(__file__)),
+                "graph_repositories",
+                self.get_formatted_repository_name(),
+                "*.json.gz"
+            ))
+        ) and first_references
+
+        file = open(file_path, "w")
+        file.write("\n".join([
+            "\"\"\"Module providing graphs available from {repository_name}.{references}\"\"\"".format(
+                repository_name=self.get_formatted_repository_name(),
+                references="\n\n{}\n".format(self.format_references(
+                    first_references)) if has_unique_references else ""
+            ),
+            "from ensmallen import Graph  # pylint: disable=import-error",
+            self.get_automatic_graph_retrieval_import(),
+            *imports,
+            "",
+            ""
+        ]))
+        graph_repository_metadata = {}
+        for graph_data_path in tqdm(
+            glob(os.path.join(
+                os.path.dirname(os.path.abspath(__file__)),
+                "graph_repositories",
+                self.get_formatted_repository_name(),
+                "*.json.gz"
+            )),
+            desc="Building graph retrieval methods for {}".format(self.name),
+            leave=False,
+            dynamic_ncols=True
+        ):
+            graph_data = compress_json.load(graph_data_path)
+            first_graph_version_data = list(graph_data.values())[0]
+            graph_name = first_graph_version_data["graph_name"]
             graph_method_name = first_graph_version_data["graph_method_name"]
             graph_retrieval_file = self.format_graph_retrieval_file(
                 graph_name=graph_name,
                 graph_method_name=graph_method_name,
                 references=first_graph_version_data["references"],
-                versions=list(graph_data.keys())
+                versions=list(graph_data.keys()),
+                has_unique_references=has_unique_references
             )
+            for value in graph_data.values():
+                value.pop("references")
+            graph_repository_metadata[graph_method_name] = graph_data
+            file.write(graph_retrieval_file)
 
-            target_path = os.path.join(
-                target_directory_path,
-                "{}.py".format(
-                    graph_method_name.lower()
-                )
-            )
-            graph_method_names.append(graph_method_name)
-            graph_file_names.append(
-                graph_method_name.lower()
-            )
-            target_json_path = os.path.join(
-                target_directory_path,
-                "{}.json.gz".format(
-                    graph_method_name
-                )
-            )
-            os.makedirs(target_directory_path, exist_ok=True)
-            with open(target_path, "w") as f:
-                f.write(graph_retrieval_file)
-            compress_json.dump(graph_data, target_json_path)
-
-        init_path = os.path.join(
-            target_directory_path,
-            "__init__.py"
+        file.close()
+        compress_json.dump(
+            graph_repository_metadata,
+            "{}.json.gz".format(target_directory_path)
         )
-        with open(init_path, "w") as f:
-            f.write(self.format_init_file(
-                graph_method_names,
-                graph_file_names
-            ))

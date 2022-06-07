@@ -120,7 +120,7 @@ impl EdgeTypeParser {
                     concat!(
                         "The given edge type name {:?} ",
                         "has a value greater than the number ",
-                        "of provided nodes {}."
+                        "of provided edge types {}."
                     ),
                     edge_type_id,
                     vocabulary.len()
@@ -142,7 +142,8 @@ impl EdgeTypeParser {
             (
                 src,
                 dst,
-                edge_type_name.map(|edge_type_name| atoi_c(edge_type_name.as_str()) as EdgeTypeT),
+                edge_type_name
+                    .map(|edge_type_name| unsafe { atoi_c(edge_type_name.as_str()) as EdgeTypeT }),
                 weight,
             ),
         ))

@@ -1,4 +1,5 @@
 use rayon::iter::ParallelIterator;
+use std::collections::HashMap;
 
 use super::*;
 
@@ -10,13 +11,14 @@ pub struct NodeFileReader {
     pub(crate) node_ids_column_number: Option<usize>,
     pub(crate) default_node_type: Option<String>,
     pub(crate) nodes_column_number: Option<usize>,
-    pub(crate) node_types_separator: Option<String>,
+    pub(crate) node_types_separator: Option<char>,
     pub(crate) node_types_column_number: Option<usize>,
     pub(crate) nodes_number: Option<NodeT>,
     pub(crate) minimum_node_id: Option<NodeT>,
     pub(crate) numeric_node_ids: bool,
     pub(crate) numeric_node_type_ids: bool,
     pub(crate) skip_node_types_if_unavailable: bool,
+    pub(crate) node_name_tokens_remapping: Option<HashMap<String, String>>,
 }
 
 impl NodeFileReader {
@@ -42,7 +44,24 @@ impl NodeFileReader {
             numeric_node_ids: !has_path,
             numeric_node_type_ids: false,
             skip_node_types_if_unavailable: false,
+            node_name_tokens_remapping: None,
         })
+    }
+
+    /// Set the HashMap to be used to replace tokens in the node names.
+    ///
+    /// This is meant to be useful when the nodes include extremely long
+    /// prefixes, such as in graphs like WikiData.
+    ///
+    /// # Arguments
+    /// * `node_name_tokens_remapping`: Option<HashMap<String, String>> - Mapping of tokens to be used to simplify the node names.
+    ///
+    pub fn set_node_name_tokens_remapping(
+        mut self,
+        node_name_tokens_remapping: Option<HashMap<String, String>>,
+    ) -> NodeFileReader {
+        self.node_name_tokens_remapping = node_name_tokens_remapping;
+        self
     }
 
     /// Set the column of the node IDs.
@@ -205,9 +224,9 @@ impl NodeFileReader {
     ///
     pub fn set_node_types_column<S: Into<String>>(
         mut self,
-        nodes_type_column: Option<S>,
+        node_type_column: Option<S>,
     ) -> Result<NodeFileReader> {
-        if let Some(column) = nodes_type_column {
+        if let Some(column) = node_type_column {
             self.must_have_reader()?;
             let column = column.into();
             if column.is_empty() {
@@ -407,9 +426,9 @@ impl NodeFileReader {
     /// Set the separator.
     ///
     /// # Arguments
-    /// * separator: Option<String> - The separator to use for the file.
+    /// * separator: Option<char> - The separator to use for the file.
     ///
-    pub fn set_separator(mut self, separator: Option<String>) -> Result<NodeFileReader> {
+    pub fn set_separator(mut self, separator: Option<char>) -> Result<NodeFileReader> {
         if separator.is_some() {
             self.must_have_reader()?;
         }
@@ -421,7 +440,7 @@ impl NodeFileReader {
     }
 
     /// Return separator used for the current node list file.
-    pub fn get_separator(&self) -> Result<String> {
+    pub fn get_separator(&self) -> Result<char> {
         self.must_have_reader()?;
         Ok(self
             .reader
@@ -446,23 +465,37 @@ impl NodeFileReader {
     /// * node_types_separator: Option<String> - The separator to use for the node types column.
     ///
     /// TODO!: Add automatic separator detection
-    pub fn set_node_types_separator<S: Into<String>>(
+    pub fn set_node_types_separator<S: Into<char>>(
         mut self,
         node_types_separator: Option<S>,
     ) -> Result<NodeFileReader> {
         if let Some(sep) = node_types_separator {
             self.must_have_reader()?;
-            let sep = sep.into();
-            if sep.is_empty() {
-                return Err("The node type separator cannot be empty.".to_owned());
-            }
-            self.node_types_separator = Some(sep);
+            self.node_types_separator = Some(sep.into());
         }
         Ok(self)
     }
 
+    /// Set whether to support the balanced quotes while reading the CSV, operation that will significantly slow down the execution.
+    ///
+    /// # Arguments
+    /// * `support_balanced_quotes`: Option<bool> - Whether to support the balanced quotes while reading the CSV.
+    ///
+    pub fn set_support_balanced_quotes(
+        mut self,
+        support_balanced_quotes: Option<bool>,
+    ) -> Result<NodeFileReader> {
+        if support_balanced_quotes.is_some() {
+            self.must_have_reader()?;
+        }
+        self.reader = self
+            .reader
+            .map(|reader| reader.set_support_balanced_quotes(support_balanced_quotes));
+        Ok(self)
+    }
+
     /// Return he node types separator used within this file.
-    pub fn get_node_types_separator(&self) -> Option<String> {
+    pub fn get_node_types_separator(&self) -> Option<char> {
         self.node_types_separator.clone()
     }
 
@@ -592,7 +625,7 @@ impl NodeFileReader {
         // Split given node types using the provided node type separator.
         let node_types =
             maybe_node_types_string.map(|node_types_string| match &self.node_types_separator {
-                Some(sep) => node_types_string.split(sep).map(String::from).collect(),
+                Some(sep) => node_types_string.split(*sep).map(String::from).collect(),
                 None => vec![node_types_string],
             });
 

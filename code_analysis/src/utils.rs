@@ -5,7 +5,7 @@ use walkdir::WalkDir;
 /// List of the files we will skip in the analysis
 /// becasue they have features we don't have implmented yet
 /// nor we care about.
-const BLACKLIST: &[&str] = &[
+pub const DENY_LIST: &[&str] = &[
     "types.rs", // macro calls
     "walks.rs", // mods
     "lib.rs",   // mods
@@ -18,11 +18,15 @@ const BLACKLIST: &[&str] = &[
     "parallel_lines_reader_with_index.rs",
     "url_utilities",
     "constructors",
-    "argmax_argmin.rs"
+    "argmax_argmin.rs",
+    "minmax.rs",
+    "splitter.rs",
+    "mmap"
 ];
 
-pub fn skip_file(path: &str) -> bool {
-    for deny in BLACKLIST.iter() {
+
+pub fn skip_file(path: &str, deny_list: &'static [&'static str]) -> bool {
+    for deny in deny_list.iter() {
         if !path.ends_with(".rs") || path.contains(deny) {
             eprintln!("Skipping the file {}", path);
             return true;
@@ -36,8 +40,8 @@ pub fn skip_file(path: &str) -> bool {
 ///
 /// # Panics
 /// If this function panics then probably the source folder path is wrong!
-pub fn get_library_sources() -> Vec<Module> {
-    let src_files: Vec<String> = WalkDir::new("../graph/src/")
+pub fn parse_crate(path: &str, deny_list: &'static [&'static str]) -> Vec<Module> {
+    let src_files: Vec<String> = WalkDir::new(path)
         .into_iter()
         .filter_map(|entry| {
             let value = entry.unwrap();
@@ -47,7 +51,7 @@ pub fn get_library_sources() -> Vec<Module> {
                 Some(value.path().to_str().unwrap().to_string())
             }
         })
-        .filter(|path| !skip_file(path))
+        .filter(|path| !skip_file(path, deny_list))
         .collect();
 
     let mut modules = Vec::new();

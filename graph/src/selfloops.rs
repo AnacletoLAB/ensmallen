@@ -33,7 +33,7 @@ impl Graph {
             .to_string());
         }
         let weight = weight.unwrap_or(WeightT::NAN);
-        let total_edges_number = self.get_directed_edges_number() - self.get_selfloops_number()
+        let total_edges_number = self.get_number_of_directed_edges() - self.get_selfloops_number()
             + self.get_nodes_number() as EdgeT;
 
         build_graph_from_integers(
@@ -50,7 +50,10 @@ impl Graph {
             ),
             self.nodes.clone(),
             self.node_types.clone(),
-            self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
+            self.edge_types
+                .as_ref()
+                .as_ref()
+                .map(|ets| ets.vocabulary.clone()),
             self.has_edge_weights(),
             self.is_directed(),
             Some(true),

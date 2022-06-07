@@ -74,11 +74,11 @@ impl Graph {
     /// # Raises
     /// * If the given edge ID does not exists in the graph.
     pub fn validate_edge_id(&self, edge_id: EdgeT) -> Result<EdgeT> {
-        if edge_id >= self.get_directed_edges_number() {
+        if edge_id >= self.get_number_of_directed_edges() {
             return Err(format!(
                 "The given edge id ({}) is higher than the number of edges within the graph ({}).",
                 edge_id,
-                self.get_directed_edges_number()
+                self.get_number_of_directed_edges()
             ));
         }
         Ok(edge_id)
@@ -268,7 +268,18 @@ impl Graph {
         if !self.has_node_types() {
             return Err("The current graph instance does not have node types.".to_string());
         }
-        Ok(self.node_types.as_ref().unwrap())
+        Ok(self.node_types.as_ref().as_ref().unwrap())
+    }
+
+    /// Raises an error if the graph's nodes do not have detectable ontologies.
+    ///
+    /// # Raises
+    /// * If the graph does not contain nodes with detectable ontologies.
+    pub fn must_have_node_ontologies(&self) -> Result<()> {
+        if !self.has_node_ontologies() {
+            return Err("The current graph's nodes do not have detectable ontologies.".to_string());
+        }
+        Ok(())
     }
 
     #[no_binding]
@@ -290,7 +301,7 @@ impl Graph {
         if !self.has_edge_types() {
             return Err("The current graph instance does not have edge types.".to_string());
         }
-        Ok(self.edge_types.as_ref().unwrap())
+        Ok(self.edge_types.as_ref().as_ref().unwrap())
     }
 
     /// Raises an error if the graph does not have edge types.
@@ -314,6 +325,16 @@ impl Graph {
         Ok(())
     }
 
+    /// Raises an error if the graph contains trap nodes.
+    ///
+    /// # Raises
+    /// * If the graph contains trap nodes.
+    pub fn must_not_have_trap_nodes(&self) -> Result<()> {
+        if self.has_trap_nodes() {
+            return Err("The current graph instance contains trap nodes.".to_string());
+        }
+        Ok(())
+    }
     /// Raises an error if the graph does not have edge types.
     ///
     /// # Example
@@ -409,7 +430,7 @@ impl Graph {
         if !self.has_edge_weights() {
             return Err("The current graph instance does not have weights.".to_string());
         }
-        Ok(self.weights.as_ref().unwrap())
+        Ok(self.weights.as_ref().as_ref().unwrap())
     }
 
     #[no_binding]
@@ -480,7 +501,7 @@ impl Graph {
                     .to_string(),
             );
         }
-        Ok(self.weights.as_ref().unwrap())
+        Ok(self.weights.as_ref().as_ref().unwrap())
     }
 
     #[no_binding]
@@ -503,7 +524,7 @@ impl Graph {
         if self.has_negative_edge_weights()? {
             return Err("The current graph instance contains negative edge weights.".to_string());
         }
-        Ok(self.weights.as_ref().unwrap())
+        Ok(self.weights.as_ref().as_ref().unwrap())
     }
 
     /// Raises an error if the graph contains zero weighted degree.
@@ -570,6 +591,22 @@ impl Graph {
     pub fn must_be_connected(&self) -> Result<()> {
         if !self.is_connected(None) {
             return Err("The current graph instance is not connected.".to_string());
+        }
+        Ok(())
+    }
+
+    /// Raises an error if the provided graph does not a node vocabulary compatible with the current graph instance.
+    ///
+    /// # Raises
+    /// * If the provided graph does not share a compatible node vocabulary with the current instance.
+    pub fn must_share_node_vocabulary(&self, other: &Graph) -> Result<()> {
+        if !self.has_compatible_node_vocabularies(other) {
+            return Err(
+                concat!(
+                    "The provided graph does not share a node vocaulary that is ",
+                    "compatible with the current graph instance."
+                ).to_string()
+            );
         }
         Ok(())
     }
