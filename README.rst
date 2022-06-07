@@ -44,6 +44,7 @@ Please cite the following paper if it was useful for your research:
       primaryClass={cs.LG}
     }
 
+
 .. |rust_version| image:: https://img.shields.io/badge/rust-nightly-orange
     :target: https://github.com/LucaCappelletti94/ensmallen/tree/master/graph
     :alt: Rust Nightly

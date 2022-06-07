@@ -1,69 +1,78 @@
-# Python Bindings
+Ensmallen
+========================
+|pip| |downloads| |rust_version| |python_version| |license| |DOI| |documentation| |tutorials|
 
-## How to install this
-This project is currently work in progress, and is to be considered for all
-intents and porposes an **alpha** version.
+Ensmallen is the Rust/Python hyper-performance graph processing submodule of the `GraPE <https://github.com/AnacletoLAB/grape>`_ library.
 
-To install the **latest (alpha) release**, run the following:
+How to install Ensmallen
+-------------------------
+To install the complete GraPE library, do run:
 
-```bash
-pip install ensmallen
-```
+.. code:: bash
 
-## Compile the bindings
-The project uses PyO3 and maturin.
-You need nightly rust in order to compile PyO3.
-This could be done by running:
-```
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh --default-toolchain nightly --profile default -y
-```
+    pip install grape
 
-Then we need to install maturin with:
-```
-cargo install maturin
-```
+Instead, to exclusively install the Ensmallen package, you can run:
 
-And finally we can create the Wheels with:
-```
-maturin build --release
-```
+.. code:: bash
 
-The wheels will be located in `./target/wheels/`.
+    pip install ensmallen
 
-### Compile the bindings for multiple Python versions
 
-By default maturin will build for the installed python version.
+Compiling the wheels
+~~~~~~~~~~~~~~~~~~~~~
+See `this page <https://github.com/AnacletoLAB/ensmallen/blob/master/bindings/python/README.md>`_ to compile the bindings yourself.
 
-To install other Python versions just run:
-```bash
-wget https://www.python.org/ftp/python/${PYTHON_VERSION}/Python-${PYTHON_VERSION}.tar.xz
-tar -xf Python-${PYTHON_VERSION}.tar.xz
-(cd Python-${PYTHON_VERSION}; ./configure --enable-optimizations; make -j$(nproc); make -j$(nproc) install)
-```
-Where `${PYTHON_VERSION}` is the choosen version, such as `3.8.3` or `3.6.10`.
 
-## Solving the GLIBC__2.29__ not found error
-This means that the linux package were built on a system with a really new Libc version.
-This can be solved by compiling your own bindings.
-In order to be compatible with as many systems as possible, we suggest to build them on the official Manylinux1 docker.
+Contributing
+---------------------
+Please refer to the `CONTRIBUTING.md <https://github.com/AnacletoLAB/ensmallen/blob/master/CONTRIBUTING.md>`_ file.
 
-# Compiling the bindings for Linux to push them to Pipy
-In order to make the wheels usable by any linux system we must follow the `manylinux2010` standard. We used to support `manylinux1` but rust no longer support Glibc 2.5 so we had to bump it to the next standard.
 
-To specify for which versions you wish to build the bindings just modify the folliowing line inside of `./ensmallen/setup/DockerFileManyLinux2010`:
-```docker
-ENV PATH /opt/python/cp36-cp36m/bin/:/opt/python/cp37-cp37m/bin/:/opt/python/cp38-cp38/bin/:/opt/python/cp39-cp39/bin/:$PATH
-```
+Cite GraPE
+----------------------------------------------
+Please cite the following paper if it was useful for your research:
 
-This can be done by building the bindings inside a centos5 docker with:
-```bash
-git clone https://github.com/LucaCappelletti95/ensmallen
-cd ensmallen
-make build_manylinux2010 python_manylinux2010
-```
+.. code:: bib
 
-The result wheels will be in `./ensmallen/bindings/python/target/wheels/`.
+    @misc{cappelletti2021grape,
+      title={GraPE: fast and scalable Graph Processing and Embedding}, 
+      author={Luca Cappelletti and Tommaso Fontana and Elena Casiraghi and Vida Ravanmehr and Tiffany J. Callahan and Marcin P. Joachimiak and Christopher J. Mungall and Peter N. Robinson and Justin Reese and Giorgio Valentini},
+      year={2021},
+      eprint={2110.06196},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG}
+    }
 
-A wheel will be created for each version of python, this is configurable in the Dockerfile `./ensmallen/setup/DockerFileManylinux2010` in a ENV var.
 
-A tutorial on how the internals of Python's Cffi can be found [here](https://blog.schuetze.link/2018/07/21/a-dive-into-packaging-native-python-extensions.html)
+.. |rust_version| image:: https://img.shields.io/badge/rust-nightly-orange
+    :target: https://github.com/LucaCappelletti94/ensmallen/tree/master/graph
+    :alt: Rust Nightly
+
+.. |pip| image:: https://badge.fury.io/py/ensmallen.svg
+    :target: https://badge.fury.io/py/ensmallen
+    :alt: Pypi project
+
+.. |downloads| image:: https://pepy.tech/badge/ensmallen
+    :target: https://pepy.tech/badge/ensmallen
+    :alt: Pypi total project downloads
+
+.. |license| image:: https://img.shields.io/badge/License-MIT-blue.svg
+    :target: https://opensource.org/licenses/MIT
+    :alt: License
+
+.. |tutorials| image:: https://img.shields.io/badge/Tutorials-Jupyter%20Notebooks-blue.svg
+    :target: https://github.com/AnacletoLAB/grape/tree/main/tutorials
+    :alt: Tutorials
+
+.. |documentation| image:: https://img.shields.io/badge/Documentation-Available%20here-blue.svg
+    :target: https://anacletolab.github.io/grape/index.html
+    :alt: Documentation
+
+.. |DOI| image:: https://img.shields.io/badge/DOI-10.48550/arXiv.2110.06196-blue.svg
+    :target: https://doi.org/10.48550/arXiv.2110.06196
+    :alt: DOI
+
+.. |python_version| image:: https://img.shields.io/badge/Python-3.6+-blue.svg
+    :target: https://pypi.org/project/ensmallen/#history
+    :alt: Supported Python versions
