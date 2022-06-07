@@ -26,7 +26,7 @@ See `this page <https://github.com/AnacletoLAB/ensmallen/blob/master/bindings/py
 
 Contributing
 ---------------------
-Please refer to the `CONTRIBUTING.md <https://github.com/AnacletoLAB/ensmallen/blob/master/CONTRIBUTING.md>` file.
+Please refer to the `CONTRIBUTING.md <https://github.com/AnacletoLAB/ensmallen/blob/master/CONTRIBUTING.md>`_ file.
 
 
 Cite GraPE
