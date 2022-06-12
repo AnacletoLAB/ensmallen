@@ -6,6 +6,115 @@ use rayon::prelude::*;
 
 /// # Properties and measurements of the graph
 impl Graph {
+    /// Returns the structural distance from the given node IDs.
+    ///
+    /// # Arguments
+    /// * `source_node_id`: NodeT - Node ID of the first node.
+    /// * `destination_node_id`: NodeT - Node ID of the second node.
+    /// * `maximal_hop_distance`: usize - Maximal hop distance to consider.
+    ///
+    /// # Reference
+    /// This is the structural distance based on the dynamical time warping
+    /// of two nodes's neighbours's degree up to a given hop distance.
+    ///
+    /// # Safety
+    /// If either of the provided one and two node IDs are higher than the
+    /// number of nodes in the graph.
+    pub unsafe fn get_unchecked_structural_distance_from_node_ids(
+        &self,
+        source_node_id: NodeT,
+        destination_node_id: NodeT,
+        maximal_hop_distance: usize,
+    ) -> Vec<f32> {
+        let mut source_visited = vec![false; self.get_nodes_number() as usize];
+        let mut destination_visited = vec![false; self.get_nodes_number() as usize];
+        source_visited[source_node_id as usize] = true;
+        destination_visited[destination_node_id as usize] = true;
+        let mut source_frontier = vec![source_node_id];
+        let mut destination_frontier = vec![destination_node_id];
+
+        let step_frontier = |frontier: &[NodeT], visited: &mut [bool]| {
+            frontier
+                .iter()
+                .copied()
+                .flat_map(|node_id| {
+                    self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
+                })
+                .filter_map(|neighbour_node_id| {
+                    if !visited[neighbour_node_id as usize] {
+                        visited[neighbour_node_id as usize] = true;
+                        // add the node to the nodes to explore
+                        Some(neighbour_node_id)
+                    } else {
+                        None
+                    }
+                })
+                .collect::<Vec<NodeT>>()
+        };
+
+        let sorted_degree_tuples = |frontier: &[NodeT]| {
+            let mut node_degrees = frontier
+                .iter()
+                .copied()
+                .map(|node_id| self.get_unchecked_node_degree_from_node_id(node_id))
+                .collect::<Vec<NodeT>>();
+            node_degrees.sort_unstable();
+            let mut last_degree: Option<NodeT> = None;
+            let mut count = 0;
+            let mut degree_counts: Vec<(NodeT, NodeT)> = Vec::new();
+
+            node_degrees
+                .into_iter()
+                .for_each(|degree| match last_degree.as_mut() {
+                    Some(last_degree) => {
+                        if *last_degree == degree {
+                            count += 1;
+                        } else {
+                            degree_counts.push((count, *last_degree));
+                            *last_degree = degree;
+                            count = 1;
+                        }
+                    }
+                    None => {
+                        last_degree = Some(degree);
+                        count = 1;
+                    }
+                });
+            degree_counts.push((count, last_degree.unwrap_or(0)));
+            degree_counts
+        };
+
+        // This is the distance of the degrees defined by
+        // the authors of Struct2Vec in Ribeiro et al.
+        let degree_distance =
+            |(first_degree_count, first_degree): &(NodeT, NodeT),
+             (second_degree_count, second_degree): &(NodeT, NodeT)| {
+                (*(first_degree.max(second_degree)) as f32
+                    / (*(first_degree.min(second_degree)) as f32 + f32::EPSILON)
+                    - 1.0)
+                    * (*(first_degree_count.max(second_degree_count)) as f32)
+            };
+
+        (0..maximal_hop_distance)
+            .map(|_| {
+                source_frontier = step_frontier(&source_frontier, &mut source_visited);
+                destination_frontier =
+                    step_frontier(&destination_frontier, &mut destination_visited);
+                let source_degree_counts = sorted_degree_tuples(&source_frontier);
+                let destination_degree_counts = sorted_degree_tuples(&destination_frontier);
+                express_measures::dynamic_time_warping(
+                    &source_degree_counts,
+                    &destination_degree_counts,
+                    degree_distance,
+                )
+            })
+            .scan(0.0, |running_sum, cost| {
+                *running_sum += cost;
+                Some(*running_sum)
+            })
+            .collect::<Vec<f32>>()
+    }
+
     /// Returns the minumum unweighted preferential attachment score.
     ///
     /// # Safety

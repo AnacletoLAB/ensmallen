@@ -44,6 +44,9 @@ pub fn dynamic_time_warping<T, F: ThreadFloat>(
     second_sequence: &[T],
     cost: fn(a: &T, b: &T) -> F,
 ) -> F {
+    if first_sequence.is_empty() || second_sequence.is_empty() {
+        return F::infinity();
+    }
     let number_of_rows = first_sequence.len() + 1;
     let number_of_columns = second_sequence.len() + 1;
     let mut costs = vec![F::infinity(); number_of_rows * number_of_columns];
@@ -60,7 +63,7 @@ pub fn dynamic_time_warping<T, F: ThreadFloat>(
                     let left_cost = costs[(i + 1) * number_of_columns + j];
                     let left_upper_cost = costs[i * number_of_columns + j];
                     let minimum_cost = upper_cost.min(left_cost).min(left_upper_cost);
-                    costs[i * number_of_columns + j] =
+                    costs[(i+1) * number_of_columns + (j+1)] =
                         cost(first_sequence_value, second_sequence_value) + minimum_cost;
                 });
         });
@@ -109,6 +112,9 @@ pub fn local_dynamic_time_warping<T, F: ThreadFloat>(
     cost: fn(a: &T, b: &T) -> F,
     mut local_window_size: usize,
 ) -> F {
+    if first_sequence.is_empty() || second_sequence.is_empty() {
+        return F::infinity();
+    }
     let number_of_rows = first_sequence.len() + 1;
     let number_of_columns = second_sequence.len() + 1;
     let mut costs = vec![F::infinity(); number_of_rows * number_of_columns];
@@ -135,7 +141,7 @@ pub fn local_dynamic_time_warping<T, F: ThreadFloat>(
                     let left_cost = costs[(i + 1) * number_of_columns + j];
                     let left_upper_cost = costs[i * number_of_columns + j];
                     let minimum_cost = upper_cost.min(left_cost).min(left_upper_cost);
-                    costs[i * number_of_columns + j] =
+                    costs[(i +1 )* number_of_columns + (j + 1)] =
                         cost(first_sequence_value, second_sequence_value) + minimum_cost;
                 });
         });

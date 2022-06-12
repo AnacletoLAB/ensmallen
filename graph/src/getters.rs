@@ -555,7 +555,9 @@ impl Graph {
 
     /// Return vector with the sorted nodes Ids.
     pub fn get_node_ids(&self) -> Vec<NodeT> {
-        self.iter_node_ids().collect()
+        let mut node_ids = Vec::with_capacity(self.get_nodes_number() as usize);
+        self.par_iter_node_ids().collect_into_vec(&mut node_ids);
+        node_ids
     }
 
     /// Return the edge types of the edges.

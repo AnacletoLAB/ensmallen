@@ -79,13 +79,29 @@ impl WalkWeights {
     /// assert!(weights.is_first_order_walk());
     /// ```
     pub fn is_first_order_walk(&self) -> bool {
-        let weights = vec![
+        [
             self.change_node_type_weight,
             self.change_edge_type_weight,
             self.return_weight,
             self.explore_weight,
-        ];
-        weights.iter().all(|weight| !not_one(*weight))
+        ].iter().all(|weight| !not_one(*weight))
+    }
+
+    /// Return boolean value representing if walk is a Node2Vec walk.
+    ///
+    /// # Example
+    /// The default parametrization defines a Node2Vec walk:
+    ///
+    /// ```rust
+    /// # use graph::walks_parameters::WalkWeights;
+    /// let weights = WalkWeights::default();
+    /// assert!(!weights.is_node2vec_walk());
+    /// ```
+    pub fn is_node2vec_walk(&self) -> bool {
+        [
+            self.return_weight,
+            self.explore_weight,
+        ].iter().any(|weight| not_one(*weight))
     }
 }
 
@@ -136,6 +152,20 @@ impl SingleWalkParameters {
     /// ```
     pub fn is_first_order_walk(&self) -> bool {
         self.weights.is_first_order_walk() && !self.normalize_by_degree
+    }
+
+    /// Return boolean value representing if walk is a Node2Vec walk.
+    ///
+    /// # Example
+    /// The default parametrization defines a Node2Vec walk:
+    ///
+    /// ```rust
+    /// # use graph::walks_parameters::SingleWalkParameters;
+    /// let weights = SingleWalkParameters::new(32).unwrap();
+    /// assert!(!weights.is_node2vec_walk());
+    /// ```
+    pub fn is_node2vec_walk(&self) -> bool {
+        self.weights.is_node2vec_walk()
     }
 }
 
@@ -463,6 +493,17 @@ impl WalksParameters {
     /// ```
     ///
     pub fn validate(&self, graph: &Graph) -> Result<()> {
+        if self.is_node2vec_walk() && graph.is_directed() {
+            return Err(concat!(
+                "The walk is a Node2Vec walk and ",
+                "the graph is directed, which is not yet supported."
+            ).to_string());
+        }
+        if graph.has_trap_nodes() {
+            return Err(concat!(
+                "The graph is directed with trap nodes which is not yet supported."
+            ).to_string());
+        }
         if let Some(dense_node_mapping) = &self.dense_node_mapping {
             if !graph
                 .iter_unique_source_node_ids()
@@ -489,5 +530,18 @@ impl WalksParameters {
     /// ```
     pub fn is_first_order_walk(&self) -> bool {
         self.single_walk_parameters.is_first_order_walk()
+    }
+
+    /// Return boolean value representing if walk is a Node2Vec walk.
+    ///
+    /// # Example
+    /// The default parametrization defines a Node2Vec walk:
+    ///
+    /// ```rust
+    /// # use graph::walks_parameters::WalksParameters;
+    /// assert!(!WalksParameters::new(32).unwrap().is_node2vec_walk());
+    /// ```
+    pub fn is_node2vec_walk(&self) -> bool {
+        self.single_walk_parameters.is_node2vec_walk()
     }
 }
