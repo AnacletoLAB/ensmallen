@@ -15,7 +15,7 @@ impl Graph {
         if self.has_node_types() {
             result.extend(
                 format!(
-                    "node [colorscheme={} style=filled ]",
+                    "node [colorscheme={} style=filled shape=circle]",
                     if self.get_node_types_number().unwrap() < 8 {
                         "set28"
                     } else {
