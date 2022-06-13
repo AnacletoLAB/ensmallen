@@ -397,8 +397,9 @@ impl Graph {
 
         let half_number_of_destinations = (self.get_nodes_number() as f32).ln().ceil() as usize;
         // it's the degree of the node on the multigraph composed by all the layers
-        let number_of_edges_per_node = 2 * half_number_of_destinations * number_of_layers;
-        let number_of_edges_per_layer = 2 * half_number_of_destinations * number_of_nodes;
+        let number_of_destinations = 2 * half_number_of_destinations;
+        let number_of_edges_per_node = number_of_destinations * number_of_layers;
+        let number_of_edges_per_layer = number_of_destinations * number_of_nodes;
 
         info!("Allocating edge weights.");
         let mut weights: Vec<WeightT> = vec![0.0; number_of_edges_per_node * number_of_nodes];
@@ -689,7 +690,7 @@ impl Graph {
                             .enumerate()
                             .map(move |(i, (dst, weights))| {
                                 (
-                                    (src as usize) * number_of_edges_per_node + i,
+                                    (src as usize) * number_of_destinations + i,
                                     (src, dst, None, weights.iter().copied().sum::<f32>() + f32::EPSILON),
                                 )
                             })
