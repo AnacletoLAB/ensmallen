@@ -2,6 +2,7 @@ use super::types::*;
 use super::*;
 use num_traits::Pow;
 use num_traits::Zero;
+use std::collections::HashSet;
 use rayon::prelude::*;
 
 /// # Properties and measurements of the graph
@@ -26,33 +27,23 @@ impl Graph {
         destination_node_id: NodeT,
         maximal_hop_distance: usize,
     ) -> Vec<f32> {
-        let mut source_visited = vec![false; self.get_nodes_number() as usize];
-        let mut destination_visited = vec![false; self.get_nodes_number() as usize];
-        source_visited[source_node_id as usize] = true;
-        destination_visited[destination_node_id as usize] = true;
-        let mut source_frontier = vec![source_node_id];
-        let mut destination_frontier = vec![destination_node_id];
+        let mut source_frontier = [source_node_id].iter().copied().collect::<HashSet<NodeT>>();
+        let mut destination_frontier = [destination_node_id].iter().copied().collect::<HashSet<NodeT>>();
 
-        let step_frontier = |frontier: &[NodeT], visited: &mut [bool]| {
+        let step_frontier = |frontier: &HashSet<NodeT>| {
             frontier
                 .iter()
                 .copied()
                 .flat_map(|node_id| {
                     self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
                 })
-                .filter_map(|neighbour_node_id| {
-                    if !visited[neighbour_node_id as usize] {
-                        visited[neighbour_node_id as usize] = true;
-                        // add the node to the nodes to explore
-                        Some(neighbour_node_id)
-                    } else {
-                        None
-                    }
-                })
-                .collect::<Vec<NodeT>>()
+                .collect::<HashSet<NodeT>>()
         };
 
-        let sorted_degree_tuples = |frontier: &[NodeT]| {
+        let sorted_degree_tuples = |frontier: &HashSet<NodeT>| {
+            if frontier.is_empty() {
+                return vec![];
+            }
             let mut node_degrees = frontier
                 .iter()
                 .copied()
@@ -80,7 +71,7 @@ impl Graph {
                         count = 1;
                     }
                 });
-            degree_counts.push((count, last_degree.unwrap_or(0)));
+            degree_counts.push((count, last_degree.unwrap()));
             degree_counts
         };
 
@@ -95,19 +86,29 @@ impl Graph {
                     * (*(first_degree_count.max(second_degree_count)) as f32)
             };
 
-        (0..maximal_hop_distance)
-            .map(|_| {
-                source_frontier = step_frontier(&source_frontier, &mut source_visited);
-                destination_frontier =
-                    step_frontier(&destination_frontier, &mut destination_visited);
-                let source_degree_counts = sorted_degree_tuples(&source_frontier);
-                let destination_degree_counts = sorted_degree_tuples(&destination_frontier);
-                express_measures::dynamic_time_warping(
-                    &source_degree_counts,
-                    &destination_degree_counts,
-                    degree_distance,
-                )
-            })
+        // compute the first layer as just the difference of degrees since we 
+        // have hop distance of 0
+        [
+            degree_distance(
+                &(self.get_unchecked_node_degree_from_node_id(source_node_id), 1),
+                &(self.get_unchecked_node_degree_from_node_id(destination_node_id), 1),
+            )
+        ].iter().copied().chain(
+            // compute the remaining distances
+            (0..maximal_hop_distance)
+                .map(|_| {
+                    source_frontier = step_frontier(&source_frontier);
+                    destination_frontier =
+                        step_frontier(&destination_frontier);
+                    let source_degree_counts = sorted_degree_tuples(&source_frontier);
+                    let destination_degree_counts = sorted_degree_tuples(&destination_frontier);
+                    express_measures::dynamic_time_warping(
+                        &source_degree_counts,
+                        &destination_degree_counts,
+                        degree_distance,
+                    )
+                })
+            )
             .scan(0.0, |running_sum, cost| {
                 *running_sum += cost;
                 Some(*running_sum)
