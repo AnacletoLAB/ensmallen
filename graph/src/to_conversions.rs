@@ -332,7 +332,6 @@ impl Graph {
     ///
     /// # Raises
     /// * If the provided graph does not have any edges.
-    /// * If the provided maximal distance is zero.
     /// * If the provided change layer probability is not a probability.
     /// * If the provided random walk parameters are not valid.
     pub fn to_structural_similarity_multi_graph(
@@ -350,9 +349,7 @@ impl Graph {
             info!("Computing diameter.");
             self.get_diameter(Some(true), Some(false)).unwrap() as usize
         });
-        if maximal_hop_distance == 0 {
-            return Err("The provided maximal hop distance is zero.".to_string());
-        }
+        let number_of_layers = maximal_hop_distance + 1; // we also consider the 0
 
         let change_layer_probability = change_layer_probability.unwrap_or(0.5);
         if change_layer_probability.is_zero()
@@ -373,19 +370,21 @@ impl Graph {
         // This list is first sorted by node degree and secondarily by node ID.
         let mut reverse_index = self.get_node_ids();
         reverse_index.par_sort_unstable_by(|&first_node_id, &second_node_id| unsafe {
-            match self
-                .get_unchecked_node_degree_from_node_id(first_node_id)
-                .cmp(&self.get_unchecked_node_degree_from_node_id(second_node_id))
-            {
-                std::cmp::Ordering::Greater => std::cmp::Ordering::Greater,
-                std::cmp::Ordering::Less => std::cmp::Ordering::Less,
-                std::cmp::Ordering::Equal => first_node_id.cmp(&second_node_id),
-            }
+            (
+                self.get_unchecked_node_degree_from_node_id(first_node_id),
+                first_node_id,
+            )
+                .cmp(&(
+                    self.get_unchecked_node_degree_from_node_id(second_node_id),
+                    second_node_id,
+                ))
         });
 
         let number_of_nodes = self.get_nodes_number() as usize;
 
         info!("Creating and sorting positions.");
+        // this is the reverse-(reverse-index) and stores the index in the reverse_index of a given node
+        // which means that positions[node_id] returns its index in the sorted array
         let positions = ThreadDataRaceAware::new(vec![0; number_of_nodes]);
         reverse_index
             .par_iter()
@@ -397,16 +396,17 @@ impl Graph {
         let positions = positions.into_inner();
 
         let half_number_of_destinations = (self.get_nodes_number() as f32).ln().ceil() as usize;
-        let node_block_size = 2 * maximal_hop_distance * half_number_of_destinations;
+        // it's the degree of the node on the multigraph composed by all the layers
+        let number_of_edges_per_node = 2 * half_number_of_destinations * number_of_layers;
         let number_of_edges_per_layer = 2 * half_number_of_destinations * number_of_nodes;
 
         info!("Allocating edge weights.");
-        let mut weights: Vec<WeightT> = vec![0.0; node_block_size * number_of_nodes];
-        let total_number_of_edges = weights.len();
+        let mut weights: Vec<WeightT> = vec![0.0; number_of_edges_per_node * number_of_nodes];
+        let total_number_of_edges = number_of_edges_per_layer;
 
-        let get_destinations = |position: usize| {
+        let get_destinations = |position_idx: usize| {
             // First we get the node IDs range.
-            let mut min_node_id = position.saturating_sub(1 + half_number_of_destinations);
+            let mut min_node_id = position_idx.saturating_sub(1 + half_number_of_destinations);
             // Note that we have not yet MODDED the max node id to the number of nodes!
             let mut max_node_id = min_node_id + half_number_of_destinations * 2 + 1;
 
@@ -423,33 +423,33 @@ impl Graph {
             .par_iter()
             .copied()
             .map(|position| (position as usize, reverse_index[position as usize]))
-            .zip(weights.par_chunks_mut(node_block_size))
-            .for_each(|((position, src), weights)| {
+            .zip(weights.par_chunks_mut(number_of_edges_per_node))
+            .for_each(|((position, src), src_edge_weights)| {
                 get_destinations(position)
                     .iter()
                     .copied()
                     .filter(move |&dst| dst != src)
-                    .zip(weights.chunks_mut(maximal_hop_distance))
-                    .for_each(|(dst, weights)| unsafe {
+                    .zip(src_edge_weights.chunks_mut(number_of_layers))
+                    .for_each(|(dst, src_layer_weights)| unsafe {
                         self.get_unchecked_structural_distance_from_node_ids(
                             src,
                             dst,
                             maximal_hop_distance,
                         )
                         .into_iter()
-                        .zip(weights.iter_mut())
-                        .for_each(|(cost, weight)| {
-                            *weight = (-cost).exp();
+                        .zip(src_layer_weights.iter_mut())
+                        .for_each(|(cost, src_layer_weight)| {
+                            *src_layer_weight = (-cost).exp();
                         });
                     });
             });
 
         info!("Computing average edge weight.");
         let mut average_weights = weights
-            .par_chunks(maximal_hop_distance)
+            .par_chunks(number_of_layers)
             .map(|weights| weights.to_vec())
             .reduce(
-                || vec![0.0; maximal_hop_distance],
+                || vec![0.0; number_of_layers],
                 |mut a, b| {
                     a.iter_mut().zip(b.iter()).for_each(|(a_weight, b_weight)| {
                         *a_weight += b_weight;
@@ -464,10 +464,10 @@ impl Graph {
 
         // We create the dictionary of nodes we will be using for
         // constructing the graph to compute the stationary distribution.
-        let nodes = Vocabulary::from_range(0..maximal_hop_distance as NodeT);
+        let nodes = Vocabulary::from_range(0..number_of_layers as NodeT);
 
         // We compute the number of edges in the layer transition graph.
-        let edges_number = (maximal_hop_distance + (maximal_hop_distance - 1) * 2) as EdgeT;
+        let edges_number = (number_of_layers + (number_of_layers - 1) * 2) as EdgeT;
         let walk_parameters =
             WalksParameters::new(random_walk_length)?.set_iterations(iterations)?;
 
@@ -478,151 +478,151 @@ impl Graph {
         // node of the appropriate amount to obtain an asintotically identical
         // distribution of sampling as if we were using the
         // more complex layer switching described in the paper.
-        weights.par_chunks_mut(node_block_size).for_each(|weights| {
-            // First of all, we count the number of weights for each of the layers
-            // that is higher than the global average of that layer.
-            let counts: Vec<NodeT> = weights.chunks(maximal_hop_distance).fold(
-                vec![0; maximal_hop_distance],
-                |mut partial_count, weights| {
-                    partial_count
-                        .iter_mut()
-                        .zip(weights.iter().zip(average_weights.iter()))
-                        .for_each(|(partial_count, (weight, average_weight))| {
-                            if weight > average_weight {
-                                *partial_count += 1
-                            }
+        weights
+            .par_chunks_mut(number_of_edges_per_node)
+            .for_each(|weights| {
+                // First of all, we count the number of weights for each of the layers
+                // that is higher than the global average of that layer.
+                let counts: Vec<NodeT> = weights.chunks(number_of_layers).fold(
+                    vec![0; number_of_layers],
+                    |mut partial_count, weights| {
+                        partial_count
+                            .iter_mut()
+                            .zip(weights.iter().zip(average_weights.iter()))
+                            .for_each(|(partial_count, (weight, average_weight))| {
+                                if weight > average_weight {
+                                    *partial_count += 1
+                                }
+                            });
+                        partial_count
+                    },
+                );
+                // We compute the total weights and then proceed to normalize layer wise.
+                let total_weights: Vec<WeightT> = weights.chunks(number_of_layers).fold(
+                    vec![0.0; number_of_layers],
+                    |mut partial_sum, weights| {
+                        partial_sum.iter_mut().zip(weights.iter()).for_each(
+                            |(partial_sum, weight)| {
+                                *partial_sum += weight;
+                            },
+                        );
+                        partial_sum
+                    },
+                );
+
+                // Convert the counts to the probability of transition from a lower
+                // layer to an upper layer.
+                let probability_of_transition_to_superior_layer = counts
+                    .into_iter()
+                    .map(|count| {
+                        let w = (count as f32 + std::f32::consts::E).ln();
+                        w / (1.0 + w)
+                    })
+                    .collect::<Vec<f32>>();
+
+                // Create the transitions graph to compute the stationary distribution
+                // to normalize the weights.
+                let graph = build_graph_from_integers(
+                    Some(
+                        probability_of_transition_to_superior_layer
+                            .into_par_iter()
+                            .enumerate()
+                            .flat_map(|(src, weight)| {
+                                let src = src as NodeT;
+                                // start of the chain
+                                let forward_change_layer_probability =
+                                    weight * change_layer_probability;
+                                let backward_change_layer_probability =
+                                    (1.0 - weight) * change_layer_probability;
+                                if src == 0 {
+                                    vec![
+                                        // self loop
+                                        (0, (0, 0, None, 1.0 - forward_change_layer_probability)),
+                                        // forward edge
+                                        (1, (0, 1, None, forward_change_layer_probability)),
+                                    ]
+                                } else if src == number_of_layers as NodeT - 1 {
+                                    // end of the chain
+                                    vec![
+                                        // backward edge
+                                        (
+                                            edges_number as usize - 2,
+                                            (src, src - 1, None, forward_change_layer_probability),
+                                        ),
+                                        // selfloop
+                                        (
+                                            edges_number as usize - 1,
+                                            (
+                                                src,
+                                                src,
+                                                None,
+                                                1.0 - forward_change_layer_probability,
+                                            ),
+                                        ),
+                                    ]
+                                } else {
+                                    // inner nodes in the chain
+                                    let min_edge_id = ((src - 1) * 3 + 2) as usize;
+                                    vec![
+                                        // backward edge
+                                        (
+                                            min_edge_id,
+                                            (src, src - 1, None, backward_change_layer_probability),
+                                        ),
+                                        // selfloop
+                                        (
+                                            min_edge_id + 1,
+                                            (src, src, None, (1.0 - change_layer_probability)),
+                                        ),
+                                        // forward edge
+                                        (
+                                            min_edge_id + 2,
+                                            (src, src + 1, None, forward_change_layer_probability),
+                                        ),
+                                    ]
+                                }
+                            }),
+                    ),
+                    Arc::new(nodes.clone()),
+                    Arc::new(None),
+                    None,
+                    true,
+                    true,
+                    Some(true),
+                    Some(false),
+                    Some(true),
+                    Some(edges_number),
+                    false,
+                    false,
+                    "Layer Transition",
+                )
+                .unwrap();
+
+                let visits_per_node: Vec<usize> = graph
+                    .iter_complete_walks(&walk_parameters)
+                    .unwrap()
+                    .fold(vec![0; number_of_layers], |mut counts, walk| {
+                        walk.into_iter().for_each(|node_id| {
+                            counts[node_id as usize] += 1;
                         });
-                    partial_count
-                },
-            );
-            // We compute the total weights and then proceed to normalize layer wise.
-            let total_weights: Vec<WeightT> = weights.chunks(maximal_hop_distance).fold(
-                vec![0.0; maximal_hop_distance],
-                |mut partial_sum, weights| {
-                    partial_sum
-                        .iter_mut()
-                        .zip(weights.iter())
-                        .for_each(|(partial_sum, weight)| {
-                            *partial_sum += weight;
-                        });
-                    partial_sum
-                },
-            );
-
-            // Convert the counts to the probability of transition from a lower
-            // layer to an upper layer.
-            let probability_of_transition_to_superior_layer = counts
-                .into_iter()
-                .map(|count| {
-                    let w = (count as f32 + std::f32::consts::E).ln();
-                    w / (1.0 + w) + f32::EPSILON
-                })
-                .collect::<Vec<f32>>();
-
-            // Create the transitions graph to compute the stationary distribution
-            // to normalize the weights.
-            let graph = build_graph_from_integers(
-                Some(
-                    probability_of_transition_to_superior_layer
-                        .into_par_iter()
-                        .enumerate()
-                        .flat_map(|(src, weight)| {
-                            let src = src as NodeT;
-                            if src == 0 {
-                                vec![
-                                    (
-                                        0,
-                                        (
-                                            0,
-                                            0,
-                                            None,
-                                            (1.0 - weight) * (1.0 - change_layer_probability),
-                                        ),
-                                    ),
-                                    (1, (0, 1, None, weight * change_layer_probability)),
-                                ]
-                            } else if src == maximal_hop_distance as NodeT - 1 {
-                                vec![
-                                    (
-                                        edges_number as usize - 2,
-                                        (src, src - 1, None, weight * change_layer_probability),
-                                    ),
-                                    (
-                                        edges_number as usize - 1,
-                                        (
-                                            src,
-                                            src,
-                                            None,
-                                            (1.0 - weight) * (1.0 - change_layer_probability),
-                                        ),
-                                    ),
-                                ]
-                            } else {
-                                let min_edge_id = ((src - 1) * 3 + 2) as usize;
-                                vec![
-                                    (
-                                        min_edge_id,
-                                        (
-                                            src,
-                                            src - 1,
-                                            None,
-                                            (1.0 - weight) * change_layer_probability,
-                                        ),
-                                    ),
-                                    (
-                                        min_edge_id + 1,
-                                        (src, src, None, (1.0 - change_layer_probability)),
-                                    ),
-                                    (
-                                        min_edge_id + 2,
-                                        (src, src + 1, None, weight * change_layer_probability),
-                                    ),
-                                ]
-                            }
-                        }),
-                ),
-                Arc::new(nodes.clone()),
-                Arc::new(None),
-                None,
-                true,
-                true,
-                Some(true),
-                Some(false),
-                Some(true),
-                Some(edges_number),
-                false,
-                false,
-                "Layer Transition",
-            )
-            .unwrap();
-
-            let visits_per_node: Vec<usize> = graph
-                .iter_complete_walks(&walk_parameters)
-                .unwrap()
-                .fold(vec![0; maximal_hop_distance], |mut counts, walk| {
-                    walk.into_iter().for_each(|node_id| {
-                        counts[node_id as usize] += 1;
+                        counts
                     });
-                    counts
-                });
 
-            let total_visits = visits_per_node
-                .iter()
-                .copied()
-                .map(|visits| visits)
-                .sum::<usize>() as f32;
+                let total_visits = visits_per_node
+                    .iter()
+                    .copied()
+                    .map(|visits| visits)
+                    .sum::<usize>() as f32;
 
-            // Finally normalize the visits by the total and obtain the
-            // approximated stationary distribution.
-            let stationary_distribution: Vec<f32> = visits_per_node
-                .into_iter()
-                .map(|visits| visits as f32 / total_visits)
-                .collect();
+                // Finally normalize the visits by the total and obtain the
+                // approximated stationary distribution.
+                let stationary_distribution: Vec<f32> = visits_per_node
+                    .into_iter()
+                    .map(|visits| visits as f32 / total_visits)
+                    .collect();
 
-            // Nomalize the weights layer wise.
-            weights
-                .chunks_mut(maximal_hop_distance)
-                .for_each(|weights| {
+                // Nomalize the weights layer wise.
+                weights.chunks_mut(number_of_layers).for_each(|weights| {
                     weights
                         .iter_mut()
                         .zip(
@@ -630,19 +630,15 @@ impl Graph {
                                 .iter()
                                 .copied()
                                 .zip(stationary_distribution.iter().copied())
-                                .map(|(total_weight, probability)| probability / (total_weight + f32::EPSILON)),
+                                .map(|(total_weight, probability)| {
+                                    probability / (total_weight + f32::EPSILON)
+                                }),
                         )
                         .for_each(|(weight, probability)| {
                             *weight *= probability;
                         });
                 });
-        });
-
-        let edge_types_vocabulary: Vocabulary<EdgeTypeT> = Vocabulary::from_reverse_map(
-            (0..maximal_hop_distance)
-                .map(|layer| format!("Layer_{}", layer))
-                .collect::<Vec<String>>(),
-        )?;
+            });
 
         info!("Building the structural similarity graph.");
         build_graph_from_integers(
@@ -651,7 +647,7 @@ impl Graph {
                     .par_iter()
                     .copied()
                     .map(|position| (position as usize, reverse_index[position as usize]))
-                    .zip(weights.par_chunks(node_block_size))
+                    .zip(weights.par_chunks(number_of_edges_per_node))
                     .flat_map(move |((position, src), weights)| {
                         let destinations = get_destinations(position);
                         let mut destinations_reverse_index =
@@ -685,39 +681,24 @@ impl Graph {
                                     }
                                     Some((
                                         dst,
-                                        &weights[destination_reverse_index * maximal_hop_distance
-                                            ..(destination_reverse_index + 1)
-                                                * maximal_hop_distance],
+                                        &weights[destination_reverse_index * number_of_layers
+                                            ..(destination_reverse_index + 1) * number_of_layers],
                                     ))
                                 }
                             })
                             .enumerate()
-                            .flat_map(move |(i, (dst, weights))| {
-                                weights
-                                    .iter()
-                                    .copied()
-                                    .enumerate()
-                                    .map(move |(edge_type_id, weight)| {
-                                        (
-                                            (src as usize) * (node_block_size as usize)
-                                                + i * maximal_hop_distance
-                                                + edge_type_id,
-                                            (
-                                                src,
-                                                dst,
-                                                Some(edge_type_id as EdgeTypeT),
-                                                weight + f32::EPSILON,
-                                            ),
-                                        )
-                                    })
-                                    .collect::<Vec<_>>()
+                            .map(move |(i, (dst, weights))| {
+                                (
+                                    (src as usize) * number_of_edges_per_node + i,
+                                    (src, dst, None, weights.iter().copied().sum::<f32>() + f32::EPSILON),
+                                )
                             })
                             .collect::<Vec<_>>()
                     }),
             ),
             self.nodes.clone(),
             self.node_types.clone(),
-            Some(edge_types_vocabulary),
+            None,
             true,
             true,
             Some(true),
