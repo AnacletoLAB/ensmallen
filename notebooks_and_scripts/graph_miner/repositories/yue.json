@@ -13,7 +13,7 @@
                 "destinations_column_number": 1,
                 "edge_header": false,
                 "nodes_column": "STRING_id",
-                "numeric_edge_node_ids": true,
+                "edge_list_numeric_node_ids": true,
                 "name": "StringPPI"
             }
         }
@@ -35,7 +35,7 @@
                 "node_rows_to_skip": 1,
                 "nodes_column_number": 1,
                 "node_types_column_number": 3,
-                "numeric_edge_node_ids": true,
+                "edge_list_numeric_node_ids": true,
                 "name": "CTDDDA"
             }
         }
@@ -54,7 +54,7 @@
                 "destinations_column_number": 1,
                 "edge_header": false,
                 "nodes_column": "DrugBank_id",
-                "numeric_edge_node_ids": true,
+                "edge_list_numeric_node_ids": true,
                 "name": "DrugBankDDI"
             }
         }
@@ -76,7 +76,7 @@
                 "node_rows_to_skip": 1,
                 "nodes_column_number": 1,
                 "node_types_column_number": 2,
-                "numeric_edge_node_ids": true,
+                "edge_list_numeric_node_ids": true,
                 "name": "NDFRTDDA"
             }
         }
@@ -124,7 +124,7 @@
                 "sources_column_number": 0,
                 "destinations_column_number": 1,
                 "node_header": true,
-                "numeric_edge_node_ids": true,
+                "edge_list_numeric_node_ids": true,
                 "nodes_column": "term_id",
                 "name": "ClinTermCOOC"
             }

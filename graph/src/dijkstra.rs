@@ -2021,7 +2021,7 @@ impl Graph {
     /// Returns diameter of the graph.
     ///
     /// # Arguments
-    /// * `ignore_infinity`: Option<bool> - Whether to ignore infinite distances, which are present when in the graph exist multiple components.
+    /// * `ignore_infinity`: Option<bool> - Whether to ignore infinite distances, which are present when in the graph exist multiple components. By default True.
     /// * `verbose`: Option<bool> - Whether to show a loading bar.
     ///
     /// # Raises
@@ -2036,7 +2036,7 @@ impl Graph {
         verbose: Option<bool>,
     ) -> Result<f32> {
         self.must_have_nodes()?;
-        let ignore_infinity = ignore_infinity.unwrap_or(false);
+        let ignore_infinity = ignore_infinity.unwrap_or(true);
         let verbose = verbose.unwrap_or(true);
 
         if !self.has_edges() || !ignore_infinity && !self.is_connected(Some(verbose)) {

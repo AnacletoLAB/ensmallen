@@ -1,5 +1,4 @@
 use super::*;
-use log::info;
 use rayon::prelude::*;
 use vec_rand::sample_f32 as sample;
 use vec_rand::sample_uniform;
@@ -745,6 +744,33 @@ impl Graph {
         )
     }
 
+    /// Return vector of walks run on a random subset of the not trap nodes.
+    ///
+    /// # Arguments
+    /// * `parameters`: &'a WalksParameters - the weighted walks parameters.
+    ///
+    /// # Raises
+    /// * If the graph does not contain edges.
+    /// * If the given walks parameters are not compatible with the current graph instance.
+    pub fn iter_complete_walks<'a>(
+        &'a self,
+        parameters: &'a WalksParameters,
+    ) -> Result<impl Iterator<Item = Vec<NodeT>> + 'a> {
+        self.must_have_edges()?;
+        let random_state = splitmix64(parameters.random_state as u64);
+        self.iter_walks(
+            self.get_unique_source_nodes_number(),
+            move |index| {
+                (splitmix64(random_state + index as u64), unsafe {
+                    self.get_unchecked_unique_source_node_id(
+                        index as NodeT % self.get_unique_source_nodes_number(),
+                    )
+                })
+            },
+            parameters,
+        )
+    }
+
     /// Returns vector of walks.
     ///
     /// # Arguments
@@ -762,7 +788,6 @@ impl Graph {
         to_node: impl Fn(NodeT) -> (u64, NodeT) + Sync + Send + 'a,
         parameters: &'a WalksParameters,
     ) -> Result<impl IndexedParallelIterator<Item = Vec<NodeT>> + 'a> {
-        self.must_be_undirected()?;
         if self.has_edge_weights() {
             self.must_have_positive_edge_weights()?;
         }
@@ -771,7 +796,6 @@ impl Graph {
         parameters.validate(&self)?;
 
         let total_iterations = quantity * parameters.iterations;
-        info!("Starting random walk.");
 
         // If the graph does not have any weights and the parameters
         // for the walks are all equal to 1, we can use the first-order
@@ -814,10 +838,68 @@ impl Graph {
     /// * `quantity`: NodeT - Number of random walks to generate.
     /// * `to_node`: impl Fn(NodeT) -> (u64, NodeT) + Sync + Send + 'a - Closure to use to sampled nodes.
     /// * `parameters`: WalksParameters - the weighted walks parameters.
+    ///
+    /// # Raises
+    /// * If the given walks parameters are not compatible with the current graph instance.
+    /// * If the graph contains negative edge weights.
+    fn iter_walks<'a>(
+        &'a self,
+        quantity: NodeT,
+        to_node: impl Fn(NodeT) -> (u64, NodeT) + Sync + Send + 'a,
+        parameters: &'a WalksParameters,
+    ) -> Result<impl Iterator<Item = Vec<NodeT>> + 'a> {
+        if self.has_edge_weights() {
+            self.must_have_positive_edge_weights()?;
+        }
+
+        // Validate if given parameters are compatible with current graph.
+        parameters.validate(&self)?;
+
+        let total_iterations = quantity * parameters.iterations;
+
+        // If the graph does not have any weights and the parameters
+        // for the walks are all equal to 1, we can use the first-order
+        // random walk algorithm.
+        let use_uniform = !self.has_edge_weights() && parameters.is_first_order_walk();
+
+        let walks = (0..total_iterations)
+            .map(move |index| unsafe {
+                let (random_state, node) = to_node(index);
+                let mut walk_buffer = vec![0; parameters.single_walk_parameters.walk_length as usize];
+                match use_uniform {
+                    true => self.uniform_walk_from_slice(
+                        node,
+                        random_state,
+                        parameters.single_walk_parameters.walk_length,
+                        &mut walk_buffer
+                    ),
+                    false => self.get_unchecked_single_walk_from_slice(
+                        node,
+                        random_state,
+                        &parameters.single_walk_parameters,
+                        &mut walk_buffer
+                    ),
+                };
+
+                if let Some(dense_node_mapping) = &parameters.dense_node_mapping {
+                    walk_buffer.iter_mut()
+                        .for_each(|node| *node = *dense_node_mapping.get(node).unwrap());
+                }
+                walk_buffer
+            });
+
+        Ok(walks)
+    }
+
+    /// Returns vector of walks.
+    ///
+    /// # Arguments
+    /// * `quantity`: NodeT - Number of random walks to generate.
+    /// * `to_node`: impl Fn(NodeT) -> (u64, NodeT) + Sync + Send + 'a - Closure to use to sampled nodes.
+    /// * `parameters`: WalksParameters - the weighted walks parameters.
     /// * `random_walks_buffer`: &mut [NodeT] - Buffer where to write the random walks.
     ///
     /// # Raises
-    /// * If the graph is directed.
     /// * If the given walks parameters are not compatible with the current graph instance.
     /// * If the graph contains negative edge weights.
     fn populate_walks_slice<'a>(
@@ -827,7 +909,6 @@ impl Graph {
         parameters: &'a WalksParameters,
         random_walks_buffer: &mut [NodeT]
     ) -> Result<()> {
-        self.must_be_undirected()?;
         if self.has_edge_weights() {
             self.must_have_positive_edge_weights()?;
         }
@@ -836,7 +917,6 @@ impl Graph {
         parameters.validate(&self)?;
 
         let total_iterations = quantity * parameters.iterations;
-        info!("Starting random walk.");
 
         // If the graph does not have any weights and the parameters
         // for the walks are all equal to 1, we can use the first-order

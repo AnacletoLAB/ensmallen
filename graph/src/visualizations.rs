@@ -15,7 +15,7 @@ impl Graph {
         if self.has_node_types() {
             result.extend(
                 format!(
-                    "node [colorscheme={} style=filled ]",
+                    "node [colorscheme={} style=filled]",
                     if self.get_node_types_number().unwrap() < 8 {
                         "set28"
                     } else {
@@ -46,7 +46,7 @@ impl Graph {
         {
             result.extend(
                 format!(
-                    "{node_id} [label=\"{node_name}\"{color}];\n",
+                    "{node_id} [label=\"{node_name}\"{color} shape=circle];\n",
                     node_id = node_id,
                     node_name = node_name,
                     color = node_types_id.map_or("".to_string(), |node_types_id| {
