@@ -115,6 +115,9 @@
 	<a href="https://kg-hub.berkeleybop.io/kg-covid-19/20220502/index.html">20220502</a>
       </li>
       <li>
+	<a href="https://kg-hub.berkeleybop.io/kg-covid-19/20220610/index.html">20220610</a>
+      </li>
+      <li>
 	<a href="https://kg-hub.berkeleybop.io/kg-covid-19/current/index.html">current</a>
       </li>
     </ul>
