@@ -256,7 +256,7 @@ pub fn build_optimal_lists_files(
     // node list vocabulary has been provided.
     info!("Computing whether the edge list has numeric node IDs.");
     let numeric_edge_list_node_ids = original_node_path.is_none()
-        && original_edge_list_numeric_node_ids.map_or_else(
+        || original_edge_list_numeric_node_ids.map_or_else(
             || {
                 is_numeric_edge_list(
                     original_edge_path.as_ref(),

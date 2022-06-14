@@ -55,7 +55,7 @@ def FBBT(
     directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-02-24", **kwargs
+    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-04-13", **kwargs
 ) -> Graph:
     """Return FBBT graph	
 
@@ -73,15 +73,16 @@ def FBBT(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2022-02-24"
+    version = "2022-04-13"
         Version to retrieve	
 		The available versions are:
-			- 2022-04-13
+			- 2022-06-09
 			- 2021-09-01
 			- 2021-10-14
 			- 2021-12-09
 			- 2022-01-27
 			- 2022-02-24
+			- 2022-04-13
     """
     return AutomaticallyRetrievedGraph(
         "FBBT", version, "kgobo", directed, preprocess, load_nodes,
@@ -330,7 +331,7 @@ def FBDV(
     directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-02-25", **kwargs
+    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-04-12", **kwargs
 ) -> Graph:
     """Return FBDV graph	
 
@@ -348,15 +349,16 @@ def FBDV(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2022-02-25"
+    version = "2022-04-12"
         Version to retrieve	
 		The available versions are:
-			- 2022-04-12
+			- 2022-06-08
 			- 2021-09-01
 			- 2021-10-13
 			- 2021-12-06
 			- 2022-01-24
 			- 2022-02-25
+			- 2022-04-12
     """
     return AutomaticallyRetrievedGraph(
         "FBDV", version, "kgobo", directed, preprocess, load_nodes,
@@ -1824,7 +1826,7 @@ def CHEBI(
     directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "209", **kwargs
+    cache_sys_var = "GRAPH_CACHE_DIR", version = "210", **kwargs
 ) -> Graph:
     """Return CHEBI graph	
 
@@ -1842,10 +1844,10 @@ def CHEBI(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "209"
+    version = "210"
         Version to retrieve	
 		The available versions are:
-			- 210
+			- 211
 			- 203
 			- 204
 			- 205
@@ -1853,6 +1855,7 @@ def CHEBI(
 			- 207
 			- 208
 			- 209
+			- 210
     """
     return AutomaticallyRetrievedGraph(
         "CHEBI", version, "kgobo", directed, preprocess, load_nodes,
@@ -3065,7 +3068,7 @@ def FBCV(
     directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-02-24", **kwargs
+    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-04-14", **kwargs
 ) -> Graph:
     """Return FBCV graph	
 
@@ -3083,15 +3086,16 @@ def FBCV(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2022-02-24"
+    version = "2022-04-14"
         Version to retrieve	
 		The available versions are:
-			- 2022-04-14
+			- 2022-06-09
 			- 2021-09-02
 			- 2021-10-18
 			- 2021-12-13
 			- 2022-01-24
 			- 2022-02-24
+			- 2022-04-14
     """
     return AutomaticallyRetrievedGraph(
         "FBCV", version, "kgobo", directed, preprocess, load_nodes,
@@ -3884,7 +3888,7 @@ def MS(
     directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "4.1.88", **kwargs
+    cache_sys_var = "GRAPH_CACHE_DIR", version = "4.1.89", **kwargs
 ) -> Graph:
     """Return MS graph	
 
@@ -3902,10 +3906,10 @@ def MS(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "4.1.88"
+    version = "4.1.89"
         Version to retrieve	
 		The available versions are:
-			- 4.1.89
+			- 4.1.91
 			- 4.1.35
 			- 4.1.62
 			- 4.1.64
@@ -3920,6 +3924,7 @@ def MS(
 			- 4.1.84
 			- 4.1.86
 			- 4.1.88
+			- 4.1.89
     """
     return AutomaticallyRetrievedGraph(
         "MS", version, "kgobo", directed, preprocess, load_nodes,
@@ -4765,7 +4770,7 @@ def DOID(
     directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-04-01", **kwargs
+    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-04-28", **kwargs
 ) -> Graph:
     """Return DOID graph	
 
@@ -4783,10 +4788,10 @@ def DOID(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2022-04-01"
+    version = "2022-04-28"
         Version to retrieve	
 		The available versions are:
-			- 2022-04-28
+			- 2022-06-07
 			- 2021-10-01
 			- 2021-10-12
 			- 2021-11-17
@@ -4795,6 +4800,7 @@ def DOID(
 			- 2022-02-21
 			- 2022-03-02
 			- 2022-04-01
+			- 2022-04-28
     """
     return AutomaticallyRetrievedGraph(
         "DOID", version, "kgobo", directed, preprocess, load_nodes,
@@ -5207,7 +5213,7 @@ def EUPATH(
     directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-09-09", **kwargs
+    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-02-15", **kwargs
 ) -> Graph:
     """Return EUPATH graph	
 
@@ -5225,11 +5231,12 @@ def EUPATH(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2021-09-09"
+    version = "2022-02-15"
         Version to retrieve	
 		The available versions are:
-			- 2022-02-15
+			- 2022-06-08
 			- 2021-09-09
+			- 2022-02-15
     """
     return AutomaticallyRetrievedGraph(
         "EUPATH", version, "kgobo", directed, preprocess, load_nodes,
@@ -6568,7 +6575,7 @@ def DPO(
     directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-02-24", **kwargs
+    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-04-13", **kwargs
 ) -> Graph:
     """Return DPO graph	
 
@@ -6586,15 +6593,16 @@ def DPO(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2022-02-24"
+    version = "2022-04-13"
         Version to retrieve	
 		The available versions are:
-			- 2022-04-13
+			- 2022-06-09
 			- 2021-09-02
 			- 2021-10-15
 			- 2021-12-10
 			- 2022-01-24
 			- 2022-02-24
+			- 2022-04-13
     """
     return AutomaticallyRetrievedGraph(
         "DPO", version, "kgobo", directed, preprocess, load_nodes,

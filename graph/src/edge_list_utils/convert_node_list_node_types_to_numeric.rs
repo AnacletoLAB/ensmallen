@@ -146,11 +146,15 @@ pub fn convert_node_list_node_types_to_numeric(
         .set_node_types_column_number(original_node_list_node_types_column_number.clone())?
         .set_node_types_column(original_node_list_node_types_column.clone())?
         .set_node_types_separator(original_node_types_separator)?
-        .set_default_node_type(default_node_type)
+        .set_default_node_type(default_node_type.clone())
         .set_numeric_node_ids(original_numeric_node_ids)
         .set_numeric_node_type_ids(original_node_list_numeric_node_type_ids)?
         .set_nodes_number(nodes_number)
         .set_parallel(Some(false))?;
+
+    let has_node_types = original_node_list_node_types_column_number.is_some()
+        || original_node_list_node_types_column.is_some()
+        || default_node_type.is_some();
 
     let nodes_writer: NodeFileWriter = NodeFileWriter::new(target_node_path)
         .set_separator(target_node_list_separator.or(Some(nodes_reader.get_separator()?)))?
@@ -158,13 +162,17 @@ pub fn convert_node_list_node_types_to_numeric(
             target_node_types_separator.or(nodes_reader.get_node_types_separator()),
         )?
         .set_header(target_node_list_header.or(Some(nodes_reader.has_header()?)))
-        .set_node_types_column(
-            target_node_list_node_types_column.or(original_node_list_node_types_column.clone()),
-        )
-        .set_node_types_column_number(
+        .set_node_types_column(if has_node_types {
+            target_node_list_node_types_column.or(original_node_list_node_types_column.clone())
+        } else {
+            None
+        })
+        .set_node_types_column_number(if has_node_types {
             target_node_list_node_types_column_number
-                .or(nodes_reader.get_node_types_column_number()),
-        )
+                .or(nodes_reader.get_node_types_column_number())
+        } else {
+            None
+        })
         .set_nodes_column(target_nodes_column.or(original_nodes_column))
         .set_nodes_column_number(
             target_nodes_column_number.or(nodes_reader.get_nodes_column_number()),
