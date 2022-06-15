@@ -4,7 +4,6 @@ mod skipgram;
 mod spine;
 mod weighted_spine;
 mod transe;
-mod kgtranse;
 mod edge_prediction_perceptron;
 mod edge_prediction_feature_perceptron;
 
@@ -14,6 +13,5 @@ pub use skipgram::*;
 pub use spine::*;
 pub use weighted_spine::*;
 pub use transe::*;
-pub use kgtranse::*;
 pub use edge_prediction_perceptron::*;
 pub use edge_prediction_feature_perceptron::*;
