@@ -78,7 +78,7 @@ Please cite the following paper if it was useful for your research:
     :alt: Supported Python versions
 
 .. |telegram| image:: https://badges.aleen42.com/src/telegram.svg
-    :target: https://t.me/+N82VZzj6DlpmYjc0
+    :target: https://t.me/grape_lib
     :alt: Telegram Group
 
 .. |discord| image:: https://badges.aleen42.com/src/discord.svg
