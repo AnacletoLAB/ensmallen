@@ -78,8 +78,10 @@ def rsync_folders(src, dst):
         # this can copy folder, but whatever it works also on files
         shutil.copyfile(file, dst_file)
 
-def compile_target(args):
-    target_name, target_settings = args
+def wrapped_compile_target(args):
+    return compile_target(*args)
+
+def compile_target(target_name, target_settings, WHEELS_FOLDER):
     logging.info("%s settings: %s", target_name, target_settings)
 
     build_dir = join(target_settings["build_dir"])
@@ -309,12 +311,15 @@ if __name__ == "__main__":
     ################################################################################
     if args.sequential:
         for args in settings["targets"].items():
-            compile_target(args)
+            compile_target(*args, WHEELS_FOLDER)
     else:
         with mp.Pool(mp.cpu_count()) as pool:
             list(pool.imap(
-                compile_target,
-                settings["targets"].items()
+                wrapped_compile_target,
+                (   
+                    (key, value, WHEELS_FOLDER) 
+                    for key, value in settings["targets"].items()
+                )
             ))
 
     ################################################################################
