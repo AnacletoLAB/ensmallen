@@ -81,7 +81,7 @@ def rsync_folders(src, dst):
 def wrapped_compile_target(args):
     return compile_target(*args)
 
-def compile_target(target_name, target_settings, WHEELS_FOLDER):
+def compile_target(target_name, target_settings, WHEELS_FOLDER, settings):
     logging.info("%s settings: %s", target_name, target_settings)
 
     build_dir = join(target_settings["build_dir"])
@@ -311,13 +311,13 @@ if __name__ == "__main__":
     ################################################################################
     if args.sequential:
         for args in settings["targets"].items():
-            compile_target(*args, WHEELS_FOLDER)
+            compile_target(*args, WHEELS_FOLDER, settings)
     else:
         with mp.Pool(mp.cpu_count()) as pool:
             list(pool.imap(
                 wrapped_compile_target,
                 (   
-                    (key, value, WHEELS_FOLDER) 
+                    (key, value, WHEELS_FOLDER, settings) 
                     for key, value in settings["targets"].items()
                 )
             ))
