@@ -8,7 +8,7 @@ authors = [
     "Luca Cappelletti <cappelletti.luca94@gmail.com>",
     "Tommaso Fontana <tommaso.fontana.96@gmail.com>"    
 ]
-readme = "README.md"
+readme = "README.rst"
 exclude = ["pytests/*", "Python-*", "./*.py"]
 keywords = ["python", "rust", "graph", "random", "walk"]
 
