@@ -6211,7 +6211,7 @@ impl Graph {
     /// Parameters
     /// ----------
     /// ignore_infinity: Optional[bool]
-    ///     Whether to ignore infinite distances, which are present when in the graph exist multiple components.
+    ///     Whether to ignore infinite distances, which are present when in the graph exist multiple components. By default True.
     /// verbose: Optional[bool]
     ///     Whether to show a loading bar.
     ///
@@ -8264,8 +8264,6 @@ impl Graph {
     /// -------
     /// ValueError
     ///     If the provided graph does not have any edges.
-    /// ValueError
-    ///     If the provided maximal distance is zero.
     /// ValueError
     ///     If the provided change layer probability is not a probability.
     /// ValueError
