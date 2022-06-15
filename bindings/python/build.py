@@ -15,69 +15,95 @@ import multiprocessing as mp
 import glob
 from json.decoder import JSONDecodeError
 
+################################################################################
+# Utils
+################################################################################
+
+def join(*args):
+    return os.path.join(
+        os.path.abspath(os.path.dirname(__file__)),
+        *args
+    )
+
+def exec(command, env={}, **kwargs):
+    res = subprocess.run(command, env={
+            **os.environ,
+            **env,
+        }, shell=True, 
+        **kwargs
+    )  
+    if res.returncode != 0:
+        raise ValueError("The command '%s' @ '%s' has returned code %s"%(command, kwargs.get("cwd", "."), res.returncode)) 
+
+def patch(file, src_regex, dst_regex):
+    with open(join(file), "r") as f:
+        text = f.read()
+
+    if len(text) == 0:
+        raise ValueError("The opened file '{}' is empty".format(file))
+
+    text = re.sub(src_regex, dst_regex, text)
+
+    with open(join(file), "w") as f:
+        f.write(text)
+
+def hash_file(file_path) -> str:
+    sha256 = hashlib.sha256()
+    with open(file_path, "rb") as f:
+        while True:
+            data = f.read(1024)
+            if not data:
+                break
+            sha256.update(data)
+    return sha256.hexdigest()
+
+def rsync_folders(src, dst):
+    """Portable rsync like utility. This is needed because we are going to copy
+    only changed files, this way we don't change the modification date and
+    rust won't compile things again."""
+    
+    for file in sorted(glob.iglob(os.path.join(src, "**/*",), recursive=True)):
+        if not os.path.isfile(file):
+            continue
+
+        desinenza = os.path.abspath(file)[len(os.path.abspath(src)) + 1:]
+        dst_file = os.path.join(dst, desinenza)
+
+        # Skip if the file exists and has not changed
+        if os.path.exists(dst_file) and hash_file(file) == hash_file(dst_file):
+            continue
+
+        logging.info("The file {} changed, overwriting.".format(desinenza))
+
+        # this can copy folder, but whatever it works also on files
+        shutil.copyfile(file, dst_file)
+
+def compile_target(args):
+    target_name, target_settings = args
+    logging.info("%s settings: %s", target_name, target_settings)
+
+    build_dir = join(target_settings["build_dir"])
+    logging.info("Build dir '%s'", build_dir)
+    target_dir = join(WHEELS_FOLDER, target_name)
+    # Clean the folder
+    shutil.rmtree(target_dir, ignore_errors=True)
+    os.makedirs(target_dir, exist_ok=True)
+
+    rust_flags = settings["shared_rustflags"] + " " + target_settings["rustflags"]
+
+    logging.info("Compiling the '%s' target with flags: '%s'", target_name, rust_flags)
+    exec(
+        "maturin build --release --strip --no-sdist --out {}".format(
+            target_dir
+        ), 
+        env={
+            **os.environ,
+            "RUSTFLAGS":rust_flags,
+        },
+        cwd=build_dir,
+    )
+
 if __name__ == "__main__":
-    ################################################################################
-    # Utils
-    ################################################################################
-
-    def join(*args):
-        return os.path.join(
-            os.path.abspath(os.path.dirname(__file__)),
-            *args
-        )
-
-    def exec(command, env={}, **kwargs):
-        res = subprocess.run(command, env={
-                **os.environ,
-                **env,
-            }, shell=True, 
-            **kwargs
-        )  
-        if res.returncode != 0:
-            raise ValueError("The command '%s' @ '%s' has returned code %s"%(command, kwargs.get("cwd", "."), res.returncode)) 
-
-    def patch(file, src_regex, dst_regex):
-        with open(join(file), "r") as f:
-            text = f.read()
-
-        if len(text) == 0:
-            raise ValueError("The opened file '{}' is empty".format(file))
-
-        text = re.sub(src_regex, dst_regex, text)
-
-        with open(join(file), "w") as f:
-            f.write(text)
-
-    def hash_file(file_path) -> str:
-        sha256 = hashlib.sha256()
-        with open(file_path, "rb") as f:
-            while True:
-                data = f.read(1024)
-                if not data:
-                    break
-                sha256.update(data)
-        return sha256.hexdigest()
-
-    def rsync_folders(src, dst):
-        """Portable rsync like utility. This is needed because we are going to copy
-        only changed files, this way we don't change the modification date and
-        rust won't compile things again."""
-        
-        for file in sorted(glob.iglob(os.path.join(src, "**/*",), recursive=True)):
-            if not os.path.isfile(file):
-                continue
-
-            desinenza = os.path.abspath(file)[len(os.path.abspath(src)) + 1:]
-            dst_file = os.path.join(dst, desinenza)
-
-            # Skip if the file exists and has not changed
-            if os.path.exists(dst_file) and hash_file(file) == hash_file(dst_file):
-                continue
-
-            logging.info("The file {} changed, overwriting.".format(desinenza))
-
-            # this can copy folder, but whatever it works also on files
-            shutil.copyfile(file, dst_file)
 
     ################################################################################
     # Get the settings form the env vars
@@ -148,6 +174,12 @@ if __name__ == "__main__":
         action="store_true",
         help="""By default the script will delete and re-create the folders for each
         target. Enabling this flag skips this step and uses the old folders.""".replace("\n", ""),
+    )
+
+    parser.add_argument("-seq", "--sequential",
+        default=False,
+        action="store_true",
+        help="""Run the different build sequentially, this can be used to fix some errors in windows and mac m1.""".replace("\n", ""),
     )
 
     args = parser.parse_args()
@@ -275,37 +307,15 @@ if __name__ == "__main__":
     ################################################################################
     # Compile all the targets
     ################################################################################
-
-    def compile_target(args):
-        target_name, target_settings = args
-        logging.info("%s settings: %s", target_name, target_settings)
-
-        build_dir = join(target_settings["build_dir"])
-        logging.info("Build dir '%s'", build_dir)
-        target_dir = join(WHEELS_FOLDER, target_name)
-        # Clean the folder
-        shutil.rmtree(target_dir, ignore_errors=True)
-        os.makedirs(target_dir, exist_ok=True)
-
-        rust_flags = settings["shared_rustflags"] + " " + target_settings["rustflags"]
-
-        logging.info("Compiling the '%s' target with flags: '%s'", target_name, rust_flags)
-        exec(
-            "maturin build --release --strip --no-sdist --out {}".format(
-                target_dir
-            ), 
-            env={
-                **os.environ,
-                "RUSTFLAGS":rust_flags,
-            },
-            cwd=build_dir,
-        )
-
-    with mp.Pool(mp.cpu_count()) as pool:
-        list(pool.imap(
-            compile_target,
-            settings["targets"].items()
-        ))
+    if args.sequential:
+        for args in settings["targets"].items():
+            compile_target(args)
+    else:
+        with mp.Pool(mp.cpu_count()) as pool:
+            list(pool.imap(
+                compile_target,
+                settings["targets"].items()
+            ))
 
     ################################################################################
     # Copy the file to the other wheel
