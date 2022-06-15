@@ -146,12 +146,21 @@ impl TransE {
         let initialization_radius = 6.0 / scale_factor;
 
         let norm = |vector: &[f32]| {
-            vector
+            (vector
                 .iter()
                 .map(|value| value.powf(2.0))
                 .sum::<f32>()
                 .sqrt()
-                + f32::EPSILON
+                + f32::EPSILON)
+                .max(f32::MAX)
+        };
+
+        let compute_prior = |subset_size: f32, total_size: f32| {
+            (1.0 + subset_size)
+                    / total_size
+                    // Adding the epsilon is necessary because the division may destroy enough
+                    // resolution to make the prior equal to zero.
+                    + f32::EPSILON
         };
 
         // Populate the embedding layers with random uniform value
@@ -244,22 +253,29 @@ impl TransE {
             } else {
                 (1.0, 1.0, 1.0, 1.0)
             };
-            let src_prior = unsafe { graph.get_unchecked_node_degree_from_node_id(src as NodeT) }
-                as f32
-                / nodes_number as f32;
-            let dst_prior = unsafe { graph.get_unchecked_node_degree_from_node_id(dst as NodeT) }
-                as f32
-                / nodes_number as f32;
-            let not_src_prior =
-                unsafe { graph.get_unchecked_node_degree_from_node_id(not_src as NodeT) } as f32
-                    / nodes_number as f32;
-            let not_dst_prior =
-                unsafe { graph.get_unchecked_node_degree_from_node_id(not_dst as NodeT) } as f32
-                    / nodes_number as f32;
-            let edge_type_prior = unsafe {
-                graph.get_unchecked_edge_count_from_edge_type_id(Some(edge_type as EdgeTypeT))
-            } as f32
-                / number_of_directed_edges as f32;
+            let src_prior = compute_prior(
+                unsafe { graph.get_unchecked_node_degree_from_node_id(src as NodeT) as f32 },
+                nodes_number as f32,
+            );
+            let dst_prior = compute_prior(
+                unsafe { graph.get_unchecked_node_degree_from_node_id(dst as NodeT) as f32 },
+                nodes_number as f32,
+            );
+            let not_src_prior = compute_prior(
+                unsafe { graph.get_unchecked_node_degree_from_node_id(not_src as NodeT) as f32 },
+                nodes_number as f32,
+            );
+            let not_dst_prior = compute_prior(
+                unsafe { graph.get_unchecked_node_degree_from_node_id(not_dst as NodeT) as f32 },
+                nodes_number as f32,
+            );
+            let edge_type_prior = compute_prior(
+                unsafe {
+                    graph.get_unchecked_edge_count_from_edge_type_id(Some(edge_type as EdgeTypeT))
+                        as f32
+                },
+                number_of_directed_edges as f32,
+            );
 
             src_embedding
                 .iter_mut()

@@ -298,20 +298,22 @@ impl KGTransE {
             } else {
                 (1.0, 1.0, 1.0, 1.0)
             };
-            let src_prior = unsafe { graph.get_unchecked_node_degree_from_node_id(src as NodeT) }
-                as f32
-                / nodes_number as f32;
-            let dst_prior = unsafe { graph.get_unchecked_node_degree_from_node_id(dst as NodeT) }
-                as f32
-                / nodes_number as f32;
+            let src_prior =
+                unsafe { 1 + graph.get_unchecked_node_degree_from_node_id(src as NodeT) } as f32
+                    / nodes_number as f32;
+            let dst_prior =
+                unsafe { 1 + graph.get_unchecked_node_degree_from_node_id(dst as NodeT) } as f32
+                    / nodes_number as f32;
             let not_src_prior =
-                unsafe { graph.get_unchecked_node_degree_from_node_id(not_src as NodeT) } as f32
+                unsafe { 1 + graph.get_unchecked_node_degree_from_node_id(not_src as NodeT) }
+                    as f32
                     / nodes_number as f32;
             let not_dst_prior =
-                unsafe { graph.get_unchecked_node_degree_from_node_id(not_dst as NodeT) } as f32
+                unsafe { 1 + graph.get_unchecked_node_degree_from_node_id(not_dst as NodeT) }
+                    as f32
                     / nodes_number as f32;
             let edge_type_prior = unsafe {
-                graph.get_unchecked_edge_count_from_edge_type_id(Some(edge_type as EdgeTypeT))
+                1 + graph.get_unchecked_edge_count_from_edge_type_id(Some(edge_type as EdgeTypeT))
             } as f32
                 / number_of_directed_edges as f32;
 
@@ -324,7 +326,8 @@ impl KGTransE {
                         .iter()
                         .copied()
                         .map(|node_type_id| unsafe {
-                            graph.get_unchecked_node_count_from_node_type_id(Some(node_type_id))
+                            (1 + graph
+                                .get_unchecked_node_count_from_node_type_id(Some(node_type_id)))
                                 as f32
                                 / nodes_number as f32
                         })
