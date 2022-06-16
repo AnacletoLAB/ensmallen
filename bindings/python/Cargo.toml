@@ -9,6 +9,7 @@ authors = [
     "Tommaso Fontana <tommaso.fontana.96@gmail.com>"    
 ]
 readme = "../../../README.rst"
+description = "🍇 Ensmallen is the Rust/Python high-performance graph processing submodule of the GraPE library."
 exclude = ["pytests/*", "Python-*", "./*.py"]
 keywords = ["python", "rust", "graph", "random", "walk"]
 
