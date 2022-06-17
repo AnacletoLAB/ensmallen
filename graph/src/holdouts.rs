@@ -31,7 +31,7 @@ fn kfold<T: Copy + Eq + std::hash::Hash>(
     indices: &mut [T],
     random_state: u64,
 ) -> Result<&[T]> {
-    if k >= indices.len() {
+    if k > indices.len() {
         return Err(format!(
             concat!(
                 "Cannot create a number of k-fold `{}` greater ",
