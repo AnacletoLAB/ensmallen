@@ -1025,7 +1025,7 @@ where
                 .par_iter()
                 .map(|node| {
                     format!(
-                        "{:?}) feature {:?}{:?}{:?}",
+                        "{:?}) feature {:?}{}{:?}",
                         node.id,
                         node.split.attribute_position,
                         if node.split.sign { ">" } else { "<" },
