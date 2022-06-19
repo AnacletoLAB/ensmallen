@@ -1021,6 +1021,7 @@ where
         graph_to_avoid: Option<&Graph>,
     ) -> Result<(Vec<f32>, Vec<f32>), String> {
         let method = edge_embedding_method_name.get_method();
+        let dimension = edge_embedding_method_name.get_dimensionality(dimension);
         Ok(graph
             .par_iter_edge_prediction_mini_batch(
                 random_state,
@@ -1042,7 +1043,7 @@ where
                 (edge_embedding.clone(), edge_embedding)
             })
             .reduce(
-                || (Vec::new(), Vec::new()),
+                || (vec![f32::MAX; dimension], vec![f32::MIN; dimension]),
                 |(mut min_a, mut max_a), (min_b, max_b)| {
                     min_a.iter_mut().zip(min_b.into_iter()).for_each(|(a, b)| {
                         *a = a.min(b);

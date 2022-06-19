@@ -47,27 +47,27 @@ impl TryFrom<String> for BinaryMetricName {
 
     fn try_from(value: String) -> Result<Self, Self::Error> {
         match value.as_str() {
-            "accuracy" => Ok(BinaryMetricName::Accuracy),
-            "recall" => Ok(BinaryMetricName::Recall),
-            "specificity" => Ok(BinaryMetricName::Specificity),
-            "miss_rate" => Ok(BinaryMetricName::MissRate),
-            "fall_out" => Ok(BinaryMetricName::FallOut),
-            "informedness" => Ok(BinaryMetricName::Informedness),
-            "prevalence_threshold" => Ok(BinaryMetricName::PrevalenceThreshold),
-            "prevalence" => Ok(BinaryMetricName::Prevalence),
-            "balanced_accuracy" => Ok(BinaryMetricName::BalancedAccuracy),
-            "precision" => Ok(BinaryMetricName::Precision),
-            "false_discovery_rate" => Ok(BinaryMetricName::FalseDiscoveryRate),
-            "false_omission_rate" => Ok(BinaryMetricName::FalseOmissionRate),
-            "negative_predictive_value" => Ok(BinaryMetricName::NegativePredictiveValue),
-            "positive_likelyhood_ratio" => Ok(BinaryMetricName::PositiveLikelyhoodRatio),
-            "negative_likelyhood_ratio" => Ok(BinaryMetricName::NegativeLikelyhoodRatio),
-            "markedness" => Ok(BinaryMetricName::Markedness),
-            "diagnostic_odds_ratio" => Ok(BinaryMetricName::DiagnosticOddsRatio),
-            "f1_score" => Ok(BinaryMetricName::F1Score),
-            "fowlkes_mallows_index" => Ok(BinaryMetricName::FowlkesMallowsIndex),
-            "threat_score" => Ok(BinaryMetricName::ThreatScore),
-            "matthews_correlation_coefficient" => {
+            "Accuracy" => Ok(BinaryMetricName::Accuracy),
+            "Recall" => Ok(BinaryMetricName::Recall),
+            "Specificity" => Ok(BinaryMetricName::Specificity),
+            "MissRate" => Ok(BinaryMetricName::MissRate),
+            "FallOut" => Ok(BinaryMetricName::FallOut),
+            "Informedness" => Ok(BinaryMetricName::Informedness),
+            "PrevalenceThreshold" => Ok(BinaryMetricName::PrevalenceThreshold),
+            "Prevalence" => Ok(BinaryMetricName::Prevalence),
+            "BalancedAccuracy" => Ok(BinaryMetricName::BalancedAccuracy),
+            "Precision" => Ok(BinaryMetricName::Precision),
+            "FalseDiscoveryRate" => Ok(BinaryMetricName::FalseDiscoveryRate),
+            "FalseOmissionRate" => Ok(BinaryMetricName::FalseOmissionRate),
+            "NegativePredictiveValue" => Ok(BinaryMetricName::NegativePredictiveValue),
+            "PositiveLikelyhoodRatio" => Ok(BinaryMetricName::PositiveLikelyhoodRatio),
+            "NegativeLikelyhoodRatio" => Ok(BinaryMetricName::NegativeLikelyhoodRatio),
+            "Markedness" => Ok(BinaryMetricName::Markedness),
+            "Diagnostic_oddsRatio" => Ok(BinaryMetricName::DiagnosticOddsRatio),
+            "F1Score" => Ok(BinaryMetricName::F1Score),
+            "FowlkesMallows_index" => Ok(BinaryMetricName::FowlkesMallowsIndex),
+            "ThreatScore" => Ok(BinaryMetricName::ThreatScore),
+            "MatthewsCorrelationCoefficient" => {
                 Ok(BinaryMetricName::MatthewsCorrelationCoefficient)
             }
             other => Err(format!(
