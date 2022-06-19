@@ -1071,6 +1071,17 @@ where
                         ),
                     ));
                 }
+                if let Some(right_child_node_id) = node.right_child_node_id {
+                    edges.push((
+                        0,
+                        (
+                            node.id.try_into().unwrap() as NodeT,
+                            right_child_node_id.try_into().unwrap() as NodeT,
+                            Some(0),
+                            node.split.negative_predictive_value as WeightT,
+                        ),
+                    ));
+                }
                 edges
             })),
             Arc::new(nodes),

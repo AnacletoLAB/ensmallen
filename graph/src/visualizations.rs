@@ -48,7 +48,7 @@ impl Graph {
                 format!(
                     "{node_id} [label=\"{node_name}\"{color} shape=circle];\n",
                     node_id = node_id,
-                    node_name = node_name,
+                    node_name = node_name.replace("\"", "\\\""),
                     color = node_types_id.map_or("".to_string(), |node_types_id| {
                         if self.has_node_types() {
                             // For now we only support a single color.
