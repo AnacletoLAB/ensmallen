@@ -60,6 +60,7 @@ fn models(_py: Python, _m: &PyModule) -> PyResult<()> {
     _m.add_class::<WeightedSPINE>()?;
     _m.add_class::<EdgePredictionPerceptron>()?;
     _m.add_class::<EdgePredictionFeaturePerceptron>()?;
+    _m.add_class::<EdgePredictionSingleExtraTree>()?;
     Ok(())
 }
 
