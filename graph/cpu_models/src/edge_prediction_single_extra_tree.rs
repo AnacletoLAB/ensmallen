@@ -185,9 +185,6 @@ where
     <NodeFeaturePositionType as TryInto<usize>>::Error: Debug,
 {
     fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
-        if self.confusion_matrix.get_number_of_samples() == 0 && self.confusion_matrix.get_number_of_samples() == 0{
-            return Some(std::cmp::Ordering::Equal);
-        }
         self.confusion_matrix
             .get_binary_metric(self.metric)
             .partial_cmp(&other.confusion_matrix.get_binary_metric(other.metric))
@@ -213,7 +210,7 @@ where
     <NodeFeaturePositionType as TryInto<usize>>::Error: Debug,
 {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        self.partial_cmp(other).unwrap()
+        self.partial_cmp(other).unwrap_or(std::cmp::Ordering::Equal)
     }
 }
 
