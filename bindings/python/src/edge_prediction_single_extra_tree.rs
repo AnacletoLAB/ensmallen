@@ -77,8 +77,8 @@ impl EdgePredictionSingleExtraTree {
                         "sample_only_edges_with_heterogeneous_node_types",
                         bool
                     ),
-                    extract_value_rust_result!(kwargs, "negative_edges_rate", f32),
-                    extract_value_rust_result!(kwargs, "depth", f32),
+                    extract_value_rust_result!(kwargs, "negative_edges_rate", f64),
+                    extract_value_rust_result!(kwargs, "depth", u32),
                     extract_value_rust_result!(kwargs, "random_state", u64),
                 )
             )?),
@@ -132,22 +132,5 @@ impl EdgePredictionSingleExtraTree {
         node_features: Py<PyArray2<f32>>,
     ) -> PyResult<Py<PyArray1<f32>>> {
         self.model.predict(graph, node_features)
-    }
-
-    #[text_signature = "($self)"]
-    /// Returns the weights of the model.
-    fn get_weights(&self) -> PyResult<Py<PyArray1<f32>>> {
-        let gil = pyo3::Python::acquire_gil();
-        Ok(to_ndarray_1d!(
-            gil,
-            pe!(self.model.get_model().get_weights())?,
-            f32
-        ))
-    }
-
-    #[text_signature = "($self)"]
-    /// Returns the bias of the model.
-    fn get_bias(&self) -> PyResult<f32> {
-        pe!(self.model.get_model().get_bias())
     }
 }
