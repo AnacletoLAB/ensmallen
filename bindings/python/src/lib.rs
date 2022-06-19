@@ -13,6 +13,9 @@ pub(crate) use crate::macros::*;
 mod express_measures;
 pub(crate) use crate::express_measures::*;
 
+mod node_features_based_edge_prediction;
+pub(crate) use crate::node_features_based_edge_prediction::*;
+
 mod cbow;
 pub(crate) use cbow::*;
 

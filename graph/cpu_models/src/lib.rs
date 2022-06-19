@@ -4,6 +4,9 @@ mod skipgram;
 mod spine;
 mod weighted_spine;
 mod transe;
+mod node_features_based_edge_prediction;
+mod edge_embedding_methods;
+mod edge_prediction_single_extra_tree;
 mod edge_prediction_perceptron;
 mod edge_prediction_feature_perceptron;
 
@@ -13,5 +16,8 @@ pub use skipgram::*;
 pub use spine::*;
 pub use weighted_spine::*;
 pub use transe::*;
+pub use node_features_based_edge_prediction::*;
+pub use edge_embedding_methods::*;
+pub use edge_prediction_single_extra_tree::*;
 pub use edge_prediction_perceptron::*;
 pub use edge_prediction_feature_perceptron::*;

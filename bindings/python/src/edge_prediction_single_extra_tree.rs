@@ -6,15 +6,17 @@ use std::convert::TryInto;
 #[pyclass]
 #[derive(Debug, Clone)]
 #[text_signature = "(*, edge_embedding_method_name, number_of_epochs, number_of_edges_per_mini_batch, sample_only_edges_with_heterogeneous_node_types, learning_rate, random_state)"]
-pub struct EdgePredictionPerceptron {
-    model: NodeFeaturesBasedEdgePredictionModelBinding<cpu_models::EdgePredictionPerceptron>,
+pub struct EdgePredictionSingleExtraTree {
+    model: NodeFeaturesBasedEdgePredictionModelBinding<
+        cpu_models::EdgePredictionSingleExtraTree<u32, u16, f32>,
+    >,
 }
 
 #[pymethods]
-impl EdgePredictionPerceptron {
+impl EdgePredictionSingleExtraTree {
     #[new]
     #[args(py_kwargs = "**")]
-    /// Return a new instance of the EdgePredictionPerceptron model.
+    /// Return a new instance of the EdgePredictionSingleExtraTree model.
     ///
     /// Parameters
     /// ------------------------
@@ -31,38 +33,48 @@ impl EdgePredictionPerceptron {
     ///     Learning rate to use while training the model. By default 0.001.
     /// random_state: int = 42
     ///     The random state to reproduce the model initialization and training. By default, 42.
-    pub fn new(py_kwargs: Option<&PyDict>) -> PyResult<EdgePredictionPerceptron> {
+    pub fn new(py_kwargs: Option<&PyDict>) -> PyResult<EdgePredictionSingleExtraTree> {
         let py = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, py.python());
 
         pe!(validate_kwargs(
             kwargs,
             &[
+                "metric",
                 "edge_embedding_method_name",
-                "number_of_epochs",
-                "number_of_edges_per_mini_batch",
+                "number_of_edges_to_sample_per_tree_node",
+                "number_of_splits_per_tree_node",
                 "sample_only_edges_with_heterogeneous_node_types",
-                "learning_rate",
-                "random_state"
+                "negative_edges_rate",
+                "depth",
+                "random_state",
             ]
         ))?;
 
         Ok(Self {
             model: NodeFeaturesBasedEdgePredictionModelBinding::new(pe!(
-                cpu_models::EdgePredictionPerceptron::new(
+                cpu_models::EdgePredictionSingleExtraTree::new(
+                    pe!(extract_value_rust_result!(kwargs, "metric", String)
+                        .map(|name| name.try_into())
+                        .transpose())?,
                     pe!(
                         extract_value_rust_result!(kwargs, "edge_embedding_method_name", String)
                             .map(|name| name.try_into())
                             .transpose()
                     )?,
-                    extract_value_rust_result!(kwargs, "number_of_epochs", usize),
-                    extract_value_rust_result!(kwargs, "number_of_edges_per_mini_batch", usize),
+                    extract_value_rust_result!(
+                        kwargs,
+                        "number_of_edges_to_sample_per_tree_node",
+                        usize
+                    ),
+                    extract_value_rust_result!(kwargs, "number_of_splits_per_tree_node", usize),
                     extract_value_rust_result!(
                         kwargs,
                         "sample_only_edges_with_heterogeneous_node_types",
                         bool
                     ),
-                    extract_value_rust_result!(kwargs, "learning_rate", f32),
+                    extract_value_rust_result!(kwargs, "negative_edges_rate", f32),
+                    extract_value_rust_result!(kwargs, "depth", f32),
                     extract_value_rust_result!(kwargs, "random_state", u64),
                 )
             )?),
@@ -71,7 +83,7 @@ impl EdgePredictionPerceptron {
 }
 
 #[pymethods]
-impl EdgePredictionPerceptron {
+impl EdgePredictionSingleExtraTree {
     #[args(py_kwargs = "**")]
     #[text_signature = "($self, graph, node_features, verbose, support, graph_to_avoid)"]
     /// Fit the current model instance with the provided graph and node features.

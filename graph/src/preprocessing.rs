@@ -286,7 +286,135 @@ impl Graph {
     }
 
     #[manual_binding]
-    /// Returns n-ple with index to build numpy array, source node, source node type, destination node, destination node type, edge type and whether this edge is real or artificial.
+    /// Returns n-ple with source, destination and whether the edge is real.
+    ///
+    /// # Arguments
+    /// * `random_state`: u64 - Random state of the batch to generate.
+    /// * `batch_size`: usize - The maximal size of the batch to generate,
+    /// * `sample_only_edges_with_heterogeneous_node_types`: bool - Whether to sample negative edges only with source and destination nodes that have different node types.
+    /// * `negative_samples_rate`: Option<f64> - The component of netagetive samples to use.
+    /// * `avoid_false_negatives`: Option<bool> - Whether to remove the false negatives when generated. It should be left to false, as it has very limited impact on the training, but enabling this will slow things down.
+    /// * `maximal_sampling_attempts`: Option<usize> - Number of attempts to execute to sample the negative edges.
+    /// * `use_zipfian_sampling`: Option<bool> - Whether to sample the nodes using zipfian distribution. By default True. Not using this may cause significant biases.
+    /// * `support`: Option<&'a Graph> - Graph to use to compute the edge metrics. When not provided, the current graph (self) is used.
+    /// * `graph_to_avoid`: &'a Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,
+    ///
+    /// # Raises
+    /// * If the given amount of negative samples is not a positive finite real value.
+    /// * If node types are requested but the graph does not contain any.
+    /// * If the `sample_only_edges_with_heterogeneous_node_types` argument is provided as true, but the graph does not have node types.
+    ///
+    pub fn iter_edge_prediction_mini_batch<'a>(
+        &'a self,
+        mut random_state: u64,
+        batch_size: usize,
+        sample_only_edges_with_heterogeneous_node_types: bool,
+        negative_samples_rate: Option<f64>,
+        avoid_false_negatives: Option<bool>,
+        maximal_sampling_attempts: Option<usize>,
+        use_zipfian_sampling: Option<bool>,
+        support: Option<&'a Graph>,
+        graph_to_avoid: Option<&'a Graph>,
+    ) -> Result<impl Iterator<Item = (NodeT, NodeT, bool)> + 'a> {
+        let support = support.unwrap_or(&self);
+        let avoid_false_negatives = avoid_false_negatives.unwrap_or(false);
+        let maximal_sampling_attempts = maximal_sampling_attempts.unwrap_or(10_000);
+        let use_zipfian_sampling = use_zipfian_sampling.unwrap_or(true);
+
+        if sample_only_edges_with_heterogeneous_node_types && !self.has_node_types() {
+            return Err(concat!(
+                "The parameter `sample_only_edges_with_heterogeneous_node_types` was provided with value `true` ",
+                "but the current graph instance does not contain any node type. ",
+                "If you expected to have node types within this graph, maybe you have either dropped them ",
+                "with a wrong filter operation or use the wrong parametrization to load the graph."
+            ).to_string());
+        }
+
+        if sample_only_edges_with_heterogeneous_node_types
+            && self.has_exclusively_homogeneous_node_types().unwrap()
+        {
+            return Err(concat!(
+                "The parameter `sample_only_edges_with_heterogeneous_node_types` was provided with value `true` ",
+                "but the current graph instance has exclusively homogeneous node types, that is all the nodes have ",
+                "the same node type. ",
+                "If you expected to have heterogeneous node types within this graph, maybe you have either dropped them ",
+                "with a wrong filter operation or use the wrong parametrization to load the graph."
+            ).to_string());
+        }
+
+        let negative_samples_threshold = if let Some(negative_samples_rate) = &negative_samples_rate
+        {
+            if *negative_samples_rate < 0.0
+                || *negative_samples_rate > 1.0
+                || !negative_samples_rate.is_finite()
+            {
+                return Err(format!(
+                    concat!(
+                        "Negative sample must be a posive ",
+                        "real value between 0 and 1. ",
+                        "You have provided {}."
+                    ),
+                    *negative_samples_rate
+                ));
+            }
+            (negative_samples_rate * u64::MAX as f64).ceil() as u64
+        } else {
+            0
+        };
+
+        random_state = splitmix64(random_state);
+
+        Ok((0..batch_size).map(move |i| unsafe {
+            let mut random_state = splitmix64(random_state + i as u64);
+            if random_state > negative_samples_threshold {
+                random_state = splitmix64(random_state);
+                let (src, dst) =
+                    self.get_unchecked_node_ids_from_edge_id(self.get_random_edge_id(random_state));
+                return (src, dst, true);
+            }
+
+            for _ in 0..maximal_sampling_attempts {
+                random_state = splitmix64(random_state);
+                let (src, dst) = if use_zipfian_sampling {
+                    (
+                        self.get_random_zipfian_node(random_state),
+                        self.get_random_zipfian_node(random_state.wrapping_mul(2)),
+                    )
+                } else {
+                    (
+                        self.get_random_node(random_state),
+                        self.get_random_node(random_state.wrapping_mul(2)),
+                    )
+                };
+
+                if avoid_false_negatives && support.has_edge_from_node_ids(src, dst)
+                    || sample_only_edges_with_heterogeneous_node_types && {
+                        self.get_unchecked_node_type_ids_from_node_id(src)
+                            == self.get_unchecked_node_type_ids_from_node_id(dst)
+                    }
+                    || graph_to_avoid
+                        .as_ref()
+                        .map_or(false, |g| g.has_edge_from_node_ids(src, dst))
+                {
+                    continue;
+                }
+
+                return (src, dst, false);
+            }
+
+            panic!(
+                concat!(
+                    "Executed more than {} attempts to sample a negative edge.\n",
+                    "If your graph is so small that you see this error, you may want to consider ",
+                    "using one of the edge embedding transformer from the Embiggen library."
+                ),
+                maximal_sampling_attempts
+            );
+        }))
+    }
+
+    #[manual_binding]
+    /// Returns n-ple with source, destination and whether the edge is real.
     ///
     /// # Arguments
     /// * `random_state`: u64 - Random state of the batch to generate.

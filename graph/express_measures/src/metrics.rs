@@ -6,7 +6,7 @@ use unzip_n::unzip_n;
 
 unzip_n!(pub(crate) 3);
 
-#[derive(Debug, Clone, Copy)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub struct BinaryConfusionMatrix {
     true_positives: usize,
     true_negatives: usize,
@@ -17,13 +17,74 @@ pub struct BinaryConfusionMatrix {
 unsafe impl Sync for BinaryConfusionMatrix {}
 unsafe impl Send for BinaryConfusionMatrix {}
 
+#[derive(Clone, Debug, Copy, PartialEq, Eq)]
+pub enum BinaryMetricName {
+    Accuracy,
+    Recall,
+    Specificity,
+    MissRate,
+    FallOut,
+    Informedness,
+    PrevalenceThreshold,
+    Prevalence,
+    BalancedAccuracy,
+    Precision,
+    FalseDiscoveryRate,
+    FalseOmissionRate,
+    NegativePredictiveValue,
+    PositiveLikelyhoodRatio,
+    NegativeLikelyhoodRatio,
+    Markedness,
+    DiagnosticOddsRatio,
+    F1Score,
+    FowlkesMallowsIndex,
+    ThreatScore,
+    MatthewsCorrelationCoefficient,
+}
+
+impl TryFrom<String> for BinaryMetricName {
+    type Error = String;
+
+    fn try_from(value: String) -> Result<Self, Self::Error> {
+        match value.as_str() {
+            "accuracy" => Ok(BinaryMetricName::Accuracy),
+            "recall" => Ok(BinaryMetricName::Recall),
+            "specificity" => Ok(BinaryMetricName::Specificity),
+            "miss_rate" => Ok(BinaryMetricName::MissRate),
+            "fall_out" => Ok(BinaryMetricName::FallOut),
+            "informedness" => Ok(BinaryMetricName::Informedness),
+            "prevalence_threshold" => Ok(BinaryMetricName::PrevalenceThreshold),
+            "prevalence" => Ok(BinaryMetricName::Prevalence),
+            "balanced_accuracy" => Ok(BinaryMetricName::BalancedAccuracy),
+            "precision" => Ok(BinaryMetricName::Precision),
+            "false_discovery_rate" => Ok(BinaryMetricName::FalseDiscoveryRate),
+            "false_omission_rate" => Ok(BinaryMetricName::FalseOmissionRate),
+            "negative_predictive_value" => Ok(BinaryMetricName::NegativePredictiveValue),
+            "positive_likelyhood_ratio" => Ok(BinaryMetricName::PositiveLikelyhoodRatio),
+            "negative_likelyhood_ratio" => Ok(BinaryMetricName::NegativeLikelyhoodRatio),
+            "markedness" => Ok(BinaryMetricName::Markedness),
+            "diagnostic_odds_ratio" => Ok(BinaryMetricName::DiagnosticOddsRatio),
+            "f1_score" => Ok(BinaryMetricName::F1Score),
+            "fowlkes_mallows_index" => Ok(BinaryMetricName::FowlkesMallowsIndex),
+            "threat_score" => Ok(BinaryMetricName::ThreatScore),
+            "matthews_correlation_coefficient" => {
+                Ok(BinaryMetricName::MatthewsCorrelationCoefficient)
+            }
+            other => Err(format!(
+                concat!("The provided binary metric name {} is not supported."),
+                other
+            )),
+        }
+    }
+}
+
 impl BinaryConfusionMatrix {
     /// Create a new Binary Confusion Matrix from the provided tuple.
     ///
     /// # Arguments
     /// * `ground_truth`: bool - The ground truth binary value.
     /// * `prediction`: bool - The prediction binary value.
-    fn from_tuple(ground_truth: bool, prediction: bool) -> BinaryConfusionMatrix {
+    pub fn from_tuple(ground_truth: bool, prediction: bool) -> BinaryConfusionMatrix {
         BinaryConfusionMatrix {
             true_positives: (ground_truth && prediction) as usize,
             true_negatives: (!ground_truth && !prediction) as usize,
@@ -35,7 +96,7 @@ impl BinaryConfusionMatrix {
     /// Compute the binary confusion matrix from the values we have in the
     /// compute_auc method. This is for internal uses only and is not intedned
     /// to be exposed.
-    fn form_auc_values(
+    fn from_auc_values(
         total_positives: usize,
         total_negatives: usize,
         current_total_samples: usize,
@@ -52,7 +113,7 @@ impl BinaryConfusionMatrix {
     }
 
     /// Create a new Binary Confusion matrix from the provided iterators
-    /// 
+    ///
     /// # Arguments
     /// * `ground_truth_iter`: impl IndexedParallelIterator<Item=bool> - The ground truths binary values.
     /// * `predictions_iter`:impl IndexedParallelIterator<Item=bool> - The predictions binary values.
@@ -62,13 +123,14 @@ impl BinaryConfusionMatrix {
     pub fn from_indexed_par_iter<I1, I2>(
         ground_truth_iter: I1,
         predictions_iter: I2,
-    ) -> Result<Self, String> 
+    ) -> Result<Self, String>
     where
-        I1: IndexedParallelIterator<Item=bool>,
-        I2: IndexedParallelIterator<Item=bool>,
+        I1: IndexedParallelIterator<Item = bool>,
+        I2: IndexedParallelIterator<Item = bool>,
     {
         validate_vectors_length(ground_truth_iter.len(), predictions_iter.len())?;
-        Ok(ground_truth_iter.zip(predictions_iter)
+        Ok(ground_truth_iter
+            .zip(predictions_iter)
             .map(|(ground_truth, prediction)| {
                 BinaryConfusionMatrix::from_tuple(ground_truth, prediction)
             })
@@ -99,7 +161,7 @@ impl BinaryConfusionMatrix {
     /// * `ground_truths`: &[bool] - The ground truths binary values.
     /// * `predictions`: &[f32] - The predictions probabilities.
     /// * `threshold`: f32 - The probability cut-off we use to ditinguis between
-    ///     positive and negative values. 
+    ///     positive and negative values.
     ///
     /// # Raises
     /// * When the slices are not compatible (i.e. do not have the same length).
@@ -110,9 +172,9 @@ impl BinaryConfusionMatrix {
     ) -> Result<Self, String> {
         Self::from_indexed_par_iter(
             ground_truths.par_iter().copied(),
-            predictions.par_iter().map(|probability| {
-                *probability > threshold
-            })
+            predictions
+                .par_iter()
+                .map(|probability| *probability > threshold),
         )
     }
 
@@ -325,6 +387,40 @@ impl BinaryConfusionMatrix {
             .sqrt()
     }
 
+    pub fn get_binary_metric(&self, binary_metric: BinaryMetricName) -> f64 {
+        match binary_metric {
+            BinaryMetricName::Accuracy => self.get_binary_accuracy(),
+            BinaryMetricName::Recall => self.get_binary_recall(),
+            BinaryMetricName::Specificity => self.get_binary_specificity(),
+            BinaryMetricName::MissRate => self.get_binary_miss_rate(),
+            BinaryMetricName::FallOut => self.get_binary_fall_out(),
+            BinaryMetricName::Informedness => self.get_binary_informedness(),
+            BinaryMetricName::PrevalenceThreshold => self.get_binary_prevalence_threshold(),
+            BinaryMetricName::Prevalence => self.get_binary_prevalence(),
+            BinaryMetricName::BalancedAccuracy => self.get_binary_balanced_accuracy(),
+            BinaryMetricName::Precision => self.get_binary_precision(),
+            BinaryMetricName::FalseDiscoveryRate => self.get_binary_false_discovery_rate(),
+            BinaryMetricName::FalseOmissionRate => self.get_binary_false_omission_rate(),
+            BinaryMetricName::NegativePredictiveValue => {
+                self.get_binary_negative_predictive_value()
+            }
+            BinaryMetricName::PositiveLikelyhoodRatio => {
+                self.get_binary_positive_likelyhood_ratio()
+            }
+            BinaryMetricName::NegativeLikelyhoodRatio => {
+                self.get_binary_negative_likelyhood_ratio()
+            }
+            BinaryMetricName::Markedness => self.get_binary_markedness(),
+            BinaryMetricName::DiagnosticOddsRatio => self.get_binary_diagnostic_odds_ratio(),
+            BinaryMetricName::F1Score => self.get_binary_f1_score(),
+            BinaryMetricName::FowlkesMallowsIndex => self.get_binary_fowlkes_mallows_index(),
+            BinaryMetricName::ThreatScore => self.get_binary_threat_score(),
+            BinaryMetricName::MatthewsCorrelationCoefficient => {
+                self.get_binary_matthews_correlation_coefficient()
+            }
+        }
+    }
+
     /// Returns hashmap with all available binary metrics.
     pub fn get_all_binary_metrics(&self) -> HashMap<String, f64> {
         [
@@ -433,7 +529,10 @@ impl core::iter::Sum<Self> for BinaryConfusionMatrix {
 ///
 /// # Raises
 /// * When the slices are not compatible (i.e. do not have the same length).
-pub fn get_binary_auroc<F: PartialOrd + Send + Sync + Into<f64>>(ground_truths: &[bool], predictions: &[F]) -> Result<f64, String> {
+pub fn get_binary_auroc<F: PartialOrd + Send + Sync + Into<f64>>(
+    ground_truths: &[bool],
+    predictions: &[F],
+) -> Result<f64, String> {
     get_binary_auc(
         ground_truths,
         predictions,
@@ -458,7 +557,10 @@ pub fn get_binary_auroc<F: PartialOrd + Send + Sync + Into<f64>>(ground_truths: 
 ///
 /// # Raises
 /// * When the slices are not compatible (i.e. do not have the same length).
-pub fn get_binary_auprc<F: PartialOrd + Send + Sync>(ground_truths: &[bool], predictions: &[F]) -> Result<f64, String> {
+pub fn get_binary_auprc<F: PartialOrd + Send + Sync>(
+    ground_truths: &[bool],
+    predictions: &[F],
+) -> Result<f64, String> {
     get_binary_auc(
         ground_truths,
         predictions,
@@ -548,7 +650,7 @@ where
         .to_string());
     }
 
-    let final_matrix = BinaryConfusionMatrix::form_auc_values(
+    let final_matrix = BinaryConfusionMatrix::from_auc_values(
         total_positives,
         total_negatives,
         number_of_predictions,
@@ -560,13 +662,13 @@ where
         .par_windows(2)
         .enumerate()
         .map(|(i, positive_labels_sum_window)| {
-            let previous = BinaryConfusionMatrix::form_auc_values(
+            let previous = BinaryConfusionMatrix::from_auc_values(
                 total_positives,
                 total_negatives,
                 i + 1,
                 usize::try_from(positive_labels_sum_window[0]).unwrap(),
             );
-            let current = BinaryConfusionMatrix::form_auc_values(
+            let current = BinaryConfusionMatrix::from_auc_values(
                 total_positives,
                 total_negatives,
                 i + 2,
@@ -575,7 +677,7 @@ where
 
             curve(&previous, &current)
         })
-        .sum::<f64>() 
+        .sum::<f64>()
         / normalizzation_value(&final_matrix))
 }
 

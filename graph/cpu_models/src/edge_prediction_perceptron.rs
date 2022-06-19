@@ -1,53 +1,15 @@
-use express_measures::{
-    cosine_similarity_sequential_unchecked, dot_product_sequential_unchecked,
-    euclidean_distance_sequential_unchecked,
-};
+use crate::{EdgeEmbeddingMethod, NodeFeaturesBasedEdgePrediction};
+use express_measures::dot_product_sequential_unchecked;
 use graph::{Graph, NodeT};
 use indicatif::ProgressIterator;
 use indicatif::{ProgressBar, ProgressStyle};
 use rayon::prelude::*;
 use vec_rand::{random_f32, splitmix64};
 
-#[derive(Clone, Debug, Copy)]
-pub enum EdgeEmbeddingMethods {
-    CosineSimilarity,
-    EuclideanDistance,
-    Hadamard,
-}
-
-pub fn get_edge_embedding_method_dimensionality(
-    method: EdgeEmbeddingMethods,
-    dimension: usize,
-) -> usize {
-    match method {
-        EdgeEmbeddingMethods::CosineSimilarity => 1,
-        EdgeEmbeddingMethods::EuclideanDistance => 1,
-        EdgeEmbeddingMethods::Hadamard => dimension,
-    }
-}
-
-pub fn get_edge_embedding_method_name_from_string(
-    candidate_method_name: &str,
-) -> Result<EdgeEmbeddingMethods, String> {
-    match candidate_method_name {
-        "CosineSimilarity" => Ok(EdgeEmbeddingMethods::CosineSimilarity),
-        "EuclideanDistance" => Ok(EdgeEmbeddingMethods::EuclideanDistance),
-        "Hadamard" => Ok(EdgeEmbeddingMethods::Hadamard),
-        _ => Err(format!(
-            concat!(
-                "The provided edge embedding method name {} is not supported. ",
-                "The supported edge embedding method names are `CosineSimilarity`, ",
-                "`EuclideanDistance` and `Hadamard`."
-            ),
-            candidate_method_name
-        )),
-    }
-}
-
 #[derive(Clone, Debug)]
 pub struct EdgePredictionPerceptron {
     /// The name of the method to use to compute the edge embedding.
-    edge_embedding_method_name: EdgeEmbeddingMethods,
+    edge_embedding_method_name: EdgeEmbeddingMethod,
     /// The weights of the model.
     weights: Vec<f32>,
     /// The bias of the model.
@@ -68,14 +30,14 @@ impl EdgePredictionPerceptron {
     /// Return new instance of Perceptron for edge prediction.
     ///
     /// # Arguments
-    /// * `edge_embedding_method_name`: Option<EdgeEmbeddingMethods> - The embedding method to use. By default the cosine similarity is used.
+    /// * `edge_embedding_method_name`: Option<EdgeEmbeddingMethod> - The embedding method to use. By default the cosine similarity is used.
     /// * `number_of_epochs`: Option<usize> - The number of epochs to train the model for. By default, 100.
     /// * `number_of_edges_per_mini_batch`: Option<usize> - The number of samples to include for each mini-batch. By default 1024.
     /// * `sample_only_edges_with_heterogeneous_node_types`: Option<bool> - Whether to sample negative edges only with source and destination nodes that have different node types. By default false.
     /// * `learning_rate`: Option<f32> - Learning rate to use while training the model. By default 0.001.
     /// * `random_state`: Option<u64> - The random state to reproduce the model initialization and training. By default, 42.
     pub fn new(
-        edge_embedding_method_name: Option<EdgeEmbeddingMethods>,
+        edge_embedding_method_name: Option<EdgeEmbeddingMethod>,
         number_of_epochs: Option<usize>,
         number_of_edges_per_mini_batch: Option<usize>,
         sample_only_edges_with_heterogeneous_node_types: Option<bool>,
@@ -107,7 +69,7 @@ impl EdgePredictionPerceptron {
         }
 
         let edge_embedding_method_name =
-            edge_embedding_method_name.unwrap_or(EdgeEmbeddingMethods::CosineSimilarity);
+            edge_embedding_method_name.unwrap_or(EdgeEmbeddingMethod::CosineSimilarity);
         Ok(Self {
             edge_embedding_method_name,
             weights: Vec::new(),
@@ -145,59 +107,6 @@ impl EdgePredictionPerceptron {
         Ok(self.bias)
     }
 
-    fn validate_features(
-        &self,
-        graph: &Graph,
-        node_features: &[f32],
-        dimension: usize,
-    ) -> Result<(), String> {
-        if !graph.has_edges() {
-            return Err("The provided graph does not have any edge.".to_string());
-        }
-
-        if dimension == 0 {
-            return Err(concat!(
-                "The provided feature dimensions is zero. ",
-                "The number of node features should be a strictly positive value."
-            )
-            .to_string());
-        }
-
-        if node_features.len() != graph.get_nodes_number() as usize * dimension {
-            return Err(format!(
-                concat!(
-                    "The provided node features have size {}, but the expected size ",
-                    "based on the provided graph and dimension is {}. Specifically, ",
-                    "the expected shape of the matrix is ({}, {})."
-                ),
-                node_features.len(),
-                graph.get_nodes_number() as usize * dimension,
-                graph.get_nodes_number(),
-                dimension
-            ));
-        }
-        Ok(())
-    }
-
-    /// Returns method to compute the edge embedding.
-    fn get_edge_embedding_method(&self) -> fn(&[f32], &[f32]) -> Vec<f32> {
-        match self.edge_embedding_method_name {
-            EdgeEmbeddingMethods::CosineSimilarity => {
-                |a: &[f32], b: &[f32]| vec![unsafe { cosine_similarity_sequential_unchecked(a, b) }]
-            }
-            EdgeEmbeddingMethods::EuclideanDistance => |a: &[f32], b: &[f32]| {
-                vec![unsafe { euclidean_distance_sequential_unchecked(a, b) }]
-            },
-            EdgeEmbeddingMethods::Hadamard => |a: &[f32], b: &[f32]| {
-                a.iter()
-                    .copied()
-                    .zip(b.iter().copied())
-                    .map(|(feature_a, feature_b)| feature_a * feature_b)
-                    .collect::<Vec<f32>>()
-            },
-        }
-    }
-
     /// Returns the prediction for the provided nodes, edge embedding method and current model.
     ///
     /// # Arguments
@@ -225,20 +134,12 @@ impl EdgePredictionPerceptron {
         let dst_features = &node_features[dst * dimension..(dst + 1) * dimension];
         let edge_embedding = method(src_features, dst_features);
         let dot = dot_product_sequential_unchecked(&edge_embedding, &self.weights) + self.bias;
-
         (edge_embedding, 1.0 / (1.0 + (-dot).exp()))
     }
+}
 
-    /// Fit the edge prediction perceptron model on the provided graph and node features.
-    ///
-    /// # Arguments
-    /// * `graph`: &Graph - The graph whose edges are to be learned.
-    /// * `node_features`: &[f32] - A node features matrix.
-    /// * `dimension`: usize - The dimensionality of the node features.
-    /// * `verbose`: Option<bool> - Whether to show a loading bar for the epochs. By default, True.
-    /// * `support`: Option<&'a Graph> - Graph to use to check for false negatives.
-    /// * `graph_to_avoid`: &'a Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,
-    pub fn fit(
+impl NodeFeaturesBasedEdgePrediction for EdgePredictionPerceptron {
+    fn fit(
         &mut self,
         graph: &Graph,
         node_features: &[f32],
@@ -257,8 +158,9 @@ impl EdgePredictionPerceptron {
         let get_random_weight = |seed: usize| {
             (2.0 * random_f32(splitmix64(random_state + seed as u64)) - 1.0) / scale_factor
         };
-        let edge_dimension =
-            get_edge_embedding_method_dimensionality(self.edge_embedding_method_name, dimension);
+        let edge_dimension = self
+            .edge_embedding_method_name
+            .get_dimensionality(dimension);
         self.weights = (0..edge_dimension)
             .map(|i| get_random_weight(i))
             .collect::<Vec<f32>>();
@@ -283,8 +185,9 @@ impl EdgePredictionPerceptron {
             / self.number_of_edges_per_mini_batch as f32)
             .ceil() as usize;
 
-        let method = self.get_edge_embedding_method();
-        let batch_learning_rate: f32 = self.learning_rate / self.number_of_edges_per_mini_batch as f32;
+        let method = self.edge_embedding_method_name.get_method();
+        let batch_learning_rate: f32 =
+            self.learning_rate / self.number_of_edges_per_mini_batch as f32;
 
         // We start to loop over the required amount of epochs.
         (0..self.number_of_epochs)
@@ -326,14 +229,14 @@ impl EdgePredictionPerceptron {
                             })
                             .reduce(
                                 || (vec![0.0; edge_dimension], 0.0),
-                                |(
-                                    mut total_weights_gradient,
-                                    mut total_bias_gradient,
-                                ): (Vec<f32>, f32),
-                                 (
-                                    partial_weights_gradient,
-                                    partial_bias_gradient,
-                                ): (Vec<f32>, f32)| {
+                                |(mut total_weights_gradient, mut total_bias_gradient): (
+                                    Vec<f32>,
+                                    f32,
+                                ),
+                                 (partial_weights_gradient, partial_bias_gradient): (
+                                    Vec<f32>,
+                                    f32,
+                                )| {
                                     total_weights_gradient
                                         .iter_mut()
                                         .zip(partial_weights_gradient.into_iter())
@@ -360,60 +263,28 @@ impl EdgePredictionPerceptron {
             .collect::<Result<(), String>>()
     }
 
-    /// Writes the predicted probabilities on the provided memory area.
-    ///
-    /// # Arguments
-    /// * `predictions`: &mut [f32] - Area where to write the predictions.
-    /// * `graph`: &Graph - The graph whose edges are to be learned.
-    /// * `node_features`: &[f32] - A node features matrix.
-    /// * `dimension`: usize - The dimensionality of the node features.
-    pub fn predict(
+    fn is_trained(&self) -> bool {
+        !self.weights.is_empty()
+    }
+
+    fn get_edge_embedding_method(&self) -> &EdgeEmbeddingMethod {
+        &self.edge_embedding_method_name
+    }
+
+    fn get_input_size(&self) -> usize {
+        self.weights.len()
+    }
+
+    fn predict(
         &self,
         predictions: &mut [f32],
         graph: &Graph,
         node_features: &[f32],
         dimension: usize,
     ) -> Result<(), String> {
-        self.validate_features(graph, node_features, dimension)?;
+        self.validate_features_for_prediction(predictions, graph, node_features, dimension)?;
 
-        if predictions.len() != graph.get_number_of_directed_edges() as usize {
-            return Err(format!(
-                concat!(
-                    "The provided predictions slice has size `{}` ",
-                    "but it was expected to have the same ",
-                    "size of the number of the directed edges in the graph `{}`."
-                ),
-                predictions.len(),
-                graph.get_number_of_directed_edges()
-            ));
-        }
-
-        if self.weights.is_empty() {
-            return Err(concat!(
-                "This model has not been trained yet. ",
-                "Before calling the `.predict` method, you ",
-                "should call the `.fit` method."
-            )
-            .to_string());
-        }
-
-        let edge_dimension =
-            get_edge_embedding_method_dimensionality(self.edge_embedding_method_name, dimension);
-
-        if self.weights.len() != edge_dimension {
-            return Err(format!(
-                concat!(
-                    "This model was not trained on features compatible with ",
-                    "the provided features. Specifically, the model was trained ",
-                    "on features with edge embedding dimension `{}`, while the features you have ",
-                    "provided have edge embedding dimension `{}`."
-                ),
-                self.weights.len(),
-                edge_dimension
-            ));
-        }
-
-        let method = self.get_edge_embedding_method();
+        let method = self.edge_embedding_method_name.get_method();
 
         predictions
             .par_iter_mut()
