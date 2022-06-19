@@ -1077,8 +1077,8 @@ where
                         (
                             node.id.try_into().unwrap() as NodeT,
                             right_child_node_id.try_into().unwrap() as NodeT,
-                            Some(0),
-                            node.split.negative_predictive_value as WeightT,
+                            Some(1),
+                            node.split.positive_predictive_value as WeightT,
                         ),
                     ));
                 }
@@ -1091,7 +1091,7 @@ where
             true,
             Some(true),
             Some(false),
-            None,
+            Some(false),
             None,
             self.depth == NodeIdType::try_from(1).unwrap(),
             false,
