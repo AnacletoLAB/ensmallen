@@ -355,6 +355,8 @@ where
         minimum_attribute_values: &[AttributeType],
         maximum_attribute_values: &[AttributeType],
     ) -> Self {
+        assert!(number_of_splits > 0);
+        assert!(number_of_samples > 0);
         Self {
             parent_id,
             id,
@@ -387,14 +389,9 @@ where
         });
     }
 
-    /// Return number of updates.
-    pub fn get_updates_number(&self) -> usize {
-        self.split_builders[0].get_updates_number()
-    }
-
     /// Returns whether the node in building is considered ready.
     pub fn is_ready(&self) -> bool {
-        self.get_updates_number() > self.number_of_samples
+        self.is_rasterized() || self.split_builders[0].get_updates_number() > self.number_of_samples
     }
 
     /// Returns whether the node builder is rasterized
@@ -415,11 +412,15 @@ where
     /// Rasterize the builder.
     ///
     /// # Arguments
-    /// * `left_child_node_id`: NodeIdType - The ID of the left child node (for the negative class).
-    /// * `right_child_node_id`: NodeIdType - The ID of the right child node (for the positive class).
-    fn rasterize(&mut self, left_child_node_id: NodeIdType, right_child_node_id: NodeIdType) {
-        self.left_child_node_id = Some(left_child_node_id);
-        self.right_child_node_id = Some(right_child_node_id);
+    /// * `left_child_node_id`: Option<NodeIdType> - The ID of the left child node (for the negative class).
+    /// * `right_child_node_id`: Option<NodeIdType> - The ID of the right child node (for the positive class).
+    fn rasterize(
+        &mut self,
+        left_child_node_id: Option<NodeIdType>,
+        right_child_node_id: Option<NodeIdType>,
+    ) {
+        self.left_child_node_id = left_child_node_id;
+        self.right_child_node_id = right_child_node_id;
         self.best_split = Some(
             core::mem::replace(&mut self.split_builders, Vec::new())
                 .into_iter()
@@ -502,7 +503,10 @@ where
     <NodeFeaturePositionType as TryFrom<usize>>::Error: Debug,
     <NodeFeaturePositionType as TryInto<usize>>::Error: Debug,
 {
-    fn into(self) -> Node<NodeIdType, NodeFeaturePositionType, AttributeType> {
+    fn into(mut self) -> Node<NodeIdType, NodeFeaturePositionType, AttributeType> {
+        if !self.is_rasterized() {
+            self.rasterize(None, None);
+        }
         Node {
             id: self.id,
             split: self.best_split.unwrap(),
@@ -604,6 +608,8 @@ where
         minimum_attribute_values: &[AttributeType],
         maximum_attribute_values: &[AttributeType],
     ) -> Self {
+        assert!(number_of_splits > 0);
+        assert!(number_of_samples > 0);
         Self {
             metric,
             number_of_splits,
@@ -673,7 +679,8 @@ where
                         NodeIdType::try_from(self.tree.len() + new_nodes_count).unwrap();
                     new_nodes_count += 1;
 
-                    self.tree[current_node_id].rasterize(left_child_node_id, right_child_node_id);
+                    self.tree[current_node_id]
+                        .rasterize(Some(left_child_node_id), Some(right_child_node_id));
 
                     let mut left_minimum_attribute_values = minimum_attribute_values.clone();
                     let mut left_maximum_attribute_values = maximum_attribute_values.clone();
