@@ -84,6 +84,11 @@ impl EdgePredictionSingleExtraTree {
             )?),
         })
     }
+
+    /// Returns graph representing current tree.
+    pub fn to_graph(&self) -> PyResult<Graph> {
+        Ok(pe!(self.model.get_model().to_graph())?.into())
+    }
 }
 
 #[pymethods]

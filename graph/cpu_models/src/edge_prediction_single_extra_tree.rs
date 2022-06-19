@@ -1,11 +1,15 @@
 use crate::{EdgeEmbeddingMethod, NodeFeaturesBasedEdgePrediction};
 use express_measures::{BinaryConfusionMatrix, BinaryMetricName, ThreadUnsigned};
-use graph::Graph;
+use graph::{
+    build_graph_from_integers, EdgeTypeT, Graph, NodeT, NodeTypeT, NodeTypeVocabulary, Vocabulary,
+    WeightT,
+};
 use indicatif::ProgressIterator;
 use indicatif::{ProgressBar, ProgressStyle};
 use rayon::prelude::*;
 use std::fmt::Debug;
 use std::ops::AddAssign;
+use std::sync::Arc;
 use vec_rand::{random_f32, sample_uniform, splitmix64};
 
 pub trait LinearInterpolation {
@@ -94,11 +98,8 @@ where
         &self,
         minimum_attribute_values: &mut [AttributeType],
         maximum_attribute_values: &mut [AttributeType],
-        mut label: bool,
+        label: bool,
     ) {
-        if !self.sign {
-            label = !label;
-        }
         if label {
             minimum_attribute_values[self.attribute_position.try_into().unwrap()] =
                 self.attribute_split_value;
@@ -261,6 +262,7 @@ where
     /// small trees for a large forest, using 2 bytes or 8 bytes (for an usize)
     /// can make a large difference.
     id: NodeIdType,
+    parent_id: Option<NodeIdType>,
     /// The splitter for this node.
     split: Split<NodeFeaturePositionType, AttributeType>,
     /// Child node ID for the lower or equal values, the negative edges class.
@@ -278,6 +280,11 @@ where
     <NodeFeaturePositionType as TryFrom<usize>>::Error: Debug,
     <NodeFeaturePositionType as TryInto<usize>>::Error: Debug,
 {
+    /// Returns whether the current node is root.
+    pub fn is_root(&self) -> bool {
+        self.parent_id.is_none()
+    }
+
     /// Returns whether the current node is a leaf.
     pub fn is_leaf(&self) -> bool {
         self.left_child_node_id.is_none() && self.right_child_node_id.is_none()
@@ -514,6 +521,7 @@ where
             self.rasterize(None, None);
         }
         Node {
+            parent_id: self.parent_id,
             id: self.id,
             split: self.best_split.unwrap(),
             left_child_node_id: self.left_child_node_id,
@@ -800,6 +808,10 @@ where
         // We proceed to apply the remapping and we prune tree branches to child nodes
         // that did not see enough samples and are therefore not ready.
         (0..self.tree.len()).for_each(|node_id| {
+            // If the node has a parent, we try to update it.
+            self.tree[node_id].parent_id = self.tree[node_id]
+                .parent_id
+                .map(|parent_id| self.tree[parent_id.try_into().unwrap()].id);
             // If the node has a left child, we try to update it, or if it is not
             // ready we prune it.
             self.tree[node_id].left_child_node_id =
@@ -1003,6 +1015,77 @@ where
         self.tree = tree.into();
 
         Ok(())
+    }
+
+    /// Return a graph object representing the tree.
+    pub fn to_graph(&self) -> Result<Graph, String> {
+        self.must_be_trained()?;
+        let nodes = Vocabulary::from_reverse_map(
+            self.tree
+                .par_iter()
+                .map(|node| {
+                    format!(
+                        "{:?}) feature {:?}{:?}{:?}",
+                        node.id,
+                        node.split.attribute_position,
+                        if node.split.sign { ">" } else { "<" },
+                        node.split.attribute_split_value
+                    )
+                })
+                .collect(),
+        )?;
+        let node_types_vocabulary: Vocabulary<NodeTypeT> = Vocabulary::from_reverse_map(vec![
+            "root".to_string(),
+            "body".to_string(),
+            "leaf".to_string(),
+        ])?;
+        let node_type_ids = self
+            .tree
+            .par_iter()
+            .map(|node| {
+                Some(vec![if node.is_root() {
+                    0
+                } else if node.is_leaf() {
+                    2
+                } else {
+                    1
+                }])
+            })
+            .collect::<Vec<Option<Vec<NodeTypeT>>>>();
+        let node_types = NodeTypeVocabulary::from_structs(node_type_ids, node_types_vocabulary);
+        let edge_types_vocabulary: Vocabulary<EdgeTypeT> = Vocabulary::from_reverse_map(vec![
+            "left_child".to_string(),
+            "right_child".to_string(),
+        ])?;
+        build_graph_from_integers(
+            Some(self.tree.par_iter().flat_map(|node| {
+                let mut edges = Vec::new();
+                if let Some(left_child_node_id) = node.left_child_node_id {
+                    edges.push((
+                        0,
+                        (
+                            node.id.try_into().unwrap() as NodeT,
+                            left_child_node_id.try_into().unwrap() as NodeT,
+                            Some(0),
+                            node.split.negative_predictive_value as WeightT,
+                        ),
+                    ));
+                }
+                edges
+            })),
+            Arc::new(nodes),
+            Arc::new(Some(node_types)),
+            Some(edge_types_vocabulary),
+            true,
+            true,
+            Some(true),
+            Some(false),
+            None,
+            None,
+            self.depth == NodeIdType::try_from(1).unwrap(),
+            false,
+            "Single Extra Tree",
+        )
     }
 
     /// Return prediction of the edge according to this splitter.
