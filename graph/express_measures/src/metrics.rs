@@ -357,9 +357,8 @@ impl BinaryConfusionMatrix {
     /// Returns the binary F1 score
     pub fn get_binary_f1_score(&self) -> f64 {
         (2 * self.get_number_of_true_positives()) as f64
-            / ((2 * self.get_number_of_true_positives()
-                + self.get_number_of_incorrect_predictions()) as f64
-                + f64::EPSILON)
+            / (2 * self.get_number_of_true_positives() + self.get_number_of_incorrect_predictions())
+                as f64
     }
 
     /// Returns the binary Fowlkes-Mallows index
