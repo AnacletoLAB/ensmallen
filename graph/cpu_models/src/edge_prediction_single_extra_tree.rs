@@ -841,7 +841,7 @@ where
                 self.tree[node_id].left_child_node_id = self.tree[node_id]
                     .left_child_node_id
                     .and_then(|left_child_id| {
-                        if self.tree[left_child_id.try_into().unwrap()].is_ready() {
+                        if self.is_node_ready(left_child_id.try_into().unwrap()) {
                             Some(self.tree[left_child_id.try_into().unwrap()].id)
                         } else {
                             None
@@ -852,7 +852,7 @@ where
                 self.tree[node_id].right_child_node_id = self.tree[node_id]
                     .right_child_node_id
                     .and_then(|right_child_id| {
-                        if self.tree[right_child_id.try_into().unwrap()].is_ready() {
+                        if self.is_node_ready(right_child_id.try_into().unwrap()) {
                             Some(self.tree[right_child_id.try_into().unwrap()].id)
                         } else {
                             None
