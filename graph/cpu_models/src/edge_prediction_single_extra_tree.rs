@@ -628,7 +628,7 @@ where
             metric,
             number_of_splits,
             number_of_samples,
-            random_state,
+            random_state: splitmix64(random_state),
             depth: NodeIdType::try_from(0).unwrap(),
             tree: vec![NodeBuilder::new(
                 None,
@@ -1032,8 +1032,16 @@ where
                         node.split.attribute_split_value
                     )
                 })
+                .chain(
+                    vec!["Existing edge".to_string(), "Non-exiting edge".to_string()]
+                        .into_par_iter(),
+                )
                 .collect(),
         )?;
+
+        let existing_edge_node_id = nodes.get("Existing edge").unwrap();
+        let non_existing_edge_node_id = nodes.get("Non-existing edge").unwrap();
+
         let node_types_vocabulary: Vocabulary<NodeTypeT> = Vocabulary::from_reverse_map(vec![
             "root".to_string(),
             "body".to_string(),
@@ -1070,7 +1078,17 @@ where
                             node.split.negative_predictive_value as WeightT,
                         ),
                     ));
-                }
+                } else {
+                    edges.push((
+                        0,
+                        (
+                            node.id.try_into().unwrap() as NodeT,
+                            non_existing_edge_node_id,
+                            Some(0),
+                            node.split.negative_predictive_value as WeightT,
+                        ),
+                    ));
+                };
                 if let Some(right_child_node_id) = node.right_child_node_id {
                     edges.push((
                         0,
@@ -1081,7 +1099,17 @@ where
                             node.split.positive_predictive_value as WeightT,
                         ),
                     ));
-                }
+                } else {
+                    edges.push((
+                        0,
+                        (
+                            node.id.try_into().unwrap() as NodeT,
+                            existing_edge_node_id,
+                            Some(1),
+                            node.split.positive_predictive_value as WeightT,
+                        ),
+                    ));
+                };
                 edges
             })),
             Arc::new(nodes),
