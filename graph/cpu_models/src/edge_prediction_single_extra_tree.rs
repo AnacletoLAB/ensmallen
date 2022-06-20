@@ -998,8 +998,8 @@ where
 
         while tmp_count < 50 {
             random_state = splitmix64(random_state);
-            tree = graph
-                .par_iter_edge_prediction_mini_batch(
+            graph
+                .iter_edge_prediction_mini_batch(
                     self.random_state,
                     graph.get_number_of_directed_edges() as usize,
                     self.sample_only_edges_with_heterogeneous_node_types,
@@ -1010,23 +1010,14 @@ where
                     support,
                     graph_to_avoid,
                 )?
-                .map(|(src, dst, label)| {
+                .for_each(|(src, dst, label)| {
                     let src = src as usize;
                     let dst = dst as usize;
                     let src_features = &node_features[src * dimension..(src + 1) * dimension];
                     let dst_features = &node_features[dst * dimension..(dst + 1) * dimension];
                     let edge_embedding = method(src_features, dst_features);
-                    let mut tree = tree.clone();
                     tree.update(&edge_embedding, label);
-                    tree
-                })
-                .reduce(
-                    || tree.clone(),
-                    |mut a, b| {
-                        a += b;
-                        a
-                    },
-                );
+                });
             tree.rasterize_ready_nodes(minimum_attribute_values, maximum_attribute_values);
             tmp_count += 1;
         }
