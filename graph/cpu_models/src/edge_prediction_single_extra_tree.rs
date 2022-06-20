@@ -103,12 +103,15 @@ where
         if !self.sign {
             label = !label;
         }
+        let position = self.attribute_position.try_into().unwrap();
         if label {
-            minimum_attribute_values[self.attribute_position.try_into().unwrap()] =
-                self.attribute_split_value;
+            if minimum_attribute_values[position] < self.attribute_split_value {
+                minimum_attribute_values[position] = self.attribute_split_value;
+            }
         } else {
-            maximum_attribute_values[self.attribute_position.try_into().unwrap()] =
-                self.attribute_split_value;
+            if maximum_attribute_values[position] > self.attribute_split_value {
+                maximum_attribute_values[position] = self.attribute_split_value;
+            }
         }
     }
 }
@@ -665,6 +668,17 @@ where
         self.tree[node_id].update(edge_embedding, label);
     }
 
+    /// Returns whether both children nodes of a node are in ready status.
+    fn are_children_ready(&self, parent_node_id: NodeIdType) -> bool {
+        let parent_node: &NodeBuilder<NodeIdType, NodeFeaturePositionType, AttributeType> =
+            &self.tree[parent_node_id.try_into().unwrap()];
+        parent_node.left_child_node_id.map_or(false, |node_id| {
+            self.tree[node_id.try_into().unwrap()].is_ready()
+        }) && parent_node.right_child_node_id.map_or(false, |node_id| {
+            self.tree[node_id.try_into().unwrap()].is_ready()
+        })
+    }
+
     /// Rasterize node builders that are in ready state.
     pub fn rasterize_ready_nodes(
         &mut self,
@@ -675,6 +689,9 @@ where
         let new_nodes = (0..self.tree.len())
             .filter_map(|current_node_id| {
                 if self.tree[current_node_id].is_ready()
+                    && self.tree[current_node_id]
+                        .parent_id
+                        .map_or(true, |parent_id| self.are_children_ready(parent_id))
                     && !self.tree[current_node_id].is_rasterized()
                 {
                     let mut minimum_attribute_values = minimum_attribute_values.to_vec();
@@ -752,10 +769,6 @@ where
             })
             .flat_map(|vector| vector)
             .collect::<Vec<NodeBuilder<NodeIdType, NodeFeaturePositionType, AttributeType>>>();
-
-        if !new_nodes.is_empty() {
-            self.depth += NodeIdType::try_from(1).unwrap();
-        }
 
         self.tree.extend(new_nodes);
     }
@@ -981,7 +994,9 @@ where
 
         let method = self.edge_embedding_method_name.get_method();
 
-        while tree.depth != self.depth {
+        let mut tmp_count = 0;
+
+        while tmp_count < 50 {
             random_state = splitmix64(random_state);
             tree = graph
                 .par_iter_edge_prediction_mini_batch(
@@ -1013,6 +1028,7 @@ where
                     },
                 );
             tree.rasterize_ready_nodes(minimum_attribute_values, maximum_attribute_values);
+            tmp_count += 1;
         }
 
         self.tree = tree.into();
