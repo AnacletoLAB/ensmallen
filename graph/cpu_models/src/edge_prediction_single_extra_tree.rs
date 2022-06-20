@@ -410,7 +410,14 @@ where
 
     /// Returns whether the node in building is considered ready.
     pub fn is_ready(&self) -> bool {
-        self.is_rasterized() || self.split_builders[0].get_updates_number() > self.number_of_samples
+        self.is_rasterized()
+            || self.split_builders[0].get_updates_number() > self.number_of_samples
+                && self.split_builders[0]
+                    .confusion_matrix
+                    .has_negative_samples()
+                && self.split_builders[0]
+                    .confusion_matrix
+                    .has_positive_samples()
     }
 
     /// Returns whether the node builder is rasterized
