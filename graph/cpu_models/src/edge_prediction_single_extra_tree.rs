@@ -98,8 +98,11 @@ where
         &self,
         minimum_attribute_values: &mut [AttributeType],
         maximum_attribute_values: &mut [AttributeType],
-        label: bool,
+        mut label: bool,
     ) {
+        if !self.sign {
+            label = !label;
+        }
         if label {
             minimum_attribute_values[self.attribute_position.try_into().unwrap()] =
                 self.attribute_split_value;
