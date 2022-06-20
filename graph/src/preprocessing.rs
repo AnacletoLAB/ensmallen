@@ -387,6 +387,10 @@ impl Graph {
                     )
                 };
 
+                if !self.has_selfloops() && src == dst{
+                    continue;
+                }
+
                 if avoid_false_negatives && support.has_edge_from_node_ids(src, dst)
                     || sample_only_edges_with_heterogeneous_node_types && {
                         self.get_unchecked_node_type_ids_from_node_id(src)
@@ -514,6 +518,10 @@ impl Graph {
                         self.get_random_node(random_state.wrapping_mul(2)),
                     )
                 };
+
+                if !self.has_selfloops() && src == dst{
+                    continue;
+                }
 
                 if avoid_false_negatives && support.has_edge_from_node_ids(src, dst)
                     || sample_only_edges_with_heterogeneous_node_types && {
