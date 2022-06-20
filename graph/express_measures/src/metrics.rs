@@ -492,20 +492,20 @@ impl core::ops::Add for BinaryConfusionMatrix {
 
     fn add(self, other: Self) -> Self {
         Self {
-            true_positives: self.true_positives + other.true_positives,
-            true_negatives: self.true_negatives + other.true_negatives,
-            false_positives: self.false_positives + other.false_positives,
-            false_negatives: self.false_negatives + other.false_negatives,
+            true_positives: self.true_positives.saturating_add(other.true_positives),
+            true_negatives: self.true_negatives.saturating_add(other.true_negatives),
+            false_positives: self.false_positives.saturating_add(other.false_positives),
+            false_negatives: self.false_negatives.saturating_add(other.false_negatives),
         }
     }
 }
 
 impl core::ops::AddAssign for BinaryConfusionMatrix {
     fn add_assign(&mut self, other: Self) {
-        self.true_positives += other.true_positives;
-        self.true_negatives += other.true_negatives;
-        self.false_positives += other.false_positives;
-        self.false_negatives += other.false_negatives;
+        self.true_positives = self.true_positives.saturating_add(other.true_positives);
+        self.true_negatives = self.true_negatives.saturating_add(other.true_negatives);
+        self.false_positives = self.false_positives.saturating_add(other.false_positives);
+        self.false_negatives = self.false_negatives.saturating_add(other.false_negatives);
     }
 }
 
