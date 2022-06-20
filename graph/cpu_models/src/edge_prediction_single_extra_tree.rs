@@ -1025,15 +1025,14 @@ where
                 .par_iter()
                 .map(|node| {
                     format!(
-                        "{:?}) feature {:?}{}{:?}",
-                        node.id,
+                        "feature {:?}{}{:?}",
                         node.split.attribute_position,
                         if node.split.sign { ">" } else { "<" },
                         node.split.attribute_split_value
                     )
                 })
                 .chain(
-                    vec!["Existing edge".to_string(), "Non-exiting edge".to_string()]
+                    vec!["Existing edge".to_string(), "Non-existing edge".to_string()]
                         .into_par_iter(),
                 )
                 .collect(),
@@ -1067,50 +1066,36 @@ where
         ])?;
         build_graph_from_integers(
             Some(self.tree.par_iter().flat_map(|node| {
-                let mut edges = Vec::new();
-                if let Some(left_child_node_id) = node.left_child_node_id {
-                    edges.push((
+                vec![
+                    (
                         0,
                         (
                             node.id.try_into().unwrap() as NodeT,
-                            left_child_node_id.try_into().unwrap() as NodeT,
+                            node.left_child_node_id.map_or(
+                                non_existing_edge_node_id,
+                                |left_child_node_id| {
+                                    left_child_node_id.try_into().unwrap() as NodeT
+                                },
+                            ),
                             Some(0),
                             node.split.negative_predictive_value as WeightT,
                         ),
-                    ));
-                } else {
-                    edges.push((
+                    ),
+                    (
                         0,
                         (
                             node.id.try_into().unwrap() as NodeT,
-                            non_existing_edge_node_id,
-                            Some(0),
-                            node.split.negative_predictive_value as WeightT,
-                        ),
-                    ));
-                };
-                if let Some(right_child_node_id) = node.right_child_node_id {
-                    edges.push((
-                        0,
-                        (
-                            node.id.try_into().unwrap() as NodeT,
-                            right_child_node_id.try_into().unwrap() as NodeT,
+                            node.right_child_node_id.map_or(
+                                existing_edge_node_id,
+                                |right_child_node_id| {
+                                    right_child_node_id.try_into().unwrap() as NodeT
+                                },
+                            ),
                             Some(1),
                             node.split.positive_predictive_value as WeightT,
                         ),
-                    ));
-                } else {
-                    edges.push((
-                        0,
-                        (
-                            node.id.try_into().unwrap() as NodeT,
-                            existing_edge_node_id,
-                            Some(1),
-                            node.split.positive_predictive_value as WeightT,
-                        ),
-                    ));
-                };
-                edges
+                    ),
+                ]
             })),
             Arc::new(nodes),
             Arc::new(Some(node_types)),
