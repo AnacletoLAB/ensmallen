@@ -5,7 +5,7 @@ use std::convert::TryInto;
 ///
 #[pyclass]
 #[derive(Debug, Clone)]
-#[text_signature = "(*, edge_embedding_method_name, number_of_epochs, number_of_edges_per_mini_batch, sample_only_edges_with_heterogeneous_node_types, learning_rate, random_state)"]
+#[text_signature = "(*, metric, edge_embedding_method_name, number_of_edges_to_sample_per_tree_node, number_of_splits_per_tree_node, sample_only_edges_with_heterogeneous_node_types, negative_edges_rate, depth, number_of_epochs, random_state)"]
 pub struct EdgePredictionSingleExtraTree {
     model: NodeFeaturesBasedEdgePredictionModelBinding<
         cpu_models::EdgePredictionSingleExtraTree<u32, u16, f32>,
@@ -35,6 +35,8 @@ impl EdgePredictionSingleExtraTree {
     ///     Rate of negative edges over total.
     /// depth: int = 10
     ///     Depth of tree. By default 10.
+    /// number_of_epochs: int = 10
+    ///     The maximum number of epochs to train the model for. By default, 10.
     /// random_state: int = 42
     ///     The random state to reproduce the model initialization and training. By default, 42.
     pub fn new(py_kwargs: Option<&PyDict>) -> PyResult<EdgePredictionSingleExtraTree> {
@@ -51,6 +53,7 @@ impl EdgePredictionSingleExtraTree {
                 "sample_only_edges_with_heterogeneous_node_types",
                 "negative_edges_rate",
                 "depth",
+                "number_of_epochs",
                 "random_state",
             ]
         ))?;
@@ -79,6 +82,7 @@ impl EdgePredictionSingleExtraTree {
                     ),
                     extract_value_rust_result!(kwargs, "negative_edges_rate", f64),
                     extract_value_rust_result!(kwargs, "depth", u32),
+                    extract_value_rust_result!(kwargs, "number_of_epochs", usize),
                     extract_value_rust_result!(kwargs, "random_state", u64),
                 )
             )?),

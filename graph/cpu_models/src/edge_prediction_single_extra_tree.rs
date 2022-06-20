@@ -342,6 +342,8 @@ where
     right_child_node_id: Option<NodeIdType>,
     /// The best split.
     best_split: Option<Split<NodeFeaturePositionType, AttributeType>>,
+    /// Depth of the node in the tree
+    depth: NodeIdType,
 }
 
 impl<NodeIdType, NodeFeaturePositionType, AttributeType>
@@ -361,6 +363,7 @@ where
     /// * `metric`: BinaryMetricName - The binary metric name to use as score.
     /// * `number_of_splits`: usize - The number of splits to create.
     /// * `number_of_samples`: usize - The minimum number of samples before considering the node ready.
+    /// * `depth`: NodeIdType - Depth of the node in the tree.
     /// * `random_state`: u64 - The random state to use.
     /// * `minimum_attribute_values`: &[AttributeType] - Slice of the minimum values of the attributes.
     /// * `maximum_attribute_values`: &[AttributeType] - Slice of the maximum values of the attributes.
@@ -370,6 +373,7 @@ where
         metric: BinaryMetricName,
         number_of_splits: usize,
         number_of_samples: usize,
+        depth: NodeIdType,
         mut random_state: u64,
         minimum_attribute_values: &[AttributeType],
         maximum_attribute_values: &[AttributeType],
@@ -394,6 +398,7 @@ where
             left_child_node_id: None,
             right_child_node_id: None,
             best_split: None,
+            depth,
         }
     }
 
@@ -596,7 +601,7 @@ where
 struct TreeBuilder<NodeIdType, NodeFeaturePositionType, AttributeType>
 where
     AttributeType: PartialOrd + Copy + Debug + LinearInterpolation,
-    NodeIdType: ThreadUnsigned,
+    NodeIdType: ThreadUnsigned + Ord,
     NodeFeaturePositionType: ThreadUnsigned + Debug,
 {
     metric: BinaryMetricName,
@@ -611,7 +616,7 @@ impl<NodeIdType, NodeFeaturePositionType, AttributeType>
     TreeBuilder<NodeIdType, NodeFeaturePositionType, AttributeType>
 where
     AttributeType: PartialOrd + Copy + Debug + LinearInterpolation + Send + Sync,
-    NodeIdType: ThreadUnsigned + AddAssign<NodeIdType>,
+    NodeIdType: ThreadUnsigned + AddAssign<NodeIdType> + Ord,
     NodeFeaturePositionType: ThreadUnsigned + Debug,
     <NodeIdType as TryFrom<usize>>::Error: Debug,
     <NodeIdType as TryInto<usize>>::Error: Debug,
@@ -649,6 +654,7 @@ where
                 metric,
                 number_of_splits,
                 number_of_samples,
+                NodeIdType::try_from(0).unwrap(),
                 random_state,
                 minimum_attribute_values,
                 maximum_attribute_values,
@@ -743,6 +749,12 @@ where
                         right_maximum_attribute_values.as_mut_slice(),
                     );
 
+                    let new_depth =
+                        self.tree[current_node_id].depth + NodeIdType::try_from(1).unwrap();
+                    if self.depth < new_depth {
+                        self.depth = new_depth;
+                    }
+
                     self.random_state = splitmix64(self.random_state);
                     let left_child_node: NodeBuilder<
                         NodeIdType,
@@ -754,6 +766,7 @@ where
                         self.metric,
                         self.number_of_splits,
                         self.number_of_samples,
+                        new_depth,
                         self.random_state,
                         left_minimum_attribute_values.as_slice(),
                         left_maximum_attribute_values.as_slice(),
@@ -769,6 +782,7 @@ where
                         self.metric,
                         self.number_of_splits,
                         self.number_of_samples,
+                        new_depth,
                         self.random_state,
                         right_minimum_attribute_values.as_slice(),
                         right_maximum_attribute_values.as_slice(),
@@ -789,7 +803,7 @@ impl<NodeIdType, NodeFeaturePositionType, AttributeType> core::ops::AddAssign
     for TreeBuilder<NodeIdType, NodeFeaturePositionType, AttributeType>
 where
     AttributeType: PartialOrd + Copy + Debug + LinearInterpolation,
-    NodeIdType: ThreadUnsigned,
+    NodeIdType: ThreadUnsigned + Ord,
     NodeFeaturePositionType: ThreadUnsigned + Debug,
     <NodeIdType as TryFrom<usize>>::Error: Debug,
     <NodeIdType as TryInto<usize>>::Error: Debug,
@@ -815,7 +829,7 @@ impl<NodeIdType, NodeFeaturePositionType, AttributeType>
     for TreeBuilder<NodeIdType, NodeFeaturePositionType, AttributeType>
 where
     AttributeType: PartialOrd + Copy + Debug + LinearInterpolation + Send + Sync,
-    NodeIdType: ThreadUnsigned + AddAssign<NodeIdType>,
+    NodeIdType: ThreadUnsigned + AddAssign<NodeIdType> + Ord,
     NodeFeaturePositionType: ThreadUnsigned + Debug,
     <NodeIdType as TryFrom<usize>>::Error: Debug,
     <NodeIdType as TryInto<usize>>::Error: Debug,
@@ -896,6 +910,8 @@ where
     input_size: NodeFeaturePositionType,
     /// Maximal depth of tree.
     depth: NodeIdType,
+    /// Maximal number of training epochs.
+    number_of_epochs: usize,
     /// The random state to reproduce the model initialization and training.
     random_state: u64,
 }
@@ -903,7 +919,7 @@ where
 impl<NodeIdType, NodeFeaturePositionType>
     EdgePredictionSingleExtraTree<NodeIdType, NodeFeaturePositionType, f32>
 where
-    NodeIdType: ThreadUnsigned + AddAssign<NodeIdType>,
+    NodeIdType: ThreadUnsigned + AddAssign<NodeIdType> + Ord,
     NodeFeaturePositionType: ThreadUnsigned,
     <NodeIdType as TryFrom<usize>>::Error: Debug,
     <NodeIdType as TryInto<usize>>::Error: Debug,
@@ -920,6 +936,7 @@ where
     /// * `sample_only_edges_with_heterogeneous_node_types`: Option<bool> - Whether to sample negative edges only with source and destination nodes that have different node types. By default false.
     /// * `negative_edges_rate`: Option<f64> - The rate of negative edges over the total, by default 0.5.
     /// * `depth`: Option<NodeIdType> - The maximum depth of the three, by default 10.
+    /// * `number_of_epochs`: Option<usize> - The maximum number of epochs to train the model for. By default, 10.
     /// * `random_state`: Option<u64> - The random state to reproduce the model initialization and training. By default, 42.
     pub fn new(
         metric: Option<BinaryMetricName>,
@@ -929,11 +946,13 @@ where
         sample_only_edges_with_heterogeneous_node_types: Option<bool>,
         negative_edges_rate: Option<f64>,
         depth: Option<NodeIdType>,
+        number_of_epochs: Option<usize>,
         random_state: Option<u64>,
     ) -> Result<Self, String> {
         let number_of_edges_to_sample_per_tree_node =
             number_of_edges_to_sample_per_tree_node.unwrap_or(2048);
         let number_of_splits_per_tree_node = number_of_splits_per_tree_node.unwrap_or(10);
+        let number_of_epochs = number_of_epochs.unwrap_or(10);
         if number_of_splits_per_tree_node == 0 {
             return Err(concat!(
                 "The provided number of splits to sample per tree node is zero. ",
@@ -945,6 +964,13 @@ where
             return Err(concat!(
                 "The provided number of edges to sample per tree node is zero. ",
                 "The number of edges should be strictly greater than zero."
+            )
+            .to_string());
+        }
+        if number_of_epochs == 0 {
+            return Err(concat!(
+                "The provided number of epochs to sample per tree node is zero. ",
+                "The number of epochs should be strictly greater than zero."
             )
             .to_string());
         }
@@ -963,6 +989,7 @@ where
             negative_edges_rate: negative_edges_rate.unwrap_or(0.5),
             input_size: NodeFeaturePositionType::try_from(0).unwrap(),
             depth: depth.unwrap_or(NodeIdType::try_from(10).unwrap()),
+            number_of_epochs,
             random_state: random_state.unwrap_or(42),
         })
     }
@@ -986,6 +1013,7 @@ where
         )
         .unwrap();
 
+        let verbose = verbose.unwrap_or(true);
         let mut random_state = splitmix64(self.random_state);
 
         let mut tree: TreeBuilder<NodeIdType, NodeFeaturePositionType, f32> = TreeBuilder::new(
@@ -999,13 +1027,26 @@ where
 
         let method = self.edge_embedding_method_name.get_method();
 
-        let mut tmp_count = 0;
+        // Depending whether verbosity was requested by the user
+        // we create or not a visible progress bar to show the progress
+        // in the training epochs.
+        let progress_bar = if verbose {
+            let pb = ProgressBar::new(self.number_of_epochs as u64);
+            pb.set_style(ProgressStyle::default_bar().template(concat!(
+                "Single Extra Tree ",
+                "{spinner:.green} [{elapsed_precise}] ",
+                "[{bar:40.cyan/blue}] ({pos}/{len}, ETA {eta})"
+            )));
+            pb
+        } else {
+            ProgressBar::hidden()
+        };
 
-        while tmp_count < 50 {
+        for _ in (0..self.number_of_epochs).progress_with(progress_bar) {
             random_state = splitmix64(random_state);
             graph
                 .iter_edge_prediction_mini_batch(
-                    self.random_state,
+                    random_state,
                     graph.get_number_of_directed_edges() as usize,
                     self.sample_only_edges_with_heterogeneous_node_types,
                     Some(self.negative_edges_rate),
@@ -1024,7 +1065,9 @@ where
                     tree.update(&edge_embedding, label);
                 });
             tree.rasterize_ready_nodes(minimum_attribute_values, maximum_attribute_values);
-            tmp_count += 1;
+            if tree.depth == self.depth {
+                break;
+            }
         }
 
         self.tree = tree.into();
@@ -1082,7 +1125,7 @@ where
             "right_child".to_string(),
         ])?;
         build_graph_from_integers(
-            Some(self.tree.par_iter().enumerate().flat_map(|(i, node)| {
+            Some(self.tree.par_iter().flat_map(|node| {
                 vec![
                     (
                         0,
@@ -1198,7 +1241,7 @@ impl<NodeIdType, NodeFeaturePositionType> NodeFeaturesBasedEdgePrediction
     for EdgePredictionSingleExtraTree<NodeIdType, NodeFeaturePositionType, f32>
 where
     //AttributeType: PartialOrd + Copy + Debug + LinearInterpolation,
-    NodeIdType: ThreadUnsigned + AddAssign<NodeIdType>,
+    NodeIdType: ThreadUnsigned + AddAssign<NodeIdType> + Ord,
     NodeFeaturePositionType: ThreadUnsigned,
     <NodeIdType as TryFrom<usize>>::Error: Debug,
     <NodeIdType as TryInto<usize>>::Error: Debug,
