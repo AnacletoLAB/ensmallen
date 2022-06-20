@@ -1045,6 +1045,7 @@ where
             "root".to_string(),
             "body".to_string(),
             "leaf".to_string(),
+            "class".to_string(),
         ])?;
         let node_type_ids = self
             .tree
@@ -1058,6 +1059,7 @@ where
                     1
                 }])
             })
+            .chain(vec![Some(vec![3]), Some(vec![3])].into_par_iter())
             .collect::<Vec<Option<Vec<NodeTypeT>>>>();
         let node_types = NodeTypeVocabulary::from_structs(node_type_ids, node_types_vocabulary);
         let edge_types_vocabulary: Vocabulary<EdgeTypeT> = Vocabulary::from_reverse_map(vec![
@@ -1065,7 +1067,7 @@ where
             "right_child".to_string(),
         ])?;
         build_graph_from_integers(
-            Some(self.tree.par_iter().flat_map(|node| {
+            Some(self.tree.par_iter().enumerate().flat_map(|(i, node)| {
                 vec![
                     (
                         0,
