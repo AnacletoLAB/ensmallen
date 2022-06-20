@@ -679,6 +679,13 @@ where
         })
     }
 
+    fn is_node_ready(&self, node_id: usize) -> bool {
+        self.tree[node_id].is_ready()
+            && self.tree[node_id]
+                .parent_id
+                .map_or(true, |parent_id| self.are_children_ready(parent_id))
+    }
+
     /// Rasterize node builders that are in ready state.
     pub fn rasterize_ready_nodes(
         &mut self,
@@ -688,10 +695,7 @@ where
         let mut new_nodes_count = 0;
         let new_nodes = (0..self.tree.len())
             .filter_map(|current_node_id| {
-                if self.tree[current_node_id].is_ready()
-                    && self.tree[current_node_id]
-                        .parent_id
-                        .map_or(true, |parent_id| self.are_children_ready(parent_id))
+                if self.is_node_ready(current_node_id)
                     && !self.tree[current_node_id].is_rasterized()
                 {
                     let mut minimum_attribute_values = minimum_attribute_values.to_vec();
@@ -700,7 +704,7 @@ where
                     while !self.tree[node_id].is_root() {
                         let child_node_id = NodeIdType::try_from(node_id).unwrap();
                         node_id = self.tree[node_id].parent_id.unwrap().try_into().unwrap();
-                        self.tree[current_node_id].bound_attribute_values(
+                        self.tree[node_id].bound_attribute_values(
                             child_node_id,
                             minimum_attribute_values.as_mut_slice(),
                             maximum_attribute_values.as_mut_slice(),
@@ -815,23 +819,26 @@ where
         let mut counter = 0;
         // We need to remap the nodes to a dense set as we do not know which of them is actually
         // ready to use. Some of them may have not seen enough samples to be considered ready.
-        self.tree.iter_mut().for_each(|node_builder| {
-            if node_builder.is_ready() {
-                node_builder.id = NodeIdType::try_from(counter).unwrap();
+        (0..self.tree.len()).for_each(|node_id| {
+            if self.is_node_ready(node_id) {
+                self.tree[node_id].id = NodeIdType::try_from(counter).unwrap();
                 counter += 1;
             }
         });
         // We proceed to apply the remapping and we prune tree branches to child nodes
         // that did not see enough samples and are therefore not ready.
-        (0..self.tree.len()).for_each(|node_id| {
-            // If the node has a parent, we try to update it.
-            self.tree[node_id].parent_id = self.tree[node_id]
-                .parent_id
-                .map(|parent_id| self.tree[parent_id.try_into().unwrap()].id);
-            // If the node has a left child, we try to update it, or if it is not
-            // ready we prune it.
-            self.tree[node_id].left_child_node_id =
-                self.tree[node_id]
+        (0..self.tree.len())
+            .filter_map(|node_id| {
+                if !self.is_node_ready(node_id) {
+                    return None;
+                }
+                // If the node has a parent, we try to update it.
+                self.tree[node_id].parent_id = self.tree[node_id]
+                    .parent_id
+                    .map(|parent_id| self.tree[parent_id.try_into().unwrap()].id);
+                // If the node has a left child, we try to update it, or if it is not
+                // ready we prune it.
+                self.tree[node_id].left_child_node_id = self.tree[node_id]
                     .left_child_node_id
                     .and_then(|left_child_id| {
                         if self.tree[left_child_id.try_into().unwrap()].is_ready() {
@@ -840,27 +847,18 @@ where
                             None
                         }
                     });
-            // If the node has a right child, we try to update it, or if it is not
-            // ready we prune it.
-            self.tree[node_id].right_child_node_id = self.tree[node_id]
-                .right_child_node_id
-                .and_then(|right_child_id| {
-                    if self.tree[right_child_id.try_into().unwrap()].is_ready() {
-                        Some(self.tree[right_child_id.try_into().unwrap()].id)
-                    } else {
-                        None
-                    }
-                });
-        });
-        // We are now ready to convert the tree builder into a tree!
-        self.tree
-            .into_iter()
-            .filter_map(|node_builder| {
-                if node_builder.is_ready() {
-                    Some(node_builder.into())
-                } else {
-                    None
-                }
+                // If the node has a right child, we try to update it, or if it is not
+                // ready we prune it.
+                self.tree[node_id].right_child_node_id = self.tree[node_id]
+                    .right_child_node_id
+                    .and_then(|right_child_id| {
+                        if self.tree[right_child_id.try_into().unwrap()].is_ready() {
+                            Some(self.tree[right_child_id.try_into().unwrap()].id)
+                        } else {
+                            None
+                        }
+                    });
+                Some(self.tree[node_id].clone().into())
             })
             .collect()
     }
