@@ -602,7 +602,7 @@ impl Graph {
         let number_of_shortest_paths =
             sssp.get_number_of_shortest_paths_from_node_id(node_id)? as f32;
         Ok(sssp
-            .get_successors_from_node_id(node_id)?
+            .get_predecessors_from_node_id(node_id)?
             .into_iter()
             .map(|successor_node_id| {
                 (1.0 + self

@@ -657,6 +657,102 @@ impl Graph {
         ))
     }
 
+    #[text_signature = "($self, random_state, batch_size, negative_samples_rate, support)"]
+    /// Returns source and destination nodes of an edge and their jaccard score.
+    ///
+    /// Parameters
+    /// -------------
+    /// random_state: int
+    ///     The index of the batch to generate, behaves like a random random_state,
+    /// batch_size: int
+    ///     The maximal size of the batch to generate,
+    /// negative_samples_rate: Optional[float]
+    ///     The component of netagetive samples to use.
+    /// support: Optional[Graph]
+    ///     Graph to use to compute the edge metrics.
+    ///     When not provided, the current graph (self) is used.
+    ///
+    /// Raises
+    /// ---------
+    /// ValueError
+    ///     If the given amount of negative samples is not a positive finite real value.
+    fn get_edge_jaccard_mini_batch(
+        &self,
+        random_state: u64,
+        batch_size: usize,
+        negative_samples_rate: Option<f64>,
+        support: Option<&Graph>,
+    ) -> PyResult<(Py<PyArray1<NodeT>>, Py<PyArray1<NodeT>>, Py<PyArray1<f32>>)> {
+        let gil = pyo3::Python::acquire_gil();
+        let support: Option<&graph::Graph> = support.as_ref().map(|ensmallen| &ensmallen.inner);
+
+        let srcs = PyArray1::new(gil.python(), [batch_size], false);
+        let dsts = PyArray1::new(gil.python(), [batch_size], false);
+        let scores = PyArray1::new(gil.python(), [batch_size], false);
+
+        let srcs_slice = unsafe { srcs.as_slice_mut().unwrap() };
+        let dsts_slice = unsafe { dsts.as_slice_mut().unwrap() };
+        let scores_slice = unsafe { scores.as_slice_mut().unwrap() };
+
+        pe!(self.inner.populate_edge_jaccard_mini_batch(
+            random_state,
+            srcs_slice,
+            dsts_slice,
+            scores_slice,
+            negative_samples_rate,
+            support,
+        ))?;
+
+        Ok((srcs.to_owned(), dsts.to_owned(), scores.to_owned()))
+    }
+
+    #[text_signature = "($self, random_state, batch_size, bfs, negative_samples_rate)"]
+    /// Returns source and destination nodes of an edge and their ancestor Jaccard score.
+    ///
+    /// Parameters
+    /// -------------
+    /// random_state: int
+    ///     The index of the batch to generate, behaves like a random random_state,
+    /// batch_size: int
+    ///     The maximal size of the batch to generate,
+    /// bfs: ShortestPathsResultBFS
+    ///     BFS to compute the ancestors.
+    /// negative_samples_rate: Optional[float]
+    ///     The component of netagetive samples to use.
+    ///
+    /// Raises
+    /// ---------
+    /// ValueError
+    ///     If the given amount of negative samples is not a positive finite real value.
+    fn get_ancestors_jaccard_mini_batch(
+        &self,
+        random_state: u64,
+        batch_size: usize,
+        bfs: &ShortestPathsResultBFS,
+        negative_samples_rate: Option<f64>,
+    ) -> PyResult<(Py<PyArray1<NodeT>>, Py<PyArray1<NodeT>>, Py<PyArray1<f32>>)> {
+        let gil = pyo3::Python::acquire_gil();
+
+        let srcs = PyArray1::new(gil.python(), [batch_size], false);
+        let dsts = PyArray1::new(gil.python(), [batch_size], false);
+        let scores = PyArray1::new(gil.python(), [batch_size], false);
+
+        let srcs_slice = unsafe { srcs.as_slice_mut().unwrap() };
+        let dsts_slice = unsafe { dsts.as_slice_mut().unwrap() };
+        let scores_slice = unsafe { scores.as_slice_mut().unwrap() };
+
+        pe!(self.inner.populate_ancestors_jaccard_mini_batch(
+            random_state,
+            srcs_slice,
+            dsts_slice,
+            scores_slice,
+            &bfs.inner,
+            negative_samples_rate,
+        ))?;
+
+        Ok((srcs.to_owned(), dsts.to_owned(), scores.to_owned()))
+    }
+
     #[text_signature = "($self, random_state, batch_size, use_zipfian_sampling)"]
     /// Returns n-ple with terms used for training a siamese network.
     ///

@@ -241,17 +241,17 @@ impl ShortestPathsResultBFS {
         .to_string())
     }
 
-    /// Return list of successors of a given node.
+    /// Return list of predecessors of a given node.
     ///
     /// # Arguments
-    /// * `source_node_id`: NodeT - The node for which to return the successors.
+    /// * `source_node_id`: NodeT - The node for which to return the predecessors.
     ///
     /// # Raises
     /// * If the given node ID does not exist in the graph.
     ///
     /// # Returns
-    /// List of successors of the given node.
-    pub fn get_successors_from_node_id(&self, source_node_id: NodeT) -> Result<Vec<NodeT>> {
+    /// List of predecessors of the given node.
+    pub fn get_predecessors_from_node_id(&self, source_node_id: NodeT) -> Result<Vec<NodeT>> {
         self.validate_node_id(source_node_id)?;
         if let Some(predecessors) = self.predecessors.as_ref() {
             // If the node is not reacheable in the
@@ -299,6 +299,46 @@ impl ShortestPathsResultBFS {
             "root node passing to the given node ID when predecessors were not computed."
         )
         .to_string())
+    }
+
+    /// Return Ancestors Jaccard Index.
+    ///
+    /// # Arguments
+    /// * `first_node_id`: NodeT - The first node for which to compute the predecessors Jaccard index.
+    /// * `second_node_id`: NodeT - The second node for which to compute the predecessors Jaccard index.
+    ///
+    /// # Raises
+    /// * If the given node IDs do not exist in the graph.
+    ///
+    /// # Returns
+    /// Ancestors Jaccard Index.
+    pub fn get_ancestors_jaccard_index(
+        &self,
+        first_node_id: NodeT,
+        second_node_id: NodeT,
+    ) -> Result<f32> {
+        let mut first_node_predecessors = self.get_predecessors_from_node_id(first_node_id)?;
+        first_node_predecessors.sort_unstable();
+        let mut second_node_predecessors = self.get_predecessors_from_node_id(second_node_id)?;
+        second_node_predecessors.sort_unstable();
+
+        let union = iter_set::union(
+            first_node_predecessors.iter(),
+            second_node_predecessors.iter(),
+        )
+        .count() as f32;
+
+        let intersection = iter_set::intersection(
+            first_node_predecessors.iter(),
+            second_node_predecessors.iter(),
+        )
+        .count() as f32;
+
+        Ok(if union.is_zero() {
+            0.0
+        } else {
+            intersection / union
+        })
     }
 
     pub fn get_distances(&self) -> Result<Vec<NodeT>> {
