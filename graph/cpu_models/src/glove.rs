@@ -138,7 +138,7 @@ impl GloVe {
         let epochs_progress_bar = if verbose {
             let pb = ProgressBar::new(epochs as u64);
             pb.set_style(ProgressStyle::default_bar().template(
-                "GloVe Epochs {msg} {spinner:.green} [{elapsed_precise}] [{bar:40.cyan/blue}] ({pos}/{len}, ETA {eta})",
+                "GloVe {msg} {spinner:.green} [{elapsed_precise}] [{bar:40.cyan/blue}] ({pos}/{len}, ETA {eta})",
             ));
             pb
         } else {

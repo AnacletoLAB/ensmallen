@@ -270,7 +270,7 @@ impl EdgePredictionPerceptron {
         let progress_bar = if verbose {
             let pb = ProgressBar::new(self.number_of_epochs as u64);
             pb.set_style(ProgressStyle::default_bar().template(concat!(
-                "Edge Prediction Perceptron Epochs ",
+                "Perceptron ",
                 "{spinner:.green} [{elapsed_precise}] ",
                 "[{bar:40.cyan/blue}] ({pos}/{len}, ETA {eta})"
             )));

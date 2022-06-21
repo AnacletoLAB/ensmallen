@@ -151,7 +151,7 @@ impl SkipGram {
         let epochs_progress_bar = if verbose {
             let pb = ProgressBar::new(epochs as u64);
             pb.set_style(ProgressStyle::default_bar().template(
-                "SkipGram Epochs {spinner:.green} [{elapsed_precise}] [{bar:40.cyan/blue}] ({pos}/{len}, ETA {eta})",
+                "SkipGram {spinner:.green} [{elapsed_precise}] [{bar:40.cyan/blue}] ({pos}/{len}, ETA {eta})",
             ));
             pb
         } else {

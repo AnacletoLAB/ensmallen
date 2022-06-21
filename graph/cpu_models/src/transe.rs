@@ -152,7 +152,7 @@ impl TransE {
                 .sum::<f32>()
                 .sqrt()
                 + f32::EPSILON)
-                .max(f32::MAX)
+                .min(f32::MAX)
         };
 
         let compute_prior = |subset_size: f32, total_size: f32| {
@@ -209,7 +209,7 @@ impl TransE {
         let epochs_progress_bar = if verbose {
             let pb = ProgressBar::new(epochs as u64);
             pb.set_style(ProgressStyle::default_bar().template(
-                "TransE Epochs {msg} {spinner:.green} [{elapsed_precise}] [{bar:40.cyan/blue}] ({pos}/{len}, ETA {eta})",
+                "TransE {msg} {spinner:.green} [{elapsed_precise}] [{bar:40.cyan/blue}] ({pos}/{len}, ETA {eta})",
             ));
             pb
         } else {
