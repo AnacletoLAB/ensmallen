@@ -1915,21 +1915,6 @@ pub fn test_embiggen_preprocessing(graph: &mut Graph, _verbose: Option<bool>) ->
     }
     if graph.has_edges() {
         graph
-            .link_prediction_degrees(
-                0,
-                256,
-                Some(true),
-                Some(0.3),
-                Some(false),
-                Some(10),
-                false,
-                None,
-                None,
-                None,
-            )
-            .unwrap()
-            .collect::<Vec<_>>();
-        graph
             .par_iter_attributed_edge_prediction_mini_batch(
                 0, 256, false, false, false, None, None, None, None, None, None,
             )

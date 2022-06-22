@@ -13,3 +13,4 @@ indicatif = {version="0.16.0", features = ["rayon"]}
 rayon = "1.1"
 num = "0.4.0"
 funty = "2.0.0"
+num-traits = "0.2"
