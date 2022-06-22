@@ -306,7 +306,6 @@ fn word2vec(
 
 #[pymethods]
 impl Graph {
-
     #[args(py_kwargs = "**")]
     #[text_signature = "($self, batch_size, walk_length, window_size, *, iterations, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, dense_node_mapping, max_neighbours, random_state)"]
     /// Return training batches for Node2Vec models.

@@ -431,7 +431,13 @@ build_walk_parameters(kwargs)?
                 continue
             }
 
-            let (arg_name, arg_call) = translate_arg(arg, &this_struct);
+            let (mut arg_name, mut arg_call) = translate_arg(arg, &this_struct);
+
+            // bad hack
+            if arg_name.contains("Option<&Vec<NodeT>>") {
+                arg_name = arg_name.replace("Option<&Vec<NodeT>>", "Option<Vec<NodeT>>");
+                arg_call = Some(format!("{}.as_ref()", arg.name));
+            }
 
             args.push_str(&arg_name);
             args.push_str(", ");
