@@ -223,8 +223,58 @@ fn translate_return_type(
             )
         }
 
+
         // handle other vec with maybe complex types
         x if x == "Vec<_>" => {
+            let inner_type = &x[0];
+
+            match inner_type {
+                Type::TupleType(subtypes) => {
+                    // if its a non empty slice of homogeneous primitive types
+                    // convert it to a numpy 2d array
+                    if subtypes.len() == 2 
+                        && subtypes[0] == "Primitive" 
+                        && subtypes[0] == subtypes[1]   
+                    {
+                        let inner_type = &subtypes[0];
+
+                        if body.ends_with(".into()") {
+                            body = body.strip_suffix(".into()").unwrap().to_string();
+                        }
+            
+                        let mut body = format!(
+r#"
+// Warning: this copies the array so it uses double the memory.
+// To avoid this you should directly generate data compatible with a numpy array
+// Which is a flat vector with row-first or column-first unrolling
+let gil = pyo3::Python::acquire_gil();
+let body = {body};
+let result_array = ThreadDataRaceAware {{t: PyArray2::<{inner_type}>::new(gil.python(), [body.len(), 2], false)}};
+body.into_par_iter().enumerate()
+    .for_each(|(i, (a, b))| unsafe {{
+        *(result_array.t.uget_mut([i, 0]))  = a;
+        *(result_array.t.uget_mut([i, 1]))  = b;
+    }});
+result_array.t.to_owned()"#,
+                            body = body,
+                            inner_type = inner_type,
+                        );
+            
+                        if depth != 0 {
+                            body = format!("{{{}}}", body);
+                        }
+            
+                        return (
+                            body,
+                            Some(
+                                format!("Py<PyArray2<{}>>", inner_type)
+                            )
+                        );
+                    }
+                }
+                _ => {}
+            }
+
             // TODO! make this recursive??
             let mut res_body = format!(
                 "{}.into_iter().map(|x| x.into()).collect::<Vec<_>>()", 

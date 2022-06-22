@@ -496,7 +496,7 @@ pub fn gen_bindings(to_parse_path: &str, path: &str, init_path: &str) {
 #[allow(unused_variables)]    
 use super::*;
 use pyo3::{{wrap_pyfunction, wrap_pymodule}};
-use rayon::iter::{{IndexedParallelIterator, IntoParallelRefIterator, ParallelIterator}};
+use rayon::iter::*;
 use pyo3::class::basic::PyObjectProtocol;
 use std::hash::{{Hash, Hasher}};
 use std::collections::hash_map::DefaultHasher;

@@ -146,6 +146,14 @@ impl Parse for Function {
             return_type = Some(parse!(data, Type));
         }
 
+        // skip the wheres, TODO!: properly parse them 
+        data = skip_whitespace(&data);
+        if data.starts_with(b"where") {
+            while data[0] != b'{' {
+                data = &data[1..];
+            }
+        }
+
         // parse the body
         let (data, mut body_content) = get_next_matching(data, b'{', b'}');
         body_content = skip_whitespace(body_content);
