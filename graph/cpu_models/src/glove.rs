@@ -157,6 +157,7 @@ impl GloVe {
                 .par_iter_log_normalized_cooccurence_matrix(
                     &walk_parameters,
                     self.window_size,
+                    &None
                 )?
                 .map(|(src, dst, freq)| unsafe {
                     let src_embedding = &mut (*shared_node_embedding.get())
