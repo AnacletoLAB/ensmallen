@@ -141,7 +141,8 @@ pub fn translate_type(value: &Type, user_defined_types: &[&str]) -> String {
                 "np.ndarray".to_string()
             }
             _ => {
-                panic!("Cannot translate '{}' as a python unknown type", value.to_string());
+                println!("Cannot handle translation of '{}' to a known python type.", name);
+                name.trim_start_matches("&").to_string()
             }
         },
         _ => {

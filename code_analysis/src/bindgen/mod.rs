@@ -174,6 +174,12 @@ impl From<{struct_name}> for graph::{struct_name} {{
     }}
 }}
 
+impl<'a> From<&'a {struct_name}> for &'a graph::{struct_name} {{
+    fn from(val: &'a {struct_name}) -> &'a graph::{struct_name} {{
+        &val.inner
+    }}
+}}
+
 #[pymethods]
 impl {struct_name} {{
 {methods}
