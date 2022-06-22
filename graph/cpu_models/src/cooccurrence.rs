@@ -1,34 +1,30 @@
-use atomic_float::AtomicF32;
-use express_measures::dot_product_sequential_unchecked;
-use graph::{Graph, NodeT, ThreadDataRaceAware, WalksParameters};
-use indicatif::{ProgressBar, ProgressStyle};
+use graph::Graph;
 use rayon::prelude::*;
-use vec_rand::{random_f32, sample_uniform, splitmix64};
+use vec_rand::splitmix64;
 
 #[derive(Clone, Debug)]
-pub struct Cooccurrence<'a> {
-    walk_parameters: WalksParameters,
-    window_size: usize,
+pub struct CooccurrenceEdgePrediction {
+    window_size: u64,
     quantity: usize,
-    graph: Option<&'a Graph>,
+    random_state: u64,
 }
 
-impl<'a> Cooccurrence<'a> {
-    /// Return new instance of Cooccurrence model.
+impl CooccurrenceEdgePrediction {
+    /// Return new instance of CooccurrenceEdgePrediction model.
     ///
     /// # Arguments
-    /// * `walk_parameters`: Option<WalksParameters> - Parameters to be used within the walks.
-    /// * `window_size`: Option<usize> - Window size defining the contexts.
-    /// * `quantity`: Option<usize> - Number of walks to run from each node. By default 10.
+    /// * `window_size`: Option<u64> - Window size defining the contexts.
+    /// * `quantity`: Option<usize> - Number of walks to run from each node. By default 50.
+    /// * `random_state`: Option<u64> - The random state to reproduce the predictions. By default 42.
     pub fn new(
-        walk_parameters: Option<WalksParameters>,
-        window_size: Option<usize>,
+        window_size: Option<u64>,
         quantity: Option<usize>,
+        random_state: Option<u64>,
     ) -> Result<Self, String> {
         // Handle the values of the default parameters.
         let window_size = window_size.unwrap_or(10);
-        let quantity = quantity.unwrap_or(10);
-        let walk_parameters = walk_parameters.unwrap_or_else(|| WalksParameters::default());
+        let quantity = quantity.unwrap_or(50);
+        let random_state = random_state.unwrap_or(42);
 
         if window_size == 0 {
             return Err(concat!("The window size cannot be equal to zero.").to_string());
@@ -39,20 +35,10 @@ impl<'a> Cooccurrence<'a> {
         }
 
         Ok(Self {
-            walk_parameters,
             window_size,
+            random_state,
             quantity,
-            graph: None,
         })
-    }
-
-    /// Fit the edge prediction perceptron model on the provided graph and node features.
-    ///
-    /// # Arguments
-    /// * `graph`: &'a Graph - The graph whose edges are to be learned.
-    pub fn fit(&mut self, graph: &'a Graph) -> Result<(), String> {
-        self.graph = Some(graph);
-        Ok(())
     }
 
     /// Writes the predicted probabilities on the provided memory area.
@@ -60,7 +46,8 @@ impl<'a> Cooccurrence<'a> {
     /// # Arguments
     /// * `predictions`: &mut [f32] - Area where to write the predictions.
     /// * `graph`: &Graph - The graph whose edges are to be learned.
-    pub fn predict(&self, predictions: &mut [f32], graph: &Graph) -> Result<(), String> {
+    /// * `support`: Option<&Graph> - The graph whose structure is to be used.
+    pub fn predict(&self, predictions: &mut [f32], graph: &Graph, support: Option<&Graph>) -> Result<(), String> {
         if predictions.len() != graph.get_number_of_directed_edges() as usize {
             return Err(format!(
                 concat!(
@@ -73,19 +60,27 @@ impl<'a> Cooccurrence<'a> {
             ));
         }
 
-        if self.graph.is_none() {
-            return Err("The model has not been fit!".to_string());
-        }
+        let support = support.unwrap_or(graph);
 
-        if let Some(support) = self.graph {
-            support.must_share_node_vocabulary(graph)?;
-            graph
-                .par_iter_directed_edge_node_ids()
-                .zip(predictions.par_iter_mut())
-                .for_each(|((_, src, dst), pred)| {
-                    
+        support.must_share_node_vocabulary(graph)?;
+        graph
+            .par_iter_directed_edge_node_ids()
+            .zip(predictions.par_iter_mut())
+            .for_each(|((edge_id, src, dst), pred)| {
+                let mut random_state = splitmix64(self.random_state + edge_id);
+                let mut encounters = 0;
+                (0..self.quantity).for_each(|_| {
+                    random_state = splitmix64(self.random_state + edge_id);
+                    if unsafe {
+                        support
+                            .iter_uniform_walk(src, random_state, self.window_size)
+                            .any(|node| node == dst)
+                    } {
+                        encounters += 1;
+                    }
                 });
-        }
+                *pred = encounters as f32 / self.quantity as f32;
+            });
 
         Ok(())
     }
