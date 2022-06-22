@@ -5,7 +5,7 @@ use vec_rand::splitmix64;
 #[derive(Clone, Debug)]
 pub struct CooccurrenceEdgePrediction {
     window_size: u64,
-    quantity: usize,
+    iterations: usize,
     random_state: u64,
 }
 
@@ -14,30 +14,30 @@ impl CooccurrenceEdgePrediction {
     ///
     /// # Arguments
     /// * `window_size`: Option<u64> - Window size defining the contexts.
-    /// * `quantity`: Option<usize> - Number of walks to run from each node. By default 50.
+    /// * `iterations`: Option<usize> - Number of walks to run from each node. By default 50.
     /// * `random_state`: Option<u64> - The random state to reproduce the predictions. By default 42.
     pub fn new(
         window_size: Option<u64>,
-        quantity: Option<usize>,
+        iterations: Option<usize>,
         random_state: Option<u64>,
     ) -> Result<Self, String> {
         // Handle the values of the default parameters.
         let window_size = window_size.unwrap_or(10);
-        let quantity = quantity.unwrap_or(50);
+        let iterations = iterations.unwrap_or(50);
         let random_state = random_state.unwrap_or(42);
 
         if window_size == 0 {
             return Err(concat!("The window size cannot be equal to zero.").to_string());
         }
 
-        if quantity == 0 {
-            return Err(concat!("The quantity cannot be equal to zero.").to_string());
+        if iterations == 0 {
+            return Err(concat!("The iterations cannot be equal to zero.").to_string());
         }
 
         Ok(Self {
             window_size,
             random_state,
-            quantity,
+            iterations,
         })
     }
 
@@ -69,7 +69,7 @@ impl CooccurrenceEdgePrediction {
             .for_each(|((edge_id, src, dst), pred)| {
                 let mut random_state = splitmix64(self.random_state + edge_id);
                 let mut encounters = 0;
-                (0..self.quantity).for_each(|_| {
+                (0..self.iterations).for_each(|_| {
                     random_state = splitmix64(self.random_state + edge_id);
                     if unsafe {
                         support
@@ -79,7 +79,7 @@ impl CooccurrenceEdgePrediction {
                         encounters += 1;
                     }
                 });
-                *pred = encounters as f32 / self.quantity as f32;
+                *pred = encounters as f32 / self.iterations as f32;
             });
 
         Ok(())

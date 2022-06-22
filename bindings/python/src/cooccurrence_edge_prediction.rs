@@ -3,7 +3,7 @@ use super::*;
 ///
 #[pyclass]
 #[derive(Debug, Clone)]
-#[text_signature = "(*, window_size, quantity, random_state)"]
+#[text_signature = "(*, window_size, iterations, random_state)"]
 pub struct CooccurrenceEdgePrediction {
     pub inner: cpu_models::CooccurrenceEdgePrediction,
 }
@@ -30,7 +30,7 @@ impl CooccurrenceEdgePrediction {
     /// ------------------------
     /// window_size: Optional[int]
     ///     Window size defining the contexts.
-    /// quantity: Optional[int]
+    /// iterations: Optional[int]
     ///     Number of walks to run from each node. By default 50.
     /// random_state: int = 42
     ///     The random state to reproduce the model initialization and training. By default, 42.
@@ -42,7 +42,7 @@ impl CooccurrenceEdgePrediction {
             kwargs,
             &[
                 "window_size",
-                "quantity",
+                "iterations",
                 "random_state"
             ]
         ))?;
@@ -50,7 +50,7 @@ impl CooccurrenceEdgePrediction {
         Ok(Self {
             inner: pe!(cpu_models::CooccurrenceEdgePrediction::new(
                 extract_value_rust_result!(kwargs, "window_size", u64),
-                extract_value_rust_result!(kwargs, "quantity", usize),
+                extract_value_rust_result!(kwargs, "iterations", usize),
                 extract_value_rust_result!(kwargs, "random_state", u64),
             ))?,
         })
