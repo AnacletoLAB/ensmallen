@@ -13447,13 +13447,15 @@ impl Graph {
 
     #[args(py_kwargs = "**")]
     #[automatically_generated_binding]
-    #[text_signature = "($self, window_size, *, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, max_neighbours, random_state, iterations, dense_node_mapping, normalize_by_degree, walk_length)"]
+    #[text_signature = "($self, window_size, node_ids_of_interest, *, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, max_neighbours, random_state, iterations, dense_node_mapping, normalize_by_degree, walk_length)"]
     /// Returns Cooccurrence coo matrix.
     ///
     /// Parameters
     /// ----------
     /// window_size: int
     ///     Window size to consider for the sequences.
+    /// node_ids_of_interest: Optional[List[int]]
+    ///     While the random walks is graph-wide, we only return edges whose source and destination nodes are within this node ID list.
     /// return_weight: float = 1.0
     ///     Weight on the probability of returning to node coming from
     ///     Having this higher tends the walks to be
@@ -13496,6 +13498,7 @@ impl Graph {
     pub fn get_cooccurrence_coo_matrix(
         &self,
         window_size: usize,
+        node_ids_of_interest: Option<Vec<NodeT>>,
         py_kwargs: Option<&PyDict>,
     ) -> PyResult<(Py<PyArray2<NodeT>>, Py<PyArray1<WeightT>>)> {
         Ok({
@@ -13509,7 +13512,8 @@ impl Graph {
                     ))?;
                     build_walk_parameters(kwargs)?
                 },
-                window_size.into()
+                window_size.into(),
+                node_ids_of_interest.as_ref()
             ))?
             .into();
             (
@@ -13540,13 +13544,15 @@ impl Graph {
 
     #[args(py_kwargs = "**")]
     #[automatically_generated_binding]
-    #[text_signature = "($self, window_size, *, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, max_neighbours, random_state, iterations, dense_node_mapping, normalize_by_degree, walk_length)"]
+    #[text_signature = "($self, window_size, node_ids_of_interest, *, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, max_neighbours, random_state, iterations, dense_node_mapping, normalize_by_degree, walk_length)"]
     /// Returns Cooccurrence weighted graph.
     ///
     /// Parameters
     /// ----------
     /// window_size: int
     ///     Window size to consider for the sequences.
+    /// node_ids_of_interest: Optional[List[int]]
+    ///     While the random walks is graph-wide, we only return edges whose source and destination nodes are within this node ID list.
     /// return_weight: float = 1.0
     ///     Weight on the probability of returning to node coming from
     ///     Having this higher tends the walks to be
@@ -13589,6 +13595,7 @@ impl Graph {
     pub fn get_cooccurrence_graph(
         &self,
         window_size: usize,
+        node_ids_of_interest: Option<Vec<NodeT>>,
         py_kwargs: Option<&PyDict>,
     ) -> PyResult<Graph> {
         Ok(pe!(self.inner.get_cooccurrence_graph(
@@ -13601,20 +13608,23 @@ impl Graph {
                 ))?;
                 build_walk_parameters(kwargs)?
             },
-            window_size.into()
+            window_size.into(),
+            node_ids_of_interest.as_ref()
         ))?
         .into())
     }
 
     #[args(py_kwargs = "**")]
     #[automatically_generated_binding]
-    #[text_signature = "($self, window_size, *, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, max_neighbours, random_state, iterations, dense_node_mapping, normalize_by_degree, walk_length)"]
+    #[text_signature = "($self, window_size, node_ids_of_interest, *, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, max_neighbours, random_state, iterations, dense_node_mapping, normalize_by_degree, walk_length)"]
     /// Returns Normalized Cooccurrence coo matrix.
     ///
     /// Parameters
     /// ----------
     /// window_size: int
     ///     Window size to consider for the sequences.
+    /// node_ids_of_interest: Optional[List[int]]
+    ///     While the random walks is graph-wide, we only return edges whose source and destination nodes are within this node ID list.
     /// return_weight: float = 1.0
     ///     Weight on the probability of returning to node coming from
     ///     Having this higher tends the walks to be
@@ -13657,6 +13667,7 @@ impl Graph {
     pub fn get_normalized_cooccurrence_coo_matrix(
         &self,
         window_size: usize,
+        node_ids_of_interest: Option<Vec<NodeT>>,
         py_kwargs: Option<&PyDict>,
     ) -> PyResult<(Py<PyArray2<NodeT>>, Py<PyArray1<WeightT>>)> {
         Ok({
@@ -13671,7 +13682,8 @@ impl Graph {
                         ))?;
                         build_walk_parameters(kwargs)?
                     },
-                    window_size.into()
+                    window_size.into(),
+                    node_ids_of_interest.as_ref()
                 ))?
                 .into();
             (
@@ -13702,13 +13714,15 @@ impl Graph {
 
     #[args(py_kwargs = "**")]
     #[automatically_generated_binding]
-    #[text_signature = "($self, window_size, *, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, max_neighbours, random_state, iterations, dense_node_mapping, normalize_by_degree, walk_length)"]
+    #[text_signature = "($self, window_size, node_ids_of_interest, *, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, max_neighbours, random_state, iterations, dense_node_mapping, normalize_by_degree, walk_length)"]
     /// Returns Normalized Cooccurrence weighted graph.
     ///
     /// Parameters
     /// ----------
     /// window_size: int
     ///     Window size to consider for the sequences.
+    /// node_ids_of_interest: Optional[List[int]]
+    ///     While the random walks is graph-wide, we only return edges whose source and destination nodes are within this node ID list.
     /// return_weight: float = 1.0
     ///     Weight on the probability of returning to node coming from
     ///     Having this higher tends the walks to be
@@ -13751,6 +13765,7 @@ impl Graph {
     pub fn get_normalized_cooccurrence_graph(
         &self,
         window_size: usize,
+        node_ids_of_interest: Option<Vec<NodeT>>,
         py_kwargs: Option<&PyDict>,
     ) -> PyResult<Graph> {
         Ok(pe!(self.inner.get_normalized_cooccurrence_graph(
@@ -13763,20 +13778,23 @@ impl Graph {
                 ))?;
                 build_walk_parameters(kwargs)?
             },
-            window_size.into()
+            window_size.into(),
+            node_ids_of_interest.as_ref()
         ))?
         .into())
     }
 
     #[args(py_kwargs = "**")]
     #[automatically_generated_binding]
-    #[text_signature = "($self, window_size, *, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, max_neighbours, random_state, iterations, dense_node_mapping, normalize_by_degree, walk_length)"]
+    #[text_signature = "($self, window_size, node_ids_of_interest, *, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, max_neighbours, random_state, iterations, dense_node_mapping, normalize_by_degree, walk_length)"]
     /// Returns Log Normalized Cooccurrence coo matrix.
     ///
     /// Parameters
     /// ----------
     /// window_size: int
     ///     Window size to consider for the sequences.
+    /// node_ids_of_interest: Optional[List[int]]
+    ///     While the random walks is graph-wide, we only return edges whose source and destination nodes are within this node ID list.
     /// return_weight: float = 1.0
     ///     Weight on the probability of returning to node coming from
     ///     Having this higher tends the walks to be
@@ -13819,6 +13837,7 @@ impl Graph {
     pub fn get_log_normalized_cooccurrence_coo_matrix(
         &self,
         window_size: usize,
+        node_ids_of_interest: Option<Vec<NodeT>>,
         py_kwargs: Option<&PyDict>,
     ) -> PyResult<(Py<PyArray2<NodeT>>, Py<PyArray1<WeightT>>)> {
         Ok({
@@ -13833,7 +13852,8 @@ impl Graph {
                         ))?;
                         build_walk_parameters(kwargs)?
                     },
-                    window_size.into()
+                    window_size.into(),
+                    node_ids_of_interest.as_ref()
                 ))?
                 .into();
             (
@@ -13864,13 +13884,15 @@ impl Graph {
 
     #[args(py_kwargs = "**")]
     #[automatically_generated_binding]
-    #[text_signature = "($self, window_size, *, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, max_neighbours, random_state, iterations, dense_node_mapping, normalize_by_degree, walk_length)"]
+    #[text_signature = "($self, window_size, node_ids_of_interest, *, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, max_neighbours, random_state, iterations, dense_node_mapping, normalize_by_degree, walk_length)"]
     /// Returns Log Normalized Cooccurrence weighted graph.
     ///
     /// Parameters
     /// ----------
     /// window_size: int
     ///     Window size to consider for the sequences.
+    /// node_ids_of_interest: Optional[List[int]]
+    ///     While the random walks is graph-wide, we only return edges whose source and destination nodes are within this node ID list.
     /// return_weight: float = 1.0
     ///     Weight on the probability of returning to node coming from
     ///     Having this higher tends the walks to be
@@ -13913,6 +13935,7 @@ impl Graph {
     pub fn get_log_normalized_cooccurrence_graph(
         &self,
         window_size: usize,
+        node_ids_of_interest: Option<Vec<NodeT>>,
         py_kwargs: Option<&PyDict>,
     ) -> PyResult<Graph> {
         Ok(pe!(self.inner.get_log_normalized_cooccurrence_graph(
@@ -13925,7 +13948,8 @@ impl Graph {
                 ))?;
                 build_walk_parameters(kwargs)?
             },
-            window_size.into()
+            window_size.into(),
+            node_ids_of_interest.as_ref()
         ))?
         .into())
     }

@@ -40,11 +40,7 @@ impl CooccurrenceEdgePrediction {
 
         pe!(validate_kwargs(
             kwargs,
-            &[
-                "window_size",
-                "quantity",
-                "random_state"
-            ]
+            &["window_size", "quantity", "random_state"]
         ))?;
 
         Ok(Self {
@@ -59,7 +55,6 @@ impl CooccurrenceEdgePrediction {
 
 #[pymethods]
 impl CooccurrenceEdgePrediction {
-
     #[args(py_kwargs = "**")]
     #[text_signature = "($self, graph)"]
     /// Return numpy array with edge predictions for provided graph.
