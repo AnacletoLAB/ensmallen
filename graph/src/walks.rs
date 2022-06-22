@@ -1038,7 +1038,7 @@ impl Graph {
     ///
     /// # Safety
     /// If a non-existing node ID is provided, this method may cause an out of bound.
-    pub(crate) unsafe fn iter_uniform_walk(
+    pub unsafe fn iter_uniform_walk(
         &self,
         node: NodeT,
         random_state: u64,

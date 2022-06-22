@@ -82,7 +82,9 @@ impl<'a> Cooccurrence<'a> {
             graph
                 .par_iter_directed_edge_node_ids()
                 .zip(predictions.par_iter_mut())
-                .for_each(|((_, src, dst), pred)| {});
+                .for_each(|((_, src, dst), pred)| {
+                    
+                });
         }
 
         Ok(())
