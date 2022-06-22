@@ -53,6 +53,9 @@ pub use self::getters_boolean::*;
 mod dijkstra;
 pub use self::dijkstra::*;
 
+mod coo;
+pub use self::coo::*;
+
 mod constructors;
 pub use constructors::*;
 

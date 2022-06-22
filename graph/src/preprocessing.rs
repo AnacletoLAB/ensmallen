@@ -413,8 +413,8 @@ impl Graph {
         }))
     }
 
-    #[manual_binding]
-    /// Populate the provided three slices with source, destination and jaccard scores.
+    #[no_binding]
+    /// Populate the provided three slices with source, destination and provided score.
     ///
     /// # Arguments
     /// * `random_state`: u64 - Random state of the batch to generate.
@@ -422,21 +422,23 @@ impl Graph {
     /// * `destinations`: &mut [NodeT] - Slice where to write the sampled destination node IDs.
     /// * `scores`: &mut [f32] - Slice where to write the computed Jaccard scores.
     /// * `negative_samples_rate`: Option<f64> - The rate of negative samples over the total number of samples (the batch size).
-    /// * `support`: Option<&Graph> - Graph to use to compute the edge metrics. When not provided, the current graph (self) is used.
+    /// * `method`: fn(NodeT, NodeT) -> f32 - Function to use to compute score.
     ///
     /// # Raises
     /// * If the given amount of negative samples is not a positive finite real value.
     ///
-    pub fn populate_edge_jaccard_mini_batch(
+    fn populate_edge_score_mini_batch<F>(
         &self,
         mut random_state: u64,
         sources: &mut [NodeT],
         destinations: &mut [NodeT],
         scores: &mut [f32],
         negative_samples_rate: Option<f64>,
-        support: Option<&Graph>,
-    ) -> Result<()> {
-        let support = support.unwrap_or(&self);
+        method: F,
+    ) -> Result<()>
+    where
+        F: Fn(NodeT, NodeT) -> f32 + Send + Sync,
+    {
         let negative_samples_rate = negative_samples_rate.unwrap_or(0.5);
         if negative_samples_rate < 0.0
             || negative_samples_rate > 1.0
@@ -477,9 +479,79 @@ impl Graph {
                         *dst = self.get_random_zipfian_node(random_state.wrapping_mul(2));
                     }
                 }
-                *score = support.get_unchecked_jaccard_coefficient_from_node_ids(*src, *dst);
+                *score = method(*src, *dst);
             });
         Ok(())
+    }
+
+    #[manual_binding]
+    /// Populate the provided three slices with source, destination and jaccard scores.
+    ///
+    /// # Arguments
+    /// * `random_state`: u64 - Random state of the batch to generate.
+    /// * `sources`: &mut [NodeT] - Slice where to write the sampled source node IDs.
+    /// * `destinations`: &mut [NodeT] - Slice where to write the sampled destination node IDs.
+    /// * `scores`: &mut [f32] - Slice where to write the computed Jaccard scores.
+    /// * `negative_samples_rate`: Option<f64> - The rate of negative samples over the total number of samples (the batch size).
+    /// * `support`: Option<&Graph> - Graph to use to compute the edge metrics. When not provided, the current graph (self) is used.
+    ///
+    /// # Raises
+    /// * If the given amount of negative samples is not a positive finite real value.
+    ///
+    pub fn populate_edge_jaccard_mini_batch(
+        &self,
+        random_state: u64,
+        sources: &mut [NodeT],
+        destinations: &mut [NodeT],
+        scores: &mut [f32],
+        negative_samples_rate: Option<f64>,
+        support: Option<&Graph>,
+    ) -> Result<()> {
+        let support = support.unwrap_or(&self);
+
+        self.populate_edge_score_mini_batch(
+            random_state,
+            sources,
+            destinations,
+            scores,
+            negative_samples_rate,
+            |src, dst| unsafe { support.get_unchecked_jaccard_coefficient_from_node_ids(src, dst) },
+        )
+    }
+
+    #[manual_binding]
+    /// Populate the provided three slices with source, destination and jaccard scores.
+    ///
+    /// # Arguments
+    /// * `random_state`: u64 - Random state of the batch to generate.
+    /// * `sources`: &mut [NodeT] - Slice where to write the sampled source node IDs.
+    /// * `destinations`: &mut [NodeT] - Slice where to write the sampled destination node IDs.
+    /// * `scores`: &mut [f32] - Slice where to write the computed Adamic Adar scores.
+    /// * `negative_samples_rate`: Option<f64> - The rate of negative samples over the total number of samples (the batch size).
+    /// * `support`: Option<&Graph> - Graph to use to compute the edge metrics. When not provided, the current graph (self) is used.
+    ///
+    /// # Raises
+    /// * If the given amount of negative samples is not a positive finite real value.
+    ///
+    pub fn populate_edge_adamic_adar_mini_batch(
+        &self,
+        random_state: u64,
+        sources: &mut [NodeT],
+        destinations: &mut [NodeT],
+        scores: &mut [f32],
+        negative_samples_rate: Option<f64>,
+        support: Option<&Graph>,
+    ) -> Result<()> {
+        let support = support.unwrap_or(&self);
+
+        self.populate_edge_score_mini_batch(
+            random_state,
+            sources,
+            destinations,
+            scores,
+            negative_samples_rate,
+            |src, dst| unsafe { support.get_unchecked_adamic_adar_index_from_node_ids(src, dst) },
+        )
     }
 
     #[manual_binding]
@@ -498,56 +570,21 @@ impl Graph {
     ///
     pub fn populate_ancestors_jaccard_mini_batch(
         &self,
-        mut random_state: u64,
+        random_state: u64,
         sources: &mut [NodeT],
         destinations: &mut [NodeT],
         scores: &mut [f32],
         bfs: &ShortestPathsResultBFS,
         negative_samples_rate: Option<f64>,
     ) -> Result<()> {
-        let negative_samples_rate = negative_samples_rate.unwrap_or(0.5);
-        if negative_samples_rate < 0.0
-            || negative_samples_rate > 1.0
-            || !negative_samples_rate.is_finite()
-        {
-            return Err(format!(
-                concat!(
-                    "Negative sample must be a posive ",
-                    "real value between 0 and 1. ",
-                    "You have provided {}."
-                ),
-                negative_samples_rate
-            ));
-        }
-
-        let negative_samples_threshold = (negative_samples_rate * u64::MAX as f64).ceil() as u64;
-
-        random_state = splitmix64(random_state);
-
-        sources
-            .par_iter_mut()
-            .zip(destinations.par_iter_mut())
-            .zip(scores.par_iter_mut())
-            .enumerate()
-            .for_each(|(i, ((src, dst), score))| unsafe {
-                let mut random_state = splitmix64(random_state + i as u64);
-                if random_state > negative_samples_threshold {
-                    let (real_src, real_dst) = self
-                        .get_unchecked_node_ids_from_edge_id(self.get_random_edge_id(random_state));
-                    *src = real_src;
-                    *dst = real_dst;
-                } else {
-                    *src = self.get_random_zipfian_node(random_state);
-                    *dst = self.get_random_zipfian_node(random_state.wrapping_mul(2));
-                    while *src == *dst && !self.has_selfloops() {
-                        random_state = splitmix64(random_state);
-                        *src = self.get_random_zipfian_node(random_state);
-                        *dst = self.get_random_zipfian_node(random_state.wrapping_mul(2));
-                    }
-                }
-                *score = bfs.get_ancestors_jaccard_index(*src, *dst).unwrap();
-            });
-        Ok(())
+        self.populate_edge_score_mini_batch(
+            random_state,
+            sources,
+            destinations,
+            scores,
+            negative_samples_rate,
+            |src, dst| bfs.get_ancestors_jaccard_index(src, dst).unwrap(),
+        )
     }
 
     #[manual_binding]

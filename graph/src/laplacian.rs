@@ -40,6 +40,7 @@ impl Graph {
             )
     }
 
+
     /// Returns unweighted laplacian transformation of the graph.
     ///
     /// # Arguments
