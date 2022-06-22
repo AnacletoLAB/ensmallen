@@ -89,6 +89,9 @@ fn translate_return_type(
 
                     (body, Some(this_struct.to_string()))
                 }
+                (false, true) => {
+                    (body, Some(this_struct.to_string()))
+                }
                 _ => {
                     panic!("Not implemented yet!");
                 }
@@ -406,8 +409,28 @@ impl GenBinding for Function {
         };
 
         let this_struct = self.class.as_ref().map(|x| x.get_name().unwrap()).unwrap_or("".to_string());
-        
+
+        let mut handle_walk_parameters = false;
+
         for arg in self.iter_args() {
+            // bad hardocded stuff but fuck it it's 2am
+            if &arg.arg_type.to_string() == "&WalksParameters" {
+                handle_walk_parameters = true;
+                args_names.push_str(&format!(
+r#"&{{
+let py = pyo3::Python::acquire_gil();
+let kwargs = normalize_kwargs!(py_kwargs, py.python());
+pe!(validate_kwargs(
+    kwargs,
+    build_walk_parameters_list(&[]).as_slice()
+))?;
+build_walk_parameters(kwargs)?
+}}"#, 
+                ));
+                args_names.push_str(", ");
+                continue
+            }
+
             let (arg_name, arg_call) = translate_arg(arg, &this_struct);
 
             args.push_str(&arg_name);
@@ -421,6 +444,26 @@ impl GenBinding for Function {
                 args_signatures.push(arg.name.clone());
             }
         }
+
+        if handle_walk_parameters {
+            args_signatures.extend(vec![
+                "*".into(),
+                "return_weight".into(),
+                "explore_weight".into(),
+                "change_edge_type_weight".into(),
+                "change_node_type_weight".into(),
+                "max_neighbours".into(),
+                "random_state".into(),
+                "iterations".into(),
+                "dense_node_mapping".into(),
+                "normalize_by_degree".into(),
+                "walk_length".into(),
+            ]);
+
+            args.push_str("py_kwargs: Option<&PyDict>, ");
+        }
+
+
 
         let text_signature = format!("#[text_signature = \"({})\"]", args_signatures.join(", "));
 
@@ -449,6 +492,7 @@ impl GenBinding for Function {
 
         format!(
             r#"
+            {other_annotations}
             {type_annotation}
             #[automatically_generated_binding]
             {text_signature}
@@ -457,6 +501,11 @@ impl GenBinding for Function {
             {body}
             }}
             "#,
+                        other_annotations = if handle_walk_parameters {
+                            "#[args(py_kwargs = \"**\")]"
+                        } else {
+                            ""
+                        },
                         type_annotation= match (self.is_method(), self.is_static()) {
                             (true, true) => "#[staticmethod]",
                             (true, false) => "", //"#[classmethod]", for some reason if we add this crash!!

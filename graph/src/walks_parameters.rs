@@ -1,5 +1,4 @@
 use super::*;
-use std::collections::HashMap;
 
 #[derive(Clone, Debug, PartialEq)]
 /// Struct to wrap walk weights.
@@ -28,7 +27,6 @@ pub struct WalksParameters {
     pub(crate) single_walk_parameters: SingleWalkParameters,
     pub(crate) iterations: NodeT,
     pub(crate) random_state: NodeT,
-    pub(crate) dense_node_mapping: Option<HashMap<NodeT, NodeT>>,
 }
 
 impl Default for WalkWeights {
@@ -193,7 +191,6 @@ impl WalksParameters {
             single_walk_parameters: SingleWalkParameters::new(walk_length)?,
             iterations: 1,
             random_state: splitmix64(42) as NodeT,
-            dense_node_mapping: None,
         })
     }
 
@@ -313,23 +310,6 @@ impl WalksParameters {
     /// Return the random_state used in the walks.
     pub fn get_random_state(&self) -> NodeT {
         self.random_state
-    }
-
-    /// Set the dense_node_mapping.
-    ///
-    /// The nodes mapping primary porpose is to map a sparse set of nodes into
-    /// a smaller dense set of nodes.
-    ///
-    /// # Arguments
-    ///
-    /// * `dense_node_mapping`: Option<HashMap<NodeT, NodeT>> - mapping for the mapping the nodes of the walks.
-    ///
-    pub fn set_dense_node_mapping(
-        mut self,
-        dense_node_mapping: Option<HashMap<NodeT, NodeT>>,
-    ) -> WalksParameters {
-        self.dense_node_mapping = dense_node_mapping;
-        self
     }
 
     /// Set the return weight.
@@ -503,17 +483,6 @@ impl WalksParameters {
             return Err(concat!(
                 "The graph is directed with trap nodes which is not yet supported."
             ).to_string());
-        }
-        if let Some(dense_node_mapping) = &self.dense_node_mapping {
-            if !graph
-                .iter_unique_source_node_ids()
-                .all(|node| dense_node_mapping.contains_key(&(node as NodeT)))
-            {
-                return Err(String::from(concat!(
-                    "Given nodes mapping does not contain ",
-                    "one or more NOT trap nodes that may be extracted from walk."
-                )));
-            }
         }
 
         Ok(())

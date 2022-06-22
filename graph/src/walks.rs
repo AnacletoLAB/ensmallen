@@ -822,10 +822,6 @@ impl Graph {
                     ),
                 };
 
-                if let Some(dense_node_mapping) = &parameters.dense_node_mapping {
-                    walk_buffer.iter_mut()
-                        .for_each(|node| *node = *dense_node_mapping.get(node).unwrap());
-                }
                 walk_buffer
             });
 
@@ -881,10 +877,6 @@ impl Graph {
                     ),
                 };
 
-                if let Some(dense_node_mapping) = &parameters.dense_node_mapping {
-                    walk_buffer.iter_mut()
-                        .for_each(|node| *node = *dense_node_mapping.get(node).unwrap());
-                }
                 walk_buffer
             });
 

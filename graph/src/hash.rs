@@ -125,3 +125,13 @@ impl Hash for EdgeTypeVocabulary {
         self.counts.hash(state);
     }
 }
+
+impl Hash for WalkWeights {
+    fn hash<H: Hasher>(&self, state: &mut H) {
+        // These fields are fundamentals
+        hash_f32(self.return_weight, state);
+        hash_f32(self.explore_weight, state);
+        hash_f32(self.change_node_type_weight, state);
+        hash_f32(self.change_edge_type_weight, state);
+    }
+}
