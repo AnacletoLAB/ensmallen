@@ -293,9 +293,9 @@ impl ShortestPathsResultBFS {
                 .collect::<Vec<NodeT>>());
         }
         Err(concat!(
-            "The predecessors were computed (as it was requested) ",
+            "The predecessors were not computed (as it was requested) ",
             "when creating this breath shortest paths object.\n",
-            "It is not possible to compute the number of shortest paths from the current ",
+            "It is not possible to compute the successors from the current ",
             "root node passing to the given node ID when predecessors were not computed."
         )
         .to_string())
@@ -329,11 +329,13 @@ impl ShortestPathsResultBFS {
                 node_id = predecessors[node_id as usize];
                 node_predecessors.push(node_id);
             }
+
+            return Ok(node_predecessors);
         }
         Err(concat!(
-            "The predecessors were computed (as it was requested) ",
+            "The predecessors were not computed (as it was requested) ",
             "when creating this breath shortest paths object.\n",
-            "It is not possible to compute the number of shortest paths from the current ",
+            "It is not possible to compute the predecessors from the current ",
             "root node passing to the given node ID when predecessors were not computed."
         )
         .to_string())
