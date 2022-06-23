@@ -10,6 +10,7 @@ pub enum EdgeFeatureName {
     Degree,
     AdamicAdar,
     JaccardCoefficient,
+    Cooccurrence,
     ResourceAllocationIndex,
     PreferentialAttachment,
 }
@@ -21,6 +22,7 @@ impl TryFrom<&str> for EdgeFeatureName {
             "Degree" => Ok(EdgeFeatureName::Degree),
             "AdamicAdar" => Ok(EdgeFeatureName::AdamicAdar),
             "JaccardCoefficient" => Ok(EdgeFeatureName::JaccardCoefficient),
+            "Cooccurrence" => Ok(EdgeFeatureName::Cooccurrence),
             "ResourceAllocationIndex" => Ok(EdgeFeatureName::ResourceAllocationIndex),
             "PreferentialAttachment" => Ok(EdgeFeatureName::PreferentialAttachment),
             _ => Err(format!(
@@ -40,6 +42,7 @@ pub fn get_edge_feature_dimensionality(method: EdgeFeatureName) -> usize {
         EdgeFeatureName::Degree => 2,
         EdgeFeatureName::AdamicAdar => 1,
         EdgeFeatureName::JaccardCoefficient => 1,
+        EdgeFeatureName::Cooccurrence => 1,
         EdgeFeatureName::ResourceAllocationIndex => 1,
         EdgeFeatureName::PreferentialAttachment => 1,
     }
@@ -63,17 +66,23 @@ pub struct EdgePredictionFeaturePerceptron {
     learning_rate: f64,
     /// The random state to reproduce the model initialization and training.
     random_state: u64,
+    /// Number of iterations to run when computing the cooccurrence metric.
+    iterations: u64,
+    /// Window size to consider to measure the cooccurrence.
+    window_size: u64,
 }
 
 impl EdgePredictionFeaturePerceptron {
     /// Return new instance of Perceptron for edge prediction.
     ///
     /// # Arguments
-    /// * `edge_feature_name`: Option<EdgeFeatureName> - The embedding method to use. By default the cosine similarity is used.
+    /// * `edge_feature_name`: Option<EdgeFeatureName> - The embedding method to use. By default the Jaccard is used.
     /// * `number_of_epochs`: Option<usize> - The number of epochs to train the model for. By default, 100.
     /// * `number_of_edges_per_mini_batch`: Option<usize> - The number of samples to include for each mini-batch. By default 1024.
     /// * `sample_only_edges_with_heterogeneous_node_types`: Option<bool> - Whether to sample negative edges only with source and destination nodes that have different node types. By default false.
     /// * `learning_rate`: Option<f64> - Learning rate to use while training the model. By default 0.001.
+    /// * `iterations`: Option<u64> - Number of iterations to run when computing the cooccurrence metric. By default 10 when the edge embedding is cooccurrence.
+    /// * `window_size`: Option<u64> - Window size to consider to measure the cooccurrence. By default 10 when the edge embedding is cooccurrence.
     /// * `random_state`: Option<u64> - The random state to reproduce the model initialization and training. By default, 42.
     pub fn new(
         edge_feature_name: Option<EdgeFeatureName>,
@@ -81,6 +90,8 @@ impl EdgePredictionFeaturePerceptron {
         number_of_edges_per_mini_batch: Option<usize>,
         sample_only_edges_with_heterogeneous_node_types: Option<bool>,
         learning_rate: Option<f64>,
+        iterations: Option<u64>,
+        window_size: Option<u64>,
         random_state: Option<u64>,
     ) -> Result<Self, String> {
         let number_of_epochs = number_of_epochs.unwrap_or(100);
@@ -107,7 +118,7 @@ impl EdgePredictionFeaturePerceptron {
             .to_string());
         }
 
-        let edge_feature_name = edge_feature_name.unwrap_or(EdgeFeatureName::Degree);
+        let edge_feature_name = edge_feature_name.unwrap_or(EdgeFeatureName::JaccardCoefficient);
         Ok(Self {
             edge_feature_name,
             weights: Vec::new(),
@@ -117,6 +128,8 @@ impl EdgePredictionFeaturePerceptron {
             sample_only_edges_with_heterogeneous_node_types:
                 sample_only_edges_with_heterogeneous_node_types.unwrap_or(false),
             learning_rate,
+            iterations: iterations.unwrap_or(10),
+            window_size: window_size.unwrap_or(10),
             random_state: random_state.unwrap_or(42),
         })
     }
@@ -146,9 +159,21 @@ impl EdgePredictionFeaturePerceptron {
     }
 
     /// Returns method to compute the edge embedding.
-    fn get_edge_feature_method(&self) -> fn(support: &Graph, src: NodeT, dst: NodeT) -> Vec<f64> {
+    fn get_edge_feature_method(
+        &self,
+    ) -> fn(
+        model: &EdgePredictionFeaturePerceptron,
+        support: &Graph,
+        src: NodeT,
+        dst: NodeT,
+        random_state: u64,
+    ) -> Vec<f64> {
         match self.edge_feature_name {
-            EdgeFeatureName::Degree => |support: &Graph, src: NodeT, dst: NodeT| {
+            EdgeFeatureName::Degree => |_model: &EdgePredictionFeaturePerceptron,
+                                        support: &Graph,
+                                        src: NodeT,
+                                        dst: NodeT,
+                                        _random_state: u64| {
                 let maximum_node_degree =
                     unsafe { support.get_unchecked_maximum_node_degree() as f64 };
                 vec![
@@ -158,16 +183,51 @@ impl EdgePredictionFeaturePerceptron {
                         / maximum_node_degree,
                 ]
             },
-            EdgeFeatureName::AdamicAdar => |support: &Graph, src: NodeT, dst: NodeT| unsafe {
-                vec![support.get_unchecked_adamic_adar_index_from_node_ids(src, dst) as f64]
-            },
+            EdgeFeatureName::AdamicAdar => {
+                |_model: &EdgePredictionFeaturePerceptron,
+                 support: &Graph,
+                 src: NodeT,
+                 dst: NodeT,
+                 _random_state: u64| unsafe {
+                    vec![support.get_unchecked_adamic_adar_index_from_node_ids(src, dst) as f64]
+                }
+            }
             EdgeFeatureName::JaccardCoefficient => {
-                |support: &Graph, src: NodeT, dst: NodeT| unsafe {
+                |_model: &EdgePredictionFeaturePerceptron,
+                 support: &Graph,
+                 src: NodeT,
+                 dst: NodeT,
+                 _random_state: u64| unsafe {
                     vec![support.get_unchecked_jaccard_coefficient_from_node_ids(src, dst) as f64]
                 }
             }
+            EdgeFeatureName::Cooccurrence => {
+                |model: &EdgePredictionFeaturePerceptron,
+                 support: &Graph,
+                 src: NodeT,
+                 dst: NodeT,
+                 random_state: u64| {
+                    let mut random_state = splitmix64(random_state);
+                    let mut encounters = 0;
+                    (0..model.iterations).for_each(|_| {
+                        random_state = splitmix64(random_state);
+                        if unsafe {
+                            support
+                                .iter_uniform_walk(src, random_state, model.window_size)
+                                .any(|node| node == dst)
+                        } {
+                            encounters += 1;
+                        }
+                    });
+                    vec![encounters as f64 / model.iterations as f64]
+                }
+            }
             EdgeFeatureName::ResourceAllocationIndex => {
-                |support: &Graph, src: NodeT, dst: NodeT| unsafe {
+                |_model: &EdgePredictionFeaturePerceptron,
+                 support: &Graph,
+                 src: NodeT,
+                 dst: NodeT,
+                 _random_state: u64| unsafe {
                     vec![
                         support.get_unchecked_resource_allocation_index_from_node_ids(src, dst)
                             as f64,
@@ -175,7 +235,11 @@ impl EdgePredictionFeaturePerceptron {
                 }
             }
             EdgeFeatureName::PreferentialAttachment => {
-                |support: &Graph, src: NodeT, dst: NodeT| unsafe {
+                |_model: &EdgePredictionFeaturePerceptron,
+                 support: &Graph,
+                 src: NodeT,
+                 dst: NodeT,
+                 _random_state: u64| unsafe {
                     vec![
                         support.get_unchecked_preferential_attachment_from_node_ids(src, dst, true)
                             as f64,
@@ -202,9 +266,16 @@ impl EdgePredictionFeaturePerceptron {
         support: &Graph,
         src: NodeT,
         dst: NodeT,
-        method: fn(support: &Graph, src: NodeT, dst: NodeT) -> Vec<f64>,
+        random_state: u64,
+        method: fn(
+            model: &EdgePredictionFeaturePerceptron,
+            support: &Graph,
+            src: NodeT,
+            dst: NodeT,
+            random_state: u64,
+        ) -> Vec<f64>,
     ) -> (Vec<f64>, f64) {
-        let edge_feature = method(support, src, dst);
+        let edge_feature = method(&self, support, src, dst, random_state);
         let dot = dot_product_sequential_unchecked(&edge_feature, &self.weights) + self.bias;
         (edge_feature, 1.0 / (1.0 + (-dot).exp()))
     }
@@ -281,8 +352,15 @@ impl EdgePredictionFeaturePerceptron {
                                 graph_to_avoid,
                             )?
                             .map(|(src, dst, label)| {
-                                let (mut edge_feature, prediction) =
-                                    unsafe { self.get_unsafe_prediction(graph, src, dst, method) };
+                                let (mut edge_feature, prediction) = unsafe {
+                                    self.get_unsafe_prediction(
+                                        graph,
+                                        src,
+                                        dst,
+                                        random_state,
+                                        method,
+                                    )
+                                };
 
                                 let variation = if label { prediction - 1.0 } else { prediction };
 
@@ -379,12 +457,16 @@ impl EdgePredictionFeaturePerceptron {
         }
 
         let method = self.get_edge_feature_method();
+        let random_state = splitmix64(self.random_state);
 
         predictions
             .par_iter_mut()
             .zip(graph.par_iter_directed_edge_node_ids())
             .for_each(|(prediction, (_, src, dst))| {
-                *prediction = unsafe { self.get_unsafe_prediction(support, src, dst, method).1 } as f32;
+                *prediction = unsafe {
+                    self.get_unsafe_prediction(support, src, dst, random_state, method)
+                        .1
+                } as f32;
             });
 
         Ok(())

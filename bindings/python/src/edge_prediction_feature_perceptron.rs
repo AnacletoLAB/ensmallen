@@ -5,7 +5,7 @@ use std::convert::TryFrom;
 ///
 #[pyclass]
 #[derive(Debug, Clone)]
-#[text_signature = "(*, edge_feature_name, number_of_epochs, number_of_edges_per_mini_batch, sample_only_edges_with_heterogeneous_node_types, learning_rate, random_state)"]
+#[text_signature = "(*, edge_feature_name, number_of_epochs, number_of_edges_per_mini_batch, sample_only_edges_with_heterogeneous_node_types, learning_rate, iterations, window_size, random_state)"]
 pub struct EdgePredictionFeaturePerceptron {
     pub inner: cpu_models::EdgePredictionFeaturePerceptron,
 }
@@ -41,6 +41,12 @@ impl EdgePredictionFeaturePerceptron {
     ///     destination nodes that have different node types. By default false.
     /// learning_rate: float = 0.001
     ///     Learning rate to use while training the model. By default 0.001.
+    /// iterations: int
+    ///     Number of iterations to run when computing the cooccurrence metric.
+    ///     By default 10 when the edge embedding is cooccurrence.
+    /// window_size: int
+    ///     Window size to consider to measure the cooccurrence.
+    ///     By default 10 when the edge embedding is cooccurrence.
     /// random_state: int = 42
     ///     The random state to reproduce the model initialization and training. By default, 42.
     pub fn new(py_kwargs: Option<&PyDict>) -> PyResult<EdgePredictionFeaturePerceptron> {
@@ -55,7 +61,9 @@ impl EdgePredictionFeaturePerceptron {
                 "number_of_edges_per_mini_batch",
                 "sample_only_edges_with_heterogeneous_node_types",
                 "learning_rate",
-                "random_state"
+                "iterations",
+                "window_size",
+                "random_state",
             ]
         ))?;
 
@@ -74,6 +82,8 @@ impl EdgePredictionFeaturePerceptron {
                     bool
                 ),
                 extract_value_rust_result!(kwargs, "learning_rate", f64),
+                extract_value_rust_result!(kwargs, "iterations", u64),
+                extract_value_rust_result!(kwargs, "window_size", u64),
                 extract_value_rust_result!(kwargs, "random_state", u64),
             ))?,
         })

@@ -19,8 +19,8 @@ pub(crate) use cbow::*;
 mod edge_prediction_perceptron;
 pub(crate) use edge_prediction_perceptron::*;
 
-mod cooccurrence_edge_prediction;
-pub(crate) use cooccurrence_edge_prediction::*;
+mod dense;
+pub use dense::*;
 
 mod edge_prediction_feature_perceptron;
 pub(crate) use edge_prediction_feature_perceptron::*;
@@ -59,7 +59,6 @@ fn models(_py: Python, _m: &PyModule) -> PyResult<()> {
     _m.add_class::<SPINE>()?;
     _m.add_class::<WeightedSPINE>()?;
     _m.add_class::<EdgePredictionPerceptron>()?;
-    _m.add_class::<CooccurrenceEdgePrediction>()?;
     _m.add_class::<EdgePredictionFeaturePerceptron>()?;
     Ok(())
 }
