@@ -241,17 +241,17 @@ impl ShortestPathsResultBFS {
         .to_string())
     }
 
-    /// Return list of predecessors of a given node.
+    /// Return list of successors of a given node.
     ///
     /// # Arguments
-    /// * `source_node_id`: NodeT - The node for which to return the predecessors.
+    /// * `source_node_id`: NodeT - The node for which to return the successors.
     ///
     /// # Raises
     /// * If the given node ID does not exist in the graph.
     ///
     /// # Returns
-    /// List of predecessors of the given node.
-    pub fn get_predecessors_from_node_id(&self, source_node_id: NodeT) -> Result<Vec<NodeT>> {
+    /// List of successors of the given node.
+    pub fn get_successors_from_node_id(&self, source_node_id: NodeT) -> Result<Vec<NodeT>> {
         self.validate_node_id(source_node_id)?;
         if let Some(predecessors) = self.predecessors.as_ref() {
             // If the node is not reacheable in the
@@ -291,6 +291,44 @@ impl ShortestPathsResultBFS {
                     false
                 })
                 .collect::<Vec<NodeT>>());
+        }
+        Err(concat!(
+            "The predecessors were computed (as it was requested) ",
+            "when creating this breath shortest paths object.\n",
+            "It is not possible to compute the number of shortest paths from the current ",
+            "root node passing to the given node ID when predecessors were not computed."
+        )
+        .to_string())
+    }
+
+    /// Return list of predecessors of a given node.
+    ///
+    /// # Arguments
+    /// * `source_node_id`: NodeT - The node for which to return the predecessors.
+    ///
+    /// # Raises
+    /// * If the given node ID does not exist in the graph.
+    ///
+    /// # Returns
+    /// List of predecessors of the given node.
+    pub fn get_predecessors_from_node_id(&self, source_node_id: NodeT) -> Result<Vec<NodeT>> {
+        self.validate_node_id(source_node_id)?;
+        if let Some(predecessors) = self.predecessors.as_ref() {
+            // If the node is not reacheable in the
+            // considered shortest paths, we can stop.
+            if predecessors[source_node_id as usize] == NODE_NOT_PRESENT {
+                return Ok(vec![source_node_id]);
+            }
+
+            let mut node_predecessors = vec![source_node_id];
+
+            let mut node_id = source_node_id;
+            while predecessors[node_id as usize] != node_id {
+                // We retrieve the node predecessor
+                // and climb up the predecessors ladder.
+                node_id = predecessors[node_id as usize];
+                node_predecessors.push(node_id);
+            }
         }
         Err(concat!(
             "The predecessors were computed (as it was requested) ",
