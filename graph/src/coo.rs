@@ -42,7 +42,7 @@ impl Graph {
             self.is_directed(),
             Some(true),
             Some(false),
-            Some(true),
+            Some(false),
             None,
             true,
             true,
@@ -70,6 +70,63 @@ impl Graph {
     /// Returns jaccard weighted graph.
     pub fn get_jaccard_graph(&self) -> Graph {
         self.get_graph_from_coo_iterator(self.par_iter_jaccard_coo_matrix())
+    }
+
+    /// Returns parallel iterator on neighbours intersection size COO matrix.
+    pub fn par_iter_neighbours_intersection_size_coo_matrix(
+        &self,
+    ) -> impl ParallelIterator<Item = (NodeT, NodeT, WeightT)> + '_ {
+        self.par_iter_transformed_coo_matrix(self, |support, src, dst| unsafe {
+            support.get_unchecked_neighbours_intersection_size_from_node_ids(src, dst)
+        })
+    }
+
+    /// Returns neighbours intersection size coo matrix.
+    pub fn get_neighbours_intersection_size_coo_matrix(
+        &self,
+    ) -> (Vec<(NodeT, NodeT)>, Vec<WeightT>) {
+        self.par_iter_neighbours_intersection_size_coo_matrix()
+            .map(|(src, dst, weight)| ((src, dst), weight))
+            .unzip()
+    }
+
+    /// Returns neighbours intersection size weighted graph.
+    pub fn get_neighbours_intersection_size_graph(&self) -> Graph {
+        self.get_graph_from_coo_iterator(self.par_iter_neighbours_intersection_size_coo_matrix())
+    }
+
+    /// Returns parallel iterator on shared ancestors size COO matrix.
+    ///
+    /// # Arguments
+    /// * `bfs`: &ShortestPathsResultBFS - The BFS object to use for the ancestors.
+    pub fn par_iter_shared_ancestors_size_coo_matrix<'a>(
+        &'a self,
+        bfs: &'a ShortestPathsResultBFS,
+    ) -> impl ParallelIterator<Item = (NodeT, NodeT, WeightT)> + 'a {
+        self.par_iter_transformed_coo_matrix(bfs, |support, src, dst| {
+            support.get_shared_ancestors_size(src, dst).unwrap()
+        })
+    }
+
+    /// Returns shared ancestors size coo matrix.
+    ///
+    /// # Arguments
+    /// * `bfs`: &ShortestPathsResultBFS - The BFS object to use for the ancestors.
+    pub fn get_shared_ancestors_size_coo_matrix(
+        &self,
+        bfs: &ShortestPathsResultBFS,
+    ) -> (Vec<(NodeT, NodeT)>, Vec<WeightT>) {
+        self.par_iter_shared_ancestors_size_coo_matrix(bfs)
+            .map(|(src, dst, weight)| ((src, dst), weight))
+            .unzip()
+    }
+
+    /// Returns shared ancestors size weighted graph.
+    ///
+    /// # Arguments
+    /// * `bfs`: &ShortestPathsResultBFS - The BFS object to use for the ancestors.
+    pub fn get_shared_ancestors_size_graph(&self, bfs: &ShortestPathsResultBFS) -> Graph {
+        self.get_graph_from_coo_iterator(self.par_iter_shared_ancestors_size_coo_matrix(bfs))
     }
 
     /// Returns parallel iterator on ancestors Jaccard COO matrix.
@@ -165,8 +222,9 @@ impl Graph {
                             total += 1.0;
                         });
                     });
-                cooccurence_matrix.into_par_iter().filter_map(
-                    move |((src, dst), freq)| {
+                cooccurence_matrix
+                    .into_par_iter()
+                    .filter_map(move |((src, dst), freq)| {
                         if node_ids_of_interest
                             .as_ref()
                             .map_or(true, |node_ids_of_interest| {
@@ -178,8 +236,7 @@ impl Graph {
                         } else {
                             None
                         }
-                    },
-                )
+                    })
             }))
     }
 

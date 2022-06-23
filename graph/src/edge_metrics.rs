@@ -2,8 +2,8 @@ use super::types::*;
 use super::*;
 use num_traits::Pow;
 use num_traits::Zero;
-use std::collections::HashSet;
 use rayon::prelude::*;
+use std::collections::HashSet;
 
 /// # Properties and measurements of the graph
 impl Graph {
@@ -28,7 +28,10 @@ impl Graph {
         maximal_hop_distance: usize,
     ) -> Vec<f32> {
         let mut source_frontier = [source_node_id].iter().copied().collect::<HashSet<NodeT>>();
-        let mut destination_frontier = [destination_node_id].iter().copied().collect::<HashSet<NodeT>>();
+        let mut destination_frontier = [destination_node_id]
+            .iter()
+            .copied()
+            .collect::<HashSet<NodeT>>();
 
         let step_frontier = |frontier: &HashSet<NodeT>| {
             frontier
@@ -86,34 +89,39 @@ impl Graph {
                     * (*(first_degree_count.max(second_degree_count)) as f32)
             };
 
-        // compute the first layer as just the difference of degrees since we 
+        // compute the first layer as just the difference of degrees since we
         // have hop distance of 0
-        [
-            degree_distance(
-                &(self.get_unchecked_node_degree_from_node_id(source_node_id), 1),
-                &(self.get_unchecked_node_degree_from_node_id(destination_node_id), 1),
-            )
-        ].iter().copied().chain(
+        [degree_distance(
+            &(
+                self.get_unchecked_node_degree_from_node_id(source_node_id),
+                1,
+            ),
+            &(
+                self.get_unchecked_node_degree_from_node_id(destination_node_id),
+                1,
+            ),
+        )]
+        .iter()
+        .copied()
+        .chain(
             // compute the remaining distances
-            (0..maximal_hop_distance)
-                .map(|_| {
-                    source_frontier = step_frontier(&source_frontier);
-                    destination_frontier =
-                        step_frontier(&destination_frontier);
-                    let source_degree_counts = sorted_degree_tuples(&source_frontier);
-                    let destination_degree_counts = sorted_degree_tuples(&destination_frontier);
-                    express_measures::dynamic_time_warping(
-                        &source_degree_counts,
-                        &destination_degree_counts,
-                        degree_distance,
-                    )
-                })
-            )
-            .scan(0.0, |running_sum, cost| {
-                *running_sum += cost;
-                Some(*running_sum)
-            })
-            .collect::<Vec<f32>>()
+            (0..maximal_hop_distance).map(|_| {
+                source_frontier = step_frontier(&source_frontier);
+                destination_frontier = step_frontier(&destination_frontier);
+                let source_degree_counts = sorted_degree_tuples(&source_frontier);
+                let destination_degree_counts = sorted_degree_tuples(&destination_frontier);
+                express_measures::dynamic_time_warping(
+                    &source_degree_counts,
+                    &destination_degree_counts,
+                    degree_distance,
+                )
+            }),
+        )
+        .scan(0.0, |running_sum, cost| {
+            *running_sum += cost;
+            Some(*running_sum)
+        })
+        .collect::<Vec<f32>>()
     }
 
     /// Returns the minumum unweighted preferential attachment score.
@@ -313,6 +321,37 @@ impl Graph {
         })
     }
 
+    /// Returns the Neighbours intersection size for the two given nodes from the given node IDs.
+    ///
+    /// # Arguments
+    /// * `source_node_id`: NodeT - Node ID of the first node.
+    /// * `destination_node_id`: NodeT - Node ID of the second node.
+    ///
+    /// # References
+    /// [D. Liben-Nowell, J. Kleinberg.
+    /// The Link Prediction Problem for Social Networks (2004).](http://www.cs.cornell.edu/home/kleinber/link-pred.pdf)
+    ///
+    /// # Example
+    ///```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
+    /// println!("The Neighbours intersection size between node 1 and node 2 is {}", unsafe{ graph.get_unchecked_neighbours_intersection_size_from_node_ids(1, 2) });
+    /// ```
+    ///
+    /// # Safety
+    /// If either of the provided one and two node IDs are higher than the
+    /// number of nodes in the graph.
+    pub unsafe fn get_unchecked_neighbours_intersection_size_from_node_ids(
+        &self,
+        source_node_id: NodeT,
+        destination_node_id: NodeT,
+    ) -> f32 {
+        self.iter_unchecked_neighbour_node_ids_intersection_from_source_node_ids(
+            source_node_id,
+            destination_node_id,
+        )
+        .count() as f32
+    }
+
     /// Returns the Jaccard index for the two given nodes from the given node IDs.
     ///
     /// # Arguments
@@ -344,16 +383,13 @@ impl Graph {
                 destination_node_id,
             )
             .count() as f32;
-        let intersection = self
-            .iter_unchecked_neighbour_node_ids_intersection_from_source_node_ids(
-                source_node_id,
-                destination_node_id,
-            )
-            .count() as f32;
         if union.is_zero() {
             0.0
         } else {
-            intersection / union
+            self.get_unchecked_neighbours_intersection_size_from_node_ids(
+                source_node_id,
+                destination_node_id,
+            ) / union
         }
     }
 

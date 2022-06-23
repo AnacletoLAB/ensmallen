@@ -301,6 +301,30 @@ impl ShortestPathsResultBFS {
         .to_string())
     }
 
+    /// Return Shared Ancestors number.
+    ///
+    /// # Arguments
+    /// * `first_node_id`: NodeT - The first node for which to compute the predecessors Jaccard index.
+    /// * `second_node_id`: NodeT - The second node for which to compute the predecessors Jaccard index.
+    ///
+    /// # Raises
+    /// * If the given node IDs do not exist in the graph.
+    ///
+    /// # Returns
+    /// Ancestors Jaccard Index.
+    pub fn get_shared_ancestors_size(
+        &self,
+        first_node_id: NodeT,
+        second_node_id: NodeT,
+    ) -> Result<f32> {
+        Ok(self.get_predecessors_from_node_id(first_node_id)?
+            .iter()
+            .rev()
+            .zip(self.get_predecessors_from_node_id(second_node_id)?.iter().rev())
+            .take_while(|(a, b)| a == b)
+            .count() as f32)
+    }
+    
     /// Return Ancestors Jaccard Index.
     ///
     /// # Arguments
@@ -317,27 +341,23 @@ impl ShortestPathsResultBFS {
         first_node_id: NodeT,
         second_node_id: NodeT,
     ) -> Result<f32> {
-        let mut first_node_predecessors = self.get_predecessors_from_node_id(first_node_id)?;
-        first_node_predecessors.sort_unstable();
-        let mut second_node_predecessors = self.get_predecessors_from_node_id(second_node_id)?;
-        second_node_predecessors.sort_unstable();
+        let first_node_predecessors = self.get_predecessors_from_node_id(first_node_id)?;
+        let second_node_predecessors = self.get_predecessors_from_node_id(second_node_id)?;
 
-        let union = iter_set::union(
-            first_node_predecessors.iter(),
-            second_node_predecessors.iter(),
-        )
-        .count() as f32;
+        let intersection_size = first_node_predecessors
+            .iter()
+            .rev()
+            .zip(second_node_predecessors.iter().rev())
+            .take_while(|(a, b)| a == b)
+            .count();
 
-        let intersection = iter_set::intersection(
-            first_node_predecessors.iter(),
-            second_node_predecessors.iter(),
-        )
-        .count() as f32;
+        let union_size =
+            first_node_predecessors.len() + second_node_predecessors.len() - intersection_size * 2;
 
-        Ok(if union.is_zero() {
+        Ok(if union_size.is_zero() {
             0.0
         } else {
-            intersection / union
+            intersection_size as f32 / union_size as f32
         })
     }
 

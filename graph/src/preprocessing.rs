@@ -439,6 +439,41 @@ impl Graph {
     }
 
     #[manual_binding]
+    /// Populate the provided three slices with source, destination and neighbours intersection size.
+    ///
+    /// # Arguments
+    /// * `random_state`: u64 - Random state of the batch to generate.
+    /// * `sources`: &mut [NodeT] - Slice where to write the sampled source node IDs.
+    /// * `destinations`: &mut [NodeT] - Slice where to write the sampled destination node IDs.
+    /// * `scores`: &mut [f32] - Slice where to write the computed neighbours intersection size.
+    /// * `negative_samples_rate`: Option<f64> - The rate of negative samples over the total number of samples (the batch size).
+    /// * `support`: Option<&Graph> - Graph to use to compute the edge metrics. When not provided, the current graph (self) is used.
+    ///
+    /// # Raises
+    /// * If the given amount of negative samples is not a positive finite real value.
+    ///
+    pub fn populate_neighbours_intersection_size_mini_batch(
+        &self,
+        random_state: u64,
+        sources: &mut [NodeT],
+        destinations: &mut [NodeT],
+        scores: &mut [f32],
+        negative_samples_rate: Option<f64>,
+        support: Option<&Graph>,
+    ) -> Result<()> {
+        let support = support.unwrap_or(&self);
+
+        self.populate_edge_score_mini_batch(
+            random_state,
+            sources,
+            destinations,
+            scores,
+            negative_samples_rate,
+            |src, dst| unsafe { support.get_unchecked_neighbours_intersection_size_from_node_ids(src, dst) },
+        )
+    }
+
+    #[manual_binding]
     /// Populate the provided three slices with source, destination and jaccard scores.
     ///
     /// # Arguments
@@ -509,6 +544,39 @@ impl Graph {
     }
 
     #[manual_binding]
+    /// Populate the provided three slices with source, destination and shared ancestors size.
+    ///
+    /// # Arguments
+    /// * `random_state`: u64 - Random state of the batch to generate.
+    /// * `sources`: &mut [NodeT] - Slice where to write the sampled source node IDs.
+    /// * `destinations`: &mut [NodeT] - Slice where to write the sampled destination node IDs.
+    /// * `scores`: &mut [f32] - Slice where to write the computed shared ancestors size.
+    /// * `bfs`: &ShortestPathsResultBFS - The BFS object to use for the ancestors.
+    /// * `negative_samples_rate`: Option<f64> - The rate of negative samples over the total number of samples (the batch size).
+    ///
+    /// # Raises
+    /// * If the given amount of negative samples is not a positive finite real value.
+    ///
+    pub fn populate_shared_ancestors_size_mini_batch(
+        &self,
+        random_state: u64,
+        sources: &mut [NodeT],
+        destinations: &mut [NodeT],
+        scores: &mut [f32],
+        negative_samples_rate: Option<f64>,
+        bfs: &ShortestPathsResultBFS,
+    ) -> Result<()> {
+        self.populate_edge_score_mini_batch(
+            random_state,
+            sources,
+            destinations,
+            scores,
+            negative_samples_rate,
+            |src, dst| bfs.get_shared_ancestors_size(src, dst).unwrap(),
+        )
+    }
+
+    #[manual_binding]
     /// Populate the provided three slices with source, destination and ancestors Jaccard scores.
     ///
     /// # Arguments
@@ -528,8 +596,8 @@ impl Graph {
         sources: &mut [NodeT],
         destinations: &mut [NodeT],
         scores: &mut [f32],
-        bfs: &ShortestPathsResultBFS,
         negative_samples_rate: Option<f64>,
+        bfs: &ShortestPathsResultBFS,
     ) -> Result<()> {
         self.populate_edge_score_mini_batch(
             random_state,
