@@ -22607,6 +22607,37 @@ impl ShortestPathsResultBFS {
 
     #[automatically_generated_binding]
     #[text_signature = "($self, source_node_id)"]
+    /// Return list of successors of a given node.
+    ///
+    /// Parameters
+    /// ----------
+    /// source_node_id: int
+    ///     The node for which to return the successors.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the given node ID does not exist in the graph.
+    ///
+    pub fn get_successors_from_node_id(
+        &self,
+        source_node_id: NodeT,
+    ) -> PyResult<Py<PyArray1<NodeT>>> {
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(
+                gil,
+                pe!(self
+                    .inner
+                    .get_successors_from_node_id(source_node_id.into()))?,
+                NodeT
+            )
+        })
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self, source_node_id)"]
     /// Return list of predecessors of a given node.
     ///
     /// Parameters
@@ -22725,6 +22756,7 @@ pub const SHORTESTPATHSRESULTBFS_METHODS_NAMES: &[&str] = &[
     "get_most_distant_node",
     "get_number_of_shortest_paths",
     "get_number_of_shortest_paths_from_node_id",
+    "get_successors_from_node_id",
     "get_predecessors_from_node_id",
     "get_shared_ancestors_size",
     "get_ancestors_jaccard_index",
@@ -22754,6 +22786,7 @@ pub const SHORTESTPATHSRESULTBFS_TERMS: &[&str] = &[
     "number",
     "of",
     "paths",
+    "successors",
     "predecessors",
     "shared",
     "ancestors",
@@ -22765,102 +22798,109 @@ pub const SHORTESTPATHSRESULTBFS_TERMS: &[&str] = &[
 
 pub const SHORTESTPATHSRESULTBFS_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
     &[
-        ("has", 0.6776815),
-        ("id", 0.3149997),
-        ("node", 0.22842309),
-        ("path", 0.44116682),
-        ("to", 0.5350897),
+        ("has", 0.6958796),
+        ("id", 0.2852428),
+        ("node", 0.21011747),
+        ("path", 0.4586001),
+        ("to", 0.55282664),
     ],
     &[
-        ("distance", 0.6776815),
-        ("from", 0.37101492),
-        ("get", 0.025785083),
-        ("id", 0.3149997),
-        ("node", 0.22842309),
+        ("distance", 0.6958796),
+        ("from", 0.33202505),
+        ("get", 0.024366887),
+        ("id", 0.2852428),
+        ("node", 0.21011747),
     ],
     &[
-        ("from", 0.37101492),
-        ("get", 0.025785083),
-        ("id", 0.3149997),
-        ("node", 0.22842309),
-        ("parent", 0.6776815),
+        ("from", 0.33202505),
+        ("get", 0.024366887),
+        ("id", 0.2852428),
+        ("node", 0.21011747),
+        ("parent", 0.6958796),
     ],
     &[
-        ("get", 0.0148568265),
-        ("kth", 0.30830753),
-        ("on", 0.30830753),
-        ("path", 0.25419113),
-        ("point", 0.21377106),
-        ("shortest", 0.21377106),
-        ("unchecked", 0.39046595),
+        ("get", 0.014045565),
+        ("kth", 0.31866044),
+        ("on", 0.31866044),
+        ("path", 0.26434636),
+        ("point", 0.22377864),
+        ("shortest", 0.22377864),
+        ("unchecked", 0.40111902),
     ],
     &[
-        ("get", 0.01923361),
-        ("kth", 0.39913413),
-        ("on", 0.39913413),
-        ("path", 0.3290752),
-        ("point", 0.27674747),
-        ("shortest", 0.27674747),
+        ("get", 0.01818011),
+        ("kth", 0.4124634),
+        ("on", 0.4124634),
+        ("path", 0.34216106),
+        ("point", 0.28965157),
+        ("shortest", 0.28965157),
     ],
     &[
-        ("get", 0.053528782),
-        ("median", 1.1108243),
-        ("point", 0.7702119),
+        ("get", 0.05054337),
+        ("median", 1.1467087),
+        ("point", 0.8052739),
     ],
     &[
-        ("distant", 0.30830753),
-        ("get", 0.0148568265),
-        ("median", 0.30830753),
-        ("most", 0.30830753),
-        ("node", 0.13161263),
-        ("point", 0.21377106),
-        ("to", 0.30830753),
+        ("distant", 0.31866044),
+        ("get", 0.014045565),
+        ("median", 0.31866044),
+        ("most", 0.31866044),
+        ("node", 0.12111595),
+        ("point", 0.22377864),
+        ("to", 0.31866044),
     ],
-    &[("eccentricity", 2.22895), ("get", 0.08480925)],
+    &[("eccentricity", 2.2853043), ("get", 0.08002211)],
     &[
-        ("distant", 0.7497478),
-        ("get", 0.036129102),
-        ("most", 0.7497478),
-        ("node", 0.32005796),
-    ],
-    &[
-        ("get", 0.025785083),
-        ("number", 0.5350897),
-        ("of", 0.5350897),
-        ("paths", 0.5350897),
-        ("shortest", 0.37101492),
+        ("distant", 0.7743416),
+        ("get", 0.03413058),
+        ("most", 0.7743416),
+        ("node", 0.2943105),
     ],
     &[
-        ("from", 0.16981365),
-        ("get", 0.011801841),
-        ("id", 0.14417545),
-        ("node", 0.10454932),
-        ("number", 0.24491072),
-        ("of", 0.24491072),
-        ("paths", 0.24491072),
-        ("shortest", 0.16981365),
+        ("get", 0.024366887),
+        ("number", 0.55282664),
+        ("of", 0.55282664),
+        ("paths", 0.55282664),
+        ("shortest", 0.38822138),
     ],
     &[
-        ("from", 0.37101492),
-        ("get", 0.025785083),
-        ("id", 0.3149997),
-        ("node", 0.22842309),
-        ("predecessors", 0.5350897),
+        ("from", 0.15205239),
+        ("get", 0.011158927),
+        ("id", 0.13062824),
+        ("node", 0.096224256),
+        ("number", 0.25316948),
+        ("of", 0.25316948),
+        ("paths", 0.25316948),
+        ("shortest", 0.17778775),
     ],
     &[
-        ("ancestors", 0.7497478),
-        ("get", 0.036129102),
-        ("shared", 0.94954216),
-        ("size", 0.94954216),
+        ("from", 0.33202505),
+        ("get", 0.024366887),
+        ("id", 0.2852428),
+        ("node", 0.21011747),
+        ("successors", 0.6958796),
     ],
     &[
-        ("ancestors", 0.7497478),
-        ("get", 0.036129102),
-        ("index", 0.94954216),
-        ("jaccard", 0.94954216),
+        ("from", 0.33202505),
+        ("get", 0.024366887),
+        ("id", 0.2852428),
+        ("node", 0.21011747),
+        ("predecessors", 0.55282664),
     ],
-    &[("distances", 2.22895), ("get", 0.08480925)],
-    &[("get", 0.08480925), ("predecessors", 1.7599539)],
+    &[
+        ("ancestors", 0.7743416),
+        ("get", 0.03413058),
+        ("shared", 0.9747151),
+        ("size", 0.9747151),
+    ],
+    &[
+        ("ancestors", 0.7743416),
+        ("get", 0.03413058),
+        ("index", 0.9747151),
+        ("jaccard", 0.9747151),
+    ],
+    &[("distances", 2.2853043), ("get", 0.08002211)],
+    &[("get", 0.08002211), ("predecessors", 1.8155112)],
 ];
 
 #[pymethods]
