@@ -2570,24 +2570,6 @@ pub fn default_test_suite(graph: &mut Graph, verbose: Option<bool>) -> Result<()
     let _ = _default_test_suite(graph, verbose);
     warn!("Starting default test suite on transformed graphs.");
 
-    test_mut_graph!(graph, get_laplacian_transformed_graph, verbose);
-    test_mut_graph!(
-        graph,
-        get_symmetric_normalized_transformed_graph,
-        verbose,
-        result
-    );
-    test_mut_graph!(
-        graph,
-        get_symmetric_normalized_laplacian_transformed_graph,
-        verbose,
-        result
-    );
-    test_mut_graph!(
-        graph,
-        get_left_normalized_laplacian_transformed_graph,
-        verbose
-    );
     test_mut_graph!(graph, to_upper_triangular, verbose);
     test_mut_graph!(graph, to_lower_triangular, verbose);
     test_mut_graph!(graph, to_main_diagonal, verbose);

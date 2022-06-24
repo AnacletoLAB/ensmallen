@@ -9,18 +9,6 @@ pub struct WeightedSPINE {
     pub inner: cpu_models::WeightedSPINE,
 }
 
-impl From<cpu_models::WeightedSPINE> for WeightedSPINE {
-    fn from(val: cpu_models::WeightedSPINE) -> WeightedSPINE {
-        WeightedSPINE { inner: val }
-    }
-}
-
-impl From<WeightedSPINE> for cpu_models::WeightedSPINE {
-    fn from(val: WeightedSPINE) -> cpu_models::WeightedSPINE {
-        val.inner
-    }
-}
-
 #[pymethods]
 impl WeightedSPINE {
     #[new]

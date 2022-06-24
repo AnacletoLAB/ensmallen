@@ -1,7 +1,7 @@
 use graph::{Graph, ThreadDataRaceAware, WalksParameters};
 use indicatif::{ProgressBar, ProgressStyle};
-use rayon::prelude::*;
 use num_traits::Zero;
+use rayon::prelude::*;
 use vec_rand::{random_f32, splitmix64};
 
 #[derive(Clone, Debug)]
@@ -157,13 +157,15 @@ impl GloVe {
                 .par_iter_log_normalized_cooccurence_matrix(
                     &walk_parameters,
                     self.window_size,
-                    None
+                    None,
                 )?
                 .map(|(src, dst, freq)| unsafe {
-                    let src_embedding = &mut (*shared_node_embedding.get())
-                        [(src as usize) * self.embedding_size..((src as usize) + 1) * self.embedding_size];
-                    let dst_hidden = &mut (*shared_hidden_layer.get())
-                        [(dst as usize) * self.embedding_size..(dst as usize + 1) * self.embedding_size];
+                    let src_embedding = &mut (*shared_node_embedding.get())[(src as usize)
+                        * self.embedding_size
+                        ..((src as usize) + 1) * self.embedding_size];
+                    let dst_hidden = &mut (*shared_hidden_layer.get())[(dst as usize)
+                        * self.embedding_size
+                        ..(dst as usize + 1) * self.embedding_size];
 
                     let dot = src_embedding
                         .iter()
@@ -177,10 +179,8 @@ impl GloVe {
                         return 0.0;
                     }
 
-                    let loss: f32 = (2.0
-                        * freq.powf(self.alpha)
-                        * (dot - freq.ln())
-                        * learning_rate) as f32;
+                    let loss: f32 =
+                        (2.0 * freq.powf(self.alpha) * (dot - freq.ln()) * learning_rate) as f32;
 
                     src_embedding
                         .iter_mut()

@@ -77,7 +77,6 @@ mod holdouts;
 mod isomorphism;
 mod iter_queries;
 mod iters;
-mod laplacian;
 mod modifiers;
 mod operators;
 mod polygons;

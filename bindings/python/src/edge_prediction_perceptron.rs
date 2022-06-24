@@ -30,10 +30,10 @@ impl EdgePredictionPerceptron {
     ///
     /// Parameters
     /// ------------------------
-    /// edge_embeddings: List[str]
-    ///     The embedding methods to use for the provided node features.
-    /// edge_features: List[str]
+    /// edge_features: List[str] = "Jaccard"
     ///     The edge features to compute for each edge.
+    /// edge_embeddings: Optional[List[str]] = None
+    ///     The embedding methods to use for the provided node features.
     /// cooccurrence_iterations: int = 100
     ///     Number of iterations to run when computing the cooccurrence metric.
     ///     By default 100.
@@ -63,8 +63,8 @@ impl EdgePredictionPerceptron {
         pe!(validate_kwargs(
             kwargs,
             &[
-                "edge_embeddings",
                 "edge_features",
+                "edge_embeddings",
                 "cooccurrence_iterations",
                 "cooccurrence_window_size",
                 "number_of_epochs",
@@ -179,6 +179,18 @@ impl EdgePredictionPerceptron {
     /// Returns the bias of the model.
     fn get_bias(&self) -> PyResult<f32> {
         pe!(self.inner.get_bias())
+    }
+
+    #[text_signature = "($self)"]
+    /// Returns the supported edge features.
+    fn get_supported_edge_features(&self) -> Vec<String> {
+        cpu_models::EdgeFeature::get_edge_feature_method_names()
+    }
+
+    #[text_signature = "($self)"]
+    /// Returns the supported edge embeddings.
+    fn get_supported_edge_embeddings(&self) -> Vec<String> {
+        cpu_models::EdgeEmbedding::get_edge_embedding_method_names()
     }
 
     #[args(py_kwargs = "**")]

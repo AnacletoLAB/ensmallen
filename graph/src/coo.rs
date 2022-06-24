@@ -25,6 +25,41 @@ impl Graph {
         })
     }
 
+    /// Returns iterator over edges of a laplacian-like matrix using the weights of the provided functions.
+    ///
+    /// # Arguments
+    /// * `get_edge_weight`: fn(&Graph, NodeT, NodeT) -> WeightT - The closure providing the value for the normal edge weight.
+    /// * `get_selfloop_edge_weight`: fn(&Graph, NodeT) -> WeightT - The closure providing the value for the normal selfloop weight.
+    fn par_iter_laplacian_like_coo_matrix(
+        &self,
+        get_edge_weight: fn(&Graph, NodeT, NodeT) -> WeightT,
+        get_selfloop_edge_weight: fn(&Graph, NodeT) -> WeightT,
+    ) -> impl ParallelIterator<Item = (NodeT, NodeT, WeightT)> + '_ {
+        self.par_iter_directed_edge_node_ids()
+            .map(move |(_, src, dst)| {
+                (
+                    src,
+                    dst,
+                    if src == dst {
+                        get_selfloop_edge_weight(&self, src)
+                    } else {
+                        get_edge_weight(&self, src, dst)
+                    },
+                )
+            })
+            .chain(
+                self.par_iter_node_ids()
+                    .filter(move |&node_id| !self.has_selfloop_from_node_id(node_id))
+                    .filter_map(move |node_id| {
+                        let weight = get_selfloop_edge_weight(&self, node_id);
+                        if weight.is_zero() {
+                            return None;
+                        }
+                        Some((node_id, node_id, weight))
+                    }),
+            )
+    }
+
     /// Returns weighted graph from provided coo edges iterator.
     ///
     /// # Arguments
@@ -419,5 +454,110 @@ impl Graph {
                 node_ids_of_interest,
             )?),
         )
+    }
+
+    /// Returns unweighted laplacian COO matrix representation of the graph.
+    pub fn par_iter_laplacian_coo_matrix(
+        &self,
+    ) -> impl ParallelIterator<Item = (NodeT, NodeT, WeightT)> + '_ {
+        self.par_iter_laplacian_like_coo_matrix(
+            |_, _, _| -1.0,
+            |graph, node_id| unsafe {
+                graph.get_unchecked_node_degree_from_node_id(node_id) as WeightT
+            },
+        )
+    }
+
+    /// Returns Laplacian coo matrix.
+    pub fn get_laplacian_coo_matrix(&self) -> (Vec<(NodeT, NodeT)>, Vec<WeightT>) {
+        self.par_iter_laplacian_coo_matrix()
+            .map(|(src, dst, weight)| ((src, dst), weight))
+            .unzip()
+    }
+
+    /// Returns Laplacian weighted graph.
+    pub fn get_laplacian_graph(&self) -> Graph {
+        self.get_graph_from_coo_iterator(self.par_iter_laplacian_coo_matrix())
+    }
+
+    /// Returns unweighted left normalized laplacian COO matrix representation of the graph.
+    pub fn par_iter_left_normalized_laplacian_coo_matrix(
+        &self,
+    ) -> impl ParallelIterator<Item = (NodeT, NodeT, WeightT)> + '_ {
+        self.par_iter_laplacian_like_coo_matrix(
+            |graph, src, _| {
+                -1.0 / unsafe { graph.get_unchecked_node_degree_from_node_id(src) as WeightT }
+            },
+            |_, _| 1.0,
+        )
+    }
+
+    /// Returns left normalized Laplacian coo matrix.
+    pub fn get_left_normalized_laplacian_coo_matrix(&self) -> (Vec<(NodeT, NodeT)>, Vec<WeightT>) {
+        self.par_iter_left_normalized_laplacian_coo_matrix()
+            .map(|(src, dst, weight)| ((src, dst), weight))
+            .unzip()
+    }
+
+    /// Returns left normalized Laplacian weighted graph.
+    pub fn get_left_normalized_laplacian_graph(&self) -> Graph {
+        self.get_graph_from_coo_iterator(self.par_iter_left_normalized_laplacian_coo_matrix())
+    }
+
+    /// Returns unweighted right normalized laplacian COO matrix representation of the graph.
+    pub fn par_iter_right_normalized_laplacian_coo_matrix(
+        &self,
+    ) -> impl ParallelIterator<Item = (NodeT, NodeT, WeightT)> + '_ {
+        self.par_iter_laplacian_like_coo_matrix(
+            |graph, _, dst| {
+                -1.0 / (unsafe {
+                    graph.get_unchecked_node_degree_from_node_id(dst) as WeightT + 1.0
+                })
+            },
+            |_, _| 1.0,
+        )
+    }
+
+    /// Returns right normalized Laplacian coo matrix.
+    pub fn get_right_normalized_laplacian_coo_matrix(&self) -> (Vec<(NodeT, NodeT)>, Vec<WeightT>) {
+        self.par_iter_right_normalized_laplacian_coo_matrix()
+            .map(|(src, dst, weight)| ((src, dst), weight))
+            .unzip()
+    }
+
+    /// Returns right normalized Laplacian weighted graph.
+    pub fn get_right_normalized_laplacian_graph(&self) -> Graph {
+        self.get_graph_from_coo_iterator(self.par_iter_right_normalized_laplacian_coo_matrix())
+    }
+
+    /// Returns unweighted symmetric normalized laplacian COO matrix representation of the graph.
+    pub fn par_iter_symmetric_normalized_laplacian_coo_matrix(
+        &self,
+    ) -> impl ParallelIterator<Item = (NodeT, NodeT, WeightT)> + '_ {
+        self.par_iter_laplacian_like_coo_matrix(
+            |graph, src, dst| unsafe {
+                -1.0 / {
+                    ((graph.get_unchecked_node_degree_from_node_id(src)
+                        * graph.get_unchecked_node_degree_from_node_id(dst))
+                        as f64)
+                        .sqrt() as WeightT
+                }
+            },
+            |_, _| 1.0,
+        )
+    }
+
+    /// Returns symmetric normalized Laplacian coo matrix.
+    pub fn get_symmetric_normalized_laplacian_coo_matrix(
+        &self,
+    ) -> (Vec<(NodeT, NodeT)>, Vec<WeightT>) {
+        self.par_iter_symmetric_normalized_laplacian_coo_matrix()
+            .map(|(src, dst, weight)| ((src, dst), weight))
+            .unzip()
+    }
+
+    /// Returns symmetric normalized Laplacian weighted graph.
+    pub fn get_symmetric_normalized_laplacian_graph(&self) -> Graph {
+        self.get_graph_from_coo_iterator(self.par_iter_symmetric_normalized_laplacian_coo_matrix())
     }
 }

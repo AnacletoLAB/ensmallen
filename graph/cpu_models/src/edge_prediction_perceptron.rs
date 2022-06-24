@@ -1,3 +1,4 @@
+use crate::must_not_be_zero;
 use express_measures::{
     absolute_distance, cosine_similarity_sequential_unchecked, dot_product_sequential_unchecked,
     euclidean_distance_sequential_unchecked, ThreadFloat,
@@ -336,23 +337,6 @@ impl EdgeFeature {
     ) -> Vec<f32> {
         self.get_method()(model, support, src, dst, random_state)
     }
-}
-
-fn must_not_be_zero<F>(value: Option<F>, default: F, variable_name: &str) -> Result<F, String>
-where
-    F: Zero,
-{
-    let value = value.unwrap_or(default);
-    if value.is_zero() {
-        return Err(format!(
-            concat!(
-                "The provided {variable_name} is zero. ",
-                "The {variable_name} should be strictly greater than zero."
-            ),
-            variable_name = variable_name
-        ));
-    }
-    Ok(value)
 }
 
 #[derive(Clone, Debug)]
