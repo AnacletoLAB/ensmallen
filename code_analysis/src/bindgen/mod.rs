@@ -174,6 +174,12 @@ impl From<{struct_name}> for graph::{struct_name} {{
     }}
 }}
 
+impl<'a> From<&'a {struct_name}> for &'a graph::{struct_name} {{
+    fn from(val: &'a {struct_name}) -> &'a graph::{struct_name} {{
+        &val.inner
+    }}
+}}
+
 #[pymethods]
 impl {struct_name} {{
 {methods}
@@ -496,7 +502,7 @@ pub fn gen_bindings(to_parse_path: &str, path: &str, init_path: &str) {
 #[allow(unused_variables)]    
 use super::*;
 use pyo3::{{wrap_pyfunction, wrap_pymodule}};
-use rayon::iter::{{IndexedParallelIterator, IntoParallelRefIterator, ParallelIterator}};
+use rayon::iter::*;
 use pyo3::class::basic::PyObjectProtocol;
 use std::hash::{{Hash, Hasher}};
 use std::collections::hash_map::DefaultHasher;

@@ -822,10 +822,6 @@ impl Graph {
                     ),
                 };
 
-                if let Some(dense_node_mapping) = &parameters.dense_node_mapping {
-                    walk_buffer.iter_mut()
-                        .for_each(|node| *node = *dense_node_mapping.get(node).unwrap());
-                }
                 walk_buffer
             });
 
@@ -881,10 +877,6 @@ impl Graph {
                     ),
                 };
 
-                if let Some(dense_node_mapping) = &parameters.dense_node_mapping {
-                    walk_buffer.iter_mut()
-                        .for_each(|node| *node = *dense_node_mapping.get(node).unwrap());
-                }
                 walk_buffer
             });
 
@@ -1046,7 +1038,7 @@ impl Graph {
     ///
     /// # Safety
     /// If a non-existing node ID is provided, this method may cause an out of bound.
-    pub(crate) unsafe fn iter_uniform_walk(
+    pub unsafe fn iter_uniform_walk(
         &self,
         node: NodeT,
         random_state: u64,

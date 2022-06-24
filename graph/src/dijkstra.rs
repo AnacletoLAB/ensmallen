@@ -293,12 +293,112 @@ impl ShortestPathsResultBFS {
                 .collect::<Vec<NodeT>>());
         }
         Err(concat!(
-            "The predecessors were computed (as it was requested) ",
+            "The predecessors were not computed (as it was requested) ",
             "when creating this breath shortest paths object.\n",
-            "It is not possible to compute the number of shortest paths from the current ",
+            "It is not possible to compute the successors from the current ",
             "root node passing to the given node ID when predecessors were not computed."
         )
         .to_string())
+    }
+
+    /// Return list of predecessors of a given node.
+    ///
+    /// # Arguments
+    /// * `source_node_id`: NodeT - The node for which to return the predecessors.
+    ///
+    /// # Raises
+    /// * If the given node ID does not exist in the graph.
+    ///
+    /// # Returns
+    /// List of predecessors of the given node.
+    pub fn get_predecessors_from_node_id(&self, source_node_id: NodeT) -> Result<Vec<NodeT>> {
+        self.validate_node_id(source_node_id)?;
+        if let Some(predecessors) = self.predecessors.as_ref() {
+            // If the node is not reacheable in the
+            // considered shortest paths, we can stop.
+            if predecessors[source_node_id as usize] == NODE_NOT_PRESENT {
+                return Ok(vec![source_node_id]);
+            }
+
+            let mut node_predecessors = vec![source_node_id];
+
+            let mut node_id = source_node_id;
+            while predecessors[node_id as usize] != node_id {
+                // We retrieve the node predecessor
+                // and climb up the predecessors ladder.
+                node_id = predecessors[node_id as usize];
+                node_predecessors.push(node_id);
+            }
+
+            return Ok(node_predecessors);
+        }
+        Err(concat!(
+            "The predecessors were not computed (as it was requested) ",
+            "when creating this breath shortest paths object.\n",
+            "It is not possible to compute the predecessors from the current ",
+            "root node passing to the given node ID when predecessors were not computed."
+        )
+        .to_string())
+    }
+
+    /// Return Shared Ancestors number.
+    ///
+    /// # Arguments
+    /// * `first_node_id`: NodeT - The first node for which to compute the predecessors Jaccard index.
+    /// * `second_node_id`: NodeT - The second node for which to compute the predecessors Jaccard index.
+    ///
+    /// # Raises
+    /// * If the given node IDs do not exist in the graph.
+    ///
+    /// # Returns
+    /// Ancestors Jaccard Index.
+    pub fn get_shared_ancestors_size(
+        &self,
+        first_node_id: NodeT,
+        second_node_id: NodeT,
+    ) -> Result<f32> {
+        Ok(self.get_predecessors_from_node_id(first_node_id)?
+            .iter()
+            .rev()
+            .zip(self.get_predecessors_from_node_id(second_node_id)?.iter().rev())
+            .take_while(|(a, b)| a == b)
+            .count() as f32)
+    }
+    
+    /// Return Ancestors Jaccard Index.
+    ///
+    /// # Arguments
+    /// * `first_node_id`: NodeT - The first node for which to compute the predecessors Jaccard index.
+    /// * `second_node_id`: NodeT - The second node for which to compute the predecessors Jaccard index.
+    ///
+    /// # Raises
+    /// * If the given node IDs do not exist in the graph.
+    ///
+    /// # Returns
+    /// Ancestors Jaccard Index.
+    pub fn get_ancestors_jaccard_index(
+        &self,
+        first_node_id: NodeT,
+        second_node_id: NodeT,
+    ) -> Result<f32> {
+        let first_node_predecessors = self.get_predecessors_from_node_id(first_node_id)?;
+        let second_node_predecessors = self.get_predecessors_from_node_id(second_node_id)?;
+
+        let intersection_size = first_node_predecessors
+            .iter()
+            .rev()
+            .zip(second_node_predecessors.iter().rev())
+            .take_while(|(a, b)| a == b)
+            .count();
+
+        let union_size =
+            first_node_predecessors.len() + second_node_predecessors.len() - intersection_size * 2;
+
+        Ok(if union_size.is_zero() {
+            0.0
+        } else {
+            intersection_size as f32 / union_size as f32
+        })
     }
 
     pub fn get_distances(&self) -> Result<Vec<NodeT>> {

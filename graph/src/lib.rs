@@ -53,6 +53,9 @@ pub use self::getters_boolean::*;
 mod dijkstra;
 pub use self::dijkstra::*;
 
+mod coo;
+pub use self::coo::*;
+
 mod constructors;
 pub use constructors::*;
 
@@ -74,7 +77,6 @@ mod holdouts;
 mod isomorphism;
 mod iter_queries;
 mod iters;
-mod laplacian;
 mod modifiers;
 mod operators;
 mod polygons;

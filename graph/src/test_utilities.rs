@@ -192,16 +192,15 @@ pub fn load_cora() -> Graph {
 }
 
 /// Return WalksParameters to execute a first order walk.
-pub fn first_order_walker(graph: &Graph) -> Result<WalksParameters> {
+pub fn first_order_walker() -> Result<WalksParameters> {
     Ok(WalksParameters::new(8)?
         .set_iterations(Some(1))?
         .set_random_state(Some(43))
-        .set_dense_node_mapping(Some(graph.get_dense_nodes_mapping())))
+    )
 }
 
 /// Return WalksParameters to execute a second order walk.
 pub fn second_order_walker(
-    graph: &Graph,
     return_weight: WeightT,
     explore_weight: WeightT,
 ) -> Result<WalksParameters> {
@@ -212,7 +211,6 @@ pub fn second_order_walker(
         .set_max_neighbours(Some(3))?
         .set_change_edge_type_weight(Some(2.0))?
         .set_change_node_type_weight(Some(2.0))?
-        .set_dense_node_mapping(Some(graph.get_dense_nodes_mapping()))
         .set_random_state(Some(43)))
 }
 
@@ -1413,9 +1411,9 @@ pub fn test_sorting(graph: &mut Graph, _verbose: Option<bool>) -> Result<()> {
 
 pub fn test_random_walks(graph: &mut Graph, _verbose: Option<bool>) -> Result<()> {
     // Testing principal random walk algorithms
-    let walker = first_order_walker(&graph)?;
+    let walker = first_order_walker()?;
     assert_eq!(walker.clone(), walker);
-    let walker2 = second_order_walker(&graph, 2.0, 2.0)?;
+    let walker2 = second_order_walker(2.0, 2.0)?;
     assert_eq!(walker2.clone(), walker2);
 
     if !graph.directed {
@@ -1450,10 +1448,10 @@ pub fn test_random_walks(graph: &mut Graph, _verbose: Option<bool>) -> Result<()
 
             assert_eq!(
                 graph
-                    .par_iter_random_walks(1, &second_order_walker(&graph, 2.0, 2.0)?)
+                    .par_iter_random_walks(1, &second_order_walker(2.0, 2.0)?)
                     .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
                 graph
-                    .par_iter_random_walks(1, &second_order_walker(&graph, 2.0, 2.0)?)
+                    .par_iter_random_walks(1, &second_order_walker(2.0, 2.0)?)
                     .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
                 "Walks of second order are not reproducible!"
             );
@@ -1470,30 +1468,30 @@ pub fn test_random_walks(graph: &mut Graph, _verbose: Option<bool>) -> Result<()
 
             assert_eq!(
                 graph
-                    .par_iter_complete_walks(&second_order_walker(&graph, 2.0, 2.0)?)
+                    .par_iter_complete_walks(&second_order_walker(2.0, 2.0)?)
                     .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
                 graph
-                    .par_iter_complete_walks(&second_order_walker(&graph, 2.0, 2.0)?)
-                    .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
-                "Complete second order walks are not reproducible!"
-            );
-
-            assert_eq!(
-                graph
-                    .par_iter_complete_walks(&second_order_walker(&graph, 2.0, 1.0)?)
-                    .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
-                graph
-                    .par_iter_complete_walks(&second_order_walker(&graph, 2.0, 1.0)?)
+                    .par_iter_complete_walks(&second_order_walker(2.0, 2.0)?)
                     .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
                 "Complete second order walks are not reproducible!"
             );
 
             assert_eq!(
                 graph
-                    .par_iter_complete_walks(&second_order_walker(&graph, 1.0, 2.0)?)
+                    .par_iter_complete_walks(&second_order_walker(2.0, 1.0)?)
                     .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
                 graph
-                    .par_iter_complete_walks(&second_order_walker(&graph, 1.0, 2.0)?)
+                    .par_iter_complete_walks(&second_order_walker(2.0, 1.0)?)
+                    .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
+                "Complete second order walks are not reproducible!"
+            );
+
+            assert_eq!(
+                graph
+                    .par_iter_complete_walks(&second_order_walker(1.0, 2.0)?)
+                    .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
+                graph
+                    .par_iter_complete_walks(&second_order_walker(1.0, 2.0)?)
                     .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
                 "Complete second order walks are not reproducible!"
             );
@@ -1896,7 +1894,7 @@ pub fn test_dump_graph(graph: &mut Graph, verbose: Option<bool>) -> Result<()> {
 }
 
 pub fn test_embiggen_preprocessing(graph: &mut Graph, _verbose: Option<bool>) -> Result<()> {
-    let walker = first_order_walker(&graph)?;
+    let walker = first_order_walker()?;
     if !graph.directed {
         let window_size = 3;
         let batch_size = 256;
@@ -1914,21 +1912,6 @@ pub fn test_embiggen_preprocessing(graph: &mut Graph, _verbose: Option<bool>) ->
         }
     }
     if graph.has_edges() {
-        graph
-            .link_prediction_degrees(
-                0,
-                256,
-                Some(true),
-                Some(0.3),
-                Some(false),
-                Some(10),
-                false,
-                None,
-                None,
-                None,
-            )
-            .unwrap()
-            .collect::<Vec<_>>();
         graph
             .par_iter_attributed_edge_prediction_mini_batch(
                 0, 256, false, false, false, None, None, None, None, None, None,
@@ -2587,24 +2570,6 @@ pub fn default_test_suite(graph: &mut Graph, verbose: Option<bool>) -> Result<()
     let _ = _default_test_suite(graph, verbose);
     warn!("Starting default test suite on transformed graphs.");
 
-    test_mut_graph!(graph, get_laplacian_transformed_graph, verbose);
-    test_mut_graph!(
-        graph,
-        get_symmetric_normalized_transformed_graph,
-        verbose,
-        result
-    );
-    test_mut_graph!(
-        graph,
-        get_symmetric_normalized_laplacian_transformed_graph,
-        verbose,
-        result
-    );
-    test_mut_graph!(
-        graph,
-        get_left_normalized_laplacian_transformed_graph,
-        verbose
-    );
     test_mut_graph!(graph, to_upper_triangular, verbose);
     test_mut_graph!(graph, to_lower_triangular, verbose);
     test_mut_graph!(graph, to_main_diagonal, verbose);
