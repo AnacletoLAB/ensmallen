@@ -29,7 +29,7 @@ def test_return_weight_behaviour_cora():
         total=len(return_weights)
     ):
         walks = graph.random_walks(
-            quantity=graph.get_nodes_number(),
+            quantity=graph.get_number_of_nodes(),
             walk_length=1000,
             return_weight=return_weight,
             random_state=seed

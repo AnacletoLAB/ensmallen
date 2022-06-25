@@ -252,6 +252,6 @@ class WikipediaAutomaticallyRetrievedGraph(AutomaticallyRetrievedGraph):
             "directed": self._directed,
             "name": self._name,
         })
-        if self._auto_enable_tradeoffs and graph.get_unique_edges_number() < 50e6:
+        if self._auto_enable_tradeoffs and graph.get_number_of_unique_edges() < 50e6:
             graph.enable()
         return graph

@@ -149,7 +149,7 @@ pub fn convert_node_list_node_types_to_numeric(
         .set_default_node_type(default_node_type.clone())
         .set_numeric_node_ids(original_numeric_node_ids)
         .set_numeric_node_type_ids(original_node_list_numeric_node_type_ids)?
-        .set_nodes_number(nodes_number)
+        .set_number_of_nodes(nodes_number)
         .set_parallel(Some(false))?;
 
     let has_node_types = original_node_list_node_types_column_number.is_some()

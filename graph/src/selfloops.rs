@@ -33,8 +33,8 @@ impl Graph {
             .to_string());
         }
         let weight = weight.unwrap_or(WeightT::NAN);
-        let total_edges_number = self.get_number_of_directed_edges() - self.get_selfloops_number()
-            + self.get_nodes_number() as EdgeT;
+        let total_edges_number = self.get_number_of_directed_edges() - self.get_number_of_selfloops()
+            + self.get_number_of_nodes() as EdgeT;
 
         build_graph_from_integers(
             Some(

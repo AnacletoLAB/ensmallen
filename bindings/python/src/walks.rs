@@ -173,7 +173,7 @@ impl Graph {
             t: PyArray2::new(
                 py.python(),
                 [
-                    self.inner.get_unique_source_nodes_number() as usize
+                    self.inner.get_number_of_unique_source_nodes() as usize
                         * parameters.get_iterations() as usize,
                     walk_length as usize,
                 ],

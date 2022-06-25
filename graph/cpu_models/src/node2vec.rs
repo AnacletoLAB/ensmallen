@@ -135,7 +135,7 @@ where
     W: WalkTransformer,
 {
     fn get_embedding_sizes(&self, graph: &graph::Graph) -> Vec<(usize, usize)> {
-        vec![(graph.get_nodes_number() as usize, self.embedding_size)]
+        vec![(graph.get_number_of_nodes() as usize, self.embedding_size)]
     }
 
     fn get_model_name(&self) -> String {
@@ -150,7 +150,7 @@ where
         if !graph.has_nodes() {
             return Err("The provided graph does not have any node.".to_string());
         }
-        let nodes_number = graph.get_nodes_number();
+        let nodes_number = graph.get_number_of_nodes();
         let expected_embedding_len = self.embedding_size * nodes_number as usize;
 
         if embedding[0].len() != expected_embedding_len {

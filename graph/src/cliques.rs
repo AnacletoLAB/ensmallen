@@ -153,7 +153,7 @@ impl Graph {
         // Whether to show the loading bar while computing cliques.
         let verbose = verbose.unwrap_or(true);
         // We create a vector with the initial node degrees of the graph, wrapped into atomic.
-        let mut node_degrees: Vec<AtomicU32> = Vec::with_capacity(self.get_nodes_number() as usize);
+        let mut node_degrees: Vec<AtomicU32> = Vec::with_capacity(self.get_number_of_nodes() as usize);
         self.par_iter_node_degrees()
             .map(|degree| AtomicU32::new(degree))
             .collect_into_vec(&mut node_degrees);
@@ -199,14 +199,14 @@ impl Graph {
             })
             .collect::<Vec<NodeT>>();
         // Compute a small report.
-        let removed_nodes_number = self.get_nodes_number() as usize - node_ids.len();
+        let removed_nodes_number = self.get_number_of_nodes() as usize - node_ids.len();
         info!(
             concat!(
                 "The preliminary filtering has removed ",
                 "{removed_nodes_number} nodes ({percentage:.2})."
             ),
             removed_nodes_number = to_human_readable_high_integer(removed_nodes_number),
-            percentage = removed_nodes_number as f64 / self.get_nodes_number() as f64 * 100.0
+            percentage = removed_nodes_number as f64 / self.get_number_of_nodes() as f64 * 100.0
         );
         // Start to iterate over the node degrees vector
         // and in every iteration remove the nodes with degree smaller than
@@ -288,7 +288,7 @@ impl Graph {
                 current_iteration=current_iteration,
                 currently_removed_nodes=to_human_readable_high_integer(currently_removed_nodes),
                 remaining_nodes=to_human_readable_high_integer(node_ids.len()),
-                percentage = node_ids.len() as f64 / self.get_nodes_number() as f64 * 100.0
+                percentage = node_ids.len() as f64 / self.get_number_of_nodes() as f64 * 100.0
             );
             current_iteration += 1;
         }
@@ -499,7 +499,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the current graph is directed.
-    pub fn get_approximated_cliques_number(
+    pub fn get_approximated_number_of_cliques(
         &self,
         minimum_degree: Option<NodeT>,
         minimum_clique_size: Option<NodeT>,

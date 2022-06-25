@@ -646,7 +646,7 @@ impl Graph {
                 "The weighted node degrees are not well defined in an empty graph.".to_string(),
             );
         }
-        let k = k.min(self.get_nodes_number());
+        let k = k.min(self.get_number_of_nodes());
         let mut most_central_node_degrees = vec![0.0; k as usize];
         let mut most_central_node_ids = vec![0; k as usize];
         self.iter_node_ids().for_each(|node_id| unsafe {
@@ -1498,7 +1498,7 @@ impl Graph {
             .map_or_else(
                 || self.get_edge_id_from_node_ids(src, dst).ok(),
                 |ets| {
-                    self.iter_edge_ids_from_node_ids(src, dst)
+                    self.iter_multigraph_edge_ids_from_node_ids(src, dst)
                         .ok()
                         .and_then(|mut edge_ids| {
                             edge_ids.find(|edge_id| ets.ids[*edge_id as usize] == edge_type)
@@ -2142,5 +2142,37 @@ impl Graph {
     pub fn get_non_zero_subgraph_node_degrees(&self, subgraph: &Graph) -> Result<Vec<NodeT>> {
         self.par_iter_non_zero_subgraph_node_degrees(subgraph)
             .map(|iter| iter.collect())
+    }
+
+    /// Returns edge IDs of multigraph edge ids with same source and destination nodes and different edge type.
+    ///
+    /// # Arguments
+    /// * `src`: NodeT - Source node id of the edge.
+    /// * `dst`: NodeT -  Destination node id of the edge.
+    ///
+    pub fn get_multigraph_edge_ids_from_node_ids(
+        &self,
+        src: NodeT,
+        dst: NodeT,
+    ) -> Result<Vec<EdgeT>> {
+        Ok(self
+            .iter_multigraph_edge_ids_from_node_ids(src, dst)?
+            .collect())
+    }
+
+    /// Returns number of multigraph edges with same source and destination nodes and different edge type.
+    ///
+    /// # Arguments
+    /// * `src`: NodeT - Source node id of the edge.
+    /// * `dst`: NodeT -  Destination node id of the edge.
+    ///
+    pub fn get_number_of_multigraph_edges_from_node_ids(
+        &self,
+        src: NodeT,
+        dst: NodeT,
+    ) -> Result<usize> {
+        Ok(self
+            .iter_multigraph_edge_ids_from_node_ids(src, dst)?
+            .count())
     }
 }

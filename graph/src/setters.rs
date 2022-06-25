@@ -77,7 +77,7 @@ impl Graph {
         self.must_have_nodes()?;
         let vocabulary = Vocabulary::from_reverse_map(vec![node_type.into()])?;
         let node_types = NodeTypeVocabulary::from_structs(
-            vec![Some(vec![0]); self.get_nodes_number() as usize],
+            vec![Some(vec![0]); self.get_number_of_nodes() as usize],
             vocabulary,
         );
         self.node_types = Arc::new(Some(node_types));

@@ -165,7 +165,7 @@ impl Graph {
         let pb = get_loading_bar(
             verbose,
             "Computing number of triangles",
-            self.get_nodes_number() as usize,
+            self.get_number_of_nodes() as usize,
         );
         // We start iterating over the nodes using rayon to parallelize the procedure.
         let number_of_triangles: EdgeT = self
@@ -247,14 +247,14 @@ impl Graph {
     }
 
     /// Returns total number of triads in the graph without taking into account weights.
-    pub fn get_triads_number(&self) -> EdgeT {
+    pub fn get_number_of_triads(&self) -> EdgeT {
         self.par_iter_node_degrees()
             .map(|degree| (degree as EdgeT) * (degree.saturating_sub(1) as EdgeT))
             .sum()
     }
 
     /// Returns total number of triads in the weighted graph.
-    pub fn get_weighted_triads_number(&self) -> Result<f64> {
+    pub fn get_number_of_weighted_triads(&self) -> Result<f64> {
         Ok(self
             .par_iter_weighted_node_degrees()?
             .map(|degree| {
@@ -274,7 +274,7 @@ impl Graph {
     /// * `verbose`: Option<bool> - Whether to show a loading bar.
     pub fn get_transitivity(&self, low_centrality: Option<usize>, verbose: Option<bool>) -> f64 {
         self.get_number_of_triangles(Some(false), low_centrality, verbose) as f64
-            / self.get_triads_number() as f64
+            / self.get_number_of_triads() as f64
     }
 
     /// Returns number of triangles for all nodes in the graph.
@@ -439,7 +439,7 @@ impl Graph {
         let pb = get_loading_bar(
             verbose,
             "Computing number of triangles per node",
-            self.get_nodes_number() as usize,
+            self.get_number_of_nodes() as usize,
         );
         // We start iterating over the nodes using rayon to parallelize the procedure.
         self.par_iter_node_ids()
@@ -601,6 +601,6 @@ impl Graph {
         low_centrality: Option<usize>,
         verbose: Option<bool>,
     ) -> f64 {
-        self.get_clustering_coefficient(low_centrality, verbose) / self.get_nodes_number() as f64
+        self.get_clustering_coefficient(low_centrality, verbose) / self.get_number_of_nodes() as f64
     }
 }

@@ -24,11 +24,11 @@ impl Graph {
     /// # Raises
     /// * If the given node ID does not exists in the graph.
     pub fn validate_node_id(&self, node_id: NodeT) -> Result<NodeT> {
-        if node_id >= self.get_nodes_number() {
+        if node_id >= self.get_number_of_nodes() {
             return Err(format!(
                 "The given node id ({}) is higher than the number of nodes within the graph ({}).",
                 node_id,
-                self.get_nodes_number()
+                self.get_number_of_nodes()
             ));
         }
         Ok(node_id)
@@ -151,7 +151,7 @@ impl Graph {
         &self,
         node_type_id: Option<NodeTypeT>,
     ) -> Result<Option<NodeTypeT>> {
-        self.get_node_types_number().and_then(|node_types_number| {
+        self.get_number_of_node_types().and_then(|node_types_number| {
             node_type_id.map_or_else( || if !self.has_unknown_node_types()?{
                 Err(
                     "An unknown node type was given but the graph does not contain unknown node types.".to_string()
@@ -210,7 +210,7 @@ impl Graph {
         &self,
         edge_type_id: Option<EdgeTypeT>,
     ) -> Result<Option<EdgeTypeT>> {
-        self.get_edge_types_number().and_then(|edge_types_number| {
+        self.get_number_of_edge_types().and_then(|edge_types_number| {
             edge_type_id.map_or_else( || if !self.has_unknown_edge_types()?{
                 Err(
                     "An unknown edge type was given but the graph does not contain unknown edge types.".to_string()
@@ -404,8 +404,8 @@ impl Graph {
                     "is all the nodes must have a selfloop. The current ",
                     "graph instance has {} nodes and only {} selfloops."
                 ),
-                self.get_nodes_number(),
-                self.get_unique_selfloops_number()
+                self.get_number_of_nodes(),
+                self.get_number_of_unique_selfloops()
             ));
         }
         Ok(())

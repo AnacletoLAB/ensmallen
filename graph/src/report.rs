@@ -57,10 +57,10 @@ impl Graph {
         // Adding the default metrics
         report.insert("name", (*self.name).clone());
         report.insert("directed", self.is_directed().to_string());
-        report.insert("nodes_number", self.get_nodes_number().to_string());
+        report.insert("nodes_number", self.get_number_of_nodes().to_string());
         report.insert(
             "singleton_nodes_number",
-            self.get_singleton_nodes_number().to_string(),
+            self.get_number_of_singleton_nodes().to_string(),
         );
         if self.has_nodes() {
             report.insert("density", self.get_density().unwrap().to_string());
@@ -81,15 +81,15 @@ impl Graph {
             "directed_edges_number",
             self.get_number_of_directed_edges().to_string(),
         );
-        report.insert("selfloops_number", self.get_selfloops_number().to_string());
+        report.insert("selfloops_number", self.get_number_of_selfloops().to_string());
         report.insert(
             "singleton_nodes_with_selfloops_number",
-            self.get_singleton_nodes_with_selfloops_number().to_string(),
+            self.get_number_of_singleton_nodes_with_selfloops().to_string(),
         );
         report.insert("multigraph", self.is_multigraph().to_string());
         report.insert(
             "parallel_edges_number",
-            self.get_parallel_edges_number().to_string(),
+            self.get_number_of_parallel_edges().to_string(),
         );
         if self.has_edges() {
             report.insert(
@@ -133,15 +133,15 @@ impl Graph {
             );
             report.insert(
                 "node_types_number",
-                self.get_node_types_number().unwrap().to_string(),
+                self.get_number_of_node_types().unwrap().to_string(),
             );
             report.insert(
                 "unknown_node_types_number",
-                self.get_unknown_node_types_number().unwrap().to_string(),
+                self.get_number_of_unknown_node_types().unwrap().to_string(),
             );
             report.insert(
                 "known_node_types_number",
-                self.get_known_node_types_number().unwrap().to_string(),
+                self.get_number_of_known_node_types().unwrap().to_string(),
             );
         }
         report.insert("has_edge_types", self.has_edge_types().to_string());
@@ -152,15 +152,15 @@ impl Graph {
             );
             report.insert(
                 "edge_types_number",
-                self.get_edge_types_number().unwrap().to_string(),
+                self.get_number_of_edge_types().unwrap().to_string(),
             );
             report.insert(
                 "unknown_edge_types_number",
-                self.get_unknown_edge_types_number().unwrap().to_string(),
+                self.get_number_of_unknown_edge_types().unwrap().to_string(),
             );
             report.insert(
                 "known_edge_types_number",
-                self.get_known_edge_types_number().unwrap().to_string(),
+                self.get_number_of_known_edge_types().unwrap().to_string(),
             );
         }
 
@@ -260,11 +260,11 @@ impl Graph {
 
         let first_edges = match self.directed {
             true => self.get_number_of_directed_edges(),
-            false => self.get_undirected_edges_number(),
+            false => self.get_number_of_undirected_edges(),
         };
         let second_edges = match other.directed {
             true => other.get_number_of_directed_edges(),
-            false => other.get_undirected_edges_number(),
+            false => other.get_number_of_undirected_edges(),
         };
         // Building up the report
         Ok(format!(
@@ -279,8 +279,8 @@ impl Graph {
             second_graph=other.get_name(),
             nodes_number=overlapping_nodes_number,
             edges_number=overlapping_edges_number,
-            first_nodes=self.get_nodes_number(),
-            second_nodes=other.get_nodes_number(),
+            first_nodes=self.get_number_of_nodes(),
+            second_nodes=other.get_number_of_nodes(),
             first_edges=first_edges,
             second_edges=second_edges,
             first_components_statement = match second_shared_components_number== second_components_number{
@@ -323,8 +323,8 @@ impl Graph {
                         _ => format!("{} components are", first_merged_components_number)
                     })
                 },
-            first_node_percentage=100.0*(overlapping_nodes_number as f64 / self.get_nodes_number() as f64),
-            second_node_percentage=100.0*(overlapping_nodes_number as f64 / other.get_nodes_number() as f64),
+            first_node_percentage=100.0*(overlapping_nodes_number as f64 / self.get_number_of_nodes() as f64),
+            second_node_percentage=100.0*(overlapping_nodes_number as f64 / other.get_number_of_nodes() as f64),
             first_edge_percentage=100.0*(overlapping_edges_number as f64 / first_edges as f64),
             second_edge_percentage=100.0*(overlapping_edges_number as f64 / second_edges as f64),
         ))
@@ -344,7 +344,7 @@ impl Graph {
 
         partial_reports.push(
             if unsafe { self.is_unchecked_singleton_from_node_id(node_id) } {
-                match self.get_singleton_nodes_number() {
+                match self.get_number_of_singleton_nodes() {
                     1 => format!(
                         concat!("The given node {} is the only singleton node of the graph."),
                         node_name
@@ -357,7 +357,7 @@ impl Graph {
                     }
                 }
             } else if unsafe { self.is_unchecked_singleton_with_selfloops_from_node_id(node_id) } {
-                match self.get_singleton_nodes_with_selfloops_number() {
+                match self.get_number_of_singleton_nodes_with_selfloops() {
                     1 => format!(
                         concat!(
                         "The given node {} is the only singleton node with self-loops in the graph."
@@ -374,7 +374,7 @@ impl Graph {
                     }
                 }
             } else if unsafe { self.is_unchecked_trap_node_from_node_id(node_id) } {
-                match self.get_trap_nodes_number() {
+                match self.get_number_of_trap_nodes() {
                     1 => format!(
                         concat!("The given node {} is the only trap node in the graph."),
                         node_name
@@ -535,7 +535,7 @@ impl Graph {
         local_total: Option<NodeT>,
         local_count: Option<NodeT>,
     ) -> String {
-        let total_nodes = local_total.unwrap_or_else(|| self.get_nodes_number());
+        let total_nodes = local_total.unwrap_or_else(|| self.get_number_of_nodes());
         let number_of_nodes = local_count
             .unwrap_or_else(|| self.get_unchecked_number_of_nodes_from_node_type_id(node_type_id));
         if number_of_nodes > 1 {
@@ -736,7 +736,7 @@ impl Graph {
 
         // Otherwise we compute a descriptor of the avilable nodes.
         let nodes_number = unsafe {
-            match self.get_nodes_number() {
+            match self.get_number_of_nodes() {
                 1 => format!(
                     "a single node called {node_name_description}",
                     node_name_description =
@@ -745,7 +745,7 @@ impl Graph {
                 nodes_number => format!(
                     "{nodes_number}{heterogeneous_nodes} nodes",
                     nodes_number = to_human_readable_high_integer(nodes_number as usize),
-                    heterogeneous_nodes = match self.get_node_types_number() {
+                    heterogeneous_nodes = match self.get_number_of_node_types() {
                         Ok(n) =>
                             if n == 1 {
                                 " homogeneous"
@@ -776,7 +776,7 @@ impl Graph {
 
         // Otherwise we compute a more comprehensive report of the edges.
         let edges_number = unsafe {
-            match self.get_edges_number() {
+            match self.get_number_of_edges() {
                 1 => format!(
                     "a single {edge_description}",
                     edge_description = self.get_unchecked_succinct_edge_description(0)
@@ -784,7 +784,7 @@ impl Graph {
                 edges_number => format!(
                     "{edges_number}{heterogeneous_edges} edges",
                     edges_number = to_human_readable_high_integer(edges_number as usize),
-                    heterogeneous_edges = match self.get_edge_types_number() {
+                    heterogeneous_edges = match self.get_number_of_edge_types() {
                         Ok(n) =>
                             if n == 1 {
                                 " homogeneous"
@@ -804,7 +804,7 @@ impl Graph {
         // some instances. Similarly, if the graph has less than 1M nodes we
         // also compute the connected components as it should be quite immediate.
         let connected_components = if !self.is_directed()
-            && (self.get_nodes_number() < 100e6 as NodeT || self.destinations.is_some())
+            && (self.get_number_of_nodes() < 100e6 as NodeT || self.destinations.is_some())
         {
             format!("{} ", self.get_report_of_connected_components())
         } else {
@@ -877,7 +877,7 @@ impl Graph {
     /// Returns report on the oddities detected within the graph.
     fn get_report_of_connected_components(&self) -> String {
         let (components_number, minimum_component_size, maximum_component_size) =
-            self.get_connected_components_number(None);
+            self.get_number_of_connected_components(None);
         if components_number == 1 {
             return concat!(
                 "The graph is connected, that is, it is composed of a single connected component that includes all nodes and edges."
@@ -888,7 +888,7 @@ impl Graph {
                 "The graph contains {} connected components{}, with the largest one containing {} nodes and the smallest one containing {}.",
             ),
             to_human_readable_high_integer(components_number as usize),
-            match self.get_disconnected_nodes_number() {
+            match self.get_number_of_disconnected_nodes() {
                 0 => "".to_string(),
                 disconnected_nodes_number => format!(
                     " (of which {} are disconnected nodes)",
@@ -952,7 +952,7 @@ impl Graph {
             panic!("The oddity description cannot be empty!");
         }
         let percentage_of_involved_nodes =
-            (number_of_involved_nodes as f64 / self.get_nodes_number() as f64) * 100.0;
+            (number_of_involved_nodes as f64 / self.get_number_of_nodes() as f64) * 100.0;
         let percentage_of_involved_edges =
             (number_of_involved_edges as f64 / self.get_number_of_directed_edges() as f64) * 100.0;
         format!(
@@ -1190,7 +1190,7 @@ impl Graph {
             return Ok(None);
         }
 
-        let number_of_singleton_nodes = self.get_singleton_nodes_number();
+        let number_of_singleton_nodes = self.get_number_of_singleton_nodes();
         let singleton_nodes_description = self.get_report_of_oddity(
             "h4",
             "Singleton node",
@@ -1213,7 +1213,7 @@ impl Graph {
         );
 
         let number_of_singleton_nodes_with_selfloops =
-            self.get_singleton_nodes_with_selfloops_number();
+            self.get_number_of_singleton_nodes_with_selfloops();
         let number_of_edges_involved_in_singleton_with_selfloops = self
             .par_iter_singleton_nodes_with_selfloops_node_ids()
             .map(|node_id| unsafe { self.get_unchecked_node_degree_from_node_id(node_id) as EdgeT })
@@ -1597,7 +1597,7 @@ impl Graph {
                 "than the node name itself. ",
                 "The graph contains {singleton_node_types_number}.</p>"
             ),
-            singleton_node_types_number = match self.get_singleton_node_types_number().unwrap() {
+            singleton_node_types_number = match self.get_number_of_singleton_node_types().unwrap() {
                 1 => {
                     let node_type_name = self
                         .iter_singleton_node_type_names()
@@ -1665,7 +1665,7 @@ impl Graph {
     /// Returns report on the isomorphic node types of the graph.
     unsafe fn get_isomorphic_node_types_report(&self) -> String {
         let threshold = 50_000;
-        let use_approximation = self.get_node_types_number().unwrap() > threshold;
+        let use_approximation = self.get_number_of_node_types().unwrap() > threshold;
         let mut isomorphic_node_types = if use_approximation {
             self.get_approximated_isomorphic_node_type_ids_groups()
                 .unwrap()
@@ -1832,7 +1832,7 @@ impl Graph {
                 "than the fact that the node is in the graph. ",
                 "The graph contains {homogeneous_node_types_number}.</p>"
             ),
-            homogeneous_node_types_number = match self.get_homogeneous_node_types_number().unwrap()
+            homogeneous_node_types_number = match self.get_number_of_homogeneous_node_types().unwrap()
             {
                 1 => format!(
                     "a homogeneous node type, which is {}",
@@ -1899,7 +1899,7 @@ impl Graph {
                 "The graph contains {unknown_node_types_number}, making up {unknown_node_types_percentage:.2} of the nodes.</p>"
             ),
             unknown_node_types_percentage = self.get_unknown_node_types_rate().unwrap() * 100.0,
-            unknown_node_types_number = match self.get_unknown_node_types_number().unwrap() {
+            unknown_node_types_number = match self.get_number_of_unknown_node_types().unwrap() {
                 1 => format!(
                     "a node with unknown node type, which is {}",
                     self.get_unchecked_succinct_node_description(
@@ -2075,7 +2075,7 @@ impl Graph {
                 "than the name of edge itself. ",
                 "The graph contains {singleton_edge_types_number}</p>"
             ),
-            singleton_edge_types_number = match self.get_singleton_edge_types_number().unwrap() {
+            singleton_edge_types_number = match self.get_number_of_singleton_edge_types().unwrap() {
                 1 => format!(
                     "a edge with singleton edge type, which is {}.",
                     get_edge_type_source_html_url_from_edge_type_name(
@@ -2138,7 +2138,7 @@ impl Graph {
                 "The graph contains {unknown_edge_types_number}, making up {unknown_edge_types_percentage:.2} of the edges.</p>"
             ),
             unknown_edge_types_percentage = self.get_unknown_edge_types_rate().unwrap() * 100.0,
-            unknown_edge_types_number = match self.get_unknown_edge_types_number().unwrap() {
+            unknown_edge_types_number = match self.get_number_of_unknown_edge_types().unwrap() {
                 1 => format!(
                     "a edge with unknown edge type, which is {}.",
                     self.get_unchecked_succinct_edge_description(

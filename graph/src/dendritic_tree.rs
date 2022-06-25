@@ -296,7 +296,7 @@ impl Graph {
     /// Returns vector of detected dentritic trees.
     pub fn get_dendritic_trees(&self) -> Result<Vec<DendriticTree>> {
         self.must_be_undirected()?;
-        let nodes_number = self.get_nodes_number() as usize;
+        let nodes_number = self.get_number_of_nodes() as usize;
         let leaf_nodes = ThreadDataRaceAware::new(vec![false; nodes_number]);
 
         // We initialize the initial frontier to the set of nodes with degree one.

@@ -485,7 +485,7 @@ impl NodeFileWriter {
             .to_string());
         }
         self.dump_iterator(
-            Some(graph.get_nodes_number() as usize),
+            Some(graph.get_number_of_nodes() as usize),
             graph.iter_node_names_and_node_type_names().map(
                 |(node_id, node_name, node_type_ids, node_type_names)| {
                     (

@@ -136,7 +136,7 @@ impl GloVe {
             &["epochs", "learning_rate", "learning_rate_decay", "verbose"]
         ))?;
 
-        let rows_number = graph.inner.get_nodes_number() as usize;
+        let rows_number = graph.inner.get_number_of_nodes() as usize;
         let columns_number = self.inner.get_embedding_size();
         let embedding = PyArray2::new(gil.python(), [rows_number, columns_number], false);
 

@@ -360,12 +360,12 @@ impl Graph {
         let mut edges_number = self.get_number_of_directed_edges();
 
         if filter_parallel_edges {
-            edges_number -= self.get_parallel_edges_number();
+            edges_number -= self.get_number_of_parallel_edges();
             if filter_selfloops {
-                edges_number -= self.get_unique_selfloops_number() as EdgeT;
+                edges_number -= self.get_number_of_unique_selfloops() as EdgeT;
             }
         } else if filter_selfloops {
-            edges_number -= self.get_selfloops_number();
+            edges_number -= self.get_number_of_selfloops();
         }
 
         match (has_node_filters, has_edge_filters) {

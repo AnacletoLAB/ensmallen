@@ -95,7 +95,7 @@ macro_rules! impl_spine_embedding {
                     }
                 };
 
-                let rows_number = graph.inner.get_nodes_number() as usize;
+                let rows_number = graph.inner.get_number_of_nodes() as usize;
                 let columns_number = self.inner.get_embedding_size();
                 match dtype {
                     $(

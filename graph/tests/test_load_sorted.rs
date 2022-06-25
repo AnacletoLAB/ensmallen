@@ -16,11 +16,11 @@ fn test_load_sorted_sequential() {
         .set_sorted(Some(true))
         .set_parallel(Some(false))
         .set_csv_is_correct(Some(true))
-        .set_edges_number(Some(3054));
+        .set_number_of_edges(Some(3054));
 
     let nodes_reader = NodeFileReader::new(None)
         .unwrap()
-        .set_nodes_number(Some(242));
+        .set_number_of_nodes(Some(242));
 
     let mut g = Graph::from_file_readers(
         Some(edges_reader),

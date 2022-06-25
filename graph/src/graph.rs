@@ -139,7 +139,7 @@ impl Graph {
             let connected_nodes_number = connected_nodes.count_ones() as NodeT;
             // If there are less connected nodes than the number of nodes
             // in the graph, it means that there must be some singleton or singleton with selfloops.
-            if connected_nodes_number < graph.get_nodes_number() {
+            if connected_nodes_number < graph.get_number_of_nodes() {
                 graph.connected_nodes = Arc::new(Some(connected_nodes));
                 graph.connected_nodes_number = connected_nodes_number;
                 graph.unique_sources = Arc::new(Some(graph.get_unique_sources()));
@@ -150,11 +150,11 @@ impl Graph {
 
     /// Returns Elias-Fano data structure with the source nodes.
     fn get_unique_sources(&self) -> EliasFano {
-        let unique_source_nodes_number = self.get_nodes_number()
-            - self.get_singleton_nodes_number()
-            - self.get_trap_nodes_number();
+        let unique_source_nodes_number = self.get_number_of_nodes()
+            - self.get_number_of_singleton_nodes()
+            - self.get_number_of_trap_nodes();
         let mut elias_fano_unique_sources = EliasFano::new(
-            self.get_nodes_number() as u64,
+            self.get_number_of_nodes() as u64,
             unique_source_nodes_number as usize,
         )
         .unwrap();
@@ -177,7 +177,7 @@ impl Graph {
         may_have_singleton_with_selfloops: bool,
     ) -> BitVec<Lsb0, u8> {
         let connected_nodes = if may_have_singletons && self.is_directed() {
-            let mut connected_nodes = bitvec![Lsb0, AtomicU8; 0; self.get_nodes_number() as usize];
+            let mut connected_nodes = bitvec![Lsb0, AtomicU8; 0; self.get_number_of_nodes() as usize];
             let thread_shared_connected_nodes = ThreadDataRaceAware::new(&mut connected_nodes);
             // If the graph may contain singletons, we need to iterate on all
             // the nodes neighbours in order to find if whether a node is a singleton or
@@ -198,7 +198,7 @@ impl Graph {
             });
             connected_nodes
         } else {
-            let mut connected_nodes = bitvec![Lsb0, AtomicU8; 1; self.get_nodes_number() as usize];
+            let mut connected_nodes = bitvec![Lsb0, AtomicU8; 1; self.get_number_of_nodes() as usize];
             let thread_shared_connected_nodes = ThreadDataRaceAware::new(&mut connected_nodes);
             self.par_iter_node_degrees()
                 .enumerate()

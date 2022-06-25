@@ -48,7 +48,7 @@ impl Graph {
 
     /// Returns vector of unweighted degree centrality for all nodes.
     pub fn get_degree_centrality(&self) -> Result<Vec<f32>> {
-        let mut degree_centralities = vec![0.0; self.get_nodes_number() as usize];
+        let mut degree_centralities = vec![0.0; self.get_number_of_nodes() as usize];
         self.par_iter_degree_centrality()?
             .collect_into_vec(&mut degree_centralities);
         Ok(degree_centralities)
@@ -56,7 +56,7 @@ impl Graph {
 
     /// Returns vector of weighted degree centrality for all nodes.
     pub fn get_weighted_degree_centrality(&self) -> Result<Vec<f32>> {
-        let mut weighted_degree_centralities = vec![0.0; self.get_nodes_number() as usize];
+        let mut weighted_degree_centralities = vec![0.0; self.get_number_of_nodes() as usize];
         self.par_iter_weighted_degree_centrality()?
             .collect_into_vec(&mut weighted_degree_centralities);
         Ok(weighted_degree_centralities)
@@ -144,7 +144,7 @@ impl Graph {
         let pb = get_loading_bar(
             verbose,
             "Computing closeness centrality",
-            self.get_nodes_number() as usize,
+            self.get_number_of_nodes() as usize,
         );
         self.par_iter_node_ids()
             .progress_with(pb)
@@ -193,7 +193,7 @@ impl Graph {
         let pb = get_loading_bar(
             verbose,
             "Computing closeness centrality",
-            self.get_nodes_number() as usize,
+            self.get_number_of_nodes() as usize,
         );
         Ok(self
             .par_iter_node_ids()
@@ -321,7 +321,7 @@ impl Graph {
         let pb = get_loading_bar(
             verbose,
             "Computing harmonic centrality",
-            self.get_nodes_number() as usize,
+            self.get_number_of_nodes() as usize,
         );
         self.par_iter_node_ids()
             .progress_with(pb)
@@ -358,7 +358,7 @@ impl Graph {
         let pb = get_loading_bar(
             verbose,
             "Computing harmonic centrality",
-            self.get_nodes_number() as usize,
+            self.get_number_of_nodes() as usize,
         );
         Ok(self
             .par_iter_node_ids()
@@ -418,7 +418,7 @@ impl Graph {
         }
         let normalize = normalize.unwrap_or(false);
         let verbose = verbose.unwrap_or(true);
-        let nodes_number = self.get_nodes_number() as usize;
+        let nodes_number = self.get_number_of_nodes() as usize;
         let centralities: Vec<AtomicF32> =
             self.iter_node_ids().map(|_| AtomicF32::new(0.0)).collect();
         let factor = if self.is_directed() { 1.0 } else { 2.0 };
@@ -510,7 +510,7 @@ impl Graph {
         }
         let normalize = normalize.unwrap_or(false);
         let verbose = verbose.unwrap_or(true);
-        let nodes_number = self.get_nodes_number() as usize;
+        let nodes_number = self.get_number_of_nodes() as usize;
         let centralities: Vec<AtomicF32> =
             self.iter_node_ids().map(|_| AtomicF32::new(0.0)).collect();
         let factor = if self.is_directed() { 1.0 } else { 2.0 };
@@ -702,7 +702,7 @@ impl Graph {
         let mut number_of_sampled_nodes: f32 = 0.0;
         // The number of the nodes in the graph, which in the paper
         // is referred to as \(n\).
-        let nodes_number = self.get_nodes_number() as f32;
+        let nodes_number = self.get_number_of_nodes() as f32;
         // The random state to use to sample the nodes.
         let mut random_state = random_state.unwrap_or(42);
         let maximum_samples_number = maximum_samples_number.unwrap_or(nodes_number / 20.0);
@@ -892,7 +892,7 @@ impl Graph {
         let mut number_of_sampled_nodes: f32 = 0.0;
         // The number of the nodes in the graph, which in the paper
         // is referred to as \(n\).
-        let nodes_number = self.get_nodes_number() as f32;
+        let nodes_number = self.get_number_of_nodes() as f32;
         let maximum_samples_number = maximum_samples_number.unwrap_or(nodes_number / 20.0);
         // The random state to use to sample the nodes.
         let mut random_state = random_state.unwrap_or(42);
@@ -1051,7 +1051,7 @@ impl Graph {
         tollerance: Option<f32>,
     ) -> Result<Vec<f32>> {
         let maximum_iterations_number = maximum_iterations_number.unwrap_or(1000);
-        let tollerance = tollerance.unwrap_or(1e-6) * self.get_nodes_number() as f32;
+        let tollerance = tollerance.unwrap_or(1e-6) * self.get_number_of_nodes() as f32;
         if tollerance < f32::EPSILON {
             return Err(
                 "The tollerance must be a non-zero positive value bigger than epislon (1e-16)."
@@ -1060,10 +1060,10 @@ impl Graph {
         }
         let mut centralities: Vec<AtomicF32> = self
             .iter_node_ids()
-            .map(|_| AtomicF32::new(1.0 / self.get_nodes_number() as f32))
+            .map(|_| AtomicF32::new(1.0 / self.get_number_of_nodes() as f32))
             .collect();
         let mut last_centralities =
-            vec![1.0 / self.get_nodes_number() as f32; self.get_nodes_number() as usize];
+            vec![1.0 / self.get_number_of_nodes() as f32; self.get_number_of_nodes() as usize];
         for _ in 0..maximum_iterations_number {
             self.par_iter_node_ids().for_each(|src| {
                 unsafe { self.iter_unchecked_neighbour_node_ids_from_source_node_id(src) }
@@ -1115,7 +1115,7 @@ impl Graph {
     ) -> Result<Vec<f32>> {
         self.must_have_positive_edge_weights()?;
         let maximum_iterations_number = maximum_iterations_number.unwrap_or(1000);
-        let tollerance = tollerance.unwrap_or(1e-6) * self.get_nodes_number() as f32;
+        let tollerance = tollerance.unwrap_or(1e-6) * self.get_number_of_nodes() as f32;
         if tollerance < f32::EPSILON {
             return Err(
                 "The tollerance must be a non-zero positive value bigger than epsilon (1e-16)."
@@ -1124,10 +1124,10 @@ impl Graph {
         }
         let mut centralities: Vec<AtomicF32> = self
             .iter_node_ids()
-            .map(|_| AtomicF32::new(1.0 / self.get_nodes_number() as f32))
+            .map(|_| AtomicF32::new(1.0 / self.get_number_of_nodes() as f32))
             .collect();
         let mut last_centralities =
-            vec![1.0 / self.get_nodes_number() as f32; self.get_nodes_number() as usize];
+            vec![1.0 / self.get_number_of_nodes() as f32; self.get_number_of_nodes() as usize];
         for _ in 0..maximum_iterations_number {
             self.par_iter_node_ids().for_each(|src| {
                 // TODO: this can be done in a faster way
