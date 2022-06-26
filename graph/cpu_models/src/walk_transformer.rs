@@ -62,7 +62,7 @@ impl WalkTransformer for WalkletsWalkTransformer {
     where
         T: Copy + Send + Sync + 'a,
     {
-        (0..(self.power + 1)).into_par_iter().map(move |step_size| {
+        (0..self.power).into_par_iter().map(move |step_size| {
             (
                 i * (self.power + 1) + step_size,
                 walk[step_size..]
