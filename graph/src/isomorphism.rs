@@ -418,7 +418,7 @@ impl Graph {
     ///
     /// # Arguments
     /// * `minimum_node_degree`: Option<NodeT> - Minimum node degree for the topological synonims. By default, 5.
-    pub fn get_isomorphic_node_groups_number(&self, minimum_node_degree: Option<NodeT>) -> NodeT {
+    pub fn get_number_of_isomorphic_node_groups(&self, minimum_node_degree: Option<NodeT>) -> NodeT {
         self.par_iter_isomorphic_node_ids_groups(minimum_node_degree)
             .count() as NodeT
     }
@@ -453,7 +453,7 @@ impl Graph {
     }
 
     /// Returns number of isomorphic node type groups.
-    pub fn get_isomorphic_node_type_groups_number(&self) -> Result<NodeTypeT> {
+    pub fn get_number_of_isomorphic_node_type_groups(&self) -> Result<NodeTypeT> {
         Ok(self.par_iter_isomorphic_node_type_ids_groups()?.count() as NodeTypeT)
     }
 
@@ -491,7 +491,7 @@ impl Graph {
     }
 
     /// Returns number of isomorphic node type groups.
-    pub fn get_approximated_isomorphic_node_type_groups_number(&self) -> Result<NodeTypeT> {
+    pub fn get_number_of_approximated_isomorphic_node_type_groups(&self) -> Result<NodeTypeT> {
         Ok(self
             .par_iter_approximated_isomorphic_node_type_ids_groups()?
             .count() as NodeTypeT)
@@ -540,7 +540,7 @@ impl Graph {
     /// 
     /// # Arguments
     /// * `minimum_number_of_edges`: Option<EdgeT> - Minimum number of edges to detect edge types topological synonims. By default, 5.
-    pub fn get_isomorphic_edge_type_groups_number(&self, minimum_number_of_edges: Option<EdgeT>) -> Result<EdgeTypeT> {
+    pub fn get_number_of_isomorphic_edge_type_groups(&self, minimum_number_of_edges: Option<EdgeT>) -> Result<EdgeTypeT> {
         Ok(self.par_iter_isomorphic_edge_type_ids_groups(minimum_number_of_edges)?.count() as EdgeTypeT)
     }
 
@@ -556,7 +556,7 @@ impl Graph {
                 return false;
             }
             let node_type = self.get_unchecked_node_type_ids_from_node_id(node_id);
-            (node_id + 1..self.get_nodes_number())
+            (node_id + 1..self.get_number_of_nodes())
                 .into_par_iter()
                 .any(|other_node_id| {
                     self.get_unchecked_node_degree_from_node_id(other_node_id) == node_degree

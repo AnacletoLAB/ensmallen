@@ -17,7 +17,7 @@ impl Graph {
     /// # Arguments
     ///
     /// * `verbose`: Option<bool> - Whether to show a loading bar or not.
-    pub fn get_connected_components_number(&self, verbose: Option<bool>) -> (NodeT, NodeT, NodeT) {
+    pub fn get_number_of_connected_components(&self, verbose: Option<bool>) -> (NodeT, NodeT, NodeT) {
         info!("Computing connected components number.");
         if self.directed {
             let (_, _, components_number, min_component_size, max_component_size) =
@@ -36,9 +36,9 @@ impl Graph {
     /// # Example
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    /// println!("The graph contains {} connected nodes", graph.get_connected_nodes_number());
+    /// println!("The graph contains {} connected nodes", graph.get_number_of_connected_nodes());
     /// ```
-    pub fn get_connected_nodes_number(&self) -> NodeT {
+    pub fn get_number_of_connected_nodes(&self) -> NodeT {
         self.connected_nodes_number
     }
 
@@ -48,9 +48,9 @@ impl Graph {
     /// # Example
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    /// println!("The graph contains {} singleton nodes with selfloops.", graph.get_singleton_nodes_with_selfloops_number());
+    /// println!("The graph contains {} singleton nodes with selfloops.", graph.get_number_of_singleton_nodes_with_selfloops());
     /// ```
-    pub fn get_singleton_nodes_with_selfloops_number(&self) -> NodeT {
+    pub fn get_number_of_singleton_nodes_with_selfloops(&self) -> NodeT {
         self.par_iter_singleton_nodes_with_selfloops_node_ids()
             .count() as NodeT
     }
@@ -60,12 +60,12 @@ impl Graph {
     /// # Example
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    /// println!("The graph contains {} singleton nodes", graph.get_singleton_nodes_number());
+    /// println!("The graph contains {} singleton nodes", graph.get_number_of_singleton_nodes());
     /// ```
-    pub fn get_singleton_nodes_number(&self) -> NodeT {
-        self.get_nodes_number()
-            - self.get_connected_nodes_number()
-            - self.get_singleton_nodes_with_selfloops_number()
+    pub fn get_number_of_singleton_nodes(&self) -> NodeT {
+        self.get_number_of_nodes()
+            - self.get_number_of_connected_nodes()
+            - self.get_number_of_singleton_nodes_with_selfloops()
     }
 
     /// Returns number of disconnected nodes within the graph.
@@ -75,10 +75,10 @@ impl Graph {
     /// # Example
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    /// println!("The graph contains {} disconnected nodes", graph.get_disconnected_nodes_number());
+    /// println!("The graph contains {} disconnected nodes", graph.get_number_of_disconnected_nodes());
     /// ```
-    pub fn get_disconnected_nodes_number(&self) -> NodeT {
-        self.get_nodes_number() - self.get_connected_nodes_number()
+    pub fn get_number_of_disconnected_nodes(&self) -> NodeT {
+        self.get_number_of_nodes() - self.get_number_of_connected_nodes()
     }
 
     /// Returns vector of singleton node IDs of the graph.
@@ -141,13 +141,13 @@ impl Graph {
         if !self.has_edges() {
             return Ok(0.0);
         }
-        let nodes_number = self.get_nodes_number() as EdgeT;
+        let nodes_number = self.get_number_of_nodes() as EdgeT;
         let total_nodes_number = nodes_number
             * match self.has_selfloops() {
                 true => nodes_number,
                 false => nodes_number - 1,
             };
-        Ok(self.get_unique_edges_number() as f64 / total_nodes_number as f64)
+        Ok(self.get_number_of_unique_edges() as f64 / total_nodes_number as f64)
     }
     /// Returns the traps rate of the graph.
     ///
@@ -171,7 +171,7 @@ impl Graph {
                 }
             })
             .sum::<f64>()
-            / self.get_nodes_number() as f64
+            / self.get_number_of_nodes() as f64
     }
 
     /// Returns unweighted mean node degree of the graph.
@@ -187,7 +187,7 @@ impl Graph {
                 "The mean of the node degrees is not defined on an empty graph".to_string(),
             );
         }
-        Ok(self.get_number_of_directed_edges() as f64 / self.get_nodes_number() as f64)
+        Ok(self.get_number_of_directed_edges() as f64 / self.get_number_of_nodes() as f64)
     }
 
     /// Returns weighted mean node degree of the graph.
@@ -198,7 +198,7 @@ impl Graph {
     /// println!("The mean node degree of the graph is  {}", graph.get_weighted_node_degrees_mean().unwrap());
     /// ```
     pub fn get_weighted_node_degrees_mean(&self) -> Result<f64> {
-        Ok(self.get_total_edge_weights().clone()? / self.get_nodes_number() as f64)
+        Ok(self.get_total_edge_weights().clone()? / self.get_number_of_nodes() as f64)
     }
 
     /// Returns number of undirected edges of the graph.
@@ -206,11 +206,11 @@ impl Graph {
     /// # Example
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    /// println!("The number of undirected edges of the graph is  {}", graph.get_undirected_edges_number());
+    /// println!("The number of undirected edges of the graph is  {}", graph.get_number_of_undirected_edges());
     /// ```
-    pub fn get_undirected_edges_number(&self) -> EdgeT {
-        (self.get_number_of_directed_edges() - self.get_selfloops_number()) / 2
-            + self.get_selfloops_number()
+    pub fn get_number_of_undirected_edges(&self) -> EdgeT {
+        (self.get_number_of_directed_edges() - self.get_number_of_selfloops()) / 2
+            + self.get_number_of_selfloops()
     }
 
     /// Returns number of undirected edges of the graph.
@@ -218,11 +218,11 @@ impl Graph {
     /// # Example
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    /// println!("The number of unique undirected edges of the graph is  {}", graph.get_unique_undirected_edges_number());
+    /// println!("The number of unique undirected edges of the graph is  {}", graph.get_number_of_unique_undirected_edges());
     /// ```
-    pub fn get_unique_undirected_edges_number(&self) -> EdgeT {
-        (self.get_unique_directed_edges_number() - self.get_unique_selfloops_number() as EdgeT) / 2
-            + self.get_unique_selfloops_number() as EdgeT
+    pub fn get_number_of_unique_undirected_edges(&self) -> EdgeT {
+        (self.get_number_of_unique_directed_edges() - self.get_number_of_unique_selfloops() as EdgeT) / 2
+            + self.get_number_of_unique_selfloops() as EdgeT
     }
 
     /// Returns number of edges of the graph.
@@ -230,12 +230,12 @@ impl Graph {
     /// # Example
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    /// println!("The number of edges of the graph is  {}", graph.get_edges_number());
+    /// println!("The number of edges of the graph is  {}", graph.get_number_of_edges());
     /// ```
-    pub fn get_edges_number(&self) -> EdgeT {
+    pub fn get_number_of_edges(&self) -> EdgeT {
         match self.directed {
             true => self.get_number_of_directed_edges(),
-            false => self.get_undirected_edges_number(),
+            false => self.get_number_of_undirected_edges(),
         }
     }
 
@@ -244,12 +244,12 @@ impl Graph {
     /// # Example
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    /// println!("The number of edges of the graph is  {}", graph.get_unique_edges_number());
+    /// println!("The number of edges of the graph is  {}", graph.get_number_of_unique_edges());
     /// ```
-    pub fn get_unique_edges_number(&self) -> EdgeT {
+    pub fn get_number_of_unique_edges(&self) -> EdgeT {
         match self.directed {
-            true => self.get_unique_directed_edges_number(),
-            false => self.get_unique_undirected_edges_number(),
+            true => self.get_number_of_unique_directed_edges(),
+            false => self.get_number_of_unique_undirected_edges(),
         }
     }
 
@@ -266,12 +266,12 @@ impl Graph {
             || self.has_nodes_sorted_by_increasing_outbound_node_degree()
         {
             return Ok(unsafe {
-                self.get_unchecked_node_degree_from_node_id(self.get_nodes_number() / 2)
+                self.get_unchecked_node_degree_from_node_id(self.get_number_of_nodes() / 2)
             });
         }
         let mut degrees = self.get_node_degrees();
         degrees.par_sort_unstable();
-        Ok(degrees[(self.get_nodes_number() / 2) as usize])
+        Ok(degrees[(self.get_number_of_nodes() / 2) as usize])
     }
 
     /// Returns weighted median node degree of the graph
@@ -284,7 +284,7 @@ impl Graph {
     pub fn get_weighted_node_degrees_median(&self) -> Result<f64> {
         let mut weighted_degrees = self.get_weighted_node_degrees()?;
         weighted_degrees.par_sort_unstable_by(|a, b| a.partial_cmp(b).unwrap());
-        Ok(weighted_degrees[(self.get_nodes_number() / 2) as usize])
+        Ok(weighted_degrees[(self.get_number_of_nodes() / 2) as usize])
     }
 
     /// Returns maximum node degree of the graph.
@@ -374,7 +374,7 @@ impl Graph {
         if !self.has_edges() {
             return Err("The self-loops rate is not defined for graphs without edges.".to_string());
         }
-        Ok(self.get_selfloops_number() as f64 / self.get_number_of_directed_edges() as f64)
+        Ok(self.get_number_of_selfloops() as f64 / self.get_number_of_directed_edges() as f64)
     }
     /// Return name of the graph.
     ///
@@ -398,10 +398,10 @@ impl Graph {
     /// # Example
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    /// println!("There are {} trap nodes in the current graph.", graph.get_trap_nodes_number());
+    /// println!("There are {} trap nodes in the current graph.", graph.get_number_of_trap_nodes());
     /// ```
     ///
-    pub fn get_trap_nodes_number(&self) -> NodeT {
+    pub fn get_number_of_trap_nodes(&self) -> NodeT {
         self.iter_connected_node_ids()
             .filter(|&node_id| unsafe { self.get_unchecked_node_degree_from_node_id(node_id) == 0 })
             .count() as NodeT
@@ -474,7 +474,7 @@ impl Graph {
     /// and add the proper file in the url utilities folder within
     /// the Ensmallen rust package.
     pub fn get_node_urls(&self) -> Vec<Option<String>> {
-        let mut node_urls = vec![None; self.get_nodes_number() as usize];
+        let mut node_urls = vec![None; self.get_number_of_nodes() as usize];
         self.par_iter_node_urls().collect_into_vec(&mut node_urls);
         node_urls
     }
@@ -489,7 +489,7 @@ impl Graph {
     /// and add the proper file in the url utilities folder within
     /// the Ensmallen rust package.
     pub fn get_node_ontologies(&self) -> Vec<Option<String>> {
-        let mut node_urls = vec![None; self.get_nodes_number() as usize];
+        let mut node_urls = vec![None; self.get_number_of_nodes() as usize];
         self.par_iter_node_ontologies()
             .collect_into_vec(&mut node_urls);
         node_urls
@@ -555,7 +555,7 @@ impl Graph {
 
     /// Return vector with the sorted nodes Ids.
     pub fn get_node_ids(&self) -> Vec<NodeT> {
-        let mut node_ids = Vec::with_capacity(self.get_nodes_number() as usize);
+        let mut node_ids = Vec::with_capacity(self.get_number_of_nodes() as usize);
         self.par_iter_node_ids().collect_into_vec(&mut node_ids);
         node_ids
     }
@@ -880,7 +880,7 @@ impl Graph {
 
     #[cache_property(unique_directed_edges_number)]
     /// Return number of the unique edges in the graph.
-    pub fn get_unique_directed_edges_number(&self) -> EdgeT {
+    pub fn get_number_of_unique_directed_edges(&self) -> EdgeT {
         self.par_iter_node_ids()
             .map(|node_id| unsafe {
                 self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
@@ -982,7 +982,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If there are no node types in the graph.
-    pub fn get_unknown_node_types_number(&self) -> Result<NodeT> {
+    pub fn get_number_of_unknown_node_types(&self) -> Result<NodeT> {
         self.must_have_node_types()
             .map(|node_types| node_types.get_unknown_count())
     }
@@ -991,8 +991,8 @@ impl Graph {
     ///
     /// # Raises
     /// * If there are no node types in the graph.
-    pub fn get_known_node_types_number(&self) -> Result<NodeT> {
-        Ok(self.get_nodes_number() - self.get_unknown_node_types_number()?)
+    pub fn get_number_of_known_node_types(&self) -> Result<NodeT> {
+        Ok(self.get_number_of_nodes() - self.get_number_of_unknown_node_types()?)
     }
 
     /// Returns rate of unknown node types over total nodes number.
@@ -1000,9 +1000,9 @@ impl Graph {
     /// # Raises
     /// * If there are no node types in the graph.
     pub fn get_unknown_node_types_rate(&self) -> Result<f64> {
-        self.get_unknown_node_types_number()
+        self.get_number_of_unknown_node_types()
             .map(|unknown_node_types_number| {
-                unknown_node_types_number as f64 / self.get_nodes_number() as f64
+                unknown_node_types_number as f64 / self.get_number_of_nodes() as f64
             })
     }
 
@@ -1011,9 +1011,9 @@ impl Graph {
     /// # Raises
     /// * If there are no node types in the graph.
     pub fn get_known_node_types_rate(&self) -> Result<f64> {
-        self.get_known_node_types_number()
+        self.get_number_of_known_node_types()
             .map(|known_node_types_number| {
-                known_node_types_number as f64 / self.get_nodes_number() as f64
+                known_node_types_number as f64 / self.get_number_of_nodes() as f64
             })
     }
 
@@ -1048,7 +1048,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph does not have node types.
-    pub fn get_singleton_node_types_number(&self) -> Result<NodeTypeT> {
+    pub fn get_number_of_singleton_node_types(&self) -> Result<NodeTypeT> {
         self.iter_node_type_counts().map(|iter_node_type_counts| {
             iter_node_type_counts
                 .map(|node_type_count| (node_type_count == 1) as NodeTypeT)
@@ -1060,7 +1060,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph does not have node types.
-    pub fn get_homogeneous_node_types_number(&self) -> Result<NodeTypeT> {
+    pub fn get_number_of_homogeneous_node_types(&self) -> Result<NodeTypeT> {
         Ok(self.par_iter_homogeneous_node_type_ids()?.count() as NodeTypeT)
     }
 
@@ -1102,7 +1102,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If there are no edge types in the graph.
-    pub fn get_unknown_edge_types_number(&self) -> Result<EdgeT> {
+    pub fn get_number_of_unknown_edge_types(&self) -> Result<EdgeT> {
         self.must_have_edge_types()
             .map(|edge_types| edge_types.get_unknown_count())
     }
@@ -1338,7 +1338,7 @@ impl Graph {
     /// * If there are no node types in the graph.
     pub fn get_nodes_with_unknown_node_types_mask(&self) -> Result<Vec<bool>> {
         self.iter_node_ids_with_unknown_node_types().map(|x| {
-            let mut mask = vec![false; self.get_nodes_number() as usize];
+            let mut mask = vec![false; self.get_number_of_nodes() as usize];
             x.for_each(|id| {
                 mask[id as usize] = true;
             });
@@ -1353,7 +1353,7 @@ impl Graph {
     /// * If there are no node types in the graph.
     pub fn get_nodes_with_known_node_types_mask(&self) -> Result<Vec<bool>> {
         self.iter_node_ids_with_known_node_types().map(|x| {
-            let mut mask = vec![false; self.get_nodes_number() as usize];
+            let mut mask = vec![false; self.get_number_of_nodes() as usize];
             x.for_each(|id| {
                 mask[id as usize] = true;
             });
@@ -1365,8 +1365,8 @@ impl Graph {
     ///
     /// # Raises
     /// * If there are no edge types in the graph.
-    pub fn get_known_edge_types_number(&self) -> Result<EdgeT> {
-        Ok(self.get_number_of_directed_edges() - self.get_unknown_edge_types_number()?)
+    pub fn get_number_of_known_edge_types(&self) -> Result<EdgeT> {
+        Ok(self.get_number_of_directed_edges() - self.get_number_of_unknown_edge_types()?)
     }
 
     /// Returns rate of unknown edge types over total edges number.
@@ -1374,7 +1374,7 @@ impl Graph {
     /// # Raises
     /// * If there are no edge types in the graph.
     pub fn get_unknown_edge_types_rate(&self) -> Result<f64> {
-        self.get_unknown_edge_types_number()
+        self.get_number_of_unknown_edge_types()
             .map(|unknown_edge_types_number| {
                 unknown_edge_types_number as f64 / self.get_number_of_directed_edges() as f64
             })
@@ -1385,7 +1385,7 @@ impl Graph {
     /// # Raises
     /// * If there are no edge types in the graph.
     pub fn get_known_edge_types_rate(&self) -> Result<f64> {
-        self.get_known_edge_types_number()
+        self.get_number_of_known_edge_types()
             .map(|known_edge_types_number| {
                 known_edge_types_number as f64 / self.get_number_of_directed_edges() as f64
             })
@@ -1404,7 +1404,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph does not have edge types.
-    pub fn get_singleton_edge_types_number(&self) -> Result<EdgeTypeT> {
+    pub fn get_number_of_singleton_edge_types(&self) -> Result<EdgeTypeT> {
         self.iter_edge_type_counts().map(|iter_edge_type_counts| {
             iter_edge_type_counts
                 .map(|edge_type_count| (edge_type_count == 1) as EdgeTypeT)
@@ -1431,7 +1431,7 @@ impl Graph {
     }
 
     /// Returns number of nodes in the graph.
-    pub fn get_nodes_number(&self) -> NodeT {
+    pub fn get_number_of_nodes(&self) -> NodeT {
         self.nodes.len() as NodeT
     }
 
@@ -1458,7 +1458,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If there are no edge types in the current graph.
-    pub fn get_edge_types_number(&self) -> Result<EdgeTypeT> {
+    pub fn get_number_of_edge_types(&self) -> Result<EdgeTypeT> {
         self.must_have_edge_types()
             .map(|ets| ets.len() as EdgeTypeT)
     }
@@ -1467,14 +1467,14 @@ impl Graph {
     ///
     /// # Raises
     /// * If there are no node types in the current graph.
-    pub fn get_node_types_number(&self) -> Result<NodeTypeT> {
+    pub fn get_number_of_node_types(&self) -> Result<NodeTypeT> {
         self.must_have_node_types()
             .map(|nts| nts.len() as NodeTypeT)
     }
 
     /// Returns the unweighted degree of every node in the graph.
     pub fn get_node_degrees(&self) -> Vec<NodeT> {
-        let mut node_degrees = vec![0; self.get_nodes_number() as usize];
+        let mut node_degrees = vec![0; self.get_number_of_nodes() as usize];
         self.par_iter_node_degrees()
             .collect_into_vec(&mut node_degrees);
         node_degrees
@@ -1510,7 +1510,7 @@ impl Graph {
     /// Returns the weighted degree of every node in the graph.
     pub fn get_weighted_node_degrees(&self) -> Result<Vec<f64>> {
         self.par_iter_weighted_node_degrees().map(|iter| {
-            let mut weighted_node_degrees = vec![0.0; self.get_nodes_number() as usize];
+            let mut weighted_node_degrees = vec![0.0; self.get_number_of_nodes() as usize];
             iter.collect_into_vec(&mut weighted_node_degrees);
             weighted_node_degrees
         })
@@ -1530,15 +1530,15 @@ impl Graph {
     }
 
     /// Return number of edges that have multigraph syblings.
-    pub fn get_parallel_edges_number(&self) -> EdgeT {
-        self.get_number_of_directed_edges() - self.get_unique_directed_edges_number()
+    pub fn get_number_of_parallel_edges(&self) -> EdgeT {
+        self.get_number_of_directed_edges() - self.get_number_of_unique_directed_edges()
     }
 
     /// Return vector with node cumulative_node_degrees, that is the comulative node degree.
     pub fn get_cumulative_node_degrees(&self) -> Vec<EdgeT> {
         self.cumulative_node_degrees.as_ref().as_ref().map_or_else(
             || {
-                let mut cumulative_node_degrees = vec![0; self.get_nodes_number() as usize];
+                let mut cumulative_node_degrees = vec![0; self.get_number_of_nodes() as usize];
                 self.par_iter_comulative_node_degrees()
                     .collect_into_vec(&mut cumulative_node_degrees);
                 cumulative_node_degrees
@@ -1551,7 +1551,7 @@ impl Graph {
     pub fn get_reciprocal_sqrt_degrees(&self) -> Vec<WeightT> {
         self.reciprocal_sqrt_degrees.as_ref().as_ref().map_or_else(
             || {
-                let mut reciprocal_sqrt_degrees = vec![0.0; self.get_nodes_number() as usize];
+                let mut reciprocal_sqrt_degrees = vec![0.0; self.get_number_of_nodes() as usize];
                 self.par_iter_reciprocal_sqrt_degrees()
                     .collect_into_vec(&mut reciprocal_sqrt_degrees);
                 reciprocal_sqrt_degrees
@@ -1565,10 +1565,10 @@ impl Graph {
     /// # Example
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    /// println!("The number of sources of the graph (not trap nodes) is {}", graph.get_unique_source_nodes_number());
+    /// println!("The number of sources of the graph (not trap nodes) is {}", graph.get_number_of_unique_source_nodes());
     /// ```
-    pub fn get_unique_source_nodes_number(&self) -> NodeT {
-        self.get_nodes_number() - self.get_singleton_nodes_number() - self.get_trap_nodes_number()
+    pub fn get_number_of_unique_source_nodes(&self) -> NodeT {
+        self.get_number_of_nodes() - self.get_number_of_singleton_nodes() - self.get_number_of_trap_nodes()
     }
 
     /// Returns edge type IDs counts hashmap.
@@ -1671,7 +1671,7 @@ impl Graph {
             .to_string());
         }
         let unknown_node_types_value = unknown_node_types_value.unwrap_or(0);
-        let mut single_label_node_type_ids = vec![0; self.get_nodes_number() as usize];
+        let mut single_label_node_type_ids = vec![0; self.get_number_of_nodes() as usize];
         self.must_have_node_types().map(|node_types| {
             node_types
                 .ids
@@ -1721,7 +1721,7 @@ impl Graph {
     ) -> Result<Vec<bool>> {
         let target_value = target_value.unwrap_or(1);
         let unknown_node_types_value = unknown_node_types_value.unwrap_or(0);
-        let mut boolean_node_type_ids = vec![false; self.get_nodes_number() as usize];
+        let mut boolean_node_type_ids = vec![false; self.get_number_of_nodes() as usize];
         self.must_have_node_types().map(|node_types| {
             node_types
                 .ids

@@ -95,13 +95,13 @@ impl TransE {
         let columns_number = self.inner.get_embedding_size();
         let node_embedding = PyArray2::zeros(
             gil.python(),
-            [graph.inner.get_nodes_number() as usize, columns_number],
+            [graph.inner.get_number_of_nodes() as usize, columns_number],
             false,
         );
         let edge_type_embedding = PyArray2::zeros(
             gil.python(),
             [
-                pe!(graph.inner.get_edge_types_number())? as usize,
+                pe!(graph.inner.get_number_of_edge_types())? as usize,
                 columns_number,
             ],
             false,

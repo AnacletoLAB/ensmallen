@@ -10,10 +10,10 @@ impl Graph {
     /// This is an implementation of Tarjan algorithm.
     ///
     pub fn strongly_connected_components(&self) -> Vec<HashSet<NodeT>> {
-        let mut indexed_mask: Vec<bool> = vec![false; self.get_nodes_number() as usize];
-        let mut stacked_mask: Vec<bool> = vec![false; self.get_nodes_number() as usize];
-        let mut low_indices: Vec<NodeT> = vec![0; self.get_nodes_number() as usize];
-        let mut indices: Vec<NodeT> = vec![0; self.get_nodes_number() as usize];
+        let mut indexed_mask: Vec<bool> = vec![false; self.get_number_of_nodes() as usize];
+        let mut stacked_mask: Vec<bool> = vec![false; self.get_number_of_nodes() as usize];
+        let mut low_indices: Vec<NodeT> = vec![0; self.get_number_of_nodes() as usize];
+        let mut indices: Vec<NodeT> = vec![0; self.get_number_of_nodes() as usize];
         let mut components_stack: Vec<NodeT> = Vec::new();
         let mut components: Vec<HashSet<NodeT>> = Vec::new();
         let mut common_index = 0;

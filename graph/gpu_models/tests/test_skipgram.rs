@@ -16,7 +16,7 @@ fn test_skipgram_on_cora() -> Result<(), GPUError> {
         .set_iterations(Some(10))
         .unwrap();
     let skipgram = SkipGram::new(Some(embedding_size), Some(walks), Some(10), Some(10)).unwrap();
-    let mut embedding = vec![0.0; embedding_size * cora.get_nodes_number() as usize];
+    let mut embedding = vec![0.0; embedding_size * cora.get_number_of_nodes() as usize];
     skipgram.fit_transform(
         &cora,
         embedding.as_mut_slice(),
@@ -34,7 +34,7 @@ fn test_skipgram_on_cora() -> Result<(), GPUError> {
 
     writer
         .write_lines(
-            Some(cora.get_nodes_number() as usize),
+            Some(cora.get_number_of_nodes() as usize),
             vec!["node_name".to_string()]
                 .into_iter()
                 .chain((0..embedding_size).map(|e| e.to_string()))

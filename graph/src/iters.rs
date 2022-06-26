@@ -14,7 +14,7 @@ use rayon::prelude::*;
 impl Graph {
     /// Return iterator on the node IDs of the graph.
     pub fn iter_node_ids(&self) -> impl Iterator<Item = NodeT> + '_ {
-        0..self.get_nodes_number()
+        0..self.get_number_of_nodes()
     }
 
     /// Return iterator on the edge IDs of the graph.
@@ -24,7 +24,7 @@ impl Graph {
 
     /// Return indexed parallel iterator on the node of the graph.
     pub fn par_iter_node_ids(&self) -> impl IndexedParallelIterator<Item = NodeT> + '_ {
-        (0..self.get_nodes_number()).into_par_iter()
+        (0..self.get_number_of_nodes()).into_par_iter()
     }
 
     /// Return indexed parallel iterator on the edge IDs of the graph.
@@ -76,7 +76,7 @@ impl Graph {
     /// # Raises
     /// * If the graph does not contain node types.
     pub fn iter_unique_node_type_ids(&self) -> Result<impl Iterator<Item = NodeTypeT> + '_> {
-        Ok(0..self.get_node_types_number()?)
+        Ok(0..self.get_number_of_node_types()?)
     }
 
     /// Return parallel iterator on the unique node type IDs of the graph.
@@ -86,7 +86,7 @@ impl Graph {
     pub fn par_iter_unique_node_type_ids(
         &self,
     ) -> Result<impl IndexedParallelIterator<Item = NodeTypeT> + '_> {
-        Ok((0..self.get_node_types_number()?).into_par_iter())
+        Ok((0..self.get_number_of_node_types()?).into_par_iter())
     }
 
     /// Return iterator on the unique node type IDs counts of the graph.
@@ -124,7 +124,7 @@ impl Graph {
 
     /// Return iterator on the edge type IDs of the graph.
     pub fn iter_unique_edge_type_ids(&self) -> Result<impl Iterator<Item = EdgeTypeT> + '_> {
-        Ok(0..self.get_edge_types_number()?)
+        Ok(0..self.get_number_of_edge_types()?)
     }
 
     /// Return parallel iterator on the unique edge type IDs of the graph.
@@ -134,7 +134,7 @@ impl Graph {
     pub fn par_iter_unique_edge_type_ids(
         &self,
     ) -> Result<impl IndexedParallelIterator<Item = EdgeTypeT> + '_> {
-        Ok((0..self.get_edge_types_number()?).into_par_iter())
+        Ok((0..self.get_number_of_edge_types()?).into_par_iter())
     }
 
     /// Return iterator on the unique edge type IDs counts of the graph.
@@ -387,7 +387,7 @@ impl Graph {
                 .counts
                 .iter()
                 .enumerate()
-                .filter(move |&(_, node_type_count)| *node_type_count == self.get_nodes_number())
+                .filter(move |&(_, node_type_count)| *node_type_count == self.get_number_of_nodes())
                 .map(|(node_type_id, _)| NodeTypeT::from_usize(node_type_id))
         })
     }
@@ -411,7 +411,7 @@ impl Graph {
                 .counts
                 .par_iter()
                 .enumerate()
-                .filter(move |&(_, node_type_count)| *node_type_count == self.get_nodes_number())
+                .filter(move |&(_, node_type_count)| *node_type_count == self.get_number_of_nodes())
                 .map(|(node_type_id, _)| NodeTypeT::from_usize(node_type_id))
         })
     }
@@ -694,7 +694,7 @@ impl Graph {
     pub fn iter_one_hot_encoded_node_type_ids(
         &self,
     ) -> Result<impl Iterator<Item = Vec<bool>> + '_> {
-        let node_types_number = self.get_node_types_number()?;
+        let node_types_number = self.get_number_of_node_types()?;
         Ok(unsafe {
             self.iter_unchecked_node_type_ids()
                 .map(move |maybe_node_types| {
@@ -716,7 +716,7 @@ impl Graph {
     pub fn par_iter_one_hot_encoded_known_node_type_ids(
         &self,
     ) -> Result<impl ParallelIterator<Item = Vec<bool>> + '_> {
-        let node_types_number = self.get_node_types_number()?;
+        let node_types_number = self.get_number_of_node_types()?;
         Ok(unsafe {
             self.par_iter_unchecked_node_type_ids()
                 .filter_map(move |maybe_node_types| {
@@ -997,7 +997,7 @@ impl Graph {
     pub fn iter_one_hot_encoded_edge_type_ids(
         &self,
     ) -> Result<impl Iterator<Item = Vec<bool>> + '_> {
-        let edge_types_number = self.get_edge_types_number()?;
+        let edge_types_number = self.get_number_of_edge_types()?;
         Ok(self
             .get_edge_type_ids()?
             .into_iter()
@@ -1017,7 +1017,7 @@ impl Graph {
     pub fn iter_one_hot_encoded_known_edge_type_ids(
         &self,
     ) -> Result<impl Iterator<Item = Vec<bool>> + '_> {
-        let edge_types_number = self.get_edge_types_number()?;
+        let edge_types_number = self.get_number_of_edge_types()?;
         Ok(self
             .get_edge_type_ids()?
             .into_iter()

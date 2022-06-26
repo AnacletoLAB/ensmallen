@@ -49,7 +49,7 @@ pub fn are_there_selfloops_in_edge_list(
         .set_sources_column(sources_column)?
         .set_sources_column_number(sources_column_number)?
         .set_parallel(load_edge_list_in_parallel)
-        .set_edges_number(edges_number)
+        .set_number_of_edges(edges_number)
         .set_verbose(verbose)
         .set_graph_name(name);
 

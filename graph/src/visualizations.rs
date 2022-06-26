@@ -16,7 +16,7 @@ impl Graph {
             result.extend(
                 format!(
                     "node [colorscheme={} style=filled]",
-                    if self.get_node_types_number().unwrap() < 8 {
+                    if self.get_number_of_node_types().unwrap() < 8 {
                         "set28"
                     } else {
                         "set312"
@@ -30,7 +30,7 @@ impl Graph {
             result.extend(
                 format!(
                     "edge [colorscheme={} style=filled ]",
-                    if self.get_edge_types_number().unwrap() < 8 {
+                    if self.get_number_of_edge_types().unwrap() < 8 {
                         "set28"
                     } else {
                         "set312"

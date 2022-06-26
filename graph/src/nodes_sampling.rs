@@ -12,7 +12,7 @@ impl Graph {
     /// * `random_state`: u64 - The random state to use to reproduce the sampling.
     pub fn get_random_node_type(&self, random_state: u64) -> Result<NodeTypeT> {
         Ok(sample_uniform(
-            self.get_node_types_number()? as u64,
+            self.get_number_of_node_types()? as u64,
             splitmix64(random_state),
         ) as NodeTypeT)
     }
@@ -23,7 +23,7 @@ impl Graph {
     /// * `random_state`: u64 - The random state to use to reproduce the sampling.
     pub fn get_random_edge_type(&self, random_state: u64) -> Result<EdgeTypeT> {
         Ok(sample_uniform(
-            self.get_edge_types_number()? as u64,
+            self.get_number_of_edge_types()? as u64,
             splitmix64(random_state),
         ) as EdgeTypeT)
     }
@@ -60,7 +60,7 @@ impl Graph {
     /// # Arguments
     /// * `random_state`: u64 - The random state to use to reproduce the sampling.
     pub fn get_random_node(&self, random_state: u64) -> NodeT {
-        sample_uniform(self.get_nodes_number() as u64, splitmix64(random_state)) as NodeT
+        sample_uniform(self.get_number_of_nodes() as u64, splitmix64(random_state)) as NodeT
     }
 
     /// Return random edge ID.
@@ -97,7 +97,7 @@ impl Graph {
     ) -> Result<Vec<NodeT>> {
         sorted_unique_sub_sampling(
             0,
-            self.get_nodes_number() as u64,
+            self.get_number_of_nodes() as u64,
             number_of_nodes_to_sample as u64,
             random_state,
         )
@@ -118,7 +118,7 @@ impl Graph {
         number_of_nodes_to_sample: NodeT,
         root_node: NodeT,
     ) -> Result<Vec<NodeT>> {
-        if number_of_nodes_to_sample > self.get_nodes_number() {
+        if number_of_nodes_to_sample > self.get_number_of_nodes() {
             return Err(format!(
                 concat!(
                     "The requested number of nodes to sample `{}` is ",
@@ -126,7 +126,7 @@ impl Graph {
                     "current graph instance."
                 ),
                 number_of_nodes_to_sample,
-                self.get_nodes_number()
+                self.get_number_of_nodes()
             ));
         }
         self.validate_node_id(root_node)?;
@@ -211,7 +211,7 @@ impl Graph {
     ) -> Result<Vec<NodeT>> {
         let random_state = splitmix64(random_state);
         let root_node =
-            root_node.unwrap_or(splitmix64(random_state) as NodeT % self.get_nodes_number());
+            root_node.unwrap_or(splitmix64(random_state) as NodeT % self.get_number_of_nodes());
         match node_sampling_method {
             "random_nodes" => self.get_sorted_unique_random_nodes(number_of_nodes_to_sample, random_state),
             "breadth_first_search" => self.get_breadth_first_search_random_nodes(number_of_nodes_to_sample, root_node),

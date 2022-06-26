@@ -673,6 +673,6 @@ class AutomaticallyRetrievedGraph:
                 "name": self._name,
                 **self._graph_kwargs,
             })
-        if self._auto_enable_tradeoffs and graph.get_unique_edges_number() < 50e6:
+        if self._auto_enable_tradeoffs and graph.get_number_of_unique_edges() < 50e6:
             graph.enable()
         return graph

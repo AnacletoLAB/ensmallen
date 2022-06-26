@@ -100,7 +100,7 @@ impl GloVe {
             return Err("The provided graph does not have any node.".to_string());
         }
 
-        let nodes_number = graph.get_nodes_number();
+        let nodes_number = graph.get_number_of_nodes();
         let expected_node_embedding_len = self.embedding_size * nodes_number as usize;
         if node_embedding.len() != expected_node_embedding_len {
             return Err(format!(

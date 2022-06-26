@@ -20,7 +20,7 @@ impl GraphEmbedder<f32> for Walklets {
     fn get_embedding_sizes(&self, graph: &graph::Graph) -> Vec<(usize, usize)> {
         vec![
             (
-                graph.get_nodes_number() as usize,
+                graph.get_number_of_nodes() as usize,
                 self.node2vec.embedding_size
             );
             self.node2vec.window_size

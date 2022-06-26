@@ -27,10 +27,9 @@ where
     ) -> Result<(), String> {
         let mut walk_parameters = self.walk_parameters.clone();
         let mut random_state = splitmix64(self.walk_parameters.get_random_state() as u64);
-        let random_walk_length = walk_parameters.get_random_walk_length() as usize;
         let context_size = (self.window_size * 2) as f32;
         let mut learning_rate = self.learning_rate;
-        let nodes_number = graph.get_nodes_number();
+        let nodes_number = graph.get_number_of_nodes();
 
         // This is used to scale the dot product to avoid getting NaN due to
         // exp(dot) being inf and the sigmoid becomes Nan
@@ -159,7 +158,7 @@ where
                         .par_transform_walk(walk_number, random_walk)
                 })
                 .map(|(walk_number, random_walk)| {
-                    (0..random_walk_length)
+                    (0..random_walk.len())
                         .filter(|&central_index| {
                             if !self.stochastic_downsample_by_degree {
                                 true
@@ -178,7 +177,7 @@ where
                         .map(|central_index| {
                             (
                                 &random_walk[central_index.saturating_sub(self.window_size)
-                                    ..(central_index + self.window_size).min(random_walk_length)],
+                                    ..(central_index + self.window_size).min(random_walk.len())],
                                 random_walk[central_index],
                                 central_index,
                             )

@@ -67,7 +67,7 @@ impl Node2Vec {
         let epochs = epochs.unwrap_or(10);
         let batch_size = batch_size.unwrap_or(32);
         let number_of_batches_per_epoch =
-            (graph.get_nodes_number() as f32 / batch_size as f32).ceil() as usize;
+            (graph.get_number_of_nodes() as f32 / batch_size as f32).ceil() as usize;
         let learning_rate = learning_rate.unwrap_or(0.025);
         let mut walk_parameters = self.walk_parameters.clone();
         let mut random_state = splitmix64(self.walk_parameters.get_random_state() as u64);
@@ -77,7 +77,7 @@ impl Node2Vec {
             batch_size * iterations * (random_walk_length - (self.window_size as usize) * 2);
         let window_size = self.window_size as isize;
         let verbose = verbose.unwrap_or(true);
-        let vocabulary_size = graph.get_nodes_number();
+        let vocabulary_size = graph.get_number_of_nodes();
 
         let number_of_negative_samples = self.number_of_negative_samples;
         let embedding_size = self.embedding_size;
@@ -103,7 +103,7 @@ impl Node2Vec {
         //     .to_string());
         // }
 
-        let expected_embedding_len = self.embedding_size * graph.get_nodes_number() as usize;
+        let expected_embedding_len = self.embedding_size * graph.get_number_of_nodes() as usize;
 
         // if embedding.len() != expected_embedding_len {
         //     return Err(format!(

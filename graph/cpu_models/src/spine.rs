@@ -166,7 +166,7 @@ impl SPINE {
     {
         let verbose = verbose.unwrap_or(true);
 
-        let expected_embedding_len = self.embedding_size * graph.get_nodes_number() as usize;
+        let expected_embedding_len = self.embedding_size * graph.get_number_of_nodes() as usize;
 
         if embedding.len() != expected_embedding_len {
             return Err(format!(
@@ -194,7 +194,7 @@ impl SPINE {
 
         // We start to compute the features
         embedding
-            .chunks_mut(graph.get_nodes_number() as usize)
+            .chunks_mut(graph.get_number_of_nodes() as usize)
             .zip(self.get_anchor_nodes_buckets(graph)?)
             .progress_with(features_progress_bar)
             .for_each(|(empty_feature, bucket)| unsafe {

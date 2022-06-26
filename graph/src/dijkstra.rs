@@ -695,7 +695,7 @@ impl Graph {
         &self,
         src_node_id: NodeT,
     ) -> ShortestPathsResultBFS {
-        let nodes_number = self.get_nodes_number() as usize;
+        let nodes_number = self.get_number_of_nodes() as usize;
         let thread_shared_predecessors =
             ThreadDataRaceAware::new(vec![NODE_NOT_PRESENT; nodes_number]);
         (*thread_shared_predecessors.value.get())[src_node_id as usize] = src_node_id;
@@ -758,7 +758,7 @@ impl Graph {
         src_node_ids: Vec<NodeT>,
         maximal_depth: Option<T>,
     ) -> (Vec<T>, T, NodeT) {
-        let nodes_number = self.get_nodes_number() as usize;
+        let nodes_number = self.get_number_of_nodes() as usize;
         let node_not_present = T::MAX;
         let mut distances = vec![node_not_present; nodes_number];
         let thread_shared_distances = ThreadDataRaceAware::new(&mut distances);
@@ -861,7 +861,7 @@ impl Graph {
         &self,
         src_node_id: NodeT,
     ) -> ShortestPathsResultBFS {
-        let nodes_number = self.get_nodes_number() as usize;
+        let nodes_number = self.get_number_of_nodes() as usize;
         let mut distances = vec![NODE_NOT_PRESENT; nodes_number];
         distances[src_node_id as usize] = 0;
         let mut eccentricity = 0;
@@ -913,7 +913,7 @@ impl Graph {
     ) -> ShortestPathsResultBFS {
         let compute_predecessors = compute_predecessors.unwrap_or(true);
 
-        let nodes_number = self.get_nodes_number() as usize;
+        let nodes_number = self.get_number_of_nodes() as usize;
         let mut found_destination = false;
 
         let mut predecessors: Option<Vec<NodeT>> = if compute_predecessors {
@@ -1183,7 +1183,7 @@ impl Graph {
         dst_node_id: NodeT,
         k: usize,
     ) -> Vec<Vec<NodeT>> {
-        let nodes_number = self.get_nodes_number() as usize;
+        let nodes_number = self.get_number_of_nodes() as usize;
         let mut counts = vec![0; nodes_number];
         let mut paths = Vec::new();
 
@@ -1329,7 +1329,7 @@ impl Graph {
         &self,
         node_id: NodeT,
     ) -> (NodeT, NodeT) {
-        let nodes_number = self.get_nodes_number() as usize;
+        let nodes_number = self.get_number_of_nodes() as usize;
         let thread_shared_visited = ThreadDataRaceAware::new(vec![false; nodes_number]);
         (*thread_shared_visited.value.get())[node_id as usize] = true;
         let mut eccentricity = 0;
@@ -1500,7 +1500,7 @@ impl Graph {
         use_edge_weights_as_probabilities: Option<bool>,
     ) -> ShortestPathsDjkstra {
         let compute_predecessors = compute_predecessors.unwrap_or(true);
-        let nodes_number = self.get_nodes_number() as usize;
+        let nodes_number = self.get_number_of_nodes() as usize;
         let mut most_distant_node = src_node_ids[0];
         let use_edge_weights_as_probabilities = use_edge_weights_as_probabilities.unwrap_or(false);
         let mut dst_node_distance = maybe_dst_node_id.map(|_| {
@@ -2102,7 +2102,7 @@ impl Graph {
         let pb = get_loading_bar(
             verbose,
             "Computing diameter",
-            self.get_nodes_number() as usize,
+            self.get_number_of_nodes() as usize,
         );
 
         Ok(self

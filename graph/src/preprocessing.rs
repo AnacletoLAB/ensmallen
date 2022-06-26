@@ -126,7 +126,7 @@ impl Graph {
         }
         self.must_have_known_node_types()?;
         self.must_have_unknown_node_types()?;
-        let nodes_number = self.get_nodes_number();
+        let nodes_number = self.get_number_of_nodes();
         let batch_size = batch_size.unwrap_or(1024).min(nodes_number);
         let return_edge_weights = return_edge_weights.unwrap_or(false);
         let include_central_node = include_central_node.unwrap_or(false);
@@ -648,7 +648,7 @@ impl Graph {
         // The graph must have nodes to support node feature propagation
         self.must_have_nodes()?;
         // Validate the provided features
-        validate_features(&features, self.get_nodes_number() as usize)?;
+        validate_features(&features, self.get_number_of_nodes() as usize)?;
         // We use as default distance 3
         let maximal_distance = maximal_distance.unwrap_or(3);
         // K1 values are typically between 1.2 and 2.0 in absence of additional
@@ -676,7 +676,7 @@ impl Graph {
         // Get the number of possible elements in the features vocabulary
         let features_number = features[0].len() as usize;
         // Get the number of 'documents'
-        let nodes_number = self.get_nodes_number() as usize;
+        let nodes_number = self.get_number_of_nodes() as usize;
         // Loading bar
         let iterations_progress_bar = get_loading_bar(
             verbose.unwrap_or(true) && iterations > 1,

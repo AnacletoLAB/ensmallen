@@ -13,14 +13,14 @@ impl Graph {
             return self.clone();
         }
         let mut node_ids_and_node_degrees =
-            vec![(0 as usize, 0 as NodeT); self.get_nodes_number() as usize];
+            vec![(0 as usize, 0 as NodeT); self.get_number_of_nodes() as usize];
         self.par_iter_node_degrees()
             .enumerate()
             .collect_into_vec(&mut node_ids_and_node_degrees);
         node_ids_and_node_degrees.par_sort_unstable_by(|(_, node_degree_a), (_, node_degree_b)| {
             node_degree_a.cmp(node_degree_b)
         });
-        let mut new_node_ids = vec![0 as NodeT; self.get_nodes_number() as usize];
+        let mut new_node_ids = vec![0 as NodeT; self.get_number_of_nodes() as usize];
         node_ids_and_node_degrees
             .into_par_iter()
             .map(|(node_id, _)| node_id as NodeT)
@@ -34,14 +34,14 @@ impl Graph {
             return self.clone();
         }
         let mut node_ids_and_node_degrees =
-            vec![(0 as usize, 0 as NodeT); self.get_nodes_number() as usize];
+            vec![(0 as usize, 0 as NodeT); self.get_number_of_nodes() as usize];
         self.par_iter_node_degrees()
             .enumerate()
             .collect_into_vec(&mut node_ids_and_node_degrees);
         node_ids_and_node_degrees.par_sort_unstable_by(|(_, node_degree_a), (_, node_degree_b)| {
             node_degree_b.cmp(node_degree_a)
         });
-        let mut new_node_ids = vec![0 as NodeT; self.get_nodes_number() as usize];
+        let mut new_node_ids = vec![0 as NodeT; self.get_number_of_nodes() as usize];
         node_ids_and_node_degrees
             .into_par_iter()
             .map(|(node_id, _)| node_id as NodeT)
@@ -55,14 +55,14 @@ impl Graph {
             return self.clone();
         }
         let mut node_ids_and_node_names =
-            vec![(0 as usize, "".to_owned()); self.get_nodes_number() as usize];
+            vec![(0 as usize, "".to_owned()); self.get_number_of_nodes() as usize];
         self.par_iter_node_names()
             .enumerate()
             .collect_into_vec(&mut node_ids_and_node_names);
         node_ids_and_node_names.par_sort_unstable_by(|(_, node_name_a), (_, node_name_b)| {
             node_name_a.cmp(node_name_b)
         });
-        let mut new_node_ids = vec![0 as NodeT; self.get_nodes_number() as usize];
+        let mut new_node_ids = vec![0 as NodeT; self.get_number_of_nodes() as usize];
         node_ids_and_node_names
             .into_par_iter()
             .map(|(node_id, _)| node_id as NodeT)
@@ -83,11 +83,11 @@ impl Graph {
     ) -> Result<Vec<NodeT>> {
         self.validate_node_id(root_node_id)?;
         let mut stack = vec![root_node_id];
-        let mut topological_remapping = vec![NODE_NOT_PRESENT; self.get_nodes_number() as usize];
+        let mut topological_remapping = vec![NODE_NOT_PRESENT; self.get_number_of_nodes() as usize];
         topological_remapping[root_node_id as usize] = 0;
         let mut inserted_nodes_num = 1;
 
-        while inserted_nodes_num != self.get_nodes_number() {
+        while inserted_nodes_num != self.get_number_of_nodes() {
             if let Some(src) = stack.pop() {
                 unsafe { self.iter_unchecked_neighbour_node_ids_from_source_node_id(src) }
                     .for_each(|dst| {
@@ -126,7 +126,7 @@ impl Graph {
         let bfs_topological_sorting =
             self.get_bfs_topological_sorting_from_node_id(root_node_id)?;
         let reversed_bfs_topological_sorting =
-            ThreadDataRaceAware::new(vec![NODE_NOT_PRESENT; self.get_nodes_number() as usize]);
+            ThreadDataRaceAware::new(vec![NODE_NOT_PRESENT; self.get_number_of_nodes() as usize]);
 
         bfs_topological_sorting
             .into_par_iter()

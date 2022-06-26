@@ -46,8 +46,8 @@ impl Graph {
     /// Return maximum encodable edge number.
     pub fn get_max_encodable_edge_number(&self) -> EdgeT {
         encode_max_edge(
-            self.get_nodes_number(),
-            get_node_bits(self.get_nodes_number()),
+            self.get_number_of_nodes(),
+            get_node_bits(self.get_number_of_nodes()),
         )
     }
 }

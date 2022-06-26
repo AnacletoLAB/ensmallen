@@ -136,14 +136,14 @@ impl Graph {
             return (
                 HashSet::new(),
                 self.get_node_ids(),
-                self.get_nodes_number(),
+                self.get_number_of_nodes(),
                 1,
                 1,
             );
         }
 
-        let nodes_number = self.get_nodes_number() as usize;
-        let mut tree = HashSet::with_capacity(self.get_nodes_number() as usize);
+        let nodes_number = self.get_number_of_nodes() as usize;
+        let mut tree = HashSet::with_capacity(self.get_number_of_nodes() as usize);
         let mut components = vec![NODE_NOT_PRESENT; nodes_number];
         let mut component_sizes: Vec<NodeT> = Vec::new();
         let mut components_remapping: Vec<NodeT> = Vec::new();
@@ -177,10 +177,10 @@ impl Graph {
                 });
             // We can re-initialize the component sizes as the vector with
             // all ones bit as the singleton nodes number.
-            component_sizes = vec![1; self.get_disconnected_nodes_number() as usize];
+            component_sizes = vec![1; self.get_number_of_disconnected_nodes() as usize];
             // Similarly, the components remapping can be initialized to a range.
             components_remapping =
-                (0..self.get_disconnected_nodes_number()).collect::<Vec<NodeT>>();
+                (0..self.get_number_of_disconnected_nodes()).collect::<Vec<NodeT>>();
         }
 
         edges.for_each(|(src, dst)| {
@@ -290,7 +290,7 @@ impl Graph {
         if min_component_size > 1 {
             min_component_size = match components_number {
                 1 => max_component_size,
-                2 => self.get_nodes_number() - max_component_size,
+                2 => self.get_number_of_nodes() - max_component_size,
                 _ => component_sizes
                     .into_par_iter()
                     .filter(|val| *val > 0)
@@ -345,9 +345,9 @@ impl Graph {
     ///     None,
     ///     Some(false)
     /// );
-    /// assert_eq!(connected_components_number.len(), graph.get_nodes_number() as usize);
+    /// assert_eq!(connected_components_number.len(), graph.get_number_of_nodes() as usize);
     /// assert!(minimum_component_size <= maximum_component_size);
-    /// assert!(maximum_component_size <= graph.get_nodes_number());
+    /// assert!(maximum_component_size <= graph.get_number_of_nodes());
     /// ```
     pub fn random_spanning_arborescence_kruskal(
         &self,
@@ -387,9 +387,9 @@ impl Graph {
     ///     minimum_component_size,
     ///     maximum_component_size
     /// ) = graph.spanning_arborescence_kruskal(None);
-    /// assert_eq!(connected_components_number.len(), graph.get_nodes_number() as usize);
+    /// assert_eq!(connected_components_number.len(), graph.get_number_of_nodes() as usize);
     /// assert!(minimum_component_size <= maximum_component_size);
-    /// assert!(maximum_component_size <= graph.get_nodes_number());
+    /// assert!(maximum_component_size <= graph.get_number_of_nodes());
     /// ```
     pub fn spanning_arborescence_kruskal(
         &self,
@@ -402,7 +402,7 @@ impl Graph {
                 "Computing spanning arborescence with Kruskal for {}",
                 self.get_name()
             ),
-            self.get_unique_edges_number() as usize,
+            self.get_number_of_unique_edges() as usize,
         );
         self.kruskal(
             self.iter_unique_edge_node_ids(self.directed)
@@ -431,7 +431,7 @@ impl Graph {
     ) -> Result<(usize, impl Iterator<Item = (NodeT, NodeT)> + '_)> {
         self.must_be_undirected()?;
         let verbose = verbose.unwrap_or(false);
-        let nodes_number = self.get_nodes_number() as usize;
+        let nodes_number = self.get_number_of_nodes() as usize;
         let mut parents = vec![NODE_NOT_PRESENT; nodes_number];
         let (cpu_number, pool) = get_thread_pool()?;
         let shared_stacks: Arc<Vec<Mutex<Vec<NodeT>>>> = Arc::from(
@@ -569,10 +569,10 @@ impl Graph {
         if !self.has_nodes() {
             return Ok((Vec::new(), 0, 0, 0));
         }
-        if self.get_edges_number() == 0 {
+        if self.get_number_of_edges() == 0 {
             return Ok((
                 self.iter_node_ids().collect(),
-                self.get_nodes_number(),
+                self.get_number_of_nodes(),
                 1,
                 1,
             ));
@@ -616,7 +616,7 @@ impl Graph {
                         self.get_name()
                     )
                     .as_ref(),
-                    self.get_nodes_number() as usize,
+                    self.get_number_of_nodes() as usize,
                 );
                 let min_component_size = thread_safe_min_component_size.value.get();
                 let max_component_size = thread_safe_max_component_size.value.get();

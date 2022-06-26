@@ -366,8 +366,8 @@ impl WalkletsCBOW {
     /// ---------
     /// graph: Graph
     ///     The graph to embed.
-    fn fit_transform(&self, graph: &Graph) -> PyResult<Py<PyArray2<f32>>> {
-        Ok(self.inner.fit_transform(graph)?.first().unwrap().to_owned())
+    fn fit_transform(&self, graph: &Graph) -> PyResult<Vec<Py<PyArray2<f32>>>> {
+        Ok(self.inner.fit_transform(graph)?)
     }
 }
 
@@ -461,7 +461,7 @@ impl WalkletsSkipGram {
     /// ---------
     /// graph: Graph
     ///     The graph to embed.
-    fn fit_transform(&self, graph: &Graph) -> PyResult<Py<PyArray2<f32>>> {
-        Ok(self.inner.fit_transform(graph)?.first().unwrap().to_owned())
+    fn fit_transform(&self, graph: &Graph) -> PyResult<Vec<Py<PyArray2<f32>>>> {
+        Ok(self.inner.fit_transform(graph)?)
     }
 }

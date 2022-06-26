@@ -18,7 +18,7 @@ impl Graph {
     /// * `matrix`: &mut [bool] - The matrix to be populated, expected to be full of `false` values.
     pub fn populate_dense_binary_adjacency_matrix(&self, matrix: &mut [bool]) -> Result<()> {
         // We check that the provided matrix has the correct shape.
-        if matrix.len() != (self.get_nodes_number() * self.get_nodes_number()) as usize {
+        if matrix.len() != (self.get_number_of_nodes() * self.get_number_of_nodes()) as usize {
             return Err(format!(
                 concat!(
                     "The provided matrix has size {} but since this ",
@@ -26,12 +26,12 @@ impl Graph {
                     "a matrix with size {}."
                 ),
                 matrix.len(),
-                self.get_nodes_number(),
-                self.get_nodes_number() * self.get_nodes_number()
+                self.get_number_of_nodes(),
+                self.get_number_of_nodes() * self.get_number_of_nodes()
             ));
         }
         // Get the number of nodes.
-        let number_of_nodes = self.get_nodes_number() as usize;
+        let number_of_nodes = self.get_number_of_nodes() as usize;
         // We wrap the adjacency into an object we can share between threads
         let matrix = ThreadDataRaceAware::new(matrix);
         // We iterate on the edges and populate the matrix.
@@ -68,7 +68,7 @@ impl Graph {
         S: Send + Sync,
     {
         // We check that the provided matrix has the correct shape.
-        if matrix.len() != (self.get_nodes_number() * self.get_nodes_number()) as usize {
+        if matrix.len() != (self.get_number_of_nodes() * self.get_number_of_nodes()) as usize {
             return Err(format!(
                 concat!(
                     "The provided matrix has size {} but since this ",
@@ -76,21 +76,21 @@ impl Graph {
                     "a matrix with size {}."
                 ),
                 matrix.len(),
-                self.get_nodes_number(),
-                self.get_nodes_number() * self.get_nodes_number()
+                self.get_number_of_nodes(),
+                self.get_number_of_nodes() * self.get_number_of_nodes()
             ));
         }
 
         let pb = get_loading_bar(
             verbose.unwrap_or(true),
             "Computing Matrix",
-            self.get_nodes_number() as usize,
+            self.get_number_of_nodes() as usize,
         );
 
         // We iterate on the edges and populate the matrix.
         self.par_iter_node_ids()
             .progress_with(pb)
-            .zip(matrix.par_chunks_mut(self.get_nodes_number() as usize))
+            .zip(matrix.par_chunks_mut(self.get_number_of_nodes() as usize))
             .for_each(|(src, row)| {
                 self.iter_node_ids()
                     .zip(row.iter_mut())
@@ -113,8 +113,7 @@ impl Graph {
         matrix: &mut [f32],
         bfd: &ShortestPathsResultBFS,
         verbose: Option<bool>,
-    ) -> Result<()>
-    {
+    ) -> Result<()> {
         self.populate_dense_adjacency_matrix(
             matrix,
             bfd,
@@ -135,12 +134,37 @@ impl Graph {
         matrix: &mut [f32],
         bfd: &ShortestPathsResultBFS,
         verbose: Option<bool>,
-    ) -> Result<()>
-    {
+    ) -> Result<()> {
         self.populate_dense_adjacency_matrix(
             matrix,
             bfd,
             |support, src, dst| support.get_ancestors_jaccard_index(src, dst).unwrap(),
+            verbose,
+        )
+    }
+
+    #[manual_binding]
+    /// Populate the provided slice with the edges modularity.
+    ///
+    /// # Arguments
+    /// * `matrix`: &mut [f32] - The matrix to be populated.
+    /// * `verbose`: Option<bool> - Whether to show a loading bar.
+    pub fn populate_modularity_matrix(
+        &self,
+        matrix: &mut [f32],
+        verbose: Option<bool>,
+    ) -> Result<()> {
+        self.populate_dense_adjacency_matrix(
+            matrix,
+            self,
+            |support, src, dst| unsafe {
+                support
+                    .get_number_of_multigraph_edges_from_node_ids(src, dst)
+                    .unwrap_or(1) as WeightT
+                    - (support.get_unchecked_node_degree_from_node_id(src) as WeightT)
+                        * (support.get_unchecked_node_degree_from_node_id(dst) as WeightT)
+                        / support.get_number_of_directed_edges() as WeightT
+            },
             verbose,
         )
     }
@@ -156,7 +180,7 @@ impl Graph {
     pub fn populate_dense_weighted_adjacency_matrix(&self, matrix: &mut [WeightT]) -> Result<()> {
         // If the graph does not have edge weights we raise an error.
         self.must_have_edge_weights()?;
-        if matrix.len() != (self.get_nodes_number() * self.get_nodes_number()) as usize {
+        if matrix.len() != (self.get_number_of_nodes() * self.get_number_of_nodes()) as usize {
             return Err(format!(
                 concat!(
                     "The provided matrix has size {} but since this ",
@@ -164,12 +188,12 @@ impl Graph {
                     "a matrix with size {}."
                 ),
                 matrix.len(),
-                self.get_nodes_number(),
-                self.get_nodes_number() * self.get_nodes_number()
+                self.get_number_of_nodes(),
+                self.get_number_of_nodes() * self.get_number_of_nodes()
             ));
         }
         // Get the number of nodes.
-        let number_of_nodes = self.get_nodes_number() as usize;
+        let number_of_nodes = self.get_number_of_nodes() as usize;
         // We wrap the adjacency into an object we can share between threads
         let matrix = ThreadDataRaceAware::new(matrix);
         // We iterate on the edges and populate the matrix.

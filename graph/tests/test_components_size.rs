@@ -82,7 +82,7 @@ fn test_components_size() {
     assert_eq!(smallest, 2); // the size of the smallest component
     assert_eq!(biggest, 2); // the size of the biggest component
 
-    let (number_of_components2, smallest2, biggest2) = g.get_connected_components_number(None);
+    let (number_of_components2, smallest2, biggest2) = g.get_number_of_connected_components(None);
     assert_eq!(number_of_components, number_of_components2, "There is a difference between the number of components returned by the connected_components method and the connected_components_number.");
     assert_eq!(smallest, smallest2, "There is a difference between the smallest returned by the connected_components method and the connected_components_number.");
     assert_eq!(biggest, biggest2, "There is a difference between the biggest returned by the connected_components method and the connected_components_number.");

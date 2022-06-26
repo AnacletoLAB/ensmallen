@@ -193,7 +193,6 @@ impl EdgePredictionPerceptron {
         cpu_models::EdgeEmbedding::get_edge_embedding_method_names()
     }
 
-    #[args(py_kwargs = "**")]
     #[text_signature = "($self, graph, node_features)"]
     /// Return numpy array with edge predictions for provided graph.
     ///

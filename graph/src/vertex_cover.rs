@@ -13,7 +13,7 @@ impl Graph {
     /// This implementation is described in ["A local-ratio theorem for approximating the weighted vertex cover problem"](http://www.cs.technion.ac.il/~reuven/PDF/vc_lr.pdf).
     ///
     pub fn par_iter_approximated_vertex_cover(&self) -> impl ParallelIterator<Item = NodeT> + '_ {
-        let nodes_number = self.get_nodes_number() as usize;
+        let nodes_number = self.get_number_of_nodes() as usize;
         let thread_shared_vertex_cover = ThreadDataRaceAware {
             value: std::cell::UnsafeCell::new(vec![false; nodes_number]),
         };

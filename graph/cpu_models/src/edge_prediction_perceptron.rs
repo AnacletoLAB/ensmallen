@@ -483,7 +483,7 @@ impl EdgePredictionPerceptron {
                 .to_string());
             }
 
-            if node_feature.len() != graph.get_nodes_number() as usize * dimension {
+            if node_feature.len() != graph.get_number_of_nodes() as usize * dimension {
                 return Err(format!(
                     concat!(
                         "The provided node features have size {}, but the expected size ",
@@ -491,8 +491,8 @@ impl EdgePredictionPerceptron {
                         "the expected shape of the matrix is ({}, {})."
                     ),
                     node_feature.len(),
-                    graph.get_nodes_number() as usize * dimension,
-                    graph.get_nodes_number(),
+                    graph.get_number_of_nodes() as usize * dimension,
+                    graph.get_number_of_nodes(),
                     dimension
                 ));
             }

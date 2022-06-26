@@ -2,7 +2,7 @@ use crate::must_not_be_zero;
 use core::fmt::Debug;
 use rayon::prelude::*;
 
-pub trait WalkTransformer: Send + Sync + Clone + Debug + Default{
+pub trait WalkTransformer: Send + Sync + Clone + Debug + Default {
     type I<'a, T>: IndexedParallelIterator<Item = (usize, Vec<T>)> + 'a
     where
         Self: 'a,
@@ -62,13 +62,14 @@ impl WalkTransformer for WalkletsWalkTransformer {
     where
         T: Copy + Send + Sync + 'a,
     {
-        (0..self.power).into_par_iter().map(move |step_size| {
+        (0..(self.power + 1)).into_par_iter().map(move |step_size| {
             (
-                i * self.power + step_size,
-                walk.par_iter()
+                i * (self.power + 1) + step_size,
+                walk[step_size..]
+                    .iter()
                     .copied()
                     .enumerate()
-                    .filter(|(position, _)| (position % self.power) == step_size)
+                    .filter(|(position, _)| (position % self.power) == 0)
                     .map(|(_, node)| node)
                     .collect(),
             )

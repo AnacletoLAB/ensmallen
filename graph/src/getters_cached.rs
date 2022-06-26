@@ -146,7 +146,7 @@ impl Graph {
     /// Return the minimum weighted node degree.
     );
 
-    cached_property!(get_weighted_singleton_nodes_number, Result<NodeT>, compute_max_and_min_weighted_node_degree, weighted_singleton_nodes_number,
+    cached_property!(get_number_of_weighted_singleton_nodes, Result<NodeT>, compute_max_and_min_weighted_node_degree, weighted_singleton_nodes_number,
     /// Return the number of weighted singleton nodes, i.e. nodes with weighted node degree equal to zero.
     );
 
@@ -200,23 +200,23 @@ impl Graph {
         cache.selfloops_number_unique = Some(info.selfloops_number_unique);
     }
 
-    cached_property!(get_selfloops_number, EdgeT, compute_selfloops_number, selfloops_number,
+    cached_property!(get_number_of_selfloops, EdgeT, compute_selfloops_number, selfloops_number,
         /// Returns number of self-loops, including also those in eventual multi-edges.
         ///
         /// # Example
         ///```rust
         /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-        /// println!("The number of self-loops in the graph is  {}", graph.get_selfloops_number());
+        /// println!("The number of self-loops in the graph is  {}", graph.get_number_of_selfloops());
         /// ```
     );
 
-    cached_property!(get_unique_selfloops_number, NodeT, compute_selfloops_number, selfloops_number_unique,
+    cached_property!(get_number_of_unique_selfloops, NodeT, compute_selfloops_number, selfloops_number_unique,
         /// Returns number of unique self-loops, excluding those in eventual multi-edges.
         ///
         /// # Example
         ///```rust
         /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-        /// println!("The number of unique self-loops in the graph is  {}", graph.get_unique_selfloops_number());
+        /// println!("The number of unique self-loops in the graph is  {}", graph.get_number_of_unique_selfloops());
         /// ```
     );
 }

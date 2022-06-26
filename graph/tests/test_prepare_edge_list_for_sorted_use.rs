@@ -118,11 +118,11 @@ fn test_prepare_edge_list_for_sorted_undirected_use() -> Result<(), String> {
         .set_sources_column_number(Some(0))?
         .set_destinations_column_number(Some(1))?
         .set_csv_is_correct(Some(true))
-        .set_edges_number(Some(edges_number));
+        .set_number_of_edges(Some(edges_number));
 
     let nodes_reader = NodeFileReader::new(None)
         .unwrap()
-        .set_nodes_number(Some(nodes_number));
+        .set_number_of_nodes(Some(nodes_number));
 
     let mut g = Graph::from_file_readers(
         Some(edges_reader),
@@ -153,11 +153,11 @@ fn test_prepare_edge_list_for_sorted_undirected_use() -> Result<(), String> {
         .set_sources_column_number(Some(0))?
         .set_destinations_column_number(Some(1))?
         .set_csv_is_correct(Some(true))
-        .set_edges_number(Some(edges_number));
+        .set_number_of_edges(Some(edges_number));
 
     let nodes_reader = NodeFileReader::new(None)
         .unwrap()
-        .set_nodes_number(Some(nodes_number));
+        .set_number_of_nodes(Some(nodes_number));
 
     let mut g = Graph::from_file_readers(
         Some(edges_reader),
@@ -287,11 +287,11 @@ fn test_prepare_edge_list_for_sorted_undirected_use() -> Result<(), String> {
         .set_sources_column_number(Some(0))?
         .set_destinations_column_number(Some(1))?
         .set_csv_is_correct(Some(true))
-        .set_edges_number(Some(edges_number));
+        .set_number_of_edges(Some(edges_number));
 
     let nodes_reader = NodeFileReader::new(None)
         .unwrap()
-        .set_nodes_number(Some(nodes_number));
+        .set_number_of_nodes(Some(nodes_number));
 
     let mut g = Graph::from_file_readers(
         Some(edges_reader),
@@ -322,11 +322,11 @@ fn test_prepare_edge_list_for_sorted_undirected_use() -> Result<(), String> {
         .set_sources_column_number(Some(0))?
         .set_destinations_column_number(Some(1))?
         .set_csv_is_correct(Some(true))
-        .set_edges_number(Some(edges_number));
+        .set_number_of_edges(Some(edges_number));
 
     let nodes_reader = NodeFileReader::new(None)
         .unwrap()
-        .set_nodes_number(Some(nodes_number));
+        .set_number_of_nodes(Some(nodes_number));
 
     let mut g = Graph::from_file_readers(
         Some(edges_reader),

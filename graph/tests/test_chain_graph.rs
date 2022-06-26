@@ -7,7 +7,7 @@ fn test_chain_graph() -> Result<()> {
     let mut chain_graph =
         Graph::generate_chain_graph(None, Some(nodes_number), None, None, None, None, None, None)
             .unwrap();
-    assert_eq!(chain_graph.get_nodes_number(), nodes_number);
+    assert_eq!(chain_graph.get_number_of_nodes(), nodes_number);
     assert!(chain_graph.is_connected(Some(true)));
     let circles = chain_graph.get_circles(None, None).unwrap();
     assert!(circles.is_empty());

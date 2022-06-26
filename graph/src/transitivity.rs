@@ -34,7 +34,7 @@ impl Graph {
         let pb = get_loading_bar(
             verbose,
             "Computing transitive closure",
-            self.get_nodes_number() as usize,
+            self.get_number_of_nodes() as usize,
         );
         build_graph_from_integers(
             Some(
@@ -114,7 +114,7 @@ impl Graph {
         let pb = get_loading_bar(
             verbose,
             "Computing all unweighted shortest paths",
-            self.get_nodes_number() as usize,
+            self.get_number_of_nodes() as usize,
         );
         build_graph_from_integers(
             Some(
@@ -217,7 +217,7 @@ impl Graph {
         let pb = get_loading_bar(
             verbose,
             "Computing all unweighted shortest paths",
-            self.get_nodes_number() as usize,
+            self.get_number_of_nodes() as usize,
         );
         build_graph_from_integers(
             Some(
