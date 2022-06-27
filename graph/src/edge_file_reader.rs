@@ -603,7 +603,7 @@ impl EdgeFileReader {
     /// # Arguments
     /// * edges_number: Option<usize> - The number of edges expected to be loaded.
     ///
-    pub fn set_edges_number(mut self, edges_number: Option<EdgeT>) -> EdgeFileReader {
+    pub fn set_number_of_edges(mut self, edges_number: Option<EdgeT>) -> EdgeFileReader {
         self.edges_number = edges_number;
         self
     }

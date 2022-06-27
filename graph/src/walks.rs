@@ -672,7 +672,7 @@ impl Graph {
                 ) as NodeT;
                 (splitmix64(random_state + index as u64), unsafe {
                     self.get_unchecked_unique_source_node_id(
-                        random_source_id % self.get_unique_source_nodes_number(),
+                        random_source_id % self.get_number_of_unique_source_nodes(),
                     )
                 })
             },
@@ -707,7 +707,7 @@ impl Graph {
                 ) as NodeT;
                 (splitmix64(random_state + index as u64), unsafe {
                     self.get_unchecked_unique_source_node_id(
-                        random_source_id % self.get_unique_source_nodes_number(),
+                        random_source_id % self.get_number_of_unique_source_nodes(),
                     )
                 })
             },
@@ -732,11 +732,11 @@ impl Graph {
         self.must_have_edges()?;
         let random_state = splitmix64(parameters.random_state as u64);
         self.par_iter_walks(
-            self.get_unique_source_nodes_number(),
+            self.get_number_of_unique_source_nodes(),
             move |index| {
                 (splitmix64(random_state + index as u64), unsafe {
                     self.get_unchecked_unique_source_node_id(
-                        index as NodeT % self.get_unique_source_nodes_number(),
+                        index as NodeT % self.get_number_of_unique_source_nodes(),
                     )
                 })
             },
@@ -759,11 +759,11 @@ impl Graph {
         self.must_have_edges()?;
         let random_state = splitmix64(parameters.random_state as u64);
         self.iter_walks(
-            self.get_unique_source_nodes_number(),
+            self.get_number_of_unique_source_nodes(),
             move |index| {
                 (splitmix64(random_state + index as u64), unsafe {
                     self.get_unchecked_unique_source_node_id(
-                        index as NodeT % self.get_unique_source_nodes_number(),
+                        index as NodeT % self.get_number_of_unique_source_nodes(),
                     )
                 })
             },
@@ -822,10 +822,6 @@ impl Graph {
                     ),
                 };
 
-                if let Some(dense_node_mapping) = &parameters.dense_node_mapping {
-                    walk_buffer.iter_mut()
-                        .for_each(|node| *node = *dense_node_mapping.get(node).unwrap());
-                }
                 walk_buffer
             });
 
@@ -881,10 +877,6 @@ impl Graph {
                     ),
                 };
 
-                if let Some(dense_node_mapping) = &parameters.dense_node_mapping {
-                    walk_buffer.iter_mut()
-                        .for_each(|node| *node = *dense_node_mapping.get(node).unwrap());
-                }
                 walk_buffer
             });
 
@@ -1046,7 +1038,7 @@ impl Graph {
     ///
     /// # Safety
     /// If a non-existing node ID is provided, this method may cause an out of bound.
-    pub(crate) unsafe fn iter_uniform_walk(
+    pub unsafe fn iter_uniform_walk(
         &self,
         node: NodeT,
         random_state: u64,

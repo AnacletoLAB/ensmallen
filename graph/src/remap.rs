@@ -25,7 +25,7 @@ impl Graph {
     /// ```
     ///
     pub fn are_nodes_remappable(&self, other: &Graph) -> bool {
-        if self.get_nodes_number() != other.get_nodes_number() {
+        if self.get_number_of_nodes() != other.get_number_of_nodes() {
             return false;
         }
         self.par_iter_node_names_and_node_type_names()
@@ -80,7 +80,7 @@ impl Graph {
     ) -> Graph {
         // The node IDs are expected to have the same length
         // as the number of nodes in the current graph instance.
-        if positions.len() as NodeT != self.get_nodes_number() {
+        if positions.len() as NodeT != self.get_number_of_nodes() {
             panic!(
                 concat!(
                     "The provided positions is not compatible with ",
@@ -89,7 +89,7 @@ impl Graph {
                     "current graph is {}."
                 ),
                 positions.len(),
-                self.get_nodes_number()
+                self.get_number_of_nodes()
             );
         }
 
@@ -197,14 +197,14 @@ impl Graph {
     /// * If the given node IDs are not unique.
     /// * If the given node IDs are not available for all the values in the graph.
     pub fn remap_from_node_ids(&self, node_ids: Vec<NodeT>) -> Result<Graph> {
-        if node_ids.len() != self.get_nodes_number() as usize {
+        if node_ids.len() != self.get_number_of_nodes() as usize {
             return Err(format!(
                 concat!(
                     "The provided node IDs list has length {}, ",
                     "while the number of nodes in the current graph is {}."
                 ),
                 node_ids.len(),
-                self.get_nodes_number()
+                self.get_number_of_nodes()
             ));
         }
         if !self.has_nodes() {
@@ -220,14 +220,14 @@ impl Graph {
                 min
             ));
         }
-        if max != self.get_nodes_number() - 1 {
+        if max != self.get_number_of_nodes() - 1 {
             return Err(format!(
                 concat!(
                     "The maximum node ID provided in the given mapping is {}, ",
                     "while {} was expected."
                 ),
                 max,
-                self.get_nodes_number() - 1
+                self.get_number_of_nodes() - 1
             ));
         }
         let without_duplicates_len = node_ids.iter().unique().count();

@@ -150,7 +150,7 @@ pub fn convert_edge_list_to_numeric(
             .set_minimum_node_id(original_minimum_node_id)
             .set_numeric_node_ids(original_numeric_node_ids)
             .set_csv_is_correct(node_list_is_correct)?
-            .set_nodes_number(nodes_number)
+            .set_number_of_nodes(nodes_number)
             .set_parallel(original_load_node_list_in_parallel)?;
         let (nodes, _) = parse_nodes(
             node_file_reader.read_lines().transpose()?,

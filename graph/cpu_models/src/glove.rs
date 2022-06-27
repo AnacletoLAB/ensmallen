@@ -1,5 +1,6 @@
 use graph::{Graph, ThreadDataRaceAware, WalksParameters};
 use indicatif::{ProgressBar, ProgressStyle};
+use num_traits::Zero;
 use rayon::prelude::*;
 use vec_rand::{random_f32, splitmix64};
 
@@ -99,8 +100,7 @@ impl GloVe {
             return Err("The provided graph does not have any node.".to_string());
         }
 
-        let nodes_number = graph.get_nodes_number();
-        let log_squared_nodes_number = 2.0 * (nodes_number as f32).ln();
+        let nodes_number = graph.get_number_of_nodes();
         let expected_node_embedding_len = self.embedding_size * nodes_number as usize;
         if node_embedding.len() != expected_node_embedding_len {
             return Err(format!(
@@ -154,15 +154,18 @@ impl GloVe {
 
             // We start to compute the new gradients.
             let total_variation = graph
-                .par_iter_cooccurence_matrix(
+                .par_iter_log_normalized_cooccurence_matrix(
                     &walk_parameters,
                     self.window_size,
+                    None,
                 )?
                 .map(|(src, dst, freq)| unsafe {
-                    let src_embedding = &mut (*shared_node_embedding.get())
-                        [(src as usize) * self.embedding_size..((src as usize) + 1) * self.embedding_size];
-                    let dst_hidden = &mut (*shared_hidden_layer.get())
-                        [(dst as usize) * self.embedding_size..(dst as usize + 1) * self.embedding_size];
+                    let src_embedding = &mut (*shared_node_embedding.get())[(src as usize)
+                        * self.embedding_size
+                        ..((src as usize) + 1) * self.embedding_size];
+                    let dst_hidden = &mut (*shared_hidden_layer.get())[(dst as usize)
+                        * self.embedding_size
+                        ..(dst as usize + 1) * self.embedding_size];
 
                     let dot = src_embedding
                         .iter()
@@ -176,18 +179,8 @@ impl GloVe {
                         return 0.0;
                     }
 
-                    let log_src_degree =
-                        (graph.get_unchecked_node_degree_from_node_id(src) as f32).ln();
-                    let log_dst_degree =
-                        (graph.get_unchecked_node_degree_from_node_id(dst) as f32).ln();
-
-                    let normalized_log_preferential_attachment =
-                        log_src_degree + log_dst_degree - log_squared_nodes_number;
-
-                    let loss: f32 = (2.0
-                        * freq.powf(self.alpha)
-                        * (dot + normalized_log_preferential_attachment - freq.ln())
-                        * learning_rate) as f32;
+                    let loss: f32 =
+                        (2.0 * freq.powf(self.alpha) * (dot - freq.ln()) * learning_rate) as f32;
 
                     src_embedding
                         .iter_mut()
@@ -196,9 +189,14 @@ impl GloVe {
                             *src_feature -= *dst_feature * loss;
                             *dst_feature -= *src_feature * loss;
                         });
-                    loss
+                    loss.abs()
                 })
                 .sum::<f32>();
+
+            if total_variation.is_zero() {
+                break;
+            }
+
             epochs_progress_bar.inc(1);
             epochs_progress_bar.set_message(format!("variation {:.4}", total_variation));
             learning_rate *= learning_rate_decay;

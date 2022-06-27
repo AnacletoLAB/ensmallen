@@ -67,7 +67,7 @@ impl Graph {
             ).to_string());
         }
         // We need to collect the node ids into a vector because we will shuffle them in the main loop.
-        let mut node_ids = (0..self.get_nodes_number() as usize).collect::<Vec<usize>>();
+        let mut node_ids = (0..self.get_number_of_nodes() as usize).collect::<Vec<usize>>();
         // We initialize the communities as the ids of the nodes.
         let mut communities = node_ids.clone();
         // Vector of the weights of the edges contained within each community.
@@ -89,7 +89,7 @@ impl Graph {
                 .collect()
         } else {
             // Alternatively, we know they are all zero.
-            vec![0.0; self.get_nodes_number() as usize]
+            vec![0.0; self.get_number_of_nodes() as usize]
         };
         // We compute the weighted node degrees
         let weighted_node_degrees: Vec<f64> =
@@ -130,7 +130,7 @@ impl Graph {
                 // Retrieve the current node weighted degree.
                 let current_node_weighted_degree = weighted_node_degrees[src];
                 // Create vector of communities indegrees
-                let mut communities_indegrees = vec![0.0; self.get_nodes_number() as usize];
+                let mut communities_indegrees = vec![0.0; self.get_number_of_nodes() as usize];
                 // Populate neighbours communities indegrees and weights of the neighbours communities.
                 let neighbours_weights_and_community_ids: Vec<(f64, usize)> =
                     if self.has_edge_weights() {
@@ -382,14 +382,14 @@ impl Graph {
     fn validate_modularity_parameters(&self, node_community_memberships: &[NodeT]) -> Result<()> {
         // Otherwise we check if the provided node colors are compatible with the current
         // graph instance.
-        if node_community_memberships.len() != self.get_nodes_number() as usize {
+        if node_community_memberships.len() != self.get_number_of_nodes() as usize {
             return Err(format!(
                 concat!(
                     "The graph contains {} nodes, while the provided node community memberships ",
                     "where {}. You need to provide the node community memberships for each node."
                 ),
                 node_community_memberships.len(),
-                self.get_nodes_number()
+                self.get_number_of_nodes()
             ));
         }
         Ok(())

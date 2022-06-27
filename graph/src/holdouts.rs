@@ -391,7 +391,7 @@ impl Graph {
 
         // Here we use unique edges number because on a multigraph the negative
         // edges cannot have an edge type.
-        let nodes_number = self.get_nodes_number() as EdgeT;
+        let nodes_number = self.get_number_of_nodes() as EdgeT;
 
         // whether to sample negative edges only from the same connected component.
         let (node_components, mut complete_edges_number) = if only_from_same_component {
@@ -423,7 +423,7 @@ impl Graph {
         }
 
         // Now we compute the maximum number of negative edges that we can actually generate
-        let max_negative_edges = complete_edges_number - self.get_unique_edges_number();
+        let max_negative_edges = complete_edges_number - self.get_number_of_unique_edges();
 
         // We check that the number of requested negative edges is compatible with the
         // current graph instance.
@@ -1060,7 +1060,7 @@ impl Graph {
             self.must_have_edge_types()?;
         }
         let total_edges_number = if include_all_edge_types {
-            self.get_unique_edges_number()
+            self.get_number_of_unique_edges()
         } else {
             self.get_number_of_directed_edges()
         };
@@ -1141,7 +1141,7 @@ impl Graph {
             }
         }
 
-        if self.get_known_node_types_number()? < 2 {
+        if self.get_number_of_known_node_types()? < 2 {
             return Err("It is not possible to create a node label holdout when the number of nodes with known node type is less than two.".to_string());
         }
 
@@ -1156,7 +1156,7 @@ impl Graph {
                 if use_stratification {
                     // Initialize the vectors for each node type
                     let mut node_sets: Vec<Vec<NodeT>> =
-                        vec![Vec::new(); self.get_node_types_number().unwrap() as usize];
+                        vec![Vec::new(); self.get_number_of_node_types().unwrap() as usize];
                     // itering over the indices and adding each node to the
                     // vector of the corresponding node type.
                     nts.ids.iter().enumerate().for_each(|(node_id, node_type)| {
@@ -1187,9 +1187,9 @@ impl Graph {
 
         // Allocate the vectors for the nodes of each
         let mut train_node_indices: Vec<NodeT> =
-            Vec::with_capacity(self.get_nodes_number() as usize);
+            Vec::with_capacity(self.get_number_of_nodes() as usize);
         let mut test_node_indices: Vec<NodeT> =
-            Vec::with_capacity(self.get_nodes_number() as usize);
+            Vec::with_capacity(self.get_number_of_nodes() as usize);
 
         for mut node_set in node_sets {
             // Shuffle in a reproducible way the nodes of the current node_type
@@ -1234,14 +1234,14 @@ impl Graph {
 
         // Allocate the vectors for the nodes of each
         // For the training node types
-        let mut train_node_types = vec![None; self.get_nodes_number() as usize];
+        let mut train_node_types = vec![None; self.get_number_of_nodes() as usize];
         train_node_indices.into_iter().for_each(|node_id| unsafe {
             train_node_types[node_id as usize] = self
                 .get_unchecked_node_type_ids_from_node_id(node_id)
                 .map(|x| x.clone())
         });
         // For the test node types
-        let mut test_node_types = vec![None; self.get_nodes_number() as usize];
+        let mut test_node_types = vec![None; self.get_number_of_nodes() as usize];
         test_node_indices.into_iter().for_each(|node_id| unsafe {
             test_node_types[node_id as usize] = self
                 .get_unchecked_node_type_ids_from_node_id(node_id)
@@ -1338,7 +1338,7 @@ impl Graph {
         use_stratification: Option<bool>,
         random_state: Option<EdgeT>,
     ) -> Result<(Graph, Graph)> {
-        if self.get_known_edge_types_number()? < 2 {
+        if self.get_number_of_known_edge_types()? < 2 {
             return Err("It is not possible to create a edge label holdout when the number of edges with known edge type is less than two.".to_string());
         }
         let use_stratification = use_stratification.unwrap_or(false);
@@ -1358,7 +1358,7 @@ impl Graph {
                 if use_stratification {
                     // Initialize the vectors for each edge type
                     let mut edge_sets: Vec<Vec<EdgeT>> =
-                        vec![Vec::new(); self.get_edge_types_number().unwrap() as usize];
+                        vec![Vec::new(); self.get_number_of_edge_types().unwrap() as usize];
                     // itering over the indices and adding each edge to the
                     // vector of the corresponding edge type.
                     nts.ids.iter().enumerate().for_each(|(edge_id, edge_type)| {
@@ -1473,7 +1473,7 @@ impl Graph {
         }
         let verbose = verbose.unwrap_or(false);
         let random_state = random_state.unwrap_or(0xbadf00d);
-        let connected_nodes_number = self.get_connected_nodes_number();
+        let connected_nodes_number = self.get_number_of_connected_nodes();
         if nodes_number > connected_nodes_number {
             return Err(format!(
                 concat!(
@@ -1496,7 +1496,7 @@ impl Graph {
         let mut rnd = SmallRng::seed_from_u64(splitmix64(random_state as u64) as u64);
 
         // Nodes indices
-        let mut nodes: Vec<NodeT> = (0..self.get_nodes_number()).collect();
+        let mut nodes: Vec<NodeT> = (0..self.get_number_of_nodes()).collect();
 
         // Shuffling the components using the given random_state.
         nodes.shuffle(&mut rnd);
@@ -1614,7 +1614,7 @@ impl Graph {
             }
         }
 
-        if self.get_known_node_types_number()? < 2 {
+        if self.get_number_of_known_node_types()? < 2 {
             return Err("It is not possible to create a node label holdout when the number of nodes with known node type is less than two.".to_string());
         }
 
@@ -1629,7 +1629,7 @@ impl Graph {
                 if use_stratification {
                     // Initialize the vectors for each node type
                     let mut node_sets: Vec<Vec<NodeT>> =
-                        vec![Vec::new(); self.get_node_types_number().unwrap() as usize];
+                        vec![Vec::new(); self.get_number_of_node_types().unwrap() as usize];
                     // itering over the indices and adding each node to the
                     // vector of the corresponding node type.
                     nts.ids.iter().enumerate().for_each(|(node_id, node_type)| {
@@ -1661,9 +1661,9 @@ impl Graph {
 
         // Allocate the vectors for the nodes of each
         let mut train_node_types: Vec<Option<Vec<NodeTypeT>>> =
-            vec![None; self.get_nodes_number() as usize];
+            vec![None; self.get_number_of_nodes() as usize];
         let mut test_node_types: Vec<Option<Vec<NodeTypeT>>> =
-            vec![None; self.get_nodes_number() as usize];
+            vec![None; self.get_number_of_nodes() as usize];
 
         for mut node_set in node_sets {
             // Shuffle in a reproducible way the nodes of the current node_type
@@ -1748,7 +1748,7 @@ impl Graph {
             }
         }
 
-        if self.get_known_node_types_number()? < 2 {
+        if self.get_number_of_known_node_types()? < 2 {
             return Err("It is not possible to create a node label holdout when the number of nodes with known node type is less than two.".to_string());
         }
 
@@ -1763,7 +1763,7 @@ impl Graph {
                 if use_stratification {
                     // Initialize the vectors for each node type
                     let mut node_sets: Vec<Vec<NodeT>> =
-                        vec![Vec::new(); self.get_node_types_number().unwrap() as usize];
+                        vec![Vec::new(); self.get_number_of_node_types().unwrap() as usize];
                     // itering over the indices and adding each node to the
                     // vector of the corresponding node type.
                     nts.get_ids()
@@ -1802,7 +1802,7 @@ impl Graph {
             .unwrap();
 
         let mut test_node_types: Vec<Option<Vec<NodeTypeT>>> =
-            vec![None; self.get_nodes_number() as usize];
+            vec![None; self.get_number_of_nodes() as usize];
 
         for mut node_set in node_sets {
             random_state = splitmix64(random_state);
@@ -1878,7 +1878,7 @@ impl Graph {
         use_stratification: Option<bool>,
         random_state: Option<EdgeT>,
     ) -> Result<(Graph, Graph)> {
-        if self.get_known_edge_types_number()? < 2 {
+        if self.get_number_of_known_edge_types()? < 2 {
             return Err("It is not possible to create a edge label holdout when the number of edges with known edge type is less than two.".to_string());
         }
         let use_stratification = use_stratification.unwrap_or(false);
@@ -1898,7 +1898,7 @@ impl Graph {
                 if use_stratification {
                     // Initialize the vectors for each edge type
                     let mut edge_sets: Vec<Vec<EdgeT>> =
-                        vec![Vec::new(); self.get_edge_types_number().unwrap() as usize];
+                        vec![Vec::new(); self.get_number_of_edge_types().unwrap() as usize];
                     // itering over the indices and adding each edge to the
                     // vector of the corresponding edge type.
                     nts.ids.iter().enumerate().for_each(|(edge_id, edge_type)| {
@@ -2011,7 +2011,7 @@ impl Graph {
         use_stratification: Option<bool>,
         random_state: Option<EdgeT>,
     ) -> Result<(Graph, Graph)> {
-        if self.get_known_edge_types_number()? < 2 {
+        if self.get_number_of_known_edge_types()? < 2 {
             return Err("It is not possible to create a edge label holdout when the number of edges with known edge type is less than two.".to_string());
         }
         let use_stratification = use_stratification.unwrap_or(false);
@@ -2031,7 +2031,7 @@ impl Graph {
                 if use_stratification {
                     // Initialize the vectors for each edge type
                     let mut edge_sets: Vec<Vec<EdgeT>> =
-                        vec![Vec::new(); self.get_edge_types_number().unwrap() as usize];
+                        vec![Vec::new(); self.get_number_of_edge_types().unwrap() as usize];
                     // itering over the indices and adding each edge to the
                     // vector of the corresponding edge type.
                     nts.ids.iter().enumerate().for_each(|(edge_id, edge_type)| {

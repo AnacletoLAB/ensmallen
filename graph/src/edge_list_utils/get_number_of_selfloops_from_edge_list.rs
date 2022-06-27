@@ -19,7 +19,7 @@ use crate::{EdgeFileReader, EdgeT, Result};
 /// * `verbose`: Option<bool> - Whether to show the loading bar while processing the file.
 /// * `name`: Option<String> - The name of the graph to display in the loading bar.
 ///
-pub fn get_selfloops_number_from_edge_list(
+pub fn get_number_of_selfloops_from_edge_list(
     path: &str,
     separator: Option<char>,
     header: Option<bool>,
@@ -49,7 +49,7 @@ pub fn get_selfloops_number_from_edge_list(
         .set_sources_column(sources_column)?
         .set_sources_column_number(sources_column_number)?
         .set_parallel(load_edge_list_in_parallel)
-        .set_edges_number(edges_number)
+        .set_number_of_edges(edges_number)
         .set_verbose(verbose)
         .set_graph_name(name);
 

@@ -581,7 +581,7 @@ impl NodeFileReader {
     /// # Arguments
     /// * nodes_number: Option<usize> - The number of nodes expected to be loaded.
     ///
-    pub fn set_nodes_number(mut self, nodes_number: Option<NodeT>) -> NodeFileReader {
+    pub fn set_number_of_nodes(mut self, nodes_number: Option<NodeT>) -> NodeFileReader {
         self.nodes_number = nodes_number;
         self
     }

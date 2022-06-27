@@ -116,7 +116,7 @@ impl TransE {
             .to_string());
         }
 
-        let edge_types_number = graph.get_edge_types_number().unwrap() as usize;
+        let edge_types_number = graph.get_number_of_edge_types().unwrap() as usize;
         let expected_edge_embedding_size = self.embedding_size * edge_types_number;
 
         if edge_type_embedding.len() != expected_edge_embedding_size {
@@ -132,7 +132,7 @@ impl TransE {
         }
 
         let number_of_directed_edges = graph.get_number_of_directed_edges();
-        let nodes_number = graph.get_nodes_number();
+        let nodes_number = graph.get_number_of_nodes();
         let expected_node_embedding_size = self.embedding_size * nodes_number as usize;
 
         if node_embedding.len() != expected_node_embedding_size {

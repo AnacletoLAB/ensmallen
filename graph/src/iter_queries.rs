@@ -418,7 +418,7 @@ impl Graph {
     /// * `src`: NodeT - Source node id of the edge.
     /// * `dst`: NodeT -  Destination node id of the edge.
     ///
-    pub fn iter_edge_ids_from_node_ids(
+    pub fn iter_multigraph_edge_ids_from_node_ids(
         &self,
         src: NodeT,
         dst: NodeT,

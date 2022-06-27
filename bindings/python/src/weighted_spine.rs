@@ -9,18 +9,6 @@ pub struct WeightedSPINE {
     pub inner: cpu_models::WeightedSPINE,
 }
 
-impl From<cpu_models::WeightedSPINE> for WeightedSPINE {
-    fn from(val: cpu_models::WeightedSPINE) -> WeightedSPINE {
-        WeightedSPINE { inner: val }
-    }
-}
-
-impl From<WeightedSPINE> for cpu_models::WeightedSPINE {
-    fn from(val: WeightedSPINE) -> cpu_models::WeightedSPINE {
-        val.inner
-    }
-}
-
 #[pymethods]
 impl WeightedSPINE {
     #[new]
@@ -77,7 +65,7 @@ impl WeightedSPINE {
 
         pe!(validate_kwargs(kwargs, &["verbose"]))?;
 
-        let rows_number = graph.inner.get_nodes_number() as usize;
+        let rows_number = graph.inner.get_number_of_nodes() as usize;
         let columns_number = self.inner.get_embedding_size();
         let embedding = PyArray2::new(gil.python(), [columns_number, rows_number], false);
 

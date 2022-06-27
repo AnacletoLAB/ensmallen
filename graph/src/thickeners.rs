@@ -52,7 +52,7 @@ impl Graph {
     ) -> Result<Graph> {
         // check that the parameters are sane
         self.must_have_nodes()?;
-        validate_features(&features, self.get_nodes_number() as usize)?;
+        validate_features(&features, self.get_number_of_nodes() as usize)?;
         let max_degree = max_degree.unwrap_or(0);
 
         // compute the neighbours nodes to add
@@ -67,7 +67,7 @@ impl Graph {
         let pb = get_loading_bar(
             verbose,
             "Computing additional edges to thicken graph",
-            self.get_nodes_number() as usize,
+            self.get_number_of_nodes() as usize,
         );
 
         // initialize the distance metric

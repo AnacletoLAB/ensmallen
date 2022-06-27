@@ -1,7 +1,6 @@
 use super::*;
 use atomic_float::AtomicF64;
 use bitvec::prelude::*;
-use hashbrown::HashMap;
 use indicatif::{ParallelProgressIterator, ProgressIterator};
 use itertools::Itertools;
 use num_traits::Pow;
@@ -89,51 +88,6 @@ impl Graph {
     }
 
     #[manual_binding]
-    /// Return triple with CSR representation of cooccurrence matrix.
-    ///
-    /// The first vector has the sources, the second vector the destinations
-    /// and the third one contains the min-max normalized frequencies.
-    ///
-    /// # Arguments
-    /// * `walks_parameters`: &'a WalksParameters - the walks parameters.
-    /// * `window_size`: usize - Window size to consider for the sequences.
-    pub fn par_iter_cooccurence_matrix<'a>(
-        &'a self,
-        walks_parameters: &'a WalksParameters,
-        window_size: usize,
-    ) -> Result<impl ParallelIterator<Item = (NodeT, NodeT, f32)> + 'a> {
-        Ok(self
-            .par_iter_complete_walks(walks_parameters)?
-            .flat_map(move |sequence| {
-                let mut cooccurence_matrix: HashMap<(NodeT, NodeT), f32> = HashMap::new();
-                let mut total = 0.0;
-                (0..sequence.len())
-                    .map(|position| {
-                        (
-                            sequence[position],
-                            &sequence[(position.saturating_sub(window_size)
-                                ..(position + window_size).min(sequence.len()))],
-                        )
-                    })
-                    .for_each(|(central_id, context)| {
-                        context.iter().copied().for_each(|context_id| {
-                            // Get the current value for this pair of nodes
-                            cooccurence_matrix
-                                .entry((central_id, context_id))
-                                .and_modify(|e| *e += 1.0)
-                                .or_insert(1.0);
-                            total += 1.0;
-                        });
-                    });
-                cooccurence_matrix
-                    .into_par_iter()
-                    .map(move |((central_id, context_id), freq)| {
-                        (central_id, context_id, freq / total)
-                    })
-            }))
-    }
-
-    #[manual_binding]
     /// Return iterator over neighbours of random nodes, optionally including the central node IDs, and its node type.
     ///
     /// # Arguments
@@ -172,7 +126,7 @@ impl Graph {
         }
         self.must_have_known_node_types()?;
         self.must_have_unknown_node_types()?;
-        let nodes_number = self.get_nodes_number();
+        let nodes_number = self.get_number_of_nodes();
         let batch_size = batch_size.unwrap_or(1024).min(nodes_number);
         let return_edge_weights = return_edge_weights.unwrap_or(false);
         let include_central_node = include_central_node.unwrap_or(false);
@@ -663,68 +617,6 @@ impl Graph {
             }))
     }
 
-    /// Returns triple with the degrees of source nodes, destination nodes and labels for training model for link prediction.
-    /// This method is just for setting the lowerbound on the simplest possible model.
-    ///
-    /// # Arguments
-    ///
-    /// * `idx`: u64 - The index of the batch to generate, behaves like a random random_state,
-    /// * `batch_size`: usize - The maximal size of the batch to generate,
-    /// * `normalize`: bool - Divide the degrees by the max, this way the values are in [0, 1],
-    /// * `negative_samples`: Option<f64> - The component of netagetive samples to use,
-    /// * `avoid_false_negatives`: bool - Whether to remove the false negatives when generated. It should be left to false, as it has very limited impact on the training, but enabling this will slow things down.
-    /// * `maximal_sampling_attempts`: usize - Number of attempts to execute to sample the negative edges.
-    /// * `shuffle`: Option<bool> - Whether to shuffle the samples within the batch.
-    /// * `sample_only_edges_with_heterogeneous_node_types`: Option<bool> - Whether to sample negative edges only with source and destination nodes that have different node types.
-    /// * `use_zipfian_sampling`: Option<bool> - Whether to sample the nodes using zipfian distribution. By default True. Not using this may cause significant biases.
-    /// * `support`: Option<&'a Graph> - Graph to use to compute the edge metrics. When not provided, the current graph (self) is used.
-    /// * `graph_to_avoid`: &'a Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,
-    ///
-    /// # Raises
-    /// * If the given amount of negative samples is not a positive finite real value.
-    pub fn link_prediction_degrees<'a>(
-        &'a self,
-        random_state: u64,
-        batch_size: usize,
-        normalize: Option<bool>,
-        negative_samples: Option<f64>,
-        avoid_false_negatives: Option<bool>,
-        maximal_sampling_attempts: Option<usize>,
-        sample_only_edges_with_heterogeneous_node_types: bool,
-        use_zipfian_sampling: Option<bool>,
-        support: Option<&'a Graph>,
-        graph_to_avoid: Option<&'a Graph>,
-    ) -> Result<impl ParallelIterator<Item = (f64, f64, bool)> + 'a> {
-        let iter = self.par_iter_attributed_edge_prediction_mini_batch(
-            random_state,
-            batch_size,
-            false,
-            false,
-            sample_only_edges_with_heterogeneous_node_types,
-            negative_samples,
-            avoid_false_negatives,
-            maximal_sampling_attempts,
-            use_zipfian_sampling,
-            support,
-            graph_to_avoid,
-        )?;
-
-        let normalize = normalize.unwrap_or(true);
-
-        let max_degree = match normalize {
-            true => self.get_maximum_node_degree()? as f64,
-            false => 1.0,
-        };
-
-        Ok(iter.map(move |(src, _, dst, _, _, label)| unsafe {
-            (
-                self.get_unchecked_node_degree_from_node_id(src) as f64 / max_degree,
-                self.get_unchecked_node_degree_from_node_id(dst) as f64 / max_degree,
-                label,
-            )
-        }))
-    }
-
     #[fuzz_type(iterations: Option<u8>)]
     /// Returns okapi node features propagation within given maximal distance.
     ///
@@ -756,7 +648,7 @@ impl Graph {
         // The graph must have nodes to support node feature propagation
         self.must_have_nodes()?;
         // Validate the provided features
-        validate_features(&features, self.get_nodes_number() as usize)?;
+        validate_features(&features, self.get_number_of_nodes() as usize)?;
         // We use as default distance 3
         let maximal_distance = maximal_distance.unwrap_or(3);
         // K1 values are typically between 1.2 and 2.0 in absence of additional
@@ -784,7 +676,7 @@ impl Graph {
         // Get the number of possible elements in the features vocabulary
         let features_number = features[0].len() as usize;
         // Get the number of 'documents'
-        let nodes_number = self.get_nodes_number() as usize;
+        let nodes_number = self.get_number_of_nodes() as usize;
         // Loading bar
         let iterations_progress_bar = get_loading_bar(
             verbose.unwrap_or(true) && iterations > 1,

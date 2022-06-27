@@ -145,7 +145,7 @@ impl Graph {
     /// anti-diagonal of the graph.
     ///
     pub fn to_anti_diagonal(&self) -> Graph {
-        let nodes_number = self.get_nodes_number();
+        let nodes_number = self.get_number_of_nodes();
         build_graph_from_integers(
             Some(
                 self.par_iter_directed_edge_node_ids_and_edge_type_id_and_edge_weight()
@@ -184,7 +184,7 @@ impl Graph {
     /// the diagonal or anti-diagonal matrix.
     ///
     pub fn to_bidiagonal(&self) -> Graph {
-        let nodes_number = self.get_nodes_number();
+        let nodes_number = self.get_number_of_nodes();
         build_graph_from_integers(
             Some(
                 self.par_iter_directed_edge_node_ids_and_edge_type_id_and_edge_weight()
@@ -313,7 +313,7 @@ impl Graph {
             Some(false),
             Some(false),
             Some(
-                (self.get_nodes_number() as EdgeT).pow(2) - self.get_unique_directed_edges_number(),
+                (self.get_number_of_nodes() as EdgeT).pow(2) - self.get_number_of_unique_directed_edges(),
             ),
             true,
             true,
@@ -380,7 +380,7 @@ impl Graph {
                 ))
         });
 
-        let number_of_nodes = self.get_nodes_number() as usize;
+        let number_of_nodes = self.get_number_of_nodes() as usize;
 
         info!("Creating and sorting positions.");
         // this is the reverse-(reverse-index) and stores the index in the reverse_index of a given node
@@ -395,7 +395,7 @@ impl Graph {
             });
         let positions = positions.into_inner();
 
-        let half_number_of_destinations = (self.get_nodes_number() as f32).ln().ceil() as usize;
+        let half_number_of_destinations = (self.get_number_of_nodes() as f32).ln().ceil() as usize;
         // it's the degree of the node on the multigraph composed by all the layers
         let number_of_destinations = 2 * half_number_of_destinations;
         let number_of_edges_per_node = number_of_destinations * number_of_layers;

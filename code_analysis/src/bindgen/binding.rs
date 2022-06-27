@@ -89,6 +89,9 @@ fn translate_return_type(
 
                     (body, Some(this_struct.to_string()))
                 }
+                (false, true) => {
+                    (body, Some(this_struct.to_string()))
+                }
                 _ => {
                     panic!("Not implemented yet!");
                 }
@@ -223,8 +226,58 @@ fn translate_return_type(
             )
         }
 
+
         // handle other vec with maybe complex types
         x if x == "Vec<_>" => {
+            let inner_type = &x[0];
+
+            match inner_type {
+                Type::TupleType(subtypes) => {
+                    // if its a non empty slice of homogeneous primitive types
+                    // convert it to a numpy 2d array
+                    if subtypes.len() == 2 
+                        && subtypes[0] == "Primitive" 
+                        && subtypes[0] == subtypes[1]   
+                    {
+                        let inner_type = &subtypes[0];
+
+                        if body.ends_with(".into()") {
+                            body = body.strip_suffix(".into()").unwrap().to_string();
+                        }
+            
+                        let mut body = format!(
+r#"
+// Warning: this copies the array so it uses double the memory.
+// To avoid this you should directly generate data compatible with a numpy array
+// Which is a flat vector with row-first or column-first unrolling
+let gil = pyo3::Python::acquire_gil();
+let body = {body};
+let result_array = ThreadDataRaceAware {{t: PyArray2::<{inner_type}>::new(gil.python(), [body.len(), 2], false)}};
+body.into_par_iter().enumerate()
+    .for_each(|(i, (a, b))| unsafe {{
+        *(result_array.t.uget_mut([i, 0]))  = a;
+        *(result_array.t.uget_mut([i, 1]))  = b;
+    }});
+result_array.t.to_owned()"#,
+                            body = body,
+                            inner_type = inner_type,
+                        );
+            
+                        if depth != 0 {
+                            body = format!("{{{}}}", body);
+                        }
+            
+                        return (
+                            body,
+                            Some(
+                                format!("Py<PyArray2<{}>>", inner_type)
+                            )
+                        );
+                    }
+                }
+                _ => {}
+            }
+
             // TODO! make this recursive??
             let mut res_body = format!(
                 "{}.into_iter().map(|x| x.into()).collect::<Vec<_>>()", 
@@ -356,9 +409,35 @@ impl GenBinding for Function {
         };
 
         let this_struct = self.class.as_ref().map(|x| x.get_name().unwrap()).unwrap_or("".to_string());
-        
+
+        let mut handle_walk_parameters = false;
+
         for arg in self.iter_args() {
-            let (arg_name, arg_call) = translate_arg(arg, &this_struct);
+            // bad hardocded stuff but fuck it it's 2am
+            if &arg.arg_type.to_string() == "&WalksParameters" {
+                handle_walk_parameters = true;
+                args_names.push_str(&format!(
+r#"&{{
+let py = pyo3::Python::acquire_gil();
+let kwargs = normalize_kwargs!(py_kwargs, py.python());
+pe!(validate_kwargs(
+    kwargs,
+    build_walk_parameters_list(&[]).as_slice()
+))?;
+build_walk_parameters(kwargs)?
+}}"#, 
+                ));
+                args_names.push_str(", ");
+                continue
+            }
+
+            let (mut arg_name, mut arg_call) = translate_arg(arg, &this_struct);
+
+            // bad hack
+            if arg_name.contains("Option<&Vec<NodeT>>") {
+                arg_name = arg_name.replace("Option<&Vec<NodeT>>", "Option<Vec<NodeT>>");
+                arg_call = Some(format!("{}.as_ref()", arg.name));
+            }
 
             args.push_str(&arg_name);
             args.push_str(", ");
@@ -371,6 +450,26 @@ impl GenBinding for Function {
                 args_signatures.push(arg.name.clone());
             }
         }
+
+        if handle_walk_parameters {
+            args_signatures.extend(vec![
+                "*".into(),
+                "return_weight".into(),
+                "explore_weight".into(),
+                "change_edge_type_weight".into(),
+                "change_node_type_weight".into(),
+                "max_neighbours".into(),
+                "random_state".into(),
+                "iterations".into(),
+                "dense_node_mapping".into(),
+                "normalize_by_degree".into(),
+                "walk_length".into(),
+            ]);
+
+            args.push_str("py_kwargs: Option<&PyDict>, ");
+        }
+
+
 
         let text_signature = format!("#[text_signature = \"({})\"]", args_signatures.join(", "));
 
@@ -399,6 +498,7 @@ impl GenBinding for Function {
 
         format!(
             r#"
+            {other_annotations}
             {type_annotation}
             #[automatically_generated_binding]
             {text_signature}
@@ -407,6 +507,11 @@ impl GenBinding for Function {
             {body}
             }}
             "#,
+                        other_annotations = if handle_walk_parameters {
+                            "#[args(py_kwargs = \"**\")]"
+                        } else {
+                            ""
+                        },
                         type_annotation= match (self.is_method(), self.is_static()) {
                             (true, true) => "#[staticmethod]",
                             (true, false) => "", //"#[classmethod]", for some reason if we add this crash!!

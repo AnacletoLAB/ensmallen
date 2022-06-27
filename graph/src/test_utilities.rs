@@ -79,7 +79,7 @@ pub fn load_ppi(
                 .unwrap()
                 .set_csv_is_correct(Some(true))
                 .unwrap()
-                .set_nodes_number(Some(37163))
+                .set_number_of_nodes(Some(37163))
                 .set_parallel(Some(parallel))
                 .unwrap()
                 .clone(),
@@ -192,16 +192,15 @@ pub fn load_cora() -> Graph {
 }
 
 /// Return WalksParameters to execute a first order walk.
-pub fn first_order_walker(graph: &Graph) -> Result<WalksParameters> {
+pub fn first_order_walker() -> Result<WalksParameters> {
     Ok(WalksParameters::new(8)?
         .set_iterations(Some(1))?
         .set_random_state(Some(43))
-        .set_dense_node_mapping(Some(graph.get_dense_nodes_mapping())))
+    )
 }
 
 /// Return WalksParameters to execute a second order walk.
 pub fn second_order_walker(
-    graph: &Graph,
     return_weight: WeightT,
     explore_weight: WeightT,
 ) -> Result<WalksParameters> {
@@ -212,7 +211,6 @@ pub fn second_order_walker(
         .set_max_neighbours(Some(3))?
         .set_change_edge_type_weight(Some(2.0))?
         .set_change_node_type_weight(Some(2.0))?
-        .set_dense_node_mapping(Some(graph.get_dense_nodes_mapping()))
         .set_random_state(Some(43)))
 }
 
@@ -340,9 +338,9 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<()>
                 "to be the case (singletons number {}).\n",
                 "The graph report is {:?}."
             ),
-            graph.get_nodes_number(),
-            graph.get_edges_number(),
-            graph.get_singleton_nodes_number(),
+            graph.get_number_of_nodes(),
+            graph.get_number_of_edges(),
+            graph.get_number_of_singleton_nodes(),
             graph.textual_report()
         );
     }
@@ -362,7 +360,7 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<()>
     );
     assert_eq!(
         singleton_nodes.len(),
-        graph.get_singleton_nodes_number() as usize,
+        graph.get_number_of_singleton_nodes() as usize,
         concat!(
             "The computed number of singleton nodes in this graph ",
             "is {}, but the number of singletons that have been computed ",
@@ -370,7 +368,7 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<()>
             "The report of this graph is: {:?}."
         ),
         singleton_nodes.len(),
-        graph.get_singleton_nodes_number() as usize,
+        graph.get_number_of_singleton_nodes() as usize,
         graph.textual_report()
     );
 
@@ -411,7 +409,7 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<()>
         );
         assert_eq!(
             singleton_nodes_with_selfloops.len(),
-            graph.get_singleton_nodes_with_selfloops_number() as usize
+            graph.get_number_of_singleton_nodes_with_selfloops() as usize
         );
         assert!(
             singleton_nodes_with_selfloops.iter().all(|node_id| unsafe {
@@ -582,14 +580,14 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<()>
     if graph.has_node_types() {
         assert!(graph.has_nodes());
         assert_eq!(
-            graph.get_known_node_types_number().unwrap(),
+            graph.get_number_of_known_node_types().unwrap(),
             graph
                 .iter_node_ids_and_node_type_ids()
                 .map(|(_, node_type)| node_type.is_some() as NodeT)
                 .sum::<NodeT>()
         );
         assert_eq!(
-            graph.get_unknown_node_types_number().unwrap(),
+            graph.get_number_of_unknown_node_types().unwrap(),
             graph
                 .iter_node_ids_and_node_type_ids()
                 .map(|(_, node_type)| node_type.is_none() as NodeT)
@@ -612,14 +610,14 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<()>
     if graph.has_edge_types() {
         assert!(graph.has_edges());
         assert_eq!(
-            graph.get_known_edge_types_number().unwrap(),
+            graph.get_number_of_known_edge_types().unwrap(),
             graph
                 .iter_edge_node_ids_and_edge_type_id(true)
                 .map(|(_, _, _, edge_type)| edge_type.is_some() as EdgeT)
                 .sum::<EdgeT>()
         );
         assert_eq!(
-            graph.get_unknown_edge_types_number().unwrap(),
+            graph.get_number_of_unknown_edge_types().unwrap(),
             graph
                 .iter_edge_node_ids_and_edge_type_id(true)
                 .map(|(_, _, _, edge_type)| edge_type.is_none() as EdgeT)
@@ -643,7 +641,7 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<()>
                     "{} edges with known edge types."
                 ),
                 graph.get_number_of_directed_edges(),
-                graph.get_known_edge_types_number().unwrap()
+                graph.get_number_of_known_edge_types().unwrap()
             );
             assert!(graph.get_edge_ids_with_known_edge_types().unwrap().len() > 0);
         }
@@ -680,7 +678,7 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<()>
                 .max_by(|a, b| a.partial_cmp(b).unwrap())
                 .unwrap(),
             graph.get_weighted_node_degrees(),
-            graph.get_weighted_singleton_nodes_number()
+            graph.get_number_of_weighted_singleton_nodes()
         );
         assert!(
             ((graph.get_weighted_minimum_node_degree().clone())?
@@ -758,20 +756,20 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<()>
     );
 
     assert_eq!(
-        graph.get_connected_nodes_number()
-            + graph.get_singleton_nodes_number()
-            + graph.get_singleton_nodes_with_selfloops_number(),
-        graph.get_nodes_number(),
+        graph.get_number_of_connected_nodes()
+            + graph.get_number_of_singleton_nodes()
+            + graph.get_number_of_singleton_nodes_with_selfloops(),
+        graph.get_number_of_nodes(),
         "Sum of singleton and non singleton nodes number does not match."
     );
 
     assert_eq!(
-        graph.get_disconnected_nodes_number(), graph.get_singleton_nodes_number() + graph.get_singleton_nodes_with_selfloops_number(),
+        graph.get_number_of_disconnected_nodes(), graph.get_number_of_singleton_nodes() + graph.get_number_of_singleton_nodes_with_selfloops(),
         "Sum of singleton and singleton with selfloops does not match the number of disconnected nodes."
     );
 
     warn!("Running connected components tests.");
-    let (_components_number, smallest, biggest) = graph.get_connected_components_number(None);
+    let (_components_number, smallest, biggest) = graph.get_number_of_connected_components(None);
     assert!(
         biggest >= smallest,
         "smallest: {} biggest: {}",
@@ -885,7 +883,7 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<()>
     );
 
     assert!(
-        graph.get_node_type_ids_from_node_id(graph.get_nodes_number() + 1).is_err(),
+        graph.get_node_type_ids_from_node_id(graph.get_number_of_nodes() + 1).is_err(),
         "Given graph does not raise an exception when a node's node type greater than the number of available nodes is requested."
     );
 
@@ -987,7 +985,7 @@ pub fn test_node_centralities(graph: &mut Graph, verbose: Option<bool>) -> Resul
 
         assert_eq!(
             node_degree_centralities.len(),
-            graph.get_nodes_number() as usize
+            graph.get_number_of_nodes() as usize
         );
 
         assert!(
@@ -1005,7 +1003,7 @@ pub fn test_node_centralities(graph: &mut Graph, verbose: Option<bool>) -> Resul
 
         assert_eq!(
             node_degree_centralities.len(),
-            graph.get_nodes_number() as usize
+            graph.get_number_of_nodes() as usize
         );
 
         assert!(
@@ -1030,7 +1028,7 @@ pub fn test_node_centralities(graph: &mut Graph, verbose: Option<bool>) -> Resul
     let node_betweenness_centralities = graph.get_betweenness_centrality(None, verbose);
     assert_eq!(
         node_betweenness_centralities.len(),
-        graph.get_nodes_number() as usize
+        graph.get_number_of_nodes() as usize
     );
     node_betweenness_centralities
         .into_iter()
@@ -1064,7 +1062,7 @@ pub fn test_vertex_cover(graph: &mut Graph, _verbose: Option<bool>) -> Result<()
 
 pub fn test_bfs(graph: &mut Graph, verbose: Option<bool>) -> Result<()> {
     // We avoid running this test on too big graphs so to avoid slowing down the test suite
-    if graph.get_nodes_number() > 100 {
+    if graph.get_number_of_nodes() > 100 {
         return Ok(());
     }
 
@@ -1125,7 +1123,7 @@ pub fn test_bfs(graph: &mut Graph, verbose: Option<bool>) -> Result<()> {
 
 pub fn test_dijkstra(graph: &mut Graph, _verbose: Option<bool>) -> Result<()> {
     // We avoid running this test on too big graphs so to avoid slowing down the test suite
-    if graph.get_nodes_number() > 100 {
+    if graph.get_number_of_nodes() > 100 {
         return Ok(());
     }
     // If the graph is empty the other tests on Dijkstra make little sense
@@ -1220,7 +1218,7 @@ pub fn test_polygons(graph: &mut Graph, verbose: Option<bool>) -> Result<()> {
 pub fn test_transitivity(graph: &mut Graph, verbose: Option<bool>) -> Result<()> {
     // We skip this test of graph with more than 1000 nodes to avoid slowing down
     // too much the test suite.
-    if graph.get_nodes_number() > 1000 {
+    if graph.get_number_of_nodes() > 1000 {
         return Ok(());
     }
     if !graph.has_edge_weights() && !graph.has_edge_types() {
@@ -1300,7 +1298,7 @@ pub fn test_transitivity(graph: &mut Graph, verbose: Option<bool>) -> Result<()>
 pub fn test_all_paths(graph: &mut Graph, verbose: Option<bool>) -> Result<()> {
     // We skip this test of graph with more than 1000 nodes to avoid slowing down
     // too much the test suite.
-    if graph.get_nodes_number() > 1000 {
+    if graph.get_number_of_nodes() > 1000 {
         return Ok(());
     }
     for iteration in [None, Some(0), Some(1), Some(2)] {
@@ -1413,93 +1411,89 @@ pub fn test_sorting(graph: &mut Graph, _verbose: Option<bool>) -> Result<()> {
 
 pub fn test_random_walks(graph: &mut Graph, _verbose: Option<bool>) -> Result<()> {
     // Testing principal random walk algorithms
-    let walker = first_order_walker(&graph)?;
+    let walker = first_order_walker()?;
     assert_eq!(walker.clone(), walker);
-    let walker2 = second_order_walker(&graph, 2.0, 2.0)?;
+    let walker2 = second_order_walker(2.0, 2.0)?;
     assert_eq!(walker2.clone(), walker2);
 
-    if !graph.directed {
-        warn!("Executing random walks tests.");
-        for mode in 0..2 {
-            if mode == 1 {
-                graph.enable(None, None, None, None)?;
-                if let Some(cumulative_node_degrees) = &*graph.cumulative_node_degrees {
-                    assert_eq!(
-                        cumulative_node_degrees.len(),
-                        graph.get_nodes_number() as usize,
-                        "Length of cumulative_node_degrees does not match number of nodes in the graph."
-                    );
-                }
-                if let Some(destinations) = &*graph.destinations {
-                    assert_eq!(
-                        destinations.len(),
-                        graph.get_number_of_directed_edges() as usize,
-                        "Length of destinations does not match number of edges in the graph."
-                    );
-                }
+    warn!("Executing random walks tests.");
+    for mode in 0..2 {
+        if mode == 1 {
+            graph.enable(None, None, None, None)?;
+            if let Some(cumulative_node_degrees) = &*graph.cumulative_node_degrees {
+                assert_eq!(
+                    cumulative_node_degrees.len(),
+                    graph.get_number_of_nodes() as usize,
+                    "Length of cumulative_node_degrees does not match number of nodes in the graph."
+                );
             }
-            assert_eq!(
-                graph
-                    .par_iter_random_walks(1, &walker)
-                    .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
-                graph
-                    .par_iter_random_walks(1, &walker)
-                    .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
-                "Walks of first order are not reproducible!"
-            );
-
-            assert_eq!(
-                graph
-                    .par_iter_random_walks(1, &second_order_walker(&graph, 2.0, 2.0)?)
-                    .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
-                graph
-                    .par_iter_random_walks(1, &second_order_walker(&graph, 2.0, 2.0)?)
-                    .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
-                "Walks of second order are not reproducible!"
-            );
-
-            assert_eq!(
-                graph
-                    .par_iter_complete_walks(&walker)
-                    .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
-                graph
-                    .par_iter_complete_walks(&walker)
-                    .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
-                "Complete first order walks are not reproducible!"
-            );
-
-            assert_eq!(
-                graph
-                    .par_iter_complete_walks(&second_order_walker(&graph, 2.0, 2.0)?)
-                    .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
-                graph
-                    .par_iter_complete_walks(&second_order_walker(&graph, 2.0, 2.0)?)
-                    .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
-                "Complete second order walks are not reproducible!"
-            );
-
-            assert_eq!(
-                graph
-                    .par_iter_complete_walks(&second_order_walker(&graph, 2.0, 1.0)?)
-                    .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
-                graph
-                    .par_iter_complete_walks(&second_order_walker(&graph, 2.0, 1.0)?)
-                    .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
-                "Complete second order walks are not reproducible!"
-            );
-
-            assert_eq!(
-                graph
-                    .par_iter_complete_walks(&second_order_walker(&graph, 1.0, 2.0)?)
-                    .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
-                graph
-                    .par_iter_complete_walks(&second_order_walker(&graph, 1.0, 2.0)?)
-                    .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
-                "Complete second order walks are not reproducible!"
-            );
+            if let Some(destinations) = &*graph.destinations {
+                assert_eq!(
+                    destinations.len(),
+                    graph.get_number_of_directed_edges() as usize,
+                    "Length of destinations does not match number of edges in the graph."
+                );
+            }
         }
-    } else {
-        assert!(graph.par_iter_complete_walks(&walker).is_err());
+        assert_eq!(
+            graph
+                .par_iter_random_walks(1, &walker)
+                .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
+            graph
+                .par_iter_random_walks(1, &walker)
+                .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
+            "Walks of first order are not reproducible!"
+        );
+
+        assert_eq!(
+            graph
+                .par_iter_random_walks(1, &second_order_walker(2.0, 2.0)?)
+                .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
+            graph
+                .par_iter_random_walks(1, &second_order_walker(2.0, 2.0)?)
+                .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
+            "Walks of second order are not reproducible!"
+        );
+
+        assert_eq!(
+            graph
+                .par_iter_complete_walks(&walker)
+                .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
+            graph
+                .par_iter_complete_walks(&walker)
+                .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
+            "Complete first order walks are not reproducible!"
+        );
+
+        assert_eq!(
+            graph
+                .par_iter_complete_walks(&second_order_walker(2.0, 2.0)?)
+                .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
+            graph
+                .par_iter_complete_walks(&second_order_walker(2.0, 2.0)?)
+                .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
+            "Complete second order walks are not reproducible!"
+        );
+
+        assert_eq!(
+            graph
+                .par_iter_complete_walks(&second_order_walker(2.0, 1.0)?)
+                .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
+            graph
+                .par_iter_complete_walks(&second_order_walker(2.0, 1.0)?)
+                .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
+            "Complete second order walks are not reproducible!"
+        );
+
+        assert_eq!(
+            graph
+                .par_iter_complete_walks(&second_order_walker(1.0, 2.0)?)
+                .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
+            graph
+                .par_iter_complete_walks(&second_order_walker(1.0, 2.0)?)
+                .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
+            "Complete second order walks are not reproducible!"
+        );
     }
     Ok(())
 }
@@ -1529,13 +1523,13 @@ pub fn test_edge_holdouts(graph: &Graph, verbose: Option<bool>) -> Result<()> {
             None,
             verbose,
         )?;
-        assert_eq!(graph.get_nodes_number(), train.get_nodes_number());
-        assert_eq!(graph.get_nodes_number(), test.get_nodes_number());
+        assert_eq!(graph.get_number_of_nodes(), train.get_number_of_nodes());
+        assert_eq!(graph.get_number_of_nodes(), test.get_number_of_nodes());
 
         let (original_total, original_min_comp, original_max_comp) =
-            graph.get_connected_components_number(verbose);
+            graph.get_number_of_connected_components(verbose);
         let (train_total, train_min_comp, train_max_comp) =
-            train.get_connected_components_number(verbose);
+            train.get_number_of_connected_components(verbose);
         if original_total == 1 {
             assert_eq!(
                 original_min_comp, original_max_comp,
@@ -1550,7 +1544,7 @@ pub fn test_edge_holdouts(graph: &Graph, verbose: Option<bool>) -> Result<()> {
             );
             assert_eq!(
                 original_min_comp,
-                graph.get_nodes_number(),
+                graph.get_number_of_nodes(),
                 concat!(
                     "When the number of components is only one, ",
                     "the minimum component size should be equal ",
@@ -1559,14 +1553,14 @@ pub fn test_edge_holdouts(graph: &Graph, verbose: Option<bool>) -> Result<()> {
                     "The number of nodes of the graph was: {}.\n",
                 ),
                 original_min_comp,
-                graph.get_nodes_number(),
+                graph.get_number_of_nodes(),
             );
         }
         if original_total == 2 {
             assert!(original_min_comp <= original_max_comp);
             assert_eq!(
                 original_min_comp + original_max_comp,
-                graph.get_nodes_number(),
+                graph.get_number_of_nodes(),
                 concat!(
                     "When a graph contains two connected components, ",
                     "summing the two connected components should give ",
@@ -1582,11 +1576,11 @@ pub fn test_edge_holdouts(graph: &Graph, verbose: Option<bool>) -> Result<()> {
         }
         if train_total == 1 {
             assert!(train_min_comp == train_max_comp);
-            assert_eq!(train_min_comp, graph.get_nodes_number());
+            assert_eq!(train_min_comp, graph.get_number_of_nodes());
         }
         if train_total == 2 {
             assert!(train_min_comp <= train_max_comp);
-            assert_eq!(train_min_comp + train_max_comp, train.get_nodes_number());
+            assert_eq!(train_min_comp + train_max_comp, train.get_number_of_nodes());
         }
         assert_eq!(
             train_total, original_total,
@@ -1627,12 +1621,12 @@ pub fn test_edge_holdouts(graph: &Graph, verbose: Option<bool>) -> Result<()> {
 }
 
 pub fn test_remove_components(graph: &mut Graph, verbose: Option<bool>) -> Result<()> {
-    if graph.get_connected_components_number(verbose).0 > 1 {
+    if graph.get_number_of_connected_components(verbose).0 > 1 {
         let without_selfloops = graph.remove_selfloops();
 
         assert_eq!(
-            graph.get_connected_components_number(verbose),
-            without_selfloops.get_connected_components_number(verbose),
+            graph.get_number_of_connected_components(verbose),
+            without_selfloops.get_number_of_connected_components(verbose),
             concat!(
                 "We expected the graph to have the same components once we remove the selfloops.\n",
                 "The report of the original graph is {:?}\n",
@@ -1658,7 +1652,7 @@ pub fn test_remove_components(graph: &mut Graph, verbose: Option<bool>) -> Resul
         );
         let single_component_number = single_component
             .unwrap()
-            .get_connected_components_number(verbose)
+            .get_number_of_connected_components(verbose)
             .0;
         assert_eq!(
             single_component_number,
@@ -1681,7 +1675,7 @@ pub fn test_remove_components(graph: &mut Graph, verbose: Option<bool>) -> Resul
         )?;
         let without_selfloops = test.remove_selfloops();
         assert_eq!(
-            without_selfloops.get_connected_components_number(verbose).0,
+            without_selfloops.get_number_of_connected_components(verbose).0,
             1,
             concat!(
                 "Expected number of components (1) is not matched!\n",
@@ -1748,7 +1742,7 @@ pub fn test_kfold(graph: &mut Graph, _verbose: Option<bool>) -> Result<()> {
     for i in 0..k {
         let (train, test) = graph.get_edge_prediction_kfold(k, i, None, None, None)?;
         assert!(
-            test.get_edges_number() <= (graph.get_edges_number() / k as EdgeT) + 1,
+            test.get_number_of_edges() <= (graph.get_number_of_edges() / k as EdgeT) + 1,
             concat!(
                 "Check that test kfolds respect size bound has failed!\n",
                 "The value of k is {}.\n",
@@ -1762,8 +1756,8 @@ pub fn test_kfold(graph: &mut Graph, _verbose: Option<bool>) -> Result<()> {
             graph.textual_report(),
             train.textual_report(),
             test.textual_report(),
-            (graph.get_edges_number() / k as EdgeT) + 1,
-            test.get_edges_number(),
+            (graph.get_number_of_edges() / k as EdgeT) + 1,
+            test.get_number_of_edges(),
             i
         );
         default_holdout_test_suite(graph, &train, &test)?;
@@ -1786,7 +1780,7 @@ pub fn test_kfold(graph: &mut Graph, _verbose: Option<bool>) -> Result<()> {
 }
 
 pub fn test_negative_edges_generation(graph: &mut Graph, verbose: Option<bool>) -> Result<()> {
-    let number_of_edges = graph.get_edges_number().min(10) as usize;
+    let number_of_edges = graph.get_number_of_edges().min(10) as usize;
     let positives = graph.sample_positive_graph(
         number_of_edges,
         None,
@@ -1803,7 +1797,7 @@ pub fn test_negative_edges_generation(graph: &mut Graph, verbose: Option<bool>) 
         None,
     )?;
 
-    assert_eq!(positives.get_edges_number() as usize, number_of_edges);
+    assert_eq!(positives.get_number_of_edges() as usize, number_of_edges);
     assert!(positives.overlaps(graph)?);
     assert!(graph.contains(&positives)?);
 
@@ -1814,7 +1808,7 @@ pub fn test_negative_edges_generation(graph: &mut Graph, verbose: Option<bool>) 
             continue;
         }
         let negatives = graph.sample_negative_graph(
-            graph.get_edges_number(),
+            graph.get_number_of_edges(),
             None,
             Some(*only_from_same_component),
             None,
@@ -1831,11 +1825,11 @@ pub fn test_negative_edges_generation(graph: &mut Graph, verbose: Option<bool>) 
             None,
         )?;
         assert_eq!(
-            graph.get_edges_number(),
-            negatives.get_edges_number(),
+            graph.get_number_of_edges(),
+            negatives.get_number_of_edges(),
             "We expect the graph and its negative graph to have the same number of edges but we got {} and {}.",
-            graph.get_edges_number(),
-            negatives.get_edges_number()
+            graph.get_number_of_edges(),
+            negatives.get_number_of_edges()
         );
         validate_vocabularies(&negatives);
         if !graph.has_edge_types() {
@@ -1846,7 +1840,7 @@ pub fn test_negative_edges_generation(graph: &mut Graph, verbose: Option<bool>) 
         let (neg_train, neg_test) =
             negatives.random_holdout(0.8, None, None, None, None, verbose)?;
 
-        neg_test.get_trap_nodes_number();
+        neg_test.get_number_of_trap_nodes();
 
         default_holdout_test_suite(&negatives, &neg_train, &neg_test)?;
     }
@@ -1855,10 +1849,10 @@ pub fn test_negative_edges_generation(graph: &mut Graph, verbose: Option<bool>) 
 }
 
 pub fn test_subgraph_generation(graph: &mut Graph, verbose: Option<bool>) -> Result<()> {
-    let expected_nodes = graph.get_connected_nodes_number() / 10;
+    let expected_nodes = graph.get_number_of_connected_nodes() / 10;
     let subgraph = graph.get_random_subgraph(expected_nodes, None, verbose)?;
     assert!(subgraph.overlaps(&graph)?);
-    assert!(subgraph.get_connected_nodes_number() <= expected_nodes + 1);
+    assert!(subgraph.get_number_of_connected_nodes() <= expected_nodes + 1);
     Ok(())
 }
 
@@ -1896,7 +1890,7 @@ pub fn test_dump_graph(graph: &mut Graph, verbose: Option<bool>) -> Result<()> {
 }
 
 pub fn test_embiggen_preprocessing(graph: &mut Graph, _verbose: Option<bool>) -> Result<()> {
-    let walker = first_order_walker(&graph)?;
+    let walker = first_order_walker()?;
     if !graph.directed {
         let window_size = 3;
         let batch_size = 256;
@@ -1914,21 +1908,6 @@ pub fn test_embiggen_preprocessing(graph: &mut Graph, _verbose: Option<bool>) ->
         }
     }
     if graph.has_edges() {
-        graph
-            .link_prediction_degrees(
-                0,
-                256,
-                Some(true),
-                Some(0.3),
-                Some(false),
-                Some(10),
-                false,
-                None,
-                None,
-                None,
-            )
-            .unwrap()
-            .collect::<Vec<_>>();
         graph
             .par_iter_attributed_edge_prediction_mini_batch(
                 0, 256, false, false, false, None, None, None, None, None, None,
@@ -1958,7 +1937,7 @@ pub fn test_edgelist_generation(graph: &mut Graph, _verbose: Option<bool>) -> Re
         ),
     );
     warn!("Running edge lists generator tests.");
-    if graph.get_nodes_number() > 1 {
+    if graph.get_number_of_nodes() > 1 {
         let _bipartite = graph.get_bipartite_edge_names(
             None,
             Some(
@@ -2004,7 +1983,7 @@ pub fn test_edgelist_generation(graph: &mut Graph, _verbose: Option<bool>) -> Re
 
 pub fn test_nodelabel_holdouts(graph: &mut Graph, _verbose: Option<bool>) -> Result<()> {
     for use_stratification in [true, false] {
-        if graph.get_known_node_types_number()? < 2
+        if graph.get_number_of_known_node_types()? < 2
             || (use_stratification
                 && (graph.has_multilabel_node_types()? || graph.has_singleton_node_types()?))
         {
@@ -2051,7 +2030,7 @@ pub fn test_nodelabel_holdouts(graph: &mut Graph, _verbose: Option<bool>) -> Res
 pub fn test_edgelabel_holdouts(graph: &mut Graph, _verbose: Option<bool>) -> Result<()> {
     for use_stratification in [true, false].iter() {
         if *use_stratification && graph.has_singleton_edge_types()?
-            || graph.get_number_of_directed_edges() - graph.get_unknown_edge_types_number()? < 2
+            || graph.get_number_of_directed_edges() - graph.get_number_of_unknown_edge_types()? < 2
             || !graph.has_edge_types()
         {
             assert!(graph
@@ -2197,7 +2176,7 @@ pub fn test_graph_filter(graph: &Graph, _verbose: Option<bool>) -> Result<()> {
         let graph_without_given_id = graph_without_given_name_result.unwrap();
         assert_eq!(
             graph_without_given_id.has_nodes(),
-            graph.get_nodes_number() > 1
+            graph.get_number_of_nodes() > 1
         );
         assert!(!graph_without_given_id.has_node_name(node_name.as_str()));
 
@@ -2263,7 +2242,7 @@ pub fn test_graph_filter(graph: &Graph, _verbose: Option<bool>) -> Result<()> {
             graph_with_given_node_name.has_edges(),
             graph_with_given_node_name.has_selfloops()
         );
-        assert_eq!(graph_with_given_node_name.get_nodes_number(), 1);
+        assert_eq!(graph_with_given_node_name.get_number_of_nodes(), 1);
         assert!(graph_with_given_node_name.has_node_name(node_name.as_str()));
     }
 
@@ -2315,7 +2294,7 @@ pub fn test_graph_filter(graph: &Graph, _verbose: Option<bool>) -> Result<()> {
         );
         assert!(graph_without_given_node_type_name_result.is_ok());
         let graph_without_given_node_type_name = graph_without_given_node_type_name_result.unwrap();
-        if graph.get_node_types_number()? > 1 && !graph.has_multilabel_node_types()? {
+        if graph.get_number_of_node_types()? > 1 && !graph.has_multilabel_node_types()? {
             assert!(graph_without_given_node_type_name.has_node_types());
             assert!(graph_without_given_node_type_name.has_nodes());
         }
@@ -2336,8 +2315,8 @@ pub fn test_graph_removes(graph: &mut Graph, _verbose: Option<bool>) -> Result<(
     assert_eq!(without_edge_types.node_types, graph.node_types);
     if !graph.is_multigraph() {
         assert_eq!(
-            without_edge_types.get_unique_edges_number(),
-            graph.get_unique_edges_number(),
+            without_edge_types.get_number_of_unique_edges(),
+            graph.get_number_of_unique_edges(),
             concat!(
                 "Number of unique edges does not match in graph without edge types.\n",
                 "The report of the original graph is \n{:?}\n",
@@ -2347,8 +2326,8 @@ pub fn test_graph_removes(graph: &mut Graph, _verbose: Option<bool>) -> Result<(
             without_edge_types.textual_report()
         );
         assert_eq!(
-            without_edge_types.get_unique_selfloops_number(),
-            graph.get_unique_selfloops_number(),
+            without_edge_types.get_number_of_unique_selfloops(),
+            graph.get_number_of_unique_selfloops(),
             "Number of unique self loops does not match in graph without edge types."
         );
     }
@@ -2391,7 +2370,7 @@ pub fn test_clone_and_setters(graph: &mut Graph, _verbose: Option<bool>) -> Resu
     clone = clone.set_all_node_types("TEST_SET_ALL_NODE_TYPES")?;
 
     assert_eq!(
-        clone.get_edge_types_number().unwrap(),
+        clone.get_number_of_edge_types().unwrap(),
         1,
         "Number of edge types of the graph is not 1."
     );
@@ -2404,14 +2383,14 @@ pub fn test_clone_and_setters(graph: &mut Graph, _verbose: Option<bool>) -> Resu
     }
 
     assert_eq!(
-        clone.get_node_types_number().unwrap(),
+        clone.get_number_of_node_types().unwrap(),
         1,
         "Number of node types of the graph is not 1."
     );
     unsafe {
         assert_eq!(
         clone.get_unchecked_node_count_from_node_type_id(Some(0)),
-        graph.get_nodes_number(),
+        graph.get_number_of_nodes(),
         "Number of nodes with the unique node type does not match number of nodes in the graph."
     );
     }
@@ -2433,7 +2412,7 @@ pub fn test_graph_remapping(graph: &mut Graph, _verbose: Option<bool>) -> Result
 
 pub fn test_graph_diameter(graph: &mut Graph, verbose: Option<bool>) -> Result<()> {
     // TODO! update this when we will support the graph diameter on directed graphs
-    let (n_of_components, _, _) = graph.get_connected_components_number(verbose);
+    let (n_of_components, _, _) = graph.get_number_of_connected_components(verbose);
 
     assert_eq!(
         graph.get_diameter_naive(Some(false), verbose),
@@ -2450,7 +2429,7 @@ pub fn test_graph_diameter(graph: &mut Graph, verbose: Option<bool>) -> Result<(
         1 => {
             // by definition the diameter of a graph with a single component
             // cannot be infinite unless it's just a singleton and it does not have edges.
-            if graph.get_nodes_number() == 1 && !graph.has_edges() {
+            if graph.get_number_of_nodes() == 1 && !graph.has_edges() {
                 assert!(graph
                     .get_diameter(Some(false), verbose)
                     .unwrap()
@@ -2587,24 +2566,6 @@ pub fn default_test_suite(graph: &mut Graph, verbose: Option<bool>) -> Result<()
     let _ = _default_test_suite(graph, verbose);
     warn!("Starting default test suite on transformed graphs.");
 
-    test_mut_graph!(graph, get_laplacian_transformed_graph, verbose);
-    test_mut_graph!(
-        graph,
-        get_symmetric_normalized_transformed_graph,
-        verbose,
-        result
-    );
-    test_mut_graph!(
-        graph,
-        get_symmetric_normalized_laplacian_transformed_graph,
-        verbose,
-        result
-    );
-    test_mut_graph!(
-        graph,
-        get_left_normalized_laplacian_transformed_graph,
-        verbose
-    );
     test_mut_graph!(graph, to_upper_triangular, verbose);
     test_mut_graph!(graph, to_lower_triangular, verbose);
     test_mut_graph!(graph, to_main_diagonal, verbose);
@@ -2614,7 +2575,7 @@ pub fn default_test_suite(graph: &mut Graph, verbose: Option<bool>) -> Result<()
     test_mut_graph!(graph, to_transposed, verbose);
     // We skip very heavy operations on graphs with more than 20
     // nodes because it would take way too much time.
-    if graph.get_nodes_number() > 20 {
+    if graph.get_number_of_nodes() > 20 {
         return Ok(());
     }
     test_mut_graph!(graph, to_complementary, verbose);

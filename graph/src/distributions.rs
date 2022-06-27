@@ -16,7 +16,7 @@ impl Graph {
     ) -> f64 {
         // If the number of requested elements is higher than the number of available elements
         // the threshold to cutoff that numbeer of elements is surely zero.
-        if number_of_nodes_above_threshold >= self.get_nodes_number() {
+        if number_of_nodes_above_threshold >= self.get_number_of_nodes() {
             return 0.0;
         }
         // We compute the mean of the node degrees
@@ -28,7 +28,7 @@ impl Graph {
         // And then, using the geometric distribution formula,
         // we compute the cutoff threshold.
         let numerator =
-            (number_of_nodes_above_threshold as f64 / self.get_nodes_number() as f64).ln();
+            (number_of_nodes_above_threshold as f64 / self.get_number_of_nodes() as f64).ln();
         if has_zero_degree_nodes {
             numerator / (1.0 - 1.0 / (mean_node_degree + 1.0)) - 1.0
         } else {

@@ -94,7 +94,6 @@ pub fn build_walk_parameters_list<'a>(parameters: &[&'a str]) -> Vec<&'a str> {
         "max_neighbours",
         "random_state",
         "iterations",
-        "dense_node_mapping",
         "normalize_by_degree",
         "walk_length",
     ];

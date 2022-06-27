@@ -29,7 +29,7 @@ impl Graph {
     /// ```
     ///
     pub fn has_nodes(&self) -> bool {
-        self.get_nodes_number() > 0
+        self.get_number_of_nodes() > 0
     }
 
     /// Return if the graph has any edges.
@@ -44,7 +44,7 @@ impl Graph {
     /// ```
     ///
     pub fn has_edges(&self) -> bool {
-        self.get_edges_number() > 0
+        self.get_number_of_edges() > 0
     }
 
     /// Return whether the graph has trap nodes.
@@ -53,14 +53,14 @@ impl Graph {
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// if graph.has_trap_nodes(){
-    ///     println!("There are {} trap nodes in the current graph.", graph.get_trap_nodes_number());
+    ///     println!("There are {} trap nodes in the current graph.", graph.get_number_of_trap_nodes());
     /// } else {
     ///     println!("There are no trap nodes in the current graph.");
     /// }
     /// ```
     ///
     pub fn has_trap_nodes(&self) -> bool {
-        self.get_trap_nodes_number() > 0
+        self.get_number_of_trap_nodes() > 0
     }
 
     /// Returns boolean representing if graph is directed.
@@ -104,7 +104,7 @@ impl Graph {
     /// # Raises
     /// * If the graph does not contain edge weights.
     pub fn has_weighted_singleton_nodes(&self) -> Result<bool> {
-        Ok(self.get_weighted_singleton_nodes_number().clone()? > 0)
+        Ok(self.get_number_of_weighted_singleton_nodes().clone()? > 0)
     }
 
     /// Returns whether the graph has constant weights.
@@ -181,7 +181,7 @@ impl Graph {
     /// ```
     ///
     pub fn has_selfloops(&self) -> bool {
-        self.get_selfloops_number() > 0
+        self.get_number_of_selfloops() > 0
     }
 
     /// Returns boolean representing if nodes which are nor singletons nor
@@ -195,7 +195,7 @@ impl Graph {
     /// assert!(!graph_without_singletons.has_disconnected_nodes());
     /// ```
     pub fn has_disconnected_nodes(&self) -> bool {
-        self.get_disconnected_nodes_number() > 0
+        self.get_number_of_disconnected_nodes() > 0
     }
 
     /// Returns boolean representing if graph has singletons.
@@ -208,12 +208,12 @@ impl Graph {
     /// assert!(!graph_without_singletons.has_singleton_nodes());
     /// ```
     pub fn has_singleton_nodes(&self) -> bool {
-        self.get_singleton_nodes_number() > 0
+        self.get_number_of_singleton_nodes() > 0
     }
 
     /// Returns boolean representing if graph has singletons.
     pub fn has_singleton_nodes_with_selfloops(&self) -> bool {
-        self.get_singleton_nodes_with_selfloops_number() > 0
+        self.get_number_of_singleton_nodes_with_selfloops() > 0
     }
 
     #[cache_property(is_connected)]
@@ -222,10 +222,10 @@ impl Graph {
     /// # Arguments
     /// * `verbose`: Option<bool> - Whether to show the loading bar while computing the connected components, if necessary.
     pub fn is_connected(&self, verbose: Option<bool>) -> bool {
-        self.get_nodes_number() <= 1
+        self.get_number_of_nodes() <= 1
             || !self.has_singleton_nodes()
                 && !self.has_singleton_nodes_with_selfloops()
-                && self.get_connected_components_number(verbose).0 == 1
+                && self.get_number_of_connected_components(verbose).0 == 1
     }
 
     /// Returns boolean representing if graph has node types.
@@ -247,7 +247,7 @@ impl Graph {
     /// # Raises
     /// * If the graph does not have node types.
     pub fn has_unknown_node_types(&self) -> Result<bool> {
-        Ok(self.get_unknown_node_types_number()? > 0)
+        Ok(self.get_number_of_unknown_node_types()? > 0)
     }
 
     /// Returns whether there are known node types.
@@ -255,7 +255,7 @@ impl Graph {
     /// # Raises
     /// * If the graph does not have node types.
     pub fn has_known_node_types(&self) -> Result<bool> {
-        Ok(self.get_known_node_types_number()? > 0)
+        Ok(self.get_number_of_known_node_types()? > 0)
     }
 
     /// Returns whether there are unknown edge types.
@@ -263,7 +263,7 @@ impl Graph {
     /// # Raises
     /// * If the graph does not have node types.
     pub fn has_unknown_edge_types(&self) -> Result<bool> {
-        Ok(self.get_unknown_edge_types_number()? > 0)
+        Ok(self.get_number_of_unknown_edge_types()? > 0)
     }
 
     /// Returns whether there are known edge types.
@@ -271,7 +271,7 @@ impl Graph {
     /// # Raises
     /// * If the graph does not have edge types.
     pub fn has_known_edge_types(&self) -> Result<bool> {
-        Ok(self.get_known_edge_types_number()? > 0)
+        Ok(self.get_number_of_known_edge_types()? > 0)
     }
 
     /// Returns whether the nodes have an homogenous node type.
@@ -287,7 +287,7 @@ impl Graph {
                 node_type_ids
                     .counts
                     .iter()
-                    .any(|&node_type_count| node_type_count == self.get_nodes_number())
+                    .any(|&node_type_count| node_type_count == self.get_number_of_nodes())
             }))
     }
 
@@ -302,7 +302,7 @@ impl Graph {
             .as_ref()
             .map_or(false, |node_type_ids| {
                 node_type_ids.counts.iter().all(|&node_type_count| {
-                    node_type_count == 0 || node_type_count == self.get_nodes_number()
+                    node_type_count == 0 || node_type_count == self.get_number_of_nodes()
                 })
             }))
     }
@@ -320,7 +320,7 @@ impl Graph {
     /// # Raises
     /// * If the graph does not have edge types.
     pub fn has_homogeneous_edge_types(&self) -> Result<bool> {
-        Ok(self.get_edge_types_number()? == 1)
+        Ok(self.get_number_of_edge_types()? == 1)
     }
 
     /// Returns whether there is at least singleton node type, that is a node type that only appears once.
@@ -379,7 +379,7 @@ impl Graph {
 
     /// Return if there are multiple edges between two nodes
     pub fn is_multigraph(&self) -> bool {
-        self.get_parallel_edges_number() > 0
+        self.get_number_of_parallel_edges() > 0
     }
 
     /// Return whether at least a node has a known ontology.
@@ -444,7 +444,7 @@ impl Graph {
     /// to sort the edge list in order to have it sorted, but it can
     /// be generated sorted in the first place.
     pub fn contains_identity_matrix(&self) -> bool {
-        self.get_nodes_number() == self.get_unique_selfloops_number()
+        self.get_number_of_nodes() == self.get_number_of_unique_selfloops()
     }
 
     #[cache_property(nodes_sorted_by_increasing_outbound_node_degree)]

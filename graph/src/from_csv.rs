@@ -435,7 +435,7 @@ impl Graph {
                     .set_numeric_node_ids(numeric_node_ids)
                     .set_numeric_node_type_ids(node_list_numeric_node_type_ids)?
                     .set_csv_is_correct(node_list_is_correct)?
-                    .set_nodes_number(nodes_number)
+                    .set_number_of_nodes(nodes_number)
                     .set_parallel(load_node_list_in_parallel)?
                     .set_verbose(verbose),
             )
@@ -472,7 +472,7 @@ impl Graph {
                     .set_sorted(edge_list_is_sorted)
                     .set_may_have_duplicates(edge_list_may_contain_duplicates)
                     .set_csv_is_correct(edge_list_is_correct)
-                    .set_edges_number(edges_number)
+                    .set_number_of_edges(edges_number)
                     .set_parallel(load_edge_list_in_parallel)
                     .set_verbose(verbose),
             ))

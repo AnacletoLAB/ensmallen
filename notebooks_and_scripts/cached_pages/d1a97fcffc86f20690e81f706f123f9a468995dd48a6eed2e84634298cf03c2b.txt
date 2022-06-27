@@ -2,10 +2,6 @@
 <head><title>Index of /wikidatawiki/entities/</title></head>
 <body bgcolor="white">
 <h1>Index of /wikidatawiki/entities/</h1><hr><pre><a href="../">../</a>
-<a href="20220429/">20220429/</a>                                          29-Apr-2022 23:29                   -
-<a href="20220502/">20220502/</a>                                          05-May-2022 19:56                   -
-<a href="20220504/">20220504/</a>                                          07-May-2022 12:17                   -
-<a href="20220506/">20220506/</a>                                          06-May-2022 23:34                   -
 <a href="20220509/">20220509/</a>                                          12-May-2022 18:11                   -
 <a href="20220511/">20220511/</a>                                          14-May-2022 09:22                   -
 <a href="20220513/">20220513/</a>                                          13-May-2022 23:35                   -
@@ -21,21 +17,25 @@
 <a href="20220606/">20220606/</a>                                          09-Jun-2022 21:00                   -
 <a href="20220608/">20220608/</a>                                          11-Jun-2022 17:24                   -
 <a href="20220610/">20220610/</a>                                          10-Jun-2022 23:32                   -
-<a href="20220613/">20220613/</a>                                          13-Jun-2022 03:15                   -
-<a href="dcatap.rdf">dcatap.rdf</a>                                         11-Jun-2022 17:57               84753
-<a href="latest-all.json.bz2">latest-all.json.bz2</a>                                09-Jun-2022 06:23         74236824815
-<a href="latest-all.json.gz">latest-all.json.gz</a>                                 08-Jun-2022 21:46        112743720511
-<a href="latest-all.nt.bz2">latest-all.nt.bz2</a>                                  09-Jun-2022 21:00        148297693436
-<a href="latest-all.nt.gz">latest-all.nt.gz</a>                                   09-Jun-2022 02:29        191426872924
-<a href="latest-all.ttl.bz2">latest-all.ttl.bz2</a>                                 09-Jun-2022 08:06         95069077135
-<a href="latest-all.ttl.gz">latest-all.ttl.gz</a>                                  08-Jun-2022 21:44        115653102118
-<a href="latest-lexemes.json.bz2">latest-lexemes.json.bz2</a>                            08-Jun-2022 03:41           212357039
-<a href="latest-lexemes.json.gz">latest-lexemes.json.gz</a>                             08-Jun-2022 03:40           295023021
-<a href="latest-lexemes.nt.bz2">latest-lexemes.nt.bz2</a>                              10-Jun-2022 23:32           597848591
-<a href="latest-lexemes.nt.gz">latest-lexemes.nt.gz</a>                               10-Jun-2022 23:27           802870360
-<a href="latest-lexemes.ttl.bz2">latest-lexemes.ttl.bz2</a>                             10-Jun-2022 23:28           328463158
-<a href="latest-lexemes.ttl.gz">latest-lexemes.ttl.gz</a>                              10-Jun-2022 23:25           415793067
-<a href="latest-truthy.nt.bz2">latest-truthy.nt.bz2</a>                               11-Jun-2022 17:24         33633708350
-<a href="latest-truthy.nt.gz">latest-truthy.nt.gz</a>                                11-Jun-2022 14:12         55697479015
+<a href="20220613/">20220613/</a>                                          16-Jun-2022 23:16                   -
+<a href="20220615/">20220615/</a>                                          18-Jun-2022 16:16                   -
+<a href="20220617/">20220617/</a>                                          17-Jun-2022 23:34                   -
+<a href="20220620/">20220620/</a>                                          23-Jun-2022 21:48                   -
+<a href="20220622/">20220622/</a>                                          22-Jun-2022 03:41                   -
+<a href="dcatap.rdf">dcatap.rdf</a>                                         24-Jun-2022 00:15               84753
+<a href="latest-all.json.bz2">latest-all.json.bz2</a>                                23-Jun-2022 07:29         75966141297
+<a href="latest-all.json.gz">latest-all.json.gz</a>                                 22-Jun-2022 22:36        115432876924
+<a href="latest-all.nt.bz2">latest-all.nt.bz2</a>                                  23-Jun-2022 21:48        148822802970
+<a href="latest-all.nt.gz">latest-all.nt.gz</a>                                   23-Jun-2022 03:17        192089953859
+<a href="latest-all.ttl.bz2">latest-all.ttl.bz2</a>                                 23-Jun-2022 08:50         95427655992
+<a href="latest-all.ttl.gz">latest-all.ttl.gz</a>                                  22-Jun-2022 22:31        116105779073
+<a href="latest-lexemes.json.bz2">latest-lexemes.json.bz2</a>                            22-Jun-2022 03:41           220662893
+<a href="latest-lexemes.json.gz">latest-lexemes.json.gz</a>                             22-Jun-2022 03:40           305725408
+<a href="latest-lexemes.nt.bz2">latest-lexemes.nt.bz2</a>                              17-Jun-2022 23:34           598313504
+<a href="latest-lexemes.nt.gz">latest-lexemes.nt.gz</a>                               17-Jun-2022 23:29           803379664
+<a href="latest-lexemes.ttl.bz2">latest-lexemes.ttl.bz2</a>                             17-Jun-2022 23:30           328723949
+<a href="latest-lexemes.ttl.gz">latest-lexemes.ttl.gz</a>                              17-Jun-2022 23:26           416120450
+<a href="latest-truthy.nt.bz2">latest-truthy.nt.bz2</a>                               18-Jun-2022 16:16         33714638722
+<a href="latest-truthy.nt.gz">latest-truthy.nt.gz</a>                                18-Jun-2022 13:04         55833679439
 </pre><hr></body>
 </html>

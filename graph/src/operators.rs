@@ -343,7 +343,7 @@ impl Graph {
         if self.get_number_of_directed_edges() != other.get_number_of_directed_edges() {
             return Ok(false);
         }
-        if self.get_selfloops_number() != other.get_selfloops_number() {
+        if self.get_number_of_selfloops() != other.get_number_of_selfloops() {
             return Ok(false);
         }
         Ok(self

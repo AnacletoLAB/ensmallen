@@ -293,12 +293,112 @@ impl ShortestPathsResultBFS {
                 .collect::<Vec<NodeT>>());
         }
         Err(concat!(
-            "The predecessors were computed (as it was requested) ",
+            "The predecessors were not computed (as it was requested) ",
             "when creating this breath shortest paths object.\n",
-            "It is not possible to compute the number of shortest paths from the current ",
+            "It is not possible to compute the successors from the current ",
             "root node passing to the given node ID when predecessors were not computed."
         )
         .to_string())
+    }
+
+    /// Return list of predecessors of a given node.
+    ///
+    /// # Arguments
+    /// * `source_node_id`: NodeT - The node for which to return the predecessors.
+    ///
+    /// # Raises
+    /// * If the given node ID does not exist in the graph.
+    ///
+    /// # Returns
+    /// List of predecessors of the given node.
+    pub fn get_predecessors_from_node_id(&self, source_node_id: NodeT) -> Result<Vec<NodeT>> {
+        self.validate_node_id(source_node_id)?;
+        if let Some(predecessors) = self.predecessors.as_ref() {
+            // If the node is not reacheable in the
+            // considered shortest paths, we can stop.
+            if predecessors[source_node_id as usize] == NODE_NOT_PRESENT {
+                return Ok(vec![source_node_id]);
+            }
+
+            let mut node_predecessors = vec![source_node_id];
+
+            let mut node_id = source_node_id;
+            while predecessors[node_id as usize] != node_id {
+                // We retrieve the node predecessor
+                // and climb up the predecessors ladder.
+                node_id = predecessors[node_id as usize];
+                node_predecessors.push(node_id);
+            }
+
+            return Ok(node_predecessors);
+        }
+        Err(concat!(
+            "The predecessors were not computed (as it was requested) ",
+            "when creating this breath shortest paths object.\n",
+            "It is not possible to compute the predecessors from the current ",
+            "root node passing to the given node ID when predecessors were not computed."
+        )
+        .to_string())
+    }
+
+    /// Return Shared Ancestors number.
+    ///
+    /// # Arguments
+    /// * `first_node_id`: NodeT - The first node for which to compute the predecessors Jaccard index.
+    /// * `second_node_id`: NodeT - The second node for which to compute the predecessors Jaccard index.
+    ///
+    /// # Raises
+    /// * If the given node IDs do not exist in the graph.
+    ///
+    /// # Returns
+    /// Ancestors Jaccard Index.
+    pub fn get_shared_ancestors_size(
+        &self,
+        first_node_id: NodeT,
+        second_node_id: NodeT,
+    ) -> Result<f32> {
+        Ok(self.get_predecessors_from_node_id(first_node_id)?
+            .iter()
+            .rev()
+            .zip(self.get_predecessors_from_node_id(second_node_id)?.iter().rev())
+            .take_while(|(a, b)| a == b)
+            .count() as f32)
+    }
+    
+    /// Return Ancestors Jaccard Index.
+    ///
+    /// # Arguments
+    /// * `first_node_id`: NodeT - The first node for which to compute the predecessors Jaccard index.
+    /// * `second_node_id`: NodeT - The second node for which to compute the predecessors Jaccard index.
+    ///
+    /// # Raises
+    /// * If the given node IDs do not exist in the graph.
+    ///
+    /// # Returns
+    /// Ancestors Jaccard Index.
+    pub fn get_ancestors_jaccard_index(
+        &self,
+        first_node_id: NodeT,
+        second_node_id: NodeT,
+    ) -> Result<f32> {
+        let first_node_predecessors = self.get_predecessors_from_node_id(first_node_id)?;
+        let second_node_predecessors = self.get_predecessors_from_node_id(second_node_id)?;
+
+        let intersection_size = first_node_predecessors
+            .iter()
+            .rev()
+            .zip(second_node_predecessors.iter().rev())
+            .take_while(|(a, b)| a == b)
+            .count();
+
+        let union_size =
+            first_node_predecessors.len() + second_node_predecessors.len() - intersection_size * 2;
+
+        Ok(if union_size.is_zero() {
+            0.0
+        } else {
+            intersection_size as f32 / union_size as f32
+        })
     }
 
     pub fn get_distances(&self) -> Result<Vec<NodeT>> {
@@ -595,7 +695,7 @@ impl Graph {
         &self,
         src_node_id: NodeT,
     ) -> ShortestPathsResultBFS {
-        let nodes_number = self.get_nodes_number() as usize;
+        let nodes_number = self.get_number_of_nodes() as usize;
         let thread_shared_predecessors =
             ThreadDataRaceAware::new(vec![NODE_NOT_PRESENT; nodes_number]);
         (*thread_shared_predecessors.value.get())[src_node_id as usize] = src_node_id;
@@ -658,7 +758,7 @@ impl Graph {
         src_node_ids: Vec<NodeT>,
         maximal_depth: Option<T>,
     ) -> (Vec<T>, T, NodeT) {
-        let nodes_number = self.get_nodes_number() as usize;
+        let nodes_number = self.get_number_of_nodes() as usize;
         let node_not_present = T::MAX;
         let mut distances = vec![node_not_present; nodes_number];
         let thread_shared_distances = ThreadDataRaceAware::new(&mut distances);
@@ -761,7 +861,7 @@ impl Graph {
         &self,
         src_node_id: NodeT,
     ) -> ShortestPathsResultBFS {
-        let nodes_number = self.get_nodes_number() as usize;
+        let nodes_number = self.get_number_of_nodes() as usize;
         let mut distances = vec![NODE_NOT_PRESENT; nodes_number];
         distances[src_node_id as usize] = 0;
         let mut eccentricity = 0;
@@ -813,7 +913,7 @@ impl Graph {
     ) -> ShortestPathsResultBFS {
         let compute_predecessors = compute_predecessors.unwrap_or(true);
 
-        let nodes_number = self.get_nodes_number() as usize;
+        let nodes_number = self.get_number_of_nodes() as usize;
         let mut found_destination = false;
 
         let mut predecessors: Option<Vec<NodeT>> = if compute_predecessors {
@@ -1083,7 +1183,7 @@ impl Graph {
         dst_node_id: NodeT,
         k: usize,
     ) -> Vec<Vec<NodeT>> {
-        let nodes_number = self.get_nodes_number() as usize;
+        let nodes_number = self.get_number_of_nodes() as usize;
         let mut counts = vec![0; nodes_number];
         let mut paths = Vec::new();
 
@@ -1229,7 +1329,7 @@ impl Graph {
         &self,
         node_id: NodeT,
     ) -> (NodeT, NodeT) {
-        let nodes_number = self.get_nodes_number() as usize;
+        let nodes_number = self.get_number_of_nodes() as usize;
         let thread_shared_visited = ThreadDataRaceAware::new(vec![false; nodes_number]);
         (*thread_shared_visited.value.get())[node_id as usize] = true;
         let mut eccentricity = 0;
@@ -1400,7 +1500,7 @@ impl Graph {
         use_edge_weights_as_probabilities: Option<bool>,
     ) -> ShortestPathsDjkstra {
         let compute_predecessors = compute_predecessors.unwrap_or(true);
-        let nodes_number = self.get_nodes_number() as usize;
+        let nodes_number = self.get_number_of_nodes() as usize;
         let mut most_distant_node = src_node_ids[0];
         let use_edge_weights_as_probabilities = use_edge_weights_as_probabilities.unwrap_or(false);
         let mut dst_node_distance = maybe_dst_node_id.map(|_| {
@@ -2002,7 +2102,7 @@ impl Graph {
         let pb = get_loading_bar(
             verbose,
             "Computing diameter",
-            self.get_nodes_number() as usize,
+            self.get_number_of_nodes() as usize,
         );
 
         Ok(self

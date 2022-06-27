@@ -15,7 +15,7 @@
    8:     0x5555557cf577 - rayon::iter::plumbing::bridge_producer_consumer::helper::h4221de89c86d76ab
    9:     0x555555b2c5d4 - graph::trees::<impl graph::graph::Graph>::kruskal::h91175ba214ef9dba
   10:     0x555555877687 - graph::trees::<impl graph::graph::Graph>::spanning_arborescence_kruskal::h5f6ff4687a711f45
-  11:     0x5555558a2552 - graph::getters::<impl graph::graph::Graph>::get_connected_components_number::h3576458139733867
+  11:     0x5555558a2552 - graph::getters::<impl graph::graph::Graph>::get_number_of_connected_components::h3576458139733867
   12:     0x555555b7a0a0 - graph::test_utilities::test_graph_properties::h274ff62a65736021
   13:     0x555555b6024f - graph::test_utilities::_default_test_suite::hc7f395d7950327b6
   14:     0x555555b5a186 - graph::test_utilities::default_test_suite::hf49ca40d65612f9d

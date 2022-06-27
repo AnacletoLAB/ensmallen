@@ -1,53 +1,350 @@
+use crate::must_not_be_zero;
 use express_measures::{
-    cosine_similarity_sequential_unchecked, dot_product_sequential_unchecked,
-    euclidean_distance_sequential_unchecked,
+    absolute_distance, cosine_similarity_sequential_unchecked, dot_product_sequential_unchecked,
+    euclidean_distance_sequential_unchecked, ThreadFloat,
 };
 use graph::{Graph, NodeT};
 use indicatif::ProgressIterator;
 use indicatif::{ProgressBar, ProgressStyle};
+use num::Zero;
 use rayon::prelude::*;
+use strum::IntoEnumIterator;
+use strum_macros::EnumIter;
 use vec_rand::{random_f32, splitmix64};
 
-#[derive(Clone, Debug, Copy)]
-pub enum EdgeEmbeddingMethods {
+#[derive(Clone, Debug, Copy, PartialEq, EnumIter)]
+pub enum EdgeEmbedding {
     CosineSimilarity,
     EuclideanDistance,
+    Concatenate,
     Hadamard,
+    L1,
+    L2,
+    Add,
+    Sub,
+    Maximum,
+    Minimum,
 }
 
-pub fn get_edge_embedding_method_dimensionality(
-    method: EdgeEmbeddingMethods,
-    dimension: usize,
-) -> usize {
-    match method {
-        EdgeEmbeddingMethods::CosineSimilarity => 1,
-        EdgeEmbeddingMethods::EuclideanDistance => 1,
-        EdgeEmbeddingMethods::Hadamard => dimension,
+impl std::fmt::Display for EdgeEmbedding {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "{:?}", self)
     }
 }
 
-pub fn get_edge_embedding_method_name_from_string(
-    candidate_method_name: &str,
-) -> Result<EdgeEmbeddingMethods, String> {
-    match candidate_method_name {
-        "CosineSimilarity" => Ok(EdgeEmbeddingMethods::CosineSimilarity),
-        "EuclideanDistance" => Ok(EdgeEmbeddingMethods::EuclideanDistance),
-        "Hadamard" => Ok(EdgeEmbeddingMethods::Hadamard),
-        _ => Err(format!(
+impl<'a> TryFrom<&'a str> for EdgeEmbedding {
+    type Error = String;
+    fn try_from(value: &'a str) -> Result<Self, Self::Error> {
+        for edge_embedding in EdgeEmbedding::iter() {
+            if edge_embedding.to_string().as_str() == value {
+                return Ok(edge_embedding);
+            }
+        }
+        Err(format!(
             concat!(
-                "The provided edge embedding method name {} is not supported. ",
-                "The supported edge embedding method names are `CosineSimilarity`, ",
-                "`EuclideanDistance` and `Hadamard`."
+                "The provided edge embedding candidate {} ",
+                "is not supported. The supported edge embedding ",
+                "method are {:?}."
             ),
-            candidate_method_name
-        )),
+            value,
+            EdgeEmbedding::get_edge_embedding_methods()
+        ))
+    }
+}
+
+impl TryFrom<String> for EdgeEmbedding {
+    type Error = String;
+    fn try_from(value: String) -> Result<Self, Self::Error> {
+        EdgeEmbedding::try_from(value.as_str())
+    }
+}
+
+impl EdgeEmbedding {
+    /// Returns dimensionality of the edge embedding.
+    ///
+    /// # Arguments
+    /// * `dimension`: usize - The dimension of the edge embedding.
+    pub fn get_dimensionality(&self, dimension: usize) -> usize {
+        match self {
+            EdgeEmbedding::CosineSimilarity => 1,
+            EdgeEmbedding::EuclideanDistance => 1,
+            EdgeEmbedding::Hadamard => dimension,
+            EdgeEmbedding::Concatenate => 2 * dimension,
+            EdgeEmbedding::L1 => dimension,
+            EdgeEmbedding::L2 => dimension,
+            EdgeEmbedding::Add => dimension,
+            EdgeEmbedding::Sub => dimension,
+            EdgeEmbedding::Maximum => dimension,
+            EdgeEmbedding::Minimum => dimension,
+        }
+    }
+
+    pub fn get_edge_embedding_methods() -> Vec<EdgeEmbedding> {
+        EdgeEmbedding::iter()
+            .map(|edge_embedding| edge_embedding)
+            .collect()
+    }
+
+    pub fn get_edge_embedding_method_names() -> Vec<String> {
+        EdgeEmbedding::iter()
+            .map(|edge_embedding| edge_embedding.to_string())
+            .collect()
+    }
+
+    pub fn get_method<F>(&self) -> fn(&[F], &[F]) -> Vec<f32>
+    where
+        F: ThreadFloat + Into<f32>,
+    {
+        match self {
+            EdgeEmbedding::CosineSimilarity => |a: &[F], b: &[F]| {
+                vec![unsafe { cosine_similarity_sequential_unchecked(a, b).into() }]
+            },
+            EdgeEmbedding::EuclideanDistance => |a: &[F], b: &[F]| {
+                vec![unsafe { euclidean_distance_sequential_unchecked(a, b).into() }]
+            },
+            EdgeEmbedding::Hadamard => |a: &[F], b: &[F]| {
+                a.iter()
+                    .copied()
+                    .zip(b.iter().copied())
+                    .map(|(feature_a, feature_b)| (feature_a * feature_b).into())
+                    .collect::<Vec<f32>>()
+            },
+            EdgeEmbedding::Concatenate => |a: &[F], b: &[F]| {
+                a.iter()
+                    .copied()
+                    .chain(b.iter().copied())
+                    .map(|feature| feature.into())
+                    .collect::<Vec<f32>>()
+            },
+            EdgeEmbedding::L1 => |a: &[F], b: &[F]| {
+                a.iter()
+                    .copied()
+                    .zip(b.iter().copied())
+                    .map(|(feature_a, feature_b)| absolute_distance(feature_a, feature_b).into())
+                    .collect::<Vec<f32>>()
+            },
+            EdgeEmbedding::L2 => |a: &[F], b: &[F]| {
+                a.iter()
+                    .copied()
+                    .zip(b.iter().copied())
+                    .map(|(feature_a, feature_b)| {
+                        let l1 = absolute_distance(feature_a, feature_b);
+                        (l1 * l1).into()
+                    })
+                    .collect::<Vec<f32>>()
+            },
+            EdgeEmbedding::Add => |a: &[F], b: &[F]| {
+                a.iter()
+                    .copied()
+                    .zip(b.iter().copied())
+                    .map(|(feature_a, feature_b)| feature_a.into() + feature_b.into())
+                    .collect::<Vec<f32>>()
+            },
+            EdgeEmbedding::Sub => |a: &[F], b: &[F]| {
+                a.iter()
+                    .copied()
+                    .zip(b.iter().copied())
+                    .map(|(feature_a, feature_b)| feature_a.into() - feature_b.into())
+                    .collect::<Vec<f32>>()
+            },
+            EdgeEmbedding::Maximum => |a: &[F], b: &[F]| {
+                a.iter()
+                    .copied()
+                    .zip(b.iter().copied())
+                    .map(|(feature_a, feature_b)| feature_a.max(feature_b).into())
+                    .collect::<Vec<f32>>()
+            },
+            EdgeEmbedding::Minimum => |a: &[F], b: &[F]| {
+                a.iter()
+                    .copied()
+                    .zip(b.iter().copied())
+                    .map(|(feature_a, feature_b)| feature_a.min(feature_b).into())
+                    .collect::<Vec<f32>>()
+            },
+        }
+    }
+
+    pub fn embed<F>(&self, source_feature: &[F], destination_features: &[F]) -> Vec<f32>
+    where
+        F: ThreadFloat + Into<f32>,
+    {
+        self.get_method()(source_feature, destination_features)
+    }
+}
+
+#[derive(Clone, Debug, Copy, PartialEq, EnumIter)]
+pub enum EdgeFeature {
+    Degree,
+    AdamicAdar,
+    JaccardCoefficient,
+    Cooccurrence,
+    ResourceAllocationIndex,
+    PreferentialAttachment,
+}
+
+impl std::fmt::Display for EdgeFeature {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "{:?}", self)
+    }
+}
+
+impl<'a> TryFrom<&'a str> for EdgeFeature {
+    type Error = String;
+    fn try_from(value: &'a str) -> Result<Self, Self::Error> {
+        for edge_feature in EdgeFeature::iter() {
+            if edge_feature.to_string().as_str() == value {
+                return Ok(edge_feature);
+            }
+        }
+        Err(format!(
+            concat!(
+                "The provided edge features candidate {} ",
+                "is not supported. The supported edge features ",
+                "method are {:?}."
+            ),
+            value,
+            EdgeFeature::get_edge_feature_methods()
+        ))
+    }
+}
+
+impl TryFrom<String> for EdgeFeature {
+    type Error = String;
+    fn try_from(value: String) -> Result<Self, Self::Error> {
+        EdgeFeature::try_from(value.as_str())
+    }
+}
+
+impl EdgeFeature {
+    /// Returns dimensionality of the edge feature.
+    pub fn get_dimensionality(&self) -> usize {
+        match &self {
+            EdgeFeature::Degree => 2,
+            EdgeFeature::AdamicAdar => 1,
+            EdgeFeature::JaccardCoefficient => 1,
+            EdgeFeature::Cooccurrence => 1,
+            EdgeFeature::ResourceAllocationIndex => 1,
+            EdgeFeature::PreferentialAttachment => 1,
+        }
+    }
+
+    pub fn get_edge_feature_methods() -> Vec<EdgeFeature> {
+        EdgeFeature::iter()
+            .map(|edge_feature| edge_feature)
+            .collect()
+    }
+
+    pub fn get_edge_feature_method_names() -> Vec<String> {
+        EdgeEmbedding::iter()
+            .map(|edge_embedding| edge_embedding.to_string())
+            .collect()
+    }
+
+    /// Returns method to compute the edge embedding.
+    fn get_method(
+        &self,
+    ) -> fn(
+        model: &EdgePredictionPerceptron,
+        support: &Graph,
+        src: NodeT,
+        dst: NodeT,
+        random_state: u64,
+    ) -> Vec<f32> {
+        match self {
+            EdgeFeature::Degree => |_model: &EdgePredictionPerceptron,
+                                    support: &Graph,
+                                    src: NodeT,
+                                    dst: NodeT,
+                                    _random_state: u64| {
+                let maximum_node_degree =
+                    unsafe { support.get_unchecked_maximum_node_degree() as f32 };
+                vec![
+                    unsafe { support.get_unchecked_node_degree_from_node_id(src) } as f32
+                        / maximum_node_degree,
+                    unsafe { support.get_unchecked_node_degree_from_node_id(dst) } as f32
+                        / maximum_node_degree,
+                ]
+            },
+            EdgeFeature::AdamicAdar => |_model: &EdgePredictionPerceptron,
+                                        support: &Graph,
+                                        src: NodeT,
+                                        dst: NodeT,
+                                        _random_state: u64| unsafe {
+                vec![support.get_unchecked_adamic_adar_index_from_node_ids(src, dst)]
+            },
+            EdgeFeature::JaccardCoefficient => {
+                |_model: &EdgePredictionPerceptron,
+                 support: &Graph,
+                 src: NodeT,
+                 dst: NodeT,
+                 _random_state: u64| unsafe {
+                    vec![support.get_unchecked_jaccard_coefficient_from_node_ids(src, dst)]
+                }
+            }
+            EdgeFeature::Cooccurrence => {
+                |model: &EdgePredictionPerceptron,
+                 support: &Graph,
+                 src: NodeT,
+                 dst: NodeT,
+                 random_state: u64| {
+                    let mut random_state = splitmix64(random_state);
+                    let mut encounters = 0;
+                    (0..model.cooccurrence_iterations).for_each(|_| {
+                        random_state = splitmix64(random_state);
+                        if unsafe {
+                            support
+                                .iter_uniform_walk(
+                                    src,
+                                    random_state,
+                                    model.cooccurrence_window_size,
+                                )
+                                .any(|node| node == dst)
+                        } {
+                            encounters += 1;
+                        }
+                    });
+                    vec![encounters as f32 / model.cooccurrence_iterations as f32]
+                }
+            }
+            EdgeFeature::ResourceAllocationIndex => {
+                |_model: &EdgePredictionPerceptron,
+                 support: &Graph,
+                 src: NodeT,
+                 dst: NodeT,
+                 _random_state: u64| unsafe {
+                    vec![support.get_unchecked_resource_allocation_index_from_node_ids(src, dst)]
+                }
+            }
+            EdgeFeature::PreferentialAttachment => {
+                |_model: &EdgePredictionPerceptron,
+                 support: &Graph,
+                 src: NodeT,
+                 dst: NodeT,
+                 _random_state: u64| unsafe {
+                    vec![support.get_unchecked_preferential_attachment_from_node_ids(src, dst, true)]
+                }
+            }
+        }
+    }
+
+    pub fn embed(
+        &self,
+        model: &EdgePredictionPerceptron,
+        support: &Graph,
+        src: NodeT,
+        dst: NodeT,
+        random_state: u64,
+    ) -> Vec<f32> {
+        self.get_method()(model, support, src, dst, random_state)
     }
 }
 
 #[derive(Clone, Debug)]
 pub struct EdgePredictionPerceptron {
-    /// The name of the method to use to compute the edge embedding.
-    edge_embedding_method_name: EdgeEmbeddingMethods,
+    /// The edge embedding methods to use.
+    edge_embeddings: Vec<EdgeEmbedding>,
+    /// The edge feature methods to use.
+    edge_features: Vec<EdgeFeature>,
     /// The weights of the model.
     weights: Vec<f32>,
     /// The bias of the model.
@@ -60,6 +357,12 @@ pub struct EdgePredictionPerceptron {
     sample_only_edges_with_heterogeneous_node_types: bool,
     /// Learning rate to use to train the model.
     learning_rate: f32,
+    /// Learning rate decay to use to train the model.
+    learning_rate_decay: f32,
+    /// Number of iterations to run when computing the cooccurrence metric.
+    cooccurrence_iterations: u64,
+    /// Window size to consider to measure the cooccurrence.
+    cooccurrence_window_size: u64,
     /// The random state to reproduce the model initialization and training.
     random_state: u64,
 }
@@ -68,48 +371,55 @@ impl EdgePredictionPerceptron {
     /// Return new instance of Perceptron for edge prediction.
     ///
     /// # Arguments
-    /// * `edge_embedding_method_name`: Option<EdgeEmbeddingMethods> - The embedding method to use. By default the cosine similarity is used.
-    /// * `number_of_epochs`: Option<usize> - The number of epochs to train the model for. By default, 100.
-    /// * `number_of_edges_per_mini_batch`: Option<usize> - The number of samples to include for each mini-batch. By default 1024.
+    /// * `edge_embeddings`: Vec<EdgeEmbedding> - The embedding methods to use for the provided node features.
+    /// * `edge_features`: Vec<EdgeFeature> - The edge features to compute for each edge.
+    /// * `cooccurrence_iterations`: Option<u64> - Number of iterations to run when computing the cooccurrence metric. By default `100`.
+    /// * `cooccurrence_window_size`: Option<u64> - Window size to consider to measure the cooccurrence. By default `10`.
+    /// * `number_of_epochs`: Option<usize> - The number of epochs to train the model for. By default, `100`.
+    /// * `number_of_edges_per_mini_batch`: Option<usize> - The number of samples to include for each mini-batch. By default `4096`.
     /// * `sample_only_edges_with_heterogeneous_node_types`: Option<bool> - Whether to sample negative edges only with source and destination nodes that have different node types. By default false.
-    /// * `learning_rate`: Option<f32> - Learning rate to use while training the model. By default 0.001.
-    /// * `random_state`: Option<u64> - The random state to reproduce the model initialization and training. By default, 42.
+    /// * `learning_rate`: Option<f32> - Learning rate to use while training the model. By default `0.001`.
+    /// * `learning_rate_decay`: Option<f32> - Learning rate decay to use while training the model. By default `0.99`.
+    /// * `random_state`: Option<u64> - The random state to reproduce the model initialization and training. By default, `42`.
     pub fn new(
-        edge_embedding_method_name: Option<EdgeEmbeddingMethods>,
+        edge_embeddings: Vec<EdgeEmbedding>,
+        edge_features: Vec<EdgeFeature>,
+        cooccurrence_iterations: Option<u64>,
+        cooccurrence_window_size: Option<u64>,
         number_of_epochs: Option<usize>,
         number_of_edges_per_mini_batch: Option<usize>,
         sample_only_edges_with_heterogeneous_node_types: Option<bool>,
         learning_rate: Option<f32>,
+        learning_rate_decay: Option<f32>,
         random_state: Option<u64>,
     ) -> Result<Self, String> {
-        let number_of_epochs = number_of_epochs.unwrap_or(100);
-        if number_of_epochs == 0 {
+        let number_of_epochs = must_not_be_zero(number_of_epochs, 100, "number of epochs")?;
+        let number_of_edges_per_mini_batch = must_not_be_zero(
+            number_of_edges_per_mini_batch,
+            4096,
+            "number of edges per mini-batch",
+        )?;
+        let cooccurrence_iterations =
+            must_not_be_zero(cooccurrence_iterations, 100, "cooccurrence iterations")?;
+        let cooccurrence_window_size =
+            must_not_be_zero(cooccurrence_window_size, 10, "cooccurrence window size")?;
+        let learning_rate = must_not_be_zero(learning_rate, 0.001, "learning rate")?;
+        let learning_rate_decay =
+            must_not_be_zero(learning_rate_decay, 0.99, "learning rate decay")?;
+
+        if edge_features.is_empty() && edge_embeddings.is_empty() {
             return Err(concat!(
-                "The provided number of epochs is zero. ",
-                "The number of epochs should be strictly greater than zero."
-            )
-            .to_string());
-        }
-        let number_of_edges_per_mini_batch = number_of_edges_per_mini_batch.unwrap_or(1024);
-        if number_of_edges_per_mini_batch == 0 {
-            return Err(concat!(
-                "The provided number of edges per mini-batch is zero. ",
-                "The number of edges per mini-batch should be strictly greater than zero."
-            )
-            .to_string());
-        }
-        let learning_rate = learning_rate.unwrap_or(0.001);
-        if learning_rate <= 0.0 {
-            return Err(concat!(
-                "The provided learning rate must be a value strictly greater than zero."
+                "No edge feature or embedding was selected, and it ",
+                "is not possible to train a model without input features."
             )
             .to_string());
         }
 
-        let edge_embedding_method_name =
-            edge_embedding_method_name.unwrap_or(EdgeEmbeddingMethods::CosineSimilarity);
         Ok(Self {
-            edge_embedding_method_name,
+            edge_embeddings,
+            edge_features,
+            cooccurrence_iterations,
+            cooccurrence_window_size,
             weights: Vec::new(),
             bias: 0.0,
             number_of_epochs,
@@ -117,85 +427,119 @@ impl EdgePredictionPerceptron {
             sample_only_edges_with_heterogeneous_node_types:
                 sample_only_edges_with_heterogeneous_node_types.unwrap_or(false),
             learning_rate,
-            random_state: random_state.unwrap_or(42),
+            learning_rate_decay,
+            random_state: splitmix64(random_state.unwrap_or(42)),
         })
+    }
+
+    fn must_be_trained(&self) -> Result<(), String> {
+        if self.weights.is_empty() {
+            return Err(concat!(
+                "This model has not been trained yet. ",
+                "You should call the `.fit` method first."
+            )
+            .to_string());
+        }
+        Ok(())
     }
 
     /// Returns the weights of the model.
     pub fn get_weights(&self) -> Result<Vec<f32>, String> {
-        if self.weights.is_empty() {
-            return Err(concat!(
-                "This model has not been trained yet. ",
-                "You should call the `.fit` method first."
-            )
-            .to_string());
-        }
-        Ok(self.weights.clone())
+        self.must_be_trained().map(|_| self.weights.clone())
     }
 
     /// Returns the bias of the model.
     pub fn get_bias(&self) -> Result<f32, String> {
-        if self.weights.is_empty() {
-            return Err(concat!(
-                "This model has not been trained yet. ",
-                "You should call the `.fit` method first."
-            )
-            .to_string());
-        }
-        Ok(self.bias)
+        self.must_be_trained().map(|_| self.bias)
     }
 
     fn validate_features(
         &self,
         graph: &Graph,
-        node_features: &[f32],
-        dimension: usize,
+        node_features: &[&[f32]],
+        dimensions: &[usize],
     ) -> Result<(), String> {
+        if node_features.len() != dimensions.len() {
+            return Err(format!(
+                concat!(
+                    "You have provided {} node features, but ",
+                    "you have provided {} dimensions."
+                ),
+                node_features.len(),
+                dimensions.len()
+            ));
+        }
+
         if !graph.has_edges() {
             return Err("The provided graph does not have any edge.".to_string());
         }
 
-        if dimension == 0 {
-            return Err(concat!(
-                "The provided feature dimensions is zero. ",
-                "The number of node features should be a strictly positive value."
-            )
-            .to_string());
+        for (node_feature, dimension) in node_features.iter().zip(dimensions.iter()) {
+            if *dimension == 0 {
+                return Err(concat!(
+                    "The provided feature dimensions is zero. ",
+                    "The number of node features should be a strictly positive value."
+                )
+                .to_string());
+            }
+
+            if node_feature.len() != graph.get_number_of_nodes() as usize * dimension {
+                return Err(format!(
+                    concat!(
+                        "The provided node features have size {}, but the expected size ",
+                        "based on the provided graph and dimension is {}. Specifically, ",
+                        "the expected shape of the matrix is ({}, {})."
+                    ),
+                    node_feature.len(),
+                    graph.get_number_of_nodes() as usize * dimension,
+                    graph.get_number_of_nodes(),
+                    dimension
+                ));
+            }
         }
 
-        if node_features.len() != graph.get_nodes_number() as usize * dimension {
-            return Err(format!(
-                concat!(
-                    "The provided node features have size {}, but the expected size ",
-                    "based on the provided graph and dimension is {}. Specifically, ",
-                    "the expected shape of the matrix is ({}, {})."
-                ),
-                node_features.len(),
-                graph.get_nodes_number() as usize * dimension,
-                graph.get_nodes_number(),
-                dimension
-            ));
-        }
         Ok(())
     }
 
-    /// Returns method to compute the edge embedding.
-    fn get_edge_embedding_method(&self) -> fn(&[f32], &[f32]) -> Vec<f32> {
-        match self.edge_embedding_method_name {
-            EdgeEmbeddingMethods::CosineSimilarity => {
-                |a: &[f32], b: &[f32]| vec![unsafe { cosine_similarity_sequential_unchecked(a, b) }]
-            }
-            EdgeEmbeddingMethods::EuclideanDistance => |a: &[f32], b: &[f32]| {
-                vec![unsafe { euclidean_distance_sequential_unchecked(a, b) }]
-            },
-            EdgeEmbeddingMethods::Hadamard => |a: &[f32], b: &[f32]| {
-                a.iter()
-                    .copied()
-                    .zip(b.iter().copied())
-                    .map(|(feature_a, feature_b)| feature_a * feature_b)
-                    .collect::<Vec<f32>>()
-            },
-        }
+    /// Returns the edge embedding for the provided input.
+    ///
+    /// # Arguments
+    /// `src`: NodeT - The source node whose features are to be extracted.
+    /// `dst`: NodeT - The destination node whose features are to be extracted.
+    /// `support`: &Graph - The support graph to use for the topological features.
+    /// `node_features`: &[&[f32]] - The node features to use.
+    /// `dimensions`: &[usize] - The dimension of the provided node features.
+    ///
+    /// # Safety
+    /// In this method we do not execute any checks such as whether the
+    /// node features are compatible with the provided node IDs, and therefore
+    /// improper parametrization may lead to panic or undefined behaviour.
+    unsafe fn get_unsafe_edge_embedding<F>(
+        &self,
+        src: NodeT,
+        dst: NodeT,
+        support: &Graph,
+        node_features: &[&[F]],
+        dimensions: &[usize],
+    ) -> Vec<f32>
+    where
+        F: ThreadFloat + Into<f32>,
+    {
+        node_features
+            .iter()
+            .zip(dimensions.iter().copied())
+            .flat_map(|(node_feature, dimension)| {
+                self.edge_embeddings.iter().flat_map(move |edge_embedding| {
+                    edge_embedding.embed(
+                        &node_feature[(src as usize) * dimension..((src as usize) + 1) * dimension],
+                        &node_feature[(dst as usize) * dimension..((dst as usize) + 1) * dimension],
+                    )
+                })
+            })
+            .chain(self.edge_features.iter().flat_map(|edge_feature| {
+                edge_feature.embed(self, support, src, dst, self.random_state)
+            }))
+            .collect()
     }
 
     /// Returns the prediction for the provided nodes, edge embedding method and current model.
@@ -203,9 +547,9 @@ impl EdgePredictionPerceptron {
     /// # Arguments
     /// `src`: NodeT - The source node whose features are to be extracted.
     /// `dst`: NodeT - The destination node whose features are to be extracted.
-    /// `node_features`: &[f32] - The node features to use.
-    /// `dimension`: usize - The dimension of the provided node features.
-    /// `edge_embedding_method`: fn - Callback to the edge embedding method to use.
+    /// `support`: &Graph - The support graph to use for the topological features.
+    /// `node_features`: &[&[f32]] - The node features to use.
+    /// `dimensions`: &[usize] - The dimension of the provided node features.
     ///
     /// # Safety
     /// In this method we do not execute any checks such as whether the
@@ -215,17 +559,13 @@ impl EdgePredictionPerceptron {
         &self,
         src: NodeT,
         dst: NodeT,
-        node_features: &[f32],
-        dimension: usize,
-        method: fn(&[f32], &[f32]) -> Vec<f32>,
+        support: &Graph,
+        node_features: &[&[f32]],
+        dimensions: &[usize],
     ) -> (Vec<f32>, f32) {
-        let src = src as usize;
-        let dst = dst as usize;
-        let src_features = &node_features[src * dimension..(src + 1) * dimension];
-        let dst_features = &node_features[dst * dimension..(dst + 1) * dimension];
-        let edge_embedding = method(src_features, dst_features);
+        let edge_embedding =
+            self.get_unsafe_edge_embedding(src, dst, support, node_features, dimensions);
         let dot = dot_product_sequential_unchecked(&edge_embedding, &self.weights) + self.bias;
-
         (edge_embedding, 1.0 / (1.0 + (-dot).exp()))
     }
 
@@ -233,33 +573,37 @@ impl EdgePredictionPerceptron {
     ///
     /// # Arguments
     /// * `graph`: &Graph - The graph whose edges are to be learned.
-    /// * `node_features`: &[f32] - A node features matrix.
-    /// * `dimension`: usize - The dimensionality of the node features.
+    /// * `node_features`: &[&[f32]] - List of node features matrices.
+    /// * `dimensions`: &[usize] - The dimensionality of the node features.
+    /// * `support`: Option<&Graph> - Graph to use for the topological features.
     /// * `verbose`: Option<bool> - Whether to show a loading bar for the epochs. By default, True.
-    /// * `support`: Option<&'a Graph> - Graph to use to check for false negatives.
     /// * `graph_to_avoid`: &'a Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,
     pub fn fit(
         &mut self,
         graph: &Graph,
-        node_features: &[f32],
-        dimension: usize,
+        node_features: &[&[f32]],
+        dimensions: &[usize],
         verbose: Option<bool>,
         support: Option<&Graph>,
         graph_to_avoid: Option<&Graph>,
     ) -> Result<(), String> {
-        self.validate_features(graph, node_features, dimension)?;
+        let support = support.unwrap_or(graph);
+        self.validate_features(support, node_features, dimensions)?;
 
         let mut random_state: u64 = splitmix64(self.random_state);
-        let scale_factor: f32 = (dimension as f32).sqrt();
         let verbose: bool = verbose.unwrap_or(true);
+        let edge_embedding_dimension =
+            unsafe { self.get_unsafe_edge_embedding(0, 0, support, node_features, dimensions) }
+                .len();
+
+        let scale_factor: f32 = (edge_embedding_dimension as f32).sqrt();
 
         // Initialize the model with weights and bias in the range (-1 / sqrt(k), +1 / sqrt(k))
         let get_random_weight = |seed: usize| {
             (2.0 * random_f32(splitmix64(random_state + seed as u64)) - 1.0) / scale_factor
         };
-        let edge_dimension =
-            get_edge_embedding_method_dimensionality(self.edge_embedding_method_name, dimension);
-        self.weights = (0..edge_dimension)
+
+        self.weights = (0..edge_embedding_dimension)
             .map(|i| get_random_weight(i))
             .collect::<Vec<f32>>();
         self.bias = get_random_weight(self.weights.len());
@@ -283,17 +627,15 @@ impl EdgePredictionPerceptron {
             / self.number_of_edges_per_mini_batch as f32)
             .ceil() as usize;
 
-        let method = self.get_edge_embedding_method();
-        let batch_learning_rate: f32 = self.learning_rate / self.number_of_edges_per_mini_batch as f32;
+        let mut batch_learning_rate: f32 =
+            self.learning_rate / self.number_of_edges_per_mini_batch as f32;
 
         // We start to loop over the required amount of epochs.
-        (0..self.number_of_epochs)
-            .progress_with(progress_bar)
-            .map(|_| {
-                (0..number_of_batches_per_epoch)
-                    .map(|_| {
-                        random_state = splitmix64(random_state);
-                        let (total_weights_gradient, total_bias_gradient) = graph
+        for _ in (0..self.number_of_epochs).progress_with(progress_bar) {
+            let total_variation = (0..number_of_batches_per_epoch)
+                .map(|_| {
+                    random_state = splitmix64(random_state);
+                    let (total_weights_gradient, total_variation) = graph
                             .par_iter_edge_prediction_mini_batch(
                                 random_state,
                                 self.number_of_edges_per_mini_batch,
@@ -302,7 +644,7 @@ impl EdgePredictionPerceptron {
                                 Some(true),
                                 None,
                                 Some(true),
-                                support,
+                                Some(support),
                                 graph_to_avoid,
                             )?
                             .map(|(src, dst, label)| {
@@ -310,9 +652,9 @@ impl EdgePredictionPerceptron {
                                     self.get_unsafe_prediction(
                                         src,
                                         dst,
+                                        support,
                                         node_features,
-                                        dimension,
-                                        method,
+                                        dimensions,
                                     )
                                 };
 
@@ -325,15 +667,15 @@ impl EdgePredictionPerceptron {
                                 (edge_embedding, variation)
                             })
                             .reduce(
-                                || (vec![0.0; edge_dimension], 0.0),
-                                |(
-                                    mut total_weights_gradient,
-                                    mut total_bias_gradient,
-                                ): (Vec<f32>, f32),
-                                 (
-                                    partial_weights_gradient,
-                                    partial_bias_gradient,
-                                ): (Vec<f32>, f32)| {
+                                || (vec![0.0; edge_embedding_dimension], 0.0),
+                                |(mut total_weights_gradient, mut total_variation): (
+                                    Vec<f32>,
+                                    f32,
+                                ),
+                                 (partial_weights_gradient, partial_variation): (
+                                    Vec<f32>,
+                                    f32,
+                                )| {
                                     total_weights_gradient
                                         .iter_mut()
                                         .zip(partial_weights_gradient.into_iter())
@@ -342,22 +684,27 @@ impl EdgePredictionPerceptron {
                                                 *total_weight_gradient += partial_weight_gradient;
                                             },
                                         );
-                                    total_bias_gradient += partial_bias_gradient;
-                                    (total_weights_gradient, total_bias_gradient)
+                                    total_variation += partial_variation;
+                                    (total_weights_gradient, total_variation)
                                 },
                             );
-                        self.bias -= total_bias_gradient * batch_learning_rate;
-                        self.weights
-                            .par_iter_mut()
-                            .zip(total_weights_gradient.into_par_iter())
-                            .for_each(|(weight, total_weight_gradient)| {
-                                *weight -= total_weight_gradient * batch_learning_rate;
-                            });
-                        Ok(())
-                    })
-                    .collect::<Result<(), String>>()
-            })
-            .collect::<Result<(), String>>()
+                    let weighted_total_variation = total_variation * batch_learning_rate;
+                    self.bias -= weighted_total_variation;
+                    self.weights
+                        .par_iter_mut()
+                        .zip(total_weights_gradient.into_par_iter())
+                        .for_each(|(weight, total_weight_gradient)| {
+                            *weight -= total_weight_gradient * batch_learning_rate;
+                        });
+                    Ok(weighted_total_variation.abs())
+                })
+                .sum::<Result<f32, String>>()?;
+            batch_learning_rate *= self.learning_rate_decay;
+            if total_variation.is_zero() {
+                break;
+            }
+        }
+        Ok(())
     }
 
     /// Writes the predicted probabilities on the provided memory area.
@@ -365,16 +712,20 @@ impl EdgePredictionPerceptron {
     /// # Arguments
     /// * `predictions`: &mut [f32] - Area where to write the predictions.
     /// * `graph`: &Graph - The graph whose edges are to be learned.
-    /// * `node_features`: &[f32] - A node features matrix.
-    /// * `dimension`: usize - The dimensionality of the node features.
+    /// * `node_features`: &[&[f32]] - A node features matrix.
+    /// * `dimension`: &[usize] - The dimensionality of the node features.
+    /// * `support`: Option<&Graph> - Graph to use for the topological features.
     pub fn predict(
         &self,
         predictions: &mut [f32],
         graph: &Graph,
-        node_features: &[f32],
-        dimension: usize,
+        node_features: &[&[f32]],
+        dimensions: &[usize],
+        support: Option<&Graph>,
     ) -> Result<(), String> {
-        self.validate_features(graph, node_features, dimension)?;
+        let support = support.unwrap_or(graph);
+        self.validate_features(support, node_features, dimensions)?;
+        self.must_be_trained()?;
 
         if predictions.len() != graph.get_number_of_directed_edges() as usize {
             return Err(format!(
@@ -388,19 +739,11 @@ impl EdgePredictionPerceptron {
             ));
         }
 
-        if self.weights.is_empty() {
-            return Err(concat!(
-                "This model has not been trained yet. ",
-                "Before calling the `.predict` method, you ",
-                "should call the `.fit` method."
-            )
-            .to_string());
-        }
+        let edge_embedding_dimension =
+            unsafe { self.get_unsafe_edge_embedding(0, 0, support, node_features, dimensions) }
+                .len();
 
-        let edge_dimension =
-            get_edge_embedding_method_dimensionality(self.edge_embedding_method_name, dimension);
-
-        if self.weights.len() != edge_dimension {
+        if self.weights.len() != edge_embedding_dimension {
             return Err(format!(
                 concat!(
                     "This model was not trained on features compatible with ",
@@ -409,18 +752,16 @@ impl EdgePredictionPerceptron {
                     "provided have edge embedding dimension `{}`."
                 ),
                 self.weights.len(),
-                edge_dimension
+                edge_embedding_dimension
             ));
         }
-
-        let method = self.get_edge_embedding_method();
 
         predictions
             .par_iter_mut()
             .zip(graph.par_iter_directed_edge_node_ids())
             .for_each(|(prediction, (_, src, dst))| {
                 *prediction = unsafe {
-                    self.get_unsafe_prediction(src, dst, node_features, dimension, method)
+                    self.get_unsafe_prediction(src, dst, support, node_features, dimensions)
                         .1
                 };
             });
