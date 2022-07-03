@@ -29,7 +29,7 @@ where
     pub(crate) learning_rate_decay: f32,
     pub(crate) stochastic_downsample_by_degree: bool,
     pub(crate) normalize_learning_rate_by_degree: bool,
-    pub(crate) use_zipfian_sampling: bool,
+    pub(crate) use_scale_free_distribution: bool,
     pub(crate) walk_transformer: W,
     pub(crate) model_type: Node2VecModels,
     pub(crate) verbose: bool,
@@ -54,7 +54,7 @@ where
     /// `learning_rate_decay`: Option<f32> - Factor to reduce the learning rate for at each epoch. By default 0.9.
     /// `stochastic_downsample_by_degree`: Option<bool> - Randomly skip samples with probability proportional to the degree of the central node. By default false.
     /// `normalize_learning_rate_by_degree`: Option<bool> - Divide the learning rate by the degree of the central node. By default false.
-    /// `use_zipfian_sampling`: Option<bool> - Sample negatives proportionally to their degree. By default true.
+    /// `use_scale_free_distribution`: Option<bool> - Sample negatives proportionally to their degree. By default true.
     /// `verbose`: Option<bool> - Whether to show the loading bar, by default true.
     pub fn new(
         model_type: Node2VecModels,
@@ -69,7 +69,7 @@ where
         learning_rate_decay: Option<f32>,
         stochastic_downsample_by_degree: Option<bool>,
         normalize_learning_rate_by_degree: Option<bool>,
-        use_zipfian_sampling: Option<bool>,
+        use_scale_free_distribution: Option<bool>,
         verbose: Option<bool>,
     ) -> Result<Self, String> {
         let embedding_size = must_not_be_zero(embedding_size, 100, "embedding size")?;
@@ -84,7 +84,7 @@ where
         let walk_parameters = walk_parameters.unwrap_or_else(|| WalksParameters::default());
         let stochastic_downsample_by_degree = stochastic_downsample_by_degree.unwrap_or(false);
         let normalize_learning_rate_by_degree = normalize_learning_rate_by_degree.unwrap_or(false);
-        let use_zipfian_sampling = use_zipfian_sampling.unwrap_or(true);
+        let use_scale_free_distribution = use_scale_free_distribution.unwrap_or(true);
         let verbose = verbose.unwrap_or(true);
 
         Ok(Self {
@@ -99,7 +99,7 @@ where
             number_of_negative_samples,
             stochastic_downsample_by_degree,
             normalize_learning_rate_by_degree,
-            use_zipfian_sampling,
+            use_scale_free_distribution,
             walk_transformer,
             verbose,
         })

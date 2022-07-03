@@ -1,4 +1,5 @@
 use crate::must_not_be_zero;
+use crate::Optimizer;
 use express_measures::{
     absolute_distance, cosine_similarity_sequential_unchecked, dot_product_sequential_unchecked,
     euclidean_distance_sequential_unchecked, ThreadFloat,
@@ -175,6 +176,7 @@ impl EdgeEmbedding {
 #[derive(Clone, Debug, Copy, PartialEq, EnumIter)]
 pub enum EdgeFeature {
     Degree,
+    LogDegree,
     AdamicAdar,
     JaccardCoefficient,
     Cooccurrence,
@@ -220,6 +222,7 @@ impl EdgeFeature {
     pub fn get_dimensionality(&self) -> usize {
         match &self {
             EdgeFeature::Degree => 2,
+            EdgeFeature::LogDegree => 2,
             EdgeFeature::AdamicAdar => 1,
             EdgeFeature::JaccardCoefficient => 1,
             EdgeFeature::Cooccurrence => 1,
@@ -241,23 +244,23 @@ impl EdgeFeature {
     }
 
     /// Returns method to compute the edge embedding.
-    fn get_method(
+    fn get_method<O1: Optimizer<f32>, O2: Optimizer<[f32]>>(
         &self,
     ) -> fn(
-        model: &EdgePredictionPerceptron,
+        model: &EdgePredictionPerceptron<O1, O2>,
         support: &Graph,
         src: NodeT,
         dst: NodeT,
         random_state: u64,
     ) -> Vec<f32> {
         match self {
-            EdgeFeature::Degree => |_model: &EdgePredictionPerceptron,
+            EdgeFeature::Degree => |_model: &EdgePredictionPerceptron<O1, O2>,
                                     support: &Graph,
                                     src: NodeT,
                                     dst: NodeT,
                                     _random_state: u64| {
                 let maximum_node_degree =
-                    unsafe { support.get_unchecked_maximum_node_degree() as f32 };
+                    unsafe { support.get_unchecked_maximum_node_degree() as f32 } + 1.0;
                 vec![
                     unsafe { support.get_unchecked_node_degree_from_node_id(src) } as f32
                         / maximum_node_degree,
@@ -265,7 +268,25 @@ impl EdgeFeature {
                         / maximum_node_degree,
                 ]
             },
-            EdgeFeature::AdamicAdar => |_model: &EdgePredictionPerceptron,
+            EdgeFeature::LogDegree => |_model: &EdgePredictionPerceptron<O1, O2>,
+                                       support: &Graph,
+                                       src: NodeT,
+                                       dst: NodeT,
+                                       _random_state: u64| {
+                vec![
+                    1.0 / unsafe {
+                        support.get_unchecked_node_degree_from_node_id(src) as f32
+                            + std::f32::consts::E
+                    }
+                    .ln(),
+                    1.0 / unsafe {
+                        support.get_unchecked_node_degree_from_node_id(dst) as f32
+                            + std::f32::consts::E
+                    }
+                    .ln(),
+                ]
+            },
+            EdgeFeature::AdamicAdar => |_model: &EdgePredictionPerceptron<O1, O2>,
                                         support: &Graph,
                                         src: NodeT,
                                         dst: NodeT,
@@ -273,7 +294,7 @@ impl EdgeFeature {
                 vec![support.get_unchecked_adamic_adar_index_from_node_ids(src, dst)]
             },
             EdgeFeature::JaccardCoefficient => {
-                |_model: &EdgePredictionPerceptron,
+                |_model: &EdgePredictionPerceptron<O1, O2>,
                  support: &Graph,
                  src: NodeT,
                  dst: NodeT,
@@ -282,7 +303,7 @@ impl EdgeFeature {
                 }
             }
             EdgeFeature::Cooccurrence => {
-                |model: &EdgePredictionPerceptron,
+                |model: &EdgePredictionPerceptron<O1, O2>,
                  support: &Graph,
                  src: NodeT,
                  dst: NodeT,
@@ -307,7 +328,7 @@ impl EdgeFeature {
                 }
             }
             EdgeFeature::ResourceAllocationIndex => {
-                |_model: &EdgePredictionPerceptron,
+                |_model: &EdgePredictionPerceptron<O1, O2>,
                  support: &Graph,
                  src: NodeT,
                  dst: NodeT,
@@ -316,7 +337,7 @@ impl EdgeFeature {
                 }
             }
             EdgeFeature::PreferentialAttachment => {
-                |_model: &EdgePredictionPerceptron,
+                |_model: &EdgePredictionPerceptron<O1, O2>,
                  support: &Graph,
                  src: NodeT,
                  dst: NodeT,
@@ -327,9 +348,9 @@ impl EdgeFeature {
         }
     }
 
-    pub fn embed(
+    pub fn embed<O1: Optimizer<f32>, O2: Optimizer<[f32]>>(
         &self,
-        model: &EdgePredictionPerceptron,
+        model: &EdgePredictionPerceptron<O1, O2>,
         support: &Graph,
         src: NodeT,
         dst: NodeT,
@@ -339,12 +360,28 @@ impl EdgeFeature {
     }
 }
 
-#[derive(Clone, Debug)]
-pub struct EdgePredictionPerceptron {
+#[derive(Clone)]
+pub struct EdgePredictionPerceptron<O1, O2>
+where
+    O1: Optimizer<f32>,
+    O2: Optimizer<[f32]>,
+{
     /// The edge embedding methods to use.
-    edge_embeddings: Vec<EdgeEmbedding>,
+    edge_embeddings: Vec<fn(&[f32], &[f32]) -> Vec<f32>>,
     /// The edge feature methods to use.
-    edge_features: Vec<EdgeFeature>,
+    edge_features: Vec<
+        fn(
+            model: &EdgePredictionPerceptron<O1, O2>,
+            support: &Graph,
+            src: NodeT,
+            dst: NodeT,
+            random_state: u64,
+        ) -> Vec<f32>,
+    >,
+    /// Bias Optimizer
+    bias_optimizer: O1,
+    /// Weights optimizer
+    weight_optimizer: O2,
     /// The weights of the model.
     weights: Vec<f32>,
     /// The bias of the model.
@@ -355,19 +392,21 @@ pub struct EdgePredictionPerceptron {
     number_of_edges_per_mini_batch: usize,
     /// Whether to train this model by sampling only edges with nodes with different node types.
     sample_only_edges_with_heterogeneous_node_types: bool,
-    /// Learning rate to use to train the model.
-    learning_rate: f32,
-    /// Learning rate decay to use to train the model.
-    learning_rate_decay: f32,
     /// Number of iterations to run when computing the cooccurrence metric.
     cooccurrence_iterations: u64,
     /// Window size to consider to measure the cooccurrence.
     cooccurrence_window_size: u64,
+    /// Whether to sample using scale free distribution.
+    use_scale_free_distribution: bool,
     /// The random state to reproduce the model initialization and training.
     random_state: u64,
 }
 
-impl EdgePredictionPerceptron {
+impl<O1, O2> EdgePredictionPerceptron<O1, O2>
+where
+    O1: Optimizer<f32> + From<O2>,
+    O2: Optimizer<[f32]>,
+{
     /// Return new instance of Perceptron for edge prediction.
     ///
     /// # Arguments
@@ -376,36 +415,32 @@ impl EdgePredictionPerceptron {
     /// * `cooccurrence_iterations`: Option<u64> - Number of iterations to run when computing the cooccurrence metric. By default `100`.
     /// * `cooccurrence_window_size`: Option<u64> - Window size to consider to measure the cooccurrence. By default `10`.
     /// * `number_of_epochs`: Option<usize> - The number of epochs to train the model for. By default, `100`.
-    /// * `number_of_edges_per_mini_batch`: Option<usize> - The number of samples to include for each mini-batch. By default `4096`.
+    /// * `number_of_edges_per_mini_batch`: Option<usize> - The number of samples to include for each mini-batch. By default `256`.
     /// * `sample_only_edges_with_heterogeneous_node_types`: Option<bool> - Whether to sample negative edges only with source and destination nodes that have different node types. By default false.
-    /// * `learning_rate`: Option<f32> - Learning rate to use while training the model. By default `0.001`.
-    /// * `learning_rate_decay`: Option<f32> - Learning rate decay to use while training the model. By default `0.99`.
+    /// * `use_scale_free_distribution`: Option<bool> - Whether to sample using scale free distribution. By default, true.
     /// * `random_state`: Option<u64> - The random state to reproduce the model initialization and training. By default, `42`.
     pub fn new(
         edge_embeddings: Vec<EdgeEmbedding>,
         edge_features: Vec<EdgeFeature>,
+        optimizer: O2,
         cooccurrence_iterations: Option<u64>,
         cooccurrence_window_size: Option<u64>,
         number_of_epochs: Option<usize>,
         number_of_edges_per_mini_batch: Option<usize>,
         sample_only_edges_with_heterogeneous_node_types: Option<bool>,
-        learning_rate: Option<f32>,
-        learning_rate_decay: Option<f32>,
+        use_scale_free_distribution: Option<bool>,
         random_state: Option<u64>,
     ) -> Result<Self, String> {
         let number_of_epochs = must_not_be_zero(number_of_epochs, 100, "number of epochs")?;
         let number_of_edges_per_mini_batch = must_not_be_zero(
             number_of_edges_per_mini_batch,
-            4096,
+            256,
             "number of edges per mini-batch",
         )?;
         let cooccurrence_iterations =
             must_not_be_zero(cooccurrence_iterations, 100, "cooccurrence iterations")?;
         let cooccurrence_window_size =
             must_not_be_zero(cooccurrence_window_size, 10, "cooccurrence window size")?;
-        let learning_rate = must_not_be_zero(learning_rate, 0.001, "learning rate")?;
-        let learning_rate_decay =
-            must_not_be_zero(learning_rate_decay, 0.99, "learning rate decay")?;
 
         if edge_features.is_empty() && edge_embeddings.is_empty() {
             return Err(concat!(
@@ -416,8 +451,16 @@ impl EdgePredictionPerceptron {
         }
 
         Ok(Self {
-            edge_embeddings,
-            edge_features,
+            edge_embeddings: edge_embeddings
+                .into_iter()
+                .map(|edge_embedding| edge_embedding.get_method())
+                .collect(),
+            edge_features: edge_features
+                .into_iter()
+                .map(|edge_feature| edge_feature.get_method())
+                .collect(),
+            bias_optimizer: optimizer.clone().into(),
+            weight_optimizer: optimizer,
             cooccurrence_iterations,
             cooccurrence_window_size,
             weights: Vec::new(),
@@ -426,8 +469,7 @@ impl EdgePredictionPerceptron {
             number_of_edges_per_mini_batch,
             sample_only_edges_with_heterogeneous_node_types:
                 sample_only_edges_with_heterogeneous_node_types.unwrap_or(false),
-            learning_rate,
-            learning_rate_decay,
+            use_scale_free_distribution: use_scale_free_distribution.unwrap_or(true),
             random_state: splitmix64(random_state.unwrap_or(42)),
         })
     }
@@ -514,31 +556,30 @@ impl EdgePredictionPerceptron {
     /// In this method we do not execute any checks such as whether the
     /// node features are compatible with the provided node IDs, and therefore
     /// improper parametrization may lead to panic or undefined behaviour.
-    unsafe fn get_unsafe_edge_embedding<F>(
+    unsafe fn get_unsafe_edge_embedding(
         &self,
         src: NodeT,
         dst: NodeT,
         support: &Graph,
-        node_features: &[&[F]],
+        node_features: &[&[f32]],
         dimensions: &[usize],
-    ) -> Vec<f32>
-    where
-        F: ThreadFloat + Into<f32>,
-    {
+    ) -> Vec<f32> {
         node_features
             .iter()
             .zip(dimensions.iter().copied())
             .flat_map(|(node_feature, dimension)| {
                 self.edge_embeddings.iter().flat_map(move |edge_embedding| {
-                    edge_embedding.embed(
+                    edge_embedding(
                         &node_feature[(src as usize) * dimension..((src as usize) + 1) * dimension],
                         &node_feature[(dst as usize) * dimension..((dst as usize) + 1) * dimension],
                     )
                 })
             })
-            .chain(self.edge_features.iter().flat_map(|edge_feature| {
-                edge_feature.embed(self, support, src, dst, self.random_state)
-            }))
+            .chain(
+                self.edge_features.iter().flat_map(|edge_feature| {
+                    edge_feature(self, support, src, dst, self.random_state)
+                }),
+            )
             .collect()
     }
 
@@ -565,7 +606,9 @@ impl EdgePredictionPerceptron {
     ) -> (Vec<f32>, f32) {
         let edge_embedding =
             self.get_unsafe_edge_embedding(src, dst, support, node_features, dimensions);
-        let dot = dot_product_sequential_unchecked(&edge_embedding, &self.weights) + self.bias;
+        let scale_factor = (edge_embedding.len() as f32).sqrt();
+        let dot = dot_product_sequential_unchecked(&edge_embedding, &self.weights) / scale_factor
+            + self.bias;
         (edge_embedding, 1.0 / (1.0 + (-dot).exp()))
     }
 
@@ -603,6 +646,8 @@ impl EdgePredictionPerceptron {
             (2.0 * random_f32(splitmix64(random_state + seed as u64)) - 1.0) / scale_factor
         };
 
+        self.bias_optimizer.set_capacity(1);
+        self.weight_optimizer.set_capacity(edge_embedding_dimension);
         self.weights = (0..edge_embedding_dimension)
             .map(|i| get_random_weight(i))
             .collect::<Vec<f32>>();
@@ -627,79 +672,194 @@ impl EdgePredictionPerceptron {
             / self.number_of_edges_per_mini_batch as f32)
             .ceil() as usize;
 
-        let mut batch_learning_rate: f32 =
-            self.learning_rate / self.number_of_edges_per_mini_batch as f32;
-
+        let mut negative_samples_rate = 0.5;
         // We start to loop over the required amount of epochs.
         for _ in (0..self.number_of_epochs).progress_with(progress_bar) {
             let total_variation = (0..number_of_batches_per_epoch)
                 .map(|_| {
                     random_state = splitmix64(random_state);
-                    let (total_weights_gradient, total_variation) = graph
-                            .par_iter_edge_prediction_mini_batch(
-                                random_state,
-                                self.number_of_edges_per_mini_batch,
-                                self.sample_only_edges_with_heterogeneous_node_types,
-                                Some(0.5),
-                                Some(true),
-                                None,
-                                Some(true),
-                                Some(support),
-                                graph_to_avoid,
-                            )?
-                            .map(|(src, dst, label)| {
-                                let (mut edge_embedding, prediction) = unsafe {
-                                    self.get_unsafe_prediction(
-                                        src,
-                                        dst,
-                                        support,
-                                        node_features,
-                                        dimensions,
-                                    )
-                                };
+                    let (
+                        mut total_weights_gradient,
+                        total_squared_weights_gradient,
+                        mut total_variation,
+                        total_squared_variation,
+                        total_positive_absolute_variation,
+                        total_negative_absolute_variation,
+                    ) = graph
+                        .par_iter_edge_prediction_mini_batch(
+                            random_state,
+                            self.number_of_edges_per_mini_batch,
+                            self.sample_only_edges_with_heterogeneous_node_types,
+                            Some(negative_samples_rate as f64),
+                            Some(true),
+                            None,
+                            Some(self.use_scale_free_distribution),
+                            Some(support),
+                            graph_to_avoid,
+                        )?
+                        .map(|(src, dst, label)| {
+                            let (mut edge_embedding, prediction) = unsafe {
+                                self.get_unsafe_prediction(
+                                    src,
+                                    dst,
+                                    support,
+                                    node_features,
+                                    dimensions,
+                                )
+                            };
 
-                                let variation = if label { prediction - 1.0 } else { prediction };
+                            let variation = if label { prediction - 1.0 } else { prediction };
 
-                                edge_embedding.iter_mut().for_each(|edge_feature| {
-                                    *edge_feature *= variation;
-                                });
+                            edge_embedding.iter_mut().for_each(|edge_feature| {
+                                *edge_feature *= variation;
+                            });
 
-                                (edge_embedding, variation)
-                            })
-                            .reduce(
-                                || (vec![0.0; edge_embedding_dimension], 0.0),
-                                |(mut total_weights_gradient, mut total_variation): (
-                                    Vec<f32>,
-                                    f32,
-                                ),
-                                 (partial_weights_gradient, partial_variation): (
-                                    Vec<f32>,
-                                    f32,
-                                )| {
-                                    total_weights_gradient
-                                        .iter_mut()
-                                        .zip(partial_weights_gradient.into_iter())
-                                        .for_each(
-                                            |(total_weight_gradient, partial_weight_gradient)| {
-                                                *total_weight_gradient += partial_weight_gradient;
-                                            },
-                                        );
-                                    total_variation += partial_variation;
-                                    (total_weights_gradient, total_variation)
-                                },
-                            );
-                    let weighted_total_variation = total_variation * batch_learning_rate;
-                    self.bias -= weighted_total_variation;
+                            let squared_variations = edge_embedding
+                                .iter()
+                                .map(|edge_feature| edge_feature.powf(2.0))
+                                .collect::<Vec<f32>>();
+
+                            (
+                                edge_embedding,
+                                squared_variations,
+                                variation,
+                                variation.powf(2.0),
+                                if label { variation.abs() } else { 0.0 },
+                                if label { 0.0 } else { variation.abs() },
+                            )
+                        })
+                        .reduce(
+                            || {
+                                (
+                                    vec![0.0; edge_embedding_dimension],
+                                    vec![0.0; edge_embedding_dimension],
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                )
+                            },
+                            |(
+                                mut total_weights_gradient,
+                                mut total_squared_weights_gradient,
+                                mut total_variation,
+                                mut total_squared_variation,
+                                mut total_positive_absolute_variation,
+                                mut total_negative_absolute_variation,
+                            ): (
+                                Vec<f32>,
+                                Vec<f32>,
+                                f32,
+                                f32,
+                                f32,
+                                f32,
+                            ),
+                             (
+                                partial_weights_gradient,
+                                partial_squared_weights_gradient,
+                                partial_variation,
+                                partial_squared_variation,
+                                partial_positive_absolute_variation,
+                                partial_negative_absolute_variation,
+                            ): (
+                                Vec<f32>,
+                                Vec<f32>,
+                                f32,
+                                f32,
+                                f32,
+                                f32,
+                            )| {
+                                total_weights_gradient
+                                    .iter_mut()
+                                    .zip(partial_weights_gradient.into_iter())
+                                    .for_each(
+                                        |(total_weight_gradient, partial_weight_gradient)| {
+                                            *total_weight_gradient += partial_weight_gradient;
+                                        },
+                                    );
+                                total_squared_weights_gradient
+                                    .iter_mut()
+                                    .zip(partial_squared_weights_gradient.into_iter())
+                                    .for_each(
+                                        |(
+                                            total_squared_weight_gradient,
+                                            partial_squared_weight_gradient,
+                                        )| {
+                                            *total_squared_weight_gradient +=
+                                                partial_squared_weight_gradient;
+                                        },
+                                    );
+                                total_variation += partial_variation;
+                                total_squared_variation += partial_squared_variation;
+                                total_positive_absolute_variation +=
+                                    partial_positive_absolute_variation;
+                                total_negative_absolute_variation +=
+                                    partial_negative_absolute_variation;
+                                (
+                                    total_weights_gradient,
+                                    total_squared_weights_gradient,
+                                    total_variation,
+                                    total_squared_variation,
+                                    total_positive_absolute_variation,
+                                    total_negative_absolute_variation,
+                                )
+                            },
+                        );
+
+                    // We adapt the negative samples rate according to how much we are getting
+                    // wrong the negatives over the total number of samples.
+                    // If the negatives are causing a relative small percentage of the total
+                    // variation, then we need to learn more about the positive edges and therefore
+                    // oversample the positive edges, or viceversa.
+                    negative_samples_rate = (total_negative_absolute_variation
+                        / negative_samples_rate
+                        / (total_positive_absolute_variation / (1.0 - negative_samples_rate)
+                            + total_negative_absolute_variation / negative_samples_rate
+                            + f32::EPSILON))
+                        .max(0.05)
+                        .min(0.95);
+
+                    let bias_standard_deviation = (total_squared_variation
+                        / self.number_of_edges_per_mini_batch as f32
+                        - (total_variation / self.number_of_edges_per_mini_batch as f32).powf(2.0))
+                    .sqrt();
+
+                    let weights_standard_deviation = total_weights_gradient
+                        .iter()
+                        .zip(total_squared_weights_gradient.iter())
+                        .map(|(total_weight_gradient, total_squared_weight_gradient)| {
+                            (total_squared_weight_gradient
+                                / self.number_of_edges_per_mini_batch as f32
+                                - (total_weight_gradient
+                                    / self.number_of_edges_per_mini_batch as f32)
+                                    .powf(2.0))
+                            .sqrt()
+                        })
+                        .collect::<Vec<f32>>();
+
+                    self.bias_optimizer.get_update(&mut total_variation);
+                    self.weight_optimizer
+                        .get_update(&mut total_weights_gradient);
+
+                    total_variation /= (bias_standard_deviation + f32::EPSILON)
+                        / self.number_of_edges_per_mini_batch as f32;
+
+                    self.bias -= total_variation;
                     self.weights
-                        .par_iter_mut()
-                        .zip(total_weights_gradient.into_par_iter())
-                        .for_each(|(weight, total_weight_gradient)| {
-                            *weight -= total_weight_gradient * batch_learning_rate;
-                        });
-                    Ok(weighted_total_variation.abs())
+                        .iter_mut()
+                        .zip(total_weights_gradient.into_iter())
+                        .zip(weights_standard_deviation.into_iter())
+                        .for_each(
+                            |((weight, total_weight_gradient), weight_standard_deviation)| {
+                                *weight -= total_weight_gradient
+                                    / (weight_standard_deviation + f32::EPSILON)
+                                    / self.number_of_edges_per_mini_batch as f32;
+                            },
+                        );
+
+                    Ok(total_variation.abs())
                 })
                 .sum::<Result<f32, String>>()?;
-            batch_learning_rate *= self.learning_rate_decay;
             if total_variation.is_zero() {
                 break;
             }

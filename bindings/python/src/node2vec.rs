@@ -38,7 +38,7 @@ where
                 "learning_rate_decay",
                 "stochastic_downsample_by_degree",
                 "normalize_learning_rate_by_degree",
-                "use_zipfian_sampling",
+                "use_scale_free_distribution",
                 "verbose"
             ])
             .as_slice()
@@ -60,7 +60,7 @@ where
                 extract_value_rust_result!(kwargs, "learning_rate_decay", f32),
                 extract_value_rust_result!(kwargs, "stochastic_downsample_by_degree", bool),
                 extract_value_rust_result!(kwargs, "normalize_learning_rate_by_degree", bool),
-                extract_value_rust_result!(kwargs, "use_zipfian_sampling", bool),
+                extract_value_rust_result!(kwargs, "use_scale_free_distribution", bool),
                 extract_value_rust_result!(kwargs, "verbose", bool),
             ))?,
         })
@@ -88,7 +88,7 @@ impl WalkletsBinding {
 
 #[pyclass]
 #[derive(Debug, Clone)]
-#[text_signature = "(*, embedding_size, window_size, number_of_negative_samples, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, max_neighbours, normalize_by_degree, epochs, learning_rate, learning_rate_decay, stochastic_downsample_by_degree, normalize_learning_rate_by_degree, use_zipfian_sampling, clipping_value, verbose)"]
+#[text_signature = "(*, embedding_size, window_size, number_of_negative_samples, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, max_neighbours, normalize_by_degree, epochs, learning_rate, learning_rate_decay, stochastic_downsample_by_degree, normalize_learning_rate_by_degree, use_scale_free_distribution, clipping_value, verbose)"]
 pub struct CBOW {
     inner: Node2VecBinding<IdentifyWalkTransformer>,
 }
@@ -152,7 +152,7 @@ impl CBOW {
     ///     Randomly skip samples with probability proportional to the degree of the central node. By default false.
     /// normalize_learning_rate_by_degree: Optional[bool]
     ///     Divide the learning rate by the degree of the central node. By default false.
-    /// use_zipfian_sampling: Optional[bool]
+    /// use_scale_free_distribution: Optional[bool]
     ///     Sample negatives proportionally to their degree. By default true.
     /// clipping_value: Optional[float] = 6.0
     ///     Value at which we clip the dot product, mostly for numerical stability issues.
@@ -183,7 +183,7 @@ impl CBOW {
 
 #[pyclass]
 #[derive(Debug, Clone)]
-#[text_signature = "(*, embedding_size, window_size, number_of_negative_samples, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, max_neighbours, normalize_by_degree, epochs, learning_rate, learning_rate_decay, stochastic_downsample_by_degree, normalize_learning_rate_by_degree, use_zipfian_sampling, clipping_value, verbose)"]
+#[text_signature = "(*, embedding_size, window_size, number_of_negative_samples, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, max_neighbours, normalize_by_degree, epochs, learning_rate, learning_rate_decay, stochastic_downsample_by_degree, normalize_learning_rate_by_degree, use_scale_free_distribution, clipping_value, verbose)"]
 pub struct SkipGram {
     inner: Node2VecBinding<IdentifyWalkTransformer>,
 }
@@ -247,7 +247,7 @@ impl SkipGram {
     ///     Randomly skip samples with probability proportional to the degree of the central node. By default false.
     /// normalize_learning_rate_by_degree: Optional[bool]
     ///     Divide the learning rate by the degree of the central node. By default false.
-    /// use_zipfian_sampling: Optional[bool]
+    /// use_scale_free_distribution: Optional[bool]
     ///     Sample negatives proportionally to their degree. By default true.
     /// clipping_value: Optional[float] = 6.0
     ///     Value at which we clip the dot product, mostly for numerical stability issues.
@@ -278,7 +278,7 @@ impl SkipGram {
 
 #[pyclass]
 #[derive(Debug, Clone)]
-#[text_signature = "(*, embedding_size, window_size, number_of_negative_samples, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, max_neighbours, normalize_by_degree, epochs, learning_rate, learning_rate_decay, stochastic_downsample_by_degree, normalize_learning_rate_by_degree, use_zipfian_sampling, clipping_value, verbose)"]
+#[text_signature = "(*, embedding_size, window_size, number_of_negative_samples, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, max_neighbours, normalize_by_degree, epochs, learning_rate, learning_rate_decay, stochastic_downsample_by_degree, normalize_learning_rate_by_degree, use_scale_free_distribution, clipping_value, verbose)"]
 pub struct WalkletsCBOW {
     inner: WalkletsBinding,
 }
@@ -342,7 +342,7 @@ impl WalkletsCBOW {
     ///     Randomly skip samples with probability proportional to the degree of the central node. By default false.
     /// normalize_learning_rate_by_degree: Optional[bool]
     ///     Divide the learning rate by the degree of the central node. By default false.
-    /// use_zipfian_sampling: Optional[bool]
+    /// use_scale_free_distribution: Optional[bool]
     ///     Sample negatives proportionally to their degree. By default true.
     /// clipping_value: Optional[float] = 6.0
     ///     Value at which we clip the dot product, mostly for numerical stability issues.
@@ -373,7 +373,7 @@ impl WalkletsCBOW {
 
 #[pyclass]
 #[derive(Debug, Clone)]
-#[text_signature = "(*, embedding_size, window_size, number_of_negative_samples, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, max_neighbours, normalize_by_degree, epochs, learning_rate, learning_rate_decay, stochastic_downsample_by_degree, normalize_learning_rate_by_degree, use_zipfian_sampling, clipping_value, verbose)"]
+#[text_signature = "(*, embedding_size, window_size, number_of_negative_samples, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, max_neighbours, normalize_by_degree, epochs, learning_rate, learning_rate_decay, stochastic_downsample_by_degree, normalize_learning_rate_by_degree, use_scale_free_distribution, clipping_value, verbose)"]
 pub struct WalkletsSkipGram {
     inner: WalkletsBinding,
 }
@@ -437,7 +437,7 @@ impl WalkletsSkipGram {
     ///     Randomly skip samples with probability proportional to the degree of the central node. By default false.
     /// normalize_learning_rate_by_degree: Optional[bool]
     ///     Divide the learning rate by the degree of the central node. By default false.
-    /// use_zipfian_sampling: Optional[bool]
+    /// use_scale_free_distribution: Optional[bool]
     ///     Sample negatives proportionally to their degree. By default true.
     /// clipping_value: Optional[float] = 6.0
     ///     Value at which we clip the dot product, mostly for numerical stability issues.

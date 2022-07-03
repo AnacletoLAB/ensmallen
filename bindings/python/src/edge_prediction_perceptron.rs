@@ -1,23 +1,26 @@
 use super::*;
+use cpu_models::Adam;
 use numpy::PyArray2;
 use std::convert::TryInto;
 
+type InnerModel = cpu_models::EdgePredictionPerceptron<Adam<f32, f32>, Adam<f32, Vec<f32>>>;
+
 ///
 #[pyclass]
-#[derive(Debug, Clone)]
-#[text_signature = "(*, edge_embeddings, edge_features, cooccurrence_iterations, cooccurrence_window_size, number_of_epochs, number_of_edges_per_mini_batch, sample_only_edges_with_heterogeneous_node_types, learning_rate, learning_rate_decay, random_state)"]
+#[derive(Clone)]
+#[text_signature = "(*, edge_embeddings, edge_features, cooccurrence_iterations, cooccurrence_window_size, number_of_epochs, number_of_edges_per_mini_batch, sample_only_edges_with_heterogeneous_node_types, learning_rate, first_order_decay_factor, second_order_decay_factor, use_scale_free_distribution, random_state)"]
 pub struct EdgePredictionPerceptron {
-    pub inner: cpu_models::EdgePredictionPerceptron,
+    pub inner: InnerModel,
 }
 
-impl From<cpu_models::EdgePredictionPerceptron> for EdgePredictionPerceptron {
-    fn from(val: cpu_models::EdgePredictionPerceptron) -> EdgePredictionPerceptron {
+impl From<InnerModel> for EdgePredictionPerceptron {
+    fn from(val: InnerModel) -> EdgePredictionPerceptron {
         EdgePredictionPerceptron { inner: val }
     }
 }
 
-impl From<EdgePredictionPerceptron> for cpu_models::EdgePredictionPerceptron {
-    fn from(val: EdgePredictionPerceptron) -> cpu_models::EdgePredictionPerceptron {
+impl From<EdgePredictionPerceptron> for InnerModel {
+    fn from(val: EdgePredictionPerceptron) -> InnerModel {
         val.inner
     }
 }
@@ -51,9 +54,14 @@ impl EdgePredictionPerceptron {
     /// learning_rate: float = 0.001
     ///     Learning rate to use while training the model.
     ///     By default 0.001.
-    /// learning_rate_decay: float = 0.99
-    ///     Learning rate decay to use while training the model.
-    ///     By default 0.99.
+    /// first_order_decay_factor: float = 0.9
+    ///     First order decay factor for the first order momentum.
+    ///     By default 0.9.
+    /// second_order_decay_factor: float = 0.999
+    ///     Second order decay factor for the second order momentum.
+    ///     By default 0.999.
+    /// use_scale_free_distribution: bool = True
+    ///     Whether to train model using a scale free distribution for the negatives.
     /// random_state: int = 42
     ///     The random state to reproduce the model initialization and training. By default, 42.
     pub fn new(py_kwargs: Option<&PyDict>) -> PyResult<EdgePredictionPerceptron> {
@@ -71,7 +79,9 @@ impl EdgePredictionPerceptron {
                 "number_of_edges_per_mini_batch",
                 "sample_only_edges_with_heterogeneous_node_types",
                 "learning_rate",
-                "learning_rate_decay",
+                "first_order_decay_factor",
+                "second_order_decay_factor",
+                "use_scale_free_distribution",
                 "random_state"
             ]
         ))?;
@@ -98,6 +108,11 @@ impl EdgePredictionPerceptron {
                         .transpose()
                 )?
                 .unwrap_or_else(|| Vec::new()),
+                cpu_models::Adam::new(
+                    extract_value_rust_result!(kwargs, "learning_rate", f32),
+                    extract_value_rust_result!(kwargs, "first_order_decay_factor", f32),
+                    extract_value_rust_result!(kwargs, "second_order_decay_factor", f32),
+                ),
                 extract_value_rust_result!(kwargs, "cooccurrence_iterations", u64),
                 extract_value_rust_result!(kwargs, "cooccurrence_window_size", u64),
                 extract_value_rust_result!(kwargs, "number_of_epochs", usize),
@@ -107,8 +122,7 @@ impl EdgePredictionPerceptron {
                     "sample_only_edges_with_heterogeneous_node_types",
                     bool
                 ),
-                extract_value_rust_result!(kwargs, "learning_rate", f32),
-                extract_value_rust_result!(kwargs, "learning_rate_decay", f32),
+                extract_value_rust_result!(kwargs, "use_scale_free_distribution", bool),
                 extract_value_rust_result!(kwargs, "random_state", u64),
             ))?,
         })
