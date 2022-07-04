@@ -672,7 +672,6 @@ where
             / self.number_of_edges_per_mini_batch as f32)
             .ceil() as usize;
 
-        let mut negative_samples_rate = 0.5;
         // We start to loop over the required amount of epochs.
         for _ in (0..self.number_of_epochs).progress_with(progress_bar) {
             let total_variation = (0..number_of_batches_per_epoch)
@@ -683,14 +682,12 @@ where
                         total_squared_weights_gradient,
                         mut total_variation,
                         total_squared_variation,
-                        total_positive_absolute_variation,
-                        total_negative_absolute_variation,
                     ) = graph
                         .par_iter_edge_prediction_mini_batch(
                             random_state,
                             self.number_of_edges_per_mini_batch,
                             self.sample_only_edges_with_heterogeneous_node_types,
-                            Some(negative_samples_rate as f64),
+                            Some(0.5),
                             Some(true),
                             None,
                             Some(self.use_scale_free_distribution),
@@ -724,8 +721,6 @@ where
                                 squared_variations,
                                 variation,
                                 variation.powf(2.0),
-                                if label { variation.abs() } else { 0.0 },
-                                if label { 0.0 } else { variation.abs() },
                             )
                         })
                         .reduce(
@@ -735,8 +730,6 @@ where
                                     vec![0.0; edge_embedding_dimension],
                                     0.0,
                                     0.0,
-                                    0.0,
-                                    0.0,
                                 )
                             },
                             |(
@@ -744,13 +737,9 @@ where
                                 mut total_squared_weights_gradient,
                                 mut total_variation,
                                 mut total_squared_variation,
-                                mut total_positive_absolute_variation,
-                                mut total_negative_absolute_variation,
                             ): (
                                 Vec<f32>,
                                 Vec<f32>,
-                                f32,
-                                f32,
                                 f32,
                                 f32,
                             ),
@@ -759,13 +748,9 @@ where
                                 partial_squared_weights_gradient,
                                 partial_variation,
                                 partial_squared_variation,
-                                partial_positive_absolute_variation,
-                                partial_negative_absolute_variation,
                             ): (
                                 Vec<f32>,
                                 Vec<f32>,
-                                f32,
-                                f32,
                                 f32,
                                 f32,
                             )| {
@@ -791,33 +776,14 @@ where
                                     );
                                 total_variation += partial_variation;
                                 total_squared_variation += partial_squared_variation;
-                                total_positive_absolute_variation +=
-                                    partial_positive_absolute_variation;
-                                total_negative_absolute_variation +=
-                                    partial_negative_absolute_variation;
                                 (
                                     total_weights_gradient,
                                     total_squared_weights_gradient,
                                     total_variation,
                                     total_squared_variation,
-                                    total_positive_absolute_variation,
-                                    total_negative_absolute_variation,
                                 )
                             },
                         );
-
-                    // We adapt the negative samples rate according to how much we are getting
-                    // wrong the negatives over the total number of samples.
-                    // If the negatives are causing a relative small percentage of the total
-                    // variation, then we need to learn more about the positive edges and therefore
-                    // oversample the positive edges, or viceversa.
-                    negative_samples_rate = (total_negative_absolute_variation
-                        / negative_samples_rate
-                        / (total_positive_absolute_variation / (1.0 - negative_samples_rate)
-                            + total_negative_absolute_variation / negative_samples_rate
-                            + f32::EPSILON))
-                        .max(0.05)
-                        .min(0.95);
 
                     let bias_standard_deviation = (total_squared_variation
                         / self.number_of_edges_per_mini_batch as f32
