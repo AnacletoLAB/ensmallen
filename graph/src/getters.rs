@@ -150,7 +150,7 @@ impl Graph {
                 true => nodes_number,
                 false => nodes_number - 1,
             };
-        Ok(self.get_number_of_unique_edges() as f64 / total_nodes_number as f64)
+        Ok(self.get_number_of_unique_directed_edges() as f64 / total_nodes_number as f64)
     }
     /// Returns the traps rate of the graph.
     ///
