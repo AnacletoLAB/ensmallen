@@ -537,7 +537,7 @@ impl Graph {
     ///
     /// # References
     /// This implementation is described in ["Faster Clustering Coefficient Using Vertex Covers"](https://ieeexplore.ieee.org/document/6693348).
-    pub fn iter_clustering_coefficient_per_node(
+    pub fn par_iter_clustering_coefficient_per_node(
         &self,
         low_centrality: Option<usize>,
         verbose: Option<bool>,
@@ -546,7 +546,7 @@ impl Graph {
             .into_par_iter()
             .zip(self.par_iter_node_degrees())
             .map(|(triangles_number, degree)| {
-                if degree < 2 {
+                if degree <= 1 {
                     0.0
                 } else {
                     triangles_number as f64 / ((degree as EdgeT) * (degree as EdgeT - 1)) as f64
@@ -567,7 +567,7 @@ impl Graph {
         low_centrality: Option<usize>,
         verbose: Option<bool>,
     ) -> Vec<f64> {
-        self.iter_clustering_coefficient_per_node(low_centrality, verbose)
+        self.par_iter_clustering_coefficient_per_node(low_centrality, verbose)
             .collect()
     }
 
@@ -584,7 +584,7 @@ impl Graph {
         low_centrality: Option<usize>,
         verbose: Option<bool>,
     ) -> f64 {
-        self.iter_clustering_coefficient_per_node(low_centrality, verbose)
+        self.par_iter_clustering_coefficient_per_node(low_centrality, verbose)
             .sum()
     }
 

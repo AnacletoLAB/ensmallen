@@ -44,6 +44,19 @@ impl Graph {
     }
 
     #[text_signature = "($self, verbose)"]
+    /// Return the dense shortest paths matrix.
+    ///
+    /// Parameters
+    /// --------------
+    /// verbose: bool = True
+    ///     Whether to show a loading bar. By default, true.
+    fn get_shortest_paths_matrix(&self, verbose: Option<bool>) -> PyResult<Py<PyArray2<WeightT>>> {
+        self.populate_adjacency_matrix(|matrix| {
+            self.inner.populate_shortest_paths_matrix(matrix, verbose)
+        })
+    }
+
+    #[text_signature = "($self, verbose)"]
     /// Return the dense modularity matrix.
     ///
     /// Parameters

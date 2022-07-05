@@ -14499,26 +14499,32 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, normalize, verbose)"]
+    #[text_signature = "($self, edges_normalization, min_max_normalization, verbose)"]
     /// Returns vector of betweenness centrality for all nodes.
     ///
     /// Parameters
     /// ----------
-    /// normalize: Optional[bool]
-    ///     Whether to normalize the values. By default, it is false.
+    /// edges_normalization: Optional[bool]
+    ///     Whether to normalize the values by the number of edges of the complete graph. By default, it is false.
+    /// min_max_normalization: Optional[bool]
+    ///     Whether to normalize the values between 0 and 1. By default, it is false.
     /// verbose: Optional[bool]
     ///     Whether to show a loading bar. By default, it is true.
     ///
     pub fn get_betweenness_centrality(
         &self,
-        normalize: Option<bool>,
+        edges_normalization: Option<bool>,
+        min_max_normalization: Option<bool>,
         verbose: Option<bool>,
     ) -> Py<PyArray1<f32>> {
         let gil = pyo3::Python::acquire_gil();
         to_ndarray_1d!(
             gil,
-            self.inner
-                .get_betweenness_centrality(normalize.into(), verbose.into()),
+            self.inner.get_betweenness_centrality(
+                edges_normalization.into(),
+                min_max_normalization.into(),
+                verbose.into()
+            ),
             f32
         )
     }

@@ -4,6 +4,23 @@ use rayon::prelude::*;
 use super::*;
 
 impl Graph {
+    fn validate_adjacency_matrix<X>(&self, matrix: &[X]) -> Result<()> {
+        // We check that the provided matrix has the correct shape.
+        if matrix.len() != (self.get_number_of_nodes() * self.get_number_of_nodes()) as usize {
+            return Err(format!(
+                concat!(
+                    "The provided matrix has size {} but since this ",
+                    "graph has {} nodes and therefore we expected ",
+                    "a matrix with size {}."
+                ),
+                matrix.len(),
+                self.get_number_of_nodes(),
+                self.get_number_of_nodes() * self.get_number_of_nodes()
+            ));
+        }
+        Ok(())
+    }
+
     #[manual_binding]
     /// Returns binary dense adjacency matrix.
     ///
@@ -18,18 +35,7 @@ impl Graph {
     /// * `matrix`: &mut [bool] - The matrix to be populated, expected to be full of `false` values.
     pub fn populate_dense_binary_adjacency_matrix(&self, matrix: &mut [bool]) -> Result<()> {
         // We check that the provided matrix has the correct shape.
-        if matrix.len() != (self.get_number_of_nodes() * self.get_number_of_nodes()) as usize {
-            return Err(format!(
-                concat!(
-                    "The provided matrix has size {} but since this ",
-                    "graph has {} nodes and therefore we expected ",
-                    "a matrix with size {}."
-                ),
-                matrix.len(),
-                self.get_number_of_nodes(),
-                self.get_number_of_nodes() * self.get_number_of_nodes()
-            ));
-        }
+        self.validate_adjacency_matrix(matrix)?;
         // Get the number of nodes.
         let number_of_nodes = self.get_number_of_nodes() as usize;
         // We wrap the adjacency into an object we can share between threads
@@ -67,19 +73,7 @@ impl Graph {
         F: Send + Sync,
         S: Send + Sync,
     {
-        // We check that the provided matrix has the correct shape.
-        if matrix.len() != (self.get_number_of_nodes() * self.get_number_of_nodes()) as usize {
-            return Err(format!(
-                concat!(
-                    "The provided matrix has size {} but since this ",
-                    "graph has {} nodes and therefore we expected ",
-                    "a matrix with size {}."
-                ),
-                matrix.len(),
-                self.get_number_of_nodes(),
-                self.get_number_of_nodes() * self.get_number_of_nodes()
-            ));
-        }
+        self.validate_adjacency_matrix(matrix)?;
 
         let pb = get_loading_bar(
             verbose.unwrap_or(true),
@@ -167,6 +161,42 @@ impl Graph {
             },
             verbose,
         )
+    }
+
+    #[manual_binding]
+    /// Populate the provided slice with the edges shortest paths matrix.
+    ///
+    /// # Arguments
+    /// * `matrix`: &mut [f32] - The matrix to be populated.
+    /// * `verbose`: Option<bool> - Whether to show a loading bar.
+    pub fn populate_shortest_paths_matrix(
+        &self,
+        matrix: &mut [f32],
+        verbose: Option<bool>,
+    ) -> Result<()> {
+        self.validate_adjacency_matrix(matrix)?;
+        let pb = get_loading_bar(
+            verbose.unwrap_or(true),
+            "Computing shortest paths matrix",
+            self.get_number_of_nodes() as usize,
+        );
+        matrix
+            .par_chunks_mut(self.get_number_of_nodes() as usize)
+            .progress_with(pb)
+            .zip(self.par_iter_node_ids())
+            .for_each(|(row, src)| {
+                unsafe{self.get_unchecked_generic_breadth_first_search_distances_parallel_from_node_ids(
+                    vec![src],
+                    None,
+                )}
+                .0
+                .into_iter()
+                .zip(row.iter_mut())
+                .for_each(|(distance, value_to_edit): (u8, &mut f32)| {
+                    *value_to_edit = distance as f32;
+                });
+            });
+        Ok(())
     }
 
     #[manual_binding]
