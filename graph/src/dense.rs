@@ -154,7 +154,7 @@ impl Graph {
             |support, src, dst| unsafe {
                 support
                     .get_number_of_multigraph_edges_from_node_ids(src, dst)
-                    .unwrap_or(1) as WeightT
+                    .unwrap_or(0) as WeightT
                     - (support.get_unchecked_node_degree_from_node_id(src) as WeightT)
                         * (support.get_unchecked_node_degree_from_node_id(dst) as WeightT)
                         / support.get_number_of_directed_edges() as WeightT
