@@ -184,7 +184,7 @@ impl Graph {
     ///
     /// Parameters
     /// --------------------
-    /// node_ids: Vec<NodeT>
+    /// node_ids: Lis[int]
     ///     List of nodes whose edges are to return.
     /// add_selfloops_where_missing: Optional[bool]
     ///     Whether to add selfloops where they are missing. This parameter only applies to laplacian edge weighting method. By default, true.

@@ -346,7 +346,7 @@ impl CSVFileReader {
         self.csv_is_correct
     }
 
-    pub fn get_parallell_lines_iterator(
+    fn get_parallell_lines_iterator(
         &self,
         skip_header: bool,
     ) -> Result<impl ParallelIterator<Item = (usize, Result<String>)> + '_> {
@@ -420,6 +420,7 @@ impl CSVFileReader {
                 _ => true,
             })
             .skip(rows_to_skip)
+            .take(self.max_rows_number.unwrap_or(usize::MAX))
             .enumerate()
         )
     }
@@ -468,7 +469,7 @@ impl CSVFileReader {
     }
 
     /// Return iterator that read a CSV file rows.
-    pub(crate) fn read_lines(
+    pub fn read_lines(
         &self,
         columns_of_interest: Option<Vec<usize>>,
     ) -> Result<
@@ -515,7 +516,7 @@ impl CSVFileReader {
 
         // We check that the maximum column of interest is not higher than the
         // number of elements in the lines.
-        if max_column_of_interest >= number_of_elements_per_line {
+        if false && max_column_of_interest >= number_of_elements_per_line {
             return Err(format!(
                 concat!(
                     "The maximum column number of interest provided ({}) ",

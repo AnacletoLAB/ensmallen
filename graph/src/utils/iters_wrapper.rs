@@ -46,6 +46,20 @@ where
     I: Iterator<Item = Item>,
     P: ParallelIterator<Item = Item>,
 {
+    pub fn unwrap_sequential(self) -> I {
+        match self {
+            ItersWrapper::Parallel(_) => panic!("Cannot unwrap a parallel iterator as sequential"),
+            ItersWrapper::Sequential(i) => i,
+        }
+    }
+
+    pub fn unwrap_parallel(self) -> P {
+        match self {
+            ItersWrapper::Sequential(_) => panic!("Cannot unwrap a sequential iterator as parallel"),
+            ItersWrapper::Parallel(i) => i,
+        }
+    }
+
     pub fn sum<S>(self) -> S
     where
         S: Send + std::iter::Sum<Item> + std::iter::Sum<S>,

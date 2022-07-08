@@ -232,8 +232,8 @@ pub fn parse_wikipedia_graph(
     let mut node_types_stream = node_types_writer.start_writer()?;
 
     for node_type in node_types {
-        node_types_stream = node_types_writer.write_line(
-            node_types_stream,
+        node_types_writer.write_line(
+            &mut node_types_stream,
             unsafe { node_types_vocabulary.unchecked_insert(node_type.to_string()) },
             node_type.to_string(),
         )?;
@@ -313,8 +313,8 @@ pub fn parse_wikipedia_graph(
                     let (current_node_id, was_already_present) =
                         nodes_vocabulary.insert(&current_node_name)?;
                     if !was_already_present {
-                        nodes_stream = nodes_writer.write_line(
-                            nodes_stream,
+                        nodes_writer.write_line(
+                            &mut nodes_stream,
                             current_node_id,
                             current_node_name,
                             Some(current_node_types),
@@ -380,8 +380,8 @@ pub fn parse_wikipedia_graph(
             // If the node type was not already present
             // we write it to disk.
             if !was_already_present {
-                node_types_stream = node_types_writer.write_line(
-                    node_types_stream,
+                node_types_writer.write_line(
+                    &mut node_types_stream,
                     node_type_id,
                     node_type_name,
                 )?;
@@ -522,8 +522,8 @@ pub fn parse_wikipedia_graph(
                     if edge_type_id == 0 {
                         edge_type_id = 1;
                     }
-                    nodes_stream = nodes_writer.write_line(
-                        nodes_stream,
+                    nodes_writer.write_line(
+                        &mut nodes_stream,
                         destination_node_id,
                         destination_node_name,
                         Some(vec![edge_type_id]),
@@ -541,8 +541,8 @@ pub fn parse_wikipedia_graph(
             };
 
             if let Some(source_node_id) = source_node_id {
-                edges_stream = edges_writer.write_line(
-                    edges_stream,
+                edges_writer.write_line(
+                    &mut edges_stream,
                     0,
                     source_node_id,
                     "".to_string(),
@@ -553,8 +553,8 @@ pub fn parse_wikipedia_graph(
                     None,
                 )?;
                 if !directed && source_node_id != destination_node_id {
-                    edges_stream = edges_writer.write_line(
-                        edges_stream,
+                    edges_writer.write_line(
+                        &mut edges_stream,
                         0,
                         destination_node_id,
                         "".to_string(),

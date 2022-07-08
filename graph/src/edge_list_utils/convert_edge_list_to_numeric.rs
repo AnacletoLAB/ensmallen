@@ -285,13 +285,13 @@ pub fn convert_edge_list_to_numeric(
         node_file_stream = node_file_stream.and_then(|mut nfs| {
             if let Some(node_file_writer) = &node_file_writer {
                 if !src_was_already_present {
-                    nfs = node_file_writer
-                        .write_line(nfs, src_id, src_name, None, None, None)
+                    node_file_writer
+                        .write_line(&mut nfs, src_id, src_name, None, None, None)
                         .unwrap();
                 }
                 if !dst_was_already_present {
-                    nfs = node_file_writer
-                        .write_line(nfs, dst_id, dst_name, None, None, None)
+                    node_file_writer
+                        .write_line(&mut nfs, dst_id, dst_name, None, None, None)
                         .unwrap();
                 }
                 Some(nfs)
@@ -304,8 +304,8 @@ pub fn convert_edge_list_to_numeric(
             edge_type.map(|edge_type| unsafe { edge_types.unchecked_insert(edge_type) });
         let weight = if weight.is_nan() { None } else { Some(weight) };
         if directed || src_id == dst_id {
-            edge_file_stream = file_writer.write_line(
-                edge_file_stream,
+            file_writer.write_line(
+                &mut edge_file_stream,
                 0,
                 src_id,
                 "".to_string(),
@@ -316,8 +316,8 @@ pub fn convert_edge_list_to_numeric(
                 weight,
             )?;
         } else {
-            edge_file_stream = file_writer.write_line(
-                edge_file_stream,
+            file_writer.write_line(
+                &mut edge_file_stream,
                 0,
                 src_id,
                 "".to_string(),
@@ -327,8 +327,8 @@ pub fn convert_edge_list_to_numeric(
                 None,
                 weight,
             )?;
-            edge_file_stream = file_writer.write_line(
-                edge_file_stream,
+            file_writer.write_line(
+                &mut edge_file_stream,
                 0,
                 dst_id,
                 "".to_string(),

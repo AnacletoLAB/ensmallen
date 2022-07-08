@@ -150,9 +150,9 @@ impl CSVFileWriter {
     /// * If some I/O error is encountered.
     pub(crate) fn write_line(
         &self,
-        mut stream: BufWriter<File>,
+        stream: &mut BufWriter<File>,
         line_elements: Vec<String>,
-    ) -> Result<BufWriter<File>> {
+    ) -> Result<()> {
         let line = format!(
             "{}\n",
             line_elements.join(self.separator.to_string().as_str())
@@ -164,7 +164,7 @@ impl CSVFileWriter {
                 "This was likely caused by some form of I/O error."
             )),
         }?;
-        Ok(stream)
+        Ok(())
     }
 
     /// Write given rows iterator to file.
@@ -186,7 +186,7 @@ impl CSVFileWriter {
         );
         let mut stream = self.start_writer(header)?;
         for line_elements in values.progress_with(pb) {
-            stream = self.write_line(stream, line_elements)?;
+            self.write_line(&mut stream, line_elements)?;
         }
         self.close_writer(stream)
     }

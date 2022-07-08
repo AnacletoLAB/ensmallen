@@ -199,10 +199,10 @@ impl TypeFileWriter {
     /// * If some I/O error is encountered.
     pub(crate) fn write_line<T: ToFromUsize>(
         &self,
-        stream: BufWriter<File>,
+        stream: &mut BufWriter<File>,
         type_id: T,
         type_name: String,
-    ) -> Result<BufWriter<File>> {
+    ) -> Result<()> {
         self.writer
             .write_line(stream, self.parse_line(type_id, type_name))
     }
@@ -228,7 +228,7 @@ impl TypeFileWriter {
         );
         let mut stream = self.start_writer()?;
         for (type_id, type_name) in iterator.progress_with(pb) {
-            stream = self.write_line(stream, type_id, type_name)?;
+            self.write_line(&mut stream, type_id, type_name)?;
         }
         self.close_writer(stream)
     }
