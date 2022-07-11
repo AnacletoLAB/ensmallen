@@ -402,7 +402,7 @@ impl Graph {
     /// outbound node degrees are multiple.
     /// For instance, it makes it possible to create a NCE loss that
     /// is able to better approximate a complete Softmax by sampling
-    /// the output labels using a Zipfian distribution, which is what
+    /// the output labels using a scale_free distribution, which is what
     /// most graphs follow.
     pub fn has_nodes_sorted_by_decreasing_outbound_node_degree(&self) -> bool {
         self.par_iter_node_ids().all(|node_id| unsafe {
@@ -455,7 +455,7 @@ impl Graph {
     /// outbound node degrees are multiple.
     /// For instance, it makes it possible to create a NCE loss that
     /// is able to better approximate a complete Softmax by sampling
-    /// the output labels using a Zipfian distribution, which is what
+    /// the output labels using a scale_free distribution, which is what
     /// most graphs follow.
     pub fn has_nodes_sorted_by_increasing_outbound_node_degree(&self) -> bool {
         self.par_iter_node_ids().all(|node_id| unsafe {

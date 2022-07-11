@@ -327,7 +327,7 @@ impl Graph {
     /// * `destination_nodes_prefixes`: Option<Vec<String>> - Prefixes of the nodes names to be samples as destinations. If a node starts with any of the provided prefixes, it can be sampled as a destinations node.
     /// * `graph_to_avoid`: Option<&Graph> - Compatible graph whose edges are not to be sampled.
     /// * `support`: Option<&Graph> - Parent graph of this subgraph, defining the `true` topology of the graph. Node degrees and connected components are sampled from this support graph when provided. Useful when sampling negative edges for a test graph. In this latter case, the support graph should be the training graph.
-    /// * `use_zipfian_sampling`: Option<bool> - Whether to sample the nodes using zipfian distribution. By default True. Not using this may cause significant biases.
+    /// * `use_scale_free_distribution`: Option<bool> - Whether to sample the nodes using scale_free distribution. By default True. Not using this may cause significant biases.
     ///
     /// # Raises
     /// * If the `sample_only_edges_with_heterogeneous_node_types` argument is provided as true, but the graph does not have node types.
@@ -347,7 +347,7 @@ impl Graph {
         destination_nodes_prefixes: Option<Vec<String>>,
         graph_to_avoid: Option<&Graph>,
         support: Option<&Graph>,
-        use_zipfian_sampling: Option<bool>,
+        use_scale_free_distribution: Option<bool>,
     ) -> Result<Graph> {
         if number_of_negative_samples == 0 {
             return Err(String::from(
@@ -378,7 +378,7 @@ impl Graph {
             support
         )?;
 
-        let use_zipfian_sampling = use_zipfian_sampling.unwrap_or(true);
+        let use_scale_free_distribution = use_scale_free_distribution.unwrap_or(true);
         let only_from_same_component = only_from_same_component.unwrap_or(false);
         let mut random_state = random_state.unwrap_or(0xbadf00d);
 
@@ -490,12 +490,12 @@ impl Graph {
             };
 
             // generate the random edge-sources
-            let sampled_edge_ids = if use_zipfian_sampling {
-                self.par_iter_zipfian_random_source_node_ids(
+            let sampled_edge_ids = if use_scale_free_distribution {
+                self.par_iter_scale_free_random_source_node_ids(
                     number_of_negative_samples as usize,
                     src_random_state,
                 )
-                .zip(self.par_iter_zipfian_random_source_node_ids(
+                .zip(self.par_iter_scale_free_random_source_node_ids(
                     number_of_negative_samples as usize,
                     dst_random_state,
                 ))

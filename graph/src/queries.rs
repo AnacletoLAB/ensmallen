@@ -2019,7 +2019,7 @@ impl Graph {
     ///
     /// # Arguments
     /// * `src_node_name_prefixes`: Option<Vec<&str>> - Prefix of the source node names.
-    /// * `dst_node_name_prefixes`: Option<Vec>&str>> - Prefix of the source node names.
+    /// * `dst_node_name_prefixes`: Option<Vec<&str>> - Prefix of the source node names.
     pub fn get_directed_edge_node_names_from_node_curie_prefixes(
         &self,
         src_node_name_prefixes: Option<Vec<&str>>,
@@ -2036,7 +2036,7 @@ impl Graph {
     ///
     /// # Arguments
     /// * `src_node_name_prefixes`: Option<Vec<&str>> - Prefix of the source node names.
-    /// * `dst_node_name_prefixes`: Option<Vec>&str>> - Prefix of the source node names.
+    /// * `dst_node_name_prefixes`: Option<Vec<&str>> - Prefix of the source node names.
     pub fn get_directed_edge_node_ids_from_node_curie_prefixes(
         &self,
         src_node_name_prefixes: Option<Vec<&str>>,
@@ -2053,7 +2053,7 @@ impl Graph {
     ///
     /// # Arguments
     /// * `src_node_name_prefixes`: Option<Vec<&str>> - Prefix of the source node names.
-    /// * `dst_node_name_prefixes`: Option<Vec>&str>> - Prefix of the source node names.
+    /// * `dst_node_name_prefixes`: Option<Vec<&str>> - Prefix of the source node names.
     pub fn get_directed_edge_ids_from_node_curie_prefixes(
         &self,
         src_node_name_prefixes: Option<Vec<&str>>,
@@ -2070,7 +2070,7 @@ impl Graph {
     ///
     /// # Arguments
     /// * `src_node_name_prefixes`: Option<Vec<&str>> - Prefix of the source node names.
-    /// * `dst_node_name_prefixes`: Option<Vec>&str>> - Prefix of the source node names.
+    /// * `dst_node_name_prefixes`: Option<Vec<&str>> - Prefix of the source node names.
     pub fn get_number_of_directed_edges_from_node_curie_prefixes(
         &self,
         src_node_name_prefixes: Option<Vec<&str>>,

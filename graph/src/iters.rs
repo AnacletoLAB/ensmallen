@@ -458,7 +458,7 @@ impl Graph {
             .unwrap())
     }
 
-    /// Return parallel iterator on the edges' weights.
+    /// Return parallel iterator on the directed edges' weights.
     ///
     /// # Example
     /// To get an iterator over the edges weights you can use:
@@ -466,11 +466,11 @@ impl Graph {
     /// # use rayon::iter::ParallelIterator;
     /// # let graph_with_weights = graph::test_utilities::load_ppi(false, false, true, true, false, false);
     /// # let graph_without_weights = graph::test_utilities::load_ppi(false, false, false, true, false, false);
-    /// assert!(graph_with_weights.iter_edge_weights().is_ok());
-    /// assert!(graph_without_weights.iter_edge_weights().is_err());
-    /// println!("The graph weights are {:?}.", graph_with_weights.par_iter_edge_weights().unwrap().collect::<Vec<_>>());
+    /// assert!(graph_with_weights.par_iter_directed_edge_weights().is_ok());
+    /// assert!(graph_without_weights.par_iter_directed_edge_weights().is_err());
+    /// println!("The graph weights are {:?}.", graph_with_weights.par_iter_directed_edge_weights().unwrap().collect::<Vec<_>>());
     /// ```
-    pub fn par_iter_edge_weights(
+    pub fn par_iter_directed_edge_weights(
         &self,
     ) -> Result<impl IndexedParallelIterator<Item = WeightT> + '_> {
         self.must_have_edge_weights()?;
@@ -482,12 +482,53 @@ impl Graph {
             .unwrap())
     }
 
+    /// Return parallel iterator on the undirected edges' weights.
+    ///
+    /// # Example
+    /// To get an iterator over the edges weights you can use:
+    /// ```rust
+    /// # use rayon::iter::ParallelIterator;
+    /// # let graph_with_weights = graph::test_utilities::load_ppi(false, false, true, true, false, false);
+    /// # let graph_without_weights = graph::test_utilities::load_ppi(false, false, false, true, false, false);
+    /// assert!(graph_with_weights.par_iter_undirected_edge_weights().is_ok());
+    /// assert!(graph_without_weights.par_iter_undirected_edge_weights().is_err());
+    /// println!("The graph weights are {:?}.", graph_with_weights.par_iter_undirected_edge_weights().unwrap().collect::<Vec<_>>());
+    /// ```
+    pub fn par_iter_undirected_edge_weights(
+        &self,
+    ) -> Result<impl ParallelIterator<Item = WeightT> + '_> {
+        self.par_iter_directed_edge_weights().map(|iter|{
+            iter.zip(self.par_iter_directed_edge_node_ids()).filter_map(|(weight, (_, src, dst))|{
+                if src <= dst {
+                    Some(weight)
+                } else {
+                    None
+                }
+            })
+        })
+    }
+
     /// Return iterator on the directed edges type IDs of the graph.
     pub fn par_iter_directed_edge_type_ids(
         &self,
     ) -> Result<impl IndexedParallelIterator<Item = Option<EdgeTypeT>> + '_> {
         self.must_have_edge_types()
             .map(|edge_types_vocabulary| edge_types_vocabulary.ids.par_iter().copied())
+    }
+
+    /// Return parallel iterator on the undirected edges' types.
+    pub fn par_iter_undirected_edge_type_ids(
+        &self,
+    ) -> Result<impl ParallelIterator<Item = Option<EdgeTypeT>> + '_> {
+        self.par_iter_directed_edge_type_ids().map(|iter|{
+            iter.zip(self.par_iter_directed_edge_node_ids()).filter_map(|(weight, (_, src, dst))|{
+                if src <= dst {
+                    Some(weight)
+                } else {
+                    None
+                }
+            })
+        })
     }
 
     /// Return parallel iterator on the (non unique) source nodes of the graph.
@@ -536,14 +577,14 @@ impl Graph {
     /// # Arguments
     /// 'quantity': usize - Number of nodes to sample.
     /// 'random_state': u64 - Random state to use to sample the nodes.
-    pub fn iter_zipfian_random_source_node_ids(
+    pub fn iter_scale_free_random_source_node_ids(
         &self,
         quantity: usize,
         mut random_state: u64,
     ) -> impl Iterator<Item = NodeT> + '_ {
         (0..quantity).map(move |_| {
             random_state = splitmix64(random_state);
-            self.get_random_zipfian_node(random_state)
+            self.get_random_scale_free_node(random_state)
         })
     }
 
@@ -552,20 +593,20 @@ impl Graph {
     /// # Arguments
     /// 'quantity': usize - Number of nodes to sample.
     /// 'random_state': u64 - Random state to use to sample the nodes.
-    pub fn par_iter_zipfian_random_source_node_ids(
+    pub fn par_iter_scale_free_random_source_node_ids(
         &self,
         quantity: usize,
         random_state: u64,
     ) -> impl IndexedParallelIterator<Item = NodeT> + '_ {
         (0..quantity)
             .into_par_iter()
-            .map(move |i| self.get_random_zipfian_node(splitmix64(random_state + i as u64)))
+            .map(move |i| self.get_random_scale_free_node(splitmix64(random_state + i as u64)))
     }
 
     /// Return iterator on random (non unique) node IDs.
     ///
     /// # Implementation details
-    /// This method is different from `iter_zipfian_random_source_node_ids` as
+    /// This method is different from `iter_scale_free_random_source_node_ids` as
     /// it does not sample following any particular degree distribution.
     ///
     /// # Arguments
@@ -585,7 +626,7 @@ impl Graph {
     /// Return parallel iterator on random (non unique) node IDs.
     ///
     /// # Implementation details
-    /// This method is different from `par_iter_zipfian_random_source_node_ids` as
+    /// This method is different from `par_iter_scale_free_random_source_node_ids` as
     /// it does not sample following any particular degree distribution.
     ///
     /// # Arguments
@@ -952,7 +993,7 @@ impl Graph {
     ) -> Result<impl IndexedParallelIterator<Item = (EdgeT, NodeT, NodeT, WeightT)> + '_> {
         Ok(self
             .par_iter_directed_edge_node_ids()
-            .zip(self.par_iter_edge_weights()?)
+            .zip(self.par_iter_directed_edge_weights()?)
             .map(move |((edge_id, src, dst), weight)| (edge_id, src, dst, weight)))
     }
 
@@ -999,7 +1040,7 @@ impl Graph {
     ) -> Result<impl Iterator<Item = Vec<bool>> + '_> {
         let edge_types_number = self.get_number_of_edge_types()?;
         Ok(self
-            .get_edge_type_ids()?
+            .get_directed_edge_type_ids()?
             .into_iter()
             .map(move |maybe_edge_type| {
                 let mut dummies = vec![false; edge_types_number as usize];
@@ -1019,7 +1060,7 @@ impl Graph {
     ) -> Result<impl Iterator<Item = Vec<bool>> + '_> {
         let edge_types_number = self.get_number_of_edge_types()?;
         Ok(self
-            .get_edge_type_ids()?
+            .get_directed_edge_type_ids()?
             .into_iter()
             .filter_map(move |maybe_edge_type| {
                 if let Some(edge_type) = maybe_edge_type {

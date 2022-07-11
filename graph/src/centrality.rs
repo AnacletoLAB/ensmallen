@@ -493,22 +493,25 @@ impl Graph {
     /// Returns vector of betweenness centrality for all nodes.
     ///
     /// # Arguments
-    /// * `normalize`: Option<bool> - Whether to normalize the values. By default, it is false.
+    /// * `edges_normalization`: Option<bool> - Whether to normalize the values by the number of edges of the complete graph. By default, it is false.
+    /// * `min_max_normalization`: Option<bool> - Whether to normalize the values between 0 and 1. By default, it is false.
     /// * `verbose`: Option<bool> - Whether to show a loading bar. By default, it is true.
     ///
     /// # References
     /// The algorithm is implemented as described in [Parallel Algorithms for Evaluating Centrality Indices in Real-World Networks](https://ieeexplore.ieee.org/abstract/document/1690659), by Bader et al.
     ///
-    /// TODO: I think this method can be bettered for the undirected case.
+    /// TODO: I think this method can be enhanced for the undirected case.
     pub fn get_betweenness_centrality(
         &self,
-        normalize: Option<bool>,
+        edges_normalization: Option<bool>,
+        min_max_normalization: Option<bool>,
         verbose: Option<bool>,
     ) -> Vec<f32> {
         if !self.has_nodes() {
             return Vec::new();
         }
-        let normalize = normalize.unwrap_or(false);
+        let edges_normalization = edges_normalization.unwrap_or(false);
+        let min_max_normalization = min_max_normalization.unwrap_or(false);
         let verbose = verbose.unwrap_or(true);
         let nodes_number = self.get_number_of_nodes() as usize;
         let centralities: Vec<AtomicF32> =
@@ -573,12 +576,19 @@ impl Graph {
             });
         let mut centralities =
             unsafe { std::mem::transmute::<Vec<AtomicF32>, Vec<f32>>(centralities) };
-        if normalize {
+        if min_max_normalization {
             let (min_centrality, max_centrality) =
                 centralities.iter().cloned().minmax().into_option().unwrap();
             let delta = max_centrality - min_centrality;
             centralities.par_iter_mut().for_each(|value| {
                 *value = (*value - min_centrality) / delta;
+            });
+        } else if edges_normalization {
+            let denominator = (self.get_number_of_nodes() as f32 - 1.0)
+                * (self.get_number_of_nodes() as f32 - 2.0)
+                / if self.is_directed() { 1.0 } else { 2.0 };
+            centralities.par_iter_mut().for_each(|value| {
+                *value /= denominator;
             });
         }
         centralities

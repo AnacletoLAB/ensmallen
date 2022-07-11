@@ -392,7 +392,7 @@ impl NodeFileWriter {
         }
     }
 
-    pub(crate) fn start_writer(&self) -> Result<BufWriter<File>> {
+    pub fn start_writer(&self) -> Result<BufWriter<File>> {
         let (header_values, header_positions) = self.build_header();
         self.writer.start_writer(compose_lines(
             self.number_of_columns,
@@ -413,15 +413,15 @@ impl NodeFileWriter {
     ///
     /// # Raises
     /// * If some I/O error is encountered.
-    pub(crate) fn write_line(
+    pub fn write_line(
         &self,
-        stream: BufWriter<File>,
+        stream: &mut BufWriter<File>,
         node_id: NodeT,
         node_name: String,
         node_type_ids: Option<Vec<NodeTypeT>>,
         node_type_names: Option<Vec<String>>,
         node_description: Option<String>,
-    ) -> Result<BufWriter<File>> {
+    ) -> Result<()> {
         self.writer.write_line(
             stream,
             self.parse_line(
@@ -434,7 +434,7 @@ impl NodeFileWriter {
         )
     }
 
-    pub(crate) fn close_writer(&self, stream: BufWriter<File>) -> Result<()> {
+    pub fn close_writer(&self, stream: BufWriter<File>) -> Result<()> {
         self.writer.close_writer(stream)
     }
 
@@ -455,8 +455,8 @@ impl NodeFileWriter {
         );
         let mut stream = self.start_writer()?;
         for (node_id, node_name, node_type_ids, node_type_names) in iterator.progress_with(pb) {
-            stream = self.write_line(
-                stream,
+            self.write_line(
+                &mut stream,
                 node_id,
                 node_name,
                 node_type_ids,

@@ -14,6 +14,7 @@ mod utils;
 mod walk_transformer;
 mod walklets;
 mod weighted_spine;
+mod optimizers;
 
 pub(crate) use utils::*;
 
@@ -28,3 +29,4 @@ pub use transe::*;
 pub use walk_transformer::*;
 pub use walklets::*;
 pub use weighted_spine::*;
+pub use optimizers::*;

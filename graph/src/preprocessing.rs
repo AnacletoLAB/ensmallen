@@ -249,7 +249,7 @@ impl Graph {
     /// * `negative_samples_rate`: Option<f64> - The component of netagetive samples to use.
     /// * `avoid_false_negatives`: Option<bool> - Whether to remove the false negatives when generated. It should be left to false, as it has very limited impact on the training, but enabling this will slow things down.
     /// * `maximal_sampling_attempts`: Option<usize> - Number of attempts to execute to sample the negative edges.
-    /// * `use_zipfian_sampling`: Option<bool> - Whether to sample the nodes using zipfian distribution. By default True. Not using this may cause significant biases.
+    /// * `use_scale_free_distribution`: Option<bool> - Whether to sample the nodes using scale_free distribution. By default True. Not using this may cause significant biases.
     /// * `support`: Option<&'a Graph> - Graph to use to compute the edge metrics. When not provided, the current graph (self) is used.
     /// * `graph_to_avoid`: &'a Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,
     ///
@@ -266,14 +266,14 @@ impl Graph {
         negative_samples_rate: Option<f64>,
         avoid_false_negatives: Option<bool>,
         maximal_sampling_attempts: Option<usize>,
-        use_zipfian_sampling: Option<bool>,
+        use_scale_free_distribution: Option<bool>,
         support: Option<&'a Graph>,
         graph_to_avoid: Option<&'a Graph>,
     ) -> Result<impl IndexedParallelIterator<Item = (NodeT, NodeT, bool)> + 'a> {
         let support = support.unwrap_or(&self);
         let avoid_false_negatives = avoid_false_negatives.unwrap_or(false);
         let maximal_sampling_attempts = maximal_sampling_attempts.unwrap_or(10_000);
-        let use_zipfian_sampling = use_zipfian_sampling.unwrap_or(true);
+        let use_scale_free_distribution = use_scale_free_distribution.unwrap_or(true);
 
         if sample_only_edges_with_heterogeneous_node_types && !self.has_node_types() {
             return Err(concat!(
@@ -329,10 +329,10 @@ impl Graph {
 
             for _ in 0..maximal_sampling_attempts {
                 random_state = splitmix64(random_state);
-                let (src, dst) = if use_zipfian_sampling {
+                let (src, dst) = if use_scale_free_distribution {
                     (
-                        self.get_random_zipfian_node(random_state),
-                        self.get_random_zipfian_node(random_state.wrapping_mul(2)),
+                        self.get_random_scale_free_node(random_state),
+                        self.get_random_scale_free_node(random_state.wrapping_mul(2)),
                     )
                 } else {
                     (
@@ -341,7 +341,8 @@ impl Graph {
                     )
                 };
 
-                if avoid_false_negatives && support.has_edge_from_node_ids(src, dst)
+                if src == dst
+                    || avoid_false_negatives && support.has_edge_from_node_ids(src, dst)
                     || sample_only_edges_with_heterogeneous_node_types && {
                         self.get_unchecked_node_type_ids_from_node_id(src)
                             == self.get_unchecked_node_type_ids_from_node_id(dst)
@@ -379,7 +380,7 @@ impl Graph {
     /// * `negative_samples_rate`: Option<f64> - The component of netagetive samples to use.
     /// * `avoid_false_negatives`: Option<bool> - Whether to remove the false negatives when generated. It should be left to false, as it has very limited impact on the training, but enabling this will slow things down.
     /// * `maximal_sampling_attempts`: Option<usize> - Number of attempts to execute to sample the negative edges.
-    /// * `use_zipfian_sampling`: Option<bool> - Whether to sample the nodes using zipfian distribution. By default True. Not using this may cause significant biases.
+    /// * `use_scale_free_distribution`: Option<bool> - Whether to sample the nodes using scale_free distribution. By default True. Not using this may cause significant biases.
     /// * `support`: Option<&'a Graph> - Graph to use to compute the edge metrics. When not provided, the current graph (self) is used.
     /// * `graph_to_avoid`: &'a Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,
     ///
@@ -398,7 +399,7 @@ impl Graph {
         negative_samples_rate: Option<f64>,
         avoid_false_negatives: Option<bool>,
         maximal_sampling_attempts: Option<usize>,
-        use_zipfian_sampling: Option<bool>,
+        use_scale_free_distribution: Option<bool>,
         support: Option<&'a Graph>,
         graph_to_avoid: Option<&'a Graph>,
     ) -> Result<
@@ -423,7 +424,7 @@ impl Graph {
                 negative_samples_rate,
                 avoid_false_negatives,
                 maximal_sampling_attempts,
-                use_zipfian_sampling,
+                use_scale_free_distribution,
                 Some(&support),
                 graph_to_avoid,
             )?
@@ -460,26 +461,26 @@ impl Graph {
     /// # Arguments
     /// * `random_state`: u64 - The random state to reproduce the batch.
     /// * `batch_size`: usize - The maximal size of the batch to generate,
-    /// * `use_zipfian_sampling`: Option<bool> - Whether to sample the nodes using zipfian distribution. By default True. Not using this may cause significant biases.
+    /// * `use_scale_free_distribution`: Option<bool> - Whether to sample the nodes using scale_free distribution. By default True. Not using this may cause significant biases.
     ///
     pub fn par_iter_siamese_mini_batch(
         &self,
         random_state: u64,
         batch_size: usize,
-        use_zipfian_sampling: Option<bool>,
+        use_scale_free_distribution: Option<bool>,
     ) -> impl IndexedParallelIterator<Item = (NodeT, NodeT, NodeT, NodeT, Option<EdgeTypeT>)> + '_
     {
-        let use_zipfian_sampling = use_zipfian_sampling.unwrap_or(true);
+        let use_scale_free_distribution = use_scale_free_distribution.unwrap_or(true);
         let random_state = splitmix64(random_state);
         (0..batch_size).into_par_iter().map(move |i| unsafe {
             let mut random_state = splitmix64(random_state + i as u64);
             let edge_id = self.get_random_edge_id(random_state);
             let (src, dst) = self.get_unchecked_node_ids_from_edge_id(edge_id);
             random_state = splitmix64(random_state);
-            let (not_src, not_dst) = if use_zipfian_sampling {
+            let (not_src, not_dst) = if use_scale_free_distribution {
                 (
-                    self.get_random_zipfian_node(random_state),
-                    self.get_random_zipfian_node(random_state.wrapping_mul(2)),
+                    self.get_random_scale_free_node(random_state),
+                    self.get_random_scale_free_node(random_state.wrapping_mul(2)),
                 )
             } else {
                 (
@@ -502,13 +503,13 @@ impl Graph {
     /// # Arguments
     /// * `random_state`: u64 - The random state to reproduce the batch.
     /// * `batch_size`: usize - The maximal size of the batch to generate,
-    /// * `use_zipfian_sampling`: Option<bool> - Whether to sample the nodes using zipfian distribution. By default True. Not using this may cause significant biases.
+    /// * `use_scale_free_distribution`: Option<bool> - Whether to sample the nodes using scale_free distribution. By default True. Not using this may cause significant biases.
     ///
     pub fn par_iter_kgsiamese_mini_batch(
         &self,
         random_state: u64,
         batch_size: usize,
-        use_zipfian_sampling: Option<bool>,
+        use_scale_free_distribution: Option<bool>,
     ) -> impl IndexedParallelIterator<
         Item = (
             NodeT,
@@ -522,7 +523,7 @@ impl Graph {
             Option<EdgeTypeT>,
         ),
     > + '_ {
-        self.par_iter_siamese_mini_batch(random_state, batch_size, use_zipfian_sampling)
+        self.par_iter_siamese_mini_batch(random_state, batch_size, use_scale_free_distribution)
             .map(move |(src, dst, not_src, not_dst, edge_type)| unsafe {
                 (
                     src,

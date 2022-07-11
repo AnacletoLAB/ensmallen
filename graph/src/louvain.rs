@@ -443,7 +443,7 @@ impl Graph {
         // Then we actually compute the modularity.
         Ok(if self.has_edge_weights() {
             self.par_iter_directed_edge_node_ids()
-                .zip(self.par_iter_edge_weights().unwrap())
+                .zip(self.par_iter_directed_edge_weights().unwrap())
                 .filter(|((_, src, dst), _)| have_same_community(src, dst))
                 .map(|((_, src, dst), edge_weight)| {
                     compute_modularity(src, dst, edge_weight as f64)

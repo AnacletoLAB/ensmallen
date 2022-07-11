@@ -17,7 +17,10 @@ impl Graph {
     /// # Arguments
     ///
     /// * `verbose`: Option<bool> - Whether to show a loading bar or not.
-    pub fn get_number_of_connected_components(&self, verbose: Option<bool>) -> (NodeT, NodeT, NodeT) {
+    pub fn get_number_of_connected_components(
+        &self,
+        verbose: Option<bool>,
+    ) -> (NodeT, NodeT, NodeT) {
         info!("Computing connected components number.");
         if self.directed {
             let (_, _, components_number, min_component_size, max_component_size) =
@@ -147,7 +150,7 @@ impl Graph {
                 true => nodes_number,
                 false => nodes_number - 1,
             };
-        Ok(self.get_number_of_unique_edges() as f64 / total_nodes_number as f64)
+        Ok(self.get_number_of_unique_directed_edges() as f64 / total_nodes_number as f64)
     }
     /// Returns the traps rate of the graph.
     ///
@@ -221,7 +224,9 @@ impl Graph {
     /// println!("The number of unique undirected edges of the graph is  {}", graph.get_number_of_unique_undirected_edges());
     /// ```
     pub fn get_number_of_unique_undirected_edges(&self) -> EdgeT {
-        (self.get_number_of_unique_directed_edges() - self.get_number_of_unique_selfloops() as EdgeT) / 2
+        (self.get_number_of_unique_directed_edges()
+            - self.get_number_of_unique_selfloops() as EdgeT)
+            / 2
             + self.get_number_of_unique_selfloops() as EdgeT
     }
 
@@ -560,8 +565,8 @@ impl Graph {
         node_ids
     }
 
-    /// Return the edge types of the edges.
-    pub fn get_edge_type_ids(&self) -> Result<Vec<Option<EdgeTypeT>>> {
+    /// Return the directed edge types of the edges.
+    pub fn get_directed_edge_type_ids(&self) -> Result<Vec<Option<EdgeTypeT>>> {
         self.must_have_edge_types().map(|_| {
             self.edge_types
                 .as_ref()
@@ -569,6 +574,12 @@ impl Graph {
                 .map(|ets| ets.ids.clone())
                 .unwrap()
         })
+    }
+
+    /// Return the undirected edge types of the edges.
+    pub fn get_undirected_edge_type_ids(&self) -> Result<Vec<Option<EdgeTypeT>>> {
+        self.par_iter_undirected_edge_type_ids()
+            .map(|iter| iter.collect())
     }
 
     /// Return the known edge types of the edges, dropping unknown ones.
@@ -669,20 +680,36 @@ impl Graph {
             .map(|iter_unique_edge_type_names| iter_unique_edge_type_names.collect())
     }
 
-    /// Return the weights of the graph edges.
+    /// Return the directed weights of the graph edges.
     ///
     /// # Example
     /// To get an the graph weights you can use:
     /// ```rust
     /// # let graph_with_weights = graph::test_utilities::load_ppi(false, false, true, true, false, false);
     /// # let graph_without_weights = graph::test_utilities::load_ppi(false, false, false, true, false, false);
-    /// assert!(graph_with_weights.get_edge_weights().is_ok());
-    /// assert!(graph_without_weights.get_edge_weights().is_err());
-    /// println!("The graph weights are {:?}.", graph_with_weights.get_edge_weights());
+    /// assert!(graph_with_weights.get_directed_edge_weights().is_ok());
+    /// assert!(graph_without_weights.get_directed_edge_weights().is_err());
+    /// println!("The graph weights are {:?}.", graph_with_weights.get_directed_edge_weights());
     /// ```
-    pub fn get_edge_weights(&self) -> Result<Vec<WeightT>> {
+    pub fn get_directed_edge_weights(&self) -> Result<Vec<WeightT>> {
         self.must_have_edge_weights()?;
         Ok((*self.weights).clone().unwrap())
+    }
+
+    /// Return the undirected weights of the graph edges, filtering out edges where src > dst.
+    ///
+    /// # Example
+    /// To get an the graph weights you can use:
+    /// ```rust
+    /// # let graph_with_weights = graph::test_utilities::load_ppi(false, false, true, true, false, false);
+    /// # let graph_without_weights = graph::test_utilities::load_ppi(false, false, false, true, false, false);
+    /// assert!(graph_with_weights.get_undirected_edge_weights().is_ok());
+    /// assert!(graph_without_weights.get_undirected_edge_weights().is_err());
+    /// println!("The graph weights are {:?}.", graph_with_weights.get_undirected_edge_weights());
+    /// ```
+    pub fn get_undirected_edge_weights(&self) -> Result<Vec<WeightT>> {
+        self.par_iter_undirected_edge_weights()
+            .map(|iter| iter.collect())
     }
 
     /// Return the weighted indegree (total weighted inbound edge weights) for each node.
@@ -709,7 +736,7 @@ impl Graph {
             .map(|_| AtomicF64::new(0.0))
             .collect::<Vec<_>>();
         self.par_iter_directed_destination_node_ids()
-            .zip(self.par_iter_edge_weights()?)
+            .zip(self.par_iter_directed_edge_weights()?)
             .for_each(|(dst, weight)| {
                 inbound_edge_weights[dst as usize].fetch_add(weight as f64, Ordering::Relaxed);
             });
@@ -1568,7 +1595,9 @@ impl Graph {
     /// println!("The number of sources of the graph (not trap nodes) is {}", graph.get_number_of_unique_source_nodes());
     /// ```
     pub fn get_number_of_unique_source_nodes(&self) -> NodeT {
-        self.get_number_of_nodes() - self.get_number_of_singleton_nodes() - self.get_number_of_trap_nodes()
+        self.get_number_of_nodes()
+            - self.get_number_of_singleton_nodes()
+            - self.get_number_of_trap_nodes()
     }
 
     /// Returns edge type IDs counts hashmap.

@@ -412,7 +412,7 @@ impl Graph {
         Ok((contexts.t.to_owned(), words.t.to_owned()))
     }
 
-    #[text_signature = "($self, random_state, batch_size, return_node_types, return_edge_metrics, sample_only_edges_with_heterogeneous_node_types, negative_samples_rate, avoid_false_negatives, maximal_sampling_attempts, shuffle, use_zipfian_sampling, graph_to_avoid)"]
+    #[text_signature = "($self, random_state, batch_size, return_node_types, return_edge_metrics, sample_only_edges_with_heterogeneous_node_types, negative_samples_rate, avoid_false_negatives, maximal_sampling_attempts, shuffle, use_scale_free_distribution, graph_to_avoid)"]
     /// Returns n-ple with index to build numpy array, source node, source node type, destination node, destination node type, edge type and whether this edge is real or artificial.
     ///
     /// Parameters
@@ -433,8 +433,8 @@ impl Graph {
     ///     Whether to remove the false negatives when generated. It should be left to false, as it has very limited impact on the training, but enabling this will slow things down.
     /// maximal_sampling_attempts: Optional[int]
     ///     Number of attempts to execute to sample the negative edges.
-    /// use_zipfian_sampling: bool = True
-    ///     Whether to sample the negative edges following a zipfian distribution.
+    /// use_scale_free_distribution: bool = True
+    ///     Whether to sample the negative edges following a scale_free distribution.
     ///     By default True.
     /// support: Optional[Graph]
     ///     Graph to use to compute the edge metrics.
@@ -460,7 +460,7 @@ impl Graph {
         negative_samples_rate: Option<f64>,
         avoid_false_negatives: Option<bool>,
         maximal_sampling_attempts: Option<usize>,
-        use_zipfian_sampling: Option<bool>,
+        use_scale_free_distribution: Option<bool>,
         support: Option<&Graph>,
         graph_to_avoid: Option<&Graph>,
     ) -> PyResult<(
@@ -485,7 +485,7 @@ impl Graph {
             negative_samples_rate,
             avoid_false_negatives,
             maximal_sampling_attempts,
-            use_zipfian_sampling,
+            use_scale_free_distribution,
             support,
             graph_to_avoid,
         ))?;
@@ -563,7 +563,7 @@ impl Graph {
         ))
     }
 
-    #[text_signature = "($self, random_state, batch_size, use_zipfian_sampling)"]
+    #[text_signature = "($self, random_state, batch_size, use_scale_free_distribution)"]
     /// Returns n-ple with terms used for training a siamese network.
     ///
     /// Parameters
@@ -572,15 +572,15 @@ impl Graph {
     ///     Random state to reproduce sampling
     /// batch_size: int
     ///     The maximal size of the batch to generate,
-    /// use_zipfian_sampling: bool = True
-    ///     Whether to sample the negative edges following a zipfian distribution.
+    /// use_scale_free_distribution: bool = True
+    ///     Whether to sample the negative edges following a scale_free distribution.
     ///     By default True.
     ///
     fn get_siamese_mini_batch(
         &self,
         random_state: u64,
         batch_size: usize,
-        use_zipfian_sampling: Option<bool>,
+        use_scale_free_distribution: Option<bool>,
     ) -> (
         Py<PyArray1<NodeT>>,
         Py<PyArray1<NodeT>>,
@@ -617,7 +617,7 @@ impl Graph {
         };
 
         self.inner
-            .par_iter_siamese_mini_batch(random_state, batch_size, use_zipfian_sampling)
+            .par_iter_siamese_mini_batch(random_state, batch_size, use_scale_free_distribution)
             .enumerate()
             .for_each(|(i, (src, dst, not_src, not_dst, edge_type))| unsafe {
                 for (node_ndarray, node) in [
@@ -642,7 +642,7 @@ impl Graph {
         )
     }
 
-    #[text_signature = "($self, random_state, batch_size, use_zipfian_sampling)"]
+    #[text_signature = "($self, random_state, batch_size, use_scale_free_distribution)"]
     /// Returns n-ple with terms used for training a kgsiamese network.
     ///
     /// Parameters
@@ -651,15 +651,15 @@ impl Graph {
     ///     Random state to reproduce sampling
     /// batch_size: int
     ///     The maximal size of the batch to generate,
-    /// use_zipfian_sampling: bool = True
-    ///     Whether to sample the negative edges following a zipfian distribution.
+    /// use_scale_free_distribution: bool = True
+    ///     Whether to sample the negative edges following a scale_free distribution.
     ///     By default True.
     ///
     fn get_kgsiamese_mini_batch(
         &self,
         random_state: u64,
         batch_size: usize,
-        use_zipfian_sampling: Option<bool>,
+        use_scale_free_distribution: Option<bool>,
     ) -> (
         Py<PyArray1<NodeT>>,
         Py<PyArray1<NodeT>>,
@@ -724,7 +724,7 @@ impl Graph {
         };
 
         self.inner
-            .par_iter_kgsiamese_mini_batch(random_state, batch_size, use_zipfian_sampling)
+            .par_iter_kgsiamese_mini_batch(random_state, batch_size, use_scale_free_distribution)
             .enumerate()
             .for_each(
                 |(

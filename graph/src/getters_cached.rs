@@ -7,7 +7,7 @@ impl Graph {
     fn compute_edge_weights_properties(&self) {
         let mut cache = unsafe { &mut (*self.cache.get()) };
 
-        let (min, max, total) = match self.par_iter_edge_weights() {
+        let (min, max, total) = match self.par_iter_directed_edge_weights() {
             Ok(iter) => {
                 let (min, max, total) = iter.map(|w| (w, w, w as f64)).reduce(
                     || (WeightT::NAN, WeightT::NAN, 0.0f64),

@@ -6,19 +6,12 @@ from environments_utils import is_x86_64, is_arm
 
 if is_x86_64():
     import cpuinfo
-    
-    HASWELL_FLAGS = [
+
+    unavailable_flags = set([
         "avx2",
         "bmi2",
         "popcnt",
-    ]
-    CORE2_AVX_FLAGS = [
-        "ssse3", 
-        "fxsr", 
-        "cx16", #"cmpxchg16b"
-    ]
-
-    unavailable_flags = set(HASWELL_FLAGS) - set(cpuinfo.get_cpu_info()["flags"])
+    ]) - set(cpuinfo.get_cpu_info()["flags"])
 
     if len(unavailable_flags) == 0:
         logging.info("Ensmallen is using Haswell")
@@ -27,6 +20,7 @@ if is_x86_64():
         from .ensmallen_haswell import Graph  # pylint: disable=import-error
         from .ensmallen_haswell import edge_list_utils  # pylint: disable=import-error
         from .ensmallen_haswell import express_measures  # pylint: disable=import-error
+        del ensmallen_haswell
     else:
         warnings.warn(
             (
@@ -36,7 +30,11 @@ if is_x86_64():
             ).format(HASWELL_FLAGS, unavailable_flags)
         )
 
-        unavailable_flags = set(CORE2_AVX_FLAGS) - set(cpuinfo.get_cpu_info()["flags"])
+        unavailable_flags = set([
+            "ssse3", 
+            "fxsr", 
+            "cx16", #"cmpxchg16b"
+        ]) - set(cpuinfo.get_cpu_info()["flags"])
 
         if len(unavailable_flags) == 0:
             logging.info("Ensmallen is using Core2")
@@ -45,6 +43,7 @@ if is_x86_64():
             from .ensmallen_core2 import Graph  # pylint: disable=import-error
             from .ensmallen_core2 import edge_list_utils  # pylint: disable=import-error
             from .ensmallen_core2 import express_measures  # pylint: disable=import-error
+            del ensmallen_core2
         else:
             raise ValueError(
                 (
@@ -58,6 +57,8 @@ if is_x86_64():
                     " ...).\n"
                 ).format(unavailable_flags, CORE2_AVX_FLAGS)
             )
+    del cpuinfo
+    del unavailable_flags
 elif is_arm():
     logging.info("Ensmallen is using Default Arm")
     from .ensmallen_default import preprocessing  # pylint: disable=import-error
@@ -65,6 +66,7 @@ elif is_arm():
     from .ensmallen_default import Graph  # pylint: disable=import-error
     from .ensmallen_default import edge_list_utils  # pylint: disable=import-error
     from .ensmallen_default import express_measures  # pylint: disable=import-error
+    del ensmallen_default
 else:
     raise ValueError("The arch '{}' is not currently supproted by ensmallen's init file.".format(platform.machine()))
 
@@ -72,3 +74,9 @@ else:
 from . import datasets
 
 __all__ = ["edge_list_utils", "Graph", "preprocessing", "models", "datasets"]
+
+del logging
+del warnings
+del platform
+del is_x86_64
+del is_arm

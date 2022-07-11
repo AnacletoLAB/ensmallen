@@ -401,7 +401,7 @@ impl EdgeFileWriter {
         (header_values, header_positions)
     }
 
-    pub(crate) fn start_writer(&self) -> Result<BufWriter<File>> {
+    pub fn start_writer(&self) -> Result<BufWriter<File>> {
         let (header_values, header_positions) = self.build_header();
         self.writer.start_writer(compose_lines(
             self.number_of_columns,
@@ -417,9 +417,9 @@ impl EdgeFileWriter {
     ///
     /// # Raises
     /// * If some I/O error is encountered.
-    pub(crate) fn write_line(
+    pub fn write_line(
         &self,
-        stream: BufWriter<File>,
+        stream: &mut BufWriter<File>,
         edge_id: EdgeT,
         src: NodeT,
         src_name: String,
@@ -428,7 +428,7 @@ impl EdgeFileWriter {
         edge_type: Option<EdgeTypeT>,
         edge_type_name: Option<String>,
         weight: Option<WeightT>,
-    ) -> Result<BufWriter<File>> {
+    ) -> Result<()> {
         self.writer.write_line(
             stream,
             self.parse_line(
@@ -444,7 +444,7 @@ impl EdgeFileWriter {
         )
     }
 
-    pub(crate) fn close_writer(&self, stream: BufWriter<File>) -> Result<()> {
+    pub fn close_writer(&self, stream: BufWriter<File>) -> Result<()> {
         self.writer.close_writer(stream)
     }
 
@@ -477,8 +477,8 @@ impl EdgeFileWriter {
         for (edge_id, src, src_name, dst, dst_name, edge_type, edge_type_name, weight) in
             iterator.progress_with(pb)
         {
-            stream = self.write_line(
-                stream,
+            self.write_line(
+                &mut stream,
                 edge_id,
                 src,
                 src_name,
