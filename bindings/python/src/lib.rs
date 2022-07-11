@@ -19,6 +19,12 @@ pub use crate::node2vec::*;
 mod edge_prediction_perceptron;
 pub(crate) use edge_prediction_perceptron::*;
 
+mod first_order_line;
+pub(crate) use first_order_line::*;
+
+mod second_order_line;
+pub(crate) use second_order_line::*;
+
 mod dense;
 pub use dense::*;
 
@@ -53,6 +59,8 @@ fn models(_py: Python, _m: &PyModule) -> PyResult<()> {
     _m.add_class::<WalkletsCBOW>()?;
     _m.add_class::<GloVe>()?;
     _m.add_class::<TransE>()?;
+    _m.add_class::<FirstOrderLINE>()?;
+    _m.add_class::<SecondOrderLINE>()?;
     _m.add_class::<SkipGram>()?;
     _m.add_class::<WalkletsSkipGram>()?;
     _m.add_class::<SPINE>()?;
