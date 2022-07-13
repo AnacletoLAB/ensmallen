@@ -214,7 +214,7 @@ where
                             // We compute the gradients relative to the negative classes.
                             let negative_variation = if self.use_scale_free_distribution {
                                 graph
-                                    .iter_scale_free_random_source_node_ids(
+                                    .iter_random_outbounds_scale_free_node_ids(
                                         self.number_of_negative_samples,
                                         splitmix64(
                                             random_state
