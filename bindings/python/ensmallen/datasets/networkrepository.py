@@ -1,6 +1,6 @@
 """Module providing graphs available from NetworkRepository."""
 from ensmallen import Graph  # pylint: disable=import-error
-from .graph_retrieval import AutomaticallyRetrievedGraph
+from .graph_retrieval import RetrievedGraph
 
 def C5009(
     directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
@@ -54,7 +54,7 @@ def C5009(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "C5009", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -99,7 +99,7 @@ def OpsahlSouthernwomen(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "OpsahlSouthernwomen", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -165,7 +165,7 @@ def SocfbNorthwestern25(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbNorthwestern25", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -223,7 +223,7 @@ def Gen400P0965(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Gen400P0965", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -281,7 +281,7 @@ def Gen400P0975(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Gen400P0975", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -339,7 +339,7 @@ def San400073(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "San400073", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -384,7 +384,7 @@ def G29(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "G29", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -429,7 +429,7 @@ def Cl10002d1Trial1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cl10002d1Trial1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -474,7 +474,7 @@ def G39(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "G39", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -540,7 +540,7 @@ def SocfbUsc35(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbUsc35", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -585,7 +585,7 @@ def Jagmesh7(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Jagmesh7", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -630,7 +630,7 @@ def Aa3(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Aa3", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -675,7 +675,7 @@ def ZhishiZhwikiInternallink(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "ZhishiZhwikiInternallink", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -720,7 +720,7 @@ def Sw100030d2Trial3(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw100030d2Trial3", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -765,7 +765,7 @@ def TechAsCaida(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "TechAsCaida", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -817,7 +817,7 @@ def ScLdoor(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "ScLdoor", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -862,7 +862,7 @@ def Trec9(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Trec9", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -928,7 +928,7 @@ def SocfbBowdoin47(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbBowdoin47", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -973,7 +973,7 @@ def Bcsstm39(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Bcsstm39", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -1031,7 +1031,7 @@ def Dsjc5005(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Dsjc5005", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -1076,7 +1076,7 @@ def P2pGnutella30(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "P2pGnutella30", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -1121,7 +1121,7 @@ def Tube2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Tube2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -1166,7 +1166,7 @@ def Email(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Email", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -1211,7 +1211,7 @@ def NR208bit(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "NR208bit", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -1256,7 +1256,7 @@ def Ex6(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Ex6", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -1301,7 +1301,7 @@ def Sw100030d1Trial2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw100030d1Trial2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -1346,7 +1346,7 @@ def Sw100040d3Trial3(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw100040d3Trial3", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -1391,7 +1391,7 @@ def Cl100001d8Trial1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cl100001d8Trial1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -1449,7 +1449,7 @@ def MannA9(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "MannA9", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -1507,7 +1507,7 @@ def Hamming104(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Hamming104", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -1563,7 +1563,7 @@ def BioScHt(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "BioScHt", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -1615,7 +1615,7 @@ def InfEuroroad(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "InfEuroroad", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -1660,7 +1660,7 @@ def Cl1000001d7Trial1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cl1000001d7Trial1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -1718,7 +1718,7 @@ def MannA81(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "MannA81", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -1763,7 +1763,7 @@ def Tsyl201(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Tsyl201", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -1808,7 +1808,7 @@ def G4(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "G4", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -1853,7 +1853,7 @@ def Sw1000050d3Trial2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw1000050d3Trial2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -1898,7 +1898,7 @@ def YahooMsg(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "YahooMsg", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -1943,7 +1943,7 @@ def Skirt(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Skirt", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -1988,7 +1988,7 @@ def Net150(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Net150", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -2033,7 +2033,7 @@ def DbpediaTeam(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "DbpediaTeam", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -2078,7 +2078,7 @@ def PowerBcspwr09(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "PowerBcspwr09", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -2123,7 +2123,7 @@ def Dictionary28(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Dictionary28", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -2168,7 +2168,7 @@ def Trec10(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Trec10", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -2213,7 +2213,7 @@ def Barth5(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Barth5", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -2258,7 +2258,7 @@ def Foldoc(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Foldoc", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -2303,7 +2303,7 @@ def Sw10040d1Trial2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw10040d1Trial2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -2348,7 +2348,7 @@ def Bcsstm06(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Bcsstm06", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -2393,7 +2393,7 @@ def Sw1000060d1Trial2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw1000060d1Trial2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -2438,7 +2438,7 @@ def Sw10040d2Trial3(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw10040d2Trial3", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -2503,7 +2503,7 @@ def EcoStmarks(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "EcoStmarks", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -2548,7 +2548,7 @@ def Sw1000060d2Trial3(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw1000060d2Trial3", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -2593,7 +2593,7 @@ def Patentcite(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Patentcite", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -2651,7 +2651,7 @@ def Johnson3224(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Johnson3224", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -2696,7 +2696,7 @@ def EmailEuall(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "EmailEuall", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -2750,7 +2750,7 @@ def SocSinaweibo(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocSinaweibo", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -2795,7 +2795,7 @@ def Cage14(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cage14", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -2840,7 +2840,7 @@ def G16(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "G16", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -2885,7 +2885,7 @@ def Cl10001d9Trial1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cl10001d9Trial1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -2930,7 +2930,7 @@ def ActorCollaboration(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "ActorCollaboration", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -2975,7 +2975,7 @@ def Kohonen(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Kohonen", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -3020,7 +3020,7 @@ def SocHighschoolMoreno(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocHighschoolMoreno", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -3065,7 +3065,7 @@ def Biplane9(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Biplane9", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -3123,7 +3123,7 @@ def Brock4001(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Brock4001", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -3168,7 +3168,7 @@ def Plc4030L5(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Plc4030L5", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -3234,7 +3234,7 @@ def SocfbMsu24(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbMsu24", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -3300,7 +3300,7 @@ def SocfbJohnshopkins55(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbJohnshopkins55", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -3345,7 +3345,7 @@ def Ljournal2008(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Ljournal2008", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -3390,7 +3390,7 @@ def Ig518(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Ig518", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -3435,7 +3435,7 @@ def G64(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "G64", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -3480,7 +3480,7 @@ def Rajat08(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Rajat08", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -3525,7 +3525,7 @@ def Finance256(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Finance256", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -3578,7 +3578,7 @@ def SocLivejournal(
 	        year = {2007}}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocLivejournal", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -3623,7 +3623,7 @@ def Air06(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Air06", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -3668,7 +3668,7 @@ def Cl100002d0Trial1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cl100002d0Trial1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -3720,7 +3720,7 @@ def FeBody(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "FeBody", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -3765,7 +3765,7 @@ def Bcsstk31(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Bcsstk31", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -3810,7 +3810,7 @@ def SocAnuResidence(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocAnuResidence", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -3855,7 +3855,7 @@ def Engine(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Engine", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -3900,7 +3900,7 @@ def Sw10030d3Trial3(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw10030d3Trial3", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -3945,7 +3945,7 @@ def Cage3(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cage3", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -3990,7 +3990,7 @@ def CaHepth(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "CaHepth", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -4035,7 +4035,7 @@ def FoodwebBaydry(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "FoodwebBaydry", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -4101,7 +4101,7 @@ def SocfbOberlin44(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbOberlin44", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -4151,7 +4151,7 @@ def SocTwitter(
 	        note = {{https://archive.org/details/friendster-dataset-201107}}}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocTwitter", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -4196,7 +4196,7 @@ def Cl1000001d9Trial3(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cl1000001d9Trial3", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -4249,7 +4249,7 @@ def MiscImdbBi(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "MiscImdbBi", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -4294,7 +4294,7 @@ def Pkustk04(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Pkustk04", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -4339,7 +4339,7 @@ def Pkustk14(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Pkustk14", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -4396,7 +4396,7 @@ def BNHumanJung(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "BNHumanJung", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -4441,7 +4441,7 @@ def Sw10050d1Trial1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw10050d1Trial1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -4497,7 +4497,7 @@ def BioScTs(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "BioScTs", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -4542,7 +4542,7 @@ def G52(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "G52", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -4587,7 +4587,7 @@ def Sw100060d2Trial1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw100060d2Trial1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -4632,7 +4632,7 @@ def DbpediaRecordlabel(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "DbpediaRecordlabel", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -4677,7 +4677,7 @@ def G42(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "G42", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -4722,7 +4722,7 @@ def PowerBcspwr10(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "PowerBcspwr10", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -4767,7 +4767,7 @@ def Cl10000002d0Trial1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cl10000002d0Trial1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -4833,7 +4833,7 @@ def SocfbMaryland58(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbMaryland58", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -4878,7 +4878,7 @@ def Rw496(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Rw496", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -4923,7 +4923,7 @@ def Se(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Se", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -4968,7 +4968,7 @@ def Cl10k1d8L5(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cl10k1d8L5", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -5013,7 +5013,7 @@ def RoadnetPa(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "RoadnetPa", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -5058,7 +5058,7 @@ def Bcspwr03(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Bcspwr03", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -5110,7 +5110,7 @@ def SocDelicious(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocDelicious", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -5155,7 +5155,7 @@ def G30(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "G30", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -5200,7 +5200,7 @@ def RoadNetherlandsOsm(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "RoadNetherlandsOsm", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -5245,7 +5245,7 @@ def Dolphins(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Dolphins", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -5297,7 +5297,7 @@ def InfRoadnetPa(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "InfRoadnetPa", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -5363,7 +5363,7 @@ def SocfbBc17(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbBc17", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -5408,7 +5408,7 @@ def Pcrystk03(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Pcrystk03", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -5453,7 +5453,7 @@ def Struct3(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Struct3", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -5498,7 +5498,7 @@ def TechArenasMeta(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "TechArenasMeta", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -5543,7 +5543,7 @@ def Bcsstm20(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Bcsstm20", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -5588,7 +5588,7 @@ def Patents(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Patents", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -5633,7 +5633,7 @@ def AffFlickrUserGroups(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "AffFlickrUserGroups", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -5678,7 +5678,7 @@ def Ash958(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Ash958", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -5736,7 +5736,7 @@ def PHat15003(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "PHat15003", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -5781,7 +5781,7 @@ def Tf13(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Tf13", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -5826,7 +5826,7 @@ def Cl10000001d8Trial1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cl10000001d8Trial1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -5892,7 +5892,7 @@ def SocfbHoward90(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbHoward90", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -5937,7 +5937,7 @@ def Enzymes8(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Enzymes8", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -5995,7 +5995,7 @@ def CFat2002(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "CFat2002", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -6040,7 +6040,7 @@ def Rajat01(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Rajat01", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -6085,7 +6085,7 @@ def Sw1000030d2Trial1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw1000030d2Trial1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -6130,7 +6130,7 @@ def Pds10(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Pds10", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -6186,7 +6186,7 @@ def SocDolphins(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocDolphins", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -6231,7 +6231,7 @@ def Ig511(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Ig511", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -6276,7 +6276,7 @@ def Lshp1561(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Lshp1561", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -6321,7 +6321,7 @@ def Ash292(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Ash292", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -6387,7 +6387,7 @@ def SocfbAmerican75(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbAmerican75", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -6453,7 +6453,7 @@ def SocfbMit(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbMit", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -6498,7 +6498,7 @@ def Gupta1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Gupta1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -6564,7 +6564,7 @@ def SocfbHamilton46(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbHamilton46", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -6622,7 +6622,7 @@ def San200072(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "San200072", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -6680,7 +6680,7 @@ def Dsjc10005(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Dsjc10005", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -6725,7 +6725,7 @@ def Cl1000002d1Trial3(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cl1000002d1Trial3", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -6770,7 +6770,7 @@ def P2pGnutella06(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "P2pGnutella06", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -6815,7 +6815,7 @@ def Packing500x100x100B050(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Packing500x100x100B050", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -6871,7 +6871,7 @@ def BioCeGt(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "BioCeGt", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -6916,7 +6916,7 @@ def ActorMovie(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "ActorMovie", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -6971,7 +6971,7 @@ def MiscJungCodeDep(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "MiscJungCodeDep", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -7029,7 +7029,7 @@ def PHat3003(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "PHat3003", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -7085,7 +7085,7 @@ def SocSlashdot(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocSlashdot", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -7130,7 +7130,7 @@ def Data(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Data", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -7175,7 +7175,7 @@ def Ash331(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Ash331", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -7220,7 +7220,7 @@ def Uk2002(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Uk2002", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -7265,7 +7265,7 @@ def Erdos992(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Erdos992", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -7310,7 +7310,7 @@ def Erdos982(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Erdos982", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -7355,7 +7355,7 @@ def Ig58(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Ig58", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -7413,7 +7413,7 @@ def PHat10002(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "PHat10002", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -7458,7 +7458,7 @@ def Uspowergrid(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Uspowergrid", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -7510,7 +7510,7 @@ def AffGithubUser2project(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "AffGithubUser2project", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -7570,7 +7570,7 @@ def RtRetweet(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "RtRetweet", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -7620,7 +7620,7 @@ def CopresenceThiers13(
 	        url={http://www.sociopatterns.org/datasets/}}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "CopresenceThiers13", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -7665,7 +7665,7 @@ def Chesapeake(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Chesapeake", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -7710,7 +7710,7 @@ def Sstmodel(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sstmodel", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -7755,7 +7755,7 @@ def Sw1000040d3Trial1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw1000040d3Trial1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -7813,7 +7813,7 @@ def Johnson844(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Johnson844", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -7858,7 +7858,7 @@ def Sw10060d3Trial1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw10060d3Trial1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -7903,7 +7903,7 @@ def Cl10001d7Trial3(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cl10001d7Trial3", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -7959,7 +7959,7 @@ def AffAmazonCopurchases(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "AffAmazonCopurchases", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -8017,7 +8017,7 @@ def CaMathscinetDir(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "CaMathscinetDir", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -8062,7 +8062,7 @@ def G43(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "G43", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -8107,7 +8107,7 @@ def G53(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "G53", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -8152,7 +8152,7 @@ def AffDigg(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "AffDigg", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -8197,7 +8197,7 @@ def Sw100060d1Trial1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw100060d1Trial1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -8242,7 +8242,7 @@ def CaCondmat(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "CaCondmat", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -8287,7 +8287,7 @@ def DblpCite(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "DblpCite", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -8332,7 +8332,7 @@ def Cl1000001d9Trial2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cl1000001d9Trial2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -8377,7 +8377,7 @@ def Sw10050d2Trial1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw10050d2Trial1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -8422,7 +8422,7 @@ def Amazon0302(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Amazon0302", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -8467,7 +8467,7 @@ def Amazon0312(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Amazon0312", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -8522,7 +8522,7 @@ def TechP2pGnutella(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "TechP2pGnutella", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -8567,7 +8567,7 @@ def FbCmuCarnegie49(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "FbCmuCarnegie49", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -8623,7 +8623,7 @@ def BioCeCx(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "BioCeCx", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -8668,7 +8668,7 @@ def Barth(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Barth", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -8713,7 +8713,7 @@ def Pkustk05(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Pkustk05", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -8758,7 +8758,7 @@ def Srb1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Srb1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -8820,7 +8820,7 @@ def WebIndochina2004All(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "WebIndochina2004All", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -8865,7 +8865,7 @@ def Pcrystk02(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Pcrystk02", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -8921,7 +8921,7 @@ def SocSlashdotTrustAll(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocSlashdotTrustAll", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -8966,7 +8966,7 @@ def MaayanFigeys(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "MaayanFigeys", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -9020,7 +9020,7 @@ def BioCelegans(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "BioCelegans", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -9065,7 +9065,7 @@ def As735(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "As735", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -9110,7 +9110,7 @@ def Bcsstm21(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Bcsstm21", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -9155,7 +9155,7 @@ def AsSkitter(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "AsSkitter", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -9200,7 +9200,7 @@ def Hollywood2009(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Hollywood2009", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -9256,7 +9256,7 @@ def CaErdos992(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "CaErdos992", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -9301,7 +9301,7 @@ def Dd497(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Dd497", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -9346,7 +9346,7 @@ def ArenasMeta(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "ArenasMeta", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -9412,7 +9412,7 @@ def SocfbFsu53(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbFsu53", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -9468,7 +9468,7 @@ def CaNetscience(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "CaNetscience", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -9523,7 +9523,7 @@ def SocTwitterFollows(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocTwitterFollows", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -9568,7 +9568,7 @@ def AvesSparrowSocial(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "AvesSparrowSocial", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -9634,7 +9634,7 @@ def SocfbCmu(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbCmu", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -9686,7 +9686,7 @@ def ScPkustk11(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "ScPkustk11", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -9739,7 +9739,7 @@ def WebEpa(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "WebEpa", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -9784,7 +9784,7 @@ def Bcspwr02(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Bcspwr02", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -9829,7 +9829,7 @@ def G31(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "G31", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -9874,7 +9874,7 @@ def Chem97zt(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Chem97zt", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -9927,7 +9927,7 @@ def TechInternetAs(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "TechInternetAs", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -9993,7 +9993,7 @@ def SocfbWake73(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbWake73", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -10038,7 +10038,7 @@ def ZhishiBaiduInternallink(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "ZhishiBaiduInternallink", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -10083,7 +10083,7 @@ def Bfly(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Bfly", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -10128,7 +10128,7 @@ def AvesWeaverSocial(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "AvesWeaverSocial", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -10173,7 +10173,7 @@ def DbpediaCountry(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "DbpediaCountry", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -10218,7 +10218,7 @@ def Net25(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Net25", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -10273,7 +10273,7 @@ def BioHumanGene1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "BioHumanGene1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -10318,7 +10318,7 @@ def Cl1000002d1Trial2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cl1000002d1Trial2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -10363,7 +10363,7 @@ def ZhishiHudongInternallink(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "ZhishiHudongInternallink", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -10408,7 +10408,7 @@ def Bcsstk29(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Bcsstk29", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -10464,7 +10464,7 @@ def BioCePg(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "BioCePg", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -10514,7 +10514,7 @@ def SocPokec(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocPokec", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -10559,7 +10559,7 @@ def Us04(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Us04", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -10604,7 +10604,7 @@ def Sw1000030d1Trial1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw1000030d1Trial1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -10649,7 +10649,7 @@ def Copter2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Copter2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -10715,7 +10715,7 @@ def SocfbMichigan23(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbMichigan23", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -10773,7 +10773,7 @@ def Brock2004(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Brock2004", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -10818,7 +10818,7 @@ def Tf12(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Tf12", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -10876,7 +10876,7 @@ def PHat15002(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "PHat15002", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -10921,7 +10921,7 @@ def YoutubeGroupmemberships(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "YoutubeGroupmemberships", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -10966,7 +10966,7 @@ def Connectus(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Connectus", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -11011,7 +11011,7 @@ def Ig510(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Ig510", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -11056,7 +11056,7 @@ def RoadGermanyOsm(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "RoadGermanyOsm", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -11101,7 +11101,7 @@ def Rajat10(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Rajat10", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -11157,7 +11157,7 @@ def BioHsCx(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "BioHsCx", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -11222,7 +11222,7 @@ def EcoFoodwebBaywet(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "EcoFoodwebBaywet", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -11267,7 +11267,7 @@ def Bas1lp(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Bas1lp", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -11312,7 +11312,7 @@ def Ig59(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Ig59", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -11372,7 +11372,7 @@ def RtRetweetCrawl(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "RtRetweetCrawl", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -11438,7 +11438,7 @@ def SocfbWisconsin87(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbWisconsin87", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -11483,7 +11483,7 @@ def Glossgt(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Glossgt", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -11528,7 +11528,7 @@ def Cl10001d7Trial2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cl10001d7Trial2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -11584,7 +11584,7 @@ def SocGooglePlus(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocGooglePlus", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -11642,7 +11642,7 @@ def PHat10003(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "PHat10003", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -11687,7 +11687,7 @@ def Lshp2233(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Lshp2233", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -11732,7 +11732,7 @@ def Pfinan512(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Pfinan512", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -11777,7 +11777,7 @@ def MaayanFaa(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "MaayanFaa", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -11822,7 +11822,7 @@ def RoadnetTx(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "RoadnetTx", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -11867,7 +11867,7 @@ def Sw100050d3Trial1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw100050d3Trial1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -11912,7 +11912,7 @@ def CaAminer(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "CaAminer", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -11978,7 +11978,7 @@ def SocfbTexas80(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbTexas80", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -12023,7 +12023,7 @@ def Sw100030d2Trial2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw100030d2Trial2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -12068,7 +12068,7 @@ def ZhishiBaiduRelatedpages(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "ZhishiBaiduRelatedpages", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -12113,7 +12113,7 @@ def WbCsStanford(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "WbCsStanford", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -12158,7 +12158,7 @@ def Jagmesh6(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Jagmesh6", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -12203,7 +12203,7 @@ def Sw100030d1Trial3(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw100030d1Trial3", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -12248,7 +12248,7 @@ def P2pGnutella31(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "P2pGnutella31", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -12293,7 +12293,7 @@ def Reactome(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Reactome", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -12338,7 +12338,7 @@ def Github(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Github", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -12404,7 +12404,7 @@ def SocfbBerkeley13(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbBerkeley13", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -12449,7 +12449,7 @@ def ZhishiHudongRelatedpages(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "ZhishiHudongRelatedpages", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -12494,7 +12494,7 @@ def Trec8(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Trec8", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -12552,7 +12552,7 @@ def San400072(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "San400072", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -12614,7 +12614,7 @@ def WebItalycnr2000(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "WebItalycnr2000", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -12659,7 +12659,7 @@ def WebStanford(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "WebStanford", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -12721,7 +12721,7 @@ def WebIndochina2004(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "WebIndochina2004", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -12787,7 +12787,7 @@ def SocfbNortheastern19(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbNortheastern19", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -12832,7 +12832,7 @@ def Stanford(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Stanford", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -12890,7 +12890,7 @@ def CFat5001(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "CFat5001", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -12935,7 +12935,7 @@ def SocSignBitcoinotc(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocSignBitcoinotc", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -12980,7 +12980,7 @@ def Flickr(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Flickr", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -13025,7 +13025,7 @@ def G38(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "G38", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -13070,7 +13070,7 @@ def Sw1000050d3Trial3(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw1000050d3Trial3", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -13115,7 +13115,7 @@ def G5(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "G5", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -13167,7 +13167,7 @@ def ScShipsec1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "ScShipsec1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -13233,7 +13233,7 @@ def SocfbColgate88(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbColgate88", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -13278,7 +13278,7 @@ def Arabic2005(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Arabic2005", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -13323,7 +13323,7 @@ def Ccc(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Ccc", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -13368,7 +13368,7 @@ def Barth4(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Barth4", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -13426,7 +13426,7 @@ def C20009(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "C20009", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -13480,7 +13480,7 @@ def SocLastfm(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocLastfm", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -13525,7 +13525,7 @@ def Trec11(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Trec11", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -13579,7 +13579,7 @@ def SocBuzznet(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocBuzznet", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -13624,7 +13624,7 @@ def Usroads48(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Usroads48", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -13669,7 +13669,7 @@ def BioGridWorm(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "BioGridWorm", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -13714,7 +13714,7 @@ def Sw100040d3Trial2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw100040d3Trial2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -13780,7 +13780,7 @@ def SocfbNotredame57(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbNotredame57", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -13825,7 +13825,7 @@ def Epa(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Epa", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -13870,7 +13870,7 @@ def ErMd(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "ErMd", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -13915,7 +13915,7 @@ def G17(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "G17", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -13981,7 +13981,7 @@ def SocfbIndiana69(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbIndiana69", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -14026,7 +14026,7 @@ def Cvxbqp1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cvxbqp1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -14071,7 +14071,7 @@ def Sw1000060d1Trial3(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw1000060d1Trial3", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -14116,7 +14116,7 @@ def Hugebubbles00010(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Hugebubbles00010", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -14161,7 +14161,7 @@ def Sw10040d1Trial3(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw10040d1Trial3", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -14206,7 +14206,7 @@ def Hugebubbles00000(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Hugebubbles00000", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -14272,7 +14272,7 @@ def SocfbColumbia2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbColumbia2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -14317,7 +14317,7 @@ def Cage15(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cage15", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -14362,7 +14362,7 @@ def Sw1000060d2Trial2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw1000060d2Trial2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -14407,7 +14407,7 @@ def RoadUsroads(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "RoadUsroads", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -14461,7 +14461,7 @@ def SocAcademia(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocAcademia", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -14506,7 +14506,7 @@ def Sw10040d2Trial2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw10040d2Trial2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -14551,7 +14551,7 @@ def Karate(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Karate", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -14596,7 +14596,7 @@ def Sw10030d3Trial2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw10030d3Trial2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -14654,7 +14654,7 @@ def Sanr20009(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sanr20009", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -14699,7 +14699,7 @@ def Bcsstk30(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Bcsstk30", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -14744,7 +14744,7 @@ def Cl10m1d8L5(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cl10m1d8L5", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -14789,7 +14789,7 @@ def WordnetWords(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "WordnetWords", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -14845,7 +14845,7 @@ def MiscFootball(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "MiscFootball", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -14890,7 +14890,7 @@ def EgoGplus(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "EgoGplus", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -14956,7 +14956,7 @@ def SocfbUnc28(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbUnc28", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -15010,7 +15010,7 @@ def WebEdu(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "WebEdu", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -15055,7 +15055,7 @@ def CaGrqc(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "CaGrqc", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -15111,7 +15111,7 @@ def BioWormnetV3(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "BioWormnetV3", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -15156,7 +15156,7 @@ def Mri1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Mri1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -15201,7 +15201,7 @@ def Rajat09(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Rajat09", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -15246,7 +15246,7 @@ def G65(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "G65", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -15291,7 +15291,7 @@ def Grid1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Grid1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -15349,7 +15349,7 @@ def Hamming62(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Hamming62", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -15394,7 +15394,7 @@ def Gearbox(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Gearbox", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -15439,7 +15439,7 @@ def Bcsstm23(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Bcsstm23", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -15484,7 +15484,7 @@ def TechAsCaida20071105(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "TechAsCaida20071105", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -15538,7 +15538,7 @@ def WebBerkstanDir(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "WebBerkstanDir", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -15583,7 +15583,7 @@ def SocPokecRelationships(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocPokecRelationships", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -15637,7 +15637,7 @@ def SocAdvogato(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocAdvogato", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -15682,7 +15682,7 @@ def RoadGreatBritainOsm(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "RoadGreatBritainOsm", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -15740,7 +15740,7 @@ def Brock8004(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Brock8004", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -15806,7 +15806,7 @@ def SocfbStanford3(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbStanford3", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -15851,7 +15851,7 @@ def RoadMinnesota(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "RoadMinnesota", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -15896,7 +15896,7 @@ def WebSpamDetection(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "WebSpamDetection", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -15941,7 +15941,7 @@ def Bcspwr10(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Bcspwr10", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -15986,7 +15986,7 @@ def G23(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "G23", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -16038,7 +16038,7 @@ def ScPkustk13(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "ScPkustk13", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -16083,7 +16083,7 @@ def Chem97ztz(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Chem97ztz", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -16148,7 +16148,7 @@ def EcoEverglades(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "EcoEverglades", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -16214,7 +16214,7 @@ def SocfbKonect(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbKonect", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -16259,7 +16259,7 @@ def YoutubeLinks(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "YoutubeLinks", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -16304,7 +16304,7 @@ def Sphere3(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sphere3", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -16349,7 +16349,7 @@ def EmailUniv(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "EmailUniv", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -16394,7 +16394,7 @@ def AsCaida20071105(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "AsCaida20071105", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -16439,7 +16439,7 @@ def Cl10000002d0Trial2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cl10000002d0Trial2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -16484,7 +16484,7 @@ def Sw100060d1Trial3(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw100060d1Trial3", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -16529,7 +16529,7 @@ def Lshp1270(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Lshp1270", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -16574,7 +16574,7 @@ def G51(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "G51", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -16619,7 +16619,7 @@ def Sw100060d2Trial2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw100060d2Trial2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -16664,7 +16664,7 @@ def PetsterCarnivore(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "PetsterCarnivore", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -16709,7 +16709,7 @@ def G41(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "G41", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -16754,7 +16754,7 @@ def Pkustk07(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Pkustk07", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -16799,7 +16799,7 @@ def Sw10050d1Trial2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw10050d1Trial2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -16844,7 +16844,7 @@ def DbpediaOccupation(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "DbpediaOccupation", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -16910,7 +16910,7 @@ def SocfbMaine59(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbMaine59", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -16976,7 +16976,7 @@ def SocfbUillinois20(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbUillinois20", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -17042,7 +17042,7 @@ def SocfbCarnegie49(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbCarnegie49", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -17098,7 +17098,7 @@ def TechP2p(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "TechP2p", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -17143,7 +17143,7 @@ def Sw10050d2Trial3(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw10050d2Trial3", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -17188,7 +17188,7 @@ def Football(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Football", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -17246,7 +17246,7 @@ def PHat10001(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "PHat10001", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -17291,7 +17291,7 @@ def Sw1000040d3Trial2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw1000040d3Trial2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -17349,7 +17349,7 @@ def C10009(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "C10009", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -17394,7 +17394,7 @@ def Sw10060d3Trial2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw10060d3Trial2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -17439,7 +17439,7 @@ def Erdos991(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Erdos991", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -17484,7 +17484,7 @@ def Dd199(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Dd199", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -17544,7 +17544,7 @@ def WebWikipedia2009(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "WebWikipedia2009", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -17589,7 +17589,7 @@ def Erdos981(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Erdos981", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -17651,7 +17651,7 @@ def WebUk2005(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "WebUk2005", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -17717,7 +17717,7 @@ def SocfbBaylor93(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbBaylor93", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -17769,7 +17769,7 @@ def Fe4elt2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Fe4elt2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -17814,7 +17814,7 @@ def Abb313(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Abb313", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -17859,7 +17859,7 @@ def TrecWt10g(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "TrecWt10g", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -17925,7 +17925,7 @@ def SocfbReed98(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbReed98", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -17970,7 +17970,7 @@ def Sw100050d3Trial3(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw100050d3Trial3", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -18036,7 +18036,7 @@ def SocfbNyu9(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbNyu9", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -18081,7 +18081,7 @@ def P2pGnutella05(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "P2pGnutella05", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -18146,7 +18146,7 @@ def EcoFoodwebBaydry(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "EcoFoodwebBaydry", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -18191,7 +18191,7 @@ def Gupta2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Gupta2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -18249,7 +18249,7 @@ def San200071(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "San200071", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -18294,7 +18294,7 @@ def Advogato(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Advogato", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -18360,7 +18360,7 @@ def SocfbBu10(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbBu10", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -18412,7 +18412,7 @@ def CaCoauthorsDblp(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "CaCoauthorsDblp", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -18470,7 +18470,7 @@ def CFat2001(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "CFat2001", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -18523,7 +18523,7 @@ def RtTwitterCopen(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "RtTwitterCopen", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -18568,7 +18568,7 @@ def RoadItalyOsm(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "RoadItalyOsm", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -18613,7 +18613,7 @@ def BioGridFruitfly(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "BioGridFruitfly", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -18679,7 +18679,7 @@ def SocfbDuke14(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbDuke14", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -18724,7 +18724,7 @@ def Sw1000030d2Trial2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw1000030d2Trial2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -18769,7 +18769,7 @@ def Rajat02(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Rajat02", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -18814,7 +18814,7 @@ def Ig512(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Ig512", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -18859,7 +18859,7 @@ def OpsahlUsairport(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "OpsahlUsairport", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -18925,7 +18925,7 @@ def SocfbUsf51(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbUsf51", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -18970,7 +18970,7 @@ def SocGplus(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocGplus", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -19015,7 +19015,7 @@ def Tf10(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Tf10", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -19060,7 +19060,7 @@ def Troll(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Troll", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -19105,7 +19105,7 @@ def Cl10000001d8Trial2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cl10000001d8Trial2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -19164,7 +19164,7 @@ def TechPgp(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "TechPgp", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -19209,7 +19209,7 @@ def Sw1000030d1Trial3(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw1000030d1Trial3", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -19259,7 +19259,7 @@ def CopresenceInvs15(
 	        url={http://www.sociopatterns.org/datasets/}}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "CopresenceInvs15", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -19304,7 +19304,7 @@ def Trec13(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Trec13", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -19360,7 +19360,7 @@ def WebGoogleDir(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "WebGoogleDir", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -19405,7 +19405,7 @@ def AsCaida(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "AsCaida", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -19450,7 +19450,7 @@ def Cca(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cca", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -19502,7 +19502,7 @@ def FeTooth(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "FeTooth", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -19547,7 +19547,7 @@ def Sw1000050d3Trial1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw1000050d3Trial1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -19592,7 +19592,7 @@ def G7(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "G7", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -19637,7 +19637,7 @@ def G48(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "G48", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -19703,7 +19703,7 @@ def SocfbOr(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbOr", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -19769,7 +19769,7 @@ def SocfbUc61(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbUc61", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -19814,7 +19814,7 @@ def G58(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "G58", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -19859,7 +19859,7 @@ def CaAstroph(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "CaAstroph", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -19904,7 +19904,7 @@ def Cl1000001d7Trial2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cl1000001d7Trial2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -19960,7 +19960,7 @@ def BioDmHt(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "BioDmHt", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -20026,7 +20026,7 @@ def SocfbUpenn7(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbUpenn7", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -20071,7 +20071,7 @@ def EmailEu(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "EmailEu", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -20136,7 +20136,7 @@ def EcoFlorida(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "EcoFlorida", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -20181,7 +20181,7 @@ def Cage9(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cage9", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -20226,7 +20226,7 @@ def Cl100001d8Trial2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cl100001d8Trial2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -20271,7 +20271,7 @@ def DbpediaGenre(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "DbpediaGenre", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -20316,7 +20316,7 @@ def Tube1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Tube1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -20361,7 +20361,7 @@ def Ex5(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Ex5", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -20406,7 +20406,7 @@ def Sw100030d1Trial1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw100030d1Trial1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -20451,7 +20451,7 @@ def Jagmesh4(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Jagmesh4", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -20496,7 +20496,7 @@ def NR145bit(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "NR145bit", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -20541,7 +20541,7 @@ def Journals(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Journals", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -20599,7 +20599,7 @@ def Hamming84(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Hamming84", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -20644,7 +20644,7 @@ def HepTh(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "HepTh", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -20689,7 +20689,7 @@ def Lock3491(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Lock3491", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -20734,7 +20734,7 @@ def Eva(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Eva", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -20779,7 +20779,7 @@ def Cl10002d1Trial2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cl10002d1Trial2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -20824,7 +20824,7 @@ def Geom(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Geom", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -20869,7 +20869,7 @@ def Bcspwr09(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Bcspwr09", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -20935,7 +20935,7 @@ def SocfbTufts18(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbTufts18", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -20989,7 +20989,7 @@ def SocTwitterMpiSws(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocTwitterMpiSws", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -21043,7 +21043,7 @@ def SocTwitterFollowsMun(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocTwitterFollowsMun", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -21109,7 +21109,7 @@ def SocfbMu78(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbMu78", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -21154,7 +21154,7 @@ def Cl100002d0Trial2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cl100002d0Trial2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -21199,7 +21199,7 @@ def Bcsstk32(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Bcsstk32", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -21244,7 +21244,7 @@ def RoadnetCa(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "RoadnetCa", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -21289,7 +21289,7 @@ def AffWikiWordbypage(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "AffWikiWordbypage", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -21334,7 +21334,7 @@ def As20000102(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "As20000102", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -21379,7 +21379,7 @@ def Cnr2000(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cnr2000", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -21431,7 +21431,7 @@ def InfRoadnetCa(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "InfRoadnetCa", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -21476,7 +21476,7 @@ def Jgl009(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Jgl009", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -21521,7 +21521,7 @@ def Air05(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Air05", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -21566,7 +21566,7 @@ def Rail2586(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Rail2586", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -21611,7 +21611,7 @@ def Pwt(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Pwt", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -21656,7 +21656,7 @@ def SocEpinions1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocEpinions1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -21701,7 +21701,7 @@ def G67(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "G67", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -21746,7 +21746,7 @@ def Tf19(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Tf19", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -21791,7 +21791,7 @@ def Pattern1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Pattern1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -21857,7 +21857,7 @@ def SocfbUva16(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbUva16", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -21902,7 +21902,7 @@ def Nasa4704(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Nasa4704", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -21954,7 +21954,7 @@ def TechCaidarouterlevel(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "TechCaidarouterlevel", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -21999,7 +21999,7 @@ def Cs4(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cs4", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -22044,7 +22044,7 @@ def Ash608(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Ash608", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -22089,7 +22089,7 @@ def Hugetric00000(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Hugetric00000", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -22134,7 +22134,7 @@ def Hugetric00010(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Hugetric00010", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -22186,7 +22186,7 @@ def BioYeastProteinInter(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "BioYeastProteinInter", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -22231,7 +22231,7 @@ def SocFirmHiTech(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocFirmHiTech", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -22276,7 +22276,7 @@ def G15(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "G15", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -22329,7 +22329,7 @@ def SocOrkut(
 	        year = {2007}}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocOrkut", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -22385,7 +22385,7 @@ def MiscReuters911(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "MiscReuters911", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -22430,7 +22430,7 @@ def Cl10001d9Trial2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cl10001d9Trial2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -22475,7 +22475,7 @@ def In2004(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "In2004", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -22533,7 +22533,7 @@ def Brock4002(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Brock4002", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -22578,7 +22578,7 @@ def Netz4504(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Netz4504", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -22623,7 +22623,7 @@ def PowerUsGrid(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "PowerUsGrid", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -22668,7 +22668,7 @@ def RoadEuroroad(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "RoadEuroroad", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -22713,7 +22713,7 @@ def Bcsstm05(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Bcsstm05", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -22758,7 +22758,7 @@ def Ragusa16(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Ragusa16", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -22803,7 +22803,7 @@ def OpsahlPowergrid(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "OpsahlPowergrid", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -22869,7 +22869,7 @@ def SocfbUsfca72(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbUsfca72", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -22914,7 +22914,7 @@ def Sw10040d1Trial1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw10040d1Trial1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -22980,7 +22980,7 @@ def SocfbOklahoma97(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbOklahoma97", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -23025,7 +23025,7 @@ def Sw1000060d1Trial1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw1000060d1Trial1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -23077,7 +23077,7 @@ def SocDouban(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocDouban", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -23143,7 +23143,7 @@ def SocfbBucknell39(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbBucknell39", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -23188,7 +23188,7 @@ def Cl1000001d7Trial3(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cl1000001d7Trial3", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -23233,7 +23233,7 @@ def CaActorCollaboration(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "CaActorCollaboration", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -23278,7 +23278,7 @@ def NR3elt(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "NR3elt", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -23340,7 +23340,7 @@ def WebSk2005(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "WebSk2005", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -23385,7 +23385,7 @@ def Cl100001d8Trial3(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cl100001d8Trial3", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -23430,7 +23430,7 @@ def Sw100040d3Trial1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw100040d3Trial1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -23475,7 +23475,7 @@ def Cage8(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cage8", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -23520,7 +23520,7 @@ def CitPatent(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "CitPatent", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -23576,7 +23576,7 @@ def BioHsLc(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "BioHsLc", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -23621,7 +23621,7 @@ def Trec12(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Trec12", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -23666,7 +23666,7 @@ def Caidarouterlevel(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Caidarouterlevel", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -23711,7 +23711,7 @@ def DbpediaLocation(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "DbpediaLocation", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -23756,7 +23756,7 @@ def G59(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "G59", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -23801,7 +23801,7 @@ def G49(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "G49", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -23846,7 +23846,7 @@ def G6(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "G6", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -23891,7 +23891,7 @@ def It2004(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "It2004", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -23949,7 +23949,7 @@ def CFat5002(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "CFat5002", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -23994,7 +23994,7 @@ def Bcspwr08(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Bcspwr08", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -24039,7 +24039,7 @@ def Cl10002d1Trial3(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cl10002d1Trial3", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -24097,7 +24097,7 @@ def San400071(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "San400071", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -24163,7 +24163,7 @@ def SocfbUf21(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbUf21", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -24208,7 +24208,7 @@ def SlashdotZoo(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SlashdotZoo", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -24253,7 +24253,7 @@ def Sw1000060d3L2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw1000060d3L2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -24298,7 +24298,7 @@ def Ex4(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Ex4", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -24343,7 +24343,7 @@ def OrkutLinks(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "OrkutLinks", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -24388,7 +24388,7 @@ def Ibm32(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Ibm32", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -24433,7 +24433,7 @@ def Appu(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Appu", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -24478,7 +24478,7 @@ def Sw100030d2Trial1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw100030d2Trial1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -24529,7 +24529,7 @@ def SocDogster(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocDogster", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -24574,7 +24574,7 @@ def Jagmesh5(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Jagmesh5", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -24619,7 +24619,7 @@ def Grid2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Grid2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -24664,7 +24664,7 @@ def G66(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "G66", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -24709,7 +24709,7 @@ def Mri2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Mri2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -24754,7 +24754,7 @@ def Diag(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Diag", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -24820,7 +24820,7 @@ def SocfbUchicago30(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbUchicago30", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -24886,7 +24886,7 @@ def SocfbWilliams40(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbWilliams40", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -24931,7 +24931,7 @@ def Actor(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Actor", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -24997,7 +24997,7 @@ def SocfbBrown11(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbBrown11", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -25042,7 +25042,7 @@ def T520(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "T520", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -25087,7 +25087,7 @@ def Tf18(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Tf18", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -25143,7 +25143,7 @@ def BioCeLc(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "BioCeLc", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -25188,7 +25188,7 @@ def Sw10030d3Trial1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw10030d3Trial1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -25233,7 +25233,7 @@ def T60k(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "T60k", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -25278,7 +25278,7 @@ def Bcsstk33(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Bcsstk33", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -25323,7 +25323,7 @@ def Crack(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Crack", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -25368,7 +25368,7 @@ def Cl100002d0Trial3(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cl100002d0Trial3", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -25434,7 +25434,7 @@ def SocfbSanta74(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbSanta74", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -25500,7 +25500,7 @@ def SocfbCornell5(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbCornell5", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -25545,7 +25545,7 @@ def Air04(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Air04", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -25590,7 +25590,7 @@ def PetsterFriendshipsDog(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "PetsterFriendshipsDog", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -25635,7 +25635,7 @@ def Sw1000060d2Trial1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw1000060d2Trial1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -25680,7 +25680,7 @@ def BioGridFissionYeast(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "BioGridFissionYeast", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -25725,7 +25725,7 @@ def Sw10040d2Trial1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw10040d2Trial1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -25770,7 +25770,7 @@ def Pct20stif(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Pct20stif", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -25815,7 +25815,7 @@ def ComYoutube(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "ComYoutube", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -25860,7 +25860,7 @@ def PetsterFriendshipsCat(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "PetsterFriendshipsCat", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -25926,7 +25926,7 @@ def SocfbHarvard1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbHarvard1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -25971,7 +25971,7 @@ def Hugetrace00000(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Hugetrace00000", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -26029,7 +26029,7 @@ def Brock4003(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Brock4003", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -26074,7 +26074,7 @@ def Polblogs(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Polblogs", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -26119,7 +26119,7 @@ def Hugetrace00010(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Hugetrace00010", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -26164,7 +26164,7 @@ def Cl10001d9Trial3(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cl10001d9Trial3", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -26209,7 +26209,7 @@ def Roget(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Roget", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -26254,7 +26254,7 @@ def G14(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "G14", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -26308,7 +26308,7 @@ def WebPolblogs(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "WebPolblogs", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -26353,7 +26353,7 @@ def ArenasPgp(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "ArenasPgp", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -26398,7 +26398,7 @@ def Netscience(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Netscience", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -26464,7 +26464,7 @@ def SocfbVirginia63(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbVirginia63", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -26509,7 +26509,7 @@ def Plc6030L2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Plc6030L2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -26554,7 +26554,7 @@ def Gene(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Gene", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -26599,7 +26599,7 @@ def FoodwebBaywet(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "FoodwebBaywet", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -26644,7 +26644,7 @@ def G22(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "G22", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -26689,7 +26689,7 @@ def Indochina2004(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Indochina2004", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -26734,7 +26734,7 @@ def Bcspwr01(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Bcspwr01", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -26779,7 +26779,7 @@ def BioGridHuman(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "BioGridHuman", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -26824,7 +26824,7 @@ def Coauthorsciteseer(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Coauthorsciteseer", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -26876,7 +26876,7 @@ def SocBlogcatalog(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocBlogcatalog", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -26932,7 +26932,7 @@ def BioScCc(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "BioScCc", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -26984,7 +26984,7 @@ def SocFoursquare(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocFoursquare", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -27029,7 +27029,7 @@ def Bcsstm22(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Bcsstm22", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -27074,7 +27074,7 @@ def Qa8fm(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Qa8fm", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -27140,7 +27140,7 @@ def SocfbWellesley22(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbWellesley22", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -27185,7 +27185,7 @@ def Halfb(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Halfb", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -27230,7 +27230,7 @@ def ComAmazon(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "ComAmazon", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -27275,7 +27275,7 @@ def RoadRoadUsa(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "RoadRoadUsa", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -27341,7 +27341,7 @@ def SocfbUconn(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbUconn", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -27386,7 +27386,7 @@ def EmailEnronOnly(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "EmailEnronOnly", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -27431,7 +27431,7 @@ def UcidataGama(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "UcidataGama", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -27476,7 +27476,7 @@ def Dd68(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Dd68", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -27521,7 +27521,7 @@ def Sw10050d1Trial3(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw10050d1Trial3", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -27587,7 +27587,7 @@ def SocfbUga50(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbUga50", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -27632,7 +27632,7 @@ def Pkustk06(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Pkustk06", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -27677,7 +27677,7 @@ def Cl1000001d9Trial1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cl1000001d9Trial1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -27722,7 +27722,7 @@ def Sw10050d2Trial2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw10050d2Trial2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -27775,7 +27775,7 @@ def SocYoutube(
 	        year = {2007}}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocYoutube", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -27820,7 +27820,7 @@ def Stufe10(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Stufe10", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -27865,7 +27865,7 @@ def Sw100060d1Trial2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw100060d1Trial2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -27910,7 +27910,7 @@ def Cl10000002d0Trial3(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cl10000002d0Trial3", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -27955,7 +27955,7 @@ def Sphere2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sphere2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -28000,7 +28000,7 @@ def Enzymes118(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Enzymes118", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -28066,7 +28066,7 @@ def SocfbIndiana(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbIndiana", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -28111,7 +28111,7 @@ def Opt1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Opt1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -28156,7 +28156,7 @@ def G40(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "G40", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -28201,7 +28201,7 @@ def Sw100060d2Trial3(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw100060d2Trial3", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -28246,7 +28246,7 @@ def G50(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "G50", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -28291,7 +28291,7 @@ def EconPsmigr2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "EconPsmigr2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -28336,7 +28336,7 @@ def Sw100050d3Trial2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw100050d3Trial2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -28402,7 +28402,7 @@ def SocfbMit8(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbMit8", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -28447,7 +28447,7 @@ def P2pGnutella04(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "P2pGnutella04", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -28492,7 +28492,7 @@ def DblpAuthor(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "DblpAuthor", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -28537,7 +28537,7 @@ def Citationciteseer(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Citationciteseer", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -28582,7 +28582,7 @@ def Cl10001d7Trial1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cl10001d7Trial1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -28627,7 +28627,7 @@ def Sw10060d3Trial3(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw10060d3Trial3", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -28672,7 +28672,7 @@ def Sw1000040d3Trial3(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw1000040d3Trial3", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -28723,7 +28723,7 @@ def InfOpenflights(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "InfOpenflights", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -28768,7 +28768,7 @@ def NR08blocks(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "NR08blocks", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -28813,7 +28813,7 @@ def Ig513(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Ig513", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -28858,7 +28858,7 @@ def Channel500x100x100B050(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Channel500x100x100B050", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -28917,7 +28917,7 @@ def TechAsCaida2007(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "TechAsCaida2007", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -28962,7 +28962,7 @@ def Sw1000030d2Trial3(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw1000030d2Trial3", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -29007,7 +29007,7 @@ def Twitter(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Twitter", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -29065,7 +29065,7 @@ def Johnson824(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Johnson824", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -29110,7 +29110,7 @@ def Cl10000001d8Trial3(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cl10000001d8Trial3", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -29155,7 +29155,7 @@ def Sw1000030d1Trial2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw1000030d1Trial2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -29200,7 +29200,7 @@ def Copter1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Copter1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -29258,7 +29258,7 @@ def PHat15001(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "PHat15001", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -29303,7 +29303,7 @@ def Tf11(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Tf11", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -29348,7 +29348,7 @@ def Dixmaanl(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Dixmaanl", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -29403,7 +29403,7 @@ def BioHumanGene2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "BioHumanGene2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -29448,7 +29448,7 @@ def FsFa(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "FsFa", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -29493,7 +29493,7 @@ def Cl1000002d1Trial1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cl1000002d1Trial1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -29538,7 +29538,7 @@ def Wave(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Wave", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -29583,7 +29583,7 @@ def Gupta3(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Gupta3", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -29628,7 +29628,7 @@ def Jgl011(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Jgl011", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -29673,7 +29673,7 @@ def Dd242(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Dd242", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -29725,7 +29725,7 @@ def FeSphere(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "FeSphere", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -29770,7 +29770,7 @@ def Bcsstm08(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Bcsstm08", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -29836,7 +29836,7 @@ def SocfbNipsEgo(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbNipsEgo", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -29881,7 +29881,7 @@ def Net41(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Net41", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -29926,7 +29926,7 @@ def TechArenasJazz(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "TechArenasJazz", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -29971,7 +29971,7 @@ def Cl10001d8Trial3(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cl10001d8Trial3", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -30037,7 +30037,7 @@ def SocfbVermont70(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbVermont70", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -30089,7 +30089,7 @@ def SocDigg(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocDigg", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -30134,7 +30134,7 @@ def Sw10040d3Trial1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw10040d3Trial1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -30179,7 +30179,7 @@ def Uk2005(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Uk2005", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -30235,7 +30235,7 @@ def InfPower(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "InfPower", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -30280,7 +30280,7 @@ def Sw1000060d3Trial1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw1000060d3Trial1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -30342,7 +30342,7 @@ def WebUk2005All(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "WebUk2005All", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -30387,7 +30387,7 @@ def Lock1074(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Lock1074", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -30432,7 +30432,7 @@ def PetsterFriendshipsHamster(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "PetsterFriendshipsHamster", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -30498,7 +30498,7 @@ def SocfbRutgers89(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbRutgers89", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -30543,7 +30543,7 @@ def Cl100002d1Trial3(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cl100002d1Trial3", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -30588,7 +30588,7 @@ def RoadAsiaOsm(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "RoadAsiaOsm", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -30633,7 +30633,7 @@ def Sw10030d2Trial1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw10030d2Trial1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -30691,7 +30691,7 @@ def CFat50010(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "CFat50010", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -30749,7 +30749,7 @@ def Brock2002(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Brock2002", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -30794,7 +30794,7 @@ def Tf14(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Tf14", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -30839,7 +30839,7 @@ def Rajat06(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Rajat06", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -30884,7 +30884,7 @@ def Ig516(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Ig516", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -30929,7 +30929,7 @@ def As22july06(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "As22july06", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -30987,7 +30987,7 @@ def CFat2005(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "CFat2005", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -31032,7 +31032,7 @@ def WebkbWisc(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "WebkbWisc", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -31077,7 +31077,7 @@ def Cl10000001d7Trial1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cl10000001d7Trial1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -31143,7 +31143,7 @@ def SocfbUcsc68(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbUcsc68", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -31188,7 +31188,7 @@ def Shock9(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Shock9", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -31246,7 +31246,7 @@ def San200091(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "San200091", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -31291,7 +31291,7 @@ def CondMat(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "CondMat", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -31336,7 +31336,7 @@ def Cities(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cities", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -31381,7 +31381,7 @@ def Rail4284(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Rail4284", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -31447,7 +31447,7 @@ def SocfbYale4(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbYale4", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -31492,7 +31492,7 @@ def Lshp3466(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Lshp3466", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -31537,7 +31537,7 @@ def S4dkt3m2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "S4dkt3m2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -31582,7 +31582,7 @@ def Debr(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Debr", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -31627,7 +31627,7 @@ def Bcspwr04(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Bcspwr04", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -31672,7 +31672,7 @@ def G37(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "G37", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -31717,7 +31717,7 @@ def G27(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "G27", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -31762,7 +31762,7 @@ def Sw100030d3Trial1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw100030d3Trial1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -31807,7 +31807,7 @@ def MaayanStelzl(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "MaayanStelzl", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -31852,7 +31852,7 @@ def Struct4(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Struct4", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -31918,7 +31918,7 @@ def SocfbMich67(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbMich67", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -31963,7 +31963,7 @@ def Cl10002d0Trial3(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cl10002d0Trial3", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -32008,7 +32008,7 @@ def Kleemin(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Kleemin", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -32053,7 +32053,7 @@ def Jagmesh9(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Jagmesh9", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -32098,7 +32098,7 @@ def Lp1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Lp1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -32143,7 +32143,7 @@ def Trec7(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Trec7", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -32201,7 +32201,7 @@ def PHat7003(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "PHat7003", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -32246,7 +32246,7 @@ def AffWikiEnArticleCat(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "AffWikiEnArticleCat", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -32291,7 +32291,7 @@ def Cage4(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cage4", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -32336,7 +32336,7 @@ def Sw1000050d1Trial1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw1000050d1Trial1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -32402,7 +32402,7 @@ def SocfbUf(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbUf", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -32447,7 +32447,7 @@ def Erdos971(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Erdos971", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -32492,7 +32492,7 @@ def Pkustk03(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Pkustk03", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -32537,7 +32537,7 @@ def Pkustk13(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Pkustk13", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -32589,7 +32589,7 @@ def ScNasasrb(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "ScNasasrb", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -32634,7 +32634,7 @@ def G55(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "G55", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -32679,7 +32679,7 @@ def G45(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "G45", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -32724,7 +32724,7 @@ def California(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "California", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -32769,7 +32769,7 @@ def RoadLuxembourgOsm(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "RoadLuxembourgOsm", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -32814,7 +32814,7 @@ def Cl100001d9Trial3(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cl100001d9Trial3", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -32859,7 +32859,7 @@ def Sw100040d2Trial1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw100040d2Trial1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -32912,7 +32912,7 @@ def CaCsphd(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "CaCsphd", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -32957,7 +32957,7 @@ def UcidataZachary(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "UcidataZachary", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -33002,7 +33002,7 @@ def Cl1000002d0Trial1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cl1000002d0Trial1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -33047,7 +33047,7 @@ def SocPhysicians(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocPhysicians", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -33092,7 +33092,7 @@ def SocLivejournal1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocLivejournal1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -33137,7 +33137,7 @@ def Crystm02(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Crystm02", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -33182,7 +33182,7 @@ def G63(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "G63", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -33227,7 +33227,7 @@ def NR130bit(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "NR130bit", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -33293,7 +33293,7 @@ def SocfbGwu54(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbGwu54", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -33338,7 +33338,7 @@ def Dblp2010(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Dblp2010", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -33396,7 +33396,7 @@ def Hamming64(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Hamming64", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -33441,7 +33441,7 @@ def Amazon0601(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Amazon0601", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -33486,7 +33486,7 @@ def SocLocBrightkite(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocLocBrightkite", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -33531,7 +33531,7 @@ def EmailEnronLarge(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "EmailEnronLarge", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -33589,7 +33589,7 @@ def C40005(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "C40005", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -33634,7 +33634,7 @@ def Sw1000030d3Trial3(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw1000030d3Trial3", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -33688,7 +33688,7 @@ def SocThemarker(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocThemarker", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -33744,7 +33744,7 @@ def InfUsair97(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "InfUsair97", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -33789,7 +33789,7 @@ def RoadRoadnetPa(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "RoadRoadnetPa", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -33834,7 +33834,7 @@ def Pli(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Pli", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -33879,7 +33879,7 @@ def MaayanVidal(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "MaayanVidal", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -33945,7 +33945,7 @@ def SocfbUcla(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbUcla", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -33999,7 +33999,7 @@ def SocTribes(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocTribes", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -34044,7 +34044,7 @@ def Cl10000001d9Trial3(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cl10000001d9Trial3", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -34110,7 +34110,7 @@ def SocfbAuburn71(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbAuburn71", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -34155,7 +34155,7 @@ def Webbase1m(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Webbase1m", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -34200,7 +34200,7 @@ def Amazon0505(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Amazon0505", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -34245,7 +34245,7 @@ def Sw1000040d2Trial3(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw1000040d2Trial3", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -34290,7 +34290,7 @@ def P2pGnutella08(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "P2pGnutella08", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -34335,7 +34335,7 @@ def Sw10060d2Trial3(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw10060d2Trial3", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -34380,7 +34380,7 @@ def Bcsstm11(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Bcsstm11", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -34434,7 +34434,7 @@ def CoPapersDblp(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "CoPapersDblp", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -34484,7 +34484,7 @@ def SfhhConfSensor(
 	        url={http://www.sociopatterns.org/datasets/}}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SfhhConfSensor", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -34529,7 +34529,7 @@ def Sw1000040d1Trial2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw1000040d1Trial2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -34574,7 +34574,7 @@ def Cage13(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cage13", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -34619,7 +34619,7 @@ def Enzymes296(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Enzymes296", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -34664,7 +34664,7 @@ def Sw10060d1Trial2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw10060d1Trial2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -34709,7 +34709,7 @@ def Epinions(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Epinions", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -34754,7 +34754,7 @@ def Ig56(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Ig56", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -34799,7 +34799,7 @@ def Rgg010(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Rgg010", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -34865,7 +34865,7 @@ def SocfbTennessee95(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbTennessee95", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -34910,7 +34910,7 @@ def Sw100050d2Trial2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw100050d2Trial2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -34955,7 +34955,7 @@ def Coater1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Coater1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -35000,7 +35000,7 @@ def Sw100050d1Trial3(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw100050d1Trial3", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -35045,7 +35045,7 @@ def FlickrGroupmemberships(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "FlickrGroupmemberships", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -35090,7 +35090,7 @@ def Cl10000002d1Trial3(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cl10000002d1Trial3", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -35135,7 +35135,7 @@ def Lesmis(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Lesmis", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -35197,7 +35197,7 @@ def SocEpinions(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocEpinions", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -35242,7 +35242,7 @@ def G3rmt3m3(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "G3rmt3m3", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -35292,7 +35292,7 @@ def InfectDublin(
 	        url={http://www.sociopatterns.org/datasets/}}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "InfectDublin", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -35337,7 +35337,7 @@ def Sw100060d3Trial3(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw100060d3Trial3", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -35389,7 +35389,7 @@ def FeOcean(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "FeOcean", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -35447,7 +35447,7 @@ def Gen200P0955(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Gen200P0955", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -35492,7 +35492,7 @@ def G3(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "G3", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -35537,7 +35537,7 @@ def Usair97(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Usair97", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -35595,7 +35595,7 @@ def C2509(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "C2509", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -35640,7 +35640,7 @@ def Cl100001d7Trial1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cl100001d7Trial1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -35706,7 +35706,7 @@ def SocfbTemple83(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbTemple83", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -35764,7 +35764,7 @@ def Sanr40005(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sanr40005", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -35809,7 +35809,7 @@ def Lederberg(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Lederberg", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -35854,7 +35854,7 @@ def Lshp1882(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Lshp1882", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -35899,7 +35899,7 @@ def Lock2232(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Lock2232", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -35952,7 +35952,7 @@ def WebHudong(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "WebHudong", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -35997,7 +35997,7 @@ def Cl1000001d8Trial1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cl1000001d8Trial1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -36042,7 +36042,7 @@ def Sw10050d3Trial2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw10050d3Trial2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -36087,7 +36087,7 @@ def Internet(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Internet", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -36132,7 +36132,7 @@ def DbpediaProducer(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "DbpediaProducer", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -36183,7 +36183,7 @@ def SocHamsterster(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocHamsterster", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -36228,7 +36228,7 @@ def Net125(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Net125", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -36294,7 +36294,7 @@ def SocfbUciUni(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbUciUni", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -36339,7 +36339,7 @@ def Coauthorsdblp(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Coauthorsdblp", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -36397,7 +36397,7 @@ def Keller6(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Keller6", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -36453,7 +36453,7 @@ def FbMessages(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "FbMessages", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -36519,7 +36519,7 @@ def SocfbVassar85(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbVassar85", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -36571,7 +36571,7 @@ def SocAnybeat(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocAnybeat", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -36616,7 +36616,7 @@ def Brack2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Brack2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -36682,7 +36682,7 @@ def SocfbTrinity100(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbTrinity100", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -36727,7 +36727,7 @@ def Aa4(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Aa4", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -36781,7 +36781,7 @@ def RtHiggs(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "RtHiggs", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -36826,7 +36826,7 @@ def Ex1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Ex1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -36871,7 +36871,7 @@ def Sw1000030d3Trial2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw1000030d3Trial2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -36916,7 +36916,7 @@ def SocSlashdotZoo(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocSlashdotZoo", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -36974,7 +36974,7 @@ def San400091(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "San400091", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -37032,7 +37032,7 @@ def PHat5001(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "PHat5001", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -37098,7 +37098,7 @@ def SocfbPrinceton12(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbPrinceton12", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -37143,7 +37143,7 @@ def Cl10000001d9Trial2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cl10000001d9Trial2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -37188,7 +37188,7 @@ def ContiguousUsa(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "ContiguousUsa", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -37233,7 +37233,7 @@ def Cegb3024(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cegb3024", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -37278,7 +37278,7 @@ def CitPatents(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "CitPatents", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -37334,7 +37334,7 @@ def BioCeGn(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "BioCeGn", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -37392,7 +37392,7 @@ def San1000(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "San1000", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -37458,7 +37458,7 @@ def SocfbAAnon(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbAAnon", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -37503,7 +37503,7 @@ def Lshp2614(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Lshp2614", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -37548,7 +37548,7 @@ def G62(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "G62", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -37593,7 +37593,7 @@ def Crystm03(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Crystm03", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -37659,7 +37659,7 @@ def SocfbSyracuse56(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbSyracuse56", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -37704,7 +37704,7 @@ def Sw100050d2Trial3(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw100050d2Trial3", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -37749,7 +37749,7 @@ def G10(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "G10", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -37794,7 +37794,7 @@ def Divorce(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Divorce", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -37839,7 +37839,7 @@ def RoadChesapeake(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "RoadChesapeake", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -37884,7 +37884,7 @@ def Curtis54(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Curtis54", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -37929,7 +37929,7 @@ def Ig57(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Ig57", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -37974,7 +37974,7 @@ def Flickredges(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Flickredges", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -38019,7 +38019,7 @@ def Sw100050d1Trial2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw100050d1Trial2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -38064,7 +38064,7 @@ def SocSlashdot0811(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocSlashdot0811", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -38109,7 +38109,7 @@ def Linux(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Linux", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -38154,7 +38154,7 @@ def Sw10060d2Trial2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw10060d2Trial2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -38199,7 +38199,7 @@ def P2pGnutella09(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "P2pGnutella09", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -38244,7 +38244,7 @@ def Sw1000040d2Trial2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw1000040d2Trial2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -38289,7 +38289,7 @@ def Sw10060d1Trial3(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw10060d1Trial3", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -38334,7 +38334,7 @@ def Enzymes297(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Enzymes297", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -38379,7 +38379,7 @@ def Cage12(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cage12", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -38432,7 +38432,7 @@ def AffOrkutUser2groups(
 	        year = {2007}}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "AffOrkutUser2groups", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -38477,7 +38477,7 @@ def Sw1000040d1Trial3(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw1000040d1Trial3", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -38534,7 +38534,7 @@ def BNMouseRetina(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "BNMouseRetina", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -38579,7 +38579,7 @@ def LivejournalGroupmemberships(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "LivejournalGroupmemberships", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -38641,7 +38641,7 @@ def WebIt2004(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "WebIt2004", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -38707,7 +38707,7 @@ def SocfbUc64(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbUc64", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -38752,7 +38752,7 @@ def G2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "G2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -38808,7 +38808,7 @@ def BioDmCx(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "BioDmCx", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -38853,7 +38853,7 @@ def Sw10050d3Trial3(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw10050d3Trial3", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -38908,7 +38908,7 @@ def CaDblp2010(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "CaDblp2010", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -38974,7 +38974,7 @@ def SocfbPepperdine86(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbPepperdine86", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -39019,7 +39019,7 @@ def WikiEnCat(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "WikiEnCat", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -39064,7 +39064,7 @@ def Reuters911(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Reuters911", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -39109,7 +39109,7 @@ def Cl10000002d1Trial2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cl10000002d1Trial2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -39162,7 +39162,7 @@ def WebWikiChInternal(
 	        publisher={Springer}}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "WebWikiChInternal", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -39220,7 +39220,7 @@ def Hamming102(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Hamming102", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -39265,7 +39265,7 @@ def Crew1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Crew1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -39310,7 +39310,7 @@ def Eris1176(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Eris1176", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -39376,7 +39376,7 @@ def SocfbUcsb37(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbUcsb37", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -39433,7 +39433,7 @@ def BNFlyDrosophilaMedulla(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "BNFlyDrosophilaMedulla", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -39478,7 +39478,7 @@ def Sw100060d3Trial2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw100060d3Trial2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -39536,7 +39536,7 @@ def Gen200P0944(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Gen200P0944", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -39581,7 +39581,7 @@ def Oregon1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Oregon1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -39626,7 +39626,7 @@ def Ins2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Ins2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -39671,7 +39671,7 @@ def Sk2005(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sk2005", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -39716,7 +39716,7 @@ def Aa5(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Aa5", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -39761,7 +39761,7 @@ def Jagmesh1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Jagmesh1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -39815,7 +39815,7 @@ def SocGowalla(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocGowalla", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -39860,7 +39860,7 @@ def Tomographic1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Tomographic1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -39905,7 +39905,7 @@ def Jazz(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Jazz", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -39958,7 +39958,7 @@ def CaImdb(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "CaImdb", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -40003,7 +40003,7 @@ def Lshp3025(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Lshp3025", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -40048,7 +40048,7 @@ def Dd687(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Dd687", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -40093,7 +40093,7 @@ def InfContiguousUsa(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "InfContiguousUsa", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -40138,7 +40138,7 @@ def Nw14(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Nw14", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -40183,7 +40183,7 @@ def ArenasJazz(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "ArenasJazz", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -40228,7 +40228,7 @@ def Cyl6(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cyl6", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -40273,7 +40273,7 @@ def Scimet(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Scimet", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -40339,7 +40339,7 @@ def SocfbSmith60(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbSmith60", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -40397,7 +40397,7 @@ def Gen400P0955(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Gen400P0955", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -40442,7 +40442,7 @@ def RoadUsroads48(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "RoadUsroads48", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -40487,7 +40487,7 @@ def Bcsstm19(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Bcsstm19", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -40532,7 +40532,7 @@ def Net50(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Net50", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -40577,7 +40577,7 @@ def Bcsstm09(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Bcsstm09", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -40622,7 +40622,7 @@ def M14b(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "M14b", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -40667,7 +40667,7 @@ def Mip1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Mip1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -40712,7 +40712,7 @@ def Ford1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Ford1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -40757,7 +40757,7 @@ def Dd21(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Dd21", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -40812,7 +40812,7 @@ def BioDmela(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "BioDmela", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -40857,7 +40857,7 @@ def Smagri(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Smagri", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -40902,7 +40902,7 @@ def Cl10001d8Trial2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cl10001d8Trial2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -40947,7 +40947,7 @@ def Harvard500(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Harvard500", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -40992,7 +40992,7 @@ def Gent113(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Gent113", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -41037,7 +41037,7 @@ def Dd349(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Dd349", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -41082,7 +41082,7 @@ def Aa03(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Aa03", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -41127,7 +41127,7 @@ def TechAs22july06(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "TechAs22july06", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -41185,7 +41185,7 @@ def Sanr20007(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sanr20007", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -41243,7 +41243,7 @@ def Brock2003(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Brock2003", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -41288,7 +41288,7 @@ def Enzymes123(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Enzymes123", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -41333,7 +41333,7 @@ def Tf15(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Tf15", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -41389,7 +41389,7 @@ def BioScLc(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "BioScLc", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -41434,7 +41434,7 @@ def SocSlashdot0902(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocSlashdot0902", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -41479,7 +41479,7 @@ def Cl100002d1Trial2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cl100002d1Trial2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -41531,7 +41531,7 @@ def Wing(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Wing", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -41576,7 +41576,7 @@ def Sw10030d1Trial1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw10030d1Trial1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -41621,7 +41621,7 @@ def NR192bit(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "NR192bit", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -41666,7 +41666,7 @@ def Ig517(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Ig517", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -41711,7 +41711,7 @@ def Rajat07(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Rajat07", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -41756,7 +41756,7 @@ def Eu2005(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Eu2005", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -41801,7 +41801,7 @@ def Jagmesh8(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Jagmesh8", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -41859,7 +41859,7 @@ def Brock8001(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Brock8001", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -41904,7 +41904,7 @@ def Erdos02(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Erdos02", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -41958,7 +41958,7 @@ def CoPapersCiteseer(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "CoPapersCiteseer", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -42003,7 +42003,7 @@ def Cl10002d0Trial2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cl10002d0Trial2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -42048,7 +42048,7 @@ def Bcsstm26(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Bcsstm26", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -42093,7 +42093,7 @@ def Trec6(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Trec6", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -42144,7 +42144,7 @@ def TechAsSkitter(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "TechAsSkitter", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -42206,7 +42206,7 @@ def WebArabic2005(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "WebArabic2005", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -42251,7 +42251,7 @@ def CitDblp(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "CitDblp", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -42296,7 +42296,7 @@ def WikiTalk(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "WikiTalk", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -42341,7 +42341,7 @@ def Lshp1009(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Lshp1009", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -42407,7 +42407,7 @@ def SocfbLehigh96(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbLehigh96", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -42452,7 +42452,7 @@ def AffDbpediaUsers2country(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "AffDbpediaUsers2country", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -42518,7 +42518,7 @@ def SocfbTulane29(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbTulane29", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -42576,7 +42576,7 @@ def MannA45(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "MannA45", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -42621,7 +42621,7 @@ def G26(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "G26", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -42666,7 +42666,7 @@ def NR598a(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "NR598a", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -42711,7 +42711,7 @@ def DbpediaAll(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "DbpediaAll", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -42756,7 +42756,7 @@ def Bcspwr05(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Bcspwr05", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -42801,7 +42801,7 @@ def Cegb3306(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cegb3306", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -42846,7 +42846,7 @@ def G36(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "G36", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -42891,7 +42891,7 @@ def Pf2177(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Pf2177", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -42949,7 +42949,7 @@ def MannA27(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "MannA27", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -42994,7 +42994,7 @@ def SocLivejournal07(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocLivejournal07", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -43060,7 +43060,7 @@ def SocfbGeorgetown15(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbGeorgetown15", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -43105,7 +43105,7 @@ def Sw100040d1Trial1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw100040d1Trial1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -43150,7 +43150,7 @@ def G44(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "G44", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -43195,7 +43195,7 @@ def G54(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "G54", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -43240,7 +43240,7 @@ def Odlis(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Odlis", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -43285,7 +43285,7 @@ def Cl100001d9Trial2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cl100001d9Trial2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -43330,7 +43330,7 @@ def Cage5(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cage5", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -43388,7 +43388,7 @@ def PHat7002(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "PHat7002", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -43433,7 +43433,7 @@ def DbpediaStarring(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "DbpediaStarring", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -43478,7 +43478,7 @@ def Sw1000050d2Trial1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw1000050d2Trial1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -43530,7 +43530,7 @@ def WebSpam(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "WebSpam", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -43575,7 +43575,7 @@ def Pkustk12(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Pkustk12", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -43628,7 +43628,7 @@ def WebBaiduBaike(
 	        publisher={Springer}}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "WebBaiduBaike", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -43673,7 +43673,7 @@ def Pkustk02(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Pkustk02", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -43725,7 +43725,7 @@ def WebClueweb09(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "WebClueweb09", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -43778,7 +43778,7 @@ def WebCc12Payleveldomain(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "WebCc12Payleveldomain", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -43844,7 +43844,7 @@ def SocfbBingham82(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbBingham82", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -43896,7 +43896,7 @@ def BioYeast(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "BioYeast", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -43941,7 +43941,7 @@ def CiteulikeUi(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "CiteulikeUi", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -43986,7 +43986,7 @@ def CiteulikeTi(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "CiteulikeTi", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -44031,7 +44031,7 @@ def Lpl1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Lpl1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -44087,7 +44087,7 @@ def BioScGt(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "BioScGt", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -44132,7 +44132,7 @@ def Sw100050d2Trial1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw100050d2Trial1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -44177,7 +44177,7 @@ def Coater2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Coater2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -44227,7 +44227,7 @@ def CopresenceLyonschool(
 	        url={http://www.sociopatterns.org/datasets/}}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "CopresenceLyonschool", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -44272,7 +44272,7 @@ def Cage10(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cage10", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -44317,7 +44317,7 @@ def Sw1000040d1Trial1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw1000040d1Trial1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -44362,7 +44362,7 @@ def Enzymes295(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Enzymes295", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -44407,7 +44407,7 @@ def Sw10060d1Trial1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw10060d1Trial1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -44452,7 +44452,7 @@ def CaHepph(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "CaHepph", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -44514,7 +44514,7 @@ def WebWebbase2001All(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "WebWebbase2001All", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -44559,7 +44559,7 @@ def Bcsstm02(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Bcsstm02", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -44604,7 +44604,7 @@ def NR176bit(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "NR176bit", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -44665,7 +44665,7 @@ def EmailEnron(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "EmailEnron", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -44723,7 +44723,7 @@ def PHat5003(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "PHat5003", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -44773,7 +44773,7 @@ def PrimarySchoolProximity(
 	        url={http://www.sociopatterns.org/datasets/}}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "PrimarySchoolProximity", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -44839,7 +44839,7 @@ def SocfbWilliam77(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbWilliam77", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -44884,7 +44884,7 @@ def Air02(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Air02", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -44950,7 +44950,7 @@ def SocfbUmass92(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbUmass92", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -44995,7 +44995,7 @@ def Minnesota(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Minnesota", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -45040,7 +45040,7 @@ def Smallw(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Smallw", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -45085,7 +45085,7 @@ def Crystm01(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Crystm01", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -45130,7 +45130,7 @@ def OpsahlOpenflights(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "OpsahlOpenflights", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -45175,7 +45175,7 @@ def G60(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "G60", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -45220,7 +45220,7 @@ def Friendster(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Friendster", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -45265,7 +45265,7 @@ def LivejournalLinks(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "LivejournalLinks", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -45316,7 +45316,7 @@ def SocCatster(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocCatster", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -45361,7 +45361,7 @@ def L(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "L", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -45406,7 +45406,7 @@ def Cl1000002d0Trial2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cl1000002d0Trial2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -45451,7 +45451,7 @@ def Livejournal(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Livejournal", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -45496,7 +45496,7 @@ def P2pGnutella24(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "P2pGnutella24", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -45541,7 +45541,7 @@ def Ex2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Ex2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -45586,7 +45586,7 @@ def T03314l(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "T03314l", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -45631,7 +45631,7 @@ def Enron(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Enron", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -45676,7 +45676,7 @@ def Jagmesh3(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Jagmesh3", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -45742,7 +45742,7 @@ def SocfbMississippi66(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbMississippi66", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -45800,7 +45800,7 @@ def Keller5(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Keller5", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -45845,7 +45845,7 @@ def Csphd(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Csphd", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -45890,7 +45890,7 @@ def BioGridYeast(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "BioGridYeast", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -45935,7 +45935,7 @@ def TechIp(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "TechIp", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -45993,7 +45993,7 @@ def C1259(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "C1259", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -46059,7 +46059,7 @@ def SocfbMiddlebury45(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbMiddlebury45", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -46111,7 +46111,7 @@ def SocLivemocha(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocLivemocha", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -46156,7 +46156,7 @@ def Trec14(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Trec14", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -46206,7 +46206,7 @@ def InfectHyper(
 	        url={http://www.sociopatterns.org/datasets/}}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "InfectHyper", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -46251,7 +46251,7 @@ def NR144(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "NR144", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -46296,7 +46296,7 @@ def Cl1000001d8Trial2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cl1000001d8Trial2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -46341,7 +46341,7 @@ def Sw10050d3Trial1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw10050d3Trial1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -46396,7 +46396,7 @@ def CaDblp2012(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "CaDblp2012", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -46446,7 +46446,7 @@ def CopresenceLh10(
 	        url={http://www.sociopatterns.org/datasets/}}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "CopresenceLh10", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -46491,7 +46491,7 @@ def Ash219(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Ash219", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -46536,7 +46536,7 @@ def Cl100001d7Trial2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cl100001d7Trial2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -46590,7 +46590,7 @@ def SocWikiTalkDir(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocWikiTalkDir", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -46635,7 +46635,7 @@ def L9(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "L9", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -46680,7 +46680,7 @@ def Dbpedia(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Dbpedia", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -46725,7 +46725,7 @@ def Pkustk09(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Pkustk09", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -46770,7 +46770,7 @@ def CaOpsahlCollaboration(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "CaOpsahlCollaboration", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -46815,7 +46815,7 @@ def Crplat2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Crplat2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -46860,7 +46860,7 @@ def Dd6(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Dd6", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -46905,7 +46905,7 @@ def Eat(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Eat", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -46950,7 +46950,7 @@ def EmailDncCorecipient(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "EmailDncCorecipient", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -46995,7 +46995,7 @@ def Aa01(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Aa01", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -47040,7 +47040,7 @@ def Adaptive(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Adaptive", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -47085,7 +47085,7 @@ def Cl10000001d7Trial2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cl10000001d7Trial2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -47141,7 +47141,7 @@ def BioHsHt(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "BioHsHt", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -47186,7 +47186,7 @@ def RoadBelgiumOsm(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "RoadBelgiumOsm", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -47231,7 +47231,7 @@ def Ig515(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Ig515", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -47292,7 +47292,7 @@ def CaCiteseer(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "CaCiteseer", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -47337,7 +47337,7 @@ def Sw10030d1Trial3(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw10030d1Trial3", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -47382,7 +47382,7 @@ def SocBlogcatalogAsu(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocBlogcatalogAsu", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -47427,7 +47427,7 @@ def ComDblp(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "ComDblp", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -47472,7 +47472,7 @@ def Sw10030d2Trial2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw10030d2Trial2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -47517,7 +47517,7 @@ def Tf17(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Tf17", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -47567,7 +47567,7 @@ def Brock2001(
 	        note={http://dimacs.rutgers.edu/Challenges/}}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Brock2001", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -47612,7 +47612,7 @@ def Net100(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Net100", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -47670,7 +47670,7 @@ def San400051(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "San400051", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -47715,7 +47715,7 @@ def Rw5151(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Rw5151", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -47760,7 +47760,7 @@ def EgoFacebook(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "EgoFacebook", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -47826,7 +47826,7 @@ def SocfbSwarthmore42(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbSwarthmore42", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -47871,7 +47871,7 @@ def Sw10040d3Trial2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw10040d3Trial2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -47924,7 +47924,7 @@ def WebBaiduBaikeRelated(
 	        publisher={Springer}}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "WebBaiduBaikeRelated", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -47977,7 +47977,7 @@ def SocOrkutDir(
 	        year = {2007}}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocOrkutDir", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -48022,7 +48022,7 @@ def Sw1000060d3Trial2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw1000060d3Trial2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -48078,7 +48078,7 @@ def WebGoogle(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "WebGoogle", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -48123,7 +48123,7 @@ def FlickrLinks(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "FlickrLinks", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -48168,7 +48168,7 @@ def BioGridPlant(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "BioGridPlant", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -48213,7 +48213,7 @@ def Ukerbe1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Ukerbe1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -48279,7 +48279,7 @@ def SocfbUcsd34(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbUcsd34", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -48331,7 +48331,7 @@ def CitHepth2007(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "CitHepth2007", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -48376,7 +48376,7 @@ def Alemdar(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Alemdar", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -48429,7 +48429,7 @@ def SocYoutubeSnap(
 	        year = {2007}}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocYoutubeSnap", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -48474,7 +48474,7 @@ def Ragusa18(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Ragusa18", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -48530,7 +48530,7 @@ def BioWormnetV3Benchmark(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "BioWormnetV3Benchmark", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -48575,7 +48575,7 @@ def CondMat2003(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "CondMat2003", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -48641,7 +48641,7 @@ def SocfbWashu32(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbWashu32", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -48703,7 +48703,7 @@ def WebSk2005All(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "WebSk2005All", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -48748,7 +48748,7 @@ def Sw100040d2Trial2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw100040d2Trial2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -48806,7 +48806,7 @@ def C20005(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "C20005", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -48856,7 +48856,7 @@ def SocFriendster(
 	        note = {{https://archive.org/details/friendster-dataset-201107}}}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocFriendster", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -48912,7 +48912,7 @@ def BioCeHt(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "BioCeHt", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -48978,7 +48978,7 @@ def SocfbUconn91(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbUconn91", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -49023,7 +49023,7 @@ def G56(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "G56", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -49068,7 +49068,7 @@ def Trdheim(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Trdheim", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -49113,7 +49113,7 @@ def G9(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "G9", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -49158,7 +49158,7 @@ def G46(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "G46", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -49203,7 +49203,7 @@ def Sw100040d1Trial3(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw100040d1Trial3", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -49248,7 +49248,7 @@ def NR12month1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "NR12month1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -49293,7 +49293,7 @@ def Farm(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Farm", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -49338,7 +49338,7 @@ def Usroads(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Usroads", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -49383,7 +49383,7 @@ def Erdos972(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Erdos972", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -49428,7 +49428,7 @@ def HepThNew(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "HepThNew", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -49473,7 +49473,7 @@ def Cegb2919(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cegb2919", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -49531,7 +49531,7 @@ def BioDiseasome(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "BioDiseasome", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -49576,7 +49576,7 @@ def OrkutGroupmemberships(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "OrkutGroupmemberships", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -49621,7 +49621,7 @@ def Sw1000050d2Trial3(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw1000050d2Trial3", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -49666,7 +49666,7 @@ def Pkustk10(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Pkustk10", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -49711,7 +49711,7 @@ def Airfoil1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Airfoil1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -49773,7 +49773,7 @@ def WebIt2004All(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "WebIt2004All", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -49818,7 +49818,7 @@ def Sw1000050d1Trial2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw1000050d1Trial2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -49863,7 +49863,7 @@ def Cage7(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cage7", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -49927,7 +49927,7 @@ def TechRlCaida(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "TechRlCaida", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -49972,7 +49972,7 @@ def WebBerkstan(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "WebBerkstan", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -50017,7 +50017,7 @@ def Blckhole(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Blckhole", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -50062,7 +50062,7 @@ def Bcsstm24(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Bcsstm24", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -50107,7 +50107,7 @@ def Trec4(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Trec4", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -50152,7 +50152,7 @@ def Cora(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cora", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -50210,7 +50210,7 @@ def Brock8003(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Brock8003", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -50276,7 +50276,7 @@ def SocfbSimmons81(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbSimmons81", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -50321,7 +50321,7 @@ def Venturilevel3(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Venturilevel3", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -50377,7 +50377,7 @@ def BioDrCx(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "BioDrCx", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -50422,7 +50422,7 @@ def IpTrace(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "IpTrace", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -50467,7 +50467,7 @@ def Hugetrace00020(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Hugetrace00020", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -50533,7 +50533,7 @@ def SocfbCaltech36(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbCaltech36", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -50578,7 +50578,7 @@ def Bcspwr07(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Bcspwr07", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -50632,7 +50632,7 @@ def SocTwitterHiggs(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocTwitterHiggs", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -50677,7 +50677,7 @@ def Sw100030d3Trial2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw100030d3Trial2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -50743,7 +50743,7 @@ def SocfbBAnon(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbBAnon", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -50788,7 +50788,7 @@ def G24(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "G24", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -50833,7 +50833,7 @@ def CfinderGoogle(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "CfinderGoogle", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -50899,7 +50899,7 @@ def SocfbWesleyan43(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbWesleyan43", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -50957,7 +50957,7 @@ def San200092(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "San200092", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -51002,7 +51002,7 @@ def RoadRoadnetCa(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "RoadRoadnetCa", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -51057,7 +51057,7 @@ def BioMouseGene(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "BioMouseGene", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -51102,7 +51102,7 @@ def Sw10030d1Trial2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw10030d1Trial2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -51147,7 +51147,7 @@ def Ig514(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Ig514", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -51192,7 +51192,7 @@ def Tf16(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Tf16", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -51237,7 +51237,7 @@ def Fullb(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Fullb", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -51282,7 +51282,7 @@ def Sw10030d2Trial3(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw10030d2Trial3", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -51332,7 +51332,7 @@ def CopresenceInvs13(
 	        url={http://www.sociopatterns.org/datasets/}}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "CopresenceInvs13", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -51377,7 +51377,7 @@ def Cl100002d1Trial1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cl100002d1Trial1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -51443,7 +51443,7 @@ def SocfbBrandeis99(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbBrandeis99", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -51499,7 +51499,7 @@ def BioDmLc(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "BioDmLc", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -51544,7 +51544,7 @@ def Sls(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sls", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -51602,7 +51602,7 @@ def Johnson1624(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Johnson1624", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -51647,7 +51647,7 @@ def CiteulikeUt(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "CiteulikeUt", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -51692,7 +51692,7 @@ def Cl10000001d7Trial3(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cl10000001d7Trial3", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -51737,7 +51737,7 @@ def Amazon2008(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Amazon2008", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -51803,7 +51803,7 @@ def SocfbTexas84(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbTexas84", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -51848,7 +51848,7 @@ def DbpediaWriter(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "DbpediaWriter", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -51893,7 +51893,7 @@ def NR3dtube(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "NR3dtube", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -51938,7 +51938,7 @@ def Rw136(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Rw136", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -51983,7 +51983,7 @@ def Cl10001d8Trial1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cl10001d8Trial1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -52028,7 +52028,7 @@ def Cage(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cage", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -52078,7 +52078,7 @@ def HospitalWardProximity(
 	        url={http://www.sociopatterns.org/datasets/}}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "HospitalWardProximity", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -52144,7 +52144,7 @@ def SocfbDartmouth6(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbDartmouth6", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -52189,7 +52189,7 @@ def Ford2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Ford2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -52234,7 +52234,7 @@ def TechAs735(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "TechAs735", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -52279,7 +52279,7 @@ def MaayanPdzbase(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "MaayanPdzbase", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -52324,7 +52324,7 @@ def MaayanFoodweb(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "MaayanFoodweb", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -52369,7 +52369,7 @@ def Sw1000060d3Trial3(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw1000060d3Trial3", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -52435,7 +52435,7 @@ def SocfbUc33(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbUc33", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -52480,7 +52480,7 @@ def Sw10040d3Trial3(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw10040d3Trial3", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -52536,7 +52536,7 @@ def MiscLesmis(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "MiscLesmis", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -52597,7 +52597,7 @@ def BioCelegansneural(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "BioCelegansneural", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -52642,7 +52642,7 @@ def Orkut(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Orkut", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -52687,7 +52687,7 @@ def Pkustk11(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Pkustk11", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -52732,7 +52732,7 @@ def Sw1000050d2Trial2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw1000050d2Trial2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -52777,7 +52777,7 @@ def Pkustk01(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Pkustk01", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -52822,7 +52822,7 @@ def Cti(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cti", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -52867,7 +52867,7 @@ def Cage6(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cage6", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -52922,7 +52922,7 @@ def SocTwitter2010(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocTwitter2010", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -52967,7 +52967,7 @@ def Sw1000050d1Trial3(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw1000050d1Trial3", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -53022,7 +53022,7 @@ def TechRoutersRf(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "TechRoutersRf", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -53074,7 +53074,7 @@ def ScPwtk(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "ScPwtk", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -53132,7 +53132,7 @@ def PHat7001(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "PHat7001", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -53177,7 +53177,7 @@ def Power(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Power", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -53222,7 +53222,7 @@ def Citeseer(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Citeseer", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -53267,7 +53267,7 @@ def Sw100040d2Trial3(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw100040d2Trial3", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -53312,7 +53312,7 @@ def Cl100001d9Trial1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cl100001d9Trial1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -53357,7 +53357,7 @@ def G47(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "G47", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -53402,7 +53402,7 @@ def AvesWildbirdNetwork(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "AvesWildbirdNetwork", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -53447,7 +53447,7 @@ def Sw100040d1Trial2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw100040d1Trial2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -53492,7 +53492,7 @@ def G8(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "G8", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -53537,7 +53537,7 @@ def G25(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "G25", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -53582,7 +53582,7 @@ def Sw100030d3Trial3(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw100030d3Trial3", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -53627,7 +53627,7 @@ def WikisignedK2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "WikisignedK2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -53672,7 +53672,7 @@ def SocLjournal2008(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocLjournal2008", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -53717,7 +53717,7 @@ def G35(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "G35", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -53762,7 +53762,7 @@ def Bcspwr06(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Bcspwr06", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -53812,7 +53812,7 @@ def CopresenceSfhh(
 	        url={http://www.sociopatterns.org/datasets/}}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "CopresenceSfhh", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -53857,7 +53857,7 @@ def DbpediaLink(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "DbpediaLink", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -53902,7 +53902,7 @@ def Auto(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Auto", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -53960,7 +53960,7 @@ def San200093(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "San200093", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -54005,7 +54005,7 @@ def Hugetric00020(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Hugetric00020", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -54050,7 +54050,7 @@ def Trec5(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Trec5", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -54116,7 +54116,7 @@ def SocfbVanderbilt48(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbVanderbilt48", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -54161,7 +54161,7 @@ def Bcsstm25(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Bcsstm25", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -54206,7 +54206,7 @@ def NR162bit(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "NR162bit", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -54272,7 +54272,7 @@ def SocfbEmory27(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbEmory27", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -54338,7 +54338,7 @@ def SocfbUcf52(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbUcf52", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -54404,7 +54404,7 @@ def SocfbCal65(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbCal65", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -54449,7 +54449,7 @@ def Odepb400(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Odepb400", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -54494,7 +54494,7 @@ def TechArenasPgp(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "TechArenasPgp", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -54548,7 +54548,7 @@ def BioCelegansDir(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "BioCelegansDir", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -54593,7 +54593,7 @@ def Cl10002d0Trial1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cl10002d0Trial1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -54651,7 +54651,7 @@ def Brock8002(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Brock8002", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -54696,7 +54696,7 @@ def Cegb2802(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cegb2802", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -54748,7 +54748,7 @@ def SocFlixster(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocFlixster", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -54814,7 +54814,7 @@ def SocfbRice31(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbRice31", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -54859,7 +54859,7 @@ def Ash85(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Ash85", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -54925,7 +54925,7 @@ def SocfbPenn94(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbPenn94", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -54970,7 +54970,7 @@ def Cage11(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cage11", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -55015,7 +55015,7 @@ def Fa(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Fa", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -55060,7 +55060,7 @@ def Sw10060d2Trial1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw10060d2Trial1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -55105,7 +55105,7 @@ def Sw1000040d2Trial1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw1000040d2Trial1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -55150,7 +55150,7 @@ def GottronExcellent(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "GottronExcellent", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -55195,7 +55195,7 @@ def Sw100050d1Trial1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw100050d1Trial1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -55249,7 +55249,7 @@ def SocWikiVote(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocWikiVote", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -55294,7 +55294,7 @@ def VisualizeUs(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "VisualizeUs", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -55339,7 +55339,7 @@ def Pgpgiantcompo(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Pgpgiantcompo", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -55393,7 +55393,7 @@ def SocBrightkite(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocBrightkite", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -55458,7 +55458,7 @@ def EcoMangwet(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "EcoMangwet", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -55512,7 +55512,7 @@ def SocKarate(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocKarate", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -55557,7 +55557,7 @@ def M3plates(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "M3plates", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -55615,7 +55615,7 @@ def Brock4004(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Brock4004", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -55660,7 +55660,7 @@ def SocLivejournalUserGroups(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocLivejournalUserGroups", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -55713,7 +55713,7 @@ def SocStudentCoop(
 	        publisher={Springer}	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocStudentCoop", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -55758,7 +55758,7 @@ def G61(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "G61", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -55803,7 +55803,7 @@ def WbEdu(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "WbEdu", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -55848,7 +55848,7 @@ def Cl1000002d0Trial3(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cl1000002d0Trial3", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -55893,7 +55893,7 @@ def PetsterHamster(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "PetsterHamster", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -55945,7 +55945,7 @@ def ScRel9(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "ScRel9", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -56003,7 +56003,7 @@ def PHat5002(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "PHat5002", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -56048,7 +56048,7 @@ def Stufe(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Stufe", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -56093,7 +56093,7 @@ def Cl10000001d9Trial1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cl10000001d9Trial1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -56138,7 +56138,7 @@ def Polbooks(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Polbooks", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -56183,7 +56183,7 @@ def Ramage02(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Ramage02", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -56228,7 +56228,7 @@ def SocFlickrAsu(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocFlickrAsu", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -56273,7 +56273,7 @@ def Sw1000030d3Trial1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw1000030d3Trial1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -56328,7 +56328,7 @@ def CaHollywood2009(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "CaHollywood2009", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -56373,7 +56373,7 @@ def WebNotredame(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "WebNotredame", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -56431,7 +56431,7 @@ def CaMathscinet(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "CaMathscinet", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -56479,7 +56479,7 @@ def IMDB(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "IMDB", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -56524,7 +56524,7 @@ def Air03(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Air03", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -56586,7 +56586,7 @@ def WebWebbase2001(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "WebWebbase2001", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -56643,7 +56643,7 @@ def BNMacaqueRhesusBrain(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "BNMacaqueRhesusBrain", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -56688,7 +56688,7 @@ def LasagneSpanishbook(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "LasagneSpanishbook", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -56746,7 +56746,7 @@ def Keller4(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Keller4", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -56791,7 +56791,7 @@ def ProteinsAll(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "ProteinsAll", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -56849,7 +56849,7 @@ def CFat5005(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "CFat5005", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -56901,7 +56901,7 @@ def ScMsdoor(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "ScMsdoor", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -56962,7 +56962,7 @@ def TechWhois(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "TechWhois", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -57007,7 +57007,7 @@ def Lop163(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Lop163", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -57052,7 +57052,7 @@ def Net75(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Net75", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -57097,7 +57097,7 @@ def Adjnoun(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Adjnoun", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -57142,7 +57142,7 @@ def P2pGnutella25(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "P2pGnutella25", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -57208,7 +57208,7 @@ def SocfbVillanova62(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbVillanova62", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -57253,7 +57253,7 @@ def Sw1000060d3L5(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw1000060d3L5", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -57298,7 +57298,7 @@ def AstroPh(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "AstroPh", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -57343,7 +57343,7 @@ def Jagmesh2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Jagmesh2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -57388,7 +57388,7 @@ def Aa6(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Aa6", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -57433,7 +57433,7 @@ def Celegansneural(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Celegansneural", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -57491,7 +57491,7 @@ def Hamming82(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Hamming82", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -57536,7 +57536,7 @@ def PowerEris1176(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "PowerEris1176", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -57588,7 +57588,7 @@ def WebClueweb0950m(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "WebClueweb0950m", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -57633,7 +57633,7 @@ def Pkustk08(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Pkustk08", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -57678,7 +57678,7 @@ def Sw100060d3Trial1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sw100060d3Trial1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -57723,7 +57723,7 @@ def Oregon2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Oregon2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -57782,7 +57782,7 @@ def SocFlickr(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocFlickr", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -57827,7 +57827,7 @@ def EgoTwitter(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "EgoTwitter", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -57872,7 +57872,7 @@ def Fcondp2(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Fcondp2", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -57917,7 +57917,7 @@ def BioGridMouse(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "BioGridMouse", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -57962,7 +57962,7 @@ def Cl10000002d1Trial1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cl10000002d1Trial1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -58007,7 +58007,7 @@ def Kl02(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Kl02", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -58073,7 +58073,7 @@ def SocfbUillinois(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbUillinois", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -58139,7 +58139,7 @@ def SocfbUcla26(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbUcla26", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -58205,7 +58205,7 @@ def SocfbJmu79(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbJmu79", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -58250,7 +58250,7 @@ def Df2177(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Df2177", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -58312,7 +58312,7 @@ def WebUk2002All(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "WebUk2002All", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -58357,7 +58357,7 @@ def Uk(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Uk", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -58402,7 +58402,7 @@ def Cl1000001d8Trial3(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cl1000001d8Trial3", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -58468,7 +58468,7 @@ def SocfbAmherst41(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbAmherst41", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -58522,7 +58522,7 @@ def SocFlickrUnd(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocFlickrUnd", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -58588,7 +58588,7 @@ def SocfbHaverford76(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbHaverford76", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -58633,7 +58633,7 @@ def Libimseti(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Libimseti", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -58678,7 +58678,7 @@ def Cl100001d7Trial3(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cl100001d7Trial3", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -58736,7 +58736,7 @@ def Sanr40007(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Sanr40007", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -58788,7 +58788,7 @@ def ScShipsec5(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "ScShipsec5", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -58854,7 +58854,7 @@ def SocfbRochester38(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SocfbRochester38", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -58899,7 +58899,7 @@ def G1(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "G1", version, "networkrepository", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
