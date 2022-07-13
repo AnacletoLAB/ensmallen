@@ -2,7 +2,7 @@
 from typing import Optional, Dict
 import numpy as np
 import os
-from .wikipedia_automatic_graph_retrieval import WikipediaAutomaticallyRetrievedGraph
+from .wikipedia_graph_retrieval import WikipediaAutomaticallyRetrievedGraph
 from .get_okapi_tfidf_weighted_textual_embedding import get_okapi_tfidf_weighted_textual_embedding
 
 
