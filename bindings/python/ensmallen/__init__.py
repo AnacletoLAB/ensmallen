@@ -15,11 +15,8 @@ if is_x86_64():
 
     if len(unavailable_flags) == 0:
         logging.info("Ensmallen is using Haswell")
-        from .ensmallen_haswell import preprocessing  # pylint: disable=import-error
-        from .ensmallen_haswell import models  # pylint: disable=import-error
-        from .ensmallen_haswell import Graph  # pylint: disable=import-error
-        from .ensmallen_haswell import edge_list_utils  # pylint: disable=import-error
-        from .ensmallen_haswell import express_measures  # pylint: disable=import-error
+        from . import ensmallen_haswell as core 
+        from .ensmallen_haswell import * 
         del ensmallen_haswell
     else:
         warnings.warn(
@@ -38,11 +35,8 @@ if is_x86_64():
 
         if len(unavailable_flags) == 0:
             logging.info("Ensmallen is using Core2")
-            from .ensmallen_core2 import preprocessing  # pylint: disable=import-error
-            from .ensmallen_core2 import models  # pylint: disable=import-error
-            from .ensmallen_core2 import Graph  # pylint: disable=import-error
-            from .ensmallen_core2 import edge_list_utils  # pylint: disable=import-error
-            from .ensmallen_core2 import express_measures  # pylint: disable=import-error
+            from . import ensmallen_core2 as core 
+            from .ensmallen_core2 import * 
             del ensmallen_core2
         else:
             raise ValueError(
@@ -61,11 +55,8 @@ if is_x86_64():
     del unavailable_flags
 elif is_arm():
     logging.info("Ensmallen is using Default Arm")
-    from .ensmallen_default import preprocessing  # pylint: disable=import-error
-    from .ensmallen_default import models  # pylint: disable=import-error
-    from .ensmallen_default import Graph  # pylint: disable=import-error
-    from .ensmallen_default import edge_list_utils  # pylint: disable=import-error
-    from .ensmallen_default import express_measures  # pylint: disable=import-error
+    from . import ensmallen_default as core 
+    from .ensmallen_default import * 
     del ensmallen_default
 else:
     raise ValueError("The arch '{}' is not currently supproted by ensmallen's init file.".format(platform.machine()))
@@ -73,8 +64,13 @@ else:
 # Because otherwise it generate a Circular import and crash
 from . import datasets
 
-__all__ = ["edge_list_utils", "Graph", "preprocessing", "models", "datasets"]
+__all__ = [
+    key
+    for key in dir(core)
+    if not key.startswith("_")
+]
 
+del core
 del logging
 del warnings
 del platform
