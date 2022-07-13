@@ -2,7 +2,7 @@
 from typing import Optional, Dict
 import numpy as np
 import os
-from .wikipedia_graph_retrieval import WikipediaAutomaticallyRetrievedGraph
+from .wikipedia_graph_retrieval import WikipediaRetrievedGraph
 from .get_okapi_tfidf_weighted_textual_embedding import get_okapi_tfidf_weighted_textual_embedding
 
 
@@ -35,7 +35,7 @@ def get_wikipedia_okapi_tfidf_weighted_textual_embedding(
         Whether to show the loading bars
     """
     # Sanitize data using the automatic graph retrieval
-    graph_retriever = WikipediaAutomaticallyRetrievedGraph(
+    graph_retriever = WikipediaRetrievedGraph(
         name=name,
         version=version,
         verbose=verbose

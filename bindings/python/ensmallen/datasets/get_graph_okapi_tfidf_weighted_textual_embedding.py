@@ -41,7 +41,7 @@ def get_graph_okapi_tfidf_weighted_textual_embedding(
         Whether to show the loading bars
     """
     # Sanitize data using the automatic graph retrieval
-    graph_retriever = AutomaticallyRetrievedGraph(
+    graph_retriever = RetrievedGraph(
         name=name,
         version=version,
         repository=repository,
