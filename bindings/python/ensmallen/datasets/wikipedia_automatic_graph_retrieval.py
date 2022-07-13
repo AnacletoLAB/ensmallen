@@ -1,4 +1,4 @@
-"""Module providing class for automatically retrieving graphs."""
+"""Module providing class for retrieving graphs."""
 
 import os
 import shutil
@@ -6,12 +6,12 @@ from typing import Dict, List, Optional
 
 from dict_hash import sha256
 from ensmallen import Graph, edge_list_utils
-from .graph_retrieval import AutomaticallyRetrievedGraph
+from .graph_retrieval import RetrievedGraph
 from environments_utils import is_windows
 
 
-class WikipediaAutomaticallyRetrievedGraph(AutomaticallyRetrievedGraph):
-    """Class definying an automatically retrievable wikipedia graph."""
+class WikipediaRetrievedGraph(RetrievedGraph):
+    """Class definying an retrievable wikipedia graph."""
 
     def __init__(
         self,

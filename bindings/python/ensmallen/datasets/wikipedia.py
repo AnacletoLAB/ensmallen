@@ -86,7 +86,7 @@ def WikiMediaRU(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiMediaRU",
         version=version,
         directed=directed,
@@ -188,7 +188,7 @@ def WikiSV(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSV",
         version=version,
         directed=directed,
@@ -292,7 +292,7 @@ def WikiMediaBE(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiMediaBE",
         version=version,
         directed=directed,
@@ -396,7 +396,7 @@ def WikiHO(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiHO",
         version=version,
         directed=directed,
@@ -500,7 +500,7 @@ def WikiIO(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiIO",
         version=version,
         directed=directed,
@@ -604,7 +604,7 @@ def WikiTA(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiTA",
         version=version,
         directed=directed,
@@ -708,7 +708,7 @@ def WikiNewsPL(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiNewsPL",
         version=version,
         directed=directed,
@@ -812,7 +812,7 @@ def WikiVoyageRU(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiVoyageRU",
         version=version,
         directed=directed,
@@ -916,7 +916,7 @@ def WikiBooksPS(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksPS",
         version=version,
         directed=directed,
@@ -1020,7 +1020,7 @@ def WikiBS(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBS",
         version=version,
         directed=directed,
@@ -1124,7 +1124,7 @@ def WikiCS(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiCS",
         version=version,
         directed=directed,
@@ -1228,7 +1228,7 @@ def WikiSC(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSC",
         version=version,
         directed=directed,
@@ -1332,7 +1332,7 @@ def WikiBooksGA(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksGA",
         version=version,
         directed=directed,
@@ -1436,7 +1436,7 @@ def WikiOM(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiOM",
         version=version,
         directed=directed,
@@ -1540,7 +1540,7 @@ def WikiBooksFA(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksFA",
         version=version,
         directed=directed,
@@ -1644,7 +1644,7 @@ def WikiTT(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiTT",
         version=version,
         directed=directed,
@@ -1748,7 +1748,7 @@ def WikiHZ(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiHZ",
         version=version,
         directed=directed,
@@ -1852,7 +1852,7 @@ def WikiNewsCS(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiNewsCS",
         version=version,
         directed=directed,
@@ -1956,7 +1956,7 @@ def WikiNewsBS(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiNewsBS",
         version=version,
         directed=directed,
@@ -2060,7 +2060,7 @@ def WikiBooksIE(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksIE",
         version=version,
         directed=directed,
@@ -2164,7 +2164,7 @@ def WikiBooksHE(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksHE",
         version=version,
         directed=directed,
@@ -2268,7 +2268,7 @@ def WikiBooksUK(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksUK",
         version=version,
         directed=directed,
@@ -2372,7 +2372,7 @@ def WikiversityEL(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiversityEL",
         version=version,
         directed=directed,
@@ -2476,7 +2476,7 @@ def WikiBooksTK(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksTK",
         version=version,
         directed=directed,
@@ -2580,7 +2580,7 @@ def WikiSourcePT(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSourcePT",
         version=version,
         directed=directed,
@@ -2684,7 +2684,7 @@ def WikiQuoteIS(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteIS",
         version=version,
         directed=directed,
@@ -2788,7 +2788,7 @@ def WikiSourceZH(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSourceZH",
         version=version,
         directed=directed,
@@ -2892,7 +2892,7 @@ def WikiBooksCY(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksCY",
         version=version,
         directed=directed,
@@ -2996,7 +2996,7 @@ def WikiKU(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiKU",
         version=version,
         directed=directed,
@@ -3100,7 +3100,7 @@ def WikiBooksSI(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksSI",
         version=version,
         directed=directed,
@@ -3204,7 +3204,7 @@ def WikiQuoteCO(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteCO",
         version=version,
         directed=directed,
@@ -3308,7 +3308,7 @@ def WikiNewsSV(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiNewsSV",
         version=version,
         directed=directed,
@@ -3410,7 +3410,7 @@ def WikiPL(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiPL",
         version=version,
         directed=directed,
@@ -3514,7 +3514,7 @@ def WikiQuoteTH(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteTH",
         version=version,
         directed=directed,
@@ -3618,7 +3618,7 @@ def WikiLB(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiLB",
         version=version,
         directed=directed,
@@ -3722,7 +3722,7 @@ def WikiBooksEN(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksEN",
         version=version,
         directed=directed,
@@ -3826,7 +3826,7 @@ def WikiSourcePA(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSourcePA",
         version=version,
         directed=directed,
@@ -3930,7 +3930,7 @@ def WikiNewsTA(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiNewsTA",
         version=version,
         directed=directed,
@@ -4034,7 +4034,7 @@ def WikiversityJA(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiversityJA",
         version=version,
         directed=directed,
@@ -4138,7 +4138,7 @@ def WikiMediaNG(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiMediaNG",
         version=version,
         directed=directed,
@@ -4242,7 +4242,7 @@ def WikiVoyageEN(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiVoyageEN",
         version=version,
         directed=directed,
@@ -4346,7 +4346,7 @@ def WikiBooksLA(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksLA",
         version=version,
         directed=directed,
@@ -4450,7 +4450,7 @@ def WikiIS(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiIS",
         version=version,
         directed=directed,
@@ -4554,7 +4554,7 @@ def WikiQuoteKU(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteKU",
         version=version,
         directed=directed,
@@ -4658,7 +4658,7 @@ def WikiVoyageUK(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiVoyageUK",
         version=version,
         directed=directed,
@@ -4762,7 +4762,7 @@ def WikiBO(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBO",
         version=version,
         directed=directed,
@@ -4866,7 +4866,7 @@ def WikiCO(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiCO",
         version=version,
         directed=directed,
@@ -4970,7 +4970,7 @@ def WikiSourceSR(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSourceSR",
         version=version,
         directed=directed,
@@ -5074,7 +5074,7 @@ def WikiVoyageHE(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiVoyageHE",
         version=version,
         directed=directed,
@@ -5178,7 +5178,7 @@ def WikiQuotePL(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuotePL",
         version=version,
         directed=directed,
@@ -5282,7 +5282,7 @@ def WikiSourceEU(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSourceEU",
         version=version,
         directed=directed,
@@ -5386,7 +5386,7 @@ def WikiTH(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiTH",
         version=version,
         directed=directed,
@@ -5490,7 +5490,7 @@ def WikiQuoteLB(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteLB",
         version=version,
         directed=directed,
@@ -5594,7 +5594,7 @@ def WikiBooksLT(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksLT",
         version=version,
         directed=directed,
@@ -5698,7 +5698,7 @@ def WikiSourceTE(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSourceTE",
         version=version,
         directed=directed,
@@ -5802,7 +5802,7 @@ def WikiSourceFO(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSourceFO",
         version=version,
         directed=directed,
@@ -5906,7 +5906,7 @@ def WikiQuoteSV(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteSV",
         version=version,
         directed=directed,
@@ -6010,7 +6010,7 @@ def WikiVoyageFA(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiVoyageFA",
         version=version,
         directed=directed,
@@ -6114,7 +6114,7 @@ def WikiQuoteTA(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteTA",
         version=version,
         directed=directed,
@@ -6218,7 +6218,7 @@ def WikiMK(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiMK",
         version=version,
         directed=directed,
@@ -6322,7 +6322,7 @@ def WikiNewsTH(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiNewsTH",
         version=version,
         directed=directed,
@@ -6426,7 +6426,7 @@ def WikiBooksHY(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksHY",
         version=version,
         directed=directed,
@@ -6530,7 +6530,7 @@ def WikiVoyagePS(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiVoyagePS",
         version=version,
         directed=directed,
@@ -6634,7 +6634,7 @@ def WikiBooksSU(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksSU",
         version=version,
         directed=directed,
@@ -6738,7 +6738,7 @@ def WikiQuoteBS(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteBS",
         version=version,
         directed=directed,
@@ -6842,7 +6842,7 @@ def WikiBooksRU(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksRU",
         version=version,
         directed=directed,
@@ -6946,7 +6946,7 @@ def WikiQuoteCS(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteCS",
         version=version,
         directed=directed,
@@ -7050,7 +7050,7 @@ def WikiKI(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiKI",
         version=version,
         directed=directed,
@@ -7154,7 +7154,7 @@ def WikiBooksBE(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksBE",
         version=version,
         directed=directed,
@@ -7258,7 +7258,7 @@ def WikiversityDE(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiversityDE",
         version=version,
         directed=directed,
@@ -7362,7 +7362,7 @@ def WikiQuoteTT(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteTT",
         version=version,
         directed=directed,
@@ -7466,7 +7466,7 @@ def WikiEL(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiEL",
         version=version,
         directed=directed,
@@ -7570,7 +7570,7 @@ def WikiSourceDA(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSourceDA",
         version=version,
         directed=directed,
@@ -7674,7 +7674,7 @@ def WikiHR(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiHR",
         version=version,
         directed=directed,
@@ -7778,7 +7778,7 @@ def WikiNE(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiNE",
         version=version,
         directed=directed,
@@ -7882,7 +7882,7 @@ def WikiQuoteVO(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteVO",
         version=version,
         directed=directed,
@@ -7986,7 +7986,7 @@ def WikiBooksFI(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksFI",
         version=version,
         directed=directed,
@@ -8090,7 +8090,7 @@ def WikiQuoteWO(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteWO",
         version=version,
         directed=directed,
@@ -8194,7 +8194,7 @@ def WikiQuoteJA(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteJA",
         version=version,
         directed=directed,
@@ -8298,7 +8298,7 @@ def WikiVoyageEO(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiVoyageEO",
         version=version,
         directed=directed,
@@ -8402,7 +8402,7 @@ def WikiQuoteKA(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteKA",
         version=version,
         directed=directed,
@@ -8506,7 +8506,7 @@ def WikiSK(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSK",
         version=version,
         directed=directed,
@@ -8610,7 +8610,7 @@ def WikiTI(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiTI",
         version=version,
         directed=directed,
@@ -8714,7 +8714,7 @@ def WikiMediaID(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiMediaID",
         version=version,
         directed=directed,
@@ -8818,7 +8818,7 @@ def WikiBooksAK(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksAK",
         version=version,
         directed=directed,
@@ -8922,7 +8922,7 @@ def WikiSourceET(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSourceET",
         version=version,
         directed=directed,
@@ -9026,7 +9026,7 @@ def WikiIG(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiIG",
         version=version,
         directed=directed,
@@ -9130,7 +9130,7 @@ def WikiBN(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBN",
         version=version,
         directed=directed,
@@ -9234,7 +9234,7 @@ def WikiBooksXH(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksXH",
         version=version,
         directed=directed,
@@ -9338,7 +9338,7 @@ def WikiversitySV(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiversitySV",
         version=version,
         directed=directed,
@@ -9442,7 +9442,7 @@ def WikiBooksNO(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksNO",
         version=version,
         directed=directed,
@@ -9546,7 +9546,7 @@ def WikiQuoteBG(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteBG",
         version=version,
         directed=directed,
@@ -9650,7 +9650,7 @@ def WikiBooksSA(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksSA",
         version=version,
         directed=directed,
@@ -9754,7 +9754,7 @@ def WikiQuoteDE(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteDE",
         version=version,
         directed=directed,
@@ -9858,7 +9858,7 @@ def WikiSourceMR(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSourceMR",
         version=version,
         directed=directed,
@@ -9962,7 +9962,7 @@ def WikiAA(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiAA",
         version=version,
         directed=directed,
@@ -10066,7 +10066,7 @@ def WikiNewsEL(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiNewsEL",
         version=version,
         directed=directed,
@@ -10170,7 +10170,7 @@ def WikiBooksES(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksES",
         version=version,
         directed=directed,
@@ -10274,7 +10274,7 @@ def WikiQuoteCR(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteCR",
         version=version,
         directed=directed,
@@ -10378,7 +10378,7 @@ def WikiversityCS(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiversityCS",
         version=version,
         directed=directed,
@@ -10482,7 +10482,7 @@ def WikiQuoteBR(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteBR",
         version=version,
         directed=directed,
@@ -10586,7 +10586,7 @@ def WikiGV(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiGV",
         version=version,
         directed=directed,
@@ -10690,7 +10690,7 @@ def WikiQuoteNL(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteNL",
         version=version,
         directed=directed,
@@ -10794,7 +10794,7 @@ def WikiRW(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiRW",
         version=version,
         directed=directed,
@@ -10898,7 +10898,7 @@ def WikiMediaNZ(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiMediaNZ",
         version=version,
         directed=directed,
@@ -11002,7 +11002,7 @@ def WikiVoyageES(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiVoyageES",
         version=version,
         directed=directed,
@@ -11106,7 +11106,7 @@ def WikiSW(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSW",
         version=version,
         directed=directed,
@@ -11210,7 +11210,7 @@ def WikiNY(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiNY",
         version=version,
         directed=directed,
@@ -11314,7 +11314,7 @@ def WikiBooksGU(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksGU",
         version=version,
         directed=directed,
@@ -11418,7 +11418,7 @@ def WikiMediaBD(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiMediaBD",
         version=version,
         directed=directed,
@@ -11522,7 +11522,7 @@ def WikiBG(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBG",
         version=version,
         directed=directed,
@@ -11626,7 +11626,7 @@ def WikiBooksKK(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksKK",
         version=version,
         directed=directed,
@@ -11730,7 +11730,7 @@ def WikiBooksMI(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksMI",
         version=version,
         directed=directed,
@@ -11832,7 +11832,7 @@ def WikiDE(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiDE",
         version=version,
         directed=directed,
@@ -11936,7 +11936,7 @@ def WikiEE(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiEE",
         version=version,
         directed=directed,
@@ -12040,7 +12040,7 @@ def WikiBooksLI(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksLI",
         version=version,
         directed=directed,
@@ -12144,7 +12144,7 @@ def WikiCR(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiCR",
         version=version,
         directed=directed,
@@ -12248,7 +12248,7 @@ def WikiBR(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBR",
         version=version,
         directed=directed,
@@ -12352,7 +12352,7 @@ def WikiSourceRO(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSourceRO",
         version=version,
         directed=directed,
@@ -12456,7 +12456,7 @@ def WikiNewsJA(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiNewsJA",
         version=version,
         directed=directed,
@@ -12558,7 +12558,7 @@ def WikiNL(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiNL",
         version=version,
         directed=directed,
@@ -12662,7 +12662,7 @@ def WikiMediaNO(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiMediaNO",
         version=version,
         directed=directed,
@@ -12766,7 +12766,7 @@ def WikiQuoteEL(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteEL",
         version=version,
         directed=directed,
@@ -12870,7 +12870,7 @@ def WikiBooksID(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksID",
         version=version,
         directed=directed,
@@ -12974,7 +12974,7 @@ def WikiNewsDE(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiNewsDE",
         version=version,
         directed=directed,
@@ -13078,7 +13078,7 @@ def WikiQuoteHR(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteHR",
         version=version,
         directed=directed,
@@ -13182,7 +13182,7 @@ def WikiLV(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiLV",
         version=version,
         directed=directed,
@@ -13286,7 +13286,7 @@ def WikiNewsNL(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiNewsNL",
         version=version,
         directed=directed,
@@ -13390,7 +13390,7 @@ def WikiVO(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiVO",
         version=version,
         directed=directed,
@@ -13494,7 +13494,7 @@ def WikiWO(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiWO",
         version=version,
         directed=directed,
@@ -13596,7 +13596,7 @@ def WikiJA(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiJA",
         version=version,
         directed=directed,
@@ -13700,7 +13700,7 @@ def WikiKA(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiKA",
         version=version,
         directed=directed,
@@ -13804,7 +13804,7 @@ def WikiBooksBM(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksBM",
         version=version,
         directed=directed,
@@ -13908,7 +13908,7 @@ def WikiQuoteSK(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteSK",
         version=version,
         directed=directed,
@@ -14012,7 +14012,7 @@ def WikiSourceFR(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSourceFR",
         version=version,
         directed=directed,
@@ -14116,7 +14116,7 @@ def WikiBooksEO(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksEO",
         version=version,
         directed=directed,
@@ -14220,7 +14220,7 @@ def WikiVoyageFI(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiVoyageFI",
         version=version,
         directed=directed,
@@ -14324,7 +14324,7 @@ def WikiNewsBG(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiNewsBG",
         version=version,
         directed=directed,
@@ -14428,7 +14428,7 @@ def WikiFJ(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiFJ",
         version=version,
         directed=directed,
@@ -14532,7 +14532,7 @@ def WikiMediaFI(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiMediaFI",
         version=version,
         directed=directed,
@@ -14636,7 +14636,7 @@ def WikiIE(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiIE",
         version=version,
         directed=directed,
@@ -14740,7 +14740,7 @@ def WikiHE(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiHE",
         version=version,
         directed=directed,
@@ -14844,7 +14844,7 @@ def WikiUK(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiUK",
         version=version,
         directed=directed,
@@ -14948,7 +14948,7 @@ def WikiQuoteLA(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteLA",
         version=version,
         directed=directed,
@@ -15052,7 +15052,7 @@ def WikiTK(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiTK",
         version=version,
         directed=directed,
@@ -15156,7 +15156,7 @@ def WikiversityFI(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiversityFI",
         version=version,
         directed=directed,
@@ -15260,7 +15260,7 @@ def WikiMediaCO(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiMediaCO",
         version=version,
         directed=directed,
@@ -15364,7 +15364,7 @@ def WikiSourceCA(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSourceCA",
         version=version,
         directed=directed,
@@ -15468,7 +15468,7 @@ def WikiOR(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiOR",
         version=version,
         directed=directed,
@@ -15572,7 +15572,7 @@ def WikiNewsFA(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiNewsFA",
         version=version,
         directed=directed,
@@ -15676,7 +15676,7 @@ def WikiQuoteLT(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteLT",
         version=version,
         directed=directed,
@@ -15780,7 +15780,7 @@ def WikiBooksPL(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksPL",
         version=version,
         directed=directed,
@@ -15884,7 +15884,7 @@ def WikiBooksLB(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksLB",
         version=version,
         directed=directed,
@@ -15985,7 +15985,7 @@ def WikiEN(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiEN",
         version=version,
         directed=directed,
@@ -16089,7 +16089,7 @@ def WikiSI(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSI",
         version=version,
         directed=directed,
@@ -16193,7 +16193,7 @@ def WikiNG(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiNG",
         version=version,
         directed=directed,
@@ -16297,7 +16297,7 @@ def WikiCY(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiCY",
         version=version,
         directed=directed,
@@ -16401,7 +16401,7 @@ def WikiBooksKU(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksKU",
         version=version,
         directed=directed,
@@ -16505,7 +16505,7 @@ def WikiNewsEN(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiNewsEN",
         version=version,
         directed=directed,
@@ -16609,7 +16609,7 @@ def WikiQuoteHY(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteHY",
         version=version,
         directed=directed,
@@ -16713,7 +16713,7 @@ def WikiPS(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiPS",
         version=version,
         directed=directed,
@@ -16817,7 +16817,7 @@ def WikiBooksTA(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksTA",
         version=version,
         directed=directed,
@@ -16921,7 +16921,7 @@ def WikiKJ(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiKJ",
         version=version,
         directed=directed,
@@ -17025,7 +17025,7 @@ def WikiQuoteNN(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteNN",
         version=version,
         directed=directed,
@@ -17129,7 +17129,7 @@ def WikiBooksSV(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksSV",
         version=version,
         directed=directed,
@@ -17233,7 +17233,7 @@ def WikiSourceVI(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSourceVI",
         version=version,
         directed=directed,
@@ -17337,7 +17337,7 @@ def WikiNewsHE(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiNewsHE",
         version=version,
         directed=directed,
@@ -17441,7 +17441,7 @@ def WikiversityES(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiversityES",
         version=version,
         directed=directed,
@@ -17545,7 +17545,7 @@ def WikiBooksTT(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksTT",
         version=version,
         directed=directed,
@@ -17649,7 +17649,7 @@ def WikiAV(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiAV",
         version=version,
         directed=directed,
@@ -17753,7 +17753,7 @@ def WikiNewsUK(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiNewsUK",
         version=version,
         directed=directed,
@@ -17857,7 +17857,7 @@ def WikiMediaMK(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiMediaMK",
         version=version,
         directed=directed,
@@ -17961,7 +17961,7 @@ def WikiMH(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiMH",
         version=version,
         directed=directed,
@@ -18065,7 +18065,7 @@ def WikiQuoteBE(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteBE",
         version=version,
         directed=directed,
@@ -18169,7 +18169,7 @@ def WikiGA(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiGA",
         version=version,
         directed=directed,
@@ -18273,7 +18273,7 @@ def WikiFA(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiFA",
         version=version,
         directed=directed,
@@ -18377,7 +18377,7 @@ def WikiBooksBS(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksBS",
         version=version,
         directed=directed,
@@ -18481,7 +18481,7 @@ def WikiQuoteSU(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteSU",
         version=version,
         directed=directed,
@@ -18585,7 +18585,7 @@ def WikiBooksCS(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksCS",
         version=version,
         directed=directed,
@@ -18689,7 +18689,7 @@ def WikiSourceGL(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSourceGL",
         version=version,
         directed=directed,
@@ -18793,7 +18793,7 @@ def WikiQuoteRU(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteRU",
         version=version,
         directed=directed,
@@ -18897,7 +18897,7 @@ def WikiTW(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiTW",
         version=version,
         directed=directed,
@@ -19001,7 +19001,7 @@ def WikiHY(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiHY",
         version=version,
         directed=directed,
@@ -19105,7 +19105,7 @@ def WikiYI(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiYI",
         version=version,
         directed=directed,
@@ -19209,7 +19209,7 @@ def WikiSourceHT(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSourceHT",
         version=version,
         directed=directed,
@@ -19313,7 +19313,7 @@ def WikiBooksMK(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksMK",
         version=version,
         directed=directed,
@@ -19417,7 +19417,7 @@ def WikiSourceIT(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSourceIT",
         version=version,
         directed=directed,
@@ -19521,7 +19521,7 @@ def WikiNN(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiNN",
         version=version,
         directed=directed,
@@ -19625,7 +19625,7 @@ def WikiVoyageSV(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiVoyageSV",
         version=version,
         directed=directed,
@@ -19729,7 +19729,7 @@ def WikiMediaUA(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiMediaUA",
         version=version,
         directed=directed,
@@ -19833,7 +19833,7 @@ def WikiCE(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiCE",
         version=version,
         directed=directed,
@@ -19937,7 +19937,7 @@ def WikiBE(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBE",
         version=version,
         directed=directed,
@@ -20041,7 +20041,7 @@ def WikiQuoteGA(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteGA",
         version=version,
         directed=directed,
@@ -20145,7 +20145,7 @@ def WikiQuoteFA(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteFA",
         version=version,
         directed=directed,
@@ -20249,7 +20249,7 @@ def WikiSU(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSU",
         version=version,
         directed=directed,
@@ -20351,7 +20351,7 @@ def WikiRU(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiRU",
         version=version,
         directed=directed,
@@ -20455,7 +20455,7 @@ def WikiBooksIS(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksIS",
         version=version,
         directed=directed,
@@ -20559,7 +20559,7 @@ def WikiSourceML(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSourceML",
         version=version,
         directed=directed,
@@ -20663,7 +20663,7 @@ def WikiQuoteHE(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteHE",
         version=version,
         directed=directed,
@@ -20767,7 +20767,7 @@ def WikiQuoteUK(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteUK",
         version=version,
         directed=directed,
@@ -20871,7 +20871,7 @@ def WikiLA(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiLA",
         version=version,
         directed=directed,
@@ -20975,7 +20975,7 @@ def WikiMediaPL(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiMediaPL",
         version=version,
         directed=directed,
@@ -21079,7 +21079,7 @@ def WikiSourceAR(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSourceAR",
         version=version,
         directed=directed,
@@ -21183,7 +21183,7 @@ def WikiQuoteTK(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteTK",
         version=version,
         directed=directed,
@@ -21287,7 +21287,7 @@ def WikiNewsRU(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiNewsRU",
         version=version,
         directed=directed,
@@ -21391,7 +21391,7 @@ def WikiVoyagePL(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiVoyagePL",
         version=version,
         directed=directed,
@@ -21495,7 +21495,7 @@ def WikiJV(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiJV",
         version=version,
         directed=directed,
@@ -21599,7 +21599,7 @@ def WikiKV(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiKV",
         version=version,
         directed=directed,
@@ -21703,7 +21703,7 @@ def WikiLT(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiLT",
         version=version,
         directed=directed,
@@ -21807,7 +21807,7 @@ def WikiMT(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiMT",
         version=version,
         directed=directed,
@@ -21911,7 +21911,7 @@ def WikiQuoteEN(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteEN",
         version=version,
         directed=directed,
@@ -22015,7 +22015,7 @@ def WikiBooksTH(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksTH",
         version=version,
         directed=directed,
@@ -22119,7 +22119,7 @@ def WikiBooksBO(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksBO",
         version=version,
         directed=directed,
@@ -22223,7 +22223,7 @@ def WikiBooksCO(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksCO",
         version=version,
         directed=directed,
@@ -22327,7 +22327,7 @@ def WikiSourceKN(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSourceKN",
         version=version,
         directed=directed,
@@ -22431,7 +22431,7 @@ def WikiQuoteCY(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteCY",
         version=version,
         directed=directed,
@@ -22535,7 +22535,7 @@ def WikiNO(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiNO",
         version=version,
         directed=directed,
@@ -22639,7 +22639,7 @@ def WikiSA(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSA",
         version=version,
         directed=directed,
@@ -22743,7 +22743,7 @@ def WikiVoyageDE(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiVoyageDE",
         version=version,
         directed=directed,
@@ -22847,7 +22847,7 @@ def WikiQuoteKK(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteKK",
         version=version,
         directed=directed,
@@ -22951,7 +22951,7 @@ def WikiMediaNL(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiMediaNL",
         version=version,
         directed=directed,
@@ -23055,7 +23055,7 @@ def WikiQuoteGU(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteGU",
         version=version,
         directed=directed,
@@ -23159,7 +23159,7 @@ def WikiMediaBR(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiMediaBR",
         version=version,
         directed=directed,
@@ -23263,7 +23263,7 @@ def WikiSourceSL(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSourceSL",
         version=version,
         directed=directed,
@@ -23367,7 +23367,7 @@ def WikiSourceHU(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSourceHU",
         version=version,
         directed=directed,
@@ -23471,7 +23471,7 @@ def WikiXH(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiXH",
         version=version,
         directed=directed,
@@ -23575,7 +23575,7 @@ def WikiVoyageNL(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiVoyageNL",
         version=version,
         directed=directed,
@@ -23679,7 +23679,7 @@ def WikiNewsFI(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiNewsFI",
         version=version,
         directed=directed,
@@ -23783,7 +23783,7 @@ def WikiST(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiST",
         version=version,
         directed=directed,
@@ -23885,7 +23885,7 @@ def WikiES(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiES",
         version=version,
         directed=directed,
@@ -23989,7 +23989,7 @@ def WikiQuoteLI(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteLI",
         version=version,
         directed=directed,
@@ -24093,7 +24093,7 @@ def WikiBooksAA(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksAA",
         version=version,
         directed=directed,
@@ -24197,7 +24197,7 @@ def WikiBooksNE(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksNE",
         version=version,
         directed=directed,
@@ -24301,7 +24301,7 @@ def WikiFI(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiFI",
         version=version,
         directed=directed,
@@ -24405,7 +24405,7 @@ def WikiBooksSK(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksSK",
         version=version,
         directed=directed,
@@ -24509,7 +24509,7 @@ def WikiQuoteBM(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteBM",
         version=version,
         directed=directed,
@@ -24613,7 +24613,7 @@ def WikiKW(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiKW",
         version=version,
         directed=directed,
@@ -24717,7 +24717,7 @@ def WikiBooksHR(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksHR",
         version=version,
         directed=directed,
@@ -24821,7 +24821,7 @@ def WikiSourceAS(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSourceAS",
         version=version,
         directed=directed,
@@ -24925,7 +24925,7 @@ def WikiBooksEL(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksEL",
         version=version,
         directed=directed,
@@ -25029,7 +25029,7 @@ def WikiQuoteID(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteID",
         version=version,
         directed=directed,
@@ -25133,7 +25133,7 @@ def WikiNewsES(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiNewsES",
         version=version,
         directed=directed,
@@ -25237,7 +25237,7 @@ def WikiBooksBN(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksBN",
         version=version,
         directed=directed,
@@ -25341,7 +25341,7 @@ def WikiSourceWA(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSourceWA",
         version=version,
         directed=directed,
@@ -25445,7 +25445,7 @@ def WikiNewsNO(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiNewsNO",
         version=version,
         directed=directed,
@@ -25549,7 +25549,7 @@ def WikiSourceKO(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSourceKO",
         version=version,
         directed=directed,
@@ -25653,7 +25653,7 @@ def WikiVoyageJA(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiVoyageJA",
         version=version,
         directed=directed,
@@ -25757,7 +25757,7 @@ def WikiQuoteEO(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteEO",
         version=version,
         directed=directed,
@@ -25861,7 +25861,7 @@ def WikiversityEN(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiversityEN",
         version=version,
         directed=directed,
@@ -25965,7 +25965,7 @@ def WikiAK(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiAK",
         version=version,
         directed=directed,
@@ -26069,7 +26069,7 @@ def WikiMediaCN(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiMediaCN",
         version=version,
         directed=directed,
@@ -26173,7 +26173,7 @@ def WikiBooksVO(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksVO",
         version=version,
         directed=directed,
@@ -26277,7 +26277,7 @@ def WikiQuoteFI(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteFI",
         version=version,
         directed=directed,
@@ -26381,7 +26381,7 @@ def WikiBooksJA(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksJA",
         version=version,
         directed=directed,
@@ -26485,7 +26485,7 @@ def WikiBooksKA(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksKA",
         version=version,
         directed=directed,
@@ -26589,7 +26589,7 @@ def WikiBM(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBM",
         version=version,
         directed=directed,
@@ -26693,7 +26693,7 @@ def WikiQuoteKW(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteKW",
         version=version,
         directed=directed,
@@ -26797,7 +26797,7 @@ def WikiOS(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiOS",
         version=version,
         directed=directed,
@@ -26901,7 +26901,7 @@ def WikiNewsLI(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiNewsLI",
         version=version,
         directed=directed,
@@ -27005,7 +27005,7 @@ def WikiDZ(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiDZ",
         version=version,
         directed=directed,
@@ -27109,7 +27109,7 @@ def WikiSourceHI(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSourceHI",
         version=version,
         directed=directed,
@@ -27213,7 +27213,7 @@ def WikiBooksLV(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksLV",
         version=version,
         directed=directed,
@@ -27317,7 +27317,7 @@ def WikiVoyageBN(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiVoyageBN",
         version=version,
         directed=directed,
@@ -27421,7 +27421,7 @@ def WikiID(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiID",
         version=version,
         directed=directed,
@@ -27525,7 +27525,7 @@ def WikiVoyageEL(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiVoyageEL",
         version=version,
         directed=directed,
@@ -27629,7 +27629,7 @@ def WikiSH(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSH",
         version=version,
         directed=directed,
@@ -27733,7 +27733,7 @@ def WikiEO(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiEO",
         version=version,
         directed=directed,
@@ -27837,7 +27837,7 @@ def WikiSourceTR(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSourceTR",
         version=version,
         directed=directed,
@@ -27941,7 +27941,7 @@ def WikiVE(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiVE",
         version=version,
         directed=directed,
@@ -28045,7 +28045,7 @@ def WikiQuoteNO(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteNO",
         version=version,
         directed=directed,
@@ -28149,7 +28149,7 @@ def WikiQuoteSA(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteSA",
         version=version,
         directed=directed,
@@ -28253,7 +28253,7 @@ def WikiBooksBG(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksBG",
         version=version,
         directed=directed,
@@ -28357,7 +28357,7 @@ def WikiKK(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiKK",
         version=version,
         directed=directed,
@@ -28461,7 +28461,7 @@ def WikiBooksSW(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksSW",
         version=version,
         directed=directed,
@@ -28565,7 +28565,7 @@ def WikiGU(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiGU",
         version=version,
         directed=directed,
@@ -28669,7 +28669,7 @@ def WikiNewsEO(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiNewsEO",
         version=version,
         directed=directed,
@@ -28773,7 +28773,7 @@ def WikiAB(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiAB",
         version=version,
         directed=directed,
@@ -28877,7 +28877,7 @@ def WikiBooksNL(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksNL",
         version=version,
         directed=directed,
@@ -28981,7 +28981,7 @@ def WikiversityRU(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiversityRU",
         version=version,
         directed=directed,
@@ -29085,7 +29085,7 @@ def WikiQuoteES(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteES",
         version=version,
         directed=directed,
@@ -29189,7 +29189,7 @@ def WikiMI(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiMI",
         version=version,
         directed=directed,
@@ -29293,7 +29293,7 @@ def WikiBooksDE(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksDE",
         version=version,
         directed=directed,
@@ -29397,7 +29397,7 @@ def WikiSourceAZ(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSourceAZ",
         version=version,
         directed=directed,
@@ -29501,7 +29501,7 @@ def WikiLI(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiLI",
         version=version,
         directed=directed,
@@ -29605,7 +29605,7 @@ def WikiBooksSR(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksSR",
         version=version,
         directed=directed,
@@ -29709,7 +29709,7 @@ def WikiVoyagePT(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiVoyagePT",
         version=version,
         directed=directed,
@@ -29813,7 +29813,7 @@ def WikiKN(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiKN",
         version=version,
         directed=directed,
@@ -29917,7 +29917,7 @@ def WikiBooksTE(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksTE",
         version=version,
         directed=directed,
@@ -30021,7 +30021,7 @@ def WikiNewsIT(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiNewsIT",
         version=version,
         directed=directed,
@@ -30125,7 +30125,7 @@ def WikiSourceLT(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSourceLT",
         version=version,
         directed=directed,
@@ -30229,7 +30229,7 @@ def WikiMY(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiMY",
         version=version,
         directed=directed,
@@ -30333,7 +30333,7 @@ def WikiBooksEU(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksEU",
         version=version,
         directed=directed,
@@ -30437,7 +30437,7 @@ def WikiMediaPT(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiMediaPT",
         version=version,
         directed=directed,
@@ -30541,7 +30541,7 @@ def WikiQuoteSQ(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteSQ",
         version=version,
         directed=directed,
@@ -30645,7 +30645,7 @@ def WikiSourceJV(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSourceJV",
         version=version,
         directed=directed,
@@ -30749,7 +30749,7 @@ def WikiQuoteCA(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteCA",
         version=version,
         directed=directed,
@@ -30853,7 +30853,7 @@ def WikiVoyageZH(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiVoyageZH",
         version=version,
         directed=directed,
@@ -30957,7 +30957,7 @@ def WikiML(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiML",
         version=version,
         directed=directed,
@@ -31061,7 +31061,7 @@ def WikiversityHI(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiversityHI",
         version=version,
         directed=directed,
@@ -31165,7 +31165,7 @@ def WikiSourceLA(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSourceLA",
         version=version,
         directed=directed,
@@ -31269,7 +31269,7 @@ def WikiAR(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiAR",
         version=version,
         directed=directed,
@@ -31373,7 +31373,7 @@ def WikiQuoteKR(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteKR",
         version=version,
         directed=directed,
@@ -31477,7 +31477,7 @@ def WikiNV(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiNV",
         version=version,
         directed=directed,
@@ -31581,7 +31581,7 @@ def WikiSourceBE(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSourceBE",
         version=version,
         directed=directed,
@@ -31685,7 +31685,7 @@ def WikiSourceRU(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSourceRU",
         version=version,
         directed=directed,
@@ -31789,7 +31789,7 @@ def WikiQuoteGL(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteGL",
         version=version,
         directed=directed,
@@ -31893,7 +31893,7 @@ def WikiBH(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBH",
         version=version,
         directed=directed,
@@ -31997,7 +31997,7 @@ def WikiCH(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiCH",
         version=version,
         directed=directed,
@@ -32101,7 +32101,7 @@ def WikiNewsAR(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiNewsAR",
         version=version,
         directed=directed,
@@ -32205,7 +32205,7 @@ def WikiTO(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiTO",
         version=version,
         directed=directed,
@@ -32309,7 +32309,7 @@ def WikiIA(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiIA",
         version=version,
         directed=directed,
@@ -32413,7 +32413,7 @@ def WikiHA(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiHA",
         version=version,
         directed=directed,
@@ -32517,7 +32517,7 @@ def WikiBooksMS(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksMS",
         version=version,
         directed=directed,
@@ -32621,7 +32621,7 @@ def WikiOC(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiOC",
         version=version,
         directed=directed,
@@ -32725,7 +32725,7 @@ def WikiQuoteVI(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteVI",
         version=version,
         directed=directed,
@@ -32829,7 +32829,7 @@ def WikiSM(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSM",
         version=version,
         directed=directed,
@@ -32933,7 +32933,7 @@ def WikiBooksZA(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksZA",
         version=version,
         directed=directed,
@@ -33037,7 +33037,7 @@ def WikiRM(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiRM",
         version=version,
         directed=directed,
@@ -33141,7 +33141,7 @@ def WikiSourceHY(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSourceHY",
         version=version,
         directed=directed,
@@ -33245,7 +33245,7 @@ def WikiHT(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiHT",
         version=version,
         directed=directed,
@@ -33347,7 +33347,7 @@ def WikiIT(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiIT",
         version=version,
         directed=directed,
@@ -33451,7 +33451,7 @@ def WikiSourceYI(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSourceYI",
         version=version,
         directed=directed,
@@ -33555,7 +33555,7 @@ def WikiUZ(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiUZ",
         version=version,
         directed=directed,
@@ -33659,7 +33659,7 @@ def WikiSourceFA(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSourceFA",
         version=version,
         directed=directed,
@@ -33763,7 +33763,7 @@ def WikiKR(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiKR",
         version=version,
         directed=directed,
@@ -33867,7 +33867,7 @@ def WikiNewsCA(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiNewsCA",
         version=version,
         directed=directed,
@@ -33971,7 +33971,7 @@ def WikiNewsSQ(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiNewsSQ",
         version=version,
         directed=directed,
@@ -34075,7 +34075,7 @@ def WikiGL(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiGL",
         version=version,
         directed=directed,
@@ -34179,7 +34179,7 @@ def WikiNewsSD(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiNewsSD",
         version=version,
         directed=directed,
@@ -34283,7 +34283,7 @@ def WikiFY(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiFY",
         version=version,
         directed=directed,
@@ -34387,7 +34387,7 @@ def WikiVI(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiVI",
         version=version,
         directed=directed,
@@ -34491,7 +34491,7 @@ def WikiKG(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiKG",
         version=version,
         directed=directed,
@@ -34595,7 +34595,7 @@ def WikiversitySL(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiversitySL",
         version=version,
         directed=directed,
@@ -34699,7 +34699,7 @@ def WikiMediaAM(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiMediaAM",
         version=version,
         directed=directed,
@@ -34803,7 +34803,7 @@ def WikiBooksTL(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksTL",
         version=version,
         directed=directed,
@@ -34907,7 +34907,7 @@ def WikiAN(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiAN",
         version=version,
         directed=directed,
@@ -35011,7 +35011,7 @@ def WikiQuoteIT(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteIT",
         version=version,
         directed=directed,
@@ -35115,7 +35115,7 @@ def WikiQuoteUZ(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteUZ",
         version=version,
         directed=directed,
@@ -35219,7 +35219,7 @@ def WikiSourceCY(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSourceCY",
         version=version,
         directed=directed,
@@ -35323,7 +35323,7 @@ def WikiversityKO(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiversityKO",
         version=version,
         directed=directed,
@@ -35427,7 +35427,7 @@ def WikiSD(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSD",
         version=version,
         directed=directed,
@@ -35531,7 +35531,7 @@ def WikiBooksZH(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksZH",
         version=version,
         directed=directed,
@@ -35635,7 +35635,7 @@ def WikiQuoteKN(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteKN",
         version=version,
         directed=directed,
@@ -35739,7 +35739,7 @@ def WikiBooksPA(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksPA",
         version=version,
         directed=directed,
@@ -35843,7 +35843,7 @@ def WikiSourceEN(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSourceEN",
         version=version,
         directed=directed,
@@ -35947,7 +35947,7 @@ def WikiTS(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiTS",
         version=version,
         directed=directed,
@@ -36051,7 +36051,7 @@ def WikiSQ(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSQ",
         version=version,
         directed=directed,
@@ -36155,7 +36155,7 @@ def WikiCA(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiCA",
         version=version,
         directed=directed,
@@ -36259,7 +36259,7 @@ def WikiSourceOR(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSourceOR",
         version=version,
         directed=directed,
@@ -36363,7 +36363,7 @@ def WikiBA(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBA",
         version=version,
         directed=directed,
@@ -36467,7 +36467,7 @@ def WikiBooksKM(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksKM",
         version=version,
         directed=directed,
@@ -36571,7 +36571,7 @@ def WikiQuoteML(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteML",
         version=version,
         directed=directed,
@@ -36675,7 +36675,7 @@ def WikiSourceUK(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSourceUK",
         version=version,
         directed=directed,
@@ -36779,7 +36779,7 @@ def WikiBooksPT(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksPT",
         version=version,
         directed=directed,
@@ -36883,7 +36883,7 @@ def WikiQuoteAR(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteAR",
         version=version,
         directed=directed,
@@ -36987,7 +36987,7 @@ def WikiDV(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiDV",
         version=version,
         directed=directed,
@@ -37091,7 +37091,7 @@ def WikiSourceHE(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSourceHE",
         version=version,
         directed=directed,
@@ -37195,7 +37195,7 @@ def WikiAZ(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiAZ",
         version=version,
         directed=directed,
@@ -37299,7 +37299,7 @@ def WikiSourceLI(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSourceLI",
         version=version,
         directed=directed,
@@ -37403,7 +37403,7 @@ def WikiKS(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiKS",
         version=version,
         directed=directed,
@@ -37507,7 +37507,7 @@ def WikiBooksRO(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksRO",
         version=version,
         directed=directed,
@@ -37611,7 +37611,7 @@ def WikiBooksNA(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksNA",
         version=version,
         directed=directed,
@@ -37715,7 +37715,7 @@ def WikiNewsTR(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiNewsTR",
         version=version,
         directed=directed,
@@ -37819,7 +37819,7 @@ def WikiQuoteHU(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteHU",
         version=version,
         directed=directed,
@@ -37923,7 +37923,7 @@ def WikiversityIT(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiversityIT",
         version=version,
         directed=directed,
@@ -38027,7 +38027,7 @@ def WikiSourceGU(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSourceGU",
         version=version,
         directed=directed,
@@ -38131,7 +38131,7 @@ def WikiQuoteSL(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteSL",
         version=version,
         directed=directed,
@@ -38235,7 +38235,7 @@ def WikiQuoteAF(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteAF",
         version=version,
         directed=directed,
@@ -38339,7 +38339,7 @@ def WikiBooksMN(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksMN",
         version=version,
         directed=directed,
@@ -38443,7 +38443,7 @@ def WikiBooksLN(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksLN",
         version=version,
         directed=directed,
@@ -38547,7 +38547,7 @@ def WikiTR(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiTR",
         version=version,
         directed=directed,
@@ -38651,7 +38651,7 @@ def WikiUR(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiUR",
         version=version,
         directed=directed,
@@ -38755,7 +38755,7 @@ def WikiSourceEO(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSourceEO",
         version=version,
         directed=directed,
@@ -38859,7 +38859,7 @@ def WikiCU(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiCU",
         version=version,
         directed=directed,
@@ -38963,7 +38963,7 @@ def WikiBooksKY(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksKY",
         version=version,
         directed=directed,
@@ -39067,7 +39067,7 @@ def WikiQuoteKO(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteKO",
         version=version,
         directed=directed,
@@ -39171,7 +39171,7 @@ def WikiSE(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSE",
         version=version,
         directed=directed,
@@ -39275,7 +39275,7 @@ def WikiII(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiII",
         version=version,
         directed=directed,
@@ -39379,7 +39379,7 @@ def WikiHI(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiHI",
         version=version,
         directed=directed,
@@ -39483,7 +39483,7 @@ def WikiUG(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiUG",
         version=version,
         directed=directed,
@@ -39587,7 +39587,7 @@ def WikiTG(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiTG",
         version=version,
         directed=directed,
@@ -39691,7 +39691,7 @@ def WikiSourceID(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSourceID",
         version=version,
         directed=directed,
@@ -39795,7 +39795,7 @@ def WikiMediaET(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiMediaET",
         version=version,
         directed=directed,
@@ -39899,7 +39899,7 @@ def WikiversityAR(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiversityAR",
         version=version,
         directed=directed,
@@ -40003,7 +40003,7 @@ def WikiBooksQU(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksQU",
         version=version,
         directed=directed,
@@ -40107,7 +40107,7 @@ def WikiMediaRS(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiMediaRS",
         version=version,
         directed=directed,
@@ -40211,7 +40211,7 @@ def WikiBooksFR(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksFR",
         version=version,
         directed=directed,
@@ -40315,7 +40315,7 @@ def WikiAF(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiAF",
         version=version,
         directed=directed,
@@ -40419,7 +40419,7 @@ def WikiNewsHU(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiNewsHU",
         version=version,
         directed=directed,
@@ -40523,7 +40523,7 @@ def WikiBooksET(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksET",
         version=version,
         directed=directed,
@@ -40627,7 +40627,7 @@ def WikiQuoteTR(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteTR",
         version=version,
         directed=directed,
@@ -40731,7 +40731,7 @@ def WikiQuoteUR(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteUR",
         version=version,
         directed=directed,
@@ -40835,7 +40835,7 @@ def WikiVoyageFR(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiVoyageFR",
         version=version,
         directed=directed,
@@ -40939,7 +40939,7 @@ def WikiMediaGR(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiMediaGR",
         version=version,
         directed=directed,
@@ -41041,7 +41041,7 @@ def WikiKO(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiKO",
         version=version,
         directed=directed,
@@ -41145,7 +41145,7 @@ def WikiMediaWB(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiMediaWB",
         version=version,
         directed=directed,
@@ -41249,7 +41249,7 @@ def WikiWA(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiWA",
         version=version,
         directed=directed,
@@ -41353,7 +41353,7 @@ def WikiQuoteHI(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteHI",
         version=version,
         directed=directed,
@@ -41457,7 +41457,7 @@ def WikiBooksYO(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksYO",
         version=version,
         directed=directed,
@@ -41561,7 +41561,7 @@ def WikiBooksDA(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksDA",
         version=version,
         directed=directed,
@@ -41665,7 +41665,7 @@ def WikiQuoteUG(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteUG",
         version=version,
         directed=directed,
@@ -41769,7 +41769,7 @@ def WikiAS(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiAS",
         version=version,
         directed=directed,
@@ -41873,7 +41873,7 @@ def WikiBooksCV(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksCV",
         version=version,
         directed=directed,
@@ -41977,7 +41977,7 @@ def WikiSourceFI(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSourceFI",
         version=version,
         directed=directed,
@@ -42081,7 +42081,7 @@ def WikiGD(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiGD",
         version=version,
         directed=directed,
@@ -42185,7 +42185,7 @@ def WikiSourceES(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSourceES",
         version=version,
         directed=directed,
@@ -42289,7 +42289,7 @@ def WikiTN(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiTN",
         version=version,
         directed=directed,
@@ -42393,7 +42393,7 @@ def WikiBooksMR(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksMR",
         version=version,
         directed=directed,
@@ -42497,7 +42497,7 @@ def WikiQuoteAZ(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteAZ",
         version=version,
         directed=directed,
@@ -42601,7 +42601,7 @@ def WikiQuoteKS(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteKS",
         version=version,
         directed=directed,
@@ -42705,7 +42705,7 @@ def WikiBooksZU(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksZU",
         version=version,
         directed=directed,
@@ -42809,7 +42809,7 @@ def WikiBI(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBI",
         version=version,
         directed=directed,
@@ -42913,7 +42913,7 @@ def WikiVoyageRO(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiVoyageRO",
         version=version,
         directed=directed,
@@ -43017,7 +43017,7 @@ def WikiBooksMG(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksMG",
         version=version,
         directed=directed,
@@ -43121,7 +43121,7 @@ def WikiIU(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiIU",
         version=version,
         directed=directed,
@@ -43225,7 +43225,7 @@ def WikiBooksAY(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksAY",
         version=version,
         directed=directed,
@@ -43329,7 +43329,7 @@ def WikiHU(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiHU",
         version=version,
         directed=directed,
@@ -43433,7 +43433,7 @@ def WikiSourceSA(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSourceSA",
         version=version,
         directed=directed,
@@ -43537,7 +43537,7 @@ def WikiNewsKO(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiNewsKO",
         version=version,
         directed=directed,
@@ -43641,7 +43641,7 @@ def WikiSourceNO(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSourceNO",
         version=version,
         directed=directed,
@@ -43745,7 +43745,7 @@ def WikiSL(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSL",
         version=version,
         directed=directed,
@@ -43849,7 +43849,7 @@ def WikiBooksGN(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksGN",
         version=version,
         directed=directed,
@@ -43953,7 +43953,7 @@ def WikiMS(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiMS",
         version=version,
         directed=directed,
@@ -44057,7 +44057,7 @@ def WikiBooksIA(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksIA",
         version=version,
         directed=directed,
@@ -44161,7 +44161,7 @@ def WikiAM(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiAM",
         version=version,
         directed=directed,
@@ -44265,7 +44265,7 @@ def WikiVoyageVI(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiVoyageVI",
         version=version,
         directed=directed,
@@ -44369,7 +44369,7 @@ def WikiBooksCH(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksCH",
         version=version,
         directed=directed,
@@ -44473,7 +44473,7 @@ def WikiBooksIT(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksIT",
         version=version,
         directed=directed,
@@ -44577,7 +44577,7 @@ def WikiSourceMK(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSourceMK",
         version=version,
         directed=directed,
@@ -44681,7 +44681,7 @@ def WikiBooksUZ(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksUZ",
         version=version,
         directed=directed,
@@ -44785,7 +44785,7 @@ def WikiBooksOC(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksOC",
         version=version,
         directed=directed,
@@ -44889,7 +44889,7 @@ def WikiFO(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiFO",
         version=version,
         directed=directed,
@@ -44993,7 +44993,7 @@ def WikiNewsSR(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiNewsSR",
         version=version,
         directed=directed,
@@ -45097,7 +45097,7 @@ def WikiZA(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiZA",
         version=version,
         directed=directed,
@@ -45201,7 +45201,7 @@ def WikiBooksRM(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksRM",
         version=version,
         directed=directed,
@@ -45305,7 +45305,7 @@ def WikiSourceTH(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSourceTH",
         version=version,
         directed=directed,
@@ -45409,7 +45409,7 @@ def WikiBooksMY(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksMY",
         version=version,
         directed=directed,
@@ -45513,7 +45513,7 @@ def WikiEU(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiEU",
         version=version,
         directed=directed,
@@ -45617,7 +45617,7 @@ def WikiTE(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiTE",
         version=version,
         directed=directed,
@@ -45721,7 +45721,7 @@ def WikiIK(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiIK",
         version=version,
         directed=directed,
@@ -45825,7 +45825,7 @@ def WikiMediaCA(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiMediaCA",
         version=version,
         directed=directed,
@@ -45929,7 +45929,7 @@ def WikiBooksKN(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksKN",
         version=version,
         directed=directed,
@@ -46033,7 +46033,7 @@ def WikiQuoteZH(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteZH",
         version=version,
         directed=directed,
@@ -46137,7 +46137,7 @@ def WikiSR(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSR",
         version=version,
         directed=directed,
@@ -46241,7 +46241,7 @@ def WikiBooksAR(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksAR",
         version=version,
         directed=directed,
@@ -46345,7 +46345,7 @@ def WikiQuotePT(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuotePT",
         version=version,
         directed=directed,
@@ -46449,7 +46449,7 @@ def WikiBooksML(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksML",
         version=version,
         directed=directed,
@@ -46553,7 +46553,7 @@ def WikiSourceIS(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSourceIS",
         version=version,
         directed=directed,
@@ -46657,7 +46657,7 @@ def WikiSG(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSG",
         version=version,
         directed=directed,
@@ -46761,7 +46761,7 @@ def WikiversityFR(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiversityFR",
         version=version,
         directed=directed,
@@ -46865,7 +46865,7 @@ def WikiQuoteEU(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteEU",
         version=version,
         directed=directed,
@@ -46969,7 +46969,7 @@ def WikiSourcePL(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSourcePL",
         version=version,
         directed=directed,
@@ -47073,7 +47073,7 @@ def WikiMediaAR(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiMediaAR",
         version=version,
         directed=directed,
@@ -47177,7 +47177,7 @@ def WikiLO(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiLO",
         version=version,
         directed=directed,
@@ -47281,7 +47281,7 @@ def WikiQuoteTE(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteTE",
         version=version,
         directed=directed,
@@ -47385,7 +47385,7 @@ def WikiPA(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiPA",
         version=version,
         directed=directed,
@@ -47489,7 +47489,7 @@ def WikiFF(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiFF",
         version=version,
         directed=directed,
@@ -47593,7 +47593,7 @@ def WikiMediaGE(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiMediaGE",
         version=version,
         directed=directed,
@@ -47695,7 +47695,7 @@ def WikiZH(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiZH",
         version=version,
         directed=directed,
@@ -47799,7 +47799,7 @@ def WikiQuoteSR(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteSR",
         version=version,
         directed=directed,
@@ -47901,7 +47901,7 @@ def WikiPT(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiPT",
         version=version,
         directed=directed,
@@ -48005,7 +48005,7 @@ def WikiBooksCA(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksCA",
         version=version,
         directed=directed,
@@ -48109,7 +48109,7 @@ def WikiBooksBA(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksBA",
         version=version,
         directed=directed,
@@ -48213,7 +48213,7 @@ def WikiKM(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiKM",
         version=version,
         directed=directed,
@@ -48317,7 +48317,7 @@ def WikiBooksSQ(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksSQ",
         version=version,
         directed=directed,
@@ -48421,7 +48421,7 @@ def WikiTY(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiTY",
         version=version,
         directed=directed,
@@ -48525,7 +48525,7 @@ def WikiNewsPT(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiNewsPT",
         version=version,
         directed=directed,
@@ -48629,7 +48629,7 @@ def WikiQuoteAM(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteAM",
         version=version,
         directed=directed,
@@ -48733,7 +48733,7 @@ def WikiSourceBS(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSourceBS",
         version=version,
         directed=directed,
@@ -48837,7 +48837,7 @@ def WikiBooksGL(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksGL",
         version=version,
         directed=directed,
@@ -48941,7 +48941,7 @@ def WikiSourceCS(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSourceCS",
         version=version,
         directed=directed,
@@ -49045,7 +49045,7 @@ def WikiSN(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSN",
         version=version,
         directed=directed,
@@ -49149,7 +49149,7 @@ def WikiRN(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiRN",
         version=version,
         directed=directed,
@@ -49253,7 +49253,7 @@ def WikiVoyageIT(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiVoyageIT",
         version=version,
         directed=directed,
@@ -49357,7 +49357,7 @@ def WikiSourceTA(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSourceTA",
         version=version,
         directed=directed,
@@ -49461,7 +49461,7 @@ def WikiTL(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiTL",
         version=version,
         directed=directed,
@@ -49565,7 +49565,7 @@ def WikiSourceSV(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSourceSV",
         version=version,
         directed=directed,
@@ -49669,7 +49669,7 @@ def WikiBooksVI(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksVI",
         version=version,
         directed=directed,
@@ -49773,7 +49773,7 @@ def WikiQuoteZA(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteZA",
         version=version,
         directed=directed,
@@ -49877,7 +49877,7 @@ def WikiNewsZH(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiNewsZH",
         version=version,
         directed=directed,
@@ -49981,7 +49981,7 @@ def WikiBooksFY(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksFY",
         version=version,
         directed=directed,
@@ -50085,7 +50085,7 @@ def WikiBooksSE(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksSE",
         version=version,
         directed=directed,
@@ -50189,7 +50189,7 @@ def WikiKY(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiKY",
         version=version,
         directed=directed,
@@ -50293,7 +50293,7 @@ def WikiBooksTR(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksTR",
         version=version,
         directed=directed,
@@ -50397,7 +50397,7 @@ def WikiQuoteET(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteET",
         version=version,
         directed=directed,
@@ -50501,7 +50501,7 @@ def WikiBooksUR(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksUR",
         version=version,
         directed=directed,
@@ -50605,7 +50605,7 @@ def WikiMN(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiMN",
         version=version,
         directed=directed,
@@ -50709,7 +50709,7 @@ def WikiLN(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiLN",
         version=version,
         directed=directed,
@@ -50813,7 +50813,7 @@ def WikiKL(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiKL",
         version=version,
         directed=directed,
@@ -50917,7 +50917,7 @@ def WikiSourceJA(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSourceJA",
         version=version,
         directed=directed,
@@ -51021,7 +51021,7 @@ def WikiNewsRO(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiNewsRO",
         version=version,
         directed=directed,
@@ -51124,7 +51124,7 @@ def WikiFR(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiFR",
         version=version,
         directed=directed,
@@ -51228,7 +51228,7 @@ def WikiMediaMX(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiMediaMX",
         version=version,
         directed=directed,
@@ -51332,7 +51332,7 @@ def WikiQU(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQU",
         version=version,
         directed=directed,
@@ -51436,7 +51436,7 @@ def WikiBooksHI(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksHI",
         version=version,
         directed=directed,
@@ -51540,7 +51540,7 @@ def WikiBooksUG(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksUG",
         version=version,
         directed=directed,
@@ -51644,7 +51644,7 @@ def WikiQuoteDA(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteDA",
         version=version,
         directed=directed,
@@ -51748,7 +51748,7 @@ def WikiBooksTG(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksTG",
         version=version,
         directed=directed,
@@ -51852,7 +51852,7 @@ def WikiRO(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiRO",
         version=version,
         directed=directed,
@@ -51956,7 +51956,7 @@ def WikiNewsFR(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiNewsFR",
         version=version,
         directed=directed,
@@ -52060,7 +52060,7 @@ def WikiSO(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSO",
         version=version,
         directed=directed,
@@ -52164,7 +52164,7 @@ def WikiNA(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiNA",
         version=version,
         directed=directed,
@@ -52268,7 +52268,7 @@ def WikiSourceBR(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSourceBR",
         version=version,
         directed=directed,
@@ -52372,7 +52372,7 @@ def WikiBooksKS(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksKS",
         version=version,
         directed=directed,
@@ -52476,7 +52476,7 @@ def WikiSourceNL(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSourceNL",
         version=version,
         directed=directed,
@@ -52580,7 +52580,7 @@ def WikiQuoteMR(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteMR",
         version=version,
         directed=directed,
@@ -52684,7 +52684,7 @@ def WikiSourceDE(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSourceDE",
         version=version,
         directed=directed,
@@ -52788,7 +52788,7 @@ def WikiBooksAZ(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksAZ",
         version=version,
         directed=directed,
@@ -52892,7 +52892,7 @@ def WikiMediaDK(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiMediaDK",
         version=version,
         directed=directed,
@@ -52996,7 +52996,7 @@ def WikiSourceBG(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSourceBG",
         version=version,
         directed=directed,
@@ -53100,7 +53100,7 @@ def WikiQuoteRO(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteRO",
         version=version,
         directed=directed,
@@ -53204,7 +53204,7 @@ def WikiBooksBI(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksBI",
         version=version,
         directed=directed,
@@ -53308,7 +53308,7 @@ def WikiQuoteNA(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteNA",
         version=version,
         directed=directed,
@@ -53412,7 +53412,7 @@ def WikiZU(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiZU",
         version=version,
         directed=directed,
@@ -53516,7 +53516,7 @@ def WikiMR(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiMR",
         version=version,
         directed=directed,
@@ -53620,7 +53620,7 @@ def WikiBooksSL(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksSL",
         version=version,
         directed=directed,
@@ -53724,7 +53724,7 @@ def WikiGN(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiGN",
         version=version,
         directed=directed,
@@ -53828,7 +53828,7 @@ def WikiAY(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiAY",
         version=version,
         directed=directed,
@@ -53932,7 +53932,7 @@ def WikiBooksHU(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksHU",
         version=version,
         directed=directed,
@@ -54036,7 +54036,7 @@ def WikiPI(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiPI",
         version=version,
         directed=directed,
@@ -54140,7 +54140,7 @@ def WikiLG(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiLG",
         version=version,
         directed=directed,
@@ -54244,7 +54244,7 @@ def WikiMG(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiMG",
         version=version,
         directed=directed,
@@ -54348,7 +54348,7 @@ def WikiBooksKO(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksKO",
         version=version,
         directed=directed,
@@ -54452,7 +54452,7 @@ def WikiversityZH(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiversityZH",
         version=version,
         directed=directed,
@@ -54556,7 +54556,7 @@ def WikiBooksWA(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksWA",
         version=version,
         directed=directed,
@@ -54660,7 +54660,7 @@ def WikiVoyageHI(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiVoyageHI",
         version=version,
         directed=directed,
@@ -54764,7 +54764,7 @@ def WikiSourceBN(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSourceBN",
         version=version,
         directed=directed,
@@ -54868,7 +54868,7 @@ def WikiSS(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSS",
         version=version,
         directed=directed,
@@ -54972,7 +54972,7 @@ def WikiQuoteKY(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteKY",
         version=version,
         directed=directed,
@@ -55076,7 +55076,7 @@ def WikiET(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiET",
         version=version,
         directed=directed,
@@ -55180,7 +55180,7 @@ def WikiBooksAF(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksAF",
         version=version,
         directed=directed,
@@ -55284,7 +55284,7 @@ def WikiMediaHI(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiMediaHI",
         version=version,
         directed=directed,
@@ -55388,7 +55388,7 @@ def WikiMediaSE(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiMediaSE",
         version=version,
         directed=directed,
@@ -55492,7 +55492,7 @@ def WikiQuoteFR(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteFR",
         version=version,
         directed=directed,
@@ -55596,7 +55596,7 @@ def WikiSourceSK(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSourceSK",
         version=version,
         directed=directed,
@@ -55700,7 +55700,7 @@ def WikiVoyageTR(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiVoyageTR",
         version=version,
         directed=directed,
@@ -55804,7 +55804,7 @@ def WikiCV(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiCV",
         version=version,
         directed=directed,
@@ -55908,7 +55908,7 @@ def WikiSourceEL(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSourceEL",
         version=version,
         directed=directed,
@@ -56012,7 +56012,7 @@ def WikiMediaTR(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiMediaTR",
         version=version,
         directed=directed,
@@ -56116,7 +56116,7 @@ def WikiBooksAS(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiBooksAS",
         version=version,
         directed=directed,
@@ -56220,7 +56220,7 @@ def WikiQuoteQU(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiQuoteQU",
         version=version,
         directed=directed,
@@ -56324,7 +56324,7 @@ def WikiversityPT(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiversityPT",
         version=version,
         directed=directed,
@@ -56428,7 +56428,7 @@ def WikiYO(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiYO",
         version=version,
         directed=directed,
@@ -56532,7 +56532,7 @@ def WikiDA(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiDA",
         version=version,
         directed=directed,
@@ -56636,7 +56636,7 @@ def WikiSourceHR(
 	
 	
     """
-    return WikipediaAutomaticallyRetrievedGraph(
+    return WikipediaRetrievedGraph(
         name="WikiSourceHR",
         version=version,
         directed=directed,
