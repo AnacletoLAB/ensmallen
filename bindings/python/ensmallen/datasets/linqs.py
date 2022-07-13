@@ -45,7 +45,7 @@ def PubMedDiabetes(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "PubMedDiabetes", version, "linqs", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs,
@@ -116,7 +116,7 @@ def Cora(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cora", version, "linqs", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs,
@@ -187,7 +187,7 @@ def CiteSeer(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "CiteSeer", version, "linqs", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs,

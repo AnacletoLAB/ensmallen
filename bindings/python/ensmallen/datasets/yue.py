@@ -45,7 +45,7 @@ def node2vecPPI(
     version = "latest"
         Version to retrieve	
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "node2vecPPI", version, "yue", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -76,7 +76,7 @@ def CTDDDA(
     version = "latest"
         Version to retrieve	
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "CTDDDA", version, "yue", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -107,7 +107,7 @@ def DrugBankDDI(
     version = "latest"
         Version to retrieve	
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "DrugBankDDI", version, "yue", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -138,7 +138,7 @@ def MashupPPI(
     version = "latest"
         Version to retrieve	
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "MashupPPI", version, "yue", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -169,7 +169,7 @@ def NDFRTDDA(
     version = "latest"
         Version to retrieve	
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "NDFRTDDA", version, "yue", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -200,7 +200,7 @@ def ClinTermCOOC(
     version = "latest"
         Version to retrieve	
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "ClinTermCOOC", version, "yue", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -231,7 +231,7 @@ def StringPPI(
     version = "latest"
         Version to retrieve	
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "StringPPI", version, "yue", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs

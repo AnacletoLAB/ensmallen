@@ -159,7 +159,7 @@ def PheKnowLator(
 			- v3.0.2-2021-10-18.subclass-relationsOnly-owlnets
 			- v3.0.2-2021-10-18.subclass-relationsOnly-owlnets-purified
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "PheKnowLator", version, "pheknowlatorkg", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs

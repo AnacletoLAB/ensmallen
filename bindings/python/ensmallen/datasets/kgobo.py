@@ -46,7 +46,7 @@ def MOD(
 			- 10-03-2021-14-36
 			- 1.031.4
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "MOD", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -85,7 +85,7 @@ def FBBT(
 			- 2022-02-24
 			- 2022-04-13
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "FBBT", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -119,7 +119,7 @@ def BTO(
 			- 2021-10-26
 			- 2021-04-27
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "BTO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -154,7 +154,7 @@ def CHMO(
 			- no_version
 			- 2022-02-17
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "CHMO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -190,7 +190,7 @@ def OBA(
 			- 2021-12-03
 			- 2022-01-19
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "OBA", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -223,7 +223,7 @@ def PSO(
 		The available versions are:
 			- 2020-05-19
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "PSO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -256,7 +256,7 @@ def OGSF(
 		The available versions are:
 			- 11-22-2014
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "OGSF", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -289,7 +289,7 @@ def MCO(
 		The available versions are:
 			- 2019-05-15
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "MCO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -322,7 +322,7 @@ def OPMI(
 		The available versions are:
 			- Vision-Release--1.0.130
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "OPMI", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -361,7 +361,7 @@ def FBDV(
 			- 2022-02-25
 			- 2022-04-12
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "FBDV", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -394,7 +394,7 @@ def CEPH(
 		The available versions are:
 			- 2016-01-12
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "CEPH", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -427,7 +427,7 @@ def MPATH(
 		The available versions are:
 			- 2020-05-19
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "MPATH", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -460,7 +460,7 @@ def SPD(
 		The available versions are:
 			- 1.0
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SPD", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -493,7 +493,7 @@ def OMIT(
 		The available versions are:
 			- dev
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "OMIT", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -526,7 +526,7 @@ def VT(
 		The available versions are:
 			- 04-10-2021-10-15
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "VT", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -559,7 +559,7 @@ def EHDAA2(
 		The available versions are:
 			- 2013-07-04
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "EHDAA2", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -592,7 +592,7 @@ def FLOPO(
 		The available versions are:
 			- no_version
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "FLOPO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -628,7 +628,7 @@ def WBLS(
 			- 2021-12-08
 			- 2022-03-22
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "WBLS", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -664,7 +664,7 @@ def RXNO(
 			- 2021-11-15
 			- 2021-12-06
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "RXNO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -704,7 +704,7 @@ def OMP(
 			- 2022-04-11
 			- 2022-05-06
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "OMP", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -737,7 +737,7 @@ def ERO(
 		The available versions are:
 			- no_version
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "ERO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -771,7 +771,7 @@ def GNO(
 			- 2022-02-23
 			- 2021-08-13
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "GNO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -804,7 +804,7 @@ def XCO(
 		The available versions are:
 			- 4.46
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "XCO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -837,7 +837,7 @@ def AMPHX(
 		The available versions are:
 			- 2020-12-18
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "AMPHX", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -870,7 +870,7 @@ def EPIO(
 		The available versions are:
 			- 2021-05-28
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "EPIO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -903,7 +903,7 @@ def CLYH(
 		The available versions are:
 			- 2020-05-29
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "CLYH", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -936,7 +936,7 @@ def OOSTT(
 		The available versions are:
 			- 2021-01-08
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "OOSTT", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -980,7 +980,7 @@ def FYPO(
 			- 2022-05-16
 			- 2022-06-20
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "FYPO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -1013,7 +1013,7 @@ def NCRO(
 		The available versions are:
 			- 2015-12-10
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "NCRO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -1046,7 +1046,7 @@ def IAO(
 		The available versions are:
 			- 2020-12-09
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "IAO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -1079,7 +1079,7 @@ def GEO(
 		The available versions are:
 			- production-version-2016-03-26
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "GEO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -1113,7 +1113,7 @@ def EXO(
 			- 2022-06-29
 			- 2.1
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "EXO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -1146,7 +1146,7 @@ def SWO(
 		The available versions are:
 			- swo.owl
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SWO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -1179,7 +1179,7 @@ def OBCS(
 		The available versions are:
 			- 2018-02-22
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "OBCS", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -1212,7 +1212,7 @@ def ENVO(
 		The available versions are:
 			- 2021-05-14
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "ENVO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -1250,7 +1250,7 @@ def SYMP(
 			- 2022-05-26
 			- 2022-06-22
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SYMP", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -1283,7 +1283,7 @@ def TAXRANK(
 		The available versions are:
 			- 2016-04-15
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "TAXRANK", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -1322,7 +1322,7 @@ def APO(
 			- 2022-03-23
 			- 2022-04-19
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "APO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -1356,7 +1356,7 @@ def CLO(
 			- 2022-03-20
 			- 2019-02-10
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "CLO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -1389,7 +1389,7 @@ def CMO(
 		The available versions are:
 			- 2019-02-19
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "CMO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -1422,7 +1422,7 @@ def OHMI(
 		The available versions are:
 			- 2019-09-17
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "OHMI", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -1456,7 +1456,7 @@ def HSO(
 			- 2021-12-13
 			- 2020-11-28
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "HSO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -1489,7 +1489,7 @@ def FBBI(
 		The available versions are:
 			- 2020-11-06
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "FBBI", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -1523,7 +1523,7 @@ def OBI(
 			- 2022-01-03
 			- 2021-08-18
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "OBI", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -1556,7 +1556,7 @@ def CDAO(
 		The available versions are:
 			- 2019-06-26
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "CDAO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -1589,7 +1589,7 @@ def MFMO(
 		The available versions are:
 			- 2013-11-16
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "MFMO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -1622,7 +1622,7 @@ def CRO(
 		The available versions are:
 			- 2019-12-11
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "CRO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -1655,7 +1655,7 @@ def CHEMINF(
 		The available versions are:
 			- 2.0
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "CHEMINF", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -1692,7 +1692,7 @@ def MP(
 			- 2021-10-26
 			- 2021-11-04
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "MP", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -1725,7 +1725,7 @@ def DUO(
 		The available versions are:
 			- 2021-02-23
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "DUO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -1758,7 +1758,7 @@ def LABO(
 		The available versions are:
 			- 2021-06-08
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "LABO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -1791,7 +1791,7 @@ def OLATDV(
 		The available versions are:
 			- 2020-03-10
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "OLATDV", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -1824,7 +1824,7 @@ def MPIO(
 		The available versions are:
 			- 2019-01-30
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "MPIO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -1865,7 +1865,7 @@ def CHEBI(
 			- 209
 			- 210
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "CHEBI", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -1898,7 +1898,7 @@ def AEO(
 		The available versions are:
 			- 2014-12-05
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "AEO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -1931,7 +1931,7 @@ def ADO(
 		The available versions are:
 			- 2022-06-11
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "ADO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -1964,7 +1964,7 @@ def FOBI(
 		The available versions are:
 			- fobi
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "FOBI", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -1998,7 +1998,7 @@ def GENO(
 			- 2022-03-05
 			- 2020-03-08
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "GENO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -2031,7 +2031,7 @@ def SBO(
 		The available versions are:
 			- 28-08-2021-03-13
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SBO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -2066,7 +2066,7 @@ def TO(
 			- 2021-04-06
 			- 2022-03-09
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "TO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -2099,7 +2099,7 @@ def UO(
 		The available versions are:
 			- no_version
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "UO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -2134,7 +2134,7 @@ def MOP(
 			- 2014-09-03
 			- 2022-02-01
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "MOP", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -2167,7 +2167,7 @@ def CHIRO(
 		The available versions are:
 			- 2015-11-23
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "CHIRO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -2200,7 +2200,7 @@ def OGMS(
 		The available versions are:
 			- 2021-08-19
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "OGMS", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -2236,7 +2236,7 @@ def NCBITAXON(
 			- 2021-12-14
 			- 2022-02-21
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "NCBITAXON", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -2271,7 +2271,7 @@ def FOODON(
 			- 2021-09-15
 			- 2021-11-25
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "FOODON", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -2304,7 +2304,7 @@ def PW(
 		The available versions are:
 			- 7.52
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "PW", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -2339,7 +2339,7 @@ def FOVT(
 			- 2021-06-02
 			- 2021-10-29
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "FOVT", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -2372,7 +2372,7 @@ def XPO(
 		The available versions are:
 			- 2021-03-05
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "XPO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -2405,7 +2405,7 @@ def ZFS(
 		The available versions are:
 			- 2020-03-10
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "ZFS", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -2438,7 +2438,7 @@ def RS(
 		The available versions are:
 			- 6.107
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "RS", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -2471,7 +2471,7 @@ def CTO(
 		The available versions are:
 			- no_version
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "CTO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -2505,7 +2505,7 @@ def OMO(
 			- 2022-04-27
 			- 2020-06-08
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "OMO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -2538,7 +2538,7 @@ def FIX(
 		The available versions are:
 			- 2020-04-13
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "FIX", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -2571,7 +2571,7 @@ def MAMO(
 		The available versions are:
 			- no_version
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "MAMO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -2604,7 +2604,7 @@ def VTO(
 		The available versions are:
 			- 2020-11-13
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "VTO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -2645,7 +2645,7 @@ def UBERON(
 			- 2022-05-27
 			- 2022-06-20
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "UBERON", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -2678,7 +2678,7 @@ def MFOMD(
 		The available versions are:
 			- 2020-04-26
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "MFOMD", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -2711,7 +2711,7 @@ def BFO(
 		The available versions are:
 			- 2019-08-26
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "BFO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -2744,7 +2744,7 @@ def HTN(
 		The available versions are:
 			- no_version
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "HTN", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -2778,7 +2778,7 @@ def PORO(
 			- 2016-10-06
 			- 2016-09-13
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "PORO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -2811,7 +2811,7 @@ def PROCO(
 		The available versions are:
 			- 2022-04-11
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "PROCO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -2849,7 +2849,7 @@ def AISM(
 			- 2022-03-17
 			- 2022-06-18
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "AISM", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -2885,7 +2885,7 @@ def WBBT(
 			- 2021-12-14
 			- 2022-03-22
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "WBBT", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -2918,7 +2918,7 @@ def HAO(
 		The available versions are:
 			- no_version
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "HAO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -2952,7 +2952,7 @@ def SO(
 			- 2021-11-22
 			- 2021-07-12
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -2991,7 +2991,7 @@ def RO(
 			- 2022-02-07
 			- 2022-04-25
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "RO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -3034,7 +3034,7 @@ def MONDO(
 			- 2022-05-02
 			- 2022-06-01
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "MONDO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -3068,7 +3068,7 @@ def DDPHENO(
 			- 2022-01-19
 			- 2020-06-19
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "DDPHENO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -3101,7 +3101,7 @@ def IDOMAL(
 		The available versions are:
 			- 2015-03-16
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "IDOMAL", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -3140,7 +3140,7 @@ def MAXO(
 			- 2022-05-06
 			- 2022-06-01
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "MAXO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -3179,7 +3179,7 @@ def FBCV(
 			- 2022-02-24
 			- 2022-04-14
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "FBCV", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -3212,7 +3212,7 @@ def TRANS(
 		The available versions are:
 			- 2020-08-04
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "TRANS", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -3245,7 +3245,7 @@ def PSDO(
 		The available versions are:
 			- 2020-12-04
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "PSDO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -3278,7 +3278,7 @@ def SCDO(
 		The available versions are:
 			- 2021-04-15
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SCDO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -3311,7 +3311,7 @@ def LEPAO(
 		The available versions are:
 			- 2021-11-20
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "LEPAO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -3344,7 +3344,7 @@ def ONTONEO(
 		The available versions are:
 			- 2021-04-29
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "ONTONEO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -3380,7 +3380,7 @@ def DRON(
 			- 2021-10-20
 			- 2022-01-28
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "DRON", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -3416,7 +3416,7 @@ def RBO(
 			- 2022-01-14
 			- 2022-04-16
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "RBO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -3451,7 +3451,7 @@ def NCIT(
 			- 2021-08-20
 			- 2021-12-17
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "NCIT", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -3484,7 +3484,7 @@ def FMA(
 		The available versions are:
 			- 2020-04-13
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "FMA", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -3517,7 +3517,7 @@ def REX(
 		The available versions are:
 			- 2017-11-19
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "REX", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -3551,7 +3551,7 @@ def COB(
 			- 2022-05-02
 			- 2021-09-13
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "COB", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -3584,7 +3584,7 @@ def SIBO(
 		The available versions are:
 			- 2015-06-15
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SIBO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -3617,7 +3617,7 @@ def PDRO(
 		The available versions are:
 			- 2021-06-08
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "PDRO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -3650,7 +3650,7 @@ def OGG(
 		The available versions are:
 			- 12-01-2016
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "OGG", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -3683,7 +3683,7 @@ def XLMOD(
 		The available versions are:
 			- 2019-10-28
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "XLMOD", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -3717,7 +3717,7 @@ def HANCESTRO(
 			- 2022-05-12
 			- 2020-12-18
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "HANCESTRO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -3759,7 +3759,7 @@ def GO(
 			- 2022-05-16
 			- 2022-06-15
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "GO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -3793,7 +3793,7 @@ def MF(
 			- 2021-11-17
 			- 2021-09-21
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "MF", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -3826,7 +3826,7 @@ def GSSO(
 		The available versions are:
 			- 2.0.5
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "GSSO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -3859,7 +3859,7 @@ def UPHENO(
 		The available versions are:
 			- no_version
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "UPHENO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -3895,7 +3895,7 @@ def PLANA(
 			- 2021-10-06
 			- 2021-10-21
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "PLANA", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -3928,7 +3928,7 @@ def OAE(
 		The available versions are:
 			- 1.2.44
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "OAE", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -3961,7 +3961,7 @@ def MMUSDV(
 		The available versions are:
 			- 2020-03-10
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "MMUSDV", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -4011,7 +4011,7 @@ def MS(
 			- 4.1.91
 			- 4.1.92
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "MS", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -4044,7 +4044,7 @@ def APOLLO_SV(
 		The available versions are:
 			- v4.1.1.
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "APOLLO_SV", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -4077,7 +4077,7 @@ def HSAPDV(
 		The available versions are:
 			- 2020-03-10
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "HSAPDV", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -4111,7 +4111,7 @@ def VO(
 			- March-19--2022
 			- September_18__2021
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "VO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -4144,7 +4144,7 @@ def MIRO(
 		The available versions are:
 			- 2014-05-14
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "MIRO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -4177,7 +4177,7 @@ def EMAPA(
 		The available versions are:
 			- 2021-09-01
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "EMAPA", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -4210,7 +4210,7 @@ def GECKO(
 		The available versions are:
 			- 2021-01-18
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "GECKO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -4243,7 +4243,7 @@ def CARO(
 		The available versions are:
 			- 2022-02-18
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "CARO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -4278,7 +4278,7 @@ def GENEPIO(
 			- 2021-05-24
 			- 2022-01-26
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "GENEPIO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -4311,7 +4311,7 @@ def TADS(
 		The available versions are:
 			- 2015-08-20
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "TADS", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -4344,7 +4344,7 @@ def FAO(
 		The available versions are:
 			- 2020-05-07
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "FAO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -4377,7 +4377,7 @@ def CVDO(
 		The available versions are:
 			- 2020-03-05
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "CVDO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -4410,7 +4410,7 @@ def ECAO(
 		The available versions are:
 			- 2020-05-22
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "ECAO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -4443,7 +4443,7 @@ def OHPI(
 		The available versions are:
 			- releases
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "OHPI", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -4476,7 +4476,7 @@ def OPL(
 		The available versions are:
 			- 2021-01-28
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "OPL", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -4509,7 +4509,7 @@ def TGMA(
 		The available versions are:
 			- 2013-06-03
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "TGMA", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -4543,7 +4543,7 @@ def BCO(
 			- 2021-11-14
 			- 2020-03-27
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "BCO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -4576,7 +4576,7 @@ def ICO(
 		The available versions are:
 			- 2021-04-21
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "ICO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -4610,7 +4610,7 @@ def ZECO(
 			- 2022-02-14
 			- 2021-06-04
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "ZECO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -4643,7 +4643,7 @@ def PHIPO(
 		The available versions are:
 			- 2021-07-14
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "PHIPO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -4676,7 +4676,7 @@ def PDUMDV(
 		The available versions are:
 			- 2020-03-10
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "PDUMDV", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -4709,7 +4709,7 @@ def ARO(
 		The available versions are:
 			- 05-10-2021-09-37
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "ARO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -4742,7 +4742,7 @@ def OARCS(
 		The available versions are:
 			- no_version
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "OARCS", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -4779,7 +4779,7 @@ def PCL(
 			- 2022-02-09
 			- 2022-03-02
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "PCL", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -4812,7 +4812,7 @@ def CTENO(
 		The available versions are:
 			- 2016-10-19
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "CTENO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -4845,7 +4845,7 @@ def PLANP(
 		The available versions are:
 			- 2020-03-28
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "PLANP", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -4887,7 +4887,7 @@ def DOID(
 			- 2022-04-01
 			- 2022-04-28
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "DOID", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -4921,7 +4921,7 @@ def OMRSE(
 			- 2022-04-06
 			- 2021-08-30
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "OMRSE", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -4954,7 +4954,7 @@ def PPO(
 		The available versions are:
 			- 2018-10-26
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "PPO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -4987,7 +4987,7 @@ def OVAE(
 		The available versions are:
 			- 04-11-2016
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "OVAE", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -5020,7 +5020,7 @@ def ZP(
 		The available versions are:
 			- 2021-12-12
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "ZP", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -5053,7 +5053,7 @@ def STATO(
 		The available versions are:
 			- RC1.4
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "STATO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -5086,7 +5086,7 @@ def ONE(
 		The available versions are:
 			- no_version
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "ONE", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -5122,7 +5122,7 @@ def ECTO(
 			- 2022-03-09
 			- 2022-05-04
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "ECTO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -5155,7 +5155,7 @@ def XAO(
 		The available versions are:
 			- 2021-03-04
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "XAO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -5188,7 +5188,7 @@ def MIAPA(
 		The available versions are:
 			- no_version
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "MIAPA", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -5221,7 +5221,7 @@ def MI(
 		The available versions are:
 			- 2020-04-13
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "MI", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -5255,7 +5255,7 @@ def ECOCORE(
 			- 2022-03-09
 			- 2021-02-17
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "ECOCORE", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -5288,7 +5288,7 @@ def MMO(
 		The available versions are:
 			- 2.39
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "MMO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -5323,7 +5323,7 @@ def EUPATH(
 			- 2021-09-09
 			- 2022-02-15
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "EUPATH", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -5357,7 +5357,7 @@ def OBIB(
 			- 2021-11-12
 			- 2021-02-02
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "OBIB", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -5390,7 +5390,7 @@ def IDO(
 		The available versions are:
 			- 2017-11-03
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "IDO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -5423,7 +5423,7 @@ def SEPIO(
 		The available versions are:
 			- no_version
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SEPIO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -5456,7 +5456,7 @@ def TTO(
 		The available versions are:
 			- 19-07-2012-13-26
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "TTO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -5492,7 +5492,7 @@ def PR(
 			- 64.0
 			- 65.0
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "PR", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -5525,7 +5525,7 @@ def NBO(
 		The available versions are:
 			- 2021-02-15
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "NBO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -5563,7 +5563,7 @@ def WBPHENOTYPE(
 			- 2021-12-20
 			- 2022-03-22
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "WBPHENOTYPE", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -5596,7 +5596,7 @@ def PECO(
 		The available versions are:
 			- 2020-08-21
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "PECO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -5629,7 +5629,7 @@ def GAZ(
 		The available versions are:
 			- no_version
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "GAZ", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -5662,7 +5662,7 @@ def CIO(
 		The available versions are:
 			- 2015-03-10
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "CIO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -5695,7 +5695,7 @@ def INO(
 		The available versions are:
 			- 1.1.13
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "INO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -5728,7 +5728,7 @@ def CLAO(
 		The available versions are:
 			- 2021-09-27
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "CLAO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -5761,7 +5761,7 @@ def UPA(
 		The available versions are:
 			- 2018-12-12
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "UPA", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -5794,7 +5794,7 @@ def NOMEN(
 		The available versions are:
 			- no_version
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "NOMEN", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -5831,7 +5831,7 @@ def ZFA(
 			- 2022-02-15
 			- 2022-02-28
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "ZFA", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -5864,7 +5864,7 @@ def DISDRIV(
 		The available versions are:
 			- no_version
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "DISDRIV", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -5897,7 +5897,7 @@ def CIDO(
 		The available versions are:
 			- 09-03-2021
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "CIDO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -5931,7 +5931,7 @@ def COLAO(
 			- 2022-06-18
 			- 2021-12-14
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "COLAO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -5964,7 +5964,7 @@ def KISAO(
 		The available versions are:
 			- 2.30
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "KISAO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -5997,7 +5997,7 @@ def MA(
 		The available versions are:
 			- 2017-02-07
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "MA", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -6030,7 +6030,7 @@ def PO(
 		The available versions are:
 			- 2021-08-13
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "PO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -6066,7 +6066,7 @@ def CDNO(
 			- 2022-01-10
 			- 2022-04-06
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "CDNO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -6100,7 +6100,7 @@ def ONS(
 			- no_version
 			- 1.2.2
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "ONS", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -6133,7 +6133,7 @@ def OHD(
 		The available versions are:
 			- 2016-06-27
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "OHD", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -6166,7 +6166,7 @@ def VARIO(
 		The available versions are:
 			- no_version
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "VARIO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -6200,7 +6200,7 @@ def AGRO(
 			- 2021-11-05
 			- 2021-07-01
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "AGRO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -6233,7 +6233,7 @@ def DIDEO(
 		The available versions are:
 			- release-version-2022-06-14
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "DIDEO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -6266,7 +6266,7 @@ def TXPO(
 		The available versions are:
 			- 2020-03-03
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "TXPO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -6306,7 +6306,7 @@ def PATO(
 			- 2022-02-20
 			- 2022-05-20
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "PATO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -6339,7 +6339,7 @@ def HOM(
 		The available versions are:
 			- 2015-01-07
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "HOM", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -6377,7 +6377,7 @@ def ECO(
 			- 2022-02-09
 			- 2022-04-11
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "ECO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -6410,7 +6410,7 @@ def ICEO(
 		The available versions are:
 			- 2.1
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "ICEO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -6443,7 +6443,7 @@ def DDANAT(
 		The available versions are:
 			- 2020-04-13
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "DDANAT", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -6478,7 +6478,7 @@ def BSPO(
 			- 2021-09-22
 			- 2021-10-13
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "BSPO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -6520,7 +6520,7 @@ def MRO(
 			- 2022-03-14
 			- 2022-05-13
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "MRO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -6553,7 +6553,7 @@ def PCO(
 		The available versions are:
 			- 2021-05-03
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "PCO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -6587,7 +6587,7 @@ def EPSO(
 			- 2021-05-28
 			- 
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "EPSO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -6620,7 +6620,7 @@ def ORNASEQ(
 		The available versions are:
 			- 2019-07-08
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "ORNASEQ", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -6657,7 +6657,7 @@ def HP(
 			- 2022-02-14
 			- 2022-04-14
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "HP", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -6696,7 +6696,7 @@ def DPO(
 			- 2022-02-24
 			- 2022-04-13
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "DPO", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -6736,7 +6736,7 @@ def CL(
 			- 2022-02-16
 			- 2022-06-15
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "CL", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -6770,7 +6770,7 @@ def MFOEM(
 			- 2021-11-17
 			- 2021-09-21
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "MFOEM", version, "kgobo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs

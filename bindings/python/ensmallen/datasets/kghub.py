@@ -1,6 +1,6 @@
 """Module providing graphs available from KGHub."""
 from ensmallen import Graph  # pylint: disable=import-error
-from .graph_retrieval import RetrievedGraph
+from .graph_retrieval import AutomaticallyRetrievedGraph
 
 def SLDB(
     directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
