@@ -331,8 +331,8 @@ impl Graph {
                 random_state = splitmix64(random_state);
                 let (src, dst) = if use_scale_free_distribution {
                     (
-                        self.get_random_scale_free_node(random_state),
-                        self.get_random_scale_free_node(random_state.wrapping_mul(2)),
+                        self.get_random_outbounds_scale_free_node(random_state),
+                        self.get_random_inbounds_scale_free_node(random_state.wrapping_mul(2)),
                     )
                 } else {
                     (
@@ -479,8 +479,8 @@ impl Graph {
             random_state = splitmix64(random_state);
             let (not_src, not_dst) = if use_scale_free_distribution {
                 (
-                    self.get_random_scale_free_node(random_state),
-                    self.get_random_scale_free_node(random_state.wrapping_mul(2)),
+                    self.get_random_outbounds_scale_free_node(random_state),
+                    self.get_random_inbounds_scale_free_node(random_state.wrapping_mul(2)),
                 )
             } else {
                 (

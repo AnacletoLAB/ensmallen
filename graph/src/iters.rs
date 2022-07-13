@@ -572,35 +572,66 @@ impl Graph {
             .map(move |(_, _, dst)| dst)
     }
 
-    /// Return iterator on random (non unique) source node IDs.
+    /// Return iterator on random (non unique) node IDs following the outbounds scale free distribution.
     ///
     /// # Arguments
     /// 'quantity': usize - Number of nodes to sample.
     /// 'random_state': u64 - Random state to use to sample the nodes.
-    pub fn iter_scale_free_random_source_node_ids(
+    pub fn iter_random_outbounds_scale_free_node_ids(
         &self,
         quantity: usize,
         mut random_state: u64,
     ) -> impl Iterator<Item = NodeT> + '_ {
         (0..quantity).map(move |_| {
             random_state = splitmix64(random_state);
-            self.get_random_scale_free_node(random_state)
+            self.get_random_outbounds_scale_free_node(random_state)
         })
     }
 
-    /// Return parallel iterator on random (non unique) source node IDs.
+    /// Return parallel iterator on random (non unique) node IDs following the outbounds scale free distribution.
     ///
     /// # Arguments
     /// 'quantity': usize - Number of nodes to sample.
     /// 'random_state': u64 - Random state to use to sample the nodes.
-    pub fn par_iter_scale_free_random_source_node_ids(
+    pub fn par_iter_random_outbounds_scale_free_node_ids(
         &self,
         quantity: usize,
         random_state: u64,
     ) -> impl IndexedParallelIterator<Item = NodeT> + '_ {
         (0..quantity)
             .into_par_iter()
-            .map(move |i| self.get_random_scale_free_node(splitmix64(random_state + i as u64)))
+            .map(move |i| self.get_random_outbounds_scale_free_node(splitmix64(random_state + i as u64)))
+    }
+
+    /// Return iterator on random (non unique) node IDs following the inbounds scale free distribution.
+    ///
+    /// # Arguments
+    /// 'quantity': usize - Number of nodes to sample.
+    /// 'random_state': u64 - Random state to use to sample the nodes.
+    pub fn iter_random_inbounds_scale_free_node_ids(
+        &self,
+        quantity: usize,
+        mut random_state: u64,
+    ) -> impl Iterator<Item = NodeT> + '_ {
+        (0..quantity).map(move |_| {
+            random_state = splitmix64(random_state);
+            self.get_random_inbounds_scale_free_node(random_state)
+        })
+    }
+
+    /// Return parallel iterator on random (non unique) node IDs following the inbounds scale free distribution.
+    ///
+    /// # Arguments
+    /// 'quantity': usize - Number of nodes to sample.
+    /// 'random_state': u64 - Random state to use to sample the nodes.
+    pub fn par_iter_random_inbounds_scale_free_node_ids(
+        &self,
+        quantity: usize,
+        random_state: u64,
+    ) -> impl IndexedParallelIterator<Item = NodeT> + '_ {
+        (0..quantity)
+            .into_par_iter()
+            .map(move |i| self.get_random_inbounds_scale_free_node(splitmix64(random_state + i as u64)))
     }
 
     /// Return iterator on random (non unique) node IDs.

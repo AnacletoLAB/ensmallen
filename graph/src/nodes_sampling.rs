@@ -74,14 +74,25 @@ impl Graph {
         ) as EdgeT
     }
 
-    /// Return random node ID following scale_free distribution of the graph.
+    /// Return random node ID following outbounds degree distribution of the graph.
     ///
     /// # Arguments
     /// * `random_state`: u64 - The random state to use to reproduce the sampling.
-    pub fn get_random_scale_free_node(&self, random_state: u64) -> NodeT {
+    pub fn get_random_outbounds_scale_free_node(&self, random_state: u64) -> NodeT {
         unsafe {
             self.get_unchecked_node_ids_from_edge_id(self.get_random_edge_id(random_state))
                 .0 as NodeT
+        }
+    }
+
+    /// Return random node ID following inbounds degree distribution of the graph.
+    ///
+    /// # Arguments
+    /// * `random_state`: u64 - The random state to use to reproduce the sampling.
+    pub fn get_random_inbounds_scale_free_node(&self, random_state: u64) -> NodeT {
+        unsafe {
+            self.get_unchecked_node_ids_from_edge_id(self.get_random_edge_id(random_state))
+                .1 as NodeT
         }
     }
 
