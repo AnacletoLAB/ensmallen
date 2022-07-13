@@ -1,6 +1,6 @@
 """Module providing graphs available from Zenodo."""
 from ensmallen import Graph  # pylint: disable=import-error
-from .graph_retrieval import AutomaticallyRetrievedGraph
+from .graph_retrieval import RetrievedGraph
 
 def WikiLinkIT(
     directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,

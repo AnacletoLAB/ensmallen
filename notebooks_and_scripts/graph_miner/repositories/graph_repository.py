@@ -561,7 +561,7 @@ class GraphRepository:
 
     def get_graph_retrieval_import(self) -> str:
         """Return what should be imported as automatic graph retrieval class."""
-        return "from .graph_retrieval import AutomaticallyRetrievedGraph"
+        return "from .graph_retrieval import RetrievedGraph"
 
     def format_init_file(
         self,
