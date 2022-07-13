@@ -6,7 +6,7 @@ from typing import Dict, List, Optional
 
 from dict_hash import sha256
 from ensmallen import Graph, edge_list_utils
-from .automatic_graph_retrieval import AutomaticallyRetrievedGraph
+from .graph_retrieval import AutomaticallyRetrievedGraph
 from environments_utils import is_windows
 
 

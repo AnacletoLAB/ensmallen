@@ -21,7 +21,7 @@ Please cite:
 ```
 """
 from ensmallen import Graph  # pylint: disable=import-error
-from .automatic_graph_retrieval import AutomaticallyRetrievedGraph
+from .graph_retrieval import AutomaticallyRetrievedGraph
 
 def FreeBase(
     directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,

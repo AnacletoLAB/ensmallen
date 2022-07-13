@@ -559,9 +559,9 @@ class GraphRepository:
             ),
         )
 
-    def get_automatic_graph_retrieval_import(self) -> str:
+    def get_graph_retrieval_import(self) -> str:
         """Return what should be imported as automatic graph retrieval class."""
-        return "from .automatic_graph_retrieval import AutomaticallyRetrievedGraph"
+        return "from .graph_retrieval import AutomaticallyRetrievedGraph"
 
     def format_init_file(
         self,
@@ -664,7 +664,7 @@ class GraphRepository:
                     first_references)) if has_unique_references else ""
             ),
             "from ensmallen import Graph  # pylint: disable=import-error",
-            self.get_automatic_graph_retrieval_import(),
+            self.get_graph_retrieval_import(),
             *imports,
             "",
             ""
