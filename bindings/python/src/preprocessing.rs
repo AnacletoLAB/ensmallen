@@ -150,7 +150,7 @@ use half::f16;
 ///     The default parameter for k1, tipically between 1.2 and 2.0.
 /// b: Optional[float]
 ///     The default parameter for b, tipically equal to 0.75.
-/// columns: Optional[List[String]]
+/// columns: Optional[List[str]]
 ///     The columns to be read.
 ///     If none are given, all the columns will be used.
 /// separator: Optional[str]
