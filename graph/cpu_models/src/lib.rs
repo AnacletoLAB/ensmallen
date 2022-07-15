@@ -18,8 +18,12 @@ mod unstructured;
 mod utils;
 mod walk_transformer;
 mod walklets;
+mod basic_embedding_model;
 mod weighted_spine;
+mod basic_siamese_model;
 
+pub(crate) use basic_embedding_model::*;
+pub(crate) use basic_siamese_model::*;
 pub(crate) use utils::*;
 
 pub use cbow::*;

@@ -12,22 +12,34 @@ impl Walklets {
     }
 }
 
-impl GraphEmbedder<f32> for Walklets {
+impl GraphEmbedder for Walklets {
     fn get_model_name(&self) -> String {
         format!("Walklets {}", self.node2vec.get_model_name())
     }
 
-    fn get_embedding_sizes(&self, graph: &graph::Graph) -> Vec<(usize, usize)> {
-        vec![
+    fn is_verbose(&self) -> bool {
+        self.node2vec.is_verbose()
+    }
+
+    fn get_number_of_epochs(&self) -> usize {
+        self.node2vec.get_number_of_epochs()
+    }
+
+    fn get_embedding_shapes(&self, graph: &graph::Graph) -> Result<Vec<(usize, usize)>, String> {
+        Ok(vec![
             (
                 graph.get_number_of_nodes() as usize,
                 self.node2vec.embedding_size
             );
             self.node2vec.window_size
-        ]
+        ])
     }
 
-    fn fit_transform(
+    fn get_random_state(&self) -> u64 {
+        self.node2vec.get_random_state()
+    }
+
+    fn _fit_transform(
         &self,
         graph: &graph::Graph,
         embedding: &mut [&mut [f32]],

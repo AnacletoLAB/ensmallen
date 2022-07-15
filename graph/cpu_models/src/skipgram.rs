@@ -33,8 +33,6 @@ where
         // This matrix has size:
         // height = number of nodes in the graph
         // width  = number of features in embedding
-        populate_vectors(embedding, random_state, scale_factor);
-        random_state = splitmix64(random_state);
         let mut hidden = get_random_vector(embedding[0].len(), random_state, scale_factor);
         random_state = splitmix64(random_state);
 

@@ -1,16 +1,16 @@
+use crate::{get_random_vector, must_not_be_zero, BasicEmbeddingModel, GraphEmbedder};
 use graph::{Graph, ThreadDataRaceAware, WalksParameters};
-use indicatif::{ProgressBar, ProgressStyle};
 use num_traits::Zero;
 use rayon::prelude::*;
-use vec_rand::{random_f32, splitmix64};
+use vec_rand::splitmix64;
 
 #[derive(Clone, Debug)]
 pub struct GloVe {
-    embedding_size: usize,
     walk_parameters: WalksParameters,
     window_size: usize,
     clipping_value: f32,
     alpha: f32,
+    model: BasicEmbeddingModel,
 }
 
 impl GloVe {
@@ -22,131 +22,98 @@ impl GloVe {
     /// * `window_size`: Option<usize> - Window size defining the contexts.
     /// * `clipping_value`: Option<f32> - Value at which we clip the dot product, mostly for numerical stability issues.
     /// * `alpha`: Option<f32> - Alpha to use for the loss. By default `0.75`.
+    /// * `epochs`: Option<usize> - The number of epochs to run the model for, by default 10.
+    /// * `learning_rate`: Option<f32> - The learning rate to update the gradient, by default 0.01.
+    /// * `learning_rate_decay`: Option<f32> - Factor to reduce the learning rate for at each epoch. By default 0.9.
+    /// * `random_state`: Option<u64> - The random state to use to reproduce the training.
+    /// * `verbose`: Option<bool> - Whether to show loading bar.
     pub fn new(
         embedding_size: Option<usize>,
         walk_parameters: Option<WalksParameters>,
         window_size: Option<usize>,
         clipping_value: Option<f32>,
         alpha: Option<f32>,
+        epochs: Option<usize>,
+        learning_rate: Option<f32>,
+        learning_rate_decay: Option<f32>,
+        random_state: Option<u64>,
+        verbose: Option<bool>,
     ) -> Result<Self, String> {
         // Handle the values of the default parameters.
-        let embedding_size = embedding_size.unwrap_or(100);
-        let window_size = window_size.unwrap_or(10);
         let clipping_value = clipping_value.unwrap_or(100.0);
         let alpha = alpha.unwrap_or(0.75);
         let walk_parameters = walk_parameters.unwrap_or_else(|| WalksParameters::default());
 
         // Validate that the provided parameters are within
         // reasonable bounds.
-        if embedding_size == 0 {
-            return Err(concat!("The embedding size cannot be equal to zero.").to_string());
-        }
-        if window_size == 0 {
-            return Err(concat!("The window size cannot be equal to zero.").to_string());
-        }
+        let window_size = must_not_be_zero(window_size, 10, "window size")?;
 
         Ok(Self {
-            embedding_size,
             window_size,
             walk_parameters,
             clipping_value,
             alpha,
+            model: BasicEmbeddingModel::new(
+                embedding_size,
+                epochs,
+                learning_rate,
+                learning_rate_decay,
+                random_state,
+                verbose,
+            )?,
         })
     }
+}
 
-    /// Returns the used embedding size.
-    pub fn get_embedding_size(&self) -> usize {
-        self.embedding_size
+impl GraphEmbedder for GloVe {
+    fn get_model_name(&self) -> String {
+        "GloVE".to_string()
     }
 
-    /// Computes in the provided slice of embedding the CBOW node embedding.
-    ///
-    /// # Implementative details
-    /// This implementation is NOT thread safe, that is, different threads may try
-    /// to overwrite each others memory. This version is faster than the memory safe
-    /// version and requires less memory. In most use cases, you would prefer to use
-    /// this version over the memory safe version.
-    ///
-    /// # Arguments
-    /// `graph`: &Graph - The graph to embed
-    /// `node_embedding`: &mut [f32] - The memory area where to write the node embedding.
-    /// `epochs`: Option<usize> - The number of epochs to run the model for, by default 10.
-    /// `learning_rate`: Option<f32> - The learning rate to update the gradient, by default 0.01.
-    /// `learning_rate_decay`: Option<f32> - Factor to reduce the learning rate for at each epoch. By default 0.9.
-    /// `verbose`: Option<bool> - Whether to show the loading bar, by default true.
-    pub fn fit_transform(
-        &self,
-        graph: &Graph,
-        node_embedding: &mut [f32],
-        epochs: Option<usize>,
-        learning_rate: Option<f32>,
-        learning_rate_decay: Option<f32>,
-        verbose: Option<bool>,
-    ) -> Result<(), String> {
-        let epochs = epochs.unwrap_or(10);
+    fn get_number_of_epochs(&self) -> usize {
+        self.model.epochs
+    }
+
+    fn is_verbose(&self) -> bool {
+        self.model.verbose
+    }
+
+    fn get_random_state(&self) -> u64 {
+        self.model.random_state
+    }
+
+    fn get_embedding_shapes(&self, graph: &Graph) -> Result<Vec<(usize, usize)>, String> {
+        Ok(vec![(
+            graph.get_number_of_nodes() as usize,
+            self.model.embedding_size,
+        )])
+    }
+
+    fn _fit_transform(&self, graph: &Graph, embedding: &mut [&mut [f32]]) -> Result<(), String> {
+        let embedding_size = self.model.get_embedding_size();
         let mut walk_parameters = self.walk_parameters.clone();
         let mut random_state = splitmix64(self.walk_parameters.get_random_state() as u64);
-        let verbose = verbose.unwrap_or(true);
-        let mut learning_rate = learning_rate.unwrap_or(0.01);
-        let learning_rate_decay = learning_rate_decay.unwrap_or(0.9);
-
+        let mut learning_rate = self.model.get_learning_rate();
         // This is used to scale the dot product to avoid getting NaN due to
         // exp(dot) being inf and the sigmoid becomes Nan
         // we multiply by context size so we have a faster division when computing
         // the dotproduct of the mean contexted mebedding
-        let scale_factor = (self.embedding_size as f32).sqrt();
-
-        if !graph.has_nodes() {
-            return Err("The provided graph does not have any node.".to_string());
-        }
-
-        let nodes_number = graph.get_number_of_nodes();
-        let expected_node_embedding_len = self.embedding_size * nodes_number as usize;
-        if node_embedding.len() != expected_node_embedding_len {
-            return Err(format!(
-                "The given memory allocation for the node embeddings is {} long but we expect {}.",
-                node_embedding.len(),
-                expected_node_embedding_len
-            ));
-        }
-
-        // Populate the node embedding layer with random uniform value
-        node_embedding
-            .par_iter_mut()
-            .enumerate()
-            .for_each(|(i, e)| *e = 2.0 * random_f32(splitmix64(random_state + i as u64)) - 1.0);
-
-        // Update the random state
-        random_state = splitmix64(random_state);
+        let scale_factor = (embedding_size as f32).sqrt();
 
         // Allocate and populate the hidden layer
-        let hidden_layer = (0..node_embedding.len())
-            .into_par_iter()
-            .map(|i| 2.0 * random_f32(splitmix64(random_state + i as u64)) - 1.0)
-            .collect::<Vec<f32>>();
+        let mut hidden_layer = get_random_vector(embedding[0].len(), random_state, scale_factor);
 
         // Update the random state
         random_state = splitmix64(random_state);
 
         // Wrapping the layers into shared structures.
-        let shared_node_embedding = ThreadDataRaceAware::new(node_embedding);
-        let shared_hidden_layer = ThreadDataRaceAware::new(hidden_layer);
+        let shared_embedding = ThreadDataRaceAware::new(&mut embedding[0]);
+        let shared_hidden_layer = ThreadDataRaceAware::new(hidden_layer.as_mut_slice());
 
-        // Depending whether verbosity was requested by the user
-        // we create or not a visible progress bar to show the progress
-        // in the training epochs.
-        let epochs_progress_bar = if verbose {
-            let pb = ProgressBar::new(epochs as u64);
-            pb.set_style(ProgressStyle::default_bar().template(
-                "GloVe {msg} {spinner:.green} [{elapsed_precise}] [{bar:40.cyan/blue}] ({pos}/{len}, ETA {eta})",
-            ));
-            pb
-        } else {
-            ProgressBar::hidden()
-        };
+        let pb = self.get_loading_bar();
 
         // We start to loop over the required amount of epochs.
-        for _ in 0..epochs {
+        for _ in 0..self.get_number_of_epochs() {
             // We update the random state used to generate the random walks
             // and the negative samples.
             random_state = splitmix64(random_state);
@@ -160,12 +127,10 @@ impl GloVe {
                     None,
                 )?
                 .map(|(src, dst, freq)| unsafe {
-                    let src_embedding = &mut (*shared_node_embedding.get())[(src as usize)
-                        * self.embedding_size
-                        ..((src as usize) + 1) * self.embedding_size];
-                    let dst_hidden = &mut (*shared_hidden_layer.get())[(dst as usize)
-                        * self.embedding_size
-                        ..(dst as usize + 1) * self.embedding_size];
+                    let src_embedding = &mut (*shared_embedding.get())
+                        [(src as usize) * embedding_size..((src as usize) + 1) * embedding_size];
+                    let dst_hidden = &mut (*shared_hidden_layer.get())
+                        [(dst as usize) * embedding_size..(dst as usize + 1) * embedding_size];
 
                     let dot = src_embedding
                         .iter()
@@ -197,9 +162,9 @@ impl GloVe {
                 break;
             }
 
-            epochs_progress_bar.inc(1);
-            epochs_progress_bar.set_message(format!("variation {:.4}", total_variation));
-            learning_rate *= learning_rate_decay;
+            pb.inc(1);
+            pb.set_message(format!("variation {:.4}", total_variation));
+            learning_rate *= self.model.get_learning_rate_decay();
         }
         Ok(())
     }

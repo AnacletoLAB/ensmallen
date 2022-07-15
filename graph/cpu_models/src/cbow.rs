@@ -38,8 +38,6 @@ where
         let scale_factor = (self.embedding_size as f32).sqrt() * context_size;
 
         // Populate the embedding layer with random uniform value
-        populate_vectors(embedding, random_state, scale_factor);
-        random_state = splitmix64(random_state);
         let mut hidden = get_random_vector(embedding[0].len(), random_state, scale_factor);
         random_state = splitmix64(random_state);
 

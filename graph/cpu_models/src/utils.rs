@@ -28,12 +28,19 @@ fn get_random_weight(random_state: u64, scale_factor: f32) -> f32 {
     (2.0 * random_f32(splitmix64(random_state)) - 1.0) * 6.0 / scale_factor
 }
 
-pub(crate) fn populate_vectors(vectors: &mut [&mut [f32]], random_state: u64, scale_factor: f32) {
-    vectors.iter_mut().for_each(|vector| {
-        vector.par_iter_mut().enumerate().for_each(|(i, weight)| {
-            *weight = get_random_weight(random_state + i as u64, scale_factor);
-        })
-    });
+pub(crate) fn populate_vectors(
+    vectors: &mut [&mut [f32]],
+    random_state: u64,
+    scale_factors: &[f32],
+) {
+    vectors
+        .iter_mut()
+        .zip(scale_factors.iter().copied())
+        .for_each(|(vector, scale_factor)| {
+            vector.par_iter_mut().enumerate().for_each(|(i, weight)| {
+                *weight = get_random_weight(random_state + i as u64, scale_factor);
+            })
+        });
 }
 
 pub(crate) fn get_random_vector(capacity: usize, random_state: u64, scale_factor: f32) -> Vec<f32> {

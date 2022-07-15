@@ -130,36 +130,38 @@ where
     }
 }
 
-impl<W> GraphEmbedder<f32> for Node2Vec<W>
+impl<W> GraphEmbedder for Node2Vec<W>
 where
     W: WalkTransformer,
 {
-    fn get_embedding_sizes(&self, graph: &graph::Graph) -> Vec<(usize, usize)> {
-        vec![(graph.get_number_of_nodes() as usize, self.embedding_size)]
+    fn get_embedding_shapes(&self, graph: &graph::Graph) -> Result<Vec<(usize, usize)>, String> {
+        Ok(vec![(
+            graph.get_number_of_nodes() as usize,
+            self.embedding_size,
+        )])
+    }
+
+    fn get_number_of_epochs(&self) -> usize {
+        self.epochs
+    }
+
+    fn is_verbose(&self) -> bool {
+        self.verbose
     }
 
     fn get_model_name(&self) -> String {
         self.model_type.to_string()
     }
 
-    fn fit_transform(
+    fn get_random_state(&self) -> u64 {
+        self.walk_parameters.get_random_state() as u64
+    }
+
+    fn _fit_transform(
         &self,
         graph: &graph::Graph,
         embedding: &mut [&mut [f32]],
     ) -> Result<(), String> {
-        if !graph.has_nodes() {
-            return Err("The provided graph does not have any node.".to_string());
-        }
-        let nodes_number = graph.get_number_of_nodes();
-        let expected_embedding_len = self.embedding_size * nodes_number as usize;
-
-        if embedding[0].len() != expected_embedding_len {
-            return Err(format!(
-                "The given memory allocation for the embeddings is {} long but we expect {}.",
-                embedding[0].len(),
-                expected_embedding_len
-            ));
-        }
         match self.model_type {
             Node2VecModels::CBOW => self.fit_transform_cbow(graph, embedding),
             Node2VecModels::SkipGram => self.fit_transform_skipgram(graph, embedding),
