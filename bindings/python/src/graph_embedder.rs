@@ -1,21 +1,18 @@
 use super::*;
 use numpy::PyArray2;
 
-pub trait GraphEmbedderBinding<F, M>
+pub trait GraphEmbedderBinding<M>
 where
-    F: numpy::Element,
-    M: cpu_models::GraphEmbedder<F>,
+    M: cpu_models::GraphEmbedder,
 {
     /// Computes in the provided memory slice the graph embedding.
     ///
     /// # Arguments
     /// `graph`: &Graph - The graph to embed
-    fn fit_transform(&self, graph: &Graph) -> PyResult<Vec<Py<PyArray2<F>>>> {
+    fn fit_transform(&self, graph: &Graph) -> PyResult<Vec<Py<PyArray2<f32>>>> {
         let gil = pyo3::Python::acquire_gil();
 
-        let embeddings = self
-            .get_model()
-            .get_embedding_sizes(&graph.inner)
+        let embeddings = pe!(self.get_model().get_embedding_shapes(&graph.inner))?
             .into_iter()
             .map(|(number_of_rows, number_of_columns)| {
                 PyArray2::new(gil.python(), [number_of_rows, number_of_columns], false)

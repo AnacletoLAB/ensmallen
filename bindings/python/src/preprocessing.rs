@@ -563,7 +563,7 @@ impl Graph {
         ))
     }
 
-    #[text_signature = "($self, random_state, batch_size, use_scale_free_distribution)"]
+    #[text_signature = "($self, random_state, batch_size)"]
     /// Returns n-ple with terms used for training a siamese network.
     ///
     /// Parameters
@@ -572,15 +572,11 @@ impl Graph {
     ///     Random state to reproduce sampling
     /// batch_size: int
     ///     The maximal size of the batch to generate,
-    /// use_scale_free_distribution: bool = True
-    ///     Whether to sample the negative edges following a scale_free distribution.
-    ///     By default True.
     ///
     fn get_siamese_mini_batch(
         &self,
         random_state: u64,
         batch_size: usize,
-        use_scale_free_distribution: Option<bool>,
     ) -> (
         Py<PyArray1<NodeT>>,
         Py<PyArray1<NodeT>>,
@@ -617,9 +613,12 @@ impl Graph {
         };
 
         self.inner
-            .par_iter_siamese_mini_batch_with_edge_types(random_state, batch_size, use_scale_free_distribution)
+            .par_iter_siamese_mini_batch_with_edge_types(
+                random_state,
+                batch_size,
+            )
             .enumerate()
-            .for_each(|(i, (src, dst, not_src, not_dst, edge_type))| unsafe {
+            .for_each(|(i, (_, src, dst, not_src, not_dst, edge_type))| unsafe {
                 for (node_ndarray, node) in [
                     (&srcs, src),
                     (&dsts, dst),
@@ -638,141 +637,6 @@ impl Graph {
             dsts.t.to_owned(),
             not_srcs.t.to_owned(),
             not_dsts.t.to_owned(),
-            edge_type_ids.t.to_owned(),
-        )
-    }
-
-    #[text_signature = "($self, random_state, batch_size, use_scale_free_distribution)"]
-    /// Returns n-ple with terms used for training a kgsiamese network.
-    ///
-    /// Parameters
-    /// -------------
-    /// random_state: int
-    ///     Random state to reproduce sampling
-    /// batch_size: int
-    ///     The maximal size of the batch to generate,
-    /// use_scale_free_distribution: bool = True
-    ///     Whether to sample the negative edges following a scale_free distribution.
-    ///     By default True.
-    ///
-    fn get_kgsiamese_mini_batch(
-        &self,
-        random_state: u64,
-        batch_size: usize,
-        use_scale_free_distribution: Option<bool>,
-    ) -> (
-        Py<PyArray1<NodeT>>,
-        Py<PyArray1<NodeT>>,
-        Py<PyArray1<NodeT>>,
-        Py<PyArray1<NodeT>>,
-        Py<PyArray2<NodeTypeT>>,
-        Py<PyArray2<NodeTypeT>>,
-        Py<PyArray2<NodeTypeT>>,
-        Py<PyArray2<NodeTypeT>>,
-        Py<PyArray1<EdgeTypeT>>,
-    ) {
-        let gil = pyo3::Python::acquire_gil();
-
-        let srcs = ThreadDataRaceAware {
-            t: PyArray1::new(gil.python(), [batch_size], false),
-        };
-
-        let dsts = ThreadDataRaceAware {
-            t: PyArray1::new(gil.python(), [batch_size], false),
-        };
-
-        let not_srcs = ThreadDataRaceAware {
-            t: PyArray1::new(gil.python(), [batch_size], false),
-        };
-
-        let not_dsts = ThreadDataRaceAware {
-            t: PyArray1::new(gil.python(), [batch_size], false),
-        };
-
-        let edge_type_ids = ThreadDataRaceAware {
-            t: PyArray1::zeros(gil.python(), [batch_size], false),
-        };
-
-        let max_node_type_count = self.inner.get_maximum_multilabel_count().unwrap() as usize;
-        let (src_node_type_ids, dst_node_type_ids, not_src_node_type_ids, not_dst_node_type_ids) = (
-            ThreadDataRaceAware {
-                t: PyArray2::zeros(gil.python(), [batch_size, max_node_type_count], false),
-            },
-            ThreadDataRaceAware {
-                t: PyArray2::zeros(gil.python(), [batch_size, max_node_type_count], false),
-            },
-            ThreadDataRaceAware {
-                t: PyArray2::zeros(gil.python(), [batch_size, max_node_type_count], false),
-            },
-            ThreadDataRaceAware {
-                t: PyArray2::zeros(gil.python(), [batch_size, max_node_type_count], false),
-            },
-        );
-
-        let node_types_offset = if self.inner.has_unknown_node_types().unwrap_or(false)
-            || self.inner.has_multilabel_node_types().unwrap_or(false)
-        {
-            1
-        } else {
-            0
-        };
-
-        let edge_types_offset = if self.inner.has_unknown_edge_types().unwrap_or(false) {
-            1
-        } else {
-            0
-        };
-
-        self.inner
-            .par_iter_kgsiamese_mini_batch(random_state, batch_size, use_scale_free_distribution)
-            .enumerate()
-            .for_each(
-                |(
-                    i,
-                    (
-                        src,
-                        dst,
-                        not_src,
-                        not_dst,
-                        src_nt_ids,
-                        dst_nt_ids,
-                        not_src_nt_ids,
-                        not_dst_nt_ids,
-                        edge_type,
-                    ),
-                )| unsafe {
-                    for (node_ndarray, node, node_types_ndarray, node_type_ids) in [
-                        (&srcs, src, &src_node_type_ids, src_nt_ids),
-                        (&dsts, dst, &dst_node_type_ids, dst_nt_ids),
-                        (&not_srcs, not_src, &not_src_node_type_ids, not_src_nt_ids),
-                        (&not_dsts, not_dst, &not_dst_node_type_ids, not_dst_nt_ids),
-                    ] {
-                        *(node_ndarray.t.uget_mut([i])) = node;
-                        if let Some(node_type_ids) = node_type_ids {
-                            node_type_ids
-                                .into_iter()
-                                .enumerate()
-                                .for_each(|(j, node_type)| {
-                                    *(node_types_ndarray.t.uget_mut([i, j])) =
-                                        node_type + node_types_offset;
-                                });
-                        }
-                    }
-                    if let Some(edge_type) = edge_type {
-                        *(edge_type_ids.t.uget_mut([i])) = edge_type + edge_types_offset;
-                    }
-                },
-            );
-
-        (
-            srcs.t.to_owned(),
-            dsts.t.to_owned(),
-            not_srcs.t.to_owned(),
-            not_dsts.t.to_owned(),
-            src_node_type_ids.t.to_owned(),
-            dst_node_type_ids.t.to_owned(),
-            not_src_node_type_ids.t.to_owned(),
-            not_dst_node_type_ids.t.to_owned(),
             edge_type_ids.t.to_owned(),
         )
     }

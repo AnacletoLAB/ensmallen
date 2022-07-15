@@ -22,8 +22,8 @@ mod basic_embedding_model;
 mod weighted_spine;
 mod basic_siamese_model;
 
-pub(crate) use basic_embedding_model::*;
-pub(crate) use basic_siamese_model::*;
+pub use basic_embedding_model::*;
+pub use basic_siamese_model::*;
 pub(crate) use utils::*;
 
 pub use cbow::*;
