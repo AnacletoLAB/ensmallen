@@ -613,10 +613,7 @@ impl Graph {
         };
 
         self.inner
-            .par_iter_siamese_mini_batch_with_edge_types(
-                random_state,
-                batch_size,
-            )
+            .par_iter_siamese_mini_batch_with_edge_types(random_state, batch_size)
             .enumerate()
             .for_each(|(i, (_, src, dst, not_src, not_dst, edge_type))| unsafe {
                 for (node_ndarray, node) in [

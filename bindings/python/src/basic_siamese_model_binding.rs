@@ -1,5 +1,5 @@
 use super::*;
-use cpu_models::{BasicSiameseModel, BasicEmbeddingModel};
+use cpu_models::{BasicEmbeddingModel, BasicSiameseModel};
 
 #[derive(Debug, Clone)]
 pub struct BasicSiameseModelBinding<M>
@@ -64,7 +64,6 @@ where
         .into())
     }
 }
-
 
 #[pyclass]
 #[derive(Debug, Clone)]
