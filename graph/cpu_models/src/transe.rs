@@ -1,13 +1,13 @@
+use crate::*;
 use graph::{EdgeTypeT, Graph, NodeT, ThreadDataRaceAware};
 use indicatif::ProgressIterator;
 use indicatif::{ProgressBar, ProgressStyle};
 use rayon::prelude::*;
-use vec_rand::{random_f32, splitmix64};
+use vec_rand::splitmix64;
 
 #[derive(Clone, Debug)]
 pub struct TransE {
     embedding_size: usize,
-    renormalize: bool,
     relu_bias: f32,
     random_state: u64,
 }
@@ -17,30 +17,23 @@ impl TransE {
     ///
     /// # Arguments
     /// `embedding_size`: Option<usize> - Size of the embedding.
-    /// `renormalize`: Option<bool> - Whether to renormalize at each loop, by default true.
     /// `relu_bias`: Option<f32> - The bias to apply to the relu. By default, 1.0.
     /// `random_state`: Option<u64> - The random state to use to reproduce the training.
     pub fn new(
         embedding_size: Option<usize>,
-        renormalize: Option<bool>,
         relu_bias: Option<f32>,
         random_state: Option<u64>,
     ) -> Result<Self, String> {
         // Handle the values of the default parameters.
-        let embedding_size = embedding_size.unwrap_or(100);
-        let renormalize = renormalize.unwrap_or(true);
         let relu_bias = relu_bias.unwrap_or(1.0);
         let random_state = random_state.unwrap_or(42);
 
         // Validate that the provided parameters are within
         // reasonable bounds.
-        if embedding_size == 0 {
-            return Err(concat!("The embedding size cannot be equal to zero.").to_string());
-        }
+        let embedding_size = must_not_be_zero(embedding_size, 100, "embedding size")?;
 
         Ok(Self {
             embedding_size,
-            renormalize,
             relu_bias,
             random_state,
         })
@@ -143,62 +136,11 @@ impl TransE {
             ));
         }
 
-        let initialization_radius = 6.0 / scale_factor;
-
-        let norm = |vector: &[f32]| {
-            (vector
-                .iter()
-                .map(|value| value.powf(2.0))
-                .sum::<f32>()
-                .sqrt()
-                + f32::EPSILON)
-                .min(f32::MAX)
-        };
-
-        let compute_prior = |subset_size: f32, total_size: f32| {
-            (1.0 + subset_size)
-                    / total_size
-                    // Adding the epsilon is necessary because the division may destroy enough
-                    // resolution to make the prior equal to zero.
-                    + f32::EPSILON
-        };
-
-        // Populate the embedding layers with random uniform value
-        node_embedding
-            .par_iter_mut()
-            .enumerate()
-            .for_each(|(i, e)| {
-                *e = 2.0 * initialization_radius * random_f32(splitmix64(random_state + i as u64))
-                    - initialization_radius
-            });
-
-        node_embedding
-            .par_chunks_mut(self.embedding_size)
-            .for_each(|chunk| {
-                let chunk_norm = norm(chunk);
-                chunk.iter_mut().for_each(|value| {
-                    *value /= chunk_norm;
-                });
-            });
-
-        random_state = splitmix64(random_state);
-
-        edge_type_embedding
-            .par_iter_mut()
-            .enumerate()
-            .for_each(|(i, e)| {
-                *e = 2.0 * initialization_radius * random_f32(splitmix64(random_state + i as u64))
-                    - initialization_radius
-            });
-
-        edge_type_embedding
-            .par_chunks_mut(self.embedding_size)
-            .for_each(|chunk| {
-                let chunk_norm = norm(chunk);
-                chunk.iter_mut().for_each(|value| {
-                    *value /= chunk_norm;
-                });
-            });
+        populate_vectors(
+            &mut [node_embedding, edge_type_embedding],
+            random_state,
+            scale_factor,
+        );
 
         let shared_node_embedding = ThreadDataRaceAware::new(node_embedding);
         let shared_edge_type_embedding = ThreadDataRaceAware::new(edge_type_embedding);
@@ -243,16 +185,12 @@ impl TransE {
                     [(edge_type * self.embedding_size)..((edge_type + 1) * self.embedding_size)]
             };
 
-            let (dst_norm, not_dst_norm, src_norm, not_src_norm) = if self.renormalize {
-                (
-                    norm(dst_embedding),
-                    norm(not_dst_embedding),
-                    norm(src_embedding),
-                    norm(not_src_embedding),
-                )
-            } else {
-                (1.0, 1.0, 1.0, 1.0)
-            };
+            let (dst_norm, not_dst_norm, src_norm, not_src_norm) = (
+                norm(dst_embedding),
+                norm(not_dst_embedding),
+                norm(src_embedding),
+                norm(not_src_embedding),
+            );
             let src_prior = compute_prior(
                 unsafe { graph.get_unchecked_node_degree_from_node_id(src as NodeT) as f32 },
                 nodes_number as f32,
@@ -287,12 +225,10 @@ impl TransE {
                         ((src_feature, not_src_feature), (dst_feature, not_dst_feature)),
                         edge_type_feature,
                     )| {
-                        if self.renormalize {
-                            *src_feature /= src_norm;
-                            *not_src_feature /= not_src_norm;
-                            *dst_feature /= dst_norm;
-                            *not_dst_feature /= not_dst_norm;
-                        }
+                        *src_feature /= src_norm;
+                        *not_src_feature /= not_src_norm;
+                        *dst_feature /= dst_norm;
+                        *not_dst_feature /= not_dst_norm;
 
                         let mut positive_distance =
                             *src_feature + *edge_type_feature - *dst_feature;
@@ -324,12 +260,11 @@ impl TransE {
 
                 // We iterate over the graph edges.
                 graph
-                    .par_iter_siamese_mini_batch(
+                    .par_iter_siamese_mini_batch_with_edge_types(
                         random_state,
                         graph.get_number_of_directed_edges() as usize,
-                        Some(true),
                     )
-                    .for_each(|(src, dst, not_src, not_dst, edge_type_id)| {
+                    .for_each(|(_, src, dst, not_src, not_dst, edge_type_id)| {
                         compute_mini_batch_step(
                             src as usize,
                             not_src as usize,

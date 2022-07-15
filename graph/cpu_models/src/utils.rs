@@ -41,3 +41,21 @@ pub(crate) fn get_random_vector(capacity: usize, random_state: u64, scale_factor
         .map(|i| get_random_weight(random_state + i as u64, scale_factor))
         .collect()
 }
+
+pub(crate) fn norm(vector: &[f32]) -> f32 {
+    (vector
+        .iter()
+        .map(|value| value.powf(2.0))
+        .sum::<f32>()
+        .sqrt()
+        + f32::EPSILON)
+        .min(f32::MAX)
+}
+
+pub(crate) fn compute_prior(subset_size: f32, total_size: f32) -> f32 {
+    (1.0 + subset_size)
+            / total_size
+            // Adding the epsilon is necessary because the division may destroy enough
+            // resolution to make the prior equal to zero.
+            + f32::EPSILON
+}

@@ -1,4 +1,4 @@
-use crate::{get_random_vector, populate_vectors};
+use crate::{get_random_vector, populate_vectors, norm, compute_prior};
 use express_measures::dot_product_sequential_unchecked;
 use graph::{Graph, NodeT, ThreadDataRaceAware};
 use indicatif::{ProgressBar, ProgressStyle};
@@ -89,47 +89,11 @@ impl SecondOrderLINE {
             ));
         }
 
-        let norm = |vector: &[f32]| {
-            (vector
-                .iter()
-                .map(|value| value.powf(2.0))
-                .sum::<f32>()
-                .sqrt()
-                + f32::EPSILON)
-                .min(f32::MAX)
-        };
-
-        let compute_prior = |subset_size: f32, total_size: f32| {
-            (1.0 + subset_size)
-                    / total_size
-                    // Adding the epsilon is necessary because the division may destroy enough
-                    // resolution to make the prior equal to zero.
-                    + f32::EPSILON
-        };
-
         // Populate the embedding layers with random uniform value
         populate_vectors(&mut [node_embedding], random_state, scale_factor);
         random_state = splitmix64(random_state);
         let mut hidden = get_random_vector(node_embedding.len(), random_state, scale_factor);
         random_state = splitmix64(random_state);
-
-        node_embedding
-            .par_chunks_mut(self.embedding_size)
-            .for_each(|chunk| {
-                let chunk_norm = norm(chunk);
-                chunk.iter_mut().for_each(|value| {
-                    *value /= chunk_norm;
-                });
-            });
-
-        hidden
-            .par_chunks_mut(self.embedding_size)
-            .for_each(|chunk| {
-                let chunk_norm = norm(chunk);
-                chunk.iter_mut().for_each(|value| {
-                    *value /= chunk_norm;
-                });
-            });
 
         let mut hidden_ref = hidden.as_mut_slice();
         let shared_hidden = ThreadDataRaceAware::new(&mut hidden_ref);
