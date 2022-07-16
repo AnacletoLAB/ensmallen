@@ -582,6 +582,66 @@ impl Graph {
         Py<PyArray1<NodeT>>,
         Py<PyArray1<NodeT>>,
         Py<PyArray1<NodeT>>,
+    ) {
+        let gil = pyo3::Python::acquire_gil();
+
+        let srcs = ThreadDataRaceAware {
+            t: PyArray1::new(gil.python(), [batch_size], false),
+        };
+
+        let dsts = ThreadDataRaceAware {
+            t: PyArray1::new(gil.python(), [batch_size], false),
+        };
+
+        let not_srcs = ThreadDataRaceAware {
+            t: PyArray1::new(gil.python(), [batch_size], false),
+        };
+
+        let not_dsts = ThreadDataRaceAware {
+            t: PyArray1::new(gil.python(), [batch_size], false),
+        };
+
+        self.inner
+            .par_iter_siamese_mini_batch(random_state, batch_size)
+            .enumerate()
+            .for_each(|(i, (_, src, dst, not_src, not_dst))| unsafe {
+                for (node_ndarray, node) in [
+                    (&srcs, src),
+                    (&dsts, dst),
+                    (&not_srcs, not_src),
+                    (&not_dsts, not_dst),
+                ] {
+                    *(node_ndarray.t.uget_mut([i])) = node;
+                }
+            });
+
+        (
+            srcs.t.to_owned(),
+            dsts.t.to_owned(),
+            not_srcs.t.to_owned(),
+            not_dsts.t.to_owned(),
+        )
+    }
+
+    #[text_signature = "($self, random_state, batch_size)"]
+    /// Returns n-ple with terms used for training a siamese network.
+    ///
+    /// Parameters
+    /// -------------
+    /// random_state: int
+    ///     Random state to reproduce sampling
+    /// batch_size: int
+    ///     The maximal size of the batch to generate,
+    ///
+    fn get_siamese_mini_batch_with_edge_types(
+        &self,
+        random_state: u64,
+        batch_size: usize,
+    ) -> (
+        Py<PyArray1<NodeT>>,
+        Py<PyArray1<NodeT>>,
+        Py<PyArray1<NodeT>>,
+        Py<PyArray1<NodeT>>,
         Py<PyArray1<EdgeTypeT>>,
     ) {
         let gil = pyo3::Python::acquire_gil();
