@@ -21,7 +21,7 @@ Please cite:
 ```
 """
 from ensmallen import Graph  # pylint: disable=import-error
-from .automatic_graph_retrieval import AutomaticallyRetrievedGraph
+from .graph_retrieval import RetrievedGraph
 
 def FreeBase(
     directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
@@ -48,7 +48,7 @@ def FreeBase(
     version = "latest"
         Version to retrieve	
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "FreeBase", version, "freebase", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -79,7 +79,7 @@ def FreeBase2WikiData(
     version = "latest"
         Version to retrieve	
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "FreeBase2WikiData", version, "freebase", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs

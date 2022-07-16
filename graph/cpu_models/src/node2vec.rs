@@ -6,6 +6,7 @@ use indicatif::{ProgressBar, ProgressStyle};
 pub enum Node2VecModels {
     CBOW,
     SkipGram,
+    GloVe,
 }
 
 impl std::fmt::Display for Node2VecModels {
@@ -27,6 +28,7 @@ where
     pub(crate) epochs: usize,
     pub(crate) learning_rate: f32,
     pub(crate) learning_rate_decay: f32,
+    pub(crate) alpha: f32,
     pub(crate) stochastic_downsample_by_degree: bool,
     pub(crate) normalize_learning_rate_by_degree: bool,
     pub(crate) use_scale_free_distribution: bool,
@@ -42,20 +44,22 @@ where
     /// Return new instance of Node2Vec model.
     ///
     /// # Arguments
-    /// `model_type`: Node2VecModels - The model to be used.
-    /// `walk_transformer`: W - Transformation to apply to the random walks.
-    /// `embedding_size`: Option<usize> - Size of the embedding.
-    /// `walk_parameters`: Option<WalksParameters> - Parameters to be used within the walks.
-    /// `window_size`: Option<usize> - Window size defining the contexts.
-    /// `clipping_value`: Option<f32> - Value at which we clip the dot product, mostly for numerical stability issues. By default, `6.0`, where the loss is already close to zero.
-    /// `number_of_negative_samples`: Option<usize> - Number of negative samples to extract for each context.
-    /// `epochs`: Option<usize> - The number of epochs to run the model for, by default 10.
-    /// `learning_rate`: Option<f32> - The learning rate to update the gradient, by default 0.01.
-    /// `learning_rate_decay`: Option<f32> - Factor to reduce the learning rate for at each epoch. By default 0.9.
-    /// `stochastic_downsample_by_degree`: Option<bool> - Randomly skip samples with probability proportional to the degree of the central node. By default false.
-    /// `normalize_learning_rate_by_degree`: Option<bool> - Divide the learning rate by the degree of the central node. By default false.
-    /// `use_scale_free_distribution`: Option<bool> - Sample negatives proportionally to their degree. By default true.
-    /// `verbose`: Option<bool> - Whether to show the loading bar, by default true.
+    /// * `model_type`: Node2VecModels - The model to be used.
+    /// * `walk_transformer`: W - Transformation to apply to the random walks.
+    /// * `embedding_size`: Option<usize> - Size of the embedding.
+    /// * `walk_parameters`: Option<WalksParameters> - Parameters to be used within the walks.
+    /// * `window_size`: Option<usize> - Window size defining the contexts.
+    /// * `clipping_value`: Option<f32> - Value at which we clip the dot product, mostly for numerical stability issues. By default, `6.0`, where the loss is already close to zero.
+    /// * `number_of_negative_samples`: Option<usize> - Number of negative samples to extract for each context.
+    /// * `epochs`: Option<usize> - The number of epochs to run the model for, by default 10.
+    /// * `learning_rate`: Option<f32> - The learning rate to update the gradient, by default 0.01.
+    /// * `learning_rate_decay`: Option<f32> - Factor to reduce the learning rate for at each epoch. By default 0.9.
+    /// * `learning_rate_decay`: Option<f32> - Factor to reduce the learning rate for at each epoch. By default 0.9.
+    /// * `alpha`: Option<f32> - Alpha to use for the loss. By default `0.75`.
+    /// * `stochastic_downsample_by_degree`: Option<bool> - Randomly skip samples with probability proportional to the degree of the central node. By default false.
+    /// * `normalize_learning_rate_by_degree`: Option<bool> - Divide the learning rate by the degree of the central node. By default false.
+    /// * `use_scale_free_distribution`: Option<bool> - Sample negatives proportionally to their degree. By default true.
+    /// * `verbose`: Option<bool> - Whether to show the loading bar, by default true.
     pub fn new(
         model_type: Node2VecModels,
         walk_transformer: W,
@@ -67,6 +71,7 @@ where
         epochs: Option<usize>,
         learning_rate: Option<f32>,
         learning_rate_decay: Option<f32>,
+        alpha: Option<f32>,
         stochastic_downsample_by_degree: Option<bool>,
         normalize_learning_rate_by_degree: Option<bool>,
         use_scale_free_distribution: Option<bool>,
@@ -81,6 +86,7 @@ where
         let learning_rate = must_not_be_zero(learning_rate, 0.01, "learning rate")?;
         let learning_rate_decay =
             must_not_be_zero(learning_rate_decay, 0.9, "learning rate decay")?;
+        let alpha = must_not_be_zero(alpha, 0.75, "GloVe alpha")?;
         let walk_parameters = walk_parameters.unwrap_or_else(|| WalksParameters::default());
         let stochastic_downsample_by_degree = stochastic_downsample_by_degree.unwrap_or(false);
         let normalize_learning_rate_by_degree = normalize_learning_rate_by_degree.unwrap_or(false);
@@ -96,6 +102,7 @@ where
             epochs,
             learning_rate,
             learning_rate_decay,
+            alpha,
             number_of_negative_samples,
             stochastic_downsample_by_degree,
             normalize_learning_rate_by_degree,
@@ -130,39 +137,42 @@ where
     }
 }
 
-impl<W> GraphEmbedder<f32> for Node2Vec<W>
+impl<W> GraphEmbedder for Node2Vec<W>
 where
     W: WalkTransformer,
 {
-    fn get_embedding_sizes(&self, graph: &graph::Graph) -> Vec<(usize, usize)> {
-        vec![(graph.get_number_of_nodes() as usize, self.embedding_size)]
+    fn get_embedding_shapes(&self, graph: &graph::Graph) -> Result<Vec<(usize, usize)>, String> {
+        Ok(vec![(
+            graph.get_number_of_nodes() as usize,
+            self.embedding_size,
+        )])
+    }
+
+    fn get_number_of_epochs(&self) -> usize {
+        self.epochs
+    }
+
+    fn is_verbose(&self) -> bool {
+        self.verbose
     }
 
     fn get_model_name(&self) -> String {
         self.model_type.to_string()
     }
 
-    fn fit_transform(
+    fn get_random_state(&self) -> u64 {
+        self.walk_parameters.get_random_state() as u64
+    }
+
+    fn _fit_transform(
         &self,
         graph: &graph::Graph,
         embedding: &mut [&mut [f32]],
     ) -> Result<(), String> {
-        if !graph.has_nodes() {
-            return Err("The provided graph does not have any node.".to_string());
-        }
-        let nodes_number = graph.get_number_of_nodes();
-        let expected_embedding_len = self.embedding_size * nodes_number as usize;
-
-        if embedding[0].len() != expected_embedding_len {
-            return Err(format!(
-                "The given memory allocation for the embeddings is {} long but we expect {}.",
-                embedding[0].len(),
-                expected_embedding_len
-            ));
-        }
         match self.model_type {
             Node2VecModels::CBOW => self.fit_transform_cbow(graph, embedding),
             Node2VecModels::SkipGram => self.fit_transform_skipgram(graph, embedding),
+            Node2VecModels::GloVe => self.fit_transform_glove(graph, embedding),
         }
     }
 }

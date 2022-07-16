@@ -491,11 +491,11 @@ impl Graph {
 
             // generate the random edge-sources
             let sampled_edge_ids = if use_scale_free_distribution {
-                self.par_iter_scale_free_random_source_node_ids(
+                self.par_iter_random_outbounds_scale_free_node_ids(
                     number_of_negative_samples as usize,
                     src_random_state,
                 )
-                .zip(self.par_iter_scale_free_random_source_node_ids(
+                .zip(self.par_iter_random_inbounds_scale_free_node_ids(
                     number_of_negative_samples as usize,
                     dst_random_state,
                 ))

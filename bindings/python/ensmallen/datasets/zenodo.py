@@ -1,6 +1,6 @@
 """Module providing graphs available from Zenodo."""
 from ensmallen import Graph  # pylint: disable=import-error
-from .automatic_graph_retrieval import AutomaticallyRetrievedGraph
+from .graph_retrieval import RetrievedGraph
 
 def WikiLinkIT(
     directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
@@ -61,7 +61,7 @@ def WikiLinkIT(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "WikiLinkIT", version, "zenodo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -126,7 +126,7 @@ def WikiLinkFR(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "WikiLinkFR", version, "zenodo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -174,7 +174,7 @@ def GiantTN(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "GiantTN", version, "zenodo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -239,7 +239,7 @@ def WikiLinkDE(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "WikiLinkDE", version, "zenodo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -304,7 +304,7 @@ def WikiLinkNL(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "WikiLinkNL", version, "zenodo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -369,7 +369,7 @@ def WikiLinkSV(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "WikiLinkSV", version, "zenodo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -434,7 +434,7 @@ def WikiLinkPL(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "WikiLinkPL", version, "zenodo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -499,7 +499,7 @@ def WikiLinkES(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "WikiLinkES", version, "zenodo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -564,7 +564,7 @@ def WikiLinkEN(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "WikiLinkEN", version, "zenodo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -629,7 +629,7 @@ def WikiLinkRU(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "WikiLinkRU", version, "zenodo", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs

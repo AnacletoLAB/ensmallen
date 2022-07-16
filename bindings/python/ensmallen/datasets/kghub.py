@@ -1,6 +1,6 @@
 """Module providing graphs available from KGHub."""
 from ensmallen import Graph  # pylint: disable=import-error
-from .automatic_graph_retrieval import AutomaticallyRetrievedGraph
+from .graph_retrieval import RetrievedGraph
 
 def SLDB(
     directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
@@ -31,7 +31,7 @@ def SLDB(
 	
 	
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "SLDB", version, "kghub", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -82,7 +82,7 @@ def KGMicrobe(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "KGMicrobe", version, "kghub", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -148,7 +148,7 @@ def KGIDG(
 	
 	
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "KGIDG", version, "kghub", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -197,7 +197,7 @@ def KGPhenio(
 	
 	
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "KGPhenio", version, "kghub", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -280,7 +280,7 @@ def KGCOVID19(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "KGCOVID19", version, "kghub", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs
@@ -316,7 +316,7 @@ def EcoKG(
 	
 	
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "EcoKG", version, "kghub", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs

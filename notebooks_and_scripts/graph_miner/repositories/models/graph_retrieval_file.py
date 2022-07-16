@@ -23,7 +23,7 @@ def {graph_method_name}(
     version = "{default_version}"
         Version to retrieve{available_graph_versions}{tabbed_references}
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "{graph_method_name}", version, "{repository_package_name}", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs{callbacks_data}

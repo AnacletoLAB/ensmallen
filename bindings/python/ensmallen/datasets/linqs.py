@@ -1,6 +1,6 @@
 """Module providing graphs available from LINQS."""
 from ensmallen import Graph  # pylint: disable=import-error
-from .automatic_graph_retrieval import AutomaticallyRetrievedGraph
+from .graph_retrieval import RetrievedGraph
 
 def PubMedDiabetes(
     directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
@@ -45,7 +45,7 @@ def PubMedDiabetes(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "PubMedDiabetes", version, "linqs", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs,
@@ -116,7 +116,7 @@ def Cora(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Cora", version, "linqs", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs,
@@ -187,7 +187,7 @@ def CiteSeer(
 	}
 	```
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "CiteSeer", version, "linqs", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs,

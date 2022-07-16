@@ -12,7 +12,7 @@ from ensmallen import Graph, edge_list_utils
 from .get_dataset import validate_graph_version
 
 
-class AutomaticallyRetrievedGraph:
+class RetrievedGraph:
     """Class definying an automatically retrievable graph."""
 
     def __init__(

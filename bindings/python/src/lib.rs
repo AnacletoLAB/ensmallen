@@ -19,16 +19,18 @@ pub use crate::node2vec::*;
 mod edge_prediction_perceptron;
 pub(crate) use edge_prediction_perceptron::*;
 
+mod basic_embedding_model_binding;
+pub(crate) use basic_embedding_model_binding::*;
+
+mod basic_siamese_model_binding;
+pub(crate) use basic_siamese_model_binding::*;
+
 mod dense;
 pub use dense::*;
 
 mod graph_embedder;
 pub use graph_embedder::*;
 
-mod glove;
-pub(crate) use glove::*;
-mod transe;
-pub(crate) use transe::*;
 mod edge_file_writer;
 mod hash;
 mod node_file_writer;
@@ -50,11 +52,16 @@ mod walks;
 #[pymodule]
 fn models(_py: Python, _m: &PyModule) -> PyResult<()> {
     _m.add_class::<CBOW>()?;
-    _m.add_class::<WalkletsCBOW>()?;
     _m.add_class::<GloVe>()?;
-    _m.add_class::<TransE>()?;
     _m.add_class::<SkipGram>()?;
+    _m.add_class::<WalkletsCBOW>()?;
+    _m.add_class::<WalkletsGloVe>()?;
     _m.add_class::<WalkletsSkipGram>()?;
+    _m.add_class::<TransE>()?;
+    _m.add_class::<TransH>()?;
+    _m.add_class::<Unstructured>()?;
+    _m.add_class::<FirstOrderLINE>()?;
+    _m.add_class::<SecondOrderLINE>()?;
     _m.add_class::<SPINE>()?;
     _m.add_class::<WeightedSPINE>()?;
     _m.add_class::<EdgePredictionPerceptron>()?;

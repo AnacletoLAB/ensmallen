@@ -33,8 +33,6 @@ where
         // This matrix has size:
         // height = number of nodes in the graph
         // width  = number of features in embedding
-        populate_vectors(embedding, random_state, scale_factor);
-        random_state = splitmix64(random_state);
         let mut hidden = get_random_vector(embedding[0].len(), random_state, scale_factor);
         random_state = splitmix64(random_state);
 
@@ -193,7 +191,7 @@ where
                                     // We compute the gradients relative to the negative classes.
                                     let negative_variation = if self.use_scale_free_distribution {
                                         graph
-                                            .iter_scale_free_random_source_node_ids(
+                                            .iter_random_outbounds_scale_free_node_ids(
                                                 self.number_of_negative_samples,
                                                 splitmix64(
                                                     random_state

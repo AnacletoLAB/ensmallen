@@ -18,7 +18,7 @@ Please cite:
 ```
 """
 from ensmallen import Graph  # pylint: disable=import-error
-from .automatic_graph_retrieval import AutomaticallyRetrievedGraph
+from .graph_retrieval import RetrievedGraph
 
 def WikiData(
     directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
@@ -45,10 +45,6 @@ def WikiData(
     version = "latest-truthy"
         Version to retrieve	
 		The available versions are:
-			- wikidata-20220518-truthy-BETA
-			- wikidata-20220520-lexemes-BETA
-			- wikidata-20220523-all-BETA
-			- wikidata-20220525-truthy-BETA
 			- wikidata-20220527-lexemes-BETA
 			- wikidata-20220530-all-BETA
 			- wikidata-20220601-truthy-BETA
@@ -65,11 +61,14 @@ def WikiData(
 			- wikidata-20220627-all-BETA
 			- wikidata-20220629-truthy-BETA
 			- wikidata-20220701-lexemes-BETA
+			- wikidata-20220704-all-BETA
+			- wikidata-20220706-truthy-BETA
+			- wikidata-20220708-lexemes-BETA
 			- latest-all
 			- latest-lexemes
 			- latest-truthy
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "WikiData", version, "wikidata", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs

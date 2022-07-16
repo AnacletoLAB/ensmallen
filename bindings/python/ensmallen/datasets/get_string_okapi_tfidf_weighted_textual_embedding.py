@@ -2,7 +2,6 @@
 from typing import Optional, Dict, List
 import numpy as np
 import os
-from .automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from .get_graph_okapi_tfidf_weighted_textual_embedding import get_graph_okapi_tfidf_weighted_textual_embedding
 
 

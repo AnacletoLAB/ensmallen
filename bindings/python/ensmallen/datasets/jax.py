@@ -1,6 +1,6 @@
 """Module providing graphs available from JAX."""
 from ensmallen import Graph  # pylint: disable=import-error
-from .automatic_graph_retrieval import AutomaticallyRetrievedGraph
+from .graph_retrieval import RetrievedGraph
 
 def Isopret(
     directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
@@ -29,7 +29,7 @@ def Isopret(
 	
 	
     """
-    return AutomaticallyRetrievedGraph(
+    return RetrievedGraph(
         "Isopret", version, "jax", directed, preprocess, load_nodes,
         load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
         cache_path, cache_sys_var, kwargs

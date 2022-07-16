@@ -2,7 +2,7 @@
 from typing import Optional, Dict, List
 import numpy as np
 import os
-from .automatic_graph_retrieval import AutomaticallyRetrievedGraph
+from .graph_retrieval import RetrievedGraph
 from .get_okapi_tfidf_weighted_textual_embedding import get_okapi_tfidf_weighted_textual_embedding
 
 
@@ -41,7 +41,7 @@ def get_graph_okapi_tfidf_weighted_textual_embedding(
         Whether to show the loading bars
     """
     # Sanitize data using the automatic graph retrieval
-    graph_retriever = AutomaticallyRetrievedGraph(
+    graph_retriever = RetrievedGraph(
         name=name,
         version=version,
         repository=repository,

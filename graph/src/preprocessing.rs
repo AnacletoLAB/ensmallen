@@ -331,8 +331,8 @@ impl Graph {
                 random_state = splitmix64(random_state);
                 let (src, dst) = if use_scale_free_distribution {
                     (
-                        self.get_random_scale_free_node(random_state),
-                        self.get_random_scale_free_node(random_state.wrapping_mul(2)),
+                        self.get_random_outbounds_scale_free_node(random_state),
+                        self.get_random_inbounds_scale_free_node(random_state.wrapping_mul(2)),
                     )
                 } else {
                     (
@@ -461,86 +461,85 @@ impl Graph {
     /// # Arguments
     /// * `random_state`: u64 - The random state to reproduce the batch.
     /// * `batch_size`: usize - The maximal size of the batch to generate,
-    /// * `use_scale_free_distribution`: Option<bool> - Whether to sample the nodes using scale_free distribution. By default True. Not using this may cause significant biases.
     ///
     pub fn par_iter_siamese_mini_batch(
         &self,
         random_state: u64,
         batch_size: usize,
-        use_scale_free_distribution: Option<bool>,
-    ) -> impl IndexedParallelIterator<Item = (NodeT, NodeT, NodeT, NodeT, Option<EdgeTypeT>)> + '_
-    {
-        let use_scale_free_distribution = use_scale_free_distribution.unwrap_or(true);
+    ) -> impl IndexedParallelIterator<Item = (EdgeT, NodeT, NodeT, NodeT, NodeT)> + '_ {
         let random_state = splitmix64(random_state);
         (0..batch_size).into_par_iter().map(move |i| unsafe {
             let mut random_state = splitmix64(random_state + i as u64);
             let edge_id = self.get_random_edge_id(random_state);
             let (src, dst) = self.get_unchecked_node_ids_from_edge_id(edge_id);
             random_state = splitmix64(random_state);
-            let (not_src, not_dst) = if use_scale_free_distribution {
-                (
-                    self.get_random_scale_free_node(random_state),
-                    self.get_random_scale_free_node(random_state.wrapping_mul(2)),
-                )
-            } else {
-                (
-                    self.get_random_node(random_state),
-                    self.get_random_node(random_state.wrapping_mul(2)),
-                )
-            };
-            (
-                src,
-                dst,
-                not_src,
-                not_dst,
-                self.get_unchecked_edge_type_id_from_edge_id(edge_id),
-            )
+            let (not_src, not_dst) = (
+                self.get_random_outbounds_scale_free_node(random_state),
+                self.get_random_inbounds_scale_free_node(random_state.wrapping_mul(2)),
+            );
+            (edge_id, src, dst, not_src, not_dst)
         })
     }
 
-    /// Returns n-ple with terms used for training a kgsiamese network.
+    /// Returns n-ple with terms used for training a siamese network that also requires edge types.
     ///
     /// # Arguments
     /// * `random_state`: u64 - The random state to reproduce the batch.
     /// * `batch_size`: usize - The maximal size of the batch to generate,
-    /// * `use_scale_free_distribution`: Option<bool> - Whether to sample the nodes using scale_free distribution. By default True. Not using this may cause significant biases.
     ///
-    pub fn par_iter_kgsiamese_mini_batch(
+    pub fn par_iter_siamese_mini_batch_with_edge_types(
         &self,
         random_state: u64,
         batch_size: usize,
-        use_scale_free_distribution: Option<bool>,
+    ) -> impl IndexedParallelIterator<Item = (EdgeT, NodeT, NodeT, NodeT, NodeT, Option<EdgeTypeT>)> + '_
+    {
+        self.par_iter_siamese_mini_batch(random_state, batch_size)
+            .map(move |(edge_id, src, dst, not_src, not_dst)| {
+                (edge_id, src, dst, not_src, not_dst, unsafe {
+                    self.get_unchecked_edge_type_id_from_edge_id(edge_id)
+                })
+            })
+    }
+
+    /// Returns n-ple with terms used for training siamese network on node and edge types.
+    ///
+    /// # Arguments
+    /// * `random_state`: u64 - The random state to reproduce the batch.
+    /// * `batch_size`: usize - The maximal size of the batch to generate,
+    ///
+    pub fn par_iter_siamese_mini_batch_with_node_and_edge_types(
+        &self,
+        random_state: u64,
+        batch_size: usize,
     ) -> impl IndexedParallelIterator<
         Item = (
+            EdgeT,
             NodeT,
             NodeT,
             NodeT,
             NodeT,
-            Option<Vec<NodeTypeT>>,
-            Option<Vec<NodeTypeT>>,
             Option<Vec<NodeTypeT>>,
             Option<Vec<NodeTypeT>>,
             Option<EdgeTypeT>,
         ),
     > + '_ {
-        self.par_iter_siamese_mini_batch(random_state, batch_size, use_scale_free_distribution)
-            .map(move |(src, dst, not_src, not_dst, edge_type)| unsafe {
-                (
-                    src,
-                    dst,
-                    not_src,
-                    not_dst,
-                    self.get_unchecked_node_type_ids_from_node_id(src)
-                        .map(|x| x.clone()),
-                    self.get_unchecked_node_type_ids_from_node_id(dst)
-                        .map(|x| x.clone()),
-                    self.get_unchecked_node_type_ids_from_node_id(not_src)
-                        .map(|x| x.clone()),
-                    self.get_unchecked_node_type_ids_from_node_id(not_dst)
-                        .map(|x| x.clone()),
-                    edge_type,
-                )
-            })
+        self.par_iter_siamese_mini_batch_with_edge_types(random_state, batch_size)
+            .map(
+                move |(edge_id, src, dst, not_src, not_dst, edge_type)| unsafe {
+                    (
+                        edge_id,
+                        src,
+                        dst,
+                        not_src,
+                        not_dst,
+                        self.get_unchecked_node_type_ids_from_node_id(src)
+                            .map(|x| x.clone()),
+                        self.get_unchecked_node_type_ids_from_node_id(dst)
+                            .map(|x| x.clone()),
+                        edge_type,
+                    )
+                },
+            )
     }
 
     /// Returns n-ple with index to build numpy array, source node, source node type, destination node, destination node type.
