@@ -946,7 +946,7 @@ def FYPO(
     directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-06-20", **kwargs
+    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-06-27", **kwargs
 ) -> Graph:
     """Return FYPO graph	
 
@@ -964,10 +964,10 @@ def FYPO(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2022-06-20"
+    version = "2022-06-27"
         Version to retrieve	
 		The available versions are:
-			- 2022-06-27
+			- 2022-07-14
 			- 2021-10-05
 			- 2021-11-08
 			- 2021-11-18
@@ -979,6 +979,7 @@ def FYPO(
 			- 2022-05-11
 			- 2022-05-16
 			- 2022-06-20
+			- 2022-06-27
     """
     return RetrievedGraph(
         "FYPO", version, "kgobo", directed, preprocess, load_nodes,
@@ -1222,7 +1223,7 @@ def SYMP(
     directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-06-22", **kwargs
+    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-07-05", **kwargs
 ) -> Graph:
     """Return SYMP graph	
 
@@ -1240,15 +1241,16 @@ def SYMP(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2022-06-22"
+    version = "2022-07-05"
         Version to retrieve	
 		The available versions are:
-			- 2022-07-05
+			- 2022-07-12
 			- 2020-08-04
 			- 2022-04-05
 			- 2022-05-10
 			- 2022-05-26
 			- 2022-06-22
+			- 2022-07-05
     """
     return RetrievedGraph(
         "SYMP", version, "kgobo", directed, preprocess, load_nodes,
@@ -1499,7 +1501,7 @@ def OBI(
     directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
     load_edge_weights = True, auto_enable_tradeoffs = True,
     sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-08-18", **kwargs
+    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-01-03", **kwargs
 ) -> Graph:
     """Return OBI graph	
 
@@ -1517,11 +1519,12 @@ def OBI(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2021-08-18"
+    version = "2022-01-03"
         Version to retrieve	
 		The available versions are:
-			- 2022-01-03
+			- 2022-07-11
 			- 2021-08-18
+			- 2022-01-03
     """
     return RetrievedGraph(
         "OBI", version, "kgobo", directed, preprocess, load_nodes,
@@ -4175,6 +4178,7 @@ def EMAPA(
     version = "2021-09-01"
         Version to retrieve	
 		The available versions are:
+			- 2022-07-14
 			- 2021-09-01
     """
     return RetrievedGraph(

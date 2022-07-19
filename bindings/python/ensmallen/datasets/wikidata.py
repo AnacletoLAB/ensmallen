@@ -45,9 +45,6 @@ def WikiData(
     version = "latest-truthy"
         Version to retrieve	
 		The available versions are:
-			- wikidata-20220527-lexemes-BETA
-			- wikidata-20220530-all-BETA
-			- wikidata-20220601-truthy-BETA
 			- wikidata-20220603-lexemes-BETA
 			- wikidata-20220606-all-BETA
 			- wikidata-20220608-truthy-BETA
@@ -64,6 +61,9 @@ def WikiData(
 			- wikidata-20220704-all-BETA
 			- wikidata-20220706-truthy-BETA
 			- wikidata-20220708-lexemes-BETA
+			- wikidata-20220711-all-BETA
+			- wikidata-20220713-truthy-BETA
+			- wikidata-20220715-lexemes-BETA
 			- latest-all
 			- latest-lexemes
 			- latest-truthy
