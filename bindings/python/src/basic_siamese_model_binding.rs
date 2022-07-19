@@ -111,7 +111,7 @@ impl TransE {
     /// ---------
     /// graph: Graph
     ///     The graph to embed.
-    fn fit_transform(&self, graph: &Graph) -> PyResult<Vec<Py<PyArray2<f32>>>> {
+    fn fit_transform(&self, graph: &Graph) -> PyResult<Vec<Py<PyAny>>> {
         Ok(self.inner.fit_transform(graph)?)
     }
 }
@@ -162,7 +162,7 @@ impl Unstructured {
     /// ---------
     /// graph: Graph
     ///     The graph to embed.
-    fn fit_transform(&self, graph: &Graph) -> PyResult<Py<PyArray2<f32>>> {
+    fn fit_transform(&self, graph: &Graph) -> PyResult<Py<PyAny>> {
         Ok(self.inner.fit_transform(graph)?.first().unwrap().to_owned())
     }
 }
@@ -213,7 +213,58 @@ impl TransH {
     /// ---------
     /// graph: Graph
     ///     The graph to embed.
-    fn fit_transform(&self, graph: &Graph) -> PyResult<Vec<Py<PyArray2<f32>>>> {
+    fn fit_transform(&self, graph: &Graph) -> PyResult<Vec<Py<PyAny>>> {
+        Ok(self.inner.fit_transform(graph)?)
+    }
+}
+
+#[pyclass]
+#[derive(Debug, Clone)]
+#[text_signature = "(*, relu_bias, embedding_size, epochs, learning_rate, learning_rate_decay, random_state, verbose)"]
+pub struct StructuredEmbedding {
+    pub inner: BasicSiameseModelBinding<cpu_models::StructuredEmbedding>,
+}
+
+#[pymethods]
+impl StructuredEmbedding {
+    #[new]
+    #[args(py_kwargs = "**")]
+    /// Return a new instance of the StructuredEmbedding model.
+    ///
+    /// Parameters
+    /// ------------------------
+    /// relu_bias: Optional[float] = 1.0
+    ///     The bias to apply to the relu. By default, 1.0.
+    /// embedding_size: Optional[int] = 100
+    ///     Size of the embedding.
+    /// epochs: int = 100
+    ///     Number of epochs to train the model for.
+    /// learning_rate: float = 0.01
+    ///     Learning rate of the model.
+    /// learning_rate_decay: float = 0.9
+    ///     Amount of learning rate decay for each epoch.
+    /// random_state: int = 42
+    ///     random_state to use to reproduce the walks.
+    /// verbose: bool = True
+    ///     Whether to show the loading bar.
+    pub fn new(py_kwargs: Option<&PyDict>) -> PyResult<StructuredEmbedding> {
+        Ok(Self {
+            inner: BasicSiameseModelBinding::from_pydict(py_kwargs)?,
+        })
+    }
+}
+
+#[pymethods]
+impl StructuredEmbedding {
+    #[args(py_kwargs = "**")]
+    #[text_signature = "($self, graph)"]
+    /// Return numpy embedding with StructuredEmbedding node embedding.
+    ///
+    /// Parameters
+    /// ---------
+    /// graph: Graph
+    ///     The graph to embed.
+    fn fit_transform(&self, graph: &Graph) -> PyResult<Vec<Py<PyAny>>> {
         Ok(self.inner.fit_transform(graph)?)
     }
 }

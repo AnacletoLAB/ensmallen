@@ -15,6 +15,7 @@ mod spine;
 mod transe;
 mod transh;
 mod unstructured;
+mod structured_embedding;
 mod utils;
 mod walk_transformer;
 mod walklets;
@@ -24,7 +25,7 @@ mod basic_siamese_model;
 
 pub use basic_embedding_model::*;
 pub use basic_siamese_model::*;
-pub(crate) use utils::*;
+pub use utils::*;
 
 pub use cbow::*;
 pub use edge_prediction_perceptron::*;
@@ -39,6 +40,7 @@ pub use spine::*;
 pub use transe::*;
 pub use transh::*;
 pub use unstructured::*;
+pub use structured_embedding::*;
 pub use walk_transformer::*;
 pub use walklets::*;
 pub use weighted_spine::*;

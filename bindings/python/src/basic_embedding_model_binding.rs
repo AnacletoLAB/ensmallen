@@ -105,7 +105,7 @@ impl FirstOrderLINE {
     /// ---------
     /// graph: Graph
     ///     The graph to embed.
-    fn fit_transform(&self, graph: &Graph) -> PyResult<Py<PyArray2<f32>>> {
+    fn fit_transform(&self, graph: &Graph) -> PyResult<Py<PyAny>> {
         Ok(self.inner.fit_transform(graph)?.first().unwrap().to_owned())
     }
 }
@@ -154,7 +154,7 @@ impl SecondOrderLINE {
     /// ---------
     /// graph: Graph
     ///     The graph to embed.
-    fn fit_transform(&self, graph: &Graph) -> PyResult<Py<PyArray2<f32>>> {
+    fn fit_transform(&self, graph: &Graph) -> PyResult<Py<PyAny>> {
         Ok(self.inner.fit_transform(graph)?.first().unwrap().to_owned())
     }
 }

@@ -1,4 +1,4 @@
-use crate::populate_vectors;
+use crate::*;
 use graph::Graph;
 use indicatif::{ProgressBar, ProgressStyle};
 
@@ -26,19 +26,19 @@ pub trait GraphEmbedder {
         }
         // Check whether the provided embeddings match with
         // the expected embedding sizes.
-        for (embedding_size, (x, y, expected_embedding_size)) in embedding
+        for (embedding_size, (shape, expected_embedding_size)) in embedding
             .iter()
             .map(|slice| slice.len())
-            .zip(embedding_shapes.iter().map(|(x, y)| (*x, *y, *x * *y)))
+            .zip(embedding_shapes.iter().map(|shape| (shape, shape.size())))
         {
             if embedding_size != expected_embedding_size {
                 return Err(format!(
                     concat!(
                         "The received matrix has embedding size was {} ",
                         "but the expected embedding size was {}. More ",
-                        "specifically, the expected matrix shape was ({}, {})."
+                        "specifically, the expected matrix shape was ({:?})."
                     ),
-                    embedding_size, expected_embedding_size, x, y
+                    embedding_size, expected_embedding_size, shape
                 ));
             }
         }
@@ -48,7 +48,7 @@ pub trait GraphEmbedder {
             self.get_random_state(),
             embedding_shapes
                 .into_iter()
-                .map(|(_, embedding_size)| (embedding_size as f32).sqrt())
+                .map(|shape| (shape[-1] as f32).sqrt())
                 .collect::<Vec<f32>>()
                 .as_slice(),
         );
@@ -88,5 +88,5 @@ pub trait GraphEmbedder {
     fn get_random_state(&self) -> u64;
 
     /// Returns the shapes of the embeddings given the graph.
-    fn get_embedding_shapes(&self, graph: &Graph) -> Result<Vec<(usize, usize)>, String>;
+    fn get_embedding_shapes(&self, graph: &Graph) -> Result<Vec<MatrixShape>, String>;
 }

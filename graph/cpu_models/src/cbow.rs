@@ -1,5 +1,8 @@
 use crate::*;
-use express_measures::dot_product_sequential_unchecked;
+use express_measures::{
+    dot_product_sequential_unchecked, element_wise_addition_inplace,
+    element_wise_weighted_addition_inplace,
+};
 use graph::{Graph, NodeT, ThreadDataRaceAware};
 use num::Zero;
 use rayon::prelude::*;
@@ -51,29 +54,11 @@ where
         let pb = self.get_progress_bar();
 
         // Create the closure to apply a gradient to a provided node's embedding
-        let weighted_vector_sum = |vector: &mut &mut [f32], variation: &[f32], weight: f32| {
-            vector.iter_mut().zip(variation.iter().copied()).for_each(
-                |(feature, gradient_feature): (&mut f32, f32)| {
-                    *feature += weight * gradient_feature;
-                },
-            );
-        };
-
-        // Create the closure to apply a gradient to a provided node's embedding
-        let vector_sum = |vector: &mut &mut [f32], variation: &[f32]| {
-            vector.iter_mut().zip(variation.iter().copied()).for_each(
-                |(feature, gradient_feature): (&mut f32, f32)| {
-                    *feature += gradient_feature;
-                },
-            );
-        };
-
-        // Create the closure to apply a gradient to a provided node's embedding
         let update_embedding = |node_id: NodeT, variation: &[f32]| {
             let node_id = node_id as usize;
             unsafe {
-                vector_sum(
-                    &mut &mut (*shared_embedding.get())
+                element_wise_addition_inplace(
+                    &mut (*shared_embedding.get())
                         [node_id * self.embedding_size..(node_id + 1) * self.embedding_size],
                     variation,
                 )
@@ -84,8 +69,8 @@ where
         let update_hidden = |node_id: NodeT, variation: &[f32], weight: f32| {
             let node_id = node_id as usize;
             unsafe {
-                weighted_vector_sum(
-                    &mut &mut (*shared_hidden.get())
+                element_wise_weighted_addition_inplace(
+                    &mut (*shared_hidden.get())
                         [node_id * self.embedding_size..(node_id + 1) * self.embedding_size],
                     variation,
                     weight,
@@ -129,12 +114,16 @@ where
             let mut variation = (label - exp_dot / (exp_dot + 1.0)) * learning_rate;
 
             if self.normalize_learning_rate_by_degree {
-                variation *= 1.0
-                    - (unsafe { graph.get_unchecked_node_degree_from_node_id(node_id) as f32 }
-                        / nodes_number as f32);
+                variation /= get_node_prior(graph, node_id, 1.0);
             }
 
-            weighted_vector_sum(&mut context_embedding_gradient, node_hidden, variation);
+            unsafe {
+                element_wise_weighted_addition_inplace(
+                    &mut context_embedding_gradient,
+                    node_hidden,
+                    variation,
+                )
+            };
             update_hidden(node_id, total_context_embedding, variation / context_size);
 
             variation.abs()

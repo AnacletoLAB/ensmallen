@@ -1,5 +1,6 @@
 use crate::*;
-use graph::{Graph, ThreadDataRaceAware};
+use express_measures::dot_product_sequential_unchecked;
+use graph::{Graph, NodeT, ThreadDataRaceAware};
 use num::Zero;
 use rayon::prelude::*;
 use vec_rand::splitmix64;
@@ -55,29 +56,29 @@ where
                     let dst_hidden = &mut (*shared_hidden_layer.get())
                         [(dst as usize) * embedding_size..(dst as usize + 1) * embedding_size];
 
-                    let dot = src_embedding
-                        .iter()
-                        .copied()
-                        .zip(dst_hidden.iter().copied())
-                        .map(|(src_feature, dst_feature)| src_feature * dst_feature)
-                        .sum::<f32>()
-                        / scale_factor;
+                    let dot =
+                        dot_product_sequential_unchecked(src_embedding, dst_hidden) / scale_factor;
 
                     if dot > self.clipping_value || dot < -self.clipping_value {
                         return 0.0;
                     }
 
-                    let loss: f32 =
-                        (2.0 * freq.powf(self.alpha) * (dot - freq.ln()) * learning_rate) as f32;
+                    let variation: f32 = (2.0 * freq.powf(self.alpha) * (dot - freq.ln())) as f32;
+
+                    let node_priors =
+                        get_node_priors(graph, &[src as NodeT, dst as NodeT], learning_rate);
+
+                    let src_variation = variation / node_priors[0];
+                    let dst_variation = variation / node_priors[1];
 
                     src_embedding
                         .iter_mut()
                         .zip(dst_hidden.iter_mut())
                         .for_each(|(src_feature, dst_feature)| {
-                            *src_feature -= *dst_feature * loss;
-                            *dst_feature -= *src_feature * loss;
+                            *src_feature -= *dst_feature * src_variation;
+                            *dst_feature -= *src_feature * dst_variation;
                         });
-                    loss.abs()
+                    variation.abs()
                 })
                 .sum::<f32>();
 

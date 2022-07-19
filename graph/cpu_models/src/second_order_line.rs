@@ -1,8 +1,10 @@
-use crate::{compute_prior, get_random_vector, norm, BasicEmbeddingModel, GraphEmbedder};
-use express_measures::dot_product_sequential_unchecked;
+use crate::{
+    get_node_priors, get_random_vector, utils::MatrixShape, BasicEmbeddingModel, GraphEmbedder,
+};
+use express_measures::cosine_similarity_sequential_unchecked;
 use graph::{Graph, NodeT, ThreadDataRaceAware};
-use rayon::prelude::*;
 use num_traits::Zero;
+use rayon::prelude::*;
 use vec_rand::splitmix64;
 
 #[derive(Clone, Debug)]
@@ -33,11 +35,12 @@ impl GraphEmbedder for SecondOrderLINE {
         self.model.random_state
     }
 
-    fn get_embedding_shapes(&self, graph: &Graph) -> Result<Vec<(usize, usize)>, String> {
+    fn get_embedding_shapes(&self, graph: &Graph) -> Result<Vec<MatrixShape>, String> {
         Ok(vec![(
             graph.get_number_of_nodes() as usize,
             self.model.embedding_size,
-        )])
+        )
+            .into()])
     }
 
     fn _fit_transform(&self, graph: &Graph, embedding: &mut [&mut [f32]]) -> Result<(), String> {
@@ -45,7 +48,6 @@ impl GraphEmbedder for SecondOrderLINE {
         let mut learning_rate = self.model.learning_rate / scale_factor;
         let mut random_state = self.get_random_state();
 
-        let nodes_number = graph.get_number_of_nodes() as f32;
         let mut hidden = get_random_vector(embedding[0].len(), random_state, scale_factor);
         random_state = splitmix64(random_state);
 
@@ -65,31 +67,17 @@ impl GraphEmbedder for SecondOrderLINE {
                     [(dst * self.model.embedding_size)..((dst + 1) * self.model.embedding_size)]
             };
 
-            let src_norm = norm(src_embedding);
-            let dst_norm = norm(dst_embedding);
+            let (similarity, src_norm, dst_norm) =
+                unsafe { cosine_similarity_sequential_unchecked(src_embedding, dst_embedding) };
 
-            let dot = unsafe { dot_product_sequential_unchecked(src_embedding, dst_embedding) }
-                / (dst_norm * src_norm * scale_factor);
+            let prediction = 1.0 / (1.0 + (-similarity).exp());
 
-            if dot > 6.0 || dot < -6.0 {
-                return 0.0;
-            }
+            let variation = if label { prediction - 1.0 } else { prediction };
 
-            let prediction = 1.0 / (1.0 + (-dot).exp());
+            let node_priors = get_node_priors(graph, &[src as NodeT, dst as NodeT], learning_rate);
 
-            let variation = if label { prediction - 1.0 } else { prediction } * learning_rate;
-
-            let src_prior = compute_prior(
-                unsafe { graph.get_unchecked_node_degree_from_node_id(src as NodeT) as f32 },
-                nodes_number,
-            );
-            let dst_prior = compute_prior(
-                unsafe { graph.get_unchecked_node_degree_from_node_id(dst as NodeT) as f32 },
-                nodes_number,
-            );
-
-            let src_variation = variation / src_prior;
-            let dst_variation = variation / dst_prior;
+            let src_variation = variation / node_priors[0];
+            let dst_variation = variation / node_priors[1];
 
             src_embedding
                 .iter_mut()

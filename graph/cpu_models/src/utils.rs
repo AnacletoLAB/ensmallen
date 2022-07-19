@@ -1,3 +1,4 @@
+use graph::{EdgeTypeT, Graph, NodeT};
 use num::Zero;
 use rayon::prelude::*;
 use vec_rand::{random_f32, splitmix64};
@@ -49,20 +50,113 @@ pub(crate) fn get_random_vector(capacity: usize, random_state: u64, scale_factor
         .collect()
 }
 
-pub(crate) fn norm(vector: &[f32]) -> f32 {
-    (vector
-        .iter()
-        .map(|value| value.powf(2.0))
-        .sum::<f32>()
-        .sqrt()
-        + f32::EPSILON)
-        .min(f32::MAX)
-}
-
 pub(crate) fn compute_prior(subset_size: f32, total_size: f32) -> f32 {
     (1.0 + subset_size)
             / total_size
             // Adding the epsilon is necessary because the division may destroy enough
             // resolution to make the prior equal to zero.
             + f32::EPSILON
+}
+
+pub(crate) fn get_node_prior(graph: &Graph, node_id: NodeT, learning_rate: f32) -> f32 {
+    compute_prior(
+        unsafe { graph.get_unchecked_node_degree_from_node_id(node_id) as f32 },
+        graph.get_number_of_nodes() as f32,
+    ) / learning_rate
+}
+
+pub(crate) fn get_edge_type_prior(
+    graph: &Graph,
+    edge_type_id: EdgeTypeT,
+    learning_rate: f32,
+) -> f32 {
+    compute_prior(
+        unsafe { graph.get_unchecked_edge_count_from_edge_type_id(Some(edge_type_id)) as f32 },
+        graph.get_number_of_directed_edges() as f32,
+    ) / learning_rate
+}
+
+pub(crate) fn get_node_priors(graph: &Graph, node_ids: &[NodeT], learning_rate: f32) -> Vec<f32> {
+    node_ids
+        .iter()
+        .copied()
+        .map(|node_id| get_node_prior(graph, node_id, learning_rate))
+        .collect()
+}
+
+#[derive(Clone, Copy, Debug)]
+pub enum MatrixShape {
+    OneDimensional(usize),
+    BiDimensional(usize, usize),
+    ThreeDimensional(usize, usize, usize),
+}
+
+impl MatrixShape {
+    pub fn size(&self) -> usize {
+        match *self {
+            MatrixShape::OneDimensional(one) => one,
+            MatrixShape::BiDimensional(one, two) => one * two,
+            MatrixShape::ThreeDimensional(one, two, three) => one * two * three,
+        }
+    }
+
+    pub fn len(&self) -> usize {
+        match *self {
+            MatrixShape::OneDimensional(_) => 1,
+            MatrixShape::BiDimensional(_, _) => 2,
+            MatrixShape::ThreeDimensional(_, _, _) => 3,
+        }
+    }
+}
+
+impl From<(usize,)> for MatrixShape {
+    fn from(shape: (usize,)) -> Self {
+        MatrixShape::OneDimensional(shape.0)
+    }
+}
+
+impl From<(usize, usize)> for MatrixShape {
+    fn from(shape: (usize, usize)) -> Self {
+        MatrixShape::BiDimensional(shape.0, shape.1)
+    }
+}
+
+impl From<(usize, usize, usize)> for MatrixShape {
+    fn from(shape: (usize, usize, usize)) -> Self {
+        MatrixShape::ThreeDimensional(shape.0, shape.1, shape.2)
+    }
+}
+
+impl core::ops::Index<isize> for MatrixShape {
+    type Output = usize;
+
+    fn index(&self, mut index: isize) -> &Self::Output {
+        let len = self.len() as isize;
+        if index >= len || index <= -len {
+            panic!(
+                concat!(
+                    "The provided index {} is not within the accepted bounds ",
+                    "of the current shape {:?}."
+                ),
+                index, self
+            )
+        }
+
+        index = (len + index) % len;
+
+        match self {
+            MatrixShape::OneDimensional(one) => one,
+            MatrixShape::BiDimensional(one, two) => match index {
+                0 => one,
+                1 => two,
+                _ => unreachable!("The shape is 2D."),
+            },
+            MatrixShape::ThreeDimensional(one, two, three) => match index {
+                0 => one,
+                1 => two,
+                2 => three,
+                _ => unreachable!("The shape is 3D."),
+            },
+        }
+    }
 }

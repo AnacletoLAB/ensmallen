@@ -123,21 +123,6 @@ impl Graph {
         )
     }
 
-    /// Returns whether the graph has constant non-zero node degrees.
-    pub fn has_constant_non_zero_node_degrees(&self) -> bool {
-        let maximum_node_degree = self.get_maximum_node_degree().unwrap_or(0);
-        let minimum_node_degree = self.get_minimum_node_degree().unwrap_or(0);
-        // If the graph is empty or the graph is completely homogeneous we return True.
-        if maximum_node_degree == 0 || minimum_node_degree == minimum_node_degree {
-            return true;
-        }
-        // Otherwise we search for a node degree that is non-zero
-        // and different from the maximum node degree.
-        self.par_iter_node_degrees().all(|node_degree|{
-            node_degree == 0 || node_degree == maximum_node_degree
-        })
-    }
-
     /// Returns boolean representing whether graph has negative weights.
     ///
     /// # Example

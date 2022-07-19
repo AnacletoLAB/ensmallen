@@ -25,12 +25,12 @@ impl GraphEmbedder for Walklets {
         self.node2vec.get_number_of_epochs()
     }
 
-    fn get_embedding_shapes(&self, graph: &graph::Graph) -> Result<Vec<(usize, usize)>, String> {
+    fn get_embedding_shapes(&self, graph: &graph::Graph) -> Result<Vec<MatrixShape>, String> {
         Ok(vec![
             (
                 graph.get_number_of_nodes() as usize,
                 self.node2vec.embedding_size
-            );
+            ).into();
             self.node2vec.window_size
         ])
     }

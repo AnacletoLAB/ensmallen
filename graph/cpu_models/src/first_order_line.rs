@@ -1,5 +1,5 @@
-use crate::{BasicEmbeddingModel, compute_prior, norm, GraphEmbedder};
-use express_measures::dot_product_sequential_unchecked;
+use crate::{get_node_priors, BasicEmbeddingModel, GraphEmbedder, MatrixShape};
+use express_measures::cosine_similarity_sequential_unchecked;
 use graph::{Graph, NodeT, ThreadDataRaceAware};
 use num_traits::Zero;
 use rayon::prelude::*;
@@ -33,17 +33,16 @@ impl GraphEmbedder for FirstOrderLINE {
         self.model.random_state
     }
 
-    fn get_embedding_shapes(&self, graph: &Graph) -> Result<Vec<(usize, usize)>, String> {
+    fn get_embedding_shapes(&self, graph: &Graph) -> Result<Vec<MatrixShape>, String> {
         Ok(vec![(
             graph.get_number_of_nodes() as usize,
             self.model.embedding_size,
-        )])
+        )
+            .into()])
     }
 
     fn _fit_transform(&self, graph: &Graph, embedding: &mut [&mut [f32]]) -> Result<(), String> {
-        let scale_factor = (self.model.embedding_size as f32).sqrt();
         let shared_node_embedding = ThreadDataRaceAware::new(&mut embedding[0]);
-        let nodes_number = graph.get_number_of_nodes() as f32;
         let mut random_state = self.get_random_state();
         let mut learning_rate = self.model.learning_rate;
         let pb = self.get_loading_bar();
@@ -58,31 +57,15 @@ impl GraphEmbedder for FirstOrderLINE {
                     [(dst * self.model.embedding_size)..((dst + 1) * self.model.embedding_size)]
             };
 
-            let src_norm = norm(src_embedding);
-            let dst_norm = norm(dst_embedding);
+            let (similarity, src_norm, dst_norm) =
+                unsafe { cosine_similarity_sequential_unchecked(src_embedding, dst_embedding) };
 
-            let dot = unsafe { dot_product_sequential_unchecked(src_embedding, dst_embedding) }
-                / (dst_norm * src_norm * scale_factor);
+            let prediction = 1.0 / (1.0 + (-similarity).exp());
+            let variation = if label { prediction - 1.0 } else { prediction };
+            let node_priors = get_node_priors(graph, &[src as NodeT, dst as NodeT], learning_rate);
 
-            if dot > 6.0 || dot < -6.0 {
-                return 0.0;
-            }
-
-            let prediction = 1.0 / (1.0 + (-dot).exp());
-
-            let variation = if label { prediction - 1.0 } else { prediction } * learning_rate;
-
-            let src_prior = compute_prior(
-                unsafe { graph.get_unchecked_node_degree_from_node_id(src as NodeT) as f32 },
-                nodes_number,
-            );
-            let dst_prior = compute_prior(
-                unsafe { graph.get_unchecked_node_degree_from_node_id(dst as NodeT) as f32 },
-                nodes_number,
-            );
-
-            let src_variation = variation / src_prior;
-            let dst_variation = variation / dst_prior;
+            let src_variation = variation / node_priors[0];
+            let dst_variation = variation / node_priors[1];
 
             src_embedding
                 .iter_mut()
@@ -119,11 +102,11 @@ impl GraphEmbedder for FirstOrderLINE {
                     compute_mini_batch_step(src as usize, dst as usize, label, learning_rate)
                 })
                 .sum::<f32>();
-            
+
             if total_variation.is_zero() {
                 break;
             }
-            
+
             pb.inc(1);
             pb.set_message(format!(", variation: {:.4}", total_variation));
             learning_rate *= self.model.learning_rate_decay;

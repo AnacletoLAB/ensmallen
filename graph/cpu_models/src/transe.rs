@@ -1,7 +1,8 @@
 use crate::*;
+use express_measures::vector_norm;
 use graph::{EdgeTypeT, Graph, NodeT, ThreadDataRaceAware};
-use rayon::prelude::*;
 use num_traits::Zero;
+use rayon::prelude::*;
 use vec_rand::splitmix64;
 
 #[derive(Clone, Debug)]
@@ -28,16 +29,18 @@ impl GraphEmbedder for TransE {
         self.model.is_verbose()
     }
 
-    fn get_embedding_shapes(&self, graph: &Graph) -> Result<Vec<(usize, usize)>, String> {
+    fn get_embedding_shapes(&self, graph: &Graph) -> Result<Vec<MatrixShape>, String> {
         Ok(vec![
             (
                 graph.get_number_of_nodes() as usize,
                 self.model.model.embedding_size,
-            ),
+            )
+                .into(),
             (
                 graph.get_number_of_edge_types()? as usize,
                 self.model.model.embedding_size,
-            ),
+            )
+                .into(),
         ])
     }
 
@@ -50,9 +53,6 @@ impl GraphEmbedder for TransE {
         let scale_factor = (embedding_size as f32).sqrt();
         let mut learning_rate = self.model.get_learning_rate() / scale_factor;
         let mut random_state = self.get_random_state();
-
-        let number_of_directed_edges = graph.get_number_of_directed_edges();
-        let nodes_number = graph.get_number_of_nodes();
 
         let shared_embedding = ThreadDataRaceAware::new(embedding);
 
@@ -86,34 +86,22 @@ impl GraphEmbedder for TransE {
             };
 
             let (dst_norm, not_dst_norm, src_norm, not_src_norm) = (
-                norm(dst_embedding),
-                norm(not_dst_embedding),
-                norm(src_embedding),
-                norm(not_src_embedding),
+                vector_norm(dst_embedding),
+                vector_norm(not_dst_embedding),
+                vector_norm(src_embedding),
+                vector_norm(not_src_embedding),
             );
-            let src_prior = compute_prior(
-                unsafe { graph.get_unchecked_node_degree_from_node_id(src as NodeT) as f32 },
-                nodes_number as f32,
+            let node_priors = get_node_priors(
+                graph,
+                &[
+                    src as NodeT,
+                    dst as NodeT,
+                    not_src as NodeT,
+                    not_dst as NodeT,
+                ],
+                learning_rate,
             );
-            let dst_prior = compute_prior(
-                unsafe { graph.get_unchecked_node_degree_from_node_id(dst as NodeT) as f32 },
-                nodes_number as f32,
-            );
-            let not_src_prior = compute_prior(
-                unsafe { graph.get_unchecked_node_degree_from_node_id(not_src as NodeT) as f32 },
-                nodes_number as f32,
-            );
-            let not_dst_prior = compute_prior(
-                unsafe { graph.get_unchecked_node_degree_from_node_id(not_dst as NodeT) as f32 },
-                nodes_number as f32,
-            );
-            let edge_type_prior = compute_prior(
-                unsafe {
-                    graph.get_unchecked_edge_count_from_edge_type_id(Some(edge_type as EdgeTypeT))
-                        as f32
-                },
-                number_of_directed_edges as f32,
-            );
+            let edge_type_prior = get_edge_type_prior(graph, edge_type as EdgeTypeT, learning_rate);
 
             src_embedding
                 .iter_mut()
@@ -130,19 +118,16 @@ impl GraphEmbedder for TransE {
                         *dst_feature /= dst_norm;
                         *not_dst_feature /= not_dst_norm;
 
-                        let mut positive_distance =
-                            *src_feature + *edge_type_feature - *dst_feature;
-                        let mut negative_distance =
+                        let positive_distance = *src_feature + *edge_type_feature - *dst_feature;
+                        let negative_distance =
                             *not_src_feature + *edge_type_feature - *not_dst_feature;
                         let loss = positive_distance.powf(2.0) - negative_distance.powf(2.0);
 
                         if loss > -self.model.relu_bias {
-                            positive_distance *= learning_rate;
-                            negative_distance *= learning_rate;
-                            *src_feature -= positive_distance / src_prior;
-                            *dst_feature += positive_distance / dst_prior;
-                            *not_src_feature += negative_distance / not_src_prior;
-                            *not_dst_feature -= negative_distance / not_dst_prior;
+                            *src_feature -= positive_distance / node_priors[0];
+                            *dst_feature += positive_distance / node_priors[1];
+                            *not_src_feature += negative_distance / node_priors[2];
+                            *not_dst_feature -= negative_distance / node_priors[3];
                             *edge_type_feature -=
                                 (positive_distance - negative_distance) / edge_type_prior;
                         }
@@ -175,11 +160,11 @@ impl GraphEmbedder for TransE {
                     )
                 })
                 .sum::<f32>();
-            
+
             if total_variation.is_zero() {
                 break;
             }
-            
+
             learning_rate *= self.model.get_learning_rate_decay();
             pb.inc(1);
             pb.set_message(format!(", variation: {:.4}", total_variation));

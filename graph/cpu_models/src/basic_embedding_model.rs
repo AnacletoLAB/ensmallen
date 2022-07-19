@@ -16,7 +16,7 @@ impl BasicEmbeddingModel {
     /// # Arguments
     /// * `embedding_size`: Option<usize> - Size of the embedding.
     /// * `epochs`: Option<usize> - The number of epochs to run the model for, by default 10.
-    /// * `learning_rate`: Option<f32> - The learning rate to update the gradient, by default 0.01.
+    /// * `learning_rate`: Option<f32> - The learning rate to update the gradient, by default 0.05.
     /// * `learning_rate_decay`: Option<f32> - Factor to reduce the learning rate for at each epoch. By default 0.9.
     /// * `random_state`: Option<u64> - The random state to use to reproduce the training.
     /// * `verbose`: Option<bool> - Whether to show loading bar.
@@ -31,7 +31,7 @@ impl BasicEmbeddingModel {
         Ok(Self {
             embedding_size: must_not_be_zero(embedding_size, 100, "embedding size")?,
             epochs: must_not_be_zero(epochs, 10, "epochs")?,
-            learning_rate: must_not_be_zero(learning_rate, 0.001, "learning rate")?,
+            learning_rate: must_not_be_zero(learning_rate, 0.05, "learning rate")?,
             learning_rate_decay: must_not_be_zero(
                 learning_rate_decay,
                 0.99,

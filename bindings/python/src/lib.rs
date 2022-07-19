@@ -60,6 +60,7 @@ fn models(_py: Python, _m: &PyModule) -> PyResult<()> {
     _m.add_class::<TransE>()?;
     _m.add_class::<TransH>()?;
     _m.add_class::<Unstructured>()?;
+    _m.add_class::<StructuredEmbedding>()?;
     _m.add_class::<FirstOrderLINE>()?;
     _m.add_class::<SecondOrderLINE>()?;
     _m.add_class::<SPINE>()?;
