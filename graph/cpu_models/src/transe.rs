@@ -1,220 +1,62 @@
+use crate::*;
+use express_measures::vector_norm;
 use graph::{EdgeTypeT, Graph, NodeT, ThreadDataRaceAware};
-use indicatif::ProgressIterator;
-use indicatif::{ProgressBar, ProgressStyle};
+use num_traits::Zero;
 use rayon::prelude::*;
-use vec_rand::{random_f32, splitmix64};
+use vec_rand::splitmix64;
 
 #[derive(Clone, Debug)]
 pub struct TransE {
-    embedding_size: usize,
-    renormalize: bool,
-    relu_bias: f32,
-    random_state: u64,
+    model: BasicSiameseModel,
 }
 
-impl TransE {
-    /// Return new instance of TransE model.
-    ///
-    /// # Arguments
-    /// `embedding_size`: Option<usize> - Size of the embedding.
-    /// `renormalize`: Option<bool> - Whether to renormalize at each loop, by default true.
-    /// `relu_bias`: Option<f32> - The bias to apply to the relu. By default, 1.0.
-    /// `random_state`: Option<u64> - The random state to use to reproduce the training.
-    pub fn new(
-        embedding_size: Option<usize>,
-        renormalize: Option<bool>,
-        relu_bias: Option<f32>,
-        random_state: Option<u64>,
-    ) -> Result<Self, String> {
-        // Handle the values of the default parameters.
-        let embedding_size = embedding_size.unwrap_or(100);
-        let renormalize = renormalize.unwrap_or(true);
-        let relu_bias = relu_bias.unwrap_or(1.0);
-        let random_state = random_state.unwrap_or(42);
+impl From<BasicSiameseModel> for TransE {
+    fn from(model: BasicSiameseModel) -> Self {
+        Self { model }
+    }
+}
 
-        // Validate that the provided parameters are within
-        // reasonable bounds.
-        if embedding_size == 0 {
-            return Err(concat!("The embedding size cannot be equal to zero.").to_string());
-        }
-
-        Ok(Self {
-            embedding_size,
-            renormalize,
-            relu_bias,
-            random_state,
-        })
+impl GraphEmbedder for TransE {
+    fn get_model_name(&self) -> String {
+        "TransE".to_string()
     }
 
-    /// Returns the used embedding size.
-    pub fn get_embedding_size(&self) -> usize {
-        self.embedding_size
+    fn get_number_of_epochs(&self) -> usize {
+        self.model.get_number_of_epochs()
     }
 
-    /// Computes in the provided slice of embedding the TransE node and edge type embedding.
-    ///
-    /// # Implementative details
-    /// This implementation is NOT thread safe, that is, different threads may try
-    /// to overwrite each others memory. This version is faster than the memory safe
-    /// version and requires less memory. In most use cases, you would prefer to use
-    /// this version over the memory safe version.
-    ///
-    /// # Arguments
-    /// `graph`: &Graph - The graph to embed
-    /// `node_embedding`: &mut [f32] - The memory area where to write the node embedding.
-    /// `edge_type_embedding`: &mut [f32] - The optional memory area where to write the edge type embedding.
-    /// `epochs`: Option<usize> - The number of epochs to run the model for, by default 10.
-    /// `learning_rate`: Option<f32> - The learning rate to update the gradient, by default 0.01.
-    /// `learning_rate_decay`: Option<f32> - Factor to reduce the learning rate for at each epoch. By default 0.9.
-    /// `verbose`: Option<bool> - Whether to show the loading bar, by default true.
-    ///
-    /// # Raises
-    /// * If graph does not have node types and node types should be used.
-    /// * If graph contains unknown node types and node types should be used.
-    /// * If graph does not have edge types and edge types should be used.
-    /// * If graph contains unknown edge types and edge types should be used.
-    pub fn fit_transform(
-        &self,
-        graph: &Graph,
-        node_embedding: &mut [f32],
-        edge_type_embedding: &mut [f32],
-        epochs: Option<usize>,
-        learning_rate: Option<f32>,
-        learning_rate_decay: Option<f32>,
-        verbose: Option<bool>,
-    ) -> Result<(), String> {
-        let epochs = epochs.unwrap_or(10);
-        let verbose = verbose.unwrap_or(true);
-        let scale_factor = (self.embedding_size as f32).sqrt();
-        let mut learning_rate = learning_rate.unwrap_or(0.001) / scale_factor;
-        let learning_rate_decay = learning_rate_decay.unwrap_or(0.9);
-        let mut random_state = splitmix64(self.random_state);
+    fn is_verbose(&self) -> bool {
+        self.model.is_verbose()
+    }
 
-        if !graph.has_edge_types() {
-            return Err(concat!(
-                "The edge types should be used, but the provided ",
-                "graph does not contain edge types."
+    fn get_embedding_shapes(&self, graph: &Graph) -> Result<Vec<MatrixShape>, String> {
+        Ok(vec![
+            (
+                graph.get_number_of_nodes() as usize,
+                self.model.model.embedding_size,
             )
-            .to_string());
-        }
-
-        if graph.has_unknown_edge_types().unwrap() {
-            return Err(concat!(
-                "The edge types should be used, but the provided ",
-                "graph contains unknown edge types and it is not ",
-                "well-defined how to use them."
+                .into(),
+            (
+                graph.get_number_of_edge_types()? as usize,
+                self.model.model.embedding_size,
             )
-            .to_string());
-        }
+                .into(),
+        ])
+    }
 
-        if graph.has_homogeneous_edge_types().unwrap() {
-            return Err(concat!(
-                "The edge types should be used, but the provided ",
-                "graph contains exclusively a single edge type ",
-                "making using edge types useless."
-            )
-            .to_string());
-        }
+    fn get_random_state(&self) -> u64 {
+        self.model.model.random_state
+    }
 
-        let edge_types_number = graph.get_number_of_edge_types().unwrap() as usize;
-        let expected_edge_embedding_size = self.embedding_size * edge_types_number;
+    fn _fit_transform(&self, graph: &Graph, embedding: &mut [&mut [f32]]) -> Result<(), String> {
+        let embedding_size = self.model.get_embedding_size();
+        let scale_factor = (embedding_size as f32).sqrt();
+        let mut learning_rate = self.model.get_learning_rate() / scale_factor;
+        let mut random_state = self.get_random_state();
 
-        if edge_type_embedding.len() != expected_edge_embedding_size {
-            return Err(format!(
-                "The given memory allocation for the edge type embeddings is {} long but we expect {}.",
-                edge_type_embedding.len(),
-                expected_edge_embedding_size
-            ));
-        }
+        let shared_embedding = ThreadDataRaceAware::new(embedding);
 
-        if !graph.has_nodes() {
-            return Err("The provided graph does not have any node.".to_string());
-        }
-
-        let number_of_directed_edges = graph.get_number_of_directed_edges();
-        let nodes_number = graph.get_number_of_nodes();
-        let expected_node_embedding_size = self.embedding_size * nodes_number as usize;
-
-        if node_embedding.len() != expected_node_embedding_size {
-            return Err(format!(
-                "The given memory allocation for the embeddings is {} long but we expect {}.",
-                node_embedding.len(),
-                expected_node_embedding_size
-            ));
-        }
-
-        let initialization_radius = 6.0 / scale_factor;
-
-        let norm = |vector: &[f32]| {
-            (vector
-                .iter()
-                .map(|value| value.powf(2.0))
-                .sum::<f32>()
-                .sqrt()
-                + f32::EPSILON)
-                .min(f32::MAX)
-        };
-
-        let compute_prior = |subset_size: f32, total_size: f32| {
-            (1.0 + subset_size)
-                    / total_size
-                    // Adding the epsilon is necessary because the division may destroy enough
-                    // resolution to make the prior equal to zero.
-                    + f32::EPSILON
-        };
-
-        // Populate the embedding layers with random uniform value
-        node_embedding
-            .par_iter_mut()
-            .enumerate()
-            .for_each(|(i, e)| {
-                *e = 2.0 * initialization_radius * random_f32(splitmix64(random_state + i as u64))
-                    - initialization_radius
-            });
-
-        node_embedding
-            .par_chunks_mut(self.embedding_size)
-            .for_each(|chunk| {
-                let chunk_norm = norm(chunk);
-                chunk.iter_mut().for_each(|value| {
-                    *value /= chunk_norm;
-                });
-            });
-
-        random_state = splitmix64(random_state);
-
-        edge_type_embedding
-            .par_iter_mut()
-            .enumerate()
-            .for_each(|(i, e)| {
-                *e = 2.0 * initialization_radius * random_f32(splitmix64(random_state + i as u64))
-                    - initialization_radius
-            });
-
-        edge_type_embedding
-            .par_chunks_mut(self.embedding_size)
-            .for_each(|chunk| {
-                let chunk_norm = norm(chunk);
-                chunk.iter_mut().for_each(|value| {
-                    *value /= chunk_norm;
-                });
-            });
-
-        let shared_node_embedding = ThreadDataRaceAware::new(node_embedding);
-        let shared_edge_type_embedding = ThreadDataRaceAware::new(edge_type_embedding);
-
-        // Depending whether verbosity was requested by the user
-        // we create or not a visible progress bar to show the progress
-        // in the training epochs.
-        let epochs_progress_bar = if verbose {
-            let pb = ProgressBar::new(epochs as u64);
-            pb.set_style(ProgressStyle::default_bar().template(
-                "TransE {msg} {spinner:.green} [{elapsed_precise}] [{bar:40.cyan/blue}] ({pos}/{len}, ETA {eta})",
-            ));
-            pb
-        } else {
-            ProgressBar::hidden()
-        };
+        let pb = self.get_loading_bar();
 
         let compute_mini_batch_step = |src: usize,
                                        not_src: usize,
@@ -223,125 +65,110 @@ impl TransE {
                                        edge_type: usize,
                                        learning_rate: f32| {
             let src_embedding = unsafe {
-                &mut (*shared_node_embedding.get())
-                    [(src * self.embedding_size)..((src + 1) * self.embedding_size)]
+                &mut (*shared_embedding.get())[0]
+                    [(src * embedding_size)..((src + 1) * embedding_size)]
             };
             let not_src_embedding = unsafe {
-                &mut (*shared_node_embedding.get())
-                    [(not_src * self.embedding_size)..((not_src + 1) * self.embedding_size)]
+                &mut (*shared_embedding.get())[0]
+                    [(not_src * embedding_size)..((not_src + 1) * embedding_size)]
             };
             let dst_embedding = unsafe {
-                &mut (*shared_node_embedding.get())
-                    [(dst * self.embedding_size)..((dst + 1) * self.embedding_size)]
+                &mut (*shared_embedding.get())[0]
+                    [(dst * embedding_size)..((dst + 1) * embedding_size)]
             };
             let not_dst_embedding = unsafe {
-                &mut (*shared_node_embedding.get())
-                    [(not_dst * self.embedding_size)..((not_dst + 1) * self.embedding_size)]
+                &mut (*shared_embedding.get())[0]
+                    [(not_dst * embedding_size)..((not_dst + 1) * embedding_size)]
             };
             let edge_type_embedding = unsafe {
-                &mut (*shared_edge_type_embedding.get())
-                    [(edge_type * self.embedding_size)..((edge_type + 1) * self.embedding_size)]
+                &mut (*shared_embedding.get())[1]
+                    [(edge_type * embedding_size)..((edge_type + 1) * embedding_size)]
             };
 
-            let (dst_norm, not_dst_norm, src_norm, not_src_norm) = if self.renormalize {
-                (
-                    norm(dst_embedding),
-                    norm(not_dst_embedding),
-                    norm(src_embedding),
-                    norm(not_src_embedding),
-                )
-            } else {
-                (1.0, 1.0, 1.0, 1.0)
-            };
-            let src_prior = compute_prior(
-                unsafe { graph.get_unchecked_node_degree_from_node_id(src as NodeT) as f32 },
-                nodes_number as f32,
+            let (dst_norm, not_dst_norm, src_norm, not_src_norm) = (
+                vector_norm(dst_embedding),
+                vector_norm(not_dst_embedding),
+                vector_norm(src_embedding),
+                vector_norm(not_src_embedding),
             );
-            let dst_prior = compute_prior(
-                unsafe { graph.get_unchecked_node_degree_from_node_id(dst as NodeT) as f32 },
-                nodes_number as f32,
+            let node_priors = get_node_priors(
+                graph,
+                &[
+                    src as NodeT,
+                    dst as NodeT,
+                    not_src as NodeT,
+                    not_dst as NodeT,
+                ],
+                learning_rate,
             );
-            let not_src_prior = compute_prior(
-                unsafe { graph.get_unchecked_node_degree_from_node_id(not_src as NodeT) as f32 },
-                nodes_number as f32,
-            );
-            let not_dst_prior = compute_prior(
-                unsafe { graph.get_unchecked_node_degree_from_node_id(not_dst as NodeT) as f32 },
-                nodes_number as f32,
-            );
-            let edge_type_prior = compute_prior(
-                unsafe {
-                    graph.get_unchecked_edge_count_from_edge_type_id(Some(edge_type as EdgeTypeT))
-                        as f32
-                },
-                number_of_directed_edges as f32,
-            );
+            let edge_type_prior = get_edge_type_prior(graph, edge_type as EdgeTypeT, learning_rate);
 
             src_embedding
                 .iter_mut()
                 .zip(not_src_embedding.iter_mut())
                 .zip(dst_embedding.iter_mut().zip(not_dst_embedding.iter_mut()))
                 .zip(edge_type_embedding.iter_mut())
-                .for_each(
+                .map(
                     |(
                         ((src_feature, not_src_feature), (dst_feature, not_dst_feature)),
                         edge_type_feature,
                     )| {
-                        if self.renormalize {
-                            *src_feature /= src_norm;
-                            *not_src_feature /= not_src_norm;
-                            *dst_feature /= dst_norm;
-                            *not_dst_feature /= not_dst_norm;
-                        }
+                        *src_feature /= src_norm;
+                        *not_src_feature /= not_src_norm;
+                        *dst_feature /= dst_norm;
+                        *not_dst_feature /= not_dst_norm;
 
-                        let mut positive_distance =
-                            *src_feature + *edge_type_feature - *dst_feature;
-                        let mut negative_distance =
+                        let positive_distance = *src_feature + *edge_type_feature - *dst_feature;
+                        let negative_distance =
                             *not_src_feature + *edge_type_feature - *not_dst_feature;
                         let loss = positive_distance.powf(2.0) - negative_distance.powf(2.0);
 
-                        if loss > -self.relu_bias {
-                            positive_distance *= learning_rate;
-                            negative_distance *= learning_rate;
-                            *src_feature -= positive_distance / src_prior;
-                            *dst_feature += positive_distance / dst_prior;
-                            *not_src_feature += negative_distance / not_src_prior;
-                            *not_dst_feature -= negative_distance / not_dst_prior;
+                        if loss > -self.model.relu_bias {
+                            *src_feature -= positive_distance / node_priors[0];
+                            *dst_feature += positive_distance / node_priors[1];
+                            *not_src_feature += negative_distance / node_priors[2];
+                            *not_dst_feature -= negative_distance / node_priors[3];
                             *edge_type_feature -=
                                 (positive_distance - negative_distance) / edge_type_prior;
                         }
+                        loss.abs()
                     },
-                );
+                )
+                .sum::<f32>()
         };
 
         // We start to loop over the required amount of epochs.
-        (0..epochs)
-            .progress_with(epochs_progress_bar)
-            .for_each(|_| {
-                // We update the random state used to generate the random walks
-                // and the negative samples.
-                random_state = splitmix64(random_state);
+        for _ in 0..self.get_number_of_epochs() {
+            // We update the random state used to generate the random walks
+            // and the negative samples.
+            random_state = splitmix64(random_state);
 
-                // We iterate over the graph edges.
-                graph
-                    .par_iter_siamese_mini_batch(
-                        random_state,
-                        graph.get_number_of_directed_edges() as usize,
-                        Some(true),
+            // We iterate over the graph edges.
+            let total_variation = graph
+                .par_iter_siamese_mini_batch_with_edge_types(
+                    random_state,
+                    graph.get_number_of_directed_edges() as usize,
+                )
+                .map(|(_, src, dst, not_src, not_dst, edge_type_id)| {
+                    compute_mini_batch_step(
+                        src as usize,
+                        not_src as usize,
+                        dst as usize,
+                        not_dst as usize,
+                        edge_type_id.unwrap() as usize,
+                        learning_rate,
                     )
-                    .for_each(|(src, dst, not_src, not_dst, edge_type_id)| {
-                        compute_mini_batch_step(
-                            src as usize,
-                            not_src as usize,
-                            dst as usize,
-                            not_dst as usize,
-                            edge_type_id.unwrap() as usize,
-                            learning_rate,
-                        );
-                    });
+                })
+                .sum::<f32>();
 
-                learning_rate *= learning_rate_decay;
-            });
+            if total_variation.is_zero() {
+                break;
+            }
+
+            learning_rate *= self.model.get_learning_rate_decay();
+            pb.inc(1);
+            pb.set_message(format!(", variation: {:.4}", total_variation));
+        }
         Ok(())
     }
 }

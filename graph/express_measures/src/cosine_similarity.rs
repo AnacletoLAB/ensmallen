@@ -17,7 +17,7 @@ use rayon::prelude::*;
 pub unsafe fn cosine_similarity_sequential_unchecked<F: ThreadFloat>(
     src_features: &[F],
     dst_features: &[F],
-) -> F {
+) -> (F, F, F) {
     let (total_dot_products, total_squared_src_features, total_squared_dst_features) = src_features
         .iter()
         .zip(dst_features.iter())
@@ -43,7 +43,11 @@ pub unsafe fn cosine_similarity_sequential_unchecked<F: ThreadFloat>(
     let src_features_norm = total_squared_src_features.sqrt();
     let dst_features_norm = total_squared_dst_features.sqrt();
 
-    total_dot_products / (src_features_norm * dst_features_norm + F::epsilon())
+    (
+        total_dot_products / (src_features_norm * dst_features_norm + F::epsilon()),
+        src_features_norm,
+        dst_features_norm,
+    )
 }
 
 /// Returns the cosine similarity between the two provided vectors computed in parallel.
@@ -102,7 +106,7 @@ pub fn cosine_similarity_sequential<F: ThreadFloat>(
     dst_features: &[F],
 ) -> Result<F, String> {
     validate_features(src_features, dst_features)?;
-    Ok(unsafe { cosine_similarity_sequential_unchecked(src_features, dst_features) })
+    Ok(unsafe { cosine_similarity_sequential_unchecked(src_features, dst_features).0 })
 }
 
 /// Returns the cosine similarity between the two provided vectors computed in parallel.
@@ -169,7 +173,8 @@ where
             *similarity = cosine_similarity_sequential_unchecked(
                 &matrix[src * dimension..(src + 1) * dimension],
                 &matrix[dst * dimension..(dst + 1) * dimension],
-            );
+            )
+            .0;
         });
     Ok(())
 }

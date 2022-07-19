@@ -177,7 +177,8 @@ impl Graph {
         may_have_singleton_with_selfloops: bool,
     ) -> BitVec<Lsb0, u8> {
         let connected_nodes = if may_have_singletons && self.is_directed() {
-            let mut connected_nodes = bitvec![Lsb0, AtomicU8; 0; self.get_number_of_nodes() as usize];
+            let mut connected_nodes =
+                bitvec![Lsb0, AtomicU8; 0; self.get_number_of_nodes() as usize];
             let thread_shared_connected_nodes = ThreadDataRaceAware::new(&mut connected_nodes);
             // If the graph may contain singletons, we need to iterate on all
             // the nodes neighbours in order to find if whether a node is a singleton or
@@ -198,7 +199,8 @@ impl Graph {
             });
             connected_nodes
         } else {
-            let mut connected_nodes = bitvec![Lsb0, AtomicU8; 1; self.get_number_of_nodes() as usize];
+            let mut connected_nodes =
+                bitvec![Lsb0, AtomicU8; 1; self.get_number_of_nodes() as usize];
             let thread_shared_connected_nodes = ThreadDataRaceAware::new(&mut connected_nodes);
             self.par_iter_node_degrees()
                 .enumerate()
@@ -314,20 +316,38 @@ impl Graph {
     /// * If one of the two graphs has edge types and the other does not.
     pub fn contains(&self, other: &Graph) -> Result<bool> {
         Ok(match self.is_compatible(other)? {
-            true => other
-                .par_iter_edge_node_ids_and_edge_type_id(other.directed)
-                .all(|(_, src, dst, et)| {
-                    self.has_edge_from_node_ids_and_edge_type_id(src, dst, et)
-                }),
-            false => other
-                .par_iter_edge_node_names_and_edge_type_name(other.directed)
-                .all(|(_, _, src_name, _, dst_name, _, edge_type_name)| {
-                    self.has_edge_from_node_names_and_edge_type_name(
-                        &src_name,
-                        &dst_name,
-                        edge_type_name.as_deref(),
-                    )
-                }),
+            true => {
+                if other.has_edge_types() {
+                    other
+                        .par_iter_edge_node_ids_and_edge_type_id(other.directed)
+                        .all(|(_, src, dst, et)| {
+                            self.has_edge_from_node_ids_and_edge_type_id(src, dst, et)
+                        })
+                } else {
+                    other
+                        .par_iter_edge_node_ids(other.directed)
+                        .all(|(_, src, dst)| self.has_edge_from_node_ids(src, dst))
+                }
+            }
+            false => {
+                if other.has_edge_types() {
+                    other
+                        .par_iter_edge_node_names_and_edge_type_name(other.directed)
+                        .all(|(_, _, src_name, _, dst_name, _, edge_type_name)| {
+                            self.has_edge_from_node_names_and_edge_type_name(
+                                &src_name,
+                                &dst_name,
+                                edge_type_name.as_deref(),
+                            )
+                        })
+                } else {
+                    other
+                        .par_iter_edges(other.directed)
+                        .all(|(_, _, src_name, _, dst_name)| {
+                            self.has_edge_from_node_names(&src_name, &dst_name)
+                        })
+                }
+            }
         })
     }
 }

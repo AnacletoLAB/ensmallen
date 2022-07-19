@@ -2,7 +2,7 @@ use crate::must_not_be_zero;
 use crate::Optimizer;
 use express_measures::{
     absolute_distance, cosine_similarity_sequential_unchecked, dot_product_sequential_unchecked,
-    euclidean_distance_sequential_unchecked, ThreadFloat,
+    element_wise_subtraction, euclidean_distance_sequential_unchecked, ThreadFloat,
 };
 use graph::{Graph, NodeT};
 use indicatif::ProgressIterator;
@@ -98,7 +98,7 @@ impl EdgeEmbedding {
     {
         match self {
             EdgeEmbedding::CosineSimilarity => |a: &[F], b: &[F]| {
-                vec![unsafe { cosine_similarity_sequential_unchecked(a, b).into() }]
+                vec![unsafe { cosine_similarity_sequential_unchecked(a, b).0.into() }]
             },
             EdgeEmbedding::EuclideanDistance => |a: &[F], b: &[F]| {
                 vec![unsafe { euclidean_distance_sequential_unchecked(a, b).into() }]
@@ -141,13 +141,7 @@ impl EdgeEmbedding {
                     .map(|(feature_a, feature_b)| feature_a.into() + feature_b.into())
                     .collect::<Vec<f32>>()
             },
-            EdgeEmbedding::Sub => |a: &[F], b: &[F]| {
-                a.iter()
-                    .copied()
-                    .zip(b.iter().copied())
-                    .map(|(feature_a, feature_b)| feature_a.into() - feature_b.into())
-                    .collect::<Vec<f32>>()
-            },
+            EdgeEmbedding::Sub => |a: &[F], b: &[F]| unsafe{element_wise_subtraction(a, b)},
             EdgeEmbedding::Maximum => |a: &[F], b: &[F]| {
                 a.iter()
                     .copied()
@@ -737,23 +731,13 @@ where
                                 mut total_squared_weights_gradient,
                                 mut total_variation,
                                 mut total_squared_variation,
-                            ): (
-                                Vec<f32>,
-                                Vec<f32>,
-                                f32,
-                                f32,
-                            ),
+                            ): (Vec<f32>, Vec<f32>, f32, f32),
                              (
                                 partial_weights_gradient,
                                 partial_squared_weights_gradient,
                                 partial_variation,
                                 partial_squared_variation,
-                            ): (
-                                Vec<f32>,
-                                Vec<f32>,
-                                f32,
-                                f32,
-                            )| {
+                            ): (Vec<f32>, Vec<f32>, f32, f32)| {
                                 total_weights_gradient
                                     .iter_mut()
                                     .zip(partial_weights_gradient.into_iter())
