@@ -115,9 +115,9 @@ class RetrievedGraph:
             self._graph = all_versions[version]
 
             if not load_edge_types:
-                self._graph = {
+                self._graph["arguments"] = {
                     key: value
-                    for key, value in self._graph.items()
+                    for key, value in self._graph["arguments"].items()
                     if "edge_type" not in key
                 }
         except KeyError:
