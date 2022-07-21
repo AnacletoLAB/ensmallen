@@ -24,6 +24,7 @@ class RetrievedGraph:
         preprocess: Union[bool, str] = "auto",
         load_nodes: bool = True,
         load_node_types: bool = True,
+        load_edge_types: bool = True,
         load_edge_weights: bool = True,
         auto_enable_tradeoffs: bool = True,
         sort_tmp_dir: Optional[str] = None,
@@ -60,6 +61,9 @@ class RetrievedGraph:
             This feature is only available when the preprocessing is enabled.
         load_node_types: bool = True
             Whether to load the node types if available or skip them entirely.
+            This feature is only available when the preprocessing is enabled.
+        load_edge_types: bool = True
+            Whether to load the edge types if available or skip them entirely.
             This feature is only available when the preprocessing is enabled.
         load_edge_weights: bool = True
             Whether to load the edge weights if available or skip them entirely.
@@ -109,6 +113,13 @@ class RetrievedGraph:
             )[name]
 
             self._graph = all_versions[version]
+
+            if not load_edge_types:
+                self._graph = {
+                    key: value
+                    for key, value in self._graph.items()
+                    if "edge_type" not in key
+                }
         except KeyError:
             raise ValueError(
                 (
@@ -140,6 +151,7 @@ class RetrievedGraph:
         self._directed = directed
         self._preprocess = preprocess
         self._load_nodes = load_nodes
+        self._load_edge_types = load_edge_types
         self._load_node_types = load_node_types
         self._load_edge_weights = load_edge_weights
         self._name = name

@@ -1960,7 +1960,7 @@ impl Graph {
     ///     of the diameter lowerbound.
     ///
     /// This basically creates a "cross" that spans the graph.
-    fn get_four_sweep(&self) -> (NodeT, NodeT) {
+    pub fn get_four_sweep(&self) -> (NodeT, NodeT) {
         let most_central_node_id = unsafe { self.get_unchecked_most_central_node_id() };
         let first_candidate_most_eccentric_node_id = unsafe {
             self.get_unchecked_eccentricity_and_most_distant_node_id_from_node_id(

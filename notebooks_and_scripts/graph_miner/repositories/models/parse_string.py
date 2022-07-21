@@ -1,6 +1,5 @@
 """Submodule with methods to parse and standardize STRING graphs."""
 import pandas as pd
-import os
 
 
 def parse_string_fasta(path: str) -> pd.DataFrame:

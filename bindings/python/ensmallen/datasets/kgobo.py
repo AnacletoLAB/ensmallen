@@ -18,10 +18,10 @@ from ensmallen import Graph  # pylint: disable=import-error
 from .graph_retrieval import RetrievedGraph
 
 def MOD(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "1.031.4", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="1.031.4", **kwargs
 ) -> Graph:
     """Return MOD graph	
 
@@ -33,6 +33,8 @@ def MOD(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -48,15 +50,14 @@ def MOD(
     """
     return RetrievedGraph(
         "MOD", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def FBBT(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-04-13", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-04-13", **kwargs
 ) -> Graph:
     """Return FBBT graph	
 
@@ -68,6 +69,8 @@ def FBBT(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -87,15 +90,14 @@ def FBBT(
     """
     return RetrievedGraph(
         "FBBT", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def BTO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-04-27", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-04-27", **kwargs
 ) -> Graph:
     """Return BTO graph	
 
@@ -107,6 +109,8 @@ def BTO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -121,15 +125,14 @@ def BTO(
     """
     return RetrievedGraph(
         "BTO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def CHMO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-02-17", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-02-17", **kwargs
 ) -> Graph:
     """Return CHMO graph	
 
@@ -141,6 +144,8 @@ def CHMO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -156,15 +161,14 @@ def CHMO(
     """
     return RetrievedGraph(
         "CHMO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def OBA(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-01-19", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-01-19", **kwargs
 ) -> Graph:
     """Return OBA graph	
 
@@ -176,6 +180,8 @@ def OBA(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -192,15 +198,14 @@ def OBA(
     """
     return RetrievedGraph(
         "OBA", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def PSO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2020-05-19", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2020-05-19", **kwargs
 ) -> Graph:
     """Return PSO graph	
 
@@ -212,6 +217,8 @@ def PSO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -225,15 +232,14 @@ def PSO(
     """
     return RetrievedGraph(
         "PSO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def OGSF(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "11-22-2014", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="11-22-2014", **kwargs
 ) -> Graph:
     """Return OGSF graph	
 
@@ -245,6 +251,8 @@ def OGSF(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -258,15 +266,14 @@ def OGSF(
     """
     return RetrievedGraph(
         "OGSF", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def MCO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2019-05-15", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2019-05-15", **kwargs
 ) -> Graph:
     """Return MCO graph	
 
@@ -278,6 +285,8 @@ def MCO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -291,15 +300,14 @@ def MCO(
     """
     return RetrievedGraph(
         "MCO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def OPMI(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "Vision-Release--1.0.130", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="Vision-Release--1.0.130", **kwargs
 ) -> Graph:
     """Return OPMI graph	
 
@@ -311,6 +319,8 @@ def OPMI(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -324,15 +334,14 @@ def OPMI(
     """
     return RetrievedGraph(
         "OPMI", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def FBDV(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-04-12", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-04-12", **kwargs
 ) -> Graph:
     """Return FBDV graph	
 
@@ -344,6 +353,8 @@ def FBDV(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -363,15 +374,14 @@ def FBDV(
     """
     return RetrievedGraph(
         "FBDV", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def CEPH(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2016-01-12", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2016-01-12", **kwargs
 ) -> Graph:
     """Return CEPH graph	
 
@@ -383,6 +393,8 @@ def CEPH(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -396,15 +408,14 @@ def CEPH(
     """
     return RetrievedGraph(
         "CEPH", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def MPATH(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2020-05-19", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2020-05-19", **kwargs
 ) -> Graph:
     """Return MPATH graph	
 
@@ -416,6 +427,8 @@ def MPATH(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -429,15 +442,14 @@ def MPATH(
     """
     return RetrievedGraph(
         "MPATH", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def SPD(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "1.0", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="1.0", **kwargs
 ) -> Graph:
     """Return SPD graph	
 
@@ -449,6 +461,8 @@ def SPD(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -462,15 +476,14 @@ def SPD(
     """
     return RetrievedGraph(
         "SPD", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def OMIT(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "dev", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="dev", **kwargs
 ) -> Graph:
     """Return OMIT graph	
 
@@ -482,6 +495,8 @@ def OMIT(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -495,15 +510,14 @@ def OMIT(
     """
     return RetrievedGraph(
         "OMIT", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def VT(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "04-10-2021-10-15", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="04-10-2021-10-15", **kwargs
 ) -> Graph:
     """Return VT graph	
 
@@ -515,6 +529,8 @@ def VT(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -528,15 +544,14 @@ def VT(
     """
     return RetrievedGraph(
         "VT", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def EHDAA2(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2013-07-04", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2013-07-04", **kwargs
 ) -> Graph:
     """Return EHDAA2 graph	
 
@@ -548,6 +563,8 @@ def EHDAA2(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -561,15 +578,14 @@ def EHDAA2(
     """
     return RetrievedGraph(
         "EHDAA2", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def FLOPO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "no_version", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="no_version", **kwargs
 ) -> Graph:
     """Return FLOPO graph	
 
@@ -581,6 +597,8 @@ def FLOPO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -594,15 +612,14 @@ def FLOPO(
     """
     return RetrievedGraph(
         "FLOPO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def WBLS(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-03-22", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-03-22", **kwargs
 ) -> Graph:
     """Return WBLS graph	
 
@@ -614,6 +631,8 @@ def WBLS(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -630,15 +649,14 @@ def WBLS(
     """
     return RetrievedGraph(
         "WBLS", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def RXNO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-12-06", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-12-06", **kwargs
 ) -> Graph:
     """Return RXNO graph	
 
@@ -650,6 +668,8 @@ def RXNO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -666,15 +686,14 @@ def RXNO(
     """
     return RetrievedGraph(
         "RXNO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def OMP(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-05-06", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-05-06", **kwargs
 ) -> Graph:
     """Return OMP graph	
 
@@ -686,6 +705,8 @@ def OMP(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -706,15 +727,14 @@ def OMP(
     """
     return RetrievedGraph(
         "OMP", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def ERO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "no_version", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="no_version", **kwargs
 ) -> Graph:
     """Return ERO graph	
 
@@ -726,6 +746,8 @@ def ERO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -739,15 +761,14 @@ def ERO(
     """
     return RetrievedGraph(
         "ERO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def GNO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-08-13", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-08-13", **kwargs
 ) -> Graph:
     """Return GNO graph	
 
@@ -759,6 +780,8 @@ def GNO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -773,15 +796,14 @@ def GNO(
     """
     return RetrievedGraph(
         "GNO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def XCO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "4.46", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="4.46", **kwargs
 ) -> Graph:
     """Return XCO graph	
 
@@ -793,6 +815,8 @@ def XCO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -806,15 +830,14 @@ def XCO(
     """
     return RetrievedGraph(
         "XCO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def AMPHX(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2020-12-18", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2020-12-18", **kwargs
 ) -> Graph:
     """Return AMPHX graph	
 
@@ -826,6 +849,8 @@ def AMPHX(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -839,15 +864,14 @@ def AMPHX(
     """
     return RetrievedGraph(
         "AMPHX", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def EPIO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-05-28", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-05-28", **kwargs
 ) -> Graph:
     """Return EPIO graph	
 
@@ -859,6 +883,8 @@ def EPIO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -872,15 +898,14 @@ def EPIO(
     """
     return RetrievedGraph(
         "EPIO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def CLYH(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2020-05-29", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2020-05-29", **kwargs
 ) -> Graph:
     """Return CLYH graph	
 
@@ -892,6 +917,8 @@ def CLYH(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -905,15 +932,14 @@ def CLYH(
     """
     return RetrievedGraph(
         "CLYH", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def OOSTT(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-01-08", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-01-08", **kwargs
 ) -> Graph:
     """Return OOSTT graph	
 
@@ -925,6 +951,8 @@ def OOSTT(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -938,15 +966,14 @@ def OOSTT(
     """
     return RetrievedGraph(
         "OOSTT", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def FYPO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-06-27", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-06-27", **kwargs
 ) -> Graph:
     """Return FYPO graph	
 
@@ -958,6 +985,8 @@ def FYPO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -983,15 +1012,14 @@ def FYPO(
     """
     return RetrievedGraph(
         "FYPO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def NCRO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2015-12-10", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2015-12-10", **kwargs
 ) -> Graph:
     """Return NCRO graph	
 
@@ -1003,6 +1031,8 @@ def NCRO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -1016,15 +1046,14 @@ def NCRO(
     """
     return RetrievedGraph(
         "NCRO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def IAO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2020-12-09", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2020-12-09", **kwargs
 ) -> Graph:
     """Return IAO graph	
 
@@ -1036,6 +1065,8 @@ def IAO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -1049,15 +1080,14 @@ def IAO(
     """
     return RetrievedGraph(
         "IAO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def GEO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "production-version-2016-03-26", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="production-version-2016-03-26", **kwargs
 ) -> Graph:
     """Return GEO graph	
 
@@ -1069,6 +1099,8 @@ def GEO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -1082,15 +1114,14 @@ def GEO(
     """
     return RetrievedGraph(
         "GEO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def EXO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2.1", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2.1", **kwargs
 ) -> Graph:
     """Return EXO graph	
 
@@ -1102,6 +1133,8 @@ def EXO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -1116,15 +1149,14 @@ def EXO(
     """
     return RetrievedGraph(
         "EXO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def SWO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "swo.owl", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="swo.owl", **kwargs
 ) -> Graph:
     """Return SWO graph	
 
@@ -1136,6 +1168,8 @@ def SWO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -1149,15 +1183,14 @@ def SWO(
     """
     return RetrievedGraph(
         "SWO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def OBCS(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2018-02-22", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2018-02-22", **kwargs
 ) -> Graph:
     """Return OBCS graph	
 
@@ -1169,6 +1202,8 @@ def OBCS(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -1182,15 +1217,14 @@ def OBCS(
     """
     return RetrievedGraph(
         "OBCS", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def ENVO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-05-14", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-05-14", **kwargs
 ) -> Graph:
     """Return ENVO graph	
 
@@ -1202,6 +1236,8 @@ def ENVO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -1215,15 +1251,14 @@ def ENVO(
     """
     return RetrievedGraph(
         "ENVO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def SYMP(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-07-05", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-07-05", **kwargs
 ) -> Graph:
     """Return SYMP graph	
 
@@ -1235,6 +1270,8 @@ def SYMP(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -1254,15 +1291,14 @@ def SYMP(
     """
     return RetrievedGraph(
         "SYMP", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def TAXRANK(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2016-04-15", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2016-04-15", **kwargs
 ) -> Graph:
     """Return TAXRANK graph	
 
@@ -1274,6 +1310,8 @@ def TAXRANK(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -1287,15 +1325,14 @@ def TAXRANK(
     """
     return RetrievedGraph(
         "TAXRANK", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def APO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-04-19", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-04-19", **kwargs
 ) -> Graph:
     """Return APO graph	
 
@@ -1307,6 +1344,8 @@ def APO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -1326,15 +1365,14 @@ def APO(
     """
     return RetrievedGraph(
         "APO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def CLO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2019-02-10", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2019-02-10", **kwargs
 ) -> Graph:
     """Return CLO graph	
 
@@ -1346,6 +1384,8 @@ def CLO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -1360,15 +1400,14 @@ def CLO(
     """
     return RetrievedGraph(
         "CLO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def CMO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2019-02-19", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2019-02-19", **kwargs
 ) -> Graph:
     """Return CMO graph	
 
@@ -1380,6 +1419,8 @@ def CMO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -1393,15 +1434,14 @@ def CMO(
     """
     return RetrievedGraph(
         "CMO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def OHMI(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2019-09-17", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2019-09-17", **kwargs
 ) -> Graph:
     """Return OHMI graph	
 
@@ -1413,6 +1453,8 @@ def OHMI(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -1426,15 +1468,14 @@ def OHMI(
     """
     return RetrievedGraph(
         "OHMI", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def HSO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2020-11-28", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2020-11-28", **kwargs
 ) -> Graph:
     """Return HSO graph	
 
@@ -1446,6 +1487,8 @@ def HSO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -1460,15 +1503,14 @@ def HSO(
     """
     return RetrievedGraph(
         "HSO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def FBBI(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2020-11-06", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2020-11-06", **kwargs
 ) -> Graph:
     """Return FBBI graph	
 
@@ -1480,6 +1522,8 @@ def FBBI(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -1493,15 +1537,14 @@ def FBBI(
     """
     return RetrievedGraph(
         "FBBI", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def OBI(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-01-03", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-01-03", **kwargs
 ) -> Graph:
     """Return OBI graph	
 
@@ -1513,6 +1556,8 @@ def OBI(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -1528,15 +1573,14 @@ def OBI(
     """
     return RetrievedGraph(
         "OBI", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def CDAO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2019-06-26", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2019-06-26", **kwargs
 ) -> Graph:
     """Return CDAO graph	
 
@@ -1548,6 +1592,8 @@ def CDAO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -1561,15 +1607,14 @@ def CDAO(
     """
     return RetrievedGraph(
         "CDAO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def MFMO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2013-11-16", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2013-11-16", **kwargs
 ) -> Graph:
     """Return MFMO graph	
 
@@ -1581,6 +1626,8 @@ def MFMO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -1594,15 +1641,14 @@ def MFMO(
     """
     return RetrievedGraph(
         "MFMO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def CRO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2019-12-11", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2019-12-11", **kwargs
 ) -> Graph:
     """Return CRO graph	
 
@@ -1614,6 +1660,8 @@ def CRO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -1627,15 +1675,14 @@ def CRO(
     """
     return RetrievedGraph(
         "CRO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def CHEMINF(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2.0", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2.0", **kwargs
 ) -> Graph:
     """Return CHEMINF graph	
 
@@ -1647,6 +1694,8 @@ def CHEMINF(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -1660,15 +1709,14 @@ def CHEMINF(
     """
     return RetrievedGraph(
         "CHEMINF", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def MP(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-11-04", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-11-04", **kwargs
 ) -> Graph:
     """Return MP graph	
 
@@ -1680,6 +1728,8 @@ def MP(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -1697,15 +1747,14 @@ def MP(
     """
     return RetrievedGraph(
         "MP", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def DUO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-02-23", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-02-23", **kwargs
 ) -> Graph:
     """Return DUO graph	
 
@@ -1717,6 +1766,8 @@ def DUO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -1730,15 +1781,14 @@ def DUO(
     """
     return RetrievedGraph(
         "DUO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def LABO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-06-08", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-06-08", **kwargs
 ) -> Graph:
     """Return LABO graph	
 
@@ -1750,6 +1800,8 @@ def LABO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -1763,15 +1815,14 @@ def LABO(
     """
     return RetrievedGraph(
         "LABO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def OLATDV(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2020-03-10", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2020-03-10", **kwargs
 ) -> Graph:
     """Return OLATDV graph	
 
@@ -1783,6 +1834,8 @@ def OLATDV(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -1796,15 +1849,14 @@ def OLATDV(
     """
     return RetrievedGraph(
         "OLATDV", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def MPIO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2019-01-30", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2019-01-30", **kwargs
 ) -> Graph:
     """Return MPIO graph	
 
@@ -1816,6 +1868,8 @@ def MPIO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -1829,15 +1883,14 @@ def MPIO(
     """
     return RetrievedGraph(
         "MPIO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def CHEBI(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "210", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="210", **kwargs
 ) -> Graph:
     """Return CHEBI graph	
 
@@ -1849,6 +1902,8 @@ def CHEBI(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -1870,15 +1925,14 @@ def CHEBI(
     """
     return RetrievedGraph(
         "CHEBI", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def AEO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2014-12-05", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2014-12-05", **kwargs
 ) -> Graph:
     """Return AEO graph	
 
@@ -1890,6 +1944,8 @@ def AEO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -1903,15 +1959,14 @@ def AEO(
     """
     return RetrievedGraph(
         "AEO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def ADO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-06-11", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-06-11", **kwargs
 ) -> Graph:
     """Return ADO graph	
 
@@ -1923,6 +1978,8 @@ def ADO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -1936,15 +1993,14 @@ def ADO(
     """
     return RetrievedGraph(
         "ADO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def FOBI(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "fobi", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="fobi", **kwargs
 ) -> Graph:
     """Return FOBI graph	
 
@@ -1956,6 +2012,8 @@ def FOBI(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -1969,15 +2027,14 @@ def FOBI(
     """
     return RetrievedGraph(
         "FOBI", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def GENO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2020-03-08", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2020-03-08", **kwargs
 ) -> Graph:
     """Return GENO graph	
 
@@ -1989,6 +2046,8 @@ def GENO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -2003,15 +2062,14 @@ def GENO(
     """
     return RetrievedGraph(
         "GENO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def SBO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "28-08-2021-03-13", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="28-08-2021-03-13", **kwargs
 ) -> Graph:
     """Return SBO graph	
 
@@ -2023,6 +2081,8 @@ def SBO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -2036,15 +2096,14 @@ def SBO(
     """
     return RetrievedGraph(
         "SBO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def TO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-03-09", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-03-09", **kwargs
 ) -> Graph:
     """Return TO graph	
 
@@ -2056,6 +2115,8 @@ def TO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -2071,15 +2132,14 @@ def TO(
     """
     return RetrievedGraph(
         "TO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def UO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "no_version", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="no_version", **kwargs
 ) -> Graph:
     """Return UO graph	
 
@@ -2091,6 +2151,8 @@ def UO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -2104,15 +2166,14 @@ def UO(
     """
     return RetrievedGraph(
         "UO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def MOP(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-02-01", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-02-01", **kwargs
 ) -> Graph:
     """Return MOP graph	
 
@@ -2124,6 +2185,8 @@ def MOP(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -2139,15 +2202,14 @@ def MOP(
     """
     return RetrievedGraph(
         "MOP", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def CHIRO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2015-11-23", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2015-11-23", **kwargs
 ) -> Graph:
     """Return CHIRO graph	
 
@@ -2159,6 +2221,8 @@ def CHIRO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -2172,15 +2236,14 @@ def CHIRO(
     """
     return RetrievedGraph(
         "CHIRO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def OGMS(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-08-19", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-08-19", **kwargs
 ) -> Graph:
     """Return OGMS graph	
 
@@ -2192,6 +2255,8 @@ def OGMS(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -2205,15 +2270,14 @@ def OGMS(
     """
     return RetrievedGraph(
         "OGMS", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def NCBITAXON(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-02-21", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-02-21", **kwargs
 ) -> Graph:
     """Return NCBITAXON graph	
 
@@ -2225,6 +2289,8 @@ def NCBITAXON(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -2241,15 +2307,14 @@ def NCBITAXON(
     """
     return RetrievedGraph(
         "NCBITAXON", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def FOODON(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-11-25", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-11-25", **kwargs
 ) -> Graph:
     """Return FOODON graph	
 
@@ -2261,6 +2326,8 @@ def FOODON(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -2276,15 +2343,14 @@ def FOODON(
     """
     return RetrievedGraph(
         "FOODON", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def PW(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "7.52", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="7.52", **kwargs
 ) -> Graph:
     """Return PW graph	
 
@@ -2296,6 +2362,8 @@ def PW(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -2309,15 +2377,14 @@ def PW(
     """
     return RetrievedGraph(
         "PW", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def FOVT(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-10-29", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-10-29", **kwargs
 ) -> Graph:
     """Return FOVT graph	
 
@@ -2329,6 +2396,8 @@ def FOVT(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -2344,15 +2413,14 @@ def FOVT(
     """
     return RetrievedGraph(
         "FOVT", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def XPO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-03-05", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-03-05", **kwargs
 ) -> Graph:
     """Return XPO graph	
 
@@ -2364,6 +2432,8 @@ def XPO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -2377,15 +2447,14 @@ def XPO(
     """
     return RetrievedGraph(
         "XPO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def ZFS(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2020-03-10", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2020-03-10", **kwargs
 ) -> Graph:
     """Return ZFS graph	
 
@@ -2397,6 +2466,8 @@ def ZFS(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -2410,15 +2481,14 @@ def ZFS(
     """
     return RetrievedGraph(
         "ZFS", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def RS(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "6.107", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="6.107", **kwargs
 ) -> Graph:
     """Return RS graph	
 
@@ -2430,6 +2500,8 @@ def RS(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -2443,15 +2515,14 @@ def RS(
     """
     return RetrievedGraph(
         "RS", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def CTO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "no_version", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="no_version", **kwargs
 ) -> Graph:
     """Return CTO graph	
 
@@ -2463,6 +2534,8 @@ def CTO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -2476,15 +2549,14 @@ def CTO(
     """
     return RetrievedGraph(
         "CTO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def OMO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2020-06-08", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2020-06-08", **kwargs
 ) -> Graph:
     """Return OMO graph	
 
@@ -2496,6 +2568,8 @@ def OMO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -2510,15 +2584,14 @@ def OMO(
     """
     return RetrievedGraph(
         "OMO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def FIX(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2020-04-13", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2020-04-13", **kwargs
 ) -> Graph:
     """Return FIX graph	
 
@@ -2530,6 +2603,8 @@ def FIX(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -2543,15 +2618,14 @@ def FIX(
     """
     return RetrievedGraph(
         "FIX", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def MAMO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "no_version", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="no_version", **kwargs
 ) -> Graph:
     """Return MAMO graph	
 
@@ -2563,6 +2637,8 @@ def MAMO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -2576,15 +2652,14 @@ def MAMO(
     """
     return RetrievedGraph(
         "MAMO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def VTO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2020-11-13", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2020-11-13", **kwargs
 ) -> Graph:
     """Return VTO graph	
 
@@ -2596,6 +2671,8 @@ def VTO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -2609,15 +2686,14 @@ def VTO(
     """
     return RetrievedGraph(
         "VTO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def UBERON(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-06-20", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-06-20", **kwargs
 ) -> Graph:
     """Return UBERON graph	
 
@@ -2629,6 +2705,8 @@ def UBERON(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -2650,15 +2728,14 @@ def UBERON(
     """
     return RetrievedGraph(
         "UBERON", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def MFOMD(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2020-04-26", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2020-04-26", **kwargs
 ) -> Graph:
     """Return MFOMD graph	
 
@@ -2670,6 +2747,8 @@ def MFOMD(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -2683,15 +2762,14 @@ def MFOMD(
     """
     return RetrievedGraph(
         "MFOMD", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def BFO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2019-08-26", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2019-08-26", **kwargs
 ) -> Graph:
     """Return BFO graph	
 
@@ -2703,6 +2781,8 @@ def BFO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -2716,15 +2796,14 @@ def BFO(
     """
     return RetrievedGraph(
         "BFO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def HTN(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "no_version", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="no_version", **kwargs
 ) -> Graph:
     """Return HTN graph	
 
@@ -2736,6 +2815,8 @@ def HTN(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -2749,15 +2830,14 @@ def HTN(
     """
     return RetrievedGraph(
         "HTN", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def PORO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2016-09-13", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2016-09-13", **kwargs
 ) -> Graph:
     """Return PORO graph	
 
@@ -2769,6 +2849,8 @@ def PORO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -2783,15 +2865,14 @@ def PORO(
     """
     return RetrievedGraph(
         "PORO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def PROCO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-04-11", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-04-11", **kwargs
 ) -> Graph:
     """Return PROCO graph	
 
@@ -2803,6 +2884,8 @@ def PROCO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -2816,15 +2899,14 @@ def PROCO(
     """
     return RetrievedGraph(
         "PROCO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def AISM(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-06-18", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-06-18", **kwargs
 ) -> Graph:
     """Return AISM graph	
 
@@ -2836,6 +2918,8 @@ def AISM(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -2854,15 +2938,14 @@ def AISM(
     """
     return RetrievedGraph(
         "AISM", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def WBBT(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-03-22", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-03-22", **kwargs
 ) -> Graph:
     """Return WBBT graph	
 
@@ -2874,6 +2957,8 @@ def WBBT(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -2890,15 +2975,14 @@ def WBBT(
     """
     return RetrievedGraph(
         "WBBT", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def HAO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "no_version", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="no_version", **kwargs
 ) -> Graph:
     """Return HAO graph	
 
@@ -2910,6 +2994,8 @@ def HAO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -2923,15 +3009,14 @@ def HAO(
     """
     return RetrievedGraph(
         "HAO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def SO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-07-12", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-07-12", **kwargs
 ) -> Graph:
     """Return SO graph	
 
@@ -2943,6 +3028,8 @@ def SO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -2957,15 +3044,14 @@ def SO(
     """
     return RetrievedGraph(
         "SO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def RO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-04-25", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-04-25", **kwargs
 ) -> Graph:
     """Return RO graph	
 
@@ -2977,6 +3063,8 @@ def RO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -2996,15 +3084,14 @@ def RO(
     """
     return RetrievedGraph(
         "RO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def MONDO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-06-01", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-06-01", **kwargs
 ) -> Graph:
     """Return MONDO graph	
 
@@ -3016,6 +3103,8 @@ def MONDO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -3039,15 +3128,14 @@ def MONDO(
     """
     return RetrievedGraph(
         "MONDO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def DDPHENO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2020-06-19", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2020-06-19", **kwargs
 ) -> Graph:
     """Return DDPHENO graph	
 
@@ -3059,6 +3147,8 @@ def DDPHENO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -3073,15 +3163,14 @@ def DDPHENO(
     """
     return RetrievedGraph(
         "DDPHENO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def IDOMAL(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2015-03-16", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2015-03-16", **kwargs
 ) -> Graph:
     """Return IDOMAL graph	
 
@@ -3093,6 +3182,8 @@ def IDOMAL(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -3106,15 +3197,14 @@ def IDOMAL(
     """
     return RetrievedGraph(
         "IDOMAL", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def MAXO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-06-01", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-06-01", **kwargs
 ) -> Graph:
     """Return MAXO graph	
 
@@ -3126,6 +3216,8 @@ def MAXO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -3145,15 +3237,14 @@ def MAXO(
     """
     return RetrievedGraph(
         "MAXO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def FBCV(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-04-14", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-04-14", **kwargs
 ) -> Graph:
     """Return FBCV graph	
 
@@ -3165,6 +3256,8 @@ def FBCV(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -3184,15 +3277,14 @@ def FBCV(
     """
     return RetrievedGraph(
         "FBCV", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def TRANS(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2020-08-04", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2020-08-04", **kwargs
 ) -> Graph:
     """Return TRANS graph	
 
@@ -3204,6 +3296,8 @@ def TRANS(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -3217,15 +3311,14 @@ def TRANS(
     """
     return RetrievedGraph(
         "TRANS", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def PSDO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2020-12-04", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2020-12-04", **kwargs
 ) -> Graph:
     """Return PSDO graph	
 
@@ -3237,6 +3330,8 @@ def PSDO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -3250,15 +3345,14 @@ def PSDO(
     """
     return RetrievedGraph(
         "PSDO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def SCDO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-04-15", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-04-15", **kwargs
 ) -> Graph:
     """Return SCDO graph	
 
@@ -3270,6 +3364,8 @@ def SCDO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -3283,15 +3379,14 @@ def SCDO(
     """
     return RetrievedGraph(
         "SCDO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def LEPAO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-11-20", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-11-20", **kwargs
 ) -> Graph:
     """Return LEPAO graph	
 
@@ -3303,6 +3398,8 @@ def LEPAO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -3316,15 +3413,14 @@ def LEPAO(
     """
     return RetrievedGraph(
         "LEPAO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def ONTONEO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-04-29", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-04-29", **kwargs
 ) -> Graph:
     """Return ONTONEO graph	
 
@@ -3336,6 +3432,8 @@ def ONTONEO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -3349,15 +3447,14 @@ def ONTONEO(
     """
     return RetrievedGraph(
         "ONTONEO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def DRON(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-01-28", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-01-28", **kwargs
 ) -> Graph:
     """Return DRON graph	
 
@@ -3369,6 +3466,8 @@ def DRON(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -3385,15 +3484,14 @@ def DRON(
     """
     return RetrievedGraph(
         "DRON", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def RBO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-04-16", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-04-16", **kwargs
 ) -> Graph:
     """Return RBO graph	
 
@@ -3405,6 +3503,8 @@ def RBO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -3421,15 +3521,14 @@ def RBO(
     """
     return RetrievedGraph(
         "RBO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def NCIT(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-12-17", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-12-17", **kwargs
 ) -> Graph:
     """Return NCIT graph	
 
@@ -3441,6 +3540,8 @@ def NCIT(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -3456,15 +3557,14 @@ def NCIT(
     """
     return RetrievedGraph(
         "NCIT", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def FMA(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2020-04-13", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2020-04-13", **kwargs
 ) -> Graph:
     """Return FMA graph	
 
@@ -3476,6 +3576,8 @@ def FMA(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -3489,15 +3591,14 @@ def FMA(
     """
     return RetrievedGraph(
         "FMA", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def REX(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2017-11-19", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2017-11-19", **kwargs
 ) -> Graph:
     """Return REX graph	
 
@@ -3509,6 +3610,8 @@ def REX(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -3522,15 +3625,14 @@ def REX(
     """
     return RetrievedGraph(
         "REX", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def COB(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-09-13", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-09-13", **kwargs
 ) -> Graph:
     """Return COB graph	
 
@@ -3542,6 +3644,8 @@ def COB(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -3556,15 +3660,14 @@ def COB(
     """
     return RetrievedGraph(
         "COB", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def SIBO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2015-06-15", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2015-06-15", **kwargs
 ) -> Graph:
     """Return SIBO graph	
 
@@ -3576,6 +3679,8 @@ def SIBO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -3589,15 +3694,14 @@ def SIBO(
     """
     return RetrievedGraph(
         "SIBO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def PDRO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-06-08", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-06-08", **kwargs
 ) -> Graph:
     """Return PDRO graph	
 
@@ -3609,6 +3713,8 @@ def PDRO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -3622,15 +3728,14 @@ def PDRO(
     """
     return RetrievedGraph(
         "PDRO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def OGG(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "12-01-2016", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="12-01-2016", **kwargs
 ) -> Graph:
     """Return OGG graph	
 
@@ -3642,6 +3747,8 @@ def OGG(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -3655,15 +3762,14 @@ def OGG(
     """
     return RetrievedGraph(
         "OGG", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def XLMOD(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2019-10-28", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2019-10-28", **kwargs
 ) -> Graph:
     """Return XLMOD graph	
 
@@ -3675,6 +3781,8 @@ def XLMOD(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -3688,15 +3796,14 @@ def XLMOD(
     """
     return RetrievedGraph(
         "XLMOD", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def HANCESTRO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2020-12-18", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2020-12-18", **kwargs
 ) -> Graph:
     """Return HANCESTRO graph	
 
@@ -3708,6 +3815,8 @@ def HANCESTRO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -3722,15 +3831,14 @@ def HANCESTRO(
     """
     return RetrievedGraph(
         "HANCESTRO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def GO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-06-15", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-06-15", **kwargs
 ) -> Graph:
     """Return GO graph	
 
@@ -3742,6 +3850,8 @@ def GO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -3764,15 +3874,14 @@ def GO(
     """
     return RetrievedGraph(
         "GO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def MF(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-09-21", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-09-21", **kwargs
 ) -> Graph:
     """Return MF graph	
 
@@ -3784,6 +3893,8 @@ def MF(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -3798,15 +3909,14 @@ def MF(
     """
     return RetrievedGraph(
         "MF", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def GSSO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2.0.5", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2.0.5", **kwargs
 ) -> Graph:
     """Return GSSO graph	
 
@@ -3818,6 +3928,8 @@ def GSSO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -3831,15 +3943,14 @@ def GSSO(
     """
     return RetrievedGraph(
         "GSSO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def UPHENO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "no_version", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="no_version", **kwargs
 ) -> Graph:
     """Return UPHENO graph	
 
@@ -3851,6 +3962,8 @@ def UPHENO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -3864,15 +3977,14 @@ def UPHENO(
     """
     return RetrievedGraph(
         "UPHENO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def PLANA(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-10-21", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-10-21", **kwargs
 ) -> Graph:
     """Return PLANA graph	
 
@@ -3884,6 +3996,8 @@ def PLANA(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -3900,15 +4014,14 @@ def PLANA(
     """
     return RetrievedGraph(
         "PLANA", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def OAE(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "1.2.44", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="1.2.44", **kwargs
 ) -> Graph:
     """Return OAE graph	
 
@@ -3920,6 +4033,8 @@ def OAE(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -3933,15 +4048,14 @@ def OAE(
     """
     return RetrievedGraph(
         "OAE", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def MMUSDV(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2020-03-10", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2020-03-10", **kwargs
 ) -> Graph:
     """Return MMUSDV graph	
 
@@ -3953,6 +4067,8 @@ def MMUSDV(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -3966,15 +4082,14 @@ def MMUSDV(
     """
     return RetrievedGraph(
         "MMUSDV", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def MS(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "4.1.92", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="4.1.92", **kwargs
 ) -> Graph:
     """Return MS graph	
 
@@ -3986,6 +4101,8 @@ def MS(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -4016,15 +4133,14 @@ def MS(
     """
     return RetrievedGraph(
         "MS", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def APOLLO_SV(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "v4.1.1.", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="v4.1.1.", **kwargs
 ) -> Graph:
     """Return APOLLO_SV graph	
 
@@ -4036,6 +4152,8 @@ def APOLLO_SV(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -4049,15 +4167,14 @@ def APOLLO_SV(
     """
     return RetrievedGraph(
         "APOLLO_SV", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def HSAPDV(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2020-03-10", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2020-03-10", **kwargs
 ) -> Graph:
     """Return HSAPDV graph	
 
@@ -4069,6 +4186,8 @@ def HSAPDV(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -4082,15 +4201,14 @@ def HSAPDV(
     """
     return RetrievedGraph(
         "HSAPDV", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def VO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "September_18__2021", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="September_18__2021", **kwargs
 ) -> Graph:
     """Return VO graph	
 
@@ -4102,6 +4220,8 @@ def VO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -4116,15 +4236,14 @@ def VO(
     """
     return RetrievedGraph(
         "VO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def MIRO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2014-05-14", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2014-05-14", **kwargs
 ) -> Graph:
     """Return MIRO graph	
 
@@ -4136,6 +4255,8 @@ def MIRO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -4149,15 +4270,14 @@ def MIRO(
     """
     return RetrievedGraph(
         "MIRO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def EMAPA(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-09-01", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-09-01", **kwargs
 ) -> Graph:
     """Return EMAPA graph	
 
@@ -4169,6 +4289,8 @@ def EMAPA(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -4183,15 +4305,14 @@ def EMAPA(
     """
     return RetrievedGraph(
         "EMAPA", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def GECKO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-01-18", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-01-18", **kwargs
 ) -> Graph:
     """Return GECKO graph	
 
@@ -4203,6 +4324,8 @@ def GECKO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -4216,15 +4339,14 @@ def GECKO(
     """
     return RetrievedGraph(
         "GECKO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def CARO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-02-18", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-02-18", **kwargs
 ) -> Graph:
     """Return CARO graph	
 
@@ -4236,6 +4358,8 @@ def CARO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -4249,15 +4373,14 @@ def CARO(
     """
     return RetrievedGraph(
         "CARO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def GENEPIO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-01-26", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-01-26", **kwargs
 ) -> Graph:
     """Return GENEPIO graph	
 
@@ -4269,6 +4392,8 @@ def GENEPIO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -4284,15 +4409,14 @@ def GENEPIO(
     """
     return RetrievedGraph(
         "GENEPIO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def TADS(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2015-08-20", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2015-08-20", **kwargs
 ) -> Graph:
     """Return TADS graph	
 
@@ -4304,6 +4428,8 @@ def TADS(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -4317,15 +4443,14 @@ def TADS(
     """
     return RetrievedGraph(
         "TADS", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def FAO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2020-05-07", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2020-05-07", **kwargs
 ) -> Graph:
     """Return FAO graph	
 
@@ -4337,6 +4462,8 @@ def FAO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -4350,15 +4477,14 @@ def FAO(
     """
     return RetrievedGraph(
         "FAO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def CVDO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2020-03-05", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2020-03-05", **kwargs
 ) -> Graph:
     """Return CVDO graph	
 
@@ -4370,6 +4496,8 @@ def CVDO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -4383,15 +4511,14 @@ def CVDO(
     """
     return RetrievedGraph(
         "CVDO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def ECAO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2020-05-22", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2020-05-22", **kwargs
 ) -> Graph:
     """Return ECAO graph	
 
@@ -4403,6 +4530,8 @@ def ECAO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -4416,15 +4545,14 @@ def ECAO(
     """
     return RetrievedGraph(
         "ECAO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def OHPI(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "releases", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="releases", **kwargs
 ) -> Graph:
     """Return OHPI graph	
 
@@ -4436,6 +4564,8 @@ def OHPI(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -4449,15 +4579,14 @@ def OHPI(
     """
     return RetrievedGraph(
         "OHPI", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def OPL(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-01-28", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-01-28", **kwargs
 ) -> Graph:
     """Return OPL graph	
 
@@ -4469,6 +4598,8 @@ def OPL(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -4482,15 +4613,14 @@ def OPL(
     """
     return RetrievedGraph(
         "OPL", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def TGMA(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2013-06-03", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2013-06-03", **kwargs
 ) -> Graph:
     """Return TGMA graph	
 
@@ -4502,6 +4632,8 @@ def TGMA(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -4515,15 +4647,14 @@ def TGMA(
     """
     return RetrievedGraph(
         "TGMA", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def BCO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2020-03-27", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2020-03-27", **kwargs
 ) -> Graph:
     """Return BCO graph	
 
@@ -4535,6 +4666,8 @@ def BCO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -4549,15 +4682,14 @@ def BCO(
     """
     return RetrievedGraph(
         "BCO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def ICO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-04-21", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-04-21", **kwargs
 ) -> Graph:
     """Return ICO graph	
 
@@ -4569,6 +4701,8 @@ def ICO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -4582,15 +4716,14 @@ def ICO(
     """
     return RetrievedGraph(
         "ICO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def ZECO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-06-04", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-06-04", **kwargs
 ) -> Graph:
     """Return ZECO graph	
 
@@ -4602,6 +4735,8 @@ def ZECO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -4616,15 +4751,14 @@ def ZECO(
     """
     return RetrievedGraph(
         "ZECO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def PHIPO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-07-14", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-07-14", **kwargs
 ) -> Graph:
     """Return PHIPO graph	
 
@@ -4636,6 +4770,8 @@ def PHIPO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -4649,15 +4785,14 @@ def PHIPO(
     """
     return RetrievedGraph(
         "PHIPO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def PDUMDV(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2020-03-10", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2020-03-10", **kwargs
 ) -> Graph:
     """Return PDUMDV graph	
 
@@ -4669,6 +4804,8 @@ def PDUMDV(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -4682,15 +4819,14 @@ def PDUMDV(
     """
     return RetrievedGraph(
         "PDUMDV", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def ARO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "05-10-2021-09-37", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="05-10-2021-09-37", **kwargs
 ) -> Graph:
     """Return ARO graph	
 
@@ -4702,6 +4838,8 @@ def ARO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -4715,15 +4853,14 @@ def ARO(
     """
     return RetrievedGraph(
         "ARO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def OARCS(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "no_version", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="no_version", **kwargs
 ) -> Graph:
     """Return OARCS graph	
 
@@ -4735,6 +4872,8 @@ def OARCS(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -4748,15 +4887,14 @@ def OARCS(
     """
     return RetrievedGraph(
         "OARCS", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def PCL(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-03-02", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-03-02", **kwargs
 ) -> Graph:
     """Return PCL graph	
 
@@ -4768,6 +4906,8 @@ def PCL(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -4785,15 +4925,14 @@ def PCL(
     """
     return RetrievedGraph(
         "PCL", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def CTENO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2016-10-19", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2016-10-19", **kwargs
 ) -> Graph:
     """Return CTENO graph	
 
@@ -4805,6 +4944,8 @@ def CTENO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -4818,15 +4959,14 @@ def CTENO(
     """
     return RetrievedGraph(
         "CTENO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def PLANP(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2020-03-28", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2020-03-28", **kwargs
 ) -> Graph:
     """Return PLANP graph	
 
@@ -4838,6 +4978,8 @@ def PLANP(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -4851,15 +4993,14 @@ def PLANP(
     """
     return RetrievedGraph(
         "PLANP", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def DOID(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-04-28", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-04-28", **kwargs
 ) -> Graph:
     """Return DOID graph	
 
@@ -4871,6 +5012,8 @@ def DOID(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -4893,15 +5036,14 @@ def DOID(
     """
     return RetrievedGraph(
         "DOID", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def OMRSE(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-08-30", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-08-30", **kwargs
 ) -> Graph:
     """Return OMRSE graph	
 
@@ -4913,6 +5055,8 @@ def OMRSE(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -4927,15 +5071,14 @@ def OMRSE(
     """
     return RetrievedGraph(
         "OMRSE", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def PPO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2018-10-26", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2018-10-26", **kwargs
 ) -> Graph:
     """Return PPO graph	
 
@@ -4947,6 +5090,8 @@ def PPO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -4960,15 +5105,14 @@ def PPO(
     """
     return RetrievedGraph(
         "PPO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def OVAE(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "04-11-2016", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="04-11-2016", **kwargs
 ) -> Graph:
     """Return OVAE graph	
 
@@ -4980,6 +5124,8 @@ def OVAE(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -4993,15 +5139,14 @@ def OVAE(
     """
     return RetrievedGraph(
         "OVAE", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def ZP(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-12-12", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-12-12", **kwargs
 ) -> Graph:
     """Return ZP graph	
 
@@ -5013,6 +5158,8 @@ def ZP(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -5026,15 +5173,14 @@ def ZP(
     """
     return RetrievedGraph(
         "ZP", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def STATO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "RC1.4", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="RC1.4", **kwargs
 ) -> Graph:
     """Return STATO graph	
 
@@ -5046,6 +5192,8 @@ def STATO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -5059,15 +5207,14 @@ def STATO(
     """
     return RetrievedGraph(
         "STATO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def ONE(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "no_version", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="no_version", **kwargs
 ) -> Graph:
     """Return ONE graph	
 
@@ -5079,6 +5226,8 @@ def ONE(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -5092,15 +5241,14 @@ def ONE(
     """
     return RetrievedGraph(
         "ONE", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def ECTO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-05-04", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-05-04", **kwargs
 ) -> Graph:
     """Return ECTO graph	
 
@@ -5112,6 +5260,8 @@ def ECTO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -5128,15 +5278,14 @@ def ECTO(
     """
     return RetrievedGraph(
         "ECTO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def XAO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-03-04", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-03-04", **kwargs
 ) -> Graph:
     """Return XAO graph	
 
@@ -5148,6 +5297,8 @@ def XAO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -5161,15 +5312,14 @@ def XAO(
     """
     return RetrievedGraph(
         "XAO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def MIAPA(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "no_version", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="no_version", **kwargs
 ) -> Graph:
     """Return MIAPA graph	
 
@@ -5181,6 +5331,8 @@ def MIAPA(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -5194,15 +5346,14 @@ def MIAPA(
     """
     return RetrievedGraph(
         "MIAPA", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def MI(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2020-04-13", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2020-04-13", **kwargs
 ) -> Graph:
     """Return MI graph	
 
@@ -5214,6 +5365,8 @@ def MI(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -5227,15 +5380,14 @@ def MI(
     """
     return RetrievedGraph(
         "MI", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def ECOCORE(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-02-17", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-02-17", **kwargs
 ) -> Graph:
     """Return ECOCORE graph	
 
@@ -5247,6 +5399,8 @@ def ECOCORE(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -5261,15 +5415,14 @@ def ECOCORE(
     """
     return RetrievedGraph(
         "ECOCORE", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def MMO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2.39", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2.39", **kwargs
 ) -> Graph:
     """Return MMO graph	
 
@@ -5281,6 +5434,8 @@ def MMO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -5294,15 +5449,14 @@ def MMO(
     """
     return RetrievedGraph(
         "MMO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def EUPATH(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-02-15", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-02-15", **kwargs
 ) -> Graph:
     """Return EUPATH graph	
 
@@ -5314,6 +5468,8 @@ def EUPATH(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -5329,15 +5485,14 @@ def EUPATH(
     """
     return RetrievedGraph(
         "EUPATH", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def OBIB(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-02-02", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-02-02", **kwargs
 ) -> Graph:
     """Return OBIB graph	
 
@@ -5349,6 +5504,8 @@ def OBIB(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -5363,15 +5520,14 @@ def OBIB(
     """
     return RetrievedGraph(
         "OBIB", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def IDO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2017-11-03", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2017-11-03", **kwargs
 ) -> Graph:
     """Return IDO graph	
 
@@ -5383,6 +5539,8 @@ def IDO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -5396,15 +5554,14 @@ def IDO(
     """
     return RetrievedGraph(
         "IDO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def SEPIO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "no_version", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="no_version", **kwargs
 ) -> Graph:
     """Return SEPIO graph	
 
@@ -5416,6 +5573,8 @@ def SEPIO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -5429,15 +5588,14 @@ def SEPIO(
     """
     return RetrievedGraph(
         "SEPIO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def TTO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "19-07-2012-13-26", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="19-07-2012-13-26", **kwargs
 ) -> Graph:
     """Return TTO graph	
 
@@ -5449,6 +5607,8 @@ def TTO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -5462,15 +5622,14 @@ def TTO(
     """
     return RetrievedGraph(
         "TTO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def PR(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "65.0", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="65.0", **kwargs
 ) -> Graph:
     """Return PR graph	
 
@@ -5482,6 +5641,8 @@ def PR(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -5498,15 +5659,14 @@ def PR(
     """
     return RetrievedGraph(
         "PR", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def NBO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-02-15", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-02-15", **kwargs
 ) -> Graph:
     """Return NBO graph	
 
@@ -5518,6 +5678,8 @@ def NBO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -5531,15 +5693,14 @@ def NBO(
     """
     return RetrievedGraph(
         "NBO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def WBPHENOTYPE(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-03-22", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-03-22", **kwargs
 ) -> Graph:
     """Return WBPHENOTYPE graph	
 
@@ -5551,6 +5712,8 @@ def WBPHENOTYPE(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -5569,15 +5732,14 @@ def WBPHENOTYPE(
     """
     return RetrievedGraph(
         "WBPHENOTYPE", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def PECO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2020-08-21", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2020-08-21", **kwargs
 ) -> Graph:
     """Return PECO graph	
 
@@ -5589,6 +5751,8 @@ def PECO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -5602,15 +5766,14 @@ def PECO(
     """
     return RetrievedGraph(
         "PECO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def GAZ(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "no_version", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="no_version", **kwargs
 ) -> Graph:
     """Return GAZ graph	
 
@@ -5622,6 +5785,8 @@ def GAZ(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -5635,15 +5800,14 @@ def GAZ(
     """
     return RetrievedGraph(
         "GAZ", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def CIO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2015-03-10", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2015-03-10", **kwargs
 ) -> Graph:
     """Return CIO graph	
 
@@ -5655,6 +5819,8 @@ def CIO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -5668,15 +5834,14 @@ def CIO(
     """
     return RetrievedGraph(
         "CIO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def INO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "1.1.13", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="1.1.13", **kwargs
 ) -> Graph:
     """Return INO graph	
 
@@ -5688,6 +5853,8 @@ def INO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -5701,15 +5868,14 @@ def INO(
     """
     return RetrievedGraph(
         "INO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def CLAO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-09-27", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-09-27", **kwargs
 ) -> Graph:
     """Return CLAO graph	
 
@@ -5721,6 +5887,8 @@ def CLAO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -5734,15 +5902,14 @@ def CLAO(
     """
     return RetrievedGraph(
         "CLAO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def UPA(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2018-12-12", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2018-12-12", **kwargs
 ) -> Graph:
     """Return UPA graph	
 
@@ -5754,6 +5921,8 @@ def UPA(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -5767,15 +5936,14 @@ def UPA(
     """
     return RetrievedGraph(
         "UPA", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def NOMEN(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "no_version", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="no_version", **kwargs
 ) -> Graph:
     """Return NOMEN graph	
 
@@ -5787,6 +5955,8 @@ def NOMEN(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -5800,15 +5970,14 @@ def NOMEN(
     """
     return RetrievedGraph(
         "NOMEN", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def ZFA(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-02-28", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-02-28", **kwargs
 ) -> Graph:
     """Return ZFA graph	
 
@@ -5820,6 +5989,8 @@ def ZFA(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -5837,15 +6008,14 @@ def ZFA(
     """
     return RetrievedGraph(
         "ZFA", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def DISDRIV(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "no_version", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="no_version", **kwargs
 ) -> Graph:
     """Return DISDRIV graph	
 
@@ -5857,6 +6027,8 @@ def DISDRIV(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -5870,15 +6042,14 @@ def DISDRIV(
     """
     return RetrievedGraph(
         "DISDRIV", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def CIDO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "09-03-2021", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="09-03-2021", **kwargs
 ) -> Graph:
     """Return CIDO graph	
 
@@ -5890,6 +6061,8 @@ def CIDO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -5903,15 +6076,14 @@ def CIDO(
     """
     return RetrievedGraph(
         "CIDO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def COLAO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-12-14", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-12-14", **kwargs
 ) -> Graph:
     """Return COLAO graph	
 
@@ -5923,6 +6095,8 @@ def COLAO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -5937,15 +6111,14 @@ def COLAO(
     """
     return RetrievedGraph(
         "COLAO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def KISAO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2.30", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2.30", **kwargs
 ) -> Graph:
     """Return KISAO graph	
 
@@ -5957,6 +6130,8 @@ def KISAO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -5970,15 +6145,14 @@ def KISAO(
     """
     return RetrievedGraph(
         "KISAO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def MA(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2017-02-07", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2017-02-07", **kwargs
 ) -> Graph:
     """Return MA graph	
 
@@ -5990,6 +6164,8 @@ def MA(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -6003,15 +6179,14 @@ def MA(
     """
     return RetrievedGraph(
         "MA", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def PO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-08-13", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-08-13", **kwargs
 ) -> Graph:
     """Return PO graph	
 
@@ -6023,6 +6198,8 @@ def PO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -6036,15 +6213,14 @@ def PO(
     """
     return RetrievedGraph(
         "PO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def CDNO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-04-06", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-04-06", **kwargs
 ) -> Graph:
     """Return CDNO graph	
 
@@ -6056,6 +6232,8 @@ def CDNO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -6072,15 +6250,14 @@ def CDNO(
     """
     return RetrievedGraph(
         "CDNO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def ONS(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "1.2.2", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="1.2.2", **kwargs
 ) -> Graph:
     """Return ONS graph	
 
@@ -6092,6 +6269,8 @@ def ONS(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -6106,15 +6285,14 @@ def ONS(
     """
     return RetrievedGraph(
         "ONS", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def OHD(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2016-06-27", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2016-06-27", **kwargs
 ) -> Graph:
     """Return OHD graph	
 
@@ -6126,6 +6304,8 @@ def OHD(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -6139,15 +6319,14 @@ def OHD(
     """
     return RetrievedGraph(
         "OHD", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def VARIO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "no_version", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="no_version", **kwargs
 ) -> Graph:
     """Return VARIO graph	
 
@@ -6159,6 +6338,8 @@ def VARIO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -6172,15 +6353,14 @@ def VARIO(
     """
     return RetrievedGraph(
         "VARIO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def AGRO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-07-01", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-07-01", **kwargs
 ) -> Graph:
     """Return AGRO graph	
 
@@ -6192,6 +6372,8 @@ def AGRO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -6206,15 +6388,14 @@ def AGRO(
     """
     return RetrievedGraph(
         "AGRO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def DIDEO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "release-version-2022-06-14", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="release-version-2022-06-14", **kwargs
 ) -> Graph:
     """Return DIDEO graph	
 
@@ -6226,6 +6407,8 @@ def DIDEO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -6239,15 +6422,14 @@ def DIDEO(
     """
     return RetrievedGraph(
         "DIDEO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def TXPO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2020-03-03", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2020-03-03", **kwargs
 ) -> Graph:
     """Return TXPO graph	
 
@@ -6259,6 +6441,8 @@ def TXPO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -6272,15 +6456,14 @@ def TXPO(
     """
     return RetrievedGraph(
         "TXPO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def PATO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-05-20", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-05-20", **kwargs
 ) -> Graph:
     """Return PATO graph	
 
@@ -6292,6 +6475,8 @@ def PATO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -6312,15 +6497,14 @@ def PATO(
     """
     return RetrievedGraph(
         "PATO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def HOM(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2015-01-07", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2015-01-07", **kwargs
 ) -> Graph:
     """Return HOM graph	
 
@@ -6332,6 +6516,8 @@ def HOM(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -6345,15 +6531,14 @@ def HOM(
     """
     return RetrievedGraph(
         "HOM", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def ECO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-04-11", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-04-11", **kwargs
 ) -> Graph:
     """Return ECO graph	
 
@@ -6365,6 +6550,8 @@ def ECO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -6383,15 +6570,14 @@ def ECO(
     """
     return RetrievedGraph(
         "ECO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def ICEO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2.1", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2.1", **kwargs
 ) -> Graph:
     """Return ICEO graph	
 
@@ -6403,6 +6589,8 @@ def ICEO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -6416,15 +6604,14 @@ def ICEO(
     """
     return RetrievedGraph(
         "ICEO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def DDANAT(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2020-04-13", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2020-04-13", **kwargs
 ) -> Graph:
     """Return DDANAT graph	
 
@@ -6436,6 +6623,8 @@ def DDANAT(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -6449,15 +6638,14 @@ def DDANAT(
     """
     return RetrievedGraph(
         "DDANAT", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def BSPO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-10-13", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-10-13", **kwargs
 ) -> Graph:
     """Return BSPO graph	
 
@@ -6469,6 +6657,8 @@ def BSPO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -6484,15 +6674,14 @@ def BSPO(
     """
     return RetrievedGraph(
         "BSPO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def MRO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-05-13", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-05-13", **kwargs
 ) -> Graph:
     """Return MRO graph	
 
@@ -6504,6 +6693,8 @@ def MRO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -6526,15 +6717,14 @@ def MRO(
     """
     return RetrievedGraph(
         "MRO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def PCO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-05-03", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-05-03", **kwargs
 ) -> Graph:
     """Return PCO graph	
 
@@ -6546,6 +6736,8 @@ def PCO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -6559,15 +6751,14 @@ def PCO(
     """
     return RetrievedGraph(
         "PCO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def EPSO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="", **kwargs
 ) -> Graph:
     """Return EPSO graph	
 
@@ -6579,6 +6770,8 @@ def EPSO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -6593,15 +6786,14 @@ def EPSO(
     """
     return RetrievedGraph(
         "EPSO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def ORNASEQ(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2019-07-08", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2019-07-08", **kwargs
 ) -> Graph:
     """Return ORNASEQ graph	
 
@@ -6613,6 +6805,8 @@ def ORNASEQ(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -6626,15 +6820,14 @@ def ORNASEQ(
     """
     return RetrievedGraph(
         "ORNASEQ", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def HP(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-04-14", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-04-14", **kwargs
 ) -> Graph:
     """Return HP graph	
 
@@ -6646,6 +6839,8 @@ def HP(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -6663,15 +6858,14 @@ def HP(
     """
     return RetrievedGraph(
         "HP", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def DPO(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-04-13", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-04-13", **kwargs
 ) -> Graph:
     """Return DPO graph	
 
@@ -6683,6 +6877,8 @@ def DPO(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -6702,15 +6898,14 @@ def DPO(
     """
     return RetrievedGraph(
         "DPO", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def CL(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2022-06-15", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-06-15", **kwargs
 ) -> Graph:
     """Return CL graph	
 
@@ -6722,6 +6917,8 @@ def CL(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -6742,15 +6939,14 @@ def CL(
     """
     return RetrievedGraph(
         "CL", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-
 def MFOEM(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "2021-09-21", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-09-21", **kwargs
 ) -> Graph:
     """Return MFOEM graph	
 
@@ -6762,6 +6958,8 @@ def MFOEM(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -6776,7 +6974,6 @@ def MFOEM(
     """
     return RetrievedGraph(
         "MFOEM", version, "kgobo", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-

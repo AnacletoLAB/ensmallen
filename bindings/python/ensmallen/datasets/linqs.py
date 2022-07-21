@@ -3,10 +3,10 @@ from ensmallen import Graph  # pylint: disable=import-error
 from .graph_retrieval import RetrievedGraph
 
 def PubMedDiabetes(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "latest", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="latest", **kwargs
 ) -> Graph:
     """Return PubMedDiabetes graph	The Pubmed Diabetes dataset consists of 19717 scientific publications from
 	PubMed database pertaining to diabetes classified into one of three classes.
@@ -22,6 +22,8 @@ def PubMedDiabetes(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -47,8 +49,8 @@ def PubMedDiabetes(
     """
     return RetrievedGraph(
         "PubMedDiabetes", version, "linqs", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs,
 		callbacks=[
 			parse_linqs_pubmed_incidence_matrix
 		],
@@ -61,12 +63,11 @@ def PubMedDiabetes(
 		    }
 		]
     )()
-
 def Cora(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "latest", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="latest", **kwargs
 ) -> Graph:
     """Return Cora graph	The Cora dataset consists of 2708 scientific publications classified into
 	one of seven classes. The citation network consists of 5429 links. Each
@@ -82,6 +83,8 @@ def Cora(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -118,8 +121,8 @@ def Cora(
     """
     return RetrievedGraph(
         "Cora", version, "linqs", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs,
 		callbacks=[
 			parse_linqs_incidence_matrix
 		],
@@ -132,12 +135,11 @@ def Cora(
 		    }
 		]
     )()
-
 def CiteSeer(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "latest", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="latest", **kwargs
 ) -> Graph:
     """Return CiteSeer graph	The CiteSeer dataset consists of 3312 scientific publications classified
 	into one of six classes. The citation network consists of 4732 links. Each
@@ -153,6 +155,8 @@ def CiteSeer(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -189,8 +193,8 @@ def CiteSeer(
     """
     return RetrievedGraph(
         "CiteSeer", version, "linqs", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs,
 		callbacks=[
 			parse_linqs_incidence_matrix
 		],
@@ -203,7 +207,6 @@ def CiteSeer(
 		    }
 		]
     )()
-
 import re
 import os
 import pandas as pd
