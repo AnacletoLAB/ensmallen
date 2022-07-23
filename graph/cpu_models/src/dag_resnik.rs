@@ -151,6 +151,9 @@ impl DAGResnik {
     ) -> Result<f32, String> {
         self.must_be_trained()?;
         if let Some(transposed_dag) = self.transposed_dag.as_ref() {
+            if first_node_id == second_node_id {
+                return Ok(self.node_frequencies[first_node_id as usize]);
+            }
             let mut visited: Vec<Visited> =
                 vec![Visited::Unvisited; transposed_dag.get_number_of_nodes() as usize];
                 visited[first_node_id as usize] = Visited::VisitedByFirstNode;
