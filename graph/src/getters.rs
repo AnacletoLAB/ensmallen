@@ -1793,8 +1793,8 @@ impl Graph {
         })
     }
 
-    /// Returns vector of root nodes, nodes with zero inbound degree and non-zero outbound degree.
-    pub fn get_root_nodes(&self) -> Vec<NodeT> {
+    /// Returns vector of root node ids, nodes with zero inbound degree and non-zero outbound degree.
+    pub fn get_root_node_ids(&self) -> Vec<NodeT> {
         let root_nodes = ThreadDataRaceAware::new(vec![true; self.get_number_of_nodes() as usize]);
         self.par_iter_node_ids()
             .zip(self.par_iter_node_degrees())
@@ -1819,5 +1819,10 @@ impl Graph {
                 None
             }
         }).collect()
+    }
+
+    /// Returns vector of root node names, nodes with zero inbound degree and non-zero outbound degree.
+    pub fn get_root_node_names(&self) -> Vec<String> {
+        self.get_root_node_ids().into_par_iter().map(|node_id| unsafe{self.get_unchecked_node_name_from_node_id(node_id)}).collect()
     }
 }

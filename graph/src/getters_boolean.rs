@@ -93,12 +93,13 @@ impl Graph {
         if !self.has_edges() || !self.is_directed() || self.has_selfloops() {
             return false;
         }
-        for root_node_id in self.get_root_nodes(){
+        for root_node_id in self.get_root_node_ids() {
             let nodes_number = self.get_number_of_nodes() as usize;
-            let thread_shared_visited = ThreadDataRaceAware::new(vec![false; nodes_number]);
+            let thread_shared_visited = ThreadDataRaceAware::new(vec![NodeT::MAX; nodes_number]);
             unsafe {
-                (*thread_shared_visited.value.get())[root_node_id as usize] = true;
+                (*thread_shared_visited.value.get())[root_node_id as usize] = root_node_id;
             }
+
             let loop_found = AtomicBool::new(false);
             let mut frontier = vec![root_node_id];
 
@@ -110,18 +111,45 @@ impl Graph {
                     .into_par_iter()
                     .flat_map_iter(|node_id| unsafe {
                         self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
+                            .map(move |neighbour_node_id| (node_id, neighbour_node_id))
                     })
-                    .filter_map(|neighbour_node_id| {
-                        if unsafe { !(*thread_shared_visited.value.get())[neighbour_node_id as usize] }
+                    .filter_map(|(src, dst)| {
+                        if unsafe { (*thread_shared_visited.value.get())[dst as usize] }
+                            == NodeT::MAX
                         {
-                            // Set it's distance
                             unsafe {
-                                (*thread_shared_visited.value.get())[neighbour_node_id as usize] = true;
+                                (*thread_shared_visited.value.get())[dst as usize] = src;
                             }
                             // add the node to the nodes to explore
-                            Some(neighbour_node_id)
+                            Some(dst)
                         } else {
-                            loop_found.store(true, Ordering::Relaxed);
+                            // If we went back to the root node, we have surely found
+                            // a cycle.
+                            if root_node_id == dst {
+                                loop_found.store(true, Ordering::Relaxed);
+                            } else {
+                                // We need to check whether we have found a loop.
+                                // To do so, we navigate in the predessors of the `src` and see whether
+                                // we find this destination node `dst` again.
+                                let mut source_predecessor = src;
+                                while unsafe {
+                                    (*thread_shared_visited.value.get())
+                                        [source_predecessor as usize]
+                                        != root_node_id
+                                } {
+                                    // While recursing over the predessors list, we have
+                                    // identified an instance where a predecessor of the
+                                    // initial source node matches with the current destination.
+                                    // This means that we have identified a loop.
+                                    if source_predecessor == dst {
+                                        loop_found.store(true, Ordering::Relaxed);
+                                        break;
+                                    }
+                                    unsafe {
+                                        source_predecessor = (*thread_shared_visited.value.get())[source_predecessor as usize];
+                                    }
+                                }
+                            }
                             None
                         }
                     })
