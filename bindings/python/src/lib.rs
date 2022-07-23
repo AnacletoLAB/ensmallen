@@ -19,6 +19,9 @@ pub use crate::node2vec::*;
 mod edge_prediction_perceptron;
 pub(crate) use edge_prediction_perceptron::*;
 
+mod dag_resnik;
+pub use dag_resnik::*;
+
 mod basic_embedding_model_binding;
 pub(crate) use basic_embedding_model_binding::*;
 
@@ -66,6 +69,7 @@ fn models(_py: Python, _m: &PyModule) -> PyResult<()> {
     _m.add_class::<SPINE>()?;
     _m.add_class::<WeightedSPINE>()?;
     _m.add_class::<EdgePredictionPerceptron>()?;
+    _m.add_class::<DAGResnik>()?;
     Ok(())
 }
 

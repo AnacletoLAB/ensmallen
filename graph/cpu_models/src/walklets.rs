@@ -30,7 +30,8 @@ impl GraphEmbedder for Walklets {
             (
                 graph.get_number_of_nodes() as usize,
                 self.node2vec.embedding_size
-            ).into();
+            )
+                .into();
             self.node2vec.window_size
         ])
     }

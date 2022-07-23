@@ -145,7 +145,8 @@ where
         Ok(vec![(
             graph.get_number_of_nodes() as usize,
             self.embedding_size,
-        ).into()])
+        )
+            .into()])
     }
 
     fn get_number_of_epochs(&self) -> usize {

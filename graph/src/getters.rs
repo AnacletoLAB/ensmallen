@@ -177,6 +177,11 @@ impl Graph {
             / self.get_number_of_nodes() as f64
     }
 
+    /// Returns vector of trap nodes present in the current graph.
+    pub fn get_trap_node_ids(&self) -> Vec<NodeT> {
+        self.par_iter_trap_node_ids().collect()
+    }
+
     /// Returns unweighted mean node degree of the graph.
     ///
     /// # Example
@@ -1786,5 +1791,33 @@ impl Graph {
                 })
                 .collect()
         })
+    }
+
+    /// Returns vector of root nodes, nodes with zero inbound degree and non-zero outbound degree.
+    pub fn get_root_nodes(&self) -> Vec<NodeT> {
+        let root_nodes = ThreadDataRaceAware::new(vec![true; self.get_number_of_nodes() as usize]);
+        self.par_iter_node_ids()
+            .zip(self.par_iter_node_degrees())
+            .filter_map(|(node_id, node_degree)| unsafe {
+                if node_degree > 0 {
+                    Some(node_id)
+                } else {
+                    (*root_nodes.value.get())[node_id as usize] = false;
+                    None
+                }
+            })
+            .for_each(|node_id| unsafe {
+                self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
+                    .for_each(|dst| {
+                        (*root_nodes.value.get())[dst as usize] = false;
+                    });
+            });
+        root_nodes.into_inner().into_par_iter().enumerate().filter_map(|(root_node_id, flag)|{
+            if flag {
+                Some(root_node_id as NodeT)
+            } else {
+                None
+            }
+        }).collect()
     }
 }

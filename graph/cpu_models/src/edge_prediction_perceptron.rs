@@ -141,7 +141,7 @@ impl EdgeEmbedding {
                     .map(|(feature_a, feature_b)| feature_a.into() + feature_b.into())
                     .collect::<Vec<f32>>()
             },
-            EdgeEmbedding::Sub => |a: &[F], b: &[F]| unsafe{element_wise_subtraction(a, b)},
+            EdgeEmbedding::Sub => |a: &[F], b: &[F]| unsafe { element_wise_subtraction(a, b) },
             EdgeEmbedding::Maximum => |a: &[F], b: &[F]| {
                 a.iter()
                     .copied()

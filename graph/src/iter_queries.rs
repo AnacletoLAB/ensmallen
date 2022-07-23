@@ -913,7 +913,7 @@ impl Graph {
     /// amount of disconnected nodes, which we want to ignore in this use case.
     /// Do note that zero degrees will be returned when the node have degree zero also
     /// in the original graph.
-    /// 
+    ///
     /// # Arguments
     /// * `subgraph`: &Graph - The subgraph whose node degrees are to be retrieved.
     ///
@@ -926,7 +926,7 @@ impl Graph {
             .par_iter_node_ids()
             .filter_map(move |node_id| unsafe {
                 let degree = self.get_unchecked_node_degree_from_node_id(node_id);
-                if degree == 0{
+                if degree == 0 {
                     Some(degree)
                 } else {
                     if subgraph.get_unchecked_node_degree_from_node_id(node_id) > 0 {

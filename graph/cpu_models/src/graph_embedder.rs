@@ -15,13 +15,11 @@ pub trait GraphEmbedder {
             return Err("The provided graph does not have any edge.".to_string());
         }
         let embedding_shapes = self.get_embedding_shapes(&graph)?;
-        if embedding.len() != embedding_shapes.len(){
+        if embedding.len() != embedding_shapes.len() {
             return Err(format!(
-                concat!(
-                    "We expected {} embedding, but only {} ",
-                    "were provided."
-                ),
-                embedding.len(), embedding_shapes.len()
+                concat!("We expected {} embedding, but only {} ", "were provided."),
+                embedding.len(),
+                embedding_shapes.len()
             ));
         }
         // Check whether the provided embeddings match with

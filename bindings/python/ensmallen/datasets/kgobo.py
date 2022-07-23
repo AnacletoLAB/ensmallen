@@ -3881,7 +3881,7 @@ def MF(
     directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2021-09-21", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-11-17", **kwargs
 ) -> Graph:
     """Return MF graph	
 
@@ -3901,11 +3901,12 @@ def MF(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2021-09-21"
+    version = "2021-11-17"
         Version to retrieve	
 		The available versions are:
-			- 2021-11-17
+			- 2022-07-19
 			- 2021-09-21
+			- 2021-11-17
     """
     return RetrievedGraph(
         "MF", version, "kgobo", directed, preprocess, load_nodes,
@@ -6463,7 +6464,7 @@ def PATO(
     directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2022-05-20", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-06-17", **kwargs
 ) -> Graph:
     """Return PATO graph	
 
@@ -6483,10 +6484,10 @@ def PATO(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2022-05-20"
+    version = "2022-06-17"
         Version to retrieve	
 		The available versions are:
-			- 2022-06-17
+			- 2022-07-21
 			- 2021-09-09
 			- 2021-11-05
 			- 2021-12-03
@@ -6494,6 +6495,7 @@ def PATO(
 			- 2022-02-08
 			- 2022-02-20
 			- 2022-05-20
+			- 2022-06-17
     """
     return RetrievedGraph(
         "PATO", version, "kgobo", directed, preprocess, load_nodes,
@@ -6946,7 +6948,7 @@ def MFOEM(
     directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2021-09-21", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-11-17", **kwargs
 ) -> Graph:
     """Return MFOEM graph	
 
@@ -6966,11 +6968,12 @@ def MFOEM(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2021-09-21"
+    version = "2021-11-17"
         Version to retrieve	
 		The available versions are:
-			- 2021-11-17
+			- 2022-07-19
 			- 2021-09-21
+			- 2021-11-17
     """
     return RetrievedGraph(
         "MFOEM", version, "kgobo", directed, preprocess, load_nodes,

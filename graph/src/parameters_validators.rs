@@ -304,7 +304,7 @@ impl Graph {
         Ok(self.edge_types.as_ref().as_ref().unwrap())
     }
 
-    /// Raises an error if the graph does not have edge types.
+    /// Raises an error if the graph is not undirected.
     ///
     /// # Example
     /// In order to validate a graph instance, you can use:
@@ -321,6 +321,30 @@ impl Graph {
     pub fn must_be_undirected(&self) -> Result<()> {
         if self.is_directed() {
             return Err("The current graph instance is not undirected.".to_string());
+        }
+        Ok(())
+    }
+
+    /// Raises an error if the graph is not a directed acyclic.
+    ///
+    /// # Example
+    /// In order to validate a graph instance, you can use:
+    ///
+    /// ```rust
+    /// # let undirecte_graph = graph::test_utilities::load_ppi(false, false, false, false, false, false);
+    /// # let directed_graph = graph::test_utilities::load_ppi(false, false, true, true, false, false);
+    /// assert!(undirecte_graph.must_be_directed_acyclic().is_err());
+    /// assert!(directed_graph.must_be_directed_acyclic().is_err());
+    /// ```
+    ///
+    /// # Raises
+    /// * If the graph is directed.
+    pub fn must_be_directed_acyclic(&self) -> Result<()> {
+        if !self.is_directed_acyclic() {
+            return Err(format!(
+                "The current graph instance {} is not directed acyclic.",
+                self.get_name()
+            ));
         }
         Ok(())
     }
@@ -601,12 +625,11 @@ impl Graph {
     /// * If the provided graph does not share a compatible node vocabulary with the current instance.
     pub fn must_share_node_vocabulary(&self, other: &Graph) -> Result<()> {
         if !self.has_compatible_node_vocabularies(other) {
-            return Err(
-                concat!(
-                    "The provided graph does not share a node vocaulary that is ",
-                    "compatible with the current graph instance."
-                ).to_string()
-            );
+            return Err(concat!(
+                "The provided graph does not share a node vocaulary that is ",
+                "compatible with the current graph instance."
+            )
+            .to_string());
         }
         Ok(())
     }

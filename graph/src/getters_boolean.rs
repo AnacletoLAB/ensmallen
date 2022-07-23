@@ -1,5 +1,7 @@
 use super::*;
+use rayon::iter::IntoParallelIterator;
 use rayon::iter::ParallelIterator;
+use std::sync::atomic::{AtomicBool, Ordering};
 
 /// # Boolean Getters
 /// The naming convention we follow is:
@@ -75,6 +77,61 @@ impl Graph {
     ///
     pub fn is_directed(&self) -> bool {
         self.directed
+    }
+
+    /// Returns whether graph is a directed acyclic graph.
+    ///
+    /// # Example
+    /// ```rust
+    /// let directed_string_ppi = graph::test_utilities::load_ppi(true, true, true, true, false, false);
+    /// assert!(!directed_string_ppi.is_directed_acyclic());
+    /// let undirected_string_ppi = graph::test_utilities::load_ppi(true, true, true, false, false, false);
+    /// assert!(!undirected_string_ppi.is_directed_acyclic());
+    /// ```
+    ///
+    pub fn is_directed_acyclic(&self) -> bool {
+        if !self.has_edges() || !self.is_directed() || self.has_selfloops() {
+            return false;
+        }
+        for root_node_id in self.get_root_nodes(){
+            let nodes_number = self.get_number_of_nodes() as usize;
+            let thread_shared_visited = ThreadDataRaceAware::new(vec![false; nodes_number]);
+            unsafe {
+                (*thread_shared_visited.value.get())[root_node_id as usize] = true;
+            }
+            let loop_found = AtomicBool::new(false);
+            let mut frontier = vec![root_node_id];
+
+            while !frontier.is_empty() {
+                if loop_found.load(Ordering::Relaxed) {
+                    break;
+                }
+                frontier = frontier
+                    .into_par_iter()
+                    .flat_map_iter(|node_id| unsafe {
+                        self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
+                    })
+                    .filter_map(|neighbour_node_id| {
+                        if unsafe { !(*thread_shared_visited.value.get())[neighbour_node_id as usize] }
+                        {
+                            // Set it's distance
+                            unsafe {
+                                (*thread_shared_visited.value.get())[neighbour_node_id as usize] = true;
+                            }
+                            // add the node to the nodes to explore
+                            Some(neighbour_node_id)
+                        } else {
+                            loop_found.store(true, Ordering::Relaxed);
+                            None
+                        }
+                    })
+                    .collect::<Vec<NodeT>>();
+            }
+            if loop_found.load(Ordering::Relaxed) {
+                return false;
+            }
+        }
+        true
     }
 
     /// Returns boolean representing whether graph has weights.

@@ -116,8 +116,8 @@ def create_species_tree_node_and_edge_list(
 
     # Writing the edge list
     pd.DataFrame({
-        "sources": node_list.loc[tree.index].taxon_name.values,
-        "destinations": node_list.loc[tree.parent_taxon_id].taxon_name.values,
+        "sources": node_list.loc[tree.parent_taxon_id].taxon_name.values,
+        "destinations": node_list.loc[tree.index].taxon_name.values,
         "domain": tree.domain.values
     }).to_csv(edge_list_path, sep="\t", index=False)
 
