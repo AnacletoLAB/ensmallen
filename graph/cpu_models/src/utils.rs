@@ -1,5 +1,6 @@
 use graph::{EdgeTypeT, Graph, NodeT};
 use num::Zero;
+use funty::Integral;
 use rayon::prelude::*;
 use vec_rand::{random_f32, splitmix64};
 
@@ -160,3 +161,10 @@ impl core::ops::Index<isize> for MatrixShape {
         }
     }
 }
+
+pub trait FeatureType: Send + Sync + Integral + TryInto<usize> + TryFrom<usize> {}
+
+impl FeatureType for u64 {}
+impl FeatureType for u32 {}
+impl FeatureType for u16 {}
+impl FeatureType for u8 {}

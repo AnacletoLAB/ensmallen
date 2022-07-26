@@ -1,3 +1,4 @@
+#![feature(adt_const_params)]
 use numpy::{PyArray, PyArray1, PyArray2};
 use pyo3::exceptions::{PyAttributeError, PyTypeError, PyValueError};
 use pyo3::prelude::*;
@@ -66,7 +67,9 @@ fn models(_py: Python, _m: &PyModule) -> PyResult<()> {
     _m.add_class::<StructuredEmbedding>()?;
     _m.add_class::<FirstOrderLINE>()?;
     _m.add_class::<SecondOrderLINE>()?;
-    _m.add_class::<SPINE>()?;
+    _m.add_class::<DegreeSPINE>()?;
+    _m.add_class::<NodeLabelSPINE>()?;
+    _m.add_class::<ScoreSPINE>()?;
     _m.add_class::<WeightedSPINE>()?;
     _m.add_class::<EdgePredictionPerceptron>()?;
     _m.add_class::<DAGResnik>()?;

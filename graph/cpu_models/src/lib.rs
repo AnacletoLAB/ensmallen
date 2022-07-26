@@ -1,3 +1,5 @@
+#![feature(adt_const_params)]
+#![feature(associated_type_defaults)]
 #![feature(associated_type_bounds)]
 #![feature(type_alias_impl_trait)]
 #![feature(generic_associated_types)]
@@ -15,6 +17,9 @@ mod optimizers;
 mod second_order_line;
 mod skipgram;
 mod spine;
+mod degree_spine;
+mod node_type_spine;
+mod score_spine;
 mod structured_embedding;
 mod transe;
 mod transh;
@@ -23,10 +28,12 @@ mod utils;
 mod walk_transformer;
 mod walklets;
 mod weighted_spine;
+mod basic_anchors_inferred_node_embedding;
 
 pub use basic_embedding_model::*;
 pub use basic_siamese_model::*;
 pub use utils::*;
+pub use basic_anchors_inferred_node_embedding::*;
 
 pub use cbow::*;
 pub use dag_resnik::*;
@@ -39,6 +46,9 @@ pub use optimizers::*;
 pub use second_order_line::*;
 pub use skipgram::*;
 pub use spine::*;
+pub use degree_spine::*;
+pub use node_type_spine::*;
+pub use score_spine::*;
 pub use structured_embedding::*;
 pub use transe::*;
 pub use transh::*;

@@ -1,7 +1,10 @@
-use atomic_float::AtomicF32;
 use graph::{Graph, NodeT};
+use indicatif::{ParallelProgressIterator, ProgressBar, ProgressStyle};
 use rayon::prelude::*;
-use std::sync::atomic::Ordering;
+use std::{
+    collections::HashMap,
+    sync::atomic::{AtomicBool, Ordering},
+};
 
 #[repr(u8)]
 #[derive(Debug, Clone, Copy)]
@@ -23,14 +26,20 @@ pub struct DAGResnik {
     transposed_dag: Option<Graph>,
     /// Frequencies of the nodes.
     node_frequencies: Vec<f32>,
+    /// Whether to show loading bars when computing pairwise similarity.
+    verbose: bool,
 }
 
 impl DAGResnik {
     /// Return new instance of DAG-based Resnik for similarity computation.
-    pub fn new() -> Self {
+    ///
+    /// # Arguments
+    /// * `verbose`: bool - Whether to show loading bars when computing pairwise similarity.
+    pub fn new(verbose: Option<bool>) -> Self {
         Self {
             transposed_dag: None,
             node_frequencies: Vec::new(),
+            verbose: verbose.unwrap_or(true),
         }
     }
 
@@ -46,6 +55,15 @@ impl DAGResnik {
     }
 
     /// Returns the node frequencies of the model.
+    pub fn get_number_of_nodes(&self) -> Result<NodeT, String> {
+        self.must_be_trained()?;
+        if let Some(transposed_dag) = self.transposed_dag.as_ref() {
+            return Ok(transposed_dag.get_number_of_nodes());
+        }
+        unreachable!("")
+    }
+
+    /// Returns the number of nodes in the current graph.
     pub fn get_node_frequencies(&self) -> Result<Vec<f32>, String> {
         self.must_be_trained()
             .map(|_| self.node_frequencies.clone())
@@ -54,9 +72,14 @@ impl DAGResnik {
     fn validate_features(
         &self,
         graph: &Graph,
+        node_counts: &HashMap<String, u32>,
         node_frequencies: Option<&[f32]>,
     ) -> Result<(), String> {
         graph.must_be_directed_acyclic()?;
+        node_counts
+            .par_iter()
+            .map(|(node_name, _)| graph.get_node_id_from_node_name(node_name).map(|_| ()))
+            .collect::<Result<(), String>>()?;
         if let Some(node_frequencies) = node_frequencies.as_ref() {
             if node_frequencies.len() == 0 {
                 return Err(concat!(
@@ -85,9 +108,15 @@ impl DAGResnik {
     ///
     /// # Arguments
     /// * `graph`: &Graph - The graph whose edges are to be learned.
-    /// * `node_frequencies`: Option<&[f32]> - Optional vector of node frequencies.
-    pub fn fit(&mut self, graph: &Graph, node_frequencies: Option<&[f32]>) -> Result<(), String> {
-        self.validate_features(graph, node_frequencies)?;
+    /// * `node_counts`: HashMap<String, u32> - Hashmap of node counts. These counts should represent how many times a given node appears in a set.
+    /// * `node_frequencies`: Option<&[f32]> - Optional vector of node frequencies to be used WITHOUT crawling upwards the DAG.
+    pub fn fit(
+        &mut self,
+        graph: &Graph,
+        node_counts: &HashMap<String, u32>,
+        node_frequencies: Option<&[f32]>,
+    ) -> Result<(), String> {
+        self.validate_features(graph, node_counts, node_frequencies)?;
         let mut transposed_graph = graph.to_transposed();
         transposed_graph.enable(
             Some(graph.has_sources_tradeoff_enabled()),
@@ -95,51 +124,73 @@ impl DAGResnik {
             Some(graph.has_cumulative_node_degrees_tradeoff_enabled()),
             Some(graph.has_reciprocal_sqrt_degrees_tradeoff_enabled()),
         )?;
+
         if let Some(node_frequencies) = node_frequencies {
             self.node_frequencies = node_frequencies.into();
         } else {
-            let number_of_nodes = graph.get_number_of_nodes() as usize;
-            let node_frequencies = unsafe {
-                std::mem::transmute::<Vec<f32>, Vec<AtomicF32>>(vec![0.0; number_of_nodes])
+            let mut node_counts = graph
+                .par_iter_node_names()
+                .map(|node_name| *node_counts.get(&node_name).unwrap_or(&0))
+                .collect::<Vec<u32>>();
+            let visited_by_all_child = unsafe {
+                std::mem::transmute::<Vec<bool>, Vec<AtomicBool>>(vec![
+                    false;
+                    graph.get_number_of_nodes()
+                        as usize
+                ])
             };
             let mut frontier = graph
                 .par_iter_trap_node_ids()
-                .map(|leaf_node_id| {
-                    node_frequencies[leaf_node_id as usize].fetch_add(1.0, Ordering::Relaxed);
-                    leaf_node_id
-                })
                 .flat_map_iter(|leaf_node_id| unsafe {
-                    transposed_graph.iter_unchecked_neighbour_node_ids_from_source_node_id(leaf_node_id)
+                    visited_by_all_child[leaf_node_id as usize].store(true, Ordering::SeqCst);
+                    transposed_graph
+                        .iter_unchecked_neighbour_node_ids_from_source_node_id(leaf_node_id)
                 })
                 .collect::<Vec<NodeT>>();
-            let mut depth = 1.0;
             while !frontier.is_empty() {
-                depth += 1.0;
                 frontier = frontier
-                    .into_par_iter()
-                    .map(|leaf_node_id| {
-                        node_frequencies[leaf_node_id as usize].fetch_add(depth, Ordering::Relaxed);
-                        leaf_node_id
-                    })
-                    .flat_map_iter(|leaf_node_id| unsafe {
+                    .into_iter()
+                    .flat_map(|node_id| unsafe {
+                        // If any of the children nodes of this node
+                        // were not visited
+                        if graph
+                            .iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
+                            .any(|child_node_id| {
+                                !visited_by_all_child[child_node_id as usize].load(Ordering::SeqCst)
+                            })
+                        {
+                            // We cannot visit it yet, so we will visit it in the
+                            // future.
+                            return vec![node_id];
+                        }
+                        // Otherwise we mark this node as visited
+                        visited_by_all_child[node_id as usize].store(true, Ordering::SeqCst);
+                        // And we proceed to compute its value.
+                        node_counts[node_id as usize] = graph
+                            .iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
+                            .map(|child_node_id| node_counts[child_node_id as usize])
+                            .sum::<u32>();
+                        // And we return its parents as the next nodes to be visited.
                         transposed_graph
-                            .iter_unchecked_neighbour_node_ids_from_source_node_id(leaf_node_id)
+                            .iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
+                            .collect::<Vec<NodeT>>()
                     })
                     .collect::<Vec<NodeT>>();
             }
-            let mut node_frequencies =
-                unsafe { std::mem::transmute::<Vec<AtomicF32>, Vec<f32>>(node_frequencies) };
-            let total = node_frequencies.par_iter().sum::<f32>();
-            node_frequencies.par_iter_mut().for_each(|node_frequency| {
-                *node_frequency = -(*node_frequency / total).ln();
-            });
-            self.node_frequencies = node_frequencies;
+            let root_node_count = *node_counts
+                .par_iter()
+                .max_by(|a, b| a.partial_cmp(b).unwrap())
+                .unwrap() as f32;
+            self.node_frequencies = node_counts
+                .into_par_iter()
+                .map(|node_count| -(node_count as f32 / root_node_count).ln())
+                .collect::<Vec<f32>>();
         }
         self.transposed_dag = Some(transposed_graph);
         Ok(())
     }
 
-    /// Return the similarity between the two provided nodes.
+    /// Return the similarity between the two provided node ids.
     ///
     /// # Arguments
     /// * `first_node_id`: NodeT - The first node for which to compute the similarity.
@@ -156,8 +207,8 @@ impl DAGResnik {
             }
             let mut visited: Vec<Visited> =
                 vec![Visited::Unvisited; transposed_dag.get_number_of_nodes() as usize];
-                visited[first_node_id as usize] = Visited::VisitedByFirstNode;
-                visited[second_node_id as usize] = Visited::VisitedBySecondNode;
+            visited[first_node_id as usize] = Visited::VisitedByFirstNode;
+            visited[second_node_id as usize] = Visited::VisitedBySecondNode;
             let mut frontier = vec![first_node_id, second_node_id];
             while !frontier.is_empty() {
                 let mut new_frontier = Vec::new();
@@ -207,7 +258,75 @@ impl DAGResnik {
         ))
     }
 
-    /// Writes the predicted similarities on the provided memory area.
+    /// Return the similarity between the two provided node names.
+    ///
+    /// # Arguments
+    /// * `first_node_name`: &str - The first node name for which to compute the similarity.
+    /// * `second_node_name`: &str - The second node name for which to compute the similarity.
+    pub fn get_similarity_from_node_name(
+        &self,
+        first_node_name: &str,
+        second_node_name: &str,
+    ) -> Result<f32, String> {
+        if let Some(transposed_dag) = self.transposed_dag.as_ref() {
+            return self.get_similarity_from_node_id(
+                transposed_dag.get_node_id_from_node_name(first_node_name)?,
+                transposed_dag.get_node_id_from_node_name(second_node_name)?,
+            );
+        }
+        unreachable!("")
+    }
+
+    /// Writes the pairwise similarities on the provided memory area.
+    ///
+    /// # Arguments
+    /// * `similarities`: &mut [f32] - Area where to write the pairwise similarities.
+    pub fn get_pairwise_similarities(&self, similarities: &mut [f32]) -> Result<(), String> {
+        let nodes_number = self.get_number_of_nodes()? as usize;
+        if similarities.len() != nodes_number * nodes_number {
+            return Err(format!(
+                concat!(
+                    "The provided similarities slice has size `{}` ",
+                    "but it was expected to have the same ",
+                    "size of the number of the squared number of nodes in the graph `{}`."
+                ),
+                similarities.len(),
+                nodes_number * nodes_number
+            ));
+        }
+
+        let progress_bar = if self.verbose {
+            let pb = ProgressBar::new(nodes_number as u64);
+            pb.set_style(ProgressStyle::default_bar().template(concat!(
+                "Computing pairwise Resnik ",
+                "{spinner:.green} [{elapsed_precise}] ",
+                "[{bar:40.cyan/blue}] ({pos}/{len}, ETA {eta})"
+            )));
+            pb
+        } else {
+            ProgressBar::hidden()
+        };
+
+        similarities
+            .par_chunks_mut(nodes_number)
+            .progress_with(progress_bar)
+            .enumerate()
+            .map(|(src, row)| {
+                row.iter_mut()
+                    .enumerate()
+                    .map(|(dst, similarity)| {
+                        self.get_similarity_from_node_id(src as NodeT, dst as NodeT)
+                            .map(|nodes_similarity| {
+                                *similarity = nodes_similarity;
+                                ()
+                            })
+                    })
+                    .collect::<Result<(), String>>()
+            })
+            .collect::<Result<(), String>>()
+    }
+
+    /// Writes the similarities on the provided memory area.
     ///
     /// # Arguments
     /// * `similarities`: &mut [f32] - Area where to write the similarities.
