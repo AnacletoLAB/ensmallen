@@ -63,7 +63,7 @@ where
 
 #[pyclass]
 #[derive(Debug, Clone)]
-#[text_signature = "(*, embedding_size, epochs, learning_rate, learning_rate_decay, random_state, verbose)"]
+#[pyo3(text_signature = "(*, embedding_size, epochs, learning_rate, learning_rate_decay, random_state, verbose)")]
 pub struct FirstOrderLINE {
     pub inner: BasicEmbeddingModelBinding<cpu_models::FirstOrderLINE>,
 }
@@ -98,7 +98,7 @@ impl FirstOrderLINE {
 #[pymethods]
 impl FirstOrderLINE {
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, graph)"]
+    #[pyo3(text_signature = "($self, graph)")]
     /// Return numpy embedding with FirstOrderLINE node embedding.
     ///
     /// Parameters
@@ -112,7 +112,7 @@ impl FirstOrderLINE {
 
 #[pyclass]
 #[derive(Debug, Clone)]
-#[text_signature = "(*, embedding_size, epochs, learning_rate, learning_rate_decay, random_state, verbose)"]
+#[pyo3(text_signature = "(*, embedding_size, epochs, learning_rate, learning_rate_decay, random_state, verbose)")]
 pub struct SecondOrderLINE {
     pub inner: BasicEmbeddingModelBinding<cpu_models::SecondOrderLINE>,
 }
@@ -147,7 +147,7 @@ impl SecondOrderLINE {
 #[pymethods]
 impl SecondOrderLINE {
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, graph)"]
+    #[pyo3(text_signature = "($self, graph)")]
     /// Return numpy embedding with SecondOrderLINE node embedding.
     ///
     /// Parameters

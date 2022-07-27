@@ -67,7 +67,7 @@ where
 
 #[pyclass]
 #[derive(Debug, Clone)]
-#[text_signature = "(*, relu_bias, embedding_size, epochs, learning_rate, learning_rate_decay, random_state, verbose)"]
+#[pyo3(text_signature = "(*, relu_bias, embedding_size, epochs, learning_rate, learning_rate_decay, random_state, verbose)")]
 pub struct TransE {
     pub inner: BasicSiameseModelBinding<cpu_models::TransE>,
 }
@@ -104,7 +104,7 @@ impl TransE {
 #[pymethods]
 impl TransE {
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, graph)"]
+    #[pyo3(text_signature = "($self, graph)")]
     /// Return numpy embedding with TransE node embedding.
     ///
     /// Parameters
@@ -118,7 +118,7 @@ impl TransE {
 
 #[pyclass]
 #[derive(Debug, Clone)]
-#[text_signature = "(*, relu_bias, embedding_size, epochs, learning_rate, learning_rate_decay, random_state, verbose)"]
+#[pyo3(text_signature = "(*, relu_bias, embedding_size, epochs, learning_rate, learning_rate_decay, random_state, verbose)")]
 pub struct Unstructured {
     pub inner: BasicSiameseModelBinding<cpu_models::Unstructured>,
 }
@@ -155,7 +155,7 @@ impl Unstructured {
 #[pymethods]
 impl Unstructured {
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, graph)"]
+    #[pyo3(text_signature = "($self, graph)")]
     /// Return numpy embedding with Unstructured node embedding.
     ///
     /// Parameters
@@ -169,7 +169,7 @@ impl Unstructured {
 
 #[pyclass]
 #[derive(Debug, Clone)]
-#[text_signature = "(*, relu_bias, embedding_size, epochs, learning_rate, learning_rate_decay, random_state, verbose)"]
+#[pyo3(text_signature = "(*, relu_bias, embedding_size, epochs, learning_rate, learning_rate_decay, random_state, verbose)")]
 pub struct TransH {
     pub inner: BasicSiameseModelBinding<cpu_models::TransH>,
 }
@@ -206,7 +206,7 @@ impl TransH {
 #[pymethods]
 impl TransH {
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, graph)"]
+    #[pyo3(text_signature = "($self, graph)")]
     /// Return numpy embedding with TransH node embedding.
     ///
     /// Parameters
@@ -220,7 +220,7 @@ impl TransH {
 
 #[pyclass]
 #[derive(Debug, Clone)]
-#[text_signature = "(*, relu_bias, embedding_size, epochs, learning_rate, learning_rate_decay, random_state, verbose)"]
+#[pyo3(text_signature = "(*, relu_bias, embedding_size, epochs, learning_rate, learning_rate_decay, random_state, verbose)")]
 pub struct StructuredEmbedding {
     pub inner: BasicSiameseModelBinding<cpu_models::StructuredEmbedding>,
 }
@@ -257,7 +257,7 @@ impl StructuredEmbedding {
 #[pymethods]
 impl StructuredEmbedding {
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, graph)"]
+    #[pyo3(text_signature = "($self, graph)")]
     /// Return numpy embedding with StructuredEmbedding node embedding.
     ///
     /// Parameters

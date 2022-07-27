@@ -1,6 +1,9 @@
 use super::*;
+use pyo3::conversion::IntoPy;
 use cpu_models::{AnchorFeatureTypes, AnchorTypes, AnchorsInferredNodeEmbeddingModel, BasicSPINE};
 use numpy::{PyArray1, PyArray2};
+
+use super::mmap_numpy_npy::{create_memory_mapped_numpy_array, Dtype};
 
 #[derive(Debug, Clone)]
 pub struct BasicSPINEBinding<Model, const AFT: AnchorFeatureTypes, const AT: AnchorTypes>
@@ -8,6 +11,7 @@ where
     Model: AnchorsInferredNodeEmbeddingModel<AT, AFT>,
 {
     pub inner: Model,
+    pub path: Option<String>,
 }
 
 impl FromPyDict for BasicSPINE {
@@ -37,12 +41,18 @@ where
     fn from_pydict(py_kwargs: Option<&PyDict>) -> PyResult<Self> {
         Ok(Self {
             inner: BasicSPINE::from_pydict(py_kwargs)?.into(),
+            path: match py_kwargs {
+                None => None,
+                Some(kwargs) => {
+                    extract_value_rust_result!(kwargs, "path", String)
+                }
+            },
         })
     }
 }
 
 macro_rules! impl_spine_embedding {
-    ($($dtype:ty),*) => {
+    ($($dtype:ty : $dtype_enum:expr),*) => {
         impl<Model, const AFT: AnchorFeatureTypes, const AT: AnchorTypes> BasicSPINEBinding<Model, AFT, AT> where
             Model: AnchorsInferredNodeEmbeddingModel<AT, AFT>,
         {
@@ -63,9 +73,7 @@ macro_rules! impl_spine_embedding {
                 py_kwargs: Option<&PyDict>,
             ) -> PyResult<Py<PyAny>> {
                 let gil = pyo3::Python::acquire_gil();
-
-                let py = pyo3::Python::acquire_gil();
-                let kwargs = normalize_kwargs!(py_kwargs, py.python());
+                let kwargs = normalize_kwargs!(py_kwargs, gil.python());
 
                 pe!(validate_kwargs(
                     kwargs,
@@ -86,14 +94,22 @@ macro_rules! impl_spine_embedding {
                     }
                 };
 
-                let rows_number = graph.inner.get_number_of_nodes() as usize;
-                let columns_number = pe!(self.inner.get_embedding_size(&graph.inner))?;
+                let rows_number = graph.inner.get_number_of_nodes() as isize;
+                let columns_number = pe!(self.inner.get_embedding_size(&graph.inner))? as isize;
                 match dtype {
                     $(
                         stringify!($dtype) => {
-                            let embedding: &PyArray2<$dtype> = PyArray2::new(gil.python(), [rows_number, columns_number], true);
+                            let embedding = create_memory_mapped_numpy_array(
+                                gil.python(),
+                                self.path.as_ref().map(|x| x.as_str()),
+                                $dtype_enum,
+                                vec![rows_number, columns_number],
+                                true,
+                            );
 
-                            let embedding_slice = unsafe { embedding.as_slice_mut().unwrap() };
+                            let s = embedding.cast_as::<PyArray2<$dtype>>(gil.python())?;
+
+                            let embedding_slice = unsafe { s.as_slice_mut().unwrap() };
 
                             // We always use the racing version of the fit transform
                             // as we generally do not care about memory collisions.
@@ -102,7 +118,7 @@ macro_rules! impl_spine_embedding {
                                 embedding_slice,
                             ))?;
 
-                            Ok(embedding.into_py(gil.python()))
+                            Ok(embedding)
                         }
                     )*
                     dtype => pe!(Err(format!(
@@ -118,11 +134,16 @@ macro_rules! impl_spine_embedding {
     };
 }
 
-impl_spine_embedding! {u8, u16, u32, u64}
+impl_spine_embedding! {
+    u8 : Dtype::U8, 
+    u16: Dtype::U16, 
+    u32: Dtype::U32, 
+    u64: Dtype::U64
+}
 
 #[pyclass]
 #[derive(Debug, Clone)]
-#[text_signature = "(*, embedding_size, maximum_depth, verbose)"]
+#[pyo3(text_signature = "(*, embedding_size, maximum_depth, verbose)")]
 pub struct DegreeSPINE {
     pub inner: BasicSPINEBinding<
         cpu_models::DegreeSPINE,
@@ -152,7 +173,7 @@ impl DegreeSPINE {
     }
 
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, graph, *, dtype)"]
+    #[pyo3(text_signature = "($self, graph, *, dtype)")]
     /// Return numpy embedding with Degree SPINE node embedding.
     ///
     /// Do note that the embedding is returned transposed.
@@ -171,7 +192,7 @@ impl DegreeSPINE {
 
 #[pyclass]
 #[derive(Debug, Clone)]
-#[text_signature = "(*, embedding_size, maximum_depth, verbose)"]
+#[pyo3(text_signature = "(*, embedding_size, maximum_depth, verbose)")]
 pub struct NodeLabelSPINE {
     pub inner: BasicSPINEBinding<
         cpu_models::NodeLabelSPINE,
@@ -201,7 +222,7 @@ impl NodeLabelSPINE {
     }
 
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, graph, *, dtype)"]
+    #[pyo3(text_signature = "($self, graph, *, dtype)")]
     /// Return numpy embedding with Degree SPINE node embedding.
     ///
     /// Do note that the embedding is returned transposed.
@@ -220,9 +241,10 @@ impl NodeLabelSPINE {
 
 #[pyclass]
 #[derive(Debug, Clone)]
-#[text_signature = "(*, embedding_size, maximum_depth, verbose)"]
+#[pyo3(text_signature = "(*, embedding_size, maximum_depth, path, verbose)")]
 pub struct ScoreSPINE {
     inner: BasicSPINE,
+    path: Option<String>,
 }
 
 #[pymethods]
@@ -237,16 +259,25 @@ impl ScoreSPINE {
     ///     Size of the embedding.
     /// maximum_depth: Optional[int] = None
     ///     Maximum depth of the shortest path.
+    /// path: Optional[str] = None
+    ///     If passed, create a `.npy` file which will be mem-mapped 
+    ///     to allow processing embeddings that do not fit in RAM
     /// verbose: bool = True
     ///     Whether to show loading bars.
     pub fn new(py_kwargs: Option<&PyDict>) -> PyResult<ScoreSPINE> {
         Ok(Self {
             inner: BasicSPINE::from_pydict(py_kwargs)?,
+            path: match py_kwargs {
+                None => None,
+                Some(kwargs) => {
+                    extract_value_rust_result!(kwargs, "path", String)
+                }
+            },
         })
     }
 
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, scores, graph, *, dtype)"]
+    #[pyo3(text_signature = "($self, scores, graph, *, dtype)")]
     /// Return numpy embedding with Degree SPINE node embedding.
     ///
     /// Do note that the embedding is returned transposed.
@@ -272,6 +303,7 @@ impl ScoreSPINE {
             inner: cpu_models::ScoreSPINE::new(self.inner.clone(), unsafe {
                 scores_ref.as_slice().unwrap()
             }),
+            path: self.path.clone(),
         }
         .fit_transform(graph, py_kwargs)
     }

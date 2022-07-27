@@ -90,7 +90,7 @@ impl WalkletsBinding {
 
 #[pyclass]
 #[derive(Debug, Clone)]
-#[text_signature = "(*, embedding_size, window_size, number_of_negative_samples, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, max_neighbours, normalize_by_degree, epochs, learning_rate, learning_rate_decay, stochastic_downsample_by_degree, normalize_learning_rate_by_degree, use_scale_free_distribution, clipping_value, verbose)"]
+#[pyo3(text_signature = "(*, embedding_size, window_size, number_of_negative_samples, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, max_neighbours, normalize_by_degree, epochs, learning_rate, learning_rate_decay, stochastic_downsample_by_degree, normalize_learning_rate_by_degree, use_scale_free_distribution, clipping_value, verbose)")]
 pub struct CBOW {
     inner: Node2VecBinding<IdentifyWalkTransformer>,
 }
@@ -171,7 +171,7 @@ impl CBOW {
 #[pymethods]
 impl CBOW {
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, graph)"]
+    #[pyo3(text_signature = "($self, graph)")]
     /// Return numpy embedding with CBOW node embedding.
     ///
     /// Parameters
@@ -185,7 +185,7 @@ impl CBOW {
 
 #[pyclass]
 #[derive(Debug, Clone)]
-#[text_signature = "(*, embedding_size, window_size, number_of_negative_samples, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, max_neighbours, normalize_by_degree, epochs, learning_rate, learning_rate_decay, stochastic_downsample_by_degree, normalize_learning_rate_by_degree, use_scale_free_distribution, clipping_value, verbose)"]
+#[pyo3(text_signature = "(*, embedding_size, window_size, number_of_negative_samples, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, max_neighbours, normalize_by_degree, epochs, learning_rate, learning_rate_decay, stochastic_downsample_by_degree, normalize_learning_rate_by_degree, use_scale_free_distribution, clipping_value, verbose)")]
 pub struct GloVe {
     inner: Node2VecBinding<IdentifyWalkTransformer>,
 }
@@ -266,7 +266,7 @@ impl GloVe {
 #[pymethods]
 impl GloVe {
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, graph)"]
+    #[pyo3(text_signature = "($self, graph)")]
     /// Return numpy embedding with GloVe node embedding.
     ///
     /// Parameters
@@ -280,7 +280,7 @@ impl GloVe {
 
 #[pyclass]
 #[derive(Debug, Clone)]
-#[text_signature = "(*, embedding_size, window_size, number_of_negative_samples, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, max_neighbours, normalize_by_degree, epochs, learning_rate, learning_rate_decay, stochastic_downsample_by_degree, normalize_learning_rate_by_degree, use_scale_free_distribution, clipping_value, verbose)"]
+#[pyo3(text_signature = "(*, embedding_size, window_size, number_of_negative_samples, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, max_neighbours, normalize_by_degree, epochs, learning_rate, learning_rate_decay, stochastic_downsample_by_degree, normalize_learning_rate_by_degree, use_scale_free_distribution, clipping_value, verbose)")]
 pub struct SkipGram {
     inner: Node2VecBinding<IdentifyWalkTransformer>,
 }
@@ -361,7 +361,7 @@ impl SkipGram {
 #[pymethods]
 impl SkipGram {
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, graph)"]
+    #[pyo3(text_signature = "($self, graph)")]
     /// Return numpy embedding with SkipGram node embedding.
     ///
     /// Parameters
@@ -375,7 +375,7 @@ impl SkipGram {
 
 #[pyclass]
 #[derive(Debug, Clone)]
-#[text_signature = "(*, embedding_size, window_size, number_of_negative_samples, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, max_neighbours, normalize_by_degree, epochs, learning_rate, learning_rate_decay, stochastic_downsample_by_degree, normalize_learning_rate_by_degree, use_scale_free_distribution, clipping_value, verbose)"]
+#[pyo3(text_signature = "(*, embedding_size, window_size, number_of_negative_samples, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, max_neighbours, normalize_by_degree, epochs, learning_rate, learning_rate_decay, stochastic_downsample_by_degree, normalize_learning_rate_by_degree, use_scale_free_distribution, clipping_value, verbose)")]
 pub struct WalkletsCBOW {
     inner: WalkletsBinding,
 }
@@ -456,7 +456,7 @@ impl WalkletsCBOW {
 #[pymethods]
 impl WalkletsCBOW {
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, graph)"]
+    #[pyo3(text_signature = "($self, graph)")]
     /// Return numpy embedding with Walklets CBOW node embedding.
     ///
     /// Parameters
@@ -470,7 +470,7 @@ impl WalkletsCBOW {
 
 #[pyclass]
 #[derive(Debug, Clone)]
-#[text_signature = "(*, embedding_size, window_size, number_of_negative_samples, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, max_neighbours, normalize_by_degree, epochs, learning_rate, learning_rate_decay, stochastic_downsample_by_degree, normalize_learning_rate_by_degree, use_scale_free_distribution, clipping_value, verbose)"]
+#[pyo3(text_signature = "(*, embedding_size, window_size, number_of_negative_samples, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, max_neighbours, normalize_by_degree, epochs, learning_rate, learning_rate_decay, stochastic_downsample_by_degree, normalize_learning_rate_by_degree, use_scale_free_distribution, clipping_value, verbose)")]
 pub struct WalkletsSkipGram {
     inner: WalkletsBinding,
 }
@@ -551,7 +551,7 @@ impl WalkletsSkipGram {
 #[pymethods]
 impl WalkletsSkipGram {
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, graph)"]
+    #[pyo3(text_signature = "($self, graph)")]
     /// Return numpy embedding with Walklets SkipGram node embedding.
     ///
     /// Parameters
@@ -565,7 +565,7 @@ impl WalkletsSkipGram {
 
 #[pyclass]
 #[derive(Debug, Clone)]
-#[text_signature = "(*, embedding_size, window_size, number_of_negative_samples, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, max_neighbours, normalize_by_degree, epochs, learning_rate, learning_rate_decay, stochastic_downsample_by_degree, normalize_learning_rate_by_degree, use_scale_free_distribution, clipping_value, verbose)"]
+#[pyo3(text_signature = "(*, embedding_size, window_size, number_of_negative_samples, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, max_neighbours, normalize_by_degree, epochs, learning_rate, learning_rate_decay, stochastic_downsample_by_degree, normalize_learning_rate_by_degree, use_scale_free_distribution, clipping_value, verbose)")]
 pub struct WalkletsGloVe {
     inner: WalkletsBinding,
 }
@@ -646,7 +646,7 @@ impl WalkletsGloVe {
 #[pymethods]
 impl WalkletsGloVe {
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, graph)"]
+    #[pyo3(text_signature = "($self, graph)")]
     /// Return numpy embedding with Walklets GloVe node embedding.
     ///
     /// Parameters

@@ -2,7 +2,7 @@ use super::*;
 
 #[pymethods]
 impl Graph {
-    #[text_signature = "($self, verbose)"]
+    #[pyo3(text_signature = "($self, verbose)")]
     /// Returns set of edges forming the spanning tree of given graph.
     ///
     /// Parameters
@@ -28,7 +28,7 @@ impl Graph {
         let py = pyo3::Python::acquire_gil();
         let (edges_number, iter) = pe!(self.inner.spanning_arborescence(verbose))?;
         let array = ThreadDataRaceAware {
-            t: PyArray2::new(py.python(), [edges_number, 2], false),
+            t: unsafe{PyArray2::new(py.python(), [edges_number, 2], false)},
         };
         unsafe {
             iter.enumerate().for_each(|(index, (src, dst))| {

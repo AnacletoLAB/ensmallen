@@ -1,9 +1,8 @@
 #[allow(unused_variables)]
 use super::*;
-use pyo3::class::basic::CompareOp;
-use pyo3::class::basic::PyObjectProtocol;
 use pyo3::{wrap_pyfunction, wrap_pymodule};
 use rayon::iter::*;
+use pyo3::pyclass::CompareOp;
 use std::collections::hash_map::DefaultHasher;
 use std::hash::{Hash, Hasher};
 use strsim::*;
@@ -33,22 +32,34 @@ fn split_words(method_name: &str) -> Vec<String> {
 }
 
 #[pymodule]
-fn ensmallen(_py: Python, _m: &PyModule) -> PyResult<()> {
-    _m.add_class::<Chain>()?;
-    _m.add_class::<Circle>()?;
-    _m.add_class::<Clique>()?;
-    _m.add_class::<DendriticTree>()?;
-    _m.add_class::<Graph>()?;
-    _m.add_class::<NodeTuple>()?;
-    _m.add_class::<ShortestPathsDjkstra>()?;
-    _m.add_class::<ShortestPathsResultBFS>()?;
-    _m.add_class::<Star>()?;
-    _m.add_class::<Tendril>()?;
-    _m.add_wrapped(wrap_pymodule!(edge_list_utils))?;
-    _m.add_wrapped(wrap_pymodule!(utils))?;
-    _m.add_wrapped(wrap_pymodule!(preprocessing))?;
-    _m.add_wrapped(wrap_pymodule!(models))?;
-    _m.add_wrapped(wrap_pymodule!(express_measures))?;
+pub fn ensmallen(py: Python, m: &PyModule) -> PyResult<()> {
+    m.add_class::<Chain>()?;
+    m.add_class::<Circle>()?;
+    m.add_class::<Clique>()?;
+    m.add_class::<DendriticTree>()?;
+    m.add_class::<Graph>()?;
+    m.add_class::<NodeTuple>()?;
+    m.add_class::<ShortestPathsDjkstra>()?;
+    m.add_class::<ShortestPathsResultBFS>()?;
+    m.add_class::<Star>()?;
+    m.add_class::<Tendril>()?;
+
+    let edge_list_utils = PyModule::new(py, "edge_list_utils")?;
+    register_edge_list_utils(py, edge_list_utils)?;
+    m.add_submodule(edge_list_utils)?;
+
+    let preprocessing = PyModule::new(py, "preprocessing")?;
+    register_preprocessing(py, preprocessing)?;
+    m.add_submodule(preprocessing)?;
+
+    let models = PyModule::new(py, "models")?;
+    register_models(py, models);
+    m.add_submodule(models)?;
+
+    let express_measures = PyModule::new(py, "express_measures")?;
+    register_express_measures(py, express_measures)?;
+    m.add_submodule(express_measures)?;
+
     env_logger::init();
     Ok(())
 }
@@ -81,28 +92,28 @@ impl<'a> From<&'a Chain> for &'a graph::Chain {
 #[pymethods]
 impl Chain {
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return the first node ID of the chain
     pub fn get_root_node_id(&self) -> NodeT {
         self.inner.get_root_node_id().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return the first node name of the chain
     pub fn get_root_node_name(&self) -> String {
         self.inner.get_root_node_name().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return length of the chain
     pub fn len(&self) -> NodeT {
         self.inner.len().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return the node IDs of the nodes composing the chain
     pub fn get_chain_node_ids(&self) -> Py<PyArray1<NodeT>> {
         let gil = pyo3::Python::acquire_gil();
@@ -110,7 +121,7 @@ impl Chain {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, k)"]
+    #[pyo3(text_signature = "($self, k)")]
     /// Return the first `k` node IDs of the nodes composing the chain.
     ///
     /// Parameters
@@ -122,7 +133,7 @@ impl Chain {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, k)"]
+    #[pyo3(text_signature = "($self, k)")]
     /// Return the first `k` node names of the nodes composing the chain.
     ///
     /// Parameters
@@ -137,7 +148,7 @@ impl Chain {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return the node names of the nodes composing the chain
     pub fn get_chain_node_names(&self) -> Vec<String> {
         self.inner
@@ -213,22 +224,22 @@ impl Chain {
     }
 }
 
-#[pyproto]
-impl PyObjectProtocol for Chain {
-    fn __str__(&'p self) -> String {
+#[pymethods]
+impl Chain {
+    fn __str__(&self) -> String {
         self.inner.to_string()
     }
-    fn __repr__(&'p self) -> String {
+    fn __repr__(&self) -> String {
         self.__str__()
     }
 
-    fn __hash__(&'p self) -> PyResult<isize> {
+    fn __hash__(&self) -> PyResult<isize> {
         let mut hasher = DefaultHasher::new();
         self.inner.hash(&mut hasher);
         Ok(hasher.finish() as isize)
     }
 
-    fn __richcmp__(&'p self, other: Self, op: CompareOp) -> bool {
+    fn __richcmp__(&self, other: Self, op: CompareOp) -> bool {
         match op {
             CompareOp::Lt => self.inner < other.inner,
             CompareOp::Le => self.inner <= other.inner,
@@ -329,28 +340,28 @@ impl<'a> From<&'a Circle> for &'a graph::Circle {
 #[pymethods]
 impl Circle {
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return the first node ID of the Circle
     pub fn get_root_node_id(&self) -> NodeT {
         self.inner.get_root_node_id().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return the first node name of the circle
     pub fn get_root_node_name(&self) -> String {
         self.inner.get_root_node_name().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return length of the Circle
     pub fn len(&self) -> NodeT {
         self.inner.len().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return the node IDs of the nodes composing the Circle
     pub fn get_circle_node_ids(&self) -> Py<PyArray1<NodeT>> {
         let gil = pyo3::Python::acquire_gil();
@@ -358,7 +369,7 @@ impl Circle {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, k)"]
+    #[pyo3(text_signature = "($self, k)")]
     /// Return the first `k` node IDs of the nodes composing the Circle.
     ///
     /// Parameters
@@ -370,7 +381,7 @@ impl Circle {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, k)"]
+    #[pyo3(text_signature = "($self, k)")]
     /// Return the first `k` node names of the nodes composing the Circle.
     ///
     /// Parameters
@@ -385,7 +396,7 @@ impl Circle {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return the node names of the nodes composing the Circle
     pub fn get_circle_node_names(&self) -> Vec<String> {
         self.inner
@@ -461,22 +472,22 @@ impl Circle {
     }
 }
 
-#[pyproto]
-impl PyObjectProtocol for Circle {
-    fn __str__(&'p self) -> String {
+#[pymethods]
+impl Circle {
+    fn __str__(&self) -> String {
         self.inner.to_string()
     }
-    fn __repr__(&'p self) -> String {
+    fn __repr__(&self) -> String {
         self.__str__()
     }
 
-    fn __hash__(&'p self) -> PyResult<isize> {
+    fn __hash__(&self) -> PyResult<isize> {
         let mut hasher = DefaultHasher::new();
         self.inner.hash(&mut hasher);
         Ok(hasher.finish() as isize)
     }
 
-    fn __richcmp__(&'p self, other: Self, op: CompareOp) -> bool {
+    fn __richcmp__(&self, other: Self, op: CompareOp) -> bool {
         match op {
             CompareOp::Lt => self.inner < other.inner,
             CompareOp::Le => self.inner <= other.inner,
@@ -577,14 +588,14 @@ impl<'a> From<&'a Clique> for &'a graph::Clique {
 #[pymethods]
 impl Clique {
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return length of the Clique
     pub fn len(&self) -> NodeT {
         self.inner.len().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return the node IDs of the nodes composing the clique
     pub fn get_node_ids(&self) -> Py<PyArray1<NodeT>> {
         let gil = pyo3::Python::acquire_gil();
@@ -592,7 +603,7 @@ impl Clique {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return the node names of the nodes composing the Clique
     pub fn get_node_names(&self) -> Vec<String> {
         self.inner
@@ -628,22 +639,22 @@ impl Clique {
     }
 }
 
-#[pyproto]
-impl PyObjectProtocol for Clique {
-    fn __str__(&'p self) -> String {
+#[pymethods]
+impl Clique {
+    fn __str__(&self) -> String {
         self.inner.to_string()
     }
-    fn __repr__(&'p self) -> String {
+    fn __repr__(&self) -> String {
         self.__str__()
     }
 
-    fn __hash__(&'p self) -> PyResult<isize> {
+    fn __hash__(&self) -> PyResult<isize> {
         let mut hasher = DefaultHasher::new();
         self.inner.hash(&mut hasher);
         Ok(hasher.finish() as isize)
     }
 
-    fn __richcmp__(&'p self, other: Self, op: CompareOp) -> bool {
+    fn __richcmp__(&self, other: Self, op: CompareOp) -> bool {
         match op {
             CompareOp::Lt => self.inner < other.inner,
             CompareOp::Le => self.inner <= other.inner,
@@ -744,105 +755,105 @@ impl<'a> From<&'a DendriticTree> for &'a graph::DendriticTree {
 #[pymethods]
 impl DendriticTree {
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return the type of the dendritic tree
     pub fn get_dendritic_tree_type(&self) -> &str {
         self.inner.get_dendritic_tree_type().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return the root node ID of the dendritic tree
     pub fn get_root_node_id(&self) -> NodeT {
         self.inner.get_root_node_id().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return whether the current dendritic tree is actually a tree
     pub fn is_tree(&self) -> bool {
         self.inner.is_tree().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return whether the current dendritic tree is actually a tendril
     pub fn is_tendril(&self) -> bool {
         self.inner.is_tendril().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return whether the current dendritic tree is a proper dentritic tree
     pub fn is_dendritic_tree(&self) -> bool {
         self.inner.is_dendritic_tree().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return whether the current dendritic tree is actually a free-floating chain
     pub fn is_free_floating_chain(&self) -> bool {
         self.inner.is_free_floating_chain().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return whether the current dendritic tree is actually a star
     pub fn is_star(&self) -> bool {
         self.inner.is_star().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return whether the current dendritic tree is actually a star of tendrils
     pub fn is_tendril_star(&self) -> bool {
         self.inner.is_tendril_star().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return whether the current dendritic tree is actually a dendritic star
     pub fn is_dendritic_star(&self) -> bool {
         self.inner.is_dendritic_star().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return whether the current dendritic tree is actually a dendritic tendril star
     pub fn is_dendritic_tendril_star(&self) -> bool {
         self.inner.is_dendritic_tendril_star().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return the depth of the dentritic tree
     pub fn get_depth(&self) -> NodeT {
         self.inner.get_depth().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return the root node name of the DendriticTree
     pub fn get_root_node_name(&self) -> String {
         self.inner.get_root_node_name().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return number of nodes involved in the dendritic tree
     pub fn get_number_of_involved_nodes(&self) -> NodeT {
         self.inner.get_number_of_involved_nodes().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return number of edges involved in the dendritic tree
     pub fn get_number_of_involved_edges(&self) -> EdgeT {
         self.inner.get_number_of_involved_edges().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return the node IDs of the nodes composing the DendriticTree
     pub fn get_dentritic_trees_node_ids(&self) -> Py<PyArray1<NodeT>> {
         let gil = pyo3::Python::acquire_gil();
@@ -850,7 +861,7 @@ impl DendriticTree {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, k)"]
+    #[pyo3(text_signature = "($self, k)")]
     /// Return the first `k` node IDs of the nodes composing the DendriticTree.
     ///
     /// Parameters
@@ -866,7 +877,7 @@ impl DendriticTree {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, k)"]
+    #[pyo3(text_signature = "($self, k)")]
     /// Return the first `k` node names of the nodes composing the DendriticTree.
     ///
     /// Parameters
@@ -881,7 +892,7 @@ impl DendriticTree {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return the node names of the nodes composing the DendriticTree
     pub fn get_dentritic_trees_node_names(&self) -> Vec<String> {
         self.inner
@@ -1047,22 +1058,22 @@ impl DendriticTree {
     }
 }
 
-#[pyproto]
-impl PyObjectProtocol for DendriticTree {
-    fn __str__(&'p self) -> String {
+#[pymethods]
+impl DendriticTree {
+    fn __str__(&self) -> String {
         self.inner.to_string()
     }
-    fn __repr__(&'p self) -> String {
+    fn __repr__(&self) -> String {
         self.__str__()
     }
 
-    fn __hash__(&'p self) -> PyResult<isize> {
+    fn __hash__(&self) -> PyResult<isize> {
         let mut hasher = DefaultHasher::new();
         self.inner.hash(&mut hasher);
         Ok(hasher.finish() as isize)
     }
 
-    fn __richcmp__(&'p self, other: Self, op: CompareOp) -> bool {
+    fn __richcmp__(&self, other: Self, op: CompareOp) -> bool {
         match op {
             CompareOp::Lt => self.inner < other.inner,
             CompareOp::Le => self.inner <= other.inner,
@@ -1182,7 +1193,7 @@ impl<'a> From<&'a Graph> for &'a graph::Graph {
 #[pymethods]
 impl Graph {
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_id)"]
+    #[pyo3(text_signature = "($self, node_id)")]
     /// Returns boolean representing if given node is not a singleton nor a singleton with selfloop.
     ///
     /// Parameters
@@ -1201,7 +1212,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_id)"]
+    #[pyo3(text_signature = "($self, node_id)")]
     /// Returns boolean representing if given node is not a singleton nor a singleton with selfloop.
     ///
     /// Parameters
@@ -1218,7 +1229,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_id)"]
+    #[pyo3(text_signature = "($self, node_id)")]
     /// Returns boolean representing if given node is a singleton or a singleton with selfloop.
     ///
     /// Parameters
@@ -1237,7 +1248,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_id)"]
+    #[pyo3(text_signature = "($self, node_id)")]
     /// Returns boolean representing if given node is a singleton.
     ///
     /// Parameters
@@ -1256,7 +1267,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_id)"]
+    #[pyo3(text_signature = "($self, node_id)")]
     /// Returns boolean representing if given node is a singleton.
     ///
     /// Parameters
@@ -1269,7 +1280,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_id)"]
+    #[pyo3(text_signature = "($self, node_id)")]
     /// Returns boolean representing if given node is a singleton with self-loops.
     ///
     /// Parameters
@@ -1287,7 +1298,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_id)"]
+    #[pyo3(text_signature = "($self, node_id)")]
     /// Returns boolean representing if given node is a singleton with self-loops.
     ///
     /// Parameters
@@ -1303,7 +1314,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_name)"]
+    #[pyo3(text_signature = "($self, node_name)")]
     /// Returns boolean representing if given node is a singleton.
     ///
     /// Nota that this method will raise a panic if caled with unproper
@@ -1325,7 +1336,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_name)"]
+    #[pyo3(text_signature = "($self, node_name)")]
     /// Returns boolean representing if given node is a singleton.
     ///
     /// Parameters
@@ -1338,7 +1349,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_name)"]
+    #[pyo3(text_signature = "($self, node_name)")]
     /// Returns whether the graph has the given node name.
     ///
     /// Parameters
@@ -1351,7 +1362,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_type_id)"]
+    #[pyo3(text_signature = "($self, node_type_id)")]
     /// Returns whether the graph has the given node type id.
     ///
     /// Parameters
@@ -1364,7 +1375,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_type_name)"]
+    #[pyo3(text_signature = "($self, node_type_name)")]
     /// Returns whether the graph has the given node type name.
     ///
     /// Parameters
@@ -1377,7 +1388,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, edge_type_id)"]
+    #[pyo3(text_signature = "($self, edge_type_id)")]
     /// Returns whether the graph has the given edge type id.
     ///
     /// Parameters
@@ -1390,7 +1401,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, edge_type_name)"]
+    #[pyo3(text_signature = "($self, edge_type_name)")]
     /// Returns whether the graph has the given edge type name.
     ///
     /// Parameters
@@ -1403,7 +1414,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src, dst)"]
+    #[pyo3(text_signature = "($self, src, dst)")]
     /// Returns whether edge passing between given node ids exists.
     ///
     /// Parameters
@@ -1420,7 +1431,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_id)"]
+    #[pyo3(text_signature = "($self, node_id)")]
     /// Returns whether the given node ID has a selfloop.
     ///
     /// Parameters
@@ -1433,7 +1444,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src, dst, edge_type)"]
+    #[pyo3(text_signature = "($self, src, dst, edge_type)")]
     /// Returns whether edge with the given type passing between given nodes exists.
     ///
     /// Parameters
@@ -1457,7 +1468,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_id)"]
+    #[pyo3(text_signature = "($self, node_id)")]
     /// Returns boolean representing if given node is a trap.
     ///
     /// If the provided node_id is higher than the number of nodes in the graph,
@@ -1479,7 +1490,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_id)"]
+    #[pyo3(text_signature = "($self, node_id)")]
     /// Returns boolean representing if given node is a trap.
     ///
     /// Parameters
@@ -1492,7 +1503,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_name, node_type_name)"]
+    #[pyo3(text_signature = "($self, node_name, node_type_name)")]
     /// Returns whether the given node name and node type name exist in current graph.
     ///
     /// Parameters
@@ -1513,7 +1524,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src_name, dst_name)"]
+    #[pyo3(text_signature = "($self, src_name, dst_name)")]
     /// Returns whether if edge passing between given nodes exists.
     ///
     /// Parameters
@@ -1530,7 +1541,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src_name, dst_name, edge_type_name)"]
+    #[pyo3(text_signature = "($self, src_name, dst_name, edge_type_name)")]
     /// Returns whether if edge with type passing between given nodes exists.
     ///
     /// Parameters
@@ -1558,7 +1569,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src, edge_type_id)"]
+    #[pyo3(text_signature = "($self, src, edge_type_id)")]
     /// Returns whether a given node ID has at least an edge of the given edge type.
     ///
     /// Parameters
@@ -1588,7 +1599,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src, edge_type_id)"]
+    #[pyo3(text_signature = "($self, src, edge_type_id)")]
     /// Returns whether a given node ID has at least an edge of the given edge type.
     ///
     /// Parameters
@@ -1613,7 +1624,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns list of nodes of the various strongly connected components.
     ///
     /// This is an implementation of Tarjan algorithm.
@@ -1626,7 +1637,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns Jaccard coo matrix
     pub fn get_jaccard_coo_matrix(&self) -> (Py<PyArray2<NodeT>>, Py<PyArray1<WeightT>>) {
         let (subresult_0, subresult_1) = self.inner.get_jaccard_coo_matrix();
@@ -1638,7 +1649,7 @@ impl Graph {
                 let gil = pyo3::Python::acquire_gil();
                 let body = subresult_0;
                 let result_array = ThreadDataRaceAware {
-                    t: PyArray2::<NodeT>::new(gil.python(), [body.len(), 2], false),
+                    t: unsafe{PyArray2::<NodeT>::new(gil.python(), [body.len(), 2], false)},
                 };
                 body.into_par_iter()
                     .enumerate()
@@ -1656,14 +1667,14 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns jaccard weighted graph
     pub fn get_jaccard_graph(&self) -> Graph {
         self.inner.get_jaccard_graph().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns neighbours intersection size coo matrix
     pub fn get_neighbours_intersection_size_coo_matrix(
         &self,
@@ -1677,7 +1688,7 @@ impl Graph {
                 let gil = pyo3::Python::acquire_gil();
                 let body = subresult_0;
                 let result_array = ThreadDataRaceAware {
-                    t: PyArray2::<NodeT>::new(gil.python(), [body.len(), 2], false),
+                    t: unsafe{PyArray2::<NodeT>::new(gil.python(), [body.len(), 2], false)},
                 };
                 body.into_par_iter()
                     .enumerate()
@@ -1695,14 +1706,14 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns neighbours intersection size weighted graph
     pub fn get_neighbours_intersection_size_graph(&self) -> Graph {
         self.inner.get_neighbours_intersection_size_graph().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, bfs)"]
+    #[pyo3(text_signature = "($self, bfs)")]
     /// Returns shared ancestors size coo matrix.
     ///
     /// Parameters
@@ -1724,7 +1735,7 @@ impl Graph {
                 let gil = pyo3::Python::acquire_gil();
                 let body = subresult_0;
                 let result_array = ThreadDataRaceAware {
-                    t: PyArray2::<NodeT>::new(gil.python(), [body.len(), 2], false),
+                    t: unsafe{PyArray2::<NodeT>::new(gil.python(), [body.len(), 2], false)},
                 };
                 body.into_par_iter()
                     .enumerate()
@@ -1742,7 +1753,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, bfs)"]
+    #[pyo3(text_signature = "($self, bfs)")]
     /// Returns shared ancestors size weighted graph.
     ///
     /// Parameters
@@ -1757,7 +1768,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, bfs)"]
+    #[pyo3(text_signature = "($self, bfs)")]
     /// Returns Ancestors Jaccard coo matrix.
     ///
     /// Parameters
@@ -1778,7 +1789,7 @@ impl Graph {
                 let gil = pyo3::Python::acquire_gil();
                 let body = subresult_0;
                 let result_array = ThreadDataRaceAware {
-                    t: PyArray2::<NodeT>::new(gil.python(), [body.len(), 2], false),
+                    t: unsafe{PyArray2::<NodeT>::new(gil.python(), [body.len(), 2], false)},
                 };
                 body.into_par_iter()
                     .enumerate()
@@ -1796,7 +1807,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, bfs)"]
+    #[pyo3(text_signature = "($self, bfs)")]
     /// Returns Ancestors Jaccard weighted graph.
     ///
     /// Parameters
@@ -1809,7 +1820,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns Adamic-adar coo matrix
     pub fn get_adamic_adar_coo_matrix(&self) -> (Py<PyArray2<NodeT>>, Py<PyArray1<WeightT>>) {
         let (subresult_0, subresult_1) = self.inner.get_adamic_adar_coo_matrix();
@@ -1821,7 +1832,7 @@ impl Graph {
                 let gil = pyo3::Python::acquire_gil();
                 let body = subresult_0;
                 let result_array = ThreadDataRaceAware {
-                    t: PyArray2::<NodeT>::new(gil.python(), [body.len(), 2], false),
+                    t: unsafe{PyArray2::<NodeT>::new(gil.python(), [body.len(), 2], false)},
                 };
                 body.into_par_iter()
                     .enumerate()
@@ -1839,7 +1850,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns Adamic-Adar weighted graph
     pub fn get_adamic_adar_graph(&self) -> Graph {
         self.inner.get_adamic_adar_graph().into()
@@ -1847,7 +1858,7 @@ impl Graph {
 
     #[args(py_kwargs = "**")]
     #[automatically_generated_binding]
-    #[text_signature = "($self, window_size, node_ids_of_interest, *, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, max_neighbours, random_state, iterations, dense_node_mapping, normalize_by_degree, walk_length)"]
+    #[pyo3(text_signature = "($self, window_size, node_ids_of_interest, *, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, max_neighbours, random_state, iterations, dense_node_mapping, normalize_by_degree, walk_length)")]
     /// Returns Cooccurrence coo matrix.
     ///
     /// Parameters
@@ -1924,7 +1935,7 @@ impl Graph {
                     let gil = pyo3::Python::acquire_gil();
                     let body = subresult_0;
                     let result_array = ThreadDataRaceAware {
-                        t: PyArray2::<NodeT>::new(gil.python(), [body.len(), 2], false),
+                        t: unsafe{PyArray2::<NodeT>::new(gil.python(), [body.len(), 2], false)},
                     };
                     body.into_par_iter()
                         .enumerate()
@@ -1944,7 +1955,7 @@ impl Graph {
 
     #[args(py_kwargs = "**")]
     #[automatically_generated_binding]
-    #[text_signature = "($self, window_size, node_ids_of_interest, *, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, max_neighbours, random_state, iterations, dense_node_mapping, normalize_by_degree, walk_length)"]
+    #[pyo3(text_signature = "($self, window_size, node_ids_of_interest, *, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, max_neighbours, random_state, iterations, dense_node_mapping, normalize_by_degree, walk_length)")]
     /// Returns Cooccurrence weighted graph.
     ///
     /// Parameters
@@ -2016,7 +2027,7 @@ impl Graph {
 
     #[args(py_kwargs = "**")]
     #[automatically_generated_binding]
-    #[text_signature = "($self, window_size, node_ids_of_interest, *, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, max_neighbours, random_state, iterations, dense_node_mapping, normalize_by_degree, walk_length)"]
+    #[pyo3(text_signature = "($self, window_size, node_ids_of_interest, *, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, max_neighbours, random_state, iterations, dense_node_mapping, normalize_by_degree, walk_length)")]
     /// Returns Normalized Cooccurrence coo matrix.
     ///
     /// Parameters
@@ -2094,7 +2105,7 @@ impl Graph {
                     let gil = pyo3::Python::acquire_gil();
                     let body = subresult_0;
                     let result_array = ThreadDataRaceAware {
-                        t: PyArray2::<NodeT>::new(gil.python(), [body.len(), 2], false),
+                        t: unsafe{PyArray2::<NodeT>::new(gil.python(), [body.len(), 2], false)},
                     };
                     body.into_par_iter()
                         .enumerate()
@@ -2114,7 +2125,7 @@ impl Graph {
 
     #[args(py_kwargs = "**")]
     #[automatically_generated_binding]
-    #[text_signature = "($self, window_size, node_ids_of_interest, *, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, max_neighbours, random_state, iterations, dense_node_mapping, normalize_by_degree, walk_length)"]
+    #[pyo3(text_signature = "($self, window_size, node_ids_of_interest, *, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, max_neighbours, random_state, iterations, dense_node_mapping, normalize_by_degree, walk_length)")]
     /// Returns Normalized Cooccurrence weighted graph.
     ///
     /// Parameters
@@ -2186,7 +2197,7 @@ impl Graph {
 
     #[args(py_kwargs = "**")]
     #[automatically_generated_binding]
-    #[text_signature = "($self, window_size, node_ids_of_interest, *, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, max_neighbours, random_state, iterations, dense_node_mapping, normalize_by_degree, walk_length)"]
+    #[pyo3(text_signature = "($self, window_size, node_ids_of_interest, *, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, max_neighbours, random_state, iterations, dense_node_mapping, normalize_by_degree, walk_length)")]
     /// Returns Log Normalized Cooccurrence coo matrix.
     ///
     /// Parameters
@@ -2264,7 +2275,7 @@ impl Graph {
                     let gil = pyo3::Python::acquire_gil();
                     let body = subresult_0;
                     let result_array = ThreadDataRaceAware {
-                        t: PyArray2::<NodeT>::new(gil.python(), [body.len(), 2], false),
+                        t: unsafe{PyArray2::<NodeT>::new(gil.python(), [body.len(), 2], false)},
                     };
                     body.into_par_iter()
                         .enumerate()
@@ -2284,7 +2295,7 @@ impl Graph {
 
     #[args(py_kwargs = "**")]
     #[automatically_generated_binding]
-    #[text_signature = "($self, window_size, node_ids_of_interest, *, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, max_neighbours, random_state, iterations, dense_node_mapping, normalize_by_degree, walk_length)"]
+    #[pyo3(text_signature = "($self, window_size, node_ids_of_interest, *, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, max_neighbours, random_state, iterations, dense_node_mapping, normalize_by_degree, walk_length)")]
     /// Returns Log Normalized Cooccurrence weighted graph.
     ///
     /// Parameters
@@ -2355,7 +2366,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns Laplacian coo matrix
     pub fn get_laplacian_coo_matrix(&self) -> (Py<PyArray2<NodeT>>, Py<PyArray1<WeightT>>) {
         let (subresult_0, subresult_1) = self.inner.get_laplacian_coo_matrix();
@@ -2367,7 +2378,7 @@ impl Graph {
                 let gil = pyo3::Python::acquire_gil();
                 let body = subresult_0;
                 let result_array = ThreadDataRaceAware {
-                    t: PyArray2::<NodeT>::new(gil.python(), [body.len(), 2], false),
+                    t: unsafe{PyArray2::<NodeT>::new(gil.python(), [body.len(), 2], false)},
                 };
                 body.into_par_iter()
                     .enumerate()
@@ -2385,14 +2396,14 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns Laplacian weighted graph
     pub fn get_laplacian_graph(&self) -> Graph {
         self.inner.get_laplacian_graph().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns left normalized Laplacian coo matrix
     pub fn get_left_normalized_laplacian_coo_matrix(
         &self,
@@ -2406,7 +2417,7 @@ impl Graph {
                 let gil = pyo3::Python::acquire_gil();
                 let body = subresult_0;
                 let result_array = ThreadDataRaceAware {
-                    t: PyArray2::<NodeT>::new(gil.python(), [body.len(), 2], false),
+                    t: unsafe{PyArray2::<NodeT>::new(gil.python(), [body.len(), 2], false)},
                 };
                 body.into_par_iter()
                     .enumerate()
@@ -2424,14 +2435,14 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns left normalized Laplacian weighted graph
     pub fn get_left_normalized_laplacian_graph(&self) -> Graph {
         self.inner.get_left_normalized_laplacian_graph().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns right normalized Laplacian coo matrix
     pub fn get_right_normalized_laplacian_coo_matrix(
         &self,
@@ -2445,7 +2456,7 @@ impl Graph {
                 let gil = pyo3::Python::acquire_gil();
                 let body = subresult_0;
                 let result_array = ThreadDataRaceAware {
-                    t: PyArray2::<NodeT>::new(gil.python(), [body.len(), 2], false),
+                    t: unsafe{PyArray2::<NodeT>::new(gil.python(), [body.len(), 2], false)},
                 };
                 body.into_par_iter()
                     .enumerate()
@@ -2463,14 +2474,14 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns right normalized Laplacian weighted graph
     pub fn get_right_normalized_laplacian_graph(&self) -> Graph {
         self.inner.get_right_normalized_laplacian_graph().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns symmetric normalized Laplacian coo matrix
     pub fn get_symmetric_normalized_laplacian_coo_matrix(
         &self,
@@ -2484,7 +2495,7 @@ impl Graph {
                 let gil = pyo3::Python::acquire_gil();
                 let body = subresult_0;
                 let result_array = ThreadDataRaceAware {
-                    t: PyArray2::<NodeT>::new(gil.python(), [body.len(), 2], false),
+                    t: unsafe{PyArray2::<NodeT>::new(gil.python(), [body.len(), 2], false)},
                 };
                 body.into_par_iter()
                     .enumerate()
@@ -2502,35 +2513,35 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns symmetric normalized Laplacian weighted graph
     pub fn get_symmetric_normalized_laplacian_graph(&self) -> Graph {
         self.inner.get_symmetric_normalized_laplacian_graph().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns graph with node IDs sorted by increasing outbound node degree
     pub fn sort_by_increasing_outbound_node_degree(&self) -> Graph {
         self.inner.sort_by_increasing_outbound_node_degree().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns graph with node IDs sorted by decreasing outbound node degree
     pub fn sort_by_decreasing_outbound_node_degree(&self) -> Graph {
         self.inner.sort_by_decreasing_outbound_node_degree().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns graph with node IDs sorted by lexicographic order
     pub fn sort_by_node_lexicographic_order(&self) -> Graph {
         self.inner.sort_by_node_lexicographic_order().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, root_node_id)"]
+    #[pyo3(text_signature = "($self, root_node_id)")]
     /// Returns topological sorting map using breadth-first search from the given node.
     ///
     /// Parameters
@@ -2561,7 +2572,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, root_node_id)"]
+    #[pyo3(text_signature = "($self, root_node_id)")]
     /// Returns topological sorting reversed map using breadth-first search from the given node.
     ///
     /// Parameters
@@ -2592,7 +2603,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, root_node_id)"]
+    #[pyo3(text_signature = "($self, root_node_id)")]
     /// Returns graph with node IDs sorted using a BFS
     ///
     /// Parameters
@@ -2617,7 +2628,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_names, node_types, edge_types, minimum_component_size, top_k_components, verbose)"]
+    #[pyo3(text_signature = "($self, node_names, node_types, edge_types, minimum_component_size, top_k_components, verbose)")]
     /// remove all the components that are not connected to interesting
     /// nodes and edges.
     ///
@@ -2657,7 +2668,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, other)"]
+    #[pyo3(text_signature = "($self, other)")]
     /// Return whether given graph has any edge overlapping with current graph.
     ///
     /// Parameters
@@ -2682,7 +2693,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, other)"]
+    #[pyo3(text_signature = "($self, other)")]
     /// Return true if given graph edges are all contained within current graph.
     ///
     /// Parameters
@@ -2707,7 +2718,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, removed_existing_edges, first_nodes_set, second_nodes_set, first_node_types_set, second_node_types_set)"]
+    #[pyo3(text_signature = "($self, removed_existing_edges, first_nodes_set, second_nodes_set, first_node_types_set, second_node_types_set)")]
     /// Return vector of tuple of Node IDs that form the edges of the required bipartite graph.
     ///
     /// Parameters
@@ -2748,7 +2759,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, removed_existing_edges, first_nodes_set, second_nodes_set, first_node_types_set, second_node_types_set)"]
+    #[pyo3(text_signature = "($self, removed_existing_edges, first_nodes_set, second_nodes_set, first_node_types_set, second_node_types_set)")]
     /// Return vector of tuple of Node IDs that form the edges of the required bipartite graph.
     ///
     /// Parameters
@@ -2785,7 +2796,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, central_node, removed_existing_edges, star_points_nodes_set, star_points_node_types_set)"]
+    #[pyo3(text_signature = "($self, central_node, removed_existing_edges, star_points_nodes_set, star_points_node_types_set)")]
     /// Return vector of tuple of Node IDs that form the edges of the required star.
     ///
     /// Parameters
@@ -2822,7 +2833,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, central_node, removed_existing_edges, star_points_nodes_set, star_points_node_types_set)"]
+    #[pyo3(text_signature = "($self, central_node, removed_existing_edges, star_points_nodes_set, star_points_node_types_set)")]
     /// Return vector of tuple of Node names that form the edges of the required star.
     ///
     /// Parameters
@@ -2855,7 +2866,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, directed, allow_selfloops, removed_existing_edges, allow_node_type_set, allow_node_set)"]
+    #[pyo3(text_signature = "($self, directed, allow_selfloops, removed_existing_edges, allow_node_type_set, allow_node_set)")]
     /// Return vector of tuple of Node IDs that form the edges of the required clique.
     ///
     /// Parameters
@@ -2894,7 +2905,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, directed, allow_selfloops, removed_existing_edges, allow_node_type_set, allow_node_set)"]
+    #[pyo3(text_signature = "($self, directed, allow_selfloops, removed_existing_edges, allow_node_type_set, allow_node_set)")]
     /// Return vector of tuple of Node names that form the edges of the required clique.
     ///
     /// Parameters
@@ -2932,7 +2943,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src, dst)"]
+    #[pyo3(text_signature = "($self, src, dst)")]
     /// Return edge value corresponding to given node IDs.
     ///
     /// Parameters
@@ -2947,7 +2958,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, edge)"]
+    #[pyo3(text_signature = "($self, edge)")]
     /// Returns source and destination nodes corresponding to given edge ID.
     ///
     /// Parameters
@@ -2961,14 +2972,14 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return maximum encodable edge number
     pub fn get_max_encodable_edge_number(&self) -> EdgeT {
         self.inner.get_max_encodable_edge_number().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_id)"]
+    #[pyo3(text_signature = "($self, node_id)")]
     /// Validates provided node ID.
     ///
     /// Parameters
@@ -2987,7 +2998,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_ids)"]
+    #[pyo3(text_signature = "($self, node_ids)")]
     /// Validates all provided node IDs.
     ///
     /// Parameters
@@ -3013,7 +3024,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, edge_id)"]
+    #[pyo3(text_signature = "($self, edge_id)")]
     /// Validates provided edge ID.
     ///
     /// Parameters
@@ -3032,7 +3043,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, edge_ids)"]
+    #[pyo3(text_signature = "($self, edge_ids)")]
     /// Validates provided edge IDs.
     ///
     /// Parameters
@@ -3058,7 +3069,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Raises an error if the graph contains unknown node types.
     ///
     /// Raises
@@ -3073,7 +3084,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Raises an error if the graph contains unknown edge types.
     ///
     /// Raises
@@ -3088,7 +3099,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_type_id)"]
+    #[pyo3(text_signature = "($self, node_type_id)")]
     /// Validates provided node type ID.
     ///
     /// Parameters
@@ -3110,7 +3121,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_type_ids)"]
+    #[pyo3(text_signature = "($self, node_type_ids)")]
     /// Validates provided node type IDs.
     ///
     /// Parameters
@@ -3137,7 +3148,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, edge_type_id)"]
+    #[pyo3(text_signature = "($self, edge_type_id)")]
     /// Validates provided edge type ID.
     ///
     /// Parameters
@@ -3159,7 +3170,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, edge_type_ids)"]
+    #[pyo3(text_signature = "($self, edge_type_ids)")]
     /// Validates provided edge type IDs.
     ///
     /// Parameters
@@ -3186,7 +3197,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Raises an error if the graph's nodes do not have detectable ontologies.
     ///
     /// Raises
@@ -3199,7 +3210,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Raises an error if the graph is not undirected.
     ///
     /// Raises
@@ -3212,7 +3223,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Raises an error if the graph is not a directed acyclic.
     ///
     /// Raises
@@ -3225,7 +3236,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Raises an error if the graph contains trap nodes.
     ///
     /// Raises
@@ -3238,7 +3249,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Raises an error if the graph does not have edge types.
     ///
     /// Raises
@@ -3251,7 +3262,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Raises an error if the graph does not have edge types.
     ///
     /// Raises
@@ -3264,7 +3275,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Raises an error if the graph does not include the identity matrix.
     ///
     /// Raises
@@ -3277,7 +3288,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Raises an error if the graph contains zero weighted degree.
     ///
     /// Raises
@@ -3290,7 +3301,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Raises an error if the graph has a maximal weighted
     ///
     /// Raises
@@ -3303,7 +3314,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Raises an error if the graph does not have any node.
     ///
     /// Raises
@@ -3316,7 +3327,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Raises an error if the graph is not connected.
     ///
     /// Raises
@@ -3329,7 +3340,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, other)"]
+    #[pyo3(text_signature = "($self, other)")]
     /// Raises an error if the provided graph does not a node vocabulary compatible with the current graph instance.
     ///
     /// Raises
@@ -3342,7 +3353,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return total edge weights, if graph has weights.
     ///
     /// Raises
@@ -3355,7 +3366,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return the minimum weight, if graph has weights.
     ///
     /// Raises
@@ -3368,7 +3379,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return the maximum weight, if graph has weights.
     ///
     /// Raises
@@ -3381,7 +3392,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return the maximum node degree.
     ///
     /// Safety
@@ -3394,7 +3405,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return the minimum node degree.
     ///
     /// Safety
@@ -3407,42 +3418,42 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return the maximum weighted node degree
     pub fn get_weighted_maximum_node_degree(&self) -> PyResult<f64> {
         Ok(pe!(self.inner.get_weighted_maximum_node_degree())?.into())
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return the minimum weighted node degree
     pub fn get_weighted_minimum_node_degree(&self) -> PyResult<f64> {
         Ok(pe!(self.inner.get_weighted_minimum_node_degree())?.into())
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return the number of weighted singleton nodes, i.e. nodes with weighted node degree equal to zero
     pub fn get_number_of_weighted_singleton_nodes(&self) -> PyResult<NodeT> {
         Ok(pe!(self.inner.get_number_of_weighted_singleton_nodes())?.into())
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns number of self-loops, including also those in eventual multi-edges.
     pub fn get_number_of_selfloops(&self) -> EdgeT {
         self.inner.get_number_of_selfloops().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns number of unique self-loops, excluding those in eventual multi-edges.
     pub fn get_number_of_unique_selfloops(&self) -> NodeT {
         self.inner.get_number_of_unique_selfloops().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, features, neighbours_number, max_degree, distance_name, verbose)"]
+    #[pyo3(text_signature = "($self, features, neighbours_number, max_degree, distance_name, verbose)")]
     /// Returns graph with edges added extracted from given node_features.
     ///
     /// This operation might distrupt the graph topology.
@@ -3492,7 +3503,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, name)"]
+    #[pyo3(text_signature = "($self, name)")]
     /// Set the name of the graph.
     ///
     /// Parameters
@@ -3505,7 +3516,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, edge_type)"]
+    #[pyo3(text_signature = "($self, edge_type)")]
     /// Replace all edge types (if present) and set all the edge to edge_type.
     ///
     /// This happens INPLACE, that is edits the current graph instance.
@@ -3531,7 +3542,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, edge_type)"]
+    #[pyo3(text_signature = "($self, edge_type)")]
     /// Replace all edge types (if present) and set all the edge to edge_type.
     ///
     /// This DOES NOT happen inplace, but created a new instance of the graph.
@@ -3546,7 +3557,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_type)"]
+    #[pyo3(text_signature = "($self, node_type)")]
     /// Replace all node types (if present) and set all the node to node_type.
     ///
     /// Parameters
@@ -3562,7 +3573,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_type)"]
+    #[pyo3(text_signature = "($self, node_type)")]
     /// Replace all node types (if present) and set all the node to node_type.
     ///
     /// This DOES NOT happen inplace, but created a new instance of the graph.
@@ -3577,7 +3588,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_type_ids_to_remove)"]
+    #[pyo3(text_signature = "($self, node_type_ids_to_remove)")]
     /// Remove given node type ID from all nodes.
     ///
     /// If any given node remains with no node type, that node is labeled
@@ -3609,7 +3620,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Remove singleton node types from all nodes.
     ///
     /// If any given node remains with no node type, that node is labeled
@@ -3628,7 +3639,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_type_id, node_name_prefixes)"]
+    #[pyo3(text_signature = "($self, node_type_id, node_name_prefixes)")]
     /// Assigns inplace given node type id to the nodes with given prefixes.
     ///
     /// Parameters
@@ -3659,7 +3670,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, edge_type_id, source_node_type_ids, destination_node_type_ids)"]
+    #[pyo3(text_signature = "($self, edge_type_id, source_node_type_ids, destination_node_type_ids)")]
     /// Replaces inplace given edge type id to the nodes with given source and destination node type IDs.
     ///
     /// Parameters
@@ -3696,7 +3707,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, edge_type_id, source_node_type_ids, destination_node_type_ids)"]
+    #[pyo3(text_signature = "($self, edge_type_id, source_node_type_ids, destination_node_type_ids)")]
     /// Replaces given edge type id to the nodes with given source and destination node type IDs.
     ///
     /// Parameters
@@ -3731,7 +3742,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_type_id, node_name_prefixes)"]
+    #[pyo3(text_signature = "($self, node_type_id, node_name_prefixes)")]
     /// Assigns given node type id to the nodes with given prefixes.
     ///
     /// Parameters
@@ -3760,7 +3771,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_type_name)"]
+    #[pyo3(text_signature = "($self, node_type_name)")]
     /// Add node type name to the graph in place.
     ///
     /// Parameters
@@ -3779,7 +3790,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_type_name, node_name_prefixes)"]
+    #[pyo3(text_signature = "($self, node_type_name, node_name_prefixes)")]
     /// Assigns inplace given node type name to the nodes with given prefixes.
     ///
     /// Parameters
@@ -3812,7 +3823,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, edge_type_name)"]
+    #[pyo3(text_signature = "($self, edge_type_name)")]
     /// Add edge type name to the graph in place.
     ///
     /// Parameters
@@ -3831,7 +3842,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, edge_type_name, source_node_type_names, destination_node_type_names)"]
+    #[pyo3(text_signature = "($self, edge_type_name, source_node_type_names, destination_node_type_names)")]
     /// Replaces inplace given edge type name to the nodes with given source and destination node type names.
     ///
     /// Parameters
@@ -3868,7 +3879,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, edge_type_name, source_node_type_names, destination_node_type_names)"]
+    #[pyo3(text_signature = "($self, edge_type_name, source_node_type_names, destination_node_type_names)")]
     /// Replaces given edge type name to the nodes with given source and destination node type names.
     ///
     /// Parameters
@@ -3903,7 +3914,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_type_name, node_name_prefixes)"]
+    #[pyo3(text_signature = "($self, node_type_name, node_name_prefixes)")]
     /// Assigns given node type name to the nodes with given prefixes.
     ///
     /// Parameters
@@ -3932,7 +3943,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Remove homogeneous node types from all nodes.
     ///
     /// If any given node remains with no node type, that node is labeled
@@ -3951,7 +3962,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, edge_type_ids_to_remove)"]
+    #[pyo3(text_signature = "($self, edge_type_ids_to_remove)")]
     /// Remove given edge type ID from all edges.
     ///
     /// Parameters
@@ -3982,7 +3993,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Remove singleton edge types from all edges.
     ///
     /// If any given edge remains with no edge type, that edge is labeled
@@ -4001,7 +4012,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_type_names)"]
+    #[pyo3(text_signature = "($self, node_type_names)")]
     /// Remove given node type names from all nodes.
     ///
     /// If any given node remains with no node type, that node is labeled
@@ -4030,7 +4041,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_type_name)"]
+    #[pyo3(text_signature = "($self, node_type_name)")]
     /// Remove given node type name from all nodes.
     ///
     /// If any given node remains with no node type, that node is labeled
@@ -4059,7 +4070,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_type_id)"]
+    #[pyo3(text_signature = "($self, node_type_id)")]
     /// Remove given node type ID from all nodes.
     ///
     /// If any given node remains with no node type, that node is labeled
@@ -4083,7 +4094,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Remove singleton node types from all nodes.
     ///
     /// If any given node remains with no node type, that node is labeled
@@ -4099,7 +4110,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Remove homogeneous node types from all nodes.
     ///
     /// If any given node remains with no node type, that node is labeled
@@ -4115,7 +4126,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Remove inplace isomorphic node types.
     ///
     /// This will leave for each isomorphic node tyoe group only an element.
@@ -4136,7 +4147,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Remove isomorphic node types.
     ///
     /// This will leave for each isomorphic node tyoe group only an element.
@@ -4154,7 +4165,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, minimum_number_of_edges)"]
+    #[pyo3(text_signature = "($self, minimum_number_of_edges)")]
     /// Remove inplace isomorphic edge types.
     ///
     /// This will leave for each isomorphic edge tyoe group only an element.
@@ -4186,7 +4197,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, minimum_number_of_edges)"]
+    #[pyo3(text_signature = "($self, minimum_number_of_edges)")]
     /// Remove isomorphic edge types.
     ///
     /// This will leave for each isomorphic edge tyoe group only an element.
@@ -4216,7 +4227,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_type_names)"]
+    #[pyo3(text_signature = "($self, node_type_names)")]
     /// Remove given node type names from all nodes.
     ///
     /// If any given node remains with no node type, that node is labeled
@@ -4240,7 +4251,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_type_name)"]
+    #[pyo3(text_signature = "($self, node_type_name)")]
     /// Remove given node type name from all nodes.
     ///
     /// If any given node remains with no node type, that node is labeled
@@ -4264,7 +4275,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, edge_type_name)"]
+    #[pyo3(text_signature = "($self, edge_type_name)")]
     /// Remove given edge type name from all edges.
     ///
     /// If any given edge remains with no edge type, that edge is labeled
@@ -4293,7 +4304,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, edge_type_id)"]
+    #[pyo3(text_signature = "($self, edge_type_id)")]
     /// Remove given edge type ID from all edges.
     ///
     /// If any given edge remains with no edge type, that edge is labeled
@@ -4317,7 +4328,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Remove singleton edge types from all edges.
     ///
     /// If any given edge remains with no edge type, that edge is labeled
@@ -4333,7 +4344,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, edge_type_name)"]
+    #[pyo3(text_signature = "($self, edge_type_name)")]
     /// Remove given edge type name from all edges.
     ///
     /// If any given edge remains with no edge type, that edge is labeled
@@ -4357,7 +4368,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Remove node types from the graph.
     ///
     /// Note that the modification happens inplace.
@@ -4375,7 +4386,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Remove node types from the graph.
     ///
     /// Note that the modification does not happen inplace.
@@ -4390,7 +4401,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Remove edge types from the graph.
     ///
     /// Note that the modification happens inplace.
@@ -4410,7 +4421,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Remove edge types from the graph.
     ///
     /// Note that the modification does not happen inplace.
@@ -4425,7 +4436,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Remove edge weights from the graph.
     ///
     /// Note that the modification happens inplace.
@@ -4443,7 +4454,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Remove edge weights from the graph.
     ///
     /// Note that the modification does not happen inplace.
@@ -4458,7 +4469,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, denominator)"]
+    #[pyo3(text_signature = "($self, denominator)")]
     /// Divide edge weights in place.
     ///
     /// Note that the modification happens inplace.
@@ -4475,7 +4486,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, denominator)"]
+    #[pyo3(text_signature = "($self, denominator)")]
     /// Divide edge weights.
     ///
     /// Note that the modification does not happen inplace.
@@ -4490,7 +4501,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Normalize edge weights in place.
     ///
     /// Note that the modification happens inplace.
@@ -4505,7 +4516,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Normalize edge weights.
     ///
     /// Note that the modification does not happen inplace.
@@ -4520,7 +4531,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, denominator)"]
+    #[pyo3(text_signature = "($self, denominator)")]
     /// Multiply edge weights in place.
     ///
     /// Note that the modification happens inplace.
@@ -4537,7 +4548,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, denominator)"]
+    #[pyo3(text_signature = "($self, denominator)")]
     /// Multiply edge weights.
     ///
     /// Note that the modification does not happen inplace.
@@ -4552,7 +4563,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, source_node_ids, destination_node_ids, directed)"]
+    #[pyo3(text_signature = "($self, source_node_ids, destination_node_ids, directed)")]
     /// Returns bipartite graph between the provided source and destination node IDs.
     ///
     /// Parameters
@@ -4579,7 +4590,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_ids, directed)"]
+    #[pyo3(text_signature = "($self, node_ids, directed)")]
     /// Returns clique graph between the provided node IDs.
     ///
     /// Parameters
@@ -4601,7 +4612,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, source_node_names, destination_node_names, directed)"]
+    #[pyo3(text_signature = "($self, source_node_names, destination_node_names, directed)")]
     /// Returns bipartite graph between the provided source and destination node names.
     ///
     /// Parameters
@@ -4628,7 +4639,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_names, directed)"]
+    #[pyo3(text_signature = "($self, node_names, directed)")]
     /// Returns clique graph between the provided node names.
     ///
     /// Parameters
@@ -4650,7 +4661,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, source_node_prefixes, destination_node_prefixes, directed)"]
+    #[pyo3(text_signature = "($self, source_node_prefixes, destination_node_prefixes, directed)")]
     /// Returns bipartite graph between the provided source and destination node prefixes.
     ///
     /// Parameters
@@ -4679,7 +4690,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_prefixes, directed)"]
+    #[pyo3(text_signature = "($self, node_prefixes, directed)")]
     /// Returns clique graph between the nodes with the provided prefixes.
     ///
     /// Parameters
@@ -4701,7 +4712,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, source_node_types, destination_node_types, directed)"]
+    #[pyo3(text_signature = "($self, source_node_types, destination_node_types, directed)")]
     /// Returns bipartite graph between the provided source and destination node types.
     ///
     /// Parameters
@@ -4728,7 +4739,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_types, directed)"]
+    #[pyo3(text_signature = "($self, node_types, directed)")]
     /// Returns clique graph between the nodes with the provided node types.
     ///
     /// Parameters
@@ -4750,7 +4761,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, minimum_number_of_nodes_per_circle, compute_circle_nodes)"]
+    #[pyo3(text_signature = "($self, minimum_number_of_nodes_per_circle, compute_circle_nodes)")]
     /// Return vector of Circles in the current graph instance.
     ///
     /// Parameters
@@ -4771,7 +4782,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns a string describing the memory usage of all the fields of all the
     /// structures used to store the current graph
     pub fn get_memory_stats(&self) -> String {
@@ -4779,21 +4790,21 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns how many bytes are currently used to store the given graph
     pub fn get_total_memory_used(&self) -> usize {
         self.inner.get_total_memory_used().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns how many bytes are currently used to store the nodes
     pub fn get_nodes_total_memory_requirement(&self) -> usize {
         self.inner.get_nodes_total_memory_requirement().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns human readable amount of how many bytes are currently used to store the nodes
     pub fn get_nodes_total_memory_requirement_human_readable(&self) -> String {
         self.inner
@@ -4802,14 +4813,14 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns how many bytes are currently used to store the edges
     pub fn get_edges_total_memory_requirement(&self) -> usize {
         self.inner.get_edges_total_memory_requirement().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns human readable amount of how many bytes are currently used to store the edges
     pub fn get_edges_total_memory_requirement_human_readable(&self) -> String {
         self.inner
@@ -4818,7 +4829,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns how many bytes are currently used to store the edge weights
     pub fn get_edge_weights_total_memory_requirements(&self) -> usize {
         self.inner
@@ -4827,7 +4838,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns human readable amount of how many bytes are currently used to store the edge weights
     pub fn get_edge_weights_total_memory_requirements_human_readable(&self) -> String {
         self.inner
@@ -4836,14 +4847,14 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns how many bytes are currently used to store the node types
     pub fn get_node_types_total_memory_requirements(&self) -> PyResult<usize> {
         Ok(pe!(self.inner.get_node_types_total_memory_requirements())?.into())
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns human readable amount of how many bytes are currently used to store the node types
     pub fn get_node_types_total_memory_requirements_human_readable(&self) -> PyResult<String> {
         Ok(pe!(self
@@ -4853,14 +4864,14 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns how many bytes are currently used to store the edge types
     pub fn get_edge_types_total_memory_requirements(&self) -> PyResult<usize> {
         Ok(pe!(self.inner.get_edge_types_total_memory_requirements())?.into())
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns human readable amount of how many bytes are currently used to store the edge types
     pub fn get_edge_types_total_memory_requirements_human_readable(&self) -> PyResult<String> {
         Ok(pe!(self
@@ -4870,7 +4881,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, normalize, low_centrality, verbose)"]
+    #[pyo3(text_signature = "($self, normalize, low_centrality, verbose)")]
     /// Returns total number of triangles ignoring the weights.
     ///
     /// The method dispatches the fastest method according to the current
@@ -4899,21 +4910,21 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns total number of triads in the graph without taking into account weights
     pub fn get_number_of_triads(&self) -> EdgeT {
         self.inner.get_number_of_triads().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns total number of triads in the weighted graph
     pub fn get_number_of_weighted_triads(&self) -> PyResult<f64> {
         Ok(pe!(self.inner.get_number_of_weighted_triads())?.into())
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, low_centrality, verbose)"]
+    #[pyo3(text_signature = "($self, low_centrality, verbose)")]
     /// Returns transitivity of the graph without taking into account weights.
     ///
     /// Parameters
@@ -4930,7 +4941,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, normalize, low_centrality, verbose)"]
+    #[pyo3(text_signature = "($self, normalize, low_centrality, verbose)")]
     /// Returns number of triangles in the graph without taking into account the weights.
     ///
     /// The method dispatches the fastest method according to the current
@@ -4966,7 +4977,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, low_centrality, verbose)"]
+    #[pyo3(text_signature = "($self, low_centrality, verbose)")]
     /// Returns clustering coefficients for all nodes in the graph.
     ///
     /// Parameters
@@ -4991,7 +5002,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, low_centrality, verbose)"]
+    #[pyo3(text_signature = "($self, low_centrality, verbose)")]
     /// Returns the graph clustering coefficient.
     ///
     /// Parameters
@@ -5012,7 +5023,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, low_centrality, verbose)"]
+    #[pyo3(text_signature = "($self, low_centrality, verbose)")]
     /// Returns the graph average clustering coefficient.
     ///
     /// Parameters
@@ -5033,7 +5044,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, other)"]
+    #[pyo3(text_signature = "($self, other)")]
     /// Return whether nodes are remappable to those of the given graph.
     ///
     /// Parameters
@@ -5046,7 +5057,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_ids)"]
+    #[pyo3(text_signature = "($self, node_ids)")]
     /// Returns graph remapped using given node IDs ordering.
     ///
     /// Parameters
@@ -5067,7 +5078,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_ids)"]
+    #[pyo3(text_signature = "($self, node_ids)")]
     /// Returns graph remapped using given node IDs ordering.
     ///
     /// Parameters
@@ -5088,7 +5099,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_names)"]
+    #[pyo3(text_signature = "($self, node_names)")]
     /// Returns graph remapped using given node names ordering.
     ///
     /// Parameters
@@ -5109,7 +5120,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_names_map)"]
+    #[pyo3(text_signature = "($self, node_names_map)")]
     /// Returns graph remapped using given node names mapping hashmap.
     ///
     /// Parameters
@@ -5125,7 +5136,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, other)"]
+    #[pyo3(text_signature = "($self, other)")]
     /// Return graph remapped towards nodes of the given graph.
     ///
     /// Parameters
@@ -5138,7 +5149,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, number_of_negative_samples, random_state, only_from_same_component, sample_only_edges_with_heterogeneous_node_types, minimum_node_degree, maximum_node_degree, source_node_types_names, destination_node_types_names, source_edge_types_names, destination_edge_types_names, source_nodes_prefixes, destination_nodes_prefixes, graph_to_avoid, support, use_scale_free_distribution)"]
+    #[pyo3(text_signature = "($self, number_of_negative_samples, random_state, only_from_same_component, sample_only_edges_with_heterogeneous_node_types, minimum_node_degree, maximum_node_degree, source_node_types_names, destination_node_types_names, source_edge_types_names, destination_edge_types_names, source_nodes_prefixes, destination_nodes_prefixes, graph_to_avoid, support, use_scale_free_distribution)")]
     /// Returns Graph with given amount of negative edges as positive edges.
     ///
     /// The graph generated may be used as a testing negatives partition to be
@@ -5221,7 +5232,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, number_of_samples, random_state, sample_only_edges_with_heterogeneous_node_types, minimum_node_degree, maximum_node_degree, source_node_types_names, destination_node_types_names, source_edge_types_names, destination_edge_types_names, source_nodes_prefixes, destination_nodes_prefixes, edge_type_names, support)"]
+    #[pyo3(text_signature = "($self, number_of_samples, random_state, sample_only_edges_with_heterogeneous_node_types, minimum_node_degree, maximum_node_degree, source_node_types_names, destination_node_types_names, source_edge_types_names, destination_edge_types_names, source_nodes_prefixes, destination_nodes_prefixes, edge_type_names, support)")]
     /// Returns Graph with given amount of subsampled edges.
     ///
     /// Parameters
@@ -5292,7 +5303,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, train_size, random_state, edge_types, include_all_edge_types, minimum_node_degree, maximum_node_degree, verbose)"]
+    #[pyo3(text_signature = "($self, train_size, random_state, edge_types, include_all_edge_types, minimum_node_degree, maximum_node_degree, verbose)")]
     /// Returns holdout for training ML algorithms on the graph structure.
     ///
     /// The holdouts returned are a tuple of graphs. The first one, which
@@ -5359,7 +5370,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, train_size, random_state, include_all_edge_types, edge_types, min_number_overlaps, verbose)"]
+    #[pyo3(text_signature = "($self, train_size, random_state, include_all_edge_types, edge_types, min_number_overlaps, verbose)")]
     /// Returns random holdout for training ML algorithms on the graph edges.
     ///
     /// The holdouts returned are a tuple of graphs. In neither holdouts the
@@ -5415,7 +5426,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, train_size, use_stratification, random_state)"]
+    #[pyo3(text_signature = "($self, train_size, use_stratification, random_state)")]
     /// Returns node-label holdout indices for training ML algorithms on the graph node labels.
     ///
     /// Parameters
@@ -5464,7 +5475,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, train_size, use_stratification, random_state)"]
+    #[pyo3(text_signature = "($self, train_size, use_stratification, random_state)")]
     /// Returns node-label holdout indices for training ML algorithms on the graph node labels.
     ///
     /// Parameters
@@ -5513,7 +5524,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, train_size, use_stratification, random_state)"]
+    #[pyo3(text_signature = "($self, train_size, use_stratification, random_state)")]
     /// Returns node-label holdout for training ML algorithms on the graph node labels.
     ///
     /// Parameters
@@ -5553,7 +5564,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, train_size, use_stratification, random_state)"]
+    #[pyo3(text_signature = "($self, train_size, use_stratification, random_state)")]
     /// Returns edge-label holdout for training ML algorithms on the graph edge labels.
     /// This is commonly used for edge type prediction tasks.
     ///
@@ -5599,7 +5610,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, nodes_number, random_state, verbose)"]
+    #[pyo3(text_signature = "($self, nodes_number, random_state, verbose)")]
     /// Returns subgraph with given number of nodes.
     ///
     /// **This method creates a subset of the graph starting from a random node
@@ -5642,7 +5653,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, train_size, use_stratification, random_state)"]
+    #[pyo3(text_signature = "($self, train_size, use_stratification, random_state)")]
     /// Returns node-label holdout for training ML algorithms on the graph node labels.
     ///
     /// Parameters
@@ -5682,7 +5693,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, k, k_index, use_stratification, random_state)"]
+    #[pyo3(text_signature = "($self, k, k_index, use_stratification, random_state)")]
     /// Returns node-label fold for training ML algorithms on the graph node labels.
     ///
     /// Parameters
@@ -5726,7 +5737,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, train_size, use_stratification, random_state)"]
+    #[pyo3(text_signature = "($self, train_size, use_stratification, random_state)")]
     /// Returns edge-label holdout for training ML algorithms on the graph edge labels.
     /// This is commonly used for edge type prediction tasks.
     ///
@@ -5772,7 +5783,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, k, k_index, use_stratification, random_state)"]
+    #[pyo3(text_signature = "($self, k, k_index, use_stratification, random_state)")]
     /// Returns edge-label kfold for training ML algorithms on the graph edge labels.
     /// This is commonly used for edge type prediction tasks.
     ///
@@ -5822,7 +5833,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, k, k_index, edge_types, random_state, verbose)"]
+    #[pyo3(text_signature = "($self, k, k_index, edge_types, random_state, verbose)")]
     /// Returns train and test graph following kfold validation scheme.
     ///
     /// The edges are splitted into k chunks. The k_index-th chunk is used to build
@@ -5875,7 +5886,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return vector of node tuples in the current graph instance
     pub fn get_node_tuples(&self) -> PyResult<Vec<NodeTuple>> {
         Ok(pe!(self.inner.get_node_tuples())?
@@ -5885,7 +5896,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, minimum_number_of_nodes_per_chain, compute_chain_nodes)"]
+    #[pyo3(text_signature = "($self, minimum_number_of_nodes_per_chain, compute_chain_nodes)")]
     /// Return vector of chains in the current graph instance.
     ///
     /// Parameters
@@ -5906,7 +5917,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src_node_id)"]
+    #[pyo3(text_signature = "($self, src_node_id)")]
     /// Returns shortest path result for the BFS from given source node ID.
     ///
     /// Parameters
@@ -5930,7 +5941,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src_node_ids, maximal_depth)"]
+    #[pyo3(text_signature = "($self, src_node_ids, maximal_depth)")]
     /// Returns shortest path result for the BFS from given source node IDs, treating the set of source nodes as an hyper-node.
     ///
     /// Parameters
@@ -5959,7 +5970,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src_node_id, maximal_depth)"]
+    #[pyo3(text_signature = "($self, src_node_id, maximal_depth)")]
     /// Returns shortest path result for the BFS from given source node ID.
     ///
     /// Parameters
@@ -5987,7 +5998,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src_node_id)"]
+    #[pyo3(text_signature = "($self, src_node_id)")]
     /// Returns shortest path result for the BFS from given source node ID.
     ///
     /// Parameters
@@ -6013,7 +6024,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src_node_ids, dst_node_id, compute_predecessors, maximal_depth)"]
+    #[pyo3(text_signature = "($self, src_node_ids, dst_node_id, compute_predecessors, maximal_depth)")]
     /// Returns vector of minimum paths distances and vector of nodes predecessors, if requested, treating the set of source nodes as an hyper-node.
     ///
     /// Parameters
@@ -6049,7 +6060,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src_node_id, dst_node_id, compute_predecessors, maximal_depth)"]
+    #[pyo3(text_signature = "($self, src_node_id, dst_node_id, compute_predecessors, maximal_depth)")]
     /// Returns vector of minimum paths distances and vector of nodes predecessors, if requested.
     ///
     /// Parameters
@@ -6085,7 +6096,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src_node_id, dst_node_id, maximal_depth)"]
+    #[pyo3(text_signature = "($self, src_node_id, dst_node_id, maximal_depth)")]
     /// Returns minimum path node IDs and distance from given node ids.
     ///
     /// Parameters
@@ -6132,7 +6143,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src_node_id, dst_node_id, maximal_depth)"]
+    #[pyo3(text_signature = "($self, src_node_id, dst_node_id, maximal_depth)")]
     /// Returns minimum path node names from given node ids.
     ///
     /// Parameters
@@ -6167,7 +6178,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src_node_id, dst_node_id, maximal_depth)"]
+    #[pyo3(text_signature = "($self, src_node_id, dst_node_id, maximal_depth)")]
     /// Returns minimum path node names from given node ids.
     ///
     /// Parameters
@@ -6206,7 +6217,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src_node_name, dst_node_name, maximal_depth)"]
+    #[pyo3(text_signature = "($self, src_node_name, dst_node_name, maximal_depth)")]
     /// Returns minimum path node names from given node names.
     ///
     /// Parameters
@@ -6245,7 +6256,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src_node_name, dst_node_name, maximal_depth)"]
+    #[pyo3(text_signature = "($self, src_node_name, dst_node_name, maximal_depth)")]
     /// Returns minimum path node names from given node names.
     ///
     /// Parameters
@@ -6280,7 +6291,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src_node_id, dst_node_id, k)"]
+    #[pyo3(text_signature = "($self, src_node_id, dst_node_id, k)")]
     /// Return vector of the k minimum paths node IDs between given source node and destination node ID.
     ///
     /// Parameters
@@ -6314,7 +6325,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src_node_id, dst_node_id, k)"]
+    #[pyo3(text_signature = "($self, src_node_id, dst_node_id, k)")]
     /// Return vector of the k minimum paths node IDs between given source node and destination node ID.
     ///
     /// Parameters
@@ -6351,7 +6362,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src_node_name, dst_node_name, k)"]
+    #[pyo3(text_signature = "($self, src_node_name, dst_node_name, k)")]
     /// Return vector of the k minimum paths node IDs between given source node and destination node name.
     ///
     /// Parameters
@@ -6386,7 +6397,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src_node_name, dst_node_name, k)"]
+    #[pyo3(text_signature = "($self, src_node_name, dst_node_name, k)")]
     /// Return vector of the k minimum paths node names between given source node and destination node name.
     ///
     /// Parameters
@@ -6423,7 +6434,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_id)"]
+    #[pyo3(text_signature = "($self, node_id)")]
     /// Returns unweighted eccentricity of the given node.
     ///
     /// This method will panic if the given node ID does not exists in the graph.
@@ -6448,7 +6459,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_id, use_edge_weights_as_probabilities)"]
+    #[pyo3(text_signature = "($self, node_id, use_edge_weights_as_probabilities)")]
     /// Returns weighted eccentricity of the given node.
     ///
     /// This method will panic if the given node ID does not exists in the graph.
@@ -6478,7 +6489,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_id)"]
+    #[pyo3(text_signature = "($self, node_id)")]
     /// Returns unweighted eccentricity of the given node ID.
     ///
     /// Parameters
@@ -6508,7 +6519,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_id, use_edge_weights_as_probabilities)"]
+    #[pyo3(text_signature = "($self, node_id, use_edge_weights_as_probabilities)")]
     /// Returns weighted eccentricity of the given node ID.
     ///
     /// Parameters
@@ -6541,7 +6552,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_name)"]
+    #[pyo3(text_signature = "($self, node_name)")]
     /// Returns unweighted eccentricity of the given node name.
     ///
     /// Parameters
@@ -6560,7 +6571,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_name, use_edge_weights_as_probabilities)"]
+    #[pyo3(text_signature = "($self, node_name, use_edge_weights_as_probabilities)")]
     /// Returns weighted eccentricity of the given node name.
     ///
     /// Parameters
@@ -6593,7 +6604,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src_node_ids, maybe_dst_node_id, maybe_dst_node_ids, compute_predecessors, maximal_depth, use_edge_weights_as_probabilities)"]
+    #[pyo3(text_signature = "($self, src_node_ids, maybe_dst_node_id, maybe_dst_node_ids, compute_predecessors, maximal_depth, use_edge_weights_as_probabilities)")]
     /// Returns vector of minimum paths distances and vector of nodes predecessors, if requested, from the given root nodes (treated as an hyper-node).
     ///
     /// Parameters
@@ -6637,7 +6648,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src_node_id, maybe_dst_node_id, maybe_dst_node_ids, compute_predecessors, maximal_depth, use_edge_weights_as_probabilities)"]
+    #[pyo3(text_signature = "($self, src_node_id, maybe_dst_node_id, maybe_dst_node_ids, compute_predecessors, maximal_depth, use_edge_weights_as_probabilities)")]
     /// Returns vector of minimum paths distances and vector of nodes predecessors, if requested.
     ///
     /// Parameters
@@ -6681,7 +6692,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src_node_id, dst_node_id, use_edge_weights_as_probabilities, maximal_depth)"]
+    #[pyo3(text_signature = "($self, src_node_id, dst_node_id, use_edge_weights_as_probabilities, maximal_depth)")]
     /// Returns minimum path node IDs and distance from given node ids.
     ///
     /// Parameters
@@ -6721,7 +6732,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src_node_id, dst_node_id, use_edge_weights_as_probabilities, maximal_depth)"]
+    #[pyo3(text_signature = "($self, src_node_id, dst_node_id, use_edge_weights_as_probabilities, maximal_depth)")]
     /// Returns minimum path node names from given node ids.
     ///
     /// Parameters
@@ -6764,7 +6775,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src_node_id, dst_node_id, use_edge_weights_as_probabilities, maximal_depth)"]
+    #[pyo3(text_signature = "($self, src_node_id, dst_node_id, use_edge_weights_as_probabilities, maximal_depth)")]
     /// Returns minimum path node names from given node ids.
     ///
     /// Parameters
@@ -6809,7 +6820,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src_node_name, dst_node_name, use_edge_weights_as_probabilities, maximal_depth)"]
+    #[pyo3(text_signature = "($self, src_node_name, dst_node_name, use_edge_weights_as_probabilities, maximal_depth)")]
     /// Returns minimum path node names from given node names.
     ///
     /// Parameters
@@ -6854,7 +6865,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src_node_name, dst_node_name, use_edge_weights_as_probabilities, maximal_depth)"]
+    #[pyo3(text_signature = "($self, src_node_name, dst_node_name, use_edge_weights_as_probabilities, maximal_depth)")]
     /// Returns minimum path node names from given node names.
     ///
     /// Parameters
@@ -6902,7 +6913,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src_node_id, dst_node_id, compute_predecessors, maximal_depth)"]
+    #[pyo3(text_signature = "($self, src_node_id, dst_node_id, compute_predecessors, maximal_depth)")]
     /// Returns vector of minimum paths distances and vector of nodes predecessors from given source node ID and optional destination node ID.
     ///
     /// Parameters
@@ -6939,7 +6950,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src_node_id, maybe_dst_node_id, maybe_dst_node_ids, compute_predecessors, maximal_depth, use_edge_weights_as_probabilities)"]
+    #[pyo3(text_signature = "($self, src_node_id, maybe_dst_node_id, maybe_dst_node_ids, compute_predecessors, maximal_depth, use_edge_weights_as_probabilities)")]
     /// Returns vector of minimum paths distances and vector of nodes predecessors from given source node ID and optional destination node ID.
     ///
     /// Parameters
@@ -6992,7 +7003,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns approximated diameter and tentative low eccentricity node for an UNDIRECTED graph.
     /// This method returns a lowerbound of the diameter by doing the following steps:
     /// * Find the most central node
@@ -7010,7 +7021,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, ignore_infinity, verbose)"]
+    #[pyo3(text_signature = "($self, ignore_infinity, verbose)")]
     /// Returns diameter of the graph using naive method.
     ///
     /// Note that there exists the non-naive method for undirected graphs
@@ -7043,7 +7054,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, ignore_infinity, verbose)"]
+    #[pyo3(text_signature = "($self, ignore_infinity, verbose)")]
     /// Returns diameter of the graph.
     ///
     /// Parameters
@@ -7071,7 +7082,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src_node_name, dst_node_name, compute_predecessors, maximal_depth)"]
+    #[pyo3(text_signature = "($self, src_node_name, dst_node_name, compute_predecessors, maximal_depth)")]
     /// Returns vector of minimum paths distances and vector of nodes predecessors from given source node name and optional destination node name.
     ///
     /// Parameters
@@ -7112,7 +7123,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src_node_name, maybe_dst_node_name, maybe_dst_node_names, compute_predecessors, maximal_depth, use_edge_weights_as_probabilities)"]
+    #[pyo3(text_signature = "($self, src_node_name, maybe_dst_node_name, maybe_dst_node_names, compute_predecessors, maximal_depth, use_edge_weights_as_probabilities)")]
     /// Returns vector of minimum paths distances and vector of nodes predecessors from given source node name and optional destination node name.
     ///
     /// Parameters
@@ -7161,7 +7172,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, verbose)"]
+    #[pyo3(text_signature = "($self, verbose)")]
     /// Returns number a triple with (number of components, number of nodes of the smallest component, number of nodes of the biggest component )
     ///
     /// Parameters
@@ -7180,14 +7191,14 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns number of connected nodes in the graph.
     pub fn get_number_of_connected_nodes(&self) -> NodeT {
         self.inner.get_number_of_connected_nodes().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns number of singleton nodes with selfloops within the graph.
     pub fn get_number_of_singleton_nodes_with_selfloops(&self) -> NodeT {
         self.inner
@@ -7196,14 +7207,14 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns number of singleton nodes within the graph.
     pub fn get_number_of_singleton_nodes(&self) -> NodeT {
         self.inner.get_number_of_singleton_nodes().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns number of disconnected nodes within the graph.
     /// A Disconnected node is a node which is nor a singleton nor a singleton
     /// with selfloops.
@@ -7212,7 +7223,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns vector of singleton node IDs of the graph.
     pub fn get_singleton_node_ids(&self) -> Py<PyArray1<NodeT>> {
         let gil = pyo3::Python::acquire_gil();
@@ -7220,7 +7231,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns vector of singleton node names of the graph.
     pub fn get_singleton_node_names(&self) -> Vec<String> {
         self.inner
@@ -7231,7 +7242,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns vector of singleton_with_selfloops node IDs of the graph.
     pub fn get_singleton_with_selfloops_node_ids(&self) -> Py<PyArray1<NodeT>> {
         let gil = pyo3::Python::acquire_gil();
@@ -7243,7 +7254,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns vector of singleton_with_selfloops node names of the graph.
     pub fn get_singleton_with_selfloops_node_names(&self) -> Vec<String> {
         self.inner
@@ -7254,14 +7265,14 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns density of the graph.
     pub fn get_density(&self) -> PyResult<f64> {
         Ok(pe!(self.inner.get_density())?.into())
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns the traps rate of the graph.
     ///
     /// THIS IS EXPERIMENTAL AND MUST BE PROVEN!
@@ -7270,7 +7281,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns vector of trap nodes present in the current graph
     pub fn get_trap_node_ids(&self) -> Py<PyArray1<NodeT>> {
         let gil = pyo3::Python::acquire_gil();
@@ -7278,63 +7289,63 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns unweighted mean node degree of the graph.
     pub fn get_node_degrees_mean(&self) -> PyResult<f64> {
         Ok(pe!(self.inner.get_node_degrees_mean())?.into())
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns weighted mean node degree of the graph.
     pub fn get_weighted_node_degrees_mean(&self) -> PyResult<f64> {
         Ok(pe!(self.inner.get_weighted_node_degrees_mean())?.into())
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns number of undirected edges of the graph.
     pub fn get_number_of_undirected_edges(&self) -> EdgeT {
         self.inner.get_number_of_undirected_edges().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns number of undirected edges of the graph.
     pub fn get_number_of_unique_undirected_edges(&self) -> EdgeT {
         self.inner.get_number_of_unique_undirected_edges().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns number of edges of the graph.
     pub fn get_number_of_edges(&self) -> EdgeT {
         self.inner.get_number_of_edges().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns number of unique edges of the graph.
     pub fn get_number_of_unique_edges(&self) -> EdgeT {
         self.inner.get_number_of_unique_edges().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns unweighted median node degree of the graph
     pub fn get_node_degrees_median(&self) -> PyResult<NodeT> {
         Ok(pe!(self.inner.get_node_degrees_median())?.into())
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns weighted median node degree of the graph
     pub fn get_weighted_node_degrees_median(&self) -> PyResult<f64> {
         Ok(pe!(self.inner.get_weighted_node_degrees_median())?.into())
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns maximum node degree of the graph.
     ///
     /// Raises
@@ -7347,7 +7358,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns maximum node degree of the graph.
     ///
     /// Safety
@@ -7358,14 +7369,14 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns maximum node degree of the graph.
     pub fn get_most_central_node_id(&self) -> PyResult<NodeT> {
         Ok(pe!(self.inner.get_most_central_node_id())?.into())
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns minimum node degree of the graph.
     ///
     /// Raises
@@ -7378,28 +7389,28 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns mode node degree of the graph.
     pub fn get_node_degrees_mode(&self) -> PyResult<NodeT> {
         Ok(pe!(self.inner.get_node_degrees_mode())?.into())
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns rate of self-loops.
     pub fn get_selfloop_nodes_rate(&self) -> PyResult<f64> {
         Ok(pe!(self.inner.get_selfloop_nodes_rate())?.into())
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return name of the graph.
     pub fn get_name(&self) -> String {
         self.inner.get_name().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return the number of traps (nodes without any outgoing edges that are not singletons)
     /// This also includes nodes with only a self-loops, therefore singletons with
     /// only a self-loops are not considered traps because you could make a walk on them.
@@ -7408,7 +7419,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, directed)"]
+    #[pyo3(text_signature = "($self, directed)")]
     /// Return vector of the non-unique source nodes.
     ///
     /// Parameters
@@ -7422,7 +7433,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return vector on the (non unique) directed source nodes of the graph
     pub fn get_directed_source_node_ids(&self) -> Py<PyArray1<NodeT>> {
         let gil = pyo3::Python::acquire_gil();
@@ -7430,7 +7441,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, directed)"]
+    #[pyo3(text_signature = "($self, directed)")]
     /// Return vector of the non-unique source nodes names.
     ///
     /// Parameters
@@ -7447,7 +7458,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, directed)"]
+    #[pyo3(text_signature = "($self, directed)")]
     /// Return vector on the (non unique) destination nodes of the graph.
     ///
     /// Parameters
@@ -7465,7 +7476,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return vector on the (non unique) directed destination nodes of the graph
     pub fn get_directed_destination_node_ids(&self) -> Py<PyArray1<NodeT>> {
         let gil = pyo3::Python::acquire_gil();
@@ -7473,7 +7484,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, directed)"]
+    #[pyo3(text_signature = "($self, directed)")]
     /// Return vector of the non-unique destination nodes names.
     ///
     /// Parameters
@@ -7490,7 +7501,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return vector with the sorted nodes names
     pub fn get_node_names(&self) -> Vec<String> {
         self.inner
@@ -7501,7 +7512,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return vector with the node URLs.
     pub fn get_node_urls(&self) -> Vec<Option<String>> {
         self.inner
@@ -7512,7 +7523,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return vector with the node predicted ontology.
     pub fn get_node_ontologies(&self) -> Vec<Option<String>> {
         self.inner
@@ -7523,7 +7534,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_name)"]
+    #[pyo3(text_signature = "($self, node_name)")]
     /// Return node ontology for the provided node name, if available.
     ///
     /// Parameters
@@ -7538,7 +7549,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_id)"]
+    #[pyo3(text_signature = "($self, node_id)")]
     /// Return node ontology for the provided node id, if available.
     ///
     /// Parameters
@@ -7553,7 +7564,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_name)"]
+    #[pyo3(text_signature = "($self, node_name)")]
     /// Return node ontology for the provided node name, if available.
     ///
     /// Parameters
@@ -7572,7 +7583,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_id)"]
+    #[pyo3(text_signature = "($self, node_id)")]
     /// Return node ontology for the provided node id, if available.
     ///
     /// Parameters
@@ -7591,7 +7602,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return vector with the sorted nodes Ids
     pub fn get_node_ids(&self) -> Py<PyArray1<NodeT>> {
         let gil = pyo3::Python::acquire_gil();
@@ -7599,7 +7610,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return the directed edge types of the edges
     pub fn get_directed_edge_type_ids(&self) -> PyResult<Vec<Option<EdgeTypeT>>> {
         Ok(pe!(self.inner.get_directed_edge_type_ids())?
@@ -7609,7 +7620,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return the undirected edge types of the edges
     pub fn get_undirected_edge_type_ids(&self) -> PyResult<Vec<Option<EdgeTypeT>>> {
         Ok(pe!(self.inner.get_undirected_edge_type_ids())?
@@ -7619,7 +7630,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return the known edge types of the edges, dropping unknown ones
     pub fn get_known_edge_type_ids(&self) -> PyResult<Py<PyArray1<EdgeTypeT>>> {
         Ok({
@@ -7629,7 +7640,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return the directed source node IDs with known edge types
     pub fn get_directed_source_nodes_with_known_edge_types(&self) -> PyResult<Py<PyArray1<NodeT>>> {
         Ok({
@@ -7643,7 +7654,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return the directed destination node IDs with known edge types
     pub fn get_directed_destination_nodes_with_known_edge_types(
         &self,
@@ -7661,7 +7672,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return the unique edge type IDs of the graph edges.
     pub fn get_unique_edge_type_ids(&self) -> PyResult<Py<PyArray1<EdgeTypeT>>> {
         Ok({
@@ -7671,7 +7682,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return the edge types names
     pub fn get_edge_type_names(&self) -> PyResult<Vec<Option<String>>> {
         Ok(pe!(self.inner.get_edge_type_names())?
@@ -7681,7 +7692,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return the edge types names
     pub fn get_unique_edge_type_names(&self) -> PyResult<Vec<String>> {
         Ok(pe!(self.inner.get_unique_edge_type_names())?
@@ -7691,7 +7702,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return the directed weights of the graph edges.
     pub fn get_directed_edge_weights(&self) -> PyResult<Py<PyArray1<WeightT>>> {
         Ok({
@@ -7701,7 +7712,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return the undirected weights of the graph edges, filtering out edges where src > dst.
     pub fn get_undirected_edge_weights(&self) -> PyResult<Py<PyArray1<WeightT>>> {
         Ok({
@@ -7711,7 +7722,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return the weighted indegree (total weighted inbound edge weights) for each node.
     pub fn get_weighted_node_indegrees(&self) -> PyResult<Py<PyArray1<f64>>> {
         Ok({
@@ -7721,7 +7732,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return the node types of the graph nodes.
     pub fn get_node_type_ids(&self) -> PyResult<Vec<Option<Vec<NodeTypeT>>>> {
         Ok(pe!(self.inner.get_node_type_ids())?
@@ -7731,7 +7742,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns boolean mask of known node types.
     ///
     /// Raises
@@ -7747,7 +7758,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns boolean mask of unknown node types.
     ///
     /// Raises
@@ -7763,7 +7774,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns boolean mask of known edge types.
     ///
     /// Raises
@@ -7779,7 +7790,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns boolean mask of unknown edge types.
     ///
     /// Raises
@@ -7795,7 +7806,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns one-hot encoded node types.
     ///
     /// Raises
@@ -7811,7 +7822,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns one-hot encoded known node types.
     ///
     /// Raises
@@ -7831,7 +7842,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns one-hot encoded edge types.
     ///
     /// Raises
@@ -7847,7 +7858,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns one-hot encoded known edge types.
     ///
     /// Raises
@@ -7867,7 +7878,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return the node types names.
     pub fn get_node_type_names(&self) -> PyResult<Vec<Option<Vec<String>>>> {
         Ok(pe!(self.inner.get_node_type_names())?
@@ -7877,7 +7888,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return the unique node type IDs of the graph nodes.
     pub fn get_unique_node_type_ids(&self) -> PyResult<Py<PyArray1<NodeTypeT>>> {
         Ok({
@@ -7887,7 +7898,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return the unique node types names.
     pub fn get_unique_node_type_names(&self) -> PyResult<Vec<String>> {
         Ok(pe!(self.inner.get_unique_node_type_names())?
@@ -7897,21 +7908,21 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return number of the unique edges in the graph
     pub fn get_number_of_unique_directed_edges(&self) -> EdgeT {
         self.inner.get_number_of_unique_directed_edges().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return the nodes mapping
     pub fn get_nodes_mapping(&self) -> HashMap<String, NodeT> {
         self.inner.get_nodes_mapping().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, directed)"]
+    #[pyo3(text_signature = "($self, directed)")]
     /// Return vector with the sorted edge Ids.
     ///
     /// Parameters
@@ -7925,7 +7936,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return vector with the sorted directed edge node IDs
     pub fn get_directed_edge_node_ids(&self) -> Py<PyArray2<NodeT>> {
         let gil = pyo3::Python::acquire_gil();
@@ -7933,7 +7944,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return vector with the sorted directed triples with (source, edge_type, destination) IDs.
     ///
     /// Raises
@@ -7949,7 +7960,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, directed)"]
+    #[pyo3(text_signature = "($self, directed)")]
     /// Return vector with the sorted edge names.
     ///
     /// Parameters
@@ -7966,7 +7977,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return vector with the sorted directed edge names
     pub fn get_directed_edge_node_names(&self) -> Vec<(String, String)> {
         self.inner
@@ -7977,7 +7988,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return vector with the sorted directed triples with (source, edge_type, destination) names.
     ///
     /// Raises
@@ -7993,7 +8004,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns number of nodes with unknown node type.
     ///
     /// Raises
@@ -8006,7 +8017,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns the number of node with known node type.
     ///
     /// Raises
@@ -8019,7 +8030,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns rate of unknown node types over total nodes number.
     ///
     /// Raises
@@ -8032,7 +8043,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns rate of known node types over total nodes number.
     ///
     /// Raises
@@ -8045,7 +8056,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns minimum number of node types.
     ///
     /// Raises
@@ -8058,7 +8069,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns maximum number of node types.
     ///
     /// Raises
@@ -8071,7 +8082,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns number of maximum multilabel count.
     ///
     /// This value is the maximum number of multilabel counts
@@ -8081,7 +8092,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns number of singleton node types.
     ///
     /// Raises
@@ -8094,7 +8105,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns number of homogeneous node types.
     ///
     /// Raises
@@ -8107,7 +8118,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns list of homogeneous node type IDs.
     ///
     /// Raises
@@ -8127,7 +8138,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns list of homogeneous node type names.
     ///
     /// Raises
@@ -8143,7 +8154,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns vector of singleton node types IDs.
     ///
     /// Raises
@@ -8163,7 +8174,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns vector of singleton node types names.
     ///
     /// Raises
@@ -8179,7 +8190,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns number of unknown edge types.
     ///
     /// Raises
@@ -8192,7 +8203,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns edge IDs of the edges with unknown edge types
     ///
     /// Raises
@@ -8212,7 +8223,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns edge IDs of the edges with known edge types
     ///
     /// Raises
@@ -8232,7 +8243,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, directed)"]
+    #[pyo3(text_signature = "($self, directed)")]
     /// Returns edge node IDs of the edges with unknown edge types
     ///
     /// Parameters
@@ -8259,7 +8270,7 @@ impl Graph {
                 .inner
                 .get_edge_node_ids_with_unknown_edge_types(directed.into()))?;
             let result_array = ThreadDataRaceAware {
-                t: PyArray2::<NodeT>::new(gil.python(), [body.len(), 2], false),
+                t: unsafe{PyArray2::<NodeT>::new(gil.python(), [body.len(), 2], false)},
             };
             body.into_par_iter()
                 .enumerate()
@@ -8272,7 +8283,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, directed)"]
+    #[pyo3(text_signature = "($self, directed)")]
     /// Returns edge node IDs of the edges with known edge types
     ///
     /// Parameters
@@ -8299,7 +8310,7 @@ impl Graph {
                 .inner
                 .get_edge_node_ids_with_known_edge_types(directed.into()))?;
             let result_array = ThreadDataRaceAware {
-                t: PyArray2::<NodeT>::new(gil.python(), [body.len(), 2], false),
+                t: unsafe{PyArray2::<NodeT>::new(gil.python(), [body.len(), 2], false)},
             };
             body.into_par_iter()
                 .enumerate()
@@ -8312,7 +8323,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, directed)"]
+    #[pyo3(text_signature = "($self, directed)")]
     /// Returns edge node names of the edges with unknown edge types
     ///
     /// Parameters
@@ -8339,7 +8350,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, directed)"]
+    #[pyo3(text_signature = "($self, directed)")]
     /// Returns edge node names of the edges with known edge types
     ///
     /// Parameters
@@ -8366,7 +8377,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns a boolean vector that for each node contains whether it has an
     /// unknown node type.
     ///
@@ -8387,7 +8398,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns a boolean vector that for each node contains whether it has an
     /// unknown edge type.
     ///
@@ -8408,7 +8419,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns node IDs of the nodes with unknown node types
     ///
     /// Raises
@@ -8428,7 +8439,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns node IDs of the nodes with known node types
     ///
     /// Raises
@@ -8448,7 +8459,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns node names of the nodes with unknown node types
     ///
     /// Raises
@@ -8464,7 +8475,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_type_id)"]
+    #[pyo3(text_signature = "($self, node_type_id)")]
     /// Returns node IDs of the nodes with given node type ID.
     ///
     /// Parameters
@@ -8495,7 +8506,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_type_ids)"]
+    #[pyo3(text_signature = "($self, node_type_ids)")]
     /// Returns node IDs of the nodes with given node type IDs.
     ///
     /// Parameters
@@ -8526,7 +8537,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_type_names)"]
+    #[pyo3(text_signature = "($self, node_type_names)")]
     /// Returns node IDs of the nodes with given node type names.
     ///
     /// Parameters
@@ -8557,7 +8568,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_type_id)"]
+    #[pyo3(text_signature = "($self, node_type_id)")]
     /// Returns node names of the nodes with given node type ID.
     ///
     /// Parameters
@@ -8584,7 +8595,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_type_name)"]
+    #[pyo3(text_signature = "($self, node_type_name)")]
     /// Returns node IDs of the nodes with given node type name.
     ///
     /// Parameters
@@ -8615,7 +8626,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_type_name)"]
+    #[pyo3(text_signature = "($self, node_type_name)")]
     /// Returns node names of the nodes with given node type name.
     ///
     /// Parameters
@@ -8642,7 +8653,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns node names of the nodes with known node types
     ///
     /// Raises
@@ -8658,7 +8669,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns a boolean vector that for each node contains whether it has an
     /// unknown node type.
     ///
@@ -8679,7 +8690,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns a boolean vector that for each node contains whether it has an
     /// known node type.
     ///
@@ -8700,7 +8711,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns the number of edge with known edge type.
     ///
     /// Raises
@@ -8713,7 +8724,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns rate of unknown edge types over total edges number.
     ///
     /// Raises
@@ -8726,7 +8737,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns rate of known edge types over total edges number.
     ///
     /// Raises
@@ -8739,7 +8750,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns minimum number of edge types.
     ///
     /// Raises
@@ -8752,7 +8763,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns number of singleton edge types.
     ///
     /// Raises
@@ -8765,7 +8776,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns vector of singleton edge types IDs.
     ///
     /// Raises
@@ -8785,7 +8796,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns vector of singleton edge types names.
     ///
     /// Raises
@@ -8801,14 +8812,14 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns number of nodes in the graph
     pub fn get_number_of_nodes(&self) -> NodeT {
         self.inner.get_number_of_nodes().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, verbose)"]
+    #[pyo3(text_signature = "($self, verbose)")]
     /// Return a vector with the components each node belongs to.
     ///
     /// E.g. If we have two components `[0, 2, 3]` and `[1, 4, 5]` the result will look like
@@ -8829,14 +8840,14 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns number of directed edges in the graph
     pub fn get_number_of_directed_edges(&self) -> EdgeT {
         self.inner.get_number_of_directed_edges().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns number of edge types in the graph.
     ///
     /// Raises
@@ -8849,7 +8860,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns number of node types in the graph.
     ///
     /// Raises
@@ -8862,7 +8873,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns the unweighted degree of every node in the graph
     pub fn get_node_degrees(&self) -> Py<PyArray1<NodeT>> {
         let gil = pyo3::Python::acquire_gil();
@@ -8870,7 +8881,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return the indegree for each node.
     pub fn get_node_indegrees(&self) -> Py<PyArray1<NodeT>> {
         let gil = pyo3::Python::acquire_gil();
@@ -8878,7 +8889,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns the weighted degree of every node in the graph
     pub fn get_weighted_node_degrees(&self) -> PyResult<Py<PyArray1<f64>>> {
         Ok({
@@ -8888,7 +8899,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return set of nodes that are not singletons
     pub fn get_not_singletons_node_ids(&self) -> Py<PyArray1<NodeT>> {
         let gil = pyo3::Python::acquire_gil();
@@ -8896,21 +8907,21 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return mapping from instance not trap nodes to dense nodes
     pub fn get_dense_nodes_mapping(&self) -> HashMap<NodeT, NodeT> {
         self.inner.get_dense_nodes_mapping().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return number of edges that have multigraph syblings
     pub fn get_number_of_parallel_edges(&self) -> EdgeT {
         self.inner.get_number_of_parallel_edges().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return vector with node cumulative_node_degrees, that is the comulative node degree
     pub fn get_cumulative_node_degrees(&self) -> Py<PyArray1<EdgeT>> {
         let gil = pyo3::Python::acquire_gil();
@@ -8918,7 +8929,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return vector wit
     pub fn get_reciprocal_sqrt_degrees(&self) -> Py<PyArray1<WeightT>> {
         let gil = pyo3::Python::acquire_gil();
@@ -8926,14 +8937,14 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns number of the source nodes.
     pub fn get_number_of_unique_source_nodes(&self) -> NodeT {
         self.inner.get_number_of_unique_source_nodes().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns edge type IDs counts hashmap.
     ///
     /// Raises
@@ -8946,7 +8957,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns edge type names counts hashmap.
     ///
     /// Raises
@@ -8959,7 +8970,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns node type IDs counts hashmap.
     ///
     /// Raises
@@ -8972,7 +8983,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns node type names counts hashmap.
     ///
     /// Raises
@@ -8985,7 +8996,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, unknown_node_types_value)"]
+    #[pyo3(text_signature = "($self, unknown_node_types_value)")]
     /// Returns 1D single labeled node types ids vector.
     ///
     /// Raises
@@ -9010,7 +9021,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns 1D known single labeled node types ids vector.
     ///
     /// Raises
@@ -9030,7 +9041,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, target_value, unknown_node_types_value)"]
+    #[pyo3(text_signature = "($self, target_value, unknown_node_types_value)")]
     /// Returns 1D binarized node types ids vector
     pub fn get_boolean_node_type_ids(
         &self,
@@ -9051,7 +9062,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, target_value)"]
+    #[pyo3(text_signature = "($self, target_value)")]
     /// Returns 1D binarized known node types ids vector
     pub fn get_known_boolean_node_type_ids(
         &self,
@@ -9070,7 +9081,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns vector of root node ids, nodes with zero inbound degree and non-zero outbound degree
     pub fn get_root_node_ids(&self) -> Py<PyArray1<NodeT>> {
         let gil = pyo3::Python::acquire_gil();
@@ -9078,7 +9089,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns vector of root node names, nodes with zero inbound degree and non-zero outbound degree
     pub fn get_root_node_names(&self) -> Vec<String> {
         self.inner
@@ -9089,7 +9100,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Convert inplace the graph to directed.
     pub fn to_directed_inplace(&mut self) {
         self.inner.to_directed_inplace();
@@ -9097,70 +9108,70 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return a new instance of the current graph as directed
     pub fn to_directed(&self) -> Graph {
         self.inner.to_directed().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return the directed graph from the upper triangular adjacency matrix.
     pub fn to_upper_triangular(&self) -> Graph {
         self.inner.to_upper_triangular().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return the directed graph from the lower triangular adjacency matrix.
     pub fn to_lower_triangular(&self) -> Graph {
         self.inner.to_lower_triangular().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return the graph from the main diagonal adjacency matrix.
     pub fn to_main_diagonal(&self) -> Graph {
         self.inner.to_main_diagonal().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return the graph from the anti-diagonal adjacency matrix.
     pub fn to_anti_diagonal(&self) -> Graph {
         self.inner.to_anti_diagonal().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return the graph from the bidiagonal adjacency matrix.
     pub fn to_bidiagonal(&self) -> Graph {
         self.inner.to_bidiagonal().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return the graph from the arrowhead adjacency matrix.
     pub fn to_arrowhead(&self) -> Graph {
         self.inner.to_arrowhead().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return the graph from the transposed adjacency matrix.
     pub fn to_transposed(&self) -> Graph {
         self.inner.to_transposed().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return the complementary graph.
     pub fn to_complementary(&self) -> Graph {
         self.inner.to_complementary().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, maximal_hop_distance, change_layer_probability, random_walk_length, iterations)"]
+    #[pyo3(text_signature = "($self, maximal_hop_distance, change_layer_probability, random_walk_length, iterations)")]
     /// Returns structural similarity multi-graph.
     ///
     /// Parameters
@@ -9201,7 +9212,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, minimum_degree, minimum_clique_size, clique_per_node, verbose)"]
+    #[pyo3(text_signature = "($self, minimum_degree, minimum_clique_size, clique_per_node, verbose)")]
     /// Returns graph cliques with at least `minimum_degree` nodes.
     ///
     /// Parameters
@@ -9232,7 +9243,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns the maximum clique in the graph.
     ///
     /// Raises
@@ -9245,7 +9256,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, minimum_degree, minimum_clique_size, clique_per_node, verbose)"]
+    #[pyo3(text_signature = "($self, minimum_degree, minimum_clique_size, clique_per_node, verbose)")]
     /// Returns number of graph cliques with at least `minimum_degree` nodes.
     ///
     /// Parameters
@@ -9274,7 +9285,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns report relative to the graph metrics
     ///
     /// The report includes the following metrics by default:
@@ -9319,7 +9330,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, other, verbose)"]
+    #[pyo3(text_signature = "($self, other, verbose)")]
     /// Return rendered textual report about the graph overlaps.
     ///
     /// Parameters
@@ -9337,7 +9348,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_id)"]
+    #[pyo3(text_signature = "($self, node_id)")]
     /// Return human-readable html report of the given node.
     ///
     /// The report, by default, is rendered using html.
@@ -9352,7 +9363,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_name)"]
+    #[pyo3(text_signature = "($self, node_name)")]
     /// Return human-readable html report of the given node.
     ///
     /// The report, by default, is rendered using html.
@@ -9367,7 +9378,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return html short textual report of the graph.
     ///
     /// TODO! Add reports on various node metrics
@@ -9381,7 +9392,7 @@ impl Graph {
 
     #[staticmethod]
     #[automatically_generated_binding]
-    #[text_signature = "(random_state, minimum_node_id, minimum_node_sampling, maximum_node_sampling, nodes_number, include_selfloops, node_type, edge_type, weight, directed, name)"]
+    #[pyo3(text_signature = "(random_state, minimum_node_id, minimum_node_sampling, maximum_node_sampling, nodes_number, include_selfloops, node_type, edge_type, weight, directed, name)")]
     /// Creates new random connected graph with given sizes and types.
     ///
     /// Parameters
@@ -9440,7 +9451,7 @@ impl Graph {
 
     #[staticmethod]
     #[automatically_generated_binding]
-    #[text_signature = "(random_state, minimum_node_id, nodes_number, include_selfloops, node_type, edge_type, weight, directed, name)"]
+    #[pyo3(text_signature = "(random_state, minimum_node_id, nodes_number, include_selfloops, node_type, edge_type, weight, directed, name)")]
     /// Creates new random connected graph with given sizes and types.
     ///
     /// Parameters
@@ -9495,7 +9506,7 @@ impl Graph {
 
     #[staticmethod]
     #[automatically_generated_binding]
-    #[text_signature = "(minimum_node_id, nodes_number, include_selfloops, node_type, edge_type, weight, directed, name)"]
+    #[pyo3(text_signature = "(minimum_node_id, nodes_number, include_selfloops, node_type, edge_type, weight, directed, name)")]
     /// Creates new star graph with given sizes and types.
     ///
     /// Parameters
@@ -9542,7 +9553,7 @@ impl Graph {
 
     #[staticmethod]
     #[automatically_generated_binding]
-    #[text_signature = "(minimum_node_id, nodes_number, include_selfloops, node_type, edge_type, weight, directed, name)"]
+    #[pyo3(text_signature = "(minimum_node_id, nodes_number, include_selfloops, node_type, edge_type, weight, directed, name)")]
     /// Creates new wheel graph with given sizes and types.
     ///
     /// Parameters
@@ -9589,7 +9600,7 @@ impl Graph {
 
     #[staticmethod]
     #[automatically_generated_binding]
-    #[text_signature = "(minimum_node_id, nodes_number, include_selfloops, node_type, edge_type, weight, directed, name)"]
+    #[pyo3(text_signature = "(minimum_node_id, nodes_number, include_selfloops, node_type, edge_type, weight, directed, name)")]
     /// Creates new circle graph with given sizes and types.
     ///
     /// Parameters
@@ -9636,7 +9647,7 @@ impl Graph {
 
     #[staticmethod]
     #[automatically_generated_binding]
-    #[text_signature = "(minimum_node_id, nodes_number, include_selfloops, node_type, edge_type, weight, directed, name)"]
+    #[pyo3(text_signature = "(minimum_node_id, nodes_number, include_selfloops, node_type, edge_type, weight, directed, name)")]
     /// Creates new chain graph with given sizes and types.
     ///
     /// Parameters
@@ -9683,7 +9694,7 @@ impl Graph {
 
     #[staticmethod]
     #[automatically_generated_binding]
-    #[text_signature = "(minimum_node_id, nodes_number, include_selfloops, node_type, edge_type, weight, directed, name)"]
+    #[pyo3(text_signature = "(minimum_node_id, nodes_number, include_selfloops, node_type, edge_type, weight, directed, name)")]
     /// Creates new complete graph with given sizes and types.
     ///
     /// Parameters
@@ -9730,7 +9741,7 @@ impl Graph {
 
     #[staticmethod]
     #[automatically_generated_binding]
-    #[text_signature = "(minimum_node_id, left_clique_nodes_number, right_clique_nodes_number, chain_nodes_number, include_selfloops, left_clique_node_type, right_clique_node_type, chain_node_type, left_clique_edge_type, right_clique_edge_type, chain_edge_type, left_clique_weight, right_clique_weight, chain_weight, directed, name)"]
+    #[pyo3(text_signature = "(minimum_node_id, left_clique_nodes_number, right_clique_nodes_number, chain_nodes_number, include_selfloops, left_clique_node_type, right_clique_node_type, chain_node_type, left_clique_edge_type, right_clique_edge_type, chain_edge_type, left_clique_weight, right_clique_weight, chain_weight, directed, name)")]
     /// Creates new barbell graph with given sizes and types.
     ///
     /// Parameters
@@ -9815,7 +9826,7 @@ impl Graph {
 
     #[staticmethod]
     #[automatically_generated_binding]
-    #[text_signature = "(minimum_node_id, clique_nodes_number, chain_nodes_number, include_selfloops, clique_node_type, chain_node_type, clique_edge_type, chain_edge_type, clique_weight, chain_weight, directed, name)"]
+    #[pyo3(text_signature = "(minimum_node_id, clique_nodes_number, chain_nodes_number, include_selfloops, clique_node_type, chain_node_type, clique_edge_type, chain_edge_type, clique_weight, chain_weight, directed, name)")]
     /// Creates new lollipop graph with given sizes and types.
     ///
     /// Parameters
@@ -9884,7 +9895,7 @@ impl Graph {
 
     #[staticmethod]
     #[automatically_generated_binding]
-    #[text_signature = "(sides, minimum_node_id, node_type, weight, directed, name)"]
+    #[pyo3(text_signature = "(sides, minimum_node_id, node_type, weight, directed, name)")]
     /// Creates new squared lattice graph with given sizes and types.
     ///
     /// Parameters
@@ -9928,7 +9939,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_ids_to_keep, node_ids_to_remove, node_names_to_keep_from_graph, node_names_to_remove_from_graph, node_prefixes_to_keep, node_prefixes_to_remove, node_type_ids_to_keep, node_type_ids_to_remove, node_type_id_to_keep, node_type_id_to_remove, source_node_ids_to_keep, source_node_ids_to_remove, source_node_names_to_keep_from_graph, source_node_names_to_remove_from_graph, source_node_prefixes_to_keep, source_node_prefixes_to_remove, source_node_type_ids_to_keep, source_node_type_ids_to_remove, source_node_type_id_to_keep, source_node_type_id_to_remove, destination_node_ids_to_keep, destination_node_ids_to_remove, destination_node_names_to_keep_from_graph, destination_node_names_to_remove_from_graph, destination_node_prefixes_to_keep, destination_node_prefixes_to_remove, destination_node_type_ids_to_keep, destination_node_type_ids_to_remove, destination_node_type_id_to_keep, destination_node_type_id_to_remove, edge_ids_to_keep, edge_ids_to_remove, edge_node_ids_to_keep, edge_node_ids_to_remove, edge_type_ids_to_keep, edge_type_ids_to_remove, min_edge_weight, max_edge_weight, min_node_degree, max_node_degree, filter_singleton_nodes, filter_singleton_nodes_with_selfloop, filter_selfloops, filter_parallel_edges)"]
+    #[pyo3(text_signature = "($self, node_ids_to_keep, node_ids_to_remove, node_names_to_keep_from_graph, node_names_to_remove_from_graph, node_prefixes_to_keep, node_prefixes_to_remove, node_type_ids_to_keep, node_type_ids_to_remove, node_type_id_to_keep, node_type_id_to_remove, source_node_ids_to_keep, source_node_ids_to_remove, source_node_names_to_keep_from_graph, source_node_names_to_remove_from_graph, source_node_prefixes_to_keep, source_node_prefixes_to_remove, source_node_type_ids_to_keep, source_node_type_ids_to_remove, source_node_type_id_to_keep, source_node_type_id_to_remove, destination_node_ids_to_keep, destination_node_ids_to_remove, destination_node_names_to_keep_from_graph, destination_node_names_to_remove_from_graph, destination_node_prefixes_to_keep, destination_node_prefixes_to_remove, destination_node_type_ids_to_keep, destination_node_type_ids_to_remove, destination_node_type_id_to_keep, destination_node_type_id_to_remove, edge_ids_to_keep, edge_ids_to_remove, edge_node_ids_to_keep, edge_node_ids_to_remove, edge_type_ids_to_keep, edge_type_ids_to_remove, min_edge_weight, max_edge_weight, min_node_degree, max_node_degree, filter_singleton_nodes, filter_singleton_nodes_with_selfloop, filter_selfloops, filter_parallel_edges)")]
     /// Returns a **NEW** Graph that does not have the required attributes.
     ///
     /// Parameters
@@ -10121,7 +10132,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_names_to_keep, node_names_to_remove, node_names_to_keep_from_graph, node_names_to_remove_from_graph, node_prefixes_to_keep, node_prefixes_to_remove, node_type_names_to_keep, node_type_names_to_remove, node_type_name_to_keep, node_type_name_to_remove, source_node_names_to_keep, source_node_names_to_remove, source_node_names_to_keep_from_graph, source_node_names_to_remove_from_graph, source_node_prefixes_to_keep, source_node_prefixes_to_remove, source_node_type_names_to_keep, source_node_type_names_to_remove, source_node_type_name_to_keep, source_node_type_name_to_remove, destination_node_names_to_keep, destination_node_names_to_remove, destination_node_names_to_keep_from_graph, destination_node_names_to_remove_from_graph, destination_node_prefixes_to_keep, destination_node_prefixes_to_remove, destination_node_type_names_to_keep, destination_node_type_names_to_remove, destination_node_type_name_to_keep, destination_node_type_name_to_remove, edge_node_names_to_keep, edge_node_names_to_remove, edge_type_names_to_keep, edge_type_names_to_remove, min_edge_weight, max_edge_weight, min_node_degree, max_node_degree, filter_singleton_nodes, filter_singleton_nodes_with_selfloop, filter_selfloops, filter_parallel_edges)"]
+    #[pyo3(text_signature = "($self, node_names_to_keep, node_names_to_remove, node_names_to_keep_from_graph, node_names_to_remove_from_graph, node_prefixes_to_keep, node_prefixes_to_remove, node_type_names_to_keep, node_type_names_to_remove, node_type_name_to_keep, node_type_name_to_remove, source_node_names_to_keep, source_node_names_to_remove, source_node_names_to_keep_from_graph, source_node_names_to_remove_from_graph, source_node_prefixes_to_keep, source_node_prefixes_to_remove, source_node_type_names_to_keep, source_node_type_names_to_remove, source_node_type_name_to_keep, source_node_type_name_to_remove, destination_node_names_to_keep, destination_node_names_to_remove, destination_node_names_to_keep_from_graph, destination_node_names_to_remove_from_graph, destination_node_prefixes_to_keep, destination_node_prefixes_to_remove, destination_node_type_names_to_keep, destination_node_type_names_to_remove, destination_node_type_name_to_keep, destination_node_type_name_to_remove, edge_node_names_to_keep, edge_node_names_to_remove, edge_type_names_to_keep, edge_type_names_to_remove, min_edge_weight, max_edge_weight, min_node_degree, max_node_degree, filter_singleton_nodes, filter_singleton_nodes_with_selfloop, filter_selfloops, filter_parallel_edges)")]
     /// Returns a **NEW** Graph that does not have the required attributes.
     ///
     /// Parameters
@@ -10306,7 +10317,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns new graph without unknown node types and relative nodes.
     ///
     /// Note that this method will remove ALL nodes labeled with unknown node
@@ -10316,7 +10327,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns new graph without unknown edge types and relative edges.
     ///
     /// Note that this method will remove ALL edges labeled with unknown edge
@@ -10326,7 +10337,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns new graph without singleton nodes.
     ///
     /// A node is singleton when does not have neither incoming or outgoing edges.
@@ -10335,21 +10346,21 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns new graph without tendrils
     pub fn remove_tendrils(&self) -> PyResult<Graph> {
         Ok(pe!(self.inner.remove_tendrils())?.into())
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns new graph without tendrils
     pub fn remove_dendritic_trees(&self) -> PyResult<Graph> {
         Ok(pe!(self.inner.remove_dendritic_trees())?.into())
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, minimum_node_degree)"]
+    #[pyo3(text_signature = "($self, minimum_node_degree)")]
     /// Returns new graph without isomorphic nodes, only keeping the smallest node ID of each group.
     ///
     /// Parameters
@@ -10364,7 +10375,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns new graph without singleton nodes with selfloops.
     ///
     /// A node is singleton with selfloop when does not have neither incoming or outgoing edges.
@@ -10373,7 +10384,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns new graph without disconnected nodes.
     ///
     /// A disconnected node is a node with no connection to any other node.
@@ -10382,21 +10393,21 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns new graph without selfloops.
     pub fn remove_selfloops(&self) -> Graph {
         self.inner.remove_selfloops().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns new graph without parallel edges
     pub fn remove_parallel_edges(&self) -> Graph {
         self.inner.remove_parallel_edges().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, random_state, undesired_edge_types, verbose)"]
+    #[pyo3(text_signature = "($self, random_state, undesired_edge_types, verbose)")]
     /// Returns set of edges composing a spanning tree and connected components.
     ///
     /// The spanning tree is NOT minimal.
@@ -10453,7 +10464,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, verbose)"]
+    #[pyo3(text_signature = "($self, verbose)")]
     /// Returns consistent spanning arborescence using Kruskal.
     ///
     /// The spanning tree is NOT minimal.
@@ -10495,7 +10506,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, verbose)"]
+    #[pyo3(text_signature = "($self, verbose)")]
     /// Compute the connected components building in parallel a spanning tree using [bader's algorithm](https://www.sciencedirect.com/science/article/abs/pii/S0743731505000882).
     ///
     /// **This works only for undirected graphs.**
@@ -10542,7 +10553,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, vector_sources, vector_destinations, vector_cumulative_node_degrees, vector_reciprocal_sqrt_degrees)"]
+    #[pyo3(text_signature = "($self, vector_sources, vector_destinations, vector_cumulative_node_degrees, vector_reciprocal_sqrt_degrees)")]
     /// Enable extra perks that buys you time as you accept to spend more memory.
     ///
     /// Parameters
@@ -10572,14 +10583,14 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Disable all extra perks, reducing memory impact but incresing time requirements
     pub fn disable_all(&mut self) {
         self.inner.disable_all();
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, other)"]
+    #[pyo3(text_signature = "($self, other)")]
     /// Returns whether the graphs share the same nodes.
     ///
     /// Parameters
@@ -10594,7 +10605,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, other)"]
+    #[pyo3(text_signature = "($self, other)")]
     /// Returns whether the graphs share the same node types or absence thereof.
     ///
     /// Parameters
@@ -10609,7 +10620,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, other)"]
+    #[pyo3(text_signature = "($self, other)")]
     /// Returns whether the graphs share the same edge types or absence thereof.
     ///
     /// Parameters
@@ -10624,7 +10635,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, other)"]
+    #[pyo3(text_signature = "($self, other)")]
     /// Return true if the graphs are compatible.
     ///
     /// Parameters
@@ -10649,7 +10660,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, other)"]
+    #[pyo3(text_signature = "($self, other)")]
     /// Return true if the graphs share the same adjacency matrix.
     ///
     /// Parameters
@@ -10662,14 +10673,14 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns 2-approximated verted cover set using greedy algorithm.
     pub fn approximated_vertex_cover_set(&self) -> HashSet<NodeT> {
         self.inner.approximated_vertex_cover_set().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, random_state)"]
+    #[pyo3(text_signature = "($self, random_state)")]
     /// Return random node type ID.
     ///
     /// Parameters
@@ -10682,7 +10693,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, random_state)"]
+    #[pyo3(text_signature = "($self, random_state)")]
     /// Return random edge type ID.
     ///
     /// Parameters
@@ -10695,7 +10706,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, random_state)"]
+    #[pyo3(text_signature = "($self, random_state)")]
     /// Return random scale_free edge type ID.
     ///
     /// Parameters
@@ -10717,7 +10728,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, random_state)"]
+    #[pyo3(text_signature = "($self, random_state)")]
     /// Return random scale_free edge type ID.
     ///
     /// Parameters
@@ -10736,7 +10747,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, random_state)"]
+    #[pyo3(text_signature = "($self, random_state)")]
     /// Return random node ID.
     ///
     /// Parameters
@@ -10749,7 +10760,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, random_state)"]
+    #[pyo3(text_signature = "($self, random_state)")]
     /// Return random edge ID.
     ///
     /// Parameters
@@ -10762,7 +10773,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, random_state)"]
+    #[pyo3(text_signature = "($self, random_state)")]
     /// Return random node ID following outbounds degree distribution of the graph.
     ///
     /// Parameters
@@ -10777,7 +10788,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, random_state)"]
+    #[pyo3(text_signature = "($self, random_state)")]
     /// Return random node ID following inbounds degree distribution of the graph.
     ///
     /// Parameters
@@ -10792,7 +10803,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, number_of_nodes_to_sample, random_state)"]
+    #[pyo3(text_signature = "($self, number_of_nodes_to_sample, random_state)")]
     /// Return random unique sorted numbers.
     ///
     /// Parameters
@@ -10821,7 +10832,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, number_of_nodes_to_sample, root_node)"]
+    #[pyo3(text_signature = "($self, number_of_nodes_to_sample, root_node)")]
     /// Return nodes sampled from the neighbourhood of given root nodes.
     ///
     /// Parameters
@@ -10858,7 +10869,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node, random_state, walk_length, unique)"]
+    #[pyo3(text_signature = "($self, node, random_state, walk_length, unique)")]
     /// Returns unique nodes sampled from uniform random walk.
     ///
     /// Parameters
@@ -10901,7 +10912,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return list of the supported node sampling methods
     pub fn get_node_sampling_methods(&self) -> Vec<&str> {
         self.inner
@@ -10912,7 +10923,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, number_of_nodes_to_sample, random_state, root_node, node_sampling_method, unique)"]
+    #[pyo3(text_signature = "($self, number_of_nodes_to_sample, random_state, root_node, node_sampling_method, unique)")]
     /// Return subsampled nodes according to the given method and parameters.
     ///
     /// Parameters
@@ -10959,7 +10970,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, features, iterations, maximal_distance, k1, b, include_central_node, verbose)"]
+    #[pyo3(text_signature = "($self, features, iterations, maximal_distance, k1, b, include_central_node, verbose)")]
     /// Returns okapi node features propagation within given maximal distance.
     ///
     /// Parameters
@@ -11014,7 +11025,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, iterations, maximal_distance, k1, b, verbose)"]
+    #[pyo3(text_signature = "($self, iterations, maximal_distance, k1, b, verbose)")]
     /// Returns okapi node label propagation within given maximal distance.
     ///
     /// Parameters
@@ -11061,7 +11072,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return if graph has name that is not the default one.
     ///
     /// TODO: use a default for the default graph name
@@ -11070,56 +11081,56 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return if the graph has any nodes.
     pub fn has_nodes(&self) -> bool {
         self.inner.has_nodes().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return if the graph has any edges.
     pub fn has_edges(&self) -> bool {
         self.inner.has_edges().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return whether the graph has trap nodes.
     pub fn has_trap_nodes(&self) -> bool {
         self.inner.has_trap_nodes().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns boolean representing if graph is directed.
     pub fn is_directed(&self) -> bool {
         self.inner.is_directed().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns whether graph is a directed acyclic graph.
     pub fn is_directed_acyclic(&self) -> bool {
         self.inner.is_directed_acyclic().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns boolean representing whether graph has weights.
     pub fn has_edge_weights(&self) -> bool {
         self.inner.has_edge_weights().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns whether graph has weights that can represent probabilities
     pub fn has_edge_weights_representing_probabilities(&self) -> PyResult<bool> {
         Ok(pe!(self.inner.has_edge_weights_representing_probabilities())?.into())
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns whether a graph has one or more weighted singleton nodes.
     ///
     /// A weighted singleton node is a node whose weighted node degree is 0.
@@ -11134,7 +11145,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns whether the graph has constant weights.
     ///
     /// Raises
@@ -11147,7 +11158,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns boolean representing whether graph has negative weights.
     ///
     /// Raises
@@ -11160,21 +11171,21 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns boolean representing whether graph has edge types.
     pub fn has_edge_types(&self) -> bool {
         self.inner.has_edge_types().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns boolean representing if graph has self-loops.
     pub fn has_selfloops(&self) -> bool {
         self.inner.has_selfloops().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns boolean representing if nodes which are nor singletons nor
     /// singletons with selfloops.
     pub fn has_disconnected_nodes(&self) -> bool {
@@ -11182,21 +11193,21 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns boolean representing if graph has singletons.
     pub fn has_singleton_nodes(&self) -> bool {
         self.inner.has_singleton_nodes().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns boolean representing if graph has singletons
     pub fn has_singleton_nodes_with_selfloops(&self) -> bool {
         self.inner.has_singleton_nodes_with_selfloops().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, verbose)"]
+    #[pyo3(text_signature = "($self, verbose)")]
     /// Returns whether the graph is connected.
     ///
     /// Parameters
@@ -11209,14 +11220,14 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns boolean representing if graph has node types
     pub fn has_node_types(&self) -> bool {
         self.inner.has_node_types().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns boolean representing if graph has multilabel node types.
     ///
     /// Raises
@@ -11229,7 +11240,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns whether there are unknown node types.
     ///
     /// Raises
@@ -11242,7 +11253,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns whether there are known node types.
     ///
     /// Raises
@@ -11255,7 +11266,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns whether there are unknown edge types.
     ///
     /// Raises
@@ -11268,7 +11279,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns whether there are known edge types.
     ///
     /// Raises
@@ -11281,7 +11292,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns whether the nodes have an homogenous node type.
     ///
     /// Raises
@@ -11294,7 +11305,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns whether the nodes have exclusively homogenous node types.
     ///
     /// Raises
@@ -11307,14 +11318,14 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns whether the nodes have an homogenous node ontology
     pub fn has_homogeneous_node_ontologies(&self) -> PyResult<bool> {
         Ok(pe!(self.inner.has_homogeneous_node_ontologies())?.into())
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns whether the edges have an homogenous edge type.
     ///
     /// Raises
@@ -11327,7 +11338,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns whether there is at least singleton node type, that is a node type that only appears once.
     ///
     /// Raises
@@ -11340,14 +11351,14 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return whether the graph has any known node-related graph oddities
     pub fn has_node_oddities(&self) -> bool {
         self.inner.has_node_oddities().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return whether the graph has any known node type-related graph oddities.
     ///
     /// Raises
@@ -11360,7 +11371,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns whether there is at least singleton edge type, that is a edge type that only appears once.
     ///
     /// Raises
@@ -11373,7 +11384,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return whether the graph has any known edge type-related graph oddities.
     ///
     /// Raises
@@ -11386,28 +11397,28 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return if there are multiple edges between two node
     pub fn is_multigraph(&self) -> bool {
         self.inner.is_multigraph().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return whether at least a node has a known ontology
     pub fn has_node_ontologies(&self) -> bool {
         self.inner.has_node_ontologies().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return whether at least a node has an unknown ontology
     pub fn has_unknown_node_ontologies(&self) -> bool {
         self.inner.has_unknown_node_ontologies().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns whether the node IDs are sorted by decreasing outbound node degree.
     pub fn has_nodes_sorted_by_decreasing_outbound_node_degree(&self) -> bool {
         self.inner
@@ -11416,21 +11427,21 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns whether the node IDs are sorted by decreasing outbound node degree.
     pub fn has_nodes_sorted_by_lexicographic_order(&self) -> bool {
         self.inner.has_nodes_sorted_by_lexicographic_order().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns whether the graph contains the indentity matrix.
     pub fn contains_identity_matrix(&self) -> bool {
         self.inner.contains_identity_matrix().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns whether the node IDs are sorted by increasing outbound node degree.
     pub fn has_nodes_sorted_by_increasing_outbound_node_degree(&self) -> bool {
         self.inner
@@ -11439,21 +11450,21 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns whether the destinations time-memory tradeoff is enabled
     pub fn has_destinations_tradeoff_enabled(&self) -> bool {
         self.inner.has_destinations_tradeoff_enabled().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns whether the sources time-memory tradeoff is enabled
     pub fn has_sources_tradeoff_enabled(&self) -> bool {
         self.inner.has_sources_tradeoff_enabled().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns whether the cumulative_node_degrees time-memory tradeoff is enabled
     pub fn has_cumulative_node_degrees_tradeoff_enabled(&self) -> bool {
         self.inner
@@ -11462,7 +11473,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns whether the reciprocal_sqrt_degrees time-memory tradeoff is enabled
     pub fn has_reciprocal_sqrt_degrees_tradeoff_enabled(&self) -> bool {
         self.inner
@@ -11471,7 +11482,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns vector of detected dentritic trees
     pub fn get_dendritic_trees(&self) -> PyResult<Vec<DendriticTree>> {
         Ok(pe!(self.inner.get_dendritic_trees())?
@@ -11481,7 +11492,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, iterations, verbose)"]
+    #[pyo3(text_signature = "($self, iterations, verbose)")]
     /// Returns graph to the i-th transitivity closure iteration.
     ///
     /// Parameters
@@ -11502,7 +11513,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, iterations, verbose)"]
+    #[pyo3(text_signature = "($self, iterations, verbose)")]
     /// Returns graph with unweighted shortest paths computed up to the given depth.
     ///
     /// The returned graph will have no selfloops.
@@ -11525,7 +11536,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, iterations, use_edge_weights_as_probabilities, verbose)"]
+    #[pyo3(text_signature = "($self, iterations, use_edge_weights_as_probabilities, verbose)")]
     /// Returns graph with weighted shortest paths computed up to the given depth.
     ///
     /// The returned graph will have no selfloops.
@@ -11564,7 +11575,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, edge_id)"]
+    #[pyo3(text_signature = "($self, edge_id)")]
     /// Returns option with the weight of the given edge id.
     ///
     /// This method will raise a panic if the given edge ID is higher than
@@ -11587,7 +11598,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src, dst)"]
+    #[pyo3(text_signature = "($self, src, dst)")]
     /// Returns option with the weight of the given node ids.
     ///
     /// This method will raise a panic if the given node IDs are higher than
@@ -11615,7 +11626,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_name)"]
+    #[pyo3(text_signature = "($self, node_name)")]
     /// Returns node id from given node name raising a panic if used unproperly.
     ///
     /// Parameters
@@ -11634,7 +11645,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, edge_type_name)"]
+    #[pyo3(text_signature = "($self, edge_type_name)")]
     /// Return edge type ID corresponding to the given edge type name.
     ///
     /// Parameters
@@ -11656,7 +11667,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, edge_type_id)"]
+    #[pyo3(text_signature = "($self, edge_type_id)")]
     /// Return edge type ID corresponding to the given edge type name
     /// raising panic if edge type ID does not exists in current graph.
     ///
@@ -11679,7 +11690,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, edge_type)"]
+    #[pyo3(text_signature = "($self, edge_type)")]
     /// Return number of edges of the given edge type without checks.
     ///
     /// Parameters
@@ -11701,7 +11712,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_type)"]
+    #[pyo3(text_signature = "($self, node_type)")]
     /// Return number of nodes of the given node type without checks.
     ///
     /// Parameters
@@ -11722,7 +11733,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src, dst, edge_type)"]
+    #[pyo3(text_signature = "($self, src, dst, edge_type)")]
     /// Return edge ID without any checks for given tuple of nodes and edge type.
     ///
     /// Parameters
@@ -11754,7 +11765,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src, dst)"]
+    #[pyo3(text_signature = "($self, src, dst)")]
     /// Return range of outbound edges IDs for all the edges bewteen the given
     /// source and destination nodes.
     /// This operation is meaningfull only in a multigraph.
@@ -11782,7 +11793,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, edge_id)"]
+    #[pyo3(text_signature = "($self, edge_id)")]
     /// Returns node IDs corresponding to given edge ID.
     ///
     /// The method will panic if the given edge ID does not exists in the
@@ -11805,7 +11816,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, edge_id)"]
+    #[pyo3(text_signature = "($self, edge_id)")]
     /// Returns node names corresponding to given edge ID.
     ///
     /// Parameters
@@ -11825,7 +11836,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, edge_id)"]
+    #[pyo3(text_signature = "($self, edge_id)")]
     /// Returns the source of given edge id without making any boundary check.
     ///
     /// Parameters
@@ -11844,7 +11855,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, edge_id)"]
+    #[pyo3(text_signature = "($self, edge_id)")]
     /// Returns the destination of given edge id without making any boundary check.
     ///
     /// Parameters
@@ -11863,7 +11874,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, edge_id)"]
+    #[pyo3(text_signature = "($self, edge_id)")]
     /// Returns source node ID corresponding to given edge ID.
     ///
     /// Parameters
@@ -11882,7 +11893,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, edge_id)"]
+    #[pyo3(text_signature = "($self, edge_id)")]
     /// Returns destination node ID corresponding to given edge ID.
     ///
     /// Parameters
@@ -11904,7 +11915,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, edge_id)"]
+    #[pyo3(text_signature = "($self, edge_id)")]
     /// Returns source node name corresponding to given edge ID.
     ///
     /// Parameters
@@ -11923,7 +11934,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, edge_id)"]
+    #[pyo3(text_signature = "($self, edge_id)")]
     /// Returns destination node name corresponding to given edge ID.
     ///
     /// Parameters
@@ -11945,7 +11956,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, edge_id)"]
+    #[pyo3(text_signature = "($self, edge_id)")]
     /// Returns source node name corresponding to given edge ID.
     ///
     /// Parameters
@@ -11962,7 +11973,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, edge_id)"]
+    #[pyo3(text_signature = "($self, edge_id)")]
     /// Returns destination node name corresponding to given edge ID.
     ///
     /// Parameters
@@ -11982,7 +11993,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, edge_id)"]
+    #[pyo3(text_signature = "($self, edge_id)")]
     /// Returns node names corresponding to given edge ID.
     ///
     /// Parameters
@@ -11999,7 +12010,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, edge_id)"]
+    #[pyo3(text_signature = "($self, edge_id)")]
     /// Returns node names corresponding to given edge ID.
     ///
     /// Parameters
@@ -12016,7 +12027,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src, dst)"]
+    #[pyo3(text_signature = "($self, src, dst)")]
     /// Returns edge ID corresponding to given source and destination node IDs.
     ///
     /// The method will panic if the given source and destination node IDs do
@@ -12040,7 +12051,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src, dst)"]
+    #[pyo3(text_signature = "($self, src, dst)")]
     /// Returns edge ID corresponding to given source and destination node IDs.
     ///
     /// Parameters
@@ -12055,7 +12066,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, source_id)"]
+    #[pyo3(text_signature = "($self, source_id)")]
     /// Returns edge ID corresponding to given source and destination node IDs.
     ///
     /// Parameters
@@ -12074,7 +12085,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, edge_id)"]
+    #[pyo3(text_signature = "($self, edge_id)")]
     /// Return the src, dst, edge type of a given edge ID.
     ///
     /// This method will raise a panic when an improper configuration is used.
@@ -12103,7 +12114,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, edge_id)"]
+    #[pyo3(text_signature = "($self, edge_id)")]
     /// Return the src, dst, edge type of a given edge ID.
     ///
     /// Parameters
@@ -12129,7 +12140,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, edge_id)"]
+    #[pyo3(text_signature = "($self, edge_id)")]
     /// Return the src, dst, edge type and weight of a given edge ID.
     ///
     /// This method will raise a panic when an improper configuration is used.
@@ -12159,7 +12170,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, edge_id)"]
+    #[pyo3(text_signature = "($self, edge_id)")]
     /// Return the src, dst, edge type and weight of a given edge ID.
     ///
     /// Parameters
@@ -12186,7 +12197,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, k)"]
+    #[pyo3(text_signature = "($self, k)")]
     /// Return vector with unweighted top k central node Ids.
     ///
     /// If the k passed is bigger than the number of nodes this method will return
@@ -12217,7 +12228,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, k)"]
+    #[pyo3(text_signature = "($self, k)")]
     /// Return vector with weighted top k central node Ids.
     ///
     /// If the k passed is bigger than the number of nodes this method will return
@@ -12248,7 +12259,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_id)"]
+    #[pyo3(text_signature = "($self, node_id)")]
     /// Returns the number of outbound neighbours of given node.
     ///
     /// Parameters
@@ -12267,7 +12278,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_id)"]
+    #[pyo3(text_signature = "($self, node_id)")]
     /// Returns the weighted sum of outbound neighbours of given node.
     ///
     /// The method will panic if the given node id is higher than the number of
@@ -12289,7 +12300,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_id)"]
+    #[pyo3(text_signature = "($self, node_id)")]
     /// Returns the number of outbound neighbours of given node ID.
     ///
     /// Parameters
@@ -12302,7 +12313,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_id)"]
+    #[pyo3(text_signature = "($self, node_id)")]
     /// Returns the comulative node degree up to the given node.
     ///
     /// Parameters
@@ -12324,7 +12335,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_id)"]
+    #[pyo3(text_signature = "($self, node_id)")]
     /// Returns the comulative node degree up to the given node.
     ///
     /// Parameters
@@ -12340,7 +12351,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_id)"]
+    #[pyo3(text_signature = "($self, node_id)")]
     /// Returns the reciprocal squared root node degree up to the given node.
     ///
     /// Parameters
@@ -12362,7 +12373,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_id)"]
+    #[pyo3(text_signature = "($self, node_id)")]
     /// Returns the reciprocal squared root node degree up to the given node.
     ///
     /// Parameters
@@ -12378,7 +12389,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_ids)"]
+    #[pyo3(text_signature = "($self, node_ids)")]
     /// Return vector with reciprocal squared root degree of the provided nodes.
     ///
     /// Parameters
@@ -12405,7 +12416,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_id)"]
+    #[pyo3(text_signature = "($self, node_id)")]
     /// Returns the weighted sum of outbound neighbours of given node ID.
     ///
     /// Parameters
@@ -12421,7 +12432,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_name)"]
+    #[pyo3(text_signature = "($self, node_name)")]
     /// Returns the number of outbound neighbours of given node name.
     ///
     /// Parameters
@@ -12440,7 +12451,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, k)"]
+    #[pyo3(text_signature = "($self, k)")]
     /// Return vector with top k central node names.
     ///
     /// Parameters
@@ -12456,7 +12467,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_id)"]
+    #[pyo3(text_signature = "($self, node_id)")]
     /// Returns option with vector of node types of given node.
     ///
     /// This method will panic if the given node ID is greater than
@@ -12487,7 +12498,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_id)"]
+    #[pyo3(text_signature = "($self, node_id)")]
     /// Returns node type of given node.
     ///
     /// Parameters
@@ -12508,7 +12519,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, edge_id)"]
+    #[pyo3(text_signature = "($self, edge_id)")]
     /// Returns edge type of given edge.
     ///
     /// This method will panic if the given edge ID is greater than
@@ -12535,7 +12546,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, edge_id)"]
+    #[pyo3(text_signature = "($self, edge_id)")]
     /// Returns edge type of given edge.
     ///
     /// Parameters
@@ -12548,7 +12559,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src, dst)"]
+    #[pyo3(text_signature = "($self, src, dst)")]
     /// Returns edge type from given edge node IDs.
     ///
     /// Parameters
@@ -12576,7 +12587,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_id)"]
+    #[pyo3(text_signature = "($self, node_id)")]
     /// Returns result of option with the node type of the given node id.
     ///
     /// Parameters
@@ -12599,7 +12610,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_id)"]
+    #[pyo3(text_signature = "($self, node_id)")]
     /// Returns result of option with the node type of the given node id.
     ///
     /// Parameters
@@ -12624,7 +12635,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_name)"]
+    #[pyo3(text_signature = "($self, node_name)")]
     /// Returns result of option with the node type of the given node name.
     ///
     /// Parameters
@@ -12643,7 +12654,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, edge_id)"]
+    #[pyo3(text_signature = "($self, edge_id)")]
     /// Returns option with the edge type of the given edge id.
     ///
     /// Parameters
@@ -12656,7 +12667,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, edge_type_id)"]
+    #[pyo3(text_signature = "($self, edge_type_id)")]
     /// Return edge type name of given edge type.
     ///
     /// Parameters
@@ -12675,7 +12686,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, edge_id)"]
+    #[pyo3(text_signature = "($self, edge_id)")]
     /// Returns weight of the given edge id.
     ///
     /// Parameters
@@ -12688,7 +12699,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src, dst)"]
+    #[pyo3(text_signature = "($self, src, dst)")]
     /// Returns weight of the given node ids.
     ///
     /// Parameters
@@ -12706,7 +12717,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src, dst, edge_type)"]
+    #[pyo3(text_signature = "($self, src, dst, edge_type)")]
     /// Returns weight of the given node ids and edge type.
     ///
     /// Parameters
@@ -12735,7 +12746,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src, dst, edge_type)"]
+    #[pyo3(text_signature = "($self, src, dst, edge_type)")]
     /// Returns weight of the given node names and edge type.
     ///
     /// Parameters
@@ -12764,7 +12775,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src_name, dst_name)"]
+    #[pyo3(text_signature = "($self, src_name, dst_name)")]
     /// Returns weight of the given node names.
     ///
     /// Parameters
@@ -12786,7 +12797,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_id)"]
+    #[pyo3(text_signature = "($self, node_id)")]
     /// Returns result with the node name.
     ///
     /// Parameters
@@ -12805,7 +12816,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_id)"]
+    #[pyo3(text_signature = "($self, node_id)")]
     /// Returns result with the node name.
     ///
     /// Parameters
@@ -12818,7 +12829,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_name)"]
+    #[pyo3(text_signature = "($self, node_name)")]
     /// Returns result with the node ID.
     ///
     /// Parameters
@@ -12837,7 +12848,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_names)"]
+    #[pyo3(text_signature = "($self, node_names)")]
     /// Returns result with the node IDs.
     ///
     /// Parameters
@@ -12866,7 +12877,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, edge_node_names)"]
+    #[pyo3(text_signature = "($self, edge_node_names)")]
     /// Returns result with the edge node IDs.
     ///
     /// Parameters
@@ -12893,7 +12904,7 @@ impl Graph {
                 .inner
                 .get_edge_node_ids_from_edge_node_names(edge_node_names.into()))?;
             let result_array = ThreadDataRaceAware {
-                t: PyArray2::<NodeT>::new(gil.python(), [body.len(), 2], false),
+                t: unsafe{PyArray2::<NodeT>::new(gil.python(), [body.len(), 2], false)},
             };
             body.into_par_iter()
                 .enumerate()
@@ -12906,7 +12917,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, edge_node_ids)"]
+    #[pyo3(text_signature = "($self, edge_node_ids)")]
     /// Returns result with the edge node names.
     ///
     /// Parameters
@@ -12933,7 +12944,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_name)"]
+    #[pyo3(text_signature = "($self, node_name)")]
     /// Return node type ID for the given node name if available.
     ///
     /// Parameters
@@ -12955,7 +12966,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_name)"]
+    #[pyo3(text_signature = "($self, node_name)")]
     /// Return node type name for the given node name if available.
     ///
     /// Parameters
@@ -12974,7 +12985,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, edge_type_id)"]
+    #[pyo3(text_signature = "($self, edge_type_id)")]
     /// Return number of edges with given edge type ID.
     ///
     /// If None is given as an edge type ID, the unknown edge type IDs
@@ -12996,7 +13007,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, edge_type_name)"]
+    #[pyo3(text_signature = "($self, edge_type_name)")]
     /// Return edge type ID curresponding to given edge type name.
     ///
     /// If None is given as an edge type ID, None is returned.
@@ -13017,7 +13028,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, edge_type_name)"]
+    #[pyo3(text_signature = "($self, edge_type_name)")]
     /// Return number of edges with given edge type name.
     ///
     /// If None is given as an edge type name, the unknown edge types
@@ -13039,7 +13050,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_type_name)"]
+    #[pyo3(text_signature = "($self, node_type_name)")]
     /// Return node type ID curresponding to given node type name.
     ///
     /// Parameters
@@ -13058,7 +13069,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_type_id)"]
+    #[pyo3(text_signature = "($self, node_type_id)")]
     /// Return number of nodes with given node type ID.
     ///
     /// If None is given as an node type ID, the unknown node types
@@ -13080,7 +13091,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_type_name)"]
+    #[pyo3(text_signature = "($self, node_type_name)")]
     /// Return number of nodes with given node type name.
     ///
     /// If None is given as an node type name, the unknown node types
@@ -13102,7 +13113,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_id)"]
+    #[pyo3(text_signature = "($self, node_id)")]
     /// Return vector of destinations for the given source node ID.
     ///
     /// Parameters
@@ -13127,7 +13138,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_name)"]
+    #[pyo3(text_signature = "($self, node_name)")]
     /// Return vector of destinations for the given source node name.
     ///
     /// Parameters
@@ -13152,7 +13163,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_name)"]
+    #[pyo3(text_signature = "($self, node_name)")]
     /// Return vector of destination names for the given source node name.
     ///
     /// Parameters
@@ -13173,7 +13184,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src, dst)"]
+    #[pyo3(text_signature = "($self, src, dst)")]
     /// Return range of outbound edges IDs for all the edges bewteen the given
     /// source and destination nodes.
     /// This operation is meaningfull only in a multigraph.
@@ -13200,7 +13211,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src, dst, edge_type)"]
+    #[pyo3(text_signature = "($self, src, dst, edge_type)")]
     /// Return edge ID for given tuple of nodes and edge type.
     ///
     /// This method will return an error if the graph does not contain the
@@ -13230,7 +13241,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src_name, dst_name)"]
+    #[pyo3(text_signature = "($self, src_name, dst_name)")]
     /// Return edge ID for given tuple of node names.
     ///
     /// This method will return an error if the graph does not contain the
@@ -13251,7 +13262,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src_name, dst_name, edge_type_name)"]
+    #[pyo3(text_signature = "($self, src_name, dst_name, edge_type_name)")]
     /// Return edge ID for given tuple of node names and edge type name.
     ///
     /// This method will return an error if the graph does not contain the
@@ -13283,7 +13294,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, edge_type_names)"]
+    #[pyo3(text_signature = "($self, edge_type_names)")]
     /// Return translated edge types from string to internal edge ID.
     ///
     /// Parameters
@@ -13304,7 +13315,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_type_names)"]
+    #[pyo3(text_signature = "($self, node_type_names)")]
     /// Return translated node types from string to internal node ID.
     ///
     /// Parameters
@@ -13325,7 +13336,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_type_names)"]
+    #[pyo3(text_signature = "($self, node_type_names)")]
     /// Return translated node types from string to internal node ID.
     ///
     /// Parameters
@@ -13354,7 +13365,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src)"]
+    #[pyo3(text_signature = "($self, src)")]
     /// Return range of outbound edges IDs which have as source the given Node.
     ///
     /// The method will panic if the given source node ID is higher than
@@ -13380,7 +13391,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src)"]
+    #[pyo3(text_signature = "($self, src)")]
     /// Return range of outbound edges IDs which have as source the given Node.
     ///
     /// Parameters
@@ -13399,7 +13410,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_type_id)"]
+    #[pyo3(text_signature = "($self, node_type_id)")]
     /// Return node type name of given node type.
     ///
     /// There is no need for a unchecked version since we will have to map
@@ -13421,7 +13432,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_type_ids)"]
+    #[pyo3(text_signature = "($self, node_type_ids)")]
     /// Return node type name of given node type.
     ///
     /// Parameters
@@ -13445,7 +13456,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_type_id)"]
+    #[pyo3(text_signature = "($self, node_type_id)")]
     /// Return number of nodes with the provided node type ID.
     ///
     /// Parameters
@@ -13468,7 +13479,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_type_id)"]
+    #[pyo3(text_signature = "($self, node_type_id)")]
     /// Return number of nodes with the provided node type ID.
     ///
     /// Parameters
@@ -13495,7 +13506,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_type_name)"]
+    #[pyo3(text_signature = "($self, node_type_name)")]
     /// Return number of nodes with the provided node type name.
     ///
     /// Parameters
@@ -13519,7 +13530,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, edge_type_id)"]
+    #[pyo3(text_signature = "($self, edge_type_id)")]
     /// Return number of edges with the provided edge type ID.
     ///
     /// Parameters
@@ -13542,7 +13553,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, edge_type_id)"]
+    #[pyo3(text_signature = "($self, edge_type_id)")]
     /// Return number of edges with the provided edge type ID.
     ///
     /// Parameters
@@ -13569,7 +13580,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, edge_type_name)"]
+    #[pyo3(text_signature = "($self, edge_type_name)")]
     /// Return number of edges with the provided edge type name.
     ///
     /// Parameters
@@ -13593,7 +13604,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_ids)"]
+    #[pyo3(text_signature = "($self, node_ids)")]
     /// Returns node type IDs counts hashmap for the provided node IDs.
     ///
     /// Parameters
@@ -13617,7 +13628,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_ids)"]
+    #[pyo3(text_signature = "($self, node_ids)")]
     /// Returns edge type IDs counts hashmap for the provided node IDs.
     ///
     /// Parameters
@@ -13641,7 +13652,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, edge_type_id, directed)"]
+    #[pyo3(text_signature = "($self, edge_type_id, directed)")]
     /// Returns vector containing edge node IDs with given edge type.
     ///
     /// Parameters
@@ -13673,7 +13684,7 @@ impl Graph {
                 .inner
                 .get_edge_node_ids_from_edge_type_id(edge_type_id.into(), directed.into()))?;
             let result_array = ThreadDataRaceAware {
-                t: PyArray2::<NodeT>::new(gil.python(), [body.len(), 2], false),
+                t: unsafe{PyArray2::<NodeT>::new(gil.python(), [body.len(), 2], false)},
             };
             body.into_par_iter()
                 .enumerate()
@@ -13686,7 +13697,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, edge_type_id)"]
+    #[pyo3(text_signature = "($self, edge_type_id)")]
     /// Returns vector containing directed edge node IDs with given edge type.
     ///
     /// Parameters
@@ -13715,7 +13726,7 @@ impl Graph {
                 .inner
                 .get_directed_edge_node_ids_from_edge_type_id(edge_type_id.into()))?;
             let result_array = ThreadDataRaceAware {
-                t: PyArray2::<NodeT>::new(gil.python(), [body.len(), 2], false),
+                t: unsafe{PyArray2::<NodeT>::new(gil.python(), [body.len(), 2], false)},
             };
             body.into_par_iter()
                 .enumerate()
@@ -13728,7 +13739,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, edge_type_id)"]
+    #[pyo3(text_signature = "($self, edge_type_id)")]
     /// Returns vector containing directed edge node names with given edge type.
     ///
     /// Parameters
@@ -13757,7 +13768,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, edge_type_name)"]
+    #[pyo3(text_signature = "($self, edge_type_name)")]
     /// Returns vector containing directed edge node names with given edge type name.
     ///
     /// Parameters
@@ -13786,7 +13797,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, edge_type_id)"]
+    #[pyo3(text_signature = "($self, edge_type_id)")]
     /// Returns vector containing directed edge IDs with given edge type name.
     ///
     /// Parameters
@@ -13819,7 +13830,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, edge_type_name, directed)"]
+    #[pyo3(text_signature = "($self, edge_type_name, directed)")]
     /// Returns vector containing edge node IDs with given edge type name.
     ///
     /// Parameters
@@ -13851,7 +13862,7 @@ impl Graph {
                 .inner
                 .get_edge_node_ids_from_edge_type_name(edge_type_name.into(), directed.into()))?;
             let result_array = ThreadDataRaceAware {
-                t: PyArray2::<NodeT>::new(gil.python(), [body.len(), 2], false),
+                t: unsafe{PyArray2::<NodeT>::new(gil.python(), [body.len(), 2], false)},
             };
             body.into_par_iter()
                 .enumerate()
@@ -13864,7 +13875,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, edge_type_name)"]
+    #[pyo3(text_signature = "($self, edge_type_name)")]
     /// Returns vector containing directed edge node IDs with given edge type name.
     ///
     /// Parameters
@@ -13893,7 +13904,7 @@ impl Graph {
                 .inner
                 .get_directed_edge_node_ids_from_edge_type_name(edge_type_name.into()))?;
             let result_array = ThreadDataRaceAware {
-                t: PyArray2::<NodeT>::new(gil.python(), [body.len(), 2], false),
+                t: unsafe{PyArray2::<NodeT>::new(gil.python(), [body.len(), 2], false)},
             };
             body.into_par_iter()
                 .enumerate()
@@ -13906,7 +13917,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, edge_type_name)"]
+    #[pyo3(text_signature = "($self, edge_type_name)")]
     /// Returns vector containing directed edge IDs with given edge type name.
     ///
     /// Parameters
@@ -13939,7 +13950,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src_node_name_prefixes, dst_node_name_prefixes)"]
+    #[pyo3(text_signature = "($self, src_node_name_prefixes, dst_node_name_prefixes)")]
     /// Returns vector of directed edge node names with given node name prefixes
     ///
     /// Parameters
@@ -13965,7 +13976,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src_node_name_prefixes, dst_node_name_prefixes)"]
+    #[pyo3(text_signature = "($self, src_node_name_prefixes, dst_node_name_prefixes)")]
     /// Returns vector of directed edge node IDs with given node name prefixes
     ///
     /// Parameters
@@ -13991,7 +14002,7 @@ impl Graph {
                 dst_node_name_prefixes.into(),
             );
         let result_array = ThreadDataRaceAware {
-            t: PyArray2::<NodeT>::new(gil.python(), [body.len(), 2], false),
+            t: unsafe{PyArray2::<NodeT>::new(gil.python(), [body.len(), 2], false)},
         };
         body.into_par_iter()
             .enumerate()
@@ -14003,7 +14014,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src_node_name_prefixes, dst_node_name_prefixes)"]
+    #[pyo3(text_signature = "($self, src_node_name_prefixes, dst_node_name_prefixes)")]
     /// Returns vector of directed edge IDs with given node name prefixes.
     ///
     /// Parameters
@@ -14030,7 +14041,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src_node_name_prefixes, dst_node_name_prefixes)"]
+    #[pyo3(text_signature = "($self, src_node_name_prefixes, dst_node_name_prefixes)")]
     /// Returns number of directed edge IDs with given node name prefixes.
     ///
     /// Parameters
@@ -14054,7 +14065,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, curie_prefixes)"]
+    #[pyo3(text_signature = "($self, curie_prefixes)")]
     /// Returns vector with node IDs with given curie prefix.
     ///
     /// Parameters
@@ -14076,7 +14087,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, curie_prefixes)"]
+    #[pyo3(text_signature = "($self, curie_prefixes)")]
     /// Returns vector with node names with given curie prefix.
     ///
     /// Parameters
@@ -14096,7 +14107,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, curie_prefixes)"]
+    #[pyo3(text_signature = "($self, curie_prefixes)")]
     /// Returns number of nodes with node IDs with given curie prefix.
     ///
     /// Parameters
@@ -14111,7 +14122,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, separator)"]
+    #[pyo3(text_signature = "($self, separator)")]
     /// Returns vector with node names prefixes when the node names include the provided separator.
     ///
     /// Parameters
@@ -14133,7 +14144,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, other)"]
+    #[pyo3(text_signature = "($self, other)")]
     /// Returns mapping from the current graph node names to the other provided graph node names.
     ///
     /// Parameters
@@ -14159,7 +14170,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, subgraph)"]
+    #[pyo3(text_signature = "($self, subgraph)")]
     /// Returns the degree of every node in the provided subgraph
     pub fn get_non_zero_subgraph_node_degrees(
         &self,
@@ -14178,7 +14189,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src, dst)"]
+    #[pyo3(text_signature = "($self, src, dst)")]
     /// Returns edge IDs of multigraph edge ids with same source and destination nodes and different edge type.
     ///
     /// Parameters
@@ -14206,7 +14217,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src, dst)"]
+    #[pyo3(text_signature = "($self, src, dst)")]
     /// Returns number of multigraph edges with same source and destination nodes and different edge type.
     ///
     /// Parameters
@@ -14228,7 +14239,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, minimum_number_of_nodes_per_tendril, compute_tendril_nodes)"]
+    #[pyo3(text_signature = "($self, minimum_number_of_nodes_per_tendril, compute_tendril_nodes)")]
     /// Return vector of Tendrils in the current graph instance.
     ///
     /// Parameters
@@ -14249,7 +14260,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, number_of_nodes_above_threshold)"]
+    #[pyo3(text_signature = "($self, number_of_nodes_above_threshold)")]
     /// Return threshold representing cutuoff point in graph node degree geometric distribution to have the given amount of elements above cutoff.
     ///
     /// Parameters
@@ -14269,7 +14280,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return list of the supported sparse edge weighting methods
     pub fn get_sparse_edge_weighting_methods(&self) -> Vec<&str> {
         self.inner
@@ -14280,7 +14291,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return list of the supported edge weighting methods
     pub fn get_edge_weighting_methods(&self) -> Vec<&str> {
         self.inner
@@ -14291,7 +14302,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, edge_type_name, weight)"]
+    #[pyo3(text_signature = "($self, edge_type_name, weight)")]
     /// Returns new graph with added in missing self-loops with given edge type and weight.
     ///
     /// Parameters
@@ -14319,7 +14330,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns vector of unweighted degree centrality for all nodes
     pub fn get_degree_centrality(&self) -> PyResult<Py<PyArray1<f32>>> {
         Ok({
@@ -14329,7 +14340,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns vector of weighted degree centrality for all nodes
     pub fn get_weighted_degree_centrality(&self) -> PyResult<Py<PyArray1<f32>>> {
         Ok({
@@ -14339,7 +14350,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_id)"]
+    #[pyo3(text_signature = "($self, node_id)")]
     /// Return closeness centrality of the requested node.
     ///
     /// If the given node ID does not exist in the current graph the method
@@ -14363,7 +14374,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_id, use_edge_weights_as_probabilities)"]
+    #[pyo3(text_signature = "($self, node_id, use_edge_weights_as_probabilities)")]
     /// Return closeness centrality of the requested node.
     ///
     /// If the given node ID does not exist in the current graph the method
@@ -14394,7 +14405,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, verbose)"]
+    #[pyo3(text_signature = "($self, verbose)")]
     /// Return closeness centrality for all nodes.
     ///
     /// Parameters
@@ -14412,7 +14423,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, use_edge_weights_as_probabilities, verbose)"]
+    #[pyo3(text_signature = "($self, use_edge_weights_as_probabilities, verbose)")]
     /// Return closeness centrality for all nodes.
     ///
     /// Parameters
@@ -14451,7 +14462,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_id)"]
+    #[pyo3(text_signature = "($self, node_id)")]
     /// Return harmonic centrality of the requested node.
     ///
     /// If the given node ID does not exist in the current graph the method
@@ -14473,7 +14484,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_id, use_edge_weights_as_probabilities)"]
+    #[pyo3(text_signature = "($self, node_id, use_edge_weights_as_probabilities)")]
     /// Return harmonic centrality of the requested node.
     ///
     /// If the given node ID does not exist in the current graph the method
@@ -14504,7 +14515,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, verbose)"]
+    #[pyo3(text_signature = "($self, verbose)")]
     /// Return harmonic centrality for all nodes.
     ///
     /// Parameters
@@ -14518,7 +14529,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, use_edge_weights_as_probabilities, verbose)"]
+    #[pyo3(text_signature = "($self, use_edge_weights_as_probabilities, verbose)")]
     /// Return harmonic centrality for all nodes.
     ///
     /// Parameters
@@ -14547,7 +14558,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, normalize, verbose)"]
+    #[pyo3(text_signature = "($self, normalize, verbose)")]
     /// Returns vector of stress centrality for all nodes.
     ///
     /// Parameters
@@ -14572,7 +14583,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, edges_normalization, min_max_normalization, verbose)"]
+    #[pyo3(text_signature = "($self, edges_normalization, min_max_normalization, verbose)")]
     /// Returns vector of betweenness centrality for all nodes.
     ///
     /// Parameters
@@ -14603,7 +14614,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_id, ant, maximum_samples_number, random_state)"]
+    #[pyo3(text_signature = "($self, node_id, ant, maximum_samples_number, random_state)")]
     /// Returns the unweighted approximated betweenness centrality of the given node id.
     ///
     /// Parameters
@@ -14642,7 +14653,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_name, ant, maximum_samples_number, random_state)"]
+    #[pyo3(text_signature = "($self, node_name, ant, maximum_samples_number, random_state)")]
     /// Returns the unweighted approximated betweenness centrality of the given node id.
     ///
     /// Parameters
@@ -14681,7 +14692,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_id, ant, use_edge_weights_as_probabilities, maximum_samples_number, random_state)"]
+    #[pyo3(text_signature = "($self, node_id, ant, use_edge_weights_as_probabilities, maximum_samples_number, random_state)")]
     /// Returns the weighted approximated betweenness centrality of the given node id.
     ///
     /// Parameters
@@ -14724,7 +14735,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_name, ant, use_edge_weights_as_probabilities, maximum_samples_number, random_state)"]
+    #[pyo3(text_signature = "($self, node_name, ant, use_edge_weights_as_probabilities, maximum_samples_number, random_state)")]
     /// Returns the weighted approximated betweenness centrality of the given node id.
     ///
     /// Parameters
@@ -14767,7 +14778,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, maximum_iterations_number, tollerance)"]
+    #[pyo3(text_signature = "($self, maximum_iterations_number, tollerance)")]
     /// Returns vector with unweighted eigenvector centrality.
     ///
     /// Parameters
@@ -14796,7 +14807,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, maximum_iterations_number, tollerance)"]
+    #[pyo3(text_signature = "($self, maximum_iterations_number, tollerance)")]
     /// Returns vector with unweighted eigenvector centrality.
     ///
     /// Parameters
@@ -14825,14 +14836,14 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Print the current graph in a format compatible with Graphviz dot's format
     pub fn to_dot(&self) -> String {
         self.inner.to_dot().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, minimum_number_of_nodes_per_star)"]
+    #[pyo3(text_signature = "($self, minimum_number_of_nodes_per_star)")]
     /// Return vector of Stars in the current graph instance.
     ///
     /// Parameters
@@ -14851,7 +14862,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, recursion_minimum_improvement, first_phase_minimum_improvement, patience, random_state)"]
+    #[pyo3(text_signature = "($self, recursion_minimum_improvement, first_phase_minimum_improvement, patience, random_state)")]
     /// Returns vector of vectors of communities for each layer of hierarchy minimizing undirected modularity.
     ///
     /// Parameters
@@ -14894,7 +14905,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_community_memberships)"]
+    #[pyo3(text_signature = "($self, node_community_memberships)")]
     /// Returns the directed modularity of the graph from the given memberships.
     ///
     /// Parameters
@@ -14917,7 +14928,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_community_memberships)"]
+    #[pyo3(text_signature = "($self, node_community_memberships)")]
     /// Returns the undirected modularity of the graph from the given memberships.
     ///
     /// Parameters
@@ -14942,7 +14953,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, source_node_id, destination_node_id, maximal_hop_distance)"]
+    #[pyo3(text_signature = "($self, source_node_id, destination_node_id, maximal_hop_distance)")]
     /// Returns the structural distance from the given node IDs.
     ///
     /// Parameters
@@ -14978,7 +14989,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns the minumum unweighted preferential attachment score.
     ///
     /// Safety
@@ -14991,7 +15002,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns the maximum unweighted preferential attachment score.
     ///
     /// Safety
@@ -15004,7 +15015,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns the minumum weighted preferential attachment score.
     ///
     /// Safety
@@ -15017,7 +15028,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns the maximum weighted preferential attachment score.
     ///
     /// Safety
@@ -15030,7 +15041,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, source_node_id, destination_node_id, normalize)"]
+    #[pyo3(text_signature = "($self, source_node_id, destination_node_id, normalize)")]
     /// Returns the unweighted preferential attachment from the given node IDs.
     ///
     /// Parameters
@@ -15063,7 +15074,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, source_node_id, destination_node_id, normalize)"]
+    #[pyo3(text_signature = "($self, source_node_id, destination_node_id, normalize)")]
     /// Returns the unweighted preferential attachment from the given node IDs.
     ///
     /// Parameters
@@ -15096,7 +15107,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, first_node_name, second_node_name, normalize)"]
+    #[pyo3(text_signature = "($self, first_node_name, second_node_name, normalize)")]
     /// Returns the unweighted preferential attachment from the given node names.
     ///
     /// Parameters
@@ -15129,7 +15140,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, source_node_id, destination_node_id, normalize)"]
+    #[pyo3(text_signature = "($self, source_node_id, destination_node_id, normalize)")]
     /// Returns the weighted preferential attachment from the given node IDs.
     ///
     /// Parameters
@@ -15162,7 +15173,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, source_node_id, destination_node_id, normalize)"]
+    #[pyo3(text_signature = "($self, source_node_id, destination_node_id, normalize)")]
     /// Returns the weighted preferential attachment from the given node IDs.
     ///
     /// Parameters
@@ -15197,7 +15208,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, first_node_name, second_node_name, normalize)"]
+    #[pyo3(text_signature = "($self, first_node_name, second_node_name, normalize)")]
     /// Returns the weighted preferential attachment from the given node names.
     ///
     /// Parameters
@@ -15232,7 +15243,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, source_node_id, destination_node_id)"]
+    #[pyo3(text_signature = "($self, source_node_id, destination_node_id)")]
     /// Returns the Neighbours intersection size for the two given nodes from the given node IDs.
     ///
     /// Parameters
@@ -15261,7 +15272,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, source_node_id, destination_node_id)"]
+    #[pyo3(text_signature = "($self, source_node_id, destination_node_id)")]
     /// Returns the Jaccard index for the two given nodes from the given node IDs.
     ///
     /// Parameters
@@ -15290,7 +15301,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, source_node_id, destination_node_id)"]
+    #[pyo3(text_signature = "($self, source_node_id, destination_node_id)")]
     /// Returns the Jaccard index for the two given nodes from the given node IDs.
     ///
     /// Parameters
@@ -15319,7 +15330,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, first_node_name, second_node_name)"]
+    #[pyo3(text_signature = "($self, first_node_name, second_node_name)")]
     /// Returns the Jaccard index for the two given nodes from the given node names.
     ///
     /// Parameters
@@ -15348,7 +15359,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, source_node_id, destination_node_id)"]
+    #[pyo3(text_signature = "($self, source_node_id, destination_node_id)")]
     /// Returns the Adamic/Adar Index for the given pair of nodes from the given node IDs.
     ///
     /// Parameters
@@ -15377,7 +15388,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, source_node_id, destination_node_id)"]
+    #[pyo3(text_signature = "($self, source_node_id, destination_node_id)")]
     /// Returns the Adamic/Adar Index for the given pair of nodes from the given node IDs.
     ///
     /// Parameters
@@ -15406,7 +15417,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, first_node_name, second_node_name)"]
+    #[pyo3(text_signature = "($self, first_node_name, second_node_name)")]
     /// Returns the Adamic/Adar Index for the given pair of nodes from the given node names.
     ///
     /// Parameters
@@ -15435,7 +15446,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, source_node_id, destination_node_id)"]
+    #[pyo3(text_signature = "($self, source_node_id, destination_node_id)")]
     /// Returns the unweighted Resource Allocation Index for the given pair of nodes from the given node IDs.
     ///
     /// Parameters
@@ -15464,7 +15475,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, source_node_id, destination_node_id)"]
+    #[pyo3(text_signature = "($self, source_node_id, destination_node_id)")]
     /// Returns the weighted Resource Allocation Index for the given pair of nodes from the given node IDs.
     ///
     /// Parameters
@@ -15493,7 +15504,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, source_node_id, destination_node_id)"]
+    #[pyo3(text_signature = "($self, source_node_id, destination_node_id)")]
     /// Returns the unweighted Resource Allocation Index for the given pair of nodes from the given node IDs.
     ///
     /// Parameters
@@ -15522,7 +15533,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, first_node_name, second_node_name)"]
+    #[pyo3(text_signature = "($self, first_node_name, second_node_name)")]
     /// Returns the unweighted Resource Allocation Index for the given pair of nodes from the given node names.
     ///
     /// Parameters
@@ -15553,7 +15564,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, source_node_id, destination_node_id)"]
+    #[pyo3(text_signature = "($self, source_node_id, destination_node_id)")]
     /// Returns the weighted Resource Allocation Index for the given pair of nodes from the given node IDs.
     ///
     /// Parameters
@@ -15584,7 +15595,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, first_node_name, second_node_name)"]
+    #[pyo3(text_signature = "($self, first_node_name, second_node_name)")]
     /// Returns the weighted Resource Allocation Index for the given pair of nodes from the given node names.
     ///
     /// Parameters
@@ -15615,14 +15626,14 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns number of currently subgraphed edge metrics
     pub fn get_number_of_available_edge_metrics(&self) -> usize {
         self.inner.get_number_of_available_edge_metrics().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns names of currently subgraphed edge metrics
     pub fn get_available_edge_metrics_names(&self) -> Vec<&str> {
         self.inner
@@ -15633,7 +15644,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, source_node_id, destination_node_id, normalize)"]
+    #[pyo3(text_signature = "($self, source_node_id, destination_node_id, normalize)")]
     /// Returns all the implemented edge metrics for the two given node IDs.
     ///
     /// Specifically, the returned values are:
@@ -15675,7 +15686,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, source_node_id, destination_node_id, normalize)"]
+    #[pyo3(text_signature = "($self, source_node_id, destination_node_id, normalize)")]
     /// Returns all the implemented edge metrics for the two given node IDs.
     ///
     /// Specifically, the returned values are:
@@ -15720,7 +15731,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, source_node_ids, destination_node_ids, normalize)"]
+    #[pyo3(text_signature = "($self, source_node_ids, destination_node_ids, normalize)")]
     /// Returns all the implemented edge metrics for the vectors source and destination node IDs.
     ///
     /// Specifically, the returned values are:
@@ -15763,7 +15774,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, normalize, subgraph)"]
+    #[pyo3(text_signature = "($self, normalize, subgraph)")]
     /// Returns Preferential Attachment for all edges.
     ///
     /// Parameters
@@ -15794,7 +15805,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, subgraph)"]
+    #[pyo3(text_signature = "($self, subgraph)")]
     /// Returns Resource Allocation index for all edges.
     ///
     /// Parameters
@@ -15823,7 +15834,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, subgraph)"]
+    #[pyo3(text_signature = "($self, subgraph)")]
     /// Returns Jaccard Coefficient for all edges.
     ///
     /// Parameters
@@ -15852,7 +15863,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, subgraph)"]
+    #[pyo3(text_signature = "($self, subgraph)")]
     /// Returns Adamic-Adar for all edges.
     ///
     /// Parameters
@@ -15878,7 +15889,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, normalize, subgraph)"]
+    #[pyo3(text_signature = "($self, normalize, subgraph)")]
     /// Returns all available edge metrics for all edges.
     ///
     /// The metrics returned are, in order:
@@ -15914,7 +15925,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, minimum_node_degree)"]
+    #[pyo3(text_signature = "($self, minimum_node_degree)")]
     /// Returns vector with isomorphic node groups IDs.
     ///
     /// Parameters
@@ -15934,7 +15945,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, minimum_node_degree)"]
+    #[pyo3(text_signature = "($self, minimum_node_degree)")]
     /// Returns vector with isomorphic node groups names.
     ///
     /// Parameters
@@ -15954,7 +15965,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, minimum_node_degree)"]
+    #[pyo3(text_signature = "($self, minimum_node_degree)")]
     /// Returns number of isomorphic node groups.
     ///
     /// Parameters
@@ -15972,7 +15983,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns vector with isomorphic node type groups IDs
     pub fn get_isomorphic_node_type_ids_groups(&self) -> PyResult<Vec<Vec<NodeTypeT>>> {
         Ok(pe!(self.inner.get_isomorphic_node_type_ids_groups())?
@@ -15982,7 +15993,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns vector with isomorphic node type groups names
     pub fn get_isomorphic_node_type_names_groups(&self) -> PyResult<Vec<Vec<String>>> {
         Ok(pe!(self.inner.get_isomorphic_node_type_names_groups())?
@@ -15992,14 +16003,14 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns number of isomorphic node type groups
     pub fn get_number_of_isomorphic_node_type_groups(&self) -> PyResult<NodeTypeT> {
         Ok(pe!(self.inner.get_number_of_isomorphic_node_type_groups())?.into())
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns vector with isomorphic node type groups IDs
     pub fn get_approximated_isomorphic_node_type_ids_groups(
         &self,
@@ -16013,7 +16024,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns vector with isomorphic node type groups names
     pub fn get_approximated_isomorphic_node_type_names_groups(&self) -> PyResult<Vec<Vec<String>>> {
         Ok(pe!(self
@@ -16025,7 +16036,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns number of isomorphic node type groups
     pub fn get_number_of_approximated_isomorphic_node_type_groups(&self) -> PyResult<NodeTypeT> {
         Ok(pe!(self
@@ -16035,7 +16046,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, minimum_number_of_edges)"]
+    #[pyo3(text_signature = "($self, minimum_number_of_edges)")]
     /// Returns vector with isomorphic edge type groups IDs.
     ///
     /// Parameters
@@ -16056,7 +16067,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, minimum_number_of_edges)"]
+    #[pyo3(text_signature = "($self, minimum_number_of_edges)")]
     /// Returns vector with isomorphic edge type groups names.
     ///
     /// Parameters
@@ -16077,7 +16088,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, minimum_number_of_edges)"]
+    #[pyo3(text_signature = "($self, minimum_number_of_edges)")]
     /// Returns number of isomorphic edge type groups.
     ///
     /// Parameters
@@ -16096,7 +16107,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, minimum_node_degree)"]
+    #[pyo3(text_signature = "($self, minimum_node_degree)")]
     /// Returns whether the current graph has topological synonims.
     ///
     /// Parameters
@@ -16111,7 +16122,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_ids)"]
+    #[pyo3(text_signature = "($self, node_ids)")]
     /// Returns whether the set of provided node IDs have isomorphic node types.
     ///
     /// Parameters
@@ -16129,7 +16140,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_ids)"]
+    #[pyo3(text_signature = "($self, node_ids)")]
     /// Returns whether the set of provided node IDs have isomorphic node types.
     ///
     /// Parameters
@@ -16146,7 +16157,7 @@ impl Graph {
 
     #[staticmethod]
     #[automatically_generated_binding]
-    #[text_signature = "(node_type_path, node_type_list_separator, node_types_column_number, node_types_column, node_types_ids_column_number, node_types_ids_column, node_types_number, numeric_node_type_ids, minimum_node_type_id, node_type_list_header, node_type_list_support_balanced_quotes, node_type_list_rows_to_skip, node_type_list_is_correct, node_type_list_max_rows_number, node_type_list_comment_symbol, load_node_type_list_in_parallel, node_path, node_list_separator, node_list_header, node_list_support_balanced_quotes, node_list_rows_to_skip, node_list_is_correct, node_list_max_rows_number, node_list_comment_symbol, default_node_type, nodes_column_number, nodes_column, node_types_separator, node_list_node_types_column_number, node_list_node_types_column, node_ids_column, node_ids_column_number, nodes_number, minimum_node_id, numeric_node_ids, node_list_numeric_node_type_ids, skip_node_types_if_unavailable, load_node_list_in_parallel, edge_type_path, edge_types_column_number, edge_types_column, edge_types_ids_column_number, edge_types_ids_column, edge_types_number, numeric_edge_type_ids, minimum_edge_type_id, edge_type_list_separator, edge_type_list_header, edge_type_list_support_balanced_quotes, edge_type_list_rows_to_skip, edge_type_list_is_correct, edge_type_list_max_rows_number, edge_type_list_comment_symbol, load_edge_type_list_in_parallel, edge_path, edge_list_separator, edge_list_header, edge_list_support_balanced_quotes, edge_list_rows_to_skip, sources_column_number, sources_column, destinations_column_number, destinations_column, edge_list_edge_types_column_number, edge_list_edge_types_column, default_edge_type, weights_column_number, weights_column, default_weight, edge_ids_column, edge_ids_column_number, edge_list_numeric_edge_type_ids, edge_list_numeric_node_ids, skip_weights_if_unavailable, skip_edge_types_if_unavailable, edge_list_is_complete, edge_list_may_contain_duplicates, edge_list_is_sorted, edge_list_is_correct, edge_list_max_rows_number, edge_list_comment_symbol, edges_number, load_edge_list_in_parallel, verbose, may_have_singletons, may_have_singleton_with_selfloops, directed, name)"]
+    #[pyo3(text_signature = "(node_type_path, node_type_list_separator, node_types_column_number, node_types_column, node_types_ids_column_number, node_types_ids_column, node_types_number, numeric_node_type_ids, minimum_node_type_id, node_type_list_header, node_type_list_support_balanced_quotes, node_type_list_rows_to_skip, node_type_list_is_correct, node_type_list_max_rows_number, node_type_list_comment_symbol, load_node_type_list_in_parallel, node_path, node_list_separator, node_list_header, node_list_support_balanced_quotes, node_list_rows_to_skip, node_list_is_correct, node_list_max_rows_number, node_list_comment_symbol, default_node_type, nodes_column_number, nodes_column, node_types_separator, node_list_node_types_column_number, node_list_node_types_column, node_ids_column, node_ids_column_number, nodes_number, minimum_node_id, numeric_node_ids, node_list_numeric_node_type_ids, skip_node_types_if_unavailable, load_node_list_in_parallel, edge_type_path, edge_types_column_number, edge_types_column, edge_types_ids_column_number, edge_types_ids_column, edge_types_number, numeric_edge_type_ids, minimum_edge_type_id, edge_type_list_separator, edge_type_list_header, edge_type_list_support_balanced_quotes, edge_type_list_rows_to_skip, edge_type_list_is_correct, edge_type_list_max_rows_number, edge_type_list_comment_symbol, load_edge_type_list_in_parallel, edge_path, edge_list_separator, edge_list_header, edge_list_support_balanced_quotes, edge_list_rows_to_skip, sources_column_number, sources_column, destinations_column_number, destinations_column, edge_list_edge_types_column_number, edge_list_edge_types_column, default_edge_type, weights_column_number, weights_column, default_weight, edge_ids_column, edge_ids_column_number, edge_list_numeric_edge_type_ids, edge_list_numeric_node_ids, skip_weights_if_unavailable, skip_edge_types_if_unavailable, edge_list_is_complete, edge_list_may_contain_duplicates, edge_list_is_sorted, edge_list_is_correct, edge_list_max_rows_number, edge_list_comment_symbol, edges_number, load_edge_list_in_parallel, verbose, may_have_singletons, may_have_singleton_with_selfloops, directed, name)")]
     /// Return graph renderized from given CSVs or TSVs-like files.
     ///
     /// Parameters
@@ -22246,16 +22257,16 @@ impl Graph {
     }
 }
 
-#[pyproto]
-impl PyObjectProtocol for Graph {
-    fn __str__(&'p self) -> String {
+#[pymethods]
+impl Graph {
+    fn __str__(&self) -> String {
         self.inner.to_string()
     }
-    fn __repr__(&'p self) -> String {
+    fn __repr__(&self) -> String {
         self.__str__()
     }
 
-    fn __hash__(&'p self) -> PyResult<isize> {
+    fn __hash__(&self) -> PyResult<isize> {
         let mut hasher = DefaultHasher::new();
         self.inner.hash(&mut hasher);
         Ok(hasher.finish() as isize)
@@ -22351,28 +22362,28 @@ impl<'a> From<&'a NodeTuple> for &'a graph::NodeTuple {
 #[pymethods]
 impl NodeTuple {
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return the first node ID of the tuple
     pub fn get_root_node_id(&self) -> NodeT {
         self.inner.get_root_node_id().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return the first node name of the tuple
     pub fn get_root_node_name(&self) -> String {
         self.inner.get_root_node_name().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return length of the tuple
     pub fn len(&self) -> NodeT {
         self.inner.len().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return the node IDs of the nodes composing the tuple
     pub fn get_node_ids(&self) -> Py<PyArray1<NodeT>> {
         let gil = pyo3::Python::acquire_gil();
@@ -22417,22 +22428,22 @@ impl NodeTuple {
     }
 }
 
-#[pyproto]
-impl PyObjectProtocol for NodeTuple {
-    fn __str__(&'p self) -> String {
+#[pymethods]
+impl NodeTuple {
+    fn __str__(&self) -> String {
         self.inner.to_string()
     }
-    fn __repr__(&'p self) -> String {
+    fn __repr__(&self) -> String {
         self.__str__()
     }
 
-    fn __hash__(&'p self) -> PyResult<isize> {
+    fn __hash__(&self) -> PyResult<isize> {
         let mut hasher = DefaultHasher::new();
         self.inner.hash(&mut hasher);
         Ok(hasher.finish() as isize)
     }
 
-    fn __richcmp__(&'p self, other: Self, op: CompareOp) -> bool {
+    fn __richcmp__(&self, other: Self, op: CompareOp) -> bool {
         match op {
             CompareOp::Lt => self.inner < other.inner,
             CompareOp::Le => self.inner <= other.inner,
@@ -22533,28 +22544,28 @@ impl<'a> From<&'a ShortestPathsDjkstra> for &'a graph::ShortestPathsDjkstra {
 #[pymethods]
 impl ShortestPathsDjkstra {
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_id)"]
+    #[pyo3(text_signature = "($self, node_id)")]
     ///
     pub fn has_path_to_node_id(&self, node_id: NodeT) -> PyResult<bool> {
         Ok(pe!(self.inner.has_path_to_node_id(node_id.into()))?.into())
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_id)"]
+    #[pyo3(text_signature = "($self, node_id)")]
     ///
     pub fn get_distance_from_node_id(&self, node_id: NodeT) -> PyResult<f32> {
         Ok(pe!(self.inner.get_distance_from_node_id(node_id.into()))?.into())
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_id)"]
+    #[pyo3(text_signature = "($self, node_id)")]
     ///
     pub fn get_parent_from_node_id(&self, node_id: NodeT) -> PyResult<Option<NodeT>> {
         Ok(pe!(self.inner.get_parent_from_node_id(node_id.into()))?.map(|x| x.into()))
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, dst_node_id, distance)"]
+    #[pyo3(text_signature = "($self, dst_node_id, distance)")]
     /// Returns node at just before given distance on minimum path to given destination node.
     ///
     /// Parameters
@@ -22582,35 +22593,35 @@ impl ShortestPathsDjkstra {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, dst_node_id)"]
+    #[pyo3(text_signature = "($self, dst_node_id)")]
     ///
     pub fn get_median_point(&self, dst_node_id: NodeT) -> PyResult<NodeT> {
         Ok(pe!(self.inner.get_median_point(dst_node_id.into()))?.into())
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     ///
     pub fn get_eccentricity(&self) -> f32 {
         self.inner.get_eccentricity().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     ///
     pub fn get_most_distant_node(&self) -> NodeT {
         self.inner.get_most_distant_node().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns the number of shortest paths starting from the root node
     pub fn get_number_of_shortest_paths(&self) -> NodeT {
         self.inner.get_number_of_shortest_paths().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_id)"]
+    #[pyo3(text_signature = "($self, node_id)")]
     /// Returns the number of shortest paths passing through the given node.
     ///
     /// Parameters
@@ -22634,7 +22645,7 @@ impl ShortestPathsDjkstra {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, source_node_id)"]
+    #[pyo3(text_signature = "($self, source_node_id)")]
     /// Return list of successors of a given node.
     ///
     /// Parameters
@@ -22780,16 +22791,16 @@ impl ShortestPathsDjkstra {
     }
 }
 
-#[pyproto]
-impl PyObjectProtocol for ShortestPathsDjkstra {
-    fn __str__(&'p self) -> String {
+#[pymethods]
+impl ShortestPathsDjkstra {
+    fn __str__(&self) -> String {
         self.inner.to_string()
     }
-    fn __repr__(&'p self) -> String {
+    fn __repr__(&self) -> String {
         self.__str__()
     }
 
-    fn __hash__(&'p self) -> PyResult<isize> {
+    fn __hash__(&self) -> PyResult<isize> {
         let mut hasher = DefaultHasher::new();
         self.inner.hash(&mut hasher);
         Ok(hasher.finish() as isize)
@@ -22888,28 +22899,28 @@ impl<'a> From<&'a ShortestPathsResultBFS> for &'a graph::ShortestPathsResultBFS 
 #[pymethods]
 impl ShortestPathsResultBFS {
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_id)"]
+    #[pyo3(text_signature = "($self, node_id)")]
     ///
     pub fn has_path_to_node_id(&self, node_id: NodeT) -> PyResult<bool> {
         Ok(pe!(self.inner.has_path_to_node_id(node_id.into()))?.into())
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_id)"]
+    #[pyo3(text_signature = "($self, node_id)")]
     ///
     pub fn get_distance_from_node_id(&self, node_id: NodeT) -> PyResult<NodeT> {
         Ok(pe!(self.inner.get_distance_from_node_id(node_id.into()))?.into())
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_id)"]
+    #[pyo3(text_signature = "($self, node_id)")]
     ///
     pub fn get_parent_from_node_id(&self, node_id: NodeT) -> PyResult<NodeT> {
         Ok(pe!(self.inner.get_parent_from_node_id(node_id.into()))?.into())
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, dst_node_id, k)"]
+    #[pyo3(text_signature = "($self, dst_node_id, k)")]
     /// Returns node at the `len - k` position on minimum path to given destination node.
     ///
     /// Parameters
@@ -22937,7 +22948,7 @@ impl ShortestPathsResultBFS {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, dst_node_id, k)"]
+    #[pyo3(text_signature = "($self, dst_node_id, k)")]
     /// Returns node at the `len - k` position on minimum path to given destination node.
     ///
     /// Parameters
@@ -22961,35 +22972,35 @@ impl ShortestPathsResultBFS {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, dst_node_id)"]
+    #[pyo3(text_signature = "($self, dst_node_id)")]
     ///
     pub fn get_median_point(&self, dst_node_id: NodeT) -> PyResult<NodeT> {
         Ok(pe!(self.inner.get_median_point(dst_node_id.into()))?.into())
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     ///
     pub fn get_median_point_to_most_distant_node(&self) -> PyResult<NodeT> {
         Ok(pe!(self.inner.get_median_point_to_most_distant_node())?.into())
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     ///
     pub fn get_eccentricity(&self) -> NodeT {
         self.inner.get_eccentricity().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     ///
     pub fn get_most_distant_node(&self) -> NodeT {
         self.inner.get_most_distant_node().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns the number of shortest paths starting from the root node.
     ///
     /// Raises
@@ -23002,7 +23013,7 @@ impl ShortestPathsResultBFS {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_id)"]
+    #[pyo3(text_signature = "($self, node_id)")]
     /// Returns the number of shortest paths passing through the given node.
     ///
     /// Parameters
@@ -23026,7 +23037,7 @@ impl ShortestPathsResultBFS {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, source_node_id)"]
+    #[pyo3(text_signature = "($self, source_node_id)")]
     /// Return list of successors of a given node.
     ///
     /// Parameters
@@ -23057,7 +23068,7 @@ impl ShortestPathsResultBFS {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, source_node_id)"]
+    #[pyo3(text_signature = "($self, source_node_id)")]
     /// Return list of predecessors of a given node.
     ///
     /// Parameters
@@ -23088,7 +23099,7 @@ impl ShortestPathsResultBFS {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, first_node_id, second_node_id)"]
+    #[pyo3(text_signature = "($self, first_node_id, second_node_id)")]
     /// Return Shared Ancestors number.
     ///
     /// Parameters
@@ -23116,7 +23127,7 @@ impl ShortestPathsResultBFS {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, first_node_id, second_node_id)"]
+    #[pyo3(text_signature = "($self, first_node_id, second_node_id)")]
     /// Return Ancestors Jaccard Index.
     ///
     /// Parameters
@@ -23144,7 +23155,7 @@ impl ShortestPathsResultBFS {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     ///
     pub fn get_distances(&self) -> PyResult<Py<PyArray1<NodeT>>> {
         Ok({
@@ -23154,7 +23165,7 @@ impl ShortestPathsResultBFS {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     ///
     pub fn get_predecessors(&self) -> PyResult<Py<PyArray1<NodeT>>> {
         Ok({
@@ -23330,16 +23341,16 @@ impl ShortestPathsResultBFS {
     }
 }
 
-#[pyproto]
-impl PyObjectProtocol for ShortestPathsResultBFS {
-    fn __str__(&'p self) -> String {
+#[pymethods]
+impl ShortestPathsResultBFS {
+    fn __str__(&self) -> String {
         self.inner.to_string()
     }
-    fn __repr__(&'p self) -> String {
+    fn __repr__(&self) -> String {
         self.__str__()
     }
 
-    fn __hash__(&'p self) -> PyResult<isize> {
+    fn __hash__(&self) -> PyResult<isize> {
         let mut hasher = DefaultHasher::new();
         self.inner.hash(&mut hasher);
         Ok(hasher.finish() as isize)
@@ -23438,28 +23449,28 @@ impl<'a> From<&'a Star> for &'a graph::Star {
 #[pymethods]
 impl Star {
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return the central node ID of the Star
     pub fn get_root_node_id(&self) -> NodeT {
         self.inner.get_root_node_id().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return the central node name of the star
     pub fn get_root_node_name(&self) -> String {
         self.inner.get_root_node_name().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return length of the Star
     pub fn len(&self) -> NodeT {
         self.inner.len().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return the node IDs of the nodes composing the Star
     pub fn get_star_node_ids(&self) -> Py<PyArray1<NodeT>> {
         let gil = pyo3::Python::acquire_gil();
@@ -23467,7 +23478,7 @@ impl Star {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, k)"]
+    #[pyo3(text_signature = "($self, k)")]
     /// Return the first `k` node IDs of the nodes composing the star.
     ///
     /// Parameters
@@ -23479,7 +23490,7 @@ impl Star {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, k)"]
+    #[pyo3(text_signature = "($self, k)")]
     /// Return the first `k` node names of the nodes composing the star.
     ///
     /// Parameters
@@ -23494,7 +23505,7 @@ impl Star {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return the node names of the nodes composing the star
     pub fn get_star_node_names(&self) -> Vec<String> {
         self.inner
@@ -23570,22 +23581,22 @@ impl Star {
     }
 }
 
-#[pyproto]
-impl PyObjectProtocol for Star {
-    fn __str__(&'p self) -> String {
+#[pymethods]
+impl Star {
+    fn __str__(&self) -> String {
         self.inner.to_string()
     }
-    fn __repr__(&'p self) -> String {
+    fn __repr__(&self) -> String {
         self.__str__()
     }
 
-    fn __hash__(&'p self) -> PyResult<isize> {
+    fn __hash__(&self) -> PyResult<isize> {
         let mut hasher = DefaultHasher::new();
         self.inner.hash(&mut hasher);
         Ok(hasher.finish() as isize)
     }
 
-    fn __richcmp__(&'p self, other: Self, op: CompareOp) -> bool {
+    fn __richcmp__(&self, other: Self, op: CompareOp) -> bool {
         match op {
             CompareOp::Lt => self.inner < other.inner,
             CompareOp::Le => self.inner <= other.inner,
@@ -23686,28 +23697,28 @@ impl<'a> From<&'a Tendril> for &'a graph::Tendril {
 #[pymethods]
 impl Tendril {
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return the first node ID of the Tendril
     pub fn get_root_node_id(&self) -> NodeT {
         self.inner.get_root_node_id().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return the first node name of the Tendril
     pub fn get_root_node_name(&self) -> String {
         self.inner.get_root_node_name().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return length of the Tendril
     pub fn len(&self) -> NodeT {
         self.inner.len().into()
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return the node IDs of the nodes composing the Tendril
     pub fn get_tendril_node_ids(&self) -> Py<PyArray1<NodeT>> {
         let gil = pyo3::Python::acquire_gil();
@@ -23715,7 +23726,7 @@ impl Tendril {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, k)"]
+    #[pyo3(text_signature = "($self, k)")]
     /// Return the first `k` node IDs of the nodes composing the Tendril.
     ///
     /// Parameters
@@ -23731,7 +23742,7 @@ impl Tendril {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, k)"]
+    #[pyo3(text_signature = "($self, k)")]
     /// Return the first `k` node names of the nodes composing the Tendril.
     ///
     /// Parameters
@@ -23746,7 +23757,7 @@ impl Tendril {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return the node names of the nodes composing the Tendril
     pub fn get_tendril_node_names(&self) -> Vec<String> {
         self.inner
@@ -23822,22 +23833,22 @@ impl Tendril {
     }
 }
 
-#[pyproto]
-impl PyObjectProtocol for Tendril {
-    fn __str__(&'p self) -> String {
+#[pymethods]
+impl Tendril {
+    fn __str__(&self) -> String {
         self.inner.to_string()
     }
-    fn __repr__(&'p self) -> String {
+    fn __repr__(&self) -> String {
         self.__str__()
     }
 
-    fn __hash__(&'p self) -> PyResult<isize> {
+    fn __hash__(&self) -> PyResult<isize> {
         let mut hasher = DefaultHasher::new();
         self.inner.hash(&mut hasher);
         Ok(hasher.finish() as isize)
     }
 
-    fn __richcmp__(&'p self, other: Self, op: CompareOp) -> bool {
+    fn __richcmp__(&self, other: Self, op: CompareOp) -> bool {
         match op {
             CompareOp::Lt => self.inner < other.inner,
             CompareOp::Le => self.inner <= other.inner,
@@ -23910,32 +23921,30 @@ impl PyObjectProtocol for Tendril {
     }
 }
 
-#[pymodule]
-fn edge_list_utils(_py: Python, _m: &PyModule) -> PyResult<()> {
-    _m.add_wrapped(wrap_pyfunction!(convert_edge_list_to_numeric))?;
-    _m.add_wrapped(wrap_pyfunction!(densify_sparse_numeric_edge_list))?;
-    _m.add_wrapped(wrap_pyfunction!(are_there_selfloops_in_edge_list))?;
-    _m.add_wrapped(wrap_pyfunction!(get_rows_number))?;
-    _m.add_wrapped(wrap_pyfunction!(convert_directed_edge_list_to_undirected))?;
-    _m.add_wrapped(wrap_pyfunction!(add_numeric_id_to_csv))?;
-    _m.add_wrapped(wrap_pyfunction!(build_optimal_lists_files))?;
-    _m.add_wrapped(wrap_pyfunction!(filter_duplicates_from_edge_list))?;
-    _m.add_wrapped(wrap_pyfunction!(convert_undirected_edge_list_to_directed))?;
-    _m.add_wrapped(wrap_pyfunction!(get_minmax_node_from_numeric_edge_list))?;
-    _m.add_wrapped(wrap_pyfunction!(parse_wikipedia_graph))?;
-    _m.add_wrapped(wrap_pyfunction!(is_numeric_edge_list))?;
-    _m.add_wrapped(wrap_pyfunction!(convert_node_list_node_types_to_numeric))?;
-    _m.add_wrapped(wrap_pyfunction!(has_duplicated_edges_in_edge_list))?;
-    _m.add_wrapped(wrap_pyfunction!(sort_numeric_edge_list))?;
-    _m.add_wrapped(wrap_pyfunction!(sort_numeric_edge_list_inplace))?;
-    _m.add_wrapped(wrap_pyfunction!(get_number_of_selfloops_from_edge_list))?;
+pub fn register_edge_list_utils(_py: Python, m: &PyModule) -> PyResult<()> {
+    m.add_function(wrap_pyfunction!(convert_edge_list_to_numeric, m)?)?;
+    m.add_function(wrap_pyfunction!(densify_sparse_numeric_edge_list, m)?)?;
+    m.add_function(wrap_pyfunction!(are_there_selfloops_in_edge_list, m)?)?;
+    m.add_function(wrap_pyfunction!(get_rows_number, m)?)?;
+    m.add_function(wrap_pyfunction!(convert_directed_edge_list_to_undirected, m)?)?;
+    m.add_function(wrap_pyfunction!(add_numeric_id_to_csv, m)?)?;
+    m.add_function(wrap_pyfunction!(build_optimal_lists_files, m)?)?;
+    m.add_function(wrap_pyfunction!(filter_duplicates_from_edge_list, m)?)?;
+    m.add_function(wrap_pyfunction!(convert_undirected_edge_list_to_directed, m)?)?;
+    m.add_function(wrap_pyfunction!(get_minmax_node_from_numeric_edge_list, m)?)?;
+    m.add_function(wrap_pyfunction!(parse_wikipedia_graph, m)?)?;
+    m.add_function(wrap_pyfunction!(is_numeric_edge_list, m)?)?;
+    m.add_function(wrap_pyfunction!(convert_node_list_node_types_to_numeric, m)?)?;
+    m.add_function(wrap_pyfunction!(has_duplicated_edges_in_edge_list, m)?)?;
+    m.add_function(wrap_pyfunction!(sort_numeric_edge_list, m)?)?;
+    m.add_function(wrap_pyfunction!(sort_numeric_edge_list_inplace, m)?)?;
+    m.add_function(wrap_pyfunction!(get_number_of_selfloops_from_edge_list, m)?)?;
     Ok(())
 }
 
-#[module(edge_list_utils)]
 #[pyfunction]
 #[automatically_generated_binding]
-#[text_signature = "(original_node_path, original_node_list_separator, original_node_list_header, original_node_list_support_balanced_quotes, node_list_rows_to_skip, node_list_is_correct, node_list_max_rows_number, node_list_comment_symbol, original_nodes_column_number, original_nodes_column, nodes_number, original_minimum_node_id, original_numeric_node_ids, original_load_node_list_in_parallel, original_edge_type_path, original_edge_types_column_number, original_edge_types_column, edge_types_number, original_numeric_edge_type_ids, original_minimum_edge_type_id, original_edge_type_list_separator, original_edge_type_list_header, original_edge_type_list_support_balanced_quotes, edge_type_list_rows_to_skip, edge_type_list_is_correct, edge_type_list_max_rows_number, edge_type_list_comment_symbol, load_edge_type_list_in_parallel, original_edge_path, original_edge_list_separator, original_edge_list_header, original_edge_list_support_balanced_quotes, original_sources_column_number, original_sources_column, original_destinations_column_number, original_destinations_column, original_edge_list_edge_types_column, original_edge_list_edge_types_column_number, original_weights_column, original_weights_column_number, target_edge_path, target_edge_list_separator, target_edge_list_header, target_sources_column, target_sources_column_number, target_destinations_column, target_destinations_column_number, target_edge_list_edge_types_column, target_edge_list_edge_types_column_number, target_weights_column, target_weights_column_number, target_node_path, target_node_list_separator, target_node_list_header, target_nodes_column, target_nodes_column_number, target_edge_type_list_path, target_edge_type_list_separator, target_edge_type_list_header, target_edge_type_list_edge_types_column, target_edge_type_list_edge_types_column_number, comment_symbol, default_edge_type, default_weight, max_rows_number, rows_to_skip, edges_number, skip_edge_types_if_unavailable, skip_weights_if_unavailable, numeric_rows_are_surely_smaller_than_original, directed, verbose, name)"]
+#[pyo3(text_signature = "(original_node_path, original_node_list_separator, original_node_list_header, original_node_list_support_balanced_quotes, node_list_rows_to_skip, node_list_is_correct, node_list_max_rows_number, node_list_comment_symbol, original_nodes_column_number, original_nodes_column, nodes_number, original_minimum_node_id, original_numeric_node_ids, original_load_node_list_in_parallel, original_edge_type_path, original_edge_types_column_number, original_edge_types_column, edge_types_number, original_numeric_edge_type_ids, original_minimum_edge_type_id, original_edge_type_list_separator, original_edge_type_list_header, original_edge_type_list_support_balanced_quotes, edge_type_list_rows_to_skip, edge_type_list_is_correct, edge_type_list_max_rows_number, edge_type_list_comment_symbol, load_edge_type_list_in_parallel, original_edge_path, original_edge_list_separator, original_edge_list_header, original_edge_list_support_balanced_quotes, original_sources_column_number, original_sources_column, original_destinations_column_number, original_destinations_column, original_edge_list_edge_types_column, original_edge_list_edge_types_column_number, original_weights_column, original_weights_column_number, target_edge_path, target_edge_list_separator, target_edge_list_header, target_sources_column, target_sources_column_number, target_destinations_column, target_destinations_column_number, target_edge_list_edge_types_column, target_edge_list_edge_types_column_number, target_weights_column, target_weights_column_number, target_node_path, target_node_list_separator, target_node_list_header, target_nodes_column, target_nodes_column_number, target_edge_type_list_path, target_edge_type_list_separator, target_edge_type_list_header, target_edge_type_list_edge_types_column, target_edge_type_list_edge_types_column_number, comment_symbol, default_edge_type, default_weight, max_rows_number, rows_to_skip, edges_number, skip_edge_types_if_unavailable, skip_weights_if_unavailable, numeric_rows_are_surely_smaller_than_original, directed, verbose, name)")]
 /// Create a new edge list starting from given one with node IDs densified.
 ///
 /// Raises
@@ -24101,10 +24110,9 @@ pub fn convert_edge_list_to_numeric(
     })
 }
 
-#[module(edge_list_utils)]
 #[pyfunction]
 #[automatically_generated_binding]
-#[text_signature = "(maximum_node_id, original_edge_path, original_edge_list_separator, original_edge_list_header, original_sources_column, original_sources_column_number, original_destinations_column, original_destinations_column_number, original_edge_list_edge_types_column, original_edge_list_edge_types_column_number, original_weights_column, original_weights_column_number, original_edge_type_path, original_edge_types_column_number, original_edge_types_column, edge_types_number, original_numeric_edge_type_ids, original_minimum_edge_type_id, original_edge_type_list_separator, original_edge_type_list_header, edge_type_list_rows_to_skip, edge_type_list_is_correct, edge_type_list_max_rows_number, edge_type_list_comment_symbol, load_edge_type_list_in_parallel, target_edge_path, target_edge_list_separator, target_edge_list_header, target_sources_column, target_sources_column_number, target_destinations_column, target_destinations_column_number, target_edge_list_edge_types_column, target_edge_list_edge_types_column_number, target_weights_column, target_weights_column_number, target_node_path, target_node_list_separator, target_node_list_header, target_nodes_column, target_nodes_column_number, target_edge_type_list_path, target_edge_type_list_separator, target_edge_type_list_header, target_edge_type_list_edge_types_column, target_edge_type_list_edge_types_column_number, comment_symbol, default_edge_type, default_weight, max_rows_number, rows_to_skip, edges_number, skip_edge_types_if_unavailable, skip_weights_if_unavailable, numeric_rows_are_surely_smaller_than_original, directed, verbose, name)"]
+#[pyo3(text_signature = "(maximum_node_id, original_edge_path, original_edge_list_separator, original_edge_list_header, original_sources_column, original_sources_column_number, original_destinations_column, original_destinations_column_number, original_edge_list_edge_types_column, original_edge_list_edge_types_column_number, original_weights_column, original_weights_column_number, original_edge_type_path, original_edge_types_column_number, original_edge_types_column, edge_types_number, original_numeric_edge_type_ids, original_minimum_edge_type_id, original_edge_type_list_separator, original_edge_type_list_header, edge_type_list_rows_to_skip, edge_type_list_is_correct, edge_type_list_max_rows_number, edge_type_list_comment_symbol, load_edge_type_list_in_parallel, target_edge_path, target_edge_list_separator, target_edge_list_header, target_sources_column, target_sources_column_number, target_destinations_column, target_destinations_column_number, target_edge_list_edge_types_column, target_edge_list_edge_types_column_number, target_weights_column, target_weights_column_number, target_node_path, target_node_list_separator, target_node_list_header, target_nodes_column, target_nodes_column_number, target_edge_type_list_path, target_edge_type_list_separator, target_edge_type_list_header, target_edge_type_list_edge_types_column, target_edge_type_list_edge_types_column_number, comment_symbol, default_edge_type, default_weight, max_rows_number, rows_to_skip, edges_number, skip_edge_types_if_unavailable, skip_weights_if_unavailable, numeric_rows_are_surely_smaller_than_original, directed, verbose, name)")]
 /// Create a new edge list starting from given numeric one with node IDs densified and returns the number of unique nodes.
 ///
 /// This method is meant as a solution to parse very large sparse numeric graphs,
@@ -24310,10 +24318,9 @@ pub fn densify_sparse_numeric_edge_list(
     })
 }
 
-#[module(edge_list_utils)]
 #[pyfunction]
 #[automatically_generated_binding]
-#[text_signature = "(path, separator, header, sources_column, sources_column_number, destinations_column, destinations_column_number, comment_symbol, support_balanced_quotes, max_rows_number, rows_to_skip, edges_number, load_edge_list_in_parallel, verbose, name)"]
+#[pyo3(text_signature = "(path, separator, header, sources_column, sources_column_number, destinations_column, destinations_column_number, comment_symbol, support_balanced_quotes, max_rows_number, rows_to_skip, edges_number, load_edge_list_in_parallel, verbose, name)")]
 /// Return whether there are selfloops in the edge list.
 ///
 /// Parameters
@@ -24386,10 +24393,9 @@ pub fn are_there_selfloops_in_edge_list(
     .into())
 }
 
-#[module(edge_list_utils)]
 #[pyfunction]
 #[automatically_generated_binding]
-#[text_signature = "(file_path)"]
+#[pyo3(text_signature = "(file_path)")]
 /// Return number of rows in given CSV path.
 ///
 /// Parameters
@@ -24407,10 +24413,9 @@ pub fn get_rows_number(file_path: &str) -> PyResult<usize> {
     Ok(pe!(graph::get_rows_number(file_path.into()))?.into())
 }
 
-#[module(edge_list_utils)]
 #[pyfunction]
 #[automatically_generated_binding]
-#[text_signature = "(original_edge_path, original_edge_list_separator, original_edge_list_header, original_edge_list_support_balanced_quotes, original_sources_column, original_sources_column_number, original_destinations_column, original_destinations_column_number, original_edge_list_edge_type_column, original_edge_list_edge_type_column_number, original_weights_column, original_weights_column_number, target_edge_path, target_edge_list_separator, target_edge_list_header, target_sources_column_number, target_sources_column, target_destinations_column_number, target_destinations_column, target_edge_list_edge_type_column, target_edge_list_edge_type_column_number, target_weights_column, target_weights_column_number, comment_symbol, default_edge_type, default_weight, max_rows_number, rows_to_skip, edges_number, skip_edge_types_if_unavailable, skip_weights_if_unavailable, verbose, name)"]
+#[pyo3(text_signature = "(original_edge_path, original_edge_list_separator, original_edge_list_header, original_edge_list_support_balanced_quotes, original_sources_column, original_sources_column_number, original_destinations_column, original_destinations_column_number, original_edge_list_edge_type_column, original_edge_list_edge_type_column_number, original_weights_column, original_weights_column_number, target_edge_path, target_edge_list_separator, target_edge_list_header, target_sources_column_number, target_sources_column, target_destinations_column_number, target_destinations_column, target_edge_list_edge_type_column, target_edge_list_edge_type_column_number, target_weights_column, target_weights_column_number, comment_symbol, default_edge_type, default_weight, max_rows_number, rows_to_skip, edges_number, skip_edge_types_if_unavailable, skip_weights_if_unavailable, verbose, name)")]
 /// Create a new undirected edge list from a given directed one by duplicating the undirected edges.
 ///
 /// Parameters
@@ -24563,10 +24568,9 @@ pub fn convert_directed_edge_list_to_undirected(
     .into())
 }
 
-#[module(edge_list_utils)]
 #[pyfunction]
 #[automatically_generated_binding]
-#[text_signature = "(original_csv_path, original_csv_separator, original_csv_header, target_csv_path, target_csv_separator, target_csv_header, target_csv_ids_column, target_csv_ids_column_number, comment_symbol, support_balanced_quotes, max_rows_number, rows_to_skip, lines_number, verbose)"]
+#[pyo3(text_signature = "(original_csv_path, original_csv_separator, original_csv_header, target_csv_path, target_csv_separator, target_csv_header, target_csv_ids_column, target_csv_ids_column_number, comment_symbol, support_balanced_quotes, max_rows_number, rows_to_skip, lines_number, verbose)")]
 /// Create a new CSV with the lines number added to it.
 ///
 /// Parameters
@@ -24641,10 +24645,9 @@ pub fn add_numeric_id_to_csv(
     .into())
 }
 
-#[module(edge_list_utils)]
 #[pyfunction]
 #[automatically_generated_binding]
-#[text_signature = "(original_node_type_path, original_node_type_list_separator, original_node_types_column_number, original_node_types_column, original_numeric_node_type_ids, original_minimum_node_type_id, original_node_type_list_header, original_node_type_list_support_balanced_quotes, original_node_type_list_rows_to_skip, original_node_type_list_max_rows_number, original_node_type_list_comment_symbol, original_load_node_type_list_in_parallel, original_node_type_list_is_correct, node_types_number, target_node_type_list_path, target_node_type_list_separator, target_node_type_list_node_types_column_number, target_node_type_list_node_types_column, target_node_type_list_header, original_node_path, original_node_list_separator, original_node_list_header, original_node_list_support_balanced_quotes, node_list_rows_to_skip, node_list_is_correct, node_list_max_rows_number, node_list_comment_symbol, default_node_type, original_nodes_column_number, original_nodes_column, original_node_types_separator, original_node_list_node_types_column_number, original_node_list_node_types_column, nodes_number, original_minimum_node_id, original_numeric_node_ids, original_node_list_numeric_node_type_ids, original_skip_node_types_if_unavailable, original_load_node_list_in_parallel, maximum_node_id, target_node_path, target_node_list_separator, target_node_list_header, target_nodes_column, target_nodes_column_number, target_node_types_separator, target_node_list_node_types_column, target_node_list_node_types_column_number, original_edge_type_path, original_edge_type_list_separator, original_edge_types_column_number, original_edge_types_column, original_numeric_edge_type_ids, original_minimum_edge_type_id, original_edge_type_list_header, original_edge_type_list_support_balanced_quotes, edge_type_list_rows_to_skip, edge_type_list_max_rows_number, edge_type_list_comment_symbol, load_edge_type_list_in_parallel, edge_type_list_is_correct, edge_types_number, target_edge_type_list_path, target_edge_type_list_separator, target_edge_type_list_edge_types_column_number, target_edge_type_list_edge_types_column, target_edge_type_list_header, original_edge_path, original_edge_list_separator, original_edge_list_header, original_edge_list_support_balanced_quotes, original_sources_column_number, original_sources_column, original_destinations_column_number, original_destinations_column, original_edge_list_edge_types_column_number, original_edge_list_edge_types_column, default_edge_type, original_weights_column_number, original_weights_column, default_weight, original_edge_list_numeric_node_ids, skip_weights_if_unavailable, skip_edge_types_if_unavailable, edge_list_comment_symbol, edge_list_max_rows_number, edge_list_rows_to_skip, load_edge_list_in_parallel, edges_number, target_edge_path, target_edge_list_separator, numeric_rows_are_surely_smaller_than_original, sort_temporary_directory, verbose, directed, name)"]
+#[pyo3(text_signature = "(original_node_type_path, original_node_type_list_separator, original_node_types_column_number, original_node_types_column, original_numeric_node_type_ids, original_minimum_node_type_id, original_node_type_list_header, original_node_type_list_support_balanced_quotes, original_node_type_list_rows_to_skip, original_node_type_list_max_rows_number, original_node_type_list_comment_symbol, original_load_node_type_list_in_parallel, original_node_type_list_is_correct, node_types_number, target_node_type_list_path, target_node_type_list_separator, target_node_type_list_node_types_column_number, target_node_type_list_node_types_column, target_node_type_list_header, original_node_path, original_node_list_separator, original_node_list_header, original_node_list_support_balanced_quotes, node_list_rows_to_skip, node_list_is_correct, node_list_max_rows_number, node_list_comment_symbol, default_node_type, original_nodes_column_number, original_nodes_column, original_node_types_separator, original_node_list_node_types_column_number, original_node_list_node_types_column, nodes_number, original_minimum_node_id, original_numeric_node_ids, original_node_list_numeric_node_type_ids, original_skip_node_types_if_unavailable, original_load_node_list_in_parallel, maximum_node_id, target_node_path, target_node_list_separator, target_node_list_header, target_nodes_column, target_nodes_column_number, target_node_types_separator, target_node_list_node_types_column, target_node_list_node_types_column_number, original_edge_type_path, original_edge_type_list_separator, original_edge_types_column_number, original_edge_types_column, original_numeric_edge_type_ids, original_minimum_edge_type_id, original_edge_type_list_header, original_edge_type_list_support_balanced_quotes, edge_type_list_rows_to_skip, edge_type_list_max_rows_number, edge_type_list_comment_symbol, load_edge_type_list_in_parallel, edge_type_list_is_correct, edge_types_number, target_edge_type_list_path, target_edge_type_list_separator, target_edge_type_list_edge_types_column_number, target_edge_type_list_edge_types_column, target_edge_type_list_header, original_edge_path, original_edge_list_separator, original_edge_list_header, original_edge_list_support_balanced_quotes, original_sources_column_number, original_sources_column, original_destinations_column_number, original_destinations_column, original_edge_list_edge_types_column_number, original_edge_list_edge_types_column, default_edge_type, original_weights_column_number, original_weights_column, default_weight, original_edge_list_numeric_node_ids, skip_weights_if_unavailable, skip_edge_types_if_unavailable, edge_list_comment_symbol, edge_list_max_rows_number, edge_list_rows_to_skip, load_edge_list_in_parallel, edges_number, target_edge_path, target_edge_list_separator, numeric_rows_are_surely_smaller_than_original, sort_temporary_directory, verbose, directed, name)")]
 /// TODO: write the docstrin
 pub fn build_optimal_lists_files(
     original_node_type_path: Option<String>,
@@ -24854,10 +24857,9 @@ pub fn build_optimal_lists_files(
     })
 }
 
-#[module(edge_list_utils)]
 #[pyfunction]
 #[automatically_generated_binding]
-#[text_signature = "(original_edge_path, original_edge_list_separator, original_edge_list_header, original_edge_list_support_balanced_quotes, original_edge_list_sources_column, original_edge_list_sources_column_number, original_edge_list_destinations_column, original_edge_list_destinations_column_number, original_edge_list_edge_type_column, original_edge_list_edge_type_column_number, original_edge_list_weights_column, original_edge_list_weights_column_number, target_edge_path, target_edge_list_separator, target_edge_list_header, target_edge_list_sources_column_number, target_edge_list_sources_column, target_edge_list_destinations_column_number, target_edge_list_destinations_column, target_edge_list_edge_type_column, target_edge_list_edge_type_column_number, target_edge_list_weights_column, target_edge_list_weights_column_number, comment_symbol, default_edge_type, default_weight, max_rows_number, rows_to_skip, edges_number, skip_edge_types_if_unavailable, skip_weights_if_unavailable, verbose, name)"]
+#[pyo3(text_signature = "(original_edge_path, original_edge_list_separator, original_edge_list_header, original_edge_list_support_balanced_quotes, original_edge_list_sources_column, original_edge_list_sources_column_number, original_edge_list_destinations_column, original_edge_list_destinations_column_number, original_edge_list_edge_type_column, original_edge_list_edge_type_column_number, original_edge_list_weights_column, original_edge_list_weights_column_number, target_edge_path, target_edge_list_separator, target_edge_list_header, target_edge_list_sources_column_number, target_edge_list_sources_column, target_edge_list_destinations_column_number, target_edge_list_destinations_column, target_edge_list_edge_type_column, target_edge_list_edge_type_column_number, target_edge_list_weights_column, target_edge_list_weights_column_number, comment_symbol, default_edge_type, default_weight, max_rows_number, rows_to_skip, edges_number, skip_edge_types_if_unavailable, skip_weights_if_unavailable, verbose, name)")]
 /// Create a new edge list from a given one filtering duplicates.
 ///
 /// Parameters
@@ -25001,10 +25003,9 @@ pub fn filter_duplicates_from_edge_list(
     ))?)
 }
 
-#[module(edge_list_utils)]
 #[pyfunction]
 #[automatically_generated_binding]
-#[text_signature = "(original_edge_path, original_edge_list_separator, original_edge_list_header, original_edge_list_support_balanced_quotes, original_sources_column, original_sources_column_number, original_destinations_column, original_destinations_column_number, original_edge_list_edge_type_column, original_edge_list_edge_type_column_number, original_weights_column, original_weights_column_number, target_edge_path, target_edge_list_separator, target_edge_list_header, target_sources_column, target_sources_column_number, target_destinations_column, target_destinations_column_number, target_edge_list_edge_type_column, target_edge_list_edge_type_column_number, target_weights_column, target_weights_column_number, comment_symbol, default_edge_type, default_weight, max_rows_number, rows_to_skip, edges_number, skip_edge_types_if_unavailable, skip_weights_if_unavailable, verbose, name)"]
+#[pyo3(text_signature = "(original_edge_path, original_edge_list_separator, original_edge_list_header, original_edge_list_support_balanced_quotes, original_sources_column, original_sources_column_number, original_destinations_column, original_destinations_column_number, original_edge_list_edge_type_column, original_edge_list_edge_type_column_number, original_weights_column, original_weights_column_number, target_edge_path, target_edge_list_separator, target_edge_list_header, target_sources_column, target_sources_column_number, target_destinations_column, target_destinations_column_number, target_edge_list_edge_type_column, target_edge_list_edge_type_column_number, target_weights_column, target_weights_column_number, comment_symbol, default_edge_type, default_weight, max_rows_number, rows_to_skip, edges_number, skip_edge_types_if_unavailable, skip_weights_if_unavailable, verbose, name)")]
 /// Create a new directed edge list from a given undirected one by duplicating the undirected edges.
 ///
 /// Parameters
@@ -25149,10 +25150,9 @@ pub fn convert_undirected_edge_list_to_directed(
     .into())
 }
 
-#[module(edge_list_utils)]
 #[pyfunction]
 #[automatically_generated_binding]
-#[text_signature = "(path, separator, header, sources_column, sources_column_number, destinations_column, destinations_column_number, comment_symbol, max_rows_number, rows_to_skip, edges_number, load_edge_list_in_parallel, verbose, name)"]
+#[pyo3(text_signature = "(path, separator, header, sources_column, sources_column_number, destinations_column, destinations_column_number, comment_symbol, max_rows_number, rows_to_skip, edges_number, load_edge_list_in_parallel, verbose, name)")]
 /// Return minimum and maximum node number from given numeric edge list.
 ///
 /// Parameters
@@ -25235,10 +25235,9 @@ pub fn get_minmax_node_from_numeric_edge_list(
     })
 }
 
-#[module(edge_list_utils)]
 #[pyfunction]
 #[automatically_generated_binding]
-#[text_signature = "(source_path, edge_path, node_path, node_type_path, edge_type_path, node_list_separator, node_type_list_separator, edge_type_list_separator, node_types_separator, nodes_column, node_types_column, node_list_node_types_column, edge_types_column, node_descriptions_column, edge_list_separator, sort_temporary_directory, directed, compute_node_description, keep_nodes_without_descriptions, keep_nodes_without_categories, keep_interwikipedia_nodes, keep_external_nodes, verbose)"]
+#[pyo3(text_signature = "(source_path, edge_path, node_path, node_type_path, edge_type_path, node_list_separator, node_type_list_separator, edge_type_list_separator, node_types_separator, nodes_column, node_types_column, node_list_node_types_column, edge_types_column, node_descriptions_column, edge_list_separator, sort_temporary_directory, directed, compute_node_description, keep_nodes_without_descriptions, keep_nodes_without_categories, keep_interwikipedia_nodes, keep_external_nodes, verbose)")]
 /// TODO: write the docstrin
 pub fn parse_wikipedia_graph(
     source_path: &str,
@@ -25296,10 +25295,9 @@ pub fn parse_wikipedia_graph(
     })
 }
 
-#[module(edge_list_utils)]
 #[pyfunction]
 #[automatically_generated_binding]
-#[text_signature = "(path, separator, header, support_balanced_quotes, sources_column, sources_column_number, destinations_column, destinations_column_number, comment_symbol, max_rows_number, rows_to_skip, edges_number, load_edge_list_in_parallel, verbose, name)"]
+#[pyo3(text_signature = "(path, separator, header, support_balanced_quotes, sources_column, sources_column_number, destinations_column, destinations_column_number, comment_symbol, max_rows_number, rows_to_skip, edges_number, load_edge_list_in_parallel, verbose, name)")]
 /// Return number of selfloops in the given edge list.
 ///
 /// Parameters
@@ -25372,10 +25370,9 @@ pub fn is_numeric_edge_list(
     .into())
 }
 
-#[module(edge_list_utils)]
 #[pyfunction]
 #[automatically_generated_binding]
-#[text_signature = "(original_node_type_path, original_node_type_list_separator, original_node_types_column_number, original_node_types_column, node_types_number, original_numeric_node_type_ids, original_minimum_node_type_id, original_node_type_list_header, original_node_type_list_support_balanced_quotes, original_node_type_list_rows_to_skip, original_node_type_list_is_correct, original_node_type_list_max_rows_number, original_node_type_list_comment_symbol, original_load_node_type_list_in_parallel, target_node_type_list_path, target_node_type_list_separator, target_node_type_list_header, target_node_type_list_node_types_column, target_node_type_list_node_types_column_number, original_node_path, original_node_list_separator, original_node_list_header, original_node_list_support_balanced_quotes, node_list_rows_to_skip, node_list_max_rows_number, node_list_comment_symbol, default_node_type, original_nodes_column_number, original_nodes_column, original_node_types_separator, original_node_list_node_types_column_number, original_node_list_node_types_column, original_minimum_node_id, original_numeric_node_ids, original_node_list_numeric_node_type_ids, original_skip_node_types_if_unavailable, target_node_path, target_node_list_separator, target_node_list_header, target_nodes_column_number, target_nodes_column, target_node_types_separator, target_node_list_node_types_column_number, target_node_list_node_types_column, nodes_number)"]
+#[pyo3(text_signature = "(original_node_type_path, original_node_type_list_separator, original_node_types_column_number, original_node_types_column, node_types_number, original_numeric_node_type_ids, original_minimum_node_type_id, original_node_type_list_header, original_node_type_list_support_balanced_quotes, original_node_type_list_rows_to_skip, original_node_type_list_is_correct, original_node_type_list_max_rows_number, original_node_type_list_comment_symbol, original_load_node_type_list_in_parallel, target_node_type_list_path, target_node_type_list_separator, target_node_type_list_header, target_node_type_list_node_types_column, target_node_type_list_node_types_column_number, original_node_path, original_node_list_separator, original_node_list_header, original_node_list_support_balanced_quotes, node_list_rows_to_skip, node_list_max_rows_number, node_list_comment_symbol, default_node_type, original_nodes_column_number, original_nodes_column, original_node_types_separator, original_node_list_node_types_column_number, original_node_list_node_types_column, original_minimum_node_id, original_numeric_node_ids, original_node_list_numeric_node_type_ids, original_skip_node_types_if_unavailable, target_node_path, target_node_list_separator, target_node_list_header, target_nodes_column_number, target_nodes_column, target_node_types_separator, target_node_list_node_types_column_number, target_node_list_node_types_column, nodes_number)")]
 /// Converts the node list at given path to numeric saving in stream to file. Furthermore, returns the number of nodes that were written and their node types if any.
 ///
 /// Parameters
@@ -25481,10 +25478,9 @@ pub fn convert_node_list_node_types_to_numeric(
     })
 }
 
-#[module(edge_list_utils)]
 #[pyfunction]
 #[automatically_generated_binding]
-#[text_signature = "(edge_path, edge_list_separator, edge_list_header, edge_list_support_balanced_quotes, edge_list_sources_column, edge_list_sources_column_number, edge_list_destinations_column, edge_list_destinations_column_number, edge_list_edge_type_column, edge_list_edge_type_column_number, edge_list_weights_column, edge_list_weights_column_number, comment_symbol, default_edge_type, default_weight, max_rows_number, rows_to_skip, edges_number, skip_edge_types_if_unavailable, skip_weights_if_unavailable, verbose, name)"]
+#[pyo3(text_signature = "(edge_path, edge_list_separator, edge_list_header, edge_list_support_balanced_quotes, edge_list_sources_column, edge_list_sources_column_number, edge_list_destinations_column, edge_list_destinations_column_number, edge_list_edge_type_column, edge_list_edge_type_column_number, edge_list_weights_column, edge_list_weights_column_number, comment_symbol, default_edge_type, default_weight, max_rows_number, rows_to_skip, edges_number, skip_edge_types_if_unavailable, skip_weights_if_unavailable, verbose, name)")]
 /// Return whether the provided edge list contains duplicated edges.
 ///
 /// Parameters
@@ -25585,10 +25581,9 @@ pub fn has_duplicated_edges_in_edge_list(
     .into())
 }
 
-#[module(edge_list_utils)]
 #[pyfunction]
 #[automatically_generated_binding]
-#[text_signature = "(path, target_path, separator, header, sources_column, sources_column_number, destinations_column, destinations_column_number, edge_types_column, edge_types_column_number, rows_to_skip, skip_edge_types_if_unavailable, sort_temporary_directory)"]
+#[pyo3(text_signature = "(path, target_path, separator, header, sources_column, sources_column_number, destinations_column, destinations_column_number, edge_types_column, edge_types_column_number, rows_to_skip, skip_edge_types_if_unavailable, sort_temporary_directory)")]
 /// Sort given numeric edge list in place using the sort command.
 ///
 /// Parameters
@@ -25652,10 +25647,9 @@ pub fn sort_numeric_edge_list(
     ))?)
 }
 
-#[module(edge_list_utils)]
 #[pyfunction]
 #[automatically_generated_binding]
-#[text_signature = "(path, separator, header, sources_column, sources_column_number, destinations_column, destinations_column_number, edge_types_column, edge_types_column_number, rows_to_skip, skip_edge_types_if_unavailable, sort_temporary_directory)"]
+#[pyo3(text_signature = "(path, separator, header, sources_column, sources_column_number, destinations_column, destinations_column_number, edge_types_column, edge_types_column_number, rows_to_skip, skip_edge_types_if_unavailable, sort_temporary_directory)")]
 /// Sort given numeric edge list in place using the sort command.
 ///
 /// Parameters
@@ -25715,10 +25709,9 @@ pub fn sort_numeric_edge_list_inplace(
     ))?)
 }
 
-#[module(edge_list_utils)]
 #[pyfunction]
 #[automatically_generated_binding]
-#[text_signature = "(path, separator, header, support_balanced_quotes, sources_column, sources_column_number, destinations_column, destinations_column_number, comment_symbol, max_rows_number, rows_to_skip, edges_number, load_edge_list_in_parallel, verbose, name)"]
+#[pyo3(text_signature = "(path, separator, header, support_balanced_quotes, sources_column, sources_column_number, destinations_column, destinations_column_number, comment_symbol, max_rows_number, rows_to_skip, edges_number, load_edge_list_in_parallel, verbose, name)")]
 /// Return number of selfloops in the given edge list.
 ///
 /// Parameters
@@ -25789,9 +25782,4 @@ pub fn get_number_of_selfloops_from_edge_list(
         name.into()
     ))?
     .into())
-}
-
-#[pymodule]
-fn utils(_py: Python, _m: &PyModule) -> PyResult<()> {
-    Ok(())
 }

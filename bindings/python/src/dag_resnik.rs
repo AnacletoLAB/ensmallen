@@ -4,7 +4,7 @@ use numpy::{PyArray1, PyArray2};
 ///
 #[pyclass]
 #[derive(Clone)]
-#[text_signature = "(verbose,)"]
+#[pyo3(text_signature = "(verbose,)")]
 pub struct DAGResnik {
     pub inner: cpu_models::DAGResnik,
 }
@@ -28,7 +28,7 @@ impl DAGResnik {
 #[pymethods]
 impl DAGResnik {
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, graph, node_counts, node_frequencies)"]
+    #[pyo3(text_signature = "($self, graph, node_counts, node_frequencies)")]
     /// Fit the current model instance with the provided graph and node features.
     ///
     /// Parameters
@@ -57,7 +57,7 @@ impl DAGResnik {
         ))
     }
 
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns the node frequencies of the model.
     fn get_node_frequencies(&self) -> PyResult<Py<PyArray1<f32>>> {
         let gil = pyo3::Python::acquire_gil();
@@ -68,7 +68,7 @@ impl DAGResnik {
         ))
     }
 
-    #[text_signature = "($self, first_node_id, second_node_id)"]
+    #[pyo3(text_signature = "($self, first_node_id, second_node_id)")]
     /// Return the similarity between the two provided nodes.
     ///
     /// Parameters
@@ -87,7 +87,7 @@ impl DAGResnik {
             .get_similarity_from_node_id(first_node_id, second_node_id))
     }
 
-    #[text_signature = "($self, first_node_name, second_node_name)"]
+    #[pyo3(text_signature = "($self, first_node_name, second_node_name)")]
     /// Return the similarity between the two provnameed nodes.
     ///
     /// Parameters
@@ -106,12 +106,12 @@ impl DAGResnik {
             .get_similarity_from_node_name(&first_node_name, &second_node_name))
     }
 
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return numpy array with edge similarities for provided graph.
     fn get_pairwise_similarities(&self) -> PyResult<Py<PyArray2<f32>>> {
         let gil = pyo3::Python::acquire_gil();
         let number_of_nodes = pe!(self.inner.get_number_of_nodes())? as usize;
-        let similarities = PyArray2::new(gil.python(), [number_of_nodes, number_of_nodes], false);
+        let similarities = unsafe{PyArray2::new(gil.python(), [number_of_nodes, number_of_nodes], false)};
         let similarities_ref = unsafe { similarities.as_slice_mut().unwrap() };
 
         pe!(self.inner.get_pairwise_similarities(similarities_ref))?;
@@ -119,7 +119,7 @@ impl DAGResnik {
         Ok(similarities.to_owned())
     }
 
-    #[text_signature = "($self, graph)"]
+    #[pyo3(text_signature = "($self, graph)")]
     /// Return numpy array with edge similarities for provided graph.
     ///
     /// Parameters
@@ -128,11 +128,11 @@ impl DAGResnik {
     ///     The graph whose edges are to be predicted.
     fn get_similarities_from_graph(&self, graph: &Graph) -> PyResult<Py<PyArray1<f32>>> {
         let gil = pyo3::Python::acquire_gil();
-        let similarities = PyArray1::new(
+        let similarities = unsafe{PyArray1::new(
             gil.python(),
             [graph.get_number_of_directed_edges() as usize],
             false,
-        );
+        )};
         let similarities_ref = unsafe { similarities.as_slice_mut().unwrap() };
 
         pe!(self

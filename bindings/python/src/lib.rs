@@ -9,6 +9,8 @@ use std::collections::{HashMap, HashSet};
 use graph::{EdgeT, EdgeTypeT, NodeT, NodeTypeT, Result, WeightT};
 use tags::*;
 
+pub(crate) mod mmap_numpy_npy;
+
 mod macros;
 pub(crate) use crate::macros::*;
 mod express_measures;
@@ -53,8 +55,7 @@ mod weighted_spine;
 pub(crate) use weighted_spine::*;
 mod walks;
 
-#[pymodule]
-fn models(_py: Python, _m: &PyModule) -> PyResult<()> {
+pub fn register_models(_py: Python, _m: &PyModule) -> PyResult<()> {
     _m.add_class::<CBOW>()?;
     _m.add_class::<GloVe>()?;
     _m.add_class::<SkipGram>()?;

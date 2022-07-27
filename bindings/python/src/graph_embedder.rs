@@ -19,17 +19,17 @@ where
         for shape in pe!(self.get_model().get_embedding_shapes(&graph.inner))? {
             match shape {
                 MatrixShape::OneDimensional(one) => {
-                    let vector = PyArray1::new(gil.python(), [one], false);
+                    let vector = unsafe{PyArray1::new(gil.python(), [one], false)};
                     embedding_slices.push(pe!(unsafe { vector.as_slice_mut() })?);
                     embeddings.push(vector.into_py(gil.python()));
                 }
                 MatrixShape::BiDimensional(one, two) => {
-                    let vector = PyArray2::new(gil.python(), [one, two], false);
+                    let vector = unsafe{PyArray2::new(gil.python(), [one, two], false)};
                     embedding_slices.push(pe!(unsafe { vector.as_slice_mut() })?);
                     embeddings.push(vector.into_py(gil.python()));
                 }
                 MatrixShape::ThreeDimensional(one, two, three) => {
-                    let vector = PyArray3::new(gil.python(), [one, two, three], false);
+                    let vector = unsafe{PyArray3::new(gil.python(), [one, two, three], false)};
                     embedding_slices.push(pe!(unsafe { vector.as_slice_mut() })?);
                     embeddings.push(vector.into_py(gil.python()));
                 }

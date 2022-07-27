@@ -5,8 +5,7 @@ use pyo3::wrap_pyfunction;
 macro_rules! impl_express_measures {
     ($(($method_name:ident, $function_name:ident),)*) => {
 
-#[pymodule]
-pub fn express_measures(_py: Python, m: &PyModule) -> PyResult<()> {
+pub fn register_express_measures(_py: Python, m: &PyModule) -> PyResult<()> {
     m.add_class::<BinaryConfusionMatrix>()?;
     $(
         m.add_wrapped(wrap_pyfunction!($function_name))?;
@@ -28,7 +27,7 @@ pub struct BinaryConfusionMatrix {
 impl BinaryConfusionMatrix {
 $(
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return the $function_name
     pub fn $method_name(&self) -> f64 {
         self.inner.$method_name() as f64
@@ -36,7 +35,7 @@ $(
 )*
 
     #[automatically_generated_binding]
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return a dictionary with all the binary metrics
     pub fn get_all_binary_metrics(&self) -> HashMap<String, f64> {
         self.inner.get_all_binary_metrics()
@@ -46,7 +45,7 @@ $(
 $(
     #[module(express_measures)]
     #[pyfunction()]
-    #[text_signature = "(ground_truths, predictions)"]
+    #[pyo3(text_signature = "(ground_truths, predictions)")]
     /// Returns the $function_name of the given binary predictions against the provided binary ground truth.
     ///
     /// Arguments
@@ -112,7 +111,7 @@ $(
 
 #[module(express_measures)]
 #[pyfunction()]
-#[text_signature = "(ground_truths, predictions)"]
+#[pyo3(text_signature = "(ground_truths, predictions)")]
 /// Returns the $function_name of the given binary predictions against the provided binary ground truth.
 ///
 /// Arguments
@@ -177,7 +176,7 @@ fn all_binary_metrics(
 
 #[module(express_measures)]
 #[pyfunction()]
-#[text_signature = "(ground_truths, predictions)"]
+#[pyo3(text_signature = "(ground_truths, predictions)")]
 /// Returns the binary auroc of the given predictions against the provided binary ground truth.
 ///
 /// Arguments
@@ -216,7 +215,7 @@ fn binary_auroc(
 
 #[module(express_measures)]
 #[pyfunction()]
-#[text_signature = "(ground_truths, predictions)"]
+#[pyo3(text_signature = "(ground_truths, predictions)")]
 /// Returns the binary auprc of the given predictions against the provided binary ground truth.
 ///
 /// Arguments
@@ -255,7 +254,7 @@ fn binary_auprc(
 
 #[module(express_measures)]
 #[pyfunction()]
-#[text_signature = "(matrix, sources, destinations)"]
+#[pyo3(text_signature = "(matrix, sources, destinations)")]
 /// Returns cosine similarity of the provided source and destinations using the provided features.
 ///
 /// Arguments
@@ -279,7 +278,7 @@ fn cosine_similarity_from_indices_unchecked(
     let sources_ref = unsafe { sources.as_slice().unwrap() };
     let destinations = destinations.as_ref(gil.python());
     let destinations_ref = unsafe { destinations.as_slice().unwrap() };
-    let similarities = PyArray1::new(gil.python(), [sources_ref.len()], false);
+    let similarities = unsafe{PyArray1::new(gil.python(), [sources_ref.len()], false)};
     let similarities_ref = unsafe { similarities.as_slice_mut().unwrap() };
     pe!(unsafe {
         ::express_measures::cosine_similarity_from_indices_unchecked(

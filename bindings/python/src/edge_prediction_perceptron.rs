@@ -8,7 +8,7 @@ type InnerModel = cpu_models::EdgePredictionPerceptron<Adam<f32, f32>, Adam<f32,
 ///
 #[pyclass]
 #[derive(Clone)]
-#[text_signature = "(*, edge_embeddings, edge_features, cooccurrence_iterations, cooccurrence_window_size, number_of_epochs, number_of_edges_per_mini_batch, sample_only_edges_with_heterogeneous_node_types, learning_rate, first_order_decay_factor, second_order_decay_factor, use_scale_free_distribution, random_state)"]
+#[pyo3(text_signature = "(*, edge_embeddings, edge_features, cooccurrence_iterations, cooccurrence_window_size, number_of_epochs, number_of_edges_per_mini_batch, sample_only_edges_with_heterogeneous_node_types, learning_rate, first_order_decay_factor, second_order_decay_factor, use_scale_free_distribution, random_state)")]
 pub struct EdgePredictionPerceptron {
     pub inner: InnerModel,
 }
@@ -132,7 +132,7 @@ impl EdgePredictionPerceptron {
 #[pymethods]
 impl EdgePredictionPerceptron {
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, graph, node_features, verbose, support, graph_to_avoid)"]
+    #[pyo3(text_signature = "($self, graph, node_features, verbose, support, graph_to_avoid)")]
     /// Fit the current model instance with the provided graph and node features.
     ///
     /// Parameters
@@ -182,32 +182,32 @@ impl EdgePredictionPerceptron {
         ))
     }
 
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns the weights of the model.
     fn get_weights(&self) -> PyResult<Py<PyArray1<f32>>> {
         let gil = pyo3::Python::acquire_gil();
         Ok(to_ndarray_1d!(gil, pe!(self.inner.get_weights())?, f32))
     }
 
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns the bias of the model.
     fn get_bias(&self) -> PyResult<f32> {
         pe!(self.inner.get_bias())
     }
 
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns the supported edge features.
     fn get_supported_edge_features(&self) -> Vec<String> {
         cpu_models::EdgeFeature::get_edge_feature_method_names()
     }
 
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns the supported edge embeddings.
     fn get_supported_edge_embeddings(&self) -> Vec<String> {
         cpu_models::EdgeEmbedding::get_edge_embedding_method_names()
     }
 
-    #[text_signature = "($self, graph, node_features)"]
+    #[pyo3(text_signature = "($self, graph, node_features)")]
     /// Return numpy array with edge predictions for provided graph.
     ///
     /// Parameters
@@ -240,11 +240,11 @@ impl EdgePredictionPerceptron {
             .iter()
             .map(|node_feature| unsafe { node_feature.as_slice().unwrap() })
             .collect::<Vec<_>>();
-        let predictions = PyArray1::new(
+        let predictions = unsafe{PyArray1::new(
             gil.python(),
             [graph.get_number_of_directed_edges() as usize],
             false,
-        );
+        )};
         let predictions_ref = unsafe { predictions.as_slice_mut().unwrap() };
 
         pe!(self.inner.predict(
