@@ -9,7 +9,9 @@ use vec_rand::splitmix64;
 #[pymethods]
 impl Graph {
     #[args(py_kwargs = "**")]
-    #[pyo3(text_signature = "($self, number_of_nodes_to_sample, random_state, root_node, node_sampling_method, edge_weighting_methods, add_selfloops_where_missing, unique)")]
+    #[pyo3(
+        text_signature = "($self, number_of_nodes_to_sample, random_state, root_node, node_sampling_method, edge_weighting_methods, add_selfloops_where_missing, unique)"
+    )]
     /// Return subsampled nodes according to the given method and parameters.
     ///
     /// Parameters
@@ -165,7 +167,7 @@ impl Graph {
 
         // We now convert the provided nodes into a numpy vector.
         let numpy_nodes = ThreadDataRaceAware {
-            t: unsafe{PyArray1::new(gil.python(), [nodes_number], false)},
+            t: unsafe { PyArray1::new(gil.python(), [nodes_number], false) },
         };
 
         // We consume the original vector to populate the numpy one.
@@ -219,7 +221,7 @@ impl Graph {
         let edges_number = edge_ids.len();
 
         let edge_ids_vector = ThreadDataRaceAware {
-            t: unsafe{PyArray2::new(gil.python(), [edges_number, 2], false)},
+            t: unsafe { PyArray2::new(gil.python(), [edges_number, 2], false) },
         };
 
         edge_ids
@@ -234,7 +236,9 @@ impl Graph {
     }
 
     #[args(py_kwargs = "**")]
-    #[pyo3(text_signature = "($self, number_of_nodes_to_sample, random_state, root_node, node_sampling_method, edge_weighting_methods, add_selfloops_where_missing, unique)")]
+    #[pyo3(
+        text_signature = "($self, number_of_nodes_to_sample, random_state, root_node, node_sampling_method, edge_weighting_methods, add_selfloops_where_missing, unique)"
+    )]
     /// Return subsampled nodes according to the given method and parameters.
     ///
     /// Parameters
@@ -363,10 +367,10 @@ impl Graph {
                 let edges_number = edge_node_ids_and_weights.len();
 
                 let edge_ids_vector = ThreadDataRaceAware {
-                    t: unsafe{PyArray2::new(gil.python(), [edges_number, 2], false)},
+                    t: unsafe { PyArray2::new(gil.python(), [edges_number, 2], false) },
                 };
                 let weights = ThreadDataRaceAware {
-                    t: unsafe{PyArray1::new(gil.python(), [edges_number], false)},
+                    t: unsafe { PyArray1::new(gil.python(), [edges_number], false) },
                 };
 
                 edge_node_ids_and_weights
@@ -386,7 +390,7 @@ impl Graph {
 
         // We now convert the provided nodes into a numpy vector.
         let numpy_nodes = ThreadDataRaceAware {
-            t: unsafe{PyArray1::new(gil.python(), [nodes_number], false)},
+            t: unsafe { PyArray1::new(gil.python(), [nodes_number], false) },
         };
 
         // We consume the original vector to populate the numpy one.
@@ -400,7 +404,9 @@ impl Graph {
     }
 
     #[args(py_kwargs = "**")]
-    #[pyo3(text_signature = "($self, number_of_nodes_to_sample, random_state, root_node, node_sampling_method)")]
+    #[pyo3(
+        text_signature = "($self, number_of_nodes_to_sample, random_state, root_node, node_sampling_method)"
+    )]
     /// Return subsampled nodes and edges using laplacian assuming undirected graph with selfloops.
     ///
     /// Parameters
@@ -465,10 +471,10 @@ impl Graph {
         let edges_number = sorted_edge_node_ids_and_weights.len();
 
         let edge_ids_vector = ThreadDataRaceAware {
-            t: unsafe{PyArray2::new(gil.python(), [edges_number, 2], false)},
+            t: unsafe { PyArray2::new(gil.python(), [edges_number, 2], false) },
         };
         let weights = ThreadDataRaceAware {
-            t: unsafe{PyArray1::new(gil.python(), [edges_number], false)},
+            t: unsafe { PyArray1::new(gil.python(), [edges_number], false) },
         };
 
         sorted_edge_node_ids_and_weights
@@ -482,7 +488,7 @@ impl Graph {
 
         // We now convert the provided nodes into a numpy vector.
         let numpy_nodes = ThreadDataRaceAware {
-            t: unsafe{PyArray1::new(gil.python(), [nodes_number], false)},
+            t: unsafe { PyArray1::new(gil.python(), [nodes_number], false) },
         };
 
         // We consume the original vector to populate the numpy one.
@@ -499,7 +505,9 @@ impl Graph {
     }
 
     #[args(py_kwargs = "**")]
-    #[pyo3(text_signature = "($self, number_of_nodes_to_sample, random_state, node_sampling_method, edge_weighting_methods, add_selfloops_where_missing)")]
+    #[pyo3(
+        text_signature = "($self, number_of_nodes_to_sample, random_state, node_sampling_method, edge_weighting_methods, add_selfloops_where_missing)"
+    )]
     /// Return subsampled nodes according to the given method and parameters.
     ///
     /// Parameters
@@ -611,10 +619,14 @@ impl Graph {
                     // to zeros, so we initialize the vector as a matrix of zeros.
                     (
                         ThreadDataRaceAware {
-                            t: unsafe{PyArray2::zeros(gil.python(), [nodes_number, nodes_number], false)},
+                            t: unsafe {
+                                PyArray2::zeros(gil.python(), [nodes_number, nodes_number], false)
+                            },
                         },
                         ThreadDataRaceAware {
-                            t: unsafe{PyArray2::zeros(gil.python(), [nodes_number, nodes_number], false)},
+                            t: unsafe {
+                                PyArray2::zeros(gil.python(), [nodes_number, nodes_number], false)
+                            },
                         },
                     )
                 } else {
@@ -625,10 +637,14 @@ impl Graph {
                     // a default value: doing so would only be a waste of time.
                     (
                         ThreadDataRaceAware {
-                            t: unsafe{PyArray2::new(gil.python(), [nodes_number, nodes_number], false)},
+                            t: unsafe {
+                                PyArray2::new(gil.python(), [nodes_number, nodes_number], false)
+                            },
                         },
                         ThreadDataRaceAware {
-                            t: unsafe{PyArray2::new(gil.python(), [nodes_number, nodes_number], false)},
+                            t: unsafe {
+                                PyArray2::new(gil.python(), [nodes_number, nodes_number], false)
+                            },
                         },
                     )
                 };
@@ -683,7 +699,7 @@ impl Graph {
 
         // We now convert the provided nodes into a numpy vector.
         let numpy_labels = ThreadDataRaceAware {
-            t: unsafe{PyArray1::new(gil.python(), [nodes_number], false)},
+            t: unsafe { PyArray1::new(gil.python(), [nodes_number], false) },
         };
 
         // We consume the original vector to populate the numpy one.
@@ -697,7 +713,7 @@ impl Graph {
 
         // We now convert the provided nodes into a numpy vector.
         let numpy_source_nodes = ThreadDataRaceAware {
-            t: unsafe{PyArray1::new(gil.python(), [nodes_number], false)},
+            t: unsafe { PyArray1::new(gil.python(), [nodes_number], false) },
         };
 
         // We consume the original vector to populate the numpy one.
@@ -708,7 +724,7 @@ impl Graph {
 
         // We now convert the provided nodes into a numpy vector.
         let numpy_destination_nodes = ThreadDataRaceAware {
-            t: unsafe{PyArray1::new(gil.python(), [nodes_number], false)},
+            t: unsafe { PyArray1::new(gil.python(), [nodes_number], false) },
         };
 
         // We consume the original vector to populate the numpy one.
@@ -728,7 +744,9 @@ impl Graph {
     }
 
     #[args(py_kwargs = "**")]
-    #[pyo3(text_signature = "($self, number_of_nodes_to_sample, random_state, source_root_node, destination_root_node, node_sampling_method, edge_weighting_methods, add_selfloops_where_missing, unique)")]
+    #[pyo3(
+        text_signature = "($self, number_of_nodes_to_sample, random_state, source_root_node, destination_root_node, node_sampling_method, edge_weighting_methods, add_selfloops_where_missing, unique)"
+    )]
     /// Return subsampled nodes according to the given method and parameters.
     ///
     /// Parameters

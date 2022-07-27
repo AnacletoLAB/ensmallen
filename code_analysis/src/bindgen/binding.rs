@@ -142,11 +142,6 @@ fn translate_return_type(
 
         // handle the Option type
         x if x == "Option<_>" => {
-            let needs_into = match &return_type[0] {
-                x if x == "()" => false,
-                _ => true,
-            };
-
             let (inner_body, inner_type) = translate_return_type(
                 attributes, 
                 &return_type[0], 
@@ -252,7 +247,7 @@ r#"
 // Which is a flat vector with row-first or column-first unrolling
 let gil = pyo3::Python::acquire_gil();
 let body = {body};
-let result_array = ThreadDataRaceAware {{t: PyArray2::<{inner_type}>::new(gil.python(), [body.len(), 2], false)}};
+let result_array = ThreadDataRaceAware {{t: unsafe{{PyArray2::<{inner_type}>::new(gil.python(), [body.len(), 2], false)}}}};
 body.into_par_iter().enumerate()
     .for_each(|(i, (a, b))| unsafe {{
         *(result_array.t.uget_mut([i, 0]))  = a;
@@ -279,7 +274,7 @@ result_array.t.to_owned()"#,
             }
 
             // TODO! make this recursive??
-            let mut res_body = format!(
+            let res_body = format!(
                 "{}.into_iter().map(|x| x.into()).collect::<Vec<_>>()", 
                 body.strip_suffix(".into()").unwrap_or(&body)
             );
@@ -471,7 +466,7 @@ build_walk_parameters(kwargs)?
 
 
 
-        let text_signature = format!("#[text_signature = \"({})\"]", args_signatures.join(", "));
+        let text_signature = format!("#[pyo3(text_signature = \"({})\")]", args_signatures.join(", "));
 
         // build the call
         let body = format!(

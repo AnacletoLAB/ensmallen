@@ -1,7 +1,7 @@
 use super::*;
-use pyo3::conversion::IntoPy;
 use cpu_models::{AnchorFeatureTypes, AnchorTypes, AnchorsInferredNodeEmbeddingModel, BasicSPINE};
 use numpy::{PyArray1, PyArray2};
+use pyo3::conversion::IntoPy;
 
 use super::mmap_numpy_npy::{create_memory_mapped_numpy_array, Dtype};
 
@@ -135,9 +135,9 @@ macro_rules! impl_spine_embedding {
 }
 
 impl_spine_embedding! {
-    u8 : Dtype::U8, 
-    u16: Dtype::U16, 
-    u32: Dtype::U32, 
+    u8 : Dtype::U8,
+    u16: Dtype::U16,
+    u32: Dtype::U32,
     u64: Dtype::U64
 }
 
@@ -260,7 +260,7 @@ impl ScoreSPINE {
     /// maximum_depth: Optional[int] = None
     ///     Maximum depth of the shortest path.
     /// path: Optional[str] = None
-    ///     If passed, create a `.npy` file which will be mem-mapped 
+    ///     If passed, create a `.npy` file which will be mem-mapped
     ///     to allow processing embeddings that do not fit in RAM
     /// verbose: bool = True
     ///     Whether to show loading bars.

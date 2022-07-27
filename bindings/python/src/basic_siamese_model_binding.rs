@@ -67,7 +67,9 @@ where
 
 #[pyclass]
 #[derive(Debug, Clone)]
-#[pyo3(text_signature = "(*, relu_bias, embedding_size, epochs, learning_rate, learning_rate_decay, random_state, verbose)")]
+#[pyo3(
+    text_signature = "(*, relu_bias, embedding_size, epochs, learning_rate, learning_rate_decay, random_state, verbose)"
+)]
 pub struct TransE {
     pub inner: BasicSiameseModelBinding<cpu_models::TransE>,
 }
@@ -118,7 +120,9 @@ impl TransE {
 
 #[pyclass]
 #[derive(Debug, Clone)]
-#[pyo3(text_signature = "(*, relu_bias, embedding_size, epochs, learning_rate, learning_rate_decay, random_state, verbose)")]
+#[pyo3(
+    text_signature = "(*, relu_bias, embedding_size, epochs, learning_rate, learning_rate_decay, random_state, verbose)"
+)]
 pub struct Unstructured {
     pub inner: BasicSiameseModelBinding<cpu_models::Unstructured>,
 }
@@ -169,7 +173,9 @@ impl Unstructured {
 
 #[pyclass]
 #[derive(Debug, Clone)]
-#[pyo3(text_signature = "(*, relu_bias, embedding_size, epochs, learning_rate, learning_rate_decay, random_state, verbose)")]
+#[pyo3(
+    text_signature = "(*, relu_bias, embedding_size, epochs, learning_rate, learning_rate_decay, random_state, verbose)"
+)]
 pub struct TransH {
     pub inner: BasicSiameseModelBinding<cpu_models::TransH>,
 }
@@ -220,7 +226,9 @@ impl TransH {
 
 #[pyclass]
 #[derive(Debug, Clone)]
-#[pyo3(text_signature = "(*, relu_bias, embedding_size, epochs, learning_rate, learning_rate_decay, random_state, verbose)")]
+#[pyo3(
+    text_signature = "(*, relu_bias, embedding_size, epochs, learning_rate, learning_rate_decay, random_state, verbose)"
+)]
 pub struct StructuredEmbedding {
     pub inner: BasicSiameseModelBinding<cpu_models::StructuredEmbedding>,
 }

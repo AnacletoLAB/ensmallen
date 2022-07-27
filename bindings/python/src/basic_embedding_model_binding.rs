@@ -63,7 +63,9 @@ where
 
 #[pyclass]
 #[derive(Debug, Clone)]
-#[pyo3(text_signature = "(*, embedding_size, epochs, learning_rate, learning_rate_decay, random_state, verbose)")]
+#[pyo3(
+    text_signature = "(*, embedding_size, epochs, learning_rate, learning_rate_decay, random_state, verbose)"
+)]
 pub struct FirstOrderLINE {
     pub inner: BasicEmbeddingModelBinding<cpu_models::FirstOrderLINE>,
 }
@@ -112,7 +114,9 @@ impl FirstOrderLINE {
 
 #[pyclass]
 #[derive(Debug, Clone)]
-#[pyo3(text_signature = "(*, embedding_size, epochs, learning_rate, learning_rate_decay, random_state, verbose)")]
+#[pyo3(
+    text_signature = "(*, embedding_size, epochs, learning_rate, learning_rate_decay, random_state, verbose)"
+)]
 pub struct SecondOrderLINE {
     pub inner: BasicEmbeddingModelBinding<cpu_models::SecondOrderLINE>,
 }

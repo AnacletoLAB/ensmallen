@@ -67,7 +67,8 @@ impl WeightedSPINE {
 
         let rows_number = graph.inner.get_number_of_nodes() as usize;
         let columns_number = self.inner.get_embedding_size();
-        let embedding = unsafe{PyArray2::new(gil.python(), [columns_number, rows_number], false)};
+        let embedding =
+            unsafe { PyArray2::new(gil.python(), [columns_number, rows_number], false) };
 
         let embedding_slice = unsafe { embedding.as_slice_mut().unwrap() };
 

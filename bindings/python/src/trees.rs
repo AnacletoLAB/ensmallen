@@ -28,7 +28,7 @@ impl Graph {
         let py = pyo3::Python::acquire_gil();
         let (edges_number, iter) = pe!(self.inner.spanning_arborescence(verbose))?;
         let array = ThreadDataRaceAware {
-            t: unsafe{PyArray2::new(py.python(), [edges_number, 2], false)},
+            t: unsafe { PyArray2::new(py.python(), [edges_number, 2], false) },
         };
         unsafe {
             iter.enumerate().for_each(|(index, (src, dst))| {

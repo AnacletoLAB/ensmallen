@@ -12,11 +12,26 @@ use types::ThreadDataRaceAware;
 
 pub fn register_preprocessing(_py: Python, m: &PyModule) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(word2vec, m)?)?;
-    m.add_function(wrap_pyfunction!(get_okapi_bm25_tfidf_from_documents_u16, m)?)?;
-    m.add_function(wrap_pyfunction!(get_okapi_bm25_tfidf_from_documents_u32, m)?)?;
-    m.add_function(wrap_pyfunction!(get_okapi_bm25_tfidf_from_documents_u64, m)?)?;
-    m.add_function(wrap_pyfunction!(get_okapi_bm25_tfidf_from_documents_str, m)?)?;
-    m.add_function(wrap_pyfunction!(get_okapi_tfidf_weighted_textual_embedding, m)?)?;
+    m.add_function(wrap_pyfunction!(
+        get_okapi_bm25_tfidf_from_documents_u16,
+        m
+    )?)?;
+    m.add_function(wrap_pyfunction!(
+        get_okapi_bm25_tfidf_from_documents_u32,
+        m
+    )?)?;
+    m.add_function(wrap_pyfunction!(
+        get_okapi_bm25_tfidf_from_documents_u64,
+        m
+    )?)?;
+    m.add_function(wrap_pyfunction!(
+        get_okapi_bm25_tfidf_from_documents_str,
+        m
+    )?)?;
+    m.add_function(wrap_pyfunction!(
+        get_okapi_tfidf_weighted_textual_embedding,
+        m
+    )?)?;
     Ok(())
 }
 
@@ -128,7 +143,9 @@ fn get_okapi_bm25_tfidf_from_documents_str(
 use half::f16;
 
 #[pyfunction()]
-#[pyo3(text_signature = "(path, embedding, pretrained_model_name_or_path, k1, b, columns, separator, header, verbose)")]
+#[pyo3(
+    text_signature = "(path, embedding, pretrained_model_name_or_path, k1, b, columns, separator, header, verbose)"
+)]
 /// Returns embedding of all the term in given CSV weighted by OKAPI/TFIDF.
 ///
 /// Arguments
@@ -257,10 +274,8 @@ fn get_okapi_tfidf_weighted_textual_embedding(
     unsafe {
         let ptr = &mut *(*embedding.as_ref(gil.python())).as_array_ptr();
         //libc::free(ptr.descr);
-        ptr.descr = numpy::npyffi::PY_ARRAY_API.PyArray_DescrFromType(
-            gil.python(), 
-            numpy::npyffi::NPY_TYPES::NPY_HALF as _,
-        );
+        ptr.descr = numpy::npyffi::PY_ARRAY_API
+            .PyArray_DescrFromType(gil.python(), numpy::npyffi::NPY_TYPES::NPY_HALF as _);
     }
 
     Ok(embedding.into_py(gil.python()))
@@ -302,7 +317,9 @@ fn word2vec(
 #[pymethods]
 impl Graph {
     #[args(py_kwargs = "**")]
-    #[pyo3(text_signature = "($self, batch_size, walk_length, window_size, *, iterations, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, dense_node_mapping, max_neighbours, random_state)")]
+    #[pyo3(
+        text_signature = "($self, batch_size, walk_length, window_size, *, iterations, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, dense_node_mapping, max_neighbours, random_state)"
+    )]
     /// Return training batches for Node2Vec models.
     ///
     /// The batch is composed of a tuple as the following:
@@ -388,10 +405,10 @@ impl Graph {
             * parameters.get_iterations() as usize;
 
         let contexts = ThreadDataRaceAware {
-            t: unsafe{PyArray2::new(gil.python(), [elements_per_batch, window_size * 2], false)},
+            t: unsafe { PyArray2::new(gil.python(), [elements_per_batch, window_size * 2], false) },
         };
         let words = ThreadDataRaceAware {
-            t: unsafe{PyArray1::new(gil.python(), [elements_per_batch], false)},
+            t: unsafe { PyArray1::new(gil.python(), [elements_per_batch], false) },
         };
         let global_i = AtomicUsize::new(0);
 
@@ -407,7 +424,9 @@ impl Graph {
         Ok((contexts.t.to_owned(), words.t.to_owned()))
     }
 
-    #[pyo3(text_signature = "($self, random_state, batch_size, return_node_types, return_edge_metrics, sample_only_edges_with_heterogeneous_node_types, negative_samples_rate, avoid_false_negatives, maximal_sampling_attempts, shuffle, use_scale_free_distribution, graph_to_avoid)")]
+    #[pyo3(
+        text_signature = "($self, random_state, batch_size, return_node_types, return_edge_metrics, sample_only_edges_with_heterogeneous_node_types, negative_samples_rate, avoid_false_negatives, maximal_sampling_attempts, shuffle, use_scale_free_distribution, graph_to_avoid)"
+    )]
     /// Returns n-ple with index to build numpy array, source node, source node type, destination node, destination node type, edge type and whether this edge is real or artificial.
     ///
     /// Parameters
@@ -486,19 +505,23 @@ impl Graph {
         ))?;
 
         let srcs = ThreadDataRaceAware {
-            t: unsafe{PyArray1::new(gil.python(), [batch_size], false)},
+            t: unsafe { PyArray1::new(gil.python(), [batch_size], false) },
         };
         let dsts = ThreadDataRaceAware {
-            t: unsafe{PyArray1::new(gil.python(), [batch_size], false)},
+            t: unsafe { PyArray1::new(gil.python(), [batch_size], false) },
         };
         let (src_node_type_ids, dst_node_type_ids) = if return_node_types {
             let max_node_type_count = pe!(self.inner.get_maximum_multilabel_count())? as usize;
             (
                 Some(ThreadDataRaceAware {
-                    t: unsafe{PyArray2::new(gil.python(), [batch_size, max_node_type_count], false)},
+                    t: unsafe {
+                        PyArray2::new(gil.python(), [batch_size, max_node_type_count], false)
+                    },
                 }),
                 Some(ThreadDataRaceAware {
-                    t: unsafe{PyArray2::new(gil.python(), [batch_size, max_node_type_count], false)},
+                    t: unsafe {
+                        PyArray2::new(gil.python(), [batch_size, max_node_type_count], false)
+                    },
                 }),
             )
         } else {
@@ -506,13 +529,13 @@ impl Graph {
         };
         let edges_metrics = if return_edge_metrics {
             Some(ThreadDataRaceAware {
-                t: unsafe{PyArray2::new(gil.python(), [batch_size, 4], false)},
+                t: unsafe { PyArray2::new(gil.python(), [batch_size, 4], false) },
             })
         } else {
             None
         };
         let labels = ThreadDataRaceAware {
-            t: unsafe{PyArray1::new(gil.python(), [batch_size], false)},
+            t: unsafe { PyArray1::new(gil.python(), [batch_size], false) },
         };
 
         unsafe {
@@ -581,19 +604,19 @@ impl Graph {
         let gil = pyo3::Python::acquire_gil();
 
         let srcs = ThreadDataRaceAware {
-            t: unsafe{PyArray1::new(gil.python(), [batch_size], false)},
+            t: unsafe { PyArray1::new(gil.python(), [batch_size], false) },
         };
 
         let dsts = ThreadDataRaceAware {
-            t: unsafe{PyArray1::new(gil.python(), [batch_size], false)},
+            t: unsafe { PyArray1::new(gil.python(), [batch_size], false) },
         };
 
         let not_srcs = ThreadDataRaceAware {
-            t: unsafe{PyArray1::new(gil.python(), [batch_size], false)},
+            t: unsafe { PyArray1::new(gil.python(), [batch_size], false) },
         };
 
         let not_dsts = ThreadDataRaceAware {
-            t: unsafe{PyArray1::new(gil.python(), [batch_size], false)},
+            t: unsafe { PyArray1::new(gil.python(), [batch_size], false) },
         };
 
         self.inner
@@ -642,23 +665,23 @@ impl Graph {
         let gil = pyo3::Python::acquire_gil();
 
         let srcs = ThreadDataRaceAware {
-            t: unsafe{PyArray1::new(gil.python(), [batch_size], false)},
+            t: unsafe { PyArray1::new(gil.python(), [batch_size], false) },
         };
 
         let dsts = ThreadDataRaceAware {
-            t: unsafe{PyArray1::new(gil.python(), [batch_size], false)},
+            t: unsafe { PyArray1::new(gil.python(), [batch_size], false) },
         };
 
         let not_srcs = ThreadDataRaceAware {
-            t: unsafe{PyArray1::new(gil.python(), [batch_size], false)},
+            t: unsafe { PyArray1::new(gil.python(), [batch_size], false) },
         };
 
         let not_dsts = ThreadDataRaceAware {
-            t: unsafe{PyArray1::new(gil.python(), [batch_size], false)},
+            t: unsafe { PyArray1::new(gil.python(), [batch_size], false) },
         };
 
         let edge_type_ids = ThreadDataRaceAware {
-            t: unsafe{PyArray1::zeros(gil.python(), [batch_size], false)},
+            t: unsafe { PyArray1::zeros(gil.python(), [batch_size], false) },
         };
 
         let edge_types_offset = if self.inner.has_unknown_edge_types().unwrap_or(false) {
@@ -693,7 +716,9 @@ impl Graph {
         )
     }
 
-    #[pyo3(text_signature = "($self, idx, graph, batch_size, return_node_types, return_edge_types, return_edge_metrics)")]
+    #[pyo3(
+        text_signature = "($self, idx, graph, batch_size, return_node_types, return_edge_types, return_edge_metrics)"
+    )]
     /// Returns n-ple for running edge predictions on a graph, sampling the graph properties from the graph used in training.
     ///
     /// Parameters
@@ -747,27 +772,31 @@ impl Graph {
         let actual_batch_size = par_iter.len();
 
         let srcs = ThreadDataRaceAware {
-            t: unsafe{PyArray1::new(gil.python(), [actual_batch_size], false)},
+            t: unsafe { PyArray1::new(gil.python(), [actual_batch_size], false) },
         };
         let dsts = ThreadDataRaceAware {
-            t: unsafe{PyArray1::new(gil.python(), [actual_batch_size], false)},
+            t: unsafe { PyArray1::new(gil.python(), [actual_batch_size], false) },
         };
         let (src_node_type_ids, dst_node_type_ids) = if return_node_types {
             let max_node_type_count = pe!(self.inner.get_maximum_multilabel_count())? as usize;
             (
                 Some(ThreadDataRaceAware {
-                    t: unsafe{PyArray2::new(
-                        gil.python(),
-                        [actual_batch_size, max_node_type_count],
-                        false,
-                    )},
+                    t: unsafe {
+                        PyArray2::new(
+                            gil.python(),
+                            [actual_batch_size, max_node_type_count],
+                            false,
+                        )
+                    },
                 }),
                 Some(ThreadDataRaceAware {
-                    t: unsafe{PyArray2::new(
-                        gil.python(),
-                        [actual_batch_size, max_node_type_count],
-                        false,
-                    )},
+                    t: unsafe {
+                        PyArray2::new(
+                            gil.python(),
+                            [actual_batch_size, max_node_type_count],
+                            false,
+                        )
+                    },
                 }),
             )
         } else {
@@ -775,21 +804,23 @@ impl Graph {
         };
         let edge_types = if return_edge_types {
             Some(ThreadDataRaceAware {
-                t: unsafe{PyArray1::zeros(gil.python(), [actual_batch_size], false)},
+                t: unsafe { PyArray1::zeros(gil.python(), [actual_batch_size], false) },
             })
         } else {
             None
         };
         let edges_metrics = if return_edge_metrics {
             Some(ThreadDataRaceAware {
-                t: unsafe{PyArray2::new(
-                    gil.python(),
-                    [
-                        actual_batch_size,
-                        self.inner.get_number_of_available_edge_metrics(),
-                    ],
-                    false,
-                )},
+                t: unsafe {
+                    PyArray2::new(
+                        gil.python(),
+                        [
+                            actual_batch_size,
+                            self.inner.get_number_of_available_edge_metrics(),
+                        ],
+                        false,
+                    )
+                },
             })
         } else {
             None

@@ -111,7 +111,8 @@ impl DAGResnik {
     fn get_pairwise_similarities(&self) -> PyResult<Py<PyArray2<f32>>> {
         let gil = pyo3::Python::acquire_gil();
         let number_of_nodes = pe!(self.inner.get_number_of_nodes())? as usize;
-        let similarities = unsafe{PyArray2::new(gil.python(), [number_of_nodes, number_of_nodes], false)};
+        let similarities =
+            unsafe { PyArray2::new(gil.python(), [number_of_nodes, number_of_nodes], false) };
         let similarities_ref = unsafe { similarities.as_slice_mut().unwrap() };
 
         pe!(self.inner.get_pairwise_similarities(similarities_ref))?;
@@ -128,11 +129,13 @@ impl DAGResnik {
     ///     The graph whose edges are to be predicted.
     fn get_similarities_from_graph(&self, graph: &Graph) -> PyResult<Py<PyArray1<f32>>> {
         let gil = pyo3::Python::acquire_gil();
-        let similarities = unsafe{PyArray1::new(
-            gil.python(),
-            [graph.get_number_of_directed_edges() as usize],
-            false,
-        )};
+        let similarities = unsafe {
+            PyArray1::new(
+                gil.python(),
+                [graph.get_number_of_directed_edges() as usize],
+                false,
+            )
+        };
         let similarities_ref = unsafe { similarities.as_slice_mut().unwrap() };
 
         pe!(self

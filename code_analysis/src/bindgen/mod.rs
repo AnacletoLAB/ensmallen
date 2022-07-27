@@ -138,7 +138,7 @@ impl GenBinding for Class {
         );
         let cmp_impl = if impl_ord || impl_partial_ord {
 r#"
-fn __richcmp__(&'p self, other: Self, op: CompareOp) -> bool {
+fn __richcmp__(&self, other: Self, op: CompareOp) -> bool {
     match op {
         CompareOp::Lt => self.inner < other.inner,
         CompareOp::Le => self.inner <= other.inner,
@@ -204,16 +204,16 @@ impl {struct_name} {{
     }}
 }}
             
-#[pyproto]
-impl PyObjectProtocol for {struct_name} {{
-    fn __str__(&'p self) -> String {{
+#[pymethods]
+impl {struct_name} {{
+    fn __str__(&self) -> String {{
         self.inner.to_string()
     }}
-    fn __repr__(&'p self) -> String {{
+    fn __repr__(&self) -> String {{
         self.__str__()
     }}
 
-    fn __hash__(&'p self) -> PyResult<isize> {{
+    fn __hash__(&self) -> PyResult<isize> {{
         let mut hasher = DefaultHasher::new();
         self.inner.hash(&mut hasher);
         Ok(hasher.finish() as isize)
@@ -345,7 +345,7 @@ impl GenBinding for BindingsModule {
             if !klass.ztruct.attributes.iter().any(|x| x == "no_binding")
                 && klass.ztruct.visibility == Visibility::Public {
                     registrations.push(
-                        format!("\t_m.add_class::<{}>()?;", klass_name)
+                        format!("\tm.add_class::<{}>()?;", klass_name)
                     );
                 }
             
@@ -354,37 +354,39 @@ impl GenBinding for BindingsModule {
         for func in &self.funcs {
             if  is_to_bind(func) {
                 registrations.push(
-                    format!("\t_m.add_wrapped(wrap_pyfunction!({}))?;", func.name)
+                    format!("\tm.add_wrapped(wrap_pyfunction!({}))?;", func.name)
                 );
             }
         }
 
-        for (mods_name, _mods) in self.modules.iter() {
-            registrations.push(
-                format!("\t_m.add_wrapped(wrap_pymodule!({}))?;", mods_name)
-            );
-        }
-        
+        let mut mod_names =  self.modules.keys()
+            .map(|x|x.as_str()).collect::<Vec<_>>();
+
         if self.module_name == "ensmallen" {
-            registrations.push(
-                "\t_m.add_wrapped(wrap_pymodule!(preprocessing))?;".into()
-            );
-            registrations.push(
-                "\t_m.add_wrapped(wrap_pymodule!(models))?;".into()
-            );
-            registrations.push(
-                "\t_m.add_wrapped(wrap_pymodule!(express_measures))?;".into()
-            );
+            mod_names.push("preprocessing");
+            mod_names.push("models");
+            mod_names.push("express_measures");
+
             registrations.push(
                 "\tenv_logger::init();".into()
             );
         }
 
+        for mods_name in mod_names {
+            registrations.push(
+                format!("\tlet submod = PyModule::new(py, \"{}\")?;", mods_name)
+            );
+            registrations.push(
+                format!("\tregister_{}(py, submod)?;", mods_name)
+            );
+            registrations.push(
+                format!("\tm.add_submodule(submod)?;")
+            );
+        }
+        
         format!(
 r#"
-
-#[pymodule]
-fn {module_name}(_py: Python, _m:&PyModule) -> PyResult<()> {{
+pub fn register_{module_name}(py: Python, m:&PyModule) -> PyResult<()> {{
     {registrations}
     Ok(())
 }}

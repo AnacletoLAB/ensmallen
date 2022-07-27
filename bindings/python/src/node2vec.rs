@@ -90,7 +90,9 @@ impl WalkletsBinding {
 
 #[pyclass]
 #[derive(Debug, Clone)]
-#[pyo3(text_signature = "(*, embedding_size, window_size, number_of_negative_samples, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, max_neighbours, normalize_by_degree, epochs, learning_rate, learning_rate_decay, stochastic_downsample_by_degree, normalize_learning_rate_by_degree, use_scale_free_distribution, clipping_value, verbose)")]
+#[pyo3(
+    text_signature = "(*, embedding_size, window_size, number_of_negative_samples, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, max_neighbours, normalize_by_degree, epochs, learning_rate, learning_rate_decay, stochastic_downsample_by_degree, normalize_learning_rate_by_degree, use_scale_free_distribution, clipping_value, verbose)"
+)]
 pub struct CBOW {
     inner: Node2VecBinding<IdentifyWalkTransformer>,
 }
@@ -185,7 +187,9 @@ impl CBOW {
 
 #[pyclass]
 #[derive(Debug, Clone)]
-#[pyo3(text_signature = "(*, embedding_size, window_size, number_of_negative_samples, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, max_neighbours, normalize_by_degree, epochs, learning_rate, learning_rate_decay, stochastic_downsample_by_degree, normalize_learning_rate_by_degree, use_scale_free_distribution, clipping_value, verbose)")]
+#[pyo3(
+    text_signature = "(*, embedding_size, window_size, number_of_negative_samples, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, max_neighbours, normalize_by_degree, epochs, learning_rate, learning_rate_decay, stochastic_downsample_by_degree, normalize_learning_rate_by_degree, use_scale_free_distribution, clipping_value, verbose)"
+)]
 pub struct GloVe {
     inner: Node2VecBinding<IdentifyWalkTransformer>,
 }
@@ -280,7 +284,9 @@ impl GloVe {
 
 #[pyclass]
 #[derive(Debug, Clone)]
-#[pyo3(text_signature = "(*, embedding_size, window_size, number_of_negative_samples, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, max_neighbours, normalize_by_degree, epochs, learning_rate, learning_rate_decay, stochastic_downsample_by_degree, normalize_learning_rate_by_degree, use_scale_free_distribution, clipping_value, verbose)")]
+#[pyo3(
+    text_signature = "(*, embedding_size, window_size, number_of_negative_samples, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, max_neighbours, normalize_by_degree, epochs, learning_rate, learning_rate_decay, stochastic_downsample_by_degree, normalize_learning_rate_by_degree, use_scale_free_distribution, clipping_value, verbose)"
+)]
 pub struct SkipGram {
     inner: Node2VecBinding<IdentifyWalkTransformer>,
 }
@@ -375,7 +381,9 @@ impl SkipGram {
 
 #[pyclass]
 #[derive(Debug, Clone)]
-#[pyo3(text_signature = "(*, embedding_size, window_size, number_of_negative_samples, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, max_neighbours, normalize_by_degree, epochs, learning_rate, learning_rate_decay, stochastic_downsample_by_degree, normalize_learning_rate_by_degree, use_scale_free_distribution, clipping_value, verbose)")]
+#[pyo3(
+    text_signature = "(*, embedding_size, window_size, number_of_negative_samples, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, max_neighbours, normalize_by_degree, epochs, learning_rate, learning_rate_decay, stochastic_downsample_by_degree, normalize_learning_rate_by_degree, use_scale_free_distribution, clipping_value, verbose)"
+)]
 pub struct WalkletsCBOW {
     inner: WalkletsBinding,
 }
@@ -470,7 +478,9 @@ impl WalkletsCBOW {
 
 #[pyclass]
 #[derive(Debug, Clone)]
-#[pyo3(text_signature = "(*, embedding_size, window_size, number_of_negative_samples, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, max_neighbours, normalize_by_degree, epochs, learning_rate, learning_rate_decay, stochastic_downsample_by_degree, normalize_learning_rate_by_degree, use_scale_free_distribution, clipping_value, verbose)")]
+#[pyo3(
+    text_signature = "(*, embedding_size, window_size, number_of_negative_samples, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, max_neighbours, normalize_by_degree, epochs, learning_rate, learning_rate_decay, stochastic_downsample_by_degree, normalize_learning_rate_by_degree, use_scale_free_distribution, clipping_value, verbose)"
+)]
 pub struct WalkletsSkipGram {
     inner: WalkletsBinding,
 }
@@ -565,7 +575,9 @@ impl WalkletsSkipGram {
 
 #[pyclass]
 #[derive(Debug, Clone)]
-#[pyo3(text_signature = "(*, embedding_size, window_size, number_of_negative_samples, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, max_neighbours, normalize_by_degree, epochs, learning_rate, learning_rate_decay, stochastic_downsample_by_degree, normalize_learning_rate_by_degree, use_scale_free_distribution, clipping_value, verbose)")]
+#[pyo3(
+    text_signature = "(*, embedding_size, window_size, number_of_negative_samples, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, max_neighbours, normalize_by_degree, epochs, learning_rate, learning_rate_decay, stochastic_downsample_by_degree, normalize_learning_rate_by_degree, use_scale_free_distribution, clipping_value, verbose)"
+)]
 pub struct WalkletsGloVe {
     inner: WalkletsBinding,
 }

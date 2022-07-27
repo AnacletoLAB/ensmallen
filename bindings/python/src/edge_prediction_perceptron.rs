@@ -8,7 +8,9 @@ type InnerModel = cpu_models::EdgePredictionPerceptron<Adam<f32, f32>, Adam<f32,
 ///
 #[pyclass]
 #[derive(Clone)]
-#[pyo3(text_signature = "(*, edge_embeddings, edge_features, cooccurrence_iterations, cooccurrence_window_size, number_of_epochs, number_of_edges_per_mini_batch, sample_only_edges_with_heterogeneous_node_types, learning_rate, first_order_decay_factor, second_order_decay_factor, use_scale_free_distribution, random_state)")]
+#[pyo3(
+    text_signature = "(*, edge_embeddings, edge_features, cooccurrence_iterations, cooccurrence_window_size, number_of_epochs, number_of_edges_per_mini_batch, sample_only_edges_with_heterogeneous_node_types, learning_rate, first_order_decay_factor, second_order_decay_factor, use_scale_free_distribution, random_state)"
+)]
 pub struct EdgePredictionPerceptron {
     pub inner: InnerModel,
 }
@@ -240,11 +242,13 @@ impl EdgePredictionPerceptron {
             .iter()
             .map(|node_feature| unsafe { node_feature.as_slice().unwrap() })
             .collect::<Vec<_>>();
-        let predictions = unsafe{PyArray1::new(
-            gil.python(),
-            [graph.get_number_of_directed_edges() as usize],
-            false,
-        )};
+        let predictions = unsafe {
+            PyArray1::new(
+                gil.python(),
+                [graph.get_number_of_directed_edges() as usize],
+                false,
+            )
+        };
         let predictions_ref = unsafe { predictions.as_slice_mut().unwrap() };
 
         pe!(self.inner.predict(

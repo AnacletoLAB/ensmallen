@@ -55,6 +55,12 @@ mod weighted_spine;
 pub(crate) use weighted_spine::*;
 mod walks;
 
+#[pymodule]
+pub fn ensmallen(py: Python, m: &PyModule) -> PyResult<()> {
+    register_ensmallen(py, m)?;
+    Ok(())
+}
+
 pub fn register_models(_py: Python, _m: &PyModule) -> PyResult<()> {
     _m.add_class::<CBOW>()?;
     _m.add_class::<GloVe>()?;
