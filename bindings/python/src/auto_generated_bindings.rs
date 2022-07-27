@@ -1,7 +1,6 @@
 #[allow(unused_variables)]
 use super::*;
 use pyo3::class::basic::CompareOp;
-use pyo3::class::basic::PyObjectProtocol;
 use pyo3::{wrap_pyfunction, wrap_pymodule};
 use rayon::iter::*;
 use std::collections::hash_map::DefaultHasher;
@@ -62,8 +61,8 @@ pub fn register_ensmallen(py: Python, m: &PyModule) -> PyResult<()> {
     Ok(())
 }
 
+#[pyclass(module = "ensmallen")]
 ///
-#[pyclass]
 #[derive(Debug, Clone)]
 pub struct Chain {
     pub inner: graph::Chain,
@@ -310,8 +309,8 @@ impl Chain {
     }
 }
 
+#[pyclass(module = "ensmallen")]
 ///
-#[pyclass]
 #[derive(Debug, Clone)]
 pub struct Circle {
     pub inner: graph::Circle,
@@ -558,8 +557,8 @@ impl Circle {
     }
 }
 
+#[pyclass(module = "ensmallen")]
 ///
-#[pyclass]
 #[derive(Debug, Clone)]
 pub struct Clique {
     pub inner: graph::Clique,
@@ -725,8 +724,8 @@ impl Clique {
     }
 }
 
+#[pyclass(module = "ensmallen")]
 ///
-#[pyclass]
 #[derive(Debug, Clone)]
 pub struct DendriticTree {
     pub inner: graph::DendriticTree,
@@ -1147,6 +1146,7 @@ impl DendriticTree {
     }
 }
 
+#[pyclass(module = "ensmallen")]
 /// This is the main struct in Ensmallen, it allows to load and manipulate Graphs efficently.
 ///  You are not supposed to directly instantiate this struct but instead you should use the
 ///  static method `from_csv`, which allows to load the graph from an edge-list.
@@ -1164,7 +1164,6 @@ impl DendriticTree {
 ///   $$2 |E| + |E| \\left\\lceil \\log_2 \\frac{|V|^2}{|E|} \\right\\rceil$$
 ///
 ///  Most Graph properties are automatically cached to speed up.
-#[pyclass]
 #[derive(Debug, Clone)]
 pub struct Graph {
     pub inner: graph::Graph,
@@ -7874,7 +7873,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self, edge_type_id, directed)")]
+    #[pyo3(text_signature = "($self, directed, edge_type_id)")]
     /// Returns vector containing edge node IDs with given edge type.
     ///
     /// Parameters
@@ -7894,8 +7893,8 @@ impl Graph {
     ///
     pub fn get_edge_node_ids_from_edge_type_id(
         &self,
-        edge_type_id: Option<EdgeTypeT>,
         directed: bool,
+        edge_type_id: Option<EdgeTypeT>,
     ) -> PyResult<Py<PyArray2<NodeT>>> {
         Ok({
             // Warning: this copies the array so it uses double the memory.
@@ -7904,7 +7903,7 @@ impl Graph {
             let gil = pyo3::Python::acquire_gil();
             let body = pe!(self
                 .inner
-                .get_edge_node_ids_from_edge_type_id(edge_type_id.into(), directed.into()))?;
+                .get_edge_node_ids_from_edge_type_id(directed.into(), edge_type_id.into()))?;
             let result_array = ThreadDataRaceAware {
                 t: unsafe { PyArray2::<NodeT>::new(gil.python(), [body.len(), 2], false) },
             };
@@ -8052,7 +8051,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self, edge_type_name, directed)")]
+    #[pyo3(text_signature = "($self, directed, edge_type_name)")]
     /// Returns vector containing edge node IDs with given edge type name.
     ///
     /// Parameters
@@ -8072,8 +8071,8 @@ impl Graph {
     ///
     pub fn get_edge_node_ids_from_edge_type_name(
         &self,
-        edge_type_name: Option<&str>,
         directed: bool,
+        edge_type_name: Option<&str>,
     ) -> PyResult<Py<PyArray2<NodeT>>> {
         Ok({
             // Warning: this copies the array so it uses double the memory.
@@ -8082,7 +8081,7 @@ impl Graph {
             let gil = pyo3::Python::acquire_gil();
             let body = pe!(self
                 .inner
-                .get_edge_node_ids_from_edge_type_name(edge_type_name.into(), directed.into()))?;
+                .get_edge_node_ids_from_edge_type_name(directed.into(), edge_type_name.into()))?;
             let result_array = ThreadDataRaceAware {
                 t: unsafe { PyArray2::<NodeT>::new(gil.python(), [body.len(), 2], false) },
             };
@@ -14936,7 +14935,7 @@ impl Graph {
     #[staticmethod]
     #[automatically_generated_binding]
     #[pyo3(
-        text_signature = "(node_type_path, node_type_list_separator, node_types_column_number, node_types_column, node_types_ids_column_number, node_types_ids_column, node_types_number, numeric_node_type_ids, minimum_node_type_id, node_type_list_header, node_type_list_support_balanced_quotes, node_type_list_rows_to_skip, node_type_list_is_correct, node_type_list_max_rows_number, node_type_list_comment_symbol, load_node_type_list_in_parallel, node_path, node_list_separator, node_list_header, node_list_support_balanced_quotes, node_list_rows_to_skip, node_list_is_correct, node_list_max_rows_number, node_list_comment_symbol, default_node_type, nodes_column_number, nodes_column, node_types_separator, node_list_node_types_column_number, node_list_node_types_column, node_ids_column, node_ids_column_number, nodes_number, minimum_node_id, numeric_node_ids, node_list_numeric_node_type_ids, skip_node_types_if_unavailable, load_node_list_in_parallel, edge_type_path, edge_types_column_number, edge_types_column, edge_types_ids_column_number, edge_types_ids_column, edge_types_number, numeric_edge_type_ids, minimum_edge_type_id, edge_type_list_separator, edge_type_list_header, edge_type_list_support_balanced_quotes, edge_type_list_rows_to_skip, edge_type_list_is_correct, edge_type_list_max_rows_number, edge_type_list_comment_symbol, load_edge_type_list_in_parallel, edge_path, edge_list_separator, edge_list_header, edge_list_support_balanced_quotes, edge_list_rows_to_skip, sources_column_number, sources_column, destinations_column_number, destinations_column, edge_list_edge_types_column_number, edge_list_edge_types_column, default_edge_type, weights_column_number, weights_column, default_weight, edge_ids_column, edge_ids_column_number, edge_list_numeric_edge_type_ids, edge_list_numeric_node_ids, skip_weights_if_unavailable, skip_edge_types_if_unavailable, edge_list_is_complete, edge_list_may_contain_duplicates, edge_list_is_sorted, edge_list_is_correct, edge_list_max_rows_number, edge_list_comment_symbol, edges_number, load_edge_list_in_parallel, verbose, may_have_singletons, may_have_singleton_with_selfloops, directed, name)"
+        text_signature = "(directed, node_type_path, node_type_list_separator, node_types_column_number, node_types_column, node_types_ids_column_number, node_types_ids_column, node_types_number, numeric_node_type_ids, minimum_node_type_id, node_type_list_header, node_type_list_support_balanced_quotes, node_type_list_rows_to_skip, node_type_list_is_correct, node_type_list_max_rows_number, node_type_list_comment_symbol, load_node_type_list_in_parallel, node_path, node_list_separator, node_list_header, node_list_support_balanced_quotes, node_list_rows_to_skip, node_list_is_correct, node_list_max_rows_number, node_list_comment_symbol, default_node_type, nodes_column_number, nodes_column, node_types_separator, node_list_node_types_column_number, node_list_node_types_column, node_ids_column, node_ids_column_number, nodes_number, minimum_node_id, numeric_node_ids, node_list_numeric_node_type_ids, skip_node_types_if_unavailable, load_node_list_in_parallel, edge_type_path, edge_types_column_number, edge_types_column, edge_types_ids_column_number, edge_types_ids_column, edge_types_number, numeric_edge_type_ids, minimum_edge_type_id, edge_type_list_separator, edge_type_list_header, edge_type_list_support_balanced_quotes, edge_type_list_rows_to_skip, edge_type_list_is_correct, edge_type_list_max_rows_number, edge_type_list_comment_symbol, load_edge_type_list_in_parallel, edge_path, edge_list_separator, edge_list_header, edge_list_support_balanced_quotes, edge_list_rows_to_skip, sources_column_number, sources_column, destinations_column_number, destinations_column, edge_list_edge_types_column_number, edge_list_edge_types_column, default_edge_type, weights_column_number, weights_column, default_weight, edge_ids_column, edge_ids_column_number, edge_list_numeric_edge_type_ids, edge_list_numeric_node_ids, skip_weights_if_unavailable, skip_edge_types_if_unavailable, edge_list_is_complete, edge_list_may_contain_duplicates, edge_list_is_sorted, edge_list_is_correct, edge_list_max_rows_number, edge_list_comment_symbol, edges_number, load_edge_list_in_parallel, verbose, may_have_singletons, may_have_singleton_with_selfloops, name)"
     )]
     /// Return graph renderized from given CSVs or TSVs-like files.
     ///
@@ -15112,6 +15111,7 @@ impl Graph {
     ///     The name of the graph to be loaded.
     ///
     pub fn from_csv(
+        directed: bool,
         node_type_path: Option<String>,
         node_type_list_separator: Option<char>,
         node_types_column_number: Option<usize>,
@@ -15198,10 +15198,10 @@ impl Graph {
         verbose: Option<bool>,
         may_have_singletons: Option<bool>,
         may_have_singleton_with_selfloops: Option<bool>,
-        directed: bool,
         name: Option<String>,
     ) -> PyResult<Graph> {
         Ok(pe!(graph::Graph::from_csv(
+            directed.into(),
             node_type_path.into(),
             node_type_list_separator.into(),
             node_types_column_number.into(),
@@ -15288,7 +15288,6 @@ impl Graph {
             verbose.into(),
             may_have_singletons.into(),
             may_have_singleton_with_selfloops.into(),
-            directed.into(),
             name.into()
         ))?
         .into())
@@ -15591,7 +15590,7 @@ impl Graph {
 
     #[automatically_generated_binding]
     #[pyo3(
-        text_signature = "($self, number_of_nodes_to_sample, random_state, root_node, node_sampling_method, unique)"
+        text_signature = "($self, number_of_nodes_to_sample, random_state, node_sampling_method, root_node, unique)"
     )]
     /// Return subsampled nodes according to the given method and parameters.
     ///
@@ -15618,8 +15617,8 @@ impl Graph {
         &self,
         number_of_nodes_to_sample: NodeT,
         random_state: u64,
-        root_node: Option<NodeT>,
         node_sampling_method: &str,
+        root_node: Option<NodeT>,
         unique: Option<bool>,
     ) -> PyResult<Py<PyArray1<NodeT>>> {
         Ok({
@@ -15629,8 +15628,8 @@ impl Graph {
                 pe!(self.inner.get_subsampled_nodes(
                     number_of_nodes_to_sample.into(),
                     random_state.into(),
-                    root_node.into(),
                     node_sampling_method.into(),
+                    root_node.into(),
                     unique.into()
                 ))?,
                 NodeT
@@ -22444,8 +22443,8 @@ impl Graph {
     }
 }
 
+#[pyclass(module = "ensmallen")]
 ///
-#[pyclass]
 #[derive(Debug, Clone)]
 pub struct NodeTuple {
     pub inner: graph::NodeTuple,
@@ -22626,8 +22625,8 @@ impl NodeTuple {
     }
 }
 
+#[pyclass(module = "ensmallen")]
 ///
-#[pyclass]
 #[derive(Debug, Clone)]
 pub struct ShortestPathsDjkstra {
     pub inner: graph::ShortestPathsDjkstra,
@@ -22981,8 +22980,8 @@ impl ShortestPathsDjkstra {
     }
 }
 
+#[pyclass(module = "ensmallen")]
 ///
-#[pyclass]
 #[derive(Debug, Clone)]
 pub struct ShortestPathsResultBFS {
     pub inner: graph::ShortestPathsResultBFS,
@@ -23531,8 +23530,8 @@ impl ShortestPathsResultBFS {
     }
 }
 
+#[pyclass(module = "ensmallen")]
 ///
-#[pyclass]
 #[derive(Debug, Clone)]
 pub struct Star {
     pub inner: graph::Star,
@@ -23779,8 +23778,8 @@ impl Star {
     }
 }
 
+#[pyclass(module = "ensmallen")]
 ///
-#[pyclass]
 #[derive(Debug, Clone)]
 pub struct Tendril {
     pub inner: graph::Tendril,
@@ -24052,11 +24051,10 @@ pub fn register_edge_list_utils(py: Python, m: &PyModule) -> PyResult<()> {
     Ok(())
 }
 
-#[module(edge_list_utils)]
 #[pyfunction]
 #[automatically_generated_binding]
 #[pyo3(
-    text_signature = "(original_node_path, original_node_list_separator, original_node_list_header, original_node_list_support_balanced_quotes, node_list_rows_to_skip, node_list_is_correct, node_list_max_rows_number, node_list_comment_symbol, original_nodes_column_number, original_nodes_column, nodes_number, original_minimum_node_id, original_numeric_node_ids, original_load_node_list_in_parallel, original_edge_type_path, original_edge_types_column_number, original_edge_types_column, edge_types_number, original_numeric_edge_type_ids, original_minimum_edge_type_id, original_edge_type_list_separator, original_edge_type_list_header, original_edge_type_list_support_balanced_quotes, edge_type_list_rows_to_skip, edge_type_list_is_correct, edge_type_list_max_rows_number, edge_type_list_comment_symbol, load_edge_type_list_in_parallel, original_edge_path, original_edge_list_separator, original_edge_list_header, original_edge_list_support_balanced_quotes, original_sources_column_number, original_sources_column, original_destinations_column_number, original_destinations_column, original_edge_list_edge_types_column, original_edge_list_edge_types_column_number, original_weights_column, original_weights_column_number, target_edge_path, target_edge_list_separator, target_edge_list_header, target_sources_column, target_sources_column_number, target_destinations_column, target_destinations_column_number, target_edge_list_edge_types_column, target_edge_list_edge_types_column_number, target_weights_column, target_weights_column_number, target_node_path, target_node_list_separator, target_node_list_header, target_nodes_column, target_nodes_column_number, target_edge_type_list_path, target_edge_type_list_separator, target_edge_type_list_header, target_edge_type_list_edge_types_column, target_edge_type_list_edge_types_column_number, comment_symbol, default_edge_type, default_weight, max_rows_number, rows_to_skip, edges_number, skip_edge_types_if_unavailable, skip_weights_if_unavailable, numeric_rows_are_surely_smaller_than_original, directed, verbose, name)"
+    text_signature = "(original_edge_path, target_edge_path, directed, original_node_path, original_node_list_separator, original_node_list_header, original_node_list_support_balanced_quotes, node_list_rows_to_skip, node_list_is_correct, node_list_max_rows_number, node_list_comment_symbol, original_nodes_column_number, original_nodes_column, nodes_number, original_minimum_node_id, original_numeric_node_ids, original_load_node_list_in_parallel, original_edge_type_path, original_edge_types_column_number, original_edge_types_column, edge_types_number, original_numeric_edge_type_ids, original_minimum_edge_type_id, original_edge_type_list_separator, original_edge_type_list_header, original_edge_type_list_support_balanced_quotes, edge_type_list_rows_to_skip, edge_type_list_is_correct, edge_type_list_max_rows_number, edge_type_list_comment_symbol, load_edge_type_list_in_parallel, original_edge_list_separator, original_edge_list_header, original_edge_list_support_balanced_quotes, original_sources_column_number, original_sources_column, original_destinations_column_number, original_destinations_column, original_edge_list_edge_types_column, original_edge_list_edge_types_column_number, original_weights_column, original_weights_column_number, target_edge_list_separator, target_edge_list_header, target_sources_column, target_sources_column_number, target_destinations_column, target_destinations_column_number, target_edge_list_edge_types_column, target_edge_list_edge_types_column_number, target_weights_column, target_weights_column_number, target_node_path, target_node_list_separator, target_node_list_header, target_nodes_column, target_nodes_column_number, target_edge_type_list_path, target_edge_type_list_separator, target_edge_type_list_header, target_edge_type_list_edge_types_column, target_edge_type_list_edge_types_column_number, comment_symbol, default_edge_type, default_weight, max_rows_number, rows_to_skip, edges_number, skip_edge_types_if_unavailable, skip_weights_if_unavailable, numeric_rows_are_surely_smaller_than_original, verbose, name)"
 )]
 /// Create a new edge list starting from given one with node IDs densified.
 ///
@@ -24068,6 +24066,9 @@ pub fn register_edge_list_utils(py: Python, m: &PyModule) -> PyResult<()> {
 ///     If the original and target paths are identical.
 ///
 pub fn convert_edge_list_to_numeric(
+    original_edge_path: &str,
+    target_edge_path: &str,
+    directed: bool,
     original_node_path: Option<String>,
     original_node_list_separator: Option<char>,
     original_node_list_header: Option<bool>,
@@ -24096,7 +24097,6 @@ pub fn convert_edge_list_to_numeric(
     edge_type_list_max_rows_number: Option<usize>,
     edge_type_list_comment_symbol: Option<String>,
     load_edge_type_list_in_parallel: Option<bool>,
-    original_edge_path: &str,
     original_edge_list_separator: Option<char>,
     original_edge_list_header: Option<bool>,
     original_edge_list_support_balanced_quotes: Option<bool>,
@@ -24108,7 +24108,6 @@ pub fn convert_edge_list_to_numeric(
     original_edge_list_edge_types_column_number: Option<usize>,
     original_weights_column: Option<String>,
     original_weights_column_number: Option<usize>,
-    target_edge_path: &str,
     target_edge_list_separator: Option<char>,
     target_edge_list_header: Option<bool>,
     target_sources_column: Option<String>,
@@ -24138,12 +24137,14 @@ pub fn convert_edge_list_to_numeric(
     skip_edge_types_if_unavailable: Option<bool>,
     skip_weights_if_unavailable: Option<bool>,
     numeric_rows_are_surely_smaller_than_original: Option<bool>,
-    directed: bool,
     verbose: Option<bool>,
     name: Option<String>,
 ) -> PyResult<(NodeT, Option<EdgeTypeT>)> {
     Ok({
         let (subresult_0, subresult_1) = pe!(graph::convert_edge_list_to_numeric(
+            original_edge_path.into(),
+            target_edge_path.into(),
+            directed.into(),
             original_node_path.into(),
             original_node_list_separator.into(),
             original_node_list_header.into(),
@@ -24172,7 +24173,6 @@ pub fn convert_edge_list_to_numeric(
             edge_type_list_max_rows_number.into(),
             edge_type_list_comment_symbol.into(),
             load_edge_type_list_in_parallel.into(),
-            original_edge_path.into(),
             original_edge_list_separator.into(),
             original_edge_list_header.into(),
             original_edge_list_support_balanced_quotes.into(),
@@ -24184,7 +24184,6 @@ pub fn convert_edge_list_to_numeric(
             original_edge_list_edge_types_column_number.into(),
             original_weights_column.into(),
             original_weights_column_number.into(),
-            target_edge_path.into(),
             target_edge_list_separator.into(),
             target_edge_list_header.into(),
             target_sources_column.into(),
@@ -24214,7 +24213,6 @@ pub fn convert_edge_list_to_numeric(
             skip_edge_types_if_unavailable.into(),
             skip_weights_if_unavailable.into(),
             numeric_rows_are_surely_smaller_than_original.into(),
-            directed.into(),
             verbose.into(),
             name.into()
         ))?
@@ -24223,11 +24221,10 @@ pub fn convert_edge_list_to_numeric(
     })
 }
 
-#[module(edge_list_utils)]
 #[pyfunction]
 #[automatically_generated_binding]
 #[pyo3(
-    text_signature = "(maximum_node_id, original_edge_path, original_edge_list_separator, original_edge_list_header, original_sources_column, original_sources_column_number, original_destinations_column, original_destinations_column_number, original_edge_list_edge_types_column, original_edge_list_edge_types_column_number, original_weights_column, original_weights_column_number, original_edge_type_path, original_edge_types_column_number, original_edge_types_column, edge_types_number, original_numeric_edge_type_ids, original_minimum_edge_type_id, original_edge_type_list_separator, original_edge_type_list_header, edge_type_list_rows_to_skip, edge_type_list_is_correct, edge_type_list_max_rows_number, edge_type_list_comment_symbol, load_edge_type_list_in_parallel, target_edge_path, target_edge_list_separator, target_edge_list_header, target_sources_column, target_sources_column_number, target_destinations_column, target_destinations_column_number, target_edge_list_edge_types_column, target_edge_list_edge_types_column_number, target_weights_column, target_weights_column_number, target_node_path, target_node_list_separator, target_node_list_header, target_nodes_column, target_nodes_column_number, target_edge_type_list_path, target_edge_type_list_separator, target_edge_type_list_header, target_edge_type_list_edge_types_column, target_edge_type_list_edge_types_column_number, comment_symbol, default_edge_type, default_weight, max_rows_number, rows_to_skip, edges_number, skip_edge_types_if_unavailable, skip_weights_if_unavailable, numeric_rows_are_surely_smaller_than_original, directed, verbose, name)"
+    text_signature = "(original_edge_path, target_edge_path, directed, maximum_node_id, original_edge_list_separator, original_edge_list_header, original_sources_column, original_sources_column_number, original_destinations_column, original_destinations_column_number, original_edge_list_edge_types_column, original_edge_list_edge_types_column_number, original_weights_column, original_weights_column_number, original_edge_type_path, original_edge_types_column_number, original_edge_types_column, edge_types_number, original_numeric_edge_type_ids, original_minimum_edge_type_id, original_edge_type_list_separator, original_edge_type_list_header, edge_type_list_rows_to_skip, edge_type_list_is_correct, edge_type_list_max_rows_number, edge_type_list_comment_symbol, load_edge_type_list_in_parallel, target_edge_list_separator, target_edge_list_header, target_sources_column, target_sources_column_number, target_destinations_column, target_destinations_column_number, target_edge_list_edge_types_column, target_edge_list_edge_types_column_number, target_weights_column, target_weights_column_number, target_node_path, target_node_list_separator, target_node_list_header, target_nodes_column, target_nodes_column_number, target_edge_type_list_path, target_edge_type_list_separator, target_edge_type_list_header, target_edge_type_list_edge_types_column, target_edge_type_list_edge_types_column_number, comment_symbol, default_edge_type, default_weight, max_rows_number, rows_to_skip, edges_number, skip_edge_types_if_unavailable, skip_weights_if_unavailable, numeric_rows_are_surely_smaller_than_original, verbose, name)"
 )]
 /// Create a new edge list starting from given numeric one with node IDs densified and returns the number of unique nodes.
 ///
@@ -24309,8 +24306,10 @@ pub fn convert_edge_list_to_numeric(
 ///     The name of the graph to display in the loading bar.
 ///
 pub fn densify_sparse_numeric_edge_list(
-    maximum_node_id: Option<EdgeT>,
     original_edge_path: &str,
+    target_edge_path: &str,
+    directed: bool,
+    maximum_node_id: Option<EdgeT>,
     original_edge_list_separator: Option<char>,
     original_edge_list_header: Option<bool>,
     original_sources_column: Option<String>,
@@ -24334,7 +24333,6 @@ pub fn densify_sparse_numeric_edge_list(
     edge_type_list_max_rows_number: Option<usize>,
     edge_type_list_comment_symbol: Option<String>,
     load_edge_type_list_in_parallel: Option<bool>,
-    target_edge_path: &str,
     target_edge_list_separator: Option<char>,
     target_edge_list_header: Option<bool>,
     target_sources_column: Option<String>,
@@ -24364,14 +24362,15 @@ pub fn densify_sparse_numeric_edge_list(
     skip_edge_types_if_unavailable: Option<bool>,
     skip_weights_if_unavailable: Option<bool>,
     numeric_rows_are_surely_smaller_than_original: Option<bool>,
-    directed: bool,
     verbose: Option<bool>,
     name: Option<String>,
 ) -> PyResult<(NodeT, Option<EdgeTypeT>)> {
     Ok({
         let (subresult_0, subresult_1) = pe!(graph::densify_sparse_numeric_edge_list(
-            maximum_node_id.into(),
             original_edge_path.into(),
+            target_edge_path.into(),
+            directed.into(),
+            maximum_node_id.into(),
             original_edge_list_separator.into(),
             original_edge_list_header.into(),
             original_sources_column.into(),
@@ -24395,7 +24394,6 @@ pub fn densify_sparse_numeric_edge_list(
             edge_type_list_max_rows_number.into(),
             edge_type_list_comment_symbol.into(),
             load_edge_type_list_in_parallel.into(),
-            target_edge_path.into(),
             target_edge_list_separator.into(),
             target_edge_list_header.into(),
             target_sources_column.into(),
@@ -24425,7 +24423,6 @@ pub fn densify_sparse_numeric_edge_list(
             skip_edge_types_if_unavailable.into(),
             skip_weights_if_unavailable.into(),
             numeric_rows_are_surely_smaller_than_original.into(),
-            directed.into(),
             verbose.into(),
             name.into()
         ))?
@@ -24434,11 +24431,10 @@ pub fn densify_sparse_numeric_edge_list(
     })
 }
 
-#[module(edge_list_utils)]
 #[pyfunction]
 #[automatically_generated_binding]
 #[pyo3(
-    text_signature = "(original_node_type_path, original_node_type_list_separator, original_node_types_column_number, original_node_types_column, node_types_number, original_numeric_node_type_ids, original_minimum_node_type_id, original_node_type_list_header, original_node_type_list_support_balanced_quotes, original_node_type_list_rows_to_skip, original_node_type_list_is_correct, original_node_type_list_max_rows_number, original_node_type_list_comment_symbol, original_load_node_type_list_in_parallel, target_node_type_list_path, target_node_type_list_separator, target_node_type_list_header, target_node_type_list_node_types_column, target_node_type_list_node_types_column_number, original_node_path, original_node_list_separator, original_node_list_header, original_node_list_support_balanced_quotes, node_list_rows_to_skip, node_list_max_rows_number, node_list_comment_symbol, default_node_type, original_nodes_column_number, original_nodes_column, original_node_types_separator, original_node_list_node_types_column_number, original_node_list_node_types_column, original_minimum_node_id, original_numeric_node_ids, original_node_list_numeric_node_type_ids, original_skip_node_types_if_unavailable, target_node_path, target_node_list_separator, target_node_list_header, target_nodes_column_number, target_nodes_column, target_node_types_separator, target_node_list_node_types_column_number, target_node_list_node_types_column, nodes_number)"
+    text_signature = "(original_node_path, target_node_path, original_node_type_path, original_node_type_list_separator, original_node_types_column_number, original_node_types_column, node_types_number, original_numeric_node_type_ids, original_minimum_node_type_id, original_node_type_list_header, original_node_type_list_support_balanced_quotes, original_node_type_list_rows_to_skip, original_node_type_list_is_correct, original_node_type_list_max_rows_number, original_node_type_list_comment_symbol, original_load_node_type_list_in_parallel, target_node_type_list_path, target_node_type_list_separator, target_node_type_list_header, target_node_type_list_node_types_column, target_node_type_list_node_types_column_number, original_node_list_separator, original_node_list_header, original_node_list_support_balanced_quotes, node_list_rows_to_skip, node_list_max_rows_number, node_list_comment_symbol, default_node_type, original_nodes_column_number, original_nodes_column, original_node_types_separator, original_node_list_node_types_column_number, original_node_list_node_types_column, original_minimum_node_id, original_numeric_node_ids, original_node_list_numeric_node_type_ids, original_skip_node_types_if_unavailable, target_node_list_separator, target_node_list_header, target_nodes_column_number, target_nodes_column, target_node_types_separator, target_node_list_node_types_column_number, target_node_list_node_types_column, nodes_number)"
 )]
 /// Converts the node list at given path to numeric saving in stream to file. Furthermore, returns the number of nodes that were written and their node types if any.
 ///
@@ -24446,6 +24442,8 @@ pub fn densify_sparse_numeric_edge_list(
 /// ----------
 ///
 pub fn convert_node_list_node_types_to_numeric(
+    original_node_path: String,
+    target_node_path: String,
     original_node_type_path: Option<String>,
     original_node_type_list_separator: Option<char>,
     original_node_types_column_number: Option<usize>,
@@ -24465,7 +24463,6 @@ pub fn convert_node_list_node_types_to_numeric(
     target_node_type_list_header: Option<bool>,
     target_node_type_list_node_types_column: Option<String>,
     target_node_type_list_node_types_column_number: Option<usize>,
-    original_node_path: String,
     original_node_list_separator: Option<char>,
     original_node_list_header: Option<bool>,
     original_node_list_support_balanced_quotes: Option<bool>,
@@ -24482,7 +24479,6 @@ pub fn convert_node_list_node_types_to_numeric(
     original_numeric_node_ids: Option<bool>,
     original_node_list_numeric_node_type_ids: Option<bool>,
     original_skip_node_types_if_unavailable: Option<bool>,
-    target_node_path: String,
     target_node_list_separator: Option<char>,
     target_node_list_header: Option<bool>,
     target_nodes_column_number: Option<usize>,
@@ -24494,6 +24490,8 @@ pub fn convert_node_list_node_types_to_numeric(
 ) -> PyResult<(NodeT, Option<NodeTypeT>)> {
     Ok({
         let (subresult_0, subresult_1) = pe!(graph::convert_node_list_node_types_to_numeric(
+            original_node_path.into(),
+            target_node_path.into(),
             original_node_type_path.into(),
             original_node_type_list_separator.into(),
             original_node_types_column_number.into(),
@@ -24513,7 +24511,6 @@ pub fn convert_node_list_node_types_to_numeric(
             target_node_type_list_header.into(),
             target_node_type_list_node_types_column.into(),
             target_node_type_list_node_types_column_number.into(),
-            original_node_path.into(),
             original_node_list_separator.into(),
             original_node_list_header.into(),
             original_node_list_support_balanced_quotes.into(),
@@ -24530,7 +24527,6 @@ pub fn convert_node_list_node_types_to_numeric(
             original_numeric_node_ids.into(),
             original_node_list_numeric_node_type_ids.into(),
             original_skip_node_types_if_unavailable.into(),
-            target_node_path.into(),
             target_node_list_separator.into(),
             target_node_list_header.into(),
             target_nodes_column_number.into(),
@@ -24545,11 +24541,10 @@ pub fn convert_node_list_node_types_to_numeric(
     })
 }
 
-#[module(edge_list_utils)]
 #[pyfunction]
 #[automatically_generated_binding]
 #[pyo3(
-    text_signature = "(source_path, edge_path, node_path, node_type_path, edge_type_path, node_list_separator, node_type_list_separator, edge_type_list_separator, node_types_separator, nodes_column, node_types_column, node_list_node_types_column, edge_types_column, node_descriptions_column, edge_list_separator, sort_temporary_directory, directed, compute_node_description, keep_nodes_without_descriptions, keep_nodes_without_categories, keep_interwikipedia_nodes, keep_external_nodes, verbose)"
+    text_signature = "(source_path, edge_path, node_path, node_type_path, edge_type_path, node_list_separator, node_type_list_separator, edge_type_list_separator, node_types_separator, nodes_column, node_types_column, node_list_node_types_column, edge_types_column, node_descriptions_column, edge_list_separator, directed, sort_temporary_directory, compute_node_description, keep_nodes_without_descriptions, keep_nodes_without_categories, keep_interwikipedia_nodes, keep_external_nodes, verbose)"
 )]
 /// TODO: write the docstrin
 pub fn parse_wikipedia_graph(
@@ -24568,8 +24563,8 @@ pub fn parse_wikipedia_graph(
     edge_types_column: &str,
     node_descriptions_column: &str,
     edge_list_separator: char,
-    sort_temporary_directory: Option<String>,
     directed: bool,
+    sort_temporary_directory: Option<String>,
     compute_node_description: Option<bool>,
     keep_nodes_without_descriptions: Option<bool>,
     keep_nodes_without_categories: Option<bool>,
@@ -24594,8 +24589,8 @@ pub fn parse_wikipedia_graph(
             edge_types_column.into(),
             node_descriptions_column.into(),
             edge_list_separator.into(),
-            sort_temporary_directory.into(),
             directed.into(),
+            sort_temporary_directory.into(),
             compute_node_description.into(),
             keep_nodes_without_descriptions.into(),
             keep_nodes_without_categories.into(),
@@ -24608,14 +24603,16 @@ pub fn parse_wikipedia_graph(
     })
 }
 
-#[module(edge_list_utils)]
 #[pyfunction]
 #[automatically_generated_binding]
 #[pyo3(
-    text_signature = "(original_node_type_path, original_node_type_list_separator, original_node_types_column_number, original_node_types_column, original_numeric_node_type_ids, original_minimum_node_type_id, original_node_type_list_header, original_node_type_list_support_balanced_quotes, original_node_type_list_rows_to_skip, original_node_type_list_max_rows_number, original_node_type_list_comment_symbol, original_load_node_type_list_in_parallel, original_node_type_list_is_correct, node_types_number, target_node_type_list_path, target_node_type_list_separator, target_node_type_list_node_types_column_number, target_node_type_list_node_types_column, target_node_type_list_header, original_node_path, original_node_list_separator, original_node_list_header, original_node_list_support_balanced_quotes, node_list_rows_to_skip, node_list_is_correct, node_list_max_rows_number, node_list_comment_symbol, default_node_type, original_nodes_column_number, original_nodes_column, original_node_types_separator, original_node_list_node_types_column_number, original_node_list_node_types_column, nodes_number, original_minimum_node_id, original_numeric_node_ids, original_node_list_numeric_node_type_ids, original_skip_node_types_if_unavailable, original_load_node_list_in_parallel, maximum_node_id, target_node_path, target_node_list_separator, target_node_list_header, target_nodes_column, target_nodes_column_number, target_node_types_separator, target_node_list_node_types_column, target_node_list_node_types_column_number, original_edge_type_path, original_edge_type_list_separator, original_edge_types_column_number, original_edge_types_column, original_numeric_edge_type_ids, original_minimum_edge_type_id, original_edge_type_list_header, original_edge_type_list_support_balanced_quotes, edge_type_list_rows_to_skip, edge_type_list_max_rows_number, edge_type_list_comment_symbol, load_edge_type_list_in_parallel, edge_type_list_is_correct, edge_types_number, target_edge_type_list_path, target_edge_type_list_separator, target_edge_type_list_edge_types_column_number, target_edge_type_list_edge_types_column, target_edge_type_list_header, original_edge_path, original_edge_list_separator, original_edge_list_header, original_edge_list_support_balanced_quotes, original_sources_column_number, original_sources_column, original_destinations_column_number, original_destinations_column, original_edge_list_edge_types_column_number, original_edge_list_edge_types_column, default_edge_type, original_weights_column_number, original_weights_column, default_weight, original_edge_list_numeric_node_ids, skip_weights_if_unavailable, skip_edge_types_if_unavailable, edge_list_comment_symbol, edge_list_max_rows_number, edge_list_rows_to_skip, load_edge_list_in_parallel, edges_number, target_edge_path, target_edge_list_separator, numeric_rows_are_surely_smaller_than_original, sort_temporary_directory, verbose, directed, name)"
+    text_signature = "(original_edge_path, target_edge_path, directed, original_node_type_path, original_node_type_list_separator, original_node_types_column_number, original_node_types_column, original_numeric_node_type_ids, original_minimum_node_type_id, original_node_type_list_header, original_node_type_list_support_balanced_quotes, original_node_type_list_rows_to_skip, original_node_type_list_max_rows_number, original_node_type_list_comment_symbol, original_load_node_type_list_in_parallel, original_node_type_list_is_correct, node_types_number, target_node_type_list_path, target_node_type_list_separator, target_node_type_list_node_types_column_number, target_node_type_list_node_types_column, target_node_type_list_header, original_node_path, original_node_list_separator, original_node_list_header, original_node_list_support_balanced_quotes, node_list_rows_to_skip, node_list_is_correct, node_list_max_rows_number, node_list_comment_symbol, default_node_type, original_nodes_column_number, original_nodes_column, original_node_types_separator, original_node_list_node_types_column_number, original_node_list_node_types_column, nodes_number, original_minimum_node_id, original_numeric_node_ids, original_node_list_numeric_node_type_ids, original_skip_node_types_if_unavailable, original_load_node_list_in_parallel, maximum_node_id, target_node_path, target_node_list_separator, target_node_list_header, target_nodes_column, target_nodes_column_number, target_node_types_separator, target_node_list_node_types_column, target_node_list_node_types_column_number, original_edge_type_path, original_edge_type_list_separator, original_edge_types_column_number, original_edge_types_column, original_numeric_edge_type_ids, original_minimum_edge_type_id, original_edge_type_list_header, original_edge_type_list_support_balanced_quotes, edge_type_list_rows_to_skip, edge_type_list_max_rows_number, edge_type_list_comment_symbol, load_edge_type_list_in_parallel, edge_type_list_is_correct, edge_types_number, target_edge_type_list_path, target_edge_type_list_separator, target_edge_type_list_edge_types_column_number, target_edge_type_list_edge_types_column, target_edge_type_list_header, original_edge_list_separator, original_edge_list_header, original_edge_list_support_balanced_quotes, original_sources_column_number, original_sources_column, original_destinations_column_number, original_destinations_column, original_edge_list_edge_types_column_number, original_edge_list_edge_types_column, default_edge_type, original_weights_column_number, original_weights_column, default_weight, original_edge_list_numeric_node_ids, skip_weights_if_unavailable, skip_edge_types_if_unavailable, edge_list_comment_symbol, edge_list_max_rows_number, edge_list_rows_to_skip, load_edge_list_in_parallel, edges_number, target_edge_list_separator, numeric_rows_are_surely_smaller_than_original, sort_temporary_directory, verbose, name)"
 )]
 /// TODO: write the docstrin
 pub fn build_optimal_lists_files(
+    original_edge_path: String,
+    target_edge_path: String,
+    directed: bool,
     original_node_type_path: Option<String>,
     original_node_type_list_separator: Option<char>,
     original_node_types_column_number: Option<usize>,
@@ -24683,7 +24680,6 @@ pub fn build_optimal_lists_files(
     target_edge_type_list_edge_types_column_number: Option<usize>,
     target_edge_type_list_edge_types_column: Option<String>,
     target_edge_type_list_header: Option<bool>,
-    original_edge_path: String,
     original_edge_list_separator: Option<char>,
     original_edge_list_header: Option<bool>,
     original_edge_list_support_balanced_quotes: Option<bool>,
@@ -24705,17 +24701,18 @@ pub fn build_optimal_lists_files(
     edge_list_rows_to_skip: Option<usize>,
     load_edge_list_in_parallel: Option<bool>,
     edges_number: Option<EdgeT>,
-    target_edge_path: String,
     target_edge_list_separator: Option<char>,
     numeric_rows_are_surely_smaller_than_original: Option<bool>,
     sort_temporary_directory: Option<String>,
     verbose: Option<bool>,
-    directed: bool,
     name: Option<String>,
 ) -> PyResult<(Option<NodeTypeT>, NodeT, Option<EdgeTypeT>, EdgeT)> {
     Ok({
         let (subresult_0, subresult_1, subresult_2, subresult_3) =
             pe!(graph::build_optimal_lists_files(
+                original_edge_path.into(),
+                target_edge_path.into(),
+                directed.into(),
                 original_node_type_path.into(),
                 original_node_type_list_separator.into(),
                 original_node_types_column_number.into(),
@@ -24783,7 +24780,6 @@ pub fn build_optimal_lists_files(
                 target_edge_type_list_edge_types_column_number.into(),
                 target_edge_type_list_edge_types_column.into(),
                 target_edge_type_list_header.into(),
-                original_edge_path.into(),
                 original_edge_list_separator.into(),
                 original_edge_list_header.into(),
                 original_edge_list_support_balanced_quotes.into(),
@@ -24805,12 +24801,10 @@ pub fn build_optimal_lists_files(
                 edge_list_rows_to_skip.into(),
                 load_edge_list_in_parallel.into(),
                 edges_number.into(),
-                target_edge_path.into(),
                 target_edge_list_separator.into(),
                 numeric_rows_are_surely_smaller_than_original.into(),
                 sort_temporary_directory.into(),
                 verbose.into(),
-                directed.into(),
                 name.into()
             ))?
             .into();
@@ -24823,11 +24817,10 @@ pub fn build_optimal_lists_files(
     })
 }
 
-#[module(edge_list_utils)]
 #[pyfunction]
 #[automatically_generated_binding]
 #[pyo3(
-    text_signature = "(original_edge_path, original_edge_list_separator, original_edge_list_header, original_edge_list_support_balanced_quotes, original_sources_column, original_sources_column_number, original_destinations_column, original_destinations_column_number, original_edge_list_edge_type_column, original_edge_list_edge_type_column_number, original_weights_column, original_weights_column_number, target_edge_path, target_edge_list_separator, target_edge_list_header, target_sources_column_number, target_sources_column, target_destinations_column_number, target_destinations_column, target_edge_list_edge_type_column, target_edge_list_edge_type_column_number, target_weights_column, target_weights_column_number, comment_symbol, default_edge_type, default_weight, max_rows_number, rows_to_skip, edges_number, skip_edge_types_if_unavailable, skip_weights_if_unavailable, verbose, name)"
+    text_signature = "(original_edge_path, target_edge_path, original_edge_list_separator, original_edge_list_header, original_edge_list_support_balanced_quotes, original_sources_column, original_sources_column_number, original_destinations_column, original_destinations_column_number, original_edge_list_edge_type_column, original_edge_list_edge_type_column_number, original_weights_column, original_weights_column_number, target_edge_list_separator, target_edge_list_header, target_sources_column_number, target_sources_column, target_destinations_column_number, target_destinations_column, target_edge_list_edge_type_column, target_edge_list_edge_type_column_number, target_weights_column, target_weights_column_number, comment_symbol, default_edge_type, default_weight, max_rows_number, rows_to_skip, edges_number, skip_edge_types_if_unavailable, skip_weights_if_unavailable, verbose, name)"
 )]
 /// Create a new undirected edge list from a given directed one by duplicating the undirected edges.
 ///
@@ -24910,6 +24903,7 @@ pub fn build_optimal_lists_files(
 ///
 pub fn convert_directed_edge_list_to_undirected(
     original_edge_path: &str,
+    target_edge_path: &str,
     original_edge_list_separator: Option<char>,
     original_edge_list_header: Option<bool>,
     original_edge_list_support_balanced_quotes: Option<bool>,
@@ -24921,7 +24915,6 @@ pub fn convert_directed_edge_list_to_undirected(
     original_edge_list_edge_type_column_number: Option<usize>,
     original_weights_column: Option<String>,
     original_weights_column_number: Option<usize>,
-    target_edge_path: &str,
     target_edge_list_separator: Option<char>,
     target_edge_list_header: Option<bool>,
     target_sources_column_number: Option<usize>,
@@ -24945,6 +24938,7 @@ pub fn convert_directed_edge_list_to_undirected(
 ) -> PyResult<EdgeT> {
     Ok(pe!(graph::convert_directed_edge_list_to_undirected(
         original_edge_path.into(),
+        target_edge_path.into(),
         original_edge_list_separator.into(),
         original_edge_list_header.into(),
         original_edge_list_support_balanced_quotes.into(),
@@ -24956,7 +24950,6 @@ pub fn convert_directed_edge_list_to_undirected(
         original_edge_list_edge_type_column_number.into(),
         original_weights_column.into(),
         original_weights_column_number.into(),
-        target_edge_path.into(),
         target_edge_list_separator.into(),
         target_edge_list_header.into(),
         target_sources_column_number.into(),
@@ -24981,7 +24974,6 @@ pub fn convert_directed_edge_list_to_undirected(
     .into())
 }
 
-#[module(edge_list_utils)]
 #[pyfunction]
 #[automatically_generated_binding]
 #[pyo3(
@@ -25087,11 +25079,10 @@ pub fn has_duplicated_edges_in_edge_list(
     .into())
 }
 
-#[module(edge_list_utils)]
 #[pyfunction]
 #[automatically_generated_binding]
 #[pyo3(
-    text_signature = "(original_csv_path, original_csv_separator, original_csv_header, target_csv_path, target_csv_separator, target_csv_header, target_csv_ids_column, target_csv_ids_column_number, comment_symbol, support_balanced_quotes, max_rows_number, rows_to_skip, lines_number, verbose)"
+    text_signature = "(original_csv_path, target_csv_path, original_csv_separator, original_csv_header, target_csv_separator, target_csv_header, target_csv_ids_column, target_csv_ids_column_number, comment_symbol, support_balanced_quotes, max_rows_number, rows_to_skip, lines_number, verbose)"
 )]
 /// Create a new CSV with the lines number added to it.
 ///
@@ -25134,9 +25125,9 @@ pub fn has_duplicated_edges_in_edge_list(
 ///
 pub fn add_numeric_id_to_csv(
     original_csv_path: &str,
+    target_csv_path: &str,
     original_csv_separator: Option<char>,
     original_csv_header: Option<bool>,
-    target_csv_path: &str,
     target_csv_separator: Option<char>,
     target_csv_header: Option<bool>,
     target_csv_ids_column: Option<String>,
@@ -25150,9 +25141,9 @@ pub fn add_numeric_id_to_csv(
 ) -> PyResult<usize> {
     Ok(pe!(graph::add_numeric_id_to_csv(
         original_csv_path.into(),
+        target_csv_path.into(),
         original_csv_separator.into(),
         original_csv_header.into(),
-        target_csv_path.into(),
         target_csv_separator.into(),
         target_csv_header.into(),
         target_csv_ids_column.into(),
@@ -25167,7 +25158,6 @@ pub fn add_numeric_id_to_csv(
     .into())
 }
 
-#[module(edge_list_utils)]
 #[pyfunction]
 #[automatically_generated_binding]
 #[pyo3(
@@ -25245,11 +25235,10 @@ pub fn are_there_selfloops_in_edge_list(
     .into())
 }
 
-#[module(edge_list_utils)]
 #[pyfunction]
 #[automatically_generated_binding]
 #[pyo3(
-    text_signature = "(original_edge_path, original_edge_list_separator, original_edge_list_header, original_edge_list_support_balanced_quotes, original_edge_list_sources_column, original_edge_list_sources_column_number, original_edge_list_destinations_column, original_edge_list_destinations_column_number, original_edge_list_edge_type_column, original_edge_list_edge_type_column_number, original_edge_list_weights_column, original_edge_list_weights_column_number, target_edge_path, target_edge_list_separator, target_edge_list_header, target_edge_list_sources_column_number, target_edge_list_sources_column, target_edge_list_destinations_column_number, target_edge_list_destinations_column, target_edge_list_edge_type_column, target_edge_list_edge_type_column_number, target_edge_list_weights_column, target_edge_list_weights_column_number, comment_symbol, default_edge_type, default_weight, max_rows_number, rows_to_skip, edges_number, skip_edge_types_if_unavailable, skip_weights_if_unavailable, verbose, name)"
+    text_signature = "(original_edge_path, target_edge_path, original_edge_list_separator, original_edge_list_header, original_edge_list_support_balanced_quotes, original_edge_list_sources_column, original_edge_list_sources_column_number, original_edge_list_destinations_column, original_edge_list_destinations_column_number, original_edge_list_edge_type_column, original_edge_list_edge_type_column_number, original_edge_list_weights_column, original_edge_list_weights_column_number, target_edge_list_separator, target_edge_list_header, target_edge_list_sources_column_number, target_edge_list_sources_column, target_edge_list_destinations_column_number, target_edge_list_destinations_column, target_edge_list_edge_type_column, target_edge_list_edge_type_column_number, target_edge_list_weights_column, target_edge_list_weights_column_number, comment_symbol, default_edge_type, default_weight, max_rows_number, rows_to_skip, edges_number, skip_edge_types_if_unavailable, skip_weights_if_unavailable, verbose, name)"
 )]
 /// Create a new edge list from a given one filtering duplicates.
 ///
@@ -25324,6 +25313,7 @@ pub fn are_there_selfloops_in_edge_list(
 ///
 pub fn filter_duplicates_from_edge_list(
     original_edge_path: &str,
+    target_edge_path: &str,
     original_edge_list_separator: Option<char>,
     original_edge_list_header: Option<bool>,
     original_edge_list_support_balanced_quotes: Option<bool>,
@@ -25335,7 +25325,6 @@ pub fn filter_duplicates_from_edge_list(
     original_edge_list_edge_type_column_number: Option<usize>,
     original_edge_list_weights_column: Option<String>,
     original_edge_list_weights_column_number: Option<usize>,
-    target_edge_path: &str,
     target_edge_list_separator: Option<char>,
     target_edge_list_header: Option<bool>,
     target_edge_list_sources_column_number: Option<usize>,
@@ -25359,6 +25348,7 @@ pub fn filter_duplicates_from_edge_list(
 ) -> PyResult<()> {
     Ok(pe!(graph::filter_duplicates_from_edge_list(
         original_edge_path.into(),
+        target_edge_path.into(),
         original_edge_list_separator.into(),
         original_edge_list_header.into(),
         original_edge_list_support_balanced_quotes.into(),
@@ -25370,7 +25360,6 @@ pub fn filter_duplicates_from_edge_list(
         original_edge_list_edge_type_column_number.into(),
         original_edge_list_weights_column.into(),
         original_edge_list_weights_column_number.into(),
-        target_edge_path.into(),
         target_edge_list_separator.into(),
         target_edge_list_header.into(),
         target_edge_list_sources_column_number.into(),
@@ -25394,11 +25383,10 @@ pub fn filter_duplicates_from_edge_list(
     ))?)
 }
 
-#[module(edge_list_utils)]
 #[pyfunction]
 #[automatically_generated_binding]
 #[pyo3(
-    text_signature = "(original_edge_path, original_edge_list_separator, original_edge_list_header, original_edge_list_support_balanced_quotes, original_sources_column, original_sources_column_number, original_destinations_column, original_destinations_column_number, original_edge_list_edge_type_column, original_edge_list_edge_type_column_number, original_weights_column, original_weights_column_number, target_edge_path, target_edge_list_separator, target_edge_list_header, target_sources_column, target_sources_column_number, target_destinations_column, target_destinations_column_number, target_edge_list_edge_type_column, target_edge_list_edge_type_column_number, target_weights_column, target_weights_column_number, comment_symbol, default_edge_type, default_weight, max_rows_number, rows_to_skip, edges_number, skip_edge_types_if_unavailable, skip_weights_if_unavailable, verbose, name)"
+    text_signature = "(original_edge_path, target_edge_path, original_edge_list_separator, original_edge_list_header, original_edge_list_support_balanced_quotes, original_sources_column, original_sources_column_number, original_destinations_column, original_destinations_column_number, original_edge_list_edge_type_column, original_edge_list_edge_type_column_number, original_weights_column, original_weights_column_number, target_edge_list_separator, target_edge_list_header, target_sources_column, target_sources_column_number, target_destinations_column, target_destinations_column_number, target_edge_list_edge_type_column, target_edge_list_edge_type_column_number, target_weights_column, target_weights_column_number, comment_symbol, default_edge_type, default_weight, max_rows_number, rows_to_skip, edges_number, skip_edge_types_if_unavailable, skip_weights_if_unavailable, verbose, name)"
 )]
 /// Create a new directed edge list from a given undirected one by duplicating the undirected edges.
 ///
@@ -25473,6 +25461,7 @@ pub fn filter_duplicates_from_edge_list(
 ///
 pub fn convert_undirected_edge_list_to_directed(
     original_edge_path: &str,
+    target_edge_path: &str,
     original_edge_list_separator: Option<char>,
     original_edge_list_header: Option<bool>,
     original_edge_list_support_balanced_quotes: Option<bool>,
@@ -25484,7 +25473,6 @@ pub fn convert_undirected_edge_list_to_directed(
     original_edge_list_edge_type_column_number: Option<usize>,
     original_weights_column: Option<String>,
     original_weights_column_number: Option<usize>,
-    target_edge_path: &str,
     target_edge_list_separator: Option<char>,
     target_edge_list_header: Option<bool>,
     target_sources_column: Option<String>,
@@ -25508,6 +25496,7 @@ pub fn convert_undirected_edge_list_to_directed(
 ) -> PyResult<EdgeT> {
     Ok(pe!(graph::convert_undirected_edge_list_to_directed(
         original_edge_path.into(),
+        target_edge_path.into(),
         original_edge_list_separator.into(),
         original_edge_list_header.into(),
         original_edge_list_support_balanced_quotes.into(),
@@ -25519,7 +25508,6 @@ pub fn convert_undirected_edge_list_to_directed(
         original_edge_list_edge_type_column_number.into(),
         original_weights_column.into(),
         original_weights_column_number.into(),
-        target_edge_path.into(),
         target_edge_list_separator.into(),
         target_edge_list_header.into(),
         target_sources_column.into(),
@@ -25544,7 +25532,6 @@ pub fn convert_undirected_edge_list_to_directed(
     .into())
 }
 
-#[module(edge_list_utils)]
 #[pyfunction]
 #[automatically_generated_binding]
 #[pyo3(
@@ -25622,7 +25609,6 @@ pub fn get_number_of_selfloops_from_edge_list(
     .into())
 }
 
-#[module(edge_list_utils)]
 #[pyfunction]
 #[automatically_generated_binding]
 #[pyo3(
@@ -25700,7 +25686,6 @@ pub fn is_numeric_edge_list(
     .into())
 }
 
-#[module(edge_list_utils)]
 #[pyfunction]
 #[automatically_generated_binding]
 #[pyo3(
@@ -25788,7 +25773,6 @@ pub fn get_minmax_node_from_numeric_edge_list(
     })
 }
 
-#[module(edge_list_utils)]
 #[pyfunction]
 #[automatically_generated_binding]
 #[pyo3(
@@ -25857,7 +25841,6 @@ pub fn sort_numeric_edge_list(
     ))?)
 }
 
-#[module(edge_list_utils)]
 #[pyfunction]
 #[automatically_generated_binding]
 #[pyo3(
@@ -25922,7 +25905,6 @@ pub fn sort_numeric_edge_list_inplace(
     ))?)
 }
 
-#[module(edge_list_utils)]
 #[pyfunction]
 #[automatically_generated_binding]
 #[pyo3(text_signature = "(file_path)")]

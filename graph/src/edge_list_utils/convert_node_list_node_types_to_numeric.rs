@@ -53,6 +53,9 @@ use crate::{
 /// `nodes_number`: Option<NodeT> - Number of the nodes in the original node list.
 ///
 pub fn convert_node_list_node_types_to_numeric(
+    original_node_path: String,
+    target_node_path: String,
+
     original_node_type_path: Option<String>,
     original_node_type_list_separator: Option<char>,
     original_node_types_column_number: Option<usize>,
@@ -74,7 +77,6 @@ pub fn convert_node_list_node_types_to_numeric(
     target_node_type_list_node_types_column: Option<String>,
     target_node_type_list_node_types_column_number: Option<usize>,
 
-    original_node_path: String,
     original_node_list_separator: Option<char>,
     original_node_list_header: Option<bool>,
     original_node_list_support_balanced_quotes: Option<bool>,
@@ -92,7 +94,6 @@ pub fn convert_node_list_node_types_to_numeric(
     original_node_list_numeric_node_type_ids: Option<bool>,
     original_skip_node_types_if_unavailable: Option<bool>,
 
-    target_node_path: String,
     target_node_list_separator: Option<char>,
     target_node_list_header: Option<bool>,
     target_nodes_column_number: Option<usize>,

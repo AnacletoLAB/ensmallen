@@ -156,7 +156,6 @@ fn __richcmp__(&self, other: Self, op: CompareOp) -> bool {
         format!(
 r#"
 {struct_doc}
-#[pyclass]
 #[derive(Debug, Clone)]
 pub struct {struct_name} {{
     pub inner: graph::{struct_name},
@@ -401,15 +400,6 @@ pub fn register_{module_name}(py: Python, m:&PyModule) -> PyResult<()> {{
     registrations=registrations.join("\n"),
     functions=format_vec!(self.funcs.iter().filter(|func| is_to_bind(func))
     .map(GenBinding::gen_python_binding)
-    .map(|x| format!(
-        "{module}\n{x}",
-        module=if self.module_name != "ensmallen" {
-            format!("#[module({})]", self.module_name)
-        } else {
-            "".into()
-        },
-        x=x,
-    ))
     .collect::<Vec<_>>(), "{}", "\n\n"),
     classes=format_vec!(
         self.structs.values()
@@ -419,7 +409,7 @@ pub fn register_{module_name}(py: Python, m:&PyModule) -> PyResult<()> {{
         })
         .map(|c| {
             println!("Generating struct: {}", c.ztruct.struct_type.get_name().unwrap());
-            c.gen_python_binding()
+            format!("#[pyclass(module=\"{module_name}\")]{}", c.gen_python_binding(), module_name=self.module_name)
         }).collect::<Vec<_>>(), 
         "{}", "\n\n"
     ),
@@ -505,7 +495,6 @@ pub fn gen_bindings(to_parse_path: &str, path: &str, init_path: &str) {
 use super::*;
 use pyo3::{{wrap_pyfunction, wrap_pymodule}};
 use rayon::iter::*;
-use pyo3::class::basic::PyObjectProtocol;
 use std::hash::{{Hash, Hasher}};
 use std::collections::hash_map::DefaultHasher;
 use strsim::*; 

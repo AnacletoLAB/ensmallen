@@ -15,6 +15,10 @@ use crate::{
 /// TODO! add check for space on disk where possible.
 /// TODO! Update docstring!
 pub fn convert_edge_list_to_numeric(
+    original_edge_path: &str,
+    target_edge_path: &str,
+    directed: bool,
+
     original_node_path: Option<String>,
     original_node_list_separator: Option<char>,
     original_node_list_header: Option<bool>,
@@ -45,7 +49,6 @@ pub fn convert_edge_list_to_numeric(
     edge_type_list_comment_symbol: Option<String>,
     load_edge_type_list_in_parallel: Option<bool>,
 
-    original_edge_path: &str,
     original_edge_list_separator: Option<char>,
     original_edge_list_header: Option<bool>,
     original_edge_list_support_balanced_quotes: Option<bool>,
@@ -58,7 +61,6 @@ pub fn convert_edge_list_to_numeric(
     original_weights_column: Option<String>,
     original_weights_column_number: Option<usize>,
 
-    target_edge_path: &str,
     target_edge_list_separator: Option<char>,
     target_edge_list_header: Option<bool>,
     target_sources_column: Option<String>,
@@ -91,7 +93,6 @@ pub fn convert_edge_list_to_numeric(
     skip_edge_types_if_unavailable: Option<bool>,
     skip_weights_if_unavailable: Option<bool>,
     numeric_rows_are_surely_smaller_than_original: Option<bool>,
-    directed: bool,
     verbose: Option<bool>,
     name: Option<String>,
 ) -> Result<(NodeT, Option<EdgeTypeT>)> {
@@ -419,8 +420,11 @@ pub fn convert_edge_list_to_numeric(
 ///
 /// TODO! Update docstring!
 pub fn densify_sparse_numeric_edge_list(
-    maximum_node_id: Option<EdgeT>,
     original_edge_path: &str,
+    target_edge_path: &str,
+    directed: bool,
+
+    maximum_node_id: Option<EdgeT>,
     original_edge_list_separator: Option<char>,
     original_edge_list_header: Option<bool>,
     original_sources_column: Option<String>,
@@ -446,7 +450,6 @@ pub fn densify_sparse_numeric_edge_list(
     edge_type_list_comment_symbol: Option<String>,
     load_edge_type_list_in_parallel: Option<bool>,
 
-    target_edge_path: &str,
     target_edge_list_separator: Option<char>,
     target_edge_list_header: Option<bool>,
     target_sources_column: Option<String>,
@@ -479,7 +482,6 @@ pub fn densify_sparse_numeric_edge_list(
     skip_edge_types_if_unavailable: Option<bool>,
     skip_weights_if_unavailable: Option<bool>,
     numeric_rows_are_surely_smaller_than_original: Option<bool>,
-    directed: bool,
     verbose: Option<bool>,
     name: Option<String>,
 ) -> Result<(NodeT, Option<EdgeTypeT>)> {

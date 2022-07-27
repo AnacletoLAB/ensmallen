@@ -95,7 +95,7 @@ def compile_target(target_name, target_settings, WHEELS_FOLDER, settings):
 
     logging.info("Compiling the '%s' target with flags: '%s'", target_name, rust_flags)
     exec(
-        "maturin build --release --strip --out {}".format(
+        "maturin build --no-sdist --release --strip --out {}".format(
             target_dir
         ), 
         env={
@@ -233,7 +233,7 @@ if __name__ == "__main__":
     # Generating the bindings
     ################################################################################
     logging.info("Generating the bindings")
-    exec("cargo run --release --bin bindgen", cwd=join("..", "..", "code_analysis"))
+    #exec("cargo run --release --bin bindgen", cwd=join("..", "..", "code_analysis"))
 
     ################################################################################
     # Clean the folders and prepare them to be compiled
@@ -279,9 +279,9 @@ if __name__ == "__main__":
                 r"name\s*=\s*\".+?\"", 
                 r"""name = "ensmallen_%s" """%target_name
             )
-            patch(join(build_dir, "src", "auto_generated_bindings.rs"), 
-                r"fn ensmallen\(_py: Python", 
-                r"fn ensmallen_%s(_py: Python"%target_name,
+            patch(join(build_dir, "src", "lib.rs"), 
+                r"pub fn ensmallen\(py: Python", 
+                r"pub fn ensmallen_%s(py: Python"%target_name,
             )   
 
             # Rename the sources folder

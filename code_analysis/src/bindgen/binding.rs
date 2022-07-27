@@ -406,6 +406,7 @@ impl GenBinding for Function {
         let this_struct = self.class.as_ref().map(|x| x.get_name().unwrap()).unwrap_or("".to_string());
 
         let mut handle_walk_parameters = false;
+        let mut is_kwarg_only = false;
 
         for arg in self.iter_args() {
             // bad hardocded stuff but fuck it it's 2am
@@ -427,6 +428,21 @@ build_walk_parameters(kwargs)?
             }
 
             let (mut arg_name, mut arg_call) = translate_arg(arg, &this_struct);
+
+            if let Some((_, tipe)) = arg_name.split_once(':') {
+                if tipe.trim().starts_with("Option") {
+                    is_kwarg_only = true;
+                } else {
+                    if is_kwarg_only {
+                        panic!("Argument '{}' of function '{}'  of class '{:?}' from file '{}' is not kwargs compatible",
+                            arg_name,
+                            self.name,
+                            self.class.as_ref().map(|x| x.get_name()),
+                            self.file_path,
+                        );
+                    }
+                }
+            }
 
             // bad hack
             if arg_name.contains("Option<&Vec<NodeT>>") {

@@ -44,6 +44,7 @@ use crate::{utils::ItersWrapper, EdgeFileReader, EdgeFileWriter, EdgeT, Result, 
 /// TODO! The edge ids can be computed within this method if required!
 pub fn convert_directed_edge_list_to_undirected(
     original_edge_path: &str,
+    target_edge_path: &str,
     original_edge_list_separator: Option<char>,
     original_edge_list_header: Option<bool>,
     original_edge_list_support_balanced_quotes: Option<bool>,
@@ -55,7 +56,6 @@ pub fn convert_directed_edge_list_to_undirected(
     original_edge_list_edge_type_column_number: Option<usize>,
     original_weights_column: Option<String>,
     original_weights_column_number: Option<usize>,
-    target_edge_path: &str,
     target_edge_list_separator: Option<char>,
     target_edge_list_header: Option<bool>,
     target_sources_column_number: Option<usize>,

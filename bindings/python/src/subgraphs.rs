@@ -85,8 +85,8 @@ impl Graph {
         let nodes = pe!(self.inner.get_subsampled_nodes(
             number_of_nodes_to_sample,
             random_state,
-            root_node,
             node_sampling_method,
+            root_node,
             Some(unique)
         ))?;
 
@@ -315,8 +315,8 @@ impl Graph {
         let nodes = pe!(self.inner.get_subsampled_nodes(
             number_of_nodes_to_sample,
             random_state,
-            root_node,
             node_sampling_method,
+            root_node,
             Some(unique)
         ))?;
 
@@ -443,8 +443,8 @@ impl Graph {
         let mut nodes = pe!(self.inner.get_subsampled_nodes(
             number_of_nodes_to_sample,
             random_state,
-            root_node,
             node_sampling_method,
+            root_node,
             Some(true)
         ))?;
 
@@ -578,8 +578,8 @@ impl Graph {
         let source_nodes = pe!(self.inner.get_subsampled_nodes(
             number_of_nodes_to_sample,
             random_state,
-            None,
             node_sampling_method,
+            None,
             Some(false)
         ))?;
 

@@ -8,6 +8,10 @@ use log::info;
 
 /// TODO: write the docstring
 pub fn build_optimal_lists_files(
+    original_edge_path: String,
+    target_edge_path: String,
+    directed: bool,
+
     original_node_type_path: Option<String>,
     original_node_type_list_separator: Option<char>,
     original_node_types_column_number: Option<usize>,
@@ -82,7 +86,6 @@ pub fn build_optimal_lists_files(
     mut target_edge_type_list_edge_types_column: Option<String>,
     target_edge_type_list_header: Option<bool>,
 
-    original_edge_path: String,
     original_edge_list_separator: Option<char>,
     original_edge_list_header: Option<bool>,
     original_edge_list_support_balanced_quotes: Option<bool>,
@@ -105,13 +108,11 @@ pub fn build_optimal_lists_files(
     load_edge_list_in_parallel: Option<bool>,
     mut edges_number: Option<EdgeT>,
 
-    target_edge_path: String,
     target_edge_list_separator: Option<char>,
 
     numeric_rows_are_surely_smaller_than_original: Option<bool>,
     sort_temporary_directory: Option<String>,
     verbose: Option<bool>,
-    directed: bool,
     name: Option<String>,
 ) -> Result<(Option<NodeTypeT>, NodeT, Option<EdgeTypeT>, EdgeT)> {
     // It does not make sense to provide a node types file
@@ -185,6 +186,8 @@ pub fn build_optimal_lists_files(
 
         info!("Converting the node list node type names to numeric node type IDs.");
         let (new_nodes_number, new_node_types_number) = convert_node_list_node_types_to_numeric(
+            original_node_path.clone(),
+            target_node_path.clone().unwrap(),
             original_node_type_path,
             original_node_type_list_separator,
             original_node_types_column_number,
@@ -204,7 +207,6 @@ pub fn build_optimal_lists_files(
             target_node_type_list_header,
             target_node_type_list_node_types_column,
             target_node_type_list_node_types_column_number,
-            original_node_path.clone(),
             original_node_list_separator,
             original_node_list_header,
             original_node_list_support_balanced_quotes,
@@ -221,7 +223,6 @@ pub fn build_optimal_lists_files(
             original_numeric_node_ids,
             original_node_list_numeric_node_type_ids,
             original_skip_node_types_if_unavailable,
-            target_node_path.clone().unwrap(),
             target_node_list_separator.clone(),
             target_node_list_header,
             target_nodes_column_number,
@@ -312,8 +313,10 @@ pub fn build_optimal_lists_files(
 
         info!("Converting sparse numeric edge list to dense numeric edge list.");
         densify_sparse_numeric_edge_list(
-            maximum_node_id,
             original_edge_path.as_ref(),
+            target_edge_path.as_ref(),
+            directed,
+            maximum_node_id,
             original_edge_list_separator.clone(),
             original_edge_list_header,
             original_sources_column.clone(),
@@ -337,7 +340,6 @@ pub fn build_optimal_lists_files(
             edge_type_list_max_rows_number,
             edge_type_list_comment_symbol,
             load_edge_type_list_in_parallel,
-            target_edge_path.as_ref(),
             target_edge_list_separator.clone(),
             Some(false),
             None,
@@ -371,13 +373,16 @@ pub fn build_optimal_lists_files(
             skip_edge_types_if_unavailable,
             skip_weights_if_unavailable,
             numeric_rows_are_surely_smaller_than_original,
-            directed,
             verbose,
             name.clone(),
         )
     } else {
         info!("Converting non-numeric edge list to numeric.");
         convert_edge_list_to_numeric(
+            original_edge_path.as_ref(),
+            target_edge_path.as_ref(),
+            directed,
+
             original_node_path,
             original_node_list_separator,
             original_node_list_header,
@@ -406,7 +411,6 @@ pub fn build_optimal_lists_files(
             edge_type_list_max_rows_number,
             edge_type_list_comment_symbol,
             load_edge_type_list_in_parallel,
-            original_edge_path.as_ref(),
             original_edge_list_separator.clone(),
             original_edge_list_header,
             original_edge_list_support_balanced_quotes,
@@ -418,7 +422,6 @@ pub fn build_optimal_lists_files(
             original_edge_list_edge_types_column_number,
             original_weights_column.clone(),
             original_weights_column_number,
-            target_edge_path.as_ref(),
             target_edge_list_separator.clone(),
             Some(false),
             None,
@@ -452,7 +455,6 @@ pub fn build_optimal_lists_files(
             skip_edge_types_if_unavailable,
             skip_weights_if_unavailable,
             numeric_rows_are_surely_smaller_than_original,
-            directed,
             verbose,
             name.clone(),
         )

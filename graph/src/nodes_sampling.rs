@@ -215,8 +215,8 @@ impl Graph {
         &self,
         number_of_nodes_to_sample: NodeT,
         random_state: u64,
-        root_node: Option<NodeT>,
         node_sampling_method: &str,
+        root_node: Option<NodeT>,
         unique: Option<bool>,
     ) -> Result<Vec<NodeT>> {
         let random_state = splitmix64(random_state);

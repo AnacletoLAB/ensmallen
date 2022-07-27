@@ -1894,8 +1894,8 @@ impl Graph {
     /// * If the given edge type ID does not exist in the graph.
     pub fn get_edge_node_ids_from_edge_type_id(
         &self,
-        edge_type_id: Option<EdgeTypeT>,
         directed: bool,
+        edge_type_id: Option<EdgeTypeT>,
     ) -> Result<Vec<(NodeT, NodeT)>> {
         self.iter_edge_node_ids_from_edge_type_id(edge_type_id, directed)
             .map(|iter| iter.collect::<Vec<_>>())
@@ -1976,8 +1976,8 @@ impl Graph {
     /// * If the given edge type name does not exist in the graph.
     pub fn get_edge_node_ids_from_edge_type_name(
         &self,
-        edge_type_name: Option<&str>,
         directed: bool,
+        edge_type_name: Option<&str>,
     ) -> Result<Vec<(NodeT, NodeT)>> {
         self.iter_edge_node_ids_from_edge_type_name(edge_type_name, directed)
             .map(|iter| iter.collect::<Vec<_>>())

@@ -24,9 +24,9 @@ use crate::{utils::ItersWrapper, CSVFileReader, CSVFileWriter, Result};
 /// TODO! add check for space on disk where possible.
 pub fn add_numeric_id_to_csv(
     original_csv_path: &str,
+    target_csv_path: &str,
     original_csv_separator: Option<char>,
     original_csv_header: Option<bool>,
-    target_csv_path: &str,
     target_csv_separator: Option<char>,
     target_csv_header: Option<bool>,
     target_csv_ids_column: Option<String>,
