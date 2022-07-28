@@ -1,7 +1,6 @@
 use super::*;
 use cpu_models::{AnchorFeatureTypes, AnchorTypes, AnchorsInferredNodeEmbeddingModel, BasicSPINE};
 use numpy::{PyArray1, PyArray2};
-use pyo3::conversion::IntoPy;
 
 use super::mmap_numpy_npy::{create_memory_mapped_numpy_array, Dtype};
 
