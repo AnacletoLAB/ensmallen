@@ -95,7 +95,7 @@ def compile_target(target_name, target_settings, WHEELS_FOLDER, settings):
 
     logging.info("Compiling the '%s' target with flags: '%s'", target_name, rust_flags)
     exec(
-        "maturin build --no-sdist --release --strip --out {}".format(
+        "maturin build --no-sdist --release --out {}".format(
             target_dir
         ), 
         env={

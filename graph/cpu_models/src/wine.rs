@@ -39,10 +39,10 @@ impl BasicWINE {
 }
 
 pub trait WINEBased {
-    fn get_basic_Wine(&self) -> &BasicWINE;
+    fn get_basic_wine(&self) -> &BasicWINE;
 
     fn get_walk_length(&self) -> usize {
-        self.get_basic_Wine().walk_length
+        self.get_basic_wine().walk_length
     }
 }
 

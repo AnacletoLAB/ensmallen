@@ -1,5 +1,5 @@
-use crate::WINE::BasicWINE;
-use crate::WINE::WINEBased;
+use crate::wine::BasicWINE;
+use crate::wine::WINEBased;
 use crate::AnchorFeatureTypes;
 use crate::AnchorTypes;
 use crate::AnchorsInferredNodeEmbeddingModel;
