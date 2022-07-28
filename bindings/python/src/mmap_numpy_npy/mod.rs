@@ -65,8 +65,6 @@ pub fn create_memory_mapped_numpy_array(
         header.push(b' ');
     }
 
-    dbg!(offset, padding_size, aligned_len);
-
     // mmap the file
     let mut mmap = MemoryMapped::new(path, Some(aligned_len + data_size as usize))
         .expect("Could not mmap the file");

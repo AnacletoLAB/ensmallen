@@ -17,3 +17,4 @@ funty = "2.0.0"
 num-traits = "0.2"
 strum_macros = "0.24"
 strum = { version = "0.24", features = ["derive"] }
+ensmallen_traits = {path="../ensmallen_traits"}
