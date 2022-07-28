@@ -4,7 +4,7 @@ use crate::{
 use core::sync::atomic::Ordering;
 use crate::AnchorFeatureTypes;
 use ensmallen_traits::prelude::*;
-use graph::{Graph, NodeT, ThreadDataRaceAware};
+use graph::{Graph, NodeT};
 use rayon::prelude::*;
 
 #[derive(Clone, Debug)]
