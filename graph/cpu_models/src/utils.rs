@@ -2,6 +2,7 @@ use graph::{EdgeTypeT, Graph, NodeT};
 use num::Zero;
 use funty::Integral;
 use rayon::prelude::*;
+use ensmallen_traits::prelude::*;
 use vec_rand::{random_f32, splitmix64};
 
 pub(crate) fn must_not_be_zero<F>(
@@ -162,7 +163,7 @@ impl core::ops::Index<isize> for MatrixShape {
     }
 }
 
-pub trait FeatureType: Send + Sync + Integral + TryInto<usize> + TryFrom<usize> {}
+pub trait FeatureType: Send + Sync + Integral + TryInto<usize> + TryFrom<usize> + IntoAtomic {}
 
 impl FeatureType for u64 {}
 impl FeatureType for u32 {}

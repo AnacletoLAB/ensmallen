@@ -1,7 +1,9 @@
 use crate::{
     must_not_be_zero, AnchorsBasedFeature, BasicAnchorsInferredNodeEmbedding, FeatureType,
 };
+use core::sync::atomic::Ordering;
 use crate::AnchorFeatureTypes;
+use ensmallen_traits::prelude::*;
 use graph::{Graph, NodeT, ThreadDataRaceAware};
 use rayon::prelude::*;
 
@@ -63,18 +65,19 @@ where
 
         // We wrap the features object in an unsafe cell so
         // it may be shared among threads.
-        let shared_features = ThreadDataRaceAware::new(features);
+        let shared_features = Feature::from_mut_slice(features);
         let mut eccentricity: Feature = Feature::ZERO;
 
         // We iterate over the source node IDs and we assign
         // to each of them a distance of zero.
         bucket.par_iter().copied().for_each(|node_id| {
-            *(*shared_features.get()).get_unchecked_mut(node_id as usize) = Feature::ZERO;
+            shared_features[node_id as usize].store(Feature::ZERO, Ordering::Relaxed);
         });
 
         // Until the bucket is not empty we start to iterate.
+        let max_depth = Feature::try_from(self.get_maximum_depth()).unwrap_or(Feature::MAX);
         while !bucket.is_empty() {
-            if eccentricity == Feature::try_from(self.get_maximum_depth()).unwrap_or(Feature::MAX) {
+            if eccentricity == max_depth {
                 break;
             }
             eccentricity += Feature::ONE;
@@ -86,11 +89,12 @@ where
                     graph
                         .iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
                         .filter_map(|neighbour_node_id| {
-                            let distance = (*shared_features.get())
-                                .get_unchecked_mut(neighbour_node_id as usize);
-                            if *distance == Feature::MAX {
-                                // Set it's distance
-                                *distance = eccentricity;
+                            if shared_features[neighbour_node_id as usize].compare_exchange(
+                                Feature::MAX,
+                                eccentricity,
+                                Ordering::Relaxed,
+                                Ordering::Relaxed,
+                            ).is_ok() {
                                 // add the node to the nodes to explore
                                 Some(neighbour_node_id)
                             } else {
@@ -102,7 +106,7 @@ where
         }
 
         // We retrieve the reference to the features slice.
-        features = shared_features.into_inner();
+        features = Feature::get_mut_slice(shared_features);
 
         // We set all remaining MAX features to the computed exentricity.
         features.par_iter_mut().for_each(|distance| {
