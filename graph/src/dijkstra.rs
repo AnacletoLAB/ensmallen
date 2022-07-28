@@ -397,7 +397,7 @@ impl ShortestPathsResultBFS {
             .count();
 
         let union_size =
-            first_node_predecessors.len() + second_node_predecessors.len() - intersection_size * 2;
+            first_node_predecessors.len() + second_node_predecessors.len() - intersection_size;
 
         Ok(if union_size.is_zero() {
             0.0
