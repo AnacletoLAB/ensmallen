@@ -21,7 +21,7 @@ impl FromPyDict for BasicSPINE {
 
         pe!(validate_kwargs(
             kwargs,
-            &["embedding_size", "maximum_depth", "verbose"]
+            &["embedding_size", "maximum_depth", "path", "verbose"]
         ))?;
 
         pe!(BasicSPINE::new(
