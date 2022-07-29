@@ -20,7 +20,7 @@ impl BasicWINE {
     ///
     /// # Arguments
     /// * `embedding_size`: Option<usize> - Size of the embedding. By default 100.
-    /// * `walk_length`: Option<usize> - Length of the random walk.
+    /// * `walk_length`: Option<usize> - Length of the random walk. By default 2, to capture exclusively the immediate context.
     /// * `verbose`: Option<bool> - Whether to show a loading bar while computing the embedding.
     pub fn new(
         embedding_size: Option<usize>,
@@ -29,7 +29,7 @@ impl BasicWINE {
     ) -> Result<Self, String> {
         Ok(Self {
             baine: BasicAnchorsInferredNodeEmbedding::new(embedding_size, verbose)?,
-            walk_length: must_not_be_zero(walk_length, usize::MAX, "Maximum depth")?,
+            walk_length: must_not_be_zero(walk_length, 2, "Maximum depth")?,
         })
     }
 

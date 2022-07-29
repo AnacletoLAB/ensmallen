@@ -51,6 +51,9 @@ pub(crate) use crate::types::*;
 mod operators;
 mod spine;
 pub(crate) use spine::*;
+mod wine;
+pub(crate) use wine::*;
+
 mod weighted_spine;
 pub(crate) use weighted_spine::*;
 mod walks;
