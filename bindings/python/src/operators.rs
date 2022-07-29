@@ -1,37 +1,35 @@
 use super::*;
-use pyo3::class::mapping::PyMappingProtocol;
-use pyo3::class::number::PyNumberProtocol;
 
-#[pyproto]
-impl PyNumberProtocol for Graph {
-    fn __or__(lhs: Graph, rhs: Graph) -> PyResult<Graph> {
-        Ok(Graph {
-            inner: pe!(&lhs.inner | &rhs.inner)?,
+#[pymethods]
+impl Graph {
+    fn __or__(&self, rhs: Self) -> PyResult<Self> {
+        Ok(Self {
+            inner: pe!(&self.inner | &rhs.inner)?,
         })
     }
 
-    fn __sub__(lhs: Graph, rhs: Graph) -> PyResult<Graph> {
-        Ok(Graph {
-            inner: pe!(&lhs.inner - &rhs.inner)?,
+    fn __sub__(&self, rhs: Self) -> PyResult<Self> {
+        Ok(Self {
+            inner: pe!(&self.inner - &rhs.inner)?,
         })
     }
 
-    fn __and__(lhs: Graph, rhs: Graph) -> PyResult<Graph> {
-        Ok(Graph {
-            inner: pe!(&lhs.inner & &rhs.inner)?,
+    fn __and__(&self, rhs: Self) -> PyResult<Self> {
+        Ok(Self {
+            inner: pe!(&self.inner & &rhs.inner)?,
         })
     }
 
-    fn __xor__(lhs: Graph, rhs: Graph) -> PyResult<Graph> {
-        Ok(Graph {
-            inner: pe!(&lhs.inner ^ &rhs.inner)?,
+    fn __xor__(&self, rhs: Self) -> PyResult<Self> {
+        Ok(Self {
+            inner: pe!(&self.inner ^ &rhs.inner)?,
         })
     }
 }
 
-#[pyproto]
-impl PyMappingProtocol for Graph {
-    fn __getitem__(&'p self, idx: Py<PyAny>) -> PyResult<Py<PyAny>> {
+#[pymethods]
+impl Graph {
+    fn __getitem__(&self, idx: Py<PyAny>) -> PyResult<Py<PyAny>> {
         let gil = pyo3::Python::acquire_gil();
 
         if let Ok(node_id) = idx.extract::<u32>(gil.python()) {

@@ -367,10 +367,10 @@ impl Graph {
                 let edges_number = edge_node_ids_and_weights.len();
 
                 let edge_ids_vector = ThreadDataRaceAware {
-                    t: unsafe { PyArray2::new(gil.python(), [edges_number, 2], false) },
+                    t: PyArray2::new(gil.python(), [edges_number, 2], false),
                 };
                 let weights = ThreadDataRaceAware {
-                    t: unsafe { PyArray1::new(gil.python(), [edges_number], false) },
+                    t: PyArray1::new(gil.python(), [edges_number], false),
                 };
 
                 edge_node_ids_and_weights
@@ -619,14 +619,10 @@ impl Graph {
                     // to zeros, so we initialize the vector as a matrix of zeros.
                     (
                         ThreadDataRaceAware {
-                            t: unsafe {
-                                PyArray2::zeros(gil.python(), [nodes_number, nodes_number], false)
-                            },
+                            t: PyArray2::zeros(gil.python(), [nodes_number, nodes_number], false),
                         },
                         ThreadDataRaceAware {
-                            t: unsafe {
-                                PyArray2::zeros(gil.python(), [nodes_number, nodes_number], false)
-                            },
+                            t: PyArray2::zeros(gil.python(), [nodes_number, nodes_number], false),
                         },
                     )
                 } else {
@@ -637,14 +633,10 @@ impl Graph {
                     // a default value: doing so would only be a waste of time.
                     (
                         ThreadDataRaceAware {
-                            t: unsafe {
-                                PyArray2::new(gil.python(), [nodes_number, nodes_number], false)
-                            },
+                            t: PyArray2::new(gil.python(), [nodes_number, nodes_number], false),
                         },
                         ThreadDataRaceAware {
-                            t: unsafe {
-                                PyArray2::new(gil.python(), [nodes_number, nodes_number], false)
-                            },
+                            t: PyArray2::new(gil.python(), [nodes_number, nodes_number], false),
                         },
                     )
                 };

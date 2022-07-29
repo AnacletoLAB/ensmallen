@@ -681,7 +681,7 @@ impl Graph {
         };
 
         let edge_type_ids = ThreadDataRaceAware {
-            t: unsafe { PyArray1::zeros(gil.python(), [batch_size], false) },
+            t: PyArray1::zeros(gil.python(), [batch_size], false),
         };
 
         let edge_types_offset = if self.inner.has_unknown_edge_types().unwrap_or(false) {
@@ -804,7 +804,7 @@ impl Graph {
         };
         let edge_types = if return_edge_types {
             Some(ThreadDataRaceAware {
-                t: unsafe { PyArray1::zeros(gil.python(), [actual_batch_size], false) },
+                t: PyArray1::zeros(gil.python(), [actual_batch_size], false),
             })
         } else {
             None

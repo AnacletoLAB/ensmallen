@@ -80,6 +80,9 @@ pub fn register_models(_py: Python, _m: &PyModule) -> PyResult<()> {
     _m.add_class::<DegreeSPINE>()?;
     _m.add_class::<NodeLabelSPINE>()?;
     _m.add_class::<ScoreSPINE>()?;
+    _m.add_class::<DegreeWINE>()?;
+    _m.add_class::<NodeLabelWINE>()?;
+    _m.add_class::<ScoreWINE>()?;
     _m.add_class::<WeightedSPINE>()?;
     _m.add_class::<EdgePredictionPerceptron>()?;
     _m.add_class::<DAGResnik>()?;
