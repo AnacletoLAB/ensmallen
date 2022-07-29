@@ -92,8 +92,8 @@ where
                             if shared_features[neighbour_node_id as usize].compare_exchange(
                                 Feature::MAX,
                                 eccentricity,
-                                Ordering::Relaxed,
-                                Ordering::Relaxed,
+                                Ordering::SeqCst,
+                                Ordering::SeqCst,
                             ).is_ok() {
                                 // add the node to the nodes to explore
                                 Some(neighbour_node_id)

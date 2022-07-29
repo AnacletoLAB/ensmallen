@@ -110,8 +110,6 @@ macro_rules! impl_spine_embedding {
 
                             let embedding_slice = unsafe { s.as_slice_mut().unwrap() };
 
-                            // We always use the racing version of the fit transform
-                            // as we generally do not care about memory collisions.
                             pe!(self.inner.fit_transform(
                                 &graph.inner,
                                 embedding_slice,

@@ -4,7 +4,7 @@ use crate::{
 };
 use core::sync::atomic::Ordering;
 use ensmallen_traits::prelude::*;
-use graph::{Graph, NodeT, ThreadDataRaceAware};
+use graph::{Graph, NodeT};
 use rayon::prelude::*;
 
 #[derive(Clone, Debug)]
@@ -54,7 +54,7 @@ where
         &self,
         graph: &Graph,
         mut bucket: Vec<NodeT>,
-        mut features: &mut [Feature],
+        features: &mut [Feature],
     ) where
         Feature: FeatureType,
     {
@@ -86,8 +86,5 @@ where
                 })
                 .collect::<Vec<NodeT>>();
         }
-
-        // We retrieve the reference to the features slice.
-        features = Feature::get_mut_slice(shared_features);
     }
 }

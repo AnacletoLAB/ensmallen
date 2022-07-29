@@ -1,3 +1,4 @@
+#![feature(atomic_from_mut)]
 
 pub mod atomic;
 

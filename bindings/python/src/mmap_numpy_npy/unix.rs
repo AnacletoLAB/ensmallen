@@ -91,10 +91,7 @@ impl MemoryMapped {
                         PROT_READ | PROT_WRITE,
                         // We don't want the eventual modifications to get propagated
                         // to the underlying file
-                        libc::MAP_SHARED
-                            | libc::MAP_POPULATE
-                            | libc::MAP_HUGETLB
-                            | libc::MAP_HUGE_1GB,
+                        libc::MAP_SHARED | libc::MAP_POPULATE,
                         // the file descriptor of the file to mmap
                         fd,
                         // the offset in bytes from the start of the file, we want to mmap
@@ -116,7 +113,7 @@ impl MemoryMapped {
                         PROT_READ | PROT_WRITE,
                         // We don't want the eventual modifications to get propagated
                         // to the underlying file
-                        libc::MAP_SHARED | libc::MAP_ANONYMOUS,
+                        libc::MAP_SHARED | libc::MAP_ANONYMOUS | libc::MAP_POPULATE,
                         // the file descriptor of the file to mmap
                         0,
                         // the offset in bytes from the start of the file, we want to mmap
