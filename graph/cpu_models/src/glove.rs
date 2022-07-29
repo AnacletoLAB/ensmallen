@@ -63,7 +63,7 @@ where
                         return 0.0;
                     }
 
-                    let variation: f32 = learning_rate * (2.0 * freq.powf(self.alpha) * (dot - freq.ln()));
+                    let variation: f32 = learning_rate * 2.0 * freq.powf(self.alpha) * (dot - freq.ln());
 
                     src_embedding
                         .iter_mut()
