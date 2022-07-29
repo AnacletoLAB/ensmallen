@@ -40,7 +40,7 @@ pub fn create_memory_mapped_numpy_array(
     #[cfg(target_endian = "big")]
     let endianess = '>';
 
-    let mut header = b"\x93NUMPY\x03\x00".to_vec();
+    let mut header = b"\x93NUMPY\x02\x00".to_vec();
 
     let description = format!(
         "{{'descr': '{endianess}{descr}', 'fortran_order': {fortran_order}, 'shape': ({shape}), }}",
@@ -58,6 +58,13 @@ pub fn create_memory_mapped_numpy_array(
     let padding_size = (ARRAY_ALIGN - (offset % ARRAY_ALIGN)) % ARRAY_ALIGN;
     let aligned_len = offset + padding_size;
 
+    assert!(
+        aligned_len % ARRAY_ALIGN == 0,
+        "Error in the computation of the alignement of the npy header {} % {}",
+        aligned_len,
+        ARRAY_ALIGN,
+    );
+
     header.extend_from_slice(&(aligned_len as u32 - 12).to_le_bytes());
     header.extend_from_slice(description.as_bytes());
 
@@ -73,7 +80,7 @@ pub fn create_memory_mapped_numpy_array(
         .clone_from_slice(&header);
 
     let data = mmap
-        .get_slice_mut::<u8>(offset, None)
+        .get_slice_mut::<u8>(aligned_len, None)
         .expect("Could get the data slice type.")
         .as_ptr();
 
