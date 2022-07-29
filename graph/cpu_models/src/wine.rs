@@ -29,7 +29,7 @@ impl BasicWINE {
     ) -> Result<Self, String> {
         Ok(Self {
             baine: BasicAnchorsInferredNodeEmbedding::new(embedding_size, verbose)?,
-            walk_length: must_not_be_zero(walk_length, 2, "Maximum depth")?,
+            walk_length: must_not_be_zero(walk_length, 2, "Random walk length")?,
         })
     }
 
