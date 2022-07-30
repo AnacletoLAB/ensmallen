@@ -92,7 +92,7 @@ impl GraphEmbedder for FirstOrderLINE {
                     graph.get_number_of_directed_edges() as usize,
                     false,
                     Some(0.5),
-                    Some(true),
+                    Some(self.model.get_avoid_false_negatives()),
                     None,
                     Some(true),
                     None,

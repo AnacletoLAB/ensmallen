@@ -77,6 +77,7 @@ where
                 extract_value_rust_result!(kwargs, "epochs", usize),
                 extract_value_rust_result!(kwargs, "learning_rate", f32),
                 extract_value_rust_result!(kwargs, "learning_rate_decay", f32),
+                Some(false),
                 extract_value_rust_result!(kwargs, "random_state", u64),
                 extract_value_rust_result!(kwargs, "verbose", bool),
             ))?,

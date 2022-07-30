@@ -9,7 +9,7 @@ type InnerModel = cpu_models::EdgePredictionPerceptron<Adam<f32, f32>, Adam<f32,
 #[pyclass]
 #[derive(Clone)]
 #[pyo3(
-    text_signature = "(*, edge_embeddings, edge_features, cooccurrence_iterations, cooccurrence_window_size, number_of_epochs, number_of_edges_per_mini_batch, sample_only_edges_with_heterogeneous_node_types, learning_rate, first_order_decay_factor, second_order_decay_factor, use_scale_free_distribution, random_state)"
+    text_signature = "(*, edge_embeddings, edge_features, cooccurrence_iterations, cooccurrence_window_size, number_of_epochs, number_of_edges_per_mini_batch, sample_only_edges_with_heterogeneous_node_types, learning_rate, first_order_decay_factor, second_order_decay_factor, avoid_false_negatives, use_scale_free_distribution, random_state)"
 )]
 pub struct EdgePredictionPerceptron {
     pub inner: InnerModel,
@@ -62,6 +62,9 @@ impl EdgePredictionPerceptron {
     /// second_order_decay_factor: float = 0.999
     ///     Second order decay factor for the second order momentum.
     ///     By default 0.999.
+    /// avoid_false_negatives: bool = False
+    ///     Whether to avoid sampling false negatives.
+    ///     This may cause a slower training.
     /// use_scale_free_distribution: bool = True
     ///     Whether to train model using a scale free distribution for the negatives.
     /// random_state: int = 42
@@ -83,6 +86,7 @@ impl EdgePredictionPerceptron {
                 "learning_rate",
                 "first_order_decay_factor",
                 "second_order_decay_factor",
+                "avoid_false_negatives",
                 "use_scale_free_distribution",
                 "random_state"
             ]
@@ -115,6 +119,7 @@ impl EdgePredictionPerceptron {
                     extract_value_rust_result!(kwargs, "first_order_decay_factor", f32),
                     extract_value_rust_result!(kwargs, "second_order_decay_factor", f32),
                 ),
+                extract_value_rust_result!(kwargs, "avoid_false_negatives", bool),
                 extract_value_rust_result!(kwargs, "cooccurrence_iterations", u64),
                 extract_value_rust_result!(kwargs, "cooccurrence_window_size", u64),
                 extract_value_rust_result!(kwargs, "number_of_epochs", usize),

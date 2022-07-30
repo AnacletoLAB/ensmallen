@@ -55,10 +55,6 @@ where
                     let dot = dot_product_sequential_unchecked(src_embedding, dst_embedding)
                         / scale_factor;
 
-                    if dot > self.clipping_value || dot < -self.clipping_value {
-                        return 0.0;
-                    }
-
                     let variation: f32 =
                         learning_rate * 2.0 * freq.powf(self.alpha) * (dot - freq.ln());
 

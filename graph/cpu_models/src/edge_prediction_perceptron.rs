@@ -380,6 +380,8 @@ where
     weights: Vec<f32>,
     /// The bias of the model.
     bias: f32,
+    /// Whether to avoid sampling false negatives. This may cause a slower training.
+    avoid_false_negatives: bool,
     /// The number of epochs to train the model for.
     number_of_epochs: usize,
     /// Number of samples in a mini-batch. By default 1024.
@@ -406,6 +408,8 @@ where
     /// # Arguments
     /// * `edge_embeddings`: Vec<EdgeEmbedding> - The embedding methods to use for the provided node features.
     /// * `edge_features`: Vec<EdgeFeature> - The edge features to compute for each edge.
+    /// * `optimizer`: Optimizer - The optimizer to be used for the training.
+    /// * `avoid_false_negatives`: Option<bool> - Whether to avoid sampling false negatives. This may cause a slower training..
     /// * `cooccurrence_iterations`: Option<u64> - Number of iterations to run when computing the cooccurrence metric. By default `100`.
     /// * `cooccurrence_window_size`: Option<u64> - Window size to consider to measure the cooccurrence. By default `10`.
     /// * `number_of_epochs`: Option<usize> - The number of epochs to train the model for. By default, `100`.
@@ -417,6 +421,7 @@ where
         edge_embeddings: Vec<EdgeEmbedding>,
         edge_features: Vec<EdgeFeature>,
         optimizer: O2,
+        avoid_false_negatives: Option<bool>,
         cooccurrence_iterations: Option<u64>,
         cooccurrence_window_size: Option<u64>,
         number_of_epochs: Option<usize>,
@@ -459,6 +464,7 @@ where
             cooccurrence_window_size,
             weights: Vec::new(),
             bias: 0.0,
+            avoid_false_negatives: avoid_false_negatives.unwrap_or(false),
             number_of_epochs,
             number_of_edges_per_mini_batch,
             sample_only_edges_with_heterogeneous_node_types:
@@ -682,7 +688,7 @@ where
                             self.number_of_edges_per_mini_batch,
                             self.sample_only_edges_with_heterogeneous_node_types,
                             Some(0.5),
-                            Some(true),
+                            Some(self.avoid_false_negatives),
                             None,
                             Some(self.use_scale_free_distribution),
                             Some(support),
