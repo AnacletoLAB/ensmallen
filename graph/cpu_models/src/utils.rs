@@ -1,8 +1,8 @@
+use ensmallen_traits::prelude::*;
+use funty::Integral;
 use graph::{EdgeTypeT, Graph, NodeT};
 use num::Zero;
-use funty::Integral;
 use rayon::prelude::*;
-use ensmallen_traits::prelude::*;
 use vec_rand::{random_f32, splitmix64};
 
 pub(crate) fn must_not_be_zero<F>(
@@ -44,12 +44,6 @@ pub(crate) fn populate_vectors(
                 *weight = get_random_weight(random_state + i as u64, scale_factor);
             })
         });
-}
-
-pub(crate) fn get_random_vector(capacity: usize, random_state: u64, scale_factor: f32) -> Vec<f32> {
-    (0..capacity)
-        .map(|i| get_random_weight(random_state + i as u64, scale_factor))
-        .collect()
 }
 
 pub(crate) fn compute_prior(subset_size: f32, total_size: f32) -> f32 {
@@ -117,6 +111,23 @@ impl From<(usize,)> for MatrixShape {
     }
 }
 
+impl Into<Vec<usize>> for MatrixShape {
+    fn into(self) -> Vec<usize> {
+        match self {
+            MatrixShape::OneDimensional(one) => vec![one],
+            MatrixShape::BiDimensional(one, two) => vec![one, two],
+            MatrixShape::ThreeDimensional(one, two, three) => vec![one, two, three],
+        }
+    }
+}
+
+impl Into<Vec<isize>> for MatrixShape {
+    fn into(self) -> Vec<isize> {
+        let vector_shape: Vec<usize> = self.into();
+        vector_shape.into_iter().map(|size| size as isize).collect()
+    }
+}
+
 impl From<(usize, usize)> for MatrixShape {
     fn from(shape: (usize, usize)) -> Self {
         MatrixShape::BiDimensional(shape.0, shape.1)
@@ -163,7 +174,10 @@ impl core::ops::Index<isize> for MatrixShape {
     }
 }
 
-pub trait FeatureType: Send + Sync + Integral + TryInto<usize> + TryFrom<usize> + IntoAtomic {}
+pub trait FeatureType:
+    Send + Sync + Integral + TryInto<usize> + TryFrom<usize> + IntoAtomic
+{
+}
 
 impl FeatureType for u64 {}
 impl FeatureType for u32 {}

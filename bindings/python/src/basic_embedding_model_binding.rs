@@ -7,6 +7,16 @@ where
     M: From<BasicEmbeddingModel> + cpu_models::GraphEmbedder,
 {
     inner: M,
+    paths: Vec<Option<String>>,
+}
+
+impl<M> BasicEmbeddingModelBinding<M>
+where
+    M: From<BasicEmbeddingModel> + cpu_models::GraphEmbedder,
+{
+    fn add_path(&mut self, path: Option<String>) {
+        self.paths.push(path);
+    }
 }
 
 impl<M> From<BasicEmbeddingModel> for BasicEmbeddingModelBinding<M>
@@ -15,6 +25,7 @@ where
 {
     fn from(model: BasicEmbeddingModel) -> Self {
         Self {
+            paths: Vec::new(),
             inner: model.into(),
         }
     }
@@ -26,6 +37,10 @@ where
 {
     fn get_model(&self) -> &M {
         &self.inner
+    }
+
+    fn get_paths(&self) -> Vec<Option<String>> {
+        self.paths.clone()
     }
 }
 
@@ -46,10 +61,12 @@ where
                 "learning_rate_decay",
                 "random_state",
                 "verbose",
+                "node_embedding_path",
+                "contextual_node_embedding_path"
             ]
         ))?;
 
-        Ok(pe!(BasicEmbeddingModel::new(
+        let mut model: Self = pe!(BasicEmbeddingModel::new(
             extract_value_rust_result!(kwargs, "embedding_size", usize),
             extract_value_rust_result!(kwargs, "epochs", usize),
             extract_value_rust_result!(kwargs, "learning_rate", f32),
@@ -57,14 +74,20 @@ where
             extract_value_rust_result!(kwargs, "random_state", u64),
             extract_value_rust_result!(kwargs, "verbose", bool),
         ))?
-        .into())
+        .into();
+        model.paths.push(extract_value_rust_result!(
+            kwargs,
+            "node_embedding_path",
+            String
+        ));
+        Ok(model)
     }
 }
 
 #[pyclass]
 #[derive(Debug, Clone)]
 #[pyo3(
-    text_signature = "(*, embedding_size, epochs, learning_rate, learning_rate_decay, random_state, verbose)"
+    text_signature = "(*, embedding_size, epochs, learning_rate, learning_rate_decay, node_embedding_path, random_state, verbose)"
 )]
 pub struct FirstOrderLINE {
     pub inner: BasicEmbeddingModelBinding<cpu_models::FirstOrderLINE>,
@@ -86,6 +109,10 @@ impl FirstOrderLINE {
     ///     Learning rate of the model.
     /// learning_rate_decay: float = 0.9
     ///     Amount of learning rate decay for each epoch.
+    /// node_embedding_path: Optional[str] = None
+    ///     Path where to mmap and store the nodes embedding.
+    ///     This is necessary to embed large graphs whose embedding will not
+    ///     fit into the available main memory.
     /// random_state: int = 42
     ///     random_state to use to reproduce the walks.
     /// verbose: bool = True
@@ -115,7 +142,7 @@ impl FirstOrderLINE {
 #[pyclass]
 #[derive(Debug, Clone)]
 #[pyo3(
-    text_signature = "(*, embedding_size, epochs, learning_rate, learning_rate_decay, random_state, verbose)"
+    text_signature = "(*, embedding_size, epochs, learning_rate, learning_rate_decay, node_embedding_path, contextual_node_embedding_path, random_state, verbose)"
 )]
 pub struct SecondOrderLINE {
     pub inner: BasicEmbeddingModelBinding<cpu_models::SecondOrderLINE>,
@@ -137,14 +164,28 @@ impl SecondOrderLINE {
     ///     Learning rate of the model.
     /// learning_rate_decay: float = 0.9
     ///     Amount of learning rate decay for each epoch.
+    /// node_embedding_path: Optional[str] = None
+    ///     Path where to mmap and store the nodes embedding.
+    ///     This is necessary to embed large graphs whose embedding will not
+    ///     fit into the available main memory.
+    /// contextual_node_embedding_path: Optional[str] = None
+    ///     Path where to mmap and store the contextual nodes embedding.
+    ///     This is necessary to embed large graphs whose embedding will not
+    ///     fit into the available main memory.
     /// random_state: int = 42
     ///     random_state to use to reproduce the walks.
     /// verbose: bool = True
     ///     Whether to show the loading bar.
     pub fn new(py_kwargs: Option<&PyDict>) -> PyResult<SecondOrderLINE> {
-        Ok(Self {
-            inner: BasicEmbeddingModelBinding::from_pydict(py_kwargs)?,
-        })
+        let mut inner = BasicEmbeddingModelBinding::from_pydict(py_kwargs)?;
+        let py = pyo3::Python::acquire_gil();
+        let kwargs = normalize_kwargs!(py_kwargs, py.python());
+        inner.add_path(extract_value_rust_result!(
+            kwargs,
+            "contextual_node_embedding_path",
+            String
+        ));
+        Ok(Self { inner })
     }
 }
 
@@ -152,13 +193,13 @@ impl SecondOrderLINE {
 impl SecondOrderLINE {
     #[args(py_kwargs = "**")]
     #[pyo3(text_signature = "($self, graph)")]
-    /// Return numpy embedding with SecondOrderLINE node embedding.
+    /// Return numpy embedding with Second-order LINE node embedding.
     ///
     /// Parameters
     /// ---------
     /// graph: Graph
     ///     The graph to embed.
-    fn fit_transform(&self, graph: &Graph) -> PyResult<Py<PyAny>> {
-        Ok(self.inner.fit_transform(graph)?.first().unwrap().to_owned())
+    fn fit_transform(&self, graph: &Graph) -> PyResult<Vec<Py<PyAny>>> {
+        self.inner.fit_transform(graph)
     }
 }

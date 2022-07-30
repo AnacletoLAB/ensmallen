@@ -7,6 +7,16 @@ where
     M: From<BasicSiameseModel> + cpu_models::GraphEmbedder,
 {
     inner: M,
+    paths: Vec<Option<String>>,
+}
+
+impl<M> BasicSiameseModelBinding<M>
+where
+    M: From<BasicSiameseModel> + cpu_models::GraphEmbedder,
+{
+    fn add_path(&mut self, path: Option<String>) {
+        self.paths.push(path);
+    }
 }
 
 impl<M> From<BasicSiameseModel> for BasicSiameseModelBinding<M>
@@ -15,6 +25,7 @@ where
 {
     fn from(model: BasicSiameseModel) -> Self {
         Self {
+            paths: Vec::new(),
             inner: model.into(),
         }
     }
@@ -26,6 +37,10 @@ where
 {
     fn get_model(&self) -> &M {
         &self.inner
+    }
+
+    fn get_paths(&self) -> Vec<Option<String>> {
+        self.paths.clone()
     }
 }
 
@@ -47,10 +62,16 @@ where
                 "learning_rate_decay",
                 "random_state",
                 "verbose",
+                "node_embedding_path",
+                "edge_type_embedding_path",
+                "mult_edge_type_embedding_path",
+                "bias_edge_type_embedding_path",
+                "source_edge_type_embedding_path",
+                "destination_edge_type_embedding_path"
             ]
         ))?;
 
-        Ok(pe!(BasicSiameseModel::new(
+        let mut model: Self = pe!(BasicSiameseModel::new(
             pe!(BasicEmbeddingModel::new(
                 extract_value_rust_result!(kwargs, "embedding_size", usize),
                 extract_value_rust_result!(kwargs, "epochs", usize),
@@ -61,14 +82,20 @@ where
             ))?,
             extract_value_rust_result!(kwargs, "relu_bias", f32),
         ))?
-        .into())
+        .into();
+        model.add_path(extract_value_rust_result!(
+            kwargs,
+            "node_embedding_path",
+            String
+        ));
+        Ok(model)
     }
 }
 
 #[pyclass]
 #[derive(Debug, Clone)]
 #[pyo3(
-    text_signature = "(*, relu_bias, embedding_size, epochs, learning_rate, learning_rate_decay, random_state, verbose)"
+    text_signature = "(*, relu_bias, embedding_size, epochs, learning_rate, learning_rate_decay, node_embedding_path, edge_type_embedding_path, random_state, verbose)"
 )]
 pub struct TransE {
     pub inner: BasicSiameseModelBinding<cpu_models::TransE>,
@@ -92,14 +119,28 @@ impl TransE {
     ///     Learning rate of the model.
     /// learning_rate_decay: float = 0.9
     ///     Amount of learning rate decay for each epoch.
+    /// node_embedding_path: Optional[str] = None
+    ///     Path where to mmap and store the nodes embedding.
+    ///     This is necessary to embed large graphs whose embedding will not
+    ///     fit into the available main memory.
+    /// edge_type_embedding_path: Optional[str] = None
+    ///     Path where to mmap and store the edge type embedding.
+    ///     This is necessary to embed large graphs whose embedding will not
+    ///     fit into the available main memory.
     /// random_state: int = 42
     ///     random_state to use to reproduce the walks.
     /// verbose: bool = True
     ///     Whether to show the loading bar.
     pub fn new(py_kwargs: Option<&PyDict>) -> PyResult<TransE> {
-        Ok(Self {
-            inner: BasicSiameseModelBinding::from_pydict(py_kwargs)?,
-        })
+        let mut inner = BasicSiameseModelBinding::from_pydict(py_kwargs)?;
+        let py = pyo3::Python::acquire_gil();
+        let kwargs = normalize_kwargs!(py_kwargs, py.python());
+        inner.add_path(extract_value_rust_result!(
+            kwargs,
+            "edge_type_embedding_path",
+            String
+        ));
+        Ok(Self { inner })
     }
 }
 
@@ -121,7 +162,7 @@ impl TransE {
 #[pyclass]
 #[derive(Debug, Clone)]
 #[pyo3(
-    text_signature = "(*, relu_bias, embedding_size, epochs, learning_rate, learning_rate_decay, random_state, verbose)"
+    text_signature = "(*, relu_bias, embedding_size, epochs, learning_rate, learning_rate_decay, node_embedding_path, random_state, verbose)"
 )]
 pub struct Unstructured {
     pub inner: BasicSiameseModelBinding<cpu_models::Unstructured>,
@@ -145,6 +186,10 @@ impl Unstructured {
     ///     Learning rate of the model.
     /// learning_rate_decay: float = 0.9
     ///     Amount of learning rate decay for each epoch.
+    /// node_embedding_path: Optional[str] = None
+    ///     Path where to mmap and store the nodes embedding.
+    ///     This is necessary to embed large graphs whose embedding will not
+    ///     fit into the available main memory.
     /// random_state: int = 42
     ///     random_state to use to reproduce the walks.
     /// verbose: bool = True
@@ -174,7 +219,7 @@ impl Unstructured {
 #[pyclass]
 #[derive(Debug, Clone)]
 #[pyo3(
-    text_signature = "(*, relu_bias, embedding_size, epochs, learning_rate, learning_rate_decay, random_state, verbose)"
+    text_signature = "(*, relu_bias, embedding_size, epochs, learning_rate, learning_rate_decay, node_embedding_path, mult_edge_type_embedding_path, bias_edge_type_embedding_path, random_state, verbose)"
 )]
 pub struct TransH {
     pub inner: BasicSiameseModelBinding<cpu_models::TransH>,
@@ -198,14 +243,37 @@ impl TransH {
     ///     Learning rate of the model.
     /// learning_rate_decay: float = 0.9
     ///     Amount of learning rate decay for each epoch.
+    /// node_embedding_path: Optional[str] = None
+    ///     Path where to mmap and store the nodes embedding.
+    ///     This is necessary to embed large graphs whose embedding will not
+    ///     fit into the available main memory.
+    /// mult_edge_type_embedding_path: Optional[str] = None
+    ///     Path where to mmap and store the multiplicative edge type embedding.
+    ///     This is necessary to embed large graphs whose embedding will not
+    ///     fit into the available main memory.
+    /// bias_edge_type_embedding_path: Optional[str] = None
+    ///     Path where to mmap and store the bias edge type embedding.
+    ///     This is necessary to embed large graphs whose embedding will not
+    ///     fit into the available main memory.
     /// random_state: int = 42
     ///     random_state to use to reproduce the walks.
     /// verbose: bool = True
     ///     Whether to show the loading bar.
     pub fn new(py_kwargs: Option<&PyDict>) -> PyResult<TransH> {
-        Ok(Self {
-            inner: BasicSiameseModelBinding::from_pydict(py_kwargs)?,
-        })
+        let mut inner = BasicSiameseModelBinding::from_pydict(py_kwargs)?;
+        let py = pyo3::Python::acquire_gil();
+        let kwargs = normalize_kwargs!(py_kwargs, py.python());
+        inner.add_path(extract_value_rust_result!(
+            kwargs,
+            "mult_edge_type_embedding_path",
+            String
+        ));
+        inner.add_path(extract_value_rust_result!(
+            kwargs,
+            "bias_edge_type_embedding_path",
+            String
+        ));
+        Ok(Self { inner })
     }
 }
 
@@ -227,7 +295,7 @@ impl TransH {
 #[pyclass]
 #[derive(Debug, Clone)]
 #[pyo3(
-    text_signature = "(*, relu_bias, embedding_size, epochs, learning_rate, learning_rate_decay, random_state, verbose)"
+    text_signature = "(*, relu_bias, embedding_size, epochs, learning_rate, learning_rate_decay, node_embedding_path, source_edge_type_embedding_path, destination_edge_type_embedding_path, random_state, verbose)"
 )]
 pub struct StructuredEmbedding {
     pub inner: BasicSiameseModelBinding<cpu_models::StructuredEmbedding>,
@@ -251,14 +319,37 @@ impl StructuredEmbedding {
     ///     Learning rate of the model.
     /// learning_rate_decay: float = 0.9
     ///     Amount of learning rate decay for each epoch.
+    /// node_embedding_path: Optional[str] = None
+    ///     Path where to mmap and store the nodes embedding.
+    ///     This is necessary to embed large graphs whose embedding will not
+    ///     fit into the available main memory.
+    /// source_edge_type_embedding_path: Optional[str] = None
+    ///     Path where to mmap and store the source edge type embedding.
+    ///     This is necessary to embed large graphs whose embedding will not
+    ///     fit into the available main memory.
+    /// destination_edge_type_embedding_path: Optional[str] = None
+    ///     Path where to mmap and store the destination edge type embedding.
+    ///     This is necessary to embed large graphs whose embedding will not
+    ///     fit into the available main memory.
     /// random_state: int = 42
     ///     random_state to use to reproduce the walks.
     /// verbose: bool = True
     ///     Whether to show the loading bar.
     pub fn new(py_kwargs: Option<&PyDict>) -> PyResult<StructuredEmbedding> {
-        Ok(Self {
-            inner: BasicSiameseModelBinding::from_pydict(py_kwargs)?,
-        })
+        let mut inner = BasicSiameseModelBinding::from_pydict(py_kwargs)?;
+        let py = pyo3::Python::acquire_gil();
+        let kwargs = normalize_kwargs!(py_kwargs, py.python());
+        inner.add_path(extract_value_rust_result!(
+            kwargs,
+            "source_edge_type_embedding_path",
+            String
+        ));
+        inner.add_path(extract_value_rust_result!(
+            kwargs,
+            "destination_edge_type_embedding_path",
+            String
+        ));
+        Ok(Self { inner })
     }
 }
 

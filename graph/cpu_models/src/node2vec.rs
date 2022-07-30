@@ -142,11 +142,18 @@ where
     W: WalkTransformer,
 {
     fn get_embedding_shapes(&self, graph: &graph::Graph) -> Result<Vec<MatrixShape>, String> {
-        Ok(vec![(
-            graph.get_number_of_nodes() as usize,
-            self.embedding_size,
-        )
-            .into()])
+        Ok(vec![
+            (
+                graph.get_number_of_nodes() as usize,
+                self.embedding_size,
+            )
+            .into(),
+            (
+                graph.get_number_of_nodes() as usize,
+                self.embedding_size,
+            )
+            .into()
+        ])
     }
 
     fn get_number_of_epochs(&self) -> usize {
