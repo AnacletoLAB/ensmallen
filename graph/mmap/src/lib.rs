@@ -4,15 +4,26 @@
 //! https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-createfilemappinga
 //! https://docs.microsoft.com/en-us/windows/win32/memory/creating-a-file-mapping-object
 
+
 #[cfg(target_os = "windows")]
-mod windows_mmap;
+mod win;
 #[cfg(target_os = "windows")]
-pub use windows_mmap::MemoryMappedReadOnlyFile;
+pub use win::MemoryMapped;
+
+#[cfg(target_os = "windows")]
+mod win_ro;
+#[cfg(target_os = "windows")]
+pub use win_ro::MemoryMappedReadOnly;
 
 #[cfg(not(target_os = "windows"))]
 mod unix;
 #[cfg(not(target_os = "windows"))]
-pub use unix::MemoryMappedReadOnlyFile;
+pub use unix::MemoryMapped;
 
-unsafe impl Sync for MemoryMappedReadOnlyFile {}
-unsafe impl Send for MemoryMappedReadOnlyFile {}
+#[cfg(not(target_os = "windows"))]
+mod unix_ro;
+#[cfg(not(target_os = "windows"))]
+pub use unix_ro::MemoryMappedReadOnly;
+
+unsafe impl Sync for MemoryMappedReadOnly {}
+unsafe impl Send for MemoryMappedReadOnly {}

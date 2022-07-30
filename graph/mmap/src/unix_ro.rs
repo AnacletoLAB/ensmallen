@@ -4,13 +4,13 @@ use libc::*;
 /// this should be equivalent to read-only slice that
 /// automatically handle the freeing.
 #[derive(Debug)]
-pub struct MemoryMappedReadOnlyFile {
+pub struct MemoryMappedReadOnly {
     fd: i32,
     addr: *mut c_void,
     len: usize,
 }
 
-impl std::ops::Drop for MemoryMappedReadOnlyFile {
+impl std::ops::Drop for MemoryMappedReadOnly {
     fn drop(&mut self) {
         unsafe {
             // unmap the memory
@@ -21,7 +21,7 @@ impl std::ops::Drop for MemoryMappedReadOnlyFile {
     }
 }
 
-impl MemoryMappedReadOnlyFile {
+impl MemoryMappedReadOnly {
     pub fn new(path: &str) -> Result<Self, String> {
         // here we add a + 8 to map in an extra zero-filled word so that we can
         // do unaligned reads for bits
@@ -69,7 +69,7 @@ impl MemoryMappedReadOnlyFile {
             ));
         }
 
-        Ok(MemoryMappedReadOnlyFile { fd, addr, len })
+        Ok(MemoryMappedReadOnly { fd, addr, len })
     }
 
     /// Return the number of `usize` words in the slice

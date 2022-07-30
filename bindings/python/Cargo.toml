@@ -42,6 +42,7 @@ libc = "*"
 regex = "1"
 graph = { path = "../../graph" }
 cpu_models = { path = "../../graph/cpu_models" }
+mmap = { path = "../../graph/mmap" }
 express_measures = { path = "../../graph/express_measures" }
 tags = { path = "../../graph/tags" }
 vec_rand = { git = "https://github.com/zommiommy/vec_rand", branch = "master" }

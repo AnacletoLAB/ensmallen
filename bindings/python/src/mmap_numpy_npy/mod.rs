@@ -3,11 +3,7 @@ use numpy::*;
 use ::pyo3::conversion::AsPyPointer;
 use ::pyo3::prelude::*;
 use libc::intptr_t;
-
-#[cfg(target_family = "unix")]
-mod unix;
-#[cfg(target_family = "unix")]
-use unix::MemoryMapped;
+use mmap::MemoryMapped;
 
 mod parse;
 use parse::*;
