@@ -3,7 +3,7 @@ use numpy::*;
 use ::pyo3::conversion::AsPyPointer;
 use ::pyo3::prelude::*;
 use libc::intptr_t;
-use mmap::MemoryMapped;
+use mmap::*;
 
 mod parse;
 use parse::*;
@@ -69,7 +69,7 @@ pub fn create_memory_mapped_numpy_array(
     }
 
     // mmap the file
-    let mut mmap = MemoryMapped::new(path, Some(aligned_len + data_size as usize))
+    let mut mmap = MemoryMapped::new_mut(path, Some(aligned_len + data_size as usize))
         .expect("Could not mmap the file");
     mmap.get_slice_mut::<u8>(0, Some(aligned_len))
         .unwrap()
@@ -125,7 +125,7 @@ pub fn create_memory_mapped_numpy_array(
 
 pub fn load_memory_mapped_numpy_array(py: Python, path: Option<&str>) -> Py<PyAny> {
     // mmap the file
-    let mut mmap = MemoryMapped::new(path, None).expect("Could not mmap the file");
+    let mut mmap = MemoryMapped::new_mut(path, None).expect("Could not mmap the file");
 
     // check the magic
     let magic = mmap

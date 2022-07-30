@@ -4,16 +4,23 @@ use windows::Win32::Storage::FileSystem::*;
 use windows::Win32::System::Memory::*;
 
 #[derive(Debug)]
-pub struct MemoryMappedReadOnlyFile {
+pub struct MemoryMapped {
     file_handle: HANDLE,
     mapping_handle: HANDLE,
     addr: *mut c_void,
     len: usize,
+    path: Option<String>,
 }
 
-impl Drop for MemoryMappedReadOnlyFile {
+impl Drop for MemoryMapped {
     fn drop(&mut self) {
         unsafe {
+            // if we have modified a memory mapped file, we run a sync before
+            // closing
+            if self.fd.is_some() {
+                self.sync_flush().unwrap();
+            }
+
             let res = UnmapViewOfFile(self.addr);
             if res == BOOL(0) {
                 panic!("Cannot unmap view of file.",);
@@ -32,16 +39,16 @@ impl Drop for MemoryMappedReadOnlyFile {
     }
 }
 
-impl MemoryMappedReadOnlyFile {
-    pub fn new(path: &str) -> Result<MemoryMappedReadOnlyFile, String> {
+impl MemoryMapped {
+    pub fn new(path: &str) -> Result<MemoryMapped, String> {
         unsafe {
             let file_handle = CreateFileW(
                 path,
                 FILE_GENERIC_READ,
                 FILE_SHARE_NONE, // prevent other processes to modify the file while we are reading it
                 std::ptr::null() as _,
-                OPEN_EXISTING,
-                FILE_FLAG_SEQUENTIAL_SCAN,
+                CREATE_ALWAYS,
+                FILE_FLAG_RANDOM_ACCESS,
                 HANDLE(0),
             );
 
@@ -56,7 +63,7 @@ impl MemoryMappedReadOnlyFile {
             let mapping_handle = CreateFileMappingW(
                 file_handle,
                 std::ptr::null_mut(),
-                PAGE_READONLY, // | SEC_LARGE_PAGES,
+                PAGE_READWRITE, // | SEC_LARGE_PAGES,
                 0,
                 0,
                 PWSTR(std::ptr::null_mut()),
@@ -68,7 +75,7 @@ impl MemoryMappedReadOnlyFile {
 
             let addr = MapViewOfFile(
                 mapping_handle,
-                FILE_MAP_READ, // | FILE_MAP_LARGE_PAGES
+                FILE_MAP_READ | FILE_MAP_WRITE, // | FILE_MAP_LARGE_PAGES
                 0,
                 0,
                 len,
@@ -78,7 +85,7 @@ impl MemoryMappedReadOnlyFile {
                 return Err("Error opening file MapViewOfFile".into());
             }
 
-            Ok(MemoryMappedReadOnlyFile {
+            Ok(MemoryMapped {
                 file_handle,
                 mapping_handle,
                 addr,
@@ -87,11 +94,23 @@ impl MemoryMappedReadOnlyFile {
         }
     }
 
-    pub fn as_str(&self) -> &'static str {
-        unsafe {
-            let slice = std::slice::from_raw_parts(self.addr as *const u8, self.len);
-            std::str::from_utf8_unchecked(slice)
+    pub fn sync_flush(&self) -> Result<(), String> {
+        if self.fd.is_some() {
+            unsafe {
+                let res = FlushViewOfFile(self.addr as _, self.len);
+                if res == -1 {
+                    return Err("Error syncronously syncing the mmap ".into());
+                }
+                FlushFileBuffers(mapping_handle);
+                FlushFileBuffers(file_handle);
+            }
         }
+        Ok(())
+    }
+
+    pub fn async_flush(&self) -> Result<(), String> {
+        // No async flushes in Windows :(
+        self.sync_flush()
     }
 
     /// Return the number of `usize` words in the slice

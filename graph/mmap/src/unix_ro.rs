@@ -1,13 +1,16 @@
 use libc::*;
+use core::fmt::Debug;
+use super::MemoryMapReadOnlyCore;
 
 /// A read-only memory mapped file,
 /// this should be equivalent to read-only slice that
 /// automatically handle the freeing.
 #[derive(Debug)]
 pub struct MemoryMappedReadOnly {
-    fd: i32,
-    addr: *mut c_void,
-    len: usize,
+    pub(crate) fd: i32,
+    pub(crate) addr: *mut c_void,
+    pub(crate) len: usize,
+    pub(crate) path: Option<String>,
 }
 
 impl std::ops::Drop for MemoryMappedReadOnly {
@@ -21,8 +24,9 @@ impl std::ops::Drop for MemoryMappedReadOnly {
     }
 }
 
-impl MemoryMappedReadOnly {
-    pub fn new(path: &str) -> Result<Self, String> {
+impl MemoryMapReadOnlyCore for MemoryMappedReadOnly {
+    fn new<S: AsRef<str> + Debug>(path: S) -> Result<Self, String> {
+        let path = path.as_ref();
         // here we add a + 8 to map in an extra zero-filled word so that we can
         // do unaligned reads for bits
         let len = std::fs::metadata(path).map_err(|e| e.to_string())?.len() as usize;
@@ -38,7 +42,6 @@ impl MemoryMappedReadOnly {
         }
         // Try to mmap the file into memory
 
-        #[cfg(not(target_os = "windows"))]
         let addr = unsafe {
             mmap(
                 // we don't want a specific address
@@ -69,18 +72,18 @@ impl MemoryMappedReadOnly {
             ));
         }
 
-        Ok(MemoryMappedReadOnly { fd, addr, len })
+        Ok(MemoryMappedReadOnly { fd, addr, len, path: Some(path.to_string()) })
     }
 
-    /// Return the number of `usize` words in the slice
-    pub fn len(&self) -> usize {
+    fn get_addr(&self) -> *mut u8 {
+        self.addr as _
+    }
+
+    fn len(&self) -> usize {
         self.len
     }
 
-    pub fn as_str(&self) -> &'static str {
-        unsafe {
-            let slice = std::slice::from_raw_parts(self.addr as *const u8, self.len);
-            std::str::from_utf8_unchecked(slice)
-        }
+    fn get_path(&self) -> Option<String> {
+        self.path.clone()
     }
 }

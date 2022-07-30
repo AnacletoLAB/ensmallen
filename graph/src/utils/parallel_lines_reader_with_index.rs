@@ -1,4 +1,4 @@
-use mmap::MemoryMappedReadOnly;
+use mmap::*;
 use memchr;
 use rayon::iter::plumbing::{bridge_unindexed, UnindexedProducer};
 use rayon::prelude::*;
@@ -47,7 +47,14 @@ impl ParallelIterator for ParallelLinesWithIndex {
     where
         C: rayon::iter::plumbing::UnindexedConsumer<Self::Item>,
     {
-        let mut data = self.mmap.as_str();
+        let mut data = unsafe{
+            let slice = core::slice::from_raw_parts(
+                self.mmap.get_addr() as *const u8, 
+                self.mmap.len()
+            );
+            std::str::from_utf8_unchecked(slice)
+        };
+
         // Skip the first rows (as specified by the user)
         if let Some(rts) = self.number_of_rows_to_skip {
             for _ in 0..rts {
