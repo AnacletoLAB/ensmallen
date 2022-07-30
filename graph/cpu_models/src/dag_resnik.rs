@@ -258,6 +258,23 @@ impl DAGResnik {
         ))
     }
 
+    /// Return the similarity between the two provided node ids.
+    ///
+    /// # Arguments
+    /// * `first_node_ids`: Vec<NodeT> - The first node ids for which to compute the similarity.
+    /// * `second_node_ids`: Vec<NodeT> - The second node ids for which to compute the similarity.
+    pub fn get_similarity_from_node_ids(
+        &self,
+        first_node_ids: Vec<NodeT>,
+        second_node_ids: Vec<NodeT>,
+    ) -> Result<Vec<f32>, String> {
+        first_node_ids
+            .into_par_iter()
+            .zip(second_node_ids.into_par_iter())
+            .map(|(first, second)| self.get_similarity_from_node_id(first, second))
+            .collect()
+    }
+
     /// Return the similarity between the two provided node names.
     ///
     /// # Arguments
@@ -275,6 +292,23 @@ impl DAGResnik {
             );
         }
         unreachable!("")
+    }
+
+    /// Return the similarity between the two provided node names.
+    ///
+    /// # Arguments
+    /// * `first_node_names`: Vec<String> - The first node names for which to compute the similarity.
+    /// * `second_node_names`: Vec<String> - The second node names for which to compute the similarity.
+    pub fn get_similarity_from_node_names(
+        &self,
+        first_node_names: Vec<String>,
+        second_node_names: Vec<String>,
+    ) -> Result<Vec<f32>, String> {
+        first_node_names
+            .into_par_iter()
+            .zip(second_node_names.into_par_iter())
+            .map(|(first, second)| self.get_similarity_from_node_name(&first, &second))
+            .collect()
     }
 
     /// Writes the pairwise similarities on the provided memory area.

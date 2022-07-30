@@ -1,5 +1,5 @@
 use crate::{
-    get_node_priors, get_random_vector, utils::MatrixShape, BasicEmbeddingModel, GraphEmbedder,
+    get_node_priors, utils::MatrixShape, BasicEmbeddingModel, GraphEmbedder,
 };
 use express_measures::cosine_similarity_sequential_unchecked;
 use graph::{Graph, NodeT, ThreadDataRaceAware};
@@ -36,11 +36,18 @@ impl GraphEmbedder for SecondOrderLINE {
     }
 
     fn get_embedding_shapes(&self, graph: &Graph) -> Result<Vec<MatrixShape>, String> {
-        Ok(vec![(
-            graph.get_number_of_nodes() as usize,
-            self.model.embedding_size,
-        )
-            .into()])
+        Ok(vec![
+            (
+                graph.get_number_of_nodes() as usize,
+                self.model.embedding_size,
+            )
+                .into(),
+            (
+                graph.get_number_of_nodes() as usize,
+                self.model.embedding_size,
+            )
+                .into(),
+        ])
     }
 
     fn _fit_transform(&self, graph: &Graph, embedding: &mut [&mut [f32]]) -> Result<(), String> {
@@ -48,22 +55,17 @@ impl GraphEmbedder for SecondOrderLINE {
         let mut learning_rate = self.model.learning_rate / scale_factor;
         let mut random_state = self.get_random_state();
 
-        let mut hidden = get_random_vector(embedding[0].len(), random_state, scale_factor);
-        random_state = splitmix64(random_state);
-
-        let mut hidden_ref = hidden.as_mut_slice();
-        let shared_hidden = ThreadDataRaceAware::new(&mut hidden_ref);
-        let shared_node_embedding = ThreadDataRaceAware::new(&mut embedding[0]);
+        let shared_node_embedding = ThreadDataRaceAware::new(embedding);
 
         let pb = self.get_loading_bar();
 
         let compute_mini_batch_step = |src: usize, dst: usize, label: bool, learning_rate: f32| {
             let src_embedding = unsafe {
-                &mut (*shared_node_embedding.get())
+                &mut (*shared_node_embedding.get())[0]
                     [(src * self.model.embedding_size)..((src + 1) * self.model.embedding_size)]
             };
             let dst_embedding = unsafe {
-                &mut (*shared_hidden.get())
+                &mut (*shared_node_embedding.get())[1]
                     [(dst * self.model.embedding_size)..((dst + 1) * self.model.embedding_size)]
             };
 
@@ -104,7 +106,7 @@ impl GraphEmbedder for SecondOrderLINE {
                     graph.get_number_of_directed_edges() as usize,
                     false,
                     Some(0.5),
-                    Some(true),
+                    Some(self.model.get_avoid_false_negatives()),
                     None,
                     Some(true),
                     None,

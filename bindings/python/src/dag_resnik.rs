@@ -87,6 +87,30 @@ impl DAGResnik {
             .get_similarity_from_node_id(first_node_id, second_node_id))
     }
 
+    #[pyo3(text_signature = "($self, first_node_ids, second_node_ids)")]
+    /// Return the similarity between the two provided nodes.
+    ///
+    /// Parameters
+    /// -------------------
+    /// first_node_ids: List[int]
+    ///     The first node for which to compute the similarity.
+    /// second_node_ids: List[int]
+    ///     The second node for which to compute the similarity.
+    pub fn get_similarity_from_node_ids(
+        &self,
+        first_node_ids: Vec<NodeT>,
+        second_node_ids: Vec<NodeT>,
+    ) -> PyResult<Py<PyArray1<f32>>> {
+        let gil = pyo3::Python::acquire_gil();
+        Ok(to_ndarray_1d!(
+            gil,
+            pe!(self
+                .inner
+                .get_similarity_from_node_ids(first_node_ids, second_node_ids))?,
+            f32
+        ))
+    }
+
     #[pyo3(text_signature = "($self, first_node_name, second_node_name)")]
     /// Return the similarity between the two provnameed nodes.
     ///
@@ -104,6 +128,30 @@ impl DAGResnik {
         pe!(self
             .inner
             .get_similarity_from_node_name(&first_node_name, &second_node_name))
+    }
+
+    #[pyo3(text_signature = "($self, first_node_names, second_node_names)")]
+    /// Return the similarity between the two provnamesed nodes.
+    ///
+    /// Parameters
+    /// -------------------
+    /// first_node_names: List[str]
+    ///     The first nodes for which to compute the similarity.
+    /// second_node_names: List[str]
+    ///     The second nodes for which to compute the similarity.
+    pub fn get_similarity_from_node_names(
+        &self,
+        first_node_names: Vec<String>,
+        second_node_names: Vec<String>,
+    ) -> PyResult<Py<PyArray1<f32>>> {
+        let gil = pyo3::Python::acquire_gil();
+        Ok(to_ndarray_1d!(
+            gil,
+            pe!(self
+                .inner
+                .get_similarity_from_node_names(first_node_names, second_node_names))?,
+            f32
+        ))
     }
 
     #[pyo3(text_signature = "($self)")]

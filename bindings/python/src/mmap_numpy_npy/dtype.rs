@@ -1,5 +1,4 @@
 use numpy::npyffi::NPY_TYPES;
-use pyo3::prelude::*;
 
 #[derive(Clone)]
 pub enum Dtype {
