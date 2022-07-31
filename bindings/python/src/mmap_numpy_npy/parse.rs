@@ -19,7 +19,7 @@ pub(crate) fn parse_header(header: &str) -> (NPY_TYPES, Vec<intptr_t>, bool) {
     let fortran_order = fortran_order_str == "True";
     let shape = shape_str
         .split(",")
-        .filter(|chunk| chunk.trim().is_empty())
+        .filter(|chunk| !chunk.trim().is_empty())
         .map(|chunk| chunk.trim().parse::<intptr_t>().unwrap())
         .collect::<Vec<intptr_t>>();
 
