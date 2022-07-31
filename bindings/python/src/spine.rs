@@ -1,8 +1,12 @@
+use super::mmap_numpy_npy::{
+    create_memory_mapped_numpy_array, load_memory_mapped_numpy_array, Dtype,
+};
 use super::*;
 use cpu_models::{AnchorFeatureTypes, AnchorTypes, AnchorsInferredNodeEmbeddingModel, BasicSPINE};
 use numpy::{PyArray1, PyArray2};
-
-use super::mmap_numpy_npy::{create_memory_mapped_numpy_array, Dtype};
+use rayon::prelude::*;
+use std::convert::TryFrom;
+use types::ThreadDataRaceAware;
 
 #[derive(Debug, Clone)]
 pub struct BasicSPINEBinding<Model, const AFT: AnchorFeatureTypes, const AT: AnchorTypes>
@@ -55,6 +59,73 @@ macro_rules! impl_spine_embedding {
         impl<Model, const AFT: AnchorFeatureTypes, const AT: AnchorTypes> BasicSPINEBinding<Model, AFT, AT> where
             Model: AnchorsInferredNodeEmbeddingModel<AT, AFT>,
         {
+            /// Return numpy embedding curresponding to the provided indices.
+            ///
+            /// Parameters
+            /// --------------
+            /// node_ids: np.ndarray
+            ///     Numpy vector with node IDs to be queried.
+            ///
+            /// Raises
+            /// --------------
+            /// ValueError
+            ///     If the path was not provided to the constructor.
+            /// ValueError
+            ///     If no embedding exists at the provided path.
+            fn get_mmap_node_embedding_from_node_ids(
+                &self,
+                node_ids: Py<PyArray1<NodeT>>
+            ) -> PyResult<Py<PyAny>> {
+                if self.path.is_none() {
+                    return pe!(Err(
+                        format!(
+                            concat!(
+                                "The current instance of {} ",
+                                "was not instantiated with a mmap path."
+                            ),
+                            self.inner.get_model_name()
+                        )
+                    ));
+                }
+
+                let gil = pyo3::Python::acquire_gil();
+                let node_ids = node_ids.as_ref(gil.python());
+                let node_ids_ref = unsafe { node_ids.as_slice()? };
+
+                let (embedding_dtype, embedding) = load_memory_mapped_numpy_array(
+                    gil.python(),
+                    self.path.as_ref().map(|x| x.as_str())
+                );
+
+                match pe!(Dtype::try_from(embedding_dtype))?.to_string().as_str() {
+                    $(
+                        stringify!($dtype) => {
+                            let casted_embedding = embedding.cast_as::<PyArray2<$dtype>>(gil.python())?;
+                            let number_of_nodes: usize = casted_embedding.shape()[0] as usize;
+                            let embedding_size: usize = casted_embedding.shape()[1] as usize;
+                            let embedding_slice = unsafe { casted_embedding.as_slice()? };
+                            let result:  &PyArray2<$dtype> = unsafe{PyArray2::new(gil.python(), [node_ids.len(), embedding_size], false)};
+                            let shared_result_slice = ThreadDataRaceAware {
+                                t: result,
+                            };
+                            embedding_slice.as_ref().par_chunks(number_of_nodes).enumerate().for_each(|(feature_number, feature)|{
+                                node_ids_ref.iter().for_each(|&node_id| unsafe {
+                                    *(shared_result_slice.t.uget_mut([node_id as usize, feature_number])) = feature[node_id as usize];
+                                });
+                            });
+                            Ok(result.to_owned().into())
+                        }
+                    )*
+                    dtype => pe!(Err(format!(
+                        concat!(
+                            "The provided dtype {:?} is not supported. The supported ",
+                            "data types are `u8`, `u16`, `u32` and `u64`."
+                        ),
+                        dtype
+                    ))),
+                }
+            }
+
             /// Return numpy embedding with SPINE node embedding.
             ///
             /// Do note that the embedding is returned transposed.
@@ -108,7 +179,7 @@ macro_rules! impl_spine_embedding {
 
                             let s = embedding.cast_as::<PyArray2<$dtype>>(gil.python())?;
 
-                            let embedding_slice = unsafe { s.as_slice_mut().unwrap() };
+                            let embedding_slice = unsafe { s.as_slice_mut()? };
 
                             pe!(self.inner.fit_transform(
                                 &graph.inner,
@@ -169,6 +240,27 @@ impl DegreeSPINE {
         })
     }
 
+    #[pyo3(text_signature = "($self, node_ids)")]
+    /// Return numpy embedding curresponding to the provided indices.
+    ///
+    /// Parameters
+    /// --------------
+    /// node_ids: np.ndarray
+    ///     Numpy vector with node IDs to be queried.
+    ///
+    /// Raises
+    /// --------------
+    /// ValueError
+    ///     If the path was not provided to the constructor.
+    /// ValueError
+    ///     If no embedding exists at the provided path.
+    fn get_mmap_node_embedding_from_node_ids(
+        &self,
+        node_ids: Py<PyArray1<NodeT>>,
+    ) -> PyResult<Py<PyAny>> {
+        self.inner.get_mmap_node_embedding_from_node_ids(node_ids)
+    }
+
     #[args(py_kwargs = "**")]
     #[pyo3(text_signature = "($self, graph, *, dtype)")]
     /// Return numpy embedding with Degree SPINE node embedding.
@@ -216,6 +308,27 @@ impl NodeLabelSPINE {
         Ok(Self {
             inner: BasicSPINEBinding::from_pydict(py_kwargs)?,
         })
+    }
+
+    #[pyo3(text_signature = "($self, node_ids)")]
+    /// Return numpy embedding curresponding to the provided indices.
+    ///
+    /// Parameters
+    /// --------------
+    /// node_ids: np.ndarray
+    ///     Numpy vector with node IDs to be queried.
+    ///
+    /// Raises
+    /// --------------
+    /// ValueError
+    ///     If the path was not provided to the constructor.
+    /// ValueError
+    ///     If no embedding exists at the provided path.
+    fn get_mmap_node_embedding_from_node_ids(
+        &self,
+        node_ids: Py<PyArray1<NodeT>>,
+    ) -> PyResult<Py<PyAny>> {
+        self.inner.get_mmap_node_embedding_from_node_ids(node_ids)
     }
 
     #[args(py_kwargs = "**")]
@@ -271,6 +384,31 @@ impl ScoreSPINE {
                 }
             },
         })
+    }
+
+    #[pyo3(text_signature = "($self, node_ids)")]
+    /// Return numpy embedding curresponding to the provided indices.
+    ///
+    /// Parameters
+    /// --------------
+    /// node_ids: np.ndarray
+    ///     Numpy vector with node IDs to be queried.
+    ///
+    /// Raises
+    /// --------------
+    /// ValueError
+    ///     If the path was not provided to the constructor.
+    /// ValueError
+    ///     If no embedding exists at the provided path.
+    fn get_mmap_node_embedding_from_node_ids(
+        &self,
+        node_ids: Py<PyArray1<NodeT>>,
+    ) -> PyResult<Py<PyAny>> {
+        BasicSPINEBinding {
+            inner: cpu_models::DegreeSPINE::from(self.inner.clone()),
+            path: self.path.clone(),
+        }
+        .get_mmap_node_embedding_from_node_ids(node_ids)
     }
 
     #[args(py_kwargs = "**")]

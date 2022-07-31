@@ -4,6 +4,7 @@ use ::pyo3::conversion::AsPyPointer;
 use ::pyo3::prelude::*;
 use libc::intptr_t;
 use mmap::*;
+use numpy::npyffi::NPY_TYPES;
 
 mod parse;
 use parse::*;
@@ -26,7 +27,7 @@ pub fn create_memory_mapped_numpy_array(
     fortran_order: bool,
 ) -> Py<PyAny> {
     const ARRAY_ALIGN: usize = 64;
-    let dtype = dtype.to_npy_type();
+    let dtype = dtype.into();
 
     let num_of_elements = shape.iter().fold(1, |a, b| a * b);
     let data_size = num_of_elements * npy_type_to_bytes_size(dtype) as isize;
@@ -123,7 +124,7 @@ pub fn create_memory_mapped_numpy_array(
     result
 }
 
-pub fn load_memory_mapped_numpy_array(py: Python, path: Option<&str>) -> Py<PyAny> {
+pub fn load_memory_mapped_numpy_array(py: Python, path: Option<&str>) -> (NPY_TYPES, Py<PyAny>) {
     // mmap the file
     let mut mmap = MemoryMapped::new_mut(path, None).expect("Could not mmap the file");
 
@@ -214,5 +215,5 @@ pub fn load_memory_mapped_numpy_array(py: Python, path: Option<&str>) -> Py<PyAn
         Py::from_owned_ptr(py, ptr)
     };
 
-    result
+    (dtype, result)
 }

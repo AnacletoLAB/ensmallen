@@ -1,6 +1,9 @@
 use super::*;
 
-pub struct ThreadDataRaceAware<'a, T> {
+pub struct ThreadDataRaceAware<'a, T>
+where
+    T: ?Sized,
+{
     pub(crate) t: &'a T,
 }
 
