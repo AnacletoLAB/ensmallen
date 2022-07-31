@@ -101,8 +101,8 @@ macro_rules! impl_spine_embedding {
                     $(
                         stringify!($dtype) => {
                             let casted_embedding = embedding.cast_as::<PyArray2<$dtype>>(gil.python())?;
-                            let number_of_nodes: usize = casted_embedding.shape()[1] as usize;
-                            let embedding_size: usize = casted_embedding.shape()[0] as usize;
+                            let number_of_nodes: usize = casted_embedding.shape()[0] as usize;
+                            let embedding_size: usize = casted_embedding.shape()[1] as usize;
                             let embedding_slice = unsafe { casted_embedding.as_slice()? };
                             let result:  &PyArray2<$dtype> = unsafe{PyArray2::new(gil.python(), [node_ids.len(), embedding_size], false)};
                             let shared_result_slice = ThreadDataRaceAware {
