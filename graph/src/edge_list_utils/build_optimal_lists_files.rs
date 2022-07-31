@@ -78,7 +78,7 @@ pub fn build_optimal_lists_files(
     edge_type_list_comment_symbol: Option<String>,
     load_edge_type_list_in_parallel: Option<bool>,
     edge_type_list_is_correct: Option<bool>,
-    edge_types_number: Option<NodeTypeT>,
+    edge_types_number: Option<EdgeTypeT>,
 
     target_edge_type_list_path: Option<String>,
     target_edge_type_list_separator: Option<char>,

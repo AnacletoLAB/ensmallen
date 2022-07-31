@@ -526,7 +526,7 @@ pub fn parse_wikipedia_graph(
                         &mut nodes_stream,
                         destination_node_id,
                         destination_node_name,
-                        Some(vec![edge_type_id]),
+                        Some(vec![edge_type_id as NodeTypeT]),
                         None,
                         None,
                     )?;
