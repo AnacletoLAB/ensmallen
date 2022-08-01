@@ -124,7 +124,10 @@ pub fn create_memory_mapped_numpy_array(
     result
 }
 
-pub fn load_memory_mapped_numpy_array(py: Python, path: Option<&str>) -> (NPY_TYPES, bool, Py<PyAny>) {
+pub fn load_memory_mapped_numpy_array(
+    py: Python,
+    path: Option<&str>,
+) -> (NPY_TYPES, bool, Py<PyAny>) {
     // mmap the file
     let mut mmap = MemoryMapped::new_mut(path, None).expect("Could not mmap the file");
 

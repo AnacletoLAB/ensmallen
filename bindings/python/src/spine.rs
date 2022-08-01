@@ -394,9 +394,10 @@ impl DegreeSPINE {
     fn get_mmap_node_embedding_from_node_ids(
         &self,
         node_ids: Py<PyArray1<NodeT>>,
-        path: Option<String>
+        path: Option<String>,
     ) -> PyResult<Py<PyAny>> {
-        self.inner.get_mmap_node_embedding_from_node_ids(node_ids, path)
+        self.inner
+            .get_mmap_node_embedding_from_node_ids(node_ids, path)
     }
 
     #[args(py_kwargs = "**")]
@@ -486,9 +487,10 @@ impl NodeLabelSPINE {
     fn get_mmap_node_embedding_from_node_ids(
         &self,
         node_ids: Py<PyArray1<NodeT>>,
-        path: Option<String>
+        path: Option<String>,
     ) -> PyResult<Py<PyAny>> {
-        self.inner.get_mmap_node_embedding_from_node_ids(node_ids, path)
+        self.inner
+            .get_mmap_node_embedding_from_node_ids(node_ids, path)
     }
 
     #[args(py_kwargs = "**")]
@@ -588,7 +590,7 @@ impl ScoreSPINE {
     fn get_mmap_node_embedding_from_node_ids(
         &self,
         node_ids: Py<PyArray1<NodeT>>,
-        path: Option<String>
+        path: Option<String>,
     ) -> PyResult<Py<PyAny>> {
         BasicSPINEBinding {
             inner: cpu_models::DegreeSPINE::from(self.inner.clone()),
