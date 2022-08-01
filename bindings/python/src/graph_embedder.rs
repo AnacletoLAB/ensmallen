@@ -80,6 +80,10 @@ where
         self.get_model().get_model_name()
     }
 
+    fn is_verbose(&self) -> bool {
+        self.get_model().is_verbose()
+    }
+
     fn get_paths(&self) -> Vec<Option<String>>;
 
     fn get_model(&self) -> &M;

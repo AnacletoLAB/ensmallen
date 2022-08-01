@@ -3,9 +3,11 @@ use super::mmap_numpy_npy::{
 };
 use super::*;
 use cpu_models::{AnchorFeatureTypes, AnchorTypes, AnchorsInferredNodeEmbeddingModel, BasicSPINE};
+use indicatif::{ProgressBar, ProgressStyle};
 use numpy::{PyArray1, PyArray2};
 use rayon::prelude::*;
 use std::convert::TryFrom;
+use indicatif::ParallelProgressIterator;
 use types::ThreadDataRaceAware;
 
 #[derive(Debug, Clone)]
@@ -54,11 +56,109 @@ where
     }
 }
 
+impl<Model, const AFT: AnchorFeatureTypes, const AT: AnchorTypes> BasicSPINEBinding<Model, AFT, AT>
+where
+    Model: AnchorsInferredNodeEmbeddingModel<AT, AFT>,
+{
+    /// Raises an error if model has no path
+    fn must_have_path(&self) -> PyResult<()> {
+        if self.path.is_none() {
+            pe!(Err(format!(
+                concat!(
+                    "The current instance of {} ",
+                    "was not instantiated with a mmap path."
+                ),
+                self.inner.get_model_name()
+            )))
+        } else {
+            Ok(())
+        }
+    }
+}
+
 macro_rules! impl_spine_embedding {
     ($($dtype:ty : $dtype_enum:expr),*) => {
         impl<Model, const AFT: AnchorFeatureTypes, const AT: AnchorTypes> BasicSPINEBinding<Model, AFT, AT> where
             Model: AnchorsInferredNodeEmbeddingModel<AT, AFT>,
         {
+            /// Transpose computed embedding and stores to provided position.
+            ///
+            /// Parameters
+            /// --------------
+            /// path: str
+            ///     Position where to store the mmapped vector.
+            ///
+            /// Raises
+            /// --------------
+            /// ValueError
+            ///     If the path was not provided to the constructor.
+            /// ValueError
+            ///     If no embedding exists at the provided path.
+            fn transpose_mmap(
+                &self,
+                path: String
+            ) -> PyResult<()> {
+                self.must_have_path()?;
+                let gil = pyo3::Python::acquire_gil();
+
+                let (embedding_dtype, embedding) = load_memory_mapped_numpy_array(
+                    gil.python(),
+                    self.path.as_ref().map(|x| x.as_str())
+                );
+
+                match pe!(Dtype::try_from(embedding_dtype))?.to_string().as_str() {
+                    $(
+                        stringify!($dtype) => {
+
+                            let casted_embedding = embedding.cast_as::<PyArray2<$dtype>>(gil.python())?;
+                            let embedding_slice = unsafe { casted_embedding.as_slice()? };
+
+                            let number_of_nodes: usize = casted_embedding.shape()[0] as usize;
+                            let embedding_size: usize = casted_embedding.shape()[1] as usize;
+
+                            let progress_bar = if self.inner.is_verbose() {
+                                let pb = ProgressBar::new(embedding_size as u64);
+                                pb.set_style(ProgressStyle::default_bar().template(concat!(
+                                    "Transposing {spinner:.green} ",
+                                    "[{elapsed_precise}] [{bar:40.cyan/blue}] ",
+                                    "({pos}/{len}, ETA {eta})"
+                                )));
+                                pb
+                            } else {
+                                ProgressBar::hidden()
+                            };
+
+                            let transposed_embedding = create_memory_mapped_numpy_array(
+                                gil.python(),
+                                Some(path.as_str()),
+                                $dtype_enum,
+                                vec![number_of_nodes as isize, embedding_size as isize],
+                                false,
+                            );
+
+                            let casted_transposed_embedding = transposed_embedding.cast_as::<PyArray2<$dtype>>(gil.python())?;
+                            let shared_casted_transposed_embedding = ThreadDataRaceAware {
+                                t: casted_transposed_embedding,
+                            };
+
+                            embedding_slice.as_ref().par_chunks(number_of_nodes).progress_with(progress_bar).enumerate().for_each(|(j, feature)|{
+                                feature.iter().copied().enumerate().for_each(|(i, feature_value)| unsafe {
+                                    *(shared_casted_transposed_embedding.t.uget_mut([i, j])) = feature_value;
+                                });
+                            });
+                            Ok(())
+                        }
+                    )*
+                    dtype => pe!(Err(format!(
+                        concat!(
+                            "The provided dtype {:?} is not supported. The supported ",
+                            "data types are `u8`, `u16`, `u32` and `u64`."
+                        ),
+                        dtype
+                    ))),
+                }
+            }
+
             /// Return numpy embedding curresponding to the provided indices.
             ///
             /// Parameters
@@ -76,17 +176,7 @@ macro_rules! impl_spine_embedding {
                 &self,
                 node_ids: Py<PyArray1<NodeT>>
             ) -> PyResult<Py<PyAny>> {
-                if self.path.is_none() {
-                    return pe!(Err(
-                        format!(
-                            concat!(
-                                "The current instance of {} ",
-                                "was not instantiated with a mmap path."
-                            ),
-                            self.inner.get_model_name()
-                        )
-                    ));
-                }
+                self.must_have_path()?;
 
                 let gil = pyo3::Python::acquire_gil();
                 let node_ids = node_ids.as_ref(gil.python());
@@ -240,6 +330,24 @@ impl DegreeSPINE {
         })
     }
 
+    #[pyo3(text_signature = "($self, path)")]
+    /// Transpose computed embedding and stores to provided position.
+    ///
+    /// Parameters
+    /// --------------
+    /// path: str
+    ///     Position where to store the mmapped vector.
+    ///
+    /// Raises
+    /// --------------
+    /// ValueError
+    ///     If the path was not provided to the constructor.
+    /// ValueError
+    ///     If no embedding exists at the provided path.
+    fn transpose_mmap(&self, path: String) -> PyResult<()> {
+        self.inner.transpose_mmap(path)
+    }
+
     #[pyo3(text_signature = "($self, node_ids)")]
     /// Return numpy embedding curresponding to the provided indices.
     ///
@@ -308,6 +416,24 @@ impl NodeLabelSPINE {
         Ok(Self {
             inner: BasicSPINEBinding::from_pydict(py_kwargs)?,
         })
+    }
+
+    #[pyo3(text_signature = "($self, path)")]
+    /// Transpose computed embedding and stores to provided position.
+    ///
+    /// Parameters
+    /// --------------
+    /// path: str
+    ///     Position where to store the mmapped vector.
+    ///
+    /// Raises
+    /// --------------
+    /// ValueError
+    ///     If the path was not provided to the constructor.
+    /// ValueError
+    ///     If no embedding exists at the provided path.
+    fn transpose_mmap(&self, path: String) -> PyResult<()> {
+        self.inner.transpose_mmap(path)
     }
 
     #[pyo3(text_signature = "($self, node_ids)")]
@@ -384,6 +510,27 @@ impl ScoreSPINE {
                 }
             },
         })
+    }
+
+    #[pyo3(text_signature = "($self, path)")]
+    /// Transpose computed embedding and stores to provided position.
+    ///
+    /// Parameters
+    /// --------------
+    /// path: str
+    ///     Position where to store the mmapped vector.
+    ///
+    /// Raises
+    /// --------------
+    /// ValueError
+    ///     If the path was not provided to the constructor.
+    /// ValueError
+    ///     If no embedding exists at the provided path.
+    fn transpose_mmap(&self, path: String) -> PyResult<()> {
+        BasicSPINEBinding {
+            inner: cpu_models::DegreeSPINE::from(self.inner.clone()),
+            path: self.path.clone(),
+        }.transpose_mmap(path)
     }
 
     #[pyo3(text_signature = "($self, node_ids)")]

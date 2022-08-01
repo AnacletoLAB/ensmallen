@@ -31,7 +31,7 @@ impl BasicAnchorsInferredNodeEmbedding {
     }
 
     /// Returns whether to show loading bars size.
-    pub fn get_verbose(&self) -> bool {
+    pub fn is_verbose(&self) -> bool {
         self.verbose
     }
 }
@@ -43,8 +43,8 @@ pub trait AnchorsInferredNodeEmbeddingProperties {
 
     fn get_embedding_size(&self, graph: &Graph) -> Result<usize, String>;
 
-    fn get_verbose(&self) -> bool {
-        self.get_basic_inferred_node_embedding().get_verbose()
+    fn is_verbose(&self) -> bool {
+        self.get_basic_inferred_node_embedding().is_verbose()
     }
 }
 
@@ -230,7 +230,7 @@ where
         // Depending whether verbosity was requested by the user
         // we create or not a visible progress bar to show the progress
         // in the computation of the features.
-        let features_progress_bar = if self.get_verbose() {
+        let features_progress_bar = if self.is_verbose() {
             let pb = ProgressBar::new(self.get_embedding_size(graph)? as u64);
             pb.set_style(ProgressStyle::default_bar().template(&format!(
                 concat!(
