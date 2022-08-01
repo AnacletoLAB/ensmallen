@@ -108,9 +108,9 @@ macro_rules! impl_spine_embedding {
                             let shared_result_slice = ThreadDataRaceAware {
                                 t: result,
                             };
-                            embedding_slice.as_ref().par_chunks(number_of_nodes).enumerate().for_each(|(feature_number, feature)|{
-                                node_ids_ref.iter().for_each(|&node_id| unsafe {
-                                    *(shared_result_slice.t.uget_mut([node_id as usize, feature_number])) = feature[node_id as usize];
+                            embedding_slice.as_ref().par_chunks(number_of_nodes).enumerate().for_each(|(j, feature)|{
+                                node_ids_ref.iter().enumerate().for_each(|(i, &node_id)| unsafe {
+                                    *(shared_result_slice.t.uget_mut([i, j])) = feature[node_id as usize];
                                 });
                             });
                             Ok(result.to_owned().into())
