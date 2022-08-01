@@ -3,11 +3,11 @@ use super::mmap_numpy_npy::{
 };
 use super::*;
 use cpu_models::{AnchorFeatureTypes, AnchorTypes, AnchorsInferredNodeEmbeddingModel, BasicSPINE};
+use indicatif::ParallelProgressIterator;
 use indicatif::{ProgressBar, ProgressStyle};
 use numpy::{PyArray1, PyArray2};
 use rayon::prelude::*;
 use std::convert::TryFrom;
-use indicatif::ParallelProgressIterator;
 use types::ThreadDataRaceAware;
 
 #[derive(Debug, Clone)]
@@ -101,7 +101,7 @@ macro_rules! impl_spine_embedding {
                 self.must_have_path()?;
                 let gil = pyo3::Python::acquire_gil();
 
-                let (embedding_dtype, embedding) = load_memory_mapped_numpy_array(
+                let (embedding_dtype, is_fortran, embedding) = load_memory_mapped_numpy_array(
                     gil.python(),
                     self.path.as_ref().map(|x| x.as_str())
                 );
@@ -133,7 +133,7 @@ macro_rules! impl_spine_embedding {
                                 Some(path.as_str()),
                                 $dtype_enum,
                                 vec![number_of_nodes as isize, embedding_size as isize],
-                                false,
+                                !is_fortran,
                             );
 
                             let casted_transposed_embedding = transposed_embedding.cast_as::<PyArray2<$dtype>>(gil.python())?;
@@ -141,11 +141,20 @@ macro_rules! impl_spine_embedding {
                                 t: casted_transposed_embedding,
                             };
 
-                            embedding_slice.as_ref().par_chunks(number_of_nodes).progress_with(progress_bar).enumerate().for_each(|(j, feature)|{
-                                feature.iter().copied().enumerate().for_each(|(i, feature_value)| unsafe {
-                                    *(shared_casted_transposed_embedding.t.uget_mut([i, j])) = feature_value;
+                            if is_fortran {
+                                embedding_slice.as_ref().par_chunks(number_of_nodes).progress_with(progress_bar).enumerate().for_each(|(j, feature)|{
+                                    feature.iter().copied().enumerate().for_each(|(i, feature_value)| unsafe {
+                                        *(shared_casted_transposed_embedding.t.uget_mut([i, j])) = feature_value;
+                                    });
                                 });
-                            });
+                            } else {
+                                embedding_slice.as_ref().par_chunks(embedding_size).progress_with(progress_bar).enumerate().for_each(|(i, node_embedding)|{
+                                    node_embedding.iter().copied().enumerate().for_each(|(j, feature_value)| unsafe {
+                                        *(shared_casted_transposed_embedding.t.uget_mut([i, j])) = feature_value;
+                                    });
+                                });
+                            }
+
                             Ok(())
                         }
                     )*
@@ -165,6 +174,9 @@ macro_rules! impl_spine_embedding {
             /// --------------
             /// node_ids: np.ndarray
             ///     Numpy vector with node IDs to be queried.
+            /// path: Optional[str] = None
+            ///     Path where to read the embedding from.
+            ///     If not provided, the path of the current SPINE object is used.
             ///
             /// Raises
             /// --------------
@@ -174,17 +186,21 @@ macro_rules! impl_spine_embedding {
             ///     If no embedding exists at the provided path.
             fn get_mmap_node_embedding_from_node_ids(
                 &self,
-                node_ids: Py<PyArray1<NodeT>>
+                node_ids: Py<PyArray1<NodeT>>,
+                mut path: Option<String>
             ) -> PyResult<Py<PyAny>> {
-                self.must_have_path()?;
+                if path.is_none() {
+                    self.must_have_path()?;
+                    path = self.path.clone();
+                }
 
                 let gil = pyo3::Python::acquire_gil();
                 let node_ids = node_ids.as_ref(gil.python());
                 let node_ids_ref = unsafe { node_ids.as_slice()? };
 
-                let (embedding_dtype, embedding) = load_memory_mapped_numpy_array(
+                let (embedding_dtype, is_fortran, embedding) = load_memory_mapped_numpy_array(
                     gil.python(),
-                    self.path.as_ref().map(|x| x.as_str())
+                    path.as_ref().map(|x| x.as_str())
                 );
 
                 match pe!(Dtype::try_from(embedding_dtype))?.to_string().as_str() {
@@ -195,14 +211,24 @@ macro_rules! impl_spine_embedding {
                             let embedding_size: usize = casted_embedding.shape()[1] as usize;
                             let embedding_slice = unsafe { casted_embedding.as_slice()? };
                             let result:  &PyArray2<$dtype> = unsafe{PyArray2::new(gil.python(), [node_ids_ref.len(), embedding_size], false)};
-                            let shared_result_slice = ThreadDataRaceAware {
-                                t: result,
-                            };
-                            embedding_slice.as_ref().par_chunks(number_of_nodes).enumerate().for_each(|(j, feature)|{
-                                node_ids_ref.iter().enumerate().for_each(|(i, &node_id)| unsafe {
-                                    *(shared_result_slice.t.uget_mut([i, j])) = feature[node_id as usize];
+                            if is_fortran {
+                                let shared_result_slice = ThreadDataRaceAware {
+                                    t: result,
+                                };
+                                embedding_slice.as_ref().par_chunks(number_of_nodes).enumerate().for_each(|(j, feature)|{
+                                    node_ids_ref.iter().enumerate().for_each(|(i, &node_id)| unsafe {
+                                        *(shared_result_slice.t.uget_mut([i, j])) = feature[node_id as usize];
+                                    });
                                 });
-                            });
+                            } else {
+                                let shared_result_slice = unsafe { casted_embedding.as_slice_mut()? };
+                                node_ids_ref.par_iter().zip(shared_result_slice.par_chunks_mut(embedding_size)).for_each(|(&node_id, node_embedding)| {
+                                    embedding_slice[embedding_size * (node_id as usize)..embedding_size * (node_id as usize + 1)].iter().zip(node_embedding.iter_mut()).for_each(|(src, dst)|{
+                                        *dst = *src;
+                                    });
+                                });
+                            }
+
                             Ok(result.to_owned().into())
                         }
                     )*
@@ -348,13 +374,16 @@ impl DegreeSPINE {
         self.inner.transpose_mmap(path)
     }
 
-    #[pyo3(text_signature = "($self, node_ids)")]
+    #[pyo3(text_signature = "($self, node_ids, path)")]
     /// Return numpy embedding curresponding to the provided indices.
     ///
     /// Parameters
     /// --------------
     /// node_ids: np.ndarray
     ///     Numpy vector with node IDs to be queried.
+    /// path: Optional[str] = None
+    ///     The path to be used to load the embedding.
+    ///     If not provided, the path of the current SPINE model is used.
     ///
     /// Raises
     /// --------------
@@ -365,8 +394,9 @@ impl DegreeSPINE {
     fn get_mmap_node_embedding_from_node_ids(
         &self,
         node_ids: Py<PyArray1<NodeT>>,
+        path: Option<String>
     ) -> PyResult<Py<PyAny>> {
-        self.inner.get_mmap_node_embedding_from_node_ids(node_ids)
+        self.inner.get_mmap_node_embedding_from_node_ids(node_ids, path)
     }
 
     #[args(py_kwargs = "**")]
@@ -436,13 +466,16 @@ impl NodeLabelSPINE {
         self.inner.transpose_mmap(path)
     }
 
-    #[pyo3(text_signature = "($self, node_ids)")]
+    #[pyo3(text_signature = "($self, node_ids, path)")]
     /// Return numpy embedding curresponding to the provided indices.
     ///
     /// Parameters
     /// --------------
     /// node_ids: np.ndarray
     ///     Numpy vector with node IDs to be queried.
+    /// path: Optional[str] = None
+    ///     The path to be used to load the embedding.
+    ///     If not provided, the path of the current SPINE model is used.
     ///
     /// Raises
     /// --------------
@@ -453,8 +486,9 @@ impl NodeLabelSPINE {
     fn get_mmap_node_embedding_from_node_ids(
         &self,
         node_ids: Py<PyArray1<NodeT>>,
+        path: Option<String>
     ) -> PyResult<Py<PyAny>> {
-        self.inner.get_mmap_node_embedding_from_node_ids(node_ids)
+        self.inner.get_mmap_node_embedding_from_node_ids(node_ids, path)
     }
 
     #[args(py_kwargs = "**")]
@@ -530,16 +564,20 @@ impl ScoreSPINE {
         BasicSPINEBinding {
             inner: cpu_models::DegreeSPINE::from(self.inner.clone()),
             path: self.path.clone(),
-        }.transpose_mmap(path)
+        }
+        .transpose_mmap(path)
     }
 
-    #[pyo3(text_signature = "($self, node_ids)")]
+    #[pyo3(text_signature = "($self, node_ids, path)")]
     /// Return numpy embedding curresponding to the provided indices.
     ///
     /// Parameters
     /// --------------
     /// node_ids: np.ndarray
     ///     Numpy vector with node IDs to be queried.
+    /// path: Optional[str] = None
+    ///     The path to be used to load the embedding.
+    ///     If not provided, the path of the current SPINE model is used.
     ///
     /// Raises
     /// --------------
@@ -550,12 +588,13 @@ impl ScoreSPINE {
     fn get_mmap_node_embedding_from_node_ids(
         &self,
         node_ids: Py<PyArray1<NodeT>>,
+        path: Option<String>
     ) -> PyResult<Py<PyAny>> {
         BasicSPINEBinding {
             inner: cpu_models::DegreeSPINE::from(self.inner.clone()),
             path: self.path.clone(),
         }
-        .get_mmap_node_embedding_from_node_ids(node_ids)
+        .get_mmap_node_embedding_from_node_ids(node_ids, path)
     }
 
     #[args(py_kwargs = "**")]
