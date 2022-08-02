@@ -176,6 +176,16 @@ macro_rules! impl_edge_prediction_embedding {
                         .collect::<Vec<_>>();
                 $(
                     if let Ok(node_features) = node_features.iter().map(|vector| <&PyArray2<$dtype>>::extract(&vector)).collect::<PyResult<Vec<&PyArray2<$dtype>>>>() {
+
+                        if node_features.iter().any(|node_feature| !node_feature.is_c_contiguous()){
+                            return pe!(Err(
+                                concat!(
+                                    "The provided vector is not a contiguos vector in ",
+                                    "C orientation."
+                                )
+                            ));
+                        }
+
                         let dimensions = node_features
                             .iter()
                             .map(|node_feature| node_feature.shape()[1])
@@ -260,6 +270,16 @@ macro_rules! impl_edge_prediction_embedding {
                         .collect::<Vec<_>>();
                 $(
                     if let Ok(node_features) = node_features.iter().map(|vector| <&PyArray2<$dtype>>::extract(&vector)).collect::<PyResult<Vec<&PyArray2<$dtype>>>>() {
+
+                        if node_features.iter().any(|node_feature| !node_feature.is_c_contiguous()){
+                            return pe!(Err(
+                                concat!(
+                                    "The provided vector is not a contiguos vector in ",
+                                    "C orientation."
+                                )
+                            ));
+                        }
+
                         let dimensions = node_features
                             .iter()
                             .map(|node_feature| node_feature.shape()[1])
