@@ -1894,8 +1894,8 @@ impl Graph {
     /// * If the given edge type ID does not exist in the graph.
     pub fn get_edge_node_ids_from_edge_type_id(
         &self,
-        edge_type_id: Option<EdgeTypeT>,
         directed: bool,
+        edge_type_id: Option<EdgeTypeT>,
     ) -> Result<Vec<(NodeT, NodeT)>> {
         self.iter_edge_node_ids_from_edge_type_id(edge_type_id, directed)
             .map(|iter| iter.collect::<Vec<_>>())
@@ -1976,8 +1976,8 @@ impl Graph {
     /// * If the given edge type name does not exist in the graph.
     pub fn get_edge_node_ids_from_edge_type_name(
         &self,
-        edge_type_name: Option<&str>,
         directed: bool,
+        edge_type_name: Option<&str>,
     ) -> Result<Vec<(NodeT, NodeT)>> {
         self.iter_edge_node_ids_from_edge_type_name(edge_type_name, directed)
             .map(|iter| iter.collect::<Vec<_>>())
@@ -2174,5 +2174,49 @@ impl Graph {
         Ok(self
             .iter_multigraph_edge_ids_from_node_ids(src, dst)?
             .count())
+    }
+
+    /// Returns shared ancestors of the provided node ids.
+    ///
+    /// # Arguments
+    /// * `bfs`: &ShortestPathsResultBFS - The BFS object to use for the ancestors.
+    /// * `first_node_ids`: &[NodeT] - The first node ids to query for.
+    /// * `second_node_ids`: &[NodeT] - The second node ids to query for.
+    pub fn get_ancestors_jaccard_from_node_ids(
+        &self,
+        bfs: &ShortestPathsResultBFS,
+        first_node_ids: &[NodeT],
+        second_node_ids: &[NodeT],
+    ) -> Result<Vec<WeightT>> {
+        first_node_ids
+            .par_iter()
+            .copied()
+            .zip(second_node_ids.par_iter().copied())
+            .map(|(src, dst)| bfs.get_ancestors_jaccard_index(src, dst))
+            .collect()
+    }
+
+    /// Returns shared ancestors of the provided node names.
+    ///
+    /// # Arguments
+    /// * `bfs`: &ShortestPathsResultBFS - The BFS object to use for the ancestors.
+    /// * `first_node_names`: &[String] - The first node names to query for.
+    /// * `second_node_names`: &[String] - The second node names to query for.
+    pub fn get_ancestors_jaccard_from_node_names(
+        &self,
+        bfs: &ShortestPathsResultBFS,
+        first_node_names: &[String],
+        second_node_names: &[String],
+    ) -> Result<Vec<WeightT>> {
+        first_node_names
+            .par_iter()
+            .zip(second_node_names.par_iter())
+            .map(|(src, dst)| {
+                bfs.get_ancestors_jaccard_index(
+                    self.get_node_id_from_node_name(src)?,
+                    self.get_node_id_from_node_name(dst)?,
+                )
+            })
+            .collect()
     }
 }

@@ -61,34 +61,35 @@ impl ToString for Chain {
                     Some(5),
                 )
             },
-            node_types_counts = if let Some(node_ids) = &node_ids {
-                if self.len() > 5 {
-                    unsafe {
-                        self.graph
-                            .get_unchecked_node_type_id_counts_hashmap_from_node_ids(
-                                node_ids.as_ref(),
-                            )
-                            .map_or_else(
-                                |_| "".to_string(),
-                                |count| {
-                                    if count.is_empty() {
-                                        "".to_string()
-                                    } else {
-                                    format!(
+            node_types_counts =
+                if let Some(node_ids) = &node_ids {
+                    if self.len() > 5 {
+                        unsafe {
+                            self.graph
+                                .get_unchecked_node_type_id_counts_hashmap_from_node_ids(
+                                    node_ids.as_ref(),
+                                )
+                                .map_or_else(
+                                    |_| "".to_string(),
+                                    |count| {
+                                        if count.is_empty() {
+                                            "".to_string()
+                                        } else {
+                                            format!(
                                         " Its nodes have {}.",
                                         self.graph
                                             .get_unchecked_node_types_description_from_count(count)
                                     )
-                                }
-                                },
-                            )
+                                        }
+                                    },
+                                )
+                        }
+                    } else {
+                        "".to_string()
                     }
                 } else {
                     "".to_string()
-                }
-            } else {
-                "".to_string()
-            },
+                },
             edge_types_counts = if let Some(node_ids) = &node_ids {
                 unsafe {
                     self.graph
@@ -99,12 +100,12 @@ impl ToString for Chain {
                                 if count.is_empty() {
                                     "".to_string()
                                 } else {
-                                format!(
-                                    " Its edges have {}.",
-                                    self.graph
-                                        .get_unchecked_edge_types_description_from_count(count)
-                                )
-                            }
+                                    format!(
+                                        " Its edges have {}.",
+                                        self.graph
+                                            .get_unchecked_edge_types_description_from_count(count)
+                                    )
+                                }
                             },
                         )
                 }

@@ -223,6 +223,8 @@ impl Graph {
     /// * `name`: Option<String> - The name of the graph to be loaded.
     ///
     pub fn from_csv(
+        directed: bool,
+        
         node_type_path: Option<String>,
         node_type_list_separator: Option<char>,
         node_types_column_number: Option<usize>,
@@ -312,7 +314,6 @@ impl Graph {
         verbose: Option<bool>,
         may_have_singletons: Option<bool>,
         may_have_singleton_with_selfloops: Option<bool>,
-        directed: bool,
         name: Option<String>,
     ) -> Result<Graph> {
         if node_type_path.is_none()

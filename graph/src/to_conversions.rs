@@ -313,7 +313,8 @@ impl Graph {
             Some(false),
             Some(false),
             Some(
-                (self.get_number_of_nodes() as EdgeT).pow(2) - self.get_number_of_unique_directed_edges(),
+                (self.get_number_of_nodes() as EdgeT).pow(2)
+                    - self.get_number_of_unique_directed_edges(),
             ),
             true,
             true,
@@ -691,7 +692,12 @@ impl Graph {
                             .map(move |(i, (dst, weights))| {
                                 (
                                     (src as usize) * number_of_destinations + i,
-                                    (src, dst, None, weights.iter().copied().sum::<f32>() + f32::EPSILON),
+                                    (
+                                        src,
+                                        dst,
+                                        None,
+                                        weights.iter().copied().sum::<f32>() + f32::EPSILON,
+                                    ),
                                 )
                             })
                             .collect::<Vec<_>>()

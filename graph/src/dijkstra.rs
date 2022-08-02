@@ -357,14 +357,19 @@ impl ShortestPathsResultBFS {
         first_node_id: NodeT,
         second_node_id: NodeT,
     ) -> Result<f32> {
-        Ok(self.get_predecessors_from_node_id(first_node_id)?
+        Ok(self
+            .get_predecessors_from_node_id(first_node_id)?
             .iter()
             .rev()
-            .zip(self.get_predecessors_from_node_id(second_node_id)?.iter().rev())
+            .zip(
+                self.get_predecessors_from_node_id(second_node_id)?
+                    .iter()
+                    .rev(),
+            )
             .take_while(|(a, b)| a == b)
             .count() as f32)
     }
-    
+
     /// Return Ancestors Jaccard Index.
     ///
     /// # Arguments
@@ -392,7 +397,7 @@ impl ShortestPathsResultBFS {
             .count();
 
         let union_size =
-            first_node_predecessors.len() + second_node_predecessors.len() - intersection_size * 2;
+            first_node_predecessors.len() + second_node_predecessors.len() - intersection_size;
 
         Ok(if union_size.is_zero() {
             0.0

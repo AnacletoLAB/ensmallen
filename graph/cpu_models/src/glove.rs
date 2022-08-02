@@ -1,6 +1,6 @@
 use crate::*;
 use express_measures::dot_product_sequential_unchecked;
-use graph::{Graph, NodeT, ThreadDataRaceAware};
+use graph::{Graph, ThreadDataRaceAware};
 use num::Zero;
 use rayon::prelude::*;
 use vec_rand::splitmix64;
@@ -24,15 +24,11 @@ where
         // the dotproduct of the mean contexted mebedding
         let scale_factor = (embedding_size as f32).sqrt();
 
-        // Allocate and populate the hidden layer
-        let mut hidden_layer = get_random_vector(embedding[0].len(), random_state, scale_factor);
-
         // Update the random state
         random_state = splitmix64(random_state);
 
         // Wrapping the layers into shared structures.
-        let shared_embedding = ThreadDataRaceAware::new(&mut embedding[0]);
-        let shared_hidden_layer = ThreadDataRaceAware::new(hidden_layer.as_mut_slice());
+        let shared_embedding = ThreadDataRaceAware::new(embedding);
 
         let pb = self.get_loading_bar();
 
@@ -51,32 +47,23 @@ where
                     None,
                 )?
                 .map(|(src, dst, freq)| unsafe {
-                    let src_embedding = &mut (*shared_embedding.get())
+                    let src_embedding = &mut (*shared_embedding.get())[0]
                         [(src as usize) * embedding_size..((src as usize) + 1) * embedding_size];
-                    let dst_hidden = &mut (*shared_hidden_layer.get())
+                    let dst_embedding = &mut (*shared_embedding.get())[1]
                         [(dst as usize) * embedding_size..(dst as usize + 1) * embedding_size];
 
-                    let dot =
-                        dot_product_sequential_unchecked(src_embedding, dst_hidden) / scale_factor;
+                    let dot = dot_product_sequential_unchecked(src_embedding, dst_embedding)
+                        / scale_factor;
 
-                    if dot > self.clipping_value || dot < -self.clipping_value {
-                        return 0.0;
-                    }
-
-                    let variation: f32 = (2.0 * freq.powf(self.alpha) * (dot - freq.ln())) as f32;
-
-                    let node_priors =
-                        get_node_priors(graph, &[src as NodeT, dst as NodeT], learning_rate);
-
-                    let src_variation = variation / node_priors[0];
-                    let dst_variation = variation / node_priors[1];
+                    let variation: f32 =
+                        learning_rate * 2.0 * freq.powf(self.alpha) * (dot - freq.ln());
 
                     src_embedding
                         .iter_mut()
-                        .zip(dst_hidden.iter_mut())
+                        .zip(dst_embedding.iter_mut())
                         .for_each(|(src_feature, dst_feature)| {
-                            *src_feature -= *dst_feature * src_variation;
-                            *dst_feature -= *src_feature * dst_variation;
+                            *src_feature -= *dst_feature * variation;
+                            *dst_feature -= *src_feature * variation;
                         });
                     variation.abs()
                 })

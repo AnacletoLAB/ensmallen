@@ -1,5 +1,7 @@
 use super::*;
+use rayon::iter::IntoParallelIterator;
 use rayon::iter::ParallelIterator;
+use std::sync::atomic::{AtomicBool, Ordering};
 
 /// # Boolean Getters
 /// The naming convention we follow is:
@@ -75,6 +77,89 @@ impl Graph {
     ///
     pub fn is_directed(&self) -> bool {
         self.directed
+    }
+
+    /// Returns whether graph is a directed acyclic graph.
+    ///
+    /// # Example
+    /// ```rust
+    /// let directed_string_ppi = graph::test_utilities::load_ppi(true, true, true, true, false, false);
+    /// assert!(!directed_string_ppi.is_directed_acyclic());
+    /// let undirected_string_ppi = graph::test_utilities::load_ppi(true, true, true, false, false, false);
+    /// assert!(!undirected_string_ppi.is_directed_acyclic());
+    /// ```
+    ///
+    pub fn is_directed_acyclic(&self) -> bool {
+        if !self.has_edges() || !self.is_directed() || self.has_selfloops() {
+            return false;
+        }
+        for root_node_id in self.get_root_node_ids() {
+            let nodes_number = self.get_number_of_nodes() as usize;
+            let thread_shared_visited = ThreadDataRaceAware::new(vec![NodeT::MAX; nodes_number]);
+            unsafe {
+                (*thread_shared_visited.value.get())[root_node_id as usize] = root_node_id;
+            }
+
+            let loop_found = AtomicBool::new(false);
+            let mut frontier = vec![root_node_id];
+
+            while !frontier.is_empty() {
+                if loop_found.load(Ordering::Relaxed) {
+                    break;
+                }
+                frontier = frontier
+                    .into_par_iter()
+                    .flat_map_iter(|node_id| unsafe {
+                        self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
+                            .map(move |neighbour_node_id| (node_id, neighbour_node_id))
+                    })
+                    .filter_map(|(src, dst)| {
+                        if unsafe { (*thread_shared_visited.value.get())[dst as usize] }
+                            == NodeT::MAX
+                        {
+                            unsafe {
+                                (*thread_shared_visited.value.get())[dst as usize] = src;
+                            }
+                            // add the node to the nodes to explore
+                            Some(dst)
+                        } else {
+                            // If we went back to the root node, we have surely found
+                            // a cycle.
+                            if root_node_id == dst {
+                                loop_found.store(true, Ordering::Relaxed);
+                            } else {
+                                // We need to check whether we have found a loop.
+                                // To do so, we navigate in the predessors of the `src` and see whether
+                                // we find this destination node `dst` again.
+                                let mut source_predecessor = src;
+                                while unsafe {
+                                    (*thread_shared_visited.value.get())
+                                        [source_predecessor as usize]
+                                        != root_node_id
+                                } {
+                                    // While recursing over the predessors list, we have
+                                    // identified an instance where a predecessor of the
+                                    // initial source node matches with the current destination.
+                                    // This means that we have identified a loop.
+                                    if source_predecessor == dst {
+                                        loop_found.store(true, Ordering::Relaxed);
+                                        break;
+                                    }
+                                    unsafe {
+                                        source_predecessor = (*thread_shared_visited.value.get())[source_predecessor as usize];
+                                    }
+                                }
+                            }
+                            None
+                        }
+                    })
+                    .collect::<Vec<NodeT>>();
+            }
+            if loop_found.load(Ordering::Relaxed) {
+                return false;
+            }
+        }
+        true
     }
 
     /// Returns boolean representing whether graph has weights.

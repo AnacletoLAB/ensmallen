@@ -1,4 +1,4 @@
-use super::MemoryMappedReadOnlyFile;
+use mmap::*;
 use memchr;
 use rayon::iter::plumbing::{bridge_unindexed, UnindexedProducer};
 use rayon::prelude::*;
@@ -9,7 +9,7 @@ pub const READER_CAPACITY: usize = 1 << 17;
 type IterType = (usize, Result<String, String>);
 
 pub struct ParallelLinesWithIndex {
-    mmap: Arc<MemoryMappedReadOnlyFile>,
+    mmap: Arc<MemoryMappedReadOnly>,
     comment_symbol: Option<String>,
     number_of_lines: Option<usize>,
     number_of_rows_to_skip: Option<usize>,
@@ -19,7 +19,7 @@ pub struct ParallelLinesWithIndex {
 impl ParallelLinesWithIndex {
     pub fn new(path: &str) -> Result<ParallelLinesWithIndex, String> {
         Ok(ParallelLinesWithIndex {
-            mmap: Arc::new(MemoryMappedReadOnlyFile::new(path)?),
+            mmap: Arc::new(MemoryMappedReadOnly::new(path)?),
             number_of_lines: None,
             comment_symbol: None,
             number_of_rows_to_skip: None,
@@ -47,7 +47,14 @@ impl ParallelIterator for ParallelLinesWithIndex {
     where
         C: rayon::iter::plumbing::UnindexedConsumer<Self::Item>,
     {
-        let mut data = self.mmap.as_str();
+        let mut data = unsafe{
+            let slice = core::slice::from_raw_parts(
+                self.mmap.get_addr() as *const u8, 
+                self.mmap.len()
+            );
+            std::str::from_utf8_unchecked(slice)
+        };
+
         // Skip the first rows (as specified by the user)
         if let Some(rts) = self.number_of_rows_to_skip {
             for _ in 0..rts {
@@ -78,7 +85,7 @@ impl ParallelIterator for ParallelLinesWithIndex {
 
 #[derive(Debug)]
 struct ParalellLinesProducerWithIndex {
-    mmap: Arc<MemoryMappedReadOnlyFile>,
+    mmap: Arc<MemoryMappedReadOnly>,
     data: &'static str,
     line_count: usize,
     modulus_mask: usize,

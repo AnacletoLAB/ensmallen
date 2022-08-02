@@ -425,8 +425,7 @@ impl Graph {
         src: NodeT,
         edge_type_id: Option<EdgeTypeT>,
     ) -> bool {
-        self
-            .iter_unchecked_edge_type_id_from_source_node_id(src)
+        self.iter_unchecked_edge_type_id_from_source_node_id(src)
             .any(|neighbour_edge_type_id| neighbour_edge_type_id == edge_type_id)
     }
 }

@@ -8,7 +8,9 @@ use types::ThreadDataRaceAware;
 #[pymethods]
 impl Graph {
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, walk_length, quantity, *, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, dense_node_mapping, max_neighbours, normalize_by_degree)"]
+    #[pyo3(
+        text_signature = "($self, walk_length, quantity, *, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, dense_node_mapping, max_neighbours, normalize_by_degree)"
+    )]
     /// Return random walks done on the graph using Rust.
     ///
     /// Parameters
@@ -82,14 +84,16 @@ impl Graph {
         let walk_length = parameters.get_random_walk_length();
         let iter = pe!(self.inner.par_iter_random_walks(quantity, &parameters))?;
         let array = ThreadDataRaceAware {
-            t: PyArray2::new(
-                py.python(),
-                [
-                    quantity as usize * parameters.get_iterations() as usize,
-                    walk_length as usize,
-                ],
-                false,
-            ),
+            t: unsafe {
+                PyArray2::new(
+                    py.python(),
+                    [
+                        quantity as usize * parameters.get_iterations() as usize,
+                        walk_length as usize,
+                    ],
+                    false,
+                )
+            },
         };
         unsafe {
             iter.enumerate().for_each(|(y, vy)| {
@@ -102,7 +106,9 @@ impl Graph {
     }
 
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, *, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, dense_node_mapping, max_neighbours, normalize_by_degree)"]
+    #[pyo3(
+        text_signature = "($self, *, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, dense_node_mapping, max_neighbours, normalize_by_degree)"
+    )]
     /// Return complete random walks done on the graph using Rust.
     ///
     /// Parameters
@@ -170,15 +176,17 @@ impl Graph {
         let walk_length = parameters.get_random_walk_length();
         let iter = pe!(self.inner.par_iter_complete_walks(&parameters))?;
         let array = ThreadDataRaceAware {
-            t: PyArray2::new(
-                py.python(),
-                [
-                    self.inner.get_number_of_unique_source_nodes() as usize
-                        * parameters.get_iterations() as usize,
-                    walk_length as usize,
-                ],
-                false,
-            ),
+            t: unsafe {
+                PyArray2::new(
+                    py.python(),
+                    [
+                        self.inner.get_number_of_unique_source_nodes() as usize
+                            * parameters.get_iterations() as usize,
+                        walk_length as usize,
+                    ],
+                    false,
+                )
+            },
         };
         unsafe {
             iter.enumerate().for_each(|(y, vy)| {

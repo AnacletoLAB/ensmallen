@@ -10,6 +10,10 @@ impl Walklets {
     pub fn new(node2vec: Node2Vec<WalkletsWalkTransformer>) -> Self {
         Self { node2vec }
     }
+
+    pub fn get_window_size(&self) -> usize {
+        self.node2vec.window_size
+    }
 }
 
 impl GraphEmbedder for Walklets {
@@ -26,13 +30,13 @@ impl GraphEmbedder for Walklets {
     }
 
     fn get_embedding_shapes(&self, graph: &graph::Graph) -> Result<Vec<MatrixShape>, String> {
-        Ok(vec![
-            (
-                graph.get_number_of_nodes() as usize,
-                self.node2vec.embedding_size
-            ).into();
-            self.node2vec.window_size
-        ])
+        let mut shapes = Vec::new();
+        for _ in 0..self.node2vec.window_size {
+            for shape in self.node2vec.get_embedding_shapes(graph)? {
+                shapes.push(shape);
+            }
+        }
+        Ok(shapes)
     }
 
     fn get_random_state(&self) -> u64 {
@@ -44,23 +48,13 @@ impl GraphEmbedder for Walklets {
         graph: &graph::Graph,
         embedding: &mut [&mut [f32]],
     ) -> Result<(), String> {
-        if embedding.len() != self.node2vec.window_size {
-            return Err(format!(
-                concat!(
-                    "The expected number of embedding was {}, ",
-                    "like the model window size but was {}."
-                ),
-                self.node2vec.window_size,
-                embedding.len()
-            ));
-        }
         let mut node2vec = self.node2vec.clone();
         node2vec.window_size = 1;
-        (0..self.node2vec.window_size)
-            .zip(embedding.iter_mut())
+        (0..self.get_window_size())
+            .zip(embedding.chunks_mut(2))
             .for_each(|(power, embedding)| {
                 node2vec.walk_transformer = WalkletsWalkTransformer::new(power + 1).unwrap();
-                node2vec.fit_transform(graph, &mut [embedding]).unwrap();
+                node2vec.fit_transform(graph, embedding).unwrap();
             });
         Ok(())
     }

@@ -1,7 +1,8 @@
 use crate::types::*;
 use crate::validation::*;
 use core::fmt::Debug;
-use core::intrinsics::unlikely;
+
+use num_traits::Float;
 use rayon::prelude::*;
 
 /// Returns the cosine similarity between the two provided vectors computed sequentially.
@@ -14,14 +15,15 @@ use rayon::prelude::*;
 /// If the two features have different sizes, we will compute
 /// the cosine similarity upwards to when the minimum size.
 /// No warning will be raised.
-pub unsafe fn cosine_similarity_sequential_unchecked<F: ThreadFloat>(
+pub unsafe fn cosine_similarity_sequential_unchecked<R: Float, F: Coerced<R>>(
     src_features: &[F],
     dst_features: &[F],
-) -> (F, F, F) {
+) -> (R, R, R) {
     let (total_dot_products, total_squared_src_features, total_squared_dst_features) = src_features
         .iter()
         .zip(dst_features.iter())
-        .map(|(&src_feature, &dst_feature)| {
+        .map(|(&src_feature, &dst_feature)| (src_feature.coerce_into(), dst_feature.coerce_into()))
+        .map(|(src_feature, dst_feature)| {
             (
                 src_feature * dst_feature,
                 src_feature * src_feature,
@@ -44,7 +46,7 @@ pub unsafe fn cosine_similarity_sequential_unchecked<F: ThreadFloat>(
     let dst_features_norm = total_squared_dst_features.sqrt();
 
     (
-        total_dot_products / (src_features_norm * dst_features_norm + F::epsilon()),
+        total_dot_products / (src_features_norm * dst_features_norm + R::epsilon()),
         src_features_norm,
         dst_features_norm,
     )
@@ -101,10 +103,10 @@ pub unsafe fn cosine_similarity_parallel_unchecked<F: ThreadFloat>(
 /// # Raises
 /// * If one of the two vectors are empty.
 /// * If the two vectors have different sizes.
-pub fn cosine_similarity_sequential<F: ThreadFloat>(
+pub fn cosine_similarity_sequential<R: Float, F: Coerced<R>>(
     src_features: &[F],
     dst_features: &[F],
-) -> Result<F, String> {
+) -> Result<R, String> {
     validate_features(src_features, dst_features)?;
     Ok(unsafe { cosine_similarity_sequential_unchecked(src_features, dst_features).0 })
 }
@@ -143,8 +145,12 @@ pub fn cosine_similarity_parallel<F: ThreadFloat>(
 /// # Safety
 /// If the source and destination indices have values higher
 /// than the provided matrix, the method will panic.
-pub unsafe fn cosine_similarity_from_indices_unchecked<F: ThreadFloat, I: ThreadUnsigned>(
-    similarities: &mut [F],
+pub unsafe fn cosine_similarity_from_indices_unchecked<
+    R: Float + Send + Sync,
+    F: Coerced<R>,
+    I: ThreadUnsigned,
+>(
+    similarities: &mut [R],
     matrix: &[F],
     sources: &[I],
     destinations: &[I],
@@ -165,10 +171,6 @@ where
         .for_each(|(similarity, (src, dst))| {
             let src: usize = src.try_into().unwrap();
             let dst: usize = dst.try_into().unwrap();
-
-            if unlikely(src == dst) {
-                *similarity = F::one();
-            }
 
             *similarity = cosine_similarity_sequential_unchecked(
                 &matrix[src * dimension..(src + 1) * dimension],

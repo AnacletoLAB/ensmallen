@@ -38,6 +38,8 @@ use crate::{utils::ItersWrapper, EdgeFileReader, EdgeFileWriter, Result, WeightT
 /// * `name`: Option<String> - The name of the graph to display in the loading bar.
 pub fn filter_duplicates_from_edge_list(
     original_edge_path: &str,
+    target_edge_path: &str,
+    
     original_edge_list_separator: Option<char>,
     original_edge_list_header: Option<bool>,
     original_edge_list_support_balanced_quotes: Option<bool>,
@@ -49,7 +51,6 @@ pub fn filter_duplicates_from_edge_list(
     original_edge_list_edge_type_column_number: Option<usize>,
     original_edge_list_weights_column: Option<String>,
     original_edge_list_weights_column_number: Option<usize>,
-    target_edge_path: &str,
     target_edge_list_separator: Option<char>,
     target_edge_list_header: Option<bool>,
     target_edge_list_sources_column_number: Option<usize>,

@@ -13,7 +13,7 @@ pub type NodeTypeT = u32;
 /// Type used to index the Edges.
 pub type EdgeT = u64;
 /// Type used to index the Edge Types.
-pub type EdgeTypeT = u32;
+pub type EdgeTypeT = u16;
 /// Type used for the weights of the edges.
 pub type WeightT = f32;
 /// Type used for the parameters of the walk such as the return weight (p),

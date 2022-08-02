@@ -1,8 +1,12 @@
+use crate::absolute_distance;
 use crate::types::*;
 use crate::validation::*;
 use core::fmt::Debug;
-use core::intrinsics::unlikely;
+use std::iter::Sum;
+use num_traits::Float;
 use rayon::prelude::*;
+use std::ops::Mul;
+use std::ops::Sub;
 
 /// Returns the squared euclidean distance between the two provided vectors computed sequentially.
 ///
@@ -14,14 +18,18 @@ use rayon::prelude::*;
 /// If the two features have different sizes, we will compute
 /// the squared euclidean distance upwards to when the minimum size.
 /// No warning will be raised.
-pub unsafe fn squared_euclidean_distance_sequential_unchecked<F: ThreadFloat>(
+pub unsafe fn squared_euclidean_distance_sequential_unchecked<
+    F: Mul<Output = F> + Sub<Output = F> + PartialOrd + Sum + Copy,
+>(
     src_features: &[F],
     dst_features: &[F],
 ) -> F {
     src_features
         .iter()
         .zip(dst_features.iter())
-        .map(|(&src_feature, &dst_feature)| src_feature * src_feature - dst_feature * dst_feature)
+        .map(|(&src_feature, &dst_feature)| {
+            absolute_distance(src_feature * src_feature, dst_feature * dst_feature)
+        })
         .sum()
 }
 
@@ -35,11 +43,13 @@ pub unsafe fn squared_euclidean_distance_sequential_unchecked<F: ThreadFloat>(
 /// If the two features have different sizes, we will compute
 /// the euclidean distance upwards to when the minimum size.
 /// No warning will be raised.
-pub unsafe fn euclidean_distance_sequential_unchecked<F: ThreadFloat>(
+pub unsafe fn euclidean_distance_sequential_unchecked<R: Float, F: Coerced<R>>(
     src_features: &[F],
     dst_features: &[F],
-) -> F {
-    squared_euclidean_distance_sequential_unchecked(src_features, dst_features).sqrt()
+) -> R {
+    squared_euclidean_distance_sequential_unchecked(src_features, dst_features)
+        .coerce_into()
+        .sqrt()
 }
 
 /// Returns the squared euclidean distance between the two provided vectors computed in parallel.
@@ -52,14 +62,18 @@ pub unsafe fn euclidean_distance_sequential_unchecked<F: ThreadFloat>(
 /// If the two features have different sizes, we will compute
 /// the squared euclidean distance upwards to when the minimum size.
 /// No warning will be raised.
-pub unsafe fn squared_euclidean_distance_parallel_unchecked<F: ThreadFloat>(
+pub unsafe fn squared_euclidean_distance_parallel_unchecked<
+    F: Mul<Output = F> + Sub<Output = F> + Send + Sync + PartialOrd + Sum + Copy,
+>(
     src_features: &[F],
     dst_features: &[F],
 ) -> F {
     src_features
         .par_iter()
         .zip(dst_features.par_iter())
-        .map(|(&src_feature, &dst_feature)| src_feature * src_feature - dst_feature * dst_feature)
+        .map(|(&src_feature, &dst_feature)| {
+            absolute_distance(src_feature * src_feature, dst_feature * dst_feature)
+        })
         .sum()
 }
 
@@ -73,11 +87,11 @@ pub unsafe fn squared_euclidean_distance_parallel_unchecked<F: ThreadFloat>(
 /// If the two features have different sizes, we will compute
 /// the euclidean distance upwards to when the minimum size.
 /// No warning will be raised.
-pub unsafe fn euclidean_distance_parallel_unchecked<F: ThreadFloat>(
+pub unsafe fn euclidean_distance_parallel_unchecked<R: Float, F: Coerced<R>>(
     src_features: &[F],
     dst_features: &[F],
-) -> F {
-    squared_euclidean_distance_parallel_unchecked(src_features, dst_features).sqrt()
+) -> R {
+    squared_euclidean_distance_parallel_unchecked(src_features, dst_features).coerce_into().sqrt()
 }
 
 /// Returns the euclidean distance between the two provided vectors computed sequentially.
@@ -89,10 +103,10 @@ pub unsafe fn euclidean_distance_parallel_unchecked<F: ThreadFloat>(
 /// # Raises
 /// * If one of the two vectors are empty.
 /// * If the two vectors have different sizes.
-pub fn euclidean_distance_sequential<F: ThreadFloat>(
+pub fn euclidean_distance_sequential<R: Float, F: Coerced<R>>(
     src_features: &[F],
     dst_features: &[F],
-) -> Result<F, String> {
+) -> Result<R, String> {
     validate_features(src_features, dst_features)?;
     Ok(unsafe { euclidean_distance_sequential_unchecked(src_features, dst_features) })
 }
@@ -106,10 +120,10 @@ pub fn euclidean_distance_sequential<F: ThreadFloat>(
 /// # Raises
 /// * If one of the two vectors are empty.
 /// * If the two vectors have different sizes.
-pub fn euclidean_distance_parallel<F: ThreadFloat>(
+pub fn euclidean_distance_parallel<R: Float, F: Coerced<R>>(
     src_features: &[F],
     dst_features: &[F],
-) -> Result<F, String> {
+) -> Result<R, String> {
     validate_features(src_features, dst_features)?;
     Ok(unsafe { euclidean_distance_parallel_unchecked(src_features, dst_features) })
 }
@@ -131,7 +145,11 @@ pub fn euclidean_distance_parallel<F: ThreadFloat>(
 /// # Safety
 /// If the source and destination indices have values higher
 /// than the provided matrix, the method will panic.
-pub unsafe fn squared_euclidean_distance_from_indices_unchecked<F: ThreadFloat, I: ThreadUnsigned>(
+pub unsafe fn squared_euclidean_distance_from_indices_unchecked<
+    R: Float,
+    F: Coerced<R>,
+    I: ThreadUnsigned,
+>(
     similarities: &mut [F],
     matrix: &[F],
     sources: &[I],
@@ -153,10 +171,6 @@ where
         .for_each(|(similarity, (src, dst))| {
             let src: usize = src.try_into().unwrap();
             let dst: usize = dst.try_into().unwrap();
-
-            if unlikely(src == dst) {
-                *similarity = F::one();
-            }
 
             *similarity = squared_euclidean_distance_sequential_unchecked(
                 &matrix[src * dimension..(src + 1) * dimension],
@@ -169,7 +183,7 @@ where
 /// Write the euclidean distance in the provided slice.
 ///
 /// # Arguments
-/// * `similarities`: &mut [F] - Vector where to store the computed similarities.
+/// * `distances`: &mut [F] - Vector where to store the computed distances.
 /// * `matrix`: &[F] - Matrix containing the feaures.
 /// * `sources`: &[I] - Indices of the source features.
 /// * `destinations`: &[I] - Indices of the destination features.
@@ -177,14 +191,18 @@ where
 ///
 /// # Raises
 /// * If the matrix is not compatible with the provided dimensions.
-/// * If the provided similarities are not of the same size as the destination or sources.
+/// * If the provided distances are not of the same size as the destination or sources.
 /// * If the provided dimension is zero.
 ///
 /// # Safety
 /// If the source and destination indices have values higher
 /// than the provided matrix, the method will panic.
-pub unsafe fn euclidean_distance_from_indices_unchecked<F: ThreadFloat, I: ThreadUnsigned>(
-    similarities: &mut [F],
+pub unsafe fn euclidean_distance_from_indices_unchecked<
+    R: Float + Send + Sync,
+    F: Coerced<R>,
+    I: ThreadUnsigned,
+>(
+    distances: &mut [R],
     matrix: &[F],
     sources: &[I],
     destinations: &[I],
@@ -193,8 +211,8 @@ pub unsafe fn euclidean_distance_from_indices_unchecked<F: ThreadFloat, I: Threa
 where
     <I as TryInto<usize>>::Error: Debug,
 {
-    validate_features_from_indices(similarities, matrix, sources, destinations, dimension)?;
-    similarities
+    validate_features_from_indices(distances, matrix, sources, destinations, dimension)?;
+    distances
         .par_iter_mut()
         .zip(
             sources
@@ -202,15 +220,11 @@ where
                 .copied()
                 .zip(destinations.par_iter().copied()),
         )
-        .for_each(|(similarity, (src, dst))| {
+        .for_each(|(distance, (src, dst))| {
             let src: usize = src.try_into().unwrap();
             let dst: usize = dst.try_into().unwrap();
 
-            if unlikely(src == dst) {
-                *similarity = F::one();
-            }
-
-            *similarity = euclidean_distance_sequential_unchecked(
+            *distance = euclidean_distance_sequential_unchecked(
                 &matrix[src * dimension..(src + 1) * dimension],
                 &matrix[dst * dimension..(dst + 1) * dimension],
             );

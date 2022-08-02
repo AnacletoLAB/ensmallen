@@ -4,7 +4,7 @@ use numpy::PyArray2;
 ///
 #[pyclass]
 #[derive(Debug, Clone)]
-#[text_signature = "(*, embedding_size)"]
+#[pyo3(text_signature = "(*, embedding_size)")]
 pub struct WeightedSPINE {
     pub inner: cpu_models::WeightedSPINE,
 }
@@ -42,7 +42,7 @@ impl WeightedSPINE {
 #[pymethods]
 impl WeightedSPINE {
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, graph, *, verbose)"]
+    #[pyo3(text_signature = "($self, graph, *, verbose)")]
     /// Return numpy embedding with Weighted SPINE node embedding.
     ///
     /// Do note that the embedding is returned transposed.
@@ -67,7 +67,8 @@ impl WeightedSPINE {
 
         let rows_number = graph.inner.get_number_of_nodes() as usize;
         let columns_number = self.inner.get_embedding_size();
-        let embedding = PyArray2::new(gil.python(), [columns_number, rows_number], false);
+        let embedding =
+            unsafe { PyArray2::new(gil.python(), [columns_number, rows_number], false) };
 
         let embedding_slice = unsafe { embedding.as_slice_mut().unwrap() };
 

@@ -489,7 +489,7 @@ impl Graph {
         graph.replace_edge_type_name_from_edge_node_type_names_inplace(
             edge_type_name,
             source_node_type_names,
-            destination_node_type_names
+            destination_node_type_names,
         )?;
         Ok(graph)
     }

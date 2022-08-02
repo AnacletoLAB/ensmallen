@@ -6,6 +6,8 @@ pub(crate) struct Node2VecBinding<W>
 where
     W: WalkTransformer,
 {
+    central_nodes_embedding_path: Option<String>,
+    contextual_nodes_embedding_path: Option<String>,
     node2vec: Node2Vec<W>,
 }
 
@@ -15,6 +17,13 @@ where
 {
     fn get_model(&self) -> &Node2Vec<W> {
         &self.node2vec
+    }
+
+    fn get_paths(&self) -> Vec<Option<String>> {
+        vec![
+            self.central_nodes_embedding_path.clone(),
+            self.contextual_nodes_embedding_path.clone(),
+        ]
     }
 }
 
@@ -37,6 +46,8 @@ where
                 "learning_rate",
                 "learning_rate_decay",
                 "alpha",
+                "central_nodes_embedding_path",
+                "contextual_nodes_embedding_path",
                 "stochastic_downsample_by_degree",
                 "normalize_learning_rate_by_degree",
                 "use_scale_free_distribution",
@@ -48,6 +59,16 @@ where
         let parameters = pe!(build_walk_parameters(kwargs))?;
 
         Ok(Self {
+            central_nodes_embedding_path: extract_value_rust_result!(
+                kwargs,
+                "central_nodes_embedding_path",
+                String
+            ),
+            contextual_nodes_embedding_path: extract_value_rust_result!(
+                kwargs,
+                "contextual_nodes_embedding_path",
+                String
+            ),
             node2vec: pe!(Node2Vec::new(
                 model_type,
                 W::default(),
@@ -71,6 +92,8 @@ where
 
 #[derive(Debug, Clone)]
 pub(crate) struct WalkletsBinding {
+    central_nodes_embedding_path: Option<String>,
+    contextual_nodes_embedding_path: Option<String>,
     walklets: Walklets,
 }
 
@@ -78,11 +101,57 @@ impl GraphEmbedderBinding<Walklets> for WalkletsBinding {
     fn get_model(&self) -> &Walklets {
         &self.walklets
     }
+
+    fn get_paths(&self) -> Vec<Option<String>> {
+        (0..self.walklets.get_window_size())
+            .flat_map(|window_size| {
+                vec![
+                    self.central_nodes_embedding_path
+                        .clone()
+                        .map(|path| path.replace("{window_size}", &window_size.to_string())),
+                    self.contextual_nodes_embedding_path
+                        .clone()
+                        .map(|path| path.replace("{window_size}", &window_size.to_string())),
+                ]
+            })
+            .collect()
+    }
 }
 
 impl WalkletsBinding {
     pub(crate) fn new(model_type: Node2VecModels, py_kwargs: Option<&PyDict>) -> PyResult<Self> {
+        let py = pyo3::Python::acquire_gil();
+        let kwargs = normalize_kwargs!(py_kwargs, py.python());
+        let central_nodes_embedding_path =
+            extract_value_rust_result!(kwargs, "central_nodes_embedding_path", String);
+        let contextual_nodes_embedding_path =
+            extract_value_rust_result!(kwargs, "contextual_nodes_embedding_path", String);
+        if let Some(central_nodes_embedding_path) = central_nodes_embedding_path.as_ref() {
+            if !central_nodes_embedding_path.contains("{window_size}") {
+                return pe!(Err(format!(
+                    concat!(
+                        "The provided central_nodes_embedding_path parameter `{}` ",
+                        "does not contain the expected `{{window_size}}` placeholder."
+                    ),
+                    central_nodes_embedding_path
+                )));
+            }
+        }
+        if let Some(contextual_nodes_embedding_path) = contextual_nodes_embedding_path.as_ref() {
+            if !contextual_nodes_embedding_path.contains("{window_size}") {
+                return pe!(Err(format!(
+                    concat!(
+                        "The provided contextual_nodes_embedding_path parameter `{}` ",
+                        "does not contain the expected `{{window_size}}` placeholder."
+                    ),
+                    contextual_nodes_embedding_path
+                )));
+            }
+        }
+
         Ok(Self {
+            central_nodes_embedding_path,
+            contextual_nodes_embedding_path,
             walklets: Walklets::new(Node2VecBinding::new(model_type, py_kwargs)?.node2vec),
         })
     }
@@ -90,7 +159,9 @@ impl WalkletsBinding {
 
 #[pyclass]
 #[derive(Debug, Clone)]
-#[text_signature = "(*, embedding_size, window_size, number_of_negative_samples, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, max_neighbours, normalize_by_degree, epochs, learning_rate, learning_rate_decay, stochastic_downsample_by_degree, normalize_learning_rate_by_degree, use_scale_free_distribution, clipping_value, verbose)"]
+#[pyo3(
+    text_signature = "(*, embedding_size, window_size, number_of_negative_samples, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, max_neighbours, normalize_by_degree, epochs, learning_rate, learning_rate_decay, central_nodes_embedding_path, contextual_nodes_embedding_path, stochastic_downsample_by_degree, normalize_learning_rate_by_degree, use_scale_free_distribution, clipping_value, verbose)"
+)]
 pub struct CBOW {
     inner: Node2VecBinding<IdentifyWalkTransformer>,
 }
@@ -150,6 +221,14 @@ impl CBOW {
     ///     Learning rate of the model.
     /// learning_rate_decay: float = 0.9
     ///     Amount of learning rate decay for each epoch.
+    /// central_nodes_embedding_path: Optional[str] = None
+    ///     Path where to mmap and store the central nodes embedding.
+    ///     This is necessary to embed large graphs whose embedding will not
+    ///     fit into the available main memory.
+    /// contextual_nodes_embedding_path: Optional[str] = None
+    ///     Path where to mmap and store the central nodes embedding.
+    ///     This is necessary to embed large graphs whose embedding will not
+    ///     fit into the available main memory.
     /// stochastic_downsample_by_degree: Optional[bool]
     ///     Randomly skip samples with probability proportional to the degree of the central node. By default false.
     /// normalize_learning_rate_by_degree: Optional[bool]
@@ -171,21 +250,23 @@ impl CBOW {
 #[pymethods]
 impl CBOW {
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, graph)"]
+    #[pyo3(text_signature = "($self, graph)")]
     /// Return numpy embedding with CBOW node embedding.
     ///
     /// Parameters
     /// ---------
     /// graph: Graph
     ///     The graph to embed.
-    fn fit_transform(&self, graph: &Graph) -> PyResult<Py<PyAny>> {
-        Ok(self.inner.fit_transform(graph)?.first().unwrap().to_owned())
+    fn fit_transform(&self, graph: &Graph) -> PyResult<Vec<Py<PyAny>>> {
+        self.inner.fit_transform(graph)
     }
 }
 
 #[pyclass]
 #[derive(Debug, Clone)]
-#[text_signature = "(*, embedding_size, window_size, number_of_negative_samples, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, max_neighbours, normalize_by_degree, epochs, learning_rate, learning_rate_decay, stochastic_downsample_by_degree, normalize_learning_rate_by_degree, use_scale_free_distribution, clipping_value, verbose)"]
+#[pyo3(
+    text_signature = "(*, embedding_size, window_size, number_of_negative_samples, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, max_neighbours, normalize_by_degree, epochs, learning_rate, learning_rate_decay, central_nodes_embedding_path, contextual_nodes_embedding_path, stochastic_downsample_by_degree, normalize_learning_rate_by_degree, use_scale_free_distribution, clipping_value, verbose)"
+)]
 pub struct GloVe {
     inner: Node2VecBinding<IdentifyWalkTransformer>,
 }
@@ -245,6 +326,14 @@ impl GloVe {
     ///     Learning rate of the model.
     /// learning_rate_decay: float = 0.9
     ///     Amount of learning rate decay for each epoch.
+    /// central_nodes_embedding_path: Optional[str] = None
+    ///     Path where to mmap and store the central nodes embedding.
+    ///     This is necessary to embed large graphs whose embedding will not
+    ///     fit into the available main memory.
+    /// contextual_nodes_embedding_path: Optional[str] = None
+    ///     Path where to mmap and store the central nodes embedding.
+    ///     This is necessary to embed large graphs whose embedding will not
+    ///     fit into the available main memory.
     /// stochastic_downsample_by_degree: Optional[bool]
     ///     Randomly skip samples with probability proportional to the degree of the central node. By default false.
     /// normalize_learning_rate_by_degree: Optional[bool]
@@ -266,21 +355,23 @@ impl GloVe {
 #[pymethods]
 impl GloVe {
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, graph)"]
+    #[pyo3(text_signature = "($self, graph)")]
     /// Return numpy embedding with GloVe node embedding.
     ///
     /// Parameters
     /// ---------
     /// graph: Graph
     ///     The graph to embed.
-    fn fit_transform(&self, graph: &Graph) -> PyResult<Py<PyAny>> {
-        Ok(self.inner.fit_transform(graph)?.first().unwrap().to_owned())
+    fn fit_transform(&self, graph: &Graph) -> PyResult<Vec<Py<PyAny>>> {
+        self.inner.fit_transform(graph)
     }
 }
 
 #[pyclass]
 #[derive(Debug, Clone)]
-#[text_signature = "(*, embedding_size, window_size, number_of_negative_samples, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, max_neighbours, normalize_by_degree, epochs, learning_rate, learning_rate_decay, stochastic_downsample_by_degree, normalize_learning_rate_by_degree, use_scale_free_distribution, clipping_value, verbose)"]
+#[pyo3(
+    text_signature = "(*, embedding_size, window_size, number_of_negative_samples, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, max_neighbours, normalize_by_degree, epochs, learning_rate, learning_rate_decay, central_nodes_embedding_path, contextual_nodes_embedding_path, stochastic_downsample_by_degree, normalize_learning_rate_by_degree, use_scale_free_distribution, clipping_value, verbose)"
+)]
 pub struct SkipGram {
     inner: Node2VecBinding<IdentifyWalkTransformer>,
 }
@@ -340,6 +431,14 @@ impl SkipGram {
     ///     Learning rate of the model.
     /// learning_rate_decay: float = 0.9
     ///     Amount of learning rate decay for each epoch.
+    /// central_nodes_embedding_path: Optional[str] = None
+    ///     Path where to mmap and store the central nodes embedding.
+    ///     This is necessary to embed large graphs whose embedding will not
+    ///     fit into the available main memory.
+    /// contextual_nodes_embedding_path: Optional[str] = None
+    ///     Path where to mmap and store the central nodes embedding.
+    ///     This is necessary to embed large graphs whose embedding will not
+    ///     fit into the available main memory.
     /// stochastic_downsample_by_degree: Optional[bool]
     ///     Randomly skip samples with probability proportional to the degree of the central node. By default false.
     /// normalize_learning_rate_by_degree: Optional[bool]
@@ -361,21 +460,23 @@ impl SkipGram {
 #[pymethods]
 impl SkipGram {
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, graph)"]
+    #[pyo3(text_signature = "($self, graph)")]
     /// Return numpy embedding with SkipGram node embedding.
     ///
     /// Parameters
     /// ---------
     /// graph: Graph
     ///     The graph to embed.
-    fn fit_transform(&self, graph: &Graph) -> PyResult<Py<PyAny>> {
-        Ok(self.inner.fit_transform(graph)?.first().unwrap().to_owned())
+    fn fit_transform(&self, graph: &Graph) -> PyResult<Vec<Py<PyAny>>> {
+        self.inner.fit_transform(graph)
     }
 }
 
 #[pyclass]
 #[derive(Debug, Clone)]
-#[text_signature = "(*, embedding_size, window_size, number_of_negative_samples, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, max_neighbours, normalize_by_degree, epochs, learning_rate, learning_rate_decay, stochastic_downsample_by_degree, normalize_learning_rate_by_degree, use_scale_free_distribution, clipping_value, verbose)"]
+#[pyo3(
+    text_signature = "(*, embedding_size, window_size, number_of_negative_samples, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, max_neighbours, normalize_by_degree, epochs, learning_rate, learning_rate_decay, central_nodes_embedding_path, contextual_nodes_embedding_path, stochastic_downsample_by_degree, normalize_learning_rate_by_degree, use_scale_free_distribution, clipping_value, verbose)"
+)]
 pub struct WalkletsCBOW {
     inner: WalkletsBinding,
 }
@@ -435,6 +536,18 @@ impl WalkletsCBOW {
     ///     Learning rate of the model.
     /// learning_rate_decay: float = 0.9
     ///     Amount of learning rate decay for each epoch.
+    /// central_nodes_embedding_path: Optional[str] = None
+    ///     Path where to mmap and store the central nodes embedding.
+    ///     If provided, we expect the path to contain the substring `{window_size}` which
+    ///     will be replaced with the i-th window size embedding that is being computed.
+    ///     This is necessary to embed large graphs whose embedding will not
+    ///     fit into the available main memory.
+    /// contextual_nodes_embedding_path: Optional[str] = None
+    ///     Path where to mmap and store the central nodes embedding.
+    ///     If provided, we expect the path to contain the substring `{window_size}` which
+    ///     will be replaced with the i-th window size embedding that is being computed.
+    ///     This is necessary to embed large graphs whose embedding will not
+    ///     fit into the available main memory.
     /// stochastic_downsample_by_degree: Optional[bool]
     ///     Randomly skip samples with probability proportional to the degree of the central node. By default false.
     /// normalize_learning_rate_by_degree: Optional[bool]
@@ -456,7 +569,7 @@ impl WalkletsCBOW {
 #[pymethods]
 impl WalkletsCBOW {
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, graph)"]
+    #[pyo3(text_signature = "($self, graph)")]
     /// Return numpy embedding with Walklets CBOW node embedding.
     ///
     /// Parameters
@@ -470,7 +583,9 @@ impl WalkletsCBOW {
 
 #[pyclass]
 #[derive(Debug, Clone)]
-#[text_signature = "(*, embedding_size, window_size, number_of_negative_samples, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, max_neighbours, normalize_by_degree, epochs, learning_rate, learning_rate_decay, stochastic_downsample_by_degree, normalize_learning_rate_by_degree, use_scale_free_distribution, clipping_value, verbose)"]
+#[pyo3(
+    text_signature = "(*, embedding_size, window_size, number_of_negative_samples, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, max_neighbours, normalize_by_degree, epochs, learning_rate, learning_rate_decay, central_nodes_embedding_path, contextual_nodes_embedding_path, stochastic_downsample_by_degree, normalize_learning_rate_by_degree, use_scale_free_distribution, clipping_value, verbose)"
+)]
 pub struct WalkletsSkipGram {
     inner: WalkletsBinding,
 }
@@ -530,6 +645,18 @@ impl WalkletsSkipGram {
     ///     Learning rate of the model.
     /// learning_rate_decay: float = 0.9
     ///     Amount of learning rate decay for each epoch.
+    /// central_nodes_embedding_path: Optional[str] = None
+    ///     Path where to mmap and store the central nodes embedding.
+    ///     If provided, we expect the path to contain the substring `{window_size}` which
+    ///     will be replaced with the i-th window size embedding that is being computed.
+    ///     This is necessary to embed large graphs whose embedding will not
+    ///     fit into the available main memory.
+    /// contextual_nodes_embedding_path: Optional[str] = None
+    ///     Path where to mmap and store the central nodes embedding.
+    ///     If provided, we expect the path to contain the substring `{window_size}` which
+    ///     will be replaced with the i-th window size embedding that is being computed.
+    ///     This is necessary to embed large graphs whose embedding will not
+    ///     fit into the available main memory.
     /// stochastic_downsample_by_degree: Optional[bool]
     ///     Randomly skip samples with probability proportional to the degree of the central node. By default false.
     /// normalize_learning_rate_by_degree: Optional[bool]
@@ -551,7 +678,7 @@ impl WalkletsSkipGram {
 #[pymethods]
 impl WalkletsSkipGram {
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, graph)"]
+    #[pyo3(text_signature = "($self, graph)")]
     /// Return numpy embedding with Walklets SkipGram node embedding.
     ///
     /// Parameters
@@ -565,7 +692,9 @@ impl WalkletsSkipGram {
 
 #[pyclass]
 #[derive(Debug, Clone)]
-#[text_signature = "(*, embedding_size, window_size, number_of_negative_samples, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, max_neighbours, normalize_by_degree, epochs, learning_rate, learning_rate_decay, stochastic_downsample_by_degree, normalize_learning_rate_by_degree, use_scale_free_distribution, clipping_value, verbose)"]
+#[pyo3(
+    text_signature = "(*, embedding_size, window_size, number_of_negative_samples, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, max_neighbours, normalize_by_degree, epochs, learning_rate, learning_rate_decay, central_nodes_embedding_path, contextual_nodes_embedding_path, stochastic_downsample_by_degree, normalize_learning_rate_by_degree, use_scale_free_distribution, clipping_value, verbose)"
+)]
 pub struct WalkletsGloVe {
     inner: WalkletsBinding,
 }
@@ -625,6 +754,18 @@ impl WalkletsGloVe {
     ///     Learning rate of the model.
     /// learning_rate_decay: float = 0.9
     ///     Amount of learning rate decay for each epoch.
+    /// central_nodes_embedding_path: Optional[str] = None
+    ///     Path where to mmap and store the central nodes embedding.
+    ///     If provided, we expect the path to contain the substring `{window_size}` which
+    ///     will be replaced with the i-th window size embedding that is being computed.
+    ///     This is necessary to embed large graphs whose embedding will not
+    ///     fit into the available main memory.
+    /// contextual_nodes_embedding_path: Optional[str] = None
+    ///     Path where to mmap and store the central nodes embedding.
+    ///     If provided, we expect the path to contain the substring `{window_size}` which
+    ///     will be replaced with the i-th window size embedding that is being computed.
+    ///     This is necessary to embed large graphs whose embedding will not
+    ///     fit into the available main memory.
     /// stochastic_downsample_by_degree: Optional[bool]
     ///     Randomly skip samples with probability proportional to the degree of the central node. By default false.
     /// normalize_learning_rate_by_degree: Optional[bool]
@@ -646,7 +787,7 @@ impl WalkletsGloVe {
 #[pymethods]
 impl WalkletsGloVe {
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, graph)"]
+    #[pyo3(text_signature = "($self, graph)")]
     /// Return numpy embedding with Walklets GloVe node embedding.
     ///
     /// Parameters

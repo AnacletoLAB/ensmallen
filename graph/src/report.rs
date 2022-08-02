@@ -81,10 +81,14 @@ impl Graph {
             "directed_edges_number",
             self.get_number_of_directed_edges().to_string(),
         );
-        report.insert("selfloops_number", self.get_number_of_selfloops().to_string());
+        report.insert(
+            "selfloops_number",
+            self.get_number_of_selfloops().to_string(),
+        );
         report.insert(
             "singleton_nodes_with_selfloops_number",
-            self.get_number_of_singleton_nodes_with_selfloops().to_string(),
+            self.get_number_of_singleton_nodes_with_selfloops()
+                .to_string(),
         );
         report.insert("multigraph", self.is_multigraph().to_string());
         report.insert(
@@ -1832,7 +1836,9 @@ impl Graph {
                 "than the fact that the node is in the graph. ",
                 "The graph contains {homogeneous_node_types_number}.</p>"
             ),
-            homogeneous_node_types_number = match self.get_number_of_homogeneous_node_types().unwrap()
+            homogeneous_node_types_number = match self
+                .get_number_of_homogeneous_node_types()
+                .unwrap()
             {
                 1 => format!(
                     "a homogeneous node type, which is {}",

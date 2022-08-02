@@ -32,16 +32,7 @@ where
         let mut learning_rate = self.learning_rate;
         let nodes_number = graph.get_number_of_nodes();
 
-        // Populate the embedding layer with random uniform value
-        // This matrix has size:
-        // height = number of nodes in the graph
-        // width  = number of features in embedding
-        let mut hidden = get_random_vector(embedding[0].len(), random_state, scale_factor);
-        random_state = splitmix64(random_state);
-
-        let mut hidden_ref = hidden.as_mut_slice();
-        let shared_hidden = ThreadDataRaceAware::new(&mut hidden_ref);
-        let shared_embedding = ThreadDataRaceAware::new(&mut embedding[0]);
+        let shared_embedding = ThreadDataRaceAware::new(embedding);
 
         // Depending whether verbosity was requested by the user
         // we create or not a visible progress bar to show the progress
@@ -49,11 +40,11 @@ where
         let pb = self.get_progress_bar();
 
         // Create the closure to apply a gradient to a provided node's embedding
-        let update_embedding = |node_id: NodeT, variation: &[f32]| {
+        let update_central_node_embedding = |node_id: NodeT, variation: &[f32]| {
             let node_id = node_id as usize;
             unsafe {
                 element_wise_addition_inplace(
-                    &mut (*shared_embedding.get())
+                    &mut (*shared_embedding.get())[0]
                         [node_id * self.embedding_size..(node_id + 1) * self.embedding_size],
                     variation,
                 )
@@ -61,11 +52,11 @@ where
         };
 
         // Create the closure to apply a gradient to a provided node's hidden layer weights
-        let update_hidden = |node_id: NodeT, variation: &[f32], weight: f32| {
+        let update_contextual_node_embedding = |node_id: NodeT, variation: &[f32], weight: f32| {
             let node_id = node_id as usize;
             unsafe {
                 element_wise_weighted_addition_inplace(
-                    &mut (*shared_hidden.get())
+                    &mut (*shared_embedding.get())[1]
                         [node_id * self.embedding_size..(node_id + 1) * self.embedding_size],
                     variation,
                     weight,
@@ -74,19 +65,19 @@ where
         };
 
         // We define a closure that returns a reference to the embedding of the given node.
-        let get_node_embedding = |node_id: NodeT| {
+        let get_central_node_embedding = |node_id: NodeT| {
             let node_id = node_id as usize;
             unsafe {
-                &(*shared_embedding.get())
+                &(*shared_embedding.get())[0]
                     [(node_id * self.embedding_size)..((node_id + 1) * self.embedding_size)]
             }
         };
 
         // We define a closure that returns a reference to the hidden of the given node.
-        let get_node_hidden = |node_id: NodeT| {
+        let get_contextual_node_embedding = |node_id: NodeT| {
             let node_id = node_id as usize;
             unsafe {
-                &(*shared_hidden.get())
+                &(*shared_embedding.get())[1]
                     [(node_id * self.embedding_size)..((node_id + 1) * self.embedding_size)]
             }
         };
@@ -96,7 +87,7 @@ where
                                        node_id: NodeT,
                                        label: f32,
                                        learning_rate: f32| {
-            let node_hidden = get_node_hidden(node_id);
+            let node_hidden = get_contextual_node_embedding(node_id);
             let dot =
                 unsafe { dot_product_sequential_unchecked(node_hidden, total_context_embedding) }
                     / scale_factor;
@@ -112,7 +103,7 @@ where
                 variation /= get_node_prior(graph, node_id, 1.0);
             }
 
-            update_hidden(node_id, total_context_embedding, variation);
+            update_contextual_node_embedding(node_id, total_context_embedding, variation);
             unsafe {
                 element_wise_weighted_addition_inplace(
                     context_embedding_gradient,
@@ -167,7 +158,7 @@ where
                                 .map(|context_node_id| {
                                     let mut context_gradient = vec![0.0; self.embedding_size];
                                     let context_node_embedding =
-                                        get_node_embedding(context_node_id);
+                                        get_central_node_embedding(context_node_id);
                                     // We now compute the gradient relative to the positive
                                     let positive_variation = compute_mini_batch_step(
                                         &context_node_embedding,
@@ -228,7 +219,10 @@ where
                                             })
                                             .sum::<f32>()
                                     };
-                                    update_embedding(context_node_id, &context_gradient);
+                                    update_central_node_embedding(
+                                        context_node_id,
+                                        &context_gradient,
+                                    );
                                     negative_variation + positive_variation
                                 })
                                 .sum::<f32>()

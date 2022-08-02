@@ -55,7 +55,9 @@ where
 
     pub fn unwrap_parallel(self) -> P {
         match self {
-            ItersWrapper::Sequential(_) => panic!("Cannot unwrap a sequential iterator as parallel"),
+            ItersWrapper::Sequential(_) => {
+                panic!("Cannot unwrap a sequential iterator as parallel")
+            }
             ItersWrapper::Parallel(i) => i,
         }
     }

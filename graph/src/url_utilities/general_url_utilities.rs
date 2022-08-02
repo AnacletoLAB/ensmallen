@@ -21,7 +21,7 @@ pub(crate) fn is_valid_node_name_from_seeds(
     id_length: Option<usize>,
     numeric_part_length: Option<usize>,
 ) -> Result<()> {
-    if node_name.contains(" "){
+    if node_name.contains(" ") {
         return Err(format!(
             "The given curie node name {} contains spaces.",
             node_name
@@ -140,7 +140,7 @@ pub(crate) fn is_valid_node_name_from_seeds(
                         "numeric part length `{}`."
                     ),
                     node_name, numeric_part_length
-                ))
+                ));
             }
             if node_name[(node_name.len() - numeric_part_length)..node_name.len()]
                 .chars()

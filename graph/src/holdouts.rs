@@ -103,7 +103,7 @@ impl Graph {
         destination_edge_types_names: Option<Vec<String>>,
         source_nodes_prefixes: Option<Vec<String>>,
         destination_nodes_prefixes: Option<Vec<String>>,
-        support: &'a Graph
+        support: &'a Graph,
     ) -> Result<impl Fn(NodeT, NodeT) -> bool + '_> {
         let sample_only_edges_with_heterogeneous_node_types =
             sample_only_edges_with_heterogeneous_node_types.unwrap_or(false);
@@ -117,7 +117,9 @@ impl Graph {
         ).to_string());
         }
 
-        if sample_only_edges_with_heterogeneous_node_types && self.has_exclusively_homogeneous_node_types().unwrap() {
+        if sample_only_edges_with_heterogeneous_node_types
+            && self.has_exclusively_homogeneous_node_types().unwrap()
+        {
             return Err(concat!(
                 "The parameter `sample_only_edges_with_heterogeneous_node_types` was provided with value `true` ",
                 "but the current graph instance has exclusively homogeneous node types, that is all the nodes have ",
@@ -278,7 +280,8 @@ impl Graph {
             unsafe {
                 if let Some(minimum_node_degree) = &minimum_node_degree {
                     if support.get_unchecked_node_degree_from_node_id(src) < *minimum_node_degree
-                        || support.get_unchecked_node_degree_from_node_id(dst) < *minimum_node_degree
+                        || support.get_unchecked_node_degree_from_node_id(dst)
+                            < *minimum_node_degree
                     {
                         return false;
                     }
@@ -286,7 +289,8 @@ impl Graph {
 
                 if let Some(maximum_node_degree) = &maximum_node_degree {
                     if support.get_unchecked_node_degree_from_node_id(src) > *maximum_node_degree
-                        || support.get_unchecked_node_degree_from_node_id(dst) > *maximum_node_degree
+                        || support.get_unchecked_node_degree_from_node_id(dst)
+                            > *maximum_node_degree
                     {
                         return false;
                     }
@@ -355,11 +359,11 @@ impl Graph {
             ));
         }
 
-        if let Some(graph_to_avoid) = graph_to_avoid.as_ref(){
+        if let Some(graph_to_avoid) = graph_to_avoid.as_ref() {
             self.must_share_node_vocabulary(graph_to_avoid)?;
         }
 
-        if let Some(support) = support.as_ref(){
+        if let Some(support) = support.as_ref() {
             self.must_share_node_vocabulary(support)?;
         }
 
@@ -375,7 +379,7 @@ impl Graph {
             destination_edge_types_names,
             source_nodes_prefixes,
             destination_nodes_prefixes,
-            support
+            support,
         )?;
 
         let use_scale_free_distribution = use_scale_free_distribution.unwrap_or(true);
@@ -464,7 +468,7 @@ impl Graph {
                     return None;
                 }
 
-                if let Some(graph_to_avoid) = &graph_to_avoid{
+                if let Some(graph_to_avoid) = &graph_to_avoid {
                     if graph_to_avoid.has_edge_from_node_ids(src, dst) {
                         return None;
                     }
@@ -581,13 +585,13 @@ impl Graph {
         source_nodes_prefixes: Option<Vec<String>>,
         destination_nodes_prefixes: Option<Vec<String>>,
         edge_type_names: Option<Vec<Option<String>>>,
-        support: Option<&Graph>
+        support: Option<&Graph>,
     ) -> Result<Graph> {
         if number_of_samples == 0 {
             return Err(String::from("The number of samples cannot be zero."));
         }
 
-        if let Some(support) = support.as_ref(){
+        if let Some(support) = support.as_ref() {
             self.must_share_node_vocabulary(support)?;
         }
 
@@ -603,7 +607,7 @@ impl Graph {
             destination_edge_types_names,
             source_nodes_prefixes,
             destination_nodes_prefixes,
-            support
+            support,
         )?;
 
         let edge_type_ids = if let Some(edge_type_names) = edge_type_names {

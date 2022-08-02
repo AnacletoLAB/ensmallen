@@ -9,7 +9,7 @@ use crate::types::*;
 /// # Raises
 /// * If one of the two vectors are empty.
 /// * If the two vectors have different sizes.
-pub(crate) fn validate_features<F: ThreadFloat>(
+pub(crate) fn validate_features<F>(
     src_features: &[F],
     dst_features: &[F],
 ) -> Result<(), String> {
@@ -73,9 +73,9 @@ pub(crate) fn validate_vectors_length(
 /// * If the matrix is not compatible with the provided dimensions.
 /// * If the provided similarities are not of the same size as the destination or sources.
 /// * If the provided dimension is zero.
-pub(crate) fn validate_features_from_indices<F: ThreadFloat, I: ThreadUnsigned>(
+pub(crate) fn validate_features_from_indices<F, R, I: ThreadUnsigned>(
     similarities: &mut [F],
-    matrix: &[F],
+    matrix: &[R],
     sources: &[I],
     destinations: &[I],
     dimension: usize,

@@ -195,8 +195,7 @@ pub fn load_cora() -> Graph {
 pub fn first_order_walker() -> Result<WalksParameters> {
     Ok(WalksParameters::new(8)?
         .set_iterations(Some(1))?
-        .set_random_state(Some(43))
-    )
+        .set_random_state(Some(43)))
 }
 
 /// Return WalksParameters to execute a second order walk.
@@ -1675,7 +1674,9 @@ pub fn test_remove_components(graph: &mut Graph, verbose: Option<bool>) -> Resul
         )?;
         let without_selfloops = test.remove_selfloops();
         assert_eq!(
-            without_selfloops.get_number_of_connected_components(verbose).0,
+            without_selfloops
+                .get_number_of_connected_components(verbose)
+                .0,
             1,
             concat!(
                 "Expected number of components (1) is not matched!\n",

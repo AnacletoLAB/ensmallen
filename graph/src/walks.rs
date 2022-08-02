@@ -659,7 +659,7 @@ impl Graph {
         &'a self,
         quantity: NodeT,
         parameters: &'a WalksParameters,
-        random_walks_buffer: &mut [NodeT]
+        random_walks_buffer: &mut [NodeT],
     ) -> Result<()> {
         self.must_have_edges()?;
         let random_state = splitmix64(parameters.random_state as u64);
@@ -677,7 +677,7 @@ impl Graph {
                 })
             },
             parameters,
-            random_walks_buffer
+            random_walks_buffer,
         )
     }
 
@@ -714,7 +714,7 @@ impl Graph {
             parameters,
         )
     }
-    
+
     /// Return vector of walks run on a random subset of the not trap nodes.
     ///
     /// # Arguments
@@ -806,19 +806,20 @@ impl Graph {
             .into_par_iter()
             .map(move |index| unsafe {
                 let (random_state, node) = to_node(index);
-                let mut walk_buffer = vec![0; parameters.single_walk_parameters.walk_length as usize];
+                let mut walk_buffer =
+                    vec![0; parameters.single_walk_parameters.walk_length as usize];
                 match use_uniform {
                     true => self.uniform_walk_from_slice(
                         node,
                         random_state,
                         parameters.single_walk_parameters.walk_length,
-                        &mut walk_buffer
+                        &mut walk_buffer,
                     ),
                     false => self.get_unchecked_single_walk_from_slice(
                         node,
                         random_state,
                         &parameters.single_walk_parameters,
-                        &mut walk_buffer
+                        &mut walk_buffer,
                     ),
                 };
 
@@ -858,27 +859,26 @@ impl Graph {
         // random walk algorithm.
         let use_uniform = !self.has_edge_weights() && parameters.is_first_order_walk();
 
-        let walks = (0..total_iterations)
-            .map(move |index| unsafe {
-                let (random_state, node) = to_node(index);
-                let mut walk_buffer = vec![0; parameters.single_walk_parameters.walk_length as usize];
-                match use_uniform {
-                    true => self.uniform_walk_from_slice(
-                        node,
-                        random_state,
-                        parameters.single_walk_parameters.walk_length,
-                        &mut walk_buffer
-                    ),
-                    false => self.get_unchecked_single_walk_from_slice(
-                        node,
-                        random_state,
-                        &parameters.single_walk_parameters,
-                        &mut walk_buffer
-                    ),
-                };
+        let walks = (0..total_iterations).map(move |index| unsafe {
+            let (random_state, node) = to_node(index);
+            let mut walk_buffer = vec![0; parameters.single_walk_parameters.walk_length as usize];
+            match use_uniform {
+                true => self.uniform_walk_from_slice(
+                    node,
+                    random_state,
+                    parameters.single_walk_parameters.walk_length,
+                    &mut walk_buffer,
+                ),
+                false => self.get_unchecked_single_walk_from_slice(
+                    node,
+                    random_state,
+                    &parameters.single_walk_parameters,
+                    &mut walk_buffer,
+                ),
+            };
 
-                walk_buffer
-            });
+            walk_buffer
+        });
 
         Ok(walks)
     }
@@ -899,7 +899,7 @@ impl Graph {
         quantity: NodeT,
         to_node: impl Fn(NodeT) -> (u64, NodeT) + Sync + Send + 'a,
         parameters: &'a WalksParameters,
-        random_walks_buffer: &mut [NodeT]
+        random_walks_buffer: &mut [NodeT],
     ) -> Result<()> {
         if self.has_edge_weights() {
             self.must_have_positive_edge_weights()?;
@@ -925,13 +925,13 @@ impl Graph {
                         node,
                         random_state,
                         parameters.single_walk_parameters.walk_length,
-                        walk_buffer
+                        walk_buffer,
                     ),
                     false => self.get_unchecked_single_walk_from_slice(
                         node,
                         random_state,
                         &parameters.single_walk_parameters,
-                        walk_buffer
+                        walk_buffer,
                     ),
                 };
             });
@@ -955,8 +955,8 @@ impl Graph {
         node: NodeT,
         mut random_state: u64,
         parameters: &SingleWalkParameters,
-        walk_buffer: &mut [NodeT]
-    )  {
+        walk_buffer: &mut [NodeT],
+    ) {
         let (min_edge_id, max_edge_id, destinations, indices) = self
             .get_unchecked_edges_and_destinations_from_source_node_id(
                 parameters.max_neighbours,
@@ -1079,7 +1079,7 @@ impl Graph {
             // would be useless as we are allocating the correct
             // size of this vector.
             *walk_buffer.get_unchecked_mut(iteration as usize) = self.extract_uniform_node(
-                *walk_buffer.get_unchecked(iteration as usize -1),
+                *walk_buffer.get_unchecked(iteration as usize - 1),
                 splitmix64(random_state + iteration),
             );
         });
