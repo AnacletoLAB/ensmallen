@@ -1,6 +1,6 @@
 use crate::AnchorFeatureTypes;
 use crate::{
-    must_not_be_zero, AnchorsBasedFeature, BasicAnchorsInferredNodeEmbedding, FeatureType,
+    must_not_be_zero, AnchorsBasedFeature, BasicAnchorsInferredNodeEmbedding, IntegerFeatureType,
 };
 use core::sync::atomic::Ordering;
 use ensmallen_traits::prelude::*;
@@ -56,7 +56,7 @@ where
         mut bucket: Vec<NodeT>,
         features: &mut [Feature],
     ) where
-        Feature: FeatureType,
+        Feature: IntegerFeatureType,
     {
         // We initialize the provided slice with the maximum distance.
         features.par_iter_mut().for_each(|distance| {

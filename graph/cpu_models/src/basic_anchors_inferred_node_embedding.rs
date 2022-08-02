@@ -61,7 +61,7 @@ pub trait AnchorsBasedFeature<const AFT: AnchorFeatureTypes> {
         bucket: Vec<NodeT>,
         features: &mut [Feature],
     ) where
-        Feature: FeatureType;
+        Feature: IntegerFeatureType;
 }
 
 #[derive(PartialEq, Eq)]
@@ -211,7 +211,7 @@ where
     /// `embedding`: &mut [Feature] - The memory area where to write the embedding.
     fn fit_transform<Feature>(&self, graph: &Graph, embedding: &mut [Feature]) -> Result<(), String>
     where
-        Feature: FeatureType,
+        Feature: IntegerFeatureType,
     {
         let expected_embedding_len =
             self.get_embedding_size(graph)? * graph.get_number_of_nodes() as usize;

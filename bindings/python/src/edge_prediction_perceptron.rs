@@ -136,134 +136,158 @@ impl EdgePredictionPerceptron {
     }
 }
 
-#[pymethods]
-impl EdgePredictionPerceptron {
-    #[args(py_kwargs = "**")]
-    #[pyo3(text_signature = "($self, graph, node_features, verbose, support, graph_to_avoid)")]
-    /// Fit the current model instance with the provided graph and node features.
-    ///
-    /// Parameters
-    /// ---------
-    /// graph: Graph
-    ///     The graph whose edges are to be learned.
-    /// node_features: List[np.ndarray]
-    ///     A list of node features numpy array.
-    /// verbose: bool = True
-    ///     Whether to show a loading bar for the epochs. By default, True.
-    /// support: Optional[Graph] = None
-    ///     Graph to use to check for false negatives.
-    /// graph_to_avoid: Optional[Graph] = None
-    ///     The graph whose edges are to be avoided during the generation of false negatives,
-    fn fit(
-        &mut self,
-        graph: &Graph,
-        node_features: Vec<Py<PyArray2<f32>>>,
-        verbose: Option<bool>,
-        support: Option<&Graph>,
-        graph_to_avoid: Option<&Graph>,
-    ) -> PyResult<()> {
-        let gil = pyo3::Python::acquire_gil();
+macro_rules! impl_edge_prediction_embedding {
+    ($($dtype:ty),*) => {
+        #[pymethods]
+        impl EdgePredictionPerceptron {
+            #[args(py_kwargs = "**")]
+            #[pyo3(
+                text_signature = "($self, graph, node_features, verbose, support, graph_to_avoid)"
+            )]
+            /// Fit the current model instance with the provided graph and node features.
+            ///
+            /// Parameters
+            /// ---------
+            /// graph: Graph
+            ///     The graph whose edges are to be learned.
+            /// node_features: List[np.ndarray]
+            ///     A list of node features numpy array.
+            /// verbose: bool = True
+            ///     Whether to show a loading bar for the epochs. By default, True.
+            /// support: Optional[Graph] = None
+            ///     Graph to use to check for false negatives.
+            /// graph_to_avoid: Optional[Graph] = None
+            ///     The graph whose edges are to be avoided during the generation of false negatives,
+            fn fit(
+                &mut self,
+                graph: &Graph,
+                node_features: Vec<Py<PyArray2<f32>>>,
+                verbose: Option<bool>,
+                support: Option<&Graph>,
+                graph_to_avoid: Option<&Graph>,
+            ) -> PyResult<()> {
+                let gil = pyo3::Python::acquire_gil();
 
-        let support = support.map(|support| &support.inner);
-        let graph_to_avoid = graph_to_avoid.map(|graph_to_avoid| &graph_to_avoid.inner);
-        let node_features = node_features
-            .iter()
-            .map(|node_feature| node_feature.as_ref(gil.python()))
-            .collect::<Vec<_>>();
-        let dimensions = node_features
-            .iter()
-            .map(|node_feature| node_feature.shape()[1])
-            .collect::<Vec<usize>>();
-        let node_features_ref = node_features
-            .iter()
-            .map(|node_feature| unsafe { node_feature.as_slice().unwrap() })
-            .collect::<Vec<_>>();
+                let support = support.map(|support| &support.inner);
+                let graph_to_avoid = graph_to_avoid.map(|graph_to_avoid| &graph_to_avoid.inner);
+                let node_features = node_features
+                        .iter()
+                        .map(|node_feature| node_feature.as_ref(gil.python()))
+                        .collect::<Vec<_>>();
+                $(
+                    if let Ok(node_features) = node_features.iter().map(|vector| <&PyArray2<$dtype>>::extract(&vector)).collect::<PyResult<Vec<&PyArray2<$dtype>>>>() {
+                        let dimensions = node_features
+                            .iter()
+                            .map(|node_feature| node_feature.shape()[1])
+                            .collect::<Vec<usize>>();
+                        let node_features_ref = node_features
+                            .iter()
+                            .map(|node_feature| unsafe { node_feature.as_slice().unwrap() })
+                            .collect::<Vec<_>>();
 
-        pe!(self.inner.fit(
-            &graph.inner,
-            node_features_ref.as_slice(),
-            dimensions.as_slice(),
-            verbose,
-            support,
-            graph_to_avoid
-        ))
-    }
+                        return pe!(self.inner.fit(
+                            &graph.inner,
+                            node_features_ref.as_slice(),
+                            dimensions.as_slice(),
+                            verbose,
+                            support,
+                            graph_to_avoid
+                        ));
+                    }
+                )*
 
-    #[pyo3(text_signature = "($self)")]
-    /// Returns the weights of the model.
-    fn get_weights(&self) -> PyResult<Py<PyArray1<f32>>> {
-        let gil = pyo3::Python::acquire_gil();
-        Ok(to_ndarray_1d!(gil, pe!(self.inner.get_weights())?, f32))
-    }
+                pe!(Err(concat!(
+                    "The provided node features are not supported ",
+                    "in the edge prediction perceptron!!"
+                ).to_string()))
+            }
 
-    #[pyo3(text_signature = "($self)")]
-    /// Returns the bias of the model.
-    fn get_bias(&self) -> PyResult<f32> {
-        pe!(self.inner.get_bias())
-    }
+            #[pyo3(text_signature = "($self)")]
+            /// Returns the weights of the model.
+            fn get_weights(&self) -> PyResult<Py<PyArray1<f32>>> {
+                let gil = pyo3::Python::acquire_gil();
+                Ok(to_ndarray_1d!(gil, pe!(self.inner.get_weights())?, f32))
+            }
 
-    #[pyo3(text_signature = "($self)")]
-    /// Returns the supported edge features.
-    fn get_supported_edge_features(&self) -> Vec<String> {
-        cpu_models::EdgeFeature::get_edge_feature_method_names()
-    }
+            #[pyo3(text_signature = "($self)")]
+            /// Returns the bias of the model.
+            fn get_bias(&self) -> PyResult<f32> {
+                pe!(self.inner.get_bias())
+            }
 
-    #[pyo3(text_signature = "($self)")]
-    /// Returns the supported edge embeddings.
-    fn get_supported_edge_embeddings(&self) -> Vec<String> {
-        cpu_models::EdgeEmbedding::get_edge_embedding_method_names()
-    }
+            #[pyo3(text_signature = "($self)")]
+            /// Returns the supported edge features.
+            fn get_supported_edge_features(&self) -> Vec<String> {
+                cpu_models::EdgeFeature::get_edge_feature_method_names()
+            }
 
-    #[pyo3(text_signature = "($self, graph, node_features)")]
-    /// Return numpy array with edge predictions for provided graph.
-    ///
-    /// Parameters
-    /// ---------
-    /// graph: Graph
-    ///     The graph whose edges are to be predicted.
-    /// node_features: List[np.ndarray]
-    ///     A node features numpy array.
-    /// support: Optional[Graph] = None
-    ///     Graph to use to check for false negatives.
+            #[pyo3(text_signature = "($self)")]
+            /// Returns the supported edge embeddings.
+            fn get_supported_edge_embeddings(&self) -> Vec<String> {
+                cpu_models::EdgeEmbedding::get_edge_embedding_method_names()
+            }
 
-    fn predict(
-        &self,
-        graph: &Graph,
-        support: Option<&Graph>,
-        node_features: Vec<Py<PyArray2<f32>>>,
-    ) -> PyResult<Py<PyArray1<f32>>> {
-        let gil = pyo3::Python::acquire_gil();
+            #[pyo3(text_signature = "($self, graph, node_features, support)")]
+            /// Return numpy array with edge predictions for provided graph.
+            ///
+            /// Parameters
+            /// ----------------
+            /// graph: Graph
+            ///     The graph whose edges are to be predicted.
+            /// node_features: List[np.ndarray]
+            ///     A node features numpy array.
+            /// support: Optional[Graph] = None
+            ///     Graph to use to check for false negatives.
+            fn predict(
+                &self,
+                graph: &Graph,
+                node_features: Vec<Py<PyAny>>,
+                support: Option<&Graph>,
+            ) -> PyResult<Py<PyArray1<f32>>> {
+                let gil = pyo3::Python::acquire_gil();
+                let support = support.map(|support| &support.inner);
+                let predictions = unsafe {
+                    PyArray1::new(
+                        gil.python(),
+                        [graph.get_number_of_directed_edges() as usize],
+                        false,
+                    )
+                };
+                let predictions_ref = unsafe { predictions.as_slice_mut().unwrap() };
+                let node_features = node_features
+                        .iter()
+                        .map(|node_feature| node_feature.as_ref(gil.python()))
+                        .collect::<Vec<_>>();
+                $(
+                    if let Ok(node_features) = node_features.iter().map(|vector| <&PyArray2<$dtype>>::extract(&vector)).collect::<PyResult<Vec<&PyArray2<$dtype>>>>() {
+                        let dimensions = node_features
+                            .iter()
+                            .map(|node_feature| node_feature.shape()[1])
+                            .collect::<Vec<usize>>();
+                        let node_features_ref = node_features
+                            .iter()
+                            .map(|node_feature| unsafe { node_feature.as_slice().unwrap() })
+                            .collect::<Vec<_>>();
+                        pe!(self.inner.predict(
+                                predictions_ref,
+                                &graph.inner,
+                                node_features_ref.as_slice(),
+                                dimensions.as_slice(),
+                                support
+                            ))?;
+                        return Ok(predictions.to_owned());
+                    }
+                )*
 
-        let support = support.map(|support| &support.inner);
-        let node_features = node_features
-            .iter()
-            .map(|node_feature| node_feature.as_ref(gil.python()))
-            .collect::<Vec<_>>();
-        let dimensions = node_features
-            .iter()
-            .map(|node_feature| node_feature.shape()[1])
-            .collect::<Vec<usize>>();
-        let node_features_ref = node_features
-            .iter()
-            .map(|node_feature| unsafe { node_feature.as_slice().unwrap() })
-            .collect::<Vec<_>>();
-        let predictions = unsafe {
-            PyArray1::new(
-                gil.python(),
-                [graph.get_number_of_directed_edges() as usize],
-                false,
-            )
-        };
-        let predictions_ref = unsafe { predictions.as_slice_mut().unwrap() };
+                pe!(Err(concat!(
+                    "The provided node features are not supported ",
+                    "in the edge prediction perceptron!"
+                ).to_string()))
+            }
+        }
+    };
+}
 
-        pe!(self.inner.predict(
-            predictions_ref,
-            &graph.inner,
-            node_features_ref.as_slice(),
-            dimensions.as_slice(),
-            support
-        ))?;
-
-        Ok(predictions.to_owned())
-    }
+impl_edge_prediction_embedding! {
+    u8, u16, u32, u64, i8, i16, i32, i64, f32, f64
 }

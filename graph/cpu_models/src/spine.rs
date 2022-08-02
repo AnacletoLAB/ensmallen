@@ -1,5 +1,5 @@
 use crate::{
-    must_not_be_zero, AnchorsBasedFeature, BasicAnchorsInferredNodeEmbedding, FeatureType,
+    must_not_be_zero, AnchorsBasedFeature, BasicAnchorsInferredNodeEmbedding, IntegerFeatureType,
 };
 use core::sync::atomic::Ordering;
 use crate::AnchorFeatureTypes;
@@ -56,7 +56,7 @@ where
         mut bucket: Vec<NodeT>,
         mut features: &mut [Feature],
     ) where
-        Feature: FeatureType,
+        Feature: IntegerFeatureType,
     {
         // We initialize the provided slice with the maximum distance.
         features.par_iter_mut().for_each(|distance| {

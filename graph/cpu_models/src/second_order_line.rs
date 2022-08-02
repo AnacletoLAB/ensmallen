@@ -1,6 +1,4 @@
-use crate::{
-    get_node_priors, utils::MatrixShape, BasicEmbeddingModel, GraphEmbedder,
-};
+use crate::{get_node_priors, utils::MatrixShape, BasicEmbeddingModel, GraphEmbedder};
 use express_measures::cosine_similarity_sequential_unchecked;
 use graph::{Graph, NodeT, ThreadDataRaceAware};
 use num_traits::Zero;
@@ -69,7 +67,7 @@ impl GraphEmbedder for SecondOrderLINE {
                     [(dst * self.model.embedding_size)..((dst + 1) * self.model.embedding_size)]
             };
 
-            let (similarity, src_norm, dst_norm) =
+            let (similarity, src_norm, dst_norm): (f32, f32, f32) =
                 unsafe { cosine_similarity_sequential_unchecked(src_embedding, dst_embedding) };
 
             let prediction = 1.0 / (1.0 + (-similarity).exp());

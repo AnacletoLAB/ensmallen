@@ -4,6 +4,7 @@ use graph::{EdgeTypeT, Graph, NodeT};
 use num::Zero;
 use rayon::prelude::*;
 use vec_rand::{random_f32, splitmix64};
+use half::f16;
 
 pub(crate) fn must_not_be_zero<F>(
     value: Option<F>,
@@ -174,12 +175,23 @@ impl core::ops::Index<isize> for MatrixShape {
     }
 }
 
-pub trait FeatureType:
+pub trait IntegerFeatureType:
     Send + Sync + Integral + TryInto<usize> + TryFrom<usize> + IntoAtomic
 {
 }
 
-impl FeatureType for u64 {}
-impl FeatureType for u32 {}
-impl FeatureType for u16 {}
-impl FeatureType for u8 {}
+impl IntegerFeatureType for u64 {}
+impl IntegerFeatureType for u32 {}
+impl IntegerFeatureType for u16 {}
+impl IntegerFeatureType for u8 {}
+
+
+pub enum MultyFeatureSlice<'a> {
+    F16(&'a [f16]),
+    F32(&'a [f32]),
+    F64(&'a [f64]),
+    U8(&'a [u8]),
+    U16(&'a [u16]),
+    U32(&'a [u32]),
+    U64(&'a [u64]),
+}

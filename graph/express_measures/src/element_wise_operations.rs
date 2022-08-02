@@ -1,4 +1,5 @@
 use crate::types::*;
+use num_traits::Float;
 
 /// Returns vector with the element-wise subtraction between the two vectors.
 ///
@@ -10,14 +11,14 @@ use crate::types::*;
 /// If the two features have different sizes, we will compute
 /// the subtraction upwards to when the minimum size.
 /// No warning will be raised.
-pub unsafe fn element_wise_subtraction<F: Into<R> + Copy, R: ThreadFloat>(
+pub unsafe fn element_wise_subtraction<F: Coerced<R>, R: Float>(
     first_vector: &[F],
     second_vector: &[F],
 ) -> Vec<R> {
     first_vector
         .iter()
         .zip(second_vector.iter())
-        .map(|(&first_feature, &second_feature)| first_feature.into() - second_feature.into())
+        .map(|(&first_feature, &second_feature)| first_feature.coerce_into() - second_feature.coerce_into())
         .collect()
 }
 

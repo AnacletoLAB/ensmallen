@@ -2,7 +2,7 @@ use crate::must_not_be_zero;
 use crate::Optimizer;
 use express_measures::{
     absolute_distance, cosine_similarity_sequential_unchecked, dot_product_sequential_unchecked,
-    element_wise_subtraction, euclidean_distance_sequential_unchecked, ThreadFloat,
+    element_wise_subtraction, euclidean_distance_sequential_unchecked, Coerced,
 };
 use graph::{Graph, NodeT};
 use indicatif::ProgressIterator;
@@ -94,34 +94,36 @@ impl EdgeEmbedding {
 
     pub fn get_method<F>(&self) -> fn(&[F], &[F]) -> Vec<f32>
     where
-        F: ThreadFloat + Into<f32>,
+        F: Coerced<f32>,
     {
         match self {
-            EdgeEmbedding::CosineSimilarity => |a: &[F], b: &[F]| {
-                vec![unsafe { cosine_similarity_sequential_unchecked(a, b).0.into() }]
-            },
-            EdgeEmbedding::EuclideanDistance => |a: &[F], b: &[F]| {
-                vec![unsafe { euclidean_distance_sequential_unchecked(a, b).into() }]
-            },
+            EdgeEmbedding::CosineSimilarity => {
+                |a: &[F], b: &[F]| vec![unsafe { cosine_similarity_sequential_unchecked(a, b).0 }]
+            }
+            EdgeEmbedding::EuclideanDistance => {
+                |a: &[F], b: &[F]| vec![unsafe { euclidean_distance_sequential_unchecked(a, b) }]
+            }
             EdgeEmbedding::Hadamard => |a: &[F], b: &[F]| {
                 a.iter()
                     .copied()
                     .zip(b.iter().copied())
-                    .map(|(feature_a, feature_b)| (feature_a * feature_b).into())
+                    .map(|(feature_a, feature_b)| (feature_a * feature_b).coerce_into())
                     .collect::<Vec<f32>>()
             },
             EdgeEmbedding::Concatenate => |a: &[F], b: &[F]| {
                 a.iter()
                     .copied()
                     .chain(b.iter().copied())
-                    .map(|feature| feature.into())
+                    .map(|feature| feature.coerce_into())
                     .collect::<Vec<f32>>()
             },
             EdgeEmbedding::L1 => |a: &[F], b: &[F]| {
                 a.iter()
                     .copied()
                     .zip(b.iter().copied())
-                    .map(|(feature_a, feature_b)| absolute_distance(feature_a, feature_b).into())
+                    .map(|(feature_a, feature_b)| {
+                        absolute_distance(feature_a, feature_b).coerce_into()
+                    })
                     .collect::<Vec<f32>>()
             },
             EdgeEmbedding::L2 => |a: &[F], b: &[F]| {
@@ -130,7 +132,7 @@ impl EdgeEmbedding {
                     .zip(b.iter().copied())
                     .map(|(feature_a, feature_b)| {
                         let l1 = absolute_distance(feature_a, feature_b);
-                        (l1 * l1).into()
+                        (l1 * l1).coerce_into()
                     })
                     .collect::<Vec<f32>>()
             },
@@ -138,7 +140,7 @@ impl EdgeEmbedding {
                 a.iter()
                     .copied()
                     .zip(b.iter().copied())
-                    .map(|(feature_a, feature_b)| feature_a.into() + feature_b.into())
+                    .map(|(feature_a, feature_b)| feature_a.coerce_into() + feature_b.coerce_into())
                     .collect::<Vec<f32>>()
             },
             EdgeEmbedding::Sub => |a: &[F], b: &[F]| unsafe { element_wise_subtraction(a, b) },
@@ -146,14 +148,18 @@ impl EdgeEmbedding {
                 a.iter()
                     .copied()
                     .zip(b.iter().copied())
-                    .map(|(feature_a, feature_b)| feature_a.max(feature_b).into())
+                    .map(|(feature_a, feature_b)| {
+                        feature_a.coerce_into().max(feature_b.coerce_into())
+                    })
                     .collect::<Vec<f32>>()
             },
             EdgeEmbedding::Minimum => |a: &[F], b: &[F]| {
                 a.iter()
                     .copied()
                     .zip(b.iter().copied())
-                    .map(|(feature_a, feature_b)| feature_a.min(feature_b).into())
+                    .map(|(feature_a, feature_b)| {
+                        feature_a.coerce_into().min(feature_b.coerce_into())
+                    })
                     .collect::<Vec<f32>>()
             },
         }
@@ -161,7 +167,7 @@ impl EdgeEmbedding {
 
     pub fn embed<F>(&self, source_feature: &[F], destination_features: &[F]) -> Vec<f32>
     where
-        F: ThreadFloat + Into<f32>,
+        F: Coerced<f32>,
     {
         self.get_method()(source_feature, destination_features)
     }
@@ -342,7 +348,7 @@ impl EdgeFeature {
         }
     }
 
-    pub fn embed<O1: Optimizer<f32>, O2: Optimizer<[f32]>>(
+    pub fn embed<O1: Optimizer<f32>, O2: Optimizer<[f32]>, F: Coerced<f32>>(
         &self,
         model: &EdgePredictionPerceptron<O1, O2>,
         support: &Graph,
@@ -361,17 +367,9 @@ where
     O2: Optimizer<[f32]>,
 {
     /// The edge embedding methods to use.
-    edge_embeddings: Vec<fn(&[f32], &[f32]) -> Vec<f32>>,
+    edge_embeddings: Vec<EdgeEmbedding>,
     /// The edge feature methods to use.
-    edge_features: Vec<
-        fn(
-            model: &EdgePredictionPerceptron<O1, O2>,
-            support: &Graph,
-            src: NodeT,
-            dst: NodeT,
-            random_state: u64,
-        ) -> Vec<f32>,
-    >,
+    edge_features: Vec<EdgeFeature>,
     /// Bias Optimizer
     bias_optimizer: O1,
     /// Weights optimizer
@@ -450,14 +448,8 @@ where
         }
 
         Ok(Self {
-            edge_embeddings: edge_embeddings
-                .into_iter()
-                .map(|edge_embedding| edge_embedding.get_method())
-                .collect(),
-            edge_features: edge_features
-                .into_iter()
-                .map(|edge_feature| edge_feature.get_method())
-                .collect(),
+            edge_embeddings,
+            edge_features,
             bias_optimizer: optimizer.clone().into(),
             weight_optimizer: optimizer,
             cooccurrence_iterations,
@@ -495,10 +487,10 @@ where
         self.must_be_trained().map(|_| self.bias)
     }
 
-    fn validate_features(
+    fn validate_features<X>(
         &self,
         graph: &Graph,
-        node_features: &[&[f32]],
+        node_features: &[&[X]],
         dimensions: &[usize],
     ) -> Result<(), String> {
         if node_features.len() != dimensions.len() {
@@ -549,19 +541,19 @@ where
     /// `src`: NodeT - The source node whose features are to be extracted.
     /// `dst`: NodeT - The destination node whose features are to be extracted.
     /// `support`: &Graph - The support graph to use for the topological features.
-    /// `node_features`: &[&[f32]] - The node features to use.
+    /// `node_features`: &[&[F]] - The node features to use.
     /// `dimensions`: &[usize] - The dimension of the provided node features.
     ///
     /// # Safety
     /// In this method we do not execute any checks such as whether the
     /// node features are compatible with the provided node IDs, and therefore
     /// improper parametrization may lead to panic or undefined behaviour.
-    unsafe fn get_unsafe_edge_embedding(
+    unsafe fn get_unsafe_edge_embedding<F: Coerced<f32>>(
         &self,
         src: NodeT,
         dst: NodeT,
         support: &Graph,
-        node_features: &[&[f32]],
+        node_features: &[&[F]],
         dimensions: &[usize],
     ) -> Vec<f32> {
         node_features
@@ -569,7 +561,7 @@ where
             .zip(dimensions.iter().copied())
             .flat_map(|(node_feature, dimension)| {
                 self.edge_embeddings.iter().flat_map(move |edge_embedding| {
-                    edge_embedding(
+                    edge_embedding.get_method()(
                         &node_feature[(src as usize) * dimension..((src as usize) + 1) * dimension],
                         &node_feature[(dst as usize) * dimension..((dst as usize) + 1) * dimension],
                     )
@@ -577,7 +569,7 @@ where
             })
             .chain(
                 self.edge_features.iter().flat_map(|edge_feature| {
-                    edge_feature(self, support, src, dst, self.random_state)
+                    edge_feature.get_method()(self, support, src, dst, self.random_state)
                 }),
             )
             .collect()
@@ -596,12 +588,12 @@ where
     /// In this method we do not execute any checks such as whether the
     /// node features are compatible with the provided node IDs, and therefore
     /// improper parametrization may lead to panic or undefined behaviour.
-    unsafe fn get_unsafe_prediction(
+    unsafe fn get_unsafe_prediction<F: Coerced<f32>>(
         &self,
         src: NodeT,
         dst: NodeT,
         support: &Graph,
-        node_features: &[&[f32]],
+        node_features: &[&[F]],
         dimensions: &[usize],
     ) -> (Vec<f32>, f32) {
         let edge_embedding =
@@ -621,10 +613,10 @@ where
     /// * `support`: Option<&Graph> - Graph to use for the topological features.
     /// * `verbose`: Option<bool> - Whether to show a loading bar for the epochs. By default, True.
     /// * `graph_to_avoid`: &'a Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,
-    pub fn fit(
+    pub fn fit<F: Coerced<f32>>(
         &mut self,
         graph: &Graph,
-        node_features: &[&[f32]],
+        node_features: &[&[F]],
         dimensions: &[usize],
         verbose: Option<bool>,
         support: Option<&Graph>,
@@ -828,14 +820,14 @@ where
     /// # Arguments
     /// * `predictions`: &mut [f32] - Area where to write the predictions.
     /// * `graph`: &Graph - The graph whose edges are to be learned.
-    /// * `node_features`: &[&[f32]] - A node features matrix.
+    /// * `node_features`: &[&[F]] - A node features matrix.
     /// * `dimension`: &[usize] - The dimensionality of the node features.
     /// * `support`: Option<&Graph> - Graph to use for the topological features.
-    pub fn predict(
+    pub fn predict<F: Coerced<f32>>(
         &self,
         predictions: &mut [f32],
         graph: &Graph,
-        node_features: &[&[f32]],
+        node_features: &[&[F]],
         dimensions: &[usize],
         support: Option<&Graph>,
     ) -> Result<(), String> {
