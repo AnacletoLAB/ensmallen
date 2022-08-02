@@ -1,10 +1,10 @@
 use ensmallen_traits::prelude::*;
 use funty::Integral;
 use graph::{EdgeTypeT, Graph, NodeT};
+use half::f16;
 use num::Zero;
 use rayon::prelude::*;
 use vec_rand::{random_f32, splitmix64};
-use half::f16;
 
 pub(crate) fn must_not_be_zero<F>(
     value: Option<F>,
@@ -185,8 +185,7 @@ impl IntegerFeatureType for u32 {}
 impl IntegerFeatureType for u16 {}
 impl IntegerFeatureType for u8 {}
 
-
-pub enum MultyFeatureSlice<'a> {
+pub enum FeatureSlice<'a> {
     F16(&'a [f16]),
     F32(&'a [f32]),
     F64(&'a [f64]),
@@ -194,4 +193,26 @@ pub enum MultyFeatureSlice<'a> {
     U16(&'a [u16]),
     U32(&'a [u32]),
     U64(&'a [u64]),
+    I8(&'a [i8]),
+    I16(&'a [i16]),
+    I32(&'a [i32]),
+    I64(&'a [i64]),
+}
+
+impl<'a> FeatureSlice<'a> {
+    pub fn len(&self) -> usize {
+        match self {
+            Self::F16(feature) => feature.len(),
+            Self::F32(feature) => feature.len(),
+            Self::F64(feature) => feature.len(),
+            Self::U8(feature) => feature.len(),
+            Self::U16(feature) => feature.len(),
+            Self::U32(feature) => feature.len(),
+            Self::U64(feature) => feature.len(),
+            Self::I8(feature) => feature.len(),
+            Self::I16(feature) => feature.len(),
+            Self::I32(feature) => feature.len(),
+            Self::I64(feature) => feature.len(),
+        }
+    }
 }

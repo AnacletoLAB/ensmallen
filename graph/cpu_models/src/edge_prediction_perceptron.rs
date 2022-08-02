@@ -1,5 +1,5 @@
-use crate::must_not_be_zero;
 use crate::Optimizer;
+use crate::{must_not_be_zero, FeatureSlice};
 use express_measures::{
     absolute_distance, cosine_similarity_sequential_unchecked, dot_product_sequential_unchecked,
     element_wise_subtraction, euclidean_distance_sequential_unchecked, Coerced,
@@ -487,10 +487,10 @@ where
         self.must_be_trained().map(|_| self.bias)
     }
 
-    fn validate_features<X>(
+    fn validate_features(
         &self,
         graph: &Graph,
-        node_features: &[&[X]],
+        node_features: &[FeatureSlice],
         dimensions: &[usize],
     ) -> Result<(), String> {
         if node_features.len() != dimensions.len() {
@@ -548,30 +548,71 @@ where
     /// In this method we do not execute any checks such as whether the
     /// node features are compatible with the provided node IDs, and therefore
     /// improper parametrization may lead to panic or undefined behaviour.
-    unsafe fn get_unsafe_edge_embedding<F: Coerced<f32>>(
+    unsafe fn get_unsafe_edge_embedding(
         &self,
         src: NodeT,
         dst: NodeT,
         support: &Graph,
-        node_features: &[&[F]],
+        node_features: &[FeatureSlice],
         dimensions: &[usize],
     ) -> Vec<f32> {
+        use crate::FeatureSlice::*;
         node_features
             .iter()
             .zip(dimensions.iter().copied())
             .flat_map(|(node_feature, dimension)| {
-                self.edge_embeddings.iter().flat_map(move |edge_embedding| {
-                    edge_embedding.get_method()(
-                        &node_feature[(src as usize) * dimension..((src as usize) + 1) * dimension],
-                        &node_feature[(dst as usize) * dimension..((dst as usize) + 1) * dimension],
-                    )
-                })
+                self.edge_embeddings
+                    .iter()
+                    .flat_map(move |edge_embedding| match node_feature {
+                        F16(feature) => edge_embedding.get_method()(
+                            &feature[(src as usize) * dimension..((src as usize) + 1) * dimension],
+                            &feature[(dst as usize) * dimension..((dst as usize) + 1) * dimension],
+                        ),
+                        F32(feature) => edge_embedding.get_method()(
+                            &feature[(src as usize) * dimension..((src as usize) + 1) * dimension],
+                            &feature[(dst as usize) * dimension..((dst as usize) + 1) * dimension],
+                        ),
+                        F64(feature) => edge_embedding.get_method()(
+                            &feature[(src as usize) * dimension..((src as usize) + 1) * dimension],
+                            &feature[(dst as usize) * dimension..((dst as usize) + 1) * dimension],
+                        ),
+                        U8(feature) => edge_embedding.get_method()(
+                            &feature[(src as usize) * dimension..((src as usize) + 1) * dimension],
+                            &feature[(dst as usize) * dimension..((dst as usize) + 1) * dimension],
+                        ),
+                        U16(feature) => edge_embedding.get_method()(
+                            &feature[(src as usize) * dimension..((src as usize) + 1) * dimension],
+                            &feature[(dst as usize) * dimension..((dst as usize) + 1) * dimension],
+                        ),
+                        U32(feature) => edge_embedding.get_method()(
+                            &feature[(src as usize) * dimension..((src as usize) + 1) * dimension],
+                            &feature[(dst as usize) * dimension..((dst as usize) + 1) * dimension],
+                        ),
+                        U64(feature) => edge_embedding.get_method()(
+                            &feature[(src as usize) * dimension..((src as usize) + 1) * dimension],
+                            &feature[(dst as usize) * dimension..((dst as usize) + 1) * dimension],
+                        ),
+                        I8(feature) => edge_embedding.get_method()(
+                            &feature[(src as usize) * dimension..((src as usize) + 1) * dimension],
+                            &feature[(dst as usize) * dimension..((dst as usize) + 1) * dimension],
+                        ),
+                        I16(feature) => edge_embedding.get_method()(
+                            &feature[(src as usize) * dimension..((src as usize) + 1) * dimension],
+                            &feature[(dst as usize) * dimension..((dst as usize) + 1) * dimension],
+                        ),
+                        I32(feature) => edge_embedding.get_method()(
+                            &feature[(src as usize) * dimension..((src as usize) + 1) * dimension],
+                            &feature[(dst as usize) * dimension..((dst as usize) + 1) * dimension],
+                        ),
+                        I64(feature) => edge_embedding.get_method()(
+                            &feature[(src as usize) * dimension..((src as usize) + 1) * dimension],
+                            &feature[(dst as usize) * dimension..((dst as usize) + 1) * dimension],
+                        ),
+                    })
             })
-            .chain(
-                self.edge_features.iter().flat_map(|edge_feature| {
-                    edge_feature.get_method()(self, support, src, dst, self.random_state)
-                }),
-            )
+            .chain(self.edge_features.iter().flat_map(|edge_feature| {
+                edge_feature.get_method()(self, support, src, dst, self.random_state)
+            }))
             .collect()
     }
 
@@ -588,12 +629,12 @@ where
     /// In this method we do not execute any checks such as whether the
     /// node features are compatible with the provided node IDs, and therefore
     /// improper parametrization may lead to panic or undefined behaviour.
-    unsafe fn get_unsafe_prediction<F: Coerced<f32>>(
+    unsafe fn get_unsafe_prediction(
         &self,
         src: NodeT,
         dst: NodeT,
         support: &Graph,
-        node_features: &[&[F]],
+        node_features: &[FeatureSlice],
         dimensions: &[usize],
     ) -> (Vec<f32>, f32) {
         let edge_embedding =
@@ -613,10 +654,10 @@ where
     /// * `support`: Option<&Graph> - Graph to use for the topological features.
     /// * `verbose`: Option<bool> - Whether to show a loading bar for the epochs. By default, True.
     /// * `graph_to_avoid`: &'a Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,
-    pub fn fit<F: Coerced<f32>>(
+    pub fn fit(
         &mut self,
         graph: &Graph,
-        node_features: &[&[F]],
+        node_features: &[FeatureSlice],
         dimensions: &[usize],
         verbose: Option<bool>,
         support: Option<&Graph>,
@@ -823,11 +864,11 @@ where
     /// * `node_features`: &[&[F]] - A node features matrix.
     /// * `dimension`: &[usize] - The dimensionality of the node features.
     /// * `support`: Option<&Graph> - Graph to use for the topological features.
-    pub fn predict<F: Coerced<f32>>(
+    pub fn predict(
         &self,
         predictions: &mut [f32],
         graph: &Graph,
-        node_features: &[&[F]],
+        node_features: &[FeatureSlice],
         dimensions: &[usize],
         support: Option<&Graph>,
     ) -> Result<(), String> {
