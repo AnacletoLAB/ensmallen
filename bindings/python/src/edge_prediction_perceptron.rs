@@ -1,5 +1,5 @@
 use super::*;
-use cpu_models::Adam;
+use cpu_models::{Adam, FeatureSlice};
 use numpy::PyArray2;
 use std::convert::TryInto;
 
@@ -8,7 +8,9 @@ type InnerModel = cpu_models::EdgePredictionPerceptron<Adam<f32, f32>, Adam<f32,
 ///
 #[pyclass]
 #[derive(Clone)]
-#[text_signature = "(*, edge_embeddings, edge_features, cooccurrence_iterations, cooccurrence_window_size, number_of_epochs, number_of_edges_per_mini_batch, sample_only_edges_with_heterogeneous_node_types, learning_rate, first_order_decay_factor, second_order_decay_factor, use_scale_free_distribution, random_state)"]
+#[pyo3(
+    text_signature = "(*, edge_embeddings, edge_features, cooccurrence_iterations, cooccurrence_window_size, number_of_epochs, number_of_edges_per_mini_batch, sample_only_edges_with_heterogeneous_node_types, learning_rate, first_order_decay_factor, second_order_decay_factor, avoid_false_negatives, use_scale_free_distribution, random_state)"
+)]
 pub struct EdgePredictionPerceptron {
     pub inner: InnerModel,
 }
@@ -60,6 +62,9 @@ impl EdgePredictionPerceptron {
     /// second_order_decay_factor: float = 0.999
     ///     Second order decay factor for the second order momentum.
     ///     By default 0.999.
+    /// avoid_false_negatives: bool = False
+    ///     Whether to avoid sampling false negatives.
+    ///     This may cause a slower training.
     /// use_scale_free_distribution: bool = True
     ///     Whether to train model using a scale free distribution for the negatives.
     /// random_state: int = 42
@@ -81,6 +86,7 @@ impl EdgePredictionPerceptron {
                 "learning_rate",
                 "first_order_decay_factor",
                 "second_order_decay_factor",
+                "avoid_false_negatives",
                 "use_scale_free_distribution",
                 "random_state"
             ]
@@ -113,6 +119,7 @@ impl EdgePredictionPerceptron {
                     extract_value_rust_result!(kwargs, "first_order_decay_factor", f32),
                     extract_value_rust_result!(kwargs, "second_order_decay_factor", f32),
                 ),
+                extract_value_rust_result!(kwargs, "avoid_false_negatives", bool),
                 extract_value_rust_result!(kwargs, "cooccurrence_iterations", u64),
                 extract_value_rust_result!(kwargs, "cooccurrence_window_size", u64),
                 extract_value_rust_result!(kwargs, "number_of_epochs", usize),
@@ -129,10 +136,50 @@ impl EdgePredictionPerceptron {
     }
 }
 
+macro_rules! impl_edge_prediction_embedding {
+    ($($dtype:ty : $enum_dtype:ident),*) => {
+        fn normalize_features<'a>(
+            gil: &'a GILGuard,
+            node_features: &'a [Py<PyAny>],
+        ) -> PyResult<(Vec<NumpyArray<'a>>, Vec<usize>, Vec<FeatureSlice<'a>>)> {
+            let mut numpy_references: Vec<NumpyArray> = Vec::new();
+            let mut dimensions: Vec<usize> = Vec::new();
+            let mut slices: Vec<FeatureSlice> = Vec::new();
+
+            for node_feature in node_features.iter() {
+                let node_feature = node_feature.as_ref(gil.python());
+                $(
+                    if let Ok(node_feature) = <&PyArray2<$dtype>>::extract(&node_feature) {
+                        if !node_feature.is_c_contiguous(){
+                            return pe!(Err(
+                                concat!(
+                                    "The provided vector is not a contiguos vector in ",
+                                    "C orientation."
+                                )
+                            ));
+                        }
+
+                        dimensions.push(node_feature.shape()[1]);
+                        slices.push(FeatureSlice::$enum_dtype(unsafe{node_feature.as_slice()?}));
+                        numpy_references.push(NumpyArray::$enum_dtype(node_feature));
+
+                        continue;
+                    }
+                )*
+                return pe!(Err(concat!(
+                    "The provided node features are not supported ",
+                    "in the edge prediction perceptron!!"
+                ).to_string()));
+            }
+            Ok((numpy_references, dimensions, slices))
+        }
+    };
+}
+
 #[pymethods]
 impl EdgePredictionPerceptron {
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, graph, node_features, verbose, support, graph_to_avoid)"]
+    #[pyo3(text_signature = "($self, graph, node_features, verbose, support, graph_to_avoid)")]
     /// Fit the current model instance with the provided graph and node features.
     ///
     /// Parameters
@@ -150,31 +197,19 @@ impl EdgePredictionPerceptron {
     fn fit(
         &mut self,
         graph: &Graph,
-        node_features: Vec<Py<PyArray2<f32>>>,
+        node_features: Vec<Py<PyAny>>,
         verbose: Option<bool>,
         support: Option<&Graph>,
         graph_to_avoid: Option<&Graph>,
     ) -> PyResult<()> {
         let gil = pyo3::Python::acquire_gil();
-
         let support = support.map(|support| &support.inner);
         let graph_to_avoid = graph_to_avoid.map(|graph_to_avoid| &graph_to_avoid.inner);
-        let node_features = node_features
-            .iter()
-            .map(|node_feature| node_feature.as_ref(gil.python()))
-            .collect::<Vec<_>>();
-        let dimensions = node_features
-            .iter()
-            .map(|node_feature| node_feature.shape()[1])
-            .collect::<Vec<usize>>();
-        let node_features_ref = node_features
-            .iter()
-            .map(|node_feature| unsafe { node_feature.as_slice().unwrap() })
-            .collect::<Vec<_>>();
-
+        let (_numpy_references, dimensions, slices) =
+            normalize_features(&gil, node_features.as_slice())?;
         pe!(self.inner.fit(
             &graph.inner,
-            node_features_ref.as_slice(),
+            slices.as_slice(),
             dimensions.as_slice(),
             verbose,
             support,
@@ -182,79 +217,96 @@ impl EdgePredictionPerceptron {
         ))
     }
 
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns the weights of the model.
     fn get_weights(&self) -> PyResult<Py<PyArray1<f32>>> {
         let gil = pyo3::Python::acquire_gil();
         Ok(to_ndarray_1d!(gil, pe!(self.inner.get_weights())?, f32))
     }
 
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns the bias of the model.
     fn get_bias(&self) -> PyResult<f32> {
         pe!(self.inner.get_bias())
     }
 
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns the supported edge features.
     fn get_supported_edge_features(&self) -> Vec<String> {
         cpu_models::EdgeFeature::get_edge_feature_method_names()
     }
 
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Returns the supported edge embeddings.
     fn get_supported_edge_embeddings(&self) -> Vec<String> {
         cpu_models::EdgeEmbedding::get_edge_embedding_method_names()
     }
 
-    #[text_signature = "($self, graph, node_features)"]
+    #[pyo3(text_signature = "($self, graph, node_features, support)")]
     /// Return numpy array with edge predictions for provided graph.
     ///
     /// Parameters
-    /// ---------
+    /// ----------------
     /// graph: Graph
     ///     The graph whose edges are to be predicted.
     /// node_features: List[np.ndarray]
     ///     A node features numpy array.
     /// support: Optional[Graph] = None
     ///     Graph to use to check for false negatives.
-
     fn predict(
         &self,
         graph: &Graph,
+        node_features: Vec<Py<PyAny>>,
         support: Option<&Graph>,
-        node_features: Vec<Py<PyArray2<f32>>>,
     ) -> PyResult<Py<PyArray1<f32>>> {
         let gil = pyo3::Python::acquire_gil();
-
         let support = support.map(|support| &support.inner);
-        let node_features = node_features
-            .iter()
-            .map(|node_feature| node_feature.as_ref(gil.python()))
-            .collect::<Vec<_>>();
-        let dimensions = node_features
-            .iter()
-            .map(|node_feature| node_feature.shape()[1])
-            .collect::<Vec<usize>>();
-        let node_features_ref = node_features
-            .iter()
-            .map(|node_feature| unsafe { node_feature.as_slice().unwrap() })
-            .collect::<Vec<_>>();
-        let predictions = PyArray1::new(
-            gil.python(),
-            [graph.get_number_of_directed_edges() as usize],
-            false,
-        );
-        let predictions_ref = unsafe { predictions.as_slice_mut().unwrap() };
+        let predictions = unsafe {
+            PyArray1::new(
+                gil.python(),
+                [graph.get_number_of_directed_edges() as usize],
+                false,
+            )
+        };
+        let predictions_ref = unsafe { predictions.as_slice_mut()? };
+        let (_numpy_references, dimensions, slices) =
+            normalize_features(&gil, node_features.as_slice())?;
 
         pe!(self.inner.predict(
             predictions_ref,
             &graph.inner,
-            node_features_ref.as_slice(),
+            slices.as_slice(),
             dimensions.as_slice(),
             support
         ))?;
 
         Ok(predictions.to_owned())
     }
+}
+
+enum NumpyArray<'a> {
+    //F16(&PyArray2<f16>),
+    F32(&'a PyArray2<f32>),
+    F64(&'a PyArray2<f64>),
+    U8(&'a PyArray2<u8>),
+    U16(&'a PyArray2<u16>),
+    U32(&'a PyArray2<u32>),
+    U64(&'a PyArray2<u64>),
+    I8(&'a PyArray2<i8>),
+    I16(&'a PyArray2<i16>),
+    I32(&'a PyArray2<i32>),
+    I64(&'a PyArray2<i64>),
+}
+
+impl_edge_prediction_embedding! {
+    u8 : U8,
+    u16 : U16,
+    u32 : U32,
+    u64 : U64,
+    i8 : I8,
+    i16 : I16,
+    i32 : I32,
+    i64 : I64,
+    f32 : F32,
+    f64 : F64
 }

@@ -153,7 +153,8 @@ impl Graph {
         // Whether to show the loading bar while computing cliques.
         let verbose = verbose.unwrap_or(true);
         // We create a vector with the initial node degrees of the graph, wrapped into atomic.
-        let mut node_degrees: Vec<AtomicU32> = Vec::with_capacity(self.get_number_of_nodes() as usize);
+        let mut node_degrees: Vec<AtomicU32> =
+            Vec::with_capacity(self.get_number_of_nodes() as usize);
         self.par_iter_node_degrees()
             .map(|degree| AtomicU32::new(degree))
             .collect_into_vec(&mut node_degrees);

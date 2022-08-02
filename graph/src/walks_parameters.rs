@@ -82,7 +82,9 @@ impl WalkWeights {
             self.change_edge_type_weight,
             self.return_weight,
             self.explore_weight,
-        ].iter().all(|weight| !not_one(*weight))
+        ]
+        .iter()
+        .all(|weight| !not_one(*weight))
     }
 
     /// Return boolean value representing if walk is a Node2Vec walk.
@@ -96,10 +98,9 @@ impl WalkWeights {
     /// assert!(!weights.is_node2vec_walk());
     /// ```
     pub fn is_node2vec_walk(&self) -> bool {
-        [
-            self.return_weight,
-            self.explore_weight,
-        ].iter().any(|weight| not_one(*weight))
+        [self.return_weight, self.explore_weight]
+            .iter()
+            .any(|weight| not_one(*weight))
     }
 }
 
@@ -477,12 +478,14 @@ impl WalksParameters {
             return Err(concat!(
                 "The walk is a Node2Vec walk and ",
                 "the graph is directed, which is not yet supported."
-            ).to_string());
+            )
+            .to_string());
         }
         if graph.has_trap_nodes() {
             return Err(concat!(
                 "The graph is directed with trap nodes which is not yet supported."
-            ).to_string());
+            )
+            .to_string());
         }
 
         Ok(())

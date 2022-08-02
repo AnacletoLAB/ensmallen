@@ -357,14 +357,19 @@ impl ShortestPathsResultBFS {
         first_node_id: NodeT,
         second_node_id: NodeT,
     ) -> Result<f32> {
-        Ok(self.get_predecessors_from_node_id(first_node_id)?
+        Ok(self
+            .get_predecessors_from_node_id(first_node_id)?
             .iter()
             .rev()
-            .zip(self.get_predecessors_from_node_id(second_node_id)?.iter().rev())
+            .zip(
+                self.get_predecessors_from_node_id(second_node_id)?
+                    .iter()
+                    .rev(),
+            )
             .take_while(|(a, b)| a == b)
             .count() as f32)
     }
-    
+
     /// Return Ancestors Jaccard Index.
     ///
     /// # Arguments
@@ -392,7 +397,7 @@ impl ShortestPathsResultBFS {
             .count();
 
         let union_size =
-            first_node_predecessors.len() + second_node_predecessors.len() - intersection_size * 2;
+            first_node_predecessors.len() + second_node_predecessors.len() - intersection_size;
 
         Ok(if union_size.is_zero() {
             0.0
@@ -1960,7 +1965,7 @@ impl Graph {
     ///     of the diameter lowerbound.
     ///
     /// This basically creates a "cross" that spans the graph.
-    fn get_four_sweep(&self) -> (NodeT, NodeT) {
+    pub fn get_four_sweep(&self) -> (NodeT, NodeT) {
         let most_central_node_id = unsafe { self.get_unchecked_most_central_node_id() };
         let first_candidate_most_eccentric_node_id = unsafe {
             self.get_unchecked_eccentricity_and_most_distant_node_id_from_node_id(

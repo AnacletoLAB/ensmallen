@@ -101,7 +101,7 @@ def get_repositories_containing_graph(name: str) -> List[str]:
     ]
 
 
-def get_all_available_graphs_dataframe() -> pd.DataFrame:
+def get_all_available_graphs_dataframe(verbose: bool = True) -> pd.DataFrame:
     """Return pandas dataframe with all the available graphs.,"""
     return pd.DataFrame([
         dict(
@@ -113,13 +113,15 @@ def get_all_available_graphs_dataframe() -> pd.DataFrame:
             get_available_repositories(),
             desc="Parsing repositories",
             dynamic_ncols=True,
-            leave=False
+            leave=False,
+            disable=not verbose
         )
         for name in tqdm(
             get_available_graphs_from_repository(repository),
             desc="Parsing graphs",
             dynamic_ncols=True,
-            leave=False
+            leave=False,
+            disable=not verbose
         )
         for version in get_available_versions_from_graph_and_repository(name, repository)
     ])

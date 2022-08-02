@@ -21,10 +21,10 @@ from ensmallen import Graph  # pylint: disable=import-error
 from .graph_retrieval import RetrievedGraph
 
 def WikiData(
-    directed = False, preprocess = "auto", load_nodes = True, load_node_types = True,
-    load_edge_weights = True, auto_enable_tradeoffs = True,
-    sort_tmp_dir = None, verbose = 2, cache = True, cache_path = None,
-    cache_sys_var = "GRAPH_CACHE_DIR", version = "latest-truthy", **kwargs
+    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="latest-truthy", **kwargs
 ) -> Graph:
     """Return Wikidata graph	
 
@@ -36,6 +36,8 @@ def WikiData(
         Will preprocess in Linux/macOS but not Windows.
     load_nodes = True
         Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
     auto_enable_tradeoffs = True
         Enable when graph has < 50M edges
     cache_path = None
@@ -45,9 +47,6 @@ def WikiData(
     version = "latest-truthy"
         Version to retrieve	
 		The available versions are:
-			- wikidata-20220527-lexemes-BETA
-			- wikidata-20220530-all-BETA
-			- wikidata-20220601-truthy-BETA
 			- wikidata-20220603-lexemes-BETA
 			- wikidata-20220606-all-BETA
 			- wikidata-20220608-truthy-BETA
@@ -64,13 +63,15 @@ def WikiData(
 			- wikidata-20220704-all-BETA
 			- wikidata-20220706-truthy-BETA
 			- wikidata-20220708-lexemes-BETA
+			- wikidata-20220711-all-BETA
+			- wikidata-20220713-truthy-BETA
+			- wikidata-20220715-lexemes-BETA
 			- latest-all
 			- latest-lexemes
 			- latest-truthy
     """
     return RetrievedGraph(
         "WikiData", version, "wikidata", directed, preprocess, load_nodes,
-        load_node_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir, verbose, cache,
-        cache_path, cache_sys_var, kwargs
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, cache, cache_path, cache_sys_var, kwargs
     )()
-

@@ -22,11 +22,13 @@ fn bench_has_edge_cora_enable(b: &mut Bencher) {
     let mut cora = load_cora();
     cora.enable(None, None, None, None).unwrap();
     let mut rng = Rng(0x8c2b_781f_2866_90fd);
-    let random_vals = (0..1_000).map(|_| {
-        let src = rng.next() as u32 % cora.get_number_of_nodes();
-        let dst = rng.next() as u32 % cora.get_number_of_nodes();
-        (src, dst)
-    }).collect::<Vec<_>>();
+    let random_vals = (0..1_000)
+        .map(|_| {
+            let src = rng.next() as u32 % cora.get_number_of_nodes();
+            let dst = rng.next() as u32 % cora.get_number_of_nodes();
+            (src, dst)
+        })
+        .collect::<Vec<_>>();
     b.iter(|| {
         let mut counter = 0;
         for (src, dst) in random_vals.iter() {
@@ -42,11 +44,13 @@ fn bench_has_edge_cora_enable(b: &mut Bencher) {
 fn bench_has_edge_cora(b: &mut Bencher) {
     let cora = load_cora();
     let mut rng = Rng(0x8c2b_781f_2866_90fd);
-    let random_vals = (0..1_000).map(|_| {
-        let src = rng.next() as u32 % cora.get_number_of_nodes();
-        let dst = rng.next() as u32 % cora.get_number_of_nodes();
-        (src, dst)
-    }).collect::<Vec<_>>();
+    let random_vals = (0..1_000)
+        .map(|_| {
+            let src = rng.next() as u32 % cora.get_number_of_nodes();
+            let dst = rng.next() as u32 % cora.get_number_of_nodes();
+            (src, dst)
+        })
+        .collect::<Vec<_>>();
     b.iter(|| {
         let mut counter = 0;
         for (src, dst) in random_vals.iter() {
@@ -60,21 +64,16 @@ fn bench_has_edge_cora(b: &mut Bencher) {
 
 #[bench]
 fn bench_has_edge_ppi_enable(b: &mut Bencher) {
-    let mut cora = load_ppi(
-        true,
-        true,
-        true,
-        false,
-        false,
-        false,
-    );
+    let mut cora = load_ppi(true, true, true, false, false, false);
     cora.enable(None, None, None, None).unwrap();
     let mut rng = Rng(0x8c2b_781f_2866_90fd);
-    let random_vals = (0..1_000).map(|_| {
-        let src = rng.next() as u32 % cora.get_number_of_nodes();
-        let dst = rng.next() as u32 % cora.get_number_of_nodes();
-        (src, dst)
-    }).collect::<Vec<_>>();
+    let random_vals = (0..1_000)
+        .map(|_| {
+            let src = rng.next() as u32 % cora.get_number_of_nodes();
+            let dst = rng.next() as u32 % cora.get_number_of_nodes();
+            (src, dst)
+        })
+        .collect::<Vec<_>>();
     b.iter(|| {
         let mut counter = 0;
         for (src, dst) in random_vals.iter() {
@@ -88,20 +87,15 @@ fn bench_has_edge_ppi_enable(b: &mut Bencher) {
 
 #[bench]
 fn bench_has_edge_ppi(b: &mut Bencher) {
-    let cora = load_ppi(
-        true,
-        true,
-        true,
-        false,
-        false,
-        false,
-    );
+    let cora = load_ppi(true, true, true, false, false, false);
     let mut rng = Rng(0x8c2b_781f_2866_90fd);
-    let random_vals = (0..1_000).map(|_| {
-        let src = rng.next() as u32 % cora.get_number_of_nodes();
-        let dst = rng.next() as u32 % cora.get_number_of_nodes();
-        (src, dst)
-    }).collect::<Vec<_>>();
+    let random_vals = (0..1_000)
+        .map(|_| {
+            let src = rng.next() as u32 % cora.get_number_of_nodes();
+            let dst = rng.next() as u32 % cora.get_number_of_nodes();
+            (src, dst)
+        })
+        .collect::<Vec<_>>();
     b.iter(|| {
         let mut counter = 0;
         for (src, dst) in random_vals.iter() {
@@ -112,4 +106,3 @@ fn bench_has_edge_ppi(b: &mut Bencher) {
         counter
     });
 }
-

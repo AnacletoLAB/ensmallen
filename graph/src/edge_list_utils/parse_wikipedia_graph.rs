@@ -193,8 +193,8 @@ pub fn parse_wikipedia_graph(
     edge_types_column: &str,
     node_descriptions_column: &str,
     edge_list_separator: char,
-    sort_temporary_directory: Option<String>,
     directed: bool,
+    sort_temporary_directory: Option<String>,
     compute_node_description: Option<bool>,
     keep_nodes_without_descriptions: Option<bool>,
     keep_nodes_without_categories: Option<bool>,
@@ -526,7 +526,7 @@ pub fn parse_wikipedia_graph(
                         &mut nodes_stream,
                         destination_node_id,
                         destination_node_name,
-                        Some(vec![edge_type_id]),
+                        Some(vec![edge_type_id as NodeTypeT]),
                         None,
                         None,
                     )?;

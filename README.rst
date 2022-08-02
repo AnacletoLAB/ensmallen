@@ -1,8 +1,8 @@
-Ensmallen
+🍇 Ensmallen
 ========================
 |pip| |downloads| |rust_version| |python_version| |license| |DOI| |documentation| |tutorials| |telegram| |discord| |twitter|
 
-Ensmallen is the Rust/Python high-performance graph processing submodule of the `GraPE <https://github.com/AnacletoLAB/grape>`_ library.
+Ensmallen is the Rust/Python high-performance graph processing submodule of the `🍇 GRAPE <https://github.com/AnacletoLAB/grape>`_ library.
 
 How to install Ensmallen
 -------------------------
@@ -73,7 +73,7 @@ Please cite the following paper if it was useful for your research:
     :target: https://doi.org/10.48550/arXiv.2110.06196
     :alt: DOI
 
-.. |python_version| image:: https://img.shields.io/badge/Python-3.6+-blue.svg
+.. |python_version| image:: https://img.shields.io/badge/Python-3.7+-blue.svg
     :target: https://pypi.org/project/ensmallen/#history
     :alt: Supported Python versions
 

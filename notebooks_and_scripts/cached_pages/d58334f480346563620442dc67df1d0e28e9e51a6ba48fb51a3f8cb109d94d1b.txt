@@ -1840,10 +1840,10 @@ Open Access
   <div id="accordion">
     <!-- Banner --><div class="row">
       <div class="col-sm-6">
-        <span class="stats-data">2,436</span>
+        <span class="stats-data">2,457</span>
       </div>
       <div class="col-sm-6">
-        <span class="stats-data">9,093</span>
+        <span class="stats-data">9,094</span>
       </div>
     </div>
     <div class="row">
@@ -1870,19 +1870,19 @@ Open Access
           <th>All versions</th>
           <th>This version</th>
         </tr><tr>
-          <td>Views <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="Total views." data-original-title="Total views."></i></td><td>2,436</td><td>2,437</td>
+          <td>Views <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="Total views." data-original-title="Total views."></i></td><td>2,457</td><td>2,458</td>
         </tr>
         <tr>
-          <td>Downloads <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="Total downloads." data-original-title="Total downloads."></i></td><td>9,093</td><td>9,093</td>
+          <td>Downloads <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="Total downloads." data-original-title="Total downloads."></i></td><td>9,094</td><td>9,094</td>
         </tr>
         <tr>
           <td>Data volume <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="Total download volume." data-original-title="Total download volume."></i></td><td>5.9 TB</td><td>5.9 TB</td>
         </tr>
         <tr>
-          <td>Unique views <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="Views in one hour user-sessions are counted only once." data-original-title="Views in one hour user-sessions are counted only once."></i></td><td>2,204</td><td>2,205</td>
+          <td>Unique views <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="Views in one hour user-sessions are counted only once." data-original-title="Views in one hour user-sessions are counted only once."></i></td><td>2,216</td><td>2,217</td>
         </tr>
         <tr>
-          <td>Unique downloads <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="Downloads in one hour user-sessions are counted only once." data-original-title="Downloads in one hour user-sessions are counted only once."></i></td><td>1,448</td><td>1,448</td>
+          <td>Unique downloads <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="Downloads in one hour user-sessions are counted only once." data-original-title="Downloads in one hour user-sessions are counted only once."></i></td><td>1,449</td><td>1,449</td>
         </tr>
       </table>
       <div class="row">
@@ -2122,7 +2122,7 @@ Open Access
           <div class="pull-right-md text-center-sm text-center-xs">
             <h5>Funded by</h5>
             <ul class="list-inline">
-              <li><a href="https://home.cern"><img src="/static/img/cern.png" width="60" height="60" /></a></li>
+              <li><a href="https://home.cern"><img src="/static/img/cern.svg" width="60" height="60" /></a></li>
               <li><a href="https://www.openaire.eu"><img src="/static/img/openaire.png" width="80" /></a></li>
               <li><a href="https://ec.europa.eu/programmes/horizon2020/"><img src="/static/img/eu.png" width="88" height="60" /></a></li>
             </ul>

@@ -280,6 +280,18 @@ impl Graph {
         }
     }
 
+    /// Return iterator on the trap nodes IDs of the graph.
+    pub fn iter_trap_node_ids(&self) -> impl Iterator<Item = NodeT> + '_ {
+        self.iter_node_ids()
+            .filter(move |&node_id| unsafe { self.is_unchecked_trap_node_from_node_id(node_id) })
+    }
+
+    /// Return parallel iterator on the trap nodes IDs of the graph.
+    pub fn par_iter_trap_node_ids(&self) -> impl ParallelIterator<Item = NodeT> + '_ {
+        self.par_iter_node_ids()
+            .filter(move |&node_id| unsafe { self.is_unchecked_trap_node_from_node_id(node_id) })
+    }
+
     /// Return iterator on the singleton nodes names of the graph.
     pub fn iter_singleton_node_names(&self) -> impl Iterator<Item = String> + '_ {
         self.iter_singleton_node_ids()
@@ -497,14 +509,16 @@ impl Graph {
     pub fn par_iter_undirected_edge_weights(
         &self,
     ) -> Result<impl ParallelIterator<Item = WeightT> + '_> {
-        self.par_iter_directed_edge_weights().map(|iter|{
-            iter.zip(self.par_iter_directed_edge_node_ids()).filter_map(|(weight, (_, src, dst))|{
-                if src <= dst {
-                    Some(weight)
-                } else {
-                    None
-                }
-            })
+        self.par_iter_directed_edge_weights().map(|iter| {
+            iter.zip(self.par_iter_directed_edge_node_ids()).filter_map(
+                |(weight, (_, src, dst))| {
+                    if src <= dst {
+                        Some(weight)
+                    } else {
+                        None
+                    }
+                },
+            )
         })
     }
 
@@ -520,14 +534,16 @@ impl Graph {
     pub fn par_iter_undirected_edge_type_ids(
         &self,
     ) -> Result<impl ParallelIterator<Item = Option<EdgeTypeT>> + '_> {
-        self.par_iter_directed_edge_type_ids().map(|iter|{
-            iter.zip(self.par_iter_directed_edge_node_ids()).filter_map(|(weight, (_, src, dst))|{
-                if src <= dst {
-                    Some(weight)
-                } else {
-                    None
-                }
-            })
+        self.par_iter_directed_edge_type_ids().map(|iter| {
+            iter.zip(self.par_iter_directed_edge_node_ids()).filter_map(
+                |(weight, (_, src, dst))| {
+                    if src <= dst {
+                        Some(weight)
+                    } else {
+                        None
+                    }
+                },
+            )
         })
     }
 
@@ -598,9 +614,9 @@ impl Graph {
         quantity: usize,
         random_state: u64,
     ) -> impl IndexedParallelIterator<Item = NodeT> + '_ {
-        (0..quantity)
-            .into_par_iter()
-            .map(move |i| self.get_random_outbounds_scale_free_node(splitmix64(random_state + i as u64)))
+        (0..quantity).into_par_iter().map(move |i| {
+            self.get_random_outbounds_scale_free_node(splitmix64(random_state + i as u64))
+        })
     }
 
     /// Return iterator on random (non unique) node IDs following the inbounds scale free distribution.
@@ -629,9 +645,9 @@ impl Graph {
         quantity: usize,
         random_state: u64,
     ) -> impl IndexedParallelIterator<Item = NodeT> + '_ {
-        (0..quantity)
-            .into_par_iter()
-            .map(move |i| self.get_random_inbounds_scale_free_node(splitmix64(random_state + i as u64)))
+        (0..quantity).into_par_iter().map(move |i| {
+            self.get_random_inbounds_scale_free_node(splitmix64(random_state + i as u64))
+        })
     }
 
     /// Return iterator on random (non unique) node IDs.

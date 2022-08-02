@@ -57,7 +57,7 @@ impl GraphEmbedder for FirstOrderLINE {
                     [(dst * self.model.embedding_size)..((dst + 1) * self.model.embedding_size)]
             };
 
-            let (similarity, src_norm, dst_norm) =
+            let (similarity, src_norm, dst_norm): (f32, f32, f32) =
                 unsafe { cosine_similarity_sequential_unchecked(src_embedding, dst_embedding) };
 
             let prediction = 1.0 / (1.0 + (-similarity).exp());
@@ -92,7 +92,7 @@ impl GraphEmbedder for FirstOrderLINE {
                     graph.get_number_of_directed_edges() as usize,
                     false,
                     Some(0.5),
-                    Some(true),
+                    Some(self.model.get_avoid_false_negatives()),
                     None,
                     Some(true),
                     None,

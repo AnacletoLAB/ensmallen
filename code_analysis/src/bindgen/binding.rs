@@ -142,11 +142,6 @@ fn translate_return_type(
 
         // handle the Option type
         x if x == "Option<_>" => {
-            let needs_into = match &return_type[0] {
-                x if x == "()" => false,
-                _ => true,
-            };
-
             let (inner_body, inner_type) = translate_return_type(
                 attributes, 
                 &return_type[0], 
@@ -252,7 +247,7 @@ r#"
 // Which is a flat vector with row-first or column-first unrolling
 let gil = pyo3::Python::acquire_gil();
 let body = {body};
-let result_array = ThreadDataRaceAware {{t: PyArray2::<{inner_type}>::new(gil.python(), [body.len(), 2], false)}};
+let result_array = ThreadDataRaceAware {{t: unsafe{{PyArray2::<{inner_type}>::new(gil.python(), [body.len(), 2], false)}}}};
 body.into_par_iter().enumerate()
     .for_each(|(i, (a, b))| unsafe {{
         *(result_array.t.uget_mut([i, 0]))  = a;
@@ -279,7 +274,7 @@ result_array.t.to_owned()"#,
             }
 
             // TODO! make this recursive??
-            let mut res_body = format!(
+            let res_body = format!(
                 "{}.into_iter().map(|x| x.into()).collect::<Vec<_>>()", 
                 body.strip_suffix(".into()").unwrap_or(&body)
             );
@@ -411,6 +406,7 @@ impl GenBinding for Function {
         let this_struct = self.class.as_ref().map(|x| x.get_name().unwrap()).unwrap_or("".to_string());
 
         let mut handle_walk_parameters = false;
+        let mut is_kwarg_only = false;
 
         for arg in self.iter_args() {
             // bad hardocded stuff but fuck it it's 2am
@@ -432,6 +428,21 @@ build_walk_parameters(kwargs)?
             }
 
             let (mut arg_name, mut arg_call) = translate_arg(arg, &this_struct);
+
+            if let Some((_, tipe)) = arg_name.split_once(':') {
+                if tipe.trim().starts_with("Option") {
+                    is_kwarg_only = true;
+                } else {
+                    if is_kwarg_only {
+                        panic!("Argument '{}' of function '{}'  of class '{:?}' from file '{}' is not kwargs compatible",
+                            arg_name,
+                            self.name,
+                            self.class.as_ref().map(|x| x.get_name()),
+                            self.file_path,
+                        );
+                    }
+                }
+            }
 
             // bad hack
             if arg_name.contains("Option<&Vec<NodeT>>") {
@@ -471,7 +482,7 @@ build_walk_parameters(kwargs)?
 
 
 
-        let text_signature = format!("#[text_signature = \"({})\"]", args_signatures.join(", "));
+        let text_signature = format!("#[pyo3(text_signature = \"({})\")]", args_signatures.join(", "));
 
         // build the call
         let body = format!(

@@ -50,9 +50,8 @@ impl Graph {
     /// # Raises
     /// * If the graph does not have edge types.
     pub fn get_random_zifian_edge_type(&self, random_state: u64) -> Result<Option<EdgeTypeT>> {
-        self.must_have_edge_types().map(|_|{
-            unsafe { self.get_unchecked_random_zifian_edge_type(random_state) }
-        })
+        self.must_have_edge_types()
+            .map(|_| unsafe { self.get_unchecked_random_zifian_edge_type(random_state) })
     }
 
     /// Return random node ID.
@@ -216,8 +215,8 @@ impl Graph {
         &self,
         number_of_nodes_to_sample: NodeT,
         random_state: u64,
-        root_node: Option<NodeT>,
         node_sampling_method: &str,
+        root_node: Option<NodeT>,
         unique: Option<bool>,
     ) -> Result<Vec<NodeT>> {
         let random_state = splitmix64(random_state);

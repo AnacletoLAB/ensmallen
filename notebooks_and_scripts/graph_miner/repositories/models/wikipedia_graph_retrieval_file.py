@@ -2,6 +2,7 @@ def {graph_method_name}(
     directed: bool = False,
     load_nodes: bool = True,
     load_node_types: bool = True,
+    load_edge_types: bool = True,
     keep_nodes_without_descriptions: bool = True,
     keep_nodes_without_categories: bool = True,
     keep_interwikipedia_nodes: bool = True,
@@ -30,6 +31,9 @@ def {graph_method_name}(
         simply as a numeric range.
     load_node_types: bool = True
         Whether to load the node types or skip them entirely.
+        This feature is only available when the preprocessing is enabled.
+    load_node_types: bool = True
+        Whether to load the node types if available or skip them entirely.
         This feature is only available when the preprocessing is enabled.
     keep_nodes_without_descriptions: bool = True
         Whether to keep the nodes laking a description
@@ -74,6 +78,7 @@ def {graph_method_name}(
         directed=directed,
         load_nodes=load_nodes,
         load_node_types=load_node_types,
+        load_edge_types=load_edge_types,
         keep_nodes_without_descriptions=keep_nodes_without_descriptions,
         keep_nodes_without_categories=keep_nodes_without_categories,
         keep_interwikipedia_nodes=keep_interwikipedia_nodes,

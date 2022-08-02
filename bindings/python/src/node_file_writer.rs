@@ -4,7 +4,9 @@ use graph::NodeFileWriter;
 #[pymethods]
 impl Graph {
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, path, *, verbose, separator, header, nodes_column_number, nodes_column, node_types_column_number, node_type_column)"]
+    #[pyo3(
+        text_signature = "($self, path, *, verbose, separator, header, nodes_column_number, nodes_column, node_types_column_number, node_type_column)"
+    )]
     /// Write to disk the nodes (and optionally the metadata) of the graph.
     ///
     /// Parameters

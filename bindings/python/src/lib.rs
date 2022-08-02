@@ -1,3 +1,4 @@
+#![feature(adt_const_params)]
 use numpy::{PyArray, PyArray1, PyArray2};
 use pyo3::exceptions::{PyAttributeError, PyTypeError, PyValueError};
 use pyo3::prelude::*;
@@ -7,6 +8,8 @@ use std::collections::{HashMap, HashSet};
 #[allow(unused_imports)]
 use graph::{EdgeT, EdgeTypeT, NodeT, NodeTypeT, Result, WeightT};
 use tags::*;
+
+pub(crate) mod mmap_numpy_npy;
 
 mod macros;
 pub(crate) use crate::macros::*;
@@ -18,6 +21,9 @@ pub use crate::node2vec::*;
 
 mod edge_prediction_perceptron;
 pub(crate) use edge_prediction_perceptron::*;
+
+mod dag_resnik;
+pub use dag_resnik::*;
 
 mod basic_embedding_model_binding;
 pub(crate) use basic_embedding_model_binding::*;
@@ -45,12 +51,20 @@ pub(crate) use crate::types::*;
 mod operators;
 mod spine;
 pub(crate) use spine::*;
+mod wine;
+pub(crate) use wine::*;
+
 mod weighted_spine;
 pub(crate) use weighted_spine::*;
 mod walks;
 
 #[pymodule]
-fn models(_py: Python, _m: &PyModule) -> PyResult<()> {
+pub fn ensmallen(py: Python, m: &PyModule) -> PyResult<()> {
+    register_ensmallen(py, m)?;
+    Ok(())
+}
+
+pub fn register_models(_py: Python, _m: &PyModule) -> PyResult<()> {
     _m.add_class::<CBOW>()?;
     _m.add_class::<GloVe>()?;
     _m.add_class::<SkipGram>()?;
@@ -63,9 +77,15 @@ fn models(_py: Python, _m: &PyModule) -> PyResult<()> {
     _m.add_class::<StructuredEmbedding>()?;
     _m.add_class::<FirstOrderLINE>()?;
     _m.add_class::<SecondOrderLINE>()?;
-    _m.add_class::<SPINE>()?;
+    _m.add_class::<DegreeSPINE>()?;
+    _m.add_class::<NodeLabelSPINE>()?;
+    _m.add_class::<ScoreSPINE>()?;
+    _m.add_class::<DegreeWINE>()?;
+    _m.add_class::<NodeLabelWINE>()?;
+    _m.add_class::<ScoreWINE>()?;
     _m.add_class::<WeightedSPINE>()?;
     _m.add_class::<EdgePredictionPerceptron>()?;
+    _m.add_class::<DAGResnik>()?;
     Ok(())
 }
 

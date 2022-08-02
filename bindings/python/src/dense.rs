@@ -27,7 +27,7 @@ impl Graph {
 
 #[pymethods]
 impl Graph {
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return the dense binary adjacency matrix.
     fn get_dense_binary_adjacency_matrix(&self) -> PyResult<Py<PyArray2<bool>>> {
         self.populate_adjacency_matrix(|matrix| {
@@ -35,7 +35,7 @@ impl Graph {
         })
     }
 
-    #[text_signature = "($self)"]
+    #[pyo3(text_signature = "($self)")]
     /// Return the dense weighted adjacency matrix.
     fn get_dense_weighted_adjacency_matrix(&self) -> PyResult<Py<PyArray2<WeightT>>> {
         self.populate_adjacency_matrix(|matrix| {
@@ -43,7 +43,7 @@ impl Graph {
         })
     }
 
-    #[text_signature = "($self, verbose)"]
+    #[pyo3(text_signature = "($self, verbose)")]
     /// Return the dense shortest paths matrix.
     ///
     /// Parameters
@@ -56,7 +56,7 @@ impl Graph {
         })
     }
 
-    #[text_signature = "($self, verbose)"]
+    #[pyo3(text_signature = "($self, verbose)")]
     /// Return the dense modularity matrix.
     ///
     /// Parameters
@@ -72,7 +72,7 @@ impl Graph {
         })
     }
 
-    #[text_signature = "($self, bfs, verbose)"]
+    #[pyo3(text_signature = "($self, bfs, verbose)")]
     /// Returns the dense shared ancestor sizes.
     ///
     /// Parameters
@@ -92,7 +92,7 @@ impl Graph {
         })
     }
 
-    #[text_signature = "($self, bfs, verbose)"]
+    #[pyo3(text_signature = "($self, bfs, verbose)")]
     /// Returns the dense shared ancestor jaccard.
     ///
     /// Parameters

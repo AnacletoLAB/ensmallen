@@ -5,6 +5,9 @@ use graph::{build_optimal_lists_files, EdgeFileReader, Graph, NodeFileReader};
 #[test]
 fn test_prepare_edge_list_for_sorted_undirected_use() -> Result<(), String> {
     let (_, nodes_number, _, edges_number) = build_optimal_lists_files(
+        "tests/data/unsorted_macaque.tsv".to_string(),
+        "tests/data/sorted_macaque.tsv".to_string(),
+        false,
         None,
         None,
         None,
@@ -72,7 +75,6 @@ fn test_prepare_edge_list_for_sorted_undirected_use() -> Result<(), String> {
         None,
         None,
         None,
-        "tests/data/unsorted_macaque.tsv".to_string(),
         None,
         Some(false),
         None,
@@ -94,12 +96,10 @@ fn test_prepare_edge_list_for_sorted_undirected_use() -> Result<(), String> {
         None,
         Some(true),
         None,
-        "tests/data/sorted_macaque.tsv".to_string(),
         None,
         None,
         None,
         Some(true),
-        false,
         Some("Macaque".to_string()),
     )?;
 
@@ -174,6 +174,9 @@ fn test_prepare_edge_list_for_sorted_undirected_use() -> Result<(), String> {
     let _ = graph::test_utilities::default_test_suite(&mut g, Some(false));
 
     let (_, nodes_number, _, edges_number) = build_optimal_lists_files(
+        "tests/data/unsorted_macaque.tsv".to_string(),
+        "tests/data/sorted_macaque.tsv".to_string(),
+        true,
         None,
         None,
         None,
@@ -241,7 +244,6 @@ fn test_prepare_edge_list_for_sorted_undirected_use() -> Result<(), String> {
         None,
         None,
         None,
-        "tests/data/unsorted_macaque.tsv".to_string(),
         None,
         Some(false),
         None,
@@ -263,12 +265,10 @@ fn test_prepare_edge_list_for_sorted_undirected_use() -> Result<(), String> {
         None,
         Some(true),
         None,
-        "tests/data/sorted_macaque.tsv".to_string(),
         None,
         None,
         None,
         Some(true),
-        true,
         Some("Macaque".to_string()),
     )?;
 

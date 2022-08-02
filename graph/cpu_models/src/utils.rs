@@ -1,4 +1,7 @@
+use ensmallen_traits::prelude::*;
+use funty::Integral;
 use graph::{EdgeTypeT, Graph, NodeT};
+use half::f16;
 use num::Zero;
 use rayon::prelude::*;
 use vec_rand::{random_f32, splitmix64};
@@ -42,12 +45,6 @@ pub(crate) fn populate_vectors(
                 *weight = get_random_weight(random_state + i as u64, scale_factor);
             })
         });
-}
-
-pub(crate) fn get_random_vector(capacity: usize, random_state: u64, scale_factor: f32) -> Vec<f32> {
-    (0..capacity)
-        .map(|i| get_random_weight(random_state + i as u64, scale_factor))
-        .collect()
 }
 
 pub(crate) fn compute_prior(subset_size: f32, total_size: f32) -> f32 {
@@ -115,6 +112,23 @@ impl From<(usize,)> for MatrixShape {
     }
 }
 
+impl Into<Vec<usize>> for MatrixShape {
+    fn into(self) -> Vec<usize> {
+        match self {
+            MatrixShape::OneDimensional(one) => vec![one],
+            MatrixShape::BiDimensional(one, two) => vec![one, two],
+            MatrixShape::ThreeDimensional(one, two, three) => vec![one, two, three],
+        }
+    }
+}
+
+impl Into<Vec<isize>> for MatrixShape {
+    fn into(self) -> Vec<isize> {
+        let vector_shape: Vec<usize> = self.into();
+        vector_shape.into_iter().map(|size| size as isize).collect()
+    }
+}
+
 impl From<(usize, usize)> for MatrixShape {
     fn from(shape: (usize, usize)) -> Self {
         MatrixShape::BiDimensional(shape.0, shape.1)
@@ -157,6 +171,48 @@ impl core::ops::Index<isize> for MatrixShape {
                 2 => three,
                 _ => unreachable!("The shape is 3D."),
             },
+        }
+    }
+}
+
+pub trait IntegerFeatureType:
+    Send + Sync + Integral + TryInto<usize> + TryFrom<usize> + IntoAtomic
+{
+}
+
+impl IntegerFeatureType for u64 {}
+impl IntegerFeatureType for u32 {}
+impl IntegerFeatureType for u16 {}
+impl IntegerFeatureType for u8 {}
+
+pub enum FeatureSlice<'a> {
+    F16(&'a [f16]),
+    F32(&'a [f32]),
+    F64(&'a [f64]),
+    U8(&'a [u8]),
+    U16(&'a [u16]),
+    U32(&'a [u32]),
+    U64(&'a [u64]),
+    I8(&'a [i8]),
+    I16(&'a [i16]),
+    I32(&'a [i32]),
+    I64(&'a [i64]),
+}
+
+impl<'a> FeatureSlice<'a> {
+    pub fn len(&self) -> usize {
+        match self {
+            Self::F16(feature) => feature.len(),
+            Self::F32(feature) => feature.len(),
+            Self::F64(feature) => feature.len(),
+            Self::U8(feature) => feature.len(),
+            Self::U16(feature) => feature.len(),
+            Self::U32(feature) => feature.len(),
+            Self::U64(feature) => feature.len(),
+            Self::I8(feature) => feature.len(),
+            Self::I16(feature) => feature.len(),
+            Self::I32(feature) => feature.len(),
+            Self::I64(feature) => feature.len(),
         }
     }
 }
