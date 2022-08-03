@@ -251,21 +251,19 @@ impl GraphEmbedder for TransH {
                                 * (*mult_feature * (*not_dst_feature - *not_src_feature)
                                     + false_dot_delta)
                             + 2.0 * mult_dot_bias * *mult_feature)
-                            / edge_type_prior
-                            * learning_rate;
+                            / edge_type_prior;
 
                         *bias_feature -= (normalized_delta + mult_dot_bias_squared * *bias_feature
                             - 2.0 * mult_dot_bias)
-                            / edge_type_prior
-                            * learning_rate;
+                            / edge_type_prior;
                         *src_feature -=
-                            normalized_true_distance_feature * learning_rate / node_priors[0];
+                            normalized_true_distance_feature / node_priors[0];
                         *dst_feature +=
-                            normalized_true_distance_feature * learning_rate / node_priors[1];
+                            normalized_true_distance_feature / node_priors[1];
                         *not_src_feature +=
-                            normalized_false_distance_feature * learning_rate / node_priors[2];
+                            normalized_false_distance_feature / node_priors[2];
                         *not_dst_feature -=
-                            normalized_false_distance_feature * learning_rate / node_priors[3];
+                            normalized_false_distance_feature / node_priors[3];
                         normalized_delta
                     },
                 )
