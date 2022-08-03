@@ -1,6 +1,6 @@
 use crate::*;
 use express_measures::dot_product_sequential_unchecked;
-use graph::{Graph, ThreadDataRaceAware};
+use graph::{Graph, ThreadDataRaceAware, NodeT};
 use num::Zero;
 use rayon::prelude::*;
 use vec_rand::splitmix64;
@@ -55,15 +55,20 @@ where
                     let dot = dot_product_sequential_unchecked(src_embedding, dst_embedding)
                         / scale_factor;
 
-                    let variation: f32 =
-                        learning_rate * 2.0 * freq.powf(self.alpha) * (dot - freq.ln());
+                    let variation: f32 = 2.0 * freq.powf(self.alpha) * (dot - freq.ln());
+
+                    let node_priors =
+                        get_node_priors(graph, &[src as NodeT, dst as NodeT], learning_rate);
+
+                    let src_variation = variation / node_priors[0];
+                    let dst_variation = variation / node_priors[1];
 
                     src_embedding
                         .iter_mut()
                         .zip(dst_embedding.iter_mut())
                         .for_each(|(src_feature, dst_feature)| {
-                            *src_feature -= *dst_feature * variation;
-                            *dst_feature -= *src_feature * variation;
+                            *src_feature -= *dst_feature * src_variation;
+                            *dst_feature -= *src_feature * dst_variation;
                         });
                     variation.abs()
                 })
