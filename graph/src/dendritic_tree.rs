@@ -250,7 +250,11 @@ impl DendriticTree {
 
     /// Return number of edges involved in the dendritic tree.
     pub fn get_number_of_involved_edges(&self) -> EdgeT {
-        self.node_ids.len() as EdgeT
+        if self.graph.is_directed() {
+            self.node_ids.len() as EdgeT
+        } else {
+            2 * (self.node_ids.len() as EdgeT)
+        }
     }
 
     /// Return the node IDs of the nodes composing the DendriticTree.
