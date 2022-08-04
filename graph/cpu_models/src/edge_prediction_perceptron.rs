@@ -561,6 +561,8 @@ where
     ) -> Vec<f32> {
         use crate::FeatureSlice::*;
         if self.has_single_embedding && node_features.len() == 1{
+            let dimension = dimensions[0];
+            let edge_embedding = self.edge_embeddings[0];
             return match node_features[0] {
                 F16(feature) => edge_embedding.get_method()(
                     &feature[(src as usize) * dimension..((src as usize) + 1) * dimension],
