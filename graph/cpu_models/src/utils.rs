@@ -47,19 +47,13 @@ pub(crate) fn populate_vectors(
         });
 }
 
-pub(crate) fn compute_prior(subset_size: f32, total_size: f32) -> f32 {
-    (1.0 + subset_size)
-            / total_size
-            // Adding the epsilon is necessary because the division may destroy enough
-            // resolution to make the prior equal to zero.
-            + f32::EPSILON
+pub(crate) fn compute_prior(subset_size: f32) -> f32 {
+    1.0 / (1.0 + subset_size)
 }
 
 pub(crate) fn get_node_prior(graph: &Graph, node_id: NodeT, learning_rate: f32) -> f32 {
-    compute_prior(
-        unsafe { graph.get_unchecked_node_degree_from_node_id(node_id) as f32 },
-        graph.get_number_of_nodes() as f32,
-    ) / learning_rate
+    compute_prior(unsafe { graph.get_unchecked_node_degree_from_node_id(node_id) as f32 })
+        * learning_rate
 }
 
 pub(crate) fn get_edge_type_prior(
@@ -67,10 +61,9 @@ pub(crate) fn get_edge_type_prior(
     edge_type_id: EdgeTypeT,
     learning_rate: f32,
 ) -> f32 {
-    compute_prior(
-        unsafe { graph.get_unchecked_edge_count_from_edge_type_id(Some(edge_type_id)) as f32 },
-        graph.get_number_of_directed_edges() as f32,
-    ) / learning_rate
+    compute_prior(unsafe {
+        graph.get_unchecked_edge_count_from_edge_type_id(Some(edge_type_id)) as f32
+    }) * learning_rate
 }
 
 pub(crate) fn get_node_priors(graph: &Graph, node_ids: &[NodeT], learning_rate: f32) -> Vec<f32> {

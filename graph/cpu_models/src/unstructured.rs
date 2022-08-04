@@ -107,10 +107,10 @@ impl GraphEmbedder for Unstructured {
                             let loss = positive_distance.powf(2.0) - negative_distance.powf(2.0);
 
                             if loss > -self.model.relu_bias {
-                                *src_feature -= positive_distance / node_priors[0];
-                                *dst_feature += positive_distance / node_priors[1];
-                                *not_src_feature += negative_distance / node_priors[2];
-                                *not_dst_feature -= negative_distance / node_priors[3];
+                                *src_feature -= positive_distance * node_priors[0];
+                                *dst_feature += positive_distance * node_priors[1];
+                                *not_src_feature += negative_distance * node_priors[2];
+                                *not_dst_feature -= negative_distance * node_priors[3];
                             }
                             loss.abs()
                         },

@@ -198,11 +198,11 @@ impl GraphEmbedder for StructuredEmbedding {
                                     *src_edge_type_feature -= (normalized_true_distance
                                         * src_feature
                                         - normalized_false_distance * not_src_feature)
-                                        / edge_type_prior;
+                                        * edge_type_prior;
                                     *dst_edge_type_feature += (normalized_true_distance
                                         * dst_feature
                                         - normalized_false_distance * not_dst_feature)
-                                        / edge_type_prior;
+                                        * edge_type_prior;
                                     to_return
                                 },
                             )
@@ -229,10 +229,10 @@ impl GraphEmbedder for StructuredEmbedding {
                             )
                             .unwrap();
 
-                        src_embedding[row_number] -= src_total_gradient / node_priors[0];
-                        dst_embedding[row_number] += dst_total_gradient / node_priors[1];
-                        not_src_embedding[row_number] += not_src_total_gradient / node_priors[2];
-                        not_dst_embedding[row_number] -= not_dst_total_gradient / node_priors[3];
+                        src_embedding[row_number] -= src_total_gradient * node_priors[0];
+                        dst_embedding[row_number] += dst_total_gradient * node_priors[1];
+                        not_src_embedding[row_number] += not_src_total_gradient * node_priors[2];
+                        not_dst_embedding[row_number] -= not_dst_total_gradient * node_priors[3];
                     },
                 );
             (not_src_sub_dst_norm - src_sub_dst_norm).abs()

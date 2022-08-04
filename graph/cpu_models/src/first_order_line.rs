@@ -64,8 +64,8 @@ impl GraphEmbedder for FirstOrderLINE {
             let variation = if label { prediction - 1.0 } else { prediction };
             let node_priors = get_node_priors(graph, &[src as NodeT, dst as NodeT], learning_rate);
 
-            let src_variation = variation / node_priors[0];
-            let dst_variation = variation / node_priors[1];
+            let src_variation = variation * node_priors[0];
+            let dst_variation = variation * node_priors[1];
 
             src_embedding
                 .iter_mut()

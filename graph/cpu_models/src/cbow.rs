@@ -108,7 +108,7 @@ where
             let mut variation = (label - exp_dot / (exp_dot + 1.0)) * learning_rate;
 
             if self.normalize_learning_rate_by_degree {
-                variation /= get_node_prior(graph, node_id, 1.0);
+                variation *= get_node_prior(graph, node_id, 1.0);
             }
 
             unsafe {
