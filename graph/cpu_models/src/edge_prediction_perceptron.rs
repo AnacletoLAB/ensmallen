@@ -392,6 +392,8 @@ where
     cooccurrence_window_size: u64,
     /// Whether to sample using scale free distribution.
     use_scale_free_distribution: bool,
+    /// Precomputed boolean representing whether the model has only a single embedding.
+    has_single_embedding: bool,
     /// The random state to reproduce the model initialization and training.
     random_state: u64,
 }
@@ -448,6 +450,7 @@ where
         }
 
         Ok(Self {
+            has_single_embedding: edge_embeddings.len() == 1 && edge_features.is_empty(),
             edge_embeddings,
             edge_features,
             bias_optimizer: optimizer.clone().into(),
@@ -557,6 +560,55 @@ where
         dimensions: &[usize],
     ) -> Vec<f32> {
         use crate::FeatureSlice::*;
+        if self.has_single_embedding && node_features.len() == 1{
+            return match node_features[0] {
+                F16(feature) => edge_embedding.get_method()(
+                    &feature[(src as usize) * dimension..((src as usize) + 1) * dimension],
+                    &feature[(dst as usize) * dimension..((dst as usize) + 1) * dimension],
+                ),
+                F32(feature) => edge_embedding.get_method()(
+                    &feature[(src as usize) * dimension..((src as usize) + 1) * dimension],
+                    &feature[(dst as usize) * dimension..((dst as usize) + 1) * dimension],
+                ),
+                F64(feature) => edge_embedding.get_method()(
+                    &feature[(src as usize) * dimension..((src as usize) + 1) * dimension],
+                    &feature[(dst as usize) * dimension..((dst as usize) + 1) * dimension],
+                ),
+                U8(feature) => edge_embedding.get_method()(
+                    &feature[(src as usize) * dimension..((src as usize) + 1) * dimension],
+                    &feature[(dst as usize) * dimension..((dst as usize) + 1) * dimension],
+                ),
+                U16(feature) => edge_embedding.get_method()(
+                    &feature[(src as usize) * dimension..((src as usize) + 1) * dimension],
+                    &feature[(dst as usize) * dimension..((dst as usize) + 1) * dimension],
+                ),
+                U32(feature) => edge_embedding.get_method()(
+                    &feature[(src as usize) * dimension..((src as usize) + 1) * dimension],
+                    &feature[(dst as usize) * dimension..((dst as usize) + 1) * dimension],
+                ),
+                U64(feature) => edge_embedding.get_method()(
+                    &feature[(src as usize) * dimension..((src as usize) + 1) * dimension],
+                    &feature[(dst as usize) * dimension..((dst as usize) + 1) * dimension],
+                ),
+                I8(feature) => edge_embedding.get_method()(
+                    &feature[(src as usize) * dimension..((src as usize) + 1) * dimension],
+                    &feature[(dst as usize) * dimension..((dst as usize) + 1) * dimension],
+                ),
+                I16(feature) => edge_embedding.get_method()(
+                    &feature[(src as usize) * dimension..((src as usize) + 1) * dimension],
+                    &feature[(dst as usize) * dimension..((dst as usize) + 1) * dimension],
+                ),
+                I32(feature) => edge_embedding.get_method()(
+                    &feature[(src as usize) * dimension..((src as usize) + 1) * dimension],
+                    &feature[(dst as usize) * dimension..((dst as usize) + 1) * dimension],
+                ),
+                I64(feature) => edge_embedding.get_method()(
+                    &feature[(src as usize) * dimension..((src as usize) + 1) * dimension],
+                    &feature[(dst as usize) * dimension..((dst as usize) + 1) * dimension],
+                ),
+            }
+        };
+
         node_features
             .iter()
             .zip(dimensions.iter().copied())

@@ -72,7 +72,6 @@ pub fn register_models(_py: Python, _m: &PyModule) -> PyResult<()> {
     _m.add_class::<WalkletsGloVe>()?;
     _m.add_class::<WalkletsSkipGram>()?;
     _m.add_class::<TransE>()?;
-    _m.add_class::<TransH>()?;
     _m.add_class::<Unstructured>()?;
     _m.add_class::<StructuredEmbedding>()?;
     _m.add_class::<FirstOrderLINE>()?;
