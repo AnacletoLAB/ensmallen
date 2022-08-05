@@ -8,6 +8,8 @@ pub struct BasicEmbeddingModel {
     pub(crate) learning_rate: f32,
     pub(crate) learning_rate_decay: f32,
     pub(crate) avoid_false_negatives: bool,
+    /// Whether to sample using scale free distribution.
+    pub(crate) use_scale_free_distribution: bool,
     pub(crate) verbose: bool,
 }
 
@@ -20,6 +22,7 @@ impl BasicEmbeddingModel {
     /// * `learning_rate`: Option<f32> - The learning rate to update the gradient, by default 0.05.
     /// * `learning_rate_decay`: Option<f32> - Factor to reduce the learning rate for at each epoch. By default 0.9.
     /// * `avoid_false_negatives`: Option<bool> - Whether to avoid sampling false negatives. This may cause a slower training.
+    /// * `use_scale_free_distribution`: Option<bool> - Whether to sample using scale free distribution. By default, true.
     /// * `random_state`: Option<u64> - The random state to use to reproduce the training.
     /// * `verbose`: Option<bool> - Whether to show loading bar.
     pub fn new(
@@ -28,6 +31,7 @@ impl BasicEmbeddingModel {
         learning_rate: Option<f32>,
         learning_rate_decay: Option<f32>,
         avoid_false_negatives: Option<bool>,
+        use_scale_free_distribution: Option<bool>,
         random_state: Option<u64>,
         verbose: Option<bool>,
     ) -> Result<Self, String> {
@@ -41,6 +45,7 @@ impl BasicEmbeddingModel {
                 "learning rate decay",
             )?,
             avoid_false_negatives: avoid_false_negatives.unwrap_or(false),
+            use_scale_free_distribution: use_scale_free_distribution.unwrap_or(true),
             random_state: random_state.unwrap_or(42),
             verbose: verbose.unwrap_or(true),
         })
@@ -60,6 +65,10 @@ impl BasicEmbeddingModel {
 
     pub fn is_verbose(&self) -> bool {
         self.verbose
+    }
+
+    pub fn can_use_scale_free_distribution(&self) -> bool {
+        self.use_scale_free_distribution
     }
 
     pub fn get_learning_rate_decay(&self) -> f32 {

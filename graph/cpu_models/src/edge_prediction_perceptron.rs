@@ -9,11 +9,13 @@ use indicatif::ProgressIterator;
 use indicatif::{ProgressBar, ProgressStyle};
 use num::Zero;
 use rayon::prelude::*;
+use serde::de::DeserializeOwned;
+use serde::{Deserialize, Serialize};
 use strum::IntoEnumIterator;
 use strum_macros::EnumIter;
 use vec_rand::{random_f32, splitmix64};
 
-#[derive(Clone, Debug, Copy, PartialEq, EnumIter)]
+#[derive(Clone, Debug, Copy, PartialEq, EnumIter, Deserialize, Serialize)]
 pub enum EdgeEmbedding {
     CosineSimilarity,
     EuclideanDistance,
@@ -173,7 +175,7 @@ impl EdgeEmbedding {
     }
 }
 
-#[derive(Clone, Debug, Copy, PartialEq, EnumIter)]
+#[derive(Clone, Debug, Copy, PartialEq, EnumIter, Deserialize, Serialize)]
 pub enum EdgeFeature {
     Degree,
     LogDegree,
@@ -244,7 +246,7 @@ impl EdgeFeature {
     }
 
     /// Returns method to compute the edge embedding.
-    fn get_method<O1: Optimizer<f32>, O2: Optimizer<[f32]>>(
+    fn get_method<O1: Optimizer<f32>, O2: Optimizer<Vec<f32>>>(
         &self,
     ) -> fn(
         model: &EdgePredictionPerceptron<O1, O2>,
@@ -348,7 +350,7 @@ impl EdgeFeature {
         }
     }
 
-    pub fn embed<O1: Optimizer<f32>, O2: Optimizer<[f32]>, F: Coerced<f32>>(
+    pub fn embed<O1: Optimizer<f32>, O2: Optimizer<Vec<f32>>, F: Coerced<f32>>(
         &self,
         model: &EdgePredictionPerceptron<O1, O2>,
         support: &Graph,
@@ -360,12 +362,8 @@ impl EdgeFeature {
     }
 }
 
-#[derive(Clone)]
-pub struct EdgePredictionPerceptron<O1, O2>
-where
-    O1: Optimizer<f32>,
-    O2: Optimizer<[f32]>,
-{
+#[derive(Clone, Deserialize, Serialize)]
+pub struct EdgePredictionPerceptron<O1, O2> {
     /// The edge embedding methods to use.
     edge_embeddings: Vec<EdgeEmbedding>,
     /// The edge feature methods to use.
@@ -392,14 +390,16 @@ where
     cooccurrence_window_size: u64,
     /// Whether to sample using scale free distribution.
     use_scale_free_distribution: bool,
+    /// Precomputed boolean representing whether the model has only a single embedding.
+    has_single_embedding: bool,
     /// The random state to reproduce the model initialization and training.
     random_state: u64,
 }
 
 impl<O1, O2> EdgePredictionPerceptron<O1, O2>
 where
-    O1: Optimizer<f32> + From<O2>,
-    O2: Optimizer<[f32]>,
+    O1: Optimizer<f32> + Serialize + From<O2> + DeserializeOwned,
+    O2: Optimizer<Vec<f32>> + Serialize + DeserializeOwned,
 {
     /// Return new instance of Perceptron for edge prediction.
     ///
@@ -448,6 +448,7 @@ where
         }
 
         Ok(Self {
+            has_single_embedding: edge_embeddings.len() == 1 && edge_features.is_empty(),
             edge_embeddings,
             edge_features,
             bias_optimizer: optimizer.clone().into(),
@@ -557,6 +558,57 @@ where
         dimensions: &[usize],
     ) -> Vec<f32> {
         use crate::FeatureSlice::*;
+        if self.has_single_embedding && node_features.len() == 1 {
+            let dimension = dimensions[0];
+            let edge_embedding = self.edge_embeddings[0];
+            return match node_features[0] {
+                F16(feature) => edge_embedding.get_method()(
+                    &feature[(src as usize) * dimension..((src as usize) + 1) * dimension],
+                    &feature[(dst as usize) * dimension..((dst as usize) + 1) * dimension],
+                ),
+                F32(feature) => edge_embedding.get_method()(
+                    &feature[(src as usize) * dimension..((src as usize) + 1) * dimension],
+                    &feature[(dst as usize) * dimension..((dst as usize) + 1) * dimension],
+                ),
+                F64(feature) => edge_embedding.get_method()(
+                    &feature[(src as usize) * dimension..((src as usize) + 1) * dimension],
+                    &feature[(dst as usize) * dimension..((dst as usize) + 1) * dimension],
+                ),
+                U8(feature) => edge_embedding.get_method()(
+                    &feature[(src as usize) * dimension..((src as usize) + 1) * dimension],
+                    &feature[(dst as usize) * dimension..((dst as usize) + 1) * dimension],
+                ),
+                U16(feature) => edge_embedding.get_method()(
+                    &feature[(src as usize) * dimension..((src as usize) + 1) * dimension],
+                    &feature[(dst as usize) * dimension..((dst as usize) + 1) * dimension],
+                ),
+                U32(feature) => edge_embedding.get_method()(
+                    &feature[(src as usize) * dimension..((src as usize) + 1) * dimension],
+                    &feature[(dst as usize) * dimension..((dst as usize) + 1) * dimension],
+                ),
+                U64(feature) => edge_embedding.get_method()(
+                    &feature[(src as usize) * dimension..((src as usize) + 1) * dimension],
+                    &feature[(dst as usize) * dimension..((dst as usize) + 1) * dimension],
+                ),
+                I8(feature) => edge_embedding.get_method()(
+                    &feature[(src as usize) * dimension..((src as usize) + 1) * dimension],
+                    &feature[(dst as usize) * dimension..((dst as usize) + 1) * dimension],
+                ),
+                I16(feature) => edge_embedding.get_method()(
+                    &feature[(src as usize) * dimension..((src as usize) + 1) * dimension],
+                    &feature[(dst as usize) * dimension..((dst as usize) + 1) * dimension],
+                ),
+                I32(feature) => edge_embedding.get_method()(
+                    &feature[(src as usize) * dimension..((src as usize) + 1) * dimension],
+                    &feature[(dst as usize) * dimension..((dst as usize) + 1) * dimension],
+                ),
+                I64(feature) => edge_embedding.get_method()(
+                    &feature[(src as usize) * dimension..((src as usize) + 1) * dimension],
+                    &feature[(dst as usize) * dimension..((dst as usize) + 1) * dimension],
+                ),
+            };
+        };
+
         node_features
             .iter()
             .zip(dimensions.iter().copied())
@@ -622,7 +674,7 @@ where
     /// `src`: NodeT - The source node whose features are to be extracted.
     /// `dst`: NodeT - The destination node whose features are to be extracted.
     /// `support`: &Graph - The support graph to use for the topological features.
-    /// `node_features`: &[&[f32]] - The node features to use.
+    /// `node_features`: &[&Vec<f32>] - The node features to use.
     /// `dimensions`: &[usize] - The dimension of the provided node features.
     ///
     /// # Safety
@@ -649,7 +701,7 @@ where
     ///
     /// # Arguments
     /// * `graph`: &Graph - The graph whose edges are to be learned.
-    /// * `node_features`: &[&[f32]] - List of node features matrices.
+    /// * `node_features`: &[&Vec<f32>] - List of node features matrices.
     /// * `dimensions`: &[usize] - The dimensionality of the node features.
     /// * `support`: Option<&Graph> - Graph to use for the topological features.
     /// * `verbose`: Option<bool> - Whether to show a loading bar for the epochs. By default, True.
@@ -861,7 +913,7 @@ where
     /// # Arguments
     /// * `predictions`: &mut [f32] - Area where to write the predictions.
     /// * `graph`: &Graph - The graph whose edges are to be learned.
-    /// * `node_features`: &[&[F]] - A node features matrix.
+    /// * `node_features`: &[FeatureSlice] - A node features matrix.
     /// * `dimension`: &[usize] - The dimensionality of the node features.
     /// * `support`: Option<&Graph> - Graph to use for the topological features.
     pub fn predict(
@@ -916,5 +968,27 @@ where
             });
 
         Ok(())
+    }
+
+    pub fn dump(&self, path: &str) -> Result<(), String> {
+        serde_json::to_writer(
+            std::fs::File::create(path).map_err(|e| e.to_string())?,
+            self,
+        )
+        .map_err(|e| e.to_string())?;
+        Ok(())
+    }
+
+    pub fn dumps(&self) -> Result<String, String> {
+        serde_json::to_string(self).map_err(|e| e.to_string())
+    }
+
+    pub fn load(path: &str) -> Result<Self, String> {
+        serde_json::from_reader(std::fs::File::open(path).map_err(|e| e.to_string())?)
+            .map_err(|e| e.to_string())
+    }
+
+    pub fn loads(json: &str) -> Result<Self, String> {
+        serde_json::from_str(json).map_err(|e| e.to_string())
     }
 }

@@ -94,7 +94,7 @@ impl GraphEmbedder for FirstOrderLINE {
                     Some(0.5),
                     Some(self.model.get_avoid_false_negatives()),
                     None,
-                    Some(true),
+                    Some(self.model.can_use_scale_free_distribution()),
                     None,
                     None,
                 )?

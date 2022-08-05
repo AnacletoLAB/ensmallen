@@ -60,6 +60,7 @@ where
                 "learning_rate",
                 "learning_rate_decay",
                 "avoid_false_negatives",
+                "use_scale_free_distribution",
                 "random_state",
                 "verbose",
                 "node_embedding_path",
@@ -73,6 +74,7 @@ where
             extract_value_rust_result!(kwargs, "learning_rate", f32),
             extract_value_rust_result!(kwargs, "learning_rate_decay", f32),
             extract_value_rust_result!(kwargs, "avoid_false_negatives", bool),
+            extract_value_rust_result!(kwargs, "use_scale_free_distribution", bool),
             extract_value_rust_result!(kwargs, "random_state", u64),
             extract_value_rust_result!(kwargs, "verbose", bool),
         ))?
@@ -89,7 +91,7 @@ where
 #[pyclass]
 #[derive(Debug, Clone)]
 #[pyo3(
-    text_signature = "(*, embedding_size, epochs, learning_rate, learning_rate_decay, avoid_false_negatives, node_embedding_path, random_state, verbose)"
+    text_signature = "(*, embedding_size, epochs, learning_rate, learning_rate_decay, avoid_false_negatives, use_scale_free_distribution, node_embedding_path, random_state, verbose)"
 )]
 pub struct FirstOrderLINE {
     pub inner: BasicEmbeddingModelBinding<cpu_models::FirstOrderLINE>,
@@ -114,6 +116,8 @@ impl FirstOrderLINE {
     /// avoid_false_negatives: bool = False
     ///     Whether to avoid sampling false negatives.
     ///     This may cause a slower training.
+    /// use_scale_free_distribution: bool = True
+    ///     Whether to train model using a scale free distribution for the negatives.
     /// node_embedding_path: Optional[str] = None
     ///     Path where to mmap and store the nodes embedding.
     ///     This is necessary to embed large graphs whose embedding will not
@@ -147,7 +151,7 @@ impl FirstOrderLINE {
 #[pyclass]
 #[derive(Debug, Clone)]
 #[pyo3(
-    text_signature = "(*, embedding_size, epochs, learning_rate, learning_rate_decay, avoid_false_negatives, node_embedding_path, contextual_node_embedding_path, random_state, verbose)"
+    text_signature = "(*, embedding_size, epochs, learning_rate, learning_rate_decay, avoid_false_negatives, use_scale_free_distribution, node_embedding_path, contextual_node_embedding_path, random_state, verbose)"
 )]
 pub struct SecondOrderLINE {
     pub inner: BasicEmbeddingModelBinding<cpu_models::SecondOrderLINE>,
@@ -172,6 +176,8 @@ impl SecondOrderLINE {
     /// avoid_false_negatives: bool = False
     ///     Whether to avoid sampling false negatives.
     ///     This may cause a slower training.
+    /// use_scale_free_distribution: bool = True
+    ///     Whether to train model using a scale free distribution for the negatives.
     /// node_embedding_path: Optional[str] = None
     ///     Path where to mmap and store the nodes embedding.
     ///     This is necessary to embed large graphs whose embedding will not

@@ -1,15 +1,17 @@
 use express_measures::ThreadFloat;
+use serde::{Deserialize, Serialize};
+use serde::de::DeserializeOwned;
 
-pub trait Optimizer<V>
+pub trait Optimizer<V>: Serialize
 where
-    V: Send + Sync + ?Sized,
+    V: Send + Sync + ?Sized + Serialize + DeserializeOwned,
     Self: Send + Sync + Clone,
 {
     fn get_update(&mut self, variations: &mut V);
     fn set_capacity(&mut self, capacity: usize);
 }
 
-#[derive(Clone)]
+#[derive(Clone, Deserialize, Serialize)]
 pub struct StocaticGradientDescent<F>
 where
     F: ThreadFloat,
@@ -26,13 +28,13 @@ where
     }
 }
 
-impl<F> Optimizer<[F]> for StocaticGradientDescent<F>
+impl<F> Optimizer<Vec<F>> for StocaticGradientDescent<F>
 where
-    F: ThreadFloat,
+    F: ThreadFloat + Serialize + DeserializeOwned,
 {
     fn set_capacity(&mut self, _capacity: usize) {}
 
-    fn get_update(&mut self, variations: &mut [F]) {
+    fn get_update(&mut self, variations: &mut Vec<F>) {
         variations
             .iter_mut()
             .for_each(|value| *value *= self.learning_rate);
@@ -41,7 +43,7 @@ where
 
 impl<F> Optimizer<F> for StocaticGradientDescent<F>
 where
-    F: ThreadFloat,
+    F: ThreadFloat + Serialize + DeserializeOwned,
 {
     fn set_capacity(&mut self, _capacity: usize) {}
 
@@ -50,7 +52,7 @@ where
     }
 }
 
-#[derive(Clone)]
+#[derive(Clone, Deserialize, Serialize)]
 pub struct Momentum<F, V>
 where
     F: ThreadFloat,
@@ -86,7 +88,7 @@ where
 
 impl<F> Optimizer<F> for Momentum<F, F>
 where
-    F: ThreadFloat,
+    F: ThreadFloat + Serialize + DeserializeOwned,
 {
     fn set_capacity(&mut self, capacity: usize) {
         if capacity != 1 {
@@ -103,15 +105,16 @@ where
     }
 }
 
-impl<F> Optimizer<[F]> for Momentum<F, Vec<F>>
+impl<F> Optimizer<Vec<F>> for Momentum<F, Vec<F>>
 where
-    F: ThreadFloat,
+    F: ThreadFloat + Serialize + DeserializeOwned,
+    Vec<F>: Serialize,
 {
     fn set_capacity(&mut self, capacity: usize) {
         self.momentum = vec![F::zero(); capacity]
     }
 
-    fn get_update(&mut self, variations: &mut [F]) {
+    fn get_update(&mut self, variations: &mut Vec<F>) {
         self.momentum
             .iter_mut()
             .zip(variations.iter_mut())
@@ -122,7 +125,7 @@ where
     }
 }
 
-#[derive(Clone)]
+#[derive(Clone, Deserialize, Serialize)]
 pub struct Adam<F, V>
 where
     V: Default,
@@ -191,7 +194,7 @@ where
 
 impl<F> Optimizer<F> for Adam<F, F>
 where
-    F: ThreadFloat,
+    F: ThreadFloat + Serialize + DeserializeOwned,
 {
     fn set_capacity(&mut self, capacity: usize) {
         if capacity != 1 {
@@ -217,16 +220,17 @@ where
     }
 }
 
-impl<F> Optimizer<[F]> for Adam<F, Vec<F>>
+impl<F> Optimizer<Vec<F>> for Adam<F, Vec<F>>
 where
-    F: ThreadFloat,
+    F: ThreadFloat + Serialize + DeserializeOwned,
+    Vec<F>: Serialize,
 {
     fn set_capacity(&mut self, capacity: usize) {
         self.first_moment = vec![F::zero(); capacity];
         self.second_moment = vec![F::zero(); capacity];
     }
 
-    fn get_update(&mut self, variations: &mut [F]) {
+    fn get_update(&mut self, variations: &mut Vec<F>) {
         self.time += F::one();
         variations
             .iter_mut()
