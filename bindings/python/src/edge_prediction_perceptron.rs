@@ -282,6 +282,51 @@ impl EdgePredictionPerceptron {
 
         Ok(predictions.to_owned())
     }
+
+    #[staticmethod]
+    #[pyo3(text_signature = "(path,)")]
+    /// Loads model from the provided path.
+    ///
+    /// Parameters
+    /// ----------------
+    /// path: str
+    ///     Path from where to load the model.
+    fn load(path: String) -> PyResult<Self> {
+        Ok(EdgePredictionPerceptron {
+            inner: pe!(InnerModel::load(path.as_ref()))?,
+        })
+    }
+
+    #[staticmethod]
+    #[pyo3(text_signature = "(json,)")]
+    /// Loads model from provided JSON string.
+    ///
+    /// Parameters
+    /// ----------------
+    /// json: str
+    ///     JSON string containing model metadata.
+    fn loads(json: String) -> PyResult<Self> {
+        Ok(EdgePredictionPerceptron {
+            inner: pe!(InnerModel::loads(json.as_str()))?,
+        })
+    }
+
+    #[pyo3(text_signature = "(&self, path)")]
+    /// Dump model to the provided path.
+    ///
+    /// Parameters
+    /// ----------------
+    /// path: str
+    ///     Path where to dump the model.
+    fn dump(&self, path: String) -> PyResult<()> {
+        pe!(self.inner.dump(path.as_ref()))
+    }
+
+    #[pyo3(text_signature = "(&self)")]
+    /// Dumps model to JSON string.
+    fn dumps(&self) -> PyResult<String> {
+        pe!(self.inner.dumps())
+    }
 }
 
 enum NumpyArray<'a> {
