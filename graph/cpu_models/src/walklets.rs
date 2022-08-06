@@ -1,3 +1,5 @@
+use indicatif::ProgressIterator;
+use indicatif::{ProgressBar, ProgressStyle};
 use crate::*;
 
 #[derive(Clone, Debug)]
@@ -50,8 +52,22 @@ impl GraphEmbedder for Walklets {
     ) -> Result<(), String> {
         let mut node2vec = self.node2vec.clone();
         node2vec.window_size = 1;
+        let loading_bar = if self.is_verbose() {
+            let pb = ProgressBar::new(self.get_window_size() as u64);
+            pb.set_style(ProgressStyle::default_bar().template(&format!(
+                concat!(
+                    "{}{{msg}} {{spinner:.green}} [{{elapsed_precise}}] ",
+                    "[{{bar:40.cyan/blue}}] ({{pos}}/{{len}}, ETA {{eta}})"
+                ),
+                self.get_model_name()
+            )));
+            pb
+        } else {
+            ProgressBar::hidden()
+        };
         (0..self.get_window_size())
             .zip(embedding.chunks_mut(2))
+            .progress_with(loading_bar)
             .for_each(|(power, embedding)| {
                 node2vec.walk_transformer = WalkletsWalkTransformer::new(power + 1).unwrap();
                 node2vec.fit_transform(graph, embedding).unwrap();
