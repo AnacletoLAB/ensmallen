@@ -1,6 +1,5 @@
 use super::*;
 use crate::constructors::build_graph_from_integers;
-use crate::constructors::build_graph_from_strings_without_type_iterators;
 use log::info;
 use rayon::iter::IntoParallelIterator;
 use rayon::iter::ParallelIterator;
@@ -411,6 +410,57 @@ impl Graph {
                 self.get_name(),
             ),
             (true, _) => {
+                let node_types_iterator: Result<ItersWrapper<_, _, rayon::iter::Empty<_>>> =
+                    self.iter_unique_node_type_names().map(|iter| {
+                        ItersWrapper::Sequential(
+                            iter.enumerate()
+                                .filter(|(node_type_id, _)| {
+                                    self.par_iter_node_ids_from_node_type_id(
+                                        *node_type_id as NodeTypeT,
+                                    )
+                                    .unwrap()
+                                    .any(|node_id| unsafe {
+                                        node_filter(
+                                            node_id,
+                                            self.get_unchecked_node_name_from_node_id(node_id),
+                                            self.get_unchecked_node_type_ids_from_node_id(node_id),
+                                        )
+                                    })
+                                })
+                                .enumerate()
+                                .map(|(node_type_id, (_, node_type_name))| {
+                                    Ok((node_type_id, node_type_name))
+                                }),
+                        )
+                    });
+                let edge_types_iterator: Result<ItersWrapper<_, _, rayon::iter::Empty<_>>> =
+                    self.iter_unique_edge_type_names().map(|iter| {
+                        ItersWrapper::Sequential(
+                            iter.enumerate()
+                                .filter(|(edge_type_id, _)| {
+                                    let edge_type_id = Some(*edge_type_id as EdgeTypeT);
+                                    self.par_iter_directed_edge_ids_from_edge_type_id(edge_type_id)
+                                        .unwrap()
+                                        .any(|edge_id| unsafe {
+                                            let (src, dst) =
+                                                self.get_unchecked_node_ids_from_edge_id(edge_id);
+                                            edge_filter(
+                                                edge_id,
+                                                src,
+                                                dst,
+                                                edge_type_id,
+                                                self.get_unchecked_edge_weight_from_edge_id(
+                                                    edge_id,
+                                                ),
+                                            )
+                                        })
+                                })
+                                .enumerate()
+                                .map(|(edge_type_id, (_, edge_type_name))| {
+                                    Ok((edge_type_id, edge_type_name))
+                                }),
+                        )
+                    });
                 let nodes_iterator: ItersWrapper<_, std::iter::Empty<_>, _> =
                     ItersWrapper::Parallel(
                         self.par_iter_node_names_and_node_type_names()
@@ -467,8 +517,13 @@ impl Graph {
                             ))
                         }),
                 );
-                build_graph_from_strings_without_type_iterators(
+                build_graph_from_strings(
+                    node_types_iterator.ok(),
+                    None,
+                    None,
+                    None,
                     self.has_node_types(),
+                    Some(true),
                     Some(nodes_iterator),
                     // The number of nodes is unknown because of the filter
                     // it may be possible, in some cases, to get this value by
@@ -478,7 +533,12 @@ impl Graph {
                     false,
                     false,
                     None,
+                    edge_types_iterator.ok(),
+                    None,
+                    None,
+                    None,
                     self.has_edge_types(),
+                    Some(true),
                     Some(edges_iterator),
                     self.has_edge_weights(),
                     self.is_directed(),
