@@ -125,7 +125,7 @@ where
             let pb = ProgressBar::new(self.epochs as u64);
             pb.set_style(ProgressStyle::default_bar().template(&format!(
                 concat!(
-                    "{}{{msg}} {{spinner:.green}} [{{elapsed_precise}}] ",
+                    "{} {{msg}} {{spinner:.green}} [{{elapsed_precise}}] ",
                     "[{{bar:40.cyan/blue}}] ({{pos}}/{{len}}, ETA {{eta}})"
                 ),
                 self.get_model_name()
