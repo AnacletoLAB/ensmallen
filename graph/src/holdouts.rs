@@ -332,6 +332,7 @@ impl Graph {
     /// * `graph_to_avoid`: Option<&Graph> - Compatible graph whose edges are not to be sampled.
     /// * `support`: Option<&Graph> - Parent graph of this subgraph, defining the `true` topology of the graph. Node degrees and connected components are sampled from this support graph when provided. Useful when sampling negative edges for a test graph. In this latter case, the support graph should be the training graph.
     /// * `use_scale_free_distribution`: Option<bool> - Whether to sample the nodes using scale_free distribution. By default True. Not using this may cause significant biases.
+    /// * `sample_edge_types`: Option<bool> - Whether to sample edge types, following the edge type counts distribution. By default it is true only when the current graph instance has edge types.
     ///
     /// # Raises
     /// * If the `sample_only_edges_with_heterogeneous_node_types` argument is provided as true, but the graph does not have node types.
@@ -352,6 +353,7 @@ impl Graph {
         graph_to_avoid: Option<&Graph>,
         support: Option<&Graph>,
         use_scale_free_distribution: Option<bool>,
+        sample_edge_types: Option<bool>,
     ) -> Result<Graph> {
         if number_of_negative_samples == 0 {
             return Err(String::from(
@@ -365,6 +367,12 @@ impl Graph {
 
         if let Some(support) = support.as_ref() {
             self.must_share_node_vocabulary(support)?;
+        }
+
+        let sample_edge_types = sample_edge_types.unwrap_or(self.has_edge_types());
+
+        if sample_edge_types {
+            self.must_have_edge_types()?;
         }
 
         let support = support.unwrap_or(&self);
@@ -533,13 +541,34 @@ impl Graph {
         }
 
         build_graph_from_integers(
-            Some(negative_edges_hashset.into_par_iter().map(|edge| {
-                let (src, dst) = self.decode_edge(edge);
-                (0, (src, dst, None, WeightT::NAN))
-            })),
+            Some(
+                negative_edges_hashset
+                    .into_par_iter()
+                    .map(|edge| unsafe {
+                        let (src, dst) = self.decode_edge(edge);
+                        (
+                            0,
+                            (
+                                src,
+                                dst,
+                                if sample_edge_types {
+                                    self.get_unchecked_random_scale_free_edge_type(
+                                        random_state.wrapping_mul(edge),
+                                    )
+                                } else {
+                                    None
+                                },
+                                WeightT::NAN,
+                            ),
+                        )
+                    }),
+            ),
             self.nodes.clone(),
             self.node_types.clone(),
-            None,
+            self.edge_types
+                .as_ref()
+                .as_ref()
+                .map(|ets| ets.vocabulary.clone()),
             false,
             self.is_directed(),
             Some(false),
