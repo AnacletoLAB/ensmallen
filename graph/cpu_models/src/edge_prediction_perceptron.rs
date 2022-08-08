@@ -494,6 +494,17 @@ where
         node_features: &[FeatureSlice],
         dimensions: &[usize],
     ) -> Result<(), String> {
+        if !self.edge_embeddings.is_empty() && node_features.is_empty(){
+            return Err(format!(
+                concat!(
+                    "This edge prediction perceptron expected node features ",
+                    "as some edge embedding procedure has been specified {:?}, ",
+                    "yet you have provided no node features."
+                ),
+                self.edge_embeddings,
+            ));
+        }
+        
         if node_features.len() != dimensions.len() {
             return Err(format!(
                 concat!(
