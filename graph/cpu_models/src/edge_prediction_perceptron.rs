@@ -109,7 +109,7 @@ impl EdgeEmbedding {
                 a.iter()
                     .copied()
                     .zip(b.iter().copied())
-                    .map(|(feature_a, feature_b)| (feature_a * feature_b).coerce_into())
+                    .map(|(feature_a, feature_b)| feature_a.coerce_into() * feature_b.coerce_into())
                     .collect::<Vec<f32>>()
             },
             EdgeEmbedding::Concatenate => |a: &[F], b: &[F]| {
@@ -133,8 +133,8 @@ impl EdgeEmbedding {
                     .copied()
                     .zip(b.iter().copied())
                     .map(|(feature_a, feature_b)| {
-                        let l1 = absolute_distance(feature_a, feature_b);
-                        (l1 * l1).coerce_into()
+                        let l1 = absolute_distance(feature_a, feature_b).coerce_into();
+                        l1 * l1
                     })
                     .collect::<Vec<f32>>()
             },
