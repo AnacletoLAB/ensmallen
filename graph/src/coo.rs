@@ -335,9 +335,8 @@ impl Graph {
                     dst,
                     frequency * nodes_number_squared
                         / unsafe {
-                            (self.get_unchecked_node_degree_from_node_id(src)
-                                * self.get_unchecked_node_degree_from_node_id(dst))
-                                as f32
+                            self.get_unchecked_node_degree_from_node_id(src) as f32
+                                * self.get_unchecked_node_degree_from_node_id(dst) as f32
                         },
                 )
             }))
