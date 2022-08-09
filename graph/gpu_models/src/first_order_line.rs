@@ -16,7 +16,7 @@ impl From<BasicEmbeddingModel> for FirstOrderLINE {
 }
 
 impl FirstOrderLINE {
-    fn get_embedding_size(&self) -> usize {
+    pub fn get_embedding_size(&self) -> usize {
         self.model.get_embedding_size()
     }
 }
