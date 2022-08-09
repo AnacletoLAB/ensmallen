@@ -151,7 +151,7 @@ impl FirstOrderLINE {
 #[pyclass]
 #[derive(Debug, Clone)]
 #[pyo3(
-    text_signature = "(*, embedding_size, epochs, learning_rate, learning_rate_decay, avoid_false_negatives, use_scale_free_distribution, node_embedding_path, random_state, verbose)"
+    text_signature = "(*, embedding_size, epochs, learning_rate, random_state, verbose)"
 )]
 pub struct CUDAFirstOrderLINE {
     pub inner: BasicEmbeddingModelBinding<gpu_models::FirstOrderLINE>,
@@ -171,17 +171,6 @@ impl CUDAFirstOrderLINE {
     ///     Number of epochs to train the model for.
     /// learning_rate: float = 0.01
     ///     Learning rate of the model.
-    /// learning_rate_decay: float = 0.9
-    ///     Amount of learning rate decay for each epoch.
-    /// avoid_false_negatives: bool = False
-    ///     Whether to avoid sampling false negatives.
-    ///     This may cause a slower training.
-    /// use_scale_free_distribution: bool = True
-    ///     Whether to train model using a scale free distribution for the negatives.
-    /// node_embedding_path: Optional[str] = None
-    ///     Path where to mmap and store the nodes embedding.
-    ///     This is necessary to embed large graphs whose embedding will not
-    ///     fit into the available main memory.
     /// random_state: int = 42
     ///     random_state to use to reproduce the walks.
     /// verbose: bool = True
