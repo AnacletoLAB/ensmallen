@@ -14,7 +14,7 @@ pub fn add_one(vals: &[f32]) -> Result<Vec<f32>, GPUError> {
     // load our compiled code
     let mut ptx = gpu.load_ptx(PTX_SOURCE)?;
     // get a function from the compiled code
-    let kernel = ptx.get_kernel("add_one")?;
+    let kernel = ptx.get_kernel("compute_first_order_line")?;
     
     // // allocate a gpu buffer and copy data from the host
     // let buffer = gpu.buffer_from_slice::<f32>(vals)?;
