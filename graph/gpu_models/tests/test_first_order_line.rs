@@ -6,7 +6,7 @@ use cpu_models::GraphEmbedder;
 use graph::{CSVFileWriter, WalksParameters};
 
 #[test]
-fn test_skipgram_on_cora() -> Result<(), String> {
+fn test_first_order_line_on_cora() -> Result<(), String> {
     let cora = load_cora();
     let line = FirstOrderLINE::default();
     let mut embedding = vec![0.0; line.get_embedding_size() * cora.get_number_of_nodes() as usize];

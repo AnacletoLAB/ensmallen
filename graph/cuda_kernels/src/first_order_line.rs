@@ -25,7 +25,7 @@ pub unsafe extern "ptx-kernel" fn compute_first_order_line(
     mut random_state: u64,
     embedding_size: usize,
     number_of_nodes: usize,
-    mut number_of_edges: usize,
+    number_of_edges: usize,
 ) {
     random_state = (thread_idx_x() as u64).wrapping_mul(random_state);
 
@@ -35,21 +35,26 @@ pub unsafe extern "ptx-kernel" fn compute_first_order_line(
 
     let destinations = core::slice::from_raw_parts(destinations, number_of_edges);
 
-    number_of_edges /= block_dim_x() as usize;
-    number_of_edges = number_of_edges.max(1);
+    let batch_size = (number_of_edges / block_dim_x() as usize).max(1);
 
     let get_node_degree = |node_id: usize| {
         let comulative_degree = node_degrees[node_id];
-        let previous_comulative_degree =
-            ((node_id == 0) as u64).wrapping_sub(1) & node_degrees[node_id - 1];
+        // let previous_comulative_degree =
+        //     ((node_id == 0) as u64).wrapping_sub(1) & node_degrees[node_id - 1];
+        let previous_comulative_degree = if node_id == 0 {
+            0
+        } else {
+            node_degrees[node_id - 1]
+        };
         let degree = comulative_degree - previous_comulative_degree;
         (previous_comulative_degree, degree)
     };
 
-    (0..number_of_edges).for_each(|edge_number| {
+    (0..batch_size).for_each(|edge_number| {
         let mut random_state =
             xorshift((edge_number as u64 + random_state).wrapping_mul(random_state));
         let src = random_state as usize % number_of_nodes;
+
         random_state = splitmix64(random_state);
         let (previous_comulative_degree, src_degree) = get_node_degree(src);
         if unlikely(src_degree == 0) {
@@ -58,6 +63,7 @@ pub unsafe extern "ptx-kernel" fn compute_first_order_line(
         let true_dst = destinations
             [(previous_comulative_degree + (xorshift(random_state) % src_degree)) as usize]
             as usize;
+
         random_state = splitmix64(random_state);
         let false_dst = destinations[xorshift(random_state) as usize % number_of_edges] as usize;
 
