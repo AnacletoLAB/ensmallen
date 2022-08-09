@@ -23,10 +23,10 @@ fn test_skipgram_on_cora() -> Result<(), GPUError> {
             Some(cora.get_number_of_nodes() as usize),
             vec!["node_name".to_string()]
                 .into_iter()
-                .chain((0..embedding_size).map(|e| e.to_string()))
+                .chain((0..line.get_embedding_size()).map(|e| e.to_string()))
                 .collect::<Vec<String>>(),
             embedding
-                .chunks(embedding_size)
+                .chunks(line.get_embedding_size())
                 .zip(cora.get_node_names().into_iter())
                 .map(|(features, node_name)| {
                     vec![node_name.to_string()]

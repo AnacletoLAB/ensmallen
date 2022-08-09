@@ -15,6 +15,12 @@ impl From<BasicEmbeddingModel> for FirstOrderLINE {
     }
 }
 
+impl FirstOrderLINE {
+    fn get_embedding_size(&self) -> usize {
+        self.model.get_embedding_size()
+    }
+}
+
 impl GraphEmbedder for FirstOrderLINE {
     fn get_model_name(&self) -> String {
         "First-order LINE".to_string()
@@ -61,9 +67,12 @@ impl GraphEmbedder for FirstOrderLINE {
         let embedding_on_gpu = gpu.buffer_from_slice::<f32>(embedding[0]).unwrap();
         let comulative_node_degrees = graph.get_cumulative_node_degrees();
         let destinations = graph.get_destination_node_ids(false);
-        let gpu_comulative_node_degrees =
-            gpu.buffer_from_slice::<EdgeT>(comulative_node_degrees.as_ref()).unwrap();
-        let gpu_destinations = gpu.buffer_from_slice::<NodeT>(destinations.as_ref()).unwrap();
+        let gpu_comulative_node_degrees = gpu
+            .buffer_from_slice::<EdgeT>(comulative_node_degrees.as_ref())
+            .unwrap();
+        let gpu_destinations = gpu
+            .buffer_from_slice::<NodeT>(destinations.as_ref())
+            .unwrap();
 
         let progress_bar = self.get_loading_bar();
 
@@ -83,7 +92,8 @@ impl GraphEmbedder for FirstOrderLINE {
                     comulative_node_degrees.len(),
                     destinations.len(),
                 ],
-            ).unwrap();
+            )
+            .unwrap();
 
             // wait for the gpu to finish
             gpu.synchronize().unwrap();
