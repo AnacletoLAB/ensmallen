@@ -1,5 +1,5 @@
 use crate::Optimizer;
-use crate::{must_not_be_zero, FeatureSlice};
+use crate::{get_random_weight, must_not_be_zero, FeatureSlice};
 use express_measures::{
     absolute_distance, cosine_similarity_sequential_unchecked, dot_product_sequential_unchecked,
     element_wise_subtraction, euclidean_distance_sequential_unchecked, Coerced,
@@ -13,7 +13,7 @@ use serde::de::DeserializeOwned;
 use serde::{Deserialize, Serialize};
 use strum::IntoEnumIterator;
 use strum_macros::EnumIter;
-use vec_rand::{random_f32, splitmix64};
+use vec_rand::splitmix64;
 
 #[derive(Clone, Debug, Copy, PartialEq, EnumIter, Deserialize, Serialize)]
 pub enum EdgeEmbedding {
@@ -494,7 +494,7 @@ where
         node_features: &[FeatureSlice],
         dimensions: &[usize],
     ) -> Result<(), String> {
-        if !self.edge_embeddings.is_empty() && node_features.is_empty(){
+        if !self.edge_embeddings.is_empty() && node_features.is_empty() {
             return Err(format!(
                 concat!(
                     "This edge prediction perceptron expected node features ",
@@ -504,7 +504,7 @@ where
                 self.edge_embeddings,
             ));
         }
-        
+
         if node_features.len() != dimensions.len() {
             return Err(format!(
                 concat!(
@@ -702,9 +702,7 @@ where
     ) -> (Vec<f32>, f32) {
         let edge_embedding =
             self.get_unsafe_edge_embedding(src, dst, support, node_features, dimensions);
-        let scale_factor = (edge_embedding.len() as f32).sqrt();
-        let dot = dot_product_sequential_unchecked(&edge_embedding, &self.weights) / scale_factor
-            + self.bias;
+        let dot = dot_product_sequential_unchecked(&edge_embedding, &self.weights) + self.bias;
         (edge_embedding, 1.0 / (1.0 + (-dot).exp()))
     }
 
@@ -737,17 +735,12 @@ where
 
         let scale_factor: f32 = (edge_embedding_dimension as f32).sqrt();
 
-        // Initialize the model with weights and bias in the range (-1 / sqrt(k), +1 / sqrt(k))
-        let get_random_weight = |seed: usize| {
-            (2.0 * random_f32(splitmix64(random_state + seed as u64)) - 1.0) / scale_factor
-        };
-
         self.bias_optimizer.set_capacity(1);
         self.weight_optimizer.set_capacity(edge_embedding_dimension);
         self.weights = (0..edge_embedding_dimension)
-            .map(|i| get_random_weight(i))
+            .map(|i| get_random_weight(i as u64, scale_factor))
             .collect::<Vec<f32>>();
-        self.bias = get_random_weight(self.weights.len());
+        self.bias = get_random_weight(self.weights.len() as u64, scale_factor);
 
         // Depending whether verbosity was requested by the user
         // we create or not a visible progress bar to show the progress
@@ -773,12 +766,7 @@ where
             let total_variation = (0..number_of_batches_per_epoch)
                 .map(|_| {
                     random_state = splitmix64(random_state);
-                    let (
-                        mut total_weights_gradient,
-                        total_squared_weights_gradient,
-                        mut total_variation,
-                        total_squared_variation,
-                    ) = graph
+                    let (mut total_weights_gradient, mut total_variation) = graph
                         .par_iter_edge_prediction_mini_batch(
                             random_state,
                             self.number_of_edges_per_mini_batch,
@@ -807,39 +795,15 @@ where
                                 *edge_feature *= variation;
                             });
 
-                            let squared_variations = edge_embedding
-                                .iter()
-                                .map(|edge_feature| edge_feature.powf(2.0))
-                                .collect::<Vec<f32>>();
-
-                            (
-                                edge_embedding,
-                                squared_variations,
-                                variation,
-                                variation.powf(2.0),
-                            )
+                            (edge_embedding, variation)
                         })
                         .reduce(
-                            || {
-                                (
-                                    vec![0.0; edge_embedding_dimension],
-                                    vec![0.0; edge_embedding_dimension],
-                                    0.0,
-                                    0.0,
-                                )
-                            },
-                            |(
-                                mut total_weights_gradient,
-                                mut total_squared_weights_gradient,
-                                mut total_variation,
-                                mut total_squared_variation,
-                            ): (Vec<f32>, Vec<f32>, f32, f32),
+                            || (vec![0.0; edge_embedding_dimension], 0.0),
+                            |(mut total_weights_gradient, mut total_variation): (Vec<f32>, f32),
                              (
                                 partial_weights_gradient,
-                                partial_squared_weights_gradient,
                                 partial_variation,
-                                partial_squared_variation,
-                            ): (Vec<f32>, Vec<f32>, f32, f32)| {
+                            ): (Vec<f32>, f32)| {
                                 total_weights_gradient
                                     .iter_mut()
                                     .zip(partial_weights_gradient.into_iter())
@@ -848,66 +812,29 @@ where
                                             *total_weight_gradient += partial_weight_gradient;
                                         },
                                     );
-                                total_squared_weights_gradient
-                                    .iter_mut()
-                                    .zip(partial_squared_weights_gradient.into_iter())
-                                    .for_each(
-                                        |(
-                                            total_squared_weight_gradient,
-                                            partial_squared_weight_gradient,
-                                        )| {
-                                            *total_squared_weight_gradient +=
-                                                partial_squared_weight_gradient;
-                                        },
-                                    );
                                 total_variation += partial_variation;
-                                total_squared_variation += partial_squared_variation;
-                                (
-                                    total_weights_gradient,
-                                    total_squared_weights_gradient,
-                                    total_variation,
-                                    total_squared_variation,
-                                )
+                                (total_weights_gradient, total_variation)
                             },
                         );
 
-                    let bias_standard_deviation = (total_squared_variation
-                        / self.number_of_edges_per_mini_batch as f32
-                        - (total_variation / self.number_of_edges_per_mini_batch as f32).powf(2.0))
-                    .sqrt();
-
-                    let weights_standard_deviation = total_weights_gradient
-                        .iter()
-                        .zip(total_squared_weights_gradient.iter())
-                        .map(|(total_weight_gradient, total_squared_weight_gradient)| {
-                            (total_squared_weight_gradient
-                                / self.number_of_edges_per_mini_batch as f32
-                                - (total_weight_gradient
-                                    / self.number_of_edges_per_mini_batch as f32)
-                                    .powf(2.0))
-                            .sqrt()
-                        })
-                        .collect::<Vec<f32>>();
+                    total_variation /= self.number_of_edges_per_mini_batch as f32;
+                    total_weights_gradient
+                        .iter_mut()
+                        .for_each(|total_weight_gradient| {
+                            *total_weight_gradient /= self.number_of_edges_per_mini_batch as f32;
+                        });
 
                     self.bias_optimizer.get_update(&mut total_variation);
                     self.weight_optimizer
                         .get_update(&mut total_weights_gradient);
 
-                    total_variation /= (bias_standard_deviation + f32::EPSILON)
-                        / self.number_of_edges_per_mini_batch as f32;
-
                     self.bias -= total_variation;
                     self.weights
                         .iter_mut()
                         .zip(total_weights_gradient.into_iter())
-                        .zip(weights_standard_deviation.into_iter())
-                        .for_each(
-                            |((weight, total_weight_gradient), weight_standard_deviation)| {
-                                *weight -= total_weight_gradient
-                                    / (weight_standard_deviation + f32::EPSILON)
-                                    / self.number_of_edges_per_mini_batch as f32;
-                            },
-                        );
+                        .for_each(|(weight, total_weight_gradient)| {
+                            *weight -= total_weight_gradient;
+                        });
 
                     Ok(total_variation.abs())
                 })

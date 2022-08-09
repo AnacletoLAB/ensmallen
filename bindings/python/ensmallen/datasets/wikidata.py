@@ -47,15 +47,6 @@ def WikiData(
     version = "latest-truthy"
         Version to retrieve	
 		The available versions are:
-			- wikidata-20220603-lexemes-BETA
-			- wikidata-20220606-all-BETA
-			- wikidata-20220608-truthy-BETA
-			- wikidata-20220610-lexemes-BETA
-			- wikidata-20220613-all-BETA
-			- wikidata-20220615-truthy-BETA
-			- wikidata-20220617-lexemes-BETA
-			- wikidata-20220620-all-BETA
-			- wikidata-20220622-truthy-BETA
 			- wikidata-20220624-lexemes-BETA
 			- wikidata-20220627-all-BETA
 			- wikidata-20220629-truthy-BETA
@@ -66,6 +57,15 @@ def WikiData(
 			- wikidata-20220711-all-BETA
 			- wikidata-20220713-truthy-BETA
 			- wikidata-20220715-lexemes-BETA
+			- wikidata-20220718-all-BETA
+			- wikidata-20220720-truthy-BETA
+			- wikidata-20220722-lexemes-BETA
+			- wikidata-20220725-all-BETA
+			- wikidata-20220727-truthy-BETA
+			- wikidata-20220729-lexemes-BETA
+			- wikidata-20220801-all-BETA
+			- wikidata-20220803-truthy-BETA
+			- wikidata-20220805-lexemes-BETA
 			- latest-all
 			- latest-lexemes
 			- latest-truthy

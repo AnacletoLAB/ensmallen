@@ -64,6 +64,9 @@
 	<a href="https://kg-hub.berkeleybop.io/kg-phenio/20220623">20220623</a>
       </li>
       <li>
+	<a href="https://kg-hub.berkeleybop.io/kg-phenio/20220722">20220722</a>
+      </li>
+      <li>
 	<a href="https://kg-hub.berkeleybop.io/kg-phenio/current">current</a>
       </li>
     </ul>
