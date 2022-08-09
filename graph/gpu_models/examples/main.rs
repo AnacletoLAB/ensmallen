@@ -13,6 +13,8 @@ pub fn add_one(vals: &[f32]) -> Result<Vec<f32>, GPUError> {
     let mut gpu = GPU::new(device)?;
     // load our compiled code
     let mut ptx = gpu.load_ptx(PTX_SOURCE)?;
+    //
+    println!("{}", PTX_SOURCE.len());
     // get a function from the compiled code
     let kernel = ptx.get_kernel("compute_first_order_line")?;
     
