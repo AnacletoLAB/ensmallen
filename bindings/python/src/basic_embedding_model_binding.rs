@@ -151,6 +151,66 @@ impl FirstOrderLINE {
 #[pyclass]
 #[derive(Debug, Clone)]
 #[pyo3(
+    text_signature = "(*, embedding_size, epochs, learning_rate, learning_rate_decay, avoid_false_negatives, use_scale_free_distribution, node_embedding_path, random_state, verbose)"
+)]
+pub struct CUDAFirstOrderLINE {
+    pub inner: BasicEmbeddingModelBinding<gpu_models::FirstOrderLINE>,
+}
+
+#[pymethods]
+impl CUDAFirstOrderLINE {
+    #[new]
+    #[args(py_kwargs = "**")]
+    /// Return a new instance of the CUDA FirstOrderLINE model.
+    ///
+    /// Parameters
+    /// ------------------------
+    /// embedding_size: Optional[int] = 100
+    ///     Size of the embedding.
+    /// epochs: int = 100
+    ///     Number of epochs to train the model for.
+    /// learning_rate: float = 0.01
+    ///     Learning rate of the model.
+    /// learning_rate_decay: float = 0.9
+    ///     Amount of learning rate decay for each epoch.
+    /// avoid_false_negatives: bool = False
+    ///     Whether to avoid sampling false negatives.
+    ///     This may cause a slower training.
+    /// use_scale_free_distribution: bool = True
+    ///     Whether to train model using a scale free distribution for the negatives.
+    /// node_embedding_path: Optional[str] = None
+    ///     Path where to mmap and store the nodes embedding.
+    ///     This is necessary to embed large graphs whose embedding will not
+    ///     fit into the available main memory.
+    /// random_state: int = 42
+    ///     random_state to use to reproduce the walks.
+    /// verbose: bool = True
+    ///     Whether to show the loading bar.
+    pub fn new(py_kwargs: Option<&PyDict>) -> PyResult<FirstOrderLINE> {
+        Ok(Self {
+            inner: BasicEmbeddingModelBinding::from_pydict(py_kwargs)?,
+        })
+    }
+}
+
+#[pymethods]
+impl CUDAFirstOrderLINE {
+    #[args(py_kwargs = "**")]
+    #[pyo3(text_signature = "($self, graph)")]
+    /// Return numpy embedding with CUDA FirstOrderLINE node embedding.
+    ///
+    /// Parameters
+    /// ---------
+    /// graph: Graph
+    ///     The graph to embed.
+    fn fit_transform(&self, graph: &Graph) -> PyResult<Py<PyAny>> {
+        Ok(self.inner.fit_transform(graph)?.first().unwrap().to_owned())
+    }
+}
+
+#[pyclass]
+#[derive(Debug, Clone)]
+#[pyo3(
     text_signature = "(*, embedding_size, epochs, learning_rate, learning_rate_decay, avoid_false_negatives, use_scale_free_distribution, node_embedding_path, contextual_node_embedding_path, random_state, verbose)"
 )]
 pub struct SecondOrderLINE {
