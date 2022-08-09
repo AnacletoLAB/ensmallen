@@ -41,7 +41,7 @@ pub unsafe extern "ptx-kernel" fn compute_first_order_line(
     let get_node_degree = |node_id: usize| {
         let comulative_degree = node_degrees[node_id];
         let previous_comulative_degree =
-            !((node_id == 0) as u64).wrapping_sub(1) & node_degrees[node_id - 1];
+            ((node_id == 0) as u64).wrapping_sub(1) & node_degrees[node_id - 1];
         let degree = comulative_degree - previous_comulative_degree;
         (previous_comulative_degree, degree)
     };

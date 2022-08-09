@@ -7,7 +7,7 @@ use graph::{CSVFileWriter, WalksParameters};
 
 #[test]
 fn test_skipgram_on_cora() -> Result<(), String> {
-    let mut cora = load_cora();
+    let cora = load_cora();
     let line = FirstOrderLINE::default();
     let mut embedding = vec![0.0; line.get_embedding_size() * cora.get_number_of_nodes() as usize];
     line.fit_transform(&cora, &mut [embedding.as_mut_slice()])?;
