@@ -52,7 +52,7 @@ impl GraphEmbedder for FirstOrderLINE {
         // load our compiled code
         let mut ptx = gpu.load_ptx(PTX_SOURCE)?;
         // get a function from the compiled code
-        let compute_first_order_line = ptx.get_kernel("")?;
+        let compute_first_order_line = ptx.get_kernel("compute_first_order_line")?;
 
         // set the parallelizzation specs
         let grid = Grid::default().set_block_x(1024)?;
