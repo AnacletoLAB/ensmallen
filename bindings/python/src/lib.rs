@@ -75,6 +75,7 @@ pub fn register_models(_py: Python, _m: &PyModule) -> PyResult<()> {
     _m.add_class::<Unstructured>()?;
     _m.add_class::<StructuredEmbedding>()?;
     _m.add_class::<FirstOrderLINE>()?;
+    _m.add_class::<CUDAFirstOrderLINE>()?;
     _m.add_class::<SecondOrderLINE>()?;
     _m.add_class::<DegreeSPINE>()?;
     _m.add_class::<NodeLabelSPINE>()?;
