@@ -3,8 +3,6 @@
 #![feature(asm_experimental_arch)]
 
 mod intrinsics;
-mod cbow;
-mod skipgram;
+mod first_order_line;
 use intrinsics::*;
-pub use cbow::*;
-pub use skipgram::*;
+pub use first_order_line::*;

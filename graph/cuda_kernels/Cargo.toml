@@ -8,6 +8,7 @@ edition = "2021"
 crate-type = ["cdylib"]
 
 [dependencies]
+vec_rand = {git = "https://github.com/zommiommy/vec_rand", branch = "master", default-features = false}
 
 [profile.release]
 debug = false             # Include debug info.

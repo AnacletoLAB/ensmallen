@@ -47,39 +47,6 @@ impl GraphEmbedder for FirstOrderLINE {
         let mut learning_rate = self.model.learning_rate;
         let pb = self.get_loading_bar();
 
-        let compute_mini_batch_step = |src: usize, dst: usize, label: bool, learning_rate: f32| {
-            let src_embedding = unsafe {
-                &mut (*shared_node_embedding.get())
-                    [(src * self.model.embedding_size)..((src + 1) * self.model.embedding_size)]
-            };
-            let dst_embedding = unsafe {
-                &mut (*shared_node_embedding.get())
-                    [(dst * self.model.embedding_size)..((dst + 1) * self.model.embedding_size)]
-            };
-
-            let (similarity, src_norm, dst_norm): (f32, f32, f32) =
-                unsafe { cosine_similarity_sequential_unchecked(src_embedding, dst_embedding) };
-
-            let prediction = 1.0 / (1.0 + (-similarity).exp());
-            let variation = if label { prediction - 1.0 } else { prediction };
-            let node_priors = get_node_priors(graph, &[src as NodeT, dst as NodeT], learning_rate);
-
-            let src_variation = variation * node_priors[0];
-            let dst_variation = variation * node_priors[1];
-
-            src_embedding
-                .iter_mut()
-                .zip(dst_embedding.iter_mut())
-                .for_each(|(src_feature, dst_feature)| {
-                    *src_feature /= src_norm;
-                    *dst_feature /= dst_norm;
-                    *src_feature -= *dst_feature * src_variation;
-                    *dst_feature -= *src_feature * dst_variation;
-                });
-
-            variation.abs()
-        };
-
         // We start to loop over the required amount of epochs.
         for _ in 0..self.model.epochs {
             // We update the random state used to generate the random walks
@@ -99,7 +66,40 @@ impl GraphEmbedder for FirstOrderLINE {
                     None,
                 )?
                 .map(|(src, dst, label)| {
-                    compute_mini_batch_step(src as usize, dst as usize, label, learning_rate)
+                    let src = src as usize;
+                    let dst = dst as usize;
+                    let src_embedding = unsafe {
+                        &mut (*shared_node_embedding.get())[(src * self.model.embedding_size)
+                            ..((src + 1) * self.model.embedding_size)]
+                    };
+                    let dst_embedding = unsafe {
+                        &mut (*shared_node_embedding.get())[(dst * self.model.embedding_size)
+                            ..((dst + 1) * self.model.embedding_size)]
+                    };
+
+                    let (similarity, src_norm, dst_norm): (f32, f32, f32) = unsafe {
+                        cosine_similarity_sequential_unchecked(src_embedding, dst_embedding)
+                    };
+
+                    let prediction = 1.0 / (1.0 + (-similarity).exp());
+                    let variation = if label { prediction - 1.0 } else { prediction };
+                    let node_priors =
+                        get_node_priors(graph, &[src as NodeT, dst as NodeT], learning_rate);
+
+                    let src_variation = variation * node_priors[0];
+                    let dst_variation = variation * node_priors[1];
+
+                    src_embedding
+                        .iter_mut()
+                        .zip(dst_embedding.iter_mut())
+                        .for_each(|(src_feature, dst_feature)| {
+                            *src_feature /= src_norm;
+                            *dst_feature /= dst_norm;
+                            *src_feature -= *dst_feature * src_variation;
+                            *dst_feature -= *src_feature * dst_variation;
+                        });
+
+                    variation.abs()
                 })
                 .sum::<f32>();
 
