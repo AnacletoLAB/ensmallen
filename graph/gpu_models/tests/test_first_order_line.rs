@@ -5,25 +5,13 @@ use graph::test_utilities::*;
 use graph::{CSVFileWriter, WalksParameters};
 
 #[test]
-fn test_cbow_on_cora() -> Result<(), GPUError> {
+fn test_skipgram_on_cora() -> Result<(), GPUError> {
     let mut cora = load_cora();
-    cora = cora.sort_by_decreasing_outbound_node_degree();
-    cora.enable(Some(true), Some(true), Some(true), Some(false))
-        .unwrap();
-    let embedding_size = 128;
-    let walks = WalksParameters::new(128).unwrap().set_iterations(Some(50)).unwrap();
-    let cbow = CBOW::new(Some(embedding_size), Some(walks), Some(10), Some(10)).unwrap();
+    let line = FirstOrderLINE::default();
     let mut embedding = vec![0.0; embedding_size * cora.get_number_of_nodes() as usize];
-    cbow.fit_transform(
-        &cora,
-        embedding.as_mut_slice(),
-        Some(10),
-        Some(0.001),
-        Some(1024),
-        None,
-    )?;
+    line.fit_transform(&cora, &mut [embedding.as_mut_slice()])?;
 
-    let writer = CSVFileWriter::new("cora_embedding.tsv")
+    let writer = CSVFileWriter::new("cora_skipgram_embedding.tsv")
         .set_separator(Some('\t'))
         .unwrap()
         .set_header(Some(true))

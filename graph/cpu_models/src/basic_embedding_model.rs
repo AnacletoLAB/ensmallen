@@ -13,6 +13,22 @@ pub struct BasicEmbeddingModel {
     pub(crate) verbose: bool,
 }
 
+impl Default for BasicEmbeddingModel {
+    /// Return default instance of Basic Embedding Model.
+    fn default() -> Self {
+        Self {
+            embedding_size: 100,
+            epochs: 10,
+            learning_rate: 0.01,
+            learning_rate_decay: 0.99,
+            avoid_false_negatives: false,
+            use_scale_free_distribution: true,
+            random_state: 42,
+            verbose: true,
+        }
+    }
+}
+
 impl BasicEmbeddingModel {
     /// Return new instance of Basic Embedding Model.
     ///
