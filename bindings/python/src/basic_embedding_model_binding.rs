@@ -186,7 +186,7 @@ impl CUDAFirstOrderLINE {
     ///     random_state to use to reproduce the walks.
     /// verbose: bool = True
     ///     Whether to show the loading bar.
-    pub fn new(py_kwargs: Option<&PyDict>) -> PyResult<FirstOrderLINE> {
+    pub fn new(py_kwargs: Option<&PyDict>) -> PyResult<CUDAFirstOrderLINE> {
         Ok(Self {
             inner: BasicEmbeddingModelBinding::from_pydict(py_kwargs)?,
         })
