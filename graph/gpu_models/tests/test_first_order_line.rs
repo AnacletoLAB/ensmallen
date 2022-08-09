@@ -6,10 +6,10 @@ use cpu_models::GraphEmbedder;
 use graph::{CSVFileWriter, WalksParameters};
 
 #[test]
-fn test_skipgram_on_cora() -> Result<(), GPUError> {
+fn test_skipgram_on_cora() -> Result<(), String> {
     let mut cora = load_cora();
     let line = FirstOrderLINE::default();
-    let mut embedding = vec![0.0; embedding_size * cora.get_number_of_nodes() as usize];
+    let mut embedding = vec![0.0; line.get_embedding_size() * cora.get_number_of_nodes() as usize];
     line.fit_transform(&cora, &mut [embedding.as_mut_slice()])?;
 
     let writer = CSVFileWriter::new("cora_skipgram_embedding.tsv")
