@@ -29,14 +29,14 @@ pub unsafe extern "ptx-kernel" fn compute_first_order_line(
 ) {
     random_state = (thread_idx_x() as u64).wrapping_mul(random_state);
 
-    number_of_edges /= block_dim_x() as usize;
-    number_of_edges = number_of_edges.max(1);
-
     let embedding = core::slice::from_raw_parts_mut(embedding, number_of_nodes * embedding_size);
 
     let node_degrees = core::slice::from_raw_parts(comulative_node_degrees, number_of_nodes);
 
     let destinations = core::slice::from_raw_parts(destinations, number_of_edges);
+
+    number_of_edges /= block_dim_x() as usize;
+    number_of_edges = number_of_edges.max(1);
 
     let get_node_degree = |node_id: usize| {
         let comulative_degree = node_degrees[node_id];
@@ -115,8 +115,8 @@ pub unsafe extern "ptx-kernel" fn compute_first_order_line(
                 embedding[true_dst * embedding_size + j] /= true_dst_norm;
                 embedding[false_dst * embedding_size + k] /= false_dst_norm;
                 let src_value = embedding[src * embedding_size + i];
-                let true_dst_value = embedding[true_dst * embedding_size + i];
-                let false_dst_value = embedding[false_dst * embedding_size + i];
+                let true_dst_value = embedding[true_dst * embedding_size + j];
+                let false_dst_value = embedding[false_dst * embedding_size + k];
                 embedding[src * embedding_size + i] -=
                     src_true_variation * true_dst_value + src_false_variation * false_dst_value;
                 embedding[true_dst * embedding_size + j] -= true_dst_variation * src_value;
