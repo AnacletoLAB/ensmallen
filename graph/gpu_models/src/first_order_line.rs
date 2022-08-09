@@ -88,6 +88,7 @@ impl GraphEmbedder for FirstOrderLINE {
                     gpu_comulative_node_degrees.as_device_ptr(),
                     gpu_destinations.as_device_ptr(),
                     self.model.get_learning_rate(),
+                    random_state,
                     self.model.get_embedding_size(),
                     comulative_node_degrees.len(),
                     destinations.len(),
