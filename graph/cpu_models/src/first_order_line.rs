@@ -36,7 +36,7 @@ impl GraphEmbedder for FirstOrderLINE {
     fn get_embedding_shapes(&self, graph: &Graph) -> Result<Vec<MatrixShape>, String> {
         Ok(vec![(
             graph.get_number_of_nodes() as usize,
-            self.model.embedding_size,
+            self.model.get_embedding_size(),
         )
             .into()])
     }

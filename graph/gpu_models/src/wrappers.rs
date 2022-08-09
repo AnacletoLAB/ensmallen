@@ -31,6 +31,18 @@ pub enum GPUError {
     Invalid(usize),
 }
 
+impl ToString for GPUError {
+    fn to_string(&self) -> String {
+        format!("{:?}", self)
+    }
+}
+
+impl From<GPUError> for String {
+    fn from(other: GPUError) -> String {
+        other.to_string()
+    }
+}
+
 impl std::fmt::Debug for GPUError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         use GPUError::*;
@@ -434,9 +446,7 @@ pub enum DeviceAttribute {
 
 pub fn get_driver_version() -> Result<isize, GPUError> {
     let mut result = 0;
-    let error: GPUError = unsafe{
-        cuDriverGetVersion(&mut result as *mut _)
-    }.into();
+    let error: GPUError = unsafe { cuDriverGetVersion(&mut result as *mut _) }.into();
     error.into_result(result as isize)
 }
 
@@ -611,7 +621,6 @@ pub struct Device(usize);
 
 impl std::fmt::Debug for Device {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-
         macro_rules! debug_fmt_device {
             {$($field:literal => $value:ident,)*} => {
                 let mut d = f.debug_struct("Device");
@@ -624,14 +633,14 @@ impl std::fmt::Debug for Device {
                     Ok(value) => d.field("total_mem", &value),
                     Err(error) => d.field("total_mem", &Result::<(), _>::Err(error)),
                 };
-                
+
                 $(
                     let d = match self.get_attribute(DeviceAttribute::$value) {
                         Ok(value) => d.field($field, &value),
                         Err(error) => d.field($field, &Result::<(), _>::Err(error)),
                     };
                 )*
-                
+
                 let d = match self.get_grid_limits() {
                     Ok(value) => d.field("grid_limits", &value),
                     Err(error) => d.field("grid_limits", &Result::<(), _>::Err(error)),
@@ -640,7 +649,7 @@ impl std::fmt::Debug for Device {
             };
         }
 
-        debug_fmt_device!{
+        debug_fmt_device! {
             "compute_mode" => ComputeMode,
             "compute_capability_major" => ComputeCapabilityMajor,
             "compute_capability_minor" => ComputeCapabilityMinor,
@@ -676,7 +685,7 @@ impl std::fmt::Debug for Device {
             "direct_managed_mem_Access_from_host" => DirectManagedMemAccessFromHost,
             "managed_memory" => ManagedMemory,
             "concurred_managed_access" => ConcurrentManagedAccess,
-            "can_use_host_pointer_for_registered_mem" => CanUseHostPointerForRegisteredMem,            
+            "can_use_host_pointer_for_registered_mem" => CanUseHostPointerForRegisteredMem,
         }
     }
 }
@@ -694,42 +703,23 @@ impl Device {
         // allocate the buffer
         let mut buffer = Vec::with_capacity(256);
         // into raw parts
-        let (ptr, capacity) = (
-            buffer.as_mut_ptr(),
-            buffer.capacity(),
-        );
+        let (ptr, capacity) = (buffer.as_mut_ptr(), buffer.capacity());
         // forget the buffer so we don't get a double free when `result` will
         // be freed
         core::mem::forget(buffer);
         // fill the buffer
-        let error: GPUError = unsafe{
-            cuDeviceGetName(
-                ptr as *mut _,
-                capacity as _,
-                self.0 as _,
-            )
-        }.into();
+        let error: GPUError =
+            unsafe { cuDeviceGetName(ptr as *mut _, capacity as _, self.0 as _) }.into();
         // return if error
         error.into_result(())?;
 
         // the string is null-terminated so we need to compute the length to get
         // a proper rust string
-        let slice = unsafe{
-            core::slice::from_raw_parts(
-                ptr as *const u8,
-                capacity,
-            )
-        };
+        let slice = unsafe { core::slice::from_raw_parts(ptr as *const u8, capacity) };
 
         let len = slice.iter().position(|b| *b == b'\0').unwrap_or(capacity);
 
-        let result = unsafe{
-            String::from_raw_parts(
-                ptr,
-                len,
-                capacity,
-            )
-        };
+        let result = unsafe { String::from_raw_parts(ptr, len, capacity) };
         // TODO!: should we validate that it's proper ASCII?
         Ok(result)
     }
@@ -737,29 +727,19 @@ impl Device {
     pub fn get_attribute(&self, attribute: DeviceAttribute) -> Result<isize, GPUError> {
         // yes this is a crime against nature, but our enum has docs and the
         // crates one doesn't, this should be safe as both have `#[repr(u32)]`
-        let attr = unsafe{
-            core::mem::transmute::<DeviceAttribute, CUdevice_attribute>(attribute)
-        };
+        let attr =
+            unsafe { core::mem::transmute::<DeviceAttribute, CUdevice_attribute>(attribute) };
         let mut result = 0;
-        let error: GPUError = unsafe{
-            cuDeviceGetAttribute(
-                &mut result as *mut _,
-                attr,
-                self.0 as _,
-            )
-        }.into();
+        let error: GPUError =
+            unsafe { cuDeviceGetAttribute(&mut result as *mut _, attr, self.0 as _) }.into();
         error.into_result(result as isize)
     }
 
     /// Returns the total amount of memory available on the device in bytes.
     pub fn get_total_mem(&self) -> Result<usize, GPUError> {
         let mut result = 0;
-        let error: GPUError = unsafe{
-            cuDeviceTotalMem_v2(
-                &mut result as *mut _,
-                self.0 as _,
-            )
-        }.into();
+        let error: GPUError =
+            unsafe { cuDeviceTotalMem_v2(&mut result as *mut _, self.0 as _) }.into();
         error.into_result(result)
     }
 
@@ -774,21 +754,19 @@ impl Device {
         // Init the cuda library if this wasn't already done
         // This should be a mutex, and not an atomic since other threads could
         // go on and call driver methods while this is being initzializzated
-        // but if you are trying to concurrently initialize GPU devices fuck you 
+        // but if you are trying to concurrently initialize GPU devices fuck you
         if !CUDA_DRIVERS_HAVE_BEEN_INITIALIZED.swap(true, Ordering::SeqCst) {
             unsafe { cuInit(0) };
         }
 
         let mut number_of_devices = 0;
-        let error: GPUError = unsafe { 
-            cuDeviceGetCount(&mut number_of_devices as *mut _) 
-        }.into();
+        let error: GPUError = unsafe { cuDeviceGetCount(&mut number_of_devices as *mut _) }.into();
         error.into_result(number_of_devices as usize)
     }
 
     /// Return the Max dimensions for blocks and grid for this device
     pub fn get_grid_limits(&self) -> Result<Grid, GPUError> {
-        Ok(Grid{
+        Ok(Grid {
             block_x: self.get_attribute(DeviceAttribute::MaxBlockDimX)? as usize,
             block_y: self.get_attribute(DeviceAttribute::MaxBlockDimY)? as usize,
             block_z: self.get_attribute(DeviceAttribute::MaxBlockDimZ)? as usize,
