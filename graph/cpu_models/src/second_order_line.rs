@@ -49,8 +49,7 @@ impl GraphEmbedder for SecondOrderLINE {
     }
 
     fn _fit_transform(&self, graph: &Graph, embedding: &mut [&mut [f32]]) -> Result<(), String> {
-        let scale_factor = (self.model.embedding_size as f32).sqrt();
-        let mut learning_rate = self.model.learning_rate / scale_factor;
+        let mut learning_rate = self.model.learning_rate;
         let mut random_state = self.get_random_state();
 
         let shared_node_embedding = ThreadDataRaceAware::new(embedding);
