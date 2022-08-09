@@ -2,7 +2,7 @@ extern crate graph;
 
 use gpu_models::*;
 use graph::test_utilities::*;
-use cpu_models::graph_embedder::GraphEmbedder;
+use cpu_models::GraphEmbedder;
 use graph::{CSVFileWriter, WalksParameters};
 
 #[test]
