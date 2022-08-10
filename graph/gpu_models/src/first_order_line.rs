@@ -19,7 +19,7 @@ impl Default for FirstOrderLINE {
     fn default() -> Self {
         BasicEmbeddingModel::new(
             Some(100),
-            Some(1),
+            Some(100),
             Some(0.05),
             Some(0.9),
             Some(false),
@@ -87,9 +87,9 @@ impl GraphEmbedder for FirstOrderLINE {
             .set_grid_x(number_of_multiprocessors)?
             .set_block_x(number_of_threads_per_multiprocessors)?;
 
-        let grid = Grid::default();
-            // .set_grid_x(number_of_multiprocessors)?
-            // .set_block_x(number_of_threads_per_multiprocessors)?;
+        let grid = Grid::default()
+            .set_grid_x(number_of_multiprocessors)?
+            .set_block_x(number_of_threads_per_multiprocessors)?;
 
 
         // allocate a gpu buffer and copy data from the host
