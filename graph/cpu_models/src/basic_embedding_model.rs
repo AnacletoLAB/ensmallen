@@ -20,7 +20,7 @@ impl Default for BasicEmbeddingModel {
             embedding_size: 100,
             epochs: 10,
             learning_rate: 0.01,
-            learning_rate_decay: 0.99,
+            learning_rate_decay: 0.9,
             avoid_false_negatives: false,
             use_scale_free_distribution: true,
             random_state: 42,

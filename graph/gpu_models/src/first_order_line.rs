@@ -21,7 +21,7 @@ impl Default for FirstOrderLINE {
             Some(100),
             Some(100),
             Some(0.01),
-            Some(0.99),
+            Some(0.9),
             Some(false),
             Some(true),
             Some(42),
@@ -96,6 +96,7 @@ impl GraphEmbedder for FirstOrderLINE {
         let gpu_destinations = gpu.buffer_from_slice::<NodeT>(destinations.as_ref())?;
 
         let progress_bar = self.get_loading_bar();
+        let mut learning_rate = self.model.get_learning_rate();
 
         // We start to loop over the required amount of epochs.
         for _ in (0..self.model.get_number_of_epochs()).progress_with(progress_bar) {
@@ -108,13 +109,15 @@ impl GraphEmbedder for FirstOrderLINE {
                     embedding_on_gpu.as_device_ptr(),
                     gpu_comulative_node_degrees.as_device_ptr(),
                     gpu_destinations.as_device_ptr(),
-                    self.model.get_learning_rate(),
+                    learning_rate,
                     random_state,
                     self.model.get_embedding_size(),
                     comulative_node_degrees.len(),
                     destinations.len(),
                 ],
             )?;
+
+            learning_rate *= self.model.get_learning_rate_decay();
 
             // wait for the gpu to finish
             gpu.synchronize()?;
