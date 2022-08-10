@@ -17,16 +17,17 @@ impl From<BasicEmbeddingModel> for FirstOrderLINE {
 
 impl Default for FirstOrderLINE {
     fn default() -> Self {
-        BasicEmbeddingModel {
-            embedding_size: 100,
-            epochs: 100,
-            learning_rate: 0.01,
-            learning_rate_decay: 0.99,
-            avoid_false_negatives: false,
-            use_scale_free_distribution: true,
-            random_state: 42,
-            verbose: true,
-        }
+        BasicEmbeddingModel::new(
+            Some(100),
+            Some(100),
+            Some(0.01),
+            Some(0.99),
+            Some(false),
+            Some(true),
+            Some(42),
+            Some(true),
+        )
+        .unwrap()
         .into()
     }
 }
