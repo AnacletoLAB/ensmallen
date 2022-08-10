@@ -20,7 +20,7 @@ impl Default for FirstOrderLINE {
         BasicEmbeddingModel::new(
             Some(100),
             Some(100),
-            Some(0.01),
+            Some(0.05),
             Some(0.9),
             Some(false),
             Some(true),
