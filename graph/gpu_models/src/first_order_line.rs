@@ -87,6 +87,11 @@ impl GraphEmbedder for FirstOrderLINE {
             .set_grid_x(number_of_multiprocessors)?
             .set_block_x(number_of_threads_per_multiprocessors)?;
 
+        let grid = Grid::default();
+            // .set_grid_x(number_of_multiprocessors)?
+            // .set_block_x(number_of_threads_per_multiprocessors)?;
+
+
         // allocate a gpu buffer and copy data from the host
         let embedding_on_gpu = gpu.buffer_from_slice::<f32>(embedding[0])?;
         let comulative_node_degrees = graph.get_cumulative_node_degrees();
