@@ -69,7 +69,10 @@ pub unsafe extern "ptx-kernel" fn compute_first_order_line(
         random_state = splitmix64(random_state);
         let false_dst = destinations[xorshift(random_state) as usize % number_of_edges] as usize;
 
-        if unlikely(true_dst == false_dst) {
+        if unlikely(src == false_dst)
+            || unlikely(src == false_dst)
+            || unlikely(true_dst == false_dst)
+        {
             return;
         };
 
@@ -122,8 +125,8 @@ pub unsafe extern "ptx-kernel" fn compute_first_order_line(
             .zip((0..embedding_size).zip(0..embedding_size))
             .for_each(|(i, (j, k))| {
                 embedding[src * embedding_size + i] /= src_norm;
-                // embedding[true_dst * embedding_size + j] /= true_dst_norm;
-                // embedding[false_dst * embedding_size + k] /= false_dst_norm;
+                embedding[true_dst * embedding_size + j] /= true_dst_norm;
+                embedding[false_dst * embedding_size + k] /= false_dst_norm;
                 // let src_value = embedding[src * embedding_size + i];
                 // let true_dst_value = embedding[true_dst * embedding_size + j];
                 // let false_dst_value = embedding[false_dst * embedding_size + k];
