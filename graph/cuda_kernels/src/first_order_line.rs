@@ -124,16 +124,13 @@ pub unsafe extern "ptx-kernel" fn compute_first_order_line(
         (0..embedding_size)
             .zip((0..embedding_size).zip(0..embedding_size))
             .for_each(|(i, (j, k))| {
-                embedding[src * embedding_size + i] /= src_norm;
-                embedding[true_dst * embedding_size + j] /= true_dst_norm;
-                embedding[false_dst * embedding_size + k] /= false_dst_norm;
-                // let src_value = embedding[src * embedding_size + i];
-                // let true_dst_value = embedding[true_dst * embedding_size + j];
-                // let false_dst_value = embedding[false_dst * embedding_size + k];
-                // embedding[src * embedding_size + i] -=
-                //     src_true_variation * true_dst_value + src_false_variation * false_dst_value;
-                // embedding[true_dst * embedding_size + j] -= true_dst_variation * src_value;
-                // embedding[false_dst * embedding_size + k] -= false_dst_variation * src_value;
+                let src_value = embedding[src * embedding_size + i];
+                let true_dst_value = embedding[true_dst * embedding_size + j];
+                let false_dst_value = embedding[false_dst * embedding_size + k];
+                embedding[src * embedding_size + i] -=
+                    src_true_variation * true_dst_value + src_false_variation * false_dst_value;
+                embedding[true_dst * embedding_size + j] -= true_dst_variation * src_value;
+                embedding[false_dst * embedding_size + k] -= false_dst_variation * src_value;
             });
     });
 }
