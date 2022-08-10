@@ -1,3 +1,4 @@
+#![feature(core_intrinsics)]
 #![feature(adt_const_params)]
 #![feature(associated_type_defaults)]
 #![feature(associated_type_bounds)]
@@ -9,6 +10,7 @@ mod basic_siamese_model;
 mod cbow;
 mod dag_resnik;
 mod edge_prediction_perceptron;
+mod first_order_line_cuda;
 mod first_order_line;
 mod glove;
 mod graph_embedder;
@@ -42,6 +44,7 @@ pub use cbow::*;
 pub use dag_resnik::*;
 pub use edge_prediction_perceptron::*;
 pub use first_order_line::*;
+pub use first_order_line_cuda::*;
 pub use glove::*;
 pub use graph_embedder::*;
 pub use node2vec::*;

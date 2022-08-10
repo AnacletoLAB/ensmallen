@@ -54,7 +54,7 @@ pub(crate) fn compute_prior(subset_size: f32, total_size: f32) -> f32 {
 pub(crate) fn get_node_prior(graph: &Graph, node_id: NodeT, learning_rate: f32) -> f32 {
     compute_prior(
         unsafe { graph.get_unchecked_node_degree_from_node_id(node_id) as f32 },
-        unsafe { 1.0 + graph.get_unchecked_maximum_node_degree() as f32 },
+        unsafe {graph.get_unchecked_maximum_node_degree() as f32 },
     ) * learning_rate
 }
 

@@ -55,11 +55,11 @@ pub unsafe extern "ptx-kernel" fn compute_first_order_line(
             xorshift((edge_number as u64 + random_state).wrapping_mul(random_state));
         let src = random_state as usize % number_of_nodes;
 
-        random_state = splitmix64(random_state);
         let (previous_comulative_degree, src_degree) = get_node_degree(src);
         if unlikely(src_degree == 0) {
             return;
         }
+        random_state = splitmix64(random_state);
         let true_dst = destinations
             [(previous_comulative_degree + (xorshift(random_state) % src_degree)) as usize]
             as usize;
@@ -99,8 +99,10 @@ pub unsafe extern "ptx-kernel" fn compute_first_order_line(
         let false_dst_norm = false_dst_squared.sqrt() + f32::EPSILON;
         let true_cosine_similarity = true_dot / (src_norm * true_dst_norm + f32::EPSILON);
         let false_cosine_similarity = false_dot / (src_norm * false_dst_norm + f32::EPSILON);
+
         let true_variation = 1.0 / (1.0 + (-true_cosine_similarity).exp2()) - 1.0;
         let false_variation = 1.0 / (1.0 + (-false_cosine_similarity).exp2());
+
         let (_, true_dst_degree) = get_node_degree(true_dst);
         let (_, false_dst_degree) = get_node_degree(false_dst);
 
