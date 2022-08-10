@@ -14,16 +14,15 @@ exclude = ["pytests/*", "Python-*", "./*.py"]
 keywords = ["python", "rust", "graph", "random", "walk"]
 
 [package.metadata.maturin]
-requires-python = ">=3.6"
+requires-python = ">=3.7"
 requires-dist = [
     "toml~=0.10.0",
     "downloaders>=1.0.15",
-    "compress_json>=1.0.6",
-    "userinput>=1.0.17",
-    "cache_decorator>=2.0.13",
+    "compress_json>=1.0.7",
+    "userinput>=1.0.19",
+    "cache_decorator>=2.1.11",
     "tqdm",
     "pandas",
-    "transformers",
     "py-cpuinfo",
     "environments_utils>=1.0.4"
 ]
