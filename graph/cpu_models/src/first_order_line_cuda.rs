@@ -196,7 +196,7 @@ impl GraphEmbedder for FirstOrderLINECUDA {
 
             pb.inc(1);
             pb.set_message(format!(", variation: {:.4}", total_variation));
-            learning_rate *= self.model.learning_rate_decay;
+            learning_rate *= self.model.get_learning_rate_decay();
         }
         Ok(())
     }

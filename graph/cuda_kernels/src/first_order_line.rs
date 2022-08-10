@@ -27,8 +27,10 @@ pub unsafe extern "ptx-kernel" fn compute_first_order_line(
     number_of_nodes: usize,
     number_of_edges: usize,
 ) {
-    random_state = (thread_idx_x() as u64 + block_idx_x() as u64 * block_dim_x() as u64)
-        .wrapping_mul(random_state);
+    random_state = splitmix64(
+        (random_state + thread_idx_x() as u64 + block_idx_x() as u64 * block_dim_x() as u64)
+            .wrapping_mul(random_state),
+    );
 
     let embedding = core::slice::from_raw_parts_mut(embedding, number_of_nodes * embedding_size);
     let node_degrees = core::slice::from_raw_parts(comulative_node_degrees, number_of_nodes);
