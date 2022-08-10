@@ -105,21 +105,21 @@ pub unsafe extern "ptx-kernel" fn compute_first_order_line(
         let true_cosine_similarity = true_dot / (src_norm * true_dst_norm);
         let false_cosine_similarity = false_dot / (src_norm * false_dst_norm);
 
-        let true_variation = 1.0 / (1.0 + (-true_cosine_similarity).exp2()) - 1.0;
-        let false_variation = 1.0 / (1.0 + (-false_cosine_similarity).exp2());
+        let true_variation = learning_rate * (1.0 / (1.0 + (-true_cosine_similarity).exp2()) - 1.0);
+        let false_variation = learning_rate * 1.0 / (1.0 + (-false_cosine_similarity).exp2());
 
-        let (_, true_dst_degree) = get_node_degree(true_dst);
-        let (_, false_dst_degree) = get_node_degree(false_dst);
+        // let (_, true_dst_degree) = get_node_degree(true_dst);
+        // let (_, false_dst_degree) = get_node_degree(false_dst);
 
-        let src_prior = learning_rate * (number_of_nodes as f32 / (src_degree as f32 + 1.0));
-        let src_true_variation = true_variation * src_prior;
-        let src_false_variation = false_variation * src_prior;
-        let true_dst_variation = true_variation
-            * (number_of_nodes as f32 / (true_dst_degree as f32 + 1.0))
-            * learning_rate;
-        let false_dst_variation = false_variation
-            * (number_of_nodes as f32 / (false_dst_degree as f32 + 1.0))
-            * learning_rate;
+        // let src_prior = learning_rate * (number_of_nodes as f32 / (src_degree as f32 + 1.0));
+        // let src_true_variation = true_variation * src_prior;
+        // let src_false_variation = false_variation * src_prior;
+        // let true_dst_variation = true_variation
+        //     * (number_of_nodes as f32 / (true_dst_degree as f32 + 1.0))
+        //     * learning_rate;
+        // let false_dst_variation = false_variation
+        //     * (number_of_nodes as f32 / (false_dst_degree as f32 + 1.0))
+        //     * learning_rate;
 
         (0..embedding_size)
             .zip((0..embedding_size).zip(0..embedding_size))
@@ -128,9 +128,9 @@ pub unsafe extern "ptx-kernel" fn compute_first_order_line(
                 let true_dst_value = embedding[true_dst * embedding_size + j];
                 let false_dst_value = embedding[false_dst * embedding_size + k];
                 embedding[src * embedding_size + i] -=
-                    src_true_variation * true_dst_value + src_false_variation * false_dst_value;
-                embedding[true_dst * embedding_size + j] -= true_dst_variation * src_value;
-                embedding[false_dst * embedding_size + k] -= false_dst_variation * src_value;
+                    true_variation * true_dst_value + false_variation * false_dst_value;
+                embedding[true_dst * embedding_size + j] -= true_variation * src_value;
+                embedding[false_dst * embedding_size + k] -= false_variation * src_value;
             });
     });
 }
