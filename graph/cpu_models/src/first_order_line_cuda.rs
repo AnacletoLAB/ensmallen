@@ -21,7 +21,7 @@ impl Default for FirstOrderLINECUDA {
     fn default() -> Self {
         BasicEmbeddingModel::new(
             Some(100),
-            Some(100),
+            Some(1000),
             Some(0.05),
             Some(0.9),
             Some(false),
