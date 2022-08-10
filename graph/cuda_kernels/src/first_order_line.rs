@@ -25,7 +25,6 @@ pub unsafe extern "ptx-kernel" fn compute_first_order_line(
     mut random_state: u64,
     embedding_size: usize,
     number_of_nodes: usize,
-    maximum_node_degree: usize,
     number_of_edges: usize,
 ) {
     random_state = splitmix64(
@@ -110,14 +109,6 @@ pub unsafe extern "ptx-kernel" fn compute_first_order_line(
         let true_variation = learning_rate * (1.0 / (1.0 + (-true_cosine_similarity).exp2()) - 1.0);
         let false_variation = learning_rate * 1.0 / (1.0 + (-false_cosine_similarity).exp2());
 
-        let (_, true_dst_degree) = get_node_degree(true_dst);
-        let (_, false_dst_degree) = get_node_degree(false_dst);
-
-        let true_dst_variation = true_variation
-            * (maximum_node_degree as f32 / (true_dst_degree as f32 + 1.0));
-        let false_dst_variation = false_variation
-            * (maximum_node_degree as f32 / (false_dst_degree as f32 + 1.0));
-
         (0..embedding_size)
             .zip((0..embedding_size).zip(0..embedding_size))
             .for_each(|(i, (j, k))| {
@@ -126,8 +117,8 @@ pub unsafe extern "ptx-kernel" fn compute_first_order_line(
                 let false_dst_value = embedding[false_dst * embedding_size + k];
                 embedding[src * embedding_size + i] -=
                     true_variation * true_dst_value + false_variation * false_dst_value;
-                embedding[true_dst * embedding_size + j] -= true_dst_variation * src_value;
-                embedding[false_dst * embedding_size + k] -= false_dst_variation * src_value;
+                embedding[true_dst * embedding_size + j] -= true_variation * src_value;
+                embedding[false_dst * embedding_size + k] -= false_variation * src_value;
             });
     });
 }

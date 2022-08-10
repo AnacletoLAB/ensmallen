@@ -118,7 +118,6 @@ impl GraphEmbedder for FirstOrderLINE {
                     random_state,
                     self.model.get_embedding_size(),
                     comulative_node_degrees.len(),
-                    graph.get_maximum_node_degree()? as usize,
                     destinations.len(),
                 ],
             )?;
