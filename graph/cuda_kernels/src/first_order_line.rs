@@ -92,11 +92,11 @@ pub unsafe extern "ptx-kernel" fn compute_first_order_line(
             .reduce(|a, b| (a.0 + b.0, a.1 + b.1, a.2 + b.2, a.3 + b.3, a.4 + b.4))
             .unwrap();
 
-        let src_norm = src_squared.sqrt();
-        let true_dst_norm = true_dst_squared.sqrt();
-        let false_dst_norm = false_dst_squared.sqrt();
-        let true_cosine_similarity = true_dot / (src_norm * true_dst_norm);
-        let false_cosine_similarity = false_dot / (src_norm * false_dst_norm);
+        let src_norm = src_squared.sqrt() + f32::EPSILON;
+        let true_dst_norm = true_dst_squared.sqrt() + f32::EPSILON;
+        let false_dst_norm = false_dst_squared.sqrt() + f32::EPSILON;
+        let true_cosine_similarity = true_dot / (src_norm * true_dst_norm + f32::EPSILON);
+        let false_cosine_similarity = false_dot / (src_norm * false_dst_norm + f32::EPSILON);
         let true_variation = 1.0 / (1.0 + (-true_cosine_similarity).exp2()) - 1.0;
         let false_variation = 1.0 / (1.0 + (-false_cosine_similarity).exp2());
         let (_, true_dst_degree) = get_node_degree(true_dst);
