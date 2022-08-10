@@ -4,7 +4,7 @@ use graph::{EdgeT, Graph, NodeT};
 use indicatif::ProgressIterator;
 use vec_rand::splitmix64;
 
-#[derive(Clone, Debug, Default)]
+#[derive(Clone, Debug)]
 pub struct FirstOrderLINE {
     model: BasicEmbeddingModel,
 }
@@ -12,6 +12,22 @@ pub struct FirstOrderLINE {
 impl From<BasicEmbeddingModel> for FirstOrderLINE {
     fn from(model: BasicEmbeddingModel) -> Self {
         Self { model }
+    }
+}
+
+impl Default for FirstOrderLINE {
+    fn default() -> Self {
+        BasicEmbeddingModel {
+            embedding_size: 100,
+            epochs: 100,
+            learning_rate: 0.01,
+            learning_rate_decay: 0.99,
+            avoid_false_negatives: false,
+            use_scale_free_distribution: true,
+            random_state: 42,
+            verbose: true,
+        }
+        .into()
     }
 }
 
@@ -61,7 +77,14 @@ impl GraphEmbedder for FirstOrderLINE {
         let compute_first_order_line = ptx.get_kernel("compute_first_order_line")?;
 
         // set the parallelizzation specs
-        let grid = Grid::default().set_grid_x(40)?.set_block_x(32)?;
+        let number_of_multiprocessors =
+            device.get_attribute(DeviceAttribute::MultiprocessorCount)? as usize;
+        let number_of_threads_per_multiprocessors =
+            device.get_attribute(DeviceAttribute::MaxThreadsPerMultiprocessor)? as usize;
+
+        let grid = Grid::default()
+            .set_grid_x(number_of_multiprocessors)?
+            .set_block_x(number_of_threads_per_multiprocessors)?;
 
         // allocate a gpu buffer and copy data from the host
         let embedding_on_gpu = gpu.buffer_from_slice::<f32>(embedding[0])?;

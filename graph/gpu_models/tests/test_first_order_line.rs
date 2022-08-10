@@ -12,7 +12,7 @@ fn test_first_order_line_on_cora() -> Result<(), String> {
     let mut embedding = vec![0.0; line.get_embedding_size() * cora.get_number_of_nodes() as usize];
     line.fit_transform(&cora, &mut [embedding.as_mut_slice()])?;
 
-    let writer = CSVFileWriter::new("cora_skipgram_embedding.tsv")
+    let writer = CSVFileWriter::new("cora_first_order_line_embedding.tsv")
         .set_separator(Some('\t'))
         .unwrap()
         .set_header(Some(true))
