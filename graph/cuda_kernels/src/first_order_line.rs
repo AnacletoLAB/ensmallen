@@ -99,8 +99,8 @@ pub unsafe extern "ptx-kernel" fn compute_first_order_line(
         let src_norm = src_squared.sqrt() + f32::EPSILON;
         let true_dst_norm = true_dst_squared.sqrt() + f32::EPSILON;
         let false_dst_norm = false_dst_squared.sqrt() + f32::EPSILON;
-        let true_cosine_similarity = true_dot / (src_norm * true_dst_norm + f32::EPSILON);
-        let false_cosine_similarity = false_dot / (src_norm * false_dst_norm + f32::EPSILON);
+        let true_cosine_similarity = true_dot / (src_norm * true_dst_norm);
+        let false_cosine_similarity = false_dot / (src_norm * false_dst_norm);
 
         let true_variation = 1.0 / (1.0 + (-true_cosine_similarity).exp2()) - 1.0;
         let false_variation = 1.0 / (1.0 + (-false_cosine_similarity).exp2());
@@ -122,8 +122,8 @@ pub unsafe extern "ptx-kernel" fn compute_first_order_line(
             .zip((0..embedding_size).zip(0..embedding_size))
             .for_each(|(i, (j, k))| {
                 embedding[src * embedding_size + i] /= src_norm;
-                embedding[true_dst * embedding_size + j] /= true_dst_norm;
-                embedding[false_dst * embedding_size + k] /= false_dst_norm;
+                // embedding[true_dst * embedding_size + j] /= true_dst_norm;
+                // embedding[false_dst * embedding_size + k] /= false_dst_norm;
                 // let src_value = embedding[src * embedding_size + i];
                 // let true_dst_value = embedding[true_dst * embedding_size + j];
                 // let false_dst_value = embedding[false_dst * embedding_size + k];
