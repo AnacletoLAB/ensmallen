@@ -125,7 +125,7 @@ pub unsafe extern "ptx-kernel" fn compute_first_order_line(
                 let true_dst_value = embedding[true_dst * embedding_size + j];
                 let false_dst_value = embedding[false_dst * embedding_size + k];
                 embedding[src * embedding_size + i] -=
-                    true_variation * true_dst_value + true_variation * false_dst_value;
+                    true_variation * true_dst_value + false_variation * false_dst_value;
                 embedding[true_dst * embedding_size + j] -= true_dst_variation * src_value;
                 embedding[false_dst * embedding_size + k] -= false_dst_variation * src_value;
             });
