@@ -1,9 +1,9 @@
 extern crate graph;
 
+use cpu_models::GraphEmbedder;
 use gpu_models::*;
 use graph::test_utilities::*;
-use cpu_models::GraphEmbedder;
-use graph::{CSVFileWriter, WalksParameters};
+use graph::CSVFileWriter;
 
 #[test]
 fn test_first_order_line_on_cora() -> Result<(), String> {

@@ -30,9 +30,7 @@ pub unsafe extern "ptx-kernel" fn compute_first_order_line(
     random_state = (thread_idx_x() as u64).wrapping_mul(random_state);
 
     let embedding = core::slice::from_raw_parts_mut(embedding, number_of_nodes * embedding_size);
-
     let node_degrees = core::slice::from_raw_parts(comulative_node_degrees, number_of_nodes);
-
     let destinations = core::slice::from_raw_parts(destinations, number_of_edges);
 
     let batch_size = (number_of_edges / block_dim_x() as usize).max(1);

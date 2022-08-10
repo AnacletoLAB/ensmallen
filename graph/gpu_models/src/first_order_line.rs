@@ -66,7 +66,7 @@ impl GraphEmbedder for FirstOrderLINE {
         // allocate a gpu buffer and copy data from the host
         let embedding_on_gpu = gpu.buffer_from_slice::<f32>(embedding[0]).unwrap();
         let comulative_node_degrees = graph.get_cumulative_node_degrees();
-        let destinations = graph.get_destination_node_ids(false);
+        let destinations = graph.get_directed_destination_node_ids();
         let gpu_comulative_node_degrees = gpu
             .buffer_from_slice::<EdgeT>(comulative_node_degrees.as_ref())
             .unwrap();
