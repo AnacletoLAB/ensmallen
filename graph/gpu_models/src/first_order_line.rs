@@ -102,20 +102,20 @@ impl GraphEmbedder for FirstOrderLINE {
         for _ in (0..self.model.get_number_of_epochs()).progress_with(progress_bar) {
             random_state = splitmix64(random_state);
 
-            gpu.launch_kernel(
-                &compute_first_order_line,
-                &grid,
-                args![
-                    embedding_on_gpu.as_device_ptr(),
-                    gpu_comulative_node_degrees.as_device_ptr(),
-                    gpu_destinations.as_device_ptr(),
-                    learning_rate,
-                    random_state,
-                    self.model.get_embedding_size(),
-                    comulative_node_degrees.len(),
-                    destinations.len(),
-                ],
-            )?;
+            // gpu.launch_kernel(
+            //     &compute_first_order_line,
+            //     &grid,
+            //     args![
+            //         embedding_on_gpu.as_device_ptr(),
+            //         gpu_comulative_node_degrees.as_device_ptr(),
+            //         gpu_destinations.as_device_ptr(),
+            //         learning_rate,
+            //         random_state,
+            //         self.model.get_embedding_size(),
+            //         comulative_node_degrees.len(),
+            //         destinations.len(),
+            //     ],
+            // )?;
 
             learning_rate *= self.model.get_learning_rate_decay();
 
