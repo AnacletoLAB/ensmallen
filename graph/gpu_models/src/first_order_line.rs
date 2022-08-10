@@ -50,29 +50,26 @@ impl GraphEmbedder for FirstOrderLINE {
         let mut random_state = splitmix64(self.get_random_state());
 
         // get all the devices in the system
-        let devices = Device::get_devices().unwrap();
+        let devices = Device::get_devices()?;
         // we use the first device
         let device = devices[0];
         // setup this device for computation
-        let mut gpu = GPU::new(device).unwrap();
+        let mut gpu = GPU::new(device)?;
         // load our compiled code
-        let mut ptx = gpu.load_ptx(PTX_SOURCE).unwrap();
+        let mut ptx = gpu.load_ptx(PTX_SOURCE)?;
         // get a function from the compiled code
-        let compute_first_order_line = ptx.get_kernel("compute_first_order_line").unwrap();
+        let compute_first_order_line = ptx.get_kernel("compute_first_order_line")?;
 
         // set the parallelizzation specs
-        let grid = Grid::default().set_block_x(1024).unwrap();
+        let grid = Grid::default().set_grid_x(40)?.set_block_x(32)?;
 
         // allocate a gpu buffer and copy data from the host
-        let embedding_on_gpu = gpu.buffer_from_slice::<f32>(embedding[0]).unwrap();
+        let embedding_on_gpu = gpu.buffer_from_slice::<f32>(embedding[0])?;
         let comulative_node_degrees = graph.get_cumulative_node_degrees();
         let destinations = graph.get_directed_destination_node_ids();
-        let gpu_comulative_node_degrees = gpu
-            .buffer_from_slice::<EdgeT>(comulative_node_degrees.as_ref())
-            .unwrap();
-        let gpu_destinations = gpu
-            .buffer_from_slice::<NodeT>(destinations.as_ref())
-            .unwrap();
+        let gpu_comulative_node_degrees =
+            gpu.buffer_from_slice::<EdgeT>(comulative_node_degrees.as_ref())?;
+        let gpu_destinations = gpu.buffer_from_slice::<NodeT>(destinations.as_ref())?;
 
         let progress_bar = self.get_loading_bar();
 
@@ -93,14 +90,13 @@ impl GraphEmbedder for FirstOrderLINE {
                     comulative_node_degrees.len(),
                     destinations.len(),
                 ],
-            )
-            .unwrap();
+            )?;
 
             // wait for the gpu to finish
-            gpu.synchronize().unwrap();
+            gpu.synchronize()?;
         }
 
-        embedding_on_gpu.copy_gpu2host(embedding[0]).unwrap();
+        embedding_on_gpu.copy_gpu2host(embedding[0])?;
         Ok(())
     }
 }
