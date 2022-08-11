@@ -1,5 +1,5 @@
 use crate::*;
-use express_measures::dot_product_sequential_unchecked;
+use express_measures::cosine_similarity_sequential_unchecked;
 use graph::{Graph, ThreadDataRaceAware};
 use num::Zero;
 use rayon::prelude::*;
@@ -18,11 +18,6 @@ where
         let mut walk_parameters = self.walk_parameters.clone();
         let mut random_state = splitmix64(self.walk_parameters.get_random_state() as u64);
         let mut learning_rate = self.learning_rate;
-        // This is used to scale the dot product to avoid getting NaN due to
-        // exp(dot) being inf and the sigmoid becomes Nan
-        // we multiply by context size so we have a faster division when computing
-        // the dotproduct of the mean contexted mebedding
-        let scale_factor = (embedding_size as f32).sqrt();
 
         // Update the random state
         random_state = splitmix64(random_state);
@@ -52,18 +47,24 @@ where
                     let dst_embedding = &mut (*shared_embedding.get())[1]
                         [(dst as usize) * embedding_size..(dst as usize + 1) * embedding_size];
 
-                    let dot = dot_product_sequential_unchecked(src_embedding, dst_embedding)
-                        / scale_factor;
+                    let (similarity, src_norm, dst_norm): (f32, f32, f32) =
+                        cosine_similarity_sequential_unchecked(src_embedding, dst_embedding);
 
-                    let variation: f32 =
-                        learning_rate * 2.0 * freq.powf(self.alpha) * (dot - freq.ln());
+                    let variation: f32 = freq.powf(self.alpha) * (similarity - freq.ln());
+
+                    let node_priors = get_node_priors(graph, &[src, dst], learning_rate);
+
+                    let src_variation = variation * node_priors[0];
+                    let dst_variation = variation * node_priors[1];
 
                     src_embedding
                         .iter_mut()
                         .zip(dst_embedding.iter_mut())
                         .for_each(|(src_feature, dst_feature)| {
-                            *src_feature -= *dst_feature * variation;
-                            *dst_feature -= *src_feature * variation;
+                            *src_feature /= src_norm;
+                            *dst_feature /= dst_norm;
+                            *src_feature -= *dst_feature * src_variation;
+                            *dst_feature -= *src_feature * dst_variation;
                         });
                     variation.abs()
                 })
