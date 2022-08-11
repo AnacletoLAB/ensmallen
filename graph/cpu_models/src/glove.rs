@@ -50,8 +50,7 @@ where
                     let (similarity, src_norm, dst_norm): (f32, f32, f32) =
                         cosine_similarity_sequential_unchecked(src_embedding, dst_embedding);
 
-                    let variation: f32 =
-                        learning_rate * freq.powf(self.alpha) * (similarity - freq.ln());
+                    let variation: f32 = freq.powf(self.alpha) * (similarity - freq.ln());
 
                     let node_priors = get_node_priors(graph, &[src, dst], learning_rate);
 
