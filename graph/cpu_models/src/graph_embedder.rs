@@ -1,16 +1,26 @@
 use crate::*;
+use express_measures::ThreadFloat;
 use graph::Graph;
 use indicatif::{ProgressBar, ProgressStyle};
+use num_traits::Coerced;
 
 pub trait GraphEmbedder {
     /// Computes in the provided memory slice the graph embedding.
     ///
     /// # Arguments
     /// `graph`: &Graph - The graph to embed
-    /// `embedding`: &[&mut [f32]] - The memory area where to write the embedding.
-    fn _fit_transform(&self, graph: &Graph, embedding: &mut [&mut [f32]]) -> Result<(), String>;
+    /// `embedding`: &[&mut FeatureSlice] - The memory area where to write the embedding.
+    fn _fit_transform<F: Coerced<f32> + ThreadFloat>(
+        &self,
+        graph: &Graph,
+        embedding: &mut [&mut [F]],
+    ) -> Result<(), String>;
 
-    fn fit_transform(&self, graph: &Graph, embedding: &mut [&mut [f32]]) -> Result<(), String> {
+    fn fit_transform<F: Coerced<f32> + ThreadFloat>(
+        &self,
+        graph: &Graph,
+        embedding: &mut [&mut [F]],
+    ) -> Result<(), String> {
         if !graph.has_edges() {
             return Err("The provided graph does not have any edge.".to_string());
         }
@@ -79,11 +89,16 @@ pub trait GraphEmbedder {
     /// Returns the name of the model.
     fn get_model_name(&self) -> String;
 
+    /// Returns the embedding data type.
+    fn get_dtype(&self) -> String;
+
     /// Returns the number of epochs.
     fn get_number_of_epochs(&self) -> usize;
 
     /// Returns the initial random state of the model.
     fn get_random_state(&self) -> u64;
+
+    /// Re
 
     /// Returns the shapes of the embeddings given the graph.
     fn get_embedding_shapes(&self, graph: &Graph) -> Result<Vec<MatrixShape>, String>;

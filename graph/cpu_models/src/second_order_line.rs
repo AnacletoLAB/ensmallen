@@ -1,6 +1,8 @@
 use crate::{get_node_priors, utils::MatrixShape, BasicEmbeddingModel, GraphEmbedder};
+use express_measures::ThreadFloat;
 use express_measures::cosine_similarity_sequential_unchecked;
 use graph::{Graph, NodeT, ThreadDataRaceAware};
+use num_traits::Coerced;
 use num_traits::Zero;
 use rayon::prelude::*;
 use vec_rand::splitmix64;
@@ -23,6 +25,10 @@ impl GraphEmbedder for SecondOrderLINE {
 
     fn get_number_of_epochs(&self) -> usize {
         self.model.epochs
+    }
+
+    fn get_dtype(&self) -> String {
+        self.model.get_dtype()
     }
 
     fn is_verbose(&self) -> bool {
@@ -48,48 +54,17 @@ impl GraphEmbedder for SecondOrderLINE {
         ])
     }
 
-    fn _fit_transform(&self, graph: &Graph, embedding: &mut [&mut [f32]]) -> Result<(), String> {
+    fn _fit_transform<F: Coerced<f32> + ThreadFloat>(
+        &self,
+        graph: &Graph,
+        embedding: &mut [&mut [F]],
+    ) -> Result<(), String> {
         let mut learning_rate = self.model.learning_rate;
         let mut random_state = self.get_random_state();
 
         let shared_node_embedding = ThreadDataRaceAware::new(embedding);
 
         let pb = self.get_loading_bar();
-
-        let compute_mini_batch_step = |src: usize, dst: usize, label: bool, learning_rate: f32| {
-            let src_embedding = unsafe {
-                &mut (*shared_node_embedding.get())[0]
-                    [(src * self.model.embedding_size)..((src + 1) * self.model.embedding_size)]
-            };
-            let dst_embedding = unsafe {
-                &mut (*shared_node_embedding.get())[1]
-                    [(dst * self.model.embedding_size)..((dst + 1) * self.model.embedding_size)]
-            };
-
-            let (similarity, src_norm, dst_norm): (f32, f32, f32) =
-                unsafe { cosine_similarity_sequential_unchecked(src_embedding, dst_embedding) };
-
-            let prediction = 1.0 / (1.0 + (-similarity).exp());
-
-            let variation = if label { prediction - 1.0 } else { prediction };
-
-            let node_priors = get_node_priors(graph, &[src as NodeT, dst as NodeT], learning_rate);
-
-            let src_variation = variation * node_priors[0];
-            let dst_variation = variation * node_priors[1];
-
-            src_embedding
-                .iter_mut()
-                .zip(dst_embedding.iter_mut())
-                .for_each(|(src_feature, dst_feature)| {
-                    *src_feature /= src_norm;
-                    *dst_feature /= dst_norm;
-                    *src_feature -= *dst_feature * src_variation;
-                    *dst_feature -= *src_feature * dst_variation;
-                });
-
-            variation.abs()
-        };
 
         // We start to loop over the required amount of epochs.
         for _ in 0..self.get_number_of_epochs() {
@@ -110,7 +85,42 @@ impl GraphEmbedder for SecondOrderLINE {
                     None,
                 )?
                 .map(|(src, dst, label)| {
-                    compute_mini_batch_step(src as usize, dst as usize, label, learning_rate)
+                    let src = src as usize;
+                    let dst = dst as usize;
+                    let src_embedding = unsafe {
+                        &mut (*shared_node_embedding.get())[0][(src * self.model.embedding_size)
+                            ..((src + 1) * self.model.embedding_size)]
+                    };
+                    let dst_embedding = unsafe {
+                        &mut (*shared_node_embedding.get())[1][(dst * self.model.embedding_size)
+                            ..((dst + 1) * self.model.embedding_size)]
+                    };
+
+                    let (similarity, src_norm, dst_norm): (f32, f32, f32) = unsafe {
+                        cosine_similarity_sequential_unchecked(src_embedding, dst_embedding)
+                    };
+
+                    let prediction = 1.0 / (1.0 + (-similarity).exp());
+
+                    let variation = if label { prediction - 1.0 } else { prediction };
+
+                    let node_priors =
+                        get_node_priors(graph, &[src as NodeT, dst as NodeT], learning_rate);
+
+                    let src_variation = F::coerce_from(variation * node_priors[0]);
+                    let dst_variation = F::coerce_from(variation * node_priors[1]);
+
+                    src_embedding
+                        .iter_mut()
+                        .zip(dst_embedding.iter_mut())
+                        .for_each(|(src_feature, dst_feature)| {
+                            *src_feature /= F::coerce_from(src_norm);
+                            *dst_feature /= F::coerce_from(dst_norm);
+                            *src_feature -= *dst_feature * src_variation;
+                            *dst_feature -= *src_feature * dst_variation;
+                        });
+
+                    variation.abs()
                 })
                 .sum::<f32>();
 

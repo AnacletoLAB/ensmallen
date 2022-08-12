@@ -1,6 +1,8 @@
 use crate::*;
+use express_measures::ThreadFloat;
 use graph::WalksParameters;
 use indicatif::{ProgressBar, ProgressStyle};
+use num_traits::Coerced;
 
 #[derive(Clone, Debug, Eq, PartialEq)]
 pub enum Node2VecModels {
@@ -34,6 +36,7 @@ where
     pub(crate) use_scale_free_distribution: bool,
     pub(crate) walk_transformer: W,
     pub(crate) model_type: Node2VecModels,
+    pub(crate) dtype: String,
     pub(crate) verbose: bool,
 }
 
@@ -59,6 +62,7 @@ where
     /// * `stochastic_downsample_by_degree`: Option<bool> - Randomly skip samples with probability proportional to the degree of the central node. By default false.
     /// * `normalize_learning_rate_by_degree`: Option<bool> - Divide the learning rate by the degree of the central node. By default false.
     /// * `use_scale_free_distribution`: Option<bool> - Sample negatives proportionally to their degree. By default true.
+    /// * `dtype`: Option<String> - The data type to be employed, by default f32.
     /// * `verbose`: Option<bool> - Whether to show the loading bar, by default true.
     pub fn new(
         model_type: Node2VecModels,
@@ -75,6 +79,7 @@ where
         stochastic_downsample_by_degree: Option<bool>,
         normalize_learning_rate_by_degree: Option<bool>,
         use_scale_free_distribution: Option<bool>,
+        dtype: Option<String>,
         verbose: Option<bool>,
     ) -> Result<Self, String> {
         let embedding_size = must_not_be_zero(embedding_size, 100, "embedding size")?;
@@ -108,6 +113,7 @@ where
             normalize_learning_rate_by_degree,
             use_scale_free_distribution,
             walk_transformer,
+            dtype: dtype.unwrap_or("f32".to_string()),
             verbose,
         })
     }
@@ -143,21 +149,17 @@ where
 {
     fn get_embedding_shapes(&self, graph: &graph::Graph) -> Result<Vec<MatrixShape>, String> {
         Ok(vec![
-            (
-                graph.get_number_of_nodes() as usize,
-                self.embedding_size,
-            )
-            .into(),
-            (
-                graph.get_number_of_nodes() as usize,
-                self.embedding_size,
-            )
-            .into()
+            (graph.get_number_of_nodes() as usize, self.embedding_size).into(),
+            (graph.get_number_of_nodes() as usize, self.embedding_size).into(),
         ])
     }
 
     fn get_number_of_epochs(&self) -> usize {
         self.epochs
+    }
+
+    fn get_dtype(&self) -> String {
+        self.dtype.clone()
     }
 
     fn is_verbose(&self) -> bool {
@@ -172,10 +174,10 @@ where
         self.walk_parameters.get_random_state() as u64
     }
 
-    fn _fit_transform(
+    fn _fit_transform<F: Coerced<f32> + ThreadFloat>(
         &self,
         graph: &graph::Graph,
-        embedding: &mut [&mut [f32]],
+        embedding: &mut [&mut [F]],
     ) -> Result<(), String> {
         match self.model_type {
             Node2VecModels::CBOW => self.fit_transform_cbow(graph, embedding),

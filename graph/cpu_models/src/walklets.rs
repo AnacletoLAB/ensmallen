@@ -1,4 +1,6 @@
+use express_measures::ThreadFloat;
 use indicatif::ProgressIterator;
+use num_traits::Coerced;
 use indicatif::{ProgressBar, ProgressStyle};
 use crate::*;
 
@@ -27,6 +29,10 @@ impl GraphEmbedder for Walklets {
         self.node2vec.is_verbose()
     }
 
+    fn get_dtype(&self) -> String {
+        self.node2vec.get_dtype()
+    }
+
     fn get_number_of_epochs(&self) -> usize {
         self.node2vec.get_number_of_epochs()
     }
@@ -45,10 +51,10 @@ impl GraphEmbedder for Walklets {
         self.node2vec.get_random_state()
     }
 
-    fn _fit_transform(
+    fn _fit_transform<F: Coerced<f32> + ThreadFloat>(
         &self,
         graph: &graph::Graph,
-        embedding: &mut [&mut [f32]],
+        embedding: &mut [&mut [F]],
     ) -> Result<(), String> {
         let mut node2vec = self.node2vec.clone();
         node2vec.window_size = 1;

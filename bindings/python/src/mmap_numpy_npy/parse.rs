@@ -46,6 +46,7 @@ pub(crate) fn parse_header(header: &str) -> (NPY_TYPES, Vec<intptr_t>, bool) {
         },
         "c" => panic!("complex type is not supported"),
         "f" => match byte_size {
+            2 => NPY_TYPES::NPY_HALF,
             4 => NPY_TYPES::NPY_FLOAT,
             8 => NPY_TYPES::NPY_DOUBLE,
             _ => panic!("Bit size {} not supported fior", byte_size),
@@ -73,6 +74,7 @@ pub(crate) fn dtype_to_descr(dtype: NPY_TYPES) -> &'static str {
         NPY_USHORT => "u2",
         NPY_INT => "i4",
         NPY_UINT => "u4",
+        NPY_HALF => "f2",
         NPY_FLOAT => "f4",
         NPY_LONGLONG => "i8",
         NPY_ULONGLONG => "u8",
@@ -85,7 +87,7 @@ pub(crate) fn npy_type_to_bytes_size(dtype: NPY_TYPES) -> usize {
     use NPY_TYPES::*;
     match dtype {
         NPY_BOOL | NPY_BYTE | NPY_UBYTE => 1,
-        NPY_SHORT | NPY_USHORT => 2,
+        NPY_SHORT | NPY_USHORT | NPY_HALF => 2,
         NPY_INT | NPY_UINT | NPY_FLOAT => 4,
         NPY_LONGLONG | NPY_ULONGLONG | NPY_DOUBLE => 8,
         _ => panic!("Not supported {}", dtype as i32),

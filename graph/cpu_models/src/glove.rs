@@ -1,7 +1,8 @@
 use crate::*;
-use express_measures::cosine_similarity_sequential_unchecked;
+use express_measures::{cosine_similarity_sequential_unchecked, ThreadFloat};
 use graph::{Graph, ThreadDataRaceAware};
 use num::Zero;
+use num_traits::Coerced;
 use rayon::prelude::*;
 use vec_rand::splitmix64;
 
@@ -9,10 +10,10 @@ impl<W> Node2Vec<W>
 where
     W: WalkTransformer,
 {
-    pub(crate) fn fit_transform_glove(
+    pub(crate) fn fit_transform_glove<F: Coerced<f32> + ThreadFloat>(
         &self,
         graph: &Graph,
-        embedding: &mut [&mut [f32]],
+        embedding: &mut [&mut [F]],
     ) -> Result<(), String> {
         let embedding_size = self.embedding_size;
         let mut walk_parameters = self.walk_parameters.clone();
@@ -54,15 +55,15 @@ where
 
                     let node_priors = get_node_priors(graph, &[src, dst], learning_rate);
 
-                    let src_variation = variation * node_priors[0];
-                    let dst_variation = variation * node_priors[1];
+                    let src_variation = F::coerce_from(variation * node_priors[0]);
+                    let dst_variation = F::coerce_from(variation * node_priors[1]);
 
                     src_embedding
                         .iter_mut()
                         .zip(dst_embedding.iter_mut())
                         .for_each(|(src_feature, dst_feature)| {
-                            *src_feature /= src_norm;
-                            *dst_feature /= dst_norm;
+                            *src_feature /= F::coerce_from(src_norm);
+                            *dst_feature /= F::coerce_from(dst_norm);
                             *src_feature -= *dst_feature * src_variation;
                             *dst_feature -= *src_feature * dst_variation;
                         });
