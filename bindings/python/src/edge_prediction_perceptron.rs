@@ -329,20 +329,6 @@ impl EdgePredictionPerceptron {
     }
 }
 
-enum NumpyArray<'a> {
-    //F16(&PyArray2<f16>),
-    F32(&'a PyArray2<f32>),
-    F64(&'a PyArray2<f64>),
-    U8(&'a PyArray2<u8>),
-    U16(&'a PyArray2<u16>),
-    U32(&'a PyArray2<u32>),
-    U64(&'a PyArray2<u64>),
-    I8(&'a PyArray2<i8>),
-    I16(&'a PyArray2<i16>),
-    I32(&'a PyArray2<i32>),
-    I64(&'a PyArray2<i64>),
-}
-
 impl_edge_prediction_embedding! {
     u8 : U8,
     u16 : U16,

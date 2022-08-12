@@ -46,14 +46,14 @@ express_measures = { path = "../../graph/express_measures" }
 tags = { path = "../../graph/tags" }
 vec_rand = { git = "https://github.com/zommiommy/vec_rand", branch = "master" }
 roaring = { git = "https://github.com/zommiommy/roaring-rs", branch = "master" }
-numpy = "0.16.2"
+numpy = {version="0.16.2", features = ["half"] }
 rand = {version="0.7", features = ["small_rng"] }
 strsim = "0.10.0"
 markdown = "0.3"
 rayon = "1.5.0"
 indicatif = {version="0.16.0", features = ["rayon"]}
 ctrlc = "3.1.7"
-half = "1.8.2"
+half = {path = "../python/half", features = ["use-intrinsics", "num-traits"]}
 
 [profile.release]
 debug = false             # Include debug info.

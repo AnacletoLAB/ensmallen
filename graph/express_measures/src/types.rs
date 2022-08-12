@@ -3,7 +3,7 @@ use half::f16;
 use num_traits::{Float, One, Unsigned, Zero};
 use std::{
     iter::Sum,
-    ops::{AddAssign, DivAssign, MulAssign, Sub, SubAssign},
+    ops::{AddAssign, Add, Div, DivAssign, MulAssign, Sub, SubAssign},
 };
 
 pub trait ThreadFloat:
@@ -37,7 +37,19 @@ impl<T> ThreadFloat for T where
 impl<T> ThreadUnsigned for T where T: Unsigned + Send + Sync + Copy + TryInto<usize> + Debug {}
 
 pub trait Coerced<F>:
-    Copy + Send + Sync + PartialOrd + One + Zero + Sum + Sub<Output = Self>
+    Copy
+    + Send
+    + Sync
+    + PartialOrd
+    + One
+    + Zero
+    + Sum
+    + Add<Output = Self>
+    + Sub<Output = Self>
+    + Div<Output = Self>
+    + SubAssign
+    + AddAssign
+    + DivAssign
 {
     fn coerce_into(self) -> F;
     fn coerce_from(other: F) -> Self;

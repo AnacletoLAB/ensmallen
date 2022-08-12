@@ -1,7 +1,7 @@
 use crate::*;
 use express_measures::{
     dot_product_sequential_unchecked, element_wise_addition_inplace,
-    element_wise_weighted_addition_inplace,
+    element_wise_weighted_addition_inplace, Coerced, ThreadFloat,
 };
 use graph::{Graph, NodeT, ThreadDataRaceAware};
 use num::Zero;
@@ -23,10 +23,10 @@ where
     /// # Arguments
     /// `graph`: &Graph - The graph to embed
     /// `embedding`: &mut [f32] - The memory area where to write the embedding.
-    pub(crate) fn fit_transform_cbow(
+    pub(crate) fn fit_transform_cbow<F: Coerced<f32> + ThreadFloat>(
         &self,
         graph: &Graph,
-        embedding: &mut [&mut [f32]],
+        embedding: &mut [&mut [F]],
     ) -> Result<(), String> {
         let mut walk_parameters = self.walk_parameters.clone();
         let mut random_state = splitmix64(self.walk_parameters.get_random_state() as u64);
@@ -48,7 +48,7 @@ where
         let pb = self.get_progress_bar();
 
         // Create the closure to apply a gradient to a provided node's embedding
-        let update_contextual_node_embedding = |node_id: NodeT, variation: &[f32]| {
+        let update_contextual_node_embedding = |node_id: NodeT, variation: &[F]| {
             let node_id = node_id as usize;
             unsafe {
                 element_wise_addition_inplace(
@@ -60,7 +60,7 @@ where
         };
 
         // Create the closure to apply a gradient to a provided node's hidden layer weights
-        let update_central_node_embedding = |node_id: NodeT, variation: &[f32], weight: f32| {
+        let update_central_node_embedding = |node_id: NodeT, variation: &[F], weight: F| {
             let node_id = node_id as usize;
             unsafe {
                 element_wise_weighted_addition_inplace(
@@ -90,14 +90,15 @@ where
             }
         };
 
-        let compute_mini_batch_step = |total_context_embedding: &[f32],
-                                       mut context_embedding_gradient: &mut [f32],
+        let compute_mini_batch_step = |total_context_embedding: &[F],
+                                       mut context_embedding_gradient: &mut [F],
                                        node_id: NodeT,
                                        label: f32,
                                        learning_rate: f32| {
             let node_hidden = get_central_node_embedding(node_id);
-            let dot =
+            let dot: f32 =
                 unsafe { dot_product_sequential_unchecked(node_hidden, total_context_embedding) }
+                    .coerce_into()
                     / scale_factor;
 
             if dot > self.clipping_value || dot < -self.clipping_value {
@@ -115,13 +116,13 @@ where
                 element_wise_weighted_addition_inplace(
                     &mut context_embedding_gradient,
                     node_hidden,
-                    variation,
+                    F::coerce_from(variation),
                 )
             };
             update_central_node_embedding(
                 node_id,
                 total_context_embedding,
-                variation / context_size,
+                F::coerce_from(variation / context_size),
             );
 
             variation.abs()
@@ -170,7 +171,8 @@ where
                         .map(|(context, central_node_id, central_index)| {
                             // We compute the total context embedding.
                             // First, we assign to it the embedding of the first context.
-                            let mut total_context_embedding = vec![0.0; self.embedding_size];
+                            let mut total_context_embedding =
+                                vec![F::coerce_from(0.0); self.get_embedding_size()];
 
                             // Then we sum over it the other values.
                             for contextual_node_id in context.iter().copied() {
@@ -185,7 +187,8 @@ where
                                     });
                             }
 
-                            let mut context_gradient = vec![0.0; self.embedding_size];
+                            let mut context_gradient =
+                                vec![F::coerce_from(0.0); self.get_embedding_size()];
 
                             // We now compute the gradient relative to the positive
                             let positive_variation = compute_mini_batch_step(

@@ -2,7 +2,7 @@ use crate::Optimizer;
 use crate::{get_random_weight, must_not_be_zero, FeatureSlice};
 use express_measures::{
     absolute_distance, cosine_similarity_sequential_unchecked, dot_product_sequential_unchecked,
-    element_wise_subtraction, euclidean_distance_sequential_unchecked, Coerced,
+    euclidean_distance_sequential_unchecked, Coerced,
 };
 use graph::{Graph, NodeT};
 use indicatif::ProgressIterator;
@@ -145,7 +145,14 @@ impl EdgeEmbedding {
                     .map(|(feature_a, feature_b)| feature_a.coerce_into() + feature_b.coerce_into())
                     .collect::<Vec<f32>>()
             },
-            EdgeEmbedding::Sub => |a: &[F], b: &[F]| unsafe { element_wise_subtraction(a, b) },
+            EdgeEmbedding::Sub => |a: &[F], b: &[F]| {
+                a.iter()
+                    .zip(b.iter())
+                    .map(|(&first_feature, &second_feature)| {
+                        first_feature.coerce_into() - second_feature.coerce_into()
+                    })
+                    .collect()
+            },
             EdgeEmbedding::Maximum => |a: &[F], b: &[F]| {
                 a.iter()
                     .copied()

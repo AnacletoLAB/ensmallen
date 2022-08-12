@@ -64,7 +64,8 @@ where
                 "random_state",
                 "verbose",
                 "node_embedding_path",
-                "contextual_node_embedding_path"
+                "contextual_node_embedding_path",
+                "dtype"
             ]
         ))?;
 
@@ -76,6 +77,7 @@ where
             extract_value_rust_result!(kwargs, "avoid_false_negatives", bool),
             extract_value_rust_result!(kwargs, "use_scale_free_distribution", bool),
             extract_value_rust_result!(kwargs, "random_state", u64),
+            extract_value_rust_result!(kwargs, "dtype", String),
             extract_value_rust_result!(kwargs, "verbose", bool),
         ))?
         .into();
@@ -91,7 +93,7 @@ where
 #[pyclass]
 #[derive(Debug, Clone)]
 #[pyo3(
-    text_signature = "(*, embedding_size, epochs, learning_rate, learning_rate_decay, avoid_false_negatives, use_scale_free_distribution, node_embedding_path, random_state, verbose)"
+    text_signature = "(*, embedding_size, epochs, learning_rate, learning_rate_decay, avoid_false_negatives, use_scale_free_distribution, node_embedding_path, random_state, dtype, verbose)"
 )]
 pub struct FirstOrderLINE {
     pub inner: BasicEmbeddingModelBinding<cpu_models::FirstOrderLINE>,
@@ -124,6 +126,8 @@ impl FirstOrderLINE {
     ///     fit into the available main memory.
     /// random_state: int = 42
     ///     random_state to use to reproduce the walks.
+    /// dtype: str
+    ///     The data type to be employed, by default f32.
     /// verbose: bool = True
     ///     Whether to show the loading bar.
     pub fn new(py_kwargs: Option<&PyDict>) -> PyResult<FirstOrderLINE> {
@@ -151,7 +155,7 @@ impl FirstOrderLINE {
 #[pyclass]
 #[derive(Debug, Clone)]
 #[pyo3(
-    text_signature = "(*, embedding_size, epochs, learning_rate, learning_rate_decay, avoid_false_negatives, use_scale_free_distribution, node_embedding_path, contextual_node_embedding_path, random_state, verbose)"
+    text_signature = "(*, embedding_size, epochs, learning_rate, learning_rate_decay, avoid_false_negatives, use_scale_free_distribution, node_embedding_path, contextual_node_embedding_path, random_state, dtype, verbose)"
 )]
 pub struct SecondOrderLINE {
     pub inner: BasicEmbeddingModelBinding<cpu_models::SecondOrderLINE>,
@@ -188,6 +192,8 @@ impl SecondOrderLINE {
     ///     fit into the available main memory.
     /// random_state: int = 42
     ///     random_state to use to reproduce the walks.
+    /// dtype: str
+    ///     The data type to be employed, by default f32.
     /// verbose: bool = True
     ///     Whether to show the loading bar.
     pub fn new(py_kwargs: Option<&PyDict>) -> PyResult<SecondOrderLINE> {

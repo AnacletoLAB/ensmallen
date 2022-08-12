@@ -67,7 +67,8 @@ where
                 "mult_edge_type_embedding_path",
                 "bias_edge_type_embedding_path",
                 "source_edge_type_embedding_path",
-                "destination_edge_type_embedding_path"
+                "destination_edge_type_embedding_path",
+                "dtype",
             ]
         ))?;
 
@@ -80,6 +81,7 @@ where
                 None,
                 None,
                 extract_value_rust_result!(kwargs, "random_state", u64),
+                extract_value_rust_result!(kwargs, "dtype", String),
                 extract_value_rust_result!(kwargs, "verbose", bool),
             ))?,
             extract_value_rust_result!(kwargs, "relu_bias", f32),
@@ -97,7 +99,7 @@ where
 #[pyclass]
 #[derive(Debug, Clone)]
 #[pyo3(
-    text_signature = "(*, relu_bias, embedding_size, epochs, learning_rate, learning_rate_decay, node_embedding_path, edge_type_embedding_path, random_state, verbose)"
+    text_signature = "(*, relu_bias, embedding_size, epochs, learning_rate, learning_rate_decay, node_embedding_path, edge_type_embedding_path, random_state, dtype, verbose)"
 )]
 pub struct TransE {
     pub inner: BasicSiameseModelBinding<cpu_models::TransE>,
@@ -131,6 +133,8 @@ impl TransE {
     ///     fit into the available main memory.
     /// random_state: int = 42
     ///     random_state to use to reproduce the walks.
+    /// dtype: str
+    ///     The data type to be employed, by default f32.
     /// verbose: bool = True
     ///     Whether to show the loading bar.
     pub fn new(py_kwargs: Option<&PyDict>) -> PyResult<TransE> {
@@ -164,7 +168,7 @@ impl TransE {
 #[pyclass]
 #[derive(Debug, Clone)]
 #[pyo3(
-    text_signature = "(*, relu_bias, embedding_size, epochs, learning_rate, learning_rate_decay, node_embedding_path, random_state, verbose)"
+    text_signature = "(*, relu_bias, embedding_size, epochs, learning_rate, learning_rate_decay, node_embedding_path, random_state, dtype, verbose)"
 )]
 pub struct Unstructured {
     pub inner: BasicSiameseModelBinding<cpu_models::Unstructured>,
@@ -194,6 +198,8 @@ impl Unstructured {
     ///     fit into the available main memory.
     /// random_state: int = 42
     ///     random_state to use to reproduce the walks.
+    /// dtype: str
+    ///     The data type to be employed, by default f32.
     /// verbose: bool = True
     ///     Whether to show the loading bar.
     pub fn new(py_kwargs: Option<&PyDict>) -> PyResult<Unstructured> {
@@ -221,7 +227,7 @@ impl Unstructured {
 #[pyclass]
 #[derive(Debug, Clone)]
 #[pyo3(
-    text_signature = "(*, relu_bias, embedding_size, epochs, learning_rate, learning_rate_decay, node_embedding_path, source_edge_type_embedding_path, destination_edge_type_embedding_path, random_state, verbose)"
+    text_signature = "(*, relu_bias, embedding_size, epochs, learning_rate, learning_rate_decay, node_embedding_path, source_edge_type_embedding_path, destination_edge_type_embedding_path, random_state, dtype, verbose)"
 )]
 pub struct StructuredEmbedding {
     pub inner: BasicSiameseModelBinding<cpu_models::StructuredEmbedding>,
@@ -259,6 +265,8 @@ impl StructuredEmbedding {
     ///     fit into the available main memory.
     /// random_state: int = 42
     ///     random_state to use to reproduce the walks.
+    /// dtype: str
+    ///     The data type to be employed, by default f32.
     /// verbose: bool = True
     ///     Whether to show the loading bar.
     pub fn new(py_kwargs: Option<&PyDict>) -> PyResult<StructuredEmbedding> {

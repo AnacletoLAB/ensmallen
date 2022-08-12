@@ -1,7 +1,7 @@
 use crate::*;
 use express_measures::{
     element_wise_subtraction, matrix_vector_dot_product_sequential_unchecked,
-    normalize_vector_inplace, vector_norm,
+    normalize_vector_inplace, vector_norm, Coerced, ThreadFloat,
 };
 use graph::{EdgeTypeT, Graph, NodeT, ThreadDataRaceAware};
 use num_traits::Zero;
@@ -32,6 +32,10 @@ impl GraphEmbedder for StructuredEmbedding {
         self.model.is_verbose()
     }
 
+    fn get_dtype(&self) -> String {
+        self.model.get_dtype()
+    }
+
     fn get_number_of_epochs(&self) -> usize {
         self.model.get_number_of_epochs()
     }
@@ -56,7 +60,11 @@ impl GraphEmbedder for StructuredEmbedding {
         ])
     }
 
-    fn _fit_transform(&self, graph: &Graph, embedding: &mut [&mut [f32]]) -> Result<(), String> {
+    fn _fit_transform<F: Coerced<f32> + ThreadFloat>(
+        &self,
+        graph: &Graph,
+        embedding: &mut [&mut [F]],
+    ) -> Result<(), String> {
         let embedding_size = self.model.get_embedding_size();
         let edge_matrix_size = embedding_size * embedding_size;
         let scale_factor = (embedding_size as f32).sqrt();
@@ -103,34 +111,32 @@ impl GraphEmbedder for StructuredEmbedding {
             normalize_vector_inplace(src_embedding);
             normalize_vector_inplace(not_src_embedding);
 
-            let matrix_vector_dot_src: Vec<f32> =
+            let matrix_vector_dot_src: Vec<F> =
                 matrix_vector_dot_product_sequential_unchecked(src_edge_type_matrix, src_embedding);
 
-            let matrix_vector_dot_not_src: Vec<f32> =
-                matrix_vector_dot_product_sequential_unchecked(
-                    src_edge_type_matrix,
-                    not_src_embedding,
-                );
+            let matrix_vector_dot_not_src: Vec<F> = matrix_vector_dot_product_sequential_unchecked(
+                src_edge_type_matrix,
+                not_src_embedding,
+            );
 
-            let matrix_vector_dot_dst: Vec<f32> =
+            let matrix_vector_dot_dst: Vec<F> =
                 matrix_vector_dot_product_sequential_unchecked(dst_edge_type_matrix, dst_embedding);
 
-            let matrix_vector_dot_not_dst: Vec<f32> =
-                matrix_vector_dot_product_sequential_unchecked(
-                    dst_edge_type_matrix,
-                    not_dst_embedding,
-                );
+            let matrix_vector_dot_not_dst: Vec<F> = matrix_vector_dot_product_sequential_unchecked(
+                dst_edge_type_matrix,
+                not_dst_embedding,
+            );
 
-            let src_sub_dst: Vec<f32> =
+            let src_sub_dst: Vec<F> =
                 element_wise_subtraction(&matrix_vector_dot_src, &matrix_vector_dot_dst);
-            let src_sub_dst_norm: f32 = vector_norm(&src_sub_dst);
-            let not_src_sub_dst: Vec<f32> =
+            let src_sub_dst_norm: F = vector_norm(&src_sub_dst);
+            let not_src_sub_dst: Vec<F> =
                 element_wise_subtraction(&matrix_vector_dot_not_src, &matrix_vector_dot_not_dst);
-            let not_src_sub_dst_norm: f32 = vector_norm(&not_src_sub_dst);
+            let not_src_sub_dst_norm: F = vector_norm(&not_src_sub_dst);
 
             // If the delta is lower than zero, there is no need to continue
             // further, as the gradient will be zero.
-            if not_src_sub_dst_norm - src_sub_dst_norm > self.model.relu_bias {
+            if not_src_sub_dst_norm - src_sub_dst_norm > F::coerce_from(self.model.relu_bias) {
                 return 0.0;
             }
 
@@ -143,11 +149,19 @@ impl GraphEmbedder for StructuredEmbedding {
                     not_dst as NodeT,
                 ],
                 learning_rate,
-            );
-            let edge_type_prior = get_edge_type_prior(graph, edge_type as EdgeTypeT, learning_rate);
+            )
+            .into_iter()
+            .map(|prior| F::coerce_from(prior))
+            .collect::<Vec<F>>();
 
-            let src_sub_dst_squared_norm = src_sub_dst_norm.powf(2.0);
-            let not_src_sub_dst_squared_norm = not_src_sub_dst_norm.powf(2.0);
+            let edge_type_prior = F::coerce_from(get_edge_type_prior(
+                graph,
+                edge_type as EdgeTypeT,
+                learning_rate,
+            ));
+
+            let src_sub_dst_squared_norm = src_sub_dst_norm.powf(F::coerce_from(2.0));
+            let not_src_sub_dst_squared_norm = not_src_sub_dst_norm.powf(F::coerce_from(2.0));
 
             src_sub_dst
                 .into_iter()
@@ -196,12 +210,12 @@ impl GraphEmbedder for StructuredEmbedding {
                                         *dst_edge_type_feature * normalized_false_distance,
                                     );
                                     *src_edge_type_feature -= (normalized_true_distance
-                                        * src_feature
-                                        - normalized_false_distance * not_src_feature)
+                                        * *src_feature
+                                        - normalized_false_distance * *not_src_feature)
                                         * edge_type_prior;
                                     *dst_edge_type_feature += (normalized_true_distance
-                                        * dst_feature
-                                        - normalized_false_distance * not_dst_feature)
+                                        * *dst_feature
+                                        - normalized_false_distance * *not_dst_feature)
                                         * edge_type_prior;
                                     to_return
                                 },
@@ -235,7 +249,9 @@ impl GraphEmbedder for StructuredEmbedding {
                         not_dst_embedding[row_number] -= not_dst_total_gradient * node_priors[3];
                     },
                 );
-            (not_src_sub_dst_norm - src_sub_dst_norm).abs()
+            (not_src_sub_dst_norm - src_sub_dst_norm)
+                .coerce_into()
+                .abs()
         };
 
         // We start to loop over the required amount of epochs.

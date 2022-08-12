@@ -1,10 +1,9 @@
 use crate::*;
 use express_measures::{
     dot_product_sequential_unchecked, element_wise_addition_inplace,
-    element_wise_weighted_addition_inplace,
+    element_wise_weighted_addition_inplace, Coerced, ThreadFloat,
 };
 use graph::{Graph, NodeT, ThreadDataRaceAware};
-use num::Zero;
 use rayon::prelude::*;
 use vec_rand::{sample_uniform, splitmix64};
 
@@ -21,12 +20,12 @@ where
     /// # Arguments
     /// `graph`: &Graph - The graph to embed
     /// `embedding`: &mut [&mut [f32]] - The memory area where to write the embedding.
-    pub(crate) fn fit_transform_skipgram(
+    pub(crate) fn fit_transform_skipgram<F: Coerced<f32> + ThreadFloat>(
         &self,
         graph: &Graph,
-        embedding: &mut [&mut [f32]],
+        embedding: &mut [&mut [F]],
     ) -> Result<(), String> {
-        let scale_factor = (self.embedding_size as f32).sqrt();
+        let scale_factor = (self.get_embedding_size() as f32).sqrt();
         let mut walk_parameters = self.walk_parameters.clone();
         let mut random_state = splitmix64(self.walk_parameters.get_random_state() as u64);
         let mut learning_rate = self.learning_rate;
@@ -40,7 +39,7 @@ where
         let pb = self.get_progress_bar();
 
         // Create the closure to apply a gradient to a provided node's embedding
-        let update_central_node_embedding = |node_id: NodeT, variation: &[f32]| {
+        let update_central_node_embedding = |node_id: NodeT, variation: &[F]| {
             let node_id = node_id as usize;
             unsafe {
                 element_wise_addition_inplace(
@@ -52,7 +51,7 @@ where
         };
 
         // Create the closure to apply a gradient to a provided node's hidden layer weights
-        let update_contextual_node_embedding = |node_id: NodeT, variation: &[f32], weight: f32| {
+        let update_contextual_node_embedding = |node_id: NodeT, variation: &[F], weight: F| {
             let node_id = node_id as usize;
             unsafe {
                 element_wise_weighted_addition_inplace(
@@ -82,18 +81,19 @@ where
             }
         };
 
-        let compute_mini_batch_step = |total_context_embedding: &[f32],
-                                       context_embedding_gradient: &mut [f32],
+        let compute_mini_batch_step = |total_context_embedding: &[F],
+                                       context_embedding_gradient: &mut [F],
                                        node_id: NodeT,
                                        label: f32,
                                        learning_rate: f32| {
             let node_hidden = get_contextual_node_embedding(node_id);
-            let dot =
+            let dot: f32 =
                 unsafe { dot_product_sequential_unchecked(node_hidden, total_context_embedding) }
+                    .coerce_into()
                     / scale_factor;
 
             if dot > self.clipping_value || dot < -self.clipping_value {
-                return 0.0;
+                return F::coerce_from(0.0);
             }
 
             let exp_dot = dot.exp();
@@ -102,6 +102,8 @@ where
             if self.normalize_learning_rate_by_degree {
                 variation *= get_node_prior(graph, node_id, 1.0);
             }
+
+            let variation = F::coerce_from(variation);
 
             update_contextual_node_embedding(node_id, total_context_embedding, variation);
             unsafe {
@@ -156,7 +158,8 @@ where
                                 .copied()
                                 .filter(|&context_node_id| context_node_id != central_node_id)
                                 .map(|context_node_id| {
-                                    let mut context_gradient = vec![0.0; self.embedding_size];
+                                    let mut context_gradient =
+                                        vec![F::coerce_from(0.0); self.get_embedding_size()];
                                     let context_node_embedding =
                                         get_central_node_embedding(context_node_id);
                                     // We now compute the gradient relative to the positive
@@ -192,7 +195,7 @@ where
                                                     learning_rate,
                                                 )
                                             })
-                                            .sum::<f32>()
+                                            .sum::<F>()
                                     } else {
                                         (0..self.number_of_negative_samples)
                                             .map(|i| {
@@ -217,7 +220,7 @@ where
                                                     learning_rate,
                                                 )
                                             })
-                                            .sum::<f32>()
+                                            .sum::<F>()
                                     };
                                     update_central_node_embedding(
                                         context_node_id,
@@ -225,18 +228,18 @@ where
                                     );
                                     negative_variation + positive_variation
                                 })
-                                .sum::<f32>()
+                                .sum::<F>()
                         })
-                        .sum::<f32>()
+                        .sum::<F>()
                 })
-                .sum::<f32>();
+                .sum::<F>();
 
             if total_variation.is_zero() {
                 break;
             }
 
             pb.inc(1);
-            pb.set_message(format!(", variation: {:.4}", total_variation));
+            pb.set_message(format!(", variation: {:.4}", total_variation.coerce_into()));
             learning_rate *= self.learning_rate_decay;
         }
         Ok(())
