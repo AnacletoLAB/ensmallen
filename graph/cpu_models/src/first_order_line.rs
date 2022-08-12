@@ -51,9 +51,10 @@ impl GraphEmbedder for FirstOrderLINE {
         graph: &Graph,
         embedding: &mut [&mut [F]],
     ) -> Result<(), String> {
-        let shared_node_embedding = ThreadDataRaceAware::new(&mut embedding[0]);
+        let embedding = ThreadDataRaceAware::new(&mut embedding[0]);
         let mut random_state = self.get_random_state();
-        let mut learning_rate = self.model.learning_rate;
+        let mut learning_rate = self.model.get_learning_rate();
+        let embedding_size = self.model.get_embedding_size();
         let pb = self.get_loading_bar();
 
         // We start to loop over the required amount of epochs.
@@ -82,19 +83,14 @@ impl GraphEmbedder for FirstOrderLINE {
                         get_node_priors(graph, &[src, dst], learning_rate),
                     )
                 })
-                .map(|(src, dst, label, node_priors)| {
-                    let src_embedding = unsafe {
-                        &mut (*shared_node_embedding.get())[(src * self.model.get_embedding_size())
-                            ..((src + 1) * self.model.get_embedding_size())]
-                    };
-                    let dst_embedding = unsafe {
-                        &mut (*shared_node_embedding.get())[(dst * self.model.get_embedding_size())
-                            ..((dst + 1) * self.model.get_embedding_size())]
-                    };
+                .map(|(src, dst, label, node_priors)| unsafe {
+                    let src_embedding = &mut (*embedding.get())
+                        [(src * embedding_size)..((src + 1) * embedding_size)];
+                    let dst_embedding = &mut (*embedding.get())
+                        [(dst * embedding_size)..((dst + 1) * embedding_size)];
 
-                    let (similarity, src_norm, dst_norm): (f32, f32, f32) = unsafe {
-                        cosine_similarity_sequential_unchecked(src_embedding, dst_embedding)
-                    };
+                    let (similarity, src_norm, dst_norm): (f32, f32, f32) =
+                        cosine_similarity_sequential_unchecked(src_embedding, dst_embedding);
 
                     let src_norm = F::coerce_from(src_norm);
                     let dst_norm = F::coerce_from(dst_norm);
