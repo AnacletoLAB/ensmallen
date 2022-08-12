@@ -1,6 +1,8 @@
 use crate::{get_node_priors, utils::MatrixShape, BasicEmbeddingModel, GraphEmbedder};
-use express_measures::{cosine_similarity_sequential_unchecked, Coerced};
+use express_measures::ThreadFloat;
+use express_measures::cosine_similarity_sequential_unchecked;
 use graph::{Graph, NodeT, ThreadDataRaceAware};
+use num_traits::Coerced;
 use num_traits::Zero;
 use rayon::prelude::*;
 use vec_rand::splitmix64;
@@ -52,7 +54,7 @@ impl GraphEmbedder for SecondOrderLINE {
         ])
     }
 
-    fn _fit_transform<F: Coerced<f32>>(
+    fn _fit_transform<F: Coerced<f32> + ThreadFloat>(
         &self,
         graph: &Graph,
         embedding: &mut [&mut [F]],

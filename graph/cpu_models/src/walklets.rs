@@ -1,5 +1,6 @@
-use express_measures::{Coerced, ThreadFloat};
+use express_measures::ThreadFloat;
 use indicatif::ProgressIterator;
+use num_traits::Coerced;
 use indicatif::{ProgressBar, ProgressStyle};
 use crate::*;
 

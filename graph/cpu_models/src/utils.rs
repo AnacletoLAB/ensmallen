@@ -1,5 +1,5 @@
 use ensmallen_traits::prelude::*;
-use express_measures::Coerced;
+use num_traits::Coerced;
 use funty::Integral;
 use graph::{EdgeTypeT, Graph, NodeT};
 use half::f16;
@@ -33,7 +33,7 @@ pub(crate) fn get_random_weight(random_state: u64, scale_factor: f32) -> f32 {
     (2.0 * random_f32(splitmix64(random_state)) - 1.0) * 6.0 / scale_factor
 }
 
-pub(crate) fn populate_vectors<F: Coerced<f32>>(
+pub(crate) fn populate_vectors<F: Coerced<f32> + Send + Sync>(
     vectors: &mut [&mut [F]],
     random_state: u64,
     scale_factors: &[f32],

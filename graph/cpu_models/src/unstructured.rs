@@ -1,7 +1,8 @@
 use crate::*;
-use express_measures::{normalize_vector_inplace, Coerced, ThreadFloat};
+use express_measures::{normalize_vector_inplace, ThreadFloat};
 use graph::{Graph, NodeT, ThreadDataRaceAware};
 use rayon::prelude::*;
+use num_traits::Coerced;
 use vec_rand::splitmix64;
 
 #[derive(Clone, Debug)]

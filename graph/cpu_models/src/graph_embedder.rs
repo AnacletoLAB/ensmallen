@@ -1,7 +1,8 @@
 use crate::*;
-use express_measures::{Coerced, ThreadFloat};
+use express_measures::ThreadFloat;
 use graph::Graph;
 use indicatif::{ProgressBar, ProgressStyle};
+use num_traits::Coerced;
 
 pub trait GraphEmbedder {
     /// Computes in the provided memory slice the graph embedding.

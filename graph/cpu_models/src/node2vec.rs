@@ -1,7 +1,8 @@
 use crate::*;
+use express_measures::ThreadFloat;
 use graph::WalksParameters;
 use indicatif::{ProgressBar, ProgressStyle};
-use express_measures::{Coerced, ThreadFloat};
+use num_traits::Coerced;
 
 #[derive(Clone, Debug, Eq, PartialEq)]
 pub enum Node2VecModels {
@@ -148,16 +149,8 @@ where
 {
     fn get_embedding_shapes(&self, graph: &graph::Graph) -> Result<Vec<MatrixShape>, String> {
         Ok(vec![
-            (
-                graph.get_number_of_nodes() as usize,
-                self.embedding_size,
-            )
-            .into(),
-            (
-                graph.get_number_of_nodes() as usize,
-                self.embedding_size,
-            )
-            .into()
+            (graph.get_number_of_nodes() as usize, self.embedding_size).into(),
+            (graph.get_number_of_nodes() as usize, self.embedding_size).into(),
         ])
     }
 

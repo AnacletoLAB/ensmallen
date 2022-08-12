@@ -1,8 +1,9 @@
 use crate::*;
-use express_measures::{vector_norm, Coerced, ThreadFloat};
+use express_measures::{vector_norm, ThreadFloat};
 use graph::{EdgeTypeT, Graph, NodeT, ThreadDataRaceAware};
 use rayon::prelude::*;
 use vec_rand::splitmix64;
+use num_traits::Coerced;
 
 #[derive(Clone, Debug)]
 pub struct TransE {

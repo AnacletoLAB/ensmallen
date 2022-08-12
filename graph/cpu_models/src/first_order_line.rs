@@ -1,6 +1,7 @@
 use crate::{get_node_priors, BasicEmbeddingModel, GraphEmbedder, MatrixShape};
-use express_measures::{cosine_similarity_sequential_unchecked, Coerced};
+use express_measures::{cosine_similarity_sequential_unchecked, ThreadFloat};
 use graph::{Graph, NodeT, ThreadDataRaceAware};
+use num_traits::Coerced;
 use num_traits::Zero;
 use rayon::prelude::*;
 use vec_rand::splitmix64;
@@ -45,12 +46,15 @@ impl GraphEmbedder for FirstOrderLINE {
             .into()])
     }
 
-    fn _fit_transform<F: Coerced<f32>>(&self, graph: &Graph, embedding: &mut [&mut [F]]) -> Result<(), String> {
+    fn _fit_transform<F: Coerced<f32> + ThreadFloat>(
+        &self,
+        graph: &Graph,
+        embedding: &mut [&mut [F]],
+    ) -> Result<(), String> {
         let shared_node_embedding = ThreadDataRaceAware::new(&mut embedding[0]);
         let mut random_state = self.get_random_state();
         let mut learning_rate = self.model.learning_rate;
         let pb = self.get_loading_bar();
-
 
         // We start to loop over the required amount of epochs.
         for _ in 0..self.model.epochs {
@@ -74,24 +78,26 @@ impl GraphEmbedder for FirstOrderLINE {
                     let src = src as usize;
                     let dst = dst as usize;
                     let src_embedding = unsafe {
-                        &mut (*shared_node_embedding.get())
-                            [(src * self.model.get_embedding_size())..((src + 1) * self.model.get_embedding_size())]
+                        &mut (*shared_node_embedding.get())[(src * self.model.get_embedding_size())
+                            ..((src + 1) * self.model.get_embedding_size())]
                     };
                     let dst_embedding = unsafe {
-                        &mut (*shared_node_embedding.get())
-                            [(dst * self.model.get_embedding_size())..((dst + 1) * self.model.get_embedding_size())]
+                        &mut (*shared_node_embedding.get())[(dst * self.model.get_embedding_size())
+                            ..((dst + 1) * self.model.get_embedding_size())]
                     };
-        
-                    let (similarity, src_norm, dst_norm): (f32, f32, f32) =
-                        unsafe { cosine_similarity_sequential_unchecked(src_embedding, dst_embedding) };
-        
+
+                    let (similarity, src_norm, dst_norm): (f32, f32, f32) = unsafe {
+                        cosine_similarity_sequential_unchecked(src_embedding, dst_embedding)
+                    };
+
                     let prediction = 1.0 / (1.0 + (-similarity).exp());
                     let variation = if label { prediction - 1.0 } else { prediction };
-                    let node_priors = get_node_priors(graph, &[src as NodeT, dst as NodeT], learning_rate);
-        
+                    let node_priors =
+                        get_node_priors(graph, &[src as NodeT, dst as NodeT], learning_rate);
+
                     let src_variation = F::coerce_from(variation * node_priors[0]);
                     let dst_variation = F::coerce_from(variation * node_priors[1]);
-        
+
                     src_embedding
                         .iter_mut()
                         .zip(dst_embedding.iter_mut())
@@ -101,7 +107,7 @@ impl GraphEmbedder for FirstOrderLINE {
                             *src_feature -= *dst_feature * src_variation;
                             *dst_feature -= *src_feature * dst_variation;
                         });
-        
+
                     variation.abs()
                 })
                 .sum::<f32>();

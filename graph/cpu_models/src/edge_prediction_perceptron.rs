@@ -2,12 +2,14 @@ use crate::Optimizer;
 use crate::{get_random_weight, must_not_be_zero, FeatureSlice};
 use express_measures::{
     absolute_distance, cosine_similarity_sequential_unchecked, dot_product_sequential_unchecked,
-    euclidean_distance_sequential_unchecked, Coerced,
+    euclidean_distance_sequential_unchecked,
 };
 use graph::{Graph, NodeT};
 use indicatif::ProgressIterator;
 use indicatif::{ProgressBar, ProgressStyle};
 use num::Zero;
+use num_traits::Coerced;
+use core::ops::Sub;
 use rayon::prelude::*;
 use serde::de::DeserializeOwned;
 use serde::{Deserialize, Serialize};
@@ -96,7 +98,7 @@ impl EdgeEmbedding {
 
     pub fn get_method<F>(&self) -> fn(&[F], &[F]) -> Vec<f32>
     where
-        F: Coerced<f32>,
+        F: Coerced<f32> + Copy + Sub<Output=F> + PartialOrd,
     {
         match self {
             EdgeEmbedding::CosineSimilarity => {
@@ -176,7 +178,7 @@ impl EdgeEmbedding {
 
     pub fn embed<F>(&self, source_feature: &[F], destination_features: &[F]) -> Vec<f32>
     where
-        F: Coerced<f32>,
+        F: Coerced<f32> + Copy + Sub<Output=F> + PartialOrd,
     {
         self.get_method()(source_feature, destination_features)
     }

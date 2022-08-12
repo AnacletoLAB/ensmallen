@@ -1,10 +1,11 @@
 use crate::*;
 use express_measures::{
     element_wise_subtraction, matrix_vector_dot_product_sequential_unchecked,
-    normalize_vector_inplace, vector_norm, Coerced, ThreadFloat,
+    normalize_vector_inplace, vector_norm, ThreadFloat,
 };
 use graph::{EdgeTypeT, Graph, NodeT, ThreadDataRaceAware};
 use num_traits::Zero;
+use num_traits::Coerced;
 use rayon::prelude::*;
 use vec_rand::splitmix64;
 

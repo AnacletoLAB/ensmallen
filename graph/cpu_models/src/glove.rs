@@ -1,7 +1,8 @@
 use crate::*;
-use express_measures::{cosine_similarity_sequential_unchecked, Coerced};
+use express_measures::{cosine_similarity_sequential_unchecked, ThreadFloat};
 use graph::{Graph, ThreadDataRaceAware};
 use num::Zero;
+use num_traits::Coerced;
 use rayon::prelude::*;
 use vec_rand::splitmix64;
 
@@ -9,7 +10,7 @@ impl<W> Node2Vec<W>
 where
     W: WalkTransformer,
 {
-    pub(crate) fn fit_transform_glove<F: Coerced<f32>>(
+    pub(crate) fn fit_transform_glove<F: Coerced<f32> + ThreadFloat>(
         &self,
         graph: &Graph,
         embedding: &mut [&mut [F]],

@@ -1,9 +1,10 @@
 use crate::*;
 use express_measures::{
     dot_product_sequential_unchecked, element_wise_addition_inplace,
-    element_wise_weighted_addition_inplace, Coerced, ThreadFloat,
+    element_wise_weighted_addition_inplace, ThreadFloat,
 };
 use graph::{Graph, NodeT, ThreadDataRaceAware};
+use num_traits::Coerced;
 use rayon::prelude::*;
 use vec_rand::{sample_uniform, splitmix64};
 
