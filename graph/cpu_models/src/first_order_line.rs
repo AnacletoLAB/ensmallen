@@ -90,6 +90,9 @@ impl GraphEmbedder for FirstOrderLINE {
                         cosine_similarity_sequential_unchecked(src_embedding, dst_embedding)
                     };
 
+                    let src_norm = F::coerce_from(src_norm) + F::epsilon();
+                    let dst_norm = F::coerce_from(dst_norm) + F::epsilon();
+
                     let prediction = 1.0 / (1.0 + (-similarity).exp());
                     let variation = if label { prediction - 1.0 } else { prediction };
                     let node_priors =
@@ -102,8 +105,8 @@ impl GraphEmbedder for FirstOrderLINE {
                         .iter_mut()
                         .zip(dst_embedding.iter_mut())
                         .for_each(|(src_feature, dst_feature)| {
-                            *src_feature /= F::coerce_from(src_norm);
-                            *dst_feature /= F::coerce_from(dst_norm);
+                            *src_feature /= src_norm;
+                            *dst_feature /= dst_norm;
                             *src_feature -= *dst_feature * src_variation;
                             *dst_feature -= *src_feature * dst_variation;
                         });
