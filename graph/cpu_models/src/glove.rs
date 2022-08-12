@@ -58,12 +58,15 @@ where
                     let src_variation = F::coerce_from(variation * node_priors[0]);
                     let dst_variation = F::coerce_from(variation * node_priors[1]);
 
+                    let src_norm = F::coerce_from(src_norm) + F::epsilon();
+                    let dst_norm = F::coerce_from(dst_norm) + F::epsilon();
+
                     src_embedding
                         .iter_mut()
                         .zip(dst_embedding.iter_mut())
                         .for_each(|(src_feature, dst_feature)| {
-                            *src_feature /= F::coerce_from(src_norm);
-                            *dst_feature /= F::coerce_from(dst_norm);
+                            *src_feature /= src_norm;
+                            *dst_feature /= dst_norm;
                             *src_feature -= *dst_feature * src_variation;
                             *dst_feature -= *src_feature * dst_variation;
                         });

@@ -1,6 +1,6 @@
 use crate::{get_node_priors, BasicEmbeddingModel, GraphEmbedder, MatrixShape};
 use express_measures::{cosine_similarity_sequential_unchecked, ThreadFloat};
-use graph::{Graph, NodeT, ThreadDataRaceAware};
+use graph::{Graph, ThreadDataRaceAware};
 use num_traits::Coerced;
 use num_traits::Zero;
 use rayon::prelude::*;
@@ -75,8 +75,14 @@ impl GraphEmbedder for FirstOrderLINE {
                     None,
                 )?
                 .map(|(src, dst, label)| {
-                    let src = src as usize;
-                    let dst = dst as usize;
+                    (
+                        src as usize,
+                        dst as usize,
+                        label,
+                        get_node_priors(graph, &[src, dst], learning_rate),
+                    )
+                })
+                .map(|(src, dst, label, node_priors)| {
                     let src_embedding = unsafe {
                         &mut (*shared_node_embedding.get())[(src * self.model.get_embedding_size())
                             ..((src + 1) * self.model.get_embedding_size())]
@@ -90,13 +96,11 @@ impl GraphEmbedder for FirstOrderLINE {
                         cosine_similarity_sequential_unchecked(src_embedding, dst_embedding)
                     };
 
-                    let src_norm = F::coerce_from(src_norm) + F::epsilon();
-                    let dst_norm = F::coerce_from(dst_norm) + F::epsilon();
+                    let src_norm = F::coerce_from(src_norm);
+                    let dst_norm = F::coerce_from(dst_norm);
 
                     let prediction = 1.0 / (1.0 + (-similarity).exp());
                     let variation = if label { prediction - 1.0 } else { prediction };
-                    let node_priors =
-                        get_node_priors(graph, &[src as NodeT, dst as NodeT], learning_rate);
 
                     let src_variation = F::coerce_from(variation * node_priors[0]);
                     let dst_variation = F::coerce_from(variation * node_priors[1]);
@@ -121,7 +125,7 @@ impl GraphEmbedder for FirstOrderLINE {
 
             pb.inc(1);
             pb.set_message(format!(", variation: {:.4}", total_variation));
-            learning_rate *= self.model.learning_rate_decay;
+            learning_rate *= self.model.get_learning_rate_decay();
         }
         Ok(())
     }

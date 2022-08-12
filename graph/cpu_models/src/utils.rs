@@ -1,9 +1,9 @@
 use ensmallen_traits::prelude::*;
-use num_traits::Coerced;
 use funty::Integral;
 use graph::{EdgeTypeT, Graph, NodeT};
 use half::f16;
 use num::Zero;
+use num_traits::Coerced;
 use rayon::prelude::*;
 use vec_rand::{random_f32, splitmix64};
 
@@ -29,23 +29,19 @@ where
 }
 
 // Initialize the model with weights and bias in the range (-1 / sqrt(k), +1 / sqrt(k))
-pub(crate) fn get_random_weight(random_state: u64, scale_factor: f32) -> f32 {
-    (2.0 * random_f32(splitmix64(random_state)) - 1.0) * 6.0 / scale_factor
+pub(crate) fn get_random_weight(random_state: u64) -> f32 {
+    2.0 * random_f32(splitmix64(random_state)) - 1.0
 }
 
 pub(crate) fn populate_vectors<F: Coerced<f32> + Send + Sync>(
     vectors: &mut [&mut [F]],
     random_state: u64,
-    scale_factors: &[f32],
 ) {
-    vectors
-        .iter_mut()
-        .zip(scale_factors.iter().copied())
-        .for_each(|(vector, scale_factor)| {
-            vector.par_iter_mut().enumerate().for_each(|(i, weight)| {
-                *weight = F::coerce_from(get_random_weight(random_state + i as u64, scale_factor));
-            })
-        });
+    vectors.iter_mut().for_each(|vector| {
+        vector.par_iter_mut().enumerate().for_each(|(i, weight)| {
+            *weight = F::coerce_from(get_random_weight(random_state + i as u64));
+        })
+    });
 }
 
 pub(crate) fn compute_prior(subset_size: f32, total_size: f32) -> f32 {
@@ -54,7 +50,10 @@ pub(crate) fn compute_prior(subset_size: f32, total_size: f32) -> f32 {
 
 pub(crate) fn get_node_prior(graph: &Graph, node_id: NodeT, learning_rate: f32) -> f32 {
     compute_prior(
-        unsafe { graph.get_unchecked_node_degree_from_node_id(node_id) as f32 },
+        unsafe {
+            graph.get_number_of_nodes() as f32
+                + graph.get_unchecked_node_degree_from_node_id(node_id) as f32
+        },
         unsafe { graph.get_unchecked_maximum_node_degree() as f32 },
     ) * learning_rate
 }

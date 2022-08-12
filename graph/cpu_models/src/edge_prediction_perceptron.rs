@@ -1,5 +1,6 @@
 use crate::Optimizer;
 use crate::{get_random_weight, must_not_be_zero, FeatureSlice};
+use core::ops::Sub;
 use express_measures::{
     absolute_distance, cosine_similarity_sequential_unchecked, dot_product_sequential_unchecked,
     euclidean_distance_sequential_unchecked,
@@ -9,7 +10,6 @@ use indicatif::ProgressIterator;
 use indicatif::{ProgressBar, ProgressStyle};
 use num::Zero;
 use num_traits::Coerced;
-use core::ops::Sub;
 use rayon::prelude::*;
 use serde::de::DeserializeOwned;
 use serde::{Deserialize, Serialize};
@@ -98,7 +98,7 @@ impl EdgeEmbedding {
 
     pub fn get_method<F>(&self) -> fn(&[F], &[F]) -> Vec<f32>
     where
-        F: Coerced<f32> + Copy + Sub<Output=F> + PartialOrd,
+        F: Coerced<f32> + Copy + Sub<Output = F> + PartialOrd,
     {
         match self {
             EdgeEmbedding::CosineSimilarity => {
@@ -178,7 +178,7 @@ impl EdgeEmbedding {
 
     pub fn embed<F>(&self, source_feature: &[F], destination_features: &[F]) -> Vec<f32>
     where
-        F: Coerced<f32> + Copy + Sub<Output=F> + PartialOrd,
+        F: Coerced<f32> + Copy + Sub<Output = F> + PartialOrd,
     {
         self.get_method()(source_feature, destination_features)
     }
@@ -742,14 +742,12 @@ where
             unsafe { self.get_unsafe_edge_embedding(0, 0, support, node_features, dimensions) }
                 .len();
 
-        let scale_factor: f32 = (edge_embedding_dimension as f32).sqrt();
-
         self.bias_optimizer.set_capacity(1);
         self.weight_optimizer.set_capacity(edge_embedding_dimension);
         self.weights = (0..edge_embedding_dimension)
-            .map(|i| get_random_weight(i as u64, scale_factor))
+            .map(|i| get_random_weight(i as u64))
             .collect::<Vec<f32>>();
-        self.bias = get_random_weight(self.weights.len() as u64, scale_factor);
+        self.bias = get_random_weight(self.weights.len() as u64);
 
         // Depending whether verbosity was requested by the user
         // we create or not a visible progress bar to show the progress
