@@ -74,7 +74,7 @@ impl GraphEmbedder for FirstOrderLINE {
                 let mut source_variation = vec![0.0; embedding_size];
                 normalize_vector_inplace(&mut src_embedding);
 
-                graph
+                let total_number_of_neighbours = graph
                     .iter_unchecked_neighbour_node_ids_from_source_node_id(src)
                     .map(|dst| {
                         (
@@ -86,7 +86,7 @@ impl GraphEmbedder for FirstOrderLINE {
                             ),
                         )
                     })
-                    .for_each(|(dst, not_dst)| {
+                    .map(|(dst, not_dst)| {
                         let dst_embedding = &mut (*embedding.get())[((dst as usize)
                             * embedding_size)
                             ..((dst as usize + 1) * embedding_size)];
@@ -114,8 +114,8 @@ impl GraphEmbedder for FirstOrderLINE {
                                 total_squared_not_dst += not_dst_feature * not_dst_feature;
                             });
 
-                        let dst_norm = total_squared_dst.sqrt();
-                        let not_dst_norm = total_squared_not_dst.sqrt();
+                        let dst_norm = total_squared_dst.sqrt() + f32::EPSILON;
+                        let not_dst_norm = total_squared_not_dst.sqrt() + f32::EPSILON;
 
                         let true_similarity = total_dot_products / dst_norm;
                         let false_similarity = total_not_dot_products / not_dst_norm;
@@ -150,9 +150,14 @@ impl GraphEmbedder for FirstOrderLINE {
                                         F::coerce_from(src_feature * not_dst_variation);
                                 },
                             );
-                    });
+                    })
+                    .count();
 
-                let src_prior = get_node_prior(graph, src, learning_rate);
+                if total_number_of_neighbours == 0 {
+                    return;
+                }
+
+                let total_number_of_neighbours = total_number_of_neighbours as f32;
 
                 (&mut (*embedding.get())
                     [((src as usize) * embedding_size)..((src as usize + 1) * embedding_size)])
@@ -160,8 +165,9 @@ impl GraphEmbedder for FirstOrderLINE {
                     .zip(src_embedding.into_iter())
                     .zip(source_variation.into_iter())
                     .for_each(|((src_feature, normalized_src_feature), variation)| {
-                        *src_feature =
-                            F::coerce_from(normalized_src_feature * variation * src_prior);
+                        *src_feature = F::coerce_from(
+                            normalized_src_feature * variation / total_number_of_neighbours,
+                        );
                     });
             });
 
