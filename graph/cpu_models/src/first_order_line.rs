@@ -166,7 +166,7 @@ impl GraphEmbedder for FirstOrderLINE {
                     .zip(source_variation.into_iter())
                     .for_each(|((src_feature, normalized_src_feature), variation)| {
                         *src_feature = F::coerce_from(
-                            normalized_src_feature * variation / total_number_of_neighbours,
+                            (normalized_src_feature - variation) / total_number_of_neighbours,
                         );
                     });
             });
