@@ -4,9 +4,9 @@ use express_measures::{
     element_wise_weighted_addition_inplace, ThreadFloat,
 };
 use graph::{Graph, NodeT, ThreadDataRaceAware};
-use num::Zero;
 use num_traits::Coerced;
 use rayon::prelude::*;
+use indicatif::ProgressIterator;
 use vec_rand::{sample_uniform, splitmix64};
 
 impl<W> Node2Vec<W>
@@ -24,22 +24,26 @@ where
     /// # Arguments
     /// `graph`: &Graph - The graph to embed
     /// `embedding`: &mut [f32] - The memory area where to write the embedding.
-    pub(crate) fn fit_transform_cbow<F: Coerced<f32> + ThreadFloat>(
+    pub(crate) fn fit_transform_cbow<F: ThreadFloat>(
         &self,
         graph: &Graph,
         embedding: &mut [&mut [F]],
-    ) -> Result<(), String> {
+    ) -> Result<(), String>
+    where
+        NodeT: Coerced<F>,
+    {
         let mut walk_parameters = self.walk_parameters.clone();
         let mut random_state = splitmix64(self.walk_parameters.get_random_state() as u64);
-        let context_size = (self.window_size * 2) as f32;
-        let mut learning_rate = self.learning_rate;
+        let context_size = F::coerce_from((self.window_size * 2) as f32);
+        let mut learning_rate = F::coerce_from(self.learning_rate);
+        let cv = F::coerce_from(self.clipping_value);
         let nodes_number = graph.get_number_of_nodes();
 
         // This is used to scale the dot product to avoid getting NaN due to
         // exp(dot) being inf and the sigmoid becomes Nan
         // we multiply by context size so we have a faster division when computing
         // the dotproduct of the mean contexted mebedding
-        let scale_factor = (self.embedding_size as f32).sqrt() * context_size;
+        let scale_factor = F::coerce_from((self.embedding_size as f32).sqrt()) * context_size;
 
         let shared_embedding = ThreadDataRaceAware::new(embedding);
 
@@ -94,57 +98,54 @@ where
         let compute_mini_batch_step = |total_context_embedding: &[F],
                                        mut context_embedding_gradient: &mut [F],
                                        node_id: NodeT,
-                                       label: f32,
-                                       learning_rate: f32| {
+                                       label: F,
+                                       learning_rate: F| {
             let node_hidden = get_central_node_embedding(node_id);
-            let dot: f32 =
+            let dot: F =
                 unsafe { dot_product_sequential_unchecked(node_hidden, total_context_embedding) }
-                    .coerce_into()
                     / scale_factor;
 
-            if dot > self.clipping_value || dot < -self.clipping_value {
-                return 0.0;
+            if dot > cv || dot < -cv {
+                return;
             }
 
             let exp_dot = dot.exp();
-            let mut variation = (label - exp_dot / (exp_dot + 1.0)) * learning_rate;
+            let mut variation = (label - exp_dot / (exp_dot + F::one())) * learning_rate;
 
             if self.normalize_learning_rate_by_degree {
-                variation *= get_node_prior(graph, node_id, 1.0);
+                variation *= get_node_prior(graph, node_id, F::one());
             }
 
             unsafe {
                 element_wise_weighted_addition_inplace(
                     &mut context_embedding_gradient,
                     node_hidden,
-                    F::coerce_from(variation),
+                    variation,
                 )
             };
             update_central_node_embedding(
                 node_id,
                 total_context_embedding,
-                F::coerce_from(variation / context_size),
+                variation / context_size,
             );
-
-            variation.abs()
         };
 
         // We start to loop over the required amount of epochs.
-        for _ in 0..self.epochs {
+        for _ in (0..self.epochs).progress_with(pb) {
             // We update the random state used to generate the random walks
             // and the negative samples.
             random_state = splitmix64(random_state);
             walk_parameters = walk_parameters.set_random_state(Some(random_state as usize));
 
             // We start to compute the new gradients.
-            let total_variation = graph
+            graph
                 .par_iter_complete_walks(&walk_parameters)?
                 .enumerate()
                 .flat_map(|(walk_number, random_walk)| {
                     self.walk_transformer
                         .par_transform_walk(walk_number, random_walk)
                 })
-                .map(|(walk_number, random_walk)| {
+                .for_each(|(walk_number, random_walk)| {
                     (0..random_walk.len())
                         .filter(|&central_index| {
                             if !self.stochastic_downsample_by_degree {
@@ -169,11 +170,11 @@ where
                                 central_index,
                             )
                         })
-                        .map(|(context, central_node_id, central_index)| {
+                        .for_each(|(context, central_node_id, central_index)| {
                             // We compute the total context embedding.
                             // First, we assign to it the embedding of the first context.
                             let mut total_context_embedding =
-                                vec![F::coerce_from(0.0); self.get_embedding_size()];
+                                vec![F::zero(); self.get_embedding_size()];
 
                             // Then we sum over it the other values.
                             for contextual_node_id in context.iter().copied() {
@@ -188,20 +189,19 @@ where
                                     });
                             }
 
-                            let mut context_gradient =
-                                vec![F::coerce_from(0.0); self.get_embedding_size()];
+                            let mut context_gradient = vec![F::zero(); self.get_embedding_size()];
 
                             // We now compute the gradient relative to the positive
-                            let positive_variation = compute_mini_batch_step(
+                            compute_mini_batch_step(
                                 total_context_embedding.as_slice(),
                                 context_gradient.as_mut_slice(),
                                 central_node_id,
-                                1.0,
+                                F::one(),
                                 learning_rate,
                             );
 
                             // We compute the gradients relative to the negative classes.
-                            let negative_variation = if self.use_scale_free_distribution {
+                            if self.use_scale_free_distribution {
                                 graph
                                     .iter_random_outbounds_scale_free_node_ids(
                                         self.number_of_negative_samples,
@@ -214,16 +214,15 @@ where
                                     .filter(|non_central_node_id| {
                                         *non_central_node_id != central_node_id
                                     })
-                                    .map(|non_central_node_id| {
+                                    .for_each(|non_central_node_id| {
                                         compute_mini_batch_step(
                                             total_context_embedding.as_slice(),
                                             context_gradient.as_mut_slice(),
                                             non_central_node_id,
-                                            0.0,
+                                            F::zero(),
                                             learning_rate,
                                         )
-                                    })
-                                    .sum::<f32>()
+                                    });
                             } else {
                                 (0..self.number_of_negative_samples)
                                     .map(|i| {
@@ -238,16 +237,15 @@ where
                                     .filter(|non_central_node_id| {
                                         *non_central_node_id != central_node_id
                                     })
-                                    .map(|non_central_node_id| {
+                                    .for_each(|non_central_node_id| {
                                         compute_mini_batch_step(
                                             total_context_embedding.as_slice(),
                                             context_gradient.as_mut_slice(),
                                             non_central_node_id,
-                                            0.0,
+                                            F::zero(),
                                             learning_rate,
                                         )
-                                    })
-                                    .sum::<f32>()
+                                    });
                             };
 
                             for contextual_node_id in context.iter().copied() {
@@ -259,19 +257,10 @@ where
                                     &context_gradient,
                                 );
                             }
-                            positive_variation + negative_variation
-                        })
-                        .sum::<f32>()
-                })
-                .sum::<f32>();
+                        });
+                });
 
-            if total_variation.is_zero() {
-                break;
-            }
-
-            pb.inc(1);
-            pb.set_message(format!("variation {:.4}", total_variation));
-            learning_rate *= self.learning_rate_decay;
+            learning_rate *= F::coerce_from(self.learning_rate_decay);
         }
         Ok(())
     }

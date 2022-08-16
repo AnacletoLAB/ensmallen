@@ -1,9 +1,9 @@
 use ensmallen_traits::prelude::*;
+use express_measures::ThreadFloat;
 use funty::Integral;
-use graph::{EdgeTypeT, Graph, NodeT};
+use graph::{EdgeT, EdgeTypeT, Graph, NodeT};
 use half::f16;
-use num::Zero;
-use num_traits::Coerced;
+use num_traits::{Coerced, Float, Zero};
 use rayon::prelude::*;
 use vec_rand::{random_f32, splitmix64};
 
@@ -29,44 +29,62 @@ where
 }
 
 // Initialize the model with weights and bias in the range (-1 / sqrt(k), +1 / sqrt(k))
-pub(crate) fn get_random_weight(random_state: u64) -> f32 {
-    2.0 * random_f32(splitmix64(random_state)) - 1.0
+pub(crate) fn get_random_weight<F: ThreadFloat>(random_state: u64) -> F {
+    (F::one() + F::one()) * F::coerce_from(random_f32(splitmix64(random_state))) - F::one()
 }
 
-pub(crate) fn populate_vectors<F: Coerced<f32> + Send + Sync>(
-    vectors: &mut [&mut [F]],
-    random_state: u64,
-) {
+pub(crate) fn populate_vectors<F: ThreadFloat>(vectors: &mut [&mut [F]], random_state: u64) {
     vectors.iter_mut().for_each(|vector| {
         vector.par_iter_mut().enumerate().for_each(|(i, weight)| {
-            *weight = F::coerce_from(get_random_weight(random_state + i as u64));
+            *weight = get_random_weight(random_state + i as u64);
         })
     });
 }
 
-pub(crate) fn compute_prior(subset_size: f32, total_size: f32) -> f32 {
-    ((1.0 + total_size) / (1.0 + subset_size)).ln()
+pub(crate) fn compute_prior<F: Float>(subset_size: F, total_size: F) -> F {
+    ((F::one() + total_size) / (F::one() + subset_size)).ln()
 }
 
-pub(crate) fn get_node_prior(graph: &Graph, node_id: NodeT, learning_rate: f32) -> f32 {
+pub(crate) fn get_node_prior<F: ThreadFloat>(graph: &Graph, node_id: NodeT, learning_rate: F) -> F
+where
+    NodeT: Coerced<F>,
+{
     compute_prior(
-        unsafe { graph.get_unchecked_node_degree_from_node_id(node_id) as f32 },
-        unsafe { graph.get_unchecked_maximum_node_degree() as f32 },
+        unsafe {
+            graph
+                .get_unchecked_node_degree_from_node_id(node_id)
+                .coerce_into()
+        },
+        unsafe { graph.get_unchecked_maximum_node_degree().coerce_into() },
     ) * learning_rate
 }
 
-pub(crate) fn get_edge_type_prior(
+pub(crate) fn get_edge_type_prior<F: ThreadFloat>(
     graph: &Graph,
     edge_type_id: EdgeTypeT,
-    learning_rate: f32,
-) -> f32 {
+    learning_rate: F,
+) -> F
+where
+    EdgeT: Coerced<F>,
+{
     compute_prior(
-        unsafe { graph.get_unchecked_edge_count_from_edge_type_id(Some(edge_type_id)) as f32 },
-        graph.get_number_of_directed_edges() as f32,
+        unsafe {
+            graph
+                .get_unchecked_edge_count_from_edge_type_id(Some(edge_type_id))
+                .coerce_into()
+        },
+        graph.get_number_of_directed_edges().coerce_into(),
     ) * learning_rate
 }
 
-pub(crate) fn get_node_priors(graph: &Graph, node_ids: &[NodeT], learning_rate: f32) -> Vec<f32> {
+pub(crate) fn get_node_priors<F: ThreadFloat>(
+    graph: &Graph,
+    node_ids: &[NodeT],
+    learning_rate: F,
+) -> Vec<F>
+where
+    NodeT: Coerced<F>,
+{
     node_ids
         .iter()
         .copied()
