@@ -12,6 +12,8 @@ use parse::*;
 mod dtype;
 pub use dtype::*;
 
+const ARRAY_ALIGN: usize = 64;
+
 /// Utility type to store the mmap the Python heap so that we can ensure proper drop
 #[pyclass]
 pub(crate) struct PyMemoryMapped {
@@ -19,14 +21,14 @@ pub(crate) struct PyMemoryMapped {
 }
 unsafe impl Send for PyMemoryMapped {}
 
-pub fn create_memory_mapped_numpy_array(
+/// Create the file and init the headers, and return the raw map
+pub fn init_memory_mapped_numpy_array(
     py: Python,
     path: Option<&str>,
     dtype: Dtype,
-    shape: Vec<intptr_t>,
+    shape: &[intptr_t],
     fortran_order: bool,
-) -> Py<PyAny> {
-    const ARRAY_ALIGN: usize = 64;
+) -> (MemoryMapped, usize) {
     let dtype = dtype.into();
 
     let num_of_elements = shape.iter().fold(1, |a, b| a * b);
@@ -70,11 +72,24 @@ pub fn create_memory_mapped_numpy_array(
     }
 
     // mmap the file
-    let mut mmap = MemoryMapped::new_mut(path, Some(aligned_len + data_size as usize))
+    let mut mmap = MemoryMapped::new_mut(path, Some(aligned_len + data_size as usize), None)
         .expect("Could not mmap the file");
+    // write the header to the file
     mmap.get_slice_mut::<u8>(0, Some(aligned_len))
         .unwrap()
         .clone_from_slice(&header);
+
+    (mmap, aligned_len)
+}
+
+pub fn create_memory_mapped_numpy_array(
+    py: Python,
+    path: Option<&str>,
+    dtype: Dtype,
+    shape: &[intptr_t],
+    fortran_order: bool,
+) -> Py<PyAny> {
+    let (mut mmap, aligned_len) = init_memory_mapped_numpy_array(py, path, dtype, shape, fortran_order);
 
     let data = mmap
         .get_slice_mut::<u8>(aligned_len, None)
@@ -129,7 +144,7 @@ pub fn load_memory_mapped_numpy_array(
     path: Option<&str>,
 ) -> (NPY_TYPES, bool, Py<PyAny>) {
     // mmap the file
-    let mut mmap = MemoryMapped::new_mut(path, None).expect("Could not mmap the file");
+    let mut mmap = MemoryMapped::new_mut(path, None, None).expect("Could not mmap the file");
 
     // check the magic
     let magic = mmap

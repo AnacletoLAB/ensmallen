@@ -2,10 +2,8 @@ use super::mmap_numpy_npy::{
     create_memory_mapped_numpy_array, load_memory_mapped_numpy_array, Dtype,
 };
 use super::*;
-use cpu_models::{
-    AnchorFeatureTypes, AnchorTypes, AnchorsInferredNodeEmbeddingModel, BasicSPINE, BasicWINE,
-};
-use indicatif::ParallelProgressIterator;
+use cpu_models::{AnchorFeatureTypes, AnchorTypes, AnchorsInferredNodeEmbeddingModel, BasicSPINE, BasicWINE};
+use indicatif::ProgressIterator;
 use indicatif::{ProgressBar, ProgressStyle};
 use numpy::{PyArray1, PyArray2};
 use rayon::prelude::*;
@@ -180,25 +178,22 @@ where
                         gil.python(),
                         Some(path.as_str()),
                         $dtype_enum,
-                        vec![number_of_nodes as isize, embedding_size as isize],
+                        &[number_of_nodes as isize, embedding_size as isize],
                         !is_fortran,
                     );
 
                     let casted_transposed_embedding = transposed_embedding.cast_as::<PyArray2<$dtype>>(gil.python())?;
-                    let shared_casted_transposed_embedding = ThreadDataRaceAware {
-                        t: casted_transposed_embedding,
-                    };
 
                     if is_fortran {
-                        embedding_slice.as_ref().par_chunks(number_of_nodes).progress_with(progress_bar).enumerate().for_each(|(j, feature)|{
+                        embedding_slice.as_ref().chunks(number_of_nodes).progress_with(progress_bar).enumerate().for_each(|(j, feature)|{
                             feature.iter().copied().enumerate().for_each(|(i, feature_value)| unsafe {
-                                *(shared_casted_transposed_embedding.t.uget_mut([i, j])) = feature_value;
+                                *(casted_transposed_embedding.uget_mut([i, j])) = feature_value;
                             });
                         });
                     } else {
-                        embedding_slice.as_ref().par_chunks(embedding_size).progress_with(progress_bar).enumerate().for_each(|(i, node_embedding)|{
+                        embedding_slice.as_ref().chunks(embedding_size).progress_with(progress_bar).enumerate().for_each(|(i, node_embedding)|{
                             node_embedding.iter().copied().enumerate().for_each(|(j, feature_value)| unsafe {
-                                *(shared_casted_transposed_embedding.t.uget_mut([i, j])) = feature_value;
+                                *(casted_transposed_embedding.uget_mut([i, j])) = feature_value;
                             });
                         });
                     }
@@ -337,7 +332,7 @@ where
                         gil.python(),
                         self.get_path().as_ref().map(|x| x.as_str()),
                         $dtype_enum,
-                        vec![rows_number, columns_number],
+                        &[rows_number, columns_number],
                         true,
                     );
 

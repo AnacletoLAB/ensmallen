@@ -19,7 +19,7 @@ pub struct ParallelLinesWithIndex {
 impl ParallelLinesWithIndex {
     pub fn new(path: &str) -> Result<ParallelLinesWithIndex, String> {
         Ok(ParallelLinesWithIndex {
-            mmap: Arc::new(MemoryMappedReadOnly::new(path)?),
+            mmap: Arc::new(MemoryMappedReadOnly::new(path, None)?),
             number_of_lines: None,
             comment_symbol: None,
             number_of_rows_to_skip: None,
