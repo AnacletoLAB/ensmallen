@@ -204,7 +204,7 @@ pub trait AnchorsInferredNodeEmbeddingModel<const AT: AnchorTypes, const AFT: An
 where
     Self: AnchorsInferredNodeEmbeddingProperties + AnchorsBasedFeature<AFT> + AnchorsGenerator<AT>,
 {
-    /// Computes in the provided slice of embedding the DegreeSPINE node embedding.
+    /// Computes in the provided slice of embedding the ALPINE node embedding.
     ///
     /// # Arguments
     /// `graph`: &Graph - The graph to embed
@@ -252,6 +252,47 @@ where
             .for_each(|(empty_feature, bucket)| unsafe {
                 self.compute_unchecked_feature_from_bucket(graph, bucket, empty_feature);
             });
+
+        Ok(())
+    }
+
+    /// Computes in the provided slice the ALPINE node embedding.
+    ///
+    /// # Arguments
+    /// `graph`: &Graph - The graph to embed
+    /// `feature_number`: usize - Number of the feature to compute.
+    /// `feature`: &mut Feature - The memory area where to write the feature.
+    fn fit_transform_feature<Feature>(
+        &self,
+        graph: &Graph,
+        feature_number: usize,
+        feature: &mut [Feature],
+    ) -> Result<(), String>
+    where
+        Feature: IntegerFeatureType,
+    {
+        if feature.len() != self.get_embedding_size(graph)? {}
+        if feature_number < self.get_embedding_size(graph)? {
+            return Err(format!(
+                "The provided feature number `{}` is higher than the dimension of the embedding `{}`.",
+                feature_number,
+                self.get_embedding_size(graph)?
+            ));
+        }
+
+        // Check that the graph has edges.
+        graph.must_have_edges()?;
+
+        // We start to compute the features
+        unsafe {
+            self.compute_unchecked_feature_from_bucket(
+                graph,
+                self.iter_anchor_nodes_buckets(graph)?
+                    .nth(feature_number)
+                    .unwrap(),
+                feature,
+            )
+        };
 
         Ok(())
     }

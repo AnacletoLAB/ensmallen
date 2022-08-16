@@ -48,11 +48,9 @@ pub(crate) use crate::preprocessing::*;
 pub(crate) use crate::utilities::*;
 mod types;
 pub(crate) use crate::types::*;
+mod alpine;
 mod operators;
-mod spine;
-pub(crate) use spine::*;
-mod wine;
-pub(crate) use wine::*;
+pub(crate) use alpine::*;
 
 mod weighted_spine;
 pub(crate) use weighted_spine::*;
