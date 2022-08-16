@@ -3,7 +3,8 @@
 import os
 import shutil
 from typing import Callable, Dict, List, Optional, Union
-
+from bioregistry import normalize_curie as original_normalize_curie
+from multiprocessing import Pool, cpu_count
 import compress_json
 from downloaders import BaseDownloader
 from environments_utils import is_windows, is_linux, is_macos
@@ -11,6 +12,12 @@ from dict_hash import sha256
 from ensmallen import Graph, edge_list_utils
 from .get_dataset import validate_graph_version
 
+def normalize_curie(node_name: str) -> str:
+    """Normalize the provided node name curie using bioregistry."""
+    new_node_name = original_normalize_curie(node_name)
+    if new_node_name is None:
+        new_node_name = node_name
+    return new_node_name
 
 class RetrievedGraph:
     """Class definying an automatically retrievable graph."""
@@ -22,6 +29,7 @@ class RetrievedGraph:
         repository: str,
         directed: bool = False,
         preprocess: Union[bool, str] = "auto",
+        bioregistry: bool = False,
         load_nodes: bool = True,
         load_node_types: bool = True,
         load_edge_types: bool = True,
@@ -55,6 +63,9 @@ class RetrievedGraph:
             to be loaded optimally in both time and memory.
             Will automatically preprocess in Linux and macOS
             and avoid doing this on Windows.
+        bioregistry: bool = False
+            Whether to normalize the node names of the graph
+            by employing the bioregistry normalization.
         load_nodes: bool = True
             Whether to load the nodes vocabulary or treat the nodes
             simply as a numeric range.
@@ -150,6 +161,7 @@ class RetrievedGraph:
 
         self._directed = directed
         self._preprocess = preprocess
+        self._bioregistry = bioregistry
         self._load_nodes = load_nodes
         self._load_edge_types = load_edge_types
         self._load_node_types = load_node_types
@@ -685,6 +697,19 @@ class RetrievedGraph:
                 "name": self._name,
                 **self._graph_kwargs,
             })
+        
+        if self._bioregistry:
+            with Pool(cpu_count()) as p:
+                node_names = graph.get_node_names()
+                graph = graph.remap_from_node_names_map(
+                    node_names_map=dict(zip(
+                        node_names,
+                        p.map(normalize_curie, node_names)
+                    ))
+                )
+                p.close()
+                p.join()
+        
         if self._auto_enable_tradeoffs and graph.get_number_of_unique_edges() < 50e6:
             graph.enable()
         return graph

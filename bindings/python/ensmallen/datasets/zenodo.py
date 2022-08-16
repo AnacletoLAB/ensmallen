@@ -3,7 +3,7 @@ from ensmallen import Graph  # pylint: disable=import-error
 from .graph_retrieval import RetrievedGraph
 
 def WikiLinkIT(
-    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
     cache_sys_var="GRAPH_CACHE_DIR", version="2018", **kwargs
@@ -16,6 +16,7 @@ def WikiLinkIT(
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
         Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -64,12 +65,12 @@ def WikiLinkIT(
 	```
     """
     return RetrievedGraph(
-        "WikiLinkIT", version, "zenodo", directed, preprocess, load_nodes,
+        "WikiLinkIT", version, "zenodo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, cache, cache_path, cache_sys_var, kwargs
     )()
 def WikiLinkFR(
-    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
     cache_sys_var="GRAPH_CACHE_DIR", version="2018", **kwargs
@@ -82,6 +83,7 @@ def WikiLinkFR(
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
         Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -130,12 +132,12 @@ def WikiLinkFR(
 	```
     """
     return RetrievedGraph(
-        "WikiLinkFR", version, "zenodo", directed, preprocess, load_nodes,
+        "WikiLinkFR", version, "zenodo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, cache, cache_path, cache_sys_var, kwargs
     )()
 def GiantTN(
-    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
     cache_sys_var="GRAPH_CACHE_DIR", version="latest", **kwargs
@@ -148,6 +150,7 @@ def GiantTN(
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
         Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -179,12 +182,12 @@ def GiantTN(
 	```
     """
     return RetrievedGraph(
-        "GiantTN", version, "zenodo", directed, preprocess, load_nodes,
+        "GiantTN", version, "zenodo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, cache, cache_path, cache_sys_var, kwargs
     )()
 def WikiLinkDE(
-    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
     cache_sys_var="GRAPH_CACHE_DIR", version="2018", **kwargs
@@ -197,6 +200,7 @@ def WikiLinkDE(
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
         Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -245,12 +249,12 @@ def WikiLinkDE(
 	```
     """
     return RetrievedGraph(
-        "WikiLinkDE", version, "zenodo", directed, preprocess, load_nodes,
+        "WikiLinkDE", version, "zenodo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, cache, cache_path, cache_sys_var, kwargs
     )()
 def WikiLinkNL(
-    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
     cache_sys_var="GRAPH_CACHE_DIR", version="2018", **kwargs
@@ -263,6 +267,7 @@ def WikiLinkNL(
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
         Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -311,12 +316,12 @@ def WikiLinkNL(
 	```
     """
     return RetrievedGraph(
-        "WikiLinkNL", version, "zenodo", directed, preprocess, load_nodes,
+        "WikiLinkNL", version, "zenodo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, cache, cache_path, cache_sys_var, kwargs
     )()
 def WikiLinkSV(
-    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
     cache_sys_var="GRAPH_CACHE_DIR", version="2018", **kwargs
@@ -329,6 +334,7 @@ def WikiLinkSV(
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
         Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -377,12 +383,12 @@ def WikiLinkSV(
 	```
     """
     return RetrievedGraph(
-        "WikiLinkSV", version, "zenodo", directed, preprocess, load_nodes,
+        "WikiLinkSV", version, "zenodo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, cache, cache_path, cache_sys_var, kwargs
     )()
 def WikiLinkPL(
-    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
     cache_sys_var="GRAPH_CACHE_DIR", version="2018", **kwargs
@@ -395,6 +401,7 @@ def WikiLinkPL(
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
         Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -443,12 +450,12 @@ def WikiLinkPL(
 	```
     """
     return RetrievedGraph(
-        "WikiLinkPL", version, "zenodo", directed, preprocess, load_nodes,
+        "WikiLinkPL", version, "zenodo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, cache, cache_path, cache_sys_var, kwargs
     )()
 def WikiLinkES(
-    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
     cache_sys_var="GRAPH_CACHE_DIR", version="2018", **kwargs
@@ -461,6 +468,7 @@ def WikiLinkES(
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
         Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -509,12 +517,12 @@ def WikiLinkES(
 	```
     """
     return RetrievedGraph(
-        "WikiLinkES", version, "zenodo", directed, preprocess, load_nodes,
+        "WikiLinkES", version, "zenodo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, cache, cache_path, cache_sys_var, kwargs
     )()
 def WikiLinkEN(
-    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
     cache_sys_var="GRAPH_CACHE_DIR", version="2018", **kwargs
@@ -527,6 +535,7 @@ def WikiLinkEN(
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
         Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -575,12 +584,12 @@ def WikiLinkEN(
 	```
     """
     return RetrievedGraph(
-        "WikiLinkEN", version, "zenodo", directed, preprocess, load_nodes,
+        "WikiLinkEN", version, "zenodo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, cache, cache_path, cache_sys_var, kwargs
     )()
 def WikiLinkRU(
-    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
     cache_sys_var="GRAPH_CACHE_DIR", version="2018", **kwargs
@@ -593,6 +602,7 @@ def WikiLinkRU(
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
         Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -641,7 +651,7 @@ def WikiLinkRU(
 	```
     """
     return RetrievedGraph(
-        "WikiLinkRU", version, "zenodo", directed, preprocess, load_nodes,
+        "WikiLinkRU", version, "zenodo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, cache, cache_path, cache_sys_var, kwargs
     )()

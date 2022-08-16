@@ -1,9 +1,9 @@
 {
-    "creation_time": 1660040671.1393652,
-    "creation_time_human": "2022-08-09 12:24:31",
-    "time_delta": 0.35025572776794434,
+    "creation_time": 1660670872.008297,
+    "creation_time_human": "2022-08-16 19:27:52",
+    "time_delta": 0.33761000633239746,
     "time_delta_human": "0 seconds",
-    "file_dump_time": 0.0004642009735107422,
+    "file_dump_time": 0.0004291534423828125,
     "file_dump_time_human": "0 seconds",
     "file_dump_size": 1429,
     "file_dump_size_human": "1.4 kB",

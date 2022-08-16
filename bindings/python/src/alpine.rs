@@ -1,14 +1,14 @@
 use super::mmap_numpy_npy::{
     create_memory_mapped_numpy_array, init_memory_mapped_numpy_array,
-    load_memory_mapped_numpy_array, Dtype
+    load_memory_mapped_numpy_array, Dtype,
 };
-use mmap::*;
 use super::*;
 use cpu_models::{
     AnchorFeatureTypes, AnchorTypes, AnchorsInferredNodeEmbeddingModel, BasicSPINE, BasicWINE,
 };
 use indicatif::ProgressIterator;
 use indicatif::{ProgressBar, ProgressStyle};
+use mmap::*;
 use numpy::{PyArray1, PyArray2};
 use rayon::prelude::*;
 use std::convert::TryFrom;
@@ -634,7 +634,8 @@ impl DegreeSPINE {
         feature_number: usize,
         aligned_size: usize,
     ) -> PyResult<()> {
-        self.inner.fit_transform_feature(graph, dtype, feature_number, aligned_size)
+        self.inner
+            .fit_transform_feature(graph, dtype, feature_number, aligned_size)
     }
 }
 
@@ -754,7 +755,8 @@ impl NodeLabelSPINE {
         feature_number: usize,
         aligned_size: usize,
     ) -> PyResult<()> {
-        self.inner.fit_transform_feature(graph, dtype, feature_number, aligned_size)
+        self.inner
+            .fit_transform_feature(graph, dtype, feature_number, aligned_size)
     }
 }
 
@@ -912,7 +914,8 @@ impl ScoreSPINE {
                 scores_ref.as_slice().unwrap()
             }),
             path: self.path.clone(),
-        }.fit_transform_feature(graph, dtype, feature_number, aligned_size)
+        }
+        .fit_transform_feature(graph, dtype, feature_number, aligned_size)
     }
 }
 
@@ -1033,7 +1036,8 @@ impl DegreeWINE {
         feature_number: usize,
         aligned_size: usize,
     ) -> PyResult<()> {
-        self.inner.fit_transform_feature(graph, dtype, feature_number, aligned_size)
+        self.inner
+            .fit_transform_feature(graph, dtype, feature_number, aligned_size)
     }
 }
 
@@ -1154,7 +1158,8 @@ impl NodeLabelWINE {
         feature_number: usize,
         aligned_size: usize,
     ) -> PyResult<()> {
-        self.inner.fit_transform_feature(graph, dtype, feature_number, aligned_size)
+        self.inner
+            .fit_transform_feature(graph, dtype, feature_number, aligned_size)
     }
 }
 
@@ -1313,6 +1318,7 @@ impl ScoreWINE {
                 scores_ref.as_slice().unwrap()
             }),
             path: self.path.clone(),
-        }.fit_transform_feature(graph, dtype, feature_number, aligned_size)
+        }
+        .fit_transform_feature(graph, dtype, feature_number, aligned_size)
     }
 }

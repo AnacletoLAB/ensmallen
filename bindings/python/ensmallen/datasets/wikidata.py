@@ -21,7 +21,7 @@ from ensmallen import Graph  # pylint: disable=import-error
 from .graph_retrieval import RetrievedGraph
 
 def WikiData(
-    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
     cache_sys_var="GRAPH_CACHE_DIR", version="latest-truthy", **kwargs
@@ -34,6 +34,7 @@ def WikiData(
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
         Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -47,9 +48,6 @@ def WikiData(
     version = "latest-truthy"
         Version to retrieve	
 		The available versions are:
-			- wikidata-20220624-lexemes-BETA
-			- wikidata-20220627-all-BETA
-			- wikidata-20220629-truthy-BETA
 			- wikidata-20220701-lexemes-BETA
 			- wikidata-20220704-all-BETA
 			- wikidata-20220706-truthy-BETA
@@ -66,12 +64,15 @@ def WikiData(
 			- wikidata-20220801-all-BETA
 			- wikidata-20220803-truthy-BETA
 			- wikidata-20220805-lexemes-BETA
+			- wikidata-20220808-all-BETA
+			- wikidata-20220810-truthy-BETA
+			- wikidata-20220812-lexemes-BETA
 			- latest-all
 			- latest-lexemes
 			- latest-truthy
     """
     return RetrievedGraph(
-        "WikiData", version, "wikidata", directed, preprocess, load_nodes,
+        "WikiData", version, "wikidata", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, cache, cache_path, cache_sys_var, kwargs
     )()

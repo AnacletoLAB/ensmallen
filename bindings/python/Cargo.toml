@@ -21,6 +21,7 @@ requires-dist = [
     "compress_json>=1.0.7",
     "userinput>=1.0.19",
     "cache_decorator>=2.1.11",
+    "bioregistry>=0.5.65",
     "tqdm",
     "pandas",
     "py-cpuinfo",

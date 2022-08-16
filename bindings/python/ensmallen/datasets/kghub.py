@@ -3,7 +3,7 @@ from ensmallen import Graph  # pylint: disable=import-error
 from .graph_retrieval import RetrievedGraph
 
 def SLDB(
-    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
     cache_sys_var="GRAPH_CACHE_DIR", version="20220522", **kwargs
@@ -16,6 +16,7 @@ def SLDB(
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
         Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -34,12 +35,12 @@ def SLDB(
 	
     """
     return RetrievedGraph(
-        "SLDB", version, "kghub", directed, preprocess, load_nodes,
+        "SLDB", version, "kghub", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, cache, cache_path, cache_sys_var, kwargs
     )()
 def KGMicrobe(
-    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
     cache_sys_var="GRAPH_CACHE_DIR", version="current", **kwargs
@@ -52,6 +53,7 @@ def KGMicrobe(
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
         Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -86,12 +88,12 @@ def KGMicrobe(
 	```
     """
     return RetrievedGraph(
-        "KGMicrobe", version, "kghub", directed, preprocess, load_nodes,
+        "KGMicrobe", version, "kghub", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, cache, cache_path, cache_sys_var, kwargs
     )()
 def KGIDG(
-    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
     cache_sys_var="GRAPH_CACHE_DIR", version="current", **kwargs
@@ -104,6 +106,7 @@ def KGIDG(
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
         Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -154,12 +157,12 @@ def KGIDG(
 	
     """
     return RetrievedGraph(
-        "KGIDG", version, "kghub", directed, preprocess, load_nodes,
+        "KGIDG", version, "kghub", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, cache, cache_path, cache_sys_var, kwargs
     )()
 def KGPhenio(
-    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
     cache_sys_var="GRAPH_CACHE_DIR", version="current", **kwargs
@@ -172,6 +175,7 @@ def KGPhenio(
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
         Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -205,12 +209,12 @@ def KGPhenio(
 	
     """
     return RetrievedGraph(
-        "KGPhenio", version, "kghub", directed, preprocess, load_nodes,
+        "KGPhenio", version, "kghub", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, cache, cache_path, cache_sys_var, kwargs
     )()
 def KGCOVID19(
-    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
     cache_sys_var="GRAPH_CACHE_DIR", version="current", **kwargs
@@ -223,6 +227,7 @@ def KGCOVID19(
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
         Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -290,12 +295,12 @@ def KGCOVID19(
 	```
     """
     return RetrievedGraph(
-        "KGCOVID19", version, "kghub", directed, preprocess, load_nodes,
+        "KGCOVID19", version, "kghub", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, cache, cache_path, cache_sys_var, kwargs
     )()
 def EcoKG(
-    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
     cache_sys_var="GRAPH_CACHE_DIR", version="20211102", **kwargs
@@ -308,6 +313,7 @@ def EcoKG(
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
         Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -327,7 +333,7 @@ def EcoKG(
 	
     """
     return RetrievedGraph(
-        "EcoKG", version, "kghub", directed, preprocess, load_nodes,
+        "EcoKG", version, "kghub", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, cache, cache_path, cache_sys_var, kwargs
     )()
