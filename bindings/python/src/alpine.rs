@@ -2,7 +2,9 @@ use super::mmap_numpy_npy::{
     create_memory_mapped_numpy_array, load_memory_mapped_numpy_array, Dtype,
 };
 use super::*;
-use cpu_models::{AnchorFeatureTypes, AnchorTypes, AnchorsInferredNodeEmbeddingModel, BasicSPINE, BasicWINE};
+use cpu_models::{
+    AnchorFeatureTypes, AnchorTypes, AnchorsInferredNodeEmbeddingModel, BasicSPINE, BasicWINE,
+};
 use indicatif::ParallelProgressIterator;
 use indicatif::{ProgressBar, ProgressStyle};
 use numpy::{PyArray1, PyArray2};
