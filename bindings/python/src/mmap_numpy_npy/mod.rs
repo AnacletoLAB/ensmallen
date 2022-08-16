@@ -89,7 +89,8 @@ pub fn create_memory_mapped_numpy_array(
     shape: &[intptr_t],
     fortran_order: bool,
 ) -> Py<PyAny> {
-    let (mut mmap, aligned_len) = init_memory_mapped_numpy_array(py, path, dtype, shape, fortran_order);
+    let (mut mmap, aligned_len) =
+        init_memory_mapped_numpy_array(py, path, dtype, shape, fortran_order);
 
     let data = mmap
         .get_slice_mut::<u8>(aligned_len, None)

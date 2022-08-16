@@ -1,8 +1,12 @@
 use super::mmap_numpy_npy::{
-    create_memory_mapped_numpy_array, load_memory_mapped_numpy_array, Dtype,
+    create_memory_mapped_numpy_array, init_memory_mapped_numpy_array,
+    load_memory_mapped_numpy_array, Dtype
 };
+use mmap::*;
 use super::*;
-use cpu_models::{AnchorFeatureTypes, AnchorTypes, AnchorsInferredNodeEmbeddingModel, BasicSPINE, BasicWINE};
+use cpu_models::{
+    AnchorFeatureTypes, AnchorTypes, AnchorsInferredNodeEmbeddingModel, BasicSPINE, BasicWINE,
+};
 use indicatif::ProgressIterator;
 use indicatif::{ProgressBar, ProgressStyle};
 use numpy::{PyArray1, PyArray2};
@@ -111,6 +115,69 @@ where
     fn get_model(&self) -> &Model;
 
     fn get_path(&self) -> Option<String>;
+
+    /// Initialize numpy embedding for provided graph at path.
+    ///
+    /// Do note that the embedding is in FORTRAN format.
+    ///
+    /// Parameters
+    /// --------------
+    /// graph: Graph
+    ///     The graph to embed.
+    /// dtype: Optional[str] = None
+    ///     Dtype to use for the embedding. Note that an improper dtype may cause overflows.
+    ///     When not provided, we automatically infer the best one by using the diameter.
+    fn init_mmap(&self, graph: &Graph, py_kwargs: Option<&PyDict>,) -> PyResult<usize> {
+        self.must_have_path()?;
+
+        let gil = pyo3::Python::acquire_gil();
+
+        let number_of_nodes = graph.inner.get_number_of_nodes() as isize;
+        let embedding_size = pe!(self.get_model().get_embedding_size(&graph.inner))? as isize;
+
+        let kwargs = normalize_kwargs!(py_kwargs, gil.python());
+
+        pe!(validate_kwargs(
+            kwargs,
+            &["dtype",]
+        ))?;
+
+        let verbose = extract_value_rust_result!(kwargs, "verbose", bool);
+        let dtype = match extract_value_rust_result!(kwargs, "dtype", &str) {
+            Some(dtype) => dtype,
+            None => {
+                let (max_u8, max_u16, max_u32) = (u8::MAX as usize, u16::MAX as usize, u32::MAX as usize);
+                match pe!(graph.get_diameter(Some(true), verbose))? as usize {
+                    x if (0..=max_u8).contains(&x) => "u8",
+                    x if (max_u8..=max_u16).contains(&x) => "u16",
+                    x if (max_u16..=max_u32).contains(&x) => "u32",
+                    _ => "u64",
+                }
+            }
+        };
+
+        match dtype {
+            $(
+                stringify!($dtype) => {
+                    let (_, aligned_size) = init_memory_mapped_numpy_array(
+                        gil.python(),
+                        self.get_path().as_ref().map(|path| path.as_str()),
+                        $dtype_enum,
+                        &[number_of_nodes as isize, embedding_size as isize],
+                        true,
+                    );
+                    Ok(aligned_size)
+                }
+            )*
+            dtype => pe!(Err(format!(
+                concat!(
+                    "The provided dtype {} is not supported. The supported ",
+                    "data types are `u8`, `u16`, `u32` and `u64`."
+                ),
+                dtype
+            ))),
+        }
+    }
 
     /// Raises an error if model has no path
     fn must_have_path(&self) -> PyResult<()> {
@@ -306,7 +373,7 @@ where
 
         pe!(validate_kwargs(
             kwargs,
-            &["dtype",]
+            &["dtype", "verbose"]
         ))?;
 
         let verbose = extract_value_rust_result!(kwargs, "verbose", bool);
@@ -346,6 +413,63 @@ where
                     ))?;
 
                     Ok(embedding)
+                }
+            )*
+            dtype => pe!(Err(format!(
+                concat!(
+                    "The provided dtype {} is not supported. The supported ",
+                    "data types are `u8`, `u16`, `u32` and `u64`."
+                ),
+                dtype
+            ))),
+        }
+    }
+
+    /// Fit the provided feature number through disk MMAP.
+    ///
+    /// Do note that the embedding produced is in FORTRAN format.
+    ///
+    /// Parameters
+    /// --------------
+    /// graph: Graph
+    ///     The graph to embed.
+    /// dtype: String
+    ///     Dtype of the features.
+    /// feature_number: int
+    ///     The number of the feature to compute.
+    /// aligned_size: int
+    ///     Size of the header of the Numpy object that is returned
+    ///     during the initialization phase.
+    fn fit_transform_feature(
+        &self,
+        graph: &Graph,
+        dtype: String,
+        feature_number: usize,
+        aligned_size: usize,
+    ) -> PyResult<()> {
+        self.must_have_path()?;
+        let gil = pyo3::Python::acquire_gil();
+
+        let number_of_nodes = graph.inner.get_number_of_nodes() as usize;
+        let columns_number = pe!(self.get_model().get_embedding_size(&graph.inner))? as isize;
+        match dtype.as_str() {
+            $(
+                stringify!($dtype) => {
+
+                    let slice_size = number_of_nodes * core::mem::size_of::<$dtype>();
+
+                    let mut mmap = MemoryMapped::new_mut(
+                        self.get_path(),
+                        Some(slice_size), Some(aligned_size + (feature_number * number_of_nodes))
+                    ).expect("Could not mmap the file");
+
+                    let embedding_slice = pe!(mmap.get_slice_mut::<$dtype>(0, None).map_err(|e| e.to_string()))?;
+
+                    pe!(self.get_model().fit_transform_feature(
+                        &graph.inner,
+                        feature_number,
+                        embedding_slice,
+                    ))
                 }
             )*
             dtype => pe!(Err(format!(
@@ -480,10 +604,37 @@ impl DegreeSPINE {
     /// graph: Graph
     ///     The graph to embed.
     /// dtype: Optional[str] = None
-    ///     Dtype to use for the embedding. Note that an improper dtype may cause overflows.
+    ///     Dtype to use for the embedding.
     ///     When not provided, we automatically infer the best one by using the diameter.
     fn fit_transform(&self, graph: &Graph, py_kwargs: Option<&PyDict>) -> PyResult<Py<PyAny>> {
         self.inner.fit_transform(graph, py_kwargs)
+    }
+
+    #[args(py_kwargs = "**")]
+    #[pyo3(text_signature = "($self, graph, dtype, feature_number, aligned_size)")]
+    /// Fit the provided feature number through disk MMAP.
+    ///
+    /// Do note that the embedding produced is in FORTRAN format.
+    ///
+    /// Parameters
+    /// --------------
+    /// graph: Graph
+    ///     The graph to embed.
+    /// dtype: String
+    ///     Dtype of the features.
+    /// feature_number: int
+    ///     The number of the feature to compute.
+    /// aligned_size: int
+    ///     Size of the header of the Numpy object that is returned
+    ///     during the initialization phase.
+    fn fit_transform_feature(
+        &self,
+        graph: &Graph,
+        dtype: String,
+        feature_number: usize,
+        aligned_size: usize,
+    ) -> PyResult<()> {
+        self.inner.fit_transform_feature(graph, dtype, feature_number, aligned_size)
     }
 }
 
@@ -577,6 +728,33 @@ impl NodeLabelSPINE {
     ///     When not provided, we automatically infer the best one by using the diameter.
     fn fit_transform(&self, graph: &Graph, py_kwargs: Option<&PyDict>) -> PyResult<Py<PyAny>> {
         self.inner.fit_transform(graph, py_kwargs)
+    }
+
+    #[args(py_kwargs = "**")]
+    #[pyo3(text_signature = "($self, graph, dtype, feature_number, aligned_size)")]
+    /// Fit the provided feature number through disk MMAP.
+    ///
+    /// Do note that the embedding produced is in FORTRAN format.
+    ///
+    /// Parameters
+    /// --------------
+    /// graph: Graph
+    ///     The graph to embed.
+    /// dtype: String
+    ///     Dtype of the features.
+    /// feature_number: int
+    ///     The number of the feature to compute.
+    /// aligned_size: int
+    ///     Size of the header of the Numpy object that is returned
+    ///     during the initialization phase.
+    fn fit_transform_feature(
+        &self,
+        graph: &Graph,
+        dtype: String,
+        feature_number: usize,
+        aligned_size: usize,
+    ) -> PyResult<()> {
+        self.inner.fit_transform_feature(graph, dtype, feature_number, aligned_size)
     }
 }
 
@@ -699,6 +877,43 @@ impl ScoreSPINE {
         }
         .fit_transform(graph, py_kwargs)
     }
+
+    #[args(py_kwargs = "**")]
+    #[pyo3(text_signature = "($self, scores, graph, dtype, feature_number, aligned_size)")]
+    /// Fit the provided feature number through disk MMAP.
+    ///
+    /// Do note that the embedding produced is in FORTRAN format.
+    ///
+    /// Parameters
+    /// --------------
+    /// scores: np.ndarray
+    ///     Scores to create the node groups.
+    /// graph: Graph
+    ///     The graph to embed.
+    /// dtype: String
+    ///     Dtype of the features.
+    /// feature_number: int
+    ///     The number of the feature to compute.
+    /// aligned_size: int
+    ///     Size of the header of the Numpy object that is returned
+    ///     during the initialization phase.
+    fn fit_transform_feature(
+        &self,
+        scores: Py<PyArray1<f32>>,
+        graph: &Graph,
+        dtype: String,
+        feature_number: usize,
+        aligned_size: usize,
+    ) -> PyResult<()> {
+        let gil = pyo3::Python::acquire_gil();
+        let scores_ref = scores.as_ref(gil.python());
+        BasicSPINEBinding {
+            inner: cpu_models::ScoreSPINE::new(self.inner.clone(), unsafe {
+                scores_ref.as_slice().unwrap()
+            }),
+            path: self.path.clone(),
+        }.fit_transform_feature(graph, dtype, feature_number, aligned_size)
+    }
 }
 
 #[pyclass]
@@ -793,6 +1008,33 @@ impl DegreeWINE {
     fn fit_transform(&self, graph: &Graph, py_kwargs: Option<&PyDict>) -> PyResult<Py<PyAny>> {
         self.inner.fit_transform(graph, py_kwargs)
     }
+
+    #[args(py_kwargs = "**")]
+    #[pyo3(text_signature = "($self, graph, dtype, feature_number, aligned_size)")]
+    /// Fit the provided feature number through disk MMAP.
+    ///
+    /// Do note that the embedding produced is in FORTRAN format.
+    ///
+    /// Parameters
+    /// --------------
+    /// graph: Graph
+    ///     The graph to embed.
+    /// dtype: String
+    ///     Dtype of the features.
+    /// feature_number: int
+    ///     The number of the feature to compute.
+    /// aligned_size: int
+    ///     Size of the header of the Numpy object that is returned
+    ///     during the initialization phase.
+    fn fit_transform_feature(
+        &self,
+        graph: &Graph,
+        dtype: String,
+        feature_number: usize,
+        aligned_size: usize,
+    ) -> PyResult<()> {
+        self.inner.fit_transform_feature(graph, dtype, feature_number, aligned_size)
+    }
 }
 
 #[pyclass]
@@ -886,6 +1128,33 @@ impl NodeLabelWINE {
     ///     When not provided, we automatically infer the best one by using the diameter.
     fn fit_transform(&self, graph: &Graph, py_kwargs: Option<&PyDict>) -> PyResult<Py<PyAny>> {
         self.inner.fit_transform(graph, py_kwargs)
+    }
+
+    #[args(py_kwargs = "**")]
+    #[pyo3(text_signature = "($self, graph, dtype, feature_number, aligned_size)")]
+    /// Fit the provided feature number through disk MMAP.
+    ///
+    /// Do note that the embedding produced is in FORTRAN format.
+    ///
+    /// Parameters
+    /// --------------
+    /// graph: Graph
+    ///     The graph to embed.
+    /// dtype: String
+    ///     Dtype of the features.
+    /// feature_number: int
+    ///     The number of the feature to compute.
+    /// aligned_size: int
+    ///     Size of the header of the Numpy object that is returned
+    ///     during the initialization phase.
+    fn fit_transform_feature(
+        &self,
+        graph: &Graph,
+        dtype: String,
+        feature_number: usize,
+        aligned_size: usize,
+    ) -> PyResult<()> {
+        self.inner.fit_transform_feature(graph, dtype, feature_number, aligned_size)
     }
 }
 
@@ -1008,5 +1277,42 @@ impl ScoreWINE {
             path: self.path.clone(),
         }
         .fit_transform(graph, py_kwargs)
+    }
+
+    #[args(py_kwargs = "**")]
+    #[pyo3(text_signature = "($self, scores, graph, dtype, feature_number, aligned_size)")]
+    /// Fit the provided feature number through disk MMAP.
+    ///
+    /// Do note that the embedding produced is in FORTRAN format.
+    ///
+    /// Parameters
+    /// --------------
+    /// scores: np.ndarray
+    ///     Scores to create the node groups.
+    /// graph: Graph
+    ///     The graph to embed.
+    /// dtype: String
+    ///     Dtype of the features.
+    /// feature_number: int
+    ///     The number of the feature to compute.
+    /// aligned_size: int
+    ///     Size of the header of the Numpy object that is returned
+    ///     during the initialization phase.
+    fn fit_transform_feature(
+        &self,
+        scores: Py<PyArray1<f32>>,
+        graph: &Graph,
+        dtype: String,
+        feature_number: usize,
+        aligned_size: usize,
+    ) -> PyResult<()> {
+        let gil = pyo3::Python::acquire_gil();
+        let scores_ref = scores.as_ref(gil.python());
+        BasicWINEBinding {
+            inner: cpu_models::ScoreWINE::new(self.inner.clone(), unsafe {
+                scores_ref.as_slice().unwrap()
+            }),
+            path: self.path.clone(),
+        }.fit_transform_feature(graph, dtype, feature_number, aligned_size)
     }
 }
