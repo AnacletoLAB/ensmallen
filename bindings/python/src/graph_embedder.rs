@@ -42,7 +42,7 @@ where
                                 gil.python(),
                                 path.as_ref().map(|x| x.as_str()),
                                 $dtype_enum,
-                                shape.into(),
+                                &<MatrixShape as Into<Vec<isize>>>::into(shape),
                                 false,
                             )
                         })

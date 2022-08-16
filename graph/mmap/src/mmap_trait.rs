@@ -1,7 +1,7 @@
 use core::fmt::Debug;
 
 pub trait MemoryMapCore: Sized {
-    fn new_mut<S: AsRef<str> + Debug>(path: Option<S>, len: Option<usize>) 
+    fn new_mut<S: AsRef<str> + Debug>(path: Option<S>, len: Option<usize>, offset: Option<usize>) 
         -> Result<Self, String>;
 
     fn sync_flush(&self) -> Result<(), String>;
@@ -9,7 +9,7 @@ pub trait MemoryMapCore: Sized {
 }
 
 pub trait MemoryMapReadOnlyCore: Sized {
-    fn new<S: AsRef<str> + Debug>(path: S) -> Result<Self, String>;
+    fn new<S: AsRef<str> + Debug>(path: S, offset: Option<usize>) -> Result<Self, String>;
 
     fn get_addr(&self) -> *mut u8;
     fn len(&self) -> usize;

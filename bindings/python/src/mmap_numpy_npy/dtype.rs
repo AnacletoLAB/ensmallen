@@ -1,7 +1,7 @@
 use numpy::npyffi::NPY_TYPES;
 use std::convert::TryFrom;
 
-#[derive(Clone, Debug)]
+#[derive(Clone, Copy, Debug)]
 pub enum Dtype {
     Bool,
     I8,
