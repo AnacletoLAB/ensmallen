@@ -1,6 +1,6 @@
-use crate::{get_node_priors, BasicEmbeddingModel, GraphEmbedder, MatrixShape};
+use crate::{get_node_prior, BasicEmbeddingModel, GraphEmbedder, MatrixShape};
 use express_measures::{cosine_similarity_sequential_unchecked, ThreadFloat};
-use graph::{Graph, NodeT, EdgeT, ThreadDataRaceAware};
+use graph::{EdgeT, Graph, NodeT, ThreadDataRaceAware};
 use indicatif::ProgressIterator;
 use num_traits::Coerced;
 use rayon::prelude::*;
@@ -23,11 +23,11 @@ impl GraphEmbedder for FirstOrderLINE {
     }
 
     fn get_number_of_epochs(&self) -> usize {
-        self.model.epochs
+        self.model.get_number_of_epochs()
     }
 
     fn is_verbose(&self) -> bool {
-        self.model.verbose
+        self.model.is_verbose()
     }
 
     fn get_dtype(&self) -> String {
@@ -35,13 +35,13 @@ impl GraphEmbedder for FirstOrderLINE {
     }
 
     fn get_random_state(&self) -> u64 {
-        self.model.random_state
+        self.model.get_random_state()
     }
 
     fn get_embedding_shapes(&self, graph: &Graph) -> Result<Vec<MatrixShape>, String> {
         Ok(vec![(
             graph.get_number_of_nodes() as usize,
-            self.model.embedding_size,
+            self.model.get_embedding_size(),
         )
             .into()])
     }
@@ -81,9 +81,8 @@ impl GraphEmbedder for FirstOrderLINE {
                         None,
                     )
                     .unwrap()
+                    .map(|(src, dst, label)| (src as usize, dst as usize, label))
                     .for_each(|(src, dst, label)| {
-                        let src = src as usize;
-                        let dst = dst as usize;
                         let src_embedding = unsafe {
                             &mut (*shared_node_embedding.get())[(src
                                 * self.model.get_embedding_size())
@@ -105,11 +104,11 @@ impl GraphEmbedder for FirstOrderLINE {
                         } else {
                             prediction
                         };
-                        let node_priors: Vec<F> =
-                            get_node_priors(graph, &[src as NodeT, dst as NodeT], learning_rate);
 
-                        let src_variation = variation * node_priors[0];
-                        let dst_variation = variation * node_priors[1];
+                        let src_variation =
+                            variation * get_node_prior(graph, src as NodeT, learning_rate);
+                        let dst_variation =
+                            variation * get_node_prior(graph, dst as NodeT, learning_rate);
 
                         src_embedding
                             .iter_mut()

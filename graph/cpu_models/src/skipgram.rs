@@ -108,8 +108,6 @@ where
                 variation *= get_node_prior(graph, node_id, F::one());
             }
 
-            let variation = F::coerce_from(variation);
-
             update_contextual_node_embedding(node_id, total_context_embedding, variation);
             unsafe {
                 element_wise_weighted_addition_inplace(
@@ -163,7 +161,7 @@ where
                                 .filter(|&context_node_id| context_node_id != central_node_id)
                                 .for_each(|context_node_id| {
                                     let mut context_gradient =
-                                        vec![F::coerce_from(0.0); self.get_embedding_size()];
+                                        vec![F::zero(); self.get_embedding_size()];
                                     let context_node_embedding =
                                         get_central_node_embedding(context_node_id);
                                     // We now compute the gradient relative to the positive

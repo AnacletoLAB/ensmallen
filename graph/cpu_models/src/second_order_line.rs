@@ -1,4 +1,4 @@
-use crate::{get_node_priors, utils::MatrixShape, BasicEmbeddingModel, GraphEmbedder};
+use crate::{get_node_prior, utils::MatrixShape, BasicEmbeddingModel, GraphEmbedder};
 use express_measures::cosine_similarity_sequential_unchecked;
 use express_measures::ThreadFloat;
 use graph::{EdgeT, Graph, NodeT, ThreadDataRaceAware};
@@ -24,7 +24,7 @@ impl GraphEmbedder for SecondOrderLINE {
     }
 
     fn get_number_of_epochs(&self) -> usize {
-        self.model.epochs
+        self.model.get_number_of_epochs()
     }
 
     fn get_dtype(&self) -> String {
@@ -32,23 +32,23 @@ impl GraphEmbedder for SecondOrderLINE {
     }
 
     fn is_verbose(&self) -> bool {
-        self.model.verbose
+        self.model.is_verbose()
     }
 
     fn get_random_state(&self) -> u64 {
-        self.model.random_state
+        self.model.get_random_state()
     }
 
     fn get_embedding_shapes(&self, graph: &Graph) -> Result<Vec<MatrixShape>, String> {
         Ok(vec![
             (
                 graph.get_number_of_nodes() as usize,
-                self.model.embedding_size,
+                self.model.get_embedding_size(),
             )
                 .into(),
             (
                 graph.get_number_of_nodes() as usize,
-                self.model.embedding_size,
+                self.model.get_embedding_size(),
             )
                 .into(),
         ])
@@ -65,6 +65,7 @@ impl GraphEmbedder for SecondOrderLINE {
     {
         let mut learning_rate = F::coerce_from(self.model.get_learning_rate());
         let mut random_state = self.get_random_state();
+        let embedding_size = self.model.get_embedding_size();
 
         let shared_node_embedding = ThreadDataRaceAware::new(embedding);
 
@@ -88,16 +89,15 @@ impl GraphEmbedder for SecondOrderLINE {
                     None,
                     None,
                 )?
+                .map(|(src, dst, label)| (src as usize, dst as usize, label))
                 .for_each(|(src, dst, label)| {
-                    let src = src as usize;
-                    let dst = dst as usize;
                     let src_embedding = unsafe {
-                        &mut (*shared_node_embedding.get())[0][(src * self.model.embedding_size)
-                            ..((src + 1) * self.model.embedding_size)]
+                        &mut (*shared_node_embedding.get())[0]
+                            [(src * embedding_size)..((src + 1) * embedding_size)]
                     };
                     let dst_embedding = unsafe {
-                        &mut (*shared_node_embedding.get())[1][(dst * self.model.embedding_size)
-                            ..((dst + 1) * self.model.embedding_size)]
+                        &mut (*shared_node_embedding.get())[1]
+                            [(dst * embedding_size)..((dst + 1) * embedding_size)]
                     };
 
                     let (similarity, src_norm, dst_norm): (F, F, F) = unsafe {
@@ -112,12 +112,11 @@ impl GraphEmbedder for SecondOrderLINE {
                         prediction
                     };
 
-                    let node_priors: Vec<F> =
-                        get_node_priors(graph, &[src as NodeT, dst as NodeT], learning_rate);
-
-                    let src_variation = variation * node_priors[0];
-                    let dst_variation = variation * node_priors[1];
-
+                    let src_variation =
+                        variation * get_node_prior(graph, src as NodeT, learning_rate);
+                    let dst_variation =
+                        variation * get_node_prior(graph, dst as NodeT, learning_rate);
+                    
                     src_embedding
                         .iter_mut()
                         .zip(dst_embedding.iter_mut())
