@@ -89,8 +89,55 @@ pub fn create_memory_mapped_numpy_array(
     shape: &[intptr_t],
     fortran_order: bool,
 ) -> Py<PyAny> {
-    let (mut mmap, aligned_len) =
-        init_memory_mapped_numpy_array(py, path, dtype, shape, fortran_order);
+    let dtype = dtype.into();
+
+    let num_of_elements = shape.iter().fold(1, |a, b| a * b);
+    let data_size = num_of_elements * npy_type_to_bytes_size(dtype) as isize;
+
+    #[cfg(target_endian = "little")]
+    let endianess = '<';
+    #[cfg(target_endian = "big")]
+    let endianess = '>';
+
+    let mut header = b"\x93NUMPY\x02\x00".to_vec();
+
+    let description = format!(
+        "{{'descr': '{endianess}{descr}', 'fortran_order': {fortran_order}, 'shape': ({shape}), }}",
+        endianess = endianess,
+        descr = dtype_to_descr(dtype),
+        fortran_order = if fortran_order { "True" } else { "False" },
+        shape = shape
+            .iter()
+            .map(|x| format!("{}, ", x))
+            .collect::<Vec<String>>()
+            .join(""),
+    );
+
+    let offset = description.len() + 12;
+    let padding_size = (ARRAY_ALIGN - (offset % ARRAY_ALIGN)) % ARRAY_ALIGN;
+    let aligned_len = offset + padding_size;
+
+    assert!(
+        aligned_len % ARRAY_ALIGN == 0,
+        "Error in the computation of the alignement of the npy header {} % {}",
+        aligned_len,
+        ARRAY_ALIGN,
+    );
+
+    header.extend_from_slice(&(aligned_len as u32 - 12).to_le_bytes());
+    header.extend_from_slice(description.as_bytes());
+
+    for _ in 0..padding_size {
+        header.push(b' ');
+    }
+
+    // mmap the file
+    let mut mmap = MemoryMapped::new_mut(path, Some(aligned_len + data_size as usize), None)
+        .expect("Could not mmap the file");
+    // write the header to the file
+    mmap.get_slice_mut::<u8>(0, Some(aligned_len))
+        .unwrap()
+        .clone_from_slice(&header);
 
     let data = mmap
         .get_slice_mut::<u8>(aligned_len, None)
