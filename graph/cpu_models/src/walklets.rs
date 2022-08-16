@@ -1,8 +1,9 @@
-use express_measures::ThreadFloat;
-use indicatif::ProgressIterator;
-use num_traits::Coerced;
-use indicatif::{ProgressBar, ProgressStyle};
 use crate::*;
+use express_measures::ThreadFloat;
+use graph::{NodeT, EdgeT};
+use indicatif::ProgressIterator;
+use indicatif::{ProgressBar, ProgressStyle};
+use num_traits::Coerced;
 
 #[derive(Clone, Debug)]
 pub struct Walklets {
@@ -51,11 +52,15 @@ impl GraphEmbedder for Walklets {
         self.node2vec.get_random_state()
     }
 
-    fn _fit_transform<F: Coerced<f32> + ThreadFloat>(
+    fn _fit_transform<F: ThreadFloat>(
         &self,
         graph: &graph::Graph,
         embedding: &mut [&mut [F]],
-    ) -> Result<(), String> {
+    ) -> Result<(), String>
+    where
+        NodeT: Coerced<F>,
+        EdgeT: Coerced<F>,
+    {
         let mut node2vec = self.node2vec.clone();
         node2vec.window_size = 1;
         let loading_bar = if self.is_verbose() {

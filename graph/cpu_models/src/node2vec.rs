@@ -1,6 +1,6 @@
 use crate::*;
 use express_measures::ThreadFloat;
-use graph::WalksParameters;
+use graph::{WalksParameters, NodeT};
 use indicatif::{ProgressBar, ProgressStyle};
 use num_traits::Coerced;
 
@@ -178,7 +178,10 @@ where
         &self,
         graph: &graph::Graph,
         embedding: &mut [&mut [F]],
-    ) -> Result<(), String> {
+    ) -> Result<(), String>
+    where
+        NodeT: Coerced<F>,
+    {
         match self.model_type {
             Node2VecModels::CBOW => self.fit_transform_cbow(graph, embedding),
             Node2VecModels::SkipGram => self.fit_transform_skipgram(graph, embedding),

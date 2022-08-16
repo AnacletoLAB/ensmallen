@@ -1,6 +1,6 @@
 use crate::*;
 use express_measures::ThreadFloat;
-use graph::Graph;
+use graph::{EdgeT, Graph, NodeT};
 use indicatif::{ProgressBar, ProgressStyle};
 use num_traits::Coerced;
 
@@ -10,17 +10,24 @@ pub trait GraphEmbedder {
     /// # Arguments
     /// `graph`: &Graph - The graph to embed
     /// `embedding`: &[&mut FeatureSlice] - The memory area where to write the embedding.
-    fn _fit_transform<F: Coerced<f32> + ThreadFloat>(
+    fn _fit_transform<F: ThreadFloat>(
         &self,
         graph: &Graph,
         embedding: &mut [&mut [F]],
-    ) -> Result<(), String>;
+    ) -> Result<(), String>
+    where
+        NodeT: Coerced<F>,
+        EdgeT: Coerced<F>;
 
-    fn fit_transform<F: Coerced<f32> + ThreadFloat>(
+    fn fit_transform<F: ThreadFloat>(
         &self,
         graph: &Graph,
         embedding: &mut [&mut [F]],
-    ) -> Result<(), String> {
+    ) -> Result<(), String>
+    where
+        NodeT: Coerced<F>,
+        EdgeT: Coerced<F>,
+    {
         if !graph.has_edges() {
             return Err("The provided graph does not have any edge.".to_string());
         }
@@ -51,15 +58,7 @@ pub trait GraphEmbedder {
             }
         }
 
-        populate_vectors(
-            embedding,
-            self.get_random_state(),
-            embedding_shapes
-                .into_iter()
-                .map(|shape| (shape[-1] as f32).sqrt())
-                .collect::<Vec<f32>>()
-                .as_slice(),
-        );
+        populate_vectors(embedding, self.get_random_state());
         self._fit_transform(graph, embedding)
     }
 
@@ -97,8 +96,6 @@ pub trait GraphEmbedder {
 
     /// Returns the initial random state of the model.
     fn get_random_state(&self) -> u64;
-
-    /// Re
 
     /// Returns the shapes of the embeddings given the graph.
     fn get_embedding_shapes(&self, graph: &Graph) -> Result<Vec<MatrixShape>, String>;
