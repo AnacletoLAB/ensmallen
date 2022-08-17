@@ -127,6 +127,8 @@ where
     /// dtype: Optional[str] = None
     ///     Dtype to use for the embedding. Note that an improper dtype may cause overflows.
     ///     When not provided, we automatically infer the best one by using the diameter.
+    /// verbose: bool = False
+    ///     Whether to show loading bars.
     fn init_mmap(&self, graph: &Graph, py_kwargs: Option<&PyDict>,) -> PyResult<usize> {
         self.must_have_path()?;
 
@@ -139,7 +141,7 @@ where
 
         pe!(validate_kwargs(
             kwargs,
-            &["dtype",]
+            &["dtype", "verbose"]
         ))?;
 
         let verbose = extract_value_rust_result!(kwargs, "verbose", bool);
@@ -594,7 +596,26 @@ impl DegreeSPINE {
     }
 
     #[args(py_kwargs = "**")]
-    #[pyo3(text_signature = "($self, graph, *, dtype)")]
+    #[pyo3(text_signature = "($self, graph, *, dtype, verbose)")]
+    /// Initialize numpy embedding for provided graph at path.
+    ///
+    /// Do note that the embedding is in FORTRAN format.
+    ///
+    /// Parameters
+    /// --------------
+    /// graph: Graph
+    ///     The graph to embed.
+    /// dtype: Optional[str] = None
+    ///     Dtype to use for the embedding. Note that an improper dtype may cause overflows.
+    ///     When not provided, we automatically infer the best one by using the diameter.
+    /// verbose: bool = False
+    ///     Whether to show loading bars.
+    fn init_mmap(&self, graph: &Graph, py_kwargs: Option<&PyDict>,) -> PyResult<usize> {
+        self.inner.init_mmap(graph, py_kwargs)
+    }
+
+    #[args(py_kwargs = "**")]
+    #[pyo3(text_signature = "($self, graph, *, dtype, verbose)")]
     /// Return numpy embedding with Degree SPINE node embedding.
     ///
     /// Do note that the embedding is returned transposed.
@@ -606,6 +627,8 @@ impl DegreeSPINE {
     /// dtype: Optional[str] = None
     ///     Dtype to use for the embedding.
     ///     When not provided, we automatically infer the best one by using the diameter.
+    /// verbose: bool = False
+    ///     Whether to show loading bars.
     fn fit_transform(&self, graph: &Graph, py_kwargs: Option<&PyDict>) -> PyResult<Py<PyAny>> {
         self.inner.fit_transform(graph, py_kwargs)
     }
@@ -715,7 +738,26 @@ impl NodeLabelSPINE {
     }
 
     #[args(py_kwargs = "**")]
-    #[pyo3(text_signature = "($self, graph, *, dtype)")]
+    #[pyo3(text_signature = "($self, graph, *, dtype, verbose)")]
+    /// Initialize numpy embedding for provided graph at path.
+    ///
+    /// Do note that the embedding is in FORTRAN format.
+    ///
+    /// Parameters
+    /// --------------
+    /// graph: Graph
+    ///     The graph to embed.
+    /// dtype: Optional[str] = None
+    ///     Dtype to use for the embedding. Note that an improper dtype may cause overflows.
+    ///     When not provided, we automatically infer the best one by using the diameter.
+    /// verbose: bool = False
+    ///     Whether to show loading bars.
+    fn init_mmap(&self, graph: &Graph, py_kwargs: Option<&PyDict>,) -> PyResult<usize> {
+        self.inner.init_mmap(graph, py_kwargs)
+    }
+
+    #[args(py_kwargs = "**")]
+    #[pyo3(text_signature = "($self, graph, *, dtype, verbose)")]
     /// Return numpy embedding with Degree SPINE node embedding.
     ///
     /// Do note that the embedding is returned transposed.
@@ -727,6 +769,8 @@ impl NodeLabelSPINE {
     /// dtype: Optional[str] = None
     ///     Dtype to use for the embedding. Note that an improper dtype may cause overflows.
     ///     When not provided, we automatically infer the best one by using the diameter.
+    /// verbose: bool = False
+    ///     Whether to show loading bars.
     fn fit_transform(&self, graph: &Graph, py_kwargs: Option<&PyDict>) -> PyResult<Py<PyAny>> {
         self.inner.fit_transform(graph, py_kwargs)
     }
@@ -849,7 +893,29 @@ impl ScoreSPINE {
     }
 
     #[args(py_kwargs = "**")]
-    #[pyo3(text_signature = "($self, scores, graph, *, dtype)")]
+    #[pyo3(text_signature = "($self, graph, *, dtype, verbose)")]
+    /// Initialize numpy embedding for provided graph at path.
+    ///
+    /// Do note that the embedding is in FORTRAN format.
+    ///
+    /// Parameters
+    /// --------------
+    /// graph: Graph
+    ///     The graph to embed.
+    /// dtype: Optional[str] = None
+    ///     Dtype to use for the embedding. Note that an improper dtype may cause overflows.
+    ///     When not provided, we automatically infer the best one by using the diameter.
+    /// verbose: bool = False
+    ///     Whether to show loading bars.
+    fn init_mmap(&self, graph: &Graph, py_kwargs: Option<&PyDict>,) -> PyResult<usize> {
+        BasicSPINEBinding {
+            inner: cpu_models::DegreeSPINE::from(self.inner.clone()),
+            path: self.path.clone(),
+        }.init_mmap(graph, py_kwargs)
+    }
+
+    #[args(py_kwargs = "**")]
+    #[pyo3(text_signature = "($self, scores, graph, *, dtype, verbose)")]
     /// Return numpy embedding with Degree SPINE node embedding.
     ///
     /// Do note that the embedding is returned transposed.
@@ -863,6 +929,8 @@ impl ScoreSPINE {
     /// dtype: Optional[str] = None
     ///     Dtype to use for the embedding. Note that an improper dtype may cause overflows.
     ///     When not provided, we automatically infer the best one by using the diameter.
+    /// verbose: bool = False
+    ///     Whether to show loading bars.
     fn fit_transform(
         &self,
         scores: Py<PyArray1<f32>>,
@@ -996,7 +1064,26 @@ impl DegreeWINE {
     }
 
     #[args(py_kwargs = "**")]
-    #[pyo3(text_signature = "($self, graph, *, dtype)")]
+    #[pyo3(text_signature = "($self, graph, *, dtype, verbose)")]
+    /// Initialize numpy embedding for provided graph at path.
+    ///
+    /// Do note that the embedding is in FORTRAN format.
+    ///
+    /// Parameters
+    /// --------------
+    /// graph: Graph
+    ///     The graph to embed.
+    /// dtype: Optional[str] = None
+    ///     Dtype to use for the embedding. Note that an improper dtype may cause overflows.
+    ///     When not provided, we automatically infer the best one by using the diameter.
+    /// verbose: bool = False
+    ///     Whether to show loading bars.
+    fn init_mmap(&self, graph: &Graph, py_kwargs: Option<&PyDict>,) -> PyResult<usize> {
+        self.inner.init_mmap(graph, py_kwargs)
+    }
+
+    #[args(py_kwargs = "**")]
+    #[pyo3(text_signature = "($self, graph, *, dtype, verbose)")]
     /// Return numpy embedding with Degree WINE node embedding.
     ///
     /// Do note that the embedding is returned transposed.
@@ -1008,6 +1095,8 @@ impl DegreeWINE {
     /// dtype: Optional[str] = None
     ///     Dtype to use for the embedding. Note that an improper dtype may cause overflows.
     ///     When not provided, we automatically infer the best one by using the diameter.
+    /// verbose: bool = False
+    ///     Whether to show loading bars.
     fn fit_transform(&self, graph: &Graph, py_kwargs: Option<&PyDict>) -> PyResult<Py<PyAny>> {
         self.inner.fit_transform(graph, py_kwargs)
     }
@@ -1118,7 +1207,26 @@ impl NodeLabelWINE {
     }
 
     #[args(py_kwargs = "**")]
-    #[pyo3(text_signature = "($self, graph, *, dtype)")]
+    #[pyo3(text_signature = "($self, graph, *, dtype, verbose)")]
+    /// Initialize numpy embedding for provided graph at path.
+    ///
+    /// Do note that the embedding is in FORTRAN format.
+    ///
+    /// Parameters
+    /// --------------
+    /// graph: Graph
+    ///     The graph to embed.
+    /// dtype: Optional[str] = None
+    ///     Dtype to use for the embedding. Note that an improper dtype may cause overflows.
+    ///     When not provided, we automatically infer the best one by using the diameter.
+    /// verbose: bool = False
+    ///     Whether to show loading bars.
+    fn init_mmap(&self, graph: &Graph, py_kwargs: Option<&PyDict>,) -> PyResult<usize> {
+        self.inner.init_mmap(graph, py_kwargs)
+    }
+
+    #[args(py_kwargs = "**")]
+    #[pyo3(text_signature = "($self, graph, *, dtype, verbose)")]
     /// Return numpy embedding with Degree WINE node embedding.
     ///
     /// Do note that the embedding is returned transposed.
@@ -1130,6 +1238,8 @@ impl NodeLabelWINE {
     /// dtype: Optional[str] = None
     ///     Dtype to use for the embedding. Note that an improper dtype may cause overflows.
     ///     When not provided, we automatically infer the best one by using the diameter.
+    /// verbose: bool = False
+    ///     Whether to show loading bars.
     fn fit_transform(&self, graph: &Graph, py_kwargs: Option<&PyDict>) -> PyResult<Py<PyAny>> {
         self.inner.fit_transform(graph, py_kwargs)
     }
@@ -1253,7 +1363,29 @@ impl ScoreWINE {
     }
 
     #[args(py_kwargs = "**")]
-    #[pyo3(text_signature = "($self, scores, graph, *, dtype)")]
+    #[pyo3(text_signature = "($self, graph, *, dtype, verbose)")]
+    /// Initialize numpy embedding for provided graph at path.
+    ///
+    /// Do note that the embedding is in FORTRAN format.
+    ///
+    /// Parameters
+    /// --------------
+    /// graph: Graph
+    ///     The graph to embed.
+    /// dtype: Optional[str] = None
+    ///     Dtype to use for the embedding. Note that an improper dtype may cause overflows.
+    ///     When not provided, we automatically infer the best one by using the diameter.
+    /// verbose: bool = False
+    ///     Whether to show loading bars.
+    fn init_mmap(&self, graph: &Graph, py_kwargs: Option<&PyDict>,) -> PyResult<usize> {
+        BasicWINEBinding {
+            inner: cpu_models::DegreeWINE::from(self.inner.clone()),
+            path: self.path.clone(),
+        }.init_mmap(graph, py_kwargs)
+    }
+
+    #[args(py_kwargs = "**")]
+    #[pyo3(text_signature = "($self, scores, graph, *, dtype, verbose)")]
     /// Return numpy embedding with Degree WINE node embedding.
     ///
     /// Do note that the embedding is returned transposed.
@@ -1267,6 +1399,8 @@ impl ScoreWINE {
     /// dtype: Optional[str] = None
     ///     Dtype to use for the embedding. Note that an improper dtype may cause overflows.
     ///     When not provided, we automatically infer the best one by using the diameter.
+    /// verbose: bool = False
+    ///     Whether to show loading bars.
     fn fit_transform(
         &self,
         scores: Py<PyArray1<f32>>,
