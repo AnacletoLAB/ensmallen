@@ -109,6 +109,8 @@ pub fn build_optimal_lists_files(
     mut edges_number: Option<EdgeT>,
 
     target_edge_list_separator: Option<char>,
+    remove_chevrons: Option<bool>,
+    remove_spaces: Option<bool>,
 
     numeric_rows_are_surely_smaller_than_original: Option<bool>,
     sort_temporary_directory: Option<String>,
@@ -223,6 +225,8 @@ pub fn build_optimal_lists_files(
             original_numeric_node_ids,
             original_node_list_numeric_node_type_ids,
             original_skip_node_types_if_unavailable,
+            remove_chevrons,
+            remove_spaces,
             target_node_list_separator.clone(),
             target_node_list_header,
             target_nodes_column_number,
@@ -272,6 +276,8 @@ pub fn build_optimal_lists_files(
                 edge_list_rows_to_skip,
                 None,
                 load_edge_list_in_parallel,
+                remove_chevrons,
+            remove_spaces,
                 verbose,
                 name.clone(),
             )
@@ -304,6 +310,8 @@ pub fn build_optimal_lists_files(
                     edge_list_rows_to_skip,
                     None,
                     load_edge_list_in_parallel,
+                    remove_chevrons,
+            remove_spaces,
                     verbose,
                     name.clone(),
                 )?;
@@ -446,6 +454,8 @@ pub fn build_optimal_lists_files(
             target_edge_type_list_header,
             target_edge_type_list_edge_types_column,
             target_edge_type_list_edge_types_column_number,
+            remove_chevrons,
+            remove_spaces,
             edge_list_comment_symbol.clone(),
             default_edge_type.clone(),
             default_weight,

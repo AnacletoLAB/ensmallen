@@ -70,6 +70,12 @@ pub struct CSVFileReader {
 
     /// Whether to support reading of balanced quotes, which will significantly slow down the parsing.
     pub(crate) support_balanced_quotes: bool,
+
+    /// Whether to trim chevrons from the elements, that is change read value from `<VALUE>` to `VALUE`
+    pub(crate) remove_chevrons: bool,
+
+    /// Whether to trim spaces from the elements, that is change read value from `  VALUE ` to `VALUE`
+    pub(crate) remove_spaces: bool,
 }
 
 /// # Builder methods
@@ -103,6 +109,8 @@ impl CSVFileReader {
                     may_have_duplicates: None,
                     parallel: true,
                     support_balanced_quotes: false,
+                    remove_chevrons: false,
+                    remove_spaces: false,
                 }
             }),
             Err(_) => Err(format!("Cannot open the file at {}", path)),
@@ -117,6 +125,30 @@ impl CSVFileReader {
     pub fn set_parallel(mut self, parallel: Option<bool>) -> CSVFileReader {
         if let Some(parallel) = parallel {
             self.parallel = parallel;
+        }
+        self
+    }
+
+    /// Set whether remove chevrons while reading elements.
+    ///
+    /// # Arguments
+    /// * remove_chevrons: Option<bool> - Whether to remove chevrons while reading elements.
+    ///
+    pub fn set_remove_chevrons(mut self, remove_chevrons: Option<bool>) -> CSVFileReader {
+        if let Some(remove_chevrons) = remove_chevrons {
+            self.remove_chevrons = remove_chevrons;
+        }
+        self
+    }
+
+    /// Set whether remove spaces while reading elements.
+    ///
+    /// # Arguments
+    /// * remove_spaces: Option<bool> - Whether to remove spaces while reading elements.
+    ///
+    pub fn set_remove_spaces(mut self, remove_spaces: Option<bool>) -> CSVFileReader {
+        if let Some(remove_spaces) = remove_spaces {
+            self.remove_spaces = remove_spaces;
         }
         self
     }
@@ -605,7 +637,7 @@ impl CSVFileReader {
         Ok(self
             .get_lines_iterator(true, self.verbose)?
             .map(move |(line_number, line)| {
-                parse_line(
+                let (line_number, mut elements) = parse_line(
                     line_number,
                     line,
                     self.separator,
@@ -613,7 +645,32 @@ impl CSVFileReader {
                     &columns_of_interest_and_position,
                     min_column_of_interest,
                     max_column_of_interest,
-                )
+                )?;
+                if self.remove_spaces {
+                    elements.iter_mut().for_each(|element| {
+                        element.as_mut().map(|element| {
+                            *element = element.trim().to_string();
+                        });
+                    });
+                }
+                if self.remove_chevrons {
+                    elements
+                        .iter_mut()
+                        .filter(|element| {
+                            element.as_ref().map_or(false, |element| {
+                                element.starts_with("<") && element.ends_with(">")
+                            })
+                        })
+                        .for_each(|element| {
+                            element.as_mut().map(|element| {
+                                let mut element_chars = element.chars();
+                                element_chars.next();
+                                element_chars.next_back();
+                                *element = element_chars.as_str().to_string();
+                            });
+                        });
+                }
+                Ok((line_number, elements))
             }))
     }
 

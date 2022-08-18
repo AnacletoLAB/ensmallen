@@ -99,6 +99,8 @@ fn test_prepare_edge_list_for_sorted_undirected_use() -> Result<(), String> {
         None,
         None,
         None,
+        None,
+        None,
         Some(true),
         Some("Macaque".to_string()),
     )?;
@@ -264,6 +266,8 @@ fn test_prepare_edge_list_for_sorted_undirected_use() -> Result<(), String> {
         None,
         None,
         Some(true),
+        None,
+        None,
         None,
         None,
         None,

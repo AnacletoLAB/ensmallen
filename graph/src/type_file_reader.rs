@@ -381,6 +381,30 @@ impl<T: ToFromUsize + Sync> TypeFileReader<T> {
         Ok(self)
     }
 
+    /// Set whether remove chevrons while reading elements.
+    ///
+    /// # Arguments
+    /// * remove_chevrons: Option<bool> - Whether to remove chevrons while reading elements.
+    ///
+    pub fn set_remove_chevrons(mut self, remove_chevrons: Option<bool>) -> TypeFileReader<T> {
+        self.reader = self
+            .reader
+            .map(|reader| reader.set_remove_chevrons(remove_chevrons));
+        self
+    }
+
+    /// Set whether remove spaces while reading elements.
+    ///
+    /// # Arguments
+    /// * remove_spaces: Option<bool> - Whether to remove spaces while reading elements.
+    ///
+    pub fn set_remove_spaces(mut self, remove_spaces: Option<bool>) -> TypeFileReader<T> {
+        self.reader = self
+            .reader
+            .map(|reader| reader.set_remove_spaces(remove_spaces));
+        self
+    }
+
     /// Parse a single line (vector of strings already splitted)
     /// # Arguments
     /// * `line_number`: Number of the line.

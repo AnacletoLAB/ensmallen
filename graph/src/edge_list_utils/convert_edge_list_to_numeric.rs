@@ -84,6 +84,9 @@ pub fn convert_edge_list_to_numeric(
     target_edge_type_list_edge_types_column: Option<String>,
     target_edge_type_list_edge_types_column_number: Option<usize>,
 
+    remove_chevrons: Option<bool>,
+    remove_spaces: Option<bool>,
+    
     comment_symbol: Option<String>,
     default_edge_type: Option<String>,
     default_weight: Option<WeightT>,
@@ -152,7 +155,9 @@ pub fn convert_edge_list_to_numeric(
             .set_numeric_node_ids(original_numeric_node_ids)
             .set_csv_is_correct(node_list_is_correct)?
             .set_number_of_nodes(nodes_number)
-            .set_parallel(original_load_node_list_in_parallel)?;
+            .set_parallel(original_load_node_list_in_parallel)?
+            .set_remove_chevrons(remove_chevrons)
+            .set_remove_spaces(remove_spaces);
         let (nodes, _) = parse_nodes(
             node_file_reader.read_lines().transpose()?,
             node_file_reader.nodes_number.clone(),
@@ -183,7 +188,9 @@ pub fn convert_edge_list_to_numeric(
                 .set_numeric_type_ids(original_numeric_edge_type_ids)
                 .set_csv_is_correct(edge_type_list_is_correct)?
                 .set_types_number(edge_types_number)
-                .set_parallel(load_edge_type_list_in_parallel)?;
+                .set_parallel(load_edge_type_list_in_parallel)?
+                .set_remove_chevrons(remove_chevrons)
+                        .set_remove_spaces(remove_spaces);
             let edge_types_vocabulary = parse_types(
                 edge_type_file_reader.read_lines().transpose()?,
                 edge_types_number,
@@ -218,6 +225,8 @@ pub fn convert_edge_list_to_numeric(
         .set_weights_column(original_weights_column.clone())?
         .set_weights_column_number(original_weights_column_number)?
         .set_parallel(Some(false))
+        .set_remove_chevrons(remove_chevrons)
+        .set_remove_spaces(remove_spaces)
         // To avoid a duplicated loading bar.
         .set_verbose(verbose.map(|verbose| verbose && edges_number.is_none()))
         .set_graph_name(name);

@@ -216,6 +216,8 @@ impl Graph {
     /// * `edge_list_comment_symbol`: Option<String> - The comment symbol to skip lines in the edges file. Lines starting with this symbol will be skipped.
     /// * `edges_number`: Option<EdgeT> - The expected number of edges. Note that this must be the EXACT number of edges in the graph.
     /// * `load_edge_list_in_parallel`: Option<bool> - Whether to load the edge list in parallel. Note that, if the edge IDs indices are not given, it is NOT possible to load a sorted edge list. Similarly, when loading in parallel, without edge IDs, the edges may not be loaded in a deterministic order.
+    /// * `remove_chevrons`: Option<bool> - Whether remove chevrons while reading elements.
+    /// * `remove_spaces`: Option<bool> - Whether remove spaces while reading elements.
     /// * `verbose`: Option<bool> - Whether to show a loading bar while reading the files. Note that, if parallel loading is enabled, loading bars will not be showed because they are a synchronization bottleneck.
     /// * `may_have_singletons`: Option<bool> - Whether the graph may be expected to have singleton nodes. If it is said that it surely DOES NOT have any, it will allow for some speedups and lower mempry peaks.
     /// * `may_have_singleton_with_selfloops`: Option<bool> - Whether the graph may be expected to have singleton nodes with selfloops. If it is said that it surely DOES NOT have any, it will allow for some speedups and lower mempry peaks.
@@ -224,7 +226,7 @@ impl Graph {
     ///
     pub fn from_csv(
         directed: bool,
-        
+
         node_type_path: Option<String>,
         node_type_list_separator: Option<char>,
         node_types_column_number: Option<usize>,
@@ -311,6 +313,10 @@ impl Graph {
         edge_list_comment_symbol: Option<String>,
         edges_number: Option<EdgeT>,
         load_edge_list_in_parallel: Option<bool>,
+
+        remove_chevrons: Option<bool>,
+        remove_spaces: Option<bool>,
+
         verbose: Option<bool>,
         may_have_singletons: Option<bool>,
         may_have_singleton_with_selfloops: Option<bool>,
@@ -360,6 +366,8 @@ impl Graph {
                         .set_csv_is_correct(node_type_list_is_correct)?
                         .set_types_number(node_types_number)
                         .set_parallel(load_node_type_list_in_parallel)?
+                        .set_remove_chevrons(remove_chevrons)
+                        .set_remove_spaces(remove_spaces)
                         .set_verbose(verbose),
                 )
             } else {
@@ -408,6 +416,8 @@ impl Graph {
                         .set_csv_is_correct(edge_type_list_is_correct)?
                         .set_types_number(edge_types_number)
                         .set_parallel(load_edge_type_list_in_parallel)?
+                        .set_remove_chevrons(remove_chevrons)
+                        .set_remove_spaces(remove_spaces)
                         .set_verbose(verbose),
                 )
             } else {
@@ -438,6 +448,8 @@ impl Graph {
                     .set_csv_is_correct(node_list_is_correct)?
                     .set_number_of_nodes(nodes_number)
                     .set_parallel(load_node_list_in_parallel)?
+                    .set_remove_chevrons(remove_chevrons)
+                    .set_remove_spaces(remove_spaces)
                     .set_verbose(verbose),
             )
         } else {
@@ -475,6 +487,8 @@ impl Graph {
                     .set_csv_is_correct(edge_list_is_correct)
                     .set_number_of_edges(edges_number)
                     .set_parallel(load_edge_list_in_parallel)
+                    .set_remove_chevrons(remove_chevrons)
+                    .set_remove_spaces(remove_spaces)
                     .set_verbose(verbose),
             ))
         })?;

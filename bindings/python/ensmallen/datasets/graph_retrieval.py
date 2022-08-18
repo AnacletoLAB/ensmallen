@@ -561,6 +561,12 @@ class RetrievedGraph:
                             "edge_list_rows_to_skip"
                         ),
                         load_edge_list_in_parallel=True,
+                        remove_chevrons=graph_arguments.get(
+                            "remove_chevrons"
+                        ),
+                        remove_spaces=graph_arguments.get(
+                            "remove_spaces"
+                        ),
                         edges_number=graph_arguments.get("edges_number"),
                         target_edge_path=target_edge_path,
                         target_edge_list_separator='\t',

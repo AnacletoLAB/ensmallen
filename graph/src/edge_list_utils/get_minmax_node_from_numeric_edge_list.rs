@@ -15,6 +15,8 @@ use crate::{EdgeFileReader, EdgeT, Result};
 /// * `rows_to_skip`: Option<usize> - Number of rows to skip in the edge list.
 /// * `edges_number`: Option<EdgeT> - Number of edges in the edge list.
 /// * `load_edge_list_in_parallel`: Option<bool> - Whether to execute the task in parallel or sequential. Generally, parallel is preferable.
+/// * `remove_chevrons`: Option<bool> - Whether remove chevrons while reading elements.
+/// * `remove_spaces`: Option<bool> - Whether remove spaces while reading elements.
 /// * `verbose`: Option<bool> - Whether to show the loading bar while processing the file.
 /// * `name`: Option<String> - The name of the graph to display in the loading bar.
 ///
@@ -35,6 +37,8 @@ pub fn get_minmax_node_from_numeric_edge_list(
     rows_to_skip: Option<usize>,
     edges_number: Option<EdgeT>,
     load_edge_list_in_parallel: Option<bool>,
+    remove_chevrons: Option<bool>,
+    remove_spaces: Option<bool>,
     verbose: Option<bool>,
     name: Option<String>,
 ) -> Result<(EdgeT, EdgeT, EdgeT)> {
@@ -52,7 +56,9 @@ pub fn get_minmax_node_from_numeric_edge_list(
         .set_parallel(load_edge_list_in_parallel)
         .set_number_of_edges(edges_number)
         .set_verbose(verbose)
-        .set_graph_name(name);
+        .set_graph_name(name)
+        .set_remove_chevrons(remove_chevrons)
+        .set_remove_spaces(remove_spaces);
 
     let (min, max, edges_number) = file_reader
         .read_lines()?

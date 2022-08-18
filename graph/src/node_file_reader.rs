@@ -571,6 +571,30 @@ impl NodeFileReader {
         Ok(self)
     }
 
+    /// Set whether remove chevrons while reading elements.
+    ///
+    /// # Arguments
+    /// * remove_chevrons: Option<bool> - Whether to remove chevrons while reading elements.
+    ///
+    pub fn set_remove_chevrons(mut self, remove_chevrons: Option<bool>) -> NodeFileReader {
+        self.reader = self
+            .reader
+            .map(|reader| reader.set_remove_chevrons(remove_chevrons));
+        self
+    }
+
+    /// Set whether remove spaces while reading elements.
+    ///
+    /// # Arguments
+    /// * remove_spaces: Option<bool> - Whether to remove spaces while reading elements.
+    ///
+    pub fn set_remove_spaces(mut self, remove_spaces: Option<bool>) -> NodeFileReader {
+        self.reader = self
+            .reader
+            .map(|reader| reader.set_remove_spaces(remove_spaces));
+        self
+    }
+
     /// Return boolean representing if the node types exist.
     pub fn has_node_types(&self) -> bool {
         self.default_node_type.is_some() || self.node_types_column_number.is_some()
