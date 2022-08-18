@@ -90,7 +90,7 @@ impl EdgeTypeParser {
             (
                 src,
                 dst,
-                vocabulary.get(&{ edge_type_name.unwrap() }),
+                edge_type_name.and_then(|edge_type_name| vocabulary.get(&edge_type_name)),
                 weight,
             ),
         ))
