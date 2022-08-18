@@ -1,6 +1,7 @@
 use super::*;
 use numpy::{PyArray1, PyArray2};
 use pyo3::wrap_pyfunction;
+use half::f16;
 
 macro_rules! impl_express_measures {
     ($(($method_name:ident, $function_name:ident),)*) => {
@@ -321,7 +322,7 @@ macro_rules! impl_cosine_distance {
 }
 
 impl_cosine_distance! {
-    u8, u16, u32, u64, i8, i16, i32, i64, f32, f64
+    u8, u16, u32, u64, i8, i16, i32, i64, f16, f32, f64
 }
 
 impl_express_measures! {

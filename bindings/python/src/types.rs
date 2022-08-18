@@ -1,4 +1,5 @@
 use super::*;
+use half::f16;
 
 pub struct ThreadDataRaceAware<'a, T>
 where
@@ -17,7 +18,7 @@ pub(crate) trait FromPyDict {
 }
 
 pub(crate) enum NumpyArray<'a> {
-    //F16(&PyArray2<f16>),
+    F16(&'a PyArray2<f16>),
     F32(&'a PyArray2<f32>),
     F64(&'a PyArray2<f64>),
     U8(&'a PyArray2<u8>),

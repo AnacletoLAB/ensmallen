@@ -1,6 +1,7 @@
 use super::*;
 use cpu_models::{Adam, FeatureSlice};
 use numpy::PyArray2;
+use half::f16;
 use std::convert::TryInto;
 
 type InnerModel = cpu_models::EdgePredictionPerceptron<Adam<f32, f32>, Adam<f32, Vec<f32>>>;
@@ -338,6 +339,7 @@ impl_edge_prediction_embedding! {
     i16 : I16,
     i32 : I32,
     i64 : I64,
+    f16 : F16,
     f32 : F32,
     f64 : F64
 }

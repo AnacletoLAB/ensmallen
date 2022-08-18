@@ -610,7 +610,7 @@ impl DegreeSPINE {
     ///     When not provided, we automatically infer the best one by using the diameter.
     /// verbose: bool = False
     ///     Whether to show loading bars.
-    fn init_mmap(&self, graph: &Graph, py_kwargs: Option<&PyDict>,) -> PyResult<usize> {
+    fn init_mmap(&self, graph: &Graph, py_kwargs: Option<&PyDict>) -> PyResult<usize> {
         self.inner.init_mmap(graph, py_kwargs)
     }
 
@@ -752,7 +752,7 @@ impl NodeLabelSPINE {
     ///     When not provided, we automatically infer the best one by using the diameter.
     /// verbose: bool = False
     ///     Whether to show loading bars.
-    fn init_mmap(&self, graph: &Graph, py_kwargs: Option<&PyDict>,) -> PyResult<usize> {
+    fn init_mmap(&self, graph: &Graph, py_kwargs: Option<&PyDict>) -> PyResult<usize> {
         self.inner.init_mmap(graph, py_kwargs)
     }
 
@@ -907,11 +907,12 @@ impl ScoreSPINE {
     ///     When not provided, we automatically infer the best one by using the diameter.
     /// verbose: bool = False
     ///     Whether to show loading bars.
-    fn init_mmap(&self, graph: &Graph, py_kwargs: Option<&PyDict>,) -> PyResult<usize> {
+    fn init_mmap(&self, graph: &Graph, py_kwargs: Option<&PyDict>) -> PyResult<usize> {
         BasicSPINEBinding {
             inner: cpu_models::DegreeSPINE::from(self.inner.clone()),
             path: self.path.clone(),
-        }.init_mmap(graph, py_kwargs)
+        }
+        .init_mmap(graph, py_kwargs)
     }
 
     #[args(py_kwargs = "**")]
@@ -1078,7 +1079,7 @@ impl DegreeWINE {
     ///     When not provided, we automatically infer the best one by using the diameter.
     /// verbose: bool = False
     ///     Whether to show loading bars.
-    fn init_mmap(&self, graph: &Graph, py_kwargs: Option<&PyDict>,) -> PyResult<usize> {
+    fn init_mmap(&self, graph: &Graph, py_kwargs: Option<&PyDict>) -> PyResult<usize> {
         self.inner.init_mmap(graph, py_kwargs)
     }
 
@@ -1221,7 +1222,7 @@ impl NodeLabelWINE {
     ///     When not provided, we automatically infer the best one by using the diameter.
     /// verbose: bool = False
     ///     Whether to show loading bars.
-    fn init_mmap(&self, graph: &Graph, py_kwargs: Option<&PyDict>,) -> PyResult<usize> {
+    fn init_mmap(&self, graph: &Graph, py_kwargs: Option<&PyDict>) -> PyResult<usize> {
         self.inner.init_mmap(graph, py_kwargs)
     }
 
@@ -1377,11 +1378,12 @@ impl ScoreWINE {
     ///     When not provided, we automatically infer the best one by using the diameter.
     /// verbose: bool = False
     ///     Whether to show loading bars.
-    fn init_mmap(&self, graph: &Graph, py_kwargs: Option<&PyDict>,) -> PyResult<usize> {
+    fn init_mmap(&self, graph: &Graph, py_kwargs: Option<&PyDict>) -> PyResult<usize> {
         BasicWINEBinding {
             inner: cpu_models::DegreeWINE::from(self.inner.clone()),
             path: self.path.clone(),
-        }.init_mmap(graph, py_kwargs)
+        }
+        .init_mmap(graph, py_kwargs)
     }
 
     #[args(py_kwargs = "**")]
