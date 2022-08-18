@@ -7,7 +7,7 @@ from .get_graph_okapi_tfidf_weighted_textual_embedding import get_graph_okapi_tf
 
 def get_kgx_okapi_tfidf_weighted_textual_embedding(
     name: str,
-    repository: str,
+    repository: Optional[str] = None,
     columns: Optional[List[str]] = None,
     version: str = "current",
     k1: float = 1.5,
@@ -17,12 +17,12 @@ def get_kgx_okapi_tfidf_weighted_textual_embedding(
     verbose: bool = True
 ) -> np.ndarray:
     """Return OKAPI TFIDF-weighted textual embedding of the data available for the selected graph.
-    
+
     Parameters
     ------------------------
     name: str
         The name of the graph to be retrieved and loaded.
-    repository: str,
+    repository: Optional[str] = None
         The kgx repository to be used.
     columns: Optional[List[str]] = None
         The columns to be taken into consideration for the tokenization
@@ -53,6 +53,7 @@ def get_kgx_okapi_tfidf_weighted_textual_embedding(
         verbose=verbose
     )
 
+
 def get_kghub_okapi_tfidf_weighted_textual_embedding(
     name: str,
     version: str = "current",
@@ -64,7 +65,7 @@ def get_kghub_okapi_tfidf_weighted_textual_embedding(
     verbose: bool = True
 ) -> np.ndarray:
     """Return OKAPI TFIDF-weighted textual embedding of the data available for the selected graph.
-    
+
     Parameters
     ------------------------
     name: str
@@ -96,6 +97,7 @@ def get_kghub_okapi_tfidf_weighted_textual_embedding(
         verbose=verbose
     )
 
+
 def get_kgobo_okapi_tfidf_weighted_textual_embedding(
     name: str,
     version: str = "current",
@@ -107,7 +109,7 @@ def get_kgobo_okapi_tfidf_weighted_textual_embedding(
     verbose: bool = True
 ) -> np.ndarray:
     """Return OKAPI TFIDF-weighted textual embedding of the data available for the selected graph.
-    
+
     Parameters
     ------------------------
     name: str

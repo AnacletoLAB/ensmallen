@@ -3,7 +3,7 @@
 import os
 import shutil
 from typing import Callable, Dict, List, Optional, Union
-from bioregistry import normalize_curie as original_normalize_curie
+from bioregistry import normalize_curie, curie_from_iri
 from multiprocessing import Pool, cpu_count
 import compress_json
 from downloaders import BaseDownloader
@@ -12,12 +12,16 @@ from dict_hash import sha256
 from ensmallen import Graph, edge_list_utils
 from .get_dataset import validate_graph_version
 
-def normalize_curie(node_name: str) -> str:
+
+def normalize_node_name(node_name: str) -> str:
     """Normalize the provided node name curie using bioregistry."""
-    new_node_name = original_normalize_curie(node_name)
+    new_node_name = curie_from_iri(node_name)
+    if new_node_name is None:
+        new_node_name = normalize_curie(node_name)
     if new_node_name is None:
         new_node_name = node_name
     return new_node_name
+
 
 class RetrievedGraph:
     """Class definying an automatically retrievable graph."""
@@ -403,7 +407,7 @@ class RetrievedGraph:
                         edges_number
                     ) = edge_list_utils.build_optimal_lists_files(
                         # NOTE: the following parameters are supported by the parser, but
-                        # so far we have not encountered a single use case where we actually used them.  
+                        # so far we have not encountered a single use case where we actually used them.
                         # original_node_type_path,
                         # original_node_type_list_separator,
                         # original_node_types_column_number,
@@ -697,19 +701,19 @@ class RetrievedGraph:
                 "name": self._name,
                 **self._graph_kwargs,
             })
-        
+
         if self._bioregistry:
             with Pool(cpu_count()) as p:
                 node_names = graph.get_node_names()
                 graph = graph.remap_from_node_names_map(
                     node_names_map=dict(zip(
                         node_names,
-                        p.map(normalize_curie, node_names)
+                        p.map(normalize_node_name, node_names)
                     ))
                 )
                 p.close()
                 p.join()
-        
+
         if self._auto_enable_tradeoffs and graph.get_number_of_unique_edges() < 50e6:
             graph.enable()
         return graph

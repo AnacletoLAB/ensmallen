@@ -8,8 +8,8 @@ from .get_okapi_tfidf_weighted_textual_embedding import get_okapi_tfidf_weighted
 
 def get_graph_okapi_tfidf_weighted_textual_embedding(
     name: str,
-    version: str,
-    repository: str,
+    version: Optional[str] = None,
+    repository: Optional[str] = None,
     columns: Optional[List[str]] = None,
     k1: float = 1.5,
     b: float = 0.75,
@@ -23,9 +23,9 @@ def get_graph_okapi_tfidf_weighted_textual_embedding(
     ------------------------
     name: str
         The name of the graph to be retrieved and loaded.
-    version: str
+    version: Optional[str] = None
         The version of the graph to be retrieved.
-    repository: str
+    repository: Optional[str] = None
         Name of the repository to load data from.
     columns: Optional[List[str]] = None
         The columns to be taken into consideration for the tokenization
