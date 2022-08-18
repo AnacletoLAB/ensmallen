@@ -1,7 +1,7 @@
 use super::*;
+use half::f16;
 use numpy::{PyArray1, PyArray2};
 use pyo3::wrap_pyfunction;
-use half::f16;
 
 macro_rules! impl_express_measures {
     ($(($method_name:ident, $function_name:ident),)*) => {
