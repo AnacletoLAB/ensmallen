@@ -17,5 +17,27 @@
                 "edge_list_header": false
             }
         }
+    },
+    "PharMeBINet": {
+        "latest": {
+            "urls": [
+                "https://zenodo.org/record/7011027/files/pharmebinet_tsv_2022_08_19_v2.tar.gz"
+            ],
+            "paths": [
+                "pharmebinet_tsv_2022_08_19_v2.tar.gz"
+            ],
+            "arguments": {
+                "edge_path": "pharmebinet_tsv_2022_08_19_v2/edges.tsv",
+                "node_path": "pharmebinet_tsv_2022_08_19_v2/nodes.tsv",
+                "sources_column": "start_id",
+                "destinations_column": "end_id",
+                "edge_list_edge_types_column": "type",
+                "node_list_node_types_column": "labels",
+                "node_types_separator": "|",
+                "nodes_column": "node_id",
+                "directed": true,
+                "name": "PharMeBINet"
+            }
+        }
     }
 }
