@@ -2,7 +2,7 @@ use crate::types::*;
 use crate::validation::*;
 use core::fmt::Debug;
 
-use num_traits::{Float, Coerced};
+use num_traits::{Coerced, Float, PrimInt};
 use rayon::prelude::*;
 
 /// Returns the cosine similarity between the two provided vectors computed sequentially.
@@ -47,6 +47,56 @@ pub unsafe fn cosine_similarity_sequential_unchecked<R: Float, F: Coerced<R> + C
 
     (
         total_dot_products / (src_features_norm * dst_features_norm + R::epsilon()),
+        src_features_norm,
+        dst_features_norm,
+    )
+}
+
+/// Returns the cosine similarity between the two provided vectors computed sequentially.
+///
+/// # Arguments
+/// * `src_features`: &[F] - The first feature.
+/// * `dst_features`: &[F] - The second feature.
+///
+/// # Safety
+/// If the two features have different sizes, we will compute
+/// the cosine similarity upwards to when the minimum size.
+/// No warning will be raised.
+pub unsafe fn cosine_similarity_sequential_from_bits_unchecked<R: Float, F: PrimInt + Copy>(
+    src_features: &[F],
+    dst_features: &[F],
+) -> (R, R, R)
+where
+    u32: Coerced<R>,
+{
+    let (total_dot_products, total_squared_src_features, total_squared_dst_features) = src_features
+        .iter()
+        .copied()
+        .zip(dst_features.iter().copied())
+        .map(|(src_feature, dst_feature)| {
+            (
+                (src_feature & dst_feature).count_ones(),
+                src_feature.count_ones(),
+                dst_feature.count_ones(),
+            )
+        })
+        .reduce(
+            |(total_dot_products, total_squared_src_features, total_squared_dst_features),
+             (dot_products, squared_src_features, squared_dst_features)| {
+                (
+                    total_dot_products + dot_products,
+                    total_squared_src_features + squared_src_features,
+                    total_squared_dst_features + squared_dst_features,
+                )
+            },
+        )
+        .unwrap();
+
+    let src_features_norm = total_squared_src_features.coerce_into().sqrt();
+    let dst_features_norm = total_squared_dst_features.coerce_into().sqrt();
+
+    (
+        total_dot_products.coerce_into() / (src_features_norm * dst_features_norm + R::epsilon()),
         src_features_norm,
         dst_features_norm,
     )
