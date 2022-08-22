@@ -54,6 +54,26 @@ def get_all_available_graphs() -> List[str]:
     ]
 
 
+def get_available_versions_from_graph_and_repository_unchecked(graph_name: str, repository: str) -> List[str]:
+    """Return list of available graphs from the given repositories.
+
+    Parameters
+    ----------------------
+    graph_name: str,
+        The name of the graph to retrieve.
+    repository: str,
+        The name of the repository to retrieve the graph from.
+
+    Safety
+    ----------------------
+    The values must be correct or it will raise an index error.
+    """
+    return list(compress_json.local_load(
+        "{}.json.gz".format(repository),
+        use_cache=True
+    )[graph_name].keys())
+
+
 def get_available_versions_from_graph_and_repository(graph_name: str, repository: str) -> List[str]:
     """Return list of available graphs from the given repositories.
 
@@ -79,10 +99,10 @@ def get_available_versions_from_graph_and_repository(graph_name: str, repository
         get_available_graphs_from_repository(repository),
         "graph"
     )
-    return list(compress_json.local_load(
-        "{}.json.gz".format(repository),
-        use_cache=True
-    )[graph_name].keys())
+    return get_available_versions_from_graph_and_repository_unchecked(
+        graph_name=graph_name,
+        repository=repository,
+    )
 
 
 def get_repositories_containing_graph(name: str) -> List[str]:
@@ -126,7 +146,7 @@ def get_all_available_graphs_dataframe(verbose: bool = True) -> pd.DataFrame:
             leave=False,
             disable=not verbose
         )
-        for version in get_available_versions_from_graph_and_repository(name, repository)
+        for version in get_available_versions_from_graph_and_repository_unchecked(name, repository)
     ])
 
 
