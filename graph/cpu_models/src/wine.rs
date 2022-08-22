@@ -70,21 +70,34 @@ where
 
         // Until the bucket is not empty we start to iterate.
         let max_depth = Feature::try_from(self.get_walk_length()).unwrap_or(Feature::MAX);
-        while !bucket.is_empty() && random_walk_length < max_depth {
+        while !bucket.is_empty() {
             random_walk_length += Feature::ONE;
-            // We compute the next bucket of nodes, i.e. the next step of the frontier.
-            bucket = bucket
-                .into_par_iter()
-                .flat_map_iter(|node_id| {
+            if random_walk_length < max_depth {
+                // We compute the next bucket of nodes, i.e. the next step of the frontier.
+                bucket = bucket
+                    .into_par_iter()
+                    .flat_map_iter(|node_id| {
+                        graph
+                            .iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
+                            .map(|neighbour_node_id| {
+                                shared_features[neighbour_node_id as usize]
+                                    .fetch_add(Feature::ONE, Ordering::Relaxed);
+                                neighbour_node_id
+                            })
+                    })
+                    .collect::<Vec<NodeT>>();
+            } else {
+                // We compute the next bucket of nodes, i.e. the next step of the frontier.
+                bucket.into_par_iter().for_each(|node_id| {
                     graph
                         .iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
-                        .map(|neighbour_node_id| {
+                        .for_each(|neighbour_node_id| {
                             shared_features[neighbour_node_id as usize]
                                 .fetch_add(Feature::ONE, Ordering::Relaxed);
-                            neighbour_node_id
-                        })
-                })
-                .collect::<Vec<NodeT>>();
+                        });
+                });
+                return;
+            }
         }
     }
 }

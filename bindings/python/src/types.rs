@@ -10,7 +10,7 @@ where
 
 impl<T> From<T> for ThreadDataRaceAware<T> {
     fn from(value: T) -> Self {
-        Self{t: value}
+        Self { t: value }
     }
 }
 
