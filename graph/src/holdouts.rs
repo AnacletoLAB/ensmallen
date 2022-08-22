@@ -541,28 +541,24 @@ impl Graph {
         }
 
         build_graph_from_integers(
-            Some(
-                negative_edges_hashset
-                    .into_par_iter()
-                    .map(|edge| unsafe {
-                        let (src, dst) = self.decode_edge(edge);
-                        (
-                            0,
-                            (
-                                src,
-                                dst,
-                                if sample_edge_types {
-                                    self.get_unchecked_random_scale_free_edge_type(
-                                        random_state.wrapping_mul(edge),
-                                    )
-                                } else {
-                                    None
-                                },
-                                WeightT::NAN,
-                            ),
-                        )
-                    }),
-            ),
+            Some(negative_edges_hashset.into_par_iter().map(|edge| unsafe {
+                let (src, dst) = self.decode_edge(edge);
+                (
+                    0,
+                    (
+                        src,
+                        dst,
+                        if sample_edge_types {
+                            self.get_unchecked_random_scale_free_edge_type(
+                                random_state.wrapping_mul(edge),
+                            )
+                        } else {
+                            None
+                        },
+                        WeightT::NAN,
+                    ),
+                )
+            })),
             self.nodes.clone(),
             self.node_types.clone(),
             self.edge_types
@@ -625,6 +621,7 @@ impl Graph {
         }
 
         let support = support.unwrap_or(&self);
+        let mut random_state = splitmix64(random_state.unwrap_or(42));
 
         let graph_filter = self.get_graph_sampling_filter(
             sample_only_edges_with_heterogeneous_node_types,
@@ -645,45 +642,83 @@ impl Graph {
             None
         };
 
-        let random_state = random_state.unwrap_or(0xbadf00d);
+        let mut edges_hashset = HashSet::with_capacity(number_of_samples as usize);
+        let mut sampling_round: usize = 0;
 
-        let mut edge_ids = self
-            .par_iter_directed_edge_node_ids_and_edge_type_id_and_edge_weight()
-            .filter(|&(_, src, dst, _, _)| graph_filter(src, dst))
-            .filter(|(_, _, _, edge_type_id, _)| {
-                edge_type_ids.as_ref().map_or(true, |edge_type_ids| {
-                    edge_type_ids
-                        .iter()
-                        .any(|this_edge_type_id| this_edge_type_id == edge_type_id)
-                })
-            })
-            .filter(|&(_, src, dst, _, _)| self.is_directed() || src <= dst)
-            .map(|(edge_id, _, _, _, _)| edge_id)
-            .collect::<Vec<EdgeT>>();
+        // randomly extract negative edges until we have the choosen number
+        while edges_hashset.len() < number_of_samples as usize {
+            // generate two random_states for reproducibility porpouses
+            random_state = splitmix64(random_state as u64) as EdgeT;
 
-        // initialize the seed for a re-producible shuffle
-        let mut rnd = SmallRng::seed_from_u64(splitmix64(random_state as u64));
-        edge_ids.shuffle(&mut rnd);
+            sampling_round += 1;
+
+            let sampling_filter_map = |edge_id| {
+                let (src, dst) = unsafe { self.get_unchecked_node_ids_from_edge_id(edge_id) };
+                let edge_type_id = unsafe { self.get_unchecked_edge_type_id_from_edge_id(edge_id) };
+                if !self.is_directed() && src > dst {
+                    return None;
+                }
+
+                if edge_type_ids.as_ref().map_or(false, |edge_type_ids| {
+                    !edge_type_ids.iter().any(|this_edge_type_id| {
+                        match (this_edge_type_id, edge_type_id) {
+                            (None, None) => true,
+                            (Some(e1), Some(e2)) => *e1 == e2,
+                            _ => false,
+                        }
+                    })
+                }) {
+                    return None;
+                }
+
+                if !graph_filter(src, dst) {
+                    return None;
+                }
+
+                if edges_hashset.contains(&edge_id) {
+                    return None;
+                }
+
+                Some(edge_id)
+            };
+
+            // generate the random edge-sources
+            let sampled_edge_ids = self
+                .par_iter_random_uniform_edge_ids(number_of_samples as usize, random_state)
+                .filter_map(|edge_id| sampling_filter_map(edge_id))
+                .collect::<Vec<EdgeT>>();
+
+            for edge_id in sampled_edge_ids.iter() {
+                if edges_hashset.len() >= number_of_samples as usize {
+                    break;
+                }
+                edges_hashset.insert(*edge_id);
+            }
+
+            if sampling_round > 10_000 {
+                return Err(concat!(
+                    "Using the provided filters on the current graph instance it ",
+                    "was not possible to sample a new positive edge after 10K sampling ",
+                    "rounds."
+                )
+                .to_string());
+            }
+        }
 
         build_graph_from_integers(
-            Some(
-                edge_ids
-                    .into_par_iter()
-                    .take(number_of_samples)
-                    .map(|edge_id| unsafe {
-                        let (src, dst) = self.get_unchecked_node_ids_from_edge_id(edge_id);
-                        (
-                            0,
-                            (
-                                src,
-                                dst,
-                                self.get_unchecked_edge_type_id_from_edge_id(edge_id),
-                                self.get_unchecked_edge_weight_from_edge_id(edge_id)
-                                    .unwrap_or(f32::NAN),
-                            ),
-                        )
-                    }),
-            ),
+            Some(edges_hashset.into_par_iter().map(|edge_id| unsafe {
+                let (src, dst) = self.get_unchecked_node_ids_from_edge_id(edge_id);
+                (
+                    0,
+                    (
+                        src,
+                        dst,
+                        self.get_unchecked_edge_type_id_from_edge_id(edge_id),
+                        self.get_unchecked_edge_weight_from_edge_id(edge_id)
+                            .unwrap_or(f32::NAN),
+                    ),
+                )
+            })),
             self.nodes.clone(),
             self.node_types.clone(),
             self.edge_types

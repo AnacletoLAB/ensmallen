@@ -145,7 +145,7 @@ pub fn create_memory_mapped_numpy_array(
         .as_ptr();
 
     // put the mmap in the python heap to ensure memory safety
-    let container = PyClassInitializer::from(PyMemoryMapped::from(PyMemoryMapped { mmap: mmap }))
+    let container = PyClassInitializer::from(PyMemoryMapped { mmap: mmap })
         .create_cell(py)
         .expect("Failed to create slice container");
 
@@ -242,7 +242,7 @@ pub fn load_memory_mapped_numpy_array(
         .as_ptr();
 
     // put the mmap in the python heap to ensure memory safety
-    let container = PyClassInitializer::from(PyMemoryMapped::from(PyMemoryMapped { mmap: mmap }))
+    let container = PyClassInitializer::from(PyMemoryMapped { mmap: mmap })
         .create_cell(py)
         .expect("Failed to create slice container");
 

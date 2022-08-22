@@ -42,3 +42,4 @@ notebooks_and_scripts/downloads/*
 notebooks_and_scripts/cached_webpages/*
 wheels_avx
 wheels_no_avx
+.cargo-ok 

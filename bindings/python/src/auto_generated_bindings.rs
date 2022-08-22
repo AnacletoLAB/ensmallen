@@ -16341,7 +16341,7 @@ impl Graph {
     #[staticmethod]
     #[automatically_generated_binding]
     #[pyo3(
-        text_signature = "(directed, node_type_path, node_type_list_separator, node_types_column_number, node_types_column, node_types_ids_column_number, node_types_ids_column, node_types_number, numeric_node_type_ids, minimum_node_type_id, node_type_list_header, node_type_list_support_balanced_quotes, node_type_list_rows_to_skip, node_type_list_is_correct, node_type_list_max_rows_number, node_type_list_comment_symbol, load_node_type_list_in_parallel, node_path, node_list_separator, node_list_header, node_list_support_balanced_quotes, node_list_rows_to_skip, node_list_is_correct, node_list_max_rows_number, node_list_comment_symbol, default_node_type, nodes_column_number, nodes_column, node_types_separator, node_list_node_types_column_number, node_list_node_types_column, node_ids_column, node_ids_column_number, nodes_number, minimum_node_id, numeric_node_ids, node_list_numeric_node_type_ids, skip_node_types_if_unavailable, load_node_list_in_parallel, edge_type_path, edge_types_column_number, edge_types_column, edge_types_ids_column_number, edge_types_ids_column, edge_types_number, numeric_edge_type_ids, minimum_edge_type_id, edge_type_list_separator, edge_type_list_header, edge_type_list_support_balanced_quotes, edge_type_list_rows_to_skip, edge_type_list_is_correct, edge_type_list_max_rows_number, edge_type_list_comment_symbol, load_edge_type_list_in_parallel, edge_path, edge_list_separator, edge_list_header, edge_list_support_balanced_quotes, edge_list_rows_to_skip, sources_column_number, sources_column, destinations_column_number, destinations_column, edge_list_edge_types_column_number, edge_list_edge_types_column, default_edge_type, weights_column_number, weights_column, default_weight, edge_ids_column, edge_ids_column_number, edge_list_numeric_edge_type_ids, edge_list_numeric_node_ids, skip_weights_if_unavailable, skip_edge_types_if_unavailable, edge_list_is_complete, edge_list_may_contain_duplicates, edge_list_is_sorted, edge_list_is_correct, edge_list_max_rows_number, edge_list_comment_symbol, edges_number, load_edge_list_in_parallel, verbose, may_have_singletons, may_have_singleton_with_selfloops, name)"
+        text_signature = "(directed, node_type_path, node_type_list_separator, node_types_column_number, node_types_column, node_types_ids_column_number, node_types_ids_column, node_types_number, numeric_node_type_ids, minimum_node_type_id, node_type_list_header, node_type_list_support_balanced_quotes, node_type_list_rows_to_skip, node_type_list_is_correct, node_type_list_max_rows_number, node_type_list_comment_symbol, load_node_type_list_in_parallel, node_path, node_list_separator, node_list_header, node_list_support_balanced_quotes, node_list_rows_to_skip, node_list_is_correct, node_list_max_rows_number, node_list_comment_symbol, default_node_type, nodes_column_number, nodes_column, node_types_separator, node_list_node_types_column_number, node_list_node_types_column, node_ids_column, node_ids_column_number, nodes_number, minimum_node_id, numeric_node_ids, node_list_numeric_node_type_ids, skip_node_types_if_unavailable, load_node_list_in_parallel, edge_type_path, edge_types_column_number, edge_types_column, edge_types_ids_column_number, edge_types_ids_column, edge_types_number, numeric_edge_type_ids, minimum_edge_type_id, edge_type_list_separator, edge_type_list_header, edge_type_list_support_balanced_quotes, edge_type_list_rows_to_skip, edge_type_list_is_correct, edge_type_list_max_rows_number, edge_type_list_comment_symbol, load_edge_type_list_in_parallel, edge_path, edge_list_separator, edge_list_header, edge_list_support_balanced_quotes, edge_list_rows_to_skip, sources_column_number, sources_column, destinations_column_number, destinations_column, edge_list_edge_types_column_number, edge_list_edge_types_column, default_edge_type, weights_column_number, weights_column, default_weight, edge_ids_column, edge_ids_column_number, edge_list_numeric_edge_type_ids, edge_list_numeric_node_ids, skip_weights_if_unavailable, skip_edge_types_if_unavailable, edge_list_is_complete, edge_list_may_contain_duplicates, edge_list_is_sorted, edge_list_is_correct, edge_list_max_rows_number, edge_list_comment_symbol, edges_number, load_edge_list_in_parallel, remove_chevrons, remove_spaces, verbose, may_have_singletons, may_have_singleton_with_selfloops, name)"
     )]
     /// Return graph renderized from given CSVs or TSVs-like files.
     ///
@@ -16505,6 +16505,10 @@ impl Graph {
     ///     The expected number of edges. Note that this must be the EXACT number of edges in the graph.
     /// load_edge_list_in_parallel: Optional[bool]
     ///     Whether to load the edge list in parallel. Note that, if the edge IDs indices are not given, it is NOT possible to load a sorted edge list. Similarly, when loading in parallel, without edge IDs, the edges may not be loaded in a deterministic order.
+    /// remove_chevrons: Optional[bool]
+    ///     Whether remove chevrons while reading elements.
+    /// remove_spaces: Optional[bool]
+    ///     Whether remove spaces while reading elements.
     /// verbose: Optional[bool]
     ///     Whether to show a loading bar while reading the files. Note that, if parallel loading is enabled, loading bars will not be showed because they are a synchronization bottleneck.
     /// may_have_singletons: Optional[bool]
@@ -16601,6 +16605,8 @@ impl Graph {
         edge_list_comment_symbol: Option<String>,
         edges_number: Option<EdgeT>,
         load_edge_list_in_parallel: Option<bool>,
+        remove_chevrons: Option<bool>,
+        remove_spaces: Option<bool>,
         verbose: Option<bool>,
         may_have_singletons: Option<bool>,
         may_have_singleton_with_selfloops: Option<bool>,
@@ -16691,6 +16697,8 @@ impl Graph {
             edge_list_comment_symbol.into(),
             edges_number.into(),
             load_edge_list_in_parallel.into(),
+            remove_chevrons.into(),
+            remove_spaces.into(),
             verbose.into(),
             may_have_singletons.into(),
             may_have_singleton_with_selfloops.into(),
@@ -24133,7 +24141,7 @@ pub fn register_edge_list_utils(py: Python, m: &PyModule) -> PyResult<()> {
 #[pyfunction]
 #[automatically_generated_binding]
 #[pyo3(
-    text_signature = "(original_edge_path, target_edge_path, directed, original_node_path, original_node_list_separator, original_node_list_header, original_node_list_support_balanced_quotes, node_list_rows_to_skip, node_list_is_correct, node_list_max_rows_number, node_list_comment_symbol, original_nodes_column_number, original_nodes_column, nodes_number, original_minimum_node_id, original_numeric_node_ids, original_load_node_list_in_parallel, original_edge_type_path, original_edge_types_column_number, original_edge_types_column, edge_types_number, original_numeric_edge_type_ids, original_minimum_edge_type_id, original_edge_type_list_separator, original_edge_type_list_header, original_edge_type_list_support_balanced_quotes, edge_type_list_rows_to_skip, edge_type_list_is_correct, edge_type_list_max_rows_number, edge_type_list_comment_symbol, load_edge_type_list_in_parallel, original_edge_list_separator, original_edge_list_header, original_edge_list_support_balanced_quotes, original_sources_column_number, original_sources_column, original_destinations_column_number, original_destinations_column, original_edge_list_edge_types_column, original_edge_list_edge_types_column_number, original_weights_column, original_weights_column_number, target_edge_list_separator, target_edge_list_header, target_sources_column, target_sources_column_number, target_destinations_column, target_destinations_column_number, target_edge_list_edge_types_column, target_edge_list_edge_types_column_number, target_weights_column, target_weights_column_number, target_node_path, target_node_list_separator, target_node_list_header, target_nodes_column, target_nodes_column_number, target_edge_type_list_path, target_edge_type_list_separator, target_edge_type_list_header, target_edge_type_list_edge_types_column, target_edge_type_list_edge_types_column_number, comment_symbol, default_edge_type, default_weight, max_rows_number, rows_to_skip, edges_number, skip_edge_types_if_unavailable, skip_weights_if_unavailable, numeric_rows_are_surely_smaller_than_original, verbose, name)"
+    text_signature = "(original_edge_path, target_edge_path, directed, original_node_path, original_node_list_separator, original_node_list_header, original_node_list_support_balanced_quotes, node_list_rows_to_skip, node_list_is_correct, node_list_max_rows_number, node_list_comment_symbol, original_nodes_column_number, original_nodes_column, nodes_number, original_minimum_node_id, original_numeric_node_ids, original_load_node_list_in_parallel, original_edge_type_path, original_edge_types_column_number, original_edge_types_column, edge_types_number, original_numeric_edge_type_ids, original_minimum_edge_type_id, original_edge_type_list_separator, original_edge_type_list_header, original_edge_type_list_support_balanced_quotes, edge_type_list_rows_to_skip, edge_type_list_is_correct, edge_type_list_max_rows_number, edge_type_list_comment_symbol, load_edge_type_list_in_parallel, original_edge_list_separator, original_edge_list_header, original_edge_list_support_balanced_quotes, original_sources_column_number, original_sources_column, original_destinations_column_number, original_destinations_column, original_edge_list_edge_types_column, original_edge_list_edge_types_column_number, original_weights_column, original_weights_column_number, target_edge_list_separator, target_edge_list_header, target_sources_column, target_sources_column_number, target_destinations_column, target_destinations_column_number, target_edge_list_edge_types_column, target_edge_list_edge_types_column_number, target_weights_column, target_weights_column_number, target_node_path, target_node_list_separator, target_node_list_header, target_nodes_column, target_nodes_column_number, target_edge_type_list_path, target_edge_type_list_separator, target_edge_type_list_header, target_edge_type_list_edge_types_column, target_edge_type_list_edge_types_column_number, remove_chevrons, remove_spaces, comment_symbol, default_edge_type, default_weight, max_rows_number, rows_to_skip, edges_number, skip_edge_types_if_unavailable, skip_weights_if_unavailable, numeric_rows_are_surely_smaller_than_original, verbose, name)"
 )]
 /// Create a new edge list starting from given one with node IDs densified.
 ///
@@ -24207,6 +24215,8 @@ pub fn convert_edge_list_to_numeric(
     target_edge_type_list_header: Option<bool>,
     target_edge_type_list_edge_types_column: Option<String>,
     target_edge_type_list_edge_types_column_number: Option<usize>,
+    remove_chevrons: Option<bool>,
+    remove_spaces: Option<bool>,
     comment_symbol: Option<String>,
     default_edge_type: Option<String>,
     default_weight: Option<WeightT>,
@@ -24283,6 +24293,8 @@ pub fn convert_edge_list_to_numeric(
             target_edge_type_list_header.into(),
             target_edge_type_list_edge_types_column.into(),
             target_edge_type_list_edge_types_column_number.into(),
+            remove_chevrons.into(),
+            remove_spaces.into(),
             comment_symbol.into(),
             default_edge_type.into(),
             default_weight.into(),
@@ -24846,7 +24858,7 @@ pub fn add_numeric_id_to_csv(
 #[pyfunction]
 #[automatically_generated_binding]
 #[pyo3(
-    text_signature = "(original_edge_path, target_edge_path, directed, original_node_type_path, original_node_type_list_separator, original_node_types_column_number, original_node_types_column, original_numeric_node_type_ids, original_minimum_node_type_id, original_node_type_list_header, original_node_type_list_support_balanced_quotes, original_node_type_list_rows_to_skip, original_node_type_list_max_rows_number, original_node_type_list_comment_symbol, original_load_node_type_list_in_parallel, original_node_type_list_is_correct, node_types_number, target_node_type_list_path, target_node_type_list_separator, target_node_type_list_node_types_column_number, target_node_type_list_node_types_column, target_node_type_list_header, original_node_path, original_node_list_separator, original_node_list_header, original_node_list_support_balanced_quotes, node_list_rows_to_skip, node_list_is_correct, node_list_max_rows_number, node_list_comment_symbol, default_node_type, original_nodes_column_number, original_nodes_column, original_node_types_separator, original_node_list_node_types_column_number, original_node_list_node_types_column, nodes_number, original_minimum_node_id, original_numeric_node_ids, original_node_list_numeric_node_type_ids, original_skip_node_types_if_unavailable, original_load_node_list_in_parallel, maximum_node_id, target_node_path, target_node_list_separator, target_node_list_header, target_nodes_column, target_nodes_column_number, target_node_types_separator, target_node_list_node_types_column, target_node_list_node_types_column_number, original_edge_type_path, original_edge_type_list_separator, original_edge_types_column_number, original_edge_types_column, original_numeric_edge_type_ids, original_minimum_edge_type_id, original_edge_type_list_header, original_edge_type_list_support_balanced_quotes, edge_type_list_rows_to_skip, edge_type_list_max_rows_number, edge_type_list_comment_symbol, load_edge_type_list_in_parallel, edge_type_list_is_correct, edge_types_number, target_edge_type_list_path, target_edge_type_list_separator, target_edge_type_list_edge_types_column_number, target_edge_type_list_edge_types_column, target_edge_type_list_header, original_edge_list_separator, original_edge_list_header, original_edge_list_support_balanced_quotes, original_sources_column_number, original_sources_column, original_destinations_column_number, original_destinations_column, original_edge_list_edge_types_column_number, original_edge_list_edge_types_column, default_edge_type, original_weights_column_number, original_weights_column, default_weight, original_edge_list_numeric_node_ids, skip_weights_if_unavailable, skip_edge_types_if_unavailable, edge_list_comment_symbol, edge_list_max_rows_number, edge_list_rows_to_skip, load_edge_list_in_parallel, edges_number, target_edge_list_separator, numeric_rows_are_surely_smaller_than_original, sort_temporary_directory, verbose, name)"
+    text_signature = "(original_edge_path, target_edge_path, directed, original_node_type_path, original_node_type_list_separator, original_node_types_column_number, original_node_types_column, original_numeric_node_type_ids, original_minimum_node_type_id, original_node_type_list_header, original_node_type_list_support_balanced_quotes, original_node_type_list_rows_to_skip, original_node_type_list_max_rows_number, original_node_type_list_comment_symbol, original_load_node_type_list_in_parallel, original_node_type_list_is_correct, node_types_number, target_node_type_list_path, target_node_type_list_separator, target_node_type_list_node_types_column_number, target_node_type_list_node_types_column, target_node_type_list_header, original_node_path, original_node_list_separator, original_node_list_header, original_node_list_support_balanced_quotes, node_list_rows_to_skip, node_list_is_correct, node_list_max_rows_number, node_list_comment_symbol, default_node_type, original_nodes_column_number, original_nodes_column, original_node_types_separator, original_node_list_node_types_column_number, original_node_list_node_types_column, nodes_number, original_minimum_node_id, original_numeric_node_ids, original_node_list_numeric_node_type_ids, original_skip_node_types_if_unavailable, original_load_node_list_in_parallel, maximum_node_id, target_node_path, target_node_list_separator, target_node_list_header, target_nodes_column, target_nodes_column_number, target_node_types_separator, target_node_list_node_types_column, target_node_list_node_types_column_number, original_edge_type_path, original_edge_type_list_separator, original_edge_types_column_number, original_edge_types_column, original_numeric_edge_type_ids, original_minimum_edge_type_id, original_edge_type_list_header, original_edge_type_list_support_balanced_quotes, edge_type_list_rows_to_skip, edge_type_list_max_rows_number, edge_type_list_comment_symbol, load_edge_type_list_in_parallel, edge_type_list_is_correct, edge_types_number, target_edge_type_list_path, target_edge_type_list_separator, target_edge_type_list_edge_types_column_number, target_edge_type_list_edge_types_column, target_edge_type_list_header, original_edge_list_separator, original_edge_list_header, original_edge_list_support_balanced_quotes, original_sources_column_number, original_sources_column, original_destinations_column_number, original_destinations_column, original_edge_list_edge_types_column_number, original_edge_list_edge_types_column, default_edge_type, original_weights_column_number, original_weights_column, default_weight, original_edge_list_numeric_node_ids, skip_weights_if_unavailable, skip_edge_types_if_unavailable, edge_list_comment_symbol, edge_list_max_rows_number, edge_list_rows_to_skip, load_edge_list_in_parallel, edges_number, target_edge_list_separator, remove_chevrons, remove_spaces, numeric_rows_are_surely_smaller_than_original, sort_temporary_directory, verbose, name)"
 )]
 /// TODO: write the docstrin
 pub fn build_optimal_lists_files(
@@ -24942,6 +24954,8 @@ pub fn build_optimal_lists_files(
     load_edge_list_in_parallel: Option<bool>,
     edges_number: Option<EdgeT>,
     target_edge_list_separator: Option<char>,
+    remove_chevrons: Option<bool>,
+    remove_spaces: Option<bool>,
     numeric_rows_are_surely_smaller_than_original: Option<bool>,
     sort_temporary_directory: Option<String>,
     verbose: Option<bool>,
@@ -25042,6 +25056,8 @@ pub fn build_optimal_lists_files(
                 load_edge_list_in_parallel.into(),
                 edges_number.into(),
                 target_edge_list_separator.into(),
+                remove_chevrons.into(),
+                remove_spaces.into(),
                 numeric_rows_are_surely_smaller_than_original.into(),
                 sort_temporary_directory.into(),
                 verbose.into(),
@@ -25357,7 +25373,7 @@ pub fn convert_undirected_edge_list_to_directed(
 #[pyfunction]
 #[automatically_generated_binding]
 #[pyo3(
-    text_signature = "(path, separator, header, sources_column, sources_column_number, destinations_column, destinations_column_number, comment_symbol, max_rows_number, rows_to_skip, edges_number, load_edge_list_in_parallel, verbose, name)"
+    text_signature = "(path, separator, header, sources_column, sources_column_number, destinations_column, destinations_column_number, comment_symbol, max_rows_number, rows_to_skip, edges_number, load_edge_list_in_parallel, remove_chevrons, remove_spaces, verbose, name)"
 )]
 /// Return minimum and maximum node number from given numeric edge list.
 ///
@@ -25387,6 +25403,10 @@ pub fn convert_undirected_edge_list_to_directed(
 ///     Number of edges in the edge list.
 /// load_edge_list_in_parallel: Optional[bool]
 ///     Whether to execute the task in parallel or sequential. Generally, parallel is preferable.
+/// remove_chevrons: Optional[bool]
+///     Whether remove chevrons while reading elements.
+/// remove_spaces: Optional[bool]
+///     Whether remove spaces while reading elements.
 /// verbose: Optional[bool]
 ///     Whether to show the loading bar while processing the file.
 /// name: Optional[str]
@@ -25415,6 +25435,8 @@ pub fn get_minmax_node_from_numeric_edge_list(
     rows_to_skip: Option<usize>,
     edges_number: Option<EdgeT>,
     load_edge_list_in_parallel: Option<bool>,
+    remove_chevrons: Option<bool>,
+    remove_spaces: Option<bool>,
     verbose: Option<bool>,
     name: Option<String>,
 ) -> PyResult<(EdgeT, EdgeT, EdgeT)> {
@@ -25433,6 +25455,8 @@ pub fn get_minmax_node_from_numeric_edge_list(
                 rows_to_skip.into(),
                 edges_number.into(),
                 load_edge_list_in_parallel.into(),
+                remove_chevrons.into(),
+                remove_spaces.into(),
                 verbose.into(),
                 name.into()
             ))?
@@ -25506,7 +25530,7 @@ pub fn parse_wikipedia_graph(
 #[pyfunction]
 #[automatically_generated_binding]
 #[pyo3(
-    text_signature = "(path, separator, header, support_balanced_quotes, sources_column, sources_column_number, destinations_column, destinations_column_number, comment_symbol, max_rows_number, rows_to_skip, edges_number, load_edge_list_in_parallel, verbose, name)"
+    text_signature = "(path, separator, header, support_balanced_quotes, sources_column, sources_column_number, destinations_column, destinations_column_number, comment_symbol, max_rows_number, rows_to_skip, edges_number, load_edge_list_in_parallel, remove_chevrons, remove_spaces, verbose, name)"
 )]
 /// Return number of selfloops in the given edge list.
 ///
@@ -25538,6 +25562,10 @@ pub fn parse_wikipedia_graph(
 ///     Number of edges in the edge list.
 /// load_edge_list_in_parallel: Optional[bool]
 ///     Whether to execute the task in parallel or sequential. Generally, parallel is preferable.
+/// remove_chevrons: Optional[bool]
+///     Whether remove chevrons while reading elements.
+/// remove_spaces: Optional[bool]
+///     Whether remove spaces while reading elements.
 /// verbose: Optional[bool]
 ///     Whether to show the loading bar while processing the file.
 /// name: Optional[str]
@@ -25557,6 +25585,8 @@ pub fn is_numeric_edge_list(
     rows_to_skip: Option<usize>,
     edges_number: Option<EdgeT>,
     load_edge_list_in_parallel: Option<bool>,
+    remove_chevrons: Option<bool>,
+    remove_spaces: Option<bool>,
     verbose: Option<bool>,
     name: Option<String>,
 ) -> PyResult<bool> {
@@ -25574,6 +25604,8 @@ pub fn is_numeric_edge_list(
         rows_to_skip.into(),
         edges_number.into(),
         load_edge_list_in_parallel.into(),
+        remove_chevrons.into(),
+        remove_spaces.into(),
         verbose.into(),
         name.into()
     ))?
@@ -25583,12 +25615,106 @@ pub fn is_numeric_edge_list(
 #[pyfunction]
 #[automatically_generated_binding]
 #[pyo3(
-    text_signature = "(original_node_path, target_node_path, original_node_type_path, original_node_type_list_separator, original_node_types_column_number, original_node_types_column, node_types_number, original_numeric_node_type_ids, original_minimum_node_type_id, original_node_type_list_header, original_node_type_list_support_balanced_quotes, original_node_type_list_rows_to_skip, original_node_type_list_is_correct, original_node_type_list_max_rows_number, original_node_type_list_comment_symbol, original_load_node_type_list_in_parallel, target_node_type_list_path, target_node_type_list_separator, target_node_type_list_header, target_node_type_list_node_types_column, target_node_type_list_node_types_column_number, original_node_list_separator, original_node_list_header, original_node_list_support_balanced_quotes, node_list_rows_to_skip, node_list_max_rows_number, node_list_comment_symbol, default_node_type, original_nodes_column_number, original_nodes_column, original_node_types_separator, original_node_list_node_types_column_number, original_node_list_node_types_column, original_minimum_node_id, original_numeric_node_ids, original_node_list_numeric_node_type_ids, original_skip_node_types_if_unavailable, target_node_list_separator, target_node_list_header, target_nodes_column_number, target_nodes_column, target_node_types_separator, target_node_list_node_types_column_number, target_node_list_node_types_column, nodes_number)"
+    text_signature = "(original_node_path, target_node_path, original_node_type_path, original_node_type_list_separator, original_node_types_column_number, original_node_types_column, node_types_number, original_numeric_node_type_ids, original_minimum_node_type_id, original_node_type_list_header, original_node_type_list_support_balanced_quotes, original_node_type_list_rows_to_skip, original_node_type_list_is_correct, original_node_type_list_max_rows_number, original_node_type_list_comment_symbol, original_load_node_type_list_in_parallel, target_node_type_list_path, target_node_type_list_separator, target_node_type_list_header, target_node_type_list_node_types_column, target_node_type_list_node_types_column_number, original_node_list_separator, original_node_list_header, original_node_list_support_balanced_quotes, node_list_rows_to_skip, node_list_max_rows_number, node_list_comment_symbol, default_node_type, original_nodes_column_number, original_nodes_column, original_node_types_separator, original_node_list_node_types_column_number, original_node_list_node_types_column, original_minimum_node_id, original_numeric_node_ids, original_node_list_numeric_node_type_ids, original_skip_node_types_if_unavailable, remove_chevrons, remove_spaces, target_node_list_separator, target_node_list_header, target_nodes_column_number, target_nodes_column, target_node_types_separator, target_node_list_node_types_column_number, target_node_list_node_types_column, nodes_number)"
 )]
 /// Converts the node list at given path to numeric saving in stream to file. Furthermore, returns the number of nodes that were written and their node types if any.
 ///
 /// Parameters
 /// ----------
+/// original_node_type_path: Optional[str]
+///     Path to the original list of node types.
+/// original_node_type_list_separator: Optional[str]
+///     Separator to be used for the original node type list.
+/// original_node_types_column_number: Optional[int]
+///     Number of the node types column to be used for the original node types list.
+/// original_node_types_column: Optional[str]
+///     Name of the node types column to be used for the original node types list.
+/// node_types_number: Optional[int]
+///     Number of node types present in the provided original list of node types. If provided, it will allow to make assumptions and to load the node types faster.
+/// original_numeric_node_type_ids: Optional[bool]
+///     Whether to load the node types as numeric.
+/// original_minimum_node_type_id: Optional[int]
+///     The minimum numeric node type ID. If provided, it will allow for additional assumptions in the creation of the node types vocabulary.
+/// original_node_type_list_header: Optional[bool]
+///     Whether the provided node type list has a header.
+/// original_node_type_list_support_balanced_quotes: Optional[bool]
+///     Whether to support balanced quotes while reading the node type list.
+/// original_node_type_list_rows_to_skip: Optional[int]
+///     Number of rows to skip before starting to parse the file for the provided node type list file.
+/// original_node_type_list_is_correct: Optional[bool]
+///     Whether is it safe to assume that the provided node type list is correct.
+/// original_node_type_list_max_rows_number: Optional[int]
+///     Maximum number of rows to be read in the provided original node type list.
+/// original_node_type_list_comment_symbol: Optional[str]
+///     Symbol to be used to skip rows starting with it.
+/// original_load_node_type_list_in_parallel: Optional[bool]
+///     Whether to load the node type list in parallel.
+/// target_node_type_list_path: Optional[str]
+///     Path where to store the parsed node types (if any).
+/// target_node_type_list_separator: Optional[str]
+///     Separator to be used for the target node type list.
+/// target_node_type_list_header: Optional[bool]
+///     Whether to add header when writing the target node type list.
+/// target_node_type_list_node_types_column: Optional[str]
+///     Name of the column of the node types in the target node type list.
+/// target_node_type_list_node_types_column_number: Optional[int]
+///     Number of the column of the node types in the target node type list.
+/// original_node_path: str
+///     Path to the original list of nodes.
+/// original_node_list_separator: Optional[str]
+///     Separator to be used for rows of the original node list.
+/// original_node_list_header: Optional[bool]
+///     Whether to expect a header in the original node list file.
+/// original_node_list_support_balanced_quotes: Optional[bool]
+///     Whether to support balanced quotes while reading the node list.
+/// node_list_rows_to_skip: Optional[int]
+///     Number of rows to skip before starting to parse the original node list.
+/// node_list_max_rows_number: Optional[int]
+///     Maximum number of rows to read from the origina node list.
+/// node_list_comment_symbol: Optional[str]
+///     Symbol to use to skip rows starting with it in the original node list.
+/// default_node_type: Optional[str]
+///     Default node type to be used when none are provided or are missing for some nodes.
+/// original_nodes_column_number: Optional[int]
+///     Number of the column for the node name in the original node list.
+/// original_nodes_column: Optional[str]
+///     Name of the column for the node name in the original node list.
+/// original_node_types_separator: Optional[str]
+///     Separator to be used for the node types within the original node list.
+/// original_node_list_node_types_column_number: Optional[int]
+///     Number of the column for the node types in the original node list.
+/// original_node_list_node_types_column: Optional[str]
+///     Name of the column for the node types in the original node list.
+/// original_minimum_node_id: Optional[int]
+///     The minimum numeric node ID. If provided, it will allow for additional assumptions in the creation of the nodes vocabulary.
+/// original_numeric_node_ids: Optional[bool]
+///     Whether to load the node names as numeric.
+/// original_node_list_numeric_node_type_ids: Optional[bool]
+///     Whether to load the node type names from the original node list as numeric.
+/// original_skip_node_types_if_unavailable: Optional[bool]
+///     Whether to skip the node types if the provided node types column is not provided.
+/// remove_chevrons: Optional[bool]
+///     Whether remove chevrons while reading elements.
+/// remove_spaces: Optional[bool]
+///     Whether remove spaces while reading elements.
+/// target_node_path: str
+///     Path where to store the target node paths.
+/// target_node_list_separator: Optional[str]
+///     Separator to be used for the target node list.
+/// target_node_list_header: Optional[bool]
+///     Whether to add an header to the target node list.
+/// target_nodes_column_number: Optional[int]
+///     Number of the column where to store the node names.
+/// target_nodes_column: Optional[str]
+///     Name of the column where to store the node names.
+/// target_node_types_separator: Optional[str]
+///     Separator to be used for the node types within the target node list.
+/// target_node_list_node_types_column_number: Optional[int]
+///     Number for the column with the node type names within the target node list.
+/// target_node_list_node_types_column: Optional[str]
+///     Name for the column with the node type names within the target node list.
+/// nodes_number: Optional[int]
+///     Number of the nodes in the original node list.
 ///
 pub fn convert_node_list_node_types_to_numeric(
     original_node_path: String,
@@ -25628,6 +25754,8 @@ pub fn convert_node_list_node_types_to_numeric(
     original_numeric_node_ids: Option<bool>,
     original_node_list_numeric_node_type_ids: Option<bool>,
     original_skip_node_types_if_unavailable: Option<bool>,
+    remove_chevrons: Option<bool>,
+    remove_spaces: Option<bool>,
     target_node_list_separator: Option<char>,
     target_node_list_header: Option<bool>,
     target_nodes_column_number: Option<usize>,
@@ -25676,6 +25804,8 @@ pub fn convert_node_list_node_types_to_numeric(
             original_numeric_node_ids.into(),
             original_node_list_numeric_node_type_ids.into(),
             original_skip_node_types_if_unavailable.into(),
+            remove_chevrons.into(),
+            remove_spaces.into(),
             target_node_list_separator.into(),
             target_node_list_header.into(),
             target_nodes_column_number.into(),

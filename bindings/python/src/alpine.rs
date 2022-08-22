@@ -6,10 +6,11 @@ use super::*;
 use cpu_models::{
     AnchorFeatureTypes, AnchorTypes, AnchorsInferredNodeEmbeddingModel, BasicSPINE, BasicWINE,
 };
-use indicatif::ProgressIterator;
+use indicatif::ParallelProgressIterator;
 use indicatif::{ProgressBar, ProgressStyle};
 use mmap::*;
 use numpy::{PyArray1, PyArray2};
+use rayon::prelude::*;
 use rayon::prelude::*;
 use std::convert::TryFrom;
 use types::ThreadDataRaceAware;
@@ -251,18 +252,18 @@ where
                         !is_fortran,
                     );
 
-                    let casted_transposed_embedding = transposed_embedding.cast_as::<PyArray2<$dtype>>(gil.python())?;
+                    let casted_transposed_embedding = ThreadDataRaceAware::from(transposed_embedding.cast_as::<PyArray2<$dtype>>(gil.python())?);
 
                     if is_fortran {
-                        embedding_slice.as_ref().chunks(number_of_nodes).progress_with(progress_bar).enumerate().for_each(|(j, feature)|{
+                        embedding_slice.as_ref().par_chunks(number_of_nodes).progress_with(progress_bar).enumerate().for_each(|(j, feature)|{
                             feature.iter().copied().enumerate().for_each(|(i, feature_value)| unsafe {
-                                *(casted_transposed_embedding.uget_mut([i, j])) = feature_value;
+                                *(casted_transposed_embedding.t.uget_mut([i, j])) = feature_value;
                             });
                         });
                     } else {
-                        embedding_slice.as_ref().chunks(embedding_size).progress_with(progress_bar).enumerate().for_each(|(i, node_embedding)|{
+                        embedding_slice.as_ref().par_chunks(embedding_size).progress_with(progress_bar).enumerate().for_each(|(i, node_embedding)|{
                             node_embedding.iter().copied().enumerate().for_each(|(j, feature_value)| unsafe {
-                                *(casted_transposed_embedding.uget_mut([i, j])) = feature_value;
+                                *(casted_transposed_embedding.t.uget_mut([i, j])) = feature_value;
                             });
                         });
                     }
