@@ -6,6 +6,7 @@ use core::sync::atomic::Ordering;
 use ensmallen_traits::prelude::*;
 use graph::{Graph, NodeT};
 use rayon::prelude::*;
+use vec_rand::{splitmix64, IteratorSuss};
 
 #[derive(Clone, Debug)]
 pub struct BasicWINE {
@@ -13,6 +14,10 @@ pub struct BasicWINE {
     baine: BasicAnchorsInferredNodeEmbedding,
     /// Length of the random walk.
     walk_length: usize,
+    /// Random state to use for the neighbours sampling.
+    random_state: u64,
+    /// Maximum number of neighbours to sample.
+    max_neighbours: usize,
 }
 
 impl BasicWINE {
@@ -30,6 +35,8 @@ impl BasicWINE {
         Ok(Self {
             baine: BasicAnchorsInferredNodeEmbedding::new(embedding_size, verbose)?,
             walk_length: must_not_be_zero(walk_length, 2, "Random walk length")?,
+            random_state: 42,
+            max_neighbours: 1000,
         })
     }
 
@@ -43,6 +50,14 @@ pub trait WINEBased {
 
     fn get_walk_length(&self) -> usize {
         self.get_basic_wine().walk_length
+    }
+
+    fn get_random_state(&self) -> u64 {
+        self.get_basic_wine().random_state
+    }
+
+    fn get_max_neighbours(&self) -> usize {
+        self.get_basic_wine().max_neighbours
     }
 }
 
@@ -66,12 +81,16 @@ where
         // We wrap the features object in an unsafe cell so
         // it may be shared among threads.
         let shared_features = Feature::from_mut_slice(features);
+        let max_neighbours = self.get_max_neighbours();
         let mut random_walk_length: Feature = Feature::ZERO;
+        let mut random_state = splitmix64(self.get_random_state());
 
         // Until the bucket is not empty we start to iterate.
         let max_depth = Feature::try_from(self.get_walk_length()).unwrap_or(Feature::MAX);
         while !bucket.is_empty() {
             random_walk_length += Feature::ONE;
+            random_state = splitmix64(random_state);
+
             if random_walk_length < max_depth {
                 // We compute the next bucket of nodes, i.e. the next step of the frontier.
                 bucket = bucket
@@ -79,6 +98,7 @@ where
                     .flat_map_iter(|node_id| {
                         graph
                             .iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
+                            .suss(max_neighbours, node_id as u64 + random_state, None)
                             .map(|neighbour_node_id| {
                                 shared_features[neighbour_node_id as usize]
                                     .fetch_add(Feature::ONE, Ordering::Relaxed);
