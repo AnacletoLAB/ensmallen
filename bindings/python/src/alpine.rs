@@ -454,7 +454,6 @@ where
         let gil = pyo3::Python::acquire_gil();
 
         let number_of_nodes = graph.inner.get_number_of_nodes() as usize;
-        let columns_number = pe!(self.get_model().get_embedding_size(&graph.inner))? as isize;
         match dtype.as_str() {
             $(
                 stringify!($dtype) => {

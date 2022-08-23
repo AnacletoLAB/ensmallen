@@ -128,21 +128,28 @@ where
         });
         // Allocate the node scores
         let mut current_bucket_size = 0;
+        let mut bucket_start = 0;
+        let mut bucket_end = 0;
         let mut number_of_buckets = 0;
-        let mut current_bucket: Vec<NodeT> = Vec::new();
-        Ok(node_ids.into_iter().filter_map(move |node_id| unsafe {
-            if number_of_buckets == embedding_size {
-                return None;
-            }
-            if current_bucket_size > number_of_edge_per_bucket {
-                current_bucket_size = 0;
-                number_of_buckets += 1;
-                return Some(core::mem::replace(&mut current_bucket, Vec::new()));
-            }
-            current_bucket_size += graph.get_unchecked_node_degree_from_node_id(node_id) as EdgeT;
-            current_bucket.push(node_id);
-            None
-        }))
+        Ok(
+            (0..(graph.get_number_of_nodes() as usize)).filter_map(move |i| unsafe {
+                let node_id = node_ids[i];
+                if number_of_buckets == embedding_size {
+                    return None;
+                }
+                if current_bucket_size > number_of_edge_per_bucket {
+                    let current_slice = &node_ids[bucket_start..bucket_end];
+                    current_bucket_size = 0;
+                    number_of_buckets += 1;
+                    bucket_start = bucket_end;
+                    return Some(current_slice.to_vec());
+                }
+                bucket_end += 1;
+                current_bucket_size +=
+                    graph.get_unchecked_node_degree_from_node_id(node_id) as EdgeT;
+                None
+            }),
+        )
     }
 }
 
@@ -173,7 +180,7 @@ where
             ));
         }
         let embedding_size = self.get_embedding_size(graph)?;
-        let number_of_score_per_bucket: f32 =
+        let score_per_bucket: f32 =
             (scores.into_par_iter().sum::<f32>() / 2.0 / embedding_size as f32).max(1.0);
 
         let mut node_ids: Vec<NodeT> = graph.get_node_ids();
@@ -182,21 +189,28 @@ where
         });
         // Allocate the node scores
         let mut current_bucket_size = 0.0;
+        let mut bucket_start = 0;
+        let mut bucket_end = 0;
         let mut number_of_buckets = 0;
-        let mut current_bucket: Vec<NodeT> = Vec::new();
-        Ok(node_ids.into_iter().filter_map(move |node_id| {
-            if number_of_buckets == embedding_size {
-                return None;
-            }
-            if current_bucket_size > number_of_score_per_bucket {
-                current_bucket_size = 0.0;
-                number_of_buckets += 1;
-                return Some(core::mem::replace(&mut current_bucket, Vec::new()));
-            }
-            current_bucket_size += scores[node_id as usize];
-            current_bucket.push(node_id);
-            None
-        }))
+
+        Ok(
+            (0..(graph.get_number_of_nodes() as usize)).filter_map(move |i| {
+                let node_id = node_ids[i];
+                if number_of_buckets == embedding_size {
+                    return None;
+                }
+                if current_bucket_size > score_per_bucket {
+                    let current_slice = &node_ids[bucket_start..bucket_end];
+                    current_bucket_size = 0.0;
+                    number_of_buckets += 1;
+                    bucket_start = bucket_end;
+                    return Some(current_slice.to_vec());
+                }
+                bucket_end += 1;
+                current_bucket_size += scores[node_id as usize];
+                None
+            }),
+        )
     }
 }
 
