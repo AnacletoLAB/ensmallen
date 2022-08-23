@@ -57,5 +57,23 @@
                 "name": "NPKG"
             }
         }
+    },
+    "GameOfThronesCharactersInteractions": {
+        "latest": {
+            "urls": [
+                "https://zenodo.org/record/7016922/files/game_of_thrones.tsv.gz"
+            ],
+            "paths": [
+                "game_of_thrones.tsv.gz"
+            ],
+            "arguments": {
+                "edge_path": "game_of_thrones.tsv",
+                "sources_column": "source",
+                "destinations_column": "destination",
+                "edge_list_edge_types_column": "edge_type",
+                "weights_column": "edge_weight",
+                "name": "Game of Thrones Characters Interactions"
+            }
+        }
     }
 }
