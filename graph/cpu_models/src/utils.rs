@@ -187,7 +187,7 @@ impl core::ops::Index<isize> for MatrixShape {
 }
 
 pub trait IntegerFeatureType:
-    Send + Sync + Integral + TryInto<usize> + TryFrom<usize> + IntoAtomic
+    Send + Sync + Integral + TryInto<usize> + TryFrom<usize> + IntoAtomic + Copy
 {
 }
 
