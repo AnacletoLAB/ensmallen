@@ -297,8 +297,8 @@ where
                 feature.len(),
             ));
         }
-        
-        if feature_number < self.get_embedding_size(graph)? {
+
+        if feature_number >= self.get_embedding_size(graph)? {
             return Err(format!(
                 "The provided feature number `{}` is higher than the dimension of the embedding `{}`.",
                 feature_number,
