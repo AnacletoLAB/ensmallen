@@ -104,29 +104,19 @@ where
             ProgressBar::hidden()
         };
 
+        depth_progress.inc(0);
+
         // Until the bucket is not empty we start to iterate.
         let max_depth = Feature::try_from(self.get_walk_length()).unwrap_or(Feature::MAX);
         while !bucket.is_empty() {
             random_walk_length += Feature::ONE;
             random_state = splitmix64(random_state);
 
-            let frontier_progress = if self.get_basic_wine().is_verbose() {
-                let pb = ProgressBar::new(bucket.len() as u64);
-                pb.set_style(ProgressStyle::default_bar().template(concat!(
-                    "frontier {spinner:.green} [{elapsed_precise}] ",
-                    "[{bar:40.cyan/blue}] ({pos}/{len}, ETA {eta})"
-                )));
-                pb
-            } else {
-                ProgressBar::hidden()
-            };
-
             if random_walk_length < max_depth {
                 // We compute the next bucket of nodes, i.e. the next step of the frontier.
                 if random_walk_length == Feature::ONE {
                     bucket = bucket
                         .into_par_iter()
-                        .progress_with(frontier_progress)
                         .flat_map_iter(|node_id| {
                             graph
                                 .iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
@@ -145,7 +135,6 @@ where
                 } else if random_walk_length == (Feature::ONE + Feature::ONE) {
                     bucket = bucket
                         .into_par_iter()
-                        .progress_with(frontier_progress)
                         .flat_map_iter(|node_id| {
                             let number_of_visits =
                                 shared_features[node_id as usize].load(Ordering::Relaxed);
@@ -161,7 +150,6 @@ where
                 } else {
                     bucket = bucket
                         .into_par_iter()
-                        .progress_with(frontier_progress)
                         .flat_map_iter(|node_id| {
                             graph
                                 .iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
@@ -177,31 +165,25 @@ where
             } else {
                 // We compute the next bucket of nodes, i.e. the next step of the frontier.
                 if random_walk_length == (Feature::ONE + Feature::ONE) {
-                    bucket
-                        .into_par_iter()
-                        .progress_with(frontier_progress)
-                        .for_each(|node_id| {
-                            let number_of_visits =
-                                shared_features[node_id as usize].load(Ordering::Relaxed);
-                            graph
-                                .iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
-                                .for_each(move |neighbour_node_id| {
-                                    shared_features[neighbour_node_id as usize]
-                                        .fetch_add(number_of_visits, Ordering::Relaxed);
-                                });
-                        });
+                    bucket.into_par_iter().for_each(|node_id| {
+                        let number_of_visits =
+                            shared_features[node_id as usize].load(Ordering::Relaxed);
+                        graph
+                            .iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
+                            .for_each(move |neighbour_node_id| {
+                                shared_features[neighbour_node_id as usize]
+                                    .fetch_add(number_of_visits, Ordering::Relaxed);
+                            });
+                    });
                 } else {
-                    bucket
-                        .into_par_iter()
-                        .progress_with(frontier_progress)
-                        .for_each(|node_id| {
-                            graph
-                                .iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
-                                .for_each(|neighbour_node_id| {
-                                    shared_features[neighbour_node_id as usize]
-                                        .fetch_add(Feature::ONE, Ordering::Relaxed);
-                                });
-                        });
+                    bucket.into_par_iter().for_each(|node_id| {
+                        graph
+                            .iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
+                            .for_each(|neighbour_node_id| {
+                                shared_features[neighbour_node_id as usize]
+                                    .fetch_add(Feature::ONE, Ordering::Relaxed);
+                            });
+                    });
                 }
                 depth_progress.inc(1);
                 return;
