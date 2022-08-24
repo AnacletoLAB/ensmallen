@@ -17,70 +17,16 @@ const ARRAY_ALIGN: usize = 64;
 /// Utility type to store the mmap the Python heap so that we can ensure proper drop
 #[pyclass]
 pub(crate) struct PyMemoryMapped {
-    mmap: MemoryMapped,
+    _mmap: MemoryMapped,
 }
-unsafe impl Send for PyMemoryMapped {}
 
-/// Create the file and init the headers, and return the raw map
-pub fn init_memory_mapped_numpy_array(
-    py: Python,
-    path: Option<&str>,
-    dtype: Dtype,
-    shape: &[intptr_t],
-    fortran_order: bool,
-) -> (MemoryMapped, usize) {
-    let dtype = dtype.into();
-
-    let num_of_elements = shape.iter().fold(1, |a, b| a * b);
-    let data_size = num_of_elements * npy_type_to_bytes_size(dtype) as isize;
-
-    #[cfg(target_endian = "little")]
-    let endianess = '<';
-    #[cfg(target_endian = "big")]
-    let endianess = '>';
-
-    let mut header = b"\x93NUMPY\x02\x00".to_vec();
-
-    let description = format!(
-        "{{'descr': '{endianess}{descr}', 'fortran_order': {fortran_order}, 'shape': ({shape}), }}",
-        endianess = endianess,
-        descr = dtype_to_descr(dtype),
-        fortran_order = if fortran_order { "True" } else { "False" },
-        shape = shape
-            .iter()
-            .map(|x| format!("{}, ", x))
-            .collect::<Vec<String>>()
-            .join(""),
-    );
-
-    let offset = description.len() + 12;
-    let padding_size = (ARRAY_ALIGN - (offset % ARRAY_ALIGN)) % ARRAY_ALIGN;
-    let aligned_len = offset + padding_size;
-
-    assert!(
-        aligned_len % ARRAY_ALIGN == 0,
-        "Error in the computation of the alignement of the npy header {} % {}",
-        aligned_len,
-        ARRAY_ALIGN,
-    );
-
-    header.extend_from_slice(&(aligned_len as u32 - 12).to_le_bytes());
-    header.extend_from_slice(description.as_bytes());
-
-    for _ in 0..padding_size {
-        header.push(b' ');
+impl From<MemoryMapped> for PyMemoryMapped {
+    fn from(other: MemoryMapped) -> Self {
+        Self { _mmap: other }
     }
-
-    // mmap the file
-    let mut mmap = MemoryMapped::new_mut(path, Some(aligned_len + data_size as usize), None)
-        .expect("Could not mmap the file");
-    // write the header to the file
-    mmap.get_slice_mut::<u8>(0, Some(aligned_len))
-        .unwrap()
-        .clone_from_slice(&header);
-
-    (mmap, aligned_len)
 }
+
+unsafe impl Send for PyMemoryMapped {}
 
 pub fn create_memory_mapped_numpy_array(
     py: Python,
@@ -145,7 +91,7 @@ pub fn create_memory_mapped_numpy_array(
         .as_ptr();
 
     // put the mmap in the python heap to ensure memory safety
-    let container = PyClassInitializer::from(PyMemoryMapped { mmap: mmap })
+    let container = PyClassInitializer::from(PyMemoryMapped::from(mmap))
         .create_cell(py)
         .expect("Failed to create slice container");
 
@@ -242,7 +188,7 @@ pub fn load_memory_mapped_numpy_array(
         .as_ptr();
 
     // put the mmap in the python heap to ensure memory safety
-    let container = PyClassInitializer::from(PyMemoryMapped { mmap: mmap })
+    let container = PyClassInitializer::from(PyMemoryMapped::from(mmap))
         .create_cell(py)
         .expect("Failed to create slice container");
 

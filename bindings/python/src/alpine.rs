@@ -1,6 +1,5 @@
 use super::mmap_numpy_npy::{
-    create_memory_mapped_numpy_array, init_memory_mapped_numpy_array,
-    load_memory_mapped_numpy_array, Dtype,
+    create_memory_mapped_numpy_array, load_memory_mapped_numpy_array, Dtype,
 };
 use super::*;
 use cpu_models::{
@@ -8,9 +7,7 @@ use cpu_models::{
 };
 use indicatif::ParallelProgressIterator;
 use indicatif::{ProgressBar, ProgressStyle};
-use mmap::*;
 use numpy::{PyArray1, PyArray2};
-use rayon::prelude::*;
 use rayon::prelude::*;
 use std::convert::TryFrom;
 use types::ThreadDataRaceAware;
@@ -117,69 +114,18 @@ where
 
     fn get_path(&self) -> Option<String>;
 
-    /// Initialize numpy embedding for provided graph at path.
-    ///
-    /// Do note that the embedding is in FORTRAN format.
-    ///
-    /// Parameters
-    /// --------------
-    /// graph: Graph
-    ///     The graph to embed.
-    /// dtype: Optional[str] = None
-    ///     Dtype to use for the embedding. Note that an improper dtype may cause overflows.
-    ///     When not provided, we automatically infer the best one by using the diameter.
-    /// verbose: bool = False
-    ///     Whether to show loading bars.
-    fn init_mmap(&self, graph: &Graph, py_kwargs: Option<&PyDict>,) -> PyResult<usize> {
-        self.must_have_path()?;
-
-        let gil = pyo3::Python::acquire_gil();
-
-        let number_of_nodes = graph.inner.get_number_of_nodes() as isize;
-        let embedding_size = pe!(self.get_model().get_embedding_size(&graph.inner))? as isize;
-
-        let kwargs = normalize_kwargs!(py_kwargs, gil.python());
-
-        pe!(validate_kwargs(
-            kwargs,
-            &["dtype", "verbose"]
-        ))?;
-
-        let verbose = extract_value_rust_result!(kwargs, "verbose", bool);
-        let dtype = match extract_value_rust_result!(kwargs, "dtype", &str) {
-            Some(dtype) => dtype,
-            None => {
-                let (max_u8, max_u16, max_u32) = (u8::MAX as usize, u16::MAX as usize, u32::MAX as usize);
-                match pe!(graph.get_diameter(Some(true), verbose))? as usize {
-                    x if (0..=max_u8).contains(&x) => "u8",
-                    x if (max_u8..=max_u16).contains(&x) => "u16",
-                    x if (max_u16..=max_u32).contains(&x) => "u32",
-                    _ => "u64",
+    fn get_feature_path(&self, feature_number: usize) -> Option<String> {
+        self.get_path().map(|path| {
+            format!(
+                "{path}.{feature_number}.npy",
+                feature_number=feature_number,
+                path=if path.ends_with(".npy") {
+                    &path[0..path.len() - 4]
+                } else {
+                    path.as_str()
                 }
-            }
-        };
-
-        match dtype {
-            $(
-                stringify!($dtype) => {
-                    let (_, aligned_size) = init_memory_mapped_numpy_array(
-                        gil.python(),
-                        self.get_path().as_ref().map(|path| path.as_str()),
-                        $dtype_enum,
-                        &[number_of_nodes as isize, embedding_size as isize],
-                        true,
-                    );
-                    Ok(aligned_size)
-                }
-            )*
-            dtype => pe!(Err(format!(
-                concat!(
-                    "The provided dtype {} is not supported. The supported ",
-                    "data types are `u8`, `u16`, `u32` and `u64`."
-                ),
-                dtype
-            ))),
-        }
+            )
+        })
     }
 
     /// Raises an error if model has no path
@@ -213,7 +159,7 @@ where
     fn transpose_mmap(
         &self,
         path: String
-    ) -> PyResult<()> {
+    ) -> PyResult<Py<PyAny>> {
         self.must_have_path()?;
         let gil = pyo3::Python::acquire_gil();
 
@@ -252,23 +198,24 @@ where
                         !is_fortran,
                     );
 
-                    let casted_transposed_embedding = ThreadDataRaceAware::from(transposed_embedding.cast_as::<PyArray2<$dtype>>(gil.python())?);
+                    let casted_embedding = transposed_embedding.cast_as::<PyArray2<$dtype>>(gil.python())?;
+                    let shared_embedding = ThreadDataRaceAware::from(casted_embedding);
 
                     if is_fortran {
                         embedding_slice.as_ref().par_chunks(number_of_nodes).progress_with(progress_bar).enumerate().for_each(|(j, feature)|{
                             feature.iter().copied().enumerate().for_each(|(i, feature_value)| unsafe {
-                                *(casted_transposed_embedding.t.uget_mut([i, j])) = feature_value;
+                                *(shared_embedding.t.uget_mut([i, j])) = feature_value;
                             });
                         });
                     } else {
                         embedding_slice.as_ref().par_chunks(embedding_size).progress_with(progress_bar).enumerate().for_each(|(i, node_embedding)|{
                             node_embedding.iter().copied().enumerate().for_each(|(j, feature_value)| unsafe {
-                                *(casted_transposed_embedding.t.uget_mut([i, j])) = feature_value;
+                                *(shared_embedding.t.uget_mut([i, j])) = feature_value;
                             });
                         });
                     }
 
-                    Ok(())
+                    Ok(transposed_embedding)
                 }
             )*
             dtype => pe!(Err(format!(
@@ -440,38 +387,38 @@ where
     ///     Dtype of the features.
     /// feature_number: int
     ///     The number of the feature to compute.
-    /// aligned_size: int
-    ///     Size of the header of the Numpy object that is returned
-    ///     during the initialization phase.
     fn fit_transform_feature(
         &self,
         graph: &Graph,
         dtype: String,
         feature_number: usize,
-        aligned_size: usize,
-    ) -> PyResult<()> {
-        self.must_have_path()?;
+    ) -> PyResult<Py<PyAny>> {
         let gil = pyo3::Python::acquire_gil();
 
-        let number_of_nodes = graph.inner.get_number_of_nodes() as usize;
+        let number_of_nodes = graph.inner.get_number_of_nodes() as isize;
         match dtype.as_str() {
             $(
                 stringify!($dtype) => {
 
-                    let slice_size = number_of_nodes * core::mem::size_of::<$dtype>();
+                    let embedding = create_memory_mapped_numpy_array(
+                        gil.python(),
+                        self.get_feature_path(feature_number).as_ref().map(|x| x.as_str()),
+                        $dtype_enum,
+                        &[number_of_nodes],
+                        true,
+                    );
 
-                    let mut mmap = MemoryMapped::new_mut(
-                        self.get_path(),
-                        Some(slice_size), Some(aligned_size + (feature_number * number_of_nodes))
-                    ).expect("Could not mmap the file");
+                    let s = embedding.cast_as::<PyArray1<$dtype>>(gil.python())?;
 
-                    let embedding_slice = pe!(mmap.get_slice_mut::<$dtype>(0, None).map_err(|e| e.to_string()))?;
+                    let embedding_slice = unsafe { s.as_slice_mut()? };
 
                     pe!(self.get_model().fit_transform_feature(
                         &graph.inner,
                         feature_number,
                         embedding_slice,
-                    ))
+                    ))?;
+
+                    Ok(embedding)
                 }
             )*
             dtype => pe!(Err(format!(
@@ -565,7 +512,7 @@ impl DegreeSPINE {
     ///     If the path was not provided to the constructor.
     /// ValueError
     ///     If no embedding exists at the provided path.
-    fn transpose_mmap(&self, path: String) -> PyResult<()> {
+    fn transpose_mmap(&self, path: String) -> PyResult<Py<PyAny>> {
         self.inner.transpose_mmap(path)
     }
 
@@ -597,25 +544,6 @@ impl DegreeSPINE {
 
     #[args(py_kwargs = "**")]
     #[pyo3(text_signature = "($self, graph, *, dtype, verbose)")]
-    /// Initialize numpy embedding for provided graph at path.
-    ///
-    /// Do note that the embedding is in FORTRAN format.
-    ///
-    /// Parameters
-    /// --------------
-    /// graph: Graph
-    ///     The graph to embed.
-    /// dtype: Optional[str] = None
-    ///     Dtype to use for the embedding. Note that an improper dtype may cause overflows.
-    ///     When not provided, we automatically infer the best one by using the diameter.
-    /// verbose: bool = False
-    ///     Whether to show loading bars.
-    fn init_mmap(&self, graph: &Graph, py_kwargs: Option<&PyDict>) -> PyResult<usize> {
-        self.inner.init_mmap(graph, py_kwargs)
-    }
-
-    #[args(py_kwargs = "**")]
-    #[pyo3(text_signature = "($self, graph, *, dtype, verbose)")]
     /// Return numpy embedding with Degree SPINE node embedding.
     ///
     /// Do note that the embedding is returned transposed.
@@ -634,7 +562,7 @@ impl DegreeSPINE {
     }
 
     #[args(py_kwargs = "**")]
-    #[pyo3(text_signature = "($self, graph, dtype, feature_number, aligned_size)")]
+    #[pyo3(text_signature = "($self, graph, dtype, feature_number)")]
     /// Fit the provided feature number through disk MMAP.
     ///
     /// Do note that the embedding produced is in FORTRAN format.
@@ -647,18 +575,14 @@ impl DegreeSPINE {
     ///     Dtype of the features.
     /// feature_number: int
     ///     The number of the feature to compute.
-    /// aligned_size: int
-    ///     Size of the header of the Numpy object that is returned
-    ///     during the initialization phase.
     fn fit_transform_feature(
         &self,
         graph: &Graph,
         dtype: String,
         feature_number: usize,
-        aligned_size: usize,
-    ) -> PyResult<()> {
+    ) -> PyResult<Py<PyAny>> {
         self.inner
-            .fit_transform_feature(graph, dtype, feature_number, aligned_size)
+            .fit_transform_feature(graph, dtype, feature_number)
     }
 }
 
@@ -707,7 +631,7 @@ impl NodeLabelSPINE {
     ///     If the path was not provided to the constructor.
     /// ValueError
     ///     If no embedding exists at the provided path.
-    fn transpose_mmap(&self, path: String) -> PyResult<()> {
+    fn transpose_mmap(&self, path: String) -> PyResult<Py<PyAny>> {
         self.inner.transpose_mmap(path)
     }
 
@@ -739,25 +663,6 @@ impl NodeLabelSPINE {
 
     #[args(py_kwargs = "**")]
     #[pyo3(text_signature = "($self, graph, *, dtype, verbose)")]
-    /// Initialize numpy embedding for provided graph at path.
-    ///
-    /// Do note that the embedding is in FORTRAN format.
-    ///
-    /// Parameters
-    /// --------------
-    /// graph: Graph
-    ///     The graph to embed.
-    /// dtype: Optional[str] = None
-    ///     Dtype to use for the embedding. Note that an improper dtype may cause overflows.
-    ///     When not provided, we automatically infer the best one by using the diameter.
-    /// verbose: bool = False
-    ///     Whether to show loading bars.
-    fn init_mmap(&self, graph: &Graph, py_kwargs: Option<&PyDict>) -> PyResult<usize> {
-        self.inner.init_mmap(graph, py_kwargs)
-    }
-
-    #[args(py_kwargs = "**")]
-    #[pyo3(text_signature = "($self, graph, *, dtype, verbose)")]
     /// Return numpy embedding with Degree SPINE node embedding.
     ///
     /// Do note that the embedding is returned transposed.
@@ -776,7 +681,7 @@ impl NodeLabelSPINE {
     }
 
     #[args(py_kwargs = "**")]
-    #[pyo3(text_signature = "($self, graph, dtype, feature_number, aligned_size)")]
+    #[pyo3(text_signature = "($self, graph, dtype, feature_number)")]
     /// Fit the provided feature number through disk MMAP.
     ///
     /// Do note that the embedding produced is in FORTRAN format.
@@ -797,10 +702,9 @@ impl NodeLabelSPINE {
         graph: &Graph,
         dtype: String,
         feature_number: usize,
-        aligned_size: usize,
-    ) -> PyResult<()> {
+    ) -> PyResult<Py<PyAny>> {
         self.inner
-            .fit_transform_feature(graph, dtype, feature_number, aligned_size)
+            .fit_transform_feature(graph, dtype, feature_number)
     }
 }
 
@@ -855,7 +759,7 @@ impl ScoreSPINE {
     ///     If the path was not provided to the constructor.
     /// ValueError
     ///     If no embedding exists at the provided path.
-    fn transpose_mmap(&self, path: String) -> PyResult<()> {
+    fn transpose_mmap(&self, path: String) -> PyResult<Py<PyAny>> {
         BasicSPINEBinding {
             inner: cpu_models::DegreeSPINE::from(self.inner.clone()),
             path: self.path.clone(),
@@ -893,29 +797,6 @@ impl ScoreSPINE {
     }
 
     #[args(py_kwargs = "**")]
-    #[pyo3(text_signature = "($self, graph, *, dtype, verbose)")]
-    /// Initialize numpy embedding for provided graph at path.
-    ///
-    /// Do note that the embedding is in FORTRAN format.
-    ///
-    /// Parameters
-    /// --------------
-    /// graph: Graph
-    ///     The graph to embed.
-    /// dtype: Optional[str] = None
-    ///     Dtype to use for the embedding. Note that an improper dtype may cause overflows.
-    ///     When not provided, we automatically infer the best one by using the diameter.
-    /// verbose: bool = False
-    ///     Whether to show loading bars.
-    fn init_mmap(&self, graph: &Graph, py_kwargs: Option<&PyDict>) -> PyResult<usize> {
-        BasicSPINEBinding {
-            inner: cpu_models::DegreeSPINE::from(self.inner.clone()),
-            path: self.path.clone(),
-        }
-        .init_mmap(graph, py_kwargs)
-    }
-
-    #[args(py_kwargs = "**")]
     #[pyo3(text_signature = "($self, scores, graph, *, dtype, verbose)")]
     /// Return numpy embedding with Degree SPINE node embedding.
     ///
@@ -950,7 +831,7 @@ impl ScoreSPINE {
     }
 
     #[args(py_kwargs = "**")]
-    #[pyo3(text_signature = "($self, scores, graph, dtype, feature_number, aligned_size)")]
+    #[pyo3(text_signature = "($self, scores, graph, dtype, feature_number)")]
     /// Fit the provided feature number through disk MMAP.
     ///
     /// Do note that the embedding produced is in FORTRAN format.
@@ -965,17 +846,13 @@ impl ScoreSPINE {
     ///     Dtype of the features.
     /// feature_number: int
     ///     The number of the feature to compute.
-    /// aligned_size: int
-    ///     Size of the header of the Numpy object that is returned
-    ///     during the initialization phase.
     fn fit_transform_feature(
         &self,
         scores: Py<PyArray1<f32>>,
         graph: &Graph,
         dtype: String,
         feature_number: usize,
-        aligned_size: usize,
-    ) -> PyResult<()> {
+    ) -> PyResult<Py<PyAny>> {
         let gil = pyo3::Python::acquire_gil();
         let scores_ref = scores.as_ref(gil.python());
         BasicSPINEBinding {
@@ -984,7 +861,7 @@ impl ScoreSPINE {
             }),
             path: self.path.clone(),
         }
-        .fit_transform_feature(graph, dtype, feature_number, aligned_size)
+        .fit_transform_feature(graph, dtype, feature_number)
     }
 }
 
@@ -1034,7 +911,7 @@ impl DegreeWINE {
     ///     If the path was not provided to the constructor.
     /// ValueError
     ///     If no embedding exists at the provided path.
-    fn transpose_mmap(&self, path: String) -> PyResult<()> {
+    fn transpose_mmap(&self, path: String) -> PyResult<Py<PyAny>> {
         self.inner.transpose_mmap(path)
     }
 
@@ -1066,25 +943,6 @@ impl DegreeWINE {
 
     #[args(py_kwargs = "**")]
     #[pyo3(text_signature = "($self, graph, *, dtype, verbose)")]
-    /// Initialize numpy embedding for provided graph at path.
-    ///
-    /// Do note that the embedding is in FORTRAN format.
-    ///
-    /// Parameters
-    /// --------------
-    /// graph: Graph
-    ///     The graph to embed.
-    /// dtype: Optional[str] = None
-    ///     Dtype to use for the embedding. Note that an improper dtype may cause overflows.
-    ///     When not provided, we automatically infer the best one by using the diameter.
-    /// verbose: bool = False
-    ///     Whether to show loading bars.
-    fn init_mmap(&self, graph: &Graph, py_kwargs: Option<&PyDict>) -> PyResult<usize> {
-        self.inner.init_mmap(graph, py_kwargs)
-    }
-
-    #[args(py_kwargs = "**")]
-    #[pyo3(text_signature = "($self, graph, *, dtype, verbose)")]
     /// Return numpy embedding with Degree WINE node embedding.
     ///
     /// Do note that the embedding is returned transposed.
@@ -1103,7 +961,7 @@ impl DegreeWINE {
     }
 
     #[args(py_kwargs = "**")]
-    #[pyo3(text_signature = "($self, graph, dtype, feature_number, aligned_size)")]
+    #[pyo3(text_signature = "($self, graph, dtype, feature_number)")]
     /// Fit the provided feature number through disk MMAP.
     ///
     /// Do note that the embedding produced is in FORTRAN format.
@@ -1124,10 +982,9 @@ impl DegreeWINE {
         graph: &Graph,
         dtype: String,
         feature_number: usize,
-        aligned_size: usize,
-    ) -> PyResult<()> {
+    ) -> PyResult<Py<PyAny>> {
         self.inner
-            .fit_transform_feature(graph, dtype, feature_number, aligned_size)
+            .fit_transform_feature(graph, dtype, feature_number)
     }
 }
 
@@ -1177,7 +1034,7 @@ impl NodeLabelWINE {
     ///     If the path was not provided to the constructor.
     /// ValueError
     ///     If no embedding exists at the provided path.
-    fn transpose_mmap(&self, path: String) -> PyResult<()> {
+    fn transpose_mmap(&self, path: String) -> PyResult<Py<PyAny>> {
         self.inner.transpose_mmap(path)
     }
 
@@ -1209,25 +1066,6 @@ impl NodeLabelWINE {
 
     #[args(py_kwargs = "**")]
     #[pyo3(text_signature = "($self, graph, *, dtype, verbose)")]
-    /// Initialize numpy embedding for provided graph at path.
-    ///
-    /// Do note that the embedding is in FORTRAN format.
-    ///
-    /// Parameters
-    /// --------------
-    /// graph: Graph
-    ///     The graph to embed.
-    /// dtype: Optional[str] = None
-    ///     Dtype to use for the embedding. Note that an improper dtype may cause overflows.
-    ///     When not provided, we automatically infer the best one by using the diameter.
-    /// verbose: bool = False
-    ///     Whether to show loading bars.
-    fn init_mmap(&self, graph: &Graph, py_kwargs: Option<&PyDict>) -> PyResult<usize> {
-        self.inner.init_mmap(graph, py_kwargs)
-    }
-
-    #[args(py_kwargs = "**")]
-    #[pyo3(text_signature = "($self, graph, *, dtype, verbose)")]
     /// Return numpy embedding with Degree WINE node embedding.
     ///
     /// Do note that the embedding is returned transposed.
@@ -1246,7 +1084,7 @@ impl NodeLabelWINE {
     }
 
     #[args(py_kwargs = "**")]
-    #[pyo3(text_signature = "($self, graph, dtype, feature_number, aligned_size)")]
+    #[pyo3(text_signature = "($self, graph, dtype, feature_number)")]
     /// Fit the provided feature number through disk MMAP.
     ///
     /// Do note that the embedding produced is in FORTRAN format.
@@ -1267,10 +1105,9 @@ impl NodeLabelWINE {
         graph: &Graph,
         dtype: String,
         feature_number: usize,
-        aligned_size: usize,
-    ) -> PyResult<()> {
+    ) -> PyResult<Py<PyAny>> {
         self.inner
-            .fit_transform_feature(graph, dtype, feature_number, aligned_size)
+            .fit_transform_feature(graph, dtype, feature_number)
     }
 }
 
@@ -1326,7 +1163,7 @@ impl ScoreWINE {
     ///     If the path was not provided to the constructor.
     /// ValueError
     ///     If no embedding exists at the provided path.
-    fn transpose_mmap(&self, path: String) -> PyResult<()> {
+    fn transpose_mmap(&self, path: String) -> PyResult<Py<PyAny>> {
         BasicWINEBinding {
             inner: cpu_models::DegreeWINE::from(self.inner.clone()),
             path: self.path.clone(),
@@ -1364,29 +1201,6 @@ impl ScoreWINE {
     }
 
     #[args(py_kwargs = "**")]
-    #[pyo3(text_signature = "($self, graph, *, dtype, verbose)")]
-    /// Initialize numpy embedding for provided graph at path.
-    ///
-    /// Do note that the embedding is in FORTRAN format.
-    ///
-    /// Parameters
-    /// --------------
-    /// graph: Graph
-    ///     The graph to embed.
-    /// dtype: Optional[str] = None
-    ///     Dtype to use for the embedding. Note that an improper dtype may cause overflows.
-    ///     When not provided, we automatically infer the best one by using the diameter.
-    /// verbose: bool = False
-    ///     Whether to show loading bars.
-    fn init_mmap(&self, graph: &Graph, py_kwargs: Option<&PyDict>) -> PyResult<usize> {
-        BasicWINEBinding {
-            inner: cpu_models::DegreeWINE::from(self.inner.clone()),
-            path: self.path.clone(),
-        }
-        .init_mmap(graph, py_kwargs)
-    }
-
-    #[args(py_kwargs = "**")]
     #[pyo3(text_signature = "($self, scores, graph, *, dtype, verbose)")]
     /// Return numpy embedding with Degree WINE node embedding.
     ///
@@ -1421,7 +1235,7 @@ impl ScoreWINE {
     }
 
     #[args(py_kwargs = "**")]
-    #[pyo3(text_signature = "($self, scores, graph, dtype, feature_number, aligned_size)")]
+    #[pyo3(text_signature = "($self, scores, graph, dtype, feature_number)")]
     /// Fit the provided feature number through disk MMAP.
     ///
     /// Do note that the embedding produced is in FORTRAN format.
@@ -1436,17 +1250,13 @@ impl ScoreWINE {
     ///     Dtype of the features.
     /// feature_number: int
     ///     The number of the feature to compute.
-    /// aligned_size: int
-    ///     Size of the header of the Numpy object that is returned
-    ///     during the initialization phase.
     fn fit_transform_feature(
         &self,
         scores: Py<PyArray1<f32>>,
         graph: &Graph,
         dtype: String,
         feature_number: usize,
-        aligned_size: usize,
-    ) -> PyResult<()> {
+    ) -> PyResult<Py<PyAny>> {
         let gil = pyo3::Python::acquire_gil();
         let scores_ref = scores.as_ref(gil.python());
         BasicWINEBinding {
@@ -1455,6 +1265,6 @@ impl ScoreWINE {
             }),
             path: self.path.clone(),
         }
-        .fit_transform_feature(graph, dtype, feature_number, aligned_size)
+        .fit_transform_feature(graph, dtype, feature_number)
     }
 }

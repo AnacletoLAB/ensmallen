@@ -285,7 +285,19 @@ where
     where
         Feature: IntegerFeatureType,
     {
-        if feature.len() != self.get_embedding_size(graph)? {}
+        if feature.len() != graph.get_number_of_nodes() as usize {
+            return Err(format!(
+                concat!(
+                    "To compute the feature number {} we expected the ",
+                    "a memory slice with lenght {} but we got a slice ",
+                    "with length {}."
+                ),
+                feature_number,
+                graph.get_number_of_nodes(),
+                feature.len(),
+            ));
+        }
+        
         if feature_number < self.get_embedding_size(graph)? {
             return Err(format!(
                 "The provided feature number `{}` is higher than the dimension of the embedding `{}`.",
