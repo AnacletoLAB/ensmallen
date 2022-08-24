@@ -75,5 +75,22 @@
                 "name": "Game of Thrones Characters Interactions"
             }
         }
+    },
+    "Ubergraph": {
+        "latest": {
+            "urls": [
+                "https://zenodo.org/record/7020394/files/ubergraph_edge_list.tsv.gz"
+            ],
+            "paths": [
+                "ubergraph_edge_list.tsv.gz"
+            ],
+            "arguments": {
+                "edge_path": "ubergraph_edge_list.tsv",
+                "sources_column": "source",
+                "destinations_column": "destination",
+                "edge_list_edge_types_column": "edge_type",
+                "name": "Ubergraph"
+            }
+        }
     }
 }

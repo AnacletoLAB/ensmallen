@@ -5,7 +5,6 @@ use crate::{
 use core::sync::atomic::Ordering;
 use ensmallen_traits::prelude::*;
 use graph::{Graph, NodeT};
-use indicatif::{ParallelProgressIterator, ProgressBar, ProgressStyle};
 use rayon::prelude::*;
 use vec_rand::splitmix64;
 
@@ -43,10 +42,6 @@ impl BasicWINE {
 
     pub fn get_basic_inferred_node_embedding(&self) -> &BasicAnchorsInferredNodeEmbedding {
         &self.baine
-    }
-
-    pub fn is_verbose(&self) -> bool {
-        self.baine.is_verbose()
     }
 }
 
@@ -89,22 +84,6 @@ where
         // let max_neighbours = self.get_max_neighbours();
         let mut random_walk_length: Feature = Feature::ZERO;
         let mut random_state = splitmix64(self.get_random_state());
-
-        // Depending whether verbosity was requested by the user
-        // we create or not a visible progress bar to show the progress
-        // in the computation of the features.
-        let depth_progress = if self.get_basic_wine().is_verbose() {
-            let pb = ProgressBar::new(self.get_walk_length() as u64);
-            pb.set_style(ProgressStyle::default_bar().template(concat!(
-                "depth {spinner:.green} [{elapsed_precise}] ",
-                "[{bar:40.cyan/blue}] ({pos}/{len}, ETA {eta})"
-            )));
-            pb
-        } else {
-            ProgressBar::hidden()
-        };
-
-        depth_progress.inc(0);
 
         // Until the bucket is not empty we start to iterate.
         let max_depth = Feature::try_from(self.get_walk_length()).unwrap_or(Feature::MAX);
@@ -161,7 +140,6 @@ where
                         })
                         .collect::<Vec<NodeT>>();
                 }
-                depth_progress.inc(1);
             } else {
                 // We compute the next bucket of nodes, i.e. the next step of the frontier.
                 if random_walk_length == (Feature::ONE + Feature::ONE) {
@@ -185,7 +163,6 @@ where
                             });
                     });
                 }
-                depth_progress.inc(1);
                 return;
             }
         }
