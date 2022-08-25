@@ -147,7 +147,7 @@ where
     ///
     /// Parameters
     /// --------------
-    /// path: str
+    /// path: Optional[str] = None
     ///     Position where to store the mmapped vector.
     ///
     /// Raises
@@ -158,10 +158,22 @@ where
     ///     If no embedding exists at the provided path.
     fn transpose_mmap(
         &self,
-        path: String
+        path: Option<String>
     ) -> PyResult<Py<PyAny>> {
         self.must_have_path()?;
         let gil = pyo3::Python::acquire_gil();
+
+        let path = path.unwrap_or_else(||{
+            let original_path = self.get_path().unwrap();
+            format!(
+                "{path}.transposed.npy",
+                path=if original_path.ends_with(".npy") {
+                    &original_path[0..original_path.len() - 4]
+                } else {
+                    original_path.as_str()
+                }
+            )
+        });
 
         let (embedding_dtype, is_fortran, embedding) = load_memory_mapped_numpy_array(
             gil.python(),
@@ -503,7 +515,7 @@ impl DegreeSPINE {
     ///
     /// Parameters
     /// --------------
-    /// path: str
+    /// path: Optional[str] = None
     ///     Position where to store the mmapped vector.
     ///
     /// Raises
@@ -512,7 +524,7 @@ impl DegreeSPINE {
     ///     If the path was not provided to the constructor.
     /// ValueError
     ///     If no embedding exists at the provided path.
-    fn transpose_mmap(&self, path: String) -> PyResult<Py<PyAny>> {
+    fn transpose_mmap(&self, path: Option<String>) -> PyResult<Py<PyAny>> {
         self.inner.transpose_mmap(path)
     }
 
@@ -622,7 +634,7 @@ impl NodeLabelSPINE {
     ///
     /// Parameters
     /// --------------
-    /// path: str
+    /// path: Optional[str] = None
     ///     Position where to store the mmapped vector.
     ///
     /// Raises
@@ -631,7 +643,7 @@ impl NodeLabelSPINE {
     ///     If the path was not provided to the constructor.
     /// ValueError
     ///     If no embedding exists at the provided path.
-    fn transpose_mmap(&self, path: String) -> PyResult<Py<PyAny>> {
+    fn transpose_mmap(&self, path: Option<String>) -> PyResult<Py<PyAny>> {
         self.inner.transpose_mmap(path)
     }
 
@@ -750,7 +762,7 @@ impl ScoreSPINE {
     ///
     /// Parameters
     /// --------------
-    /// path: str
+    /// path: Optional[str] = None
     ///     Position where to store the mmapped vector.
     ///
     /// Raises
@@ -759,7 +771,7 @@ impl ScoreSPINE {
     ///     If the path was not provided to the constructor.
     /// ValueError
     ///     If no embedding exists at the provided path.
-    fn transpose_mmap(&self, path: String) -> PyResult<Py<PyAny>> {
+    fn transpose_mmap(&self, path: Option<String>) -> PyResult<Py<PyAny>> {
         BasicSPINEBinding {
             inner: cpu_models::DegreeSPINE::from(self.inner.clone()),
             path: self.path.clone(),
@@ -902,7 +914,7 @@ impl DegreeWINE {
     ///
     /// Parameters
     /// --------------
-    /// path: str
+    /// path: Optional[str] = None
     ///     Position where to store the mmapped vector.
     ///
     /// Raises
@@ -911,7 +923,7 @@ impl DegreeWINE {
     ///     If the path was not provided to the constructor.
     /// ValueError
     ///     If no embedding exists at the provided path.
-    fn transpose_mmap(&self, path: String) -> PyResult<Py<PyAny>> {
+    fn transpose_mmap(&self, path: Option<String>) -> PyResult<Py<PyAny>> {
         self.inner.transpose_mmap(path)
     }
 
@@ -1025,7 +1037,7 @@ impl NodeLabelWINE {
     ///
     /// Parameters
     /// --------------
-    /// path: str
+    /// path: Optional[str] = None
     ///     Position where to store the mmapped vector.
     ///
     /// Raises
@@ -1034,7 +1046,7 @@ impl NodeLabelWINE {
     ///     If the path was not provided to the constructor.
     /// ValueError
     ///     If no embedding exists at the provided path.
-    fn transpose_mmap(&self, path: String) -> PyResult<Py<PyAny>> {
+    fn transpose_mmap(&self, path: Option<String>) -> PyResult<Py<PyAny>> {
         self.inner.transpose_mmap(path)
     }
 
@@ -1154,7 +1166,7 @@ impl ScoreWINE {
     ///
     /// Parameters
     /// --------------
-    /// path: str
+    /// path: Optional[str] = None
     ///     Position where to store the mmapped vector.
     ///
     /// Raises
@@ -1163,7 +1175,7 @@ impl ScoreWINE {
     ///     If the path was not provided to the constructor.
     /// ValueError
     ///     If no embedding exists at the provided path.
-    fn transpose_mmap(&self, path: String) -> PyResult<Py<PyAny>> {
+    fn transpose_mmap(&self, path: Option<String>) -> PyResult<Py<PyAny>> {
         BasicWINEBinding {
             inner: cpu_models::DegreeWINE::from(self.inner.clone()),
             path: self.path.clone(),
