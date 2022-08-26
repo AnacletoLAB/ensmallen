@@ -268,12 +268,12 @@ impl {struct_name} {{
         doc_scores.sort_by(|(_, d1), (_, d2)| d2.partial_cmp(d1).unwrap());
 
         Err(PyAttributeError::new_err(format!(
-            "The method '{{}}' does not exists, did you mean one of the following?\n{{}}",
+            "The method `{{}}` does not exists, did you mean one of the following?\n\n{{}}",
             &name,
             doc_scores
                 .iter()
                 .map(|(method_id, _)| {{ 
-                    format!("* '{{}}'", {struct_name_upper}_METHODS_NAMES[*method_id].to_string()) 
+                    format!("* `{{}}`", {struct_name_upper}_METHODS_NAMES[*method_id].to_string()) 
                 }})
                 .take(10)
                 .collect::<Vec<String>>()
