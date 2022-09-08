@@ -163,6 +163,32 @@ impl DAGResnik {
         Ok((node_ids, to_ndarray_1d!(gil, similarities, f32)))
     }
 
+    #[pyo3(text_signature = "($self, first_node_prefixes, second_node_prefixes)")]
+    /// Return the similarity between the two provided prefixes nodes.
+    ///
+    /// Parameters
+    /// -------------------
+    /// first_node_prefixes: List[str]
+    ///     The first nodes for which to compute the similarity.
+    /// second_node_prefixes: List[str]
+    ///     The second nodes for which to compute the similarity.
+    /// minimum_similarity: Optional[float] = 0.0
+    ///     Minimum similarity to be kept. Values below this amount are filtered.
+    pub fn get_similarity_from_node_prefixes(
+        &self,
+        first_node_prefixes: Vec<&str>,
+        second_node_prefixes: Vec<&str>,
+        minimum_similarity: Option<f32>,
+    ) -> PyResult<(Vec<[String; 2]>, Py<PyArray1<f32>>)> {
+        let gil = pyo3::Python::acquire_gil();
+        let (node_ids, similarities) = pe!(self.inner.get_similarity_from_node_prefixes(
+            first_node_prefixes,
+            second_node_prefixes,
+            minimum_similarity
+        ))?;
+        Ok((node_ids, to_ndarray_1d!(gil, similarities, f32)))
+    }
+
     #[pyo3(text_signature = "($self)")]
     /// Return numpy array with edge similarities for provided graph.
     fn get_pairwise_similarities(&self) -> PyResult<Py<PyArray2<f32>>> {

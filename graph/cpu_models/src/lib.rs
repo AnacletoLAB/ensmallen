@@ -5,6 +5,7 @@
 #![feature(type_alias_impl_trait)]
 #![feature(generic_associated_types)]
 
+
 mod basic_embedding_model;
 mod basic_siamese_model;
 mod cbow;

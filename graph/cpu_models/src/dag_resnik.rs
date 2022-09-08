@@ -384,6 +384,7 @@ where
     /// # Arguments
     /// * `first_node_names`: Vec<String> - The first node names for which to compute the similarity.
     /// * `second_node_names`: Vec<String> - The second node names for which to compute the similarity.
+    /// * `minimum_similarity`: Option<F> - Minimum similarity to be kept. Values below this amount are filtered.
     pub fn get_similarity_from_node_names(
         &self,
         first_node_names: Vec<String>,
@@ -393,6 +394,40 @@ where
         Ok(self
             .iter_similarities_from_node_names_iterator(
                 (first_node_names, second_node_names).into_par_iter(),
+                minimum_similarity,
+            )?
+            .unzip())
+    }
+
+    /// Return the similarity between the two provided node name prefixes.
+    ///
+    /// # Arguments
+    /// * `first_node_prefixes`: Vec<&str> - The first node prefixes for which to compute the similarity.
+    /// * `second_node_prefixes`: Vec<&str> - The second node prefixes for which to compute the similarity.
+    /// * `minimum_similarity`: Option<F> - Minimum similarity to be kept. Values below this amount are filtered.
+    pub fn get_similarity_from_node_prefixes(
+        &self,
+        first_node_prefixes: Vec<&str>,
+        second_node_prefixes: Vec<&str>,
+        minimum_similarity: Option<F>,
+    ) -> Result<(Vec<[String; 2]>, Vec<F>), String> {
+        self.must_be_trained()?;
+        let sources = self
+            .transposed_dag
+            .as_ref()
+            .map(|graph| graph.par_iter_node_names_from_node_curie_prefixes(&first_node_prefixes))
+            .unwrap();
+        Ok(self
+            .iter_similarities_from_node_names_iterator(
+                sources.flat_map(|src| {
+                    self.transposed_dag
+                        .as_ref()
+                        .map(|graph| {
+                            graph.par_iter_node_names_from_node_curie_prefixes(&second_node_prefixes)
+                        })
+                        .unwrap()
+                        .map(move |dst| (src.clone(), dst))
+                }),
                 minimum_similarity,
             )?
             .unzip())

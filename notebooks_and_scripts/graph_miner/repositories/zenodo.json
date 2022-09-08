@@ -92,5 +92,23 @@
                 "name": "Ubergraph"
             }
         }
+    },
+    "FAVA": {
+        "latest": {
+            "urls": [
+                "https://zenodo.org/record/6803472/files/Fava_Network_SingleCells_Proteomics_CombinedScores_Over15percent.tsv.gz"
+            ],
+            "paths": [
+                "fava.tsv.gz"
+            ],
+            "arguments": {
+                "edge_path": "gava.tsv",
+                "sources_column_number": 0,
+                "destinations_column_number": 1,
+                "weights_column_number": 2,
+                "edge_list_header": false,
+                "name": "FAVA"
+            }
+        }
     }
 }

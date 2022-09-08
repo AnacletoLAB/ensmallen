@@ -14181,7 +14181,7 @@ impl Graph {
     ///
     /// Parameters
     /// ----------
-    /// curie_prefixes: str
+    /// curie_prefixes: List[str]
     ///     Prefix of the source node names.
     ///
     pub fn get_node_ids_from_node_curie_prefixes(
@@ -14203,7 +14203,7 @@ impl Graph {
     ///
     /// Parameters
     /// ----------
-    /// curie_prefixes: str
+    /// curie_prefixes: List[str]
     ///     Prefix of the source node names.
     ///
     pub fn get_node_names_from_node_curie_prefixes(
