@@ -52,7 +52,7 @@ if is_x86_64():
                     " ...).\n"
                 ).format(unavailable_flags, CORE2_AVX_FLAGS)
             )
-         del CORE2_AVX_FLAGS
+        del CORE2_AVX_FLAGS
     del cpuinfo
     del unavailable_flags
     del HASWELL_FLAGS
