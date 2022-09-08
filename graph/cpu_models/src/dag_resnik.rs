@@ -244,12 +244,8 @@ where
                                 visited[parent_node_id as usize] = *label;
                                 new_frontier.push(parent_node_id);
                             }
-                            (x, y) => unreachable!(
-                                concat!(
-                                    "The case with the leaf node in state {} and ",
-                                    "the parent node in state {} should not be possible."
-                                ),
-                                x, y
+                            (Visited::Unvisited, _) => unreachable!(
+                                "The case with an unvisited leaf node should not be possible."
                             ),
                         }
                     }
@@ -257,15 +253,25 @@ where
                 frontier = new_frontier;
             }
         }
+
+        let root_node_names = self
+            .transposed_dag
+            .as_ref()
+            .map_or_else(|| Vec::new(), |graph| graph.get_root_node_names());
         Err(format!(
             concat!(
                 "The provided two nodes {} and {} do not have a shared ",
                 "parent node. Perhaps, the provided DAG has multiple root nodes ",
                 "and these two nodes are in different root portions of the DAG. ",
                 "Another analogous explanation is that the two nodes may be in ",
-                "different connected components."
+                "different connected components. ",
+                "Do be advised that this DAG has {} root nodes, with the first ones ",
+                "being {:?}."
             ),
-            first_node_id, second_node_id
+            first_node_id,
+            second_node_id,
+            root_node_names.len(),
+            &root_node_names[0..5]
         ))
     }
 
