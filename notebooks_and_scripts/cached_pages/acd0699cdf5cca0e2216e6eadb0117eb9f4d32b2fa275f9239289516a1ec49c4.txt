@@ -1,6 +1,6 @@
 <html>
 <head><title>Index of /wikidatawiki/entities/20220725/</title></head>
-<body bgcolor="white">
+<body>
 <h1>Index of /wikidatawiki/entities/20220725/</h1><hr><pre><a href="../">../</a>
 <a href="wikidata-20220725-all-BETA.nt.bz2">wikidata-20220725-all-BETA.nt.bz2</a>                  29-Jul-2022 00:06        149977806656
 <a href="wikidata-20220725-all-BETA.nt.gz">wikidata-20220725-all-BETA.nt.gz</a>                   28-Jul-2022 05:41        193733078200

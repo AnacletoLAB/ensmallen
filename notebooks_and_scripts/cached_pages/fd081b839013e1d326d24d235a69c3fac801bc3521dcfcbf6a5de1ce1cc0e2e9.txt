@@ -1,6 +1,6 @@
 <html>
 <head><title>Index of /wikidatawiki/entities/20220812/</title></head>
-<body bgcolor="white">
+<body>
 <h1>Index of /wikidatawiki/entities/20220812/</h1><hr><pre><a href="../">../</a>
 <a href="wikidata-20220812-lexemes-BETA.nt.bz2">wikidata-20220812-lexemes-BETA.nt.bz2</a>              12-Aug-2022 23:30           603211004
 <a href="wikidata-20220812-lexemes-BETA.nt.gz">wikidata-20220812-lexemes-BETA.nt.gz</a>               12-Aug-2022 23:25           808379883

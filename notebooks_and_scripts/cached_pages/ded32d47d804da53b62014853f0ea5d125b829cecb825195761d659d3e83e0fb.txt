@@ -1,6 +1,6 @@
 <html>
 <head><title>Index of /wikidatawiki/entities/20220810/</title></head>
-<body bgcolor="white">
+<body>
 <h1>Index of /wikidatawiki/entities/20220810/</h1><hr><pre><a href="../">../</a>
 <a href="wikidata-20220810-lexemes.json.bz2">wikidata-20220810-lexemes.json.bz2</a>                 10-Aug-2022 03:43           223018249
 <a href="wikidata-20220810-lexemes.json.gz">wikidata-20220810-lexemes.json.gz</a>                  10-Aug-2022 03:42           308759800
