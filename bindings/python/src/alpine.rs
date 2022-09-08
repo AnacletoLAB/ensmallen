@@ -2,9 +2,7 @@ use super::mmap_numpy_npy::{
     create_memory_mapped_numpy_array, load_memory_mapped_numpy_array, Dtype,
 };
 use super::*;
-use cpu_models::{
-    BasicSPINE, BasicWINE, LandmarkFeatureType, ALPINE, LandmarkType,
-};
+use cpu_models::{BasicSPINE, BasicWINE, LandmarkFeatureType, LandmarkType, ALPINE};
 use indicatif::ParallelProgressIterator;
 use indicatif::{ProgressBar, ProgressStyle};
 use numpy::{PyArray1, PyArray2};
@@ -74,12 +72,12 @@ impl FromPyDict for BasicWINE {
 
         pe!(validate_kwargs(
             kwargs,
-            &["embedding_size", "walk_length", "path", "verbose"]
+            &["embedding_size", "window_size", "path", "verbose"]
         ))?;
 
         pe!(BasicWINE::new(
             extract_value_rust_result!(kwargs, "embedding_size", usize),
-            extract_value_rust_result!(kwargs, "walk_length", usize),
+            extract_value_rust_result!(kwargs, "window_size", usize),
             extract_value_rust_result!(kwargs, "verbose", bool),
         ))
     }
@@ -879,7 +877,7 @@ impl ScoreSPINE {
 
 #[pyclass]
 #[derive(Debug, Clone)]
-#[pyo3(text_signature = "(*, embedding_size, walk_length, verbose)")]
+#[pyo3(text_signature = "(*, embedding_size, window_size, verbose)")]
 pub struct DegreeWINE {
     pub inner: BasicWINEBinding<
         cpu_models::DegreeWINE,
@@ -898,8 +896,9 @@ impl DegreeWINE {
     /// ------------------------
     /// embedding_size: int = 100
     ///     Size of the embedding.
-    /// walk_length: int = 2
+    /// window_size: int = 2
     ///     Length of the random walk.
+    ///     Do note that for `window_size = 2` we will use the Two-Hop WINE version, which is more efficient.
     ///     By default 2, to capture exclusively the immediate context.
     /// verbose: bool = True
     ///     Whether to show loading bars.
@@ -1002,7 +1001,7 @@ impl DegreeWINE {
 
 #[pyclass]
 #[derive(Debug, Clone)]
-#[pyo3(text_signature = "(*, embedding_size, walk_length, verbose)")]
+#[pyo3(text_signature = "(*, embedding_size, window_size, verbose)")]
 pub struct NodeLabelWINE {
     pub inner: BasicWINEBinding<
         cpu_models::NodeLabelWINE,
@@ -1021,8 +1020,9 @@ impl NodeLabelWINE {
     /// ------------------------
     /// embedding_size: int = 100
     ///     Size of the embedding.
-    /// walk_length: int = 2
+    /// window_size: int = 2
     ///     Length of the random walk.
+    ///     Do note that for `window_size = 2` we will use the Two-Hop WINE version, which is more efficient.
     ///     By default 2, to capture exclusively the immediate context.
     /// verbose: bool = True
     ///     Whether to show loading bars.
