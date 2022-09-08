@@ -4,14 +4,14 @@ use indicatif::{ProgressBar, ProgressIterator, ProgressStyle};
 use rayon::prelude::*;
 
 #[derive(Clone, Debug)]
-pub struct BasicAnchorsInferredNodeEmbedding {
+pub struct BasicALPINE {
     /// Number of features to be computed.
     embedding_size: usize,
     /// Whether to show a loading bar while computing the embedding.
     verbose: bool,
 }
 
-impl BasicAnchorsInferredNodeEmbedding {
+impl BasicALPINE {
     /// Return new instance of Basic inferred node embedding.
     ///
     /// # Arguments
@@ -36,25 +36,13 @@ impl BasicAnchorsInferredNodeEmbedding {
     }
 }
 
-pub trait AnchorsInferredNodeEmbeddingProperties {
-    fn get_model_name(&self) -> String;
-
-    fn get_basic_inferred_node_embedding(&self) -> &BasicAnchorsInferredNodeEmbedding;
-
-    fn get_embedding_size(&self, graph: &Graph) -> Result<usize, String>;
-
-    fn is_verbose(&self) -> bool {
-        self.get_basic_inferred_node_embedding().is_verbose()
-    }
-}
-
 #[derive(PartialEq, Eq)]
-pub enum AnchorFeatureTypes {
-    Walks,
+pub enum LandmarkFeatureType {
+    Windows,
     ShortestPaths,
 }
 
-pub trait AnchorsBasedFeature<const AFT: AnchorFeatureTypes> {
+pub trait LandmarkBasedFeature<const LFT: LandmarkFeatureType> {
     unsafe fn compute_unchecked_feature_from_bucket<Feature>(
         &self,
         graph: &Graph,
@@ -65,54 +53,54 @@ pub trait AnchorsBasedFeature<const AFT: AnchorFeatureTypes> {
 }
 
 #[derive(PartialEq, Eq)]
-pub enum AnchorTypes {
+pub enum LandmarkType {
     Degrees,
     NodeTypes,
     Scores,
 }
 
-pub trait AnchorsGenerator<const AT: AnchorTypes> {
-    type AnchorsIterator<'a>: Iterator<Item = Vec<NodeT>> + 'a
+pub trait LandmarkGenerator<const LT: LandmarkType> {
+    type LandmarkIterator<'a>: Iterator<Item = Vec<NodeT>> + 'a
     where
         Self: 'a;
     fn iter_anchor_nodes_buckets<'a>(
         &'a self,
         graph: &'a Graph,
-    ) -> Result<Self::AnchorsIterator<'a>, String>;
+    ) -> Result<Self::LandmarkIterator<'a>, String>;
 }
 
-pub trait NodeTypesAnchorsGenerator {}
+pub trait NodeTypesLandmarkGenerator {}
 
-impl<M> AnchorsGenerator<{ AnchorTypes::NodeTypes }> for M
+impl<M> LandmarkGenerator<{ LandmarkType::NodeTypes }> for M
 where
-    M: NodeTypesAnchorsGenerator,
+    M: NodeTypesLandmarkGenerator,
 {
-    type AnchorsIterator<'a> = impl Iterator<Item = Vec<NodeT>> + 'a where Self: 'a, M: 'a;
+    type LandmarkIterator<'a> = impl Iterator<Item = Vec<NodeT>> + 'a where Self: 'a, M: 'a;
 
     /// Return vector of vectors of anchor node IDs.
     fn iter_anchor_nodes_buckets<'a>(
         &'a self,
         graph: &'a Graph,
-    ) -> Result<Self::AnchorsIterator<'a>, String> {
+    ) -> Result<Self::LandmarkIterator<'a>, String> {
         Ok(graph
             .iter_unique_node_type_ids()?
             .map(move |node_type_id| graph.get_node_ids_from_node_type_id(node_type_id).unwrap()))
     }
 }
 
-pub trait DegreesAnchorsGenerator {}
+pub trait DegreesLandmarkGenerator {}
 
-impl<M> AnchorsGenerator<{ AnchorTypes::Degrees }> for M
+impl<M> LandmarkGenerator<{ LandmarkType::Degrees }> for M
 where
-    M: AnchorsInferredNodeEmbeddingProperties + DegreesAnchorsGenerator,
+    M: DegreesLandmarkGenerator + EmbeddingSize,
 {
-    type AnchorsIterator<'a> = impl Iterator<Item = Vec<NodeT>> + 'a where Self: 'a, M: 'a;
+    type LandmarkIterator<'a> = impl Iterator<Item = Vec<NodeT>> + 'a where Self: 'a, M: 'a;
 
     /// Return vector of vectors of anchor node IDs.
     fn iter_anchor_nodes_buckets<'a>(
         &'a self,
         graph: &'a Graph,
-    ) -> Result<Self::AnchorsIterator<'a>, String> {
+    ) -> Result<Self::LandmarkIterator<'a>, String> {
         let embedding_size = self.get_embedding_size(graph)?;
         let number_of_edge_per_bucket: EdgeT =
             ((graph.get_number_of_directed_edges() as f32 / 2.0 / embedding_size as f32).ceil()
@@ -153,21 +141,21 @@ where
     }
 }
 
-pub trait ScoresAnchorsGenerator {
+pub trait ScoresLandmarkGenerator {
     fn get_scores(&self) -> &[f32];
 }
 
-impl<M> AnchorsGenerator<{ AnchorTypes::Scores }> for M
+impl<M> LandmarkGenerator<{ LandmarkType::Scores }> for M
 where
-    M: AnchorsInferredNodeEmbeddingProperties + ScoresAnchorsGenerator,
+    M: ScoresLandmarkGenerator + EmbeddingSize,
 {
-    type AnchorsIterator<'a> = impl Iterator<Item = Vec<NodeT>> + 'a where Self: 'a, M: 'a;
+    type LandmarkIterator<'a> = impl Iterator<Item = Vec<NodeT>> + 'a where Self: 'a, M: 'a;
 
     /// Return vector of vectors of anchor node IDs.
     fn iter_anchor_nodes_buckets<'a>(
         &'a self,
         graph: &'a Graph,
-    ) -> Result<Self::AnchorsIterator<'a>, String> {
+    ) -> Result<Self::LandmarkIterator<'a>, String> {
         let scores = self.get_scores();
         if scores.len() != graph.get_number_of_nodes() as usize {
             return Err(format!(
@@ -214,10 +202,18 @@ where
     }
 }
 
-pub trait AnchorsInferredNodeEmbeddingModel<const AT: AnchorTypes, const AFT: AnchorFeatureTypes>
+pub trait ALPINE<const LT: LandmarkType, const LFT: LandmarkFeatureType>
 where
-    Self: AnchorsInferredNodeEmbeddingProperties + AnchorsBasedFeature<AFT> + AnchorsGenerator<AT>,
+    Self: LandmarkBasedFeature<LFT> + LandmarkGenerator<LT> + EmbeddingSize,
 {
+    fn get_model_name(&self) -> String;
+
+    fn get_basic_inferred_node_embedding(&self) -> &BasicALPINE;
+
+    fn is_verbose(&self) -> bool {
+        self.get_basic_inferred_node_embedding().is_verbose()
+    }
+
     /// Computes in the provided slice of embedding the ALPINE node embedding.
     ///
     /// # Arguments

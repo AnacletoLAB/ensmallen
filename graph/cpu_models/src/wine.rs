@@ -1,19 +1,16 @@
-use crate::AnchorFeatureTypes;
-use crate::{
-    must_not_be_zero, AnchorsBasedFeature, BasicAnchorsInferredNodeEmbedding, IntegerFeatureType,
-};
+use crate::*;
 use core::sync::atomic::Ordering;
-use ensmallen_traits::prelude::*;
 use graph::{Graph, NodeT};
+use num_traits::Atomic;
+use parallel_frontier::Frontier;
 use rayon::prelude::*;
-use vec_rand::splitmix64;
 
 #[derive(Clone, Debug)]
 pub struct BasicWINE {
     /// Baseline parameters
-    baine: BasicAnchorsInferredNodeEmbedding,
+    baine: BasicALPINE,
     /// Length of the random walk.
-    walk_length: usize,
+    window_size: usize,
     /// Random state to use for the neighbours sampling.
     random_state: u64,
     /// Maximum number of neighbours to sample.
@@ -25,22 +22,22 @@ impl BasicWINE {
     ///
     /// # Arguments
     /// * `embedding_size`: Option<usize> - Size of the embedding. By default 100.
-    /// * `walk_length`: Option<usize> - Length of the random walk. By default 2, to capture exclusively the immediate context.
+    /// * `window_size`: Option<usize> - Length of the random walk. By default 2, to capture exclusively the immediate context.
     /// * `verbose`: Option<bool> - Whether to show a loading bar while computing the embedding.
     pub fn new(
         embedding_size: Option<usize>,
-        walk_length: Option<usize>,
+        window_size: Option<usize>,
         verbose: Option<bool>,
     ) -> Result<Self, String> {
         Ok(Self {
-            baine: BasicAnchorsInferredNodeEmbedding::new(embedding_size, verbose)?,
-            walk_length: must_not_be_zero(walk_length, 2, "Random walk length")?,
+            baine: BasicALPINE::new(embedding_size, verbose)?,
+            window_size: must_not_be_zero(window_size, 2, "Random walk length")?,
             random_state: 42,
             max_neighbours: 1000,
         })
     }
 
-    pub fn get_basic_inferred_node_embedding(&self) -> &BasicAnchorsInferredNodeEmbedding {
+    pub fn get_basic_inferred_node_embedding(&self) -> &BasicALPINE {
         &self.baine
     }
 }
@@ -48,8 +45,8 @@ impl BasicWINE {
 pub trait WINEBased {
     fn get_basic_wine(&self) -> &BasicWINE;
 
-    fn get_walk_length(&self) -> usize {
-        self.get_basic_wine().walk_length
+    fn get_window_size(&self) -> usize {
+        self.get_basic_wine().window_size
     }
 
     fn get_random_state(&self) -> u64 {
@@ -61,14 +58,14 @@ pub trait WINEBased {
     }
 }
 
-impl<M> AnchorsBasedFeature<{ AnchorFeatureTypes::Walks }> for M
+impl<M> LandmarkBasedFeature<{ LandmarkFeatureType::Windows }> for M
 where
     M: WINEBased,
 {
     unsafe fn compute_unchecked_feature_from_bucket<Feature>(
         &self,
         graph: &Graph,
-        mut bucket: Vec<NodeT>,
+        bucket: Vec<NodeT>,
         features: &mut [Feature],
     ) where
         Feature: IntegerFeatureType,
@@ -77,93 +74,86 @@ where
         features.par_iter_mut().for_each(|distance| {
             *distance = Feature::ZERO;
         });
-
         // We wrap the features object in an unsafe cell so
         // it may be shared among threads.
         let shared_features = &Feature::from_mut_slice(features);
-        // let max_neighbours = self.get_max_neighbours();
-        let mut random_walk_length: Feature = Feature::ZERO;
-        let mut random_state = splitmix64(self.get_random_state());
 
-        // Until the bucket is not empty we start to iterate.
-        let max_depth = Feature::try_from(self.get_walk_length()).unwrap_or(Feature::MAX);
-        while !bucket.is_empty() {
-            random_walk_length += Feature::ONE;
-            random_state = splitmix64(random_state);
+        if self.get_window_size() == 2 {
+            let frontier = Frontier::default();
 
-            if random_walk_length < max_depth {
-                // We compute the next bucket of nodes, i.e. the next step of the frontier.
-                if random_walk_length == Feature::ONE {
-                    bucket = bucket
-                        .into_par_iter()
-                        .flat_map_iter(|node_id| {
-                            graph
-                                .iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
-                                .filter_map(|neighbour_node_id| {
-                                    let previous_count = shared_features
-                                        [neighbour_node_id as usize]
-                                        .fetch_add(Feature::ONE, Ordering::Relaxed);
-                                    if previous_count == Feature::ZERO {
-                                        Some(neighbour_node_id)
-                                    } else {
-                                        None
-                                    }
-                                })
-                        })
-                        .collect::<Vec<NodeT>>();
-                } else if random_walk_length == (Feature::ONE + Feature::ONE) {
-                    bucket = bucket
-                        .into_par_iter()
-                        .flat_map_iter(|node_id| {
-                            let number_of_visits =
-                                shared_features[node_id as usize].load(Ordering::Relaxed);
-                            graph
-                                .iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
-                                .map(move |neighbour_node_id| {
-                                    shared_features[neighbour_node_id as usize]
-                                        .fetch_add(number_of_visits, Ordering::Relaxed);
-                                    neighbour_node_id
-                                })
-                        })
-                        .collect::<Vec<NodeT>>();
-                } else {
-                    bucket = bucket
-                        .into_par_iter()
-                        .flat_map_iter(|node_id| {
-                            graph
-                                .iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
-                                .map(|neighbour_node_id| {
-                                    shared_features[neighbour_node_id as usize]
-                                        .fetch_add(Feature::ONE, Ordering::Relaxed);
-                                    neighbour_node_id
-                                })
-                        })
-                        .collect::<Vec<NodeT>>();
-                }
-            } else {
-                // We compute the next bucket of nodes, i.e. the next step of the frontier.
-                if random_walk_length == (Feature::ONE + Feature::ONE) {
-                    bucket.into_par_iter().for_each(|node_id| {
-                        let number_of_visits =
-                            shared_features[node_id as usize].load(Ordering::Relaxed);
-                        graph
-                            .iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
-                            .for_each(move |neighbour_node_id| {
-                                shared_features[neighbour_node_id as usize]
-                                    .fetch_add(number_of_visits, Ordering::Relaxed);
-                            });
+            bucket.into_par_iter().for_each(|node_id| {
+                graph
+                    .iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
+                    .for_each(|neighbour_node_id| {
+                        if shared_features[neighbour_node_id as usize]
+                            .fetch_saturating_add(Feature::ONE, Ordering::Relaxed)
+                            == Feature::ZERO
+                        {
+                            frontier.push(neighbour_node_id)
+                        }
                     });
-                } else {
-                    bucket.into_par_iter().for_each(|node_id| {
-                        graph
-                            .iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
-                            .for_each(|neighbour_node_id| {
-                                shared_features[neighbour_node_id as usize]
-                                    .fetch_add(Feature::ONE, Ordering::Relaxed);
-                            });
-                    });
+            });
+
+            let variation: Frontier<Feature> = frontier
+                .par_iter_vectors()
+                .map(|vector| {
+                    vector
+                        .iter()
+                        .map(|&node_id| shared_features[node_id as usize].load(Ordering::Relaxed))
+                        .collect::<Vec<Feature>>()
+                })
+                .collect::<Vec<Vec<Feature>>>()
+                .try_into()
+                .unwrap();
+
+            frontier
+                .par_iter()
+                .zip(variation.par_iter())
+                .for_each(|(&node_id, &count)| {
+                    graph
+                        .iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
+                        .for_each(|neighbour_node_id| {
+                            shared_features[neighbour_node_id as usize]
+                                .fetch_saturating_add(count, Ordering::Relaxed);
+                        });
+                });
+        } else {
+            let mut first_counter = vec![Feature::ZERO; graph.get_number_of_nodes() as usize];
+            let mut second_counter = vec![Feature::ZERO; graph.get_number_of_nodes() as usize];
+
+            // Until the bucket is not empty we start to iterate.
+            let mut primary_frontier: Frontier<NodeT> = bucket.into();
+            let mut temporary_frontier = Frontier::default();
+
+            for _ in 0..self.get_window_size() {
+                if primary_frontier.is_empty() {
+                    break;
                 }
-                return;
+                let shared_first_counter = Feature::from_mut_slice(&mut first_counter);
+                let shared_second_counter = Feature::from_mut_slice(&mut second_counter);
+
+                primary_frontier.par_iter().for_each(|&node_id| {
+                    graph
+                        .iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
+                        .for_each(|neighbour_node_id| {
+                            let count = shared_first_counter[neighbour_node_id as usize]
+                                .load(Ordering::Relaxed);
+                            if shared_second_counter[neighbour_node_id as usize]
+                                .fetch_saturating_add(count, Ordering::Relaxed)
+                                == Feature::ZERO
+                            {
+                                temporary_frontier.push(neighbour_node_id)
+                            }
+                            shared_features[neighbour_node_id as usize]
+                                .fetch_saturating_add(count, Ordering::Relaxed);
+                        });
+                });
+                primary_frontier.clear();
+                std::mem::swap(&mut first_counter, &mut second_counter);
+                second_counter.par_iter_mut().for_each(|count| {
+                    *count = Feature::ZERO;
+                });
+                std::mem::swap(&mut primary_frontier, &mut temporary_frontier);
             }
         }
     }

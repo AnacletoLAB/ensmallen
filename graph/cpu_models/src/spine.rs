@@ -1,16 +1,14 @@
-use crate::{
-    must_not_be_zero, AnchorsBasedFeature, BasicAnchorsInferredNodeEmbedding, IntegerFeatureType,
-};
+use crate::*;
 use core::sync::atomic::Ordering;
-use crate::AnchorFeatureTypes;
-use ensmallen_traits::prelude::*;
 use graph::{Graph, NodeT};
+use num_traits::Atomic;
+use parallel_frontier::Frontier;
 use rayon::prelude::*;
 
 #[derive(Clone, Debug)]
 pub struct BasicSPINE {
     /// Baseline parameters
-    baine: BasicAnchorsInferredNodeEmbedding,
+    baine: BasicALPINE,
     /// Maximum depth of the shortest path.
     maximum_depth: usize,
 }
@@ -28,12 +26,12 @@ impl BasicSPINE {
         verbose: Option<bool>,
     ) -> Result<Self, String> {
         Ok(Self {
-            baine: BasicAnchorsInferredNodeEmbedding::new(embedding_size, verbose)?,
+            baine: BasicALPINE::new(embedding_size, verbose)?,
             maximum_depth: must_not_be_zero(maximum_depth, usize::MAX, "Maximum depth")?,
         })
     }
 
-    pub fn get_basic_inferred_node_embedding(&self) -> &BasicAnchorsInferredNodeEmbedding {
+    pub fn get_basic_inferred_node_embedding(&self) -> &BasicALPINE {
         &self.baine
     }
 }
@@ -46,14 +44,14 @@ pub trait SPINEBased {
     }
 }
 
-impl<M> AnchorsBasedFeature<{AnchorFeatureTypes::ShortestPaths}> for M
+impl<M> LandmarkBasedFeature<{ LandmarkFeatureType::ShortestPaths }> for M
 where
     M: SPINEBased,
 {
     unsafe fn compute_unchecked_feature_from_bucket<Feature>(
         &self,
         graph: &Graph,
-        mut bucket: Vec<NodeT>,
+        bucket: Vec<NodeT>,
         mut features: &mut [Feature],
     ) where
         Feature: IntegerFeatureType,
@@ -74,35 +72,38 @@ where
             shared_features[node_id as usize].store(Feature::ZERO, Ordering::Relaxed);
         });
 
+        let mut primary_frontier: Frontier<NodeT> = bucket.into();
+        let mut temporary_frontier = Frontier::default();
+
         // Until the bucket is not empty we start to iterate.
         let max_depth = Feature::try_from(self.get_maximum_depth()).unwrap_or(Feature::MAX);
-        while !bucket.is_empty() {
+        while !primary_frontier.is_empty() {
             if eccentricity == max_depth {
                 break;
             }
             eccentricity += Feature::ONE;
 
             // We compute the next bucket of nodes, i.e. the next step of the frontier.
-            bucket = bucket
-                .into_par_iter()
-                .flat_map_iter(|node_id| {
-                    graph
-                        .iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
-                        .filter_map(|neighbour_node_id| {
-                            if shared_features[neighbour_node_id as usize].compare_exchange(
+            primary_frontier.par_iter().for_each(|&node_id| {
+                graph
+                    .iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
+                    .for_each(|neighbour_node_id| {
+                        if shared_features[neighbour_node_id as usize]
+                            .compare_exchange(
                                 Feature::MAX,
                                 eccentricity,
                                 Ordering::SeqCst,
                                 Ordering::SeqCst,
-                            ).is_ok() {
-                                // add the node to the nodes to explore
-                                Some(neighbour_node_id)
-                            } else {
-                                None
-                            }
-                        })
-                })
-                .collect::<Vec<NodeT>>();
+                            )
+                            .is_ok()
+                        {
+                            // add the node to the nodes to explore
+                            temporary_frontier.push(neighbour_node_id);
+                        }
+                    });
+            });
+            primary_frontier.clear();
+            std::mem::swap(&mut primary_frontier, &mut temporary_frontier);
         }
 
         // We retrieve the reference to the features slice.

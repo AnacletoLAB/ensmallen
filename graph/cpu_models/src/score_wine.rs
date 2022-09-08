@@ -1,10 +1,4 @@
-use crate::wine::BasicWINE;
-use crate::wine::WINEBased;
-use crate::AnchorFeatureTypes;
-use crate::AnchorTypes;
-use crate::AnchorsInferredNodeEmbeddingModel;
-use crate::AnchorsInferredNodeEmbeddingProperties;
-use crate::ScoresAnchorsGenerator;
+use crate::*;
 
 #[derive(Clone, Debug)]
 pub struct ScoreWINE<'a> {
@@ -24,28 +18,27 @@ impl<'a> WINEBased for ScoreWINE<'a> {
     }
 }
 
-impl<'a> ScoresAnchorsGenerator for ScoreWINE<'a> {
+impl<'a> ScoresLandmarkGenerator for ScoreWINE<'a> {
     fn get_scores(&self) -> &[f32] {
         self.scores.as_ref()
     }
 }
 
-impl<'a> AnchorsInferredNodeEmbeddingProperties for ScoreWINE<'a> {
+impl<'a> EmbeddingSize for ScoreWINE<'a> {
+    fn get_embedding_size(&self, _graph: &graph::Graph) -> Result<usize, String> {
+        Ok(self
+            .parameters
+            .get_basic_inferred_node_embedding()
+            .get_embedding_size())
+    }
+}
+
+impl<'a> ALPINE<{ LandmarkType::Scores }, { LandmarkFeatureType::Windows }> for ScoreWINE<'a> {
     fn get_model_name(&self) -> String {
         "Score-based WINE".to_string()
     }
 
-    fn get_embedding_size(&self, _graph: &graph::Graph) -> Result<usize, String> {
-        Ok(self.get_basic_inferred_node_embedding().get_embedding_size())
-    }
-
-    fn get_basic_inferred_node_embedding(&self) -> &crate::BasicAnchorsInferredNodeEmbedding {
+    fn get_basic_inferred_node_embedding(&self) -> &crate::BasicALPINE {
         self.get_basic_wine().get_basic_inferred_node_embedding()
     }
-}
-
-impl<'a>
-    AnchorsInferredNodeEmbeddingModel<{ AnchorTypes::Scores }, { AnchorFeatureTypes::Walks }>
-    for ScoreWINE<'a>
-{
 }

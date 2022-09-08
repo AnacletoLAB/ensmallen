@@ -106,9 +106,11 @@ impl DAGResnik {
     ) -> PyResult<(Py<PyArray2<NodeT>>, Py<PyArray1<f32>>)> {
         let gil = pyo3::Python::acquire_gil();
 
-        let (node_ids, similarities) = pe!(self
-            .inner
-            .get_similarity_from_node_ids(first_node_ids, second_node_ids, minimum_similarity))?;
+        let (node_ids, similarities) = pe!(self.inner.get_similarity_from_node_ids(
+            first_node_ids,
+            second_node_ids,
+            minimum_similarity
+        ))?;
 
         Ok((
             to_ndarray_2d!(gil, node_ids, NodeT),
@@ -153,13 +155,12 @@ impl DAGResnik {
         minimum_similarity: Option<f32>,
     ) -> PyResult<(Vec<[String; 2]>, Py<PyArray1<f32>>)> {
         let gil = pyo3::Python::acquire_gil();
-        let (node_ids, similarities) = pe!(self
-            .inner
-            .get_similarity_from_node_names(first_node_names, second_node_names, minimum_similarity))?;
-        Ok((
-            node_ids,
-            to_ndarray_1d!(gil, similarities, f32),
-        ))
+        let (node_ids, similarities) = pe!(self.inner.get_similarity_from_node_names(
+            first_node_names,
+            second_node_names,
+            minimum_similarity
+        ))?;
+        Ok((node_ids, to_ndarray_1d!(gil, similarities, f32)))
     }
 
     #[pyo3(text_signature = "($self)")]

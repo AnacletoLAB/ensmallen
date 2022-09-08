@@ -295,12 +295,12 @@ impl Chain {
         doc_scores.sort_by(|(_, d1), (_, d2)| d2.partial_cmp(d1).unwrap());
 
         Err(PyAttributeError::new_err(format!(
-            "The method '{}' does not exists, did you mean one of the following?\n{}",
+            "The method `{}` does not exists, did you mean one of the following?\n\n{}",
             &name,
             doc_scores
                 .iter()
                 .map(|(method_id, _)| {
-                    format!("* '{}'", CHAIN_METHODS_NAMES[*method_id].to_string())
+                    format!("* `{}`", CHAIN_METHODS_NAMES[*method_id].to_string())
                 })
                 .take(10)
                 .collect::<Vec<String>>()
@@ -543,12 +543,12 @@ impl Circle {
         doc_scores.sort_by(|(_, d1), (_, d2)| d2.partial_cmp(d1).unwrap());
 
         Err(PyAttributeError::new_err(format!(
-            "The method '{}' does not exists, did you mean one of the following?\n{}",
+            "The method `{}` does not exists, did you mean one of the following?\n\n{}",
             &name,
             doc_scores
                 .iter()
                 .map(|(method_id, _)| {
-                    format!("* '{}'", CIRCLE_METHODS_NAMES[*method_id].to_string())
+                    format!("* `{}`", CIRCLE_METHODS_NAMES[*method_id].to_string())
                 })
                 .take(10)
                 .collect::<Vec<String>>()
@@ -710,12 +710,12 @@ impl Clique {
         doc_scores.sort_by(|(_, d1), (_, d2)| d2.partial_cmp(d1).unwrap());
 
         Err(PyAttributeError::new_err(format!(
-            "The method '{}' does not exists, did you mean one of the following?\n{}",
+            "The method `{}` does not exists, did you mean one of the following?\n\n{}",
             &name,
             doc_scores
                 .iter()
                 .map(|(method_id, _)| {
-                    format!("* '{}'", CLIQUE_METHODS_NAMES[*method_id].to_string())
+                    format!("* `{}`", CLIQUE_METHODS_NAMES[*method_id].to_string())
                 })
                 .take(10)
                 .collect::<Vec<String>>()
@@ -1129,13 +1129,13 @@ impl DendriticTree {
         doc_scores.sort_by(|(_, d1), (_, d2)| d2.partial_cmp(d1).unwrap());
 
         Err(PyAttributeError::new_err(format!(
-            "The method '{}' does not exists, did you mean one of the following?\n{}",
+            "The method `{}` does not exists, did you mean one of the following?\n\n{}",
             &name,
             doc_scores
                 .iter()
                 .map(|(method_id, _)| {
                     format!(
-                        "* '{}'",
+                        "* `{}`",
                         DENDRITICTREE_METHODS_NAMES[*method_id].to_string()
                     )
                 })
@@ -22516,12 +22516,12 @@ impl Graph {
         doc_scores.sort_by(|(_, d1), (_, d2)| d2.partial_cmp(d1).unwrap());
 
         Err(PyAttributeError::new_err(format!(
-            "The method '{}' does not exists, did you mean one of the following?\n{}",
+            "The method `{}` does not exists, did you mean one of the following?\n\n{}",
             &name,
             doc_scores
                 .iter()
                 .map(|(method_id, _)| {
-                    format!("* '{}'", GRAPH_METHODS_NAMES[*method_id].to_string())
+                    format!("* `{}`", GRAPH_METHODS_NAMES[*method_id].to_string())
                 })
                 .take(10)
                 .collect::<Vec<String>>()
@@ -22698,12 +22698,12 @@ impl NodeTuple {
         doc_scores.sort_by(|(_, d1), (_, d2)| d2.partial_cmp(d1).unwrap());
 
         Err(PyAttributeError::new_err(format!(
-            "The method '{}' does not exists, did you mean one of the following?\n{}",
+            "The method `{}` does not exists, did you mean one of the following?\n\n{}",
             &name,
             doc_scores
                 .iter()
                 .map(|(method_id, _)| {
-                    format!("* '{}'", NODETUPLE_METHODS_NAMES[*method_id].to_string())
+                    format!("* `{}`", NODETUPLE_METHODS_NAMES[*method_id].to_string())
                 })
                 .take(10)
                 .collect::<Vec<String>>()
@@ -23050,13 +23050,13 @@ impl ShortestPathsDjkstra {
         doc_scores.sort_by(|(_, d1), (_, d2)| d2.partial_cmp(d1).unwrap());
 
         Err(PyAttributeError::new_err(format!(
-            "The method '{}' does not exists, did you mean one of the following?\n{}",
+            "The method `{}` does not exists, did you mean one of the following?\n\n{}",
             &name,
             doc_scores
                 .iter()
                 .map(|(method_id, _)| {
                     format!(
-                        "* '{}'",
+                        "* `{}`",
                         SHORTESTPATHSDJKSTRA_METHODS_NAMES[*method_id].to_string()
                     )
                 })
@@ -23600,13 +23600,13 @@ impl ShortestPathsResultBFS {
         doc_scores.sort_by(|(_, d1), (_, d2)| d2.partial_cmp(d1).unwrap());
 
         Err(PyAttributeError::new_err(format!(
-            "The method '{}' does not exists, did you mean one of the following?\n{}",
+            "The method `{}` does not exists, did you mean one of the following?\n\n{}",
             &name,
             doc_scores
                 .iter()
                 .map(|(method_id, _)| {
                     format!(
-                        "* '{}'",
+                        "* `{}`",
                         SHORTESTPATHSRESULTBFS_METHODS_NAMES[*method_id].to_string()
                     )
                 })
@@ -23851,12 +23851,12 @@ impl Star {
         doc_scores.sort_by(|(_, d1), (_, d2)| d2.partial_cmp(d1).unwrap());
 
         Err(PyAttributeError::new_err(format!(
-            "The method '{}' does not exists, did you mean one of the following?\n{}",
+            "The method `{}` does not exists, did you mean one of the following?\n\n{}",
             &name,
             doc_scores
                 .iter()
                 .map(|(method_id, _)| {
-                    format!("* '{}'", STAR_METHODS_NAMES[*method_id].to_string())
+                    format!("* `{}`", STAR_METHODS_NAMES[*method_id].to_string())
                 })
                 .take(10)
                 .collect::<Vec<String>>()
@@ -24103,12 +24103,12 @@ impl Tendril {
         doc_scores.sort_by(|(_, d1), (_, d2)| d2.partial_cmp(d1).unwrap());
 
         Err(PyAttributeError::new_err(format!(
-            "The method '{}' does not exists, did you mean one of the following?\n{}",
+            "The method `{}` does not exists, did you mean one of the following?\n\n{}",
             &name,
             doc_scores
                 .iter()
                 .map(|(method_id, _)| {
-                    format!("* '{}'", TENDRIL_METHODS_NAMES[*method_id].to_string())
+                    format!("* `{}`", TENDRIL_METHODS_NAMES[*method_id].to_string())
                 })
                 .take(10)
                 .collect::<Vec<String>>()

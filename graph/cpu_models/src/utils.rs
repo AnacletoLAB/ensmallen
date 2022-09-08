@@ -1,9 +1,8 @@
-use ensmallen_traits::prelude::*;
 use express_measures::ThreadFloat;
 use funty::Integral;
 use graph::{EdgeT, EdgeTypeT, Graph, NodeT};
 use half::f16;
-use num_traits::{Coerced, Float, Zero};
+use num_traits::{Coerced, Float, IntoAtomic, Zero};
 use rayon::prelude::*;
 use vec_rand::{random_f32, splitmix64};
 
@@ -184,6 +183,10 @@ impl core::ops::Index<isize> for MatrixShape {
             },
         }
     }
+}
+
+pub trait EmbeddingSize {
+    fn get_embedding_size(&self, graph: &graph::Graph) -> Result<usize, String>;
 }
 
 pub trait IntegerFeatureType:

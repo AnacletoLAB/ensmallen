@@ -3,7 +3,7 @@ use super::mmap_numpy_npy::{
 };
 use super::*;
 use cpu_models::{
-    AnchorFeatureTypes, AnchorTypes, AnchorsInferredNodeEmbeddingModel, BasicSPINE, BasicWINE,
+    BasicSPINE, BasicWINE, LandmarkFeatureType, ALPINE, LandmarkType,
 };
 use indicatif::ParallelProgressIterator;
 use indicatif::{ProgressBar, ProgressStyle};
@@ -13,9 +13,9 @@ use std::convert::TryFrom;
 use types::ThreadDataRaceAware;
 
 #[derive(Debug, Clone)]
-pub struct BasicSPINEBinding<Model, const AFT: AnchorFeatureTypes, const AT: AnchorTypes>
+pub struct BasicSPINEBinding<Model, const LFT: LandmarkFeatureType, const LT: LandmarkType>
 where
-    Model: AnchorsInferredNodeEmbeddingModel<AT, AFT>,
+    Model: ALPINE<LT, LFT>,
 {
     pub inner: Model,
     pub path: Option<String>,
@@ -39,10 +39,10 @@ impl FromPyDict for BasicSPINE {
     }
 }
 
-impl<Model, const AFT: AnchorFeatureTypes, const AT: AnchorTypes> FromPyDict
-    for BasicSPINEBinding<Model, AFT, AT>
+impl<Model, const LFT: LandmarkFeatureType, const LT: LandmarkType> FromPyDict
+    for BasicSPINEBinding<Model, LFT, LT>
 where
-    Model: AnchorsInferredNodeEmbeddingModel<AT, AFT>,
+    Model: ALPINE<LT, LFT>,
     Model: From<BasicSPINE>,
 {
     fn from_pydict(py_kwargs: Option<&PyDict>) -> PyResult<Self> {
@@ -59,9 +59,9 @@ where
 }
 
 #[derive(Debug, Clone)]
-pub struct BasicWINEBinding<Model, const AFT: AnchorFeatureTypes, const AT: AnchorTypes>
+pub struct BasicWINEBinding<Model, const LFT: LandmarkFeatureType, const LT: LandmarkType>
 where
-    Model: AnchorsInferredNodeEmbeddingModel<AT, AFT>,
+    Model: ALPINE<LT, LFT>,
 {
     pub inner: Model,
     pub path: Option<String>,
@@ -85,10 +85,10 @@ impl FromPyDict for BasicWINE {
     }
 }
 
-impl<Model, const AFT: AnchorFeatureTypes, const AT: AnchorTypes> FromPyDict
-    for BasicWINEBinding<Model, AFT, AT>
+impl<Model, const LFT: LandmarkFeatureType, const LT: LandmarkType> FromPyDict
+    for BasicWINEBinding<Model, LFT, LT>
 where
-    Model: AnchorsInferredNodeEmbeddingModel<AT, AFT>,
+    Model: ALPINE<LT, LFT>,
     Model: From<BasicWINE>,
 {
     fn from_pydict(py_kwargs: Option<&PyDict>) -> PyResult<Self> {
@@ -106,9 +106,9 @@ where
 
 macro_rules! impl_alpine_embedding {
     ($($dtype:ty : $dtype_enum:expr),*) => {
-pub trait BaseALPINEBinding<Model, const AFT: AnchorFeatureTypes, const AT: AnchorTypes>
+pub trait BaseALPINEBinding<Model, const LFT: LandmarkFeatureType, const LT: LandmarkType>
 where
-    Model: AnchorsInferredNodeEmbeddingModel<AT, AFT> {
+    Model: ALPINE<LT, LFT> {
 
     fn get_model(&self) -> &Model;
 
@@ -451,10 +451,10 @@ impl_alpine_embedding! {
     u64: Dtype::U64
 }
 
-impl<Model, const AFT: AnchorFeatureTypes, const AT: AnchorTypes> BaseALPINEBinding<Model, AFT, AT>
-    for BasicSPINEBinding<Model, AFT, AT>
+impl<Model, const LFT: LandmarkFeatureType, const LT: LandmarkType>
+    BaseALPINEBinding<Model, LFT, LT> for BasicSPINEBinding<Model, LFT, LT>
 where
-    Model: AnchorsInferredNodeEmbeddingModel<AT, AFT>,
+    Model: ALPINE<LT, LFT>,
 {
     fn get_model(&self) -> &Model {
         &self.inner
@@ -465,10 +465,10 @@ where
     }
 }
 
-impl<Model, const AFT: AnchorFeatureTypes, const AT: AnchorTypes> BaseALPINEBinding<Model, AFT, AT>
-    for BasicWINEBinding<Model, AFT, AT>
+impl<Model, const LFT: LandmarkFeatureType, const LT: LandmarkType>
+    BaseALPINEBinding<Model, LFT, LT> for BasicWINEBinding<Model, LFT, LT>
 where
-    Model: AnchorsInferredNodeEmbeddingModel<AT, AFT>,
+    Model: ALPINE<LT, LFT>,
 {
     fn get_model(&self) -> &Model {
         &self.inner
@@ -485,8 +485,8 @@ where
 pub struct DegreeSPINE {
     pub inner: BasicSPINEBinding<
         cpu_models::DegreeSPINE,
-        { AnchorFeatureTypes::ShortestPaths },
-        { AnchorTypes::Degrees },
+        { LandmarkFeatureType::ShortestPaths },
+        { LandmarkType::Degrees },
     >,
 }
 
@@ -604,8 +604,8 @@ impl DegreeSPINE {
 pub struct NodeLabelSPINE {
     pub inner: BasicSPINEBinding<
         cpu_models::NodeLabelSPINE,
-        { AnchorFeatureTypes::ShortestPaths },
-        { AnchorTypes::NodeTypes },
+        { LandmarkFeatureType::ShortestPaths },
+        { LandmarkType::NodeTypes },
     >,
 }
 
@@ -883,8 +883,8 @@ impl ScoreSPINE {
 pub struct DegreeWINE {
     pub inner: BasicWINEBinding<
         cpu_models::DegreeWINE,
-        { AnchorFeatureTypes::Walks },
-        { AnchorTypes::Degrees },
+        { LandmarkFeatureType::Windows },
+        { LandmarkType::Degrees },
     >,
 }
 
@@ -1006,8 +1006,8 @@ impl DegreeWINE {
 pub struct NodeLabelWINE {
     pub inner: BasicWINEBinding<
         cpu_models::NodeLabelWINE,
-        { AnchorFeatureTypes::Walks },
-        { AnchorTypes::NodeTypes },
+        { LandmarkFeatureType::Windows },
+        { LandmarkType::NodeTypes },
     >,
 }
 
@@ -1125,7 +1125,7 @@ impl NodeLabelWINE {
 
 #[pyclass]
 #[derive(Debug, Clone)]
-#[pyo3(text_signature = "(*, embedding_size, walk_length, path, verbose)")]
+#[pyo3(text_signature = "(*, embedding_size, path, verbose)")]
 pub struct ScoreWINE {
     inner: BasicWINE,
     path: Option<String>,
@@ -1141,9 +1141,6 @@ impl ScoreWINE {
     /// ------------------------
     /// embedding_size: int = 100
     ///     Size of the embedding.
-    /// walk_length: int = 2
-    ///     Length of the random walk.
-    ///     By default 2, to capture exclusively the immediate context.
     /// path: Optional[str] = None
     ///     If passed, create a `.npy` file which will be mem-mapped
     ///     to allow processing embeddings that do not fit in RAM

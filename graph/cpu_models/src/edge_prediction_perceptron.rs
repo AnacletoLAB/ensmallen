@@ -8,8 +8,7 @@ use express_measures::{
 use graph::{Graph, NodeT};
 use indicatif::ProgressIterator;
 use indicatif::{ProgressBar, ProgressStyle};
-use num::Zero;
-use num_traits::Coerced;
+use num_traits::{Coerced, Zero};
 use rayon::prelude::*;
 use serde::de::DeserializeOwned;
 use serde::{Deserialize, Serialize};
