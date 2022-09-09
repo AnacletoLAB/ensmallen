@@ -27,17 +27,30 @@ where
     Ok(value)
 }
 
-// Initialize the model with weights and bias in the range (-1 / sqrt(k), +1 / sqrt(k))
-pub(crate) fn get_random_weight<F: ThreadFloat>(random_state: u64) -> F {
-    (F::one() + F::one()) * F::coerce_from(random_f32(splitmix64(random_state))) - F::one()
+/// Initialize the model with weights and bias in the range (-sqrt(6) / sqrt(k), +sqrt(6) / sqrt(k))
+///
+/// # Implementative details
+/// The square root of 6 is roughly: 2.45
+pub(crate) fn get_random_weight<F: ThreadFloat>(random_state: u64, dimension_squared_root: F) -> F {
+    ((F::one() + F::one()) * F::coerce_from(random_f32(splitmix64(random_state))) - F::one())
+        * F::coerce_from(2.45)
+        / dimension_squared_root
 }
 
-pub(crate) fn populate_vectors<F: ThreadFloat>(vectors: &mut [&mut [F]], random_state: u64) {
-    vectors.iter_mut().for_each(|vector| {
-        vector.par_iter_mut().enumerate().for_each(|(i, weight)| {
-            *weight = get_random_weight(random_state + i as u64);
-        })
-    });
+pub(crate) fn populate_vectors<F: ThreadFloat>(
+    vectors: &mut [&mut [F]],
+    dimensions: &[usize],
+    random_state: u64,
+) {
+    vectors
+        .iter_mut()
+        .zip(dimensions.iter().copied())
+        .for_each(|(vector, dimension)| {
+            let dimension_squared_root = F::from(dimension).unwrap().sqrt();
+            vector.par_iter_mut().enumerate().for_each(|(i, weight)| {
+                *weight = get_random_weight(random_state + i as u64, dimension_squared_root);
+            })
+        });
 }
 
 pub(crate) fn compute_prior<F: Float>(subset_size: F, total_size: F) -> F {

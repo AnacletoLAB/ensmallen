@@ -58,7 +58,12 @@ pub trait GraphEmbedder {
             }
         }
 
-        populate_vectors(embedding, self.get_random_state());
+        let embedding_dimensions = embedding_shapes
+            .iter()
+            .map(|shape| shape[-1])
+            .collect::<Vec<usize>>();
+
+        populate_vectors(embedding, &embedding_dimensions, self.get_random_state());
         self._fit_transform(graph, embedding)
     }
 

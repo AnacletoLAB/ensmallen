@@ -743,10 +743,11 @@ where
 
         self.bias_optimizer.set_capacity(1);
         self.weight_optimizer.set_capacity(edge_embedding_dimension);
+        let edge_embedding_dimension_root = (edge_embedding_dimension as f32).sqrt();
         self.weights = (0..edge_embedding_dimension)
-            .map(|i| get_random_weight(i as u64))
+            .map(|i| get_random_weight(i as u64, edge_embedding_dimension_root))
             .collect::<Vec<f32>>();
-        self.bias = get_random_weight(self.weights.len() as u64);
+        self.bias = get_random_weight(self.weights.len() as u64, 1.0);
 
         // Depending whether verbosity was requested by the user
         // we create or not a visible progress bar to show the progress
