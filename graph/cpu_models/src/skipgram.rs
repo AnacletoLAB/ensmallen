@@ -44,60 +44,20 @@ where
         // in the training epochs.
         let pb = self.get_progress_bar();
 
-        // Create the closure to apply a gradient to a provided node's embedding
-        let update_central_node_embedding = |node_id: NodeT, variation: &[F]| {
-            let node_id = node_id as usize;
-            unsafe {
-                element_wise_addition_inplace(
-                    &mut (*shared_embedding.get())[0]
-                        [node_id * self.embedding_size..(node_id + 1) * self.embedding_size],
-                    variation,
-                )
-            }
-        };
-
-        // Create the closure to apply a gradient to a provided node's hidden layer weights
-        let update_contextual_node_embedding = |node_id: NodeT, variation: &[F], weight: F| {
-            let node_id = node_id as usize;
-            unsafe {
-                element_wise_weighted_addition_inplace(
-                    &mut (*shared_embedding.get())[1]
-                        [node_id * self.embedding_size..(node_id + 1) * self.embedding_size],
-                    variation,
-                    weight,
-                )
-            }
-        };
-
-        // We define a closure that returns a reference to the embedding of the given node.
-        let get_central_node_embedding = |node_id: NodeT| {
-            let node_id = node_id as usize;
-            unsafe {
-                &(*shared_embedding.get())[0]
-                    [(node_id * self.embedding_size)..((node_id + 1) * self.embedding_size)]
-            }
-        };
-
-        // We define a closure that returns a reference to the hidden of the given node.
-        let get_contextual_node_embedding = |node_id: NodeT| {
-            let node_id = node_id as usize;
-            unsafe {
-                &(*shared_embedding.get())[1]
-                    [(node_id * self.embedding_size)..((node_id + 1) * self.embedding_size)]
-            }
-        };
-
-        let compute_mini_batch_step = |total_context_embedding: &[F],
-                                       context_embedding_gradient: &mut [F],
-                                       node_id: NodeT,
+        let compute_mini_batch_step = |central_node_embedding: &[F],
+                                       cumulative_central_node_gradient: &mut [F],
+                                       contextual_node_id: NodeT,
                                        label: F,
                                        learning_rate: F| {
-            let node_hidden = get_contextual_node_embedding(node_id);
+            let node_hidden = unsafe {
+                &mut (*shared_embedding.get())[1]
+                    [(contextual_node_id as usize * self.embedding_size)..((contextual_node_id as usize + 1) * self.embedding_size)]
+            };
             let dot: F =
-                unsafe { dot_product_sequential_unchecked(node_hidden, total_context_embedding) }
+                unsafe { dot_product_sequential_unchecked(node_hidden, central_node_embedding) }
                     / scale_factor;
 
-            if dot > cv || dot < cv {
+            if dot > cv || dot < -cv {
                 return;
             }
 
@@ -105,13 +65,20 @@ where
             let mut variation = (label - exp_dot / (exp_dot + F::one())) * learning_rate;
 
             if self.normalize_learning_rate_by_degree {
-                variation *= get_node_prior(graph, node_id, F::one());
+                variation *= get_node_prior(graph, contextual_node_id, F::one());
             }
 
-            update_contextual_node_embedding(node_id, total_context_embedding, variation);
             unsafe {
                 element_wise_weighted_addition_inplace(
-                    context_embedding_gradient,
+                    node_hidden,
+                    central_node_embedding,
+                    variation,
+                )
+            }
+
+            unsafe {
+                element_wise_weighted_addition_inplace(
+                    cumulative_central_node_gradient,
                     node_hidden,
                     variation,
                 )
@@ -155,78 +122,78 @@ where
                             )
                         })
                         .for_each(|(context, central_node_id, central_index)| {
+                            let mut cumulative_central_node_gradient =
+                                vec![F::zero(); self.get_embedding_size()];
+                            let central_node_embedding = unsafe{
+                                &mut (*shared_embedding.get())[0]
+                                [central_node_id as usize * self.embedding_size..(central_node_id as usize + 1) * self.embedding_size]
+                            };
+
+                            // We now compute the gradient relative to the positive
                             context
                                 .iter()
                                 .copied()
                                 .filter(|&context_node_id| context_node_id != central_node_id)
                                 .for_each(|context_node_id| {
-                                    let mut context_gradient =
-                                        vec![F::zero(); self.get_embedding_size()];
-                                    let context_node_embedding =
-                                        get_central_node_embedding(context_node_id);
-                                    // We now compute the gradient relative to the positive
                                     compute_mini_batch_step(
-                                        &context_node_embedding,
-                                        context_gradient.as_mut_slice(),
-                                        central_node_id,
+                                        &central_node_embedding,
+                                        cumulative_central_node_gradient.as_mut_slice(),
+                                        context_node_id,
                                         F::one(),
                                         learning_rate,
                                     );
-
-                                    // We compute the gradients relative to the negative classes.
-                                    if self.use_scale_free_distribution {
-                                        graph
-                                            .iter_random_outbounds_scale_free_node_ids(
-                                                self.number_of_negative_samples,
-                                                splitmix64(
-                                                    random_state
-                                                        + central_index as u64
-                                                        + walk_number as u64,
-                                                ),
-                                            )
-                                            .filter(|&non_central_node_id| {
-                                                non_central_node_id != central_node_id
-                                                    && non_central_node_id != context_node_id
-                                            })
-                                            .for_each(|non_central_node_id| {
-                                                compute_mini_batch_step(
-                                                    &context_node_embedding,
-                                                    context_gradient.as_mut_slice(),
-                                                    non_central_node_id,
-                                                    F::zero(),
-                                                    learning_rate,
-                                                )
-                                            });
-                                    } else {
-                                        (0..self.number_of_negative_samples)
-                                            .map(|i| {
-                                                let seed = splitmix64(
-                                                    random_state
-                                                        + central_index as u64
-                                                        + walk_number as u64
-                                                        + i as u64,
-                                                );
-                                                sample_uniform(nodes_number as _, seed) as NodeT
-                                            })
-                                            .filter(|&non_central_node_id| {
-                                                non_central_node_id != central_node_id
-                                                    && non_central_node_id != context_node_id
-                                            })
-                                            .for_each(|non_central_node_id| {
-                                                compute_mini_batch_step(
-                                                    &context_node_embedding,
-                                                    context_gradient.as_mut_slice(),
-                                                    non_central_node_id,
-                                                    F::zero(),
-                                                    learning_rate,
-                                                )
-                                            });
-                                    };
-                                    update_central_node_embedding(
-                                        context_node_id,
-                                        &context_gradient,
-                                    );
                                 });
+                        
+                            // We compute the gradients relative to the negative classes.
+                            if self.use_scale_free_distribution {
+                                graph
+                                    .iter_random_outbounds_scale_free_node_ids(
+                                        self.number_of_negative_samples,
+                                        splitmix64(
+                                            random_state
+                                                + central_index as u64
+                                                + walk_number as u64,
+                                        ),
+                                    )
+                                    .filter(|&non_central_node_id| {
+                                        non_central_node_id != central_node_id
+                                    })
+                                    .for_each(|non_central_node_id| {
+                                        compute_mini_batch_step(
+                                            &central_node_embedding,
+                                            cumulative_central_node_gradient.as_mut_slice(),
+                                            non_central_node_id,
+                                            F::zero(),
+                                            learning_rate,
+                                        )
+                                    });
+                            } else {
+                                graph.iter_random_node_ids(
+                                        self.number_of_negative_samples,
+                                        splitmix64(
+                                            random_state
+                                                + central_index as u64
+                                                + walk_number as u64,
+                                        )
+                                    )
+                                    .filter(|&non_central_node_id| {
+                                        non_central_node_id != central_node_id
+                                    })
+                                    .for_each(|non_central_node_id| {
+                                        compute_mini_batch_step(
+                                            &central_node_embedding,
+                                            cumulative_central_node_gradient.as_mut_slice(),
+                                            non_central_node_id,
+                                            F::zero(),
+                                            learning_rate,
+                                        )
+                                    });
+                            };
+                            // apply the accumulated gradient to the central node
+                            unsafe{element_wise_addition_inplace(
+                                central_node_embedding,
+                                cumulative_central_node_gradient.as_slice(),
+                            )}
                         });
                 });
             learning_rate *= F::coerce_from(self.learning_rate_decay);
