@@ -1,5 +1,5 @@
 use crate::*;
-use express_measures::{cosine_similarity_sequential_unchecked, ThreadFloat};
+use express_measures::{dot_product_sequential_unchecked, ThreadFloat};
 use graph::{Graph, NodeT, ThreadDataRaceAware};
 use indicatif::ProgressIterator;
 use num_traits::Coerced;
@@ -49,12 +49,11 @@ where
                 .map(|(src, dst, freq)| (src as usize, dst as usize, F::coerce_from(freq)))
                 .for_each(|(src, dst, freq)| unsafe {
                     let src_embedding = &mut (*shared_embedding.get())[0]
-                        [(src) * embedding_size..((src) + 1) * embedding_size];
+                        [src * embedding_size..(src + 1) * embedding_size];
                     let dst_embedding = &mut (*shared_embedding.get())[1]
-                        [(dst) * embedding_size..(dst + 1) * embedding_size];
+                        [dst * embedding_size..(dst + 1) * embedding_size];
 
-                    let (similarity, src_norm, dst_norm): (F, F, F) =
-                        cosine_similarity_sequential_unchecked(src_embedding, dst_embedding);
+                    let similarity = dot_product_sequential_unchecked(src_embedding, dst_embedding);
 
                     let variation: F = freq.powf(alpha) * (similarity - freq.ln());
 
@@ -67,8 +66,6 @@ where
                         .iter_mut()
                         .zip(dst_embedding.iter_mut())
                         .for_each(|(src_feature, dst_feature)| {
-                            *src_feature /= src_norm;
-                            *dst_feature /= dst_norm;
                             *src_feature -= *dst_feature * src_variation;
                             *dst_feature -= *src_feature * dst_variation;
                         });
