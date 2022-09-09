@@ -217,7 +217,7 @@ where
                                                     &context_node_embedding,
                                                     context_gradient.as_mut_slice(),
                                                     non_central_node_id,
-                                                    F::one(),
+                                                    F::zero(),
                                                     learning_rate,
                                                 )
                                             });
