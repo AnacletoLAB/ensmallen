@@ -77,6 +77,10 @@ where
         // We wrap the features object in an unsafe cell so
         // it may be shared among threads.
         let shared_features = &Feature::from_mut_slice(features);
+        // Initialize to 1 the count of the nodes in the buckets
+        bucket.par_iter().for_each(|node_id| {
+            shared_features[*node_id as usize].store(Feature::ONE, Ordering::Relaxed);
+        });
 
         if self.get_window_size() == 1 {
             bucket.into_par_iter()
