@@ -102,7 +102,7 @@
                 "fava.tsv.gz"
             ],
             "arguments": {
-                "edge_path": "gava.tsv",
+                "edge_path": "fava.tsv",
                 "sources_column_number": 0,
                 "destinations_column_number": 1,
                 "weights_column_number": 2,
