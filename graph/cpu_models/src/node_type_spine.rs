@@ -18,8 +18,8 @@ impl SPINEBased for NodeLabelSPINE {
 }
 
 impl EmbeddingSize for NodeLabelSPINE {
-    fn get_embedding_size(&self, _graph: &graph::Graph) -> Result<usize, String> {
-        Ok(self.get_basic_inferred_node_embedding().get_embedding_size())
+    fn get_embedding_size(&self, graph: &graph::Graph) -> Result<usize, String> {
+        graph.get_number_of_node_types().map(|x| x as usize)
     }
 }
 
