@@ -238,7 +238,7 @@ impl WeightedSPINE {
             let pb = ProgressBar::new(self.embedding_size as u64);
             pb.set_style(ProgressStyle::default_bar().template(
                 "SPINE features {spinner:.green} [{elapsed_precise}] [{bar:40.cyan/blue}] ({pos}/{len}, ETA {eta})",
-            ));
+            ).unwrap());
             pb
         } else {
             ProgressBar::hidden()

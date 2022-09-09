@@ -758,7 +758,7 @@ where
                 "Perceptron ",
                 "{spinner:.green} [{elapsed_precise}] ",
                 "[{bar:40.cyan/blue}] ({pos}/{len}, ETA {eta})"
-            )));
+            )).unwrap());
             pb
         } else {
             ProgressBar::hidden()

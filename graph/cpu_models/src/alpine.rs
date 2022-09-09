@@ -242,13 +242,17 @@ where
         // in the computation of the features.
         let features_progress_bar = if self.is_verbose() {
             let pb = ProgressBar::new(self.get_embedding_size(graph)? as u64);
-            pb.set_style(ProgressStyle::default_bar().template(&format!(
-                concat!(
-                    "{model_name} {{spinner:.green}} [{{elapsed_precise}}] ",
-                    "[{{bar:40.cyan/blue}}] ({{pos}}/{{len}}, ETA {{eta}})"
-                ),
-                model_name = self.get_model_name()
-            )));
+            pb.set_style(
+                ProgressStyle::default_bar()
+                    .template(&format!(
+                        concat!(
+                            "{model_name} {{spinner:.green}} [{{elapsed_precise}}] ",
+                            "[{{bar:40.cyan/blue}}] ({{pos}}/{{len}}, ETA {{eta}})"
+                        ),
+                        model_name = self.get_model_name()
+                    ))
+                    .unwrap(),
+            );
             pb
         } else {
             ProgressBar::hidden()

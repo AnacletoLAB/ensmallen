@@ -135,7 +135,7 @@ where
                     "[{{bar:40.cyan/blue}}] ({{pos}}/{{len}}, ETA {{eta}})"
                 ),
                 self.get_model_name()
-            )));
+            )).unwrap());
             pb
         } else {
             ProgressBar::hidden()

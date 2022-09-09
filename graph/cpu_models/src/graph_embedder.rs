@@ -80,7 +80,7 @@ pub trait GraphEmbedder {
                     "({{pos}}/{{len}}, ETA {{eta}})"
                 ),
                 model_name = self.get_model_name()
-            )));
+            )).unwrap());
             pb
         } else {
             ProgressBar::hidden()
