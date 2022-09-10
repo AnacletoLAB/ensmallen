@@ -36,7 +36,7 @@ def exec(command, env={}, **kwargs):
         raise ValueError("The command '%s' @ '%s' has returned code %s"%(command, kwargs.get("cwd", "."), res.returncode)) 
 
 def patch(file, src_regex, dst_regex):
-    with open(join(file), "r") as f:
+    with open(join(file), "r", encoding="utf-8") as f:
         text = f.read()
 
     if len(text) == 0:
@@ -44,7 +44,7 @@ def patch(file, src_regex, dst_regex):
 
     text = re.sub(src_regex, dst_regex, text)
 
-    with open(join(file), "w") as f:
+    with open(join(file), "w", encoding="utf-8") as f:
         f.write(text)
 
 def hash_file(file_path) -> str:
@@ -203,7 +203,7 @@ if __name__ == "__main__":
         raise ValueError("The given settings path '%s' does not exists."%settings_path)
 
     # Read the file
-    with open(settings_path, "r") as f:
+    with open(settings_path, "r", encoding="utf-8") as f:
         settings_txt = f.read()
 
     # Strip away comments
@@ -218,7 +218,11 @@ if __name__ == "__main__":
     except JSONDecodeError:
         raise ValueError("The given settings are not a json.\n%s"%settings_txt)
 
-    settings["targets"] = settings["targets"][platform.machine()]
+    arch = {
+        "AMD64":"x86_64",
+    }.get(platform.machine(), platform.machine())
+
+    settings["targets"] = settings["targets"][arch]
 
     WHEELS_FOLDER = join(settings.get("wheels_folder", "wheels"))
     MERGIN_FOLDER =  join(WHEELS_FOLDER, "merged")
