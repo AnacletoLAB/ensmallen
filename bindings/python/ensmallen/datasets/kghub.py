@@ -5,7 +5,7 @@ from .graph_retrieval import RetrievedGraph
 def SLDB(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
     cache_sys_var="GRAPH_CACHE_DIR", version="20220522", **kwargs
 ) -> Graph:
     """Return sldb graph	
@@ -37,12 +37,12 @@ def SLDB(
     return RetrievedGraph(
         "SLDB", version, "kghub", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, cache, cache_path, cache_sys_var, kwargs
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
 def KGMicrobe(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
     cache_sys_var="GRAPH_CACHE_DIR", version="current", **kwargs
 ) -> Graph:
     """Return kg-microbe graph	
@@ -90,12 +90,12 @@ def KGMicrobe(
     return RetrievedGraph(
         "KGMicrobe", version, "kghub", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, cache, cache_path, cache_sys_var, kwargs
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
 def KGIDG(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
     cache_sys_var="GRAPH_CACHE_DIR", version="current", **kwargs
 ) -> Graph:
     """Return KG-IDG graph	
@@ -159,12 +159,12 @@ def KGIDG(
     return RetrievedGraph(
         "KGIDG", version, "kghub", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, cache, cache_path, cache_sys_var, kwargs
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
 def KGPhenio(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
     cache_sys_var="GRAPH_CACHE_DIR", version="current", **kwargs
 ) -> Graph:
     """Return kg-phenio graph	
@@ -212,12 +212,12 @@ def KGPhenio(
     return RetrievedGraph(
         "KGPhenio", version, "kghub", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, cache, cache_path, cache_sys_var, kwargs
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
 def KGCOVID19(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
     cache_sys_var="GRAPH_CACHE_DIR", version="current", **kwargs
 ) -> Graph:
     """Return kg-covid-19 graph	
@@ -299,12 +299,12 @@ def KGCOVID19(
     return RetrievedGraph(
         "KGCOVID19", version, "kghub", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, cache, cache_path, cache_sys_var, kwargs
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
 def EcoKG(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
     cache_sys_var="GRAPH_CACHE_DIR", version="20211102", **kwargs
 ) -> Graph:
     """Return eco-kg graph	
@@ -337,5 +337,5 @@ def EcoKG(
     return RetrievedGraph(
         "EcoKG", version, "kghub", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, cache, cache_path, cache_sys_var, kwargs
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()

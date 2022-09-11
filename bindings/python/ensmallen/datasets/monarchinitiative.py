@@ -23,7 +23,7 @@ from .graph_retrieval import RetrievedGraph
 def Monarch(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
     cache_sys_var="GRAPH_CACHE_DIR", version="2022-06-30", **kwargs
 ) -> Graph:
     """Return Monarch graph	
@@ -75,5 +75,5 @@ def Monarch(
     return RetrievedGraph(
         "Monarch", version, "monarchinitiative", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, cache, cache_path, cache_sys_var, kwargs
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()

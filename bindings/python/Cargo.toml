@@ -25,6 +25,7 @@ requires-dist = [
     "tqdm",
     "pandas",
     "py-cpuinfo",
+    "ringbell>=1.0.2",
     "environments_utils>=1.0.4"
 ]
 

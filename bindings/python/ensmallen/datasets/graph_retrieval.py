@@ -9,6 +9,7 @@ import compress_json
 from downloaders import BaseDownloader
 from environments_utils import is_windows, is_linux, is_macos
 from dict_hash import sha256
+from ringbell import RingBell
 from ensmallen import Graph, edge_list_utils
 from .get_dataset import validate_graph_version
 
@@ -41,6 +42,8 @@ class RetrievedGraph:
         auto_enable_tradeoffs: bool = True,
         sort_tmp_dir: Optional[str] = None,
         verbose: int = 2,
+        ring_bell: bool = False,
+
         cache: bool = True,
         cache_path: Optional[str] = None,
         cache_sys_var: str = "GRAPH_CACHE_DIR",
@@ -178,6 +181,10 @@ class RetrievedGraph:
         self._cache = cache
         self._verbose = verbose
         self._callbacks = callbacks
+        self._ringbell = RingBell(
+            verbose=ring_bell,
+            sample="happy_bells",
+        )
         if graph_kwargs is None:
             graph_kwargs = {}
         self._graph_kwargs = graph_kwargs
@@ -722,4 +729,7 @@ class RetrievedGraph:
 
         if self._auto_enable_tradeoffs and graph.get_number_of_unique_edges() < 50e6:
             graph.enable()
+
+        self._ringbell.play()
+        
         return graph

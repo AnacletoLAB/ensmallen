@@ -5,7 +5,7 @@ from .graph_retrieval import RetrievedGraph
 def PubMedDiabetes(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
     cache_sys_var="GRAPH_CACHE_DIR", version="latest", **kwargs
 ) -> Graph:
     """Return PubMedDiabetes graph	The Pubmed Diabetes dataset consists of 19717 scientific publications from
@@ -51,7 +51,7 @@ def PubMedDiabetes(
     return RetrievedGraph(
         "PubMedDiabetes", version, "linqs", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, cache, cache_path, cache_sys_var, kwargs,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs,
 		callbacks=[
 			parse_linqs_pubmed_incidence_matrix
 		],
@@ -67,7 +67,7 @@ def PubMedDiabetes(
 def Cora(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
     cache_sys_var="GRAPH_CACHE_DIR", version="latest", **kwargs
 ) -> Graph:
     """Return Cora graph	The Cora dataset consists of 2708 scientific publications classified into
@@ -124,7 +124,7 @@ def Cora(
     return RetrievedGraph(
         "Cora", version, "linqs", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, cache, cache_path, cache_sys_var, kwargs,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs,
 		callbacks=[
 			parse_linqs_incidence_matrix
 		],
@@ -140,7 +140,7 @@ def Cora(
 def CiteSeer(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
     cache_sys_var="GRAPH_CACHE_DIR", version="latest", **kwargs
 ) -> Graph:
     """Return CiteSeer graph	The CiteSeer dataset consists of 3312 scientific publications classified
@@ -197,7 +197,7 @@ def CiteSeer(
     return RetrievedGraph(
         "CiteSeer", version, "linqs", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, cache, cache_path, cache_sys_var, kwargs,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs,
 		callbacks=[
 			parse_linqs_incidence_matrix
 		],
