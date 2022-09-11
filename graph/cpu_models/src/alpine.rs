@@ -2,6 +2,7 @@ use crate::*;
 use graph::{EdgeT, Graph, NodeT};
 use indicatif::{ProgressBar, ProgressIterator, ProgressStyle};
 use rayon::prelude::*;
+use file_progress::{FileProgressIterator, MarkdownFileProgress, FileProgress};
 
 #[derive(Clone, Debug)]
 pub struct BasicALPINE {
@@ -258,10 +259,19 @@ where
             ProgressBar::hidden()
         };
 
+        let mut progress = MarkdownFileProgress::from_project_name(format!(
+            "{graph_name}_{model_name}",
+            graph_name=graph.get_name(),
+            model_name=self.get_model_name()
+        ));
+
+        progress.set_verbose(self.is_verbose());
+
         // We start to compute the features
         embedding
             .chunks_mut(graph.get_number_of_nodes() as usize)
             .progress_with(features_progress_bar)
+            .progress_with_file(progress)
             .zip(self.iter_anchor_nodes_buckets(graph)?)
             .for_each(|(empty_feature, bucket)| unsafe {
                 self.compute_unchecked_feature_from_bucket(graph, bucket, empty_feature);
