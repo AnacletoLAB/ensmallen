@@ -2,6 +2,7 @@ use super::mmap_numpy_npy::{
     create_memory_mapped_numpy_array, load_memory_mapped_numpy_array, Dtype,
 };
 use super::*;
+use cpu_models::RUBICONE as RUBICONERust;
 use cpu_models::{BasicSPINE, BasicWINE, LandmarkFeatureType, LandmarkType, ALPINE};
 use indicatif::ParallelProgressIterator;
 use indicatif::{ProgressBar, ProgressStyle};
@@ -37,6 +38,36 @@ impl FromPyDict for BasicSPINE {
     }
 }
 
+#[derive(Debug, Clone)]
+pub struct RUBICONEBinding {
+    pub inner: RUBICONERust,
+    pub path: Option<String>,
+}
+
+impl FromPyDict for RUBICONERust {
+    fn from_pydict(py_kwargs: Option<&PyDict>) -> PyResult<Self> {
+        let py = pyo3::Python::acquire_gil();
+        let kwargs = normalize_kwargs!(py_kwargs, py.python());
+
+        pe!(validate_kwargs(
+            kwargs,
+            &[
+                "embedding_size",
+                "number_of_convolutions",
+                "path",
+                "verbose"
+            ]
+        ))?;
+
+        pe!(RUBICONERust::new(
+            extract_value_rust_result!(kwargs, "embedding_size", usize),
+            extract_value_rust_result!(kwargs, "number_of_convolutions", usize),
+            extract_value_rust_result!(kwargs, "random_state", u64),
+            extract_value_rust_result!(kwargs, "verbose", bool),
+        ))
+    }
+}
+
 impl<Model, const LFT: LandmarkFeatureType, const LT: LandmarkType> FromPyDict
     for BasicSPINEBinding<Model, LFT, LT>
 where
@@ -46,6 +77,20 @@ where
     fn from_pydict(py_kwargs: Option<&PyDict>) -> PyResult<Self> {
         Ok(Self {
             inner: BasicSPINE::from_pydict(py_kwargs)?.into(),
+            path: match py_kwargs {
+                None => None,
+                Some(kwargs) => {
+                    extract_value_rust_result!(kwargs, "path", String)
+                }
+            },
+        })
+    }
+}
+
+impl FromPyDict for RUBICONEBinding {
+    fn from_pydict(py_kwargs: Option<&PyDict>) -> PyResult<Self> {
+        Ok(Self {
+            inner: RUBICONERust::from_pydict(py_kwargs)?,
             path: match py_kwargs {
                 None => None,
                 Some(kwargs) => {
@@ -477,6 +522,18 @@ where
     }
 }
 
+impl BaseALPINEBinding<RUBICONERust, { LandmarkFeatureType::Random }, { LandmarkType::Empty }>
+    for RUBICONEBinding
+{
+    fn get_model(&self) -> &RUBICONERust {
+        &self.inner
+    }
+
+    fn get_path(&self) -> Option<String> {
+        self.path.clone()
+    }
+}
+
 #[pyclass]
 #[derive(Debug, Clone)]
 #[pyo3(text_signature = "(*, embedding_size, maximum_depth, verbose)")]
@@ -505,6 +562,123 @@ impl DegreeSPINE {
     pub fn new(py_kwargs: Option<&PyDict>) -> PyResult<DegreeSPINE> {
         Ok(Self {
             inner: BasicSPINEBinding::from_pydict(py_kwargs)?,
+        })
+    }
+
+    #[pyo3(text_signature = "($self, path)")]
+    /// Transpose computed embedding and stores to provided position.
+    ///
+    /// Parameters
+    /// --------------
+    /// path: Optional[str] = None
+    ///     Position where to store the mmapped vector.
+    ///
+    /// Raises
+    /// --------------
+    /// ValueError
+    ///     If the path was not provided to the constructor.
+    /// ValueError
+    ///     If no embedding exists at the provided path.
+    fn transpose_mmap(&self, path: Option<String>) -> PyResult<Py<PyAny>> {
+        self.inner.transpose_mmap(path)
+    }
+
+    #[pyo3(text_signature = "($self, node_ids, path)")]
+    /// Return numpy embedding curresponding to the provided indices.
+    ///
+    /// Parameters
+    /// --------------
+    /// node_ids: np.ndarray
+    ///     Numpy vector with node IDs to be queried.
+    /// path: Optional[str] = None
+    ///     The path to be used to load the embedding.
+    ///     If not provided, the path of the current SPINE model is used.
+    ///
+    /// Raises
+    /// --------------
+    /// ValueError
+    ///     If the path was not provided to the constructor.
+    /// ValueError
+    ///     If no embedding exists at the provided path.
+    fn get_mmap_node_embedding_from_node_ids(
+        &self,
+        node_ids: Py<PyArray1<NodeT>>,
+        path: Option<String>,
+    ) -> PyResult<Py<PyAny>> {
+        self.inner
+            .get_mmap_node_embedding_from_node_ids(node_ids, path)
+    }
+
+    #[args(py_kwargs = "**")]
+    #[pyo3(text_signature = "($self, graph, *, dtype, verbose)")]
+    /// Return numpy embedding with Degree SPINE node embedding.
+    ///
+    /// Do note that the embedding is returned transposed.
+    ///
+    /// Parameters
+    /// --------------
+    /// graph: Graph
+    ///     The graph to embed.
+    /// dtype: Optional[str] = None
+    ///     Dtype to use for the embedding.
+    ///     When not provided, we automatically infer the best one by using the diameter.
+    /// verbose: bool = False
+    ///     Whether to show loading bars.
+    fn fit_transform(&self, graph: &Graph, py_kwargs: Option<&PyDict>) -> PyResult<Py<PyAny>> {
+        self.inner.fit_transform(graph, py_kwargs)
+    }
+
+    #[args(py_kwargs = "**")]
+    #[pyo3(text_signature = "($self, graph, dtype, feature_number)")]
+    /// Fit the provided feature number through disk MMAP.
+    ///
+    /// Do note that the embedding produced is in FORTRAN format.
+    ///
+    /// Parameters
+    /// --------------
+    /// graph: Graph
+    ///     The graph to embed.
+    /// dtype: String
+    ///     Dtype of the features.
+    /// feature_number: int
+    ///     The number of the feature to compute.
+    fn fit_transform_feature(
+        &self,
+        graph: &Graph,
+        dtype: String,
+        feature_number: usize,
+    ) -> PyResult<Py<PyAny>> {
+        self.inner
+            .fit_transform_feature(graph, dtype, feature_number)
+    }
+}
+
+#[pyclass]
+#[derive(Debug, Clone)]
+#[pyo3(text_signature = "(*, embedding_size, maximum_depth, verbose)")]
+pub struct RUBICONE {
+    pub inner: RUBICONEBinding,
+}
+
+#[pymethods]
+impl RUBICONE {
+    #[new]
+    #[args(py_kwargs = "**")]
+    /// Return a new instance of the RUBICONE model.
+    ///
+    /// Parameters
+    /// ------------------------
+    /// embedding_size: int = 100
+    ///     Size of the embedding.
+    /// number_of_convolutions: int = 2
+    ///     Number of convolutions.
+    /// random_state: int = 42
+    ///     Random state to reproduce the embedding procedure.
+    /// verbose: bool = True
+    ///     Whether to show loading bars.
+    pub fn new(py_kwargs: Option<&PyDict>) -> PyResult<RUBICONE> {
+        Ok(Self {
+            inner: RUBICONEBinding::from_pydict(py_kwargs)?,
         })
     }
 
