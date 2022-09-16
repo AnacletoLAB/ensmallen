@@ -85,20 +85,22 @@ impl LandmarkBasedFeature<{ LandmarkFeatureType::Random }> for RUBICONE {
 
         (0..self.get_number_of_convolutions()).for_each(|_| {
             graph.par_iter_node_ids().for_each(|src| {
-                let mut new_src_feature = vec![0.0; number_of_bits];
+                let mut new_src_feature = vec![0; number_of_bits];
                 let half_number_of_neighbours = graph
                     .iter_unchecked_neighbour_node_ids_from_source_node_id(src)
                     .map(|dst| {
                         let mut dst_feature = shared_features[dst as usize].load(Ordering::Relaxed);
                         new_src_feature.iter_mut().for_each(|value| {
-                            *value += (dst_feature & Feature::ONE).coerce_into();
+                            if dst_feature & Feature::ONE == Feature::ONE {
+                                *value += 1;
+                            }
                             dst_feature = dst_feature >> Feature::ONE;
                         });
                     })
-                    .count() as f32
-                    / 2.0;
+                    .count()
+                    / 2;
                 shared_features[src as usize].store(
-                    new_src_feature.into_iter().fold(
+                    new_src_feature.into_iter().rev().fold(
                         Feature::ZERO,
                         |mut feature_being_built, feature_count| {
                             if feature_count > half_number_of_neighbours {
