@@ -850,6 +850,28 @@ impl Graph {
             })
     }
 
+    /// Returns iterator over node IDs with given curie prefixes
+    ///
+    /// # Arguments
+    /// * `curie_prefixes`: &[&str] - Prefix of the node names.
+    pub fn iter_node_ids_from_node_curie_prefixes<'a>(
+        &'a self,
+        curie_prefixes: &'a [&'a str],
+    ) -> impl Iterator<Item = NodeT> + 'a {
+        self.iter_node_ids()
+            .zip(self.iter_node_names())
+            .filter_map(move |(node_id, node_name)| {
+                if curie_prefixes
+                    .iter()
+                    .any(|curie_prefix| node_name.starts_with(curie_prefix))
+                {
+                    Some(node_id)
+                } else {
+                    None
+                }
+            })
+    }
+
     /// Returns parallel iterator over node names with given curie prefixes
     ///
     /// # Arguments
