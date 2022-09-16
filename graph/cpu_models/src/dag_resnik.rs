@@ -289,7 +289,9 @@ where
         let task_name = format!(
             "Computing Resnik between {:?} and {:?}",
             first_node_prefixes, second_node_prefixes
-        ).replace(" ", "_").replace("\"", "");
+        )
+        .replace(" ", "_")
+        .replace("\"", "");
 
         let progress_bar = if self.verbose {
             let pb = ProgressBar::new(self.get_number_of_nodes()? as u64);
@@ -311,6 +313,11 @@ where
         progress.set_verbose(self.verbose);
 
         if let Some(graph) = self.undirected_dag.as_ref() {
+            progress.set_len(
+                graph
+                    .iter_node_ids_from_node_curie_prefixes(&first_node_prefixes)
+                    .count(),
+            );
             return Ok(graph
                 .iter_node_ids_from_node_curie_prefixes(&first_node_prefixes)
                 .progress_with_file(progress)
