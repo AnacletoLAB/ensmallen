@@ -2,7 +2,7 @@ use super::mmap_numpy_npy::{
     create_memory_mapped_numpy_array, load_memory_mapped_numpy_array, Dtype,
 };
 use super::*;
-use file_progress::{FileProgress, FileProgressIterator, MarkdownFileProgress};
+use file_progress::{FileProgress, MarkdownFileProgress};
 use cpu_models::{BasicSPINE, BasicWINE, LandmarkFeatureType, LandmarkType, ALPINE};
 use indicatif::ParallelProgressIterator;
 use indicatif::{ProgressBar, ProgressStyle};
