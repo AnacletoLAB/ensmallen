@@ -63,13 +63,18 @@ impl LandmarkBasedFeature<{ LandmarkFeatureType::Random }> for RUBICONE {
             .wrapping_mul(self.get_random_state().wrapping_add(feature_number as u64));
 
         // We initialize the provided slice with the maximum distance.
+
+        let maximum_value: usize = Feature::MAX.try_into().unwrap();
+
         features
             .par_iter_mut()
             .enumerate()
             .for_each(|(i, distance)| {
-                *distance = Feature::coerce_from(splitmix64(
-                    (random_state.wrapping_add(i as u64)).wrapping_mul(random_state + i as u64),
-                ) as f32);
+                *distance = Feature::coerce_from(
+                    (splitmix64(
+                        (random_state.wrapping_add(i as u64)).wrapping_mul(random_state + i as u64),
+                    ) % maximum_value as u64) as f32,
+                );
             });
 
         // We wrap the features object in an unsafe cell so
@@ -86,8 +91,8 @@ impl LandmarkBasedFeature<{ LandmarkFeatureType::Random }> for RUBICONE {
                     .map(|dst| {
                         let mut dst_feature = shared_features[dst as usize].load(Ordering::Relaxed);
                         new_src_feature.iter_mut().for_each(|value| {
-                            dst_feature = dst_feature >> Feature::ONE;
                             *value += (dst_feature & Feature::ONE).coerce_into();
+                            dst_feature = dst_feature >> Feature::ONE;
                         });
                     })
                     .count() as f32
