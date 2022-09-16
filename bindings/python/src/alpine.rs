@@ -2,6 +2,7 @@ use super::mmap_numpy_npy::{
     create_memory_mapped_numpy_array, load_memory_mapped_numpy_array, Dtype,
 };
 use super::*;
+use file_progress::{FileProgress, FileProgressIterator, MarkdownFileProgress};
 use cpu_models::{BasicSPINE, BasicWINE, LandmarkFeatureType, LandmarkType, ALPINE};
 use indicatif::ParallelProgressIterator;
 use indicatif::{ProgressBar, ProgressStyle};
@@ -199,6 +200,11 @@ where
                     } else {
                         ProgressBar::hidden()
                     };
+
+                    let mut progress = MarkdownFileProgress::from_project_name("Transposing");
+                    progress.set_verbose(self.get_model().is_verbose());
+
+                    progress.set_len(embedding_size);
 
                     let transposed_embedding = create_memory_mapped_numpy_array(
                         gil.python(),
