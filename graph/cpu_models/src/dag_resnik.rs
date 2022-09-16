@@ -289,7 +289,7 @@ where
         let task_name = format!(
             "Computing Resnik between {:?} and {:?}",
             first_node_prefixes, second_node_prefixes
-        );
+        ).replace(" ", "_").replace("\"", "");
 
         let progress_bar = if self.verbose {
             let pb = ProgressBar::new(self.get_number_of_nodes()? as u64);
