@@ -2,6 +2,8 @@ use libc::*;
 use core::fmt::Debug;
 use super::MemoryMapReadOnlyCore;
 
+const MAP_HUGE_2MB: i32 = 1_409_286_144i32;
+
 /// A read-only memory mapped file,
 /// this should be equivalent to read-only slice that
 /// automatically handle the freeing.
@@ -45,7 +47,7 @@ impl MemoryMapReadOnlyCore for MemoryMappedReadOnly {
         let mut flags = libc::MAP_PRIVATE;
 
         if cfg!(target_os = "linux") {
-            flags |= libc::MAP_HUGE_2MB;
+            flags |= MAP_HUGE_2MB;
         }
         
         let addr = unsafe {
