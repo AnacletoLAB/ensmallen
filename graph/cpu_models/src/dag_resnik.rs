@@ -1,8 +1,6 @@
-use file_progress::{FileProgress, FileProgressIterator, MarkdownFileProgress};
 use graph::{Graph, NodeT, ThreadDataRaceAware};
-use indicatif::{ProgressBar, ProgressIterator, ProgressStyle};
+use indicatif::{ParallelProgressIterator, ProgressBar, ProgressStyle};
 use num_traits::{Coerced, Float, IntoAtomic};
-use parallel_frontier::Frontier;
 use rayon::prelude::*;
 use std::{
     collections::HashMap,
@@ -209,14 +207,14 @@ where
             let mut predecessors = vec![NodeT::MAX; self.get_number_of_nodes().unwrap() as usize];
             predecessors[node_id as usize] = node_id;
             let shared_predecessors = NodeT::from_mut_slice(&mut predecessors);
-            let mut frontier: Frontier<NodeT> = vec![node_id].into();
-            let mut downward_frontier: Frontier<NodeT> = vec![node_id].into();
+            let mut frontier: Vec<NodeT> = vec![node_id];
+            let mut downward_frontier: Vec<NodeT> = Vec::new();
 
             while !frontier.is_empty() {
-                let mut temporary_frontier: Frontier<NodeT> = Frontier::new();
-                let mut temporary_downward_frontier: Frontier<NodeT> = Frontier::new();
+                let mut temporary_frontier: Vec<NodeT> = Vec::new();
+                let mut temporary_downward_frontier: Vec<NodeT> = Vec::new();
 
-                frontier.par_iter().for_each(|&src| {
+                frontier.iter().for_each(|&src| {
                     let current_node_resnik_score =
                         unsafe { (*shared_resnik_scores.get())[src as usize] };
                     // First we handle the explorations upward, towards to head of the dag.
@@ -261,7 +259,7 @@ where
                         });
                 });
 
-                downward_frontier.par_iter().for_each(|&src| {
+                downward_frontier.iter().for_each(|&src| {
                     let current_node_resnik_score =
                         unsafe { (*shared_resnik_scores.get())[src as usize] };
                     // Then we handle the downward exploration.
@@ -309,9 +307,9 @@ where
         iterator: I,
         minimum_similarity: Option<F>,
         keep_unreacheable_nodes: Option<bool>,
-    ) -> Result<impl Iterator<Item = (NodeT, F)> + '_, String>
+    ) -> Result<impl ParallelIterator<Item = (NodeT, F)> + '_, String>
     where
-        I: Iterator<Item = NodeT> + 'a,
+        I: ParallelIterator<Item = NodeT> + 'a,
     {
         let keep_unreacheable_nodes = keep_unreacheable_nodes.unwrap_or(false);
         let minimum_similarity = minimum_similarity.unwrap_or(F::zero());
@@ -338,13 +336,6 @@ where
         second_node_prefixes: Vec<&str>,
         minimum_similarity: Option<F>,
     ) -> Result<(Vec<Vec<NodeT>>, Vec<F>), String> {
-        let task_name = format!(
-            "Computing Resnik between {:?} and {:?}",
-            first_node_prefixes, second_node_prefixes
-        )
-        .replace(" ", "_")
-        .replace("\"", "");
-
         let progress_bar = if self.verbose {
             let pb = ProgressBar::new(self.get_number_of_nodes()? as u64);
             pb.set_style(
@@ -361,21 +352,13 @@ where
             ProgressBar::hidden()
         };
 
-        let mut progress = MarkdownFileProgress::from_project_name(task_name);
-        progress.set_verbose(self.verbose);
-
         self.must_be_trained().map(|(dag, _)| {
-            progress.set_len(
-                dag.iter_node_ids_from_node_curie_prefixes(&first_node_prefixes)
-                    .count(),
-            );
-            dag.iter_node_ids_from_node_curie_prefixes(&first_node_prefixes)
-                .progress_with_file(progress)
+            dag.par_iter_node_ids_from_node_curie_prefixes(&first_node_prefixes)
                 .progress_with(progress_bar)
                 .flat_map(|src| {
                     self.get_similarities_from_node_id_and_iterator(
                         src,
-                        dag.iter_node_ids_from_node_curie_prefixes(&second_node_prefixes),
+                        dag.par_iter_node_ids_from_node_curie_prefixes(&second_node_prefixes),
                         minimum_similarity,
                         None,
                     )

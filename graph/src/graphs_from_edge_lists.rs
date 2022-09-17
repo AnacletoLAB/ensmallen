@@ -331,14 +331,14 @@ impl Graph {
     /// Returns bipartite graph between the provided source and destination node prefixes.
     ///
     /// # Arguments
-    /// * `source_node_prefixes`: Vec<&str> - The source node prefixes.
-    /// * `destination_node_prefixes`: Vec<&str> - The destination node prefixes.
+    /// * `source_node_prefixes`: &[&str] - The source node prefixes.
+    /// * `destination_node_prefixes`: &[&str] - The destination node prefixes.
     /// * `directed`: bool - Whether to make the graph directed or undirected.
     ///
     pub fn build_bipartite_graph_from_edge_node_prefixes(
         &self,
-        source_node_prefixes: Vec<&str>,
-        destination_node_prefixes: Vec<&str>,
+        source_node_prefixes: &[&str],
+        destination_node_prefixes: &[&str],
         directed: bool,
     ) -> Result<Graph> {
         self.build_bipartite_graph_from_edge_node_ids(
@@ -351,12 +351,12 @@ impl Graph {
     /// Returns clique graph between the nodes with the provided prefixes.
     ///
     /// # Arguments
-    /// * `node_prefixes`: Vec<&str> - The node name prefixes.
+    /// * `node_prefixes`: &[&str] - The node name prefixes.
     /// * `directed`: bool - Whether to make the graph directed or undirected.
     ///
     pub fn build_clique_graph_from_node_prefixes(
         &self,
-        node_prefixes: Vec<&str>,
+        node_prefixes: &[&str],
         directed: bool,
     ) -> Result<Graph> {
         self.build_clique_graph_from_node_ids(

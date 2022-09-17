@@ -831,10 +831,10 @@ impl Graph {
     /// Returns parallel iterator over node IDs with given curie prefixes
     ///
     /// # Arguments
-    /// * `curie_prefixes`: Vec<&str> - Prefix of the node names.
+    /// * `curie_prefixes`: &[&str] - Prefix of the node names.
     pub fn par_iter_node_ids_from_node_curie_prefixes<'a>(
         &'a self,
-        curie_prefixes: Vec<&'a str>,
+        curie_prefixes: &'a [&'a str],
     ) -> impl ParallelIterator<Item = NodeT> + 'a {
         self.par_iter_node_ids()
             .zip(self.par_iter_node_names())
