@@ -111,7 +111,7 @@ where
     /// * `information_contents`: Option<&[F]> - Optional vector of node frequencies to be used WITHOUT crawling upwards the DAG.
     pub fn fit(
         &mut self,
-        dag: Graph,
+        dag: &Graph,
         node_counts: Option<&HashMap<String, u32>>,
         information_contents: Option<&[F]>,
     ) -> Result<(), String> {
@@ -191,7 +191,7 @@ where
         }
         self.root_node_ids = dag.get_root_node_ids();
         self.transposed_dag = Some(dag.to_transposed());
-        self.dag = Some(dag);
+        self.dag = Some(dag.clone());
         Ok(())
     }
 
