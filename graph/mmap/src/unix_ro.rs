@@ -42,6 +42,12 @@ impl MemoryMapReadOnlyCore for MemoryMappedReadOnly {
         }
         // Try to mmap the file into memory
 
+        let mut flags = libc::MAP_PRIVATE;
+
+        if cfg!(target_os = "linux") {
+            flags |= libc::MAP_HUGE_2MB;
+        }
+        
         let addr = unsafe {
             mmap(
                 // we don't want a specific address
@@ -52,7 +58,7 @@ impl MemoryMapReadOnlyCore for MemoryMappedReadOnly {
                 PROT_READ,
                 // We don't want the eventual modifications to get propagated
                 // to the underlying file
-                libc::MAP_PRIVATE,
+                flags,
                 // the file descriptor of the file to mmap
                 fd,
                 // the offset in bytes from the start of the file, we want to mmap

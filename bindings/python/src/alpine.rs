@@ -4,12 +4,12 @@ use super::mmap_numpy_npy::{
 use super::*;
 use file_progress::{FileProgress, MarkdownFileProgress};
 use cpu_models::{BasicSPINE, BasicWINE, LandmarkFeatureType, LandmarkType, ALPINE};
-use indicatif::ParallelProgressIterator;
-use indicatif::{ProgressBar, ProgressStyle};
+use indicatif::*;
 use numpy::{PyArray1, PyArray2};
 use rayon::prelude::*;
 use std::convert::TryFrom;
 use types::ThreadDataRaceAware;
+use file_progress::FileProgressIterator;
 
 #[derive(Debug, Clone)]
 pub struct BasicSPINEBinding<Model, const LFT: LandmarkFeatureType, const LT: LandmarkType>
@@ -218,14 +218,18 @@ where
                     let shared_embedding = ThreadDataRaceAware::from(casted_embedding);
 
                     if is_fortran {
-                        embedding_slice.as_ref().par_chunks(number_of_nodes).progress_with(progress_bar).enumerate().for_each(|(j, feature)|{
-                            feature.iter().copied().enumerate().for_each(|(i, feature_value)| unsafe {
+                        embedding_slice.as_ref().chunks(number_of_nodes)
+                            .progress_with(progress_bar).progress_with_file(progress).enumerate()
+                            .for_each(|(j, feature)|{
+                            feature.par_iter().copied().enumerate().for_each(|(i, feature_value)| unsafe {
                                 *(shared_embedding.t.uget_mut([i, j])) = feature_value;
                             });
                         });
                     } else {
-                        embedding_slice.as_ref().par_chunks(embedding_size).progress_with(progress_bar).enumerate().for_each(|(i, node_embedding)|{
-                            node_embedding.iter().copied().enumerate().for_each(|(j, feature_value)| unsafe {
+                        embedding_slice.as_ref().chunks(embedding_size)
+                            .progress_with(progress_bar).progress_with_file(progress).enumerate()
+                            .for_each(|(i, node_embedding)|{
+                            node_embedding.par_iter().copied().enumerate().for_each(|(j, feature_value)| unsafe {
                                 *(shared_embedding.t.uget_mut([i, j])) = feature_value;
                             });
                         });
