@@ -2,14 +2,14 @@ use super::mmap_numpy_npy::{
     create_memory_mapped_numpy_array, load_memory_mapped_numpy_array, Dtype,
 };
 use super::*;
-use file_progress::{FileProgress, MarkdownFileProgress};
 use cpu_models::{BasicSPINE, BasicWINE, LandmarkFeatureType, LandmarkType, ALPINE};
+use file_progress::FileProgressIterator;
+use file_progress::{FileProgress, MarkdownFileProgress};
 use indicatif::*;
 use numpy::{PyArray1, PyArray2};
 use rayon::prelude::*;
 use std::convert::TryFrom;
 use types::ThreadDataRaceAware;
-use file_progress::FileProgressIterator;
 
 #[derive(Debug, Clone)]
 pub struct BasicSPINEBinding<Model, const LFT: LandmarkFeatureType, const LT: LandmarkType>

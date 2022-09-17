@@ -344,7 +344,7 @@ impl GenBinding for BindingsModule {
             if !klass.ztruct.attributes.iter().any(|x| x == "no_binding")
                 && klass.ztruct.visibility == Visibility::Public {
                     registrations.push(
-                        format!("\tm.add_class::<{}>()?;", klass_name)
+                        format!("\t_m.add_class::<{}>()?;", klass_name)
                     );
                 }
             
@@ -353,7 +353,7 @@ impl GenBinding for BindingsModule {
         for func in &self.funcs {
             if  is_to_bind(func) {
                 registrations.push(
-                    format!("\tm.add_wrapped(wrap_pyfunction!({}))?;", func.name)
+                    format!("\t_m.add_wrapped(wrap_pyfunction!({}))?;", func.name)
                 );
             }
         }
@@ -373,19 +373,19 @@ impl GenBinding for BindingsModule {
 
         for mods_name in mod_names {
             registrations.push(
-                format!("\tlet submod = PyModule::new(py, \"{}\")?;", mods_name)
+                format!("\tlet submod = PyModule::new(_py, \"{}\")?;", mods_name)
             );
             registrations.push(
-                format!("\tregister_{}(py, submod)?;", mods_name)
+                format!("\tregister_{}(_py, submod)?;", mods_name)
             );
             registrations.push(
-                format!("\tm.add_submodule(submod)?;")
+                format!("\t_m.add_submodule(submod)?;")
             );
         }
         
         format!(
 r#"
-pub fn register_{module_name}(py: Python, m:&PyModule) -> PyResult<()> {{
+pub fn register_{module_name}(_py: Python, _m:&PyModule) -> PyResult<()> {{
     {registrations}
     Ok(())
 }}
@@ -493,6 +493,7 @@ pub fn gen_bindings(to_parse_path: &str, path: &str, init_path: &str) {
         r#"
 #[allow(unused_variables)]    
 use super::*;
+#[allow(unused_imports)]    
 use pyo3::{{wrap_pyfunction, wrap_pymodule}};
 use rayon::iter::*;
 use std::hash::{{Hash, Hasher}};

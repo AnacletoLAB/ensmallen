@@ -68,7 +68,9 @@ impl DAGResnik {
         ))
     }
 
-    #[pyo3(text_signature = "($self, first_node_prefixes, second_node_prefixes, minimum_similarity)")]
+    #[pyo3(
+        text_signature = "($self, first_node_prefixes, second_node_prefixes, minimum_similarity)"
+    )]
     /// Return the similarity between the two provided prefixes nodes.
     ///
     /// Parameters
