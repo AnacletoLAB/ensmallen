@@ -56,7 +56,10 @@ fn build(method_id: usize, method: &Function) -> Option<(String, String, String,
                             ..
                         } => {
                             match &generics[0] {
-                                GenericValue::Type(result) => result.clone(),
+                                GenericValue::Type{
+                                    sub_type:result,
+                                    modifiers:_m,
+                                } => result.clone(),
                                 _ => unreachable!("An option should only have a type as generics"),
                             }
                         }

@@ -115,15 +115,15 @@ impl DAGResnik {
     ///     Minimum similarity to be kept. Values below this amount are filtered.
     pub fn get_node_ids_and_similarity_from_node_type_names(
         &self,
-        first_node_type_names: &[Option<&str>],
-        second_node_type_names: &[Option<&str>],
+        first_node_type_names: Vec<Option<&str>>,
+        second_node_type_names: Vec<Option<&str>>,
         minimum_similarity: Option<f32>,
     ) -> PyResult<(Py<PyArray2<NodeT>>, Py<PyArray1<f32>>)> {
         let gil = pyo3::Python::acquire_gil();
         let (node_ids, similarities): (Vec<Vec<NodeT>>, Vec<f32>) =
             pe!(self.inner.get_node_ids_and_similarity_from_node_type_names(
-                first_node_type_names,
-                second_node_type_names,
+                &first_node_type_names,
+                &second_node_type_names,
                 minimum_similarity
             ))?;
         Ok((

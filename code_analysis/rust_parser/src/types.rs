@@ -79,7 +79,7 @@ impl std::ops::Index<usize> for Type {
                 ..
             } => {
                 match &generics[index] {
-                    GenericValue::Type(t) => t,
+                    GenericValue::Type{sub_type, ..} => sub_type,
                     _ => panic!("Cannot index a non type generic value"),
                 }
             },

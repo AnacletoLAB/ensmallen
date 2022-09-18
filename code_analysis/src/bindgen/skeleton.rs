@@ -34,7 +34,7 @@ fn translate_function(method: &Function, user_defined_types: &[&str], is_method:
         args.push(format!(
             "{}: {}",
             &arg.name,
-            translate_type(&arg.arg_type,  &user_defined_types)
+            arg.arg_type.to_python_type(user_defined_types)
         ));
     }
 
@@ -54,7 +54,7 @@ r#"
         ""
     },
     return_type=if let Some(rt) = &method.return_type {
-        let translated_type = translate_type(rt, &user_defined_types);
+        let translated_type = rt.to_python_type(user_defined_types);
         if translated_type == "None" {
             "".to_string()
         } else {
