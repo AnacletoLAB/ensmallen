@@ -1734,6 +1734,23 @@ impl Graph {
         )
     }
 
+    /// Returns parallel iterator over node IDs of the nodes with given node type names.
+    ///
+    /// # Argument
+    /// * `node_type_names`: &[Option<&str>] - The node type names to filter for.
+    ///
+    /// # Raises
+    /// * If there are no node types in the graph.
+    /// * If the given node type name does not exist in the current graph instance.
+    pub fn par_iter_node_ids_from_node_type_names(
+        &self,
+        node_type_names: &[Option<&str>],
+    ) -> Result<impl ParallelIterator<Item = NodeT> + '_> {
+        self.par_iter_node_ids_from_node_type_ids(
+            self.get_node_type_ids_from_node_type_names(node_type_names)?,
+        )
+    }
+
     /// Returns iterator over node names of the nodes with given node type ID.
     ///
     /// # Argument

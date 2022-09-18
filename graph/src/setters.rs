@@ -442,8 +442,8 @@ impl Graph {
     ///
     /// # Arguments
     /// * `edge_type_name`: String - The edge type name to replace with.
-    /// * `source_node_type_names`: Vec<Option<String>> - Node types of the source nodes. When an edge has a source node with any of this node types, we may change its edge type if also the destination nodes have the correct node types.
-    /// * `destination_node_type_names`: Vec<Option<String>> - Node types of the destination nodes. When an edge has a destination node with any of this node types, we may change its edge type if also the source nodes have the correct node types.
+    /// * `source_node_type_names`: &[Option<&str>] - Node types of the source nodes. When an edge has a source node with any of this node types, we may change its edge type if also the destination nodes have the correct node types.
+    /// * `destination_node_type_names`: &[Option<&str>] - Node types of the destination nodes. When an edge has a destination node with any of this node types, we may change its edge type if also the source nodes have the correct node types.
     ///
     /// # Raises
     /// * If the given list of node name prefixes is empty.
@@ -451,8 +451,8 @@ impl Graph {
     pub fn replace_edge_type_name_from_edge_node_type_names_inplace(
         &mut self,
         edge_type_name: String,
-        source_node_type_names: Vec<Option<String>>,
-        destination_node_type_names: Vec<Option<String>>,
+        source_node_type_names: &[Option<&str>],
+        destination_node_type_names: &[Option<&str>],
     ) -> Result<&Graph> {
         let edge_type_id = match self.get_edge_type_id_from_edge_type_name(Some(&edge_type_name)) {
             Ok(edge_type_id) => edge_type_id.unwrap(),
@@ -473,8 +473,8 @@ impl Graph {
     ///
     /// # Arguments
     /// * `edge_type_name`: String - The edge type name to replace with.
-    /// * `source_node_type_names`: Vec<Option<String>> - Node types of the source nodes. When an edge has a source node with any of this node types, we may change its edge type if also the destination nodes have the correct node types.
-    /// * `destination_node_type_names`: Vec<Option<String>> - Node types of the destination nodes. When an edge has a destination node with any of this node types, we may change its edge type if also the source nodes have the correct node types.
+    /// * `source_node_type_names`: &[Option<&str>] - Node types of the source nodes. When an edge has a source node with any of this node types, we may change its edge type if also the destination nodes have the correct node types.
+    /// * `destination_node_type_names`: &[Option<&str>] - Node types of the destination nodes. When an edge has a destination node with any of this node types, we may change its edge type if also the source nodes have the correct node types.
     ///
     /// # Raises
     /// * If the given list of node name prefixes is empty.
@@ -482,8 +482,8 @@ impl Graph {
     pub fn replace_edge_type_name_from_edge_node_type_names(
         &mut self,
         edge_type_name: String,
-        source_node_type_names: Vec<Option<String>>,
-        destination_node_type_names: Vec<Option<String>>,
+        source_node_type_names: &[Option<&str>],
+        destination_node_type_names: &[Option<&str>],
     ) -> Result<Graph> {
         let mut graph = self.clone();
         graph.replace_edge_type_name_from_edge_node_type_names_inplace(

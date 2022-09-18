@@ -324,6 +324,61 @@ where
         }))
     }
 
+    /// Return the similarity between the two parallel iterators of node Ids.
+    ///
+    /// # Arguments
+    /// * `first_iterator`: fn(&Graph, &A1) -> Result<I1, String> - Second generator of iterators.
+    /// * `first_attribute`: &A1 - Parameter to be forwarded to the first iterator generation method.
+    /// * `second_iterator`: fn(&Graph, &A2) -> Result<I2, String> - Second generator of iterators.
+    /// * `second_attribute`: &A1 - Parameter to be forwarded to the first iterator generation method.
+    /// * `minimum_similarity`: Option<F> - Minimum similarity to be kept. Values below this amount are filtered.
+    fn get_node_ids_and_similarity_from_iterators<'a, 'b, I1, I2, A1, A2>(
+        &'a self,
+        first_iterator: fn(&'b Graph, &'b A1) -> Result<I1, String>,
+        first_attribute: &'b A1,
+        second_iterator: fn(&'a Graph, &'a A2) -> I2,
+        second_attribute: &'a A2,
+        minimum_similarity: Option<F>,
+    ) -> Result<(Vec<Vec<NodeT>>, Vec<F>), String>
+    where
+        I1: ParallelIterator<Item = NodeT> + 'a,
+        I2: ParallelIterator<Item = NodeT>,
+        A2: Sync,
+        'a: 'b,
+    {
+        self.must_be_trained().and_then(|(dag, _)| {
+            let progress_bar = if self.verbose {
+                let pb = ProgressBar::new(first_iterator(&dag, first_attribute)?.count() as u64);
+                pb.set_style(
+                    ProgressStyle::default_bar()
+                        .template(concat!(
+                            "Computing Resnik ",
+                            "{spinner:.green} [{elapsed_precise}] ",
+                            "[{bar:40.cyan/blue}] ({pos}/{len}, ETA {eta})"
+                        ))
+                        .unwrap(),
+                );
+                pb
+            } else {
+                ProgressBar::hidden()
+            };
+
+            Ok(first_iterator(&dag, first_attribute)?
+                .progress_with(progress_bar)
+                .flat_map(|src| {
+                    self.get_similarities_from_node_id_and_iterator(
+                        src,
+                        second_iterator(&dag, second_attribute),
+                        minimum_similarity,
+                        None,
+                    )
+                    .unwrap()
+                    .map(move |(dst, score)| (vec![src, dst], score))
+                })
+                .unzip())
+        })
+    }
+
     /// Return the similarity between the two provided node name prefixes.
     ///
     /// # Arguments
@@ -336,36 +391,37 @@ where
         second_node_prefixes: Vec<&str>,
         minimum_similarity: Option<F>,
     ) -> Result<(Vec<Vec<NodeT>>, Vec<F>), String> {
-        let progress_bar = if self.verbose {
-            let pb = ProgressBar::new(self.get_number_of_nodes()? as u64);
-            pb.set_style(
-                ProgressStyle::default_bar()
-                    .template(concat!(
-                        "Computing Resnik ",
-                        "{spinner:.green} [{elapsed_precise}] ",
-                        "[{bar:40.cyan/blue}] ({pos}/{len}, ETA {eta})"
-                    ))
-                    .unwrap(),
-            );
-            pb
-        } else {
-            ProgressBar::hidden()
-        };
+        self.get_node_ids_and_similarity_from_iterators(
+            |graph, prefixes| Ok(graph.par_iter_node_ids_from_node_curie_prefixes(&prefixes)),
+            &first_node_prefixes,
+            |graph, prefixes| graph.par_iter_node_ids_from_node_curie_prefixes(&prefixes),
+            &second_node_prefixes,
+            minimum_similarity,
+        )
+    }
 
-        self.must_be_trained().map(|(dag, _)| {
-            dag.par_iter_node_ids_from_node_curie_prefixes(&first_node_prefixes)
-                .progress_with(progress_bar)
-                .flat_map(|src| {
-                    self.get_similarities_from_node_id_and_iterator(
-                        src,
-                        dag.par_iter_node_ids_from_node_curie_prefixes(&second_node_prefixes),
-                        minimum_similarity,
-                        None,
-                    )
+    /// Return the similarity between the two provided node type names.
+    ///
+    /// # Arguments
+    /// * `first_node_type_names`: &[Option<&str>] - The first node type names for which to compute the similarity.
+    /// * `second_node_type_names`: &[Option<&str>] - The second node type names for which to compute the similarity.
+    /// * `minimum_similarity`: Option<F> - Minimum similarity to be kept. Values below this amount are filtered.
+    pub fn get_node_ids_and_similarity_from_node_type_names(
+        &self,
+        first_node_type_names: &[Option<&str>],
+        second_node_type_names: &[Option<&str>],
+        minimum_similarity: Option<F>,
+    ) -> Result<(Vec<Vec<NodeT>>, Vec<F>), String> {
+        self.get_node_ids_and_similarity_from_iterators(
+            |graph, node_type_names| graph.par_iter_node_ids_from_node_type_names(&node_type_names),
+            &first_node_type_names,
+            |graph, node_type_names| {
+                graph
+                    .par_iter_node_ids_from_node_type_names(&node_type_names)
                     .unwrap()
-                    .map(move |(dst, score)| (vec![src, dst], score))
-                })
-                .unzip()
-        })
+            },
+            &second_node_type_names,
+            minimum_similarity,
+        )
     }
 }

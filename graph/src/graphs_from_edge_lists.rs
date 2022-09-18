@@ -368,14 +368,14 @@ impl Graph {
     /// Returns bipartite graph between the provided source and destination node types.
     ///
     /// # Arguments
-    /// * `source_node_types`: Vec<Option<String>> - The source node types.
-    /// * `destination_node_types`: Vec<Option<String>> - The destination node types.
+    /// * `source_node_types`: &[Option<&str>] - The source node types.
+    /// * `destination_node_types`: &[Option<&str>] - The destination node types.
     /// * `directed`: bool - Whether to make the graph directed or undirected.
     ///
     pub fn build_bipartite_graph_from_edge_node_types(
         &self,
-        source_node_types: Vec<Option<String>>,
-        destination_node_types: Vec<Option<String>>,
+        source_node_types: &[Option<&str>],
+        destination_node_types: &[Option<&str>],
         directed: bool,
     ) -> Result<Graph> {
         self.build_bipartite_graph_from_edge_node_ids(
@@ -388,16 +388,16 @@ impl Graph {
     /// Returns clique graph between the nodes with the provided node types.
     ///
     /// # Arguments
-    /// * `node_types`: Vec<Option<String>> - The node name types.
+    /// * `node_type_names`: &[Option<&str>] - The node name types.
     /// * `directed`: bool - Whether to make the graph directed or undirected.
     ///
-    pub fn build_clique_graph_from_node_types(
+    pub fn build_clique_graph_from_node_type_names(
         &self,
-        node_types: Vec<Option<String>>,
+        node_type_names: &[Option<&str>],
         directed: bool,
     ) -> Result<Graph> {
         self.build_clique_graph_from_node_ids(
-            self.get_node_ids_from_node_type_names(node_types)?,
+            self.get_node_ids_from_node_type_names(node_type_names)?,
             directed,
         )
     }

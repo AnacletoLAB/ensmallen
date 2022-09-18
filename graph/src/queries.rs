@@ -1581,10 +1581,10 @@ impl Graph {
     /// Return translated edge types from string to internal edge ID.
     ///
     /// # Arguments
-    /// * `edge_type_names`: Vec<Option<String>> - Vector of edge types to be converted.
+    /// * `edge_type_names`: &[Option<&str>] - Vector of edge types to be converted.
     pub fn get_edge_type_ids_from_edge_type_names(
         &self,
-        edge_type_names: Vec<Option<String>>,
+        edge_type_names: &[Option<&str>],
     ) -> Result<Vec<Option<EdgeTypeT>>> {
         edge_type_names
             .iter()
@@ -1600,10 +1600,10 @@ impl Graph {
     /// Return translated node types from string to internal node ID.
     ///
     /// # Arguments
-    /// * `node_type_names`: Vec<Option<String>> - Vector of node types to be converted.
+    /// * `node_type_names`: &[Option<&str>] - Vector of node types to be converted.
     pub fn get_node_type_ids_from_node_type_names(
         &self,
-        node_type_names: Vec<Option<String>>,
+        node_type_names: &[Option<&str>],
     ) -> Result<Vec<Option<NodeTypeT>>> {
         self.must_have_node_types()?;
         node_type_names
