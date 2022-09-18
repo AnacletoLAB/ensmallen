@@ -203,7 +203,7 @@ pub trait EmbeddingSize {
 }
 
 pub trait IntegerFeatureType:
-    Send + Sync + Integral + TryInto<usize> + TryFrom<usize> + IntoAtomic + Copy + Coerced<f32>
+    Send + Sync + Integral + TryInto<usize> + TryFrom<usize> + IntoAtomic + Copy + Coerced<f32> + std::fmt::Debug
 {
 }
 

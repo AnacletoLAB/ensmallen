@@ -6,7 +6,7 @@ use rayon::prelude::*;
 use vec_rand::splitmix64;
 
 #[derive(Clone, Debug)]
-pub struct RUBICONE {
+pub struct RUINE {
     /// Baseline parameters
     baine: BasicALPINE,
     /// Number of convolutions.
@@ -15,8 +15,8 @@ pub struct RUBICONE {
     random_state: u64,
 }
 
-impl RUBICONE {
-    /// Return new instance of RUBICONE model.
+impl RUINE {
+    /// Return new instance of RUINE model.
     ///
     /// # Arguments
     /// * `embedding_size`: Option<usize> - Size of the embedding. By default 100.
@@ -49,7 +49,7 @@ impl RUBICONE {
     }
 }
 
-impl LandmarkBasedFeature<{ LandmarkFeatureType::Random }> for RUBICONE {
+impl LandmarkBasedFeature<{ LandmarkFeatureType::Random }> for RUINE {
     unsafe fn compute_unchecked_feature_from_bucket<Feature>(
         &self,
         graph: &Graph,
@@ -81,34 +81,20 @@ impl LandmarkBasedFeature<{ LandmarkFeatureType::Random }> for RUBICONE {
         // it may be shared among threads.
         let shared_features = Feature::from_mut_slice(features);
 
-        let number_of_bits = Feature::MAX.coerce_into().log2().ceil() as usize;
-
         (0..self.get_number_of_convolutions()).for_each(|_| {
             graph.par_iter_node_ids().for_each(|src| {
-                let mut new_src_feature = vec![0; number_of_bits];
-                let half_number_of_neighbours = graph
+                let mut feature_sum: f32 = 0.0;
+                let mut number_of_neighbours: f32 = 0.0;
+                graph
                     .iter_unchecked_neighbour_node_ids_from_source_node_id(src)
-                    .map(|dst| {
-                        let mut dst_feature = shared_features[dst as usize].load(Ordering::Relaxed);
-                        new_src_feature.iter_mut().for_each(|value| {
-                            if dst_feature & Feature::ONE == Feature::ONE {
-                                *value += 1;
-                            }
-                            dst_feature = dst_feature >> Feature::ONE;
-                        });
-                    })
-                    .count()
-                    / 2;
+                    .for_each(|dst| {
+                        feature_sum += shared_features[dst as usize]
+                            .load(Ordering::Relaxed)
+                            .coerce_into();
+                        number_of_neighbours += 1.0;
+                    });
                 shared_features[src as usize].store(
-                    new_src_feature.into_iter().rev().fold(
-                        Feature::ZERO,
-                        |mut feature_being_built, feature_count| {
-                            if feature_count > half_number_of_neighbours {
-                                feature_being_built |= Feature::ONE;
-                            }
-                            feature_being_built << Feature::ONE
-                        },
-                    ),
+                    Feature::coerce_from(feature_sum / number_of_neighbours),
                     Ordering::Relaxed,
                 );
             });
@@ -116,7 +102,7 @@ impl LandmarkBasedFeature<{ LandmarkFeatureType::Random }> for RUBICONE {
     }
 }
 
-impl EmbeddingSize for RUBICONE {
+impl EmbeddingSize for RUINE {
     fn get_embedding_size(&self, _graph: &graph::Graph) -> Result<usize, String> {
         Ok(self
             .get_basic_inferred_node_embedding()
@@ -124,11 +110,11 @@ impl EmbeddingSize for RUBICONE {
     }
 }
 
-impl EmptyLandmarkGenerator for RUBICONE {}
+impl EmptyLandmarkGenerator for RUINE {}
 
-impl ALPINE<{ LandmarkType::Empty }, { LandmarkFeatureType::Random }> for RUBICONE {
+impl ALPINE<{ LandmarkType::Empty }, { LandmarkFeatureType::Random }> for RUINE {
     fn get_model_name(&self) -> String {
-        "RUBICONE".to_string()
+        "RUINE".to_string()
     }
 
     fn get_basic_inferred_node_embedding(&self) -> &crate::BasicALPINE {
