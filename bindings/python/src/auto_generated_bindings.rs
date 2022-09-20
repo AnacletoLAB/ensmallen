@@ -755,8 +755,8 @@ impl DendriticTree {
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Return the type of the dendritic tree
-    pub fn get_dendritic_tree_type(&self) -> &str {
-        self.inner.get_dendritic_tree_type().into()
+    pub fn get_dendritic_tree_type(&self) -> String {
+        self.inner.get_dendritic_tree_type().to_string()
     }
 
     #[automatically_generated_binding]
@@ -3183,8 +3183,12 @@ impl Graph {
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Returns names of currently subgraphed edge metrics
-    pub fn get_available_edge_metrics_names(&self) -> Vec<&str> {
-        self.inner.get_available_edge_metrics_names().into()
+    pub fn get_available_edge_metrics_names(&self) -> Vec<String> {
+        self.inner
+            .get_available_edge_metrics_names()
+            .into_iter()
+            .map(|x| x.to_string())
+            .collect::<Vec<_>>()
     }
 
     #[automatically_generated_binding]
@@ -4110,7 +4114,7 @@ impl Graph {
                 k.into(),
             )
             .into_iter()
-            .map(|x| x.into())
+            .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>())
             .collect::<Vec<_>>()
     }
 
@@ -4147,7 +4151,7 @@ impl Graph {
             k.into()
         ))?
         .into_iter()
-        .map(|x| x.into())
+        .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>())
         .collect::<Vec<_>>())
     }
 
@@ -4182,7 +4186,7 @@ impl Graph {
             k.into()
         ))?
         .into_iter()
-        .map(|x| x.into())
+        .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>())
         .collect::<Vec<_>>())
     }
 
@@ -4218,7 +4222,7 @@ impl Graph {
                 k.into()
             ))?
             .into_iter()
-            .map(|x| x.into())
+            .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>())
             .collect::<Vec<_>>(),
         )
     }
@@ -6799,10 +6803,10 @@ impl Graph {
     pub unsafe fn get_unchecked_node_type_ids_from_node_id(
         &self,
         node_id: NodeT,
-    ) -> Option<&Vec<NodeTypeT>> {
+    ) -> Option<[NodeTypeT]> {
         self.inner
             .get_unchecked_node_type_ids_from_node_id(node_id.into())
-            .into()
+            .map(|x| x.into())
     }
 
     #[automatically_generated_binding]
@@ -6814,11 +6818,8 @@ impl Graph {
     /// node_id: int
     ///     node whose node type is to be returned.
     ///
-    pub fn get_node_type_ids_from_node_id(
-        &self,
-        node_id: NodeT,
-    ) -> PyResult<Option<&Vec<NodeTypeT>>> {
-        Ok(pe!(self.inner.get_node_type_ids_from_node_id(node_id.into()))?.into())
+    pub fn get_node_type_ids_from_node_id(&self, node_id: NodeT) -> PyResult<Option<[NodeTypeT]>> {
+        Ok(pe!(self.inner.get_node_type_ids_from_node_id(node_id.into()))?.map(|x| x.into()))
     }
 
     #[automatically_generated_binding]
@@ -7263,7 +7264,10 @@ impl Graph {
                 .collect::<Vec<_>>()
         ))?
         .into_iter()
-        .map(|x| x.into())
+        .map(|x| {
+            let (subresult_0, subresult_1) = x;
+            (subresult_0.into(), subresult_1.into())
+        })
         .collect::<Vec<_>>())
     }
 
@@ -7279,11 +7283,11 @@ impl Graph {
     pub fn get_node_type_ids_from_node_name(
         &self,
         node_name: String,
-    ) -> PyResult<Option<&Vec<NodeTypeT>>> {
+    ) -> PyResult<Option<[NodeTypeT]>> {
         Ok(pe!(self
             .inner
             .get_node_type_ids_from_node_name(node_name.as_ref()))?
-        .into())
+        .map(|x| x.into()))
     }
 
     #[automatically_generated_binding]
@@ -7635,7 +7639,7 @@ impl Graph {
             .inner
             .get_edge_type_ids_from_edge_type_names(&edge_type_names))?
         .into_iter()
-        .map(|x| x.into())
+        .map(|x| x.map(|x| x.into()))
         .collect::<Vec<_>>())
     }
 
@@ -7656,7 +7660,7 @@ impl Graph {
             .inner
             .get_node_type_ids_from_node_type_names(&node_type_names))?
         .into_iter()
-        .map(|x| x.into())
+        .map(|x| x.map(|x| x.into()))
         .collect::<Vec<_>>())
     }
 
@@ -7680,7 +7684,7 @@ impl Graph {
     pub fn get_multiple_node_type_ids_from_node_type_names(
         &self,
         node_type_names: Vec<Option<Vec<String>>>,
-    ) -> PyResult<Vec<Option<Vec<NodeTypeT>>>> {
+    ) -> PyResult<Vec<Option<Py<PyArray1<NodeTypeT>>>>> {
         Ok(
             pe!(self.inner.get_multiple_node_type_ids_from_node_type_names(
                 node_type_names
@@ -7691,7 +7695,12 @@ impl Graph {
                     .collect::<Vec<_>>()
             ))?
             .into_iter()
-            .map(|x| x.into())
+            .map(|x| {
+                x.map(|x| {
+                    let gil = pyo3::Python::acquire_gil();
+                    to_ndarray_1d!(gil, x, NodeTypeT)
+                })
+            })
             .collect::<Vec<_>>(),
         )
     }
@@ -8102,7 +8111,10 @@ impl Graph {
             .inner
             .get_directed_edge_node_names_from_edge_type_id(edge_type_id.map(|x| { x.into() })))?
         .into_iter()
-        .map(|x| x.into())
+        .map(|x| {
+            let (subresult_0, subresult_1) = x;
+            (subresult_0.into(), subresult_1.into())
+        })
         .collect::<Vec<_>>())
     }
 
@@ -8132,7 +8144,10 @@ impl Graph {
                 edge_type_name.map(|x| { x.as_ref() })
             ))?
             .into_iter()
-            .map(|x| x.into())
+            .map(|x| {
+                let (subresult_0, subresult_1) = x;
+                (subresult_0.into(), subresult_1.into())
+            })
             .collect::<Vec<_>>(),
         )
     }
@@ -8315,7 +8330,10 @@ impl Graph {
                     .map(|x| x.into_iter().map(|x| x.as_ref()).collect::<Vec<_>>()),
             )
             .into_iter()
-            .map(|x| x.into())
+            .map(|x| {
+                let (subresult_0, subresult_1) = x;
+                (subresult_0.into(), subresult_1.into())
+            })
             .collect::<Vec<_>>()
     }
 
@@ -9306,15 +9324,23 @@ impl Graph {
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Return list of the supported sparse edge weighting methods
-    pub fn get_sparse_edge_weighting_methods(&self) -> Vec<&str> {
-        self.inner.get_sparse_edge_weighting_methods().into()
+    pub fn get_sparse_edge_weighting_methods(&self) -> Vec<String> {
+        self.inner
+            .get_sparse_edge_weighting_methods()
+            .into_iter()
+            .map(|x| x.to_string())
+            .collect::<Vec<_>>()
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Return list of the supported edge weighting methods
-    pub fn get_edge_weighting_methods(&self) -> Vec<&str> {
-        self.inner.get_edge_weighting_methods().into()
+    pub fn get_edge_weighting_methods(&self) -> Vec<String> {
+        self.inner
+            .get_edge_weighting_methods()
+            .into_iter()
+            .map(|x| x.to_string())
+            .collect::<Vec<_>>()
     }
 
     #[automatically_generated_binding]
@@ -9940,8 +9966,11 @@ impl Graph {
     /// ValueError
     ///     If the graph is a multigraph.
     ///
-    pub fn set_inplace_all_edge_types(&mut self, edge_type: String) -> Result<&Graph> {
-        self.inner.set_inplace_all_edge_types(edge_type).into()
+    pub fn set_inplace_all_edge_types(&mut self, edge_type: String) -> PyResult<()> {
+        Ok({
+            pe!(self.inner.set_inplace_all_edge_types(edge_type))?;
+            ()
+        })
     }
 
     #[automatically_generated_binding]
@@ -9968,8 +9997,11 @@ impl Graph {
     /// node_type: str
     ///     The node type to assing to all the nodes.
     ///
-    pub fn set_inplace_all_node_types(&mut self, node_type: String) -> Result<&Graph> {
-        self.inner.set_inplace_all_node_types(node_type).into()
+    pub fn set_inplace_all_node_types(&mut self, node_type: String) -> PyResult<()> {
+        Ok({
+            pe!(self.inner.set_inplace_all_node_types(node_type))?;
+            ()
+        })
     }
 
     #[automatically_generated_binding]
@@ -10010,15 +10042,16 @@ impl Graph {
     pub fn remove_inplace_node_type_ids(
         &mut self,
         node_type_ids_to_remove: Vec<NodeTypeT>,
-    ) -> Result<&Graph> {
-        self.inner
-            .remove_inplace_node_type_ids(
+    ) -> PyResult<()> {
+        Ok({
+            pe!(self.inner.remove_inplace_node_type_ids(
                 node_type_ids_to_remove
                     .into_iter()
-                    .map(|x| x.into())
-                    .collect::<Vec<_>>(),
-            )
-            .into()
+                    .map(|x| { x.into() })
+                    .collect::<Vec<_>>()
+            ))?;
+            ()
+        })
     }
 
     #[automatically_generated_binding]
@@ -10033,8 +10066,11 @@ impl Graph {
     /// ValueError
     ///     If the graph does not have node types.
     ///
-    pub fn remove_inplace_singleton_node_types(&mut self) -> Result<&mut Graph> {
-        self.inner.remove_inplace_singleton_node_types().into()
+    pub fn remove_inplace_singleton_node_types(&mut self) -> PyResult<()> {
+        Ok({
+            pe!(self.inner.remove_inplace_singleton_node_types())?;
+            ()
+        })
     }
 
     #[automatically_generated_binding]
@@ -10058,16 +10094,17 @@ impl Graph {
         &mut self,
         node_type_id: NodeTypeT,
         node_name_prefixes: Vec<String>,
-    ) -> Result<&Graph> {
-        self.inner
-            .add_node_type_id_from_node_name_prefixes_inplace(
+    ) -> PyResult<()> {
+        Ok({
+            pe!(self.inner.add_node_type_id_from_node_name_prefixes_inplace(
                 node_type_id.into(),
                 node_name_prefixes
                     .into_iter()
-                    .map(|x| x.into())
-                    .collect::<Vec<_>>(),
-            )
-            .into()
+                    .map(|x| { x.into() })
+                    .collect::<Vec<_>>()
+            ))?;
+            ()
+        })
     }
 
     #[automatically_generated_binding]
@@ -10096,20 +10133,23 @@ impl Graph {
         edge_type_id: EdgeTypeT,
         source_node_type_ids: Vec<Option<NodeTypeT>>,
         destination_node_type_ids: Vec<Option<NodeTypeT>>,
-    ) -> Result<&Graph> {
-        self.inner
-            .replace_edge_type_id_from_edge_node_type_ids_inplace(
-                edge_type_id.into(),
-                source_node_type_ids
-                    .into_iter()
-                    .map(|x| x.map(|x| x.into()))
-                    .collect::<Vec<_>>(),
-                destination_node_type_ids
-                    .into_iter()
-                    .map(|x| x.map(|x| x.into()))
-                    .collect::<Vec<_>>(),
-            )
-            .into()
+    ) -> PyResult<()> {
+        Ok({
+            pe!(self
+                .inner
+                .replace_edge_type_id_from_edge_node_type_ids_inplace(
+                    edge_type_id.into(),
+                    source_node_type_ids
+                        .into_iter()
+                        .map(|x| { x.map(|x| { x.into() }) })
+                        .collect::<Vec<_>>(),
+                    destination_node_type_ids
+                        .into_iter()
+                        .map(|x| { x.map(|x| { x.into() }) })
+                        .collect::<Vec<_>>()
+                ))?;
+            ()
+        })
     }
 
     #[automatically_generated_binding]
@@ -10227,16 +10267,19 @@ impl Graph {
         &mut self,
         node_type_name: String,
         node_name_prefixes: Vec<String>,
-    ) -> Result<&Graph> {
-        self.inner
-            .add_node_type_name_from_node_name_prefixes_inplace(
-                node_type_name.into(),
-                node_name_prefixes
-                    .into_iter()
-                    .map(|x| x.into())
-                    .collect::<Vec<_>>(),
-            )
-            .into()
+    ) -> PyResult<()> {
+        Ok({
+            pe!(self
+                .inner
+                .add_node_type_name_from_node_name_prefixes_inplace(
+                    node_type_name.into(),
+                    node_name_prefixes
+                        .into_iter()
+                        .map(|x| { x.into() })
+                        .collect::<Vec<_>>()
+                ))?;
+            ()
+        })
     }
 
     #[automatically_generated_binding]
@@ -10284,14 +10327,17 @@ impl Graph {
         edge_type_name: String,
         source_node_type_names: Vec<Option<&str>>,
         destination_node_type_names: Vec<Option<&str>>,
-    ) -> Result<&Graph> {
-        self.inner
-            .replace_edge_type_name_from_edge_node_type_names_inplace(
-                edge_type_name.into(),
-                &source_node_type_names,
-                &destination_node_type_names,
-            )
-            .into()
+    ) -> PyResult<()> {
+        Ok({
+            pe!(self
+                .inner
+                .replace_edge_type_name_from_edge_node_type_names_inplace(
+                    edge_type_name.into(),
+                    &source_node_type_names,
+                    &destination_node_type_names
+                ))?;
+            ()
+        })
     }
 
     #[automatically_generated_binding]
@@ -10375,8 +10421,11 @@ impl Graph {
     /// ValueError
     ///     If the graph does not have node types.
     ///
-    pub fn remove_inplace_homogeneous_node_types(&mut self) -> Result<&mut Graph> {
-        self.inner.remove_inplace_homogeneous_node_types().into()
+    pub fn remove_inplace_homogeneous_node_types(&mut self) -> PyResult<()> {
+        Ok({
+            pe!(self.inner.remove_inplace_homogeneous_node_types())?;
+            ()
+        })
     }
 
     #[automatically_generated_binding]
@@ -10401,15 +10450,16 @@ impl Graph {
     pub fn remove_inplace_edge_type_ids(
         &mut self,
         edge_type_ids_to_remove: Vec<EdgeTypeT>,
-    ) -> Result<&mut Graph> {
-        self.inner
-            .remove_inplace_edge_type_ids(
+    ) -> PyResult<()> {
+        Ok({
+            pe!(self.inner.remove_inplace_edge_type_ids(
                 edge_type_ids_to_remove
                     .into_iter()
-                    .map(|x| x.into())
-                    .collect::<Vec<_>>(),
-            )
-            .into()
+                    .map(|x| { x.into() })
+                    .collect::<Vec<_>>()
+            ))?;
+            ()
+        })
     }
 
     #[automatically_generated_binding]
@@ -10424,8 +10474,11 @@ impl Graph {
     /// ValueError
     ///     If the graph does not have edge types.
     ///
-    pub fn remove_inplace_singleton_edge_types(&mut self) -> Result<&mut Graph> {
-        self.inner.remove_inplace_singleton_edge_types().into()
+    pub fn remove_inplace_singleton_edge_types(&mut self) -> PyResult<()> {
+        Ok({
+            pe!(self.inner.remove_inplace_singleton_edge_types())?;
+            ()
+        })
     }
 
     #[automatically_generated_binding]
@@ -10448,18 +10501,16 @@ impl Graph {
     /// ValueError
     ///     If the given node type name does not exists in the graph.
     ///
-    pub fn remove_inplace_node_type_names(
-        &mut self,
-        node_type_names: Vec<String>,
-    ) -> Result<&Graph> {
-        self.inner
-            .remove_inplace_node_type_names(
+    pub fn remove_inplace_node_type_names(&mut self, node_type_names: Vec<String>) -> PyResult<()> {
+        Ok({
+            pe!(self.inner.remove_inplace_node_type_names(
                 node_type_names
                     .into_iter()
-                    .map(|x| x.as_ref())
-                    .collect::<Vec<_>>(),
-            )
-            .into()
+                    .map(|x| { x.as_ref() })
+                    .collect::<Vec<_>>()
+            ))?;
+            ()
+        })
     }
 
     #[automatically_generated_binding]
@@ -10482,10 +10533,13 @@ impl Graph {
     /// ValueError
     ///     If the given node type name does not exists in the graph.
     ///
-    pub fn remove_inplace_node_type_name(&mut self, node_type_name: String) -> Result<&Graph> {
-        self.inner
-            .remove_inplace_node_type_name(node_type_name.as_ref())
-            .into()
+    pub fn remove_inplace_node_type_name(&mut self, node_type_name: String) -> PyResult<()> {
+        Ok({
+            pe!(self
+                .inner
+                .remove_inplace_node_type_name(node_type_name.as_ref()))?;
+            ()
+        })
     }
 
     #[automatically_generated_binding]
@@ -10558,8 +10612,11 @@ impl Graph {
     /// ValueError
     ///     If the graph does not have node types.
     ///
-    pub fn remove_inplace_isomorphic_node_types(&mut self) -> Result<&Graph> {
-        self.inner.remove_inplace_isomorphic_node_types().into()
+    pub fn remove_inplace_isomorphic_node_types(&mut self) -> PyResult<()> {
+        Ok({
+            pe!(self.inner.remove_inplace_isomorphic_node_types())?;
+            ()
+        })
     }
 
     #[automatically_generated_binding]
@@ -10603,10 +10660,13 @@ impl Graph {
     pub fn remove_inplace_isomorphic_edge_types(
         &mut self,
         minimum_number_of_edges: Option<EdgeT>,
-    ) -> Result<&Graph> {
-        self.inner
-            .remove_inplace_isomorphic_edge_types(minimum_number_of_edges.map(|x| x.into()))
-            .into()
+    ) -> PyResult<()> {
+        Ok({
+            pe!(self.inner.remove_inplace_isomorphic_edge_types(
+                minimum_number_of_edges.map(|x| { x.into() })
+            ))?;
+            ()
+        })
     }
 
     #[automatically_generated_binding]
@@ -10713,10 +10773,13 @@ impl Graph {
     /// ValueError
     ///     If the given edge type name does not exists in the graph.
     ///
-    pub fn remove_inplace_edge_type_name(&mut self, edge_type_name: String) -> Result<&mut Graph> {
-        self.inner
-            .remove_inplace_edge_type_name(edge_type_name.as_ref())
-            .into()
+    pub fn remove_inplace_edge_type_name(&mut self, edge_type_name: String) -> PyResult<()> {
+        Ok({
+            pe!(self
+                .inner
+                .remove_inplace_edge_type_name(edge_type_name.as_ref()))?;
+            ()
+        })
     }
 
     #[automatically_generated_binding]
@@ -10794,8 +10857,11 @@ impl Graph {
     /// ValueError
     ///     If the graph does not have node types.
     ///
-    pub fn remove_inplace_node_types(&mut self) -> Result<&Graph> {
-        self.inner.remove_inplace_node_types().into()
+    pub fn remove_inplace_node_types(&mut self) -> PyResult<()> {
+        Ok({
+            pe!(self.inner.remove_inplace_node_types())?;
+            ()
+        })
     }
 
     #[automatically_generated_binding]
@@ -10826,8 +10892,11 @@ impl Graph {
     /// ValueError
     ///     If the graph is a multigraph.
     ///
-    pub fn remove_inplace_edge_types(&mut self) -> Result<&Graph> {
-        self.inner.remove_inplace_edge_types().into()
+    pub fn remove_inplace_edge_types(&mut self) -> PyResult<()> {
+        Ok({
+            pe!(self.inner.remove_inplace_edge_types())?;
+            ()
+        })
     }
 
     #[automatically_generated_binding]
@@ -10856,8 +10925,11 @@ impl Graph {
     /// ValueError
     ///     If the graph does not have edge weights.
     ///
-    pub fn remove_inplace_edge_weights(&mut self) -> Result<&Graph> {
-        self.inner.remove_inplace_edge_weights().into()
+    pub fn remove_inplace_edge_weights(&mut self) -> PyResult<()> {
+        Ok({
+            pe!(self.inner.remove_inplace_edge_weights())?;
+            ()
+        })
     }
 
     #[automatically_generated_binding]
@@ -11150,7 +11222,7 @@ impl Graph {
                 .collect::<Vec<_>>()
         ))?
         .into_iter()
-        .map(|x| x.into())
+        .map(|x| x.map(|x| x.into()))
         .collect::<Vec<_>>())
     }
 
@@ -11205,7 +11277,7 @@ impl Graph {
                 .collect::<Vec<_>>()
         ))?
         .into_iter()
-        .map(|x| x.into())
+        .map(|x| x.map(|x| x.into()))
         .collect::<Vec<_>>())
     }
 
@@ -11487,7 +11559,7 @@ impl Graph {
                 .map(|x| { x.into_iter().map(|x| { x.into() }).collect::<HashSet<_>>() })
         ))?
         .into_iter()
-        .map(|x| x.into())
+        .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>())
         .collect::<Vec<_>>())
     }
 
@@ -11565,7 +11637,7 @@ impl Graph {
                 .map(|x| { x.into_iter().map(|x| { x.into() }).collect::<HashSet<_>>() })
         ))?
         .into_iter()
-        .map(|x| x.into())
+        .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>())
         .collect::<Vec<_>>())
     }
 
@@ -11649,7 +11721,7 @@ impl Graph {
                 allow_node_set.map(|x| x.into_iter().map(|x| x.into()).collect::<HashSet<_>>()),
             )
             .into_iter()
-            .map(|x| x.into())
+            .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>())
             .collect::<Vec<_>>()
     }
 
@@ -12116,7 +12188,7 @@ impl Graph {
         self.inner
             .get_node_urls()
             .into_iter()
-            .map(|x| x.into())
+            .map(|x| x.map(|x| x.into()))
             .collect::<Vec<_>>()
     }
 
@@ -12127,7 +12199,7 @@ impl Graph {
         self.inner
             .get_node_ontologies()
             .into_iter()
-            .map(|x| x.into())
+            .map(|x| x.map(|x| x.into()))
             .collect::<Vec<_>>()
     }
 
@@ -12216,7 +12288,7 @@ impl Graph {
     pub fn get_directed_edge_type_ids(&self) -> PyResult<Vec<Option<EdgeTypeT>>> {
         Ok(pe!(self.inner.get_directed_edge_type_ids())?
             .into_iter()
-            .map(|x| x.into())
+            .map(|x| x.map(|x| x.into()))
             .collect::<Vec<_>>())
     }
 
@@ -12226,7 +12298,7 @@ impl Graph {
     pub fn get_undirected_edge_type_ids(&self) -> PyResult<Vec<Option<EdgeTypeT>>> {
         Ok(pe!(self.inner.get_undirected_edge_type_ids())?
             .into_iter()
-            .map(|x| x.into())
+            .map(|x| x.map(|x| x.into()))
             .collect::<Vec<_>>())
     }
 
@@ -12288,7 +12360,7 @@ impl Graph {
     pub fn get_edge_type_names(&self) -> PyResult<Vec<Option<String>>> {
         Ok(pe!(self.inner.get_edge_type_names())?
             .into_iter()
-            .map(|x| x.into())
+            .map(|x| x.map(|x| x.into()))
             .collect::<Vec<_>>())
     }
 
@@ -12335,10 +12407,15 @@ impl Graph {
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Return the node types of the graph nodes.
-    pub fn get_node_type_ids(&self) -> PyResult<Vec<Option<Vec<NodeTypeT>>>> {
+    pub fn get_node_type_ids(&self) -> PyResult<Vec<Option<Py<PyArray1<NodeTypeT>>>>> {
         Ok(pe!(self.inner.get_node_type_ids())?
             .into_iter()
-            .map(|x| x.into())
+            .map(|x| {
+                x.map(|x| {
+                    let gil = pyo3::Python::acquire_gil();
+                    to_ndarray_1d!(gil, x, NodeTypeT)
+                })
+            })
             .collect::<Vec<_>>())
     }
 
@@ -12484,7 +12561,7 @@ impl Graph {
     pub fn get_node_type_names(&self) -> PyResult<Vec<Option<Vec<String>>>> {
         Ok(pe!(self.inner.get_node_type_names())?
             .into_iter()
-            .map(|x| x.into())
+            .map(|x| x.map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>()))
             .collect::<Vec<_>>())
     }
 
@@ -12573,7 +12650,10 @@ impl Graph {
         self.inner
             .get_edge_node_names(directed.into())
             .into_iter()
-            .map(|x| x.into())
+            .map(|x| {
+                let (subresult_0, subresult_1) = x;
+                (subresult_0.into(), subresult_1.into())
+            })
             .collect::<Vec<_>>()
     }
 
@@ -12584,7 +12664,10 @@ impl Graph {
         self.inner
             .get_directed_edge_node_names()
             .into_iter()
-            .map(|x| x.into())
+            .map(|x| {
+                let (subresult_0, subresult_1) = x;
+                (subresult_0.into(), subresult_1.into())
+            })
             .collect::<Vec<_>>()
     }
 
@@ -12600,7 +12683,7 @@ impl Graph {
     pub fn get_directed_edge_triples_names(&self) -> PyResult<Vec<Vec<String>>> {
         Ok(pe!(self.inner.get_directed_edge_triples_names())?
             .into_iter()
-            .map(|x| x.into())
+            .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>())
             .collect::<Vec<_>>())
     }
 
@@ -12946,7 +13029,10 @@ impl Graph {
             .inner
             .get_edge_node_names_with_unknown_edge_types(directed.into()))?
         .into_iter()
-        .map(|x| x.into())
+        .map(|x| {
+            let (subresult_0, subresult_1) = x;
+            (subresult_0.into(), subresult_1.into())
+        })
         .collect::<Vec<_>>())
     }
 
@@ -12973,7 +13059,10 @@ impl Graph {
             .inner
             .get_edge_node_names_with_known_edge_types(directed.into()))?
         .into_iter()
-        .map(|x| x.into())
+        .map(|x| {
+            let (subresult_0, subresult_1) = x;
+            (subresult_0.into(), subresult_1.into())
+        })
         .collect::<Vec<_>>())
     }
 
@@ -13720,7 +13809,7 @@ impl Graph {
         self.inner
             .get_isomorphic_node_ids_groups(minimum_node_degree.map(|x| x.into()))
             .into_iter()
-            .map(|x| x.into())
+            .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>())
             .collect::<Vec<_>>()
     }
 
@@ -13740,7 +13829,7 @@ impl Graph {
         self.inner
             .get_isomorphic_node_names_groups(minimum_node_degree.map(|x| x.into()))
             .into_iter()
-            .map(|x| x.into())
+            .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>())
             .collect::<Vec<_>>()
     }
 
@@ -13768,7 +13857,7 @@ impl Graph {
     pub fn get_isomorphic_node_type_ids_groups(&self) -> PyResult<Vec<Vec<NodeTypeT>>> {
         Ok(pe!(self.inner.get_isomorphic_node_type_ids_groups())?
             .into_iter()
-            .map(|x| x.into())
+            .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>())
             .collect::<Vec<_>>())
     }
 
@@ -13778,7 +13867,7 @@ impl Graph {
     pub fn get_isomorphic_node_type_names_groups(&self) -> PyResult<Vec<Vec<String>>> {
         Ok(pe!(self.inner.get_isomorphic_node_type_names_groups())?
             .into_iter()
-            .map(|x| x.into())
+            .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>())
             .collect::<Vec<_>>())
     }
 
@@ -13799,7 +13888,7 @@ impl Graph {
             .inner
             .get_approximated_isomorphic_node_type_ids_groups())?
         .into_iter()
-        .map(|x| x.into())
+        .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>())
         .collect::<Vec<_>>())
     }
 
@@ -13811,7 +13900,7 @@ impl Graph {
             .inner
             .get_approximated_isomorphic_node_type_names_groups())?
         .into_iter()
-        .map(|x| x.into())
+        .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>())
         .collect::<Vec<_>>())
     }
 
@@ -13842,7 +13931,7 @@ impl Graph {
             .inner
             .get_isomorphic_edge_type_ids_groups(minimum_number_of_edges.map(|x| { x.into() })))?
         .into_iter()
-        .map(|x| x.into())
+        .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>())
         .collect::<Vec<_>>())
     }
 
@@ -13863,7 +13952,7 @@ impl Graph {
             .inner
             .get_isomorphic_edge_type_names_groups(minimum_number_of_edges.map(|x| { x.into() })))?
         .into_iter()
-        .map(|x| x.into())
+        .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>())
         .collect::<Vec<_>>())
     }
 
@@ -14922,7 +15011,7 @@ impl Graph {
             random_state.map(|x| { x.into() })
         ))?
         .into_iter()
-        .map(|x| x.into())
+        .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>())
         .collect::<Vec<_>>())
     }
 
@@ -16049,8 +16138,12 @@ impl Graph {
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Return list of the supported node sampling methods
-    pub fn get_node_sampling_methods(&self) -> Vec<&str> {
-        self.inner.get_node_sampling_methods().into()
+    pub fn get_node_sampling_methods(&self) -> Vec<String> {
+        self.inner
+            .get_node_sampling_methods()
+            .into_iter()
+            .map(|x| x.to_string())
+            .collect::<Vec<_>>()
     }
 
     #[automatically_generated_binding]
@@ -16744,7 +16837,10 @@ impl Graph {
         train_size: f64,
         use_stratification: Option<bool>,
         random_state: Option<EdgeT>,
-    ) -> PyResult<(Vec<Option<Vec<NodeTypeT>>>, Vec<Option<Vec<NodeTypeT>>>)> {
+    ) -> PyResult<(
+        Vec<Option<Py<PyArray1<NodeTypeT>>>>,
+        Vec<Option<Py<PyArray1<NodeTypeT>>>>,
+    )> {
         Ok({
             let (subresult_0, subresult_1) = pe!(self.inner.get_node_label_holdout_labels(
                 train_size.into(),
@@ -16755,11 +16851,21 @@ impl Graph {
             (
                 subresult_0
                     .into_iter()
-                    .map(|x| x.into())
+                    .map(|x| {
+                        x.map(|x| {
+                            let gil = pyo3::Python::acquire_gil();
+                            to_ndarray_1d!(gil, x, NodeTypeT)
+                        })
+                    })
                     .collect::<Vec<_>>(),
                 subresult_1
                     .into_iter()
-                    .map(|x| x.into())
+                    .map(|x| {
+                        x.map(|x| {
+                            let gil = pyo3::Python::acquire_gil();
+                            to_ndarray_1d!(gil, x, NodeTypeT)
+                        })
+                    })
                     .collect::<Vec<_>>(),
             )
         })

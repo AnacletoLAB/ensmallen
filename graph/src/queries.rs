@@ -840,11 +840,11 @@ impl Graph {
     pub unsafe fn get_unchecked_node_type_ids_from_node_id(
         &self,
         node_id: NodeT,
-    ) -> Option<&Vec<NodeTypeT>> {
+    ) -> Option<&[NodeTypeT]> {
         self.node_types
             .as_ref()
             .as_ref()
-            .and_then(|nts| nts.ids[node_id as usize].as_ref())
+            .and_then(|nts| nts.ids[node_id as usize].as_ref().map(|x| x.as_slice()))
     }
 
     /// Returns node type of given node.
@@ -861,7 +861,7 @@ impl Graph {
     pub fn get_node_type_ids_from_node_id(
         &self,
         node_id: NodeT,
-    ) -> Result<Option<&Vec<NodeTypeT>>> {
+    ) -> Result<Option<&[NodeTypeT]>> {
         self.must_have_node_types()?;
         self.validate_node_id(node_id)
             .map(|node_id| unsafe { self.get_unchecked_node_type_ids_from_node_id(node_id) })
@@ -1249,7 +1249,7 @@ impl Graph {
     pub fn get_node_type_ids_from_node_name(
         &self,
         node_name: &str,
-    ) -> Result<Option<&Vec<NodeTypeT>>> {
+    ) -> Result<Option<&[NodeTypeT]>> {
         self.get_node_type_ids_from_node_id(self.get_node_id_from_node_name(node_name)?)
     }
 

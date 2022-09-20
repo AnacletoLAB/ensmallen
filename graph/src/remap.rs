@@ -118,7 +118,7 @@ impl Graph {
                             });
                             new_node_type_ids.sort_unstable();
                         } else {
-                            remapped_node_type_ids[new_node_id] = Some(node_type_ids.clone());
+                            remapped_node_type_ids[new_node_id] = Some(node_type_ids.to_vec());
                         }
                     }
                 });

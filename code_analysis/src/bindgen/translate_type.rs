@@ -1,4 +1,5 @@
 use super::*;
+use rust_parser::CmpWithoutModifiers;
 
 pub fn translate_type_str(value: String, user_defined_types: &[&str]) -> String {
     Type::parse_lossy_string(value).to_python_type(user_defined_types)
@@ -11,60 +12,38 @@ pub trait TranslateArg {
 impl TranslateArg for Arg {
     fn to_python_bindings_arg(&self, this_struct: &str) -> (String, Option<String>) {
         match &self.arg_type {
-            Type::SelfType => {
-                (
-                    format!("{}self", self.arg_modifier),
-                    None,
-                )
-            },
-            x if x == "S" => {
-                (
-                    format!("{}: String", self.name),
-                    Some(self.name.to_string()),
-                )
-            },
-            x if x == "str" => {
-                (
-                    format!("{}: String", self.name),
-                    Some(format!("&{}", self.name)),
-                )
-            },
-            Type::SliceType(inner_type) => {
-                (
-                    format!("{}: Vec<{}>", self.name, inner_type),
-                    Some(format!("&{}", self.name)),
-                )
-            },
-            x if *x == this_struct => {
-                (
-                    format!("{}: {}", self.name, this_struct),
-                    Some(format!("{}.inner", self.name)),
-                )
-            },
-            x if *x == format!("& {}", this_struct).as_str() => {
-                (
-                    format!("{}: &{}", self.name, this_struct),
-                    Some(format!("&{}.inner", self.name)),
-                )
-            },
-            x if x == format!("Option<{}>", this_struct).as_str() => {
-                (
-                    format!("{}: Option<{}>", self.name, this_struct),
-                    Some(format!("{}.map(|sg| sg.inner)", self.name)),
-                )
-            },
-            x if x == format!("Option<& {}>", this_struct).as_str() => {
-                (
-                    format!("{}: Option<& {}>", self.name, this_struct),
-                    Some(format!("{}.map(|sg| &sg.inner)", self.name)),
-                )
-            },
+            Type::SelfType => (format!("{}self", self.arg_modifier), None),
+            x if x == "S" => (
+                format!("{}: String", self.name),
+                Some(self.name.to_string()),
+            ),
+            x if x == "str" => (
+                format!("{}: String", self.name),
+                Some(format!("&{}", self.name)),
+            ),
+            Type::SliceType(inner_type) => (
+                format!("{}: Vec<{}>", self.name, inner_type),
+                Some(format!("&{}", self.name)),
+            ),
+            x if *x == this_struct => (
+                format!("{}: {}", self.name, this_struct),
+                Some(format!("{}.inner", self.name)),
+            ),
+            x if *x == format!("& {}", this_struct).as_str() => (
+                format!("{}: &{}", self.name, this_struct),
+                Some(format!("&{}.inner", self.name)),
+            ),
+            x if x == format!("Option<{}>", this_struct).as_str() => (
+                format!("{}: Option<{}>", self.name, this_struct),
+                Some(format!("{}.map(|sg| sg.inner)", self.name)),
+            ),
+            x if x == format!("Option<& {}>", this_struct).as_str() => (
+                format!("{}: Option<& {}>", self.name, this_struct),
+                Some(format!("{}.map(|sg| &sg.inner)", self.name)),
+            ),
             t => {
                 let (t, call) = t.to_python_bindings_arg(&self.name);
-                (
-                    format!("{}: {}", self.name, t),
-                    Some(call),
-                )
+                (format!("{}: {}", self.name, t), Some(call))
             }
         }
     }
@@ -79,61 +58,51 @@ pub trait TranslateType {
 
     /// function to call
     /// Ryst type -> Pyo3 bindings call and return type (if present)
-    fn to_python_bindings_return_type(&self, 
+    fn to_python_bindings_return_type(
+        &self,
         attributes: &[Attribute],
-        body: String, 
-        this_struct: &str, 
+        body: String,
+        this_struct: &str,
         is_static: bool,
-        is_self_ref: bool, 
-        is_self_mut: bool, 
-    ) -> (String, Option<String>);
-
-    /// inner recursive call, do not use directly
-    fn to_python_bindings_return_type_inner(&self, 
-        attributes: &[Attribute],
-        body: String, 
-        this_struct: &str, 
-        is_static: bool,
-        is_self_ref: bool, 
-        is_self_mut: bool, 
-        depth: usize,
-    ) -> (String, Option<String>);
-} 
-
-impl TranslateType for Type {
-
-    fn to_python_bindings_return_type(&self, 
-        attributes: &[Attribute],
-        body: String, 
-        this_struct: &str, 
-        is_static: bool,
-        is_self_ref: bool, 
-        is_self_mut: bool, 
+        is_self_ref: bool,
+        is_self_mut: bool,
     ) -> (String, Option<String>) {
         self.to_python_bindings_return_type_inner(
-            attributes, 
-            body, 
-            this_struct, 
-            is_static, 
-            is_self_ref, 
-            is_self_mut, 
+            attributes,
+            body,
+            this_struct,
+            is_static,
+            is_self_ref,
+            is_self_mut,
             0,
         )
     }
 
+    /// inner recursive call, do not use directly
+    fn to_python_bindings_return_type_inner(
+        &self,
+        attributes: &[Attribute],
+        body: String,
+        this_struct: &str,
+        is_static: bool,
+        is_self_ref: bool,
+        is_self_mut: bool,
+        depth: usize,
+    ) -> (String, Option<String>);
+}
+
+impl TranslateType for Type {
     fn to_python_bindings_arg(&self, call: &str) -> (String, String) {
         match self {
-            Type::None => {
-                (
-                    "()".to_string(),
-                    "()".to_string()
-                )
-            },
+            Type::None => ("()".to_string(), "()".to_string()),
             Type::SliceType(sub_type) => {
                 let (t, sub_call) = sub_type.to_python_bindings_arg("x");
                 (
                     format!("Vec<{}>", t),
-                    format!("{}.into_iter().map(|x| {{{}}}).collect::<Vec<_>>().as_slice()", call, sub_call),
+                    format!(
+                        "{}.into_iter().map(|x| {{{}}}).collect::<Vec<_>>().as_slice()",
+                        call, sub_call
+                    ),
                 )
             }
             Type::TupleType(sub_types) => {
@@ -141,8 +110,8 @@ impl TranslateType for Type {
                 let mut result_call = format!("let temp = {};(", call);
 
                 for (i, sub_type) in sub_types.iter().enumerate() {
-
-                    let (sub_type, sub_call) = sub_type.to_python_bindings_arg(&format!("temp.{}", i)); 
+                    let (sub_type, sub_call) =
+                        sub_type.to_python_bindings_arg(&format!("temp.{}", i));
 
                     result_type.push_str(&sub_type);
                     result_call.push_str(&sub_call);
@@ -156,23 +125,25 @@ impl TranslateType for Type {
                     format!("{{{})}}", result_call),
                 )
             }
-            Type::SimpleType{
-                name,
-                generics,
-                ..
-            } => {
+            Type::SimpleType { name, generics, .. } => {
                 if name == "Vec" {
                     let (sub_type_str, sub_call) = self[0].to_python_bindings_arg("x");
                     return (
                         format!("Vec<{}>", sub_type_str),
-                        format!("{}.into_iter().map(|x| {{{}}}).collect::<Vec<_>>()", call, sub_call),
+                        format!(
+                            "{}.into_iter().map(|x| {{{}}}).collect::<Vec<_>>()",
+                            call, sub_call
+                        ),
                     );
                 }
                 if name == "HashSet" {
                     let (sub_type_str, sub_call) = self[0].to_python_bindings_arg("x");
                     return (
                         format!("HashSet<{}>", sub_type_str),
-                        format!("{}.into_iter().map(|x| {{{}}}).collect::<HashSet<_>>()", call, sub_call),
+                        format!(
+                            "{}.into_iter().map(|x| {{{}}}).collect::<HashSet<_>>()",
+                            call, sub_call
+                        ),
                     );
                 }
                 if name == "Option" {
@@ -183,20 +154,17 @@ impl TranslateType for Type {
                     );
                 }
                 if name == "str" {
-                    return (
-                        "String".to_string(),
-                        format!("{}.as_ref()", call),
-                    );
+                    return ("String".to_string(), format!("{}.as_ref()", call));
                 }
 
                 let mut result = name.clone();
                 if generics.0.len() == 1 {
                     result.push('<');
                     let sub_call = match &generics.0[0] {
-                        GenericValue::Type{
+                        GenericValue::Type {
                             sub_type,
                             modifiers,
-                         } => {
+                        } => {
                             let (sub_type_str, sub_call) = sub_type.to_python_bindings_arg(call);
                             result.push_str(&sub_type_str);
                             sub_call
@@ -204,17 +172,11 @@ impl TranslateType for Type {
                         gen => unimplemented!("{:?}", gen),
                     };
                     result.push('>');
-                    (
-                        result,
-                        format!("{}.into()", sub_call),
-                    )
+                    (result, format!("{}.into()", sub_call))
                 } else {
-                    (
-                        self.to_string(),
-                        format!("{}.into()", call),
-                    )
+                    (self.to_string(), format!("{}.into()", call))
                 }
-            },
+            }
             t => unimplemented!("{:?}", t),
         }
     }
@@ -240,11 +202,7 @@ impl TranslateType for Type {
             Type::SliceType(inner_type) => {
                 format!("List[{}]", inner_type.to_python_type(user_defined_types))
             }
-            Type::SimpleType {
-                name,
-                generics,
-                ..
-            } => match name.as_str() {
+            Type::SimpleType { name, generics, .. } => match name.as_str() {
                 // BAD HACKS TODO! Figure out why it happens in pyigen
                 "" => "".into(),
                 "Graph" => "Graph".into(),
@@ -260,10 +218,14 @@ impl TranslateType for Type {
                     let mut result = "Set[".to_string();
                     for value in generics.0 {
                         match value {
-                            GenericValue::Type{
-                                sub_type:t,
-                                modifiers:m,
-                            } => result.push_str(&format!("{}{}", m, t.to_python_type(user_defined_types))),
+                            GenericValue::Type {
+                                sub_type: t,
+                                modifiers: m,
+                            } => result.push_str(&format!(
+                                "{}{}",
+                                m,
+                                t.to_python_type(user_defined_types)
+                            )),
                             _ => panic!("Cannot traduce to python the generic value {:?}", value),
                         }
                     }
@@ -275,10 +237,12 @@ impl TranslateType for Type {
                     let mut vals = Vec::new();
                     for value in generics.0 {
                         match value {
-                            GenericValue::Type{
-                                sub_type:t,
-                                modifiers:m,
-                            } => vals.push(format!("{}{}", m, t.to_python_type(user_defined_types))),
+                            GenericValue::Type {
+                                sub_type: t,
+                                modifiers: m,
+                            } => {
+                                vals.push(format!("{}{}", m, t.to_python_type(user_defined_types)))
+                            }
                             _ => panic!("Cannot traduce to python the generic value {:?}", value),
                         }
                     }
@@ -290,10 +254,14 @@ impl TranslateType for Type {
                     let mut result = "Optional[".to_string();
                     for value in generics.0 {
                         match value {
-                            GenericValue::Type{
-                                sub_type:t,
-                                modifiers:m,
-                            } => result.push_str(&format!("{}{}", m, t.to_python_type(user_defined_types))),
+                            GenericValue::Type {
+                                sub_type: t,
+                                modifiers: m,
+                            } => result.push_str(&format!(
+                                "{}{}",
+                                m,
+                                t.to_python_type(user_defined_types)
+                            )),
                             _ => panic!("Cannot traduce to python the generic value {:?}", value),
                         }
                     }
@@ -304,10 +272,14 @@ impl TranslateType for Type {
                     let mut result = "List[".to_string();
                     for value in generics.0 {
                         match value {
-                            GenericValue::Type{
-                                sub_type:t,
-                                modifiers:m,
-                            } => result.push_str(&format!("{}{}", m, t.to_python_type(user_defined_types))),
+                            GenericValue::Type {
+                                sub_type: t,
+                                modifiers: m,
+                            } => result.push_str(&format!(
+                                "{}{}",
+                                m,
+                                t.to_python_type(user_defined_types)
+                            )),
                             _ => panic!("Cannot traduce to python the generic value {:?}", value),
                         }
                     }
@@ -319,10 +291,14 @@ impl TranslateType for Type {
                     let mut result = String::new();
                     for value in generics.0 {
                         match value {
-                            GenericValue::Type{
-                                sub_type:t,
-                                modifiers:m,
-                            } => result.push_str(&format!("{}{}", m, t.to_python_type(user_defined_types))),
+                            GenericValue::Type {
+                                sub_type: t,
+                                modifiers: m,
+                            } => result.push_str(&format!(
+                                "{}{}",
+                                m,
+                                t.to_python_type(user_defined_types)
+                            )),
                             _ => panic!("Cannot traduce to python the generic value {:?}", value),
                         }
                     }
@@ -332,10 +308,14 @@ impl TranslateType for Type {
                     let mut result = String::new();
                     for value in generics.0 {
                         match value {
-                            GenericValue::Type{
-                                sub_type:t,
-                                modifiers:m,
-                            } => result.push_str(&format!("{}{}", m, t.to_python_type(user_defined_types))),
+                            GenericValue::Type {
+                                sub_type: t,
+                                modifiers: m,
+                            } => result.push_str(&format!(
+                                "{}{}",
+                                m,
+                                t.to_python_type(user_defined_types)
+                            )),
                             _ => panic!("Cannot traduce to python the generic value {:?}", value),
                         }
                     }
@@ -345,10 +325,14 @@ impl TranslateType for Type {
                     let mut result = "Dict[".to_string();
                     for value in generics.0 {
                         match value {
-                            GenericValue::Type{
-                                sub_type:t,
-                                modifiers:m,
-                            } => result.push_str(&format!("{}{}", m, t.to_python_type(user_defined_types))),
+                            GenericValue::Type {
+                                sub_type: t,
+                                modifiers: m,
+                            } => result.push_str(&format!(
+                                "{}{}",
+                                m,
+                                t.to_python_type(user_defined_types)
+                            )),
                             _ => panic!("Cannot traduce to python the generic value {:?}", value),
                         }
                     }
@@ -359,10 +343,14 @@ impl TranslateType for Type {
                     let mut result = String::new();
                     for value in generics.0 {
                         match value {
-                            GenericValue::Type{
-                                sub_type:t,
-                                modifiers:m,
-                            } => result.push_str(&format!("{}{}", m, t.to_python_type(user_defined_types))),
+                            GenericValue::Type {
+                                sub_type: t,
+                                modifiers: m,
+                            } => result.push_str(&format!(
+                                "{}{}",
+                                m,
+                                t.to_python_type(user_defined_types)
+                            )),
                             _ => panic!("Cannot traduce to python the generic value {:?}", value),
                         }
                     }
@@ -377,7 +365,10 @@ impl TranslateType for Type {
                     "np.ndarray".to_string()
                 }
                 _ => {
-                    println!("Cannot handle translation of '{}' to a known python type.", name);
+                    println!(
+                        "Cannot handle translation of '{}' to a known python type.",
+                        name
+                    );
                     name.trim_start_matches("&").to_string()
                 }
             },
@@ -387,13 +378,14 @@ impl TranslateType for Type {
         }
     }
 
-    fn to_python_bindings_return_type_inner(&self, 
+    fn to_python_bindings_return_type_inner(
+        &self,
         attributes: &[Attribute],
-        mut body: String, 
-        this_struct: &str, 
+        mut body: String,
+        this_struct: &str,
         is_static: bool,
-        is_self_ref: bool, 
-        is_self_mut: bool, 
+        is_self_ref: bool,
+        is_self_mut: bool,
         depth: usize,
     ) -> (String, Option<String>) {
         let (body, r_type) = match self {
@@ -401,30 +393,32 @@ impl TranslateType for Type {
             Type::TupleType(sub_types) => {
                 let mut bodies = Vec::new();
                 let mut return_types = Vec::new();
-                
+
                 for (i, sub_type) in sub_types.iter().enumerate() {
-                    let (inner_body, inner_return_type) = sub_type.to_python_bindings_return_type_inner(
-                        attributes, 
-                        format!("subresult_{}", i), 
-                        this_struct, 
-                        is_static,
-                        is_self_ref, 
-                        is_self_mut,
-                        depth + 1,
-                    );
+                    let (inner_body, inner_return_type) = sub_type
+                        .to_python_bindings_return_type_inner(
+                            attributes,
+                            format!("subresult_{}", i),
+                            this_struct,
+                            is_static,
+                            is_self_ref,
+                            is_self_mut,
+                            depth + 1,
+                        );
                     bodies.push(inner_body);
                     return_types.push(inner_return_type);
                 }
 
                 let subresult_splitter = format!(
-                    "({})", 
+                    "({})",
                     (0..sub_types.len())
                         .map(|i| format!("subresult_{}", i))
-                        .collect::<Vec<_>>().join(", ")
-                    );
-                
+                        .collect::<Vec<_>>()
+                        .join(", ")
+                );
+
                 let mut final_body = format!(
-                    "let {} = {};\n({})", 
+                    "let {} = {};\n({})",
                     subresult_splitter,
                     body,
                     bodies.join(", ")
@@ -435,16 +429,15 @@ impl TranslateType for Type {
                 }
 
                 let final_type = format!(
-                    "({})", 
-                    return_types.into_iter()
+                    "({})",
+                    return_types
+                        .into_iter()
                         .map(|x| x.unwrap_or("()".to_string()))
-                        .collect::<Vec<_>>().join(", ")
+                        .collect::<Vec<_>>()
+                        .join(", ")
                 );
 
-                (
-                    final_body,
-                    Some(final_type),
-                )
+                (final_body, Some(final_type))
             }
 
             // handle null type
@@ -462,7 +455,7 @@ impl TranslateType for Type {
                         } else {
                             (format!("{{{};()}}", body), None)
                         }
-                    },
+                    }
                     (true, false) => {
                         body = format!("{}.into()", body);
 
@@ -472,9 +465,7 @@ impl TranslateType for Type {
 
                         (body, Some(this_struct.to_string()))
                     }
-                    (false, true) => {
-                        (body, Some(this_struct.to_string()))
-                    }
+                    (false, true) => (body, Some(this_struct.to_string())),
                     _ => {
                         panic!("Not implemented yet!");
                     }
@@ -482,68 +473,58 @@ impl TranslateType for Type {
             }
 
             // handle the Result type
-            x if x == "Result<_>" => {
+            x if x.cmp_without_modifiers(&Type::parse_lossy_str("Result<_>")) => {
                 let needs_into = match &self[0] {
                     x if x == "()" => false,
                     _ => true,
                 };
 
-                let mut sub_body = format!(
-                    "pe!({})?{}", 
-                    body,
-                    if needs_into {
-                        ".into()"
-                    } else {
-                        ""
-                    }
-                );
+                let mut sub_body =
+                    format!("pe!({})?{}", body, if needs_into { ".into()" } else { "" });
 
                 if depth != 0 {
                     sub_body = format!("{{{}}}", sub_body);
                 }
 
                 let (inner_body, inner_type) = self[0].to_python_bindings_return_type_inner(
-                    attributes, 
-                    sub_body, 
-                    this_struct, 
+                    attributes,
+                    sub_body,
+                    this_struct,
                     is_static,
-                    is_self_ref, 
+                    is_self_ref,
                     is_self_mut,
                     depth + 1,
                 );
-                
                 (
                     if depth == 0 {
                         format!("Ok({})", inner_body)
                     } else {
                         format!("Ok({{{}}})", inner_body)
-                    }, 
-                    Some(format!("PyResult<{}>", inner_type.unwrap_or("()".into())))
+                    },
+                    Some(format!("PyResult<{}>", inner_type.unwrap_or("()".into()))),
                 )
             }
 
             // handle the Option type
-            x if x == "Option<_>" => {
+            x if x.cmp_without_modifiers(&Type::parse_lossy_str("Option<_>")) => {
                 let (inner_body, inner_type) = self[0].to_python_bindings_return_type_inner(
-                    attributes, 
-                    "x".into(), 
-                    this_struct, 
+                    attributes,
+                    "x".into(),
+                    this_struct,
                     is_static,
-                    is_self_ref, 
+                    is_self_ref,
                     is_self_mut,
                     depth + 1,
                 );
                 let body = body.strip_suffix(".into()").unwrap_or(body.as_str());
                 (
                     format!("{}.map(|x| {})", body, inner_body),
-                    Some(format!("Option<{}>", inner_type.unwrap_or("()".into())))
+                    Some(format!("Option<{}>", inner_type.unwrap_or("()".into()))),
                 )
             }
 
             // handle 1d numpy arrays
-            x if x == "Vec<Primitive>" 
-                && !attributes.iter().any(|x| x == "no_numpy_binding") 
-                => {
+            x if x.cmp_without_modifiers(&Type::parse_lossy_str("Vec<Primitive>")) && !attributes.iter().any(|x| x == "no_numpy_binding") => {
                 let inner_type = self[0].to_string();
 
                 if body.ends_with(".into()") {
@@ -558,23 +539,18 @@ impl TranslateType for Type {
                     body = body,
                     inner_type = inner_type,
                 );
-                
+
                 if depth != 0 {
                     body = format!("{{{}}}", body);
                 }
 
-                (
-                    body,
-                    Some(
-                        format!("Py<PyArray1<{}>>", inner_type)
-                    )
-                )
+                (body, Some(format!("Py<PyArray1<{}>>", inner_type)))
             }
 
             // handle 2d numpy arrays
-            x if x == "Vec<Vec<Primitive>>" 
-                && !attributes.iter().any(|x| x == "no_numpy_binding") 
-                => {
+            x if x.cmp_without_modifiers(&Type::parse_lossy_str("Vec<Vec<Primitive>>"))
+                && !attributes.iter().any(|x| x == "no_numpy_binding") =>
+            {
                 let inner_type = self[0][0].to_string();
 
                 if body.ends_with(".into()") {
@@ -594,35 +570,29 @@ impl TranslateType for Type {
                     body = format!("{{{}}}", body);
                 }
 
-                (
-                    body,
-                    Some(
-                        format!("Py<PyArray2<{}>>", inner_type)
-                    )
-                )
+                (body, Some(format!("Py<PyArray2<{}>>", inner_type)))
             }
 
-
             // handle other vec with maybe complex types
-            x if x == "Vec<_>" => {
+            x if x.cmp_without_modifiers(&Type::parse_lossy_str("Vec<_>")) =>  {
                 let inner_type = &x[0];
 
                 match inner_type {
                     Type::TupleType(subtypes) => {
                         // if its a non empty slice of homogeneous primitive types
                         // convert it to a numpy 2d array
-                        if subtypes.len() == 2 
-                            && subtypes[0] == "Primitive" 
-                            && subtypes[0] == subtypes[1]   
+                        if subtypes.len() == 2
+                            && subtypes[0] == "Primitive"
+                            && subtypes[0] == subtypes[1]
                         {
                             let inner_type = &subtypes[0];
 
                             if body.ends_with(".into()") {
                                 body = body.strip_suffix(".into()").unwrap().to_string();
                             }
-                
+
                             let mut body = format!(
-    r#"
+                                r#"
     // Warning: this copies the array so it uses double the memory.
     // To avoid this you should directly generate data compatible with a numpy array
     // Which is a flat vector with row-first or column-first unrolling
@@ -638,71 +608,76 @@ impl TranslateType for Type {
                                 body = body,
                                 inner_type = inner_type,
                             );
-                
+
                             if depth != 0 {
                                 body = format!("{{{}}}", body);
                             }
-                
-                            return (
-                                body,
-                                Some(
-                                    format!("Py<PyArray2<{}>>", inner_type)
-                                )
-                            );
+
+                            return (body, Some(format!("Py<PyArray2<{}>>", inner_type)));
                         }
                     }
                     _ => {}
                 }
+                let body = body.strip_suffix(".into()").unwrap_or(&body);
 
-                // TODO! make this recursive??
+
+               let (inner_body, inner_type) = self[0].to_python_bindings_return_type_inner(
+                    attributes,
+                    "x".to_string(),
+                    this_struct,
+                    is_static,
+                    is_self_ref,
+                    is_self_mut,
+                    depth + 1,
+                );
                 let res_body = format!(
-                    "{}.into_iter().map(|x| x.into()).collect::<Vec<_>>()", 
-                    body.strip_suffix(".into()").unwrap_or(&body)
+                    "{}.into_iter().map(|x| {}).collect::<Vec<_>>()",
+                    body, inner_body
                 );
 
-                (
-                    res_body,
-                    Some(
-                        format!("Vec<{}>", &self[0])
-                    )
-                )
+                (res_body, Some(format!("Vec<{}>", inner_type.unwrap())))
             }
 
             // we don't have special rules so we can just use the default case
             x => {
                 match x {
-                    Type::SimpleType{
+                    Type::SimpleType {
                         name,
                         modifiers,
                         generics,
                         traits,
                     } => {
+                        if name == "str" {
+                            return (
+                                format!("{}.to_string()", body), 
+                                Some("String".to_string()),
+                            )
+                        }
+
                         if modifiers.reference && name != "str" {
                             let mut new_modifiers = modifiers.clone();
                             new_modifiers.reference = false;
 
-                            Type::SimpleType{
+                            Type::SimpleType {
                                 name: name.clone(),
                                 modifiers: new_modifiers,
                                 generics: generics.clone(),
                                 traits: traits.clone(),
-                            }.to_python_bindings_return_type_inner(
-                                attributes, 
-                                format!("{{{}}}.clone()", body), 
-                                this_struct, 
+                            }
+                            .to_python_bindings_return_type_inner(
+                                attributes,
+                                format!("{{{}}}.clone()", body),
+                                this_struct,
                                 is_static,
-                                is_self_ref, 
+                                is_self_ref,
                                 is_self_mut,
                                 depth + 1,
                             )
                         } else {
                             (format!("{}.into()", body), Some(self.to_string()))
                         }
-                        
                     }
-                    _ => {
-                        (format!("{}.into()", body), Some(self.to_string()))
-                    }
+                    _ => (format!("{}.into()", body), Some(self.to_string())),
                 }
             },
         };

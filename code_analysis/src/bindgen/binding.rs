@@ -11,7 +11,11 @@ impl GenBinding for Function {
             vec!["$self".to_string()]
         };
 
-        let this_struct = self.class.as_ref().map(|x| x.get_name().unwrap()).unwrap_or("".to_string());
+        let this_struct = self
+            .class
+            .as_ref()
+            .map(|x| x.get_name().unwrap())
+            .unwrap_or("".to_string());
 
         let mut handle_walk_parameters = false;
         let mut is_kwarg_only = false;
@@ -21,7 +25,7 @@ impl GenBinding for Function {
             if &arg.arg_type.to_string() == "&WalksParameters" {
                 handle_walk_parameters = true;
                 args_names.push_str(&format!(
-r#"&{{
+                    r#"&{{
 let py = pyo3::Python::acquire_gil();
 let kwargs = normalize_kwargs!(py_kwargs, py.python());
 pe!(validate_kwargs(
@@ -29,10 +33,10 @@ pe!(validate_kwargs(
     build_walk_parameters_list(&[]).as_slice()
 ))?;
 build_walk_parameters(kwargs)?
-}}"#, 
+}}"#,
                 ));
                 args_names.push_str(", ");
-                continue
+                continue;
             }
 
             let (mut arg_name, mut arg_call) = arg.to_python_bindings_arg(&this_struct);
@@ -88,9 +92,10 @@ build_walk_parameters(kwargs)?
             args.push_str("py_kwargs: Option<&PyDict>, ");
         }
 
-
-
-        let text_signature = format!("#[pyo3(text_signature = \"({})\")]", args_signatures.join(", "));
+        let text_signature = format!(
+            "#[pyo3(text_signature = \"({})\")]",
+            args_signatures.join(", ")
+        );
 
         // build the call
         let body = format!(
@@ -99,7 +104,8 @@ build_walk_parameters(kwargs)?
                 (true, true) => format!("graph::{}::", this_struct),
                 (true, false) => "self.inner.".to_string(),
                 (false, true) => "graph::".to_string(),
-                (false, false) => unreachable!("A selftion cannot accept self! It would be a method!"),
+                (false, false) =>
+                    unreachable!("A selftion cannot accept self! It would be a method!"),
             },
             name = self.name,
             args_names = &args_names[..args_names.len().saturating_sub(2)],
@@ -111,16 +117,16 @@ build_walk_parameters(kwargs)?
 
         // parse the return type
         let (body, return_type) = match &self.return_type {
-                None => (format!("{};", body), None),
-                Some(r_type) => r_type.to_python_bindings_return_type(
-                    &self.attributes, 
-                    body, 
-                    &this_struct, 
-                    self.is_static(), 
-                    is_self_ref, 
-                    is_self_mut
-                ),
-            };
+            None => (format!("{};", body), None),
+            Some(r_type) => r_type.to_python_bindings_return_type(
+                &self.attributes,
+                body,
+                &this_struct,
+                self.is_static(),
+                is_self_ref,
+                is_self_mut,
+            ),
+        };
 
         format!(
             r#"
@@ -133,25 +139,28 @@ build_walk_parameters(kwargs)?
             {body}
             }}
             "#,
-                        other_annotations = if handle_walk_parameters {
-                            "#[args(py_kwargs = \"**\")]"
-                        } else {
-                            ""
-                        },
-                        type_annotation= match (self.is_method(), self.is_static()) {
-                            (true, true) => "#[staticmethod]",
-                            (true, false) => "", //"#[classmethod]", for some reason if we add this crash!!
-                            (false, true) => "#[pyfunction]",
-                            (false, false) => unreachable!("it cant be both a function and take self as argument!"),
-                        },
-                        // TODO!: FIX THIS SHIT to allows proper translation of user types
-                        doc = translate_doc(&self.doc, &vec![]),
-                        text_signature = text_signature,
-                        name = &self.name,
-                        return_type = return_type.map(|x| format!("-> {}", x)).unwrap_or("".into()),
-                        args = &args[..args.len().saturating_sub(2)],
-                        body=body,
-                        is_unsafe = if self.is_unsafe { "unsafe " } else { "" },
-                    )
+            other_annotations = if handle_walk_parameters {
+                "#[args(py_kwargs = \"**\")]"
+            } else {
+                ""
+            },
+            type_annotation = match (self.is_method(), self.is_static()) {
+                (true, true) => "#[staticmethod]",
+                (true, false) => "", //"#[classmethod]", for some reason if we add this crash!!
+                (false, true) => "#[pyfunction]",
+                (false, false) =>
+                    unreachable!("it cant be both a function and take self as argument!"),
+            },
+            // TODO!: FIX THIS SHIT to allows proper translation of user types
+            doc = translate_doc(&self.doc, &vec![]),
+            text_signature = text_signature,
+            name = &self.name,
+            return_type = return_type
+                .map(|x| format!("-> {}", x))
+                .unwrap_or("".into()),
+            args = &args[..args.len().saturating_sub(2)],
+            body = body,
+            is_unsafe = if self.is_unsafe { "unsafe " } else { "" },
+        )
     }
 }

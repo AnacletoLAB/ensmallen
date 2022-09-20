@@ -1316,7 +1316,10 @@ impl Graph {
                 .map(|x| x.clone())
         });
 
-        Ok((train_node_types, test_node_types))
+        Ok((
+            train_node_types.iter().map(|x| x.map(|y| y.to_vec())).collect::<Vec<_>>(), 
+            test_node_types.iter().map(|x| x.map(|y| y.to_vec())).collect::<Vec<_>>(),
+        ))
     }
 
     /// Returns node-label holdout for training ML algorithms on the graph node labels.
@@ -1742,12 +1745,12 @@ impl Graph {
             node_set[..train_size].iter().for_each(|node_id| unsafe {
                 train_node_types[*node_id as usize] = self
                     .get_unchecked_node_type_ids_from_node_id(*node_id)
-                    .map(|x| x.clone())
+                    .map(|x| x.to_vec())
             });
             node_set[train_size..].iter().for_each(|node_id| unsafe {
                 test_node_types[*node_id as usize] = self
                     .get_unchecked_node_type_ids_from_node_id(*node_id)
-                    .map(|x| x.clone())
+                    .map(|x| x.to_vec())
             });
         }
 
@@ -1881,7 +1884,7 @@ impl Graph {
                 let node_type =
                     unsafe { self.get_unchecked_node_type_ids_from_node_id(*test_node_id) };
                 if validation_chunk.contains(test_node_id) {
-                    test_node_types[*test_node_id as usize] = node_type.cloned();
+                    test_node_types[*test_node_id as usize] = node_type.map(|x| x.to_vec());
                     train_node_types[*test_node_id as usize] = None;
                 }
             }

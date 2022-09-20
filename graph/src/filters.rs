@@ -208,17 +208,17 @@ impl Graph {
         fn generic_node_filter(
             node_id: NodeT,
             node_name: String,
-            node_type_ids: Option<&Vec<NodeTypeT>>,
+            node_type_ids: Option<&[NodeTypeT]>,
             node_ids_to_keep: Option<&HashSet<NodeTypeT>>,
             node_ids_to_remove: Option<&HashSet<NodeTypeT>>,
             node_names_to_keep_from_graph: Option<&Graph>,
             node_names_to_remove_from_graph: Option<&Graph>,
-            node_prefixes_to_keep: Option<&Vec<String>>,
-            node_prefixes_to_remove: Option<&Vec<String>>,
-            node_type_ids_to_keep: Option<&Vec<Option<Vec<NodeTypeT>>>>,
-            node_type_ids_to_remove: Option<&Vec<Option<Vec<NodeTypeT>>>>,
-            node_type_id_to_keep: Option<&Vec<Option<NodeTypeT>>>,
-            node_type_id_to_remove: Option<&Vec<Option<NodeTypeT>>>,
+            node_prefixes_to_keep: Option<&[String]>,
+            node_prefixes_to_remove: Option<&[String]>,
+            node_type_ids_to_keep: Option<&[Option<Vec<NodeTypeT>>]>,
+            node_type_ids_to_remove: Option<&[Option<Vec<NodeTypeT>>]>,
+            node_type_id_to_keep: Option<&[Option<NodeTypeT>]>,
+            node_type_id_to_remove: Option<&[Option<NodeTypeT>]>,
         ) -> bool {
             node_ids_to_keep.map_or(true, |nitk| nitk.contains(&node_id))
                 && node_ids_to_remove.map_or(true, |nitf| !nitf.contains(&node_id))
@@ -231,10 +231,10 @@ impl Graph {
                     !nptk.iter().any(|prefix| node_name.starts_with(prefix))
                 })
                 && node_type_ids_to_keep.map_or(true, |ntitk| {
-                    ntitk.contains(&node_type_ids.map(|x| x.clone()))
+                    ntitk.contains(&node_type_ids.map(|x| x.to_vec()))
                 })
                 && node_type_ids_to_remove.map_or(true, |ntitf| {
-                    !ntitf.contains(&node_type_ids.map(|x| x.clone()))
+                    !ntitf.contains(&node_type_ids.map(|x| x.to_vec()))
                 })
                 && node_type_id_to_keep.map_or(true, |ntitk| match node_type_ids {
                     Some(node_type_ids) => node_type_ids
@@ -259,12 +259,12 @@ impl Graph {
                 source_node_ids_to_remove.as_ref(),
                 source_node_names_to_keep_from_graph,
                 source_node_names_to_remove_from_graph,
-                source_node_prefixes_to_keep.as_ref(),
-                source_node_prefixes_to_remove.as_ref(),
-                source_node_type_ids_to_keep.as_ref(),
-                source_node_type_ids_to_remove.as_ref(),
-                source_node_type_id_to_keep.as_ref(),
-                source_node_type_id_to_remove.as_ref(),
+                source_node_prefixes_to_keep.as_ref().map(|x| x.as_slice()),
+                source_node_prefixes_to_remove.as_ref().map(|x| x.as_slice()),
+                source_node_type_ids_to_keep.as_ref().map(|x| x.as_slice()),
+                source_node_type_ids_to_remove.as_ref().map(|x| x.as_slice()),
+                source_node_type_id_to_keep.as_ref().map(|x| x.as_slice()),
+                source_node_type_id_to_remove.as_ref().map(|x| x.as_slice()),
             )
         };
 
@@ -277,12 +277,12 @@ impl Graph {
                 destination_node_ids_to_remove.as_ref(),
                 destination_node_names_to_keep_from_graph,
                 destination_node_names_to_remove_from_graph,
-                destination_node_prefixes_to_keep.as_ref(),
-                destination_node_prefixes_to_remove.as_ref(),
-                destination_node_type_ids_to_keep.as_ref(),
-                destination_node_type_ids_to_remove.as_ref(),
-                destination_node_type_id_to_keep.as_ref(),
-                destination_node_type_id_to_remove.as_ref(),
+                destination_node_prefixes_to_keep.as_ref().map(|x| x.as_slice()),
+                destination_node_prefixes_to_remove.as_ref().map(|x| x.as_slice()),
+                destination_node_type_ids_to_keep.as_ref().map(|x| x.as_slice()),
+                destination_node_type_ids_to_remove.as_ref().map(|x| x.as_slice()),
+                destination_node_type_id_to_keep.as_ref().map(|x| x.as_slice()),
+                destination_node_type_id_to_remove.as_ref().map(|x| x.as_slice()),
             )
         };
 
@@ -312,12 +312,12 @@ impl Graph {
                 node_ids_to_remove.as_ref(),
                 node_names_to_keep_from_graph,
                 node_names_to_remove_from_graph,
-                node_prefixes_to_keep.as_ref(),
-                node_prefixes_to_remove.as_ref(),
-                node_type_ids_to_keep.as_ref(),
-                node_type_ids_to_remove.as_ref(),
-                node_type_id_to_keep.as_ref(),
-                node_type_id_to_remove.as_ref(),
+                node_prefixes_to_keep.as_ref().map(|x| x.as_slice()),
+                node_prefixes_to_remove.as_ref().map(|x| x.as_slice()),
+                node_type_ids_to_keep.as_ref().map(|x| x.as_slice()),
+                node_type_ids_to_remove.as_ref().map(|x| x.as_slice()),
+                node_type_id_to_keep.as_ref().map(|x| x.as_slice()),
+                node_type_id_to_remove.as_ref().map(|x| x.as_slice()),
             )
                 && !(filter_singleton_nodes && unsafe{self.is_unchecked_singleton_from_node_id(node_id)})
                 && !(filter_singleton_nodes

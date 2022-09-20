@@ -47,11 +47,11 @@ impl CmpWithoutModifiers for GenericValue {
         match (self, other) {
             (GenericValue::Type{
                 sub_type:t1, 
-                modifiers:m1
+                ..
             }, GenericValue::Type{
                 sub_type:t2, 
-                modifiers:m2,
-            }) => m1 == m2 && t1.cmp_without_modifiers(t2),
+                ..
+            }) => t1.cmp_without_modifiers(t2),
             (GenericValue::TypeAssignement(t1, t2), GenericValue::TypeAssignement(o1, o2)) => {
                 t1.cmp_without_modifiers(o1) && t2.cmp_without_modifiers(o2)
             }

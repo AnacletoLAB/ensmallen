@@ -72,7 +72,7 @@ impl Graph {
 
         // initialize the distance metric
         let distance_metric = match Distance::try_from(distance_name.unwrap_or("COSINE"))? {
-            Distance::L2 => |current_node_features: &Vec<f64>, node_features: &Vec<f64>| -> f64 {
+            Distance::L2 => |current_node_features: &[f64], node_features: &[f64]| -> f64 {
                 current_node_features
                     .iter()
                     .zip(node_features.iter())
@@ -80,7 +80,7 @@ impl Graph {
                     .sum()
             },
             Distance::Cosine => {
-                |current_node_features: &Vec<f64>, node_features: &Vec<f64>| -> f64 {
+                |current_node_features: &[f64], node_features: &[f64]| -> f64 {
                     let numerator = current_node_features
                         .iter()
                         .zip(node_features.iter())

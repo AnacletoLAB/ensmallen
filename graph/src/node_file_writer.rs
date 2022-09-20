@@ -491,7 +491,7 @@ impl NodeFileWriter {
                     (
                         node_id,
                         node_name,
-                        node_type_ids.map(|x| x.clone()),
+                        node_type_ids.map(|x| x.to_vec()),
                         node_type_names,
                     )
                 },

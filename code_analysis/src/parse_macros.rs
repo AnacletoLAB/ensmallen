@@ -39,9 +39,9 @@ fn parse_cached_property(macro_call: &mut MacroCall) -> Function {
     item.doc = doc;
     item.visibility = Visibility::Public;
     item.attributes = macro_call.attributes.clone();
-    item.args = Args(vec![Arg{
+    item.args = Args(vec![Arg {
         name: "self".to_string(),
-        arg_modifier: TypeModifiers{
+        arg_modifier: TypeModifiers {
             reference: true,
             mutable: false,
             ..TypeModifiers::default()
@@ -57,8 +57,8 @@ fn parse_cached_property(macro_call: &mut MacroCall) -> Function {
 ///
 /// This curently handle the following macros:
 /// * `cached_property`
-/// 
-/// # Panics 
+///
+/// # Panics
 /// The function panics if the macros are called in impossible places.
 /// Codes that compiles should never make this function panic.
 pub fn parse_macros(mut module: Module) -> Module {
@@ -66,7 +66,9 @@ pub fn parse_macros(mut module: Module) -> Module {
 
     for macro_call in &mut module.macro_calls {
         let new_function: Option<Function> = match macro_call.name.as_str() {
-            "cached_property" => panic!("A call to cached_property outside an impl is not possible."),
+            "cached_property" => {
+                panic!("A call to cached_property outside an impl is not possible.")
+            }
             // Macro not handled so it's ignored`
             x => {
                 println!("Macrocall '{}' ignored because it's not yet implemented", x);
@@ -84,7 +86,7 @@ pub fn parse_macros(mut module: Module) -> Module {
     for imp in &mut module.impls {
         let mut new_methods = Vec::new();
         for macro_call in &mut imp.macro_calls {
-            let new_method: Option<Function>  = match macro_call.name.as_str() {
+            let new_method: Option<Function> = match macro_call.name.as_str() {
                 "cached_property" => Some(parse_cached_property(macro_call)),
                 // Macro not handled so it's ignored`
                 x => {
@@ -92,7 +94,7 @@ pub fn parse_macros(mut module: Module) -> Module {
                     None
                 }
             };
-            
+
             if let Some(mut nm) = new_method {
                 nm.file_path = module.file_path.clone();
                 nm.class = Some(imp.struct_name.clone());
@@ -101,7 +103,6 @@ pub fn parse_macros(mut module: Module) -> Module {
         }
         imp.methods.append(&mut new_methods);
     }
-
 
     module
 }

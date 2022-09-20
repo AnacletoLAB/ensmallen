@@ -1,7 +1,7 @@
 use super::*;
-use std::collections::BTreeMap;
-use regex::Regex;
 use lazy_static::lazy_static;
+use regex::Regex;
+use std::collections::BTreeMap;
 use std::fs;
 
 mod binding;
@@ -22,49 +22,53 @@ pub use tfidf_gen::*;
 pub fn extract_module_name_from_path(path: &str) -> Option<String> {
     lazy_static! {
         static ref RE: Regex = Regex::new(r"\.\./graph/src/(.+)/.+\.rs").unwrap();
-    }       
-    RE.captures(path).map(|x| x.get(1).unwrap().as_str().to_string())
+    }
+    RE.captures(path)
+        .map(|x| x.get(1).unwrap().as_str().to_string())
 }
 
 fn extract_module_name_from_func(func: &Function) -> Option<String> {
-    extract_module_name_from_path(func.file_path.as_str()).or_else(
-        || {
-            let module_attr = func.attributes.iter()
-                .find(|attr| attr.0.starts_with("module"));
-            module_attr.map(|module| {
-                module.0[7..module.0.len() - 1].to_string()
-            })
-     })
+    extract_module_name_from_path(func.file_path.as_str()).or_else(|| {
+        let module_attr = func
+            .attributes
+            .iter()
+            .find(|attr| attr.0.starts_with("module"));
+        module_attr.map(|module| module.0[7..module.0.len() - 1].to_string())
+    })
 }
 
 fn extract_module_name_from_struct(ztruct: &Struct) -> Option<String> {
-    extract_module_name_from_path(ztruct.file_path.as_str()).or_else(
-        || {
-            let module_attr = ztruct.attributes.iter()
-                .find(|attr| attr.0.starts_with("module"));
-            module_attr.map(|module| {
-                module.0[7..module.0.len() - 1].to_string()
-            })
-     })
+    extract_module_name_from_path(ztruct.file_path.as_str()).or_else(|| {
+        let module_attr = ztruct
+            .attributes
+            .iter()
+            .find(|attr| attr.0.starts_with("module"));
+        module_attr.map(|module| module.0[7..module.0.len() - 1].to_string())
+    })
 }
 
 /// If we should emit a binding for the given function
 fn is_to_bind(func: &Function) -> bool {
     !func.name.starts_with("iter")
-    && !func.name.starts_with("par_iter")
-    && func.visibility == Visibility::Public
-    && !func.attributes.iter().any(|x| x == "no_binding")
-    && !func.attributes.iter().any(|x| x == "manual_binding")
-    && func.return_type.as_ref().map(|x| !x.to_string().contains("Iterator")).unwrap_or(true)
+        && !func.name.starts_with("par_iter")
+        && func.visibility == Visibility::Public
+        && !func.attributes.iter().any(|x| x == "no_binding")
+        && !func.attributes.iter().any(|x| x == "manual_binding")
+        && func
+            .return_type
+            .as_ref()
+            .map(|x| !x.to_string().contains("Iterator"))
+            .unwrap_or(true)
 }
 
 macro_rules! format_vec {
     ($values:expr, $fmt_str:literal, $join_sep:literal) => {
-        $values.iter()
-        .map(|x| format!($fmt_str, x))
-        .filter(|x| !x.is_empty())
-        .collect::<Vec<String>>()
-        .join($join_sep)
+        $values
+            .iter()
+            .map(|x| format!($fmt_str, x))
+            .filter(|x| !x.is_empty())
+            .collect::<Vec<String>>()
+            .join($join_sep)
     };
 }
 
@@ -105,39 +109,38 @@ impl GenBinding for Class {
         let methods_names = self.get_methods_names();
         let (terms, tfidf) = tfidf_gen(&methods_names);
 
-        let impl_ord = self.impls.iter()
-            .any(|x| {
-                let trait_impl = x.impl_trait.as_ref()
+        let impl_ord = self.impls.iter().any(|x| {
+            let trait_impl = x
+                .impl_trait
+                .as_ref()
                 .map(|x| x.to_string())
                 .unwrap_or(String::new());
 
-                trait_impl.contains("Ord")
-            }) && self.impls.iter().any(|x| {
-                x.methods.iter()
-                    .any(|f| {
-                        f.name == "cmp"
-                    })
-            });
-        let impl_partial_ord = self.impls.iter()
-            .any(|x| {
-                let trait_impl = x.impl_trait.as_ref()
+            trait_impl.contains("Ord")
+        }) && self
+            .impls
+            .iter()
+            .any(|x| x.methods.iter().any(|f| f.name == "cmp"));
+        let impl_partial_ord = self.impls.iter().any(|x| {
+            let trait_impl = x
+                .impl_trait
+                .as_ref()
                 .map(|x| x.to_string())
                 .unwrap_or(String::new());
 
-                trait_impl.contains("PartialOrd")
-            }) && self.impls.iter().any(|x| {
-                x.methods.iter()
-                    .any(|f| {
-                        f.name == "partial_cmp"
-                    })
-            });
-        println!("Richcmp: {:30} Ord: {:6} PartialOrd: {:6}", 
+            trait_impl.contains("PartialOrd")
+        }) && self
+            .impls
+            .iter()
+            .any(|x| x.methods.iter().any(|f| f.name == "partial_cmp"));
+        println!(
+            "Richcmp: {:30} Ord: {:6} PartialOrd: {:6}",
             self.ztruct.struct_type.to_string(),
             impl_ord,
             impl_partial_ord,
         );
         let cmp_impl = if impl_ord || impl_partial_ord {
-r#"
+            r#"
 fn __richcmp__(&self, other: Self, op: CompareOp) -> bool {
     match op {
         CompareOp::Lt => self.inner < other.inner,
@@ -154,7 +157,7 @@ fn __richcmp__(&self, other: Self, op: CompareOp) -> bool {
         };
 
         format!(
-r#"
+            r#"
 {struct_doc}
 #[derive(Debug, Clone)]
 pub struct {struct_name} {{
@@ -281,28 +284,38 @@ impl {struct_name} {{
         )))
     }}
 }}
-"#, 
-    struct_doc=self.ztruct.doc.trim().split("\n").map(|x| format!("/// {}", x)).collect::<Vec<_>>().join("\n").trim(),
-    struct_name=self.ztruct.struct_type.get_name().unwrap(),
-    struct_name_upper=self.ztruct.struct_type.get_name().unwrap().to_uppercase(),
-    methods=format_vec!(
-        self.impls.iter()
-        .flat_map(|imp| imp.methods.iter()
-            .filter(|func| is_to_bind(func))
-            .map(GenBinding::gen_python_binding)
-            .filter(|x| !x.is_empty())
-        ).collect::<Vec<_>>(),
-        "{}", "\n\n"
-    ),
-    cmp_impl=cmp_impl,
-    method_names=format_vec!(methods_names, "    \"{}\",", "\n"),
-    terms=format_vec!(terms, "    \"{}\",", "\n"),
-    tfidf=format_vec!(tfidf, "&{:?},", "\n"),
-    )}
+"#,
+            struct_doc = self
+                .ztruct
+                .doc
+                .trim()
+                .split("\n")
+                .map(|x| format!("/// {}", x))
+                .collect::<Vec<_>>()
+                .join("\n")
+                .trim(),
+            struct_name = self.ztruct.struct_type.get_name().unwrap(),
+            struct_name_upper = self.ztruct.struct_type.get_name().unwrap().to_uppercase(),
+            methods = format_vec!(
+                self.impls
+                    .iter()
+                    .flat_map(|imp| imp
+                        .methods
+                        .iter()
+                        .filter(|func| is_to_bind(func))
+                        .map(GenBinding::gen_python_binding)
+                        .filter(|x| !x.is_empty()))
+                    .collect::<Vec<_>>(),
+                "{}",
+                "\n\n"
+            ),
+            cmp_impl = cmp_impl,
+            method_names = format_vec!(methods_names, "    \"{}\",", "\n"),
+            terms = format_vec!(terms, "    \"{}\",", "\n"),
+            tfidf = format_vec!(tfidf, "&{:?},", "\n"),
+        )
+    }
 }
-
-
-
 
 #[derive(Clone, Debug)]
 struct BindingsModule {
@@ -314,11 +327,12 @@ struct BindingsModule {
 
 impl BindingsModule {
     fn push_class(&mut self, ztruct: Struct) {
-        self.structs.insert(ztruct.struct_type.get_name().unwrap(), Class::new(ztruct));
+        self.structs
+            .insert(ztruct.struct_type.get_name().unwrap(), Class::new(ztruct));
     }
 
     fn new(name: String) -> Self {
-        BindingsModule{
+        BindingsModule {
             module_name: name,
             modules: BTreeMap::new(),
             funcs: Vec::new(),
@@ -328,7 +342,8 @@ impl BindingsModule {
 
     fn get_submodule(&mut self, name: Option<String>) -> &mut BindingsModule {
         if let Some(module_name) = name {
-            self.modules.entry(module_name.clone())
+            self.modules
+                .entry(module_name.clone())
                 .or_insert_with(move || BindingsModule::new(module_name))
         } else {
             self
@@ -342,49 +357,42 @@ impl GenBinding for BindingsModule {
 
         for (klass_name, klass) in self.structs.iter() {
             if !klass.ztruct.attributes.iter().any(|x| x == "no_binding")
-                && klass.ztruct.visibility == Visibility::Public {
-                    registrations.push(
-                        format!("\t_m.add_class::<{}>()?;", klass_name)
-                    );
-                }
-            
-        }
-
-        for func in &self.funcs {
-            if  is_to_bind(func) {
-                registrations.push(
-                    format!("\t_m.add_wrapped(wrap_pyfunction!({}))?;", func.name)
-                );
+                && klass.ztruct.visibility == Visibility::Public
+            {
+                registrations.push(format!("\t_m.add_class::<{}>()?;", klass_name));
             }
         }
 
-        let mut mod_names =  self.modules.keys()
-            .map(|x|x.as_str()).collect::<Vec<_>>();
+        for func in &self.funcs {
+            if is_to_bind(func) {
+                registrations.push(format!(
+                    "\t_m.add_wrapped(wrap_pyfunction!({}))?;",
+                    func.name
+                ));
+            }
+        }
+
+        let mut mod_names = self.modules.keys().map(|x| x.as_str()).collect::<Vec<_>>();
 
         if self.module_name == "ensmallen" {
             mod_names.push("preprocessing");
             mod_names.push("models");
             mod_names.push("express_measures");
 
-            registrations.push(
-                "\tenv_logger::init();".into()
-            );
+            registrations.push("\tenv_logger::init();".into());
         }
 
         for mods_name in mod_names {
-            registrations.push(
-                format!("\tlet submod = PyModule::new(_py, \"{}\")?;", mods_name)
-            );
-            registrations.push(
-                format!("\tregister_{}(_py, submod)?;", mods_name)
-            );
-            registrations.push(
-                format!("\t_m.add_submodule(submod)?;")
-            );
+            registrations.push(format!(
+                "\tlet submod = PyModule::new(_py, \"{}\")?;",
+                mods_name
+            ));
+            registrations.push(format!("\tregister_{}(_py, submod)?;", mods_name));
+            registrations.push(format!("\t_m.add_submodule(submod)?;"));
         }
-        
+
         format!(
-r#"
+            r#"
 pub fn register_{module_name}(_py: Python, _m:&PyModule) -> PyResult<()> {{
     {registrations}
     Ok(())
@@ -395,34 +403,56 @@ pub fn register_{module_name}(_py: Python, _m:&PyModule) -> PyResult<()> {{
 {classes}
 
 {modules}
-"#, 
-    module_name=self.module_name,
-    registrations=registrations.join("\n"),
-    functions=format_vec!(self.funcs.iter().filter(|func| is_to_bind(func))
-    .map(GenBinding::gen_python_binding)
-    .collect::<Vec<_>>(), "{}", "\n\n"),
-    classes=format_vec!(
-        self.structs.values()
-        .filter(|c| {
-            !c.ztruct.attributes.iter().any(|x| x == "no_binding")
-            && c.ztruct.visibility == Visibility::Public
-        })
-        .map(|c| {
-            println!("Generating struct: {}", c.ztruct.struct_type.get_name().unwrap());
-            format!("#[pyclass(module=\"{module_name}\")]{}", c.gen_python_binding(), module_name=self.module_name)
-        }).collect::<Vec<_>>(), 
-        "{}", "\n\n"
-    ),
-    modules=format_vec!(self.modules.values()
-    .map(GenBinding::gen_python_binding)
-    .filter(|x| !x.is_empty())
-    .collect::<Vec<_>>(), "{}", "\n\n"),
-    )}
+"#,
+            module_name = self.module_name,
+            registrations = registrations.join("\n"),
+            functions = format_vec!(
+                self.funcs
+                    .iter()
+                    .filter(|func| is_to_bind(func))
+                    .map(GenBinding::gen_python_binding)
+                    .collect::<Vec<_>>(),
+                "{}",
+                "\n\n"
+            ),
+            classes = format_vec!(
+                self.structs
+                    .values()
+                    .filter(|c| {
+                        !c.ztruct.attributes.iter().any(|x| x == "no_binding")
+                            && c.ztruct.visibility == Visibility::Public
+                    })
+                    .map(|c| {
+                        println!(
+                            "Generating struct: {}",
+                            c.ztruct.struct_type.get_name().unwrap()
+                        );
+                        format!(
+                            "#[pyclass(module=\"{module_name}\")]{}",
+                            c.gen_python_binding(),
+                            module_name = self.module_name
+                        )
+                    })
+                    .collect::<Vec<_>>(),
+                "{}",
+                "\n\n"
+            ),
+            modules = format_vec!(
+                self.modules
+                    .values()
+                    .map(GenBinding::gen_python_binding)
+                    .filter(|x| !x.is_empty())
+                    .collect::<Vec<_>>(),
+                "{}",
+                "\n\n"
+            ),
+        )
+    }
 }
 
-impl Default for BindingsModule{
+impl Default for BindingsModule {
     fn default() -> Self {
-        BindingsModule{
+        BindingsModule {
             module_name: String::new(),
             modules: BTreeMap::new(),
             funcs: Vec::new(),
@@ -436,7 +466,7 @@ fn group_data(modules: Vec<Module>) -> BindingsModule {
     bindings.module_name = "ensmallen".to_string();
 
     let mut struct_modules_map = BTreeMap::new();
-    
+
     // collect info about all the structs
     for module in &modules {
         for ztruct in &module.structs {
@@ -449,29 +479,41 @@ fn group_data(modules: Vec<Module>) -> BindingsModule {
     // collect info about all the functions
     for module in &modules {
         for func in &module.functions {
-            bindings.get_submodule(
-                extract_module_name_from_func(func)
-            ).funcs.push(func.clone());
+            bindings
+                .get_submodule(extract_module_name_from_func(func))
+                .funcs
+                .push(func.clone());
         }
     }
-    
+
     // For each struct, collect all its implementaitons
     for module in &modules {
         for imp in &module.impls {
             // find the correct submodule
-            if let Some(struct_module) = struct_modules_map.get(&imp.struct_name.get_name().unwrap()) {
-                let struct_ref =  bindings.get_submodule(
-                    struct_module.clone()
-                ).structs.get_mut(&imp.struct_name.get_name().unwrap());
-    
+            if let Some(struct_module) =
+                struct_modules_map.get(&imp.struct_name.get_name().unwrap())
+            {
+                let struct_ref = bindings
+                    .get_submodule(struct_module.clone())
+                    .structs
+                    .get_mut(&imp.struct_name.get_name().unwrap());
+
                 if let Some(struct_ref) = struct_ref {
                     // add it to the impls
                     struct_ref.impls.push(imp.clone());
                 } else {
-                    println!("Skipping impl for '{}' at '{}'.", imp.struct_name.get_name().unwrap(), imp.file_path);
+                    println!(
+                        "Skipping impl for '{}' at '{}'.",
+                        imp.struct_name.get_name().unwrap(),
+                        imp.file_path
+                    );
                 }
             } else {
-                println!("Skipping impl for '{}' at '{}'.", imp.struct_name.get_name().unwrap(), imp.file_path);
+                println!(
+                    "Skipping impl for '{}' at '{}'.",
+                    imp.struct_name.get_name().unwrap(),
+                    imp.file_path
+                );
             }
         }
     }
@@ -529,13 +571,9 @@ fn split_words(method_name: &str) -> Vec<String> {{
         data.gen_python_binding()
     );
 
-    fs::write(
-        path,
-        file_content,
-    )
-    .expect("Cannot write the automatically generated bindings file");
+    fs::write(path, file_content).expect("Cannot write the automatically generated bindings file");
 
-    /* 
+    /*
     let mut lines = vec![
         "\"\"\"Module offering fast graph processing and graph datasets.\"\"\"".into(),
     ];

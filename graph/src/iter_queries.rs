@@ -638,7 +638,7 @@ impl Graph {
     pub fn iter_node_ids_and_node_type_ids_from_node_type_id(
         &self,
         node_type_id: Option<NodeTypeT>,
-    ) -> Result<impl Iterator<Item = (NodeT, Option<&Vec<NodeTypeT>>)> + '_> {
+    ) -> Result<impl Iterator<Item = (NodeT, Option<&[NodeTypeT]>)> + '_> {
         self.validate_node_type_id(node_type_id)
             .map(|node_type_id| {
                 self.iter_node_ids_and_node_type_ids().filter(
@@ -663,7 +663,7 @@ impl Graph {
         &self,
         node_type_id: Option<NodeTypeT>,
     ) -> Result<
-        impl Iterator<Item = (NodeT, String, Option<&Vec<NodeTypeT>>, Option<Vec<String>>)> + '_,
+        impl Iterator<Item = (NodeT, String, Option<&[NodeTypeT]>, Option<Vec<String>>)> + '_,
     > {
         self.validate_node_type_id(node_type_id)
             .map(|node_type_id| {
