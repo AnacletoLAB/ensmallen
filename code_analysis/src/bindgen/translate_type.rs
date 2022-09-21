@@ -100,8 +100,8 @@ impl TranslateType for Type {
                 (
                     format!("Vec<{}>", t),
                     format!(
-                        "{}.into_iter().map(|x| {{{}}}).collect::<Vec<_>>().as_slice()",
-                        call, sub_call
+                        "{}.as_slice()",
+                        call, //sub_call
                     ),
                 )
             }
@@ -125,16 +125,32 @@ impl TranslateType for Type {
                     format!("{{{})}}", result_call),
                 )
             }
-            Type::SimpleType { name, generics, .. } => {
+            x if x.cmp_str_without_modifiers("Option<&[_]>") => {
+                (
+                    format!("Option<Vec<{}>>", x[0][0].to_string()),
+                    format!("{}.as_ref().map(|x| x.as_slice())", call),
+                )
+            }
+            x @ Type::SimpleType { name, generics, .. } => {
                 if name == "Vec" {
-                    let (sub_type_str, sub_call) = self[0].to_python_bindings_arg("x");
-                    return (
-                        format!("Vec<{}>", sub_type_str),
-                        format!(
-                            "{}.into_iter().map(|x| {{{}}}).collect::<Vec<_>>()",
-                            call, sub_call
-                        ),
-                    );
+                    if self[0] == "& Primitive" {
+                        return (
+                            self.to_string(),
+                            format!(
+                                "{}",
+                                call,
+                            ),
+                        );
+                    } else {
+                        let (sub_type_str, sub_call) = self[0].to_python_bindings_arg("x");
+                        return (
+                            format!("Vec<{}>", sub_type_str),
+                            format!(
+                                "{}",
+                                call,
+                            ),
+                        );
+                    }
                 }
                 if name == "HashSet" {
                     let (sub_type_str, sub_call) = self[0].to_python_bindings_arg("x");
@@ -150,11 +166,20 @@ impl TranslateType for Type {
                     let (sub_type_str, sub_call) = self[0].to_python_bindings_arg("x");
                     return (
                         format!("Option<{}>", sub_type_str),
-                        format!("{}.map(|x| {{{}}})", call, sub_call),
+                        format!("{}", call),
                     );
                 }
                 if name == "str" {
-                    return ("String".to_string(), format!("{}.as_ref()", call));
+                    return (
+                        "&str".to_string(), 
+                        call.to_string(),
+                    );
+                }
+                if self == "Primitive" {
+                    return (
+                        self.to_string(),
+                        format!("{}.clone()", call),
+                    );
                 }
 
                 let mut result = name.clone();
@@ -442,6 +467,25 @@ impl TranslateType for Type {
 
             // handle null type
             Type::None => (body, Some(self.to_string())),
+
+            Type::SliceType(sub_type) => {
+                let (inner_body, inner_return_type) = sub_type.to_python_bindings_return_type_inner(
+                    attributes,
+                    "x".to_string(),
+                    this_struct,
+                    is_static,
+                    is_self_ref,
+                    is_self_mut,
+                    depth + 1,
+                );
+                (
+                    format!(
+                        "{}.into_iter().cloned().map(|x| {{{}}}).collect::<Vec<_>>()",
+                        body, inner_body,
+                    ),
+                    inner_return_type.map(|x| format!("Vec<{}>", x)),
+                )
+            }
 
             // handle a method that return the current struct
             x if !is_static && x.get_name() == Some(this_struct.to_string()) => {

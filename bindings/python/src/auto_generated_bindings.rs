@@ -127,7 +127,7 @@ impl Chain {
     ///
     pub fn get_first_k_chain_node_ids(&self, k: usize) -> Py<PyArray1<NodeT>> {
         let gil = pyo3::Python::acquire_gil();
-        to_ndarray_1d!(gil, self.inner.get_first_k_chain_node_ids(k.into()), NodeT)
+        to_ndarray_1d!(gil, self.inner.get_first_k_chain_node_ids(k.clone()), NodeT)
     }
 
     #[automatically_generated_binding]
@@ -139,7 +139,7 @@ impl Chain {
     ///
     pub fn get_first_k_chain_node_names(&self, k: usize) -> Vec<String> {
         self.inner
-            .get_first_k_chain_node_names(k.into())
+            .get_first_k_chain_node_names(k.clone())
             .into_iter()
             .map(|x| x.into())
             .collect::<Vec<_>>()
@@ -375,7 +375,11 @@ impl Circle {
     ///
     pub fn get_first_k_circle_node_ids(&self, k: usize) -> Py<PyArray1<NodeT>> {
         let gil = pyo3::Python::acquire_gil();
-        to_ndarray_1d!(gil, self.inner.get_first_k_circle_node_ids(k.into()), NodeT)
+        to_ndarray_1d!(
+            gil,
+            self.inner.get_first_k_circle_node_ids(k.clone()),
+            NodeT
+        )
     }
 
     #[automatically_generated_binding]
@@ -387,7 +391,7 @@ impl Circle {
     ///
     pub fn get_first_k_circle_node_names(&self, k: usize) -> Vec<String> {
         self.inner
-            .get_first_k_circle_node_names(k.into())
+            .get_first_k_circle_node_names(k.clone())
             .into_iter()
             .map(|x| x.into())
             .collect::<Vec<_>>()
@@ -869,7 +873,7 @@ impl DendriticTree {
         let gil = pyo3::Python::acquire_gil();
         to_ndarray_1d!(
             gil,
-            self.inner.get_first_k_dentritic_trees_node_ids(k.into()),
+            self.inner.get_first_k_dentritic_trees_node_ids(k.clone()),
             NodeT
         )
     }
@@ -883,7 +887,7 @@ impl DendriticTree {
     ///
     pub fn get_first_k_dentritic_trees_node_names(&self, k: usize) -> Vec<String> {
         self.inner
-            .get_first_k_dentritic_trees_node_names(k.into())
+            .get_first_k_dentritic_trees_node_names(k.clone())
             .into_iter()
             .map(|x| x.into())
             .collect::<Vec<_>>()
@@ -1313,10 +1317,10 @@ impl Graph {
         verbose: Option<bool>,
     ) -> PyResult<Vec<Clique>> {
         Ok(pe!(self.inner.get_approximated_cliques(
-            minimum_degree.map(|x| { x.into() }),
-            minimum_clique_size.map(|x| { x.into() }),
-            clique_per_node.map(|x| { x.into() }),
-            verbose.map(|x| { x.into() })
+            minimum_degree,
+            minimum_clique_size,
+            clique_per_node,
+            verbose
         ))?
         .into_iter()
         .map(|x| x.into())
@@ -1359,10 +1363,10 @@ impl Graph {
         verbose: Option<bool>,
     ) -> PyResult<usize> {
         Ok(pe!(self.inner.get_approximated_number_of_cliques(
-            minimum_degree.map(|x| { x.into() }),
-            minimum_clique_size.map(|x| { x.into() }),
-            clique_per_node.map(|x| { x.into() }),
-            verbose.map(|x| { x.into() })
+            minimum_degree,
+            minimum_clique_size,
+            clique_per_node,
+            verbose
         ))?
         .into())
     }
@@ -1461,12 +1465,10 @@ impl Graph {
         &self,
         minimum_number_of_nodes_per_star: Option<NodeT>,
     ) -> PyResult<Vec<Star>> {
-        Ok(pe!(self
-            .inner
-            .get_stars(minimum_number_of_nodes_per_star.map(|x| { x.into() })))?
-        .into_iter()
-        .map(|x| x.into())
-        .collect::<Vec<_>>())
+        Ok(pe!(self.inner.get_stars(minimum_number_of_nodes_per_star))?
+            .into_iter()
+            .map(|x| x.into())
+            .collect::<Vec<_>>())
     }
 
     #[automatically_generated_binding]
@@ -1481,10 +1483,9 @@ impl Graph {
         minimum_number_of_nodes_per_chain: Option<NodeT>,
         compute_chain_nodes: Option<bool>,
     ) -> PyResult<Vec<Chain>> {
-        Ok(pe!(self.inner.get_chains(
-            minimum_number_of_nodes_per_chain.map(|x| { x.into() }),
-            compute_chain_nodes.map(|x| { x.into() })
-        ))?
+        Ok(pe!(self
+            .inner
+            .get_chains(minimum_number_of_nodes_per_chain, compute_chain_nodes))?
         .into_iter()
         .map(|x| x.into())
         .collect::<Vec<_>>())
@@ -1529,16 +1530,9 @@ impl Graph {
         NodeT,
         NodeT,
     ) {
-        let (subresult_0, subresult_1, subresult_2, subresult_3, subresult_4) =
-            self.inner.random_spanning_arborescence_kruskal(
-                random_state.map(|x| x.into()),
-                undesired_edge_types.map(|x| {
-                    x.into_iter()
-                        .map(|x| x.map(|x| x.into()))
-                        .collect::<HashSet<_>>()
-                }),
-                verbose.map(|x| x.into()),
-            );
+        let (subresult_0, subresult_1, subresult_2, subresult_3, subresult_4) = self
+            .inner
+            .random_spanning_arborescence_kruskal(random_state, undesired_edge_types, verbose);
         (
             subresult_0.into(),
             {
@@ -1579,9 +1573,8 @@ impl Graph {
         NodeT,
         NodeT,
     ) {
-        let (subresult_0, subresult_1, subresult_2, subresult_3, subresult_4) = self
-            .inner
-            .spanning_arborescence_kruskal(verbose.map(|x| x.into()));
+        let (subresult_0, subresult_1, subresult_2, subresult_3, subresult_4) =
+            self.inner.spanning_arborescence_kruskal(verbose);
         (
             subresult_0.into(),
             {
@@ -1627,10 +1620,8 @@ impl Graph {
         verbose: Option<bool>,
     ) -> PyResult<(Py<PyArray1<NodeT>>, NodeT, NodeT, NodeT)> {
         Ok({
-            let (subresult_0, subresult_1, subresult_2, subresult_3) = pe!(self
-                .inner
-                .get_connected_components(verbose.map(|x| { x.into() })))?
-            .into();
+            let (subresult_0, subresult_1, subresult_2, subresult_3) =
+                pe!(self.inner.get_connected_components(verbose))?.into();
             (
                 {
                     let gil = pyo3::Python::acquire_gil();
@@ -1737,16 +1728,13 @@ impl Graph {
             to_ndarray_2d!(
                 gil,
                 pe!(self.inner.get_okapi_bm25_node_feature_propagation(
-                    features
-                        .into_iter()
-                        .map(|x| { x.into_iter().map(|x| { x.into() }).collect::<Vec<_>>() })
-                        .collect::<Vec<_>>(),
-                    iterations.map(|x| { x.into() }),
-                    maximal_distance.map(|x| { x.into() }),
-                    k1.map(|x| { x.into() }),
-                    b.map(|x| { x.into() }),
-                    include_central_node.map(|x| { x.into() }),
-                    verbose.map(|x| { x.into() })
+                    features,
+                    iterations,
+                    maximal_distance,
+                    k1,
+                    b,
+                    include_central_node,
+                    verbose
                 ))?,
                 f64
             )
@@ -1789,11 +1777,11 @@ impl Graph {
             to_ndarray_2d!(
                 gil,
                 pe!(self.inner.get_okapi_bm25_node_label_propagation(
-                    iterations.map(|x| { x.into() }),
-                    maximal_distance.map(|x| { x.into() }),
-                    k1.map(|x| { x.into() }),
-                    b.map(|x| { x.into() }),
-                    verbose.map(|x| { x.into() })
+                    iterations,
+                    maximal_distance,
+                    k1,
+                    b,
+                    verbose
                 ))?,
                 f64
             )
@@ -1846,7 +1834,7 @@ impl Graph {
                 gil,
                 pe!(self
                     .inner
-                    .get_bfs_topological_sorting_from_node_id(root_node_id.into()))?,
+                    .get_bfs_topological_sorting_from_node_id(root_node_id.clone()))?,
                 NodeT
             )
         })
@@ -1877,7 +1865,7 @@ impl Graph {
                 gil,
                 pe!(self
                     .inner
-                    .get_reversed_bfs_topological_sorting_from_node_id(root_node_id.into()))?,
+                    .get_reversed_bfs_topological_sorting_from_node_id(root_node_id.clone()))?,
                 NodeT
             )
         })
@@ -1904,7 +1892,7 @@ impl Graph {
     ) -> PyResult<Graph> {
         Ok(pe!(self
             .inner
-            .sort_by_bfs_topological_sorting_from_node_id(root_node_id.into()))?
+            .sort_by_bfs_topological_sorting_from_node_id(root_node_id.clone()))?
         .into())
     }
 
@@ -1944,11 +1932,7 @@ impl Graph {
     ///  * Not unique
     ///  * Not available for each of the node IDs of the graph.
     pub unsafe fn remap_unchecked_from_node_ids(&self, node_ids: Vec<NodeT>) -> Graph {
-        self.inner
-            .remap_unchecked_from_node_ids(
-                node_ids.into_iter().map(|x| x.into()).collect::<Vec<_>>(),
-            )
-            .into()
+        self.inner.remap_unchecked_from_node_ids(node_ids).into()
     }
 
     #[automatically_generated_binding]
@@ -1969,13 +1953,7 @@ impl Graph {
     ///     If the given node IDs are not available for all the values in the graph.
     ///
     pub fn remap_from_node_ids(&self, node_ids: Vec<NodeT>) -> PyResult<Graph> {
-        Ok(pe!(self.inner.remap_from_node_ids(
-            node_ids
-                .into_iter()
-                .map(|x| { x.into() })
-                .collect::<Vec<_>>()
-        ))?
-        .into())
+        Ok(pe!(self.inner.remap_from_node_ids(node_ids))?.into())
     }
 
     #[automatically_generated_binding]
@@ -1995,14 +1973,8 @@ impl Graph {
     /// ValueError
     ///     If the given node names are not available for all the values in the graph.
     ///
-    pub fn remap_from_node_names(&self, node_names: Vec<String>) -> PyResult<Graph> {
-        Ok(pe!(self.inner.remap_from_node_names(
-            node_names
-                .into_iter()
-                .map(|x| { x.as_ref() })
-                .collect::<Vec<_>>()
-        ))?
-        .into())
+    pub fn remap_from_node_names(&self, node_names: Vec<&str>) -> PyResult<Graph> {
+        Ok(pe!(self.inner.remap_from_node_names(node_names))?.into())
     }
 
     #[automatically_generated_binding]
@@ -2049,7 +2021,7 @@ impl Graph {
     ) -> f64 {
         self.inner
             .get_node_degree_geometric_distribution_threshold(
-                number_of_nodes_above_threshold.into(),
+                number_of_nodes_above_threshold.clone(),
             )
             .into()
     }
@@ -2069,7 +2041,7 @@ impl Graph {
     /// If the given node ID does not exists in the graph this method will panic.
     pub unsafe fn is_unchecked_connected_from_node_id(&self, node_id: NodeT) -> bool {
         self.inner
-            .is_unchecked_connected_from_node_id(node_id.into())
+            .is_unchecked_connected_from_node_id(node_id.clone())
             .into()
     }
 
@@ -2087,7 +2059,7 @@ impl Graph {
     /// -------
     ///
     pub fn is_connected_from_node_id(&self, node_id: NodeT) -> PyResult<bool> {
-        Ok(pe!(self.inner.is_connected_from_node_id(node_id.into()))?.into())
+        Ok(pe!(self.inner.is_connected_from_node_id(node_id.clone()))?.into())
     }
 
     #[automatically_generated_binding]
@@ -2105,7 +2077,7 @@ impl Graph {
     /// If the given node ID does not exists in the graph this method will panic.
     pub unsafe fn is_unchecked_disconnected_node_from_node_id(&self, node_id: NodeT) -> bool {
         self.inner
-            .is_unchecked_disconnected_node_from_node_id(node_id.into())
+            .is_unchecked_disconnected_node_from_node_id(node_id.clone())
             .into()
     }
 
@@ -2124,7 +2096,7 @@ impl Graph {
     /// If the given node ID does not exists in the graph this method will panic.
     pub unsafe fn is_unchecked_singleton_from_node_id(&self, node_id: NodeT) -> bool {
         self.inner
-            .is_unchecked_singleton_from_node_id(node_id.into())
+            .is_unchecked_singleton_from_node_id(node_id.clone())
             .into()
     }
 
@@ -2138,7 +2110,7 @@ impl Graph {
     ///     The node to be checked for.
     ///
     pub fn is_singleton_from_node_id(&self, node_id: NodeT) -> PyResult<bool> {
-        Ok(pe!(self.inner.is_singleton_from_node_id(node_id.into()))?.into())
+        Ok(pe!(self.inner.is_singleton_from_node_id(node_id.clone()))?.into())
     }
 
     #[automatically_generated_binding]
@@ -2155,7 +2127,7 @@ impl Graph {
         node_id: NodeT,
     ) -> bool {
         self.inner
-            .is_unchecked_singleton_with_selfloops_from_node_id(node_id.into())
+            .is_unchecked_singleton_with_selfloops_from_node_id(node_id.clone())
             .into()
     }
 
@@ -2171,7 +2143,7 @@ impl Graph {
     pub fn is_singleton_with_selfloops_from_node_id(&self, node_id: NodeT) -> PyResult<bool> {
         Ok(pe!(self
             .inner
-            .is_singleton_with_selfloops_from_node_id(node_id.into()))?
+            .is_singleton_with_selfloops_from_node_id(node_id.clone()))?
         .into())
     }
 
@@ -2191,9 +2163,9 @@ impl Graph {
     /// Safety
     /// ------
     /// If the given node name does not exist in the graph this method will panic.
-    pub unsafe fn is_unchecked_singleton_from_node_name(&self, node_name: String) -> bool {
+    pub unsafe fn is_unchecked_singleton_from_node_name(&self, node_name: &str) -> bool {
         self.inner
-            .is_unchecked_singleton_from_node_name(node_name.as_ref())
+            .is_unchecked_singleton_from_node_name(node_name)
             .into()
     }
 
@@ -2206,8 +2178,8 @@ impl Graph {
     /// node_name: str
     ///     The node name to be checked for.
     ///
-    pub fn is_singleton_from_node_name(&self, node_name: String) -> PyResult<bool> {
-        Ok(pe!(self.inner.is_singleton_from_node_name(node_name.as_ref()))?.into())
+    pub fn is_singleton_from_node_name(&self, node_name: &str) -> PyResult<bool> {
+        Ok(pe!(self.inner.is_singleton_from_node_name(node_name))?.into())
     }
 
     #[automatically_generated_binding]
@@ -2219,8 +2191,8 @@ impl Graph {
     /// node_name: str
     ///     Name of the node.
     ///
-    pub fn has_node_name(&self, node_name: String) -> bool {
-        self.inner.has_node_name(node_name.as_ref()).into()
+    pub fn has_node_name(&self, node_name: &str) -> bool {
+        self.inner.has_node_name(node_name).into()
     }
 
     #[automatically_generated_binding]
@@ -2233,7 +2205,7 @@ impl Graph {
     ///     id of the node.
     ///
     pub fn has_node_type_id(&self, node_type_id: NodeTypeT) -> bool {
-        self.inner.has_node_type_id(node_type_id.into()).into()
+        self.inner.has_node_type_id(node_type_id.clone()).into()
     }
 
     #[automatically_generated_binding]
@@ -2245,10 +2217,8 @@ impl Graph {
     /// node_type_name: str
     ///     Name of the node.
     ///
-    pub fn has_node_type_name(&self, node_type_name: String) -> bool {
-        self.inner
-            .has_node_type_name(node_type_name.as_ref())
-            .into()
+    pub fn has_node_type_name(&self, node_type_name: &str) -> bool {
+        self.inner.has_node_type_name(node_type_name).into()
     }
 
     #[automatically_generated_binding]
@@ -2261,7 +2231,7 @@ impl Graph {
     ///     id of the edge.
     ///
     pub fn has_edge_type_id(&self, edge_type_id: EdgeTypeT) -> bool {
-        self.inner.has_edge_type_id(edge_type_id.into()).into()
+        self.inner.has_edge_type_id(edge_type_id.clone()).into()
     }
 
     #[automatically_generated_binding]
@@ -2273,10 +2243,8 @@ impl Graph {
     /// edge_type_name: str
     ///     Name of the edge.
     ///
-    pub fn has_edge_type_name(&self, edge_type_name: String) -> bool {
-        self.inner
-            .has_edge_type_name(edge_type_name.as_ref())
-            .into()
+    pub fn has_edge_type_name(&self, edge_type_name: &str) -> bool {
+        self.inner.has_edge_type_name(edge_type_name).into()
     }
 
     #[automatically_generated_binding]
@@ -2292,7 +2260,7 @@ impl Graph {
     ///
     pub fn has_edge_from_node_ids(&self, src: NodeT, dst: NodeT) -> bool {
         self.inner
-            .has_edge_from_node_ids(src.into(), dst.into())
+            .has_edge_from_node_ids(src.clone(), dst.clone())
             .into()
     }
 
@@ -2306,7 +2274,7 @@ impl Graph {
     ///     Source node id.
     ///
     pub fn has_selfloop_from_node_id(&self, node_id: NodeT) -> bool {
-        self.inner.has_selfloop_from_node_id(node_id.into()).into()
+        self.inner.has_selfloop_from_node_id(node_id.clone()).into()
     }
 
     #[automatically_generated_binding]
@@ -2329,11 +2297,7 @@ impl Graph {
         edge_type: Option<EdgeTypeT>,
     ) -> bool {
         self.inner
-            .has_edge_from_node_ids_and_edge_type_id(
-                src.into(),
-                dst.into(),
-                edge_type.map(|x| x.into()),
-            )
+            .has_edge_from_node_ids_and_edge_type_id(src.clone(), dst.clone(), edge_type)
             .into()
     }
 
@@ -2355,7 +2319,7 @@ impl Graph {
     /// If the given node ID does not exists in the graph this method will panic.
     pub unsafe fn is_unchecked_trap_node_from_node_id(&self, node_id: NodeT) -> bool {
         self.inner
-            .is_unchecked_trap_node_from_node_id(node_id.into())
+            .is_unchecked_trap_node_from_node_id(node_id.clone())
             .into()
     }
 
@@ -2369,7 +2333,7 @@ impl Graph {
     ///     Integer ID of the node, if this is bigger that the number of nodes it will panic.
     ///
     pub fn is_trap_node_from_node_id(&self, node_id: NodeT) -> PyResult<bool> {
-        Ok(pe!(self.inner.is_trap_node_from_node_id(node_id.into()))?.into())
+        Ok(pe!(self.inner.is_trap_node_from_node_id(node_id.clone()))?.into())
     }
 
     #[automatically_generated_binding]
@@ -2385,14 +2349,11 @@ impl Graph {
     ///
     pub fn has_node_name_and_node_type_name(
         &self,
-        node_name: String,
+        node_name: &str,
         node_type_name: Option<Vec<String>>,
     ) -> bool {
         self.inner
-            .has_node_name_and_node_type_name(
-                node_name.as_ref(),
-                node_type_name.map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>()),
-            )
+            .has_node_name_and_node_type_name(node_name, node_type_name)
             .into()
     }
 
@@ -2407,9 +2368,9 @@ impl Graph {
     /// dst_name: str
     ///     The destination node name of the edge.
     ///
-    pub fn has_edge_from_node_names(&self, src_name: String, dst_name: String) -> bool {
+    pub fn has_edge_from_node_names(&self, src_name: &str, dst_name: &str) -> bool {
         self.inner
-            .has_edge_from_node_names(src_name.as_ref(), dst_name.as_ref())
+            .has_edge_from_node_names(src_name, dst_name)
             .into()
     }
 
@@ -2428,16 +2389,12 @@ impl Graph {
     ///
     pub fn has_edge_from_node_names_and_edge_type_name(
         &self,
-        src_name: String,
-        dst_name: String,
-        edge_type_name: Option<String>,
+        src_name: &str,
+        dst_name: &str,
+        edge_type_name: Option<&str>,
     ) -> bool {
         self.inner
-            .has_edge_from_node_names_and_edge_type_name(
-                src_name.as_ref(),
-                dst_name.as_ref(),
-                edge_type_name.map(|x| x.as_ref()),
-            )
+            .has_edge_from_node_names_and_edge_type_name(src_name, dst_name, edge_type_name)
             .into()
     }
 
@@ -2465,10 +2422,9 @@ impl Graph {
         src: NodeT,
         edge_type_id: Option<EdgeTypeT>,
     ) -> PyResult<bool> {
-        Ok(pe!(self.inner.has_edge_from_node_id_and_edge_type_id(
-            src.into(),
-            edge_type_id.map(|x| { x.into() })
-        ))?
+        Ok(pe!(self
+            .inner
+            .has_edge_from_node_id_and_edge_type_id(src.clone(), edge_type_id))?
         .into())
     }
 
@@ -2493,10 +2449,7 @@ impl Graph {
         edge_type_id: Option<EdgeTypeT>,
     ) -> bool {
         self.inner
-            .has_unchecked_edge_from_node_id_and_edge_type_id(
-                src.into(),
-                edge_type_id.map(|x| x.into()),
-            )
+            .has_unchecked_edge_from_node_id_and_edge_type_id(src.clone(), edge_type_id)
             .into()
     }
 
@@ -2528,9 +2481,9 @@ impl Graph {
         to_ndarray_1d!(
             gil,
             self.inner.get_unchecked_structural_distance_from_node_ids(
-                source_node_id.into(),
-                destination_node_id.into(),
-                maximal_hop_distance.into()
+                source_node_id.clone(),
+                destination_node_id.clone(),
+                maximal_hop_distance.clone()
             ),
             f32
         )
@@ -2614,9 +2567,9 @@ impl Graph {
     ) -> f32 {
         self.inner
             .get_unchecked_preferential_attachment_from_node_ids(
-                source_node_id.into(),
-                destination_node_id.into(),
-                normalize.into(),
+                source_node_id.clone(),
+                destination_node_id.clone(),
+                normalize.clone(),
             )
             .into()
     }
@@ -2647,9 +2600,9 @@ impl Graph {
         normalize: bool,
     ) -> PyResult<f32> {
         Ok(pe!(self.inner.get_preferential_attachment_from_node_ids(
-            source_node_id.into(),
-            destination_node_id.into(),
-            normalize.into()
+            source_node_id.clone(),
+            destination_node_id.clone(),
+            normalize.clone()
         ))?
         .into())
     }
@@ -2675,14 +2628,14 @@ impl Graph {
     ///
     pub fn get_preferential_attachment_from_node_names(
         &self,
-        first_node_name: String,
-        second_node_name: String,
+        first_node_name: &str,
+        second_node_name: &str,
         normalize: bool,
     ) -> PyResult<f32> {
         Ok(pe!(self.inner.get_preferential_attachment_from_node_names(
-            first_node_name.as_ref(),
-            second_node_name.as_ref(),
-            normalize.into()
+            first_node_name,
+            second_node_name,
+            normalize.clone()
         ))?
         .into())
     }
@@ -2713,9 +2666,9 @@ impl Graph {
     ) -> f32 {
         self.inner
             .get_unchecked_weighted_preferential_attachment_from_node_ids(
-                source_node_id.into(),
-                destination_node_id.into(),
-                normalize.into(),
+                source_node_id.clone(),
+                destination_node_id.clone(),
+                normalize.clone(),
             )
             .into()
     }
@@ -2748,9 +2701,9 @@ impl Graph {
         Ok(pe!(self
             .inner
             .get_weighted_preferential_attachment_from_node_ids(
-                source_node_id.into(),
-                destination_node_id.into(),
-                normalize.into()
+                source_node_id.clone(),
+                destination_node_id.clone(),
+                normalize.clone()
             ))?
         .into())
     }
@@ -2776,16 +2729,16 @@ impl Graph {
     ///
     pub fn get_weighted_preferential_attachment_from_node_names(
         &self,
-        first_node_name: String,
-        second_node_name: String,
+        first_node_name: &str,
+        second_node_name: &str,
         normalize: bool,
     ) -> PyResult<f32> {
         Ok(pe!(self
             .inner
             .get_weighted_preferential_attachment_from_node_names(
-                first_node_name.as_ref(),
-                second_node_name.as_ref(),
-                normalize.into()
+                first_node_name,
+                second_node_name,
+                normalize.clone()
             ))?
         .into())
     }
@@ -2813,8 +2766,8 @@ impl Graph {
     ) -> f32 {
         self.inner
             .get_unchecked_neighbours_intersection_size_from_node_ids(
-                source_node_id.into(),
-                destination_node_id.into(),
+                source_node_id.clone(),
+                destination_node_id.clone(),
             )
             .into()
     }
@@ -2842,8 +2795,8 @@ impl Graph {
     ) -> f32 {
         self.inner
             .get_unchecked_jaccard_coefficient_from_node_ids(
-                source_node_id.into(),
-                destination_node_id.into(),
+                source_node_id.clone(),
+                destination_node_id.clone(),
             )
             .into()
     }
@@ -2871,8 +2824,8 @@ impl Graph {
         destination_node_id: NodeT,
     ) -> PyResult<f32> {
         Ok(pe!(self.inner.get_jaccard_coefficient_from_node_ids(
-            source_node_id.into(),
-            destination_node_id.into()
+            source_node_id.clone(),
+            destination_node_id.clone()
         ))?
         .into())
     }
@@ -2896,13 +2849,12 @@ impl Graph {
     ///
     pub fn get_jaccard_coefficient_from_node_names(
         &self,
-        first_node_name: String,
-        second_node_name: String,
+        first_node_name: &str,
+        second_node_name: &str,
     ) -> PyResult<f32> {
-        Ok(pe!(self.inner.get_jaccard_coefficient_from_node_names(
-            first_node_name.as_ref(),
-            second_node_name.as_ref()
-        ))?
+        Ok(pe!(self
+            .inner
+            .get_jaccard_coefficient_from_node_names(first_node_name, second_node_name))?
         .into())
     }
 
@@ -2929,8 +2881,8 @@ impl Graph {
     ) -> f32 {
         self.inner
             .get_unchecked_adamic_adar_index_from_node_ids(
-                source_node_id.into(),
-                destination_node_id.into(),
+                source_node_id.clone(),
+                destination_node_id.clone(),
             )
             .into()
     }
@@ -2958,8 +2910,8 @@ impl Graph {
         destination_node_id: NodeT,
     ) -> PyResult<f32> {
         Ok(pe!(self.inner.get_adamic_adar_index_from_node_ids(
-            source_node_id.into(),
-            destination_node_id.into()
+            source_node_id.clone(),
+            destination_node_id.clone()
         ))?
         .into())
     }
@@ -2983,13 +2935,12 @@ impl Graph {
     ///
     pub fn get_adamic_adar_index_from_node_names(
         &self,
-        first_node_name: String,
-        second_node_name: String,
+        first_node_name: &str,
+        second_node_name: &str,
     ) -> PyResult<f32> {
-        Ok(pe!(self.inner.get_adamic_adar_index_from_node_names(
-            first_node_name.as_ref(),
-            second_node_name.as_ref()
-        ))?
+        Ok(pe!(self
+            .inner
+            .get_adamic_adar_index_from_node_names(first_node_name, second_node_name))?
         .into())
     }
 
@@ -3016,8 +2967,8 @@ impl Graph {
     ) -> f32 {
         self.inner
             .get_unchecked_resource_allocation_index_from_node_ids(
-                source_node_id.into(),
-                destination_node_id.into(),
+                source_node_id.clone(),
+                destination_node_id.clone(),
             )
             .into()
     }
@@ -3045,8 +2996,8 @@ impl Graph {
     ) -> f32 {
         self.inner
             .get_unchecked_weighted_resource_allocation_index_from_node_ids(
-                source_node_id.into(),
-                destination_node_id.into(),
+                source_node_id.clone(),
+                destination_node_id.clone(),
             )
             .into()
     }
@@ -3074,8 +3025,8 @@ impl Graph {
         destination_node_id: NodeT,
     ) -> PyResult<f32> {
         Ok(pe!(self.inner.get_resource_allocation_index_from_node_ids(
-            source_node_id.into(),
-            destination_node_id.into()
+            source_node_id.clone(),
+            destination_node_id.clone()
         ))?
         .into())
     }
@@ -3099,16 +3050,13 @@ impl Graph {
     ///
     pub fn get_resource_allocation_index_from_node_names(
         &self,
-        first_node_name: String,
-        second_node_name: String,
+        first_node_name: &str,
+        second_node_name: &str,
     ) -> PyResult<f32> {
-        Ok(
-            pe!(self.inner.get_resource_allocation_index_from_node_names(
-                first_node_name.as_ref(),
-                second_node_name.as_ref()
-            ))?
-            .into(),
-        )
+        Ok(pe!(self
+            .inner
+            .get_resource_allocation_index_from_node_names(first_node_name, second_node_name))?
+        .into())
     }
 
     #[automatically_generated_binding]
@@ -3136,8 +3084,8 @@ impl Graph {
         Ok(pe!(self
             .inner
             .get_weighted_resource_allocation_index_from_node_ids(
-                source_node_id.into(),
-                destination_node_id.into()
+                source_node_id.clone(),
+                destination_node_id.clone()
             ))?
         .into())
     }
@@ -3161,14 +3109,14 @@ impl Graph {
     ///
     pub fn get_weighted_resource_allocation_index_from_node_names(
         &self,
-        first_node_name: String,
-        second_node_name: String,
+        first_node_name: &str,
+        second_node_name: &str,
     ) -> PyResult<f32> {
         Ok(pe!(self
             .inner
             .get_weighted_resource_allocation_index_from_node_names(
-                first_node_name.as_ref(),
-                second_node_name.as_ref()
+                first_node_name,
+                second_node_name
             ))?
         .into())
     }
@@ -3225,9 +3173,9 @@ impl Graph {
             gil,
             self.inner
                 .get_unchecked_all_edge_metrics_from_node_ids_tuple(
-                    source_node_id.into(),
-                    destination_node_id.into(),
-                    normalize.into()
+                    source_node_id.clone(),
+                    destination_node_id.clone(),
+                    normalize.clone()
                 ),
             f32
         )
@@ -3269,9 +3217,9 @@ impl Graph {
             to_ndarray_1d!(
                 gil,
                 pe!(self.inner.get_all_edge_metrics_from_node_ids_tuple(
-                    source_node_id.into(),
-                    destination_node_id.into(),
-                    normalize.into()
+                    source_node_id.clone(),
+                    destination_node_id.clone(),
+                    normalize.clone()
                 ))?,
                 f32
             )
@@ -3312,15 +3260,9 @@ impl Graph {
             to_ndarray_2d!(
                 gil,
                 pe!(self.inner.get_all_edge_metrics_from_node_ids(
-                    source_node_ids
-                        .into_iter()
-                        .map(|x| { x.into() })
-                        .collect::<Vec<_>>(),
-                    destination_node_ids
-                        .into_iter()
-                        .map(|x| { x.into() })
-                        .collect::<Vec<_>>(),
-                    normalize.into()
+                    source_node_ids,
+                    destination_node_ids,
+                    normalize.clone()
                 ))?,
                 f32
             )
@@ -3349,10 +3291,9 @@ impl Graph {
             let gil = pyo3::Python::acquire_gil();
             to_ndarray_1d!(
                 gil,
-                pe!(self.inner.get_preferential_attachment_scores(
-                    normalize.map(|x| { x.into() }),
-                    subgraph.map(|sg| &sg.inner)
-                ))?,
+                pe!(self
+                    .inner
+                    .get_preferential_attachment_scores(normalize, subgraph.map(|sg| &sg.inner)))?,
                 f32
             )
         })
@@ -3470,10 +3411,9 @@ impl Graph {
             let gil = pyo3::Python::acquire_gil();
             to_ndarray_2d!(
                 gil,
-                pe!(self.inner.get_all_edge_metrics(
-                    normalize.map(|x| { x.into() }),
-                    subgraph.map(|sg| &sg.inner)
-                ))?,
+                pe!(self
+                    .inner
+                    .get_all_edge_metrics(normalize, subgraph.map(|sg| &sg.inner)))?,
                 f32
             )
         })
@@ -3504,10 +3444,10 @@ impl Graph {
         vector_reciprocal_sqrt_degrees: Option<bool>,
     ) -> PyResult<()> {
         Ok(pe!(self.inner.enable(
-            vector_sources.map(|x| { x.into() }),
-            vector_destinations.map(|x| { x.into() }),
-            vector_cumulative_node_degrees.map(|x| { x.into() }),
-            vector_reciprocal_sqrt_degrees.map(|x| { x.into() })
+            vector_sources,
+            vector_destinations,
+            vector_cumulative_node_degrees,
+            vector_reciprocal_sqrt_degrees
         ))?)
     }
 
@@ -3553,11 +3493,7 @@ impl Graph {
         verbose: Option<bool>,
     ) -> EdgeT {
         self.inner
-            .get_number_of_triangles(
-                normalize.map(|x| x.into()),
-                low_centrality.map(|x| x.into()),
-                verbose.map(|x| x.into()),
-            )
+            .get_number_of_triangles(normalize, low_centrality, verbose)
             .into()
     }
 
@@ -3587,9 +3523,7 @@ impl Graph {
     ///     Whether to show a loading bar.
     ///
     pub fn get_transitivity(&self, low_centrality: Option<usize>, verbose: Option<bool>) -> f64 {
-        self.inner
-            .get_transitivity(low_centrality.map(|x| x.into()), verbose.map(|x| x.into()))
-            .into()
+        self.inner.get_transitivity(low_centrality, verbose).into()
     }
 
     #[automatically_generated_binding]
@@ -3619,11 +3553,8 @@ impl Graph {
         let gil = pyo3::Python::acquire_gil();
         to_ndarray_1d!(
             gil,
-            self.inner.get_number_of_triangles_per_node(
-                normalize.map(|x| { x.into() }),
-                low_centrality.map(|x| { x.into() }),
-                verbose.map(|x| { x.into() })
-            ),
+            self.inner
+                .get_number_of_triangles_per_node(normalize, low_centrality, verbose),
             NodeT
         )
     }
@@ -3647,10 +3578,8 @@ impl Graph {
         let gil = pyo3::Python::acquire_gil();
         to_ndarray_1d!(
             gil,
-            self.inner.get_clustering_coefficient_per_node(
-                low_centrality.map(|x| { x.into() }),
-                verbose.map(|x| { x.into() })
-            ),
+            self.inner
+                .get_clustering_coefficient_per_node(low_centrality, verbose),
             f64
         )
     }
@@ -3672,7 +3601,7 @@ impl Graph {
         verbose: Option<bool>,
     ) -> f64 {
         self.inner
-            .get_clustering_coefficient(low_centrality.map(|x| x.into()), verbose.map(|x| x.into()))
+            .get_clustering_coefficient(low_centrality, verbose)
             .into()
     }
 
@@ -3693,10 +3622,7 @@ impl Graph {
         verbose: Option<bool>,
     ) -> f64 {
         self.inner
-            .get_average_clustering_coefficient(
-                low_centrality.map(|x| x.into()),
-                verbose.map(|x| x.into()),
-            )
+            .get_average_clustering_coefficient(low_centrality, verbose)
             .into()
     }
 
@@ -3719,7 +3645,7 @@ impl Graph {
     ) -> ShortestPathsResultBFS {
         self.inner
             .get_unchecked_breadth_first_search_predecessors_parallel_from_node_id(
-                src_node_id.into(),
+                src_node_id.clone(),
             )
             .into()
     }
@@ -3747,11 +3673,8 @@ impl Graph {
     ) -> ShortestPathsResultBFS {
         self.inner
             .get_unchecked_breadth_first_search_distances_parallel_from_node_ids(
-                src_node_ids
-                    .into_iter()
-                    .map(|x| x.into())
-                    .collect::<Vec<_>>(),
-                maximal_depth.map(|x| x.into()),
+                src_node_ids,
+                maximal_depth,
             )
             .into()
     }
@@ -3778,8 +3701,8 @@ impl Graph {
     ) -> ShortestPathsResultBFS {
         self.inner
             .get_unchecked_breadth_first_search_distances_parallel_from_node_id(
-                src_node_id.into(),
-                maximal_depth.map(|x| x.into()),
+                src_node_id.clone(),
+                maximal_depth,
             )
             .into()
     }
@@ -3805,7 +3728,7 @@ impl Graph {
     ) -> ShortestPathsResultBFS {
         self.inner
             .get_unchecked_breadth_first_search_distances_sequential_from_node_id(
-                src_node_id.into(),
+                src_node_id.clone(),
             )
             .into()
     }
@@ -3840,13 +3763,10 @@ impl Graph {
     ) -> ShortestPathsResultBFS {
         self.inner
             .get_unchecked_breadth_first_search_from_node_ids(
-                src_node_ids
-                    .into_iter()
-                    .map(|x| x.into())
-                    .collect::<Vec<_>>(),
-                dst_node_id.map(|x| x.into()),
-                compute_predecessors.map(|x| x.into()),
-                maximal_depth.map(|x| x.into()),
+                src_node_ids,
+                dst_node_id,
+                compute_predecessors,
+                maximal_depth,
             )
             .into()
     }
@@ -3881,10 +3801,10 @@ impl Graph {
     ) -> ShortestPathsResultBFS {
         self.inner
             .get_unchecked_breadth_first_search_from_node_id(
-                src_node_id.into(),
-                dst_node_id.map(|x| x.into()),
-                compute_predecessors.map(|x| x.into()),
-                maximal_depth.map(|x| x.into()),
+                src_node_id.clone(),
+                dst_node_id,
+                compute_predecessors,
+                maximal_depth,
             )
             .into()
     }
@@ -3927,9 +3847,9 @@ impl Graph {
                 pe!(self
                     .inner
                     .get_unchecked_shortest_path_node_ids_from_node_ids(
-                        src_node_id.into(),
-                        dst_node_id.into(),
-                        maximal_depth.map(|x| { x.into() })
+                        src_node_id.clone(),
+                        dst_node_id.clone(),
+                        maximal_depth
                     ))?,
                 NodeT
             )
@@ -3962,9 +3882,9 @@ impl Graph {
         Ok(pe!(self
             .inner
             .get_unchecked_shortest_path_node_names_from_node_ids(
-                src_node_id.into(),
-                dst_node_id.into(),
-                maximal_depth.map(|x| { x.into() })
+                src_node_id.clone(),
+                dst_node_id.clone(),
+                maximal_depth
             ))?
         .into_iter()
         .map(|x| x.into())
@@ -4001,9 +3921,9 @@ impl Graph {
             to_ndarray_1d!(
                 gil,
                 pe!(self.inner.get_shortest_path_node_ids_from_node_ids(
-                    src_node_id.into(),
-                    dst_node_id.into(),
-                    maximal_depth.map(|x| { x.into() })
+                    src_node_id.clone(),
+                    dst_node_id.clone(),
+                    maximal_depth
                 ))?,
                 NodeT
             )
@@ -4031,8 +3951,8 @@ impl Graph {
     ///
     pub fn get_shortest_path_node_ids_from_node_names(
         &self,
-        src_node_name: String,
-        dst_node_name: String,
+        src_node_name: &str,
+        dst_node_name: &str,
         maximal_depth: Option<NodeT>,
     ) -> PyResult<Py<PyArray1<NodeT>>> {
         Ok({
@@ -4040,9 +3960,9 @@ impl Graph {
             to_ndarray_1d!(
                 gil,
                 pe!(self.inner.get_shortest_path_node_ids_from_node_names(
-                    src_node_name.as_ref(),
-                    dst_node_name.as_ref(),
-                    maximal_depth.map(|x| { x.into() })
+                    src_node_name,
+                    dst_node_name,
+                    maximal_depth
                 ))?,
                 NodeT
             )
@@ -4070,14 +3990,14 @@ impl Graph {
     ///
     pub fn get_shortest_path_node_names_from_node_names(
         &self,
-        src_node_name: String,
-        dst_node_name: String,
+        src_node_name: &str,
+        dst_node_name: &str,
         maximal_depth: Option<NodeT>,
     ) -> PyResult<Vec<String>> {
         Ok(pe!(self.inner.get_shortest_path_node_names_from_node_names(
-            src_node_name.as_ref(),
-            dst_node_name.as_ref(),
-            maximal_depth.map(|x| { x.into() })
+            src_node_name,
+            dst_node_name,
+            maximal_depth
         ))?
         .into_iter()
         .map(|x| x.into())
@@ -4109,9 +4029,9 @@ impl Graph {
     ) -> Vec<Vec<NodeT>> {
         self.inner
             .get_unchecked_k_shortest_path_node_ids_from_node_ids(
-                src_node_id.into(),
-                dst_node_id.into(),
-                k.into(),
+                src_node_id.clone(),
+                dst_node_id.clone(),
+                k.clone(),
             )
             .into_iter()
             .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>())
@@ -4146,9 +4066,9 @@ impl Graph {
         k: usize,
     ) -> PyResult<Vec<Vec<NodeT>>> {
         Ok(pe!(self.inner.get_k_shortest_path_node_ids_from_node_ids(
-            src_node_id.into(),
-            dst_node_id.into(),
-            k.into()
+            src_node_id.clone(),
+            dst_node_id.clone(),
+            k.clone()
         ))?
         .into_iter()
         .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>())
@@ -4176,14 +4096,14 @@ impl Graph {
     ///
     pub fn get_k_shortest_path_node_ids_from_node_names(
         &self,
-        src_node_name: String,
-        dst_node_name: String,
+        src_node_name: &str,
+        dst_node_name: &str,
         k: usize,
     ) -> PyResult<Vec<Vec<NodeT>>> {
         Ok(pe!(self.inner.get_k_shortest_path_node_ids_from_node_names(
-            src_node_name.as_ref(),
-            dst_node_name.as_ref(),
-            k.into()
+            src_node_name,
+            dst_node_name,
+            k.clone()
         ))?
         .into_iter()
         .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>())
@@ -4211,15 +4131,15 @@ impl Graph {
     ///
     pub fn get_k_shortest_path_node_names_from_node_names(
         &self,
-        src_node_name: String,
-        dst_node_name: String,
+        src_node_name: &str,
+        dst_node_name: &str,
         k: usize,
     ) -> PyResult<Vec<Vec<String>>> {
         Ok(
             pe!(self.inner.get_k_shortest_path_node_names_from_node_names(
-                src_node_name.as_ref(),
-                dst_node_name.as_ref(),
-                k.into()
+                src_node_name,
+                dst_node_name,
+                k.clone()
             ))?
             .into_iter()
             .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>())
@@ -4248,7 +4168,7 @@ impl Graph {
     ) -> (NodeT, NodeT) {
         let (subresult_0, subresult_1) = self
             .inner
-            .get_unchecked_eccentricity_and_most_distant_node_id_from_node_id(node_id.into());
+            .get_unchecked_eccentricity_and_most_distant_node_id_from_node_id(node_id.clone());
         (subresult_0.into(), subresult_1.into())
     }
 
@@ -4276,8 +4196,8 @@ impl Graph {
     ) -> f32 {
         self.inner
             .get_unchecked_weighted_eccentricity_from_node_id(
-                node_id.into(),
-                use_edge_weights_as_probabilities.map(|x| x.into()),
+                node_id.clone(),
+                use_edge_weights_as_probabilities,
             )
             .into()
     }
@@ -4306,7 +4226,7 @@ impl Graph {
         Ok({
             let (subresult_0, subresult_1) = pe!(self
                 .inner
-                .get_eccentricity_and_most_distant_node_id_from_node_id(node_id.into()))?
+                .get_eccentricity_and_most_distant_node_id_from_node_id(node_id.clone()))?
             .into();
             (subresult_0.into(), subresult_1.into())
         })
@@ -4339,8 +4259,8 @@ impl Graph {
         use_edge_weights_as_probabilities: Option<bool>,
     ) -> PyResult<f32> {
         Ok(pe!(self.inner.get_weighted_eccentricity_from_node_id(
-            node_id.into(),
-            use_edge_weights_as_probabilities.map(|x| { x.into() })
+            node_id.clone(),
+            use_edge_weights_as_probabilities
         ))?
         .into())
     }
@@ -4360,11 +4280,8 @@ impl Graph {
     /// ValueError
     ///     If the given node name does not exist in the current graph instance.
     ///
-    pub fn get_eccentricity_from_node_name(&self, node_name: String) -> PyResult<NodeT> {
-        Ok(pe!(self
-            .inner
-            .get_eccentricity_from_node_name(node_name.as_ref()))?
-        .into())
+    pub fn get_eccentricity_from_node_name(&self, node_name: &str) -> PyResult<NodeT> {
+        Ok(pe!(self.inner.get_eccentricity_from_node_name(node_name))?.into())
     }
 
     #[automatically_generated_binding]
@@ -4390,12 +4307,12 @@ impl Graph {
     ///
     pub fn get_weighted_eccentricity_from_node_name(
         &self,
-        node_name: String,
+        node_name: &str,
         use_edge_weights_as_probabilities: Option<bool>,
     ) -> PyResult<f32> {
         Ok(pe!(self.inner.get_weighted_eccentricity_from_node_name(
-            node_name.as_ref(),
-            use_edge_weights_as_probabilities.map(|x| { x.into() })
+            node_name,
+            use_edge_weights_as_probabilities
         ))?
         .into())
     }
@@ -4436,15 +4353,12 @@ impl Graph {
     ) -> ShortestPathsDjkstra {
         self.inner
             .get_unchecked_dijkstra_from_node_ids(
-                src_node_ids
-                    .into_iter()
-                    .map(|x| x.into())
-                    .collect::<Vec<_>>(),
-                maybe_dst_node_id.map(|x| x.into()),
-                maybe_dst_node_ids.map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>()),
-                compute_predecessors.map(|x| x.into()),
-                maximal_depth.map(|x| x.into()),
-                use_edge_weights_as_probabilities.map(|x| x.into()),
+                src_node_ids,
+                maybe_dst_node_id,
+                maybe_dst_node_ids,
+                compute_predecessors,
+                maximal_depth,
+                use_edge_weights_as_probabilities,
             )
             .into()
     }
@@ -4485,12 +4399,12 @@ impl Graph {
     ) -> ShortestPathsDjkstra {
         self.inner
             .get_unchecked_dijkstra_from_node_id(
-                src_node_id.into(),
-                maybe_dst_node_id.map(|x| x.into()),
-                maybe_dst_node_ids.map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>()),
-                compute_predecessors.map(|x| x.into()),
-                maximal_depth.map(|x| x.into()),
-                use_edge_weights_as_probabilities.map(|x| x.into()),
+                src_node_id.clone(),
+                maybe_dst_node_id,
+                maybe_dst_node_ids,
+                compute_predecessors,
+                maximal_depth,
+                use_edge_weights_as_probabilities,
             )
             .into()
     }
@@ -4526,10 +4440,10 @@ impl Graph {
         let (subresult_0, subresult_1) = self
             .inner
             .get_unchecked_weighted_shortest_path_node_ids_from_node_ids(
-                src_node_id.into(),
-                dst_node_id.into(),
-                use_edge_weights_as_probabilities.map(|x| x.into()),
-                maximal_depth.map(|x| x.into()),
+                src_node_id.clone(),
+                dst_node_id.clone(),
+                use_edge_weights_as_probabilities,
+                maximal_depth,
             );
         (subresult_0.into(), {
             let gil = pyo3::Python::acquire_gil();
@@ -4568,10 +4482,10 @@ impl Graph {
         let (subresult_0, subresult_1) = self
             .inner
             .get_unchecked_weighted_shortest_path_node_names_from_node_ids(
-                src_node_id.into(),
-                dst_node_id.into(),
-                use_edge_weights_as_probabilities.map(|x| x.into()),
-                maximal_depth.map(|x| x.into()),
+                src_node_id.clone(),
+                dst_node_id.clone(),
+                use_edge_weights_as_probabilities,
+                maximal_depth,
             );
         (
             subresult_0.into(),
@@ -4616,10 +4530,10 @@ impl Graph {
             let (subresult_0, subresult_1) = pe!(self
                 .inner
                 .get_weighted_shortest_path_node_ids_from_node_ids(
-                    src_node_id.into(),
-                    dst_node_id.into(),
-                    use_edge_weights_as_probabilities.map(|x| { x.into() }),
-                    maximal_depth.map(|x| { x.into() })
+                    src_node_id.clone(),
+                    dst_node_id.clone(),
+                    use_edge_weights_as_probabilities,
+                    maximal_depth
                 ))?
             .into();
             (subresult_0.into(), {
@@ -4654,8 +4568,8 @@ impl Graph {
     ///
     pub fn get_weighted_shortest_path_node_ids_from_node_names(
         &self,
-        src_node_name: String,
-        dst_node_name: String,
+        src_node_name: &str,
+        dst_node_name: &str,
         use_edge_weights_as_probabilities: Option<bool>,
         maximal_depth: Option<NodeT>,
     ) -> PyResult<(f32, Py<PyArray1<NodeT>>)> {
@@ -4663,10 +4577,10 @@ impl Graph {
             let (subresult_0, subresult_1) = pe!(self
                 .inner
                 .get_weighted_shortest_path_node_ids_from_node_names(
-                    src_node_name.as_ref(),
-                    dst_node_name.as_ref(),
-                    use_edge_weights_as_probabilities.map(|x| { x.into() }),
-                    maximal_depth.map(|x| { x.into() })
+                    src_node_name,
+                    dst_node_name,
+                    use_edge_weights_as_probabilities,
+                    maximal_depth
                 ))?
             .into();
             (subresult_0.into(), {
@@ -4701,8 +4615,8 @@ impl Graph {
     ///
     pub fn get_weighted_shortest_path_node_names_from_node_names(
         &self,
-        src_node_name: String,
-        dst_node_name: String,
+        src_node_name: &str,
+        dst_node_name: &str,
         use_edge_weights_as_probabilities: Option<bool>,
         maximal_depth: Option<NodeT>,
     ) -> PyResult<(f32, Vec<String>)> {
@@ -4710,10 +4624,10 @@ impl Graph {
             let (subresult_0, subresult_1) = pe!(self
                 .inner
                 .get_weighted_shortest_path_node_names_from_node_names(
-                    src_node_name.as_ref(),
-                    dst_node_name.as_ref(),
-                    use_edge_weights_as_probabilities.map(|x| { x.into() }),
-                    maximal_depth.map(|x| { x.into() })
+                    src_node_name,
+                    dst_node_name,
+                    use_edge_weights_as_probabilities,
+                    maximal_depth
                 ))?
             .into();
             (
@@ -4757,10 +4671,10 @@ impl Graph {
         maximal_depth: Option<NodeT>,
     ) -> PyResult<ShortestPathsResultBFS> {
         Ok(pe!(self.inner.get_breadth_first_search_from_node_ids(
-            src_node_id.into(),
-            dst_node_id.map(|x| { x.into() }),
-            compute_predecessors.map(|x| { x.into() }),
-            maximal_depth.map(|x| { x.into() })
+            src_node_id.clone(),
+            dst_node_id,
+            compute_predecessors,
+            maximal_depth
         ))?
         .into())
     }
@@ -4810,12 +4724,12 @@ impl Graph {
         use_edge_weights_as_probabilities: Option<bool>,
     ) -> PyResult<ShortestPathsDjkstra> {
         Ok(pe!(self.inner.get_dijkstra_from_node_ids(
-            src_node_id.into(),
-            maybe_dst_node_id.map(|x| { x.into() }),
-            maybe_dst_node_ids.map(|x| { x.into_iter().map(|x| { x.into() }).collect::<Vec<_>>() }),
-            compute_predecessors.map(|x| { x.into() }),
-            maximal_depth.map(|x| { x.into() }),
-            use_edge_weights_as_probabilities.map(|x| { x.into() })
+            src_node_id.clone(),
+            maybe_dst_node_id,
+            maybe_dst_node_ids,
+            compute_predecessors,
+            maximal_depth,
+            use_edge_weights_as_probabilities
         ))?
         .into())
     }
@@ -4865,11 +4779,7 @@ impl Graph {
         ignore_infinity: Option<bool>,
         verbose: Option<bool>,
     ) -> PyResult<f32> {
-        Ok(pe!(self.inner.get_diameter_naive(
-            ignore_infinity.map(|x| { x.into() }),
-            verbose.map(|x| { x.into() })
-        ))?
-        .into())
+        Ok(pe!(self.inner.get_diameter_naive(ignore_infinity, verbose))?.into())
     }
 
     #[automatically_generated_binding]
@@ -4894,11 +4804,7 @@ impl Graph {
         ignore_infinity: Option<bool>,
         verbose: Option<bool>,
     ) -> PyResult<f32> {
-        Ok(pe!(self.inner.get_diameter(
-            ignore_infinity.map(|x| { x.into() }),
-            verbose.map(|x| { x.into() })
-        ))?
-        .into())
+        Ok(pe!(self.inner.get_diameter(ignore_infinity, verbose))?.into())
     }
 
     #[automatically_generated_binding]
@@ -4930,16 +4836,16 @@ impl Graph {
     ///
     pub fn get_breadth_first_search_from_node_names(
         &self,
-        src_node_name: String,
-        dst_node_name: Option<String>,
+        src_node_name: &str,
+        dst_node_name: Option<&str>,
         compute_predecessors: Option<bool>,
         maximal_depth: Option<NodeT>,
     ) -> PyResult<ShortestPathsResultBFS> {
         Ok(pe!(self.inner.get_breadth_first_search_from_node_names(
-            src_node_name.as_ref(),
-            dst_node_name.map(|x| { x.as_ref() }),
-            compute_predecessors.map(|x| { x.into() }),
-            maximal_depth.map(|x| { x.into() })
+            src_node_name,
+            dst_node_name,
+            compute_predecessors,
+            maximal_depth
         ))?
         .into())
     }
@@ -4977,21 +4883,20 @@ impl Graph {
     ///
     pub fn get_dijkstra_from_node_names(
         &self,
-        src_node_name: String,
-        maybe_dst_node_name: Option<String>,
-        maybe_dst_node_names: Option<Vec<String>>,
+        src_node_name: &str,
+        maybe_dst_node_name: Option<&str>,
+        maybe_dst_node_names: Option<Vec<&str>>,
         compute_predecessors: Option<bool>,
         maximal_depth: Option<NodeT>,
         use_edge_weights_as_probabilities: Option<bool>,
     ) -> PyResult<ShortestPathsDjkstra> {
         Ok(pe!(self.inner.get_dijkstra_from_node_names(
-            src_node_name.as_ref(),
-            maybe_dst_node_name.map(|x| { x.as_ref() }),
-            maybe_dst_node_names
-                .map(|x| { x.into_iter().map(|x| { x.as_ref() }).collect::<Vec<_>>() }),
-            compute_predecessors.map(|x| { x.into() }),
-            maximal_depth.map(|x| { x.into() }),
-            use_edge_weights_as_probabilities.map(|x| { x.into() })
+            src_node_name,
+            maybe_dst_node_name,
+            maybe_dst_node_names,
+            compute_predecessors,
+            maximal_depth,
+            use_edge_weights_as_probabilities
         ))?
         .into())
     }
@@ -5016,15 +4921,9 @@ impl Graph {
         directed: bool,
     ) -> PyResult<Graph> {
         Ok(pe!(self.inner.build_bipartite_graph_from_edge_node_ids(
-            source_node_ids
-                .into_iter()
-                .map(|x| { x.into() })
-                .collect::<Vec<_>>(),
-            destination_node_ids
-                .into_iter()
-                .map(|x| { x.into() })
-                .collect::<Vec<_>>(),
-            directed.into()
+            source_node_ids,
+            destination_node_ids,
+            directed.clone()
         ))?
         .into())
     }
@@ -5045,13 +4944,9 @@ impl Graph {
         node_ids: Vec<NodeT>,
         directed: bool,
     ) -> PyResult<Graph> {
-        Ok(pe!(self.inner.build_clique_graph_from_node_ids(
-            node_ids
-                .into_iter()
-                .map(|x| { x.into() })
-                .collect::<Vec<_>>(),
-            directed.into()
-        ))?
+        Ok(pe!(self
+            .inner
+            .build_clique_graph_from_node_ids(node_ids, directed.clone()))?
         .into())
     }
 
@@ -5070,20 +4965,14 @@ impl Graph {
     ///
     pub fn build_bipartite_graph_from_edge_node_names(
         &self,
-        source_node_names: Vec<String>,
-        destination_node_names: Vec<String>,
+        source_node_names: Vec<&str>,
+        destination_node_names: Vec<&str>,
         directed: bool,
     ) -> PyResult<Graph> {
         Ok(pe!(self.inner.build_bipartite_graph_from_edge_node_names(
-            source_node_names
-                .into_iter()
-                .map(|x| { x.as_ref() })
-                .collect::<Vec<_>>(),
-            destination_node_names
-                .into_iter()
-                .map(|x| { x.as_ref() })
-                .collect::<Vec<_>>(),
-            directed.into()
+            source_node_names,
+            destination_node_names,
+            directed.clone()
         ))?
         .into())
     }
@@ -5101,16 +4990,12 @@ impl Graph {
     ///
     pub fn build_clique_graph_from_node_names(
         &self,
-        node_names: Vec<String>,
+        node_names: Vec<&str>,
         directed: bool,
     ) -> PyResult<Graph> {
-        Ok(pe!(self.inner.build_clique_graph_from_node_names(
-            node_names
-                .into_iter()
-                .map(|x| { x.as_ref() })
-                .collect::<Vec<_>>(),
-            directed.into()
-        ))?
+        Ok(pe!(self
+            .inner
+            .build_clique_graph_from_node_names(node_names, directed.clone()))?
         .into())
     }
 
@@ -5137,7 +5022,7 @@ impl Graph {
             pe!(self.inner.build_bipartite_graph_from_edge_node_prefixes(
                 &source_node_prefixes,
                 &destination_node_prefixes,
-                directed.into()
+                directed.clone()
             ))?
             .into(),
         )
@@ -5161,7 +5046,7 @@ impl Graph {
     ) -> PyResult<Graph> {
         Ok(pe!(self
             .inner
-            .build_clique_graph_from_node_prefixes(&node_prefixes, directed.into()))?
+            .build_clique_graph_from_node_prefixes(&node_prefixes, directed.clone()))?
         .into())
     }
 
@@ -5187,7 +5072,7 @@ impl Graph {
         Ok(pe!(self.inner.build_bipartite_graph_from_edge_node_types(
             &source_node_types,
             &destination_node_types,
-            directed.into()
+            directed.clone()
         ))?
         .into())
     }
@@ -5210,7 +5095,7 @@ impl Graph {
     ) -> PyResult<Graph> {
         Ok(pe!(self
             .inner
-            .build_clique_graph_from_node_type_names(&node_type_names, directed.into()))?
+            .build_clique_graph_from_node_type_names(&node_type_names, directed.clone()))?
         .into())
     }
 
@@ -5241,7 +5126,7 @@ impl Graph {
         verbose: Option<bool>,
     ) -> Graph {
         self.inner
-            .get_transitive_closure(iterations.map(|x| x.into()), verbose.map(|x| x.into()))
+            .get_transitive_closure(iterations, verbose)
             .into()
     }
 
@@ -5264,7 +5149,7 @@ impl Graph {
         verbose: Option<bool>,
     ) -> Graph {
         self.inner
-            .get_all_shortest_paths(iterations.map(|x| x.into()), verbose.map(|x| x.into()))
+            .get_all_shortest_paths(iterations, verbose)
             .into()
     }
 
@@ -5300,9 +5185,9 @@ impl Graph {
         verbose: Option<bool>,
     ) -> PyResult<Graph> {
         Ok(pe!(self.inner.get_weighted_all_shortest_paths(
-            iterations.map(|x| { x.into() }),
-            use_edge_weights_as_probabilities.map(|x| { x.into() }),
-            verbose.map(|x| { x.into() })
+            iterations,
+            use_edge_weights_as_probabilities,
+            verbose
         ))?
         .into())
     }
@@ -5359,24 +5244,24 @@ impl Graph {
         maximum_node_sampling: Option<NodeT>,
         nodes_number: Option<NodeT>,
         include_selfloops: Option<bool>,
-        node_type: Option<String>,
-        edge_type: Option<String>,
+        node_type: Option<&str>,
+        edge_type: Option<&str>,
         weight: Option<WeightT>,
         directed: Option<bool>,
-        name: Option<String>,
+        name: Option<&str>,
     ) -> PyResult<Graph> {
         Ok(pe!(graph::Graph::generate_random_connected_graph(
-            random_state.map(|x| { x.into() }),
-            minimum_node_id.map(|x| { x.into() }),
-            minimum_node_sampling.map(|x| { x.into() }),
-            maximum_node_sampling.map(|x| { x.into() }),
-            nodes_number.map(|x| { x.into() }),
-            include_selfloops.map(|x| { x.into() }),
-            node_type.map(|x| { x.as_ref() }),
-            edge_type.map(|x| { x.as_ref() }),
-            weight.map(|x| { x.into() }),
-            directed.map(|x| { x.into() }),
-            name.map(|x| { x.as_ref() })
+            random_state,
+            minimum_node_id,
+            minimum_node_sampling,
+            maximum_node_sampling,
+            nodes_number,
+            include_selfloops,
+            node_type,
+            edge_type,
+            weight,
+            directed,
+            name
         ))?
         .into())
     }
@@ -5418,22 +5303,22 @@ impl Graph {
         minimum_node_id: Option<NodeT>,
         nodes_number: Option<NodeT>,
         include_selfloops: Option<bool>,
-        node_type: Option<String>,
-        edge_type: Option<String>,
+        node_type: Option<&str>,
+        edge_type: Option<&str>,
         weight: Option<WeightT>,
         directed: Option<bool>,
-        name: Option<String>,
+        name: Option<&str>,
     ) -> PyResult<Graph> {
         Ok(pe!(graph::Graph::generate_random_spanning_tree(
-            random_state.map(|x| { x.into() }),
-            minimum_node_id.map(|x| { x.into() }),
-            nodes_number.map(|x| { x.into() }),
-            include_selfloops.map(|x| { x.into() }),
-            node_type.map(|x| { x.as_ref() }),
-            edge_type.map(|x| { x.as_ref() }),
-            weight.map(|x| { x.into() }),
-            directed.map(|x| { x.into() }),
-            name.map(|x| { x.as_ref() })
+            random_state,
+            minimum_node_id,
+            nodes_number,
+            include_selfloops,
+            node_type,
+            edge_type,
+            weight,
+            directed,
+            name
         ))?
         .into())
     }
@@ -5468,21 +5353,21 @@ impl Graph {
         minimum_node_id: Option<NodeT>,
         nodes_number: Option<NodeT>,
         include_selfloops: Option<bool>,
-        node_type: Option<String>,
-        edge_type: Option<String>,
+        node_type: Option<&str>,
+        edge_type: Option<&str>,
         weight: Option<WeightT>,
         directed: Option<bool>,
-        name: Option<String>,
+        name: Option<&str>,
     ) -> PyResult<Graph> {
         Ok(pe!(graph::Graph::generate_star_graph(
-            minimum_node_id.map(|x| { x.into() }),
-            nodes_number.map(|x| { x.into() }),
-            include_selfloops.map(|x| { x.into() }),
-            node_type.map(|x| { x.as_ref() }),
-            edge_type.map(|x| { x.as_ref() }),
-            weight.map(|x| { x.into() }),
-            directed.map(|x| { x.into() }),
-            name.map(|x| { x.as_ref() })
+            minimum_node_id,
+            nodes_number,
+            include_selfloops,
+            node_type,
+            edge_type,
+            weight,
+            directed,
+            name
         ))?
         .into())
     }
@@ -5517,21 +5402,21 @@ impl Graph {
         minimum_node_id: Option<NodeT>,
         nodes_number: Option<NodeT>,
         include_selfloops: Option<bool>,
-        node_type: Option<String>,
-        edge_type: Option<String>,
+        node_type: Option<&str>,
+        edge_type: Option<&str>,
         weight: Option<WeightT>,
         directed: Option<bool>,
-        name: Option<String>,
+        name: Option<&str>,
     ) -> PyResult<Graph> {
         Ok(pe!(graph::Graph::generate_wheel_graph(
-            minimum_node_id.map(|x| { x.into() }),
-            nodes_number.map(|x| { x.into() }),
-            include_selfloops.map(|x| { x.into() }),
-            node_type.map(|x| { x.as_ref() }),
-            edge_type.map(|x| { x.as_ref() }),
-            weight.map(|x| { x.into() }),
-            directed.map(|x| { x.into() }),
-            name.map(|x| { x.as_ref() })
+            minimum_node_id,
+            nodes_number,
+            include_selfloops,
+            node_type,
+            edge_type,
+            weight,
+            directed,
+            name
         ))?
         .into())
     }
@@ -5566,21 +5451,21 @@ impl Graph {
         minimum_node_id: Option<NodeT>,
         nodes_number: Option<NodeT>,
         include_selfloops: Option<bool>,
-        node_type: Option<String>,
-        edge_type: Option<String>,
+        node_type: Option<&str>,
+        edge_type: Option<&str>,
         weight: Option<WeightT>,
         directed: Option<bool>,
-        name: Option<String>,
+        name: Option<&str>,
     ) -> PyResult<Graph> {
         Ok(pe!(graph::Graph::generate_circle_graph(
-            minimum_node_id.map(|x| { x.into() }),
-            nodes_number.map(|x| { x.into() }),
-            include_selfloops.map(|x| { x.into() }),
-            node_type.map(|x| { x.as_ref() }),
-            edge_type.map(|x| { x.as_ref() }),
-            weight.map(|x| { x.into() }),
-            directed.map(|x| { x.into() }),
-            name.map(|x| { x.as_ref() })
+            minimum_node_id,
+            nodes_number,
+            include_selfloops,
+            node_type,
+            edge_type,
+            weight,
+            directed,
+            name
         ))?
         .into())
     }
@@ -5615,21 +5500,21 @@ impl Graph {
         minimum_node_id: Option<NodeT>,
         nodes_number: Option<NodeT>,
         include_selfloops: Option<bool>,
-        node_type: Option<String>,
-        edge_type: Option<String>,
+        node_type: Option<&str>,
+        edge_type: Option<&str>,
         weight: Option<WeightT>,
         directed: Option<bool>,
-        name: Option<String>,
+        name: Option<&str>,
     ) -> PyResult<Graph> {
         Ok(pe!(graph::Graph::generate_chain_graph(
-            minimum_node_id.map(|x| { x.into() }),
-            nodes_number.map(|x| { x.into() }),
-            include_selfloops.map(|x| { x.into() }),
-            node_type.map(|x| { x.as_ref() }),
-            edge_type.map(|x| { x.as_ref() }),
-            weight.map(|x| { x.into() }),
-            directed.map(|x| { x.into() }),
-            name.map(|x| { x.as_ref() })
+            minimum_node_id,
+            nodes_number,
+            include_selfloops,
+            node_type,
+            edge_type,
+            weight,
+            directed,
+            name
         ))?
         .into())
     }
@@ -5664,21 +5549,21 @@ impl Graph {
         minimum_node_id: Option<NodeT>,
         nodes_number: Option<NodeT>,
         include_selfloops: Option<bool>,
-        node_type: Option<String>,
-        edge_type: Option<String>,
+        node_type: Option<&str>,
+        edge_type: Option<&str>,
         weight: Option<WeightT>,
         directed: Option<bool>,
-        name: Option<String>,
+        name: Option<&str>,
     ) -> PyResult<Graph> {
         Ok(pe!(graph::Graph::generate_complete_graph(
-            minimum_node_id.map(|x| { x.into() }),
-            nodes_number.map(|x| { x.into() }),
-            include_selfloops.map(|x| { x.into() }),
-            node_type.map(|x| { x.as_ref() }),
-            edge_type.map(|x| { x.as_ref() }),
-            weight.map(|x| { x.into() }),
-            directed.map(|x| { x.into() }),
-            name.map(|x| { x.as_ref() })
+            minimum_node_id,
+            nodes_number,
+            include_selfloops,
+            node_type,
+            edge_type,
+            weight,
+            directed,
+            name
         ))?
         .into())
     }
@@ -5737,35 +5622,35 @@ impl Graph {
         right_clique_nodes_number: Option<NodeT>,
         chain_nodes_number: Option<NodeT>,
         include_selfloops: Option<bool>,
-        left_clique_node_type: Option<String>,
-        right_clique_node_type: Option<String>,
-        chain_node_type: Option<String>,
-        left_clique_edge_type: Option<String>,
-        right_clique_edge_type: Option<String>,
-        chain_edge_type: Option<String>,
+        left_clique_node_type: Option<&str>,
+        right_clique_node_type: Option<&str>,
+        chain_node_type: Option<&str>,
+        left_clique_edge_type: Option<&str>,
+        right_clique_edge_type: Option<&str>,
+        chain_edge_type: Option<&str>,
         left_clique_weight: Option<WeightT>,
         right_clique_weight: Option<WeightT>,
         chain_weight: Option<WeightT>,
         directed: Option<bool>,
-        name: Option<String>,
+        name: Option<&str>,
     ) -> PyResult<Graph> {
         Ok(pe!(graph::Graph::generate_barbell_graph(
-            minimum_node_id.map(|x| { x.into() }),
-            left_clique_nodes_number.map(|x| { x.into() }),
-            right_clique_nodes_number.map(|x| { x.into() }),
-            chain_nodes_number.map(|x| { x.into() }),
-            include_selfloops.map(|x| { x.into() }),
-            left_clique_node_type.map(|x| { x.as_ref() }),
-            right_clique_node_type.map(|x| { x.as_ref() }),
-            chain_node_type.map(|x| { x.as_ref() }),
-            left_clique_edge_type.map(|x| { x.as_ref() }),
-            right_clique_edge_type.map(|x| { x.as_ref() }),
-            chain_edge_type.map(|x| { x.as_ref() }),
-            left_clique_weight.map(|x| { x.into() }),
-            right_clique_weight.map(|x| { x.into() }),
-            chain_weight.map(|x| { x.into() }),
-            directed.map(|x| { x.into() }),
-            name.map(|x| { x.as_ref() })
+            minimum_node_id,
+            left_clique_nodes_number,
+            right_clique_nodes_number,
+            chain_nodes_number,
+            include_selfloops,
+            left_clique_node_type,
+            right_clique_node_type,
+            chain_node_type,
+            left_clique_edge_type,
+            right_clique_edge_type,
+            chain_edge_type,
+            left_clique_weight,
+            right_clique_weight,
+            chain_weight,
+            directed,
+            name
         ))?
         .into())
     }
@@ -5815,28 +5700,28 @@ impl Graph {
         clique_nodes_number: Option<NodeT>,
         chain_nodes_number: Option<NodeT>,
         include_selfloops: Option<bool>,
-        clique_node_type: Option<String>,
-        chain_node_type: Option<String>,
-        clique_edge_type: Option<String>,
-        chain_edge_type: Option<String>,
+        clique_node_type: Option<&str>,
+        chain_node_type: Option<&str>,
+        clique_edge_type: Option<&str>,
+        chain_edge_type: Option<&str>,
         clique_weight: Option<WeightT>,
         chain_weight: Option<WeightT>,
         directed: Option<bool>,
-        name: Option<String>,
+        name: Option<&str>,
     ) -> PyResult<Graph> {
         Ok(pe!(graph::Graph::generate_lollipop_graph(
-            minimum_node_id.map(|x| { x.into() }),
-            clique_nodes_number.map(|x| { x.into() }),
-            chain_nodes_number.map(|x| { x.into() }),
-            include_selfloops.map(|x| { x.into() }),
-            clique_node_type.map(|x| { x.as_ref() }),
-            chain_node_type.map(|x| { x.as_ref() }),
-            clique_edge_type.map(|x| { x.as_ref() }),
-            chain_edge_type.map(|x| { x.as_ref() }),
-            clique_weight.map(|x| { x.into() }),
-            chain_weight.map(|x| { x.into() }),
-            directed.map(|x| { x.into() }),
-            name.map(|x| { x.as_ref() })
+            minimum_node_id,
+            clique_nodes_number,
+            chain_nodes_number,
+            include_selfloops,
+            clique_node_type,
+            chain_node_type,
+            clique_edge_type,
+            chain_edge_type,
+            clique_weight,
+            chain_weight,
+            directed,
+            name
         ))?
         .into())
     }
@@ -5870,18 +5755,18 @@ impl Graph {
     pub fn generate_squared_lattice_graph(
         sides: Vec<NodeT>,
         minimum_node_id: Option<NodeT>,
-        node_type: Option<String>,
+        node_type: Option<&str>,
         weight: Option<WeightT>,
         directed: Option<bool>,
-        name: Option<String>,
+        name: Option<&str>,
     ) -> PyResult<Graph> {
         Ok(pe!(graph::Graph::generate_squared_lattice_graph(
             &sides,
-            minimum_node_id.map(|x| { x.into() }),
-            node_type.map(|x| { x.as_ref() }),
-            weight.map(|x| { x.into() }),
-            directed.map(|x| { x.into() }),
-            name.map(|x| { x.as_ref() })
+            minimum_node_id,
+            node_type,
+            weight,
+            directed,
+            name
         ))?
         .into())
     }
@@ -5905,7 +5790,7 @@ impl Graph {
     /// If the given edge ID does not exists in the graph this method will panic.
     pub unsafe fn get_unchecked_edge_weight_from_edge_id(&self, edge_id: EdgeT) -> Option<WeightT> {
         self.inner
-            .get_unchecked_edge_weight_from_edge_id(edge_id.into())
+            .get_unchecked_edge_weight_from_edge_id(edge_id.clone())
             .map(|x| x.into())
     }
 
@@ -5933,7 +5818,7 @@ impl Graph {
         dst: NodeT,
     ) -> WeightT {
         self.inner
-            .get_unchecked_edge_weight_from_node_ids(src.into(), dst.into())
+            .get_unchecked_edge_weight_from_node_ids(src.clone(), dst.clone())
             .into()
     }
 
@@ -5950,9 +5835,9 @@ impl Graph {
     /// Safety
     /// ------
     /// If the given node name does not exists in the considered graph the method will panic.
-    pub unsafe fn get_unchecked_node_id_from_node_name(&self, node_name: String) -> NodeT {
+    pub unsafe fn get_unchecked_node_id_from_node_name(&self, node_name: &str) -> NodeT {
         self.inner
-            .get_unchecked_node_id_from_node_name(node_name.as_ref())
+            .get_unchecked_node_id_from_node_name(node_name)
             .into()
     }
 
@@ -5971,10 +5856,10 @@ impl Graph {
     /// If the given edge type name does not exists in the considered graph the method will panic.
     pub unsafe fn get_unchecked_edge_type_id_from_edge_type_name(
         &self,
-        edge_type_name: String,
+        edge_type_name: &str,
     ) -> Option<EdgeTypeT> {
         self.inner
-            .get_unchecked_edge_type_id_from_edge_type_name(edge_type_name.as_ref())
+            .get_unchecked_edge_type_id_from_edge_type_name(edge_type_name)
             .map(|x| x.into())
     }
 
@@ -5997,7 +5882,7 @@ impl Graph {
         edge_type_id: Option<EdgeTypeT>,
     ) -> Option<String> {
         self.inner
-            .get_unchecked_edge_type_name_from_edge_type_id(edge_type_id.map(|x| x.into()))
+            .get_unchecked_edge_type_name_from_edge_type_id(edge_type_id)
             .map(|x| x.into())
     }
 
@@ -6019,7 +5904,7 @@ impl Graph {
         edge_type: Option<EdgeTypeT>,
     ) -> EdgeT {
         self.inner
-            .get_unchecked_edge_count_from_edge_type_id(edge_type.map(|x| x.into()))
+            .get_unchecked_edge_count_from_edge_type_id(edge_type)
             .into()
     }
 
@@ -6040,7 +5925,7 @@ impl Graph {
         node_type: Option<NodeTypeT>,
     ) -> NodeT {
         self.inner
-            .get_unchecked_node_count_from_node_type_id(node_type.map(|x| x.into()))
+            .get_unchecked_node_count_from_node_type_id(node_type)
             .into()
     }
 
@@ -6069,9 +5954,9 @@ impl Graph {
     ) -> EdgeT {
         self.inner
             .get_unchecked_edge_id_from_node_ids_and_edge_type_id(
-                src.into(),
-                dst.into(),
-                edge_type.map(|x| x.into()),
+                src.clone(),
+                dst.clone(),
+                edge_type,
             )
             .into()
     }
@@ -6100,7 +5985,7 @@ impl Graph {
     ) -> (EdgeT, EdgeT) {
         let (subresult_0, subresult_1) = self
             .inner
-            .get_unchecked_minmax_edge_ids_from_node_ids(src.into(), dst.into());
+            .get_unchecked_minmax_edge_ids_from_node_ids(src.clone(), dst.clone());
         (subresult_0.into(), subresult_1.into())
     }
 
@@ -6123,7 +6008,7 @@ impl Graph {
     pub unsafe fn get_unchecked_node_ids_from_edge_id(&self, edge_id: EdgeT) -> (NodeT, NodeT) {
         let (subresult_0, subresult_1) = self
             .inner
-            .get_unchecked_node_ids_from_edge_id(edge_id.into());
+            .get_unchecked_node_ids_from_edge_id(edge_id.clone());
         (subresult_0.into(), subresult_1.into())
     }
 
@@ -6143,7 +6028,7 @@ impl Graph {
     pub unsafe fn get_unchecked_node_names_from_edge_id(&self, edge_id: EdgeT) -> (String, String) {
         let (subresult_0, subresult_1) = self
             .inner
-            .get_unchecked_node_names_from_edge_id(edge_id.into());
+            .get_unchecked_node_names_from_edge_id(edge_id.clone());
         (subresult_0.into(), subresult_1.into())
     }
 
@@ -6162,7 +6047,7 @@ impl Graph {
     /// If the given edge ID does not exist in the current graph the method will cause an out of bounds.
     pub unsafe fn get_unchecked_source_node_id_from_edge_id(&self, edge_id: EdgeT) -> NodeT {
         self.inner
-            .get_unchecked_source_node_id_from_edge_id(edge_id.into())
+            .get_unchecked_source_node_id_from_edge_id(edge_id.clone())
             .into()
     }
 
@@ -6181,7 +6066,7 @@ impl Graph {
     /// If the given edge ID does not exist in the current graph the method will cause an out of bounds.
     pub unsafe fn get_unchecked_destination_node_id_from_edge_id(&self, edge_id: EdgeT) -> NodeT {
         self.inner
-            .get_unchecked_destination_node_id_from_edge_id(edge_id.into())
+            .get_unchecked_destination_node_id_from_edge_id(edge_id.clone())
             .into()
     }
 
@@ -6201,7 +6086,7 @@ impl Graph {
     ///     If the given edge ID does not exist in the current graph.
     ///
     pub fn get_source_node_id_from_edge_id(&self, edge_id: EdgeT) -> PyResult<NodeT> {
-        Ok(pe!(self.inner.get_source_node_id_from_edge_id(edge_id.into()))?.into())
+        Ok(pe!(self.inner.get_source_node_id_from_edge_id(edge_id.clone()))?.into())
     }
 
     #[automatically_generated_binding]
@@ -6222,7 +6107,7 @@ impl Graph {
     pub fn get_destination_node_id_from_edge_id(&self, edge_id: EdgeT) -> PyResult<NodeT> {
         Ok(pe!(self
             .inner
-            .get_destination_node_id_from_edge_id(edge_id.into()))?
+            .get_destination_node_id_from_edge_id(edge_id.clone()))?
         .into())
     }
 
@@ -6241,7 +6126,7 @@ impl Graph {
     /// If the given edge ID does not exist in the current graph the method will raise a panic.
     pub unsafe fn get_unchecked_source_node_name_from_edge_id(&self, edge_id: EdgeT) -> String {
         self.inner
-            .get_unchecked_source_node_name_from_edge_id(edge_id.into())
+            .get_unchecked_source_node_name_from_edge_id(edge_id.clone())
             .into()
     }
 
@@ -6263,7 +6148,7 @@ impl Graph {
         edge_id: EdgeT,
     ) -> String {
         self.inner
-            .get_unchecked_destination_node_name_from_edge_id(edge_id.into())
+            .get_unchecked_destination_node_name_from_edge_id(edge_id.clone())
             .into()
     }
 
@@ -6281,7 +6166,10 @@ impl Graph {
     /// -------
     ///
     pub fn get_source_node_name_from_edge_id(&self, edge_id: EdgeT) -> PyResult<String> {
-        Ok(pe!(self.inner.get_source_node_name_from_edge_id(edge_id.into()))?.into())
+        Ok(pe!(self
+            .inner
+            .get_source_node_name_from_edge_id(edge_id.clone()))?
+        .into())
     }
 
     #[automatically_generated_binding]
@@ -6300,7 +6188,7 @@ impl Graph {
     pub fn get_destination_node_name_from_edge_id(&self, edge_id: EdgeT) -> PyResult<String> {
         Ok(pe!(self
             .inner
-            .get_destination_node_name_from_edge_id(edge_id.into()))?
+            .get_destination_node_name_from_edge_id(edge_id.clone()))?
         .into())
     }
 
@@ -6316,7 +6204,7 @@ impl Graph {
     pub fn get_node_names_from_edge_id(&self, edge_id: EdgeT) -> PyResult<(String, String)> {
         Ok({
             let (subresult_0, subresult_1) =
-                pe!(self.inner.get_node_names_from_edge_id(edge_id.into()))?.into();
+                pe!(self.inner.get_node_names_from_edge_id(edge_id.clone()))?.into();
             (subresult_0.into(), subresult_1.into())
         })
     }
@@ -6333,7 +6221,7 @@ impl Graph {
     pub fn get_node_ids_from_edge_id(&self, edge_id: EdgeT) -> PyResult<(NodeT, NodeT)> {
         Ok({
             let (subresult_0, subresult_1) =
-                pe!(self.inner.get_node_ids_from_edge_id(edge_id.into()))?.into();
+                pe!(self.inner.get_node_ids_from_edge_id(edge_id.clone()))?.into();
             (subresult_0.into(), subresult_1.into())
         })
     }
@@ -6358,7 +6246,7 @@ impl Graph {
     /// If any of the given node IDs do not exist in the graph the method will panic.
     pub unsafe fn get_unchecked_edge_id_from_node_ids(&self, src: NodeT, dst: NodeT) -> EdgeT {
         self.inner
-            .get_unchecked_edge_id_from_node_ids(src.into(), dst.into())
+            .get_unchecked_edge_id_from_node_ids(src.clone(), dst.clone())
             .into()
     }
 
@@ -6374,7 +6262,10 @@ impl Graph {
     ///     The destination node ID.
     ///
     pub fn get_edge_id_from_node_ids(&self, src: NodeT, dst: NodeT) -> PyResult<EdgeT> {
-        Ok(pe!(self.inner.get_edge_id_from_node_ids(src.into(), dst.into()))?.into())
+        Ok(pe!(self
+            .inner
+            .get_edge_id_from_node_ids(src.clone(), dst.clone()))?
+        .into())
     }
 
     #[automatically_generated_binding]
@@ -6392,7 +6283,7 @@ impl Graph {
     /// If the given source node ID does not exist in the current graph the method will panic.
     pub unsafe fn get_unchecked_unique_source_node_id(&self, source_id: NodeT) -> NodeT {
         self.inner
-            .get_unchecked_unique_source_node_id(source_id.into())
+            .get_unchecked_unique_source_node_id(source_id.clone())
             .into()
     }
 
@@ -6417,7 +6308,7 @@ impl Graph {
     ) -> (NodeT, NodeT, Option<EdgeTypeT>) {
         let (subresult_0, subresult_1, subresult_2) = self
             .inner
-            .get_unchecked_node_ids_and_edge_type_id_from_edge_id(edge_id.into());
+            .get_unchecked_node_ids_and_edge_type_id_from_edge_id(edge_id.clone());
         (
             subresult_0.into(),
             subresult_1.into(),
@@ -6441,7 +6332,7 @@ impl Graph {
         Ok({
             let (subresult_0, subresult_1, subresult_2) = pe!(self
                 .inner
-                .get_node_ids_and_edge_type_id_from_edge_id(edge_id.into()))?
+                .get_node_ids_and_edge_type_id_from_edge_id(edge_id.clone()))?
             .into();
             (
                 subresult_0.into(),
@@ -6472,7 +6363,7 @@ impl Graph {
     ) -> (NodeT, NodeT, Option<EdgeTypeT>, Option<WeightT>) {
         let (subresult_0, subresult_1, subresult_2, subresult_3) = self
             .inner
-            .get_unchecked_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(edge_id.into());
+            .get_unchecked_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(edge_id.clone());
         (
             subresult_0.into(),
             subresult_1.into(),
@@ -6497,7 +6388,7 @@ impl Graph {
         Ok({
             let (subresult_0, subresult_1, subresult_2, subresult_3) = pe!(self
                 .inner
-                .get_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(edge_id.into()))?
+                .get_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(edge_id.clone()))?
             .into();
             (
                 subresult_0.into(),
@@ -6533,7 +6424,7 @@ impl Graph {
             let gil = pyo3::Python::acquire_gil();
             to_ndarray_1d!(
                 gil,
-                pe!(self.inner.get_top_k_central_node_ids(k.into()))?,
+                pe!(self.inner.get_top_k_central_node_ids(k.clone()))?,
                 NodeT
             )
         })
@@ -6564,7 +6455,7 @@ impl Graph {
             let gil = pyo3::Python::acquire_gil();
             to_ndarray_1d!(
                 gil,
-                pe!(self.inner.get_weighted_top_k_central_node_ids(k.into()))?,
+                pe!(self.inner.get_weighted_top_k_central_node_ids(k.clone()))?,
                 NodeT
             )
         })
@@ -6585,7 +6476,7 @@ impl Graph {
     /// If the given node ID does not exist in the current graph the method will raise a panic.
     pub unsafe fn get_unchecked_node_degree_from_node_id(&self, node_id: NodeT) -> NodeT {
         self.inner
-            .get_unchecked_node_degree_from_node_id(node_id.into())
+            .get_unchecked_node_degree_from_node_id(node_id.clone())
             .into()
     }
 
@@ -6607,7 +6498,7 @@ impl Graph {
     /// If the given node ID does not exist in the current graph the method will raise a panic.
     pub unsafe fn get_unchecked_weighted_node_degree_from_node_id(&self, node_id: NodeT) -> f64 {
         self.inner
-            .get_unchecked_weighted_node_degree_from_node_id(node_id.into())
+            .get_unchecked_weighted_node_degree_from_node_id(node_id.clone())
             .into()
     }
 
@@ -6621,7 +6512,7 @@ impl Graph {
     ///     Integer ID of the node.
     ///
     pub fn get_node_degree_from_node_id(&self, node_id: NodeT) -> PyResult<NodeT> {
-        Ok(pe!(self.inner.get_node_degree_from_node_id(node_id.into()))?.into())
+        Ok(pe!(self.inner.get_node_degree_from_node_id(node_id.clone()))?.into())
     }
 
     #[automatically_generated_binding]
@@ -6642,7 +6533,7 @@ impl Graph {
         node_id: NodeT,
     ) -> EdgeT {
         self.inner
-            .get_unchecked_comulative_node_degree_from_node_id(node_id.into())
+            .get_unchecked_comulative_node_degree_from_node_id(node_id.clone())
             .into()
     }
 
@@ -6658,7 +6549,7 @@ impl Graph {
     pub fn get_comulative_node_degree_from_node_id(&self, node_id: NodeT) -> PyResult<EdgeT> {
         Ok(pe!(self
             .inner
-            .get_comulative_node_degree_from_node_id(node_id.into()))?
+            .get_comulative_node_degree_from_node_id(node_id.clone()))?
         .into())
     }
 
@@ -6680,7 +6571,7 @@ impl Graph {
         node_id: NodeT,
     ) -> WeightT {
         self.inner
-            .get_unchecked_reciprocal_sqrt_degree_from_node_id(node_id.into())
+            .get_unchecked_reciprocal_sqrt_degree_from_node_id(node_id.clone())
             .into()
     }
 
@@ -6696,7 +6587,7 @@ impl Graph {
     pub fn get_reciprocal_sqrt_degree_from_node_id(&self, node_id: NodeT) -> PyResult<WeightT> {
         Ok(pe!(self
             .inner
-            .get_reciprocal_sqrt_degree_from_node_id(node_id.into()))?
+            .get_reciprocal_sqrt_degree_from_node_id(node_id.clone()))?
         .into())
     }
 
@@ -6739,7 +6630,7 @@ impl Graph {
     pub fn get_weighted_node_degree_from_node_id(&self, node_id: NodeT) -> PyResult<f64> {
         Ok(pe!(self
             .inner
-            .get_weighted_node_degree_from_node_id(node_id.into()))?
+            .get_weighted_node_degree_from_node_id(node_id.clone()))?
         .into())
     }
 
@@ -6758,11 +6649,8 @@ impl Graph {
     /// ValueError
     ///     If the given node name does not exist in the graph.
     ///
-    pub fn get_node_degree_from_node_name(&self, node_name: String) -> PyResult<NodeT> {
-        Ok(pe!(self
-            .inner
-            .get_node_degree_from_node_name(node_name.as_ref()))?
-        .into())
+    pub fn get_node_degree_from_node_name(&self, node_name: &str) -> PyResult<NodeT> {
+        Ok(pe!(self.inner.get_node_degree_from_node_name(node_name))?.into())
     }
 
     #[automatically_generated_binding]
@@ -6775,7 +6663,7 @@ impl Graph {
     ///     Number of central nodes to extract.
     ///
     pub fn get_top_k_central_node_names(&self, k: NodeT) -> PyResult<Vec<String>> {
-        Ok(pe!(self.inner.get_top_k_central_node_names(k.into()))?
+        Ok(pe!(self.inner.get_top_k_central_node_names(k.clone()))?
             .into_iter()
             .map(|x| x.into())
             .collect::<Vec<_>>())
@@ -6803,10 +6691,10 @@ impl Graph {
     pub unsafe fn get_unchecked_node_type_ids_from_node_id(
         &self,
         node_id: NodeT,
-    ) -> Option<[NodeTypeT]> {
+    ) -> Option<Vec<NodeTypeT>> {
         self.inner
-            .get_unchecked_node_type_ids_from_node_id(node_id.into())
-            .map(|x| x.into())
+            .get_unchecked_node_type_ids_from_node_id(node_id.clone())
+            .map(|x| x.into_iter().cloned().map(|x| x.into()).collect::<Vec<_>>())
     }
 
     #[automatically_generated_binding]
@@ -6818,8 +6706,14 @@ impl Graph {
     /// node_id: int
     ///     node whose node type is to be returned.
     ///
-    pub fn get_node_type_ids_from_node_id(&self, node_id: NodeT) -> PyResult<Option<[NodeTypeT]>> {
-        Ok(pe!(self.inner.get_node_type_ids_from_node_id(node_id.into()))?.map(|x| x.into()))
+    pub fn get_node_type_ids_from_node_id(
+        &self,
+        node_id: NodeT,
+    ) -> PyResult<Option<Vec<NodeTypeT>>> {
+        Ok(
+            pe!(self.inner.get_node_type_ids_from_node_id(node_id.clone()))?
+                .map(|x| x.into_iter().cloned().map(|x| x.into()).collect::<Vec<_>>()),
+        )
     }
 
     #[automatically_generated_binding]
@@ -6845,7 +6739,7 @@ impl Graph {
         edge_id: EdgeT,
     ) -> Option<EdgeTypeT> {
         self.inner
-            .get_unchecked_edge_type_id_from_edge_id(edge_id.into())
+            .get_unchecked_edge_type_id_from_edge_id(edge_id.clone())
             .map(|x| x.into())
     }
 
@@ -6859,7 +6753,7 @@ impl Graph {
     ///     edge whose edge type is to be returned.
     ///
     pub fn get_edge_type_id_from_edge_id(&self, edge_id: EdgeT) -> PyResult<Option<EdgeTypeT>> {
-        Ok(pe!(self.inner.get_edge_type_id_from_edge_id(edge_id.into()))?.map(|x| x.into()))
+        Ok(pe!(self.inner.get_edge_type_id_from_edge_id(edge_id.clone()))?.map(|x| x.into()))
     }
 
     #[automatically_generated_binding]
@@ -6886,7 +6780,7 @@ impl Graph {
     ) -> PyResult<Option<EdgeTypeT>> {
         Ok(pe!(self
             .inner
-            .get_edge_type_id_from_edge_node_ids(src.into(), dst.into()))?
+            .get_edge_type_id_from_edge_node_ids(src.clone(), dst.clone()))?
         .map(|x| x.into()))
     }
 
@@ -6909,7 +6803,7 @@ impl Graph {
         node_id: NodeT,
     ) -> Option<Vec<String>> {
         self.inner
-            .get_unchecked_node_type_names_from_node_id(node_id.into())
+            .get_unchecked_node_type_names_from_node_id(node_id.clone())
             .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>())
     }
 
@@ -6933,7 +6827,7 @@ impl Graph {
         node_id: NodeT,
     ) -> PyResult<Option<Vec<String>>> {
         Ok(
-            pe!(self.inner.get_node_type_names_from_node_id(node_id.into()))?
+            pe!(self.inner.get_node_type_names_from_node_id(node_id.clone()))?
                 .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>()),
         )
     }
@@ -6949,12 +6843,12 @@ impl Graph {
     ///
     pub fn get_node_type_names_from_node_name(
         &self,
-        node_name: String,
+        node_name: &str,
     ) -> PyResult<Option<Vec<String>>> {
-        Ok(pe!(self
-            .inner
-            .get_node_type_names_from_node_name(node_name.as_ref()))?
-        .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>()))
+        Ok(
+            pe!(self.inner.get_node_type_names_from_node_name(node_name))?
+                .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>()),
+        )
     }
 
     #[automatically_generated_binding]
@@ -6967,7 +6861,7 @@ impl Graph {
     ///     The edge ID whose edge type is to be returned.
     ///
     pub fn get_edge_type_name_from_edge_id(&self, edge_id: EdgeT) -> PyResult<Option<String>> {
-        Ok(pe!(self.inner.get_edge_type_name_from_edge_id(edge_id.into()))?.map(|x| x.into()))
+        Ok(pe!(self.inner.get_edge_type_name_from_edge_id(edge_id.clone()))?.map(|x| x.into()))
     }
 
     #[automatically_generated_binding]
@@ -6985,7 +6879,7 @@ impl Graph {
     ) -> PyResult<String> {
         Ok(pe!(self
             .inner
-            .get_edge_type_name_from_edge_type_id(edge_type_id.into()))?
+            .get_edge_type_name_from_edge_type_id(edge_type_id.clone()))?
         .into())
     }
 
@@ -6999,7 +6893,7 @@ impl Graph {
     ///     The edge ID whose weight is to be returned.
     ///
     pub fn get_edge_weight_from_edge_id(&self, edge_id: EdgeT) -> PyResult<WeightT> {
-        Ok(pe!(self.inner.get_edge_weight_from_edge_id(edge_id.into()))?.into())
+        Ok(pe!(self.inner.get_edge_weight_from_edge_id(edge_id.clone()))?.into())
     }
 
     #[automatically_generated_binding]
@@ -7016,7 +6910,7 @@ impl Graph {
     pub fn get_edge_weight_from_node_ids(&self, src: NodeT, dst: NodeT) -> PyResult<WeightT> {
         Ok(pe!(self
             .inner
-            .get_edge_weight_from_node_ids(src.into(), dst.into()))?
+            .get_edge_weight_from_node_ids(src.clone(), dst.clone()))?
         .into())
     }
 
@@ -7041,9 +6935,9 @@ impl Graph {
     ) -> PyResult<WeightT> {
         Ok(
             pe!(self.inner.get_edge_weight_from_node_ids_and_edge_type_id(
-                src.into(),
-                dst.into(),
-                edge_type.map(|x| { x.into() })
+                src.clone(),
+                dst.clone(),
+                edge_type
             ))?
             .into(),
         )
@@ -7064,17 +6958,13 @@ impl Graph {
     ///
     pub fn get_edge_weight_from_node_names_and_edge_type_name(
         &self,
-        src: String,
-        dst: String,
-        edge_type: Option<String>,
+        src: &str,
+        dst: &str,
+        edge_type: Option<&str>,
     ) -> PyResult<WeightT> {
         Ok(pe!(self
             .inner
-            .get_edge_weight_from_node_names_and_edge_type_name(
-                src.as_ref(),
-                dst.as_ref(),
-                edge_type.map(|x| { x.as_ref() })
-            ))?
+            .get_edge_weight_from_node_names_and_edge_type_name(src, dst, edge_type))?
         .into())
     }
 
@@ -7091,12 +6981,12 @@ impl Graph {
     ///
     pub fn get_edge_weight_from_node_names(
         &self,
-        src_name: String,
-        dst_name: String,
+        src_name: &str,
+        dst_name: &str,
     ) -> PyResult<WeightT> {
         Ok(pe!(self
             .inner
-            .get_edge_weight_from_node_names(src_name.as_ref(), dst_name.as_ref()))?
+            .get_edge_weight_from_node_names(src_name, dst_name))?
         .into())
     }
 
@@ -7115,7 +7005,7 @@ impl Graph {
     /// If the given node ID does not exist in the current graph the method will raise a panic.
     pub unsafe fn get_unchecked_node_name_from_node_id(&self, node_id: NodeT) -> String {
         self.inner
-            .get_unchecked_node_name_from_node_id(node_id.into())
+            .get_unchecked_node_name_from_node_id(node_id.clone())
             .into()
     }
 
@@ -7129,7 +7019,7 @@ impl Graph {
     ///     The node ID whose name is to be returned.
     ///
     pub fn get_node_name_from_node_id(&self, node_id: NodeT) -> PyResult<String> {
-        Ok(pe!(self.inner.get_node_name_from_node_id(node_id.into()))?.into())
+        Ok(pe!(self.inner.get_node_name_from_node_id(node_id.clone()))?.into())
     }
 
     #[automatically_generated_binding]
@@ -7147,8 +7037,8 @@ impl Graph {
     /// ValueError
     ///     When the given node name does not exists in the current graph.
     ///
-    pub fn get_node_id_from_node_name(&self, node_name: String) -> PyResult<NodeT> {
-        Ok(pe!(self.inner.get_node_id_from_node_name(node_name.as_ref()))?.into())
+    pub fn get_node_id_from_node_name(&self, node_name: &str) -> PyResult<NodeT> {
+        Ok(pe!(self.inner.get_node_id_from_node_name(node_name))?.into())
     }
 
     #[automatically_generated_binding]
@@ -7168,18 +7058,13 @@ impl Graph {
     ///
     pub fn get_node_ids_from_node_names(
         &self,
-        node_names: Vec<String>,
+        node_names: Vec<&str>,
     ) -> PyResult<Py<PyArray1<NodeT>>> {
         Ok({
             let gil = pyo3::Python::acquire_gil();
             to_ndarray_1d!(
                 gil,
-                pe!(self.inner.get_node_ids_from_node_names(
-                    node_names
-                        .into_iter()
-                        .map(|x| { x.as_ref() })
-                        .collect::<Vec<_>>()
-                ))?,
+                pe!(self.inner.get_node_ids_from_node_names(node_names))?,
                 NodeT
             )
         })
@@ -7202,24 +7087,16 @@ impl Graph {
     ///
     pub fn get_edge_node_ids_from_edge_node_names(
         &self,
-        edge_node_names: Vec<(String, String)>,
+        edge_node_names: Vec<(&str, &str)>,
     ) -> PyResult<Py<PyArray2<NodeT>>> {
         Ok({
             // Warning: this copies the array so it uses double the memory.
             // To avoid this you should directly generate data compatible with a numpy array
             // Which is a flat vector with row-first or column-first unrolling
             let gil = pyo3::Python::acquire_gil();
-            let body = pe!(self.inner.get_edge_node_ids_from_edge_node_names(
-                edge_node_names
-                    .into_iter()
-                    .map(|x| {
-                        {
-                            let temp = x;
-                            (temp.0.as_ref(), temp.1.as_ref())
-                        }
-                    })
-                    .collect::<Vec<_>>()
-            ))?;
+            let body = pe!(self
+                .inner
+                .get_edge_node_ids_from_edge_node_names(edge_node_names))?;
             let result_array = ThreadDataRaceAware {
                 t: unsafe { PyArray2::<NodeT>::new(gil.python(), [body.len(), 2], false) },
             };
@@ -7252,17 +7129,9 @@ impl Graph {
         &self,
         edge_node_ids: Vec<(NodeT, NodeT)>,
     ) -> PyResult<Vec<(String, String)>> {
-        Ok(pe!(self.inner.get_edge_node_names_from_edge_node_ids(
-            edge_node_ids
-                .into_iter()
-                .map(|x| {
-                    {
-                        let temp = x;
-                        (temp.0.into(), temp.1.into())
-                    }
-                })
-                .collect::<Vec<_>>()
-        ))?
+        Ok(pe!(self
+            .inner
+            .get_edge_node_names_from_edge_node_ids(edge_node_ids))?
         .into_iter()
         .map(|x| {
             let (subresult_0, subresult_1) = x;
@@ -7282,12 +7151,10 @@ impl Graph {
     ///
     pub fn get_node_type_ids_from_node_name(
         &self,
-        node_name: String,
-    ) -> PyResult<Option<[NodeTypeT]>> {
-        Ok(pe!(self
-            .inner
-            .get_node_type_ids_from_node_name(node_name.as_ref()))?
-        .map(|x| x.into()))
+        node_name: &str,
+    ) -> PyResult<Option<Vec<NodeTypeT>>> {
+        Ok(pe!(self.inner.get_node_type_ids_from_node_name(node_name))?
+            .map(|x| x.into_iter().cloned().map(|x| x.into()).collect::<Vec<_>>()))
     }
 
     #[automatically_generated_binding]
@@ -7301,12 +7168,12 @@ impl Graph {
     ///
     pub fn get_node_type_name_from_node_name(
         &self,
-        node_name: String,
+        node_name: &str,
     ) -> PyResult<Option<Vec<String>>> {
-        Ok(pe!(self
-            .inner
-            .get_node_type_name_from_node_name(node_name.as_ref()))?
-        .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>()))
+        Ok(
+            pe!(self.inner.get_node_type_name_from_node_name(node_name))?
+                .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>()),
+        )
     }
 
     #[automatically_generated_binding]
@@ -7325,10 +7192,7 @@ impl Graph {
         &self,
         edge_type_id: Option<EdgeTypeT>,
     ) -> PyResult<EdgeT> {
-        Ok(pe!(self
-            .inner
-            .get_edge_count_from_edge_type_id(edge_type_id.map(|x| { x.into() })))?
-        .into())
+        Ok(pe!(self.inner.get_edge_count_from_edge_type_id(edge_type_id))?.into())
     }
 
     #[automatically_generated_binding]
@@ -7344,11 +7208,11 @@ impl Graph {
     ///
     pub fn get_edge_type_id_from_edge_type_name(
         &self,
-        edge_type_name: Option<String>,
+        edge_type_name: Option<&str>,
     ) -> PyResult<Option<EdgeTypeT>> {
         Ok(pe!(self
             .inner
-            .get_edge_type_id_from_edge_type_name(edge_type_name.map(|x| { x.as_ref() })))?
+            .get_edge_type_id_from_edge_type_name(edge_type_name))?
         .map(|x| x.into()))
     }
 
@@ -7366,11 +7230,11 @@ impl Graph {
     ///
     pub fn get_edge_count_from_edge_type_name(
         &self,
-        edge_type_name: Option<String>,
+        edge_type_name: Option<&str>,
     ) -> PyResult<EdgeT> {
         Ok(pe!(self
             .inner
-            .get_edge_count_from_edge_type_name(edge_type_name.map(|x| { x.as_ref() })))?
+            .get_edge_count_from_edge_type_name(edge_type_name))?
         .into())
     }
 
@@ -7385,11 +7249,11 @@ impl Graph {
     ///
     pub fn get_node_type_id_from_node_type_name(
         &self,
-        node_type_name: String,
+        node_type_name: &str,
     ) -> PyResult<NodeTypeT> {
         Ok(pe!(self
             .inner
-            .get_node_type_id_from_node_type_name(node_type_name.as_ref()))?
+            .get_node_type_id_from_node_type_name(node_type_name))?
         .into())
     }
 
@@ -7409,10 +7273,7 @@ impl Graph {
         &self,
         node_type_id: Option<NodeTypeT>,
     ) -> PyResult<NodeT> {
-        Ok(pe!(self
-            .inner
-            .get_node_count_from_node_type_id(node_type_id.map(|x| { x.into() })))?
-        .into())
+        Ok(pe!(self.inner.get_node_count_from_node_type_id(node_type_id))?.into())
     }
 
     #[automatically_generated_binding]
@@ -7429,11 +7290,11 @@ impl Graph {
     ///
     pub fn get_node_count_from_node_type_name(
         &self,
-        node_type_name: Option<String>,
+        node_type_name: Option<&str>,
     ) -> PyResult<NodeT> {
         Ok(pe!(self
             .inner
-            .get_node_count_from_node_type_name(node_type_name.map(|x| { x.as_ref() })))?
+            .get_node_count_from_node_type_name(node_type_name))?
         .into())
     }
 
@@ -7456,7 +7317,7 @@ impl Graph {
                 gil,
                 pe!(self
                     .inner
-                    .get_neighbour_node_ids_from_node_id(node_id.into()))?,
+                    .get_neighbour_node_ids_from_node_id(node_id.clone()))?,
                 NodeT
             )
         })
@@ -7473,15 +7334,13 @@ impl Graph {
     ///
     pub fn get_neighbour_node_ids_from_node_name(
         &self,
-        node_name: String,
+        node_name: &str,
     ) -> PyResult<Py<PyArray1<NodeT>>> {
         Ok({
             let gil = pyo3::Python::acquire_gil();
             to_ndarray_1d!(
                 gil,
-                pe!(self
-                    .inner
-                    .get_neighbour_node_ids_from_node_name(node_name.as_ref()))?,
+                pe!(self.inner.get_neighbour_node_ids_from_node_name(node_name))?,
                 NodeT
             )
         })
@@ -7498,11 +7357,11 @@ impl Graph {
     ///
     pub fn get_neighbour_node_names_from_node_name(
         &self,
-        node_name: String,
+        node_name: &str,
     ) -> PyResult<Vec<String>> {
         Ok(pe!(self
             .inner
-            .get_neighbour_node_names_from_node_name(node_name.as_ref()))?
+            .get_neighbour_node_names_from_node_name(node_name))?
         .into_iter()
         .map(|x| x.into())
         .collect::<Vec<_>>())
@@ -7529,7 +7388,7 @@ impl Graph {
         Ok({
             let (subresult_0, subresult_1) = pe!(self
                 .inner
-                .get_minmax_edge_ids_from_node_ids(src.into(), dst.into()))?
+                .get_minmax_edge_ids_from_node_ids(src.clone(), dst.clone()))?
             .into();
             (subresult_0.into(), subresult_1.into())
         })
@@ -7558,9 +7417,9 @@ impl Graph {
         edge_type: Option<EdgeTypeT>,
     ) -> PyResult<EdgeT> {
         Ok(pe!(self.inner.get_edge_id_from_node_ids_and_edge_type_id(
-            src.into(),
-            dst.into(),
-            edge_type.map(|x| { x.into() })
+            src.clone(),
+            dst.clone(),
+            edge_type
         ))?
         .into())
     }
@@ -7579,15 +7438,8 @@ impl Graph {
     /// dst_name: str
     ///     Destination node name of the edge.
     ///
-    pub fn get_edge_id_from_node_names(
-        &self,
-        src_name: String,
-        dst_name: String,
-    ) -> PyResult<EdgeT> {
-        Ok(pe!(self
-            .inner
-            .get_edge_id_from_node_names(src_name.as_ref(), dst_name.as_ref()))?
-        .into())
+    pub fn get_edge_id_from_node_names(&self, src_name: &str, dst_name: &str) -> PyResult<EdgeT> {
+        Ok(pe!(self.inner.get_edge_id_from_node_names(src_name, dst_name))?.into())
     }
 
     #[automatically_generated_binding]
@@ -7608,15 +7460,15 @@ impl Graph {
     ///
     pub fn get_edge_id_from_node_names_and_edge_type_name(
         &self,
-        src_name: String,
-        dst_name: String,
-        edge_type_name: Option<String>,
+        src_name: &str,
+        dst_name: &str,
+        edge_type_name: Option<&str>,
     ) -> PyResult<EdgeT> {
         Ok(
             pe!(self.inner.get_edge_id_from_node_names_and_edge_type_name(
-                src_name.as_ref(),
-                dst_name.as_ref(),
-                edge_type_name.map(|x| { x.as_ref() })
+                src_name,
+                dst_name,
+                edge_type_name
             ))?
             .into(),
         )
@@ -7683,26 +7535,19 @@ impl Graph {
     ///
     pub fn get_multiple_node_type_ids_from_node_type_names(
         &self,
-        node_type_names: Vec<Option<Vec<String>>>,
+        node_type_names: Vec<Option<Vec<&str>>>,
     ) -> PyResult<Vec<Option<Py<PyArray1<NodeTypeT>>>>> {
-        Ok(
-            pe!(self.inner.get_multiple_node_type_ids_from_node_type_names(
-                node_type_names
-                    .into_iter()
-                    .map(|x| {
-                        x.map(|x| x.into_iter().map(|x| x.as_ref()).collect::<Vec<_>>())
-                    })
-                    .collect::<Vec<_>>()
-            ))?
-            .into_iter()
-            .map(|x| {
-                x.map(|x| {
-                    let gil = pyo3::Python::acquire_gil();
-                    to_ndarray_1d!(gil, x, NodeTypeT)
-                })
+        Ok(pe!(self
+            .inner
+            .get_multiple_node_type_ids_from_node_type_names(node_type_names))?
+        .into_iter()
+        .map(|x| {
+            x.map(|x| {
+                let gil = pyo3::Python::acquire_gil();
+                to_ndarray_1d!(gil, x, NodeTypeT)
             })
-            .collect::<Vec<_>>(),
-        )
+        })
+        .collect::<Vec<_>>())
     }
 
     #[automatically_generated_binding]
@@ -7727,7 +7572,7 @@ impl Graph {
     ) -> (EdgeT, EdgeT) {
         let (subresult_0, subresult_1) = self
             .inner
-            .get_unchecked_minmax_edge_ids_from_source_node_id(src.into());
+            .get_unchecked_minmax_edge_ids_from_source_node_id(src.clone());
         (subresult_0.into(), subresult_1.into())
     }
 
@@ -7744,7 +7589,7 @@ impl Graph {
         Ok({
             let (subresult_0, subresult_1) = pe!(self
                 .inner
-                .get_minmax_edge_ids_from_source_node_id(src.into()))?
+                .get_minmax_edge_ids_from_source_node_id(src.clone()))?
             .into();
             (subresult_0.into(), subresult_1.into())
         })
@@ -7768,7 +7613,7 @@ impl Graph {
     ) -> PyResult<String> {
         Ok(pe!(self
             .inner
-            .get_node_type_name_from_node_type_id(node_type_id.into()))?
+            .get_node_type_name_from_node_type_id(node_type_id.clone()))?
         .into())
     }
 
@@ -7815,7 +7660,7 @@ impl Graph {
         node_type_id: NodeTypeT,
     ) -> NodeT {
         self.inner
-            .get_unchecked_number_of_nodes_from_node_type_id(node_type_id.into())
+            .get_unchecked_number_of_nodes_from_node_type_id(node_type_id.clone())
             .into()
     }
 
@@ -7842,7 +7687,7 @@ impl Graph {
     ) -> PyResult<NodeT> {
         Ok(pe!(self
             .inner
-            .get_number_of_nodes_from_node_type_id(node_type_id.into()))?
+            .get_number_of_nodes_from_node_type_id(node_type_id.clone()))?
         .into())
     }
 
@@ -7863,13 +7708,10 @@ impl Graph {
     /// ValueError
     ///     If the provided node type name does not exist in the graph.
     ///
-    pub fn get_number_of_nodes_from_node_type_name(
-        &self,
-        node_type_name: String,
-    ) -> PyResult<NodeT> {
+    pub fn get_number_of_nodes_from_node_type_name(&self, node_type_name: &str) -> PyResult<NodeT> {
         Ok(pe!(self
             .inner
-            .get_number_of_nodes_from_node_type_name(node_type_name.as_ref()))?
+            .get_number_of_nodes_from_node_type_name(node_type_name))?
         .into())
     }
 
@@ -7892,7 +7734,7 @@ impl Graph {
         edge_type_id: EdgeTypeT,
     ) -> EdgeT {
         self.inner
-            .get_unchecked_number_of_edges_from_edge_type_id(edge_type_id.into())
+            .get_unchecked_number_of_edges_from_edge_type_id(edge_type_id.clone())
             .into()
     }
 
@@ -7919,7 +7761,7 @@ impl Graph {
     ) -> PyResult<EdgeT> {
         Ok(pe!(self
             .inner
-            .get_number_of_edges_from_edge_type_id(edge_type_id.into()))?
+            .get_number_of_edges_from_edge_type_id(edge_type_id.clone()))?
         .into())
     }
 
@@ -7940,13 +7782,10 @@ impl Graph {
     /// ValueError
     ///     If the provided edge type name does not exist in the graph.
     ///
-    pub fn get_number_of_edges_from_edge_type_name(
-        &self,
-        edge_type_name: String,
-    ) -> PyResult<EdgeT> {
+    pub fn get_number_of_edges_from_edge_type_name(&self, edge_type_name: &str) -> PyResult<EdgeT> {
         Ok(pe!(self
             .inner
-            .get_number_of_edges_from_edge_type_name(edge_type_name.as_ref()))?
+            .get_number_of_edges_from_edge_type_name(edge_type_name))?
         .into())
     }
 
@@ -8027,10 +7866,9 @@ impl Graph {
             // To avoid this you should directly generate data compatible with a numpy array
             // Which is a flat vector with row-first or column-first unrolling
             let gil = pyo3::Python::acquire_gil();
-            let body = pe!(self.inner.get_edge_node_ids_from_edge_type_id(
-                directed.into(),
-                edge_type_id.map(|x| { x.into() })
-            ))?;
+            let body = pe!(self
+                .inner
+                .get_edge_node_ids_from_edge_type_id(directed.clone(), edge_type_id))?;
             let result_array = ThreadDataRaceAware {
                 t: unsafe { PyArray2::<NodeT>::new(gil.python(), [body.len(), 2], false) },
             };
@@ -8072,7 +7910,7 @@ impl Graph {
             let gil = pyo3::Python::acquire_gil();
             let body = pe!(self
                 .inner
-                .get_directed_edge_node_ids_from_edge_type_id(edge_type_id.map(|x| { x.into() })))?;
+                .get_directed_edge_node_ids_from_edge_type_id(edge_type_id))?;
             let result_array = ThreadDataRaceAware {
                 t: unsafe { PyArray2::<NodeT>::new(gil.python(), [body.len(), 2], false) },
             };
@@ -8109,7 +7947,7 @@ impl Graph {
     ) -> PyResult<Vec<(String, String)>> {
         Ok(pe!(self
             .inner
-            .get_directed_edge_node_names_from_edge_type_id(edge_type_id.map(|x| { x.into() })))?
+            .get_directed_edge_node_names_from_edge_type_id(edge_type_id))?
         .into_iter()
         .map(|x| {
             let (subresult_0, subresult_1) = x;
@@ -8137,19 +7975,17 @@ impl Graph {
     ///
     pub fn get_directed_edge_node_names_from_edge_type_name(
         &self,
-        edge_type_name: Option<String>,
+        edge_type_name: Option<&str>,
     ) -> PyResult<Vec<(String, String)>> {
-        Ok(
-            pe!(self.inner.get_directed_edge_node_names_from_edge_type_name(
-                edge_type_name.map(|x| { x.as_ref() })
-            ))?
-            .into_iter()
-            .map(|x| {
-                let (subresult_0, subresult_1) = x;
-                (subresult_0.into(), subresult_1.into())
-            })
-            .collect::<Vec<_>>(),
-        )
+        Ok(pe!(self
+            .inner
+            .get_directed_edge_node_names_from_edge_type_name(edge_type_name))?
+        .into_iter()
+        .map(|x| {
+            let (subresult_0, subresult_1) = x;
+            (subresult_0.into(), subresult_1.into())
+        })
+        .collect::<Vec<_>>())
     }
 
     #[automatically_generated_binding]
@@ -8179,7 +8015,7 @@ impl Graph {
                 gil,
                 pe!(self
                     .inner
-                    .get_directed_edge_ids_from_edge_type_id(edge_type_id.map(|x| { x.into() })))?,
+                    .get_directed_edge_ids_from_edge_type_id(edge_type_id))?,
                 EdgeT
             )
         })
@@ -8207,17 +8043,16 @@ impl Graph {
     pub fn get_edge_node_ids_from_edge_type_name(
         &self,
         directed: bool,
-        edge_type_name: Option<String>,
+        edge_type_name: Option<&str>,
     ) -> PyResult<Py<PyArray2<NodeT>>> {
         Ok({
             // Warning: this copies the array so it uses double the memory.
             // To avoid this you should directly generate data compatible with a numpy array
             // Which is a flat vector with row-first or column-first unrolling
             let gil = pyo3::Python::acquire_gil();
-            let body = pe!(self.inner.get_edge_node_ids_from_edge_type_name(
-                directed.into(),
-                edge_type_name.map(|x| { x.as_ref() })
-            ))?;
+            let body = pe!(self
+                .inner
+                .get_edge_node_ids_from_edge_type_name(directed.clone(), edge_type_name))?;
             let result_array = ThreadDataRaceAware {
                 t: unsafe { PyArray2::<NodeT>::new(gil.python(), [body.len(), 2], false) },
             };
@@ -8250,16 +8085,16 @@ impl Graph {
     ///
     pub fn get_directed_edge_node_ids_from_edge_type_name(
         &self,
-        edge_type_name: Option<String>,
+        edge_type_name: Option<&str>,
     ) -> PyResult<Py<PyArray2<NodeT>>> {
         Ok({
             // Warning: this copies the array so it uses double the memory.
             // To avoid this you should directly generate data compatible with a numpy array
             // Which is a flat vector with row-first or column-first unrolling
             let gil = pyo3::Python::acquire_gil();
-            let body = pe!(self.inner.get_directed_edge_node_ids_from_edge_type_name(
-                edge_type_name.map(|x| { x.as_ref() })
-            ))?;
+            let body = pe!(self
+                .inner
+                .get_directed_edge_node_ids_from_edge_type_name(edge_type_name))?;
             let result_array = ThreadDataRaceAware {
                 t: unsafe { PyArray2::<NodeT>::new(gil.python(), [body.len(), 2], false) },
             };
@@ -8292,15 +8127,15 @@ impl Graph {
     ///
     pub fn get_directed_edge_ids_from_edge_type_name(
         &self,
-        edge_type_name: Option<String>,
+        edge_type_name: Option<&str>,
     ) -> PyResult<Py<PyArray1<EdgeT>>> {
         Ok({
             let gil = pyo3::Python::acquire_gil();
             to_ndarray_1d!(
                 gil,
-                pe!(self.inner.get_directed_edge_ids_from_edge_type_name(
-                    edge_type_name.map(|x| { x.as_ref() })
-                ))?,
+                pe!(self
+                    .inner
+                    .get_directed_edge_ids_from_edge_type_name(edge_type_name))?,
                 EdgeT
             )
         })
@@ -8319,15 +8154,13 @@ impl Graph {
     ///
     pub fn get_directed_edge_node_names_from_node_curie_prefixes(
         &self,
-        src_node_name_prefixes: Option<Vec<String>>,
-        dst_node_name_prefixes: Option<Vec<String>>,
+        src_node_name_prefixes: Option<Vec<&str>>,
+        dst_node_name_prefixes: Option<Vec<&str>>,
     ) -> Vec<(String, String)> {
         self.inner
             .get_directed_edge_node_names_from_node_curie_prefixes(
-                src_node_name_prefixes
-                    .map(|x| x.into_iter().map(|x| x.as_ref()).collect::<Vec<_>>()),
-                dst_node_name_prefixes
-                    .map(|x| x.into_iter().map(|x| x.as_ref()).collect::<Vec<_>>()),
+                src_node_name_prefixes,
+                dst_node_name_prefixes,
             )
             .into_iter()
             .map(|x| {
@@ -8350,8 +8183,8 @@ impl Graph {
     ///
     pub fn get_directed_edge_node_ids_from_node_curie_prefixes(
         &self,
-        src_node_name_prefixes: Option<Vec<String>>,
-        dst_node_name_prefixes: Option<Vec<String>>,
+        src_node_name_prefixes: Option<Vec<&str>>,
+        dst_node_name_prefixes: Option<Vec<&str>>,
     ) -> Py<PyArray2<NodeT>> {
         // Warning: this copies the array so it uses double the memory.
         // To avoid this you should directly generate data compatible with a numpy array
@@ -8360,10 +8193,8 @@ impl Graph {
         let body = self
             .inner
             .get_directed_edge_node_ids_from_node_curie_prefixes(
-                src_node_name_prefixes
-                    .map(|x| x.into_iter().map(|x| x.as_ref()).collect::<Vec<_>>()),
-                dst_node_name_prefixes
-                    .map(|x| x.into_iter().map(|x| x.as_ref()).collect::<Vec<_>>()),
+                src_node_name_prefixes,
+                dst_node_name_prefixes,
             );
         let result_array = ThreadDataRaceAware {
             t: unsafe { PyArray2::<NodeT>::new(gil.python(), [body.len(), 2], false) },
@@ -8390,17 +8221,15 @@ impl Graph {
     ///
     pub fn get_directed_edge_ids_from_node_curie_prefixes(
         &self,
-        src_node_name_prefixes: Option<Vec<String>>,
-        dst_node_name_prefixes: Option<Vec<String>>,
+        src_node_name_prefixes: Option<Vec<&str>>,
+        dst_node_name_prefixes: Option<Vec<&str>>,
     ) -> Py<PyArray1<EdgeT>> {
         let gil = pyo3::Python::acquire_gil();
         to_ndarray_1d!(
             gil,
             self.inner.get_directed_edge_ids_from_node_curie_prefixes(
-                src_node_name_prefixes
-                    .map(|x| { x.into_iter().map(|x| { x.as_ref() }).collect::<Vec<_>>() }),
+                src_node_name_prefixes,
                 dst_node_name_prefixes
-                    .map(|x| { x.into_iter().map(|x| { x.as_ref() }).collect::<Vec<_>>() })
             ),
             EdgeT
         )
@@ -8419,15 +8248,13 @@ impl Graph {
     ///
     pub fn get_number_of_directed_edges_from_node_curie_prefixes(
         &self,
-        src_node_name_prefixes: Option<Vec<String>>,
-        dst_node_name_prefixes: Option<Vec<String>>,
+        src_node_name_prefixes: Option<Vec<&str>>,
+        dst_node_name_prefixes: Option<Vec<&str>>,
     ) -> EdgeT {
         self.inner
             .get_number_of_directed_edges_from_node_curie_prefixes(
-                src_node_name_prefixes
-                    .map(|x| x.into_iter().map(|x| x.as_ref()).collect::<Vec<_>>()),
-                dst_node_name_prefixes
-                    .map(|x| x.into_iter().map(|x| x.as_ref()).collect::<Vec<_>>()),
+                src_node_name_prefixes,
+                dst_node_name_prefixes,
             )
             .into()
     }
@@ -8465,15 +8292,10 @@ impl Graph {
     ///
     pub fn get_node_names_from_node_curie_prefixes(
         &self,
-        curie_prefixes: Vec<String>,
+        curie_prefixes: Vec<&str>,
     ) -> Vec<String> {
         self.inner
-            .get_node_names_from_node_curie_prefixes(
-                curie_prefixes
-                    .into_iter()
-                    .map(|x| x.as_ref())
-                    .collect::<Vec<_>>(),
-            )
+            .get_node_names_from_node_curie_prefixes(curie_prefixes)
             .into_iter()
             .map(|x| x.into())
             .collect::<Vec<_>>()
@@ -8509,13 +8331,11 @@ impl Graph {
     /// ValueError
     ///     If the provided separator is empty.
     ///
-    pub fn get_node_names_prefixes(&self, separator: Option<String>) -> PyResult<Vec<String>> {
-        Ok(pe!(self
-            .inner
-            .get_node_names_prefixes(separator.map(|x| { x.as_ref() })))?
-        .into_iter()
-        .map(|x| x.into())
-        .collect::<Vec<_>>())
+    pub fn get_node_names_prefixes(&self, separator: Option<&str>) -> PyResult<Vec<String>> {
+        Ok(pe!(self.inner.get_node_names_prefixes(separator))?
+            .into_iter()
+            .map(|x| x.into())
+            .collect::<Vec<_>>())
     }
 
     #[automatically_generated_binding]
@@ -8585,7 +8405,7 @@ impl Graph {
                 gil,
                 pe!(self
                     .inner
-                    .get_multigraph_edge_ids_from_node_ids(src.into(), dst.into()))?,
+                    .get_multigraph_edge_ids_from_node_ids(src.clone(), dst.clone()))?,
                 EdgeT
             )
         })
@@ -8609,7 +8429,7 @@ impl Graph {
     ) -> PyResult<usize> {
         Ok(pe!(self
             .inner
-            .get_number_of_multigraph_edges_from_node_ids(src.into(), dst.into()))?
+            .get_number_of_multigraph_edges_from_node_ids(src.clone(), dst.clone()))?
         .into())
     }
 
@@ -8826,130 +8646,50 @@ impl Graph {
         filter_parallel_edges: Option<bool>,
     ) -> PyResult<Graph> {
         Ok(pe!(self.inner.filter_from_ids(
-            node_ids_to_keep.map(|x| { x.into_iter().map(|x| { x.into() }).collect::<Vec<_>>() }),
-            node_ids_to_remove.map(|x| { x.into_iter().map(|x| { x.into() }).collect::<Vec<_>>() }),
+            node_ids_to_keep,
+            node_ids_to_remove,
             node_names_to_keep_from_graph.map(|sg| &sg.inner),
             node_names_to_remove_from_graph.map(|sg| &sg.inner),
-            node_prefixes_to_keep
-                .map(|x| { x.into_iter().map(|x| { x.into() }).collect::<Vec<_>>() }),
-            node_prefixes_to_remove
-                .map(|x| { x.into_iter().map(|x| { x.into() }).collect::<Vec<_>>() }),
-            node_type_ids_to_keep.map(|x| {
-                x.into_iter()
-                    .map(|x| x.map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>()))
-                    .collect::<Vec<_>>()
-            }),
-            node_type_ids_to_remove.map(|x| {
-                x.into_iter()
-                    .map(|x| x.map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>()))
-                    .collect::<Vec<_>>()
-            }),
-            node_type_id_to_keep.map(|x| {
-                x.into_iter()
-                    .map(|x| x.map(|x| x.into()))
-                    .collect::<Vec<_>>()
-            }),
-            node_type_id_to_remove.map(|x| {
-                x.into_iter()
-                    .map(|x| x.map(|x| x.into()))
-                    .collect::<Vec<_>>()
-            }),
-            source_node_ids_to_keep
-                .map(|x| { x.into_iter().map(|x| { x.into() }).collect::<Vec<_>>() }),
-            source_node_ids_to_remove
-                .map(|x| { x.into_iter().map(|x| { x.into() }).collect::<Vec<_>>() }),
+            node_prefixes_to_keep,
+            node_prefixes_to_remove,
+            node_type_ids_to_keep,
+            node_type_ids_to_remove,
+            node_type_id_to_keep,
+            node_type_id_to_remove,
+            source_node_ids_to_keep,
+            source_node_ids_to_remove,
             source_node_names_to_keep_from_graph.map(|sg| &sg.inner),
             source_node_names_to_remove_from_graph.map(|sg| &sg.inner),
-            source_node_prefixes_to_keep
-                .map(|x| { x.into_iter().map(|x| { x.into() }).collect::<Vec<_>>() }),
-            source_node_prefixes_to_remove
-                .map(|x| { x.into_iter().map(|x| { x.into() }).collect::<Vec<_>>() }),
-            source_node_type_ids_to_keep.map(|x| {
-                x.into_iter()
-                    .map(|x| x.map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>()))
-                    .collect::<Vec<_>>()
-            }),
-            source_node_type_ids_to_remove.map(|x| {
-                x.into_iter()
-                    .map(|x| x.map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>()))
-                    .collect::<Vec<_>>()
-            }),
-            source_node_type_id_to_keep.map(|x| {
-                x.into_iter()
-                    .map(|x| x.map(|x| x.into()))
-                    .collect::<Vec<_>>()
-            }),
-            source_node_type_id_to_remove.map(|x| {
-                x.into_iter()
-                    .map(|x| x.map(|x| x.into()))
-                    .collect::<Vec<_>>()
-            }),
-            destination_node_ids_to_keep
-                .map(|x| { x.into_iter().map(|x| { x.into() }).collect::<Vec<_>>() }),
-            destination_node_ids_to_remove
-                .map(|x| { x.into_iter().map(|x| { x.into() }).collect::<Vec<_>>() }),
+            source_node_prefixes_to_keep,
+            source_node_prefixes_to_remove,
+            source_node_type_ids_to_keep,
+            source_node_type_ids_to_remove,
+            source_node_type_id_to_keep,
+            source_node_type_id_to_remove,
+            destination_node_ids_to_keep,
+            destination_node_ids_to_remove,
             destination_node_names_to_keep_from_graph.map(|sg| &sg.inner),
             destination_node_names_to_remove_from_graph.map(|sg| &sg.inner),
-            destination_node_prefixes_to_keep
-                .map(|x| { x.into_iter().map(|x| { x.into() }).collect::<Vec<_>>() }),
-            destination_node_prefixes_to_remove
-                .map(|x| { x.into_iter().map(|x| { x.into() }).collect::<Vec<_>>() }),
-            destination_node_type_ids_to_keep.map(|x| {
-                x.into_iter()
-                    .map(|x| x.map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>()))
-                    .collect::<Vec<_>>()
-            }),
-            destination_node_type_ids_to_remove.map(|x| {
-                x.into_iter()
-                    .map(|x| x.map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>()))
-                    .collect::<Vec<_>>()
-            }),
-            destination_node_type_id_to_keep.map(|x| {
-                x.into_iter()
-                    .map(|x| x.map(|x| x.into()))
-                    .collect::<Vec<_>>()
-            }),
-            destination_node_type_id_to_remove.map(|x| {
-                x.into_iter()
-                    .map(|x| x.map(|x| x.into()))
-                    .collect::<Vec<_>>()
-            }),
-            edge_ids_to_keep.map(|x| { x.into_iter().map(|x| { x.into() }).collect::<Vec<_>>() }),
-            edge_ids_to_remove.map(|x| { x.into_iter().map(|x| { x.into() }).collect::<Vec<_>>() }),
-            edge_node_ids_to_keep.map(|x| {
-                x.into_iter()
-                    .map(|x| {
-                        let temp = x;
-                        (temp.0.into(), temp.1.into())
-                    })
-                    .collect::<Vec<_>>()
-            }),
-            edge_node_ids_to_remove.map(|x| {
-                x.into_iter()
-                    .map(|x| {
-                        let temp = x;
-                        (temp.0.into(), temp.1.into())
-                    })
-                    .collect::<Vec<_>>()
-            }),
-            edge_type_ids_to_keep.map(|x| {
-                x.into_iter()
-                    .map(|x| x.map(|x| x.into()))
-                    .collect::<Vec<_>>()
-            }),
-            edge_type_ids_to_remove.map(|x| {
-                x.into_iter()
-                    .map(|x| x.map(|x| x.into()))
-                    .collect::<Vec<_>>()
-            }),
-            min_edge_weight.map(|x| { x.into() }),
-            max_edge_weight.map(|x| { x.into() }),
-            min_node_degree.map(|x| { x.into() }),
-            max_node_degree.map(|x| { x.into() }),
-            filter_singleton_nodes.map(|x| { x.into() }),
-            filter_singleton_nodes_with_selfloop.map(|x| { x.into() }),
-            filter_selfloops.map(|x| { x.into() }),
-            filter_parallel_edges.map(|x| { x.into() })
+            destination_node_prefixes_to_keep,
+            destination_node_prefixes_to_remove,
+            destination_node_type_ids_to_keep,
+            destination_node_type_ids_to_remove,
+            destination_node_type_id_to_keep,
+            destination_node_type_id_to_remove,
+            edge_ids_to_keep,
+            edge_ids_to_remove,
+            edge_node_ids_to_keep,
+            edge_node_ids_to_remove,
+            edge_type_ids_to_keep,
+            edge_type_ids_to_remove,
+            min_edge_weight,
+            max_edge_weight,
+            min_node_degree,
+            max_node_degree,
+            filter_singleton_nodes,
+            filter_singleton_nodes_with_selfloop,
+            filter_selfloops,
+            filter_parallel_edges
         ))?
         .into())
     }
@@ -9051,40 +8791,40 @@ impl Graph {
     ///
     pub fn filter_from_names(
         &self,
-        node_names_to_keep: Option<Vec<String>>,
-        node_names_to_remove: Option<Vec<String>>,
+        node_names_to_keep: Option<Vec<&str>>,
+        node_names_to_remove: Option<Vec<&str>>,
         node_names_to_keep_from_graph: Option<&Graph>,
         node_names_to_remove_from_graph: Option<&Graph>,
         node_prefixes_to_keep: Option<Vec<String>>,
         node_prefixes_to_remove: Option<Vec<String>>,
-        node_type_names_to_keep: Option<Vec<Option<Vec<String>>>>,
-        node_type_names_to_remove: Option<Vec<Option<Vec<String>>>>,
-        node_type_name_to_keep: Option<Vec<Option<String>>>,
-        node_type_name_to_remove: Option<Vec<Option<String>>>,
-        source_node_names_to_keep: Option<Vec<String>>,
-        source_node_names_to_remove: Option<Vec<String>>,
+        node_type_names_to_keep: Option<Vec<Option<Vec<&str>>>>,
+        node_type_names_to_remove: Option<Vec<Option<Vec<&str>>>>,
+        node_type_name_to_keep: Option<Vec<Option<&str>>>,
+        node_type_name_to_remove: Option<Vec<Option<&str>>>,
+        source_node_names_to_keep: Option<Vec<&str>>,
+        source_node_names_to_remove: Option<Vec<&str>>,
         source_node_names_to_keep_from_graph: Option<&Graph>,
         source_node_names_to_remove_from_graph: Option<&Graph>,
         source_node_prefixes_to_keep: Option<Vec<String>>,
         source_node_prefixes_to_remove: Option<Vec<String>>,
-        source_node_type_names_to_keep: Option<Vec<Option<Vec<String>>>>,
-        source_node_type_names_to_remove: Option<Vec<Option<Vec<String>>>>,
-        source_node_type_name_to_keep: Option<Vec<Option<String>>>,
-        source_node_type_name_to_remove: Option<Vec<Option<String>>>,
-        destination_node_names_to_keep: Option<Vec<String>>,
-        destination_node_names_to_remove: Option<Vec<String>>,
+        source_node_type_names_to_keep: Option<Vec<Option<Vec<&str>>>>,
+        source_node_type_names_to_remove: Option<Vec<Option<Vec<&str>>>>,
+        source_node_type_name_to_keep: Option<Vec<Option<&str>>>,
+        source_node_type_name_to_remove: Option<Vec<Option<&str>>>,
+        destination_node_names_to_keep: Option<Vec<&str>>,
+        destination_node_names_to_remove: Option<Vec<&str>>,
         destination_node_names_to_keep_from_graph: Option<&Graph>,
         destination_node_names_to_remove_from_graph: Option<&Graph>,
         destination_node_prefixes_to_keep: Option<Vec<String>>,
         destination_node_prefixes_to_remove: Option<Vec<String>>,
-        destination_node_type_names_to_keep: Option<Vec<Option<Vec<String>>>>,
-        destination_node_type_names_to_remove: Option<Vec<Option<Vec<String>>>>,
-        destination_node_type_name_to_keep: Option<Vec<Option<String>>>,
-        destination_node_type_name_to_remove: Option<Vec<Option<String>>>,
-        edge_node_names_to_keep: Option<Vec<(String, String)>>,
-        edge_node_names_to_remove: Option<Vec<(String, String)>>,
-        edge_type_names_to_keep: Option<Vec<Option<String>>>,
-        edge_type_names_to_remove: Option<Vec<Option<String>>>,
+        destination_node_type_names_to_keep: Option<Vec<Option<Vec<&str>>>>,
+        destination_node_type_names_to_remove: Option<Vec<Option<Vec<&str>>>>,
+        destination_node_type_name_to_keep: Option<Vec<Option<&str>>>,
+        destination_node_type_name_to_remove: Option<Vec<Option<&str>>>,
+        edge_node_names_to_keep: Option<Vec<(&str, &str)>>,
+        edge_node_names_to_remove: Option<Vec<(&str, &str)>>,
+        edge_type_names_to_keep: Option<Vec<Option<&str>>>,
+        edge_type_names_to_remove: Option<Vec<Option<&str>>>,
         min_edge_weight: Option<WeightT>,
         max_edge_weight: Option<WeightT>,
         min_node_degree: Option<NodeT>,
@@ -9095,138 +8835,54 @@ impl Graph {
         filter_parallel_edges: Option<bool>,
     ) -> PyResult<Graph> {
         Ok(pe!(self.inner.filter_from_names(
-            node_names_to_keep
-                .map(|x| { x.into_iter().map(|x| { x.as_ref() }).collect::<Vec<_>>() }),
-            node_names_to_remove
-                .map(|x| { x.into_iter().map(|x| { x.as_ref() }).collect::<Vec<_>>() }),
+            node_names_to_keep,
+            node_names_to_remove,
             node_names_to_keep_from_graph.map(|sg| &sg.inner),
             node_names_to_remove_from_graph.map(|sg| &sg.inner),
-            node_prefixes_to_keep
-                .map(|x| { x.into_iter().map(|x| { x.into() }).collect::<Vec<_>>() }),
-            node_prefixes_to_remove
-                .map(|x| { x.into_iter().map(|x| { x.into() }).collect::<Vec<_>>() }),
-            node_type_names_to_keep.map(|x| {
-                x.into_iter()
-                    .map(|x| x.map(|x| x.into_iter().map(|x| x.as_ref()).collect::<Vec<_>>()))
-                    .collect::<Vec<_>>()
-            }),
-            node_type_names_to_remove.map(|x| {
-                x.into_iter()
-                    .map(|x| x.map(|x| x.into_iter().map(|x| x.as_ref()).collect::<Vec<_>>()))
-                    .collect::<Vec<_>>()
-            }),
-            node_type_name_to_keep.map(|x| {
-                x.into_iter()
-                    .map(|x| x.map(|x| x.as_ref()))
-                    .collect::<Vec<_>>()
-                    .as_slice()
-            }),
-            node_type_name_to_remove.map(|x| {
-                x.into_iter()
-                    .map(|x| x.map(|x| x.as_ref()))
-                    .collect::<Vec<_>>()
-                    .as_slice()
-            }),
-            source_node_names_to_keep
-                .map(|x| { x.into_iter().map(|x| { x.as_ref() }).collect::<Vec<_>>() }),
-            source_node_names_to_remove
-                .map(|x| { x.into_iter().map(|x| { x.as_ref() }).collect::<Vec<_>>() }),
+            node_prefixes_to_keep,
+            node_prefixes_to_remove,
+            node_type_names_to_keep,
+            node_type_names_to_remove,
+            node_type_name_to_keep.as_ref().map(|x| x.as_slice()),
+            node_type_name_to_remove.as_ref().map(|x| x.as_slice()),
+            source_node_names_to_keep,
+            source_node_names_to_remove,
             source_node_names_to_keep_from_graph.map(|sg| &sg.inner),
             source_node_names_to_remove_from_graph.map(|sg| &sg.inner),
-            source_node_prefixes_to_keep
-                .map(|x| { x.into_iter().map(|x| { x.into() }).collect::<Vec<_>>() }),
-            source_node_prefixes_to_remove
-                .map(|x| { x.into_iter().map(|x| { x.into() }).collect::<Vec<_>>() }),
-            source_node_type_names_to_keep.map(|x| {
-                x.into_iter()
-                    .map(|x| x.map(|x| x.into_iter().map(|x| x.as_ref()).collect::<Vec<_>>()))
-                    .collect::<Vec<_>>()
-            }),
-            source_node_type_names_to_remove.map(|x| {
-                x.into_iter()
-                    .map(|x| x.map(|x| x.into_iter().map(|x| x.as_ref()).collect::<Vec<_>>()))
-                    .collect::<Vec<_>>()
-            }),
-            source_node_type_name_to_keep.map(|x| {
-                x.into_iter()
-                    .map(|x| x.map(|x| x.as_ref()))
-                    .collect::<Vec<_>>()
-                    .as_slice()
-            }),
-            source_node_type_name_to_remove.map(|x| {
-                x.into_iter()
-                    .map(|x| x.map(|x| x.as_ref()))
-                    .collect::<Vec<_>>()
-                    .as_slice()
-            }),
-            destination_node_names_to_keep
-                .map(|x| { x.into_iter().map(|x| { x.as_ref() }).collect::<Vec<_>>() }),
-            destination_node_names_to_remove
-                .map(|x| { x.into_iter().map(|x| { x.as_ref() }).collect::<Vec<_>>() }),
+            source_node_prefixes_to_keep,
+            source_node_prefixes_to_remove,
+            source_node_type_names_to_keep,
+            source_node_type_names_to_remove,
+            source_node_type_name_to_keep.as_ref().map(|x| x.as_slice()),
+            source_node_type_name_to_remove
+                .as_ref()
+                .map(|x| x.as_slice()),
+            destination_node_names_to_keep,
+            destination_node_names_to_remove,
             destination_node_names_to_keep_from_graph.map(|sg| &sg.inner),
             destination_node_names_to_remove_from_graph.map(|sg| &sg.inner),
-            destination_node_prefixes_to_keep
-                .map(|x| { x.into_iter().map(|x| { x.into() }).collect::<Vec<_>>() }),
-            destination_node_prefixes_to_remove
-                .map(|x| { x.into_iter().map(|x| { x.into() }).collect::<Vec<_>>() }),
-            destination_node_type_names_to_keep.map(|x| {
-                x.into_iter()
-                    .map(|x| x.map(|x| x.into_iter().map(|x| x.as_ref()).collect::<Vec<_>>()))
-                    .collect::<Vec<_>>()
-            }),
-            destination_node_type_names_to_remove.map(|x| {
-                x.into_iter()
-                    .map(|x| x.map(|x| x.into_iter().map(|x| x.as_ref()).collect::<Vec<_>>()))
-                    .collect::<Vec<_>>()
-            }),
-            destination_node_type_name_to_keep.map(|x| {
-                x.into_iter()
-                    .map(|x| x.map(|x| x.as_ref()))
-                    .collect::<Vec<_>>()
-                    .as_slice()
-            }),
-            destination_node_type_name_to_remove.map(|x| {
-                x.into_iter()
-                    .map(|x| x.map(|x| x.as_ref()))
-                    .collect::<Vec<_>>()
-                    .as_slice()
-            }),
-            edge_node_names_to_keep.map(|x| {
-                x.into_iter()
-                    .map(|x| {
-                        let temp = x;
-                        (temp.0.as_ref(), temp.1.as_ref())
-                    })
-                    .collect::<Vec<_>>()
-            }),
-            edge_node_names_to_remove.map(|x| {
-                x.into_iter()
-                    .map(|x| {
-                        let temp = x;
-                        (temp.0.as_ref(), temp.1.as_ref())
-                    })
-                    .collect::<Vec<_>>()
-            }),
-            edge_type_names_to_keep.map(|x| {
-                x.into_iter()
-                    .map(|x| x.map(|x| x.as_ref()))
-                    .collect::<Vec<_>>()
-                    .as_slice()
-            }),
-            edge_type_names_to_remove.map(|x| {
-                x.into_iter()
-                    .map(|x| x.map(|x| x.as_ref()))
-                    .collect::<Vec<_>>()
-                    .as_slice()
-            }),
-            min_edge_weight.map(|x| { x.into() }),
-            max_edge_weight.map(|x| { x.into() }),
-            min_node_degree.map(|x| { x.into() }),
-            max_node_degree.map(|x| { x.into() }),
-            filter_singleton_nodes.map(|x| { x.into() }),
-            filter_singleton_nodes_with_selfloop.map(|x| { x.into() }),
-            filter_selfloops.map(|x| { x.into() }),
-            filter_parallel_edges.map(|x| { x.into() })
+            destination_node_prefixes_to_keep,
+            destination_node_prefixes_to_remove,
+            destination_node_type_names_to_keep,
+            destination_node_type_names_to_remove,
+            destination_node_type_name_to_keep
+                .as_ref()
+                .map(|x| x.as_slice()),
+            destination_node_type_name_to_remove
+                .as_ref()
+                .map(|x| x.as_slice()),
+            edge_node_names_to_keep,
+            edge_node_names_to_remove,
+            edge_type_names_to_keep.as_ref().map(|x| x.as_slice()),
+            edge_type_names_to_remove.as_ref().map(|x| x.as_slice()),
+            min_edge_weight,
+            max_edge_weight,
+            min_node_degree,
+            max_node_degree,
+            filter_singleton_nodes,
+            filter_singleton_nodes_with_selfloop,
+            filter_selfloops,
+            filter_parallel_edges
         ))?
         .into())
     }
@@ -9285,7 +8941,7 @@ impl Graph {
     ///
     pub fn remove_isomorphic_nodes(&self, minimum_node_degree: Option<NodeT>) -> Graph {
         self.inner
-            .remove_isomorphic_nodes(minimum_node_degree.map(|x| x.into()))
+            .remove_isomorphic_nodes(minimum_node_degree)
             .into()
     }
 
@@ -9368,29 +9024,19 @@ impl Graph {
     pub fn remove_components(
         &self,
         node_names: Option<Vec<String>>,
-        node_types: Option<Vec<Option<String>>>,
-        edge_types: Option<Vec<Option<String>>>,
+        node_types: Option<Vec<Option<&str>>>,
+        edge_types: Option<Vec<Option<&str>>>,
         minimum_component_size: Option<NodeT>,
         top_k_components: Option<NodeT>,
         verbose: Option<bool>,
     ) -> PyResult<Graph> {
         Ok(pe!(self.inner.remove_components(
-            node_names.map(|x| { x.into_iter().map(|x| { x.into() }).collect::<Vec<_>>() }),
-            node_types.map(|x| {
-                x.into_iter()
-                    .map(|x| x.map(|x| x.as_ref()))
-                    .collect::<Vec<_>>()
-                    .as_slice()
-            }),
-            edge_types.map(|x| {
-                x.into_iter()
-                    .map(|x| x.map(|x| x.as_ref()))
-                    .collect::<Vec<_>>()
-                    .as_slice()
-            }),
-            minimum_component_size.map(|x| { x.into() }),
-            top_k_components.map(|x| { x.into() }),
-            verbose.map(|x| { x.into() })
+            node_names,
+            node_types.as_ref().map(|x| x.as_slice()),
+            edge_types.as_ref().map(|x| x.as_slice()),
+            minimum_component_size,
+            top_k_components,
+            verbose
         ))?
         .into())
     }
@@ -9435,7 +9081,7 @@ impl Graph {
     /// If the given node ID does not exist in the graph the method will panic.
     pub unsafe fn get_unchecked_closeness_centrality_from_node_id(&self, node_id: NodeT) -> f32 {
         self.inner
-            .get_unchecked_closeness_centrality_from_node_id(node_id.into())
+            .get_unchecked_closeness_centrality_from_node_id(node_id.clone())
             .into()
     }
 
@@ -9464,8 +9110,8 @@ impl Graph {
     ) -> f32 {
         self.inner
             .get_unchecked_weighted_closeness_centrality_from_node_id(
-                node_id.into(),
-                use_edge_weights_as_probabilities.into(),
+                node_id.clone(),
+                use_edge_weights_as_probabilities.clone(),
             )
             .into()
     }
@@ -9481,12 +9127,7 @@ impl Graph {
     ///
     pub fn get_closeness_centrality(&self, verbose: Option<bool>) -> Py<PyArray1<f32>> {
         let gil = pyo3::Python::acquire_gil();
-        to_ndarray_1d!(
-            gil,
-            self.inner
-                .get_closeness_centrality(verbose.map(|x| { x.into() })),
-            f32
-        )
+        to_ndarray_1d!(gil, self.inner.get_closeness_centrality(verbose), f32)
     }
 
     #[automatically_generated_binding]
@@ -9520,8 +9161,8 @@ impl Graph {
             to_ndarray_1d!(
                 gil,
                 pe!(self.inner.get_weighted_closeness_centrality(
-                    use_edge_weights_as_probabilities.map(|x| { x.into() }),
-                    verbose.map(|x| { x.into() })
+                    use_edge_weights_as_probabilities,
+                    verbose
                 ))?,
                 f32
             )
@@ -9546,7 +9187,7 @@ impl Graph {
     /// If the given node ID does not exist in the graph the method will panic.
     pub unsafe fn get_unchecked_harmonic_centrality_from_node_id(&self, node_id: NodeT) -> f32 {
         self.inner
-            .get_unchecked_harmonic_centrality_from_node_id(node_id.into())
+            .get_unchecked_harmonic_centrality_from_node_id(node_id.clone())
             .into()
     }
 
@@ -9575,8 +9216,8 @@ impl Graph {
     ) -> f32 {
         self.inner
             .get_unchecked_weighted_harmonic_centrality_from_node_id(
-                node_id.into(),
-                use_edge_weights_as_probabilities.into(),
+                node_id.clone(),
+                use_edge_weights_as_probabilities.clone(),
             )
             .into()
     }
@@ -9592,12 +9233,7 @@ impl Graph {
     ///
     pub fn get_harmonic_centrality(&self, verbose: Option<bool>) -> Py<PyArray1<f32>> {
         let gil = pyo3::Python::acquire_gil();
-        to_ndarray_1d!(
-            gil,
-            self.inner
-                .get_harmonic_centrality(verbose.map(|x| { x.into() })),
-            f32
-        )
+        to_ndarray_1d!(gil, self.inner.get_harmonic_centrality(verbose), f32)
     }
 
     #[automatically_generated_binding]
@@ -9620,10 +9256,9 @@ impl Graph {
             let gil = pyo3::Python::acquire_gil();
             to_ndarray_1d!(
                 gil,
-                pe!(self.inner.get_weighted_harmonic_centrality(
-                    use_edge_weights_as_probabilities.map(|x| { x.into() }),
-                    verbose.map(|x| { x.into() })
-                ))?,
+                pe!(self
+                    .inner
+                    .get_weighted_harmonic_centrality(use_edge_weights_as_probabilities, verbose))?,
                 f32
             )
         })
@@ -9648,10 +9283,7 @@ impl Graph {
         let gil = pyo3::Python::acquire_gil();
         to_ndarray_1d!(
             gil,
-            self.inner.get_stress_centrality(
-                normalize.map(|x| { x.into() }),
-                verbose.map(|x| { x.into() })
-            ),
+            self.inner.get_stress_centrality(normalize, verbose),
             f32
         )
     }
@@ -9679,9 +9311,9 @@ impl Graph {
         to_ndarray_1d!(
             gil,
             self.inner.get_betweenness_centrality(
-                edges_normalization.map(|x| { x.into() }),
-                min_max_normalization.map(|x| { x.into() }),
-                verbose.map(|x| { x.into() })
+                edges_normalization,
+                min_max_normalization,
+                verbose
             ),
             f32
         )
@@ -9718,10 +9350,10 @@ impl Graph {
         Ok(pe!(self
             .inner
             .get_approximated_betweenness_centrality_from_node_id(
-                node_id.into(),
-                ant.map(|x| { x.into() }),
-                maximum_samples_number.map(|x| { x.into() }),
-                random_state.map(|x| { x.into() })
+                node_id.clone(),
+                ant,
+                maximum_samples_number,
+                random_state
             ))?
         .into())
     }
@@ -9749,7 +9381,7 @@ impl Graph {
     ///
     pub fn get_approximated_betweenness_centrality_from_node_name(
         &self,
-        node_name: String,
+        node_name: &str,
         ant: Option<f32>,
         maximum_samples_number: Option<f32>,
         random_state: Option<u64>,
@@ -9757,10 +9389,10 @@ impl Graph {
         Ok(pe!(self
             .inner
             .get_approximated_betweenness_centrality_from_node_name(
-                node_name.as_ref(),
-                ant.map(|x| { x.into() }),
-                maximum_samples_number.map(|x| { x.into() }),
-                random_state.map(|x| { x.into() })
+                node_name,
+                ant,
+                maximum_samples_number,
+                random_state
             ))?
         .into())
     }
@@ -9801,11 +9433,11 @@ impl Graph {
         Ok(pe!(self
             .inner
             .get_weighted_approximated_betweenness_centrality_from_node_id(
-                node_id.into(),
-                ant.map(|x| { x.into() }),
-                use_edge_weights_as_probabilities.map(|x| { x.into() }),
-                maximum_samples_number.map(|x| { x.into() }),
-                random_state.map(|x| { x.into() })
+                node_id.clone(),
+                ant,
+                use_edge_weights_as_probabilities,
+                maximum_samples_number,
+                random_state
             ))?
         .into())
     }
@@ -9837,7 +9469,7 @@ impl Graph {
     ///
     pub fn get_weighted_approximated_betweenness_centrality_from_node_name(
         &self,
-        node_name: String,
+        node_name: &str,
         ant: Option<f32>,
         use_edge_weights_as_probabilities: Option<bool>,
         maximum_samples_number: Option<f32>,
@@ -9846,11 +9478,11 @@ impl Graph {
         Ok(pe!(self
             .inner
             .get_weighted_approximated_betweenness_centrality_from_node_name(
-                node_name.as_ref(),
-                ant.map(|x| { x.into() }),
-                use_edge_weights_as_probabilities.map(|x| { x.into() }),
-                maximum_samples_number.map(|x| { x.into() }),
-                random_state.map(|x| { x.into() })
+                node_name,
+                ant,
+                use_edge_weights_as_probabilities,
+                maximum_samples_number,
+                random_state
             ))?
         .into())
     }
@@ -9875,10 +9507,9 @@ impl Graph {
             let gil = pyo3::Python::acquire_gil();
             to_ndarray_1d!(
                 gil,
-                pe!(self.inner.get_eigenvector_centrality(
-                    maximum_iterations_number.map(|x| { x.into() }),
-                    tollerance.map(|x| { x.into() })
-                ))?,
+                pe!(self
+                    .inner
+                    .get_eigenvector_centrality(maximum_iterations_number, tollerance))?,
                 f32
             )
         })
@@ -9904,10 +9535,9 @@ impl Graph {
             let gil = pyo3::Python::acquire_gil();
             to_ndarray_1d!(
                 gil,
-                pe!(self.inner.get_weighted_eigenvector_centrality(
-                    maximum_iterations_number.map(|x| { x.into() }),
-                    tollerance.map(|x| { x.into() })
-                ))?,
+                pe!(self
+                    .inner
+                    .get_weighted_eigenvector_centrality(maximum_iterations_number, tollerance))?,
                 f32
             )
         })
@@ -9925,10 +9555,9 @@ impl Graph {
         minimum_number_of_nodes_per_circle: Option<NodeT>,
         compute_circle_nodes: Option<bool>,
     ) -> PyResult<Vec<Circle>> {
-        Ok(pe!(self.inner.get_circles(
-            minimum_number_of_nodes_per_circle.map(|x| { x.into() }),
-            compute_circle_nodes.map(|x| { x.into() })
-        ))?
+        Ok(pe!(self
+            .inner
+            .get_circles(minimum_number_of_nodes_per_circle, compute_circle_nodes))?
         .into_iter()
         .map(|x| x.into())
         .collect::<Vec<_>>())
@@ -10044,12 +9673,9 @@ impl Graph {
         node_type_ids_to_remove: Vec<NodeTypeT>,
     ) -> PyResult<()> {
         Ok({
-            pe!(self.inner.remove_inplace_node_type_ids(
-                node_type_ids_to_remove
-                    .into_iter()
-                    .map(|x| { x.into() })
-                    .collect::<Vec<_>>()
-            ))?;
+            pe!(self
+                .inner
+                .remove_inplace_node_type_ids(node_type_ids_to_remove))?;
             ()
         })
     }
@@ -10097,11 +9723,8 @@ impl Graph {
     ) -> PyResult<()> {
         Ok({
             pe!(self.inner.add_node_type_id_from_node_name_prefixes_inplace(
-                node_type_id.into(),
+                node_type_id.clone(),
                 node_name_prefixes
-                    .into_iter()
-                    .map(|x| { x.into() })
-                    .collect::<Vec<_>>()
             ))?;
             ()
         })
@@ -10138,15 +9761,9 @@ impl Graph {
             pe!(self
                 .inner
                 .replace_edge_type_id_from_edge_node_type_ids_inplace(
-                    edge_type_id.into(),
-                    source_node_type_ids
-                        .into_iter()
-                        .map(|x| { x.map(|x| { x.into() }) })
-                        .collect::<Vec<_>>(),
+                    edge_type_id.clone(),
+                    source_node_type_ids,
                     destination_node_type_ids
-                        .into_iter()
-                        .map(|x| { x.map(|x| { x.into() }) })
-                        .collect::<Vec<_>>()
                 ))?;
             ()
         })
@@ -10181,15 +9798,9 @@ impl Graph {
     ) -> PyResult<()> {
         Ok({
             pe!(self.inner.replace_edge_type_id_from_edge_node_type_ids(
-                edge_type_id.into(),
-                source_node_type_ids
-                    .into_iter()
-                    .map(|x| { x.map(|x| { x.into() }) })
-                    .collect::<Vec<_>>(),
+                edge_type_id.clone(),
+                source_node_type_ids,
                 destination_node_type_ids
-                    .into_iter()
-                    .map(|x| { x.map(|x| { x.into() }) })
-                    .collect::<Vec<_>>()
             ))?;
             ()
         })
@@ -10217,13 +9828,9 @@ impl Graph {
         node_type_id: NodeTypeT,
         node_name_prefixes: Vec<String>,
     ) -> PyResult<Graph> {
-        Ok(pe!(self.inner.add_node_type_id_from_node_name_prefixes(
-            node_type_id.into(),
-            node_name_prefixes
-                .into_iter()
-                .map(|x| { x.into() })
-                .collect::<Vec<_>>()
-        ))?
+        Ok(pe!(self
+            .inner
+            .add_node_type_id_from_node_name_prefixes(node_type_id.clone(), node_name_prefixes))?
         .into())
     }
 
@@ -10274,9 +9881,6 @@ impl Graph {
                 .add_node_type_name_from_node_name_prefixes_inplace(
                     node_type_name.into(),
                     node_name_prefixes
-                        .into_iter()
-                        .map(|x| { x.into() })
-                        .collect::<Vec<_>>()
                 ))?;
             ()
         })
@@ -10402,9 +10006,6 @@ impl Graph {
         Ok(pe!(self.inner.add_node_type_name_from_node_name_prefixes(
             node_type_name.into(),
             node_name_prefixes
-                .into_iter()
-                .map(|x| { x.into() })
-                .collect::<Vec<_>>()
         ))?
         .into())
     }
@@ -10452,12 +10053,9 @@ impl Graph {
         edge_type_ids_to_remove: Vec<EdgeTypeT>,
     ) -> PyResult<()> {
         Ok({
-            pe!(self.inner.remove_inplace_edge_type_ids(
-                edge_type_ids_to_remove
-                    .into_iter()
-                    .map(|x| { x.into() })
-                    .collect::<Vec<_>>()
-            ))?;
+            pe!(self
+                .inner
+                .remove_inplace_edge_type_ids(edge_type_ids_to_remove))?;
             ()
         })
     }
@@ -10501,14 +10099,9 @@ impl Graph {
     /// ValueError
     ///     If the given node type name does not exists in the graph.
     ///
-    pub fn remove_inplace_node_type_names(&mut self, node_type_names: Vec<String>) -> PyResult<()> {
+    pub fn remove_inplace_node_type_names(&mut self, node_type_names: Vec<&str>) -> PyResult<()> {
         Ok({
-            pe!(self.inner.remove_inplace_node_type_names(
-                node_type_names
-                    .into_iter()
-                    .map(|x| { x.as_ref() })
-                    .collect::<Vec<_>>()
-            ))?;
+            pe!(self.inner.remove_inplace_node_type_names(node_type_names))?;
             ()
         })
     }
@@ -10533,11 +10126,9 @@ impl Graph {
     /// ValueError
     ///     If the given node type name does not exists in the graph.
     ///
-    pub fn remove_inplace_node_type_name(&mut self, node_type_name: String) -> PyResult<()> {
+    pub fn remove_inplace_node_type_name(&mut self, node_type_name: &str) -> PyResult<()> {
         Ok({
-            pe!(self
-                .inner
-                .remove_inplace_node_type_name(node_type_name.as_ref()))?;
+            pe!(self.inner.remove_inplace_node_type_name(node_type_name))?;
             ()
         })
     }
@@ -10563,7 +10154,7 @@ impl Graph {
     ///     If the given node type ID does not exists in the graph.
     ///
     pub fn remove_node_type_id(&self, node_type_id: NodeTypeT) -> PyResult<Graph> {
-        Ok(pe!(self.inner.remove_node_type_id(node_type_id.into()))?.into())
+        Ok(pe!(self.inner.remove_node_type_id(node_type_id.clone()))?.into())
     }
 
     #[automatically_generated_binding]
@@ -10662,9 +10253,9 @@ impl Graph {
         minimum_number_of_edges: Option<EdgeT>,
     ) -> PyResult<()> {
         Ok({
-            pe!(self.inner.remove_inplace_isomorphic_edge_types(
-                minimum_number_of_edges.map(|x| { x.into() })
-            ))?;
+            pe!(self
+                .inner
+                .remove_inplace_isomorphic_edge_types(minimum_number_of_edges))?;
             ()
         })
     }
@@ -10695,7 +10286,7 @@ impl Graph {
     ) -> PyResult<Graph> {
         Ok(pe!(self
             .inner
-            .remove_isomorphic_edge_types(minimum_number_of_edges.map(|x| { x.into() })))?
+            .remove_isomorphic_edge_types(minimum_number_of_edges))?
         .into())
     }
 
@@ -10719,14 +10310,8 @@ impl Graph {
     /// ValueError
     ///     If the given node type name does not exists in the graph.
     ///
-    pub fn remove_node_type_names(&self, node_type_names: Vec<String>) -> PyResult<Graph> {
-        Ok(pe!(self.inner.remove_node_type_names(
-            node_type_names
-                .into_iter()
-                .map(|x| { x.as_ref() })
-                .collect::<Vec<_>>()
-        ))?
-        .into())
+    pub fn remove_node_type_names(&self, node_type_names: Vec<&str>) -> PyResult<Graph> {
+        Ok(pe!(self.inner.remove_node_type_names(node_type_names))?.into())
     }
 
     #[automatically_generated_binding]
@@ -10749,8 +10334,8 @@ impl Graph {
     /// ValueError
     ///     If the given node type name does not exists in the graph.
     ///
-    pub fn remove_node_type_name(&self, node_type_name: String) -> PyResult<Graph> {
-        Ok(pe!(self.inner.remove_node_type_name(node_type_name.as_ref()))?.into())
+    pub fn remove_node_type_name(&self, node_type_name: &str) -> PyResult<Graph> {
+        Ok(pe!(self.inner.remove_node_type_name(node_type_name))?.into())
     }
 
     #[automatically_generated_binding]
@@ -10773,11 +10358,9 @@ impl Graph {
     /// ValueError
     ///     If the given edge type name does not exists in the graph.
     ///
-    pub fn remove_inplace_edge_type_name(&mut self, edge_type_name: String) -> PyResult<()> {
+    pub fn remove_inplace_edge_type_name(&mut self, edge_type_name: &str) -> PyResult<()> {
         Ok({
-            pe!(self
-                .inner
-                .remove_inplace_edge_type_name(edge_type_name.as_ref()))?;
+            pe!(self.inner.remove_inplace_edge_type_name(edge_type_name))?;
             ()
         })
     }
@@ -10803,7 +10386,7 @@ impl Graph {
     ///     If the given edge type ID does not exists in the graph.
     ///
     pub fn remove_edge_type_id(&self, edge_type_id: EdgeTypeT) -> PyResult<Graph> {
-        Ok(pe!(self.inner.remove_edge_type_id(edge_type_id.into()))?.into())
+        Ok(pe!(self.inner.remove_edge_type_id(edge_type_id.clone()))?.into())
     }
 
     #[automatically_generated_binding]
@@ -10842,8 +10425,8 @@ impl Graph {
     /// ValueError
     ///     If the given edge type name does not exists in the graph.
     ///
-    pub fn remove_edge_type_name(&self, edge_type_name: String) -> PyResult<Graph> {
-        Ok(pe!(self.inner.remove_edge_type_name(edge_type_name.as_ref()))?.into())
+    pub fn remove_edge_type_name(&self, edge_type_name: &str) -> PyResult<Graph> {
+        Ok(pe!(self.inner.remove_edge_type_name(edge_type_name))?.into())
     }
 
     #[automatically_generated_binding]
@@ -10961,7 +10544,7 @@ impl Graph {
     pub fn divide_edge_weights_inplace(&mut self, denominator: WeightT) -> PyResult<()> {
         Ok(pe!(self
             .inner
-            .divide_edge_weights_inplace(denominator.into()))?)
+            .divide_edge_weights_inplace(denominator.clone()))?)
     }
 
     #[automatically_generated_binding]
@@ -10976,7 +10559,7 @@ impl Graph {
     ///     If the graph does not have edge weights.
     ///
     pub fn divide_edge_weights(&self, denominator: WeightT) -> PyResult<Graph> {
-        Ok(pe!(self.inner.divide_edge_weights(denominator.into()))?.into())
+        Ok(pe!(self.inner.divide_edge_weights(denominator.clone()))?.into())
     }
 
     #[automatically_generated_binding]
@@ -11023,7 +10606,7 @@ impl Graph {
     pub fn multiply_edge_weights_inplace(&mut self, denominator: WeightT) -> PyResult<()> {
         Ok(pe!(self
             .inner
-            .multiply_edge_weights_inplace(denominator.into()))?)
+            .multiply_edge_weights_inplace(denominator.clone()))?)
     }
 
     #[automatically_generated_binding]
@@ -11038,7 +10621,7 @@ impl Graph {
     ///     If the graph does not have edge weights.
     ///
     pub fn multiply_edge_weights(&self, denominator: WeightT) -> PyResult<Graph> {
-        Ok(pe!(self.inner.multiply_edge_weights(denominator.into()))?.into())
+        Ok(pe!(self.inner.multiply_edge_weights(denominator.clone()))?.into())
     }
 
     #[automatically_generated_binding]
@@ -11057,7 +10640,7 @@ impl Graph {
     ///     If the given node ID does not exists in the graph.
     ///
     pub fn validate_node_id(&self, node_id: NodeT) -> PyResult<NodeT> {
-        Ok(pe!(self.inner.validate_node_id(node_id.into()))?.into())
+        Ok(pe!(self.inner.validate_node_id(node_id.clone()))?.into())
     }
 
     #[automatically_generated_binding]
@@ -11078,16 +10661,7 @@ impl Graph {
     pub fn validate_node_ids(&self, node_ids: Vec<NodeT>) -> PyResult<Py<PyArray1<NodeT>>> {
         Ok({
             let gil = pyo3::Python::acquire_gil();
-            to_ndarray_1d!(
-                gil,
-                pe!(self.inner.validate_node_ids(
-                    node_ids
-                        .into_iter()
-                        .map(|x| { x.into() })
-                        .collect::<Vec<_>>()
-                ))?,
-                NodeT
-            )
+            to_ndarray_1d!(gil, pe!(self.inner.validate_node_ids(node_ids))?, NodeT)
         })
     }
 
@@ -11107,7 +10681,7 @@ impl Graph {
     ///     If the given edge ID does not exists in the graph.
     ///
     pub fn validate_edge_id(&self, edge_id: EdgeT) -> PyResult<EdgeT> {
-        Ok(pe!(self.inner.validate_edge_id(edge_id.into()))?.into())
+        Ok(pe!(self.inner.validate_edge_id(edge_id.clone()))?.into())
     }
 
     #[automatically_generated_binding]
@@ -11128,16 +10702,7 @@ impl Graph {
     pub fn validate_edge_ids(&self, edge_ids: Vec<EdgeT>) -> PyResult<Py<PyArray1<EdgeT>>> {
         Ok({
             let gil = pyo3::Python::acquire_gil();
-            to_ndarray_1d!(
-                gil,
-                pe!(self.inner.validate_edge_ids(
-                    edge_ids
-                        .into_iter()
-                        .map(|x| { x.into() })
-                        .collect::<Vec<_>>()
-                ))?,
-                EdgeT
-            )
+            to_ndarray_1d!(gil, pe!(self.inner.validate_edge_ids(edge_ids))?, EdgeT)
         })
     }
 
@@ -11190,10 +10755,7 @@ impl Graph {
         &self,
         node_type_id: Option<NodeTypeT>,
     ) -> PyResult<Option<NodeTypeT>> {
-        Ok(pe!(self
-            .inner
-            .validate_node_type_id(node_type_id.map(|x| { x.into() })))?
-        .map(|x| x.into()))
+        Ok(pe!(self.inner.validate_node_type_id(node_type_id))?.map(|x| x.into()))
     }
 
     #[automatically_generated_binding]
@@ -11215,15 +10777,10 @@ impl Graph {
         &self,
         node_type_ids: Vec<Option<NodeTypeT>>,
     ) -> PyResult<Vec<Option<NodeTypeT>>> {
-        Ok(pe!(self.inner.validate_node_type_ids(
-            node_type_ids
-                .into_iter()
-                .map(|x| { x.map(|x| { x.into() }) })
-                .collect::<Vec<_>>()
-        ))?
-        .into_iter()
-        .map(|x| x.map(|x| x.into()))
-        .collect::<Vec<_>>())
+        Ok(pe!(self.inner.validate_node_type_ids(node_type_ids))?
+            .into_iter()
+            .map(|x| x.map(|x| x.into()))
+            .collect::<Vec<_>>())
     }
 
     #[automatically_generated_binding]
@@ -11245,10 +10802,7 @@ impl Graph {
         &self,
         edge_type_id: Option<EdgeTypeT>,
     ) -> PyResult<Option<EdgeTypeT>> {
-        Ok(pe!(self
-            .inner
-            .validate_edge_type_id(edge_type_id.map(|x| { x.into() })))?
-        .map(|x| x.into()))
+        Ok(pe!(self.inner.validate_edge_type_id(edge_type_id))?.map(|x| x.into()))
     }
 
     #[automatically_generated_binding]
@@ -11270,15 +10824,10 @@ impl Graph {
         &self,
         edge_type_ids: Vec<Option<EdgeTypeT>>,
     ) -> PyResult<Vec<Option<EdgeTypeT>>> {
-        Ok(pe!(self.inner.validate_edge_type_ids(
-            edge_type_ids
-                .into_iter()
-                .map(|x| { x.map(|x| { x.into() }) })
-                .collect::<Vec<_>>()
-        ))?
-        .into_iter()
-        .map(|x| x.map(|x| x.into()))
-        .collect::<Vec<_>>())
+        Ok(pe!(self.inner.validate_edge_type_ids(edge_type_ids))?
+            .into_iter()
+            .map(|x| x.map(|x| x.into()))
+            .collect::<Vec<_>>())
     }
 
     #[automatically_generated_binding]
@@ -11449,7 +10998,7 @@ impl Graph {
     ///     The destination node ID.
     ///
     pub fn encode_edge(&self, src: NodeT, dst: NodeT) -> u64 {
-        self.inner.encode_edge(src.into(), dst.into()).into()
+        self.inner.encode_edge(src.clone(), dst.clone()).into()
     }
 
     #[automatically_generated_binding]
@@ -11462,7 +11011,7 @@ impl Graph {
     ///     The edge value to decode.
     ///
     pub fn decode_edge(&self, edge: u64) -> (NodeT, NodeT) {
-        let (subresult_0, subresult_1) = self.inner.decode_edge(edge.into());
+        let (subresult_0, subresult_1) = self.inner.decode_edge(edge.clone());
         (subresult_0.into(), subresult_1.into())
     }
 
@@ -11505,15 +11054,11 @@ impl Graph {
             to_ndarray_2d!(
                 gil,
                 pe!(self.inner.get_bipartite_edges(
-                    removed_existing_edges.map(|x| { x.into() }),
-                    first_nodes_set
-                        .map(|x| { x.into_iter().map(|x| { x.into() }).collect::<HashSet<_>>() }),
-                    second_nodes_set
-                        .map(|x| { x.into_iter().map(|x| { x.into() }).collect::<HashSet<_>>() }),
-                    first_node_types_set
-                        .map(|x| { x.into_iter().map(|x| { x.into() }).collect::<HashSet<_>>() }),
+                    removed_existing_edges,
+                    first_nodes_set,
+                    second_nodes_set,
+                    first_node_types_set,
                     second_node_types_set
-                        .map(|x| { x.into_iter().map(|x| { x.into() }).collect::<HashSet<_>>() })
                 ))?,
                 NodeT
             )
@@ -11548,15 +11093,11 @@ impl Graph {
         second_node_types_set: Option<HashSet<String>>,
     ) -> PyResult<Vec<Vec<String>>> {
         Ok(pe!(self.inner.get_bipartite_edge_names(
-            removed_existing_edges.map(|x| { x.into() }),
-            first_nodes_set
-                .map(|x| { x.into_iter().map(|x| { x.into() }).collect::<HashSet<_>>() }),
-            second_nodes_set
-                .map(|x| { x.into_iter().map(|x| { x.into() }).collect::<HashSet<_>>() }),
-            first_node_types_set
-                .map(|x| { x.into_iter().map(|x| { x.into() }).collect::<HashSet<_>>() }),
+            removed_existing_edges,
+            first_nodes_set,
+            second_nodes_set,
+            first_node_types_set,
             second_node_types_set
-                .map(|x| { x.into_iter().map(|x| { x.into() }).collect::<HashSet<_>>() })
         ))?
         .into_iter()
         .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>())
@@ -11593,11 +11134,9 @@ impl Graph {
                 gil,
                 pe!(self.inner.get_star_edges(
                     central_node.into(),
-                    removed_existing_edges.map(|x| { x.into() }),
-                    star_points_nodes_set
-                        .map(|x| { x.into_iter().map(|x| { x.into() }).collect::<HashSet<_>>() }),
+                    removed_existing_edges,
+                    star_points_nodes_set,
                     star_points_node_types_set
-                        .map(|x| { x.into_iter().map(|x| { x.into() }).collect::<HashSet<_>>() })
                 ))?,
                 NodeT
             )
@@ -11630,11 +11169,9 @@ impl Graph {
     ) -> PyResult<Vec<Vec<String>>> {
         Ok(pe!(self.inner.get_star_edge_names(
             central_node.into(),
-            removed_existing_edges.map(|x| { x.into() }),
-            star_points_nodes_set
-                .map(|x| { x.into_iter().map(|x| { x.into() }).collect::<HashSet<_>>() }),
+            removed_existing_edges,
+            star_points_nodes_set,
             star_points_node_types_set
-                .map(|x| { x.into_iter().map(|x| { x.into() }).collect::<HashSet<_>>() })
         ))?
         .into_iter()
         .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>())
@@ -11672,13 +11209,11 @@ impl Graph {
         to_ndarray_2d!(
             gil,
             self.inner.get_clique_edges(
-                directed.map(|x| { x.into() }),
-                allow_selfloops.map(|x| { x.into() }),
-                removed_existing_edges.map(|x| { x.into() }),
-                allow_node_type_set
-                    .map(|x| { x.into_iter().map(|x| { x.into() }).collect::<HashSet<_>>() }),
+                directed,
+                allow_selfloops,
+                removed_existing_edges,
+                allow_node_type_set,
                 allow_node_set
-                    .map(|x| { x.into_iter().map(|x| { x.into() }).collect::<HashSet<_>>() })
             ),
             NodeT
         )
@@ -11713,12 +11248,11 @@ impl Graph {
     ) -> Vec<Vec<String>> {
         self.inner
             .get_clique_edge_names(
-                directed.map(|x| x.into()),
-                allow_selfloops.map(|x| x.into()),
-                removed_existing_edges.map(|x| x.into()),
-                allow_node_type_set
-                    .map(|x| x.into_iter().map(|x| x.into()).collect::<HashSet<_>>()),
-                allow_node_set.map(|x| x.into_iter().map(|x| x.into()).collect::<HashSet<_>>()),
+                directed,
+                allow_selfloops,
+                removed_existing_edges,
+                allow_node_type_set,
+                allow_node_set,
             )
             .into_iter()
             .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>())
@@ -11789,10 +11323,7 @@ impl Graph {
     ///     Whether to shor the loading bars.
     ///
     pub fn overlap_textual_report(&self, other: &Graph, verbose: Option<bool>) -> PyResult<String> {
-        Ok(pe!(self
-            .inner
-            .overlap_textual_report(&other.inner, verbose.map(|x| { x.into() })))?
-        .into())
+        Ok(pe!(self.inner.overlap_textual_report(&other.inner, verbose))?.into())
     }
 
     #[automatically_generated_binding]
@@ -11807,7 +11338,7 @@ impl Graph {
     ///     Whether to show a loading bar in graph operations.
     ///
     pub fn get_node_report_from_node_id(&self, node_id: NodeT) -> PyResult<String> {
-        Ok(pe!(self.inner.get_node_report_from_node_id(node_id.into()))?.into())
+        Ok(pe!(self.inner.get_node_report_from_node_id(node_id.clone()))?.into())
     }
 
     #[automatically_generated_binding]
@@ -11821,11 +11352,8 @@ impl Graph {
     /// node_name: str
     ///     Whether to show a loading bar in graph operations.
     ///
-    pub fn get_node_report_from_node_name(&self, node_name: String) -> PyResult<String> {
-        Ok(pe!(self
-            .inner
-            .get_node_report_from_node_name(node_name.as_ref()))?
-        .into())
+    pub fn get_node_report_from_node_name(&self, node_name: &str) -> PyResult<String> {
+        Ok(pe!(self.inner.get_node_report_from_node_name(node_name))?.into())
     }
 
     #[automatically_generated_binding]
@@ -11854,9 +11382,8 @@ impl Graph {
         &self,
         verbose: Option<bool>,
     ) -> (NodeT, NodeT, NodeT) {
-        let (subresult_0, subresult_1, subresult_2) = self
-            .inner
-            .get_number_of_connected_components(verbose.map(|x| x.into()));
+        let (subresult_0, subresult_1, subresult_2) =
+            self.inner.get_number_of_connected_components(verbose);
         (subresult_0.into(), subresult_1.into(), subresult_2.into())
     }
 
@@ -12099,7 +11626,7 @@ impl Graph {
     ///
     pub fn get_source_node_ids(&self, directed: bool) -> Py<PyArray1<NodeT>> {
         let gil = pyo3::Python::acquire_gil();
-        to_ndarray_1d!(gil, self.inner.get_source_node_ids(directed.into()), NodeT)
+        to_ndarray_1d!(gil, self.inner.get_source_node_ids(directed.clone()), NodeT)
     }
 
     #[automatically_generated_binding]
@@ -12121,7 +11648,7 @@ impl Graph {
     ///
     pub fn get_source_names(&self, directed: bool) -> Vec<String> {
         self.inner
-            .get_source_names(directed.into())
+            .get_source_names(directed.clone())
             .into_iter()
             .map(|x| x.into())
             .collect::<Vec<_>>()
@@ -12140,7 +11667,7 @@ impl Graph {
         let gil = pyo3::Python::acquire_gil();
         to_ndarray_1d!(
             gil,
-            self.inner.get_destination_node_ids(directed.into()),
+            self.inner.get_destination_node_ids(directed.clone()),
             NodeT
         )
     }
@@ -12164,7 +11691,7 @@ impl Graph {
     ///
     pub fn get_destination_names(&self, directed: bool) -> Vec<String> {
         self.inner
-            .get_destination_names(directed.into())
+            .get_destination_names(directed.clone())
             .into_iter()
             .map(|x| x.into())
             .collect::<Vec<_>>()
@@ -12212,12 +11739,9 @@ impl Graph {
     /// node_name: str
     ///     The node name to query for.
     ///
-    pub unsafe fn get_unchecked_ontology_from_node_name(
-        &self,
-        node_name: String,
-    ) -> Option<String> {
+    pub unsafe fn get_unchecked_ontology_from_node_name(&self, node_name: &str) -> Option<String> {
         self.inner
-            .get_unchecked_ontology_from_node_name(node_name.as_ref())
+            .get_unchecked_ontology_from_node_name(node_name)
             .map(|x| x.into())
     }
 
@@ -12232,7 +11756,7 @@ impl Graph {
     ///
     pub unsafe fn get_unchecked_ontology_from_node_id(&self, node_id: NodeT) -> Option<String> {
         self.inner
-            .get_unchecked_ontology_from_node_id(node_id.into())
+            .get_unchecked_ontology_from_node_id(node_id.clone())
             .map(|x| x.into())
     }
 
@@ -12251,8 +11775,8 @@ impl Graph {
     /// ValueError
     ///     If the provided node name does not exist in the current graph.
     ///
-    pub fn get_ontology_from_node_name(&self, node_name: String) -> PyResult<Option<String>> {
-        Ok(pe!(self.inner.get_ontology_from_node_name(node_name.as_ref()))?.map(|x| x.into()))
+    pub fn get_ontology_from_node_name(&self, node_name: &str) -> PyResult<Option<String>> {
+        Ok(pe!(self.inner.get_ontology_from_node_name(node_name))?.map(|x| x.into()))
     }
 
     #[automatically_generated_binding]
@@ -12271,7 +11795,7 @@ impl Graph {
     ///     If the provided node ID does not exist in the current graph.
     ///
     pub fn get_ontology_from_node_id(&self, node_id: NodeT) -> PyResult<Option<String>> {
-        Ok(pe!(self.inner.get_ontology_from_node_id(node_id.into()))?.map(|x| x.into()))
+        Ok(pe!(self.inner.get_ontology_from_node_id(node_id.clone()))?.map(|x| x.into()))
     }
 
     #[automatically_generated_binding]
@@ -12610,7 +12134,7 @@ impl Graph {
     ///
     pub fn get_edge_node_ids(&self, directed: bool) -> Py<PyArray2<NodeT>> {
         let gil = pyo3::Python::acquire_gil();
-        to_ndarray_2d!(gil, self.inner.get_edge_node_ids(directed.into()), NodeT)
+        to_ndarray_2d!(gil, self.inner.get_edge_node_ids(directed.clone()), NodeT)
     }
 
     #[automatically_generated_binding]
@@ -12648,7 +12172,7 @@ impl Graph {
     ///
     pub fn get_edge_node_names(&self, directed: bool) -> Vec<(String, String)> {
         self.inner
-            .get_edge_node_names(directed.into())
+            .get_edge_node_names(directed.clone())
             .into_iter()
             .map(|x| {
                 let (subresult_0, subresult_1) = x;
@@ -12952,7 +12476,7 @@ impl Graph {
             let gil = pyo3::Python::acquire_gil();
             let body = pe!(self
                 .inner
-                .get_edge_node_ids_with_unknown_edge_types(directed.into()))?;
+                .get_edge_node_ids_with_unknown_edge_types(directed.clone()))?;
             let result_array = ThreadDataRaceAware {
                 t: unsafe { PyArray2::<NodeT>::new(gil.python(), [body.len(), 2], false) },
             };
@@ -12992,7 +12516,7 @@ impl Graph {
             let gil = pyo3::Python::acquire_gil();
             let body = pe!(self
                 .inner
-                .get_edge_node_ids_with_known_edge_types(directed.into()))?;
+                .get_edge_node_ids_with_known_edge_types(directed.clone()))?;
             let result_array = ThreadDataRaceAware {
                 t: unsafe { PyArray2::<NodeT>::new(gil.python(), [body.len(), 2], false) },
             };
@@ -13027,7 +12551,7 @@ impl Graph {
     ) -> PyResult<Vec<(String, String)>> {
         Ok(pe!(self
             .inner
-            .get_edge_node_names_with_unknown_edge_types(directed.into()))?
+            .get_edge_node_names_with_unknown_edge_types(directed.clone()))?
         .into_iter()
         .map(|x| {
             let (subresult_0, subresult_1) = x;
@@ -13057,7 +12581,7 @@ impl Graph {
     ) -> PyResult<Vec<(String, String)>> {
         Ok(pe!(self
             .inner
-            .get_edge_node_names_with_known_edge_types(directed.into()))?
+            .get_edge_node_names_with_known_edge_types(directed.clone()))?
         .into_iter()
         .map(|x| {
             let (subresult_0, subresult_1) = x;
@@ -13189,7 +12713,7 @@ impl Graph {
                 gil,
                 pe!(self
                     .inner
-                    .get_node_ids_from_node_type_id(node_type_id.into()))?,
+                    .get_node_ids_from_node_type_id(node_type_id.clone()))?,
                 NodeT
             )
         })
@@ -13218,12 +12742,7 @@ impl Graph {
             let gil = pyo3::Python::acquire_gil();
             to_ndarray_1d!(
                 gil,
-                pe!(self.inner.get_node_ids_from_node_type_ids(
-                    node_type_ids
-                        .into_iter()
-                        .map(|x| { x.map(|x| { x.into() }) })
-                        .collect::<Vec<_>>()
-                ))?,
+                pe!(self.inner.get_node_ids_from_node_type_ids(node_type_ids))?,
                 NodeT
             )
         })
@@ -13281,7 +12800,7 @@ impl Graph {
     ) -> PyResult<Vec<String>> {
         Ok(pe!(self
             .inner
-            .get_node_names_from_node_type_id(node_type_id.into()))?
+            .get_node_names_from_node_type_id(node_type_id.clone()))?
         .into_iter()
         .map(|x| x.into())
         .collect::<Vec<_>>())
@@ -13304,15 +12823,13 @@ impl Graph {
     ///
     pub fn get_node_ids_from_node_type_name(
         &self,
-        node_type_name: String,
+        node_type_name: &str,
     ) -> PyResult<Py<PyArray1<NodeT>>> {
         Ok({
             let gil = pyo3::Python::acquire_gil();
             to_ndarray_1d!(
                 gil,
-                pe!(self
-                    .inner
-                    .get_node_ids_from_node_type_name(node_type_name.as_ref()))?,
+                pe!(self.inner.get_node_ids_from_node_type_name(node_type_name))?,
                 NodeT
             )
         })
@@ -13335,11 +12852,11 @@ impl Graph {
     ///
     pub fn get_node_names_from_node_type_name(
         &self,
-        node_type_name: String,
+        node_type_name: &str,
     ) -> PyResult<Vec<String>> {
         Ok(pe!(self
             .inner
-            .get_node_names_from_node_type_name(node_type_name.as_ref()))?
+            .get_node_names_from_node_type_name(node_type_name))?
         .into_iter()
         .map(|x| x.into())
         .collect::<Vec<_>>())
@@ -13527,8 +13044,7 @@ impl Graph {
         let gil = pyo3::Python::acquire_gil();
         to_ndarray_1d!(
             gil,
-            self.inner
-                .get_node_connected_component_ids(verbose.map(|x| { x.into() })),
+            self.inner.get_node_connected_component_ids(verbose),
             NodeT
         )
     }
@@ -13706,9 +13222,9 @@ impl Graph {
             let gil = pyo3::Python::acquire_gil();
             to_ndarray_1d!(
                 gil,
-                pe!(self.inner.get_single_label_node_type_ids(
-                    unknown_node_types_value.map(|x| { x.into() })
-                ))?,
+                pe!(self
+                    .inner
+                    .get_single_label_node_type_ids(unknown_node_types_value))?,
                 NodeTypeT
             )
         })
@@ -13746,10 +13262,9 @@ impl Graph {
             let gil = pyo3::Python::acquire_gil();
             to_ndarray_1d!(
                 gil,
-                pe!(self.inner.get_boolean_node_type_ids(
-                    target_value.map(|x| { x.into() }),
-                    unknown_node_types_value.map(|x| { x.into() })
-                ))?,
+                pe!(self
+                    .inner
+                    .get_boolean_node_type_ids(target_value, unknown_node_types_value))?,
                 bool
             )
         })
@@ -13768,7 +13283,7 @@ impl Graph {
                 gil,
                 pe!(self
                     .inner
-                    .get_known_boolean_node_type_ids(target_value.into()))?,
+                    .get_known_boolean_node_type_ids(target_value.clone()))?,
                 bool
             )
         })
@@ -13807,7 +13322,7 @@ impl Graph {
         minimum_node_degree: Option<NodeT>,
     ) -> Vec<Vec<NodeT>> {
         self.inner
-            .get_isomorphic_node_ids_groups(minimum_node_degree.map(|x| x.into()))
+            .get_isomorphic_node_ids_groups(minimum_node_degree)
             .into_iter()
             .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>())
             .collect::<Vec<_>>()
@@ -13827,7 +13342,7 @@ impl Graph {
         minimum_node_degree: Option<NodeT>,
     ) -> Vec<Vec<String>> {
         self.inner
-            .get_isomorphic_node_names_groups(minimum_node_degree.map(|x| x.into()))
+            .get_isomorphic_node_names_groups(minimum_node_degree)
             .into_iter()
             .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>())
             .collect::<Vec<_>>()
@@ -13847,7 +13362,7 @@ impl Graph {
         minimum_node_degree: Option<NodeT>,
     ) -> NodeT {
         self.inner
-            .get_number_of_isomorphic_node_groups(minimum_node_degree.map(|x| x.into()))
+            .get_number_of_isomorphic_node_groups(minimum_node_degree)
             .into()
     }
 
@@ -13929,7 +13444,7 @@ impl Graph {
     ) -> PyResult<Vec<Vec<EdgeTypeT>>> {
         Ok(pe!(self
             .inner
-            .get_isomorphic_edge_type_ids_groups(minimum_number_of_edges.map(|x| { x.into() })))?
+            .get_isomorphic_edge_type_ids_groups(minimum_number_of_edges))?
         .into_iter()
         .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>())
         .collect::<Vec<_>>())
@@ -13950,7 +13465,7 @@ impl Graph {
     ) -> PyResult<Vec<Vec<String>>> {
         Ok(pe!(self
             .inner
-            .get_isomorphic_edge_type_names_groups(minimum_number_of_edges.map(|x| { x.into() })))?
+            .get_isomorphic_edge_type_names_groups(minimum_number_of_edges))?
         .into_iter()
         .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>())
         .collect::<Vec<_>>())
@@ -13969,9 +13484,9 @@ impl Graph {
         &self,
         minimum_number_of_edges: Option<EdgeT>,
     ) -> PyResult<EdgeTypeT> {
-        Ok(pe!(self.inner.get_number_of_isomorphic_edge_type_groups(
-            minimum_number_of_edges.map(|x| { x.into() })
-        ))?
+        Ok(pe!(self
+            .inner
+            .get_number_of_isomorphic_edge_type_groups(minimum_number_of_edges))?
         .into())
     }
 
@@ -13985,9 +13500,7 @@ impl Graph {
     ///     Minimum node degree for the topological synonims.
     ///
     pub fn has_isomorphic_nodes(&self, minimum_node_degree: Option<NodeT>) -> bool {
-        self.inner
-            .has_isomorphic_nodes(minimum_node_degree.map(|x| x.into()))
-            .into()
+        self.inner.has_isomorphic_nodes(minimum_node_degree).into()
     }
 
     #[automatically_generated_binding]
@@ -14036,10 +13549,9 @@ impl Graph {
         minimum_number_of_nodes_per_tendril: Option<NodeT>,
         compute_tendril_nodes: Option<bool>,
     ) -> PyResult<Vec<Tendril>> {
-        Ok(pe!(self.inner.get_tendrils(
-            minimum_number_of_nodes_per_tendril.map(|x| { x.into() }),
-            compute_tendril_nodes.map(|x| { x.into() })
-        ))?
+        Ok(pe!(self
+            .inner
+            .get_tendrils(minimum_number_of_nodes_per_tendril, compute_tendril_nodes))?
         .into_iter()
         .map(|x| x.into())
         .collect::<Vec<_>>())
@@ -14334,13 +13846,8 @@ impl Graph {
                     ))?;
                     build_walk_parameters(kwargs)?
                 },
-                window_size.into(),
-                node_ids_of_interest.map(|x| {
-                    x.into_iter()
-                        .map(|x| x.into())
-                        .collect::<Vec<_>>()
-                        .as_slice()
-                })
+                window_size.clone(),
+                node_ids_of_interest.as_ref().map(|x| x.as_slice())
             ))?
             .into();
             (
@@ -14437,13 +13944,8 @@ impl Graph {
                 ))?;
                 build_walk_parameters(kwargs)?
             },
-            window_size.into(),
-            node_ids_of_interest.map(|x| {
-                x.into_iter()
-                    .map(|x| x.into())
-                    .collect::<Vec<_>>()
-                    .as_slice()
-            })
+            window_size.clone(),
+            node_ids_of_interest.as_ref().map(|x| x.as_slice())
         ))?
         .into())
     }
@@ -14518,13 +14020,8 @@ impl Graph {
                         ))?;
                         build_walk_parameters(kwargs)?
                     },
-                    window_size.into(),
-                    node_ids_of_interest.map(|x| {
-                        x.into_iter()
-                            .map(|x| x.into())
-                            .collect::<Vec<_>>()
-                            .as_slice()
-                    })
+                    window_size.clone(),
+                    node_ids_of_interest.as_ref().map(|x| x.as_slice())
                 ))?
                 .into();
             (
@@ -14621,13 +14118,8 @@ impl Graph {
                 ))?;
                 build_walk_parameters(kwargs)?
             },
-            window_size.into(),
-            node_ids_of_interest.map(|x| {
-                x.into_iter()
-                    .map(|x| x.into())
-                    .collect::<Vec<_>>()
-                    .as_slice()
-            })
+            window_size.clone(),
+            node_ids_of_interest.as_ref().map(|x| x.as_slice())
         ))?
         .into())
     }
@@ -14702,13 +14194,8 @@ impl Graph {
                         ))?;
                         build_walk_parameters(kwargs)?
                     },
-                    window_size.into(),
-                    node_ids_of_interest.map(|x| {
-                        x.into_iter()
-                            .map(|x| x.into())
-                            .collect::<Vec<_>>()
-                            .as_slice()
-                    })
+                    window_size.clone(),
+                    node_ids_of_interest.as_ref().map(|x| x.as_slice())
                 ))?
                 .into();
             (
@@ -14805,13 +14292,8 @@ impl Graph {
                 ))?;
                 build_walk_parameters(kwargs)?
             },
-            window_size.into(),
-            node_ids_of_interest.map(|x| {
-                x.into_iter()
-                    .map(|x| x.into())
-                    .collect::<Vec<_>>()
-                    .as_slice()
-            })
+            window_size.clone(),
+            node_ids_of_interest.as_ref().map(|x| x.as_slice())
         ))?
         .into())
     }
@@ -15005,10 +14487,10 @@ impl Graph {
         random_state: Option<u64>,
     ) -> PyResult<Vec<Vec<usize>>> {
         Ok(pe!(self.inner.get_undirected_louvain_community_detection(
-            recursion_minimum_improvement.map(|x| { x.into() }),
-            first_phase_minimum_improvement.map(|x| { x.into() }),
-            patience.map(|x| { x.into() }),
-            random_state.map(|x| { x.into() })
+            recursion_minimum_improvement,
+            first_phase_minimum_improvement,
+            patience,
+            random_state
         ))?
         .into_iter()
         .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>())
@@ -15208,7 +14690,7 @@ impl Graph {
     ///     Whether to show the loading bar while computing the connected components, if necessary.
     ///
     pub fn is_connected(&self, verbose: Option<bool>) -> bool {
-        self.inner.is_connected(verbose.map(|x| x.into())).into()
+        self.inner.is_connected(verbose).into()
     }
 
     #[automatically_generated_binding]
@@ -15748,96 +15230,96 @@ impl Graph {
         name: Option<String>,
     ) -> PyResult<Graph> {
         Ok(pe!(graph::Graph::from_csv(
-            directed.into(),
-            node_type_path.map(|x| { x.into() }),
-            node_type_list_separator.map(|x| { x.into() }),
-            node_types_column_number.map(|x| { x.into() }),
-            node_types_column.map(|x| { x.into() }),
-            node_types_ids_column_number.map(|x| { x.into() }),
-            node_types_ids_column.map(|x| { x.into() }),
-            node_types_number.map(|x| { x.into() }),
-            numeric_node_type_ids.map(|x| { x.into() }),
-            minimum_node_type_id.map(|x| { x.into() }),
-            node_type_list_header.map(|x| { x.into() }),
-            node_type_list_support_balanced_quotes.map(|x| { x.into() }),
-            node_type_list_rows_to_skip.map(|x| { x.into() }),
-            node_type_list_is_correct.map(|x| { x.into() }),
-            node_type_list_max_rows_number.map(|x| { x.into() }),
-            node_type_list_comment_symbol.map(|x| { x.into() }),
-            load_node_type_list_in_parallel.map(|x| { x.into() }),
-            node_path.map(|x| { x.into() }),
-            node_list_separator.map(|x| { x.into() }),
-            node_list_header.map(|x| { x.into() }),
-            node_list_support_balanced_quotes.map(|x| { x.into() }),
-            node_list_rows_to_skip.map(|x| { x.into() }),
-            node_list_is_correct.map(|x| { x.into() }),
-            node_list_max_rows_number.map(|x| { x.into() }),
-            node_list_comment_symbol.map(|x| { x.into() }),
-            default_node_type.map(|x| { x.into() }),
-            nodes_column_number.map(|x| { x.into() }),
-            nodes_column.map(|x| { x.into() }),
-            node_types_separator.map(|x| { x.into() }),
-            node_list_node_types_column_number.map(|x| { x.into() }),
-            node_list_node_types_column.map(|x| { x.into() }),
-            node_ids_column.map(|x| { x.into() }),
-            node_ids_column_number.map(|x| { x.into() }),
-            nodes_number.map(|x| { x.into() }),
-            minimum_node_id.map(|x| { x.into() }),
-            numeric_node_ids.map(|x| { x.into() }),
-            node_list_numeric_node_type_ids.map(|x| { x.into() }),
-            skip_node_types_if_unavailable.map(|x| { x.into() }),
-            load_node_list_in_parallel.map(|x| { x.into() }),
-            edge_type_path.map(|x| { x.into() }),
-            edge_types_column_number.map(|x| { x.into() }),
-            edge_types_column.map(|x| { x.into() }),
-            edge_types_ids_column_number.map(|x| { x.into() }),
-            edge_types_ids_column.map(|x| { x.into() }),
-            edge_types_number.map(|x| { x.into() }),
-            numeric_edge_type_ids.map(|x| { x.into() }),
-            minimum_edge_type_id.map(|x| { x.into() }),
-            edge_type_list_separator.map(|x| { x.into() }),
-            edge_type_list_header.map(|x| { x.into() }),
-            edge_type_list_support_balanced_quotes.map(|x| { x.into() }),
-            edge_type_list_rows_to_skip.map(|x| { x.into() }),
-            edge_type_list_is_correct.map(|x| { x.into() }),
-            edge_type_list_max_rows_number.map(|x| { x.into() }),
-            edge_type_list_comment_symbol.map(|x| { x.into() }),
-            load_edge_type_list_in_parallel.map(|x| { x.into() }),
-            edge_path.map(|x| { x.into() }),
-            edge_list_separator.map(|x| { x.into() }),
-            edge_list_header.map(|x| { x.into() }),
-            edge_list_support_balanced_quotes.map(|x| { x.into() }),
-            edge_list_rows_to_skip.map(|x| { x.into() }),
-            sources_column_number.map(|x| { x.into() }),
-            sources_column.map(|x| { x.into() }),
-            destinations_column_number.map(|x| { x.into() }),
-            destinations_column.map(|x| { x.into() }),
-            edge_list_edge_types_column_number.map(|x| { x.into() }),
-            edge_list_edge_types_column.map(|x| { x.into() }),
-            default_edge_type.map(|x| { x.into() }),
-            weights_column_number.map(|x| { x.into() }),
-            weights_column.map(|x| { x.into() }),
-            default_weight.map(|x| { x.into() }),
-            edge_ids_column.map(|x| { x.into() }),
-            edge_ids_column_number.map(|x| { x.into() }),
-            edge_list_numeric_edge_type_ids.map(|x| { x.into() }),
-            edge_list_numeric_node_ids.map(|x| { x.into() }),
-            skip_weights_if_unavailable.map(|x| { x.into() }),
-            skip_edge_types_if_unavailable.map(|x| { x.into() }),
-            edge_list_is_complete.map(|x| { x.into() }),
-            edge_list_may_contain_duplicates.map(|x| { x.into() }),
-            edge_list_is_sorted.map(|x| { x.into() }),
-            edge_list_is_correct.map(|x| { x.into() }),
-            edge_list_max_rows_number.map(|x| { x.into() }),
-            edge_list_comment_symbol.map(|x| { x.into() }),
-            edges_number.map(|x| { x.into() }),
-            load_edge_list_in_parallel.map(|x| { x.into() }),
-            remove_chevrons.map(|x| { x.into() }),
-            remove_spaces.map(|x| { x.into() }),
-            verbose.map(|x| { x.into() }),
-            may_have_singletons.map(|x| { x.into() }),
-            may_have_singleton_with_selfloops.map(|x| { x.into() }),
-            name.map(|x| { x.into() })
+            directed.clone(),
+            node_type_path,
+            node_type_list_separator,
+            node_types_column_number,
+            node_types_column,
+            node_types_ids_column_number,
+            node_types_ids_column,
+            node_types_number,
+            numeric_node_type_ids,
+            minimum_node_type_id,
+            node_type_list_header,
+            node_type_list_support_balanced_quotes,
+            node_type_list_rows_to_skip,
+            node_type_list_is_correct,
+            node_type_list_max_rows_number,
+            node_type_list_comment_symbol,
+            load_node_type_list_in_parallel,
+            node_path,
+            node_list_separator,
+            node_list_header,
+            node_list_support_balanced_quotes,
+            node_list_rows_to_skip,
+            node_list_is_correct,
+            node_list_max_rows_number,
+            node_list_comment_symbol,
+            default_node_type,
+            nodes_column_number,
+            nodes_column,
+            node_types_separator,
+            node_list_node_types_column_number,
+            node_list_node_types_column,
+            node_ids_column,
+            node_ids_column_number,
+            nodes_number,
+            minimum_node_id,
+            numeric_node_ids,
+            node_list_numeric_node_type_ids,
+            skip_node_types_if_unavailable,
+            load_node_list_in_parallel,
+            edge_type_path,
+            edge_types_column_number,
+            edge_types_column,
+            edge_types_ids_column_number,
+            edge_types_ids_column,
+            edge_types_number,
+            numeric_edge_type_ids,
+            minimum_edge_type_id,
+            edge_type_list_separator,
+            edge_type_list_header,
+            edge_type_list_support_balanced_quotes,
+            edge_type_list_rows_to_skip,
+            edge_type_list_is_correct,
+            edge_type_list_max_rows_number,
+            edge_type_list_comment_symbol,
+            load_edge_type_list_in_parallel,
+            edge_path,
+            edge_list_separator,
+            edge_list_header,
+            edge_list_support_balanced_quotes,
+            edge_list_rows_to_skip,
+            sources_column_number,
+            sources_column,
+            destinations_column_number,
+            destinations_column,
+            edge_list_edge_types_column_number,
+            edge_list_edge_types_column,
+            default_edge_type,
+            weights_column_number,
+            weights_column,
+            default_weight,
+            edge_ids_column,
+            edge_ids_column_number,
+            edge_list_numeric_edge_type_ids,
+            edge_list_numeric_node_ids,
+            skip_weights_if_unavailable,
+            skip_edge_types_if_unavailable,
+            edge_list_is_complete,
+            edge_list_may_contain_duplicates,
+            edge_list_is_sorted,
+            edge_list_is_correct,
+            edge_list_max_rows_number,
+            edge_list_comment_symbol,
+            edges_number,
+            load_edge_list_in_parallel,
+            remove_chevrons,
+            remove_spaces,
+            verbose,
+            may_have_singletons,
+            may_have_singleton_with_selfloops,
+            name
         ))?
         .into())
     }
@@ -15881,18 +15363,15 @@ impl Graph {
         features: Vec<Vec<f64>>,
         neighbours_number: Option<NodeT>,
         max_degree: Option<NodeT>,
-        distance_name: Option<String>,
+        distance_name: Option<&str>,
         verbose: Option<bool>,
     ) -> PyResult<Graph> {
         Ok(pe!(self.inner.generate_new_edges_from_node_features(
-            features
-                .into_iter()
-                .map(|x| { x.into_iter().map(|x| { x.into() }).collect::<Vec<_>>() })
-                .collect::<Vec<_>>(),
-            neighbours_number.map(|x| { x.into() }),
-            max_degree.map(|x| { x.into() }),
-            distance_name.map(|x| { x.as_ref() }),
-            verbose.map(|x| { x.into() })
+            features,
+            neighbours_number,
+            max_degree,
+            distance_name,
+            verbose
         ))?
         .into())
     }
@@ -15907,7 +15386,7 @@ impl Graph {
     ///     The random state to use to reproduce the sampling.
     ///
     pub fn get_random_node_type(&self, random_state: u64) -> PyResult<NodeTypeT> {
-        Ok(pe!(self.inner.get_random_node_type(random_state.into()))?.into())
+        Ok(pe!(self.inner.get_random_node_type(random_state.clone()))?.into())
     }
 
     #[automatically_generated_binding]
@@ -15920,7 +15399,7 @@ impl Graph {
     ///     The random state to use to reproduce the sampling.
     ///
     pub fn get_random_edge_type(&self, random_state: u64) -> PyResult<EdgeTypeT> {
-        Ok(pe!(self.inner.get_random_edge_type(random_state.into()))?.into())
+        Ok(pe!(self.inner.get_random_edge_type(random_state.clone()))?.into())
     }
 
     #[automatically_generated_binding]
@@ -15941,7 +15420,7 @@ impl Graph {
         random_state: u64,
     ) -> Option<EdgeTypeT> {
         self.inner
-            .get_unchecked_random_scale_free_edge_type(random_state.into())
+            .get_unchecked_random_scale_free_edge_type(random_state.clone())
             .map(|x| x.into())
     }
 
@@ -15966,7 +15445,7 @@ impl Graph {
     ) -> PyResult<Option<EdgeTypeT>> {
         Ok(pe!(self
             .inner
-            .get_random_scale_free_edge_type(random_state.into()))?
+            .get_random_scale_free_edge_type(random_state.clone()))?
         .map(|x| x.into()))
     }
 
@@ -15980,7 +15459,7 @@ impl Graph {
     ///     The random state to use to reproduce the sampling.
     ///
     pub fn get_random_node(&self, random_state: u64) -> NodeT {
-        self.inner.get_random_node(random_state.into()).into()
+        self.inner.get_random_node(random_state.clone()).into()
     }
 
     #[automatically_generated_binding]
@@ -15993,7 +15472,7 @@ impl Graph {
     ///     The random state to use to reproduce the sampling.
     ///
     pub fn get_random_edge_id(&self, random_state: u64) -> EdgeT {
-        self.inner.get_random_edge_id(random_state.into()).into()
+        self.inner.get_random_edge_id(random_state.clone()).into()
     }
 
     #[automatically_generated_binding]
@@ -16007,7 +15486,7 @@ impl Graph {
     ///
     pub fn get_random_outbounds_scale_free_node(&self, random_state: u64) -> NodeT {
         self.inner
-            .get_random_outbounds_scale_free_node(random_state.into())
+            .get_random_outbounds_scale_free_node(random_state.clone())
             .into()
     }
 
@@ -16022,7 +15501,7 @@ impl Graph {
     ///
     pub fn get_random_inbounds_scale_free_node(&self, random_state: u64) -> NodeT {
         self.inner
-            .get_random_inbounds_scale_free_node(random_state.into())
+            .get_random_inbounds_scale_free_node(random_state.clone())
             .into()
     }
 
@@ -16047,8 +15526,8 @@ impl Graph {
             to_ndarray_1d!(
                 gil,
                 pe!(self.inner.get_sorted_unique_random_nodes(
-                    number_of_nodes_to_sample.into(),
-                    random_state.into()
+                    number_of_nodes_to_sample.clone(),
+                    random_state.clone()
                 ))?,
                 NodeT
             )
@@ -16084,8 +15563,8 @@ impl Graph {
             to_ndarray_1d!(
                 gil,
                 pe!(self.inner.get_breadth_first_search_random_nodes(
-                    number_of_nodes_to_sample.into(),
-                    root_node.into()
+                    number_of_nodes_to_sample.clone(),
+                    root_node.clone()
                 ))?,
                 NodeT
             )
@@ -16125,10 +15604,10 @@ impl Graph {
             to_ndarray_1d!(
                 gil,
                 pe!(self.inner.get_uniform_random_walk_random_nodes(
-                    node.into(),
-                    random_state.into(),
-                    walk_length.into(),
-                    unique.map(|x| { x.into() })
+                    node.clone(),
+                    random_state.clone(),
+                    walk_length.clone(),
+                    unique
                 ))?,
                 NodeT
             )
@@ -16175,7 +15654,7 @@ impl Graph {
         &self,
         number_of_nodes_to_sample: NodeT,
         random_state: u64,
-        node_sampling_method: String,
+        node_sampling_method: &str,
         root_node: Option<NodeT>,
         unique: Option<bool>,
     ) -> PyResult<Py<PyArray1<NodeT>>> {
@@ -16184,11 +15663,11 @@ impl Graph {
             to_ndarray_1d!(
                 gil,
                 pe!(self.inner.get_subsampled_nodes(
-                    number_of_nodes_to_sample.into(),
-                    random_state.into(),
-                    node_sampling_method.as_ref(),
-                    root_node.map(|x| { x.into() }),
-                    unique.map(|x| { x.into() })
+                    number_of_nodes_to_sample.clone(),
+                    random_state.clone(),
+                    node_sampling_method,
+                    root_node,
+                    unique
                 ))?,
                 NodeT
             )
@@ -16313,14 +15792,10 @@ impl Graph {
     ///
     pub fn add_selfloops(
         &self,
-        edge_type_name: Option<String>,
+        edge_type_name: Option<&str>,
         weight: Option<WeightT>,
     ) -> PyResult<Graph> {
-        Ok(pe!(self.inner.add_selfloops(
-            edge_type_name.map(|x| { x.as_ref() }),
-            weight.map(|x| { x.into() })
-        ))?
-        .into())
+        Ok(pe!(self.inner.add_selfloops(edge_type_name, weight))?.into())
     }
 
     #[automatically_generated_binding]
@@ -16436,10 +15911,10 @@ impl Graph {
         iterations: Option<NodeT>,
     ) -> PyResult<Graph> {
         Ok(pe!(self.inner.to_structural_similarity_multi_graph(
-            maximal_hop_distance.map(|x| { x.into() }),
-            change_layer_probability.map(|x| { x.into() }),
-            random_walk_length.map(|x| { x.into() }),
-            iterations.map(|x| { x.into() })
+            maximal_hop_distance,
+            change_layer_probability,
+            random_walk_length,
+            iterations
         ))?
         .into())
     }
@@ -16513,28 +15988,22 @@ impl Graph {
         sample_edge_types: Option<bool>,
     ) -> PyResult<Graph> {
         Ok(pe!(self.inner.sample_negative_graph(
-            number_of_negative_samples.into(),
-            random_state.map(|x| { x.into() }),
-            only_from_same_component.map(|x| { x.into() }),
-            sample_only_edges_with_heterogeneous_node_types.map(|x| { x.into() }),
-            minimum_node_degree.map(|x| { x.into() }),
-            maximum_node_degree.map(|x| { x.into() }),
-            source_node_types_names
-                .map(|x| { x.into_iter().map(|x| { x.into() }).collect::<Vec<_>>() }),
-            destination_node_types_names
-                .map(|x| { x.into_iter().map(|x| { x.into() }).collect::<Vec<_>>() }),
-            source_edge_types_names
-                .map(|x| { x.into_iter().map(|x| { x.into() }).collect::<Vec<_>>() }),
-            destination_edge_types_names
-                .map(|x| { x.into_iter().map(|x| { x.into() }).collect::<Vec<_>>() }),
-            source_nodes_prefixes
-                .map(|x| { x.into_iter().map(|x| { x.into() }).collect::<Vec<_>>() }),
-            destination_nodes_prefixes
-                .map(|x| { x.into_iter().map(|x| { x.into() }).collect::<Vec<_>>() }),
+            number_of_negative_samples.clone(),
+            random_state,
+            only_from_same_component,
+            sample_only_edges_with_heterogeneous_node_types,
+            minimum_node_degree,
+            maximum_node_degree,
+            source_node_types_names,
+            destination_node_types_names,
+            source_edge_types_names,
+            destination_edge_types_names,
+            source_nodes_prefixes,
+            destination_nodes_prefixes,
             graph_to_avoid.map(|sg| &sg.inner),
             support.map(|sg| &sg.inner),
-            use_scale_free_distribution.map(|x| { x.into() }),
-            sample_edge_types.map(|x| { x.into() })
+            use_scale_free_distribution,
+            sample_edge_types
         ))?
         .into())
     }
@@ -16591,33 +16060,22 @@ impl Graph {
         destination_edge_types_names: Option<Vec<String>>,
         source_nodes_prefixes: Option<Vec<String>>,
         destination_nodes_prefixes: Option<Vec<String>>,
-        edge_type_names: Option<Vec<Option<String>>>,
+        edge_type_names: Option<Vec<Option<&str>>>,
         support: Option<&Graph>,
     ) -> PyResult<Graph> {
         Ok(pe!(self.inner.sample_positive_graph(
-            number_of_samples.into(),
-            random_state.map(|x| { x.into() }),
-            sample_only_edges_with_heterogeneous_node_types.map(|x| { x.into() }),
-            minimum_node_degree.map(|x| { x.into() }),
-            maximum_node_degree.map(|x| { x.into() }),
-            source_node_types_names
-                .map(|x| { x.into_iter().map(|x| { x.into() }).collect::<Vec<_>>() }),
-            destination_node_types_names
-                .map(|x| { x.into_iter().map(|x| { x.into() }).collect::<Vec<_>>() }),
-            source_edge_types_names
-                .map(|x| { x.into_iter().map(|x| { x.into() }).collect::<Vec<_>>() }),
-            destination_edge_types_names
-                .map(|x| { x.into_iter().map(|x| { x.into() }).collect::<Vec<_>>() }),
-            source_nodes_prefixes
-                .map(|x| { x.into_iter().map(|x| { x.into() }).collect::<Vec<_>>() }),
-            destination_nodes_prefixes
-                .map(|x| { x.into_iter().map(|x| { x.into() }).collect::<Vec<_>>() }),
-            edge_type_names.map(|x| {
-                x.into_iter()
-                    .map(|x| x.map(|x| x.as_ref()))
-                    .collect::<Vec<_>>()
-                    .as_slice()
-            }),
+            number_of_samples.clone(),
+            random_state,
+            sample_only_edges_with_heterogeneous_node_types,
+            minimum_node_degree,
+            maximum_node_degree,
+            source_node_types_names,
+            destination_node_types_names,
+            source_edge_types_names,
+            destination_edge_types_names,
+            source_nodes_prefixes,
+            destination_nodes_prefixes,
+            edge_type_names.as_ref().map(|x| x.as_slice()),
             support.map(|sg| &sg.inner)
         ))?
         .into())
@@ -16671,7 +16129,7 @@ impl Graph {
         &self,
         train_size: f64,
         random_state: Option<EdgeT>,
-        edge_types: Option<Vec<Option<String>>>,
+        edge_types: Option<Vec<Option<&str>>>,
         include_all_edge_types: Option<bool>,
         minimum_node_degree: Option<NodeT>,
         maximum_node_degree: Option<NodeT>,
@@ -16679,18 +16137,13 @@ impl Graph {
     ) -> PyResult<(Graph, Graph)> {
         Ok({
             let (subresult_0, subresult_1) = pe!(self.inner.connected_holdout(
-                train_size.into(),
-                random_state.map(|x| { x.into() }),
-                edge_types.map(|x| {
-                    x.into_iter()
-                        .map(|x| x.map(|x| x.as_ref()))
-                        .collect::<Vec<_>>()
-                        .as_slice()
-                }),
-                include_all_edge_types.map(|x| { x.into() }),
-                minimum_node_degree.map(|x| { x.into() }),
-                maximum_node_degree.map(|x| { x.into() }),
-                verbose.map(|x| { x.into() })
+                train_size.clone(),
+                random_state,
+                edge_types.as_ref().map(|x| x.as_slice()),
+                include_all_edge_types,
+                minimum_node_degree,
+                maximum_node_degree,
+                verbose
             ))?
             .into();
             (subresult_0.into(), subresult_1.into())
@@ -16737,23 +16190,18 @@ impl Graph {
         train_size: f64,
         random_state: Option<EdgeT>,
         include_all_edge_types: Option<bool>,
-        edge_types: Option<Vec<Option<String>>>,
+        edge_types: Option<Vec<Option<&str>>>,
         min_number_overlaps: Option<EdgeT>,
         verbose: Option<bool>,
     ) -> PyResult<(Graph, Graph)> {
         Ok({
             let (subresult_0, subresult_1) = pe!(self.inner.random_holdout(
-                train_size.into(),
-                random_state.map(|x| { x.into() }),
-                include_all_edge_types.map(|x| { x.into() }),
-                edge_types.map(|x| {
-                    x.into_iter()
-                        .map(|x| x.map(|x| x.as_ref()))
-                        .collect::<Vec<_>>()
-                        .as_slice()
-                }),
-                min_number_overlaps.map(|x| { x.into() }),
-                verbose.map(|x| { x.into() })
+                train_size.clone(),
+                random_state,
+                include_all_edge_types,
+                edge_types.as_ref().map(|x| x.as_slice()),
+                min_number_overlaps,
+                verbose
             ))?
             .into();
             (subresult_0.into(), subresult_1.into())
@@ -16791,9 +16239,9 @@ impl Graph {
     ) -> PyResult<(Py<PyArray1<NodeT>>, Py<PyArray1<NodeT>>)> {
         Ok({
             let (subresult_0, subresult_1) = pe!(self.inner.get_node_label_holdout_indices(
-                train_size.into(),
-                use_stratification.map(|x| { x.into() }),
-                random_state.map(|x| { x.into() })
+                train_size.clone(),
+                use_stratification,
+                random_state
             ))?
             .into();
             (
@@ -16843,9 +16291,9 @@ impl Graph {
     )> {
         Ok({
             let (subresult_0, subresult_1) = pe!(self.inner.get_node_label_holdout_labels(
-                train_size.into(),
-                use_stratification.map(|x| { x.into() }),
-                random_state.map(|x| { x.into() })
+                train_size.clone(),
+                use_stratification,
+                random_state
             ))?
             .into();
             (
@@ -16902,9 +16350,9 @@ impl Graph {
     ) -> PyResult<(Graph, Graph)> {
         Ok({
             let (subresult_0, subresult_1) = pe!(self.inner.get_node_label_holdout_graphs(
-                train_size.into(),
-                use_stratification.map(|x| { x.into() }),
-                random_state.map(|x| { x.into() })
+                train_size.clone(),
+                use_stratification,
+                random_state
             ))?
             .into();
             (subresult_0.into(), subresult_1.into())
@@ -16948,9 +16396,9 @@ impl Graph {
     ) -> PyResult<(Graph, Graph)> {
         Ok({
             let (subresult_0, subresult_1) = pe!(self.inner.get_edge_label_holdout_graphs(
-                train_size.into(),
-                use_stratification.map(|x| { x.into() }),
-                random_state.map(|x| { x.into() })
+                train_size.clone(),
+                use_stratification,
+                random_state
             ))?
             .into();
             (subresult_0.into(), subresult_1.into())
@@ -16992,11 +16440,9 @@ impl Graph {
         random_state: Option<usize>,
         verbose: Option<bool>,
     ) -> PyResult<Graph> {
-        Ok(pe!(self.inner.get_random_subgraph(
-            nodes_number.into(),
-            random_state.map(|x| { x.into() }),
-            verbose.map(|x| { x.into() })
-        ))?
+        Ok(pe!(self
+            .inner
+            .get_random_subgraph(nodes_number.clone(), random_state, verbose))?
         .into())
     }
 
@@ -17031,9 +16477,9 @@ impl Graph {
     ) -> PyResult<(Graph, Graph)> {
         Ok({
             let (subresult_0, subresult_1) = pe!(self.inner.get_node_label_random_holdout(
-                train_size.into(),
-                use_stratification.map(|x| { x.into() }),
-                random_state.map(|x| { x.into() })
+                train_size.clone(),
+                use_stratification,
+                random_state
             ))?
             .into();
             (subresult_0.into(), subresult_1.into())
@@ -17074,10 +16520,10 @@ impl Graph {
     ) -> PyResult<(Graph, Graph)> {
         Ok({
             let (subresult_0, subresult_1) = pe!(self.inner.get_node_label_kfold(
-                k.into(),
-                k_index.into(),
-                use_stratification.map(|x| { x.into() }),
-                random_state.map(|x| { x.into() })
+                k.clone(),
+                k_index.clone(),
+                use_stratification,
+                random_state
             ))?
             .into();
             (subresult_0.into(), subresult_1.into())
@@ -17121,9 +16567,9 @@ impl Graph {
     ) -> PyResult<(Graph, Graph)> {
         Ok({
             let (subresult_0, subresult_1) = pe!(self.inner.get_edge_label_random_holdout(
-                train_size.into(),
-                use_stratification.map(|x| { x.into() }),
-                random_state.map(|x| { x.into() })
+                train_size.clone(),
+                use_stratification,
+                random_state
             ))?
             .into();
             (subresult_0.into(), subresult_1.into())
@@ -17170,10 +16616,10 @@ impl Graph {
     ) -> PyResult<(Graph, Graph)> {
         Ok({
             let (subresult_0, subresult_1) = pe!(self.inner.get_edge_label_kfold(
-                k.into(),
-                k_index.into(),
-                use_stratification.map(|x| { x.into() }),
-                random_state.map(|x| { x.into() })
+                k.clone(),
+                k_index.clone(),
+                use_stratification,
+                random_state
             ))?
             .into();
             (subresult_0.into(), subresult_1.into())
@@ -17216,22 +16662,17 @@ impl Graph {
         &self,
         k: usize,
         k_index: usize,
-        edge_types: Option<Vec<Option<String>>>,
+        edge_types: Option<Vec<Option<&str>>>,
         random_state: Option<EdgeT>,
         verbose: Option<bool>,
     ) -> PyResult<(Graph, Graph)> {
         Ok({
             let (subresult_0, subresult_1) = pe!(self.inner.get_edge_prediction_kfold(
-                k.into(),
-                k_index.into(),
-                edge_types.map(|x| {
-                    x.into_iter()
-                        .map(|x| x.map(|x| x.as_ref()))
-                        .collect::<Vec<_>>()
-                        .as_slice()
-                }),
-                random_state.map(|x| { x.into() }),
-                verbose.map(|x| { x.into() })
+                k.clone(),
+                k_index.clone(),
+                edge_types.as_ref().map(|x| x.as_slice()),
+                random_state,
+                verbose
             ))?
             .into();
             (subresult_0.into(), subresult_1.into())
@@ -23297,21 +22738,21 @@ impl ShortestPathsDjkstra {
     #[pyo3(text_signature = "($self, node_id)")]
     ///
     pub fn has_path_to_node_id(&self, node_id: NodeT) -> PyResult<bool> {
-        Ok(pe!(self.inner.has_path_to_node_id(node_id.into()))?.into())
+        Ok(pe!(self.inner.has_path_to_node_id(node_id.clone()))?.into())
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self, node_id)")]
     ///
     pub fn get_distance_from_node_id(&self, node_id: NodeT) -> PyResult<f32> {
-        Ok(pe!(self.inner.get_distance_from_node_id(node_id.into()))?.into())
+        Ok(pe!(self.inner.get_distance_from_node_id(node_id.clone()))?.into())
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self, node_id)")]
     ///
     pub fn get_parent_from_node_id(&self, node_id: NodeT) -> PyResult<Option<NodeT>> {
-        Ok(pe!(self.inner.get_parent_from_node_id(node_id.into()))?.map(|x| x.into()))
+        Ok(pe!(self.inner.get_parent_from_node_id(node_id.clone()))?.map(|x| x.into()))
     }
 
     #[automatically_generated_binding]
@@ -23338,7 +22779,7 @@ impl ShortestPathsDjkstra {
     ) -> PyResult<NodeT> {
         Ok(pe!(self
             .inner
-            .get_point_at_given_distance_on_shortest_path(dst_node_id.into(), distance.into()))?
+            .get_point_at_given_distance_on_shortest_path(dst_node_id.clone(), distance.clone()))?
         .into())
     }
 
@@ -23346,7 +22787,7 @@ impl ShortestPathsDjkstra {
     #[pyo3(text_signature = "($self, dst_node_id)")]
     ///
     pub fn get_median_point(&self, dst_node_id: NodeT) -> PyResult<NodeT> {
-        Ok(pe!(self.inner.get_median_point(dst_node_id.into()))?.into())
+        Ok(pe!(self.inner.get_median_point(dst_node_id.clone()))?.into())
     }
 
     #[automatically_generated_binding]
@@ -23390,7 +22831,7 @@ impl ShortestPathsDjkstra {
     pub fn get_number_of_shortest_paths_from_node_id(&self, node_id: NodeT) -> PyResult<NodeT> {
         Ok(pe!(self
             .inner
-            .get_number_of_shortest_paths_from_node_id(node_id.into()))?
+            .get_number_of_shortest_paths_from_node_id(node_id.clone()))?
         .into())
     }
 
@@ -23419,7 +22860,7 @@ impl ShortestPathsDjkstra {
                 gil,
                 pe!(self
                     .inner
-                    .get_successors_from_node_id(source_node_id.into()))?,
+                    .get_successors_from_node_id(source_node_id.clone()))?,
                 NodeT
             )
         })
@@ -23652,21 +23093,21 @@ impl ShortestPathsResultBFS {
     #[pyo3(text_signature = "($self, node_id)")]
     ///
     pub fn has_path_to_node_id(&self, node_id: NodeT) -> PyResult<bool> {
-        Ok(pe!(self.inner.has_path_to_node_id(node_id.into()))?.into())
+        Ok(pe!(self.inner.has_path_to_node_id(node_id.clone()))?.into())
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self, node_id)")]
     ///
     pub fn get_distance_from_node_id(&self, node_id: NodeT) -> PyResult<NodeT> {
-        Ok(pe!(self.inner.get_distance_from_node_id(node_id.into()))?.into())
+        Ok(pe!(self.inner.get_distance_from_node_id(node_id.clone()))?.into())
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self, node_id)")]
     ///
     pub fn get_parent_from_node_id(&self, node_id: NodeT) -> PyResult<NodeT> {
-        Ok(pe!(self.inner.get_parent_from_node_id(node_id.into()))?.into())
+        Ok(pe!(self.inner.get_parent_from_node_id(node_id.clone()))?.into())
     }
 
     #[automatically_generated_binding]
@@ -23693,7 +23134,7 @@ impl ShortestPathsResultBFS {
     ) -> PyResult<NodeT> {
         Ok(pe!(self
             .inner
-            .get_unchecked_kth_point_on_shortest_path(dst_node_id.into(), k.into()))?
+            .get_unchecked_kth_point_on_shortest_path(dst_node_id.clone(), k.clone()))?
         .into())
     }
 
@@ -23717,7 +23158,7 @@ impl ShortestPathsResultBFS {
     pub fn get_kth_point_on_shortest_path(&self, dst_node_id: NodeT, k: NodeT) -> PyResult<NodeT> {
         Ok(pe!(self
             .inner
-            .get_kth_point_on_shortest_path(dst_node_id.into(), k.into()))?
+            .get_kth_point_on_shortest_path(dst_node_id.clone(), k.clone()))?
         .into())
     }
 
@@ -23725,7 +23166,7 @@ impl ShortestPathsResultBFS {
     #[pyo3(text_signature = "($self, dst_node_id)")]
     ///
     pub fn get_median_point(&self, dst_node_id: NodeT) -> PyResult<NodeT> {
-        Ok(pe!(self.inner.get_median_point(dst_node_id.into()))?.into())
+        Ok(pe!(self.inner.get_median_point(dst_node_id.clone()))?.into())
     }
 
     #[automatically_generated_binding]
@@ -23782,7 +23223,7 @@ impl ShortestPathsResultBFS {
     pub fn get_number_of_shortest_paths_from_node_id(&self, node_id: NodeT) -> PyResult<NodeT> {
         Ok(pe!(self
             .inner
-            .get_number_of_shortest_paths_from_node_id(node_id.into()))?
+            .get_number_of_shortest_paths_from_node_id(node_id.clone()))?
         .into())
     }
 
@@ -23811,7 +23252,7 @@ impl ShortestPathsResultBFS {
                 gil,
                 pe!(self
                     .inner
-                    .get_successors_from_node_id(source_node_id.into()))?,
+                    .get_successors_from_node_id(source_node_id.clone()))?,
                 NodeT
             )
         })
@@ -23842,7 +23283,7 @@ impl ShortestPathsResultBFS {
                 gil,
                 pe!(self
                     .inner
-                    .get_predecessors_from_node_id(source_node_id.into()))?,
+                    .get_predecessors_from_node_id(source_node_id.clone()))?,
                 NodeT
             )
         })
@@ -23872,7 +23313,7 @@ impl ShortestPathsResultBFS {
     ) -> PyResult<f32> {
         Ok(pe!(self
             .inner
-            .get_shared_ancestors_size(first_node_id.into(), second_node_id.into()))?
+            .get_shared_ancestors_size(first_node_id.clone(), second_node_id.clone()))?
         .into())
     }
 
@@ -23900,7 +23341,7 @@ impl ShortestPathsResultBFS {
     ) -> PyResult<f32> {
         Ok(pe!(self
             .inner
-            .get_ancestors_jaccard_index(first_node_id.into(), second_node_id.into()))?
+            .get_ancestors_jaccard_index(first_node_id.clone(), second_node_id.clone()))?
         .into())
     }
 
@@ -24236,7 +23677,7 @@ impl Star {
     ///
     pub fn get_first_k_star_node_ids(&self, k: usize) -> Py<PyArray1<NodeT>> {
         let gil = pyo3::Python::acquire_gil();
-        to_ndarray_1d!(gil, self.inner.get_first_k_star_node_ids(k.into()), NodeT)
+        to_ndarray_1d!(gil, self.inner.get_first_k_star_node_ids(k.clone()), NodeT)
     }
 
     #[automatically_generated_binding]
@@ -24248,7 +23689,7 @@ impl Star {
     ///
     pub fn get_first_k_star_node_names(&self, k: usize) -> Vec<String> {
         self.inner
-            .get_first_k_star_node_names(k.into())
+            .get_first_k_star_node_names(k.clone())
             .into_iter()
             .map(|x| x.into())
             .collect::<Vec<_>>()
@@ -24486,7 +23927,7 @@ impl Tendril {
         let gil = pyo3::Python::acquire_gil();
         to_ndarray_1d!(
             gil,
-            self.inner.get_first_k_tendril_node_ids(k.into()),
+            self.inner.get_first_k_tendril_node_ids(k.clone()),
             NodeT
         )
     }
@@ -24500,7 +23941,7 @@ impl Tendril {
     ///
     pub fn get_first_k_tendril_node_names(&self, k: usize) -> Vec<String> {
         self.inner
-            .get_first_k_tendril_node_names(k.into())
+            .get_first_k_tendril_node_names(k.clone())
             .into_iter()
             .map(|x| x.into())
             .collect::<Vec<_>>()
@@ -24707,8 +24148,8 @@ pub fn register_edge_list_utils(_py: Python, _m: &PyModule) -> PyResult<()> {
 ///     If the original and target paths are identical.
 ///
 pub fn convert_edge_list_to_numeric(
-    original_edge_path: String,
-    target_edge_path: String,
+    original_edge_path: &str,
+    target_edge_path: &str,
     directed: bool,
     original_node_path: Option<String>,
     original_node_list_separator: Option<char>,
@@ -24759,7 +24200,7 @@ pub fn convert_edge_list_to_numeric(
     target_edge_list_edge_types_column_number: Option<usize>,
     target_weights_column: Option<String>,
     target_weights_column_number: Option<usize>,
-    target_node_path: Option<String>,
+    target_node_path: Option<&str>,
     target_node_list_separator: Option<char>,
     target_node_list_header: Option<bool>,
     target_nodes_column: Option<String>,
@@ -24785,81 +24226,81 @@ pub fn convert_edge_list_to_numeric(
 ) -> PyResult<(NodeT, Option<EdgeTypeT>)> {
     Ok({
         let (subresult_0, subresult_1) = pe!(graph::convert_edge_list_to_numeric(
-            original_edge_path.as_ref(),
-            target_edge_path.as_ref(),
-            directed.into(),
-            original_node_path.map(|x| { x.into() }),
-            original_node_list_separator.map(|x| { x.into() }),
-            original_node_list_header.map(|x| { x.into() }),
-            original_node_list_support_balanced_quotes.map(|x| { x.into() }),
-            node_list_rows_to_skip.map(|x| { x.into() }),
-            node_list_is_correct.map(|x| { x.into() }),
-            node_list_max_rows_number.map(|x| { x.into() }),
-            node_list_comment_symbol.map(|x| { x.into() }),
-            original_nodes_column_number.map(|x| { x.into() }),
-            original_nodes_column.map(|x| { x.into() }),
-            nodes_number.map(|x| { x.into() }),
-            original_minimum_node_id.map(|x| { x.into() }),
-            original_numeric_node_ids.map(|x| { x.into() }),
-            original_load_node_list_in_parallel.map(|x| { x.into() }),
-            original_edge_type_path.map(|x| { x.into() }),
-            original_edge_types_column_number.map(|x| { x.into() }),
-            original_edge_types_column.map(|x| { x.into() }),
-            edge_types_number.map(|x| { x.into() }),
-            original_numeric_edge_type_ids.map(|x| { x.into() }),
-            original_minimum_edge_type_id.map(|x| { x.into() }),
-            original_edge_type_list_separator.map(|x| { x.into() }),
-            original_edge_type_list_header.map(|x| { x.into() }),
-            original_edge_type_list_support_balanced_quotes.map(|x| { x.into() }),
-            edge_type_list_rows_to_skip.map(|x| { x.into() }),
-            edge_type_list_is_correct.map(|x| { x.into() }),
-            edge_type_list_max_rows_number.map(|x| { x.into() }),
-            edge_type_list_comment_symbol.map(|x| { x.into() }),
-            load_edge_type_list_in_parallel.map(|x| { x.into() }),
-            original_edge_list_separator.map(|x| { x.into() }),
-            original_edge_list_header.map(|x| { x.into() }),
-            original_edge_list_support_balanced_quotes.map(|x| { x.into() }),
-            original_sources_column_number.map(|x| { x.into() }),
-            original_sources_column.map(|x| { x.into() }),
-            original_destinations_column_number.map(|x| { x.into() }),
-            original_destinations_column.map(|x| { x.into() }),
-            original_edge_list_edge_types_column.map(|x| { x.into() }),
-            original_edge_list_edge_types_column_number.map(|x| { x.into() }),
-            original_weights_column.map(|x| { x.into() }),
-            original_weights_column_number.map(|x| { x.into() }),
-            target_edge_list_separator.map(|x| { x.into() }),
-            target_edge_list_header.map(|x| { x.into() }),
-            target_sources_column.map(|x| { x.into() }),
-            target_sources_column_number.map(|x| { x.into() }),
-            target_destinations_column.map(|x| { x.into() }),
-            target_destinations_column_number.map(|x| { x.into() }),
-            target_edge_list_edge_types_column.map(|x| { x.into() }),
-            target_edge_list_edge_types_column_number.map(|x| { x.into() }),
-            target_weights_column.map(|x| { x.into() }),
-            target_weights_column_number.map(|x| { x.into() }),
-            target_node_path.map(|x| { x.as_ref() }),
-            target_node_list_separator.map(|x| { x.into() }),
-            target_node_list_header.map(|x| { x.into() }),
-            target_nodes_column.map(|x| { x.into() }),
-            target_nodes_column_number.map(|x| { x.into() }),
-            target_edge_type_list_path.map(|x| { x.into() }),
-            target_edge_type_list_separator.map(|x| { x.into() }),
-            target_edge_type_list_header.map(|x| { x.into() }),
-            target_edge_type_list_edge_types_column.map(|x| { x.into() }),
-            target_edge_type_list_edge_types_column_number.map(|x| { x.into() }),
-            remove_chevrons.map(|x| { x.into() }),
-            remove_spaces.map(|x| { x.into() }),
-            comment_symbol.map(|x| { x.into() }),
-            default_edge_type.map(|x| { x.into() }),
-            default_weight.map(|x| { x.into() }),
-            max_rows_number.map(|x| { x.into() }),
-            rows_to_skip.map(|x| { x.into() }),
-            edges_number.map(|x| { x.into() }),
-            skip_edge_types_if_unavailable.map(|x| { x.into() }),
-            skip_weights_if_unavailable.map(|x| { x.into() }),
-            numeric_rows_are_surely_smaller_than_original.map(|x| { x.into() }),
-            verbose.map(|x| { x.into() }),
-            name.map(|x| { x.into() })
+            original_edge_path,
+            target_edge_path,
+            directed.clone(),
+            original_node_path,
+            original_node_list_separator,
+            original_node_list_header,
+            original_node_list_support_balanced_quotes,
+            node_list_rows_to_skip,
+            node_list_is_correct,
+            node_list_max_rows_number,
+            node_list_comment_symbol,
+            original_nodes_column_number,
+            original_nodes_column,
+            nodes_number,
+            original_minimum_node_id,
+            original_numeric_node_ids,
+            original_load_node_list_in_parallel,
+            original_edge_type_path,
+            original_edge_types_column_number,
+            original_edge_types_column,
+            edge_types_number,
+            original_numeric_edge_type_ids,
+            original_minimum_edge_type_id,
+            original_edge_type_list_separator,
+            original_edge_type_list_header,
+            original_edge_type_list_support_balanced_quotes,
+            edge_type_list_rows_to_skip,
+            edge_type_list_is_correct,
+            edge_type_list_max_rows_number,
+            edge_type_list_comment_symbol,
+            load_edge_type_list_in_parallel,
+            original_edge_list_separator,
+            original_edge_list_header,
+            original_edge_list_support_balanced_quotes,
+            original_sources_column_number,
+            original_sources_column,
+            original_destinations_column_number,
+            original_destinations_column,
+            original_edge_list_edge_types_column,
+            original_edge_list_edge_types_column_number,
+            original_weights_column,
+            original_weights_column_number,
+            target_edge_list_separator,
+            target_edge_list_header,
+            target_sources_column,
+            target_sources_column_number,
+            target_destinations_column,
+            target_destinations_column_number,
+            target_edge_list_edge_types_column,
+            target_edge_list_edge_types_column_number,
+            target_weights_column,
+            target_weights_column_number,
+            target_node_path,
+            target_node_list_separator,
+            target_node_list_header,
+            target_nodes_column,
+            target_nodes_column_number,
+            target_edge_type_list_path,
+            target_edge_type_list_separator,
+            target_edge_type_list_header,
+            target_edge_type_list_edge_types_column,
+            target_edge_type_list_edge_types_column_number,
+            remove_chevrons,
+            remove_spaces,
+            comment_symbol,
+            default_edge_type,
+            default_weight,
+            max_rows_number,
+            rows_to_skip,
+            edges_number,
+            skip_edge_types_if_unavailable,
+            skip_weights_if_unavailable,
+            numeric_rows_are_surely_smaller_than_original,
+            verbose,
+            name
         ))?
         .into();
         (subresult_0.into(), subresult_1.map(|x| x.into()))
@@ -24951,8 +24392,8 @@ pub fn convert_edge_list_to_numeric(
 ///     The name of the graph to display in the loading bar.
 ///
 pub fn densify_sparse_numeric_edge_list(
-    original_edge_path: String,
-    target_edge_path: String,
+    original_edge_path: &str,
+    target_edge_path: &str,
     directed: bool,
     maximum_node_id: Option<EdgeT>,
     original_edge_list_separator: Option<char>,
@@ -24988,7 +24429,7 @@ pub fn densify_sparse_numeric_edge_list(
     target_edge_list_edge_types_column_number: Option<usize>,
     target_weights_column: Option<String>,
     target_weights_column_number: Option<usize>,
-    target_node_path: Option<String>,
+    target_node_path: Option<&str>,
     target_node_list_separator: Option<char>,
     target_node_list_header: Option<bool>,
     target_nodes_column: Option<String>,
@@ -25012,64 +24453,64 @@ pub fn densify_sparse_numeric_edge_list(
 ) -> PyResult<(NodeT, Option<EdgeTypeT>)> {
     Ok({
         let (subresult_0, subresult_1) = pe!(graph::densify_sparse_numeric_edge_list(
-            original_edge_path.as_ref(),
-            target_edge_path.as_ref(),
-            directed.into(),
-            maximum_node_id.map(|x| { x.into() }),
-            original_edge_list_separator.map(|x| { x.into() }),
-            original_edge_list_header.map(|x| { x.into() }),
-            original_sources_column.map(|x| { x.into() }),
-            original_sources_column_number.map(|x| { x.into() }),
-            original_destinations_column.map(|x| { x.into() }),
-            original_destinations_column_number.map(|x| { x.into() }),
-            original_edge_list_edge_types_column.map(|x| { x.into() }),
-            original_edge_list_edge_types_column_number.map(|x| { x.into() }),
-            original_weights_column.map(|x| { x.into() }),
-            original_weights_column_number.map(|x| { x.into() }),
-            original_edge_type_path.map(|x| { x.into() }),
-            original_edge_types_column_number.map(|x| { x.into() }),
-            original_edge_types_column.map(|x| { x.into() }),
-            edge_types_number.map(|x| { x.into() }),
-            original_numeric_edge_type_ids.map(|x| { x.into() }),
-            original_minimum_edge_type_id.map(|x| { x.into() }),
-            original_edge_type_list_separator.map(|x| { x.into() }),
-            original_edge_type_list_header.map(|x| { x.into() }),
-            edge_type_list_rows_to_skip.map(|x| { x.into() }),
-            edge_type_list_is_correct.map(|x| { x.into() }),
-            edge_type_list_max_rows_number.map(|x| { x.into() }),
-            edge_type_list_comment_symbol.map(|x| { x.into() }),
-            load_edge_type_list_in_parallel.map(|x| { x.into() }),
-            target_edge_list_separator.map(|x| { x.into() }),
-            target_edge_list_header.map(|x| { x.into() }),
-            target_sources_column.map(|x| { x.into() }),
-            target_sources_column_number.map(|x| { x.into() }),
-            target_destinations_column.map(|x| { x.into() }),
-            target_destinations_column_number.map(|x| { x.into() }),
-            target_edge_list_edge_types_column.map(|x| { x.into() }),
-            target_edge_list_edge_types_column_number.map(|x| { x.into() }),
-            target_weights_column.map(|x| { x.into() }),
-            target_weights_column_number.map(|x| { x.into() }),
-            target_node_path.map(|x| { x.as_ref() }),
-            target_node_list_separator.map(|x| { x.into() }),
-            target_node_list_header.map(|x| { x.into() }),
-            target_nodes_column.map(|x| { x.into() }),
-            target_nodes_column_number.map(|x| { x.into() }),
-            target_edge_type_list_path.map(|x| { x.into() }),
-            target_edge_type_list_separator.map(|x| { x.into() }),
-            target_edge_type_list_header.map(|x| { x.into() }),
-            target_edge_type_list_edge_types_column.map(|x| { x.into() }),
-            target_edge_type_list_edge_types_column_number.map(|x| { x.into() }),
-            comment_symbol.map(|x| { x.into() }),
-            default_edge_type.map(|x| { x.into() }),
-            default_weight.map(|x| { x.into() }),
-            max_rows_number.map(|x| { x.into() }),
-            rows_to_skip.map(|x| { x.into() }),
-            edges_number.map(|x| { x.into() }),
-            skip_edge_types_if_unavailable.map(|x| { x.into() }),
-            skip_weights_if_unavailable.map(|x| { x.into() }),
-            numeric_rows_are_surely_smaller_than_original.map(|x| { x.into() }),
-            verbose.map(|x| { x.into() }),
-            name.map(|x| { x.into() })
+            original_edge_path,
+            target_edge_path,
+            directed.clone(),
+            maximum_node_id,
+            original_edge_list_separator,
+            original_edge_list_header,
+            original_sources_column,
+            original_sources_column_number,
+            original_destinations_column,
+            original_destinations_column_number,
+            original_edge_list_edge_types_column,
+            original_edge_list_edge_types_column_number,
+            original_weights_column,
+            original_weights_column_number,
+            original_edge_type_path,
+            original_edge_types_column_number,
+            original_edge_types_column,
+            edge_types_number,
+            original_numeric_edge_type_ids,
+            original_minimum_edge_type_id,
+            original_edge_type_list_separator,
+            original_edge_type_list_header,
+            edge_type_list_rows_to_skip,
+            edge_type_list_is_correct,
+            edge_type_list_max_rows_number,
+            edge_type_list_comment_symbol,
+            load_edge_type_list_in_parallel,
+            target_edge_list_separator,
+            target_edge_list_header,
+            target_sources_column,
+            target_sources_column_number,
+            target_destinations_column,
+            target_destinations_column_number,
+            target_edge_list_edge_types_column,
+            target_edge_list_edge_types_column_number,
+            target_weights_column,
+            target_weights_column_number,
+            target_node_path,
+            target_node_list_separator,
+            target_node_list_header,
+            target_nodes_column,
+            target_nodes_column_number,
+            target_edge_type_list_path,
+            target_edge_type_list_separator,
+            target_edge_type_list_header,
+            target_edge_type_list_edge_types_column,
+            target_edge_type_list_edge_types_column_number,
+            comment_symbol,
+            default_edge_type,
+            default_weight,
+            max_rows_number,
+            rows_to_skip,
+            edges_number,
+            skip_edge_types_if_unavailable,
+            skip_weights_if_unavailable,
+            numeric_rows_are_surely_smaller_than_original,
+            verbose,
+            name
         ))?
         .into();
         (subresult_0.into(), subresult_1.map(|x| x.into()))
@@ -25233,51 +24674,51 @@ pub fn convert_node_list_node_types_to_numeric(
         let (subresult_0, subresult_1) = pe!(graph::convert_node_list_node_types_to_numeric(
             original_node_path.into(),
             target_node_path.into(),
-            original_node_type_path.map(|x| { x.into() }),
-            original_node_type_list_separator.map(|x| { x.into() }),
-            original_node_types_column_number.map(|x| { x.into() }),
-            original_node_types_column.map(|x| { x.into() }),
-            node_types_number.map(|x| { x.into() }),
-            original_numeric_node_type_ids.map(|x| { x.into() }),
-            original_minimum_node_type_id.map(|x| { x.into() }),
-            original_node_type_list_header.map(|x| { x.into() }),
-            original_node_type_list_support_balanced_quotes.map(|x| { x.into() }),
-            original_node_type_list_rows_to_skip.map(|x| { x.into() }),
-            original_node_type_list_is_correct.map(|x| { x.into() }),
-            original_node_type_list_max_rows_number.map(|x| { x.into() }),
-            original_node_type_list_comment_symbol.map(|x| { x.into() }),
-            original_load_node_type_list_in_parallel.map(|x| { x.into() }),
-            target_node_type_list_path.map(|x| { x.into() }),
-            target_node_type_list_separator.map(|x| { x.into() }),
-            target_node_type_list_header.map(|x| { x.into() }),
-            target_node_type_list_node_types_column.map(|x| { x.into() }),
-            target_node_type_list_node_types_column_number.map(|x| { x.into() }),
-            original_node_list_separator.map(|x| { x.into() }),
-            original_node_list_header.map(|x| { x.into() }),
-            original_node_list_support_balanced_quotes.map(|x| { x.into() }),
-            node_list_rows_to_skip.map(|x| { x.into() }),
-            node_list_max_rows_number.map(|x| { x.into() }),
-            node_list_comment_symbol.map(|x| { x.into() }),
-            default_node_type.map(|x| { x.into() }),
-            original_nodes_column_number.map(|x| { x.into() }),
-            original_nodes_column.map(|x| { x.into() }),
-            original_node_types_separator.map(|x| { x.into() }),
-            original_node_list_node_types_column_number.map(|x| { x.into() }),
-            original_node_list_node_types_column.map(|x| { x.into() }),
-            original_minimum_node_id.map(|x| { x.into() }),
-            original_numeric_node_ids.map(|x| { x.into() }),
-            original_node_list_numeric_node_type_ids.map(|x| { x.into() }),
-            original_skip_node_types_if_unavailable.map(|x| { x.into() }),
-            remove_chevrons.map(|x| { x.into() }),
-            remove_spaces.map(|x| { x.into() }),
-            target_node_list_separator.map(|x| { x.into() }),
-            target_node_list_header.map(|x| { x.into() }),
-            target_nodes_column_number.map(|x| { x.into() }),
-            target_nodes_column.map(|x| { x.into() }),
-            target_node_types_separator.map(|x| { x.into() }),
-            target_node_list_node_types_column_number.map(|x| { x.into() }),
-            target_node_list_node_types_column.map(|x| { x.into() }),
-            nodes_number.map(|x| { x.into() })
+            original_node_type_path,
+            original_node_type_list_separator,
+            original_node_types_column_number,
+            original_node_types_column,
+            node_types_number,
+            original_numeric_node_type_ids,
+            original_minimum_node_type_id,
+            original_node_type_list_header,
+            original_node_type_list_support_balanced_quotes,
+            original_node_type_list_rows_to_skip,
+            original_node_type_list_is_correct,
+            original_node_type_list_max_rows_number,
+            original_node_type_list_comment_symbol,
+            original_load_node_type_list_in_parallel,
+            target_node_type_list_path,
+            target_node_type_list_separator,
+            target_node_type_list_header,
+            target_node_type_list_node_types_column,
+            target_node_type_list_node_types_column_number,
+            original_node_list_separator,
+            original_node_list_header,
+            original_node_list_support_balanced_quotes,
+            node_list_rows_to_skip,
+            node_list_max_rows_number,
+            node_list_comment_symbol,
+            default_node_type,
+            original_nodes_column_number,
+            original_nodes_column,
+            original_node_types_separator,
+            original_node_list_node_types_column_number,
+            original_node_list_node_types_column,
+            original_minimum_node_id,
+            original_numeric_node_ids,
+            original_node_list_numeric_node_type_ids,
+            original_skip_node_types_if_unavailable,
+            remove_chevrons,
+            remove_spaces,
+            target_node_list_separator,
+            target_node_list_header,
+            target_nodes_column_number,
+            target_nodes_column,
+            target_node_types_separator,
+            target_node_list_node_types_column_number,
+            target_node_list_node_types_column,
+            nodes_number
         ))?
         .into();
         (subresult_0.into(), subresult_1.map(|x| x.into()))
@@ -25291,20 +24732,20 @@ pub fn convert_node_list_node_types_to_numeric(
 )]
 /// TODO: write the docstrin
 pub fn parse_wikipedia_graph(
-    source_path: String,
-    edge_path: String,
-    node_path: String,
-    node_type_path: String,
-    edge_type_path: String,
+    source_path: &str,
+    edge_path: &str,
+    node_path: &str,
+    node_type_path: &str,
+    edge_type_path: &str,
     node_list_separator: char,
     node_type_list_separator: char,
     edge_type_list_separator: char,
-    node_types_separator: String,
-    nodes_column: String,
-    node_types_column: String,
-    node_list_node_types_column: String,
-    edge_types_column: String,
-    node_descriptions_column: String,
+    node_types_separator: &str,
+    nodes_column: &str,
+    node_types_column: &str,
+    node_list_node_types_column: &str,
+    edge_types_column: &str,
+    node_descriptions_column: &str,
     edge_list_separator: char,
     directed: bool,
     sort_temporary_directory: Option<String>,
@@ -25317,29 +24758,29 @@ pub fn parse_wikipedia_graph(
 ) -> PyResult<(NodeTypeT, NodeT, EdgeT)> {
     Ok({
         let (subresult_0, subresult_1, subresult_2) = pe!(graph::parse_wikipedia_graph(
-            source_path.as_ref(),
-            edge_path.as_ref(),
-            node_path.as_ref(),
-            node_type_path.as_ref(),
-            edge_type_path.as_ref(),
-            node_list_separator.into(),
-            node_type_list_separator.into(),
-            edge_type_list_separator.into(),
-            node_types_separator.as_ref(),
-            nodes_column.as_ref(),
-            node_types_column.as_ref(),
-            node_list_node_types_column.as_ref(),
-            edge_types_column.as_ref(),
-            node_descriptions_column.as_ref(),
-            edge_list_separator.into(),
-            directed.into(),
-            sort_temporary_directory.map(|x| { x.into() }),
-            compute_node_description.map(|x| { x.into() }),
-            keep_nodes_without_descriptions.map(|x| { x.into() }),
-            keep_nodes_without_categories.map(|x| { x.into() }),
-            keep_interwikipedia_nodes.map(|x| { x.into() }),
-            keep_external_nodes.map(|x| { x.into() }),
-            verbose.map(|x| { x.into() })
+            source_path,
+            edge_path,
+            node_path,
+            node_type_path,
+            edge_type_path,
+            node_list_separator.clone(),
+            node_type_list_separator.clone(),
+            edge_type_list_separator.clone(),
+            node_types_separator,
+            nodes_column,
+            node_types_column,
+            node_list_node_types_column,
+            edge_types_column,
+            node_descriptions_column,
+            edge_list_separator.clone(),
+            directed.clone(),
+            sort_temporary_directory,
+            compute_node_description,
+            keep_nodes_without_descriptions,
+            keep_nodes_without_categories,
+            keep_interwikipedia_nodes,
+            keep_external_nodes,
+            verbose
         ))?
         .into();
         (subresult_0.into(), subresult_1.into(), subresult_2.into())
@@ -25457,102 +24898,102 @@ pub fn build_optimal_lists_files(
             pe!(graph::build_optimal_lists_files(
                 original_edge_path.into(),
                 target_edge_path.into(),
-                directed.into(),
-                original_node_type_path.map(|x| { x.into() }),
-                original_node_type_list_separator.map(|x| { x.into() }),
-                original_node_types_column_number.map(|x| { x.into() }),
-                original_node_types_column.map(|x| { x.into() }),
-                original_numeric_node_type_ids.map(|x| { x.into() }),
-                original_minimum_node_type_id.map(|x| { x.into() }),
-                original_node_type_list_header.map(|x| { x.into() }),
-                original_node_type_list_support_balanced_quotes.map(|x| { x.into() }),
-                original_node_type_list_rows_to_skip.map(|x| { x.into() }),
-                original_node_type_list_max_rows_number.map(|x| { x.into() }),
-                original_node_type_list_comment_symbol.map(|x| { x.into() }),
-                original_load_node_type_list_in_parallel.map(|x| { x.into() }),
-                original_node_type_list_is_correct.map(|x| { x.into() }),
-                node_types_number.map(|x| { x.into() }),
-                target_node_type_list_path.map(|x| { x.into() }),
-                target_node_type_list_separator.map(|x| { x.into() }),
-                target_node_type_list_node_types_column_number.map(|x| { x.into() }),
-                target_node_type_list_node_types_column.map(|x| { x.into() }),
-                target_node_type_list_header.map(|x| { x.into() }),
-                original_node_path.map(|x| { x.into() }),
-                original_node_list_separator.map(|x| { x.into() }),
-                original_node_list_header.map(|x| { x.into() }),
-                original_node_list_support_balanced_quotes.map(|x| { x.into() }),
-                node_list_rows_to_skip.map(|x| { x.into() }),
-                node_list_is_correct.map(|x| { x.into() }),
-                node_list_max_rows_number.map(|x| { x.into() }),
-                node_list_comment_symbol.map(|x| { x.into() }),
-                default_node_type.map(|x| { x.into() }),
-                original_nodes_column_number.map(|x| { x.into() }),
-                original_nodes_column.map(|x| { x.into() }),
-                original_node_types_separator.map(|x| { x.into() }),
-                original_node_list_node_types_column_number.map(|x| { x.into() }),
-                original_node_list_node_types_column.map(|x| { x.into() }),
-                nodes_number.map(|x| { x.into() }),
-                original_minimum_node_id.map(|x| { x.into() }),
-                original_numeric_node_ids.map(|x| { x.into() }),
-                original_node_list_numeric_node_type_ids.map(|x| { x.into() }),
-                original_skip_node_types_if_unavailable.map(|x| { x.into() }),
-                original_load_node_list_in_parallel.map(|x| { x.into() }),
-                maximum_node_id.map(|x| { x.into() }),
-                target_node_path.map(|x| { x.into() }),
-                target_node_list_separator.map(|x| { x.into() }),
-                target_node_list_header.map(|x| { x.into() }),
-                target_nodes_column.map(|x| { x.into() }),
-                target_nodes_column_number.map(|x| { x.into() }),
-                target_node_types_separator.map(|x| { x.into() }),
-                target_node_list_node_types_column.map(|x| { x.into() }),
-                target_node_list_node_types_column_number.map(|x| { x.into() }),
-                original_edge_type_path.map(|x| { x.into() }),
-                original_edge_type_list_separator.map(|x| { x.into() }),
-                original_edge_types_column_number.map(|x| { x.into() }),
-                original_edge_types_column.map(|x| { x.into() }),
-                original_numeric_edge_type_ids.map(|x| { x.into() }),
-                original_minimum_edge_type_id.map(|x| { x.into() }),
-                original_edge_type_list_header.map(|x| { x.into() }),
-                original_edge_type_list_support_balanced_quotes.map(|x| { x.into() }),
-                edge_type_list_rows_to_skip.map(|x| { x.into() }),
-                edge_type_list_max_rows_number.map(|x| { x.into() }),
-                edge_type_list_comment_symbol.map(|x| { x.into() }),
-                load_edge_type_list_in_parallel.map(|x| { x.into() }),
-                edge_type_list_is_correct.map(|x| { x.into() }),
-                edge_types_number.map(|x| { x.into() }),
-                target_edge_type_list_path.map(|x| { x.into() }),
-                target_edge_type_list_separator.map(|x| { x.into() }),
-                target_edge_type_list_edge_types_column_number.map(|x| { x.into() }),
-                target_edge_type_list_edge_types_column.map(|x| { x.into() }),
-                target_edge_type_list_header.map(|x| { x.into() }),
-                original_edge_list_separator.map(|x| { x.into() }),
-                original_edge_list_header.map(|x| { x.into() }),
-                original_edge_list_support_balanced_quotes.map(|x| { x.into() }),
-                original_sources_column_number.map(|x| { x.into() }),
-                original_sources_column.map(|x| { x.into() }),
-                original_destinations_column_number.map(|x| { x.into() }),
-                original_destinations_column.map(|x| { x.into() }),
-                original_edge_list_edge_types_column_number.map(|x| { x.into() }),
-                original_edge_list_edge_types_column.map(|x| { x.into() }),
-                default_edge_type.map(|x| { x.into() }),
-                original_weights_column_number.map(|x| { x.into() }),
-                original_weights_column.map(|x| { x.into() }),
-                default_weight.map(|x| { x.into() }),
-                original_edge_list_numeric_node_ids.map(|x| { x.into() }),
-                skip_weights_if_unavailable.map(|x| { x.into() }),
-                skip_edge_types_if_unavailable.map(|x| { x.into() }),
-                edge_list_comment_symbol.map(|x| { x.into() }),
-                edge_list_max_rows_number.map(|x| { x.into() }),
-                edge_list_rows_to_skip.map(|x| { x.into() }),
-                load_edge_list_in_parallel.map(|x| { x.into() }),
-                edges_number.map(|x| { x.into() }),
-                target_edge_list_separator.map(|x| { x.into() }),
-                remove_chevrons.map(|x| { x.into() }),
-                remove_spaces.map(|x| { x.into() }),
-                numeric_rows_are_surely_smaller_than_original.map(|x| { x.into() }),
-                sort_temporary_directory.map(|x| { x.into() }),
-                verbose.map(|x| { x.into() }),
-                name.map(|x| { x.into() })
+                directed.clone(),
+                original_node_type_path,
+                original_node_type_list_separator,
+                original_node_types_column_number,
+                original_node_types_column,
+                original_numeric_node_type_ids,
+                original_minimum_node_type_id,
+                original_node_type_list_header,
+                original_node_type_list_support_balanced_quotes,
+                original_node_type_list_rows_to_skip,
+                original_node_type_list_max_rows_number,
+                original_node_type_list_comment_symbol,
+                original_load_node_type_list_in_parallel,
+                original_node_type_list_is_correct,
+                node_types_number,
+                target_node_type_list_path,
+                target_node_type_list_separator,
+                target_node_type_list_node_types_column_number,
+                target_node_type_list_node_types_column,
+                target_node_type_list_header,
+                original_node_path,
+                original_node_list_separator,
+                original_node_list_header,
+                original_node_list_support_balanced_quotes,
+                node_list_rows_to_skip,
+                node_list_is_correct,
+                node_list_max_rows_number,
+                node_list_comment_symbol,
+                default_node_type,
+                original_nodes_column_number,
+                original_nodes_column,
+                original_node_types_separator,
+                original_node_list_node_types_column_number,
+                original_node_list_node_types_column,
+                nodes_number,
+                original_minimum_node_id,
+                original_numeric_node_ids,
+                original_node_list_numeric_node_type_ids,
+                original_skip_node_types_if_unavailable,
+                original_load_node_list_in_parallel,
+                maximum_node_id,
+                target_node_path,
+                target_node_list_separator,
+                target_node_list_header,
+                target_nodes_column,
+                target_nodes_column_number,
+                target_node_types_separator,
+                target_node_list_node_types_column,
+                target_node_list_node_types_column_number,
+                original_edge_type_path,
+                original_edge_type_list_separator,
+                original_edge_types_column_number,
+                original_edge_types_column,
+                original_numeric_edge_type_ids,
+                original_minimum_edge_type_id,
+                original_edge_type_list_header,
+                original_edge_type_list_support_balanced_quotes,
+                edge_type_list_rows_to_skip,
+                edge_type_list_max_rows_number,
+                edge_type_list_comment_symbol,
+                load_edge_type_list_in_parallel,
+                edge_type_list_is_correct,
+                edge_types_number,
+                target_edge_type_list_path,
+                target_edge_type_list_separator,
+                target_edge_type_list_edge_types_column_number,
+                target_edge_type_list_edge_types_column,
+                target_edge_type_list_header,
+                original_edge_list_separator,
+                original_edge_list_header,
+                original_edge_list_support_balanced_quotes,
+                original_sources_column_number,
+                original_sources_column,
+                original_destinations_column_number,
+                original_destinations_column,
+                original_edge_list_edge_types_column_number,
+                original_edge_list_edge_types_column,
+                default_edge_type,
+                original_weights_column_number,
+                original_weights_column,
+                default_weight,
+                original_edge_list_numeric_node_ids,
+                skip_weights_if_unavailable,
+                skip_edge_types_if_unavailable,
+                edge_list_comment_symbol,
+                edge_list_max_rows_number,
+                edge_list_rows_to_skip,
+                load_edge_list_in_parallel,
+                edges_number,
+                target_edge_list_separator,
+                remove_chevrons,
+                remove_spaces,
+                numeric_rows_are_surely_smaller_than_original,
+                sort_temporary_directory,
+                verbose,
+                name
             ))?
             .into();
         (
@@ -25649,8 +25090,8 @@ pub fn build_optimal_lists_files(
 ///     If the original and target paths are identical.
 ///
 pub fn convert_directed_edge_list_to_undirected(
-    original_edge_path: String,
-    target_edge_path: String,
+    original_edge_path: &str,
+    target_edge_path: &str,
     original_edge_list_separator: Option<char>,
     original_edge_list_header: Option<bool>,
     original_edge_list_support_balanced_quotes: Option<bool>,
@@ -25684,39 +25125,39 @@ pub fn convert_directed_edge_list_to_undirected(
     name: Option<String>,
 ) -> PyResult<EdgeT> {
     Ok(pe!(graph::convert_directed_edge_list_to_undirected(
-        original_edge_path.as_ref(),
-        target_edge_path.as_ref(),
-        original_edge_list_separator.map(|x| { x.into() }),
-        original_edge_list_header.map(|x| { x.into() }),
-        original_edge_list_support_balanced_quotes.map(|x| { x.into() }),
-        original_sources_column.map(|x| { x.into() }),
-        original_sources_column_number.map(|x| { x.into() }),
-        original_destinations_column.map(|x| { x.into() }),
-        original_destinations_column_number.map(|x| { x.into() }),
-        original_edge_list_edge_type_column.map(|x| { x.into() }),
-        original_edge_list_edge_type_column_number.map(|x| { x.into() }),
-        original_weights_column.map(|x| { x.into() }),
-        original_weights_column_number.map(|x| { x.into() }),
-        target_edge_list_separator.map(|x| { x.into() }),
-        target_edge_list_header.map(|x| { x.into() }),
-        target_sources_column_number.map(|x| { x.into() }),
-        target_sources_column.map(|x| { x.into() }),
-        target_destinations_column_number.map(|x| { x.into() }),
-        target_destinations_column.map(|x| { x.into() }),
-        target_edge_list_edge_type_column.map(|x| { x.into() }),
-        target_edge_list_edge_type_column_number.map(|x| { x.into() }),
-        target_weights_column.map(|x| { x.into() }),
-        target_weights_column_number.map(|x| { x.into() }),
-        comment_symbol.map(|x| { x.into() }),
-        default_edge_type.map(|x| { x.into() }),
-        default_weight.map(|x| { x.into() }),
-        max_rows_number.map(|x| { x.into() }),
-        rows_to_skip.map(|x| { x.into() }),
-        edges_number.map(|x| { x.into() }),
-        skip_edge_types_if_unavailable.map(|x| { x.into() }),
-        skip_weights_if_unavailable.map(|x| { x.into() }),
-        verbose.map(|x| { x.into() }),
-        name.map(|x| { x.into() })
+        original_edge_path,
+        target_edge_path,
+        original_edge_list_separator,
+        original_edge_list_header,
+        original_edge_list_support_balanced_quotes,
+        original_sources_column,
+        original_sources_column_number,
+        original_destinations_column,
+        original_destinations_column_number,
+        original_edge_list_edge_type_column,
+        original_edge_list_edge_type_column_number,
+        original_weights_column,
+        original_weights_column_number,
+        target_edge_list_separator,
+        target_edge_list_header,
+        target_sources_column_number,
+        target_sources_column,
+        target_destinations_column_number,
+        target_destinations_column,
+        target_edge_list_edge_type_column,
+        target_edge_list_edge_type_column_number,
+        target_weights_column,
+        target_weights_column_number,
+        comment_symbol,
+        default_edge_type,
+        default_weight,
+        max_rows_number,
+        rows_to_skip,
+        edges_number,
+        skip_edge_types_if_unavailable,
+        skip_weights_if_unavailable,
+        verbose,
+        name
     ))?
     .into())
 }
@@ -25776,7 +25217,7 @@ pub fn convert_directed_edge_list_to_undirected(
 ///     The name of the graph to display in the loading bar.
 ///
 pub fn has_duplicated_edges_in_edge_list(
-    edge_path: String,
+    edge_path: &str,
     edge_list_separator: Option<char>,
     edge_list_header: Option<bool>,
     edge_list_support_balanced_quotes: Option<bool>,
@@ -25800,28 +25241,28 @@ pub fn has_duplicated_edges_in_edge_list(
     name: Option<String>,
 ) -> PyResult<bool> {
     Ok(pe!(graph::has_duplicated_edges_in_edge_list(
-        edge_path.as_ref(),
-        edge_list_separator.map(|x| { x.into() }),
-        edge_list_header.map(|x| { x.into() }),
-        edge_list_support_balanced_quotes.map(|x| { x.into() }),
-        edge_list_sources_column.map(|x| { x.into() }),
-        edge_list_sources_column_number.map(|x| { x.into() }),
-        edge_list_destinations_column.map(|x| { x.into() }),
-        edge_list_destinations_column_number.map(|x| { x.into() }),
-        edge_list_edge_type_column.map(|x| { x.into() }),
-        edge_list_edge_type_column_number.map(|x| { x.into() }),
-        edge_list_weights_column.map(|x| { x.into() }),
-        edge_list_weights_column_number.map(|x| { x.into() }),
-        comment_symbol.map(|x| { x.into() }),
-        default_edge_type.map(|x| { x.into() }),
-        default_weight.map(|x| { x.into() }),
-        max_rows_number.map(|x| { x.into() }),
-        rows_to_skip.map(|x| { x.into() }),
-        edges_number.map(|x| { x.into() }),
-        skip_edge_types_if_unavailable.map(|x| { x.into() }),
-        skip_weights_if_unavailable.map(|x| { x.into() }),
-        verbose.map(|x| { x.into() }),
-        name.map(|x| { x.into() })
+        edge_path,
+        edge_list_separator,
+        edge_list_header,
+        edge_list_support_balanced_quotes,
+        edge_list_sources_column,
+        edge_list_sources_column_number,
+        edge_list_destinations_column,
+        edge_list_destinations_column_number,
+        edge_list_edge_type_column,
+        edge_list_edge_type_column_number,
+        edge_list_weights_column,
+        edge_list_weights_column_number,
+        comment_symbol,
+        default_edge_type,
+        default_weight,
+        max_rows_number,
+        rows_to_skip,
+        edges_number,
+        skip_edge_types_if_unavailable,
+        skip_weights_if_unavailable,
+        verbose,
+        name
     ))?
     .into())
 }
@@ -25871,8 +25312,8 @@ pub fn has_duplicated_edges_in_edge_list(
 ///     If the original and target paths are identical.
 ///
 pub fn add_numeric_id_to_csv(
-    original_csv_path: String,
-    target_csv_path: String,
+    original_csv_path: &str,
+    target_csv_path: &str,
     original_csv_separator: Option<char>,
     original_csv_header: Option<bool>,
     target_csv_separator: Option<char>,
@@ -25887,20 +25328,20 @@ pub fn add_numeric_id_to_csv(
     verbose: Option<bool>,
 ) -> PyResult<usize> {
     Ok(pe!(graph::add_numeric_id_to_csv(
-        original_csv_path.as_ref(),
-        target_csv_path.as_ref(),
-        original_csv_separator.map(|x| { x.into() }),
-        original_csv_header.map(|x| { x.into() }),
-        target_csv_separator.map(|x| { x.into() }),
-        target_csv_header.map(|x| { x.into() }),
-        target_csv_ids_column.map(|x| { x.into() }),
-        target_csv_ids_column_number.map(|x| { x.into() }),
-        comment_symbol.map(|x| { x.into() }),
-        support_balanced_quotes.map(|x| { x.into() }),
-        max_rows_number.map(|x| { x.into() }),
-        rows_to_skip.map(|x| { x.into() }),
-        lines_number.map(|x| { x.into() }),
-        verbose.map(|x| { x.into() })
+        original_csv_path,
+        target_csv_path,
+        original_csv_separator,
+        original_csv_header,
+        target_csv_separator,
+        target_csv_header,
+        target_csv_ids_column,
+        target_csv_ids_column_number,
+        comment_symbol,
+        support_balanced_quotes,
+        max_rows_number,
+        rows_to_skip,
+        lines_number,
+        verbose
     ))?
     .into())
 }
@@ -25946,7 +25387,7 @@ pub fn add_numeric_id_to_csv(
 ///     The name of the graph to display in the loading bar.
 ///
 pub fn are_there_selfloops_in_edge_list(
-    path: String,
+    path: &str,
     separator: Option<char>,
     header: Option<bool>,
     sources_column: Option<String>,
@@ -25963,21 +25404,21 @@ pub fn are_there_selfloops_in_edge_list(
     name: Option<String>,
 ) -> PyResult<bool> {
     Ok(pe!(graph::are_there_selfloops_in_edge_list(
-        path.as_ref(),
-        separator.map(|x| { x.into() }),
-        header.map(|x| { x.into() }),
-        sources_column.map(|x| { x.into() }),
-        sources_column_number.map(|x| { x.into() }),
-        destinations_column.map(|x| { x.into() }),
-        destinations_column_number.map(|x| { x.into() }),
-        comment_symbol.map(|x| { x.into() }),
-        support_balanced_quotes.map(|x| { x.into() }),
-        max_rows_number.map(|x| { x.into() }),
-        rows_to_skip.map(|x| { x.into() }),
-        edges_number.map(|x| { x.into() }),
-        load_edge_list_in_parallel.map(|x| { x.into() }),
-        verbose.map(|x| { x.into() }),
-        name.map(|x| { x.into() })
+        path,
+        separator,
+        header,
+        sources_column,
+        sources_column_number,
+        destinations_column,
+        destinations_column_number,
+        comment_symbol,
+        support_balanced_quotes,
+        max_rows_number,
+        rows_to_skip,
+        edges_number,
+        load_edge_list_in_parallel,
+        verbose,
+        name
     ))?
     .into())
 }
@@ -26059,8 +25500,8 @@ pub fn are_there_selfloops_in_edge_list(
 ///     The name of the graph to display in the loading bar.
 ///
 pub fn filter_duplicates_from_edge_list(
-    original_edge_path: String,
-    target_edge_path: String,
+    original_edge_path: &str,
+    target_edge_path: &str,
     original_edge_list_separator: Option<char>,
     original_edge_list_header: Option<bool>,
     original_edge_list_support_balanced_quotes: Option<bool>,
@@ -26094,39 +25535,39 @@ pub fn filter_duplicates_from_edge_list(
     name: Option<String>,
 ) -> PyResult<()> {
     Ok(pe!(graph::filter_duplicates_from_edge_list(
-        original_edge_path.as_ref(),
-        target_edge_path.as_ref(),
-        original_edge_list_separator.map(|x| { x.into() }),
-        original_edge_list_header.map(|x| { x.into() }),
-        original_edge_list_support_balanced_quotes.map(|x| { x.into() }),
-        original_edge_list_sources_column.map(|x| { x.into() }),
-        original_edge_list_sources_column_number.map(|x| { x.into() }),
-        original_edge_list_destinations_column.map(|x| { x.into() }),
-        original_edge_list_destinations_column_number.map(|x| { x.into() }),
-        original_edge_list_edge_type_column.map(|x| { x.into() }),
-        original_edge_list_edge_type_column_number.map(|x| { x.into() }),
-        original_edge_list_weights_column.map(|x| { x.into() }),
-        original_edge_list_weights_column_number.map(|x| { x.into() }),
-        target_edge_list_separator.map(|x| { x.into() }),
-        target_edge_list_header.map(|x| { x.into() }),
-        target_edge_list_sources_column_number.map(|x| { x.into() }),
-        target_edge_list_sources_column.map(|x| { x.into() }),
-        target_edge_list_destinations_column_number.map(|x| { x.into() }),
-        target_edge_list_destinations_column.map(|x| { x.into() }),
-        target_edge_list_edge_type_column.map(|x| { x.into() }),
-        target_edge_list_edge_type_column_number.map(|x| { x.into() }),
-        target_edge_list_weights_column.map(|x| { x.into() }),
-        target_edge_list_weights_column_number.map(|x| { x.into() }),
-        comment_symbol.map(|x| { x.into() }),
-        default_edge_type.map(|x| { x.into() }),
-        default_weight.map(|x| { x.into() }),
-        max_rows_number.map(|x| { x.into() }),
-        rows_to_skip.map(|x| { x.into() }),
-        edges_number.map(|x| { x.into() }),
-        skip_edge_types_if_unavailable.map(|x| { x.into() }),
-        skip_weights_if_unavailable.map(|x| { x.into() }),
-        verbose.map(|x| { x.into() }),
-        name.map(|x| { x.into() })
+        original_edge_path,
+        target_edge_path,
+        original_edge_list_separator,
+        original_edge_list_header,
+        original_edge_list_support_balanced_quotes,
+        original_edge_list_sources_column,
+        original_edge_list_sources_column_number,
+        original_edge_list_destinations_column,
+        original_edge_list_destinations_column_number,
+        original_edge_list_edge_type_column,
+        original_edge_list_edge_type_column_number,
+        original_edge_list_weights_column,
+        original_edge_list_weights_column_number,
+        target_edge_list_separator,
+        target_edge_list_header,
+        target_edge_list_sources_column_number,
+        target_edge_list_sources_column,
+        target_edge_list_destinations_column_number,
+        target_edge_list_destinations_column,
+        target_edge_list_edge_type_column,
+        target_edge_list_edge_type_column_number,
+        target_edge_list_weights_column,
+        target_edge_list_weights_column_number,
+        comment_symbol,
+        default_edge_type,
+        default_weight,
+        max_rows_number,
+        rows_to_skip,
+        edges_number,
+        skip_edge_types_if_unavailable,
+        skip_weights_if_unavailable,
+        verbose,
+        name
     ))?)
 }
 
@@ -26207,8 +25648,8 @@ pub fn filter_duplicates_from_edge_list(
 ///     The name of the graph to display in the loading bar.
 ///
 pub fn convert_undirected_edge_list_to_directed(
-    original_edge_path: String,
-    target_edge_path: String,
+    original_edge_path: &str,
+    target_edge_path: &str,
     original_edge_list_separator: Option<char>,
     original_edge_list_header: Option<bool>,
     original_edge_list_support_balanced_quotes: Option<bool>,
@@ -26242,39 +25683,39 @@ pub fn convert_undirected_edge_list_to_directed(
     name: Option<String>,
 ) -> PyResult<EdgeT> {
     Ok(pe!(graph::convert_undirected_edge_list_to_directed(
-        original_edge_path.as_ref(),
-        target_edge_path.as_ref(),
-        original_edge_list_separator.map(|x| { x.into() }),
-        original_edge_list_header.map(|x| { x.into() }),
-        original_edge_list_support_balanced_quotes.map(|x| { x.into() }),
-        original_sources_column.map(|x| { x.into() }),
-        original_sources_column_number.map(|x| { x.into() }),
-        original_destinations_column.map(|x| { x.into() }),
-        original_destinations_column_number.map(|x| { x.into() }),
-        original_edge_list_edge_type_column.map(|x| { x.into() }),
-        original_edge_list_edge_type_column_number.map(|x| { x.into() }),
-        original_weights_column.map(|x| { x.into() }),
-        original_weights_column_number.map(|x| { x.into() }),
-        target_edge_list_separator.map(|x| { x.into() }),
-        target_edge_list_header.map(|x| { x.into() }),
-        target_sources_column.map(|x| { x.into() }),
-        target_sources_column_number.map(|x| { x.into() }),
-        target_destinations_column.map(|x| { x.into() }),
-        target_destinations_column_number.map(|x| { x.into() }),
-        target_edge_list_edge_type_column.map(|x| { x.into() }),
-        target_edge_list_edge_type_column_number.map(|x| { x.into() }),
-        target_weights_column.map(|x| { x.into() }),
-        target_weights_column_number.map(|x| { x.into() }),
-        comment_symbol.map(|x| { x.into() }),
-        default_edge_type.map(|x| { x.into() }),
-        default_weight.map(|x| { x.into() }),
-        max_rows_number.map(|x| { x.into() }),
-        rows_to_skip.map(|x| { x.into() }),
-        edges_number.map(|x| { x.into() }),
-        skip_edge_types_if_unavailable.map(|x| { x.into() }),
-        skip_weights_if_unavailable.map(|x| { x.into() }),
-        verbose.map(|x| { x.into() }),
-        name.map(|x| { x.into() })
+        original_edge_path,
+        target_edge_path,
+        original_edge_list_separator,
+        original_edge_list_header,
+        original_edge_list_support_balanced_quotes,
+        original_sources_column,
+        original_sources_column_number,
+        original_destinations_column,
+        original_destinations_column_number,
+        original_edge_list_edge_type_column,
+        original_edge_list_edge_type_column_number,
+        original_weights_column,
+        original_weights_column_number,
+        target_edge_list_separator,
+        target_edge_list_header,
+        target_sources_column,
+        target_sources_column_number,
+        target_destinations_column,
+        target_destinations_column_number,
+        target_edge_list_edge_type_column,
+        target_edge_list_edge_type_column_number,
+        target_weights_column,
+        target_weights_column_number,
+        comment_symbol,
+        default_edge_type,
+        default_weight,
+        max_rows_number,
+        rows_to_skip,
+        edges_number,
+        skip_edge_types_if_unavailable,
+        skip_weights_if_unavailable,
+        verbose,
+        name
     ))?
     .into())
 }
@@ -26320,7 +25761,7 @@ pub fn convert_undirected_edge_list_to_directed(
 ///     The name of the graph to display in the loading bar.
 ///
 pub fn get_number_of_selfloops_from_edge_list(
-    path: String,
+    path: &str,
     separator: Option<char>,
     header: Option<bool>,
     support_balanced_quotes: Option<bool>,
@@ -26337,21 +25778,21 @@ pub fn get_number_of_selfloops_from_edge_list(
     name: Option<String>,
 ) -> PyResult<EdgeT> {
     Ok(pe!(graph::get_number_of_selfloops_from_edge_list(
-        path.as_ref(),
-        separator.map(|x| { x.into() }),
-        header.map(|x| { x.into() }),
-        support_balanced_quotes.map(|x| { x.into() }),
-        sources_column.map(|x| { x.into() }),
-        sources_column_number.map(|x| { x.into() }),
-        destinations_column.map(|x| { x.into() }),
-        destinations_column_number.map(|x| { x.into() }),
-        comment_symbol.map(|x| { x.into() }),
-        max_rows_number.map(|x| { x.into() }),
-        rows_to_skip.map(|x| { x.into() }),
-        edges_number.map(|x| { x.into() }),
-        load_edge_list_in_parallel.map(|x| { x.into() }),
-        verbose.map(|x| { x.into() }),
-        name.map(|x| { x.into() })
+        path,
+        separator,
+        header,
+        support_balanced_quotes,
+        sources_column,
+        sources_column_number,
+        destinations_column,
+        destinations_column_number,
+        comment_symbol,
+        max_rows_number,
+        rows_to_skip,
+        edges_number,
+        load_edge_list_in_parallel,
+        verbose,
+        name
     ))?
     .into())
 }
@@ -26401,7 +25842,7 @@ pub fn get_number_of_selfloops_from_edge_list(
 ///     The name of the graph to display in the loading bar.
 ///
 pub fn is_numeric_edge_list(
-    path: String,
+    path: &str,
     separator: Option<char>,
     header: Option<bool>,
     support_balanced_quotes: Option<bool>,
@@ -26420,23 +25861,23 @@ pub fn is_numeric_edge_list(
     name: Option<String>,
 ) -> PyResult<bool> {
     Ok(pe!(graph::is_numeric_edge_list(
-        path.as_ref(),
-        separator.map(|x| { x.into() }),
-        header.map(|x| { x.into() }),
-        support_balanced_quotes.map(|x| { x.into() }),
-        sources_column.map(|x| { x.into() }),
-        sources_column_number.map(|x| { x.into() }),
-        destinations_column.map(|x| { x.into() }),
-        destinations_column_number.map(|x| { x.into() }),
-        comment_symbol.map(|x| { x.into() }),
-        max_rows_number.map(|x| { x.into() }),
-        rows_to_skip.map(|x| { x.into() }),
-        edges_number.map(|x| { x.into() }),
-        load_edge_list_in_parallel.map(|x| { x.into() }),
-        remove_chevrons.map(|x| { x.into() }),
-        remove_spaces.map(|x| { x.into() }),
-        verbose.map(|x| { x.into() }),
-        name.map(|x| { x.into() })
+        path,
+        separator,
+        header,
+        support_balanced_quotes,
+        sources_column,
+        sources_column_number,
+        destinations_column,
+        destinations_column_number,
+        comment_symbol,
+        max_rows_number,
+        rows_to_skip,
+        edges_number,
+        load_edge_list_in_parallel,
+        remove_chevrons,
+        remove_spaces,
+        verbose,
+        name
     ))?
     .into())
 }
@@ -26494,7 +25935,7 @@ pub fn is_numeric_edge_list(
 ///     If the edge list is empty.
 ///
 pub fn get_minmax_node_from_numeric_edge_list(
-    path: String,
+    path: &str,
     separator: Option<char>,
     header: Option<bool>,
     sources_column: Option<String>,
@@ -26514,22 +25955,22 @@ pub fn get_minmax_node_from_numeric_edge_list(
     Ok({
         let (subresult_0, subresult_1, subresult_2) =
             pe!(graph::get_minmax_node_from_numeric_edge_list(
-                path.as_ref(),
-                separator.map(|x| { x.into() }),
-                header.map(|x| { x.into() }),
-                sources_column.map(|x| { x.into() }),
-                sources_column_number.map(|x| { x.into() }),
-                destinations_column.map(|x| { x.into() }),
-                destinations_column_number.map(|x| { x.into() }),
-                comment_symbol.map(|x| { x.into() }),
-                max_rows_number.map(|x| { x.into() }),
-                rows_to_skip.map(|x| { x.into() }),
-                edges_number.map(|x| { x.into() }),
-                load_edge_list_in_parallel.map(|x| { x.into() }),
-                remove_chevrons.map(|x| { x.into() }),
-                remove_spaces.map(|x| { x.into() }),
-                verbose.map(|x| { x.into() }),
-                name.map(|x| { x.into() })
+                path,
+                separator,
+                header,
+                sources_column,
+                sources_column_number,
+                destinations_column,
+                destinations_column_number,
+                comment_symbol,
+                max_rows_number,
+                rows_to_skip,
+                edges_number,
+                load_edge_list_in_parallel,
+                remove_chevrons,
+                remove_spaces,
+                verbose,
+                name
             ))?
             .into();
         (subresult_0.into(), subresult_1.into(), subresult_2.into())
@@ -26573,8 +26014,8 @@ pub fn get_minmax_node_from_numeric_edge_list(
 ///     Where to store the temporary files that are created during parallel sorting.
 ///
 pub fn sort_numeric_edge_list(
-    path: String,
-    target_path: String,
+    path: &str,
+    target_path: &str,
     separator: Option<char>,
     header: Option<bool>,
     sources_column: Option<String>,
@@ -26588,19 +26029,19 @@ pub fn sort_numeric_edge_list(
     sort_temporary_directory: Option<String>,
 ) -> PyResult<()> {
     Ok(pe!(graph::sort_numeric_edge_list(
-        path.as_ref(),
-        target_path.as_ref(),
-        separator.map(|x| { x.into() }),
-        header.map(|x| { x.into() }),
-        sources_column.map(|x| { x.into() }),
-        sources_column_number.map(|x| { x.into() }),
-        destinations_column.map(|x| { x.into() }),
-        destinations_column_number.map(|x| { x.into() }),
-        edge_types_column.map(|x| { x.into() }),
-        edge_types_column_number.map(|x| { x.into() }),
-        rows_to_skip.map(|x| { x.into() }),
-        skip_edge_types_if_unavailable.map(|x| { x.into() }),
-        sort_temporary_directory.map(|x| { x.into() })
+        path,
+        target_path,
+        separator,
+        header,
+        sources_column,
+        sources_column_number,
+        destinations_column,
+        destinations_column_number,
+        edge_types_column,
+        edge_types_column_number,
+        rows_to_skip,
+        skip_edge_types_if_unavailable,
+        sort_temporary_directory
     ))?)
 }
 
@@ -26639,7 +26080,7 @@ pub fn sort_numeric_edge_list(
 ///     Where to store the temporary files that are created during parallel sorting.
 ///
 pub fn sort_numeric_edge_list_inplace(
-    path: String,
+    path: &str,
     separator: Option<char>,
     header: Option<bool>,
     sources_column: Option<String>,
@@ -26653,18 +26094,18 @@ pub fn sort_numeric_edge_list_inplace(
     sort_temporary_directory: Option<String>,
 ) -> PyResult<()> {
     Ok(pe!(graph::sort_numeric_edge_list_inplace(
-        path.as_ref(),
-        separator.map(|x| { x.into() }),
-        header.map(|x| { x.into() }),
-        sources_column.map(|x| { x.into() }),
-        sources_column_number.map(|x| { x.into() }),
-        destinations_column.map(|x| { x.into() }),
-        destinations_column_number.map(|x| { x.into() }),
-        edge_types_column.map(|x| { x.into() }),
-        edge_types_column_number.map(|x| { x.into() }),
-        rows_to_skip.map(|x| { x.into() }),
-        skip_edge_types_if_unavailable.map(|x| { x.into() }),
-        sort_temporary_directory.map(|x| { x.into() })
+        path,
+        separator,
+        header,
+        sources_column,
+        sources_column_number,
+        destinations_column,
+        destinations_column_number,
+        edge_types_column,
+        edge_types_column_number,
+        rows_to_skip,
+        skip_edge_types_if_unavailable,
+        sort_temporary_directory
     ))?)
 }
 
@@ -26684,8 +26125,8 @@ pub fn sort_numeric_edge_list_inplace(
 /// ValueError
 ///     If there are problems with opening the file.
 ///
-pub fn get_rows_number(file_path: String) -> PyResult<usize> {
-    Ok(pe!(graph::get_rows_number(file_path.as_ref()))?.into())
+pub fn get_rows_number(file_path: &str) -> PyResult<usize> {
+    Ok(pe!(graph::get_rows_number(file_path))?.into())
 }
 
 pub fn register_utils(_py: Python, _m: &PyModule) -> PyResult<()> {
