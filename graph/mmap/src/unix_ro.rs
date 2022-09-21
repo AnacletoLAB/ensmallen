@@ -2,6 +2,8 @@ use libc::*;
 use core::fmt::Debug;
 use super::MemoryMapReadOnlyCore;
 
+const MAP_HUGE_2MB: i32 = 1_409_286_144i32;
+
 /// A read-only memory mapped file,
 /// this should be equivalent to read-only slice that
 /// automatically handle the freeing.
@@ -42,6 +44,12 @@ impl MemoryMapReadOnlyCore for MemoryMappedReadOnly {
         }
         // Try to mmap the file into memory
 
+        let mut flags = libc::MAP_PRIVATE;
+
+        if cfg!(target_os = "linux") {
+            flags |= MAP_HUGE_2MB;
+        }
+        
         let addr = unsafe {
             mmap(
                 // we don't want a specific address
@@ -52,7 +60,7 @@ impl MemoryMapReadOnlyCore for MemoryMappedReadOnly {
                 PROT_READ,
                 // We don't want the eventual modifications to get propagated
                 // to the underlying file
-                libc::MAP_PRIVATE,
+                flags,
                 // the file descriptor of the file to mmap
                 fd,
                 // the offset in bytes from the start of the file, we want to mmap

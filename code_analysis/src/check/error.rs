@@ -1,4 +1,3 @@
-
 #[derive(Debug, Clone, PartialEq)]
 pub enum Error {
     // MissingIntroduction{
@@ -8,14 +7,14 @@ pub enum Error {
     //     method_name: String,
     //     section_name: String,
     // },
-    NoDoc{
+    NoDoc {
         method_name: String,
     },
-    TypoInDoc{
+    TypoInDoc {
         method_name: String,
         error_msg: String,
     },
-    EmptyArgumentDescription{
+    EmptyArgumentDescription {
         method_name: String,
         arg_name: String,
     },
@@ -28,44 +27,44 @@ pub enum Error {
     EmptyRaisesLine {
         method_name: String,
     },
-    EmptyIntroduction{
+    EmptyIntroduction {
         method_name: String,
     },
-    DuplicatedIntroduction{
+    DuplicatedIntroduction {
         method_name: String,
     },
-    MissingSection{
+    MissingSection {
         method_name: String,
         section_name: String,
     },
-    MissingArguments{
+    MissingArguments {
         method_name: String,
         arguments: Vec<String>,
     },
-    ExtraArguments{
+    ExtraArguments {
         method_name: String,
         arguments: Vec<String>,
     },
-    NotParsableArgument{
+    NotParsableArgument {
         method_name: String,
         line: String,
     },
-    WrongTypeArgument{
+    WrongTypeArgument {
         method_name: String,
         truth_type: String,
         doc_type: String,
     },
-    MissingUnsafe{
+    MissingUnsafe {
         method_name: String,
     },
-    MissingUnchecked{
+    MissingUnchecked {
         method_name: String,
     },
-    MethodNameDoesNotMatchRegex{
+    MethodNameDoesNotMatchRegex {
         method_name: String,
         regexes: Vec<String>,
     },
-    RegexSytnax{
+    RegexSytnax {
         source: String,
         error_msg: String,
     },

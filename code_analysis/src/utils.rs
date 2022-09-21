@@ -21,9 +21,8 @@ pub const DENY_LIST: &[&str] = &[
     "argmax_argmin.rs",
     "minmax.rs",
     "splitter.rs",
-    "mmap"
+    "mmap",
 ];
-
 
 pub fn skip_file(path: &str, deny_list: &'static [&'static str]) -> bool {
     for deny in deny_list.iter() {

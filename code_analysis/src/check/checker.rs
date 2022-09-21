@@ -1,14 +1,14 @@
 use super::*;
-use std::sync::Mutex;
 use std::collections::BTreeSet;
+use std::sync::Mutex;
 
 #[derive(Debug)]
-pub struct Checker{
+pub struct Checker {
     pub(crate) modules: Vec<Module>,
 
     pub(crate) method_names: BTreeSet<String>,
 
-    /// This doesn't requires an actual mutex because rust doesn't currently 
+    /// This doesn't requires an actual mutex because rust doesn't currently
     /// support partial move yet, we need this because in all the checks we
     /// will read the modules and write the errors.
     pub(crate) errors: Mutex<Vec<Error>>,
@@ -23,32 +23,26 @@ impl Checker {
                 if imp.struct_name != "Graph" {
                     continue;
                 }
-                for method in &imp.methods{
+                for method in &imp.methods {
                     method_names.insert(method.name.clone());
                 }
             }
         }
 
-        Checker{
+        Checker {
             modules,
             method_names,
             errors: Mutex::new(Vec::new()),
         }
     }
 
-    pub(crate) fn log(&self, error: Error){
+    pub(crate) fn log(&self, error: Error) {
         self.errors.lock().unwrap().push(error);
     }
 
     pub fn exit(&self) {
         let errors = self.errors.lock().unwrap();
-        std::process::exit(
-            if errors.is_empty() {
-                0
-            } else {
-                1
-            }
-        )
+        std::process::exit(if errors.is_empty() { 0 } else { 1 })
     }
 
     pub fn check(&mut self) {
@@ -60,14 +54,13 @@ impl Checker {
         // the capture groups in the methods name regexes must be in the allowed terms list.
         // if get_X_from_Y exists then get_Y_from_X must exists (can be disable with #[no_inverse_method])
         // if get_X_from_Y exists and get_Y_from_Z then get_X_from_Z must exist
-        
+
         // if il metodo contiene _weighted_ deve esistere anche _ eccetto se con #[no_unweighted]
         // if il metodo contiene _ deve esistere anche _weighted_ eccetto se con #[no_weighted]
 
-
         // if il metodo contiene directed deve esistere anche undirected eccetto se con #[no_undirected]
         // if il metodo contiene undirected deve esistere anche directed eccetto se con #[no_directed]
-        
+
         // unsafe
         // is a method is called uncheked it must be unsafe
         // it a method is not called unchecked it must not be unsafe
@@ -95,17 +88,16 @@ impl Checker {
         // check common parameters, se e' verbose allora il tipod eve essere bool
         // se e' random_state allora deve essere u64
         // verbose se presente deve essere l'ultimo argomento
-        
+
         // if &mut self ci deve essere inplace nel nome.
-        
+
         // no #[inline] se il metodo ritorna result
         // _vector deve essere in fondo
 
         // check that fuzz_type arguments are int he function args
-
     }
 
-    pub fn display(&self){
+    pub fn display(&self) {
         let errors = self.errors.lock().unwrap();
         println!("{:#4?}", &errors);
         println!("found {} errors", errors.len());

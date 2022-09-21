@@ -227,12 +227,12 @@ impl Graph {
     /// # Arguments
     /// * `walks_parameters`: &'a WalksParameters - the walks parameters.
     /// * `window_size`: usize - Window size to consider for the sequences.
-    /// * `node_ids_of_interest`: Option<&Vec<NodeT>> - While the random walks is graph-wide, we only return edges whose source and destination nodes are within this node ID list.
+    /// * `node_ids_of_interest`: Option<&[NodeT]> - While the random walks is graph-wide, we only return edges whose source and destination nodes are within this node ID list.
     pub fn par_iter_cooccurence_matrix<'a>(
         &'a self,
         walks_parameters: &'a WalksParameters,
         window_size: usize,
-        node_ids_of_interest: Option<&'a Vec<NodeT>>,
+        node_ids_of_interest: Option<&'a [NodeT]>,
     ) -> Result<impl ParallelIterator<Item = (NodeT, NodeT, f32)> + 'a> {
         Ok(self
             .par_iter_complete_walks(walks_parameters)?
@@ -280,12 +280,12 @@ impl Graph {
     /// # Arguments
     /// * `walks_parameters`: &WalksParameters - the walks parameters.
     /// * `window_size`: usize - Window size to consider for the sequences.
-    /// * `node_ids_of_interest`: Option<&Vec<NodeT>> - While the random walks is graph-wide, we only return edges whose source and destination nodes are within this node ID list.
+    /// * `node_ids_of_interest`: Option<&[NodeT]> - While the random walks is graph-wide, we only return edges whose source and destination nodes are within this node ID list.
     pub fn get_cooccurrence_coo_matrix(
         &self,
         walks_parameters: &WalksParameters,
         window_size: usize,
-        node_ids_of_interest: Option<&Vec<NodeT>>,
+        node_ids_of_interest: Option<&[NodeT]>,
     ) -> Result<(Vec<(NodeT, NodeT)>, Vec<WeightT>)> {
         Ok(self
             .par_iter_cooccurence_matrix(walks_parameters, window_size, node_ids_of_interest)?
@@ -298,12 +298,12 @@ impl Graph {
     /// # Arguments
     /// * `walks_parameters`: &WalksParameters - the walks parameters.
     /// * `window_size`: usize - Window size to consider for the sequences.
-    /// * `node_ids_of_interest`: Option<&Vec<NodeT>> - While the random walks is graph-wide, we only return edges whose source and destination nodes are within this node ID list.
+    /// * `node_ids_of_interest`: Option<&[NodeT]> - While the random walks is graph-wide, we only return edges whose source and destination nodes are within this node ID list.
     pub fn get_cooccurrence_graph(
         &self,
         walks_parameters: &WalksParameters,
         window_size: usize,
-        node_ids_of_interest: Option<&Vec<NodeT>>,
+        node_ids_of_interest: Option<&[NodeT]>,
     ) -> Result<Graph> {
         Ok(
             self.get_graph_from_coo_iterator(self.par_iter_cooccurence_matrix(
@@ -319,12 +319,12 @@ impl Graph {
     /// # Arguments
     /// * `walks_parameters`: &'a WalksParameters - the walks parameters.
     /// * `window_size`: usize - Window size to consider for the sequences.
-    /// * `node_ids_of_interest`: Option<&Vec<NodeT>> - While the random walks is graph-wide, we only return edges whose source and destination nodes are within this node ID list.
+    /// * `node_ids_of_interest`: Option<&[NodeT]> - While the random walks is graph-wide, we only return edges whose source and destination nodes are within this node ID list.
     pub fn par_iter_normalized_cooccurence_matrix<'a>(
         &'a self,
         walks_parameters: &'a WalksParameters,
         window_size: usize,
-        node_ids_of_interest: Option<&'a Vec<NodeT>>,
+        node_ids_of_interest: Option<&'a [NodeT]>,
     ) -> Result<impl ParallelIterator<Item = (NodeT, NodeT, f32)> + 'a> {
         let nodes_number_squared =
             self.get_number_of_nodes() as f32 * self.get_number_of_nodes() as f32;
@@ -348,12 +348,12 @@ impl Graph {
     /// # Arguments
     /// * `walks_parameters`: &WalksParameters - the walks parameters.
     /// * `window_size`: usize - Window size to consider for the sequences.
-    /// * `node_ids_of_interest`: Option<&Vec<NodeT>> - While the random walks is graph-wide, we only return edges whose source and destination nodes are within this node ID list.
+    /// * `node_ids_of_interest`: Option<&[NodeT]> - While the random walks is graph-wide, we only return edges whose source and destination nodes are within this node ID list.
     pub fn get_normalized_cooccurrence_coo_matrix(
         &self,
         walks_parameters: &WalksParameters,
         window_size: usize,
-        node_ids_of_interest: Option<&Vec<NodeT>>,
+        node_ids_of_interest: Option<&[NodeT]>,
     ) -> Result<(Vec<(NodeT, NodeT)>, Vec<WeightT>)> {
         Ok(self
             .par_iter_normalized_cooccurence_matrix(
@@ -370,12 +370,12 @@ impl Graph {
     /// # Arguments
     /// * `walks_parameters`: &WalksParameters - the walks parameters.
     /// * `window_size`: usize - Window size to consider for the sequences.
-    /// * `node_ids_of_interest`: Option<&Vec<NodeT>> - While the random walks is graph-wide, we only return edges whose source and destination nodes are within this node ID list.
+    /// * `node_ids_of_interest`: Option<&[NodeT]> - While the random walks is graph-wide, we only return edges whose source and destination nodes are within this node ID list.
     pub fn get_normalized_cooccurrence_graph(
         &self,
         walks_parameters: &WalksParameters,
         window_size: usize,
-        node_ids_of_interest: Option<&Vec<NodeT>>,
+        node_ids_of_interest: Option<&[NodeT]>,
     ) -> Result<Graph> {
         Ok(
             self.get_graph_from_coo_iterator(self.par_iter_normalized_cooccurence_matrix(
@@ -391,12 +391,12 @@ impl Graph {
     /// # Arguments
     /// * `walks_parameters`: &'a WalksParameters - the walks parameters.
     /// * `window_size`: usize - Window size to consider for the sequences.
-    /// * `node_ids_of_interest`: Option<&Vec<NodeT>> - While the random walks is graph-wide, we only return edges whose source and destination nodes are within this node ID list.
+    /// * `node_ids_of_interest`: Option<&[NodeT]> - While the random walks is graph-wide, we only return edges whose source and destination nodes are within this node ID list.
     pub fn par_iter_log_normalized_cooccurence_matrix<'a>(
         &'a self,
         walks_parameters: &'a WalksParameters,
         window_size: usize,
-        node_ids_of_interest: Option<&'a Vec<NodeT>>,
+        node_ids_of_interest: Option<&'a [NodeT]>,
     ) -> Result<impl ParallelIterator<Item = (NodeT, NodeT, f32)> + 'a> {
         Ok(self
             .par_iter_normalized_cooccurence_matrix(
@@ -418,12 +418,12 @@ impl Graph {
     /// # Arguments
     /// * `walks_parameters`: &WalksParameters - the walks parameters.
     /// * `window_size`: usize - Window size to consider for the sequences.
-    /// * `node_ids_of_interest`: Option<&Vec<NodeT>> - While the random walks is graph-wide, we only return edges whose source and destination nodes are within this node ID list.
+    /// * `node_ids_of_interest`: Option<&[NodeT]> - While the random walks is graph-wide, we only return edges whose source and destination nodes are within this node ID list.
     pub fn get_log_normalized_cooccurrence_coo_matrix(
         &self,
         walks_parameters: &WalksParameters,
         window_size: usize,
-        node_ids_of_interest: Option<&Vec<NodeT>>,
+        node_ids_of_interest: Option<&[NodeT]>,
     ) -> Result<(Vec<(NodeT, NodeT)>, Vec<WeightT>)> {
         Ok(self
             .par_iter_log_normalized_cooccurence_matrix(
@@ -440,12 +440,12 @@ impl Graph {
     /// # Arguments
     /// * `walks_parameters`: &WalksParameters - the walks parameters.
     /// * `window_size`: usize - Window size to consider for the sequences.
-    /// * `node_ids_of_interest`: Option<&Vec<NodeT>> - While the random walks is graph-wide, we only return edges whose source and destination nodes are within this node ID list.
+    /// * `node_ids_of_interest`: Option<&[NodeT]> - While the random walks is graph-wide, we only return edges whose source and destination nodes are within this node ID list.
     pub fn get_log_normalized_cooccurrence_graph(
         &self,
         walks_parameters: &WalksParameters,
         window_size: usize,
-        node_ids_of_interest: Option<&Vec<NodeT>>,
+        node_ids_of_interest: Option<&[NodeT]>,
     ) -> Result<Graph> {
         Ok(
             self.get_graph_from_coo_iterator(self.par_iter_log_normalized_cooccurence_matrix(

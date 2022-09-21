@@ -5,8 +5,9 @@ use super::*;
 use cpu_models::RUBICONE as RUBICONERust;
 use cpu_models::RUINE as RUINERust;
 use cpu_models::{BasicSPINE, BasicWINE, LandmarkFeatureType, LandmarkType, ALPINE};
-use indicatif::ParallelProgressIterator;
-use indicatif::{ProgressBar, ProgressStyle};
+use file_progress::FileProgressIterator;
+use file_progress::{FileProgress, MarkdownFileProgress};
+use indicatif::*;
 use numpy::{PyArray1, PyArray2};
 use rayon::prelude::*;
 use std::convert::TryFrom;
@@ -290,6 +291,11 @@ where
                         ProgressBar::hidden()
                     };
 
+                    let mut progress = MarkdownFileProgress::from_project_name("Transposing");
+                    progress.set_verbose(self.get_model().is_verbose());
+
+                    progress.set_len(embedding_size);
+
                     let transposed_embedding = create_memory_mapped_numpy_array(
                         gil.python(),
                         Some(path.as_str()),
@@ -302,13 +308,17 @@ where
                     let shared_embedding = ThreadDataRaceAware::from(casted_embedding);
 
                     if is_fortran {
-                        embedding_slice.as_ref().par_chunks(number_of_nodes).progress_with(progress_bar).enumerate().for_each(|(j, feature)|{
+                        embedding_slice.as_ref().par_chunks(number_of_nodes)
+                            .progress_with(progress_bar).enumerate()
+                            .for_each(|(j, feature)|{
                             feature.iter().copied().enumerate().for_each(|(i, feature_value)| unsafe {
                                 *(shared_embedding.t.uget_mut([i, j])) = feature_value;
                             });
                         });
                     } else {
-                        embedding_slice.as_ref().par_chunks(embedding_size).progress_with(progress_bar).enumerate().for_each(|(i, node_embedding)|{
+                        embedding_slice.as_ref().par_chunks(embedding_size)
+                            .progress_with(progress_bar).enumerate()
+                            .for_each(|(i, node_embedding)|{
                             node_embedding.iter().copied().enumerate().for_each(|(j, feature_value)| unsafe {
                                 *(shared_embedding.t.uget_mut([i, j])) = feature_value;
                             });

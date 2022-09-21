@@ -840,11 +840,11 @@ impl Graph {
     pub unsafe fn get_unchecked_node_type_ids_from_node_id(
         &self,
         node_id: NodeT,
-    ) -> Option<&Vec<NodeTypeT>> {
+    ) -> Option<&[NodeTypeT]> {
         self.node_types
             .as_ref()
             .as_ref()
-            .and_then(|nts| nts.ids[node_id as usize].as_ref())
+            .and_then(|nts| nts.ids[node_id as usize].as_ref().map(|x| x.as_slice()))
     }
 
     /// Returns node type of given node.
@@ -861,7 +861,7 @@ impl Graph {
     pub fn get_node_type_ids_from_node_id(
         &self,
         node_id: NodeT,
-    ) -> Result<Option<&Vec<NodeTypeT>>> {
+    ) -> Result<Option<&[NodeTypeT]>> {
         self.must_have_node_types()?;
         self.validate_node_id(node_id)
             .map(|node_id| unsafe { self.get_unchecked_node_type_ids_from_node_id(node_id) })
@@ -1249,7 +1249,7 @@ impl Graph {
     pub fn get_node_type_ids_from_node_name(
         &self,
         node_name: &str,
-    ) -> Result<Option<&Vec<NodeTypeT>>> {
+    ) -> Result<Option<&[NodeTypeT]>> {
         self.get_node_type_ids_from_node_id(self.get_node_id_from_node_name(node_name)?)
     }
 
@@ -1581,10 +1581,10 @@ impl Graph {
     /// Return translated edge types from string to internal edge ID.
     ///
     /// # Arguments
-    /// * `edge_type_names`: Vec<Option<String>> - Vector of edge types to be converted.
+    /// * `edge_type_names`: &[Option<&str>] - Vector of edge types to be converted.
     pub fn get_edge_type_ids_from_edge_type_names(
         &self,
-        edge_type_names: Vec<Option<String>>,
+        edge_type_names: &[Option<&str>],
     ) -> Result<Vec<Option<EdgeTypeT>>> {
         edge_type_names
             .iter()
@@ -1600,10 +1600,10 @@ impl Graph {
     /// Return translated node types from string to internal node ID.
     ///
     /// # Arguments
-    /// * `node_type_names`: Vec<Option<String>> - Vector of node types to be converted.
+    /// * `node_type_names`: &[Option<&str>] - Vector of node types to be converted.
     pub fn get_node_type_ids_from_node_type_names(
         &self,
-        node_type_names: Vec<Option<String>>,
+        node_type_names: &[Option<&str>],
     ) -> Result<Vec<Option<NodeTypeT>>> {
         self.must_have_node_types()?;
         node_type_names
@@ -2086,8 +2086,8 @@ impl Graph {
     /// Returns vector with node IDs with given curie prefix.
     ///
     /// # Arguments
-    /// * `curie_prefixes`: Vec<&str> - Prefix of the source node names.
-    pub fn get_node_ids_from_node_curie_prefixes(&self, curie_prefixes: Vec<&str>) -> Vec<NodeT> {
+    /// * `curie_prefixes`: &[&str] - Prefix of the source node names.
+    pub fn get_node_ids_from_node_curie_prefixes(&self, curie_prefixes: &[&str]) -> Vec<NodeT> {
         self.par_iter_node_ids_from_node_curie_prefixes(curie_prefixes)
             .collect()
     }
@@ -2108,7 +2108,7 @@ impl Graph {
     ///
     /// # Arguments
     /// * `curie_prefixes`: Vec<&str> - Prefix of the source node names.
-    pub fn get_number_of_nodes_from_node_curie_prefixes(&self, curie_prefixes: Vec<&str>) -> NodeT {
+    pub fn get_number_of_nodes_from_node_curie_prefixes(&self, curie_prefixes: &[&str]) -> NodeT {
         self.par_iter_node_ids_from_node_curie_prefixes(curie_prefixes)
             .count() as NodeT
     }

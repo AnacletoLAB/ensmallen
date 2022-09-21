@@ -1304,13 +1304,13 @@ impl Graph {
     /// Returns node IDs of the nodes with given node type names.
     ///
     /// # Arguments
-    /// * `node_type_names`: Vec<Option<String>> - The node type ID to filter for.
+    /// * `node_type_names`: &[Option<&str>] - The node type ID to filter for.
     ///
     /// # Raises
     /// * If there are no node types in the graph.
     pub fn get_node_ids_from_node_type_names(
         &self,
-        node_type_names: Vec<Option<String>>,
+        node_type_names: &[Option<&str>],
     ) -> Result<Vec<NodeT>> {
         self.par_iter_node_ids_from_node_type_ids(
             self.get_node_type_ids_from_node_type_names(node_type_names)?,

@@ -12,14 +12,11 @@ pub fn translate_doc(doc: &str, user_defined_types: &[&str]) -> String {
             DocSection::Introduction(intro) => {
                 result.push_str(&bytes_to_string(trim(intro.as_bytes())));
             }
-            DocSection::Arguments {
-                arguments,
-                ..
-            } => {
+            DocSection::Arguments { arguments, .. } => {
                 result.push_str("\n\nParameters\n----------\n");
 
                 //args_sec.extend(prologue.chars());
-                let mut handle_walk_parameters = false; 
+                let mut handle_walk_parameters = false;
                 for argument in arguments {
                     match argument {
                         Argument::Parsable(DocArg {
@@ -27,27 +24,26 @@ pub fn translate_doc(doc: &str, user_defined_types: &[&str]) -> String {
                             arg_type,
                             description,
                         }) => {
-                            let translated_arg_type = translate_type_str(arg_type, &user_defined_types);
+                            let translated_arg_type =
+                                translate_type_str(arg_type, &user_defined_types);
                             if translated_arg_type == "WalksParameters" {
-                                handle_walk_parameters=true;
+                                handle_walk_parameters = true;
                             } else {
-                                result.push_str(
-                                    &format!(
-                                        "{name}: {arg_type}\n    {description}\n",
-                                        name = name,
-                                        arg_type = translated_arg_type,
-                                        description = description,
-                                    )
-                                )
+                                result.push_str(&format!(
+                                    "{name}: {arg_type}\n    {description}\n",
+                                    name = name,
+                                    arg_type = translated_arg_type,
+                                    description = description,
+                                ))
                             }
-                        },
+                        }
                         Argument::NotParsable(_) => {}
                     }
                 }
 
                 if handle_walk_parameters {
                     result.push_str(
-&r#"
+                        &r#"
 return_weight: float = 1.0
     Weight on the probability of returning to node coming from
     Having this higher tends the walks to be
@@ -86,16 +82,13 @@ max_neighbours: Optional[int] = 100
     and becomes an approximation of an exact walk.
 normalize_by_degree: Optional[bool] = False
     Whether to normalize the random walks by the node degree.
-"#[1..]
+"#[1..],
                     );
                 }
 
                 //args_sec.extend(epilogue.chars());
             }
-            DocSection::Raises {
-                exceptions,
-                ..
-            } => {
+            DocSection::Raises { exceptions, .. } => {
                 result.push_str("\n\nRaises\n-------\n");
 
                 for excp in exceptions {
