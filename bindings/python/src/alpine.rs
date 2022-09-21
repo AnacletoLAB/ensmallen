@@ -5,8 +5,6 @@ use super::*;
 use cpu_models::RUBICONE as RUBICONERust;
 use cpu_models::RUINE as RUINERust;
 use cpu_models::{BasicSPINE, BasicWINE, LandmarkFeatureType, LandmarkType, ALPINE};
-use file_progress::FileProgressIterator;
-use file_progress::{FileProgress, MarkdownFileProgress};
 use indicatif::*;
 use numpy::{PyArray1, PyArray2};
 use rayon::prelude::*;
@@ -290,11 +288,6 @@ where
                     } else {
                         ProgressBar::hidden()
                     };
-
-                    let mut progress = MarkdownFileProgress::from_project_name("Transposing");
-                    progress.set_verbose(self.get_model().is_verbose());
-
-                    progress.set_len(embedding_size);
 
                     let transposed_embedding = create_memory_mapped_numpy_array(
                         gil.python(),
