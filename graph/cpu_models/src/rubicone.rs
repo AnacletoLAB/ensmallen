@@ -64,7 +64,7 @@ impl LandmarkBasedFeature<{ LandmarkFeatureType::Random }> for RUBICONE {
 
         // We initialize the provided slice with the maximum distance.
 
-        let maximum_value: usize = Feature::MAX.coerce_into() as usize;
+        let maximum_value: u64 = Feature::MAX.coerce_into();
 
         features
             .par_iter_mut()
@@ -73,15 +73,15 @@ impl LandmarkBasedFeature<{ LandmarkFeatureType::Random }> for RUBICONE {
                 *distance = Feature::coerce_from(
                     (splitmix64(
                         (random_state.wrapping_add(i as u64)).wrapping_mul(random_state + i as u64),
-                    ) % maximum_value as u64) as f32,
+                    ) % maximum_value) as f32,
                 );
             });
 
         // We wrap the features object in an unsafe cell so
         // it may be shared among threads.
         let shared_features = Feature::from_mut_slice(features);
-
-        let number_of_bits = Feature::MAX.coerce_into().log2().ceil() as usize;
+        
+        let number_of_bits = (maximum_value as f32).log2().ceil() as usize;
 
         (0..self.get_number_of_convolutions()).for_each(|_| {
             graph.par_iter_node_ids().for_each(|src| {

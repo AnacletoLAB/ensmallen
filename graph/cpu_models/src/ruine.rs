@@ -1,7 +1,7 @@
 use crate::*;
 use core::sync::atomic::Ordering;
 use graph::{Graph, NodeT};
-use num_traits::Atomic;
+use num_traits::{Atomic, Coerced};
 use rayon::prelude::*;
 use vec_rand::splitmix64;
 
@@ -64,16 +64,16 @@ impl LandmarkBasedFeature<{ LandmarkFeatureType::Random }> for RUINE {
 
         // We initialize the provided slice with the maximum distance.
 
-        let maximum_value: usize = Feature::MAX.coerce_into() as usize;
+        let maximum_value: usize = Feature::MAX.coerce_into();
 
         features
             .par_iter_mut()
             .enumerate()
             .for_each(|(i, distance)| {
                 *distance = Feature::coerce_from(
-                    (splitmix64(
+                    splitmix64(
                         (random_state.wrapping_add(i as u64)).wrapping_mul(random_state + i as u64),
-                    ) % maximum_value as u64) as f32,
+                    ) % maximum_value as u64,
                 );
             });
 
@@ -83,15 +83,15 @@ impl LandmarkBasedFeature<{ LandmarkFeatureType::Random }> for RUINE {
 
         (0..self.get_number_of_convolutions()).for_each(|_| {
             graph.par_iter_node_ids().for_each(|src| {
-                let mut feature_sum: f32 = 0.0;
-                let mut number_of_neighbours: f32 = 0.0;
+                let mut feature_sum: usize = 0;
+                let mut number_of_neighbours: usize = 0;
                 graph
                     .iter_unchecked_neighbour_node_ids_from_source_node_id(src)
                     .for_each(|dst| {
-                        feature_sum += shared_features[dst as usize]
-                            .load(Ordering::Relaxed)
-                            .coerce_into();
-                        number_of_neighbours += 1.0;
+                        feature_sum += <Feature as Coerced<usize>>::coerce_into(
+                            shared_features[dst as usize].load(Ordering::Relaxed),
+                        );
+                        number_of_neighbours += 1;
                     });
                 shared_features[src as usize].store(
                     Feature::coerce_from(feature_sum / number_of_neighbours),
