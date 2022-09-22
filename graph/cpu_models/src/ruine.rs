@@ -1,7 +1,7 @@
 use crate::*;
 use core::sync::atomic::Ordering;
 use graph::{Graph, NodeT};
-use num_traits::{Atomic, Coerced};
+use num_traits::{Atomic, Coerced,  Zero};
 use rayon::prelude::*;
 use vec_rand::splitmix64;
 
