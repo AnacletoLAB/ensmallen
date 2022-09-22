@@ -93,6 +93,11 @@ impl LandmarkBasedFeature<{ LandmarkFeatureType::Random }> for RUINE {
                         );
                         number_of_neighbours += 1;
                     });
+
+                if number_of_neighbours.is_zero() {
+                    return;
+                }
+
                 shared_features[src as usize].store(
                     Feature::coerce_from(feature_sum / number_of_neighbours),
                     Ordering::Relaxed,
