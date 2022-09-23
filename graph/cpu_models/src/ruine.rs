@@ -1,7 +1,7 @@
 use crate::*;
 use core::sync::atomic::Ordering;
 use graph::{Graph, NodeT};
-use num_traits::{Atomic, Coerced,  Zero};
+use num_traits::{Atomic, Coerced};
 use rayon::prelude::*;
 use vec_rand::splitmix64;
 
@@ -83,8 +83,10 @@ impl LandmarkBasedFeature<{ LandmarkFeatureType::Random }> for RUINE {
 
         (0..self.get_number_of_convolutions()).for_each(|_| {
             graph.par_iter_node_ids().for_each(|src| {
-                let mut feature_sum: usize = 0;
-                let mut number_of_neighbours: usize = 0;
+                let mut feature_sum: usize = shared_features[src as usize]
+                    .load(Ordering::Relaxed)
+                    .coerce_into();
+                let mut number_of_neighbours: usize = 1;
                 graph
                     .iter_unchecked_neighbour_node_ids_from_source_node_id(src)
                     .for_each(|dst| {
@@ -93,10 +95,6 @@ impl LandmarkBasedFeature<{ LandmarkFeatureType::Random }> for RUINE {
                         );
                         number_of_neighbours += 1;
                     });
-
-                if number_of_neighbours.is_zero() {
-                    return;
-                }
 
                 shared_features[src as usize].store(
                     Feature::coerce_from(feature_sum / number_of_neighbours),
