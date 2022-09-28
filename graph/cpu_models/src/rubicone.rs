@@ -1,7 +1,7 @@
 use crate::*;
 use core::sync::atomic::Ordering;
 use graph::{Graph, NodeT};
-use num_traits::Atomic;
+use num_traits::{Atomic, AsPrimitive};
 use rayon::prelude::*;
 use vec_rand::splitmix64;
 
@@ -58,23 +58,22 @@ impl LandmarkBasedFeature<{ LandmarkFeatureType::Random }> for RUBICONE {
         feature_number: usize,
     ) where
         Feature: IntegerFeatureType,
+        u64: AsPrimitive<Feature>
     {
         let random_state = splitmix64(self.get_random_state())
             .wrapping_mul(self.get_random_state().wrapping_add(feature_number as u64));
 
         // We initialize the provided slice with the maximum distance.
 
-        let maximum_value: u64 = Feature::MAX.coerce_into();
+        let maximum_value: u64 = Feature::MAX.as_();
 
         features
             .par_iter_mut()
             .enumerate()
             .for_each(|(i, distance)| {
-                *distance = Feature::coerce_from(
-                    (splitmix64(
+                *distance = (splitmix64(
                         (random_state.wrapping_add(i as u64)).wrapping_mul(random_state + i as u64),
-                    ) % maximum_value) as f32,
-                );
+                    ) % maximum_value).as_()
             });
 
         // We wrap the features object in an unsafe cell so

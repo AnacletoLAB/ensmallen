@@ -2,7 +2,7 @@ use crate::{get_node_prior, BasicEmbeddingModel, GraphEmbedder, MatrixShape};
 use express_measures::{cosine_similarity_sequential_unchecked, ThreadFloat};
 use graph::{EdgeT, Graph, NodeT, ThreadDataRaceAware};
 use indicatif::ProgressIterator;
-use num_traits::Coerced;
+use num_traits::AsPrimitive;
 use rayon::prelude::*;
 use vec_rand::splitmix64;
 
@@ -46,18 +46,19 @@ impl GraphEmbedder for FirstOrderLINE {
             .into()])
     }
 
-    fn _fit_transform<F: ThreadFloat>(
+    fn _fit_transform<F: ThreadFloat + 'static>(
         &self,
         graph: &Graph,
         embedding: &mut [&mut [F]],
     ) -> Result<(), String>
     where
-        NodeT: Coerced<F>,
-        EdgeT: Coerced<F>,
+        f32: AsPrimitive<F>,
+        NodeT: AsPrimitive<F>,
+        EdgeT: AsPrimitive<F>,
     {
         let shared_node_embedding = ThreadDataRaceAware::new(&mut embedding[0]);
         let mut random_state = self.get_random_state();
-        let mut learning_rate = F::coerce_from(self.model.get_learning_rate());
+        let mut learning_rate = self.model.get_learning_rate().as_();
         let pb = self.get_loading_bar();
 
         // We start to loop over the required amount of epochs.
@@ -120,7 +121,7 @@ impl GraphEmbedder for FirstOrderLINE {
                                 *dst_feature -= *src_feature * dst_variation;
                             });
                     });
-                learning_rate *= F::coerce_from(self.model.get_learning_rate_decay());
+                learning_rate *= self.model.get_learning_rate_decay().as_();
             });
         Ok(())
     }

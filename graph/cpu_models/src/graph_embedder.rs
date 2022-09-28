@@ -2,7 +2,7 @@ use crate::*;
 use express_measures::ThreadFloat;
 use graph::{EdgeT, Graph, NodeT};
 use indicatif::{ProgressBar, ProgressStyle};
-use num_traits::Coerced;
+use num_traits::AsPrimitive;
 
 pub trait GraphEmbedder {
     /// Computes in the provided memory slice the graph embedding.
@@ -10,23 +10,25 @@ pub trait GraphEmbedder {
     /// # Arguments
     /// `graph`: &Graph - The graph to embed
     /// `embedding`: &[&mut FeatureSlice] - The memory area where to write the embedding.
-    fn _fit_transform<F: ThreadFloat>(
+    fn _fit_transform<F: ThreadFloat + 'static>(
         &self,
         graph: &Graph,
         embedding: &mut [&mut [F]],
     ) -> Result<(), String>
     where
-        NodeT: Coerced<F>,
-        EdgeT: Coerced<F>;
+        f32: AsPrimitive<F>,
+        NodeT: AsPrimitive<F>,
+        EdgeT: AsPrimitive<F>;
 
-    fn fit_transform<F: ThreadFloat>(
+    fn fit_transform<F: ThreadFloat + 'static>(
         &self,
         graph: &Graph,
         embedding: &mut [&mut [F]],
     ) -> Result<(), String>
     where
-        NodeT: Coerced<F>,
-        EdgeT: Coerced<F>,
+        f32: AsPrimitive<F>,
+        NodeT: AsPrimitive<F>,
+        EdgeT: AsPrimitive<F>,
     {
         if !graph.has_edges() {
             return Err("The provided graph does not have any edge.".to_string());

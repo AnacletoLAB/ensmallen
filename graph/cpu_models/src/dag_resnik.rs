@@ -1,6 +1,6 @@
 use graph::{Graph, NodeT, ThreadDataRaceAware};
 use indicatif::{ParallelProgressIterator, ProgressBar, ProgressStyle};
-use num_traits::{Coerced, Float, IntoAtomic};
+use num_traits::{AsPrimitive, Float, IntoAtomic};
 use rayon::prelude::*;
 use std::{
     collections::HashMap,
@@ -21,9 +21,9 @@ pub struct DAGResnik<F: Float> {
     verbose: bool,
 }
 
-impl<F: Float + Send + Sync> DAGResnik<F>
+impl<F: Float + Send + Sync + 'static> DAGResnik<F>
 where
-    u32: Coerced<F>,
+    u32: AsPrimitive<F>,
 {
     /// Return new instance of DAG-based Resnik for similarity computation.
     ///
@@ -181,10 +181,10 @@ where
                 .par_iter()
                 .max_by(|a, b| a.partial_cmp(b).unwrap())
                 .unwrap()
-                .coerce_into();
+                .as_();
             self.information_contents = node_counts
                 .into_par_iter()
-                .map(|node_count| -(node_count.coerce_into() / root_node_count).ln())
+                .map(|node_count| -(node_count.as_() / root_node_count).ln())
                 .collect::<Vec<F>>();
         }
         self.root_node_ids = dag.get_root_node_ids();

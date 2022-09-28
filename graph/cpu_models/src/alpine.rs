@@ -1,6 +1,7 @@
 use crate::*;
 use file_progress::{FileProgress, FileProgressIterator, MarkdownFileProgress};
 use graph::{EdgeT, Graph, NodeT};
+use num_traits::AsPrimitive;
 use indicatif::{ProgressBar, ProgressIterator, ProgressStyle};
 use rayon::prelude::*;
 
@@ -52,7 +53,8 @@ pub trait LandmarkBasedFeature<const LFT: LandmarkFeatureType> {
         features: &mut [Feature],
         feature_number: usize
     ) where
-        Feature: IntegerFeatureType;
+        Feature: IntegerFeatureType,
+        u64: AsPrimitive<Feature>;
 }
 
 #[derive(PartialEq, Eq)]
@@ -243,6 +245,7 @@ where
     fn fit_transform<Feature>(&self, graph: &Graph, embedding: &mut [Feature]) -> Result<(), String>
     where
         Feature: IntegerFeatureType,
+        u64: AsPrimitive<Feature>
     {
         let expected_embedding_len =
             self.get_embedding_size(graph)? * graph.get_number_of_nodes() as usize;
@@ -315,6 +318,7 @@ where
     ) -> Result<(), String>
     where
         Feature: IntegerFeatureType,
+        u64: AsPrimitive<Feature>
     {
         if feature.len() != graph.get_number_of_nodes() as usize {
             return Err(format!(

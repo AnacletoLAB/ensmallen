@@ -2,7 +2,7 @@ use express_measures::ThreadFloat;
 use funty::Integral;
 use graph::{EdgeT, EdgeTypeT, Graph, NodeT};
 use half::f16;
-use num_traits::{Coerced, Float, IntoAtomic, Zero};
+use num_traits::{AsPrimitive, Float, IntoAtomic, Zero};
 use rayon::prelude::*;
 use vec_rand::{random_f32, splitmix64};
 
@@ -31,17 +31,21 @@ where
 ///
 /// # Implementative details
 /// The square root of 6 is roughly: 2.45
-pub(crate) fn get_random_weight<F: ThreadFloat>(random_state: u64, dimension_squared_root: F) -> F {
-    ((F::one() + F::one()) * F::coerce_from(random_f32(splitmix64(random_state))) - F::one())
-        * F::coerce_from(2.45)
-        / dimension_squared_root
+pub(crate) fn get_random_weight<F: ThreadFloat>(random_state: u64, dimension_squared_root: F) -> F
+where
+    f32: AsPrimitive<F>,
+{
+    (F::one() + F::one()) * random_f32(splitmix64(random_state)).as_()
+        - F::one() * (2.45 as f32).as_() / dimension_squared_root
 }
 
 pub(crate) fn populate_vectors<F: ThreadFloat>(
     vectors: &mut [&mut [F]],
     dimensions: &[usize],
     random_state: u64,
-) {
+) where
+    f32: AsPrimitive<F>,
+{
     vectors
         .iter_mut()
         .zip(dimensions.iter().copied())
@@ -57,45 +61,45 @@ pub(crate) fn compute_prior<F: Float>(subset_size: F, total_size: F) -> F {
     ((F::one() + total_size) / (F::one() + subset_size)).ln()
 }
 
-pub(crate) fn get_node_prior<F: ThreadFloat>(graph: &Graph, node_id: NodeT, learning_rate: F) -> F
+pub(crate) fn get_node_prior<F: ThreadFloat + 'static>(
+    graph: &Graph,
+    node_id: NodeT,
+    learning_rate: F,
+) -> F
 where
-    NodeT: Coerced<F>,
+    NodeT: AsPrimitive<F>,
 {
     compute_prior(
-        unsafe {
-            graph
-                .get_unchecked_node_degree_from_node_id(node_id)
-                .coerce_into()
-        },
-        unsafe { graph.get_unchecked_maximum_node_degree().coerce_into() },
+        unsafe { graph.get_unchecked_node_degree_from_node_id(node_id).as_() },
+        unsafe { graph.get_unchecked_maximum_node_degree().as_() },
     ) * learning_rate
 }
 
-pub(crate) fn get_edge_type_prior<F: ThreadFloat>(
+pub(crate) fn get_edge_type_prior<F: ThreadFloat + 'static>(
     graph: &Graph,
     edge_type_id: EdgeTypeT,
     learning_rate: F,
 ) -> F
 where
-    EdgeT: Coerced<F>,
+    EdgeT: AsPrimitive<F>,
 {
     compute_prior(
         unsafe {
             graph
                 .get_unchecked_edge_count_from_edge_type_id(Some(edge_type_id))
-                .coerce_into()
+                .as_()
         },
-        graph.get_number_of_directed_edges().coerce_into(),
+        graph.get_number_of_directed_edges().as_(),
     ) * learning_rate
 }
 
-pub(crate) fn get_node_priors<F: ThreadFloat>(
+pub(crate) fn get_node_priors<F: ThreadFloat + 'static>(
     graph: &Graph,
     node_ids: &[NodeT],
     learning_rate: F,
 ) -> Vec<F>
 where
-    NodeT: Coerced<F>,
+    NodeT: AsPrimitive<F>,
 {
     node_ids
         .iter()
@@ -210,9 +214,9 @@ pub trait IntegerFeatureType:
     + TryFrom<usize>
     + IntoAtomic
     + Copy
-    + Coerced<usize>
-    + Coerced<f32>
-    + Coerced<u64>
+    + AsPrimitive<usize>
+    + AsPrimitive<f32>
+    + AsPrimitive<u64>
     + std::fmt::Debug
 {
 }

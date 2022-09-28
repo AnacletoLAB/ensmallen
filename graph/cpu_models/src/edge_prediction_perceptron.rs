@@ -8,7 +8,7 @@ use express_measures::{
 use graph::{Graph, NodeT};
 use indicatif::ProgressIterator;
 use indicatif::{ProgressBar, ProgressStyle};
-use num_traits::{Coerced, Zero};
+use num_traits::{AsPrimitive, Zero};
 use rayon::prelude::*;
 use serde::de::DeserializeOwned;
 use serde::{Deserialize, Serialize};
@@ -97,7 +97,7 @@ impl EdgeEmbedding {
 
     pub fn get_method<F>(&self) -> fn(&[F], &[F]) -> Vec<f32>
     where
-        F: Coerced<f32> + Copy + Sub<Output = F> + PartialOrd,
+        F: AsPrimitive<f32> + Copy + Sub<Output = F> + PartialOrd,
     {
         match self {
             EdgeEmbedding::CosineSimilarity => {
@@ -110,14 +110,14 @@ impl EdgeEmbedding {
                 a.iter()
                     .copied()
                     .zip(b.iter().copied())
-                    .map(|(feature_a, feature_b)| feature_a.coerce_into() * feature_b.coerce_into())
+                    .map(|(feature_a, feature_b)| feature_a.as_() * feature_b.as_())
                     .collect::<Vec<f32>>()
             },
             EdgeEmbedding::Concatenate => |a: &[F], b: &[F]| {
                 a.iter()
                     .copied()
                     .chain(b.iter().copied())
-                    .map(|feature| feature.coerce_into())
+                    .map(|feature| feature.as_())
                     .collect::<Vec<f32>>()
             },
             EdgeEmbedding::L1 => |a: &[F], b: &[F]| {
@@ -125,7 +125,7 @@ impl EdgeEmbedding {
                     .copied()
                     .zip(b.iter().copied())
                     .map(|(feature_a, feature_b)| {
-                        absolute_distance(feature_a, feature_b).coerce_into()
+                        absolute_distance(feature_a, feature_b).as_()
                     })
                     .collect::<Vec<f32>>()
             },
@@ -134,7 +134,7 @@ impl EdgeEmbedding {
                     .copied()
                     .zip(b.iter().copied())
                     .map(|(feature_a, feature_b)| {
-                        let l1 = absolute_distance(feature_a, feature_b).coerce_into();
+                        let l1 = absolute_distance(feature_a, feature_b).as_();
                         l1 * l1
                     })
                     .collect::<Vec<f32>>()
@@ -143,14 +143,14 @@ impl EdgeEmbedding {
                 a.iter()
                     .copied()
                     .zip(b.iter().copied())
-                    .map(|(feature_a, feature_b)| feature_a.coerce_into() + feature_b.coerce_into())
+                    .map(|(feature_a, feature_b)| feature_a.as_() + feature_b.as_())
                     .collect::<Vec<f32>>()
             },
             EdgeEmbedding::Sub => |a: &[F], b: &[F]| {
                 a.iter()
                     .zip(b.iter())
                     .map(|(&first_feature, &second_feature)| {
-                        first_feature.coerce_into() - second_feature.coerce_into()
+                        first_feature.as_() - second_feature.as_()
                     })
                     .collect()
             },
@@ -159,7 +159,7 @@ impl EdgeEmbedding {
                     .copied()
                     .zip(b.iter().copied())
                     .map(|(feature_a, feature_b)| {
-                        feature_a.coerce_into().max(feature_b.coerce_into())
+                        feature_a.as_().max(feature_b.as_())
                     })
                     .collect::<Vec<f32>>()
             },
@@ -168,7 +168,7 @@ impl EdgeEmbedding {
                     .copied()
                     .zip(b.iter().copied())
                     .map(|(feature_a, feature_b)| {
-                        feature_a.coerce_into().min(feature_b.coerce_into())
+                        feature_a.as_().min(feature_b.as_())
                     })
                     .collect::<Vec<f32>>()
             },
@@ -177,7 +177,7 @@ impl EdgeEmbedding {
 
     pub fn embed<F>(&self, source_feature: &[F], destination_features: &[F]) -> Vec<f32>
     where
-        F: Coerced<f32> + Copy + Sub<Output = F> + PartialOrd,
+        F: AsPrimitive<f32> + Copy + Sub<Output = F> + PartialOrd,
     {
         self.get_method()(source_feature, destination_features)
     }
@@ -358,7 +358,7 @@ impl EdgeFeature {
         }
     }
 
-    pub fn embed<O1: Optimizer<f32>, O2: Optimizer<Vec<f32>>, F: Coerced<f32>>(
+    pub fn embed<O1: Optimizer<f32>, O2: Optimizer<Vec<f32>>, F: AsPrimitive<f32>>(
         &self,
         model: &EdgePredictionPerceptron<O1, O2>,
         support: &Graph,

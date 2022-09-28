@@ -1,7 +1,7 @@
 use crate::*;
 use core::sync::atomic::Ordering;
 use graph::{Graph, NodeT};
-use num_traits::{Atomic, Coerced};
+use num_traits::{AsPrimitive, Atomic};
 use rayon::prelude::*;
 use vec_rand::splitmix64;
 
@@ -58,23 +58,23 @@ impl LandmarkBasedFeature<{ LandmarkFeatureType::Random }> for RUINE {
         feature_number: usize,
     ) where
         Feature: IntegerFeatureType,
+        u64: AsPrimitive<Feature>,
     {
         let random_state = splitmix64(self.get_random_state())
             .wrapping_mul(self.get_random_state().wrapping_add(feature_number as u64));
 
         // We initialize the provided slice with the maximum distance.
 
-        let maximum_value: usize = Feature::MAX.coerce_into();
+        let maximum_value: u64 = Feature::MAX.as_();
 
         features
             .par_iter_mut()
             .enumerate()
             .for_each(|(i, distance)| {
-                *distance = Feature::coerce_from(
-                    splitmix64(
-                        (random_state.wrapping_add(i as u64)).wrapping_mul(random_state + i as u64),
-                    ) % maximum_value as u64,
-                );
+                *distance = (splitmix64(
+                    (random_state.wrapping_add(i as u64)).wrapping_mul(random_state + i as u64),
+                ) % maximum_value)
+                    .as_();
             });
 
         // We wrap the features object in an unsafe cell so
@@ -83,21 +83,18 @@ impl LandmarkBasedFeature<{ LandmarkFeatureType::Random }> for RUINE {
 
         (0..self.get_number_of_convolutions()).for_each(|_| {
             graph.par_iter_node_ids().for_each(|src| {
-                let mut feature_sum: usize = shared_features[src as usize]
-                    .load(Ordering::Relaxed)
-                    .coerce_into();
-                let mut number_of_neighbours: usize = 1;
+                let mut feature_sum: u64 =
+                    shared_features[src as usize].load(Ordering::Relaxed).as_();
+                let mut number_of_neighbours: u64 = 1;
                 graph
                     .iter_unchecked_neighbour_node_ids_from_source_node_id(src)
                     .for_each(|dst| {
-                        feature_sum += <Feature as Coerced<usize>>::coerce_into(
-                            shared_features[dst as usize].load(Ordering::Relaxed),
-                        );
+                        feature_sum += <Feature as AsPrimitive<u64>>::as_(shared_features[dst as usize].load(Ordering::Relaxed));
                         number_of_neighbours += 1;
                     });
 
                 shared_features[src as usize].store(
-                    Feature::coerce_from(feature_sum / number_of_neighbours),
+                    (feature_sum / number_of_neighbours).as_(),
                     Ordering::Relaxed,
                 );
             });
