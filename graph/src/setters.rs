@@ -250,8 +250,8 @@ impl Graph {
     ///
     /// # Arguments
     /// * `edge_type_id`: EdgeTypeT - The edge type ID to replace with.
-    /// * `source_node_type_ids`: Vec<Option<NodeTypeT>> - Node types of the source nodes. When an edge has a source node with any of this node types, we may change its edge type if also the destination nodes have the correct node types.
-    /// * `destination_node_type_ids`: Vec<Option<NodeTypeT>> - Node types of the destination nodes. When an edge has a destination node with any of this node types, we may change its edge type if also the source nodes have the correct node types.
+    /// * `source_node_type_ids`: &[Option<NodeTypeT>] - Node types of the source nodes. When an edge has a source node with any of this node types, we may change its edge type if also the destination nodes have the correct node types.
+    /// * `destination_node_type_ids`: &[Option<NodeTypeT>] - Node types of the destination nodes. When an edge has a destination node with any of this node types, we may change its edge type if also the source nodes have the correct node types.
     ///
     /// # Raises
     /// * If the given list of node name prefixes is empty.
@@ -259,8 +259,8 @@ impl Graph {
     pub fn replace_edge_type_id_from_edge_node_type_ids_inplace(
         &mut self,
         edge_type_id: EdgeTypeT,
-        source_node_type_ids: Vec<Option<NodeTypeT>>,
-        destination_node_type_ids: Vec<Option<NodeTypeT>>,
+        source_node_type_ids: &[Option<NodeTypeT>],
+        destination_node_type_ids: &[Option<NodeTypeT>],
     ) -> Result<&Graph> {
         if source_node_type_ids.is_empty() {
             return Err("The provided list of source node type IDs is empty!".to_string());
@@ -345,8 +345,8 @@ impl Graph {
     ///
     /// # Arguments
     /// * `edge_type_id`: EdgeTypeT - The edge type ID to replace with.
-    /// * `source_node_type_ids`: Vec<Option<NodeTypeT>> - Node types of the source nodes. When an edge has a source node with any of this node types, we may change its edge type if also the destination nodes have the correct node types.
-    /// * `destination_node_type_ids`: Vec<Option<NodeTypeT>> - Node types of the destination nodes. When an edge has a destination node with any of this node types, we may change its edge type if also the source nodes have the correct node types.
+    /// * `source_node_type_ids`: &[Option<NodeTypeT>] - Node types of the source nodes. When an edge has a source node with any of this node types, we may change its edge type if also the destination nodes have the correct node types.
+    /// * `destination_node_type_ids`: &[Option<NodeTypeT>] - Node types of the destination nodes. When an edge has a destination node with any of this node types, we may change its edge type if also the source nodes have the correct node types.
     ///
     /// # Raises
     /// * If the given list of node name prefixes is empty.
@@ -354,8 +354,8 @@ impl Graph {
     pub fn replace_edge_type_id_from_edge_node_type_ids(
         &mut self,
         edge_type_id: EdgeTypeT,
-        source_node_type_ids: Vec<Option<NodeTypeT>>,
-        destination_node_type_ids: Vec<Option<NodeTypeT>>,
+        source_node_type_ids: &[Option<NodeTypeT>],
+        destination_node_type_ids: &[Option<NodeTypeT>],
     ) -> Result<Graph> {
         let mut graph = self.clone();
         graph.replace_edge_type_id_from_edge_node_type_ids_inplace(
@@ -458,14 +458,10 @@ impl Graph {
             Ok(edge_type_id) => edge_type_id.unwrap(),
             Err(_) => self.add_edge_type_name_inplace(edge_type_name)?,
         };
-        let source_node_type_ids =
-            self.get_node_type_ids_from_node_type_names(source_node_type_names)?;
-        let destination_node_type_ids =
-            self.get_node_type_ids_from_node_type_names(destination_node_type_names)?;
         self.replace_edge_type_id_from_edge_node_type_ids_inplace(
             edge_type_id,
-            source_node_type_ids,
-            destination_node_type_ids,
+            &self.get_node_type_ids_from_node_type_names(source_node_type_names)?,
+            &self.get_node_type_ids_from_node_type_names(destination_node_type_names)?,
         )
     }
 

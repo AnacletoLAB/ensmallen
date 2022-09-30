@@ -1,4 +1,4 @@
-use graph::{Graph, NodeT, ThreadDataRaceAware};
+use graph::{Graph, NodeT, NodeTypeT, ThreadDataRaceAware};
 use indicatif::{ParallelProgressIterator, ProgressBar, ProgressStyle};
 use num_traits::{AsPrimitive, Float, IntoAtomic};
 use rayon::prelude::*;
@@ -332,7 +332,7 @@ where
     /// * `second_iterator`: fn(&Graph, &A2) -> Result<I2, String> - Second generator of iterators.
     /// * `second_attribute`: &A1 - Parameter to be forwarded to the first iterator generation method.
     /// * `minimum_similarity`: Option<F> - Minimum similarity to be kept. Values below this amount are filtered.
-    fn get_node_ids_and_similarity_from_iterators<'a, 'b, I1, I2, A1, A2>(
+    fn get_node_ids_and_similarity_from_iterators<'a, 'b, I1, I2, A1: ?Sized, A2>(
         &'a self,
         first_iterator: fn(&'b Graph, &'b A1) -> Result<I1, String>,
         first_attribute: &'b A1,
@@ -343,7 +343,7 @@ where
     where
         I1: ParallelIterator<Item = NodeT> + 'a,
         I2: ParallelIterator<Item = NodeT>,
-        A2: Sync,
+        A2: Sync + ?Sized,
         'a: 'b,
     {
         self.must_be_trained().and_then(|(dag, _)| {
@@ -379,16 +379,86 @@ where
         })
     }
 
+    /// Return the similarity between the two provided node ids.
+    ///
+    /// # Arguments
+    /// * `first_node_ids`: &[NodeT] - The first node ids for which to compute the similarity.
+    /// * `second_node_ids`: &[NodeT] - The second node ids for which to compute the similarity.
+    /// * `minimum_similarity`: Option<F> - Minimum similarity to be kept. Values below this amount are filtered.
+    pub fn get_node_ids_and_similarity_from_node_ids(
+        &self,
+        first_node_ids: &[NodeT],
+        second_node_ids: &[NodeT],
+        minimum_similarity: Option<F>,
+    ) -> Result<(Vec<Vec<NodeT>>, Vec<F>), String> {
+        self.must_be_trained().and_then(|(dag, _)| {
+            first_node_ids
+                .par_iter()
+                .chain(second_node_ids.par_iter())
+                .map(|&node_id| {
+                    dag.validate_node_id(node_id)?;
+                    Ok(())
+                })
+                .collect::<Result<(), String>>()
+        })?;
+        self.get_node_ids_and_similarity_from_iterators(
+            |_graph, ids| Ok(ids.par_iter().copied()),
+            &first_node_ids,
+            |_graph, ids| ids.par_iter().copied(),
+            &second_node_ids,
+            minimum_similarity,
+        )
+    }
+
+    /// Return the similarity between the two provided node names.
+    ///
+    /// # Arguments
+    /// * `first_node_names`: &[&str] - The first node names for which to compute the similarity.
+    /// * `second_node_names`: &[&str] - The second node names for which to compute the similarity.
+    /// * `minimum_similarity`: Option<F> - Minimum similarity to be kept. Values below this amount are filtered.
+    pub fn get_node_ids_and_similarity_from_node_names(
+        &self,
+        first_node_names: &[&str],
+        second_node_names: &[&str],
+        minimum_similarity: Option<F>,
+    ) -> Result<(Vec<Vec<NodeT>>, Vec<F>), String> {
+        self.must_be_trained().and_then(|(dag, _)| {
+            first_node_names
+                .par_iter()
+                .chain(second_node_names.par_iter())
+                .map(|node_name| {
+                    dag.get_node_id_from_node_name(node_name)?;
+                    Ok(())
+                })
+                .collect::<Result<(), String>>()
+        })?;
+        self.get_node_ids_and_similarity_from_iterators(
+            |graph, names| {
+                Ok(names.par_iter().map(|node_name| unsafe {
+                    graph.get_unchecked_node_id_from_node_name(node_name)
+                }))
+            },
+            &first_node_names,
+            |graph, names| {
+                names.par_iter().map(|node_name| unsafe {
+                    graph.get_unchecked_node_id_from_node_name(node_name)
+                })
+            },
+            &second_node_names,
+            minimum_similarity,
+        )
+    }
+
     /// Return the similarity between the two provided node name prefixes.
     ///
     /// # Arguments
-    /// * `first_node_prefixes`: Vec<&str> - The first node prefixes for which to compute the similarity.
-    /// * `second_node_prefixes`: Vec<&str> - The second node prefixes for which to compute the similarity.
+    /// * `first_node_prefixes`: &[&str] - The first node prefixes for which to compute the similarity.
+    /// * `second_node_prefixes`: &[&str] - The second node prefixes for which to compute the similarity.
     /// * `minimum_similarity`: Option<F> - Minimum similarity to be kept. Values below this amount are filtered.
     pub fn get_node_ids_and_similarity_from_node_prefixes(
         &self,
-        first_node_prefixes: Vec<&str>,
-        second_node_prefixes: Vec<&str>,
+        first_node_prefixes: &[&str],
+        second_node_prefixes: &[&str],
         minimum_similarity: Option<F>,
     ) -> Result<(Vec<Vec<NodeT>>, Vec<F>), String> {
         self.get_node_ids_and_similarity_from_iterators(
@@ -396,6 +466,31 @@ where
             &first_node_prefixes,
             |graph, prefixes| graph.par_iter_node_ids_from_node_curie_prefixes(&prefixes),
             &second_node_prefixes,
+            minimum_similarity,
+        )
+    }
+
+    /// Return the similarity between the two provided node type ids.
+    ///
+    /// # Arguments
+    /// * `first_node_type_ids`: &[Option<NodeTypeT>] - The first node type ids for which to compute the similarity.
+    /// * `second_node_type_ids`: &[Option<NodeTypeT>] - The second node type ids for which to compute the similarity.
+    /// * `minimum_similarity`: Option<F> - Minimum similarity to be kept. Values below this amount are filtered.
+    pub fn get_node_ids_and_similarity_from_node_type_ids(
+        &self,
+        first_node_type_ids: &[Option<NodeTypeT>],
+        second_node_type_ids: &[Option<NodeTypeT>],
+        minimum_similarity: Option<F>,
+    ) -> Result<(Vec<Vec<NodeT>>, Vec<F>), String> {
+        self.get_node_ids_and_similarity_from_iterators(
+            |graph, node_type_ids| graph.par_iter_node_ids_from_node_type_ids(&node_type_ids),
+            &first_node_type_ids,
+            |graph, node_type_ids| {
+                graph
+                    .par_iter_node_ids_from_node_type_ids(&node_type_ids)
+                    .unwrap()
+            },
+            &second_node_type_ids,
             minimum_similarity,
         )
     }

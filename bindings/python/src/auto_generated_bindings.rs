@@ -3155,7 +3155,7 @@ impl Graph {
         &self,
         node_type_ids: Vec<Option<NodeTypeT>>,
     ) -> PyResult<Vec<Option<NodeTypeT>>> {
-        Ok(pe!(self.inner.validate_node_type_ids(node_type_ids))?
+        Ok(pe!(self.inner.validate_node_type_ids(&node_type_ids))?
             .into_iter()
             .map(|x| x.map(|x| x.into()))
             .collect::<Vec<_>>())
@@ -3715,8 +3715,8 @@ impl Graph {
                 .inner
                 .replace_edge_type_id_from_edge_node_type_ids_inplace(
                     edge_type_id.clone(),
-                    source_node_type_ids,
-                    destination_node_type_ids
+                    &source_node_type_ids,
+                    &destination_node_type_ids
                 ))?;
             ()
         })
@@ -3752,8 +3752,8 @@ impl Graph {
         Ok({
             pe!(self.inner.replace_edge_type_id_from_edge_node_type_ids(
                 edge_type_id.clone(),
-                source_node_type_ids,
-                destination_node_type_ids
+                &source_node_type_ids,
+                &destination_node_type_ids
             ))?;
             ()
         })
@@ -8593,7 +8593,7 @@ impl Graph {
             let gil = pyo3::Python::acquire_gil();
             to_ndarray_1d!(
                 gil,
-                pe!(self.inner.get_node_ids_from_node_type_ids(node_type_ids))?,
+                pe!(self.inner.get_node_ids_from_node_type_ids(&node_type_ids))?,
                 NodeT
             )
         })
