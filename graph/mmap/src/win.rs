@@ -8,8 +8,8 @@ use windows::Win32::System::Memory::*;
 
 #[derive(Debug)]
 pub struct MemoryMapped {
-    pub(crate) file_handle: HANDLE,
-    pub(crate) mapping_handle: HANDLE,
+    pub(crate) file_handle: Option<HANDLE>,
+    pub(crate) mapping_handle: Option<HANDLE>,
     pub(crate) addr: *mut c_void,
     pub(crate) len: usize,
     pub(crate) path: Option<String>,
@@ -21,21 +21,38 @@ impl Drop for MemoryMapped {
             // if we have modified a memory mapped file, we run a sync before
             // closing
             self.sync_flush().unwrap();
+            
+            match (self.file_handle, self.mapping_handle) {
+                (Some(file_handle), Some(mapping_handle)) => {
 
-            let res = UnmapViewOfFile(self.addr);
-            if !res.as_bool() {
-                panic!("Cannot unmap view of file.",);
+                    let res = UnmapViewOfFile(self.addr);
+                    if !res.as_bool() {
+                        panic!("Cannot unmap view of file.",);
+                    }
+        
+                    let res = CloseHandle(mapping_handle);
+                    if !res.as_bool() {
+                        panic!("Cannot Close the mapping handle.");
+                    }
+        
+                    let res = CloseHandle(file_handle);
+                    if !res.as_bool() {
+                        panic!("Cannot Close the mapping handle.");
+                    }
+                }
+                (None, None) => {
+                    let res = VirtualFree(
+                        self.addr,
+                        0,
+                        MEM_RELEASE,
+                    );
+                    if !res.as_bool() {
+                        panic!("Cannot VirtualFree the memory.",);
+                    }
+                }
+                _ => panic!("Invalid memory map state"),
             }
 
-            let res = CloseHandle(self.mapping_handle);
-            if !res.as_bool() {
-                panic!("Cannot Close the mapping handle.");
-            }
-
-            let res = CloseHandle(self.file_handle);
-            if !res.as_bool() {
-                panic!("Cannot Close the mapping handle.");
-            }
         }
     }
 }
@@ -88,8 +105,8 @@ impl MemoryMapReadOnlyCore for MemoryMapped {
             }
 
             Ok(MemoryMapped {
-                file_handle,
-                mapping_handle,
+                file_handle: Some(file_handle),
+                mapping_handle: Some(mapping_handle),
                 addr,
                 len,
                 path: Some(path.to_string()),
@@ -203,11 +220,17 @@ impl MemoryMapCore for MemoryMapped {
                     0,                              // offset low
                     len,
                 ) };
-                (addr, file_handle, mapping_handle, len)
+                (addr, Some(file_handle), Some(mapping_handle), len)
             }
             // anonymous
             (None, Some(len)) => {
-                todo!();
+                let addr = unsafe{VirtualAlloc(
+                    0 as _, //addr
+                    len,
+                    MEM_COMMIT,
+                    PAGE_READWRITE,
+                )};
+                (addr, None, None, len)
             }
             (None, None) => {
                 return Err("Cannot create an mmap without both a path and a len".to_string());
