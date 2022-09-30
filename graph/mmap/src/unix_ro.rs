@@ -1,6 +1,6 @@
-use libc::*;
-use core::fmt::Debug;
 use super::MemoryMapReadOnlyCore;
+use core::fmt::Debug;
+use libc::*;
 
 /// A read-only memory mapped file,
 /// this should be equivalent to read-only slice that
@@ -72,7 +72,12 @@ impl MemoryMapReadOnlyCore for MemoryMappedReadOnly {
             ));
         }
 
-        Ok(MemoryMappedReadOnly { fd, addr, len, path: Some(path.to_string()) })
+        Ok(MemoryMappedReadOnly {
+            fd,
+            addr,
+            len,
+            path: Some(path.to_string()),
+        })
     }
 
     fn get_addr(&self) -> *mut u8 {
