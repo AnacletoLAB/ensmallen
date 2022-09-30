@@ -125,6 +125,9 @@ impl<'a> Iterator for ParallelLinesProducer<'a> {
             if result.ends_with('\n') {
                 result.pop().unwrap();
             }
+            if result.ends_with('\r') {
+                result.pop().unwrap();
+            }
             return Some((0, Ok(result)));
         }
     }
