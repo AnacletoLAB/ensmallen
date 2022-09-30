@@ -2,7 +2,7 @@ use crate::*;
 use express_measures::{dot_product_sequential_unchecked, ThreadFloat};
 use graph::{Graph, NodeT, ThreadDataRaceAware};
 use indicatif::ProgressIterator;
-use num_traits::Coerced;
+use num_traits::AsPrimitive;
 use rayon::prelude::*;
 use vec_rand::splitmix64;
 
@@ -10,19 +10,20 @@ impl<W> Node2Vec<W>
 where
     W: WalkTransformer,
 {
-    pub(crate) fn fit_transform_glove<F: ThreadFloat>(
+    pub(crate) fn fit_transform_glove<F: ThreadFloat + 'static>(
         &self,
         graph: &Graph,
         embedding: &mut [&mut [F]],
     ) -> Result<(), String>
     where
-        NodeT: Coerced<F>,
+    f32: AsPrimitive<F>,
+        NodeT: AsPrimitive<F>,
     {
         let embedding_size = self.embedding_size;
         let mut walk_parameters = self.walk_parameters.clone();
         let mut random_state = splitmix64(self.walk_parameters.get_random_state() as u64);
-        let mut learning_rate = F::coerce_from(self.learning_rate);
-        let alpha = F::coerce_from(self.alpha);
+        let mut learning_rate = self.learning_rate.as_();
+        let alpha = self.alpha.as_();
 
         // Update the random state
         random_state = splitmix64(random_state);
@@ -46,7 +47,7 @@ where
                     self.window_size,
                     None,
                 )?
-                .map(|(src, dst, freq)| (src as usize, dst as usize, F::coerce_from(freq)))
+                .map(|(src, dst, freq)| (src as usize, dst as usize, freq.as_()))
                 .for_each(|(src, dst, freq)| unsafe {
                     let src_embedding = &mut (*shared_embedding.get())[0]
                         [src * embedding_size..(src + 1) * embedding_size];
@@ -71,7 +72,7 @@ where
                         });
                 });
 
-            learning_rate *= F::coerce_from(self.learning_rate_decay);
+            learning_rate *= (self.learning_rate_decay).as_()
         }
         Ok(())
     }

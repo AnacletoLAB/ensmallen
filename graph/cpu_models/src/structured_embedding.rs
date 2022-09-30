@@ -5,7 +5,7 @@ use express_measures::{
 };
 use graph::{EdgeT, EdgeTypeT, Graph, NodeT, ThreadDataRaceAware};
 use indicatif::ProgressIterator;
-use num_traits::Coerced;
+use num_traits::AsPrimitive;
 use rayon::prelude::*;
 use vec_rand::splitmix64;
 
@@ -61,19 +61,20 @@ impl GraphEmbedder for StructuredEmbedding {
         ])
     }
 
-    fn _fit_transform<F: ThreadFloat>(
+    fn _fit_transform<F: ThreadFloat + 'static>(
         &self,
         graph: &Graph,
         embedding: &mut [&mut [F]],
     ) -> Result<(), String>
     where
-        NodeT: Coerced<F>,
-        EdgeT: Coerced<F>,
+        f32: AsPrimitive<F>,
+        NodeT: AsPrimitive<F>,
+        EdgeT: AsPrimitive<F>,
     {
         let embedding_size = self.model.get_embedding_size();
         let edge_matrix_size = embedding_size * embedding_size;
         let scale_factor = (embedding_size as f32).sqrt();
-        let mut learning_rate = F::coerce_from(self.model.get_learning_rate() / scale_factor);
+        let mut learning_rate = (self.model.get_learning_rate() / scale_factor).as_();
         let mut random_state = self.get_random_state();
 
         let shared_embedding = ThreadDataRaceAware::new(embedding);
@@ -168,7 +169,7 @@ impl GraphEmbedder for StructuredEmbedding {
                     // If the delta is lower than zero, there is no need to continue
                     // further, as the gradient will be zero.
                     if not_src_sub_dst_norm - src_sub_dst_norm
-                        > F::coerce_from(self.model.relu_bias)
+                        > self.model.relu_bias.as_()
                     {
                         return;
                     }
@@ -187,9 +188,9 @@ impl GraphEmbedder for StructuredEmbedding {
                     let edge_type_prior =
                         get_edge_type_prior(graph, edge_type_id as EdgeTypeT, learning_rate);
 
-                    let src_sub_dst_squared_norm = src_sub_dst_norm.powf(F::coerce_from(2.0));
+                    let src_sub_dst_squared_norm = src_sub_dst_norm.powf(F::one() + F::one());
                     let not_src_sub_dst_squared_norm =
-                        not_src_sub_dst_norm.powf(F::coerce_from(2.0));
+                        not_src_sub_dst_norm.powf(F::one() + F::one());
 
                     src_sub_dst
                         .into_iter()
@@ -282,7 +283,7 @@ impl GraphEmbedder for StructuredEmbedding {
                         );
                 });
 
-            learning_rate *= F::coerce_from(self.model.get_learning_rate_decay());
+            learning_rate *= (self.model.get_learning_rate_decay()).as_();
         }
         Ok(())
     }

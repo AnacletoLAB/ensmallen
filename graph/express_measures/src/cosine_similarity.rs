@@ -2,7 +2,7 @@ use crate::types::*;
 use crate::validation::*;
 use core::fmt::Debug;
 
-use num_traits::{Float, Coerced};
+use num_traits::{Float, AsPrimitive};
 use rayon::prelude::*;
 
 /// Returns the cosine similarity between the two provided vectors computed sequentially.
@@ -15,14 +15,14 @@ use rayon::prelude::*;
 /// If the two features have different sizes, we will compute
 /// the cosine similarity upwards to when the minimum size.
 /// No warning will be raised.
-pub unsafe fn cosine_similarity_sequential_unchecked<R: Float, F: Coerced<R> + Copy>(
+pub unsafe fn cosine_similarity_sequential_unchecked<R: Float + 'static, F: AsPrimitive<R> + Copy>(
     src_features: &[F],
     dst_features: &[F],
 ) -> (R, R, R) {
     let (total_dot_products, total_squared_src_features, total_squared_dst_features) = src_features
         .iter()
         .zip(dst_features.iter())
-        .map(|(&src_feature, &dst_feature)| (src_feature.coerce_into(), dst_feature.coerce_into()))
+        .map(|(&src_feature, &dst_feature)| (src_feature.as_(), dst_feature.as_()))
         .map(|(src_feature, dst_feature)| {
             (
                 src_feature * dst_feature,
@@ -103,7 +103,7 @@ pub unsafe fn cosine_similarity_parallel_unchecked<F: ThreadFloat>(
 /// # Raises
 /// * If one of the two vectors are empty.
 /// * If the two vectors have different sizes.
-pub fn cosine_similarity_sequential<R: Float, F: Coerced<R> + Copy>(
+pub fn cosine_similarity_sequential<R: Float + 'static, F: AsPrimitive<R> + Copy>(
     src_features: &[F],
     dst_features: &[F],
 ) -> Result<R, String> {
@@ -146,8 +146,8 @@ pub fn cosine_similarity_parallel<F: ThreadFloat>(
 /// If the source and destination indices have values higher
 /// than the provided matrix, the method will panic.
 pub unsafe fn cosine_similarity_from_indices_unchecked<
-    R: Float + Send + Sync,
-    F: Coerced<R> + Send + Sync + Copy,
+    R: Float + Send + Sync + 'static,
+    F: AsPrimitive<R> + Send + Sync + Copy,
     I: ThreadUnsigned,
 >(
     similarities: &mut [R],

@@ -69,6 +69,70 @@ impl DAGResnik {
     }
 
     #[pyo3(
+        text_signature = "($self, first_node_ids, second_node_ids, minimum_similarity)"
+    )]
+    /// Return the similarity between the two provided ids nodes.
+    ///
+    /// Parameters
+    /// -------------------
+    /// first_node_ids: List[int]
+    ///     The first nodes for which to compute the similarity.
+    /// second_node_ids: List[int]
+    ///     The second nodes for which to compute the similarity.
+    /// minimum_similarity: Optional[float] = 0.0
+    ///     Minimum similarity to be kept. Values below this amount are filtered.
+    pub fn get_node_ids_and_similarity_from_node_ids(
+        &self,
+        first_node_ids: Vec<NodeT>,
+        second_node_ids: Vec<NodeT>,
+        minimum_similarity: Option<f32>,
+    ) -> PyResult<(Py<PyArray2<NodeT>>, Py<PyArray1<f32>>)> {
+        let gil = pyo3::Python::acquire_gil();
+        let (node_ids, similarities): (Vec<Vec<NodeT>>, Vec<f32>) =
+            pe!(self.inner.get_node_ids_and_similarity_from_node_ids(
+                &first_node_ids,
+                &second_node_ids,
+                minimum_similarity
+            ))?;
+        Ok((
+            to_ndarray_2d!(gil, node_ids, NodeT),
+            to_ndarray_1d!(gil, similarities, f32),
+        ))
+    }
+
+    #[pyo3(
+        text_signature = "($self, first_node_names, second_node_names, minimum_similarity)"
+    )]
+    /// Return the similarity between the two provided names nodes.
+    ///
+    /// Parameters
+    /// -------------------
+    /// first_node_names: List[str]
+    ///     The first nodes for which to compute the similarity.
+    /// second_node_names: List[str]
+    ///     The second nodes for which to compute the similarity.
+    /// minimum_similarity: Optional[float] = 0.0
+    ///     Minimum similarity to be kept. Values below this amount are filtered.
+    pub fn get_node_ids_and_similarity_from_node_names(
+        &self,
+        first_node_names: Vec<&str>,
+        second_node_names: Vec<&str>,
+        minimum_similarity: Option<f32>,
+    ) -> PyResult<(Py<PyArray2<NodeT>>, Py<PyArray1<f32>>)> {
+        let gil = pyo3::Python::acquire_gil();
+        let (node_ids, similarities): (Vec<Vec<NodeT>>, Vec<f32>) =
+            pe!(self.inner.get_node_ids_and_similarity_from_node_names(
+                &first_node_names,
+                &second_node_names,
+                minimum_similarity
+            ))?;
+        Ok((
+            to_ndarray_2d!(gil, node_ids, NodeT),
+            to_ndarray_1d!(gil, similarities, f32),
+        ))
+    }
+    
+    #[pyo3(
         text_signature = "($self, first_node_prefixes, second_node_prefixes, minimum_similarity)"
     )]
     /// Return the similarity between the two provided prefixes nodes.
@@ -90,8 +154,8 @@ impl DAGResnik {
         let gil = pyo3::Python::acquire_gil();
         let (node_ids, similarities): (Vec<Vec<NodeT>>, Vec<f32>) =
             pe!(self.inner.get_node_ids_and_similarity_from_node_prefixes(
-                first_node_prefixes,
-                second_node_prefixes,
+                &first_node_prefixes,
+                &second_node_prefixes,
                 minimum_similarity
             ))?;
         Ok((
@@ -100,6 +164,38 @@ impl DAGResnik {
         ))
     }
 
+    #[pyo3(
+        text_signature = "($self, first_node_type_ids, second_node_type_ids, minimum_similarity)"
+    )]
+    /// Return the similarity between the two provided node_type_ids nodes.
+    ///
+    /// Parameters
+    /// -------------------
+    /// first_node_type_ids: List[int]
+    ///     The first nodes type ids for which to compute the similarity.
+    /// second_node_type_ids: List[int]
+    ///     The second nodes type ids for which to compute the similarity.
+    /// minimum_similarity: Optional[float] = 0.0
+    ///     Minimum similarity to be kept. Values below this amount are filtered.
+    pub fn get_node_ids_and_similarity_from_node_type_ids(
+        &self,
+        first_node_type_ids: Vec<Option<NodeTypeT>>,
+        second_node_type_ids: Vec<Option<NodeTypeT>>,
+        minimum_similarity: Option<f32>,
+    ) -> PyResult<(Py<PyArray2<NodeT>>, Py<PyArray1<f32>>)> {
+        let gil = pyo3::Python::acquire_gil();
+        let (node_ids, similarities): (Vec<Vec<NodeT>>, Vec<f32>) =
+            pe!(self.inner.get_node_ids_and_similarity_from_node_type_ids(
+                &first_node_type_ids,
+                &second_node_type_ids,
+                minimum_similarity
+            ))?;
+        Ok((
+            to_ndarray_2d!(gil, node_ids, NodeT),
+            to_ndarray_1d!(gil, similarities, f32),
+        ))
+    }
+    
     #[pyo3(
         text_signature = "($self, first_node_type_names, second_node_type_names, minimum_similarity)"
     )]

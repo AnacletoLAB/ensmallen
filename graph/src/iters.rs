@@ -1689,14 +1689,14 @@ impl Graph {
     /// Returns parallel iterator over node IDs of the nodes with given node type IDs.
     ///
     /// # Argument
-    /// * `node_type_ids`: Vec<Option<NodeTypeT>> - The node type ID to filter for.
+    /// * `node_type_ids`: &[Option<NodeTypeT>] - The node type ID to filter for.
     ///
     /// # Raises
     /// * If there are no node types in the graph.
     /// * If the given node type IDs does not exist in the current graph instance.
     pub fn par_iter_node_ids_from_node_type_ids(
         &self,
-        node_type_ids: Vec<Option<NodeTypeT>>,
+        node_type_ids: &[Option<NodeTypeT>],
     ) -> Result<impl ParallelIterator<Item = NodeT> + '_> {
         let node_type_ids = self.validate_node_type_ids(node_type_ids)?;
         self.must_have_node_types().map(|node_types| {
@@ -1747,7 +1747,7 @@ impl Graph {
         node_type_names: &[Option<&str>],
     ) -> Result<impl ParallelIterator<Item = NodeT> + '_> {
         self.par_iter_node_ids_from_node_type_ids(
-            self.get_node_type_ids_from_node_type_names(node_type_names)?,
+            &self.get_node_type_ids_from_node_type_names(node_type_names)?,
         )
     }
 

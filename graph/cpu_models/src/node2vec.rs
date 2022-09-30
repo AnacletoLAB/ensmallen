@@ -2,7 +2,7 @@ use crate::*;
 use express_measures::ThreadFloat;
 use graph::{WalksParameters, NodeT};
 use indicatif::{ProgressBar, ProgressStyle};
-use num_traits::Coerced;
+use num_traits::AsPrimitive;
 
 #[derive(Clone, Debug, Eq, PartialEq)]
 pub enum Node2VecModels {
@@ -174,13 +174,14 @@ where
         self.walk_parameters.get_random_state() as u64
     }
 
-    fn _fit_transform<F: Coerced<f32> + ThreadFloat>(
+    fn _fit_transform<F: AsPrimitive<f32> + ThreadFloat>(
         &self,
         graph: &graph::Graph,
         embedding: &mut [&mut [F]],
     ) -> Result<(), String>
     where
-        NodeT: Coerced<F>,
+        NodeT: AsPrimitive<F>,
+        f32: AsPrimitive<F>
     {
         match self.model_type {
             Node2VecModels::CBOW => self.fit_transform_cbow(graph, embedding),

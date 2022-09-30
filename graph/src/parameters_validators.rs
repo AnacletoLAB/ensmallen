@@ -175,18 +175,18 @@ impl Graph {
     /// Validates provided node type IDs.
     ///
     /// # Arguments
-    /// * `node_type_ids`: Vec<Option<NodeTypeT>> - Vector of node type IDs to validate.
+    /// * `node_type_ids`: &[Option<NodeTypeT>] - Vector of node type IDs to validate.
     ///
     /// # Raises
     /// * If there are no node types in the graph.
     pub fn validate_node_type_ids(
         &self,
-        node_type_ids: Vec<Option<NodeTypeT>>,
+        node_type_ids: &[Option<NodeTypeT>],
     ) -> Result<Vec<Option<NodeTypeT>>> {
         self.must_have_node_types()?;
         node_type_ids
             .into_iter()
-            .map(|node_type| self.validate_node_type_id(node_type))
+            .map(|&node_type| self.validate_node_type_id(node_type))
             .collect()
     }
 

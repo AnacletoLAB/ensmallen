@@ -1,8 +1,9 @@
 use crate::*;
+use file_progress::{FileProgress, FileProgressIterator, MarkdownFileProgress};
 use graph::{EdgeT, Graph, NodeT};
+use num_traits::AsPrimitive;
 use indicatif::{ProgressBar, ProgressIterator, ProgressStyle};
 use rayon::prelude::*;
-use file_progress::{FileProgressIterator, MarkdownFileProgress, FileProgress};
 
 #[derive(Clone, Debug)]
 pub struct BasicALPINE {
@@ -41,6 +42,7 @@ impl BasicALPINE {
 pub enum LandmarkFeatureType {
     Windows,
     ShortestPaths,
+    Random
 }
 
 pub trait LandmarkBasedFeature<const LFT: LandmarkFeatureType> {
@@ -49,8 +51,10 @@ pub trait LandmarkBasedFeature<const LFT: LandmarkFeatureType> {
         graph: &Graph,
         bucket: Vec<NodeT>,
         features: &mut [Feature],
+        feature_number: usize
     ) where
-        Feature: IntegerFeatureType;
+        Feature: IntegerFeatureType,
+        u64: AsPrimitive<Feature>;
 }
 
 #[derive(PartialEq, Eq)]
@@ -58,6 +62,7 @@ pub enum LandmarkType {
     Degrees,
     NodeTypes,
     Scores,
+    Empty,
 }
 
 pub trait LandmarkGenerator<const LT: LandmarkType> {
@@ -142,6 +147,23 @@ where
     }
 }
 
+pub trait EmptyLandmarkGenerator {}
+
+impl<M> LandmarkGenerator<{ LandmarkType::Empty }> for M
+where
+    M: EmptyLandmarkGenerator + EmbeddingSize,
+{
+    type LandmarkIterator<'a> = impl Iterator<Item = Vec<NodeT>> + 'a where Self: 'a, M: 'a;
+
+    /// Return vector of vectors of anchor node IDs.
+    fn iter_anchor_nodes_buckets<'a>(
+        &'a self,
+        graph: &'a Graph,
+    ) -> Result<Self::LandmarkIterator<'a>, String> {
+        Ok((0..self.get_embedding_size(graph)?).map(|_| Vec::new()))
+    }
+}
+
 pub trait ScoresLandmarkGenerator {
     fn get_scores(&self) -> &[f32];
 }
@@ -223,6 +245,7 @@ where
     fn fit_transform<Feature>(&self, graph: &Graph, embedding: &mut [Feature]) -> Result<(), String>
     where
         Feature: IntegerFeatureType,
+        u64: AsPrimitive<Feature>
     {
         let expected_embedding_len =
             self.get_embedding_size(graph)? * graph.get_number_of_nodes() as usize;
@@ -261,8 +284,8 @@ where
 
         let mut progress = MarkdownFileProgress::from_project_name(format!(
             "{graph_name}_{model_name}",
-            graph_name=graph.get_name(),
-            model_name=self.get_model_name()
+            graph_name = graph.get_name(),
+            model_name = self.get_model_name()
         ));
 
         progress.set_verbose(self.is_verbose());
@@ -273,8 +296,9 @@ where
             .progress_with(features_progress_bar)
             .progress_with_file(progress)
             .zip(self.iter_anchor_nodes_buckets(graph)?)
-            .for_each(|(empty_feature, bucket)| unsafe {
-                self.compute_unchecked_feature_from_bucket(graph, bucket, empty_feature);
+            .enumerate()
+            .for_each(|(feature_number, (empty_feature, bucket))| unsafe {
+                self.compute_unchecked_feature_from_bucket(graph, bucket, empty_feature, feature_number);
             });
 
         Ok(())
@@ -294,6 +318,7 @@ where
     ) -> Result<(), String>
     where
         Feature: IntegerFeatureType,
+        u64: AsPrimitive<Feature>
     {
         if feature.len() != graph.get_number_of_nodes() as usize {
             return Err(format!(
@@ -327,6 +352,7 @@ where
                     .nth(feature_number)
                     .unwrap(),
                 feature,
+                feature_number
             )
         };
 
