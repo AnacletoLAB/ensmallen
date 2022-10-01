@@ -54,6 +54,7 @@ where
                 &mut (*shared_embedding.get())[1]
                     [(contextual_node_id as usize * self.embedding_size)..((contextual_node_id as usize + 1) * self.embedding_size)]
             };
+            
             let dot: F =
                 unsafe { dot_product_sequential_unchecked(node_hidden, central_node_embedding) }
                     / scale_factor;

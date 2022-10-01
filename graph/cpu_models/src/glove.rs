@@ -1,8 +1,8 @@
 use crate::*;
-use express_measures::{dot_product_sequential_unchecked, ThreadFloat};
+use express_measures::{cosine_similarity_sequential_unchecked, ThreadFloat};
 use graph::{Graph, NodeT, ThreadDataRaceAware};
 use indicatif::ProgressIterator;
-use num_traits::AsPrimitive;
+use num_traits::{AsPrimitive, Float};
 use rayon::prelude::*;
 use vec_rand::splitmix64;
 
@@ -10,20 +10,20 @@ impl<W> Node2Vec<W>
 where
     W: WalkTransformer,
 {
-    pub(crate) fn fit_transform_glove<F: ThreadFloat + 'static>(
+    pub(crate) fn fit_transform_glove<F: Float + ThreadFloat + 'static>(
         &self,
         graph: &Graph,
         embedding: &mut [&mut [F]],
     ) -> Result<(), String>
     where
-    f32: AsPrimitive<F>,
+        f32: AsPrimitive<F>,
         NodeT: AsPrimitive<F>,
     {
+        let scale_factor = (self.get_embedding_size() as f32).sqrt().as_();
         let embedding_size = self.embedding_size;
         let mut walk_parameters = self.walk_parameters.clone();
         let mut random_state = splitmix64(self.walk_parameters.get_random_state() as u64);
         let mut learning_rate = self.learning_rate.as_();
-        let alpha = self.alpha.as_();
 
         // Update the random state
         random_state = splitmix64(random_state);
@@ -42,21 +42,19 @@ where
 
             // We start to compute the new gradients.
             graph
-                .par_iter_log_normalized_cooccurence_matrix(
-                    &walk_parameters,
-                    self.window_size,
-                    None,
-                )?
-                .map(|(src, dst, freq)| (src as usize, dst as usize, freq.as_()))
-                .for_each(|(src, dst, freq)| unsafe {
+                .par_iter_cooccurence_matrix(&walk_parameters, self.window_size, None)?
+                .for_each(|(src, dst, frequency)| unsafe {
                     let src_embedding = &mut (*shared_embedding.get())[0]
-                        [src * embedding_size..(src + 1) * embedding_size];
+                        [(src as usize) * embedding_size..((src as usize) + 1) * embedding_size];
                     let dst_embedding = &mut (*shared_embedding.get())[1]
-                        [dst * embedding_size..(dst + 1) * embedding_size];
+                        [(dst as usize) * embedding_size..((dst as usize) + 1) * embedding_size];
 
-                    let similarity = dot_product_sequential_unchecked(src_embedding, dst_embedding);
+                    let (similarity, src_norm, dst_norm): (F, F, F) = unsafe {
+                        cosine_similarity_sequential_unchecked(src_embedding, dst_embedding)
+                    };
 
-                    let variation: F = freq.powf(alpha) * (similarity - freq.ln());
+                    let prediction = F::one() / (F::one() + (-similarity).exp());
+                    let variation = prediction - frequency.as_();
 
                     let src_variation =
                         variation * get_node_prior(graph, src as NodeT, learning_rate);
@@ -67,12 +65,14 @@ where
                         .iter_mut()
                         .zip(dst_embedding.iter_mut())
                         .for_each(|(src_feature, dst_feature)| {
+                            *src_feature /= src_norm;
+                            *dst_feature /= dst_norm;
                             *src_feature -= *dst_feature * src_variation;
                             *dst_feature -= *src_feature * dst_variation;
                         });
                 });
 
-            learning_rate *= (self.learning_rate_decay).as_()
+            learning_rate *= self.learning_rate_decay.as_()
         }
         Ok(())
     }

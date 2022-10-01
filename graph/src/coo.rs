@@ -237,223 +237,52 @@ impl Graph {
         Ok(self
             .par_iter_complete_walks(walks_parameters)?
             .flat_map(move |sequence| {
-                let mut cooccurence_matrix: HashMap<(NodeT, NodeT), f32> = HashMap::new();
                 let mut total = 0.0;
+                let mut cooccurence_matrix: HashMap<NodeT, HashMap<NodeT, f32>> = HashMap::new();
                 (0..sequence.len())
                     .map(|position| {
                         (
                             sequence[position],
-                            &sequence[(position.saturating_sub(window_size)
-                                ..(position + window_size).min(sequence.len()))],
+                            &sequence[position.saturating_sub(window_size)
+                                ..(position + window_size).min(sequence.len())],
                         )
                     })
                     .for_each(|(central_id, context)| {
-                        context.iter().copied().for_each(|context_id| {
-                            // Get the current value for this pair of nodes
-                            cooccurence_matrix
-                                .entry((central_id, context_id))
-                                .and_modify(|e| *e += 1.0)
-                                .or_insert(1.0);
-                            total += 1.0;
-                        });
+                        let local_cooccurence_matrix =
+                            cooccurence_matrix.entry(central_id).or_default();
+                        context
+                            .iter()
+                            .copied()
+                            .filter(|&context_id| context_id != central_id)
+                            .for_each(|context_id| {
+                                // Get the current value for this pair of nodes
+                                local_cooccurence_matrix
+                                    .entry(context_id)
+                                    .and_modify(|e| *e += 1.0)
+                                    .or_insert(1.0);
+                                total += 1.0;
+                            });
                     });
                 cooccurence_matrix
                     .into_par_iter()
-                    .filter_map(move |((src, dst), freq)| {
-                        if node_ids_of_interest
-                            .as_ref()
-                            .map_or(true, |node_ids_of_interest| {
-                                node_ids_of_interest.contains(&src)
-                                    && node_ids_of_interest.contains(&dst)
+                    .flat_map(move |(src, local_cooccurence)| {
+                        local_cooccurence
+                            .into_par_iter()
+                            .filter_map(move |(dst, count)| {
+                                if node_ids_of_interest.as_ref().map_or(
+                                    true,
+                                    |node_ids_of_interest| {
+                                        node_ids_of_interest.contains(&src)
+                                            && node_ids_of_interest.contains(&dst)
+                                    },
+                                ) {
+                                    Some((src, dst, count / total))
+                                } else {
+                                    None
+                                }
                             })
-                        {
-                            Some((src, dst, freq / total))
-                        } else {
-                            None
-                        }
                     })
             }))
-    }
-
-    /// Returns Cooccurrence coo matrix.
-    ///
-    /// # Arguments
-    /// * `walks_parameters`: &WalksParameters - the walks parameters.
-    /// * `window_size`: usize - Window size to consider for the sequences.
-    /// * `node_ids_of_interest`: Option<&[NodeT]> - While the random walks is graph-wide, we only return edges whose source and destination nodes are within this node ID list.
-    pub fn get_cooccurrence_coo_matrix(
-        &self,
-        walks_parameters: &WalksParameters,
-        window_size: usize,
-        node_ids_of_interest: Option<&[NodeT]>,
-    ) -> Result<(Vec<(NodeT, NodeT)>, Vec<WeightT>)> {
-        Ok(self
-            .par_iter_cooccurence_matrix(walks_parameters, window_size, node_ids_of_interest)?
-            .map(|(src, dst, weight)| ((src, dst), weight))
-            .unzip())
-    }
-
-    /// Returns Cooccurrence weighted graph.
-    ///
-    /// # Arguments
-    /// * `walks_parameters`: &WalksParameters - the walks parameters.
-    /// * `window_size`: usize - Window size to consider for the sequences.
-    /// * `node_ids_of_interest`: Option<&[NodeT]> - While the random walks is graph-wide, we only return edges whose source and destination nodes are within this node ID list.
-    pub fn get_cooccurrence_graph(
-        &self,
-        walks_parameters: &WalksParameters,
-        window_size: usize,
-        node_ids_of_interest: Option<&[NodeT]>,
-    ) -> Result<Graph> {
-        Ok(
-            self.get_graph_from_coo_iterator(self.par_iter_cooccurence_matrix(
-                walks_parameters,
-                window_size,
-                node_ids_of_interest,
-            )?),
-        )
-    }
-
-    /// Returns parallel iterator over the normalized co-occurrence matrix
-    ///
-    /// # Arguments
-    /// * `walks_parameters`: &'a WalksParameters - the walks parameters.
-    /// * `window_size`: usize - Window size to consider for the sequences.
-    /// * `node_ids_of_interest`: Option<&[NodeT]> - While the random walks is graph-wide, we only return edges whose source and destination nodes are within this node ID list.
-    pub fn par_iter_normalized_cooccurence_matrix<'a>(
-        &'a self,
-        walks_parameters: &'a WalksParameters,
-        window_size: usize,
-        node_ids_of_interest: Option<&'a [NodeT]>,
-    ) -> Result<impl ParallelIterator<Item = (NodeT, NodeT, f32)> + 'a> {
-        let nodes_number_squared =
-            self.get_number_of_nodes() as f32 * self.get_number_of_nodes() as f32;
-        Ok(self
-            .par_iter_cooccurence_matrix(walks_parameters, window_size, node_ids_of_interest)?
-            .map(move |(src, dst, frequency)| {
-                (
-                    src,
-                    dst,
-                    frequency * nodes_number_squared
-                        / unsafe {
-                            self.get_unchecked_node_degree_from_node_id(src) as f32
-                                * self.get_unchecked_node_degree_from_node_id(dst) as f32
-                        },
-                )
-            }))
-    }
-
-    /// Returns Normalized Cooccurrence coo matrix.
-    ///
-    /// # Arguments
-    /// * `walks_parameters`: &WalksParameters - the walks parameters.
-    /// * `window_size`: usize - Window size to consider for the sequences.
-    /// * `node_ids_of_interest`: Option<&[NodeT]> - While the random walks is graph-wide, we only return edges whose source and destination nodes are within this node ID list.
-    pub fn get_normalized_cooccurrence_coo_matrix(
-        &self,
-        walks_parameters: &WalksParameters,
-        window_size: usize,
-        node_ids_of_interest: Option<&[NodeT]>,
-    ) -> Result<(Vec<(NodeT, NodeT)>, Vec<WeightT>)> {
-        Ok(self
-            .par_iter_normalized_cooccurence_matrix(
-                walks_parameters,
-                window_size,
-                node_ids_of_interest,
-            )?
-            .map(|(src, dst, weight)| ((src, dst), weight))
-            .unzip())
-    }
-
-    /// Returns Normalized Cooccurrence weighted graph.
-    ///
-    /// # Arguments
-    /// * `walks_parameters`: &WalksParameters - the walks parameters.
-    /// * `window_size`: usize - Window size to consider for the sequences.
-    /// * `node_ids_of_interest`: Option<&[NodeT]> - While the random walks is graph-wide, we only return edges whose source and destination nodes are within this node ID list.
-    pub fn get_normalized_cooccurrence_graph(
-        &self,
-        walks_parameters: &WalksParameters,
-        window_size: usize,
-        node_ids_of_interest: Option<&[NodeT]>,
-    ) -> Result<Graph> {
-        Ok(
-            self.get_graph_from_coo_iterator(self.par_iter_normalized_cooccurence_matrix(
-                walks_parameters,
-                window_size,
-                node_ids_of_interest,
-            )?),
-        )
-    }
-
-    /// Returns parallel iterator over the log normalized co-occurrence matrix
-    ///
-    /// # Arguments
-    /// * `walks_parameters`: &'a WalksParameters - the walks parameters.
-    /// * `window_size`: usize - Window size to consider for the sequences.
-    /// * `node_ids_of_interest`: Option<&[NodeT]> - While the random walks is graph-wide, we only return edges whose source and destination nodes are within this node ID list.
-    pub fn par_iter_log_normalized_cooccurence_matrix<'a>(
-        &'a self,
-        walks_parameters: &'a WalksParameters,
-        window_size: usize,
-        node_ids_of_interest: Option<&'a [NodeT]>,
-    ) -> Result<impl ParallelIterator<Item = (NodeT, NodeT, f32)> + 'a> {
-        Ok(self
-            .par_iter_normalized_cooccurence_matrix(
-                walks_parameters,
-                window_size,
-                node_ids_of_interest,
-            )?
-            .filter_map(move |(src, dst, frequency)| {
-                if frequency <= 1.0 {
-                    None
-                } else {
-                    Some((src, dst, frequency.ln()))
-                }
-            }))
-    }
-
-    /// Returns Log Normalized Cooccurrence coo matrix.
-    ///
-    /// # Arguments
-    /// * `walks_parameters`: &WalksParameters - the walks parameters.
-    /// * `window_size`: usize - Window size to consider for the sequences.
-    /// * `node_ids_of_interest`: Option<&[NodeT]> - While the random walks is graph-wide, we only return edges whose source and destination nodes are within this node ID list.
-    pub fn get_log_normalized_cooccurrence_coo_matrix(
-        &self,
-        walks_parameters: &WalksParameters,
-        window_size: usize,
-        node_ids_of_interest: Option<&[NodeT]>,
-    ) -> Result<(Vec<(NodeT, NodeT)>, Vec<WeightT>)> {
-        Ok(self
-            .par_iter_log_normalized_cooccurence_matrix(
-                walks_parameters,
-                window_size,
-                node_ids_of_interest,
-            )?
-            .map(|(src, dst, weight)| ((src, dst), weight))
-            .unzip())
-    }
-
-    /// Returns Log Normalized Cooccurrence weighted graph.
-    ///
-    /// # Arguments
-    /// * `walks_parameters`: &WalksParameters - the walks parameters.
-    /// * `window_size`: usize - Window size to consider for the sequences.
-    /// * `node_ids_of_interest`: Option<&[NodeT]> - While the random walks is graph-wide, we only return edges whose source and destination nodes are within this node ID list.
-    pub fn get_log_normalized_cooccurrence_graph(
-        &self,
-        walks_parameters: &WalksParameters,
-        window_size: usize,
-        node_ids_of_interest: Option<&[NodeT]>,
-    ) -> Result<Graph> {
-        Ok(
-            self.get_graph_from_coo_iterator(self.par_iter_log_normalized_cooccurence_matrix(
-                walks_parameters,
-                window_size,
-                node_ids_of_interest,
-            )?),
-        )
     }
 
     /// Returns unweighted laplacian COO matrix representation of the graph.
