@@ -1,5 +1,5 @@
 use crate::*;
-use express_measures::{cosine_similarity_sequential_unchecked, ThreadFloat};
+use express_measures::{dot_product_sequential_unchecked, ThreadFloat};
 use graph::{Graph, NodeT, ThreadDataRaceAware};
 use indicatif::ProgressIterator;
 use num_traits::{AsPrimitive, Float};
@@ -24,6 +24,7 @@ where
         let mut walk_parameters = self.walk_parameters.clone();
         let mut random_state = splitmix64(self.walk_parameters.get_random_state() as u64);
         let mut learning_rate = self.learning_rate.as_();
+        let cv = self.clipping_value.as_();
 
         // Update the random state
         random_state = splitmix64(random_state);
@@ -49,26 +50,23 @@ where
                     let dst_embedding = &mut (*shared_embedding.get())[1]
                         [(dst as usize) * embedding_size..((dst as usize) + 1) * embedding_size];
 
-                    let (similarity, src_norm, dst_norm): (F, F, F) = unsafe {
-                        cosine_similarity_sequential_unchecked(src_embedding, dst_embedding)
-                    };
+                    let dot: F = unsafe {
+                        dot_product_sequential_unchecked(src_embedding, dst_embedding)
+                    } / scale_factor;
 
-                    let prediction = F::one() / (F::one() + (-similarity).exp());
-                    let variation = prediction - frequency.as_();
+                    if dot > cv || dot < -cv {
+                        return;
+                    }
 
-                    let src_variation =
-                        variation * get_node_prior(graph, src as NodeT, learning_rate);
-                    let dst_variation =
-                        variation * get_node_prior(graph, dst as NodeT, learning_rate);
+                    let prediction = F::one() / (F::one() + (-dot).exp());
+                    let variation = learning_rate * (frequency.as_() - prediction);
 
                     src_embedding
                         .iter_mut()
                         .zip(dst_embedding.iter_mut())
                         .for_each(|(src_feature, dst_feature)| {
-                            *src_feature /= src_norm;
-                            *dst_feature /= dst_norm;
-                            *src_feature -= *dst_feature * src_variation;
-                            *dst_feature -= *src_feature * dst_variation;
+                            *src_feature -= *dst_feature * variation;
+                            *dst_feature -= *src_feature * variation;
                         });
                 });
 
