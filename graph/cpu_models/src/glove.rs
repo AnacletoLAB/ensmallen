@@ -59,7 +59,7 @@ where
                     }
 
                     let prediction = F::one() / (F::one() + (-dot).exp());
-                    let variation = learning_rate * (frequency.as_() - prediction);
+                    let variation = learning_rate * (prediction - frequency.as_());
 
                     src_embedding
                         .iter_mut()
