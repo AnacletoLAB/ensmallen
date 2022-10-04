@@ -1,6 +1,6 @@
-use libc::*;
-use core::fmt::Debug;
 use super::MemoryMapReadOnlyCore;
+use core::fmt::Debug;
+use libc::*;
 
 const MAP_HUGE_2MB: i32 = 1_409_286_144i32;
 
@@ -80,7 +80,12 @@ impl MemoryMapReadOnlyCore for MemoryMappedReadOnly {
             ));
         }
 
-        Ok(MemoryMappedReadOnly { fd, addr, len, path: Some(path.to_string()) })
+        Ok(MemoryMappedReadOnly {
+            fd,
+            addr,
+            len,
+            path: Some(path.to_string()),
+        })
     }
 
     fn get_addr(&self) -> *mut u8 {

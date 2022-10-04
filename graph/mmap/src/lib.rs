@@ -31,6 +31,5 @@ unsafe impl Sync for MemoryMappedReadOnly {}
 unsafe impl Send for MemoryMappedReadOnly {}
 impl MemoryMappedReadOnlyImpl for MemoryMappedReadOnly {}
 
-
 impl MemoryMappedImpl for MemoryMapped {}
 impl MemoryMappedReadOnlyImpl for MemoryMapped {}

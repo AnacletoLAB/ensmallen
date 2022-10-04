@@ -3,7 +3,7 @@ edition = "2018"
 name = "ensmallen"
 version = "0.7.0"
 license = "MIT"
-repository= "https://github.com/LucaCappelletti94/ensmallen"
+repository= "https://github.com/AnacletoLAB/ensmallen"
 authors = [
     "Luca Cappelletti <cappelletti.luca94@gmail.com>",
     "Tommaso Fontana <tommaso.fontana.96@gmail.com>"    

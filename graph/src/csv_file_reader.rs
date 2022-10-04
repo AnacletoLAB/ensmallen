@@ -444,7 +444,12 @@ impl CSVFileReader {
             .lines()
             .progress_with(pb)
             .map(|line| match line {
-                Ok(l)=>Ok(l),
+                Ok(mut l)=> {
+                    if l.ends_with('\r') {
+                        l.pop().unwrap();
+                    }
+                    Ok(l)
+                },
                 Err(_)=>Err("There might have been an I/O error or the line could contains bytes that are not valid UTF-8".to_string()),
             })
             .filter_ok(move |line| !line.is_empty() && match &self.comment_symbol {

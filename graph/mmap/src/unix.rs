@@ -1,6 +1,6 @@
+use super::*;
 use core::fmt::Debug;
 use libc::*;
-use super::*;
 
 const MAP_HUGE_2MB: i32 = 1_409_286_144i32;
 
@@ -89,7 +89,12 @@ impl MemoryMapReadOnlyCore for MemoryMapped {
             ));
         }
 
-        Ok(MemoryMapped { fd:Some(fd), addr, len, path: Some(path.to_string()) })
+        Ok(MemoryMapped {
+            fd: Some(fd),
+            addr,
+            len,
+            path: Some(path.to_string()),
+        })
     }
 
     fn get_addr(&self) -> *mut u8 {
@@ -115,7 +120,7 @@ impl MemoryMapCore for MemoryMapped {
         if cfg!(target_os = "linux") {
             flags |= MAP_HUGE_2MB;
         }
-
+        
         let (addr, fd, len) = match (path.as_ref(), len) {
             // New file / expand file
             (Some(path), maybe_len) => {
@@ -179,7 +184,7 @@ impl MemoryMapCore for MemoryMapped {
                         fd,
                         // the offset in bytes from the start of the file, we want to mmap
                         // the whole file
-                offset.unwrap_or(0) as i64,
+                        offset.unwrap_or(0) as i64,
                     )
                 };
                 (addr, Some(fd), len)
@@ -201,7 +206,7 @@ impl MemoryMapCore for MemoryMapped {
                         0,
                         // the offset in bytes from the start of the file, we want to mmap
                         // the whole file
-                offset.unwrap_or(0) as i64,
+                        offset.unwrap_or(0) as i64,
                     )
                 };
                 (addr, None, len)
