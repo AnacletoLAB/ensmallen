@@ -68,9 +68,7 @@ impl DAGResnik {
         ))
     }
 
-    #[pyo3(
-        text_signature = "($self, first_node_ids, second_node_ids, minimum_similarity)"
-    )]
+    #[pyo3(text_signature = "($self, first_node_ids, second_node_ids, minimum_similarity)")]
     /// Return the similarity between the two provided ids nodes.
     ///
     /// Parameters
@@ -100,9 +98,7 @@ impl DAGResnik {
         ))
     }
 
-    #[pyo3(
-        text_signature = "($self, first_node_names, second_node_names, minimum_similarity)"
-    )]
+    #[pyo3(text_signature = "($self, first_node_names, second_node_names, minimum_similarity)")]
     /// Return the similarity between the two provided names nodes.
     ///
     /// Parameters
@@ -131,7 +127,7 @@ impl DAGResnik {
             to_ndarray_1d!(gil, similarities, f32),
         ))
     }
-    
+
     #[pyo3(
         text_signature = "($self, first_node_prefixes, second_node_prefixes, minimum_similarity)"
     )]
@@ -195,7 +191,7 @@ impl DAGResnik {
             to_ndarray_1d!(gil, similarities, f32),
         ))
     }
-    
+
     #[pyo3(
         text_signature = "($self, first_node_type_names, second_node_type_names, minimum_similarity)"
     )]

@@ -1190,6 +1190,20 @@ impl Graph {
             .collect::<Result<Vec<NodeT>>>()
     }
 
+    /// Returns result with the node names.
+    ///
+    /// # Arguments
+    /// * `node_ids`: Vec<NodeT> - The node ids whose node names are to be returned.
+    ///
+    /// # Raises
+    /// * When any of the given node ids does not exists in the current graph.
+    pub fn get_node_names_from_node_ids(&self, node_ids: Vec<NodeT>) -> Result<Vec<String>> {
+        node_ids
+            .into_iter()
+            .map(|node_name| self.get_node_name_from_node_id(node_name))
+            .collect::<Result<Vec<String>>>()
+    }
+
     /// Returns result with the edge node IDs.
     ///
     /// # Arguments

@@ -1,6 +1,6 @@
 use core::fmt::Debug;
 use half::f16;
-use num_traits::{AsPrimitive, Float, Unsigned};
+use num_traits::{AsPrimitive, Float, Unsigned, One, Zero};
 use std::ops::{AddAssign, DivAssign, MulAssign, SubAssign};
 
 pub trait ThreadFloat:
@@ -8,6 +8,8 @@ pub trait ThreadFloat:
     + Send
     + Sync
     + Copy
+    + One
+    + Zero
     + std::iter::Sum
     + SubAssign<Self>
     + AddAssign<Self>
