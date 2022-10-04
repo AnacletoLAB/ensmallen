@@ -1,5 +1,5 @@
 use crate::*;
-use express_measures::{cosine_similarity_sequential_unchecked, ThreadFloat};
+use express_measures::{dot_product_sequential_unchecked, ThreadFloat};
 use graph::{Graph, NodeT, ThreadDataRaceAware};
 use indicatif::ProgressIterator;
 use num_traits::{AsPrimitive, Float};
@@ -20,6 +20,7 @@ where
         NodeT: AsPrimitive<F>,
     {
         let embedding_size = self.embedding_size;
+        let scale_factor = (self.get_embedding_size() as f32).sqrt().as_();
         let mut walk_parameters = self.walk_parameters.clone();
         let mut random_state = splitmix64(self.walk_parameters.get_random_state() as u64);
         let mut learning_rate = self.learning_rate.as_();
@@ -70,7 +71,7 @@ where
                     let variation = learning_rate
                         * weighting_schema(count)
                         * (F::one() + F::one())
-                        * (similarity + *src_bias + *dst_bias - count.as_().ln());
+                        * (dot + *src_bias + *dst_bias - count.as_().ln());
 
                     let src_variation =
                         variation * get_node_prior(graph, src as NodeT, learning_rate);
