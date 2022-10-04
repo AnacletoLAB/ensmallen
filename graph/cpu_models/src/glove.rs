@@ -59,8 +59,9 @@ where
                             * (graph.get_unchecked_node_degree_from_node_id(dst).as_()
                                 / graph.get_number_of_nodes().as_());
 
-                    let variation =
-                        learning_rate * (dot - (F::one() + frequency.as_() / edge_probability).ln());
+                    let variation = learning_rate
+                        * frequency.as_()
+                        * (dot - (F::one() + frequency.as_() / edge_probability).ln());
 
                     src_embedding
                         .iter_mut()
