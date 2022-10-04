@@ -2,6 +2,8 @@ use super::*;
 use core::fmt::Debug;
 use libc::*;
 
+const MAP_HUGE_2MB: i32 = 1_409_286_144i32;
+
 /// A read-only memory mapped file,
 /// this should be equivalent to read-only slice that
 /// automatically handle the freeing.
@@ -51,6 +53,12 @@ impl MemoryMapReadOnlyCore for MemoryMapped {
         }
         // Try to mmap the file into memory
 
+        let mut flags = libc::MAP_PRIVATE;
+
+        if cfg!(target_os = "linux") {
+            flags |= MAP_HUGE_2MB;
+        }
+        
         let addr = unsafe {
             mmap(
                 // we don't want a specific address
@@ -61,7 +69,7 @@ impl MemoryMapReadOnlyCore for MemoryMapped {
                 PROT_READ,
                 // We don't want the eventual modifications to get propagated
                 // to the underlying file
-                libc::MAP_PRIVATE,
+                flags,
                 // the file descriptor of the file to mmap
                 fd,
                 // the offset in bytes from the start of the file, we want to mmap
@@ -104,11 +112,15 @@ impl MemoryMapReadOnlyCore for MemoryMapped {
 
 impl MemoryMapCore for MemoryMapped {
     /// Memory map the file with mutability permissions
-    fn new_mut<S: AsRef<str> + Debug>(
-        path: Option<S>,
-        len: Option<usize>,
-        offset: Option<usize>,
-    ) -> Result<Self, String> {
+    fn new_mut<S: AsRef<str> + Debug>(path: Option<S>, len: Option<usize>, offset: Option<usize>) 
+        -> Result<Self, String> {
+
+        let mut flags = libc::MAP_SHARED;
+
+        if cfg!(target_os = "linux") {
+            flags |= MAP_HUGE_2MB;
+        }
+        
         let (addr, fd, len) = match (path.as_ref(), len) {
             // New file / expand file
             (Some(path), maybe_len) => {
@@ -167,7 +179,7 @@ impl MemoryMapCore for MemoryMapped {
                         PROT_READ | PROT_WRITE,
                         // We don't want the eventual modifications to get propagated
                         // to the underlying file
-                        libc::MAP_SHARED,
+                        flags,
                         // the file descriptor of the file to mmap
                         fd,
                         // the offset in bytes from the start of the file, we want to mmap
@@ -189,7 +201,7 @@ impl MemoryMapCore for MemoryMapped {
                         PROT_READ | PROT_WRITE,
                         // We don't want the eventual modifications to get propagated
                         // to the underlying file
-                        libc::MAP_SHARED | libc::MAP_ANONYMOUS,
+                        flags | libc::MAP_ANONYMOUS,
                         // the file descriptor of the file to mmap
                         0,
                         // the offset in bytes from the start of the file, we want to mmap

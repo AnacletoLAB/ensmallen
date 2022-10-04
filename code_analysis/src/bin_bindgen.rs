@@ -2,7 +2,11 @@ use libcodeanalysis::*;
 
 fn main() {
     // Generate the bindings
-    gen_bindings("../graph/src", "../bindings/python/src/auto_generated_bindings.rs", "../bindings/python/ensmallen/__init__.py");
+    gen_bindings(
+        "../graph/src",
+        "../bindings/python/src/auto_generated_bindings.rs",
+        "../bindings/python/ensmallen/__init__.py",
+    );
 
     // Format the files
     assert!(

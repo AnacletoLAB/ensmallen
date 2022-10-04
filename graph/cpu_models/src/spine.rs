@@ -53,6 +53,7 @@ where
         graph: &Graph,
         bucket: Vec<NodeT>,
         mut features: &mut [Feature],
+        _feature_number: usize
     ) where
         Feature: IntegerFeatureType,
     {

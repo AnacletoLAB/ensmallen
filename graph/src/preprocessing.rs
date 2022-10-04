@@ -117,7 +117,7 @@ impl Graph {
         return_edge_weights: Option<bool>,
         max_neighbours: Option<NodeT>,
     ) -> Result<
-        impl IndexedParallelIterator<Item = ((Vec<NodeT>, Option<Vec<WeightT>>), &Vec<NodeTypeT>)> + '_,
+        impl IndexedParallelIterator<Item = ((Vec<NodeT>, Option<Vec<WeightT>>), &[NodeTypeT])> + '_,
     > {
         if let Some(return_edge_weights) = return_edge_weights {
             if return_edge_weights {
@@ -213,14 +213,14 @@ impl Graph {
                     }
                 }
                 (Some(node_type_ids), false) => {
-                    let mut node_type_ids = node_type_ids.clone();
+                    let mut node_type_ids = node_type_ids.to_vec();
                     if self.has_unknown_node_types().unwrap() {
                         node_type_ids.iter_mut().for_each(|node_type_id| {
                             *node_type_id += 1;
                         });
-                        node_type_ids
+                        node_type_ids.to_vec()
                     } else {
-                        node_type_ids
+                        node_type_ids.to_vec()
                     }
                 }
                 (Some(node_type_ids), true) => {
@@ -533,9 +533,9 @@ impl Graph {
                         not_src,
                         not_dst,
                         self.get_unchecked_node_type_ids_from_node_id(src)
-                            .map(|x| x.clone()),
+                            .map(|x| x.to_vec()),
                         self.get_unchecked_node_type_ids_from_node_id(dst)
-                            .map(|x| x.clone()),
+                            .map(|x| x.to_vec()),
                         edge_type,
                     )
                 },

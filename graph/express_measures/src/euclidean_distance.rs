@@ -2,7 +2,7 @@ use crate::absolute_distance;
 use crate::types::*;
 use crate::validation::*;
 use core::fmt::Debug;
-use num_traits::{Coerced, Float};
+use num_traits::{AsPrimitive, Float};
 use rayon::prelude::*;
 use std::iter::Sum;
 use std::ops::Mul;
@@ -19,8 +19,8 @@ use std::ops::Sub;
 /// the squared euclidean distance upwards to when the minimum size.
 /// No warning will be raised.
 pub unsafe fn squared_euclidean_distance_sequential_unchecked<
-    R: Float + Sum,
-    F: Copy + Coerced<R>,
+    R: Float + Sum + 'static,
+    F: Copy + AsPrimitive<R>,
 >(
     src_features: &[F],
     dst_features: &[F],
@@ -30,8 +30,8 @@ pub unsafe fn squared_euclidean_distance_sequential_unchecked<
         .zip(dst_features.iter())
         .map(|(&src_feature, &dst_feature)| {
             absolute_distance(
-                src_feature.coerce_into() * src_feature.coerce_into(),
-                dst_feature.coerce_into() * dst_feature.coerce_into(),
+                src_feature.as_() * src_feature.as_(),
+                dst_feature.as_() * dst_feature.as_(),
             )
         })
         .sum()
@@ -47,7 +47,7 @@ pub unsafe fn squared_euclidean_distance_sequential_unchecked<
 /// If the two features have different sizes, we will compute
 /// the euclidean distance upwards to when the minimum size.
 /// No warning will be raised.
-pub unsafe fn euclidean_distance_sequential_unchecked<R: Float + Sum, F: Coerced<R> + Copy>(
+pub unsafe fn euclidean_distance_sequential_unchecked<R: Float + Sum + 'static, F: AsPrimitive<R> + Copy>(
     src_features: &[F],
     dst_features: &[F],
 ) -> R {
@@ -90,14 +90,14 @@ pub unsafe fn squared_euclidean_distance_parallel_unchecked<
 /// the euclidean distance upwards to when the minimum size.
 /// No warning will be raised.
 pub unsafe fn euclidean_distance_parallel_unchecked<
-    R: Float,
-    F: Coerced<R> + Mul<Output = F> + Sub<Output = F> + Send + Sync + PartialOrd + Sum + Copy,
+    R: Float +'static,
+    F: AsPrimitive<R> + Mul<Output = F> + Sub<Output = F> + Send + Sync + PartialOrd + Sum + Copy,
 >(
     src_features: &[F],
     dst_features: &[F],
 ) -> R {
     squared_euclidean_distance_parallel_unchecked(src_features, dst_features)
-        .coerce_into()
+        .as_()
         .sqrt()
 }
 
@@ -110,7 +110,7 @@ pub unsafe fn euclidean_distance_parallel_unchecked<
 /// # Raises
 /// * If one of the two vectors are empty.
 /// * If the two vectors have different sizes.
-pub fn euclidean_distance_sequential<R: Float + Sum, F: Coerced<R> + Copy>(
+pub fn euclidean_distance_sequential<R: Float + Sum + 'static, F: AsPrimitive<R> + Copy>(
     src_features: &[F],
     dst_features: &[F],
 ) -> Result<R, String> {
@@ -128,8 +128,8 @@ pub fn euclidean_distance_sequential<R: Float + Sum, F: Coerced<R> + Copy>(
 /// * If one of the two vectors are empty.
 /// * If the two vectors have different sizes.
 pub fn euclidean_distance_parallel<
-    R: Float,
-    F: Coerced<R> + Mul<Output = F> + Sub<Output = F> + Send + Sync + PartialOrd + Sum + Copy,
+    R: Float + 'static,
+    F: AsPrimitive<R> + Mul<Output = F> + Sub<Output = F> + Send + Sync + PartialOrd + Sum + Copy,
 >(
     src_features: &[F],
     dst_features: &[F],
@@ -156,8 +156,8 @@ pub fn euclidean_distance_parallel<
 /// If the source and destination indices have values higher
 /// than the provided matrix, the method will panic.
 pub unsafe fn squared_euclidean_distance_from_indices_unchecked<
-    R: Float + Sum + Send + Sync,
-    F: Coerced<R> + Mul<Output = F> + Sub<Output = F> + Send + Sync + PartialOrd + Sum + Copy,
+    R: Float + Sum + Send + Sync + 'static,
+    F: AsPrimitive<R> + Mul<Output = F> + Sub<Output = F> + Send + Sync + PartialOrd + Sum + Copy,
     I: ThreadUnsigned,
 >(
     similarities: &mut [R],
@@ -208,8 +208,8 @@ where
 /// If the source and destination indices have values higher
 /// than the provided matrix, the method will panic.
 pub unsafe fn euclidean_distance_from_indices_unchecked<
-    R: Float + Send + Sync + Sum,
-    F: Coerced<R> + Mul<Output = F> + Sub<Output = F> + Send + Sync + PartialOrd + Sum + Copy,
+    R: Float + Send + Sync + Sum + 'static,
+    F: AsPrimitive<R> + Mul<Output = F> + Sub<Output = F> + Send + Sync + PartialOrd + Sum + Copy,
     I: ThreadUnsigned,
 >(
     distances: &mut [R],

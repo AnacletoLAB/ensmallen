@@ -3,7 +3,7 @@ use express_measures::cosine_similarity_sequential_unchecked;
 use express_measures::ThreadFloat;
 use graph::{EdgeT, Graph, NodeT, ThreadDataRaceAware};
 use indicatif::ProgressIterator;
-use num_traits::Coerced;
+use num_traits::AsPrimitive;
 use rayon::prelude::*;
 use vec_rand::splitmix64;
 
@@ -54,16 +54,17 @@ impl GraphEmbedder for SecondOrderLINE {
         ])
     }
 
-    fn _fit_transform<F: ThreadFloat>(
+    fn _fit_transform<F: ThreadFloat + 'static>(
         &self,
         graph: &Graph,
         embedding: &mut [&mut [F]],
     ) -> Result<(), String>
     where
-        NodeT: Coerced<F>,
-        EdgeT: Coerced<F>,
+        f32: AsPrimitive<F>,
+        NodeT: AsPrimitive<F>,
+        EdgeT: AsPrimitive<F>,
     {
-        let mut learning_rate = F::coerce_from(self.model.get_learning_rate());
+        let mut learning_rate = self.model.get_learning_rate().as_();
         let mut random_state = self.get_random_state();
         let embedding_size = self.model.get_embedding_size();
 
@@ -128,7 +129,7 @@ impl GraphEmbedder for SecondOrderLINE {
                         });
                 });
 
-            learning_rate *= F::coerce_from(self.model.get_learning_rate_decay());
+            learning_rate *= self.model.get_learning_rate_decay().as_();
         }
         Ok(())
     }

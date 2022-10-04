@@ -742,14 +742,14 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<()>
     // Test translate_edge|node_types()
     assert!(
         graph
-            .get_edge_type_ids_from_edge_type_names(vec![Some(NONEXISTENT.to_string())])
+            .get_edge_type_ids_from_edge_type_names(&[Some(NONEXISTENT)])
             .is_err(),
         "The graph seems to have a non-existing edge type."
     );
 
     assert!(
         graph
-            .get_node_type_ids_from_node_type_names(vec![Some(NONEXISTENT.to_string())])
+            .get_node_type_ids_from_node_type_names(&[Some(NONEXISTENT)])
             .is_err(),
         "The graph seems to have a non-existing node type."
     );
@@ -1500,7 +1500,7 @@ pub fn test_random_walks(graph: &mut Graph, _verbose: Option<bool>) -> Result<()
 pub fn test_edge_holdouts(graph: &Graph, verbose: Option<bool>) -> Result<()> {
     if !graph.has_edge_types() {
         assert!(graph
-            .connected_holdout(0.8, None, Some(vec![None]), Some(false), None, None, None)
+            .connected_holdout(0.8, None, Some(&[None]), Some(false), None, None, None)
             .is_err());
     }
     for include_all_edge_types in &[false, true] {
@@ -1692,7 +1692,7 @@ pub fn test_remove_components(graph: &mut Graph, verbose: Option<bool>) -> Resul
             assert!(graph
                 .remove_components(
                     None,
-                    Some(vec![Some(node_type_name)]),
+                    Some(&[Some(node_type_name.as_str())]),
                     None,
                     None,
                     None,
@@ -1702,7 +1702,7 @@ pub fn test_remove_components(graph: &mut Graph, verbose: Option<bool>) -> Resul
         }
         if graph.has_unknown_node_types()? {
             let without_unknowns =
-                graph.remove_components(None, Some(vec![None]), None, None, None, verbose);
+                graph.remove_components(None, Some(&[None]), None, None, None, verbose);
             assert!(
                 without_unknowns.is_ok(),
                 "Could not remove components without node type None.\nThe error is {:?}\nThe graph report is {:?}",
@@ -1714,7 +1714,7 @@ pub fn test_remove_components(graph: &mut Graph, verbose: Option<bool>) -> Resul
                 .remove_components(
                     None,
                     None,
-                    Some(vec![Some(edge_type_name)]),
+                    Some(&[Some(edge_type_name.as_str())]),
                     None,
                     None,
                     verbose
@@ -1723,7 +1723,7 @@ pub fn test_remove_components(graph: &mut Graph, verbose: Option<bool>) -> Resul
         }
         if graph.has_unknown_edge_types()? {
             assert!(graph
-                .remove_components(None, None, Some(vec![None]), None, None, verbose)
+                .remove_components(None, None, Some(&[None]), None, None, verbose)
                 .is_ok());
         }
     } else {
@@ -1769,7 +1769,7 @@ pub fn test_kfold(graph: &mut Graph, _verbose: Option<bool>) -> Result<()> {
             let (train, test) = graph.get_edge_prediction_kfold(
                 k,
                 i,
-                Some(vec![Some(edge_t.clone())]),
+                Some(&[Some(edge_t.as_str())]),
                 None,
                 None,
             )?;
@@ -1824,7 +1824,7 @@ pub fn test_negative_edges_generation(graph: &mut Graph, verbose: Option<bool>) 
             None,
             None,
             None,
-            None
+            None,
         )?;
         assert_eq!(
             graph.get_number_of_edges(),
@@ -2260,7 +2260,7 @@ pub fn test_graph_filter(graph: &Graph, _verbose: Option<bool>) -> Result<()> {
             None,
             None,
             None,
-            Some(vec![Some(node_type_name.clone())]),
+            Some(&[Some(node_type_name.as_str())]),
             None,
             None,
             None,

@@ -2,7 +2,10 @@ use super::*;
 
 #[derive(Debug, Clone, PartialEq)]
 pub enum GenericValue{
-    Type(Type),
+    Type{
+        sub_type: Type,
+        modifiers: TypeModifiers,
+    },
     Lifetime(Lifetime),
     TypeAssignement(Type, Type),
     TypeInheritance(Type, Type),
@@ -15,6 +18,7 @@ impl Parse for GenericValue {
             return (data, res);
         }
 
+        let modifier = parse!(data, TypeModifiers);
         let start = parse!(data, Type);
 
         if data.starts_with(b":") {
@@ -28,14 +32,26 @@ impl Parse for GenericValue {
             return (data, GenericValue::TypeAssignement(start, end));
         }
 
-        (data, GenericValue::Type(start))
+        (
+            data, 
+            GenericValue::Type{
+                sub_type:start,
+                modifiers:modifier,
+            }
+        )
     }
 }
 
 impl CmpWithoutModifiers for GenericValue {
     fn cmp_without_modifiers(&self, other: &GenericValue) -> bool {
         match (self, other) {
-            (GenericValue::Type(t1), GenericValue::Type(t2)) => t1.cmp_without_modifiers(t2),
+            (GenericValue::Type{
+                sub_type:t1, 
+                ..
+            }, GenericValue::Type{
+                sub_type:t2, 
+                ..
+            }) => t1.cmp_without_modifiers(t2),
             (GenericValue::TypeAssignement(t1, t2), GenericValue::TypeAssignement(o1, o2)) => {
                 t1.cmp_without_modifiers(o1) && t2.cmp_without_modifiers(o2)
             }
@@ -47,7 +63,7 @@ impl CmpWithoutModifiers for GenericValue {
 impl PartialEq<&str> for GenericValue {
     fn eq(&self, other:&&str) -> bool {
         match self {
-            GenericValue::Type(t) => t == other,
+            GenericValue::Type{sub_type:t, ..} => t == other,
             GenericValue::TypeAssignement(t1, t2) => {
                 match other.split_once("=") {
                     Some((v1, v2)) => {
@@ -67,8 +83,8 @@ impl From<GenericValue> for String {
             GenericValue::Lifetime(lt) => {
                 format!("'{}", lt.0)
             }
-            GenericValue::Type(t) => {
-                String::from(t)
+            GenericValue::Type{sub_type:t, modifiers: m} => {
+                format!("{}{}", m.to_string(), String::from(t))
             }
             GenericValue::TypeAssignement(t1, t2) => {
                 format!("{} = {}", String::from(t1), String::from(t2))

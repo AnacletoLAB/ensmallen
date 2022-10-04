@@ -282,6 +282,40 @@ impl Graph {
         .unwrap()
     }
 
+    /// Return the graph with all symmetric edges.
+    pub fn to_undirected(&self) -> Graph {
+        if !self.is_directed() {
+            return self.clone();
+        }
+        build_graph_from_integers(
+            Some(
+                self.par_iter_directed_edge_node_ids_and_edge_type_id_and_edge_weight()
+                    .flat_map(|(_, src, dst, edge_type, weight)| {
+                        vec![
+                            (0, (dst, src, edge_type, weight.unwrap_or(WeightT::NAN))),
+                            (0, (src, dst, edge_type, weight.unwrap_or(WeightT::NAN))),
+                        ]
+                    }),
+            ),
+            self.nodes.clone(),
+            self.node_types.clone(),
+            self.edge_types
+                .as_ref()
+                .as_ref()
+                .map(|ets| ets.vocabulary.clone()),
+            self.has_edge_weights(),
+            false,
+            Some(true),
+            Some(true),
+            Some(false),
+            None,
+            self.has_singleton_nodes(),
+            self.has_singleton_nodes_with_selfloops(),
+            self.get_name(),
+        )
+        .unwrap()
+    }
+
     /// Return the complementary graph.
     ///
     /// # Implementative details

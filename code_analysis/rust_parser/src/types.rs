@@ -2,6 +2,7 @@ use super::*;
 
 pub const PRIMITIVE_TYPES: &'static [&'static str] = &[
     "bool",
+    "char",
     "usize",
     "u8",
     "u16",
@@ -79,10 +80,20 @@ impl std::ops::Index<usize> for Type {
                 ..
             } => {
                 match &generics[index] {
-                    GenericValue::Type(t) => t,
+                    GenericValue::Type{sub_type, ..} => sub_type,
                     _ => panic!("Cannot index a non type generic value"),
                 }
             },
+            SliceType(sub_type) => {
+                if index == 0 {
+                    return sub_type.as_ref();
+                } else {
+                    panic!("Out of bound");
+                }
+            }
+            TupleType(sub_type) => {
+                &sub_type[index]
+            }
             _ => panic!("It's not possible to index the current kind of type"),
         }
     }
