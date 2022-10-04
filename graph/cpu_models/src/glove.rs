@@ -55,16 +55,11 @@ where
 
                     let edge_probability =
                         (graph.get_unchecked_node_degree_from_node_id(src).as_()
-                            / graph.get_number_of_nodes().as_())
+                            / graph.get_number_of_edges().as_())
                             * (graph.get_unchecked_node_degree_from_node_id(dst).as_()
-                                / graph.get_number_of_nodes().as_());
+                                / graph.get_number_of_edges().as_());
 
                     let variation = dot - (frequency.as_() / edge_probability).ln();
-
-                    let src_variation =
-                        variation * get_node_prior(graph, src as NodeT, learning_rate);
-                    let dst_variation =
-                        variation * get_node_prior(graph, dst as NodeT, learning_rate);
 
                     src_embedding
                         .iter_mut()

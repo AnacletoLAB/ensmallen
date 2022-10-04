@@ -800,7 +800,8 @@ impl Graph {
         // If the graph does not have any weights and the parameters
         // for the walks are all equal to 1, we can use the first-order
         // random walk algorithm.
-        let use_uniform = !self.has_edge_weights() && parameters.is_first_order_walk();
+        let use_uniform = (!self.has_edge_weights() || self.has_constant_edge_weights()?)
+            && parameters.is_first_order_walk();
 
         let walks = (0..total_iterations)
             .into_par_iter()
