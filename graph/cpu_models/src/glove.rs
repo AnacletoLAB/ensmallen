@@ -24,13 +24,27 @@ where
         let mut walk_parameters = self.walk_parameters.clone();
         let mut random_state = splitmix64(self.walk_parameters.get_random_state() as u64);
         let mut learning_rate = self.learning_rate.as_();
-        let cv = self.clipping_value.as_();
+        let alpha = self.alpha.as_();
+        let maximum_cooccurrence_count_threshold = self.maximum_cooccurrence_count_threshold.as_();
+
+        let glove_loss = |count: NodeT| {
+            if count > self.maximum_cooccurrence_count_threshold {
+                F::one()
+            } else {
+                (count.as_() / maximum_cooccurrence_count_threshold).powf(alpha)
+            }
+        };
 
         // Update the random state
         random_state = splitmix64(random_state);
 
         // Wrapping the layers into shared structures.
         let shared_embedding = ThreadDataRaceAware::new(embedding);
+
+        let center_node_embedding =
+            ThreadDataRaceAware::new(vec![F::zero(); graph.get_number_of_nodes() as usize]);
+        let context_node_embedding =
+            ThreadDataRaceAware::new(vec![F::zero(); graph.get_number_of_nodes() as usize]);
 
         let pb = self.get_loading_bar();
 
@@ -44,7 +58,7 @@ where
             // We start to compute the new gradients.
             graph
                 .par_iter_cooccurence_matrix(&walk_parameters, self.window_size, None)?
-                .for_each(|(src, dst, frequency)| unsafe {
+                .for_each(|(src, dst, count)| unsafe {
                     let src_embedding = &mut (*shared_embedding.get())[0]
                         [(src as usize) * embedding_size..((src as usize) + 1) * embedding_size];
                     let dst_embedding = &mut (*shared_embedding.get())[1]
@@ -53,15 +67,16 @@ where
                     let dot: F = dot_product_sequential_unchecked(src_embedding, dst_embedding)
                         / scale_factor;
 
-                    let edge_probability =
-                        (graph.get_unchecked_node_degree_from_node_id(src).as_()
-                            / graph.get_number_of_nodes().as_())
-                            * (graph.get_unchecked_node_degree_from_node_id(dst).as_()
-                                / graph.get_number_of_nodes().as_());
+                    let src_bias = &mut (*center_node_embedding.get())[src as usize];
+                    let dst_bias = &mut (*context_node_embedding.get())[dst as usize];
 
                     let variation = learning_rate
-                        * frequency.as_()
-                        * (dot - (F::one() + frequency.as_() / edge_probability).ln());
+                        * glove_loss(count)
+                        * (F::one() + F::one())
+                        * (dot + *src_bias + *dst_bias - count.as_().ln());
+
+                    *src_bias -= variation;
+                    *dst_bias -= variation;
 
                     src_embedding
                         .iter_mut()

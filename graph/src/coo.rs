@@ -233,11 +233,11 @@ impl Graph {
         walks_parameters: &'a WalksParameters,
         window_size: usize,
         node_ids_of_interest: Option<&'a [NodeT]>,
-    ) -> Result<impl ParallelIterator<Item = (NodeT, NodeT, f32)> + 'a> {
+    ) -> Result<impl ParallelIterator<Item = (NodeT, NodeT, NodeT)> + 'a> {
         Ok(self
             .par_iter_complete_walks(walks_parameters)?
             .flat_map(move |sequence| {
-                let mut cooccurence_matrix: HashMap<NodeT, HashMap<NodeT, f32>> = HashMap::new();
+                let mut cooccurence_matrix: HashMap<NodeT, HashMap<NodeT, NodeT>> = HashMap::new();
                 (0..sequence.len())
                     .map(|position| {
                         (
@@ -257,14 +257,13 @@ impl Graph {
                                 // Get the current value for this pair of nodes
                                 local_cooccurence_matrix
                                     .entry(context_id)
-                                    .and_modify(|e| *e += 1.0)
-                                    .or_insert(1.0);
+                                    .and_modify(|e| *e += 1)
+                                    .or_insert(1);
                             });
                     });
                 cooccurence_matrix
                     .into_par_iter()
                     .flat_map(move |(src, local_cooccurence)| {
-                        let total: f32 = local_cooccurence.values().sum();
                         local_cooccurence
                             .into_par_iter()
                             .filter_map(move |(dst, count)| {
@@ -275,7 +274,7 @@ impl Graph {
                                             && node_ids_of_interest.contains(&dst)
                                     },
                                 ) {
-                                    Some((src, dst, count / total))
+                                    Some((src, dst, count))
                                 } else {
                                     None
                                 }
