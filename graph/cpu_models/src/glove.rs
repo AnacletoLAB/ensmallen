@@ -55,18 +55,19 @@ where
 
                     let edge_probability =
                         (graph.get_unchecked_node_degree_from_node_id(src).as_()
-                            / graph.get_number_of_edges().as_())
+                            / graph.get_number_of_nodes().as_())
                             * (graph.get_unchecked_node_degree_from_node_id(dst).as_()
-                                / graph.get_number_of_edges().as_());
+                                / graph.get_number_of_nodes().as_());
 
-                    let variation = dot - (frequency.as_() / edge_probability).ln();
+                    let variation =
+                        learning_rate * (dot - (frequency.as_() / edge_probability).ln());
 
                     src_embedding
                         .iter_mut()
                         .zip(dst_embedding.iter_mut())
                         .for_each(|(src_feature, dst_feature)| {
-                            *src_feature -= *dst_feature * src_variation;
-                            *dst_feature -= *src_feature * dst_variation;
+                            *src_feature -= *dst_feature * variation;
+                            *dst_feature -= *src_feature * variation;
                         });
                 });
 
