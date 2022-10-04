@@ -237,7 +237,6 @@ impl Graph {
         Ok(self
             .par_iter_complete_walks(walks_parameters)?
             .flat_map(move |sequence| {
-                let mut total = 0.0;
                 let mut cooccurence_matrix: HashMap<NodeT, HashMap<NodeT, f32>> = HashMap::new();
                 (0..sequence.len())
                     .map(|position| {
@@ -260,12 +259,12 @@ impl Graph {
                                     .entry(context_id)
                                     .and_modify(|e| *e += 1.0)
                                     .or_insert(1.0);
-                                total += 1.0;
                             });
                     });
                 cooccurence_matrix
                     .into_par_iter()
                     .flat_map(move |(src, local_cooccurence)| {
+                        let total: f32 = local_cooccurence.values().sum();
                         local_cooccurence
                             .into_par_iter()
                             .filter_map(move |(dst, count)| {
