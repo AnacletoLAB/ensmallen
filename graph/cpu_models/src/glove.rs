@@ -31,8 +31,6 @@ where
 
         // Wrapping the layers into shared structures.
         let shared_embedding = ThreadDataRaceAware::new(embedding);
-        let two = F::one() + F::one();
-        let maximum_node_degree_squared: F = graph.get_maximum_node_degree()?.as_().powf(two);
 
         let pb = self.get_loading_bar();
 
@@ -61,9 +59,10 @@ where
 
                     let prediction = F::one() / (F::one() + (-dot).exp());
                     let mut variation = prediction - frequency.as_();
-                    let adaptative_learning_rate = (maximum_node_degree_squared
+                    let adaptative_learning_rate = F::one()
                         / (graph.get_unchecked_node_degree_from_node_id(src).as_()
-                            * graph.get_unchecked_node_degree_from_node_id(dst).as_()));
+                            * graph.get_unchecked_node_degree_from_node_id(dst).as_())
+                        .sqrt();
 
                     variation *= adaptative_learning_rate;
 
