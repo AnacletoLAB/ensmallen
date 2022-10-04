@@ -179,7 +179,7 @@ class RetrievedGraph:
         self._cache = cache
         self._verbose = verbose
         self._callbacks = callbacks
-        
+
         try:
             from ringbell import RingBell
             self._ringbell = RingBell(
@@ -734,6 +734,7 @@ class RetrievedGraph:
         if self._auto_enable_tradeoffs and graph.get_number_of_unique_edges() < 50e6:
             graph.enable()
 
-        self._ringbell.play()
+        if self._ring_bell is not None:
+            self._ringbell.play()
         
         return graph
