@@ -74,9 +74,6 @@ def WikiMediaRU(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -84,6 +81,9 @@ def WikiMediaRU(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -183,14 +183,14 @@ def WikiSV(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220320
-			- 20220401
-			- 20220420
-			- 20220501
 			- 20220520
 			- 20220601
 			- 20220620
 			- 20220701
+			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -290,9 +290,6 @@ def WikiMediaBE(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -300,6 +297,9 @@ def WikiMediaBE(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -399,9 +399,6 @@ def WikiHO(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -409,6 +406,9 @@ def WikiHO(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -508,9 +508,6 @@ def WikiIO(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -518,6 +515,9 @@ def WikiIO(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -617,9 +617,6 @@ def WikiTA(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -627,6 +624,9 @@ def WikiTA(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -726,9 +726,6 @@ def WikiNewsPL(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -736,6 +733,9 @@ def WikiNewsPL(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -835,9 +835,6 @@ def WikiVoyageRU(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -845,6 +842,9 @@ def WikiVoyageRU(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -944,9 +944,6 @@ def WikiBooksPS(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -954,6 +951,9 @@ def WikiBooksPS(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -1053,9 +1053,6 @@ def WikiBS(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -1063,6 +1060,9 @@ def WikiBS(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -1162,16 +1162,16 @@ def WikiCS(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220220
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
 			- 20220601
 			- 20220620
 			- 20220701
+			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -1271,9 +1271,6 @@ def WikiSC(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -1281,6 +1278,9 @@ def WikiSC(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -1380,9 +1380,6 @@ def WikiBooksGA(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -1390,6 +1387,9 @@ def WikiBooksGA(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -1489,9 +1489,6 @@ def WikiOM(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -1499,6 +1496,9 @@ def WikiOM(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -1598,9 +1598,6 @@ def WikiBooksFA(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -1608,6 +1605,9 @@ def WikiBooksFA(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -1707,9 +1707,6 @@ def WikiTT(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -1717,6 +1714,9 @@ def WikiTT(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -1816,9 +1816,6 @@ def WikiHZ(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -1826,6 +1823,9 @@ def WikiHZ(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -1925,9 +1925,6 @@ def WikiNewsCS(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -1935,6 +1932,9 @@ def WikiNewsCS(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -2034,9 +2034,6 @@ def WikiNewsBS(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -2044,6 +2041,9 @@ def WikiNewsBS(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -2143,9 +2143,6 @@ def WikiBooksIE(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -2153,6 +2150,9 @@ def WikiBooksIE(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -2252,9 +2252,6 @@ def WikiBooksHE(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -2262,6 +2259,9 @@ def WikiBooksHE(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -2361,9 +2361,6 @@ def WikiBooksUK(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -2371,6 +2368,9 @@ def WikiBooksUK(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -2470,9 +2470,6 @@ def WikiversityEL(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -2480,6 +2477,9 @@ def WikiversityEL(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -2579,9 +2579,6 @@ def WikiBooksTK(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -2589,6 +2586,9 @@ def WikiBooksTK(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -2688,9 +2688,6 @@ def WikiSourcePT(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -2698,6 +2695,9 @@ def WikiSourcePT(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -2797,9 +2797,6 @@ def WikiQuoteIS(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -2807,6 +2804,9 @@ def WikiQuoteIS(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -2906,9 +2906,6 @@ def WikiSourceZH(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -2916,6 +2913,9 @@ def WikiSourceZH(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -3015,9 +3015,6 @@ def WikiBooksCY(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -3025,6 +3022,9 @@ def WikiBooksCY(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -3124,9 +3124,6 @@ def WikiKU(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -3134,6 +3131,9 @@ def WikiKU(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -3233,9 +3233,6 @@ def WikiBooksSI(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -3243,6 +3240,9 @@ def WikiBooksSI(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -3342,9 +3342,6 @@ def WikiQuoteCO(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -3352,6 +3349,9 @@ def WikiQuoteCO(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -3451,9 +3451,6 @@ def WikiNewsSV(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -3461,6 +3458,9 @@ def WikiNewsSV(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -3560,14 +3560,14 @@ def WikiPL(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220320
-			- 20220401
-			- 20220420
-			- 20220501
 			- 20220520
 			- 20220601
 			- 20220620
 			- 20220701
+			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -3667,9 +3667,6 @@ def WikiQuoteTH(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -3677,6 +3674,9 @@ def WikiQuoteTH(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -3776,9 +3776,6 @@ def WikiLB(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -3786,6 +3783,9 @@ def WikiLB(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -3885,9 +3885,6 @@ def WikiBooksEN(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -3895,6 +3892,9 @@ def WikiBooksEN(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -3994,9 +3994,6 @@ def WikiSourcePA(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -4004,6 +4001,9 @@ def WikiSourcePA(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -4103,9 +4103,6 @@ def WikiNewsTA(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -4113,6 +4110,9 @@ def WikiNewsTA(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -4212,9 +4212,6 @@ def WikiversityJA(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -4222,6 +4219,9 @@ def WikiversityJA(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -4321,9 +4321,6 @@ def WikiMediaNG(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -4331,6 +4328,9 @@ def WikiMediaNG(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -4430,9 +4430,6 @@ def WikiVoyageEN(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -4440,6 +4437,9 @@ def WikiVoyageEN(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -4539,9 +4539,6 @@ def WikiBooksLA(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -4549,6 +4546,9 @@ def WikiBooksLA(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -4648,9 +4648,6 @@ def WikiIS(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -4658,6 +4655,9 @@ def WikiIS(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -4757,9 +4757,6 @@ def WikiQuoteKU(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -4767,6 +4764,9 @@ def WikiQuoteKU(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -4866,9 +4866,6 @@ def WikiVoyageUK(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -4876,6 +4873,9 @@ def WikiVoyageUK(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -4975,9 +4975,6 @@ def WikiBO(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -4985,6 +4982,9 @@ def WikiBO(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -5084,9 +5084,6 @@ def WikiCO(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -5094,6 +5091,9 @@ def WikiCO(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -5193,9 +5193,6 @@ def WikiSourceSR(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -5203,6 +5200,9 @@ def WikiSourceSR(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -5302,9 +5302,6 @@ def WikiVoyageHE(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -5312,6 +5309,9 @@ def WikiVoyageHE(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -5411,9 +5411,6 @@ def WikiQuotePL(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -5421,6 +5418,9 @@ def WikiQuotePL(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -5520,9 +5520,6 @@ def WikiSourceEU(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -5530,6 +5527,9 @@ def WikiSourceEU(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -5629,9 +5629,6 @@ def WikiTH(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -5639,6 +5636,9 @@ def WikiTH(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -5738,9 +5738,6 @@ def WikiQuoteLB(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -5748,6 +5745,9 @@ def WikiQuoteLB(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -5847,9 +5847,6 @@ def WikiBooksLT(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -5857,6 +5854,9 @@ def WikiBooksLT(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -5956,9 +5956,6 @@ def WikiSourceTE(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -5966,6 +5963,9 @@ def WikiSourceTE(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -6065,9 +6065,6 @@ def WikiSourceFO(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -6075,6 +6072,9 @@ def WikiSourceFO(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -6174,9 +6174,6 @@ def WikiQuoteSV(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -6184,6 +6181,9 @@ def WikiQuoteSV(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -6283,9 +6283,6 @@ def WikiVoyageFA(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -6293,6 +6290,9 @@ def WikiVoyageFA(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -6392,9 +6392,6 @@ def WikiQuoteTA(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -6402,6 +6399,9 @@ def WikiQuoteTA(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -6501,9 +6501,6 @@ def WikiMK(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -6511,6 +6508,9 @@ def WikiMK(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -6610,9 +6610,6 @@ def WikiNewsTH(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -6620,6 +6617,9 @@ def WikiNewsTH(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -6719,9 +6719,6 @@ def WikiBooksHY(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -6729,6 +6726,9 @@ def WikiBooksHY(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -6828,9 +6828,6 @@ def WikiVoyagePS(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -6838,6 +6835,9 @@ def WikiVoyagePS(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -6937,9 +6937,6 @@ def WikiBooksSU(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -6947,6 +6944,9 @@ def WikiBooksSU(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -7046,9 +7046,6 @@ def WikiQuoteBS(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -7056,6 +7053,9 @@ def WikiQuoteBS(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -7155,9 +7155,6 @@ def WikiBooksRU(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -7165,6 +7162,9 @@ def WikiBooksRU(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -7264,9 +7264,6 @@ def WikiQuoteCS(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -7274,6 +7271,9 @@ def WikiQuoteCS(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -7373,9 +7373,6 @@ def WikiKI(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -7383,6 +7380,9 @@ def WikiKI(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -7482,9 +7482,6 @@ def WikiBooksBE(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -7492,6 +7489,9 @@ def WikiBooksBE(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -7591,9 +7591,6 @@ def WikiversityDE(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -7601,6 +7598,9 @@ def WikiversityDE(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -7700,9 +7700,6 @@ def WikiQuoteTT(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -7710,6 +7707,9 @@ def WikiQuoteTT(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -7809,9 +7809,6 @@ def WikiEL(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -7819,6 +7816,9 @@ def WikiEL(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -7918,9 +7918,6 @@ def WikiSourceDA(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -7928,6 +7925,9 @@ def WikiSourceDA(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -8027,9 +8027,6 @@ def WikiHR(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -8037,6 +8034,9 @@ def WikiHR(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -8136,9 +8136,6 @@ def WikiNE(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -8146,6 +8143,9 @@ def WikiNE(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -8245,9 +8245,6 @@ def WikiQuoteVO(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -8255,6 +8252,9 @@ def WikiQuoteVO(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -8354,9 +8354,6 @@ def WikiBooksFI(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -8364,6 +8361,9 @@ def WikiBooksFI(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -8463,9 +8463,6 @@ def WikiQuoteWO(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -8473,6 +8470,9 @@ def WikiQuoteWO(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -8572,9 +8572,6 @@ def WikiQuoteJA(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -8582,6 +8579,9 @@ def WikiQuoteJA(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -8681,9 +8681,6 @@ def WikiVoyageEO(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -8691,6 +8688,9 @@ def WikiVoyageEO(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -8790,9 +8790,6 @@ def WikiQuoteKA(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -8800,6 +8797,9 @@ def WikiQuoteKA(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -8899,9 +8899,6 @@ def WikiSK(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -8909,6 +8906,9 @@ def WikiSK(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -9008,9 +9008,6 @@ def WikiTI(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -9018,6 +9015,9 @@ def WikiTI(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -9117,9 +9117,6 @@ def WikiMediaID(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -9127,6 +9124,9 @@ def WikiMediaID(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -9226,9 +9226,6 @@ def WikiBooksAK(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -9236,6 +9233,9 @@ def WikiBooksAK(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -9335,9 +9335,6 @@ def WikiSourceET(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -9345,6 +9342,9 @@ def WikiSourceET(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -9444,9 +9444,6 @@ def WikiIG(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -9454,6 +9451,9 @@ def WikiIG(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -9553,9 +9553,6 @@ def WikiBN(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -9563,6 +9560,9 @@ def WikiBN(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -9662,9 +9662,6 @@ def WikiBooksXH(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -9672,6 +9669,9 @@ def WikiBooksXH(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -9771,9 +9771,6 @@ def WikiversitySV(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -9781,6 +9778,9 @@ def WikiversitySV(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -9880,9 +9880,6 @@ def WikiBooksNO(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -9890,6 +9887,9 @@ def WikiBooksNO(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -9989,9 +9989,6 @@ def WikiQuoteBG(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -9999,6 +9996,9 @@ def WikiQuoteBG(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -10098,9 +10098,6 @@ def WikiBooksSA(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -10108,6 +10105,9 @@ def WikiBooksSA(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -10207,9 +10207,6 @@ def WikiQuoteDE(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -10217,6 +10214,9 @@ def WikiQuoteDE(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -10316,9 +10316,6 @@ def WikiSourceMR(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -10326,6 +10323,9 @@ def WikiSourceMR(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -10425,9 +10425,6 @@ def WikiAA(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -10435,6 +10432,9 @@ def WikiAA(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -10534,9 +10534,6 @@ def WikiNewsEL(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -10544,6 +10541,9 @@ def WikiNewsEL(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -10643,9 +10643,6 @@ def WikiBooksES(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -10653,6 +10650,9 @@ def WikiBooksES(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -10752,9 +10752,6 @@ def WikiQuoteCR(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -10762,6 +10759,9 @@ def WikiQuoteCR(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -10861,9 +10861,6 @@ def WikiversityCS(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -10871,6 +10868,9 @@ def WikiversityCS(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -10970,9 +10970,6 @@ def WikiQuoteBR(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -10980,6 +10977,9 @@ def WikiQuoteBR(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -11079,9 +11079,6 @@ def WikiGV(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -11089,6 +11086,9 @@ def WikiGV(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -11188,9 +11188,6 @@ def WikiQuoteNL(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -11198,6 +11195,9 @@ def WikiQuoteNL(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -11297,9 +11297,6 @@ def WikiRW(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -11307,6 +11304,9 @@ def WikiRW(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -11406,9 +11406,6 @@ def WikiMediaNZ(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -11416,6 +11413,9 @@ def WikiMediaNZ(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -11515,9 +11515,6 @@ def WikiVoyageES(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -11525,6 +11522,9 @@ def WikiVoyageES(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -11624,9 +11624,6 @@ def WikiSW(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -11634,6 +11631,9 @@ def WikiSW(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -11733,9 +11733,6 @@ def WikiNY(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -11743,6 +11740,9 @@ def WikiNY(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -11842,9 +11842,6 @@ def WikiBooksGU(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -11852,6 +11849,9 @@ def WikiBooksGU(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -11951,9 +11951,6 @@ def WikiMediaBD(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -11961,6 +11958,9 @@ def WikiMediaBD(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -12060,9 +12060,6 @@ def WikiBG(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -12070,6 +12067,9 @@ def WikiBG(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -12169,9 +12169,6 @@ def WikiBooksKK(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -12179,6 +12176,9 @@ def WikiBooksKK(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -12278,9 +12278,6 @@ def WikiBooksMI(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -12288,6 +12285,9 @@ def WikiBooksMI(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -12387,14 +12387,14 @@ def WikiDE(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220320
-			- 20220401
-			- 20220420
-			- 20220501
 			- 20220520
 			- 20220601
 			- 20220620
 			- 20220701
+			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -12494,9 +12494,6 @@ def WikiEE(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -12504,6 +12501,9 @@ def WikiEE(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -12603,9 +12603,6 @@ def WikiBooksLI(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -12613,6 +12610,9 @@ def WikiBooksLI(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -12712,9 +12712,6 @@ def WikiCR(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -12722,6 +12719,9 @@ def WikiCR(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -12821,9 +12821,6 @@ def WikiBR(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -12831,6 +12828,9 @@ def WikiBR(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -12930,9 +12930,6 @@ def WikiSourceRO(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -12940,6 +12937,9 @@ def WikiSourceRO(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -13039,9 +13039,6 @@ def WikiNewsJA(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -13049,6 +13046,9 @@ def WikiNewsJA(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -13148,14 +13148,14 @@ def WikiNL(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220320
-			- 20220401
-			- 20220420
-			- 20220501
 			- 20220520
 			- 20220601
 			- 20220620
 			- 20220701
+			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -13255,9 +13255,6 @@ def WikiMediaNO(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -13265,6 +13262,9 @@ def WikiMediaNO(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -13364,9 +13364,6 @@ def WikiQuoteEL(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -13374,6 +13371,9 @@ def WikiQuoteEL(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -13473,9 +13473,6 @@ def WikiBooksID(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -13483,6 +13480,9 @@ def WikiBooksID(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -13582,9 +13582,6 @@ def WikiNewsDE(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -13592,6 +13589,9 @@ def WikiNewsDE(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -13691,9 +13691,6 @@ def WikiQuoteHR(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -13701,6 +13698,9 @@ def WikiQuoteHR(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -13800,9 +13800,6 @@ def WikiLV(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -13810,6 +13807,9 @@ def WikiLV(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -13909,9 +13909,6 @@ def WikiNewsNL(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -13919,6 +13916,9 @@ def WikiNewsNL(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -14018,9 +14018,6 @@ def WikiVO(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -14028,6 +14025,9 @@ def WikiVO(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -14127,9 +14127,6 @@ def WikiWO(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -14137,6 +14134,9 @@ def WikiWO(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -14236,14 +14236,14 @@ def WikiJA(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220320
-			- 20220401
-			- 20220420
-			- 20220501
 			- 20220520
 			- 20220601
 			- 20220620
 			- 20220701
+			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -14343,9 +14343,6 @@ def WikiKA(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -14353,6 +14350,9 @@ def WikiKA(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -14452,9 +14452,6 @@ def WikiBooksBM(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -14462,6 +14459,9 @@ def WikiBooksBM(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -14561,9 +14561,6 @@ def WikiQuoteSK(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -14571,6 +14568,9 @@ def WikiQuoteSK(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -14670,9 +14670,6 @@ def WikiSourceFR(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -14680,6 +14677,9 @@ def WikiSourceFR(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -14779,9 +14779,6 @@ def WikiBooksEO(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -14789,6 +14786,9 @@ def WikiBooksEO(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -14888,9 +14888,6 @@ def WikiVoyageFI(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -14898,6 +14895,9 @@ def WikiVoyageFI(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -14997,9 +14997,6 @@ def WikiNewsBG(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -15007,6 +15004,9 @@ def WikiNewsBG(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -15106,9 +15106,6 @@ def WikiFJ(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -15116,6 +15113,9 @@ def WikiFJ(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -15215,9 +15215,6 @@ def WikiMediaFI(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -15225,6 +15222,9 @@ def WikiMediaFI(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -15324,9 +15324,6 @@ def WikiIE(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -15334,6 +15331,9 @@ def WikiIE(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -15433,16 +15433,16 @@ def WikiHE(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220220
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
 			- 20220601
 			- 20220620
 			- 20220701
+			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -15542,16 +15542,16 @@ def WikiUK(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220220
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
 			- 20220601
 			- 20220620
 			- 20220701
+			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -15651,9 +15651,6 @@ def WikiQuoteLA(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -15661,6 +15658,9 @@ def WikiQuoteLA(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -15760,9 +15760,6 @@ def WikiTK(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -15770,6 +15767,9 @@ def WikiTK(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -15869,9 +15869,6 @@ def WikiversityFI(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -15879,6 +15876,9 @@ def WikiversityFI(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -15978,9 +15978,6 @@ def WikiMediaCO(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -15988,6 +15985,9 @@ def WikiMediaCO(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -16087,9 +16087,6 @@ def WikiSourceCA(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -16097,6 +16094,9 @@ def WikiSourceCA(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -16196,9 +16196,6 @@ def WikiOR(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -16206,6 +16203,9 @@ def WikiOR(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -16305,9 +16305,6 @@ def WikiNewsFA(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -16315,6 +16312,9 @@ def WikiNewsFA(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -16414,9 +16414,6 @@ def WikiQuoteLT(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -16424,6 +16421,9 @@ def WikiQuoteLT(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -16523,9 +16523,6 @@ def WikiBooksPL(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -16533,6 +16530,9 @@ def WikiBooksPL(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -16632,9 +16632,6 @@ def WikiBooksLB(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -16642,6 +16639,9 @@ def WikiBooksLB(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -16741,13 +16741,13 @@ def WikiEN(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220401
-			- 20220420
-			- 20220501
-			- 20220520
 			- 20220601
 			- 20220620
 			- 20220701
+			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -16847,9 +16847,6 @@ def WikiSI(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -16857,6 +16854,9 @@ def WikiSI(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -16956,9 +16956,6 @@ def WikiNG(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -16966,6 +16963,9 @@ def WikiNG(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -17065,9 +17065,6 @@ def WikiCY(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -17075,6 +17072,9 @@ def WikiCY(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -17174,9 +17174,6 @@ def WikiBooksKU(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -17184,6 +17181,9 @@ def WikiBooksKU(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -17283,9 +17283,6 @@ def WikiNewsEN(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -17293,6 +17290,9 @@ def WikiNewsEN(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -17392,9 +17392,6 @@ def WikiQuoteHY(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -17402,6 +17399,9 @@ def WikiQuoteHY(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -17501,9 +17501,6 @@ def WikiPS(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -17511,6 +17508,9 @@ def WikiPS(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -17610,9 +17610,6 @@ def WikiBooksTA(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -17620,6 +17617,9 @@ def WikiBooksTA(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -17719,9 +17719,6 @@ def WikiKJ(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -17729,6 +17726,9 @@ def WikiKJ(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -17828,9 +17828,6 @@ def WikiQuoteNN(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -17838,6 +17835,9 @@ def WikiQuoteNN(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -17937,9 +17937,6 @@ def WikiBooksSV(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -17947,6 +17944,9 @@ def WikiBooksSV(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -18046,9 +18046,6 @@ def WikiSourceVI(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -18056,6 +18053,9 @@ def WikiSourceVI(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -18155,9 +18155,6 @@ def WikiNewsHE(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -18165,6 +18162,9 @@ def WikiNewsHE(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -18264,9 +18264,6 @@ def WikiversityES(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -18274,6 +18271,9 @@ def WikiversityES(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -18373,9 +18373,6 @@ def WikiBooksTT(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -18383,6 +18380,9 @@ def WikiBooksTT(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -18482,9 +18482,6 @@ def WikiAV(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -18492,6 +18489,9 @@ def WikiAV(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -18591,9 +18591,6 @@ def WikiNewsUK(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -18601,6 +18598,9 @@ def WikiNewsUK(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -18700,9 +18700,6 @@ def WikiMediaMK(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -18710,6 +18707,9 @@ def WikiMediaMK(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -18809,9 +18809,6 @@ def WikiMH(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -18819,6 +18816,9 @@ def WikiMH(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -18918,9 +18918,6 @@ def WikiQuoteBE(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -18928,6 +18925,9 @@ def WikiQuoteBE(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -19027,9 +19027,6 @@ def WikiGA(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -19037,6 +19034,9 @@ def WikiGA(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -19136,16 +19136,16 @@ def WikiFA(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220220
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
 			- 20220601
 			- 20220620
 			- 20220701
+			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -19245,9 +19245,6 @@ def WikiBooksBS(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -19255,6 +19252,9 @@ def WikiBooksBS(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -19354,9 +19354,6 @@ def WikiQuoteSU(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -19364,6 +19361,9 @@ def WikiQuoteSU(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -19463,9 +19463,6 @@ def WikiBooksCS(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -19473,6 +19470,9 @@ def WikiBooksCS(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -19572,9 +19572,6 @@ def WikiSourceGL(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -19582,6 +19579,9 @@ def WikiSourceGL(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -19681,9 +19681,6 @@ def WikiQuoteRU(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -19691,6 +19688,9 @@ def WikiQuoteRU(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -19790,9 +19790,6 @@ def WikiTW(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -19800,6 +19797,9 @@ def WikiTW(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -19899,9 +19899,6 @@ def WikiHY(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -19909,6 +19906,9 @@ def WikiHY(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -20008,9 +20008,6 @@ def WikiYI(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -20018,6 +20015,9 @@ def WikiYI(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -20117,9 +20117,6 @@ def WikiSourceHT(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -20127,6 +20124,9 @@ def WikiSourceHT(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -20226,9 +20226,6 @@ def WikiBooksMK(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -20236,6 +20233,9 @@ def WikiBooksMK(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -20335,9 +20335,6 @@ def WikiSourceIT(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -20345,6 +20342,9 @@ def WikiSourceIT(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -20444,9 +20444,6 @@ def WikiNN(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -20454,6 +20451,9 @@ def WikiNN(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -20553,9 +20553,6 @@ def WikiVoyageSV(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -20563,6 +20560,9 @@ def WikiVoyageSV(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -20662,9 +20662,6 @@ def WikiMediaUA(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -20672,6 +20669,9 @@ def WikiMediaUA(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -20771,9 +20771,6 @@ def WikiCE(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -20781,6 +20778,9 @@ def WikiCE(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -20880,9 +20880,6 @@ def WikiBE(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -20890,6 +20887,9 @@ def WikiBE(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -20989,9 +20989,6 @@ def WikiQuoteGA(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -20999,6 +20996,9 @@ def WikiQuoteGA(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -21098,9 +21098,6 @@ def WikiQuoteFA(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -21108,6 +21105,9 @@ def WikiQuoteFA(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -21207,9 +21207,6 @@ def WikiSU(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -21217,6 +21214,9 @@ def WikiSU(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -21316,14 +21316,14 @@ def WikiRU(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220320
-			- 20220401
-			- 20220420
-			- 20220501
 			- 20220520
 			- 20220601
 			- 20220620
 			- 20220701
+			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -21423,9 +21423,6 @@ def WikiBooksIS(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -21433,6 +21430,9 @@ def WikiBooksIS(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -21532,9 +21532,6 @@ def WikiSourceML(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -21542,6 +21539,9 @@ def WikiSourceML(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -21641,9 +21641,6 @@ def WikiQuoteHE(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -21651,6 +21648,9 @@ def WikiQuoteHE(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -21750,9 +21750,6 @@ def WikiQuoteUK(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -21760,6 +21757,9 @@ def WikiQuoteUK(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -21859,9 +21859,6 @@ def WikiLA(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -21869,6 +21866,9 @@ def WikiLA(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -21968,9 +21968,6 @@ def WikiMediaPL(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -21978,6 +21975,9 @@ def WikiMediaPL(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -22077,9 +22077,6 @@ def WikiSourceAR(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -22087,6 +22084,9 @@ def WikiSourceAR(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -22186,9 +22186,6 @@ def WikiQuoteTK(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -22196,6 +22193,9 @@ def WikiQuoteTK(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -22295,16 +22295,16 @@ def WikiNewsRU(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220220
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
 			- 20220601
 			- 20220620
 			- 20220701
+			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -22404,9 +22404,6 @@ def WikiVoyagePL(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -22414,6 +22411,9 @@ def WikiVoyagePL(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -22513,9 +22513,6 @@ def WikiJV(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -22523,6 +22520,9 @@ def WikiJV(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -22622,9 +22622,6 @@ def WikiKV(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -22632,6 +22629,9 @@ def WikiKV(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -22731,9 +22731,6 @@ def WikiLT(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -22741,6 +22738,9 @@ def WikiLT(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -22840,9 +22840,6 @@ def WikiMT(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -22850,6 +22847,9 @@ def WikiMT(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -22949,9 +22949,6 @@ def WikiQuoteEN(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -22959,6 +22956,9 @@ def WikiQuoteEN(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -23058,9 +23058,6 @@ def WikiBooksTH(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -23068,6 +23065,9 @@ def WikiBooksTH(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -23167,9 +23167,6 @@ def WikiBooksBO(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -23177,6 +23174,9 @@ def WikiBooksBO(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -23276,9 +23276,6 @@ def WikiBooksCO(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -23286,6 +23283,9 @@ def WikiBooksCO(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -23385,9 +23385,6 @@ def WikiSourceKN(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -23395,6 +23392,9 @@ def WikiSourceKN(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -23494,9 +23494,6 @@ def WikiQuoteCY(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -23504,6 +23501,9 @@ def WikiQuoteCY(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -23603,16 +23603,16 @@ def WikiNO(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220220
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
 			- 20220601
 			- 20220620
 			- 20220701
+			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -23712,9 +23712,6 @@ def WikiSA(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -23722,6 +23719,9 @@ def WikiSA(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -23821,9 +23821,6 @@ def WikiVoyageDE(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -23831,6 +23828,9 @@ def WikiVoyageDE(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -23930,9 +23930,6 @@ def WikiQuoteKK(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -23940,6 +23937,9 @@ def WikiQuoteKK(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -24039,9 +24039,6 @@ def WikiMediaNL(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -24049,6 +24046,9 @@ def WikiMediaNL(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -24148,9 +24148,6 @@ def WikiQuoteGU(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -24158,6 +24155,9 @@ def WikiQuoteGU(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -24257,9 +24257,6 @@ def WikiMediaBR(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -24267,6 +24264,9 @@ def WikiMediaBR(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -24366,9 +24366,6 @@ def WikiSourceSL(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -24376,6 +24373,9 @@ def WikiSourceSL(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -24475,9 +24475,6 @@ def WikiSourceHU(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -24485,6 +24482,9 @@ def WikiSourceHU(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -24584,9 +24584,6 @@ def WikiXH(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -24594,6 +24591,9 @@ def WikiXH(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -24693,9 +24693,6 @@ def WikiVoyageNL(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -24703,6 +24700,9 @@ def WikiVoyageNL(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -24802,9 +24802,6 @@ def WikiNewsFI(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -24812,6 +24809,9 @@ def WikiNewsFI(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -24911,9 +24911,6 @@ def WikiST(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -24921,6 +24918,9 @@ def WikiST(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -25020,14 +25020,14 @@ def WikiES(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220320
-			- 20220401
-			- 20220420
-			- 20220501
 			- 20220520
 			- 20220601
 			- 20220620
 			- 20220701
+			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -25127,9 +25127,6 @@ def WikiQuoteLI(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -25137,6 +25134,9 @@ def WikiQuoteLI(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -25236,9 +25236,6 @@ def WikiBooksAA(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -25246,6 +25243,9 @@ def WikiBooksAA(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -25345,9 +25345,6 @@ def WikiBooksNE(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -25355,6 +25352,9 @@ def WikiBooksNE(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -25454,16 +25454,16 @@ def WikiFI(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220220
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
 			- 20220601
 			- 20220620
 			- 20220701
+			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -25563,9 +25563,6 @@ def WikiBooksSK(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -25573,6 +25570,9 @@ def WikiBooksSK(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -25672,9 +25672,6 @@ def WikiQuoteBM(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -25682,6 +25679,9 @@ def WikiQuoteBM(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -25781,9 +25781,6 @@ def WikiKW(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -25791,6 +25788,9 @@ def WikiKW(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -25890,9 +25890,6 @@ def WikiBooksHR(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -25900,6 +25897,9 @@ def WikiBooksHR(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -25999,9 +25999,6 @@ def WikiSourceAS(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -26009,6 +26006,9 @@ def WikiSourceAS(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -26108,9 +26108,6 @@ def WikiBooksEL(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -26118,6 +26115,9 @@ def WikiBooksEL(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -26217,9 +26217,6 @@ def WikiQuoteID(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -26227,6 +26224,9 @@ def WikiQuoteID(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -26326,9 +26326,6 @@ def WikiNewsES(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -26336,6 +26333,9 @@ def WikiNewsES(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -26435,9 +26435,6 @@ def WikiBooksBN(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -26445,6 +26442,9 @@ def WikiBooksBN(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -26544,9 +26544,6 @@ def WikiSourceWA(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -26554,6 +26551,9 @@ def WikiSourceWA(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -26653,9 +26653,6 @@ def WikiNewsNO(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -26663,6 +26660,9 @@ def WikiNewsNO(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -26762,9 +26762,6 @@ def WikiSourceKO(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -26772,6 +26769,9 @@ def WikiSourceKO(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -26871,9 +26871,6 @@ def WikiVoyageJA(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -26881,6 +26878,9 @@ def WikiVoyageJA(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -26980,9 +26980,6 @@ def WikiQuoteEO(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -26990,6 +26987,9 @@ def WikiQuoteEO(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -27089,9 +27089,6 @@ def WikiversityEN(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -27099,6 +27096,9 @@ def WikiversityEN(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -27198,9 +27198,6 @@ def WikiAK(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -27208,6 +27205,9 @@ def WikiAK(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -27307,9 +27307,6 @@ def WikiMediaCN(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -27317,6 +27314,9 @@ def WikiMediaCN(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -27416,9 +27416,6 @@ def WikiBooksVO(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -27426,6 +27423,9 @@ def WikiBooksVO(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -27525,9 +27525,6 @@ def WikiQuoteFI(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -27535,6 +27532,9 @@ def WikiQuoteFI(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -27634,9 +27634,6 @@ def WikiBooksJA(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -27644,6 +27641,9 @@ def WikiBooksJA(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -27743,9 +27743,6 @@ def WikiBooksKA(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -27753,6 +27750,9 @@ def WikiBooksKA(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -27852,9 +27852,6 @@ def WikiBM(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -27862,6 +27859,9 @@ def WikiBM(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -27961,9 +27961,6 @@ def WikiQuoteKW(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -27971,6 +27968,9 @@ def WikiQuoteKW(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -28070,9 +28070,6 @@ def WikiOS(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -28080,6 +28077,9 @@ def WikiOS(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -28179,9 +28179,6 @@ def WikiNewsLI(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -28189,6 +28186,9 @@ def WikiNewsLI(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -28288,9 +28288,6 @@ def WikiDZ(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -28298,6 +28295,9 @@ def WikiDZ(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -28397,9 +28397,6 @@ def WikiSourceHI(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -28407,6 +28404,9 @@ def WikiSourceHI(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -28506,9 +28506,6 @@ def WikiBooksLV(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -28516,6 +28513,9 @@ def WikiBooksLV(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -28615,9 +28615,6 @@ def WikiVoyageBN(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -28625,6 +28622,9 @@ def WikiVoyageBN(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -28724,16 +28724,16 @@ def WikiID(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220220
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
 			- 20220601
 			- 20220620
 			- 20220701
+			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -28833,9 +28833,6 @@ def WikiVoyageEL(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -28843,6 +28840,9 @@ def WikiVoyageEL(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -28942,16 +28942,16 @@ def WikiSH(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220220
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
 			- 20220601
 			- 20220620
 			- 20220701
+			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -29051,9 +29051,6 @@ def WikiEO(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -29061,6 +29058,9 @@ def WikiEO(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -29160,9 +29160,6 @@ def WikiSourceTR(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -29170,6 +29167,9 @@ def WikiSourceTR(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -29269,9 +29269,6 @@ def WikiVE(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -29279,6 +29276,9 @@ def WikiVE(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -29378,9 +29378,6 @@ def WikiQuoteNO(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -29388,6 +29385,9 @@ def WikiQuoteNO(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -29487,9 +29487,6 @@ def WikiQuoteSA(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -29497,6 +29494,9 @@ def WikiQuoteSA(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -29596,9 +29596,6 @@ def WikiBooksBG(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -29606,6 +29603,9 @@ def WikiBooksBG(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -29705,9 +29705,6 @@ def WikiKK(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -29715,6 +29712,9 @@ def WikiKK(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -29814,9 +29814,6 @@ def WikiBooksSW(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -29824,6 +29821,9 @@ def WikiBooksSW(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -29923,9 +29923,6 @@ def WikiGU(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -29933,6 +29930,9 @@ def WikiGU(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -30032,9 +30032,6 @@ def WikiNewsEO(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -30042,6 +30039,9 @@ def WikiNewsEO(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -30141,9 +30141,6 @@ def WikiAB(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -30151,6 +30148,9 @@ def WikiAB(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -30250,9 +30250,6 @@ def WikiBooksNL(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -30260,6 +30257,9 @@ def WikiBooksNL(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -30359,9 +30359,6 @@ def WikiversityRU(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -30369,6 +30366,9 @@ def WikiversityRU(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -30468,9 +30468,6 @@ def WikiQuoteES(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -30478,6 +30475,9 @@ def WikiQuoteES(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -30577,9 +30577,6 @@ def WikiMI(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -30587,6 +30584,9 @@ def WikiMI(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -30686,9 +30686,6 @@ def WikiBooksDE(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -30696,6 +30693,9 @@ def WikiBooksDE(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -30795,9 +30795,6 @@ def WikiSourceAZ(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -30805,6 +30802,9 @@ def WikiSourceAZ(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -30904,9 +30904,6 @@ def WikiLI(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -30914,6 +30911,9 @@ def WikiLI(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -31013,9 +31013,6 @@ def WikiBooksSR(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -31023,6 +31020,9 @@ def WikiBooksSR(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -31122,9 +31122,6 @@ def WikiVoyagePT(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -31132,6 +31129,9 @@ def WikiVoyagePT(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -31231,9 +31231,6 @@ def WikiKN(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -31241,6 +31238,9 @@ def WikiKN(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -31340,9 +31340,6 @@ def WikiBooksTE(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -31350,6 +31347,9 @@ def WikiBooksTE(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -31449,9 +31449,6 @@ def WikiNewsIT(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -31459,6 +31456,9 @@ def WikiNewsIT(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -31558,9 +31558,6 @@ def WikiSourceLT(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -31568,6 +31565,9 @@ def WikiSourceLT(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -31667,9 +31667,6 @@ def WikiMY(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -31677,6 +31674,9 @@ def WikiMY(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -31776,9 +31776,6 @@ def WikiBooksEU(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -31786,6 +31783,9 @@ def WikiBooksEU(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -31885,9 +31885,6 @@ def WikiMediaPT(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -31895,6 +31892,9 @@ def WikiMediaPT(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -31994,9 +31994,6 @@ def WikiQuoteSQ(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -32004,6 +32001,9 @@ def WikiQuoteSQ(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -32103,9 +32103,6 @@ def WikiSourceJV(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -32113,6 +32110,9 @@ def WikiSourceJV(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -32212,9 +32212,6 @@ def WikiQuoteCA(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -32222,6 +32219,9 @@ def WikiQuoteCA(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -32321,9 +32321,6 @@ def WikiVoyageZH(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -32331,6 +32328,9 @@ def WikiVoyageZH(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -32430,9 +32430,6 @@ def WikiML(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -32440,6 +32437,9 @@ def WikiML(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -32539,9 +32539,6 @@ def WikiversityHI(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -32549,6 +32546,9 @@ def WikiversityHI(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -32648,9 +32648,6 @@ def WikiSourceLA(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -32658,6 +32655,9 @@ def WikiSourceLA(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -32757,9 +32757,6 @@ def WikiAR(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -32767,6 +32764,9 @@ def WikiAR(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -32866,9 +32866,6 @@ def WikiQuoteKR(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -32876,6 +32873,9 @@ def WikiQuoteKR(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -32975,9 +32975,6 @@ def WikiNV(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -32985,6 +32982,9 @@ def WikiNV(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -33084,9 +33084,6 @@ def WikiSourceBE(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -33094,6 +33091,9 @@ def WikiSourceBE(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -33193,9 +33193,6 @@ def WikiSourceRU(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -33203,6 +33200,9 @@ def WikiSourceRU(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -33302,9 +33302,6 @@ def WikiQuoteGL(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -33312,6 +33309,9 @@ def WikiQuoteGL(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -33411,9 +33411,6 @@ def WikiBH(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -33421,6 +33418,9 @@ def WikiBH(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -33520,9 +33520,6 @@ def WikiCH(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -33530,6 +33527,9 @@ def WikiCH(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -33629,9 +33629,6 @@ def WikiNewsAR(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -33639,6 +33636,9 @@ def WikiNewsAR(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -33738,9 +33738,6 @@ def WikiTO(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -33748,6 +33745,9 @@ def WikiTO(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -33847,9 +33847,6 @@ def WikiIA(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -33857,6 +33854,9 @@ def WikiIA(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -33956,9 +33956,6 @@ def WikiHA(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -33966,6 +33963,9 @@ def WikiHA(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -34065,9 +34065,6 @@ def WikiBooksMS(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -34075,6 +34072,9 @@ def WikiBooksMS(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -34174,9 +34174,6 @@ def WikiOC(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -34184,6 +34181,9 @@ def WikiOC(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -34283,9 +34283,6 @@ def WikiQuoteVI(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -34293,6 +34290,9 @@ def WikiQuoteVI(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -34392,9 +34392,6 @@ def WikiSM(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -34402,6 +34399,9 @@ def WikiSM(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -34501,9 +34501,6 @@ def WikiBooksZA(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -34511,6 +34508,9 @@ def WikiBooksZA(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -34610,9 +34610,6 @@ def WikiRM(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -34620,6 +34617,9 @@ def WikiRM(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -34719,9 +34719,6 @@ def WikiSourceHY(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -34729,6 +34726,9 @@ def WikiSourceHY(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -34828,9 +34828,6 @@ def WikiHT(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -34838,6 +34835,9 @@ def WikiHT(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -34937,14 +34937,14 @@ def WikiIT(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220320
-			- 20220401
-			- 20220420
-			- 20220501
 			- 20220520
 			- 20220601
 			- 20220620
 			- 20220701
+			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -35044,9 +35044,6 @@ def WikiSourceYI(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -35054,6 +35051,9 @@ def WikiSourceYI(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -35153,9 +35153,6 @@ def WikiUZ(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -35163,6 +35160,9 @@ def WikiUZ(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -35262,9 +35262,6 @@ def WikiSourceFA(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -35272,6 +35269,9 @@ def WikiSourceFA(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -35371,9 +35371,6 @@ def WikiKR(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -35381,6 +35378,9 @@ def WikiKR(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -35480,9 +35480,6 @@ def WikiNewsCA(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -35490,6 +35487,9 @@ def WikiNewsCA(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -35589,9 +35589,6 @@ def WikiNewsSQ(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -35599,6 +35596,9 @@ def WikiNewsSQ(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -35698,9 +35698,6 @@ def WikiGL(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -35708,6 +35705,9 @@ def WikiGL(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -35807,9 +35807,6 @@ def WikiNewsSD(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -35817,6 +35814,9 @@ def WikiNewsSD(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -35916,9 +35916,6 @@ def WikiFY(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -35926,6 +35923,9 @@ def WikiFY(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -36025,16 +36025,16 @@ def WikiVI(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220220
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
 			- 20220601
 			- 20220620
 			- 20220701
+			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -36134,9 +36134,6 @@ def WikiKG(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -36144,6 +36141,9 @@ def WikiKG(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -36243,9 +36243,6 @@ def WikiversitySL(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -36253,6 +36250,9 @@ def WikiversitySL(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -36352,9 +36352,6 @@ def WikiMediaAM(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -36362,6 +36359,9 @@ def WikiMediaAM(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -36461,9 +36461,6 @@ def WikiBooksTL(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -36471,6 +36468,9 @@ def WikiBooksTL(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -36570,9 +36570,6 @@ def WikiAN(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -36580,6 +36577,9 @@ def WikiAN(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -36679,9 +36679,6 @@ def WikiQuoteIT(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -36689,6 +36686,9 @@ def WikiQuoteIT(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -36788,9 +36788,6 @@ def WikiQuoteUZ(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -36798,6 +36795,9 @@ def WikiQuoteUZ(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -36897,9 +36897,6 @@ def WikiSourceCY(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -36907,6 +36904,9 @@ def WikiSourceCY(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -37006,9 +37006,6 @@ def WikiversityKO(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -37016,6 +37013,9 @@ def WikiversityKO(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -37115,9 +37115,6 @@ def WikiSD(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -37125,6 +37122,9 @@ def WikiSD(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -37224,9 +37224,6 @@ def WikiBooksZH(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -37234,6 +37231,9 @@ def WikiBooksZH(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -37333,9 +37333,6 @@ def WikiQuoteKN(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -37343,6 +37340,9 @@ def WikiQuoteKN(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -37442,9 +37442,6 @@ def WikiBooksPA(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -37452,6 +37449,9 @@ def WikiBooksPA(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -37551,9 +37551,6 @@ def WikiSourceEN(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -37561,6 +37558,9 @@ def WikiSourceEN(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -37660,9 +37660,6 @@ def WikiTS(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -37670,6 +37667,9 @@ def WikiTS(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -37769,9 +37769,6 @@ def WikiSQ(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -37779,6 +37776,9 @@ def WikiSQ(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -37878,16 +37878,16 @@ def WikiCA(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220220
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
 			- 20220601
 			- 20220620
 			- 20220701
+			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -37987,9 +37987,6 @@ def WikiSourceOR(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -37997,6 +37994,9 @@ def WikiSourceOR(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -38096,9 +38096,6 @@ def WikiBA(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -38106,6 +38103,9 @@ def WikiBA(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -38205,9 +38205,6 @@ def WikiBooksKM(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -38215,6 +38212,9 @@ def WikiBooksKM(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -38314,9 +38314,6 @@ def WikiQuoteML(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -38324,6 +38321,9 @@ def WikiQuoteML(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -38423,9 +38423,6 @@ def WikiSourceUK(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -38433,6 +38430,9 @@ def WikiSourceUK(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -38532,9 +38532,6 @@ def WikiBooksPT(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -38542,6 +38539,9 @@ def WikiBooksPT(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -38641,9 +38641,6 @@ def WikiQuoteAR(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -38651,6 +38648,9 @@ def WikiQuoteAR(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -38750,9 +38750,6 @@ def WikiDV(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -38760,6 +38757,9 @@ def WikiDV(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -38859,9 +38859,6 @@ def WikiSourceHE(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -38869,6 +38866,9 @@ def WikiSourceHE(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -38968,9 +38968,6 @@ def WikiAZ(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -38978,6 +38975,9 @@ def WikiAZ(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -39077,9 +39077,6 @@ def WikiSourceLI(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -39087,6 +39084,9 @@ def WikiSourceLI(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -39186,9 +39186,6 @@ def WikiKS(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -39196,6 +39193,9 @@ def WikiKS(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -39295,9 +39295,6 @@ def WikiBooksRO(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -39305,6 +39302,9 @@ def WikiBooksRO(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -39404,9 +39404,6 @@ def WikiBooksNA(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -39414,6 +39411,9 @@ def WikiBooksNA(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -39513,9 +39513,6 @@ def WikiNewsTR(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -39523,6 +39520,9 @@ def WikiNewsTR(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -39622,9 +39622,6 @@ def WikiQuoteHU(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -39632,6 +39629,9 @@ def WikiQuoteHU(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -39731,9 +39731,6 @@ def WikiversityIT(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -39741,6 +39738,9 @@ def WikiversityIT(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -39840,9 +39840,6 @@ def WikiSourceGU(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -39850,6 +39847,9 @@ def WikiSourceGU(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -39949,9 +39949,6 @@ def WikiQuoteSL(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -39959,6 +39956,9 @@ def WikiQuoteSL(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -40058,9 +40058,6 @@ def WikiQuoteAF(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -40068,6 +40065,9 @@ def WikiQuoteAF(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -40167,9 +40167,6 @@ def WikiBooksMN(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -40177,6 +40174,9 @@ def WikiBooksMN(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -40276,9 +40276,6 @@ def WikiBooksLN(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -40286,6 +40283,9 @@ def WikiBooksLN(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -40385,16 +40385,16 @@ def WikiTR(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220220
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
 			- 20220601
 			- 20220620
 			- 20220701
+			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -40494,9 +40494,6 @@ def WikiUR(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -40504,6 +40501,9 @@ def WikiUR(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -40603,9 +40603,6 @@ def WikiSourceEO(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -40613,6 +40610,9 @@ def WikiSourceEO(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -40712,9 +40712,6 @@ def WikiCU(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -40722,6 +40719,9 @@ def WikiCU(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -40821,9 +40821,6 @@ def WikiBooksKY(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -40831,6 +40828,9 @@ def WikiBooksKY(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -40930,9 +40930,6 @@ def WikiQuoteKO(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -40940,6 +40937,9 @@ def WikiQuoteKO(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -41039,9 +41039,6 @@ def WikiSE(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -41049,6 +41046,9 @@ def WikiSE(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -41148,9 +41148,6 @@ def WikiII(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -41158,6 +41155,9 @@ def WikiII(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -41257,9 +41257,6 @@ def WikiHI(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -41267,6 +41264,9 @@ def WikiHI(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -41366,9 +41366,6 @@ def WikiUG(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -41376,6 +41373,9 @@ def WikiUG(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -41475,9 +41475,6 @@ def WikiTG(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -41485,6 +41482,9 @@ def WikiTG(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -41584,9 +41584,6 @@ def WikiSourceID(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -41594,6 +41591,9 @@ def WikiSourceID(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -41693,9 +41693,6 @@ def WikiMediaET(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -41703,6 +41700,9 @@ def WikiMediaET(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -41802,9 +41802,6 @@ def WikiversityAR(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -41812,6 +41809,9 @@ def WikiversityAR(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -41911,9 +41911,6 @@ def WikiBooksQU(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -41921,6 +41918,9 @@ def WikiBooksQU(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -42020,9 +42020,6 @@ def WikiMediaRS(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -42030,6 +42027,9 @@ def WikiMediaRS(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -42129,9 +42129,6 @@ def WikiBooksFR(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -42139,6 +42136,9 @@ def WikiBooksFR(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -42238,9 +42238,6 @@ def WikiAF(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -42248,6 +42245,9 @@ def WikiAF(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -42347,9 +42347,6 @@ def WikiNewsHU(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -42357,6 +42354,9 @@ def WikiNewsHU(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -42456,9 +42456,6 @@ def WikiBooksET(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -42466,6 +42463,9 @@ def WikiBooksET(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -42565,9 +42565,6 @@ def WikiQuoteTR(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -42575,6 +42572,9 @@ def WikiQuoteTR(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -42674,9 +42674,6 @@ def WikiQuoteUR(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -42684,6 +42681,9 @@ def WikiQuoteUR(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -42783,9 +42783,6 @@ def WikiVoyageFR(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -42793,6 +42790,9 @@ def WikiVoyageFR(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -42892,9 +42892,6 @@ def WikiMediaGR(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -42902,6 +42899,9 @@ def WikiMediaGR(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -43001,14 +43001,14 @@ def WikiKO(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220320
-			- 20220401
-			- 20220420
-			- 20220501
 			- 20220520
 			- 20220601
 			- 20220620
 			- 20220701
+			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -43108,9 +43108,6 @@ def WikiMediaWB(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -43118,6 +43115,9 @@ def WikiMediaWB(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -43217,9 +43217,6 @@ def WikiWA(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -43227,6 +43224,9 @@ def WikiWA(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -43326,9 +43326,6 @@ def WikiQuoteHI(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -43336,6 +43333,9 @@ def WikiQuoteHI(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -43435,9 +43435,6 @@ def WikiBooksYO(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -43445,6 +43442,9 @@ def WikiBooksYO(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -43544,9 +43544,6 @@ def WikiBooksDA(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -43554,6 +43551,9 @@ def WikiBooksDA(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -43653,9 +43653,6 @@ def WikiQuoteUG(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -43663,6 +43660,9 @@ def WikiQuoteUG(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -43762,9 +43762,6 @@ def WikiAS(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -43772,6 +43769,9 @@ def WikiAS(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -43871,9 +43871,6 @@ def WikiBooksCV(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -43881,6 +43878,9 @@ def WikiBooksCV(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -43980,9 +43980,6 @@ def WikiSourceFI(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -43990,6 +43987,9 @@ def WikiSourceFI(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -44089,9 +44089,6 @@ def WikiGD(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -44099,6 +44096,9 @@ def WikiGD(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -44198,9 +44198,6 @@ def WikiSourceES(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -44208,6 +44205,9 @@ def WikiSourceES(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -44307,9 +44307,6 @@ def WikiTN(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -44317,6 +44314,9 @@ def WikiTN(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -44416,9 +44416,6 @@ def WikiBooksMR(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -44426,6 +44423,9 @@ def WikiBooksMR(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -44525,9 +44525,6 @@ def WikiQuoteAZ(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -44535,6 +44532,9 @@ def WikiQuoteAZ(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -44634,9 +44634,6 @@ def WikiQuoteKS(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -44644,6 +44641,9 @@ def WikiQuoteKS(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -44743,9 +44743,6 @@ def WikiBooksZU(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -44753,6 +44750,9 @@ def WikiBooksZU(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -44852,9 +44852,6 @@ def WikiBI(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -44862,6 +44859,9 @@ def WikiBI(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -44961,9 +44961,6 @@ def WikiVoyageRO(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -44971,6 +44968,9 @@ def WikiVoyageRO(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -45070,9 +45070,6 @@ def WikiBooksMG(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -45080,6 +45077,9 @@ def WikiBooksMG(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -45179,9 +45179,6 @@ def WikiIU(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -45189,6 +45186,9 @@ def WikiIU(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -45288,9 +45288,6 @@ def WikiBooksAY(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -45298,6 +45295,9 @@ def WikiBooksAY(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -45397,16 +45397,16 @@ def WikiHU(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220220
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
 			- 20220601
 			- 20220620
 			- 20220701
+			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -45506,9 +45506,6 @@ def WikiSourceSA(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -45516,6 +45513,9 @@ def WikiSourceSA(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -45615,9 +45615,6 @@ def WikiNewsKO(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -45625,6 +45622,9 @@ def WikiNewsKO(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -45724,9 +45724,6 @@ def WikiSourceNO(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -45734,6 +45731,9 @@ def WikiSourceNO(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -45833,9 +45833,6 @@ def WikiSL(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -45843,6 +45840,9 @@ def WikiSL(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -45942,9 +45942,6 @@ def WikiBooksGN(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -45952,6 +45949,9 @@ def WikiBooksGN(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -46051,9 +46051,6 @@ def WikiMS(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -46061,6 +46058,9 @@ def WikiMS(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -46160,9 +46160,6 @@ def WikiBooksIA(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -46170,6 +46167,9 @@ def WikiBooksIA(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -46269,9 +46269,6 @@ def WikiAM(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -46279,6 +46276,9 @@ def WikiAM(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -46378,9 +46378,6 @@ def WikiVoyageVI(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -46388,6 +46385,9 @@ def WikiVoyageVI(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -46487,9 +46487,6 @@ def WikiBooksCH(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -46497,6 +46494,9 @@ def WikiBooksCH(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -46596,9 +46596,6 @@ def WikiBooksIT(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -46606,6 +46603,9 @@ def WikiBooksIT(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -46705,9 +46705,6 @@ def WikiSourceMK(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -46715,6 +46712,9 @@ def WikiSourceMK(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -46814,9 +46814,6 @@ def WikiBooksUZ(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -46824,6 +46821,9 @@ def WikiBooksUZ(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -46923,9 +46923,6 @@ def WikiBooksOC(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -46933,6 +46930,9 @@ def WikiBooksOC(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -47032,9 +47032,6 @@ def WikiFO(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -47042,6 +47039,9 @@ def WikiFO(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -47141,9 +47141,6 @@ def WikiNewsSR(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -47151,6 +47148,9 @@ def WikiNewsSR(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -47250,9 +47250,6 @@ def WikiZA(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -47260,6 +47257,9 @@ def WikiZA(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -47359,9 +47359,6 @@ def WikiBooksRM(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -47369,6 +47366,9 @@ def WikiBooksRM(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -47468,9 +47468,6 @@ def WikiSourceTH(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -47478,6 +47475,9 @@ def WikiSourceTH(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -47577,9 +47577,6 @@ def WikiBooksMY(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -47587,6 +47584,9 @@ def WikiBooksMY(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -47686,9 +47686,6 @@ def WikiEU(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -47696,6 +47693,9 @@ def WikiEU(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -47795,9 +47795,6 @@ def WikiTE(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -47805,6 +47802,9 @@ def WikiTE(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -47904,9 +47904,6 @@ def WikiIK(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -47914,6 +47911,9 @@ def WikiIK(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -48013,9 +48013,6 @@ def WikiMediaCA(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -48023,6 +48020,9 @@ def WikiMediaCA(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -48122,9 +48122,6 @@ def WikiBooksKN(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -48132,6 +48129,9 @@ def WikiBooksKN(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -48231,9 +48231,6 @@ def WikiQuoteZH(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -48241,6 +48238,9 @@ def WikiQuoteZH(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -48340,16 +48340,16 @@ def WikiSR(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220220
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
 			- 20220601
 			- 20220620
 			- 20220701
+			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -48449,9 +48449,6 @@ def WikiBooksAR(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -48459,6 +48456,9 @@ def WikiBooksAR(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -48558,9 +48558,6 @@ def WikiQuotePT(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -48568,6 +48565,9 @@ def WikiQuotePT(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -48667,9 +48667,6 @@ def WikiBooksML(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -48677,6 +48674,9 @@ def WikiBooksML(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -48776,9 +48776,6 @@ def WikiSourceIS(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -48786,6 +48783,9 @@ def WikiSourceIS(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -48885,9 +48885,6 @@ def WikiSG(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -48895,6 +48892,9 @@ def WikiSG(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -48994,9 +48994,6 @@ def WikiversityFR(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -49004,6 +49001,9 @@ def WikiversityFR(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -49103,9 +49103,6 @@ def WikiQuoteEU(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -49113,6 +49110,9 @@ def WikiQuoteEU(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -49212,9 +49212,6 @@ def WikiSourcePL(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -49222,6 +49219,9 @@ def WikiSourcePL(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -49321,9 +49321,6 @@ def WikiMediaAR(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -49331,6 +49328,9 @@ def WikiMediaAR(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -49430,9 +49430,6 @@ def WikiLO(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -49440,6 +49437,9 @@ def WikiLO(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -49539,9 +49539,6 @@ def WikiQuoteTE(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -49549,6 +49546,9 @@ def WikiQuoteTE(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -49648,9 +49648,6 @@ def WikiPA(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -49658,6 +49655,9 @@ def WikiPA(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -49757,9 +49757,6 @@ def WikiFF(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -49767,6 +49764,9 @@ def WikiFF(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -49866,9 +49866,6 @@ def WikiMediaGE(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -49876,6 +49873,9 @@ def WikiMediaGE(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -49975,14 +49975,14 @@ def WikiZH(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220320
-			- 20220401
-			- 20220420
-			- 20220501
 			- 20220520
 			- 20220601
 			- 20220620
 			- 20220701
+			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -50082,9 +50082,6 @@ def WikiQuoteSR(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -50092,6 +50089,9 @@ def WikiQuoteSR(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -50191,14 +50191,14 @@ def WikiPT(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220320
-			- 20220401
-			- 20220420
-			- 20220501
 			- 20220520
 			- 20220601
 			- 20220620
 			- 20220701
+			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -50298,9 +50298,6 @@ def WikiBooksCA(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -50308,6 +50305,9 @@ def WikiBooksCA(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -50407,9 +50407,6 @@ def WikiBooksBA(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -50417,6 +50414,9 @@ def WikiBooksBA(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -50516,9 +50516,6 @@ def WikiKM(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -50526,6 +50523,9 @@ def WikiKM(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -50625,9 +50625,6 @@ def WikiBooksSQ(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -50635,6 +50632,9 @@ def WikiBooksSQ(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -50734,9 +50734,6 @@ def WikiTY(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -50744,6 +50741,9 @@ def WikiTY(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -50843,9 +50843,6 @@ def WikiNewsPT(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -50853,6 +50850,9 @@ def WikiNewsPT(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -50952,9 +50952,6 @@ def WikiQuoteAM(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -50962,6 +50959,9 @@ def WikiQuoteAM(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -51061,9 +51061,6 @@ def WikiSourceBS(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -51071,6 +51068,9 @@ def WikiSourceBS(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -51170,9 +51170,6 @@ def WikiBooksGL(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -51180,6 +51177,9 @@ def WikiBooksGL(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -51279,9 +51279,6 @@ def WikiSourceCS(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -51289,6 +51286,9 @@ def WikiSourceCS(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -51388,9 +51388,6 @@ def WikiSN(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -51398,6 +51395,9 @@ def WikiSN(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -51497,9 +51497,6 @@ def WikiRN(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -51507,6 +51504,9 @@ def WikiRN(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -51606,9 +51606,6 @@ def WikiVoyageIT(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -51616,6 +51613,9 @@ def WikiVoyageIT(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -51715,9 +51715,6 @@ def WikiSourceTA(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -51725,6 +51722,9 @@ def WikiSourceTA(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -51824,9 +51824,6 @@ def WikiTL(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -51834,6 +51831,9 @@ def WikiTL(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -51933,9 +51933,6 @@ def WikiSourceSV(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -51943,6 +51940,9 @@ def WikiSourceSV(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -52042,9 +52042,6 @@ def WikiBooksVI(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -52052,6 +52049,9 @@ def WikiBooksVI(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -52151,9 +52151,6 @@ def WikiQuoteZA(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -52161,6 +52158,9 @@ def WikiQuoteZA(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -52260,9 +52260,6 @@ def WikiNewsZH(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -52270,6 +52267,9 @@ def WikiNewsZH(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -52369,9 +52369,6 @@ def WikiBooksFY(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -52379,6 +52376,9 @@ def WikiBooksFY(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -52478,9 +52478,6 @@ def WikiBooksSE(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -52488,6 +52485,9 @@ def WikiBooksSE(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -52587,9 +52587,6 @@ def WikiKY(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -52597,6 +52594,9 @@ def WikiKY(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -52696,9 +52696,6 @@ def WikiBooksTR(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -52706,6 +52703,9 @@ def WikiBooksTR(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -52805,9 +52805,6 @@ def WikiQuoteET(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -52815,6 +52812,9 @@ def WikiQuoteET(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -52914,9 +52914,6 @@ def WikiBooksUR(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -52924,6 +52921,9 @@ def WikiBooksUR(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -53023,9 +53023,6 @@ def WikiMN(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -53033,6 +53030,9 @@ def WikiMN(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -53132,9 +53132,6 @@ def WikiLN(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -53142,6 +53139,9 @@ def WikiLN(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -53241,9 +53241,6 @@ def WikiKL(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -53251,6 +53248,9 @@ def WikiKL(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -53350,9 +53350,6 @@ def WikiSourceJA(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -53360,6 +53357,9 @@ def WikiSourceJA(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -53459,9 +53459,6 @@ def WikiNewsRO(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -53469,6 +53466,9 @@ def WikiNewsRO(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -53568,14 +53568,14 @@ def WikiFR(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220320
-			- 20220401
-			- 20220420
-			- 20220501
 			- 20220520
 			- 20220601
 			- 20220620
 			- 20220701
+			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- frwiki
 			- latest
     graph_kwargs
@@ -53676,9 +53676,6 @@ def WikiMediaMX(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -53686,6 +53683,9 @@ def WikiMediaMX(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -53785,9 +53785,6 @@ def WikiQU(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -53795,6 +53792,9 @@ def WikiQU(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -53894,9 +53894,6 @@ def WikiBooksHI(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -53904,6 +53901,9 @@ def WikiBooksHI(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -54003,9 +54003,6 @@ def WikiBooksUG(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -54013,6 +54010,9 @@ def WikiBooksUG(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -54112,9 +54112,6 @@ def WikiQuoteDA(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -54122,6 +54119,9 @@ def WikiQuoteDA(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -54221,9 +54221,6 @@ def WikiBooksTG(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -54231,6 +54228,9 @@ def WikiBooksTG(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -54330,9 +54330,6 @@ def WikiRO(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -54340,6 +54337,9 @@ def WikiRO(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -54439,9 +54439,6 @@ def WikiNewsFR(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -54449,6 +54446,9 @@ def WikiNewsFR(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -54548,9 +54548,6 @@ def WikiSO(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -54558,6 +54555,9 @@ def WikiSO(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -54657,9 +54657,6 @@ def WikiNA(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -54667,6 +54664,9 @@ def WikiNA(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -54766,9 +54766,6 @@ def WikiSourceBR(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -54776,6 +54773,9 @@ def WikiSourceBR(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -54875,9 +54875,6 @@ def WikiBooksKS(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -54885,6 +54882,9 @@ def WikiBooksKS(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -54984,9 +54984,6 @@ def WikiSourceNL(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -54994,6 +54991,9 @@ def WikiSourceNL(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -55093,9 +55093,6 @@ def WikiQuoteMR(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -55103,6 +55100,9 @@ def WikiQuoteMR(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -55202,9 +55202,6 @@ def WikiSourceDE(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -55212,6 +55209,9 @@ def WikiSourceDE(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -55311,9 +55311,6 @@ def WikiBooksAZ(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -55321,6 +55318,9 @@ def WikiBooksAZ(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -55420,9 +55420,6 @@ def WikiMediaDK(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -55430,6 +55427,9 @@ def WikiMediaDK(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -55529,9 +55529,6 @@ def WikiSourceBG(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -55539,6 +55536,9 @@ def WikiSourceBG(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -55638,9 +55638,6 @@ def WikiQuoteRO(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -55648,6 +55645,9 @@ def WikiQuoteRO(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -55747,9 +55747,6 @@ def WikiBooksBI(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -55757,6 +55754,9 @@ def WikiBooksBI(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -55856,9 +55856,6 @@ def WikiQuoteNA(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -55866,6 +55863,9 @@ def WikiQuoteNA(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -55965,9 +55965,6 @@ def WikiZU(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -55975,6 +55972,9 @@ def WikiZU(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -56074,9 +56074,6 @@ def WikiMR(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -56084,6 +56081,9 @@ def WikiMR(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -56183,9 +56183,6 @@ def WikiBooksSL(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -56193,6 +56190,9 @@ def WikiBooksSL(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -56292,9 +56292,6 @@ def WikiGN(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -56302,6 +56299,9 @@ def WikiGN(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -56401,9 +56401,6 @@ def WikiAY(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -56411,6 +56408,9 @@ def WikiAY(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -56510,9 +56510,6 @@ def WikiBooksHU(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -56520,6 +56517,9 @@ def WikiBooksHU(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -56619,9 +56619,6 @@ def WikiPI(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -56629,6 +56626,9 @@ def WikiPI(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -56728,9 +56728,6 @@ def WikiLG(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -56738,6 +56735,9 @@ def WikiLG(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -56837,9 +56837,6 @@ def WikiMG(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -56847,6 +56844,9 @@ def WikiMG(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -56946,9 +56946,6 @@ def WikiBooksKO(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -56956,6 +56953,9 @@ def WikiBooksKO(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -57055,9 +57055,6 @@ def WikiversityZH(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -57065,6 +57062,9 @@ def WikiversityZH(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -57164,9 +57164,6 @@ def WikiBooksWA(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -57174,6 +57171,9 @@ def WikiBooksWA(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -57273,9 +57273,6 @@ def WikiVoyageHI(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -57283,6 +57280,9 @@ def WikiVoyageHI(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -57382,9 +57382,6 @@ def WikiSourceBN(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -57392,6 +57389,9 @@ def WikiSourceBN(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -57491,9 +57491,6 @@ def WikiSS(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -57501,6 +57498,9 @@ def WikiSS(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -57600,9 +57600,6 @@ def WikiQuoteKY(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -57610,6 +57607,9 @@ def WikiQuoteKY(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -57709,9 +57709,6 @@ def WikiET(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -57719,6 +57716,9 @@ def WikiET(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -57818,9 +57818,6 @@ def WikiBooksAF(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -57828,6 +57825,9 @@ def WikiBooksAF(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -57927,9 +57927,6 @@ def WikiMediaHI(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -57937,6 +57934,9 @@ def WikiMediaHI(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -58036,9 +58036,6 @@ def WikiMediaSE(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -58046,6 +58043,9 @@ def WikiMediaSE(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -58145,9 +58145,6 @@ def WikiQuoteFR(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -58155,6 +58152,9 @@ def WikiQuoteFR(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -58254,9 +58254,6 @@ def WikiSourceSK(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -58264,6 +58261,9 @@ def WikiSourceSK(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -58363,9 +58363,6 @@ def WikiVoyageTR(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -58373,6 +58370,9 @@ def WikiVoyageTR(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -58472,9 +58472,6 @@ def WikiCV(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -58482,6 +58479,9 @@ def WikiCV(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -58581,9 +58581,6 @@ def WikiSourceEL(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -58591,6 +58588,9 @@ def WikiSourceEL(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -58690,9 +58690,6 @@ def WikiMediaTR(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -58700,6 +58697,9 @@ def WikiMediaTR(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -58799,9 +58799,6 @@ def WikiBooksAS(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -58809,6 +58806,9 @@ def WikiBooksAS(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -58908,9 +58908,6 @@ def WikiQuoteQU(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -58918,6 +58915,9 @@ def WikiQuoteQU(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -59017,9 +59017,6 @@ def WikiversityPT(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -59027,6 +59024,9 @@ def WikiversityPT(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -59126,9 +59126,6 @@ def WikiYO(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -59136,6 +59133,9 @@ def WikiYO(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -59235,9 +59235,6 @@ def WikiDA(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -59245,6 +59242,9 @@ def WikiDA(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	
@@ -59344,9 +59344,6 @@ def WikiSourceHR(
     version: str = "latest"
         The version of the graph to retrieve.	
 		The available versions are:
-			- 20220301
-			- 20220320
-			- 20220401
 			- 20220420
 			- 20220501
 			- 20220520
@@ -59354,6 +59351,9 @@ def WikiSourceHR(
 			- 20220620
 			- 20220701
 			- 20220720
+			- 20220801
+			- 20220820
+			- 20220901
 			- latest
     graph_kwargs
         Additional graph kwargs.	

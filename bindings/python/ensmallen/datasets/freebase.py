@@ -24,9 +24,9 @@ from ensmallen import Graph  # pylint: disable=import-error
 from .graph_retrieval import RetrievedGraph
 
 def FreeBase(
-    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
     cache_sys_var="GRAPH_CACHE_DIR", version="latest", **kwargs
 ) -> Graph:
     """Return FreeBase graph	
@@ -37,6 +37,7 @@ def FreeBase(
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
         Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -51,14 +52,14 @@ def FreeBase(
         Version to retrieve	
     """
     return RetrievedGraph(
-        "FreeBase", version, "freebase", directed, preprocess, load_nodes,
+        "FreeBase", version, "freebase", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, cache, cache_path, cache_sys_var, kwargs
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
 def FreeBase2WikiData(
-    directed=False, preprocess="auto", load_nodes=True, load_node_types=True,
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, cache=True, cache_path=None,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
     cache_sys_var="GRAPH_CACHE_DIR", version="latest", **kwargs
 ) -> Graph:
     """Return FreeBase2WikiData graph	
@@ -69,6 +70,7 @@ def FreeBase2WikiData(
     preprocess = "auto"
         Preprocess for optimal load time & memory peak.
         Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
     load_nodes = True
         Load node names or use numeric range
     load_node_types = True
@@ -83,7 +85,7 @@ def FreeBase2WikiData(
         Version to retrieve	
     """
     return RetrievedGraph(
-        "FreeBase2WikiData", version, "freebase", directed, preprocess, load_nodes,
+        "FreeBase2WikiData", version, "freebase", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, cache, cache_path, cache_sys_var, kwargs
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()

@@ -1,39 +1,44 @@
+use crate::MemoryMapReadOnlyCore;
 use core::ffi::c_void;
+use core::fmt::Debug;
 use windows::Win32::Foundation::*;
 use windows::Win32::Storage::FileSystem::*;
 use windows::Win32::System::Memory::*;
 
 #[derive(Debug)]
-pub struct MemoryMappedReadOnlyFile {
-    file_handle: HANDLE,
-    mapping_handle: HANDLE,
-    addr: *mut c_void,
-    len: usize,
+pub struct MemoryMappedReadOnly {
+    pub(crate) file_handle: HANDLE,
+    pub(crate) mapping_handle: HANDLE,
+    pub(crate) addr: *mut c_void,
+    pub(crate) len: usize,
+    pub(crate) path: Option<String>,
 }
 
-impl Drop for MemoryMappedReadOnlyFile {
+impl Drop for MemoryMappedReadOnly {
     fn drop(&mut self) {
         unsafe {
             let res = UnmapViewOfFile(self.addr);
-            if res == BOOL(0) {
+            if !res.as_bool() {
                 panic!("Cannot unmap view of file.",);
             }
 
             let res = CloseHandle(self.mapping_handle);
-            if res == BOOL(0) {
+            if !res.as_bool() {
                 panic!("Cannot Close the mapping handle.");
             }
 
             let res = CloseHandle(self.file_handle);
-            if res == BOOL(0) {
+            if !res.as_bool() {
                 panic!("Cannot Close the mapping handle.");
             }
         }
     }
 }
 
-impl MemoryMappedReadOnlyFile {
-    pub fn new(path: &str) -> Result<MemoryMappedReadOnlyFile, String> {
+impl MemoryMapReadOnlyCore for MemoryMappedReadOnly {
+    fn new<S: AsRef<str> + Debug>(path: S, offset: Option<usize>) -> Result<Self, String> {
+        let path = path.as_ref();
+        assert!(offset == None, "MMAP offsetting is TODO on windows");
         unsafe {
             let file_handle = CreateFileW(
                 path,
@@ -57,20 +62,20 @@ impl MemoryMappedReadOnlyFile {
                 file_handle,
                 std::ptr::null_mut(),
                 PAGE_READONLY, // | SEC_LARGE_PAGES,
-                0,
-                0,
+                0,             // max size
+                0,             // max size
                 PWSTR(std::ptr::null_mut()),
             );
 
-            if mapping_handle == HANDLE(0) {
+            if mapping_handle == INVALID_HANDLE_VALUE {
                 return Err("Error opening file CreateFileMappingW".into());
             }
 
             let addr = MapViewOfFile(
                 mapping_handle,
                 FILE_MAP_READ, // | FILE_MAP_LARGE_PAGES
-                0,
-                0,
+                0,             // offset high
+                0,             // offset low
                 len,
             );
 
@@ -78,24 +83,25 @@ impl MemoryMappedReadOnlyFile {
                 return Err("Error opening file MapViewOfFile".into());
             }
 
-            Ok(MemoryMappedReadOnlyFile {
+            Ok(MemoryMappedReadOnly {
                 file_handle,
                 mapping_handle,
                 addr,
                 len,
+                path: Some(path.to_string()),
             })
         }
     }
 
-    pub fn as_str(&self) -> &'static str {
-        unsafe {
-            let slice = std::slice::from_raw_parts(self.addr as *const u8, self.len);
-            std::str::from_utf8_unchecked(slice)
-        }
+    fn get_addr(&self) -> *mut u8 {
+        self.addr as _
     }
 
-    /// Return the number of `usize` words in the slice
-    pub fn len(&self) -> usize {
+    fn len(&self) -> usize {
         self.len
+    }
+
+    fn get_path(&self) -> Option<String> {
+        self.path.clone()
     }
 }

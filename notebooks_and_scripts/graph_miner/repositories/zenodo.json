@@ -17,5 +17,98 @@
                 "edge_list_header": false
             }
         }
+    },
+    "PharMeBINet": {
+        "latest": {
+            "urls": [
+                "https://zenodo.org/record/7011027/files/pharmebinet_tsv_2022_08_19_v2.tar.gz"
+            ],
+            "paths": [
+                "pharmebinet_tsv_2022_08_19_v2.tar.gz"
+            ],
+            "arguments": {
+                "edge_path": "pharmebinet_tsv_2022_08_19_v2/edges.tsv",
+                "node_path": "pharmebinet_tsv_2022_08_19_v2/nodes.tsv",
+                "sources_column": "start_id",
+                "destinations_column": "end_id",
+                "edge_list_edge_types_column": "type",
+                "node_list_node_types_column": "labels",
+                "node_types_separator": "|",
+                "nodes_column": "node_id",
+                "directed": true,
+                "name": "PharMeBINet"
+            }
+        }
+    },
+    "NPKG": {
+        "latest": {
+            "urls": [
+                "https://zenodo.org/record/7011488/files/NP-KG_merged_compressed.tsv.gz"
+            ],
+            "paths": [
+                "NP-KG_merged_compressed.tsv.gz"
+            ],
+            "arguments": {
+                "edge_path": "NP-KG_merged_compressed.tsv",
+                "sources_column_number": 0,
+                "edge_list_edge_types_column_number": 1,
+                "destinations_column_number": 2,
+                "directed": true,
+                "name": "NPKG"
+            }
+        }
+    },
+    "GameOfThronesCharactersInteractions": {
+        "latest": {
+            "urls": [
+                "https://zenodo.org/record/7016922/files/game_of_thrones.tsv.gz"
+            ],
+            "paths": [
+                "game_of_thrones.tsv.gz"
+            ],
+            "arguments": {
+                "edge_path": "game_of_thrones.tsv",
+                "sources_column": "source",
+                "destinations_column": "destination",
+                "edge_list_edge_types_column": "edge_type",
+                "weights_column": "edge_weight",
+                "name": "Game of Thrones Characters Interactions"
+            }
+        }
+    },
+    "Ubergraph": {
+        "latest": {
+            "urls": [
+                "https://zenodo.org/record/7020394/files/ubergraph_edge_list.tsv.gz"
+            ],
+            "paths": [
+                "ubergraph_edge_list.tsv.gz"
+            ],
+            "arguments": {
+                "edge_path": "ubergraph_edge_list.tsv",
+                "sources_column": "source",
+                "destinations_column": "destination",
+                "edge_list_edge_types_column": "edge_type",
+                "name": "Ubergraph"
+            }
+        }
+    },
+    "FAVA": {
+        "latest": {
+            "urls": [
+                "https://zenodo.org/record/6803472/files/Fava_Network_SingleCells_Proteomics_CombinedScores_Over15percent.tsv.gz"
+            ],
+            "paths": [
+                "fava.tsv.gz"
+            ],
+            "arguments": {
+                "edge_path": "fava.tsv",
+                "sources_column_number": 0,
+                "destinations_column_number": 1,
+                "weights_column_number": 2,
+                "edge_list_header": false,
+                "name": "FAVA"
+            }
+        }
     }
 }

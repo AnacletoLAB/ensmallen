@@ -1,10 +1,4 @@
-use crate::AnchorFeatureTypes;
-use crate::wine::BasicWINE;
-use crate::wine::WINEBased;
-use crate::AnchorTypes;
-use crate::AnchorsInferredNodeEmbeddingModel;
-use crate::AnchorsInferredNodeEmbeddingProperties;
-use crate::DegreesAnchorsGenerator;
+use crate::*;
 
 #[derive(Clone, Debug)]
 pub struct DegreeWINE {
@@ -23,19 +17,23 @@ impl WINEBased for DegreeWINE {
     }
 }
 
-impl DegreesAnchorsGenerator for DegreeWINE {}
-impl AnchorsInferredNodeEmbeddingProperties for DegreeWINE {
+impl EmbeddingSize for DegreeWINE {
+    fn get_embedding_size(&self, _graph: &graph::Graph) -> Result<usize, String> {
+        Ok(self
+            .parameters
+            .get_basic_inferred_node_embedding()
+            .get_embedding_size())
+    }
+}
+
+impl DegreesLandmarkGenerator for DegreeWINE {}
+
+impl ALPINE<{ LandmarkType::Degrees }, { LandmarkFeatureType::Windows }> for DegreeWINE {
     fn get_model_name(&self) -> String {
         "Degree-based WINE".to_string()
     }
 
-    fn get_embedding_size(&self, _graph: &graph::Graph) -> Result<usize, String> {
-        Ok(self.get_basic_inferred_node_embedding().get_embedding_size())
-    }
-
-    fn get_basic_inferred_node_embedding(&self) -> &crate::BasicAnchorsInferredNodeEmbedding {
+    fn get_basic_inferred_node_embedding(&self) -> &crate::BasicALPINE {
         self.get_basic_wine().get_basic_inferred_node_embedding()
     }
 }
-
-impl AnchorsInferredNodeEmbeddingModel<{ AnchorTypes::Degrees }, {AnchorFeatureTypes::Walks}> for DegreeWINE {}

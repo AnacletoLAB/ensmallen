@@ -2086,7 +2086,7 @@ impl Graph {
     /// Returns vector with node IDs with given curie prefix.
     ///
     /// # Arguments
-    /// * `curie_prefixes`: &str - Prefix of the source node names.
+    /// * `curie_prefixes`: Vec<&str> - Prefix of the source node names.
     pub fn get_node_ids_from_node_curie_prefixes(&self, curie_prefixes: Vec<&str>) -> Vec<NodeT> {
         self.par_iter_node_ids_from_node_curie_prefixes(curie_prefixes)
             .collect()
@@ -2095,12 +2095,12 @@ impl Graph {
     /// Returns vector with node names with given curie prefix.
     ///
     /// # Arguments
-    /// * `curie_prefixes`: &str - Prefix of the source node names.
+    /// * `curie_prefixes`: Vec<&str> - Prefix of the source node names.
     pub fn get_node_names_from_node_curie_prefixes(
         &self,
         curie_prefixes: Vec<&str>,
     ) -> Vec<String> {
-        self.par_iter_node_names_from_node_curie_prefixes(curie_prefixes)
+        self.par_iter_node_names_from_node_curie_prefixes(&curie_prefixes)
             .collect()
     }
 

@@ -2,7 +2,9 @@ use crate::types::*;
 use crate::validation::*;
 use core::fmt::Debug;
 use core::intrinsics::unlikely;
+use core::ops::Mul;
 use rayon::prelude::*;
+use std::iter::Sum;
 
 /// Returns the dot product between the two provided vectors computed sequentially.
 ///
@@ -14,7 +16,7 @@ use rayon::prelude::*;
 /// If the two features have different sizes, we will compute
 /// the dot product upwards to when the minimum size.
 /// No warning will be raised.
-pub unsafe fn dot_product_sequential_unchecked<F: ThreadFloat>(
+pub unsafe fn dot_product_sequential_unchecked<F: Copy + Sum + Mul<Output = F>>(
     src_features: &[F],
     dst_features: &[F],
 ) -> F {
@@ -35,7 +37,7 @@ pub unsafe fn dot_product_sequential_unchecked<F: ThreadFloat>(
 /// If the two features have different sizes, we will compute
 /// the dot product upwards to when the minimum size.
 /// No warning will be raised.
-pub unsafe fn dot_product_parallel_unchecked<F: ThreadFloat>(
+pub unsafe fn dot_product_parallel_unchecked<F: Copy + Sum + Mul<Output = F> + Send + Sync>(
     src_features: &[F],
     dst_features: &[F],
 ) -> F {
@@ -43,10 +45,7 @@ pub unsafe fn dot_product_parallel_unchecked<F: ThreadFloat>(
         .par_iter()
         .zip(dst_features.par_iter())
         .map(|(&src_feature, &dst_feature)| src_feature * dst_feature)
-        .reduce(
-            || F::zero(),
-            |total_dot_products, dot_products| total_dot_products + dot_products,
-        )
+        .sum()
 }
 
 /// Returns the dot product between the two provided vectors computed sequentially.

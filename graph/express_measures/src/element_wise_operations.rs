@@ -1,3 +1,8 @@
+use std::{
+    iter::Sum,
+    ops::{AddAssign, DivAssign},
+};
+
 use crate::types::*;
 use num_traits::Float;
 
@@ -11,14 +16,14 @@ use num_traits::Float;
 /// If the two features have different sizes, we will compute
 /// the subtraction upwards to when the minimum size.
 /// No warning will be raised.
-pub unsafe fn element_wise_subtraction<F: Coerced<R>, R: Float>(
+pub unsafe fn element_wise_subtraction<F: Into<R> + Copy, R: Float>(
     first_vector: &[F],
     second_vector: &[F],
 ) -> Vec<R> {
     first_vector
         .iter()
         .zip(second_vector.iter())
-        .map(|(&first_feature, &second_feature)| first_feature.coerce_into() - second_feature.coerce_into())
+        .map(|(&first_feature, &second_feature)| first_feature.into() - second_feature.into())
         .collect()
 }
 
@@ -149,15 +154,14 @@ pub unsafe fn element_wise_weighted_addition<F: Into<R> + Copy, R: ThreadFloat>(
 /// If the two features have different sizes, we will compute
 /// the addition upwards to when the minimum size.
 /// No warning will be raised.
-pub unsafe fn element_wise_addition_inplace<F: Into<R> + Copy, R: ThreadFloat>(
-    first_vector: &mut [R],
+pub unsafe fn element_wise_addition_inplace<F: AddAssign<F> + Copy>(
+    first_vector: &mut [F],
     second_vector: &[F],
 ) {
     first_vector
         .iter_mut()
         .zip(second_vector.iter())
-        .map(|(first_feature, &second_feature)| *first_feature += second_feature.into())
-        .collect()
+        .for_each(|(first_feature, &second_feature)| *first_feature += second_feature);
 }
 
 /// Executes element-wise weighted addition inplace.
@@ -174,13 +178,13 @@ pub unsafe fn element_wise_addition_inplace<F: Into<R> + Copy, R: ThreadFloat>(
 pub unsafe fn element_wise_weighted_addition_inplace<F: Into<R> + Copy, R: ThreadFloat>(
     first_vector: &mut [R],
     second_vector: &[F],
-    weight: F,
+    weight: R,
 ) {
     first_vector
         .iter_mut()
         .zip(second_vector.iter())
         .map(|(first_feature, &second_feature)| {
-            *first_feature += second_feature.into() * weight.into()
+            *first_feature += second_feature.into() * weight
         })
         .collect()
 }
@@ -189,7 +193,7 @@ pub unsafe fn element_wise_weighted_addition_inplace<F: Into<R> + Copy, R: Threa
 ///
 /// # Arguments
 /// * `vector`: &mut [F] - The vector to compute the squared norm for.
-pub fn squared_vector_norm<F: Copy + ThreadFloat>(vector: &[F]) -> F {
+pub fn squared_vector_norm<F: Copy + Float + Sum>(vector: &[F]) -> F {
     (vector
         .iter()
         .copied()
@@ -203,7 +207,7 @@ pub fn squared_vector_norm<F: Copy + ThreadFloat>(vector: &[F]) -> F {
 ///
 /// # Arguments
 /// * `vector`: &mut [F] - The vector to compute the norm for.
-pub fn vector_norm<F: Copy + ThreadFloat>(vector: &[F]) -> F {
+pub fn vector_norm<F: Copy + Float + Sum>(vector: &[F]) -> F {
     squared_vector_norm(vector).sqrt()
 }
 
@@ -211,7 +215,9 @@ pub fn vector_norm<F: Copy + ThreadFloat>(vector: &[F]) -> F {
 ///
 /// # Arguments
 /// * `vector`: &mut [F] - The vector to normalize in place.
-pub fn normalize_vector_inplace<F: Into<F> + Copy + ThreadFloat>(vector: &mut [F]) -> F {
+pub fn normalize_vector_inplace<F: Into<F> + Copy + Float + Sum + DivAssign>(
+    vector: &mut [F],
+) -> F {
     let norm: F = vector_norm(vector);
     vector.iter_mut().for_each(|value| {
         *value /= norm;

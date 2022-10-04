@@ -48,11 +48,9 @@ pub(crate) use crate::preprocessing::*;
 pub(crate) use crate::utilities::*;
 mod types;
 pub(crate) use crate::types::*;
+mod alpine;
 mod operators;
-mod spine;
-pub(crate) use spine::*;
-mod wine;
-pub(crate) use wine::*;
+pub(crate) use alpine::*;
 
 mod weighted_spine;
 pub(crate) use weighted_spine::*;
@@ -72,7 +70,6 @@ pub fn register_models(_py: Python, _m: &PyModule) -> PyResult<()> {
     _m.add_class::<WalkletsGloVe>()?;
     _m.add_class::<WalkletsSkipGram>()?;
     _m.add_class::<TransE>()?;
-    _m.add_class::<TransH>()?;
     _m.add_class::<Unstructured>()?;
     _m.add_class::<StructuredEmbedding>()?;
     _m.add_class::<FirstOrderLINE>()?;

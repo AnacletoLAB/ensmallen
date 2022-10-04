@@ -1,19 +1,22 @@
 use crate::Optimizer;
-use crate::{must_not_be_zero, FeatureSlice};
+use crate::{get_random_weight, must_not_be_zero, FeatureSlice};
+use core::ops::Sub;
 use express_measures::{
     absolute_distance, cosine_similarity_sequential_unchecked, dot_product_sequential_unchecked,
-    element_wise_subtraction, euclidean_distance_sequential_unchecked, Coerced,
+    euclidean_distance_sequential_unchecked,
 };
 use graph::{Graph, NodeT};
 use indicatif::ProgressIterator;
 use indicatif::{ProgressBar, ProgressStyle};
-use num::Zero;
+use num_traits::{Coerced, Zero};
 use rayon::prelude::*;
+use serde::de::DeserializeOwned;
+use serde::{Deserialize, Serialize};
 use strum::IntoEnumIterator;
 use strum_macros::EnumIter;
-use vec_rand::{random_f32, splitmix64};
+use vec_rand::splitmix64;
 
-#[derive(Clone, Debug, Copy, PartialEq, EnumIter)]
+#[derive(Clone, Debug, Copy, PartialEq, EnumIter, Deserialize, Serialize)]
 pub enum EdgeEmbedding {
     CosineSimilarity,
     EuclideanDistance,
@@ -94,7 +97,7 @@ impl EdgeEmbedding {
 
     pub fn get_method<F>(&self) -> fn(&[F], &[F]) -> Vec<f32>
     where
-        F: Coerced<f32>,
+        F: Coerced<f32> + Copy + Sub<Output = F> + PartialOrd,
     {
         match self {
             EdgeEmbedding::CosineSimilarity => {
@@ -107,7 +110,7 @@ impl EdgeEmbedding {
                 a.iter()
                     .copied()
                     .zip(b.iter().copied())
-                    .map(|(feature_a, feature_b)| (feature_a * feature_b).coerce_into())
+                    .map(|(feature_a, feature_b)| feature_a.coerce_into() * feature_b.coerce_into())
                     .collect::<Vec<f32>>()
             },
             EdgeEmbedding::Concatenate => |a: &[F], b: &[F]| {
@@ -131,8 +134,8 @@ impl EdgeEmbedding {
                     .copied()
                     .zip(b.iter().copied())
                     .map(|(feature_a, feature_b)| {
-                        let l1 = absolute_distance(feature_a, feature_b);
-                        (l1 * l1).coerce_into()
+                        let l1 = absolute_distance(feature_a, feature_b).coerce_into();
+                        l1 * l1
                     })
                     .collect::<Vec<f32>>()
             },
@@ -143,7 +146,14 @@ impl EdgeEmbedding {
                     .map(|(feature_a, feature_b)| feature_a.coerce_into() + feature_b.coerce_into())
                     .collect::<Vec<f32>>()
             },
-            EdgeEmbedding::Sub => |a: &[F], b: &[F]| unsafe { element_wise_subtraction(a, b) },
+            EdgeEmbedding::Sub => |a: &[F], b: &[F]| {
+                a.iter()
+                    .zip(b.iter())
+                    .map(|(&first_feature, &second_feature)| {
+                        first_feature.coerce_into() - second_feature.coerce_into()
+                    })
+                    .collect()
+            },
             EdgeEmbedding::Maximum => |a: &[F], b: &[F]| {
                 a.iter()
                     .copied()
@@ -167,13 +177,13 @@ impl EdgeEmbedding {
 
     pub fn embed<F>(&self, source_feature: &[F], destination_features: &[F]) -> Vec<f32>
     where
-        F: Coerced<f32>,
+        F: Coerced<f32> + Copy + Sub<Output = F> + PartialOrd,
     {
         self.get_method()(source_feature, destination_features)
     }
 }
 
-#[derive(Clone, Debug, Copy, PartialEq, EnumIter)]
+#[derive(Clone, Debug, Copy, PartialEq, EnumIter, Deserialize, Serialize)]
 pub enum EdgeFeature {
     Degree,
     LogDegree,
@@ -244,7 +254,7 @@ impl EdgeFeature {
     }
 
     /// Returns method to compute the edge embedding.
-    fn get_method<O1: Optimizer<f32>, O2: Optimizer<[f32]>>(
+    fn get_method<O1: Optimizer<f32>, O2: Optimizer<Vec<f32>>>(
         &self,
     ) -> fn(
         model: &EdgePredictionPerceptron<O1, O2>,
@@ -348,7 +358,7 @@ impl EdgeFeature {
         }
     }
 
-    pub fn embed<O1: Optimizer<f32>, O2: Optimizer<[f32]>, F: Coerced<f32>>(
+    pub fn embed<O1: Optimizer<f32>, O2: Optimizer<Vec<f32>>, F: Coerced<f32>>(
         &self,
         model: &EdgePredictionPerceptron<O1, O2>,
         support: &Graph,
@@ -360,12 +370,8 @@ impl EdgeFeature {
     }
 }
 
-#[derive(Clone)]
-pub struct EdgePredictionPerceptron<O1, O2>
-where
-    O1: Optimizer<f32>,
-    O2: Optimizer<[f32]>,
-{
+#[derive(Clone, Deserialize, Serialize)]
+pub struct EdgePredictionPerceptron<O1, O2> {
     /// The edge embedding methods to use.
     edge_embeddings: Vec<EdgeEmbedding>,
     /// The edge feature methods to use.
@@ -392,14 +398,16 @@ where
     cooccurrence_window_size: u64,
     /// Whether to sample using scale free distribution.
     use_scale_free_distribution: bool,
+    /// Precomputed boolean representing whether the model has only a single embedding.
+    has_single_embedding: bool,
     /// The random state to reproduce the model initialization and training.
     random_state: u64,
 }
 
 impl<O1, O2> EdgePredictionPerceptron<O1, O2>
 where
-    O1: Optimizer<f32> + From<O2>,
-    O2: Optimizer<[f32]>,
+    O1: Optimizer<f32> + Serialize + From<O2> + DeserializeOwned,
+    O2: Optimizer<Vec<f32>> + Serialize + DeserializeOwned,
 {
     /// Return new instance of Perceptron for edge prediction.
     ///
@@ -448,6 +456,7 @@ where
         }
 
         Ok(Self {
+            has_single_embedding: edge_embeddings.len() == 1 && edge_features.is_empty(),
             edge_embeddings,
             edge_features,
             bias_optimizer: optimizer.clone().into(),
@@ -493,6 +502,17 @@ where
         node_features: &[FeatureSlice],
         dimensions: &[usize],
     ) -> Result<(), String> {
+        if !self.edge_embeddings.is_empty() && node_features.is_empty() {
+            return Err(format!(
+                concat!(
+                    "This edge prediction perceptron expected node features ",
+                    "as some edge embedding procedure has been specified {:?}, ",
+                    "yet you have provided no node features."
+                ),
+                self.edge_embeddings,
+            ));
+        }
+
         if node_features.len() != dimensions.len() {
             return Err(format!(
                 concat!(
@@ -557,6 +577,57 @@ where
         dimensions: &[usize],
     ) -> Vec<f32> {
         use crate::FeatureSlice::*;
+        if self.has_single_embedding && node_features.len() == 1 {
+            let dimension = dimensions[0];
+            let edge_embedding = self.edge_embeddings[0];
+            return match node_features[0] {
+                F16(feature) => edge_embedding.get_method()(
+                    &feature[(src as usize) * dimension..((src as usize) + 1) * dimension],
+                    &feature[(dst as usize) * dimension..((dst as usize) + 1) * dimension],
+                ),
+                F32(feature) => edge_embedding.get_method()(
+                    &feature[(src as usize) * dimension..((src as usize) + 1) * dimension],
+                    &feature[(dst as usize) * dimension..((dst as usize) + 1) * dimension],
+                ),
+                F64(feature) => edge_embedding.get_method()(
+                    &feature[(src as usize) * dimension..((src as usize) + 1) * dimension],
+                    &feature[(dst as usize) * dimension..((dst as usize) + 1) * dimension],
+                ),
+                U8(feature) => edge_embedding.get_method()(
+                    &feature[(src as usize) * dimension..((src as usize) + 1) * dimension],
+                    &feature[(dst as usize) * dimension..((dst as usize) + 1) * dimension],
+                ),
+                U16(feature) => edge_embedding.get_method()(
+                    &feature[(src as usize) * dimension..((src as usize) + 1) * dimension],
+                    &feature[(dst as usize) * dimension..((dst as usize) + 1) * dimension],
+                ),
+                U32(feature) => edge_embedding.get_method()(
+                    &feature[(src as usize) * dimension..((src as usize) + 1) * dimension],
+                    &feature[(dst as usize) * dimension..((dst as usize) + 1) * dimension],
+                ),
+                U64(feature) => edge_embedding.get_method()(
+                    &feature[(src as usize) * dimension..((src as usize) + 1) * dimension],
+                    &feature[(dst as usize) * dimension..((dst as usize) + 1) * dimension],
+                ),
+                I8(feature) => edge_embedding.get_method()(
+                    &feature[(src as usize) * dimension..((src as usize) + 1) * dimension],
+                    &feature[(dst as usize) * dimension..((dst as usize) + 1) * dimension],
+                ),
+                I16(feature) => edge_embedding.get_method()(
+                    &feature[(src as usize) * dimension..((src as usize) + 1) * dimension],
+                    &feature[(dst as usize) * dimension..((dst as usize) + 1) * dimension],
+                ),
+                I32(feature) => edge_embedding.get_method()(
+                    &feature[(src as usize) * dimension..((src as usize) + 1) * dimension],
+                    &feature[(dst as usize) * dimension..((dst as usize) + 1) * dimension],
+                ),
+                I64(feature) => edge_embedding.get_method()(
+                    &feature[(src as usize) * dimension..((src as usize) + 1) * dimension],
+                    &feature[(dst as usize) * dimension..((dst as usize) + 1) * dimension],
+                ),
+            };
+        };
+
         node_features
             .iter()
             .zip(dimensions.iter().copied())
@@ -622,7 +693,7 @@ where
     /// `src`: NodeT - The source node whose features are to be extracted.
     /// `dst`: NodeT - The destination node whose features are to be extracted.
     /// `support`: &Graph - The support graph to use for the topological features.
-    /// `node_features`: &[&[f32]] - The node features to use.
+    /// `node_features`: &[&Vec<f32>] - The node features to use.
     /// `dimensions`: &[usize] - The dimension of the provided node features.
     ///
     /// # Safety
@@ -639,9 +710,7 @@ where
     ) -> (Vec<f32>, f32) {
         let edge_embedding =
             self.get_unsafe_edge_embedding(src, dst, support, node_features, dimensions);
-        let scale_factor = (edge_embedding.len() as f32).sqrt();
-        let dot = dot_product_sequential_unchecked(&edge_embedding, &self.weights) / scale_factor
-            + self.bias;
+        let dot = dot_product_sequential_unchecked(&edge_embedding, &self.weights) + self.bias;
         (edge_embedding, 1.0 / (1.0 + (-dot).exp()))
     }
 
@@ -649,7 +718,7 @@ where
     ///
     /// # Arguments
     /// * `graph`: &Graph - The graph whose edges are to be learned.
-    /// * `node_features`: &[&[f32]] - List of node features matrices.
+    /// * `node_features`: &[&Vec<f32>] - List of node features matrices.
     /// * `dimensions`: &[usize] - The dimensionality of the node features.
     /// * `support`: Option<&Graph> - Graph to use for the topological features.
     /// * `verbose`: Option<bool> - Whether to show a loading bar for the epochs. By default, True.
@@ -672,19 +741,13 @@ where
             unsafe { self.get_unsafe_edge_embedding(0, 0, support, node_features, dimensions) }
                 .len();
 
-        let scale_factor: f32 = (edge_embedding_dimension as f32).sqrt();
-
-        // Initialize the model with weights and bias in the range (-1 / sqrt(k), +1 / sqrt(k))
-        let get_random_weight = |seed: usize| {
-            (2.0 * random_f32(splitmix64(random_state + seed as u64)) - 1.0) / scale_factor
-        };
-
         self.bias_optimizer.set_capacity(1);
         self.weight_optimizer.set_capacity(edge_embedding_dimension);
+        let edge_embedding_dimension_root = (edge_embedding_dimension as f32).sqrt();
         self.weights = (0..edge_embedding_dimension)
-            .map(|i| get_random_weight(i))
+            .map(|i| get_random_weight(i as u64, edge_embedding_dimension_root))
             .collect::<Vec<f32>>();
-        self.bias = get_random_weight(self.weights.len());
+        self.bias = get_random_weight(self.weights.len() as u64, 1.0);
 
         // Depending whether verbosity was requested by the user
         // we create or not a visible progress bar to show the progress
@@ -695,7 +758,7 @@ where
                 "Perceptron ",
                 "{spinner:.green} [{elapsed_precise}] ",
                 "[{bar:40.cyan/blue}] ({pos}/{len}, ETA {eta})"
-            )));
+            )).unwrap());
             pb
         } else {
             ProgressBar::hidden()
@@ -710,12 +773,7 @@ where
             let total_variation = (0..number_of_batches_per_epoch)
                 .map(|_| {
                     random_state = splitmix64(random_state);
-                    let (
-                        mut total_weights_gradient,
-                        total_squared_weights_gradient,
-                        mut total_variation,
-                        total_squared_variation,
-                    ) = graph
+                    let (mut total_weights_gradient, mut total_variation) = graph
                         .par_iter_edge_prediction_mini_batch(
                             random_state,
                             self.number_of_edges_per_mini_batch,
@@ -744,39 +802,15 @@ where
                                 *edge_feature *= variation;
                             });
 
-                            let squared_variations = edge_embedding
-                                .iter()
-                                .map(|edge_feature| edge_feature.powf(2.0))
-                                .collect::<Vec<f32>>();
-
-                            (
-                                edge_embedding,
-                                squared_variations,
-                                variation,
-                                variation.powf(2.0),
-                            )
+                            (edge_embedding, variation)
                         })
                         .reduce(
-                            || {
-                                (
-                                    vec![0.0; edge_embedding_dimension],
-                                    vec![0.0; edge_embedding_dimension],
-                                    0.0,
-                                    0.0,
-                                )
-                            },
-                            |(
-                                mut total_weights_gradient,
-                                mut total_squared_weights_gradient,
-                                mut total_variation,
-                                mut total_squared_variation,
-                            ): (Vec<f32>, Vec<f32>, f32, f32),
+                            || (vec![0.0; edge_embedding_dimension], 0.0),
+                            |(mut total_weights_gradient, mut total_variation): (Vec<f32>, f32),
                              (
                                 partial_weights_gradient,
-                                partial_squared_weights_gradient,
                                 partial_variation,
-                                partial_squared_variation,
-                            ): (Vec<f32>, Vec<f32>, f32, f32)| {
+                            ): (Vec<f32>, f32)| {
                                 total_weights_gradient
                                     .iter_mut()
                                     .zip(partial_weights_gradient.into_iter())
@@ -785,66 +819,29 @@ where
                                             *total_weight_gradient += partial_weight_gradient;
                                         },
                                     );
-                                total_squared_weights_gradient
-                                    .iter_mut()
-                                    .zip(partial_squared_weights_gradient.into_iter())
-                                    .for_each(
-                                        |(
-                                            total_squared_weight_gradient,
-                                            partial_squared_weight_gradient,
-                                        )| {
-                                            *total_squared_weight_gradient +=
-                                                partial_squared_weight_gradient;
-                                        },
-                                    );
                                 total_variation += partial_variation;
-                                total_squared_variation += partial_squared_variation;
-                                (
-                                    total_weights_gradient,
-                                    total_squared_weights_gradient,
-                                    total_variation,
-                                    total_squared_variation,
-                                )
+                                (total_weights_gradient, total_variation)
                             },
                         );
 
-                    let bias_standard_deviation = (total_squared_variation
-                        / self.number_of_edges_per_mini_batch as f32
-                        - (total_variation / self.number_of_edges_per_mini_batch as f32).powf(2.0))
-                    .sqrt();
-
-                    let weights_standard_deviation = total_weights_gradient
-                        .iter()
-                        .zip(total_squared_weights_gradient.iter())
-                        .map(|(total_weight_gradient, total_squared_weight_gradient)| {
-                            (total_squared_weight_gradient
-                                / self.number_of_edges_per_mini_batch as f32
-                                - (total_weight_gradient
-                                    / self.number_of_edges_per_mini_batch as f32)
-                                    .powf(2.0))
-                            .sqrt()
-                        })
-                        .collect::<Vec<f32>>();
+                    total_variation /= self.number_of_edges_per_mini_batch as f32;
+                    total_weights_gradient
+                        .iter_mut()
+                        .for_each(|total_weight_gradient| {
+                            *total_weight_gradient /= self.number_of_edges_per_mini_batch as f32;
+                        });
 
                     self.bias_optimizer.get_update(&mut total_variation);
                     self.weight_optimizer
                         .get_update(&mut total_weights_gradient);
 
-                    total_variation /= (bias_standard_deviation + f32::EPSILON)
-                        / self.number_of_edges_per_mini_batch as f32;
-
                     self.bias -= total_variation;
                     self.weights
                         .iter_mut()
                         .zip(total_weights_gradient.into_iter())
-                        .zip(weights_standard_deviation.into_iter())
-                        .for_each(
-                            |((weight, total_weight_gradient), weight_standard_deviation)| {
-                                *weight -= total_weight_gradient
-                                    / (weight_standard_deviation + f32::EPSILON)
-                                    / self.number_of_edges_per_mini_batch as f32;
-                            },
-                        );
+                        .for_each(|(weight, total_weight_gradient)| {
+                            *weight -= total_weight_gradient;
+                        });
 
                     Ok(total_variation.abs())
                 })
@@ -861,7 +858,7 @@ where
     /// # Arguments
     /// * `predictions`: &mut [f32] - Area where to write the predictions.
     /// * `graph`: &Graph - The graph whose edges are to be learned.
-    /// * `node_features`: &[&[F]] - A node features matrix.
+    /// * `node_features`: &[FeatureSlice] - A node features matrix.
     /// * `dimension`: &[usize] - The dimensionality of the node features.
     /// * `support`: Option<&Graph> - Graph to use for the topological features.
     pub fn predict(
@@ -916,5 +913,27 @@ where
             });
 
         Ok(())
+    }
+
+    pub fn dump(&self, path: &str) -> Result<(), String> {
+        serde_json::to_writer(
+            std::fs::File::create(path).map_err(|e| e.to_string())?,
+            self,
+        )
+        .map_err(|e| e.to_string())?;
+        Ok(())
+    }
+
+    pub fn dumps(&self) -> Result<String, String> {
+        serde_json::to_string(self).map_err(|e| e.to_string())
+    }
+
+    pub fn load(path: &str) -> Result<Self, String> {
+        serde_json::from_reader(std::fs::File::open(path).map_err(|e| e.to_string())?)
+            .map_err(|e| e.to_string())
+    }
+
+    pub fn loads(json: &str) -> Result<Self, String> {
+        serde_json::from_str(json).map_err(|e| e.to_string())
     }
 }

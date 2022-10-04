@@ -6,7 +6,7 @@ use numpy::{PyArray1, PyArray2};
 #[derive(Clone)]
 #[pyo3(text_signature = "(verbose,)")]
 pub struct DAGResnik {
-    pub inner: cpu_models::DAGResnik,
+    pub inner: cpu_models::DAGResnik<f32>,
 }
 
 #[pymethods]
@@ -35,14 +35,14 @@ impl DAGResnik {
     /// ---------
     /// graph: Graph
     ///     The graph whose edges are to be learned.
-    /// node_counts: Dict[String, int]
+    /// node_counts: Optional[Dict[String, int]] = None
     ///      These counts should represent how many times a given node appears in a set.
-    /// node_frequencies: Optional[np.ndarray]
+    /// node_frequencies: Optional[np.ndarray] = None
     ///     Optional vector of node frequencies.
     fn fit(
         &mut self,
         graph: &Graph,
-        node_counts: HashMap<String, u32>,
+        node_counts: Option<HashMap<String, u32>>,
         node_frequencies: Option<Py<PyArray1<f32>>>,
     ) -> PyResult<()> {
         let gil = pyo3::Python::acquire_gil();
@@ -51,7 +51,7 @@ impl DAGResnik {
             .map(|node_frequencies| node_frequencies.as_ref(gil.python()));
         pe!(self.inner.fit(
             &graph.inner,
-            &node_counts,
+            node_counts.as_ref(),
             node_frequencies_ref
                 .map(|node_frequencies_ref| unsafe { node_frequencies_ref.as_slice().unwrap() }),
         ))
@@ -87,7 +87,7 @@ impl DAGResnik {
             .get_similarity_from_node_id(first_node_id, second_node_id))
     }
 
-    #[pyo3(text_signature = "($self, first_node_ids, second_node_ids)")]
+    #[pyo3(text_signature = "($self, first_node_ids, second_node_ids, minimum_similarity)")]
     /// Return the similarity between the two provided nodes.
     ///
     /// Parameters
@@ -96,18 +96,25 @@ impl DAGResnik {
     ///     The first node for which to compute the similarity.
     /// second_node_ids: List[int]
     ///     The second node for which to compute the similarity.
+    /// minimum_similarity: Optional[float] = 0.0
+    ///     Minimum similarity to be kept. Values below this amount are filtered.
     pub fn get_similarity_from_node_ids(
         &self,
         first_node_ids: Vec<NodeT>,
         second_node_ids: Vec<NodeT>,
-    ) -> PyResult<Py<PyArray1<f32>>> {
+        minimum_similarity: Option<f32>,
+    ) -> PyResult<(Py<PyArray2<NodeT>>, Py<PyArray1<f32>>)> {
         let gil = pyo3::Python::acquire_gil();
-        Ok(to_ndarray_1d!(
-            gil,
-            pe!(self
-                .inner
-                .get_similarity_from_node_ids(first_node_ids, second_node_ids))?,
-            f32
+
+        let (node_ids, similarities) = pe!(self.inner.get_similarity_from_node_ids(
+            first_node_ids,
+            second_node_ids,
+            minimum_similarity
+        ))?;
+
+        Ok((
+            to_ndarray_2d!(gil, node_ids, NodeT),
+            to_ndarray_1d!(gil, similarities, f32),
         ))
     }
 
@@ -139,19 +146,47 @@ impl DAGResnik {
     ///     The first nodes for which to compute the similarity.
     /// second_node_names: List[str]
     ///     The second nodes for which to compute the similarity.
+    /// minimum_similarity: Optional[float] = 0.0
+    ///     Minimum similarity to be kept. Values below this amount are filtered.
     pub fn get_similarity_from_node_names(
         &self,
         first_node_names: Vec<String>,
         second_node_names: Vec<String>,
-    ) -> PyResult<Py<PyArray1<f32>>> {
+        minimum_similarity: Option<f32>,
+    ) -> PyResult<(Vec<[String; 2]>, Py<PyArray1<f32>>)> {
         let gil = pyo3::Python::acquire_gil();
-        Ok(to_ndarray_1d!(
-            gil,
-            pe!(self
-                .inner
-                .get_similarity_from_node_names(first_node_names, second_node_names))?,
-            f32
-        ))
+        let (node_ids, similarities) = pe!(self.inner.get_similarity_from_node_names(
+            first_node_names,
+            second_node_names,
+            minimum_similarity
+        ))?;
+        Ok((node_ids, to_ndarray_1d!(gil, similarities, f32)))
+    }
+
+    #[pyo3(text_signature = "($self, first_node_prefixes, second_node_prefixes)")]
+    /// Return the similarity between the two provided prefixes nodes.
+    ///
+    /// Parameters
+    /// -------------------
+    /// first_node_prefixes: List[str]
+    ///     The first nodes for which to compute the similarity.
+    /// second_node_prefixes: List[str]
+    ///     The second nodes for which to compute the similarity.
+    /// minimum_similarity: Optional[float] = 0.0
+    ///     Minimum similarity to be kept. Values below this amount are filtered.
+    pub fn get_similarity_from_node_prefixes(
+        &self,
+        first_node_prefixes: Vec<&str>,
+        second_node_prefixes: Vec<&str>,
+        minimum_similarity: Option<f32>,
+    ) -> PyResult<(Vec<[String; 2]>, Py<PyArray1<f32>>)> {
+        let gil = pyo3::Python::acquire_gil();
+        let (node_ids, similarities) = pe!(self.inner.get_similarity_from_node_prefixes(
+            first_node_prefixes,
+            second_node_prefixes,
+            minimum_similarity
+        ))?;
+        Ok((node_ids, to_ndarray_1d!(gil, similarities, f32)))
     }
 
     #[pyo3(text_signature = "($self)")]
@@ -168,28 +203,29 @@ impl DAGResnik {
         Ok(similarities.to_owned())
     }
 
-    #[pyo3(text_signature = "($self, graph)")]
+    #[pyo3(text_signature = "($self, graph, minimum_similarity)")]
     /// Return numpy array with edge similarities for provided graph.
     ///
     /// Parameters
     /// ---------
     /// graph: Graph
     ///     The graph whose edges are to be predicted.
-    fn get_similarities_from_graph(&self, graph: &Graph) -> PyResult<Py<PyArray1<f32>>> {
+    /// minimum_similarity: Optional[float] = 0.0
+    ///     Minimum similarity to be kept. Values below this amount are filtered.
+    fn get_similarities_from_graph(
+        &self,
+        graph: &Graph,
+        minimum_similarity: Option<f32>,
+    ) -> PyResult<(Py<PyArray2<NodeT>>, Py<PyArray1<f32>>)> {
         let gil = pyo3::Python::acquire_gil();
-        let similarities = unsafe {
-            PyArray1::new(
-                gil.python(),
-                [graph.get_number_of_directed_edges() as usize],
-                false,
-            )
-        };
-        let similarities_ref = unsafe { similarities.as_slice_mut().unwrap() };
 
-        pe!(self
+        let (node_ids, similarities) = pe!(self
             .inner
-            .get_similarities_from_graph(similarities_ref, &graph.inner,))?;
+            .get_similarities_from_graph(&graph.inner, minimum_similarity))?;
 
-        Ok(similarities.to_owned())
+        Ok((
+            to_ndarray_2d!(gil, node_ids, NodeT),
+            to_ndarray_1d!(gil, similarities, f32),
+        ))
     }
 }

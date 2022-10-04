@@ -1,4 +1,9 @@
 use crate::*;
+use express_measures::ThreadFloat;
+use graph::{NodeT, EdgeT};
+use indicatif::ProgressIterator;
+use indicatif::{ProgressBar, ProgressStyle};
+use num_traits::Coerced;
 
 #[derive(Clone, Debug)]
 pub struct Walklets {
@@ -25,6 +30,10 @@ impl GraphEmbedder for Walklets {
         self.node2vec.is_verbose()
     }
 
+    fn get_dtype(&self) -> String {
+        self.node2vec.get_dtype()
+    }
+
     fn get_number_of_epochs(&self) -> usize {
         self.node2vec.get_number_of_epochs()
     }
@@ -43,15 +52,33 @@ impl GraphEmbedder for Walklets {
         self.node2vec.get_random_state()
     }
 
-    fn _fit_transform(
+    fn _fit_transform<F: ThreadFloat>(
         &self,
         graph: &graph::Graph,
-        embedding: &mut [&mut [f32]],
-    ) -> Result<(), String> {
+        embedding: &mut [&mut [F]],
+    ) -> Result<(), String>
+    where
+        NodeT: Coerced<F>,
+        EdgeT: Coerced<F>,
+    {
         let mut node2vec = self.node2vec.clone();
         node2vec.window_size = 1;
+        let loading_bar = if self.is_verbose() {
+            let pb = ProgressBar::new(self.get_window_size() as u64);
+            pb.set_style(ProgressStyle::default_bar().template(&format!(
+                concat!(
+                    "{}{{msg}} {{spinner:.green}} [{{elapsed_precise}}] ",
+                    "[{{bar:40.cyan/blue}}] ({{pos}}/{{len}}, ETA {{eta}})"
+                ),
+                self.get_model_name()
+            )).unwrap());
+            pb
+        } else {
+            ProgressBar::hidden()
+        };
         (0..self.get_window_size())
             .zip(embedding.chunks_mut(2))
+            .progress_with(loading_bar)
             .for_each(|(power, embedding)| {
                 node2vec.walk_transformer = WalkletsWalkTransformer::new(power + 1).unwrap();
                 node2vec.fit_transform(graph, embedding).unwrap();

@@ -1,16 +1,33 @@
 use crate::*;
-use graph::Graph;
+use express_measures::ThreadFloat;
+use graph::{EdgeT, Graph, NodeT};
 use indicatif::{ProgressBar, ProgressStyle};
+use num_traits::Coerced;
 
 pub trait GraphEmbedder {
     /// Computes in the provided memory slice the graph embedding.
     ///
     /// # Arguments
     /// `graph`: &Graph - The graph to embed
-    /// `embedding`: &[&mut [f32]] - The memory area where to write the embedding.
-    fn _fit_transform(&self, graph: &Graph, embedding: &mut [&mut [f32]]) -> Result<(), String>;
+    /// `embedding`: &[&mut FeatureSlice] - The memory area where to write the embedding.
+    fn _fit_transform<F: ThreadFloat>(
+        &self,
+        graph: &Graph,
+        embedding: &mut [&mut [F]],
+    ) -> Result<(), String>
+    where
+        NodeT: Coerced<F>,
+        EdgeT: Coerced<F>;
 
-    fn fit_transform(&self, graph: &Graph, embedding: &mut [&mut [f32]]) -> Result<(), String> {
+    fn fit_transform<F: ThreadFloat>(
+        &self,
+        graph: &Graph,
+        embedding: &mut [&mut [F]],
+    ) -> Result<(), String>
+    where
+        NodeT: Coerced<F>,
+        EdgeT: Coerced<F>,
+    {
         if !graph.has_edges() {
             return Err("The provided graph does not have any edge.".to_string());
         }
@@ -41,15 +58,12 @@ pub trait GraphEmbedder {
             }
         }
 
-        populate_vectors(
-            embedding,
-            self.get_random_state(),
-            embedding_shapes
-                .into_iter()
-                .map(|shape| (shape[-1] as f32).sqrt())
-                .collect::<Vec<f32>>()
-                .as_slice(),
-        );
+        let embedding_dimensions = embedding_shapes
+            .iter()
+            .map(|shape| shape[-1])
+            .collect::<Vec<usize>>();
+
+        populate_vectors(embedding, &embedding_dimensions, self.get_random_state());
         self._fit_transform(graph, embedding)
     }
 
@@ -66,7 +80,7 @@ pub trait GraphEmbedder {
                     "({{pos}}/{{len}}, ETA {{eta}})"
                 ),
                 model_name = self.get_model_name()
-            )));
+            )).unwrap());
             pb
         } else {
             ProgressBar::hidden()
@@ -78,6 +92,9 @@ pub trait GraphEmbedder {
 
     /// Returns the name of the model.
     fn get_model_name(&self) -> String;
+
+    /// Returns the embedding data type.
+    fn get_dtype(&self) -> String;
 
     /// Returns the number of epochs.
     fn get_number_of_epochs(&self) -> usize;

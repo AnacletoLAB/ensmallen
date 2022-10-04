@@ -7,6 +7,6 @@ edition = "2021"
 
 [dependencies]
 rayon = "1.5"
-num-traits = "0.2"
 unzip-n = "0.1"
-half = {version="2.1.0", features=["use-intrinsics", "num-traits"]}
+num-traits = {git="https://github.com/zommiommy/num-traits.git"}
+half = {git="https://github.com/LucaCappelletti94/half-rs.git", features=["use-intrinsics", "num-traits"]}

@@ -689,6 +689,22 @@ impl Graph {
             .map(move |i| self.get_random_node(splitmix64(random_state + i as u64)))
     }
 
+    /// Return parallel iterator on random (non unique) edge IDs.
+    ///
+    /// # Arguments
+    /// 'quantity': usize - Number of nodes to sample.
+    /// 'random_state': u64 - Random state to use to sample the nodes.
+    pub fn par_iter_random_uniform_edge_ids(
+        &self,
+        quantity: usize,
+        random_state: u64,
+    ) -> impl IndexedParallelIterator<Item = EdgeT> + '_ {
+        let number_of_directed_edges = self.get_number_of_directed_edges();
+        (0..quantity)
+            .into_par_iter()
+            .map(move |i| splitmix64(random_state + i as u64) % number_of_directed_edges)
+    }
+
     /// Return iterator on the (non unique) directed destination nodes of the graph.
     pub fn iter_directed_destination_node_ids(&self) -> impl Iterator<Item = NodeT> + '_ {
         self.iter_directed_edge_node_ids()

@@ -51,6 +51,7 @@ where
                 "stochastic_downsample_by_degree",
                 "normalize_learning_rate_by_degree",
                 "use_scale_free_distribution",
+                "dtype",
                 "verbose"
             ])
             .as_slice()
@@ -84,6 +85,7 @@ where
                 extract_value_rust_result!(kwargs, "stochastic_downsample_by_degree", bool),
                 extract_value_rust_result!(kwargs, "normalize_learning_rate_by_degree", bool),
                 extract_value_rust_result!(kwargs, "use_scale_free_distribution", bool),
+                extract_value_rust_result!(kwargs, "dtype", String),
                 extract_value_rust_result!(kwargs, "verbose", bool),
             ))?,
         })
@@ -160,7 +162,7 @@ impl WalkletsBinding {
 #[pyclass]
 #[derive(Debug, Clone)]
 #[pyo3(
-    text_signature = "(*, embedding_size, window_size, number_of_negative_samples, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, max_neighbours, normalize_by_degree, epochs, learning_rate, learning_rate_decay, central_nodes_embedding_path, contextual_nodes_embedding_path, stochastic_downsample_by_degree, normalize_learning_rate_by_degree, use_scale_free_distribution, clipping_value, verbose)"
+    text_signature = "(*, embedding_size, window_size, number_of_negative_samples, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, max_neighbours, normalize_by_degree, epochs, learning_rate, learning_rate_decay, central_nodes_embedding_path, contextual_nodes_embedding_path, stochastic_downsample_by_degree, normalize_learning_rate_by_degree, use_scale_free_distribution, clipping_value, dtype, verbose)"
 )]
 pub struct CBOW {
     inner: Node2VecBinding<IdentifyWalkTransformer>,
@@ -238,6 +240,8 @@ impl CBOW {
     /// clipping_value: Optional[float] = 6.0
     ///     Value at which we clip the dot product, mostly for numerical stability issues.
     ///     By default, `6.0`, where the loss is already close to zero.
+    /// dtype: str
+    ///     The data type to be employed, by default f32.
     /// verbose: bool = True
     ///     Whether to show the loading bar.
     pub fn new(py_kwargs: Option<&PyDict>) -> PyResult<CBOW> {
@@ -265,7 +269,7 @@ impl CBOW {
 #[pyclass]
 #[derive(Debug, Clone)]
 #[pyo3(
-    text_signature = "(*, embedding_size, window_size, number_of_negative_samples, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, max_neighbours, normalize_by_degree, epochs, learning_rate, learning_rate_decay, central_nodes_embedding_path, contextual_nodes_embedding_path, stochastic_downsample_by_degree, normalize_learning_rate_by_degree, use_scale_free_distribution, clipping_value, verbose)"
+    text_signature = "(*, embedding_size, window_size, number_of_negative_samples, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, max_neighbours, normalize_by_degree, epochs, learning_rate, learning_rate_decay, central_nodes_embedding_path, contextual_nodes_embedding_path, stochastic_downsample_by_degree, normalize_learning_rate_by_degree, use_scale_free_distribution, clipping_value, dtype, verbose)"
 )]
 pub struct GloVe {
     inner: Node2VecBinding<IdentifyWalkTransformer>,
@@ -343,6 +347,8 @@ impl GloVe {
     /// clipping_value: Optional[float] = 6.0
     ///     Value at which we clip the dot product, mostly for numerical stability issues.
     ///     By default, `6.0`, where the loss is already close to zero.
+    /// dtype: str
+    ///     The data type to be employed, by default f32.
     /// verbose: bool = True
     ///     Whether to show the loading bar.
     pub fn new(py_kwargs: Option<&PyDict>) -> PyResult<GloVe> {
@@ -370,7 +376,7 @@ impl GloVe {
 #[pyclass]
 #[derive(Debug, Clone)]
 #[pyo3(
-    text_signature = "(*, embedding_size, window_size, number_of_negative_samples, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, max_neighbours, normalize_by_degree, epochs, learning_rate, learning_rate_decay, central_nodes_embedding_path, contextual_nodes_embedding_path, stochastic_downsample_by_degree, normalize_learning_rate_by_degree, use_scale_free_distribution, clipping_value, verbose)"
+    text_signature = "(*, embedding_size, window_size, number_of_negative_samples, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, max_neighbours, normalize_by_degree, epochs, learning_rate, learning_rate_decay, central_nodes_embedding_path, contextual_nodes_embedding_path, stochastic_downsample_by_degree, normalize_learning_rate_by_degree, use_scale_free_distribution, clipping_value, dtype, verbose)"
 )]
 pub struct SkipGram {
     inner: Node2VecBinding<IdentifyWalkTransformer>,
@@ -448,6 +454,8 @@ impl SkipGram {
     /// clipping_value: Optional[float] = 6.0
     ///     Value at which we clip the dot product, mostly for numerical stability issues.
     ///     By default, `6.0`, where the loss is already close to zero.
+    /// dtype: str
+    ///     The data type to be employed, by default f32.
     /// verbose: bool = True
     ///     Whether to show the loading bar.
     pub fn new(py_kwargs: Option<&PyDict>) -> PyResult<SkipGram> {
@@ -475,7 +483,7 @@ impl SkipGram {
 #[pyclass]
 #[derive(Debug, Clone)]
 #[pyo3(
-    text_signature = "(*, embedding_size, window_size, number_of_negative_samples, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, max_neighbours, normalize_by_degree, epochs, learning_rate, learning_rate_decay, central_nodes_embedding_path, contextual_nodes_embedding_path, stochastic_downsample_by_degree, normalize_learning_rate_by_degree, use_scale_free_distribution, clipping_value, verbose)"
+    text_signature = "(*, embedding_size, window_size, number_of_negative_samples, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, max_neighbours, normalize_by_degree, epochs, learning_rate, learning_rate_decay, central_nodes_embedding_path, contextual_nodes_embedding_path, stochastic_downsample_by_degree, normalize_learning_rate_by_degree, use_scale_free_distribution, clipping_value, dtype, verbose)"
 )]
 pub struct WalkletsCBOW {
     inner: WalkletsBinding,
@@ -557,6 +565,8 @@ impl WalkletsCBOW {
     /// clipping_value: Optional[float] = 6.0
     ///     Value at which we clip the dot product, mostly for numerical stability issues.
     ///     By default, `6.0`, where the loss is already close to zero.
+    /// dtype: str
+    ///     The data type to be employed, by default f32.
     /// verbose: bool = True
     ///     Whether to show the loading bar.
     pub fn new(py_kwargs: Option<&PyDict>) -> PyResult<WalkletsCBOW> {
@@ -584,7 +594,7 @@ impl WalkletsCBOW {
 #[pyclass]
 #[derive(Debug, Clone)]
 #[pyo3(
-    text_signature = "(*, embedding_size, window_size, number_of_negative_samples, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, max_neighbours, normalize_by_degree, epochs, learning_rate, learning_rate_decay, central_nodes_embedding_path, contextual_nodes_embedding_path, stochastic_downsample_by_degree, normalize_learning_rate_by_degree, use_scale_free_distribution, clipping_value, verbose)"
+    text_signature = "(*, embedding_size, window_size, number_of_negative_samples, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, max_neighbours, normalize_by_degree, epochs, learning_rate, learning_rate_decay, central_nodes_embedding_path, contextual_nodes_embedding_path, stochastic_downsample_by_degree, normalize_learning_rate_by_degree, use_scale_free_distribution, clipping_value, dtype, verbose)"
 )]
 pub struct WalkletsSkipGram {
     inner: WalkletsBinding,
@@ -666,6 +676,8 @@ impl WalkletsSkipGram {
     /// clipping_value: Optional[float] = 6.0
     ///     Value at which we clip the dot product, mostly for numerical stability issues.
     ///     By default, `6.0`, where the loss is already close to zero.
+    /// dtype: str
+    ///     The data type to be employed, by default f32.
     /// verbose: bool = True
     ///     Whether to show the loading bar.
     pub fn new(py_kwargs: Option<&PyDict>) -> PyResult<WalkletsSkipGram> {
@@ -693,7 +705,7 @@ impl WalkletsSkipGram {
 #[pyclass]
 #[derive(Debug, Clone)]
 #[pyo3(
-    text_signature = "(*, embedding_size, window_size, number_of_negative_samples, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, max_neighbours, normalize_by_degree, epochs, learning_rate, learning_rate_decay, central_nodes_embedding_path, contextual_nodes_embedding_path, stochastic_downsample_by_degree, normalize_learning_rate_by_degree, use_scale_free_distribution, clipping_value, verbose)"
+    text_signature = "(*, embedding_size, window_size, number_of_negative_samples, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, max_neighbours, normalize_by_degree, epochs, learning_rate, learning_rate_decay, central_nodes_embedding_path, contextual_nodes_embedding_path, stochastic_downsample_by_degree, normalize_learning_rate_by_degree, use_scale_free_distribution, clipping_value, dtype, verbose)"
 )]
 pub struct WalkletsGloVe {
     inner: WalkletsBinding,
@@ -775,6 +787,8 @@ impl WalkletsGloVe {
     /// clipping_value: Optional[float] = 6.0
     ///     Value at which we clip the dot product, mostly for numerical stability issues.
     ///     By default, `6.0`, where the loss is already close to zero.
+    /// dtype: str
+    ///     The data type to be employed, by default f32.
     /// verbose: bool = True
     ///     Whether to show the loading bar.
     pub fn new(py_kwargs: Option<&PyDict>) -> PyResult<WalkletsGloVe> {

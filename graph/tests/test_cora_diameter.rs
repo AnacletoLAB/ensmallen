@@ -51,7 +51,7 @@ fn test_cora_diameter() -> Result<(), String> {
             None,
         )
         .unwrap();
-    test_graph_properties(&cora, None);
+    test_graph_properties(&cora, None)?;
     assert_eq!(cora.get_diameter(Some(false), None).unwrap(), f32::INFINITY);
     assert_eq!(cora.get_diameter_naive(Some(true), None).unwrap(), 6.0);
     // THIS IS NOT DETERMINISTIC

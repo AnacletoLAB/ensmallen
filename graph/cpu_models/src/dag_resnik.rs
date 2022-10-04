@@ -1,5 +1,6 @@
 use graph::{Graph, NodeT};
 use indicatif::{ParallelProgressIterator, ProgressBar, ProgressStyle};
+use num_traits::{Coerced, Float};
 use rayon::prelude::*;
 use std::{
     collections::HashMap,
@@ -21,16 +22,19 @@ impl std::fmt::Display for Visited {
 }
 
 #[derive(Clone)]
-pub struct DAGResnik {
+pub struct DAGResnik<F: Float> {
     /// The transposed DAG to be used to search preprocessors.
     transposed_dag: Option<Graph>,
     /// Frequencies of the nodes.
-    node_frequencies: Vec<f32>,
+    node_frequencies: Vec<F>,
     /// Whether to show loading bars when computing pairwise similarity.
     verbose: bool,
 }
 
-impl DAGResnik {
+impl<F: Float + Send + Sync> DAGResnik<F>
+where
+    u32: Coerced<F>,
+{
     /// Return new instance of DAG-based Resnik for similarity computation.
     ///
     /// # Arguments
@@ -64,7 +68,7 @@ impl DAGResnik {
     }
 
     /// Returns the number of nodes in the current graph.
-    pub fn get_node_frequencies(&self) -> Result<Vec<f32>, String> {
+    pub fn get_node_frequencies(&self) -> Result<Vec<F>, String> {
         self.must_be_trained()
             .map(|_| self.node_frequencies.clone())
     }
@@ -72,14 +76,16 @@ impl DAGResnik {
     fn validate_features(
         &self,
         graph: &Graph,
-        node_counts: &HashMap<String, u32>,
-        node_frequencies: Option<&[f32]>,
+        node_counts: Option<&HashMap<String, u32>>,
+        node_frequencies: Option<&[F]>,
     ) -> Result<(), String> {
         graph.must_be_directed_acyclic()?;
-        node_counts
-            .par_iter()
-            .map(|(node_name, _)| graph.get_node_id_from_node_name(node_name).map(|_| ()))
-            .collect::<Result<(), String>>()?;
+        if let Some(node_counts) = node_counts.as_ref() {
+            node_counts
+                .par_iter()
+                .map(|(node_name, _)| graph.get_node_id_from_node_name(node_name).map(|_| ()))
+                .collect::<Result<(), String>>()?;
+        }
         if let Some(node_frequencies) = node_frequencies.as_ref() {
             if node_frequencies.len() == 0 {
                 return Err(concat!(
@@ -108,13 +114,13 @@ impl DAGResnik {
     ///
     /// # Arguments
     /// * `graph`: &Graph - The graph whose edges are to be learned.
-    /// * `node_counts`: HashMap<String, u32> - Hashmap of node counts. These counts should represent how many times a given node appears in a set.
-    /// * `node_frequencies`: Option<&[f32]> - Optional vector of node frequencies to be used WITHOUT crawling upwards the DAG.
+    /// * `node_counts`: Option<HashMap<String, u32>> - Hashmap of node counts. These counts should represent how many times a given node appears in a set.
+    /// * `node_frequencies`: Option<&[F]> - Optional vector of node frequencies to be used WITHOUT crawling upwards the DAG.
     pub fn fit(
         &mut self,
         graph: &Graph,
-        node_counts: &HashMap<String, u32>,
-        node_frequencies: Option<&[f32]>,
+        node_counts: Option<&HashMap<String, u32>>,
+        node_frequencies: Option<&[F]>,
     ) -> Result<(), String> {
         self.validate_features(graph, node_counts, node_frequencies)?;
         let mut transposed_graph = graph.to_transposed();
@@ -128,10 +134,14 @@ impl DAGResnik {
         if let Some(node_frequencies) = node_frequencies {
             self.node_frequencies = node_frequencies.into();
         } else {
-            let mut node_counts = graph
-                .par_iter_node_names()
-                .map(|node_name| *node_counts.get(&node_name).unwrap_or(&0))
-                .collect::<Vec<u32>>();
+            let mut node_counts = if let Some(node_counts) = node_counts {
+                graph
+                    .par_iter_node_names()
+                    .map(|node_name| *node_counts.get(&node_name).unwrap_or(&0))
+                    .collect::<Vec<u32>>()
+            } else {
+                vec![1; graph.get_number_of_nodes() as usize]
+            };
             let visited_by_all_child = unsafe {
                 std::mem::transmute::<Vec<bool>, Vec<AtomicBool>>(vec![
                     false;
@@ -177,14 +187,15 @@ impl DAGResnik {
                     })
                     .collect::<Vec<NodeT>>();
             }
-            let root_node_count = *node_counts
+            let root_node_count: F = node_counts
                 .par_iter()
                 .max_by(|a, b| a.partial_cmp(b).unwrap())
-                .unwrap() as f32;
+                .unwrap()
+                .coerce_into();
             self.node_frequencies = node_counts
                 .into_par_iter()
-                .map(|node_count| -(node_count as f32 / root_node_count).ln())
-                .collect::<Vec<f32>>();
+                .map(|node_count| -(node_count.coerce_into() / root_node_count).ln())
+                .collect::<Vec<F>>();
         }
         self.transposed_dag = Some(transposed_graph);
         Ok(())
@@ -199,7 +210,7 @@ impl DAGResnik {
         &self,
         first_node_id: NodeT,
         second_node_id: NodeT,
-    ) -> Result<f32, String> {
+    ) -> Result<F, String> {
         self.must_be_trained()?;
         if let Some(transposed_dag) = self.transposed_dag.as_ref() {
             if first_node_id == second_node_id {
@@ -233,12 +244,8 @@ impl DAGResnik {
                                 visited[parent_node_id as usize] = *label;
                                 new_frontier.push(parent_node_id);
                             }
-                            (x, y) => unreachable!(
-                                concat!(
-                                    "The case with the leaf node in state {} and ",
-                                    "the parent node in state {} should not be possible."
-                                ),
-                                x, y
+                            (Visited::Unvisited, _) => unreachable!(
+                                "The case with an unvisited leaf node should not be possible."
                             ),
                         }
                     }
@@ -246,16 +253,58 @@ impl DAGResnik {
                 frontier = new_frontier;
             }
         }
+
+        let root_node_names = self
+            .transposed_dag
+            .as_ref()
+            .map_or_else(|| Vec::new(), |graph| graph.get_root_node_names());
         Err(format!(
             concat!(
                 "The provided two nodes {} and {} do not have a shared ",
                 "parent node. Perhaps, the provided DAG has multiple root nodes ",
                 "and these two nodes are in different root portions of the DAG. ",
                 "Another analogous explanation is that the two nodes may be in ",
-                "different connected components."
+                "different connected components. ",
+                "Do be advised that this DAG has {} root nodes, with the first ones ",
+                "being {:?}."
             ),
-            first_node_id, second_node_id
+            first_node_id,
+            second_node_id,
+            root_node_names.len(),
+            &root_node_names[0..5]
         ))
+    }
+
+    /// Return Resnik similarities.
+    ///
+    /// # Arguments
+    /// * `iterator`: Parallel iterator of node IDs to compute the similarities for.
+    /// * `minimum_similarity`: Option<F> - Minimum similarity to be kept. Values below this amount are filtered.
+    ///
+    /// # Implementation details
+    /// If the DAG has multiple roots, values that do not have
+    /// the same head root are filtered out.
+    fn iter_similarities_from_node_ids_iterator<'a, I>(
+        &'a self,
+        iterator: I,
+        minimum_similarity: Option<F>,
+    ) -> Result<impl ParallelIterator<Item = (Vec<NodeT>, F)> + 'a, String>
+    where
+        I: ParallelIterator<Item = (NodeT, NodeT)> + 'a,
+    {
+        self.must_be_trained()?;
+        let minimum_similarity = minimum_similarity.unwrap_or(F::zero());
+        Ok(iterator.filter_map(move |(src, dst)| {
+            if let Ok(similarity) = self.get_similarity_from_node_id(src, dst) {
+                if similarity > minimum_similarity {
+                    Some((vec![src, dst], similarity))
+                } else {
+                    None
+                }
+            } else {
+                None
+            }
+        }))
     }
 
     /// Return the similarity between the two provided node ids.
@@ -263,16 +312,19 @@ impl DAGResnik {
     /// # Arguments
     /// * `first_node_ids`: Vec<NodeT> - The first node ids for which to compute the similarity.
     /// * `second_node_ids`: Vec<NodeT> - The second node ids for which to compute the similarity.
+    /// * `minimum_similarity`: Option<F> - Minimum similarity to be kept. Values below this amount are filtered.
     pub fn get_similarity_from_node_ids(
         &self,
         first_node_ids: Vec<NodeT>,
         second_node_ids: Vec<NodeT>,
-    ) -> Result<Vec<f32>, String> {
-        first_node_ids
-            .into_par_iter()
-            .zip(second_node_ids.into_par_iter())
-            .map(|(first, second)| self.get_similarity_from_node_id(first, second))
-            .collect()
+        minimum_similarity: Option<F>,
+    ) -> Result<(Vec<Vec<NodeT>>, Vec<F>), String> {
+        Ok(self
+            .iter_similarities_from_node_ids_iterator(
+                (first_node_ids, second_node_ids).into_par_iter(),
+                minimum_similarity,
+            )?
+            .unzip())
     }
 
     /// Return the similarity between the two provided node names.
@@ -284,7 +336,8 @@ impl DAGResnik {
         &self,
         first_node_name: &str,
         second_node_name: &str,
-    ) -> Result<f32, String> {
+    ) -> Result<F, String> {
+        self.must_be_trained()?;
         if let Some(transposed_dag) = self.transposed_dag.as_ref() {
             return self.get_similarity_from_node_id(
                 transposed_dag.get_node_id_from_node_name(first_node_name)?,
@@ -294,28 +347,98 @@ impl DAGResnik {
         unreachable!("")
     }
 
+    /// Return Resnik similarities.
+    ///
+    /// # Arguments
+    /// * `iterator`: Parallel iterator of node names to compute the similarities for.
+    /// * `minimum_similarity`: Option<F> - Minimum similarity to be kept. Values below this amount are filtered.
+    ///
+    /// # Implementation details
+    /// If the DAG has multiple roots, values that do not have
+    /// the same head root are filtered out.
+    fn iter_similarities_from_node_names_iterator<'a, I>(
+        &'a self,
+        iterator: I,
+        minimum_similarity: Option<F>,
+    ) -> Result<impl ParallelIterator<Item = ([String; 2], F)> + 'a, String>
+    where
+        I: ParallelIterator<Item = (String, String)> + 'a,
+    {
+        self.must_be_trained()?;
+        let minimum_similarity = minimum_similarity.unwrap_or(F::zero());
+        Ok(iterator.filter_map(move |(src, dst)| {
+            if let Ok(similarity) = self.get_similarity_from_node_name(&src, &dst) {
+                if similarity > minimum_similarity {
+                    Some(([src, dst], similarity))
+                } else {
+                    None
+                }
+            } else {
+                None
+            }
+        }))
+    }
+
     /// Return the similarity between the two provided node names.
     ///
     /// # Arguments
     /// * `first_node_names`: Vec<String> - The first node names for which to compute the similarity.
     /// * `second_node_names`: Vec<String> - The second node names for which to compute the similarity.
+    /// * `minimum_similarity`: Option<F> - Minimum similarity to be kept. Values below this amount are filtered.
     pub fn get_similarity_from_node_names(
         &self,
         first_node_names: Vec<String>,
         second_node_names: Vec<String>,
-    ) -> Result<Vec<f32>, String> {
-        first_node_names
-            .into_par_iter()
-            .zip(second_node_names.into_par_iter())
-            .map(|(first, second)| self.get_similarity_from_node_name(&first, &second))
-            .collect()
+        minimum_similarity: Option<F>,
+    ) -> Result<(Vec<[String; 2]>, Vec<F>), String> {
+        Ok(self
+            .iter_similarities_from_node_names_iterator(
+                (first_node_names, second_node_names).into_par_iter(),
+                minimum_similarity,
+            )?
+            .unzip())
+    }
+
+    /// Return the similarity between the two provided node name prefixes.
+    ///
+    /// # Arguments
+    /// * `first_node_prefixes`: Vec<&str> - The first node prefixes for which to compute the similarity.
+    /// * `second_node_prefixes`: Vec<&str> - The second node prefixes for which to compute the similarity.
+    /// * `minimum_similarity`: Option<F> - Minimum similarity to be kept. Values below this amount are filtered.
+    pub fn get_similarity_from_node_prefixes(
+        &self,
+        first_node_prefixes: Vec<&str>,
+        second_node_prefixes: Vec<&str>,
+        minimum_similarity: Option<F>,
+    ) -> Result<(Vec<[String; 2]>, Vec<F>), String> {
+        self.must_be_trained()?;
+        let sources = self
+            .transposed_dag
+            .as_ref()
+            .map(|graph| graph.par_iter_node_names_from_node_curie_prefixes(&first_node_prefixes))
+            .unwrap();
+        Ok(self
+            .iter_similarities_from_node_names_iterator(
+                sources.flat_map(|src| {
+                    self.transposed_dag
+                        .as_ref()
+                        .map(|graph| {
+                            graph.par_iter_node_names_from_node_curie_prefixes(&second_node_prefixes)
+                        })
+                        .unwrap()
+                        .map(move |dst| (src.clone(), dst))
+                }),
+                minimum_similarity,
+            )?
+            .unzip())
     }
 
     /// Writes the pairwise similarities on the provided memory area.
     ///
     /// # Arguments
-    /// * `similarities`: &mut [f32] - Area where to write the pairwise similarities.
-    pub fn get_pairwise_similarities(&self, similarities: &mut [f32]) -> Result<(), String> {
+    /// * `similarities`: &mut [F] - Area where to write the pairwise similarities.
+    pub fn get_pairwise_similarities(&self, similarities: &mut [F]) -> Result<(), String> {
+        self.must_be_trained()?;
         let nodes_number = self.get_number_of_nodes()? as usize;
         if similarities.len() != nodes_number * nodes_number {
             return Err(format!(
@@ -335,7 +458,7 @@ impl DAGResnik {
                 "Computing pairwise Resnik ",
                 "{spinner:.green} [{elapsed_precise}] ",
                 "[{bar:40.cyan/blue}] ({pos}/{len}, ETA {eta})"
-            )));
+            )).unwrap());
             pb
         } else {
             ProgressBar::hidden()
@@ -345,55 +468,38 @@ impl DAGResnik {
             .par_chunks_mut(nodes_number)
             .progress_with(progress_bar)
             .enumerate()
-            .map(|(src, row)| {
-                row.iter_mut()
-                    .enumerate()
-                    .map(|(dst, similarity)| {
-                        self.get_similarity_from_node_id(src as NodeT, dst as NodeT)
-                            .map(|nodes_similarity| {
-                                *similarity = nodes_similarity;
-                                ()
-                            })
-                    })
-                    .collect::<Result<(), String>>()
-            })
-            .collect::<Result<(), String>>()
+            .for_each(|(src, row)| {
+                row.iter_mut().enumerate().for_each(|(dst, similarity)| {
+                    *similarity = self
+                        .get_similarity_from_node_id(src as NodeT, dst as NodeT)
+                        .unwrap_or(F::infinity())
+                });
+            });
+        Ok(())
     }
 
     /// Writes the similarities on the provided memory area.
     ///
     /// # Arguments
-    /// * `similarities`: &mut [f32] - Area where to write the similarities.
     /// * `graph`: &Graph - The graph whose edges are to be computed.
+    /// * `minimum_similarity`: Option<F> - Minimum similarity to be kept. Values below this amount are filtered.
+    ///
+    /// # Implementation details
+    /// If the DAG has multiple roots, values that do not have
+    /// the same head root are filtered out.
     pub fn get_similarities_from_graph(
         &self,
-        similarities: &mut [f32],
         graph: &Graph,
-    ) -> Result<(), String> {
+        minimum_similarity: Option<F>,
+    ) -> Result<(Vec<Vec<NodeT>>, Vec<F>), String> {
         self.must_be_trained()?;
-
-        if similarities.len() != graph.get_number_of_directed_edges() as usize {
-            return Err(format!(
-                concat!(
-                    "The provided similarities slice has size `{}` ",
-                    "but it was expected to have the same ",
-                    "size of the number of the directed edges in the graph `{}`."
-                ),
-                similarities.len(),
-                graph.get_number_of_directed_edges()
-            ));
-        }
-
-        similarities
-            .par_iter_mut()
-            .zip(graph.par_iter_directed_edge_node_ids())
-            .map(|(similarity, (_, src, dst))| {
-                self.get_similarity_from_node_id(src, dst)
-                    .map(|nodes_similarity| {
-                        *similarity = nodes_similarity;
-                        ()
-                    })
-            })
-            .collect::<Result<(), String>>()
+        Ok(self
+            .iter_similarities_from_node_ids_iterator(
+                graph
+                    .par_iter_directed_edge_node_ids()
+                    .map(|(_, src, dst)| (src, dst)),
+                minimum_similarity,
+            )?
+            .unzip())
     }
 }

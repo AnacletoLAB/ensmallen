@@ -1,5 +1,6 @@
 use super::*;
 use cpu_models::{Adam, FeatureSlice};
+use half::f16;
 use numpy::PyArray2;
 use std::convert::TryInto;
 
@@ -282,20 +283,51 @@ impl EdgePredictionPerceptron {
 
         Ok(predictions.to_owned())
     }
-}
 
-enum NumpyArray<'a> {
-    //F16(&PyArray2<f16>),
-    F32(&'a PyArray2<f32>),
-    F64(&'a PyArray2<f64>),
-    U8(&'a PyArray2<u8>),
-    U16(&'a PyArray2<u16>),
-    U32(&'a PyArray2<u32>),
-    U64(&'a PyArray2<u64>),
-    I8(&'a PyArray2<i8>),
-    I16(&'a PyArray2<i16>),
-    I32(&'a PyArray2<i32>),
-    I64(&'a PyArray2<i64>),
+    #[staticmethod]
+    #[pyo3(text_signature = "(path,)")]
+    /// Loads model from the provided path.
+    ///
+    /// Parameters
+    /// ----------------
+    /// path: str
+    ///     Path from where to load the model.
+    fn load(path: String) -> PyResult<Self> {
+        Ok(EdgePredictionPerceptron {
+            inner: pe!(InnerModel::load(path.as_ref()))?,
+        })
+    }
+
+    #[staticmethod]
+    #[pyo3(text_signature = "(json,)")]
+    /// Loads model from provided JSON string.
+    ///
+    /// Parameters
+    /// ----------------
+    /// json: str
+    ///     JSON string containing model metadata.
+    fn loads(json: String) -> PyResult<Self> {
+        Ok(EdgePredictionPerceptron {
+            inner: pe!(InnerModel::loads(json.as_str()))?,
+        })
+    }
+
+    #[pyo3(text_signature = "(&self, path)")]
+    /// Dump model to the provided path.
+    ///
+    /// Parameters
+    /// ----------------
+    /// path: str
+    ///     Path where to dump the model.
+    fn dump(&self, path: String) -> PyResult<()> {
+        pe!(self.inner.dump(path.as_ref()))
+    }
+
+    #[pyo3(text_signature = "(&self)")]
+    /// Dumps model to JSON string.
+    fn dumps(&self) -> PyResult<String> {
+        pe!(self.inner.dumps())
+    }
 }
 
 impl_edge_prediction_embedding! {
@@ -307,6 +339,7 @@ impl_edge_prediction_embedding! {
     i16 : I16,
     i32 : I32,
     i64 : I64,
+    f16 : F16,
     f32 : F32,
     f64 : F64
 }

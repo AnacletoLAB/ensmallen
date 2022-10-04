@@ -326,7 +326,8 @@ impl Graph {
         window_size: usize,
         node_ids_of_interest: Option<&'a Vec<NodeT>>,
     ) -> Result<impl ParallelIterator<Item = (NodeT, NodeT, f32)> + 'a> {
-        let nodes_number_squared = (self.get_number_of_nodes() * self.get_number_of_nodes()) as f32;
+        let nodes_number_squared =
+            self.get_number_of_nodes() as f32 * self.get_number_of_nodes() as f32;
         Ok(self
             .par_iter_cooccurence_matrix(walks_parameters, window_size, node_ids_of_interest)?
             .map(move |(src, dst, frequency)| {
@@ -335,9 +336,8 @@ impl Graph {
                     dst,
                     frequency * nodes_number_squared
                         / unsafe {
-                            (self.get_unchecked_node_degree_from_node_id(src)
-                                * self.get_unchecked_node_degree_from_node_id(dst))
-                                as f32
+                            self.get_unchecked_node_degree_from_node_id(src) as f32
+                                * self.get_unchecked_node_degree_from_node_id(dst) as f32
                         },
                 )
             }))

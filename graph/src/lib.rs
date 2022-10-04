@@ -13,6 +13,7 @@
 #![feature(map_first_last)]
 #![feature(exit_status_error)]
 #![feature(core_intrinsics)]
+#![feature(pattern)]
 #![type_length_limit = "3764086"]
 #![feature(exclusive_range_pattern)]
 use std::sync::Arc;

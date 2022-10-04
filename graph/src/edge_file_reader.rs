@@ -362,6 +362,26 @@ impl EdgeFileReader {
         self
     }
 
+    /// Set whether remove chevrons while reading elements.
+    ///
+    /// # Arguments
+    /// * remove_chevrons: Option<bool> - Whether to remove chevrons while reading elements.
+    ///
+    pub fn set_remove_chevrons(mut self, remove_chevrons: Option<bool>) -> EdgeFileReader {
+        self.reader = self.reader.set_remove_chevrons(remove_chevrons);
+        self
+    }
+
+    /// Set whether remove spaces while reading elements.
+    ///
+    /// # Arguments
+    /// * remove_spaces: Option<bool> - Whether to remove spaces while reading elements.
+    ///
+    pub fn set_remove_spaces(mut self, remove_spaces: Option<bool>) -> EdgeFileReader {
+        self.reader = self.reader.set_remove_spaces(remove_spaces);
+        self
+    }
+
     /// Set whether the current edge list is sorted.
     ///
     /// # Arguments

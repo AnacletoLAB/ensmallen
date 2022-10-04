@@ -1,10 +1,4 @@
-use crate::wine::BasicWINE;
-use crate::wine::WINEBased;
-use crate::AnchorTypes;
-use crate::AnchorFeatureTypes;
-use crate::AnchorsInferredNodeEmbeddingModel;
-use crate::AnchorsInferredNodeEmbeddingProperties;
-use crate::NodeTypesAnchorsGenerator;
+use crate::*;
 
 #[derive(Clone, Debug)]
 pub struct NodeLabelWINE {
@@ -23,19 +17,20 @@ impl WINEBased for NodeLabelWINE {
     }
 }
 
-impl NodeTypesAnchorsGenerator for NodeLabelWINE {}
-impl AnchorsInferredNodeEmbeddingProperties for NodeLabelWINE {
+impl EmbeddingSize for NodeLabelWINE {
+    fn get_embedding_size(&self, graph: &graph::Graph) -> Result<usize, String> {
+        graph.get_number_of_node_types().map(|x| x as usize)
+    }
+}
+
+impl NodeTypesLandmarkGenerator for NodeLabelWINE {}
+
+impl ALPINE<{ LandmarkType::NodeTypes }, {LandmarkFeatureType::Windows}> for NodeLabelWINE {
     fn get_model_name(&self) -> String {
         "Node-types-based WINE".to_string()
     }
 
-    fn get_embedding_size(&self, graph: &graph::Graph) -> Result<usize, String> {
-        Ok(graph.get_number_of_node_types()? as usize)
-    }
-
-    fn get_basic_inferred_node_embedding(&self) -> &crate::BasicAnchorsInferredNodeEmbedding {
+    fn get_basic_inferred_node_embedding(&self) -> &crate::BasicALPINE {
         self.get_basic_wine().get_basic_inferred_node_embedding()
     }
 }
-
-impl AnchorsInferredNodeEmbeddingModel<{ AnchorTypes::NodeTypes }, {AnchorFeatureTypes::Walks}> for NodeLabelWINE {}

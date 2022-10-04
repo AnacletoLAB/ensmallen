@@ -1,6 +1,6 @@
+use super::*;
 use core::fmt::Debug;
 use libc::*;
-use super::*;
 
 /// A read-only memory mapped file,
 /// this should be equivalent to read-only slice that
@@ -34,7 +34,7 @@ impl std::ops::Drop for MemoryMapped {
 }
 
 impl MemoryMapReadOnlyCore for MemoryMapped {
-    fn new<S: AsRef<str> + Debug>(path: S) -> Result<Self, String> {
+    fn new<S: AsRef<str> + Debug>(path: S, offset: Option<usize>) -> Result<Self, String> {
         let path = path.as_ref();
         // here we add a + 8 to map in an extra zero-filled word so that we can
         // do unaligned reads for bits
@@ -66,7 +66,7 @@ impl MemoryMapReadOnlyCore for MemoryMapped {
                 fd,
                 // the offset in bytes from the start of the file, we want to mmap
                 // the whole file
-                0,
+                offset.unwrap_or(0) as i64,
             )
         };
 
@@ -81,7 +81,12 @@ impl MemoryMapReadOnlyCore for MemoryMapped {
             ));
         }
 
-        Ok(MemoryMapped { fd:Some(fd), addr, len, path: Some(path.to_string()) })
+        Ok(MemoryMapped {
+            fd: Some(fd),
+            addr,
+            len,
+            path: Some(path.to_string()),
+        })
     }
 
     fn get_addr(&self) -> *mut u8 {
@@ -99,8 +104,11 @@ impl MemoryMapReadOnlyCore for MemoryMapped {
 
 impl MemoryMapCore for MemoryMapped {
     /// Memory map the file with mutability permissions
-    fn new_mut<S: AsRef<str> + Debug>(path: Option<S>, len: Option<usize>) 
-        -> Result<Self, String> {
+    fn new_mut<S: AsRef<str> + Debug>(
+        path: Option<S>,
+        len: Option<usize>,
+        offset: Option<usize>,
+    ) -> Result<Self, String> {
         let (addr, fd, len) = match (path.as_ref(), len) {
             // New file / expand file
             (Some(path), maybe_len) => {
@@ -164,7 +172,7 @@ impl MemoryMapCore for MemoryMapped {
                         fd,
                         // the offset in bytes from the start of the file, we want to mmap
                         // the whole file
-                        0,
+                        offset.unwrap_or(0) as i64,
                     )
                 };
                 (addr, Some(fd), len)
@@ -186,7 +194,7 @@ impl MemoryMapCore for MemoryMapped {
                         0,
                         // the offset in bytes from the start of the file, we want to mmap
                         // the whole file
-                        0,
+                        offset.unwrap_or(0) as i64,
                     )
                 };
                 (addr, None, len)

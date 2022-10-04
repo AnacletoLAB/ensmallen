@@ -35,7 +35,7 @@ impl Graph {
     ///
     /// # Safety
     /// * If the graph does not have edge types, the method will always return None.
-    pub unsafe fn get_unchecked_random_zifian_edge_type(
+    pub unsafe fn get_unchecked_random_scale_free_edge_type(
         &self,
         random_state: u64,
     ) -> Option<EdgeTypeT> {
@@ -49,9 +49,9 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph does not have edge types.
-    pub fn get_random_zifian_edge_type(&self, random_state: u64) -> Result<Option<EdgeTypeT>> {
+    pub fn get_random_scale_free_edge_type(&self, random_state: u64) -> Result<Option<EdgeTypeT>> {
         self.must_have_edge_types()
-            .map(|_| unsafe { self.get_unchecked_random_zifian_edge_type(random_state) })
+            .map(|_| unsafe { self.get_unchecked_random_scale_free_edge_type(random_state) })
     }
 
     /// Return random node ID.

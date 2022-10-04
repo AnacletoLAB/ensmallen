@@ -1,15 +1,18 @@
 use core::fmt::Debug;
 
 pub trait MemoryMapCore: Sized {
-    fn new_mut<S: AsRef<str> + Debug>(path: Option<S>, len: Option<usize>) 
-        -> Result<Self, String>;
+    fn new_mut<S: AsRef<str> + Debug>(
+        path: Option<S>,
+        len: Option<usize>,
+        offset: Option<usize>,
+    ) -> Result<Self, String>;
 
     fn sync_flush(&self) -> Result<(), String>;
     fn async_flush(&self) -> Result<(), String>;
 }
 
 pub trait MemoryMapReadOnlyCore: Sized {
-    fn new<S: AsRef<str> + Debug>(path: S) -> Result<Self, String>;
+    fn new<S: AsRef<str> + Debug>(path: S, offset: Option<usize>) -> Result<Self, String>;
 
     fn get_addr(&self) -> *mut u8;
     fn len(&self) -> usize;
@@ -19,14 +22,15 @@ pub trait MemoryMapReadOnlyCore: Sized {
 pub trait MemoryMappedReadOnlyImpl: MemoryMapReadOnlyCore {
     /// Returns a new slice of `len` object of type `T` starting from `offset`
     /// bytes from the start of the memory.
-    fn get<T>(&self, offset: usize) -> Result<&T, String>{
+    fn get<T>(&self, offset: usize) -> Result<&T, String> {
         if offset + std::mem::size_of::<T>() > self.len() {
             return Err(format!(
                 concat!(
                     "Could not create a slice on the MMapped memory because the ",
                     "offset of `{}` bytes is bigger than the len of the mmap `{}`."
                 ),
-                offset, self.len(),
+                offset,
+                self.len(),
             ));
         }
 
@@ -35,7 +39,7 @@ pub trait MemoryMappedReadOnlyImpl: MemoryMapReadOnlyCore {
 
     /// Returns a new slice of `len` object of type `T` starting from `offset`
     /// bytes from the start of the memory.
-    unsafe fn get_unchecked<T>(&self, offset: usize) -> &T{
+    unsafe fn get_unchecked<T>(&self, offset: usize) -> &T {
         // get a ptr to the start of the requested slice taking in
         // consideration offset
         let ptr = (self.get_addr() as *const u8).add(offset);
@@ -46,8 +50,7 @@ pub trait MemoryMappedReadOnlyImpl: MemoryMapReadOnlyCore {
 
     /// Returns a new slice of `len` object of type `T` starting from `offset`
     /// bytes from the start of the memory.
-    fn get_slice<T>(&self, offset: usize, elements_len: Option<usize>) 
-        -> Result<&[T], String>{
+    fn get_slice<T>(&self, offset: usize, elements_len: Option<usize>) -> Result<&[T], String> {
         let elements_len =
             elements_len.unwrap_or(self.len().saturating_sub(offset) / std::mem::size_of::<T>());
         // Convert from number of elements to number of bytes
@@ -59,7 +62,8 @@ pub trait MemoryMappedReadOnlyImpl: MemoryMapReadOnlyCore {
                     "Could not create a slice on the MMapped memory because the ",
                     "offset of `{}` bytes is bigger than the len of the mmap `{}`."
                 ),
-                offset, self.len(),
+                offset,
+                self.len(),
             ));
         }
 
@@ -86,11 +90,7 @@ pub trait MemoryMappedReadOnlyImpl: MemoryMapReadOnlyCore {
 
     /// Returns a new slice of `len` object of type `T` starting from `offset`
     /// bytes from the start of the memory.
-    unsafe fn get_slice_unchecked<T>(
-        &self,
-        offset: usize,
-        elements_len: Option<usize>,
-    ) -> &[T]{
+    unsafe fn get_slice_unchecked<T>(&self, offset: usize, elements_len: Option<usize>) -> &[T] {
         let elements_len =
             elements_len.unwrap_or(self.len().saturating_sub(offset) / std::mem::size_of::<T>());
         // get a ptr to the start of the requested slice taking in
@@ -125,7 +125,8 @@ pub trait MemoryMappedImpl: MemoryMappedReadOnlyImpl + MemoryMapCore {
                     "Could not create a slice on the MMapped memory because the ",
                     "offset of `{}` bytes is bigger than the len of the mmap `{}`."
                 ),
-                offset, self.len(),
+                offset,
+                self.len(),
             ));
         }
 
@@ -161,7 +162,8 @@ pub trait MemoryMappedImpl: MemoryMappedReadOnlyImpl + MemoryMapCore {
                     "Could not create a slice on the MMapped memory because the ",
                     "offset of `{}` bytes is bigger than the len of the mmap `{}`."
                 ),
-                offset, self.len(),
+                offset,
+                self.len(),
             ));
         }
 

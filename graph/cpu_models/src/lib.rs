@@ -1,8 +1,11 @@
 #![feature(adt_const_params)]
+#![feature(atomic_from_mut)]
 #![feature(associated_type_defaults)]
 #![feature(associated_type_bounds)]
 #![feature(type_alias_impl_trait)]
 #![feature(generic_associated_types)]
+#![allow(incomplete_features)]
+
 
 mod basic_embedding_model;
 mod basic_siamese_model;
@@ -26,18 +29,17 @@ mod node_type_wine;
 mod score_wine;
 mod structured_embedding;
 mod transe;
-mod transh;
 mod unstructured;
 mod utils;
 mod walk_transformer;
 mod walklets;
 mod weighted_spine;
-mod basic_anchors_inferred_node_embedding;
+mod alpine;
 
 pub use basic_embedding_model::*;
 pub use basic_siamese_model::*;
 pub use utils::*;
-pub use basic_anchors_inferred_node_embedding::*;
+pub use alpine::*;
 
 pub use cbow::*;
 pub use dag_resnik::*;
@@ -59,7 +61,6 @@ pub use node_type_wine::*;
 pub use score_wine::*;
 pub use structured_embedding::*;
 pub use transe::*;
-pub use transh::*;
 pub use unstructured::*;
 pub use walk_transformer::*;
 pub use walklets::*;

@@ -1,10 +1,4 @@
-use crate::spine::BasicSPINE;
-use crate::spine::SPINEBased;
-use crate::AnchorTypes;
-use crate::AnchorFeatureTypes;
-use crate::AnchorsInferredNodeEmbeddingModel;
-use crate::AnchorsInferredNodeEmbeddingProperties;
-use crate::NodeTypesAnchorsGenerator;
+use crate::*;
 
 #[derive(Clone, Debug)]
 pub struct NodeLabelSPINE {
@@ -23,19 +17,22 @@ impl SPINEBased for NodeLabelSPINE {
     }
 }
 
-impl NodeTypesAnchorsGenerator for NodeLabelSPINE {}
-impl AnchorsInferredNodeEmbeddingProperties for NodeLabelSPINE {
+impl EmbeddingSize for NodeLabelSPINE {
+    fn get_embedding_size(&self, graph: &graph::Graph) -> Result<usize, String> {
+        graph.get_number_of_node_types().map(|x| x as usize)
+    }
+}
+
+impl NodeTypesLandmarkGenerator for NodeLabelSPINE {}
+
+impl ALPINE<{ LandmarkType::NodeTypes }, { LandmarkFeatureType::ShortestPaths }>
+    for NodeLabelSPINE
+{
     fn get_model_name(&self) -> String {
         "Node-types-based SPINE".to_string()
     }
 
-    fn get_embedding_size(&self, graph: &graph::Graph) -> Result<usize, String> {
-        Ok(graph.get_number_of_node_types()? as usize)
-    }
-
-    fn get_basic_inferred_node_embedding(&self) -> &crate::BasicAnchorsInferredNodeEmbedding {
+    fn get_basic_inferred_node_embedding(&self) -> &crate::BasicALPINE {
         self.get_basic_spine().get_basic_inferred_node_embedding()
     }
 }
-
-impl AnchorsInferredNodeEmbeddingModel<{ AnchorTypes::NodeTypes }, {AnchorFeatureTypes::ShortestPaths}> for NodeLabelSPINE {}

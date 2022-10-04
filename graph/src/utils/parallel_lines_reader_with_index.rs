@@ -19,7 +19,7 @@ pub struct ParallelLinesWithIndex {
 impl ParallelLinesWithIndex {
     pub fn new(path: &str) -> Result<ParallelLinesWithIndex, String> {
         Ok(ParallelLinesWithIndex {
-            mmap: Arc::new(MemoryMappedReadOnly::new(path)?),
+            mmap: Arc::new(MemoryMappedReadOnly::new(path, None)?),
             number_of_lines: None,
             comment_symbol: None,
             number_of_rows_to_skip: None,
@@ -135,10 +135,13 @@ impl Iterator for ParalellLinesProducerWithIndex {
                 continue;
             }
 
-            let result = &self.data[..line_length];
+            let mut result = (&self.data[..line_length]).to_string();
+            if result.ends_with('\r') {
+                result.pop().unwrap();
+            }
             self.data = &self.data[line_length + 1..];
             self.line_count += 1;
-            return Some((self.line_count - 1, Ok(result.to_string())));
+            return Some((self.line_count - 1, Ok(result)));
         }
     }
 }

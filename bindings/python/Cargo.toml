@@ -3,7 +3,7 @@ edition = "2018"
 name = "ensmallen"
 version = "0.7.0"
 license = "MIT"
-repository= "https://github.com/LucaCappelletti94/ensmallen"
+repository= "https://github.com/AnacletoLAB/ensmallen"
 authors = [
     "Luca Cappelletti <cappelletti.luca94@gmail.com>",
     "Tommaso Fontana <tommaso.fontana.96@gmail.com>"    
@@ -14,17 +14,18 @@ exclude = ["pytests/*", "Python-*", "./*.py"]
 keywords = ["python", "rust", "graph", "random", "walk"]
 
 [package.metadata.maturin]
-requires-python = ">=3.6"
+requires-python = ">=3.7"
 requires-dist = [
     "toml~=0.10.0",
     "downloaders>=1.0.15",
-    "compress_json>=1.0.6",
-    "userinput>=1.0.17",
-    "cache_decorator>=2.0.13",
+    "compress_json>=1.0.7",
+    "userinput>=1.0.19",
+    "cache_decorator>=2.1.11",
+    "bioregistry>=0.5.65",
     "tqdm",
     "pandas",
-    "transformers",
     "py-cpuinfo",
+    "ringbell>=1.0.2",
     "environments_utils>=1.0.4"
 ]
 
@@ -47,14 +48,14 @@ express_measures = { path = "../../graph/express_measures" }
 tags = { path = "../../graph/tags" }
 vec_rand = { git = "https://github.com/zommiommy/vec_rand", branch = "master" }
 roaring = { git = "https://github.com/zommiommy/roaring-rs", branch = "master" }
-numpy = "0.16.2"
+numpy = {git = "https://github.com/LucaCappelletti94/rust-numpy.git", features = ["half"] }
+half = {git = "https://github.com/LucaCappelletti94/half-rs.git", features = ["use-intrinsics", "num-traits"]}
 rand = {version="0.7", features = ["small_rng"] }
 strsim = "0.10.0"
 markdown = "0.3"
 rayon = "1.5.0"
-indicatif = {version="0.16.0", features = ["rayon"]}
+indicatif = {version="0.17.0", features = ["rayon"]}
 ctrlc = "3.1.7"
-half = "1.8.2"
 
 [profile.release]
 debug = false             # Include debug info.

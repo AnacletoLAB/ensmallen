@@ -53,6 +53,7 @@ class PheKnowLatorKGGraphrepository(GraphRepository):
                         "edge_list_edge_types_column": "predicate",
                         "node_list_is_correct": True,
                         "edge_list_is_correct": True,
+                        "remove_chevrons": True
                     }
                 }
 

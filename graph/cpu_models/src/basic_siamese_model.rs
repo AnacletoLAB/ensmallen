@@ -31,6 +31,10 @@ impl BasicSiameseModel {
         self.model.is_verbose()
     }
 
+    pub fn get_dtype(&self) -> String {
+        self.model.get_dtype()
+    }
+
     pub fn get_learning_rate_decay(&self) -> f32 {
         self.model.get_learning_rate_decay()
     }

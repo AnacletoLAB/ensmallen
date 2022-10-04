@@ -1,6 +1,6 @@
-use libc::*;
-use core::fmt::Debug;
 use super::MemoryMapReadOnlyCore;
+use core::fmt::Debug;
+use libc::*;
 
 /// A read-only memory mapped file,
 /// this should be equivalent to read-only slice that
@@ -25,7 +25,7 @@ impl std::ops::Drop for MemoryMappedReadOnly {
 }
 
 impl MemoryMapReadOnlyCore for MemoryMappedReadOnly {
-    fn new<S: AsRef<str> + Debug>(path: S) -> Result<Self, String> {
+    fn new<S: AsRef<str> + Debug>(path: S, offset: Option<usize>) -> Result<Self, String> {
         let path = path.as_ref();
         // here we add a + 8 to map in an extra zero-filled word so that we can
         // do unaligned reads for bits
@@ -57,7 +57,7 @@ impl MemoryMapReadOnlyCore for MemoryMappedReadOnly {
                 fd,
                 // the offset in bytes from the start of the file, we want to mmap
                 // the whole file
-                0,
+                offset.unwrap_or(0) as i64,
             )
         };
 
@@ -72,7 +72,12 @@ impl MemoryMapReadOnlyCore for MemoryMappedReadOnly {
             ));
         }
 
-        Ok(MemoryMappedReadOnly { fd, addr, len, path: Some(path.to_string()) })
+        Ok(MemoryMappedReadOnly {
+            fd,
+            addr,
+            len,
+            path: Some(path.to_string()),
+        })
     }
 
     fn get_addr(&self) -> *mut u8 {
