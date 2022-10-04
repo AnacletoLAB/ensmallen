@@ -24,6 +24,7 @@ where
         let mut walk_parameters = self.walk_parameters.clone();
         let mut random_state = splitmix64(self.walk_parameters.get_random_state() as u64);
         let mut learning_rate = self.learning_rate.as_();
+        let mut alpha = self.alpha.as_();
         let cv = self.clipping_value.as_();
 
         // Update the random state
@@ -31,6 +32,8 @@ where
 
         // Wrapping the layers into shared structures.
         let shared_embedding = ThreadDataRaceAware::new(embedding);
+
+        let maximum_node_degree_squared: F = graph.get_maximum_node_degree()?.as_().powf(2.0);
 
         let pb = self.get_loading_bar();
 
@@ -50,28 +53,29 @@ where
                     let dst_embedding = &mut (*shared_embedding.get())[1]
                         [(dst as usize) * embedding_size..((dst as usize) + 1) * embedding_size];
 
-                    let dot: F = unsafe {
-                        dot_product_sequential_unchecked(src_embedding, dst_embedding)
-                    } / scale_factor;
+                    let dot: F =
+                        unsafe { dot_product_sequential_unchecked(src_embedding, dst_embedding) }
+                            / scale_factor;
 
                     if dot > cv || dot < -cv {
                         return;
                     }
 
                     let prediction = F::one() / (F::one() + (-dot).exp());
-                    let variation = prediction - frequency.as_();
+                    let mut variation = prediction - frequency.as_();
+                    let adaptative_learning_rate = (maximum_node_degree_squared
+                        / (graph.get_unchecked_node_degree_from_node_id(src).as_()
+                            * graph.get_unchecked_node_degree_from_node_id(dst).as_()))
+                    .powf(alpha);
 
-                    let src_variation =
-                        variation * get_node_prior(graph, src as NodeT, learning_rate);
-                    let dst_variation =
-                        variation * get_node_prior(graph, dst as NodeT, learning_rate);
+                    variation *= adaptative_learning_rate * learning_rate;
 
                     src_embedding
                         .iter_mut()
                         .zip(dst_embedding.iter_mut())
                         .for_each(|(src_feature, dst_feature)| {
-                            *src_feature -= *dst_feature * src_variation;
-                            *dst_feature -= *src_feature * dst_variation;
+                            *src_feature -= *dst_feature * variation;
+                            *dst_feature -= *src_feature * variation;
                         });
                 });
 
