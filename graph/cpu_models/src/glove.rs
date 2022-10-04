@@ -45,10 +45,8 @@ where
         let context_node_embedding =
             ThreadDataRaceAware::new(vec![F::zero(); graph.get_number_of_nodes() as usize]);
 
-        let pb = self.get_loading_bar();
-
         // We start to loop over the required amount of epochs.
-        for _ in (0..self.get_number_of_epochs()).progress_with(pb) {
+        for _ in (0..self.get_number_of_epochs()).progress_with(self.get_loading_bar()) {
             // We update the random state used to generate the random walks
             // and the negative samples.
             random_state = splitmix64(random_state);
@@ -63,9 +61,8 @@ where
                     let dst_embedding = &mut (*shared_embedding.get())[1]
                         [(dst as usize) * embedding_size..((dst as usize) + 1) * embedding_size];
 
-                    let (similarity, src_norm, dst_norm): (F, F, F) = unsafe {
-                        cosine_similarity_sequential_unchecked(src_embedding, dst_embedding)
-                    };
+                    let (similarity, src_norm, dst_norm): (F, F, F) =
+                        cosine_similarity_sequential_unchecked(src_embedding, dst_embedding);
 
                     let src_bias = &mut (*center_node_embedding.get())[src as usize];
                     let dst_bias = &mut (*context_node_embedding.get())[dst as usize];
@@ -75,8 +72,17 @@ where
                         * (F::one() + F::one())
                         * (similarity + *src_bias + *dst_bias - count.as_().ln());
 
-                    *src_bias -= variation;
-                    *dst_bias -= variation;
+                    let src_variation =
+                        variation * get_node_prior(graph, src as NodeT, learning_rate);
+                    let dst_variation =
+                        variation * get_node_prior(graph, dst as NodeT, learning_rate);
+
+                    if !src_variation.is_finite() || !dst_variation.is_finite() {
+                        return;
+                    }
+
+                    *src_bias -= src_variation;
+                    *dst_bias -= dst_variation;
 
                     src_embedding
                         .iter_mut()
@@ -84,8 +90,8 @@ where
                         .for_each(|(src_feature, dst_feature)| {
                             *src_feature /= src_norm;
                             *src_feature /= dst_norm;
-                            *src_feature -= *dst_feature * variation;
-                            *dst_feature -= *src_feature * variation;
+                            *src_feature -= *dst_feature * src_variation;
+                            *dst_feature -= *src_feature * dst_variation;
                         });
                 });
 

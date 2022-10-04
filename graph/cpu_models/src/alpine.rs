@@ -289,6 +289,7 @@ where
         ));
 
         progress.set_verbose(self.is_verbose());
+        progress.set_len(expected_embedding_len);
 
         // We start to compute the features
         embedding
