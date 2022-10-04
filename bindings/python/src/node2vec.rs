@@ -46,6 +46,7 @@ where
                 "learning_rate",
                 "learning_rate_decay",
                 "alpha",
+                "maximum_cooccurrence_count_threshold",
                 "central_nodes_embedding_path",
                 "contextual_nodes_embedding_path",
                 "stochastic_downsample_by_degree",
@@ -82,6 +83,7 @@ where
                 extract_value_rust_result!(kwargs, "learning_rate", f32),
                 extract_value_rust_result!(kwargs, "learning_rate_decay", f32),
                 extract_value_rust_result!(kwargs, "alpha", f32),
+                extract_value_rust_result!(kwargs, "maximum_cooccurrence_count_threshold", NodeT),
                 extract_value_rust_result!(kwargs, "stochastic_downsample_by_degree", bool),
                 extract_value_rust_result!(kwargs, "normalize_learning_rate_by_degree", bool),
                 extract_value_rust_result!(kwargs, "use_scale_free_distribution", bool),
@@ -269,7 +271,7 @@ impl CBOW {
 #[pyclass]
 #[derive(Debug, Clone)]
 #[pyo3(
-    text_signature = "(*, embedding_size, window_size, number_of_negative_samples, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, max_neighbours, normalize_by_degree, epochs, learning_rate, learning_rate_decay, central_nodes_embedding_path, contextual_nodes_embedding_path, stochastic_downsample_by_degree, normalize_learning_rate_by_degree, use_scale_free_distribution, clipping_value, dtype, verbose)"
+    text_signature = "(*, embedding_size, window_size, number_of_negative_samples, walk_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, max_neighbours, normalize_by_degree, epochs, learning_rate, learning_rate_decay, alpha, maximum_cooccurrence_count_threshold, central_nodes_embedding_path, contextual_nodes_embedding_path, stochastic_downsample_by_degree, normalize_learning_rate_by_degree, use_scale_free_distribution, clipping_value, dtype, verbose)"
 )]
 pub struct GloVe {
     inner: Node2VecBinding<IdentifyWalkTransformer>,
@@ -330,6 +332,10 @@ impl GloVe {
     ///     Learning rate of the model.
     /// learning_rate_decay: float = 0.9
     ///     Amount of learning rate decay for each epoch.
+    /// alpha: float = 0.75
+    ///     Exponent of the adaptative learning rate.
+    /// maximum_cooccurrence_count_threshold: int = 100
+    ///     Maximum cooccurrence threshold for the adaptative learning rate.
     /// central_nodes_embedding_path: Optional[str] = None
     ///     Path where to mmap and store the central nodes embedding.
     ///     This is necessary to embed large graphs whose embedding will not

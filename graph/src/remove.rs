@@ -14,16 +14,16 @@ impl Graph {
     ///
     /// # Arguments
     /// * `node_names`: Option<Vec<String>> - The name of the nodes of which components to keep.
-    /// * `node_types`: Option<Vec<Option<String>>> - The types of the nodes of which components to keep.
-    /// * `edge_types`: Option<Vec<Option<String>>> - The types of the edges of which components to keep.
+    /// * `node_types`: Option<&[Option<&str>]> - The types of the nodes of which components to keep.
+    /// * `edge_types`: Option<&[Option<&str>]> - The types of the edges of which components to keep.
     /// * `minimum_component_size`: Option<NodeT> - Optional, Minimum size of the components to keep.
     /// * `top_k_components`: Option<NodeT> - Optional, number of components to keep sorted by number of nodes.
     /// * `verbose`: Option<bool> - Whether to show the loading bar.
     pub fn remove_components(
         &self,
         node_names: Option<Vec<String>>,
-        node_types: Option<Vec<Option<String>>>,
-        edge_types: Option<Vec<Option<String>>>,
+        node_types: Option<&[Option<&str>]>,
+        edge_types: Option<&[Option<&str>]>,
         minimum_component_size: Option<NodeT>,
         top_k_components: Option<NodeT>,
         verbose: Option<bool>,

@@ -77,6 +77,8 @@ pub fn register_models(_py: Python, _m: &PyModule) -> PyResult<()> {
     _m.add_class::<DegreeSPINE>()?;
     _m.add_class::<NodeLabelSPINE>()?;
     _m.add_class::<ScoreSPINE>()?;
+    _m.add_class::<RUBICONE>()?;
+    _m.add_class::<RUINE>()?;
     _m.add_class::<DegreeWINE>()?;
     _m.add_class::<NodeLabelWINE>()?;
     _m.add_class::<ScoreWINE>()?;

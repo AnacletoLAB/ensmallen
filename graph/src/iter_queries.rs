@@ -638,7 +638,7 @@ impl Graph {
     pub fn iter_node_ids_and_node_type_ids_from_node_type_id(
         &self,
         node_type_id: Option<NodeTypeT>,
-    ) -> Result<impl Iterator<Item = (NodeT, Option<&Vec<NodeTypeT>>)> + '_> {
+    ) -> Result<impl Iterator<Item = (NodeT, Option<&[NodeTypeT]>)> + '_> {
         self.validate_node_type_id(node_type_id)
             .map(|node_type_id| {
                 self.iter_node_ids_and_node_type_ids().filter(
@@ -663,7 +663,7 @@ impl Graph {
         &self,
         node_type_id: Option<NodeTypeT>,
     ) -> Result<
-        impl Iterator<Item = (NodeT, String, Option<&Vec<NodeTypeT>>, Option<Vec<String>>)> + '_,
+        impl Iterator<Item = (NodeT, String, Option<&[NodeTypeT]>, Option<Vec<String>>)> + '_,
     > {
         self.validate_node_type_id(node_type_id)
             .map(|node_type_id| {
@@ -831,13 +831,35 @@ impl Graph {
     /// Returns parallel iterator over node IDs with given curie prefixes
     ///
     /// # Arguments
-    /// * `curie_prefixes`: Vec<&str> - Prefix of the node names.
+    /// * `curie_prefixes`: &[&str] - Prefix of the node names.
     pub fn par_iter_node_ids_from_node_curie_prefixes<'a>(
         &'a self,
-        curie_prefixes: Vec<&'a str>,
+        curie_prefixes: &'a [&'a str],
     ) -> impl ParallelIterator<Item = NodeT> + 'a {
         self.par_iter_node_ids()
             .zip(self.par_iter_node_names())
+            .filter_map(move |(node_id, node_name)| {
+                if curie_prefixes
+                    .iter()
+                    .any(|curie_prefix| node_name.starts_with(curie_prefix))
+                {
+                    Some(node_id)
+                } else {
+                    None
+                }
+            })
+    }
+
+    /// Returns iterator over node IDs with given curie prefixes
+    ///
+    /// # Arguments
+    /// * `curie_prefixes`: &[&str] - Prefix of the node names.
+    pub fn iter_node_ids_from_node_curie_prefixes<'a>(
+        &'a self,
+        curie_prefixes: &'a [&'a str],
+    ) -> impl Iterator<Item = NodeT> + 'a {
+        self.iter_node_ids()
+            .zip(self.iter_node_names())
             .filter_map(move |(node_id, node_name)| {
                 if curie_prefixes
                     .iter()

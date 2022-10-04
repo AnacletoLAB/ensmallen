@@ -591,7 +591,7 @@ impl Graph {
     /// * `destination_edge_types_names`: Option<Vec<String>> - Edge type names of the nodes to be samples as destinations. If a node has any of the provided edge types, it can be sampled as a destination node.
     /// * `source_nodes_prefixes`: Option<Vec<String>> - Prefixes of the nodes names to be samples as sources. If a node starts with any of the provided prefixes, it can be sampled as a source node.
     /// * `destination_nodes_prefixes`: Option<Vec<String>> - Prefixes of the nodes names to be samples as destinations. If a node starts with any of the provided prefixes, it can be sampled as a destinations node.
-    /// * `edge_type_names`: Option<Vec<Option<String>>> - Edge type names of the edges to sample. Only edges with ANY of these edge types will be kept.
+    /// * `edge_type_names`: Option<&[Option<&str>]> - Edge type names of the edges to sample. Only edges with ANY of these edge types will be kept.
     /// * `support`: Option<&Graph> - Parent graph of this subgraph, defining the `true` topology of the graph. Node degrees are sampled from this support graph when provided. Useful when sampling positive edges for a test graph. In this latter case, the support graph should be the training graph.
     ///
     /// # Raises
@@ -609,7 +609,7 @@ impl Graph {
         destination_edge_types_names: Option<Vec<String>>,
         source_nodes_prefixes: Option<Vec<String>>,
         destination_nodes_prefixes: Option<Vec<String>>,
-        edge_type_names: Option<Vec<Option<String>>>,
+        edge_type_names: Option<&[Option<&str>]>,
         support: Option<&Graph>,
     ) -> Result<Graph> {
         if number_of_samples == 0 {
@@ -962,7 +962,7 @@ impl Graph {
     ///
     /// * `train_size`: f64 - Rate target to reserve for training.
     /// * `random_state`: Option<EdgeT> - The random_state to use for the holdout,
-    /// * `edge_types`: Option<Vec<Option<String>>> - Edge types to be selected for in the validation set.
+    /// * `edge_types`: Option<&[Option<&str>]> - Edge types to be selected for in the validation set.
     /// * `include_all_edge_types`: Option<bool> - Whether to include all the edges between two nodes.
     /// * `minimum_node_degree`: Option<NodeT> - The minimum node degree of either the source or destination node to be sampled. By default 0.
     /// * `maximum_node_degree`: Option<NodeT> - The maximum node degree of either the source or destination node to be sampled. By default, the number of nodes.
@@ -976,7 +976,7 @@ impl Graph {
         &self,
         train_size: f64,
         random_state: Option<EdgeT>,
-        edge_types: Option<Vec<Option<String>>>,
+        edge_types: Option<&[Option<&str>]>,
         include_all_edge_types: Option<bool>,
         minimum_node_degree: Option<NodeT>,
         maximum_node_degree: Option<NodeT>,
@@ -1025,7 +1025,7 @@ impl Graph {
                         .iter()
                         .cloned()
                         .filter_map(|e| e)
-                        .collect::<Vec<String>>()
+                        .collect::<Vec<&str>>()
                         .join(", ")
                 ));
             }
@@ -1104,7 +1104,7 @@ impl Graph {
     /// * `train_size`: f64 - rate target to reserve for training
     /// * `random_state`: Option<EdgeT> - The random_state to use for the holdout,
     /// * `include_all_edge_types`: Option<bool> - Whether to include all the edges between two nodes.
-    /// * `edge_types`: Option<Vec<Option<String>>> - The edges to include in validation set.
+    /// * `edge_types`: Option<&[Option<&str>]> - The edges to include in validation set.
     /// * `min_number_overlaps`: Option<EdgeT> - The minimum number of overlaps to include the edge into the validation set.
     /// * `verbose`: Option<bool> - Whether to show the loading bar.
     ///
@@ -1117,7 +1117,7 @@ impl Graph {
         train_size: f64,
         random_state: Option<EdgeT>,
         include_all_edge_types: Option<bool>,
-        edge_types: Option<Vec<Option<String>>>,
+        edge_types: Option<&[Option<&str>]>,
         min_number_overlaps: Option<EdgeT>,
         verbose: Option<bool>,
     ) -> Result<(Graph, Graph)> {
@@ -1316,7 +1316,10 @@ impl Graph {
                 .map(|x| x.clone())
         });
 
-        Ok((train_node_types, test_node_types))
+        Ok((
+            train_node_types.iter().map(|x| x.map(|y| y.to_vec())).collect::<Vec<_>>(), 
+            test_node_types.iter().map(|x| x.map(|y| y.to_vec())).collect::<Vec<_>>(),
+        ))
     }
 
     /// Returns node-label holdout for training ML algorithms on the graph node labels.
@@ -1742,12 +1745,12 @@ impl Graph {
             node_set[..train_size].iter().for_each(|node_id| unsafe {
                 train_node_types[*node_id as usize] = self
                     .get_unchecked_node_type_ids_from_node_id(*node_id)
-                    .map(|x| x.clone())
+                    .map(|x| x.to_vec())
             });
             node_set[train_size..].iter().for_each(|node_id| unsafe {
                 test_node_types[*node_id as usize] = self
                     .get_unchecked_node_type_ids_from_node_id(*node_id)
-                    .map(|x| x.clone())
+                    .map(|x| x.to_vec())
             });
         }
 
@@ -1881,7 +1884,7 @@ impl Graph {
                 let node_type =
                     unsafe { self.get_unchecked_node_type_ids_from_node_id(*test_node_id) };
                 if validation_chunk.contains(test_node_id) {
-                    test_node_types[*test_node_id as usize] = node_type.cloned();
+                    test_node_types[*test_node_id as usize] = node_type.map(|x| x.to_vec());
                     train_node_types[*test_node_id as usize] = None;
                 }
             }
@@ -2186,7 +2189,7 @@ impl Graph {
     /// # Arguments
     /// * `k`: EdgeT - The number of folds.
     /// * `k_index`: u64 - Which fold to use for the validation.
-    /// * `edge_types`: Option<Vec<Option<String>>> - Edge types to be selected when computing the folds (All the edge types not listed here will be always be used in the training set).
+    /// * `edge_types`: Option<&[Option<&str>]> - Edge types to be selected when computing the folds (All the edge types not listed here will be always be used in the training set).
     /// * `random_state`: Option<EdgeT> - The random_state (seed) to use for the holdout,
     /// * `verbose`: Option<bool> - Whether to show the loading bar.
     ///
@@ -2210,7 +2213,7 @@ impl Graph {
         &self,
         k: usize,
         k_index: usize,
-        edge_types: Option<Vec<Option<String>>>,
+        edge_types: Option<&[Option<&str>]>,
         random_state: Option<EdgeT>,
         verbose: Option<bool>,
     ) -> Result<(Graph, Graph)> {

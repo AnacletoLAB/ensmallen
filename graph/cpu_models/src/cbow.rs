@@ -4,9 +4,9 @@ use express_measures::{
     element_wise_weighted_addition_inplace, ThreadFloat,
 };
 use graph::{Graph, NodeT, ThreadDataRaceAware};
-use num_traits::Coerced;
-use rayon::prelude::*;
 use indicatif::ProgressIterator;
+use num_traits::AsPrimitive;
+use rayon::prelude::*;
 use vec_rand::{sample_uniform, splitmix64};
 
 impl<W> Node2Vec<W>
@@ -24,26 +24,27 @@ where
     /// # Arguments
     /// `graph`: &Graph - The graph to embed
     /// `embedding`: &mut [f32] - The memory area where to write the embedding.
-    pub(crate) fn fit_transform_cbow<F: ThreadFloat>(
+    pub(crate) fn fit_transform_cbow<F: ThreadFloat + 'static>(
         &self,
         graph: &Graph,
         embedding: &mut [&mut [F]],
     ) -> Result<(), String>
     where
-        NodeT: Coerced<F>,
+        f32: AsPrimitive<F>,
+        NodeT: AsPrimitive<F>,
     {
         let mut walk_parameters = self.walk_parameters.clone();
         let mut random_state = splitmix64(self.walk_parameters.get_random_state() as u64);
-        let context_size = F::coerce_from((self.window_size * 2) as f32);
-        let mut learning_rate = F::coerce_from(self.learning_rate);
-        let cv = F::coerce_from(self.clipping_value);
+        let context_size = (self.window_size as f32 * 2.0).as_();
+        let mut learning_rate = self.learning_rate.as_();
+        let cv = self.clipping_value.as_();
         let nodes_number = graph.get_number_of_nodes();
 
         // This is used to scale the dot product to avoid getting NaN due to
         // exp(dot) being inf and the sigmoid becomes Nan
         // we multiply by context size so we have a faster division when computing
         // the dotproduct of the mean contexted mebedding
-        let scale_factor = F::coerce_from((self.embedding_size as f32).sqrt()) * context_size;
+        let scale_factor = (self.embedding_size as f32).sqrt().as_() * context_size;
 
         let shared_embedding = ThreadDataRaceAware::new(embedding);
 
@@ -260,7 +261,7 @@ where
                         });
                 });
 
-            learning_rate *= F::coerce_from(self.learning_rate_decay);
+            learning_rate *= (self.learning_rate_decay).as_()
         }
         Ok(())
     }

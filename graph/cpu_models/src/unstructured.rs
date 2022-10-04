@@ -2,8 +2,8 @@ use crate::*;
 use express_measures::{normalize_vector_inplace, ThreadFloat};
 use graph::{Graph, NodeT, ThreadDataRaceAware};
 use indicatif::ProgressIterator;
+use num_traits::AsPrimitive;
 use rayon::prelude::*;
-use num_traits::Coerced;
 use vec_rand::splitmix64;
 
 #[derive(Clone, Debug)]
@@ -46,17 +46,18 @@ impl GraphEmbedder for Unstructured {
             .into()])
     }
 
-    fn _fit_transform<F: ThreadFloat>(
+    fn _fit_transform<F: ThreadFloat + 'static>(
         &self,
         graph: &Graph,
         embedding: &mut [&mut [F]],
     ) -> Result<(), String>
     where
-        NodeT: Coerced<F>,
+        NodeT: AsPrimitive<F>,
+        f32: AsPrimitive<F>
     {
         let embedding_size = self.model.get_embedding_size();
         let scale_factor = (embedding_size as f32).sqrt();
-        let mut learning_rate = F::coerce_from(self.model.get_learning_rate() / scale_factor);
+        let mut learning_rate = (self.model.get_learning_rate() / scale_factor).as_();
         let mut random_state = self.model.get_random_state();
 
         let shared_node_embedding = ThreadDataRaceAware::new(&mut embedding[0]);
@@ -65,6 +66,8 @@ impl GraphEmbedder for Unstructured {
         // we create or not a visible progress bar to show the progress
         // in the training epochs.
         let pb = self.get_loading_bar();
+
+        let two: F = (2.0).as_();
 
         // We start to loop over the required amount of epochs.
         (0..self.get_number_of_epochs())
@@ -135,10 +138,10 @@ impl GraphEmbedder for Unstructured {
 
                                     let positive_distance = *src_feature - *dst_feature;
                                     let negative_distance = *not_src_feature - *not_dst_feature;
-                                    let loss = positive_distance.powf(F::coerce_from(2.0))
-                                        - negative_distance.powf(F::coerce_from(2.0));
+                                    let loss =
+                                        positive_distance.powf(two) - negative_distance.powf(two);
 
-                                    if loss > F::coerce_from(-self.model.relu_bias) {
+                                    if loss > -self.model.relu_bias.as_() {
                                         *src_feature -= positive_distance * node_priors[0];
                                         *dst_feature += positive_distance * node_priors[1];
                                         *not_src_feature += negative_distance * node_priors[2];
@@ -147,7 +150,7 @@ impl GraphEmbedder for Unstructured {
                                 },
                             );
                     });
-                learning_rate *= F::coerce_from(self.model.get_learning_rate_decay());
+                learning_rate *= self.model.get_learning_rate_decay().as_();
             });
         Ok(())
     }

@@ -2,7 +2,7 @@ use crate::*;
 use express_measures::ThreadFloat;
 use graph::{WalksParameters, NodeT};
 use indicatif::{ProgressBar, ProgressStyle};
-use num_traits::Coerced;
+use num_traits::AsPrimitive;
 
 #[derive(Clone, Debug, Eq, PartialEq)]
 pub enum Node2VecModels {
@@ -31,6 +31,7 @@ where
     pub(crate) learning_rate: f32,
     pub(crate) learning_rate_decay: f32,
     pub(crate) alpha: f32,
+    pub(crate) maximum_cooccurrence_count_threshold: NodeT,
     pub(crate) stochastic_downsample_by_degree: bool,
     pub(crate) normalize_learning_rate_by_degree: bool,
     pub(crate) use_scale_free_distribution: bool,
@@ -59,6 +60,7 @@ where
     /// * `learning_rate_decay`: Option<f32> - Factor to reduce the learning rate for at each epoch. By default 0.9.
     /// * `learning_rate_decay`: Option<f32> - Factor to reduce the learning rate for at each epoch. By default 0.9.
     /// * `alpha`: Option<f32> - Alpha to use for the loss. By default `0.75`.
+    /// * `maximum_cooccurrence_count_threshold`: NodeT - The maximum value to use for the GloVe cutoff. By default 100.
     /// * `stochastic_downsample_by_degree`: Option<bool> - Randomly skip samples with probability proportional to the degree of the central node. By default false.
     /// * `normalize_learning_rate_by_degree`: Option<bool> - Divide the learning rate by the degree of the central node. By default false.
     /// * `use_scale_free_distribution`: Option<bool> - Sample negatives proportionally to their degree. By default true.
@@ -76,6 +78,7 @@ where
         learning_rate: Option<f32>,
         learning_rate_decay: Option<f32>,
         alpha: Option<f32>,
+        maximum_cooccurrence_count_threshold: Option<NodeT>,
         stochastic_downsample_by_degree: Option<bool>,
         normalize_learning_rate_by_degree: Option<bool>,
         use_scale_free_distribution: Option<bool>,
@@ -92,6 +95,7 @@ where
         let learning_rate_decay =
             must_not_be_zero(learning_rate_decay, 0.9, "learning rate decay")?;
         let alpha = must_not_be_zero(alpha, 0.75, "GloVe alpha")?;
+        let maximum_cooccurrence_count_threshold = must_not_be_zero(maximum_cooccurrence_count_threshold, 100, "GloVe threshold")?;
         let walk_parameters = walk_parameters.unwrap_or_else(|| WalksParameters::default());
         let stochastic_downsample_by_degree = stochastic_downsample_by_degree.unwrap_or(false);
         let normalize_learning_rate_by_degree = normalize_learning_rate_by_degree.unwrap_or(false);
@@ -108,6 +112,7 @@ where
             learning_rate,
             learning_rate_decay,
             alpha,
+            maximum_cooccurrence_count_threshold,
             number_of_negative_samples,
             stochastic_downsample_by_degree,
             normalize_learning_rate_by_degree,
@@ -174,13 +179,14 @@ where
         self.walk_parameters.get_random_state() as u64
     }
 
-    fn _fit_transform<F: Coerced<f32> + ThreadFloat>(
+    fn _fit_transform<F: AsPrimitive<f32> + ThreadFloat>(
         &self,
         graph: &graph::Graph,
         embedding: &mut [&mut [F]],
     ) -> Result<(), String>
     where
-        NodeT: Coerced<F>,
+        NodeT: AsPrimitive<F>,
+        f32: AsPrimitive<F>
     {
         match self.model_type {
             Node2VecModels::CBOW => self.fit_transform_cbow(graph, embedding),

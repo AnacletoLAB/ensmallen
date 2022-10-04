@@ -2,7 +2,7 @@ use crate::*;
 use express_measures::{vector_norm, ThreadFloat};
 use graph::{EdgeTypeT, Graph, NodeT, EdgeT, ThreadDataRaceAware};
 use indicatif::ProgressIterator;
-use num_traits::Coerced;
+use num_traits::AsPrimitive;
 use rayon::prelude::*;
 use vec_rand::splitmix64;
 
@@ -53,18 +53,19 @@ impl GraphEmbedder for TransE {
         self.model.model.random_state
     }
 
-    fn _fit_transform<F: ThreadFloat>(
+    fn _fit_transform<F: ThreadFloat+ 'static>(
         &self,
         graph: &Graph,
         embedding: &mut [&mut [F]],
     ) -> Result<(), String>
     where
-        NodeT: Coerced<F>,
-        EdgeT: Coerced<F>,
+        f32: AsPrimitive<F>,
+        NodeT: AsPrimitive<F>,
+        EdgeT: AsPrimitive<F>,
     {
         let embedding_size = self.model.get_embedding_size();
         let scale_factor = (embedding_size as f32).sqrt();
-        let mut learning_rate = F::coerce_from(self.model.get_learning_rate() / scale_factor);
+        let mut learning_rate = (self.model.get_learning_rate() / scale_factor).as_();
         let mut random_state = self.get_random_state();
 
         let shared_embedding = ThreadDataRaceAware::new(embedding);
@@ -154,10 +155,10 @@ impl GraphEmbedder for TransE {
                                         *src_feature + *edge_type_feature - *dst_feature;
                                     let negative_distance =
                                         *not_src_feature + *edge_type_feature - *not_dst_feature;
-                                    let loss = positive_distance.powf(F::coerce_from(2.0))
-                                        - negative_distance.powf(F::coerce_from(2.0));
+                                    let loss = positive_distance.powf(F::one() + F::one())
+                                        - negative_distance.powf(F::one() + F::one());
 
-                                    if loss > F::coerce_from(-self.model.relu_bias) {
+                                    if loss > -self.model.relu_bias.as_() {
                                         *src_feature -= positive_distance * node_priors[0];
                                         *dst_feature += positive_distance * node_priors[1];
                                         *not_src_feature += negative_distance * node_priors[2];
@@ -169,7 +170,7 @@ impl GraphEmbedder for TransE {
                                 },
                             );
                     });
-                learning_rate *= F::coerce_from(self.model.get_learning_rate_decay());
+                learning_rate *= self.model.get_learning_rate_decay().as_();
             });
         Ok(())
     }

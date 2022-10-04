@@ -17,7 +17,7 @@ impl Graph {
     pub(crate) fn get_filter_bitmap(
         &self,
         node_names: Option<Vec<String>>,
-        node_types: Option<Vec<Option<String>>>,
+        node_types: Option<&[Option<&str>]>,
     ) -> Result<Option<RoaringBitmap>> {
         let mut node_ids = RoaringBitmap::new();
 

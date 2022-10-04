@@ -175,18 +175,18 @@ impl Graph {
     /// Validates provided node type IDs.
     ///
     /// # Arguments
-    /// * `node_type_ids`: Vec<Option<NodeTypeT>> - Vector of node type IDs to validate.
+    /// * `node_type_ids`: &[Option<NodeTypeT>] - Vector of node type IDs to validate.
     ///
     /// # Raises
     /// * If there are no node types in the graph.
     pub fn validate_node_type_ids(
         &self,
-        node_type_ids: Vec<Option<NodeTypeT>>,
+        node_type_ids: &[Option<NodeTypeT>],
     ) -> Result<Vec<Option<NodeTypeT>>> {
         self.must_have_node_types()?;
         node_type_ids
             .into_iter()
-            .map(|node_type| self.validate_node_type_id(node_type))
+            .map(|&node_type| self.validate_node_type_id(node_type))
             .collect()
     }
 
@@ -450,7 +450,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph does not have edge weights.
-    pub fn must_have_edge_weights(&self) -> Result<&Vec<WeightT>> {
+    pub fn must_have_edge_weights(&self) -> Result<&[WeightT]> {
         if !self.has_edge_weights() {
             return Err("The current graph instance does not have weights.".to_string());
         }
@@ -518,7 +518,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph does not have edge weights.
-    pub fn must_have_edge_weights_representing_probabilities(&self) -> Result<&Vec<WeightT>> {
+    pub fn must_have_edge_weights_representing_probabilities(&self) -> Result<&[WeightT]> {
         if !self.has_edge_weights_representing_probabilities()? {
             return Err(
                 "The current graph instance does not contain weights representing probabilities."
@@ -544,7 +544,7 @@ impl Graph {
     /// # Raises
     /// * If the graph does not contain edge weights.
     /// * If the graph contains negative edge weights.
-    pub fn must_have_positive_edge_weights(&self) -> Result<&Vec<WeightT>> {
+    pub fn must_have_positive_edge_weights(&self) -> Result<&[WeightT]> {
         if self.has_negative_edge_weights()? {
             return Err("The current graph instance contains negative edge weights.".to_string());
         }
