@@ -1,5 +1,5 @@
 use crate::*;
-use express_measures::{dot_product_sequential_unchecked, ThreadFloat};
+use express_measures::{cosine_similarity_sequential_unchecked, ThreadFloat};
 use graph::{Graph, NodeT, ThreadDataRaceAware};
 use indicatif::ProgressIterator;
 use num_traits::{AsPrimitive, Float};
@@ -19,7 +19,6 @@ where
         f32: AsPrimitive<F>,
         NodeT: AsPrimitive<F>,
     {
-        let scale_factor = (self.get_embedding_size() as f32).sqrt().as_();
         let embedding_size = self.embedding_size;
         let mut walk_parameters = self.walk_parameters.clone();
         let mut random_state = splitmix64(self.walk_parameters.get_random_state() as u64);
@@ -27,7 +26,7 @@ where
         let alpha = self.alpha.as_();
         let maximum_cooccurrence_count_threshold = self.maximum_cooccurrence_count_threshold.as_();
 
-        let glove_loss = |count: NodeT| {
+        let weighting_schema = |count: NodeT| {
             if count > self.maximum_cooccurrence_count_threshold {
                 F::one()
             } else {
@@ -64,16 +63,17 @@ where
                     let dst_embedding = &mut (*shared_embedding.get())[1]
                         [(dst as usize) * embedding_size..((dst as usize) + 1) * embedding_size];
 
-                    let dot: F = dot_product_sequential_unchecked(src_embedding, dst_embedding)
-                        / scale_factor;
+                    let (similarity, src_norm, dst_norm): (F, F, F) = unsafe {
+                        cosine_similarity_sequential_unchecked(src_embedding, dst_embedding)
+                    };
 
                     let src_bias = &mut (*center_node_embedding.get())[src as usize];
                     let dst_bias = &mut (*context_node_embedding.get())[dst as usize];
 
                     let variation = learning_rate
-                        * glove_loss(count)
+                        * weighting_schema(count)
                         * (F::one() + F::one())
-                        * (dot + *src_bias + *dst_bias - count.as_().ln());
+                        * (similarity + *src_bias + *dst_bias - count.as_().ln());
 
                     *src_bias -= variation;
                     *dst_bias -= variation;
@@ -82,6 +82,8 @@ where
                         .iter_mut()
                         .zip(dst_embedding.iter_mut())
                         .for_each(|(src_feature, dst_feature)| {
+                            *src_feature /= src_norm;
+                            *src_feature /= dst_norm;
                             *src_feature -= *dst_feature * variation;
                             *dst_feature -= *src_feature * variation;
                         });
