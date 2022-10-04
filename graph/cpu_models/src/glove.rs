@@ -68,28 +68,23 @@ where
                     let src_bias = &mut (*center_node_embedding.get())[src as usize];
                     let dst_bias = &mut (*context_node_embedding.get())[dst as usize];
 
-                    let variation = weighting_schema(count)
+                    let variation = learning_rate * weighting_schema(count)
                         * (F::one() + F::one())
                         * (dot + *src_bias + *dst_bias - count.as_().ln());
 
-                    let src_variation =
-                        variation * get_node_prior(graph, src as NodeT, learning_rate);
-                    let dst_variation =
-                        variation * get_node_prior(graph, dst as NodeT, learning_rate);
-
-                    if !src_variation.is_finite() || dst_variation.is_finite() {
+                    if !variation.is_finite() {
                         return;
                     }
 
-                    *src_bias -= src_variation;
-                    *dst_bias -= dst_variation;
+                    *src_bias -= variation;
+                    *dst_bias -= variation;
 
                     src_embedding
                         .iter_mut()
                         .zip(dst_embedding.iter_mut())
                         .for_each(|(src_feature, dst_feature)| {
-                            let new_src_feature = *src_feature - *dst_feature * src_variation;
-                            let new_dst_feature = *dst_feature - *src_feature * dst_variation;
+                            let new_src_feature = *src_feature - *dst_feature * variation;
+                            let new_dst_feature = *dst_feature - *src_feature * variation;
 
                             if new_src_feature.is_finite() && new_dst_feature.is_finite() {
                                 *src_feature = new_src_feature;
