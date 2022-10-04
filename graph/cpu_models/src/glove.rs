@@ -24,7 +24,6 @@ where
         let mut walk_parameters = self.walk_parameters.clone();
         let mut random_state = splitmix64(self.walk_parameters.get_random_state() as u64);
         let mut learning_rate = self.learning_rate.as_();
-        let mut alpha = self.alpha.as_();
         let cv = self.clipping_value.as_();
 
         // Update the random state
@@ -64,8 +63,7 @@ where
                     let mut variation = prediction - frequency.as_();
                     let adaptative_learning_rate = (maximum_node_degree_squared
                         / (graph.get_unchecked_node_degree_from_node_id(src).as_()
-                            * graph.get_unchecked_node_degree_from_node_id(dst).as_()))
-                    .powf(alpha);
+                            * graph.get_unchecked_node_degree_from_node_id(dst).as_()));
 
                     variation *= adaptative_learning_rate * learning_rate;
 
