@@ -32,8 +32,8 @@ where
 
         // Wrapping the layers into shared structures.
         let shared_embedding = ThreadDataRaceAware::new(embedding);
-
-        let maximum_node_degree_squared: F = graph.get_maximum_node_degree()?.as_().powf(2.0);
+        let two = F::one() + F::one();
+        let maximum_node_degree_squared: F = graph.get_maximum_node_degree()?.as_().powf(two);
 
         let pb = self.get_loading_bar();
 
@@ -53,9 +53,8 @@ where
                     let dst_embedding = &mut (*shared_embedding.get())[1]
                         [(dst as usize) * embedding_size..((dst as usize) + 1) * embedding_size];
 
-                    let dot: F =
-                        unsafe { dot_product_sequential_unchecked(src_embedding, dst_embedding) }
-                            / scale_factor;
+                    let dot: F = dot_product_sequential_unchecked(src_embedding, dst_embedding)
+                        / scale_factor;
 
                     if dot > cv || dot < -cv {
                         return;
