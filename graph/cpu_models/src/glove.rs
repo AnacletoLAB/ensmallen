@@ -65,14 +65,19 @@ where
                         / (graph.get_unchecked_node_degree_from_node_id(src).as_()
                             * graph.get_unchecked_node_degree_from_node_id(dst).as_()));
 
-                    variation *= adaptative_learning_rate * learning_rate;
+                    variation *= adaptative_learning_rate;
+
+                    let src_variation =
+                        variation * get_node_prior(graph, src as NodeT, learning_rate);
+                    let dst_variation =
+                        variation * get_node_prior(graph, dst as NodeT, learning_rate);
 
                     src_embedding
                         .iter_mut()
                         .zip(dst_embedding.iter_mut())
                         .for_each(|(src_feature, dst_feature)| {
-                            *src_feature -= *dst_feature * variation;
-                            *dst_feature -= *src_feature * variation;
+                            *src_feature -= *dst_feature * src_variation;
+                            *dst_feature -= *src_feature * dst_variation;
                         });
                 });
 
