@@ -734,7 +734,7 @@ class RetrievedGraph:
         if self._auto_enable_tradeoffs and graph.get_number_of_unique_edges() < 50e6:
             graph.enable()
 
-        if self._ring_bell is not None:
+        if self._ringbell is not None:
             self._ringbell.play()
         
         return graph
