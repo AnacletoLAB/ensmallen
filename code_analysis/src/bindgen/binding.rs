@@ -128,6 +128,8 @@ build_walk_parameters(kwargs)?
             ),
         };
 
+        let body = body.replace(".into().into_iter()", ".into_iter()");
+
         format!(
             r#"
             {other_annotations}
