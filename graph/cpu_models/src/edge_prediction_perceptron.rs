@@ -254,7 +254,7 @@ impl EdgeFeature {
     }
 
     /// Returns method to compute the edge embedding.
-    fn get_method<O1: Optimizer<f32>, O2: Optimizer<Vec<f32>>>(
+    fn get_method<O1: Optimizer<f32, T=f32>, O2: Optimizer<Vec<f32>, T=[f32]>>(
         &self,
     ) -> fn(
         model: &EdgePredictionPerceptron<O1, O2>,
@@ -358,7 +358,7 @@ impl EdgeFeature {
         }
     }
 
-    pub fn embed<O1: Optimizer<f32>, O2: Optimizer<Vec<f32>>, F: AsPrimitive<f32>>(
+    pub fn embed<O1: Optimizer<f32, T=f32>, O2: Optimizer<Vec<f32>, T=[f32]>, F: AsPrimitive<f32>>(
         &self,
         model: &EdgePredictionPerceptron<O1, O2>,
         support: &Graph,
@@ -406,8 +406,8 @@ pub struct EdgePredictionPerceptron<O1, O2> {
 
 impl<O1, O2> EdgePredictionPerceptron<O1, O2>
 where
-    O1: Optimizer<f32> + Serialize + From<O2> + DeserializeOwned,
-    O2: Optimizer<Vec<f32>> + Serialize + DeserializeOwned,
+    O1: Optimizer<f32, T=f32> + Serialize + From<O2> + DeserializeOwned,
+    O2: Optimizer<Vec<f32>, T=[f32]> + Serialize + DeserializeOwned,
 {
     /// Return new instance of Perceptron for edge prediction.
     ///

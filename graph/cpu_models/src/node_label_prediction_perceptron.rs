@@ -4,7 +4,6 @@ use graph::Graph;
 use half::f16;
 use indicatif::ProgressIterator;
 use indicatif::{ProgressBar, ProgressStyle};
-use itertools::izip;
 use num_traits::AsPrimitive;
 use rayon::prelude::*;
 use serde::de::DeserializeOwned;
@@ -29,7 +28,7 @@ pub struct NodeLabelPredictionPerceptron<O> {
 
 impl<O> NodeLabelPredictionPerceptron<O>
 where
-    O: Optimizer<Vec<f32>> + Serialize + DeserializeOwned,
+    O: Optimizer<Vec<f32>, T = [f32]> + Serialize + DeserializeOwned,
 {
     /// Return new instance of Perceptron for edge prediction.
     ///
@@ -87,38 +86,26 @@ where
         dimensions: &'a [usize],
     ) -> impl Iterator<Item = f32> + 'a {
         use crate::FeatureSlice::*;
-        izip!(node_features, dimensions.iter().copied()).map(move |(node_feature, dimension)| {
-            let offset = node_id * dimension;
-            (0..dimension)
-                .map(|position| match node_feature {
-                    F16(feature) => <f16 as AsPrimitive<f32>>::as_(feature[offset + position]),
-                    F32(feature) => <f32 as AsPrimitive<f32>>::as_(feature[offset + position]),
-                    F64(feature) => <f64 as AsPrimitive<f32>>::as_(feature[offset + position]),
-                    U8(feature) => <u8 as AsPrimitive<f32>>::as_(feature[offset + position]),
-                    U16(feature) => <u16 as AsPrimitive<f32>>::as_(feature[offset + position]),
-                    U32(feature) => <u32 as AsPrimitive<f32>>::as_(feature[offset + position]),
-                    U64(feature) => <u64 as AsPrimitive<f32>>::as_(feature[offset + position]),
-                    I8(feature) => <i8 as AsPrimitive<f32>>::as_(feature[offset + position]),
-                    I16(feature) => <i16 as AsPrimitive<f32>>::as_(feature[offset + position]),
-                    I32(feature) => <i32 as AsPrimitive<f32>>::as_(feature[offset + position]),
-                    I64(feature) => <i64 as AsPrimitive<f32>>::as_(feature[offset + position]),
-                })
-                .sum::<f32>()
-        })
-    }
-
-    fn dots_iterator<'a>(
-        &'a self,
-        node_id: usize,
-        weights: &'a [f32],
-        node_features: &'a [FeatureSlice],
-        dimensions: &'a [usize],
-    ) -> impl Iterator<Item = f32> + 'a {
-        weights
-            .iter()
-            .copied()
-            .zip(self.iterate_feature(node_id, node_features, dimensions))
-            .map(|(weight, feature)| weight * feature)
+        node_features
+            .zip(dimensions.iter().copied())
+            .map(move |(node_feature, dimension)| {
+                let offset = node_id * dimension;
+                (0..dimension)
+                    .map(|position| match node_feature {
+                        F16(feature) => <f16 as AsPrimitive<f32>>::as_(feature[offset + position]),
+                        F32(feature) => <f32 as AsPrimitive<f32>>::as_(feature[offset + position]),
+                        F64(feature) => <f64 as AsPrimitive<f32>>::as_(feature[offset + position]),
+                        U8(feature) => <u8 as AsPrimitive<f32>>::as_(feature[offset + position]),
+                        U16(feature) => <u16 as AsPrimitive<f32>>::as_(feature[offset + position]),
+                        U32(feature) => <u32 as AsPrimitive<f32>>::as_(feature[offset + position]),
+                        U64(feature) => <u64 as AsPrimitive<f32>>::as_(feature[offset + position]),
+                        I8(feature) => <i8 as AsPrimitive<f32>>::as_(feature[offset + position]),
+                        I16(feature) => <i16 as AsPrimitive<f32>>::as_(feature[offset + position]),
+                        I32(feature) => <i32 as AsPrimitive<f32>>::as_(feature[offset + position]),
+                        I64(feature) => <i64 as AsPrimitive<f32>>::as_(feature[offset + position]),
+                    })
+                    .sum::<f32>()
+            })
     }
 
     fn dot(
@@ -128,7 +115,11 @@ where
         node_features: &[FeatureSlice],
         dimensions: &[usize],
     ) -> f32 {
-        self.dots_iterator(node_id, weights, node_features, dimensions)
+        weights
+            .iter()
+            .copied()
+            .zip(self.iterate_feature(node_id, node_features, dimensions))
+            .map(|(weight, feature)| weight * feature)
             .sum()
     }
 
@@ -139,16 +130,16 @@ where
         dimensions: &[usize],
     ) -> Vec<f32> {
         let mut maximum_activation = -f32::INFINITY;
-        let mut activations = izip!(
-            self.weights.chunks(self.weights.len() / self.bias.len()),
-            self.bias.as_slice(),
-        )
-        .map(|(weights, bias)| {
-            let activation = self.dot(node_id, weights, node_features, dimensions) + bias;
-            maximum_activation = maximum_activation.max(activation);
-            activation
-        })
-        .collect::<Vec<f32>>();
+        let mut activations = self
+            .weights
+            .chunks(self.weights.len() / self.bias.len())
+            .zip(self.bias.as_slice())
+            .map(|(weights, bias)| {
+                let activation = self.dot(node_id, weights, node_features, dimensions) + bias;
+                maximum_activation = maximum_activation.max(activation);
+                activation
+            })
+            .collect::<Vec<f32>>();
 
         // Compute the total activation and exponentiate the
         // single activation.
@@ -164,7 +155,7 @@ where
                 *activation = (*activation - maximum_activation).exp();
                 *activation
             })
-            .sum::<f32>();
+            .sum::<f32>() + f32::epsilon();
 
         // Normalize predictions
         activations.iter_mut().for_each(|activation| {
@@ -180,20 +171,19 @@ where
         node_features: &[FeatureSlice],
         dimensions: &[usize],
     ) -> Vec<f32> {
-        izip!(
-            self.weights.chunks(self.weights.len() / self.bias.len()),
-            self.bias.as_slice(),
-        )
-        .map(|(weights, bias)| {
-            let activation = self.dot(node_id, weights, node_features, dimensions) + bias;
-            if activation > 0.0 {
-                1.0 / (1.0 + activation.exp())
-            } else {
-                let exp_activation = activation.exp();
-                exp_activation / (1.0 + exp_activation)
-            }
-        })
-        .collect::<Vec<f32>>()
+        self.weights
+            .chunks(self.weights.len() / self.bias.len())
+            .zip(self.bias.as_slice())
+            .map(|(weights, bias)| {
+                let activation = self.dot(node_id, weights, node_features, dimensions) + bias;
+                if activation > 0.0 {
+                    1.0 / (1.0 + (-activation).exp())
+                } else {
+                    let exp_activation = activation.exp();
+                    exp_activation / (1.0 + exp_activation)
+                }
+            })
+            .collect::<Vec<f32>>()
     }
 
     fn validate_features(
@@ -315,8 +305,10 @@ where
                     .get_node_type_ids()?
                     .par_iter()
                     .enumerate()
-                    .filter_map(|(node_id, node_label)| {
-                        node_label.as_ref().map(|node_label| (node_id, node_label))
+                    .filter_map(|(node_id, node_type_ids)| {
+                        node_type_ids
+                            .as_ref()
+                            .map(|node_type_ids| (node_id, node_type_ids))
                     })
                     .map(|(node_id, node_type_ids)| {
                         let mut predictions = if multilabel {
@@ -325,20 +317,21 @@ where
                             self.stable_softmax(node_id, node_features, dimensions)
                         };
 
-                        // Actually compute the loss
+                        // Actually compute the gradient
                         node_type_ids.iter().copied().for_each(|node_type_id| {
                             predictions[node_type_id as usize] -= 1.0;
                         });
 
                         // Compute the gradients
                         (
-                            self.dots_iterator(
-                                node_id,
-                                predictions.as_slice(),
-                                node_features,
-                                dimensions,
-                            )
-                            .collect(),
+                            predictions
+                                .iter()
+                                .copied()
+                                .flat_map(|prediction| {
+                                    self.iterate_feature(node_id, node_features, dimensions)
+                                        .map(|feature| feature * weight)
+                                })
+                                .collect::<Vec<f32>>(),
                             predictions,
                         )
                     })
