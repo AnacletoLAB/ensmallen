@@ -56,7 +56,7 @@ where
         })
     }
 
-    fn must_be_trained(&self) -> Result<(), String> {
+    pub fn must_be_trained(&self) -> Result<(), String> {
         if self.weights.is_empty() {
             return Err(concat!(
                 "This model has not been trained yet. ",
@@ -207,7 +207,7 @@ where
         }
     }
 
-    fn validate_features(
+    pub(crate) fn validate_features(
         &self,
         graph: &Graph,
         node_features: &[FeatureSlice],

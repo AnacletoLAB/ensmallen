@@ -38,6 +38,7 @@ mod walk_transformer;
 mod walklets;
 mod weighted_spine;
 mod alpine;
+mod distance_node_label_prediction_perceptron;
 
 pub use basic_embedding_model::*;
 pub use basic_siamese_model::*;
@@ -48,6 +49,7 @@ pub use cbow::*;
 pub use dag_resnik::*;
 pub use edge_prediction_perceptron::*;
 pub use node_label_prediction_perceptron::*;
+pub use distance_node_label_prediction_perceptron::*;
 pub use first_order_line::*;
 pub use glove::*;
 pub use graph_embedder::*;
