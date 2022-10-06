@@ -1,6 +1,6 @@
 [project]
 name="ensmallen"
-version="0.8.27"
+version="0.8.28"
 
 [build-system]
 requires = ["maturin>=0.13,<0.14"]
