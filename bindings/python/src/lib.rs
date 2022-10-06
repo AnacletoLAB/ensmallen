@@ -25,6 +25,9 @@ pub(crate) use edge_prediction_perceptron::*;
 mod node_label_prediction_perceptron;
 pub(crate) use node_label_prediction_perceptron::*;
 
+mod distance_node_label_prediction_perceptron;
+pub(crate) use distance_node_label_prediction_perceptron::*;
+
 mod dag_resnik;
 pub use dag_resnik::*;
 
@@ -88,6 +91,7 @@ pub fn register_models(_py: Python, _m: &PyModule) -> PyResult<()> {
     _m.add_class::<WeightedSPINE>()?;
     _m.add_class::<EdgePredictionPerceptron>()?;
     _m.add_class::<NodeLabelPredictionPerceptron>()?;
+    _m.add_class::<DistanceNodeLabelPredictionPerceptron>()?;
     _m.add_class::<DAGResnik>()?;
     Ok(())
 }

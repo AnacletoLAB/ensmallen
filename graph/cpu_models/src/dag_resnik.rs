@@ -283,12 +283,16 @@ where
     /// * `iterator`: I - Iterator over the neighbouring nodes of interest.
     /// * `minimum_similarity`: Option<F> - Minimum similarity to be worth considering.
     /// * `keep_unreacheable_nodes`: Option<bool> - Whether to keep unreacheable nodes, by default False.
+    /// * `remove_selfloops`: Option<bool> - Whether to ignore selfloops. By default True.
+    /// * `remove_lower_triangular_matrix`: Option<bool> - Whether to ignore lower triangular matrix, useful when the iterators are symmetric. By default False.
     fn get_similarities_from_node_id_and_iterator<'a, I>(
         &'a self,
         node_id: NodeT,
         iterator: I,
         minimum_similarity: Option<F>,
         keep_unreacheable_nodes: Option<bool>,
+        remove_selfloops: Option<bool>,
+        remove_lower_triangular_matrix: Option<bool>,
     ) -> Result<impl ParallelIterator<Item = (NodeT, F)> + '_, String>
     where
         I: ParallelIterator<Item = NodeT> + 'a,
@@ -296,8 +300,20 @@ where
         let keep_unreacheable_nodes = keep_unreacheable_nodes.unwrap_or(false);
         let minimum_similarity = minimum_similarity.unwrap_or(F::zero());
         let resnik_scores = self.get_similarities_from_node_id(node_id, minimum_similarity)?;
+        let remove_selfloops = remove_selfloops.unwrap_or(true);
+        let remove_lower_triangular_matrix = remove_lower_triangular_matrix.unwrap_or(false);
+
         Ok(iterator.filter_map(move |dst| {
             let score = resnik_scores[dst as usize];
+
+            if remove_selfloops && node_id == dst {
+                return None;
+            }
+            
+            if remove_lower_triangular_matrix && node_id > dst {
+                return None;
+            }
+
             if score > minimum_similarity && (keep_unreacheable_nodes || score.is_finite()) {
                 Some((dst, score))
             } else {
@@ -357,9 +373,6 @@ where
                 ProgressBar::hidden()
             };
 
-            let remove_selfloops = remove_selfloops.unwrap_or(true);
-            let remove_lower_triangular_matrix = remove_lower_triangular_matrix.unwrap_or(false);
-
             Ok(first_iterator(&dag, first_attribute)?
                 .progress_with(progress_bar)
                 .flat_map(|src| {
@@ -368,17 +381,11 @@ where
                         second_iterator(&dag, second_attribute),
                         minimum_similarity,
                         None,
+                        remove_selfloops,
+                        remove_lower_triangular_matrix,
                     )
                     .unwrap()
-                    .filter_map(move |(dst, score)| {
-                        if remove_selfloops && src == dst {
-                            return None;
-                        }
-                        if remove_lower_triangular_matrix && src > dst {
-                            return None;
-                        }
-                        Some((vec![src.into(), dst.into()], score))
-                    })
+                    .map(move |(dst, score)| (vec![src.into(), dst.into()], score))
                 })
                 .unzip())
         })
