@@ -94,26 +94,25 @@ where
         dimensions: &'a [usize],
     ) -> impl Iterator<Item = f32> + 'a {
         use crate::FeatureSlice::*;
-        node_features.iter().zip(dimensions.iter().copied()).map(
-            move |(node_feature, dimension)| {
+        node_features
+            .iter()
+            .zip(dimensions.iter().copied())
+            .flat_map(move |(node_feature, dimension)| {
                 let offset = node_id * dimension;
-                (0..dimension)
-                    .map(|position| match node_feature {
-                        F16(feature) => <f16 as AsPrimitive<f32>>::as_(feature[offset + position]),
-                        F32(feature) => <f32 as AsPrimitive<f32>>::as_(feature[offset + position]),
-                        F64(feature) => <f64 as AsPrimitive<f32>>::as_(feature[offset + position]),
-                        U8(feature) => <u8 as AsPrimitive<f32>>::as_(feature[offset + position]),
-                        U16(feature) => <u16 as AsPrimitive<f32>>::as_(feature[offset + position]),
-                        U32(feature) => <u32 as AsPrimitive<f32>>::as_(feature[offset + position]),
-                        U64(feature) => <u64 as AsPrimitive<f32>>::as_(feature[offset + position]),
-                        I8(feature) => <i8 as AsPrimitive<f32>>::as_(feature[offset + position]),
-                        I16(feature) => <i16 as AsPrimitive<f32>>::as_(feature[offset + position]),
-                        I32(feature) => <i32 as AsPrimitive<f32>>::as_(feature[offset + position]),
-                        I64(feature) => <i64 as AsPrimitive<f32>>::as_(feature[offset + position]),
-                    })
-                    .sum::<f32>()
-            },
-        )
+                (0..dimension).map(move |position| match node_feature {
+                    F16(feature) => <f16 as AsPrimitive<f32>>::as_(feature[offset + position]),
+                    F32(feature) => <f32 as AsPrimitive<f32>>::as_(feature[offset + position]),
+                    F64(feature) => <f64 as AsPrimitive<f32>>::as_(feature[offset + position]),
+                    U8(feature) => <u8 as AsPrimitive<f32>>::as_(feature[offset + position]),
+                    U16(feature) => <u16 as AsPrimitive<f32>>::as_(feature[offset + position]),
+                    U32(feature) => <u32 as AsPrimitive<f32>>::as_(feature[offset + position]),
+                    U64(feature) => <u64 as AsPrimitive<f32>>::as_(feature[offset + position]),
+                    I8(feature) => <i8 as AsPrimitive<f32>>::as_(feature[offset + position]),
+                    I16(feature) => <i16 as AsPrimitive<f32>>::as_(feature[offset + position]),
+                    I32(feature) => <i32 as AsPrimitive<f32>>::as_(feature[offset + position]),
+                    I64(feature) => <i64 as AsPrimitive<f32>>::as_(feature[offset + position]),
+                })
+            })
     }
 
     fn dot(
@@ -445,15 +444,15 @@ where
             ));
         }
 
-        let number_of_features = self.iterate_feature(0, node_features, dimensions).count();
+        let number_of_features = dimensions.iter().sum::<usize>();
 
-        if number_of_features == self.weights.len() / self.bias.len() {
+        if number_of_features != self.weights.len() / self.bias.len() {
             return Err(format!(
                 concat!(
                     "This model was not trained on features compatible with ",
                     "the provided features. Specifically, the model was trained ",
                     "on features with dimension `{}`, while the features you have ",
-                    "provided have edge embedding dimension `{}`."
+                    "provided have dimension `{}`."
                 ),
                 self.weights.len() / self.bias.len(),
                 number_of_features
