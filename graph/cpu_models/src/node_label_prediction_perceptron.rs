@@ -22,6 +22,8 @@ pub struct NodeLabelPredictionPerceptron<O> {
     bias: Vec<f32>,
     /// The number of epochs to train the model for.
     number_of_epochs: usize,
+    /// Whether the mo
+    multilabel: bool,
     /// The random state to reproduce the model initialization and training.
     random_state: u64,
 }
@@ -49,6 +51,7 @@ where
             weights: Vec::new(),
             bias: Vec::new(),
             number_of_epochs,
+            multilabel: false,
             random_state: splitmix64(random_state.unwrap_or(42)),
         })
     }
@@ -77,6 +80,11 @@ where
     /// Returns the bias of the model.
     pub fn get_bias(&self) -> Result<Vec<f32>, String> {
         self.must_be_trained().map(|_| self.bias.clone())
+    }
+
+    /// Returns the number of outputs.
+    pub fn get_number_of_outputs(&self) -> Result<usize, String> {
+        self.must_be_trained().map(|_| self.bias.len())
     }
 
     fn iterate_feature<'a>(
@@ -187,6 +195,19 @@ where
             .collect::<Vec<f32>>()
     }
 
+    fn predict_node(
+        &self,
+        node_id: usize,
+        node_features: &[FeatureSlice],
+        dimensions: &[usize],
+    ) -> Vec<f32> {
+        if self.multilabel {
+            self.multi_stable_sigmoid(node_id, node_features, dimensions)
+        } else {
+            self.stable_softmax(node_id, node_features, dimensions)
+        }
+    }
+
     fn validate_features(
         &self,
         graph: &Graph,
@@ -258,7 +279,7 @@ where
         let number_of_features = dimensions.iter().sum::<usize>();
         let number_of_node_labels = graph.get_number_of_node_types()? as usize;
         let number_of_nodes = graph.get_number_of_nodes() as f32;
-        let multilabel = graph.has_multilabel_node_types()?;
+        self.multilabel = graph.has_multilabel_node_types()?;
         let random_state: u64 = splitmix64(self.random_state);
         let verbose: bool = verbose.unwrap_or(true);
 
@@ -312,11 +333,7 @@ where
                             .map(|node_type_ids| (node_id, node_type_ids))
                     })
                     .map(|(node_id, node_type_ids)| {
-                        let mut predictions = if multilabel {
-                            self.multi_stable_sigmoid(node_id, node_features, dimensions)
-                        } else {
-                            self.stable_softmax(node_id, node_features, dimensions)
-                        };
+                        let mut predictions = self.predict_node(node_id, node_features, dimensions);
 
                         // Actually compute the gradient
                         node_type_ids.iter().copied().for_each(|node_type_id| {
@@ -407,46 +424,54 @@ where
         graph: &Graph,
         node_features: &[FeatureSlice],
         dimensions: &[usize],
-        support: Option<&Graph>,
     ) -> Result<(), String> {
-        let support = support.unwrap_or(graph);
-        self.validate_features(support, node_features, dimensions)?;
+        self.validate_features(graph, node_features, dimensions)?;
         self.must_be_trained()?;
 
-        // if predictions.len() != graph.get_number_of_directed_edges() as usize {
-        //     return Err(format!(
-        //         concat!(
-        //             "The provided predictions slice has size `{}` ",
-        //             "but it was expected to have the same ",
-        //             "size of the number of the directed edges in the graph `{}`."
-        //         ),
-        //         predictions.len(),
-        //         graph.get_number_of_directed_edges()
-        //     ));
-        // }
+        let expected_number_of_samples =
+            graph.get_number_of_nodes() as usize * self.bias.len() as usize;
 
-        // if self.weights.len() != edge_embedding_dimension {
-        //     return Err(format!(
-        //         concat!(
-        //             "This model was not trained on features compatible with ",
-        //             "the provided features. Specifically, the model was trained ",
-        //             "on features with edge embedding dimension `{}`, while the features you have ",
-        //             "provided have edge embedding dimension `{}`."
-        //         ),
-        //         self.weights.len(),
-        //         edge_embedding_dimension
-        //     ));
-        // }
+        if predictions.len() != expected_number_of_samples {
+            return Err(format!(
+                concat!(
+                    "The provided predictions slice has size `{}` ",
+                    "but it was expected to have as shape ({}, {}), i.e. ",
+                    "the number of nodes and the number of node types, ",
+                    "for a total of {} samples."
+                ),
+                predictions.len(),
+                graph.get_number_of_nodes(),
+                self.bias.len(),
+                expected_number_of_samples
+            ));
+        }
 
-        // predictions
-        //     .par_iter_mut()
-        //     .zip(graph.par_iter_directed_edge_node_ids())
-        //     .for_each(|(prediction, (_, src, dst))| {
-        //         *prediction = unsafe {
-        //             self.get_unsafe_prediction(src, dst, support, node_features, dimensions)
-        //                 .1
-        //         };
-        //     });
+        let number_of_features = self.iterate_feature(0, node_features, dimensions).count();
+
+        if number_of_features == self.weights.len() / self.bias.len() {
+            return Err(format!(
+                concat!(
+                    "This model was not trained on features compatible with ",
+                    "the provided features. Specifically, the model was trained ",
+                    "on features with dimension `{}`, while the features you have ",
+                    "provided have edge embedding dimension `{}`."
+                ),
+                self.weights.len() / self.bias.len(),
+                number_of_features
+            ));
+        }
+
+        predictions
+            .par_chunks_mut(self.bias.len())
+            .enumerate()
+            .for_each(|(node_id, node_predictions)| {
+                self.predict_node(node_id, node_features, dimensions)
+                    .into_iter()
+                    .zip(node_predictions.iter_mut())
+                    .for_each(|(pred, target)| {
+                        *target = pred;
+                    });
+            });
 
         Ok(())
     }

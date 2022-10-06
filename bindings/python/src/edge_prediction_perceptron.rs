@@ -1,7 +1,6 @@
 use super::*;
-use cpu_models::{Adam, FeatureSlice};
-use half::f16;
-use numpy::PyArray2;
+use crate::utilities::normalize_features;
+use cpu_models::Adam;
 use std::convert::TryInto;
 
 type InnerModel = cpu_models::EdgePredictionPerceptron<Adam<f32, f32>, Adam<f32, Vec<f32>>>;
@@ -14,18 +13,6 @@ type InnerModel = cpu_models::EdgePredictionPerceptron<Adam<f32, f32>, Adam<f32,
 )]
 pub struct EdgePredictionPerceptron {
     pub inner: InnerModel,
-}
-
-impl From<InnerModel> for EdgePredictionPerceptron {
-    fn from(val: InnerModel) -> EdgePredictionPerceptron {
-        EdgePredictionPerceptron { inner: val }
-    }
-}
-
-impl From<EdgePredictionPerceptron> for InnerModel {
-    fn from(val: EdgePredictionPerceptron) -> InnerModel {
-        val.inner
-    }
 }
 
 #[pymethods]
@@ -135,46 +122,6 @@ impl EdgePredictionPerceptron {
             ))?,
         })
     }
-}
-
-macro_rules! impl_edge_prediction_embedding {
-    ($($dtype:ty : $enum_dtype:ident),*) => {
-        fn normalize_features<'a>(
-            gil: &'a GILGuard,
-            node_features: &'a [Py<PyAny>],
-        ) -> PyResult<(Vec<NumpyArray<'a>>, Vec<usize>, Vec<FeatureSlice<'a>>)> {
-            let mut numpy_references: Vec<NumpyArray> = Vec::new();
-            let mut dimensions: Vec<usize> = Vec::new();
-            let mut slices: Vec<FeatureSlice> = Vec::new();
-
-            for node_feature in node_features.iter() {
-                let node_feature = node_feature.as_ref(gil.python());
-                $(
-                    if let Ok(node_feature) = <&PyArray2<$dtype>>::extract(&node_feature) {
-                        if !node_feature.is_c_contiguous(){
-                            return pe!(Err(
-                                concat!(
-                                    "The provided vector is not a contiguos vector in ",
-                                    "C orientation."
-                                )
-                            ));
-                        }
-
-                        dimensions.push(node_feature.shape()[1]);
-                        slices.push(FeatureSlice::$enum_dtype(unsafe{node_feature.as_slice()?}));
-                        numpy_references.push(NumpyArray::$enum_dtype(node_feature));
-
-                        continue;
-                    }
-                )*
-                return pe!(Err(concat!(
-                    "The provided node features are not supported ",
-                    "in the edge prediction perceptron!!"
-                ).to_string()));
-            }
-            Ok((numpy_references, dimensions, slices))
-        }
-    };
 }
 
 #[pymethods]
@@ -328,18 +275,4 @@ impl EdgePredictionPerceptron {
     fn dumps(&self) -> PyResult<String> {
         pe!(self.inner.dumps())
     }
-}
-
-impl_edge_prediction_embedding! {
-    u8 : U8,
-    u16 : U16,
-    u32 : U32,
-    u64 : U64,
-    i8 : I8,
-    i16 : I16,
-    i32 : I32,
-    i64 : I64,
-    f16 : F16,
-    f32 : F32,
-    f64 : F64
 }
