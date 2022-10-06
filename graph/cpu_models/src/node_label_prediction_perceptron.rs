@@ -71,7 +71,7 @@ where
     pub fn get_weights(&self) -> Result<Vec<Vec<f32>>, String> {
         self.must_be_trained().map(|_| {
             self.weights
-                .chunks(self.bias.len())
+                .chunks(self.weights.len() / self.bias.len())
                 .map(|weights| weights.to_vec())
                 .collect::<Vec<Vec<f32>>>()
         })
@@ -370,15 +370,14 @@ where
                         )| {
                             total_weights_gradient
                                 .iter_mut()
-                                .zip(partial_weights_gradient.into_iter())
-                                .for_each(|(total_weight_gradient, partial_weight_gradient)| {
-                                    *total_weight_gradient += partial_weight_gradient;
-                                });
-                            total_bias_gradient
-                                .iter_mut()
-                                .zip(partial_bias_gradient.into_iter())
-                                .for_each(|(total_bias_gradient, partial_bias_gradient)| {
-                                    *total_bias_gradient += partial_bias_gradient;
+                                .chain(total_bias_gradient.iter_mut())
+                                .zip(
+                                    partial_weights_gradient
+                                        .into_iter()
+                                        .chain(partial_bias_gradient.into_iter()),
+                                )
+                                .for_each(|(total, partial)| {
+                                    *total += partial;
                                 });
                             (total_weights_gradient, total_bias_gradient)
                         },
