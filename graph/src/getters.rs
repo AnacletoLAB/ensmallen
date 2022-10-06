@@ -760,12 +760,12 @@ impl Graph {
     /// println!("The graph node types are {:?}", graph_with_node_types.get_node_type_ids());
     /// ```
     ///
-    pub fn get_node_type_ids(&self) -> Result<Vec<Option<Vec<NodeTypeT>>>> {
+    pub fn get_node_type_ids(&self) -> Result<&[Option<Vec<NodeTypeT>>]> {
         self.must_have_node_types().map(|_| {
             self.node_types
                 .as_ref()
                 .as_ref()
-                .map(|nts| nts.ids.clone())
+                .map(|nts| nts.ids.as_slice())
                 .unwrap()
         })
     }
