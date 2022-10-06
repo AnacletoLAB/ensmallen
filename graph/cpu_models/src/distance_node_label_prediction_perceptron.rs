@@ -148,7 +148,7 @@ where
                     number_of_nodes_in_class as u64,
                     self.number_of_centroids_per_class as u64,
                     splitmix64(
-                        self.get_random_state() + self.get_random_state() * node_type_id as u64,
+                        self.get_random_state().wrapping_add(self.get_random_state().wrapping_mul(node_type_id as u64)),
                     ),
                 )?;
 
