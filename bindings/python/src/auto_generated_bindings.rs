@@ -7263,7 +7263,6 @@ impl Graph {
     /// Return the node types of the graph nodes.
     pub fn get_node_type_ids(&self) -> PyResult<Vec<Option<Py<PyArray1<NodeTypeT>>>>> {
         Ok(pe!(self.inner.get_node_type_ids())?
-            .into()
             .into_iter()
             .cloned()
             .map(|x| {
