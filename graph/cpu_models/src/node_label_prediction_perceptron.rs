@@ -86,9 +86,8 @@ where
         dimensions: &'a [usize],
     ) -> impl Iterator<Item = f32> + 'a {
         use crate::FeatureSlice::*;
-        node_features
-            .zip(dimensions.iter().copied())
-            .map(move |(node_feature, dimension)| {
+        node_features.iter().zip(dimensions.iter().copied()).map(
+            move |(node_feature, dimension)| {
                 let offset = node_id * dimension;
                 (0..dimension)
                     .map(|position| match node_feature {
@@ -105,7 +104,8 @@ where
                         I64(feature) => <i64 as AsPrimitive<f32>>::as_(feature[offset + position]),
                     })
                     .sum::<f32>()
-            })
+            },
+        )
     }
 
     fn dot(
@@ -155,7 +155,8 @@ where
                 *activation = (*activation - maximum_activation).exp();
                 *activation
             })
-            .sum::<f32>() + f32::epsilon();
+            .sum::<f32>()
+            + f32::EPSILON;
 
         // Normalize predictions
         activations.iter_mut().for_each(|activation| {
@@ -329,7 +330,7 @@ where
                                 .copied()
                                 .flat_map(|prediction| {
                                     self.iterate_feature(node_id, node_features, dimensions)
-                                        .map(|feature| feature * weight)
+                                        .map(move |feature| feature * prediction)
                                 })
                                 .collect::<Vec<f32>>(),
                             predictions,
