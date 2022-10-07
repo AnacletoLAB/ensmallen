@@ -12,6 +12,9 @@ use parse::*;
 mod dtype;
 pub use dtype::*;
 
+mod to_numpy;
+pub use to_numpy::*;
+
 const ARRAY_ALIGN: usize = 64;
 
 /// Utility type to store the mmap the Python heap so that we can ensure proper drop
@@ -115,7 +118,7 @@ pub fn create_memory_mapped_numpy_array(
             dtype as i32,
             core::ptr::null_mut(),
             data as *mut _,
-            4,
+            0,
             flags,
             core::ptr::null_mut(),
         );
@@ -212,7 +215,7 @@ pub fn load_memory_mapped_numpy_array(
             dtype as i32,
             core::ptr::null_mut(),
             data as *mut _,
-            4,
+            0,
             flags,
             core::ptr::null_mut(),
         );

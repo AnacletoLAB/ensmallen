@@ -1,7 +1,8 @@
 use numpy::npyffi::NPY_TYPES;
 use std::convert::TryFrom;
+use half::f16;
 
-#[derive(Clone, Copy, Debug)]
+#[derive(Clone, Copy, Debug, Eq, PartialEq)]
 pub enum Dtype {
     Bool,
     I8,
@@ -83,4 +84,32 @@ impl Into<NPY_TYPES> for Dtype {
             Dtype::F64 => NPY_DOUBLE,
         }
     }
+}
+
+
+pub trait ToNumpyDtype {
+    const NUMPY_DTYPE: Dtype;
+}
+
+macro_rules! impl_to_numpy_dtype {
+    ($($t:ty => $d:ident),*) => {$(
+impl ToNumpyDtype for $t {
+    const NUMPY_DTYPE: Dtype = Dtype::$d;
+}
+    )*};
+}
+
+impl_to_numpy_dtype!{
+    bool => Bool,
+    u8 => U8,
+    i8 => I8,
+    u16 => U16,
+    i16 => I16,
+    u32 => U32,
+    i32 => I32,
+    u64 => U64,
+    i64 => I64,
+    f16 => F16,
+    f32 => F32,
+    f64 => F64
 }
