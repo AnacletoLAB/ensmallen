@@ -1,5 +1,5 @@
 #![feature(adt_const_params)]
-use numpy::{PyArray, PyArray1, PyArray2};
+use numpy::{PyArray, PyArray1, PyArray2, PyArray3};
 use pyo3::exceptions::{PyAttributeError, PyTypeError, PyValueError};
 use pyo3::prelude::*;
 use pyo3::types::PyDict;
