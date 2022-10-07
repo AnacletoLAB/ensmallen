@@ -129,6 +129,39 @@ impl DistanceNodeLabelPredictionPerceptron {
     ///     The graph whose node labels are to be predicted.
     /// node_features: List[np.ndarray]
     ///     A node features numpy array.
+    fn compute_similarities(
+        &self,
+        graph: &Graph,
+        node_features: Vec<Py<PyAny>>,
+    ) -> PyResult<Py<PyArray2<f32>>> {
+        let gil = pyo3::Python::acquire_gil();
+        let (_numpy_references, dimensions, slices) =
+            normalize_features(&gil, node_features.as_slice())?;
+
+        let (similarities, dimension) = pe!(self.inner.compute_similarities(
+            &graph.inner,
+            slices.as_slice(),
+            dimensions.as_slice(),
+            None
+        ))?;
+
+        let vector = similarities
+            .chunks(dimension)
+            .map(|chunk| chunk.to_vec())
+            .collect::<Vec<Vec<f32>>>();
+
+        Ok(to_ndarray_2d!(gil, vector, f32))
+    }
+
+    #[pyo3(text_signature = "($self, graph, node_features)")]
+    /// Return numpy array with node label predictions for provided graph.
+    ///
+    /// Parameters
+    /// ----------------
+    /// graph: Graph
+    ///     The graph whose node labels are to be predicted.
+    /// node_features: List[np.ndarray]
+    ///     A node features numpy array.
     fn predict(&self, graph: &Graph, node_features: Vec<Py<PyAny>>) -> PyResult<Py<PyArray2<f32>>> {
         let gil = pyo3::Python::acquire_gil();
         let predictions = unsafe {

@@ -86,7 +86,7 @@ where
         self.perceptron.get_random_state()
     }
 
-    fn compute_similarities(
+    pub fn compute_similarities(
         &self,
         graph: &Graph,
         node_features: &[FeatureSlice],
@@ -225,7 +225,7 @@ where
                                     .0;
                                 (centroid_number, similarity)
                             })
-                            .max_by(|(_, a), (_, y)| a.partial_cmp(y).unwrap())
+                            .max_by(|(_, a), (_, b)| a.partial_cmp(b).unwrap())
                             .unwrap()
                             .0;
 
