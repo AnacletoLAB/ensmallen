@@ -99,18 +99,18 @@ where
         let total_dimensions = dimensions.iter().sum::<usize>();
         let mut node_distances =
             vec![0.0; graph.get_number_of_nodes() as usize * features_per_node];
-        graph
-            .par_iter_node_ids()
-            .zip(node_distances.par_chunks_mut(features_per_node))
-            .for_each(|(node_id, node_distances)| {
+        node_distances
+            .par_chunks_mut(features_per_node)
+            .enumerate()
+            .for_each(|(node_id, distances)| {
                 self.centroids
                     .chunks(total_dimensions)
-                    .zip(node_distances.iter_mut())
-                    .for_each(move |(centroid, node_distance)| unsafe {
-                        *node_distance = cosine_similarity_sequential_unchecked_from_iter(
+                    .zip(distances.iter_mut())
+                    .for_each(move |(centroid, distance)| unsafe {
+                        *distance = cosine_similarity_sequential_unchecked_from_iter(
                             centroid.iter().copied(),
                             NodeLabelPredictionPerceptron::<O>::iterate_feature(
-                                node_id as usize,
+                                node_id,
                                 node_features,
                                 dimensions,
                             ),

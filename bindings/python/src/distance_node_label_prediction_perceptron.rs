@@ -60,8 +60,8 @@ impl DistanceNodeLabelPredictionPerceptron {
                     extract_value_rust_result!(kwargs, "first_order_decay_factor", f32),
                     extract_value_rust_result!(kwargs, "second_order_decay_factor", f32),
                 ),
-                extract_value_rust_result!(kwargs, "number_of_centroids_per_class", usize),
                 extract_value_rust_result!(kwargs, "number_of_epochs", usize),
+                extract_value_rust_result!(kwargs, "number_of_centroids_per_class", usize),
                 extract_value_rust_result!(kwargs, "random_state", u64),
             ))?,
         })
