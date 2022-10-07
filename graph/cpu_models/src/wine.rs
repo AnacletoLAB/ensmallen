@@ -67,7 +67,7 @@ where
         graph: &Graph,
         bucket: Vec<NodeT>,
         features: &mut [Feature],
-        _feature_number: usize
+        _feature_number: usize,
     ) where
         Feature: IntegerFeatureType,
     {
@@ -84,15 +84,14 @@ where
         });
 
         if self.get_window_size() == 1 {
-            bucket.into_par_iter()
-                .for_each(|node_id| {
-                    graph
-                        .iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
-                        .for_each(|neighbour_node_id| {
-                            shared_features[neighbour_node_id as usize]
-                                .fetch_saturating_add(Feature::ONE, Ordering::Relaxed);
-                        });
-                });
+            bucket.into_par_iter().for_each(|node_id| {
+                graph
+                    .iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
+                    .for_each(|neighbour_node_id| {
+                        shared_features[neighbour_node_id as usize]
+                            .fetch_saturating_add(Feature::ONE, Ordering::Relaxed);
+                    });
+            });
         } else if self.get_window_size() == 2 {
             let frontier = Frontier::default();
 
@@ -142,7 +141,7 @@ where
                     shared_first_counter[*node_id as usize].store(Feature::ONE, Ordering::Relaxed);
                 });
             }
-            
+
             // Until the bucket is not empty we start to iterate.
             let mut primary_frontier: Frontier<NodeT> = bucket.into();
             let mut temporary_frontier = Frontier::default();
@@ -154,10 +153,9 @@ where
 
                 let shared_first_counter = Feature::from_mut_slice(&mut first_counter);
                 let shared_second_counter = Feature::from_mut_slice(&mut second_counter);
-                
+
                 primary_frontier.par_iter().for_each(|&node_id| {
-                    let count = shared_first_counter[node_id as usize]
-                        .load(Ordering::Relaxed);
+                    let count = shared_first_counter[node_id as usize].load(Ordering::Relaxed);
                     graph
                         .iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
                         .for_each(|neighbour_node_id| {

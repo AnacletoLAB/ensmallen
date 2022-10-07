@@ -1,6 +1,6 @@
 use crate::*;
 use express_measures::ThreadFloat;
-use graph::{WalksParameters, NodeT};
+use graph::{NodeT, WalksParameters};
 use indicatif::{ProgressBar, ProgressStyle};
 use num_traits::AsPrimitive;
 
@@ -95,7 +95,8 @@ where
         let learning_rate_decay =
             must_not_be_zero(learning_rate_decay, 0.9, "learning rate decay")?;
         let alpha = must_not_be_zero(alpha, 0.75, "GloVe alpha")?;
-        let maximum_cooccurrence_count_threshold = must_not_be_zero(maximum_cooccurrence_count_threshold, 100, "GloVe threshold")?;
+        let maximum_cooccurrence_count_threshold =
+            must_not_be_zero(maximum_cooccurrence_count_threshold, 100, "GloVe threshold")?;
         let walk_parameters = walk_parameters.unwrap_or_else(|| WalksParameters::default());
         let stochastic_downsample_by_degree = stochastic_downsample_by_degree.unwrap_or(false);
         let normalize_learning_rate_by_degree = normalize_learning_rate_by_degree.unwrap_or(false);
@@ -134,13 +135,17 @@ where
         // in the training epochs.
         if self.verbose {
             let pb = ProgressBar::new(self.epochs as u64);
-            pb.set_style(ProgressStyle::default_bar().template(&format!(
-                concat!(
-                    "{} {{msg}} {{spinner:.green}} [{{elapsed_precise}}] ",
-                    "[{{bar:40.cyan/blue}}] ({{pos}}/{{len}}, ETA {{eta}})"
-                ),
-                self.get_model_name()
-            )).unwrap());
+            pb.set_style(
+                ProgressStyle::default_bar()
+                    .template(&format!(
+                        concat!(
+                            "{} {{msg}} {{spinner:.green}} [{{elapsed_precise}}] ",
+                            "[{{bar:40.cyan/blue}}] ({{pos}}/{{len}}, ETA {{eta}})"
+                        ),
+                        self.get_model_name()
+                    ))
+                    .unwrap(),
+            );
             pb
         } else {
             ProgressBar::hidden()
@@ -186,7 +191,7 @@ where
     ) -> Result<(), String>
     where
         NodeT: AsPrimitive<F>,
-        f32: AsPrimitive<F>
+        f32: AsPrimitive<F>,
     {
         match self.model_type {
             Node2VecModels::CBOW => self.fit_transform_cbow(graph, embedding),

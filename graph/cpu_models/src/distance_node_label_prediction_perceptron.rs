@@ -57,6 +57,20 @@ where
         self.perceptron.get_weights()
     }
 
+    /// Returns the weights of the model.
+    pub fn get_centroids(&self) -> Result<Vec<Vec<Vec<f32>>>, String> {
+        Ok(self
+            .centroids
+            .chunks(self.centroids.len() / self.get_number_of_outputs()?)
+            .map(|class_centroids| {
+                class_centroids
+                    .chunks(class_centroids.len() / self.number_of_centroids_per_class)
+                    .map(|centroid| centroid.to_vec())
+                    .collect::<Vec<Vec<f32>>>()
+            })
+            .collect::<Vec<Vec<Vec<f32>>>>())
+    }
+
     /// Returns the bias of the model.
     pub fn get_bias(&self) -> Result<Vec<f32>, String> {
         self.perceptron.get_bias()
@@ -71,7 +85,7 @@ where
     pub fn get_random_state(&self) -> u64 {
         self.perceptron.get_random_state()
     }
-    
+
     fn compute_similarities(
         &self,
         graph: &Graph,
@@ -80,9 +94,11 @@ where
         verbose: Option<bool>,
     ) -> Result<(Vec<f32>, usize), String> {
         // Then we compute the distances of each node to all centroids.
-        let features_per_node = self.number_of_centroids_per_class as usize * graph.get_number_of_node_types()? as usize;
+        let features_per_node = self.number_of_centroids_per_class as usize
+            * graph.get_number_of_node_types()? as usize;
         let total_dimensions = dimensions.iter().sum::<usize>();
-        let mut node_distances = vec![0.0; graph.get_number_of_nodes() as usize * features_per_node];
+        let mut node_distances =
+            vec![0.0; graph.get_number_of_nodes() as usize * features_per_node];
         graph
             .par_iter_node_ids()
             .zip(node_distances.par_chunks_mut(features_per_node))
@@ -102,7 +118,7 @@ where
                         .0;
                     });
             });
-        
+
         Ok((node_distances, features_per_node))
     }
 
@@ -132,6 +148,7 @@ where
                 * self.number_of_centroids_per_class
                 * graph.get_number_of_node_types()? as usize
         ];
+
         graph
             .par_iter_unique_node_type_ids()?
             .zip(centroids.par_chunks_mut(total_dimensions * self.number_of_centroids_per_class))
@@ -143,14 +160,15 @@ where
 
                 // We get the k unique indices, and we proceed to retrieve the curresponding
                 // k node IDs from where we will be growing these clusters.
-                let indices = sorted_unique_sub_sampling(
-                    0,
-                    number_of_nodes_in_class as u64,
-                    self.number_of_centroids_per_class as u64,
-                    splitmix64(
-                        self.get_random_state().wrapping_add(self.get_random_state().wrapping_mul(node_type_id as u64)),
-                    ),
-                )?;
+                let indices =
+                    sorted_unique_sub_sampling(
+                        0,
+                        number_of_nodes_in_class as u64,
+                        self.number_of_centroids_per_class as u64,
+                        splitmix64(self.get_random_state().wrapping_add(
+                            self.get_random_state().wrapping_mul(node_type_id as u64),
+                        )),
+                    )?;
 
                 // We retrieve the node IDs curresponding to the indices
                 let node_ids = graph
@@ -170,11 +188,15 @@ where
                     .chunks_mut(total_dimensions)
                     .zip(node_ids.into_iter())
                     .for_each(|(node_type_centroid, node_id)| {
-                        NodeLabelPredictionPerceptron::<O>::iterate_feature(node_id as usize, node_features, dimensions)
-                            .zip(node_type_centroid.iter_mut())
-                            .for_each(|(feature, target)| {
-                                *target = feature;
-                            });
+                        NodeLabelPredictionPerceptron::<O>::iterate_feature(
+                            node_id as usize,
+                            node_features,
+                            dimensions,
+                        )
+                        .zip(node_type_centroid.iter_mut())
+                        .for_each(|(feature, target)| {
+                            *target = feature;
+                        });
                     });
 
                 // We initialize the size of the clusters
@@ -234,13 +256,14 @@ where
         // and we can assign them to the model.
         self.centroids = centroids;
 
-        let (node_distances, features_per_node) = self.compute_similarities(graph, node_features, dimensions, verbose)?;
+        let (node_distances, features_per_node) =
+            self.compute_similarities(graph, node_features, dimensions, verbose)?;
 
         self.perceptron.fit(
             graph,
             vec![FeatureSlice::F32(&node_distances)].as_slice(),
             vec![features_per_node].as_slice(),
-            verbose
+            verbose,
         )?;
 
         Ok(())
@@ -265,7 +288,8 @@ where
             .validate_features(graph, node_features, dimensions)?;
         self.perceptron.must_be_trained()?;
 
-        let (node_distances, features_per_node) = self.compute_similarities(graph, node_features, dimensions, None)?;
+        let (node_distances, features_per_node) =
+            self.compute_similarities(graph, node_features, dimensions, None)?;
 
         self.perceptron.predict(
             predictions,

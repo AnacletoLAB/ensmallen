@@ -53,7 +53,7 @@ impl GraphEmbedder for Unstructured {
     ) -> Result<(), String>
     where
         NodeT: AsPrimitive<F>,
-        f32: AsPrimitive<F>
+        f32: AsPrimitive<F>,
     {
         let embedding_size = self.model.get_embedding_size();
         let scale_factor = (embedding_size as f32).sqrt();

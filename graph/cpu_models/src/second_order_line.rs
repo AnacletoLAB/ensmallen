@@ -117,7 +117,7 @@ impl GraphEmbedder for SecondOrderLINE {
                         variation * get_node_prior(graph, src as NodeT, learning_rate);
                     let dst_variation =
                         variation * get_node_prior(graph, dst as NodeT, learning_rate);
-                    
+
                     src_embedding
                         .iter_mut()
                         .zip(dst_embedding.iter_mut())

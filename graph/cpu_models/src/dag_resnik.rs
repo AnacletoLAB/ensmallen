@@ -309,7 +309,7 @@ where
             if remove_selfloops && node_id == dst {
                 return None;
             }
-            
+
             if remove_lower_triangular_matrix && node_id > dst {
                 return None;
             }

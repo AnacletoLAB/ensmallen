@@ -1,6 +1,6 @@
 use crate::*;
 use express_measures::ThreadFloat;
-use graph::{NodeT, EdgeT};
+use graph::{EdgeT, NodeT};
 use indicatif::ProgressIterator;
 use indicatif::{ProgressBar, ProgressStyle};
 use num_traits::AsPrimitive;
@@ -66,13 +66,17 @@ impl GraphEmbedder for Walklets {
         node2vec.window_size = 1;
         let loading_bar = if self.is_verbose() {
             let pb = ProgressBar::new(self.get_window_size() as u64);
-            pb.set_style(ProgressStyle::default_bar().template(&format!(
-                concat!(
-                    "{}{{msg}} {{spinner:.green}} [{{elapsed_precise}}] ",
-                    "[{{bar:40.cyan/blue}}] ({{pos}}/{{len}}, ETA {{eta}})"
-                ),
-                self.get_model_name()
-            )).unwrap());
+            pb.set_style(
+                ProgressStyle::default_bar()
+                    .template(&format!(
+                        concat!(
+                            "{}{{msg}} {{spinner:.green}} [{{elapsed_precise}}] ",
+                            "[{{bar:40.cyan/blue}}] ({{pos}}/{{len}}, ETA {{eta}})"
+                        ),
+                        self.get_model_name()
+                    ))
+                    .unwrap(),
+            );
             pb
         } else {
             ProgressBar::hidden()

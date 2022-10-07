@@ -5,8 +5,8 @@ use express_measures::{
 };
 use graph::{Graph, NodeT, ThreadDataRaceAware};
 use indicatif::ProgressIterator;
-use rayon::prelude::*;
 use num_traits::AsPrimitive;
+use rayon::prelude::*;
 use vec_rand::{sample_uniform, splitmix64};
 
 impl<W> Node2Vec<W>
@@ -51,10 +51,11 @@ where
                                        label: F,
                                        learning_rate: F| {
             let node_hidden = unsafe {
-                &mut (*shared_embedding.get())[1]
-                    [(contextual_node_id as usize * self.embedding_size)..((contextual_node_id as usize + 1) * self.embedding_size)]
+                &mut (*shared_embedding.get())[1][(contextual_node_id as usize
+                    * self.embedding_size)
+                    ..((contextual_node_id as usize + 1) * self.embedding_size)]
             };
-            
+
             let dot: F =
                 unsafe { dot_product_sequential_unchecked(node_hidden, central_node_embedding) }
                     / scale_factor;
@@ -126,9 +127,10 @@ where
                         .for_each(|(context, central_node_id, central_index)| {
                             let mut cumulative_central_node_gradient =
                                 vec![F::zero(); self.get_embedding_size()];
-                            let central_node_embedding = unsafe{
-                                &mut (*shared_embedding.get())[0]
-                                [central_node_id as usize * self.embedding_size..(central_node_id as usize + 1) * self.embedding_size]
+                            let central_node_embedding = unsafe {
+                                &mut (*shared_embedding.get())[0][central_node_id as usize
+                                    * self.embedding_size
+                                    ..(central_node_id as usize + 1) * self.embedding_size]
                             };
 
                             // We now compute the gradient relative to the positive
@@ -145,7 +147,7 @@ where
                                         learning_rate,
                                     );
                                 });
-                        
+
                             // We compute the gradients relative to the negative classes.
                             if self.use_scale_free_distribution {
                                 graph
@@ -170,13 +172,14 @@ where
                                         )
                                     });
                             } else {
-                                graph.iter_random_node_ids(
+                                graph
+                                    .iter_random_node_ids(
                                         self.number_of_negative_samples,
                                         splitmix64(
                                             random_state
                                                 + central_index as u64
                                                 + walk_number as u64,
-                                        )
+                                        ),
                                     )
                                     .filter(|&non_central_node_id| {
                                         non_central_node_id != central_node_id
@@ -192,10 +195,12 @@ where
                                     });
                             };
                             // apply the accumulated gradient to the central node
-                            unsafe{element_wise_addition_inplace(
-                                central_node_embedding,
-                                cumulative_central_node_gradient.as_slice(),
-                            )}
+                            unsafe {
+                                element_wise_addition_inplace(
+                                    central_node_embedding,
+                                    cumulative_central_node_gradient.as_slice(),
+                                )
+                            }
                         });
                 });
             learning_rate *= self.learning_rate_decay.as_()

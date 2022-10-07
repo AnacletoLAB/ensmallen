@@ -1,7 +1,7 @@
 use crate::*;
 use core::sync::atomic::Ordering;
 use graph::{Graph, NodeT};
-use num_traits::{Atomic, AsPrimitive};
+use num_traits::{AsPrimitive, Atomic};
 use rayon::prelude::*;
 use vec_rand::splitmix64;
 
@@ -58,7 +58,7 @@ impl LandmarkBasedFeature<{ LandmarkFeatureType::Random }> for RUBICONE {
         feature_number: usize,
     ) where
         Feature: IntegerFeatureType,
-        u64: AsPrimitive<Feature>
+        u64: AsPrimitive<Feature>,
     {
         let random_state = splitmix64(self.get_random_state())
             .wrapping_mul(self.get_random_state().wrapping_add(feature_number as u64));
@@ -72,14 +72,15 @@ impl LandmarkBasedFeature<{ LandmarkFeatureType::Random }> for RUBICONE {
             .enumerate()
             .for_each(|(i, distance)| {
                 *distance = (splitmix64(
-                        (random_state.wrapping_add(i as u64)).wrapping_mul(random_state + i as u64),
-                    ) % maximum_value).as_()
+                    (random_state.wrapping_add(i as u64)).wrapping_mul(random_state + i as u64),
+                ) % maximum_value)
+                    .as_()
             });
 
         // We wrap the features object in an unsafe cell so
         // it may be shared among threads.
         let shared_features = Feature::from_mut_slice(features);
-        
+
         let number_of_bits = (maximum_value as f32).log2().ceil() as usize;
 
         (0..self.get_number_of_convolutions()).for_each(|_| {

@@ -168,9 +168,7 @@ impl GraphEmbedder for StructuredEmbedding {
 
                     // If the delta is lower than zero, there is no need to continue
                     // further, as the gradient will be zero.
-                    if not_src_sub_dst_norm - src_sub_dst_norm
-                        > self.model.relu_bias.as_()
-                    {
+                    if not_src_sub_dst_norm - src_sub_dst_norm > self.model.relu_bias.as_() {
                         return;
                     }
 

@@ -107,6 +107,13 @@ impl DistanceNodeLabelPredictionPerceptron {
     }
 
     #[pyo3(text_signature = "($self)")]
+    /// Returns the centroids of the model.
+    fn get_centroids(&self) -> PyResult<Py<PyArray3<f32>>> {
+        let gil = pyo3::Python::acquire_gil();
+        Ok(to_ndarray_3d!(gil, pe!(self.inner.get_centroids())?, f32))
+    }
+
+    #[pyo3(text_signature = "($self)")]
     /// Returns the bias of the model.
     fn get_bias(&self) -> PyResult<Py<PyArray1<f32>>> {
         let gil = pyo3::Python::acquire_gil();
