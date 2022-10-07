@@ -64,8 +64,7 @@ where
                 return;
             }
 
-            let exp_dot = dot.exp();
-            let mut variation = (label - exp_dot / (exp_dot + F::one())) * learning_rate;
+            let mut variation = (label - sigmoid(dot)) * learning_rate;
 
             if self.normalize_learning_rate_by_degree {
                 variation *= get_node_prior(graph, contextual_node_id, F::one());

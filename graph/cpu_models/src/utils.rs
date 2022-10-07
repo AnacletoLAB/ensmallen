@@ -206,6 +206,15 @@ pub trait EmbeddingSize {
     fn get_embedding_size(&self, graph: &graph::Graph) -> Result<usize, String>;
 }
 
+pub fn sigmoid<F: Float>(x: F) -> F {
+    if x > F::zero() {
+        F::one() / ((-x).exp() + F::one())
+    } else {
+        let exp = x.exp();
+        exp / (exp + F::one())
+    }
+}
+
 pub trait IntegerFeatureType:
     Send
     + Sync

@@ -2,6 +2,7 @@ use graph::{Graph, NodeT, NodeTypeT};
 use indicatif::{ParallelProgressIterator, ProgressBar, ProgressStyle};
 use num_traits::{AsPrimitive, Float};
 use rayon::prelude::*;
+use parallel_frontier::Frontier;
 use std::{
     collections::HashMap,
     sync::atomic::{AtomicBool, Ordering},
@@ -339,7 +340,7 @@ where
         I2,
         A1: ?Sized,
         A2,
-        N: From<NodeT> + Send,
+        N: From<NodeT> + Send + Sync + Clone,
     >(
         &'a self,
         first_iterator: fn(&'b Graph, &'b A1) -> Result<I1, String>,
@@ -349,10 +350,11 @@ where
         minimum_similarity: Option<F>,
         remove_selfloops: Option<bool>,
         remove_lower_triangular_matrix: Option<bool>,
-    ) -> Result<(Vec<Vec<N>>, Vec<F>), String>
+    ) -> Result<(Vec<N>, Vec<F>), String>
     where
         I1: ParallelIterator<Item = NodeT> + 'a,
         I2: ParallelIterator<Item = NodeT>,
+        N: Clone,
         A2: Sync + ?Sized,
         'a: 'b,
     {
@@ -373,9 +375,12 @@ where
                 ProgressBar::hidden()
             };
 
-            Ok(first_iterator(&dag, first_attribute)?
+            let nodes: Frontier<N> = Frontier::new();
+            let scores: Frontier<F> = Frontier::new();
+
+            first_iterator(&dag, first_attribute)?
                 .progress_with(progress_bar)
-                .flat_map(|src| {
+                .for_each(|src| {
                     self.get_similarities_from_node_id_and_iterator(
                         src,
                         second_iterator(&dag, second_attribute),
@@ -385,9 +390,14 @@ where
                         remove_lower_triangular_matrix,
                     )
                     .unwrap()
-                    .map(move |(dst, score)| (vec![src.into(), dst.into()], score))
-                })
-                .unzip())
+                    .for_each(|(dst, score)| {
+                        nodes.push(src.into());
+                        nodes.push(dst.into());
+                        scores.push(score)
+                    });
+                });
+            
+            Ok((nodes.into(), scores.into()))
         })
     }
 
@@ -397,12 +407,12 @@ where
     /// * `first_node_ids`: &[NodeT] - The first node ids for which to compute the similarity.
     /// * `second_node_ids`: &[NodeT] - The second node ids for which to compute the similarity.
     /// * `minimum_similarity`: Option<F> - Minimum similarity to be kept. Values below this amount are filtered.
-    pub fn get_node_ids_and_similarity_from_node_ids<N: From<NodeT> + Send>(
+    pub fn get_node_ids_and_similarity_from_node_ids<N: From<NodeT> + Send + Sync + Clone>(
         &self,
         first_node_ids: &[NodeT],
         second_node_ids: &[NodeT],
         minimum_similarity: Option<F>,
-    ) -> Result<(Vec<Vec<N>>, Vec<F>), String> {
+    ) -> Result<(Vec<N>, Vec<F>), String> {
         self.must_be_trained().and_then(|(dag, _)| {
             first_node_ids
                 .par_iter()
@@ -430,12 +440,12 @@ where
     /// * `first_node_names`: &[&str] - The first node names for which to compute the similarity.
     /// * `second_node_names`: &[&str] - The second node names for which to compute the similarity.
     /// * `minimum_similarity`: Option<F> - Minimum similarity to be kept. Values below this amount are filtered.
-    pub fn get_node_ids_and_similarity_from_node_names<N: From<NodeT> + Send>(
+    pub fn get_node_ids_and_similarity_from_node_names<N: From<NodeT> + Send + Sync + Clone>(
         &self,
         first_node_names: &[&str],
         second_node_names: &[&str],
         minimum_similarity: Option<F>,
-    ) -> Result<(Vec<Vec<N>>, Vec<F>), String> {
+    ) -> Result<(Vec<N>, Vec<F>), String> {
         self.must_be_trained().and_then(|(dag, _)| {
             first_node_names
                 .par_iter()
@@ -471,12 +481,12 @@ where
     /// * `first_node_prefixes`: &[&str] - The first node prefixes for which to compute the similarity.
     /// * `second_node_prefixes`: &[&str] - The second node prefixes for which to compute the similarity.
     /// * `minimum_similarity`: Option<F> - Minimum similarity to be kept. Values below this amount are filtered.
-    pub fn get_node_ids_and_similarity_from_node_prefixes<N: From<NodeT> + Send>(
+    pub fn get_node_ids_and_similarity_from_node_prefixes<N: From<NodeT> + Send + Sync + Clone>(
         &self,
         first_node_prefixes: &[&str],
         second_node_prefixes: &[&str],
         minimum_similarity: Option<F>,
-    ) -> Result<(Vec<Vec<N>>, Vec<F>), String> {
+    ) -> Result<(Vec<N>, Vec<F>), String> {
         self.get_node_ids_and_similarity_from_iterators(
             |graph, prefixes| Ok(graph.par_iter_node_ids_from_node_curie_prefixes(&prefixes)),
             &first_node_prefixes,
@@ -494,12 +504,12 @@ where
     /// * `first_node_type_ids`: &[Option<NodeTypeT>] - The first node type ids for which to compute the similarity.
     /// * `second_node_type_ids`: &[Option<NodeTypeT>] - The second node type ids for which to compute the similarity.
     /// * `minimum_similarity`: Option<F> - Minimum similarity to be kept. Values below this amount are filtered.
-    pub fn get_node_ids_and_similarity_from_node_type_ids<N: From<NodeT> + Send>(
+    pub fn get_node_ids_and_similarity_from_node_type_ids<N: From<NodeT> + Send + Sync + Clone>(
         &self,
         first_node_type_ids: &[Option<NodeTypeT>],
         second_node_type_ids: &[Option<NodeTypeT>],
         minimum_similarity: Option<F>,
-    ) -> Result<(Vec<Vec<N>>, Vec<F>), String> {
+    ) -> Result<(Vec<N>, Vec<F>), String> {
         self.get_node_ids_and_similarity_from_iterators(
             |graph, node_type_ids| graph.par_iter_node_ids_from_node_type_ids(&node_type_ids),
             &first_node_type_ids,
@@ -521,12 +531,12 @@ where
     /// * `first_node_type_names`: &[Option<&str>] - The first node type names for which to compute the similarity.
     /// * `second_node_type_names`: &[Option<&str>] - The second node type names for which to compute the similarity.
     /// * `minimum_similarity`: Option<F> - Minimum similarity to be kept. Values below this amount are filtered.
-    pub fn get_node_ids_and_similarity_from_node_type_names<N: From<NodeT> + Send>(
+    pub fn get_node_ids_and_similarity_from_node_type_names<N: From<NodeT> + Send + Sync + Clone>(
         &self,
         first_node_type_names: &[Option<&str>],
         second_node_type_names: &[Option<&str>],
         minimum_similarity: Option<F>,
-    ) -> Result<(Vec<Vec<N>>, Vec<F>), String> {
+    ) -> Result<(Vec<N>, Vec<F>), String> {
         self.get_node_ids_and_similarity_from_iterators(
             |graph, node_type_names| graph.par_iter_node_ids_from_node_type_names(&node_type_names),
             &first_node_type_names,
