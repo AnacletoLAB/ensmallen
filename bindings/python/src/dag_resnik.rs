@@ -1,5 +1,6 @@
 use super::*;
-use numpy::{PyArray1, PyArray2};
+use crate::mmap_numpy_npy::to_numpy_array;
+use numpy::PyArray1;
 
 ///
 #[pyclass]
@@ -84,16 +85,21 @@ impl DAGResnik {
         first_node_ids: Vec<NodeT>,
         second_node_ids: Vec<NodeT>,
         minimum_similarity: Option<f32>,
-    ) -> PyResult<(Py<PyArray2<NodeT>>, Py<PyArray1<f32>>)> {
+    ) -> PyResult<(Py<PyAny>, Py<PyArray1<f32>>)> {
         let gil = pyo3::Python::acquire_gil();
-        let (node_ids, similarities): (Vec<Vec<NodeT>>, Vec<f32>) =
+        let (node_ids, similarities): (Vec<NodeT>, Vec<f32>) =
             pe!(self.inner.get_node_ids_and_similarity_from_node_ids(
                 &first_node_ids,
                 &second_node_ids,
                 minimum_similarity
             ))?;
         Ok((
-            to_ndarray_2d!(gil, node_ids, NodeT),
+            pe!(to_numpy_array(
+                gil.python(),
+                node_ids,
+                &[similarities.len(), 2],
+                false
+            ))?,
             to_ndarray_1d!(gil, similarities, f32),
         ))
     }
@@ -114,16 +120,21 @@ impl DAGResnik {
         first_node_names: Vec<&str>,
         second_node_names: Vec<&str>,
         minimum_similarity: Option<f32>,
-    ) -> PyResult<(Py<PyArray2<NodeT>>, Py<PyArray1<f32>>)> {
+    ) -> PyResult<(Py<PyAny>, Py<PyArray1<f32>>)> {
         let gil = pyo3::Python::acquire_gil();
-        let (node_ids, similarities): (Vec<Vec<NodeT>>, Vec<f32>) =
+        let (node_ids, similarities): (Vec<NodeT>, Vec<f32>) =
             pe!(self.inner.get_node_ids_and_similarity_from_node_names(
                 &first_node_names,
                 &second_node_names,
                 minimum_similarity
             ))?;
         Ok((
-            to_ndarray_2d!(gil, node_ids, NodeT),
+            pe!(to_numpy_array(
+                gil.python(),
+                node_ids,
+                &[similarities.len(), 2],
+                false
+            ))?,
             to_ndarray_1d!(gil, similarities, f32),
         ))
     }
@@ -146,16 +157,21 @@ impl DAGResnik {
         first_node_prefixes: Vec<&str>,
         second_node_prefixes: Vec<&str>,
         minimum_similarity: Option<f32>,
-    ) -> PyResult<(Py<PyArray2<NodeT>>, Py<PyArray1<f32>>)> {
+    ) -> PyResult<(Py<PyAny>, Py<PyArray1<f32>>)> {
         let gil = pyo3::Python::acquire_gil();
-        let (node_ids, similarities): (Vec<Vec<NodeT>>, Vec<f32>) =
+        let (node_ids, similarities): (Vec<NodeT>, Vec<f32>) =
             pe!(self.inner.get_node_ids_and_similarity_from_node_prefixes(
                 &first_node_prefixes,
                 &second_node_prefixes,
                 minimum_similarity
             ))?;
         Ok((
-            to_ndarray_2d!(gil, node_ids, NodeT),
+            pe!(to_numpy_array(
+                gil.python(),
+                node_ids,
+                &[similarities.len(), 2],
+                false
+            ))?,
             to_ndarray_1d!(gil, similarities, f32),
         ))
     }
@@ -178,16 +194,21 @@ impl DAGResnik {
         first_node_type_ids: Vec<Option<NodeTypeT>>,
         second_node_type_ids: Vec<Option<NodeTypeT>>,
         minimum_similarity: Option<f32>,
-    ) -> PyResult<(Py<PyArray2<NodeT>>, Py<PyArray1<f32>>)> {
+    ) -> PyResult<(Py<PyAny>, Py<PyArray1<f32>>)> {
         let gil = pyo3::Python::acquire_gil();
-        let (node_ids, similarities): (Vec<Vec<NodeT>>, Vec<f32>) =
+        let (node_ids, similarities): (Vec<NodeT>, Vec<f32>) =
             pe!(self.inner.get_node_ids_and_similarity_from_node_type_ids(
                 &first_node_type_ids,
                 &second_node_type_ids,
                 minimum_similarity
             ))?;
         Ok((
-            to_ndarray_2d!(gil, node_ids, NodeT),
+            pe!(to_numpy_array(
+                gil.python(),
+                node_ids,
+                &[similarities.len(), 2],
+                false
+            ))?,
             to_ndarray_1d!(gil, similarities, f32),
         ))
     }
@@ -210,16 +231,21 @@ impl DAGResnik {
         first_node_type_names: Vec<Option<&str>>,
         second_node_type_names: Vec<Option<&str>>,
         minimum_similarity: Option<f32>,
-    ) -> PyResult<(Py<PyArray2<NodeT>>, Py<PyArray1<f32>>)> {
+    ) -> PyResult<(Py<PyAny>, Py<PyArray1<f32>>)> {
         let gil = pyo3::Python::acquire_gil();
-        let (node_ids, similarities): (Vec<Vec<NodeT>>, Vec<f32>) =
+        let (node_ids, similarities): (Vec<NodeT>, Vec<f32>) =
             pe!(self.inner.get_node_ids_and_similarity_from_node_type_names(
                 &first_node_type_names,
                 &second_node_type_names,
                 minimum_similarity
             ))?;
         Ok((
-            to_ndarray_2d!(gil, node_ids, NodeT),
+            pe!(to_numpy_array(
+                gil.python(),
+                node_ids,
+                &[similarities.len(), 2],
+                false
+            ))?,
             to_ndarray_1d!(gil, similarities, f32),
         ))
     }

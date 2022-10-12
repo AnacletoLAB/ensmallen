@@ -1,6 +1,7 @@
-use graph::{Graph, NodeT, NodeTypeT, ThreadDataRaceAware};
+use graph::{Graph, NodeT, NodeTypeT};
 use indicatif::{ParallelProgressIterator, ProgressBar, ProgressStyle};
-use num_traits::{AsPrimitive, Float, IntoAtomic};
+use num_traits::{AsPrimitive, Float};
+use parallel_frontier::Frontier;
 use rayon::prelude::*;
 use std::{
     collections::HashMap,
@@ -197,16 +198,19 @@ where
     ///
     /// # Arguments
     /// * `node_id`: NodeT - The node for which to compute similarity against all others.
-    pub fn get_similarities_from_node_id(&self, node_id: NodeT) -> Result<Vec<F>, String> {
+    /// * `minimum_similarity`: F - The minimum similarity. Values with similarity les than this amount won't be computed.
+    pub fn get_similarities_from_node_id(
+        &self,
+        node_id: NodeT,
+        minimum_similarity: F,
+    ) -> Result<Vec<F>, String> {
         self.must_be_trained().map(|(dag, transposed_dag)| {
             let mut resnik_scores =
                 vec![F::infinity(); self.get_number_of_nodes().unwrap() as usize];
             resnik_scores[node_id as usize] = self.information_contents[node_id as usize];
-            let shared_resnik_scores = ThreadDataRaceAware::new(&mut resnik_scores);
 
             let mut predecessors = vec![NodeT::MAX; self.get_number_of_nodes().unwrap() as usize];
             predecessors[node_id as usize] = node_id;
-            let shared_predecessors = NodeT::from_mut_slice(&mut predecessors);
             let mut frontier: Vec<NodeT> = vec![node_id];
             let mut downward_frontier: Vec<NodeT> = Vec::new();
 
@@ -215,72 +219,51 @@ where
                 let mut temporary_downward_frontier: Vec<NodeT> = Vec::new();
 
                 frontier.iter().for_each(|&src| {
-                    let current_node_resnik_score =
-                        unsafe { (*shared_resnik_scores.get())[src as usize] };
+                    let current_node_resnik_score = resnik_scores[src as usize];
                     // First we handle the explorations upward, towards to head of the dag.
                     unsafe {
                         transposed_dag.iter_unchecked_neighbour_node_ids_from_source_node_id(src)
                     }
                     .for_each(|dst| {
-                        if shared_predecessors[dst as usize]
-                            .compare_exchange(NodeT::MAX, src, Ordering::SeqCst, Ordering::SeqCst)
-                            .is_ok()
+                        if predecessors[dst as usize] == NodeT::MAX
+                            && self.information_contents[dst as usize] >= minimum_similarity
                         {
+                            predecessors[dst as usize] = src;
                             // add the node to the nodes to explore
                             temporary_frontier.push(dst);
-                            unsafe {
-                                (*shared_resnik_scores.get())[dst as usize] =
-                                    current_node_resnik_score
-                                        .min(self.information_contents[dst as usize]);
-                            }
+                            resnik_scores[dst as usize] = current_node_resnik_score
+                                .min(self.information_contents[dst as usize]);
                         }
                     });
 
                     // Then we handle the downward exploration.
                     unsafe { dag.iter_unchecked_neighbour_node_ids_from_source_node_id(src) }
                         .for_each(|dst| {
-                            if shared_predecessors[dst as usize]
-                                .compare_exchange(
-                                    NodeT::MAX,
-                                    src,
-                                    Ordering::SeqCst,
-                                    Ordering::SeqCst,
-                                )
-                                .is_ok()
+                            if predecessors[dst as usize] == NodeT::MAX
+                                && self.information_contents[dst as usize] >= minimum_similarity
                             {
+                                predecessors[dst as usize] = src;
                                 // add the node to the nodes to explore
                                 temporary_downward_frontier.push(dst);
-                                unsafe {
-                                    (*shared_resnik_scores.get())[dst as usize] =
-                                        current_node_resnik_score
-                                            .min(self.information_contents[dst as usize]);
-                                }
+                                resnik_scores[dst as usize] = current_node_resnik_score
+                                    .min(self.information_contents[dst as usize]);
                             }
                         });
                 });
 
                 downward_frontier.iter().for_each(|&src| {
-                    let current_node_resnik_score =
-                        unsafe { (*shared_resnik_scores.get())[src as usize] };
+                    let current_node_resnik_score = resnik_scores[src as usize];
                     // Then we handle the downward exploration.
                     unsafe { dag.iter_unchecked_neighbour_node_ids_from_source_node_id(src) }
                         .for_each(|dst| {
-                            if shared_predecessors[dst as usize]
-                                .compare_exchange(
-                                    NodeT::MAX,
-                                    src,
-                                    Ordering::SeqCst,
-                                    Ordering::SeqCst,
-                                )
-                                .is_ok()
+                            if predecessors[dst as usize] == NodeT::MAX
+                                && self.information_contents[dst as usize] >= minimum_similarity
                             {
+                                predecessors[dst as usize] = src;
                                 // add the node to the nodes to explore
                                 temporary_downward_frontier.push(dst);
-                                unsafe {
-                                    (*shared_resnik_scores.get())[dst as usize] =
-                                        current_node_resnik_score
-                                            .min(self.information_contents[dst as usize]);
-                                }
+                                resnik_scores[dst as usize] = current_node_resnik_score
+                                    .min(self.information_contents[dst as usize]);
                             }
                         });
                 });
@@ -301,21 +284,37 @@ where
     /// * `iterator`: I - Iterator over the neighbouring nodes of interest.
     /// * `minimum_similarity`: Option<F> - Minimum similarity to be worth considering.
     /// * `keep_unreacheable_nodes`: Option<bool> - Whether to keep unreacheable nodes, by default False.
+    /// * `remove_selfloops`: Option<bool> - Whether to ignore selfloops. By default True.
+    /// * `remove_lower_triangular_matrix`: Option<bool> - Whether to ignore lower triangular matrix, useful when the iterators are symmetric. By default False.
     fn get_similarities_from_node_id_and_iterator<'a, I>(
         &'a self,
         node_id: NodeT,
         iterator: I,
         minimum_similarity: Option<F>,
         keep_unreacheable_nodes: Option<bool>,
+        remove_selfloops: Option<bool>,
+        remove_lower_triangular_matrix: Option<bool>,
     ) -> Result<impl ParallelIterator<Item = (NodeT, F)> + '_, String>
     where
         I: ParallelIterator<Item = NodeT> + 'a,
     {
         let keep_unreacheable_nodes = keep_unreacheable_nodes.unwrap_or(false);
         let minimum_similarity = minimum_similarity.unwrap_or(F::zero());
-        let resnik_scores = self.get_similarities_from_node_id(node_id)?;
+        let resnik_scores = self.get_similarities_from_node_id(node_id, minimum_similarity)?;
+        let remove_selfloops = remove_selfloops.unwrap_or(true);
+        let remove_lower_triangular_matrix = remove_lower_triangular_matrix.unwrap_or(false);
+
         Ok(iterator.filter_map(move |dst| {
             let score = resnik_scores[dst as usize];
+
+            if remove_selfloops && node_id == dst {
+                return None;
+            }
+
+            if remove_lower_triangular_matrix && node_id > dst {
+                return None;
+            }
+
             if score > minimum_similarity && (keep_unreacheable_nodes || score.is_finite()) {
                 Some((dst, score))
             } else {
@@ -334,7 +333,15 @@ where
     /// * `minimum_similarity`: Option<F> - Minimum similarity to be kept. Values below this amount are filtered.
     /// * `remove_selfloops`: Option<bool> - Whether to ignore selfloops. By default True.
     /// * `remove_lower_triangular_matrix`: Option<bool> - Whether to ignore lower triangular matrix, useful when the iterators are symmetric. By default False.
-    fn get_node_ids_and_similarity_from_iterators<'a, 'b, I1, I2, A1: ?Sized, A2, N: From<NodeT> + Send>(
+    fn get_node_ids_and_similarity_from_iterators<
+        'a,
+        'b,
+        I1,
+        I2,
+        A1: ?Sized,
+        A2,
+        N: From<NodeT> + Send + Sync + Clone,
+    >(
         &'a self,
         first_iterator: fn(&'b Graph, &'b A1) -> Result<I1, String>,
         first_attribute: &'b A1,
@@ -342,11 +349,12 @@ where
         second_attribute: &'a A2,
         minimum_similarity: Option<F>,
         remove_selfloops: Option<bool>,
-        remove_lower_triangular_matrix: Option<bool>
-    ) -> Result<(Vec<Vec<N>>, Vec<F>), String>
+        remove_lower_triangular_matrix: Option<bool>,
+    ) -> Result<(Vec<N>, Vec<F>), String>
     where
         I1: ParallelIterator<Item = NodeT> + 'a,
         I2: ParallelIterator<Item = NodeT>,
+        N: Clone,
         A2: Sync + ?Sized,
         'a: 'b,
     {
@@ -367,30 +375,29 @@ where
                 ProgressBar::hidden()
             };
 
-            let remove_selfloops = remove_selfloops.unwrap_or(true);
-            let remove_lower_triangular_matrix = remove_lower_triangular_matrix.unwrap_or(false);
+            let nodes: Frontier<N> = Frontier::new();
+            let scores: Frontier<F> = Frontier::new();
 
-            Ok(first_iterator(&dag, first_attribute)?
+            first_iterator(&dag, first_attribute)?
                 .progress_with(progress_bar)
-                .flat_map(|src| {
+                .for_each(|src| {
                     self.get_similarities_from_node_id_and_iterator(
                         src,
                         second_iterator(&dag, second_attribute),
                         minimum_similarity,
                         None,
+                        remove_selfloops,
+                        remove_lower_triangular_matrix,
                     )
                     .unwrap()
-                    .filter_map(move |(dst, score)| {
-                        if remove_selfloops && src == dst {
-                            return None;
-                        }
-                        if remove_lower_triangular_matrix && src > dst {
-                            return None;
-                        }
-                        Some((vec![src.into(), dst.into()], score))
-                    })
-                })
-                .unzip())
+                    .for_each(|(dst, score)| {
+                        nodes.push(src.into());
+                        nodes.push(dst.into());
+                        scores.push(score)
+                    });
+                });
+
+            Ok((nodes.into(), scores.into()))
         })
     }
 
@@ -400,12 +407,12 @@ where
     /// * `first_node_ids`: &[NodeT] - The first node ids for which to compute the similarity.
     /// * `second_node_ids`: &[NodeT] - The second node ids for which to compute the similarity.
     /// * `minimum_similarity`: Option<F> - Minimum similarity to be kept. Values below this amount are filtered.
-    pub fn get_node_ids_and_similarity_from_node_ids<N: From<NodeT> + Send>(
+    pub fn get_node_ids_and_similarity_from_node_ids<N: From<NodeT> + Send + Sync + Clone>(
         &self,
         first_node_ids: &[NodeT],
         second_node_ids: &[NodeT],
         minimum_similarity: Option<F>,
-    ) -> Result<(Vec<Vec<N>>, Vec<F>), String> {
+    ) -> Result<(Vec<N>, Vec<F>), String> {
         self.must_be_trained().and_then(|(dag, _)| {
             first_node_ids
                 .par_iter()
@@ -423,7 +430,7 @@ where
             &second_node_ids,
             minimum_similarity,
             Some(true),
-            Some(first_node_ids == second_node_ids)
+            Some(first_node_ids == second_node_ids),
         )
     }
 
@@ -433,12 +440,12 @@ where
     /// * `first_node_names`: &[&str] - The first node names for which to compute the similarity.
     /// * `second_node_names`: &[&str] - The second node names for which to compute the similarity.
     /// * `minimum_similarity`: Option<F> - Minimum similarity to be kept. Values below this amount are filtered.
-    pub fn get_node_ids_and_similarity_from_node_names<N: From<NodeT> + Send>(
+    pub fn get_node_ids_and_similarity_from_node_names<N: From<NodeT> + Send + Sync + Clone>(
         &self,
         first_node_names: &[&str],
         second_node_names: &[&str],
         minimum_similarity: Option<F>,
-    ) -> Result<(Vec<Vec<N>>, Vec<F>), String> {
+    ) -> Result<(Vec<N>, Vec<F>), String> {
         self.must_be_trained().and_then(|(dag, _)| {
             first_node_names
                 .par_iter()
@@ -464,7 +471,7 @@ where
             &second_node_names,
             minimum_similarity,
             Some(true),
-            Some(first_node_names == second_node_names)
+            Some(first_node_names == second_node_names),
         )
     }
 
@@ -474,12 +481,12 @@ where
     /// * `first_node_prefixes`: &[&str] - The first node prefixes for which to compute the similarity.
     /// * `second_node_prefixes`: &[&str] - The second node prefixes for which to compute the similarity.
     /// * `minimum_similarity`: Option<F> - Minimum similarity to be kept. Values below this amount are filtered.
-    pub fn get_node_ids_and_similarity_from_node_prefixes<N: From<NodeT> + Send>(
+    pub fn get_node_ids_and_similarity_from_node_prefixes<N: From<NodeT> + Send + Sync + Clone>(
         &self,
         first_node_prefixes: &[&str],
         second_node_prefixes: &[&str],
         minimum_similarity: Option<F>,
-    ) -> Result<(Vec<Vec<N>>, Vec<F>), String> {
+    ) -> Result<(Vec<N>, Vec<F>), String> {
         self.get_node_ids_and_similarity_from_iterators(
             |graph, prefixes| Ok(graph.par_iter_node_ids_from_node_curie_prefixes(&prefixes)),
             &first_node_prefixes,
@@ -487,7 +494,7 @@ where
             &second_node_prefixes,
             minimum_similarity,
             Some(true),
-            Some(first_node_prefixes == second_node_prefixes)
+            Some(first_node_prefixes == second_node_prefixes),
         )
     }
 
@@ -497,12 +504,12 @@ where
     /// * `first_node_type_ids`: &[Option<NodeTypeT>] - The first node type ids for which to compute the similarity.
     /// * `second_node_type_ids`: &[Option<NodeTypeT>] - The second node type ids for which to compute the similarity.
     /// * `minimum_similarity`: Option<F> - Minimum similarity to be kept. Values below this amount are filtered.
-    pub fn get_node_ids_and_similarity_from_node_type_ids<N: From<NodeT> + Send>(
+    pub fn get_node_ids_and_similarity_from_node_type_ids<N: From<NodeT> + Send + Sync + Clone>(
         &self,
         first_node_type_ids: &[Option<NodeTypeT>],
         second_node_type_ids: &[Option<NodeTypeT>],
         minimum_similarity: Option<F>,
-    ) -> Result<(Vec<Vec<N>>, Vec<F>), String> {
+    ) -> Result<(Vec<N>, Vec<F>), String> {
         self.get_node_ids_and_similarity_from_iterators(
             |graph, node_type_ids| graph.par_iter_node_ids_from_node_type_ids(&node_type_ids),
             &first_node_type_ids,
@@ -514,7 +521,7 @@ where
             &second_node_type_ids,
             minimum_similarity,
             Some(true),
-            Some(first_node_type_ids == second_node_type_ids)
+            Some(first_node_type_ids == second_node_type_ids),
         )
     }
 
@@ -524,12 +531,14 @@ where
     /// * `first_node_type_names`: &[Option<&str>] - The first node type names for which to compute the similarity.
     /// * `second_node_type_names`: &[Option<&str>] - The second node type names for which to compute the similarity.
     /// * `minimum_similarity`: Option<F> - Minimum similarity to be kept. Values below this amount are filtered.
-    pub fn get_node_ids_and_similarity_from_node_type_names<N: From<NodeT> + Send>(
+    pub fn get_node_ids_and_similarity_from_node_type_names<
+        N: From<NodeT> + Send + Sync + Clone,
+    >(
         &self,
         first_node_type_names: &[Option<&str>],
         second_node_type_names: &[Option<&str>],
         minimum_similarity: Option<F>,
-    ) -> Result<(Vec<Vec<N>>, Vec<F>), String> {
+    ) -> Result<(Vec<N>, Vec<F>), String> {
         self.get_node_ids_and_similarity_from_iterators(
             |graph, node_type_names| graph.par_iter_node_ids_from_node_type_names(&node_type_names),
             &first_node_type_names,
@@ -541,7 +550,7 @@ where
             &second_node_type_names,
             minimum_similarity,
             Some(true),
-            Some(first_node_type_names == second_node_type_names)
+            Some(first_node_type_names == second_node_type_names),
         )
     }
 }

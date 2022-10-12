@@ -1,8 +1,8 @@
 use crate::*;
 use file_progress::{FileProgress, FileProgressIterator, MarkdownFileProgress};
 use graph::{EdgeT, Graph, NodeT};
-use num_traits::AsPrimitive;
 use indicatif::{ProgressBar, ProgressIterator, ProgressStyle};
+use num_traits::AsPrimitive;
 use rayon::prelude::*;
 
 #[derive(Clone, Debug)]
@@ -42,7 +42,7 @@ impl BasicALPINE {
 pub enum LandmarkFeatureType {
     Windows,
     ShortestPaths,
-    Random
+    Random,
 }
 
 pub trait LandmarkBasedFeature<const LFT: LandmarkFeatureType> {
@@ -51,7 +51,7 @@ pub trait LandmarkBasedFeature<const LFT: LandmarkFeatureType> {
         graph: &Graph,
         bucket: Vec<NodeT>,
         features: &mut [Feature],
-        feature_number: usize
+        feature_number: usize,
     ) where
         Feature: IntegerFeatureType,
         u64: AsPrimitive<Feature>;
@@ -245,7 +245,7 @@ where
     fn fit_transform<Feature>(&self, graph: &Graph, embedding: &mut [Feature]) -> Result<(), String>
     where
         Feature: IntegerFeatureType,
-        u64: AsPrimitive<Feature>
+        u64: AsPrimitive<Feature>,
     {
         let expected_embedding_len =
             self.get_embedding_size(graph)? * graph.get_number_of_nodes() as usize;
@@ -299,7 +299,12 @@ where
             .zip(self.iter_anchor_nodes_buckets(graph)?)
             .enumerate()
             .for_each(|(feature_number, (empty_feature, bucket))| unsafe {
-                self.compute_unchecked_feature_from_bucket(graph, bucket, empty_feature, feature_number);
+                self.compute_unchecked_feature_from_bucket(
+                    graph,
+                    bucket,
+                    empty_feature,
+                    feature_number,
+                );
             });
 
         Ok(())
@@ -319,7 +324,7 @@ where
     ) -> Result<(), String>
     where
         Feature: IntegerFeatureType,
-        u64: AsPrimitive<Feature>
+        u64: AsPrimitive<Feature>,
     {
         if feature.len() != graph.get_number_of_nodes() as usize {
             return Err(format!(
@@ -353,7 +358,7 @@ where
                     .nth(feature_number)
                     .unwrap(),
                 feature,
-                feature_number
+                feature_number,
             )
         };
 

@@ -1,6 +1,6 @@
 use express_measures::ThreadFloat;
-use serde::{Deserialize, Serialize};
 use serde::de::DeserializeOwned;
+use serde::{Deserialize, Serialize};
 
 pub trait Optimizer<V>: Serialize
 where
@@ -47,7 +47,7 @@ where
 
 impl<F> Optimizer<F> for StocaticGradientDescent<F>
 where
-    F: ThreadFloat + Serialize + DeserializeOwned
+    F: ThreadFloat + Serialize + DeserializeOwned,
 {
     type T = F;
 
@@ -94,7 +94,7 @@ where
 
 impl<F> Optimizer<F> for Momentum<F, F>
 where
-    F: ThreadFloat + Serialize + DeserializeOwned
+    F: ThreadFloat + Serialize + DeserializeOwned,
 {
     type T = F;
 
@@ -119,7 +119,7 @@ where
     Vec<F>: Serialize,
 {
     type T = [F];
- 
+
     fn set_capacity(&mut self, capacity: usize) {
         self.momentum = vec![F::zero(); capacity]
     }
@@ -204,7 +204,7 @@ where
 
 impl<F> Optimizer<F> for Adam<F, F>
 where
-    F: ThreadFloat + Serialize + DeserializeOwned
+    F: ThreadFloat + Serialize + DeserializeOwned,
 {
     type T = F;
 

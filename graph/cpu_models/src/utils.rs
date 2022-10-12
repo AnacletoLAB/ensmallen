@@ -35,8 +35,8 @@ pub(crate) fn get_random_weight<F: ThreadFloat>(random_state: u64, dimension_squ
 where
     f32: AsPrimitive<F>,
 {
-    (F::one() + F::one()) * random_f32(splitmix64(random_state)).as_()
-        - F::one() * (2.45 as f32).as_() / dimension_squared_root
+    ((F::one() + F::one()) * random_f32(splitmix64(random_state)).as_()
+        - F::one()) * (2.45 as f32).as_() / dimension_squared_root
 }
 
 pub(crate) fn populate_vectors<F: ThreadFloat>(
@@ -204,6 +204,15 @@ impl core::ops::Index<isize> for MatrixShape {
 
 pub trait EmbeddingSize {
     fn get_embedding_size(&self, graph: &graph::Graph) -> Result<usize, String>;
+}
+
+pub fn sigmoid<F: Float>(x: F) -> F {
+    if x > F::zero() {
+        F::one() / ((-x).exp() + F::one())
+    } else {
+        let exp = x.exp();
+        exp / (exp + F::one())
+    }
 }
 
 pub trait IntegerFeatureType:

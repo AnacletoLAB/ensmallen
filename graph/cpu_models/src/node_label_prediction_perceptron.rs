@@ -56,7 +56,7 @@ where
         })
     }
 
-    fn must_be_trained(&self) -> Result<(), String> {
+    pub fn must_be_trained(&self) -> Result<(), String> {
         if self.weights.is_empty() {
             return Err(concat!(
                 "This model has not been trained yet. ",
@@ -87,8 +87,12 @@ where
         self.must_be_trained().map(|_| self.bias.len())
     }
 
-    fn iterate_feature<'a>(
-        &'a self,
+    /// Returns the random state.
+    pub fn get_random_state(&self) -> u64 {
+        self.random_state
+    }
+
+    pub(crate) fn iterate_feature<'a>(
         node_id: usize,
         node_features: &'a [FeatureSlice],
         dimensions: &'a [usize],
@@ -125,7 +129,7 @@ where
         weights
             .iter()
             .copied()
-            .zip(self.iterate_feature(node_id, node_features, dimensions))
+            .zip(Self::iterate_feature(node_id, node_features, dimensions))
             .map(|(weight, feature)| weight * feature)
             .sum()
     }
@@ -207,7 +211,7 @@ where
         }
     }
 
-    fn validate_features(
+    pub(crate) fn validate_features(
         &self,
         graph: &Graph,
         node_features: &[FeatureSlice],
@@ -345,7 +349,7 @@ where
                                 .iter()
                                 .copied()
                                 .flat_map(|prediction| {
-                                    self.iterate_feature(node_id, node_features, dimensions)
+                                    Self::iterate_feature(node_id, node_features, dimensions)
                                         .map(move |feature| feature * prediction)
                                 })
                                 .collect::<Vec<f32>>(),

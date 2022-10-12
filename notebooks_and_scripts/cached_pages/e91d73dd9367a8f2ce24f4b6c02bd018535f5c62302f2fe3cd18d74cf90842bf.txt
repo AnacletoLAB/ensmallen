@@ -1,0 +1,10 @@
+<html>
+<head><title>Index of /wikidatawiki/entities/20221012/</title></head>
+<body>
+<h1>Index of /wikidatawiki/entities/20221012/</h1><hr><pre><a href="../">../</a>
+<a href="wikidata-20221012-lexemes.json.bz2">wikidata-20221012-lexemes.json.bz2</a>                 12-Oct-2022 03:41           227916153
+<a href="wikidata-20221012-lexemes.json.gz">wikidata-20221012-lexemes.json.gz</a>                  12-Oct-2022 03:39           315461942
+<a href="wikidata-20221012-md5sums.txt">wikidata-20221012-md5sums.txt</a>                      12-Oct-2022 03:41                 137
+<a href="wikidata-20221012-sha1sums.txt">wikidata-20221012-sha1sums.txt</a>                     12-Oct-2022 03:42                 153
+</pre><hr></body>
+</html>

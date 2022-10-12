@@ -89,7 +89,9 @@ impl LandmarkBasedFeature<{ LandmarkFeatureType::Random }> for RUINE {
                 graph
                     .iter_unchecked_neighbour_node_ids_from_source_node_id(src)
                     .for_each(|dst| {
-                        feature_sum += <Feature as AsPrimitive<u64>>::as_(shared_features[dst as usize].load(Ordering::Relaxed));
+                        feature_sum += <Feature as AsPrimitive<u64>>::as_(
+                            shared_features[dst as usize].load(Ordering::Relaxed),
+                        );
                         number_of_neighbours += 1;
                     });
 

@@ -24,7 +24,7 @@ impl<T: ToNumpyDtype> From<Vec<T>> for PySliceContainer {
         };
 
         // leak the data, we will free it properly on drop
-        unsafe{core::mem::forget(data);}
+        core::mem::forget(data);
 
         res
     }
