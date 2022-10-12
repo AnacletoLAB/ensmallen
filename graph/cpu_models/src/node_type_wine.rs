@@ -25,7 +25,7 @@ impl EmbeddingSize for NodeLabelWINE {
 
 impl NodeTypesLandmarkGenerator for NodeLabelWINE {}
 
-impl ALPINE<{ LandmarkType::NodeTypes }, {LandmarkFeatureType::Windows}> for NodeLabelWINE {
+impl ALPINE<{ LandmarkType::NodeTypes }, { LandmarkFeatureType::Windows }> for NodeLabelWINE {
     fn get_model_name(&self) -> String {
         "Node-types-based WINE".to_string()
     }

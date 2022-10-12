@@ -2,8 +2,64 @@ use crate::types::*;
 use crate::validation::*;
 use core::fmt::Debug;
 
-use num_traits::{Float, AsPrimitive};
+use num_traits::{AsPrimitive, Float};
 use rayon::prelude::*;
+
+/// Returns the cosine similarity between the two provided vectors computed sequentially.
+///
+/// # Arguments
+/// * `src_features`: Iterator<Item=F> - The first feature.
+/// * `dst_features`: Iterator<Item=F> - The second feature.
+///
+/// # Safety
+/// If the two features have different sizes, we will compute
+/// the cosine similarity upwards to when the minimum size.
+/// No warning will be raised.
+pub unsafe fn cosine_similarity_sequential_unchecked_from_iter<
+    R: Float + 'static,
+    F: AsPrimitive<R> + Copy,
+    I1,
+    I2,
+>(
+    src_features_iter: I1,
+    dst_features_iter: I2,
+) -> (R, R, R)
+where
+    I1: Iterator<Item = F>,
+    I2: Iterator<Item = F>,
+{
+    let (total_dot_products, total_squared_src_features, total_squared_dst_features) =
+        src_features_iter
+            .zip(dst_features_iter)
+            .map(|(src_feature, dst_feature)| (src_feature.as_(), dst_feature.as_()))
+            .map(|(src_feature, dst_feature)| {
+                (
+                    src_feature * dst_feature,
+                    src_feature * src_feature,
+                    dst_feature * dst_feature,
+                )
+            })
+            .reduce(
+                |(total_dot_products, total_squared_src_features, total_squared_dst_features),
+                 (dot_products, squared_src_features, squared_dst_features)| {
+                    (
+                        total_dot_products + dot_products,
+                        total_squared_src_features + squared_src_features,
+                        total_squared_dst_features + squared_dst_features,
+                    )
+                },
+            )
+            .unwrap();
+
+    let src_features_norm = total_squared_src_features.sqrt();
+    let dst_features_norm = total_squared_dst_features.sqrt();
+
+    (
+        total_dot_products / (src_features_norm * dst_features_norm + R::epsilon()),
+        src_features_norm,
+        dst_features_norm,
+    )
+}
 
 /// Returns the cosine similarity between the two provided vectors computed sequentially.
 ///
@@ -15,40 +71,16 @@ use rayon::prelude::*;
 /// If the two features have different sizes, we will compute
 /// the cosine similarity upwards to when the minimum size.
 /// No warning will be raised.
-pub unsafe fn cosine_similarity_sequential_unchecked<R: Float + 'static, F: AsPrimitive<R> + Copy>(
+pub unsafe fn cosine_similarity_sequential_unchecked<
+    R: Float + 'static,
+    F: AsPrimitive<R> + Copy,
+>(
     src_features: &[F],
     dst_features: &[F],
 ) -> (R, R, R) {
-    let (total_dot_products, total_squared_src_features, total_squared_dst_features) = src_features
-        .iter()
-        .zip(dst_features.iter())
-        .map(|(&src_feature, &dst_feature)| (src_feature.as_(), dst_feature.as_()))
-        .map(|(src_feature, dst_feature)| {
-            (
-                src_feature * dst_feature,
-                src_feature * src_feature,
-                dst_feature * dst_feature,
-            )
-        })
-        .reduce(
-            |(total_dot_products, total_squared_src_features, total_squared_dst_features),
-             (dot_products, squared_src_features, squared_dst_features)| {
-                (
-                    total_dot_products + dot_products,
-                    total_squared_src_features + squared_src_features,
-                    total_squared_dst_features + squared_dst_features,
-                )
-            },
-        )
-        .unwrap();
-
-    let src_features_norm = total_squared_src_features.sqrt();
-    let dst_features_norm = total_squared_dst_features.sqrt();
-
-    (
-        total_dot_products / (src_features_norm * dst_features_norm + R::epsilon()),
-        src_features_norm,
-        dst_features_norm,
+    cosine_similarity_sequential_unchecked_from_iter(
+        src_features.iter().copied(),
+        dst_features.iter().copied(),
     )
 }
 

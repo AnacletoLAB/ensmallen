@@ -1,13 +1,15 @@
 use express_measures::ThreadFloat;
-use serde::{Deserialize, Serialize};
 use serde::de::DeserializeOwned;
+use serde::{Deserialize, Serialize};
 
 pub trait Optimizer<V>: Serialize
 where
     V: Send + Sync + ?Sized + Serialize + DeserializeOwned,
     Self: Send + Sync + Clone,
 {
-    fn get_update(&mut self, variations: &mut V);
+    type T: ?Sized;
+
+    fn get_update(&mut self, variations: &mut Self::T);
     fn set_capacity(&mut self, capacity: usize);
 }
 
@@ -32,9 +34,11 @@ impl<F> Optimizer<Vec<F>> for StocaticGradientDescent<F>
 where
     F: ThreadFloat + Serialize + DeserializeOwned,
 {
+    type T = [F];
+
     fn set_capacity(&mut self, _capacity: usize) {}
 
-    fn get_update(&mut self, variations: &mut Vec<F>) {
+    fn get_update(&mut self, variations: &mut Self::T) {
         variations
             .iter_mut()
             .for_each(|value| *value *= self.learning_rate);
@@ -45,9 +49,11 @@ impl<F> Optimizer<F> for StocaticGradientDescent<F>
 where
     F: ThreadFloat + Serialize + DeserializeOwned,
 {
+    type T = F;
+
     fn set_capacity(&mut self, _capacity: usize) {}
 
-    fn get_update(&mut self, variation: &mut F) {
+    fn get_update(&mut self, variation: &mut Self::T) {
         *variation *= self.learning_rate;
     }
 }
@@ -90,6 +96,8 @@ impl<F> Optimizer<F> for Momentum<F, F>
 where
     F: ThreadFloat + Serialize + DeserializeOwned,
 {
+    type T = F;
+
     fn set_capacity(&mut self, capacity: usize) {
         if capacity != 1 {
             unimplemented!(
@@ -99,7 +107,7 @@ where
         self.momentum = F::zero();
     }
 
-    fn get_update(&mut self, variation: &mut F) {
+    fn get_update(&mut self, variation: &mut Self::T) {
         self.momentum = self.decay_factor * self.momentum + self.learning_rate * (*variation);
         *variation = self.momentum;
     }
@@ -110,11 +118,13 @@ where
     F: ThreadFloat + Serialize + DeserializeOwned,
     Vec<F>: Serialize,
 {
+    type T = [F];
+
     fn set_capacity(&mut self, capacity: usize) {
         self.momentum = vec![F::zero(); capacity]
     }
 
-    fn get_update(&mut self, variations: &mut Vec<F>) {
+    fn get_update(&mut self, variations: &mut Self::T) {
         self.momentum
             .iter_mut()
             .zip(variations.iter_mut())
@@ -196,6 +206,8 @@ impl<F> Optimizer<F> for Adam<F, F>
 where
     F: ThreadFloat + Serialize + DeserializeOwned,
 {
+    type T = F;
+
     fn set_capacity(&mut self, capacity: usize) {
         if capacity != 1 {
             unimplemented!(
@@ -206,7 +218,7 @@ where
         self.second_moment = F::zero();
     }
 
-    fn get_update(&mut self, variation: &mut F) {
+    fn get_update(&mut self, variation: &mut Self::T) {
         self.time += F::one();
         Self::get_elementwise_update(
             variation,
@@ -225,12 +237,14 @@ where
     F: ThreadFloat + Serialize + DeserializeOwned,
     Vec<F>: Serialize,
 {
+    type T = [F];
+
     fn set_capacity(&mut self, capacity: usize) {
         self.first_moment = vec![F::zero(); capacity];
         self.second_moment = vec![F::zero(); capacity];
     }
 
-    fn get_update(&mut self, variations: &mut Vec<F>) {
+    fn get_update(&mut self, variations: &mut Self::T) {
         self.time += F::one();
         variations
             .iter_mut()

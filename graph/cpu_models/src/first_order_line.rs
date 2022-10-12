@@ -1,4 +1,4 @@
-use crate::{get_node_prior, BasicEmbeddingModel, GraphEmbedder, MatrixShape};
+use crate::{get_node_prior, sigmoid, BasicEmbeddingModel, GraphEmbedder, MatrixShape};
 use express_measures::{cosine_similarity_sequential_unchecked, ThreadFloat};
 use graph::{EdgeT, Graph, NodeT, ThreadDataRaceAware};
 use indicatif::ProgressIterator;
@@ -99,7 +99,7 @@ impl GraphEmbedder for FirstOrderLINE {
                             cosine_similarity_sequential_unchecked(src_embedding, dst_embedding)
                         };
 
-                        let prediction = F::one() / (F::one() + (-similarity).exp());
+                        let prediction = sigmoid(similarity);
                         let variation = if label {
                             prediction - F::one()
                         } else {

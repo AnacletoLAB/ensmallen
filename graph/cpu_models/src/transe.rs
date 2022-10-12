@@ -1,6 +1,6 @@
 use crate::*;
 use express_measures::{vector_norm, ThreadFloat};
-use graph::{EdgeTypeT, Graph, NodeT, EdgeT, ThreadDataRaceAware};
+use graph::{EdgeT, EdgeTypeT, Graph, NodeT, ThreadDataRaceAware};
 use indicatif::ProgressIterator;
 use num_traits::AsPrimitive;
 use rayon::prelude::*;
@@ -53,7 +53,7 @@ impl GraphEmbedder for TransE {
         self.model.model.random_state
     }
 
-    fn _fit_transform<F: ThreadFloat+ 'static>(
+    fn _fit_transform<F: ThreadFloat + 'static>(
         &self,
         graph: &Graph,
         embedding: &mut [&mut [F]],

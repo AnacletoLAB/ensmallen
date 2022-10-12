@@ -84,6 +84,17 @@ macro_rules! to_ndarray_2d {
     };
 }
 
+#[macro_export]
+macro_rules! to_ndarray_3d {
+    ($gil: expr, $value: expr, $_type: ty) => {
+        PyArray::from_vec3($gil.python(), &$value)
+            .unwrap()
+            .cast::<$_type>(false)
+            .unwrap()
+            .to_owned()
+    };
+}
+
 /// Return the parameters valid when building a walk parameter object.
 pub fn build_walk_parameters_list<'a>(parameters: &[&'a str]) -> Vec<&'a str> {
     let default = &[

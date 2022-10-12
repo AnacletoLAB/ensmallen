@@ -68,7 +68,8 @@ where
                     let src_bias = &mut (*center_node_embedding.get())[src as usize];
                     let dst_bias = &mut (*context_node_embedding.get())[dst as usize];
 
-                    let variation = learning_rate * weighting_schema(count)
+                    let variation = learning_rate
+                        * weighting_schema(count)
                         * (F::one() + F::one())
                         * (dot + *src_bias + *dst_bias - count.as_().ln());
 

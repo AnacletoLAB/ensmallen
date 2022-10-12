@@ -124,9 +124,7 @@ impl EdgeEmbedding {
                 a.iter()
                     .copied()
                     .zip(b.iter().copied())
-                    .map(|(feature_a, feature_b)| {
-                        absolute_distance(feature_a, feature_b).as_()
-                    })
+                    .map(|(feature_a, feature_b)| absolute_distance(feature_a, feature_b).as_())
                     .collect::<Vec<f32>>()
             },
             EdgeEmbedding::L2 => |a: &[F], b: &[F]| {
@@ -158,18 +156,14 @@ impl EdgeEmbedding {
                 a.iter()
                     .copied()
                     .zip(b.iter().copied())
-                    .map(|(feature_a, feature_b)| {
-                        feature_a.as_().max(feature_b.as_())
-                    })
+                    .map(|(feature_a, feature_b)| feature_a.as_().max(feature_b.as_()))
                     .collect::<Vec<f32>>()
             },
             EdgeEmbedding::Minimum => |a: &[F], b: &[F]| {
                 a.iter()
                     .copied()
                     .zip(b.iter().copied())
-                    .map(|(feature_a, feature_b)| {
-                        feature_a.as_().min(feature_b.as_())
-                    })
+                    .map(|(feature_a, feature_b)| feature_a.as_().min(feature_b.as_()))
                     .collect::<Vec<f32>>()
             },
         }
@@ -254,7 +248,7 @@ impl EdgeFeature {
     }
 
     /// Returns method to compute the edge embedding.
-    fn get_method<O1: Optimizer<f32>, O2: Optimizer<Vec<f32>>>(
+    fn get_method<O1: Optimizer<f32, T = f32>, O2: Optimizer<Vec<f32>, T = [f32]>>(
         &self,
     ) -> fn(
         model: &EdgePredictionPerceptron<O1, O2>,
@@ -358,7 +352,11 @@ impl EdgeFeature {
         }
     }
 
-    pub fn embed<O1: Optimizer<f32>, O2: Optimizer<Vec<f32>>, F: AsPrimitive<f32>>(
+    pub fn embed<
+        O1: Optimizer<f32, T = f32>,
+        O2: Optimizer<Vec<f32>, T = [f32]>,
+        F: AsPrimitive<f32>,
+    >(
         &self,
         model: &EdgePredictionPerceptron<O1, O2>,
         support: &Graph,
@@ -406,8 +404,8 @@ pub struct EdgePredictionPerceptron<O1, O2> {
 
 impl<O1, O2> EdgePredictionPerceptron<O1, O2>
 where
-    O1: Optimizer<f32> + Serialize + From<O2> + DeserializeOwned,
-    O2: Optimizer<Vec<f32>> + Serialize + DeserializeOwned,
+    O1: Optimizer<f32, T = f32> + Serialize + From<O2> + DeserializeOwned,
+    O2: Optimizer<Vec<f32>, T = [f32]> + Serialize + DeserializeOwned,
 {
     /// Return new instance of Perceptron for edge prediction.
     ///
@@ -754,11 +752,15 @@ where
         // in the training epochs.
         let progress_bar = if verbose {
             let pb = ProgressBar::new(self.number_of_epochs as u64);
-            pb.set_style(ProgressStyle::default_bar().template(concat!(
-                "Perceptron ",
-                "{spinner:.green} [{elapsed_precise}] ",
-                "[{bar:40.cyan/blue}] ({pos}/{len}, ETA {eta})"
-            )).unwrap());
+            pb.set_style(
+                ProgressStyle::default_bar()
+                    .template(concat!(
+                        "Perceptron ",
+                        "{spinner:.green} [{elapsed_precise}] ",
+                        "[{bar:40.cyan/blue}] ({pos}/{len}, ETA {eta})"
+                    ))
+                    .unwrap(),
+            );
             pb
         } else {
             ProgressBar::hidden()
