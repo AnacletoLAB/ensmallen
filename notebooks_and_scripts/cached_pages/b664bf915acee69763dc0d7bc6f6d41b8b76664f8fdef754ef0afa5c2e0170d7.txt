@@ -73,6 +73,9 @@
 	<a href="https://kg-hub.berkeleybop.io/kg-phenio/20220930">20220930</a>
       </li>
       <li>
+	<a href="https://kg-hub.berkeleybop.io/kg-phenio/20221006">20221006</a>
+      </li>
+      <li>
 	<a href="https://kg-hub.berkeleybop.io/kg-phenio/current">current</a>
       </li>
     </ul>
@@ -80,7 +83,7 @@
     <h5>Files</h5>
     <ul>
       <li>
-	No files in this directory.
+	<a href="https://kg-hub.berkeleybop.io/kg-phenio/hp-mp_similarities.tar.gz">hp-mp_similarities.tar.gz</a>
       </li>
     </ul>
 

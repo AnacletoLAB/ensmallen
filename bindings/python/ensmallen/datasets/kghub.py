@@ -165,7 +165,7 @@ def KGPhenio(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="current", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="hp-mp_similarities.tar.gz", **kwargs
 ) -> Graph:
     """Return kg-phenio graph	
 
@@ -186,7 +186,7 @@ def KGPhenio(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "current"
+    version = "hp-mp_similarities.tar.gz"
         Version to retrieve	
 		The available versions are:
 			- 20220304
@@ -206,7 +206,9 @@ def KGPhenio(
 			- 20220722
 			- 20220819
 			- 20220930
-			- current	
+			- 20221006
+			- current
+			- hp-mp_similarities.tar.gz	
 	
 	
     """

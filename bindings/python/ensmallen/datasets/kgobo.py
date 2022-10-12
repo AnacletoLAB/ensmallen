@@ -787,7 +787,6 @@ def ERO(
     version = "no_version"
         Version to retrieve	
 		The available versions are:
-			- DUMMY
 			- no_version
     """
     return RetrievedGraph(
@@ -834,7 +833,7 @@ def GNO(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="DUMMY", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-08-13", **kwargs
 ) -> Graph:
     """Return GNO graph	
 
@@ -855,12 +854,11 @@ def GNO(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "DUMMY"
+    version = "2021-08-13"
         Version to retrieve	
 		The available versions are:
 			- 2022-02-23
 			- 2021-08-13
-			- DUMMY
     """
     return RetrievedGraph(
         "GNO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
@@ -871,7 +869,7 @@ def XCO(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="DUMMY", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="4.46", **kwargs
 ) -> Graph:
     """Return XCO graph	
 
@@ -892,11 +890,10 @@ def XCO(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "DUMMY"
+    version = "4.46"
         Version to retrieve	
 		The available versions are:
 			- 4.46
-			- DUMMY
     """
     return RetrievedGraph(
         "XCO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
@@ -1273,7 +1270,7 @@ def SWO(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="DUMMY", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="1.7", **kwargs
 ) -> Graph:
     """Return SWO graph	
 
@@ -1294,11 +1291,10 @@ def SWO(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "DUMMY"
+    version = "1.7"
         Version to retrieve	
 		The available versions are:
 			- 1.7
-			- DUMMY
     """
     return RetrievedGraph(
         "SWO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
@@ -1309,7 +1305,7 @@ def OBCS(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="DUMMY", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="2018-02-22", **kwargs
 ) -> Graph:
     """Return OBCS graph	
 
@@ -1330,11 +1326,10 @@ def OBCS(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "DUMMY"
+    version = "2018-02-22"
         Version to retrieve	
 		The available versions are:
 			- 2018-02-22
-			- DUMMY
     """
     return RetrievedGraph(
         "OBCS", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
@@ -2184,7 +2179,7 @@ def FOBI(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="DUMMY", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="fobi", **kwargs
 ) -> Graph:
     """Return FOBI graph	
 
@@ -2205,11 +2200,10 @@ def FOBI(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "DUMMY"
+    version = "fobi"
         Version to retrieve	
 		The available versions are:
 			- fobi
-			- DUMMY
     """
     return RetrievedGraph(
         "FOBI", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
@@ -2220,7 +2214,7 @@ def GENO(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="DUMMY", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-03-05", **kwargs
 ) -> Graph:
     """Return GENO graph	
 
@@ -2241,13 +2235,12 @@ def GENO(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "DUMMY"
+    version = "2022-03-05"
         Version to retrieve	
 		The available versions are:
 			- 2022-08-10
 			- 2020-03-08
 			- 2022-03-05
-			- DUMMY
     """
     return RetrievedGraph(
         "GENO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
@@ -2472,7 +2465,7 @@ def NCBITAXON(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="DUMMY", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-08-18", **kwargs
 ) -> Graph:
     """Return NCBITAXON graph	
 
@@ -2493,15 +2486,15 @@ def NCBITAXON(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "DUMMY"
+    version = "2022-08-18"
         Version to retrieve	
 		The available versions are:
-			- 2022-08-18
+			- 2022-10-05
 			- 2021-06-10
 			- 2021-12-14
 			- 2022-02-21
 			- 2022-06-28
-			- DUMMY
+			- 2022-08-18
     """
     return RetrievedGraph(
         "NCBITAXON", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
@@ -2551,7 +2544,7 @@ def PW(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="DUMMY", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="7.52", **kwargs
 ) -> Graph:
     """Return PW graph	
 
@@ -2572,11 +2565,10 @@ def PW(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "DUMMY"
+    version = "7.52"
         Version to retrieve	
 		The available versions are:
 			- 7.52
-			- DUMMY
     """
     return RetrievedGraph(
         "PW", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
@@ -2939,7 +2931,6 @@ def UBERON(
 			- 2022-05-27
 			- 2022-06-20
 			- 2022-06-30
-			- DUMMY
 			- 2022-08-19
     """
     return RetrievedGraph(
@@ -3056,7 +3047,7 @@ def PORO(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="DUMMY", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="2016-09-13", **kwargs
 ) -> Graph:
     """Return PORO graph	
 
@@ -3077,12 +3068,11 @@ def PORO(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "DUMMY"
+    version = "2016-09-13"
         Version to retrieve	
 		The available versions are:
 			- 2016-10-06
 			- 2016-09-13
-			- DUMMY
     """
     return RetrievedGraph(
         "PORO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
@@ -3321,7 +3311,7 @@ def MONDO(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2022-08-01", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-09-06", **kwargs
 ) -> Graph:
     """Return MONDO graph	
 
@@ -3342,10 +3332,10 @@ def MONDO(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2022-08-01"
+    version = "2022-09-06"
         Version to retrieve	
 		The available versions are:
-			- 2022-09-06
+			- 2022-10-03
 			- 2021-09-01
 			- 2021-10-01
 			- 2021-11-01
@@ -3358,6 +3348,7 @@ def MONDO(
 			- 2022-06-01
 			- 2022-07-01
 			- 2022-08-01
+			- 2022-09-06
     """
     return RetrievedGraph(
         "MONDO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
@@ -3594,7 +3585,7 @@ def SCDO(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="DUMMY", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-04-15", **kwargs
 ) -> Graph:
     """Return SCDO graph	
 
@@ -3615,11 +3606,10 @@ def SCDO(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "DUMMY"
+    version = "2021-04-15"
         Version to retrieve	
 		The available versions are:
 			- 2021-04-15
-			- DUMMY
     """
     return RetrievedGraph(
         "SCDO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
@@ -3700,7 +3690,7 @@ def DRON(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2022-01-28", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-04-22", **kwargs
 ) -> Graph:
     """Return DRON graph	
 
@@ -3721,13 +3711,14 @@ def DRON(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2022-01-28"
+    version = "2022-04-22"
         Version to retrieve	
 		The available versions are:
-			- 2022-04-22
+			- 2022-10-02
 			- 2021-08-12
 			- 2021-10-20
 			- 2022-01-28
+			- 2022-04-22
     """
     return RetrievedGraph(
         "DRON", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
@@ -3738,7 +3729,7 @@ def RBO(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="DUMMY", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-08-11", **kwargs
 ) -> Graph:
     """Return RBO graph	
 
@@ -3759,15 +3750,15 @@ def RBO(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "DUMMY"
+    version = "2022-08-11"
         Version to retrieve	
 		The available versions are:
-			- 2022-08-11
+			- 2022-10-06
 			- 2021-08-30
 			- 2022-01-14
 			- 2022-04-16
 			- 2022-06-02
-			- DUMMY
+			- 2022-08-11
     """
     return RetrievedGraph(
         "RBO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
@@ -4509,7 +4500,6 @@ def VO(
     version = "September_18__2021"
         Version to retrieve	
 		The available versions are:
-			- DUMMY
 			- September_18__2021
     """
     return RetrievedGraph(
@@ -7086,7 +7076,7 @@ def BSPO(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2021-10-13", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-06-28", **kwargs
 ) -> Graph:
     """Return BSPO graph	
 
@@ -7107,12 +7097,13 @@ def BSPO(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2021-10-13"
+    version = "2022-06-28"
         Version to retrieve	
 		The available versions are:
-			- 2022-06-28
+			- 2022-10-07
 			- 2021-09-22
 			- 2021-10-13
+			- 2022-06-28
     """
     return RetrievedGraph(
         "BSPO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
@@ -7275,7 +7266,7 @@ def HP(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2022-04-14", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-06-11", **kwargs
 ) -> Graph:
     """Return HP graph	
 
@@ -7296,14 +7287,15 @@ def HP(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2022-04-14"
+    version = "2022-06-11"
         Version to retrieve	
 		The available versions are:
-			- 2022-06-11
+			- 2022-10-05
 			- 2021-08-02
 			- 2021-10-10
 			- 2022-02-14
 			- 2022-04-14
+			- 2022-06-11
     """
     return RetrievedGraph(
         "HP", version, "kgobo", directed, preprocess, bioregistry, load_nodes,

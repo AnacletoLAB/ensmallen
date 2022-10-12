@@ -35,8 +35,8 @@ pub(crate) fn get_random_weight<F: ThreadFloat>(random_state: u64, dimension_squ
 where
     f32: AsPrimitive<F>,
 {
-    (F::one() + F::one()) * random_f32(splitmix64(random_state)).as_()
-        - F::one() * (2.45 as f32).as_() / dimension_squared_root
+    ((F::one() + F::one()) * random_f32(splitmix64(random_state)).as_()
+        - F::one()) * (2.45 as f32).as_() / dimension_squared_root
 }
 
 pub(crate) fn populate_vectors<F: ThreadFloat>(

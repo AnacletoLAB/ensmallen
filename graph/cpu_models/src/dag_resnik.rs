@@ -1,8 +1,8 @@
 use graph::{Graph, NodeT, NodeTypeT};
 use indicatif::{ParallelProgressIterator, ProgressBar, ProgressStyle};
 use num_traits::{AsPrimitive, Float};
-use rayon::prelude::*;
 use parallel_frontier::Frontier;
+use rayon::prelude::*;
 use std::{
     collections::HashMap,
     sync::atomic::{AtomicBool, Ordering},
@@ -396,7 +396,7 @@ where
                         scores.push(score)
                     });
                 });
-            
+
             Ok((nodes.into(), scores.into()))
         })
     }
@@ -531,7 +531,9 @@ where
     /// * `first_node_type_names`: &[Option<&str>] - The first node type names for which to compute the similarity.
     /// * `second_node_type_names`: &[Option<&str>] - The second node type names for which to compute the similarity.
     /// * `minimum_similarity`: Option<F> - Minimum similarity to be kept. Values below this amount are filtered.
-    pub fn get_node_ids_and_similarity_from_node_type_names<N: From<NodeT> + Send + Sync + Clone>(
+    pub fn get_node_ids_and_similarity_from_node_type_names<
+        N: From<NodeT> + Send + Sync + Clone,
+    >(
         &self,
         first_node_type_names: &[Option<&str>],
         second_node_type_names: &[Option<&str>],

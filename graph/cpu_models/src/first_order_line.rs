@@ -1,4 +1,4 @@
-use crate::{get_node_prior, BasicEmbeddingModel, GraphEmbedder, MatrixShape, sigmoid};
+use crate::{get_node_prior, sigmoid, BasicEmbeddingModel, GraphEmbedder, MatrixShape};
 use express_measures::{cosine_similarity_sequential_unchecked, ThreadFloat};
 use graph::{EdgeT, Graph, NodeT, ThreadDataRaceAware};
 use indicatif::ProgressIterator;
