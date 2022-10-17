@@ -21,7 +21,7 @@ Instead, to exclusively install the Ensmallen package, you can run:
 
 Compiling the wheels
 ~~~~~~~~~~~~~~~~~~~~~
-See `this page <https://github.com/AnacletoLAB/ensmallen/blob/master/bindings/python/README.md>`_ to compile the bindings yourself.
+See `this page <https://github.com/AnacletoLAB/ensmallen/blob/master/bindings/README.md>`_ to compile the bindings yourself.
 
 
 Contributing
