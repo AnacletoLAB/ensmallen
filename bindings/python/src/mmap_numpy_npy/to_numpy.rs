@@ -1,8 +1,8 @@
-use super::{ToNumpyDtype, Dtype};
-use pyo3::*;
+use super::{Dtype, ToNumpyDtype};
 use half::f16;
-use numpy::*;
 use numpy::npyffi::*;
+use numpy::*;
+use pyo3::*;
 
 #[pyclass]
 /// Reimplenting stuff because the numpy don't expone it :)
@@ -16,7 +16,7 @@ pub struct PySliceContainer {
 impl<T: ToNumpyDtype> From<Vec<T>> for PySliceContainer {
     fn from(mut data: Vec<T>) -> Self {
         // stable version of into_raw_parts I guess
-        let res = PySliceContainer{
+        let res = PySliceContainer {
             ptr: data.as_mut_ptr() as usize,
             len: data.len(),
             cap: data.capacity(),
@@ -34,7 +34,7 @@ impl Drop for PySliceContainer {
     fn drop(&mut self) {
         macro_rules! impl_dtype_drop {
             ($($t:ty),*) => {
-                
+
         match self.dtype {
             $(
             <$t>::NUMPY_DTYPE => {
@@ -45,8 +45,8 @@ impl Drop for PySliceContainer {
         )*}
             };
         }
-        
-        impl_dtype_drop!{
+
+        impl_dtype_drop! {
             bool,
             u8,
             i8,
@@ -60,22 +60,22 @@ impl Drop for PySliceContainer {
             f32,
             f64
         }
-
     }
 }
 
 pub fn to_numpy_array<'py, T: ToNumpyDtype>(
-    py: Python<'py>, 
-    mut data: Vec<T>, 
-    shape: &[usize], 
-    fortran_order:bool,
+    py: Python<'py>,
+    mut data: Vec<T>,
+    shape: &[usize],
+    fortran_order: bool,
 ) -> Result<Py<PyAny>, String> {
     let num_of_elements = shape.iter().fold(1, |a, b| a * b);
 
     if data.len() != num_of_elements {
         return Err(format!(
             "Wrong shape {:?} for the given vector of len {}",
-            shape, data.len(),
+            shape,
+            data.len(),
         ));
     }
 
@@ -93,7 +93,7 @@ pub fn to_numpy_array<'py, T: ToNumpyDtype>(
         .expect("Failed to create slice container");
 
     let dt: NPY_TYPES = T::NUMPY_DTYPE.into();
-    Ok(unsafe{
+    Ok(unsafe {
         let ptr = PY_ARRAY_API.PyArray_New(
             py,
             PY_ARRAY_API.get_type_object(py, npyffi::NpyTypes::PyArray_Type),
