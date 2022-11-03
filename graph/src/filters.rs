@@ -260,9 +260,13 @@ impl Graph {
                 source_node_names_to_keep_from_graph,
                 source_node_names_to_remove_from_graph,
                 source_node_prefixes_to_keep.as_ref().map(|x| x.as_slice()),
-                source_node_prefixes_to_remove.as_ref().map(|x| x.as_slice()),
+                source_node_prefixes_to_remove
+                    .as_ref()
+                    .map(|x| x.as_slice()),
                 source_node_type_ids_to_keep.as_ref().map(|x| x.as_slice()),
-                source_node_type_ids_to_remove.as_ref().map(|x| x.as_slice()),
+                source_node_type_ids_to_remove
+                    .as_ref()
+                    .map(|x| x.as_slice()),
                 source_node_type_id_to_keep.as_ref().map(|x| x.as_slice()),
                 source_node_type_id_to_remove.as_ref().map(|x| x.as_slice()),
             )
@@ -277,23 +281,37 @@ impl Graph {
                 destination_node_ids_to_remove.as_ref(),
                 destination_node_names_to_keep_from_graph,
                 destination_node_names_to_remove_from_graph,
-                destination_node_prefixes_to_keep.as_ref().map(|x| x.as_slice()),
-                destination_node_prefixes_to_remove.as_ref().map(|x| x.as_slice()),
-                destination_node_type_ids_to_keep.as_ref().map(|x| x.as_slice()),
-                destination_node_type_ids_to_remove.as_ref().map(|x| x.as_slice()),
-                destination_node_type_id_to_keep.as_ref().map(|x| x.as_slice()),
-                destination_node_type_id_to_remove.as_ref().map(|x| x.as_slice()),
+                destination_node_prefixes_to_keep
+                    .as_ref()
+                    .map(|x| x.as_slice()),
+                destination_node_prefixes_to_remove
+                    .as_ref()
+                    .map(|x| x.as_slice()),
+                destination_node_type_ids_to_keep
+                    .as_ref()
+                    .map(|x| x.as_slice()),
+                destination_node_type_ids_to_remove
+                    .as_ref()
+                    .map(|x| x.as_slice()),
+                destination_node_type_id_to_keep
+                    .as_ref()
+                    .map(|x| x.as_slice()),
+                destination_node_type_id_to_remove
+                    .as_ref()
+                    .map(|x| x.as_slice()),
             )
         };
 
         let edge_node_filters =
             |src, src_name, src_node_type_ids, dst, dst_name, dst_node_type_ids| {
-                if self.is_directed() || src <= dst {
+                if self.is_directed() {
                     source_node_filter(src, src_name, src_node_type_ids)
                         && destination_node_filter(dst, dst_name, dst_node_type_ids)
                 } else {
-                    source_node_filter(dst, dst_name, dst_node_type_ids)
-                        && destination_node_filter(src, src_name, src_node_type_ids)
+                    source_node_filter(src, src_name, src_node_type_ids)
+                        && destination_node_filter(dst, dst_name, dst_node_type_ids)
+                        || source_node_filter(dst, dst_name, dst_node_type_ids)
+                            && destination_node_filter(src, src_name, src_node_type_ids)
                 }
             };
 
