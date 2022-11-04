@@ -308,8 +308,8 @@ impl Graph {
                     source_node_filter(src, src_name, src_node_type_ids)
                         && destination_node_filter(dst, dst_name, dst_node_type_ids)
                 } else {
-                    source_node_filter(src, src_name, src_node_type_ids)
-                        && destination_node_filter(dst, dst_name, dst_node_type_ids)
+                    source_node_filter(src, src_name.clone(), src_node_type_ids)
+                        && destination_node_filter(dst, dst_name.clone(), dst_node_type_ids)
                         || source_node_filter(dst, dst_name, dst_node_type_ids)
                             && destination_node_filter(src, src_name, src_node_type_ids)
                 }
