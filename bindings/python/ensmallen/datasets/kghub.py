@@ -207,6 +207,7 @@ def KGPhenio(
 			- 20220819
 			- 20220930
 			- 20221006
+			- 20221027
 			- current
 			- hp-mp_similarities.tar.gz	
 	
@@ -280,6 +281,7 @@ def KGCOVID19(
 			- 20220702
 			- 20220802
 			- 20220902
+			- 20221102
 			- current	
 	
 	References

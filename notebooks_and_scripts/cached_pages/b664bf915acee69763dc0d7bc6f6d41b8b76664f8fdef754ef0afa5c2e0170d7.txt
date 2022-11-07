@@ -76,6 +76,9 @@
 	<a href="https://kg-hub.berkeleybop.io/kg-phenio/20221006">20221006</a>
       </li>
       <li>
+	<a href="https://kg-hub.berkeleybop.io/kg-phenio/20221027">20221027</a>
+      </li>
+      <li>
 	<a href="https://kg-hub.berkeleybop.io/kg-phenio/current">current</a>
       </li>
     </ul>
