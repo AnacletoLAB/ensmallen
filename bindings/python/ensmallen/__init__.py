@@ -11,7 +11,7 @@ if is_x86_64():
         "bmi2",
         "popcnt",
     ]
-    unavailable_flags = set() - set(cpuinfo.get_cpu_info()["flags"])
+    unavailable_flags = set(HASWELL_FLAGS) - set(cpuinfo.get_cpu_info()["flags"])
 
     if len(unavailable_flags) == 0:
         logging.info("Ensmallen is using Haswell")
