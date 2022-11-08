@@ -3,7 +3,7 @@ use crate::constructors::build_graph_from_strings_without_type_iterators;
 use super::*;
 use counter::Counter;
 use indicatif::ProgressIterator;
-use rayon::iter::ParallelIterator;
+use rayon::prelude::*;
 use roaring::RoaringBitmap;
 use std::collections::HashSet;
 
@@ -31,6 +31,8 @@ impl Graph {
         let verbose = verbose.unwrap_or(false);
         let mut keep_components = RoaringBitmap::new();
         let components_vector = self.get_node_connected_component_ids(Some(verbose));
+
+        let number_of_components = components_vector.par_iter().copied().max().unwrap_or(0);
 
         // Extend the components so the include the given node Ids and node types.
         if let Some(node_ids) = self.get_filter_bitmap(node_names, node_types)? {
@@ -78,6 +80,15 @@ impl Graph {
                     keep_components.insert(*component_id);
                 }
             }
+        }
+
+        // If there is no positive filter on the components
+        // we initialize the vector of the components to
+        // be kept as all of the components.
+        if keep_components.len() == 0 {
+            (0..number_of_components).for_each(|component_id| {
+                keep_components.insert(component_id);
+            });
         }
 
         // Remove components smaller than the given amount
