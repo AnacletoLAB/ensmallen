@@ -452,6 +452,7 @@ impl Graph {
         let mut negative_edges_hashset =
             HashSet::with_capacity(number_of_negative_samples as usize);
         let mut sampling_round: usize = 0;
+        let mut last_size = 0;
 
         // randomly extract negative edges until we have the choosen number
         while negative_edges_hashset.len() < number_of_negative_samples as usize {
@@ -460,9 +461,7 @@ impl Graph {
             let src_random_state = rand_u64(random_state);
             random_state = splitmix64(random_state as u64) as EdgeT;
             let dst_random_state = rand_u64(random_state);
-
-            sampling_round += 1;
-
+            
             let sampling_filter_map = |src, dst| {
                 if !self.is_directed() && src > dst {
                     return None;
@@ -530,15 +529,22 @@ impl Graph {
                 negative_edges_hashset.insert(*edge_id);
             }
 
-            if sampling_round > 10_000 {
+            if sampling_round > 100_000 {
                 return Err(concat!(
                     "Using the provided filters on the current graph instance it ",
-                    "was not possible to sample a new negative edge after 10K sampling ",
+                    "was not possible to sample a new negative edge after 100K sampling ",
                     "rounds."
                 )
                 .to_string());
             }
+
+            if negative_edges_hashset.len() > last_size {
+                last_size = negative_edges_hashset.len();
+            } else {
+                sampling_round += 1;
+            }
         }
+
 
         build_graph_from_integers(
             Some(negative_edges_hashset.into_par_iter().map(|edge| unsafe {
