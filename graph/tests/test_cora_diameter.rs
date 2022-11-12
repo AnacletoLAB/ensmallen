@@ -16,7 +16,7 @@ fn test_cora_diameter() -> Result<(), String> {
             None,
             None,
             None,
-            Some(vec![Some("Word".to_string())]),
+            Some(&[Some("Word")]),
             None,
             None,
             None,

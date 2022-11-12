@@ -9,8 +9,12 @@ use rand::SeedableRng;
 use rayon::iter::IndexedParallelIterator;
 use rayon::iter::IntoParallelIterator;
 use rayon::iter::ParallelIterator;
+use rayon::prelude::IntoParallelRefIterator;
 use roaring::{RoaringBitmap, RoaringTreemap};
 use std::collections::HashSet;
+use vec_rand::cumsum_f32::cumsum_f32;
+use vec_rand::sample_f32_from_cumsum;
+use vec_rand::sample_uniform;
 use vec_rand::xorshift::xorshift as rand_u64;
 
 /// Returns roaring tree map with the validation indices.
@@ -79,31 +83,112 @@ fn kfold<T: Copy + Eq + std::hash::Hash>(
 
 /// # Holdouts.
 impl Graph {
-    /// Returns filter to generate a subsampled graph.
+    /// Returns node-wise filter to generate a subsampled graph.
+    ///
+    /// # Arguments
+    /// * `minimum_node_degree`: Option<NodeT> - The minimum node degree of either the source or destination node to be sampled. By default 0.
+    /// * `maximum_node_degree`: Option<NodeT> - The maximum node degree of either the source or destination node to be sampled. By default, the number of nodes.
+    /// * `node_types_names: Option<Vec<String>> - Node type names of the nodes to be samples as sources. If a node has any of the provided node types, it can be sampled as a source node.
+    /// * `edge_types_names`: Option<Vec<String>> - Edge type names of the nodes to be samples as sources. If a node has any of the provided edge types, it can be sampled as a source node.
+    /// * `nodes_prefixes`: Option<Vec<String>> - Prefixes of the nodes names to be samples as sources. If a node starts with any of the provided prefixes, it can be sampled as a source node.
+    /// * `support`: Option<&Graph> - Parent graph of this subgraph, defining the `true` topology of the graph. Node degrees and connected components are sampled from this support graph when provided. Useful when sampling negative edges for a test graph. In this latter case, the support graph should be the training graph.
+    fn get_graph_sampling_node_filter<'a>(
+        &'a self,
+        minimum_node_degree: Option<NodeT>,
+        maximum_node_degree: Option<NodeT>,
+        node_types_names: Option<Vec<String>>,
+        edge_types_names: Option<Vec<String>>,
+        nodes_prefixes: Option<Vec<String>>,
+        support: &'a Graph,
+    ) -> Result<impl Fn(NodeT) -> bool + '_> {
+        let minimum_node_degree = minimum_node_degree.unwrap_or(0);
+        let maximum_node_degree = maximum_node_degree.unwrap_or(NodeT::MAX);
+        let node_types_ids = if let Some(node_types_names) = node_types_names {
+            if node_types_names.is_empty() {
+                return Err("The provided vector `node_types_names` is empty!".to_string());
+            }
+            Some(
+                node_types_names
+                    .into_iter()
+                    .map(|node_type_name| {
+                        self.get_node_type_id_from_node_type_name(&node_type_name)
+                    })
+                    .collect::<Result<Vec<NodeTypeT>>>()?,
+            )
+        } else {
+            None
+        };
+
+        let edge_types_ids = if let Some(edge_types_names) = edge_types_names {
+            if edge_types_names.is_empty() {
+                return Err("The provided vector `edge_types_names` is empty!".to_string());
+            }
+            Some(
+                edge_types_names
+                    .into_iter()
+                    .map(|edge_type_name| {
+                        self.get_edge_type_id_from_edge_type_name(Some(&edge_type_name))
+                            .map(|et| et.unwrap())
+                    })
+                    .collect::<Result<Vec<EdgeTypeT>>>()?,
+            )
+        } else {
+            None
+        };
+
+        Ok(move |node_id: NodeT| {
+            if let Some(node_types_ids) = &node_types_ids {
+                if let Some(node_type) =
+                    unsafe { self.get_unchecked_node_type_ids_from_node_id(node_id) }
+                {
+                    if !node_types_ids
+                        .iter()
+                        .any(|node_type_id| node_type.contains(node_type_id))
+                    {
+                        return false;
+                    }
+                } else {
+                    return false;
+                }
+            }
+
+            if let Some(nodes_prefixes) = &nodes_prefixes {
+                let node_name = unsafe { self.get_unchecked_node_name_from_node_id(node_id) };
+                if !nodes_prefixes
+                    .iter()
+                    .any(|prefix| node_name.starts_with(prefix))
+                {
+                    return false;
+                }
+            }
+
+            if let Some(edge_types_ids) = &edge_types_ids {
+                if !edge_types_ids.iter().copied().any(|edge_type_id| unsafe {
+                    self.has_unchecked_edge_from_node_id_and_edge_type_id(
+                        node_id,
+                        Some(edge_type_id),
+                    )
+                }) {
+                    return false;
+                }
+            }
+
+            let node_degree = unsafe { support.get_unchecked_node_degree_from_node_id(node_id) };
+            if (node_degree < minimum_node_degree) && (node_degree > maximum_node_degree) {
+                return false;
+            }
+
+            true
+        })
+    }
+
+    /// Returns edge-wise filter to generate a subsampled graph.
     ///
     /// # Arguments
     /// * `sample_only_edges_with_heterogeneous_node_types`: Option<bool> - Whether to sample edges only with source and destination nodes that have different node types.
-    /// * `minimum_node_degree`: Option<NodeT> - The minimum node degree of either the source or destination node to be sampled. By default 0.
-    /// * `maximum_node_degree`: Option<NodeT> - The maximum node degree of either the source or destination node to be sampled. By default, the number of nodes.
-    /// * `source_node_types_names: Option<Vec<String>> - Node type names of the nodes to be samples as sources. If a node has any of the provided node types, it can be sampled as a source node.
-    /// * `destination_node_types_names`: Option<Vec<String>> - Node type names of the nodes to be samples as destinations. If a node has any of the provided node types, it can be sampled as a destination node.
-    /// * `source_edge_types_names`: Option<Vec<String>> - Edge type names of the nodes to be samples as sources. If a node has any of the provided edge types, it can be sampled as a source node.
-    /// * `destination_edge_types_names`: Option<Vec<String>> - Edge type names of the nodes to be samples as destinations. If a node has any of the provided edge types, it can be sampled as a destination node.
-    /// * `source_nodes_prefixes`: Option<Vec<String>> - Prefixes of the nodes names to be samples as sources. If a node starts with any of the provided prefixes, it can be sampled as a source node.
-    /// * `destination_nodes_prefixes`: Option<Vec<String>> - Prefixes of the nodes names to be samples as destinations. If a node starts with any of the provided prefixes, it can be sampled as a destinations node.
-    /// * `support`: Option<&Graph> - Parent graph of this subgraph, defining the `true` topology of the graph. Node degrees and connected components are sampled from this support graph when provided. Useful when sampling negative edges for a test graph. In this latter case, the support graph should be the training graph.
-    fn get_graph_sampling_filter<'a>(
+    fn get_graph_sampling_edge_filter<'a>(
         &'a self,
         sample_only_edges_with_heterogeneous_node_types: Option<bool>,
-        minimum_node_degree: Option<NodeT>,
-        maximum_node_degree: Option<NodeT>,
-        source_node_types_names: Option<Vec<String>>,
-        destination_node_types_names: Option<Vec<String>>,
-        source_edge_types_names: Option<Vec<String>>,
-        destination_edge_types_names: Option<Vec<String>>,
-        source_nodes_prefixes: Option<Vec<String>>,
-        destination_nodes_prefixes: Option<Vec<String>>,
-        support: &'a Graph,
     ) -> Result<impl Fn(NodeT, NodeT) -> bool + '_> {
         let sample_only_edges_with_heterogeneous_node_types =
             sample_only_edges_with_heterogeneous_node_types.unwrap_or(false);
@@ -129,174 +214,7 @@ impl Graph {
             ).to_string());
         }
 
-        let source_node_types_ids = if let Some(source_node_types_names) = source_node_types_names {
-            if source_node_types_names.is_empty() {
-                return Err("The provided vector `source_node_types_names` is empty!".to_string());
-            }
-            Some(
-                source_node_types_names
-                    .into_iter()
-                    .map(|node_type_name| {
-                        self.get_node_type_id_from_node_type_name(&node_type_name)
-                    })
-                    .collect::<Result<Vec<NodeTypeT>>>()?,
-            )
-        } else {
-            None
-        };
-
-        let destination_node_types_ids =
-            if let Some(destination_node_types_names) = destination_node_types_names {
-                if destination_node_types_names.is_empty() {
-                    return Err(
-                        "The provided vector `destination_node_types_names` is empty!".to_string(),
-                    );
-                }
-                Some(
-                    destination_node_types_names
-                        .into_iter()
-                        .map(|node_type_name| {
-                            self.get_node_type_id_from_node_type_name(&node_type_name)
-                        })
-                        .collect::<Result<Vec<NodeTypeT>>>()?,
-                )
-            } else {
-                None
-            };
-
-        let source_edge_types_ids = if let Some(source_edge_types_names) = source_edge_types_names {
-            if source_edge_types_names.is_empty() {
-                return Err("The provided vector `source_edge_types_names` is empty!".to_string());
-            }
-            Some(
-                source_edge_types_names
-                    .into_iter()
-                    .map(|edge_type_name| {
-                        self.get_edge_type_id_from_edge_type_name(Some(&edge_type_name))
-                            .map(|et| et.unwrap())
-                    })
-                    .collect::<Result<Vec<EdgeTypeT>>>()?,
-            )
-        } else {
-            None
-        };
-
-        let destination_edge_types_ids =
-            if let Some(destination_edge_types_names) = destination_edge_types_names {
-                if destination_edge_types_names.is_empty() {
-                    return Err(
-                        "The provided vector `destination_edge_types_names` is empty!".to_string(),
-                    );
-                }
-                Some(
-                    destination_edge_types_names
-                        .into_iter()
-                        .map(|edge_type_name| {
-                            self.get_edge_type_id_from_edge_type_name(Some(&edge_type_name))
-                                .map(|et| et.unwrap())
-                        })
-                        .collect::<Result<Vec<EdgeTypeT>>>()?,
-                )
-            } else {
-                None
-            };
         Ok(move |src: NodeT, dst: NodeT| {
-            if let Some(source_node_types_ids) = &source_node_types_ids {
-                if let Some(src_node_type) = self.get_node_type_ids_from_node_id(src).unwrap() {
-                    if !source_node_types_ids
-                        .iter()
-                        .any(|node_type_it| src_node_type.contains(node_type_it))
-                    {
-                        return false;
-                    }
-                } else {
-                    return false;
-                }
-            }
-
-            if let Some(destination_node_types_ids) = &destination_node_types_ids {
-                if let Some(dst_node_type) = self.get_node_type_ids_from_node_id(src).unwrap() {
-                    if !destination_node_types_ids
-                        .iter()
-                        .any(|node_type_it| dst_node_type.contains(node_type_it))
-                    {
-                        return false;
-                    }
-                } else {
-                    return false;
-                }
-            }
-
-            if let Some(source_nodes_prefixes) = &source_nodes_prefixes {
-                let src_node_name = unsafe { self.get_unchecked_node_name_from_node_id(src) };
-                if !source_nodes_prefixes
-                    .iter()
-                    .any(|prefix| src_node_name.starts_with(prefix))
-                {
-                    return false;
-                }
-            }
-
-            if let Some(destination_nodes_prefixes) = &destination_nodes_prefixes {
-                let dst_node_name = unsafe { self.get_unchecked_node_name_from_node_id(src) };
-                if !destination_nodes_prefixes
-                    .iter()
-                    .any(|prefix| dst_node_name.starts_with(prefix))
-                {
-                    return false;
-                }
-            }
-
-            if let Some(source_edge_types_ids) = &source_edge_types_ids {
-                if !source_edge_types_ids
-                    .iter()
-                    .copied()
-                    .any(|edge_type_id| unsafe {
-                        self.has_unchecked_edge_from_node_id_and_edge_type_id(
-                            src,
-                            Some(edge_type_id),
-                        )
-                    })
-                {
-                    return false;
-                }
-            }
-
-            if let Some(destination_edge_types_ids) = &destination_edge_types_ids {
-                if !destination_edge_types_ids
-                    .iter()
-                    .copied()
-                    .any(|edge_type_id| unsafe {
-                        self.has_unchecked_edge_from_node_id_and_edge_type_id(
-                            dst,
-                            Some(edge_type_id),
-                        )
-                    })
-                {
-                    return false;
-                }
-            }
-
-            unsafe {
-                if let Some(minimum_node_degree) = &minimum_node_degree {
-                    if support.get_unchecked_node_degree_from_node_id(src) < *minimum_node_degree
-                        || support.get_unchecked_node_degree_from_node_id(dst)
-                            < *minimum_node_degree
-                    {
-                        return false;
-                    }
-                }
-
-                if let Some(maximum_node_degree) = &maximum_node_degree {
-                    if support.get_unchecked_node_degree_from_node_id(src) > *maximum_node_degree
-                        || support.get_unchecked_node_degree_from_node_id(dst)
-                            > *maximum_node_degree
-                    {
-                        return false;
-                    }
-                }
-            }
-
             if sample_only_edges_with_heterogeneous_node_types
                 && unsafe {
                     self.get_unchecked_node_type_ids_from_node_id(src)
@@ -333,6 +251,7 @@ impl Graph {
     /// * `support`: Option<&Graph> - Parent graph of this subgraph, defining the `true` topology of the graph. Node degrees and connected components are sampled from this support graph when provided. Useful when sampling negative edges for a test graph. In this latter case, the support graph should be the training graph.
     /// * `use_scale_free_distribution`: Option<bool> - Whether to sample the nodes using scale_free distribution. By default True. Not using this may cause significant biases.
     /// * `sample_edge_types`: Option<bool> - Whether to sample edge types, following the edge type counts distribution. By default it is true only when the current graph instance has edge types.
+    /// * `number_of_sampling_attempts`: Option<usize> - Number of times to attempt to sample edges before giving up.
     ///
     /// # Raises
     /// * If the `sample_only_edges_with_heterogeneous_node_types` argument is provided as true, but the graph does not have node types.
@@ -354,7 +273,9 @@ impl Graph {
         support: Option<&Graph>,
         use_scale_free_distribution: Option<bool>,
         sample_edge_types: Option<bool>,
+        number_of_sampling_attempts: Option<usize>,
     ) -> Result<Graph> {
+        let number_of_sampling_attempts = number_of_sampling_attempts.unwrap_or(100_000);
         if number_of_negative_samples == 0 {
             return Err(String::from(
                 "The number of negative samples cannot be zero.",
@@ -377,15 +298,20 @@ impl Graph {
 
         let support = support.unwrap_or(&self);
 
-        let graph_filter = self.get_graph_sampling_filter(
-            sample_only_edges_with_heterogeneous_node_types,
+        let source_node_filter = self.get_graph_sampling_node_filter(
             minimum_node_degree,
             maximum_node_degree,
             source_node_types_names,
-            destination_node_types_names,
             source_edge_types_names,
-            destination_edge_types_names,
             source_nodes_prefixes,
+            support,
+        )?;
+
+        let destination_node_filter = self.get_graph_sampling_node_filter(
+            minimum_node_degree,
+            maximum_node_degree,
+            destination_node_types_names,
+            destination_edge_types_names,
             destination_nodes_prefixes,
             support,
         )?;
@@ -393,6 +319,43 @@ impl Graph {
         let use_scale_free_distribution = use_scale_free_distribution.unwrap_or(true);
         let only_from_same_component = only_from_same_component.unwrap_or(false);
         let mut random_state = random_state.unwrap_or(0xbadf00d);
+
+        let source_node_ids = self
+            .par_iter_node_ids()
+            .filter(|node_id| source_node_filter(*node_id))
+            .collect::<Vec<NodeT>>();
+
+        let source_node_degrees_cumsum = if use_scale_free_distribution {
+            let mut node_degrees = source_node_ids
+                .par_iter()
+                .copied()
+                .map(|src| unsafe { self.get_unchecked_node_degree_from_node_id(src) as f32 })
+                .collect::<Vec<f32>>();
+            cumsum_f32(&mut node_degrees);
+            Some(node_degrees)
+        } else {
+            None
+        };
+
+        let destination_node_ids = self
+            .par_iter_node_ids()
+            .filter(|node_id| destination_node_filter(*node_id))
+            .collect::<Vec<NodeT>>();
+
+        let destination_node_degrees_cumsum = if use_scale_free_distribution {
+            let mut node_degrees = destination_node_ids
+                .par_iter()
+                .copied()
+                .map(|src| unsafe { self.get_unchecked_node_degree_from_node_id(src) as f32 })
+                .collect::<Vec<f32>>();
+            cumsum_f32(&mut node_degrees);
+            Some(node_degrees)
+        } else {
+            None
+        };
+
+        let edge_wise_filter =
+            self.get_graph_sampling_edge_filter(sample_only_edges_with_heterogeneous_node_types)?;
 
         // In a complete directed graph allowing selfloops with N nodes there are N^2
         // edges. In a complete directed graph without selfloops there are N*(N-1) edges.
@@ -461,17 +424,19 @@ impl Graph {
             let src_random_state = rand_u64(random_state);
             random_state = splitmix64(random_state as u64) as EdgeT;
             let dst_random_state = rand_u64(random_state);
-            
-            let sampling_filter_map = |src, dst| {
+
+            let sampling_filter_map = |mut src, mut dst| {
                 if !self.is_directed() && src > dst {
-                    return None;
+                    let tmp = dst;
+                    dst = src;
+                    src = tmp;
                 }
 
                 if !self.has_selfloops() && src == dst {
                     return None;
                 }
 
-                if !graph_filter(src, dst) {
+                if !edge_wise_filter(src, dst) {
                     return None;
                 }
 
@@ -501,23 +466,46 @@ impl Graph {
             };
 
             // generate the random edge-sources
-            let sampled_edge_ids = if use_scale_free_distribution {
-                self.par_iter_random_outbounds_scale_free_node_ids(
-                    number_of_negative_samples as usize,
-                    src_random_state,
-                )
-                .zip(self.par_iter_random_inbounds_scale_free_node_ids(
-                    number_of_negative_samples as usize,
-                    dst_random_state,
-                ))
-                .filter_map(|(src, dst)| sampling_filter_map(src, dst))
-                .collect::<Vec<EdgeT>>()
+            let sampled_edge_ids = if let (
+                Some(source_node_degrees_cumsum),
+                Some(destination_node_degrees_cumsum),
+            ) = (
+                source_node_degrees_cumsum.as_ref(),
+                destination_node_degrees_cumsum.as_ref(),
+            ) {
+                (0..number_of_negative_samples)
+                    .into_par_iter()
+                    .map(|i| {
+                        (
+                            source_node_ids[sample_f32_from_cumsum(
+                                &source_node_degrees_cumsum,
+                                src_random_state.wrapping_add(i.wrapping_mul(src_random_state)),
+                            ) as usize
+                                % source_node_ids.len()],
+                            destination_node_ids[sample_f32_from_cumsum(
+                                &destination_node_degrees_cumsum,
+                                dst_random_state.wrapping_add(i.wrapping_mul(dst_random_state)),
+                            ) as usize
+                                % destination_node_ids.len()],
+                        )
+                    })
+                    .filter_map(|(src, dst)| sampling_filter_map(src, dst))
+                    .collect::<Vec<EdgeT>>()
             } else {
-                self.par_iter_random_node_ids(number_of_negative_samples as usize, src_random_state)
-                    .zip(self.par_iter_random_node_ids(
-                        number_of_negative_samples as usize,
-                        dst_random_state,
-                    ))
+                (0..number_of_negative_samples)
+                    .into_par_iter()
+                    .map(|i| {
+                        (
+                            source_node_ids[sample_uniform(
+                                source_node_ids.len() as u64,
+                                src_random_state.wrapping_add(i.wrapping_mul(src_random_state)),
+                            ) as usize],
+                            destination_node_ids[sample_uniform(
+                                destination_node_ids.len() as u64,
+                                dst_random_state.wrapping_add(i.wrapping_mul(dst_random_state)),
+                            ) as usize],
+                        )
+                    })
                     .filter_map(|(src, dst)| sampling_filter_map(src, dst))
                     .collect::<Vec<EdgeT>>()
             };
@@ -529,22 +517,21 @@ impl Graph {
                 negative_edges_hashset.insert(*edge_id);
             }
 
-            if sampling_round > 100_000 {
-                return Err(concat!(
+            if sampling_round > number_of_sampling_attempts {
+                return Err(format!(concat!(
                     "Using the provided filters on the current graph instance it ",
-                    "was not possible to sample a new negative edge after 100K sampling ",
+                    "was not possible to sample a new negative edge after {number_of_sampling_attempts} sampling ",
                     "rounds."
-                )
-                .to_string());
+                ), number_of_sampling_attempts=number_of_sampling_attempts));
             }
 
             if negative_edges_hashset.len() > last_size {
                 last_size = negative_edges_hashset.len();
+                sampling_round = 0;
             } else {
                 sampling_round += 1;
             }
         }
-
 
         build_graph_from_integers(
             Some(negative_edges_hashset.into_par_iter().map(|edge| unsafe {
@@ -599,6 +586,7 @@ impl Graph {
     /// * `destination_nodes_prefixes`: Option<Vec<String>> - Prefixes of the nodes names to be samples as destinations. If a node starts with any of the provided prefixes, it can be sampled as a destinations node.
     /// * `edge_type_names`: Option<&[Option<&str>]> - Edge type names of the edges to sample. Only edges with ANY of these edge types will be kept.
     /// * `support`: Option<&Graph> - Parent graph of this subgraph, defining the `true` topology of the graph. Node degrees are sampled from this support graph when provided. Useful when sampling positive edges for a test graph. In this latter case, the support graph should be the training graph.
+    /// * `number_of_sampling_attempts`: Option<usize> - Number of times to attempt to sample edges before giving up.
     ///
     /// # Raises
     /// * If the `sample_only_edges_with_heterogeneous_node_types` argument is provided as true, but the graph does not have node types.
@@ -617,7 +605,9 @@ impl Graph {
         destination_nodes_prefixes: Option<Vec<String>>,
         edge_type_names: Option<&[Option<&str>]>,
         support: Option<&Graph>,
+        number_of_sampling_attempts: Option<usize>,
     ) -> Result<Graph> {
+        let number_of_sampling_attempts = number_of_sampling_attempts.unwrap_or(100_000);
         if number_of_samples == 0 {
             return Err(String::from("The number of samples cannot be zero."));
         }
@@ -629,18 +619,26 @@ impl Graph {
         let support = support.unwrap_or(&self);
         let mut random_state = splitmix64(random_state.unwrap_or(42));
 
-        let graph_filter = self.get_graph_sampling_filter(
-            sample_only_edges_with_heterogeneous_node_types,
+        let source_node_filter = self.get_graph_sampling_node_filter(
             minimum_node_degree,
             maximum_node_degree,
             source_node_types_names,
-            destination_node_types_names,
             source_edge_types_names,
-            destination_edge_types_names,
             source_nodes_prefixes,
+            support,
+        )?;
+
+        let destination_node_filter = self.get_graph_sampling_node_filter(
+            minimum_node_degree,
+            maximum_node_degree,
+            destination_node_types_names,
+            destination_edge_types_names,
             destination_nodes_prefixes,
             support,
         )?;
+
+        let edge_wise_filter =
+            self.get_graph_sampling_edge_filter(sample_only_edges_with_heterogeneous_node_types)?;
 
         let edge_type_ids = if let Some(edge_type_names) = edge_type_names {
             Some(self.get_edge_type_ids_from_edge_type_names(edge_type_names)?)
@@ -661,6 +659,11 @@ impl Graph {
             let sampling_filter_map = |edge_id| {
                 let (src, dst) = unsafe { self.get_unchecked_node_ids_from_edge_id(edge_id) };
                 let edge_type_id = unsafe { self.get_unchecked_edge_type_id_from_edge_id(edge_id) };
+
+                if !source_node_filter(src) || !destination_node_filter(dst) {
+                    return None;
+                }
+
                 if !self.is_directed() && src > dst {
                     return None;
                 }
@@ -677,7 +680,7 @@ impl Graph {
                     return None;
                 }
 
-                if !graph_filter(src, dst) {
+                if !edge_wise_filter(src, dst) {
                     return None;
                 }
 
@@ -701,13 +704,12 @@ impl Graph {
                 edges_hashset.insert(*edge_id);
             }
 
-            if sampling_round > 10_000 {
-                return Err(concat!(
+            if sampling_round > number_of_sampling_attempts {
+                return Err(format!(concat!(
                     "Using the provided filters on the current graph instance it ",
-                    "was not possible to sample a new positive edge after 10K sampling ",
+                    "was not possible to sample a new negative edge after {number_of_sampling_attempts} sampling ",
                     "rounds."
-                )
-                .to_string());
+                ), number_of_sampling_attempts=number_of_sampling_attempts));
             }
         }
 
@@ -1323,8 +1325,14 @@ impl Graph {
         });
 
         Ok((
-            train_node_types.iter().map(|x| x.map(|y| y.to_vec())).collect::<Vec<_>>(), 
-            test_node_types.iter().map(|x| x.map(|y| y.to_vec())).collect::<Vec<_>>(),
+            train_node_types
+                .iter()
+                .map(|x| x.map(|y| y.to_vec()))
+                .collect::<Vec<_>>(),
+            test_node_types
+                .iter()
+                .map(|x| x.map(|y| y.to_vec()))
+                .collect::<Vec<_>>(),
         ))
     }
 

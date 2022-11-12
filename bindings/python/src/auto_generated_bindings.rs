@@ -4636,7 +4636,7 @@ impl Graph {
 
     #[automatically_generated_binding]
     #[pyo3(
-        text_signature = "($self, number_of_negative_samples, random_state, only_from_same_component, sample_only_edges_with_heterogeneous_node_types, minimum_node_degree, maximum_node_degree, source_node_types_names, destination_node_types_names, source_edge_types_names, destination_edge_types_names, source_nodes_prefixes, destination_nodes_prefixes, graph_to_avoid, support, use_scale_free_distribution, sample_edge_types)"
+        text_signature = "($self, number_of_negative_samples, random_state, only_from_same_component, sample_only_edges_with_heterogeneous_node_types, minimum_node_degree, maximum_node_degree, source_node_types_names, destination_node_types_names, source_edge_types_names, destination_edge_types_names, source_nodes_prefixes, destination_nodes_prefixes, graph_to_avoid, support, use_scale_free_distribution, sample_edge_types, number_of_sampling_attempts)"
     )]
     /// Returns Graph with given amount of negative edges as positive edges.
     ///
@@ -4676,6 +4676,8 @@ impl Graph {
     ///     Whether to sample the nodes using scale_free distribution. By default True. Not using this may cause significant biases.
     /// sample_edge_types: Optional[bool]
     ///     Whether to sample edge types, following the edge type counts distribution. By default it is true only when the current graph instance has edge types.
+    /// number_of_sampling_attempts: Optional[int]
+    ///     Number of times to attempt to sample edges before giving up.
     ///
     ///
     /// Raises
@@ -4701,6 +4703,7 @@ impl Graph {
         support: Option<&Graph>,
         use_scale_free_distribution: Option<bool>,
         sample_edge_types: Option<bool>,
+        number_of_sampling_attempts: Option<usize>,
     ) -> PyResult<Graph> {
         Ok(pe!(self.inner.sample_negative_graph(
             number_of_negative_samples.clone(),
@@ -4718,14 +4721,15 @@ impl Graph {
             graph_to_avoid.map(|sg| &sg.inner),
             support.map(|sg| &sg.inner),
             use_scale_free_distribution,
-            sample_edge_types
+            sample_edge_types,
+            number_of_sampling_attempts
         ))?
         .into())
     }
 
     #[automatically_generated_binding]
     #[pyo3(
-        text_signature = "($self, number_of_samples, random_state, sample_only_edges_with_heterogeneous_node_types, minimum_node_degree, maximum_node_degree, source_node_types_names, destination_node_types_names, source_edge_types_names, destination_edge_types_names, source_nodes_prefixes, destination_nodes_prefixes, edge_type_names, support)"
+        text_signature = "($self, number_of_samples, random_state, sample_only_edges_with_heterogeneous_node_types, minimum_node_degree, maximum_node_degree, source_node_types_names, destination_node_types_names, source_edge_types_names, destination_edge_types_names, source_nodes_prefixes, destination_nodes_prefixes, edge_type_names, support, number_of_sampling_attempts)"
     )]
     /// Returns Graph with given amount of subsampled edges.
     ///
@@ -4755,6 +4759,8 @@ impl Graph {
     ///     Edge type names of the edges to sample. Only edges with ANY of these edge types will be kept.
     /// support: Optional[&Graph]
     ///     Parent graph of this subgraph, defining the `true` topology of the graph. Node degrees are sampled from this support graph when provided. Useful when sampling positive edges for a test graph. In this latter case, the support graph should be the training graph.
+    /// number_of_sampling_attempts: Optional[int]
+    ///     Number of times to attempt to sample edges before giving up.
     ///
     ///
     /// Raises
@@ -4777,6 +4783,7 @@ impl Graph {
         destination_nodes_prefixes: Option<Vec<String>>,
         edge_type_names: Option<Vec<Option<&str>>>,
         support: Option<&Graph>,
+        number_of_sampling_attempts: Option<usize>,
     ) -> PyResult<Graph> {
         Ok(pe!(self.inner.sample_positive_graph(
             number_of_samples.clone(),
@@ -4791,7 +4798,8 @@ impl Graph {
             source_nodes_prefixes,
             destination_nodes_prefixes,
             edge_type_names.as_ref().map(|x| x.as_slice()),
-            support.map(|sg| &sg.inner)
+            support.map(|sg| &sg.inner),
+            number_of_sampling_attempts
         ))?
         .into())
     }
