@@ -66,7 +66,7 @@ pub struct Graph {
     pub(crate) unique_sources: Arc<Option<EliasFano>>,
     /// Option of bitvec containing connected nodes.
     /// When it is None it means that ALL nodes are connected, i.e. not singleton or singletons with selfloops.
-    pub(crate) connected_nodes: Arc<Option<BitVec<Lsb0, u8>>>,
+    pub(crate) connected_nodes: Arc<Option<BitVec<u8, Lsb0>>>,
     /// Number of connected nodes in the graph.
     pub(crate) connected_nodes_number: NodeT,
 
@@ -175,10 +175,10 @@ impl Graph {
         &self,
         may_have_singletons: bool,
         may_have_singleton_with_selfloops: bool,
-    ) -> BitVec<Lsb0, u8> {
+    ) -> BitVec<u8, Lsb0> {
         let connected_nodes = if may_have_singletons && self.is_directed() {
             let mut connected_nodes =
-                bitvec![Lsb0, AtomicU8; 0; self.get_number_of_nodes() as usize];
+                bitvec![AtomicU8, Lsb0; 0; self.get_number_of_nodes() as usize];
             let thread_shared_connected_nodes = ThreadDataRaceAware::new(&mut connected_nodes);
             // If the graph may contain singletons, we need to iterate on all
             // the nodes neighbours in order to find if whether a node is a singleton or
@@ -200,7 +200,7 @@ impl Graph {
             connected_nodes
         } else {
             let mut connected_nodes =
-                bitvec![Lsb0, AtomicU8; 1; self.get_number_of_nodes() as usize];
+                bitvec![AtomicU8, Lsb0; 1; self.get_number_of_nodes() as usize];
             let thread_shared_connected_nodes = ThreadDataRaceAware::new(&mut connected_nodes);
             self.par_iter_node_degrees()
                 .enumerate()
@@ -226,7 +226,7 @@ impl Graph {
                 });
             connected_nodes
         };
-        unsafe { std::mem::transmute::<BitVec<Lsb0, AtomicU8>, BitVec<Lsb0, u8>>(connected_nodes) }
+        unsafe { std::mem::transmute::<BitVec<AtomicU8, Lsb0>, BitVec<u8, Lsb0>>(connected_nodes) }
     }
 
     /// Return whether given graph has any edge overlapping with current graph.

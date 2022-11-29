@@ -73,14 +73,14 @@ where
     {
         // We initialize the provided slice with the maximum distance.
         features.par_iter_mut().for_each(|distance| {
-            *distance = Feature::ZERO;
+            *distance = Feature::zero();
         });
         // We wrap the features object in an unsafe cell so
         // it may be shared among threads.
         let shared_features = &Feature::from_mut_slice(features);
         // Initialize to 1 the count of the nodes in the buckets
         bucket.par_iter().for_each(|node_id| {
-            shared_features[*node_id as usize].store(Feature::ONE, Ordering::Relaxed);
+            shared_features[*node_id as usize].store(Feature::one(), Ordering::Relaxed);
         });
 
         if self.get_window_size() == 1 {
@@ -89,7 +89,7 @@ where
                     .iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
                     .for_each(|neighbour_node_id| {
                         shared_features[neighbour_node_id as usize]
-                            .fetch_saturating_add(Feature::ONE, Ordering::Relaxed);
+                            .fetch_saturating_add(Feature::one(), Ordering::Relaxed);
                     });
             });
         } else if self.get_window_size() == 2 {
@@ -100,8 +100,8 @@ where
                     .iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
                     .for_each(|neighbour_node_id| {
                         if shared_features[neighbour_node_id as usize]
-                            .fetch_saturating_add(Feature::ONE, Ordering::Relaxed)
-                            == Feature::ZERO
+                            .fetch_saturating_add(Feature::one(), Ordering::Relaxed)
+                            == Feature::zero()
                         {
                             frontier.push(neighbour_node_id)
                         }
@@ -132,13 +132,13 @@ where
                         });
                 });
         } else {
-            let mut first_counter = vec![Feature::ZERO; graph.get_number_of_nodes() as usize];
-            let mut second_counter = vec![Feature::ZERO; graph.get_number_of_nodes() as usize];
+            let mut first_counter = vec![Feature::zero(); graph.get_number_of_nodes() as usize];
+            let mut second_counter = vec![Feature::zero(); graph.get_number_of_nodes() as usize];
             {
                 let shared_first_counter = Feature::from_mut_slice(&mut first_counter);
                 // Initialize to 1 the count of the nodes in the buckets
                 bucket.par_iter().for_each(|node_id| {
-                    shared_first_counter[*node_id as usize].store(Feature::ONE, Ordering::Relaxed);
+                    shared_first_counter[*node_id as usize].store(Feature::one(), Ordering::Relaxed);
                 });
             }
 
@@ -161,7 +161,7 @@ where
                         .for_each(|neighbour_node_id| {
                             if shared_second_counter[neighbour_node_id as usize]
                                 .fetch_saturating_add(count, Ordering::Relaxed)
-                                == Feature::ZERO
+                                == Feature::zero()
                             {
                                 temporary_frontier.push(neighbour_node_id)
                             }
@@ -172,7 +172,7 @@ where
                 primary_frontier.clear();
                 std::mem::swap(&mut first_counter, &mut second_counter);
                 second_counter.par_iter_mut().for_each(|count| {
-                    *count = Feature::ZERO;
+                    *count = Feature::zero();
                 });
                 std::mem::swap(&mut primary_frontier, &mut temporary_frontier);
             }

@@ -35,7 +35,7 @@ tokenizers = "0.11.0"
 counter = "=0.5.2"
 is_sorted = "0.1.1"
 derive-getters = "0.1.0"
-bitvec = {version="0.22", features=["atomic"]}
+bitvec = {version="1.0.1", features=["atomic"]}
 glob = "0.3.0"
 keyed_priority_queue = "0.3.2"
 validator = "0.14.0"
@@ -47,7 +47,6 @@ num-traits = "0.2.14"
 v_htmlescape = "0.13.1"
 linked_hash_set = "0.1.4"
 hashbrown = {version="0.12.1", features=["rayon"]}
-funty = "1.2.0"
 indicatif = {version="0.16.0", features = ["rayon"]}
 arbitrary = { version = "0.4.5", features = ["derive"] }
 mmap = {path = "./mmap"}

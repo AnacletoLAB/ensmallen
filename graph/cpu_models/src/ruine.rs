@@ -65,7 +65,7 @@ impl LandmarkBasedFeature<{ LandmarkFeatureType::Random }> for RUINE {
 
         // We initialize the provided slice with the maximum distance.
 
-        let maximum_value: u64 = Feature::MAX.as_();
+        let maximum_value: u64 = Feature::max_value().as_();
 
         features
             .par_iter_mut()

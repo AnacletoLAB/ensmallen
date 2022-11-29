@@ -1,8 +1,7 @@
 use express_measures::ThreadFloat;
-use funty::Integral;
 use graph::{EdgeT, EdgeTypeT, Graph, NodeT};
 use half::f16;
-use num_traits::{AsPrimitive, Float, IntoAtomic, Zero};
+use num_traits::{AsPrimitive, Float, IntoAtomic, Zero, PrimInt};
 use rayon::prelude::*;
 use vec_rand::{random_f32, splitmix64};
 
@@ -218,11 +217,13 @@ pub fn sigmoid<F: Float>(x: F) -> F {
 pub trait IntegerFeatureType:
     Send
     + Sync
-    + Integral
+    + PrimInt
+    + std::ops::AddAssign
     + TryInto<usize>
     + TryFrom<usize>
     + IntoAtomic
     + Copy
+    + std::ops::BitOrAssign
     + AsPrimitive<usize>
     + AsPrimitive<f32>
     + AsPrimitive<u64>

@@ -716,7 +716,7 @@ impl Graph {
                     // Put the distance of the original node as 0.
                     neighbours_stack.push_front((node_id, 0));
                     // Create a binary mask for the visited node.
-                    let mut visited = bitvec![Lsb0, u8; 0; nodes_number];
+                    let mut visited = bitvec![u8, Lsb0; 0; nodes_number];
                     // Initialize the sum of the features
                     let mut document_features_sum = 0.0;
                     // We set the current root node as visited

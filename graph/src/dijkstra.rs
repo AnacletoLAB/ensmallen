@@ -1,7 +1,6 @@
 use super::*;
-use funty::IsInteger;
 use indicatif::ParallelProgressIterator;
-use num_traits::Zero;
+use num_traits::{Zero, PrimInt};
 use rayon::prelude::*;
 use std::cmp::Ord;
 use std::collections::VecDeque;
@@ -757,14 +756,14 @@ impl Graph {
     /// The provided list of node ids must be non-empty, or the method will panic.
     ///
     pub unsafe fn get_unchecked_generic_breadth_first_search_distances_parallel_from_node_ids<
-        T: Send + Sync + IsInteger + TryFrom<usize>,
+        T: Send + Sync + PrimInt + TryFrom<usize> + std::ops::AddAssign,
     >(
         &self,
         src_node_ids: Vec<NodeT>,
         maximal_depth: Option<T>,
     ) -> (Vec<T>, T, NodeT) {
         let nodes_number = self.get_number_of_nodes() as usize;
-        let node_not_present = T::MAX;
+        let node_not_present = T::max_value();
         let mut distances = vec![node_not_present; nodes_number];
         let thread_shared_distances = ThreadDataRaceAware::new(&mut distances);
         for src_node_id in src_node_ids.iter().cloned() {

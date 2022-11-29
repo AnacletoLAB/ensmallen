@@ -95,7 +95,7 @@ impl Graph {
                 .as_ref()
                 .as_ref()
                 .map_or(0, |e| e.size()),
-            connected_nodes: size_of::<Option<BitVec<Lsb0, u8>>>()
+            connected_nodes: size_of::<Option<BitVec<u8, Lsb0>>>()
                 + self
                     .connected_nodes
                     .as_ref()

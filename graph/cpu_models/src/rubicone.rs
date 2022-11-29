@@ -65,7 +65,7 @@ impl LandmarkBasedFeature<{ LandmarkFeatureType::Random }> for RUBICONE {
 
         // We initialize the provided slice with the maximum distance.
 
-        let maximum_value: u64 = Feature::MAX.as_();
+        let maximum_value: u64 = Feature::max_value().as_();
 
         features
             .par_iter_mut()
@@ -89,24 +89,24 @@ impl LandmarkBasedFeature<{ LandmarkFeatureType::Random }> for RUBICONE {
                 let half_number_of_neighbours = graph
                     .iter_unchecked_neighbour_node_ids_from_source_node_id(src)
                     .map(|dst| {
-                        let mut dst_feature = shared_features[dst as usize].load(Ordering::Relaxed);
+                        let mut dst_feature: Feature = shared_features[dst as usize].load(Ordering::Relaxed);
                         new_src_feature.iter_mut().for_each(|value| {
-                            if dst_feature & Feature::ONE == Feature::ONE {
+                            if dst_feature & Feature::one() == Feature::one() {
                                 *value += 1;
                             }
-                            dst_feature = dst_feature >> Feature::ONE;
+                            dst_feature = dst_feature >> 1;
                         });
                     })
                     .count()
                     / 2;
                 shared_features[src as usize].store(
                     new_src_feature.into_iter().rev().fold(
-                        Feature::ZERO,
+                        Feature::zero(),
                         |mut feature_being_built, feature_count| {
                             if feature_count > half_number_of_neighbours {
-                                feature_being_built |= Feature::ONE;
+                                feature_being_built |= Feature::one();
                             }
-                            feature_being_built << Feature::ONE
+                            feature_being_built << 1
                         },
                     ),
                     Ordering::Relaxed,
