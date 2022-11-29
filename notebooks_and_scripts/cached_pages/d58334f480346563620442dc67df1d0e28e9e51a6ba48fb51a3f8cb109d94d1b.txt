@@ -1726,45 +1726,20 @@ Open Access
    search-headers='{"Accept": "application/json"}' >
     <div class="panel panel-default" id="citation">
       <div class="panel-heading">
-        <!-- Beta ribbon -->
-        <div class="row" style="margin-bottom: -15px;">
-          <div class="col-sm-1">
-            <div class="ribbon-wrapper-green">
-              <a href="https://help.zenodo.org/#citations" target="_blank" rel="noopener noreferrer">
-                <div class="corner-ribbon top-left ribbon-green">Beta</div>
-              </a>
-            </div>
-          </div>
-          <div class="col-sm-11" style="margin-top: 5px;">
-            <a class="panel-toggle" data-toggle="collapse" href="#collapseCitations" style="margin-left:-25px;">
-              Citations
-            </a>
-            <a href="https://help.zenodo.org/#citations" target="_blank" rel="noopener noreferrer">
-              <i class="fa fa-question-circle"></i>
-            </a>
-            <small class="text-muted">
-              <invenio-search-count template="/static/templates/citations/count.html">
-              </invenio-search-count>
-            </small>
-            <a class="panel-toggle" data-toggle="collapse" href="#collapseCitations" style="margin-left:-25px;">
-              <span class="pull-right show-on-collapsed"><i class="fa fa-chevron-right"></i></span>
-              <span class="pull-right hide-on-collapsed"><i class="fa fa-chevron-down"></i></span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Without beta ribbon -->
-        <!--<a class="panel-toggle" data-toggle="collapse" href="#collapseCitations">-->
-          <!--Citations-->
-          <!--<small class="text-muted">-->
-            <!--<invenio-search-count-->
-            <!--template="/static/templates/citations/count.html">-->
-            <!--</invenio-search-count>-->
-          <!--</small>-->
-          <!--<span class="pull-right show-on-collapsed"><i class="fa fa-chevron-right"></i></span>-->
-          <!--<span class="pull-right hide-on-collapsed"><i class="fa fa-chevron-down"></i></span>-->
-        <!--</a>-->
-
+        <a class="panel-toggle" data-toggle="collapse" href="#collapseCitations">
+          Citations
+        </a>
+        <a href="https://help.zenodo.org/#citations" target="_blank" rel="noopener noreferrer">
+          <i class="fa fa-question-circle"></i>
+        </a>
+        <small class="text-muted">
+          <invenio-search-count template="/static/templates/citations/count.html">
+          </invenio-search-count>
+        </small>
+        <a class="panel-toggle" data-toggle="collapse" href="#collapseCitations" style="margin-left:-25px;">
+          <span class="pull-right show-on-collapsed"><i class="fa fa-chevron-right"></i></span>
+          <span class="pull-right hide-on-collapsed"><i class="fa fa-chevron-down"></i></span>
+        </a>
       </div>
       <div id="collapseCitations" class="collapse in">
         <div class="search-page">
@@ -1840,10 +1815,10 @@ Open Access
   <div id="accordion">
     <!-- Banner --><div class="row">
       <div class="col-sm-6">
-        <span class="stats-data">2,576</span>
+        <span class="stats-data">2,648</span>
       </div>
       <div class="col-sm-6">
-        <span class="stats-data">9,210</span>
+        <span class="stats-data">9,236</span>
       </div>
     </div>
     <div class="row">
@@ -1870,19 +1845,19 @@ Open Access
           <th>All versions</th>
           <th>This version</th>
         </tr><tr>
-          <td>Views <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="Total views." data-original-title="Total views."></i></td><td>2,576</td><td>2,577</td>
+          <td>Views <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="Total views." data-original-title="Total views."></i></td><td>2,648</td><td>2,649</td>
         </tr>
         <tr>
-          <td>Downloads <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="Total downloads." data-original-title="Total downloads."></i></td><td>9,210</td><td>9,210</td>
+          <td>Downloads <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="Total downloads." data-original-title="Total downloads."></i></td><td>9,236</td><td>9,236</td>
         </tr>
         <tr>
           <td>Data volume <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="Total download volume." data-original-title="Total download volume."></i></td><td>6.1 TB</td><td>6.1 TB</td>
         </tr>
         <tr>
-          <td>Unique views <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="Views in one hour user-sessions are counted only once." data-original-title="Views in one hour user-sessions are counted only once."></i></td><td>2,308</td><td>2,309</td>
+          <td>Unique views <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="Views in one hour user-sessions are counted only once." data-original-title="Views in one hour user-sessions are counted only once."></i></td><td>2,353</td><td>2,354</td>
         </tr>
         <tr>
-          <td>Unique downloads <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="Downloads in one hour user-sessions are counted only once." data-original-title="Downloads in one hour user-sessions are counted only once."></i></td><td>1,493</td><td>1,493</td>
+          <td>Unique downloads <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="Downloads in one hour user-sessions are counted only once." data-original-title="Downloads in one hour user-sessions are counted only once."></i></td><td>1,500</td><td>1,500</td>
         </tr>
       </table>
       <div class="row">

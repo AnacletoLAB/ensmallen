@@ -1,8 +1,9 @@
 use crate::types::*;
 use crate::validation::*;
 use core::fmt::Debug;
-
 use num_traits::{AsPrimitive, Float};
+use indicatif::{ParallelProgressIterator, ProgressBar, ProgressStyle};
+use parallel_frontier::Frontier;
 use rayon::prelude::*;
 
 /// Returns the cosine similarity between the two provided vectors computed sequentially.
@@ -211,4 +212,102 @@ where
             .0;
         });
     Ok(())
+}
+
+/// Compute the cosine similarities between the two provided element lists.
+///
+/// # Arguments
+/// * `matrix`: &[F] - Matrix containing the feaures.
+/// * `sources`: &[I] - Indices of the source features.
+/// * `destinations`: &[I] - Indices of the destination features.
+/// * `dimension`: usize - Dimensionality of the matrix.
+/// * `lower_threshold`: Option<R> - Only returns values that are lower than this score. By default `1.0`.
+/// * `higher_threshold`: Option<R> - Only returns values that are higher than this score. By default `-1.0`.
+/// * `verbose`: Option<bool> - Whether to show loading bars.
+///
+pub fn pairwise_cosine_similarity<
+    R: Float + Send + Sync + 'static,
+    F: AsPrimitive<R> + Send + Sync + Copy,
+    I: ThreadUnsigned + Ord + std::fmt::Display,
+>(
+    matrix: &[F],
+    sources: &[I],
+    destinations: &[I],
+    dimension: usize,
+    minimum_threshold: Option<R>,
+    maximum_threshold: Option<R>,
+    verbose: Option<bool>
+) -> Result<(Vec<I>, Vec<R>), String>
+where
+    <I as TryInto<usize>>::Error: Debug,
+{
+    let minimum_threshold: R = minimum_threshold.unwrap_or(R::one());
+    let maximum_threshold: R = maximum_threshold.unwrap_or(-R::one());
+    let verbose: bool = verbose.unwrap_or(true);
+
+    let maximum_id = sources
+        .par_iter()
+        .chain(destinations.par_iter())
+        .copied()
+        .max()
+        .unwrap_or(I::zero())
+        .try_into()
+        .unwrap();
+
+    if maximum_id >= matrix.len() / dimension {
+        return Err(format!(
+            concat!(
+                "The maximum provided element ID is {}, but ",
+                "the matrix only contains {} rows."
+            ),
+            maximum_id,
+            matrix.len() / dimension
+        ));
+    }
+
+    let nodes: Frontier<I> = Frontier::new();
+    let similarities: Frontier<R> = Frontier::new();
+
+    let progress_bar = if verbose {
+        let pb = ProgressBar::new(sources.len() as u64);
+        pb.set_style(
+            ProgressStyle::default_bar()
+                .template(concat!(
+                    "Computing cosine similarities ",
+                    "{spinner:.green} [{elapsed_precise}] ",
+                    "[{bar:40.cyan/blue}] ({pos}/{len}, ETA {eta})"
+                ))
+                .unwrap(),
+        );
+        pb
+    } else {
+        ProgressBar::hidden()
+    };
+
+    sources
+        .par_iter()
+        .copied()
+        .progress_with(progress_bar)
+        .for_each(|src|  {
+            let usize_src: usize = src.try_into().unwrap();
+            destinations.par_iter().copied().for_each(|dst| unsafe{
+                let usize_dst: usize = dst.try_into().unwrap();
+
+                let similarity = cosine_similarity_sequential_unchecked(
+                    &matrix[usize_src * dimension..(usize_src + 1) * dimension],
+                    &matrix[usize_dst * dimension..(usize_dst + 1) * dimension],
+                )
+                .0;
+
+                if similarity < maximum_threshold || similarity > minimum_threshold {
+                    return;
+                }
+
+                nodes.push(src);
+                nodes.push(dst);
+                similarities.push(similarity);
+            });
+        });
+
+    Ok((nodes.into(), similarities.into()))
 }

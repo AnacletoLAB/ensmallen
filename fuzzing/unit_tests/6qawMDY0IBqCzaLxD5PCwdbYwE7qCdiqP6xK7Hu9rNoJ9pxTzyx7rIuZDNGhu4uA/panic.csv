@@ -1,8 +1,0 @@
-file,"/Workspace/Shared/ensmallen/graph/src/test_utilities.rs"
-line,423
-col,17
-message,In an undirected graph, for every edge there must have its own symmetric edge.
-In the provided graph instance, for the edge from the source node ID 0 to the destination node ID 1 the symmetric edge does not exist.
-This error is likely caused by some mis-parametrization in a method that is expected to produce a simmetric graph.
-The complete set of edges in the graph is:
-[[0, 1], [2, 1], [3, 1]]

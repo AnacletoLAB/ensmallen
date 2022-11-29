@@ -3,7 +3,8 @@
 <body>
 <h1>Index of /igwikiquote/</h1><hr><pre><a href="../">../</a>
 <a href="20221020/">20221020/</a>                                          21-Oct-2022 07:58                   -
-<a href="20221101/">20221101/</a>                                          07-Nov-2022 12:55                   -
-<a href="latest/">latest/</a>                                            07-Nov-2022 12:55                   -
+<a href="20221101/">20221101/</a>                                          04-Nov-2022 18:48                   -
+<a href="20221120/">20221120/</a>                                          29-Nov-2022 10:25                   -
+<a href="latest/">latest/</a>                                            29-Nov-2022 10:25                   -
 </pre><hr></body>
 </html>

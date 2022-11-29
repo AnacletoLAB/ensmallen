@@ -1,4 +1,0 @@
-file,"/Workspace/Shared/ensmallen/graph/src/constructors/edge_node_names_parser.rs"
-line,88
-col,43
-message,called `Option::unwrap()` on a `None` value

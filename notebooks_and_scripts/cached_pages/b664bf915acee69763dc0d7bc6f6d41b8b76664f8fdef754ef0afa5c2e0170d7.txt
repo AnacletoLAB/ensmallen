@@ -83,12 +83,5 @@
       </li>
     </ul>
 
-    <h5>Files</h5>
-    <ul>
-      <li>
-	<a href="https://kg-hub.berkeleybop.io/kg-phenio/hp-mp_similarities.tar.gz">hp-mp_similarities.tar.gz</a>
-      </li>
-    </ul>
-
   </body>
 </html>

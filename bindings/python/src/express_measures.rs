@@ -1,4 +1,5 @@
 use super::*;
+use crate::mmap_numpy_npy::to_numpy_array;
 use half::f16;
 use numpy::{PyArray1, PyArray2};
 use pyo3::wrap_pyfunction;
@@ -316,6 +317,184 @@ macro_rules! impl_cosine_distance {
             pe!(Err(concat!(
                 "The provided features are not supported ",
                 "in the cosine similarity computation!"
+            ).to_string()))
+        }
+
+        #[module(express_measures)]
+        #[pyfunction()]
+        #[pyo3(text_signature = "(matrix, sources, destinations, minimum_threshold, maximum_threshold, verbose)")]
+        /// Returns cosine similarity of the provided source and destinations using the provided features.
+        ///
+        /// Arguments
+        /// ------------
+        /// matrix: np.ndarray
+        ///     2D Matrix containing the feaures.
+        /// sources: np.ndarray
+        ///     Indices of the source features.
+        /// destinations: np.ndarray
+        ///     Indices of the destination features.
+        /// lower_threshold: float = 1.0
+        ///     Only returns values that are lower than this score. By default `1.0`.
+        /// higher_threshold`: float = -1.0
+        ///     Only returns values that are higher than this score. By default `-1.0`.
+        /// verbose: bool = True
+        ///     Whether to show loading bars.
+        ///
+        fn pairwise_cosine_similarity(
+            matrix: Py<PyAny>,
+            sources: Py<PyAny>,
+            destinations: Py<PyAny>,
+            minimum_threshold: Option<f32>,
+            maximum_threshold: Option<f32>,
+            verbose: Option<bool>
+        ) -> PyResult<(Py<PyAny>, Py<PyArray1<f32>>)> {
+            let gil = pyo3::Python::acquire_gil();
+            let matrix = matrix.as_ref(gil.python());
+            let sources = sources.as_ref(gil.python());
+            let destinations = destinations.as_ref(gil.python());
+            $(
+                if let Ok(matrix) = <&PyArray2<$dtype>>::extract(&matrix) {
+
+                    if !matrix.is_c_contiguous(){
+                        return pe!(Err(
+                            concat!(
+                                "The provided vector is not a contiguos vector in ",
+                                "C orientation."
+                            )
+                        ));
+                    }
+
+                    let matrix_ref = unsafe { matrix.as_slice().unwrap() };
+
+                    if let (Ok(sources), Ok(destinations)) = (
+                        <&PyArray1<u8>>::extract(&sources),
+                        <&PyArray1<u8>>::extract(&destinations)
+                    ) {
+
+                        let sources_ref = unsafe { sources.as_slice().unwrap() };
+                        let destinations_ref = unsafe { destinations.as_slice().unwrap() };
+
+                        let (edge_node_ids, similarities) = pe!(
+                            ::express_measures::pairwise_cosine_similarity(
+                                matrix_ref,
+                                sources_ref,
+                                destinations_ref,
+                                matrix.shape()[1],
+                                minimum_threshold,
+                                maximum_threshold,
+                                verbose
+                            )
+                        )?;
+
+                        return Ok((
+                            pe!(to_numpy_array(
+                                gil.python(),
+                                edge_node_ids,
+                                &[similarities.len(), 2],
+                                false
+                            ))?,
+                            to_ndarray_1d!(gil, similarities, f32),
+                        ))
+                    }
+                    
+                    if let (Ok(sources), Ok(destinations)) = (
+                        <&PyArray1<u16>>::extract(&sources),
+                        <&PyArray1<u16>>::extract(&destinations)
+                    ) {
+
+                        let sources_ref = unsafe { sources.as_slice().unwrap() };
+                        let destinations_ref = unsafe { destinations.as_slice().unwrap() };
+
+                        let (edge_node_ids, similarities) = pe!(
+                            ::express_measures::pairwise_cosine_similarity(
+                                matrix_ref,
+                                sources_ref,
+                                destinations_ref,
+                                matrix.shape()[1],
+                                minimum_threshold,
+                                maximum_threshold,
+                                verbose
+                            )
+                        )?;
+
+                        return Ok((
+                            pe!(to_numpy_array(
+                                gil.python(),
+                                edge_node_ids,
+                                &[similarities.len(), 2],
+                                false
+                            ))?,
+                            to_ndarray_1d!(gil, similarities, f32),
+                        ))
+                    }
+
+                    if let (Ok(sources), Ok(destinations)) = (
+                        <&PyArray1<u32>>::extract(&sources),
+                        <&PyArray1<u32>>::extract(&destinations)
+                    ) {
+
+                        let sources_ref = unsafe { sources.as_slice().unwrap() };
+                        let destinations_ref = unsafe { destinations.as_slice().unwrap() };
+
+                        let (edge_node_ids, similarities) = pe!(
+                            ::express_measures::pairwise_cosine_similarity(
+                                matrix_ref,
+                                sources_ref,
+                                destinations_ref,
+                                matrix.shape()[1],
+                                minimum_threshold,
+                                maximum_threshold,
+                                verbose
+                            )
+                        )?;
+
+                        return Ok((
+                            pe!(to_numpy_array(
+                                gil.python(),
+                                edge_node_ids,
+                                &[similarities.len(), 2],
+                                false
+                            ))?,
+                            to_ndarray_1d!(gil, similarities, f32),
+                        ))
+                    }
+
+                    if let (Ok(sources), Ok(destinations)) = (
+                        <&PyArray1<u64>>::extract(&sources),
+                        <&PyArray1<u64>>::extract(&destinations)
+                    ) {
+
+                        let sources_ref = unsafe { sources.as_slice().unwrap() };
+                        let destinations_ref = unsafe { destinations.as_slice().unwrap() };
+
+                        let (edge_node_ids, similarities) = pe!(
+                            ::express_measures::pairwise_cosine_similarity(
+                                matrix_ref,
+                                sources_ref,
+                                destinations_ref,
+                                matrix.shape()[1],
+                                minimum_threshold,
+                                maximum_threshold,
+                                verbose
+                            )
+                        )?;
+
+                        return Ok((
+                            pe!(to_numpy_array(
+                                gil.python(),
+                                edge_node_ids,
+                                &[similarities.len(), 2],
+                                false
+                            ))?,
+                            to_ndarray_1d!(gil, similarities, f32),
+                        ))
+                    }
+                }
+            )*
+
+            pe!(Err(concat!(
+                "The provided features, sources or destination do not have ",
+                "a datatype currently supported in the cosine similarity computation!"
             ).to_string()))
         }
     };
