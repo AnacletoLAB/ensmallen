@@ -16,6 +16,7 @@ pub fn register_express_measures(_py: Python, m: &PyModule) -> PyResult<()> {
     m.add_wrapped(wrap_pyfunction!(binary_auroc))?;
     m.add_wrapped(wrap_pyfunction!(binary_auprc))?;
     m.add_wrapped(wrap_pyfunction!(cosine_similarity_from_indices_unchecked))?;
+    m.add_wrapped(wrap_pyfunction!(pairwise_cosine_similarity))?;
     Ok(())
 }
 
