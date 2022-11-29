@@ -290,7 +290,7 @@ where
         .progress_with(progress_bar)
         .for_each(|src|  {
             let usize_src: usize = src.try_into().unwrap();
-            destinations.par_iter().copied().for_each(|dst| unsafe{
+            destinations.iter().copied().for_each(|dst| unsafe{
                 let usize_dst: usize = dst.try_into().unwrap();
 
                 let similarity = cosine_similarity_sequential_unchecked(
