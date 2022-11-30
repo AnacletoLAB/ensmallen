@@ -4,7 +4,7 @@ use std::{
 };
 
 use crate::types::*;
-use num_traits::Float;
+use num_traits::{AsPrimitive, Float};
 
 /// Returns vector with the element-wise subtraction between the two vectors.
 ///
@@ -183,9 +183,7 @@ pub unsafe fn element_wise_weighted_addition_inplace<F: Into<R> + Copy, R: Threa
     first_vector
         .iter_mut()
         .zip(second_vector.iter())
-        .map(|(first_feature, &second_feature)| {
-            *first_feature += second_feature.into() * weight
-        })
+        .map(|(first_feature, &second_feature)| *first_feature += second_feature.into() * weight)
         .collect()
 }
 
@@ -193,21 +191,28 @@ pub unsafe fn element_wise_weighted_addition_inplace<F: Into<R> + Copy, R: Threa
 ///
 /// # Arguments
 /// * `vector`: &mut [F] - The vector to compute the squared norm for.
-pub fn squared_vector_norm<F: Copy + Float + Sum>(vector: &[F]) -> F {
+pub fn squared_vector_norm<
+    F: Copy + AsPrimitive<R>,
+    R: Sum + Float + 'static,
+>(
+    vector: &[F],
+) -> R {
     (vector
         .iter()
         .copied()
-        .map(|value| value.powf(F::one() + F::one()))
-        .sum::<F>()
-        + F::epsilon())
-    .min(F::max_value())
+        .map(|value| value.as_().powf(R::one() + R::one()))
+        .sum::<R>()
+        + R::epsilon())
+    .min(R::max_value())
 }
 
 /// Returns the norm of the provided vector.
 ///
 /// # Arguments
 /// * `vector`: &mut [F] - The vector to compute the norm for.
-pub fn vector_norm<F: Copy + Float + Sum>(vector: &[F]) -> F {
+pub fn vector_norm<F: Copy + AsPrimitive<R>, R: Sum + Float + 'static>(
+    vector: &[F],
+) -> R {
     squared_vector_norm(vector).sqrt()
 }
 
@@ -215,7 +220,7 @@ pub fn vector_norm<F: Copy + Float + Sum>(vector: &[F]) -> F {
 ///
 /// # Arguments
 /// * `vector`: &mut [F] - The vector to normalize in place.
-pub fn normalize_vector_inplace<F: Into<F> + Copy + Float + Sum + DivAssign>(
+pub fn normalize_vector_inplace<F: Into<F> + AsPrimitive<F> + Copy + Float + Sum + DivAssign>(
     vector: &mut [F],
 ) -> F {
     let norm: F = vector_norm(vector);

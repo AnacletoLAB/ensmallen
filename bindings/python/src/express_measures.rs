@@ -490,11 +490,16 @@ macro_rules! impl_cosine_distance {
                             to_ndarray_1d!(gil, similarities, f32),
                         ))
                     }
+
+                    return pe!(Err(concat!(
+                        "The provided sources or destination do not have ",
+                        "a datatype currently supported in the cosine similarity computation!"
+                    ).to_string()));
                 }
             )*
 
             pe!(Err(concat!(
-                "The provided features, sources or destination do not have ",
+                "The provided features do not have ",
                 "a datatype currently supported in the cosine similarity computation!"
             ).to_string()))
         }

@@ -1,10 +1,12 @@
 use crate::types::*;
 use crate::validation::*;
+use crate::vector_norm;
 use core::fmt::Debug;
-use num_traits::{AsPrimitive, Float};
 use indicatif::{ParallelProgressIterator, ProgressBar, ProgressStyle};
+use num_traits::{AsPrimitive, Float};
 use parallel_frontier::Frontier;
 use rayon::prelude::*;
+use std::iter::Sum;
 
 /// Returns the cosine similarity between the two provided vectors computed sequentially.
 ///
@@ -226,7 +228,7 @@ where
 /// * `verbose`: Option<bool> - Whether to show loading bars.
 ///
 pub fn pairwise_cosine_similarity<
-    R: Float + Send + Sync + 'static,
+    R: Float + Send + Sync + Sum + 'static,
     F: AsPrimitive<R> + Send + Sync + Copy,
     I: ThreadUnsigned + Ord + std::fmt::Display,
 >(
@@ -236,7 +238,7 @@ pub fn pairwise_cosine_similarity<
     dimension: usize,
     minimum_threshold: Option<R>,
     maximum_threshold: Option<R>,
-    verbose: Option<bool>
+    verbose: Option<bool>,
 ) -> Result<(Vec<I>, Vec<R>), String>
 where
     <I as TryInto<usize>>::Error: Debug,
@@ -267,6 +269,14 @@ where
 
     let nodes: Frontier<I> = Frontier::new();
     let similarities: Frontier<R> = Frontier::new();
+    let destinations_norms: Vec<R> = destinations
+        .par_iter()
+        .copied()
+        .map(|dst| {
+            let usize_dst: usize = dst.try_into().unwrap();
+            vector_norm(&matrix[usize_dst * dimension..(usize_dst + 1) * dimension])
+        })
+        .collect::<Vec<R>>();
 
     let progress_bar = if verbose {
         let pb = ProgressBar::new(sources.len() as u64);
@@ -288,25 +298,39 @@ where
         .par_iter()
         .copied()
         .progress_with(progress_bar)
-        .for_each(|src|  {
+        .for_each(|src| {
             let usize_src: usize = src.try_into().unwrap();
-            destinations.iter().copied().for_each(|dst| unsafe{
-                let usize_dst: usize = dst.try_into().unwrap();
+            let src_vec: Vec<F> =
+                matrix[usize_src * dimension..(usize_src + 1) * dimension].to_vec();
+            let src_norm: R = vector_norm(&src_vec);
+            destinations
+                .iter()
+                .copied()
+                .zip(destinations_norms.iter().copied())
+                .for_each(|(dst, dst_norm)| {
+                    let usize_dst: usize = dst.try_into().unwrap();
 
-                let similarity = cosine_similarity_sequential_unchecked(
-                    &matrix[usize_src * dimension..(usize_src + 1) * dimension],
-                    &matrix[usize_dst * dimension..(usize_dst + 1) * dimension],
-                )
-                .0;
+                    let total_dot_product: R = src_vec
+                        .iter()
+                        .copied()
+                        .zip(
+                            matrix[usize_dst * dimension..(usize_dst + 1) * dimension]
+                                .iter()
+                                .copied(),
+                        )
+                        .map(|(src_feature, dst_feature)| src_feature.as_() * dst_feature.as_())
+                        .sum();
 
-                if similarity < maximum_threshold || similarity > minimum_threshold {
-                    return;
-                }
+                    let similarity = total_dot_product / (src_norm * dst_norm + R::epsilon());
 
-                nodes.push(src);
-                nodes.push(dst);
-                similarities.push(similarity);
-            });
+                    if similarity < maximum_threshold || similarity > minimum_threshold {
+                        return;
+                    }
+
+                    nodes.push(src);
+                    nodes.push(dst);
+                    similarities.push(similarity);
+                });
         });
 
     Ok((nodes.into(), similarities.into()))
