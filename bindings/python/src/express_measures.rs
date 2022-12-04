@@ -397,7 +397,7 @@ macro_rules! impl_cosine_distance {
                             to_ndarray_1d!(gil, similarities, f32),
                         ))
                     }
-                    
+
                     if let (Ok(sources), Ok(destinations)) = (
                         <&PyArray1<u16>>::extract(&sources),
                         <&PyArray1<u16>>::extract(&destinations)
