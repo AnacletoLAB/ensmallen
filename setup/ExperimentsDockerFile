@@ -43,7 +43,7 @@ RUN cd /ensmallen_graph && make update
 # Generate the bindings
 RUN cd /ensmallen_graph && make bindgen
 # Build the bindings
-RUN cd /ensmallen_graph/bindings/python && maturin build --release --no-sdist
+RUN cd /ensmallen_graph/bindings/python && maturin build --release
 # Install the bindings 
 RUN pip install /ensmallen_graph/bindings/python/target/wheels/ensmallen_graph-0.6.0-cp36-cp36m-manylinux_2_24_x86_64.whl
 
