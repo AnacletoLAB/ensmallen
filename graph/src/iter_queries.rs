@@ -662,9 +662,8 @@ impl Graph {
     pub fn iter_node_names_and_node_type_names_from_node_type_id(
         &self,
         node_type_id: Option<NodeTypeT>,
-    ) -> Result<
-        impl Iterator<Item = (NodeT, String, Option<&[NodeTypeT]>, Option<Vec<String>>)> + '_,
-    > {
+    ) -> Result<impl Iterator<Item = (NodeT, String, Option<&[NodeTypeT]>, Option<Vec<String>>)> + '_>
+    {
         self.validate_node_type_id(node_type_id)
             .map(|node_type_id| {
                 self.iter_node_names_and_node_type_names().filter(

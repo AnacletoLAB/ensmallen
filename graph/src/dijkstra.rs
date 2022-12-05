@@ -1,6 +1,6 @@
 use super::*;
 use indicatif::ParallelProgressIterator;
-use num_traits::{Zero, PrimInt};
+use num_traits::{PrimInt, Zero};
 use rayon::prelude::*;
 use std::cmp::Ord;
 use std::collections::VecDeque;

@@ -856,8 +856,7 @@ impl Graph {
     /// Return iterator on the node of the graph as Strings.
     pub fn iter_node_names_and_node_type_names(
         &self,
-    ) -> impl Iterator<Item = (NodeT, String, Option<&[NodeTypeT]>, Option<Vec<String>>)> + '_
-    {
+    ) -> impl Iterator<Item = (NodeT, String, Option<&[NodeTypeT]>, Option<Vec<String>>)> + '_ {
         self.iter_node_ids_and_node_type_ids()
             .map(move |(node_id, node_types)| unsafe {
                 (

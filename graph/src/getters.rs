@@ -1812,17 +1812,25 @@ impl Graph {
                         (*root_nodes.value.get())[dst as usize] = false;
                     });
             });
-        root_nodes.into_inner().into_par_iter().enumerate().filter_map(|(root_node_id, flag)|{
-            if flag {
-                Some(root_node_id as NodeT)
-            } else {
-                None
-            }
-        }).collect()
+        root_nodes
+            .into_inner()
+            .into_par_iter()
+            .enumerate()
+            .filter_map(|(root_node_id, flag)| {
+                if flag {
+                    Some(root_node_id as NodeT)
+                } else {
+                    None
+                }
+            })
+            .collect()
     }
 
     /// Returns vector of root node names, nodes with zero inbound degree and non-zero outbound degree.
     pub fn get_root_node_names(&self) -> Vec<String> {
-        self.get_root_node_ids().into_par_iter().map(|node_id| unsafe{self.get_unchecked_node_name_from_node_id(node_id)}).collect()
+        self.get_root_node_ids()
+            .into_par_iter()
+            .map(|node_id| unsafe { self.get_unchecked_node_name_from_node_id(node_id) })
+            .collect()
     }
 }

@@ -39,7 +39,7 @@ use crate::{utils::ItersWrapper, EdgeFileReader, EdgeFileWriter, Result, WeightT
 pub fn filter_duplicates_from_edge_list(
     original_edge_path: &str,
     target_edge_path: &str,
-    
+
     original_edge_list_separator: Option<char>,
     original_edge_list_header: Option<bool>,
     original_edge_list_support_balanced_quotes: Option<bool>,

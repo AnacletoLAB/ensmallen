@@ -146,7 +146,8 @@ impl Graph {
                                         break;
                                     }
                                     unsafe {
-                                        source_predecessor = (*thread_shared_visited.value.get())[source_predecessor as usize];
+                                        source_predecessor = (*thread_shared_visited.value.get())
+                                            [source_predecessor as usize];
                                     }
                                 }
                             }

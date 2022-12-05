@@ -1,5 +1,5 @@
-use mmap::*;
 use memchr;
+use mmap::*;
 use rayon::iter::plumbing::{bridge_unindexed, UnindexedProducer};
 use rayon::prelude::*;
 use std::sync::Arc;
@@ -47,11 +47,9 @@ impl ParallelIterator for ParallelLinesWithIndex {
     where
         C: rayon::iter::plumbing::UnindexedConsumer<Self::Item>,
     {
-        let mut data = unsafe{
-            let slice = core::slice::from_raw_parts(
-                self.mmap.get_addr() as *const u8, 
-                self.mmap.len()
-            );
+        let mut data = unsafe {
+            let slice =
+                core::slice::from_raw_parts(self.mmap.get_addr() as *const u8, self.mmap.len());
             std::str::from_utf8_unchecked(slice)
         };
 
