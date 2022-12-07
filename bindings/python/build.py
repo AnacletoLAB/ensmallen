@@ -101,6 +101,10 @@ def compile_target(target_name, target_settings, WHEELS_FOLDER, settings):
         env={
             **os.environ,
             "RUSTFLAGS":rust_flags,
+            "CXXFLAGS": "-stdlib=libc++",
+            "CXX": "clang++",
+            "CC": "clang",
+            "CFLAGS": "-stdlib=libc++"
         },
         cwd=build_dir,
     )
