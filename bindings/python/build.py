@@ -94,18 +94,25 @@ def compile_target(target_name, target_settings, WHEELS_FOLDER, settings):
     rust_flags = settings["shared_rustflags"] + " " + target_settings["rustflags"]
 
     logging.info("Compiling the '%s' target with flags: '%s'", target_name, rust_flags)
-    exec(
-        "maturin build --release --strip --out {}".format(
-            target_dir
-        ), 
-        env={
-            **os.environ,
-            "RUSTFLAGS":rust_flags,
+    
+    env = {
+        **os.environ,
+        "RUSTFLAGS":rust_flags,
+    }
+
+    if platform.system().strip().lower() != "windows":
+        env.update({
             "CXXFLAGS": "-stdlib=libc++",
             "CXX": "clang++",
             "CC": "clang",
             "CFLAGS": "-stdlib=libc++"
-        },
+        })
+
+    exec(
+        "maturin build --release --strip --out {}".format(
+            target_dir
+        ), 
+        env=env,
         cwd=build_dir,
     )
 
