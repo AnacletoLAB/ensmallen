@@ -21,7 +21,7 @@ impl ConcurrentCSRBuilder {
 
     /// this assumes that is always called correctly
     pub fn set(&self, index: EdgeT, src: NodeT, dst: NodeT) {
-        self.outbounds[1 + src as usize].fetch_max(index, Ordering::Relaxed);
+        self.outbounds[1 + src as usize].fetch_max(1 + index, Ordering::Relaxed);
         self.destinations[index as usize].store(dst, Ordering::Relaxed);
     }
 
