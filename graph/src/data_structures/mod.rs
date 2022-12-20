@@ -58,7 +58,7 @@ impl CSR {
 
     #[inline(always)]
     pub fn get_cumulative_node_degrees(&self) -> &[EdgeT] {
-        &self.outbounds_degrees
+        &self.outbounds_degrees[1..]
     }
 
     #[inline(always)]

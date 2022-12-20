@@ -21,13 +21,26 @@ impl ConcurrentCSRBuilder {
 
     /// this assumes that is always called correctly
     pub fn set(&self, index: EdgeT, src: NodeT, dst: NodeT) {
-        self.destinations[index as usize].store(dst, Ordering::Relaxed);
         self.outbounds[1 + src as usize].fetch_max(index, Ordering::Relaxed);
+        self.destinations[index as usize].store(dst, Ordering::Relaxed);
     }
 
     pub fn build(self) -> CSR {
+        // TODO!: parallellize this stuff
+        let mut outbounds_degrees = unsafe{core::mem::transmute::<Vec<AtomicU64>, Vec<EdgeT>>(self.outbounds)};
+
+        // fill singletons
+        let mut previous = 0;
+        outbounds_degrees.iter_mut().for_each(|x| {
+            if *x == 0 {
+                *x = previous;
+            } else {
+                previous = *x;
+            }
+        });
+
         CSR{
-            outbounds_degrees: unsafe{core::mem::transmute::<Vec<AtomicU64>, Vec<EdgeT>>(self.outbounds)},
+            outbounds_degrees,
             destinations: unsafe{core::mem::transmute::<Vec<AtomicU32>, Vec<NodeT>>(self.destinations)},
             sources: None,
         }
