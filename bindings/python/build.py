@@ -95,7 +95,14 @@ def compile_target(target_name, target_settings, WHEELS_FOLDER, settings):
 
     logging.info("Compiling the '%s' target with flags: '%s'", target_name, rust_flags)
     
-    if platform.system().strip().lower() != "windows":
+    os_name = platform.system().strip().lower()
+    
+    if os_name == "linux":
+        zig = "--zig"
+    else:
+        zig = ""
+
+    if os_name != "windows":
         env = {
             "CXXFLAGS": "-stdlib=libc++",
             "CXX": "clang++",
@@ -108,16 +115,10 @@ def compile_target(target_name, target_settings, WHEELS_FOLDER, settings):
     env.update(os.environ)
     env["RUSTFLAGS"] = env.get("RUST_FLAGS", "") + " " + rust_flags
 
-    nrpoc = settings["nproc"]
-    if nrpoc is None:
-        nrpoc = ""
-    else:
-        nrpoc = "-j {}".format(nrpoc)
-
     exec(
-        "maturin build --release --strip {nproc} --out {target_dir}".format(
+        "maturin build --release --strip {zig} --out {target_dir}".format(
             target_dir=target_dir,
-            nproc=nproc,
+            zig=zig,
         ), 
         env=env,
         cwd=build_dir,
@@ -196,10 +197,6 @@ if __name__ == "__main__":
         target. Enabling this flag skips this step and uses the old folders.""".replace("\n", ""),
     )
 
-    parser.add_argument("-j", "--nproc",
-        default=None, type=int,
-        help="""this is forwarded as -j to maturin, it should be related to how many cores it will use""",
-    )
     parser.add_argument("-seq", "--sequential",
         default=False,
         action="store_true",
