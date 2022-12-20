@@ -545,19 +545,10 @@ impl Graph {
         })
     }
 
-    /// Returns whether the destinations time-memory tradeoff is enabled.
-    pub fn has_destinations_tradeoff_enabled(&self) -> bool {
-        self.destinations.is_some()
-    }
-
+    #[inline(always)]
     /// Returns whether the sources time-memory tradeoff is enabled.
     pub fn has_sources_tradeoff_enabled(&self) -> bool {
-        self.sources.is_some()
-    }
-
-    /// Returns whether the cumulative_node_degrees time-memory tradeoff is enabled.
-    pub fn has_cumulative_node_degrees_tradeoff_enabled(&self) -> bool {
-        self.cumulative_node_degrees.is_some()
+        self.edges.has_sources_tradeoff_enabled()
     }
 
     /// Returns whether the reciprocal_sqrt_degrees time-memory tradeoff is enabled.

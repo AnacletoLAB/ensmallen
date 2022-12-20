@@ -10,13 +10,15 @@
 #![warn(unused_macros)]
 #![feature(is_sorted)]
 #![feature(string_remove_matches)]
-#![feature(map_first_last)]
 #![feature(exit_status_error)]
 #![feature(core_intrinsics)]
 #![feature(pattern)]
+#![deny(unconditional_recursion)]
 #![type_length_limit = "3764086"]
 #![feature(exclusive_range_pattern)]
 use std::sync::Arc;
+
+pub mod data_structures;
 
 mod vocabulary;
 pub use self::vocabulary::*;
@@ -42,9 +44,7 @@ mod type_file_reader;
 pub use self::type_file_reader::TypeFileReader;
 mod type_file_writer;
 pub use self::type_file_writer::TypeFileWriter;
-mod compression;
 mod from_csv;
-pub(crate) use self::compression::*;
 
 mod parameters_validators;
 pub use self::parameters_validators::*;

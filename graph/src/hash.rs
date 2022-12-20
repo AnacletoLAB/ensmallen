@@ -79,8 +79,6 @@ impl Hash for Graph {
 
         // These fields are derivative from the other ones and thus not needed.
         // self.unique_sources.hash(state);
-        // self.node_bits.hash(state);
-        // self.node_bit_mask.hash(state);
         // self.unique_selfloop_number.hash(state);
         // self.selfloop_number.hash(state);
         // self.connected_nodes_number.hash(state);

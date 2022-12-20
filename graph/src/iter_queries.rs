@@ -20,9 +20,7 @@ impl Graph {
         &self,
         src: NodeT,
     ) -> std::ops::Range<usize> {
-        let (min_edge_id, max_edge_id) =
-            self.get_unchecked_minmax_edge_ids_from_source_node_id(src);
-        min_edge_id as usize..max_edge_id as usize
+        self.edges.iter_unchecked_edge_ids_from_source_node_id(src)
     }
 
     /// Returns range of the edge ids of edges inbound to the given destination node.
@@ -201,6 +199,7 @@ impl Graph {
         self.iter_unchecked_edge_type_ids_from_node_ids(src, dst)
     }
 
+    #[inline(always)]
     /// Return iterator over NodeT of destinations of the given node src.
     ///
     /// # Arguments
@@ -211,19 +210,8 @@ impl Graph {
     pub unsafe fn iter_unchecked_neighbour_node_ids_from_source_node_id(
         &self,
         src: NodeT,
-    ) -> Box<dyn Iterator<Item = NodeT> + Send + '_> {
-        match &*self.destinations {
-            Some(dsts) => Box::new(
-                dsts[self.iter_unchecked_edge_ids_from_source_node_id(src)]
-                    .iter()
-                    .cloned(),
-            ),
-            None => Box::new(
-                self.edges
-                    .iter_in_range(self.encode_edge(src, 0)..self.encode_edge(src + 1, 0))
-                    .map(move |edge| self.decode_edge(edge).1),
-            ),
-        }
+    ) -> impl Iterator<Item = NodeT> + Send + '_ {
+        self.edges.iter_unchecked_neighbour_node_ids_from_source_node_id(src)
     }
 
     /// Return iterator over edge type ids of the edges connected to the given source node id.
@@ -284,37 +272,7 @@ impl Graph {
             .filter_map(|value| value)
     }
 
-    /// Return iterator over sources of the given destination node.
-    ///
-    /// # Arguments
-    /// * `dst`: NodeT - The node whose neighbours are to be retrieved.
-    ///
-    /// # Safety
-    /// If the given node ID does not exist in the graph the method will panic.
-    ///
-    /// TODO! make this faster for directed graphs!
-    pub unsafe fn iter_unchecked_neighbour_node_ids_from_destination_node_id(
-        &self,
-        dst: NodeT,
-    ) -> Box<dyn Iterator<Item = NodeT> + Send + '_> {
-        if self.is_directed() {
-            Box::new(
-                self.iter_directed_edge_node_ids()
-                    .filter_map(
-                        move |(_, src, this_dst)| {
-                            if this_dst == dst {
-                                Some(src)
-                            } else {
-                                None
-                            }
-                        },
-                    ),
-            )
-        } else {
-            self.iter_unchecked_neighbour_node_ids_from_source_node_id(dst)
-        }
-    }
-
+    #[inline(always)]
     /// Return parallel iterator over NodeT of destinations of the given node src.
     ///
     /// # Arguments
@@ -327,16 +285,7 @@ impl Graph {
         &self,
         src: NodeT,
     ) -> impl IndexedParallelIterator<Item = NodeT> + Send + '_ {
-        match &*self.destinations {
-            Some(dsts) => dsts[self.iter_unchecked_edge_ids_from_source_node_id(src)]
-                .par_iter()
-                .cloned(),
-            None => panic!(concat!(
-                "The parallel iteration of neighbours ",
-                "without the cached destinations ",
-                "is not currently supported."
-            )),
-        }
+        self.edges.par_iter_unchecked_neighbour_node_ids_from_source_node_id(src)
     }
 
     /// Return iterator over neighbours intersection.

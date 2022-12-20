@@ -807,9 +807,7 @@ impl Graph {
         // the destinations are enabled (as it may be too slow otherwise on
         // some instances. Similarly, if the graph has less than 1M nodes we
         // also compute the connected components as it should be quite immediate.
-        let connected_components = if !self.is_directed()
-            && (self.get_number_of_nodes() < 100e6 as NodeT || self.destinations.is_some())
-        {
+        let connected_components = if !self.is_directed() {
             format!("{} ", self.get_report_of_connected_components())
         } else {
             "".to_string()

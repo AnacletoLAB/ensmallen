@@ -1,5 +1,5 @@
 use super::*;
-use elias_fano_rust::{ConcurrentEliasFanoBuilder, EliasFano};
+use crate::data_structures::{CSR, ConcurrentCSRBuilder};
 use num_traits::Zero;
 use rayon::prelude::*;
 use std::cmp::Ordering;
@@ -36,19 +36,17 @@ macro_rules! parse_unsorted_edge_list {
             let $results = ThreadDataRaceAware::new(vec![$default; edges_number]);
         )*
         // We also create the builder for the elias fano
-        let node_bits = get_node_bits($nodes_number as NodeT);
         let has_selfloops = AtomicBool::new(false);
-        let maximum_edges_number = encode_max_edge($nodes_number as NodeT, node_bits);
-        let elias_fano_builder = ConcurrentEliasFanoBuilder::new(
-            edges_number as u64,
-            maximum_edges_number
-        )?;
+        let csr_builder = ConcurrentCSRBuilder::new(
+            edges_number as EdgeT,
+            $nodes_number as NodeT
+        );
         // Parsing and building edge list objects
         $unsorted_edge_list
             .into_par_iter()
             .enumerate()
             .for_each(|(i, (src, dst, $($input_tuple),*))|  {
-                elias_fano_builder.set(i as u64, encode_edge(src, dst, node_bits));
+                csr_builder.set(i as EdgeT, src, dst);
                 if unlikely(src == dst) {
                     has_selfloops.store(true, std::sync::atomic::Ordering::Relaxed);
                 }
@@ -57,7 +55,7 @@ macro_rules! parse_unsorted_edge_list {
                 )*
             });
         // Finalizing the edges structure constructor
-        let edges = elias_fano_builder.build()?;
+        let edges = csr_builder.build();
         // Return the computed values
         (
             edges,
@@ -178,27 +176,25 @@ macro_rules! parse_sorted_string_edge_list {
             let $results = ThreadDataRaceAware::new(vec![$default; $edges_number as usize]);
         )*
         // We also create the builder for the elias fano
-        let node_bits = get_node_bits($nodes_number as NodeT);
         let has_selfloops = AtomicBool::new(false);
-        let maximum_edges_number = encode_max_edge($nodes_number as NodeT, node_bits);
-        let elias_fano_builder = ConcurrentEliasFanoBuilder::new(
-            $edges_number as u64,
-            maximum_edges_number
-        )?;
+        let csr_builder = ConcurrentCSRBuilder::new(
+            $edges_number as EdgeT,
+            $nodes_number as NodeT
+        );
         $ei.method_caller($edge_types_method, $edge_types_method, &mut edge_type_parser).method_caller($node_method, $node_method, &mut node_parser).for_each(|line| {
             // There cannot be results when iterating on a sorted vector.
             let (i, (src, dst, $($workaround),*)) = line.unwrap();
             if unlikely(src == dst) {
                 has_selfloops.store(true, std::sync::atomic::Ordering::Relaxed);
             }
-            elias_fano_builder.set(i as u64, encode_edge(src, dst, node_bits));
+            csr_builder.set(i as EdgeT, src, dst);
             $(
                 unsafe{(*$results.value.get())[i] = $input_tuple};
             )*
         });
 
         // Finalizing the edges structure constructor
-        let edges = elias_fano_builder.build()?;
+        let edges = csr_builder.build();
         let mut nodes = node_parser.into_inner();
         if nodes.is_empty() {
             nodes.build()?;
@@ -281,15 +277,13 @@ macro_rules! parse_sorted_integer_edge_list {
             let $results = ThreadDataRaceAware::new(vec![$default; $edges_number as usize]);
         )*
         // We also create the builder for the elias fano
-        let node_bits = get_node_bits($nodes_number as NodeT);
         let has_selfloops = AtomicBool::new(false);
-        let maximum_edges_number = encode_max_edge($nodes_number as NodeT, node_bits);
-        let elias_fano_builder = ConcurrentEliasFanoBuilder::new(
-            $edges_number as u64,
-            maximum_edges_number
-        )?;
+        let csr_builder = ConcurrentCSRBuilder::new(
+            $edges_number as EdgeT,
+            $nodes_number as NodeT
+        );
         $ei.for_each(|(i, (src, dst, $($workaround),*))| {
-            elias_fano_builder.set(i as u64, encode_edge(src, dst, node_bits));
+            csr_builder.set(i as EdgeT, src, dst);
             if unlikely(src == dst) {
                 has_selfloops.store(true, std::sync::atomic::Ordering::Relaxed);
             }
@@ -299,7 +293,7 @@ macro_rules! parse_sorted_integer_edge_list {
         });
 
         // Finalizing the edges structure constructor
-        let edges = elias_fano_builder.build()?;
+        let edges = csr_builder.build();
         // Return the computed values
         (
             edges,
@@ -394,7 +388,7 @@ pub(crate) fn parse_string_edges(
     skip_edge_types_if_unavailable: Option<bool>,
 ) -> Result<(
     Vocabulary<NodeT>,
-    EliasFano,
+    CSR,
     Option<EdgeTypeVocabulary>,
     Option<Vec<WeightT>>,
     bool,
@@ -474,7 +468,7 @@ pub(crate) fn parse_string_edges(
         has_edge_weights,
     ) {
         (None, _, _, _) => (
-            EliasFano::new(0, 0)?,
+            CSR::new(),
             false,
             nodes,
             edge_types_vocabulary,
@@ -694,14 +688,14 @@ pub(crate) fn parse_string_edges(
     // Executing self-consistency check for the edge type IDs
     if edge_type_ids
         .as_ref()
-        .map_or(false, |edge_type_ids| edges.len() != edge_type_ids.len())
+        .map_or(false, |edge_type_ids| edges.get_number_of_directed_edges() as usize != edge_type_ids.len())
     {
         panic!(
             concat!(
                 "The length of the edges is {}, ",
                 "while the length of the edge type IDs vector is {}."
             ),
-            edges.len(),
+            edges.get_number_of_directed_edges(),
             edge_type_ids.unwrap().len()
         );
     }
@@ -709,14 +703,14 @@ pub(crate) fn parse_string_edges(
     // Executing self-consistency check for the edge weights
     if weights
         .as_ref()
-        .map_or(false, |weights| edges.len() != weights.len())
+        .map_or(false, |weights| edges.get_number_of_directed_edges() as usize!= weights.len())
     {
         panic!(
             concat!(
                 "The length of the edges is {}, ",
                 "while the length of the weights vector is {}."
             ),
-            edges.len(),
+            edges.get_number_of_directed_edges(),
             weights.unwrap().len()
         );
     }
@@ -744,7 +738,7 @@ pub(crate) fn parse_integer_edges(
     sorted: Option<bool>,
     edges_number: Option<EdgeT>,
 ) -> Result<(
-    EliasFano,
+    CSR,
     Option<EdgeTypeVocabulary>,
     Option<Vec<WeightT>>,
     bool,
@@ -773,7 +767,7 @@ pub(crate) fn parse_integer_edges(
         has_edge_types,
         has_edge_weights,
     ) {
-        (None, _, _, _) => (EliasFano::new(0, 0)?, false, None, None),
+        (None, _, _, _) => (CSR::new(), false, None, None),
         // When the edge lists are provided and are:
         // - Sorted
         // - Completely defined in both directions
@@ -909,14 +903,14 @@ pub(crate) fn parse_integer_edges(
     // Executing self-consistency check for the edge type IDs
     if edge_type_ids
         .as_ref()
-        .map_or(false, |edge_type_ids| edges.len() != edge_type_ids.len())
+        .map_or(false, |edge_type_ids| edges.get_number_of_directed_edges() as usize!= edge_type_ids.len())
     {
         panic!(
             concat!(
                 "The length of the edges is {}, ",
                 "while the length of the edge type IDs vector is {}."
             ),
-            edges.len(),
+            edges.get_number_of_directed_edges(),
             edge_type_ids.unwrap().len()
         );
     }
@@ -924,14 +918,14 @@ pub(crate) fn parse_integer_edges(
     // Executing self-consistency check for the edge weights
     if weights
         .as_ref()
-        .map_or(false, |weights| edges.len() != weights.len())
+        .map_or(false, |weights| edges.get_number_of_directed_edges() as usize!= weights.len())
     {
         panic!(
             concat!(
                 "The length of the edges is {}, ",
                 "while the length of the weights vector is {}."
             ),
-            edges.len(),
+            edges.get_number_of_directed_edges(),
             weights.unwrap().len()
         );
     }

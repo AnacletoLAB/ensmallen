@@ -1,5 +1,5 @@
 use crate::*;
-use file_progress::{FileProgress, FileProgressIterator, MarkdownFileProgress};
+use file_progress::{FileProgressIterator, MarkdownFileProgress};
 use graph::{EdgeT, Graph, NodeT};
 use indicatif::{ProgressBar, ProgressIterator, ProgressStyle};
 use num_traits::AsPrimitive;

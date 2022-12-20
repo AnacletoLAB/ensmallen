@@ -412,7 +412,7 @@ impl Graph {
             ));
         }
 
-        let mut negative_edges_hashset =
+        let mut negative_edges_hashset: HashSet<(NodeT, NodeT)> =
             HashSet::with_capacity(number_of_negative_samples as usize);
         let mut sampling_round: usize = 0;
         let mut last_size = 0;
@@ -456,13 +456,11 @@ impl Graph {
                     return None;
                 }
 
-                let fake_edge_id = self.encode_edge(src, dst);
-
-                if negative_edges_hashset.contains(&fake_edge_id) {
+                if negative_edges_hashset.contains(&(src, dst)) {
                     return None;
                 }
 
-                Some(fake_edge_id)
+                Some((src, dst))
             };
 
             // generate the random edge-sources
@@ -490,7 +488,7 @@ impl Graph {
                         )
                     })
                     .filter_map(|(src, dst)| sampling_filter_map(src, dst))
-                    .collect::<Vec<EdgeT>>()
+                    .collect::<Vec<(NodeT, NodeT)>>()
             } else {
                 (0..number_of_negative_samples)
                     .into_par_iter()
@@ -507,7 +505,7 @@ impl Graph {
                         )
                     })
                     .filter_map(|(src, dst)| sampling_filter_map(src, dst))
-                    .collect::<Vec<EdgeT>>()
+                    .collect::<Vec<(NodeT, NodeT)>>()
             };
 
             for edge_id in sampled_edge_ids.iter() {
@@ -534,8 +532,7 @@ impl Graph {
         }
 
         build_graph_from_integers(
-            Some(negative_edges_hashset.into_par_iter().map(|edge| unsafe {
-                let (src, dst) = self.decode_edge(edge);
+            Some(negative_edges_hashset.into_par_iter().map(|(src, dst)| unsafe {
                 (
                     0,
                     (
@@ -543,7 +540,7 @@ impl Graph {
                         dst,
                         if sample_edge_types {
                             self.get_unchecked_random_scale_free_edge_type(
-                                random_state.wrapping_mul(edge),
+                                random_state.wrapping_mul(src as u64 + 1).wrapping_mul(dst as u64 + 2),
                             )
                         } else {
                             None

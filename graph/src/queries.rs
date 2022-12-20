@@ -216,10 +216,7 @@ impl Graph {
     /// # Safety
     /// If the given edge ID does not exist in the current graph the method will raise a panic.
     pub unsafe fn get_unchecked_node_ids_from_edge_id(&self, edge_id: EdgeT) -> (NodeT, NodeT) {
-        if let (Some(sources), Some(destinations)) = (&*self.sources, &*self.destinations) {
-            return (sources[edge_id as usize], destinations[edge_id as usize]);
-        }
-        self.decode_edge(self.edges.unchecked_select(edge_id))
+        self.edges.get_unchecked_node_ids_from_edge_id(edge_id)
     }
 
     /// Returns node names corresponding to given edge ID.
@@ -237,6 +234,7 @@ impl Graph {
         )
     }
 
+    #[inline(always)]
     /// Returns the source of given edge id without making any boundary check.
     ///
     /// # Arguments
@@ -245,12 +243,10 @@ impl Graph {
     /// # Safety
     /// If the given edge ID does not exist in the current graph the method will cause an out of bounds.
     pub unsafe fn get_unchecked_source_node_id_from_edge_id(&self, edge_id: EdgeT) -> NodeT {
-        self.sources.as_ref().as_ref().map_or_else(
-            || self.get_unchecked_node_ids_from_edge_id(edge_id).0,
-            |srscs| srscs[edge_id as usize],
-        )
+        self.edges.get_unchecked_source_node_id_from_edge_id(edge_id)
     }
 
+    #[inline(always)]
     /// Returns the destination of given edge id without making any boundary check.
     ///
     /// # Arguments
@@ -259,10 +255,7 @@ impl Graph {
     /// # Safety
     /// If the given edge ID does not exist in the current graph the method will cause an out of bounds.
     pub unsafe fn get_unchecked_destination_node_id_from_edge_id(&self, edge_id: EdgeT) -> NodeT {
-        self.destinations.as_ref().as_ref().map_or_else(
-            || self.get_unchecked_node_ids_from_edge_id(edge_id).1,
-            |dsts| dsts[edge_id as usize],
-        )
+        self.edges.get_unchecked_destination_node_id_from_edge_id(edge_id)
     }
 
     /// Returns source node ID corresponding to given edge ID.
@@ -395,7 +388,7 @@ impl Graph {
     /// # Safety
     /// If any of the given node IDs do not exist in the graph the method will panic.
     pub unsafe fn get_unchecked_edge_id_from_node_ids(&self, src: NodeT, dst: NodeT) -> EdgeT {
-        self.edges.unchecked_rank(self.encode_edge(src, dst)) as EdgeT
+        self.edges.get_unchecked_edge_id_from_node_ids(src, dst)
     }
 
     #[inline(always)]
@@ -414,27 +407,7 @@ impl Graph {
     /// assert!(graph.get_edge_id_from_node_ids(0, 100000000).is_err());
     /// ```
     pub fn get_edge_id_from_node_ids(&self, src: NodeT, dst: NodeT) -> Result<EdgeT> {
-        match self.destinations.as_ref().as_ref(){
-            None => match self
-            .edges
-            .rank(self.encode_edge(src, dst))
-            .map(|value| value as EdgeT) {
-                Some(edge_id) => Ok(edge_id),
-                None => Err(format!("The edge composed by the source node {} and destination node {} does not exist in this graph.", src, dst))
-            },
-            Some(dsts) => {
-                self.validate_node_id(src)?;
-                let (start, end) = unsafe{self.get_unchecked_minmax_edge_ids_from_source_node_id(src)};
-                match dsts[(start as usize)..(end as usize)].binary_search(&dst) {
-                    Ok(local_idx) => {
-                        Ok(start + local_idx as EdgeT)
-                    }
-                    Err(_) => {
-                        Err(format!("The edge composed by the source node {} and destination node {} does not exist in this graph.", src, dst))
-                    }
-                }
-            }
-        }
+        self.edges.get_edge_id_from_node_ids(src, dst)
     }
 
     #[inline(always)]
@@ -1674,23 +1647,7 @@ impl Graph {
         &self,
         src: NodeT,
     ) -> (EdgeT, EdgeT) {
-        match &*self.cumulative_node_degrees {
-            Some(cumulative_node_degrees) => {
-                let min_edge_id = if src == 0 {
-                    0
-                } else {
-                    cumulative_node_degrees[src as usize - 1]
-                };
-                (min_edge_id, cumulative_node_degrees[src as usize])
-            }
-            None => {
-                let min_edge_id: EdgeT = self.get_unchecked_edge_id_from_node_ids(src, 0);
-                (
-                    min_edge_id,
-                    self.get_unchecked_edge_id_from_node_ids(src + 1, 0),
-                )
-            }
-        }
+        self.edges.get_unchecked_minmax_edge_ids_from_source_node_id(src)
     }
 
     /// Return range of outbound edges IDs which have as source the given Node.
