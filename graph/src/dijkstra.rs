@@ -1,7 +1,7 @@
 use super::*;
 use indicatif::ParallelProgressIterator;
-use parallel_frontier::Frontier;
 use num_traits::{PrimInt, Zero};
+use parallel_frontier::Frontier;
 use rayon::prelude::*;
 use std::cmp::Ord;
 use std::collections::VecDeque;
@@ -714,25 +714,20 @@ impl Graph {
         while !frontier.is_empty() {
             eccentricity += 1;
             most_distant_node = *frontier.iter().next().unwrap();
-            frontier
-                .par_iter()
-                .flat_map_iter(|node_id| {
-                    // TODO!: The following line can be improved when the par iter is made
-                    // generally available also for the elias-fano graphs.
-                    self.iter_unchecked_neighbour_node_ids_from_source_node_id(*node_id)
-                        .map(move |neighbour_node_id| (neighbour_node_id, node_id))
-                })
-                .for_each(|(neighbour_node_id, node_id)| {
-                    if (*thread_shared_predecessors.value.get())[neighbour_node_id as usize]
-                        == NODE_NOT_PRESENT
-                    {
-                        // Set it's distance
-                        (*thread_shared_predecessors.value.get())[neighbour_node_id as usize] =
-                            *node_id;
-                        // add the node to the nodes to explore
-                        frontier_new.push(neighbour_node_id);
-                    }
-                });
+            frontier.par_iter().for_each(|node_id| {
+                self.iter_unchecked_neighbour_node_ids_from_source_node_id(*node_id)
+                    .for_each(|neighbour_node_id| {
+                        if (*thread_shared_predecessors.value.get())[neighbour_node_id as usize]
+                            == NODE_NOT_PRESENT
+                        {
+                            // Set it's distance
+                            (*thread_shared_predecessors.value.get())[neighbour_node_id as usize] =
+                                *node_id;
+                            // add the node to the nodes to explore
+                            frontier_new.push(neighbour_node_id);
+                        }
+                    });
+            });
             frontier.clear();
             std::mem::swap(&mut frontier, &mut frontier_new);
         }
@@ -785,24 +780,20 @@ impl Graph {
                 break;
             }
 
-            frontier.par_iter()
-                .flat_map_iter(|node_id| {
-                    // TODO!: The following line can be improved when the par iter is made
-                    // generally available also for the elias-fano graphs.
-
-                    self.iter_unchecked_neighbour_node_ids_from_source_node_id(*node_id)
-                })
-                .for_each(|neighbour_node_id| {
-                    if (*thread_shared_distances.value.get())[neighbour_node_id as usize]
-                        == node_not_present
-                    {
-                        // Set it's distance
-                        (*thread_shared_distances.value.get())[neighbour_node_id as usize] =
-                            eccentricity;
-                        // add the node to the nodes to explore
-                        frontier_new.push(neighbour_node_id);
-                    }
-                });
+            frontier.par_iter().for_each(|node_id| {
+                self.iter_unchecked_neighbour_node_ids_from_source_node_id(*node_id)
+                    .for_each(|neighbour_node_id| {
+                        if (*thread_shared_distances.value.get())[neighbour_node_id as usize]
+                            == node_not_present
+                        {
+                            // Set it's distance
+                            (*thread_shared_distances.value.get())[neighbour_node_id as usize] =
+                                eccentricity;
+                            // add the node to the nodes to explore
+                            frontier_new.push(neighbour_node_id);
+                        }
+                    });
+            });
             frontier.clear();
             std::mem::swap(&mut frontier, &mut frontier_new);
         }
@@ -1347,18 +1338,17 @@ impl Graph {
         while !frontier.is_empty() {
             eccentricity += 1;
             most_distant_node = *frontier.iter().next().unwrap();
-            frontier.par_iter()
-                .flat_map_iter(|node_id| {
-                    self.iter_unchecked_neighbour_node_ids_from_source_node_id(*node_id)
-                })
-                .for_each(|neighbour_node_id| {
-                    if !(*thread_shared_visited.value.get())[neighbour_node_id as usize] {
-                        // Set it's distance
-                        (*thread_shared_visited.value.get())[neighbour_node_id as usize] = true;
-                        // add the node to the nodes to explore
-                        frontier_new.push(neighbour_node_id);
-                    }
-                });
+            frontier.par_iter().for_each(|node_id| {
+                self.iter_unchecked_neighbour_node_ids_from_source_node_id(*node_id)
+                    .for_each(|neighbour_node_id| {
+                        if !(*thread_shared_visited.value.get())[neighbour_node_id as usize] {
+                            // Set it's distance
+                            (*thread_shared_visited.value.get())[neighbour_node_id as usize] = true;
+                            // add the node to the nodes to explore
+                            frontier_new.push(neighbour_node_id);
+                        }
+                    })
+            });
             frontier.clear();
             std::mem::swap(&mut frontier, &mut frontier_new);
         }
