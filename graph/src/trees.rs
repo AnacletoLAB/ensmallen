@@ -410,7 +410,6 @@ impl Graph {
         )
     }
 
-    #[manual_binding]
     /// Returns set of edges composing a spanning arborescence.
     ///
     /// This is the implementaiton of [A Fast, Parallel Spanning Tree Algorithm for Symmetric Multiprocessors (SMPs)](https://smartech.gatech.edu/bitstream/handle/1853/14355/GT-CSE-06-01.pdf)
@@ -428,7 +427,7 @@ impl Graph {
     pub fn spanning_arborescence(
         &self,
         verbose: Option<bool>,
-    ) -> Result<(usize, impl Iterator<Item = (NodeT, NodeT)> + '_)> {
+    ) -> Result<Vec<NodeT>> {
         self.must_be_undirected()?;
         let verbose = verbose.unwrap_or(false);
         let nodes_number = self.get_number_of_nodes() as usize;
@@ -527,17 +526,7 @@ impl Graph {
 
         // convert the now completed parents vector to a list of tuples representing the edges
         // of the spanning arborescense.
-        Ok((
-            // Number of edges inserted
-            total_inserted_edges.load(Ordering::SeqCst),
-            // Return an iterator over all the edges in the spanning arborescence
-            parents.into_iter().enumerate().filter_map(|(src, dst)| {
-                if src as NodeT == dst {
-                    return None;
-                }
-                Some((src as NodeT, dst))
-            }),
-        ))
+        Ok(parents)
     }
 
     /// Compute the connected components building in parallel a spanning tree using [bader's algorithm](https://www.sciencedirect.com/science/article/abs/pii/S0743731505000882).
