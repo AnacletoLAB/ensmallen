@@ -1,6 +1,6 @@
 use crate::types::*;
-use std::intrinsics::unlikely;
 use std::hash::{Hash, Hasher};
+use std::intrinsics::unlikely;
 
 mod builder;
 pub(crate) use builder::*;
@@ -31,9 +31,9 @@ impl Hash for CSR {
 
 impl CSR {
     pub fn new() -> Self {
-        CSR { 
-            outbounds_degrees: Vec::new(), 
-            destinations: Vec::new(), 
+        CSR {
+            outbounds_degrees: Vec::new(),
+            destinations: Vec::new(),
             sources: None,
         }
     }
@@ -42,11 +42,10 @@ impl CSR {
     pub fn memory_stats(&self) -> usize {
         core::mem::size_of::<Vec<EdgeT>>()
             + core::mem::size_of::<EdgeT>() * self.outbounds_degrees.len()
-        + core::mem::size_of::<Vec<NodeT>>() 
+            + core::mem::size_of::<Vec<NodeT>>()
             + core::mem::size_of::<NodeT>() * self.destinations.len()
-        + core::mem::size_of::< Option<Vec<NodeT>>>() 
-            + core::mem::size_of::<NodeT>() * self.sources.as_ref()
-                .map(|s| s.len()).unwrap_or(0)
+            + core::mem::size_of::<Option<Vec<NodeT>>>()
+            + core::mem::size_of::<NodeT>() * self.sources.as_ref().map(|s| s.len()).unwrap_or(0)
     }
 
     #[inline(always)]
@@ -70,15 +69,17 @@ impl CSR {
     }
 
     pub fn enable_sources(&mut self) {
-        self.sources = Some(self.outbounds_degrees
-            .windows(2)
-            .enumerate()
-            .flat_map(|(src, outbounds_tuple)| {
-                let start: usize = outbounds_tuple[0] as usize;
-                let end: usize = outbounds_tuple[1] as usize;
-                (start..end).map(move |_| src as NodeT)
-            })
-            .collect());
+        self.sources = Some(
+            self.outbounds_degrees
+                .windows(2)
+                .enumerate()
+                .flat_map(|(src, outbounds_tuple)| {
+                    let start: usize = outbounds_tuple[0] as usize;
+                    let end: usize = outbounds_tuple[1] as usize;
+                    (start..end).map(move |_| src as NodeT)
+                })
+                .collect(),
+        );
     }
 
     pub fn disable_sources(&mut self) {
@@ -93,10 +94,7 @@ impl CSR {
     }
 
     pub unsafe fn get_unchecked_source_node_id_from_edge_id(&self, edge_id: EdgeT) -> NodeT {
-        (match self.outbounds_degrees.binary_search(&edge_id) {
-            Ok(node_id) => node_id,
-            Err(node_id) => node_id - 1,
-        }) as NodeT
+        self.outbounds_degrees.partition_point(|&x| x < edge_id) as NodeT
     }
 
     pub unsafe fn get_unchecked_destination_node_id_from_edge_id(&self, edge_id: EdgeT) -> NodeT {
@@ -104,10 +102,13 @@ impl CSR {
     }
 
     pub unsafe fn get_unchecked_edge_id_from_node_ids(&self, src: NodeT, dst: NodeT) -> EdgeT {
-        let (min_edge_id, max_edge_id) = self.get_unchecked_minmax_edge_ids_from_source_node_id(src);
-        
-        let neighbour_idx = match self.destinations[min_edge_id as usize..max_edge_id as usize].binary_search(&dst) {
-            Ok(idx) => idx, // the edge exists
+        let (min_edge_id, max_edge_id) =
+            self.get_unchecked_minmax_edge_ids_from_source_node_id(src);
+
+        let neighbour_idx = match self.destinations[min_edge_id as usize..max_edge_id as usize]
+            .binary_search(&dst)
+        {
+            Ok(idx) => idx,  // the edge exists
             Err(idx) => idx, // the edge doesn't exists so this is the smallest edge_id bigger than where it would be
         };
 
@@ -121,17 +122,16 @@ impl CSR {
         if unlikely(dst >= self.get_number_of_nodes()) {
             return Err("".into());
         }
-        let (min_edge_id, max_edge_id) = unsafe{
-            self.get_unchecked_minmax_edge_ids_from_source_node_id(src)
-        };
-        
-        Ok(
-            min_edge_id + 
-            (match self.destinations[min_edge_id as usize..max_edge_id as usize].binary_search(&dst) {
+        let (min_edge_id, max_edge_id) =
+            unsafe { self.get_unchecked_minmax_edge_ids_from_source_node_id(src) };
+
+        Ok(min_edge_id
+            + (match self.destinations[min_edge_id as usize..max_edge_id as usize]
+                .binary_search(&dst)
+            {
                 Ok(neighbour_idx) => Ok::<_, String>(neighbour_idx),
-                Err(_) => Err("".into()) 
-            })? as EdgeT
-        )
+                Err(_) => Err("".into()),
+            })? as EdgeT)
     }
 
     #[inline(always)]
@@ -139,11 +139,18 @@ impl CSR {
         &self,
         src: NodeT,
     ) -> (EdgeT, EdgeT) {
-        (self.outbounds_degrees[src as usize], self.outbounds_degrees[src as usize + 1])
+        (
+            self.outbounds_degrees[src as usize],
+            self.outbounds_degrees[src as usize + 1],
+        )
     }
 
-    pub unsafe fn get_unchecked_neighbours_node_ids_from_src_node_id(&self, src: NodeT) -> &[NodeT] {
-        let (min_edge_id, max_edge_id) = self.get_unchecked_minmax_edge_ids_from_source_node_id(src);
+    pub unsafe fn get_unchecked_neighbours_node_ids_from_src_node_id(
+        &self,
+        src: NodeT,
+    ) -> &[NodeT] {
+        let (min_edge_id, max_edge_id) =
+            self.get_unchecked_minmax_edge_ids_from_source_node_id(src);
         &self.destinations[min_edge_id as usize..max_edge_id as usize]
     }
 }
