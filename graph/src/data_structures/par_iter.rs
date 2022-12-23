@@ -50,7 +50,7 @@ impl CSR {
 
 }
 
-pub struct EdgesParIter<'a> {
+pub(crate) struct EdgesParIter<'a> {
     pub(crate) father: &'a CSR,
 }
 
