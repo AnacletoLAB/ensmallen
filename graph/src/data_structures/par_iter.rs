@@ -44,7 +44,8 @@ impl CSR {
     pub fn par_iter_directed_edge_node_ids(
         &self,
     ) -> impl IndexedParallelIterator<Item = (EdgeT, NodeT, NodeT)> + '_ {
-        EdgesParIter::new(self)
+        //EdgesParIter::new(self)
+        self.par_iter_directed_edge_node_ids_naive()
     }
 
 }
