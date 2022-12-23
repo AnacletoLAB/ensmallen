@@ -105,7 +105,13 @@ impl CSR {
 
     pub unsafe fn get_unchecked_edge_id_from_node_ids(&self, src: NodeT, dst: NodeT) -> EdgeT {
         let (min_edge_id, max_edge_id) = self.get_unchecked_minmax_edge_ids_from_source_node_id(src);
-        min_edge_id + self.destinations[min_edge_id as usize..max_edge_id as usize].binary_search(&dst).unwrap() as EdgeT
+        
+        let neighbour_idx = match self.destinations[min_edge_id as usize..max_edge_id as usize].binary_search(&dst) {
+            Ok(idx) => idx, // the edge exists
+            Err(idx) => idx, // the edge doesn't exists so this is the smallest edge_id bigger than where it would be
+        };
+
+        min_edge_id + neighbour_idx as EdgeT
     }
 
     pub fn get_edge_id_from_node_ids(&self, src: NodeT, dst: NodeT) -> Result<EdgeT> {
