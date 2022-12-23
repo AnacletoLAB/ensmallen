@@ -8,6 +8,9 @@ pub(crate) use builder::*;
 mod iter;
 pub use iter::*;
 
+mod edges_iter;
+pub use edges_iter::*;
+
 mod par_iter;
 pub use par_iter::*;
 
