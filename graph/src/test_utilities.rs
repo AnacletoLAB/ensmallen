@@ -9,6 +9,7 @@ use rayon::iter::ParallelIterator;
 use std::collections::HashSet;
 use std::fs;
 use std::path::Path;
+use rayon::iter::IndexedParallelIterator;
 
 // where to save the test files
 #[cfg(any(target_os = "linux", target_os = "macos"))]
@@ -293,6 +294,15 @@ pub fn default_holdout_test_suite(graph: &Graph, train: &Graph, test: &Graph) ->
 pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<()> {
     // Testing that vocabularies are properly loaded
     validate_vocabularies(graph);
+
+    #[cfg(test)]
+    graph.edges.par_iter_directed_edge_node_ids_naive().zip(
+            graph.edges.par_iter_directed_edge_node_ids()
+        ).for_each(|(a, b)| {
+            assert_eq!(a.0, b.0);
+            assert_eq!(a.1, b.1);
+            assert_eq!(a.2, b.2);
+        });
 
     // Collect set of connected nodes, INCLUDING singleton with selfloops.
     let not_singleton_nodes = graph
