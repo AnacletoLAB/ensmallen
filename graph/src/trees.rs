@@ -410,24 +410,18 @@ impl Graph {
         )
     }
 
-    /// Returns set of edges composing a spanning arborescence.
+    /// Returns vector of predecessors composing a RANDOM spanning tree.
     ///
     /// This is the implementaiton of [A Fast, Parallel Spanning Tree Algorithm for Symmetric Multiprocessors (SMPs)](https://smartech.gatech.edu/bitstream/handle/1853/14355/GT-CSE-06-01.pdf)
     /// by David A. Bader and Guojing Cong.
-    ///
-    /// The returned tuple contains:
-    /// - The number edges required in order to build the spanning arborescence.
-    /// - Iterator over the edges used in order to build the spanning arborescence.
     ///
     /// # Arguments
     /// * `verbose`: Option<bool> - Whether to show a loading bar or not.
     ///
     /// # Raises
     /// * If the system configuration does not allow for the creation of the thread pool.
-    pub fn spanning_arborescence(
-        &self,
-        verbose: Option<bool>,
-    ) -> Result<Vec<NodeT>> {
+    /// * If the current graph instance is directed.
+    pub fn get_random_spanning_tree(&self, verbose: Option<bool>) -> Result<Vec<NodeT>> {
         self.must_be_undirected()?;
         let verbose = verbose.unwrap_or(false);
         let nodes_number = self.get_number_of_nodes() as usize;
@@ -440,7 +434,6 @@ impl Graph {
         );
         let active_nodes_number = AtomicUsize::new(0);
         let completed = AtomicBool::new(false);
-        let total_inserted_edges = AtomicUsize::new(0);
         let thread_safe_parents = ThreadDataRaceAware::new(&mut parents);
 
         pool.scope(|s| {
@@ -511,7 +504,6 @@ impl Graph {
                         .for_each(|dst| unsafe {
                             if (*parents)[dst as usize] == NODE_NOT_PRESENT {
                                 (*parents)[dst as usize] = src;
-                                total_inserted_edges.fetch_add(1, Ordering::SeqCst);
                                 active_nodes_number.fetch_add(1, Ordering::SeqCst);
                                 shared_stacks[rand_u64(dst as u64) as usize % shared_stacks.len()]
                                     .lock()
