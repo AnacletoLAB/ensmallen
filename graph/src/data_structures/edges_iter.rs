@@ -56,10 +56,10 @@ impl<'a> core::iter::Iterator for EdgesIter<'a> {
         // if we finished the current src, skip singletons and go to the next
         loop {
             let src_limit = self.father.outbounds_degrees[self.start_src as usize];
-    
+
             if self.start_edge_id == src_limit {
                 self.start_src += 1;
-                continue
+                continue;
             }
 
             break;
@@ -90,10 +90,10 @@ impl<'a> core::iter::DoubleEndedIterator for EdgesIter<'a> {
         // if we finished the current src, skip singletons and go to the next
         loop {
             let src_limit = self.father.outbounds_degrees[self.end_src as usize];
-    
+
             if self.end_edge_id == src_limit {
                 self.end_src -= 1;
-                continue
+                continue;
             }
 
             break;
@@ -110,7 +110,7 @@ impl<'a> UnindexedProducer for EdgesIter<'a> {
     type Item = (EdgeT, NodeT, NodeT);
 
     /// Split the file in two approximately balanced streams
-    fn split(mut self) -> (Self, Option<Self>) {
+    fn split(self) -> (Self, Option<Self>) {
         // Check if it's reasonable to split
         if self.len() < 2 {
             return (self, None);
@@ -152,12 +152,10 @@ impl<'a> Producer for EdgesIter<'a> {
             self.father.get_number_of_directed_edges(),
         );
 
-        let split_src = match self.father.outbounds_degrees.binary_search(&split_idx) {
-            // the split happens at the margin between two vectors
-            Ok(split_src) => split_src,
-            // the split point is inside a vector so gg ez
-            Err(split_src) => split_src,
-        } as NodeT;
+        let split_src = unsafe {
+            self.father
+                .get_unchecked_source_node_id_from_edge_id(split_idx) as NodeT
+        };
 
         // high part
         let new_iter = Self {
@@ -171,7 +169,7 @@ impl<'a> Producer for EdgesIter<'a> {
         };
 
         // low part
-        self.end_src = split_src - 1;
+        self.end_src = split_src;
         self.end_edge_id = split_idx;
 
         // return the two halfs

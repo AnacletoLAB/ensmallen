@@ -21,17 +21,17 @@ impl Graph {
             ])
         };
         self.par_iter_node_ids().filter(move |&node_id| unsafe {
-            let filter = !(self.is_unchecked_singleton_from_node_id(node_id)
-                || self
-                    .iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
-                    .any(|dst_node_id| {
-                        vertex_cover[dst_node_id as usize]
-                            .load(std::sync::atomic::Ordering::Relaxed)
-                    }));
-            if filter {
+            if self
+                .iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
+                .any(|dst_node_id| {
+                    !vertex_cover[dst_node_id as usize].load(std::sync::atomic::Ordering::Relaxed)
+                })
+            {
                 vertex_cover[node_id as usize].store(true, std::sync::atomic::Ordering::Relaxed);
+                true
+            } else {
+                false
             }
-            filter
         })
     }
 

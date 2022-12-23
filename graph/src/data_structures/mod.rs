@@ -94,7 +94,7 @@ impl CSR {
     }
 
     pub unsafe fn get_unchecked_source_node_id_from_edge_id(&self, edge_id: EdgeT) -> NodeT {
-        self.outbounds_degrees.partition_point(|&x| x <= edge_id) as NodeT
+        self.outbounds_degrees.partition_point(|&x| x <= edge_id) as NodeT - 1
     }
 
     pub unsafe fn get_unchecked_destination_node_id_from_edge_id(&self, edge_id: EdgeT) -> NodeT {

@@ -5,11 +5,10 @@ use itertools::Itertools;
 use log::warn;
 use num_traits::Zero;
 use rand::Rng;
-use rayon::iter::ParallelIterator;
+use rayon::prelude::*;
 use std::collections::HashSet;
 use std::fs;
 use std::path::Path;
-use rayon::iter::IndexedParallelIterator;
 
 // where to save the test files
 #[cfg(any(target_os = "linux", target_os = "macos"))]

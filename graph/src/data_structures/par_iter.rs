@@ -23,7 +23,7 @@ impl CSR {
     }
 
     /// slower version, it's just used for correctness checking in the tests
-    #[cfg(test)]
+    /// #[cfg(test)]
     pub fn par_iter_directed_edge_node_ids_naive(
         &self,
     ) -> impl IndexedParallelIterator<Item = (EdgeT, NodeT, NodeT)> + '_ {
