@@ -38,18 +38,26 @@ impl Graph {
         let normalize = normalize.unwrap_or(true);
         // First, we compute the set of nodes composing a vertex cover set.
         // This vertex cover is NOT minimal, but is a 2-approximation.
-        let vertex_cover_set = self.approximated_vertex_cover_set();
-        let pb = get_loading_bar(
-            verbose,
-            "Computing number of triangles",
-            vertex_cover_set.len(),
-        );
-        // We start iterating over the nodes in the cover using rayon to parallelize the procedure.
-        let mut number_of_triangles = vertex_cover_set
+        let vertex_cover = self.get_approximated_vertex_cover();
+        let cover_size = vertex_cover
             .par_iter()
+            .filter(|&&is_cover| is_cover)
+            .count();
+        let pb = get_loading_bar(verbose, "Computing number of triangles", cover_size);
+        // We start iterating over the nodes in the cover using rayon to parallelize the procedure.
+        let mut number_of_triangles = vertex_cover
+            .par_iter()
+            .enumerate()
+            .filter_map(|(node_id, is_cover)| {
+                if *is_cover {
+                    Some(node_id as NodeT)
+                } else {
+                    None
+                }
+            })
             .progress_with(pb)
             // For each node in the cover
-            .map(|&node_id| {
+            .map(|node_id| {
                 // We obtain the neighbours and collect them into a vector
                 // We store them instead of using them in a stream because we will need
                 // them multiple times below.
@@ -66,7 +74,7 @@ impl Graph {
                         // If the neighbour either is a selfloop
                         // or is not present in the vertex cover
                         // we return 0 new triangles.
-                        .filter(|&neighbour_node_id| vertex_cover_set.contains(&neighbour_node_id))
+                        .filter(|&&neighbour_node_id| vertex_cover[neighbour_node_id as usize])
                         .map(|&neighbour_node_id| {
                             // We compute the intersection of the neighbours.
                             iter_set::intersection(
@@ -82,7 +90,7 @@ impl Graph {
                                 // we only count this as one, as we will encounter
                                 // combinations of these nodes multiple times
                                 // while iterating the vertex cover nodes
-                                if vertex_cover_set.contains(&inner_node_id) {
+                                if vertex_cover[inner_node_id as usize] {
                                     1
                                 } else {
                                     // Otherwise we won't encounter again this
@@ -101,7 +109,7 @@ impl Graph {
                         // If the neighbour either is a selfloop
                         // or is not present in the vertex cover
                         // we return 0 new triangles.
-                        .filter(|&neighbour_node_id| vertex_cover_set.contains(&neighbour_node_id))
+                        .filter(|&&neighbour_node_id| vertex_cover[neighbour_node_id as usize])
                         .map(|&neighbour_node_id| {
                             // We compute the intersection of the neighbours.
                             iter_set::intersection(
@@ -117,7 +125,7 @@ impl Graph {
                                 // we only count this as one, as we will encounter
                                 // combinations of these nodes multiple times
                                 // while iterating the vertex cover nodes
-                                if vertex_cover_set.contains(&inner_node_id) {
+                                if vertex_cover[inner_node_id as usize] {
                                     1
                                 } else {
                                     // Otherwise we won't encounter again this
@@ -306,18 +314,30 @@ impl Graph {
             .map(|_| AtomicU32::new(0))
             .collect::<Vec<_>>();
         let verbose = verbose.unwrap_or(true);
-        let vertex_cover_set = self.approximated_vertex_cover_set();
+        let vertex_cover = self.get_approximated_vertex_cover();
+        let cover_size = vertex_cover
+            .par_iter()
+            .filter(|&&is_cover| is_cover)
+            .count();
         let pb = get_loading_bar(
             verbose,
             "Computing number of triangles per node",
-            vertex_cover_set.len(),
+            cover_size,
         );
         // We start iterating over the nodes in the cover using rayon to parallelize the procedure.
-        vertex_cover_set
+        vertex_cover
             .par_iter()
+            .enumerate()
+            .filter_map(|(node_id, is_cover)| {
+                if *is_cover {
+                    Some(node_id as NodeT)
+                } else {
+                    None
+                }
+            })
             .progress_with(pb)
             // For each node in the cover
-            .for_each(|&node_id| {
+            .for_each(|node_id| {
                 // We obtain the neighbours and collect them into a vector
                 // We store them instead of using them in a stream because we will need
                 // them multiple times below.
@@ -332,7 +352,7 @@ impl Graph {
                         // If the neighbour either is a selfloop
                         // or is not present in the vertex cover
                         // we return 0 new triangles.
-                        if vertex_cover_set.contains(&neighbour_node_id) {
+                        if vertex_cover[neighbour_node_id as usize] {
                             // We compute the intersection of the neighbours.
                             iter_set::intersection(
                                 neighbours.iter().cloned(),
@@ -349,7 +369,7 @@ impl Graph {
                                 // while iterating the vertex cover nodes
                                 node_triangles_number[node_id as usize]
                                     .fetch_add(1, Ordering::Relaxed);
-                                if !vertex_cover_set.contains(&inner_node_id) {
+                                if !vertex_cover[inner_node_id as usize] {
                                     // Otherwise we won't encounter again this
                                     // node and we need to count the triangles
                                     // three times.
@@ -366,7 +386,7 @@ impl Graph {
                         // If the neighbour either is a selfloop
                         // or is not present in the vertex cover
                         // we return 0 new triangles.
-                        if vertex_cover_set.contains(&neighbour_node_id) {
+                        if vertex_cover[neighbour_node_id as usize] {
                             // We compute the intersection of the neighbours.
                             iter_set::intersection(
                                 neighbours.iter().cloned(),
@@ -383,7 +403,7 @@ impl Graph {
                                 // while iterating the vertex cover nodes
                                 node_triangles_number[node_id as usize]
                                     .fetch_add(1, Ordering::Relaxed);
-                                if !vertex_cover_set.contains(&inner_node_id) {
+                                if !vertex_cover[inner_node_id as usize] {
                                     // Otherwise we won't encounter again this
                                     // node and we need to count the triangles
                                     // three times.

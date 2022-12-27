@@ -1030,12 +1030,12 @@ pub fn test_node_centralities(graph: &mut Graph, verbose: Option<bool>) -> Resul
 }
 
 pub fn test_vertex_cover(graph: &mut Graph, _verbose: Option<bool>) -> Result<()> {
-    let vertex_cover = graph.approximated_vertex_cover_set();
+    let vertex_cover = graph.get_approximated_vertex_cover();
     graph
         .par_iter_edge_node_ids(true)
         .for_each(|(_, src_node_id, dst_node_id)| {
             assert!(
-                vertex_cover.contains(&src_node_id) || vertex_cover.contains(&dst_node_id),
+                vertex_cover[src_node_id as usize] || vertex_cover[dst_node_id as usize],
                 concat!(
                     "We expected for either the node {} or {} to be in the vertex cover.\n",
                     "The vertex cover is {:?}"
