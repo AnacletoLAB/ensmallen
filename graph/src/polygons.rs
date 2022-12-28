@@ -38,7 +38,7 @@ impl Graph {
         let normalize = normalize.unwrap_or(true);
         // First, we compute the set of nodes composing a vertex cover set.
         // This vertex cover is NOT minimal, but is a 2-approximation.
-        let vertex_cover = self.get_approximated_vertex_cover();
+        let vertex_cover = self.get_approximated_vertex_cover(None, None, None, None).unwrap();
         let cover_size = vertex_cover
             .par_iter()
             .filter(|&&is_cover| is_cover)
@@ -314,7 +314,7 @@ impl Graph {
             .map(|_| AtomicU32::new(0))
             .collect::<Vec<_>>();
         let verbose = verbose.unwrap_or(true);
-        let vertex_cover = self.get_approximated_vertex_cover();
+        let vertex_cover = self.get_approximated_vertex_cover(None, None, None, None).unwrap();
         let cover_size = vertex_cover
             .par_iter()
             .filter(|&&is_cover| is_cover)

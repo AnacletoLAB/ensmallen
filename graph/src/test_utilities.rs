@@ -295,9 +295,11 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<()>
     validate_vocabularies(graph);
 
     #[cfg(test)]
-    graph.edges.par_iter_directed_edge_node_ids_naive().zip(
-            graph.edges.par_iter_directed_edge_node_ids()
-        ).for_each(|(a, b)| {
+    graph
+        .edges
+        .par_iter_directed_edge_node_ids_naive()
+        .zip(graph.edges.par_iter_directed_edge_node_ids())
+        .for_each(|(a, b)| {
             assert_eq!(a.0, b.0);
             assert_eq!(a.1, b.1);
             assert_eq!(a.2, b.2);
@@ -1030,9 +1032,9 @@ pub fn test_node_centralities(graph: &mut Graph, verbose: Option<bool>) -> Resul
 }
 
 pub fn test_vertex_cover(graph: &mut Graph, _verbose: Option<bool>) -> Result<()> {
-    let vertex_cover = graph.get_approximated_vertex_cover();
+    let vertex_cover = graph.get_approximated_vertex_cover(None, None, None, None)?;
     graph
-        .par_iter_edge_node_ids(true)
+        .par_iter_directed_edge_node_ids()
         .for_each(|(_, src_node_id, dst_node_id)| {
             assert!(
                 vertex_cover[src_node_id as usize] || vertex_cover[dst_node_id as usize],
@@ -1464,7 +1466,7 @@ pub fn test_random_walks(graph: &mut Graph, _verbose: Option<bool>) -> Result<()
             .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
         "Complete second order walks are not reproducible!"
     );
-    
+
     Ok(())
 }
 
