@@ -106,7 +106,8 @@ impl Graph {
                             continue;
                         }
                         // If we reach here, we are in an intersection.
-
+                        i += 1;
+                        j += 1;
                         // If the inner node is as well in the vertex cover
                         // we only count this as one, as we will encounter
                         // combinations of these nodes multiple times
