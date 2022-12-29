@@ -56,75 +56,74 @@ impl Graph {
                 // We obtain the neighbours and collect them into a vector
                 // We store them instead of using them in a stream because we will need
                 // them multiple times below.
-                let neighbours = self
+                let first_order_neighbours = self
                     .edges
                     .get_unchecked_neighbours_node_ids_from_src_node_id(node_id);
 
-                neighbours.par_iter().filter_map(move |&neighbour_node_id| {
-                    if neighbour_node_id != node_id
-                        && vertex_cover_reference[neighbour_node_id as usize]
-                    {
-                        Some((
-                            neighbour_node_id,
-                            neighbours,
-                            self.edges
-                                .get_unchecked_neighbours_node_ids_from_src_node_id(
-                                    neighbour_node_id,
-                                ),
-                        ))
-                    } else {
-                        None
-                    }
-                })
+                first_order_neighbours
+                    .par_iter()
+                    .filter_map(move |&neighbour_node_id| {
+                        if neighbour_node_id != node_id
+                            && vertex_cover_reference[neighbour_node_id as usize]
+                        {
+                            Some((neighbour_node_id, first_order_neighbours))
+                        } else {
+                            None
+                        }
+                    })
             })
-            .map(
-                |(neighbour_node_id, first_order_neighbours, second_order_neighbours)| {
-                    // We iterate over the neighbours
-                    // We compute the intersection of the neighbours.
+            .map(|(neighbour_node_id, first_order_neighbours)| {
+                // We iterate over the neighbours
+                // We compute the intersection of the neighbours.
 
-                    let mut i = 0;
-                    let mut j = 0;
-                    let mut first_order_neighbour: NodeT;
-                    let mut second_order_neighbour: NodeT;
-                    let mut partial_number_of_triangles = 0;
+                let mut first_neighbour_index = 0;
+                let mut second_neighbour_index = 0;
+                let mut first_order_neighbour: NodeT;
+                let mut second_order_neighbour: NodeT;
+                let mut partial_number_of_triangles = 0;
 
-                    while i < first_order_neighbours.len() && j < second_order_neighbours.len() {
-                        first_order_neighbour = first_order_neighbours[j];
-                        // If this is a self-loop, we march on forward
-                        if first_order_neighbour == neighbour_node_id {
-                            i += 1;
-                            continue;
-                        }
-                        // If this is not an intersection, we march forward
-                        second_order_neighbour = second_order_neighbours[j];
-                        if first_order_neighbour < second_order_neighbour {
-                            i += 1;
-                            continue;
-                        }
-                        if first_order_neighbour > second_order_neighbour {
-                            j += 1;
-                            continue;
-                        }
-                        // If we reach here, we are in an intersection.
-                        i += 1;
-                        j += 1;
-                        // If the inner node is as well in the vertex cover
-                        // we only count this as one, as we will encounter
-                        // combinations of these nodes multiple times
-                        // while iterating the vertex cover nodes
-                        partial_number_of_triangles +=
-                            if vertex_cover_reference[first_order_neighbour as usize] {
-                                1
-                            } else {
-                                // Otherwise we won't encounter again this
-                                // node and we need to count the triangles
-                                // three times.
-                                3
-                            };
+                let second_order_neighbours = self
+                    .edges
+                    .get_unchecked_neighbours_node_ids_from_src_node_id(neighbour_node_id);
+
+                while first_neighbour_index < first_order_neighbours.len()
+                    && second_neighbour_index < second_order_neighbours.len()
+                {
+                    first_order_neighbour = first_order_neighbours[first_neighbour_index];
+                    // If this is a self-loop, we march on forward
+                    if first_order_neighbour == neighbour_node_id {
+                        first_neighbour_index += 1;
+                        continue;
                     }
-                    partial_number_of_triangles
-                },
-            )
+                    // If this is not an intersection, we march forward
+                    second_order_neighbour = second_order_neighbours[second_neighbour_index];
+                    if first_order_neighbour < second_order_neighbour {
+                        first_neighbour_index += 1;
+                        continue;
+                    }
+                    if first_order_neighbour > second_order_neighbour {
+                        second_neighbour_index += 1;
+                        continue;
+                    }
+                    // If we reach here, we are in an intersection.
+                    first_neighbour_index += 1;
+                    second_neighbour_index += 1;
+                    // If the inner node is as well in the vertex cover
+                    // we only count this as one, as we will encounter
+                    // combinations of these nodes multiple times
+                    // while iterating the vertex cover nodes
+                    partial_number_of_triangles +=
+                        if vertex_cover_reference[first_order_neighbour as usize] {
+                            1
+                        } else {
+                            // Otherwise we won't encounter again this
+                            // node and we need to count the triangles
+                            // three times.
+                            3
+                        };
+                }
+                partial_number_of_triangles
+            })
             .sum::<EdgeT>();
         if normalize {
             number_of_triangles /= 3;
