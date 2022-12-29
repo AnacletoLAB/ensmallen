@@ -1,6 +1,30 @@
 use super::*;
 
 impl CSR {
+    pub unsafe fn from_sorted_iter_unchecked<I: Iterator<Item=(NodeT, NodeT)>>(iter: I) -> Self {
+        let (lower_bound, higher_bound) = iter.size_hint();
+        
+        let mut outbounds_degrees = vec![0];
+        let mut destinations = Vec::with_capacity(higher_bound.unwrap_or(lower_bound));
+        let mut previous_src = 0;
+
+        for (src, dst) in iter {
+            for _ in previous_src..src {
+                outbounds_degrees.push(destinations.len() as _);
+            }
+            previous_src = src;
+            destinations.push(dst);
+        }
+
+        outbounds_degrees.push(destinations.len() as _);
+
+        Self {
+            outbounds_degrees,
+            destinations,
+            sources: None,
+        }
+    }
+
     pub unsafe fn iter_unchecked_edge_ids_from_source_node_id(
         &self,
         src: NodeT,

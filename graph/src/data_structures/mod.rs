@@ -12,10 +12,9 @@ mod edges_iter;
 pub use edges_iter::*;
 
 mod par_iter;
-pub use par_iter::*;
 
 #[derive(Debug)]
-pub(crate) struct CSR {
+pub struct CSR {
     pub(crate) outbounds_degrees: Vec<EdgeT>,
     pub(crate) destinations: Vec<NodeT>,
     /// Vector of sources to execute fast link prediction sequences if required.

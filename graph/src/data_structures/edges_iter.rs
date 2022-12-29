@@ -1,7 +1,8 @@
 use super::*;
 use rayon::iter::plumbing::*;
 
-pub(crate) struct EdgesIter<'a> {
+#[derive(Clone)]
+pub struct EdgesIter<'a> {
     father: &'a CSR,
 
     start_src: NodeT,
@@ -25,14 +26,14 @@ impl<'a> core::fmt::Debug for EdgesIter<'a> {
 }
 
 impl<'a> EdgesIter<'a> {
-    pub(crate) fn new(father: &'a CSR) -> Self {
+    pub fn new(father: &'a CSR) -> Self {
         EdgesIter {
             father,
 
             start_src: 0,
             start_edge_id: 0,
 
-            end_src: father.get_number_of_nodes(),
+            end_src: father.get_number_of_nodes().saturating_sub(1),
             end_edge_id: father.get_number_of_directed_edges(),
         }
     }
@@ -55,7 +56,7 @@ impl<'a> core::iter::Iterator for EdgesIter<'a> {
 
         // if we finished the current src, skip singletons and go to the next
         loop {
-            let src_limit = self.father.outbounds_degrees[self.start_src as usize];
+            let src_limit = self.father.outbounds_degrees[1 + self.start_src as usize];
 
             if self.start_edge_id == src_limit {
                 self.start_src += 1;
@@ -87,11 +88,13 @@ impl<'a> core::iter::DoubleEndedIterator for EdgesIter<'a> {
             return None;
         }
 
+        self.end_edge_id -= 1;
+
         // if we finished the current src, skip singletons and go to the next
         loop {
             let src_limit = self.father.outbounds_degrees[self.end_src as usize];
 
-            if self.end_edge_id == src_limit {
+            if self.end_edge_id < src_limit {
                 self.end_src -= 1;
                 continue;
             }
@@ -101,7 +104,6 @@ impl<'a> core::iter::DoubleEndedIterator for EdgesIter<'a> {
 
         let dst = self.father.destinations[self.end_edge_id as usize];
         let result = (self.end_edge_id, self.end_src, dst);
-        self.end_edge_id -= 1;
         Some(result)
     }
 }
