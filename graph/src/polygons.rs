@@ -12,8 +12,6 @@ impl Graph {
     ///
     /// # Arguments
     /// * `normalize`: Option<bool> - Whether to normalize the number of triangles.
-    /// * `low_centrality`: Option<usize> - The threshold over which to switch to parallel matryoshka. By default 50.
-    /// * `verbose`: Option<bool> - Whether to show a loading bar.
     ///
     /// # References
     /// This implementation is described in ["Faster Clustering Coefficient Using Vertex Covers"](https://ieeexplore.ieee.org/document/6693348).
@@ -21,29 +19,27 @@ impl Graph {
     /// # Safety
     /// This method will raise a panic if called on an directed graph as those
     /// instances are not supported by this method.
-    unsafe fn get_undirected_number_of_triangles(
-        &self,
-        normalize: Option<bool>,
-        low_centrality: Option<usize>,
-        verbose: Option<bool>,
-    ) -> EdgeT {
+    unsafe fn get_undirected_number_of_triangles(&self, normalize: Option<bool>) -> EdgeT {
         // The current graph must be undirected.
         if self.is_directed() {
             panic!("This method cannot be called on directed graphs!");
         }
-        let verbose = verbose.unwrap_or(true);
-        let low_centrality = low_centrality.unwrap_or(50);
 
         // By default we want to normalize the triangles number
         let normalize = normalize.unwrap_or(true);
         // First, we compute the set of nodes composing a vertex cover set.
         // This vertex cover is NOT minimal, but is a 2-approximation.
-        let vertex_cover = self.get_approximated_vertex_cover(None, None, None, None).unwrap();
-        let cover_size = vertex_cover
-            .par_iter()
-            .filter(|&&is_cover| is_cover)
-            .count();
-        let pb = get_loading_bar(verbose, "Computing number of triangles", cover_size);
+        let vertex_cover = self
+            .get_approximated_vertex_cover(
+                Some("decreasing_node_degree"),
+                Some(true),
+                Some(true),
+                None,
+            )
+            .unwrap();
+
+        let vertex_cover_reference = vertex_cover.as_slice();
+
         // We start iterating over the nodes in the cover using rayon to parallelize the procedure.
         let mut number_of_triangles = vertex_cover
             .par_iter()
@@ -55,90 +51,79 @@ impl Graph {
                     None
                 }
             })
-            .progress_with(pb)
             // For each node in the cover
-            .map(|node_id| {
+            .flat_map(|node_id| {
                 // We obtain the neighbours and collect them into a vector
                 // We store them instead of using them in a stream because we will need
                 // them multiple times below.
                 let neighbours = self
-                    .iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
-                    .filter(|&neighbour_node_id| node_id != neighbour_node_id)
-                    .collect::<Vec<NodeT>>();
-                // For the nodes with low centrality we use the sequential version
-                // TODO! find a way to do this without duplicating the code!
-                if neighbours.len() < low_centrality {
-                    // We iterate over the neighbours
-                    neighbours
-                        .iter()
-                        // If the neighbour either is a selfloop
-                        // or is not present in the vertex cover
-                        // we return 0 new triangles.
-                        .filter(|&&neighbour_node_id| vertex_cover[neighbour_node_id as usize])
-                        .map(|&neighbour_node_id| {
-                            // We compute the intersection of the neighbours.
-                            iter_set::intersection(
-                                neighbours.iter().cloned(),
-                                self.iter_unchecked_neighbour_node_ids_from_source_node_id(
+                    .edges
+                    .get_unchecked_neighbours_node_ids_from_src_node_id(node_id);
+
+                neighbours.par_iter().filter_map(move |&neighbour_node_id| {
+                    if neighbour_node_id != node_id
+                        && vertex_cover_reference[neighbour_node_id as usize]
+                    {
+                        Some((
+                            neighbour_node_id,
+                            neighbours,
+                            self.edges
+                                .get_unchecked_neighbours_node_ids_from_src_node_id(
                                     neighbour_node_id,
                                 ),
-                            )
-                            .filter(|&inner_neighbour_id| inner_neighbour_id != neighbour_node_id)
-                            .into_iter()
-                            .map(|inner_node_id| {
-                                // If the inner node is as well in the vertex cover
-                                // we only count this as one, as we will encounter
-                                // combinations of these nodes multiple times
-                                // while iterating the vertex cover nodes
-                                if vertex_cover[inner_node_id as usize] {
-                                    1
-                                } else {
-                                    // Otherwise we won't encounter again this
-                                    // node and we need to count the triangles
-                                    // three times.
-                                    3
-                                }
-                            })
-                            .sum::<EdgeT>()
-                        })
-                        .sum::<EdgeT>()
-                } else {
-                    // We iterate over the neighbours
-                    neighbours
-                        .par_iter()
-                        // If the neighbour either is a selfloop
-                        // or is not present in the vertex cover
-                        // we return 0 new triangles.
-                        .filter(|&&neighbour_node_id| vertex_cover[neighbour_node_id as usize])
-                        .map(|&neighbour_node_id| {
-                            // We compute the intersection of the neighbours.
-                            iter_set::intersection(
-                                neighbours.iter().cloned(),
-                                self.iter_unchecked_neighbour_node_ids_from_source_node_id(
-                                    neighbour_node_id,
-                                ),
-                            )
-                            .filter(|&inner_neighbour_id| inner_neighbour_id != neighbour_node_id)
-                            .into_iter()
-                            .map(|inner_node_id| {
-                                // If the inner node is as well in the vertex cover
-                                // we only count this as one, as we will encounter
-                                // combinations of these nodes multiple times
-                                // while iterating the vertex cover nodes
-                                if vertex_cover[inner_node_id as usize] {
-                                    1
-                                } else {
-                                    // Otherwise we won't encounter again this
-                                    // node and we need to count the triangles
-                                    // three times.
-                                    3
-                                }
-                            })
-                            .sum::<EdgeT>()
-                        })
-                        .sum::<EdgeT>()
-                }
+                        ))
+                    } else {
+                        None
+                    }
+                })
             })
+            .map(
+                |(neighbour_node_id, first_order_neighbours, second_order_neighbours)| {
+                    // We iterate over the neighbours
+                    // We compute the intersection of the neighbours.
+
+                    let mut i = 0;
+                    let mut j = 0;
+                    let mut first_order_neighbour: NodeT;
+                    let mut second_order_neighbour: NodeT;
+                    let mut partial_number_of_triangles = 0;
+
+                    while i < first_order_neighbours.len() && j < second_order_neighbours.len() {
+                        first_order_neighbour = first_order_neighbours[j];
+                        // If this is a self-loop, we march on forward
+                        if first_order_neighbour == neighbour_node_id {
+                            i += 1;
+                            continue;
+                        }
+                        // If this is not an intersection, we march forward
+                        second_order_neighbour = second_order_neighbours[j];
+                        if first_order_neighbour < second_order_neighbour {
+                            i += 1;
+                            continue;
+                        }
+                        if first_order_neighbour > second_order_neighbour {
+                            j += 1;
+                            continue;
+                        }
+                        // If we reach here, we are in an intersection.
+
+                        // If the inner node is as well in the vertex cover
+                        // we only count this as one, as we will encounter
+                        // combinations of these nodes multiple times
+                        // while iterating the vertex cover nodes
+                        partial_number_of_triangles +=
+                            if vertex_cover_reference[first_order_neighbour as usize] {
+                                1
+                            } else {
+                                // Otherwise we won't encounter again this
+                                // node and we need to count the triangles
+                                // three times.
+                                3
+                            };
+                    }
+                    partial_number_of_triangles
+                },
+            )
             .sum::<EdgeT>();
         if normalize {
             number_of_triangles /= 3;
@@ -151,34 +136,18 @@ impl Graph {
     /// This is a naive implementation and is considerably less efficient
     /// than Bader's version in the case of undirected graphs.
     ///
-    /// # Arguments
-    /// * `low_centrality`: Option<usize> - The threshold over which to switch to parallel matryoshka. By default 50.
-    /// * `verbose`: Option<bool> - Whether to show a loading bar.
-    ///
     /// # Safety
     /// This method will raise a panic if called on an undirected graph becase
     /// there is a more efficient one for these cases.
     /// There is a method that automatically dispatches the more efficient method
     /// according to the instance.
-    unsafe fn get_naive_number_of_triangles(
-        &self,
-        low_centrality: Option<usize>,
-        verbose: Option<bool>,
-    ) -> EdgeT {
+    unsafe fn get_naive_number_of_triangles(&self) -> EdgeT {
         if !self.is_directed() {
             panic!("This method should not be called on undirected graphs! Use the efficient one!");
         }
-        let verbose = verbose.unwrap_or(true);
-        let low_centrality = low_centrality.unwrap_or(50);
-        let pb = get_loading_bar(
-            verbose,
-            "Computing number of triangles",
-            self.get_number_of_nodes() as usize,
-        );
         // We start iterating over the nodes using rayon to parallelize the procedure.
         let number_of_triangles: EdgeT = self
             .par_iter_node_ids()
-            .progress_with(pb)
             // For each node in the cover
             .map(|node_id| {
                 // We obtain the neighbours and collect them into a vector
@@ -189,42 +158,22 @@ impl Graph {
                     .filter(|&neighbour_node_id| node_id != neighbour_node_id)
                     .collect::<Vec<NodeT>>();
                 // We iterate over the neighbours
-                // TODO! find a way to do this without duplicating the code!
-                if neighbours.len() < low_centrality {
-                    neighbours
-                        .iter()
-                        // If the neighbour is a selfloop
-                        // we return 0 new triangles.
-                        .map(|&neighbour_node_id| {
-                            // We compute the intersection of the neighbours.
-                            iter_set::intersection(
-                                neighbours.iter().cloned(),
-                                self.iter_unchecked_neighbour_node_ids_from_source_node_id(
-                                    neighbour_node_id,
-                                ),
-                            )
-                            .filter(|&inner_neighbour_id| inner_neighbour_id != neighbour_node_id)
-                            .count() as EdgeT
-                        })
-                        .sum::<EdgeT>()
-                } else {
-                    neighbours
-                        .par_iter()
-                        // If the neighbour is a selfloop
-                        // we return 0 new triangles.
-                        .map(|&neighbour_node_id| {
-                            // We compute the intersection of the neighbours.
-                            iter_set::intersection(
-                                neighbours.iter().cloned(),
-                                self.iter_unchecked_neighbour_node_ids_from_source_node_id(
-                                    neighbour_node_id,
-                                ),
-                            )
-                            .filter(|&inner_neighbour_id| inner_neighbour_id != neighbour_node_id)
-                            .count() as EdgeT
-                        })
-                        .sum::<EdgeT>()
-                }
+                neighbours
+                    .par_iter()
+                    // If the neighbour is a selfloop
+                    // we return 0 new triangles.
+                    .map(|&neighbour_node_id| {
+                        // We compute the intersection of the neighbours.
+                        iter_set::intersection(
+                            neighbours.iter().cloned(),
+                            self.iter_unchecked_neighbour_node_ids_from_source_node_id(
+                                neighbour_node_id,
+                            ),
+                        )
+                        .filter(|&inner_neighbour_id| inner_neighbour_id != neighbour_node_id)
+                        .count() as EdgeT
+                    })
+                    .sum::<EdgeT>()
             })
             .sum::<EdgeT>();
         number_of_triangles
@@ -239,18 +188,11 @@ impl Graph {
     ///
     /// # Arguments
     /// * `normalize`: Option<bool> - Whether to normalize the number of triangles.
-    /// * `low_centrality`: Option<usize> - The threshold over which to switch to parallel matryoshka. By default 50.
-    /// * `verbose`: Option<bool> - Whether to show a loading bar.
-    pub fn get_number_of_triangles(
-        &self,
-        normalize: Option<bool>,
-        low_centrality: Option<usize>,
-        verbose: Option<bool>,
-    ) -> EdgeT {
+    pub fn get_number_of_triangles(&self, normalize: Option<bool>) -> EdgeT {
         if self.is_directed() {
-            unsafe { self.get_naive_number_of_triangles(low_centrality, verbose) }
+            unsafe { self.get_naive_number_of_triangles() }
         } else {
-            unsafe { self.get_undirected_number_of_triangles(normalize, low_centrality, verbose) }
+            unsafe { self.get_undirected_number_of_triangles(normalize) }
         }
     }
 
@@ -280,9 +222,8 @@ impl Graph {
     /// # Arguments
     /// * `low_centrality`: Option<usize> - The threshold over which to switch to parallel matryoshka. By default 50.
     /// * `verbose`: Option<bool> - Whether to show a loading bar.
-    pub fn get_transitivity(&self, low_centrality: Option<usize>, verbose: Option<bool>) -> f64 {
-        self.get_number_of_triangles(Some(false), low_centrality, verbose) as f64
-            / self.get_number_of_triads() as f64
+    pub fn get_transitivity(&self) -> f64 {
+        self.get_number_of_triangles(Some(false)) as f64 / self.get_number_of_triads() as f64
     }
 
     /// Returns number of triangles for all nodes in the graph.
@@ -314,7 +255,9 @@ impl Graph {
             .map(|_| AtomicU32::new(0))
             .collect::<Vec<_>>();
         let verbose = verbose.unwrap_or(true);
-        let vertex_cover = self.get_approximated_vertex_cover(None, None, None, None).unwrap();
+        let vertex_cover = self
+            .get_approximated_vertex_cover(None, None, None, None)
+            .unwrap();
         let cover_size = vertex_cover
             .par_iter()
             .filter(|&&is_cover| is_cover)

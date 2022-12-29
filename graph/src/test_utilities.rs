@@ -1200,7 +1200,7 @@ pub fn test_polygons(graph: &mut Graph, verbose: Option<bool>) -> Result<()> {
             .into_iter()
             .map(|triangles_number| triangles_number as EdgeT)
             .sum::<EdgeT>(),
-        graph.get_number_of_triangles(Some(false), None, verbose)
+        graph.get_number_of_triangles(Some(false))
     );
     Ok(())
 }
