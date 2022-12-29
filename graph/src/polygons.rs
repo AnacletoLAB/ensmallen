@@ -66,13 +66,13 @@ impl Graph {
                         if neighbour_node_id != node_id
                             && vertex_cover_reference[neighbour_node_id as usize]
                         {
-                            Some((neighbour_node_id, first_order_neighbours))
+                            Some((node_id, neighbour_node_id, first_order_neighbours))
                         } else {
                             None
                         }
                     })
             })
-            .map(|(neighbour_node_id, first_order_neighbours)| {
+            .map(|(node_id, neighbour_node_id, first_order_neighbours)| {
                 // We iterate over the neighbours
                 // We compute the intersection of the neighbours.
 
@@ -80,7 +80,7 @@ impl Graph {
                 let mut second_neighbour_index = 0;
                 let mut first_order_neighbour: NodeT;
                 let mut second_order_neighbour: NodeT;
-                let mut partial_number_of_triangles = 0;
+                let mut partial_number_of_triangles: EdgeT = 0;
 
                 let second_order_neighbours = self
                     .edges
@@ -91,7 +91,9 @@ impl Graph {
                 {
                     first_order_neighbour = first_order_neighbours[first_neighbour_index];
                     // If this is a self-loop, we march on forward
-                    if first_order_neighbour == neighbour_node_id {
+                    if first_order_neighbour == neighbour_node_id
+                        || first_order_neighbour == node_id
+                    {
                         first_neighbour_index += 1;
                         continue;
                     }
