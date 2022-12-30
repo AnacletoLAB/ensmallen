@@ -82,6 +82,8 @@ impl Graph {
                         candidate_isomorphic_groups.push(vec![other_node_id]);
                     }
                 }
+                // We check whether there may be groups with a single node,
+                // which of course do not count as isomorphic groups
                 if filtering_is_necessary {
                     candidate_isomorphic_groups = candidate_isomorphic_groups
                         .into_iter()

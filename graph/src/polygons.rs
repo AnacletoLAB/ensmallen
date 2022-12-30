@@ -82,7 +82,6 @@ impl Graph {
                 while first_neighbour_index < first_order_neighbours.len()
                     && second_neighbour_index < second_order_neighbours.len()
                 {
-                    /*
                     let first_order_neighbour = first_order_neighbours[first_neighbour_index];
                     // If this is a self-loop, we march on forward
                     if first_order_neighbour == neighbour_node_id
@@ -116,31 +115,12 @@ impl Graph {
                             // node and we need to count the triangles
                             // three times.
                             3
-                        }; 
-                    */
-
-                    let first_order_neighbour = first_order_neighbours[first_neighbour_index];
-                    let second_order_neighbour = second_order_neighbours[second_neighbour_index];
-
-                    let is_tuple = first_order_neighbour == neighbour_node_id
-                        || first_order_neighbour == node_id;
-
-                    first_neighbour_index += (is_tuple || first_order_neighbour <= second_order_neighbour) as usize;
-                    second_neighbour_index += (!is_tuple && first_order_neighbour >= second_order_neighbour) as usize;
-                    
-                    partial_number_of_triangles +=
-                    if vertex_cover_reference[first_order_neighbour as usize] {
-                        1
-                    } else {
-                        // Otherwise we won't encounter again this
-                        // node and we need to count the triangles
-                        // three times.
-                        3
-                    }; 
+                        };
                 }
                 partial_number_of_triangles
             })
-            .sum::<EdgeT>() / 2
+            .sum::<EdgeT>()
+            / 2
     }
 
     /// Returns number of triangles in the graph without taking into account the weights.
