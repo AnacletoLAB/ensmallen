@@ -379,35 +379,34 @@ impl Graph {
         destination_node_id: NodeT,
     ) -> f32 {
 
-        let src_neighbours = self.edges.get_unchecked_neighbours_node_ids_from_src_node_id(soruce_node_id);
-        let dst_neighbours = self.edges.get_unchecked_neighbours_node_ids_from_src_node_id(destination_node_id);
+        let mut src_neighbours = self.edges.get_unchecked_neighbours_node_ids_from_src_node_id(source_node_id);
+        let mut dst_neighbours = self.edges.get_unchecked_neighbours_node_ids_from_src_node_id(destination_node_id);
 
-        let mut union_count = 0;
         let mut intersection_count = 0;
+        let double_union = dst_neighbours.len() + src_neighbours.len();    
 
         while !src_neighbours.is_empty() || !dst_neighbours.is_empty() {
             match src_neighbours[0].cmp(&dst_neighbours[0]) {
                 Ordering::Equal => {
                     intersection_count += 1;
-                    union_count += 1;
                     src_neighbours = &src_neighbours[1..];
                     dst_neighbours = &dst_neighbours[1..];
                 },
                 Ordering::Greater => {
-                    union_count += 1;
                     src_neighbours = &src_neighbours[1..];
                 },
                 Ordering::Less => {
-                    union_count += 1;
                     dst_neighbours = &dst_neighbours[1..];
                 },
             }
         }
 
+        let union_count = double_union - intersection_count;    
+
         if intersection_count == 0 {
             0.0
         } else {
-            union_count as f32 / intersection_count as f32
+            intersection_count as f32 / union_count as f32
         }
 
         /*
