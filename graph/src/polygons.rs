@@ -124,10 +124,9 @@ impl Graph {
 
                     let is_tuple = first_order_neighbour == neighbour_node_id
                         || first_order_neighbour == node_id;
-                    let is_not_tuple_mask = (is_tuple as usize).wrapping_sub(1);
 
-                    first_neighbour_index += (first_order_neighbour <= second_order_neighbour) as usize;
-                    second_neighbour_index += is_not_tuple_mask & (first_order_neighbour >= second_order_neighbour) as usize;
+                    first_neighbour_index += (is_tuple || first_order_neighbour <= second_order_neighbour) as usize;
+                    second_neighbour_index += (!is_tuple && first_order_neighbour >= second_order_neighbour) as usize;
                     
                     partial_number_of_triangles +=
                     if vertex_cover_reference[first_order_neighbour as usize] {
