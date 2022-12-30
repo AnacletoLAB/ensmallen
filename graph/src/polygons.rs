@@ -10,23 +10,18 @@ use std::sync::atomic::{AtomicU32, Ordering};
 impl Graph {
     /// Returns number of triangles in the graph.
     ///
-    /// # Arguments
-    /// * `normalize`: Option<bool> - Whether to normalize the number of triangles.
-    ///
     /// # References
     /// This implementation is described in ["Faster Clustering Coefficient Using Vertex Covers"](https://ieeexplore.ieee.org/document/6693348).
     ///
     /// # Safety
     /// This method will raise a panic if called on an directed graph as those
     /// instances are not supported by this method.
-    unsafe fn get_undirected_number_of_triangles(&self, normalize: Option<bool>) -> EdgeT {
+    unsafe fn get_undirected_number_of_triangles(&self) -> EdgeT {
         // The current graph must be undirected.
         if self.is_directed() {
             panic!("This method cannot be called on directed graphs!");
         }
 
-        // By default we want to normalize the triangles number
-        let normalize = normalize.unwrap_or(true);
         // First, we compute the set of nodes composing a vertex cover set.
         // This vertex cover is NOT minimal, but is a 2-approximation.
         let vertex_cover = self
@@ -41,7 +36,7 @@ impl Graph {
         let vertex_cover_reference = vertex_cover.as_slice();
 
         // We start iterating over the nodes in the cover using rayon to parallelize the procedure.
-        let mut number_of_triangles = vertex_cover
+        vertex_cover
             .par_iter()
             .enumerate()
             .filter_map(|(node_id, is_cover)| {
@@ -78,8 +73,6 @@ impl Graph {
 
                 let mut first_neighbour_index = 0;
                 let mut second_neighbour_index = 0;
-                let mut first_order_neighbour: NodeT;
-                let mut second_order_neighbour: NodeT;
                 let mut partial_number_of_triangles: EdgeT = 0;
 
                 let second_order_neighbours = self
@@ -89,7 +82,8 @@ impl Graph {
                 while first_neighbour_index < first_order_neighbours.len()
                     && second_neighbour_index < second_order_neighbours.len()
                 {
-                    first_order_neighbour = first_order_neighbours[first_neighbour_index];
+                    /*
+                    let first_order_neighbour = first_order_neighbours[first_neighbour_index];
                     // If this is a self-loop, we march on forward
                     if first_order_neighbour == neighbour_node_id
                         || first_order_neighbour == node_id
@@ -98,7 +92,7 @@ impl Graph {
                         continue;
                     }
                     // If this is not an intersection, we march forward
-                    second_order_neighbour = second_order_neighbours[second_neighbour_index];
+                    let second_order_neighbour = second_order_neighbours[second_neighbour_index];
                     if first_order_neighbour < second_order_neighbour {
                         first_neighbour_index += 1;
                         continue;
@@ -122,15 +116,32 @@ impl Graph {
                             // node and we need to count the triangles
                             // three times.
                             3
-                        };
+                        }; 
+                    */
+
+                    let first_order_neighbour = first_order_neighbours[first_neighbour_index];
+                    let second_order_neighbour = second_order_neighbours[second_neighbour_index];
+
+                    let is_tuple = first_order_neighbour == neighbour_node_id
+                        || first_order_neighbour == node_id;
+                    let is_not_tuple_mask = (is_tuple as usize).wrapping_sub(1);
+
+                    first_neighbour_index += (first_order_neighbour <= second_order_neighbour) as usize;
+                    second_neighbour_index += is_not_tuple_mask & (first_order_neighbour >= second_order_neighbour) as usize;
+                    
+                    partial_number_of_triangles +=
+                    if vertex_cover_reference[first_order_neighbour as usize] {
+                        1
+                    } else {
+                        // Otherwise we won't encounter again this
+                        // node and we need to count the triangles
+                        // three times.
+                        3
+                    }; 
                 }
                 partial_number_of_triangles
             })
-            .sum::<EdgeT>();
-        if normalize {
-            number_of_triangles /= 3;
-        }
-        number_of_triangles
+            .sum::<EdgeT>() / 2
     }
 
     /// Returns number of triangles in the graph without taking into account the weights.
@@ -188,13 +199,11 @@ impl Graph {
     /// - For directed graphs it will use the naive algorithm.
     /// - For undirected graphs it will use Bader's version.
     ///
-    /// # Arguments
-    /// * `normalize`: Option<bool> - Whether to normalize the number of triangles.
-    pub fn get_number_of_triangles(&self, normalize: Option<bool>) -> EdgeT {
+    pub fn get_number_of_triangles(&self) -> EdgeT {
         if self.is_directed() {
             unsafe { self.get_naive_number_of_triangles() }
         } else {
-            unsafe { self.get_undirected_number_of_triangles(normalize) }
+            unsafe { self.get_undirected_number_of_triangles() }
         }
     }
 
@@ -225,7 +234,7 @@ impl Graph {
     /// * `low_centrality`: Option<usize> - The threshold over which to switch to parallel matryoshka. By default 50.
     /// * `verbose`: Option<bool> - Whether to show a loading bar.
     pub fn get_transitivity(&self) -> f64 {
-        self.get_number_of_triangles(Some(false)) as f64 / self.get_number_of_triads() as f64
+        self.get_number_of_triangles() as f64 / self.get_number_of_triads() as f64
     }
 
     /// Returns number of triangles for all nodes in the graph.
