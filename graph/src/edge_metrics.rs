@@ -3,6 +3,7 @@ use super::*;
 use num_traits::Pow;
 use num_traits::Zero;
 use rayon::prelude::*;
+use std::cmp::Ordering;
 use std::collections::HashSet;
 
 /// # Properties and measurements of the graph
@@ -377,6 +378,39 @@ impl Graph {
         source_node_id: NodeT,
         destination_node_id: NodeT,
     ) -> f32 {
+
+        let src_neighbours = self.edges.get_unchecked_neighbours_node_ids_from_src_node_id(soruce_node_id);
+        let dst_neighbours = self.edges.get_unchecked_neighbours_node_ids_from_src_node_id(destination_node_id);
+
+        let mut union_count = 0;
+        let mut intersection_count = 0;
+
+        while !src_neighbours.is_empty() || !dst_neighbours.is_empty() {
+            match src_neighbours[0].cmp(&dst_neighbours[0]) {
+                Ordering::Equal => {
+                    intersection_count += 1;
+                    union_count += 1;
+                    src_neighbours = &src_neighbours[1..];
+                    dst_neighbours = &dst_neighbours[1..];
+                },
+                Ordering::Greater => {
+                    union_count += 1;
+                    src_neighbours = &src_neighbours[1..];
+                },
+                Ordering::Less => {
+                    union_count += 1;
+                    dst_neighbours = &dst_neighbours[1..];
+                },
+            }
+        }
+
+        if intersection_count == 0 {
+            0.0
+        } else {
+            union_count as f32 / intersection_count as f32
+        }
+
+        /*
         let union = self
             .iter_unchecked_neighbour_node_ids_union_from_source_node_ids(
                 source_node_id,
@@ -391,6 +425,7 @@ impl Graph {
                 destination_node_id,
             ) / union
         }
+        */
     }
 
     /// Returns the Jaccard index for the two given nodes from the given node IDs.
