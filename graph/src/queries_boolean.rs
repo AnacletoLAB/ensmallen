@@ -315,6 +315,80 @@ impl Graph {
             .map(|node_id| unsafe { self.is_unchecked_trap_node_from_node_id(node_id) })
     }
 
+    /// Returns whether two provided nodes IDs are isomorphic to one another.
+    ///
+    /// # Arguments
+    /// * `first_node_id`: NodeT - The first node to check for.
+    /// * `second_node_id`: NodeT - The first node to check for.
+    ///
+    /// # Safety
+    /// This method assumes that the two provided node IDs are effectively within
+    /// the set of nodes in the graph. Out of bound errors might be raised with
+    /// improper parametrization of the method.
+    /// 
+    /// # Implementative details
+    /// Since the node neighbourhoods are returned as slices of u32s of a 
+    /// CSR matrix, we can use the native method of `memcmp` that is used
+    /// in the [Slice object in Rust](https://doc.rust-lang.org/src/core/slice/cmp.rs.html#78),
+    /// which should localize to each system.
+    pub unsafe fn are_unchecked_isomorphic_from_node_ids(
+        &self,
+        first_node_id: NodeT,
+        second_node_id: NodeT,
+    ) -> bool {
+        self.edges
+            .get_unchecked_neighbours_node_ids_from_src_node_id(first_node_id)
+            == self
+                .edges
+                .get_unchecked_neighbours_node_ids_from_src_node_id(second_node_id)
+    }
+
+    /// Returns whether two provided nodes IDs are isomorphic to one another.
+    ///
+    /// # Arguments
+    /// * `first_node_id`: NodeT - The first node to check for.
+    /// * `second_node_id`: NodeT - The first node to check for.
+    ///
+    /// # Raises
+    /// * ValueError: This method assumes that the two provided node IDs are effectively within
+    /// the set of nodes in the graph. Out of bound errors might be raised with
+    /// improper parametrization of the method.
+    pub fn are_isomorphic_from_node_ids(
+        &self,
+        first_node_id: NodeT,
+        second_node_id: NodeT,
+    ) -> Result<bool> {
+        Ok(unsafe {
+            self.are_unchecked_isomorphic_from_node_ids(
+                self.validate_node_id(first_node_id)?,
+                self.validate_node_id(second_node_id)?,
+            )
+        })
+    }
+
+    /// Returns whether two provided nodes names are isomorphic to one another.
+    ///
+    /// # Arguments
+    /// * `first_node_name`: &str - The first node name to check for.
+    /// * `second_node_name`: &str - The first node name to check for.
+    ///
+    /// # Raises
+    /// * ValueError: This method assumes that the two provided node names are effectively within
+    /// the set of nodes in the graph. Out of bound errors might be raised with
+    /// improper parametrization of the method.
+    pub fn are_isomorphic_from_node_names(
+        &self,
+        first_node_name: &str,
+        second_node_name: &str,
+    ) -> Result<bool> {
+        Ok(unsafe {
+            self.are_unchecked_isomorphic_from_node_ids(
+                self.get_node_id_from_node_name(first_node_name)?,
+                self.get_node_id_from_node_name(second_node_name)?,
+            )
+        })
+    }
+
     /// Returns whether the given node name and node type name exist in current graph.
     ///
     /// # Arguments
