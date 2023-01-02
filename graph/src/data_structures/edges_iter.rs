@@ -2,7 +2,7 @@ use super::*;
 use rayon::iter::plumbing::*;
 
 #[derive(Clone)]
-pub(crate) struct EdgesIter<'a> {
+pub struct EdgesIter<'a> {
     father: &'a CSR,
 
     start_src: NodeT,

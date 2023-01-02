@@ -8,6 +8,7 @@
 //! * `connected_node`: a node which is nor a `singleton` nor a `singleton_with_selfloops`.
 
 #![warn(unused_macros)]
+#![feature(drain_filter)]
 #![feature(is_sorted)]
 #![feature(string_remove_matches)]
 #![feature(exit_status_error)]
@@ -76,6 +77,7 @@ mod graph;
 mod hash;
 mod holdouts;
 mod isomorphism;
+pub mod isomorphism_iter;
 mod iter_queries;
 mod iters;
 mod modifiers;

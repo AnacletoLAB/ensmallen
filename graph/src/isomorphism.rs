@@ -1,6 +1,7 @@
 use super::*;
 use log::info;
 use rayon::prelude::*;
+use isomorphism_iter::EqualBucketsParIter;
 
 impl Graph {
     /// Returns parallel iterator of vectors of isomorphic node groups IDs.
@@ -55,6 +56,8 @@ impl Graph {
         });
 
         let number_of_nodes_in_degree_bounded_subset = degree_bounded_node_ids.len();
+
+        let slices = EqualBucketsParIter::new(&neighbours_hashes, &hash_indices).collect::<Vec<_>>();
 
         // We start to iterate on the nodes in the subset of interest.
         (0..number_of_nodes_in_degree_bounded_subset.saturating_sub(1))
@@ -115,13 +118,9 @@ impl Graph {
                 // We check whether there may be groups with a single node,
                 // which of course do not count as isomorphic groups
                 if number_of_isomorphic_groups_with_size_one > 0 {
-                    // TODO: since we are reducing the length of the array, we
-                    // can rewrite the array in-place and avoid a new allocation
-                    // of memory!
-                    candidate_isomorphic_groups = candidate_isomorphic_groups
-                        .into_iter()
-                        .filter(|candidate_isomorphic_group| candidate_isomorphic_group.len() > 1)
-                        .collect();
+                    candidate_isomorphic_groups.drain_filter(
+                        |candidate_isomorphic_group| candidate_isomorphic_group.len() > 1
+                    );
                 }
                 // It may be possible that we have not identified any isomorphic node group.
                 // If that is the case, we return None and we have not identified any isomorphic group.
