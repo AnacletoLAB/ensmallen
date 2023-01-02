@@ -154,85 +154,77 @@ impl Graph {
         vertex_cover
             .par_iter()
             .enumerate()
-            .filter_map(|(node_id, is_cover)| {
+            .filter_map(|(first, is_cover)| {
                 if *is_cover {
-                    Some(node_id as NodeT)
+                    Some((first as NodeT, unsafe {
+                        self.edges
+                            .get_unchecked_neighbours_node_ids_from_src_node_id(first as NodeT)
+                    }))
                 } else {
                     None
                 }
             })
-            // For each node in the cover
-            .flat_map(|node_id| {
-                // We obtain the neighbours and collect them into a vector
-                // We store them instead of using them in a stream because we will need
-                // them multiple times below.
-                let first_order_neighbours = self
-                    .edges
-                    .get_unchecked_neighbours_node_ids_from_src_node_id(node_id);
-
-                first_order_neighbours
-                    .par_iter()
-                    .filter_map(move |&neighbour_node_id| {
-                        if neighbour_node_id != node_id
-                            && vertex_cover_reference[neighbour_node_id as usize]
-                        {
-                            Some((node_id, neighbour_node_id, first_order_neighbours))
+            .map(|(first, first_order_neighbours)| {
+                vertex_cover
+                    .iter()
+                    .enumerate()
+                    .filter_map(|(second, is_cover)| {
+                        if *is_cover && first != second as NodeT {
+                            Some((second as NodeT, unsafe {
+                                self.edges
+                                    .get_unchecked_neighbours_node_ids_from_src_node_id(
+                                        second as NodeT,
+                                    )
+                            }))
                         } else {
                             None
                         }
                     })
-            })
-            .map(|(node_id, neighbour_node_id, first_order_neighbours)| {
-                // We iterate over the neighbours
-                // We compute the intersection of the neighbours.
+                    .map(|(second, second_order_neighbours)| {
+                        let mut first_neighbour_index = 0;
+                        let mut second_neighbour_index = 0;
+                        let mut in_vertex_cover: EdgeT = 0;
+                        let mut not_in_vertex_cover: EdgeT = 0;
 
-                let mut first_neighbour_index = 0;
-                let mut second_neighbour_index = 0;
-                let mut in_vertex_cover: EdgeT = 0;
-                let mut not_in_vertex_cover: EdgeT = 0;
+                        while first_neighbour_index < first_order_neighbours.len()
+                            && second_neighbour_index < second_order_neighbours.len()
+                        {
+                            let first_order_neighbour =
+                                first_order_neighbours[first_neighbour_index];
+                            // If this is a self-loop, we march on forward
+                            if first_order_neighbour == second || first_order_neighbour == first {
+                                first_neighbour_index += 1;
+                                continue;
+                            }
+                            // If this is not an intersection, we march forward
+                            let second_order_neighbour =
+                                second_order_neighbours[second_neighbour_index];
+                            if first_order_neighbour < second_order_neighbour {
+                                first_neighbour_index += 1;
+                                continue;
+                            }
+                            if first_order_neighbour > second_order_neighbour {
+                                second_neighbour_index += 1;
+                                continue;
+                            }
+                            // If we reach here, we are in an intersection.
+                            first_neighbour_index += 1;
+                            second_neighbour_index += 1;
 
-                let second_order_neighbours = self
-                    .edges
-                    .get_unchecked_neighbours_node_ids_from_src_node_id(neighbour_node_id);
-
-                while first_neighbour_index < first_order_neighbours.len()
-                    && second_neighbour_index < second_order_neighbours.len()
-                {
-                    let first_order_neighbour = first_order_neighbours[first_neighbour_index];
-                    // If this is a self-loop, we march on forward
-                    if first_order_neighbour == neighbour_node_id
-                        || first_order_neighbour == node_id
-                    {
-                        first_neighbour_index += 1;
-                        continue;
-                    }
-                    // If this is not an intersection, we march forward
-                    let second_order_neighbour = second_order_neighbours[second_neighbour_index];
-                    if first_order_neighbour < second_order_neighbour {
-                        first_neighbour_index += 1;
-                        continue;
-                    }
-                    if first_order_neighbour > second_order_neighbour {
-                        second_neighbour_index += 1;
-                        continue;
-                    }
-                    // If we reach here, we are in an intersection.
-                    first_neighbour_index += 1;
-                    second_neighbour_index += 1;
-
-                    if vertex_cover_reference[first_order_neighbour as usize] {
-                        in_vertex_cover += 1;
-                    } else {
-                        not_in_vertex_cover += 1;
-                    };
-                }
-                (in_vertex_cover + not_in_vertex_cover)
-                    * (in_vertex_cover + not_in_vertex_cover).saturating_sub(1)
-                    + not_in_vertex_cover * not_in_vertex_cover.saturating_sub(1)
-                    + 2 * in_vertex_cover * not_in_vertex_cover.saturating_sub(1)
+                            if vertex_cover_reference[first_order_neighbour as usize] {
+                                in_vertex_cover += 1;
+                            } else {
+                                not_in_vertex_cover += 1;
+                            };
+                        }
+                        (in_vertex_cover + not_in_vertex_cover)
+                            * (in_vertex_cover + not_in_vertex_cover).saturating_sub(1)
+                            + not_in_vertex_cover * not_in_vertex_cover.saturating_sub(1)
+                            + 2 * not_in_vertex_cover * in_vertex_cover.saturating_sub(1)
+                    })
+                    .sum::<EdgeT>()
             })
             .sum::<EdgeT>()
-            / 2
     }
 
     /// Returns number of triangles in the graph without taking into account the weights.
