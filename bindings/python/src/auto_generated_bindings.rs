@@ -14414,7 +14414,7 @@ impl Graph {
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
-    /// Returns whether the graph contains the indentity matrix.
+    /// Returns whether the graph contains the identity matrix.
     pub fn contains_identity_matrix(&self) -> bool {
         self.inner.contains_identity_matrix().into()
     }

@@ -505,7 +505,7 @@ impl Graph {
         self.nodes.is_sorted_by_lexicographic_order()
     }
 
-    /// Returns whether the graph contains the indentity matrix.
+    /// Returns whether the graph contains the identity matrix.
     ///
     /// # Implications
     /// The implications of having a graph containing teh identity
