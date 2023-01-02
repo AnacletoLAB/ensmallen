@@ -5,7 +5,7 @@ use rayon::iter::IntoParallelIterator;
 use rayon::iter::IntoParallelRefIterator;
 use rayon::iter::IntoParallelRefMutIterator;
 use rayon::iter::ParallelIterator;
-use std::sync::atomic::{AtomicU32, Ordering};
+use std::sync::atomic::{AtomicU64, Ordering};
 
 impl Graph {
     /// Returns number of triangles in the graph.
@@ -123,6 +123,118 @@ impl Graph {
             / 2
     }
 
+    /// Returns number of squares in the graph.
+    ///
+    /// # References
+    /// This implementation is described in ["Faster Clustering Coefficient Using Vertex Covers"](https://ieeexplore.ieee.org/document/6693348).
+    ///
+    /// # Safety
+    /// This method will raise a panic if called on an directed graph as those
+    /// instances are not supported by this method.
+    unsafe fn get_undirected_number_of_squares(&self) -> EdgeT {
+        // The current graph must be undirected.
+        if self.is_directed() {
+            panic!("This method cannot be called on directed graphs!");
+        }
+
+        // First, we compute the set of nodes composing a vertex cover set.
+        // This vertex cover is NOT minimal, but is a 2-approximation.
+        let vertex_cover = self
+            .get_approximated_vertex_cover(
+                Some("decreasing_node_degree"),
+                Some(true),
+                Some(true),
+                None,
+            )
+            .unwrap();
+
+        let vertex_cover_reference = vertex_cover.as_slice();
+
+        // We start iterating over the nodes in the cover using rayon to parallelize the procedure.
+        vertex_cover
+            .par_iter()
+            .enumerate()
+            .filter_map(|(node_id, is_cover)| {
+                if *is_cover {
+                    Some(node_id as NodeT)
+                } else {
+                    None
+                }
+            })
+            // For each node in the cover
+            .flat_map(|node_id| {
+                // We obtain the neighbours and collect them into a vector
+                // We store them instead of using them in a stream because we will need
+                // them multiple times below.
+                let first_order_neighbours = self
+                    .edges
+                    .get_unchecked_neighbours_node_ids_from_src_node_id(node_id);
+
+                first_order_neighbours
+                    .par_iter()
+                    .filter_map(move |&neighbour_node_id| {
+                        if neighbour_node_id != node_id
+                            && vertex_cover_reference[neighbour_node_id as usize]
+                        {
+                            Some((node_id, neighbour_node_id, first_order_neighbours))
+                        } else {
+                            None
+                        }
+                    })
+            })
+            .map(|(node_id, neighbour_node_id, first_order_neighbours)| {
+                // We iterate over the neighbours
+                // We compute the intersection of the neighbours.
+
+                let mut first_neighbour_index = 0;
+                let mut second_neighbour_index = 0;
+                let mut in_vertex_cover: EdgeT = 0;
+                let mut not_in_vertex_cover: EdgeT = 0;
+
+                let second_order_neighbours = self
+                    .edges
+                    .get_unchecked_neighbours_node_ids_from_src_node_id(neighbour_node_id);
+
+                while first_neighbour_index < first_order_neighbours.len()
+                    && second_neighbour_index < second_order_neighbours.len()
+                {
+                    let first_order_neighbour = first_order_neighbours[first_neighbour_index];
+                    // If this is a self-loop, we march on forward
+                    if first_order_neighbour == neighbour_node_id
+                        || first_order_neighbour == node_id
+                    {
+                        first_neighbour_index += 1;
+                        continue;
+                    }
+                    // If this is not an intersection, we march forward
+                    let second_order_neighbour = second_order_neighbours[second_neighbour_index];
+                    if first_order_neighbour < second_order_neighbour {
+                        first_neighbour_index += 1;
+                        continue;
+                    }
+                    if first_order_neighbour > second_order_neighbour {
+                        second_neighbour_index += 1;
+                        continue;
+                    }
+                    // If we reach here, we are in an intersection.
+                    first_neighbour_index += 1;
+                    second_neighbour_index += 1;
+
+                    if vertex_cover_reference[first_order_neighbour as usize] {
+                        in_vertex_cover += 1;
+                    } else {
+                        not_in_vertex_cover += 1;
+                    };
+                }
+                (in_vertex_cover + not_in_vertex_cover)
+                    * (in_vertex_cover + not_in_vertex_cover).saturating_sub(1)
+                    + not_in_vertex_cover * not_in_vertex_cover.saturating_sub(1)
+                    + 2 * in_vertex_cover * not_in_vertex_cover.saturating_sub(1)
+            })
+            .sum::<EdgeT>()
+            / 2
+    }
+
     /// Returns number of triangles in the graph without taking into account the weights.
     ///
     /// This is a naive implementation and is considerably less efficient
@@ -186,6 +298,22 @@ impl Graph {
         }
     }
 
+    /// Returns total number of squares ignoring the weights.
+    ///
+    /// The method dispatches the fastest method according to the current
+    /// graph instance. Specifically:
+    /// - For directed graphs it will use the naive algorithm.
+    /// - For undirected graphs it will use Bader's version.
+    ///
+    pub fn get_number_of_squares(&self) -> EdgeT {
+        if self.is_directed() {
+            panic!("Not currently supported.")
+            //unsafe { self.get_naive_number_of_squares() }
+        } else {
+            unsafe { self.get_undirected_number_of_squares() }
+        }
+    }
+
     /// Returns total number of triads in the graph without taking into account weights.
     pub fn get_number_of_triads(&self) -> EdgeT {
         self.par_iter_node_degrees()
@@ -219,8 +347,6 @@ impl Graph {
     /// Returns number of triangles for all nodes in the graph.
     ///
     /// # Arguments
-    /// * `normalize`: Option<bool> - Whether to normalize the number of triangles.
-    /// * `low_centrality`: Option<usize> - The threshold over which to switch to parallel matryoshka. By default 50.
     /// * `verbose`: Option<bool> - Whether to show a loading bar.
     ///
     /// # References
@@ -229,21 +355,17 @@ impl Graph {
     /// # Safety
     /// This method does not support directed graphs and will raise a panic.
     /// It should automatically dispatched the naive version for these cases.
-    unsafe fn get_undirected_number_of_triangles_per_node(
-        &self,
-        normalize: Option<bool>,
-        low_centrality: Option<usize>,
-        verbose: Option<bool>,
-    ) -> Vec<NodeT> {
+    fn get_undirected_number_of_triangles_per_node(&self, verbose: Option<bool>) -> Vec<EdgeT> {
         if self.is_directed() {
             panic!("This method does not work for directed graphs!");
         }
-        let normalize = normalize.unwrap_or(true);
-        let low_centrality = low_centrality.unwrap_or(50);
-        let node_triangles_number = self
-            .iter_node_ids()
-            .map(|_| AtomicU32::new(0))
-            .collect::<Vec<_>>();
+        let node_triangles_number = unsafe {
+            std::mem::transmute::<Vec<EdgeT>, Vec<AtomicU64>>(vec![
+                0;
+                self.get_number_of_nodes()
+                    as usize
+            ])
+        };
         let verbose = verbose.unwrap_or(true);
         let vertex_cover = self
             .get_approximated_vertex_cover(None, None, None, None)
@@ -257,6 +379,9 @@ impl Graph {
             "Computing number of triangles per node",
             cover_size,
         );
+
+        let vertex_cover_reference = vertex_cover.as_slice();
+
         // We start iterating over the nodes in the cover using rayon to parallelize the procedure.
         vertex_cover
             .par_iter()
@@ -270,95 +395,87 @@ impl Graph {
             })
             .progress_with(pb)
             // For each node in the cover
-            .for_each(|node_id| {
+            .flat_map(|node_id| {
                 // We obtain the neighbours and collect them into a vector
                 // We store them instead of using them in a stream because we will need
                 // them multiple times below.
-                let neighbours = self
-                    .iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
-                    .filter(|&neighbour_node_id| node_id != neighbour_node_id)
-                    .collect::<Vec<NodeT>>();
+                let first_order_neighbours = unsafe {
+                    self.edges
+                        .get_unchecked_neighbours_node_ids_from_src_node_id(node_id)
+                };
+
+                first_order_neighbours
+                    .par_iter()
+                    .filter_map(move |&neighbour_node_id| {
+                        if neighbour_node_id != node_id
+                            && vertex_cover_reference[neighbour_node_id as usize]
+                        {
+                            Some((node_id, neighbour_node_id, first_order_neighbours))
+                        } else {
+                            None
+                        }
+                    })
+            })
+            .for_each(|(node_id, neighbour_node_id, first_order_neighbours)| {
                 // We iterate over the neighbours
-                // TODO! find a way to do this without duplicating the code!
-                if neighbours.len() < low_centrality {
-                    neighbours.iter().for_each(|&neighbour_node_id| {
-                        // If the neighbour either is a selfloop
-                        // or is not present in the vertex cover
-                        // we return 0 new triangles.
-                        if vertex_cover[neighbour_node_id as usize] {
-                            // We compute the intersection of the neighbours.
-                            iter_set::intersection(
-                                neighbours.iter().cloned(),
-                                self.iter_unchecked_neighbour_node_ids_from_source_node_id(
-                                    neighbour_node_id,
-                                ),
-                            )
-                            .filter(|&inner_node_id| inner_node_id != neighbour_node_id)
-                            .into_iter()
-                            .for_each(|inner_node_id| {
-                                // If the inner node is as well in the vertex cover
-                                // we only count this as one, as we will encounter
-                                // combinations of these nodes multiple times
-                                // while iterating the vertex cover nodes
-                                node_triangles_number[node_id as usize]
-                                    .fetch_add(1, Ordering::Relaxed);
-                                if !vertex_cover[inner_node_id as usize] {
-                                    // Otherwise we won't encounter again this
-                                    // node and we need to count the triangles
-                                    // three times.
-                                    node_triangles_number[neighbour_node_id as usize]
-                                        .fetch_add(1, Ordering::Relaxed);
-                                    node_triangles_number[inner_node_id as usize]
-                                        .fetch_add(1, Ordering::Relaxed);
-                                }
-                            });
-                        }
-                    });
-                } else {
-                    neighbours.par_iter().for_each(|&neighbour_node_id| {
-                        // If the neighbour either is a selfloop
-                        // or is not present in the vertex cover
-                        // we return 0 new triangles.
-                        if vertex_cover[neighbour_node_id as usize] {
-                            // We compute the intersection of the neighbours.
-                            iter_set::intersection(
-                                neighbours.iter().cloned(),
-                                self.iter_unchecked_neighbour_node_ids_from_source_node_id(
-                                    neighbour_node_id,
-                                ),
-                            )
-                            .filter(|&inner_node_id| inner_node_id != neighbour_node_id)
-                            .into_iter()
-                            .for_each(|inner_node_id| {
-                                // If the inner node is as well in the vertex cover
-                                // we only count this as one, as we will encounter
-                                // combinations of these nodes multiple times
-                                // while iterating the vertex cover nodes
-                                node_triangles_number[node_id as usize]
-                                    .fetch_add(1, Ordering::Relaxed);
-                                if !vertex_cover[inner_node_id as usize] {
-                                    // Otherwise we won't encounter again this
-                                    // node and we need to count the triangles
-                                    // three times.
-                                    node_triangles_number[neighbour_node_id as usize]
-                                        .fetch_add(1, Ordering::Relaxed);
-                                    node_triangles_number[inner_node_id as usize]
-                                        .fetch_add(1, Ordering::Relaxed);
-                                }
-                            });
-                        }
-                    });
+                // We compute the intersection of the neighbours.
+
+                let mut first_neighbour_index = 0;
+                let mut second_neighbour_index = 0;
+
+                let second_order_neighbours = unsafe {
+                    self.edges
+                        .get_unchecked_neighbours_node_ids_from_src_node_id(neighbour_node_id)
+                };
+
+                while first_neighbour_index < first_order_neighbours.len()
+                    && second_neighbour_index < second_order_neighbours.len()
+                {
+                    let first_order_neighbour = first_order_neighbours[first_neighbour_index];
+                    // If this is a self-loop, we march on forward
+                    if first_order_neighbour == neighbour_node_id
+                        || first_order_neighbour == node_id
+                    {
+                        first_neighbour_index += 1;
+                        continue;
+                    }
+                    // If this is not an intersection, we march forward
+                    let second_order_neighbour = second_order_neighbours[second_neighbour_index];
+                    if first_order_neighbour < second_order_neighbour {
+                        first_neighbour_index += 1;
+                        continue;
+                    }
+                    if first_order_neighbour > second_order_neighbour {
+                        second_neighbour_index += 1;
+                        continue;
+                    }
+                    // If we reach here, we are in an intersection.
+                    first_neighbour_index += 1;
+                    second_neighbour_index += 1;
+                    // If the inner node is as well in the vertex cover
+                    // we only count this as one, as we will encounter
+                    // combinations of these nodes multiple times
+                    // while iterating the vertex cover nodes
+                    node_triangles_number[node_id as usize].fetch_add(1, Ordering::Relaxed);
+                    if !vertex_cover_reference[second_order_neighbour as usize] {
+                        // Otherwise we won't encounter again this
+                        // node and we need to count the triangles
+                        // three times.
+                        node_triangles_number[first_order_neighbour as usize]
+                            .fetch_add(1, Ordering::Relaxed);
+                        node_triangles_number[second_order_neighbour as usize]
+                            .fetch_add(1, Ordering::Relaxed);
+                    }
                 }
             });
+
         let mut node_triangles_number =
-            std::mem::transmute::<Vec<AtomicU32>, Vec<NodeT>>(node_triangles_number);
-        if normalize {
-            node_triangles_number
-                .par_iter_mut()
-                .for_each(|triangles_number| {
-                    *triangles_number /= 2;
-                });
-        }
+            unsafe { std::mem::transmute::<Vec<AtomicU64>, Vec<EdgeT>>(node_triangles_number) };
+        node_triangles_number
+            .par_iter_mut()
+            .for_each(|triangles_number| {
+                *triangles_number /= 2;
+            });
         node_triangles_number
     }
 
@@ -368,27 +485,24 @@ impl Graph {
     /// than Bader's version in the case of undirected graphs.
     ///
     /// # Arguments
-    /// * `low_centrality`: Option<usize> - The threshold over which to switch to parallel matryoshka. By default 50.
     /// * `verbose`: Option<bool> - Whether to show a loading bar.
     ///
     /// # Safety
     /// This method will raise a panic if called on an directed graph becase
     /// there is a more efficient one for these cases.
-    unsafe fn get_naive_number_of_triangles_per_node(
-        &self,
-        low_centrality: Option<usize>,
-        verbose: Option<bool>,
-    ) -> Vec<NodeT> {
+    fn get_naive_number_of_triangles_per_node(&self, verbose: Option<bool>) -> Vec<EdgeT> {
         if !self.is_directed() {
             panic!("This method should not be called on directed graphs as there is a more efficient one!");
         }
         // Number of nodes per triangles
-        let node_triangles_number = self
-            .iter_node_ids()
-            .map(|_| AtomicU32::new(0))
-            .collect::<Vec<_>>();
+        let node_triangles_number = unsafe {
+            std::mem::transmute::<Vec<EdgeT>, Vec<AtomicU64>>(vec![
+                0;
+                self.get_number_of_nodes()
+                    as usize
+            ])
+        };
         let verbose = verbose.unwrap_or(true);
-        let low_centrality = low_centrality.unwrap_or(50);
         let pb = get_loading_bar(
             verbose,
             "Computing number of triangles per node",
@@ -402,57 +516,34 @@ impl Graph {
                 // We obtain the neighbours and collect them into a vector
                 // We store them instead of using them in a stream because we will need
                 // them multiple times below.
-                let neighbours = self
-                    .iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
-                    .filter(|&neighbour_node_id| node_id != neighbour_node_id)
-                    .collect::<Vec<NodeT>>();
-                // We iterate over the neighbours
-                // TODO! find a way to do this without duplicating the code!
-                if neighbours.len() < low_centrality {
-                    neighbours
-                        .iter()
-                        // If the neighbour is a selfloop
-                        // we return 0 new triangles.
-                        .for_each(|&neighbour_node_id| {
-                            // We compute the intersection of the neighbours.
-                            node_triangles_number[node_id as usize].fetch_add(
-                                iter_set::intersection(
-                                    neighbours.iter().cloned(),
-                                    self.iter_unchecked_neighbour_node_ids_from_source_node_id(
-                                        neighbour_node_id,
-                                    ),
+                let neighbours = unsafe {
+                    self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
+                        .filter(|&neighbour_node_id| node_id != neighbour_node_id)
+                        .collect::<Vec<NodeT>>()
+                };
+
+                neighbours
+                    .iter()
+                    // If the neighbour is a selfloop
+                    // we return 0 new triangles.
+                    .for_each(|&neighbour_node_id| {
+                        // We compute the intersection of the neighbours.
+                        node_triangles_number[node_id as usize].fetch_add(
+                            iter_set::intersection(neighbours.iter().cloned(), unsafe {
+                                self.iter_unchecked_neighbour_node_ids_from_source_node_id(
+                                    neighbour_node_id,
                                 )
-                                .filter(|&inner_neighbour_id| {
-                                    inner_neighbour_id != neighbour_node_id
-                                })
-                                .count() as NodeT,
-                                Ordering::Relaxed,
-                            );
-                        });
-                } else {
-                    neighbours
-                        .par_iter()
-                        // If the neighbour is a selfloop
-                        // we return 0 new triangles.
-                        .for_each(|&neighbour_node_id| {
-                            // We compute the intersection of the neighbours.
-                            node_triangles_number[node_id as usize].fetch_add(
-                                iter_set::intersection(
-                                    neighbours.iter().cloned(),
-                                    self.iter_unchecked_neighbour_node_ids_from_source_node_id(
-                                        neighbour_node_id,
-                                    ),
-                                )
-                                .filter(|&inner_neighbour_id| {
-                                    inner_neighbour_id != neighbour_node_id
-                                })
-                                .count() as NodeT,
-                                Ordering::Relaxed,
-                            );
-                        });
-                }
+                            })
+                            .filter(|&inner_neighbour_id| {
+                                inner_neighbour_id != neighbour_node_id
+                                    && inner_neighbour_id != node_id
+                            })
+                            .count() as EdgeT,
+                            Ordering::Relaxed,
+                        );
+                    });
             });
-        std::mem::transmute::<Vec<AtomicU32>, Vec<NodeT>>(node_triangles_number)
+        unsafe { std::mem::transmute::<Vec<AtomicU64>, Vec<EdgeT>>(node_triangles_number) }
     }
 
     /// Returns number of triangles in the graph without taking into account the weights.
@@ -463,39 +554,28 @@ impl Graph {
     /// - For undirected graphs it will use Bader's version.
     ///
     /// # Arguments
-    /// * `normalize`: Option<bool> - Whether to normalize the number of triangles.
-    /// * `low_centrality`: Option<usize> - The threshold over which to switch to parallel matryoshka. By default 50.
     /// * `verbose`: Option<bool> - Whether to show a loading bar.
     ///
-    pub fn get_number_of_triangles_per_node(
-        &self,
-        normalize: Option<bool>,
-        low_centrality: Option<usize>,
-        verbose: Option<bool>,
-    ) -> Vec<NodeT> {
+    pub fn get_number_of_triangles_per_node(&self, verbose: Option<bool>) -> Vec<EdgeT> {
         if self.is_directed() {
-            unsafe { self.get_naive_number_of_triangles_per_node(low_centrality, verbose) }
+            self.get_naive_number_of_triangles_per_node(verbose)
         } else {
-            unsafe {
-                self.get_undirected_number_of_triangles_per_node(normalize, low_centrality, verbose)
-            }
+            self.get_undirected_number_of_triangles_per_node(verbose)
         }
     }
 
     /// Returns iterator over the clustering coefficients for all nodes in the graph.
     ///
     /// # Arguments
-    /// * `low_centrality`: Option<usize> - The threshold over which to switch to parallel matryoshka. By default 50.
     /// * `verbose`: Option<bool> - Whether to show a loading bar.
     ///
     /// # References
     /// This implementation is described in ["Faster Clustering Coefficient Using Vertex Covers"](https://ieeexplore.ieee.org/document/6693348).
     pub fn par_iter_clustering_coefficient_per_node(
         &self,
-        low_centrality: Option<usize>,
         verbose: Option<bool>,
     ) -> impl IndexedParallelIterator<Item = f64> + '_ {
-        self.get_number_of_triangles_per_node(Some(false), low_centrality, verbose)
+        self.get_number_of_triangles_per_node(verbose)
             .into_par_iter()
             .zip(self.par_iter_node_degrees())
             .map(|(triangles_number, degree)| {
@@ -515,45 +595,30 @@ impl Graph {
     ///
     /// # References
     /// This implementation is described in ["Faster Clustering Coefficient Using Vertex Covers"](https://ieeexplore.ieee.org/document/6693348).
-    pub fn get_clustering_coefficient_per_node(
-        &self,
-        low_centrality: Option<usize>,
-        verbose: Option<bool>,
-    ) -> Vec<f64> {
-        self.par_iter_clustering_coefficient_per_node(low_centrality, verbose)
+    pub fn get_clustering_coefficient_per_node(&self, verbose: Option<bool>) -> Vec<f64> {
+        self.par_iter_clustering_coefficient_per_node(verbose)
             .collect()
     }
 
     /// Returns the graph clustering coefficient.
     ///
     /// # Arguments
-    /// * `low_centrality`: Option<usize> - The threshold over which to switch to parallel matryoshka. By default 50.
     /// * `verbose`: Option<bool> - Whether to show a loading bar.
     ///
     /// # References
     /// This implementation is described in ["Faster Clustering Coefficient Using Vertex Covers"](https://ieeexplore.ieee.org/document/6693348).
-    pub fn get_clustering_coefficient(
-        &self,
-        low_centrality: Option<usize>,
-        verbose: Option<bool>,
-    ) -> f64 {
-        self.par_iter_clustering_coefficient_per_node(low_centrality, verbose)
-            .sum()
+    pub fn get_clustering_coefficient(&self, verbose: Option<bool>) -> f64 {
+        self.par_iter_clustering_coefficient_per_node(verbose).sum()
     }
 
     /// Returns the graph average clustering coefficient.
     ///
     /// # Arguments
-    /// * `low_centrality`: Option<usize> - The threshold over which to switch to parallel matryoshka. By default 50.
     /// * `verbose`: Option<bool> - Whether to show a loading bar.
     ///
     /// # References
     /// This implementation is described in ["Faster Clustering Coefficient Using Vertex Covers"](https://ieeexplore.ieee.org/document/6693348).
-    pub fn get_average_clustering_coefficient(
-        &self,
-        low_centrality: Option<usize>,
-        verbose: Option<bool>,
-    ) -> f64 {
-        self.get_clustering_coefficient(low_centrality, verbose) / self.get_number_of_nodes() as f64
+    pub fn get_average_clustering_coefficient(&self, verbose: Option<bool>) -> f64 {
+        self.get_clustering_coefficient(verbose) / self.get_number_of_nodes() as f64
     }
 }

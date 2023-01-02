@@ -4,13 +4,13 @@ use rayon::iter::plumbing::*;
 
 type HashType = u64;
 
-pub struct EqualBucketsParIter<'a> {
-    hashes: &'a [HashType],
-    indices: &'a [NodeT],
+pub struct EqualBucketsParIter {
+    hashes: Vec<HashType>,
+    indices: Vec<NodeT>,
 }
 
-impl<'a> EqualBucketsParIter<'a> {
-    pub fn new(hashes: &'a [HashType], indices: &'a [NodeT]) -> Self {
+impl EqualBucketsParIter {
+    pub fn new(hashes: Vec<HashType>, indices: Vec<NodeT>) -> Self {
         EqualBucketsParIter{
             hashes,
             indices,
@@ -18,7 +18,7 @@ impl<'a> EqualBucketsParIter<'a> {
     }
 }
 
-impl<'a> ParallelIterator for EqualBucketsParIter<'a> {
+impl<'a> ParallelIterator for &'a EqualBucketsParIter {
     type Item = &'a[NodeT];
 
     fn drive_unindexed<C>(self, consumer: C) -> C::Result
@@ -26,7 +26,7 @@ impl<'a> ParallelIterator for EqualBucketsParIter<'a> {
         C: rayon::iter::plumbing::UnindexedConsumer<Self::Item>,
     {
         bridge_unindexed(
-            EqualBucketsIter::new(self.hashes, self.indices),
+            EqualBucketsIter::new(&self.hashes, &self.indices),
             consumer,
         )
     }
