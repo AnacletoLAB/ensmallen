@@ -220,7 +220,7 @@ impl Graph {
                         (in_vertex_cover + not_in_vertex_cover)
                             * (in_vertex_cover + not_in_vertex_cover).saturating_sub(1)
                             + not_in_vertex_cover * not_in_vertex_cover.saturating_sub(1)
-                            + 2 * not_in_vertex_cover * in_vertex_cover.saturating_sub(1)
+                            + 2 * in_vertex_cover * not_in_vertex_cover.saturating_sub(1)
                     })
                     .sum::<EdgeT>()
             })
