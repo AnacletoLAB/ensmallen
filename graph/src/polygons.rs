@@ -218,9 +218,9 @@ impl Graph {
                                 not_in_vertex_cover += 1;
                             };
                             partial_total_squares += (in_vertex_cover + not_in_vertex_cover)
-                            * (in_vertex_cover + not_in_vertex_cover).saturating_sub(1)
-                            + not_in_vertex_cover * not_in_vertex_cover.saturating_sub(1)
-                            + 2 * not_in_vertex_cover * in_vertex_cover.saturating_sub(1)
+                                * (in_vertex_cover + not_in_vertex_cover).saturating_sub(1)
+                                + not_in_vertex_cover * not_in_vertex_cover.saturating_sub(1)
+                                + 2 * not_in_vertex_cover * in_vertex_cover.saturating_sub(1)
                         }
                         partial_total_squares
                     })
