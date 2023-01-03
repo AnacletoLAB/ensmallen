@@ -76,7 +76,7 @@ impl<'a, H: Eq + Copy + 'static> core::iter::Iterator for EqualBucketsIter<'a, H
         let mut current_hash = self.degree_bounded_node_ids_and_hash[self.start as usize].1;
 
         // try to find a pair of consecutive indices that have the same hash
-        while self.start < self.end {
+        while self.start + 1 < self.end {
             let next_hash = self.degree_bounded_node_ids_and_hash[self.start as usize + 1].1;
 
             // hash differs so go to the next index

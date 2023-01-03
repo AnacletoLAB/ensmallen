@@ -473,28 +473,26 @@ impl Graph {
             })
             .progress_with(pb)
             // For each node in the cover
-            .flat_map(|node_id| {
+            .flat_map(|first| {
                 // We obtain the neighbours and collect them into a vector
                 // We store them instead of using them in a stream because we will need
                 // them multiple times below.
                 let first_order_neighbours = unsafe {
                     self.edges
-                        .get_unchecked_neighbours_node_ids_from_src_node_id(node_id)
+                        .get_unchecked_neighbours_node_ids_from_src_node_id(first)
                 };
 
                 first_order_neighbours
                     .par_iter()
-                    .filter_map(move |&neighbour_node_id| {
-                        if neighbour_node_id != node_id
-                            && vertex_cover_reference[neighbour_node_id as usize]
-                        {
-                            Some((node_id, neighbour_node_id, first_order_neighbours))
+                    .filter_map(move |&second| {
+                        if second != first && vertex_cover_reference[second as usize] {
+                            Some((first, second, first_order_neighbours))
                         } else {
                             None
                         }
                     })
             })
-            .for_each(|(node_id, neighbour_node_id, first_order_neighbours)| {
+            .for_each(|(first, second, first_order_neighbours)| {
                 // We iterate over the neighbours
                 // We compute the intersection of the neighbours.
 
@@ -503,17 +501,18 @@ impl Graph {
 
                 let second_order_neighbours = unsafe {
                     self.edges
-                        .get_unchecked_neighbours_node_ids_from_src_node_id(neighbour_node_id)
+                        .get_unchecked_neighbours_node_ids_from_src_node_id(second)
                 };
+
+                let mut first_triangles = 0;
+                let mut second_triangles = 0;
 
                 while first_neighbour_index < first_order_neighbours.len()
                     && second_neighbour_index < second_order_neighbours.len()
                 {
                     let first_order_neighbour = first_order_neighbours[first_neighbour_index];
                     // If this is a self-loop, we march on forward
-                    if first_order_neighbour == neighbour_node_id
-                        || first_order_neighbour == node_id
-                    {
+                    if first_order_neighbour == first || first_order_neighbour == second {
                         first_neighbour_index += 1;
                         continue;
                     }
@@ -530,21 +529,25 @@ impl Graph {
                     // If we reach here, we are in an intersection.
                     first_neighbour_index += 1;
                     second_neighbour_index += 1;
+
+                    let third = first_neighbour_index;
+
                     // If the inner node is as well in the vertex cover
                     // we only count this as one, as we will encounter
                     // combinations of these nodes multiple times
                     // while iterating the vertex cover nodes
-                    node_triangles_number[node_id as usize].fetch_add(1, Ordering::Relaxed);
+                    first_triangles += 1;
                     if !vertex_cover_reference[second_order_neighbour as usize] {
                         // Otherwise we won't encounter again this
                         // node and we need to count the triangles
                         // three times.
-                        node_triangles_number[first_order_neighbour as usize]
-                            .fetch_add(1, Ordering::Relaxed);
-                        node_triangles_number[second_order_neighbour as usize]
-                            .fetch_add(1, Ordering::Relaxed);
+                        second_triangles += 1;
+                        node_triangles_number[third as usize].fetch_add(1, Ordering::Relaxed);
                     }
                 }
+                node_triangles_number[first as usize].fetch_add(first_triangles, Ordering::Relaxed);
+                node_triangles_number[second as usize]
+                    .fetch_add(second_triangles, Ordering::Relaxed);
             });
 
         let mut node_triangles_number =
