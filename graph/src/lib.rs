@@ -78,6 +78,7 @@ mod hash;
 mod holdouts;
 mod isomorphism;
 pub mod isomorphism_iter;
+mod triad_census;
 mod iter_queries;
 mod iters;
 mod modifiers;
@@ -112,6 +113,7 @@ mod queries_walk;
 pub use self::queries::*;
 pub use self::queries_boolean::*;
 pub use self::url_utilities::*;
+pub use self::triad_census::*;
 
 pub mod test_utilities;
 
