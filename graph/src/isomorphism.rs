@@ -1,7 +1,7 @@
 use super::*;
+use isomorphism_iter::EqualBucketsParIter;
 use log::info;
 use rayon::prelude::*;
-use isomorphism_iter::EqualBucketsParIter;
 
 impl Graph {
     /// Returns parallel iterator of vectors of isomorphic node groups IDs.
