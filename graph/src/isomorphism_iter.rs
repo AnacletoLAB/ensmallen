@@ -2,33 +2,29 @@ use super::*;
 use rayon::prelude::*;
 use rayon::iter::plumbing::*;
 
-type HashType = u64;
-
-pub struct EqualBucketsParIter {
-    hashes: Vec<HashType>,
-    indices: Vec<NodeT>,
+pub struct EqualBucketsParIter<H> {
+    hashes: Vec<H>,
     degree_bounded_node_ids: Vec<NodeT>,
 }
 
-impl EqualBucketsParIter {
-    pub fn new(hashes: Vec<HashType>, indices: Vec<NodeT>, degree_bounded_node_ids: Vec<NodeT>) -> Self {
+impl<H> EqualBucketsParIter<H> {
+    pub unsafe fn new(hashes: Vec<H>, degree_bounded_node_ids: Vec<NodeT>) -> Self {
         EqualBucketsParIter{
             hashes,
-            indices,
             degree_bounded_node_ids,
         }
     }
 }
 
-impl ParallelIterator for EqualBucketsParIter {
-    type Item = Vec<NodeT>;
+impl<H: Send + Sync + Eq> ParallelIterator for EqualBucketsParIter<H> {
+    type Item = &'static [NodeT];
 
     fn drive_unindexed<C>(self, consumer: C) -> C::Result
     where
         C: rayon::iter::plumbing::UnindexedConsumer<Self::Item>,
     {
         bridge_unindexed(
-            EqualBucketsIter::new(&self.hashes, &self.indices, &self.degree_bounded_node_ids),
+            unsafe{EqualBucketsIter::new(&self.hashes, &self.degree_bounded_node_ids)},
             consumer,
         )
     }
@@ -40,16 +36,15 @@ impl ParallelIterator for EqualBucketsParIter {
 
 #[derive(Clone)]
 /// Iter over the slices of contiguos values
-pub struct EqualBucketsIter<'a> {
-    hashes: &'a [HashType],
-    indices: &'a [NodeT],
+pub struct EqualBucketsIter<'a, H> {
+    hashes: &'a [H],
     degree_bounded_node_ids: &'a [NodeT],
 
     start: usize,
     end: usize,
 }
 
-impl<'a> core::fmt::Debug for EqualBucketsIter<'a> {
+impl<'a, H> core::fmt::Debug for EqualBucketsIter<'a, H> {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         f.debug_struct("EqualBucketsIter")
             .field("start", &self.start)
@@ -58,15 +53,14 @@ impl<'a> core::fmt::Debug for EqualBucketsIter<'a> {
     }
 }
 
-impl<'a> EqualBucketsIter<'a> {
-    pub fn new(hashes: &'a [HashType], indices: &'a [NodeT], degree_bounded_node_ids: &'a [NodeT]) -> Self {
+impl<'a, H> EqualBucketsIter<'a, H> {
+    pub fn new(hashes: &'a [H], degree_bounded_node_ids: &'a [NodeT]) -> Self {
         EqualBucketsIter {
             hashes,
-            indices,
             degree_bounded_node_ids,
 
             start: 0,
-            end: indices.len(),
+            end: hashes.len(),
         }
     }
 
@@ -75,24 +69,20 @@ impl<'a> EqualBucketsIter<'a> {
     }
 }
 
-impl<'a> core::iter::Iterator for EqualBucketsIter<'a> {
-    type Item = Vec<NodeT>;
+impl<'a, H: Eq> core::iter::Iterator for EqualBucketsIter<'a, H> {
+    type Item = &'static [NodeT];
 
     fn next(&mut self) -> Option<Self::Item> {
         if self.start >= self.end {
             return None;
         }
 
-        let mut current_hash = self.hashes[self.indices[
-                self.start as usize
-            ] as usize];
+        let mut current_hash = self.hashes[self.start as usize];
 
         // try to find a pair of consecutive indices that have the same hash
         while self.start < self.end {
 
-            let next_hash = self.hashes[self.indices[
-                    self.start as usize + 1
-                ] as usize];
+            let next_hash = self.hashes[self.start as usize + 1];
 
             // hash differs so go to the next index
             if next_hash != current_hash {
@@ -104,9 +94,7 @@ impl<'a> core::iter::Iterator for EqualBucketsIter<'a> {
             // start of a consecutive group!
             let mut idx = self.start + 2; // we already know that it's long at least 2
             while idx < self.end {    
-                let next_hash = self.hashes[self.indices[
-                    idx
-                ] as usize];
+                let next_hash = self.hashes[idx as usize];
 
                 if next_hash != current_hash {
                     break
@@ -116,10 +104,17 @@ impl<'a> core::iter::Iterator for EqualBucketsIter<'a> {
             // now we have scrolled through the whole slice and idx is the first
             // item with a different hash
 
-            // take a reference to the computed slice to return it later
-            let res = self.indices[self.start..idx].iter().map(|i| {
-                self.degree_bounded_node_ids[*i as usize]
-            }).collect::<Vec<_>>();
+            // THIS IS REALLY UNSAFE, until the iter lives it's fine, but
+            // once the iter dies it would reference freed memory.
+            // Therefore It should never be collected!!!
+            // 
+            let res = unsafe{   
+                core::slice::from_raw_parts(
+                    self.degree_bounded_node_ids.as_ptr().add(self.start), 
+                    idx - self.start
+                )
+            };
+            
             // skip the slice for the next iteration
             self.start = idx;
 
@@ -129,8 +124,8 @@ impl<'a> core::iter::Iterator for EqualBucketsIter<'a> {
     }
 }
 
-impl<'a> UnindexedProducer for EqualBucketsIter<'a> {
-    type Item = Vec<NodeT>;
+impl<'a, H: Send + Sync + Eq> UnindexedProducer for EqualBucketsIter<'a, H> {
+    type Item = &'static [NodeT];
 
     /// Split the file in two approximately balanced streams
     fn split(mut self) -> (Self, Option<Self>) {
@@ -140,7 +135,7 @@ impl<'a> UnindexedProducer for EqualBucketsIter<'a> {
         }
 
         let mut split_idx = (self.start + self.end) / 2;
-        let mut current_hash = self.hashes[self.indices[split_idx] as usize];
+        let mut current_hash = self.hashes[split_idx];
 
         split_idx += 1;
 
@@ -148,10 +143,9 @@ impl<'a> UnindexedProducer for EqualBucketsIter<'a> {
         // different hash
         while split_idx < self.end {
 
-            let next_hash = self.hashes[self.indices[split_idx] as usize];
+            let next_hash = self.hashes[split_idx];
             if next_hash != current_hash {
                 let new = Self {
-                    indices: self.indices,
                     hashes: self.hashes,
                     degree_bounded_node_ids: self.degree_bounded_node_ids,
 
