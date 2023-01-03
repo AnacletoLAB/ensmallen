@@ -1,30 +1,28 @@
 use super::*;
-use rayon::prelude::*;
 use rayon::iter::plumbing::*;
+use rayon::prelude::*;
 
 pub struct EqualBucketsParIter<H> {
-    hashes: Vec<H>,
-    degree_bounded_node_ids: Vec<NodeT>,
+    degree_bounded_node_ids_and_hash: Vec<(NodeT, H)>,
 }
 
 impl<H> EqualBucketsParIter<H> {
-    pub unsafe fn new(hashes: Vec<H>, degree_bounded_node_ids: Vec<NodeT>) -> Self {
-        EqualBucketsParIter{
-            hashes,
-            degree_bounded_node_ids,
+    pub unsafe fn new(degree_bounded_node_ids_and_hash: Vec<(NodeT, H)>) -> Self {
+        EqualBucketsParIter {
+            degree_bounded_node_ids_and_hash,
         }
     }
 }
 
-impl<H: Send + Sync + Eq> ParallelIterator for EqualBucketsParIter<H> {
-    type Item = &'static [NodeT];
+impl<H: Send + Sync + Eq + Copy + 'static> ParallelIterator for EqualBucketsParIter<H> {
+    type Item = &'static [(NodeT, H)];
 
     fn drive_unindexed<C>(self, consumer: C) -> C::Result
     where
         C: rayon::iter::plumbing::UnindexedConsumer<Self::Item>,
     {
         bridge_unindexed(
-            unsafe{EqualBucketsIter::new(&self.hashes, &self.degree_bounded_node_ids)},
+            EqualBucketsIter::new(&self.degree_bounded_node_ids_and_hash),
             consumer,
         )
     }
@@ -37,8 +35,7 @@ impl<H: Send + Sync + Eq> ParallelIterator for EqualBucketsParIter<H> {
 #[derive(Clone)]
 /// Iter over the slices of contiguos values
 pub struct EqualBucketsIter<'a, H> {
-    hashes: &'a [H],
-    degree_bounded_node_ids: &'a [NodeT],
+    degree_bounded_node_ids_and_hash: &'a [(NodeT, H)],
 
     start: usize,
     end: usize,
@@ -54,13 +51,12 @@ impl<'a, H> core::fmt::Debug for EqualBucketsIter<'a, H> {
 }
 
 impl<'a, H> EqualBucketsIter<'a, H> {
-    pub fn new(hashes: &'a [H], degree_bounded_node_ids: &'a [NodeT]) -> Self {
+    pub fn new(degree_bounded_node_ids_and_hash: &'a [(NodeT, H)]) -> Self {
         EqualBucketsIter {
-            hashes,
-            degree_bounded_node_ids,
+            degree_bounded_node_ids_and_hash,
 
             start: 0,
-            end: hashes.len(),
+            end: degree_bounded_node_ids_and_hash.len(),
         }
     }
 
@@ -69,35 +65,34 @@ impl<'a, H> EqualBucketsIter<'a, H> {
     }
 }
 
-impl<'a, H: Eq> core::iter::Iterator for EqualBucketsIter<'a, H> {
-    type Item = &'static [NodeT];
+impl<'a, H: Eq + Copy + 'static> core::iter::Iterator for EqualBucketsIter<'a, H> {
+    type Item = &'static [(NodeT, H)];
 
     fn next(&mut self) -> Option<Self::Item> {
         if self.start >= self.end {
             return None;
         }
 
-        let mut current_hash = self.hashes[self.start as usize];
+        let mut current_hash = self.degree_bounded_node_ids_and_hash[self.start as usize].1;
 
         // try to find a pair of consecutive indices that have the same hash
         while self.start < self.end {
-
-            let next_hash = self.hashes[self.start as usize + 1];
+            let next_hash = self.degree_bounded_node_ids_and_hash[self.start as usize + 1].1;
 
             // hash differs so go to the next index
             if next_hash != current_hash {
                 self.start += 1;
                 current_hash = next_hash;
-                continue
+                continue;
             }
 
             // start of a consecutive group!
             let mut idx = self.start + 2; // we already know that it's long at least 2
-            while idx < self.end {    
-                let next_hash = self.hashes[idx as usize];
+            while idx < self.end {
+                let next_hash = self.degree_bounded_node_ids_and_hash[idx as usize].1;
 
                 if next_hash != current_hash {
-                    break
+                    break;
                 }
                 idx += 1;
             }
@@ -107,14 +102,16 @@ impl<'a, H: Eq> core::iter::Iterator for EqualBucketsIter<'a, H> {
             // THIS IS REALLY UNSAFE, until the iter lives it's fine, but
             // once the iter dies it would reference freed memory.
             // Therefore It should never be collected!!!
-            // 
-            let res = unsafe{   
+            //
+            let res = unsafe {
                 core::slice::from_raw_parts(
-                    self.degree_bounded_node_ids.as_ptr().add(self.start), 
-                    idx - self.start
+                    self.degree_bounded_node_ids_and_hash
+                        .as_ptr()
+                        .add(self.start),
+                    idx - self.start,
                 )
             };
-            
+
             // skip the slice for the next iteration
             self.start = idx;
 
@@ -124,8 +121,8 @@ impl<'a, H: Eq> core::iter::Iterator for EqualBucketsIter<'a, H> {
     }
 }
 
-impl<'a, H: Send + Sync + Eq> UnindexedProducer for EqualBucketsIter<'a, H> {
-    type Item = &'static [NodeT];
+impl<'a, H: Send + Sync + Eq + Copy + 'static> UnindexedProducer for EqualBucketsIter<'a, H> {
+    type Item = &'static [(NodeT, H)];
 
     /// Split the file in two approximately balanced streams
     fn split(mut self) -> (Self, Option<Self>) {
@@ -135,19 +132,17 @@ impl<'a, H: Send + Sync + Eq> UnindexedProducer for EqualBucketsIter<'a, H> {
         }
 
         let mut split_idx = (self.start + self.end) / 2;
-        let mut current_hash = self.hashes[split_idx];
+        let mut current_hash = self.degree_bounded_node_ids_and_hash[split_idx].1;
 
         split_idx += 1;
 
-        // check that we are not in a contiguous chunk and skip till the next 
+        // check that we are not in a contiguous chunk and skip till the next
         // different hash
         while split_idx < self.end {
-
-            let next_hash = self.hashes[split_idx];
+            let next_hash = self.degree_bounded_node_ids_and_hash[split_idx].1;
             if next_hash != current_hash {
                 let new = Self {
-                    hashes: self.hashes,
-                    degree_bounded_node_ids: self.degree_bounded_node_ids,
+                    degree_bounded_node_ids_and_hash: self.degree_bounded_node_ids_and_hash,
 
                     start: split_idx,
                     end: self.end,

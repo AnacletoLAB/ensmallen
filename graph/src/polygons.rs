@@ -16,11 +16,13 @@ impl Graph {
     /// # Safety
     /// This method will raise a panic if called on an directed graph as those
     /// instances are not supported by this method.
-    unsafe fn get_undirected_number_of_triangles(&self) -> EdgeT {
+    unsafe fn get_undirected_number_of_triangles(&self, verbose: Option<bool>) -> EdgeT {
         // The current graph must be undirected.
         if self.is_directed() {
             panic!("This method cannot be called on directed graphs!");
         }
+
+        let verbose = verbose.unwrap_or(true);
 
         // First, we compute the set of nodes composing a vertex cover set.
         // This vertex cover is NOT minimal, but is a 2-approximation.
@@ -32,6 +34,10 @@ impl Graph {
                 None,
             )
             .unwrap();
+
+        let vertex_cover_size = vertex_cover.iter().filter(|cover| **cover).count();
+
+        let pb = get_loading_bar(verbose, "Computing number of triangles", vertex_cover_size);
 
         let vertex_cover_reference = vertex_cover.as_slice();
 
@@ -46,6 +52,7 @@ impl Graph {
                     None
                 }
             })
+            .progress_with(pb)
             // For each node in the cover
             .flat_map(|node_id| {
                 // We obtain the neighbours and collect them into a vector
@@ -125,13 +132,16 @@ impl Graph {
 
     /// Returns number of squares in the graph.
     ///
+    /// # Arguments
+    /// `verbose`: Option<bool> - Whether to show a loading bar. By default, True.
+    ///
     /// # References
     /// This implementation is described in ["Faster Clustering Coefficient Using Vertex Covers"](https://ieeexplore.ieee.org/document/6693348).
     ///
     /// # Safety
     /// This method will raise a panic if called on an directed graph as those
     /// instances are not supported by this method.
-    unsafe fn get_undirected_number_of_squares(&self) -> EdgeT {
+    unsafe fn get_undirected_number_of_squares(&self, verbose: Option<bool>) -> EdgeT {
         // The current graph must be undirected.
         if self.is_directed() {
             panic!("This method cannot be called on directed graphs!");
@@ -147,6 +157,12 @@ impl Graph {
                 None,
             )
             .unwrap();
+
+        let vertex_cover_size = vertex_cover.iter().filter(|cover| **cover).count();
+
+        let verbose = verbose.unwrap_or(true);
+
+        let pb = get_loading_bar(verbose, "Computing number of squares", vertex_cover_size);
 
         let vertex_cover_reference = vertex_cover.as_slice();
 
@@ -164,6 +180,7 @@ impl Graph {
                     None
                 }
             })
+            .progress_with(pb)
             .map(|(first, first_order_neighbours)| {
                 vertex_cover
                     .iter()
@@ -185,7 +202,6 @@ impl Graph {
                         let mut second_neighbour_index = 0;
                         let mut in_vertex_cover: EdgeT = 0;
                         let mut not_in_vertex_cover: EdgeT = 0;
-                        let mut partial_total_squares: EdgeT = 0;
 
                         while first_neighbour_index < first_order_neighbours.len()
                             && second_neighbour_index < second_order_neighbours.len()
@@ -193,10 +209,10 @@ impl Graph {
                             let first_order_neighbour =
                                 first_order_neighbours[first_neighbour_index];
                             // If this is a self-loop, we march on forward
-                            // if first_order_neighbour == second || first_order_neighbour == first {
-                            //     first_neighbour_index += 1;
-                            //     continue;
-                            // }
+                            if first_order_neighbour == second || first_order_neighbour == first {
+                                first_neighbour_index += 1;
+                                continue;
+                            }
                             // If this is not an intersection, we march forward
                             let second_order_neighbour =
                                 second_order_neighbours[second_neighbour_index];
@@ -217,16 +233,80 @@ impl Graph {
                             } else {
                                 not_in_vertex_cover += 1;
                             };
-                            partial_total_squares += (in_vertex_cover + not_in_vertex_cover)
-                                * (in_vertex_cover + not_in_vertex_cover).saturating_sub(1)
-                                + not_in_vertex_cover * not_in_vertex_cover.saturating_sub(1)
-                                + not_in_vertex_cover * in_vertex_cover.saturating_sub(1)
                         }
-                        partial_total_squares
+                        (in_vertex_cover + not_in_vertex_cover)
+                            * (in_vertex_cover + not_in_vertex_cover).saturating_sub(1)
+                            + not_in_vertex_cover * not_in_vertex_cover.saturating_sub(1)
+                            + 2 * not_in_vertex_cover * in_vertex_cover
                     })
                     .sum::<EdgeT>()
             })
             .sum::<EdgeT>()
+    }
+
+    /// Returns number of squares in the graph, using a naive algorithm.
+    ///
+    /// # Arguments
+    /// * `verbose`: Option<bool> - Whether to show a loading bar. By default, True.
+    unsafe fn get_number_of_squares_naive(&self, verbose: Option<bool>) -> EdgeT {
+        let verbose = verbose.unwrap_or(true);
+        let pb = get_loading_bar(
+            verbose,
+            "Computing number of squares",
+            self.get_number_of_nodes() as usize,
+        );
+
+        // We start iterating over the nodes in the cover using rayon to parallelize the procedure.
+        self.par_iter_node_ids()
+            .progress_with(pb)
+            .map(|first| {
+                let first_order_neighbours = unsafe {
+                    self.edges
+                        .get_unchecked_neighbours_node_ids_from_src_node_id(first as NodeT)
+                };
+                self.iter_node_ids()
+                    .map(|second| {
+                        let second_order_neighbours = self
+                            .edges
+                            .get_unchecked_neighbours_node_ids_from_src_node_id(second as NodeT);
+
+                        let mut first_neighbour_index = 0;
+                        let mut second_neighbour_index = 0;
+                        let mut overlap_cardinality: EdgeT = 0;
+
+                        while first_neighbour_index < first_order_neighbours.len()
+                            && second_neighbour_index < second_order_neighbours.len()
+                        {
+                            let first_order_neighbour =
+                                first_order_neighbours[first_neighbour_index];
+                            // If this is a self-loop, we march on forward
+                            if first_order_neighbour == second || first_order_neighbour == first {
+                                first_neighbour_index += 1;
+                                continue;
+                            }
+                            // If this is not an intersection, we march forward
+                            let second_order_neighbour =
+                                second_order_neighbours[second_neighbour_index];
+                            if first_order_neighbour < second_order_neighbour {
+                                first_neighbour_index += 1;
+                                continue;
+                            }
+                            if first_order_neighbour > second_order_neighbour {
+                                second_neighbour_index += 1;
+                                continue;
+                            }
+                            // If we reach here, we are in an intersection.
+                            first_neighbour_index += 1;
+                            second_neighbour_index += 1;
+
+                            overlap_cardinality += 1;
+                        }
+                        overlap_cardinality * overlap_cardinality.saturating_sub(1)
+                    })
+                    .sum::<EdgeT>()
+            })
+            .sum::<EdgeT>()
+            / 4
     }
 
     /// Returns number of triangles in the graph without taking into account the weights.
@@ -279,32 +359,37 @@ impl Graph {
 
     /// Returns total number of triangles ignoring the weights.
     ///
+    /// # Arguments
+    /// `verbose`: Option<bool> - Whether to show a loading bar. By default, True.
+    ///
     /// The method dispatches the fastest method according to the current
     /// graph instance. Specifically:
     /// - For directed graphs it will use the naive algorithm.
     /// - For undirected graphs it will use Bader's version.
     ///
-    pub fn get_number_of_triangles(&self) -> EdgeT {
+    pub fn get_number_of_triangles(&self, verbose: Option<bool>) -> EdgeT {
         if self.is_directed() {
             unsafe { self.get_naive_number_of_triangles() }
         } else {
-            unsafe { self.get_undirected_number_of_triangles() }
+            unsafe { self.get_undirected_number_of_triangles(verbose) }
         }
     }
 
     /// Returns total number of squares ignoring the weights.
     ///
+    /// # Arguments
+    /// `verbose`: Option<bool> - Whether to show a loading bar. By default, True.
+    ///
     /// The method dispatches the fastest method according to the current
     /// graph instance. Specifically:
     /// - For directed graphs it will use the naive algorithm.
     /// - For undirected graphs it will use Bader's version.
     ///
-    pub fn get_number_of_squares(&self) -> EdgeT {
+    pub fn get_number_of_squares(&self, verbose: Option<bool>) -> EdgeT {
         if self.is_directed() {
-            panic!("Not currently supported.")
-            //unsafe { self.get_naive_number_of_squares() }
+            unsafe { self.get_number_of_squares_naive(verbose) }
         } else {
-            unsafe { self.get_undirected_number_of_squares() }
+            unsafe { self.get_undirected_number_of_squares(verbose) }
         }
     }
 
@@ -332,10 +417,9 @@ impl Graph {
     /// Returns transitivity of the graph without taking into account weights.
     ///
     /// # Arguments
-    /// * `low_centrality`: Option<usize> - The threshold over which to switch to parallel matryoshka. By default 50.
     /// * `verbose`: Option<bool> - Whether to show a loading bar.
-    pub fn get_transitivity(&self) -> f64 {
-        self.get_number_of_triangles() as f64 / self.get_number_of_triads() as f64
+    pub fn get_transitivity(&self, verbose: Option<bool>) -> f64 {
+        self.get_number_of_triangles(verbose) as f64 / self.get_number_of_triads() as f64
     }
 
     /// Returns number of triangles for all nodes in the graph.

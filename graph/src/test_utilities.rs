@@ -1196,7 +1196,7 @@ pub fn test_dijkstra(graph: &mut Graph, _verbose: Option<bool>) -> Result<()> {
 pub fn test_polygons(graph: &mut Graph, verbose: Option<bool>) -> Result<()> {
     assert_eq!(
         graph.get_number_of_triangles_per_node(verbose).into_iter().sum::<EdgeT>(),
-        graph.get_number_of_triangles()
+        graph.get_number_of_triangles(None)
     );
     Ok(())
 }
