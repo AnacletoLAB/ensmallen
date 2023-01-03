@@ -193,10 +193,10 @@ impl Graph {
                             let first_order_neighbour =
                                 first_order_neighbours[first_neighbour_index];
                             // If this is a self-loop, we march on forward
-                            if first_order_neighbour == second || first_order_neighbour == first {
-                                first_neighbour_index += 1;
-                                continue;
-                            }
+                            // if first_order_neighbour == second || first_order_neighbour == first {
+                            //     first_neighbour_index += 1;
+                            //     continue;
+                            // }
                             // If this is not an intersection, we march forward
                             let second_order_neighbour =
                                 second_order_neighbours[second_neighbour_index];
