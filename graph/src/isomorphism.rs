@@ -16,7 +16,7 @@ impl Graph {
         let minimum_node_degree = minimum_node_degree.unwrap_or(5);
 
         // We collect the node IDs that have degree higher than the provided one.
-        let mut degree_bounded_node_ids_and_hash = self
+        let mut degree_bounded_hash_and_node_ids = self
             .par_iter_node_ids()
             .zip(self.par_iter_node_degrees())
             .filter_map(|(node_id, node_degree)| {
@@ -32,24 +32,23 @@ impl Graph {
                     }
                     .take(20)
                     .fold(seed, |a: u32, b: u32| (a ^ b).wrapping_add(0x26967A95));
-                    Some((node_id, hash))
+                    Some((hash, node_id))
                 }
             })
-            .collect::<Vec<(NodeT, u32)>>();
+            .collect::<Vec<(u32, NodeT)>>();
 
         // Then we sort the nodes, according to the score.
-        degree_bounded_node_ids_and_hash
-            .par_sort_unstable_by(|&(_, hash_a), &(_, hash_b)| hash_a.cmp(&hash_b));
+        degree_bounded_hash_and_node_ids.par_sort_unstable();
 
-        unsafe { EqualBucketsParIter::new(degree_bounded_node_ids_and_hash) }.flat_map(
-            move |candidate_isomorphic_group_slice: &[(NodeT, u32)]| {
+        unsafe { EqualBucketsParIter::new(degree_bounded_hash_and_node_ids) }.flat_map(
+            move |candidate_isomorphic_group_slice: &[(u32, NodeT)]| {
                 // First, we proceed assuming for the best case scenario which
                 // would also be the fastest: if the `candidate_isomorphic_group_slice` is
                 // indeed an isomorphic group of nodes.
                 let first_node_neighbours = unsafe {
                     self.edges
                         .get_unchecked_neighbours_node_ids_from_src_node_id(
-                            candidate_isomorphic_group_slice[0].0,
+                            candidate_isomorphic_group_slice[0].1,
                         )
                 };
                 // We proceed to count how many of these nodes are effectively isomorphic
@@ -57,7 +56,7 @@ impl Graph {
                 let number_of_initial_isomorphic_nodes = 1 + candidate_isomorphic_group_slice[1..]
                     .iter()
                     .copied()
-                    .take_while(|&(node_id, _)| {
+                    .take_while(|&(_, node_id)| {
                         first_node_neighbours
                             == unsafe {
                                 self.edges
@@ -71,7 +70,7 @@ impl Graph {
                 if number_of_initial_isomorphic_nodes == candidate_isomorphic_group_slice.len() {
                     return vec![candidate_isomorphic_group_slice
                         .iter()
-                        .map(|&(node_id, _)| node_id)
+                        .map(|&(_, node_id)| node_id)
                         .collect::<Vec<NodeT>>()];
                 }
 
@@ -86,7 +85,7 @@ impl Graph {
                     return vec![candidate_isomorphic_group_slice
                         [..number_of_initial_isomorphic_nodes]
                         .iter()
-                        .map(|&(node_id, _)| node_id)
+                        .map(|&(_, node_id)| node_id)
                         .collect::<Vec<NodeT>>()];
                 }
 
@@ -100,10 +99,10 @@ impl Graph {
                     // The nodes that we have checked as being isomorphic
                     candidate_isomorphic_group_slice[..number_of_initial_isomorphic_nodes]
                         .iter()
-                        .map(|&(node_id, _)| node_id)
+                        .map(|&(_, node_id)| node_id)
                         .collect::<Vec<NodeT>>(),
                     // The first node that appeared to be not isomorphic to the previous ones
-                    vec![candidate_isomorphic_group_slice[number_of_initial_isomorphic_nodes].0],
+                    vec![candidate_isomorphic_group_slice[number_of_initial_isomorphic_nodes].1],
                 ];
 
                 // We set a flag that determines whether we will need to filter out isomorphic groups with
@@ -120,7 +119,7 @@ impl Graph {
                     };
                 // We start to iterate to the nodes that immediately follow the last node that
                 // we have already checked previously, and we keep all of the subsequent nodes that have indeed the same local hash.
-                for (other_node_id, _) in candidate_isomorphic_group_slice
+                for (_, other_node_id) in candidate_isomorphic_group_slice
                     [(number_of_initial_isomorphic_nodes + 1)..]
                     .iter()
                     .copied()

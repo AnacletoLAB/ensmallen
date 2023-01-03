@@ -3,26 +3,26 @@ use rayon::iter::plumbing::*;
 use rayon::prelude::*;
 
 pub struct EqualBucketsParIter<H> {
-    degree_bounded_node_ids_and_hash: Vec<(NodeT, H)>,
+    degree_bounded_hash_and_node_ids: Vec<(H, NodeT)>,
 }
 
 impl<H> EqualBucketsParIter<H> {
-    pub unsafe fn new(degree_bounded_node_ids_and_hash: Vec<(NodeT, H)>) -> Self {
+    pub unsafe fn new(degree_bounded_hash_and_node_ids: Vec<(H, NodeT)>) -> Self {
         EqualBucketsParIter {
-            degree_bounded_node_ids_and_hash,
+            degree_bounded_hash_and_node_ids,
         }
     }
 }
 
 impl<H: Send + Sync + Eq + Copy + 'static> ParallelIterator for EqualBucketsParIter<H> {
-    type Item = &'static [(NodeT, H)];
+    type Item = &'static [(H, NodeT)];
 
     fn drive_unindexed<C>(self, consumer: C) -> C::Result
     where
         C: rayon::iter::plumbing::UnindexedConsumer<Self::Item>,
     {
         bridge_unindexed(
-            EqualBucketsIter::new(&self.degree_bounded_node_ids_and_hash),
+            EqualBucketsIter::new(&self.degree_bounded_hash_and_node_ids),
             consumer,
         )
     }
@@ -35,7 +35,7 @@ impl<H: Send + Sync + Eq + Copy + 'static> ParallelIterator for EqualBucketsParI
 #[derive(Clone)]
 /// Iter over the slices of contiguos values
 pub struct EqualBucketsIter<'a, H> {
-    degree_bounded_node_ids_and_hash: &'a [(NodeT, H)],
+    degree_bounded_hash_and_node_ids: &'a [(H, NodeT)],
 
     start: usize,
     end: usize,
@@ -51,12 +51,12 @@ impl<'a, H> core::fmt::Debug for EqualBucketsIter<'a, H> {
 }
 
 impl<'a, H> EqualBucketsIter<'a, H> {
-    pub fn new(degree_bounded_node_ids_and_hash: &'a [(NodeT, H)]) -> Self {
+    pub fn new(degree_bounded_hash_and_node_ids: &'a [(H, NodeT)]) -> Self {
         EqualBucketsIter {
-            degree_bounded_node_ids_and_hash,
+            degree_bounded_hash_and_node_ids,
 
             start: 0,
-            end: degree_bounded_node_ids_and_hash.len(),
+            end: degree_bounded_hash_and_node_ids.len(),
         }
     }
 
@@ -66,18 +66,18 @@ impl<'a, H> EqualBucketsIter<'a, H> {
 }
 
 impl<'a, H: Eq + Copy + 'static> core::iter::Iterator for EqualBucketsIter<'a, H> {
-    type Item = &'static [(NodeT, H)];
+    type Item = &'static [(H, NodeT)];
 
     fn next(&mut self) -> Option<Self::Item> {
         if self.start >= self.end {
             return None;
         }
 
-        let mut current_hash = self.degree_bounded_node_ids_and_hash[self.start as usize].1;
+        let mut current_hash = self.degree_bounded_hash_and_node_ids[self.start as usize].0;
 
         // try to find a pair of consecutive indices that have the same hash
         while self.start + 1 < self.end {
-            let next_hash = self.degree_bounded_node_ids_and_hash[self.start as usize + 1].1;
+            let next_hash = self.degree_bounded_hash_and_node_ids[self.start as usize + 1].0;
 
             // hash differs so go to the next index
             if next_hash != current_hash {
@@ -89,7 +89,7 @@ impl<'a, H: Eq + Copy + 'static> core::iter::Iterator for EqualBucketsIter<'a, H
             // start of a consecutive group!
             let mut idx = self.start + 2; // we already know that it's long at least 2
             while idx < self.end {
-                let next_hash = self.degree_bounded_node_ids_and_hash[idx as usize].1;
+                let next_hash = self.degree_bounded_hash_and_node_ids[idx as usize].0;
 
                 if next_hash != current_hash {
                     break;
@@ -105,7 +105,7 @@ impl<'a, H: Eq + Copy + 'static> core::iter::Iterator for EqualBucketsIter<'a, H
             //
             let res = unsafe {
                 core::slice::from_raw_parts(
-                    self.degree_bounded_node_ids_and_hash
+                    self.degree_bounded_hash_and_node_ids
                         .as_ptr()
                         .add(self.start),
                     idx - self.start,
@@ -122,7 +122,7 @@ impl<'a, H: Eq + Copy + 'static> core::iter::Iterator for EqualBucketsIter<'a, H
 }
 
 impl<'a, H: Send + Sync + Eq + Copy + 'static> UnindexedProducer for EqualBucketsIter<'a, H> {
-    type Item = &'static [(NodeT, H)];
+    type Item = &'static [(H, NodeT)];
 
     /// Split the file in two approximately balanced streams
     fn split(mut self) -> (Self, Option<Self>) {
@@ -132,17 +132,17 @@ impl<'a, H: Send + Sync + Eq + Copy + 'static> UnindexedProducer for EqualBucket
         }
 
         let mut split_idx = (self.start + self.end) / 2;
-        let mut current_hash = self.degree_bounded_node_ids_and_hash[split_idx].1;
+        let mut current_hash = self.degree_bounded_hash_and_node_ids[split_idx].0;
 
         split_idx += 1;
 
         // check that we are not in a contiguous chunk and skip till the next
         // different hash
         while split_idx < self.end {
-            let next_hash = self.degree_bounded_node_ids_and_hash[split_idx].1;
+            let next_hash = self.degree_bounded_hash_and_node_ids[split_idx].0;
             if next_hash != current_hash {
                 let new = Self {
-                    degree_bounded_node_ids_and_hash: self.degree_bounded_node_ids_and_hash,
+                    degree_bounded_hash_and_node_ids: self.degree_bounded_hash_and_node_ids,
 
                     start: split_idx,
                     end: self.end,
