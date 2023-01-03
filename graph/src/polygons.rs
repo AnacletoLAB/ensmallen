@@ -185,6 +185,7 @@ impl Graph {
                         let mut second_neighbour_index = 0;
                         let mut in_vertex_cover: EdgeT = 0;
                         let mut not_in_vertex_cover: EdgeT = 0;
+                        let mut partial_total_squares: EdgeT = 0;
 
                         while first_neighbour_index < first_order_neighbours.len()
                             && second_neighbour_index < second_order_neighbours.len()
@@ -216,11 +217,12 @@ impl Graph {
                             } else {
                                 not_in_vertex_cover += 1;
                             };
-                        }
-                        (in_vertex_cover + not_in_vertex_cover)
+                            partial_total_squares += (in_vertex_cover + not_in_vertex_cover)
                             * (in_vertex_cover + not_in_vertex_cover).saturating_sub(1)
                             + not_in_vertex_cover * not_in_vertex_cover.saturating_sub(1)
-                            + 2 * in_vertex_cover * not_in_vertex_cover.saturating_sub(1)
+                            + 2 * not_in_vertex_cover * in_vertex_cover.saturating_sub(1)
+                        }
+                        partial_total_squares
                     })
                     .sum::<EdgeT>()
             })
