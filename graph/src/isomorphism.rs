@@ -31,9 +31,7 @@ impl Graph {
                         self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
                     }
                     .take(20)
-                    .fold(seed, |a: u32, b: u32| {
-                        (a ^ b).wrapping_add(0x26967A95)
-                    });
+                    .fold(seed, |a: u32, b: u32| (a ^ b).wrapping_add(0x26967A95));
                     Some((node_id, hash))
                 }
             })
@@ -155,9 +153,11 @@ impl Graph {
                 // We check whether there may be groups with a single node,
                 // which of course do not count as isomorphic groups
                 if number_of_isomorphic_groups_with_size_one > 0 {
-                    candidate_isomorphic_groups.drain_filter(|candidate_isomorphic_group| {
-                        candidate_isomorphic_group.len() > 1
-                    });
+                    candidate_isomorphic_groups
+                        .drain_filter(|candidate_isomorphic_group| {
+                            candidate_isomorphic_group.len() > 1
+                        })
+                        .for_each(|_| {});
                 }
 
                 candidate_isomorphic_groups
