@@ -4,29 +4,31 @@ use rayon::iter::plumbing::*;
 
 type HashType = u64;
 
-pub struct EqualBucketsParIter<'a> {
-    hashes: &'a [HashType],
-    indices: &'a [NodeT],
+pub struct EqualBucketsParIter {
+    hashes: Vec<HashType>,
+    indices: Vec<NodeT>,
+    degree_bounded_node_ids: Vec<NodeT>,
 }
 
-impl<'a> EqualBucketsParIter<'a> {
-    pub fn new(hashes: &'a [HashType], indices: &'a [NodeT]) -> Self {
+impl EqualBucketsParIter {
+    pub fn new(hashes: Vec<HashType>, indices: Vec<NodeT>, degree_bounded_node_ids: Vec<NodeT>) -> Self {
         EqualBucketsParIter{
             hashes,
             indices,
+            degree_bounded_node_ids,
         }
     }
 }
 
-impl<'a> ParallelIterator for EqualBucketsParIter<'a> {
-    type Item = &'a[NodeT];
+impl ParallelIterator for EqualBucketsParIter {
+    type Item = Vec<NodeT>;
 
     fn drive_unindexed<C>(self, consumer: C) -> C::Result
     where
         C: rayon::iter::plumbing::UnindexedConsumer<Self::Item>,
     {
         bridge_unindexed(
-            EqualBucketsIter::new(self.hashes, self.indices),
+            EqualBucketsIter::new(&self.hashes, &self.indices, &self.degree_bounded_node_ids),
             consumer,
         )
     }
@@ -41,6 +43,7 @@ impl<'a> ParallelIterator for EqualBucketsParIter<'a> {
 pub struct EqualBucketsIter<'a> {
     hashes: &'a [HashType],
     indices: &'a [NodeT],
+    degree_bounded_node_ids: &'a [NodeT],
 
     start: usize,
     end: usize,
@@ -56,10 +59,11 @@ impl<'a> core::fmt::Debug for EqualBucketsIter<'a> {
 }
 
 impl<'a> EqualBucketsIter<'a> {
-    pub fn new(hashes: &'a [HashType], indices: &'a [NodeT]) -> Self {
+    pub fn new(hashes: &'a [HashType], indices: &'a [NodeT], degree_bounded_node_ids: &'a [NodeT]) -> Self {
         EqualBucketsIter {
             hashes,
             indices,
+            degree_bounded_node_ids,
 
             start: 0,
             end: indices.len(),
@@ -72,7 +76,7 @@ impl<'a> EqualBucketsIter<'a> {
 }
 
 impl<'a> core::iter::Iterator for EqualBucketsIter<'a> {
-    type Item = &'a [NodeT];
+    type Item = Vec<NodeT>;
 
     fn next(&mut self) -> Option<Self::Item> {
         if self.start >= self.end {
@@ -113,7 +117,9 @@ impl<'a> core::iter::Iterator for EqualBucketsIter<'a> {
             // item with a different hash
 
             // take a reference to the computed slice to return it later
-            let res = &self.indices[self.start..idx];
+            let res = self.indices[self.start..idx].iter().map(|i| {
+                self.degree_bounded_node_ids[*i as usize]
+            }).collect::<Vec<_>>();
             // skip the slice for the next iteration
             self.start = idx;
 
@@ -124,7 +130,7 @@ impl<'a> core::iter::Iterator for EqualBucketsIter<'a> {
 }
 
 impl<'a> UnindexedProducer for EqualBucketsIter<'a> {
-    type Item = &'a [NodeT];
+    type Item = Vec<NodeT>;
 
     /// Split the file in two approximately balanced streams
     fn split(mut self) -> (Self, Option<Self>) {
@@ -147,6 +153,7 @@ impl<'a> UnindexedProducer for EqualBucketsIter<'a> {
                 let new = Self {
                     indices: self.indices,
                     hashes: self.hashes,
+                    degree_bounded_node_ids: self.degree_bounded_node_ids,
 
                     start: split_idx,
                     end: self.end,

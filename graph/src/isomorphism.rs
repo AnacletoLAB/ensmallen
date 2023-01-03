@@ -55,45 +55,20 @@ impl Graph {
             neighbours_hashes[a as usize].cmp(&neighbours_hashes[b as usize])
         });
 
-        let number_of_nodes_in_degree_bounded_subset = degree_bounded_node_ids.len();
-
-        let slices = EqualBucketsParIter::new(&neighbours_hashes, &hash_indices).collect::<Vec<_>>();
-
-        // We start to iterate on the nodes in the subset of interest.
-        (0..number_of_nodes_in_degree_bounded_subset.saturating_sub(1))
-            .into_par_iter()
-            .filter_map(move |i| {
-                // We get the index of i-th hash
-                let hash_index = hash_indices[i];
-                // We get the node ID from the reverse index.
-                let node_id = degree_bounded_node_ids[hash_index as usize];
-                // We get the hash associated to this node.
-                let node_hash = neighbours_hashes[hash_index as usize];
-                // If this is not the first node and the current node hash is equal to the previous one
-                // or, alternatively, if the next one is different from the current one and therefore the
-                // current node is not forming any isomorphic group as it is not the root (i.e. the first one) of the
-                // isomorphic group.
-                if i != 0 && node_hash == neighbours_hashes[hash_indices[i - 1] as usize]
-                    || node_hash != neighbours_hashes[hash_indices[i + 1] as usize]
-                {
-                    return None;
-                }
+        EqualBucketsParIter::new(neighbours_hashes, hash_indices, degree_bounded_node_ids)
+            .filter_map(move |node_ids| {
                 // We investigate the possibility of an isomorphic group that starts with the current node ID.
                 // This might not be the case, as the node might simply be in a collision state with the current hash.
-                let mut candidate_isomorphic_groups = vec![vec![node_id]];
+                let mut candidate_isomorphic_groups: Vec<Vec<NodeT>> = vec![];
                 // We set a flag that determines whether we will need to filter out isomorphic groups with
                 // only a single element in them.
-                let mut number_of_isomorphic_groups_with_size_one = 1;
+                let mut number_of_isomorphic_groups_with_size_one = 0;
                 // We start to iterate to the nodes that immediately follow the current node, and we keep
                 // all of the subsequent nodes that have indeed the same local hash.
-                for other_node_id in ((i + 1)..number_of_nodes_in_degree_bounded_subset)
-                    .take_while(|&j| node_hash == neighbours_hashes[hash_indices[j] as usize])
-                    .map(|j| degree_bounded_node_ids[hash_indices[j] as usize])
-                {
+                for other_node_id in node_ids {
                     // Then, since within the same hash there might be multiple isomorphic node groups in collision
                     // we need to identify which one of these groups is actually isomorphic with the current node.
                     if let Some(isomorphic_group) =
-                        //
                         candidate_isomorphic_groups.iter_mut().find(
                             |candidate_isomorphic_group| unsafe {
                                 self.are_unchecked_isomorphic_from_node_ids(
@@ -124,11 +99,7 @@ impl Graph {
                 }
                 // It may be possible that we have not identified any isomorphic node group.
                 // If that is the case, we return None and we have not identified any isomorphic group.
-                if candidate_isomorphic_groups.is_empty() {
-                    None
-                } else {
-                    Some(candidate_isomorphic_groups)
-                }
+                (!candidate_isomorphic_groups.is_empty()).then_some(candidate_isomorphic_groups)
             })
             // Then, we fold the result as we want to reduce it from a data structure of the form:
             // [[[group 1], [group 2]], [[group 3], [group 4]]]
