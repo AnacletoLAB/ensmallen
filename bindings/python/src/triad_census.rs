@@ -9,7 +9,7 @@ impl Graph {
         let py = pyo3::Python::acquire_gil();
 
         let triad_census = unsafe {
-            PyArray2::new(
+            PyArray2::zeros(
                 py.python(),
                 [self.get_number_of_nodes() as usize, 13],
                 false,
@@ -29,7 +29,7 @@ impl Graph {
         let py = pyo3::Python::acquire_gil();
 
         let triad_census = unsafe {
-            PyArray2::new(
+            PyArray2::zeros(
                 py.python(),
                 [self.get_number_of_nodes() as usize, 30],
                 false,
