@@ -16,6 +16,7 @@ impl Graph {
         let minimum_node_degree = minimum_node_degree.unwrap_or(5);
 
         // We collect the node IDs that have degree higher than the provided one.
+        // TODO! Explore other possible hash!
         let mut degree_bounded_hash_and_node_ids = self
             .par_iter_node_ids()
             .zip(self.par_iter_node_degrees())
@@ -38,6 +39,12 @@ impl Graph {
             .collect::<Vec<(u32, NodeT)>>();
 
         // Then we sort the nodes, according to the score.
+        // TODO! This sorting operation is implemented using quicksort
+        // and is general porpose, including support for swapping
+        // large complex structs. This is overkill for our use
+        // case, since we only need to sort u32s, and it is likely
+        // we could re-implement this in an ad-hoc manner that
+        // is sensibly faster.
         degree_bounded_hash_and_node_ids.par_sort_unstable();
 
         unsafe { EqualBucketsParIter::new(degree_bounded_hash_and_node_ids) }.flat_map(
