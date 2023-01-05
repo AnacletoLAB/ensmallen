@@ -45,7 +45,23 @@ const BASE_64_TRICODES: [u8; 64] = [
 
 /// # Triad census algorithm
 impl Graph {
-    /// Returns the tricode associated to the provided triple of node IDs.
+    unsafe fn get_unchecked_single_tricode_from_node_ids<T: std::ops::Index<usize, Output = u8>>(
+        &self,
+        first_to_second: usize,
+        second_to_first: usize,
+        first_to_third: usize,
+        third_to_first: usize,
+        second_to_third: usize,
+        third_to_second: usize,
+        map: T,
+    ) -> u8 {
+        map[first_to_second
+            + 2 * (second_to_first
+                + 2 * (first_to_third
+                    + 2 * (third_to_first + 2 * (second_to_third + 2 * third_to_second))))]
+    }
+
+    /// Returns the tricodes associated to the provided triple of node IDs.
     ///
     /// # Arguments
     /// * `first`: NodeT - The first node ID of the triple.
@@ -53,18 +69,26 @@ impl Graph {
     /// * `third`: NodeT - The third node ID of the triple.
     /// * `map`: T - The map to use for the associated tricode.
     ///
+    /// # Returns
+    /// Triple with tricode for the following triads orders:
+    /// * (first, second, third)
+    /// * (second, third, first)
+    /// * (third, first, second)
+    /// This is done to avoid having to look up the existance of the various
+    /// edges multiple times.
+    ///
     /// # Safety
     /// This method will assume that the three provided node IDs,
     /// namely `first`, `second` and `third`, are within the maximum
     /// number of nodes in this graph. If you provide values higher
     /// than that, this method will panic.
-    unsafe fn get_unchecked_tricode_from_node_ids<T: std::ops::Index<usize, Output = u8>>(
+    unsafe fn get_unchecked_tricodes_from_node_ids<T: std::ops::Index<usize, Output = u8> + Copy>(
         &self,
         first: NodeT,
         second: NodeT,
         third: NodeT,
         map: T,
-    ) -> u8 {
+    ) -> (u8, u8, u8) {
         let first_to_second = self.has_edge_from_node_ids(first, second) as usize;
         let second_to_first = if self.is_directed() {
             self.has_edge_from_node_ids(second, first) as usize
@@ -84,13 +108,38 @@ impl Graph {
             second_to_third
         };
 
-        map[first_to_second
-            + 2 * (second_to_first
-                + 2 * (first_to_third
-                    + 2 * (third_to_first + 2 * (second_to_third + 2 * third_to_second))))]
+        (
+            self.get_unchecked_single_tricode_from_node_ids(
+                first_to_second,
+                second_to_first,
+                first_to_third,
+                third_to_first,
+                second_to_third,
+                third_to_second,
+                map,
+            ),
+            self.get_unchecked_single_tricode_from_node_ids(
+                second_to_third,
+                third_to_second,
+                second_to_first,
+                first_to_second,
+                third_to_first,
+                first_to_third,
+                map,
+            ),
+            self.get_unchecked_single_tricode_from_node_ids(
+                third_to_first,
+                first_to_third,
+                third_to_second,
+                second_to_third,
+                first_to_second,
+                second_to_first,
+                map,
+            ),
+        )
     }
 
-    /// Returns the base 16 tricode associated to the provided triple of node IDs.
+    /// Returns the base 16 tricodes associated to the provided triple of node IDs.
     ///
     /// # Arguments
     /// * `first`: NodeT - The first node ID of the triple.
@@ -98,21 +147,29 @@ impl Graph {
     /// * `third`: NodeT - The third node ID of the triple.
     /// * `map`: T - The map to use for the associated tricode.
     ///
+    /// # Returns
+    /// Triple with tricode for the following triads orders:
+    /// * (first, second, third)
+    /// * (second, third, first)
+    /// * (third, first, second)
+    /// This is done to avoid having to look up the existance of the various
+    /// edges multiple times.
+    ///
     /// # Safety
     /// This method will assume that the three provided node IDs,
     /// namely `first`, `second` and `third`, are within the maximum
     /// number of nodes in this graph. If you provide values higher
     /// than that, this method will panic.
-    unsafe fn get_unchecked_base_16_tricode_from_node_ids(
+    unsafe fn get_unchecked_base_16_tricodes_from_node_ids(
         &self,
         first: NodeT,
         second: NodeT,
         third: NodeT,
-    ) -> u8 {
-        self.get_unchecked_tricode_from_node_ids(first, second, third, BASE_16_TRICODES)
+    ) -> (u8, u8, u8) {
+        self.get_unchecked_tricodes_from_node_ids(first, second, third, BASE_16_TRICODES)
     }
 
-    /// Returns the base 13 tricode associated to the provided triple of node IDs.
+    /// Returns the base 13 tricodes associated to the provided triple of node IDs.
     ///
     /// # Arguments
     /// * `first`: NodeT - The first node ID of the triple.
@@ -120,21 +177,29 @@ impl Graph {
     /// * `third`: NodeT - The third node ID of the triple.
     /// * `map`: T - The map to use for the associated tricode.
     ///
+    /// # Returns
+    /// Triple with tricode for the following triads orders:
+    /// * (first, second, third)
+    /// * (second, third, first)
+    /// * (third, first, second)
+    /// This is done to avoid having to look up the existance of the various
+    /// edges multiple times.
+    ///
     /// # Safety
     /// This method will assume that the three provided node IDs,
     /// namely `first`, `second` and `third`, are within the maximum
     /// number of nodes in this graph. If you provide values higher
     /// than that, this method will panic.
-    unsafe fn get_unchecked_base_13_tricode_from_node_ids(
+    unsafe fn get_unchecked_base_13_tricodes_from_node_ids(
         &self,
         first: NodeT,
         second: NodeT,
         third: NodeT,
-    ) -> u8 {
-        self.get_unchecked_tricode_from_node_ids(first, second, third, BASE_13_TRICODES)
+    ) -> (u8, u8, u8) {
+        self.get_unchecked_tricodes_from_node_ids(first, second, third, BASE_13_TRICODES)
     }
 
-    /// Returns the base 30 tricode associated to the provided triple of node IDs.
+    /// Returns the base 30 tricodes associated to the provided triple of node IDs.
     ///
     /// # Arguments
     /// * `first`: NodeT - The first node ID of the triple.
@@ -142,21 +207,29 @@ impl Graph {
     /// * `third`: NodeT - The third node ID of the triple.
     /// * `map`: T - The map to use for the associated tricode.
     ///
+    /// # Returns
+    /// Triple with tricode for the following triads orders:
+    /// * (first, second, third)
+    /// * (second, third, first)
+    /// * (third, first, second)
+    /// This is done to avoid having to look up the existance of the various
+    /// edges multiple times.
+    ///
     /// # Safety
     /// This method will assume that the three provided node IDs,
     /// namely `first`, `second` and `third`, are within the maximum
     /// number of nodes in this graph. If you provide values higher
     /// than that, this method will panic.
-    unsafe fn get_unchecked_base_30_tricode_from_node_ids(
+    unsafe fn get_unchecked_base_30_tricodes_from_node_ids(
         &self,
         first: NodeT,
         second: NodeT,
         third: NodeT,
-    ) -> u8 {
-        self.get_unchecked_tricode_from_node_ids(first, second, third, BASE_30_TRICODES)
+    ) -> (u8, u8, u8) {
+        self.get_unchecked_tricodes_from_node_ids(first, second, third, BASE_30_TRICODES)
     }
 
-    /// Returns the base 64 tricode associated to the provided triple of node IDs.
+    /// Returns the base 64 tricodes associated to the provided triple of node IDs.
     ///
     /// # Arguments
     /// * `first`: NodeT - The first node ID of the triple.
@@ -164,21 +237,29 @@ impl Graph {
     /// * `third`: NodeT - The third node ID of the triple.
     /// * `map`: T - The map to use for the associated tricode.
     ///
+    /// # Returns
+    /// Triple with tricode for the following triads orders:
+    /// * (first, second, third)
+    /// * (second, third, first)
+    /// * (third, first, second)
+    /// This is done to avoid having to look up the existance of the various
+    /// edges multiple times.
+    ///
     /// # Safety
     /// This method will assume that the three provided node IDs,
     /// namely `first`, `second` and `third`, are within the maximum
     /// number of nodes in this graph. If you provide values higher
     /// than that, this method will panic.
-    unsafe fn get_unchecked_base_64_tricode_from_node_ids(
+    unsafe fn get_unchecked_base_64_tricodes_from_node_ids(
         &self,
         first: NodeT,
         second: NodeT,
         third: NodeT,
-    ) -> u8 {
-        self.get_unchecked_tricode_from_node_ids(first, second, third, BASE_64_TRICODES)
+    ) -> (u8, u8, u8) {
+        self.get_unchecked_tricodes_from_node_ids(first, second, third, BASE_64_TRICODES)
     }
 
-    /// Returns the base 16, i.e. using 16 possible triads, tricode associated to the provided triple of node IDs.
+    /// Returns the base 16, i.e. using 16 possible triads, tricodes associated to the provided triple of node IDs.
     ///
     /// # Arguments
     /// * `first`: NodeT - The first node ID of the triple.
@@ -189,19 +270,19 @@ impl Graph {
     /// ValueError: If any of the three provided node IDs,
     /// namely `first`, `second` and `third`, are not within the maximum
     /// number of nodes in this graph.
-    pub fn get_base_16_tricode_from_node_ids(
+    pub fn get_base_16_tricodes_from_node_ids(
         &self,
         first: NodeT,
         second: NodeT,
         third: NodeT,
-    ) -> Result<u8> {
+    ) -> Result<(u8, u8, u8)> {
         self.validate_node_id(first)?;
         self.validate_node_id(second)?;
         self.validate_node_id(third)?;
-        Ok(unsafe { self.get_unchecked_base_16_tricode_from_node_ids(first, second, third) })
+        Ok(unsafe { self.get_unchecked_base_16_tricodes_from_node_ids(first, second, third) })
     }
 
-    /// Returns the base 13, i.e. using 13 possible triads, tricode associated to the provided triple of node IDs.
+    /// Returns the base 13, i.e. using 13 possible triads, tricodes associated to the provided triple of node IDs.
     ///
     /// # Arguments
     /// * `first`: NodeT - The first node ID of the triple.
@@ -212,19 +293,19 @@ impl Graph {
     /// ValueError: If any of the three provided node IDs,
     /// namely `first`, `second` and `third`, are not within the maximum
     /// number of nodes in this graph.
-    pub fn get_base_13_tricode_from_node_ids(
+    pub fn get_base_13_tricodes_from_node_ids(
         &self,
         first: NodeT,
         second: NodeT,
         third: NodeT,
-    ) -> Result<u8> {
+    ) -> Result<(u8, u8, u8)> {
         self.validate_node_id(first)?;
         self.validate_node_id(second)?;
         self.validate_node_id(third)?;
-        Ok(unsafe { self.get_unchecked_base_13_tricode_from_node_ids(first, second, third) })
+        Ok(unsafe { self.get_unchecked_base_13_tricodes_from_node_ids(first, second, third) })
     }
 
-    /// Returns the base 30, i.e. using 30 possible triads, tricode associated to the provided triple of node IDs.
+    /// Returns the base 30, i.e. using 30 possible triads, tricodes associated to the provided triple of node IDs.
     ///
     /// # Arguments
     /// * `first`: NodeT - The first node ID of the triple.
@@ -235,19 +316,19 @@ impl Graph {
     /// ValueError: If any of the three provided node IDs,
     /// namely `first`, `second` and `third`, are not within the maximum
     /// number of nodes in this graph.
-    pub fn get_base_30_tricode_from_node_ids(
+    pub fn get_base_30_tricodes_from_node_ids(
         &self,
         first: NodeT,
         second: NodeT,
         third: NodeT,
-    ) -> Result<u8> {
+    ) -> Result<(u8, u8, u8)> {
         self.validate_node_id(first)?;
         self.validate_node_id(second)?;
         self.validate_node_id(third)?;
-        Ok(unsafe { self.get_unchecked_base_30_tricode_from_node_ids(first, second, third) })
+        Ok(unsafe { self.get_unchecked_base_30_tricodes_from_node_ids(first, second, third) })
     }
 
-    /// Returns the base 64, i.e. using 64 possible triads, tricode associated to the provided triple of node IDs.
+    /// Returns the base 64, i.e. using 64 possible triads, tricodes associated to the provided triple of node IDs.
     ///
     /// # Arguments
     /// * `first`: NodeT - The first node ID of the triple.
@@ -258,19 +339,19 @@ impl Graph {
     /// ValueError: If any of the three provided node IDs,
     /// namely `first`, `second` and `third`, are not within the maximum
     /// number of nodes in this graph.
-    pub fn get_base_64_tricode_from_node_ids(
+    pub fn get_base_64_tricodes_from_node_ids(
         &self,
         first: NodeT,
         second: NodeT,
         third: NodeT,
-    ) -> Result<u8> {
+    ) -> Result<(u8, u8, u8)> {
         self.validate_node_id(first)?;
         self.validate_node_id(second)?;
         self.validate_node_id(third)?;
-        Ok(unsafe { self.get_unchecked_base_64_tricode_from_node_ids(first, second, third) })
+        Ok(unsafe { self.get_unchecked_base_64_tricodes_from_node_ids(first, second, third) })
     }
 
-    /// Returns the base 16, i.e. using 16 possible triads, tricode associated to the provided triple of node names.
+    /// Returns the base 16, i.e. using 16 possible triads, tricodes associated to the provided triple of node names.
     ///
     /// # Arguments
     /// * `first`: &str - The first node name of the triple.
@@ -281,14 +362,14 @@ impl Graph {
     /// ValueError: If any of the three provided node names,
     /// namely `first`, `second` and `third`, are not within the maximum
     /// number of nodes in this graph.
-    pub fn get_base_16_tricode_from_node_names(
+    pub fn get_base_16_tricodes_from_node_names(
         &self,
         first: &str,
         second: &str,
         third: &str,
-    ) -> Result<u8> {
+    ) -> Result<(u8, u8, u8)> {
         Ok(unsafe {
-            self.get_unchecked_base_16_tricode_from_node_ids(
+            self.get_unchecked_base_16_tricodes_from_node_ids(
                 self.get_node_id_from_node_name(first)?,
                 self.get_node_id_from_node_name(second)?,
                 self.get_node_id_from_node_name(third)?,
@@ -296,7 +377,7 @@ impl Graph {
         })
     }
 
-    /// Returns the base 13, i.e. using 13 possible triads, tricode associated to the provided triple of node names.
+    /// Returns the base 13, i.e. using 13 possible triads, tricodes associated to the provided triple of node names.
     ///
     /// # Arguments
     /// * `first`: &str - The first node name of the triple.
@@ -307,14 +388,14 @@ impl Graph {
     /// ValueError: If any of the three provided node names,
     /// namely `first`, `second` and `third`, are not within the maximum
     /// number of nodes in this graph.
-    pub fn get_base_13_tricode_from_node_names(
+    pub fn get_base_13_tricodes_from_node_names(
         &self,
         first: &str,
         second: &str,
         third: &str,
-    ) -> Result<u8> {
+    ) -> Result<(u8, u8, u8)> {
         Ok(unsafe {
-            self.get_unchecked_base_13_tricode_from_node_ids(
+            self.get_unchecked_base_13_tricodes_from_node_ids(
                 self.get_node_id_from_node_name(first)?,
                 self.get_node_id_from_node_name(second)?,
                 self.get_node_id_from_node_name(third)?,
@@ -322,7 +403,7 @@ impl Graph {
         })
     }
 
-    /// Returns the base 30, i.e. using 30 possible triads, tricode associated to the provided triple of node names.
+    /// Returns the base 30, i.e. using 30 possible triads, tricodes associated to the provided triple of node names.
     ///
     /// # Arguments
     /// * `first`: &str - The first node name of the triple.
@@ -333,14 +414,14 @@ impl Graph {
     /// ValueError: If any of the three provided node names,
     /// namely `first`, `second` and `third`, are not within the maximum
     /// number of nodes in this graph.
-    pub fn get_base_30_tricode_from_node_names(
+    pub fn get_base_30_tricodes_from_node_names(
         &self,
         first: &str,
         second: &str,
         third: &str,
-    ) -> Result<u8> {
+    ) -> Result<(u8, u8, u8)> {
         Ok(unsafe {
-            self.get_unchecked_base_30_tricode_from_node_ids(
+            self.get_unchecked_base_30_tricodes_from_node_ids(
                 self.get_node_id_from_node_name(first)?,
                 self.get_node_id_from_node_name(second)?,
                 self.get_node_id_from_node_name(third)?,
@@ -348,7 +429,7 @@ impl Graph {
         })
     }
 
-    /// Returns the base 64, i.e. using 64 possible triads, tricode associated to the provided triple of node names.
+    /// Returns the base 64, i.e. using 64 possible triads, tricodes associated to the provided triple of node names.
     ///
     /// # Arguments
     /// * `first`: &str - The first node name of the triple.
@@ -359,14 +440,14 @@ impl Graph {
     /// ValueError: If any of the three provided node names,
     /// namely `first`, `second` and `third`, are not within the maximum
     /// number of nodes in this graph.
-    pub fn get_base_64_tricode_from_node_names(
+    pub fn get_base_64_tricodes_from_node_names(
         &self,
         first: &str,
         second: &str,
         third: &str,
-    ) -> Result<u8> {
+    ) -> Result<(u8, u8, u8)> {
         Ok(unsafe {
-            self.get_unchecked_base_64_tricode_from_node_ids(
+            self.get_unchecked_base_64_tricodes_from_node_ids(
                 self.get_node_id_from_node_name(first)?,
                 self.get_node_id_from_node_name(second)?,
                 self.get_node_id_from_node_name(third)?,
@@ -453,9 +534,10 @@ impl Graph {
                                 && !self.has_edge_from_node_ids(first, third))
                         {
                             let tricode = unsafe {
-                                self.get_unchecked_base_16_tricode_from_node_ids(
+                                self.get_unchecked_base_16_tricodes_from_node_ids(
                                     first, second, third,
                                 )
+                                .0
                             } as usize;
                             census[tricode] += 1;
                         }
@@ -501,7 +583,7 @@ impl Graph {
             + std::iter::IntoIterator<Item = <T as Index<usize>>::Output>,
     >(
         &self,
-        triadic_code: fn(&Self, NodeT, NodeT, NodeT) -> u8,
+        triadic_code: fn(&Self, NodeT, NodeT, NodeT) -> (u8, u8, u8),
     ) -> T
     where
         <T as Index<usize>>::Output:
@@ -575,8 +657,11 @@ impl Graph {
                                 && third < second
                                 && !self.has_edge_from_node_ids(first, third))
                         {
-                            let tricode = triadic_code(&self, first, second, third) as usize;
-                            census[tricode] += <T as Index<usize>>::Output::one();
+                            let (first_tricode, second_tricode, third_tricode) =
+                                triadic_code(&self, first, second, third);
+                            census[first_tricode as usize] += <T as Index<usize>>::Output::one();
+                            census[second_tricode as usize] += <T as Index<usize>>::Output::one();
+                            census[third_tricode as usize] += <T as Index<usize>>::Output::one();
                         }
                     }
 
@@ -608,7 +693,7 @@ impl Graph {
     >(
         &self,
         tradic_census: &mut [u64],
-        triadic_code: fn(&Self, NodeT, NodeT, NodeT) -> u8,
+        triadic_code: fn(&Self, NodeT, NodeT, NodeT) -> (u8, u8, u8),
     ) -> Result<()> {
         let dimensionality: usize = T::default().into_iter().count();
         if tradic_census.len() != dimensionality * self.get_number_of_nodes() as usize {
@@ -667,7 +752,8 @@ impl Graph {
                 )| {
                     let mut first_index = 0;
                     let mut second_index = 0;
-                    let mut census: T = T::default();
+                    let mut first_census: T = T::default();
+                    let mut second_census: T = T::default();
 
                     while first_index < first_order_neighbours.len()
                         && second_index < second_order_neighbours.len()
@@ -708,19 +794,25 @@ impl Graph {
                                 && third < second
                                 && !self.has_edge_from_node_ids(first, third))
                         {
-                            let tricode = triadic_code(&self, first, second, third) as usize;
-                            tradic_census[dimensionality * third as usize]
+                            // TODO! FIX! THIS IS NOT NODE SPECIFIC!
+                            let (first_tricode, second_tricode, third_tricode) =
+                                triadic_code(&self, first, second, third);
+                            tradic_census[dimensionality * third as usize + third_tricode as usize]
                                 .fetch_add(1, Ordering::Relaxed);
-                            census[tricode] += 1;
+                            first_census[first_tricode as usize] += 1;
+                            second_census[second_tricode as usize] += 1;
                         }
                     }
-                    census
-                        .into_iter()
-                        .zip(first_node_census.iter().zip(second_node_census.iter()))
-                        .for_each(|(count, (first_census, second_census))| {
-                            first_census.fetch_add(count, Ordering::Relaxed);
-                            second_census.fetch_add(count, Ordering::Relaxed);
-                        });
+                    for (census, census_atomics) in [
+                        (first_census, first_node_census),
+                        (second_census, second_node_census),
+                    ] {
+                        census.into_iter().zip(census_atomics.iter()).for_each(
+                            |(count, census)| {
+                                census.fetch_add(count, Ordering::Relaxed);
+                            },
+                        );
+                    }
                 },
             );
         Ok(())
@@ -729,7 +821,7 @@ impl Graph {
     pub fn get_base_13_triad_census(&self) -> [u64; 13] {
         unsafe {
             self.get_triad_census(|graph, first, second, third| {
-                graph.get_unchecked_base_13_tricode_from_node_ids(first, second, third)
+                graph.get_unchecked_base_13_tricodes_from_node_ids(first, second, third)
             })
         }
     }
@@ -737,7 +829,7 @@ impl Graph {
     pub fn get_base_30_triad_census(&self) -> [u64; 30] {
         unsafe {
             self.get_triad_census(|graph, first, second, third| {
-                graph.get_unchecked_base_30_tricode_from_node_ids(first, second, third)
+                graph.get_unchecked_base_30_tricodes_from_node_ids(first, second, third)
             })
         }
     }
@@ -748,7 +840,7 @@ impl Graph {
             self.get_triad_census_per_node::<[u64; 13]>(
                 tradic_census,
                 |graph, first, second, third| {
-                    graph.get_unchecked_base_13_tricode_from_node_ids(first, second, third)
+                    graph.get_unchecked_base_13_tricodes_from_node_ids(first, second, third)
                 },
             )
         }
@@ -760,7 +852,7 @@ impl Graph {
             self.get_triad_census_per_node::<[u64; 30]>(
                 tradic_census,
                 |graph, first, second, third| {
-                    graph.get_unchecked_base_30_tricode_from_node_ids(first, second, third)
+                    graph.get_unchecked_base_30_tricodes_from_node_ids(first, second, third)
                 },
             )
         }
