@@ -172,7 +172,7 @@ impl Graph {
                 let thread_id = rayon::current_thread_index().expect("current_thread_id not called from a rayon thread. This should not be possible because this is in a Rayon Thread Pool.");
                 let bitvec = unsafe{&mut (*bitvecs.get())[thread_id]};
                 let mut partial_squares_number = 0;
-                bitvec.clear();
+                bitvec.fill(false);
 
                 for &second in first_order_neighbours {
                     let second_order_neighbours = unsafe{self.edges
