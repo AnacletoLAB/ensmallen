@@ -255,7 +255,7 @@ impl Graph {
     /// assert!(!graph.has_selfloop_from_node_id(4565));
     /// ```
     pub fn has_selfloop_from_node_id(&self, node_id: NodeT) -> bool {
-        self.has_edge_from_node_ids(node_id, node_id)
+        self.has_selfloops() && self.has_edge_from_node_ids(node_id, node_id)
     }
 
     /// Returns whether edge with the given type passing between given nodes exists.
@@ -325,9 +325,9 @@ impl Graph {
     /// This method assumes that the two provided node IDs are effectively within
     /// the set of nodes in the graph. Out of bound errors might be raised with
     /// improper parametrization of the method.
-    /// 
+    ///
     /// # Implementative details
-    /// Since the node neighbourhoods are returned as slices of u32s of a 
+    /// Since the node neighbourhoods are returned as slices of u32s of a
     /// CSR matrix, we can use the native method of `memcmp` that is used
     /// in the [Slice object in Rust](https://doc.rust-lang.org/src/core/slice/cmp.rs.html#78),
     /// which should localize to each system.
@@ -336,11 +336,93 @@ impl Graph {
         first_node_id: NodeT,
         second_node_id: NodeT,
     ) -> bool {
-        self.edges
-            .get_unchecked_neighbours_node_ids_from_src_node_id(first_node_id)
-            == self
-                .edges
-                .get_unchecked_neighbours_node_ids_from_src_node_id(second_node_id)
+        if self.get_unchecked_node_type_ids_from_node_id(first_node_id)
+            != self.get_unchecked_node_type_ids_from_node_id(first_node_id)
+        {
+            return false;
+        }
+
+        let (first_min_edge_id, first_max_edge_id) = self
+            .edges
+            .get_unchecked_minmax_edge_ids_from_source_node_id(first_node_id);
+
+        let (second_min_edge_id, second_max_edge_id) = self
+            .edges
+            .get_unchecked_minmax_edge_ids_from_source_node_id(second_node_id);
+
+        let first_neighbours: &[NodeT] = &self.edges.as_ref().destinations
+            [first_min_edge_id as usize..first_max_edge_id as usize];
+
+        let second_neighbours: &[NodeT] = &self.edges.as_ref().destinations
+            [second_min_edge_id as usize..second_max_edge_id as usize];
+
+        let first_weights: Option<&[WeightT]> = self
+            .weights
+            .as_ref()
+            .as_ref()
+            .map(|ws| &ws[first_min_edge_id as usize..first_max_edge_id as usize]);
+
+        let second_weights: Option<&[WeightT]> = self
+            .weights
+            .as_ref()
+            .as_ref()
+            .map(|ws| &ws[second_min_edge_id as usize..second_max_edge_id as usize]);
+
+        let first_edge_types: Option<&[Option<EdgeTypeT>]> = self
+            .edge_types
+            .as_ref()
+            .as_ref()
+            .map(|ets| &ets.ids[first_min_edge_id as usize..first_max_edge_id as usize]);
+
+        let second_edge_types: Option<&[Option<EdgeTypeT>]> = self
+            .edge_types
+            .as_ref()
+            .as_ref()
+            .map(|ets| &ets.ids[second_min_edge_id as usize..second_max_edge_id as usize]);
+
+        let mut first_index: usize = 0;
+        let mut second_index: usize = 0;
+
+        let mut first_has_edge_to_second: bool = false;
+        let mut second_has_edge_to_first: bool = false;
+
+        while first_index < first_neighbours.len() && second_index < second_neighbours.len() {
+            let first_neighbour_id = first_neighbours[first_index];
+            let second_neighbour_id = second_neighbours[second_index];
+
+            // First, we check that the current neighbour is not a self-loop.
+            // If it is, we skip onward, so to avoid failing to identify potentially
+            // an isomporphic set of nodes.
+            if first_neighbour_id == first_node_id {
+                first_index += 1;
+                continue;
+            }
+
+            if second_neighbour_id == second_node_id {
+                second_index += 1;
+                continue;
+            }
+
+            // Second, we handle whether any of these edges are
+            // connections between the two nodes we are evaluating.
+            if first_neighbour_id == second_node_id {
+                first_index += 1;
+                first_has_edge_to_second = true;
+                continue;
+            }
+
+            if second_neighbour_id == first_node_id {
+                second_index += 1;
+                second_has_edge_to_first = true;
+                continue;
+            }
+        }
+
+        if first_has_edge_to_second != second_has_edge_to_first {
+            return false;
+        }
+
+        true
     }
 
     /// Returns whether two provided nodes IDs are isomorphic to one another.

@@ -1072,7 +1072,7 @@ impl Graph {
         self.filter_from_ids(
             None,
             Some(
-                self.par_iter_isomorphic_node_ids_groups(Some(minimum_node_degree))
+                self.par_iter_isomorphic_node_ids_groups::<u32>(Some(minimum_node_degree), None)
                     .flat_map(|mut group| {
                         group.pop();
                         group.into_par_iter()

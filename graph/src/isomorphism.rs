@@ -1,6 +1,7 @@
 use super::*;
 use isomorphism_iter::EqualBucketsParIter;
 use log::info;
+use num_traits::One;
 use rayon::prelude::*;
 
 impl Graph {
@@ -8,12 +9,15 @@ impl Graph {
     ///
     /// # Arguments
     /// * `minimum_node_degree`: Option<NodeT> - Minimum node degree for the topological synonims. By default, 5.
-    pub fn par_iter_isomorphic_node_ids_groups(
-        &self,
+    pub fn par_iter_isomorphic_node_ids_groups<'a, T: Ord + Eq + Send + Sync + Copy + One + 'static>(
+        &'a self,
         minimum_node_degree: Option<NodeT>,
-    ) -> impl ParallelIterator<Item = Vec<NodeT>> + '_ {
+        hash: Option<fn(&Graph, NodeT) -> T>,
+    ) -> impl ParallelIterator<Item = Vec<NodeT>> + 'a {
         // If no minimum node degree is provided, we use arbitrarily 5.
         let minimum_node_degree = minimum_node_degree.unwrap_or(5);
+
+        let hash = hash.unwrap_or(|graph, node| T::one());
 
         // We collect the node IDs that have degree higher than the provided one.
         // TODO! Explore other possible hash!
@@ -24,19 +28,10 @@ impl Graph {
                 if node_degree < minimum_node_degree {
                     None
                 } else {
-                    let seed: u32 = 0xDEADBEEF_u32.wrapping_mul(node_degree as u32);
-                    // TODO: use AVX-like approach to fold the slice
-                    // Investigate the use of hashing method supported in AVX.
-                    // Generally speaking, identify a better hash.
-                    let hash = unsafe {
-                        self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
-                    }
-                    .take(20)
-                    .fold(seed, |a: u32, b: u32| (a ^ b).wrapping_add(0x26967A95));
-                    Some((hash, node_id))
+                    Some((hash(&self, node_id), node_id))
                 }
             })
-            .collect::<Vec<(u32, NodeT)>>();
+            .collect::<Vec<(T, NodeT)>>();
 
         // Then we sort the nodes, according to the score.
         // TODO! This sorting operation is implemented using quicksort
@@ -48,27 +43,18 @@ impl Graph {
         degree_bounded_hash_and_node_ids.par_sort_unstable();
 
         unsafe { EqualBucketsParIter::new(degree_bounded_hash_and_node_ids) }.flat_map(
-            move |candidate_isomorphic_group_slice: &[(u32, NodeT)]| {
+            move |candidate_isomorphic_group_slice: &[(T, NodeT)]| {
                 // First, we proceed assuming for the best case scenario which
                 // would also be the fastest: if the `candidate_isomorphic_group_slice` is
                 // indeed an isomorphic group of nodes.
-                let first_node_neighbours = unsafe {
-                    self.edges
-                        .get_unchecked_neighbours_node_ids_from_src_node_id(
-                            candidate_isomorphic_group_slice[0].1,
-                        )
-                };
+                let first = candidate_isomorphic_group_slice[0].1;
                 // We proceed to count how many of these nodes are effectively isomorphic
                 // to the first one.
                 let number_of_initial_isomorphic_nodes = 1 + candidate_isomorphic_group_slice[1..]
                     .iter()
                     .copied()
-                    .take_while(|&(_, node_id)| {
-                        first_node_neighbours
-                            == unsafe {
-                                self.edges
-                                    .get_unchecked_neighbours_node_ids_from_src_node_id(node_id)
-                            }
+                    .take_while(|&(_, second)| unsafe {
+                        self.are_unchecked_isomorphic_from_node_ids(first, second)
                     })
                     .count();
 
@@ -452,7 +438,7 @@ impl Graph {
         &self,
         minimum_node_degree: Option<NodeT>,
     ) -> impl ParallelIterator<Item = Vec<String>> + '_ {
-        self.par_iter_isomorphic_node_ids_groups(minimum_node_degree)
+        self.par_iter_isomorphic_node_ids_groups::<u32>(minimum_node_degree, None)
             .map(move |group| {
                 group
                     .into_iter()
@@ -470,7 +456,7 @@ impl Graph {
         &self,
         minimum_node_degree: Option<NodeT>,
     ) -> Vec<Vec<NodeT>> {
-        self.par_iter_isomorphic_node_ids_groups(minimum_node_degree)
+        self.par_iter_isomorphic_node_ids_groups::<u32>(minimum_node_degree, None)
             .collect()
     }
 
@@ -495,7 +481,7 @@ impl Graph {
         &self,
         minimum_node_degree: Option<NodeT>,
     ) -> NodeT {
-        self.par_iter_isomorphic_node_ids_groups(minimum_node_degree)
+        self.par_iter_isomorphic_node_ids_groups::<u32>(minimum_node_degree, None)
             .count() as NodeT
     }
 

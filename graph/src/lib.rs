@@ -7,6 +7,7 @@
 //! * `singleton_with_selfloop`: A node which has only selfloops
 //! * `connected_node`: a node which is nor a `singleton` nor a `singleton_with_selfloops`.
 
+#![feature(adt_const_params)]
 #![warn(unused_macros)]
 #![feature(drain_filter)]
 #![feature(is_sorted)]

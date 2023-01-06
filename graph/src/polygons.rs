@@ -13,15 +13,7 @@ impl Graph {
     /// # References
     /// This implementation is described in ["Faster Clustering Coefficient Using Vertex Covers"](https://ieeexplore.ieee.org/document/6693348).
     ///
-    /// # Safety
-    /// This method will raise a panic if called on an directed graph as those
-    /// instances are not supported by this method.
-    unsafe fn get_undirected_number_of_triangles(&self, verbose: Option<bool>) -> EdgeT {
-        // The current graph must be undirected.
-        if self.is_directed() {
-            panic!("This method cannot be called on directed graphs!");
-        }
-
+    pub fn get_number_of_triangles(&self, verbose: Option<bool>) -> EdgeT {
         let verbose = verbose.unwrap_or(true);
 
         // First, we compute the set of nodes composing a vertex cover set.
@@ -45,36 +37,37 @@ impl Graph {
         vertex_cover
             .par_iter()
             .enumerate()
-            .filter_map(|(node_id, is_cover)| {
+            .filter_map(|(first, is_cover)| {
                 if *is_cover {
-                    Some(node_id as NodeT)
+                    Some(first as NodeT)
                 } else {
                     None
                 }
             })
             .progress_with(pb)
             // For each node in the cover
-            .flat_map(|node_id| {
+            .flat_map(|first| {
                 // We obtain the neighbours and collect them into a vector
                 // We store them instead of using them in a stream because we will need
                 // them multiple times below.
-                let first_order_neighbours = self
-                    .edges
-                    .get_unchecked_neighbours_node_ids_from_src_node_id(node_id);
+                let first_order_neighbours = unsafe {
+                    self.edges
+                        .get_unchecked_neighbours_node_ids_from_src_node_id(first)
+                };
 
-                first_order_neighbours
+                let index = first_order_neighbours.partition_point(|&second| second < first);
+
+                first_order_neighbours[..index]
                     .par_iter()
-                    .filter_map(move |&neighbour_node_id| {
-                        if neighbour_node_id != node_id
-                            && vertex_cover_reference[neighbour_node_id as usize]
-                        {
-                            Some((node_id, neighbour_node_id, first_order_neighbours))
+                    .filter_map(move |&second| {
+                        if second != first && vertex_cover_reference[second as usize] {
+                            Some((first, second, first_order_neighbours))
                         } else {
                             None
                         }
                     })
             })
-            .map(|(node_id, neighbour_node_id, first_order_neighbours)| {
+            .map(|(first, second, first_order_neighbours)| {
                 // We iterate over the neighbours
                 // We compute the intersection of the neighbours.
 
@@ -82,18 +75,17 @@ impl Graph {
                 let mut second_neighbour_index = 0;
                 let mut partial_number_of_triangles: EdgeT = 0;
 
-                let second_order_neighbours = self
-                    .edges
-                    .get_unchecked_neighbours_node_ids_from_src_node_id(neighbour_node_id);
+                let second_order_neighbours = unsafe {
+                    self.edges
+                        .get_unchecked_neighbours_node_ids_from_src_node_id(second)
+                };
 
                 while first_neighbour_index < first_order_neighbours.len()
                     && second_neighbour_index < second_order_neighbours.len()
                 {
                     let first_order_neighbour = first_order_neighbours[first_neighbour_index];
                     // If this is a self-loop, we march on forward
-                    if first_order_neighbour == neighbour_node_id
-                        || first_order_neighbour == node_id
-                    {
+                    if first_order_neighbour == second || first_order_neighbour == first {
                         first_neighbour_index += 1;
                         continue;
                     }
@@ -127,7 +119,6 @@ impl Graph {
                 partial_number_of_triangles
             })
             .sum::<EdgeT>()
-            / 2
     }
 
     /// Returns number of squares in the graph.
@@ -307,72 +298,6 @@ impl Graph {
             })
             .sum::<EdgeT>()
             / 4
-    }
-
-    /// Returns number of triangles in the graph without taking into account the weights.
-    ///
-    /// This is a naive implementation and is considerably less efficient
-    /// than Bader's version in the case of undirected graphs.
-    ///
-    /// # Safety
-    /// This method will raise a panic if called on an undirected graph becase
-    /// there is a more efficient one for these cases.
-    /// There is a method that automatically dispatches the more efficient method
-    /// according to the instance.
-    unsafe fn get_naive_number_of_triangles(&self) -> EdgeT {
-        if !self.is_directed() {
-            panic!("This method should not be called on undirected graphs! Use the efficient one!");
-        }
-        // We start iterating over the nodes using rayon to parallelize the procedure.
-        let number_of_triangles: EdgeT = self
-            .par_iter_node_ids()
-            // For each node in the cover
-            .map(|node_id| {
-                // We obtain the neighbours and collect them into a vector
-                // We store them instead of using them in a stream because we will need
-                // them multiple times below.
-                let neighbours = self
-                    .iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
-                    .filter(|&neighbour_node_id| node_id != neighbour_node_id)
-                    .collect::<Vec<NodeT>>();
-                // We iterate over the neighbours
-                neighbours
-                    .par_iter()
-                    // If the neighbour is a selfloop
-                    // we return 0 new triangles.
-                    .map(|&neighbour_node_id| {
-                        // We compute the intersection of the neighbours.
-                        iter_set::intersection(
-                            neighbours.iter().cloned(),
-                            self.iter_unchecked_neighbour_node_ids_from_source_node_id(
-                                neighbour_node_id,
-                            ),
-                        )
-                        .filter(|&inner_neighbour_id| inner_neighbour_id != neighbour_node_id)
-                        .count() as EdgeT
-                    })
-                    .sum::<EdgeT>()
-            })
-            .sum::<EdgeT>();
-        number_of_triangles
-    }
-
-    /// Returns total number of triangles ignoring the weights.
-    ///
-    /// # Arguments
-    /// `verbose`: Option<bool> - Whether to show a loading bar. By default, True.
-    ///
-    /// The method dispatches the fastest method according to the current
-    /// graph instance. Specifically:
-    /// - For directed graphs it will use the naive algorithm.
-    /// - For undirected graphs it will use Bader's version.
-    ///
-    pub fn get_number_of_triangles(&self, verbose: Option<bool>) -> EdgeT {
-        if self.is_directed() {
-            unsafe { self.get_naive_number_of_triangles() }
-        } else {
-            unsafe { self.get_undirected_number_of_triangles(verbose) }
-        }
     }
 
     /// Returns total number of squares ignoring the weights.

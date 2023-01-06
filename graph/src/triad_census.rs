@@ -794,7 +794,6 @@ impl Graph {
                                 && third < second
                                 && !self.has_edge_from_node_ids(first, third))
                         {
-                            // TODO! FIX! THIS IS NOT NODE SPECIFIC!
                             let (first_tricode, second_tricode, third_tricode) =
                                 triadic_code(&self, first, second, third);
                             tradic_census[dimensionality * third as usize + third_tricode as usize]
