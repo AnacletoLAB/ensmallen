@@ -171,16 +171,25 @@ impl Graph {
             .map(|(first, first_order_neighbours)|{
                 let thread_id = rayon::current_thread_index().expect("current_thread_id not called from a rayon thread. This should not be possible because this is in a Rayon Thread Pool.");
                 let bitvec = unsafe{&mut (*bitvecs.get())[thread_id]};
+                let mut partial_squares_number = 0;
                 bitvec.clear();
 
-                first_order_neighbours.iter().copied().map(|second|{
-                    unsafe{self.iter_unchecked_neighbour_node_ids_from_source_node_id(second)}
-                    .take_while(|&third| third < first)
-                    .filter(|&third| vertex_cover_reference[third as usize] && !unsafe{bitvec.replace_unchecked(third as usize, true)})
-                    .map(|third| {
+                for &second in first_order_neighbours {
+                    let second_order_neighbours = unsafe{self.edges
+                        .get_unchecked_neighbours_node_ids_from_src_node_id(second as NodeT)};
+                    for &third in second_order_neighbours {
+                        if third >= first {
+                            break;
+                        }
+                        if !vertex_cover_reference[third as usize] {
+                            continue;
+                        }
+                        if unsafe{bitvec.replace_unchecked(third as usize, true)} {
+                            continue;
+                        }
+
                         let third_order_neighbours = unsafe{self.edges
                             .get_unchecked_neighbours_node_ids_from_src_node_id(third as NodeT)};
-
                         let mut first_neighbour_index = 0;
                         let mut third_neighbour_index = 0;
                         let mut in_vertex_cover: EdgeT = 0;
@@ -211,20 +220,23 @@ impl Graph {
                             first_neighbour_index += 1;
                             third_neighbour_index += 1;
 
-                            if vertex_cover_reference[first_order_neighbour as usize] {
+                            let forth = first_order_neighbour;
+
+                            if vertex_cover_reference[forth as usize] {
                                 in_vertex_cover += 1;
                             } else {
                                 not_in_vertex_cover += 1;
                             };
                         }
-                        (in_vertex_cover + not_in_vertex_cover)
+                        partial_squares_number += (in_vertex_cover + not_in_vertex_cover)
                             * (in_vertex_cover + not_in_vertex_cover).saturating_sub(1)
                             + not_in_vertex_cover * not_in_vertex_cover.saturating_sub(1)
-                            + 2 * not_in_vertex_cover * in_vertex_cover
-                    }).sum::<EdgeT>()
-                }).sum::<EdgeT>()
-            })
-            .sum::<EdgeT>()
+                            + 2 * not_in_vertex_cover * in_vertex_cover;
+                    }
+                }
+                
+                partial_squares_number
+            }).sum::<EdgeT>()
     }
 
     /// Returns total number of triads in the graph without taking into account weights.
