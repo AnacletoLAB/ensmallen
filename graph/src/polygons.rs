@@ -236,7 +236,7 @@ impl Graph {
                 }
                 
                 partial_squares_number
-            }).sum::<EdgeT>()
+            }).sum::<EdgeT>() / 4
     }
 
     /// Returns total number of triads in the graph without taking into account weights.
