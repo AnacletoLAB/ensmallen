@@ -147,7 +147,7 @@ impl Graph {
 
         let bitvecs = ThreadDataRaceAware::new(
             (0..rayon::current_num_threads())
-                .map(|_| bitvec![u64, Lsb0; 1; self.get_number_of_nodes() as usize])
+                .map(|_| bitvec![u64, Lsb0; 0; self.get_number_of_nodes() as usize])
                 .collect::<Vec<_>>(),
         );
 
