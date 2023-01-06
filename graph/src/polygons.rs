@@ -1,10 +1,8 @@
 use super::*;
+use bitvec::prelude::*;
 use indicatif::ParallelProgressIterator;
-use rayon::iter::IndexedParallelIterator;
-use rayon::iter::IntoParallelIterator;
-use rayon::iter::IntoParallelRefIterator;
-use rayon::iter::IntoParallelRefMutIterator;
 use rayon::iter::ParallelIterator;
+use rayon::prelude::*;
 use std::sync::atomic::{AtomicU64, Ordering};
 
 impl Graph {
@@ -129,15 +127,7 @@ impl Graph {
     /// # References
     /// This implementation is described in ["Faster Clustering Coefficient Using Vertex Covers"](https://ieeexplore.ieee.org/document/6693348).
     ///
-    /// # Safety
-    /// This method will raise a panic if called on an directed graph as those
-    /// instances are not supported by this method.
-    unsafe fn get_undirected_number_of_squares(&self, verbose: Option<bool>) -> EdgeT {
-        // The current graph must be undirected.
-        if self.is_directed() {
-            panic!("This method cannot be called on directed graphs!");
-        }
-
+    pub fn get_number_of_squares(&self, verbose: Option<bool>) -> EdgeT {
         // First, we compute the set of nodes composing a vertex cover set.
         // This vertex cover is NOT minimal, but is a 2-approximation.
         let vertex_cover = self
@@ -154,6 +144,12 @@ impl Graph {
         let verbose = verbose.unwrap_or(true);
 
         let pb = get_loading_bar(verbose, "Computing number of squares", vertex_cover_size);
+
+        let bitvecs = ThreadDataRaceAware::new(
+            (0..rayon::current_num_threads())
+                .map(|_| bitvec![u64, Lsb0; 1; self.get_number_of_nodes() as usize])
+                .collect::<Vec<_>>(),
+        );
 
         let vertex_cover_reference = vertex_cover.as_slice();
 
@@ -172,52 +168,48 @@ impl Graph {
                 }
             })
             .progress_with(pb)
-            .map(|(first, first_order_neighbours)| {
-                vertex_cover
-                    .iter()
-                    .enumerate()
-                    .filter_map(|(second, is_cover)| {
-                        if *is_cover && first != second as NodeT {
-                            Some((second as NodeT, unsafe {
-                                self.edges
-                                    .get_unchecked_neighbours_node_ids_from_src_node_id(
-                                        second as NodeT,
-                                    )
-                            }))
-                        } else {
-                            None
-                        }
-                    })
-                    .map(|(second, second_order_neighbours)| {
+            .map(|(first, first_order_neighbours)|{
+                let thread_id = rayon::current_thread_index().expect("current_thread_id not called from a rayon thread. This should not be possible because this is in a Rayon Thread Pool.");
+                let bitvec = unsafe{&mut (*bitvecs.get())[thread_id]};
+                bitvec.clear();
+
+                first_order_neighbours.iter().copied().map(|second|{
+                    unsafe{self.iter_unchecked_neighbour_node_ids_from_source_node_id(second)}
+                    .take_while(|&third| third < first)
+                    .filter(|&third| vertex_cover_reference[third as usize] && !unsafe{bitvec.replace_unchecked(third as usize, true)})
+                    .map(|third| {
+                        let third_order_neighbours = unsafe{self.edges
+                            .get_unchecked_neighbours_node_ids_from_src_node_id(third as NodeT)};
+
                         let mut first_neighbour_index = 0;
-                        let mut second_neighbour_index = 0;
+                        let mut third_neighbour_index = 0;
                         let mut in_vertex_cover: EdgeT = 0;
                         let mut not_in_vertex_cover: EdgeT = 0;
 
                         while first_neighbour_index < first_order_neighbours.len()
-                            && second_neighbour_index < second_order_neighbours.len()
+                            && third_neighbour_index < third_order_neighbours.len()
                         {
                             let first_order_neighbour =
                                 first_order_neighbours[first_neighbour_index];
                             // If this is a self-loop, we march on forward
-                            if first_order_neighbour == second || first_order_neighbour == first {
+                            if first_order_neighbour == third || first_order_neighbour == first {
                                 first_neighbour_index += 1;
                                 continue;
                             }
                             // If this is not an intersection, we march forward
-                            let second_order_neighbour =
-                                second_order_neighbours[second_neighbour_index];
-                            if first_order_neighbour < second_order_neighbour {
+                            let third_order_neighbour =
+                                third_order_neighbours[third_neighbour_index];
+                            if first_order_neighbour < third_order_neighbour {
                                 first_neighbour_index += 1;
                                 continue;
                             }
-                            if first_order_neighbour > second_order_neighbour {
-                                second_neighbour_index += 1;
+                            if first_order_neighbour > third_order_neighbour {
+                                third_neighbour_index += 1;
                                 continue;
                             }
                             // If we reach here, we are in an intersection.
                             first_neighbour_index += 1;
-                            second_neighbour_index += 1;
+                            third_neighbour_index += 1;
 
                             if vertex_cover_reference[first_order_neighbour as usize] {
                                 in_vertex_cover += 1;
@@ -229,93 +221,10 @@ impl Graph {
                             * (in_vertex_cover + not_in_vertex_cover).saturating_sub(1)
                             + not_in_vertex_cover * not_in_vertex_cover.saturating_sub(1)
                             + 2 * not_in_vertex_cover * in_vertex_cover
-                    })
-                    .sum::<EdgeT>()
+                    }).sum::<EdgeT>()
+                }).sum::<EdgeT>()
             })
             .sum::<EdgeT>()
-    }
-
-    /// Returns number of squares in the graph, using a naive algorithm.
-    ///
-    /// # Arguments
-    /// * `verbose`: Option<bool> - Whether to show a loading bar. By default, True.
-    unsafe fn get_number_of_squares_naive(&self, verbose: Option<bool>) -> EdgeT {
-        let verbose = verbose.unwrap_or(true);
-        let pb = get_loading_bar(
-            verbose,
-            "Computing number of squares",
-            self.get_number_of_nodes() as usize,
-        );
-
-        // We start iterating over the nodes in the cover using rayon to parallelize the procedure.
-        self.par_iter_node_ids()
-            .progress_with(pb)
-            .map(|first| {
-                let first_order_neighbours = unsafe {
-                    self.edges
-                        .get_unchecked_neighbours_node_ids_from_src_node_id(first as NodeT)
-                };
-                self.iter_node_ids()
-                    .map(|second| {
-                        let second_order_neighbours = self
-                            .edges
-                            .get_unchecked_neighbours_node_ids_from_src_node_id(second as NodeT);
-
-                        let mut first_neighbour_index = 0;
-                        let mut second_neighbour_index = 0;
-                        let mut overlap_cardinality: EdgeT = 0;
-
-                        while first_neighbour_index < first_order_neighbours.len()
-                            && second_neighbour_index < second_order_neighbours.len()
-                        {
-                            let first_order_neighbour =
-                                first_order_neighbours[first_neighbour_index];
-                            // If this is a self-loop, we march on forward
-                            if first_order_neighbour == second || first_order_neighbour == first {
-                                first_neighbour_index += 1;
-                                continue;
-                            }
-                            // If this is not an intersection, we march forward
-                            let second_order_neighbour =
-                                second_order_neighbours[second_neighbour_index];
-                            if first_order_neighbour < second_order_neighbour {
-                                first_neighbour_index += 1;
-                                continue;
-                            }
-                            if first_order_neighbour > second_order_neighbour {
-                                second_neighbour_index += 1;
-                                continue;
-                            }
-                            // If we reach here, we are in an intersection.
-                            first_neighbour_index += 1;
-                            second_neighbour_index += 1;
-
-                            overlap_cardinality += 1;
-                        }
-                        overlap_cardinality * overlap_cardinality.saturating_sub(1)
-                    })
-                    .sum::<EdgeT>()
-            })
-            .sum::<EdgeT>()
-            / 4
-    }
-
-    /// Returns total number of squares ignoring the weights.
-    ///
-    /// # Arguments
-    /// `verbose`: Option<bool> - Whether to show a loading bar. By default, True.
-    ///
-    /// The method dispatches the fastest method according to the current
-    /// graph instance. Specifically:
-    /// - For directed graphs it will use the naive algorithm.
-    /// - For undirected graphs it will use Bader's version.
-    ///
-    pub fn get_number_of_squares(&self, verbose: Option<bool>) -> EdgeT {
-        if self.is_directed() {
-            unsafe { self.get_number_of_squares_naive(verbose) }
-        } else {
-            unsafe { self.get_undirected_number_of_squares(verbose) }
-        }
     }
 
     /// Returns total number of triads in the graph without taking into account weights.
@@ -474,73 +383,6 @@ impl Graph {
                     .fetch_add(second_triangles, Ordering::Relaxed);
             });
 
-        unsafe { std::mem::transmute::<Vec<AtomicU64>, Vec<EdgeT>>(node_triangles_number) }
-    }
-
-    /// Returns number of triangles in the graph without taking into account the weights.
-    ///
-    /// This is a naive implementation and is considerably less efficient
-    /// than Bader's version in the case of undirected graphs.
-    ///
-    /// # Arguments
-    /// * `verbose`: Option<bool> - Whether to show a loading bar.
-    ///
-    /// # Safety
-    /// This method will raise a panic if called on an directed graph becase
-    /// there is a more efficient one for these cases.
-    fn get_naive_number_of_triangles_per_node(&self, verbose: Option<bool>) -> Vec<EdgeT> {
-        if !self.is_directed() {
-            panic!("This method should not be called on directed graphs as there is a more efficient one!");
-        }
-        // Number of nodes per triangles
-        let node_triangles_number = unsafe {
-            std::mem::transmute::<Vec<EdgeT>, Vec<AtomicU64>>(vec![
-                0;
-                self.get_number_of_nodes()
-                    as usize
-            ])
-        };
-        let verbose = verbose.unwrap_or(true);
-        let pb = get_loading_bar(
-            verbose,
-            "Computing number of triangles per node",
-            self.get_number_of_nodes() as usize,
-        );
-        // We start iterating over the nodes using rayon to parallelize the procedure.
-        self.par_iter_node_ids()
-            .progress_with(pb)
-            // For each node in the cover
-            .for_each(|node_id| {
-                // We obtain the neighbours and collect them into a vector
-                // We store them instead of using them in a stream because we will need
-                // them multiple times below.
-                let neighbours = unsafe {
-                    self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
-                        .filter(|&neighbour_node_id| node_id != neighbour_node_id)
-                        .collect::<Vec<NodeT>>()
-                };
-
-                neighbours
-                    .iter()
-                    // If the neighbour is a selfloop
-                    // we return 0 new triangles.
-                    .for_each(|&neighbour_node_id| {
-                        // We compute the intersection of the neighbours.
-                        node_triangles_number[node_id as usize].fetch_add(
-                            iter_set::intersection(neighbours.iter().cloned(), unsafe {
-                                self.iter_unchecked_neighbour_node_ids_from_source_node_id(
-                                    neighbour_node_id,
-                                )
-                            })
-                            .filter(|&inner_neighbour_id| {
-                                inner_neighbour_id != neighbour_node_id
-                                    && inner_neighbour_id != node_id
-                            })
-                            .count() as EdgeT,
-                            Ordering::Relaxed,
-                        );
-                    });
-            });
         unsafe { std::mem::transmute::<Vec<AtomicU64>, Vec<EdgeT>>(node_triangles_number) }
     }
 
