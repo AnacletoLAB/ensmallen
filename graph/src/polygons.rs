@@ -358,10 +358,7 @@ impl Graph {
     /// # Safety
     /// This method does not support directed graphs and will raise a panic.
     /// It should automatically dispatched the naive version for these cases.
-    fn get_undirected_number_of_triangles_per_node(&self, verbose: Option<bool>) -> Vec<EdgeT> {
-        if self.is_directed() {
-            panic!("This method does not work for directed graphs!");
-        }
+    pub fn get_number_of_triangles_per_node(&self, verbose: Option<bool>) -> Vec<EdgeT> {
         let node_triangles_number = unsafe {
             std::mem::transmute::<Vec<EdgeT>, Vec<AtomicU64>>(vec![
                 0;
@@ -407,7 +404,9 @@ impl Graph {
                         .get_unchecked_neighbours_node_ids_from_src_node_id(first)
                 };
 
-                first_order_neighbours
+                let index = first_order_neighbours.partition_point(|&second| second < first);
+
+                first_order_neighbours[..index]
                     .par_iter()
                     .filter_map(move |&second| {
                         if second != first && vertex_cover_reference[second as usize] {
@@ -475,14 +474,7 @@ impl Graph {
                     .fetch_add(second_triangles, Ordering::Relaxed);
             });
 
-        let mut node_triangles_number =
-            unsafe { std::mem::transmute::<Vec<AtomicU64>, Vec<EdgeT>>(node_triangles_number) };
-        node_triangles_number
-            .par_iter_mut()
-            .for_each(|triangles_number| {
-                *triangles_number /= 2;
-            });
-        node_triangles_number
+        unsafe { std::mem::transmute::<Vec<AtomicU64>, Vec<EdgeT>>(node_triangles_number) }
     }
 
     /// Returns number of triangles in the graph without taking into account the weights.
@@ -550,24 +542,6 @@ impl Graph {
                     });
             });
         unsafe { std::mem::transmute::<Vec<AtomicU64>, Vec<EdgeT>>(node_triangles_number) }
-    }
-
-    /// Returns number of triangles in the graph without taking into account the weights.
-    ///
-    /// The method dispatches the fastest method according to the current
-    /// graph instance. Specifically:
-    /// - For directed graphs it will use the naive algorithm.
-    /// - For undirected graphs it will use Bader's version.
-    ///
-    /// # Arguments
-    /// * `verbose`: Option<bool> - Whether to show a loading bar.
-    ///
-    pub fn get_number_of_triangles_per_node(&self, verbose: Option<bool>) -> Vec<EdgeT> {
-        if self.is_directed() {
-            self.get_naive_number_of_triangles_per_node(verbose)
-        } else {
-            self.get_undirected_number_of_triangles_per_node(verbose)
-        }
     }
 
     /// Returns iterator over the clustering coefficients for all nodes in the graph.
