@@ -1,14 +1,16 @@
 use super::*;
 use xxhash_rust::xxh3::Xxh3;
-use rayon::prelude::*;
+use siphasher::sip::SipHasher24;
+use std::hash::Hasher;
+use ahash::AHasher;
 
 #[derive(Clone)]
 pub enum Hasher {
     Simple(u64),
     XorShift(u64),
-    Crc32(),
+    AHasher(AHasher),
     Xxh3(Xxh3),
-    SipHash3(),
+    SipHash(SipHasher24),
 }
 
 impl Hasher {
@@ -16,12 +18,12 @@ impl Hasher {
         match hasher_name {
             "simple" => Ok(Hasher::Simple(0x88b0fa3d8539f266)),
             "xorshift" => Ok(Hasher::XorShift(0x88b0fa3d8539f266)),
-            "crc32" => Ok(Hasher::Crc32()),
+            "ahasher" => Ok(Hasher::AHasher(AHasher::default())),
             "xxh3" => Ok(Hasher::Xxh3(Xxh3::new())),
-            "siphash3" => Ok(Hasher::SipHash3()),
+            "siphash" => Ok(Hasher::SipHash(SipHasher24::new())),
             _ => Err(format!(
                 "The hasher name {} is not a valid one the available ones are: {:?}",
-                hasher_name, &["simple", "xorshift", "crc32", "xxh3", "siphash3"],
+                hasher_name, &["simple", "xorshift", "crc32", "xxh3", "ahasher"],
             )),
         }
     }
@@ -31,6 +33,8 @@ impl Hasher {
             Hasher::Simple(state) => state as u32,
             Hasher::XorShift(state) => state as u32,
             Hasher::Xxh3(hasher) => hasher.digest() as u32,
+            Hasher::SipHash(hasher) => hasher.finish() as u32,
+            Hasher::AHasher(hasher) => hasher.finish() as u32,
             _ => todo!(),
         }
     }
@@ -56,6 +60,12 @@ impl UpdateHash<u16> for Hasher {
                 hasher.update(&[0xe8, 0xa8, 0xef, 0x9d, 0xbe, 0xe1, 0x7c, 0x01]);
                 hasher.update(&value.to_le_bytes());
             },
+            Hasher::SipHash(hasher) => {
+                hasher.write_u16(value);
+            },
+            Hasher::AHasher(hasher) => {
+                hasher.write_u16(value);
+            },
             _ => todo!(),
         }
     }
@@ -77,6 +87,12 @@ impl UpdateHash<u32> for Hasher {
                 hasher.update(&[0x67, 0x30, 0xf7, 0x12, 0x31, 0xc0, 0xa1, 0xd4]);
                 hasher.update(&value.to_le_bytes());
             },
+            Hasher::SipHash(hasher) => {
+                hasher.write_u32(value);
+            },
+            Hasher::AHasher(hasher) => {
+                hasher.write_u32(value);
+            },
             _ => todo!(),
         }
     }
@@ -97,6 +113,12 @@ impl UpdateHash<u64> for Hasher {
             Hasher::Xxh3(hasher) => {
                 hasher.update(&[0xec, 0xef, 0x7c, 0xae, 0x90, 0x60, 0xb2, 0x6f]);
                 hasher.update(&value.to_le_bytes());
+            },
+            Hasher::SipHash(hasher) => {
+                hasher.write_u64(value);
+            },
+            Hasher::AHasher(hasher) => {
+                hasher.write_u64(value);
             },
             _ => todo!(),
         }

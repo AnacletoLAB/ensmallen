@@ -58,6 +58,8 @@ tags = {path="./tags/"}
 atoi_radix10 = { git = "https://github.com/gilescope/atoi_radix10"}
 parallel_frontier = {git="https://github.com/zommiommy/parallel_frontier"}
 xxhash-rust = {version ="0.8.6", features=["xxh3"]}
+siphasher = "0.3"
+ahash = "0.8.2"
 
 [target.'cfg(unix)'.dependencies]
 nix = "0.22.0"
