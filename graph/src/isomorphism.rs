@@ -44,7 +44,7 @@ impl Graph {
                         &ets.ids[min_edge_id as usize..max_edge_id as usize]
                     });
 
-                    let hasher = Hasher::new(hash_name).unwrap();
+                    let mut hasher = Hasher::new(hash_name).unwrap();
 
                     unsafe{graph.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)}
                         .enumerate()
