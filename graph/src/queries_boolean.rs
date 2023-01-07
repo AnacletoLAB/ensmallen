@@ -342,6 +342,9 @@ impl Graph {
             return false;
         }
 
+        // TODO FINISH
+        todo!();
+
         let (first_min_edge_id, first_max_edge_id) = self
             .edges
             .get_unchecked_minmax_edge_ids_from_source_node_id(first_node_id);
@@ -408,14 +411,19 @@ impl Graph {
             if first_neighbour_id == second_node_id {
                 first_index += 1;
                 first_has_edge_to_second = true;
+                // TODO! save the edge type and edge weight and compare it!
                 continue;
             }
 
             if second_neighbour_id == first_node_id {
                 second_index += 1;
                 second_has_edge_to_first = true;
+                // TODO! save the edge type and edge weight and compare it!
                 continue;
             }
+
+            // Otherwise, excluded the case where we have either
+            // a self-loop
         }
 
         if first_has_edge_to_second != second_has_edge_to_first {

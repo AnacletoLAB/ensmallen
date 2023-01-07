@@ -243,7 +243,8 @@ impl Graph {
     /// # Safety
     /// If the given edge ID does not exist in the current graph the method will cause an out of bounds.
     pub unsafe fn get_unchecked_source_node_id_from_edge_id(&self, edge_id: EdgeT) -> NodeT {
-        self.edges.get_unchecked_source_node_id_from_edge_id(edge_id)
+        self.edges
+            .get_unchecked_source_node_id_from_edge_id(edge_id)
     }
 
     #[inline(always)]
@@ -255,7 +256,8 @@ impl Graph {
     /// # Safety
     /// If the given edge ID does not exist in the current graph the method will cause an out of bounds.
     pub unsafe fn get_unchecked_destination_node_id_from_edge_id(&self, edge_id: EdgeT) -> NodeT {
-        self.edges.get_unchecked_destination_node_id_from_edge_id(edge_id)
+        self.edges
+            .get_unchecked_destination_node_id_from_edge_id(edge_id)
     }
 
     /// Returns source node ID corresponding to given edge ID.
@@ -280,6 +282,74 @@ impl Graph {
     pub fn get_destination_node_id_from_edge_id(&self, edge_id: EdgeT) -> Result<NodeT> {
         self.validate_edge_id(edge_id)
             .map(|edge_id| unsafe { self.get_unchecked_destination_node_id_from_edge_id(edge_id) })
+    }
+
+    /// Returns number of self-loops associated to the provided node ID.
+    ///
+    /// # Arguments
+    /// * `node_id`: NodeT - The node ID for which to retrieve the number of self-loops.
+    ///
+    /// # Implementative details
+    /// While in normal graph this value would be either one or zero, and therefore
+    /// would be closer to a simpler boolean value, in multi-graphs this value may
+    /// be considerably higher.
+    ///
+    /// # Safety
+    /// This method may panic if the provided node ID is outside
+    /// the number of nodes in the graph.
+    pub unsafe fn get_unchecked_number_of_selfloops_from_node_id(&self, node_id: NodeT) -> NodeT {
+        // First we check whether the graph has self-loops.
+        if !self.has_selfloops() {
+            return 0;
+        }
+
+        let neighbours = self
+            .edges
+            .get_unchecked_neighbours_node_ids_from_src_node_id(node_id);
+
+        // If it has, we find the position where the self-loops start.
+        let breaking_point = neighbours.partition_point(|&second| second < node_id);
+
+        neighbours[breaking_point..]
+            .iter()
+            .take_while(|&&second| second == node_id)
+            .count() as NodeT
+    }
+
+    /// Returns number of self-loops associated to the provided node ID.
+    ///
+    /// # Arguments
+    /// * `node_id`: NodeT - The node ID for which to retrieve the number of self-loops.
+    ///
+    /// # Implementative details
+    /// While in normal graph this value would be either one or zero, and therefore
+    /// would be closer to a simpler boolean value, in multi-graphs this value may
+    /// be considerably higher.
+    ///
+    /// # Raises
+    /// This method may panic if the provided node ID is outside
+    /// the number of nodes in the graph.
+    pub fn get_number_of_selfloops_from_node_id(&self, node_id: NodeT) -> Result<NodeT> {
+        self.validate_node_id(node_id)
+            .map(|node_id| unsafe { self.get_unchecked_number_of_selfloops_from_node_id(node_id) })
+    }
+
+    /// Returns number of self-loops associated to the provided node name.
+    ///
+    /// # Arguments
+    /// * `node_name`: &str - The node name for which to retrieve the number of self-loops.
+    ///
+    /// # Implementative details
+    /// While in normal graph this value would be either one or zero, and therefore
+    /// would be closer to a simpler boolean value, in multi-graphs this value may
+    /// be considerably higher.
+    ///
+    /// # Raises
+    /// This method may panic if the provided node ID is outside
+    /// the number of nodes in the graph.
+    pub fn get_number_of_selfloops_from_node_name(&self, node_name: &str) -> Result<NodeT> {
+        self.get_node_id_from_node_name(node_name)
+            .map(|node_id| unsafe { self.get_unchecked_number_of_selfloops_from_node_id(node_id) })
     }
 
     /// Returns source node name corresponding to given edge ID.
@@ -651,6 +721,51 @@ impl Graph {
         let (min_edge_id, max_edge_id) =
             self.get_unchecked_minmax_edge_ids_from_source_node_id(node_id);
         (max_edge_id - min_edge_id) as NodeT
+    }
+
+    /// Returns number of outbound nodes for a given node ID, adjusted by removing the number of selfloops.
+    ///
+    /// # Arguments
+    /// * `node_id`: NodeT - Integer ID of the node.
+    ///
+    /// # Safety
+    /// If the given node ID does not exist in the current graph the method will raise a panic.
+    pub unsafe fn get_unchecked_selfloop_adjusted_node_degree_from_node_id(
+        &self,
+        node_id: NodeT,
+    ) -> NodeT {
+        self.get_unchecked_node_degree_from_node_id(node_id)
+            - self.get_unchecked_number_of_selfloops_from_node_id(node_id)
+    }
+
+    /// Returns number of outbound nodes for a given node ID, adjusted by removing the number of selfloops.
+    ///
+    /// # Arguments
+    /// * `node_id`: NodeT - Integer ID of the node.
+    ///
+    /// # Raises
+    /// * ValueError - If the given node ID does not exist in the current graph the method will raise a panic.
+    pub fn get_selfloop_adjusted_node_degree_from_node_id(&self, node_id: NodeT) -> Result<NodeT> {
+        self.validate_node_id(node_id).map(|node_id| unsafe {
+            self.get_unchecked_selfloop_adjusted_node_degree_from_node_id(node_id)
+        })
+    }
+
+    /// Returns number of outbound nodes for a given node name, adjusted by removing the number of selfloops.
+    ///
+    /// # Arguments
+    /// * `node_name`: &str - Integer name of the node.
+    ///
+    /// # Raises
+    /// * ValueError - If the given node name does not exist in the current graph the method will raise a panic.
+    pub fn get_selfloop_adjusted_node_degree_from_node_name(
+        &self,
+        node_name: &str,
+    ) -> Result<NodeT> {
+        self.get_node_id_from_node_name(node_name)
+            .map(|node_id| unsafe {
+                self.get_unchecked_selfloop_adjusted_node_degree_from_node_id(node_id)
+            })
     }
 
     /// Returns the weighted sum of outbound neighbours of given node.
@@ -1647,7 +1762,8 @@ impl Graph {
         &self,
         src: NodeT,
     ) -> (EdgeT, EdgeT) {
-        self.edges.get_unchecked_minmax_edge_ids_from_source_node_id(src)
+        self.edges
+            .get_unchecked_minmax_edge_ids_from_source_node_id(src)
     }
 
     /// Return range of outbound edges IDs which have as source the given Node.
