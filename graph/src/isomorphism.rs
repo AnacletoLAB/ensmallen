@@ -1,15 +1,15 @@
 use super::*;
 //use crate::hashes::*;
+use crate::hashes::*;
 use isomorphism_iter::EqualBucketsParIter;
 use log::info;
-use crate::hashes::*;
 use rayon::prelude::*;
 
 impl Graph {
     /// Returns parallel iterator of vectors of isomorphic node groups IDs.
     ///
     /// # Arguments
-    /// * `minimum_node_degree`: Option<NodeT> - Minimum node degree for the topological synonims. By default, 5.
+    /// * `minimum_node_degree`: Option<NodeT> - Minimum node degree for the topological synonims. By default, 5 or maximum node degree, whathever is smaller.
     /// * `hash_strategy`: Option<&str> - The name of the hash strategy to be used. By default, `general` is used.
     /// * `number_of_neighbours_for_hash`: Option<usize> - The number of neighbours to consider for the hash. By default 10.
     /// * `hash_name`: Option<&str> - The name of the hash to be used.
@@ -20,8 +20,12 @@ impl Graph {
         number_of_neighbours_for_hash: Option<usize>,
         hash_name: Option<&str>,
     ) -> Result<impl ParallelIterator<Item = Vec<NodeT>> + '_> {
+        // If the graph does not have edges, it is pointless.
+        self.must_have_edges()?;
+        
         // If no minimum node degree is provided, we use arbitrarily 5.
-        let minimum_node_degree = minimum_node_degree.unwrap_or(5);
+        let minimum_node_degree =
+            minimum_node_degree.unwrap_or(5.min(self.get_maximum_node_degree().unwrap_or(0)));
 
         let hash_strategy = hash_strategy.unwrap_or("general");
         // TODO! update when we have good experimental results
@@ -47,7 +51,7 @@ impl Graph {
 
                     let mut hasher = Hasher::new(hash_name).unwrap();
 
-                    //hasher.update(&node_type_ids);
+                    hasher.update(&node_type_ids);
 
                     unsafe{graph.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)}
                         .enumerate()
