@@ -24,6 +24,7 @@ pub const DENY_LIST: &[&str] = &[
     "mmap",
     "data_structures",
     "isomorphism_iter",
+    "hashes",
 ];
 
 pub fn skip_file(path: &str, deny_list: &'static [&'static str]) -> bool {
