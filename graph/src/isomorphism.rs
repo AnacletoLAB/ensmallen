@@ -1,5 +1,5 @@
 use super::*;
-use crate::hashes::Hasher;
+use crate::hashes::*;
 use isomorphism_iter::EqualBucketsParIter;
 use log::info;
 use rayon::prelude::*;
@@ -55,10 +55,10 @@ impl Graph {
                             if dst == node_id || dst_node_degree == node_degree {
                                 None
                             } else {
-                                Some((dst, dst_node_degree, edge_type_ids.as_ref().map(|ids| ids[dst])))
+                                Some((dst, dst_node_degree, edge_type_ids.as_ref().and_then(|ids| ids[dst as usize])))
                             }
                         }).take(number_of_neighbours_for_hash).for_each(|(node, node_degree, edge_type_id)|{
-                            hasher.update((node, node_degree, edge_type_id));
+                            hasher.update(&(node, node_degree, edge_type_id));
                         });
                         hasher.digest()
                 }
@@ -85,7 +85,10 @@ impl Graph {
                 if node_degree < minimum_node_degree {
                     None
                 } else {
-                    Some((hash(&self, node_id, number_of_neighbours_for_hash, hash_name), node_id))
+                    Some((
+                        hash(&self, node_id, number_of_neighbours_for_hash, hash_name),
+                        node_id,
+                    ))
                 }
             })
             .collect::<Vec<(u32, NodeT)>>();
@@ -505,14 +508,14 @@ impl Graph {
         minimum_node_degree: Option<NodeT>,
         hash_strategy: Option<&str>,
         number_of_neighbours_for_hash: Option<usize>,
-        hash_name: Option<&str>
+        hash_name: Option<&str>,
     ) -> Result<impl ParallelIterator<Item = Vec<String>> + '_> {
         Ok(self
             .par_iter_isomorphic_node_ids_groups(
                 minimum_node_degree,
                 hash_strategy,
                 number_of_neighbours_for_hash,
-                hash_name
+                hash_name,
             )?
             .map(move |group| {
                 group
@@ -535,14 +538,14 @@ impl Graph {
         minimum_node_degree: Option<NodeT>,
         hash_strategy: Option<&str>,
         number_of_neighbours_for_hash: Option<usize>,
-        hash_name: Option<&str>
+        hash_name: Option<&str>,
     ) -> Result<Vec<Vec<NodeT>>> {
         Ok(self
             .par_iter_isomorphic_node_ids_groups(
                 minimum_node_degree,
                 hash_strategy,
                 number_of_neighbours_for_hash,
-                hash_name
+                hash_name,
             )?
             .collect())
     }
@@ -567,7 +570,7 @@ impl Graph {
                 minimum_node_degree,
                 hash_strategy,
                 number_of_neighbours_for_hash,
-                hash_name
+                hash_name,
             )?
             .collect())
     }
@@ -586,7 +589,13 @@ impl Graph {
         number_of_neighbours_for_hash: Option<usize>,
         hash_name: Option<&str>,
     ) -> Result<NodeT> {
-        Ok(self.par_iter_isomorphic_node_ids_groups(minimum_node_degree, hash_strategy, number_of_neighbours_for_hash, hash_name)?
+        Ok(self
+            .par_iter_isomorphic_node_ids_groups(
+                minimum_node_degree,
+                hash_strategy,
+                number_of_neighbours_for_hash,
+                hash_name,
+            )?
             .count() as NodeT)
     }
 
