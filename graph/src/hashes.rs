@@ -1,6 +1,5 @@
 use super::*;
 use xxhash_rust::xxh3::Xxh3;
-use rayon::prelude::*;
 
 #[derive(Clone)]
 pub enum Hasher {
