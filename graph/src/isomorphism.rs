@@ -1,7 +1,8 @@
 use super::*;
-use crate::hashes::*;
+//use crate::hashes::*;
 use isomorphism_iter::EqualBucketsParIter;
 use log::info;
+use crate::hashes::*;
 use rayon::prelude::*;
 
 impl Graph {
@@ -45,6 +46,8 @@ impl Graph {
                     });
 
                     let mut hasher = Hasher::new(hash_name).unwrap();
+
+                    //hasher.update(&node_type_ids);
 
                     unsafe{graph.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)}
                         .enumerate()
