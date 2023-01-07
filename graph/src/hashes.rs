@@ -103,7 +103,7 @@ impl UpdateHash<u64> for Hasher {
     }
 }
 
-impl<'a, T> UpdateHash<Option<T>> for Hasher 
+impl<T> UpdateHash<Option<T>> for Hasher 
 where 
     Self: UpdateHash<T>
 {
@@ -129,6 +129,19 @@ where
         });
     }
 }
+
+impl<'a, T> UpdateHash<&'a [T]> for Hasher 
+where 
+    Self: UpdateHash<T>
+{
+    fn update(&mut self, value: &&'a[T]) {
+        <Self as UpdateHash<u64>>::update(self, &0xd97a1905a8a4ef70_u64);
+        value.iter().for_each(|val| {
+            self.update(val);
+        });
+    }
+}
+
 
 impl<T> UpdateHash<(T,)> for Hasher 
 where 
