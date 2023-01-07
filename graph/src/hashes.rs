@@ -1,7 +1,7 @@
 use super::*;
 use xxhash_rust::xxh3::Xxh3;
 use siphasher::sip::SipHasher24;
-use std::hash::Hasher;
+use std::hash::Hasher as _;
 use ahash::AHasher;
 
 #[derive(Clone)]
@@ -61,10 +61,10 @@ impl UpdateHash<u16> for Hasher {
                 hasher.update(&value.to_le_bytes());
             },
             Hasher::SipHash(hasher) => {
-                hasher.write_u16(value);
+                hasher.write_u16(*value);
             },
             Hasher::AHasher(hasher) => {
-                hasher.write_u16(value);
+                hasher.write_u16(*value);
             },
             _ => todo!(),
         }
@@ -88,10 +88,10 @@ impl UpdateHash<u32> for Hasher {
                 hasher.update(&value.to_le_bytes());
             },
             Hasher::SipHash(hasher) => {
-                hasher.write_u32(value);
+                hasher.write_u32(*value);
             },
             Hasher::AHasher(hasher) => {
-                hasher.write_u32(value);
+                hasher.write_u32(*value);
             },
             _ => todo!(),
         }
@@ -115,10 +115,10 @@ impl UpdateHash<u64> for Hasher {
                 hasher.update(&value.to_le_bytes());
             },
             Hasher::SipHash(hasher) => {
-                hasher.write_u64(value);
+                hasher.write_u64(*value);
             },
             Hasher::AHasher(hasher) => {
-                hasher.write_u64(value);
+                hasher.write_u64(*value);
             },
             _ => todo!(),
         }
