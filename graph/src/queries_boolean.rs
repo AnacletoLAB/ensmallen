@@ -342,9 +342,6 @@ impl Graph {
             return false;
         }
 
-        // TODO FINISH
-        todo!();
-
         let (first_min_edge_id, first_max_edge_id) = self
             .edges
             .get_unchecked_minmax_edge_ids_from_source_node_id(first_node_id);
@@ -386,8 +383,10 @@ impl Graph {
         let mut first_index: usize = 0;
         let mut second_index: usize = 0;
 
-        let mut first_has_edge_to_second: bool = false;
-        let mut second_has_edge_to_first: bool = false;
+        let mut first_to_second_min_index: usize = 0;
+        let mut first_to_second_max_index: usize = 0;
+        let mut second_to_first_min_index: usize = 0;
+        let mut second_to_first_max_index: usize = 0;
 
         while first_index < first_neighbours.len() && second_index < second_neighbours.len() {
             let first_neighbour_id = first_neighbours[first_index];
@@ -409,25 +408,74 @@ impl Graph {
             // Second, we handle whether any of these edges are
             // connections between the two nodes we are evaluating.
             if first_neighbour_id == second_node_id {
+                first_to_second_min_index = first_to_second_min_index.min(first_index);
+                first_to_second_max_index = first_to_second_max_index.max(first_index);
                 first_index += 1;
-                first_has_edge_to_second = true;
-                // TODO! save the edge type and edge weight and compare it!
                 continue;
             }
 
             if second_neighbour_id == first_node_id {
+                second_to_first_min_index = second_to_first_min_index.min(second_index);
+                second_to_first_max_index = second_to_first_max_index.max(second_index);
                 second_index += 1;
-                second_has_edge_to_first = true;
-                // TODO! save the edge type and edge weight and compare it!
                 continue;
             }
 
-            // Otherwise, excluded the case where we have either
-            // a self-loop
+            // Otherwise, we need to check a complete match.
+            if first_neighbour_id != second_neighbour_id {
+                return false;
+            }
+
+            // Next, we check the edge types, if existing.
+            if let (Some(first_edge_types), Some(second_edge_types)) =
+                (&first_edge_types, &second_edge_types)
+            {
+                if first_edge_types[first_index] != second_edge_types[second_index] {
+                    return false;
+                }
+            }
+
+            // Third, we check the edge weights, also accounting for the possible float errors.
+            if let (Some(first_weights), Some(second_weights)) = (&first_weights, &second_weights) {
+                if (first_weights[first_index] - second_weights[second_index]).abs()
+                    > WeightT::EPSILON
+                {
+                    return false;
+                }
+            }
+
+            first_index += 1;
+            second_index += 1;
         }
 
-        if first_has_edge_to_second != second_has_edge_to_first {
+        // We check that the number of connections between the two
+        // nodes, if any, are simmetrical.
+        if second_to_first_max_index - second_to_first_min_index
+            != first_to_second_max_index - first_to_second_min_index
+        {
             return false;
+        }
+
+        // Next, we check the edge types, if existing.
+        if let (Some(first_edge_types), Some(second_edge_types)) =
+            (first_edge_types, second_edge_types)
+        {
+            if first_edge_types[first_to_second_min_index..first_to_second_max_index]
+                != second_edge_types[second_to_first_min_index..second_to_first_max_index]
+            {
+                return false;
+            }
+        }
+
+        // Third, we check the edge weights, also accounting for the possible float errors.
+        if let (Some(first_weights), Some(second_weights)) = (first_weights, second_weights) {
+            if first_weights[first_to_second_min_index..first_to_second_max_index]
+                .iter()
+                .zip(second_weights[second_to_first_min_index..second_to_first_max_index].iter())
+                .any(|(left, right)| (left - right).abs() > WeightT::EPSILON)
+            {
+                return false;
+            }
         }
 
         true
