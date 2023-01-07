@@ -76,6 +76,7 @@ mod filters;
 mod getters;
 mod graph;
 mod hash;
+mod hashes;
 mod holdouts;
 mod isomorphism;
 pub mod isomorphism_iter;

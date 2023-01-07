@@ -1,4 +1,5 @@
 use super::*;
+use crate::hashes::Hasher;
 use isomorphism_iter::EqualBucketsParIter;
 use log::info;
 use rayon::prelude::*;
@@ -16,7 +17,7 @@ impl Graph {
         minimum_node_degree: Option<NodeT>,
         hash_strategy: Option<&str>,
         number_of_neighbours_for_hash: Option<usize>,
-        hash_name: Option<&str>
+        hash_name: Option<&str>,
     ) -> Result<impl ParallelIterator<Item = Vec<NodeT>> + '_> {
         // If no minimum node degree is provided, we use arbitrarily 5.
         let minimum_node_degree = minimum_node_degree.unwrap_or(5);
@@ -26,11 +27,12 @@ impl Graph {
         let hash_name = hash_name.unwrap_or("xxh3");
         let number_of_neighbours_for_hash = number_of_neighbours_for_hash.unwrap_or(10);
 
-        
+        // Validate the provided hash name
+        let _ = Hasher::new(hash_name)?;
 
-        let hash: fn(&Graph, NodeT, usize) -> u32 = match hash_strategy {
+        let hash: fn(&Graph, NodeT, usize, &str) -> u32 = match hash_strategy {
             "general" => {
-                |graph: &Graph, node_id: NodeT, number_of_neighbours_for_hash: usize| {
+                |graph: &Graph, node_id: NodeT, number_of_neighbours_for_hash: usize, hash_name: &str| {
                     // First, we retrieve the 
                     let node_degree = unsafe{graph.get_unchecked_selfloop_adjusted_node_degree_from_node_id(node_id)};
 
@@ -42,6 +44,8 @@ impl Graph {
                         &ets.ids[min_edge_id as usize..max_edge_id as usize]
                     });
 
+                    let hasher = Hasher::new(hash_name).unwrap();
+
                     unsafe{graph.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)}
                         .enumerate()
                         .filter_map(|(_, dst)|{
@@ -51,19 +55,19 @@ impl Graph {
                             if dst == node_id || dst_node_degree == node_degree {
                                 None
                             } else {
-                                Some((dst ^ dst_node_degree).wrapping_add(0x0A2126995))
+                                Some((dst, dst_node_degree, edge_type_ids.as_ref().map(|ids| ids[dst])))
                             }
-                        }).take(number_of_neighbours_for_hash)
-                            .fold(node_degree, |a: u32, b: u32| {
-                            (a ^ b).wrapping_add(0x0A2126995)
-                        })
+                        }).take(number_of_neighbours_for_hash).for_each(|(node, node_degree, edge_type_id)|{
+                            hasher.update((node, node_degree, edge_type_id));
+                        });
+                        hasher.digest()
                 }
             },
             hash_strategy => {
                 return Err(format!(
                     concat!(
-                        "The provided hash name `{hash_strategy}` is not supported. ",
-                        "The supported hash names are:\n",
+                        "The provided hash strategy `{hash_strategy}` is not supported. ",
+                        "The supported hash strategys are:\n",
                         "* `general`, which supports isomorphic connected nodes with self-loops.",
                         "* `unconnected`, which does not supports isomorphic connected nodes with self-loops."
                     ),
@@ -81,7 +85,7 @@ impl Graph {
                 if node_degree < minimum_node_degree {
                     None
                 } else {
-                    Some((hash(&self, node_id, number_of_neighbours_for_hash), node_id))
+                    Some((hash(&self, node_id, number_of_neighbours_for_hash, hash_name), node_id))
                 }
             })
             .collect::<Vec<(u32, NodeT)>>();
@@ -495,13 +499,21 @@ impl Graph {
     /// * `minimum_node_degree`: Option<NodeT> - Minimum node degree for the topological synonims. By default, 5.
     /// * `hash_strategy`: Option<&str> - The name of the hash to be used. By default, `general` is used.
     /// * `number_of_neighbours_for_hash`: Option<usize> - The number of neighbours to consider for the hash. By default 10.
+    /// * `hash_name`: Option<&str> - The name of the hash to be used.
     pub fn par_iter_isomorphic_node_names_groups(
         &self,
         minimum_node_degree: Option<NodeT>,
         hash_strategy: Option<&str>,
         number_of_neighbours_for_hash: Option<usize>,
+        hash_name: Option<&str>
     ) -> Result<impl ParallelIterator<Item = Vec<String>> + '_> {
-        Ok(self.par_iter_isomorphic_node_ids_groups(minimum_node_degree, hash_strategy, number_of_neighbours_for_hash)?
+        Ok(self
+            .par_iter_isomorphic_node_ids_groups(
+                minimum_node_degree,
+                hash_strategy,
+                number_of_neighbours_for_hash,
+                hash_name
+            )?
             .map(move |group| {
                 group
                     .into_iter()
@@ -517,13 +529,21 @@ impl Graph {
     /// * `minimum_node_degree`: Option<NodeT> - Minimum node degree for the topological synonims. By default, 5.
     /// * `hash_strategy`: Option<&str> - The name of the hash to be used. By default, `general` is used.
     /// * `number_of_neighbours_for_hash`: Option<usize> - The number of neighbours to consider for the hash. By default 10.
+    /// * `hash_name`: Option<&str> - The name of the hash to be used.
     pub fn get_isomorphic_node_ids_groups(
         &self,
         minimum_node_degree: Option<NodeT>,
         hash_strategy: Option<&str>,
         number_of_neighbours_for_hash: Option<usize>,
+        hash_name: Option<&str>
     ) -> Result<Vec<Vec<NodeT>>> {
-        Ok(self.par_iter_isomorphic_node_ids_groups(minimum_node_degree, hash_strategy, number_of_neighbours_for_hash)?
+        Ok(self
+            .par_iter_isomorphic_node_ids_groups(
+                minimum_node_degree,
+                hash_strategy,
+                number_of_neighbours_for_hash,
+                hash_name
+            )?
             .collect())
     }
 
@@ -534,13 +554,21 @@ impl Graph {
     /// * `minimum_node_degree`: Option<NodeT> - Minimum node degree for the topological synonims. By default, 5.
     /// * `hash_strategy`: Option<&str> - The name of the hash to be used. By default, `general` is used.
     /// * `number_of_neighbours_for_hash`: Option<usize> - The number of neighbours to consider for the hash. By default 10.
+    /// * `hash_name`: Option<&str> - The name of the hash to be used.
     pub fn get_isomorphic_node_names_groups(
         &self,
         minimum_node_degree: Option<NodeT>,
         hash_strategy: Option<&str>,
         number_of_neighbours_for_hash: Option<usize>,
+        hash_name: Option<&str>,
     ) -> Result<Vec<Vec<String>>> {
-        Ok(self.par_iter_isomorphic_node_names_groups(minimum_node_degree, hash_strategy, number_of_neighbours_for_hash)?
+        Ok(self
+            .par_iter_isomorphic_node_names_groups(
+                minimum_node_degree,
+                hash_strategy,
+                number_of_neighbours_for_hash,
+                hash_name
+            )?
             .collect())
     }
 
@@ -548,12 +576,18 @@ impl Graph {
     ///
     /// # Arguments
     /// * `minimum_node_degree`: Option<NodeT> - Minimum node degree for the topological synonims. By default, 5.
+    /// * `hash_strategy`: Option<&str> - The name of the hash strategy to be used. By default, `general` is used.
+    /// * `number_of_neighbours_for_hash`: Option<usize> - The number of neighbours to consider for the hash. By default 10.
+    /// * `hash_name`: Option<&str> - The name of the hash to be used.
     pub fn get_number_of_isomorphic_node_groups(
         &self,
         minimum_node_degree: Option<NodeT>,
-    ) -> NodeT {
-        self.par_iter_isomorphic_node_ids_groups(minimum_node_degree, None, None).unwrap()
-            .count() as NodeT
+        hash_strategy: Option<&str>,
+        number_of_neighbours_for_hash: Option<usize>,
+        hash_name: Option<&str>,
+    ) -> Result<NodeT> {
+        Ok(self.par_iter_isomorphic_node_ids_groups(minimum_node_degree, hash_strategy, number_of_neighbours_for_hash, hash_name)?
+            .count() as NodeT)
     }
 
     /// Returns parallel iterator of vectors of isomorphic node types groups names.

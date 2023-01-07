@@ -1,5 +1,6 @@
-
+use super::*;
 use xxhash_rust::xxh3::Xxh3;
+use rayon::prelude::*;
 
 #[derive(Clone, Send)]
 pub enum Hasher {
@@ -89,7 +90,7 @@ where
     }
 }
 
-impl<T> UpdateHash<[T]> for Hasher 
+impl<T> UpdateHash<&[T]> for Hasher 
 where 
     Self: UpdateHash<T>
 {
