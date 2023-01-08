@@ -206,8 +206,8 @@ impl Graph {
                     &is_isomorphic_to_successor[root_index..size_of_homogeneous_hash_slice];
 
                 // Then, we count how many are isomorphic to their successor.
-                let number_of_initial_isomorphic_nodes =
-                    homogeneous_hash_is_isomorphic_to_successor
+                let number_of_initial_isomorphic_nodes = 1
+                    + homogeneous_hash_is_isomorphic_to_successor
                         .iter()
                         .take_while(|is_isomorphic_to_successor| **is_isomorphic_to_successor)
                         .count();
