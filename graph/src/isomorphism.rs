@@ -196,7 +196,7 @@ impl Graph {
 
             let current_node_hash = degree_bounded_hash_and_node_ids[root_index].0;
             // We begin by determining the size of the current contiguos hash slice.
-            let size_of_homogeneous_hash_slice = degree_bounded_hash_and_node_ids[root_index..]
+            let size_of_homogeneous_hash_slice = 1 + degree_bounded_hash_and_node_ids[root_index..]
                 .iter()
                 .take_while(|(node_hash, _)| *node_hash == current_node_hash)
                 .count();
