@@ -23,7 +23,7 @@ impl Hasher {
             "siphash" => Ok(Hasher::SipHash(SipHasher24::new())),
             _ => Err(format!(
                 "The hasher name {} is not a valid one the available ones are: {:?}",
-                hasher_name, &["simple", "xorshift", "crc32", "xxh3", "ahasher"],
+                hasher_name, &["simple", "xorshift", "ahasher", "xxh3", "siphash"],
             )),
         }
     }
