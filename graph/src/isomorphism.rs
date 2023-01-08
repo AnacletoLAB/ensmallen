@@ -4,6 +4,8 @@ use crate::hashes::*;
 use isomorphism_iter::EqualBucketsParIter;
 use log::info;
 use rayon::prelude::*;
+use std::collections::HashMap;
+use std::time::Instant;
 
 impl Graph {
     /// Returns parallel iterator of vectors of isomorphic node groups IDs.
@@ -19,10 +21,13 @@ impl Graph {
         hash_strategy: Option<&str>,
         number_of_neighbours_for_hash: Option<usize>,
         hash_name: Option<&str>,
-    ) -> Result<impl ParallelIterator<Item = Vec<NodeT>> + '_> {
+    ) -> Result<(
+        impl ParallelIterator<Item = Vec<NodeT>> + '_,
+        HashMap<&str, u128>,
+    )> {
         // If the graph does not have edges, it is pointless.
         self.must_have_edges()?;
-        
+
         // If no minimum node degree is provided, we use arbitrarily 5.
         let minimum_node_degree =
             minimum_node_degree.unwrap_or(5.min(self.get_maximum_node_degree().unwrap_or(0)));
@@ -83,8 +88,10 @@ impl Graph {
             }
         };
 
+        let mut times_hash_map = HashMap::new();
+        let collecting_degree_bounded_nodes_and_hash = Instant::now();
+
         // We collect the node IDs that have degree higher than the provided one.
-        // TODO! Explore other possible hash!
         let mut degree_bounded_hash_and_node_ids = self
             .par_iter_node_ids()
             .zip(self.par_iter_node_degrees())
@@ -100,6 +107,15 @@ impl Graph {
             })
             .collect::<Vec<(u32, NodeT)>>();
 
+        times_hash_map.insert(
+            "collecting_degree_bounded_nodes_and_hash",
+            collecting_degree_bounded_nodes_and_hash
+                .elapsed()
+                .as_millis(),
+        );
+
+        let sorting_degree_bounded_nodes_and_hash = Instant::now();
+
         // Then we sort the nodes, according to the score.
         // TODO! This sorting operation is implemented using quicksort
         // and is general porpose, including support for swapping
@@ -109,7 +125,12 @@ impl Graph {
         // is sensibly faster.
         degree_bounded_hash_and_node_ids.par_sort_unstable();
 
-        Ok(
+        times_hash_map.insert(
+            "sorting_degree_bounded_nodes_and_hash",
+            sorting_degree_bounded_nodes_and_hash.elapsed().as_millis(),
+        );
+
+        Ok((
             unsafe { EqualBucketsParIter::new(degree_bounded_hash_and_node_ids) }.flat_map(
                 move |candidate_isomorphic_group_slice| {
                     // First, we proceed assuming for the best case scenario which
@@ -227,7 +248,8 @@ impl Graph {
                     candidate_isomorphic_groups
                 },
             ),
-        )
+            times_hash_map,
+        ))
     }
 
     /// Returns parallel iterator of vectors of approximated isomorphic node type group IDs.
@@ -523,7 +545,7 @@ impl Graph {
                 hash_strategy,
                 number_of_neighbours_for_hash,
                 hash_name,
-            )?
+            )?.0
             .map(move |group| {
                 group
                     .into_iter()
@@ -553,7 +575,7 @@ impl Graph {
                 hash_strategy,
                 number_of_neighbours_for_hash,
                 hash_name,
-            )?
+            )?.0
             .collect())
     }
 
@@ -595,15 +617,29 @@ impl Graph {
         hash_strategy: Option<&str>,
         number_of_neighbours_for_hash: Option<usize>,
         hash_name: Option<&str>,
-    ) -> Result<NodeT> {
-        Ok(self
-            .par_iter_isomorphic_node_ids_groups(
-                minimum_node_degree,
-                hash_strategy,
-                number_of_neighbours_for_hash,
-                hash_name,
-            )?
-            .count() as NodeT)
+    ) -> Result<HashMap<&str, u128>> {
+        let (iterator, mut times_hash_map) = self.par_iter_isomorphic_node_ids_groups(
+            minimum_node_degree,
+            hash_strategy,
+            number_of_neighbours_for_hash,
+            hash_name,
+        )?;
+
+        let counting_isomorphic_groups = Instant::now();
+
+        let number_of_isomorphic_node_groups = iterator.count() as u128;
+
+        times_hash_map.insert(
+            "counting_isomorphic_groups",
+            counting_isomorphic_groups.elapsed().as_millis(),
+        );
+
+        times_hash_map.insert(
+            "number_of_isomorphic_node_groups",
+            number_of_isomorphic_node_groups,
+        );
+
+        Ok(times_hash_map)
     }
 
     /// Returns parallel iterator of vectors of isomorphic node types groups names.
