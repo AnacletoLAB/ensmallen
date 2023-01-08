@@ -199,11 +199,11 @@ impl Graph {
 
                 // We keep the current homogeneous_hash_slice to avoid having
                 // to offset everything by root index.
-                let homogeneous_hash_slice =
-                    &degree_bounded_hash_and_node_ids[root_index..size_of_homogeneous_hash_slice];
+                let homogeneous_hash_slice = &degree_bounded_hash_and_node_ids
+                    [root_index..root_index + size_of_homogeneous_hash_slice];
 
-                let homogeneous_hash_is_isomorphic_to_successor =
-                    &is_isomorphic_to_successor[root_index..size_of_homogeneous_hash_slice];
+                let homogeneous_hash_is_isomorphic_to_successor = &is_isomorphic_to_successor
+                    [root_index..root_index + size_of_homogeneous_hash_slice];
 
                 // Then, we count how many are isomorphic to their successor.
                 let number_of_initial_isomorphic_nodes = 1
