@@ -219,6 +219,12 @@ impl Graph {
                 // Of course, we need to check that we would not be left with only
                 // a single node in the case of an slice of two candidate isomorphic nodes.
                 if number_of_initial_isomorphic_nodes + 1 >= size_of_homogeneous_hash_slice {
+                    // Handling case where the first node is followed by nodes that are not
+                    // directly isomorphic to the first one, and we are in a case
+                    // where we only have two slices.
+                    if number_of_initial_isomorphic_nodes == 1 {
+                        return vec![];
+                    }
                     return vec![homogeneous_hash_slice[..number_of_initial_isomorphic_nodes]
                         .iter()
                         .map(|&(_, node_id)| node_id)
