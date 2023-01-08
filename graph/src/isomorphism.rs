@@ -1,7 +1,6 @@
 use super::*;
 //use crate::hashes::*;
 use crate::hashes::*;
-use isomorphism_iter::EqualBucketsParIter;
 use log::info;
 use rayon::prelude::*;
 use std::collections::HashMap;
@@ -107,6 +106,18 @@ impl Graph {
             })
             .collect::<Vec<(u32, NodeT)>>();
 
+        if degree_bounded_hash_and_node_ids.len() <= 1 {
+            return Err(format!(
+                concat!(
+                    "The provided parametrization in the current graph, ",
+                    "including specifically minimum_node_degree=`{minimum_node_degree}`, ",
+                    "has caused the list of degree-bounded nodes to be empty. ",
+                    "Consider relaxing the constraints."
+                ),
+                minimum_node_degree = minimum_node_degree
+            ));
+        }
+
         times_hash_map.insert(
             "collecting_degree_bounded_nodes_and_hash",
             collecting_degree_bounded_nodes_and_hash
@@ -130,124 +141,179 @@ impl Graph {
             sorting_degree_bounded_nodes_and_hash.elapsed().as_millis(),
         );
 
+        let computing_is_isomorphic_to_successor = Instant::now();
+
+        let mut is_isomorphic_to_successor = degree_bounded_hash_and_node_ids
+            .par_windows(2)
+            .map(|window| {
+                let (left_hash, left_node) = window[0];
+                let (right_hash, right_node) = window[1];
+                left_hash == right_hash
+                    && unsafe { self.are_unchecked_isomorphic_from_node_ids(left_node, right_node) }
+            })
+            .collect::<Vec<bool>>();
+
+        is_isomorphic_to_successor.push(false);
+
+        times_hash_map.insert(
+            "computing_is_isomorphic_to_successor",
+            computing_is_isomorphic_to_successor.elapsed().as_millis(),
+        );
+
+        let computing_root_nodes = Instant::now();
+
+        let root_indices: Vec<usize> = degree_bounded_hash_and_node_ids
+            .par_windows(2)
+            .enumerate()
+            .filter_map(|(i, window)| {
+                // A node is a root of a candidate isomorphic slice
+                // if the hash of the node is equal to the one of the next node
+                // while being different from the one of the previous node.
+                if window[0].0 == window[1].0
+                    && (i == 0 || degree_bounded_hash_and_node_ids[i - 1].0 != window[0].0)
+                {
+                    Some(i)
+                } else {
+                    None
+                }
+            })
+            .collect::<Vec<usize>>();
+
+        times_hash_map.insert(
+            "computing_root_nodes",
+            computing_root_nodes.elapsed().as_millis(),
+        );
+
         Ok((
-            unsafe { EqualBucketsParIter::new(degree_bounded_hash_and_node_ids) }.flat_map(
-                move |candidate_isomorphic_group_slice| {
-                    // First, we proceed assuming for the best case scenario which
-                    // would also be the fastest: if the `candidate_isomorphic_group_slice` is
-                    // indeed an isomorphic group of nodes.
-                    let first = candidate_isomorphic_group_slice[0].1;
-                    // We proceed to count how many of these nodes are effectively isomorphic
-                    // to the first one.
-                    let number_of_initial_isomorphic_nodes = 1 + candidate_isomorphic_group_slice
-                        [1..]
+            root_indices.into_par_iter().flat_map(move |root_index| {
+                // First, we proceed assuming for the best case scenario which
+                // would also be the fastest: if the slice defined by the current root node is
+                // indeed an isomorphic group of nodes.
+
+                let current_node_hash = degree_bounded_hash_and_node_ids[root_index].0;
+                // We begin by determining the size of the current contiguos hash slice.
+                let size_of_homogeneous_hash_slice = degree_bounded_hash_and_node_ids[root_index..]
+                    .iter()
+                    .take_while(|(node_hash, _)| *node_hash == current_node_hash)
+                    .count();
+
+                // We keep the current homogeneous_hash_slice to avoid having
+                // to offset everything by root index.
+                let homogeneous_hash_slice =
+                    &degree_bounded_hash_and_node_ids[root_index..size_of_homogeneous_hash_slice];
+
+                let homogeneous_hash_is_isomorphic_to_successor =
+                    &is_isomorphic_to_successor[root_index..size_of_homogeneous_hash_slice];
+
+                // Then, we count how many are isomorphic to their successor.
+                let number_of_initial_isomorphic_nodes =
+                    homogeneous_hash_is_isomorphic_to_successor
                         .iter()
-                        .copied()
-                        .take_while(|&(_, second)| unsafe {
-                            self.are_unchecked_isomorphic_from_node_ids(first, second)
-                        })
+                        .take_while(|is_isomorphic_to_successor| **is_isomorphic_to_successor)
                         .count();
 
-                    // If all of the nodes are isomorphic to the first node,
-                    // then we have finished.
-                    if number_of_initial_isomorphic_nodes == candidate_isomorphic_group_slice.len()
-                    {
-                        return vec![candidate_isomorphic_group_slice
-                            .iter()
-                            .map(|&(_, node_id)| node_id)
-                            .collect::<Vec<NodeT>>()];
-                    }
-
-                    // We can do the same thing also for the case where we are only off by
-                    // one node, since that is surely an hash singleton.
-                    // Of course, we need to check that we would not be left with only
-                    // a single node in the case of an slice of two candidate isomorphic nodes.
-                    if number_of_initial_isomorphic_nodes > 1
-                        && number_of_initial_isomorphic_nodes
-                            == candidate_isomorphic_group_slice.len() - 1
-                    {
-                        return vec![candidate_isomorphic_group_slice
-                            [..number_of_initial_isomorphic_nodes]
-                            .iter()
-                            .map(|&(_, node_id)| node_id)
-                            .collect::<Vec<NodeT>>()];
-                    }
-
-                    // Otherwise, we are in a situation where either we have multiple
-                    // isomorphic groups that were smashed togheter by an hash collision,
-                    // or we have hash singletons, that is nodes that do not actually share
-                    // the neighbours with these nodes but have the same hash.
-
-                    // The two initial isomorphic groups are composed by
-                    let mut candidate_isomorphic_groups: Vec<Vec<NodeT>> = vec![
-                        // The nodes that we have checked as being isomorphic
-                        candidate_isomorphic_group_slice[..number_of_initial_isomorphic_nodes]
-                            .iter()
-                            .map(|&(_, node_id)| node_id)
-                            .collect::<Vec<NodeT>>(),
-                        // The first node that appeared to be not isomorphic to the previous ones
-                        vec![
-                            candidate_isomorphic_group_slice[number_of_initial_isomorphic_nodes].1,
-                        ],
-                    ];
-
-                    // We set a flag that determines whether we will need to filter out isomorphic groups with
-                    // only a single element in them.
-                    let mut number_of_isomorphic_groups_with_size_one =
-                        if number_of_initial_isomorphic_nodes == 1 {
-                            // If the number of isomorphic nodes we have managed to validate
-                            // is nada, i.e. only the first one, we currently have two potentially hash singletons
-                            // in the array `candidate_isomorphic_groups`.
-                            2
-                        } else {
-                            // Otherwise, we have only one potential hash singleton in the array.
-                            1
-                        };
-                    // We start to iterate to the nodes that immediately follow the last node that
-                    // we have already checked previously, and we keep all of the subsequent nodes that have indeed the same local hash.
-                    for (_, other_node_id) in candidate_isomorphic_group_slice
-                        [(number_of_initial_isomorphic_nodes + 1)..]
+                // If all of the nodes are isomorphic to the first node,
+                // then we have finished.
+                // We can do the same thing also for the case where we are only off by
+                // one node, since that is surely an hash singleton.
+                // Of course, we need to check that we would not be left with only
+                // a single node in the case of an slice of two candidate isomorphic nodes.
+                if number_of_initial_isomorphic_nodes + 1 >= size_of_homogeneous_hash_slice {
+                    return vec![homogeneous_hash_slice[..number_of_initial_isomorphic_nodes]
                         .iter()
-                        .copied()
-                    {
-                        // Then, since within the same hash there might be multiple isomorphic node groups in collision
-                        // we need to identify which one of these groups is actually isomorphic with the current node.
-                        if let Some(isomorphic_group) =
-                            //
-                            candidate_isomorphic_groups
-                                .iter_mut()
-                                .find(|candidate_isomorphic_group| unsafe {
-                                    self.are_unchecked_isomorphic_from_node_ids(
-                                        candidate_isomorphic_group[0],
-                                        other_node_id,
-                                    )
-                                })
-                        {
-                            if isomorphic_group.len() == 1 {
-                                number_of_isomorphic_groups_with_size_one -= 1;
-                            }
-                            isomorphic_group.push(other_node_id);
-                        } else {
-                            // We may have found another isomorphic group, or, possibly, a single node
-                            // with a colliding hash. As such, we will need to verify whether this group
-                            // will effectively grow or not.
-                            number_of_isomorphic_groups_with_size_one += 1;
-                            candidate_isomorphic_groups.push(vec![other_node_id]);
-                        }
-                    }
-                    // We check whether there may be groups with a single node,
-                    // which of course do not count as isomorphic groups
-                    if number_of_isomorphic_groups_with_size_one > 0 {
-                        candidate_isomorphic_groups
-                            .drain_filter(|candidate_isomorphic_group| {
-                                candidate_isomorphic_group.len() < 2
-                            })
-                            .for_each(|_| {});
-                    }
+                        .map(|&(_, node_id)| node_id)
+                        .collect::<Vec<NodeT>>()];
+                }
 
+                // Otherwise, we are in a situation where either we have multiple
+                // isomorphic groups that were smashed togheter by an hash collision,
+                // or we have hash singletons, that is nodes that do not actually share
+                // the neighbours with these nodes but have the same hash.
+
+                // The two initial isomorphic groups are composed by
+                let mut candidate_isomorphic_groups: Vec<Vec<NodeT>> = vec![
+                    // The nodes that we have checked as being isomorphic
+                    homogeneous_hash_slice[..number_of_initial_isomorphic_nodes]
+                        .iter()
+                        .map(|&(_, node_id)| node_id)
+                        .collect::<Vec<NodeT>>(),
+                    // The first node that appeared to be not isomorphic to the previous ones
+                    vec![homogeneous_hash_slice[number_of_initial_isomorphic_nodes].1],
+                ];
+
+                // We set a flag that determines whether we will need to filter out isomorphic groups with
+                // only a single element in them.
+                let mut number_of_isomorphic_groups_with_size_one =
+                    if number_of_initial_isomorphic_nodes == 1 {
+                        // If the number of isomorphic nodes we have managed to validate
+                        // is nada, i.e. only the first one, we currently have two potentially hash singletons
+                        // in the array `candidate_isomorphic_groups`.
+                        2
+                    } else {
+                        // Otherwise, we have only one potential hash singleton in the array.
+                        1
+                    };
+                // We start to iterate to the nodes that immediately follow the last node that
+                // we have already checked previously, and we keep all of the subsequent nodes that have indeed the same local hash.
+
+                let mut current_node_index = number_of_initial_isomorphic_nodes + 1;
+                while current_node_index < size_of_homogeneous_hash_slice {
+                    // Then, since within the same hash there might be multiple isomorphic node groups in collision
+                    // we need to identify which one of these groups is actually isomorphic with the current node.
+                    if let Some(isomorphic_group) =
+                        //
+                        candidate_isomorphic_groups.iter_mut().find(
+                            |candidate_isomorphic_group| unsafe {
+                                self.are_unchecked_isomorphic_from_node_ids(
+                                    candidate_isomorphic_group[0],
+                                    homogeneous_hash_slice[current_node_index].1,
+                                )
+                            },
+                        )
+                    {
+                        if isomorphic_group.len() == 1 {
+                            number_of_isomorphic_groups_with_size_one -= 1;
+                        }
+                        // Each time we start to find another isomorphic
+                        // portion, we can add all of the subsequent nodes
+                        // that are isomorphic to the current node.
+                        isomorphic_group.push(homogeneous_hash_slice[current_node_index].1);
+                        while homogeneous_hash_is_isomorphic_to_successor[current_node_index] {
+                            current_node_index += 1;
+                            isomorphic_group.push(homogeneous_hash_slice[current_node_index].1);
+                        }
+                    } else {
+                        // We may have found another isomorphic group, or, possibly, a single node
+                        // with a colliding hash. As such, we will need to verify whether this group
+                        // will effectively grow or not.
+
+                        let mut new_isomorphic_group =
+                            vec![homogeneous_hash_slice[current_node_index].1];
+                        while homogeneous_hash_is_isomorphic_to_successor[current_node_index] {
+                            current_node_index += 1;
+                            new_isomorphic_group.push(homogeneous_hash_slice[current_node_index].1);
+                        }
+
+                        if new_isomorphic_group.len() == 1 {
+                            number_of_isomorphic_groups_with_size_one += 1;
+                        }
+
+                        candidate_isomorphic_groups.push(new_isomorphic_group);
+                    }
+                    current_node_index += 1;
+                }
+                // We check whether there may be groups with a single node,
+                // which of course do not count as isomorphic groups
+                if number_of_isomorphic_groups_with_size_one > 0 {
                     candidate_isomorphic_groups
-                },
-            ),
+                        .drain_filter(|candidate_isomorphic_group| {
+                            candidate_isomorphic_group.len() < 2
+                        })
+                        .for_each(|_| {});
+                }
+
+                candidate_isomorphic_groups
+            }),
             times_hash_map,
         ))
     }
@@ -545,7 +611,8 @@ impl Graph {
                 hash_strategy,
                 number_of_neighbours_for_hash,
                 hash_name,
-            )?.0
+            )?
+            .0
             .map(move |group| {
                 group
                     .into_iter()
@@ -575,7 +642,8 @@ impl Graph {
                 hash_strategy,
                 number_of_neighbours_for_hash,
                 hash_name,
-            )?.0
+            )?
+            .0
             .collect())
     }
 
