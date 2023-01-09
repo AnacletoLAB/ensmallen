@@ -68,7 +68,7 @@ impl Graph {
 
                     unsafe { graph.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id) }
                         .enumerate()
-                        .filter_map(|(_, dst)| {
+                        .filter_map(|(i, dst)| {
                             let dst_node_degree = unsafe {
                                 graph.get_unchecked_selfloop_adjusted_node_degree_from_node_id(dst)
                             };
@@ -80,7 +80,7 @@ impl Graph {
                                 Some((
                                     dst,
                                     dst_node_degree,
-                                    edge_type_ids.as_ref().and_then(|ids| ids[dst as usize]),
+                                    edge_type_ids.as_ref().and_then(|ids| ids[i]),
                                 ))
                             }
                         })
@@ -123,7 +123,7 @@ impl Graph {
                         });
                     hasher.digest()
                 }
-            },
+            }
             "only_degree" => |graph: &Graph, node_id: NodeT, _: usize, hash_name: &str| {
                 let node_degree = unsafe { graph.get_unchecked_node_degree_from_node_id(node_id) };
 
@@ -138,9 +138,9 @@ impl Graph {
                     concat!(
                         "The provided hash strategy `{hash_strategy}` is not supported. ",
                         "The supported hash strategys are:\n",
-                        "* `general`, which supports isomorphic connected nodes with self-loops.",
-                        "* `only_degree`, which only considers the node degree.",
-                        "* `only_neighbours`, which only considers the node neighbours."
+                        "* `general`, which supports isomorphic connected nodes with self-loops.\n",
+                        "* `only_degree`, which only considers the node degree.\n",
+                        "* `only_neighbours`, which only considers the node neighbours.\n"
                     ),
                     hash_strategy = hash_strategy
                 ))
