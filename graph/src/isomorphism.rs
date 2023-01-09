@@ -1,9 +1,9 @@
 use super::*;
 //use crate::hashes::*;
 use crate::hashes::*;
+use crate::isomorphism_iter::EqualBucketsParIter;
 use log::info;
 use rayon::prelude::*;
-use crate::isomorphism_iter::EqualBucketsParIter;
 use std::collections::HashMap;
 use std::time::Instant;
 
@@ -76,13 +76,24 @@ impl Graph {
                         hasher.digest()
                 }
             },
+            "only_degree" => {
+                |graph: &Graph, node_id: NodeT, _: usize, hash_name: &str| {
+                    let node_degree = unsafe{graph.get_unchecked_node_degree_from_node_id(node_id)};
+
+                    let mut hasher = Hasher::new(hash_name).unwrap();
+
+                    hasher.update(&node_degree);
+
+                    hasher.digest()
+                }
+            },
             hash_strategy => {
                 return Err(format!(
                     concat!(
                         "The provided hash strategy `{hash_strategy}` is not supported. ",
                         "The supported hash strategys are:\n",
                         "* `general`, which supports isomorphic connected nodes with self-loops.",
-                        "* `unconnected`, which does not supports isomorphic connected nodes with self-loops."
+                        "* `only_degree`, which only considers the node degree."
                     ),
                     hash_strategy = hash_strategy
                 ))
