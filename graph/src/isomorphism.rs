@@ -42,15 +42,22 @@ impl Graph {
 
         let hash: fn(&Graph, NodeT, usize, &str) -> u32 = match hash_strategy {
             "general" => {
-                |graph: &Graph, node_id: NodeT, number_of_neighbours_for_hash: usize, hash_name: &str| {
-                    // First, we retrieve the 
-                    let node_degree = unsafe{graph.get_unchecked_selfloop_adjusted_node_degree_from_node_id(node_id)};
+                |graph: &Graph,
+                 node_id: NodeT,
+                 number_of_neighbours_for_hash: usize,
+                 hash_name: &str| {
+                    // First, we retrieve the
+                    let node_degree = unsafe {
+                        graph.get_unchecked_selfloop_adjusted_node_degree_from_node_id(node_id)
+                    };
 
-                    let node_type_ids = unsafe{graph.get_unchecked_node_type_ids_from_node_id(node_id)};
+                    let node_type_ids =
+                        unsafe { graph.get_unchecked_node_type_ids_from_node_id(node_id) };
 
                     let edge_type_ids = graph.edge_types.as_ref().as_ref().map(|ets| {
-                        let (min_edge_id, max_edge_id) =
-                        unsafe{graph.get_unchecked_minmax_edge_ids_from_source_node_id(node_id)};
+                        let (min_edge_id, max_edge_id) = unsafe {
+                            graph.get_unchecked_minmax_edge_ids_from_source_node_id(node_id)
+                        };
                         &ets.ids[min_edge_id as usize..max_edge_id as usize]
                     });
 
@@ -59,33 +66,72 @@ impl Graph {
                     hasher.update(&node_degree);
                     hasher.update(&node_type_ids);
 
-                    unsafe{graph.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)}
+                    unsafe { graph.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id) }
                         .enumerate()
-                        .filter_map(|(_, dst)|{
-                            let dst_node_degree = unsafe{graph.get_unchecked_selfloop_adjusted_node_degree_from_node_id(node_id)};
+                        .filter_map(|(_, dst)| {
+                            let dst_node_degree = unsafe {
+                                graph.get_unchecked_selfloop_adjusted_node_degree_from_node_id(dst)
+                            };
                             // We remove self-loops or nodes with the same node degree
                             // as these may be connected isomorphic nodes.
                             if dst == node_id || dst_node_degree == node_degree {
                                 None
                             } else {
-                                Some((dst, dst_node_degree, edge_type_ids.as_ref().and_then(|ids| ids[dst as usize])))
+                                Some((
+                                    dst,
+                                    dst_node_degree,
+                                    edge_type_ids.as_ref().and_then(|ids| ids[dst as usize]),
+                                ))
                             }
-                        }).take(number_of_neighbours_for_hash).for_each(|(node, node_degree, edge_type_id)|{
+                        })
+                        .take(number_of_neighbours_for_hash)
+                        .for_each(|(node, node_degree, edge_type_id)| {
                             hasher.update(&(node, node_degree, edge_type_id));
                         });
-                        hasher.digest()
+                    hasher.digest()
                 }
-            },
-            "only_degree" => {
-                |graph: &Graph, node_id: NodeT, _: usize, hash_name: &str| {
-                    let node_degree = unsafe{graph.get_unchecked_node_degree_from_node_id(node_id)};
+            }
+            "only_neighbours" => {
+                |graph: &Graph,
+                 node_id: NodeT,
+                 number_of_neighbours_for_hash: usize,
+                 hash_name: &str| {
+                    // First, we retrieve the
+                    let node_degree = unsafe {
+                        graph.get_unchecked_selfloop_adjusted_node_degree_from_node_id(node_id)
+                    };
 
                     let mut hasher = Hasher::new(hash_name).unwrap();
 
-                    hasher.update(&node_degree);
-
+                    unsafe { graph.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id) }
+                        .enumerate()
+                        .filter_map(|(_, dst)| {
+                            let dst_node_degree = unsafe {
+                                graph.get_unchecked_selfloop_adjusted_node_degree_from_node_id(dst)
+                            };
+                            // We remove self-loops or nodes with the same node degree
+                            // as these may be connected isomorphic nodes.
+                            if dst == node_id || dst_node_degree == node_degree {
+                                None
+                            } else {
+                                Some(dst)
+                            }
+                        })
+                        .take(number_of_neighbours_for_hash)
+                        .for_each(|node| {
+                            hasher.update(&node);
+                        });
                     hasher.digest()
                 }
+            },
+            "only_degree" => |graph: &Graph, node_id: NodeT, _: usize, hash_name: &str| {
+                let node_degree = unsafe { graph.get_unchecked_node_degree_from_node_id(node_id) };
+
+                let mut hasher = Hasher::new(hash_name).unwrap();
+
+                hasher.update(&node_degree);
+
+                hasher.digest()
             },
             hash_strategy => {
                 return Err(format!(
@@ -93,7 +139,8 @@ impl Graph {
                         "The provided hash strategy `{hash_strategy}` is not supported. ",
                         "The supported hash strategys are:\n",
                         "* `general`, which supports isomorphic connected nodes with self-loops.",
-                        "* `only_degree`, which only considers the node degree."
+                        "* `only_degree`, which only considers the node degree.",
+                        "* `only_neighbours`, which only considers the node neighbours."
                     ),
                     hash_strategy = hash_strategy
                 ))
