@@ -74,7 +74,7 @@ impl Graph {
                             };
                             // We remove self-loops or nodes with the same node degree
                             // as these may be connected isomorphic nodes.
-                            if dst == node_id || dst_node_degree == node_degree {
+                            if dst_node_degree == node_degree {
                                 None
                             } else {
                                 Some((
@@ -111,7 +111,7 @@ impl Graph {
                             };
                             // We remove self-loops or nodes with the same node degree
                             // as these may be connected isomorphic nodes.
-                            if dst == node_id || dst_node_degree == node_degree {
+                            if dst_node_degree == node_degree {
                                 None
                             } else {
                                 Some(dst)

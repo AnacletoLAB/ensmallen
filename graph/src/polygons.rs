@@ -145,9 +145,15 @@ impl Graph {
 
         let pb = get_loading_bar(verbose, "Computing number of squares", vertex_cover_size);
 
+        // let bitvecs = ThreadDataRaceAware::new(
+        //     (0..rayon::current_num_threads())
+        //         .map(|_| bitvec![u64, Lsb0; 0; self.get_number_of_nodes() as usize])
+        //         .collect::<Vec<_>>(),
+        // );
+
         let bitvecs = ThreadDataRaceAware::new(
             (0..rayon::current_num_threads())
-                .map(|_| bitvec![u64, Lsb0; 0; self.get_number_of_nodes() as usize])
+                .map(|_| vec![false; self.get_number_of_nodes() as usize])
                 .collect::<Vec<_>>(),
         );
 
@@ -172,7 +178,8 @@ impl Graph {
                 let thread_id = rayon::current_thread_index().expect("current_thread_id not called from a rayon thread. This should not be possible because this is in a Rayon Thread Pool.");
                 let bitvec = unsafe{&mut (*bitvecs.get())[thread_id]};
                 let mut partial_squares_number = 0;
-                bitvec.fill(false);
+
+                bitvec.iter_mut().for_each(|v| {*v = false;});
 
                 for &second in first_order_neighbours {
                     let second_order_neighbours = unsafe{self.edges
@@ -181,12 +188,11 @@ impl Graph {
                         if third >= first {
                             break;
                         }
-                        if !vertex_cover_reference[third as usize] {
+                        if !vertex_cover_reference[third as usize] | bitvec[third as usize]{
                             continue;
                         }
-                        if unsafe{bitvec.replace_unchecked(third as usize, true)} {
-                            continue;
-                        }
+
+                        bitvec[third as usize] = true;
 
                         let third_order_neighbours = unsafe{self.edges
                             .get_unchecked_neighbours_node_ids_from_src_node_id(third as NodeT)};
