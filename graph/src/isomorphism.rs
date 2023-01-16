@@ -309,11 +309,9 @@ impl Graph {
                     // We check whether there may be groups with a single node,
                     // which of course do not count as isomorphic groups
                     if number_of_isomorphic_groups_with_size_one > 0 {
-                        candidate_isomorphic_groups
-                            .drain_filter(|candidate_isomorphic_group| {
-                                candidate_isomorphic_group.len() < 2
-                            })
-                            .for_each(|_| {});
+                        candidate_isomorphic_groups.retain(|candidate_isomorphic_group| {
+                            candidate_isomorphic_group.len() > 1
+                        });
                     }
 
                     candidate_isomorphic_groups
