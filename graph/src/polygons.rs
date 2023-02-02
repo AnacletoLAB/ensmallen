@@ -1,6 +1,6 @@
 use super::*;
+use bitvec::prelude::*;
 use indicatif::ParallelProgressIterator;
-use rayon::iter::ParallelIterator;
 use rayon::prelude::*;
 use std::sync::atomic::{AtomicU64, Ordering};
 
@@ -126,7 +126,7 @@ impl Graph {
     /// # References
     /// This implementation is described in ["Faster Clustering Coefficient Using Vertex Covers"](https://ieeexplore.ieee.org/document/6693348).
     ///
-    pub fn get_number_of_squares(&self, verbose: Option<bool>) -> EdgeT {
+    pub fn get_number_of_squares_tommy(&self, verbose: Option<bool>) -> EdgeT {
         // First, we compute the set of nodes composing a vertex cover set.
         // This vertex cover is NOT minimal, but is a 2-approximation.
         let vertex_cover = self
@@ -227,6 +227,127 @@ impl Graph {
             })
             .sum::<EdgeT>()
     }
+
+    /// Returns number of squares in the graph.
+    ///
+    /// # Arguments
+    /// `verbose`: Option<bool> - Whether to show a loading bar. By default, True.
+    ///
+    /// # References
+    /// This implementation is described in ["Faster Clustering Coefficient Using Vertex Covers"](https://ieeexplore.ieee.org/document/6693348).
+    ///
+    pub fn get_number_of_squares(&self, verbose: Option<bool>) -> EdgeT {
+        // First, we compute the set of nodes composing a vertex cover set.
+        // This vertex cover is NOT minimal, but is a 2-approximation.
+        let vertex_cover = self
+            .get_approximated_vertex_cover(
+                Some("decreasing_node_degree"),
+                Some(true),
+                Some(true),
+                None,
+            )
+            .unwrap();
+
+        let vertex_cover_size = vertex_cover.iter().filter(|cover| **cover).count();
+
+        let verbose = verbose.unwrap_or(true);
+
+        let pb = get_loading_bar(verbose, "Computing number of squares", vertex_cover_size);
+
+        let bitvecs = ThreadDataRaceAware::new(
+            (0..rayon::current_num_threads())
+                .map(|_| bitvec![u64, Lsb0; 0; self.get_number_of_nodes() as usize])
+                .collect::<Vec<_>>(),
+        );
+
+        let vertex_cover_reference = vertex_cover.as_slice();
+
+        // We start iterating over the nodes in the cover using rayon to parallelize the procedure.
+        vertex_cover
+            .par_iter()
+            .enumerate()
+            .filter_map(|(first, is_cover)| {
+                if *is_cover {
+                    Some((first as NodeT, unsafe {
+                        self.edges
+                            .get_unchecked_neighbours_node_ids_from_src_node_id(first as NodeT)
+                    }))
+                } else {
+                    None
+                }
+            })
+            .progress_with(pb)
+            .map(|(first, first_order_neighbours)|{
+                let thread_id = rayon::current_thread_index().expect("current_thread_id not called from a rayon thread. This should not be possible because this is in a Rayon Thread Pool.");
+                let bitvec = unsafe{&mut (*bitvecs.get())[thread_id]};
+                let mut partial_squares_number = 0;
+                bitvec.fill(false);
+
+                for &second in first_order_neighbours {
+                    let second_order_neighbours = unsafe{self.edges
+                        .get_unchecked_neighbours_node_ids_from_src_node_id(second as NodeT)};
+                    for &third in second_order_neighbours {
+                        if third >= first {
+                            break;
+                        }
+                        if !vertex_cover_reference[third as usize] {
+                            continue;
+                        }
+                        if unsafe{bitvec.replace_unchecked(third as usize, true)} {
+                            continue;
+                        }
+
+                        let third_order_neighbours = unsafe{self.edges
+                            .get_unchecked_neighbours_node_ids_from_src_node_id(third as NodeT)};
+                        let mut first_neighbour_index = 0;
+                        let mut third_neighbour_index = 0;
+                        let mut in_vertex_cover: EdgeT = 0;
+                        let mut not_in_vertex_cover: EdgeT = 0;
+
+                        while first_neighbour_index < first_order_neighbours.len()
+                            && third_neighbour_index < third_order_neighbours.len()
+                        {
+                            let first_order_neighbour =
+                                first_order_neighbours[first_neighbour_index];
+                            // If this is a self-loop, we march on forward
+                            if first_order_neighbour == third || first_order_neighbour == first {
+                                first_neighbour_index += 1;
+                                continue;
+                            }
+                            // If this is not an intersection, we march forward
+                            let third_order_neighbour =
+                                third_order_neighbours[third_neighbour_index];
+                            if first_order_neighbour < third_order_neighbour {
+                                first_neighbour_index += 1;
+                                continue;
+                            }
+                            if first_order_neighbour > third_order_neighbour {
+                                third_neighbour_index += 1;
+                                continue;
+                            }
+                            // If we reach here, we are in an intersection.
+                            first_neighbour_index += 1;
+                            third_neighbour_index += 1;
+
+                            let forth = first_order_neighbour;
+
+                            if vertex_cover_reference[forth as usize] {
+                                in_vertex_cover += 1;
+                            } else {
+                                not_in_vertex_cover += 1;
+                            };
+                        }
+                        partial_squares_number += (in_vertex_cover + not_in_vertex_cover)
+                            * (in_vertex_cover + not_in_vertex_cover).saturating_sub(1)
+                            + not_in_vertex_cover * not_in_vertex_cover.saturating_sub(1)
+                            + 2 * not_in_vertex_cover * in_vertex_cover;
+                    }
+                }
+                
+                partial_squares_number
+            }).sum::<EdgeT>() / 4
+    }
+
 
     /// Returns number of squares in the graph.
     ///
