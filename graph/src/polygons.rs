@@ -26,7 +26,7 @@ impl Graph {
         // First, we compute the set of nodes composing a vertex cover set.
         // This vertex cover is NOT minimal, but is a 2-approximation.
         let vertex_cover = self
-            .get_approximated_vertex_cover(
+            .get_vertex_cover(
                 approach,
                 Some(true),
                 insert_only_source,
@@ -66,7 +66,7 @@ impl Graph {
                 first_order_neighbours[..index]
                     .par_iter()
                     .filter_map(move |&second| {
-                        if second != first && vertex_cover_reference[second as usize] {
+                        if vertex_cover_reference[second as usize] {
                             Some((first, second, first_order_neighbours))
                         } else {
                             None
@@ -91,10 +91,12 @@ impl Graph {
                 {
                     let first_order_neighbour = first_order_neighbours[first_neighbour_index];
                     // If this is a self-loop, we march on forward
-                    if first_order_neighbour == second || first_order_neighbour == first {
-                        first_neighbour_index += 1;
-                        continue;
-                    }
+
+                    // if first_order_neighbour == second || first_order_neighbour == first {
+                    //     first_neighbour_index += 1;
+                    //     continue;
+                    // }
+                    
                     // If this is not an intersection, we march forward
                     let second_order_neighbour = second_order_neighbours[second_neighbour_index];
                     if first_order_neighbour < second_order_neighbour {
@@ -144,7 +146,7 @@ impl Graph {
         // First, we compute the set of nodes composing a vertex cover set.
         // This vertex cover is NOT minimal, but is a 2-approximation.
         let vertex_cover = self
-            .get_approximated_vertex_cover(
+            .get_vertex_cover(
                 approach,
                 Some(true),
                 insert_only_source,
@@ -268,7 +270,7 @@ impl Graph {
         // First, we compute the set of nodes composing a vertex cover set.
         // This vertex cover is NOT minimal, but is a 2-approximation.
         let vertex_cover = self
-            .get_approximated_vertex_cover(
+            .get_vertex_cover(
                 approach,
                 Some(true),
                 insert_only_source,
@@ -475,7 +477,7 @@ impl Graph {
         let verbose = verbose.unwrap_or(true);
 
         let vertex_cover = self
-            .get_approximated_vertex_cover(approach, None, insert_only_source, None)?;
+            .get_vertex_cover(approach, None, insert_only_source, None)?;
         
         let cover_size = vertex_cover
             .par_iter()

@@ -29,7 +29,7 @@ impl Graph {
     /// # References
     /// This implementation is described in ["A local-ratio theorem for approximating the weighted vertex cover problem"](http://www.cs.technion.ac.il/~reuven/PDF/vc_lr.pdf).
     ///
-    pub fn get_approximated_vertex_cover(
+    pub fn get_vertex_cover(
         &self,
         approach: Option<&str>,
         sequential: Option<bool>,

@@ -1032,7 +1032,7 @@ pub fn test_node_centralities(graph: &mut Graph, verbose: Option<bool>) -> Resul
 }
 
 pub fn test_vertex_cover(graph: &mut Graph, _verbose: Option<bool>) -> Result<()> {
-    let vertex_cover = graph.get_approximated_vertex_cover(None, None, None, None)?;
+    let vertex_cover = graph.get_vertex_cover(None, None, None, None)?;
     graph
         .par_iter_directed_edge_node_ids()
         .for_each(|(_, src_node_id, dst_node_id)| {

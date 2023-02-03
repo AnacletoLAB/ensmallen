@@ -10304,7 +10304,7 @@ impl Graph {
     /// random_seed: Optional[int]
     ///     The random seed to be used for the stocastic approaches.
     ///
-    pub fn get_approximated_vertex_cover(
+    pub fn get_vertex_cover(
         &self,
         approach: Option<&str>,
         sequential: Option<bool>,
@@ -10315,7 +10315,7 @@ impl Graph {
             let gil = pyo3::Python::acquire_gil();
             to_ndarray_1d!(
                 gil,
-                pe!(self.inner.get_approximated_vertex_cover(
+                pe!(self.inner.get_vertex_cover(
                     approach,
                     sequential,
                     insert_only_source,
@@ -16932,7 +16932,7 @@ pub const GRAPH_METHODS_NAMES: &[&str] = &[
     "has_compatible_edge_types_vocabularies",
     "is_compatible",
     "has_same_adjacency_matrix",
-    "get_approximated_vertex_cover",
+    "get_vertex_cover",
     "get_random_node_type",
     "get_random_edge_type",
     "get_unchecked_random_scale_free_edge_type",
