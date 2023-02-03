@@ -20,7 +20,7 @@ impl Graph {
         approach: Option<&str>,
         insert_only_source: Option<bool>,
         verbose: Option<bool>
-    ) -> EdgeT {
+    ) -> Result<EdgeT> {
         let verbose = verbose.unwrap_or(true);
 
         // First, we compute the set of nodes composing a vertex cover set.
@@ -31,8 +31,7 @@ impl Graph {
                 Some(true),
                 insert_only_source,
                 None,
-            )
-            .unwrap();
+            )?;
 
         let vertex_cover_size = vertex_cover.iter().filter(|cover| **cover).count();
 
@@ -41,7 +40,7 @@ impl Graph {
         let vertex_cover_reference = vertex_cover.as_slice();
 
         // We start iterating over the nodes in the cover using rayon to parallelize the procedure.
-        vertex_cover
+        Ok(vertex_cover
             .par_iter()
             .enumerate()
             .filter_map(|(first, is_cover)| {
@@ -125,7 +124,7 @@ impl Graph {
                 }
                 partial_number_of_triangles
             })
-            .sum::<EdgeT>()
+            .sum::<EdgeT>())
     }
 
 
@@ -141,7 +140,7 @@ impl Graph {
         approach: Option<&str>,
         insert_only_source: Option<bool>,
         verbose: Option<bool>
-    ) -> EdgeT {
+    ) -> Result<EdgeT> {
         // First, we compute the set of nodes composing a vertex cover set.
         // This vertex cover is NOT minimal, but is a 2-approximation.
         let vertex_cover = self
@@ -150,8 +149,7 @@ impl Graph {
                 Some(true),
                 insert_only_source,
                 None,
-            )
-            .unwrap();
+            )?;
 
         let vertex_cover_size = vertex_cover.iter().filter(|cover| **cover).count();
 
@@ -168,7 +166,7 @@ impl Graph {
         let vertex_cover_reference = vertex_cover.as_slice();
 
         // We start iterating over the nodes in the cover using rayon to parallelize the procedure.
-        vertex_cover
+        Ok(vertex_cover
             .par_iter()
             .enumerate()
             .filter_map(|(first, is_cover)| {
@@ -243,14 +241,14 @@ impl Graph {
                             };
                         }
                         partial_squares_number += (in_vertex_cover + not_in_vertex_cover)
-                            * (in_vertex_cover + not_in_vertex_cover).saturating_sub(1)
-                            + not_in_vertex_cover * not_in_vertex_cover.saturating_sub(1)
-                            + 2 * not_in_vertex_cover * in_vertex_cover;
+                            * (in_vertex_cover + not_in_vertex_cover).saturating_sub(1) / 2
+                            + not_in_vertex_cover * not_in_vertex_cover.saturating_sub(1) / 2
+                            + not_in_vertex_cover * in_vertex_cover;
                     }
                 }
                 
                 partial_squares_number
-            }).sum::<EdgeT>() / 4
+            }).sum::<EdgeT>() / 2)
     }
 
 
@@ -266,7 +264,7 @@ impl Graph {
         approach: Option<&str>,
         insert_only_source: Option<bool>,
         verbose: Option<bool>
-    ) -> Vec<EdgeT> {
+    ) -> Result<Vec<EdgeT>> {
         // First, we compute the set of nodes composing a vertex cover set.
         // This vertex cover is NOT minimal, but is a 2-approximation.
         let vertex_cover = self
@@ -275,8 +273,7 @@ impl Graph {
                 Some(true),
                 insert_only_source,
                 None,
-            )
-            .unwrap();
+            )?;
 
         let vertex_cover_size = vertex_cover.iter().filter(|cover| **cover).count();
 
@@ -419,7 +416,7 @@ impl Graph {
                 }
                 node_squares_number[first as usize].fetch_add(first_squares, Ordering::Relaxed);
             });
-        unsafe { std::mem::transmute::<Vec<AtomicU64>, Vec<EdgeT>>(node_squares_number) }
+        Ok(unsafe { std::mem::transmute::<Vec<AtomicU64>, Vec<EdgeT>>(node_squares_number) })
     }
 
     /// Returns total number of triads in the graph without taking into account weights.
@@ -448,7 +445,7 @@ impl Graph {
     /// # Arguments
     /// * `verbose`: Option<bool> - Whether to show a loading bar.
     pub fn get_transitivity(&self, verbose: Option<bool>) -> f64 {
-        self.get_number_of_triangles(None, None, verbose) as f64 / self.get_number_of_triads() as f64
+        self.get_number_of_triangles(None, None, verbose).unwrap() as f64 / self.get_number_of_triads() as f64
     }
 
     /// Returns number of triangles for all nodes in the graph.
@@ -466,7 +463,7 @@ impl Graph {
         approach: Option<&str>,
         insert_only_source: Option<bool>,
         verbose: Option<bool>
-    ) -> Vec<EdgeT> {
+    ) -> Result<Vec<EdgeT>> {
         let node_triangles_number = unsafe {
             std::mem::transmute::<Vec<EdgeT>, Vec<AtomicU64>>(vec![
                 0;
@@ -478,8 +475,7 @@ impl Graph {
         let verbose = verbose.unwrap_or(true);
 
         let vertex_cover = self
-            .get_approximated_vertex_cover(approach, None, insert_only_source, None)
-            .unwrap();
+            .get_approximated_vertex_cover(approach, None, insert_only_source, None)?;
         
         let cover_size = vertex_cover
             .par_iter()
@@ -586,7 +582,7 @@ impl Graph {
                     .fetch_add(second_triangles, Ordering::Relaxed);
             });
 
-        unsafe { std::mem::transmute::<Vec<AtomicU64>, Vec<EdgeT>>(node_triangles_number) }
+        Ok(unsafe { std::mem::transmute::<Vec<AtomicU64>, Vec<EdgeT>>(node_triangles_number) })
     }
 
     /// Returns iterator over the clustering coefficients for all nodes in the graph.
@@ -600,7 +596,7 @@ impl Graph {
         &self,
         verbose: Option<bool>,
     ) -> impl IndexedParallelIterator<Item = f64> + '_ {
-        self.get_number_of_triangles_per_node(None, None, verbose)
+        self.get_number_of_triangles_per_node(None, None, verbose).unwrap()
             .into_par_iter()
             .zip(self.par_iter_node_degrees())
             .map(|(triangles_number, degree)| {
