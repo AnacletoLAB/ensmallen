@@ -525,7 +525,7 @@ impl Graph {
                 first_order_neighbours[..index]
                     .par_iter()
                     .filter_map(move |&second| {
-                        if second != first && vertex_cover_reference[second as usize] {
+                        if vertex_cover_reference[second as usize] {
                             Some((first, second, first_order_neighbours))
                         } else {
                             None
@@ -556,6 +556,7 @@ impl Graph {
                         first_neighbour_index += 1;
                         continue;
                     }
+
                     // If this is not an intersection, we march forward
                     let second_order_neighbour = second_order_neighbours[second_neighbour_index];
                     if first_order_neighbour < second_order_neighbour {
@@ -566,9 +567,6 @@ impl Graph {
                         second_neighbour_index += 1;
                         continue;
                     }
-                    // If we reach here, we are in an intersection.
-                    first_neighbour_index += 1;
-                    second_neighbour_index += 1;
 
                     // If we reach here, we are in an intersection.
 
