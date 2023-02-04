@@ -11,7 +11,7 @@ impl Graph {
     /// * `approach`: Option<&str> - The approach name to be used. By default, the edge list order is used.
     /// * `insert_only_source`: Option<bool> - Whether to insert only the source node or both source and destination.
     /// * `verbose`: Option<bool> - Whether to show a loading bar. By default, True.
-    /// 
+    ///
     /// # References
     /// This implementation is described in ["Faster Clustering Coefficient Using Vertex Covers"](https://ieeexplore.ieee.org/document/6693348).
     ///
@@ -19,19 +19,13 @@ impl Graph {
         &self,
         approach: Option<&str>,
         insert_only_source: Option<bool>,
-        verbose: Option<bool>
+        verbose: Option<bool>,
     ) -> Result<EdgeT> {
         let verbose = verbose.unwrap_or(true);
 
         // First, we compute the set of nodes composing a vertex cover set.
         // This vertex cover is NOT minimal, but is a 2-approximation.
-        let vertex_cover = self
-            .get_vertex_cover(
-                approach,
-                Some(true),
-                insert_only_source,
-                None,
-            )?;
+        let vertex_cover = self.get_vertex_cover(approach, Some(true), insert_only_source, None)?;
 
         let vertex_cover_size = vertex_cover.iter().filter(|cover| **cover).count();
 
@@ -96,7 +90,7 @@ impl Graph {
                         first_neighbour_index += 1;
                         continue;
                     }
-                    
+
                     // If this is not an intersection, we march forward
                     let second_order_neighbour = second_order_neighbours[second_neighbour_index];
                     if first_order_neighbour < second_order_neighbour {
@@ -107,7 +101,34 @@ impl Graph {
                         second_neighbour_index += 1;
                         continue;
                     }
+
                     // If we reach here, we are in an intersection.
+
+                    let third = first_order_neighbour;
+
+                    let mut first_multi_edge_counter = 1;
+                    let mut second_multi_edge_counter = 1;
+
+                    let factor = if self.is_multigraph() {
+                        while first_neighbour_index + 1 < first_order_neighbours.len()
+                            && third == first_order_neighbours[first_neighbour_index + 1]
+                        {
+                            first_multi_edge_counter += 1;
+                            first_neighbour_index += 1;
+                        }
+
+                        while second_neighbour_index + 1 < second_order_neighbours.len()
+                            && third == second_order_neighbours[second_neighbour_index + 1]
+                        {
+                            second_multi_edge_counter += 1;
+                            second_neighbour_index += 1;
+                        }
+
+                        first_multi_edge_counter * second_multi_edge_counter
+                    } else {
+                        1
+                    };
+
                     first_neighbour_index += 1;
                     second_neighbour_index += 1;
                     // If the inner node is as well in the vertex cover
@@ -116,19 +137,18 @@ impl Graph {
                     // while iterating the vertex cover nodes
                     partial_number_of_triangles +=
                         if vertex_cover_reference[first_order_neighbour as usize] {
-                            1
+                            1 * factor
                         } else {
                             // Otherwise we won't encounter again this
                             // node and we need to count the triangles
                             // three times.
-                            3
+                            3 * factor
                         };
                 }
                 partial_number_of_triangles
             })
             .sum::<EdgeT>())
     }
-
 
     /// Returns number of squares in the graph.
     ///
@@ -141,17 +161,11 @@ impl Graph {
         &self,
         approach: Option<&str>,
         insert_only_source: Option<bool>,
-        verbose: Option<bool>
+        verbose: Option<bool>,
     ) -> Result<EdgeT> {
         // First, we compute the set of nodes composing a vertex cover set.
         // This vertex cover is NOT minimal, but is a 2-approximation.
-        let vertex_cover = self
-            .get_vertex_cover(
-                approach,
-                Some(true),
-                insert_only_source,
-                None,
-            )?;
+        let vertex_cover = self.get_vertex_cover(approach, Some(true), insert_only_source, None)?;
 
         let vertex_cover_size = vertex_cover.iter().filter(|cover| **cover).count();
 
@@ -248,11 +262,9 @@ impl Graph {
                             + not_in_vertex_cover * in_vertex_cover;
                     }
                 }
-                
                 partial_squares_number
             }).sum::<EdgeT>() / 2)
     }
-
 
     /// Returns number of squares in the graph.
     ///
@@ -265,17 +277,11 @@ impl Graph {
         &self,
         approach: Option<&str>,
         insert_only_source: Option<bool>,
-        verbose: Option<bool>
+        verbose: Option<bool>,
     ) -> Result<Vec<EdgeT>> {
         // First, we compute the set of nodes composing a vertex cover set.
         // This vertex cover is NOT minimal, but is a 2-approximation.
-        let vertex_cover = self
-            .get_vertex_cover(
-                approach,
-                Some(true),
-                insert_only_source,
-                None,
-            )?;
+        let vertex_cover = self.get_vertex_cover(approach, Some(true), insert_only_source, None)?;
 
         let vertex_cover_size = vertex_cover.iter().filter(|cover| **cover).count();
 
@@ -447,7 +453,8 @@ impl Graph {
     /// # Arguments
     /// * `verbose`: Option<bool> - Whether to show a loading bar.
     pub fn get_transitivity(&self, verbose: Option<bool>) -> f64 {
-        self.get_number_of_triangles(None, None, verbose).unwrap() as f64 / self.get_number_of_triads() as f64
+        self.get_number_of_triangles(None, None, verbose).unwrap() as f64
+            / self.get_number_of_triads() as f64
     }
 
     /// Returns number of triangles for all nodes in the graph.
@@ -461,10 +468,10 @@ impl Graph {
     /// This implementation is described in ["Faster Clustering Coefficient Using Vertex Covers"](https://ieeexplore.ieee.org/document/6693348).
     ///
     pub fn get_number_of_triangles_per_node(
-        &self, 
+        &self,
         approach: Option<&str>,
         insert_only_source: Option<bool>,
-        verbose: Option<bool>
+        verbose: Option<bool>,
     ) -> Result<Vec<EdgeT>> {
         let node_triangles_number = unsafe {
             std::mem::transmute::<Vec<EdgeT>, Vec<AtomicU64>>(vec![
@@ -473,17 +480,16 @@ impl Graph {
                     as usize
             ])
         };
-        
+
         let verbose = verbose.unwrap_or(true);
 
-        let vertex_cover = self
-            .get_vertex_cover(approach, None, insert_only_source, None)?;
-        
+        let vertex_cover = self.get_vertex_cover(approach, None, insert_only_source, None)?;
+
         let cover_size = vertex_cover
             .par_iter()
             .filter(|&&is_cover| is_cover)
             .count();
-        
+
         let pb = get_loading_bar(
             verbose,
             "Computing number of triangles per node",
@@ -564,19 +570,47 @@ impl Graph {
                     first_neighbour_index += 1;
                     second_neighbour_index += 1;
 
+                    // If we reach here, we are in an intersection.
+
                     let third = first_order_neighbour;
+
+                    let mut first_multi_edge_counter = 1;
+                    let mut second_multi_edge_counter = 1;
+
+                    let factor = if self.is_multigraph() {
+                        while first_neighbour_index + 1 < first_order_neighbours.len()
+                            && third == first_order_neighbours[first_neighbour_index + 1]
+                        {
+                            first_multi_edge_counter += 1;
+                            first_neighbour_index += 1;
+                        }
+
+                        while second_neighbour_index + 1 < second_order_neighbours.len()
+                            && third == second_order_neighbours[second_neighbour_index + 1]
+                        {
+                            second_multi_edge_counter += 1;
+                            second_neighbour_index += 1;
+                        }
+
+                        first_multi_edge_counter * second_multi_edge_counter
+                    } else {
+                        1
+                    };
+
+                    first_neighbour_index += 1;
+                    second_neighbour_index += 1;
 
                     // If the inner node is as well in the vertex cover
                     // we only count this as one, as we will encounter
                     // combinations of these nodes multiple times
                     // while iterating the vertex cover nodes
-                    first_triangles += 1;
-                    if !vertex_cover_reference[second_order_neighbour as usize] {
+                    first_triangles += factor;
+                    if !vertex_cover_reference[third as usize] {
                         // Otherwise we won't encounter again this
                         // node and we need to count the triangles
                         // three times.
-                        second_triangles += 1;
-                        node_triangles_number[third as usize].fetch_add(1, Ordering::Relaxed);
+                        second_triangles += factor;
+                        node_triangles_number[third as usize].fetch_add(factor, Ordering::Relaxed);
                     }
                 }
                 node_triangles_number[first as usize].fetch_add(first_triangles, Ordering::Relaxed);
@@ -598,7 +632,8 @@ impl Graph {
         &self,
         verbose: Option<bool>,
     ) -> impl IndexedParallelIterator<Item = f64> + '_ {
-        self.get_number_of_triangles_per_node(None, None, verbose).unwrap()
+        self.get_number_of_triangles_per_node(None, None, verbose)
+            .unwrap()
             .into_par_iter()
             .zip(self.par_iter_node_degrees())
             .map(|(triangles_number, degree)| {

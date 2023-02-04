@@ -1174,7 +1174,8 @@ impl Graph {
 
         let mut isomorphic_node_groups: Vec<Vec<NodeT>> = self
             .par_iter_isomorphic_node_ids_groups(None, None, None, None)
-            .unwrap().0
+            .unwrap()
+            .0
             .collect();
 
         isomorphic_node_groups.sort_unstable_by(|group1, group2| unsafe {

@@ -1,9 +1,9 @@
 use super::*;
 
 impl CSR {
-    pub unsafe fn from_sorted_iter_unchecked<I: Iterator<Item=(NodeT, NodeT)>>(iter: I) -> Self {
+    pub unsafe fn from_sorted_iter_unchecked<I: Iterator<Item = (NodeT, NodeT)>>(iter: I) -> Self {
         let (lower_bound, higher_bound) = iter.size_hint();
-        
+
         let mut outbounds_degrees = vec![0];
         let mut destinations = Vec::with_capacity(higher_bound.unwrap_or(lower_bound));
         let mut previous_src = 0;
@@ -41,7 +41,7 @@ impl CSR {
         self.get_unchecked_neighbours_node_ids_from_src_node_id(src)
             .iter()
             .cloned()
-}
+    }
 
     pub fn iter_unique_edge_node_ids(
         &self,
@@ -49,7 +49,7 @@ impl CSR {
     ) -> impl Iterator<Item = (NodeT, NodeT)> + '_ {
         // this fails if you have a graph with only this edge, but fuck you
         let mut previous_edge = (NodeT::MAX, NodeT::MAX);
-        
+
         self.iter_edge_node_ids(directed)
             .filter_map(move |(_edge_id, src, dst)| {
                 if (src, dst) != previous_edge {
@@ -82,8 +82,6 @@ impl CSR {
         directed: bool,
     ) -> impl Iterator<Item = (EdgeT, NodeT, NodeT)> + '_ {
         self.iter_directed_edge_node_ids()
-            .filter(move |(_edge_id, src, dst)| {
-                directed || src <= dst
-            })
+            .filter(move |(_edge_id, src, dst)| directed || src <= dst)
     }
 }

@@ -1085,7 +1085,8 @@ impl Graph {
                     hash_strategy,
                     number_of_neighbours_for_hash,
                     hash_name,
-                )?.0
+                )?
+                .0
                 .flat_map(|mut group| {
                     group.pop();
                     group.into_par_iter()

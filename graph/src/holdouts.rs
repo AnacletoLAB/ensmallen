@@ -532,23 +532,29 @@ impl Graph {
         }
 
         build_graph_from_integers(
-            Some(negative_edges_hashset.into_par_iter().map(|(src, dst)| unsafe {
-                (
-                    0,
-                    (
-                        src,
-                        dst,
-                        if sample_edge_types {
-                            self.get_unchecked_random_scale_free_edge_type(
-                                random_state.wrapping_mul(src as u64 + 1).wrapping_mul(dst as u64 + 2),
-                            )
-                        } else {
-                            None
-                        },
-                        WeightT::NAN,
-                    ),
-                )
-            })),
+            Some(
+                negative_edges_hashset
+                    .into_par_iter()
+                    .map(|(src, dst)| unsafe {
+                        (
+                            0,
+                            (
+                                src,
+                                dst,
+                                if sample_edge_types {
+                                    self.get_unchecked_random_scale_free_edge_type(
+                                        random_state
+                                            .wrapping_mul(src as u64 + 1)
+                                            .wrapping_mul(dst as u64 + 2),
+                                    )
+                                } else {
+                                    None
+                                },
+                                WeightT::NAN,
+                            ),
+                        )
+                    }),
+            ),
             self.nodes.clone(),
             self.node_types.clone(),
             self.edge_types

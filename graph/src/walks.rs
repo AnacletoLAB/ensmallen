@@ -952,7 +952,7 @@ impl Graph {
         max_edge_id: EdgeT,
         destinations: &'a Option<Vec<NodeT>>,
     ) -> &'a [NodeT] {
-        // TODO! This is stupid and can be done much faster by removing the call to 
+        // TODO! This is stupid and can be done much faster by removing the call to
         // get_unchecked_edges_and_destinations_from_source_node_id
         match destinations {
             Some(dsts) => dsts.as_slice(),

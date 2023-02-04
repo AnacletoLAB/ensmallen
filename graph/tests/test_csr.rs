@@ -1,31 +1,29 @@
 extern crate graph;
-use graph::data_structures::{CSR, EdgesIter};
-use rayon::iter::*;
+use graph::data_structures::{EdgesIter, CSR};
 use rayon::iter::plumbing::*;
+use rayon::iter::*;
 
 #[test]
 fn test_from_iter() -> Result<(), String> {
-    let edges =  vec![
-        (0, 1), 
-        (0, 7), 
-        (0, 8), 
-        (1, 3), 
-        (1, 8), 
-        (2, 4), 
-        (2, 9), 
-        (4, 6), 
-        (4, 9), 
+    let edges = vec![
+        (0, 1),
+        (0, 7),
+        (0, 8),
+        (1, 3),
+        (1, 8),
+        (2, 4),
+        (2, 9),
+        (4, 6),
+        (4, 9),
         (5, 3),
         (6, 5),
-        (6, 8),  
-        (7, 2), 
-        (7, 5), 
-        (9, 3), 
+        (6, 8),
+        (7, 2),
+        (7, 5),
+        (9, 3),
     ];
 
-    let g = unsafe{CSR::from_sorted_iter_unchecked(
-        edges.iter().copied()
-    )};
+    let g = unsafe { CSR::from_sorted_iter_unchecked(edges.iter().copied()) };
     for (i, src, dst) in g.iter_edge_node_ids(false) {
         assert_eq!(src, edges[i as usize].0);
         assert_eq!(dst, edges[i as usize].1);
@@ -43,7 +41,7 @@ fn test_from_iter() -> Result<(), String> {
         assert_eq!(dst, edges[i as usize].1);
     }
 
-    let par_edges =  g.par_iter_directed_edge_node_ids().collect::<Vec<_>>();
+    let par_edges = g.par_iter_directed_edge_node_ids().collect::<Vec<_>>();
     assert_eq!(edges.len(), par_edges.len());
     for (i, src, dst) in par_edges.into_iter() {
         assert_eq!(src, edges[i as usize].0);

@@ -211,7 +211,8 @@ impl Graph {
         &self,
         src: NodeT,
     ) -> impl Iterator<Item = NodeT> + Send + '_ {
-        self.edges.iter_unchecked_neighbour_node_ids_from_source_node_id(src)
+        self.edges
+            .iter_unchecked_neighbour_node_ids_from_source_node_id(src)
     }
 
     /// Return iterator over edge type ids of the edges connected to the given source node id.
@@ -285,7 +286,8 @@ impl Graph {
         &self,
         src: NodeT,
     ) -> impl IndexedParallelIterator<Item = NodeT> + Send + '_ {
-        self.edges.par_iter_unchecked_neighbour_node_ids_from_source_node_id(src)
+        self.edges
+            .par_iter_unchecked_neighbour_node_ids_from_source_node_id(src)
     }
 
     /// Return iterator over neighbours intersection.

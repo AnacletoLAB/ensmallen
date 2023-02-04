@@ -1,5 +1,5 @@
 use super::*;
-use core::sync::atomic::{Ordering, AtomicU64, AtomicU32};
+use core::sync::atomic::{AtomicU32, AtomicU64, Ordering};
 
 pub(crate) struct ConcurrentCSRBuilder {
     outbounds: Vec<AtomicU64>,
@@ -11,11 +11,13 @@ impl ConcurrentCSRBuilder {
         let outbounds = vec![0; nodes_number as usize + 1];
 
         let mut destinations = Vec::with_capacity(edges_number as usize);
-        unsafe{destinations.set_len(edges_number as usize)};
+        unsafe { destinations.set_len(edges_number as usize) };
 
         Self {
-            outbounds:unsafe{core::mem::transmute::<Vec<EdgeT>, Vec<AtomicU64>>(outbounds)},
-            destinations: unsafe{core::mem::transmute::<Vec<NodeT>, Vec<AtomicU32>>(destinations)},
+            outbounds: unsafe { core::mem::transmute::<Vec<EdgeT>, Vec<AtomicU64>>(outbounds) },
+            destinations: unsafe {
+                core::mem::transmute::<Vec<NodeT>, Vec<AtomicU32>>(destinations)
+            },
         }
     }
 
@@ -27,7 +29,8 @@ impl ConcurrentCSRBuilder {
 
     pub fn build(self) -> CSR {
         // TODO!: parallellize this stuff
-        let mut outbounds_degrees = unsafe{core::mem::transmute::<Vec<AtomicU64>, Vec<EdgeT>>(self.outbounds)};
+        let mut outbounds_degrees =
+            unsafe { core::mem::transmute::<Vec<AtomicU64>, Vec<EdgeT>>(self.outbounds) };
 
         // fill singletons
         let mut previous = 0;
@@ -39,10 +42,12 @@ impl ConcurrentCSRBuilder {
             }
         });
 
-        CSR{
+        CSR {
             outbounds_degrees,
-            destinations: unsafe{core::mem::transmute::<Vec<AtomicU32>, Vec<NodeT>>(self.destinations)},
+            destinations: unsafe {
+                core::mem::transmute::<Vec<AtomicU32>, Vec<NodeT>>(self.destinations)
+            },
             sources: None,
         }
-    } 
+    }
 }

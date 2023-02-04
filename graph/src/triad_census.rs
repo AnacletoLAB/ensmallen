@@ -82,7 +82,9 @@ impl Graph {
     /// namely `first`, `second` and `third`, are within the maximum
     /// number of nodes in this graph. If you provide values higher
     /// than that, this method will panic.
-    unsafe fn get_unchecked_tricodes_from_node_ids<T: std::ops::Index<usize, Output = u8> + Copy>(
+    unsafe fn get_unchecked_tricodes_from_node_ids<
+        T: std::ops::Index<usize, Output = u8> + Copy,
+    >(
         &self,
         first: NodeT,
         second: NodeT,

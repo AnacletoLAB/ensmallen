@@ -1,5 +1,5 @@
 use super::*;
-use crate::data_structures::{CSR, ConcurrentCSRBuilder};
+use crate::data_structures::{ConcurrentCSRBuilder, CSR};
 use num_traits::Zero;
 use rayon::prelude::*;
 use std::cmp::Ordering;
@@ -467,14 +467,7 @@ pub(crate) fn parse_string_edges(
         has_edge_types,
         has_edge_weights,
     ) {
-        (None, _, _, _) => (
-            CSR::new(),
-            false,
-            nodes,
-            edge_types_vocabulary,
-            None,
-            None,
-        ),
+        (None, _, _, _) => (CSR::new(), false, nodes, edge_types_vocabulary, None, None),
         // When the edge lists are provided and are:
         // - Sorted
         // - Completely defined in both directions
@@ -686,10 +679,9 @@ pub(crate) fn parse_string_edges(
     };
 
     // Executing self-consistency check for the edge type IDs
-    if edge_type_ids
-        .as_ref()
-        .map_or(false, |edge_type_ids| edges.get_number_of_directed_edges() as usize != edge_type_ids.len())
-    {
+    if edge_type_ids.as_ref().map_or(false, |edge_type_ids| {
+        edges.get_number_of_directed_edges() as usize != edge_type_ids.len()
+    }) {
         panic!(
             concat!(
                 "The length of the edges is {}, ",
@@ -701,10 +693,9 @@ pub(crate) fn parse_string_edges(
     }
 
     // Executing self-consistency check for the edge weights
-    if weights
-        .as_ref()
-        .map_or(false, |weights| edges.get_number_of_directed_edges() as usize!= weights.len())
-    {
+    if weights.as_ref().map_or(false, |weights| {
+        edges.get_number_of_directed_edges() as usize != weights.len()
+    }) {
         panic!(
             concat!(
                 "The length of the edges is {}, ",
@@ -737,12 +728,7 @@ pub(crate) fn parse_integer_edges(
     duplicates: Option<bool>,
     sorted: Option<bool>,
     edges_number: Option<EdgeT>,
-) -> Result<(
-    CSR,
-    Option<EdgeTypeVocabulary>,
-    Option<Vec<WeightT>>,
-    bool,
-)> {
+) -> Result<(CSR, Option<EdgeTypeVocabulary>, Option<Vec<WeightT>>, bool)> {
     let complete = complete.unwrap_or(directed);
     let duplicates = duplicates.unwrap_or(true);
     let sorted = sorted.unwrap_or(false);
@@ -901,10 +887,9 @@ pub(crate) fn parse_integer_edges(
     };
 
     // Executing self-consistency check for the edge type IDs
-    if edge_type_ids
-        .as_ref()
-        .map_or(false, |edge_type_ids| edges.get_number_of_directed_edges() as usize!= edge_type_ids.len())
-    {
+    if edge_type_ids.as_ref().map_or(false, |edge_type_ids| {
+        edges.get_number_of_directed_edges() as usize != edge_type_ids.len()
+    }) {
         panic!(
             concat!(
                 "The length of the edges is {}, ",
@@ -916,10 +901,9 @@ pub(crate) fn parse_integer_edges(
     }
 
     // Executing self-consistency check for the edge weights
-    if weights
-        .as_ref()
-        .map_or(false, |weights| edges.get_number_of_directed_edges() as usize!= weights.len())
-    {
+    if weights.as_ref().map_or(false, |weights| {
+        edges.get_number_of_directed_edges() as usize != weights.len()
+    }) {
         panic!(
             concat!(
                 "The length of the edges is {}, ",
