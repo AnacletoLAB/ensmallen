@@ -203,6 +203,9 @@ impl Graph {
                 bitvec.fill(false);
 
                 for &second in first_order_neighbours {
+                    if first == second{
+                        continue;
+                    }
                     let second_order_neighbours = unsafe{self.edges
                         .get_unchecked_neighbours_node_ids_from_src_node_id(second as NodeT)};
                     for &third in second_order_neighbours {
@@ -218,24 +221,27 @@ impl Graph {
 
                         let third_order_neighbours = unsafe{self.edges
                             .get_unchecked_neighbours_node_ids_from_src_node_id(third as NodeT)};
+                        
                         let mut first_neighbour_index = 0;
                         let mut third_neighbour_index = 0;
                         let mut in_vertex_cover: EdgeT = 0;
-                        let mut not_in_vertex_cover: EdgeT = 0;
+                        let mut out_of_vertex_cover: EdgeT = 0;
+                        let mut in_cover_summed_squares = 0;
+                        let mut out_of_cover_summed_squares = 0;
 
                         while first_neighbour_index < first_order_neighbours.len()
                             && third_neighbour_index < third_order_neighbours.len()
                         {
-                            let first_order_neighbour =
-                                first_order_neighbours[first_neighbour_index];
+                            let first_order_neighbour = first_order_neighbours[first_neighbour_index];
                             // If this is a self-loop, we march on forward
+
                             if first_order_neighbour == third || first_order_neighbour == first {
                                 first_neighbour_index += 1;
                                 continue;
                             }
+
                             // If this is not an intersection, we march forward
-                            let third_order_neighbour =
-                                third_order_neighbours[third_neighbour_index];
+                            let third_order_neighbour = third_order_neighbours[third_neighbour_index];
                             if first_order_neighbour < third_order_neighbour {
                                 first_neighbour_index += 1;
                                 continue;
@@ -244,22 +250,52 @@ impl Graph {
                                 third_neighbour_index += 1;
                                 continue;
                             }
+
                             // If we reach here, we are in an intersection.
-                            first_neighbour_index += 1;
-                            third_neighbour_index += 1;
 
                             let fourth = first_order_neighbour;
 
-                            if vertex_cover_reference[fourth as usize] {
-                                in_vertex_cover += 1;
+                            let mut first_multi_edge_counter = 1;
+                            let mut third_multi_edge_counter = 1;
+
+                            let factor = if self.is_multigraph() {
+                                while first_neighbour_index + 1 < first_order_neighbours.len()
+                                    && third == first_order_neighbours[first_neighbour_index + 1]
+                                {
+                                    first_multi_edge_counter += 1;
+                                    first_neighbour_index += 1;
+                                }
+
+                                while third_neighbour_index + 1 < third_order_neighbours.len()
+                                    && third == third_order_neighbours[third_neighbour_index + 1]
+                                {
+                                    third_multi_edge_counter += 1;
+                                    third_neighbour_index += 1;
+                                }
+
+                                first_multi_edge_counter * third_multi_edge_counter
                             } else {
-                                not_in_vertex_cover += 1;
+                                1
+                            };
+
+                            first_neighbour_index += 1;
+                            third_neighbour_index += 1;
+
+                            if vertex_cover_reference[fourth as usize] {
+                                in_vertex_cover += factor;
+                                in_cover_summed_squares += factor * factor;
+                            } else {
+                                // Otherwise we won't encounter again this node
+                                out_of_vertex_cover += factor;
+                                out_of_cover_summed_squares += factor * factor;
                             };
                         }
-                        partial_squares_number += (in_vertex_cover + not_in_vertex_cover)
-                            * (in_vertex_cover + not_in_vertex_cover).saturating_sub(1) / 2
-                            + not_in_vertex_cover * not_in_vertex_cover.saturating_sub(1) / 2
-                            + not_in_vertex_cover * in_vertex_cover;
+
+                        partial_squares_number += 
+                            (out_of_vertex_cover + in_vertex_cover) * out_of_vertex_cover
+                            + (2 * out_of_vertex_cover + in_vertex_cover) * in_vertex_cover / 2
+                            - in_cover_summed_squares / 2
+                            - out_of_cover_summed_squares;
                     }
                 }
                 partial_squares_number
@@ -325,8 +361,6 @@ impl Graph {
                 let bitvec = unsafe{&mut (*bitvecs.get())[thread_id]};
                 bitvec.fill(false);
 
-                let mut first_squares = 0;
-
                 for &second in first_order_neighbours {
                     let second_order_neighbours = unsafe{self.edges
                         .get_unchecked_neighbours_node_ids_from_src_node_id(second as NodeT)};
@@ -344,85 +378,132 @@ impl Graph {
 
                         let third_order_neighbours = unsafe{self.edges
                             .get_unchecked_neighbours_node_ids_from_src_node_id(third as NodeT)};
-                        let mut first_neighbour_index = 0;
-                        let mut third_neighbour_index = 0;
-                        let mut in_vertex_cover: EdgeT = 0;
-                        let mut not_in_vertex_cover: EdgeT = 0;
-
-                        while first_neighbour_index < first_order_neighbours.len()
-                            && third_neighbour_index < third_order_neighbours.len()
-                        {
-                            let first_order_neighbour =
-                                first_order_neighbours[first_neighbour_index];
-                            // If this is a self-loop, we march on forward
-                            if first_order_neighbour == third || first_order_neighbour == first {
+                        
+                            let mut first_neighbour_index = 0;
+                            let mut third_neighbour_index = 0;
+                            let mut in_vertex_cover: EdgeT = 0;
+                            let mut out_of_vertex_cover: EdgeT = 0;
+    
+                            while first_neighbour_index < first_order_neighbours.len()
+                                && third_neighbour_index < third_order_neighbours.len()
+                            {
+                                let first_order_neighbour = first_order_neighbours[first_neighbour_index];
+                                // If this is a self-loop, we march on forward
+    
+                                if first_order_neighbour == third || first_order_neighbour == first {
+                                    first_neighbour_index += 1;
+                                    continue;
+                                }
+    
+                                // If this is not an intersection, we march forward
+                                let third_order_neighbour = third_order_neighbours[third_neighbour_index];
+                                if first_order_neighbour < third_order_neighbour {
+                                    first_neighbour_index += 1;
+                                    continue;
+                                }
+                                if first_order_neighbour > third_order_neighbour {
+                                    third_neighbour_index += 1;
+                                    continue;
+                                }
+    
+                                // If we reach here, we are in an intersection.
+    
+                                let fourth = first_order_neighbour;
+    
+                                let mut first_multi_edge_counter = 1;
+                                let mut third_multi_edge_counter = 1;
+    
+                                let factor = if self.is_multigraph() {
+                                    while first_neighbour_index + 1 < first_order_neighbours.len()
+                                        && third == first_order_neighbours[first_neighbour_index + 1]
+                                    {
+                                        first_multi_edge_counter += 1;
+                                        first_neighbour_index += 1;
+                                    }
+    
+                                    while third_neighbour_index + 1 < third_order_neighbours.len()
+                                        && third == third_order_neighbours[third_neighbour_index + 1]
+                                    {
+                                        third_multi_edge_counter += 1;
+                                        third_neighbour_index += 1;
+                                    }
+    
+                                    first_multi_edge_counter * third_multi_edge_counter
+                                } else {
+                                    1
+                                };
+    
                                 first_neighbour_index += 1;
-                                continue;
-                            }
-                            // If this is not an intersection, we march forward
-                            let third_order_neighbour =
-                                third_order_neighbours[third_neighbour_index];
-                            if first_order_neighbour < third_order_neighbour {
-                                first_neighbour_index += 1;
-                                continue;
-                            }
-                            if first_order_neighbour > third_order_neighbour {
                                 third_neighbour_index += 1;
-                                continue;
+    
+                                if vertex_cover_reference[fourth as usize] {
+                                    in_vertex_cover += factor;
+                                } else {
+                                    // Otherwise we won't encounter again this node
+                                    out_of_vertex_cover += factor;
+                                };
                             }
-                            // If we reach here, we are in an intersection.
-                            first_neighbour_index += 1;
-                            third_neighbour_index += 1;
-
-                            let fourth = first_order_neighbour;
-
-                            if vertex_cover_reference[fourth as usize] {
-                                in_vertex_cover += 1;
-                            } else {
-                                not_in_vertex_cover += 1;
-                            };
+    
+                            while first_neighbour_index < first_order_neighbours.len()
+                                    && third_neighbour_index < third_order_neighbours.len()
+                                {
+                                    let first_order_neighbour = first_order_neighbours[first_neighbour_index];
+                                    // If this is a self-loop, we march on forward
+        
+                                    if first_order_neighbour == third || first_order_neighbour == first {
+                                        first_neighbour_index += 1;
+                                        continue;
+                                    }
+        
+                                    // If this is not an intersection, we march forward
+                                    let third_order_neighbour = third_order_neighbours[third_neighbour_index];
+                                    if first_order_neighbour < third_order_neighbour {
+                                        first_neighbour_index += 1;
+                                        continue;
+                                    }
+                                    if first_order_neighbour > third_order_neighbour {
+                                        third_neighbour_index += 1;
+                                        continue;
+                                    }
+        
+                                    // If we reach here, we are in an intersection.
+        
+                                    let fourth = first_order_neighbour;
+        
+                                    let mut first_multi_edge_counter = 1;
+                                    let mut third_multi_edge_counter = 1;
+        
+                                    let factor = if self.is_multigraph() {
+                                        while first_neighbour_index + 1 < first_order_neighbours.len()
+                                            && third == first_order_neighbours[first_neighbour_index + 1]
+                                        {
+                                            first_multi_edge_counter += 1;
+                                            first_neighbour_index += 1;
+                                        }
+        
+                                        while third_neighbour_index + 1 < third_order_neighbours.len()
+                                            && third == third_order_neighbours[third_neighbour_index + 1]
+                                        {
+                                            third_multi_edge_counter += 1;
+                                            third_neighbour_index += 1;
+                                        }
+        
+                                        first_multi_edge_counter * third_multi_edge_counter
+                                    } else {
+                                        1
+                                    };
+        
+                                    first_neighbour_index += 1;
+                                    third_neighbour_index += 1;
+                                    
+                                    node_squares_number[fourth as usize].fetch_add(if vertex_cover_reference[fourth as usize] {
+                                        factor * (2 * out_of_vertex_cover + in_vertex_cover - factor)
+                                    } else {
+                                        2 * factor * (out_of_vertex_cover + in_vertex_cover - factor)
+                                    }, Ordering::Relaxed);
+                                }
                         }
-                        let half = not_in_vertex_cover * not_in_vertex_cover.saturating_sub(1) / 2
-                            + not_in_vertex_cover * in_vertex_cover;
-
-                        let intersection_minus_one = (in_vertex_cover + not_in_vertex_cover).saturating_sub(1);
-
-                        while first_neighbour_index < first_order_neighbours.len()
-                            && third_neighbour_index < third_order_neighbours.len()
-                        {
-                            let first_order_neighbour =
-                                first_order_neighbours[first_neighbour_index];
-                            // If this is a self-loop, we march on forward
-                            if first_order_neighbour == third || first_order_neighbour == first {
-                                first_neighbour_index += 1;
-                                continue;
-                            }
-                            // If this is not an intersection, we march forward
-                            let third_order_neighbour =
-                                third_order_neighbours[third_neighbour_index];
-                            if first_order_neighbour < third_order_neighbour {
-                                first_neighbour_index += 1;
-                                continue;
-                            }
-                            if first_order_neighbour > third_order_neighbour {
-                                third_neighbour_index += 1;
-                                continue;
-                            }
-                            // If we reach here, we are in an intersection.
-                            first_neighbour_index += 1;
-                            third_neighbour_index += 1;
-
-                            let fourth = first_order_neighbour;
-
-                            node_squares_number[fourth as usize].fetch_add(intersection_minus_one, Ordering::Relaxed);
-                        }
-                        first_squares += half;
-
-                        node_squares_number[third as usize]
-                            .fetch_add(half, Ordering::Relaxed);
                     }
-                }
-                node_squares_number[first as usize].fetch_add(first_squares, Ordering::Relaxed);
             });
         Ok(unsafe { std::mem::transmute::<Vec<AtomicU64>, Vec<EdgeT>>(node_squares_number) })
     }
