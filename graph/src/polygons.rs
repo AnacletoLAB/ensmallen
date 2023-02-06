@@ -212,6 +212,9 @@ impl Graph {
                         if third >= first {
                             break;
                         }
+                        if third == second{
+                            continue;
+                        }
                         if !vertex_cover_reference[third as usize] {
                             continue;
                         }
@@ -362,12 +365,19 @@ impl Graph {
                 bitvec.fill(false);
 
                 for &second in first_order_neighbours {
+                    if first == second {
+                        continue;
+                    }
+
                     let second_order_neighbours = unsafe{self.edges
                         .get_unchecked_neighbours_node_ids_from_src_node_id(second as NodeT)};
 
                     for &third in second_order_neighbours {
                         if third >= first {
                             break;
+                        }
+                        if third == second{
+                            continue;
                         }
                         if !vertex_cover_reference[third as usize] {
                             continue;
