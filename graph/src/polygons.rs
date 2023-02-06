@@ -263,14 +263,14 @@ impl Graph {
 
                             let factor = if self.is_multigraph() {
                                 while first_neighbour_index + 1 < first_order_neighbours.len()
-                                    && third == first_order_neighbours[first_neighbour_index + 1]
+                                    && fourth == first_order_neighbours[first_neighbour_index + 1]
                                 {
                                     first_multi_edge_counter += 1;
                                     first_neighbour_index += 1;
                                 }
 
                                 while third_neighbour_index + 1 < third_order_neighbours.len()
-                                    && third == third_order_neighbours[third_neighbour_index + 1]
+                                    && fourth == third_order_neighbours[third_neighbour_index + 1]
                                 {
                                     third_multi_edge_counter += 1;
                                     third_neighbour_index += 1;
@@ -425,14 +425,14 @@ impl Graph {
     
                                 let factor = if self.is_multigraph() {
                                     while first_neighbour_index + 1 < first_order_neighbours.len()
-                                        && third == first_order_neighbours[first_neighbour_index + 1]
+                                        && fourth == first_order_neighbours[first_neighbour_index + 1]
                                     {
                                         first_multi_edge_counter += 1;
                                         first_neighbour_index += 1;
                                     }
     
                                     while third_neighbour_index + 1 < third_order_neighbours.len()
-                                        && third == third_order_neighbours[third_neighbour_index + 1]
+                                        && fourth == third_order_neighbours[third_neighbour_index + 1]
                                     {
                                         third_multi_edge_counter += 1;
                                         third_neighbour_index += 1;
@@ -453,6 +453,9 @@ impl Graph {
                                     out_of_vertex_cover += factor;
                                 };
                             }
+
+                            first_neighbour_index = 0;
+                            third_neighbour_index = 0;
     
                             while first_neighbour_index < first_order_neighbours.len()
                                     && third_neighbour_index < third_order_neighbours.len()
@@ -485,14 +488,14 @@ impl Graph {
         
                                     let factor = if self.is_multigraph() {
                                         while first_neighbour_index + 1 < first_order_neighbours.len()
-                                            && third == first_order_neighbours[first_neighbour_index + 1]
+                                            && fourth == first_order_neighbours[first_neighbour_index + 1]
                                         {
                                             first_multi_edge_counter += 1;
                                             first_neighbour_index += 1;
                                         }
         
                                         while third_neighbour_index + 1 < third_order_neighbours.len()
-                                            && third == third_order_neighbours[third_neighbour_index + 1]
+                                            && fourth == third_order_neighbours[third_neighbour_index + 1]
                                         {
                                             third_multi_edge_counter += 1;
                                             third_neighbour_index += 1;
