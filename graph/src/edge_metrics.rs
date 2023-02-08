@@ -378,30 +378,59 @@ impl Graph {
         source_node_id: NodeT,
         destination_node_id: NodeT,
     ) -> f32 {
-        let mut src_neighbours = self
+        let src_neighbours = self
             .edges
             .get_unchecked_neighbours_node_ids_from_src_node_id(source_node_id);
-        let mut dst_neighbours = self
+        let dst_neighbours = self
             .edges
             .get_unchecked_neighbours_node_ids_from_src_node_id(destination_node_id);
 
         let mut intersection_count = 0;
         let double_union = dst_neighbours.len() + src_neighbours.len();
 
-        while !src_neighbours.is_empty() || !dst_neighbours.is_empty() {
-            match src_neighbours[0].cmp(&dst_neighbours[0]) {
-                Ordering::Equal => {
-                    intersection_count += 1;
-                    src_neighbours = &src_neighbours[1..];
-                    dst_neighbours = &dst_neighbours[1..];
-                }
-                Ordering::Greater => {
-                    src_neighbours = &src_neighbours[1..];
-                }
-                Ordering::Less => {
-                    dst_neighbours = &dst_neighbours[1..];
-                }
+        let mut dst_index = 0;
+        let mut src_index = 0;
+
+        while dst_index < dst_neighbours.len() && src_index < src_neighbours.len() {
+            let dst_neighbour = dst_neighbours[dst_index];
+
+            // If this is not an intersection, we march forward
+            let src_neighbour = src_neighbours[src_index];
+            if dst_neighbour < src_neighbour {
+                dst_index += 1;
+                continue;
             }
+            if dst_neighbour > src_neighbour {
+                src_index += 1;
+                continue;
+            }
+
+            // If we reach here, we are in an intersection.
+
+            let factor = if self.is_multigraph() {
+                let mut first_multi_edge_counter = 1;
+                let mut second_multi_edge_counter = 1;
+                    while dst_index + 1 < dst_neighbours.len() && dst_neighbour == dst_neighbours[dst_index + 1]
+                {
+                    first_multi_edge_counter += 1;
+                    dst_index += 1;
+                }
+
+                while src_index + 1 < src_neighbours.len() && src_neighbour == src_neighbours[src_index + 1]
+                {
+                    second_multi_edge_counter += 1;
+                    src_index += 1;
+                }
+
+                first_multi_edge_counter * second_multi_edge_counter
+            } else {
+                1
+            };
+
+            dst_index += 1;
+            src_index += 1;
+
+            intersection_count += factor;
         }
 
         let union_count = double_union - intersection_count;
