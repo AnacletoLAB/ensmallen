@@ -144,6 +144,7 @@ impl CSR {
         )
     }
 
+    #[inline(always)]
     pub unsafe fn get_unchecked_neighbours_node_ids_from_src_node_id(
         &self,
         src: NodeT,

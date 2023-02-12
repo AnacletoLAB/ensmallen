@@ -33,6 +33,8 @@ impl Graph {
 
         let vertex_cover_reference = vertex_cover.as_slice();
 
+        let is_multigraph = self.is_multigraph();
+
         // We start iterating over the nodes in the cover using rayon to parallelize the procedure.
         Ok(vertex_cover
             .par_iter()
@@ -109,7 +111,7 @@ impl Graph {
                     let mut first_multi_edge_counter = 1;
                     let mut second_multi_edge_counter = 1;
 
-                    let factor = if self.is_multigraph() {
+                    let factor = if is_multigraph {
                         while first_neighbour_index + 1 < first_order_neighbours.len()
                             && third == first_order_neighbours[first_neighbour_index + 1]
                         {
@@ -147,7 +149,7 @@ impl Graph {
                 }
                 partial_number_of_triangles
             })
-            .sum::<EdgeT>())
+            .sum::<EdgeT>() / 3)
     }
 
     /// Returns number of squares in the graph.
@@ -181,6 +183,8 @@ impl Graph {
 
         let vertex_cover_reference = vertex_cover.as_slice();
 
+        let is_multigraph = self.is_multigraph();
+
         // We start iterating over the nodes in the cover using rayon to parallelize the procedure.
         Ok(vertex_cover
             .par_iter()
@@ -195,7 +199,7 @@ impl Graph {
                     None
                 }
             })
-            .progress_with(pb)
+            //.progress_with(pb)
             .map(|(first, first_order_neighbours)|{
                 let thread_id = rayon::current_thread_index().expect("current_thread_id not called from a rayon thread. This should not be possible because this is in a Rayon Thread Pool.");
                 let bitvec = unsafe{&mut (*bitvecs.get())[thread_id]};
@@ -261,7 +265,7 @@ impl Graph {
                             let mut first_multi_edge_counter = 1;
                             let mut third_multi_edge_counter = 1;
 
-                            let factor = if self.is_multigraph() {
+                            let factor = if is_multigraph {
                                 while first_neighbour_index + 1 < first_order_neighbours.len()
                                     && fourth == first_order_neighbours[first_neighbour_index + 1]
                                 {
@@ -344,6 +348,8 @@ impl Graph {
 
         let vertex_cover_reference = vertex_cover.as_slice();
 
+        let is_multigraph = self.is_multigraph();
+
         // We start iterating over the nodes in the cover using rayon to parallelize the procedure.
         vertex_cover
             .par_iter()
@@ -423,7 +429,7 @@ impl Graph {
                                 let mut first_multi_edge_counter = 1;
                                 let mut third_multi_edge_counter = 1;
     
-                                let factor = if self.is_multigraph() {
+                                let factor = if is_multigraph {
                                     while first_neighbour_index + 1 < first_order_neighbours.len()
                                         && fourth == first_order_neighbours[first_neighbour_index + 1]
                                     {
@@ -486,7 +492,7 @@ impl Graph {
                                     let mut first_multi_edge_counter = 1;
                                     let mut third_multi_edge_counter = 1;
         
-                                    let factor = if self.is_multigraph() {
+                                    let factor = if is_multigraph {
                                         while first_neighbour_index + 1 < first_order_neighbours.len()
                                             && fourth == first_order_neighbours[first_neighbour_index + 1]
                                         {
@@ -592,6 +598,8 @@ impl Graph {
 
         let vertex_cover_reference = vertex_cover.as_slice();
 
+        let is_multigraph = self.is_multigraph();
+
         // We start iterating over the nodes in the cover using rayon to parallelize the procedure.
         vertex_cover
             .par_iter()
@@ -669,7 +677,7 @@ impl Graph {
                     let mut first_multi_edge_counter = 1;
                     let mut second_multi_edge_counter = 1;
 
-                    let factor = if self.is_multigraph() {
+                    let factor = if is_multigraph {
                         while first_neighbour_index + 1 < first_order_neighbours.len()
                             && third == first_order_neighbours[first_neighbour_index + 1]
                         {

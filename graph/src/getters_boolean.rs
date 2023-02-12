@@ -449,6 +449,7 @@ impl Graph {
     }
 
     /// Return if there are multiple edges between two nodes
+    #[cache_property(is_multigraph)]
     pub fn is_multigraph(&self) -> bool {
         self.get_number_of_parallel_edges() > 0
     }
