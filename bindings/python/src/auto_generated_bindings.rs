@@ -22793,7 +22793,7 @@ impl<'a> From<&'a GraphBuilder> for &'a graph::GraphBuilder {
 
 #[pymethods]
 impl GraphBuilder {
-    #[staticmethod]
+    #[new]
     #[automatically_generated_binding]
     #[pyo3(text_signature = "(name, directed)")]
     /// Create a graph NetworkX style.
@@ -22801,7 +22801,15 @@ impl GraphBuilder {
     /// This is **NOT** the most efficient way because it will have to duplicate
     /// the memory. The most efficient way to build a graph is to create an
     /// appropriate CSV that can be loaded directly. This building will use MORE
-    /// memory than the loaded graph
+    /// memory than the loaded graph.
+    ///
+    /// Parameters
+    /// ----------
+    /// name: str
+    ///     The name of the graph
+    /// directed: bool
+    ///     the generated graph will be directed if this is true, by default it's `false`
+    ///
     pub fn new(name: Option<String>, directed: Option<bool>) -> Self {
         graph::GraphBuilder::new(name, directed).into()
     }

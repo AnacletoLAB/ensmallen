@@ -36,6 +36,10 @@ impl GraphBuilder {
     /// the memory. The most efficient way to build a graph is to create an
     /// appropriate CSV that can be loaded directly. This building will use MORE
     /// memory than the loaded graph.
+    /// 
+    /// # Arguments
+    /// * `name`: String - The name of the graph
+    /// * `directed`: bool - the generated graph will be directed if this is true, by default it's `false`
     pub fn new(name: Option<String>, directed: Option<bool>) -> Self {
         Self {
             directed: directed.unwrap_or(false),
@@ -151,9 +155,6 @@ impl GraphBuilder {
 
     /// Consume the edges and nodes to create a new graph.
     pub fn build(&mut self) -> Result<Graph> {
-
-        let edges_number = self.edges.len();
-
         let nodes = core::mem::replace(&mut self.nodes, BTreeMap::new());
         let edges = core::mem::replace(&mut self.edges, BTreeSet::new());
 
@@ -194,8 +195,8 @@ impl GraphBuilder {
             Some(false), // correct
             Some(false), // complete
             Some(false), // duplicates
-            Some(true), // sorted
-            Some(edges_number as _), // edges_number
+            Some(false), // sorted
+            None, // edges_number
             Some(false), // numeric_edge_list_node_ids
             Some(false), // numeric_edge_list_edge_type_ids
             Some(true), // skip_node_types_if_unavailable

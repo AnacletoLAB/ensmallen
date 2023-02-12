@@ -146,11 +146,12 @@ build_walk_parameters(kwargs)?
             } else {
                 ""
             },
-            type_annotation = match (self.is_method(), self.is_static()) {
-                (true, true) => "#[staticmethod]",
-                (true, false) => "", //"#[classmethod]", for some reason if we add this crash!!
-                (false, true) => "#[pyfunction]",
-                (false, false) =>
+            type_annotation = match (self.name.as_str(), self.is_method(), self.is_static()) {
+                ("new", _, _) => "#[new]",
+                (_, true, true) => "#[staticmethod]",
+                (_, true, false) => "", //"#[classmethod]", for some reason if we add this crash!!
+                (_, false, true) => "#[pyfunction]",
+                (_, false, false) =>
                     unreachable!("it cant be both a function and take self as argument!"),
             },
             // TODO!: FIX THIS SHIT to allows proper translation of user types
