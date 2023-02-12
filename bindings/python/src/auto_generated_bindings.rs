@@ -22795,7 +22795,7 @@ impl<'a> From<&'a GraphBuilder> for &'a graph::GraphBuilder {
 impl GraphBuilder {
     #[new]
     #[automatically_generated_binding]
-    #[pyo3(text_signature = "(name, directed)")]
+
     /// Create a graph NetworkX style.
     ///
     /// This is **NOT** the most efficient way because it will have to duplicate

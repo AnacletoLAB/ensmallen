@@ -92,10 +92,14 @@ build_walk_parameters(kwargs)?
             args.push_str("py_kwargs: Option<&PyDict>, ");
         }
 
-        let text_signature = format!(
-            "#[pyo3(text_signature = \"({})\")]",
-            args_signatures.join(", ")
-        );
+        let text_signature = if self.name != "new" {
+            format!(
+                "#[pyo3(text_signature = \"({})\")]",
+                args_signatures.join(", ")
+            )
+        } else {
+            "".into()
+        };
 
         // build the call
         let body = format!(
@@ -156,7 +160,7 @@ build_walk_parameters(kwargs)?
             },
             // TODO!: FIX THIS SHIT to allows proper translation of user types
             doc = translate_doc(&self.doc, &vec![]),
-            text_signature = text_signature,
+            text_signature=text_signature,
             name = &self.name,
             return_type = return_type
                 .map(|x| format!("-> {}", x))
