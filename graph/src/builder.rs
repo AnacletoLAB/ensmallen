@@ -1,12 +1,12 @@
 use super::*;
 use rayon::iter::Empty as ParEmpty;
 use std::iter::Empty as SeqEmpty;
-use std::collections::BTreeSet;
+use std::collections::{BTreeSet, BTreeMap};
 
 #[derive(Clone, Debug)]
 pub struct GraphBuilder {
     pub(crate) edges: BTreeSet<EdgeQuadruple>,
-    pub(crate) nodes: BTreeSet<(String, Option<Vec<String>>)>,
+    pub(crate) nodes: BTreeMap<String, Option<Vec<String>>>,
 
     pub(crate) has_node_types: bool,
     pub(crate) has_edge_types: bool,
@@ -30,6 +30,12 @@ impl core::fmt::Display for GraphBuilder {
 }
 
 impl GraphBuilder {
+    /// Create a graph NetworkX style.
+    /// 
+    /// This is **NOT** the most efficient way because it will have to duplicate
+    /// the memory. The most efficient way to build a graph is to create an
+    /// appropriate CSV that can be loaded directly. This building will use MORE
+    /// memory than the loaded graph.
     pub fn new(name: Option<String>, directed: Option<bool>) -> Self {
         Self {
             directed: directed.unwrap_or(false),
@@ -39,25 +45,44 @@ impl GraphBuilder {
             has_edge_types: false,
             has_node_types: false,
 
-            nodes: BTreeSet::new(),
+            nodes: BTreeMap::new(),
             edges: BTreeSet::new(),
 
             default_weight: 1.0,
         }
     }
 
+    /// Set the name of the graph that will be created
+    /// 
+    /// # Arguments
+    /// * `name`: &str - The name of the graph
     pub fn set_name(&mut self, name: &str) {
         self.name = name.to_string();
     }
 
+    /// Set if the graph will be directed or undirected
+    /// 
+    /// # Arguments
+    /// * `is_directed`: bool - the generated graph will be directed if this is true
     pub fn set_directed(&mut self, is_directed: bool) {
         self.directed = is_directed;
     }
 
-    pub fn set_default_weight(&mut self, default_weight: f32) {
+    /// Set a default missing weight to be used if only some edges have weights
+    /// 
+    /// # Arguments
+    /// * `default_weight`: WeightT - set the weight to assign by default at edges 
+    pub fn set_default_weight(&mut self, default_weight: WeightT) {
         self.default_weight = default_weight;
     }
 
+    /// Add an edge to the graph
+    /// 
+    /// # Arguments
+    /// * `src`: String - The name of the source node
+    /// * `dst`: String - The name of the destination node
+    /// * `edge_type`: Option<String> - The name of the edge_type, if present
+    /// * `weight`: Option<WeightT> - The weight of the edge, if present
     pub fn add_edge(
         &mut self, 
         src: String,
@@ -78,6 +103,13 @@ impl GraphBuilder {
         Ok(())
     }
 
+    /// Remove an edge to the graph, if the edge is not present this will do nothing.
+    /// 
+    /// # Arguments
+    /// * `src`: String - The name of the source node
+    /// * `dst`: String - The name of the destination node
+    /// * `edge_type`: Option<String> - The name of the edge_type, if present
+    /// * `weight`: Option<WeightT> - The weight of the edge, if present
     pub fn remove_edge(
         &mut self, 
         src: String,
@@ -94,26 +126,35 @@ impl GraphBuilder {
         Ok(())
     }
 
+    /// Add a node to the graph, if the node is already present in the graph it will be overwritten
+    /// 
+    /// # Arguments
+    /// * `name`: String - The name of the node
+    /// * `node_type`: Option<Vec<String>> - List of node type names, if present
     pub fn add_node(&mut self, 
         name: String, node_type: Option<Vec<String>>) -> Result<()> {
         if node_type.is_some() {
             self.has_node_types = true;
         }
-        self.nodes.insert((name, node_type));
+        self.nodes.insert(name, node_type);
         Ok(())
     }
 
-    pub fn remove_node(&mut self, 
-        name: String, node_type: Option<Vec<String>>) -> Result<()> {
-        self.nodes.remove(&(name, node_type));
+    /// Remove a node from the graph, if the node does not exist, this method does nothing
+    /// 
+    /// # Arguments
+    /// * `name`: String - The name of the node
+    pub fn remove_node(&mut self, name: String) -> Result<()> {
+        self.nodes.remove(&name);
         Ok(())
     }
 
+    /// Consume the edges and nodes to create a new graph.
     pub fn build(&mut self) -> Result<Graph> {
 
         let edges_number = self.edges.len();
 
-        let nodes = core::mem::replace(&mut self.nodes, BTreeSet::new());
+        let nodes = core::mem::replace(&mut self.nodes, BTreeMap::new());
         let edges = core::mem::replace(&mut self.edges, BTreeSet::new());
 
         let nodes_iterator = if nodes.is_empty() {

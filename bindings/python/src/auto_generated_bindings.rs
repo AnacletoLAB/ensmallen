@@ -22796,13 +22796,24 @@ impl GraphBuilder {
     #[staticmethod]
     #[automatically_generated_binding]
     #[pyo3(text_signature = "(name, directed)")]
+    /// Create a graph NetworkX style.
     ///
+    /// This is **NOT** the most efficient way because it will have to duplicate
+    /// the memory. The most efficient way to build a graph is to create an
+    /// appropriate CSV that can be loaded directly. This building will use MORE
+    /// memory than the loaded graph
     pub fn new(name: Option<String>, directed: Option<bool>) -> Self {
         graph::GraphBuilder::new(name, directed).into()
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self, name)")]
+    /// Set the name of the graph that will be created
+    ///
+    /// Parameters
+    /// ----------
+    /// name: str
+    ///     The name of the graph
     ///
     pub fn set_name(&mut self, name: &str) {
         self.inner.set_name(name);
@@ -22810,6 +22821,12 @@ impl GraphBuilder {
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self, is_directed)")]
+    /// Set if the graph will be directed or undirected
+    ///
+    /// Parameters
+    /// ----------
+    /// is_directed: bool
+    ///     the generated graph will be directed if this is true
     ///
     pub fn set_directed(&mut self, is_directed: bool) {
         self.inner.set_directed(is_directed.clone());
@@ -22817,13 +22834,31 @@ impl GraphBuilder {
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self, default_weight)")]
+    /// Set a default missing weight to be used if only some edges have weights
     ///
-    pub fn set_default_weight(&mut self, default_weight: f32) {
+    /// Parameters
+    /// ----------
+    /// default_weight: float
+    ///     set the weight to assign by default at edges
+    ///
+    pub fn set_default_weight(&mut self, default_weight: WeightT) {
         self.inner.set_default_weight(default_weight.clone());
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self, src, dst, edge_type, weight)")]
+    /// Add an edge to the graph
+    ///
+    /// Parameters
+    /// ----------
+    /// src: str
+    ///     The name of the source node
+    /// dst: str
+    ///     The name of the destination node
+    /// edge_type: Optional[str]
+    ///     The name of the edge_type, if present
+    /// weight: Optional[float]
+    ///     The weight of the edge, if present
     ///
     pub fn add_edge(
         &mut self,
@@ -22842,6 +22877,18 @@ impl GraphBuilder {
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self, src, dst, edge_type, weight)")]
+    /// Remove an edge to the graph, if the edge is not present this will do nothing.
+    ///
+    /// Parameters
+    /// ----------
+    /// src: str
+    ///     The name of the source node
+    /// dst: str
+    ///     The name of the destination node
+    /// edge_type: Optional[str]
+    ///     The name of the edge_type, if present
+    /// weight: Optional[float]
+    ///     The weight of the edge, if present
     ///
     pub fn remove_edge(
         &mut self,
@@ -22860,21 +22907,35 @@ impl GraphBuilder {
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self, name, node_type)")]
+    /// Add a node to the graph, if the node is already present in the graph it will be overwritten
+    ///
+    /// Parameters
+    /// ----------
+    /// name: str
+    ///     The name of the node
+    /// node_type: Optional[List[str]]
+    ///     List of node type names, if present
     ///
     pub fn add_node(&mut self, name: String, node_type: Option<Vec<String>>) -> PyResult<()> {
         Ok(pe!(self.inner.add_node(name.into(), node_type))?)
     }
 
     #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self, name, node_type)")]
+    #[pyo3(text_signature = "($self, name)")]
+    /// Remove a node from the graph, if the node does not exist, this method does nothing
     ///
-    pub fn remove_node(&mut self, name: String, node_type: Option<Vec<String>>) -> PyResult<()> {
-        Ok(pe!(self.inner.remove_node(name.into(), node_type))?)
+    /// Parameters
+    /// ----------
+    /// name: str
+    ///     The name of the node
+    ///
+    pub fn remove_node(&mut self, name: String) -> PyResult<()> {
+        Ok(pe!(self.inner.remove_node(name.into()))?)
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
-    ///
+    /// Consume the edges and nodes to create a new graph
     pub fn build(&mut self) -> PyResult<Graph> {
         Ok(pe!(self.inner.build())?.into())
     }
