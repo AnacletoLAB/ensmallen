@@ -2,6 +2,9 @@ use super::*;
 use indicatif::{ProgressBar, ProgressStyle};
 use rayon::ThreadPool;
 
+mod edge_quadruple;
+pub use edge_quadruple::*;
+
 use num_traits::pow::Pow;
 
 mod method_caller;

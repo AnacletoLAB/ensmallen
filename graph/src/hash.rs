@@ -133,3 +133,25 @@ impl Hash for WalkWeights {
         hash_f32(self.change_edge_type_weight, state);
     }
 }
+
+impl Hash for EdgeQuadruple {
+    fn hash<H: Hasher>(&self, state: &mut H) {
+        self.0.hash(state);
+        self.1.hash(state);
+        self.2.hash(state);
+        hash_f32(self.3, state);
+    }
+}
+
+impl Hash for GraphBuilder {
+    fn hash<H: Hasher>(&self, state: &mut H) {
+        self.edges.hash(state);
+        self.nodes.hash(state);
+        self.has_node_types.hash(state);
+        self.has_edge_types.hash(state);
+        self.has_edge_weights.hash(state);
+        self.directed.hash(state);
+        self.name.hash(state);
+        hash_f32(self.default_weight, state);
+    }
+}

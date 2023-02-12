@@ -1,58 +1,38 @@
 use super::*;
-use rayon::iter::IntoParallelRefIterator;
-use rayon::prelude::*;
 use rayon::iter::Empty as ParEmpty;
 use std::iter::Empty as SeqEmpty;
 use std::collections::BTreeSet;
 
-/// Quadrule of string edge data
-struct EdgeQuadruple(pub String, pub String, pub Option<String>, pub WeightT);
-
-impl PartialEq for EdgeQuadruple {
-    fn eq(&self, other: &Self) -> bool {
-        (self.0 == other.0) && (self.1 == other.1) && (self.2 == other.2) && (self.3.total_cmp(&other.3).is_eq())
-    }
-}
-
-impl Eq for EdgeQuadruple {}
-
-impl PartialOrd for EdgeQuadruple {
-    fn partial_cmp(&self, other: &Self) -> Option<core::cmp::Ordering> {
-        Some(
-            self.0.partial_cmp(&other.0)?
-                .then(self.1.partial_cmp(&other.1)?)
-                .then(self.2.partial_cmp(&other.2)?)
-                .then(self.3.total_cmp(&other.3))
-        )
-    }
-}
-
-impl Ord for EdgeQuadruple {
-    fn cmp(&self, other: &Self) -> core::cmp::Ordering {
-        self.0.cmp(&other.0)
-            .then(self.1.cmp(&other.1))
-            .then(self.2.cmp(&other.2))
-            .then(self.3.total_cmp(&other.3))
-    }
-}
-
+#[derive(Clone, Debug)]
 pub struct GraphBuilder {
-    edges: BTreeSet<EdgeQuadruple>,
-    nodes: BTreeSet<(String, Option<Vec<String>>)>,
+    pub(crate) edges: BTreeSet<EdgeQuadruple>,
+    pub(crate) nodes: BTreeSet<(String, Option<Vec<String>>)>,
 
-    has_node_types: bool,
-    has_edge_types: bool,
-    has_edge_weights: bool,
-    directed: bool,
-    name: String,
+    pub(crate) has_node_types: bool,
+    pub(crate) has_edge_types: bool,
+    pub(crate) has_edge_weights: bool,
+    pub(crate) directed: bool,
+    pub(crate) name: String,
 
-    default_weight: f32,
+    pub(crate) default_weight: f32,
+}
+
+impl core::fmt::Display for GraphBuilder {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::result::Result<(), core::fmt::Error> {
+        f.debug_struct("GraphBuilder")
+            .field("number_of_edges", &self.edges.len())
+            .field("number_of_nodes", &self.nodes.len())
+            .field("directed", &self.directed)
+            .field("name", &self.name)
+            .field("default_weight", &self.default_weight)
+            .finish()
+    }
 }
 
 impl GraphBuilder {
-    pub fn new(name: Option<String>, directed: bool) -> Self {
+    pub fn new(name: Option<String>, directed: Option<bool>) -> Self {
         Self {
-            directed,
+            directed: directed.unwrap_or(false),
             name: name.unwrap_or("Graph".to_string()),
 
             has_edge_weights: false,
@@ -129,18 +109,21 @@ impl GraphBuilder {
         Ok(())
     }
 
-    pub fn build(self) -> Result<Graph> {
+    pub fn build(&mut self) -> Result<Graph> {
 
         let edges_number = self.edges.len();
 
-        let nodes_iterator = if self.nodes.is_empty() {
+        let nodes = core::mem::replace(&mut self.nodes, BTreeSet::new());
+        let edges = core::mem::replace(&mut self.edges, BTreeSet::new());
+
+        let nodes_iterator = if nodes.is_empty() {
             None
         } else {
-            Some(ItersWrapper::Sequential::<_, _, ParEmpty<_>>(self.nodes.into_iter().enumerate().map(|x| Result::Ok(x))))
+            Some(ItersWrapper::Sequential::<_, _, ParEmpty<_>>(nodes.into_iter().enumerate().map(|x| Result::Ok(x))))
         };
 
         let edges_iterator = ItersWrapper::Sequential::<_, _, ParEmpty<_>>(
-            self.edges.into_iter().enumerate().map(|(idx, x)| 
+            edges.into_iter().enumerate().map(|(idx, x)| 
                 Result::Ok((idx, (x.0, x.1, x.2, x.3)))
             )
         );
@@ -178,7 +161,7 @@ impl GraphBuilder {
             Some(true), // skip_edge_types_if_unavailable
             true, // may_have_singletons
             true, // may_have_singleton_with_selfloops
-            self.name, // name
+            self.name.clone(), // name
         )
     }
 }
