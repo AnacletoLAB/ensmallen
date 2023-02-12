@@ -184,3 +184,6 @@ pub use cliques::*;
 
 mod graphs_from_edge_lists;
 pub use graphs_from_edge_lists::*;
+
+mod builder;
+pub use builder::*;
