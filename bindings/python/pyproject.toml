@@ -1,9 +1,9 @@
 [project]
 name="ensmallen"
-version="0.8.36"
+version="0.8.37"
 repository= "https://github.com/AnacletoLAB/ensmallen"
 readme = "../../../README.rst"
-description = "🍇 Ensmallen is the Rust/Python high-performance graph processing submodule of the GraPE library."
+description = "🍇 Ensmallen is the Rust/Python high-performance graph processing submodule of the GRAPE library."
 exclude = ["pytests/*", "Python-*", "./*.py"]
 keywords = ["python", "rust", "graph", "random", "walk"]
 
