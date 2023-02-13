@@ -1199,7 +1199,7 @@ pub fn test_polygons(graph: &mut Graph, verbose: Option<bool>) -> Result<()> {
             .get_number_of_triangles_per_node(None, None, verbose)
             .unwrap()
             .into_iter()
-            .sum::<EdgeT>(),
+            .sum::<EdgeT>() / 3,
         graph.get_number_of_triangles(None, None, None).unwrap()
     );
     Ok(())
