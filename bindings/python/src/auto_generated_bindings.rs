@@ -39,6 +39,7 @@ pub fn register_ensmallen(_py: Python, _m: &PyModule) -> PyResult<()> {
     _m.add_class::<DendriticTree>()?;
     _m.add_class::<Graph>()?;
     _m.add_class::<GraphBuilder>()?;
+    _m.add_class::<GraphCSVBuilder>()?;
     _m.add_class::<NodeTuple>()?;
     _m.add_class::<ShortestPathsDjkstra>()?;
     _m.add_class::<ShortestPathsResultBFS>()?;
@@ -23057,6 +23058,200 @@ impl GraphBuilder {
                 .iter()
                 .map(|(method_id, _)| {
                     format!("* `{}`", GRAPHBUILDER_METHODS_NAMES[*method_id].to_string())
+                })
+                .take(10)
+                .collect::<Vec<String>>()
+                .join("\n"),
+        )))
+    }
+}
+
+#[pyclass(module = "ensmallen")]
+///
+#[derive(Debug)]
+pub struct GraphCSVBuilder {
+    pub inner: graph::GraphCSVBuilder,
+}
+
+impl From<graph::GraphCSVBuilder> for GraphCSVBuilder {
+    fn from(val: graph::GraphCSVBuilder) -> GraphCSVBuilder {
+        GraphCSVBuilder { inner: val }
+    }
+}
+
+impl From<GraphCSVBuilder> for graph::GraphCSVBuilder {
+    fn from(val: GraphCSVBuilder) -> graph::GraphCSVBuilder {
+        val.inner
+    }
+}
+
+impl<'a> From<&'a GraphCSVBuilder> for &'a graph::GraphCSVBuilder {
+    fn from(val: &'a GraphCSVBuilder) -> &'a graph::GraphCSVBuilder {
+        &val.inner
+    }
+}
+
+#[pymethods]
+impl GraphCSVBuilder {
+    #[new]
+    #[automatically_generated_binding]
+
+    /// Write a csv file loadable from GRAPE like a NetworkX graph.
+    ///
+    /// This is optional, but might help some users.
+    ///
+    /// Parameters
+    /// ----------
+    /// path: str
+    ///     The name of the graph
+    ///
+    pub fn new(path: &str) -> PyResult<Self> {
+        Ok(pe!(graph::GraphCSVBuilder::new(path))?.into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, src, dst, edge_type, weight)")]
+    /// Add an edge to the graph
+    ///
+    /// Parameters
+    /// ----------
+    /// src: str
+    ///     The name of the source node
+    /// dst: str
+    ///     The name of the destination node
+    /// edge_type: Optional[str]
+    ///     The name of the edge_type, if present
+    /// weight: Optional[float]
+    ///     The weight of the edge, if present
+    ///
+    pub fn add_edge(
+        &mut self,
+        src: String,
+        dst: String,
+        edge_type: Option<String>,
+        weight: Option<WeightT>,
+    ) -> PyResult<()> {
+        Ok(pe!(self.inner.add_edge(
+            src.into(),
+            dst.into(),
+            edge_type,
+            weight
+        ))?)
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, name, node_type)")]
+    /// Add a node to the graph, if the node is already present in the graph it will be overwritten
+    ///
+    /// Parameters
+    /// ----------
+    /// name: str
+    ///     The name of the node
+    /// node_type: Optional[List[str]]
+    ///     List of node type names, if present
+    ///
+    pub fn add_node(&mut self, name: String, node_type: Option<Vec<String>>) -> PyResult<()> {
+        Ok(pe!(self.inner.add_node(name.into(), node_type))?)
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    ///
+    pub fn finish(&mut self) -> PyResult<String> {
+        Ok(pe!(self.inner.finish())?.into())
+    }
+}
+
+pub const GRAPHCSVBUILDER_METHODS_NAMES: &[&str] = &["new", "add_edge", "add_node", "finish"];
+
+pub const GRAPHCSVBUILDER_TERMS: &[&str] = &["new", "add", "edge", "node", "finish"];
+
+pub const GRAPHCSVBUILDER_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
+    &[("new", 1.4164387)],
+    &[("add", 0.3648143), ("edge", 0.6336699)],
+    &[("add", 0.3648143), ("node", 0.6336699)],
+    &[("finish", 1.4164387)],
+];
+
+#[pymethods]
+impl GraphCSVBuilder {
+    fn _repr_html_(&self) -> String {
+        self.__repr__()
+    }
+}
+
+#[pymethods]
+impl GraphCSVBuilder {
+    fn __str__(&self) -> String {
+        self.inner.to_string()
+    }
+    fn __repr__(&self) -> String {
+        self.__str__()
+    }
+
+    fn __hash__(&self) -> PyResult<isize> {
+        let mut hasher = DefaultHasher::new();
+        self.inner.hash(&mut hasher);
+        Ok(hasher.finish() as isize)
+    }
+
+    fn __getattr__(&self, name: String) -> PyResult<()> {
+        // split the query into tokens
+        let tokens = split_words(&name);
+
+        // compute the similarities between all the terms and tokens
+        let tokens_expanded = tokens
+            .iter()
+            .map(|token| {
+                let mut similarities = GRAPHCSVBUILDER_TERMS
+                    .iter()
+                    .map(move |term| (*term, jaro_winkler(token, term) as f64))
+                    .collect::<Vec<(&str, f64)>>();
+
+                similarities.sort_by(|(_, a), (_, b)| b.partial_cmp(a).unwrap());
+
+                similarities.into_iter().take(1)
+            })
+            .flatten()
+            .collect::<Vec<(&str, f64)>>();
+
+        // Compute the weighted ranking of each method ("document")
+        // where the conribution of each term is weighted by it's similarity
+        // with the query tokens
+        let mut doc_scores = GRAPHCSVBUILDER_TFIDF_FREQUENCIES
+            .par_iter()
+            .enumerate()
+            // for each document
+            .map(|(id, frequencies_doc)| {
+                (
+                    id,
+                    jaro_winkler(&name, GRAPHCSVBUILDER_METHODS_NAMES[id])
+                        * frequencies_doc
+                            .iter()
+                            .map(|(term, weight)| {
+                                match tokens_expanded.iter().find(|(token, _)| token == term) {
+                                    Some((_, similarity)) => similarity * weight,
+                                    None => 0.0,
+                                }
+                            })
+                            .sum::<f64>(),
+                )
+            })
+            .collect::<Vec<(usize, f64)>>();
+
+        // sort the scores in a decreasing order
+        doc_scores.sort_by(|(_, d1), (_, d2)| d2.partial_cmp(d1).unwrap());
+
+        Err(PyAttributeError::new_err(format!(
+            "The method `{}` does not exists, did you mean one of the following?\n\n{}",
+            &name,
+            doc_scores
+                .iter()
+                .map(|(method_id, _)| {
+                    format!(
+                        "* `{}`",
+                        GRAPHCSVBUILDER_METHODS_NAMES[*method_id].to_string()
+                    )
                 })
                 .take(10)
                 .collect::<Vec<String>>()

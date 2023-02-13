@@ -102,8 +102,8 @@ def compile_target(target_name, target_settings, WHEELS_FOLDER, settings):
         env = {
             "CXXFLAGS": "-stdlib=libc++",
             "CXX": "zig c++ -target x86_64-linux-gnu.2.16",
-            "CC": "zig cc -target x86_64-linux-gnu.2.16",
-            "CFLAGS": "-stdlib=libc++"
+            "CC":  "zig cc -target x86_64-linux-gnu.2.16",
+            #"CFLAGS": "-stdlib=libc++"
         }
     elif os_name == "windows":
         zig = ""
@@ -121,7 +121,7 @@ def compile_target(target_name, target_settings, WHEELS_FOLDER, settings):
 
     environment = os.environ.copy()
     environment.update(env)
-
+    
     print(environment)
 
     strip = "--strip"

@@ -109,6 +109,12 @@ impl GenBinding for Class {
         let methods_names = self.get_methods_names();
         let (terms, tfidf) = tfidf_gen(&methods_names);
 
+        let derive = if self.ztruct.attributes.iter().any(|x| x.0.contains("Clone")){
+            ", Clone"
+        } else {
+            ""
+        };
+
         let impl_ord = self.impls.iter().any(|x| {
             let trait_impl = x
                 .impl_trait
@@ -159,7 +165,7 @@ fn __richcmp__(&self, other: Self, op: CompareOp) -> bool {
         format!(
             r#"
 {struct_doc}
-#[derive(Debug, Clone)]
+#[derive(Debug{derive})]
 pub struct {struct_name} {{
     pub inner: graph::{struct_name},
 }}
@@ -294,6 +300,7 @@ impl {struct_name} {{
                 .collect::<Vec<_>>()
                 .join("\n")
                 .trim(),
+            derive=derive,
             struct_name = self.ztruct.struct_type.get_name().unwrap(),
             struct_name_upper = self.ztruct.struct_type.get_name().unwrap().to_uppercase(),
             methods = format_vec!(

@@ -155,3 +155,10 @@ impl Hash for GraphBuilder {
         hash_f32(self.default_weight, state);
     }
 }
+
+impl Hash for GraphCSVBuilder {
+    fn hash<H: Hasher>(&self, state: &mut H) {
+        self.edges_path.hash(state);
+        self.nodes_path.hash(state);
+    }
+}
