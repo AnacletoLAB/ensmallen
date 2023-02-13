@@ -8,13 +8,11 @@ impl Graph {
     fn get_base_13_triad_census_per_node(&self) -> PyResult<Py<PyArray2<u64>>> {
         let py = pyo3::Python::acquire_gil();
 
-        let triad_census = unsafe {
-            PyArray2::zeros(
-                py.python(),
-                [self.get_number_of_nodes() as usize, 13],
-                false,
-            )
-        };
+        let triad_census = PyArray2::zeros(
+            py.python(),
+            [self.get_number_of_nodes() as usize, 13],
+            false,
+        );
 
         pe!(self
             .inner
@@ -28,13 +26,11 @@ impl Graph {
     fn get_base_30_triad_census_per_node(&self) -> PyResult<Py<PyArray2<u64>>> {
         let py = pyo3::Python::acquire_gil();
 
-        let triad_census = unsafe {
-            PyArray2::zeros(
-                py.python(),
-                [self.get_number_of_nodes() as usize, 30],
-                false,
-            )
-        };
+        let triad_census = PyArray2::zeros(
+            py.python(),
+            [self.get_number_of_nodes() as usize, 30],
+            false,
+        );
 
         pe!(self
             .inner

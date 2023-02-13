@@ -1,6 +1,7 @@
 use core::cmp::PartialOrd;
 use core::ops::Sub;
 
+#[inline(always)]
 pub fn absolute_distance<T>(a: T, b: T) -> T
 where
     T: Sub + Sub<Output = T> + PartialOrd,

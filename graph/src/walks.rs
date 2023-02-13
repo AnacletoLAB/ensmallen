@@ -681,6 +681,7 @@ impl Graph {
         )
     }
 
+    #[inline(always)]
     /// Return vector of walks run on a random subset of the not trap nodes.
     ///
     /// # Arguments
@@ -715,6 +716,7 @@ impl Graph {
         )
     }
 
+    #[inline(always)]
     /// Return vector of walks run on a random subset of the not trap nodes.
     ///
     /// # Arguments

@@ -297,6 +297,7 @@ impl Graph {
         Ok(weighted_degrees[(self.get_number_of_nodes() / 2) as usize])
     }
 
+    #[inline(always)]
     /// Returns maximum node degree of the graph.
     ///
     /// # Example

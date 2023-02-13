@@ -144,6 +144,7 @@ impl Graph {
     }
 
     #[manual_binding]
+    #[inline(always)]
     /// Returns n-ple with index to build numpy array, source node, source node type, destination node, destination node type, edge type and whether this edge is real or artificial.
     ///
     /// # Arguments

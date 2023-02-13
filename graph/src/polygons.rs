@@ -199,7 +199,7 @@ impl Graph {
                     None
                 }
             })
-            //.progress_with(pb)
+            .progress_with(pb)
             .map(|(first, first_order_neighbours)|{
                 let thread_id = rayon::current_thread_index().expect("current_thread_id not called from a rayon thread. This should not be possible because this is in a Rayon Thread Pool.");
                 let bitvec = unsafe{&mut (*bitvecs.get())[thread_id]};

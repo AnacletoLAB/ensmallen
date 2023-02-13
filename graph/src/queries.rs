@@ -710,6 +710,7 @@ impl Graph {
         Ok(most_central_node_ids)
     }
 
+    #[inline(always)]
     /// Returns the number of outbound neighbours of given node.
     ///
     /// # Arguments
@@ -723,6 +724,7 @@ impl Graph {
         (max_edge_id - min_edge_id) as NodeT
     }
 
+    #[inline(always)]
     /// Returns number of outbound nodes for a given node ID, adjusted by removing the number of selfloops.
     ///
     /// # Arguments

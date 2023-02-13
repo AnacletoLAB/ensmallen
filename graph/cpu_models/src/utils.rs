@@ -60,6 +60,7 @@ pub(crate) fn compute_prior<F: Float>(subset_size: F, total_size: F) -> F {
     ((F::one() + total_size) / (F::one() + subset_size)).ln()
 }
 
+#[inline(always)]
 pub(crate) fn get_node_prior<F: ThreadFloat + 'static>(
     graph: &Graph,
     node_id: NodeT,
@@ -205,6 +206,7 @@ pub trait EmbeddingSize {
     fn get_embedding_size(&self, graph: &graph::Graph) -> Result<usize, String>;
 }
 
+#[inline(always)]
 pub fn sigmoid<F: Float>(x: F) -> F {
     if x > F::zero() {
         F::one() / ((-x).exp() + F::one())

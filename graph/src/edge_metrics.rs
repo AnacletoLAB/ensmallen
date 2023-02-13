@@ -3,7 +3,6 @@ use super::*;
 use num_traits::Pow;
 use num_traits::Zero;
 use rayon::prelude::*;
-use std::cmp::Ordering;
 use std::collections::HashSet;
 
 /// # Properties and measurements of the graph

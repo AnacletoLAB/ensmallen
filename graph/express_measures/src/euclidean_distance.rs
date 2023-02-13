@@ -8,6 +8,7 @@ use std::iter::Sum;
 use std::ops::Mul;
 use std::ops::Sub;
 
+#[inline(always)]
 /// Returns the squared euclidean distance between the two provided vectors computed sequentially.
 ///
 /// # Arguments
@@ -37,6 +38,7 @@ pub unsafe fn squared_euclidean_distance_sequential_unchecked<
         .sum()
 }
 
+#[inline(always)]
 /// Returns the euclidean distance between the two provided vectors computed sequentially.
 ///
 /// # Arguments
@@ -54,6 +56,7 @@ pub unsafe fn euclidean_distance_sequential_unchecked<R: Float + Sum + 'static, 
     squared_euclidean_distance_sequential_unchecked(src_features, dst_features).sqrt()
 }
 
+#[inline(always)]
 /// Returns the squared euclidean distance between the two provided vectors computed in parallel.
 ///
 /// # Arguments
@@ -79,6 +82,7 @@ pub unsafe fn squared_euclidean_distance_parallel_unchecked<
         .sum()
 }
 
+#[inline(always)]
 /// Returns the euclidean distance between the two provided vectors computed in parallel.
 ///
 /// # Arguments
@@ -101,6 +105,7 @@ pub unsafe fn euclidean_distance_parallel_unchecked<
         .sqrt()
 }
 
+#[inline(always)]
 /// Returns the euclidean distance between the two provided vectors computed sequentially.
 ///
 /// # Arguments
@@ -118,6 +123,7 @@ pub fn euclidean_distance_sequential<R: Float + Sum + 'static, F: AsPrimitive<R>
     Ok(unsafe { euclidean_distance_sequential_unchecked(src_features, dst_features) })
 }
 
+#[inline(always)]
 /// Returns the euclidean distance between the two provided vectors computed in parallel.
 ///
 /// # Arguments
@@ -138,6 +144,7 @@ pub fn euclidean_distance_parallel<
     Ok(unsafe { euclidean_distance_parallel_unchecked(src_features, dst_features) })
 }
 
+#[inline(always)]
 /// Write the squared euclidean distance in the provided slice.
 ///
 /// # Arguments
@@ -190,6 +197,7 @@ where
     Ok(())
 }
 
+#[inline(always)]
 /// Write the euclidean distance in the provided slice.
 ///
 /// # Arguments

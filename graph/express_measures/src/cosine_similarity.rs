@@ -8,6 +8,7 @@ use parallel_frontier::Frontier;
 use rayon::prelude::*;
 use std::iter::Sum;
 
+#[inline(always)]
 /// Returns the cosine similarity between the two provided vectors computed sequentially.
 ///
 /// # Arguments
@@ -64,6 +65,7 @@ where
     )
 }
 
+#[inline(always)]
 /// Returns the cosine similarity between the two provided vectors computed sequentially.
 ///
 /// # Arguments
@@ -87,6 +89,7 @@ pub unsafe fn cosine_similarity_sequential_unchecked<
     )
 }
 
+#[inline(always)]
 /// Returns the cosine similarity between the two provided vectors computed in parallel.
 ///
 /// # Arguments
@@ -129,6 +132,7 @@ pub unsafe fn cosine_similarity_parallel_unchecked<F: ThreadFloat>(
     total_dot_products / (src_features_norm * dst_features_norm + F::epsilon())
 }
 
+#[inline(always)]
 /// Returns the cosine similarity between the two provided vectors computed sequentially.
 ///
 /// # Arguments
@@ -146,6 +150,7 @@ pub fn cosine_similarity_sequential<R: Float + 'static, F: AsPrimitive<R> + Copy
     Ok(unsafe { cosine_similarity_sequential_unchecked(src_features, dst_features).0 })
 }
 
+#[inline(always)]
 /// Returns the cosine similarity between the two provided vectors computed in parallel.
 ///
 /// # Arguments
@@ -163,6 +168,7 @@ pub fn cosine_similarity_parallel<F: ThreadFloat>(
     Ok(unsafe { cosine_similarity_parallel_unchecked(src_features, dst_features) })
 }
 
+#[inline(always)]
 /// Write the cosine similarity in the provided slice.
 ///
 /// # Arguments
@@ -216,6 +222,7 @@ where
     Ok(())
 }
 
+#[inline(always)]
 /// Compute the cosine similarities between the two provided element lists.
 ///
 /// # Arguments

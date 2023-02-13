@@ -1,5 +1,6 @@
 use crate::types::*;
 
+#[inline(always)]
 /// Returns the dot product between the provided matrix and vector computed sequentially.
 ///
 /// # Arguments
