@@ -216,10 +216,7 @@ impl Graph {
     /// # Safety
     /// If the given edge ID does not exist in the current graph the method will raise a panic.
     pub unsafe fn get_unchecked_node_ids_from_edge_id(&self, edge_id: EdgeT) -> (NodeT, NodeT) {
-        if let (Some(sources), Some(destinations)) = (&*self.sources, &*self.destinations) {
-            return (sources[edge_id as usize], destinations[edge_id as usize]);
-        }
-        self.decode_edge(self.edges.unchecked_select(edge_id))
+        self.edges.get_unchecked_node_ids_from_edge_id(edge_id)
     }
 
     /// Returns node names corresponding to given edge ID.
@@ -237,6 +234,7 @@ impl Graph {
         )
     }
 
+    #[inline(always)]
     /// Returns the source of given edge id without making any boundary check.
     ///
     /// # Arguments
@@ -245,12 +243,11 @@ impl Graph {
     /// # Safety
     /// If the given edge ID does not exist in the current graph the method will cause an out of bounds.
     pub unsafe fn get_unchecked_source_node_id_from_edge_id(&self, edge_id: EdgeT) -> NodeT {
-        self.sources.as_ref().as_ref().map_or_else(
-            || self.get_unchecked_node_ids_from_edge_id(edge_id).0,
-            |srscs| srscs[edge_id as usize],
-        )
+        self.edges
+            .get_unchecked_source_node_id_from_edge_id(edge_id)
     }
 
+    #[inline(always)]
     /// Returns the destination of given edge id without making any boundary check.
     ///
     /// # Arguments
@@ -259,10 +256,8 @@ impl Graph {
     /// # Safety
     /// If the given edge ID does not exist in the current graph the method will cause an out of bounds.
     pub unsafe fn get_unchecked_destination_node_id_from_edge_id(&self, edge_id: EdgeT) -> NodeT {
-        self.destinations.as_ref().as_ref().map_or_else(
-            || self.get_unchecked_node_ids_from_edge_id(edge_id).1,
-            |dsts| dsts[edge_id as usize],
-        )
+        self.edges
+            .get_unchecked_destination_node_id_from_edge_id(edge_id)
     }
 
     /// Returns source node ID corresponding to given edge ID.
@@ -287,6 +282,74 @@ impl Graph {
     pub fn get_destination_node_id_from_edge_id(&self, edge_id: EdgeT) -> Result<NodeT> {
         self.validate_edge_id(edge_id)
             .map(|edge_id| unsafe { self.get_unchecked_destination_node_id_from_edge_id(edge_id) })
+    }
+
+    /// Returns number of self-loops associated to the provided node ID.
+    ///
+    /// # Arguments
+    /// * `node_id`: NodeT - The node ID for which to retrieve the number of self-loops.
+    ///
+    /// # Implementative details
+    /// While in normal graph this value would be either one or zero, and therefore
+    /// would be closer to a simpler boolean value, in multi-graphs this value may
+    /// be considerably higher.
+    ///
+    /// # Safety
+    /// This method may panic if the provided node ID is outside
+    /// the number of nodes in the graph.
+    pub unsafe fn get_unchecked_number_of_selfloops_from_node_id(&self, node_id: NodeT) -> NodeT {
+        // First we check whether the graph has self-loops.
+        if !self.has_selfloops() {
+            return 0;
+        }
+
+        let neighbours = self
+            .edges
+            .get_unchecked_neighbours_node_ids_from_src_node_id(node_id);
+
+        // If it has, we find the position where the self-loops start.
+        let breaking_point = neighbours.partition_point(|&second| second < node_id);
+
+        neighbours[breaking_point..]
+            .iter()
+            .take_while(|&&second| second == node_id)
+            .count() as NodeT
+    }
+
+    /// Returns number of self-loops associated to the provided node ID.
+    ///
+    /// # Arguments
+    /// * `node_id`: NodeT - The node ID for which to retrieve the number of self-loops.
+    ///
+    /// # Implementative details
+    /// While in normal graph this value would be either one or zero, and therefore
+    /// would be closer to a simpler boolean value, in multi-graphs this value may
+    /// be considerably higher.
+    ///
+    /// # Raises
+    /// This method may panic if the provided node ID is outside
+    /// the number of nodes in the graph.
+    pub fn get_number_of_selfloops_from_node_id(&self, node_id: NodeT) -> Result<NodeT> {
+        self.validate_node_id(node_id)
+            .map(|node_id| unsafe { self.get_unchecked_number_of_selfloops_from_node_id(node_id) })
+    }
+
+    /// Returns number of self-loops associated to the provided node name.
+    ///
+    /// # Arguments
+    /// * `node_name`: &str - The node name for which to retrieve the number of self-loops.
+    ///
+    /// # Implementative details
+    /// While in normal graph this value would be either one or zero, and therefore
+    /// would be closer to a simpler boolean value, in multi-graphs this value may
+    /// be considerably higher.
+    ///
+    /// # Raises
+    /// This method may panic if the provided node ID is outside
+    /// the number of nodes in the graph.
+    pub fn get_number_of_selfloops_from_node_name(&self, node_name: &str) -> Result<NodeT> {
+        self.get_node_id_from_node_name(node_name)
+            .map(|node_id| unsafe { self.get_unchecked_number_of_selfloops_from_node_id(node_id) })
     }
 
     /// Returns source node name corresponding to given edge ID.
@@ -395,7 +458,7 @@ impl Graph {
     /// # Safety
     /// If any of the given node IDs do not exist in the graph the method will panic.
     pub unsafe fn get_unchecked_edge_id_from_node_ids(&self, src: NodeT, dst: NodeT) -> EdgeT {
-        self.edges.unchecked_rank(self.encode_edge(src, dst)) as EdgeT
+        self.edges.get_unchecked_edge_id_from_node_ids(src, dst)
     }
 
     #[inline(always)]
@@ -414,27 +477,7 @@ impl Graph {
     /// assert!(graph.get_edge_id_from_node_ids(0, 100000000).is_err());
     /// ```
     pub fn get_edge_id_from_node_ids(&self, src: NodeT, dst: NodeT) -> Result<EdgeT> {
-        match self.destinations.as_ref().as_ref(){
-            None => match self
-            .edges
-            .rank(self.encode_edge(src, dst))
-            .map(|value| value as EdgeT) {
-                Some(edge_id) => Ok(edge_id),
-                None => Err(format!("The edge composed by the source node {} and destination node {} does not exist in this graph.", src, dst))
-            },
-            Some(dsts) => {
-                self.validate_node_id(src)?;
-                let (start, end) = unsafe{self.get_unchecked_minmax_edge_ids_from_source_node_id(src)};
-                match dsts[(start as usize)..(end as usize)].binary_search(&dst) {
-                    Ok(local_idx) => {
-                        Ok(start + local_idx as EdgeT)
-                    }
-                    Err(_) => {
-                        Err(format!("The edge composed by the source node {} and destination node {} does not exist in this graph.", src, dst))
-                    }
-                }
-            }
-        }
+        self.edges.get_edge_id_from_node_ids(src, dst)
     }
 
     #[inline(always)]
@@ -667,6 +710,7 @@ impl Graph {
         Ok(most_central_node_ids)
     }
 
+    #[inline(always)]
     /// Returns the number of outbound neighbours of given node.
     ///
     /// # Arguments
@@ -678,6 +722,52 @@ impl Graph {
         let (min_edge_id, max_edge_id) =
             self.get_unchecked_minmax_edge_ids_from_source_node_id(node_id);
         (max_edge_id - min_edge_id) as NodeT
+    }
+
+    #[inline(always)]
+    /// Returns number of outbound nodes for a given node ID, adjusted by removing the number of selfloops.
+    ///
+    /// # Arguments
+    /// * `node_id`: NodeT - Integer ID of the node.
+    ///
+    /// # Safety
+    /// If the given node ID does not exist in the current graph the method will raise a panic.
+    pub unsafe fn get_unchecked_selfloop_adjusted_node_degree_from_node_id(
+        &self,
+        node_id: NodeT,
+    ) -> NodeT {
+        self.get_unchecked_node_degree_from_node_id(node_id)
+            - self.get_unchecked_number_of_selfloops_from_node_id(node_id)
+    }
+
+    /// Returns number of outbound nodes for a given node ID, adjusted by removing the number of selfloops.
+    ///
+    /// # Arguments
+    /// * `node_id`: NodeT - Integer ID of the node.
+    ///
+    /// # Raises
+    /// * ValueError - If the given node ID does not exist in the current graph the method will raise a panic.
+    pub fn get_selfloop_adjusted_node_degree_from_node_id(&self, node_id: NodeT) -> Result<NodeT> {
+        self.validate_node_id(node_id).map(|node_id| unsafe {
+            self.get_unchecked_selfloop_adjusted_node_degree_from_node_id(node_id)
+        })
+    }
+
+    /// Returns number of outbound nodes for a given node name, adjusted by removing the number of selfloops.
+    ///
+    /// # Arguments
+    /// * `node_name`: &str - Integer name of the node.
+    ///
+    /// # Raises
+    /// * ValueError - If the given node name does not exist in the current graph the method will raise a panic.
+    pub fn get_selfloop_adjusted_node_degree_from_node_name(
+        &self,
+        node_name: &str,
+    ) -> Result<NodeT> {
+        self.get_node_id_from_node_name(node_name)
+            .map(|node_id| unsafe {
+                self.get_unchecked_selfloop_adjusted_node_degree_from_node_id(node_id)
+            })
     }
 
     /// Returns the weighted sum of outbound neighbours of given node.
@@ -1674,23 +1764,8 @@ impl Graph {
         &self,
         src: NodeT,
     ) -> (EdgeT, EdgeT) {
-        match &*self.cumulative_node_degrees {
-            Some(cumulative_node_degrees) => {
-                let min_edge_id = if src == 0 {
-                    0
-                } else {
-                    cumulative_node_degrees[src as usize - 1]
-                };
-                (min_edge_id, cumulative_node_degrees[src as usize])
-            }
-            None => {
-                let min_edge_id: EdgeT = self.get_unchecked_edge_id_from_node_ids(src, 0);
-                (
-                    min_edge_id,
-                    self.get_unchecked_edge_id_from_node_ids(src + 1, 0),
-                )
-            }
-        }
+        self.edges
+            .get_unchecked_minmax_edge_ids_from_source_node_id(src)
     }
 
     /// Return range of outbound edges IDs which have as source the given Node.

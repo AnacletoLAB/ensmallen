@@ -115,13 +115,7 @@ where
         information_contents: Option<&[F]>,
     ) -> Result<(), String> {
         self.validate_features(&dag, node_counts, information_contents)?;
-        let mut transposed_dag = dag.to_transposed();
-        transposed_dag.enable(
-            Some(dag.has_sources_tradeoff_enabled()),
-            Some(dag.has_destinations_tradeoff_enabled()),
-            Some(dag.has_cumulative_node_degrees_tradeoff_enabled()),
-            Some(dag.has_reciprocal_sqrt_degrees_tradeoff_enabled()),
-        )?;
+        let transposed_dag = dag.to_transposed();
 
         if let Some(information_contents) = information_contents {
             self.information_contents = information_contents.into();

@@ -1,6 +1,5 @@
 use super::*;
 use bitvec::prelude::*;
-use elias_fano_rust::*;
 use std::mem::size_of;
 use tags::no_binding;
 
@@ -12,7 +11,7 @@ fn to_human_readable_memory_requirement(bytes_number: usize) -> String {
 #[derive(Clone, Debug)]
 #[no_binding]
 pub struct GraphMemoryStats {
-    pub edges: EliasFanoMemoryStats,
+    pub edges: usize,
     pub weights: usize,
 
     pub node_types: Option<NodeTypeVocabularyMemoryStats>,
@@ -25,17 +24,13 @@ pub struct GraphMemoryStats {
     pub connected_nodes: usize,
     pub unique_sources: usize,
 
-    pub destinations: usize,
-    pub sources: usize,
-    pub cumulative_node_degrees: usize,
-
     pub metadata: usize,
 }
 
 impl GraphMemoryStats {
     /// Return the total memory used
     pub fn total(&self) -> usize {
-        self.edges.total()
+        self.edges
             + self.weights
             + self.node_types.as_ref().map_or(0, |x| x.total())
             + self.edge_types.as_ref().map_or(0, |x| x.total())
@@ -43,9 +38,6 @@ impl GraphMemoryStats {
             + self.name
             + self.connected_nodes
             + self.unique_sources
-            + self.destinations
-            + self.sources
-            + self.cumulative_node_degrees
             + self.metadata
             + self.cache
     }
@@ -71,25 +63,6 @@ impl Graph {
             cache: unsafe { (*self.cache.get()).total() },
 
             // Exact caching data
-            destinations: size_of::<Option<Vec<NodeT>>>()
-                + self
-                    .destinations
-                    .as_ref()
-                    .as_ref()
-                    .map_or(0, |v| v.capacity() * size_of::<NodeT>()),
-            sources: size_of::<Option<Vec<NodeT>>>()
-                + self
-                    .sources
-                    .as_ref()
-                    .as_ref()
-                    .map_or(0, |v| v.capacity() * size_of::<NodeT>()),
-            cumulative_node_degrees: size_of::<Option<Vec<EdgeT>>>()
-                + self
-                    .cumulative_node_degrees
-                    .as_ref()
-                    .as_ref()
-                    .map_or(0, |v| v.capacity() * size_of::<EdgeT>()),
-
             unique_sources: self
                 .unique_sources
                 .as_ref()
@@ -127,7 +100,7 @@ impl Graph {
 
     /// Returns how many bytes are currently used to store the edges.
     pub fn get_edges_total_memory_requirement(&self) -> usize {
-        self.edges.memory_stats().total()
+        self.edges.memory_stats()
     }
 
     /// Returns human readable amount of how many bytes are currently used to store the edges.

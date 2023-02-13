@@ -1,8 +1,9 @@
 use std::{intrinsics::unlikely, sync::atomic::AtomicU8};
 
 use super::*;
+use crate::data_structures::CSR;
 use bitvec::prelude::*;
-use elias_fano_rust::*;
+use elias_fano_rust::EliasFano;
 use rayon::prelude::*;
 use std::sync::Arc;
 
@@ -26,9 +27,7 @@ use std::sync::Arc;
 #[derive(Clone, Debug)]
 pub struct Graph {
     /// The main datastructure where all the edges are saved
-    /// in the endoced form ((src << self.node_bits) | dst) this allows us to do almost every
-    /// operation in O(1) without decompressing the data.
-    pub(crate) edges: Arc<EliasFano>,
+    pub(crate) edges: Arc<CSR>,
     /// Optional vector of the weights of every edge.
     /// `weights[10]` return the weight of the edge with edge_id 10
     pub(crate) weights: Arc<Option<Vec<WeightT>>>,
@@ -41,32 +40,22 @@ pub struct Graph {
     /// Vocabulary that save the mappings from string to index of every node
     pub(crate) nodes: Arc<Vocabulary<NodeT>>,
 
-    /// How many bits are needed to save a node.
-    pub(crate) node_bits: u8,
-    /// The mask used to extract the dst value form an encoded edge.
-    /// This is saved for speed sake. It's equivalent to (1 << self.node_bits) - 1;
-    pub(crate) node_bit_mask: u64,
-
     /// if the graph is directed or undirected
     pub(crate) directed: bool,
     /// Graph name
     pub(crate) name: Arc<String>,
 
     // /////////////////////////////////////////////////////////////////////////
-    // Elias-Fano Caching related attributes
+    // Caching related attributes
     // /////////////////////////////////////////////////////////////////////////
-    /// Vector of destinations to execute fast walks if required.
-    pub(crate) destinations: Arc<Option<Vec<NodeT>>>,
-    /// Vector of sources to execute fast link prediction sequences if required.
-    pub(crate) sources: Arc<Option<Vec<NodeT>>>,
-    /// Vector of cumulative_node_degrees to execute fast walks if required.
-    pub(crate) cumulative_node_degrees: Arc<Option<Vec<EdgeT>>>,
     /// Option of Elias-Fano of unique sources.
     /// When it is None it means that ALL nodes are sources.
     pub(crate) unique_sources: Arc<Option<EliasFano>>,
+
     /// Option of bitvec containing connected nodes.
     /// When it is None it means that ALL nodes are connected, i.e. not singleton or singletons with selfloops.
     pub(crate) connected_nodes: Arc<Option<BitVec<u8, Lsb0>>>,
+
     /// Number of connected nodes in the graph.
     pub(crate) connected_nodes_number: NodeT,
 
@@ -104,7 +93,7 @@ impl Graph {
         directed: bool,
         nodes: Arc<Vocabulary<NodeT>>,
         node_types: Arc<Option<NodeTypeVocabulary>>,
-        edges: Arc<EliasFano>,
+        edges: Arc<CSR>,
         edge_types: Arc<Option<EdgeTypeVocabulary>>,
         weights: Arc<Option<Vec<WeightT>>>,
         may_have_singletons: bool,
@@ -112,20 +101,13 @@ impl Graph {
         name: S,
     ) -> Graph {
         let nodes_number = nodes.len();
-        let node_bits = get_node_bits(nodes_number as NodeT);
-        let node_bit_mask = (1 << node_bits) - 1;
         let mut graph = Graph {
             directed,
             edges: edges,
-            node_bits,
-            node_bit_mask,
             weights: weights,
             node_types: node_types,
             edge_types: edge_types,
             nodes: nodes,
-            sources: Arc::new(None),
-            destinations: Arc::new(None),
-            cumulative_node_degrees: Arc::new(None),
             name: Arc::new(name.into()),
             cache: Arc::new(ClonableUnsafeCell::default()),
             unique_sources: Arc::new(None),

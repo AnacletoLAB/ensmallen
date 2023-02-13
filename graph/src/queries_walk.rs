@@ -36,38 +36,6 @@ impl Graph {
             return (min_edge_id, max_edge_id, Some(destinations), Some(indices));
         }
 
-        // If the destinations are stored explicitly because the time-memory tradeoff is enabled we are done.
-        if self.destinations.is_some() {
-            return (min_edge_id, max_edge_id, None, None);
-        }
-
-        // Finally if we are using the cache without sub-sampling
-        let destinations = Some(
-            self.iter_unchecked_neighbour_node_ids_from_source_node_id(source_node_id)
-                .collect(),
-        );
-        (min_edge_id, max_edge_id, destinations, None)
-    }
-
-    /// Returns slice of destinations corresponding to given minmax edge ID and node.
-    ///
-    /// # Arguments
-    /// * `min_edge_id`: EdgeT - Minimum edge ID for the slice.
-    /// * `max_edge_id`: EdgeT - Maximum edge ID for the slice.
-    /// * `source_node_id`: NodeT - The source node ID.
-    /// * `destinations`: &'a Option<Vec<NodeT>> - The optional destinations slice that may have been provided when working with subsampling.
-    pub(crate) fn get_destinations_slice<'a>(
-        &'a self,
-        min_edge_id: EdgeT,
-        max_edge_id: EdgeT,
-        destinations: &'a Option<Vec<NodeT>>,
-    ) -> &'a [NodeT] {
-        match (self.destinations.as_ref().as_ref(), destinations) {
-            (_, Some(dsts)) => dsts.as_slice(),
-            (Some(dsts), None) => &dsts[min_edge_id as usize..max_edge_id as usize],
-            _ => unreachable!(
-                "It is not possible to have both destinations and cached destinations at once."
-            ),
-        }
+        (min_edge_id, max_edge_id, None, None)
     }
 }

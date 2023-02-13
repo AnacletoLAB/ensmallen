@@ -5,7 +5,7 @@ use itertools::Itertools;
 use log::warn;
 use num_traits::Zero;
 use rand::Rng;
-use rayon::iter::ParallelIterator;
+use rayon::prelude::*;
 use std::collections::HashSet;
 use std::fs;
 use std::path::Path;
@@ -290,29 +290,20 @@ pub fn default_holdout_test_suite(graph: &Graph, train: &Graph, test: &Graph) ->
     Ok(())
 }
 
-/// Test that the spanning arborescence algorithm from bader is working correctly.
-pub fn test_spanning_arborescence_bader(graph: &Graph, verbose: Option<bool>) {
-    let kruskal_tree = graph.spanning_arborescence_kruskal(verbose).0;
-    let random_kruskal_tree = graph
-        .random_spanning_arborescence_kruskal(Some(42), None, verbose)
-        .0;
-    if !graph.directed {
-        let spanning_arborescence_bader: Vec<(NodeT, NodeT)> =
-            graph.spanning_arborescence(verbose).unwrap().1.collect();
-        assert_eq!(
-                spanning_arborescence_bader.len(), kruskal_tree.len(),
-                "The number of extracted edges forming the spanning arborescence computed by the bader's algorithm does not match the one computed by kruskal. The graph report is:\n{:?}\nThe bader's tree is:\n{:?}\nThe kruskal's tree is:\n{:?}",
-                graph.textual_report(), spanning_arborescence_bader, kruskal_tree,
-            );
-    } else {
-        assert!(graph.spanning_arborescence(verbose).is_err());
-    }
-    assert_eq!(random_kruskal_tree.len() as usize, kruskal_tree.len());
-}
-
 pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<()> {
     // Testing that vocabularies are properly loaded
     validate_vocabularies(graph);
+
+    #[cfg(test)]
+    graph
+        .edges
+        .par_iter_directed_edge_node_ids_naive()
+        .zip(graph.edges.par_iter_directed_edge_node_ids())
+        .for_each(|(a, b)| {
+            assert_eq!(a.0, b.0);
+            assert_eq!(a.1, b.1);
+            assert_eq!(a.2, b.2);
+        });
 
     // Collect set of connected nodes, INCLUDING singleton with selfloops.
     let not_singleton_nodes = graph
@@ -1041,12 +1032,12 @@ pub fn test_node_centralities(graph: &mut Graph, verbose: Option<bool>) -> Resul
 }
 
 pub fn test_vertex_cover(graph: &mut Graph, _verbose: Option<bool>) -> Result<()> {
-    let vertex_cover = graph.approximated_vertex_cover_set();
+    let vertex_cover = graph.get_vertex_cover(None, None, None, None)?;
     graph
-        .par_iter_edge_node_ids(true)
+        .par_iter_directed_edge_node_ids()
         .for_each(|(_, src_node_id, dst_node_id)| {
             assert!(
-                vertex_cover.contains(&src_node_id) || vertex_cover.contains(&dst_node_id),
+                vertex_cover[src_node_id as usize] || vertex_cover[dst_node_id as usize],
                 concat!(
                     "We expected for either the node {} or {} to be in the vertex cover.\n",
                     "The vertex cover is {:?}"
@@ -1205,11 +1196,11 @@ pub fn test_dijkstra(graph: &mut Graph, _verbose: Option<bool>) -> Result<()> {
 pub fn test_polygons(graph: &mut Graph, verbose: Option<bool>) -> Result<()> {
     assert_eq!(
         graph
-            .get_number_of_triangles_per_node(Some(false), None, verbose)
+            .get_number_of_triangles_per_node(None, None, verbose)
+            .unwrap()
             .into_iter()
-            .map(|triangles_number| triangles_number as EdgeT)
-            .sum::<EdgeT>(),
-        graph.get_number_of_triangles(Some(false), None, verbose)
+            .sum::<EdgeT>() / 3,
+        graph.get_number_of_triangles(None, None, None).unwrap()
     );
     Ok(())
 }
@@ -1416,84 +1407,66 @@ pub fn test_random_walks(graph: &mut Graph, _verbose: Option<bool>) -> Result<()
     assert_eq!(walker2.clone(), walker2);
 
     warn!("Executing random walks tests.");
-    for mode in 0..2 {
-        if mode == 1 {
-            graph.enable(None, None, None, None)?;
-            if let Some(cumulative_node_degrees) = &*graph.cumulative_node_degrees {
-                assert_eq!(
-                    cumulative_node_degrees.len(),
-                    graph.get_number_of_nodes() as usize,
-                    "Length of cumulative_node_degrees does not match number of nodes in the graph."
-                );
-            }
-            if let Some(destinations) = &*graph.destinations {
-                assert_eq!(
-                    destinations.len(),
-                    graph.get_number_of_directed_edges() as usize,
-                    "Length of destinations does not match number of edges in the graph."
-                );
-            }
-        }
-        assert_eq!(
-            graph
-                .par_iter_random_walks(1, &walker)
-                .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
-            graph
-                .par_iter_random_walks(1, &walker)
-                .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
-            "Walks of first order are not reproducible!"
-        );
+    assert_eq!(
+        graph
+            .par_iter_random_walks(1, &walker)
+            .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
+        graph
+            .par_iter_random_walks(1, &walker)
+            .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
+        "Walks of first order are not reproducible!"
+    );
 
-        assert_eq!(
-            graph
-                .par_iter_random_walks(1, &second_order_walker(2.0, 2.0)?)
-                .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
-            graph
-                .par_iter_random_walks(1, &second_order_walker(2.0, 2.0)?)
-                .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
-            "Walks of second order are not reproducible!"
-        );
+    assert_eq!(
+        graph
+            .par_iter_random_walks(1, &second_order_walker(2.0, 2.0)?)
+            .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
+        graph
+            .par_iter_random_walks(1, &second_order_walker(2.0, 2.0)?)
+            .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
+        "Walks of second order are not reproducible!"
+    );
 
-        assert_eq!(
-            graph
-                .par_iter_complete_walks(&walker)
-                .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
-            graph
-                .par_iter_complete_walks(&walker)
-                .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
-            "Complete first order walks are not reproducible!"
-        );
+    assert_eq!(
+        graph
+            .par_iter_complete_walks(&walker)
+            .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
+        graph
+            .par_iter_complete_walks(&walker)
+            .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
+        "Complete first order walks are not reproducible!"
+    );
 
-        assert_eq!(
-            graph
-                .par_iter_complete_walks(&second_order_walker(2.0, 2.0)?)
-                .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
-            graph
-                .par_iter_complete_walks(&second_order_walker(2.0, 2.0)?)
-                .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
-            "Complete second order walks are not reproducible!"
-        );
+    assert_eq!(
+        graph
+            .par_iter_complete_walks(&second_order_walker(2.0, 2.0)?)
+            .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
+        graph
+            .par_iter_complete_walks(&second_order_walker(2.0, 2.0)?)
+            .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
+        "Complete second order walks are not reproducible!"
+    );
 
-        assert_eq!(
-            graph
-                .par_iter_complete_walks(&second_order_walker(2.0, 1.0)?)
-                .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
-            graph
-                .par_iter_complete_walks(&second_order_walker(2.0, 1.0)?)
-                .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
-            "Complete second order walks are not reproducible!"
-        );
+    assert_eq!(
+        graph
+            .par_iter_complete_walks(&second_order_walker(2.0, 1.0)?)
+            .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
+        graph
+            .par_iter_complete_walks(&second_order_walker(2.0, 1.0)?)
+            .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
+        "Complete second order walks are not reproducible!"
+    );
 
-        assert_eq!(
-            graph
-                .par_iter_complete_walks(&second_order_walker(1.0, 2.0)?)
-                .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
-            graph
-                .par_iter_complete_walks(&second_order_walker(1.0, 2.0)?)
-                .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
-            "Complete second order walks are not reproducible!"
-        );
-    }
+    assert_eq!(
+        graph
+            .par_iter_complete_walks(&second_order_walker(1.0, 2.0)?)
+            .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
+        graph
+            .par_iter_complete_walks(&second_order_walker(1.0, 2.0)?)
+            .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
+        "Complete second order walks are not reproducible!"
+    );
+
     Ok(())
 }
 
@@ -2485,9 +2458,6 @@ fn _default_test_suite(graph: &mut Graph, verbose: Option<bool>) -> Result<()> {
     warn!("Testing generic filtering mechanism.");
     let _ = test_graph_filter(graph, verbose);
 
-    warn!("Testing the spanning arborescences.");
-    let _ = test_spanning_arborescence_bader(graph, verbose);
-
     warn!("Testing the graph diameter.");
     let _ = test_graph_diameter(graph, verbose);
 
@@ -2566,7 +2536,7 @@ pub fn default_test_suite(graph: &mut Graph, verbose: Option<bool>) -> Result<()
     warn!("Starting default test suite.");
     let _ = _default_test_suite(graph, verbose);
     warn!("Starting default test suite with speedups enabled.");
-    graph.enable(Some(true), Some(true), Some(true), Some(true))?;
+    graph.enable(Some(true), Some(true));
     let _ = _default_test_suite(graph, verbose);
     warn!("Starting default test suite on transformed graphs.");
 

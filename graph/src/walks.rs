@@ -681,6 +681,7 @@ impl Graph {
         )
     }
 
+    #[inline(always)]
     /// Return vector of walks run on a random subset of the not trap nodes.
     ///
     /// # Arguments
@@ -715,6 +716,7 @@ impl Graph {
         )
     }
 
+    #[inline(always)]
     /// Return vector of walks run on a random subset of the not trap nodes.
     ///
     /// # Arguments
@@ -937,6 +939,27 @@ impl Graph {
                 };
             });
         Ok(())
+    }
+
+    /// Returns slice of destinations corresponding to given minmax edge ID and node.
+    ///
+    /// # Arguments
+    /// * `min_edge_id`: EdgeT - Minimum edge ID for the slice.
+    /// * `max_edge_id`: EdgeT - Maximum edge ID for the slice.
+    /// * `source_node_id`: NodeT - The source node ID.
+    /// * `destinations`: &'a Option<Vec<NodeT>> - The optional destinations slice that may have been provided when working with subsampling.
+    fn get_destinations_slice<'a>(
+        &'a self,
+        min_edge_id: EdgeT,
+        max_edge_id: EdgeT,
+        destinations: &'a Option<Vec<NodeT>>,
+    ) -> &'a [NodeT] {
+        // TODO! This is stupid and can be done much faster by removing the call to
+        // get_unchecked_edges_and_destinations_from_source_node_id
+        match destinations {
+            Some(dsts) => dsts.as_slice(),
+            None => &self.edges.destinations[min_edge_id as usize..max_edge_id as usize],
+        }
     }
 
     /// Returns single walk from given node.

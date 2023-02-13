@@ -6,6 +6,7 @@ use std::{
 use crate::types::*;
 use num_traits::{AsPrimitive, Float};
 
+#[inline(always)]
 /// Returns vector with the element-wise subtraction between the two vectors.
 ///
 /// # Arguments
@@ -27,6 +28,7 @@ pub unsafe fn element_wise_subtraction<F: Into<R> + Copy, R: Float>(
         .collect()
 }
 
+#[inline(always)]
 /// Returns vector with the element-wise weighted subtraction between the two vectors.
 ///
 /// # Arguments
@@ -52,6 +54,7 @@ pub unsafe fn element_wise_weighted_subtraction<F: Into<R> + Copy, R: ThreadFloa
         .collect()
 }
 
+#[inline(always)]
 /// Executes element-wise subtraction inplace.
 ///
 /// # Arguments
@@ -73,6 +76,7 @@ pub unsafe fn element_wise_subtraction_inplace<F: Into<R> + Copy, R: ThreadFloat
         .collect()
 }
 
+#[inline(always)]
 /// Executes element-wise weighted subtraction inplace.
 ///
 /// # Arguments
@@ -98,6 +102,7 @@ pub unsafe fn element_wise_weighted_subtraction_inplace<F: Into<R> + Copy, R: Th
         .collect()
 }
 
+#[inline(always)]
 /// Returns vector with the element-wise addition between the two vectors.
 ///
 /// # Arguments
@@ -119,6 +124,7 @@ pub unsafe fn element_wise_addition<F: Into<R> + Copy, R: ThreadFloat>(
         .collect()
 }
 
+#[inline(always)]
 /// Returns vector with the element-wise weighted addition between the two vectors.
 ///
 /// # Arguments
@@ -144,6 +150,7 @@ pub unsafe fn element_wise_weighted_addition<F: Into<R> + Copy, R: ThreadFloat>(
         .collect()
 }
 
+#[inline(always)]
 /// Executes element-wise addition inplace.
 ///
 /// # Arguments
@@ -164,6 +171,7 @@ pub unsafe fn element_wise_addition_inplace<F: AddAssign<F> + Copy>(
         .for_each(|(first_feature, &second_feature)| *first_feature += second_feature);
 }
 
+#[inline(always)]
 /// Executes element-wise weighted addition inplace.
 ///
 /// # Arguments
@@ -187,6 +195,7 @@ pub unsafe fn element_wise_weighted_addition_inplace<F: Into<R> + Copy, R: Threa
         .collect()
 }
 
+#[inline(always)]
 /// Returns the squared norm of the provided vector.
 ///
 /// # Arguments
@@ -206,6 +215,7 @@ pub fn squared_vector_norm<
     .min(R::max_value())
 }
 
+#[inline(always)]
 /// Returns the norm of the provided vector.
 ///
 /// # Arguments
@@ -216,6 +226,7 @@ pub fn vector_norm<F: Copy + AsPrimitive<R>, R: Sum + Float + 'static>(
     squared_vector_norm(vector).sqrt()
 }
 
+#[inline(always)]
 /// Normalize inplace the provided vector.
 ///
 /// # Arguments

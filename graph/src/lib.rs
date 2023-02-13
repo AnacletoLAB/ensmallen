@@ -7,16 +7,20 @@
 //! * `singleton_with_selfloop`: A node which has only selfloops
 //! * `connected_node`: a node which is nor a `singleton` nor a `singleton_with_selfloops`.
 
+#![feature(adt_const_params)]
 #![warn(unused_macros)]
+#![feature(drain_filter)]
 #![feature(is_sorted)]
 #![feature(string_remove_matches)]
-#![feature(map_first_last)]
 #![feature(exit_status_error)]
 #![feature(core_intrinsics)]
 #![feature(pattern)]
+#![deny(unconditional_recursion)]
 #![type_length_limit = "3764086"]
 #![feature(exclusive_range_pattern)]
 use std::sync::Arc;
+
+pub mod data_structures;
 
 mod vocabulary;
 pub use self::vocabulary::*;
@@ -42,9 +46,7 @@ mod type_file_reader;
 pub use self::type_file_reader::TypeFileReader;
 mod type_file_writer;
 pub use self::type_file_writer::TypeFileWriter;
-mod compression;
 mod from_csv;
-pub(crate) use self::compression::*;
 
 mod parameters_validators;
 pub use self::parameters_validators::*;
@@ -74,8 +76,10 @@ mod filters;
 mod getters;
 mod graph;
 mod hash;
+mod hashes;
 mod holdouts;
 mod isomorphism;
+pub mod isomorphism_iter;
 mod iter_queries;
 mod iters;
 mod modifiers;
@@ -94,6 +98,7 @@ mod thickeners;
 mod to_conversions;
 mod transitivity;
 mod trees;
+mod triad_census;
 mod types;
 mod url_utilities;
 mod vertex_cover;
@@ -109,6 +114,7 @@ mod queries_boolean;
 mod queries_walk;
 pub use self::queries::*;
 pub use self::queries_boolean::*;
+pub use self::triad_census::*;
 pub use self::url_utilities::*;
 
 pub mod test_utilities;
@@ -178,3 +184,6 @@ pub use cliques::*;
 
 mod graphs_from_edge_lists;
 pub use graphs_from_edge_lists::*;
+
+mod builder;
+pub use builder::*;

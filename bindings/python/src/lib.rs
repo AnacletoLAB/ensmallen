@@ -31,6 +31,9 @@ pub(crate) use distance_node_label_prediction_perceptron::*;
 mod dag_resnik;
 pub use dag_resnik::*;
 
+mod triad_census;
+pub use triad_census::*;
+
 mod basic_embedding_model_binding;
 pub(crate) use basic_embedding_model_binding::*;
 
@@ -48,7 +51,6 @@ mod hash;
 mod node_file_writer;
 mod preprocessing;
 mod subgraphs;
-mod trees;
 mod utilities;
 pub(crate) use crate::preprocessing::*;
 pub(crate) use crate::utilities::*;

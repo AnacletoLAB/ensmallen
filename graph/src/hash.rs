@@ -79,8 +79,6 @@ impl Hash for Graph {
 
         // These fields are derivative from the other ones and thus not needed.
         // self.unique_sources.hash(state);
-        // self.node_bits.hash(state);
-        // self.node_bit_mask.hash(state);
         // self.unique_selfloop_number.hash(state);
         // self.selfloop_number.hash(state);
         // self.connected_nodes_number.hash(state);
@@ -133,5 +131,27 @@ impl Hash for WalkWeights {
         hash_f32(self.explore_weight, state);
         hash_f32(self.change_node_type_weight, state);
         hash_f32(self.change_edge_type_weight, state);
+    }
+}
+
+impl Hash for EdgeQuadruple {
+    fn hash<H: Hasher>(&self, state: &mut H) {
+        self.0.hash(state);
+        self.1.hash(state);
+        self.2.hash(state);
+        hash_f32(self.3, state);
+    }
+}
+
+impl Hash for GraphBuilder {
+    fn hash<H: Hasher>(&self, state: &mut H) {
+        self.edges.hash(state);
+        self.nodes.hash(state);
+        self.has_node_types.hash(state);
+        self.has_edge_types.hash(state);
+        self.has_edge_weights.hash(state);
+        self.directed.hash(state);
+        self.name.hash(state);
+        hash_f32(self.default_weight, state);
     }
 }

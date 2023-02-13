@@ -96,31 +96,43 @@ def compile_target(target_name, target_settings, WHEELS_FOLDER, settings):
     logging.info("Compiling the '%s' target with flags: '%s'", target_name, rust_flags)
     
     os_name = platform.system().strip().lower()
-    
+    print(os_name)
     if os_name == "linux":
-        zig = "--zig"
+        zig = "--zig --compatibility manylinux2014"
+        env = {
+            "CXXFLAGS": "-stdlib=libc++",
+            "CXX": "zig c++ -target x86_64-linux-gnu.2.16",
+            "CC": "zig cc -target x86_64-linux-gnu.2.16",
+            "CFLAGS": "-stdlib=libc++"
+        }
+    elif os_name == "windows":
+        zig = ""
+        env = {}
     else:
         zig = ""
-
-    if os_name != "windows":
         env = {
             "CXXFLAGS": "-stdlib=libc++",
             "CXX": "clang++",
             "CC": "clang",
             "CFLAGS": "-stdlib=libc++"
         }
-    else:
-        env = {}
 
-    env.update(os.environ)
     env["RUSTFLAGS"] = env.get("RUST_FLAGS", "") + " " + rust_flags
 
+    environment = os.environ.copy()
+    environment.update(env)
+
+    print(environment)
+
+    strip = "" # "--strip"
+
     exec(
-        "maturin build --release --strip {zig} --out {target_dir}".format(
+        "maturin build --release {strip} {zig} --out {target_dir}".format(
             target_dir=target_dir,
             zig=zig,
+            strip=strip,
         ), 
-        env=env,
+        env=environment,
         cwd=build_dir,
     )
 
@@ -470,7 +482,7 @@ if __name__ == "__main__":
     logging.info("The final wheel will be at '%s'", final_wheel)
     # WARNING: adding --strip here breaks the wheel OFC
     if platform.system().strip().lower() == "linux" and not args.skip_repair:
-        logging.info("Fixing the wheel to be in the standard manylinux2010 if needed")
+        logging.info("Fixing the wheel to be in the standard manylinux2014 if needed")
         exec(
             "auditwheel repair {} --wheel-dir {}".format(target_file, WHEELS_FOLDER),
             env=os.environ,

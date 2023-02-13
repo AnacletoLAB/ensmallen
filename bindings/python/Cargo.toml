@@ -33,12 +33,12 @@ rand = {version="0.7", features = ["small_rng"] }
 strsim = "0.10.0"
 file_progress = {git="https://github.com/LucaCappelletti94/rust_file_progress.git"}
 markdown = "0.3"
-rayon = "1.5.0"
+rayon = "1.6.0"
 indicatif = {version="0.17.0", features = ["rayon"]}
 ctrlc = "3.1.7"
 
 [profile.release]
-debug = false             # Include debug info.
+debug = true             # Include debug info.
 overflow-checks = true # Provides panic messages in case of overflows
 # The opt-level setting controls the number of optimizations Rust will apply to 
 # your code, with a range of 0 to 3. Applying more optimizations extends 

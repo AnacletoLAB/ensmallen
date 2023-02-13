@@ -6,6 +6,7 @@ use core::ops::Mul;
 use rayon::prelude::*;
 use std::iter::Sum;
 
+#[inline(always)]
 /// Returns the dot product between the two provided vectors computed sequentially.
 ///
 /// # Arguments
@@ -27,6 +28,7 @@ pub unsafe fn dot_product_sequential_unchecked<F: Copy + Sum + Mul<Output = F>>(
         .sum()
 }
 
+#[inline(always)]
 /// Returns the dot product between the two provided vectors computed in parallel.
 ///
 /// # Arguments
@@ -48,6 +50,7 @@ pub unsafe fn dot_product_parallel_unchecked<F: Copy + Sum + Mul<Output = F> + S
         .sum()
 }
 
+#[inline(always)]
 /// Returns the dot product between the two provided vectors computed sequentially.
 ///
 /// # Arguments
@@ -65,6 +68,7 @@ pub fn dot_product_sequential<F: ThreadFloat>(
     Ok(unsafe { dot_product_sequential_unchecked(src_features, dst_features) })
 }
 
+#[inline(always)]
 /// Returns the dot product between the two provided vectors computed in parallel.
 ///
 /// # Arguments
@@ -82,6 +86,7 @@ pub fn dot_product_parallel<F: ThreadFloat>(
     Ok(unsafe { dot_product_parallel_unchecked(src_features, dst_features) })
 }
 
+#[inline(always)]
 /// Write the dot product in the provided slice.
 ///
 /// # Arguments

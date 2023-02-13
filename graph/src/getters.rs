@@ -297,6 +297,7 @@ impl Graph {
         Ok(weighted_degrees[(self.get_number_of_nodes() / 2) as usize])
     }
 
+    #[inline(always)]
     /// Returns maximum node degree of the graph.
     ///
     /// # Example
@@ -1481,9 +1482,10 @@ impl Graph {
         }
     }
 
+    #[inline(always)]
     /// Returns number of directed edges in the graph.
     pub fn get_number_of_directed_edges(&self) -> EdgeT {
-        self.edges.len() as EdgeT
+        self.edges.get_number_of_directed_edges()
     }
 
     /// Returns number of edge types in the graph.
@@ -1566,17 +1568,10 @@ impl Graph {
         self.get_number_of_directed_edges() - self.get_number_of_unique_directed_edges()
     }
 
+    #[inline(always)]
     /// Return vector with node cumulative_node_degrees, that is the comulative node degree.
-    pub fn get_cumulative_node_degrees(&self) -> Vec<EdgeT> {
-        self.cumulative_node_degrees.as_ref().as_ref().map_or_else(
-            || {
-                let mut cumulative_node_degrees = vec![0; self.get_number_of_nodes() as usize];
-                self.par_iter_comulative_node_degrees()
-                    .collect_into_vec(&mut cumulative_node_degrees);
-                cumulative_node_degrees
-            },
-            |cumulative_node_degrees| cumulative_node_degrees.clone(),
-        )
+    pub fn get_cumulative_node_degrees(&self) -> &[EdgeT] {
+        self.edges.get_cumulative_node_degrees()
     }
 
     /// Return vector with

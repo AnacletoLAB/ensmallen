@@ -3,7 +3,6 @@
 #![feature(associated_type_defaults)]
 #![feature(associated_type_bounds)]
 #![feature(type_alias_impl_trait)]
-#![feature(generic_associated_types)]
 #![allow(incomplete_features)]
 
 mod alpine;
