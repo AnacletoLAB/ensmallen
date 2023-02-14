@@ -309,6 +309,8 @@ impl GraphCSVBuilder {
         Ok(())
     }
 
+    /// Flush the changes to the files and print the example code on how the 
+    /// graph can be loaded using `Graph.from_csv`
     pub fn finish(&mut self) -> Result<String> {
         self.edges.flush().map_err(|x| x.to_string())?;
         self.nodes.flush().map_err(|x| x.to_string())?;
@@ -318,6 +320,8 @@ impl GraphCSVBuilder {
 
         let nt_str = if self.has_node_types {
 r#"
+    # Node type related settings
+
     ## The column with the type of each node.
     node_list_node_types_column="node_type",
     ## How multiple node_types are separated
@@ -333,6 +337,8 @@ r#"
 
         let w_str = if self.has_edge_weights {
             r#"
+    # Edge weight related settings
+
     ## The weights are in the third column
     weights_column="weight",
     ##  Whether to skip the weights without raising an error if these are unavailable.
@@ -346,6 +352,9 @@ r#"
 
         let et_str = if self.has_node_types {
 r#"
+    
+    # Edge type related settings
+
     ## The column with the type of each node.
     edge_list_edge_types_column="edge_type",
     ## If a node misses a node_type it's ok
@@ -359,9 +368,16 @@ r#"
 
         Ok(format!(
 r#"
+# To load the generated graph you can run the following code:
 from grape import Graph
 
 graph = Graph.from_csv(
+    # Change these as needed
+    directed=False,
+    name="MyGraph",
+
+    # Edges related settings
+
     ## The path to the edges list tsv
     edge_path={edge_path:?},
     ## Set the tab as the separator between values
@@ -377,6 +393,8 @@ graph = Graph.from_csv(
 
     {w_str}
 
+    # Nodes related settings
+
     # Nodes related parameters
     ## The path to the nodes list tsv
     node_path={node_path:?},
@@ -388,10 +406,6 @@ graph = Graph.from_csv(
     nodes_column="node_name",
 
     {nt_str}
-
-    # Change these as needed
-    directed=False,
-    name="MyGraph",
 )
 "#,
     edge_path=self.edges_path,

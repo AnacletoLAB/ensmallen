@@ -23156,7 +23156,8 @@ impl GraphCSVBuilder {
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
-    ///
+    /// Flush the changes to the files and print the example code on how the
+    /// graph can be loaded using `Graph.from_csv
     pub fn finish(&mut self) -> PyResult<String> {
         Ok(pe!(self.inner.finish())?.into())
     }
