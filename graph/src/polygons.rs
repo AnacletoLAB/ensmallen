@@ -525,10 +525,11 @@ impl Graph {
                                 }, Ordering::Relaxed);
                             }
 
-                            node_squares_number[third as usize].fetch_add(out_of_vertex_cover * in_vertex_cover);
+                            first_node_squares += out_of_vertex_cover * in_vertex_cover;
+                            node_squares_number[third as usize].fetch_add(out_of_vertex_cover * in_vertex_cover, Ordering::Relaxed);
                         }
                     }
-                    node_squares_number[first as usize].fetch_add(first_node_squares);
+                    node_squares_number[first as usize].fetch_add(first_node_squares, Ordering::Relaxed);
                 
             });
         Ok(unsafe { std::mem::transmute::<Vec<AtomicU64>, Vec<EdgeT>>(node_squares_number) })
