@@ -118,6 +118,12 @@
 	<a href="https://kg-hub.berkeleybop.io/kg-idg/20220722">20220722</a>
       </li>
       <li>
+	<a href="https://kg-hub.berkeleybop.io/kg-idg/20221209">20221209</a>
+      </li>
+      <li>
+	<a href="https://kg-hub.berkeleybop.io/kg-idg/20230101">20230101</a>
+      </li>
+      <li>
 	<a href="https://kg-hub.berkeleybop.io/kg-idg/current">current</a>
       </li>
     </ul>

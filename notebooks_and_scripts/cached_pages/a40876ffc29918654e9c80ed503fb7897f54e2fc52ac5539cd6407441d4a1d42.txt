@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
 	  "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
 <html lang="en">
@@ -40,6 +41,27 @@
       </li>
       <li>
 	<a href="https://kg-hub.berkeleybop.io/kg-microbe/20210715/index.html">20210715</a>
+      </li>
+      <li>
+	<a href="https://kg-hub.berkeleybop.io/kg-microbe/20230109/index.html">20230109</a>
+      </li>
+      <li>
+	<a href="https://kg-hub.berkeleybop.io/kg-microbe/20230116/index.html">20230116</a>
+      </li>
+      <li>
+	<a href="https://kg-hub.berkeleybop.io/kg-microbe/20230206/index.html">20230206</a>
+      </li>
+      <li>
+	<a href="https://kg-hub.berkeleybop.io/kg-microbe/20230216/index.html">20230216</a>
+      </li>
+      <li>
+	<a href="https://kg-hub.berkeleybop.io/kg-microbe/20230303/index.html">20230303</a>
+      </li>
+      <li>
+	<a href="https://kg-hub.berkeleybop.io/kg-microbe/20230310/index.html">20230310</a>
+      </li>
+      <li>
+	<a href="https://kg-hub.berkeleybop.io/kg-microbe/20230316/index.html">20230316</a>
       </li>
       <li>
 	<a href="https://kg-hub.berkeleybop.io/kg-microbe/current/index.html">current</a>
