@@ -322,6 +322,9 @@ impl Graph {
         may_have_singleton_with_selfloops: Option<bool>,
         name: Option<String>,
     ) -> Result<Graph> {
+        // We check whether some parameters regarding
+        // node type files were provided, yet no
+        // node type file path was provided.
         if node_type_path.is_none()
             && [
                 node_type_list_comment_symbol.is_some(),
@@ -346,6 +349,33 @@ impl Graph {
             )
             .to_string());
         }
+
+        // Conversely, we check whether a node type
+        // file was provided, and no node type column
+        // was given for the node file.
+        if node_type_path.is_some()
+            && [
+                node_list_node_types_column.is_none() &&  node_list_node_types_column_number.is_none(),
+            ]
+            .iter()
+            .any(|&x| x)
+        {
+            return Err(format!(
+                concat!(
+                "The path to the node type file (not the node list!) was provided and is ",
+                "`{:?}`, ",
+                "but you did not provide either `node_list_node_types_column` or ",
+                "`node_list_node_types_column_number` so to specify which column in ",
+                "the node list should be loaded. Do note that the file provided ",
+                "to the node type path should contain the UNIQUE node types, and not ",
+                "the node type for each node. The node type file is primarily used to ",
+                "ensure all node types in the node list are known before starting to ",
+                "process the node list itself, which allows for additional assumptions ",
+                "and therefore significantly faster processing."
+            ),
+            node_type_path));
+        }
+
         let name = name.unwrap_or("Graph".to_string());
         let node_type_file_reader: Option<TypeFileReader<NodeTypeT>> =
             if node_type_path.is_some() || node_types_number.is_some() {
@@ -373,6 +403,10 @@ impl Graph {
             } else {
                 None
             };
+        
+        // We check whether some parameters regarding
+        // edge type files were provided, yet no
+        // edge type file path was provided.
         if edge_type_path.is_none()
             && [
                 edge_type_list_comment_symbol.is_some(),
@@ -397,6 +431,33 @@ impl Graph {
             )
             .to_string());
         }
+
+        // Conversely, we check whether a edge type
+        // file was provided, and no edge type column
+        // was given for the edge file.
+        if edge_type_path.is_some()
+            && [
+                edge_list_edge_types_column.is_none() &&  edge_list_edge_types_column_number.is_none(),
+            ]
+            .iter()
+            .any(|&x| x)
+        {
+            return Err(format!(
+                concat!(
+                "The path to the edge type file (not the edge list!) was provided and is ",
+                "`{:?}`, ",
+                "but you did not provide either `edge_list_edge_types_column` or ",
+                "`edge_list_edge_types_column_number` so to specify which column in ",
+                "the edge list should be loaded. Do note that the file provided ",
+                "to the edge type path should contain the UNIQUE edge types, and not ",
+                "the edge type for each edge. The edge type file is primarily used to ",
+                "ensure all edge types in the edge list are known before starting to ",
+                "process the edge list itself, which allows for additional assumptions ",
+                "and therefore significantly faster processing."
+            ),
+            edge_type_path));
+        }
+        
         let edge_type_file_reader: Option<TypeFileReader<EdgeTypeT>> =
             if edge_type_path.is_some() || edge_types_number.is_some() {
                 Some(

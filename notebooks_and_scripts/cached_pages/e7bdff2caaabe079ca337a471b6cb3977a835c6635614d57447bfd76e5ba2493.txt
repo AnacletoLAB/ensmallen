@@ -3,7 +3,8 @@
 <body>
 <h1>Index of /azwikimedia/</h1><hr><pre><a href="../">../</a>
 <a href="20230301/">20230301/</a>                                          19-Mar-2023 05:05                   -
-<a href="20230320/">20230320/</a>                                          27-Mar-2023 17:25                   -
-<a href="latest/">latest/</a>                                            27-Mar-2023 17:25                   -
+<a href="20230320/">20230320/</a>                                          21-Mar-2023 13:05                   -
+<a href="20230401/">20230401/</a>                                          09-Apr-2023 08:35                   -
+<a href="latest/">latest/</a>                                            09-Apr-2023 08:35                   -
 </pre><hr></body>
 </html>
