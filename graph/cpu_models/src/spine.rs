@@ -27,7 +27,7 @@ impl BasicSPINE {
     ) -> Result<Self, String> {
         Ok(Self {
             baine: BasicALPINE::new(embedding_size, verbose)?,
-            maximum_depth: must_not_be_zero(maximum_depth, usize::MAX, "Maximum depth")?,
+            maximum_depth: must_not_be_zero(maximum_depth, usize::max_value(), "Maximum depth")?,
         })
     }
 
@@ -59,30 +59,30 @@ where
     {
         // We initialize the provided slice with the maximum distance.
         features.par_iter_mut().for_each(|distance| {
-            *distance = Feature::MAX;
+            *distance = Feature::max_value();
         });
 
         // We wrap the features object in an unsafe cell so
         // it may be shared among threads.
         let shared_features = Feature::from_mut_slice(features);
-        let mut eccentricity: Feature = Feature::ZERO;
+        let mut eccentricity: Feature = Feature::zero();
 
         // We iterate over the source node IDs and we assign
         // to each of them a distance of zero.
         bucket.par_iter().copied().for_each(|node_id| {
-            shared_features[node_id as usize].store(Feature::ZERO, Ordering::Relaxed);
+            shared_features[node_id as usize].store(Feature::zero(), Ordering::Relaxed);
         });
 
         let mut primary_frontier: Frontier<NodeT> = bucket.into();
         let mut temporary_frontier = Frontier::default();
 
         // Until the bucket is not empty we start to iterate.
-        let max_depth = Feature::try_from(self.get_maximum_depth()).unwrap_or(Feature::MAX);
+        let max_depth = Feature::try_from(self.get_maximum_depth()).unwrap_or(Feature::max_value());
         while !primary_frontier.is_empty() {
             if eccentricity == max_depth {
                 break;
             }
-            eccentricity += Feature::ONE;
+            eccentricity += Feature::one();
 
             // We compute the next bucket of nodes, i.e. the next step of the frontier.
             primary_frontier.par_iter().for_each(|&node_id| {
@@ -91,7 +91,7 @@ where
                     .for_each(|neighbour_node_id| {
                         if shared_features[neighbour_node_id as usize]
                             .compare_exchange(
-                                Feature::MAX,
+                                Feature::max_value(),
                                 eccentricity,
                                 Ordering::SeqCst,
                                 Ordering::SeqCst,
@@ -112,7 +112,7 @@ where
 
         // We set all remaining MAX features to the computed exentricity.
         features.par_iter_mut().for_each(|distance| {
-            if *distance == Feature::MAX {
+            if *distance == Feature::max_value() {
                 *distance = eccentricity;
             }
         });

@@ -807,9 +807,7 @@ impl Graph {
         // the destinations are enabled (as it may be too slow otherwise on
         // some instances. Similarly, if the graph has less than 1M nodes we
         // also compute the connected components as it should be quite immediate.
-        let connected_components = if !self.is_directed()
-            && (self.get_number_of_nodes() < 100e6 as NodeT || self.destinations.is_some())
-        {
+        let connected_components = if !self.is_directed() {
             format!("{} ", self.get_report_of_connected_components())
         } else {
             "".to_string()
@@ -1174,8 +1172,10 @@ impl Graph {
             (Vec::new(), Vec::new(), Vec::new(), Vec::new())
         };
 
-        let mut isomorphic_node_groups: Vec<Vec<NodeT>> =
-            self.par_iter_isomorphic_node_ids_groups(None).collect();
+        let mut isomorphic_node_groups: Vec<Vec<NodeT>> = self
+            .par_iter_isomorphic_node_ids_groups(None, None, None, None)
+            .map(|(iter, _)| iter.collect())
+            .unwrap_or_else(|_| Vec::new());
 
         isomorphic_node_groups.sort_unstable_by(|group1, group2| unsafe {
             (self.get_unchecked_node_degree_from_node_id(group2[0]) as usize * group2.len()).cmp(

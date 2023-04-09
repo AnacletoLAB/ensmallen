@@ -41,7 +41,7 @@ use crate::{utils::ItersWrapper, EdgeFileReader, EdgeFileWriter, EdgeT, Result, 
 pub fn convert_undirected_edge_list_to_directed(
     original_edge_path: &str,
     target_edge_path: &str,
-    
+
     original_edge_list_separator: Option<char>,
     original_edge_list_header: Option<bool>,
     original_edge_list_support_balanced_quotes: Option<bool>,

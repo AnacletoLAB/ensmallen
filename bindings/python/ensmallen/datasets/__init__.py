@@ -1,5 +1,5 @@
 """Module with datasets."""
-from . import (kghub, kgobo, linqs, monarchinitiative, networkrepository,
+from . import (kghub, kgobo, linqs, monarchinitiative, networkrepository, pubmed,
                pheknowlatorkg, string, yue, zenodo, wikidata, wikipedia)
 from .get_dataset import (get_all_available_graphs_dataframe,
                           get_available_graphs_from_repository,
@@ -22,7 +22,7 @@ __all__ = [
     "get_available_versions_from_graph_and_repository",
     "validate_graph_version",
     "kghub", "kgobo", "linqs", "monarchinitiative", "wikidata",
-    "wikipedia",
+    "wikipedia", "pubmed",
     "networkrepository", "string", "yue", "zenodo", "pheknowlatorkg",
     "get_okapi_tfidf_weighted_textual_embedding",
     "get_graph_okapi_tfidf_weighted_textual_embedding",

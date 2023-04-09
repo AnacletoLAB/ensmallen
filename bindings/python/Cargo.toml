@@ -3,29 +3,9 @@ edition = "2018"
 name = "ensmallen"
 version = "0.7.0"
 license = "MIT"
-repository= "https://github.com/AnacletoLAB/ensmallen"
 authors = [
     "Luca Cappelletti <cappelletti.luca94@gmail.com>",
     "Tommaso Fontana <tommaso.fontana.96@gmail.com>"    
-]
-readme = "../../../README.rst"
-description = "🍇 Ensmallen is the Rust/Python high-performance graph processing submodule of the GraPE library."
-exclude = ["pytests/*", "Python-*", "./*.py"]
-keywords = ["python", "rust", "graph", "random", "walk"]
-
-[package.metadata.maturin]
-requires-python = ">=3.7"
-requires-dist = [
-    "toml~=0.10.0",
-    "downloaders>=1.0.15",
-    "compress_json>=1.0.7",
-    "userinput>=1.0.19",
-    "cache_decorator>=2.1.11",
-    "bioregistry>=0.5.65",
-    "tqdm",
-    "pandas",
-    "py-cpuinfo",
-    "environments_utils>=1.0.4"
 ]
 
 [lib]
@@ -53,7 +33,7 @@ rand = {version="0.7", features = ["small_rng"] }
 strsim = "0.10.0"
 file_progress = {git="https://github.com/LucaCappelletti94/rust_file_progress.git"}
 markdown = "0.3"
-rayon = "1.5.0"
+rayon = "1.6.0"
 indicatif = {version="0.17.0", features = ["rayon"]}
 ctrlc = "3.1.7"
 

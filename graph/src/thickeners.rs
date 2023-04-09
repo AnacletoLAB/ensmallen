@@ -79,26 +79,24 @@ impl Graph {
                     .map(|(&left, &right)| (left - right).pow(2))
                     .sum()
             },
-            Distance::Cosine => {
-                |current_node_features: &[f64], node_features: &[f64]| -> f64 {
-                    let numerator = current_node_features
-                        .iter()
-                        .zip(node_features.iter())
-                        .map(|(&left, &right)| left * right)
-                        .sum::<f64>();
-                    let denominator_left = current_node_features
-                        .iter()
-                        .map(|&left| left.pow(2))
-                        .sum::<f64>()
-                        .sqrt();
-                    let denominator_right = node_features
-                        .iter()
-                        .map(|&right| right.pow(2))
-                        .sum::<f64>()
-                        .sqrt();
-                    1.0 - numerator / (denominator_left * denominator_right + f64::EPSILON)
-                }
-            }
+            Distance::Cosine => |current_node_features: &[f64], node_features: &[f64]| -> f64 {
+                let numerator = current_node_features
+                    .iter()
+                    .zip(node_features.iter())
+                    .map(|(&left, &right)| left * right)
+                    .sum::<f64>();
+                let denominator_left = current_node_features
+                    .iter()
+                    .map(|&left| left.pow(2))
+                    .sum::<f64>()
+                    .sqrt();
+                let denominator_right = node_features
+                    .iter()
+                    .map(|&right| right.pow(2))
+                    .sum::<f64>()
+                    .sqrt();
+                1.0 - numerator / (denominator_left * denominator_right + f64::EPSILON)
+            },
         };
 
         build_graph_from_integers(

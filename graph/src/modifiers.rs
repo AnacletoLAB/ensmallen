@@ -5,42 +5,21 @@ impl Graph {
     ///
     /// # Arguments
     /// * `vector_sources`: Option<bool> - Whether to cache sources into a vector for faster walks.
-    /// * `vector_destinations`: Option<bool> - Whether to cache destinations into a vector for faster walks.
-    /// * `vector_cumulative_node_degrees`: Option<bool> - Whether to cache cumulative_node_degrees into a vector for faster walks.
     /// * `vector_reciprocal_sqrt_degrees`: Option<bool> - Whether to cache reciprocal_sqrt_degrees into a vector for faster laplacian kernel computation.
     pub fn enable(
         &mut self,
         vector_sources: Option<bool>,
-        vector_destinations: Option<bool>,
-        vector_cumulative_node_degrees: Option<bool>,
         vector_reciprocal_sqrt_degrees: Option<bool>,
-    ) -> Result<()> {
-        let vector_sources = vector_sources.unwrap_or(false);
-        let vector_destinations = vector_destinations.unwrap_or(true);
-        let vector_cumulative_node_degrees = vector_cumulative_node_degrees.unwrap_or(true);
+    ) {
+        //let vector_sources = vector_sources.unwrap_or(false);
         let vector_reciprocal_sqrt_degrees = vector_reciprocal_sqrt_degrees.unwrap_or(false);
 
-        if vector_destinations {
-            if self.destinations.is_none() {
-                self.destinations = Arc::new(Some(self.get_directed_destination_node_ids()));
-            }
-        } else {
-            self.destinations = Arc::new(None);
-        }
-        if vector_sources {
-            if self.sources.is_none() {
-                self.sources = Arc::new(Some(self.get_directed_source_node_ids()));
-            }
-        } else {
-            self.sources = Arc::new(None);
-        }
-        if vector_cumulative_node_degrees {
-            if self.cumulative_node_degrees.is_none() {
-                self.cumulative_node_degrees = Arc::new(Some(self.get_cumulative_node_degrees()));
-            }
-        } else {
-            self.cumulative_node_degrees = Arc::new(None);
-        }
+        // TODO!:
+        //if vector_sources {
+        //    self.edges.enable_sources();
+        //} else {
+        //    self.edges.disable_sources();
+        //}
         if vector_reciprocal_sqrt_degrees {
             if self.reciprocal_sqrt_degrees.is_none() {
                 self.reciprocal_sqrt_degrees = Arc::new(Some(self.get_reciprocal_sqrt_degrees()));
@@ -48,14 +27,12 @@ impl Graph {
         } else {
             self.reciprocal_sqrt_degrees = Arc::new(None);
         }
-        Ok(())
     }
 
     /// Disable all extra perks, reducing memory impact but incresing time requirements.
     pub fn disable_all(&mut self) {
-        self.destinations = Arc::new(None);
-        self.sources = Arc::new(None);
-        self.cumulative_node_degrees = Arc::new(None);
+        // TODO!:
+        //self.edges.disable_sources();
         self.reciprocal_sqrt_degrees = Arc::new(None);
     }
 }

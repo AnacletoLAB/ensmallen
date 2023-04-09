@@ -3,7 +3,6 @@
 import os
 import shutil
 from typing import Callable, Dict, List, Optional, Union
-from bioregistry import normalize_curie, curie_from_iri
 from multiprocessing import Pool, cpu_count
 import compress_json
 from downloaders import BaseDownloader
@@ -15,6 +14,7 @@ from .get_dataset import validate_graph_version
 
 def normalize_node_name(node_name: str) -> str:
     """Normalize the provided node name curie using bioregistry."""
+    from bioregistry import normalize_curie, curie_from_iri
     new_node_name = curie_from_iri(node_name)
     if new_node_name is None:
         new_node_name = normalize_curie(node_name)

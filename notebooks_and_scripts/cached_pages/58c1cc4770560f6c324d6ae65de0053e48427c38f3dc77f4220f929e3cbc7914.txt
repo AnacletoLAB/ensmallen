@@ -1,0 +1,13 @@
+<html>
+<head><title>Index of /aswikiquote/</title></head>
+<body>
+<h1>Index of /aswikiquote/</h1><hr><pre><a href="../">../</a>
+<a href="20230101/">20230101/</a>                                          20-Feb-2023 09:30                   -
+<a href="20230120/">20230120/</a>                                          19-Mar-2023 09:25                   -
+<a href="20230201/">20230201/</a>                                          20-Mar-2023 09:25                   -
+<a href="20230220/">20230220/</a>                                          21-Feb-2023 12:03                   -
+<a href="20230301/">20230301/</a>                                          19-Mar-2023 05:05                   -
+<a href="20230320/">20230320/</a>                                          27-Mar-2023 17:25                   -
+<a href="latest/">latest/</a>                                            27-Mar-2023 17:25                   -
+</pre><hr></body>
+</html>

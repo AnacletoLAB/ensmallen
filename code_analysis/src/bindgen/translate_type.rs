@@ -468,6 +468,29 @@ impl TranslateType for Type {
             // handle null type
             Type::None => (body, Some(self.to_string())),
 
+            x if x.cmp_str_without_modifiers("[Primitive]") => {
+                let inner_type = self[0].to_string();
+
+                if body.ends_with(".into()") {
+                    body = body.strip_suffix(".into()").unwrap().to_string();
+                }
+
+                let mut body = format!(
+                    concat!(
+                        "let gil = pyo3::Python::acquire_gil();\n",
+                        "to_ndarray_1d!(gil, {body}.to_vec(), {inner_type})"
+                    ),
+                    body = body,
+                    inner_type = inner_type,
+                );
+
+                if depth != 0 {
+                    body = format!("{{{}}}", body);
+                }
+
+                (body, Some(format!("Py<PyArray1<{}>>", inner_type)))
+            }
+
             Type::SliceType(sub_type) => {
                 let (inner_body, inner_return_type) = sub_type.to_python_bindings_return_type_inner(
                     attributes,

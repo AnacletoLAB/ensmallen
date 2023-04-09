@@ -13,6 +13,7 @@ from .wikidata_graph_repository import WikiDataGraphRepository
 from .freebase_graph_repository import FreebaseGraphRepository
 from .wikipedia_graph_repository import WikipediaGraphRepository
 from .ctd_graph_repositories import CTDGraphRepository
+from .pubmed_graph_repository import PubMedGraphRepository
 
 __all__ = [
     "StringGraphRepository",
@@ -28,5 +29,6 @@ __all__ = [
     "WikiDataGraphRepository",
     "FreebaseGraphRepository",
     "WikipediaGraphRepository",
-    "CTDGraphRepository"
+    "CTDGraphRepository",
+    "PubMedGraphRepository"
 ]

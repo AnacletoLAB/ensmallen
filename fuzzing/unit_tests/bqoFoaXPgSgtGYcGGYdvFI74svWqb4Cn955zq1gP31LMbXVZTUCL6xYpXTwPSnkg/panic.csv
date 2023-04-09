@@ -1,8 +1,0 @@
-file,"/Workspace/Shared/ensmallen/graph/src/test_utilities.rs"
-line,390
-col,9
-message,assertion failed: `(left == right)`
-  left: `true`,
- right: `false`: Singleton nodes with selfloops were found within the provided, but the graph would not seem to contain any.
-The graph edge list is:
-[[0, 0]].

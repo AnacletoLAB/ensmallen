@@ -255,7 +255,7 @@ impl Graph {
     /// assert!(!graph.has_selfloop_from_node_id(4565));
     /// ```
     pub fn has_selfloop_from_node_id(&self, node_id: NodeT) -> bool {
-        self.has_edge_from_node_ids(node_id, node_id)
+        self.has_selfloops() && self.has_edge_from_node_ids(node_id, node_id)
     }
 
     /// Returns whether edge with the given type passing between given nodes exists.
@@ -313,6 +313,218 @@ impl Graph {
     pub fn is_trap_node_from_node_id(&self, node_id: NodeT) -> Result<bool> {
         self.validate_node_id(node_id)
             .map(|node_id| unsafe { self.is_unchecked_trap_node_from_node_id(node_id) })
+    }
+
+    /// Returns whether two provided nodes IDs are isomorphic to one another.
+    ///
+    /// # Arguments
+    /// * `first_node_id`: NodeT - The first node to check for.
+    /// * `second_node_id`: NodeT - The first node to check for.
+    ///
+    /// # Safety
+    /// This method assumes that the two provided node IDs are effectively within
+    /// the set of nodes in the graph. Out of bound errors might be raised with
+    /// improper parametrization of the method.
+    ///
+    /// # Implementative details
+    /// Since the node neighbourhoods are returned as slices of u32s of a
+    /// CSR matrix, we can use the native method of `memcmp` that is used
+    /// in the [Slice object in Rust](https://doc.rust-lang.org/src/core/slice/cmp.rs.html#78),
+    /// which should localize to each system.
+    pub unsafe fn are_unchecked_isomorphic_from_node_ids(
+        &self,
+        first_node_id: NodeT,
+        second_node_id: NodeT,
+    ) -> bool {
+        if self.get_unchecked_node_type_ids_from_node_id(first_node_id)
+            != self.get_unchecked_node_type_ids_from_node_id(first_node_id)
+        {
+            return false;
+        }
+
+        let (first_min_edge_id, first_max_edge_id) = self
+            .edges
+            .get_unchecked_minmax_edge_ids_from_source_node_id(first_node_id);
+
+        let (second_min_edge_id, second_max_edge_id) = self
+            .edges
+            .get_unchecked_minmax_edge_ids_from_source_node_id(second_node_id);
+
+        let first_neighbours: &[NodeT] = &self.edges.as_ref().destinations
+            [first_min_edge_id as usize..first_max_edge_id as usize];
+
+        let second_neighbours: &[NodeT] = &self.edges.as_ref().destinations
+            [second_min_edge_id as usize..second_max_edge_id as usize];
+
+        let first_weights: Option<&[WeightT]> = self
+            .weights
+            .as_ref()
+            .as_ref()
+            .map(|ws| &ws[first_min_edge_id as usize..first_max_edge_id as usize]);
+
+        let second_weights: Option<&[WeightT]> = self
+            .weights
+            .as_ref()
+            .as_ref()
+            .map(|ws| &ws[second_min_edge_id as usize..second_max_edge_id as usize]);
+
+        let first_edge_types: Option<&[Option<EdgeTypeT>]> = self
+            .edge_types
+            .as_ref()
+            .as_ref()
+            .map(|ets| &ets.ids[first_min_edge_id as usize..first_max_edge_id as usize]);
+
+        let second_edge_types: Option<&[Option<EdgeTypeT>]> = self
+            .edge_types
+            .as_ref()
+            .as_ref()
+            .map(|ets| &ets.ids[second_min_edge_id as usize..second_max_edge_id as usize]);
+
+        let mut first_index: usize = 0;
+        let mut second_index: usize = 0;
+
+        let mut first_to_second_min_index: usize = 0;
+        let mut first_to_second_max_index: usize = 0;
+        let mut second_to_first_min_index: usize = 0;
+        let mut second_to_first_max_index: usize = 0;
+
+        while first_index < first_neighbours.len() && second_index < second_neighbours.len() {
+            let first_neighbour_id = first_neighbours[first_index];
+            let second_neighbour_id = second_neighbours[second_index];
+
+            // First, we check that the current neighbour is not a self-loop.
+            // If it is, we skip onward, so to avoid failing to identify potentially
+            // an isomporphic set of nodes.
+            if first_neighbour_id == first_node_id {
+                first_index += 1;
+                continue;
+            }
+
+            if second_neighbour_id == second_node_id {
+                second_index += 1;
+                continue;
+            }
+
+            // Second, we handle whether any of these edges are
+            // connections between the two nodes we are evaluating.
+            if first_neighbour_id == second_node_id {
+                first_to_second_min_index = first_to_second_min_index.min(first_index);
+                first_to_second_max_index = first_to_second_max_index.max(first_index);
+                first_index += 1;
+                continue;
+            }
+
+            if second_neighbour_id == first_node_id {
+                second_to_first_min_index = second_to_first_min_index.min(second_index);
+                second_to_first_max_index = second_to_first_max_index.max(second_index);
+                second_index += 1;
+                continue;
+            }
+
+            // Otherwise, we need to check a complete match.
+            if first_neighbour_id != second_neighbour_id {
+                return false;
+            }
+
+            // Next, we check the edge types, if existing.
+            if let (Some(first_edge_types), Some(second_edge_types)) =
+                (&first_edge_types, &second_edge_types)
+            {
+                if first_edge_types[first_index] != second_edge_types[second_index] {
+                    return false;
+                }
+            }
+
+            // Third, we check the edge weights, also accounting for the possible float errors.
+            if let (Some(first_weights), Some(second_weights)) = (&first_weights, &second_weights) {
+                if (first_weights[first_index] - second_weights[second_index]).abs()
+                    > WeightT::EPSILON
+                {
+                    return false;
+                }
+            }
+
+            first_index += 1;
+            second_index += 1;
+        }
+
+        // We check that the number of connections between the two
+        // nodes, if any, are simmetrical.
+        if second_to_first_max_index - second_to_first_min_index
+            != first_to_second_max_index - first_to_second_min_index
+        {
+            return false;
+        }
+
+        // Next, we check the edge types, if existing.
+        if let (Some(first_edge_types), Some(second_edge_types)) =
+            (first_edge_types, second_edge_types)
+        {
+            if first_edge_types[first_to_second_min_index..first_to_second_max_index]
+                != second_edge_types[second_to_first_min_index..second_to_first_max_index]
+            {
+                return false;
+            }
+        }
+
+        // Third, we check the edge weights, also accounting for the possible float errors.
+        if let (Some(first_weights), Some(second_weights)) = (first_weights, second_weights) {
+            if first_weights[first_to_second_min_index..first_to_second_max_index]
+                .iter()
+                .zip(second_weights[second_to_first_min_index..second_to_first_max_index].iter())
+                .any(|(left, right)| (left - right).abs() > WeightT::EPSILON)
+            {
+                return false;
+            }
+        }
+
+        true
+    }
+
+    /// Returns whether two provided nodes IDs are isomorphic to one another.
+    ///
+    /// # Arguments
+    /// * `first_node_id`: NodeT - The first node to check for.
+    /// * `second_node_id`: NodeT - The first node to check for.
+    ///
+    /// # Raises
+    /// * ValueError: This method assumes that the two provided node IDs are effectively within
+    /// the set of nodes in the graph. Out of bound errors might be raised with
+    /// improper parametrization of the method.
+    pub fn are_isomorphic_from_node_ids(
+        &self,
+        first_node_id: NodeT,
+        second_node_id: NodeT,
+    ) -> Result<bool> {
+        Ok(unsafe {
+            self.are_unchecked_isomorphic_from_node_ids(
+                self.validate_node_id(first_node_id)?,
+                self.validate_node_id(second_node_id)?,
+            )
+        })
+    }
+
+    /// Returns whether two provided nodes names are isomorphic to one another.
+    ///
+    /// # Arguments
+    /// * `first_node_name`: &str - The first node name to check for.
+    /// * `second_node_name`: &str - The first node name to check for.
+    ///
+    /// # Raises
+    /// * ValueError: This method assumes that the two provided node names are effectively within
+    /// the set of nodes in the graph. Out of bound errors might be raised with
+    /// improper parametrization of the method.
+    pub fn are_isomorphic_from_node_names(
+        &self,
+        first_node_name: &str,
+        second_node_name: &str,
+    ) -> Result<bool> {
+        Ok(unsafe {
+            self.are_unchecked_isomorphic_from_node_ids(
+                self.get_node_id_from_node_name(first_node_name)?,
+                self.get_node_id_from_node_name(second_node_name)?,
+            )
+        })
     }
 
     /// Returns whether the given node name and node type name exist in current graph.

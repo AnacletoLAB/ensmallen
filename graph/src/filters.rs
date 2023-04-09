@@ -260,9 +260,13 @@ impl Graph {
                 source_node_names_to_keep_from_graph,
                 source_node_names_to_remove_from_graph,
                 source_node_prefixes_to_keep.as_ref().map(|x| x.as_slice()),
-                source_node_prefixes_to_remove.as_ref().map(|x| x.as_slice()),
+                source_node_prefixes_to_remove
+                    .as_ref()
+                    .map(|x| x.as_slice()),
                 source_node_type_ids_to_keep.as_ref().map(|x| x.as_slice()),
-                source_node_type_ids_to_remove.as_ref().map(|x| x.as_slice()),
+                source_node_type_ids_to_remove
+                    .as_ref()
+                    .map(|x| x.as_slice()),
                 source_node_type_id_to_keep.as_ref().map(|x| x.as_slice()),
                 source_node_type_id_to_remove.as_ref().map(|x| x.as_slice()),
             )
@@ -277,23 +281,37 @@ impl Graph {
                 destination_node_ids_to_remove.as_ref(),
                 destination_node_names_to_keep_from_graph,
                 destination_node_names_to_remove_from_graph,
-                destination_node_prefixes_to_keep.as_ref().map(|x| x.as_slice()),
-                destination_node_prefixes_to_remove.as_ref().map(|x| x.as_slice()),
-                destination_node_type_ids_to_keep.as_ref().map(|x| x.as_slice()),
-                destination_node_type_ids_to_remove.as_ref().map(|x| x.as_slice()),
-                destination_node_type_id_to_keep.as_ref().map(|x| x.as_slice()),
-                destination_node_type_id_to_remove.as_ref().map(|x| x.as_slice()),
+                destination_node_prefixes_to_keep
+                    .as_ref()
+                    .map(|x| x.as_slice()),
+                destination_node_prefixes_to_remove
+                    .as_ref()
+                    .map(|x| x.as_slice()),
+                destination_node_type_ids_to_keep
+                    .as_ref()
+                    .map(|x| x.as_slice()),
+                destination_node_type_ids_to_remove
+                    .as_ref()
+                    .map(|x| x.as_slice()),
+                destination_node_type_id_to_keep
+                    .as_ref()
+                    .map(|x| x.as_slice()),
+                destination_node_type_id_to_remove
+                    .as_ref()
+                    .map(|x| x.as_slice()),
             )
         };
 
         let edge_node_filters =
             |src, src_name, src_node_type_ids, dst, dst_name, dst_node_type_ids| {
-                if self.is_directed() || src <= dst {
+                if self.is_directed() {
                     source_node_filter(src, src_name, src_node_type_ids)
                         && destination_node_filter(dst, dst_name, dst_node_type_ids)
                 } else {
-                    source_node_filter(dst, dst_name, dst_node_type_ids)
-                        && destination_node_filter(src, src_name, src_node_type_ids)
+                    source_node_filter(src, src_name.clone(), src_node_type_ids)
+                        && destination_node_filter(dst, dst_name.clone(), dst_node_type_ids)
+                        || source_node_filter(dst, dst_name, dst_node_type_ids)
+                            && destination_node_filter(src, src_name, src_node_type_ids)
                 }
             };
 
@@ -1049,17 +1067,31 @@ impl Graph {
     ///
     /// # Arguments
     /// * `minimum_node_degree`: Option<NodeT> - Minimum node degree for the topological synonims. By default equal to 5.
-    pub fn remove_isomorphic_nodes(&self, minimum_node_degree: Option<NodeT>) -> Graph {
-        let minimum_node_degree = minimum_node_degree.unwrap_or(5);
+    /// * `hash_strategy`: Option<&str> - The name of the hash to be used. By default, `general` is used.+
+    /// * `number_of_neighbours_for_hash`: Option<usize> - The number of neighbours to consider for the hash. By default 10.
+    /// * `hash_name`: Option<&str> - The name of the hash to be used.
+    pub fn remove_isomorphic_nodes(
+        &self,
+        minimum_node_degree: Option<NodeT>,
+        hash_strategy: Option<&str>,
+        number_of_neighbours_for_hash: Option<usize>,
+        hash_name: Option<&str>,
+    ) -> Result<Graph> {
         self.filter_from_ids(
             None,
             Some(
-                self.par_iter_isomorphic_node_ids_groups(Some(minimum_node_degree))
-                    .flat_map(|mut group| {
-                        group.pop();
-                        group.into_par_iter()
-                    })
-                    .collect(),
+                self.par_iter_isomorphic_node_ids_groups(
+                    minimum_node_degree,
+                    hash_strategy,
+                    number_of_neighbours_for_hash,
+                    hash_name,
+                )?
+                .0
+                .flat_map(|mut group| {
+                    group.pop();
+                    group.into_par_iter()
+                })
+                .collect(),
             ),
             None,
             None,
@@ -1104,7 +1136,6 @@ impl Graph {
             None,
             None,
         )
-        .unwrap()
     }
 
     /// Returns new graph without singleton nodes with selfloops.

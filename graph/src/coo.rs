@@ -364,9 +364,8 @@ impl Graph {
         self.par_iter_laplacian_like_coo_matrix(
             |graph, src, dst| unsafe {
                 -1.0 / {
-                    ((graph.get_unchecked_node_degree_from_node_id(src)
-                        * graph.get_unchecked_node_degree_from_node_id(dst))
-                        as f64)
+                    (graph.get_unchecked_node_degree_from_node_id(src) as f64
+                        * graph.get_unchecked_node_degree_from_node_id(dst) as f64)
                         .sqrt() as WeightT
                 }
             },

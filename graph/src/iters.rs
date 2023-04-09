@@ -856,8 +856,7 @@ impl Graph {
     /// Return iterator on the node of the graph as Strings.
     pub fn iter_node_names_and_node_type_names(
         &self,
-    ) -> impl Iterator<Item = (NodeT, String, Option<&[NodeTypeT]>, Option<Vec<String>>)> + '_
-    {
+    ) -> impl Iterator<Item = (NodeT, String, Option<&[NodeTypeT]>, Option<Vec<String>>)> + '_ {
         self.iter_node_ids_and_node_type_ids()
             .map(move |(node_id, node_types)| unsafe {
                 (
@@ -896,53 +895,15 @@ impl Graph {
     pub fn iter_edge_node_ids(
         &self,
         directed: bool,
-    ) -> Box<dyn Iterator<Item = (EdgeT, NodeT, NodeT)> + '_> {
-        if self.sources.is_some() && self.destinations.is_some() {
-            return Box::new(
-                (0..self.get_number_of_directed_edges()).filter_map(move |edge_id| {
-                    let (src, dst) = unsafe { self.get_unchecked_node_ids_from_edge_id(edge_id) };
-                    if !directed && src > dst {
-                        return None;
-                    }
-                    Some((edge_id, src, dst))
-                }),
-            );
-        }
-        Box::new(
-            self.edges
-                .iter()
-                .enumerate()
-                .filter_map(move |(edge_id, edge)| {
-                    let (src, dst) = self.decode_edge(edge);
-                    if !directed && src > dst {
-                        return None;
-                    }
-                    Some((edge_id as EdgeT, src, dst))
-                }),
-        )
+    ) -> impl Iterator<Item = (EdgeT, NodeT, NodeT)> + '_ {
+        self.edges.iter_edge_node_ids(directed)
     }
 
     /// Return iterator on the edges of the graph.
     pub fn iter_directed_edge_node_ids(
         &self,
-    ) -> Box<dyn Iterator<Item = (EdgeT, NodeT, NodeT)> + Send + '_> {
-        if self.sources.is_some() && self.destinations.is_some() {
-            return Box::new(
-                (0..self.get_number_of_directed_edges()).filter_map(move |edge_id| {
-                    let (src, dst) = unsafe { self.get_unchecked_node_ids_from_edge_id(edge_id) };
-                    Some((edge_id, src, dst))
-                }),
-            );
-        }
-        Box::new(
-            self.edges
-                .iter()
-                .enumerate()
-                .filter_map(move |(edge_id, edge)| {
-                    let (src, dst) = self.decode_edge(edge);
-                    Some((edge_id as EdgeT, src, dst))
-                }),
-        )
+    ) -> impl Iterator<Item = (EdgeT, NodeT, NodeT)> + Send + '_ {
+        self.edges.iter_directed_edge_node_ids()
     }
 
     /// Return iterator on the edges of the graph with the string name.
@@ -965,6 +926,7 @@ impl Graph {
             })
     }
 
+    #[inline(always)]
     /// Return iterator on the edges of the graph.
     ///
     /// # Arguments
@@ -973,29 +935,15 @@ impl Graph {
         &self,
         directed: bool,
     ) -> impl ParallelIterator<Item = (EdgeT, NodeT, NodeT)> + '_ {
-        self.edges
-            .par_iter()
-            .enumerate()
-            .filter_map(move |(edge_id, edge)| {
-                let (src, dst) = self.decode_edge(edge);
-                if !directed && src > dst {
-                    return None;
-                }
-                Some((edge_id as EdgeT, src, dst))
-            })
+        self.edges.par_iter_edge_node_ids(directed)
     }
 
+    #[inline(always)]
     /// Return iterator on the directed edges of the graph.
     pub fn par_iter_directed_edge_node_ids(
         &self,
     ) -> impl IndexedParallelIterator<Item = (EdgeT, NodeT, NodeT)> + '_ {
-        self.edges
-            .par_iter()
-            .enumerate()
-            .map(move |(edge_id, edge)| {
-                let (src, dst) = self.decode_edge(edge);
-                (edge_id as EdgeT, src, dst)
-            })
+        self.edges.par_iter_directed_edge_node_ids()
     }
 
     /// Return iterator on the edges of the graph with the string name.
@@ -1455,32 +1403,8 @@ impl Graph {
     pub fn iter_unique_edge_node_ids(
         &self,
         directed: bool,
-    ) -> Box<dyn Iterator<Item = (NodeT, NodeT)> + '_> {
-        if self.sources.is_some() && self.destinations.is_some() {
-            return Box::new((0..self.get_number_of_directed_edges()).filter_map(
-                move |edge_id| unsafe {
-                    let (src, dst) = self.get_unchecked_node_ids_from_edge_id(edge_id);
-                    if edge_id > 0 {
-                        let (last_src, last_dst) =
-                            self.get_unchecked_node_ids_from_edge_id(edge_id - 1);
-                        if last_src == src && last_dst == dst {
-                            return None;
-                        }
-                    }
-                    if !directed && src > dst {
-                        return None;
-                    }
-                    Some((src, dst))
-                },
-            ));
-        }
-        Box::new(self.edges.iter_uniques().filter_map(move |edge| {
-            let (src, dst) = self.decode_edge(edge);
-            if !directed && src > dst {
-                return None;
-            }
-            Some((src, dst))
-        }))
+    ) -> impl Iterator<Item = (NodeT, NodeT)> + '_ {
+        self.edges.iter_unique_edge_node_ids(directed)
     }
 
     /// Return iterator on the unique sources of the graph.

@@ -87,102 +87,6 @@ impl Graph {
         ))
     }
 
-    #[manual_binding]
-    /// Return iterator over neighbours of random nodes, optionally including the central node IDs, and its node type.
-    ///
-    /// # Arguments
-    /// * `ids`: u64 -  The index of the batch to generate, behaves like a random random_state.
-    /// * `batch_size`: Option<NodeT> - Number of nodes to sample.
-    /// * `include_central_node`: Option<bool> - Whether to include the node ID in the returned iterator.
-    /// * `return_edge_weights`: Option<bool> - Whether to include the edge weights.
-    /// * `max_neighbours`: Option<NodeT> - Number of maximum neighbours to consider.
-    ///
-    /// # Raises
-    /// * If the graph does not contain node type IDs.
-    /// * If the graph does not contain known node type IDs.
-    /// * If the graph does not contain unknown node type IDs.
-    /// * If the edge weights have been requested but the graph does not have any.
-    /// * If the central node ID is to be included and the edge weights are requested as well.
-    ///
-    /// TODO!: Add balanced mini-batch option.
-    /// TODO!: Add option to return other edge metrics than weights, like Jaccard.
-    /// TODO!: Add option to generate random neighborhoods.
-    /// TODO!: Add option to sample neighbours with distance k.
-    /// TODO!: Add option to return stuff like the path length to random nodes.
-    pub fn get_node_label_prediction_mini_batch(
-        &self,
-        idx: u64,
-        batch_size: Option<NodeT>,
-        include_central_node: Option<bool>,
-        return_edge_weights: Option<bool>,
-        max_neighbours: Option<NodeT>,
-    ) -> Result<
-        impl IndexedParallelIterator<Item = ((Vec<NodeT>, Option<Vec<WeightT>>), &[NodeTypeT])> + '_,
-    > {
-        if let Some(return_edge_weights) = return_edge_weights {
-            if return_edge_weights {
-                self.must_have_edge_weights()?;
-            }
-        }
-        self.must_have_known_node_types()?;
-        self.must_have_unknown_node_types()?;
-        let nodes_number = self.get_number_of_nodes();
-        let batch_size = batch_size.unwrap_or(1024).min(nodes_number);
-        let return_edge_weights = return_edge_weights.unwrap_or(false);
-        let include_central_node = include_central_node.unwrap_or(false);
-        if return_edge_weights && include_central_node {
-            return Err(concat!(
-                "The edge weights have been ",
-                "requested, but also the central node ID has been requested.\n",
-                "It is not possible to return the central node ID with the ",
-                "requested parameters, as we do not have its edge weight.\n",
-                "If you want to include the central node ID still, consider ",
-                "adding self-loops to the graph by using the method ",
-                "`graph.add_selfloops()`."
-            )
-            .to_string());
-        }
-        let random_state = splitmix64(idx);
-        Ok((0..batch_size).into_par_iter().map(move |i| unsafe {
-            let mut random_state = splitmix64(random_state + i as u64);
-            let (node_id, node_type_ids) = loop {
-                random_state = splitmix64(random_state);
-                let node_id = self.get_random_node(random_state);
-                let node_type_ids = self.get_unchecked_node_type_ids_from_node_id(node_id);
-                if node_type_ids.is_some() {
-                    break (node_id, node_type_ids.unwrap());
-                }
-            };
-            let (min_edge_id, max_edge_id, destinations, probabilistic_indices) = self
-                .get_unchecked_edges_and_destinations_from_source_node_id(
-                    max_neighbours,
-                    random_state,
-                    node_id,
-                );
-            let mut destinations = self
-                .get_destinations_slice(min_edge_id, max_edge_id, &destinations)
-                .to_owned();
-            if include_central_node {
-                destinations.push(node_id);
-            }
-            (
-                (
-                    destinations,
-                    if return_edge_weights {
-                        Some(self.get_edge_weighted_transitions(
-                            min_edge_id,
-                            max_edge_id,
-                            &probabilistic_indices,
-                        ))
-                    } else {
-                        None
-                    },
-                ),
-                node_type_ids,
-            )
-        }))
-    }
-
     unsafe fn get_unchecked_edge_prediction_node_type_ids(
         &self,
         node_id: NodeT,
@@ -240,6 +144,7 @@ impl Graph {
     }
 
     #[manual_binding]
+    #[inline(always)]
     /// Returns n-ple with index to build numpy array, source node, source node type, destination node, destination node type, edge type and whether this edge is real or artificial.
     ///
     /// # Arguments
@@ -716,7 +621,7 @@ impl Graph {
                     // Put the distance of the original node as 0.
                     neighbours_stack.push_front((node_id, 0));
                     // Create a binary mask for the visited node.
-                    let mut visited = bitvec![Lsb0, u8; 0; nodes_number];
+                    let mut visited = bitvec![u8, Lsb0; 0; nodes_number];
                     // Initialize the sum of the features
                     let mut document_features_sum = 0.0;
                     // We set the current root node as visited

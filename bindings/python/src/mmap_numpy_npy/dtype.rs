@@ -1,6 +1,6 @@
+use half::f16;
 use numpy::npyffi::NPY_TYPES;
 use std::convert::TryFrom;
-use half::f16;
 
 #[derive(Clone, Copy, Debug, Eq, PartialEq)]
 pub enum Dtype {
@@ -86,7 +86,6 @@ impl Into<NPY_TYPES> for Dtype {
     }
 }
 
-
 pub trait ToNumpyDtype {
     const NUMPY_DTYPE: Dtype;
 }
@@ -99,7 +98,7 @@ impl ToNumpyDtype for $t {
     )*};
 }
 
-impl_to_numpy_dtype!{
+impl_to_numpy_dtype! {
     bool => Bool,
     u8 => U8,
     i8 => I8,

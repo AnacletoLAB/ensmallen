@@ -146,7 +146,8 @@ impl Graph {
                                         break;
                                     }
                                     unsafe {
-                                        source_predecessor = (*thread_shared_visited.value.get())[source_predecessor as usize];
+                                        source_predecessor = (*thread_shared_visited.value.get())
+                                            [source_predecessor as usize];
                                     }
                                 }
                             }
@@ -448,6 +449,7 @@ impl Graph {
     }
 
     /// Return if there are multiple edges between two nodes
+    #[cache_property(is_multigraph)]
     pub fn is_multigraph(&self) -> bool {
         self.get_number_of_parallel_edges() > 0
     }
@@ -504,7 +506,7 @@ impl Graph {
         self.nodes.is_sorted_by_lexicographic_order()
     }
 
-    /// Returns whether the graph contains the indentity matrix.
+    /// Returns whether the graph contains the identity matrix.
     ///
     /// # Implications
     /// The implications of having a graph containing teh identity
@@ -544,19 +546,10 @@ impl Graph {
         })
     }
 
-    /// Returns whether the destinations time-memory tradeoff is enabled.
-    pub fn has_destinations_tradeoff_enabled(&self) -> bool {
-        self.destinations.is_some()
-    }
-
+    #[inline(always)]
     /// Returns whether the sources time-memory tradeoff is enabled.
     pub fn has_sources_tradeoff_enabled(&self) -> bool {
-        self.sources.is_some()
-    }
-
-    /// Returns whether the cumulative_node_degrees time-memory tradeoff is enabled.
-    pub fn has_cumulative_node_degrees_tradeoff_enabled(&self) -> bool {
-        self.cumulative_node_degrees.is_some()
+        self.edges.has_sources_tradeoff_enabled()
     }
 
     /// Returns whether the reciprocal_sqrt_degrees time-memory tradeoff is enabled.

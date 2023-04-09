@@ -1,7 +1,7 @@
 use super::*;
-use funty::IsInteger;
 use indicatif::ParallelProgressIterator;
-use num_traits::Zero;
+use num_traits::{PrimInt, Zero};
+use parallel_frontier::Frontier;
 use rayon::prelude::*;
 use std::cmp::Ord;
 use std::collections::VecDeque;
@@ -707,33 +707,29 @@ impl Graph {
         let mut eccentricity = 0;
         let mut most_distant_node = src_node_id;
 
-        let mut frontier = vec![src_node_id];
+        let mut frontier_new = Frontier::new();
+        let mut frontier = Frontier::new();
+        frontier.push(src_node_id);
 
         while !frontier.is_empty() {
             eccentricity += 1;
-            most_distant_node = frontier[0];
-            frontier = frontier
-                .into_par_iter()
-                .flat_map_iter(|node_id| {
-                    // TODO!: The following line can be improved when the par iter is made
-                    // generally available also for the elias-fano graphs.
-                    self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
-                        .map(move |neighbour_node_id| (neighbour_node_id, node_id))
-                })
-                .filter_map(|(neighbour_node_id, node_id)| {
-                    if (*thread_shared_predecessors.value.get())[neighbour_node_id as usize]
-                        == NODE_NOT_PRESENT
-                    {
-                        // Set it's distance
-                        (*thread_shared_predecessors.value.get())[neighbour_node_id as usize] =
-                            node_id;
-                        // add the node to the nodes to explore
-                        Some(neighbour_node_id)
-                    } else {
-                        None
-                    }
-                })
-                .collect::<Vec<NodeT>>();
+            most_distant_node = *frontier.iter().next().unwrap();
+            frontier.par_iter().for_each(|node_id| {
+                self.iter_unchecked_neighbour_node_ids_from_source_node_id(*node_id)
+                    .for_each(|neighbour_node_id| {
+                        if (*thread_shared_predecessors.value.get())[neighbour_node_id as usize]
+                            == NODE_NOT_PRESENT
+                        {
+                            // Set it's distance
+                            (*thread_shared_predecessors.value.get())[neighbour_node_id as usize] =
+                                *node_id;
+                            // add the node to the nodes to explore
+                            frontier_new.push(neighbour_node_id);
+                        }
+                    });
+            });
+            frontier.clear();
+            std::mem::swap(&mut frontier, &mut frontier_new);
         }
         eccentricity -= 1;
 
@@ -757,14 +753,14 @@ impl Graph {
     /// The provided list of node ids must be non-empty, or the method will panic.
     ///
     pub unsafe fn get_unchecked_generic_breadth_first_search_distances_parallel_from_node_ids<
-        T: Send + Sync + IsInteger + TryFrom<usize>,
+        T: Send + Sync + PrimInt + TryFrom<usize> + std::ops::AddAssign,
     >(
         &self,
         src_node_ids: Vec<NodeT>,
         maximal_depth: Option<T>,
     ) -> (Vec<T>, T, NodeT) {
         let nodes_number = self.get_number_of_nodes() as usize;
-        let node_not_present = T::MAX;
+        let node_not_present = T::max_value();
         let mut distances = vec![node_not_present; nodes_number];
         let thread_shared_distances = ThreadDataRaceAware::new(&mut distances);
         for src_node_id in src_node_ids.iter().cloned() {
@@ -774,37 +770,32 @@ impl Graph {
         let mut eccentricity: T = T::try_from(0).ok().unwrap();
         let mut most_distant_node = src_node_ids[0];
 
-        let mut frontier = src_node_ids;
+        let mut frontier: Frontier<NodeT> = src_node_ids.into();
+        let mut frontier_new = Frontier::new();
 
         while !frontier.is_empty() {
             eccentricity += T::try_from(1).ok().unwrap();
-            most_distant_node = frontier[0];
+            most_distant_node = *frontier.iter().next().unwrap();
             if maximal_depth.map_or(false, |maximal_depth| maximal_depth > eccentricity) {
                 break;
             }
 
-            frontier = frontier
-                .into_par_iter()
-                .flat_map_iter(|node_id| {
-                    // TODO!: The following line can be improved when the par iter is made
-                    // generally available also for the elias-fano graphs.
-
-                    self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
-                })
-                .filter_map(|neighbour_node_id| {
-                    if (*thread_shared_distances.value.get())[neighbour_node_id as usize]
-                        == node_not_present
-                    {
-                        // Set it's distance
-                        (*thread_shared_distances.value.get())[neighbour_node_id as usize] =
-                            eccentricity;
-                        // add the node to the nodes to explore
-                        Some(neighbour_node_id)
-                    } else {
-                        None
-                    }
-                })
-                .collect::<Vec<NodeT>>();
+            frontier.par_iter().for_each(|node_id| {
+                self.iter_unchecked_neighbour_node_ids_from_source_node_id(*node_id)
+                    .for_each(|neighbour_node_id| {
+                        if (*thread_shared_distances.value.get())[neighbour_node_id as usize]
+                            == node_not_present
+                        {
+                            // Set it's distance
+                            (*thread_shared_distances.value.get())[neighbour_node_id as usize] =
+                                eccentricity;
+                            // add the node to the nodes to explore
+                            frontier_new.push(neighbour_node_id);
+                        }
+                    });
+            });
+            frontier.clear();
+            std::mem::swap(&mut frontier, &mut frontier_new);
         }
         eccentricity = eccentricity.saturating_sub(T::try_from(1).ok().unwrap());
         (distances, eccentricity, most_distant_node)
@@ -1340,27 +1331,26 @@ impl Graph {
         let mut eccentricity = 0;
         let mut most_distant_node = node_id;
 
-        let mut frontier = vec![node_id];
+        let mut frontier_new = Frontier::new();
+        let mut frontier = Frontier::new();
+        frontier.push(node_id);
 
         while !frontier.is_empty() {
             eccentricity += 1;
-            most_distant_node = frontier[0];
-            frontier = frontier
-                .into_par_iter()
-                .flat_map_iter(|node_id| {
-                    self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
-                })
-                .filter_map(|neighbour_node_id| {
-                    if !(*thread_shared_visited.value.get())[neighbour_node_id as usize] {
-                        // Set it's distance
-                        (*thread_shared_visited.value.get())[neighbour_node_id as usize] = true;
-                        // add the node to the nodes to explore
-                        Some(neighbour_node_id)
-                    } else {
-                        None
-                    }
-                })
-                .collect::<Vec<NodeT>>();
+            most_distant_node = *frontier.iter().next().unwrap();
+            frontier.par_iter().for_each(|node_id| {
+                self.iter_unchecked_neighbour_node_ids_from_source_node_id(*node_id)
+                    .for_each(|neighbour_node_id| {
+                        if !(*thread_shared_visited.value.get())[neighbour_node_id as usize] {
+                            // Set it's distance
+                            (*thread_shared_visited.value.get())[neighbour_node_id as usize] = true;
+                            // add the node to the nodes to explore
+                            frontier_new.push(neighbour_node_id);
+                        }
+                    })
+            });
+            frontier.clear();
+            std::mem::swap(&mut frontier, &mut frontier_new);
         }
         eccentricity -= 1;
         (eccentricity, most_distant_node)

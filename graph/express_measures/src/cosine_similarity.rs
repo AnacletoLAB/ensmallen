@@ -1,10 +1,14 @@
 use crate::types::*;
 use crate::validation::*;
+use crate::vector_norm;
 use core::fmt::Debug;
-
+use indicatif::{ParallelProgressIterator, ProgressBar, ProgressStyle};
 use num_traits::{AsPrimitive, Float};
+use parallel_frontier::Frontier;
 use rayon::prelude::*;
+use std::iter::Sum;
 
+#[inline(always)]
 /// Returns the cosine similarity between the two provided vectors computed sequentially.
 ///
 /// # Arguments
@@ -61,6 +65,7 @@ where
     )
 }
 
+#[inline(always)]
 /// Returns the cosine similarity between the two provided vectors computed sequentially.
 ///
 /// # Arguments
@@ -84,6 +89,7 @@ pub unsafe fn cosine_similarity_sequential_unchecked<
     )
 }
 
+#[inline(always)]
 /// Returns the cosine similarity between the two provided vectors computed in parallel.
 ///
 /// # Arguments
@@ -126,6 +132,7 @@ pub unsafe fn cosine_similarity_parallel_unchecked<F: ThreadFloat>(
     total_dot_products / (src_features_norm * dst_features_norm + F::epsilon())
 }
 
+#[inline(always)]
 /// Returns the cosine similarity between the two provided vectors computed sequentially.
 ///
 /// # Arguments
@@ -143,6 +150,7 @@ pub fn cosine_similarity_sequential<R: Float + 'static, F: AsPrimitive<R> + Copy
     Ok(unsafe { cosine_similarity_sequential_unchecked(src_features, dst_features).0 })
 }
 
+#[inline(always)]
 /// Returns the cosine similarity between the two provided vectors computed in parallel.
 ///
 /// # Arguments
@@ -160,6 +168,7 @@ pub fn cosine_similarity_parallel<F: ThreadFloat>(
     Ok(unsafe { cosine_similarity_parallel_unchecked(src_features, dst_features) })
 }
 
+#[inline(always)]
 /// Write the cosine similarity in the provided slice.
 ///
 /// # Arguments
@@ -211,4 +220,125 @@ where
             .0;
         });
     Ok(())
+}
+
+#[inline(always)]
+/// Compute the cosine similarities between the two provided element lists.
+///
+/// # Arguments
+/// * `matrix`: &[F] - Matrix containing the feaures.
+/// * `sources`: &[I] - Indices of the source features.
+/// * `destinations`: &[I] - Indices of the destination features.
+/// * `dimension`: usize - Dimensionality of the matrix.
+/// * `lower_threshold`: Option<R> - Only returns values that are lower than this score. By default `1.0`.
+/// * `higher_threshold`: Option<R> - Only returns values that are higher than this score. By default `-1.0`.
+/// * `verbose`: Option<bool> - Whether to show loading bars.
+///
+pub fn pairwise_cosine_similarity<
+    R: Float + Send + Sync + Sum + 'static,
+    F: AsPrimitive<R> + Send + Sync + Copy,
+    I: ThreadUnsigned + Ord + std::fmt::Display,
+>(
+    matrix: &[F],
+    sources: &[I],
+    destinations: &[I],
+    dimension: usize,
+    minimum_threshold: Option<R>,
+    maximum_threshold: Option<R>,
+    verbose: Option<bool>,
+) -> Result<(Vec<I>, Vec<R>), String>
+where
+    <I as TryInto<usize>>::Error: Debug,
+{
+    let minimum_threshold: R = minimum_threshold.unwrap_or(R::one());
+    let maximum_threshold: R = maximum_threshold.unwrap_or(-R::one());
+    let verbose: bool = verbose.unwrap_or(true);
+
+    let maximum_id = sources
+        .par_iter()
+        .chain(destinations.par_iter())
+        .copied()
+        .max()
+        .unwrap_or(I::zero())
+        .try_into()
+        .unwrap();
+
+    if maximum_id >= matrix.len() / dimension {
+        return Err(format!(
+            concat!(
+                "The maximum provided element ID is {}, but ",
+                "the matrix only contains {} rows."
+            ),
+            maximum_id,
+            matrix.len() / dimension
+        ));
+    }
+
+    let nodes: Frontier<I> = Frontier::new();
+    let similarities: Frontier<R> = Frontier::new();
+    let destinations_norms: Vec<R> = destinations
+        .par_iter()
+        .copied()
+        .map(|dst| {
+            let usize_dst: usize = dst.try_into().unwrap();
+            vector_norm(&matrix[usize_dst * dimension..(usize_dst + 1) * dimension])
+        })
+        .collect::<Vec<R>>();
+
+    let progress_bar = if verbose {
+        let pb = ProgressBar::new(sources.len() as u64);
+        pb.set_style(
+            ProgressStyle::default_bar()
+                .template(concat!(
+                    "Computing cosine similarities ",
+                    "{spinner:.green} [{elapsed_precise}] ",
+                    "[{bar:40.cyan/blue}] ({pos}/{len}, ETA {eta})"
+                ))
+                .unwrap(),
+        );
+        pb
+    } else {
+        ProgressBar::hidden()
+    };
+
+    sources
+        .par_iter()
+        .copied()
+        .progress_with(progress_bar)
+        .for_each(|src| {
+            let usize_src: usize = src.try_into().unwrap();
+            let src_vec: Vec<F> =
+                matrix[usize_src * dimension..(usize_src + 1) * dimension].to_vec();
+            let src_norm: R = vector_norm(&src_vec);
+            destinations
+                .iter()
+                .copied()
+                .zip(destinations_norms.iter().copied())
+                .for_each(|(dst, dst_norm)| {
+                    let usize_dst: usize = dst.try_into().unwrap();
+
+                    let total_dot_product: R = src_vec
+                        .iter()
+                        .copied()
+                        .zip(
+                            matrix[usize_dst * dimension..(usize_dst + 1) * dimension]
+                                .iter()
+                                .copied(),
+                        )
+                        .map(|(src_feature, dst_feature)| src_feature.as_() * dst_feature.as_())
+                        .sum();
+
+                    let similarity = total_dot_product / (src_norm * dst_norm + R::epsilon());
+
+                    if similarity < maximum_threshold || similarity > minimum_threshold {
+                        return;
+                    }
+
+                    nodes.push(src);
+                    nodes.push(dst);
+                    similarities.push(similarity);
+                });
+        });
+
+    Ok((nodes.into(), similarities.into()))
 }

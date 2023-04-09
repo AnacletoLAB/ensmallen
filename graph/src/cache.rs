@@ -21,6 +21,7 @@ pub(crate) struct PropertyCache {
     pub(crate) unique_directed_edges_number: Option<EdgeT>,
     pub(crate) diameter: Option<Result<f32>>,
     pub(crate) is_connected: Option<bool>,
+    pub(crate) is_multigraph: Option<bool>,
 }
 
 impl Default for PropertyCache {
@@ -45,6 +46,7 @@ impl Default for PropertyCache {
             unique_directed_edges_number: None,
             diameter: None,
             is_connected: None,
+            is_multigraph: None,
         }
     }
 }

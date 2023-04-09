@@ -1,8 +1,8 @@
 use counter::Counter;
-use funty::IsInteger;
 use indicatif::{ParallelProgressIterator, ProgressIterator};
 use itertools::Itertools;
 use log::info;
+use num_traits::PrimInt;
 use rayon::prelude::*;
 use std::collections::HashMap;
 use std::hash::Hash;
@@ -104,7 +104,7 @@ pub enum Tokens {
 }
 
 impl Tokens {
-    fn default_allocation<T: IsInteger>(rows_number: usize) -> Vec<Vec<T>> {
+    fn default_allocation<T: PrimInt>(rows_number: usize) -> Vec<Vec<T>> {
         (0..rows_number).map(|_| Vec::new()).collect()
     }
 

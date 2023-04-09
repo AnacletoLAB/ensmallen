@@ -1,5 +1,5 @@
 use crate::*;
-use file_progress::{FileProgress, FileProgressIterator, MarkdownFileProgress};
+use file_progress::{FileProgressIterator, MarkdownFileProgress};
 use graph::{EdgeT, Graph, NodeT};
 use indicatif::{ProgressBar, ProgressIterator, ProgressStyle};
 use num_traits::AsPrimitive;
@@ -282,20 +282,20 @@ where
             ProgressBar::hidden()
         };
 
-        let mut progress = MarkdownFileProgress::from_project_name(format!(
-            "{graph_name}_{model_name}",
-            graph_name = graph.get_name(),
-            model_name = self.get_model_name()
-        ));
+        // let mut progress = MarkdownFileProgress::from_project_name(format!(
+        //     "{graph_name}_{model_name}",
+        //     graph_name = graph.get_name(),
+        //     model_name = self.get_model_name()
+        // ));
 
-        progress.set_verbose(self.is_verbose());
-        progress.set_len(expected_embedding_len);
+        // progress.set_verbose(self.is_verbose());
+        // progress.set_len(self.get_embedding_size(graph)?);
 
         // We start to compute the features
         embedding
             .chunks_mut(graph.get_number_of_nodes() as usize)
             .progress_with(features_progress_bar)
-            .progress_with_file(progress)
+            //.progress_with_file(progress)
             .zip(self.iter_anchor_nodes_buckets(graph)?)
             .enumerate()
             .for_each(|(feature_number, (empty_feature, bucket))| unsafe {

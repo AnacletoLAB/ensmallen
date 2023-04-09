@@ -26,7 +26,7 @@ log = "0.4.8"
 regex = "1.5.4"
 lazy_static="1.4.0"
 env_logger = "0.7.1"
-rayon = "1.1"
+rayon = "1.6"
 serde = "1.0.130"
 rand = {version="0.7", features = ["small_rng"] }
 itertools = "0.10.0"
@@ -35,7 +35,7 @@ tokenizers = "0.11.0"
 counter = "=0.5.2"
 is_sorted = "0.1.1"
 derive-getters = "0.1.0"
-bitvec = {version="0.22", features=["atomic"]}
+bitvec = {version="1.0.1", features=["atomic"]}
 glob = "0.3.0"
 keyed_priority_queue = "0.3.2"
 validator = "0.14.0"
@@ -47,7 +47,6 @@ num-traits = "0.2.14"
 v_htmlescape = "0.13.1"
 linked_hash_set = "0.1.4"
 hashbrown = {version="0.12.1", features=["rayon"]}
-funty = "1.2.0"
 indicatif = {version="0.16.0", features = ["rayon"]}
 arbitrary = { version = "0.4.5", features = ["derive"] }
 mmap = {path = "./mmap"}
@@ -57,6 +56,10 @@ vec_rand = { git = "https://github.com/zommiommy/vec_rand", branch = "master" }
 elias_fano_rust = "0.1.1"
 tags = {path="./tags/"}
 atoi_radix10 = { git = "https://github.com/gilescope/atoi_radix10"}
+parallel_frontier = {git="https://github.com/zommiommy/parallel_frontier"}
+xxhash-rust = {version ="0.8.6", features=["xxh3"]}
+siphasher = "0.3"
+ahash = "0.8.2"
 
 [target.'cfg(unix)'.dependencies]
 nix = "0.22.0"

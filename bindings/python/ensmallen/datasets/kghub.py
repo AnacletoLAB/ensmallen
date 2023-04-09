@@ -74,6 +74,13 @@ def KGMicrobe(
 			- 20210617
 			- 20210622
 			- 20210715
+			- 20230109
+			- 20230116
+			- 20230206
+			- 20230216
+			- 20230303
+			- 20230310
+			- 20230316
 			- current	
 	
 	References
@@ -152,6 +159,8 @@ def KGIDG(
 			- 20220606
 			- 20220701
 			- 20220722
+			- 20221209
+			- 20230101
 			- current	
 	
 	
@@ -165,7 +174,7 @@ def KGPhenio(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="hp-mp_similarities.tar.gz", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="kg-phenio_hp-vs-mp_semsim_$CUTOFF_VALUE.tar.gz", **kwargs
 ) -> Graph:
     """Return kg-phenio graph	
 
@@ -186,7 +195,7 @@ def KGPhenio(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "hp-mp_similarities.tar.gz"
+    version = "kg-phenio_hp-vs-mp_semsim_$CUTOFF_VALUE.tar.gz"
         Version to retrieve	
 		The available versions are:
 			- 20220304
@@ -207,8 +216,14 @@ def KGPhenio(
 			- 20220819
 			- 20220930
 			- 20221006
+			- 20221027
+			- 20221215
+			- 20230210
+			- 20230302
+			- 20230307
+			- 20230313
 			- current
-			- hp-mp_similarities.tar.gz	
+			- kg-phenio_hp-vs-mp_semsim_$CUTOFF_VALUE.tar.gz	
 	
 	
     """
@@ -280,6 +295,8 @@ def KGCOVID19(
 			- 20220702
 			- 20220802
 			- 20220902
+			- 20221102
+			- 20230102
 			- current	
 	
 	References

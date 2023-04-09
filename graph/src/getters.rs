@@ -297,6 +297,7 @@ impl Graph {
         Ok(weighted_degrees[(self.get_number_of_nodes() / 2) as usize])
     }
 
+    #[inline(always)]
     /// Returns maximum node degree of the graph.
     ///
     /// # Example
@@ -1481,9 +1482,10 @@ impl Graph {
         }
     }
 
+    #[inline(always)]
     /// Returns number of directed edges in the graph.
     pub fn get_number_of_directed_edges(&self) -> EdgeT {
-        self.edges.len() as EdgeT
+        self.edges.get_number_of_directed_edges()
     }
 
     /// Returns number of edge types in the graph.
@@ -1566,17 +1568,10 @@ impl Graph {
         self.get_number_of_directed_edges() - self.get_number_of_unique_directed_edges()
     }
 
+    #[inline(always)]
     /// Return vector with node cumulative_node_degrees, that is the comulative node degree.
-    pub fn get_cumulative_node_degrees(&self) -> Vec<EdgeT> {
-        self.cumulative_node_degrees.as_ref().as_ref().map_or_else(
-            || {
-                let mut cumulative_node_degrees = vec![0; self.get_number_of_nodes() as usize];
-                self.par_iter_comulative_node_degrees()
-                    .collect_into_vec(&mut cumulative_node_degrees);
-                cumulative_node_degrees
-            },
-            |cumulative_node_degrees| cumulative_node_degrees.clone(),
-        )
+    pub fn get_cumulative_node_degrees(&self) -> &[EdgeT] {
+        self.edges.get_cumulative_node_degrees()
     }
 
     /// Return vector with
@@ -1812,17 +1807,25 @@ impl Graph {
                         (*root_nodes.value.get())[dst as usize] = false;
                     });
             });
-        root_nodes.into_inner().into_par_iter().enumerate().filter_map(|(root_node_id, flag)|{
-            if flag {
-                Some(root_node_id as NodeT)
-            } else {
-                None
-            }
-        }).collect()
+        root_nodes
+            .into_inner()
+            .into_par_iter()
+            .enumerate()
+            .filter_map(|(root_node_id, flag)| {
+                if flag {
+                    Some(root_node_id as NodeT)
+                } else {
+                    None
+                }
+            })
+            .collect()
     }
 
     /// Returns vector of root node names, nodes with zero inbound degree and non-zero outbound degree.
     pub fn get_root_node_names(&self) -> Vec<String> {
-        self.get_root_node_ids().into_par_iter().map(|node_id| unsafe{self.get_unchecked_node_name_from_node_id(node_id)}).collect()
+        self.get_root_node_ids()
+            .into_par_iter()
+            .map(|node_id| unsafe { self.get_unchecked_node_name_from_node_id(node_id) })
+            .collect()
     }
 }

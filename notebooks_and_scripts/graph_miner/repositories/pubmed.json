@@ -1,0 +1,26 @@
+{
+    "PubMed": {
+        "4_11_2022": {
+            "urls": [
+                "https://archive.org/download/pubmed_4_11_2022/pubmed_index.tsv.gz",
+                "https://archive.org/download/pubmed_4_11_2022/citation_edges.tsv.gz"
+            ],
+            "paths": [
+                "node_list.tsv.gz",
+                "edge_list.tsv.gz"
+            ],
+            "arguments": {
+                "node_path": "node_list.tsv",
+                "edge_path": "edge_list.tsv",
+                "edge_list_separator": "\t",
+                "node_list_separator": "\t",
+                "name": "PubMed",
+                "sources_column_number": 0,
+                "destinations_column_number": 1,
+                "node_list_header": false,
+                "edge_list_header": false,
+                "nodes_column_number": 0
+            }
+        }
+    }
+}

@@ -58,7 +58,7 @@ pub fn build_optimal_lists_files(
 
     target_node_path: Option<String>,
     mut target_node_list_separator: Option<char>,
-    target_node_list_header: Option<bool>,
+    mut target_node_list_header: Option<bool>,
     mut target_nodes_column: Option<String>,
     mut target_nodes_column_number: Option<usize>,
     target_node_types_separator: Option<char>,
@@ -133,6 +133,7 @@ pub fn build_optimal_lists_files(
 
     let _ = target_nodes_column.insert("node_name".to_string());
     let _ = target_nodes_column_number.insert(0);
+    let _ = target_node_list_header.insert(true);
 
     if original_node_list_node_types_column_number.is_some()
         || original_node_list_node_types_column.is_some()
@@ -277,7 +278,7 @@ pub fn build_optimal_lists_files(
                 None,
                 load_edge_list_in_parallel,
                 remove_chevrons,
-            remove_spaces,
+                remove_spaces,
                 verbose,
                 name.clone(),
             )
@@ -311,7 +312,7 @@ pub fn build_optimal_lists_files(
                     None,
                     load_edge_list_in_parallel,
                     remove_chevrons,
-            remove_spaces,
+                    remove_spaces,
                     verbose,
                     name.clone(),
                 )?;
@@ -390,7 +391,6 @@ pub fn build_optimal_lists_files(
             original_edge_path.as_ref(),
             target_edge_path.as_ref(),
             directed,
-
             original_node_path,
             original_node_list_separator,
             original_node_list_header,
