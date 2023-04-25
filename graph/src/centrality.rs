@@ -1,13 +1,16 @@
 use super::*;
 use atomic_float::AtomicF32;
 use indicatif::ParallelProgressIterator;
+use indicatif::ProgressIterator;
 use itertools::Itertools;
 use num_traits::pow::Pow;
 use num_traits::Zero;
+use parallel_frontier::Frontier;
 use rayon::iter::IndexedParallelIterator;
 use rayon::iter::IntoParallelRefIterator;
 use rayon::iter::{IntoParallelRefMutIterator, ParallelIterator};
 use std::collections::VecDeque;
+use std::sync::atomic::AtomicU32;
 use std::sync::atomic::Ordering;
 
 impl Graph {
@@ -472,7 +475,7 @@ impl Graph {
                     if current_node_id != src_node_id {
                         centralities[current_node_id as usize].fetch_add(
                             dependencies[current_node_id as usize] / factor,
-                            Ordering::SeqCst,
+                            Ordering::Relaxed,
                         );
                     }
                 });
@@ -493,87 +496,196 @@ impl Graph {
     /// Returns vector of betweenness centrality for all nodes.
     ///
     /// # Arguments
-    /// * `edges_normalization`: Option<bool> - Whether to normalize the values by the number of edges of the complete graph. By default, it is false.
-    /// * `min_max_normalization`: Option<bool> - Whether to normalize the values between 0 and 1. By default, it is false.
-    /// * `verbose`: Option<bool> - Whether to show a loading bar. By default, it is true.
+    /// * `edges_normalization`: Option<bool> - Whether to normalize the values by the number of edges of the complete graph. By default, false.
+    /// * `min_max_normalization`: Option<bool> - Whether to normalize the values between 0 and 1. By default, false.
+    /// * `verbose`: Option<bool> - Whether to show a loading bar while computing the betweenness centrality. By default, true.
     ///
     /// # References
     /// The algorithm is implemented as described in [Parallel Algorithms for Evaluating Centrality Indices in Real-World Networks](https://ieeexplore.ieee.org/abstract/document/1690659), by Bader et al.
     ///
-    /// TODO: I think this method can be enhanced for the undirected case.
+    /// # Raises
+    /// * If the graph is a multigraph.
     pub fn get_betweenness_centrality(
         &self,
         edges_normalization: Option<bool>,
         min_max_normalization: Option<bool>,
         verbose: Option<bool>,
-    ) -> Vec<f32> {
+    ) -> Result<Vec<f32>> {
+        self.must_not_be_multigraph()?;
         if !self.has_nodes() {
-            return Vec::new();
+            return Ok(Vec::new());
         }
         let edges_normalization = edges_normalization.unwrap_or(false);
         let min_max_normalization = min_max_normalization.unwrap_or(false);
-        let verbose = verbose.unwrap_or(true);
-        let nodes_number = self.get_number_of_nodes() as usize;
+
+        let pb = get_loading_bar(
+            verbose.unwrap_or(true),
+            "Computing betweennes centralities",
+            self.get_number_of_nodes() as usize,
+        );
+
+        // We allocate the vector we are going to use to store
+        // the computed node betwenness centralities.
+        // Since we are going to add the portion of different
+        // betwenness centralities scores across different threads,
+        // we need to make use to atomics.
         let centralities: Vec<AtomicF32> =
             self.iter_node_ids().map(|_| AtomicF32::new(0.0)).collect();
-        let factor = if self.is_directed() { 1.0 } else { 2.0 };
-        let pb = get_loading_bar(verbose, "Computing betweennes centralities", nodes_number);
-        self.par_iter_node_ids()
-            .progress_with(pb)
-            .for_each(|src_node_id| {
-                let mut stack: Vec<NodeT> = Vec::new();
-                let mut node_lists: Vec<Vec<NodeT>> =
-                    self.iter_node_ids().map(|_| Vec::new()).collect();
-                let mut shortest_path_counts: Vec<u64> = vec![0; nodes_number];
-                shortest_path_counts[src_node_id as usize] = 1;
-                let mut distance_from_root = vec![u64::MAX; nodes_number];
-                distance_from_root[src_node_id as usize] = 0;
-                let mut nodes_to_visit: VecDeque<NodeT> = VecDeque::new();
-                nodes_to_visit.push_back(src_node_id);
-                while !nodes_to_visit.is_empty() {
-                    let current_node_id = nodes_to_visit.pop_front().unwrap();
-                    stack.push(current_node_id);
-                    // Bader says to do the following step in parallel
-                    // Currently it is not parallel because the EliasFano implementation
-                    // does not supporting a range of values in parallel, and currently
-                    // it is not possible to Box a parallel iterator from Rayon.
-                    // TODO: add support for par_iter here!
-                    unsafe {
-                        self.iter_unchecked_neighbour_node_ids_from_source_node_id(current_node_id)
-                    }
-                    .for_each(|neighbour_node_id| {
-                        if distance_from_root[neighbour_node_id as usize] == u64::MAX {
-                            nodes_to_visit.push_back(neighbour_node_id);
-                            distance_from_root[neighbour_node_id as usize] =
-                                distance_from_root[current_node_id as usize] + 1;
-                        }
-                        if distance_from_root[neighbour_node_id as usize]
-                            == distance_from_root[current_node_id as usize] + 1
-                        {
-                            shortest_path_counts[neighbour_node_id as usize] +=
-                                shortest_path_counts[current_node_id as usize];
-                            node_lists[neighbour_node_id as usize].push(current_node_id);
-                        }
-                    });
+
+        // Similarly, since we are going to extend the successors of a node
+        // from multiple threads at once, and we want to do it in a sync-free
+        // manner, we employ the `Frontier` object, which simply allocates a vector
+        // for each thread.
+        let successors: Vec<AtomicU32> = self
+            .iter_directed_edge_ids()
+            .map(|_| AtomicU32::default())
+            .collect();
+        let successor_counts: Vec<AtomicU32> = self
+            .iter_directed_edge_ids()
+            .map(|_| AtomicU32::default())
+            .collect();
+
+        let shortest_path_counts: Vec<AtomicU32> = (0..self.get_number_of_nodes() as usize)
+            .map(|_| AtomicU32::default())
+            .collect();
+
+        const UNVISITED: u32 = u32::MAX;
+        let distances: Vec<AtomicU32> = (0..self.get_number_of_nodes() as usize)
+            .map(|_| AtomicU32::from(UNVISITED))
+            .collect();
+
+        let mut dependencies: Vec<AtomicF32> =
+            self.iter_node_ids().map(|_| AtomicF32::new(0.0)).collect();
+
+        let mut frontiers: Vec<Frontier<NodeT>> = vec![Frontier::default(), Frontier::default()];
+
+        self.iter_node_ids().progress_with(pb).for_each(|root| {
+            // First, we prepare the data-structrues for this iteration.
+
+            // We begin by resetting the shortest path counts to zero.
+            shortest_path_counts.par_iter().for_each(|count| {
+                count.store(0, Ordering::Relaxed);
+            });
+
+            // We set the number of paths from root as equal to one.
+            shortest_path_counts[root as usize].store(1, Ordering::Relaxed);
+
+            // We set the number of paths from root as equal to one.
+            distances[root as usize].store(0, Ordering::Relaxed);
+
+            // We reset all dependencies
+            dependencies.par_iter_mut().for_each(|dependency| {
+                dependency.store(0.0, Ordering::Relaxed);
+            });
+
+            // We clear the first frontier and insert the root node.
+            frontiers[0].clear();
+            frontiers[0].push(root);
+
+            let mut current_depth = 0;
+
+            loop {
+                current_depth += 1;
+                // Every time the frontiers has become too small
+                // the current depth, we need to add another frontier
+                // layer that we will be reusing.
+                if frontiers.len() < 1 + current_depth {
+                    frontiers.push(Frontier::default());
                 }
-                let mut dependencies = vec![0.0; nodes_number];
-                stack.into_iter().rev().for_each(|current_node_id| {
-                    node_lists[current_node_id as usize]
-                        .iter()
-                        .for_each(|&neighbour_node_id| {
-                            dependencies[neighbour_node_id as usize] +=
-                                shortest_path_counts[neighbour_node_id as usize] as f32
-                                    / shortest_path_counts[current_node_id as usize] as f32
-                                    * (1.0 + dependencies[current_node_id as usize]);
+                unsafe {
+                    let shared_frontiers: ThreadDataRaceAware<&mut Vec<Frontier<NodeT>>> =
+                        ThreadDataRaceAware::new(&mut frontiers);
+                    let growing_frontier = &mut (*shared_frontiers.get())[current_depth];
+                    growing_frontier.clear();
+                    (*shared_frontiers.get())[current_depth - 1]
+                        .par_iter()
+                        .for_each(|&src| {
+                            let source_paths =
+                                shortest_path_counts[src as usize].load(Ordering::Relaxed);
+                            let offset = self
+                                .edges
+                                .get_unchecked_minmax_edge_ids_from_source_node_id(src)
+                                .0;
+                            self.iter_unchecked_neighbour_node_ids_from_source_node_id(src)
+                                .for_each(|dst| {
+                                    let dst_depth = distances[dst as usize]
+                                        .compare_exchange(
+                                            UNVISITED,
+                                            current_depth as NodeT,
+                                            Ordering::Relaxed,
+                                            Ordering::Relaxed,
+                                        )
+                                        .unwrap_or_else(|err| err);
+
+                                    // If the node was not yet visited
+                                    if dst_depth == UNVISITED {
+                                        // We push this node to the new frontier to be visited.
+                                        growing_frontier.push(dst);
+                                    }
+
+                                    // We now handle the updates of the neighbourhoods.
+                                    // NOTE: we CANNOT do this in the previous loop because of
+                                    // possible collisions with other parallel iterations. For
+                                    // instance a node `X` may have a neighbour `K` shared with
+                                    // another node in the current frontier `Y`. Both the neighbour
+                                    // exploration of `K` starting from `X` and `Y` has to be considered
+                                    // for the following if statement.
+                                    if dst_depth == current_depth as NodeT || dst_depth == UNVISITED
+                                    {
+                                        // We increase the degree of the successors
+                                        // of this node by one, and we get the previous
+                                        // number of successors.
+                                        let current_number_of_successors = successor_counts
+                                            [src as usize]
+                                            .fetch_add(1, Ordering::Relaxed);
+                                        shortest_path_counts[dst as usize]
+                                            .fetch_add(source_paths, Ordering::Relaxed);
+                                        // Here we are using an atomic store, but in reality
+                                        // there is no need as the update is not contended.
+                                        successors[offset as usize
+                                            + current_number_of_successors as usize]
+                                            .store(dst, Ordering::Relaxed);
+                                    }
+                                });
                         });
-                    if current_node_id != src_node_id {
-                        centralities[current_node_id as usize].fetch_add(
-                            dependencies[current_node_id as usize] / factor,
-                            Ordering::SeqCst,
-                        );
+                    if growing_frontier.is_empty() {
+                        break;
                     }
+                }
+            }
+
+            successor_counts[root as usize].store(0, Ordering::Relaxed);
+            distances[root as usize].store(UNVISITED, Ordering::Relaxed);
+
+            frontiers[1..current_depth].iter().rev().for_each(|frontier| {
+                frontier.par_iter().copied().for_each(|src| {
+                    let path_counts =
+                        shortest_path_counts[src as usize].load(Ordering::Relaxed) as f32;
+                    distances[src as usize].store(UNVISITED, Ordering::Relaxed);
+                    let offset = unsafe {
+                        self.edges
+                            .get_unchecked_minmax_edge_ids_from_source_node_id(src)
+                            .0
+                    };
+                    let number_of_successors =
+                        successor_counts[src as usize].swap(0, Ordering::Relaxed);
+                    let dependency: f32 = path_counts
+                        * successors
+                            [offset as usize..(offset as usize + number_of_successors as usize)]
+                            .iter()
+                            .map(|dst| {
+                                let dst = dst.load(Ordering::Relaxed);
+                                (1.0 + dependencies[dst as usize].load(Ordering::Relaxed))
+                                    / shortest_path_counts[dst as usize].load(Ordering::Relaxed)
+                                        as f32
+                            })
+                            .sum::<f32>();
+                    dependencies[src as usize].store(dependency, Ordering::Relaxed);
+                    centralities[src as usize].fetch_add(dependency, Ordering::Relaxed);
                 });
             });
+        });
+
         let mut centralities =
             unsafe { std::mem::transmute::<Vec<AtomicF32>, Vec<f32>>(centralities) };
         if min_max_normalization {
@@ -591,7 +703,7 @@ impl Graph {
                 *value /= denominator;
             });
         }
-        centralities
+        Ok(centralities)
     }
 
     #[no_binding]
