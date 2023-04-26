@@ -13,6 +13,15 @@ use std::collections::VecDeque;
 use std::sync::atomic::AtomicU32;
 use std::sync::atomic::Ordering;
 
+#[inline(always)]
+unsafe fn non_temporal_store<T>(ptr: &mut T, value: T) {
+    #[cfg(feature = "nts")]
+    std::intrinsics::nontemporal_store(ptr as *mut T, value);
+
+    #[cfg(not(feature = "nts"))]
+    std::ptr::write(ptr as *mut T, value)
+}
+
 impl Graph {
     /// Returns iterator over the unweighted degree centrality for all nodes.
     pub fn iter_degree_centrality(&self) -> Result<impl Iterator<Item = f32> + '_> {
@@ -529,33 +538,23 @@ impl Graph {
         // Since we are going to add the portion of different
         // betwenness centralities scores across different threads,
         // we need to make use to atomics.
-        let centralities: Vec<AtomicF32> =
-            self.iter_node_ids().map(|_| AtomicF32::new(0.0)).collect();
+        let mut centralities: Vec<f32> = vec![0.0; self.get_number_of_nodes() as usize];
 
         // Similarly, since we are going to extend the successors of a node
         // from multiple threads at once, and we want to do it in a sync-free
         // manner, we employ the `Frontier` object, which simply allocates a vector
         // for each thread.
-        let successors: Vec<AtomicU32> = self
-            .iter_directed_edge_ids()
-            .map(|_| AtomicU32::default())
-            .collect();
-        let successor_counts: Vec<AtomicU32> = self
-            .iter_directed_edge_ids()
-            .map(|_| AtomicU32::default())
-            .collect();
+        let mut successors: Vec<u32> = vec![0; self.get_number_of_directed_edges() as usize];
+        let mut successor_counts: Vec<u32> = vec![0; self.get_number_of_nodes() as usize];
 
         let shortest_path_counts: Vec<AtomicU32> = (0..self.get_number_of_nodes() as usize)
             .map(|_| AtomicU32::default())
             .collect();
 
         const UNVISITED: u32 = u32::MAX;
-        let distances: Vec<AtomicU32> = (0..self.get_number_of_nodes() as usize)
-            .map(|_| AtomicU32::from(UNVISITED))
-            .collect();
+        let mut distances: Vec<u32> = vec![UNVISITED; self.get_number_of_nodes() as usize];
 
-        let mut dependencies: Vec<AtomicF32> =
-            self.iter_node_ids().map(|_| AtomicF32::new(0.0)).collect();
+        let mut dependencies: Vec<f32> = vec![0.0; self.get_number_of_nodes() as usize];
 
         let mut frontiers: Vec<Frontier<NodeT>> = vec![Frontier::default(), Frontier::default()];
 
@@ -571,12 +570,7 @@ impl Graph {
             shortest_path_counts[root as usize].store(1, Ordering::Relaxed);
 
             // We set the number of paths from root as equal to one.
-            distances[root as usize].store(0, Ordering::Relaxed);
-
-            // We reset all dependencies
-            dependencies.par_iter_mut().for_each(|dependency| {
-                dependency.store(0.0, Ordering::Relaxed);
-            });
+            distances[root as usize] = 0;
 
             // We clear the first frontier and insert the root node.
             frontiers[0].clear();
@@ -592,105 +586,145 @@ impl Graph {
                 if frontiers.len() < 1 + current_depth {
                     frontiers.push(Frontier::default());
                 }
-                unsafe {
-                    let shared_frontiers: ThreadDataRaceAware<&mut Vec<Frontier<NodeT>>> =
-                        ThreadDataRaceAware::new(&mut frontiers);
-                    let growing_frontier = &mut (*shared_frontiers.get())[current_depth];
-                    growing_frontier.clear();
-                    (*shared_frontiers.get())[current_depth - 1]
-                        .par_iter()
-                        .for_each(|&src| {
-                            let source_paths =
-                                shortest_path_counts[src as usize].load(Ordering::Relaxed);
-                            let offset = self
-                                .edges
-                                .get_unchecked_minmax_edge_ids_from_source_node_id(src)
-                                .0;
-                            self.iter_unchecked_neighbour_node_ids_from_source_node_id(src)
-                                .for_each(|dst| {
-                                    let dst_depth = distances[dst as usize]
-                                        .compare_exchange(
-                                            UNVISITED,
-                                            current_depth as NodeT,
-                                            Ordering::Relaxed,
-                                            Ordering::Relaxed,
-                                        )
-                                        .unwrap_or_else(|err| err);
 
-                                    // If the node was not yet visited
-                                    if dst_depth == UNVISITED {
-                                        // We push this node to the new frontier to be visited.
-                                        growing_frontier.push(dst);
-                                    }
+                let shared_distances = ThreadDataRaceAware::new(&mut distances);
+                let shared_successor_counts = ThreadDataRaceAware::new(&mut successor_counts);
+                let shared_successors = ThreadDataRaceAware::new(&mut successors);
+                frontiers[current_depth - 1]
+                    .par_iter()
+                    .for_each(|&src| unsafe {
+                        let source_paths =
+                            shortest_path_counts[src as usize].load(Ordering::Relaxed);
+                        let current_number_of_successors =
+                            &mut (*shared_successor_counts.get())[src as usize];
+                        let mut number_of_successors = *current_number_of_successors;
+                        let mut offset = self
+                            .edges
+                            .get_unchecked_minmax_edge_ids_from_source_node_id(src)
+                            .0 as usize
+                            + number_of_successors as usize;
+                        self.iter_unchecked_neighbour_node_ids_from_source_node_id(src)
+                            .for_each(|dst: u32| {
+                                let dst_depth_ref = &mut (*shared_distances.get())[dst as usize];
+                                let dst_depth = *dst_depth_ref;
 
-                                    // We now handle the updates of the neighbourhoods.
-                                    // NOTE: we CANNOT do this in the previous loop because of
-                                    // possible collisions with other parallel iterations. For
-                                    // instance a node `X` may have a neighbour `K` shared with
-                                    // another node in the current frontier `Y`. Both the neighbour
-                                    // exploration of `K` starting from `X` and `Y` has to be considered
-                                    // for the following if statement.
-                                    if dst_depth == current_depth as NodeT || dst_depth == UNVISITED
-                                    {
-                                        // We increase the degree of the successors
-                                        // of this node by one, and we get the previous
-                                        // number of successors.
-                                        let current_number_of_successors = successor_counts
-                                            [src as usize]
-                                            .fetch_add(1, Ordering::Relaxed);
-                                        shortest_path_counts[dst as usize]
-                                            .fetch_add(source_paths, Ordering::Relaxed);
-                                        // Here we are using an atomic store, but in reality
-                                        // there is no need as the update is not contended.
-                                        successors[offset as usize
-                                            + current_number_of_successors as usize]
-                                            .store(dst, Ordering::Relaxed);
-                                    }
-                                });
-                        });
-                    if growing_frontier.is_empty() {
-                        break;
-                    }
+                                // If the node was not yet visited
+                                if dst_depth == UNVISITED {
+                                    // We push this node to the new frontier to be visited.
+                                    non_temporal_store(dst_depth_ref, current_depth as NodeT);
+                                }
+
+                                // We now handle the updates of the neighbourhoods.
+                                // NOTE: we CANNOT do this in the previous loop because of
+                                // possible collisions with other parallel iterations. For
+                                // instance a node `X` may have a neighbour `K` shared with
+                                // another node in the current frontier `Y`. Both the neighbour
+                                // exploration of `K` starting from `X` and `Y` has to be considered
+                                // for the following if statement.
+                                if dst_depth == current_depth as NodeT || dst_depth == UNVISITED {
+                                    // We increase the degree of the successors
+                                    // of this node by one, and we get the previous
+                                    // number of successors.
+                                    shortest_path_counts[dst as usize]
+                                        .fetch_add(source_paths, Ordering::Relaxed);
+                                    non_temporal_store(
+                                        &mut (*shared_successors.get())[offset],
+                                        dst,
+                                    );
+                                    offset += 1;
+                                    number_of_successors += 1;
+                                }
+                            });
+                        non_temporal_store(current_number_of_successors, number_of_successors);
+                    });
+
+                #[cfg(feature = "nts")]
+                sfence();
+
+                frontiers[current_depth].clear();
+
+                distances
+                    .par_iter()
+                    .copied()
+                    .enumerate()
+                    .filter(|(_, distance)| *distance == current_depth as NodeT)
+                    .for_each(|(node_id, _)| {
+                        frontiers[current_depth].push(node_id as NodeT);
+                    });
+
+                if frontiers[current_depth].is_empty() {
+                    break;
                 }
             }
 
-            successor_counts[root as usize].store(0, Ordering::Relaxed);
-            distances[root as usize].store(UNVISITED, Ordering::Relaxed);
+            successor_counts[root as usize] = 0;
+            distances[root as usize] = UNVISITED;
+            let shared_distances = ThreadDataRaceAware::new(&mut distances);
+            let shared_dependencies = ThreadDataRaceAware::new(&mut dependencies);
+            let shared_centralities = ThreadDataRaceAware::new(&mut centralities);
+            let shared_successor_counts = ThreadDataRaceAware::new(&mut successor_counts);
 
-            frontiers[1..current_depth].iter().rev().for_each(|frontier| {
-                frontier.par_iter().copied().for_each(|src| {
-                    let path_counts =
-                        shortest_path_counts[src as usize].load(Ordering::Relaxed) as f32;
-                    distances[src as usize].store(UNVISITED, Ordering::Relaxed);
-                    let offset = unsafe {
-                        self.edges
-                            .get_unchecked_minmax_edge_ids_from_source_node_id(src)
-                            .0
-                    };
-                    let number_of_successors =
-                        successor_counts[src as usize].swap(0, Ordering::Relaxed);
-                    let dependency: f32 = path_counts
-                        * successors
-                            [offset as usize..(offset as usize + number_of_successors as usize)]
-                            .iter()
-                            .map(|dst| {
-                                let dst = dst.load(Ordering::Relaxed);
-                                (1.0 + dependencies[dst as usize].load(Ordering::Relaxed))
-                                    / shortest_path_counts[dst as usize].load(Ordering::Relaxed)
-                                        as f32
-                            })
-                            .sum::<f32>();
-                    dependencies[src as usize].store(dependency, Ordering::Relaxed);
-                    centralities[src as usize].fetch_add(dependency, Ordering::Relaxed);
+            frontiers[..current_depth]
+                .iter()
+                .enumerate()
+                .skip(1)
+                .rev()
+                .for_each(|(depth, frontier)| {
+                    frontier.par_iter().copied().for_each(|src| {
+                        let path_counts =
+                            shortest_path_counts[src as usize].load(Ordering::Relaxed) as f32;
+                        unsafe {
+                            (*shared_distances.get())[src as usize] = UNVISITED;
+                        }
+                        let offset = unsafe {
+                            self.edges
+                                .get_unchecked_minmax_edge_ids_from_source_node_id(src)
+                                .0
+                        };
+                        let number_of_successors =
+                            unsafe { &mut (*shared_successor_counts.get())[src as usize] };
+                        let dependency: f32 = path_counts
+                            * if current_depth == depth + 1 {
+                                // If this is the leafs, these nodes do not have any dependency.
+                                successors[offset as usize
+                                    ..(offset as usize + *number_of_successors as usize)]
+                                    .iter()
+                                    .map(|&dst| {
+                                        1.0 / shortest_path_counts[dst as usize]
+                                            .load(Ordering::Relaxed)
+                                            as f32
+                                    })
+                                    .sum::<f32>()
+                            } else {
+                                // Otherwise, we need to access the dependencies.
+                                // Note that all dependencies are weighted by their
+                                // own shortest path counts.
+                                successors[offset as usize
+                                    ..(offset as usize + *number_of_successors as usize)]
+                                    .iter()
+                                    .map(|&dst| {
+                                        (1.0 + unsafe {
+                                            (*shared_dependencies.get())[dst as usize]
+                                        }) / shortest_path_counts[dst as usize]
+                                            .load(Ordering::Relaxed)
+                                            as f32
+                                    })
+                                    .sum::<f32>()
+                            };
+                        *number_of_successors = 0;
+                        // Since we are always setting the dependency of the previous
+                        // layer before reading them, we do not need to reset them.
+                        unsafe { (*shared_dependencies.get())[src as usize] = dependency };
+                        // Similarly, since the node `src` by design can only appear once
+                        // in the frontier, we do not need an atomic check using fetch-add.
+                        unsafe { (*shared_centralities.get())[src as usize] += dependency };
+                    });
                 });
-            });
         });
 
-        let mut centralities =
-            unsafe { std::mem::transmute::<Vec<AtomicF32>, Vec<f32>>(centralities) };
         if min_max_normalization {
             let (min_centrality, max_centrality) =
-                centralities.iter().cloned().minmax().into_option().unwrap();
+                centralities.iter().copied().minmax().into_option().unwrap();
             let delta = max_centrality - min_centrality;
             centralities.par_iter_mut().for_each(|value| {
                 *value = (*value - min_centrality) / delta;
