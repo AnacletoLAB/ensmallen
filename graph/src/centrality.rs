@@ -551,8 +551,10 @@ impl Graph {
             .map(|_| AtomicU32::default())
             .collect();
 
-        const UNVISITED: u32 = u32::MAX;
-        let mut distances: Vec<u32> = vec![UNVISITED; self.get_number_of_nodes() as usize];
+        const UNVISITED: u8 = u8::MAX;
+        const VISITED: u8 = 0;
+        const JUST_VISITED: u8 = 1;
+        let mut visited_status: Vec<u8> = vec![UNVISITED; self.get_number_of_nodes() as usize];
 
         let mut dependencies: Vec<f32> = vec![0.0; self.get_number_of_nodes() as usize];
 
@@ -570,7 +572,7 @@ impl Graph {
             shortest_path_counts[root as usize].store(1, Ordering::Relaxed);
 
             // We set the number of paths from root as equal to one.
-            distances[root as usize] = 0;
+            visited_status[root as usize] = VISITED;
 
             // We clear the first frontier and insert the root node.
             frontiers[0].clear();
@@ -587,7 +589,7 @@ impl Graph {
                     frontiers.push(Frontier::default());
                 }
 
-                let shared_distances = ThreadDataRaceAware::new(&mut distances);
+                let shared_visited_status = ThreadDataRaceAware::new(&mut visited_status);
                 let shared_successor_counts = ThreadDataRaceAware::new(&mut successor_counts);
                 let shared_successors = ThreadDataRaceAware::new(&mut successors);
                 frontiers[current_depth - 1]
@@ -605,13 +607,13 @@ impl Graph {
                             + number_of_successors as usize;
                         self.iter_unchecked_neighbour_node_ids_from_source_node_id(src)
                             .for_each(|dst: u32| {
-                                let dst_depth_ref = &mut (*shared_distances.get())[dst as usize];
-                                let dst_depth = *dst_depth_ref;
+                                let status_ref = &mut (*shared_visited_status.get())[dst as usize];
+                                let status = *status_ref;
 
                                 // If the node was not yet visited
-                                if dst_depth == UNVISITED {
+                                if status == UNVISITED {
                                     // We push this node to the new frontier to be visited.
-                                    non_temporal_store(dst_depth_ref, current_depth as NodeT);
+                                    non_temporal_store(status_ref, JUST_VISITED);
                                 }
 
                                 // We now handle the updates of the neighbourhoods.
@@ -621,7 +623,7 @@ impl Graph {
                                 // another node in the current frontier `Y`. Both the neighbour
                                 // exploration of `K` starting from `X` and `Y` has to be considered
                                 // for the following if statement.
-                                if dst_depth == current_depth as NodeT || dst_depth == UNVISITED {
+                                if status == JUST_VISITED || status == UNVISITED {
                                     // We increase the degree of the successors
                                     // of this node by one, and we get the previous
                                     // number of successors.
@@ -643,12 +645,12 @@ impl Graph {
 
                 frontiers[current_depth].clear();
 
-                distances
-                    .par_iter()
-                    .copied()
+                visited_status
+                    .par_iter_mut()
                     .enumerate()
-                    .filter(|(_, distance)| *distance == current_depth as NodeT)
-                    .for_each(|(node_id, _)| {
+                    .filter(|(_, distance)| **distance == JUST_VISITED)
+                    .for_each(|(node_id, distance)| {
+                        *distance = VISITED;
                         frontiers[current_depth].push(node_id as NodeT);
                     });
 
@@ -658,8 +660,8 @@ impl Graph {
             }
 
             successor_counts[root as usize] = 0;
-            distances[root as usize] = UNVISITED;
-            let shared_distances = ThreadDataRaceAware::new(&mut distances);
+            visited_status[root as usize] = UNVISITED;
+            let shared_visited_status = ThreadDataRaceAware::new(&mut visited_status);
             let shared_dependencies = ThreadDataRaceAware::new(&mut dependencies);
             let shared_centralities = ThreadDataRaceAware::new(&mut centralities);
             let shared_successor_counts = ThreadDataRaceAware::new(&mut successor_counts);
@@ -674,7 +676,7 @@ impl Graph {
                         let path_counts =
                             shortest_path_counts[src as usize].load(Ordering::Relaxed) as f32;
                         unsafe {
-                            (*shared_distances.get())[src as usize] = UNVISITED;
+                            (*shared_visited_status.get())[src as usize] = UNVISITED;
                         }
                         let offset = unsafe {
                             self.edges
