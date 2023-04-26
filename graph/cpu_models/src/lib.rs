@@ -1,3 +1,4 @@
+#![feature(impl_trait_in_assoc_type)]
 #![feature(adt_const_params)]
 #![feature(atomic_from_mut)]
 #![feature(associated_type_defaults)]
