@@ -1015,7 +1015,7 @@ pub fn test_node_centralities(graph: &mut Graph, verbose: Option<bool>) -> Resul
         );
     }
 
-    let node_betweenness_centralities = graph.get_betweenness_centrality(None, None, verbose);
+    let node_betweenness_centralities = graph.get_betweenness_centrality(None, None, verbose).unwrap();
     assert_eq!(
         node_betweenness_centralities.len(),
         graph.get_number_of_nodes() as usize
