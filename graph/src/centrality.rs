@@ -724,6 +724,12 @@ impl Graph {
                 });
         });
 
+        if !self.is_directed() {
+            centralities.par_iter_mut().for_each(|value| {
+                *value /= 2.0;
+            });
+        }
+
         if min_max_normalization {
             let (min_centrality, max_centrality) =
                 centralities.iter().copied().minmax().into_option().unwrap();
