@@ -17,6 +17,7 @@ pub trait GraphEmbedder {
     ) -> Result<(), String>
     where
         f32: AsPrimitive<F>,
+        usize: AsPrimitive<F>,
         NodeT: AsPrimitive<F>,
         EdgeT: AsPrimitive<F>;
 
@@ -27,6 +28,7 @@ pub trait GraphEmbedder {
     ) -> Result<(), String>
     where
         f32: AsPrimitive<F>,
+        usize: AsPrimitive<F>,
         NodeT: AsPrimitive<F>,
         EdgeT: AsPrimitive<F>,
     {

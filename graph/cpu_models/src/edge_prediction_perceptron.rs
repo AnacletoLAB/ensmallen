@@ -1,4 +1,4 @@
-use crate::Optimizer;
+use crate::{Optimizer, sigmoid};
 use crate::{get_random_weight, must_not_be_zero, FeatureSlice};
 use core::ops::Sub;
 use express_measures::{
@@ -709,7 +709,7 @@ where
         let edge_embedding =
             self.get_unsafe_edge_embedding(src, dst, support, node_features, dimensions);
         let dot = dot_product_sequential_unchecked(&edge_embedding, &self.weights) + self.bias;
-        (edge_embedding, 1.0 / (1.0 + (-dot).exp()))
+        (edge_embedding, sigmoid(dot))
     }
 
     /// Fit the edge prediction perceptron model on the provided graph and node features.

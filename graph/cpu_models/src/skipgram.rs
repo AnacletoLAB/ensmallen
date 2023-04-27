@@ -1,13 +1,12 @@
 use crate::*;
 use express_measures::{
-    dot_product_sequential_unchecked, element_wise_addition_inplace,
-    element_wise_weighted_addition_inplace, ThreadFloat,
+    dot_product_sequential_unchecked, element_wise_weighted_addition_inplace,
+    element_wise_weighted_subtraction_inplace, ThreadFloat,
 };
 use graph::{Graph, NodeT, ThreadDataRaceAware};
-use indicatif::ProgressIterator;
 use num_traits::AsPrimitive;
-use rayon::prelude::*;
-use vec_rand::{sample_uniform, splitmix64};
+use rayon::{current_num_threads, current_thread_index, prelude::*};
+use vec_rand::splitmix64;
 
 impl<W> Node2Vec<W>
 where
@@ -30,15 +29,21 @@ where
     where
         f32: AsPrimitive<F>,
         NodeT: AsPrimitive<F>,
+        usize: AsPrimitive<F>,
     {
         let scale_factor = (self.get_embedding_size() as f32).sqrt().as_();
         let mut walk_parameters = self.walk_parameters.clone();
         let mut random_state = splitmix64(self.walk_parameters.get_random_state() as u64);
         let mut learning_rate = self.learning_rate.as_();
-        let cv = self.clipping_value.as_();
-        let nodes_number = graph.get_number_of_nodes();
 
         let shared_embedding = ThreadDataRaceAware::new(embedding);
+
+        let number_of_threads = current_num_threads();
+        let shared_gradients = ThreadDataRaceAware::new(vec![
+            F::zero();
+            self.get_embedding_size()
+                * number_of_threads
+        ]);
 
         // Depending whether verbosity was requested by the user
         // we create or not a visible progress bar to show the progress
@@ -48,7 +53,7 @@ where
         let compute_mini_batch_step = |central_node_embedding: &[F],
                                        cumulative_central_node_gradient: &mut [F],
                                        contextual_node_id: NodeT,
-                                       label: F,
+                                       label: bool,
                                        learning_rate: F| {
             let node_hidden = unsafe {
                 &mut (*shared_embedding.get())[1][(contextual_node_id as usize
@@ -56,25 +61,20 @@ where
                     ..((contextual_node_id as usize + 1) * self.embedding_size)]
             };
 
-            let dot: F =
+            let prediction_proba: F = sigmoid(
                 unsafe { dot_product_sequential_unchecked(node_hidden, central_node_embedding) }
-                    / scale_factor;
+                    / scale_factor,
+            );
 
-            if dot > cv || dot < -cv {
-                return;
-            }
-
-            let mut variation = (label - sigmoid(dot)) * learning_rate;
-
-            if self.normalize_learning_rate_by_degree {
-                variation *= get_node_prior(graph, contextual_node_id, F::one());
-            }
+            let loss = binary_crossentropy(label, prediction_proba);
+            let loss_derivative =
+                binary_crossentropy_derivative(label, prediction_proba) * learning_rate;
 
             unsafe {
-                element_wise_weighted_addition_inplace(
+                element_wise_weighted_subtraction_inplace(
                     node_hidden,
                     central_node_embedding,
-                    variation,
+                    loss_derivative,
                 )
             }
 
@@ -82,39 +82,32 @@ where
                 element_wise_weighted_addition_inplace(
                     cumulative_central_node_gradient,
                     node_hidden,
-                    variation,
+                    loss_derivative,
                 )
             };
+
+            loss
         };
 
         // We start to loop over the required amount of epochs.
-        for _ in (0..self.epochs).progress_with(pb) {
+        for _ in 0..self.epochs {
+            pb.tick();
             // We update the random state used to generate the random walks
             // and the negative samples.
             random_state = splitmix64(random_state);
             walk_parameters = walk_parameters.set_random_state(Some(random_state as usize));
 
             // We start to compute the new gradients.
-            graph
+            let total_loss = graph
                 .par_iter_complete_walks(&walk_parameters)?
                 .enumerate()
-                .for_each(|(walk_number, random_walk)| {
+                .map(|(walk_number, random_walk)| {
+                    let thread_id = current_thread_index().unwrap_or(0);
+                    let gradient = unsafe {
+                        &mut (*shared_gradients.get())[thread_id * self.get_embedding_size()
+                            ..(thread_id + 1) * self.get_embedding_size()]
+                    };
                     (0..random_walk.len())
-                        .filter(|&central_index| {
-                            if !self.stochastic_downsample_by_degree {
-                                true
-                            } else {
-                                let degree = unsafe {
-                                    graph.get_unchecked_node_degree_from_node_id(
-                                        random_walk[central_index as usize],
-                                    )
-                                };
-                                let seed = splitmix64(
-                                    random_state + central_index as u64 + walk_number as u64,
-                                );
-                                degree < sample_uniform(nodes_number as _, seed) as _
-                            }
-                        })
                         .map(|central_index| {
                             (
                                 &random_walk[central_index.saturating_sub(self.window_size)
@@ -123,9 +116,7 @@ where
                                 central_index,
                             )
                         })
-                        .for_each(|(context, central_node_id, central_index)| {
-                            let mut cumulative_central_node_gradient =
-                                vec![F::zero(); self.get_embedding_size()];
+                        .map(|(context, central_node_id, central_index)| {
                             let central_node_embedding = unsafe {
                                 &mut (*shared_embedding.get())[0][central_node_id as usize
                                     * self.embedding_size
@@ -133,22 +124,23 @@ where
                             };
 
                             // We now compute the gradient relative to the positive
-                            context
+                            let positive_loss: F = context
                                 .iter()
                                 .copied()
                                 .filter(|&context_node_id| context_node_id != central_node_id)
-                                .for_each(|context_node_id| {
+                                .map(|context_node_id| {
                                     compute_mini_batch_step(
                                         &central_node_embedding,
-                                        cumulative_central_node_gradient.as_mut_slice(),
+                                        gradient,
                                         context_node_id,
-                                        F::one(),
+                                        true,
                                         learning_rate,
-                                    );
-                                });
+                                    )
+                                })
+                                .sum();
 
                             // We compute the gradients relative to the negative classes.
-                            if self.use_scale_free_distribution {
+                            let negative_loss: F = if self.use_scale_free_distribution {
                                 graph
                                     .iter_random_outbounds_scale_free_node_ids(
                                         self.number_of_negative_samples,
@@ -161,15 +153,16 @@ where
                                     .filter(|&non_central_node_id| {
                                         non_central_node_id != central_node_id
                                     })
-                                    .for_each(|non_central_node_id| {
+                                    .map(|non_central_node_id| {
                                         compute_mini_batch_step(
                                             &central_node_embedding,
-                                            cumulative_central_node_gradient.as_mut_slice(),
+                                            gradient,
                                             non_central_node_id,
-                                            F::zero(),
+                                            false,
                                             learning_rate,
                                         )
-                                    });
+                                    })
+                                    .sum()
                             } else {
                                 graph
                                     .iter_random_node_ids(
@@ -183,25 +176,37 @@ where
                                     .filter(|&non_central_node_id| {
                                         non_central_node_id != central_node_id
                                     })
-                                    .for_each(|non_central_node_id| {
+                                    .map(|non_central_node_id| {
                                         compute_mini_batch_step(
                                             &central_node_embedding,
-                                            cumulative_central_node_gradient.as_mut_slice(),
+                                            gradient,
                                             non_central_node_id,
-                                            F::zero(),
+                                            false,
                                             learning_rate,
                                         )
-                                    });
+                                    })
+                                    .sum()
                             };
                             // apply the accumulated gradient to the central node
-                            unsafe {
-                                element_wise_addition_inplace(
-                                    central_node_embedding,
-                                    cumulative_central_node_gradient.as_slice(),
-                                )
-                            }
-                        });
-                });
+                            central_node_embedding
+                                .iter_mut()
+                                .zip(gradient.iter_mut())
+                                .for_each(|(node_feature, gradient)| {
+                                    // We subtract the gradient
+                                    *node_feature -= *gradient;
+                                    // And reset it to zero for the next iteration.
+                                    *gradient = F::zero();
+                                });
+                            positive_loss / (2 * self.window_size).as_()
+                                + negative_loss / self.number_of_negative_samples.as_()
+                        })
+                        .sum::<F>()
+                })
+                .sum::<F>();
+            let loss_per_node: F = total_loss / graph.get_number_of_nodes().as_();
+            let loss_per_node: f32 = loss_per_node.as_();
+            pb.set_message(format!("Loss: {:.4}", loss_per_node));
+            pb.inc(1);
             learning_rate *= self.learning_rate_decay.as_()
         }
         Ok(())

@@ -1,7 +1,7 @@
 use express_measures::ThreadFloat;
 use graph::{EdgeT, EdgeTypeT, Graph, NodeT};
 use half::f16;
-use num_traits::{AsPrimitive, Float, IntoAtomic, Zero, PrimInt};
+use num_traits::{AsPrimitive, Float, IntoAtomic, PrimInt, Zero};
 use rayon::prelude::*;
 use vec_rand::{random_f32, splitmix64};
 
@@ -34,8 +34,9 @@ pub(crate) fn get_random_weight<F: ThreadFloat>(random_state: u64, dimension_squ
 where
     f32: AsPrimitive<F>,
 {
-    ((F::one() + F::one()) * random_f32(splitmix64(random_state)).as_()
-        - F::one()) * (2.45 as f32).as_() / dimension_squared_root
+    ((F::one() + F::one()) * random_f32(splitmix64(random_state)).as_() - F::one())
+        * (2.45 as f32).as_()
+        / dimension_squared_root
 }
 
 pub(crate) fn populate_vectors<F: ThreadFloat>(
@@ -213,6 +214,29 @@ pub fn sigmoid<F: Float>(x: F) -> F {
     } else {
         let exp = x.exp();
         exp / (exp + F::one())
+    }
+}
+
+#[inline(always)]
+pub fn binary_crossentropy<F: ThreadFloat + 'static>(ground_truth: bool, prediction_proba: F) -> F {
+    -(if ground_truth {
+        prediction_proba
+    } else {
+        F::one() - prediction_proba
+    })
+    .min(F::epsilon())
+    .ln()
+}
+
+#[inline(always)]
+pub fn binary_crossentropy_derivative<F: ThreadFloat + 'static>(
+    ground_truth: bool,
+    prediction_proba: F,
+) -> F {
+    if ground_truth {
+        prediction_proba - F::one()
+    } else {
+        prediction_proba
     }
 }
 

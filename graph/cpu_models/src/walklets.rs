@@ -59,6 +59,7 @@ impl GraphEmbedder for Walklets {
     ) -> Result<(), String>
     where
         f32: AsPrimitive<F>,
+        usize: AsPrimitive<F>,
         NodeT: AsPrimitive<F>,
         EdgeT: AsPrimitive<F>,
     {

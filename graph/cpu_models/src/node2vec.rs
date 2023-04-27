@@ -191,6 +191,7 @@ where
     ) -> Result<(), String>
     where
         NodeT: AsPrimitive<F>,
+        usize: AsPrimitive<F>,
         f32: AsPrimitive<F>,
     {
         match self.model_type {
