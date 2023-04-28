@@ -458,7 +458,7 @@ impl Graph {
     /// # Safety
     /// If any of the given node IDs do not exist in the graph the method will panic.
     pub unsafe fn get_unchecked_edge_id_from_node_ids(&self, src: NodeT, dst: NodeT) -> EdgeT {
-        self.edges.get_unchecked_edge_id_from_node_ids(src, dst)
+        self.edges.get_unchecked_edge_id_from_node_ids(src, dst, self.is_multigraph())
     }
 
     #[inline(always)]
