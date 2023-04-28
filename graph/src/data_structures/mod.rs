@@ -100,16 +100,58 @@ impl CSR {
         self.destinations[edge_id as usize]
     }
 
-    pub unsafe fn get_unchecked_edge_id_from_node_ids(&self, src: NodeT, dst: NodeT) -> EdgeT {
+    /// Returns either the first edge id for the source and destination nodes or where they should be.
+    ///
+    /// # Arguments
+    /// * `src`: NodeT - The source node for which to search for the edge id.
+    /// * `dst`: NodeT - The destination node for which to search for the edge id.
+    /// * `multigraph`: bool - Whether this is a multigraph, and therefore, the backwards scan is necessary.
+    ///
+    /// # Returns
+    /// An edge id curresponding to the FIRST edge that has the `src` node as source
+    /// and the `dst` node as destination. IF such condition is not found, the edge id
+    /// curresponding to the expected position is used.
+    ///
+    /// # Safety
+    /// This method returns a value both for existing and non existing edges,
+    /// and is valuable when computing things such as the rank of a node.
+    pub unsafe fn get_unchecked_edge_id_from_node_ids(
+        &self,
+        src: NodeT,
+        dst: NodeT,
+        multigraph: bool,
+    ) -> EdgeT {
+        // We retrieve the IDs curresponding to where the neighbours
+        // of the source node can be found in the destinations vector
         let (min_edge_id, max_edge_id) =
             self.get_unchecked_minmax_edge_ids_from_source_node_id(src);
 
-        let neighbour_idx = match self.destinations[min_edge_id as usize..max_edge_id as usize]
-            .binary_search(&dst)
-        {
+        // We retrieve the slice reference to that.
+        let neighbours = &self.destinations[min_edge_id as usize..max_edge_id as usize];
+
+        // We execute a binary search to find ANY EDGE THAT HAS
+        // as source `src` and destination `dst`
+        let mut neighbour_idx = match neighbours.binary_search(&dst) {
             Ok(idx) => idx,  // the edge exists
             Err(idx) => idx, // the edge doesn't exists so this is the smallest edge_id bigger than where it would be
         };
+
+        // In a multigraph the edge we have identified is not necessarily the
+        // first one, as in a binary search we may endup in a position where
+        // we find not the first edge where that is valid.
+        // In a multigraph therefore, we need to scan back up until
+        // we find the first edge respecting the aforementioned condition.
+        while multigraph
+            && neighbour_idx > 0
+            // We also need to check that the proposed node ID
+            // is not OUTSIDE the neighbourhood, as the binary search
+            // might suggest that this destination node should be inserted
+            // at the end of the vector.
+            && neighbour_idx < neighbours.len()
+            && neighbours[neighbour_idx - 1] == dst
+        {
+            neighbour_idx -= 1;
+        }
 
         min_edge_id + neighbour_idx as EdgeT
     }
