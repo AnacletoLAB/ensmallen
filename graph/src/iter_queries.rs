@@ -328,6 +328,38 @@ impl Graph {
         )
     }
 
+    /// Return iterator over neighbours union.
+    ///
+    /// # Arguments
+    /// * `first_src_node_id`: NodeT - The first node whose neighbours are to be retrieved.
+    /// * `second_src_node_id`: NodeT - The second node whose neighbours are to be retrieved.
+    ///
+    /// # Safety
+    /// If any of the given node ID does not exist in the graph the method will panic.
+    pub unsafe fn iter_unchecked_neighbour_node_and_edge_ids_union_from_multiple_source_node_ids<
+        const N: usize,
+    >(
+        &self,
+        node_ids: &[NodeT],
+    ) -> impl Iterator<Item = (NodeT, EdgeT)> + Send + '_ {
+        let (min_edge, max_edge) =
+            unsafe { self.get_unchecked_minmax_edge_ids_from_source_node_id(node_ids[0]) };
+        iter_set::union(
+            self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_ids[0])
+                .zip(min_edge..max_edge),
+            if node_ids.len() > 2 {
+                self.iter_unchecked_neighbour_node_and_edge_ids_union_from_multiple_source_node_ids(
+                    &node_ids[1..],
+                )
+            } else {
+                let (min_edge, max_edge) =
+                    unsafe { self.get_unchecked_minmax_edge_ids_from_source_node_id(node_ids[1]) };
+                self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_ids[1])
+                    .zip(min_edge..max_edge)
+            },
+        )
+    }
+
     /// Return iterator over neighbours difference.
     ///
     /// # Arguments

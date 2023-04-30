@@ -2,49 +2,154 @@ use super::*;
 use crate::hashes::*;
 use crate::isomorphism_iter::EqualBucketsParIter;
 use rayon::prelude::*;
-use std::collections::HashMap;
-use std::time::Instant;
 
 impl Graph {
-    fn get_node_hash(&self, node_id: NodeT, number_of_neighbours_for_hash: usize) -> u32 {
-        // First, we retrieve the
-        let src_selfloop_corrected_node_degree =
-            unsafe { self.get_unchecked_selfloop_adjusted_node_degree_from_node_id(node_id) };
+    unsafe fn are_unchecked_isomorphic_from_node_id_sets(&self, first_node_id_set: &[NodeT], second_node_id_set: &[NodeT]) -> bool {
+        let mut first = iter_set::difference_by(
+            self.iter_unchecked_neighbour_node_and_edge_ids_union_from_multiple_source_node_ids(first_node_id_set),
+            first_node_id_set.iter().copied().enumerate().map(|(padding, node_id)| (node_id, padding as EdgeT)),
+            |(left, _), (right, _)| {
+                left.cmp(&right)
+            }
+        );
+        let mut second = iter_set::difference_by(
+            self.iter_unchecked_neighbour_node_and_edge_ids_union_from_multiple_source_node_ids(second_node_id_set),
+            second_node_id_set.iter().copied().enumerate().map(|(padding, node_id)| (node_id, padding as EdgeT)),
+            |(left, _), (right, _)| {
+                left.cmp(&right)
+            }
+        );
+        
+    }
 
-        let node_type_ids = unsafe { self.get_unchecked_node_type_ids_from_node_id(node_id) };
+    /// Returns whether two provided edge IDs are isomorphic to one another.
+    ///
+    /// # Arguments
+    /// * `first_edge_id`: EdgeT - The first edge to check for.
+    /// * `second_edge_id`: EdgeT - The first edge to check for.
+    ///
+    /// # Safety
+    /// This method assumes that the two provided edge IDs are effectively within
+    /// the set of edges in the graph. Out of bound errors might be raised with
+    /// improper parametrization of the method.
+    unsafe fn are_unchecked_isomorphic_from_edge_ids(
+        &self,
+        first_edge_id: EdgeT,
+        second_edge_id: EdgeT,
+    ) -> bool {
+        if self.get_unchecked_edge_type_id_from_edge_id(first_edge_id)
+            != self.get_unchecked_edge_type_id_from_edge_id(first_edge_id)
+        {
+            return false;
+        }
 
-        let edge_type_ids = self.edge_types.as_ref().as_ref().map(|ets| {
+        let (first_src, first_dst) = self.get_unchecked_node_ids_from_edge_id(first_edge_id);
+        let (second_src, second_dst) = self.get_unchecked_node_ids_from_edge_id(second_edge_id);
+
+        self.iter_unchecked_neighbour_node_and_edge_ids_union_from_multiple_source_node_ids(&[first_src, first_dst])
+
+        true
+    }
+
+    unsafe fn get_unchecked_selfloop_adjusted_edge_degree_from_node_ids(
+        &self,
+        src: NodeT,
+        dst: NodeT,
+    ) -> NodeT {
+        let src_degree =
+            unsafe { self.get_unchecked_selfloop_adjusted_node_degree_from_node_id(src) };
+        let dst_degree =
+            unsafe { self.get_unchecked_selfloop_adjusted_node_degree_from_node_id(dst) };
+
+        let edge_degree = src_degree + dst_degree - 2;
+
+        edge_degree
+    }
+
+    /// Returns the hash associated to the provided edge.
+    ///
+    /// # Arguments
+    /// * `src`: NodeT - The source node of the edge to be considered.
+    /// * `dst`: NodeT - The destination node of the edge to be considered.
+    /// * `edge_type_id`: Option<EdgeTypeT> - The edge type of the edge to be considered.
+    /// * `number_of_neighbours_for_hash`: usize - the number of neighbours of the edge to be considered.
+    ///
+    /// # Safety
+    /// It is assumed that the nodes provided exist in the graph and are connected.
+    unsafe fn get_unchecked_edge_hash(
+        &self,
+        src: NodeT,
+        dst: NodeT,
+        edge_type_id: Option<EdgeTypeT>,
+        number_of_neighbours_for_hash: usize,
+    ) -> u32 {
+        // First, we compute the self-loop corrected edge degree.
+        let edge_degree = self.get_unchecked_selfloop_adjusted_edge_degree_from_node_ids(src, dst);
+
+        // !TODO! Add support for node type IDS
+        // let node_type_ids = unsafe { self.get_unchecked_node_type_ids_from_node_id(node_id) };
+        // hasher.update(&node_type_ids);
+
+        let src_edge_type_ids = self.edge_types.as_ref().as_ref().map(|ets| {
             let (min_edge_id, max_edge_id) =
-                unsafe { self.get_unchecked_minmax_edge_ids_from_source_node_id(node_id) };
+                unsafe { self.get_unchecked_minmax_edge_ids_from_source_node_id(src) };
+            &ets.ids[min_edge_id as usize..max_edge_id as usize]
+        });
+
+        let dst_edge_type_ids = self.edge_types.as_ref().as_ref().map(|ets| {
+            let (min_edge_id, max_edge_id) =
+                unsafe { self.get_unchecked_minmax_edge_ids_from_source_node_id(dst) };
             &ets.ids[min_edge_id as usize..max_edge_id as usize]
         });
 
         let mut hasher = Hasher::new("simple").unwrap();
 
-        hasher.update(&src_selfloop_corrected_node_degree);
-        hasher.update(&node_type_ids);
+        hasher.update(&edge_degree);
+        hasher.update(&edge_type_id);
 
-        unsafe { self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id) }
-            .enumerate()
-            .filter_map(|(i, dst)| {
-                let dst_selfloop_corrected_node_degree =
-                    unsafe { self.get_unchecked_selfloop_adjusted_node_degree_from_node_id(dst) };
-                // We remove self-loops or nodes with the same node degree
-                // as these may be connected isomorphic nodes.
-                if dst_selfloop_corrected_node_degree == src_selfloop_corrected_node_degree {
-                    None
-                } else {
-                    Some((
-                        dst,
-                        dst_selfloop_corrected_node_degree,
-                        edge_type_ids.as_ref().and_then(|ids| ids[i]),
-                    ))
+        let mut src_index = 0;
+        let mut dst_index = 0;
+        let mut considered_neighbours = 0;
+        let src_neighbours = self
+            .edges
+            .get_unchecked_neighbours_node_ids_from_src_node_id(src);
+        let dst_neighbours = self
+            .edges
+            .get_unchecked_neighbours_node_ids_from_src_node_id(dst);
+
+        while (src_index < src_neighbours.len() || dst_index < dst_neighbours.len())
+            && considered_neighbours < number_of_neighbours_for_hash
+        {
+            // We alternate adding edges from the source
+            // and from the destination node to form the hash.
+            for (node, index, neighbours, edge_types) in [
+                (src, &mut src_index, src_neighbours, src_edge_type_ids),
+                (dst, &mut dst_index, dst_neighbours, dst_edge_type_ids),
+            ] {
+                if *index < neighbours.len() {
+                    let neighbour = neighbours[*index];
+                    // If we have encountered an edge going to the other
+                    // node, we can skip.
+                    if node == src || node == dst {
+                        *index += 1;
+                        continue;
+                    }
+                    let this_edge_degree = self
+                        .get_unchecked_selfloop_adjusted_edge_degree_from_node_ids(node, neighbour);
+                    // This cannot be for sure an isomorphic edge
+                    // of the same group as the current one
+                    if edge_degree != this_edge_degree {
+                        hasher.update(&(
+                            neighbour,
+                            this_edge_degree,
+                            edge_types.as_ref().and_then(|ids| ids[*index]),
+                        ));
+                    }
+                    *index += 1;
                 }
-            })
-            .take(number_of_neighbours_for_hash)
-            .for_each(|(node, node_degree, edge_type_id)| {
-                hasher.update(&(node, node_degree, edge_type_id));
-            });
+            }
+        }
+
         hasher.digest()
     }
 
@@ -59,10 +164,7 @@ impl Graph {
         minimum_node_degree: Option<NodeT>,
         minimum_edge_degree: Option<NodeT>,
         number_of_neighbours_for_hash: Option<usize>,
-    ) -> Result<(
-        impl ParallelIterator<Item = Vec<NodeT>> + '_,
-        HashMap<&str, u128>,
-    )> {
+    ) -> Result<impl ParallelIterator<Item = Vec<EdgeT>> + '_> {
         // If the graph does not have edges, it is pointless.
         self.must_have_edges()?;
 
@@ -72,30 +174,45 @@ impl Graph {
         let number_of_neighbours_for_hash = number_of_neighbours_for_hash.unwrap_or(10);
 
         // We collect the node IDs that have degree higher than the provided one.
-        let mut degree_bounded_hash_and_edge_node_ids = self
+        let mut degree_bounded_hash_and_edge_ids: Vec<(u32, usize)> = self
             .par_iter_node_ids()
             .zip(self.par_iter_node_degrees())
             .filter(|(_, node_degree)| *node_degree > minimum_node_degree)
             .flat_map(|(src, src_node_degree)| {
-                let src_hash = self.get_node_hash(src, number_of_neighbours_for_hash);
+                let (min_edge_id, max_edge_id) =
+                    unsafe { self.get_unchecked_minmax_edge_ids_from_source_node_id(src) };
+                let min_edge_id = min_edge_id as usize;
+                let max_edge_id = max_edge_id as usize;
+                let src_edge_type_ids = self
+                    .edge_types
+                    .as_ref()
+                    .as_ref()
+                    .map(|ets| &ets.ids[min_edge_id..max_edge_id]);
                 unsafe { self.par_iter_unchecked_neighbour_node_ids_from_source_node_id(src) }
-                    .filter(|dst: &u32| {
-                        src < *dst
+                    .zip(min_edge_id..max_edge_id)
+                    .enumerate()
+                    .filter(|(i, (dst, edge_id))| {
+                        (self.is_directed() || src < *dst)
                             && unsafe { self.get_unchecked_node_degree_from_node_id(*dst) }
                                 > minimum_node_degree
                     })
-                    .map(|dst| {
+                    .map(|(i, (dst, edge_id))| {
                         (
-                            src_hash.wrapping_mul(
-                                self.get_node_hash(dst, number_of_neighbours_for_hash),
-                            ),
-                            (src, dst),
+                            unsafe {
+                                self.get_unchecked_edge_hash(
+                                    src,
+                                    dst,
+                                    src_edge_type_ids.as_ref().and_then(|ids| ids[i]),
+                                    number_of_neighbours_for_hash,
+                                )
+                            },
+                            edge_id,
                         )
                     })
             })
-            .collect::<Vec<(u32, (NodeT, NodeT))>>();
+            .collect::<Vec<(u32, usize)>>();
 
-        if degree_bounded_hash_and_edge_node_ids.len() <= 1 {
+        if degree_bounded_hash_and_edge_ids.len() <= 1 {
             return Err(format!(
                 concat!(
                     "The provided parametrization in the current graph, ",
@@ -114,10 +231,10 @@ impl Graph {
         // case, since we only need to sort u32s, and it is likely
         // we could re-implement this in an ad-hoc manner that
         // is sensibly faster.
-        degree_bounded_hash_and_edge_node_ids.par_sort_unstable();
+        degree_bounded_hash_and_edge_ids.par_sort_unstable();
 
-        Ok((
-            unsafe { EqualBucketsParIter::new(degree_bounded_hash_and_edge_node_ids) }.flat_map(
+        Ok(
+            unsafe { EqualBucketsParIter::new(degree_bounded_hash_and_edge_ids) }.flat_map(
                 move |candidate_isomorphic_group_slice| {
                     // First, we proceed assuming for the best case scenario which
                     // would also be the fastest: if the `candidate_isomorphic_group_slice` is
@@ -232,7 +349,6 @@ impl Graph {
                     candidate_isomorphic_groups
                 },
             ),
-            times_hash_map,
-        ))
+        )
     }
 }

@@ -14,7 +14,7 @@ impl<H, O> EqualBucketsParIter<H, O> {
     }
 }
 
-impl<H: Send + Sync + Eq + Copy + 'static, O: Send + Sync > ParallelIterator for EqualBucketsParIter<H, O> {
+impl<H: Send + Sync + Eq + Copy + 'static, O: Send + Sync + 'static> ParallelIterator for EqualBucketsParIter<H, O> {
     type Item = &'static [(H, O)];
 
     fn drive_unindexed<C>(self, consumer: C) -> C::Result
@@ -65,7 +65,7 @@ impl<'a, H, O> EqualBucketsIter<'a, H, O> {
     }
 }
 
-impl<'a, H: Eq + Copy + 'static, O: Send + Sync > core::iter::Iterator for EqualBucketsIter<'a, H, O> {
+impl<'a, H: Eq + Copy + 'static, O: Send + Sync + 'static> core::iter::Iterator for EqualBucketsIter<'a, H, O> {
     type Item = &'static [(H, O)];
 
     fn next(&mut self) -> Option<Self::Item> {
@@ -121,7 +121,7 @@ impl<'a, H: Eq + Copy + 'static, O: Send + Sync > core::iter::Iterator for Equal
     }
 }
 
-impl<'a, H: Send + Sync + Eq + Copy + 'static, O: Send + Sync > UnindexedProducer for EqualBucketsIter<'a, H, O> {
+impl<'a, H: Send + Sync + Eq + Copy + 'static, O: Send + Sync + 'static> UnindexedProducer for EqualBucketsIter<'a, H, O> {
     type Item = &'static [(H, O)];
 
     /// Split the file in two approximately balanced streams

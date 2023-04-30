@@ -458,7 +458,8 @@ impl Graph {
     /// # Safety
     /// If any of the given node IDs do not exist in the graph the method will panic.
     pub unsafe fn get_unchecked_edge_id_from_node_ids(&self, src: NodeT, dst: NodeT) -> EdgeT {
-        self.edges.get_unchecked_edge_id_from_node_ids(src, dst, self.is_multigraph())
+        self.edges
+            .get_unchecked_edge_id_from_node_ids(src, dst, self.is_multigraph())
     }
 
     #[inline(always)]
@@ -1516,7 +1517,7 @@ impl Graph {
     /// ```
     pub fn get_neighbour_node_ids_from_node_id(&self, node_id: NodeT) -> Result<Vec<NodeT>> {
         self.validate_node_id(node_id).map(|node_id| {
-            unsafe { self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id) }.collect()
+            unsafe { self.get_unchecked_neighbours_node_ids_from_src_node_id(node_id) }.to_vec()
         })
     }
 

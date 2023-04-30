@@ -325,12 +325,6 @@ impl Graph {
     /// This method assumes that the two provided node IDs are effectively within
     /// the set of nodes in the graph. Out of bound errors might be raised with
     /// improper parametrization of the method.
-    ///
-    /// # Implementative details
-    /// Since the node neighbourhoods are returned as slices of u32s of a
-    /// CSR matrix, we can use the native method of `memcmp` that is used
-    /// in the [Slice object in Rust](https://doc.rust-lang.org/src/core/slice/cmp.rs.html#78),
-    /// which should localize to each system.
     pub unsafe fn are_unchecked_isomorphic_from_node_ids(
         &self,
         first_node_id: NodeT,
