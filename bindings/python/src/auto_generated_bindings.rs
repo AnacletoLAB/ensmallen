@@ -1271,8 +1271,116 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
+<<<<<<< HEAD
     #[pyo3(text_signature = "($self, node_id)")]
     /// Returns boolean representing if given node is a singleton.
+=======
+    #[pyo3(text_signature = "($self, verbose)")]
+    /// Return harmonic centrality for all nodes.
+    ///
+    /// Parameters
+    /// ----------
+    /// verbose: Optional[bool]
+    ///     Whether to show an indicative progress bar.
+    ///
+    pub fn get_harmonic_centrality(&self, verbose: Option<bool>) -> Py<PyArray1<f32>> {
+        let gil = pyo3::Python::acquire_gil();
+        to_ndarray_1d!(gil, self.inner.get_harmonic_centrality(verbose), f32)
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, use_edge_weights_as_probabilities, verbose)")]
+    /// Return harmonic centrality for all nodes.
+    ///
+    /// Parameters
+    /// ----------
+    /// use_edge_weights_as_probabilities: Optional[bool]
+    ///     Whether to treat the edge weights as probabilities.
+    /// verbose: Optional[bool]
+    ///     Whether to show an indicative progress bar.
+    ///
+    pub fn get_weighted_harmonic_centrality(
+        &self,
+        use_edge_weights_as_probabilities: Option<bool>,
+        verbose: Option<bool>,
+    ) -> PyResult<Py<PyArray1<f32>>> {
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(
+                gil,
+                pe!(self
+                    .inner
+                    .get_weighted_harmonic_centrality(use_edge_weights_as_probabilities, verbose))?,
+                f32
+            )
+        })
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, verbose)")]
+    /// Returns vector of stress centrality for all nodes.
+    ///
+    /// Parameters
+    /// ----------
+    /// verbose: Optional[bool]
+    ///     Whether to show a loading bar while computing the stress centrality. By default, true.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the graph is a multigraph.
+    ///
+    pub fn get_stress_centrality(&self, verbose: Option<bool>) -> PyResult<Py<PyArray1<f32>>> {
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(gil, pe!(self.inner.get_stress_centrality(verbose))?, f32)
+        })
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, edges_normalization, min_max_normalization, verbose)")]
+    /// Returns vector of betweenness centrality for all nodes.
+    ///
+    /// Parameters
+    /// ----------
+    /// edges_normalization: Optional[bool]
+    ///     Whether to normalize the values by the number of edges of the complete graph. By default, false.
+    /// min_max_normalization: Optional[bool]
+    ///     Whether to normalize the values between 0 and 1. By default, false.
+    /// verbose: Optional[bool]
+    ///     Whether to show a loading bar while computing the betweenness centrality. By default, true.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the graph is a multigraph.
+    ///
+    pub fn get_betweenness_centrality(
+        &self,
+        edges_normalization: Option<bool>,
+        min_max_normalization: Option<bool>,
+        verbose: Option<bool>,
+    ) -> PyResult<Py<PyArray1<f32>>> {
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(
+                gil,
+                pe!(self.inner.get_betweenness_centrality(
+                    edges_normalization,
+                    min_max_normalization,
+                    verbose
+                ))?,
+                f32
+            )
+        })
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, node_id, ant, maximum_samples_number, random_state)")]
+    /// Returns the unweighted approximated betweenness centrality of the given node id.
+>>>>>>> 9f5bab19f4016207e650573b898a6d1054bf5346
     ///
     /// Parameters
     /// ----------
@@ -2530,6 +2638,4513 @@ impl Graph {
             .collect::<Vec<_>>()
     }
 
+<<<<<<< HEAD
+=======
+    #[staticmethod]
+    #[automatically_generated_binding]
+    #[pyo3(
+        text_signature = "(directed, node_type_path, node_type_list_separator, node_types_column_number, node_types_column, node_types_ids_column_number, node_types_ids_column, node_types_number, numeric_node_type_ids, minimum_node_type_id, node_type_list_header, node_type_list_support_balanced_quotes, node_type_list_rows_to_skip, node_type_list_is_correct, node_type_list_max_rows_number, node_type_list_comment_symbol, load_node_type_list_in_parallel, node_path, node_list_separator, node_list_header, node_list_support_balanced_quotes, node_list_rows_to_skip, node_list_is_correct, node_list_max_rows_number, node_list_comment_symbol, default_node_type, nodes_column_number, nodes_column, node_types_separator, node_list_node_types_column_number, node_list_node_types_column, node_ids_column, node_ids_column_number, nodes_number, minimum_node_id, numeric_node_ids, node_list_numeric_node_type_ids, skip_node_types_if_unavailable, load_node_list_in_parallel, edge_type_path, edge_types_column_number, edge_types_column, edge_types_ids_column_number, edge_types_ids_column, edge_types_number, numeric_edge_type_ids, minimum_edge_type_id, edge_type_list_separator, edge_type_list_header, edge_type_list_support_balanced_quotes, edge_type_list_rows_to_skip, edge_type_list_is_correct, edge_type_list_max_rows_number, edge_type_list_comment_symbol, load_edge_type_list_in_parallel, edge_path, edge_list_separator, edge_list_header, edge_list_support_balanced_quotes, edge_list_rows_to_skip, sources_column_number, sources_column, destinations_column_number, destinations_column, edge_list_edge_types_column_number, edge_list_edge_types_column, default_edge_type, weights_column_number, weights_column, default_weight, edge_ids_column, edge_ids_column_number, edge_list_numeric_edge_type_ids, edge_list_numeric_node_ids, skip_weights_if_unavailable, skip_edge_types_if_unavailable, edge_list_is_complete, edge_list_may_contain_duplicates, edge_list_is_sorted, edge_list_is_correct, edge_list_max_rows_number, edge_list_comment_symbol, edges_number, load_edge_list_in_parallel, remove_chevrons, remove_spaces, verbose, may_have_singletons, may_have_singleton_with_selfloops, name)"
+    )]
+    /// Return graph renderized from given CSVs or TSVs-like files.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_type_path: Optional[str]
+    ///     The path to the file with the unique node type names.
+    /// node_type_list_separator: Optional[str]
+    ///     The separator to use for the node types file. Note that if this is not provided, one will be automatically detected among the following`: comma, semi-column, tab and space.
+    /// node_types_column_number: Optional[int]
+    ///     The number of the column of the node types file from where to load the node types.
+    /// node_types_column: Optional[str]
+    ///     The name of the column of the node types file from where to load the node types.
+    /// node_types_number: Optional[int]
+    ///     The number of the unique node types. This will be used in order to allocate the correct size for the data structure.
+    /// numeric_node_type_ids: Optional[bool]
+    ///     Whether the node type names should be loaded as numeric values, i.e. casted from string to a numeric representation.
+    /// minimum_node_type_id: Optional[int]
+    ///     The minimum node type ID to be used when using numeric node type IDs.
+    /// node_type_list_header: Optional[bool]
+    ///     Whether the node type file has an header.
+    /// node_type_list_support_balanced_quotes: Optional[bool]
+    ///     Whether to support balanced quotes.
+    /// node_type_list_rows_to_skip: Optional[int]
+    ///     The number of lines to skip in the node types file`: the header is already skipped if it has been specified that the file has an header.
+    /// node_type_list_is_correct: Optional[bool]
+    ///     Whether the node types file can be assumed to be correct, i.e. does not have something wrong in it. If this parameter is passed as true on a malformed file, the constructor will crash.
+    /// node_type_list_max_rows_number: Optional[int]
+    ///     The maximum number of lines to be loaded from the node types file.
+    /// node_type_list_comment_symbol: Optional[str]
+    ///     The comment symbol to skip lines in the node types file. Lines starting with this symbol will be skipped.
+    /// load_node_type_list_in_parallel: Optional[bool]
+    ///     Whether to load the node type list in parallel. Note that when loading in parallel, the internal order of the node type IDs may result changed across different iterations. We are working to get this to be stable.
+    /// node_path: Optional[str]
+    ///     The path to the file with the unique node names.
+    /// node_list_separator: Optional[str]
+    ///     The separator to use for the nodes file. Note that if this is not provided, one will be automatically detected among the following`: comma, semi-column, tab and space.
+    /// node_list_header: Optional[bool]
+    ///     Whether the nodes file has an header.
+    /// node_list_support_balanced_quotes: Optional[bool]
+    ///     Whether to support balanced quotes.
+    /// node_list_rows_to_skip: Optional[int]
+    ///     Number of rows to skip in the node list file.
+    /// node_list_is_correct: Optional[bool]
+    ///     Whether the nodes file can be assumed to be correct, i.e. does not have something wrong in it. If this parameter is passed as true on a malformed file, the constructor will crash.
+    /// node_list_max_rows_number: Optional[int]
+    ///     The maximum number of lines to be loaded from the nodes file.
+    /// node_list_comment_symbol: Optional[str]
+    ///     The comment symbol to skip lines in the nodes file. Lines starting with this symbol will be skipped.
+    /// default_node_type: Optional[str]
+    ///     The node type to be used when the node type for a given node in the node file is None.
+    /// nodes_column_number: Optional[int]
+    ///     The number of the column of the node file from where to load the node names.
+    /// nodes_column: Optional[str]
+    ///     The name of the column of the node file from where to load the node names.
+    /// node_types_separator: Optional[str]
+    ///     The node types separator.
+    /// node_list_node_types_column_number: Optional[int]
+    ///     The number of the column of the node file from where to load the node types.
+    /// node_list_node_types_column: Optional[str]
+    ///     The name of the column of the node file from where to load the node types.
+    /// node_ids_column: Optional[str]
+    ///     The name of the column of the node file from where to load the node IDs.
+    /// node_ids_column_number: Optional[int]
+    ///     The number of the column of the node file from where to load the node IDs
+    /// nodes_number: Optional[int]
+    ///     The expected number of nodes. Note that this must be the EXACT number of nodes in the graph.
+    /// minimum_node_id: Optional[int]
+    ///     The minimum node ID to be used, when loading the node IDs as numerical.
+    /// numeric_node_ids: Optional[bool]
+    ///     Whether to load the numeric node IDs as numeric.
+    /// node_list_numeric_node_type_ids: Optional[bool]
+    ///     Whether to load the node types IDs in the node file to be numeric.
+    /// skip_node_types_if_unavailable: Optional[bool]
+    ///     Whether to skip the node types without raising an error if these are unavailable.
+    /// load_node_list_in_parallel: Optional[bool]
+    ///     Whether to load the node list in parallel. When loading in parallel, without node IDs, the nodes may not be loaded in a deterministic order.
+    /// edge_type_path: Optional[str]
+    ///     The path to the file with the unique edge type names.
+    /// edge_types_column_number: Optional[int]
+    ///     The number of the column of the edge types file from where to load the edge types.
+    /// edge_types_column: Optional[str]
+    ///     The name of the column of the edge types file from where to load the edge types.
+    /// edge_types_number: Optional[int]
+    ///     The number of the unique edge types. This will be used in order to allocate the correct size for the data structure.
+    /// numeric_edge_type_ids: Optional[bool]
+    ///     Whether the edge type names should be loaded as numeric values, i.e. casted from string to a numeric representation.
+    /// minimum_edge_type_id: Optional[int]
+    ///     The minimum edge type ID to be used when using numeric edge type IDs.
+    /// edge_type_list_separator: Optional[str]
+    ///     The separator to use for the edge type list. Note that, if None is provided, one will be attempted to be detected automatically between ';', ',', tab or space.
+    /// edge_type_list_header: Optional[bool]
+    ///     Whether the edge type file has an header.
+    /// edge_type_list_support_balanced_quotes: Optional[bool]
+    ///     Whether to support balanced quotes while reading the edge type list.
+    /// edge_type_list_rows_to_skip: Optional[int]
+    ///     Number of rows to skip in the edge type list file.
+    /// edge_type_list_is_correct: Optional[bool]
+    ///     Whether the edge types file can be assumed to be correct, i.e. does not have something wrong in it. If this parameter is passed as true on a malformed file, the constructor will crash.
+    /// edge_type_list_max_rows_number: Optional[int]
+    ///     The maximum number of lines to be loaded from the edge types file.
+    /// edge_type_list_comment_symbol: Optional[str]
+    ///     The comment symbol to skip lines in the edge types file. Lines starting with this symbol will be skipped.
+    /// load_edge_type_list_in_parallel: Optional[bool]
+    ///     Whether to load the edge type list in parallel. When loading in parallel, without edge type IDs, the edge types may not be loaded in a deterministic order.
+    /// edge_path: Optional[str]
+    ///     The path to the file with the edge list.
+    /// edge_list_separator: Optional[str]
+    ///     The separator to use for the edge list. Note that, if None is provided, one will be attempted to be detected automatically between ';', ',', tab or space.
+    /// edge_list_header: Optional[bool]
+    ///     Whether the edges file has an header.
+    /// edge_list_support_balanced_quotes: Optional[bool]
+    ///     Whether to support balanced quotes while reading the edge list.
+    /// edge_list_rows_to_skip: Optional[int]
+    ///     Number of rows to skip in the edge list file.
+    /// sources_column_number: Optional[int]
+    ///     The number of the column of the edges file from where to load the source nodes.
+    /// sources_column: Optional[str]
+    ///     The name of the column of the edges file from where to load the source nodes.
+    /// destinations_column_number: Optional[int]
+    ///     The number of the column of the edges file from where to load the destinaton nodes.
+    /// destinations_column: Optional[str]
+    ///     The name of the column of the edges file from where to load the destinaton nodes.
+    /// edge_list_edge_types_column_number: Optional[int]
+    ///     The number of the column of the edges file from where to load the edge types.
+    /// edge_list_edge_types_column: Optional[str]
+    ///     The name of the column of the edges file from where to load the edge types.
+    /// default_edge_type: Optional[str]
+    ///     The edge type to be used when the edge type for a given edge in the edge file is None.
+    /// weights_column_number: Optional[int]
+    ///     The number of the column of the edges file from where to load the edge weights.
+    /// weights_column: Optional[str]
+    ///     The name of the column of the edges file from where to load the edge weights.
+    /// default_weight: Optional[float]
+    ///     The edge weight to be used when the edge weight for a given edge in the edge file is None.
+    /// edge_ids_column: Optional[str]
+    ///     The name of the column of the edges file from where to load the edge IDs.
+    /// edge_ids_column_number: Optional[int]
+    ///     The number of the column of the edges file from where to load the edge IDs.
+    /// edge_list_numeric_edge_type_ids: Optional[bool]
+    ///     Whether to load the edge type IDs as numeric from the edge list.
+    /// edge_list_numeric_node_ids: Optional[bool]
+    ///     Whether to load the edge node IDs as numeric from the edge list.
+    /// skip_weights_if_unavailable: Optional[bool]
+    ///     Whether to skip the weights without raising an error if these are unavailable.
+    /// skip_edge_types_if_unavailable: Optional[bool]
+    ///     Whether to skip the edge types without raising an error if these are unavailable.
+    /// edge_list_is_complete: Optional[bool]
+    ///     Whether to consider the edge list as complete, i.e. the edges are presented in both directions when loading an undirected graph.
+    /// edge_list_may_contain_duplicates: Optional[bool]
+    ///     Whether the edge list may contain duplicates. If the edge list surely DOES NOT contain duplicates, a validation step may be skipped. By default, it is assumed that the edge list may contain duplicates.
+    /// edge_list_is_sorted: Optional[bool]
+    ///     Whether the edge list is sorted. Note that a sorted edge list has the minimal memory peak, but requires the nodes number and the edges number.
+    /// edge_list_is_correct: Optional[bool]
+    ///     Whether the edges file can be assumed to be correct, i.e. does not have something wrong in it. If this parameter is passed as true on a malformed file, the constructor will crash.
+    /// edge_list_max_rows_number: Optional[int]
+    ///     The maximum number of lines to be loaded from the edges file.
+    /// edge_list_comment_symbol: Optional[str]
+    ///     The comment symbol to skip lines in the edges file. Lines starting with this symbol will be skipped.
+    /// edges_number: Optional[int]
+    ///     The expected number of edges. Note that this must be the EXACT number of edges in the graph.
+    /// load_edge_list_in_parallel: Optional[bool]
+    ///     Whether to load the edge list in parallel. Note that, if the edge IDs indices are not given, it is NOT possible to load a sorted edge list. Similarly, when loading in parallel, without edge IDs, the edges may not be loaded in a deterministic order.
+    /// remove_chevrons: Optional[bool]
+    ///     Whether remove chevrons while reading elements.
+    /// remove_spaces: Optional[bool]
+    ///     Whether remove spaces while reading elements.
+    /// verbose: Optional[bool]
+    ///     Whether to show a loading bar while reading the files. Note that, if parallel loading is enabled, loading bars will not be showed because they are a synchronization bottleneck.
+    /// may_have_singletons: Optional[bool]
+    ///     Whether the graph may be expected to have singleton nodes. If it is said that it surely DOES NOT have any, it will allow for some speedups and lower mempry peaks.
+    /// may_have_singleton_with_selfloops: Optional[bool]
+    ///     Whether the graph may be expected to have singleton nodes with selfloops. If it is said that it surely DOES NOT have any, it will allow for some speedups and lower mempry peaks.
+    /// directed: bool
+    ///     Whether to load the graph as directed or undirected.
+    /// name: Optional[str]
+    ///     The name of the graph to be loaded.
+    ///
+    pub fn from_csv(
+        directed: bool,
+        node_type_path: Option<String>,
+        node_type_list_separator: Option<char>,
+        node_types_column_number: Option<usize>,
+        node_types_column: Option<String>,
+        node_types_ids_column_number: Option<usize>,
+        node_types_ids_column: Option<String>,
+        node_types_number: Option<NodeTypeT>,
+        numeric_node_type_ids: Option<bool>,
+        minimum_node_type_id: Option<NodeTypeT>,
+        node_type_list_header: Option<bool>,
+        node_type_list_support_balanced_quotes: Option<bool>,
+        node_type_list_rows_to_skip: Option<usize>,
+        node_type_list_is_correct: Option<bool>,
+        node_type_list_max_rows_number: Option<usize>,
+        node_type_list_comment_symbol: Option<String>,
+        load_node_type_list_in_parallel: Option<bool>,
+        node_path: Option<String>,
+        node_list_separator: Option<char>,
+        node_list_header: Option<bool>,
+        node_list_support_balanced_quotes: Option<bool>,
+        node_list_rows_to_skip: Option<usize>,
+        node_list_is_correct: Option<bool>,
+        node_list_max_rows_number: Option<usize>,
+        node_list_comment_symbol: Option<String>,
+        default_node_type: Option<String>,
+        nodes_column_number: Option<usize>,
+        nodes_column: Option<String>,
+        node_types_separator: Option<char>,
+        node_list_node_types_column_number: Option<usize>,
+        node_list_node_types_column: Option<String>,
+        node_ids_column: Option<String>,
+        node_ids_column_number: Option<usize>,
+        nodes_number: Option<NodeT>,
+        minimum_node_id: Option<NodeT>,
+        numeric_node_ids: Option<bool>,
+        node_list_numeric_node_type_ids: Option<bool>,
+        skip_node_types_if_unavailable: Option<bool>,
+        load_node_list_in_parallel: Option<bool>,
+        edge_type_path: Option<String>,
+        edge_types_column_number: Option<usize>,
+        edge_types_column: Option<String>,
+        edge_types_ids_column_number: Option<usize>,
+        edge_types_ids_column: Option<String>,
+        edge_types_number: Option<EdgeTypeT>,
+        numeric_edge_type_ids: Option<bool>,
+        minimum_edge_type_id: Option<EdgeTypeT>,
+        edge_type_list_separator: Option<char>,
+        edge_type_list_header: Option<bool>,
+        edge_type_list_support_balanced_quotes: Option<bool>,
+        edge_type_list_rows_to_skip: Option<usize>,
+        edge_type_list_is_correct: Option<bool>,
+        edge_type_list_max_rows_number: Option<usize>,
+        edge_type_list_comment_symbol: Option<String>,
+        load_edge_type_list_in_parallel: Option<bool>,
+        edge_path: Option<String>,
+        edge_list_separator: Option<char>,
+        edge_list_header: Option<bool>,
+        edge_list_support_balanced_quotes: Option<bool>,
+        edge_list_rows_to_skip: Option<usize>,
+        sources_column_number: Option<usize>,
+        sources_column: Option<String>,
+        destinations_column_number: Option<usize>,
+        destinations_column: Option<String>,
+        edge_list_edge_types_column_number: Option<usize>,
+        edge_list_edge_types_column: Option<String>,
+        default_edge_type: Option<String>,
+        weights_column_number: Option<usize>,
+        weights_column: Option<String>,
+        default_weight: Option<WeightT>,
+        edge_ids_column: Option<String>,
+        edge_ids_column_number: Option<usize>,
+        edge_list_numeric_edge_type_ids: Option<bool>,
+        edge_list_numeric_node_ids: Option<bool>,
+        skip_weights_if_unavailable: Option<bool>,
+        skip_edge_types_if_unavailable: Option<bool>,
+        edge_list_is_complete: Option<bool>,
+        edge_list_may_contain_duplicates: Option<bool>,
+        edge_list_is_sorted: Option<bool>,
+        edge_list_is_correct: Option<bool>,
+        edge_list_max_rows_number: Option<usize>,
+        edge_list_comment_symbol: Option<String>,
+        edges_number: Option<EdgeT>,
+        load_edge_list_in_parallel: Option<bool>,
+        remove_chevrons: Option<bool>,
+        remove_spaces: Option<bool>,
+        verbose: Option<bool>,
+        may_have_singletons: Option<bool>,
+        may_have_singleton_with_selfloops: Option<bool>,
+        name: Option<String>,
+    ) -> PyResult<Graph> {
+        Ok(pe!(graph::Graph::from_csv(
+            directed.clone(),
+            node_type_path,
+            node_type_list_separator,
+            node_types_column_number,
+            node_types_column,
+            node_types_ids_column_number,
+            node_types_ids_column,
+            node_types_number,
+            numeric_node_type_ids,
+            minimum_node_type_id,
+            node_type_list_header,
+            node_type_list_support_balanced_quotes,
+            node_type_list_rows_to_skip,
+            node_type_list_is_correct,
+            node_type_list_max_rows_number,
+            node_type_list_comment_symbol,
+            load_node_type_list_in_parallel,
+            node_path,
+            node_list_separator,
+            node_list_header,
+            node_list_support_balanced_quotes,
+            node_list_rows_to_skip,
+            node_list_is_correct,
+            node_list_max_rows_number,
+            node_list_comment_symbol,
+            default_node_type,
+            nodes_column_number,
+            nodes_column,
+            node_types_separator,
+            node_list_node_types_column_number,
+            node_list_node_types_column,
+            node_ids_column,
+            node_ids_column_number,
+            nodes_number,
+            minimum_node_id,
+            numeric_node_ids,
+            node_list_numeric_node_type_ids,
+            skip_node_types_if_unavailable,
+            load_node_list_in_parallel,
+            edge_type_path,
+            edge_types_column_number,
+            edge_types_column,
+            edge_types_ids_column_number,
+            edge_types_ids_column,
+            edge_types_number,
+            numeric_edge_type_ids,
+            minimum_edge_type_id,
+            edge_type_list_separator,
+            edge_type_list_header,
+            edge_type_list_support_balanced_quotes,
+            edge_type_list_rows_to_skip,
+            edge_type_list_is_correct,
+            edge_type_list_max_rows_number,
+            edge_type_list_comment_symbol,
+            load_edge_type_list_in_parallel,
+            edge_path,
+            edge_list_separator,
+            edge_list_header,
+            edge_list_support_balanced_quotes,
+            edge_list_rows_to_skip,
+            sources_column_number,
+            sources_column,
+            destinations_column_number,
+            destinations_column,
+            edge_list_edge_types_column_number,
+            edge_list_edge_types_column,
+            default_edge_type,
+            weights_column_number,
+            weights_column,
+            default_weight,
+            edge_ids_column,
+            edge_ids_column_number,
+            edge_list_numeric_edge_type_ids,
+            edge_list_numeric_node_ids,
+            skip_weights_if_unavailable,
+            skip_edge_types_if_unavailable,
+            edge_list_is_complete,
+            edge_list_may_contain_duplicates,
+            edge_list_is_sorted,
+            edge_list_is_correct,
+            edge_list_max_rows_number,
+            edge_list_comment_symbol,
+            edges_number,
+            load_edge_list_in_parallel,
+            remove_chevrons,
+            remove_spaces,
+            verbose,
+            may_have_singletons,
+            may_have_singleton_with_selfloops,
+            name
+        ))?
+        .into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Return total edge weights, if graph has weights.
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the graph does not contain edge weights.
+    ///
+    pub fn get_total_edge_weights(&self) -> PyResult<f64> {
+        Ok(pe!(self.inner.get_total_edge_weights())?.into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Return the minimum weight, if graph has weights.
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the graph does not contain edge weights.
+    ///
+    pub fn get_mininum_edge_weight(&self) -> PyResult<WeightT> {
+        Ok(pe!(self.inner.get_mininum_edge_weight())?.into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Return the maximum weight, if graph has weights.
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the graph does not contain edge weights.
+    ///
+    pub fn get_maximum_edge_weight(&self) -> PyResult<WeightT> {
+        Ok(pe!(self.inner.get_maximum_edge_weight())?.into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Return the maximum node degree.
+    ///
+    /// Safety
+    /// ------
+    /// The method will return an undefined value (0) when the graph
+    /// does not contain nodes. In those cases the value is not properly
+    /// defined.
+    pub unsafe fn get_unchecked_maximum_node_degree(&self) -> NodeT {
+        self.inner.get_unchecked_maximum_node_degree().into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Return the minimum node degree.
+    ///
+    /// Safety
+    /// ------
+    /// The method will return an undefined value (0) when the graph
+    /// does not contain nodes. In those cases the value is not properly
+    /// defined.
+    pub unsafe fn get_unchecked_minimum_node_degree(&self) -> NodeT {
+        self.inner.get_unchecked_minimum_node_degree().into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Return the maximum weighted node degree
+    pub fn get_weighted_maximum_node_degree(&self) -> PyResult<f64> {
+        Ok(pe!(self.inner.get_weighted_maximum_node_degree())?.into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Return the minimum weighted node degree
+    pub fn get_weighted_minimum_node_degree(&self) -> PyResult<f64> {
+        Ok(pe!(self.inner.get_weighted_minimum_node_degree())?.into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Return the number of weighted singleton nodes, i.e. nodes with weighted node degree equal to zero
+    pub fn get_number_of_weighted_singleton_nodes(&self) -> PyResult<NodeT> {
+        Ok(pe!(self.inner.get_number_of_weighted_singleton_nodes())?.into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Returns number of self-loops, including also those in eventual multi-edges.
+    pub fn get_number_of_selfloops(&self) -> EdgeT {
+        self.inner.get_number_of_selfloops().into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Returns number of unique self-loops, excluding those in eventual multi-edges.
+    pub fn get_number_of_unique_selfloops(&self) -> NodeT {
+        self.inner.get_number_of_unique_selfloops().into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, source_node_ids, destination_node_ids, directed)")]
+    /// Returns bipartite graph between the provided source and destination node IDs.
+    ///
+    /// Parameters
+    /// ----------
+    /// source_node_ids: List[int]
+    ///     The source node IDs.
+    /// destination_node_ids: List[int]
+    ///     The destination node IDs.
+    /// directed: bool
+    ///     Whether to make the graph directed or undirected.
+    ///
+    pub fn build_bipartite_graph_from_edge_node_ids(
+        &self,
+        source_node_ids: Vec<NodeT>,
+        destination_node_ids: Vec<NodeT>,
+        directed: bool,
+    ) -> PyResult<Graph> {
+        Ok(pe!(self.inner.build_bipartite_graph_from_edge_node_ids(
+            source_node_ids,
+            destination_node_ids,
+            directed.clone()
+        ))?
+        .into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, node_ids, directed)")]
+    /// Returns clique graph between the provided node IDs.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_ids: List[int]
+    ///     The node IDs.
+    /// directed: bool
+    ///     Whether to make the graph directed or undirected.
+    ///
+    pub fn build_clique_graph_from_node_ids(
+        &self,
+        node_ids: Vec<NodeT>,
+        directed: bool,
+    ) -> PyResult<Graph> {
+        Ok(pe!(self
+            .inner
+            .build_clique_graph_from_node_ids(node_ids, directed.clone()))?
+        .into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, source_node_names, destination_node_names, directed)")]
+    /// Returns bipartite graph between the provided source and destination node names.
+    ///
+    /// Parameters
+    /// ----------
+    /// source_node_names: List[&str]
+    ///     The source node names.
+    /// destination_node_names: List[&str]
+    ///     The destination node names.
+    /// directed: bool
+    ///     Whether to make the graph directed or undirected.
+    ///
+    pub fn build_bipartite_graph_from_edge_node_names(
+        &self,
+        source_node_names: Vec<&str>,
+        destination_node_names: Vec<&str>,
+        directed: bool,
+    ) -> PyResult<Graph> {
+        Ok(pe!(self.inner.build_bipartite_graph_from_edge_node_names(
+            source_node_names,
+            destination_node_names,
+            directed.clone()
+        ))?
+        .into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, node_names, directed)")]
+    /// Returns clique graph between the provided node names.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_names: List[&str]
+    ///     The node names.
+    /// directed: bool
+    ///     Whether to make the graph directed or undirected.
+    ///
+    pub fn build_clique_graph_from_node_names(
+        &self,
+        node_names: Vec<&str>,
+        directed: bool,
+    ) -> PyResult<Graph> {
+        Ok(pe!(self
+            .inner
+            .build_clique_graph_from_node_names(node_names, directed.clone()))?
+        .into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, source_node_prefixes, destination_node_prefixes, directed)")]
+    /// Returns bipartite graph between the provided source and destination node prefixes.
+    ///
+    /// Parameters
+    /// ----------
+    /// source_node_prefixes: List[str]
+    ///     The source node prefixes.
+    /// destination_node_prefixes: List[str]
+    ///     The destination node prefixes.
+    /// directed: bool
+    ///     Whether to make the graph directed or undirected.
+    ///
+    pub fn build_bipartite_graph_from_edge_node_prefixes(
+        &self,
+        source_node_prefixes: Vec<&str>,
+        destination_node_prefixes: Vec<&str>,
+        directed: bool,
+    ) -> PyResult<Graph> {
+        Ok(
+            pe!(self.inner.build_bipartite_graph_from_edge_node_prefixes(
+                &source_node_prefixes,
+                &destination_node_prefixes,
+                directed.clone()
+            ))?
+            .into(),
+        )
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, node_prefixes, directed)")]
+    /// Returns clique graph between the nodes with the provided prefixes.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_prefixes: List[str]
+    ///     The node name prefixes.
+    /// directed: bool
+    ///     Whether to make the graph directed or undirected.
+    ///
+    pub fn build_clique_graph_from_node_prefixes(
+        &self,
+        node_prefixes: Vec<&str>,
+        directed: bool,
+    ) -> PyResult<Graph> {
+        Ok(pe!(self
+            .inner
+            .build_clique_graph_from_node_prefixes(&node_prefixes, directed.clone()))?
+        .into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, source_node_types, destination_node_types, directed)")]
+    /// Returns bipartite graph between the provided source and destination node types.
+    ///
+    /// Parameters
+    /// ----------
+    /// source_node_types: List[Optional[&str]]
+    ///     The source node types.
+    /// destination_node_types: List[Optional[&str]]
+    ///     The destination node types.
+    /// directed: bool
+    ///     Whether to make the graph directed or undirected.
+    ///
+    pub fn build_bipartite_graph_from_edge_node_types(
+        &self,
+        source_node_types: Vec<Option<&str>>,
+        destination_node_types: Vec<Option<&str>>,
+        directed: bool,
+    ) -> PyResult<Graph> {
+        Ok(pe!(self.inner.build_bipartite_graph_from_edge_node_types(
+            &source_node_types,
+            &destination_node_types,
+            directed.clone()
+        ))?
+        .into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, node_type_names, directed)")]
+    /// Returns clique graph between the nodes with the provided node types.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_type_names: List[Optional[&str]]
+    ///     The node name types.
+    /// directed: bool
+    ///     Whether to make the graph directed or undirected.
+    ///
+    pub fn build_clique_graph_from_node_type_names(
+        &self,
+        node_type_names: Vec<Option<&str>>,
+        directed: bool,
+    ) -> PyResult<Graph> {
+        Ok(pe!(self
+            .inner
+            .build_clique_graph_from_node_type_names(&node_type_names, directed.clone()))?
+        .into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(
+        text_signature = "($self, minimum_node_degree, hash_strategy, number_of_neighbours_for_hash, hash_name)"
+    )]
+    /// Returns vector with isomorphic node groups IDs.
+    ///
+    /// Parameters
+    /// ----------
+    /// minimum_node_degree: Optional[int]
+    ///     Minimum node degree for the topological synonims. By default, 5.
+    /// hash_strategy: Optional[&str]
+    ///     The name of the hash to be used. By default, `general` is used.
+    /// number_of_neighbours_for_hash: Optional[int]
+    ///     The number of neighbours to consider for the hash. By default 10.
+    /// hash_name: Optional[&str]
+    ///     The name of the hash to be used.
+    ///
+    pub fn get_isomorphic_node_ids_groups(
+        &self,
+        minimum_node_degree: Option<NodeT>,
+        hash_strategy: Option<&str>,
+        number_of_neighbours_for_hash: Option<usize>,
+        hash_name: Option<&str>,
+    ) -> PyResult<Vec<Vec<NodeT>>> {
+        Ok(pe!(self.inner.get_isomorphic_node_ids_groups(
+            minimum_node_degree,
+            hash_strategy,
+            number_of_neighbours_for_hash,
+            hash_name
+        ))?
+        .into_iter()
+        .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>())
+        .collect::<Vec<_>>())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(
+        text_signature = "($self, minimum_node_degree, hash_strategy, number_of_neighbours_for_hash, hash_name)"
+    )]
+    /// Returns vector with isomorphic node groups names.
+    ///
+    /// Parameters
+    /// ----------
+    /// minimum_node_degree: Optional[int]
+    ///     Minimum node degree for the topological synonims. By default, 5.
+    /// hash_strategy: Optional[&str]
+    ///     The name of the hash to be used. By default, `general` is used.
+    /// number_of_neighbours_for_hash: Optional[int]
+    ///     The number of neighbours to consider for the hash. By default 10.
+    /// hash_name: Optional[&str]
+    ///     The name of the hash to be used.
+    ///
+    pub fn get_isomorphic_node_names_groups(
+        &self,
+        minimum_node_degree: Option<NodeT>,
+        hash_strategy: Option<&str>,
+        number_of_neighbours_for_hash: Option<usize>,
+        hash_name: Option<&str>,
+    ) -> PyResult<Vec<Vec<String>>> {
+        Ok(pe!(self.inner.get_isomorphic_node_names_groups(
+            minimum_node_degree,
+            hash_strategy,
+            number_of_neighbours_for_hash,
+            hash_name
+        ))?
+        .into_iter()
+        .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>())
+        .collect::<Vec<_>>())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(
+        text_signature = "($self, minimum_node_degree, hash_strategy, number_of_neighbours_for_hash, hash_name)"
+    )]
+    /// Returns number of isomorphic node groups.
+    ///
+    /// Parameters
+    /// ----------
+    /// minimum_node_degree: Optional[int]
+    ///     Minimum node degree for the topological synonims. By default, 5.
+    /// hash_strategy: Optional[&str]
+    ///     The name of the hash strategy to be used. By default, `general` is used.
+    /// number_of_neighbours_for_hash: Optional[int]
+    ///     The number of neighbours to consider for the hash. By default 10.
+    /// hash_name: Optional[&str]
+    ///     The name of the hash to be used.
+    ///
+    pub fn get_number_of_isomorphic_node_groups(
+        &self,
+        minimum_node_degree: Option<NodeT>,
+        hash_strategy: Option<&str>,
+        number_of_neighbours_for_hash: Option<usize>,
+        hash_name: Option<&str>,
+    ) -> PyResult<HashMap<&str, u128>> {
+        Ok(pe!(self.inner.get_number_of_isomorphic_node_groups(
+            minimum_node_degree,
+            hash_strategy,
+            number_of_neighbours_for_hash,
+            hash_name
+        ))?
+        .into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Returns vector with isomorphic node type groups IDs
+    pub fn get_isomorphic_node_type_ids_groups(&self) -> PyResult<Vec<Vec<NodeTypeT>>> {
+        Ok(pe!(self.inner.get_isomorphic_node_type_ids_groups())?
+            .into_iter()
+            .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>())
+            .collect::<Vec<_>>())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Returns vector with isomorphic node type groups names
+    pub fn get_isomorphic_node_type_names_groups(&self) -> PyResult<Vec<Vec<String>>> {
+        Ok(pe!(self.inner.get_isomorphic_node_type_names_groups())?
+            .into_iter()
+            .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>())
+            .collect::<Vec<_>>())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Returns number of isomorphic node type groups
+    pub fn get_number_of_isomorphic_node_type_groups(&self) -> PyResult<NodeTypeT> {
+        Ok(pe!(self.inner.get_number_of_isomorphic_node_type_groups())?.into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Returns vector with isomorphic node type groups IDs
+    pub fn get_approximated_isomorphic_node_type_ids_groups(
+        &self,
+    ) -> PyResult<Vec<Vec<NodeTypeT>>> {
+        Ok(pe!(self
+            .inner
+            .get_approximated_isomorphic_node_type_ids_groups())?
+        .into_iter()
+        .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>())
+        .collect::<Vec<_>>())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Returns vector with isomorphic node type groups names
+    pub fn get_approximated_isomorphic_node_type_names_groups(&self) -> PyResult<Vec<Vec<String>>> {
+        Ok(pe!(self
+            .inner
+            .get_approximated_isomorphic_node_type_names_groups())?
+        .into_iter()
+        .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>())
+        .collect::<Vec<_>>())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Returns number of isomorphic node type groups
+    pub fn get_number_of_approximated_isomorphic_node_type_groups(&self) -> PyResult<NodeTypeT> {
+        Ok(pe!(self
+            .inner
+            .get_number_of_approximated_isomorphic_node_type_groups())?
+        .into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, minimum_number_of_edges)")]
+    /// Returns vector with isomorphic edge type groups IDs.
+    ///
+    /// Parameters
+    /// ----------
+    /// minimum_number_of_edges: Optional[int]
+    ///     Minimum number of edges to detect edge types topological synonims. By default, 5.
+    ///
+    pub fn get_isomorphic_edge_type_ids_groups(
+        &self,
+        minimum_number_of_edges: Option<EdgeT>,
+    ) -> PyResult<Vec<Vec<EdgeTypeT>>> {
+        Ok(pe!(self
+            .inner
+            .get_isomorphic_edge_type_ids_groups(minimum_number_of_edges))?
+        .into_iter()
+        .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>())
+        .collect::<Vec<_>>())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, minimum_number_of_edges)")]
+    /// Returns vector with isomorphic edge type groups names.
+    ///
+    /// Parameters
+    /// ----------
+    /// minimum_number_of_edges: Optional[int]
+    ///     Minimum number of edges to detect edge types topological synonims. By default, 5.
+    ///
+    pub fn get_isomorphic_edge_type_names_groups(
+        &self,
+        minimum_number_of_edges: Option<EdgeT>,
+    ) -> PyResult<Vec<Vec<String>>> {
+        Ok(pe!(self
+            .inner
+            .get_isomorphic_edge_type_names_groups(minimum_number_of_edges))?
+        .into_iter()
+        .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>())
+        .collect::<Vec<_>>())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, minimum_number_of_edges)")]
+    /// Returns number of isomorphic edge type groups.
+    ///
+    /// Parameters
+    /// ----------
+    /// minimum_number_of_edges: Optional[int]
+    ///     Minimum number of edges to detect edge types topological synonims. By default, 5.
+    ///
+    pub fn get_number_of_isomorphic_edge_type_groups(
+        &self,
+        minimum_number_of_edges: Option<EdgeT>,
+    ) -> PyResult<EdgeTypeT> {
+        Ok(pe!(self
+            .inner
+            .get_number_of_isomorphic_edge_type_groups(minimum_number_of_edges))?
+        .into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, minimum_node_degree)")]
+    /// Returns whether the current graph has topological synonims.
+    ///
+    /// Parameters
+    /// ----------
+    /// minimum_node_degree: Optional[int]
+    ///     Minimum node degree for the topological synonims.
+    ///
+    pub fn has_isomorphic_nodes(&self, minimum_node_degree: Option<NodeT>) -> bool {
+        self.inner.has_isomorphic_nodes(minimum_node_degree).into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, node_ids)")]
+    /// Returns whether the set of provided node IDs have isomorphic node types.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_ids: List[int]
+    ///     Node IDs to check for.
+    ///
+    pub unsafe fn has_unchecked_isomorphic_node_types_from_node_ids(
+        &self,
+        node_ids: Vec<NodeT>,
+    ) -> bool {
+        self.inner
+            .has_unchecked_isomorphic_node_types_from_node_ids(&node_ids)
+            .into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, node_ids)")]
+    /// Returns whether the set of provided node IDs have isomorphic node types.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_ids: List[int]
+    ///     Node IDs to check for.
+    ///
+    pub fn has_isomorphic_node_types_from_node_ids(&self, node_ids: Vec<NodeT>) -> PyResult<bool> {
+        Ok(pe!(self
+            .inner
+            .has_isomorphic_node_types_from_node_ids(&node_ids))?
+        .into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, approach, insert_only_source, verbose)")]
+    /// Returns number of triangles in the graph.
+    ///
+    /// Parameters
+    /// ----------
+    /// approach: Optional[&str]
+    ///     The approach name to be used. By default, the edge list order is used.
+    /// insert_only_source: Optional[bool]
+    ///     Whether to insert only the source node or both source and destination.
+    /// verbose: Optional[bool]
+    ///     Whether to show a loading bar. By default, True.
+    ///
+    pub fn get_number_of_triangles(
+        &self,
+        approach: Option<&str>,
+        insert_only_source: Option<bool>,
+        verbose: Option<bool>,
+    ) -> PyResult<EdgeT> {
+        Ok(pe!(self
+            .inner
+            .get_number_of_triangles(approach, insert_only_source, verbose))?
+        .into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, approach, insert_only_source, verbose)")]
+    /// Returns number of squares in the graph.
+    ///
+    /// Parameters
+    /// ----------
+    /// approach: Optional[&str]
+    ///     The approach name to be used. By default, the edge list order is used.
+    /// insert_only_source: Optional[bool]
+    ///     Whether to insert only the source node or both source and destination.
+    /// verbose: Optional[bool]
+    ///     Whether to show a loading bar. By default, True.
+    ///
+    pub fn get_number_of_squares(
+        &self,
+        approach: Option<&str>,
+        insert_only_source: Option<bool>,
+        verbose: Option<bool>,
+    ) -> PyResult<EdgeT> {
+        Ok(pe!(self
+            .inner
+            .get_number_of_squares(approach, insert_only_source, verbose))?
+        .into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, approach, insert_only_source, verbose)")]
+    /// Returns number of squares in the graph.
+    ///
+    /// Parameters
+    /// ----------
+    /// approach: Optional[&str]
+    ///     The approach name to be used. By default, the edge list order is used.
+    /// insert_only_source: Optional[bool]
+    ///     Whether to insert only the source node or both source and destination.
+    /// verbose: Optional[bool]
+    ///     Whether to show a loading bar. By default, True.
+    ///
+    pub fn get_number_of_squares_per_node(
+        &self,
+        approach: Option<&str>,
+        insert_only_source: Option<bool>,
+        verbose: Option<bool>,
+    ) -> PyResult<Py<PyArray1<EdgeT>>> {
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(
+                gil,
+                pe!(self.inner.get_number_of_squares_per_node(
+                    approach,
+                    insert_only_source,
+                    verbose
+                ))?,
+                EdgeT
+            )
+        })
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Returns total number of triads in the graph without taking into account weights
+    pub fn get_number_of_triads(&self) -> EdgeT {
+        self.inner.get_number_of_triads().into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Returns total number of triads in the weighted graph
+    pub fn get_number_of_weighted_triads(&self) -> PyResult<f64> {
+        Ok(pe!(self.inner.get_number_of_weighted_triads())?.into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, verbose)")]
+    /// Returns transitivity of the graph without taking into account weights.
+    ///
+    /// Parameters
+    /// ----------
+    /// verbose: Optional[bool]
+    ///     Whether to show a loading bar.
+    ///
+    pub fn get_transitivity(&self, verbose: Option<bool>) -> f64 {
+        self.inner.get_transitivity(verbose).into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, approach, insert_only_source, verbose)")]
+    /// Returns number of triangles for all nodes in the graph.
+    ///
+    /// Parameters
+    /// ----------
+    /// approach: Optional[&str]
+    ///     The approach name to be used. By default, the edge list order is used.
+    /// insert_only_source: Optional[bool]
+    ///     Whether to insert only the source node or both source and destination.
+    /// verbose: Optional[bool]
+    ///     Whether to show a loading bar. By default, True.
+    ///
+    pub fn get_number_of_triangles_per_node(
+        &self,
+        approach: Option<&str>,
+        insert_only_source: Option<bool>,
+        verbose: Option<bool>,
+    ) -> PyResult<Py<PyArray1<EdgeT>>> {
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(
+                gil,
+                pe!(self.inner.get_number_of_triangles_per_node(
+                    approach,
+                    insert_only_source,
+                    verbose
+                ))?,
+                EdgeT
+            )
+        })
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, verbose)")]
+    /// Returns clustering coefficients for all nodes in the graph.
+    ///
+    /// Parameters
+    /// ----------
+    /// low_centrality: Optional[int]
+    ///     The threshold over which to switch to parallel matryoshka. By default 50.
+    /// verbose: Optional[bool]
+    ///     Whether to show a loading bar.
+    ///
+    pub fn get_clustering_coefficient_per_node(&self, verbose: Option<bool>) -> Py<PyArray1<f64>> {
+        let gil = pyo3::Python::acquire_gil();
+        to_ndarray_1d!(
+            gil,
+            self.inner.get_clustering_coefficient_per_node(verbose),
+            f64
+        )
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, verbose)")]
+    /// Returns the graph clustering coefficient.
+    ///
+    /// Parameters
+    /// ----------
+    /// verbose: Optional[bool]
+    ///     Whether to show a loading bar.
+    ///
+    pub fn get_clustering_coefficient(&self, verbose: Option<bool>) -> f64 {
+        self.inner.get_clustering_coefficient(verbose).into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, verbose)")]
+    /// Returns the graph average clustering coefficient.
+    ///
+    /// Parameters
+    /// ----------
+    /// verbose: Optional[bool]
+    ///     Whether to show a loading bar.
+    ///
+    pub fn get_average_clustering_coefficient(&self, verbose: Option<bool>) -> f64 {
+        self.inner
+            .get_average_clustering_coefficient(verbose)
+            .into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, edge_id)")]
+    /// Returns option with the weight of the given edge id.
+    ///
+    /// This method will raise a panic if the given edge ID is higher than
+    /// the number of edges in the graph. Additionally, it will simply
+    /// return None if there are no graph weights.
+    ///
+    /// Parameters
+    /// ----------
+    /// edge_id: int
+    ///     The edge whose edge weight is to be returned.
+    ///
+    ///
+    /// Safety
+    /// ------
+    /// If the given edge ID does not exists in the graph this method will panic.
+    pub unsafe fn get_unchecked_edge_weight_from_edge_id(&self, edge_id: EdgeT) -> Option<WeightT> {
+        self.inner
+            .get_unchecked_edge_weight_from_edge_id(edge_id.clone())
+            .map(|x| x.into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, src, dst)")]
+    /// Returns option with the weight of the given node ids.
+    ///
+    /// This method will raise a panic if the given node IDs are higher than
+    /// the number of nodes in the graph.
+    ///
+    /// Parameters
+    /// ----------
+    /// src: int
+    ///     The source node ID.
+    /// dst: int
+    ///     The destination node ID.
+    ///
+    ///
+    /// Safety
+    /// ------
+    /// If either of the two given node IDs does not exists in the graph.
+    pub unsafe fn get_unchecked_edge_weight_from_node_ids(
+        &self,
+        src: NodeT,
+        dst: NodeT,
+    ) -> WeightT {
+        self.inner
+            .get_unchecked_edge_weight_from_node_ids(src.clone(), dst.clone())
+            .into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, node_name)")]
+    /// Returns node id from given node name raising a panic if used unproperly.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_name: str
+    ///     The node name whose node ID is to be returned.
+    ///
+    ///
+    /// Safety
+    /// ------
+    /// If the given node name does not exists in the considered graph the method will panic.
+    pub unsafe fn get_unchecked_node_id_from_node_name(&self, node_name: &str) -> NodeT {
+        self.inner
+            .get_unchecked_node_id_from_node_name(node_name)
+            .into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, edge_type_name)")]
+    /// Return edge type ID corresponding to the given edge type name.
+    ///
+    /// Parameters
+    /// ----------
+    /// edge_type_name: str
+    ///     The edge type name whose edge type ID is to be returned.
+    ///
+    ///
+    /// Safety
+    /// ------
+    /// If the given edge type name does not exists in the considered graph the method will panic.
+    pub unsafe fn get_unchecked_edge_type_id_from_edge_type_name(
+        &self,
+        edge_type_name: &str,
+    ) -> Option<EdgeTypeT> {
+        self.inner
+            .get_unchecked_edge_type_id_from_edge_type_name(edge_type_name)
+            .map(|x| x.into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, edge_type_id)")]
+    /// Return edge type ID corresponding to the given edge type name
+    /// raising panic if edge type ID does not exists in current graph.
+    ///
+    /// Parameters
+    /// ----------
+    /// edge_type_id: Optional[int]
+    ///     The edge type naIDme whose edge type name is to be returned.
+    ///
+    ///
+    /// Safety
+    /// ------
+    /// If the given edge type ID does not exist in the graph the method will panic.
+    pub unsafe fn get_unchecked_edge_type_name_from_edge_type_id(
+        &self,
+        edge_type_id: Option<EdgeTypeT>,
+    ) -> Option<String> {
+        self.inner
+            .get_unchecked_edge_type_name_from_edge_type_id(edge_type_id)
+            .map(|x| x.into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, edge_type)")]
+    /// Return number of edges of the given edge type without checks.
+    ///
+    /// Parameters
+    /// ----------
+    /// edge_type: Optional[int]
+    ///     The edge type to retrieve count of.
+    ///
+    ///
+    /// Safety
+    /// ------
+    /// If the given edge type ID does not exist in the graph the method will panic.
+    pub unsafe fn get_unchecked_edge_count_from_edge_type_id(
+        &self,
+        edge_type: Option<EdgeTypeT>,
+    ) -> EdgeT {
+        self.inner
+            .get_unchecked_edge_count_from_edge_type_id(edge_type)
+            .into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, node_type)")]
+    /// Return number of nodes of the given node type without checks.
+    ///
+    /// Parameters
+    /// ----------
+    ///
+    ///
+    /// Safety
+    /// ------
+    /// If the provided value is not within the graph's vocabulary
+    ///  the method will panic.
+    pub unsafe fn get_unchecked_node_count_from_node_type_id(
+        &self,
+        node_type: Option<NodeTypeT>,
+    ) -> NodeT {
+        self.inner
+            .get_unchecked_node_count_from_node_type_id(node_type)
+            .into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, src, dst, edge_type)")]
+    /// Return edge ID without any checks for given tuple of nodes and edge type.
+    ///
+    /// Parameters
+    /// ----------
+    /// src: int
+    ///     Source node of the edge.
+    /// dst: int
+    ///     Destination node of the edge.
+    /// edge_type: Optional[int]
+    ///     Edge Type of the edge.
+    ///
+    ///
+    /// Safety
+    /// ------
+    /// If the given node IDs or edge type does not exists in the graph this method will panic.
+    pub unsafe fn get_unchecked_edge_id_from_node_ids_and_edge_type_id(
+        &self,
+        src: NodeT,
+        dst: NodeT,
+        edge_type: Option<EdgeTypeT>,
+    ) -> EdgeT {
+        self.inner
+            .get_unchecked_edge_id_from_node_ids_and_edge_type_id(
+                src.clone(),
+                dst.clone(),
+                edge_type,
+            )
+            .into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, src, dst)")]
+    /// Return range of outbound edges IDs for all the edges bewteen the given
+    /// source and destination nodes.
+    /// This operation is meaningfull only in a multigraph.
+    ///
+    /// Parameters
+    /// ----------
+    /// src: int
+    ///     Source node.
+    /// dst: int
+    ///     Destination node.
+    ///
+    ///
+    /// Safety
+    /// ------
+    /// If the given node type IDs do not exist in the graph this method will panic.
+    pub unsafe fn get_unchecked_minmax_edge_ids_from_node_ids(
+        &self,
+        src: NodeT,
+        dst: NodeT,
+    ) -> (EdgeT, EdgeT) {
+        let (subresult_0, subresult_1) = self
+            .inner
+            .get_unchecked_minmax_edge_ids_from_node_ids(src.clone(), dst.clone());
+        (subresult_0.into(), subresult_1.into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, edge_id)")]
+    /// Returns node IDs corresponding to given edge ID.
+    ///
+    /// The method will panic if the given edge ID does not exists in the
+    /// current graph instance.
+    ///
+    /// Parameters
+    /// ----------
+    /// edge_id: int
+    ///     The edge ID whose source and destination node IDs are to e retrieved.
+    ///
+    ///
+    /// Safety
+    /// ------
+    /// If the given edge ID does not exist in the current graph the method will raise a panic.
+    pub unsafe fn get_unchecked_node_ids_from_edge_id(&self, edge_id: EdgeT) -> (NodeT, NodeT) {
+        let (subresult_0, subresult_1) = self
+            .inner
+            .get_unchecked_node_ids_from_edge_id(edge_id.clone());
+        (subresult_0.into(), subresult_1.into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, edge_id)")]
+    /// Returns node names corresponding to given edge ID.
+    ///
+    /// Parameters
+    /// ----------
+    /// edge_id: int
+    ///     The edge ID whose source and destination node IDs are to e retrieved.
+    ///
+    ///
+    /// Safety
+    /// ------
+    /// If the given edge ID does not exist in the current graph the method will raise a panic.
+    pub unsafe fn get_unchecked_node_names_from_edge_id(&self, edge_id: EdgeT) -> (String, String) {
+        let (subresult_0, subresult_1) = self
+            .inner
+            .get_unchecked_node_names_from_edge_id(edge_id.clone());
+        (subresult_0.into(), subresult_1.into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, edge_id)")]
+    /// Returns the source of given edge id without making any boundary check.
+    ///
+    /// Parameters
+    /// ----------
+    /// edge_id: int
+    ///     The edge ID whose source is to be retrieved.
+    ///
+    ///
+    /// Safety
+    /// ------
+    /// If the given edge ID does not exist in the current graph the method will cause an out of bounds.
+    pub unsafe fn get_unchecked_source_node_id_from_edge_id(&self, edge_id: EdgeT) -> NodeT {
+        self.inner
+            .get_unchecked_source_node_id_from_edge_id(edge_id.clone())
+            .into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, edge_id)")]
+    /// Returns the destination of given edge id without making any boundary check.
+    ///
+    /// Parameters
+    /// ----------
+    /// edge_id: int
+    ///     The edge ID whose destination is to be retrieved.
+    ///
+    ///
+    /// Safety
+    /// ------
+    /// If the given edge ID does not exist in the current graph the method will cause an out of bounds.
+    pub unsafe fn get_unchecked_destination_node_id_from_edge_id(&self, edge_id: EdgeT) -> NodeT {
+        self.inner
+            .get_unchecked_destination_node_id_from_edge_id(edge_id.clone())
+            .into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, edge_id)")]
+    /// Returns source node ID corresponding to given edge ID.
+    ///
+    /// Parameters
+    /// ----------
+    /// edge_id: int
+    ///     The edge ID whose source node ID is to be retrieved.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the given edge ID does not exist in the current graph.
+    ///
+    pub fn get_source_node_id_from_edge_id(&self, edge_id: EdgeT) -> PyResult<NodeT> {
+        Ok(pe!(self.inner.get_source_node_id_from_edge_id(edge_id.clone()))?.into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, edge_id)")]
+    /// Returns destination node ID corresponding to given edge ID.
+    ///
+    /// Parameters
+    /// ----------
+    /// edge_id: int
+    ///     The edge ID whose destination node ID is to be retrieved.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the given edge ID does not exist in the current graph.
+    ///
+    pub fn get_destination_node_id_from_edge_id(&self, edge_id: EdgeT) -> PyResult<NodeT> {
+        Ok(pe!(self
+            .inner
+            .get_destination_node_id_from_edge_id(edge_id.clone()))?
+        .into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, node_id)")]
+    /// Returns number of self-loops associated to the provided node ID.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_id: int
+    ///     The node ID for which to retrieve the number of self-loops.
+    ///
+    ///
+    /// Safety
+    /// ------
+    /// This method may panic if the provided node ID is outside
+    ///  the number of nodes in the graph.
+    pub unsafe fn get_unchecked_number_of_selfloops_from_node_id(&self, node_id: NodeT) -> NodeT {
+        self.inner
+            .get_unchecked_number_of_selfloops_from_node_id(node_id.clone())
+            .into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, node_id)")]
+    /// Returns number of self-loops associated to the provided node ID.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_id: int
+    ///     The node ID for which to retrieve the number of self-loops.
+    ///
+    ///
+    /// Raises
+    /// -------
+    ///
+    pub fn get_number_of_selfloops_from_node_id(&self, node_id: NodeT) -> PyResult<NodeT> {
+        Ok(pe!(self
+            .inner
+            .get_number_of_selfloops_from_node_id(node_id.clone()))?
+        .into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, node_name)")]
+    /// Returns number of self-loops associated to the provided node name.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_name: str
+    ///     The node name for which to retrieve the number of self-loops.
+    ///
+    ///
+    /// Raises
+    /// -------
+    ///
+    pub fn get_number_of_selfloops_from_node_name(&self, node_name: &str) -> PyResult<NodeT> {
+        Ok(pe!(self.inner.get_number_of_selfloops_from_node_name(node_name))?.into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, edge_id)")]
+    /// Returns source node name corresponding to given edge ID.
+    ///
+    /// Parameters
+    /// ----------
+    /// edge_id: int
+    ///     The edge ID whose source node name is to be retrieved.
+    ///
+    ///
+    /// Safety
+    /// ------
+    /// If the given edge ID does not exist in the current graph the method will raise a panic.
+    pub unsafe fn get_unchecked_source_node_name_from_edge_id(&self, edge_id: EdgeT) -> String {
+        self.inner
+            .get_unchecked_source_node_name_from_edge_id(edge_id.clone())
+            .into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, edge_id)")]
+    /// Returns destination node name corresponding to given edge ID.
+    ///
+    /// Parameters
+    /// ----------
+    /// edge_id: int
+    ///     The edge ID whose destination node name is to be retrieved.
+    ///
+    ///
+    /// Safety
+    /// ------
+    /// If the given edge ID does not exist in the current graph the method will raise a panic.
+    pub unsafe fn get_unchecked_destination_node_name_from_edge_id(
+        &self,
+        edge_id: EdgeT,
+    ) -> String {
+        self.inner
+            .get_unchecked_destination_node_name_from_edge_id(edge_id.clone())
+            .into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, edge_id)")]
+    /// Returns source node name corresponding to given edge ID.
+    ///
+    /// Parameters
+    /// ----------
+    /// edge_id: int
+    ///     The edge ID whose source node name is to be retrieved.
+    ///
+    ///
+    /// Raises
+    /// -------
+    ///
+    pub fn get_source_node_name_from_edge_id(&self, edge_id: EdgeT) -> PyResult<String> {
+        Ok(pe!(self
+            .inner
+            .get_source_node_name_from_edge_id(edge_id.clone()))?
+        .into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, edge_id)")]
+    /// Returns destination node name corresponding to given edge ID.
+    ///
+    /// Parameters
+    /// ----------
+    /// edge_id: int
+    ///     The edge ID whose destination node name is to be retrieved.
+    ///
+    ///
+    /// Raises
+    /// -------
+    ///
+    pub fn get_destination_node_name_from_edge_id(&self, edge_id: EdgeT) -> PyResult<String> {
+        Ok(pe!(self
+            .inner
+            .get_destination_node_name_from_edge_id(edge_id.clone()))?
+        .into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, edge_id)")]
+    /// Returns node names corresponding to given edge ID.
+    ///
+    /// Parameters
+    /// ----------
+    /// edge_id: int
+    ///     The edge ID whose source and destination node IDs are to e retrieved.
+    ///
+    pub fn get_node_names_from_edge_id(&self, edge_id: EdgeT) -> PyResult<(String, String)> {
+        Ok({
+            let (subresult_0, subresult_1) =
+                pe!(self.inner.get_node_names_from_edge_id(edge_id.clone()))?.into();
+            (subresult_0.into(), subresult_1.into())
+        })
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, edge_id)")]
+    /// Returns node names corresponding to given edge ID.
+    ///
+    /// Parameters
+    /// ----------
+    /// edge_id: int
+    ///     The edge ID whose source and destination node IDs are to e retrieved.
+    ///
+    pub fn get_node_ids_from_edge_id(&self, edge_id: EdgeT) -> PyResult<(NodeT, NodeT)> {
+        Ok({
+            let (subresult_0, subresult_1) =
+                pe!(self.inner.get_node_ids_from_edge_id(edge_id.clone()))?.into();
+            (subresult_0.into(), subresult_1.into())
+        })
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, src, dst)")]
+    /// Returns edge ID corresponding to given source and destination node IDs.
+    ///
+    /// The method will panic if the given source and destination node IDs do
+    /// not correspond to an edge in this graph instance.
+    ///
+    /// Parameters
+    /// ----------
+    /// src: int
+    ///     The source node ID.
+    /// dst: int
+    ///     The destination node ID.
+    ///
+    ///
+    /// Safety
+    /// ------
+    /// If any of the given node IDs do not exist in the graph the method will panic.
+    pub unsafe fn get_unchecked_edge_id_from_node_ids(&self, src: NodeT, dst: NodeT) -> EdgeT {
+        self.inner
+            .get_unchecked_edge_id_from_node_ids(src.clone(), dst.clone())
+            .into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, src, dst)")]
+    /// Returns edge ID corresponding to given source and destination node IDs.
+    ///
+    /// Parameters
+    /// ----------
+    /// src: int
+    ///     The source node ID.
+    /// dst: int
+    ///     The destination node ID.
+    ///
+    pub fn get_edge_id_from_node_ids(&self, src: NodeT, dst: NodeT) -> PyResult<EdgeT> {
+        Ok(pe!(self
+            .inner
+            .get_edge_id_from_node_ids(src.clone(), dst.clone()))?
+        .into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, source_id)")]
+    /// Returns edge ID corresponding to given source and destination node IDs.
+    ///
+    /// Parameters
+    /// ----------
+    /// source_id: int
+    ///     The source node ID.
+    ///
+    ///
+    /// Safety
+    /// ------
+    /// If the given source node ID does not exist in the current graph the method will panic.
+    pub unsafe fn get_unchecked_unique_source_node_id(&self, source_id: NodeT) -> NodeT {
+        self.inner
+            .get_unchecked_unique_source_node_id(source_id.clone())
+            .into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, edge_id)")]
+    /// Return the src, dst, edge type of a given edge ID.
+    ///
+    /// This method will raise a panic when an improper configuration is used.
+    ///
+    /// Parameters
+    /// ----------
+    /// edge_id: int
+    ///     The edge ID whose source, destination and edge type are to be retrieved.
+    ///
+    ///
+    /// Safety
+    /// ------
+    /// If the given edge ID does not exist in the current graph the method will raise a panic.
+    pub unsafe fn get_unchecked_node_ids_and_edge_type_id_from_edge_id(
+        &self,
+        edge_id: EdgeT,
+    ) -> (NodeT, NodeT, Option<EdgeTypeT>) {
+        let (subresult_0, subresult_1, subresult_2) = self
+            .inner
+            .get_unchecked_node_ids_and_edge_type_id_from_edge_id(edge_id.clone());
+        (
+            subresult_0.into(),
+            subresult_1.into(),
+            subresult_2.map(|x| x.into()),
+        )
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, edge_id)")]
+    /// Return the src, dst, edge type of a given edge ID.
+    ///
+    /// Parameters
+    /// ----------
+    /// edge_id: int
+    ///     The edge ID whose source, destination and edge type are to be retrieved.
+    ///
+    pub fn get_node_ids_and_edge_type_id_from_edge_id(
+        &self,
+        edge_id: EdgeT,
+    ) -> PyResult<(NodeT, NodeT, Option<EdgeTypeT>)> {
+        Ok({
+            let (subresult_0, subresult_1, subresult_2) = pe!(self
+                .inner
+                .get_node_ids_and_edge_type_id_from_edge_id(edge_id.clone()))?
+            .into();
+            (
+                subresult_0.into(),
+                subresult_1.into(),
+                subresult_2.map(|x| x.into()),
+            )
+        })
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, edge_id)")]
+    /// Return the src, dst, edge type and weight of a given edge ID.
+    ///
+    /// This method will raise a panic when an improper configuration is used.
+    ///
+    /// Parameters
+    /// ----------
+    /// edge_id: int
+    ///     The edge ID whose source, destination, edge type and weight are to be retrieved.
+    ///
+    ///
+    /// Safety
+    /// ------
+    /// If the given edge ID does not exist in the current graph the method will raise a panic.
+    pub unsafe fn get_unchecked_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(
+        &self,
+        edge_id: EdgeT,
+    ) -> (NodeT, NodeT, Option<EdgeTypeT>, Option<WeightT>) {
+        let (subresult_0, subresult_1, subresult_2, subresult_3) = self
+            .inner
+            .get_unchecked_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(edge_id.clone());
+        (
+            subresult_0.into(),
+            subresult_1.into(),
+            subresult_2.map(|x| x.into()),
+            subresult_3.map(|x| x.into()),
+        )
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, edge_id)")]
+    /// Return the src, dst, edge type and weight of a given edge ID.
+    ///
+    /// Parameters
+    /// ----------
+    /// edge_id: int
+    ///     The edge ID whose source, destination, edge type and weight are to be retrieved.
+    ///
+    pub fn get_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(
+        &self,
+        edge_id: EdgeT,
+    ) -> PyResult<(NodeT, NodeT, Option<EdgeTypeT>, Option<WeightT>)> {
+        Ok({
+            let (subresult_0, subresult_1, subresult_2, subresult_3) = pe!(self
+                .inner
+                .get_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(edge_id.clone()))?
+            .into();
+            (
+                subresult_0.into(),
+                subresult_1.into(),
+                subresult_2.map(|x| x.into()),
+                subresult_3.map(|x| x.into()),
+            )
+        })
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, k)")]
+    /// Return vector with unweighted top k central node Ids.
+    ///
+    /// If the k passed is bigger than the number of nodes this method will return
+    /// all the nodes in the graph.
+    ///
+    /// Parameters
+    /// ----------
+    /// k: int
+    ///     Number of central nodes to extract.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the given value k is zero.
+    /// ValueError
+    ///     If the graph has no nodes.
+    ///
+    pub fn get_top_k_central_node_ids(&self, k: NodeT) -> PyResult<Py<PyArray1<NodeT>>> {
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(
+                gil,
+                pe!(self.inner.get_top_k_central_node_ids(k.clone()))?,
+                NodeT
+            )
+        })
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, k)")]
+    /// Return vector with weighted top k central node Ids.
+    ///
+    /// If the k passed is bigger than the number of nodes this method will return
+    /// all the nodes in the graph.
+    ///
+    /// Parameters
+    /// ----------
+    /// k: int
+    ///     Number of central nodes to extract.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the current graph instance does not contain edge weights.
+    /// ValueError
+    ///     If the given value k is zero.
+    ///
+    pub fn get_weighted_top_k_central_node_ids(&self, k: NodeT) -> PyResult<Py<PyArray1<NodeT>>> {
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(
+                gil,
+                pe!(self.inner.get_weighted_top_k_central_node_ids(k.clone()))?,
+                NodeT
+            )
+        })
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, node_id)")]
+    /// Returns the number of outbound neighbours of given node.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_id: int
+    ///     Integer ID of the node.
+    ///
+    ///
+    /// Safety
+    /// ------
+    /// If the given node ID does not exist in the current graph the method will raise a panic.
+    pub unsafe fn get_unchecked_node_degree_from_node_id(&self, node_id: NodeT) -> NodeT {
+        self.inner
+            .get_unchecked_node_degree_from_node_id(node_id.clone())
+            .into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, node_id)")]
+    /// Returns number of outbound nodes for a given node ID, adjusted by removing the number of selfloops.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_id: int
+    ///     Integer ID of the node.
+    ///
+    ///
+    /// Safety
+    /// ------
+    /// If the given node ID does not exist in the current graph the method will raise a panic.
+    pub unsafe fn get_unchecked_selfloop_adjusted_node_degree_from_node_id(
+        &self,
+        node_id: NodeT,
+    ) -> NodeT {
+        self.inner
+            .get_unchecked_selfloop_adjusted_node_degree_from_node_id(node_id.clone())
+            .into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, node_id)")]
+    /// Returns number of outbound nodes for a given node ID, adjusted by removing the number of selfloops.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_id: int
+    ///     Integer ID of the node.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     ValueError - If the given node ID does not exist in the current graph the method will raise a panic.
+    ///
+    pub fn get_selfloop_adjusted_node_degree_from_node_id(
+        &self,
+        node_id: NodeT,
+    ) -> PyResult<NodeT> {
+        Ok(pe!(self
+            .inner
+            .get_selfloop_adjusted_node_degree_from_node_id(node_id.clone()))?
+        .into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, node_name)")]
+    /// Returns number of outbound nodes for a given node name, adjusted by removing the number of selfloops.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_name: str
+    ///     Integer name of the node.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     ValueError - If the given node name does not exist in the current graph the method will raise a panic.
+    ///
+    pub fn get_selfloop_adjusted_node_degree_from_node_name(
+        &self,
+        node_name: &str,
+    ) -> PyResult<NodeT> {
+        Ok(pe!(self
+            .inner
+            .get_selfloop_adjusted_node_degree_from_node_name(node_name))?
+        .into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, node_id)")]
+    /// Returns the weighted sum of outbound neighbours of given node.
+    ///
+    /// The method will panic if the given node id is higher than the number of
+    /// nodes in the graph.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_id: int
+    ///     Integer ID of the node.
+    ///
+    ///
+    /// Safety
+    /// ------
+    /// If the given node ID does not exist in the current graph the method will raise a panic.
+    pub unsafe fn get_unchecked_weighted_node_degree_from_node_id(&self, node_id: NodeT) -> f64 {
+        self.inner
+            .get_unchecked_weighted_node_degree_from_node_id(node_id.clone())
+            .into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, node_id)")]
+    /// Returns the number of outbound neighbours of given node ID.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_id: int
+    ///     Integer ID of the node.
+    ///
+    pub fn get_node_degree_from_node_id(&self, node_id: NodeT) -> PyResult<NodeT> {
+        Ok(pe!(self.inner.get_node_degree_from_node_id(node_id.clone()))?.into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, node_id)")]
+    /// Returns the comulative node degree up to the given node.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_id: int
+    ///     Integer ID of the node.
+    ///
+    ///
+    /// Safety
+    /// ------
+    /// If the given node ID does not exist in the current graph the method will raise a panic.
+    pub unsafe fn get_unchecked_comulative_node_degree_from_node_id(
+        &self,
+        node_id: NodeT,
+    ) -> EdgeT {
+        self.inner
+            .get_unchecked_comulative_node_degree_from_node_id(node_id.clone())
+            .into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, node_id)")]
+    /// Returns the comulative node degree up to the given node.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_id: int
+    ///     Integer ID of the node.
+    ///
+    pub fn get_comulative_node_degree_from_node_id(&self, node_id: NodeT) -> PyResult<EdgeT> {
+        Ok(pe!(self
+            .inner
+            .get_comulative_node_degree_from_node_id(node_id.clone()))?
+        .into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, node_id)")]
+    /// Returns the reciprocal squared root node degree up to the given node.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_id: int
+    ///     Integer ID of the node.
+    ///
+    ///
+    /// Safety
+    /// ------
+    /// If the given node ID does not exist in the current graph the method will raise a panic.
+    pub unsafe fn get_unchecked_reciprocal_sqrt_degree_from_node_id(
+        &self,
+        node_id: NodeT,
+    ) -> WeightT {
+        self.inner
+            .get_unchecked_reciprocal_sqrt_degree_from_node_id(node_id.clone())
+            .into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, node_id)")]
+    /// Returns the reciprocal squared root node degree up to the given node.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_id: int
+    ///     Integer ID of the node.
+    ///
+    pub fn get_reciprocal_sqrt_degree_from_node_id(&self, node_id: NodeT) -> PyResult<WeightT> {
+        Ok(pe!(self
+            .inner
+            .get_reciprocal_sqrt_degree_from_node_id(node_id.clone()))?
+        .into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, node_ids)")]
+    /// Return vector with reciprocal squared root degree of the provided nodes.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_ids: List[int]
+    ///     The vector of node IDs whose reciprocal squared root degree is to be retrieved.
+    ///
+    ///
+    /// Safety
+    /// ------
+    /// This method makes the assumption that the provided node IDs exist in the graph, that is
+    ///  they are not higher than the number of nodes in the graph.
+    pub unsafe fn get_unchecked_reciprocal_sqrt_degrees_from_node_ids(
+        &self,
+        node_ids: Vec<NodeT>,
+    ) -> Py<PyArray1<WeightT>> {
+        let gil = pyo3::Python::acquire_gil();
+        to_ndarray_1d!(
+            gil,
+            self.inner
+                .get_unchecked_reciprocal_sqrt_degrees_from_node_ids(&node_ids),
+            WeightT
+        )
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, node_id)")]
+    /// Returns the weighted sum of outbound neighbours of given node ID.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_id: int
+    ///     Integer ID of the node.
+    ///
+    pub fn get_weighted_node_degree_from_node_id(&self, node_id: NodeT) -> PyResult<f64> {
+        Ok(pe!(self
+            .inner
+            .get_weighted_node_degree_from_node_id(node_id.clone()))?
+        .into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, node_name)")]
+    /// Returns the number of outbound neighbours of given node name.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_name: str
+    ///     Integer ID of the node.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the given node name does not exist in the graph.
+    ///
+    pub fn get_node_degree_from_node_name(&self, node_name: &str) -> PyResult<NodeT> {
+        Ok(pe!(self.inner.get_node_degree_from_node_name(node_name))?.into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, k)")]
+    /// Return vector with top k central node names.
+    ///
+    /// Parameters
+    /// ----------
+    /// k: int
+    ///     Number of central nodes to extract.
+    ///
+    pub fn get_top_k_central_node_names(&self, k: NodeT) -> PyResult<Vec<String>> {
+        Ok(pe!(self.inner.get_top_k_central_node_names(k.clone()))?
+            .into_iter()
+            .map(|x| x.into())
+            .collect::<Vec<_>>())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, node_id)")]
+    /// Returns option with vector of node types of given node.
+    ///
+    /// This method will panic if the given node ID is greater than
+    /// the number of nodes in the graph.
+    /// Furthermore, if the graph does NOT have node types, it will NOT
+    /// return neither an error or a panic.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_id: int
+    ///     node whose node type is to be returned.
+    ///
+    ///
+    /// Safety
+    /// ------
+    /// Even though the method will return an option when the node types are
+    ///  not available for the current graph, the behaviour is undefined.
+    pub unsafe fn get_unchecked_node_type_ids_from_node_id(
+        &self,
+        node_id: NodeT,
+    ) -> Option<Py<PyArray1<NodeTypeT>>> {
+        self.inner
+            .get_unchecked_node_type_ids_from_node_id(node_id.clone())
+            .map(|x| {
+                let gil = pyo3::Python::acquire_gil();
+                to_ndarray_1d!(gil, x.to_vec(), NodeTypeT)
+            })
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, node_id)")]
+    /// Returns node type of given node.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_id: int
+    ///     node whose node type is to be returned.
+    ///
+    pub fn get_node_type_ids_from_node_id(
+        &self,
+        node_id: NodeT,
+    ) -> PyResult<Option<Py<PyArray1<NodeTypeT>>>> {
+        Ok(
+            pe!(self.inner.get_node_type_ids_from_node_id(node_id.clone()))?.map(|x| {
+                let gil = pyo3::Python::acquire_gil();
+                to_ndarray_1d!(gil, x.to_vec(), NodeTypeT)
+            }),
+        )
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, edge_id)")]
+    /// Returns edge type of given edge.
+    ///
+    /// This method will panic if the given edge ID is greater than
+    /// the number of edges in the graph.
+    /// Furthermore, if the graph does NOT have edge types, it will NOT
+    /// return neither an error or a panic.
+    ///
+    /// Parameters
+    /// ----------
+    /// edge_id: int
+    ///     edge whose edge type is to be returned.
+    ///
+    ///
+    /// Safety
+    /// ------
+    /// If the given edge ID does not exist in the current graph the method will raise a panic.
+    pub unsafe fn get_unchecked_edge_type_id_from_edge_id(
+        &self,
+        edge_id: EdgeT,
+    ) -> Option<EdgeTypeT> {
+        self.inner
+            .get_unchecked_edge_type_id_from_edge_id(edge_id.clone())
+            .map(|x| x.into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, edge_id)")]
+    /// Returns edge type of given edge.
+    ///
+    /// Parameters
+    /// ----------
+    /// edge_id: int
+    ///     edge whose edge type is to be returned.
+    ///
+    pub fn get_edge_type_id_from_edge_id(&self, edge_id: EdgeT) -> PyResult<Option<EdgeTypeT>> {
+        Ok(pe!(self.inner.get_edge_type_id_from_edge_id(edge_id.clone()))?.map(|x| x.into()))
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, src, dst)")]
+    /// Returns edge type from given edge node IDs.
+    ///
+    /// Parameters
+    /// ----------
+    /// src: int
+    ///     Source node ID of the node of interest.
+    /// dst: int
+    ///     Destination node ID of the node of interest.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the provided nodes do not form an edge.
+    ///
+    pub fn get_edge_type_id_from_edge_node_ids(
+        &self,
+        src: NodeT,
+        dst: NodeT,
+    ) -> PyResult<Option<EdgeTypeT>> {
+        Ok(pe!(self
+            .inner
+            .get_edge_type_id_from_edge_node_ids(src.clone(), dst.clone()))?
+        .map(|x| x.into()))
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, node_id)")]
+    /// Returns result of option with the node type of the given node id.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_id: int
+    ///     The node ID whose node types are to be returned.
+    ///
+    ///
+    /// Safety
+    /// ------
+    /// This method will return an iterator of None values when the graph
+    ///  does not contain node types.
+    pub unsafe fn get_unchecked_node_type_names_from_node_id(
+        &self,
+        node_id: NodeT,
+    ) -> Option<Vec<String>> {
+        self.inner
+            .get_unchecked_node_type_names_from_node_id(node_id.clone())
+            .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, node_id)")]
+    /// Returns result of option with the node type of the given node id.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_id: int
+    ///     The node ID whose node types are to be returned.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the node types are not available for the current graph instance.
+    ///
+    pub fn get_node_type_names_from_node_id(
+        &self,
+        node_id: NodeT,
+    ) -> PyResult<Option<Vec<String>>> {
+        Ok(
+            pe!(self.inner.get_node_type_names_from_node_id(node_id.clone()))?
+                .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>()),
+        )
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, node_name)")]
+    /// Returns result of option with the node type of the given node name.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_name: str
+    ///     The node name whose node types are to be returned.
+    ///
+    pub fn get_node_type_names_from_node_name(
+        &self,
+        node_name: &str,
+    ) -> PyResult<Option<Vec<String>>> {
+        Ok(
+            pe!(self.inner.get_node_type_names_from_node_name(node_name))?
+                .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>()),
+        )
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, edge_id)")]
+    /// Returns option with the edge type of the given edge id.
+    ///
+    /// Parameters
+    /// ----------
+    /// edge_id: int
+    ///     The edge ID whose edge type is to be returned.
+    ///
+    pub fn get_edge_type_name_from_edge_id(&self, edge_id: EdgeT) -> PyResult<Option<String>> {
+        Ok(pe!(self.inner.get_edge_type_name_from_edge_id(edge_id.clone()))?.map(|x| x.into()))
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, edge_type_id)")]
+    /// Return edge type name of given edge type.
+    ///
+    /// Parameters
+    /// ----------
+    /// edge_type_id: int
+    ///     Id of the edge type.
+    ///
+    pub fn get_edge_type_name_from_edge_type_id(
+        &self,
+        edge_type_id: EdgeTypeT,
+    ) -> PyResult<String> {
+        Ok(pe!(self
+            .inner
+            .get_edge_type_name_from_edge_type_id(edge_type_id.clone()))?
+        .into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, edge_id)")]
+    /// Returns weight of the given edge id.
+    ///
+    /// Parameters
+    /// ----------
+    /// edge_id: int
+    ///     The edge ID whose weight is to be returned.
+    ///
+    pub fn get_edge_weight_from_edge_id(&self, edge_id: EdgeT) -> PyResult<WeightT> {
+        Ok(pe!(self.inner.get_edge_weight_from_edge_id(edge_id.clone()))?.into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, src, dst)")]
+    /// Returns weight of the given node ids.
+    ///
+    /// Parameters
+    /// ----------
+    /// src: int
+    ///     The node ID of the source node.
+    /// dst: int
+    ///     The node ID of the destination node.
+    ///
+    pub fn get_edge_weight_from_node_ids(&self, src: NodeT, dst: NodeT) -> PyResult<WeightT> {
+        Ok(pe!(self
+            .inner
+            .get_edge_weight_from_node_ids(src.clone(), dst.clone()))?
+        .into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, src, dst, edge_type)")]
+    /// Returns weight of the given node ids and edge type.
+    ///
+    /// Parameters
+    /// ----------
+    /// src: int
+    ///     The node ID of the source node.
+    /// dst: int
+    ///     The node ID of the destination node.
+    /// edge_type: Optional[int]
+    ///     The edge type ID of the edge.
+    ///
+    pub fn get_edge_weight_from_node_ids_and_edge_type_id(
+        &self,
+        src: NodeT,
+        dst: NodeT,
+        edge_type: Option<EdgeTypeT>,
+    ) -> PyResult<WeightT> {
+        Ok(
+            pe!(self.inner.get_edge_weight_from_node_ids_and_edge_type_id(
+                src.clone(),
+                dst.clone(),
+                edge_type
+            ))?
+            .into(),
+        )
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, src, dst, edge_type)")]
+    /// Returns weight of the given node names and edge type.
+    ///
+    /// Parameters
+    /// ----------
+    /// src: str
+    ///     The node name of the source node.
+    /// dst: str
+    ///     The node name of the destination node.
+    /// edge_type: Optional[&str]
+    ///     The edge type name of the edge.
+    ///
+    pub fn get_edge_weight_from_node_names_and_edge_type_name(
+        &self,
+        src: &str,
+        dst: &str,
+        edge_type: Option<&str>,
+    ) -> PyResult<WeightT> {
+        Ok(pe!(self
+            .inner
+            .get_edge_weight_from_node_names_and_edge_type_name(src, dst, edge_type))?
+        .into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, src_name, dst_name)")]
+    /// Returns weight of the given node names.
+    ///
+    /// Parameters
+    /// ----------
+    /// src_name: str
+    ///     The node name of the source node.
+    /// dst_name: str
+    ///     The node name of the destination node.
+    ///
+    pub fn get_edge_weight_from_node_names(
+        &self,
+        src_name: &str,
+        dst_name: &str,
+    ) -> PyResult<WeightT> {
+        Ok(pe!(self
+            .inner
+            .get_edge_weight_from_node_names(src_name, dst_name))?
+        .into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, node_id)")]
+    /// Returns result with the node name.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_id: int
+    ///     The node ID whose name is to be returned.
+    ///
+    ///
+    /// Safety
+    /// ------
+    /// If the given node ID does not exist in the current graph the method will raise a panic.
+    pub unsafe fn get_unchecked_node_name_from_node_id(&self, node_id: NodeT) -> String {
+        self.inner
+            .get_unchecked_node_name_from_node_id(node_id.clone())
+            .into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, node_id)")]
+    /// Returns result with the node name.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_id: int
+    ///     The node ID whose name is to be returned.
+    ///
+    pub fn get_node_name_from_node_id(&self, node_id: NodeT) -> PyResult<String> {
+        Ok(pe!(self.inner.get_node_name_from_node_id(node_id.clone()))?.into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, node_name)")]
+    /// Returns result with the node ID.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_name: str
+    ///     The node name whose node ID is to be returned.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     When the given node name does not exists in the current graph.
+    ///
+    pub fn get_node_id_from_node_name(&self, node_name: &str) -> PyResult<NodeT> {
+        Ok(pe!(self.inner.get_node_id_from_node_name(node_name))?.into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, node_names)")]
+    /// Returns result with the node IDs.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_names: List[&str]
+    ///     The node names whose node IDs is to be returned.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     When any of the given node name does not exists in the current graph.
+    ///
+    pub fn get_node_ids_from_node_names(
+        &self,
+        node_names: Vec<&str>,
+    ) -> PyResult<Py<PyArray1<NodeT>>> {
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(
+                gil,
+                pe!(self.inner.get_node_ids_from_node_names(node_names))?,
+                NodeT
+            )
+        })
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, node_ids)")]
+    /// Returns result with the node names.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_ids: List[int]
+    ///     The node ids whose node names are to be returned.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     When any of the given node ids does not exists in the current graph.
+    ///
+    pub fn get_node_names_from_node_ids(&self, node_ids: Vec<NodeT>) -> PyResult<Vec<String>> {
+        Ok(pe!(self.inner.get_node_names_from_node_ids(node_ids))?
+            .into_iter()
+            .map(|x| x.into())
+            .collect::<Vec<_>>())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, edge_node_names)")]
+    /// Returns result with the edge node IDs.
+    ///
+    /// Parameters
+    /// ----------
+    /// edge_node_names: List[Tuple[str, str]]
+    ///     The node names whose node IDs is to be returned.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     When any of the given node name does not exists in the current graph.
+    ///
+    pub fn get_edge_node_ids_from_edge_node_names(
+        &self,
+        edge_node_names: Vec<(&str, &str)>,
+    ) -> PyResult<Py<PyArray2<NodeT>>> {
+        Ok({
+            // Warning: this copies the array so it uses double the memory.
+            // To avoid this you should directly generate data compatible with a numpy array
+            // Which is a flat vector with row-first or column-first unrolling
+            let gil = pyo3::Python::acquire_gil();
+            let body = pe!(self
+                .inner
+                .get_edge_node_ids_from_edge_node_names(edge_node_names))?;
+            let result_array = ThreadDataRaceAware {
+                t: unsafe { PyArray2::<NodeT>::new(gil.python(), [body.len(), 2], false) },
+            };
+            body.into_par_iter()
+                .enumerate()
+                .for_each(|(i, (a, b))| unsafe {
+                    *(result_array.t.uget_mut([i, 0])) = a;
+                    *(result_array.t.uget_mut([i, 1])) = b;
+                });
+            result_array.t.to_owned()
+        })
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, edge_node_ids)")]
+    /// Returns result with the edge node names.
+    ///
+    /// Parameters
+    /// ----------
+    /// edge_node_ids: List[Tuple[int, int]]
+    ///     The node names whose node names is to be returned.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     When any of the given node IDs does not exists in the current graph.
+    ///
+    pub fn get_edge_node_names_from_edge_node_ids(
+        &self,
+        edge_node_ids: Vec<(NodeT, NodeT)>,
+    ) -> PyResult<Vec<(String, String)>> {
+        Ok(pe!(self
+            .inner
+            .get_edge_node_names_from_edge_node_ids(edge_node_ids))?
+        .into_iter()
+        .map(|x| {
+            let (subresult_0, subresult_1) = x;
+            (subresult_0.into(), subresult_1.into())
+        })
+        .collect::<Vec<_>>())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, node_name)")]
+    /// Return node type ID for the given node name if available.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_name: str
+    ///     Name of the node.
+    ///
+    pub fn get_node_type_ids_from_node_name(
+        &self,
+        node_name: &str,
+    ) -> PyResult<Option<Py<PyArray1<NodeTypeT>>>> {
+        Ok(
+            pe!(self.inner.get_node_type_ids_from_node_name(node_name))?.map(|x| {
+                let gil = pyo3::Python::acquire_gil();
+                to_ndarray_1d!(gil, x.to_vec(), NodeTypeT)
+            }),
+        )
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, node_name)")]
+    /// Return node type name for the given node name if available.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_name: str
+    ///     Name of the node.
+    ///
+    pub fn get_node_type_name_from_node_name(
+        &self,
+        node_name: &str,
+    ) -> PyResult<Option<Vec<String>>> {
+        Ok(
+            pe!(self.inner.get_node_type_name_from_node_name(node_name))?
+                .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>()),
+        )
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, edge_type_id)")]
+    /// Return number of edges with given edge type ID.
+    ///
+    /// If None is given as an edge type ID, the unknown edge type IDs
+    /// will be returned.
+    ///
+    /// Parameters
+    /// ----------
+    /// edge_type_id: Optional[int]
+    ///     The edge type ID to count the edges of.
+    ///
+    pub fn get_edge_count_from_edge_type_id(
+        &self,
+        edge_type_id: Option<EdgeTypeT>,
+    ) -> PyResult<EdgeT> {
+        Ok(pe!(self.inner.get_edge_count_from_edge_type_id(edge_type_id))?.into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, edge_type_name)")]
+    /// Return edge type ID curresponding to given edge type name.
+    ///
+    /// If None is given as an edge type ID, None is returned.
+    ///
+    /// Parameters
+    /// ----------
+    /// edge_type_name: Optional[&str]
+    ///     The edge type name whose ID is to be returned.
+    ///
+    pub fn get_edge_type_id_from_edge_type_name(
+        &self,
+        edge_type_name: Option<&str>,
+    ) -> PyResult<Option<EdgeTypeT>> {
+        Ok(pe!(self
+            .inner
+            .get_edge_type_id_from_edge_type_name(edge_type_name))?
+        .map(|x| x.into()))
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, edge_type_name)")]
+    /// Return number of edges with given edge type name.
+    ///
+    /// If None is given as an edge type name, the unknown edge types
+    /// will be returned.
+    ///
+    /// Parameters
+    /// ----------
+    /// edge_type_name: Optional[&str]
+    ///     The edge type name to count the edges of.
+    ///
+    pub fn get_edge_count_from_edge_type_name(
+        &self,
+        edge_type_name: Option<&str>,
+    ) -> PyResult<EdgeT> {
+        Ok(pe!(self
+            .inner
+            .get_edge_count_from_edge_type_name(edge_type_name))?
+        .into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, node_type_name)")]
+    /// Return node type ID curresponding to given node type name.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_type_name: str
+    ///     The node type name whose ID is to be returned.
+    ///
+    pub fn get_node_type_id_from_node_type_name(
+        &self,
+        node_type_name: &str,
+    ) -> PyResult<NodeTypeT> {
+        Ok(pe!(self
+            .inner
+            .get_node_type_id_from_node_type_name(node_type_name))?
+        .into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, node_type_id)")]
+    /// Return number of nodes with given node type ID.
+    ///
+    /// If None is given as an node type ID, the unknown node types
+    /// will be returned.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_type_id: Optional[int]
+    ///     The node type ID to count the nodes of.
+    ///
+    pub fn get_node_count_from_node_type_id(
+        &self,
+        node_type_id: Option<NodeTypeT>,
+    ) -> PyResult<NodeT> {
+        Ok(pe!(self.inner.get_node_count_from_node_type_id(node_type_id))?.into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, node_type_name)")]
+    /// Return number of nodes with given node type name.
+    ///
+    /// If None is given as an node type name, the unknown node types
+    /// will be returned.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_type_name: Optional[&str]
+    ///     The node type name to count the nodes of.
+    ///
+    pub fn get_node_count_from_node_type_name(
+        &self,
+        node_type_name: Option<&str>,
+    ) -> PyResult<NodeT> {
+        Ok(pe!(self
+            .inner
+            .get_node_count_from_node_type_name(node_type_name))?
+        .into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, node_id)")]
+    /// Return vector of destinations for the given source node ID.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_id: int
+    ///     Node ID whose neighbours are to be retrieved.
+    ///
+    pub fn get_neighbour_node_ids_from_node_id(
+        &self,
+        node_id: NodeT,
+    ) -> PyResult<Py<PyArray1<NodeT>>> {
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(
+                gil,
+                pe!(self
+                    .inner
+                    .get_neighbour_node_ids_from_node_id(node_id.clone()))?,
+                NodeT
+            )
+        })
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, node_name)")]
+    /// Return vector of destinations for the given source node name.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_name: str
+    ///     Node ID whose neighbours are to be retrieved.
+    ///
+    pub fn get_neighbour_node_ids_from_node_name(
+        &self,
+        node_name: &str,
+    ) -> PyResult<Py<PyArray1<NodeT>>> {
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(
+                gil,
+                pe!(self.inner.get_neighbour_node_ids_from_node_name(node_name))?,
+                NodeT
+            )
+        })
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, node_name)")]
+    /// Return vector of destination names for the given source node name.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_name: str
+    ///     Node name whose neighbours are to be retrieved.
+    ///
+    pub fn get_neighbour_node_names_from_node_name(
+        &self,
+        node_name: &str,
+    ) -> PyResult<Vec<String>> {
+        Ok(pe!(self
+            .inner
+            .get_neighbour_node_names_from_node_name(node_name))?
+        .into_iter()
+        .map(|x| x.into())
+        .collect::<Vec<_>>())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, src, dst)")]
+    /// Return range of outbound edges IDs for all the edges bewteen the given
+    /// source and destination nodes.
+    /// This operation is meaningfull only in a multigraph.
+    ///
+    /// Parameters
+    /// ----------
+    /// src: int
+    ///     Source node.
+    /// dst: int
+    ///     Destination node.
+    ///
+    pub fn get_minmax_edge_ids_from_node_ids(
+        &self,
+        src: NodeT,
+        dst: NodeT,
+    ) -> PyResult<(EdgeT, EdgeT)> {
+        Ok({
+            let (subresult_0, subresult_1) = pe!(self
+                .inner
+                .get_minmax_edge_ids_from_node_ids(src.clone(), dst.clone()))?
+            .into();
+            (subresult_0.into(), subresult_1.into())
+        })
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, src, dst, edge_type)")]
+    /// Return edge ID for given tuple of nodes and edge type.
+    ///
+    /// This method will return an error if the graph does not contain the
+    /// requested edge with edge type.
+    ///
+    /// Parameters
+    /// ----------
+    /// src: int
+    ///     Source node of the edge.
+    /// dst: int
+    ///     Destination node of the edge.
+    /// edge_type: Optional[int]
+    ///     Edge Type of the edge.
+    ///
+    pub fn get_edge_id_from_node_ids_and_edge_type_id(
+        &self,
+        src: NodeT,
+        dst: NodeT,
+        edge_type: Option<EdgeTypeT>,
+    ) -> PyResult<EdgeT> {
+        Ok(pe!(self.inner.get_edge_id_from_node_ids_and_edge_type_id(
+            src.clone(),
+            dst.clone(),
+            edge_type
+        ))?
+        .into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, src_name, dst_name)")]
+    /// Return edge ID for given tuple of node names.
+    ///
+    /// This method will return an error if the graph does not contain the
+    /// requested edge with edge type.
+    ///
+    /// Parameters
+    /// ----------
+    /// src_name: str
+    ///     Source node name of the edge.
+    /// dst_name: str
+    ///     Destination node name of the edge.
+    ///
+    pub fn get_edge_id_from_node_names(&self, src_name: &str, dst_name: &str) -> PyResult<EdgeT> {
+        Ok(pe!(self.inner.get_edge_id_from_node_names(src_name, dst_name))?.into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, src_name, dst_name, edge_type_name)")]
+    /// Return edge ID for given tuple of node names and edge type name.
+    ///
+    /// This method will return an error if the graph does not contain the
+    /// requested edge with edge type.
+    ///
+    /// Parameters
+    /// ----------
+    /// src_name: str
+    ///     Source node name of the edge.
+    /// dst_name: str
+    ///     Destination node name of the edge.
+    /// edge_type_name: Optional[&str]
+    ///     Edge type name.
+    ///
+    pub fn get_edge_id_from_node_names_and_edge_type_name(
+        &self,
+        src_name: &str,
+        dst_name: &str,
+        edge_type_name: Option<&str>,
+    ) -> PyResult<EdgeT> {
+        Ok(
+            pe!(self.inner.get_edge_id_from_node_names_and_edge_type_name(
+                src_name,
+                dst_name,
+                edge_type_name
+            ))?
+            .into(),
+        )
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, edge_type_names)")]
+    /// Return translated edge types from string to internal edge ID.
+    ///
+    /// Parameters
+    /// ----------
+    /// edge_type_names: List[Optional[&str]]
+    ///     Vector of edge types to be converted.
+    ///
+    pub fn get_edge_type_ids_from_edge_type_names(
+        &self,
+        edge_type_names: Vec<Option<&str>>,
+    ) -> PyResult<Vec<Option<EdgeTypeT>>> {
+        Ok(pe!(self
+            .inner
+            .get_edge_type_ids_from_edge_type_names(&edge_type_names))?
+        .into_iter()
+        .map(|x| x.map(|x| x.into()))
+        .collect::<Vec<_>>())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, node_type_names)")]
+    /// Return translated node types from string to internal node ID.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_type_names: List[Optional[&str]]
+    ///     Vector of node types to be converted.
+    ///
+    pub fn get_node_type_ids_from_node_type_names(
+        &self,
+        node_type_names: Vec<Option<&str>>,
+    ) -> PyResult<Vec<Option<NodeTypeT>>> {
+        Ok(pe!(self
+            .inner
+            .get_node_type_ids_from_node_type_names(&node_type_names))?
+        .into_iter()
+        .map(|x| x.map(|x| x.into()))
+        .collect::<Vec<_>>())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, node_type_names)")]
+    /// Return translated node types from string to internal node ID.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_type_names: List[Optional[List[&str]]]
+    ///     Vector of node types to be converted.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the graph does not have node types.
+    /// ValueError
+    ///     If any of the given node type names do not exists in the graph.
+    ///
+    pub fn get_multiple_node_type_ids_from_node_type_names(
+        &self,
+        node_type_names: Vec<Option<Vec<&str>>>,
+    ) -> PyResult<Vec<Option<Py<PyArray1<NodeTypeT>>>>> {
+        Ok(pe!(self
+            .inner
+            .get_multiple_node_type_ids_from_node_type_names(node_type_names))?
+        .into_iter()
+        .map(|x| {
+            x.map(|x| {
+                let gil = pyo3::Python::acquire_gil();
+                to_ndarray_1d!(gil, x, NodeTypeT)
+            })
+        })
+        .collect::<Vec<_>>())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, src)")]
+    /// Return range of outbound edges IDs which have as source the given Node.
+    ///
+    /// The method will panic if the given source node ID is higher than
+    /// the number of nodes in the graph.
+    ///
+    /// Parameters
+    /// ----------
+    /// src: int
+    ///     Node for which we need to compute the cumulative_node_degrees range.
+    ///
+    ///
+    /// Safety
+    /// ------
+    /// If the given node ID does not exist in the current graph the method will raise a panic.
+    pub unsafe fn get_unchecked_minmax_edge_ids_from_source_node_id(
+        &self,
+        src: NodeT,
+    ) -> (EdgeT, EdgeT) {
+        let (subresult_0, subresult_1) = self
+            .inner
+            .get_unchecked_minmax_edge_ids_from_source_node_id(src.clone());
+        (subresult_0.into(), subresult_1.into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, src)")]
+    /// Return range of outbound edges IDs which have as source the given Node.
+    ///
+    /// Parameters
+    /// ----------
+    /// src: int
+    ///     Node for which we need to compute the cumulative_node_degrees range.
+    ///
+    pub fn get_minmax_edge_ids_from_source_node_id(&self, src: NodeT) -> PyResult<(EdgeT, EdgeT)> {
+        Ok({
+            let (subresult_0, subresult_1) = pe!(self
+                .inner
+                .get_minmax_edge_ids_from_source_node_id(src.clone()))?
+            .into();
+            (subresult_0.into(), subresult_1.into())
+        })
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, node_type_id)")]
+    /// Return node type name of given node type.
+    ///
+    /// There is no need for a unchecked version since we will have to map
+    /// on the note_types anyway.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_type_id: int
+    ///     Id of the node type.
+    ///
+    pub fn get_node_type_name_from_node_type_id(
+        &self,
+        node_type_id: NodeTypeT,
+    ) -> PyResult<String> {
+        Ok(pe!(self
+            .inner
+            .get_node_type_name_from_node_type_id(node_type_id.clone()))?
+        .into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, node_type_ids)")]
+    /// Return node type name of given node type.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_type_ids: List[int]
+    ///     Id of the node type.
+    ///
+    ///
+    /// Safety
+    /// ------
+    /// The method will panic if the graph does not contain node types.
+    pub unsafe fn get_unchecked_node_type_names_from_node_type_ids(
+        &self,
+        node_type_ids: Vec<NodeTypeT>,
+    ) -> Vec<String> {
+        self.inner
+            .get_unchecked_node_type_names_from_node_type_ids(&node_type_ids)
+            .into_iter()
+            .map(|x| x.into())
+            .collect::<Vec<_>>()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, node_type_id)")]
+    /// Return number of nodes with the provided node type ID.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_type_id: int
+    ///     The node type to return the number of nodes of.
+    ///
+    ///
+    /// Safety
+    /// ------
+    /// The method may panic if an invalid node type (one not present in the graph)
+    ///  is provided. If the graph does not have node types, zero will be returned.
+    pub unsafe fn get_unchecked_number_of_nodes_from_node_type_id(
+        &self,
+        node_type_id: NodeTypeT,
+    ) -> NodeT {
+        self.inner
+            .get_unchecked_number_of_nodes_from_node_type_id(node_type_id.clone())
+            .into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, node_type_id)")]
+    /// Return number of nodes with the provided node type ID.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_type_id: int
+    ///     The node type to return the number of nodes of.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the graph does not have node types.
+    /// ValueError
+    ///     If the provided node type ID does not exist in the graph.
+    ///
+    pub fn get_number_of_nodes_from_node_type_id(
+        &self,
+        node_type_id: NodeTypeT,
+    ) -> PyResult<NodeT> {
+        Ok(pe!(self
+            .inner
+            .get_number_of_nodes_from_node_type_id(node_type_id.clone()))?
+        .into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, node_type_name)")]
+    /// Return number of nodes with the provided node type name.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_type_name: str
+    ///     The node type to return the number of nodes of.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the graph does not have node types.
+    /// ValueError
+    ///     If the provided node type name does not exist in the graph.
+    ///
+    pub fn get_number_of_nodes_from_node_type_name(&self, node_type_name: &str) -> PyResult<NodeT> {
+        Ok(pe!(self
+            .inner
+            .get_number_of_nodes_from_node_type_name(node_type_name))?
+        .into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, edge_type_id)")]
+    /// Return number of edges with the provided edge type ID.
+    ///
+    /// Parameters
+    /// ----------
+    /// edge_type_id: int
+    ///     The edge type to return the number of edges of.
+    ///
+    ///
+    /// Safety
+    /// ------
+    /// The method may panic if an invalid edge type (one not present in the graph)
+    ///  is provided. If the graph does not have edge types, zero will be returned.
+    pub unsafe fn get_unchecked_number_of_edges_from_edge_type_id(
+        &self,
+        edge_type_id: EdgeTypeT,
+    ) -> EdgeT {
+        self.inner
+            .get_unchecked_number_of_edges_from_edge_type_id(edge_type_id.clone())
+            .into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, edge_type_id)")]
+    /// Return number of edges with the provided edge type ID.
+    ///
+    /// Parameters
+    /// ----------
+    /// edge_type_id: int
+    ///     The edge type to return the number of edges of.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the graph does not have edge types.
+    /// ValueError
+    ///     If the provided edge type ID does not exist in the graph.
+    ///
+    pub fn get_number_of_edges_from_edge_type_id(
+        &self,
+        edge_type_id: EdgeTypeT,
+    ) -> PyResult<EdgeT> {
+        Ok(pe!(self
+            .inner
+            .get_number_of_edges_from_edge_type_id(edge_type_id.clone()))?
+        .into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, edge_type_name)")]
+    /// Return number of edges with the provided edge type name.
+    ///
+    /// Parameters
+    /// ----------
+    /// edge_type_name: str
+    ///     The edge type to return the number of edges of.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the graph does not have edge types.
+    /// ValueError
+    ///     If the provided edge type name does not exist in the graph.
+    ///
+    pub fn get_number_of_edges_from_edge_type_name(&self, edge_type_name: &str) -> PyResult<EdgeT> {
+        Ok(pe!(self
+            .inner
+            .get_number_of_edges_from_edge_type_name(edge_type_name))?
+        .into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, node_ids)")]
+    /// Returns node type IDs counts hashmap for the provided node IDs.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_ids: List[int]
+    ///     The node IDs to consider for this count.
+    ///
+    ///
+    /// Safety
+    /// ------
+    /// Must have node types and the provided node IDs must exit in the graph
+    ///  or the result will be undefined and most likely will lead to panic.
+    pub unsafe fn get_unchecked_node_type_id_counts_hashmap_from_node_ids(
+        &self,
+        node_ids: Vec<NodeT>,
+    ) -> PyResult<HashMap<NodeTypeT, NodeT>> {
+        Ok(pe!(self
+            .inner
+            .get_unchecked_node_type_id_counts_hashmap_from_node_ids(&node_ids))?
+        .into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, node_ids)")]
+    /// Returns edge type IDs counts hashmap for the provided node IDs.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_ids: List[int]
+    ///     The node IDs to consider for this count.
+    ///
+    ///
+    /// Safety
+    /// ------
+    /// Must have edge types and the provided node IDs must exit in the graph
+    ///  or the result will be undefined and most likely will lead to panic.
+    pub unsafe fn get_unchecked_edge_type_id_counts_hashmap_from_node_ids(
+        &self,
+        node_ids: Vec<NodeT>,
+    ) -> PyResult<HashMap<EdgeTypeT, EdgeT>> {
+        Ok(pe!(self
+            .inner
+            .get_unchecked_edge_type_id_counts_hashmap_from_node_ids(&node_ids))?
+        .into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, directed, edge_type_id)")]
+    /// Returns vector containing edge node IDs with given edge type.
+    ///
+    /// Parameters
+    /// ----------
+    /// edge_type_id: Optional[int]
+    ///     Edge type ID to extract.
+    /// directed: bool
+    ///     Whether to iterate the edge list as directed or undirected.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If there are no edge types in the graph.
+    /// ValueError
+    ///     If the given edge type ID does not exist in the graph.
+    ///
+    pub fn get_edge_node_ids_from_edge_type_id(
+        &self,
+        directed: bool,
+        edge_type_id: Option<EdgeTypeT>,
+    ) -> PyResult<Py<PyArray2<NodeT>>> {
+        Ok({
+            // Warning: this copies the array so it uses double the memory.
+            // To avoid this you should directly generate data compatible with a numpy array
+            // Which is a flat vector with row-first or column-first unrolling
+            let gil = pyo3::Python::acquire_gil();
+            let body = pe!(self
+                .inner
+                .get_edge_node_ids_from_edge_type_id(directed.clone(), edge_type_id))?;
+            let result_array = ThreadDataRaceAware {
+                t: unsafe { PyArray2::<NodeT>::new(gil.python(), [body.len(), 2], false) },
+            };
+            body.into_par_iter()
+                .enumerate()
+                .for_each(|(i, (a, b))| unsafe {
+                    *(result_array.t.uget_mut([i, 0])) = a;
+                    *(result_array.t.uget_mut([i, 1])) = b;
+                });
+            result_array.t.to_owned()
+        })
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, edge_type_id)")]
+    /// Returns vector containing directed edge node IDs with given edge type.
+    ///
+    /// Parameters
+    /// ----------
+    /// edge_type_id: Optional[int]
+    ///     Edge type ID to extract.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If there are no edge types in the graph.
+    /// ValueError
+    ///     If the given edge type ID does not exist in the graph.
+    ///
+    pub fn get_directed_edge_node_ids_from_edge_type_id(
+        &self,
+        edge_type_id: Option<EdgeTypeT>,
+    ) -> PyResult<Py<PyArray2<NodeT>>> {
+        Ok({
+            // Warning: this copies the array so it uses double the memory.
+            // To avoid this you should directly generate data compatible with a numpy array
+            // Which is a flat vector with row-first or column-first unrolling
+            let gil = pyo3::Python::acquire_gil();
+            let body = pe!(self
+                .inner
+                .get_directed_edge_node_ids_from_edge_type_id(edge_type_id))?;
+            let result_array = ThreadDataRaceAware {
+                t: unsafe { PyArray2::<NodeT>::new(gil.python(), [body.len(), 2], false) },
+            };
+            body.into_par_iter()
+                .enumerate()
+                .for_each(|(i, (a, b))| unsafe {
+                    *(result_array.t.uget_mut([i, 0])) = a;
+                    *(result_array.t.uget_mut([i, 1])) = b;
+                });
+            result_array.t.to_owned()
+        })
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, edge_type_id)")]
+    /// Returns vector containing directed edge node names with given edge type.
+    ///
+    /// Parameters
+    /// ----------
+    /// edge_type_id: Optional[int]
+    ///     Edge type ID to extract.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If there are no edge types in the graph.
+    /// ValueError
+    ///     If the given edge type ID does not exist in the graph.
+    ///
+    pub fn get_directed_edge_node_names_from_edge_type_id(
+        &self,
+        edge_type_id: Option<EdgeTypeT>,
+    ) -> PyResult<Vec<(String, String)>> {
+        Ok(pe!(self
+            .inner
+            .get_directed_edge_node_names_from_edge_type_id(edge_type_id))?
+        .into_iter()
+        .map(|x| {
+            let (subresult_0, subresult_1) = x;
+            (subresult_0.into(), subresult_1.into())
+        })
+        .collect::<Vec<_>>())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, edge_type_name)")]
+    /// Returns vector containing directed edge node names with given edge type name.
+    ///
+    /// Parameters
+    /// ----------
+    /// edge_type_name: Optional[int]
+    ///     Edge type name to extract.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If there are no edge types in the graph.
+    /// ValueError
+    ///     If the given edge type name does not exist in the graph.
+    ///
+    pub fn get_directed_edge_node_names_from_edge_type_name(
+        &self,
+        edge_type_name: Option<&str>,
+    ) -> PyResult<Vec<(String, String)>> {
+        Ok(pe!(self
+            .inner
+            .get_directed_edge_node_names_from_edge_type_name(edge_type_name))?
+        .into_iter()
+        .map(|x| {
+            let (subresult_0, subresult_1) = x;
+            (subresult_0.into(), subresult_1.into())
+        })
+        .collect::<Vec<_>>())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, edge_type_id)")]
+    /// Returns vector containing directed edge IDs with given edge type name.
+    ///
+    /// Parameters
+    /// ----------
+    /// edge_type_id: Optional[int]
+    ///     Edge type id to extract.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If there are no edge types in the graph.
+    /// ValueError
+    ///     If the given edge type id does not exist in the graph.
+    ///
+    pub fn get_directed_edge_ids_from_edge_type_id(
+        &self,
+        edge_type_id: Option<EdgeTypeT>,
+    ) -> PyResult<Py<PyArray1<EdgeT>>> {
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(
+                gil,
+                pe!(self
+                    .inner
+                    .get_directed_edge_ids_from_edge_type_id(edge_type_id))?,
+                EdgeT
+            )
+        })
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, directed, edge_type_name)")]
+    /// Returns vector containing edge node IDs with given edge type name.
+    ///
+    /// Parameters
+    /// ----------
+    /// edge_type_name: Optional[&str]
+    ///     Edge type name to extract.
+    /// directed: bool
+    ///     Whether to iterate the edge list as directed or undirected.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If there are no edge types in the graph.
+    /// ValueError
+    ///     If the given edge type name does not exist in the graph.
+    ///
+    pub fn get_edge_node_ids_from_edge_type_name(
+        &self,
+        directed: bool,
+        edge_type_name: Option<&str>,
+    ) -> PyResult<Py<PyArray2<NodeT>>> {
+        Ok({
+            // Warning: this copies the array so it uses double the memory.
+            // To avoid this you should directly generate data compatible with a numpy array
+            // Which is a flat vector with row-first or column-first unrolling
+            let gil = pyo3::Python::acquire_gil();
+            let body = pe!(self
+                .inner
+                .get_edge_node_ids_from_edge_type_name(directed.clone(), edge_type_name))?;
+            let result_array = ThreadDataRaceAware {
+                t: unsafe { PyArray2::<NodeT>::new(gil.python(), [body.len(), 2], false) },
+            };
+            body.into_par_iter()
+                .enumerate()
+                .for_each(|(i, (a, b))| unsafe {
+                    *(result_array.t.uget_mut([i, 0])) = a;
+                    *(result_array.t.uget_mut([i, 1])) = b;
+                });
+            result_array.t.to_owned()
+        })
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, edge_type_name)")]
+    /// Returns vector containing directed edge node IDs with given edge type name.
+    ///
+    /// Parameters
+    /// ----------
+    /// edge_type_names: Optional[int]
+    ///     Edge type names to extract.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If there are no edge types in the graph.
+    /// ValueError
+    ///     If the given edge type names does not exist in the graph.
+    ///
+    pub fn get_directed_edge_node_ids_from_edge_type_name(
+        &self,
+        edge_type_name: Option<&str>,
+    ) -> PyResult<Py<PyArray2<NodeT>>> {
+        Ok({
+            // Warning: this copies the array so it uses double the memory.
+            // To avoid this you should directly generate data compatible with a numpy array
+            // Which is a flat vector with row-first or column-first unrolling
+            let gil = pyo3::Python::acquire_gil();
+            let body = pe!(self
+                .inner
+                .get_directed_edge_node_ids_from_edge_type_name(edge_type_name))?;
+            let result_array = ThreadDataRaceAware {
+                t: unsafe { PyArray2::<NodeT>::new(gil.python(), [body.len(), 2], false) },
+            };
+            body.into_par_iter()
+                .enumerate()
+                .for_each(|(i, (a, b))| unsafe {
+                    *(result_array.t.uget_mut([i, 0])) = a;
+                    *(result_array.t.uget_mut([i, 1])) = b;
+                });
+            result_array.t.to_owned()
+        })
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, edge_type_name)")]
+    /// Returns vector containing directed edge IDs with given edge type name.
+    ///
+    /// Parameters
+    /// ----------
+    /// edge_type_names: Optional[int]
+    ///     Edge type names to extract.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If there are no edge types in the graph.
+    /// ValueError
+    ///     If the given edge type names does not exist in the graph.
+    ///
+    pub fn get_directed_edge_ids_from_edge_type_name(
+        &self,
+        edge_type_name: Option<&str>,
+    ) -> PyResult<Py<PyArray1<EdgeT>>> {
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(
+                gil,
+                pe!(self
+                    .inner
+                    .get_directed_edge_ids_from_edge_type_name(edge_type_name))?,
+                EdgeT
+            )
+        })
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, src_node_name_prefixes, dst_node_name_prefixes)")]
+    /// Returns vector of directed edge node names with given node name prefixes
+    ///
+    /// Parameters
+    /// ----------
+    /// src_node_name_prefixes: Optional[List[&str]]
+    ///     Prefix of the source node names.
+    /// dst_node_name_prefixes: Optional[List[&str]]
+    ///     Prefix of the source node names.
+    ///
+    pub fn get_directed_edge_node_names_from_node_curie_prefixes(
+        &self,
+        src_node_name_prefixes: Option<Vec<&str>>,
+        dst_node_name_prefixes: Option<Vec<&str>>,
+    ) -> Vec<(String, String)> {
+        self.inner
+            .get_directed_edge_node_names_from_node_curie_prefixes(
+                src_node_name_prefixes,
+                dst_node_name_prefixes,
+            )
+            .into_iter()
+            .map(|x| {
+                let (subresult_0, subresult_1) = x;
+                (subresult_0.into(), subresult_1.into())
+            })
+            .collect::<Vec<_>>()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, src_node_name_prefixes, dst_node_name_prefixes)")]
+    /// Returns vector of directed edge node IDs with given node name prefixes
+    ///
+    /// Parameters
+    /// ----------
+    /// src_node_name_prefixes: Optional[List[&str]]
+    ///     Prefix of the source node names.
+    /// dst_node_name_prefixes: Optional[List[&str]]
+    ///     Prefix of the source node names.
+    ///
+    pub fn get_directed_edge_node_ids_from_node_curie_prefixes(
+        &self,
+        src_node_name_prefixes: Option<Vec<&str>>,
+        dst_node_name_prefixes: Option<Vec<&str>>,
+    ) -> Py<PyArray2<NodeT>> {
+        // Warning: this copies the array so it uses double the memory.
+        // To avoid this you should directly generate data compatible with a numpy array
+        // Which is a flat vector with row-first or column-first unrolling
+        let gil = pyo3::Python::acquire_gil();
+        let body = self
+            .inner
+            .get_directed_edge_node_ids_from_node_curie_prefixes(
+                src_node_name_prefixes,
+                dst_node_name_prefixes,
+            );
+        let result_array = ThreadDataRaceAware {
+            t: unsafe { PyArray2::<NodeT>::new(gil.python(), [body.len(), 2], false) },
+        };
+        body.into_par_iter()
+            .enumerate()
+            .for_each(|(i, (a, b))| unsafe {
+                *(result_array.t.uget_mut([i, 0])) = a;
+                *(result_array.t.uget_mut([i, 1])) = b;
+            });
+        result_array.t.to_owned()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, src_node_name_prefixes, dst_node_name_prefixes)")]
+    /// Returns vector of directed edge IDs with given node name prefixes.
+    ///
+    /// Parameters
+    /// ----------
+    /// src_node_name_prefixes: Optional[List[&str]]
+    ///     Prefix of the source node names.
+    /// dst_node_name_prefixes: Optional[List[&str]]
+    ///     Prefix of the source node names.
+    ///
+    pub fn get_directed_edge_ids_from_node_curie_prefixes(
+        &self,
+        src_node_name_prefixes: Option<Vec<&str>>,
+        dst_node_name_prefixes: Option<Vec<&str>>,
+    ) -> Py<PyArray1<EdgeT>> {
+        let gil = pyo3::Python::acquire_gil();
+        to_ndarray_1d!(
+            gil,
+            self.inner.get_directed_edge_ids_from_node_curie_prefixes(
+                src_node_name_prefixes,
+                dst_node_name_prefixes
+            ),
+            EdgeT
+        )
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, src_node_name_prefixes, dst_node_name_prefixes)")]
+    /// Returns number of directed edge IDs with given node name prefixes.
+    ///
+    /// Parameters
+    /// ----------
+    /// src_node_name_prefixes: Optional[List[&str]]
+    ///     Prefix of the source node names.
+    /// dst_node_name_prefixes: Optional[List[&str]]
+    ///     Prefix of the source node names.
+    ///
+    pub fn get_number_of_directed_edges_from_node_curie_prefixes(
+        &self,
+        src_node_name_prefixes: Option<Vec<&str>>,
+        dst_node_name_prefixes: Option<Vec<&str>>,
+    ) -> EdgeT {
+        self.inner
+            .get_number_of_directed_edges_from_node_curie_prefixes(
+                src_node_name_prefixes,
+                dst_node_name_prefixes,
+            )
+            .into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, curie_prefixes)")]
+    /// Returns vector with node IDs with given curie prefix.
+    ///
+    /// Parameters
+    /// ----------
+    /// curie_prefixes: List[str]
+    ///     Prefix of the source node names.
+    ///
+    pub fn get_node_ids_from_node_curie_prefixes(
+        &self,
+        curie_prefixes: Vec<&str>,
+    ) -> Py<PyArray1<NodeT>> {
+        let gil = pyo3::Python::acquire_gil();
+        to_ndarray_1d!(
+            gil,
+            self.inner
+                .get_node_ids_from_node_curie_prefixes(&curie_prefixes),
+            NodeT
+        )
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, curie_prefixes)")]
+    /// Returns vector with node names with given curie prefix.
+    ///
+    /// Parameters
+    /// ----------
+    /// curie_prefixes: List[&str]
+    ///     Prefix of the source node names.
+    ///
+    pub fn get_node_names_from_node_curie_prefixes(
+        &self,
+        curie_prefixes: Vec<&str>,
+    ) -> Vec<String> {
+        self.inner
+            .get_node_names_from_node_curie_prefixes(curie_prefixes)
+            .into_iter()
+            .map(|x| x.into())
+            .collect::<Vec<_>>()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, curie_prefixes)")]
+    /// Returns number of nodes with node IDs with given curie prefix.
+    ///
+    /// Parameters
+    /// ----------
+    /// curie_prefixes: List[&str]
+    ///     Prefix of the source node names.
+    ///
+    pub fn get_number_of_nodes_from_node_curie_prefixes(&self, curie_prefixes: Vec<&str>) -> NodeT {
+        self.inner
+            .get_number_of_nodes_from_node_curie_prefixes(&curie_prefixes)
+            .into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, separator)")]
+    /// Returns vector with node names prefixes when the node names include the provided separator.
+    ///
+    /// Parameters
+    /// ----------
+    /// separator: Optional[&str]
+    ///     The separator to use to determine a prefix. By default, a column
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the provided separator is empty.
+    ///
+    pub fn get_node_names_prefixes(&self, separator: Option<&str>) -> PyResult<Vec<String>> {
+        Ok(pe!(self.inner.get_node_names_prefixes(separator))?
+            .into_iter()
+            .map(|x| x.into())
+            .collect::<Vec<_>>())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, other)")]
+    /// Returns mapping from the current graph node names to the other provided graph node names.
+    ///
+    /// Parameters
+    /// ----------
+    /// other: Graph
+    ///     The other graph to which remap the node names.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the graph is not contained in the provided other graph.
+    ///
+    pub fn get_node_ids_mapping_from_graph(&self, other: &Graph) -> PyResult<Py<PyArray1<NodeT>>> {
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(
+                gil,
+                pe!(self.inner.get_node_ids_mapping_from_graph(&other.inner))?,
+                NodeT
+            )
+        })
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, subgraph)")]
+    /// Returns the degree of every node in the provided subgraph
+    pub fn get_non_zero_subgraph_node_degrees(
+        &self,
+        subgraph: &Graph,
+    ) -> PyResult<Py<PyArray1<NodeT>>> {
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(
+                gil,
+                pe!(self
+                    .inner
+                    .get_non_zero_subgraph_node_degrees(&subgraph.inner))?,
+                NodeT
+            )
+        })
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, src, dst)")]
+    /// Returns edge IDs of multigraph edge ids with same source and destination nodes and different edge type.
+    ///
+    /// Parameters
+    /// ----------
+    /// src: int
+    ///     Source node id of the edge.
+    /// dst: int
+    ///      Destination node id of the edge.
+    ///
+    pub fn get_multigraph_edge_ids_from_node_ids(
+        &self,
+        src: NodeT,
+        dst: NodeT,
+    ) -> PyResult<Py<PyArray1<EdgeT>>> {
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(
+                gil,
+                pe!(self
+                    .inner
+                    .get_multigraph_edge_ids_from_node_ids(src.clone(), dst.clone()))?,
+                EdgeT
+            )
+        })
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, src, dst)")]
+    /// Returns number of multigraph edges with same source and destination nodes and different edge type.
+    ///
+    /// Parameters
+    /// ----------
+    /// src: int
+    ///     Source node id of the edge.
+    /// dst: int
+    ///      Destination node id of the edge.
+    ///
+    pub fn get_number_of_multigraph_edges_from_node_ids(
+        &self,
+        src: NodeT,
+        dst: NodeT,
+    ) -> PyResult<usize> {
+        Ok(pe!(self
+            .inner
+            .get_number_of_multigraph_edges_from_node_ids(src.clone(), dst.clone()))?
+        .into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, bfs, first_node_ids, second_node_ids)")]
+    /// Returns shared ancestors of the provided node ids.
+    ///
+    /// Parameters
+    /// ----------
+    /// bfs: ShortestPathsResultBFS
+    ///     The BFS object to use for the ancestors.
+    /// first_node_ids: List[int]
+    ///     The first node ids to query for.
+    /// second_node_ids: List[int]
+    ///     The second node ids to query for.
+    ///
+    pub fn get_ancestors_jaccard_from_node_ids(
+        &self,
+        bfs: &ShortestPathsResultBFS,
+        first_node_ids: Vec<NodeT>,
+        second_node_ids: Vec<NodeT>,
+    ) -> PyResult<Py<PyArray1<WeightT>>> {
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(
+                gil,
+                pe!(self.inner.get_ancestors_jaccard_from_node_ids(
+                    bfs.into(),
+                    &first_node_ids,
+                    &second_node_ids
+                ))?,
+                WeightT
+            )
+        })
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, bfs, first_node_names, second_node_names)")]
+    /// Returns shared ancestors of the provided node names.
+    ///
+    /// Parameters
+    /// ----------
+    /// bfs: ShortestPathsResultBFS
+    ///     The BFS object to use for the ancestors.
+    /// first_node_names: List[str]
+    ///     The first node names to query for.
+    /// second_node_names: List[str]
+    ///     The second node names to query for.
+    ///
+    pub fn get_ancestors_jaccard_from_node_names(
+        &self,
+        bfs: &ShortestPathsResultBFS,
+        first_node_names: Vec<String>,
+        second_node_names: Vec<String>,
+    ) -> PyResult<Py<PyArray1<WeightT>>> {
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(
+                gil,
+                pe!(self.inner.get_ancestors_jaccard_from_node_names(
+                    bfs.into(),
+                    &first_node_names,
+                    &second_node_names
+                ))?,
+                WeightT
+            )
+        })
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(
+        text_signature = "($self, recursion_minimum_improvement, first_phase_minimum_improvement, patience, random_state)"
+    )]
+    /// Returns vector of vectors of communities for each layer of hierarchy minimizing undirected modularity.
+    ///
+    /// Parameters
+    /// ----------
+    /// recursion_minimum_improvement: Optional[float]
+    ///     The minimum improvement to warrant another resursion round. By default, zero.
+    /// first_phase_minimum_improvement: Optional[float]
+    ///     The minimum improvement to warrant another first phase iteration. By default, `0.00001` (not zero because of numerical instability).
+    /// patience: Optional[int]
+    ///     How many iterations of the first phase to wait for before stopping. By default, `5`.
+    /// random_state: Optional[int]
+    ///     The random state to use to reproduce this modularity computation. By default, 42.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the graph is not directed.
+    /// ValueError
+    ///     If the `recursion_minimum_improvement` has an invalid value, i.e. NaN or infinity.
+    /// ValueError
+    ///     If the `first_phase_minimum_improvement` has an invalid value, i.e. NaN or infinity.
+    ///
+    pub fn get_undirected_louvain_community_detection(
+        &self,
+        recursion_minimum_improvement: Option<f64>,
+        first_phase_minimum_improvement: Option<f64>,
+        patience: Option<usize>,
+        random_state: Option<u64>,
+    ) -> PyResult<Vec<Vec<usize>>> {
+        Ok(pe!(self.inner.get_undirected_louvain_community_detection(
+            recursion_minimum_improvement,
+            first_phase_minimum_improvement,
+            patience,
+            random_state
+        ))?
+        .into_iter()
+        .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>())
+        .collect::<Vec<_>>())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, node_community_memberships)")]
+    /// Returns the directed modularity of the graph from the given memberships.
+    ///
+    /// Parameters
+    /// ----------
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the number of provided memberships does not match the number of nodes of the graph.
+    ///
+    pub fn get_directed_modularity_from_node_community_memberships(
+        &self,
+        node_community_memberships: Vec<NodeT>,
+    ) -> PyResult<f64> {
+        Ok(pe!(self
+            .inner
+            .get_directed_modularity_from_node_community_memberships(&node_community_memberships))?
+        .into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, node_community_memberships)")]
+    /// Returns the undirected modularity of the graph from the given memberships.
+    ///
+    /// Parameters
+    /// ----------
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the number of provided memberships does not match the number of nodes of the graph.
+    ///
+    pub fn get_undirected_modularity_from_node_community_memberships(
+        &self,
+        node_community_memberships: Vec<NodeT>,
+    ) -> PyResult<f64> {
+        Ok(pe!(self
+            .inner
+            .get_undirected_modularity_from_node_community_memberships(
+                &node_community_memberships
+            ))?
+        .into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Return vector of node tuples in the current graph instance
+    pub fn get_node_tuples(&self) -> PyResult<Vec<NodeTuple>> {
+        Ok(pe!(self.inner.get_node_tuples())?
+            .into_iter()
+            .map(|x| x.into())
+            .collect::<Vec<_>>())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, random_state)")]
+    /// Return random node type ID.
+    ///
+    /// Parameters
+    /// ----------
+    /// random_state: int
+    ///     The random state to use to reproduce the sampling.
+    ///
+    pub fn get_random_node_type(&self, random_state: u64) -> PyResult<NodeTypeT> {
+        Ok(pe!(self.inner.get_random_node_type(random_state.clone()))?.into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, random_state)")]
+    /// Return random edge type ID.
+    ///
+    /// Parameters
+    /// ----------
+    /// random_state: int
+    ///     The random state to use to reproduce the sampling.
+    ///
+    pub fn get_random_edge_type(&self, random_state: u64) -> PyResult<EdgeTypeT> {
+        Ok(pe!(self.inner.get_random_edge_type(random_state.clone()))?.into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, random_state)")]
+    /// Return random scale_free edge type ID.
+    ///
+    /// Parameters
+    /// ----------
+    /// random_state: int
+    ///     The random state to use to reproduce the sampling.
+    ///
+    ///
+    /// Safety
+    /// ------
+    /// * If the graph does not have edge types, the method will always return None.
+    pub unsafe fn get_unchecked_random_scale_free_edge_type(
+        &self,
+        random_state: u64,
+    ) -> Option<EdgeTypeT> {
+        self.inner
+            .get_unchecked_random_scale_free_edge_type(random_state.clone())
+            .map(|x| x.into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, random_state)")]
+    /// Return random scale_free edge type ID.
+    ///
+    /// Parameters
+    /// ----------
+    /// random_state: int
+    ///     The random state to use to reproduce the sampling.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the graph does not have edge types.
+    ///
+    pub fn get_random_scale_free_edge_type(
+        &self,
+        random_state: u64,
+    ) -> PyResult<Option<EdgeTypeT>> {
+        Ok(pe!(self
+            .inner
+            .get_random_scale_free_edge_type(random_state.clone()))?
+        .map(|x| x.into()))
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, random_state)")]
+    /// Return random node ID.
+    ///
+    /// Parameters
+    /// ----------
+    /// random_state: int
+    ///     The random state to use to reproduce the sampling.
+    ///
+    pub fn get_random_node(&self, random_state: u64) -> NodeT {
+        self.inner.get_random_node(random_state.clone()).into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, random_state)")]
+    /// Return random edge ID.
+    ///
+    /// Parameters
+    /// ----------
+    /// random_state: int
+    ///     The random state to use to reproduce the sampling.
+    ///
+    pub fn get_random_edge_id(&self, random_state: u64) -> EdgeT {
+        self.inner.get_random_edge_id(random_state.clone()).into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, random_state)")]
+    /// Return random node ID following outbounds degree distribution of the graph.
+    ///
+    /// Parameters
+    /// ----------
+    /// random_state: int
+    ///     The random state to use to reproduce the sampling.
+    ///
+    pub fn get_random_outbounds_scale_free_node(&self, random_state: u64) -> NodeT {
+        self.inner
+            .get_random_outbounds_scale_free_node(random_state.clone())
+            .into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, random_state)")]
+    /// Return random node ID following inbounds degree distribution of the graph.
+    ///
+    /// Parameters
+    /// ----------
+    /// random_state: int
+    ///     The random state to use to reproduce the sampling.
+    ///
+    pub fn get_random_inbounds_scale_free_node(&self, random_state: u64) -> NodeT {
+        self.inner
+            .get_random_inbounds_scale_free_node(random_state.clone())
+            .into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, number_of_nodes_to_sample, random_state)")]
+    /// Return random unique sorted numbers.
+    ///
+    /// Parameters
+    /// ----------
+    /// number_of_nodes_to_sample: int
+    ///     The number of nodes to sample.
+    /// random_state: int
+    ///     The random state to use to reproduce the sampling.
+    ///
+    pub fn get_sorted_unique_random_nodes(
+        &self,
+        number_of_nodes_to_sample: NodeT,
+        random_state: u64,
+    ) -> PyResult<Py<PyArray1<NodeT>>> {
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(
+                gil,
+                pe!(self.inner.get_sorted_unique_random_nodes(
+                    number_of_nodes_to_sample.clone(),
+                    random_state.clone()
+                ))?,
+                NodeT
+            )
+        })
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, number_of_nodes_to_sample, root_node)")]
+    /// Return nodes sampled from the neighbourhood of given root nodes.
+    ///
+    /// Parameters
+    /// ----------
+    /// number_of_nodes_to_sample: int
+    ///     The number of nodes to sample.
+    /// root_node: int
+    ///     The root node from .
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the number of requested nodes is higher than the number of nodes in the graph.
+    /// ValueError
+    ///     If the given root node does not exist in the curret graph instance.
+    ///
+    pub fn get_breadth_first_search_random_nodes(
+        &self,
+        number_of_nodes_to_sample: NodeT,
+        root_node: NodeT,
+    ) -> PyResult<Py<PyArray1<NodeT>>> {
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(
+                gil,
+                pe!(self.inner.get_breadth_first_search_random_nodes(
+                    number_of_nodes_to_sample.clone(),
+                    root_node.clone()
+                ))?,
+                NodeT
+            )
+        })
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, node, random_state, walk_length, unique)")]
+    /// Returns unique nodes sampled from uniform random walk.
+    ///
+    /// Parameters
+    /// ----------
+    /// node: int
+    ///     Node from where to start the random walks.
+    /// random_state: int
+    ///     the random_state to use for extracting the nodes and edges.
+    /// walk_length: int
+    ///     Length of the random walk.
+    /// unique: Optional[bool]
+    ///     Whether to make the sampled nodes unique.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the given node does not exist in the current slack.
+    ///
+    pub fn get_uniform_random_walk_random_nodes(
+        &self,
+        node: NodeT,
+        random_state: u64,
+        walk_length: u64,
+        unique: Option<bool>,
+    ) -> PyResult<Py<PyArray1<NodeT>>> {
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(
+                gil,
+                pe!(self.inner.get_uniform_random_walk_random_nodes(
+                    node.clone(),
+                    random_state.clone(),
+                    walk_length.clone(),
+                    unique
+                ))?,
+                NodeT
+            )
+        })
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Return list of the supported node sampling methods
+    pub fn get_node_sampling_methods(&self) -> Vec<String> {
+        self.inner
+            .get_node_sampling_methods()
+            .into_iter()
+            .map(|x| x.to_string())
+            .collect::<Vec<_>>()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(
+        text_signature = "($self, number_of_nodes_to_sample, random_state, node_sampling_method, root_node, unique)"
+    )]
+    /// Return subsampled nodes according to the given method and parameters.
+    ///
+    /// Parameters
+    /// ----------
+    /// number_of_nodes_to_sample: int
+    ///     The number of nodes to sample.
+    /// random_state: int
+    ///     The random state to reproduce the sampling.
+    /// root_node: Optional[int]
+    ///     The (optional) root node to use to sample. In not provided, a random one is sampled.
+    /// node_sampling_method: str
+    ///     The method to use to sample the nodes. Can either be random nodes, breath first search-based or uniform random walk-based.
+    /// unique: Optional[bool]
+    ///     Whether to make the sampled nodes unique.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the given node sampling method is not supported.
+    ///
+    pub fn get_subsampled_nodes(
+        &self,
+        number_of_nodes_to_sample: NodeT,
+        random_state: u64,
+        node_sampling_method: &str,
+        root_node: Option<NodeT>,
+        unique: Option<bool>,
+    ) -> PyResult<Py<PyArray1<NodeT>>> {
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(
+                gil,
+                pe!(self.inner.get_subsampled_nodes(
+                    number_of_nodes_to_sample.clone(),
+                    random_state.clone(),
+                    node_sampling_method,
+                    root_node,
+                    unique
+                ))?,
+                NodeT
+            )
+        })
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, other)")]
+    /// Returns whether the graphs share the same nodes.
+    ///
+    /// Parameters
+    /// ----------
+    /// other: Graph
+    ///     The other graph.
+    ///
+    pub fn has_compatible_node_vocabularies(&self, other: &Graph) -> bool {
+        self.inner
+            .has_compatible_node_vocabularies(&other.inner)
+            .into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, other)")]
+    /// Returns whether the graphs share the same node types or absence thereof.
+    ///
+    /// Parameters
+    /// ----------
+    /// other: Graph
+    ///     The other graph.
+    ///
+    pub fn has_compatible_node_types_vocabularies(&self, other: &Graph) -> bool {
+        self.inner
+            .has_compatible_node_types_vocabularies(&other.inner)
+            .into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, other)")]
+    /// Returns whether the graphs share the same edge types or absence thereof.
+    ///
+    /// Parameters
+    /// ----------
+    /// other: Graph
+    ///     The other graph.
+    ///
+    pub fn has_compatible_edge_types_vocabularies(&self, other: &Graph) -> bool {
+        self.inner
+            .has_compatible_edge_types_vocabularies(&other.inner)
+            .into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, other)")]
+    /// Return true if the graphs are compatible.
+    ///
+    /// Parameters
+    /// ----------
+    /// other: Graph
+    ///     The other graph.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If a graph is directed and the other is undirected.
+    /// ValueError
+    ///     If one of the two graphs has edge weights and the other does not.
+    /// ValueError
+    ///     If one of the two graphs has node types and the other does not.
+    /// ValueError
+    ///     If one of the two graphs has edge types and the other does not.
+    ///
+    pub fn is_compatible(&self, other: &Graph) -> PyResult<bool> {
+        Ok(pe!(self.inner.is_compatible(&other.inner))?.into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, other)")]
+    /// Return true if the graphs share the same adjacency matrix.
+    ///
+    /// Parameters
+    /// ----------
+    /// other: Graph
+    ///     The other graph.
+    ///
+    pub fn has_same_adjacency_matrix(&self, other: &Graph) -> PyResult<bool> {
+        Ok(pe!(self.inner.has_same_adjacency_matrix(&other.inner))?.into())
+    }
+
+>>>>>>> 9f5bab19f4016207e650573b898a6d1054bf5346
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self, node_id)")]
     /// Validates provided node ID.
@@ -11307,6 +15922,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
+<<<<<<< HEAD
     #[pyo3(text_signature = "($self, edge_id)")]
     /// Returns option with the weight of the given edge id.
     ///
@@ -14197,6 +18813,89 @@ impl Graph {
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self, minimum_number_of_nodes_per_tendril, compute_tendril_nodes)")]
     /// Return vector of Tendrils in the current graph instance.
+=======
+    #[pyo3(text_signature = "($self)")]
+    /// Print the current graph in a format compatible with Graphviz dot's format
+    pub fn to_dot(&self) -> String {
+        self.inner.to_dot().into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, vector_sources, vector_reciprocal_sqrt_degrees)")]
+    /// Enable extra perks that buys you time as you accept to spend more memory.
+    ///
+    /// Parameters
+    /// ----------
+    /// vector_sources: Optional[bool]
+    ///     Whether to cache sources into a vector for faster walks.
+    /// vector_reciprocal_sqrt_degrees: Optional[bool]
+    ///     Whether to cache reciprocal_sqrt_degrees into a vector for faster laplacian kernel computation.
+    ///
+    pub fn enable(
+        &mut self,
+        vector_sources: Option<bool>,
+        vector_reciprocal_sqrt_degrees: Option<bool>,
+    ) {
+        self.inner
+            .enable(vector_sources, vector_reciprocal_sqrt_degrees);
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Disable all extra perks, reducing memory impact but incresing time requirements
+    pub fn disable_all(&mut self) {
+        self.inner.disable_all();
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Returns report relative to the graph metrics
+    ///
+    /// The report includes the following metrics by default:
+    /// * Name of the graph
+    /// * Whether the graph is directed or undirected
+    /// * Number of singleton nodes
+    /// * Number of nodes
+    /// - If the graph has nodes, we also compute:
+    /// * Minimum unweighted node degree
+    /// * Maximum unweighted node degree
+    /// * Unweighted node degree mean
+    /// * Number of edges
+    /// * Number of self-loops
+    /// * Number of singleton with self-loops
+    /// * Whether the graph is a multigraph
+    /// * Number of parallel edges
+    /// * Number of directed edges
+    /// - If the graph has edges, we also compute:
+    /// * Rate of self-loops
+    /// * Whether the graph has weighted edges
+    /// - If the graph has weights, we also compute:
+    /// * Minimum weighted node degree
+    /// * Maximum weighted node degree
+    /// * Weighted node degree mean
+    /// * The total edge weights
+    /// * Whether the graph has node types
+    /// - If the graph has node types, we also compute:
+    /// * Whether the graph has singleton node types
+    /// * The number of node types
+    /// * The number of nodes with unknown node types
+    /// * The number of nodes with known node types
+    /// * Whether the graph has edge types
+    /// - If the graph has edge types, we also compute:
+    /// * Whether the graph has singleton edge types
+    /// * The number of edge types
+    /// * The number of edges with unknown edge types
+    /// * The number of edges with known edge types
+    ///
+    /// On request, since it takes more time to compute it, the method also provides:
+    pub fn report(&self) -> HashMap<&'static str, String> {
+        self.inner.report().into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, other, verbose)")]
+    /// Return rendered textual report about the graph overlaps.
+>>>>>>> 9f5bab19f4016207e650573b898a6d1054bf5346
     ///
     /// Parameters
     /// ----------
@@ -16860,6 +21559,196 @@ pub const GRAPH_METHODS_NAMES: &[&str] = &[
     "get_star_edge_names",
     "get_clique_edges",
     "get_clique_edge_names",
+<<<<<<< HEAD
+=======
+    "from_csv",
+    "get_total_edge_weights",
+    "get_mininum_edge_weight",
+    "get_maximum_edge_weight",
+    "get_unchecked_maximum_node_degree",
+    "get_unchecked_minimum_node_degree",
+    "get_weighted_maximum_node_degree",
+    "get_weighted_minimum_node_degree",
+    "get_number_of_weighted_singleton_nodes",
+    "get_number_of_selfloops",
+    "get_number_of_unique_selfloops",
+    "build_bipartite_graph_from_edge_node_ids",
+    "build_clique_graph_from_node_ids",
+    "build_bipartite_graph_from_edge_node_names",
+    "build_clique_graph_from_node_names",
+    "build_bipartite_graph_from_edge_node_prefixes",
+    "build_clique_graph_from_node_prefixes",
+    "build_bipartite_graph_from_edge_node_types",
+    "build_clique_graph_from_node_type_names",
+    "get_isomorphic_node_ids_groups",
+    "get_isomorphic_node_names_groups",
+    "get_number_of_isomorphic_node_groups",
+    "get_isomorphic_node_type_ids_groups",
+    "get_isomorphic_node_type_names_groups",
+    "get_number_of_isomorphic_node_type_groups",
+    "get_approximated_isomorphic_node_type_ids_groups",
+    "get_approximated_isomorphic_node_type_names_groups",
+    "get_number_of_approximated_isomorphic_node_type_groups",
+    "get_isomorphic_edge_type_ids_groups",
+    "get_isomorphic_edge_type_names_groups",
+    "get_number_of_isomorphic_edge_type_groups",
+    "has_isomorphic_nodes",
+    "has_unchecked_isomorphic_node_types_from_node_ids",
+    "has_isomorphic_node_types_from_node_ids",
+    "get_number_of_triangles",
+    "get_number_of_squares",
+    "get_number_of_squares_per_node",
+    "get_number_of_triads",
+    "get_number_of_weighted_triads",
+    "get_transitivity",
+    "get_number_of_triangles_per_node",
+    "get_clustering_coefficient_per_node",
+    "get_clustering_coefficient",
+    "get_average_clustering_coefficient",
+    "get_unchecked_edge_weight_from_edge_id",
+    "get_unchecked_edge_weight_from_node_ids",
+    "get_unchecked_node_id_from_node_name",
+    "get_unchecked_edge_type_id_from_edge_type_name",
+    "get_unchecked_edge_type_name_from_edge_type_id",
+    "get_unchecked_edge_count_from_edge_type_id",
+    "get_unchecked_node_count_from_node_type_id",
+    "get_unchecked_edge_id_from_node_ids_and_edge_type_id",
+    "get_unchecked_minmax_edge_ids_from_node_ids",
+    "get_unchecked_node_ids_from_edge_id",
+    "get_unchecked_node_names_from_edge_id",
+    "get_unchecked_source_node_id_from_edge_id",
+    "get_unchecked_destination_node_id_from_edge_id",
+    "get_source_node_id_from_edge_id",
+    "get_destination_node_id_from_edge_id",
+    "get_unchecked_number_of_selfloops_from_node_id",
+    "get_number_of_selfloops_from_node_id",
+    "get_number_of_selfloops_from_node_name",
+    "get_unchecked_source_node_name_from_edge_id",
+    "get_unchecked_destination_node_name_from_edge_id",
+    "get_source_node_name_from_edge_id",
+    "get_destination_node_name_from_edge_id",
+    "get_node_names_from_edge_id",
+    "get_node_ids_from_edge_id",
+    "get_unchecked_edge_id_from_node_ids",
+    "get_edge_id_from_node_ids",
+    "get_unchecked_unique_source_node_id",
+    "get_unchecked_node_ids_and_edge_type_id_from_edge_id",
+    "get_node_ids_and_edge_type_id_from_edge_id",
+    "get_unchecked_node_ids_and_edge_type_id_and_edge_weight_from_edge_id",
+    "get_node_ids_and_edge_type_id_and_edge_weight_from_edge_id",
+    "get_top_k_central_node_ids",
+    "get_weighted_top_k_central_node_ids",
+    "get_unchecked_node_degree_from_node_id",
+    "get_unchecked_selfloop_adjusted_node_degree_from_node_id",
+    "get_selfloop_adjusted_node_degree_from_node_id",
+    "get_selfloop_adjusted_node_degree_from_node_name",
+    "get_unchecked_weighted_node_degree_from_node_id",
+    "get_node_degree_from_node_id",
+    "get_unchecked_comulative_node_degree_from_node_id",
+    "get_comulative_node_degree_from_node_id",
+    "get_unchecked_reciprocal_sqrt_degree_from_node_id",
+    "get_reciprocal_sqrt_degree_from_node_id",
+    "get_unchecked_reciprocal_sqrt_degrees_from_node_ids",
+    "get_weighted_node_degree_from_node_id",
+    "get_node_degree_from_node_name",
+    "get_top_k_central_node_names",
+    "get_unchecked_node_type_ids_from_node_id",
+    "get_node_type_ids_from_node_id",
+    "get_unchecked_edge_type_id_from_edge_id",
+    "get_edge_type_id_from_edge_id",
+    "get_edge_type_id_from_edge_node_ids",
+    "get_unchecked_node_type_names_from_node_id",
+    "get_node_type_names_from_node_id",
+    "get_node_type_names_from_node_name",
+    "get_edge_type_name_from_edge_id",
+    "get_edge_type_name_from_edge_type_id",
+    "get_edge_weight_from_edge_id",
+    "get_edge_weight_from_node_ids",
+    "get_edge_weight_from_node_ids_and_edge_type_id",
+    "get_edge_weight_from_node_names_and_edge_type_name",
+    "get_edge_weight_from_node_names",
+    "get_unchecked_node_name_from_node_id",
+    "get_node_name_from_node_id",
+    "get_node_id_from_node_name",
+    "get_node_ids_from_node_names",
+    "get_node_names_from_node_ids",
+    "get_edge_node_ids_from_edge_node_names",
+    "get_edge_node_names_from_edge_node_ids",
+    "get_node_type_ids_from_node_name",
+    "get_node_type_name_from_node_name",
+    "get_edge_count_from_edge_type_id",
+    "get_edge_type_id_from_edge_type_name",
+    "get_edge_count_from_edge_type_name",
+    "get_node_type_id_from_node_type_name",
+    "get_node_count_from_node_type_id",
+    "get_node_count_from_node_type_name",
+    "get_neighbour_node_ids_from_node_id",
+    "get_neighbour_node_ids_from_node_name",
+    "get_neighbour_node_names_from_node_name",
+    "get_minmax_edge_ids_from_node_ids",
+    "get_edge_id_from_node_ids_and_edge_type_id",
+    "get_edge_id_from_node_names",
+    "get_edge_id_from_node_names_and_edge_type_name",
+    "get_edge_type_ids_from_edge_type_names",
+    "get_node_type_ids_from_node_type_names",
+    "get_multiple_node_type_ids_from_node_type_names",
+    "get_unchecked_minmax_edge_ids_from_source_node_id",
+    "get_minmax_edge_ids_from_source_node_id",
+    "get_node_type_name_from_node_type_id",
+    "get_unchecked_node_type_names_from_node_type_ids",
+    "get_unchecked_number_of_nodes_from_node_type_id",
+    "get_number_of_nodes_from_node_type_id",
+    "get_number_of_nodes_from_node_type_name",
+    "get_unchecked_number_of_edges_from_edge_type_id",
+    "get_number_of_edges_from_edge_type_id",
+    "get_number_of_edges_from_edge_type_name",
+    "get_unchecked_node_type_id_counts_hashmap_from_node_ids",
+    "get_unchecked_edge_type_id_counts_hashmap_from_node_ids",
+    "get_edge_node_ids_from_edge_type_id",
+    "get_directed_edge_node_ids_from_edge_type_id",
+    "get_directed_edge_node_names_from_edge_type_id",
+    "get_directed_edge_node_names_from_edge_type_name",
+    "get_directed_edge_ids_from_edge_type_id",
+    "get_edge_node_ids_from_edge_type_name",
+    "get_directed_edge_node_ids_from_edge_type_name",
+    "get_directed_edge_ids_from_edge_type_name",
+    "get_directed_edge_node_names_from_node_curie_prefixes",
+    "get_directed_edge_node_ids_from_node_curie_prefixes",
+    "get_directed_edge_ids_from_node_curie_prefixes",
+    "get_number_of_directed_edges_from_node_curie_prefixes",
+    "get_node_ids_from_node_curie_prefixes",
+    "get_node_names_from_node_curie_prefixes",
+    "get_number_of_nodes_from_node_curie_prefixes",
+    "get_node_names_prefixes",
+    "get_node_ids_mapping_from_graph",
+    "get_non_zero_subgraph_node_degrees",
+    "get_multigraph_edge_ids_from_node_ids",
+    "get_number_of_multigraph_edges_from_node_ids",
+    "get_ancestors_jaccard_from_node_ids",
+    "get_ancestors_jaccard_from_node_names",
+    "get_undirected_louvain_community_detection",
+    "get_directed_modularity_from_node_community_memberships",
+    "get_undirected_modularity_from_node_community_memberships",
+    "get_node_tuples",
+    "get_random_node_type",
+    "get_random_edge_type",
+    "get_unchecked_random_scale_free_edge_type",
+    "get_random_scale_free_edge_type",
+    "get_random_node",
+    "get_random_edge_id",
+    "get_random_outbounds_scale_free_node",
+    "get_random_inbounds_scale_free_node",
+    "get_sorted_unique_random_nodes",
+    "get_breadth_first_search_random_nodes",
+    "get_uniform_random_walk_random_nodes",
+    "get_node_sampling_methods",
+    "get_subsampled_nodes",
+    "has_compatible_node_vocabularies",
+    "has_compatible_node_types_vocabularies",
+    "has_compatible_edge_types_vocabularies",
+    "is_compatible",
+    "has_same_adjacency_matrix",
+>>>>>>> 9f5bab19f4016207e650573b898a6d1054bf5346
     "validate_node_id",
     "validate_node_ids",
     "validate_edge_id",
@@ -17280,6 +22169,7 @@ pub const GRAPH_METHODS_NAMES: &[&str] = &[
     "get_transitive_closure",
     "get_all_shortest_paths",
     "get_weighted_all_shortest_paths",
+<<<<<<< HEAD
     "get_unchecked_edge_weight_from_edge_id",
     "get_unchecked_edge_weight_from_node_ids",
     "get_unchecked_node_id_from_node_name",
@@ -17425,6 +22315,16 @@ pub const GRAPH_METHODS_NAMES: &[&str] = &[
     "get_eigenvector_centrality",
     "get_weighted_eigenvector_centrality",
     "to_dot",
+=======
+    "to_dot",
+    "enable",
+    "disable_all",
+    "report",
+    "overlap_textual_report",
+    "get_node_report_from_node_id",
+    "get_node_report_from_node_name",
+    "textual_report",
+>>>>>>> 9f5bab19f4016207e650573b898a6d1054bf5346
     "get_base_16_tricodes_from_node_ids",
     "get_base_13_tricodes_from_node_ids",
     "get_base_30_tricodes_from_node_ids",
@@ -17609,6 +22509,7 @@ pub const GRAPH_TERMS: &[&str] = &[
     "clustering",
     "coefficient",
     "average",
+<<<<<<< HEAD
     "remappable",
     "remap",
     "map",
@@ -17616,6 +22517,40 @@ pub const GRAPH_TERMS: &[&str] = &[
     "negative",
     "positive",
     "holdout",
+=======
+    "count",
+    "and",
+    "minmax",
+    "source",
+    "destination",
+    "top",
+    "k",
+    "central",
+    "selfloop",
+    "adjusted",
+    "comulative",
+    "reciprocal",
+    "sqrt",
+    "degrees",
+    "neighbour",
+    "multiple",
+    "counts",
+    "hashmap",
+    "directed",
+    "curie",
+    "mapping",
+    "non",
+    "zero",
+    "subgraph",
+    "multigraph",
+    "undirected",
+    "louvain",
+    "community",
+    "detection",
+    "modularity",
+    "memberships",
+    "tuples",
+>>>>>>> 9f5bab19f4016207e650573b898a6d1054bf5346
     "random",
     "label",
     "indices",
@@ -17629,7 +22564,39 @@ pub const GRAPH_TERMS: &[&str] = &[
     "breadth",
     "first",
     "search",
+<<<<<<< HEAD
     "predecessors",
+=======
+    "uniform",
+    "walk",
+    "sampling",
+    "methods",
+    "subsampled",
+    "compatible",
+    "vocabularies",
+    "is",
+    "same",
+    "adjacency",
+    "validate",
+    "must",
+    "not",
+    "contain",
+    "unknown",
+    "have",
+    "ontologies",
+    "be",
+    "acyclic",
+    "trap",
+    "identity",
+    "connected",
+    "share",
+    "vocabulary",
+    "filter",
+    "remove",
+    "tendrils",
+    "with",
+    "disconnected",
+>>>>>>> 9f5bab19f4016207e650573b898a6d1054bf5346
     "parallel",
     "distances",
     "sequential",
@@ -17646,13 +22613,17 @@ pub const GRAPH_TERMS: &[&str] = &[
     "naive",
     "density",
     "rate",
-    "degrees",
     "mean",
     "median",
+<<<<<<< HEAD
     "central",
     "mode",
     "source",
     "destination",
+=======
+    "most",
+    "mode",
+>>>>>>> 9f5bab19f4016207e650573b898a6d1054bf5346
     "urls",
     "ontology",
     "known",
@@ -17661,18 +22632,17 @@ pub const GRAPH_TERMS: &[&str] = &[
     "one",
     "hot",
     "encoded",
-    "mapping",
     "triples",
     "multilabel",
+<<<<<<< HEAD
     "count",
+=======
+    "homogeneous",
+>>>>>>> 9f5bab19f4016207e650573b898a6d1054bf5346
     "component",
     "singletons",
     "dense",
     "cumulative",
-    "reciprocal",
-    "sqrt",
-    "counts",
-    "hashmap",
     "single",
     "boolean",
     "root",
@@ -17714,6 +22684,7 @@ pub const GRAPH_TERMS: &[&str] = &[
     "kruskal",
     "enable",
     "disable",
+<<<<<<< HEAD
     "compatible",
     "vocabularies",
     "same",
@@ -17767,6 +22738,11 @@ pub const GRAPH_TERMS: &[&str] = &[
     "betweenness",
     "eigenvector",
     "dot",
+=======
+    "report",
+    "overlap",
+    "textual",
+>>>>>>> 9f5bab19f4016207e650573b898a6d1054bf5346
     "base",
     "16",
     "tricodes",
@@ -18214,7 +23190,1547 @@ pub const GRAPH_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
         ("names", 0.8778408),
     ],
     &[
+<<<<<<< HEAD
         ("id", 1.0728521),
+=======
+        ("edge", 0.5712128),
+        ("get", 0.16279902),
+        ("total", 1.7415214),
+        ("weights", 1.5955336),
+    ],
+    &[
+        ("edge", 0.5712128),
+        ("get", 0.16279902),
+        ("mininum", 2.6614554),
+        ("weight", 1.7776988),
+    ],
+    &[
+        ("edge", 0.5712128),
+        ("get", 0.16279902),
+        ("maximum", 1.9088515),
+        ("weight", 1.7776988),
+    ],
+    &[
+        ("degree", 1.0351732),
+        ("get", 0.11766968),
+        ("maximum", 1.3797009),
+        ("node", 0.18184876),
+        ("unchecked", 0.65945435),
+    ],
+    &[
+        ("degree", 1.0351732),
+        ("get", 0.11766968),
+        ("minimum", 1.4189523),
+        ("node", 0.18184876),
+        ("unchecked", 0.65945435),
+    ],
+    &[
+        ("degree", 1.0351732),
+        ("get", 0.11766968),
+        ("maximum", 1.3797009),
+        ("node", 0.18184876),
+        ("weighted", 0.9059752),
+    ],
+    &[
+        ("degree", 1.0351732),
+        ("get", 0.11766968),
+        ("minimum", 1.4189523),
+        ("node", 0.18184876),
+        ("weighted", 0.9059752),
+    ],
+    &[
+        ("get", 0.08858285),
+        ("nodes", 0.64783466),
+        ("number", 0.59997785),
+        ("of", 0.61334467),
+        ("singleton", 0.7294017),
+        ("weighted", 0.68202674),
+    ],
+    &[
+        ("get", 0.16279902),
+        ("number", 1.1026492),
+        ("of", 1.1272148),
+        ("selfloops", 1.6481893),
+    ],
+    &[
+        ("get", 0.11766968),
+        ("number", 0.796985),
+        ("of", 0.81474084),
+        ("selfloops", 1.1912966),
+        ("unique", 1.2849048),
+    ],
+    &[
+        ("bipartite", 0.8571113),
+        ("build", 0.8078519),
+        ("edge", 0.24174505),
+        ("from", 0.18585248),
+        ("graph", 0.56158185),
+        ("ids", 0.28508544),
+        ("node", 0.10647734),
+    ],
+    &[
+        ("build", 1.038652),
+        ("clique", 1.0682008),
+        ("from", 0.23894978),
+        ("graph", 0.7220235),
+        ("ids", 0.3665332),
+        ("node", 0.13689749),
+    ],
+    &[
+        ("bipartite", 0.8571113),
+        ("build", 0.8078519),
+        ("edge", 0.24174505),
+        ("from", 0.18585248),
+        ("graph", 0.56158185),
+        ("names", 0.37151417),
+        ("node", 0.10647734),
+    ],
+    &[
+        ("build", 1.038652),
+        ("clique", 1.0682008),
+        ("from", 0.23894978),
+        ("graph", 0.7220235),
+        ("names", 0.47765425),
+        ("node", 0.13689749),
+    ],
+    &[
+        ("bipartite", 0.8571113),
+        ("build", 0.8078519),
+        ("edge", 0.24174505),
+        ("from", 0.18585248),
+        ("graph", 0.56158185),
+        ("node", 0.10647734),
+        ("prefixes", 0.7097822),
+    ],
+    &[
+        ("build", 1.038652),
+        ("clique", 1.0682008),
+        ("from", 0.23894978),
+        ("graph", 0.7220235),
+        ("node", 0.13689749),
+        ("prefixes", 0.9125641),
+    ],
+    &[
+        ("bipartite", 0.8571113),
+        ("build", 0.8078519),
+        ("edge", 0.24174505),
+        ("from", 0.18585248),
+        ("graph", 0.56158185),
+        ("node", 0.10647734),
+        ("types", 0.38396797),
+    ],
+    &[
+        ("build", 0.8078519),
+        ("clique", 0.83083475),
+        ("from", 0.18585248),
+        ("graph", 0.56158185),
+        ("names", 0.37151417),
+        ("node", 0.10647734),
+        ("type", 0.3077343),
+    ],
+    &[
+        ("get", 0.11766968),
+        ("groups", 1.258756),
+        ("ids", 0.48688704),
+        ("isomorphic", 1.0607876),
+        ("node", 0.18184876),
+    ],
+    &[
+        ("get", 0.11766968),
+        ("groups", 1.258756),
+        ("isomorphic", 1.0607876),
+        ("names", 0.6344955),
+        ("node", 0.18184876),
+    ],
+    &[
+        ("get", 0.08858285),
+        ("groups", 0.9476035),
+        ("isomorphic", 0.798571),
+        ("node", 0.13689749),
+        ("number", 0.59997785),
+        ("of", 0.61334467),
+    ],
+    &[
+        ("get", 0.08858285),
+        ("groups", 0.9476035),
+        ("ids", 0.3665332),
+        ("isomorphic", 0.798571),
+        ("node", 0.13689749),
+        ("type", 0.39565274),
+    ],
+    &[
+        ("get", 0.08858285),
+        ("groups", 0.9476035),
+        ("isomorphic", 0.798571),
+        ("names", 0.47765425),
+        ("node", 0.13689749),
+        ("type", 0.39565274),
+    ],
+    &[
+        ("get", 0.06889876),
+        ("groups", 0.7370355),
+        ("isomorphic", 0.6211197),
+        ("node", 0.10647734),
+        ("number", 0.46665612),
+        ("of", 0.47705266),
+        ("type", 0.3077343),
+    ],
+    &[
+        ("approximated", 0.7874284),
+        ("get", 0.06889876),
+        ("groups", 0.7370355),
+        ("ids", 0.28508544),
+        ("isomorphic", 0.6211197),
+        ("node", 0.10647734),
+        ("type", 0.3077343),
+    ],
+    &[
+        ("approximated", 0.7874284),
+        ("get", 0.06889876),
+        ("groups", 0.7370355),
+        ("isomorphic", 0.6211197),
+        ("names", 0.37151417),
+        ("node", 0.10647734),
+        ("type", 0.3077343),
+    ],
+    &[
+        ("approximated", 0.6288561),
+        ("get", 0.05502393),
+        ("groups", 0.58861136),
+        ("isomorphic", 0.49603865),
+        ("node", 0.085034944),
+        ("number", 0.37268096),
+        ("of", 0.38098383),
+        ("type", 0.2457628),
+    ],
+    &[
+        ("edge", 0.31081063),
+        ("get", 0.08858285),
+        ("groups", 0.9476035),
+        ("ids", 0.3665332),
+        ("isomorphic", 0.798571),
+        ("type", 0.39565274),
+    ],
+    &[
+        ("edge", 0.31081063),
+        ("get", 0.08858285),
+        ("groups", 0.9476035),
+        ("isomorphic", 0.798571),
+        ("names", 0.47765425),
+        ("type", 0.39565274),
+    ],
+    &[
+        ("edge", 0.24174505),
+        ("get", 0.06889876),
+        ("groups", 0.7370355),
+        ("isomorphic", 0.6211197),
+        ("number", 0.46665612),
+        ("of", 0.47705266),
+        ("type", 0.3077343),
+    ],
+    &[
+        ("has", 1.581708),
+        ("isomorphic", 2.1355388),
+        ("nodes", 1.7324396),
+    ],
+    &[
+        ("from", 0.14842552),
+        ("has", 0.3673959),
+        ("ids", 0.22767496),
+        ("isomorphic", 0.49603865),
+        ("node", 0.16064668),
+        ("types", 0.30664453),
+        ("unchecked", 0.3083698),
+    ],
+    &[
+        ("from", 0.18585248),
+        ("has", 0.4600384),
+        ("ids", 0.28508544),
+        ("isomorphic", 0.6211197),
+        ("node", 0.1983836),
+        ("types", 0.38396797),
+    ],
+    &[
+        ("get", 0.16279902),
+        ("number", 1.1026492),
+        ("of", 1.1272148),
+        ("triangles", 2.4398198),
+    ],
+    &[
+        ("get", 0.16279902),
+        ("number", 1.1026492),
+        ("of", 1.1272148),
+        ("squares", 2.4398198),
+    ],
+    &[
+        ("get", 0.08858285),
+        ("node", 0.13689749),
+        ("number", 0.59997785),
+        ("of", 0.61334467),
+        ("per", 1.248129),
+        ("squares", 1.3275645),
+    ],
+    &[
+        ("get", 0.16279902),
+        ("number", 1.1026492),
+        ("of", 1.1272148),
+        ("triads", 2.4398198),
+    ],
+    &[
+        ("get", 0.11766968),
+        ("number", 0.796985),
+        ("of", 0.81474084),
+        ("triads", 1.7634801),
+        ("weighted", 0.9059752),
+    ],
+    &[("get", 0.3656394), ("transitivity", 5.977511)],
+    &[
+        ("get", 0.08858285),
+        ("node", 0.13689749),
+        ("number", 0.59997785),
+        ("of", 0.61334467),
+        ("per", 1.248129),
+        ("triangles", 1.3275645),
+    ],
+    &[
+        ("clustering", 1.6579614),
+        ("coefficient", 1.4189523),
+        ("get", 0.11766968),
+        ("node", 0.18184876),
+        ("per", 1.6579614),
+    ],
+    &[
+        ("clustering", 3.3377473),
+        ("coefficient", 2.856583),
+        ("get", 0.23688829),
+    ],
+    &[
+        ("average", 2.6614554),
+        ("clustering", 2.293832),
+        ("coefficient", 1.9631569),
+        ("get", 0.16279902),
+    ],
+    &[
+        ("edge", 0.45040807),
+        ("from", 0.18585248),
+        ("get", 0.06889876),
+        ("id", 0.31203815),
+        ("unchecked", 0.38612825),
+        ("weight", 0.7523463),
+    ],
+    &[
+        ("edge", 0.24174505),
+        ("from", 0.18585248),
+        ("get", 0.06889876),
+        ("ids", 0.28508544),
+        ("node", 0.10647734),
+        ("unchecked", 0.38612825),
+        ("weight", 0.7523463),
+    ],
+    &[
+        ("from", 0.18585248),
+        ("get", 0.06889876),
+        ("id", 0.31203815),
+        ("name", 0.43572223),
+        ("node", 0.1983836),
+        ("unchecked", 0.38612825),
+    ],
+    &[
+        ("edge", 0.30073074),
+        ("from", 0.121134266),
+        ("get", 0.044906586),
+        ("id", 0.20337911),
+        ("name", 0.28399348),
+        ("type", 0.38282135),
+        ("unchecked", 0.2516693),
+    ],
+    &[
+        ("edge", 0.30073074),
+        ("from", 0.121134266),
+        ("get", 0.044906586),
+        ("id", 0.20337911),
+        ("name", 0.28399348),
+        ("type", 0.38282135),
+        ("unchecked", 0.2516693),
+    ],
+    &[
+        ("count", 0.6635213),
+        ("edge", 0.36473057),
+        ("from", 0.14842552),
+        ("get", 0.05502393),
+        ("id", 0.24919994),
+        ("type", 0.2457628),
+        ("unchecked", 0.3083698),
+    ],
+    &[
+        ("count", 0.6635213),
+        ("from", 0.14842552),
+        ("get", 0.05502393),
+        ("id", 0.24919994),
+        ("node", 0.16064668),
+        ("type", 0.2457628),
+        ("unchecked", 0.3083698),
+    ],
+    &[
+        ("and", 0.31350634),
+        ("edge", 0.21376519),
+        ("from", 0.084928825),
+        ("get", 0.031484596),
+        ("id", 0.27592248),
+        ("ids", 0.1302752),
+        ("node", 0.048656847),
+        ("type", 0.14062504),
+        ("unchecked", 0.17644864),
+    ],
+    &[
+        ("edge", 0.19306245),
+        ("from", 0.14842552),
+        ("get", 0.05502393),
+        ("ids", 0.43011996),
+        ("minmax", 0.7384312),
+        ("node", 0.085034944),
+        ("unchecked", 0.3083698),
+    ],
+    &[
+        ("edge", 0.24174505),
+        ("from", 0.18585248),
+        ("get", 0.06889876),
+        ("id", 0.31203815),
+        ("ids", 0.28508544),
+        ("node", 0.10647734),
+        ("unchecked", 0.38612825),
+    ],
+    &[
+        ("edge", 0.24174505),
+        ("from", 0.18585248),
+        ("get", 0.06889876),
+        ("id", 0.31203815),
+        ("names", 0.37151417),
+        ("node", 0.10647734),
+        ("unchecked", 0.38612825),
+    ],
+    &[
+        ("edge", 0.19306245),
+        ("from", 0.14842552),
+        ("get", 0.05502393),
+        ("id", 0.4707846),
+        ("node", 0.085034944),
+        ("source", 0.58861136),
+        ("unchecked", 0.3083698),
+    ],
+    &[
+        ("destination", 0.6451668),
+        ("edge", 0.19306245),
+        ("from", 0.14842552),
+        ("get", 0.05502393),
+        ("id", 0.4707846),
+        ("node", 0.085034944),
+        ("unchecked", 0.3083698),
+    ],
+    &[
+        ("edge", 0.24174505),
+        ("from", 0.18585248),
+        ("get", 0.06889876),
+        ("id", 0.5813749),
+        ("node", 0.10647734),
+        ("source", 0.7370355),
+    ],
+    &[
+        ("destination", 0.8078519),
+        ("edge", 0.24174505),
+        ("from", 0.18585248),
+        ("get", 0.06889876),
+        ("id", 0.5813749),
+        ("node", 0.10647734),
+    ],
+    &[
+        ("from", 0.14842552),
+        ("get", 0.05502393),
+        ("id", 0.24919994),
+        ("node", 0.085034944),
+        ("number", 0.37268096),
+        ("of", 0.38098383),
+        ("selfloops", 0.5570664),
+        ("unchecked", 0.3083698),
+    ],
+    &[
+        ("from", 0.18585248),
+        ("get", 0.06889876),
+        ("id", 0.31203815),
+        ("node", 0.10647734),
+        ("number", 0.46665612),
+        ("of", 0.47705266),
+        ("selfloops", 0.6975362),
+    ],
+    &[
+        ("from", 0.18585248),
+        ("get", 0.06889876),
+        ("name", 0.43572223),
+        ("node", 0.10647734),
+        ("number", 0.46665612),
+        ("of", 0.47705266),
+        ("selfloops", 0.6975362),
+    ],
+    &[
+        ("edge", 0.19306245),
+        ("from", 0.14842552),
+        ("get", 0.05502393),
+        ("id", 0.24919994),
+        ("name", 0.34797654),
+        ("node", 0.085034944),
+        ("source", 0.58861136),
+        ("unchecked", 0.3083698),
+    ],
+    &[
+        ("destination", 0.6451668),
+        ("edge", 0.19306245),
+        ("from", 0.14842552),
+        ("get", 0.05502393),
+        ("id", 0.24919994),
+        ("name", 0.34797654),
+        ("node", 0.085034944),
+        ("unchecked", 0.3083698),
+    ],
+    &[
+        ("edge", 0.24174505),
+        ("from", 0.18585248),
+        ("get", 0.06889876),
+        ("id", 0.31203815),
+        ("name", 0.43572223),
+        ("node", 0.10647734),
+        ("source", 0.7370355),
+    ],
+    &[
+        ("destination", 0.8078519),
+        ("edge", 0.24174505),
+        ("from", 0.18585248),
+        ("get", 0.06889876),
+        ("id", 0.31203815),
+        ("name", 0.43572223),
+        ("node", 0.10647734),
+    ],
+    &[
+        ("edge", 0.31081063),
+        ("from", 0.23894978),
+        ("get", 0.08858285),
+        ("id", 0.40118617),
+        ("names", 0.47765425),
+        ("node", 0.13689749),
+    ],
+    &[
+        ("edge", 0.31081063),
+        ("from", 0.23894978),
+        ("get", 0.08858285),
+        ("id", 0.40118617),
+        ("ids", 0.3665332),
+        ("node", 0.13689749),
+    ],
+    &[
+        ("edge", 0.24174505),
+        ("from", 0.18585248),
+        ("get", 0.06889876),
+        ("id", 0.31203815),
+        ("ids", 0.28508544),
+        ("node", 0.10647734),
+        ("unchecked", 0.38612825),
+    ],
+    &[
+        ("edge", 0.31081063),
+        ("from", 0.23894978),
+        ("get", 0.08858285),
+        ("id", 0.40118617),
+        ("ids", 0.3665332),
+        ("node", 0.13689749),
+    ],
+    &[
+        ("get", 0.08858285),
+        ("id", 0.40118617),
+        ("node", 0.13689749),
+        ("source", 0.9476035),
+        ("unchecked", 0.4964435),
+        ("unique", 0.96728855),
+    ],
+    &[
+        ("and", 0.31350634),
+        ("edge", 0.21376519),
+        ("from", 0.084928825),
+        ("get", 0.031484596),
+        ("id", 0.27592248),
+        ("ids", 0.1302752),
+        ("node", 0.048656847),
+        ("type", 0.14062504),
+        ("unchecked", 0.17644864),
+    ],
+    &[
+        ("and", 0.37157905),
+        ("edge", 0.25184727),
+        ("from", 0.10066071),
+        ("get", 0.037316684),
+        ("id", 0.32507783),
+        ("ids", 0.15440689),
+        ("node", 0.057669852),
+        ("type", 0.16667388),
+    ],
+    &[
+        ("and", 0.39570713),
+        ("edge", 0.20481414),
+        ("from", 0.054758407),
+        ("get", 0.020299897),
+        ("id", 0.17997907),
+        ("ids", 0.08399578),
+        ("node", 0.031371813),
+        ("type", 0.0906689),
+        ("unchecked", 0.113766395),
+        ("weight", 0.22166657),
+    ],
+    &[
+        ("and", 0.45200077),
+        ("edge", 0.23326285),
+        ("from", 0.06274154),
+        ("get", 0.023259385),
+        ("id", 0.20558305),
+        ("ids", 0.096241385),
+        ("node", 0.03594546),
+        ("type", 0.103887364),
+        ("weight", 0.253983),
+    ],
+    &[
+        ("central", 1.1414231),
+        ("get", 0.08858285),
+        ("ids", 0.3665332),
+        ("k", 1.0682008),
+        ("node", 0.13689749),
+        ("top", 1.248129),
+    ],
+    &[
+        ("central", 0.8877862),
+        ("get", 0.06889876),
+        ("ids", 0.28508544),
+        ("k", 0.83083475),
+        ("node", 0.10647734),
+        ("top", 0.9707809),
+        ("weighted", 0.5304728),
+    ],
+    &[
+        ("degree", 0.6061217),
+        ("from", 0.18585248),
+        ("get", 0.06889876),
+        ("id", 0.31203815),
+        ("node", 0.1983836),
+        ("unchecked", 0.38612825),
+    ],
+    &[
+        ("adjusted", 0.63273215),
+        ("degree", 0.39505586),
+        ("from", 0.121134266),
+        ("get", 0.044906586),
+        ("id", 0.20337911),
+        ("node", 0.13245776),
+        ("selfloop", 0.57863814),
+        ("unchecked", 0.2516693),
+    ],
+    &[
+        ("adjusted", 0.7752852),
+        ("degree", 0.484061),
+        ("from", 0.14842552),
+        ("get", 0.05502393),
+        ("id", 0.24919994),
+        ("node", 0.16064668),
+        ("selfloop", 0.7090039),
+    ],
+    &[
+        ("adjusted", 0.7752852),
+        ("degree", 0.484061),
+        ("from", 0.14842552),
+        ("get", 0.05502393),
+        ("name", 0.34797654),
+        ("node", 0.16064668),
+        ("selfloop", 0.7090039),
+    ],
+    &[
+        ("degree", 0.484061),
+        ("from", 0.14842552),
+        ("get", 0.05502393),
+        ("id", 0.24919994),
+        ("node", 0.16064668),
+        ("unchecked", 0.3083698),
+        ("weighted", 0.42364627),
+    ],
+    &[
+        ("degree", 0.77928823),
+        ("from", 0.23894978),
+        ("get", 0.08858285),
+        ("id", 0.40118617),
+        ("node", 0.25017056),
+    ],
+    &[
+        ("comulative", 0.8246271),
+        ("degree", 0.484061),
+        ("from", 0.14842552),
+        ("get", 0.05502393),
+        ("id", 0.24919994),
+        ("node", 0.16064668),
+        ("unchecked", 0.3083698),
+    ],
+    &[
+        ("comulative", 1.0325649),
+        ("degree", 0.6061217),
+        ("from", 0.18585248),
+        ("get", 0.06889876),
+        ("id", 0.31203815),
+        ("node", 0.1983836),
+    ],
+    &[
+        ("degree", 0.484061),
+        ("from", 0.14842552),
+        ("get", 0.05502393),
+        ("id", 0.24919994),
+        ("node", 0.085034944),
+        ("reciprocal", 0.7090039),
+        ("sqrt", 0.7090039),
+        ("unchecked", 0.3083698),
+    ],
+    &[
+        ("degree", 0.6061217),
+        ("from", 0.18585248),
+        ("get", 0.06889876),
+        ("id", 0.31203815),
+        ("node", 0.10647734),
+        ("reciprocal", 0.8877862),
+        ("sqrt", 0.8877862),
+    ],
+    &[
+        ("degrees", 0.58861136),
+        ("from", 0.14842552),
+        ("get", 0.05502393),
+        ("ids", 0.22767496),
+        ("node", 0.085034944),
+        ("reciprocal", 0.7090039),
+        ("sqrt", 0.7090039),
+        ("unchecked", 0.3083698),
+    ],
+    &[
+        ("degree", 0.6061217),
+        ("from", 0.18585248),
+        ("get", 0.06889876),
+        ("id", 0.31203815),
+        ("node", 0.1983836),
+        ("weighted", 0.5304728),
+    ],
+    &[
+        ("degree", 0.77928823),
+        ("from", 0.23894978),
+        ("get", 0.08858285),
+        ("name", 0.5602063),
+        ("node", 0.25017056),
+    ],
+    &[
+        ("central", 1.1414231),
+        ("get", 0.08858285),
+        ("k", 1.0682008),
+        ("names", 0.47765425),
+        ("node", 0.13689749),
+        ("top", 1.248129),
+    ],
+    &[
+        ("from", 0.14842552),
+        ("get", 0.05502393),
+        ("id", 0.24919994),
+        ("ids", 0.22767496),
+        ("node", 0.16064668),
+        ("type", 0.2457628),
+        ("unchecked", 0.3083698),
+    ],
+    &[
+        ("from", 0.18585248),
+        ("get", 0.06889876),
+        ("id", 0.31203815),
+        ("ids", 0.28508544),
+        ("node", 0.1983836),
+        ("type", 0.3077343),
+    ],
+    &[
+        ("edge", 0.36473057),
+        ("from", 0.14842552),
+        ("get", 0.05502393),
+        ("id", 0.4707846),
+        ("type", 0.2457628),
+        ("unchecked", 0.3083698),
+    ],
+    &[
+        ("edge", 0.45040807),
+        ("from", 0.18585248),
+        ("get", 0.06889876),
+        ("id", 0.5813749),
+        ("type", 0.3077343),
+    ],
+    &[
+        ("edge", 0.36473057),
+        ("from", 0.14842552),
+        ("get", 0.05502393),
+        ("id", 0.24919994),
+        ("ids", 0.22767496),
+        ("node", 0.085034944),
+        ("type", 0.2457628),
+    ],
+    &[
+        ("from", 0.14842552),
+        ("get", 0.05502393),
+        ("id", 0.24919994),
+        ("names", 0.2966987),
+        ("node", 0.16064668),
+        ("type", 0.2457628),
+        ("unchecked", 0.3083698),
+    ],
+    &[
+        ("from", 0.18585248),
+        ("get", 0.06889876),
+        ("id", 0.31203815),
+        ("names", 0.37151417),
+        ("node", 0.1983836),
+        ("type", 0.3077343),
+    ],
+    &[
+        ("from", 0.18585248),
+        ("get", 0.06889876),
+        ("name", 0.43572223),
+        ("names", 0.37151417),
+        ("node", 0.1983836),
+        ("type", 0.3077343),
+    ],
+    &[
+        ("edge", 0.45040807),
+        ("from", 0.18585248),
+        ("get", 0.06889876),
+        ("id", 0.31203815),
+        ("name", 0.43572223),
+        ("type", 0.3077343),
+    ],
+    &[
+        ("edge", 0.36473057),
+        ("from", 0.14842552),
+        ("get", 0.05502393),
+        ("id", 0.24919994),
+        ("name", 0.34797654),
+        ("type", 0.46429121),
+    ],
+    &[
+        ("edge", 0.56798464),
+        ("from", 0.23894978),
+        ("get", 0.08858285),
+        ("id", 0.40118617),
+        ("weight", 0.96728855),
+    ],
+    &[
+        ("edge", 0.31081063),
+        ("from", 0.23894978),
+        ("get", 0.08858285),
+        ("ids", 0.3665332),
+        ("node", 0.13689749),
+        ("weight", 0.96728855),
+    ],
+    &[
+        ("and", 0.37157905),
+        ("edge", 0.25184727),
+        ("from", 0.10066071),
+        ("get", 0.037316684),
+        ("id", 0.16900492),
+        ("ids", 0.15440689),
+        ("node", 0.057669852),
+        ("type", 0.16667388),
+        ("weight", 0.40748292),
+    ],
+    &[
+        ("and", 0.37157905),
+        ("edge", 0.25184727),
+        ("from", 0.10066071),
+        ("get", 0.037316684),
+        ("name", 0.23599422),
+        ("names", 0.2012181),
+        ("node", 0.057669852),
+        ("type", 0.16667388),
+        ("weight", 0.40748292),
+    ],
+    &[
+        ("edge", 0.31081063),
+        ("from", 0.23894978),
+        ("get", 0.08858285),
+        ("names", 0.47765425),
+        ("node", 0.13689749),
+        ("weight", 0.96728855),
+    ],
+    &[
+        ("from", 0.18585248),
+        ("get", 0.06889876),
+        ("id", 0.31203815),
+        ("name", 0.43572223),
+        ("node", 0.1983836),
+        ("unchecked", 0.38612825),
+    ],
+    &[
+        ("from", 0.23894978),
+        ("get", 0.08858285),
+        ("id", 0.40118617),
+        ("name", 0.5602063),
+        ("node", 0.25017056),
+    ],
+    &[
+        ("from", 0.23894978),
+        ("get", 0.08858285),
+        ("id", 0.40118617),
+        ("name", 0.5602063),
+        ("node", 0.25017056),
+    ],
+    &[
+        ("from", 0.23894978),
+        ("get", 0.08858285),
+        ("ids", 0.3665332),
+        ("names", 0.47765425),
+        ("node", 0.25017056),
+    ],
+    &[
+        ("from", 0.23894978),
+        ("get", 0.08858285),
+        ("ids", 0.3665332),
+        ("names", 0.47765425),
+        ("node", 0.25017056),
+    ],
+    &[
+        ("edge", 0.36473057),
+        ("from", 0.14842552),
+        ("get", 0.05502393),
+        ("ids", 0.22767496),
+        ("names", 0.2966987),
+        ("node", 0.16064668),
+    ],
+    &[
+        ("edge", 0.36473057),
+        ("from", 0.14842552),
+        ("get", 0.05502393),
+        ("ids", 0.22767496),
+        ("names", 0.2966987),
+        ("node", 0.16064668),
+    ],
+    &[
+        ("from", 0.18585248),
+        ("get", 0.06889876),
+        ("ids", 0.28508544),
+        ("name", 0.43572223),
+        ("node", 0.1983836),
+        ("type", 0.3077343),
+    ],
+    &[
+        ("from", 0.18585248),
+        ("get", 0.06889876),
+        ("name", 0.8118173),
+        ("node", 0.1983836),
+        ("type", 0.3077343),
+    ],
+    &[
+        ("count", 0.83083475),
+        ("edge", 0.45040807),
+        ("from", 0.18585248),
+        ("get", 0.06889876),
+        ("id", 0.31203815),
+        ("type", 0.3077343),
+    ],
+    &[
+        ("edge", 0.36473057),
+        ("from", 0.14842552),
+        ("get", 0.05502393),
+        ("id", 0.24919994),
+        ("name", 0.34797654),
+        ("type", 0.46429121),
+    ],
+    &[
+        ("count", 0.83083475),
+        ("edge", 0.45040807),
+        ("from", 0.18585248),
+        ("get", 0.06889876),
+        ("name", 0.43572223),
+        ("type", 0.3077343),
+    ],
+    &[
+        ("from", 0.14842552),
+        ("get", 0.05502393),
+        ("id", 0.24919994),
+        ("name", 0.34797654),
+        ("node", 0.16064668),
+        ("type", 0.46429121),
+    ],
+    &[
+        ("count", 0.83083475),
+        ("from", 0.18585248),
+        ("get", 0.06889876),
+        ("id", 0.31203815),
+        ("node", 0.1983836),
+        ("type", 0.3077343),
+    ],
+    &[
+        ("count", 0.83083475),
+        ("from", 0.18585248),
+        ("get", 0.06889876),
+        ("name", 0.43572223),
+        ("node", 0.1983836),
+        ("type", 0.3077343),
+    ],
+    &[
+        ("from", 0.18585248),
+        ("get", 0.06889876),
+        ("id", 0.31203815),
+        ("ids", 0.28508544),
+        ("neighbour", 0.9707809),
+        ("node", 0.1983836),
+    ],
+    &[
+        ("from", 0.18585248),
+        ("get", 0.06889876),
+        ("ids", 0.28508544),
+        ("name", 0.43572223),
+        ("neighbour", 0.9707809),
+        ("node", 0.1983836),
+    ],
+    &[
+        ("from", 0.18585248),
+        ("get", 0.06889876),
+        ("name", 0.43572223),
+        ("names", 0.37151417),
+        ("neighbour", 0.9707809),
+        ("node", 0.1983836),
+    ],
+    &[
+        ("edge", 0.24174505),
+        ("from", 0.18585248),
+        ("get", 0.06889876),
+        ("ids", 0.53115785),
+        ("minmax", 0.9246339),
+        ("node", 0.10647734),
+    ],
+    &[
+        ("and", 0.37157905),
+        ("edge", 0.25184727),
+        ("from", 0.10066071),
+        ("get", 0.037316684),
+        ("id", 0.32507783),
+        ("ids", 0.15440689),
+        ("node", 0.057669852),
+        ("type", 0.16667388),
+    ],
+    &[
+        ("edge", 0.31081063),
+        ("from", 0.23894978),
+        ("get", 0.08858285),
+        ("id", 0.40118617),
+        ("names", 0.47765425),
+        ("node", 0.13689749),
+    ],
+    &[
+        ("and", 0.37157905),
+        ("edge", 0.25184727),
+        ("from", 0.10066071),
+        ("get", 0.037316684),
+        ("id", 0.16900492),
+        ("name", 0.23599422),
+        ("names", 0.2012181),
+        ("node", 0.057669852),
+        ("type", 0.16667388),
+    ],
+    &[
+        ("edge", 0.36473057),
+        ("from", 0.14842552),
+        ("get", 0.05502393),
+        ("ids", 0.22767496),
+        ("names", 0.2966987),
+        ("type", 0.46429121),
+    ],
+    &[
+        ("from", 0.14842552),
+        ("get", 0.05502393),
+        ("ids", 0.22767496),
+        ("names", 0.2966987),
+        ("node", 0.16064668),
+        ("type", 0.46429121),
+    ],
+    &[
+        ("from", 0.121134266),
+        ("get", 0.044906586),
+        ("ids", 0.18581197),
+        ("multiple", 0.7341376),
+        ("names", 0.24214418),
+        ("node", 0.13245776),
+        ("type", 0.38282135),
+    ],
+    &[
+        ("edge", 0.15756373),
+        ("from", 0.121134266),
+        ("get", 0.044906586),
+        ("id", 0.20337911),
+        ("ids", 0.18581197),
+        ("minmax", 0.6026546),
+        ("node", 0.069399424),
+        ("source", 0.48038238),
+        ("unchecked", 0.2516693),
+    ],
+    &[
+        ("edge", 0.19306245),
+        ("from", 0.14842552),
+        ("get", 0.05502393),
+        ("id", 0.24919994),
+        ("ids", 0.22767496),
+        ("minmax", 0.7384312),
+        ("node", 0.085034944),
+        ("source", 0.58861136),
+    ],
+    &[
+        ("from", 0.14842552),
+        ("get", 0.05502393),
+        ("id", 0.24919994),
+        ("name", 0.34797654),
+        ("node", 0.16064668),
+        ("type", 0.46429121),
+    ],
+    &[
+        ("from", 0.121134266),
+        ("get", 0.044906586),
+        ("ids", 0.18581197),
+        ("names", 0.24214418),
+        ("node", 0.13245776),
+        ("type", 0.38282135),
+        ("unchecked", 0.2516693),
+    ],
+    &[
+        ("from", 0.121134266),
+        ("get", 0.044906586),
+        ("id", 0.20337911),
+        ("node", 0.069399424),
+        ("nodes", 0.3284162),
+        ("number", 0.30415547),
+        ("of", 0.31093168),
+        ("type", 0.20057397),
+        ("unchecked", 0.2516693),
+    ],
+    &[
+        ("from", 0.14842552),
+        ("get", 0.05502393),
+        ("id", 0.24919994),
+        ("node", 0.085034944),
+        ("nodes", 0.40240756),
+        ("number", 0.37268096),
+        ("of", 0.38098383),
+        ("type", 0.2457628),
+    ],
+    &[
+        ("from", 0.14842552),
+        ("get", 0.05502393),
+        ("name", 0.34797654),
+        ("node", 0.085034944),
+        ("nodes", 0.40240756),
+        ("number", 0.37268096),
+        ("of", 0.38098383),
+        ("type", 0.2457628),
+    ],
+    &[
+        ("edge", 0.15756373),
+        ("edges", 0.40483114),
+        ("from", 0.121134266),
+        ("get", 0.044906586),
+        ("id", 0.20337911),
+        ("number", 0.30415547),
+        ("of", 0.31093168),
+        ("type", 0.20057397),
+        ("unchecked", 0.2516693),
+    ],
+    &[
+        ("edge", 0.19306245),
+        ("edges", 0.49603865),
+        ("from", 0.14842552),
+        ("get", 0.05502393),
+        ("id", 0.24919994),
+        ("number", 0.37268096),
+        ("of", 0.38098383),
+        ("type", 0.2457628),
+    ],
+    &[
+        ("edge", 0.19306245),
+        ("edges", 0.49603865),
+        ("from", 0.14842552),
+        ("get", 0.05502393),
+        ("name", 0.34797654),
+        ("number", 0.37268096),
+        ("of", 0.38098383),
+        ("type", 0.2457628),
+    ],
+    &[
+        ("counts", 0.46422535),
+        ("from", 0.10066071),
+        ("get", 0.037316684),
+        ("hashmap", 0.46422535),
+        ("id", 0.16900492),
+        ("ids", 0.15440689),
+        ("node", 0.11092689),
+        ("type", 0.16667388),
+        ("unchecked", 0.20913331),
+    ],
+    &[
+        ("counts", 0.46422535),
+        ("edge", 0.13093303),
+        ("from", 0.10066071),
+        ("get", 0.037316684),
+        ("hashmap", 0.46422535),
+        ("id", 0.16900492),
+        ("ids", 0.15440689),
+        ("node", 0.057669852),
+        ("type", 0.16667388),
+        ("unchecked", 0.20913331),
+    ],
+    &[
+        ("edge", 0.36473057),
+        ("from", 0.14842552),
+        ("get", 0.05502393),
+        ("id", 0.24919994),
+        ("ids", 0.22767496),
+        ("node", 0.085034944),
+        ("type", 0.2457628),
+    ],
+    &[
+        ("directed", 0.38174427),
+        ("edge", 0.30073074),
+        ("from", 0.121134266),
+        ("get", 0.044906586),
+        ("id", 0.20337911),
+        ("ids", 0.18581197),
+        ("node", 0.069399424),
+        ("type", 0.20057397),
+    ],
+    &[
+        ("directed", 0.38174427),
+        ("edge", 0.30073074),
+        ("from", 0.121134266),
+        ("get", 0.044906586),
+        ("id", 0.20337911),
+        ("names", 0.24214418),
+        ("node", 0.069399424),
+        ("type", 0.20057397),
+    ],
+    &[
+        ("directed", 0.38174427),
+        ("edge", 0.30073074),
+        ("from", 0.121134266),
+        ("get", 0.044906586),
+        ("name", 0.28399348),
+        ("names", 0.24214418),
+        ("node", 0.069399424),
+        ("type", 0.20057397),
+    ],
+    &[
+        ("directed", 0.46775034),
+        ("edge", 0.36473057),
+        ("from", 0.14842552),
+        ("get", 0.05502393),
+        ("id", 0.24919994),
+        ("ids", 0.22767496),
+        ("type", 0.2457628),
+    ],
+    &[
+        ("edge", 0.36473057),
+        ("from", 0.14842552),
+        ("get", 0.05502393),
+        ("ids", 0.22767496),
+        ("name", 0.34797654),
+        ("node", 0.085034944),
+        ("type", 0.2457628),
+    ],
+    &[
+        ("directed", 0.38174427),
+        ("edge", 0.30073074),
+        ("from", 0.121134266),
+        ("get", 0.044906586),
+        ("ids", 0.18581197),
+        ("name", 0.28399348),
+        ("node", 0.069399424),
+        ("type", 0.20057397),
+    ],
+    &[
+        ("directed", 0.46775034),
+        ("edge", 0.36473057),
+        ("from", 0.14842552),
+        ("get", 0.05502393),
+        ("ids", 0.22767496),
+        ("name", 0.34797654),
+        ("type", 0.2457628),
+    ],
+    &[
+        ("curie", 0.5415185),
+        ("directed", 0.38174427),
+        ("edge", 0.15756373),
+        ("from", 0.121134266),
+        ("get", 0.044906586),
+        ("names", 0.24214418),
+        ("node", 0.13245776),
+        ("prefixes", 0.4626193),
+    ],
+    &[
+        ("curie", 0.5415185),
+        ("directed", 0.38174427),
+        ("edge", 0.15756373),
+        ("from", 0.121134266),
+        ("get", 0.044906586),
+        ("ids", 0.18581197),
+        ("node", 0.13245776),
+        ("prefixes", 0.4626193),
+    ],
+    &[
+        ("curie", 0.6635213),
+        ("directed", 0.46775034),
+        ("edge", 0.19306245),
+        ("from", 0.14842552),
+        ("get", 0.05502393),
+        ("ids", 0.22767496),
+        ("node", 0.085034944),
+        ("prefixes", 0.5668463),
+    ],
+    &[
+        ("curie", 0.5415185),
+        ("directed", 0.38174427),
+        ("edges", 0.40483114),
+        ("from", 0.121134266),
+        ("get", 0.044906586),
+        ("node", 0.069399424),
+        ("number", 0.30415547),
+        ("of", 0.31093168),
+        ("prefixes", 0.4626193),
+    ],
+    &[
+        ("curie", 0.83083475),
+        ("from", 0.18585248),
+        ("get", 0.06889876),
+        ("ids", 0.28508544),
+        ("node", 0.1983836),
+        ("prefixes", 0.7097822),
+    ],
+    &[
+        ("curie", 0.83083475),
+        ("from", 0.18585248),
+        ("get", 0.06889876),
+        ("names", 0.37151417),
+        ("node", 0.1983836),
+        ("prefixes", 0.7097822),
+    ],
+    &[
+        ("curie", 0.6635213),
+        ("from", 0.14842552),
+        ("get", 0.05502393),
+        ("node", 0.085034944),
+        ("nodes", 0.40240756),
+        ("number", 0.37268096),
+        ("of", 0.38098383),
+        ("prefixes", 0.5668463),
+    ],
+    &[
+        ("get", 0.16279902),
+        ("names", 0.8778408),
+        ("node", 0.25159243),
+        ("prefixes", 1.6771252),
+    ],
+    &[
+        ("from", 0.23894978),
+        ("get", 0.08858285),
+        ("graph", 0.7220235),
+        ("ids", 0.3665332),
+        ("mapping", 1.248129),
+        ("node", 0.13689749),
+    ],
+    &[
+        ("degrees", 0.9476035),
+        ("get", 0.08858285),
+        ("node", 0.13689749),
+        ("non", 1.4481617),
+        ("subgraph", 1.3275645),
+        ("zero", 1.4481617),
+    ],
+    &[
+        ("edge", 0.24174505),
+        ("from", 0.18585248),
+        ("get", 0.06889876),
+        ("ids", 0.53115785),
+        ("multigraph", 0.8877862),
+        ("node", 0.10647734),
+    ],
+    &[
+        ("edges", 0.49603865),
+        ("from", 0.14842552),
+        ("get", 0.05502393),
+        ("ids", 0.22767496),
+        ("multigraph", 0.7090039),
+        ("node", 0.085034944),
+        ("number", 0.37268096),
+        ("of", 0.38098383),
+    ],
+    &[
+        ("ancestors", 1.1019845),
+        ("from", 0.23894978),
+        ("get", 0.08858285),
+        ("ids", 0.3665332),
+        ("jaccard", 0.98876536),
+        ("node", 0.13689749),
+    ],
+    &[
+        ("ancestors", 1.1019845),
+        ("from", 0.23894978),
+        ("get", 0.08858285),
+        ("jaccard", 0.98876536),
+        ("names", 0.47765425),
+        ("node", 0.13689749),
+    ],
+    &[
+        ("community", 1.6579614),
+        ("detection", 1.9236763),
+        ("get", 0.11766968),
+        ("louvain", 1.9236763),
+        ("undirected", 1.3797009),
+    ],
+    &[
+        ("community", 0.9707809),
+        ("directed", 0.5856982),
+        ("from", 0.18585248),
+        ("get", 0.06889876),
+        ("memberships", 1.0325649),
+        ("modularity", 1.0325649),
+        ("node", 0.10647734),
+    ],
+    &[
+        ("community", 0.9707809),
+        ("from", 0.18585248),
+        ("get", 0.06889876),
+        ("memberships", 1.0325649),
+        ("modularity", 1.0325649),
+        ("node", 0.10647734),
+        ("undirected", 0.8078519),
+    ],
+    &[
+        ("get", 0.23688829),
+        ("node", 0.3660913),
+        ("tuples", 3.8726747),
+    ],
+    &[
+        ("get", 0.16279902),
+        ("node", 0.25159243),
+        ("random", 1.5485822),
+        ("type", 0.7271371),
+    ],
+    &[
+        ("edge", 0.5712128),
+        ("get", 0.16279902),
+        ("random", 1.5485822),
+        ("type", 0.7271371),
+    ],
+    &[
+        ("edge", 0.24174505),
+        ("free", 0.9246339),
+        ("get", 0.06889876),
+        ("random", 0.6553811),
+        ("scale", 0.9246339),
+        ("type", 0.3077343),
+        ("unchecked", 0.38612825),
+    ],
+    &[
+        ("edge", 0.31081063),
+        ("free", 1.1887981),
+        ("get", 0.08858285),
+        ("random", 0.84262073),
+        ("scale", 1.1887981),
+        ("type", 0.39565274),
+    ],
+    &[
+        ("get", 0.23688829),
+        ("node", 0.3660913),
+        ("random", 2.2533367),
+    ],
+    &[
+        ("edge", 0.5712128),
+        ("get", 0.16279902),
+        ("id", 0.73730654),
+        ("random", 1.5485822),
+    ],
+    &[
+        ("free", 1.1887981),
+        ("get", 0.08858285),
+        ("node", 0.13689749),
+        ("outbounds", 1.4481617),
+        ("random", 0.84262073),
+        ("scale", 1.1887981),
+    ],
+    &[
+        ("free", 1.1887981),
+        ("get", 0.08858285),
+        ("inbounds", 1.4481617),
+        ("node", 0.13689749),
+        ("random", 0.84262073),
+        ("scale", 1.1887981),
+    ],
+    &[
+        ("get", 0.11766968),
+        ("nodes", 0.8605559),
+        ("random", 1.1193014),
+        ("sorted", 1.5791485),
+        ("unique", 1.2849048),
+    ],
+    &[
+        ("breadth", 1.0123935),
+        ("first", 1.0123935),
+        ("get", 0.08858285),
+        ("nodes", 0.64783466),
+        ("random", 0.84262073),
+        ("search", 1.0123935),
+    ],
+    &[
+        ("get", 0.08858285),
+        ("nodes", 0.64783466),
+        ("random", 1.5398303),
+        ("uniform", 1.4481617),
+        ("walk", 1.4481617),
+    ],
+    &[
+        ("get", 0.16279902),
+        ("methods", 2.293832),
+        ("node", 0.25159243),
+        ("sampling", 2.6614554),
+    ],
+    &[
+        ("get", 0.23688829),
+        ("nodes", 1.7324396),
+        ("subsampled", 3.8726747),
+    ],
+    &[
+        ("compatible", 2.1847925),
+        ("has", 1.0870123),
+        ("node", 0.25159243),
+        ("vocabularies", 2.293832),
+    ],
+    &[
+        ("compatible", 1.5791485),
+        ("has", 0.7856828),
+        ("node", 0.18184876),
+        ("types", 0.6557649),
+        ("vocabularies", 1.6579614),
+    ],
+    &[
+        ("compatible", 1.5791485),
+        ("edge", 0.41286755),
+        ("has", 0.7856828),
+        ("types", 0.6557649),
+        ("vocabularies", 1.6579614),
+    ],
+    &[("compatible", 4.9069476), ("is", 3.6408362)],
+    &[
+        ("adjacency", 2.6614554),
+        ("has", 1.0870123),
+        ("matrix", 1.7415214),
+        ("same", 2.6614554),
+    ],
+    &[
+        ("id", 1.0728523),
+>>>>>>> 9f5bab19f4016207e650573b898a6d1054bf5346
         ("node", 0.3660913),
         ("validate", 2.7775633),
     ],
@@ -20931,6 +27447,7 @@ pub const GRAPH_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
         ("shortest", 1.1716901),
         ("weighted", 0.9059752),
     ],
+<<<<<<< HEAD
     &[
         ("edge", 0.45040807),
         ("from", 0.18585248),
@@ -22004,6 +28521,12 @@ pub const GRAPH_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
         ("node", 0.13689749),
     ],
     &[("get", 0.3656394), ("tendrils", 5.4797273)],
+=======
+    &[("dot", 5.977511), ("to", 3.8363836)],
+    &[("enable", 9.712805)],
+    &[("all", 3.9926326), ("disable", 5.977511)],
+    &[("report", 7.655512)],
+>>>>>>> 9f5bab19f4016207e650573b898a6d1054bf5346
     &[
         ("degree", 0.77928823),
         ("distribution", 1.4481617),
