@@ -88,6 +88,9 @@ impl Graph {
     /// # Safety
     /// If the given node ID does not exist in the graph the method will panic.
     pub unsafe fn get_unchecked_closeness_centrality_from_node_id(&self, node_id: NodeT) -> f32 {
+        if self.is_unchecked_disconnected_node_from_node_id(node_id) {
+            return 0.0;
+        }
         1.0 / self
             .get_unchecked_breadth_first_search_from_node_id(node_id, None, None, None)
             .into_iter_finite_distances()
@@ -123,6 +126,9 @@ impl Graph {
         node_id: NodeT,
         use_edge_weights_as_probabilities: bool,
     ) -> f32 {
+        if self.is_unchecked_disconnected_node_from_node_id(node_id) {
+            return 0.0;
+        }
         let total_distance = self
             .get_unchecked_dijkstra_from_node_id(
                 node_id,
