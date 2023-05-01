@@ -1562,7 +1562,11 @@ impl Graph {
                 eccentricity = closest_node_id_distance;
                 most_distant_node = closest_node_id as NodeT;
             }
-            total_distance += nodes_to_explore[closest_node_id];
+            total_distance += if use_edge_weights_as_probabilities {
+                (-nodes_to_explore[closest_node_id]).exp()
+            } else {
+                nodes_to_explore[closest_node_id]
+            };
             if nodes_to_explore[closest_node_id] > 0.0 {
                 total_harmonic_distance += if use_edge_weights_as_probabilities {
                     (-nodes_to_explore[closest_node_id]).exp()
@@ -1628,7 +1632,6 @@ impl Graph {
                 .par_iter_mut()
                 .for_each(|distance| *distance = (-*distance).exp());
             eccentricity = (-eccentricity).exp();
-            total_distance = (-total_distance).exp();
         }
 
         ShortestPathsDjkstra {

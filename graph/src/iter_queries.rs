@@ -328,6 +328,35 @@ impl Graph {
         )
     }
 
+
+    /// Return iterator over neighbours union.
+    ///
+    /// # Arguments
+    /// * `first_src_node_id`: NodeT - The first node whose neighbours are to be retrieved.
+    /// * `second_src_node_id`: NodeT - The second node whose neighbours are to be retrieved.
+    ///
+    /// # Safety
+    /// If any of the given node ID does not exist in the graph the method will panic.
+    pub unsafe fn iter_unchecked_neighbour_node_ids_union_from_multiple_source_node_ids<
+        'a,
+    >(
+        &'a self,
+        node_ids: &[NodeT],
+    ) -> Box<dyn Iterator<Item = NodeT> + 'a> {
+        if node_ids.len() > 2 {
+            Box::new(iter_set::union(
+                self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_ids[0]),
+                self.iter_unchecked_neighbour_node_ids_union_from_multiple_source_node_ids(
+                    &node_ids[1..],
+                )))
+        } else {
+            Box::new(iter_set::union(
+                self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_ids[0]),
+                self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_ids[1]),
+            ))
+        }
+    }
+
     unsafe fn iter_unchecked_neighbour_node_and_edge_ids_from_source_node_id(
         &self,
         node_id: NodeT,
@@ -337,7 +366,7 @@ impl Graph {
         self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
             .zip((min_edge..max_edge).into_iter())
     }
-
+    
     /// Return iterator over neighbours union.
     ///
     /// # Arguments
