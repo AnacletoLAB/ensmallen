@@ -955,6 +955,7 @@ impl Graph {
             .map(|node_id| unsafe { self.get_unchecked_node_type_ids_from_node_id(node_id) })
     }
 
+    #[inline(always)]
     /// Returns edge type of given edge.
     ///
     /// This method will panic if the given edge ID is greater than
@@ -968,7 +969,7 @@ impl Graph {
     /// # Example
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-
+    ///
     /// assert_eq!(unsafe{ graph.get_unchecked_edge_type_id_from_edge_id(0) }, Some(0));
     /// ```
     ///
@@ -1517,7 +1518,11 @@ impl Graph {
     /// ```
     pub fn get_neighbour_node_ids_from_node_id(&self, node_id: NodeT) -> Result<Vec<NodeT>> {
         self.validate_node_id(node_id).map(|node_id| {
-            unsafe { self.get_unchecked_neighbours_node_ids_from_src_node_id(node_id) }.to_vec()
+            unsafe {
+                self.edges
+                    .get_unchecked_neighbours_node_ids_from_src_node_id(node_id)
+            }
+            .to_vec()
         })
     }
 

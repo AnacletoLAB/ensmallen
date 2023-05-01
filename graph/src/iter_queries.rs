@@ -328,6 +328,16 @@ impl Graph {
         )
     }
 
+    unsafe fn iter_unchecked_neighbour_node_and_edge_ids_from_source_node_id(
+        &self,
+        node_id: NodeT,
+    ) -> impl Iterator<Item = (NodeT, EdgeT)> + '_ {
+        let (min_edge, max_edge) =
+            unsafe { self.get_unchecked_minmax_edge_ids_from_source_node_id(node_id) };
+        self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
+            .zip((min_edge..max_edge).into_iter())
+    }
+
     /// Return iterator over neighbours union.
     ///
     /// # Arguments
@@ -337,27 +347,23 @@ impl Graph {
     /// # Safety
     /// If any of the given node ID does not exist in the graph the method will panic.
     pub unsafe fn iter_unchecked_neighbour_node_and_edge_ids_union_from_multiple_source_node_ids<
-        const N: usize,
+        'a,
     >(
-        &self,
+        &'a self,
         node_ids: &[NodeT],
-    ) -> impl Iterator<Item = (NodeT, EdgeT)> + Send + '_ {
-        let (min_edge, max_edge) =
-            unsafe { self.get_unchecked_minmax_edge_ids_from_source_node_id(node_ids[0]) };
-        iter_set::union(
-            self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_ids[0])
-                .zip(min_edge..max_edge),
-            if node_ids.len() > 2 {
+    ) -> Box<dyn Iterator<Item = (NodeT, EdgeT)> + 'a> {
+        if node_ids.len() > 2 {
+            Box::new(iter_set::union(
+                self.iter_unchecked_neighbour_node_and_edge_ids_from_source_node_id(node_ids[0]),
                 self.iter_unchecked_neighbour_node_and_edge_ids_union_from_multiple_source_node_ids(
                     &node_ids[1..],
-                )
-            } else {
-                let (min_edge, max_edge) =
-                    unsafe { self.get_unchecked_minmax_edge_ids_from_source_node_id(node_ids[1]) };
-                self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_ids[1])
-                    .zip(min_edge..max_edge)
-            },
-        )
+                )))
+        } else {
+            Box::new(iter_set::union(
+                self.iter_unchecked_neighbour_node_and_edge_ids_from_source_node_id(node_ids[0]),
+                self.iter_unchecked_neighbour_node_and_edge_ids_from_source_node_id(node_ids[1]),
+            ))
+        }
     }
 
     /// Return iterator over neighbours difference.

@@ -10,6 +10,7 @@
 #![feature(adt_const_params)]
 #![warn(unused_macros)]
 #![feature(drain_filter)]
+#![feature(iter_advance_by)]
 #![feature(is_sorted)]
 #![feature(string_remove_matches)]
 #![feature(exit_status_error)]

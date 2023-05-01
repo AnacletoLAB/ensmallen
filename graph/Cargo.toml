@@ -53,6 +53,7 @@ mmap = {path = "./mmap"}
 express_measures = {path = "./express_measures"}
 roaring = { git = "https://github.com/zommiommy/roaring-rs", branch = "master" }
 vec_rand = { git = "https://github.com/zommiommy/vec_rand", branch = "master" }
+rtree = { git = "https://github.com/zommiommy/rtree", branch = "main" }
 elias_fano_rust = "0.1.1"
 tags = {path="./tags/"}
 atoi_radix10 = { git = "https://github.com/gilescope/atoi_radix10"}
