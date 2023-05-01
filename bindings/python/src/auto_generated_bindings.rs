@@ -1197,514 +1197,6 @@ impl<'a> From<&'a Graph> for &'a graph::Graph {
 #[pymethods]
 impl Graph {
     #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self)")]
-    /// Returns vector of unweighted degree centrality for all nodes
-    pub fn get_degree_centrality(&self) -> PyResult<Py<PyArray1<f32>>> {
-        Ok({
-            let gil = pyo3::Python::acquire_gil();
-            to_ndarray_1d!(gil, pe!(self.inner.get_degree_centrality())?, f32)
-        })
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self)")]
-    /// Returns vector of weighted degree centrality for all nodes
-    pub fn get_weighted_degree_centrality(&self) -> PyResult<Py<PyArray1<f32>>> {
-        Ok({
-            let gil = pyo3::Python::acquire_gil();
-            to_ndarray_1d!(gil, pe!(self.inner.get_weighted_degree_centrality())?, f32)
-        })
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self, node_id)")]
-    /// Return closeness centrality of the requested node.
-    ///
-    /// If the given node ID does not exist in the current graph the method
-    /// will panic.
-    ///
-    /// Parameters
-    /// ----------
-    /// node_id: int
-    ///     The node ID whose closeness centrality is to be computed.
-    /// verbose: Optional[bool]
-    ///     Whether to show an indicative progress bar.
-    ///
-    ///
-    /// Safety
-    /// ------
-    /// If the given node ID does not exist in the graph the method will panic.
-    pub unsafe fn get_unchecked_closeness_centrality_from_node_id(&self, node_id: NodeT) -> f32 {
-        self.inner
-            .get_unchecked_closeness_centrality_from_node_id(node_id.clone())
-            .into()
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self, node_id, use_edge_weights_as_probabilities)")]
-    /// Return closeness centrality of the requested node.
-    ///
-    /// If the given node ID does not exist in the current graph the method
-    /// will panic.
-    ///
-    /// Parameters
-    /// ----------
-    /// node_id: int
-    ///     The node ID whose closeness centrality is to be computed.
-    /// use_edge_weights_as_probabilities: bool
-    ///     Whether to treat the edge weights as probabilities.
-    ///
-    ///
-    /// Safety
-    /// ------
-    /// If the given node ID does not exist in the graph the method will panic.
-    pub unsafe fn get_unchecked_weighted_closeness_centrality_from_node_id(
-        &self,
-        node_id: NodeT,
-        use_edge_weights_as_probabilities: bool,
-    ) -> f32 {
-        self.inner
-            .get_unchecked_weighted_closeness_centrality_from_node_id(
-                node_id.clone(),
-                use_edge_weights_as_probabilities.clone(),
-            )
-            .into()
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self, verbose)")]
-    /// Return closeness centrality for all nodes.
-    ///
-    /// Parameters
-    /// ----------
-    /// verbose: Optional[bool]
-    ///     Whether to show an indicative progress bar.
-    ///
-    pub fn get_closeness_centrality(&self, verbose: Option<bool>) -> Py<PyArray1<f32>> {
-        let gil = pyo3::Python::acquire_gil();
-        to_ndarray_1d!(gil, self.inner.get_closeness_centrality(verbose), f32)
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self, use_edge_weights_as_probabilities, verbose)")]
-    /// Return closeness centrality for all nodes.
-    ///
-    /// Parameters
-    /// ----------
-    /// use_edge_weights_as_probabilities: bool
-    ///     Whether to treat the edge weights as probabilities.
-    /// verbose: Optional[bool]
-    ///     Whether to show an indicative progress bar.
-    ///
-    ///
-    /// Raises
-    /// -------
-    /// ValueError
-    ///     If the graph does not have weights.
-    /// ValueError
-    ///     If the graph contains negative weights.
-    /// ValueError
-    ///     If the user has asked for the weights to be treated as probabilities but the weights are not between 0 and 1.
-    ///
-    pub fn get_weighted_closeness_centrality(
-        &self,
-        use_edge_weights_as_probabilities: Option<bool>,
-        verbose: Option<bool>,
-    ) -> PyResult<Py<PyArray1<f32>>> {
-        Ok({
-            let gil = pyo3::Python::acquire_gil();
-            to_ndarray_1d!(
-                gil,
-                pe!(self.inner.get_weighted_closeness_centrality(
-                    use_edge_weights_as_probabilities,
-                    verbose
-                ))?,
-                f32
-            )
-        })
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self, node_id)")]
-    /// Return harmonic centrality of the requested node.
-    ///
-    /// If the given node ID does not exist in the current graph the method
-    /// will panic.
-    ///
-    /// Parameters
-    /// ----------
-    /// node_id: int
-    ///     The node ID whose harmonic centrality is to be computed.
-    ///
-    ///
-    /// Safety
-    /// ------
-    /// If the given node ID does not exist in the graph the method will panic.
-    pub unsafe fn get_unchecked_harmonic_centrality_from_node_id(&self, node_id: NodeT) -> f32 {
-        self.inner
-            .get_unchecked_harmonic_centrality_from_node_id(node_id.clone())
-            .into()
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self, node_id, use_edge_weights_as_probabilities)")]
-    /// Return harmonic centrality of the requested node.
-    ///
-    /// If the given node ID does not exist in the current graph the method
-    /// will panic.
-    ///
-    /// Parameters
-    /// ----------
-    /// node_id: int
-    ///     The node ID whose harmonic centrality is to be computed.
-    /// use_edge_weights_as_probabilities: bool
-    ///     Whether to treat the edge weights as probabilities.
-    ///
-    ///
-    /// Safety
-    /// ------
-    /// If the given node ID does not exist in the graph the method will panic.
-    pub unsafe fn get_unchecked_weighted_harmonic_centrality_from_node_id(
-        &self,
-        node_id: NodeT,
-        use_edge_weights_as_probabilities: bool,
-    ) -> f32 {
-        self.inner
-            .get_unchecked_weighted_harmonic_centrality_from_node_id(
-                node_id.clone(),
-                use_edge_weights_as_probabilities.clone(),
-            )
-            .into()
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self, verbose)")]
-    /// Return harmonic centrality for all nodes.
-    ///
-    /// Parameters
-    /// ----------
-    /// verbose: Optional[bool]
-    ///     Whether to show an indicative progress bar.
-    ///
-    pub fn get_harmonic_centrality(&self, verbose: Option<bool>) -> Py<PyArray1<f32>> {
-        let gil = pyo3::Python::acquire_gil();
-        to_ndarray_1d!(gil, self.inner.get_harmonic_centrality(verbose), f32)
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self, use_edge_weights_as_probabilities, verbose)")]
-    /// Return harmonic centrality for all nodes.
-    ///
-    /// Parameters
-    /// ----------
-    /// use_edge_weights_as_probabilities: Optional[bool]
-    ///     Whether to treat the edge weights as probabilities.
-    /// verbose: Optional[bool]
-    ///     Whether to show an indicative progress bar.
-    ///
-    pub fn get_weighted_harmonic_centrality(
-        &self,
-        use_edge_weights_as_probabilities: Option<bool>,
-        verbose: Option<bool>,
-    ) -> PyResult<Py<PyArray1<f32>>> {
-        Ok({
-            let gil = pyo3::Python::acquire_gil();
-            to_ndarray_1d!(
-                gil,
-                pe!(self
-                    .inner
-                    .get_weighted_harmonic_centrality(use_edge_weights_as_probabilities, verbose))?,
-                f32
-            )
-        })
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self, verbose)")]
-    /// Returns vector of stress centrality for all nodes.
-    ///
-    /// Parameters
-    /// ----------
-    /// verbose: Optional[bool]
-    ///     Whether to show a loading bar while computing the stress centrality. By default, true.
-    ///
-    ///
-    /// Raises
-    /// -------
-    /// ValueError
-    ///     If the graph is a multigraph.
-    ///
-    pub fn get_stress_centrality(&self, verbose: Option<bool>) -> PyResult<Py<PyArray1<f32>>> {
-        Ok({
-            let gil = pyo3::Python::acquire_gil();
-            to_ndarray_1d!(gil, pe!(self.inner.get_stress_centrality(verbose))?, f32)
-        })
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self, edges_normalization, min_max_normalization, verbose)")]
-    /// Returns vector of betweenness centrality for all nodes.
-    ///
-    /// Parameters
-    /// ----------
-    /// edges_normalization: Optional[bool]
-    ///     Whether to normalize the values by the number of edges of the complete graph. By default, false.
-    /// min_max_normalization: Optional[bool]
-    ///     Whether to normalize the values between 0 and 1. By default, false.
-    /// verbose: Optional[bool]
-    ///     Whether to show a loading bar while computing the betweenness centrality. By default, true.
-    ///
-    ///
-    /// Raises
-    /// -------
-    /// ValueError
-    ///     If the graph is a multigraph.
-    ///
-    pub fn get_betweenness_centrality(
-        &self,
-        edges_normalization: Option<bool>,
-        min_max_normalization: Option<bool>,
-        verbose: Option<bool>,
-    ) -> PyResult<Py<PyArray1<f32>>> {
-        Ok({
-            let gil = pyo3::Python::acquire_gil();
-            to_ndarray_1d!(
-                gil,
-                pe!(self.inner.get_betweenness_centrality(
-                    edges_normalization,
-                    min_max_normalization,
-                    verbose
-                ))?,
-                f32
-            )
-        })
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self, node_id, ant, maximum_samples_number, random_state)")]
-    /// Returns the unweighted approximated betweenness centrality of the given node id.
-    ///
-    /// Parameters
-    /// ----------
-    /// node_id: int
-    ///     The node ID for which to compute the approximated betweenness centrality.
-    /// constant: Optional[float]
-    ///     The constant factor to use to regulate the sampling. By default 2.0. It must be greater or equal than 2.0.
-    /// maximum_samples_number: Optional[float]
-    ///     The maximum number of samples to sample. By default `nodes_number / 20`, as suggested in the paper.
-    /// random_state: Optional[int]
-    ///     The random state to use for the sampling. By default 42.
-    ///
-    ///
-    /// Raises
-    /// -------
-    /// ValueError
-    ///     If the provided node ID does not exist in the current graph instance.
-    ///
-    pub fn get_approximated_betweenness_centrality_from_node_id(
-        &self,
-        node_id: NodeT,
-        ant: Option<f32>,
-        maximum_samples_number: Option<f32>,
-        random_state: Option<u64>,
-    ) -> PyResult<f32> {
-        Ok(pe!(self
-            .inner
-            .get_approximated_betweenness_centrality_from_node_id(
-                node_id.clone(),
-                ant,
-                maximum_samples_number,
-                random_state
-            ))?
-        .into())
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self, node_name, ant, maximum_samples_number, random_state)")]
-    /// Returns the unweighted approximated betweenness centrality of the given node id.
-    ///
-    /// Parameters
-    /// ----------
-    /// node_name: str
-    ///     The node name for which to compute the approximated betweenness centrality.
-    /// constant: Optional[float]
-    ///     The constant factor to use to regulate the sampling. By default 2.0. It must be greater or equal than 2.0.
-    /// maximum_samples_number: Optional[float]
-    ///     The maximum number of samples to sample. By default `nodes_number / 20`, as suggested in the paper.
-    /// random_state: Optional[int]
-    ///     The random state to use for the sampling. By default 42.
-    ///
-    ///
-    /// Raises
-    /// -------
-    /// ValueError
-    ///     If the provided node name does not exist in the current graph instance.
-    ///
-    pub fn get_approximated_betweenness_centrality_from_node_name(
-        &self,
-        node_name: &str,
-        ant: Option<f32>,
-        maximum_samples_number: Option<f32>,
-        random_state: Option<u64>,
-    ) -> PyResult<f32> {
-        Ok(pe!(self
-            .inner
-            .get_approximated_betweenness_centrality_from_node_name(
-                node_name,
-                ant,
-                maximum_samples_number,
-                random_state
-            ))?
-        .into())
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(
-        text_signature = "($self, node_id, ant, use_edge_weights_as_probabilities, maximum_samples_number, random_state)"
-    )]
-    /// Returns the weighted approximated betweenness centrality of the given node id.
-    ///
-    /// Parameters
-    /// ----------
-    /// node_id: int
-    ///     The node ID for which to compute the approximated betweenness centrality.
-    /// constant: Optional[float]
-    ///     The constant factor to use to regulate the sampling. By default 2.0. It must be greater or equal than 2.0.
-    /// use_edge_weights_as_probabilities: Optional[bool]
-    ///     Whether to consider the edge weights as probabilities.
-    /// maximum_samples_number: Optional[float]
-    ///     The maximum number of samples to sample. By default `nodes_number / 20`, as suggested in the paper.
-    /// random_state: Optional[int]
-    ///     The random state to use for the sampling. By default 42.
-    ///
-    ///
-    /// Raises
-    /// -------
-    /// ValueError
-    ///     If the provided node ID does not exist in the current graph instance.
-    ///
-    pub fn get_weighted_approximated_betweenness_centrality_from_node_id(
-        &self,
-        node_id: NodeT,
-        ant: Option<f32>,
-        use_edge_weights_as_probabilities: Option<bool>,
-        maximum_samples_number: Option<f32>,
-        random_state: Option<u64>,
-    ) -> PyResult<f32> {
-        Ok(pe!(self
-            .inner
-            .get_weighted_approximated_betweenness_centrality_from_node_id(
-                node_id.clone(),
-                ant,
-                use_edge_weights_as_probabilities,
-                maximum_samples_number,
-                random_state
-            ))?
-        .into())
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(
-        text_signature = "($self, node_name, ant, use_edge_weights_as_probabilities, maximum_samples_number, random_state)"
-    )]
-    /// Returns the weighted approximated betweenness centrality of the given node id.
-    ///
-    /// Parameters
-    /// ----------
-    /// node_name: str
-    ///     The node name for which to compute the approximated betweenness centrality.
-    /// constant: Optional[float]
-    ///     The constant factor to use to regulate the sampling. By default 2.0. It must be greater or equal than 2.0.
-    /// use_edge_weights_as_probabilities: Optional[bool]
-    ///     Whether to consider the edge weights as probabilities.
-    /// maximum_samples_number: Optional[float]
-    ///     The maximum number of samples to sample. By default `nodes_number / 20`, as suggested in the paper.
-    /// random_state: Optional[int]
-    ///     The random state to use for the sampling. By default 42.
-    ///
-    ///
-    /// Raises
-    /// -------
-    /// ValueError
-    ///     If the provided node name does not exist in the current graph instance.
-    ///
-    pub fn get_weighted_approximated_betweenness_centrality_from_node_name(
-        &self,
-        node_name: &str,
-        ant: Option<f32>,
-        use_edge_weights_as_probabilities: Option<bool>,
-        maximum_samples_number: Option<f32>,
-        random_state: Option<u64>,
-    ) -> PyResult<f32> {
-        Ok(pe!(self
-            .inner
-            .get_weighted_approximated_betweenness_centrality_from_node_name(
-                node_name,
-                ant,
-                use_edge_weights_as_probabilities,
-                maximum_samples_number,
-                random_state
-            ))?
-        .into())
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self, maximum_iterations_number, tollerance)")]
-    /// Returns vector with unweighted eigenvector centrality.
-    ///
-    /// Parameters
-    /// ----------
-    /// maximum_iterations_number: Optional[int]
-    ///     The maximum number of iterations to consider.
-    /// tollerance: Optional[float]
-    ///     The maximum error tollerance for convergence.
-    ///
-    pub fn get_eigenvector_centrality(
-        &self,
-        maximum_iterations_number: Option<usize>,
-        tollerance: Option<f32>,
-    ) -> PyResult<Py<PyArray1<f32>>> {
-        Ok({
-            let gil = pyo3::Python::acquire_gil();
-            to_ndarray_1d!(
-                gil,
-                pe!(self
-                    .inner
-                    .get_eigenvector_centrality(maximum_iterations_number, tollerance))?,
-                f32
-            )
-        })
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self, maximum_iterations_number, tollerance)")]
-    /// Returns vector with unweighted eigenvector centrality.
-    ///
-    /// Parameters
-    /// ----------
-    /// maximum_iterations_number: Optional[int]
-    ///     The maximum number of iterations to consider.
-    /// tollerance: Optional[float]
-    ///     The maximum error tollerance for convergence.
-    ///
-    pub fn get_weighted_eigenvector_centrality(
-        &self,
-        maximum_iterations_number: Option<usize>,
-        tollerance: Option<f32>,
-    ) -> PyResult<Py<PyArray1<f32>>> {
-        Ok({
-            let gil = pyo3::Python::acquire_gil();
-            to_ndarray_1d!(
-                gil,
-                pe!(self
-                    .inner
-                    .get_weighted_eigenvector_centrality(maximum_iterations_number, tollerance))?,
-                f32
-            )
-        })
-    }
-
-    #[automatically_generated_binding]
     #[pyo3(text_signature = "($self, minimum_number_of_nodes_per_chain, compute_chain_nodes)")]
     /// Return vector of chains in the current graph instance.
     ///
@@ -13596,6 +13088,514 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Returns vector of unweighted degree centrality for all nodes
+    pub fn get_degree_centrality(&self) -> PyResult<Py<PyArray1<f32>>> {
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(gil, pe!(self.inner.get_degree_centrality())?, f32)
+        })
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Returns vector of weighted degree centrality for all nodes
+    pub fn get_weighted_degree_centrality(&self) -> PyResult<Py<PyArray1<f32>>> {
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(gil, pe!(self.inner.get_weighted_degree_centrality())?, f32)
+        })
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, node_id)")]
+    /// Return closeness centrality of the requested node.
+    ///
+    /// If the given node ID does not exist in the current graph the method
+    /// will panic.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_id: int
+    ///     The node ID whose closeness centrality is to be computed.
+    /// verbose: Optional[bool]
+    ///     Whether to show an indicative progress bar.
+    ///
+    ///
+    /// Safety
+    /// ------
+    /// If the given node ID does not exist in the graph the method will panic.
+    pub unsafe fn get_unchecked_closeness_centrality_from_node_id(&self, node_id: NodeT) -> f32 {
+        self.inner
+            .get_unchecked_closeness_centrality_from_node_id(node_id.clone())
+            .into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, node_id, use_edge_weights_as_probabilities)")]
+    /// Return closeness centrality of the requested node.
+    ///
+    /// If the given node ID does not exist in the current graph the method
+    /// will panic.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_id: int
+    ///     The node ID whose closeness centrality is to be computed.
+    /// use_edge_weights_as_probabilities: bool
+    ///     Whether to treat the edge weights as probabilities.
+    ///
+    ///
+    /// Safety
+    /// ------
+    /// If the given node ID does not exist in the graph the method will panic.
+    pub unsafe fn get_unchecked_weighted_closeness_centrality_from_node_id(
+        &self,
+        node_id: NodeT,
+        use_edge_weights_as_probabilities: bool,
+    ) -> f32 {
+        self.inner
+            .get_unchecked_weighted_closeness_centrality_from_node_id(
+                node_id.clone(),
+                use_edge_weights_as_probabilities.clone(),
+            )
+            .into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, verbose)")]
+    /// Return closeness centrality for all nodes.
+    ///
+    /// Parameters
+    /// ----------
+    /// verbose: Optional[bool]
+    ///     Whether to show an indicative progress bar.
+    ///
+    pub fn get_closeness_centrality(&self, verbose: Option<bool>) -> Py<PyArray1<f32>> {
+        let gil = pyo3::Python::acquire_gil();
+        to_ndarray_1d!(gil, self.inner.get_closeness_centrality(verbose), f32)
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, use_edge_weights_as_probabilities, verbose)")]
+    /// Return closeness centrality for all nodes.
+    ///
+    /// Parameters
+    /// ----------
+    /// use_edge_weights_as_probabilities: bool
+    ///     Whether to treat the edge weights as probabilities.
+    /// verbose: Optional[bool]
+    ///     Whether to show an indicative progress bar.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the graph does not have weights.
+    /// ValueError
+    ///     If the graph contains negative weights.
+    /// ValueError
+    ///     If the user has asked for the weights to be treated as probabilities but the weights are not between 0 and 1.
+    ///
+    pub fn get_weighted_closeness_centrality(
+        &self,
+        use_edge_weights_as_probabilities: Option<bool>,
+        verbose: Option<bool>,
+    ) -> PyResult<Py<PyArray1<f32>>> {
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(
+                gil,
+                pe!(self.inner.get_weighted_closeness_centrality(
+                    use_edge_weights_as_probabilities,
+                    verbose
+                ))?,
+                f32
+            )
+        })
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, node_id)")]
+    /// Return harmonic centrality of the requested node.
+    ///
+    /// If the given node ID does not exist in the current graph the method
+    /// will panic.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_id: int
+    ///     The node ID whose harmonic centrality is to be computed.
+    ///
+    ///
+    /// Safety
+    /// ------
+    /// If the given node ID does not exist in the graph the method will panic.
+    pub unsafe fn get_unchecked_harmonic_centrality_from_node_id(&self, node_id: NodeT) -> f32 {
+        self.inner
+            .get_unchecked_harmonic_centrality_from_node_id(node_id.clone())
+            .into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, node_id, use_edge_weights_as_probabilities)")]
+    /// Return harmonic centrality of the requested node.
+    ///
+    /// If the given node ID does not exist in the current graph the method
+    /// will panic.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_id: int
+    ///     The node ID whose harmonic centrality is to be computed.
+    /// use_edge_weights_as_probabilities: bool
+    ///     Whether to treat the edge weights as probabilities.
+    ///
+    ///
+    /// Safety
+    /// ------
+    /// If the given node ID does not exist in the graph the method will panic.
+    pub unsafe fn get_unchecked_weighted_harmonic_centrality_from_node_id(
+        &self,
+        node_id: NodeT,
+        use_edge_weights_as_probabilities: bool,
+    ) -> f32 {
+        self.inner
+            .get_unchecked_weighted_harmonic_centrality_from_node_id(
+                node_id.clone(),
+                use_edge_weights_as_probabilities.clone(),
+            )
+            .into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, verbose)")]
+    /// Return harmonic centrality for all nodes.
+    ///
+    /// Parameters
+    /// ----------
+    /// verbose: Optional[bool]
+    ///     Whether to show an indicative progress bar.
+    ///
+    pub fn get_harmonic_centrality(&self, verbose: Option<bool>) -> Py<PyArray1<f32>> {
+        let gil = pyo3::Python::acquire_gil();
+        to_ndarray_1d!(gil, self.inner.get_harmonic_centrality(verbose), f32)
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, use_edge_weights_as_probabilities, verbose)")]
+    /// Return harmonic centrality for all nodes.
+    ///
+    /// Parameters
+    /// ----------
+    /// use_edge_weights_as_probabilities: Optional[bool]
+    ///     Whether to treat the edge weights as probabilities.
+    /// verbose: Optional[bool]
+    ///     Whether to show an indicative progress bar.
+    ///
+    pub fn get_weighted_harmonic_centrality(
+        &self,
+        use_edge_weights_as_probabilities: Option<bool>,
+        verbose: Option<bool>,
+    ) -> PyResult<Py<PyArray1<f32>>> {
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(
+                gil,
+                pe!(self
+                    .inner
+                    .get_weighted_harmonic_centrality(use_edge_weights_as_probabilities, verbose))?,
+                f32
+            )
+        })
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, verbose)")]
+    /// Returns vector of stress centrality for all nodes.
+    ///
+    /// Parameters
+    /// ----------
+    /// verbose: Optional[bool]
+    ///     Whether to show a loading bar while computing the stress centrality. By default, true.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the graph is a multigraph.
+    ///
+    pub fn get_stress_centrality(&self, verbose: Option<bool>) -> PyResult<Py<PyArray1<f32>>> {
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(gil, pe!(self.inner.get_stress_centrality(verbose))?, f32)
+        })
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, edges_normalization, min_max_normalization, verbose)")]
+    /// Returns vector of betweenness centrality for all nodes.
+    ///
+    /// Parameters
+    /// ----------
+    /// edges_normalization: Optional[bool]
+    ///     Whether to normalize the values by the number of edges of the complete graph. By default, false.
+    /// min_max_normalization: Optional[bool]
+    ///     Whether to normalize the values between 0 and 1. By default, false.
+    /// verbose: Optional[bool]
+    ///     Whether to show a loading bar while computing the betweenness centrality. By default, true.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the graph is a multigraph.
+    ///
+    pub fn get_betweenness_centrality(
+        &self,
+        edges_normalization: Option<bool>,
+        min_max_normalization: Option<bool>,
+        verbose: Option<bool>,
+    ) -> PyResult<Py<PyArray1<f32>>> {
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(
+                gil,
+                pe!(self.inner.get_betweenness_centrality(
+                    edges_normalization,
+                    min_max_normalization,
+                    verbose
+                ))?,
+                f32
+            )
+        })
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, node_id, ant, maximum_samples_number, random_state)")]
+    /// Returns the unweighted approximated betweenness centrality of the given node id.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_id: int
+    ///     The node ID for which to compute the approximated betweenness centrality.
+    /// constant: Optional[float]
+    ///     The constant factor to use to regulate the sampling. By default 2.0. It must be greater or equal than 2.0.
+    /// maximum_samples_number: Optional[float]
+    ///     The maximum number of samples to sample. By default `nodes_number / 20`, as suggested in the paper.
+    /// random_state: Optional[int]
+    ///     The random state to use for the sampling. By default 42.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the provided node ID does not exist in the current graph instance.
+    ///
+    pub fn get_approximated_betweenness_centrality_from_node_id(
+        &self,
+        node_id: NodeT,
+        ant: Option<f32>,
+        maximum_samples_number: Option<f32>,
+        random_state: Option<u64>,
+    ) -> PyResult<f32> {
+        Ok(pe!(self
+            .inner
+            .get_approximated_betweenness_centrality_from_node_id(
+                node_id.clone(),
+                ant,
+                maximum_samples_number,
+                random_state
+            ))?
+        .into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, node_name, ant, maximum_samples_number, random_state)")]
+    /// Returns the unweighted approximated betweenness centrality of the given node id.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_name: str
+    ///     The node name for which to compute the approximated betweenness centrality.
+    /// constant: Optional[float]
+    ///     The constant factor to use to regulate the sampling. By default 2.0. It must be greater or equal than 2.0.
+    /// maximum_samples_number: Optional[float]
+    ///     The maximum number of samples to sample. By default `nodes_number / 20`, as suggested in the paper.
+    /// random_state: Optional[int]
+    ///     The random state to use for the sampling. By default 42.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the provided node name does not exist in the current graph instance.
+    ///
+    pub fn get_approximated_betweenness_centrality_from_node_name(
+        &self,
+        node_name: &str,
+        ant: Option<f32>,
+        maximum_samples_number: Option<f32>,
+        random_state: Option<u64>,
+    ) -> PyResult<f32> {
+        Ok(pe!(self
+            .inner
+            .get_approximated_betweenness_centrality_from_node_name(
+                node_name,
+                ant,
+                maximum_samples_number,
+                random_state
+            ))?
+        .into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(
+        text_signature = "($self, node_id, ant, use_edge_weights_as_probabilities, maximum_samples_number, random_state)"
+    )]
+    /// Returns the weighted approximated betweenness centrality of the given node id.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_id: int
+    ///     The node ID for which to compute the approximated betweenness centrality.
+    /// constant: Optional[float]
+    ///     The constant factor to use to regulate the sampling. By default 2.0. It must be greater or equal than 2.0.
+    /// use_edge_weights_as_probabilities: Optional[bool]
+    ///     Whether to consider the edge weights as probabilities.
+    /// maximum_samples_number: Optional[float]
+    ///     The maximum number of samples to sample. By default `nodes_number / 20`, as suggested in the paper.
+    /// random_state: Optional[int]
+    ///     The random state to use for the sampling. By default 42.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the provided node ID does not exist in the current graph instance.
+    ///
+    pub fn get_weighted_approximated_betweenness_centrality_from_node_id(
+        &self,
+        node_id: NodeT,
+        ant: Option<f32>,
+        use_edge_weights_as_probabilities: Option<bool>,
+        maximum_samples_number: Option<f32>,
+        random_state: Option<u64>,
+    ) -> PyResult<f32> {
+        Ok(pe!(self
+            .inner
+            .get_weighted_approximated_betweenness_centrality_from_node_id(
+                node_id.clone(),
+                ant,
+                use_edge_weights_as_probabilities,
+                maximum_samples_number,
+                random_state
+            ))?
+        .into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(
+        text_signature = "($self, node_name, ant, use_edge_weights_as_probabilities, maximum_samples_number, random_state)"
+    )]
+    /// Returns the weighted approximated betweenness centrality of the given node id.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_name: str
+    ///     The node name for which to compute the approximated betweenness centrality.
+    /// constant: Optional[float]
+    ///     The constant factor to use to regulate the sampling. By default 2.0. It must be greater or equal than 2.0.
+    /// use_edge_weights_as_probabilities: Optional[bool]
+    ///     Whether to consider the edge weights as probabilities.
+    /// maximum_samples_number: Optional[float]
+    ///     The maximum number of samples to sample. By default `nodes_number / 20`, as suggested in the paper.
+    /// random_state: Optional[int]
+    ///     The random state to use for the sampling. By default 42.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the provided node name does not exist in the current graph instance.
+    ///
+    pub fn get_weighted_approximated_betweenness_centrality_from_node_name(
+        &self,
+        node_name: &str,
+        ant: Option<f32>,
+        use_edge_weights_as_probabilities: Option<bool>,
+        maximum_samples_number: Option<f32>,
+        random_state: Option<u64>,
+    ) -> PyResult<f32> {
+        Ok(pe!(self
+            .inner
+            .get_weighted_approximated_betweenness_centrality_from_node_name(
+                node_name,
+                ant,
+                use_edge_weights_as_probabilities,
+                maximum_samples_number,
+                random_state
+            ))?
+        .into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, maximum_iterations_number, tollerance)")]
+    /// Returns vector with unweighted eigenvector centrality.
+    ///
+    /// Parameters
+    /// ----------
+    /// maximum_iterations_number: Optional[int]
+    ///     The maximum number of iterations to consider.
+    /// tollerance: Optional[float]
+    ///     The maximum error tollerance for convergence.
+    ///
+    pub fn get_eigenvector_centrality(
+        &self,
+        maximum_iterations_number: Option<usize>,
+        tollerance: Option<f32>,
+    ) -> PyResult<Py<PyArray1<f32>>> {
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(
+                gil,
+                pe!(self
+                    .inner
+                    .get_eigenvector_centrality(maximum_iterations_number, tollerance))?,
+                f32
+            )
+        })
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, maximum_iterations_number, tollerance)")]
+    /// Returns vector with unweighted eigenvector centrality.
+    ///
+    /// Parameters
+    /// ----------
+    /// maximum_iterations_number: Optional[int]
+    ///     The maximum number of iterations to consider.
+    /// tollerance: Optional[float]
+    ///     The maximum error tollerance for convergence.
+    ///
+    pub fn get_weighted_eigenvector_centrality(
+        &self,
+        maximum_iterations_number: Option<usize>,
+        tollerance: Option<f32>,
+    ) -> PyResult<Py<PyArray1<f32>>> {
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(
+                gil,
+                pe!(self
+                    .inner
+                    .get_weighted_eigenvector_centrality(maximum_iterations_number, tollerance))?,
+                f32
+            )
+        })
+    }
+
+    #[automatically_generated_binding]
     #[pyo3(text_signature = "($self, other)")]
     /// Return whether given graph has any edge overlapping with current graph.
     ///
@@ -16797,24 +16797,6 @@ impl Graph {
 }
 
 pub const GRAPH_METHODS_NAMES: &[&str] = &[
-    "get_degree_centrality",
-    "get_weighted_degree_centrality",
-    "get_unchecked_closeness_centrality_from_node_id",
-    "get_unchecked_weighted_closeness_centrality_from_node_id",
-    "get_closeness_centrality",
-    "get_weighted_closeness_centrality",
-    "get_unchecked_harmonic_centrality_from_node_id",
-    "get_unchecked_weighted_harmonic_centrality_from_node_id",
-    "get_harmonic_centrality",
-    "get_weighted_harmonic_centrality",
-    "get_stress_centrality",
-    "get_betweenness_centrality",
-    "get_approximated_betweenness_centrality_from_node_id",
-    "get_approximated_betweenness_centrality_from_node_name",
-    "get_weighted_approximated_betweenness_centrality_from_node_id",
-    "get_weighted_approximated_betweenness_centrality_from_node_name",
-    "get_eigenvector_centrality",
-    "get_weighted_eigenvector_centrality",
     "get_chains",
     "get_circles",
     "get_approximated_cliques",
@@ -17355,6 +17337,24 @@ pub const GRAPH_METHODS_NAMES: &[&str] = &[
     "get_random_spanning_tree",
     "get_connected_components",
     "get_vertex_cover",
+    "get_degree_centrality",
+    "get_weighted_degree_centrality",
+    "get_unchecked_closeness_centrality_from_node_id",
+    "get_unchecked_weighted_closeness_centrality_from_node_id",
+    "get_closeness_centrality",
+    "get_weighted_closeness_centrality",
+    "get_unchecked_harmonic_centrality_from_node_id",
+    "get_unchecked_weighted_harmonic_centrality_from_node_id",
+    "get_harmonic_centrality",
+    "get_weighted_harmonic_centrality",
+    "get_stress_centrality",
+    "get_betweenness_centrality",
+    "get_approximated_betweenness_centrality_from_node_id",
+    "get_approximated_betweenness_centrality_from_node_name",
+    "get_weighted_approximated_betweenness_centrality_from_node_id",
+    "get_weighted_approximated_betweenness_centrality_from_node_name",
+    "get_eigenvector_centrality",
+    "get_weighted_eigenvector_centrality",
     "overlaps",
     "contains",
     "sample_negative_graph",
@@ -17492,22 +17492,9 @@ pub const GRAPH_METHODS_NAMES: &[&str] = &[
 
 pub const GRAPH_TERMS: &[&str] = &[
     "get",
-    "degree",
-    "centrality",
-    "weighted",
-    "unchecked",
-    "closeness",
-    "from",
-    "node",
-    "id",
-    "harmonic",
-    "stress",
-    "betweenness",
-    "approximated",
-    "name",
-    "eigenvector",
     "chains",
     "circles",
+    "approximated",
     "cliques",
     "max",
     "clique",
@@ -17531,6 +17518,8 @@ pub const GRAPH_TERMS: &[&str] = &[
     "symmetric",
     "dendritic",
     "trees",
+    "node",
+    "degree",
     "geometric",
     "distribution",
     "threshold",
@@ -17539,13 +17528,16 @@ pub const GRAPH_TERMS: &[&str] = &[
     "edge",
     "names",
     "star",
+    "from",
     "csv",
     "total",
     "weights",
     "mininum",
     "weight",
     "maximum",
+    "unchecked",
     "minimum",
+    "weighted",
     "singleton",
     "nodes",
     "selfloops",
@@ -17566,6 +17558,8 @@ pub const GRAPH_TERMS: &[&str] = &[
     "clustering",
     "coefficient",
     "average",
+    "id",
+    "name",
     "count",
     "and",
     "minmax",
@@ -17749,6 +17743,12 @@ pub const GRAPH_TERMS: &[&str] = &[
     "kruskal",
     "vertex",
     "cover",
+    "centrality",
+    "closeness",
+    "harmonic",
+    "stress",
+    "betweenness",
+    "eigenvector",
     "overlaps",
     "contains",
     "sample",
@@ -17794,136 +17794,6 @@ pub const GRAPH_TERMS: &[&str] = &[
 ];
 
 pub const GRAPH_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
-    &[
-        ("centrality", 2.2865725),
-        ("degree", 2.083973),
-        ("get", 0.23688829),
-    ],
-    &[
-        ("centrality", 1.5714232),
-        ("degree", 1.4321886),
-        ("get", 0.16279902),
-        ("weighted", 1.2534399),
-    ],
-    &[
-        ("centrality", 0.66504765),
-        ("closeness", 0.9246339),
-        ("from", 0.18585248),
-        ("get", 0.06889876),
-        ("id", 0.31203815),
-        ("node", 0.10647734),
-        ("unchecked", 0.38612825),
-    ],
-    &[
-        ("centrality", 0.5311204),
-        ("closeness", 0.7384312),
-        ("from", 0.14842552),
-        ("get", 0.05502393),
-        ("id", 0.24919994),
-        ("node", 0.085034944),
-        ("unchecked", 0.3083698),
-        ("weighted", 0.42364627),
-    ],
-    &[
-        ("centrality", 2.2865725),
-        ("closeness", 3.1790843),
-        ("get", 0.23688829),
-    ],
-    &[
-        ("centrality", 1.5714232),
-        ("closeness", 2.1847925),
-        ("get", 0.16279902),
-        ("weighted", 1.2534399),
-    ],
-    &[
-        ("centrality", 0.66504765),
-        ("from", 0.18585248),
-        ("get", 0.06889876),
-        ("harmonic", 0.9246339),
-        ("id", 0.31203815),
-        ("node", 0.10647734),
-        ("unchecked", 0.38612825),
-    ],
-    &[
-        ("centrality", 0.5311204),
-        ("from", 0.14842552),
-        ("get", 0.05502393),
-        ("harmonic", 0.7384312),
-        ("id", 0.24919994),
-        ("node", 0.085034944),
-        ("unchecked", 0.3083698),
-        ("weighted", 0.42364627),
-    ],
-    &[
-        ("centrality", 2.2865725),
-        ("get", 0.23688829),
-        ("harmonic", 3.1790843),
-    ],
-    &[
-        ("centrality", 1.5714232),
-        ("get", 0.16279902),
-        ("harmonic", 2.1847925),
-        ("weighted", 1.2534399),
-    ],
-    &[
-        ("centrality", 2.2865725),
-        ("get", 0.23688829),
-        ("stress", 3.8726747),
-    ],
-    &[
-        ("betweenness", 3.0523942),
-        ("centrality", 2.2865725),
-        ("get", 0.23688829),
-    ],
-    &[
-        ("approximated", 0.7874284),
-        ("betweenness", 0.8877862),
-        ("centrality", 0.66504765),
-        ("from", 0.18585248),
-        ("get", 0.06889876),
-        ("id", 0.31203815),
-        ("node", 0.10647734),
-    ],
-    &[
-        ("approximated", 0.7874284),
-        ("betweenness", 0.8877862),
-        ("centrality", 0.66504765),
-        ("from", 0.18585248),
-        ("get", 0.06889876),
-        ("name", 0.43572223),
-        ("node", 0.10647734),
-    ],
-    &[
-        ("approximated", 0.6288561),
-        ("betweenness", 0.7090039),
-        ("centrality", 0.5311204),
-        ("from", 0.14842552),
-        ("get", 0.05502393),
-        ("id", 0.24919994),
-        ("node", 0.085034944),
-        ("weighted", 0.42364627),
-    ],
-    &[
-        ("approximated", 0.6288561),
-        ("betweenness", 0.7090039),
-        ("centrality", 0.5311204),
-        ("from", 0.14842552),
-        ("get", 0.05502393),
-        ("name", 0.34797654),
-        ("node", 0.085034944),
-        ("weighted", 0.42364627),
-    ],
-    &[
-        ("centrality", 2.2865725),
-        ("eigenvector", 3.5501735),
-        ("get", 0.23688829),
-    ],
-    &[
-        ("centrality", 1.5714232),
-        ("eigenvector", 2.4398198),
-        ("get", 0.16279902),
-        ("weighted", 1.2534399),
-    ],
     &[("chains", 5.977511), ("get", 0.3656394)],
     &[("circles", 5.977511), ("get", 0.3656394)],
     &[
@@ -21773,6 +21643,136 @@ pub const GRAPH_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
         ("cover", 3.8726747),
         ("get", 0.23688829),
         ("vertex", 3.8726747),
+    ],
+    &[
+        ("centrality", 2.2865725),
+        ("degree", 2.083973),
+        ("get", 0.23688829),
+    ],
+    &[
+        ("centrality", 1.5714232),
+        ("degree", 1.4321886),
+        ("get", 0.16279902),
+        ("weighted", 1.2534399),
+    ],
+    &[
+        ("centrality", 0.66504765),
+        ("closeness", 0.9246339),
+        ("from", 0.18585248),
+        ("get", 0.06889876),
+        ("id", 0.31203815),
+        ("node", 0.10647734),
+        ("unchecked", 0.38612825),
+    ],
+    &[
+        ("centrality", 0.5311204),
+        ("closeness", 0.7384312),
+        ("from", 0.14842552),
+        ("get", 0.05502393),
+        ("id", 0.24919994),
+        ("node", 0.085034944),
+        ("unchecked", 0.3083698),
+        ("weighted", 0.42364627),
+    ],
+    &[
+        ("centrality", 2.2865725),
+        ("closeness", 3.1790843),
+        ("get", 0.23688829),
+    ],
+    &[
+        ("centrality", 1.5714232),
+        ("closeness", 2.1847925),
+        ("get", 0.16279902),
+        ("weighted", 1.2534399),
+    ],
+    &[
+        ("centrality", 0.66504765),
+        ("from", 0.18585248),
+        ("get", 0.06889876),
+        ("harmonic", 0.9246339),
+        ("id", 0.31203815),
+        ("node", 0.10647734),
+        ("unchecked", 0.38612825),
+    ],
+    &[
+        ("centrality", 0.5311204),
+        ("from", 0.14842552),
+        ("get", 0.05502393),
+        ("harmonic", 0.7384312),
+        ("id", 0.24919994),
+        ("node", 0.085034944),
+        ("unchecked", 0.3083698),
+        ("weighted", 0.42364627),
+    ],
+    &[
+        ("centrality", 2.2865725),
+        ("get", 0.23688829),
+        ("harmonic", 3.1790843),
+    ],
+    &[
+        ("centrality", 1.5714232),
+        ("get", 0.16279902),
+        ("harmonic", 2.1847925),
+        ("weighted", 1.2534399),
+    ],
+    &[
+        ("centrality", 2.2865725),
+        ("get", 0.23688829),
+        ("stress", 3.8726747),
+    ],
+    &[
+        ("betweenness", 3.0523942),
+        ("centrality", 2.2865725),
+        ("get", 0.23688829),
+    ],
+    &[
+        ("approximated", 0.7874284),
+        ("betweenness", 0.8877862),
+        ("centrality", 0.66504765),
+        ("from", 0.18585248),
+        ("get", 0.06889876),
+        ("id", 0.31203815),
+        ("node", 0.10647734),
+    ],
+    &[
+        ("approximated", 0.7874284),
+        ("betweenness", 0.8877862),
+        ("centrality", 0.66504765),
+        ("from", 0.18585248),
+        ("get", 0.06889876),
+        ("name", 0.43572223),
+        ("node", 0.10647734),
+    ],
+    &[
+        ("approximated", 0.6288561),
+        ("betweenness", 0.7090039),
+        ("centrality", 0.5311204),
+        ("from", 0.14842552),
+        ("get", 0.05502393),
+        ("id", 0.24919994),
+        ("node", 0.085034944),
+        ("weighted", 0.42364627),
+    ],
+    &[
+        ("approximated", 0.6288561),
+        ("betweenness", 0.7090039),
+        ("centrality", 0.5311204),
+        ("from", 0.14842552),
+        ("get", 0.05502393),
+        ("name", 0.34797654),
+        ("node", 0.085034944),
+        ("weighted", 0.42364627),
+    ],
+    &[
+        ("centrality", 2.2865725),
+        ("eigenvector", 3.5501735),
+        ("get", 0.23688829),
+    ],
+    &[
+        ("centrality", 1.5714232),
+        ("eigenvector", 2.4398198),
+        ("get", 0.16279902),
+        ("weighted", 1.2534399),
     ],
     &[("overlaps", 9.712805)],
     &[("contains", 8.90396)],
