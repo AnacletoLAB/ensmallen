@@ -1197,27 +1197,1278 @@ impl<'a> From<&'a Graph> for &'a graph::Graph {
 #[pymethods]
 impl Graph {
     #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self, minimum_node_degree, number_of_neighbours_for_hash)")]
-    /// Returns parallel iterator of vectors of isomorphic edges groups IDs.
+    #[pyo3(text_signature = "($self, src_node_id)")]
+    /// Returns shortest path result for the BFS from given source node ID.
     ///
     /// Parameters
     /// ----------
-    /// minimum_node_degree: Optional[int]
-    ///     Minimum node degree for each of the two nodes involved in the edge isomorphism. By default, 10.
-    /// number_of_neighbours_for_hash: Optional[int]
-    ///     The number of neighbours to consider for the hash. By default 10.
+    /// src_node_id: int
+    ///     Root of the tree of minimum paths.
     ///
-    pub fn get_isomorphic_edge_ids_groups(
+    ///
+    /// Safety
+    /// ------
+    /// If any of the given node ID does not exist in the graph the method will panic.
+    pub unsafe fn get_unchecked_breadth_first_search_predecessors_parallel_from_node_id(
         &self,
-        minimum_node_degree: Option<NodeT>,
-        number_of_neighbours_for_hash: Option<usize>,
-    ) -> PyResult<Vec<Vec<EdgeT>>> {
+        src_node_id: NodeT,
+    ) -> ShortestPathsResultBFS {
+        self.inner
+            .get_unchecked_breadth_first_search_predecessors_parallel_from_node_id(
+                src_node_id.clone(),
+            )
+            .into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, src_node_ids, maximal_depth)")]
+    /// Returns shortest path result for the BFS from given source node IDs, treating the set of source nodes as an hyper-node.
+    ///
+    /// Parameters
+    /// ----------
+    /// src_node_ids: List[int]
+    ///     Roots of the tree of minimum paths.
+    /// maximal_depth: Optional[int]
+    ///     The maximal depth to run the BFS for.
+    ///
+    ///
+    /// Safety
+    /// ------
+    /// If any of the given node IDs does not exist in the graph the method will panic.
+    ///  The provided list of node ids must be non-empty, or the method will panic.
+    pub unsafe fn get_unchecked_breadth_first_search_distances_parallel_from_node_ids(
+        &self,
+        src_node_ids: Vec<NodeT>,
+        maximal_depth: Option<NodeT>,
+    ) -> ShortestPathsResultBFS {
+        self.inner
+            .get_unchecked_breadth_first_search_distances_parallel_from_node_ids(
+                src_node_ids,
+                maximal_depth,
+            )
+            .into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, src_node_id, maximal_depth)")]
+    /// Returns shortest path result for the BFS from given source node ID.
+    ///
+    /// Parameters
+    /// ----------
+    /// src_node_id: int
+    ///     Root of the tree of minimum paths.
+    /// maximal_depth: Optional[int]
+    ///     The maximal depth to run the BFS for.
+    ///
+    ///
+    /// Safety
+    /// ------
+    /// If any of the given node ID does not exist in the graph the method will panic.
+    pub unsafe fn get_unchecked_breadth_first_search_distances_parallel_from_node_id(
+        &self,
+        src_node_id: NodeT,
+        maximal_depth: Option<NodeT>,
+    ) -> ShortestPathsResultBFS {
+        self.inner
+            .get_unchecked_breadth_first_search_distances_parallel_from_node_id(
+                src_node_id.clone(),
+                maximal_depth,
+            )
+            .into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, src_node_id)")]
+    /// Returns shortest path result for the BFS from given source node ID.
+    ///
+    /// Parameters
+    /// ----------
+    /// src_node_id: int
+    ///     Root of the tree of minimum paths.
+    ///
+    ///
+    /// Safety
+    /// ------
+    /// If any of the given node ID does not exist in the graph the method will panic.
+    ///
+    ///  TODO! Explore chains accelerations!
+    pub unsafe fn get_unchecked_breadth_first_search_distances_sequential_from_node_id(
+        &self,
+        src_node_id: NodeT,
+    ) -> ShortestPathsResultBFS {
+        self.inner
+            .get_unchecked_breadth_first_search_distances_sequential_from_node_id(
+                src_node_id.clone(),
+            )
+            .into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(
+        text_signature = "($self, src_node_ids, dst_node_id, compute_predecessors, maximal_depth)"
+    )]
+    /// Returns vector of minimum paths distances and vector of nodes predecessors, if requested, treating the set of source nodes as an hyper-node.
+    ///
+    /// Parameters
+    /// ----------
+    /// src_node_ids: List[int]
+    ///     Root of the tree of minimum paths.
+    /// maybe_dst_node_id: Optional[int]
+    ///     Optional target destination. If provided, the breadth first search will stop upon reaching this node.
+    /// compute_predecessors: Optional[bool]
+    ///     Whether to compute the vector of predecessors.
+    /// maximal_depth: Optional[int]
+    ///     The maximal depth to execute the DFS for.
+    ///
+    ///
+    /// Safety
+    /// ------
+    /// If any of the given node IDs does not exist in the graph the method will panic.
+    pub unsafe fn get_unchecked_breadth_first_search_from_node_ids(
+        &self,
+        src_node_ids: Vec<NodeT>,
+        dst_node_id: Option<NodeT>,
+        compute_predecessors: Option<bool>,
+        maximal_depth: Option<NodeT>,
+    ) -> ShortestPathsResultBFS {
+        self.inner
+            .get_unchecked_breadth_first_search_from_node_ids(
+                src_node_ids,
+                dst_node_id,
+                compute_predecessors,
+                maximal_depth,
+            )
+            .into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(
+        text_signature = "($self, src_node_id, dst_node_id, compute_predecessors, maximal_depth)"
+    )]
+    /// Returns vector of minimum paths distances and vector of nodes predecessors, if requested.
+    ///
+    /// Parameters
+    /// ----------
+    /// src_node_id: int
+    ///     Root of the tree of minimum paths.
+    /// maybe_dst_node_id: Optional[int]
+    ///     Optional target destination. If provided, breadth first search will stop upon reaching this node.
+    /// compute_predecessors: Optional[bool]
+    ///     Whether to compute the vector of predecessors.
+    /// maximal_depth: Optional[int]
+    ///     The maximal depth to execute the DFS for.
+    ///
+    ///
+    /// Safety
+    /// ------
+    /// If any of the given node IDs does not exist in the graph the method will panic.
+    pub unsafe fn get_unchecked_breadth_first_search_from_node_id(
+        &self,
+        src_node_id: NodeT,
+        dst_node_id: Option<NodeT>,
+        compute_predecessors: Option<bool>,
+        maximal_depth: Option<NodeT>,
+    ) -> ShortestPathsResultBFS {
+        self.inner
+            .get_unchecked_breadth_first_search_from_node_id(
+                src_node_id.clone(),
+                dst_node_id,
+                compute_predecessors,
+                maximal_depth,
+            )
+            .into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, src_node_id, dst_node_id, maximal_depth)")]
+    /// Returns minimum path node IDs and distance from given node ids.
+    ///
+    /// Parameters
+    /// ----------
+    /// src_node_id: int
+    ///     Source node ID.
+    /// dst_node_id: int
+    ///     Destination node ID.
+    /// maximal_depth: Optional[int]
+    ///     The maximal depth to execute the BFS for.
+    ///
+    ///
+    /// Safety
+    /// ------
+    /// If any of the given node IDs does not exist in the graph the method will panic.
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the given node is a selfloop.
+    /// ValueError
+    ///     If there is no path between the two given nodes.
+    ///
+    pub unsafe fn get_unchecked_shortest_path_node_ids_from_node_ids(
+        &self,
+        src_node_id: NodeT,
+        dst_node_id: NodeT,
+        maximal_depth: Option<NodeT>,
+    ) -> PyResult<Py<PyArray1<NodeT>>> {
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(
+                gil,
+                pe!(self
+                    .inner
+                    .get_unchecked_shortest_path_node_ids_from_node_ids(
+                        src_node_id.clone(),
+                        dst_node_id.clone(),
+                        maximal_depth
+                    ))?,
+                NodeT
+            )
+        })
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, src_node_id, dst_node_id, maximal_depth)")]
+    /// Returns minimum path node names from given node ids.
+    ///
+    /// Parameters
+    /// ----------
+    /// src_node_id: int
+    ///     Source node ID.
+    /// dst_node_id: int
+    ///     Destination node ID.
+    /// maximal_depth: Optional[int]
+    ///     The maximal depth to execute the BFS for.
+    ///
+    ///
+    /// Safety
+    /// ------
+    /// If any of the given node IDs does not exist in the graph the method will panic.
+    pub unsafe fn get_unchecked_shortest_path_node_names_from_node_ids(
+        &self,
+        src_node_id: NodeT,
+        dst_node_id: NodeT,
+        maximal_depth: Option<NodeT>,
+    ) -> PyResult<Vec<String>> {
         Ok(pe!(self
             .inner
-            .get_isomorphic_edge_ids_groups(minimum_node_degree, number_of_neighbours_for_hash))?
+            .get_unchecked_shortest_path_node_names_from_node_ids(
+                src_node_id.clone(),
+                dst_node_id.clone(),
+                maximal_depth
+            ))?
+        .into_iter()
+        .map(|x| x.into())
+        .collect::<Vec<_>>())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, src_node_id, dst_node_id, maximal_depth)")]
+    /// Returns minimum path node names from given node ids.
+    ///
+    /// Parameters
+    /// ----------
+    /// src_node_id: int
+    ///     Source node ID.
+    /// dst_node_id: int
+    ///     Destination node ID.
+    /// maximal_depth: Optional[int]
+    ///     The maximal depth to execute the BFS for.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If any of the given node IDs do not exist in the current graph.
+    ///
+    pub fn get_shortest_path_node_ids_from_node_ids(
+        &self,
+        src_node_id: NodeT,
+        dst_node_id: NodeT,
+        maximal_depth: Option<NodeT>,
+    ) -> PyResult<Py<PyArray1<NodeT>>> {
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(
+                gil,
+                pe!(self.inner.get_shortest_path_node_ids_from_node_ids(
+                    src_node_id.clone(),
+                    dst_node_id.clone(),
+                    maximal_depth
+                ))?,
+                NodeT
+            )
+        })
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, src_node_name, dst_node_name, maximal_depth)")]
+    /// Returns minimum path node names from given node names.
+    ///
+    /// Parameters
+    /// ----------
+    /// src_node_name: str
+    ///     Source node name.
+    /// dst_node_name: str
+    ///     Destination node name.
+    /// maximal_depth: Optional[int]
+    ///     The maximal depth to execute the BFS for.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If any of the given node names do not exist in the current graph.
+    ///
+    pub fn get_shortest_path_node_ids_from_node_names(
+        &self,
+        src_node_name: &str,
+        dst_node_name: &str,
+        maximal_depth: Option<NodeT>,
+    ) -> PyResult<Py<PyArray1<NodeT>>> {
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(
+                gil,
+                pe!(self.inner.get_shortest_path_node_ids_from_node_names(
+                    src_node_name,
+                    dst_node_name,
+                    maximal_depth
+                ))?,
+                NodeT
+            )
+        })
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, src_node_name, dst_node_name, maximal_depth)")]
+    /// Returns minimum path node names from given node names.
+    ///
+    /// Parameters
+    /// ----------
+    /// src_node_name: str
+    ///     Source node name.
+    /// dst_node_name: str
+    ///     Destination node name.
+    /// maximal_depth: Optional[int]
+    ///     The maximal depth to execute the BFS for.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If any of the given node names do not exist in the current graph.
+    ///
+    pub fn get_shortest_path_node_names_from_node_names(
+        &self,
+        src_node_name: &str,
+        dst_node_name: &str,
+        maximal_depth: Option<NodeT>,
+    ) -> PyResult<Vec<String>> {
+        Ok(pe!(self.inner.get_shortest_path_node_names_from_node_names(
+            src_node_name,
+            dst_node_name,
+            maximal_depth
+        ))?
+        .into_iter()
+        .map(|x| x.into())
+        .collect::<Vec<_>>())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, src_node_id, dst_node_id, k)")]
+    /// Return vector of the k minimum paths node IDs between given source node and destination node ID.
+    ///
+    /// Parameters
+    /// ----------
+    /// src_node_id: int
+    ///     Source node ID.
+    /// dst_node_id: int
+    ///     Destination node ID.
+    /// k: int
+    ///     Number of paths to find.
+    ///
+    ///
+    /// Safety
+    /// ------
+    /// If any of the given node IDs does not exist in the graph the method will panic.
+    pub unsafe fn get_unchecked_k_shortest_path_node_ids_from_node_ids(
+        &self,
+        src_node_id: NodeT,
+        dst_node_id: NodeT,
+        k: usize,
+    ) -> Vec<Vec<NodeT>> {
+        self.inner
+            .get_unchecked_k_shortest_path_node_ids_from_node_ids(
+                src_node_id.clone(),
+                dst_node_id.clone(),
+                k.clone(),
+            )
+            .into_iter()
+            .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>())
+            .collect::<Vec<_>>()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, src_node_id, dst_node_id, k)")]
+    /// Return vector of the k minimum paths node IDs between given source node and destination node ID.
+    ///
+    /// Parameters
+    /// ----------
+    /// src_node_id: int
+    ///     Source node ID.
+    /// dst_node_id: int
+    ///     Destination node ID.
+    /// maximal_depth: Optional[int]
+    ///     The maximal depth to execute the BFS for.
+    /// k: int
+    ///     Number of paths to find.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If any of the given node IDs does not exist in the graph.
+    ///
+    pub fn get_k_shortest_path_node_ids_from_node_ids(
+        &self,
+        src_node_id: NodeT,
+        dst_node_id: NodeT,
+        k: usize,
+    ) -> PyResult<Vec<Vec<NodeT>>> {
+        Ok(pe!(self.inner.get_k_shortest_path_node_ids_from_node_ids(
+            src_node_id.clone(),
+            dst_node_id.clone(),
+            k.clone()
+        ))?
         .into_iter()
         .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>())
         .collect::<Vec<_>>())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, src_node_name, dst_node_name, k)")]
+    /// Return vector of the k minimum paths node IDs between given source node and destination node name.
+    ///
+    /// Parameters
+    /// ----------
+    /// src_node_name: str
+    ///     Source node name.
+    /// dst_node_name: str
+    ///     Destination node name.
+    /// k: int
+    ///     Number of paths to find.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If any of the given node names does not exist in the graph.
+    ///
+    pub fn get_k_shortest_path_node_ids_from_node_names(
+        &self,
+        src_node_name: &str,
+        dst_node_name: &str,
+        k: usize,
+    ) -> PyResult<Vec<Vec<NodeT>>> {
+        Ok(pe!(self.inner.get_k_shortest_path_node_ids_from_node_names(
+            src_node_name,
+            dst_node_name,
+            k.clone()
+        ))?
+        .into_iter()
+        .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>())
+        .collect::<Vec<_>>())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, src_node_name, dst_node_name, k)")]
+    /// Return vector of the k minimum paths node names between given source node and destination node name.
+    ///
+    /// Parameters
+    /// ----------
+    /// src_node_name: str
+    ///     Source node name.
+    /// dst_node_name: str
+    ///     Destination node name.
+    /// k: int
+    ///     Number of paths to find.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If any of the given node names does not exist in the graph.
+    ///
+    pub fn get_k_shortest_path_node_names_from_node_names(
+        &self,
+        src_node_name: &str,
+        dst_node_name: &str,
+        k: usize,
+    ) -> PyResult<Vec<Vec<String>>> {
+        Ok(
+            pe!(self.inner.get_k_shortest_path_node_names_from_node_names(
+                src_node_name,
+                dst_node_name,
+                k.clone()
+            ))?
+            .into_iter()
+            .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>())
+            .collect::<Vec<_>>(),
+        )
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, node_id)")]
+    /// Returns unweighted eccentricity of the given node.
+    ///
+    /// This method will panic if the given node ID does not exists in the graph.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_id: int
+    ///     Node for which to compute the eccentricity.
+    ///
+    ///
+    /// Safety
+    /// ------
+    /// If any of the given node IDs does not exist in the graph the method will panic.
+    pub unsafe fn get_unchecked_eccentricity_and_most_distant_node_id_from_node_id(
+        &self,
+        node_id: NodeT,
+    ) -> (NodeT, NodeT) {
+        let (subresult_0, subresult_1) = self
+            .inner
+            .get_unchecked_eccentricity_and_most_distant_node_id_from_node_id(node_id.clone());
+        (subresult_0.into(), subresult_1.into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, node_id, use_edge_weights_as_probabilities)")]
+    /// Returns weighted eccentricity of the given node.
+    ///
+    /// This method will panic if the given node ID does not exists in the graph.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_id: int
+    ///     Node for which to compute the eccentricity.
+    /// use_edge_weights_as_probabilities: Optional[bool]
+    ///     Whether to treat the edge weights as probabilities.
+    ///
+    ///
+    /// Safety
+    /// ------
+    /// If any of the given node IDs does not exist in the graph the method will panic.
+    pub unsafe fn get_unchecked_weighted_eccentricity_from_node_id(
+        &self,
+        node_id: NodeT,
+        use_edge_weights_as_probabilities: Option<bool>,
+    ) -> f32 {
+        self.inner
+            .get_unchecked_weighted_eccentricity_from_node_id(
+                node_id.clone(),
+                use_edge_weights_as_probabilities,
+            )
+            .into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, node_id)")]
+    /// Returns unweighted eccentricity of the given node ID.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_id: int
+    ///     Node for which to compute the eccentricity.
+    /// use_edge_weights_as_probabilities: Optional[bool]
+    ///     Whether to treat the edge weights as probabilities.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the given node ID does not exist in the graph.
+    ///
+    pub fn get_eccentricity_and_most_distant_node_id_from_node_id(
+        &self,
+        node_id: NodeT,
+    ) -> PyResult<(NodeT, NodeT)> {
+        Ok({
+            let (subresult_0, subresult_1) = pe!(self
+                .inner
+                .get_eccentricity_and_most_distant_node_id_from_node_id(node_id.clone()))?
+            .into();
+            (subresult_0.into(), subresult_1.into())
+        })
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, node_id, use_edge_weights_as_probabilities)")]
+    /// Returns weighted eccentricity of the given node ID.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_id: int
+    ///     Node for which to compute the eccentricity.
+    /// use_edge_weights_as_probabilities: Optional[bool]
+    ///     Whether to treat the edge weights as probabilities.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the given node ID does not exist in the graph.
+    /// ValueError
+    ///     If weights are requested to be treated as probabilities but are not between 0 and 1.
+    /// ValueError
+    ///     If the graph contains negative weights.
+    ///
+    pub fn get_weighted_eccentricity_from_node_id(
+        &self,
+        node_id: NodeT,
+        use_edge_weights_as_probabilities: Option<bool>,
+    ) -> PyResult<f32> {
+        Ok(pe!(self.inner.get_weighted_eccentricity_from_node_id(
+            node_id.clone(),
+            use_edge_weights_as_probabilities
+        ))?
+        .into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, node_name)")]
+    /// Returns unweighted eccentricity of the given node name.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_name: str
+    ///     Node for which to compute the eccentricity.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the given node name does not exist in the current graph instance.
+    ///
+    pub fn get_eccentricity_from_node_name(&self, node_name: &str) -> PyResult<NodeT> {
+        Ok(pe!(self.inner.get_eccentricity_from_node_name(node_name))?.into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, node_name, use_edge_weights_as_probabilities)")]
+    /// Returns weighted eccentricity of the given node name.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_name: str
+    ///     Node for which to compute the eccentricity.
+    /// use_edge_weights_as_probabilities: Optional[bool]
+    ///     Whether to treat the edge weights as probabilities.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the given node name does not exist in the graph.
+    /// ValueError
+    ///     If weights are requested to be treated as probabilities but are not between 0 and 1.
+    /// ValueError
+    ///     If the graph contains negative weights.
+    ///
+    pub fn get_weighted_eccentricity_from_node_name(
+        &self,
+        node_name: &str,
+        use_edge_weights_as_probabilities: Option<bool>,
+    ) -> PyResult<f32> {
+        Ok(pe!(self.inner.get_weighted_eccentricity_from_node_name(
+            node_name,
+            use_edge_weights_as_probabilities
+        ))?
+        .into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(
+        text_signature = "($self, src_node_ids, maybe_dst_node_id, maybe_dst_node_ids, compute_predecessors, maximal_depth, use_edge_weights_as_probabilities)"
+    )]
+    /// Returns vector of minimum paths distances and vector of nodes predecessors, if requested, from the given root nodes (treated as an hyper-node).
+    ///
+    /// Parameters
+    /// ----------
+    /// src_node_id: List[int]
+    ///     Root of the tree of minimum paths.
+    /// maybe_dst_node_id: Optional[int]
+    ///     Optional target destination. If provided, Dijkstra will stop upon reaching this node.
+    /// maybe_dst_node_ids: Optional[List[int]]
+    ///     Optional target destinations. If provided, Dijkstra will stop upon reaching all of these nodes.
+    /// compute_predecessors: bool
+    ///     Whether to compute the vector of predecessors.
+    /// maximal_depth: Optional[int]
+    ///     The maximal number of iterations to execute Dijkstra for.
+    /// use_edge_weights_as_probabilities: Optional[bool]
+    ///     Whether to treat the edge weights as probabilities.
+    ///
+    ///
+    /// Safety
+    /// ------
+    /// If any of the given node IDs does not exist in the graph the method will panic.
+    pub unsafe fn get_unchecked_dijkstra_from_node_ids(
+        &self,
+        src_node_ids: Vec<NodeT>,
+        maybe_dst_node_id: Option<NodeT>,
+        maybe_dst_node_ids: Option<Vec<NodeT>>,
+        compute_predecessors: Option<bool>,
+        maximal_depth: Option<NodeT>,
+        use_edge_weights_as_probabilities: Option<bool>,
+    ) -> ShortestPathsDjkstra {
+        self.inner
+            .get_unchecked_dijkstra_from_node_ids(
+                src_node_ids,
+                maybe_dst_node_id,
+                maybe_dst_node_ids,
+                compute_predecessors,
+                maximal_depth,
+                use_edge_weights_as_probabilities,
+            )
+            .into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(
+        text_signature = "($self, src_node_id, maybe_dst_node_id, maybe_dst_node_ids, compute_predecessors, maximal_depth, use_edge_weights_as_probabilities)"
+    )]
+    /// Returns vector of minimum paths distances and vector of nodes predecessors, if requested.
+    ///
+    /// Parameters
+    /// ----------
+    /// src_node_id: int
+    ///     Root of the tree of minimum paths.
+    /// maybe_dst_node_id: Optional[int]
+    ///     Optional target destination. If provided, Dijkstra will stop upon reaching this node.
+    /// maybe_dst_node_ids: Optional[List[int]]
+    ///     Optional target destinations. If provided, Dijkstra will stop upon reaching all of these nodes.
+    /// compute_predecessors: bool
+    ///     Whether to compute the vector of predecessors.
+    /// maximal_depth: Optional[int]
+    ///     The maximal number of iterations to execute Dijkstra for.
+    /// use_edge_weights_as_probabilities: Optional[bool]
+    ///     Whether to treat the edge weights as probabilities.
+    ///
+    ///
+    /// Safety
+    /// ------
+    /// If any of the given node IDs does not exist in the graph the method will panic.
+    pub unsafe fn get_unchecked_dijkstra_from_node_id(
+        &self,
+        src_node_id: NodeT,
+        maybe_dst_node_id: Option<NodeT>,
+        maybe_dst_node_ids: Option<Vec<NodeT>>,
+        compute_predecessors: Option<bool>,
+        maximal_depth: Option<NodeT>,
+        use_edge_weights_as_probabilities: Option<bool>,
+    ) -> ShortestPathsDjkstra {
+        self.inner
+            .get_unchecked_dijkstra_from_node_id(
+                src_node_id.clone(),
+                maybe_dst_node_id,
+                maybe_dst_node_ids,
+                compute_predecessors,
+                maximal_depth,
+                use_edge_weights_as_probabilities,
+            )
+            .into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(
+        text_signature = "($self, src_node_id, dst_node_id, use_edge_weights_as_probabilities, maximal_depth)"
+    )]
+    /// Returns minimum path node IDs and distance from given node ids.
+    ///
+    /// Parameters
+    /// ----------
+    /// src_node_id: int
+    ///     Source node ID.
+    /// dst_node_id: int
+    ///     Destination node ID.
+    /// use_edge_weights_as_probabilities: Optional[bool]
+    ///     Whether to treat the edge weights as probabilities.
+    /// maximal_depth: Optional[int]
+    ///     The maximal number of iterations to execute Dijkstra for.
+    ///
+    ///
+    /// Safety
+    /// ------
+    /// If any of the given node IDs does not exist in the graph the method will panic.
+    pub unsafe fn get_unchecked_weighted_shortest_path_node_ids_from_node_ids(
+        &self,
+        src_node_id: NodeT,
+        dst_node_id: NodeT,
+        use_edge_weights_as_probabilities: Option<bool>,
+        maximal_depth: Option<NodeT>,
+    ) -> (f32, Py<PyArray1<NodeT>>) {
+        let (subresult_0, subresult_1) = self
+            .inner
+            .get_unchecked_weighted_shortest_path_node_ids_from_node_ids(
+                src_node_id.clone(),
+                dst_node_id.clone(),
+                use_edge_weights_as_probabilities,
+                maximal_depth,
+            );
+        (subresult_0.into(), {
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(gil, subresult_1, NodeT)
+        })
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(
+        text_signature = "($self, src_node_id, dst_node_id, use_edge_weights_as_probabilities, maximal_depth)"
+    )]
+    /// Returns minimum path node names from given node ids.
+    ///
+    /// Parameters
+    /// ----------
+    /// src_node_id: int
+    ///     Source node ID.
+    /// dst_node_id: int
+    ///     Destination node ID.
+    /// use_edge_weights_as_probabilities: Optional[bool]
+    ///     Whether to treat the edge weights as probabilities.
+    /// maximal_depth: Optional[int]
+    ///     The maximal number of iterations to execute Dijkstra for.
+    ///
+    ///
+    /// Safety
+    /// ------
+    /// If any of the given node IDs does not exist in the graph the method will panic.
+    pub unsafe fn get_unchecked_weighted_shortest_path_node_names_from_node_ids(
+        &self,
+        src_node_id: NodeT,
+        dst_node_id: NodeT,
+        use_edge_weights_as_probabilities: Option<bool>,
+        maximal_depth: Option<NodeT>,
+    ) -> (f32, Vec<String>) {
+        let (subresult_0, subresult_1) = self
+            .inner
+            .get_unchecked_weighted_shortest_path_node_names_from_node_ids(
+                src_node_id.clone(),
+                dst_node_id.clone(),
+                use_edge_weights_as_probabilities,
+                maximal_depth,
+            );
+        (
+            subresult_0.into(),
+            subresult_1
+                .into_iter()
+                .map(|x| x.into())
+                .collect::<Vec<_>>(),
+        )
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(
+        text_signature = "($self, src_node_id, dst_node_id, use_edge_weights_as_probabilities, maximal_depth)"
+    )]
+    /// Returns minimum path node names from given node ids.
+    ///
+    /// Parameters
+    /// ----------
+    /// src_node_id: int
+    ///     Source node ID.
+    /// dst_node_id: int
+    ///     Destination node ID.
+    /// use_edge_weights_as_probabilities: Optional[bool]
+    ///     Whether to treat the edge weights as probabilities.
+    /// maximal_depth: Optional[int]
+    ///     The maximal number of iterations to execute Dijkstra for.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If any of the given node IDs do not exist in the current graph.
+    ///
+    pub fn get_weighted_shortest_path_node_ids_from_node_ids(
+        &self,
+        src_node_id: NodeT,
+        dst_node_id: NodeT,
+        use_edge_weights_as_probabilities: Option<bool>,
+        maximal_depth: Option<NodeT>,
+    ) -> PyResult<(f32, Py<PyArray1<NodeT>>)> {
+        Ok({
+            let (subresult_0, subresult_1) = pe!(self
+                .inner
+                .get_weighted_shortest_path_node_ids_from_node_ids(
+                    src_node_id.clone(),
+                    dst_node_id.clone(),
+                    use_edge_weights_as_probabilities,
+                    maximal_depth
+                ))?
+            .into();
+            (subresult_0.into(), {
+                let gil = pyo3::Python::acquire_gil();
+                to_ndarray_1d!(gil, subresult_1, NodeT)
+            })
+        })
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(
+        text_signature = "($self, src_node_name, dst_node_name, use_edge_weights_as_probabilities, maximal_depth)"
+    )]
+    /// Returns minimum path node names from given node names.
+    ///
+    /// Parameters
+    /// ----------
+    /// src_node_name: str
+    ///     Source node name.
+    /// dst_node_name: str
+    ///     Destination node name.
+    /// use_edge_weights_as_probabilities: Optional[bool]
+    ///     Whether to treat the edge weights as probabilities.
+    /// maximal_depth: Optional[int]
+    ///     The maximal number of iterations to execute Dijkstra for.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If any of the given node names do not exist in the current graph.
+    ///
+    pub fn get_weighted_shortest_path_node_ids_from_node_names(
+        &self,
+        src_node_name: &str,
+        dst_node_name: &str,
+        use_edge_weights_as_probabilities: Option<bool>,
+        maximal_depth: Option<NodeT>,
+    ) -> PyResult<(f32, Py<PyArray1<NodeT>>)> {
+        Ok({
+            let (subresult_0, subresult_1) = pe!(self
+                .inner
+                .get_weighted_shortest_path_node_ids_from_node_names(
+                    src_node_name,
+                    dst_node_name,
+                    use_edge_weights_as_probabilities,
+                    maximal_depth
+                ))?
+            .into();
+            (subresult_0.into(), {
+                let gil = pyo3::Python::acquire_gil();
+                to_ndarray_1d!(gil, subresult_1, NodeT)
+            })
+        })
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(
+        text_signature = "($self, src_node_name, dst_node_name, use_edge_weights_as_probabilities, maximal_depth)"
+    )]
+    /// Returns minimum path node names from given node names.
+    ///
+    /// Parameters
+    /// ----------
+    /// src_node_name: str
+    ///     Source node name.
+    /// dst_node_name: str
+    ///     Destination node name.
+    /// use_edge_weights_as_probabilities: Optional[bool]
+    ///     Whether to treat the edge weights as probabilities.
+    /// maximal_depth: Optional[int]
+    ///     The maximal number of iterations to execute Dijkstra for.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If any of the given node names do not exist in the current graph.
+    ///
+    pub fn get_weighted_shortest_path_node_names_from_node_names(
+        &self,
+        src_node_name: &str,
+        dst_node_name: &str,
+        use_edge_weights_as_probabilities: Option<bool>,
+        maximal_depth: Option<NodeT>,
+    ) -> PyResult<(f32, Vec<String>)> {
+        Ok({
+            let (subresult_0, subresult_1) = pe!(self
+                .inner
+                .get_weighted_shortest_path_node_names_from_node_names(
+                    src_node_name,
+                    dst_node_name,
+                    use_edge_weights_as_probabilities,
+                    maximal_depth
+                ))?
+            .into();
+            (
+                subresult_0.into(),
+                subresult_1
+                    .into_iter()
+                    .map(|x| x.into())
+                    .collect::<Vec<_>>(),
+            )
+        })
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(
+        text_signature = "($self, src_node_id, dst_node_id, compute_predecessors, maximal_depth)"
+    )]
+    /// Returns vector of minimum paths distances and vector of nodes predecessors from given source node ID and optional destination node ID.
+    ///
+    /// Parameters
+    /// ----------
+    /// src_node_id: int
+    ///     Node ID root of the tree of minimum paths.
+    /// compute_predecessors: Optional[bool]
+    ///     Whether to compute the vector of predecessors.
+    /// maximal_depth: Optional[int]
+    ///     The maximal number of iterations to execute the DFS for.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the given source node ID does not exist in the current graph.
+    /// ValueError
+    ///     If the given optional destination node ID does not exist in the current graph.
+    ///
+    pub fn get_breadth_first_search_from_node_ids(
+        &self,
+        src_node_id: NodeT,
+        dst_node_id: Option<NodeT>,
+        compute_predecessors: Option<bool>,
+        maximal_depth: Option<NodeT>,
+    ) -> PyResult<ShortestPathsResultBFS> {
+        Ok(pe!(self.inner.get_breadth_first_search_from_node_ids(
+            src_node_id.clone(),
+            dst_node_id,
+            compute_predecessors,
+            maximal_depth
+        ))?
+        .into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(
+        text_signature = "($self, src_node_id, maybe_dst_node_id, maybe_dst_node_ids, compute_predecessors, maximal_depth, use_edge_weights_as_probabilities)"
+    )]
+    /// Returns vector of minimum paths distances and vector of nodes predecessors from given source node ID and optional destination node ID.
+    ///
+    /// Parameters
+    /// ----------
+    /// src_node_id: int
+    ///     Node ID root of the tree of minimum paths.
+    /// maybe_dst_node_id: Optional[int]
+    ///     Optional target destination. If provided, Dijkstra will stop upon reaching this node.
+    /// maybe_dst_node_ids: Optional[List[int]]
+    ///     Optional target destinations. If provided, Dijkstra will stop upon reaching all of these nodes.
+    /// compute_predecessors: Optional[bool]
+    ///     Whether to compute the vector of predecessors.
+    /// maximal_depth: Optional[int]
+    ///     The maximal depth to execute the DFS for.
+    /// use_edge_weights_as_probabilities: Optional[bool]
+    ///     Whether to treat the edge weights as probabilities.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the weights are to be used and the graph does not have weights.
+    /// ValueError
+    ///     If the given source node ID does not exist in the current graph.
+    /// ValueError
+    ///     If the given optional destination node ID does not exist in the current graph.
+    /// ValueError
+    ///     If weights are requested to be treated as probabilities but are not between 0 and 1.
+    /// ValueError
+    ///     If the graph contains negative weights.
+    ///
+    pub fn get_dijkstra_from_node_ids(
+        &self,
+        src_node_id: NodeT,
+        maybe_dst_node_id: Option<NodeT>,
+        maybe_dst_node_ids: Option<Vec<NodeT>>,
+        compute_predecessors: Option<bool>,
+        maximal_depth: Option<NodeT>,
+        use_edge_weights_as_probabilities: Option<bool>,
+    ) -> PyResult<ShortestPathsDjkstra> {
+        Ok(pe!(self.inner.get_dijkstra_from_node_ids(
+            src_node_id.clone(),
+            maybe_dst_node_id,
+            maybe_dst_node_ids,
+            compute_predecessors,
+            maximal_depth,
+            use_edge_weights_as_probabilities
+        ))?
+        .into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Returns approximated diameter and tentative low eccentricity node for an UNDIRECTED graph.
+    /// This method returns a lowerbound of the diameter by doing the following steps:
+    /// * Find the most central node
+    /// * Find the most distant node from the most central one (and get a first
+    /// approximation of the diameter lowerbound)
+    /// * Get the median node in this path
+    /// * Find the most distant node from the median node
+    /// * Find the most distant node form the last one, and get the second approx
+    /// of the diameter lowerbound.
+    ///
+    /// This basically creates a "cross" that spans the graph
+    pub fn get_four_sweep(&self) -> (NodeT, NodeT) {
+        let (subresult_0, subresult_1) = self.inner.get_four_sweep();
+        (subresult_0.into(), subresult_1.into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, ignore_infinity, verbose)")]
+    /// Returns diameter of the graph using naive method.
+    ///
+    /// Note that there exists the non-naive method for undirected graphs
+    /// and it is possible to implement a faster method for directed graphs
+    /// but we still need to get to it, as it will require an updated
+    /// succinct data structure.
+    ///
+    /// Parameters
+    /// ----------
+    /// ignore_infinity: Optional[bool]
+    ///     Whether to ignore infinite distances, which are present when in the graph exist multiple components.
+    /// verbose: Optional[bool]
+    ///     Whether to show a loading bar.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the graph does not contain nodes.
+    ///
+    pub fn get_diameter_naive(
+        &self,
+        ignore_infinity: Option<bool>,
+        verbose: Option<bool>,
+    ) -> PyResult<f32> {
+        Ok(pe!(self.inner.get_diameter_naive(ignore_infinity, verbose))?.into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, ignore_infinity, verbose)")]
+    /// Returns diameter of the graph.
+    ///
+    /// Parameters
+    /// ----------
+    /// ignore_infinity: Optional[bool]
+    ///     Whether to ignore infinite distances, which are present when in the graph exist multiple components. By default True.
+    /// verbose: Optional[bool]
+    ///     Whether to show a loading bar.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the graph does not contain nodes.
+    ///
+    pub fn get_diameter(
+        &self,
+        ignore_infinity: Option<bool>,
+        verbose: Option<bool>,
+    ) -> PyResult<f32> {
+        Ok(pe!(self.inner.get_diameter(ignore_infinity, verbose))?.into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(
+        text_signature = "($self, src_node_name, dst_node_name, compute_predecessors, maximal_depth)"
+    )]
+    /// Returns vector of minimum paths distances and vector of nodes predecessors from given source node name and optional destination node name.
+    ///
+    /// Parameters
+    /// ----------
+    /// src_node_name: str
+    ///     Node name root of the tree of minimum paths.
+    /// dst_node_name: Optional[&str]
+    ///     Destination node name.
+    /// compute_predecessors: Optional[bool]
+    ///     Whether to compute the vector of predecessors.
+    /// maximal_depth: Optional[int]
+    ///     The maximal depth to execute the DFS for.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the weights are to be used and the graph does not have weights.
+    /// ValueError
+    ///     If the given source node name does not exist in the current graph.
+    /// ValueError
+    ///     If the given optional destination node name does not exist in the current graph.
+    ///
+    pub fn get_breadth_first_search_from_node_names(
+        &self,
+        src_node_name: &str,
+        dst_node_name: Option<&str>,
+        compute_predecessors: Option<bool>,
+        maximal_depth: Option<NodeT>,
+    ) -> PyResult<ShortestPathsResultBFS> {
+        Ok(pe!(self.inner.get_breadth_first_search_from_node_names(
+            src_node_name,
+            dst_node_name,
+            compute_predecessors,
+            maximal_depth
+        ))?
+        .into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(
+        text_signature = "($self, src_node_name, maybe_dst_node_name, maybe_dst_node_names, compute_predecessors, maximal_depth, use_edge_weights_as_probabilities)"
+    )]
+    /// Returns vector of minimum paths distances and vector of nodes predecessors from given source node name and optional destination node name.
+    ///
+    /// Parameters
+    /// ----------
+    /// src_node_name: str
+    ///     Node name root of the tree of minimum paths.
+    /// maybe_dst_node_name: Optional[&str]
+    ///     Optional target destination node name. If provided, Dijkstra will stop upon reaching this node.
+    /// maybe_dst_node_names: Optional[List[&str]]
+    ///     Optional target destination node names. If provided, Dijkstra will stop upon reaching all of these nodes.
+    /// compute_predecessors: Optional[bool]
+    ///     Whether to compute the vector of predecessors.
+    /// maximal_depth: Optional[int]
+    ///     The maximal depth to execute the DFS for.
+    /// use_edge_weights_as_probabilities: Optional[bool]
+    ///     Whether to treat the edge weights as probabilities.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the weights are to be used and the graph does not have weights.
+    /// ValueError
+    ///     If the given source node name does not exist in the current graph.
+    /// ValueError
+    ///     If the given optional destination node name does not exist in the current graph.
+    ///
+    pub fn get_dijkstra_from_node_names(
+        &self,
+        src_node_name: &str,
+        maybe_dst_node_name: Option<&str>,
+        maybe_dst_node_names: Option<Vec<&str>>,
+        compute_predecessors: Option<bool>,
+        maximal_depth: Option<NodeT>,
+        use_edge_weights_as_probabilities: Option<bool>,
+    ) -> PyResult<ShortestPathsDjkstra> {
+        Ok(pe!(self.inner.get_dijkstra_from_node_names(
+            src_node_name,
+            maybe_dst_node_name,
+            maybe_dst_node_names,
+            compute_predecessors,
+            maximal_depth,
+            use_edge_weights_as_probabilities
+        ))?
+        .into())
     }
 
     #[automatically_generated_binding]
@@ -1719,6 +2970,89 @@ impl Graph {
             .into_iter()
             .map(|x| x.into())
             .collect::<Vec<_>>())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, iterations, verbose)")]
+    /// Returns graph to the i-th transitivity closure iteration.
+    ///
+    /// Parameters
+    /// ----------
+    /// iterations: Optional[int]
+    ///     The number of iterations of the transitive closure to execute. If None, the complete transitive closure is computed.
+    /// verbose: Optional[bool]
+    ///     Whether to show a loading bar while building the graph.
+    ///
+    pub fn get_transitive_closure(
+        &self,
+        iterations: Option<NodeT>,
+        verbose: Option<bool>,
+    ) -> Graph {
+        self.inner
+            .get_transitive_closure(iterations, verbose)
+            .into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, iterations, verbose)")]
+    /// Returns graph with unweighted shortest paths computed up to the given depth.
+    ///
+    /// The returned graph will have no selfloops.
+    ///
+    /// Parameters
+    /// ----------
+    /// iterations: Optional[int]
+    ///     The number of iterations of the transitive closure to execute. If None, the complete transitive closure is computed.
+    /// verbose: Optional[bool]
+    ///     Whether to show a loading bar while building the graph.
+    ///
+    pub fn get_all_shortest_paths(
+        &self,
+        iterations: Option<NodeT>,
+        verbose: Option<bool>,
+    ) -> Graph {
+        self.inner
+            .get_all_shortest_paths(iterations, verbose)
+            .into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, iterations, use_edge_weights_as_probabilities, verbose)")]
+    /// Returns graph with weighted shortest paths computed up to the given depth.
+    ///
+    /// The returned graph will have no selfloops.
+    ///
+    /// Parameters
+    /// ----------
+    /// iterations: Optional[int]
+    ///     The number of iterations of the transitive closure to execute. If None, the complete transitive closure is computed.
+    /// use_edge_weights_as_probabilities: Optional[bool]
+    ///     Whether to treat the edge weights as probabilities.
+    /// verbose: Optional[bool]
+    ///     Whether to show a loading bar while building the graph.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the graph does not have weights.
+    /// ValueError
+    ///     If the graph contains negative weights.
+    /// ValueError
+    ///     If the user has asked for the weights to be treated as probabilities but the weights are not between 0 and 1.
+    ///
+    pub fn get_weighted_all_shortest_paths(
+        &self,
+        iterations: Option<NodeT>,
+        use_edge_weights_as_probabilities: Option<bool>,
+        verbose: Option<bool>,
+    ) -> PyResult<Graph> {
+        Ok(pe!(self.inner.get_weighted_all_shortest_paths(
+            iterations,
+            use_edge_weights_as_probabilities,
+            verbose
+        ))?
+        .into())
     }
 
     #[automatically_generated_binding]
@@ -2345,6 +3679,30 @@ impl Graph {
             name
         ))?
         .into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, minimum_node_degree, number_of_neighbours_for_hash)")]
+    /// Returns parallel iterator of vectors of isomorphic edges groups IDs.
+    ///
+    /// Parameters
+    /// ----------
+    /// minimum_node_degree: Optional[int]
+    ///     Minimum node degree for each of the two nodes involved in the edge isomorphism. By default, 10.
+    /// number_of_neighbours_for_hash: Optional[int]
+    ///     The number of neighbours to consider for the hash. By default 10.
+    ///
+    pub fn get_isomorphic_edge_ids_groups(
+        &self,
+        minimum_node_degree: Option<NodeT>,
+        number_of_neighbours_for_hash: Option<usize>,
+    ) -> PyResult<Vec<Vec<EdgeT>>> {
+        Ok(pe!(self
+            .inner
+            .get_isomorphic_edge_ids_groups(minimum_node_degree, number_of_neighbours_for_hash))?
+        .into_iter()
+        .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>())
+        .collect::<Vec<_>>())
     }
 
     #[automatically_generated_binding]
@@ -11435,89 +12793,6 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self, iterations, verbose)")]
-    /// Returns graph to the i-th transitivity closure iteration.
-    ///
-    /// Parameters
-    /// ----------
-    /// iterations: Optional[int]
-    ///     The number of iterations of the transitive closure to execute. If None, the complete transitive closure is computed.
-    /// verbose: Optional[bool]
-    ///     Whether to show a loading bar while building the graph.
-    ///
-    pub fn get_transitive_closure(
-        &self,
-        iterations: Option<NodeT>,
-        verbose: Option<bool>,
-    ) -> Graph {
-        self.inner
-            .get_transitive_closure(iterations, verbose)
-            .into()
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self, iterations, verbose)")]
-    /// Returns graph with unweighted shortest paths computed up to the given depth.
-    ///
-    /// The returned graph will have no selfloops.
-    ///
-    /// Parameters
-    /// ----------
-    /// iterations: Optional[int]
-    ///     The number of iterations of the transitive closure to execute. If None, the complete transitive closure is computed.
-    /// verbose: Optional[bool]
-    ///     Whether to show a loading bar while building the graph.
-    ///
-    pub fn get_all_shortest_paths(
-        &self,
-        iterations: Option<NodeT>,
-        verbose: Option<bool>,
-    ) -> Graph {
-        self.inner
-            .get_all_shortest_paths(iterations, verbose)
-            .into()
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self, iterations, use_edge_weights_as_probabilities, verbose)")]
-    /// Returns graph with weighted shortest paths computed up to the given depth.
-    ///
-    /// The returned graph will have no selfloops.
-    ///
-    /// Parameters
-    /// ----------
-    /// iterations: Optional[int]
-    ///     The number of iterations of the transitive closure to execute. If None, the complete transitive closure is computed.
-    /// use_edge_weights_as_probabilities: Optional[bool]
-    ///     Whether to treat the edge weights as probabilities.
-    /// verbose: Optional[bool]
-    ///     Whether to show a loading bar while building the graph.
-    ///
-    ///
-    /// Raises
-    /// -------
-    /// ValueError
-    ///     If the graph does not have weights.
-    /// ValueError
-    ///     If the graph contains negative weights.
-    /// ValueError
-    ///     If the user has asked for the weights to be treated as probabilities but the weights are not between 0 and 1.
-    ///
-    pub fn get_weighted_all_shortest_paths(
-        &self,
-        iterations: Option<NodeT>,
-        use_edge_weights_as_probabilities: Option<bool>,
-        verbose: Option<bool>,
-    ) -> PyResult<Graph> {
-        Ok(pe!(self.inner.get_weighted_all_shortest_paths(
-            iterations,
-            use_edge_weights_as_probabilities,
-            verbose
-        ))?
-        .into())
-    }
-
-    #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Print the current graph in a format compatible with Graphviz dot's format
     pub fn to_dot(&self) -> String {
@@ -13335,27 +14610,25 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self, normalize, verbose)")]
+    #[pyo3(text_signature = "($self, verbose)")]
     /// Returns vector of stress centrality for all nodes.
     ///
     /// Parameters
     /// ----------
-    /// normalize: Optional[bool]
-    ///     Whether to normalize the values. By default, it is false.
     /// verbose: Optional[bool]
-    ///     Whether to show a loading bar. By default, it is true.
+    ///     Whether to show a loading bar while computing the stress centrality. By default, true.
     ///
-    pub fn get_stress_centrality(
-        &self,
-        normalize: Option<bool>,
-        verbose: Option<bool>,
-    ) -> Py<PyArray1<f32>> {
-        let gil = pyo3::Python::acquire_gil();
-        to_ndarray_1d!(
-            gil,
-            self.inner.get_stress_centrality(normalize, verbose),
-            f32
-        )
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the graph is a multigraph.
+    ///
+    pub fn get_stress_centrality(&self, verbose: Option<bool>) -> PyResult<Py<PyArray1<f32>>> {
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(gil, pe!(self.inner.get_stress_centrality(verbose))?, f32)
+        })
     }
 
     #[automatically_generated_binding]
@@ -14544,1281 +15817,6 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self, src_node_id)")]
-    /// Returns shortest path result for the BFS from given source node ID.
-    ///
-    /// Parameters
-    /// ----------
-    /// src_node_id: int
-    ///     Root of the tree of minimum paths.
-    ///
-    ///
-    /// Safety
-    /// ------
-    /// If any of the given node ID does not exist in the graph the method will panic.
-    pub unsafe fn get_unchecked_breadth_first_search_predecessors_parallel_from_node_id(
-        &self,
-        src_node_id: NodeT,
-    ) -> ShortestPathsResultBFS {
-        self.inner
-            .get_unchecked_breadth_first_search_predecessors_parallel_from_node_id(
-                src_node_id.clone(),
-            )
-            .into()
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self, src_node_ids, maximal_depth)")]
-    /// Returns shortest path result for the BFS from given source node IDs, treating the set of source nodes as an hyper-node.
-    ///
-    /// Parameters
-    /// ----------
-    /// src_node_ids: List[int]
-    ///     Roots of the tree of minimum paths.
-    /// maximal_depth: Optional[int]
-    ///     The maximal depth to run the BFS for.
-    ///
-    ///
-    /// Safety
-    /// ------
-    /// If any of the given node IDs does not exist in the graph the method will panic.
-    ///  The provided list of node ids must be non-empty, or the method will panic.
-    pub unsafe fn get_unchecked_breadth_first_search_distances_parallel_from_node_ids(
-        &self,
-        src_node_ids: Vec<NodeT>,
-        maximal_depth: Option<NodeT>,
-    ) -> ShortestPathsResultBFS {
-        self.inner
-            .get_unchecked_breadth_first_search_distances_parallel_from_node_ids(
-                src_node_ids,
-                maximal_depth,
-            )
-            .into()
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self, src_node_id, maximal_depth)")]
-    /// Returns shortest path result for the BFS from given source node ID.
-    ///
-    /// Parameters
-    /// ----------
-    /// src_node_id: int
-    ///     Root of the tree of minimum paths.
-    /// maximal_depth: Optional[int]
-    ///     The maximal depth to run the BFS for.
-    ///
-    ///
-    /// Safety
-    /// ------
-    /// If any of the given node ID does not exist in the graph the method will panic.
-    pub unsafe fn get_unchecked_breadth_first_search_distances_parallel_from_node_id(
-        &self,
-        src_node_id: NodeT,
-        maximal_depth: Option<NodeT>,
-    ) -> ShortestPathsResultBFS {
-        self.inner
-            .get_unchecked_breadth_first_search_distances_parallel_from_node_id(
-                src_node_id.clone(),
-                maximal_depth,
-            )
-            .into()
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self, src_node_id)")]
-    /// Returns shortest path result for the BFS from given source node ID.
-    ///
-    /// Parameters
-    /// ----------
-    /// src_node_id: int
-    ///     Root of the tree of minimum paths.
-    ///
-    ///
-    /// Safety
-    /// ------
-    /// If any of the given node ID does not exist in the graph the method will panic.
-    ///
-    ///  TODO! Explore chains accelerations!
-    pub unsafe fn get_unchecked_breadth_first_search_distances_sequential_from_node_id(
-        &self,
-        src_node_id: NodeT,
-    ) -> ShortestPathsResultBFS {
-        self.inner
-            .get_unchecked_breadth_first_search_distances_sequential_from_node_id(
-                src_node_id.clone(),
-            )
-            .into()
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(
-        text_signature = "($self, src_node_ids, dst_node_id, compute_predecessors, maximal_depth)"
-    )]
-    /// Returns vector of minimum paths distances and vector of nodes predecessors, if requested, treating the set of source nodes as an hyper-node.
-    ///
-    /// Parameters
-    /// ----------
-    /// src_node_ids: List[int]
-    ///     Root of the tree of minimum paths.
-    /// maybe_dst_node_id: Optional[int]
-    ///     Optional target destination. If provided, the breadth first search will stop upon reaching this node.
-    /// compute_predecessors: Optional[bool]
-    ///     Whether to compute the vector of predecessors.
-    /// maximal_depth: Optional[int]
-    ///     The maximal depth to execute the DFS for.
-    ///
-    ///
-    /// Safety
-    /// ------
-    /// If any of the given node IDs does not exist in the graph the method will panic.
-    pub unsafe fn get_unchecked_breadth_first_search_from_node_ids(
-        &self,
-        src_node_ids: Vec<NodeT>,
-        dst_node_id: Option<NodeT>,
-        compute_predecessors: Option<bool>,
-        maximal_depth: Option<NodeT>,
-    ) -> ShortestPathsResultBFS {
-        self.inner
-            .get_unchecked_breadth_first_search_from_node_ids(
-                src_node_ids,
-                dst_node_id,
-                compute_predecessors,
-                maximal_depth,
-            )
-            .into()
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(
-        text_signature = "($self, src_node_id, dst_node_id, compute_predecessors, maximal_depth)"
-    )]
-    /// Returns vector of minimum paths distances and vector of nodes predecessors, if requested.
-    ///
-    /// Parameters
-    /// ----------
-    /// src_node_id: int
-    ///     Root of the tree of minimum paths.
-    /// maybe_dst_node_id: Optional[int]
-    ///     Optional target destination. If provided, breadth first search will stop upon reaching this node.
-    /// compute_predecessors: Optional[bool]
-    ///     Whether to compute the vector of predecessors.
-    /// maximal_depth: Optional[int]
-    ///     The maximal depth to execute the DFS for.
-    ///
-    ///
-    /// Safety
-    /// ------
-    /// If any of the given node IDs does not exist in the graph the method will panic.
-    pub unsafe fn get_unchecked_breadth_first_search_from_node_id(
-        &self,
-        src_node_id: NodeT,
-        dst_node_id: Option<NodeT>,
-        compute_predecessors: Option<bool>,
-        maximal_depth: Option<NodeT>,
-    ) -> ShortestPathsResultBFS {
-        self.inner
-            .get_unchecked_breadth_first_search_from_node_id(
-                src_node_id.clone(),
-                dst_node_id,
-                compute_predecessors,
-                maximal_depth,
-            )
-            .into()
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self, src_node_id, dst_node_id, maximal_depth)")]
-    /// Returns minimum path node IDs and distance from given node ids.
-    ///
-    /// Parameters
-    /// ----------
-    /// src_node_id: int
-    ///     Source node ID.
-    /// dst_node_id: int
-    ///     Destination node ID.
-    /// maximal_depth: Optional[int]
-    ///     The maximal depth to execute the BFS for.
-    ///
-    ///
-    /// Safety
-    /// ------
-    /// If any of the given node IDs does not exist in the graph the method will panic.
-    ///
-    /// Raises
-    /// -------
-    /// ValueError
-    ///     If the given node is a selfloop.
-    /// ValueError
-    ///     If there is no path between the two given nodes.
-    ///
-    pub unsafe fn get_unchecked_shortest_path_node_ids_from_node_ids(
-        &self,
-        src_node_id: NodeT,
-        dst_node_id: NodeT,
-        maximal_depth: Option<NodeT>,
-    ) -> PyResult<Py<PyArray1<NodeT>>> {
-        Ok({
-            let gil = pyo3::Python::acquire_gil();
-            to_ndarray_1d!(
-                gil,
-                pe!(self
-                    .inner
-                    .get_unchecked_shortest_path_node_ids_from_node_ids(
-                        src_node_id.clone(),
-                        dst_node_id.clone(),
-                        maximal_depth
-                    ))?,
-                NodeT
-            )
-        })
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self, src_node_id, dst_node_id, maximal_depth)")]
-    /// Returns minimum path node names from given node ids.
-    ///
-    /// Parameters
-    /// ----------
-    /// src_node_id: int
-    ///     Source node ID.
-    /// dst_node_id: int
-    ///     Destination node ID.
-    /// maximal_depth: Optional[int]
-    ///     The maximal depth to execute the BFS for.
-    ///
-    ///
-    /// Safety
-    /// ------
-    /// If any of the given node IDs does not exist in the graph the method will panic.
-    pub unsafe fn get_unchecked_shortest_path_node_names_from_node_ids(
-        &self,
-        src_node_id: NodeT,
-        dst_node_id: NodeT,
-        maximal_depth: Option<NodeT>,
-    ) -> PyResult<Vec<String>> {
-        Ok(pe!(self
-            .inner
-            .get_unchecked_shortest_path_node_names_from_node_ids(
-                src_node_id.clone(),
-                dst_node_id.clone(),
-                maximal_depth
-            ))?
-        .into_iter()
-        .map(|x| x.into())
-        .collect::<Vec<_>>())
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self, src_node_id, dst_node_id, maximal_depth)")]
-    /// Returns minimum path node names from given node ids.
-    ///
-    /// Parameters
-    /// ----------
-    /// src_node_id: int
-    ///     Source node ID.
-    /// dst_node_id: int
-    ///     Destination node ID.
-    /// maximal_depth: Optional[int]
-    ///     The maximal depth to execute the BFS for.
-    ///
-    ///
-    /// Raises
-    /// -------
-    /// ValueError
-    ///     If any of the given node IDs do not exist in the current graph.
-    ///
-    pub fn get_shortest_path_node_ids_from_node_ids(
-        &self,
-        src_node_id: NodeT,
-        dst_node_id: NodeT,
-        maximal_depth: Option<NodeT>,
-    ) -> PyResult<Py<PyArray1<NodeT>>> {
-        Ok({
-            let gil = pyo3::Python::acquire_gil();
-            to_ndarray_1d!(
-                gil,
-                pe!(self.inner.get_shortest_path_node_ids_from_node_ids(
-                    src_node_id.clone(),
-                    dst_node_id.clone(),
-                    maximal_depth
-                ))?,
-                NodeT
-            )
-        })
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self, src_node_name, dst_node_name, maximal_depth)")]
-    /// Returns minimum path node names from given node names.
-    ///
-    /// Parameters
-    /// ----------
-    /// src_node_name: str
-    ///     Source node name.
-    /// dst_node_name: str
-    ///     Destination node name.
-    /// maximal_depth: Optional[int]
-    ///     The maximal depth to execute the BFS for.
-    ///
-    ///
-    /// Raises
-    /// -------
-    /// ValueError
-    ///     If any of the given node names do not exist in the current graph.
-    ///
-    pub fn get_shortest_path_node_ids_from_node_names(
-        &self,
-        src_node_name: &str,
-        dst_node_name: &str,
-        maximal_depth: Option<NodeT>,
-    ) -> PyResult<Py<PyArray1<NodeT>>> {
-        Ok({
-            let gil = pyo3::Python::acquire_gil();
-            to_ndarray_1d!(
-                gil,
-                pe!(self.inner.get_shortest_path_node_ids_from_node_names(
-                    src_node_name,
-                    dst_node_name,
-                    maximal_depth
-                ))?,
-                NodeT
-            )
-        })
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self, src_node_name, dst_node_name, maximal_depth)")]
-    /// Returns minimum path node names from given node names.
-    ///
-    /// Parameters
-    /// ----------
-    /// src_node_name: str
-    ///     Source node name.
-    /// dst_node_name: str
-    ///     Destination node name.
-    /// maximal_depth: Optional[int]
-    ///     The maximal depth to execute the BFS for.
-    ///
-    ///
-    /// Raises
-    /// -------
-    /// ValueError
-    ///     If any of the given node names do not exist in the current graph.
-    ///
-    pub fn get_shortest_path_node_names_from_node_names(
-        &self,
-        src_node_name: &str,
-        dst_node_name: &str,
-        maximal_depth: Option<NodeT>,
-    ) -> PyResult<Vec<String>> {
-        Ok(pe!(self.inner.get_shortest_path_node_names_from_node_names(
-            src_node_name,
-            dst_node_name,
-            maximal_depth
-        ))?
-        .into_iter()
-        .map(|x| x.into())
-        .collect::<Vec<_>>())
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self, src_node_id, dst_node_id, k)")]
-    /// Return vector of the k minimum paths node IDs between given source node and destination node ID.
-    ///
-    /// Parameters
-    /// ----------
-    /// src_node_id: int
-    ///     Source node ID.
-    /// dst_node_id: int
-    ///     Destination node ID.
-    /// k: int
-    ///     Number of paths to find.
-    ///
-    ///
-    /// Safety
-    /// ------
-    /// If any of the given node IDs does not exist in the graph the method will panic.
-    pub unsafe fn get_unchecked_k_shortest_path_node_ids_from_node_ids(
-        &self,
-        src_node_id: NodeT,
-        dst_node_id: NodeT,
-        k: usize,
-    ) -> Vec<Vec<NodeT>> {
-        self.inner
-            .get_unchecked_k_shortest_path_node_ids_from_node_ids(
-                src_node_id.clone(),
-                dst_node_id.clone(),
-                k.clone(),
-            )
-            .into_iter()
-            .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>())
-            .collect::<Vec<_>>()
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self, src_node_id, dst_node_id, k)")]
-    /// Return vector of the k minimum paths node IDs between given source node and destination node ID.
-    ///
-    /// Parameters
-    /// ----------
-    /// src_node_id: int
-    ///     Source node ID.
-    /// dst_node_id: int
-    ///     Destination node ID.
-    /// maximal_depth: Optional[int]
-    ///     The maximal depth to execute the BFS for.
-    /// k: int
-    ///     Number of paths to find.
-    ///
-    ///
-    /// Raises
-    /// -------
-    /// ValueError
-    ///     If any of the given node IDs does not exist in the graph.
-    ///
-    pub fn get_k_shortest_path_node_ids_from_node_ids(
-        &self,
-        src_node_id: NodeT,
-        dst_node_id: NodeT,
-        k: usize,
-    ) -> PyResult<Vec<Vec<NodeT>>> {
-        Ok(pe!(self.inner.get_k_shortest_path_node_ids_from_node_ids(
-            src_node_id.clone(),
-            dst_node_id.clone(),
-            k.clone()
-        ))?
-        .into_iter()
-        .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>())
-        .collect::<Vec<_>>())
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self, src_node_name, dst_node_name, k)")]
-    /// Return vector of the k minimum paths node IDs between given source node and destination node name.
-    ///
-    /// Parameters
-    /// ----------
-    /// src_node_name: str
-    ///     Source node name.
-    /// dst_node_name: str
-    ///     Destination node name.
-    /// k: int
-    ///     Number of paths to find.
-    ///
-    ///
-    /// Raises
-    /// -------
-    /// ValueError
-    ///     If any of the given node names does not exist in the graph.
-    ///
-    pub fn get_k_shortest_path_node_ids_from_node_names(
-        &self,
-        src_node_name: &str,
-        dst_node_name: &str,
-        k: usize,
-    ) -> PyResult<Vec<Vec<NodeT>>> {
-        Ok(pe!(self.inner.get_k_shortest_path_node_ids_from_node_names(
-            src_node_name,
-            dst_node_name,
-            k.clone()
-        ))?
-        .into_iter()
-        .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>())
-        .collect::<Vec<_>>())
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self, src_node_name, dst_node_name, k)")]
-    /// Return vector of the k minimum paths node names between given source node and destination node name.
-    ///
-    /// Parameters
-    /// ----------
-    /// src_node_name: str
-    ///     Source node name.
-    /// dst_node_name: str
-    ///     Destination node name.
-    /// k: int
-    ///     Number of paths to find.
-    ///
-    ///
-    /// Raises
-    /// -------
-    /// ValueError
-    ///     If any of the given node names does not exist in the graph.
-    ///
-    pub fn get_k_shortest_path_node_names_from_node_names(
-        &self,
-        src_node_name: &str,
-        dst_node_name: &str,
-        k: usize,
-    ) -> PyResult<Vec<Vec<String>>> {
-        Ok(
-            pe!(self.inner.get_k_shortest_path_node_names_from_node_names(
-                src_node_name,
-                dst_node_name,
-                k.clone()
-            ))?
-            .into_iter()
-            .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>())
-            .collect::<Vec<_>>(),
-        )
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self, node_id)")]
-    /// Returns unweighted eccentricity of the given node.
-    ///
-    /// This method will panic if the given node ID does not exists in the graph.
-    ///
-    /// Parameters
-    /// ----------
-    /// node_id: int
-    ///     Node for which to compute the eccentricity.
-    ///
-    ///
-    /// Safety
-    /// ------
-    /// If any of the given node IDs does not exist in the graph the method will panic.
-    pub unsafe fn get_unchecked_eccentricity_and_most_distant_node_id_from_node_id(
-        &self,
-        node_id: NodeT,
-    ) -> (NodeT, NodeT) {
-        let (subresult_0, subresult_1) = self
-            .inner
-            .get_unchecked_eccentricity_and_most_distant_node_id_from_node_id(node_id.clone());
-        (subresult_0.into(), subresult_1.into())
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self, node_id, use_edge_weights_as_probabilities)")]
-    /// Returns weighted eccentricity of the given node.
-    ///
-    /// This method will panic if the given node ID does not exists in the graph.
-    ///
-    /// Parameters
-    /// ----------
-    /// node_id: int
-    ///     Node for which to compute the eccentricity.
-    /// use_edge_weights_as_probabilities: Optional[bool]
-    ///     Whether to treat the edge weights as probabilities.
-    ///
-    ///
-    /// Safety
-    /// ------
-    /// If any of the given node IDs does not exist in the graph the method will panic.
-    pub unsafe fn get_unchecked_weighted_eccentricity_from_node_id(
-        &self,
-        node_id: NodeT,
-        use_edge_weights_as_probabilities: Option<bool>,
-    ) -> f32 {
-        self.inner
-            .get_unchecked_weighted_eccentricity_from_node_id(
-                node_id.clone(),
-                use_edge_weights_as_probabilities,
-            )
-            .into()
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self, node_id)")]
-    /// Returns unweighted eccentricity of the given node ID.
-    ///
-    /// Parameters
-    /// ----------
-    /// node_id: int
-    ///     Node for which to compute the eccentricity.
-    /// use_edge_weights_as_probabilities: Optional[bool]
-    ///     Whether to treat the edge weights as probabilities.
-    ///
-    ///
-    /// Raises
-    /// -------
-    /// ValueError
-    ///     If the given node ID does not exist in the graph.
-    ///
-    pub fn get_eccentricity_and_most_distant_node_id_from_node_id(
-        &self,
-        node_id: NodeT,
-    ) -> PyResult<(NodeT, NodeT)> {
-        Ok({
-            let (subresult_0, subresult_1) = pe!(self
-                .inner
-                .get_eccentricity_and_most_distant_node_id_from_node_id(node_id.clone()))?
-            .into();
-            (subresult_0.into(), subresult_1.into())
-        })
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self, node_id, use_edge_weights_as_probabilities)")]
-    /// Returns weighted eccentricity of the given node ID.
-    ///
-    /// Parameters
-    /// ----------
-    /// node_id: int
-    ///     Node for which to compute the eccentricity.
-    /// use_edge_weights_as_probabilities: Optional[bool]
-    ///     Whether to treat the edge weights as probabilities.
-    ///
-    ///
-    /// Raises
-    /// -------
-    /// ValueError
-    ///     If the given node ID does not exist in the graph.
-    /// ValueError
-    ///     If weights are requested to be treated as probabilities but are not between 0 and 1.
-    /// ValueError
-    ///     If the graph contains negative weights.
-    ///
-    pub fn get_weighted_eccentricity_from_node_id(
-        &self,
-        node_id: NodeT,
-        use_edge_weights_as_probabilities: Option<bool>,
-    ) -> PyResult<f32> {
-        Ok(pe!(self.inner.get_weighted_eccentricity_from_node_id(
-            node_id.clone(),
-            use_edge_weights_as_probabilities
-        ))?
-        .into())
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self, node_name)")]
-    /// Returns unweighted eccentricity of the given node name.
-    ///
-    /// Parameters
-    /// ----------
-    /// node_name: str
-    ///     Node for which to compute the eccentricity.
-    ///
-    ///
-    /// Raises
-    /// -------
-    /// ValueError
-    ///     If the given node name does not exist in the current graph instance.
-    ///
-    pub fn get_eccentricity_from_node_name(&self, node_name: &str) -> PyResult<NodeT> {
-        Ok(pe!(self.inner.get_eccentricity_from_node_name(node_name))?.into())
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self, node_name, use_edge_weights_as_probabilities)")]
-    /// Returns weighted eccentricity of the given node name.
-    ///
-    /// Parameters
-    /// ----------
-    /// node_name: str
-    ///     Node for which to compute the eccentricity.
-    /// use_edge_weights_as_probabilities: Optional[bool]
-    ///     Whether to treat the edge weights as probabilities.
-    ///
-    ///
-    /// Raises
-    /// -------
-    /// ValueError
-    ///     If the given node name does not exist in the graph.
-    /// ValueError
-    ///     If weights are requested to be treated as probabilities but are not between 0 and 1.
-    /// ValueError
-    ///     If the graph contains negative weights.
-    ///
-    pub fn get_weighted_eccentricity_from_node_name(
-        &self,
-        node_name: &str,
-        use_edge_weights_as_probabilities: Option<bool>,
-    ) -> PyResult<f32> {
-        Ok(pe!(self.inner.get_weighted_eccentricity_from_node_name(
-            node_name,
-            use_edge_weights_as_probabilities
-        ))?
-        .into())
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(
-        text_signature = "($self, src_node_ids, maybe_dst_node_id, maybe_dst_node_ids, compute_predecessors, maximal_depth, use_edge_weights_as_probabilities)"
-    )]
-    /// Returns vector of minimum paths distances and vector of nodes predecessors, if requested, from the given root nodes (treated as an hyper-node).
-    ///
-    /// Parameters
-    /// ----------
-    /// src_node_id: List[int]
-    ///     Root of the tree of minimum paths.
-    /// maybe_dst_node_id: Optional[int]
-    ///     Optional target destination. If provided, Dijkstra will stop upon reaching this node.
-    /// maybe_dst_node_ids: Optional[List[int]]
-    ///     Optional target destinations. If provided, Dijkstra will stop upon reaching all of these nodes.
-    /// compute_predecessors: bool
-    ///     Whether to compute the vector of predecessors.
-    /// maximal_depth: Optional[int]
-    ///     The maximal number of iterations to execute Dijkstra for.
-    /// use_edge_weights_as_probabilities: Optional[bool]
-    ///     Whether to treat the edge weights as probabilities.
-    ///
-    ///
-    /// Safety
-    /// ------
-    /// If any of the given node IDs does not exist in the graph the method will panic.
-    pub unsafe fn get_unchecked_dijkstra_from_node_ids(
-        &self,
-        src_node_ids: Vec<NodeT>,
-        maybe_dst_node_id: Option<NodeT>,
-        maybe_dst_node_ids: Option<Vec<NodeT>>,
-        compute_predecessors: Option<bool>,
-        maximal_depth: Option<NodeT>,
-        use_edge_weights_as_probabilities: Option<bool>,
-    ) -> ShortestPathsDjkstra {
-        self.inner
-            .get_unchecked_dijkstra_from_node_ids(
-                src_node_ids,
-                maybe_dst_node_id,
-                maybe_dst_node_ids,
-                compute_predecessors,
-                maximal_depth,
-                use_edge_weights_as_probabilities,
-            )
-            .into()
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(
-        text_signature = "($self, src_node_id, maybe_dst_node_id, maybe_dst_node_ids, compute_predecessors, maximal_depth, use_edge_weights_as_probabilities)"
-    )]
-    /// Returns vector of minimum paths distances and vector of nodes predecessors, if requested.
-    ///
-    /// Parameters
-    /// ----------
-    /// src_node_id: int
-    ///     Root of the tree of minimum paths.
-    /// maybe_dst_node_id: Optional[int]
-    ///     Optional target destination. If provided, Dijkstra will stop upon reaching this node.
-    /// maybe_dst_node_ids: Optional[List[int]]
-    ///     Optional target destinations. If provided, Dijkstra will stop upon reaching all of these nodes.
-    /// compute_predecessors: bool
-    ///     Whether to compute the vector of predecessors.
-    /// maximal_depth: Optional[int]
-    ///     The maximal number of iterations to execute Dijkstra for.
-    /// use_edge_weights_as_probabilities: Optional[bool]
-    ///     Whether to treat the edge weights as probabilities.
-    ///
-    ///
-    /// Safety
-    /// ------
-    /// If any of the given node IDs does not exist in the graph the method will panic.
-    pub unsafe fn get_unchecked_dijkstra_from_node_id(
-        &self,
-        src_node_id: NodeT,
-        maybe_dst_node_id: Option<NodeT>,
-        maybe_dst_node_ids: Option<Vec<NodeT>>,
-        compute_predecessors: Option<bool>,
-        maximal_depth: Option<NodeT>,
-        use_edge_weights_as_probabilities: Option<bool>,
-    ) -> ShortestPathsDjkstra {
-        self.inner
-            .get_unchecked_dijkstra_from_node_id(
-                src_node_id.clone(),
-                maybe_dst_node_id,
-                maybe_dst_node_ids,
-                compute_predecessors,
-                maximal_depth,
-                use_edge_weights_as_probabilities,
-            )
-            .into()
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(
-        text_signature = "($self, src_node_id, dst_node_id, use_edge_weights_as_probabilities, maximal_depth)"
-    )]
-    /// Returns minimum path node IDs and distance from given node ids.
-    ///
-    /// Parameters
-    /// ----------
-    /// src_node_id: int
-    ///     Source node ID.
-    /// dst_node_id: int
-    ///     Destination node ID.
-    /// use_edge_weights_as_probabilities: Optional[bool]
-    ///     Whether to treat the edge weights as probabilities.
-    /// maximal_depth: Optional[int]
-    ///     The maximal number of iterations to execute Dijkstra for.
-    ///
-    ///
-    /// Safety
-    /// ------
-    /// If any of the given node IDs does not exist in the graph the method will panic.
-    pub unsafe fn get_unchecked_weighted_shortest_path_node_ids_from_node_ids(
-        &self,
-        src_node_id: NodeT,
-        dst_node_id: NodeT,
-        use_edge_weights_as_probabilities: Option<bool>,
-        maximal_depth: Option<NodeT>,
-    ) -> (f32, Py<PyArray1<NodeT>>) {
-        let (subresult_0, subresult_1) = self
-            .inner
-            .get_unchecked_weighted_shortest_path_node_ids_from_node_ids(
-                src_node_id.clone(),
-                dst_node_id.clone(),
-                use_edge_weights_as_probabilities,
-                maximal_depth,
-            );
-        (subresult_0.into(), {
-            let gil = pyo3::Python::acquire_gil();
-            to_ndarray_1d!(gil, subresult_1, NodeT)
-        })
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(
-        text_signature = "($self, src_node_id, dst_node_id, use_edge_weights_as_probabilities, maximal_depth)"
-    )]
-    /// Returns minimum path node names from given node ids.
-    ///
-    /// Parameters
-    /// ----------
-    /// src_node_id: int
-    ///     Source node ID.
-    /// dst_node_id: int
-    ///     Destination node ID.
-    /// use_edge_weights_as_probabilities: Optional[bool]
-    ///     Whether to treat the edge weights as probabilities.
-    /// maximal_depth: Optional[int]
-    ///     The maximal number of iterations to execute Dijkstra for.
-    ///
-    ///
-    /// Safety
-    /// ------
-    /// If any of the given node IDs does not exist in the graph the method will panic.
-    pub unsafe fn get_unchecked_weighted_shortest_path_node_names_from_node_ids(
-        &self,
-        src_node_id: NodeT,
-        dst_node_id: NodeT,
-        use_edge_weights_as_probabilities: Option<bool>,
-        maximal_depth: Option<NodeT>,
-    ) -> (f32, Vec<String>) {
-        let (subresult_0, subresult_1) = self
-            .inner
-            .get_unchecked_weighted_shortest_path_node_names_from_node_ids(
-                src_node_id.clone(),
-                dst_node_id.clone(),
-                use_edge_weights_as_probabilities,
-                maximal_depth,
-            );
-        (
-            subresult_0.into(),
-            subresult_1
-                .into_iter()
-                .map(|x| x.into())
-                .collect::<Vec<_>>(),
-        )
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(
-        text_signature = "($self, src_node_id, dst_node_id, use_edge_weights_as_probabilities, maximal_depth)"
-    )]
-    /// Returns minimum path node names from given node ids.
-    ///
-    /// Parameters
-    /// ----------
-    /// src_node_id: int
-    ///     Source node ID.
-    /// dst_node_id: int
-    ///     Destination node ID.
-    /// use_edge_weights_as_probabilities: Optional[bool]
-    ///     Whether to treat the edge weights as probabilities.
-    /// maximal_depth: Optional[int]
-    ///     The maximal number of iterations to execute Dijkstra for.
-    ///
-    ///
-    /// Raises
-    /// -------
-    /// ValueError
-    ///     If any of the given node IDs do not exist in the current graph.
-    ///
-    pub fn get_weighted_shortest_path_node_ids_from_node_ids(
-        &self,
-        src_node_id: NodeT,
-        dst_node_id: NodeT,
-        use_edge_weights_as_probabilities: Option<bool>,
-        maximal_depth: Option<NodeT>,
-    ) -> PyResult<(f32, Py<PyArray1<NodeT>>)> {
-        Ok({
-            let (subresult_0, subresult_1) = pe!(self
-                .inner
-                .get_weighted_shortest_path_node_ids_from_node_ids(
-                    src_node_id.clone(),
-                    dst_node_id.clone(),
-                    use_edge_weights_as_probabilities,
-                    maximal_depth
-                ))?
-            .into();
-            (subresult_0.into(), {
-                let gil = pyo3::Python::acquire_gil();
-                to_ndarray_1d!(gil, subresult_1, NodeT)
-            })
-        })
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(
-        text_signature = "($self, src_node_name, dst_node_name, use_edge_weights_as_probabilities, maximal_depth)"
-    )]
-    /// Returns minimum path node names from given node names.
-    ///
-    /// Parameters
-    /// ----------
-    /// src_node_name: str
-    ///     Source node name.
-    /// dst_node_name: str
-    ///     Destination node name.
-    /// use_edge_weights_as_probabilities: Optional[bool]
-    ///     Whether to treat the edge weights as probabilities.
-    /// maximal_depth: Optional[int]
-    ///     The maximal number of iterations to execute Dijkstra for.
-    ///
-    ///
-    /// Raises
-    /// -------
-    /// ValueError
-    ///     If any of the given node names do not exist in the current graph.
-    ///
-    pub fn get_weighted_shortest_path_node_ids_from_node_names(
-        &self,
-        src_node_name: &str,
-        dst_node_name: &str,
-        use_edge_weights_as_probabilities: Option<bool>,
-        maximal_depth: Option<NodeT>,
-    ) -> PyResult<(f32, Py<PyArray1<NodeT>>)> {
-        Ok({
-            let (subresult_0, subresult_1) = pe!(self
-                .inner
-                .get_weighted_shortest_path_node_ids_from_node_names(
-                    src_node_name,
-                    dst_node_name,
-                    use_edge_weights_as_probabilities,
-                    maximal_depth
-                ))?
-            .into();
-            (subresult_0.into(), {
-                let gil = pyo3::Python::acquire_gil();
-                to_ndarray_1d!(gil, subresult_1, NodeT)
-            })
-        })
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(
-        text_signature = "($self, src_node_name, dst_node_name, use_edge_weights_as_probabilities, maximal_depth)"
-    )]
-    /// Returns minimum path node names from given node names.
-    ///
-    /// Parameters
-    /// ----------
-    /// src_node_name: str
-    ///     Source node name.
-    /// dst_node_name: str
-    ///     Destination node name.
-    /// use_edge_weights_as_probabilities: Optional[bool]
-    ///     Whether to treat the edge weights as probabilities.
-    /// maximal_depth: Optional[int]
-    ///     The maximal number of iterations to execute Dijkstra for.
-    ///
-    ///
-    /// Raises
-    /// -------
-    /// ValueError
-    ///     If any of the given node names do not exist in the current graph.
-    ///
-    pub fn get_weighted_shortest_path_node_names_from_node_names(
-        &self,
-        src_node_name: &str,
-        dst_node_name: &str,
-        use_edge_weights_as_probabilities: Option<bool>,
-        maximal_depth: Option<NodeT>,
-    ) -> PyResult<(f32, Vec<String>)> {
-        Ok({
-            let (subresult_0, subresult_1) = pe!(self
-                .inner
-                .get_weighted_shortest_path_node_names_from_node_names(
-                    src_node_name,
-                    dst_node_name,
-                    use_edge_weights_as_probabilities,
-                    maximal_depth
-                ))?
-            .into();
-            (
-                subresult_0.into(),
-                subresult_1
-                    .into_iter()
-                    .map(|x| x.into())
-                    .collect::<Vec<_>>(),
-            )
-        })
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(
-        text_signature = "($self, src_node_id, dst_node_id, compute_predecessors, maximal_depth)"
-    )]
-    /// Returns vector of minimum paths distances and vector of nodes predecessors from given source node ID and optional destination node ID.
-    ///
-    /// Parameters
-    /// ----------
-    /// src_node_id: int
-    ///     Node ID root of the tree of minimum paths.
-    /// compute_predecessors: Optional[bool]
-    ///     Whether to compute the vector of predecessors.
-    /// maximal_depth: Optional[int]
-    ///     The maximal number of iterations to execute the DFS for.
-    ///
-    ///
-    /// Raises
-    /// -------
-    /// ValueError
-    ///     If the given source node ID does not exist in the current graph.
-    /// ValueError
-    ///     If the given optional destination node ID does not exist in the current graph.
-    ///
-    pub fn get_breadth_first_search_from_node_ids(
-        &self,
-        src_node_id: NodeT,
-        dst_node_id: Option<NodeT>,
-        compute_predecessors: Option<bool>,
-        maximal_depth: Option<NodeT>,
-    ) -> PyResult<ShortestPathsResultBFS> {
-        Ok(pe!(self.inner.get_breadth_first_search_from_node_ids(
-            src_node_id.clone(),
-            dst_node_id,
-            compute_predecessors,
-            maximal_depth
-        ))?
-        .into())
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(
-        text_signature = "($self, src_node_id, maybe_dst_node_id, maybe_dst_node_ids, compute_predecessors, maximal_depth, use_edge_weights_as_probabilities)"
-    )]
-    /// Returns vector of minimum paths distances and vector of nodes predecessors from given source node ID and optional destination node ID.
-    ///
-    /// Parameters
-    /// ----------
-    /// src_node_id: int
-    ///     Node ID root of the tree of minimum paths.
-    /// maybe_dst_node_id: Optional[int]
-    ///     Optional target destination. If provided, Dijkstra will stop upon reaching this node.
-    /// maybe_dst_node_ids: Optional[List[int]]
-    ///     Optional target destinations. If provided, Dijkstra will stop upon reaching all of these nodes.
-    /// compute_predecessors: Optional[bool]
-    ///     Whether to compute the vector of predecessors.
-    /// maximal_depth: Optional[int]
-    ///     The maximal depth to execute the DFS for.
-    /// use_edge_weights_as_probabilities: Optional[bool]
-    ///     Whether to treat the edge weights as probabilities.
-    ///
-    ///
-    /// Raises
-    /// -------
-    /// ValueError
-    ///     If the weights are to be used and the graph does not have weights.
-    /// ValueError
-    ///     If the given source node ID does not exist in the current graph.
-    /// ValueError
-    ///     If the given optional destination node ID does not exist in the current graph.
-    /// ValueError
-    ///     If weights are requested to be treated as probabilities but are not between 0 and 1.
-    /// ValueError
-    ///     If the graph contains negative weights.
-    ///
-    pub fn get_dijkstra_from_node_ids(
-        &self,
-        src_node_id: NodeT,
-        maybe_dst_node_id: Option<NodeT>,
-        maybe_dst_node_ids: Option<Vec<NodeT>>,
-        compute_predecessors: Option<bool>,
-        maximal_depth: Option<NodeT>,
-        use_edge_weights_as_probabilities: Option<bool>,
-    ) -> PyResult<ShortestPathsDjkstra> {
-        Ok(pe!(self.inner.get_dijkstra_from_node_ids(
-            src_node_id.clone(),
-            maybe_dst_node_id,
-            maybe_dst_node_ids,
-            compute_predecessors,
-            maximal_depth,
-            use_edge_weights_as_probabilities
-        ))?
-        .into())
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self)")]
-    /// Returns approximated diameter and tentative low eccentricity node for an UNDIRECTED graph.
-    /// This method returns a lowerbound of the diameter by doing the following steps:
-    /// * Find the most central node
-    /// * Find the most distant node from the most central one (and get a first
-    /// approximation of the diameter lowerbound)
-    /// * Get the median node in this path
-    /// * Find the most distant node from the median node
-    /// * Find the most distant node form the last one, and get the second approx
-    /// of the diameter lowerbound.
-    ///
-    /// This basically creates a "cross" that spans the graph
-    pub fn get_four_sweep(&self) -> (NodeT, NodeT) {
-        let (subresult_0, subresult_1) = self.inner.get_four_sweep();
-        (subresult_0.into(), subresult_1.into())
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self, ignore_infinity, verbose)")]
-    /// Returns diameter of the graph using naive method.
-    ///
-    /// Note that there exists the non-naive method for undirected graphs
-    /// and it is possible to implement a faster method for directed graphs
-    /// but we still need to get to it, as it will require an updated
-    /// succinct data structure.
-    ///
-    /// Parameters
-    /// ----------
-    /// ignore_infinity: Optional[bool]
-    ///     Whether to ignore infinite distances, which are present when in the graph exist multiple components.
-    /// verbose: Optional[bool]
-    ///     Whether to show a loading bar.
-    ///
-    ///
-    /// Raises
-    /// -------
-    /// ValueError
-    ///     If the graph does not contain nodes.
-    ///
-    pub fn get_diameter_naive(
-        &self,
-        ignore_infinity: Option<bool>,
-        verbose: Option<bool>,
-    ) -> PyResult<f32> {
-        Ok(pe!(self.inner.get_diameter_naive(ignore_infinity, verbose))?.into())
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self, ignore_infinity, verbose)")]
-    /// Returns diameter of the graph.
-    ///
-    /// Parameters
-    /// ----------
-    /// ignore_infinity: Optional[bool]
-    ///     Whether to ignore infinite distances, which are present when in the graph exist multiple components. By default True.
-    /// verbose: Optional[bool]
-    ///     Whether to show a loading bar.
-    ///
-    ///
-    /// Raises
-    /// -------
-    /// ValueError
-    ///     If the graph does not contain nodes.
-    ///
-    pub fn get_diameter(
-        &self,
-        ignore_infinity: Option<bool>,
-        verbose: Option<bool>,
-    ) -> PyResult<f32> {
-        Ok(pe!(self.inner.get_diameter(ignore_infinity, verbose))?.into())
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(
-        text_signature = "($self, src_node_name, dst_node_name, compute_predecessors, maximal_depth)"
-    )]
-    /// Returns vector of minimum paths distances and vector of nodes predecessors from given source node name and optional destination node name.
-    ///
-    /// Parameters
-    /// ----------
-    /// src_node_name: str
-    ///     Node name root of the tree of minimum paths.
-    /// dst_node_name: Optional[&str]
-    ///     Destination node name.
-    /// compute_predecessors: Optional[bool]
-    ///     Whether to compute the vector of predecessors.
-    /// maximal_depth: Optional[int]
-    ///     The maximal depth to execute the DFS for.
-    ///
-    ///
-    /// Raises
-    /// -------
-    /// ValueError
-    ///     If the weights are to be used and the graph does not have weights.
-    /// ValueError
-    ///     If the given source node name does not exist in the current graph.
-    /// ValueError
-    ///     If the given optional destination node name does not exist in the current graph.
-    ///
-    pub fn get_breadth_first_search_from_node_names(
-        &self,
-        src_node_name: &str,
-        dst_node_name: Option<&str>,
-        compute_predecessors: Option<bool>,
-        maximal_depth: Option<NodeT>,
-    ) -> PyResult<ShortestPathsResultBFS> {
-        Ok(pe!(self.inner.get_breadth_first_search_from_node_names(
-            src_node_name,
-            dst_node_name,
-            compute_predecessors,
-            maximal_depth
-        ))?
-        .into())
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(
-        text_signature = "($self, src_node_name, maybe_dst_node_name, maybe_dst_node_names, compute_predecessors, maximal_depth, use_edge_weights_as_probabilities)"
-    )]
-    /// Returns vector of minimum paths distances and vector of nodes predecessors from given source node name and optional destination node name.
-    ///
-    /// Parameters
-    /// ----------
-    /// src_node_name: str
-    ///     Node name root of the tree of minimum paths.
-    /// maybe_dst_node_name: Optional[&str]
-    ///     Optional target destination node name. If provided, Dijkstra will stop upon reaching this node.
-    /// maybe_dst_node_names: Optional[List[&str]]
-    ///     Optional target destination node names. If provided, Dijkstra will stop upon reaching all of these nodes.
-    /// compute_predecessors: Optional[bool]
-    ///     Whether to compute the vector of predecessors.
-    /// maximal_depth: Optional[int]
-    ///     The maximal depth to execute the DFS for.
-    /// use_edge_weights_as_probabilities: Optional[bool]
-    ///     Whether to treat the edge weights as probabilities.
-    ///
-    ///
-    /// Raises
-    /// -------
-    /// ValueError
-    ///     If the weights are to be used and the graph does not have weights.
-    /// ValueError
-    ///     If the given source node name does not exist in the current graph.
-    /// ValueError
-    ///     If the given optional destination node name does not exist in the current graph.
-    ///
-    pub fn get_dijkstra_from_node_names(
-        &self,
-        src_node_name: &str,
-        maybe_dst_node_name: Option<&str>,
-        maybe_dst_node_names: Option<Vec<&str>>,
-        compute_predecessors: Option<bool>,
-        maximal_depth: Option<NodeT>,
-        use_edge_weights_as_probabilities: Option<bool>,
-    ) -> PyResult<ShortestPathsDjkstra> {
-        Ok(pe!(self.inner.get_dijkstra_from_node_names(
-            src_node_name,
-            maybe_dst_node_name,
-            maybe_dst_node_names,
-            compute_predecessors,
-            maximal_depth,
-            use_edge_weights_as_probabilities
-        ))?
-        .into())
-    }
-
-    #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Return if graph has name that is not the default one.
     ///
@@ -16823,7 +16821,41 @@ impl Graph {
 }
 
 pub const GRAPH_METHODS_NAMES: &[&str] = &[
-    "get_isomorphic_edge_ids_groups",
+    "get_unchecked_breadth_first_search_predecessors_parallel_from_node_id",
+    "get_unchecked_breadth_first_search_distances_parallel_from_node_ids",
+    "get_unchecked_breadth_first_search_distances_parallel_from_node_id",
+    "get_unchecked_breadth_first_search_distances_sequential_from_node_id",
+    "get_unchecked_breadth_first_search_from_node_ids",
+    "get_unchecked_breadth_first_search_from_node_id",
+    "get_unchecked_shortest_path_node_ids_from_node_ids",
+    "get_unchecked_shortest_path_node_names_from_node_ids",
+    "get_shortest_path_node_ids_from_node_ids",
+    "get_shortest_path_node_ids_from_node_names",
+    "get_shortest_path_node_names_from_node_names",
+    "get_unchecked_k_shortest_path_node_ids_from_node_ids",
+    "get_k_shortest_path_node_ids_from_node_ids",
+    "get_k_shortest_path_node_ids_from_node_names",
+    "get_k_shortest_path_node_names_from_node_names",
+    "get_unchecked_eccentricity_and_most_distant_node_id_from_node_id",
+    "get_unchecked_weighted_eccentricity_from_node_id",
+    "get_eccentricity_and_most_distant_node_id_from_node_id",
+    "get_weighted_eccentricity_from_node_id",
+    "get_eccentricity_from_node_name",
+    "get_weighted_eccentricity_from_node_name",
+    "get_unchecked_dijkstra_from_node_ids",
+    "get_unchecked_dijkstra_from_node_id",
+    "get_unchecked_weighted_shortest_path_node_ids_from_node_ids",
+    "get_unchecked_weighted_shortest_path_node_names_from_node_ids",
+    "get_weighted_shortest_path_node_ids_from_node_ids",
+    "get_weighted_shortest_path_node_ids_from_node_names",
+    "get_weighted_shortest_path_node_names_from_node_names",
+    "get_breadth_first_search_from_node_ids",
+    "get_dijkstra_from_node_ids",
+    "get_four_sweep",
+    "get_diameter_naive",
+    "get_diameter",
+    "get_breadth_first_search_from_node_names",
+    "get_dijkstra_from_node_names",
     "get_chains",
     "get_circles",
     "get_approximated_cliques",
@@ -16848,6 +16880,9 @@ pub const GRAPH_METHODS_NAMES: &[&str] = &[
     "get_symmetric_normalized_laplacian_coo_matrix",
     "get_symmetric_normalized_laplacian_graph",
     "get_dendritic_trees",
+    "get_transitive_closure",
+    "get_all_shortest_paths",
+    "get_weighted_all_shortest_paths",
     "get_node_degree_geometric_distribution_threshold",
     "get_bipartite_edges",
     "get_bipartite_edge_names",
@@ -16856,6 +16891,7 @@ pub const GRAPH_METHODS_NAMES: &[&str] = &[
     "get_clique_edges",
     "get_clique_edge_names",
     "from_csv",
+    "get_isomorphic_edge_ids_groups",
     "get_total_edge_weights",
     "get_mininum_edge_weight",
     "get_maximum_edge_weight",
@@ -17303,9 +17339,6 @@ pub const GRAPH_METHODS_NAMES: &[&str] = &[
     "to_undirected",
     "to_complementary",
     "to_structural_similarity_multi_graph",
-    "get_transitive_closure",
-    "get_all_shortest_paths",
-    "get_weighted_all_shortest_paths",
     "to_dot",
     "enable",
     "disable_all",
@@ -17400,41 +17433,6 @@ pub const GRAPH_METHODS_NAMES: &[&str] = &[
     "get_edge_prediction_kfold",
     "get_okapi_bm25_node_feature_propagation",
     "get_okapi_bm25_node_label_propagation",
-    "get_unchecked_breadth_first_search_predecessors_parallel_from_node_id",
-    "get_unchecked_breadth_first_search_distances_parallel_from_node_ids",
-    "get_unchecked_breadth_first_search_distances_parallel_from_node_id",
-    "get_unchecked_breadth_first_search_distances_sequential_from_node_id",
-    "get_unchecked_breadth_first_search_from_node_ids",
-    "get_unchecked_breadth_first_search_from_node_id",
-    "get_unchecked_shortest_path_node_ids_from_node_ids",
-    "get_unchecked_shortest_path_node_names_from_node_ids",
-    "get_shortest_path_node_ids_from_node_ids",
-    "get_shortest_path_node_ids_from_node_names",
-    "get_shortest_path_node_names_from_node_names",
-    "get_unchecked_k_shortest_path_node_ids_from_node_ids",
-    "get_k_shortest_path_node_ids_from_node_ids",
-    "get_k_shortest_path_node_ids_from_node_names",
-    "get_k_shortest_path_node_names_from_node_names",
-    "get_unchecked_eccentricity_and_most_distant_node_id_from_node_id",
-    "get_unchecked_weighted_eccentricity_from_node_id",
-    "get_eccentricity_and_most_distant_node_id_from_node_id",
-    "get_weighted_eccentricity_from_node_id",
-    "get_eccentricity_from_node_name",
-    "get_weighted_eccentricity_from_node_name",
-    "get_unchecked_dijkstra_from_node_ids",
-    "get_unchecked_dijkstra_from_node_id",
-    "get_unchecked_weighted_shortest_path_node_ids_from_node_ids",
-    "get_unchecked_weighted_shortest_path_node_names_from_node_ids",
-    "get_weighted_shortest_path_node_ids_from_node_ids",
-    "get_weighted_shortest_path_node_ids_from_node_names",
-    "get_weighted_shortest_path_node_names_from_node_names",
-    "get_breadth_first_search_from_node_ids",
-    "get_dijkstra_from_node_ids",
-    "get_four_sweep",
-    "get_diameter_naive",
-    "get_diameter",
-    "get_breadth_first_search_from_node_names",
-    "get_dijkstra_from_node_names",
     "has_default_graph_name",
     "has_nodes",
     "has_edges",
@@ -17519,10 +17517,33 @@ pub const GRAPH_METHODS_NAMES: &[&str] = &[
 
 pub const GRAPH_TERMS: &[&str] = &[
     "get",
-    "isomorphic",
-    "edge",
+    "unchecked",
+    "breadth",
+    "first",
+    "search",
+    "predecessors",
+    "parallel",
+    "from",
+    "node",
+    "id",
+    "distances",
     "ids",
-    "groups",
+    "sequential",
+    "shortest",
+    "path",
+    "names",
+    "k",
+    "eccentricity",
+    "and",
+    "most",
+    "distant",
+    "weighted",
+    "name",
+    "dijkstra",
+    "four",
+    "sweep",
+    "diameter",
+    "naive",
     "chains",
     "circles",
     "approximated",
@@ -17549,25 +17570,27 @@ pub const GRAPH_TERMS: &[&str] = &[
     "symmetric",
     "dendritic",
     "trees",
-    "node",
+    "transitive",
+    "closure",
+    "all",
+    "paths",
     "degree",
     "geometric",
     "distribution",
     "threshold",
     "bipartite",
     "edges",
-    "names",
+    "edge",
     "star",
-    "from",
     "csv",
+    "isomorphic",
+    "groups",
     "total",
     "weights",
     "mininum",
     "weight",
     "maximum",
-    "unchecked",
     "minimum",
-    "weighted",
     "singleton",
     "nodes",
     "selfloops",
@@ -17585,15 +17608,11 @@ pub const GRAPH_TERMS: &[&str] = &[
     "clustering",
     "coefficient",
     "average",
-    "id",
-    "name",
     "count",
-    "and",
     "minmax",
     "source",
     "destination",
     "top",
-    "k",
     "central",
     "selfloop",
     "adjusted",
@@ -17625,9 +17644,6 @@ pub const GRAPH_TERMS: &[&str] = &[
     "outbounds",
     "inbounds",
     "sorted",
-    "breadth",
-    "first",
-    "search",
     "uniform",
     "walk",
     "sampling",
@@ -17657,13 +17673,11 @@ pub const GRAPH_TERMS: &[&str] = &[
     "tendrils",
     "with",
     "disconnected",
-    "parallel",
     "components",
     "density",
     "rate",
     "mean",
     "median",
-    "most",
     "mode",
     "urls",
     "ontology",
@@ -17702,7 +17716,6 @@ pub const GRAPH_TERMS: &[&str] = &[
     "add",
     "set",
     "inplace",
-    "all",
     "replace",
     "divide",
     "normalize",
@@ -17738,10 +17751,6 @@ pub const GRAPH_TERMS: &[&str] = &[
     "structural",
     "similarity",
     "multi",
-    "transitive",
-    "closure",
-    "shortest",
-    "paths",
     "dot",
     "enable",
     "disable",
@@ -17791,17 +17800,6 @@ pub const GRAPH_TERMS: &[&str] = &[
     "bm25",
     "feature",
     "propagation",
-    "predecessors",
-    "distances",
-    "sequential",
-    "path",
-    "eccentricity",
-    "distant",
-    "dijkstra",
-    "four",
-    "sweep",
-    "diameter",
-    "naive",
     "default",
     "representing",
     "probabilities",
@@ -17822,11 +17820,315 @@ pub const GRAPH_TERMS: &[&str] = &[
 
 pub const GRAPH_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
     &[
-        ("edge", 0.41159865),
+        ("breadth", 0.42658058),
+        ("first", 0.42658058),
+        ("from", 0.10079322),
+        ("get", 0.03724726),
+        ("id", 0.16912991),
+        ("node", 0.0578071),
+        ("parallel", 0.48093003),
+        ("predecessors", 0.61013347),
+        ("search", 0.42658058),
+        ("unchecked", 0.20925388),
+    ],
+    &[
+        ("breadth", 0.42658058),
+        ("distances", 0.5258764),
+        ("first", 0.42658058),
+        ("from", 0.10079322),
+        ("get", 0.03724726),
+        ("ids", 0.15385701),
+        ("node", 0.0578071),
+        ("parallel", 0.48093003),
+        ("search", 0.42658058),
+        ("unchecked", 0.20925388),
+    ],
+    &[
+        ("breadth", 0.42658058),
+        ("distances", 0.5258764),
+        ("first", 0.42658058),
+        ("from", 0.10079322),
+        ("get", 0.03724726),
+        ("id", 0.16912991),
+        ("node", 0.0578071),
+        ("parallel", 0.48093003),
+        ("search", 0.42658058),
+        ("unchecked", 0.20925388),
+    ],
+    &[
+        ("breadth", 0.42658058),
+        ("distances", 0.5258764),
+        ("first", 0.42658058),
+        ("from", 0.10079322),
+        ("get", 0.03724726),
+        ("id", 0.16912991),
+        ("node", 0.0578071),
+        ("search", 0.42658058),
+        ("sequential", 0.61013347),
+        ("unchecked", 0.20925388),
+    ],
+    &[
+        ("breadth", 0.6290026),
+        ("first", 0.6290026),
+        ("from", 0.14862186),
+        ("get", 0.054921914),
+        ("ids", 0.22686559),
+        ("node", 0.08523786),
+        ("search", 0.6290026),
+        ("unchecked", 0.30854952),
+    ],
+    &[
+        ("breadth", 0.6290026),
+        ("first", 0.6290026),
+        ("from", 0.14862186),
+        ("get", 0.054921914),
+        ("id", 0.24938583),
+        ("node", 0.08523786),
+        ("search", 0.6290026),
+        ("unchecked", 0.30854952),
+    ],
+    &[
+        ("from", 0.121294074),
+        ("get", 0.04482317),
+        ("ids", 0.35338593),
+        ("node", 0.13277404),
+        ("path", 0.4627425),
+        ("shortest", 0.44728),
+        ("unchecked", 0.2518151),
+    ],
+    &[
+        ("from", 0.121294074),
+        ("get", 0.04482317),
+        ("ids", 0.18515077),
+        ("names", 0.24229102),
+        ("node", 0.13277404),
+        ("path", 0.4627425),
+        ("shortest", 0.44728),
+        ("unchecked", 0.2518151),
+    ],
+    &[
+        ("from", 0.14862186),
+        ("get", 0.054921914),
+        ("ids", 0.42859343),
+        ("node", 0.16103098),
+        ("path", 0.56699926),
+        ("shortest", 0.548053),
+    ],
+    &[
+        ("from", 0.14862186),
+        ("get", 0.054921914),
+        ("ids", 0.22686559),
+        ("names", 0.29687965),
+        ("node", 0.16103098),
+        ("path", 0.56699926),
+        ("shortest", 0.548053),
+    ],
+    &[
+        ("from", 0.14862186),
+        ("get", 0.054921914),
+        ("names", 0.5608637),
+        ("node", 0.16103098),
+        ("path", 0.56699926),
+        ("shortest", 0.548053),
+    ],
+    &[
+        ("from", 0.10079322),
+        ("get", 0.03724726),
+        ("ids", 0.29594237),
+        ("k", 0.45008758),
+        ("node", 0.111191355),
+        ("path", 0.3845308),
+        ("shortest", 0.37168172),
+        ("unchecked", 0.20925388),
+    ],
+    &[
+        ("from", 0.121294074),
+        ("get", 0.04482317),
+        ("ids", 0.35338593),
+        ("k", 0.5416332),
+        ("node", 0.13277404),
+        ("path", 0.4627425),
+        ("shortest", 0.44728),
+    ],
+    &[
+        ("from", 0.121294074),
+        ("get", 0.04482317),
+        ("ids", 0.18515077),
+        ("k", 0.5416332),
+        ("names", 0.24229102),
+        ("node", 0.13277404),
+        ("path", 0.4627425),
+        ("shortest", 0.44728),
+    ],
+    &[
+        ("from", 0.121294074),
+        ("get", 0.04482317),
+        ("k", 0.5416332),
+        ("names", 0.462446),
+        ("node", 0.13277404),
+        ("path", 0.4627425),
+        ("shortest", 0.44728),
+    ],
+    &[
+        ("and", 0.31359226),
+        ("distant", 0.47191828),
+        ("eccentricity", 0.3917504),
+        ("from", 0.08504043),
+        ("get", 0.031425953),
+        ("id", 0.27612692),
+        ("most", 0.4226027),
+        ("node", 0.09437773),
+        ("unchecked", 0.17654997),
+    ],
+    &[
+        ("eccentricity", 0.8572911),
+        ("from", 0.18609911),
+        ("get", 0.06877131),
+        ("id", 0.31227225),
+        ("node", 0.106731884),
+        ("unchecked", 0.38635498),
+        ("weighted", 0.5306852),
+    ],
+    &[
+        ("and", 0.37168172),
+        ("distant", 0.5593359),
+        ("eccentricity", 0.4643178),
+        ("from", 0.10079322),
+        ("get", 0.03724726),
+        ("id", 0.32531962),
+        ("most", 0.5008851),
+        ("node", 0.111191355),
+    ],
+    &[
+        ("eccentricity", 1.1022217),
+        ("from", 0.23926818),
+        ("get", 0.088419475),
+        ("id", 0.40148938),
+        ("node", 0.1372255),
+        ("weighted", 0.68230355),
+    ],
+    &[
+        ("eccentricity", 1.4641548),
+        ("from", 0.31783593),
         ("get", 0.11745351),
-        ("groups", 1.2349665),
+        ("name", 0.74454236),
+        ("node", 0.18228582),
+    ],
+    &[
+        ("eccentricity", 1.1022217),
+        ("from", 0.23926818),
+        ("get", 0.088419475),
+        ("name", 0.56049454),
+        ("node", 0.1372255),
+        ("weighted", 0.68230355),
+    ],
+    &[
+        ("dijkstra", 1.1890272),
+        ("from", 0.23926818),
+        ("get", 0.088419475),
+        ("ids", 0.36523375),
+        ("node", 0.1372255),
+        ("unchecked", 0.49673775),
+    ],
+    &[
+        ("dijkstra", 1.1890272),
+        ("from", 0.23926818),
+        ("get", 0.088419475),
+        ("id", 0.40148938),
+        ("node", 0.1372255),
+        ("unchecked", 0.49673775),
+    ],
+    &[
+        ("from", 0.10079322),
+        ("get", 0.03724726),
+        ("ids", 0.29594237),
+        ("node", 0.111191355),
+        ("path", 0.3845308),
+        ("shortest", 0.37168172),
+        ("unchecked", 0.20925388),
+        ("weighted", 0.28742465),
+    ],
+    &[
+        ("from", 0.10079322),
+        ("get", 0.03724726),
+        ("ids", 0.15385701),
+        ("names", 0.20133954),
+        ("node", 0.111191355),
+        ("path", 0.3845308),
+        ("shortest", 0.37168172),
+        ("unchecked", 0.20925388),
+        ("weighted", 0.28742465),
+    ],
+    &[
+        ("from", 0.121294074),
+        ("get", 0.04482317),
+        ("ids", 0.35338593),
+        ("node", 0.13277404),
+        ("path", 0.4627425),
+        ("shortest", 0.44728),
+        ("weighted", 0.34588543),
+    ],
+    &[
+        ("from", 0.121294074),
+        ("get", 0.04482317),
+        ("ids", 0.18515077),
+        ("names", 0.24229102),
+        ("node", 0.13277404),
+        ("path", 0.4627425),
+        ("shortest", 0.44728),
+        ("weighted", 0.34588543),
+    ],
+    &[
+        ("from", 0.121294074),
+        ("get", 0.04482317),
+        ("names", 0.462446),
+        ("node", 0.13277404),
+        ("path", 0.4627425),
+        ("shortest", 0.44728),
+        ("weighted", 0.34588543),
+    ],
+    &[
+        ("breadth", 0.7876151),
+        ("first", 0.7876151),
+        ("from", 0.18609911),
+        ("get", 0.06877131),
+        ("ids", 0.2840732),
+        ("node", 0.106731884),
+        ("search", 0.7876151),
+    ],
+    &[
+        ("dijkstra", 1.5794643),
+        ("from", 0.31783593),
+        ("get", 0.11745351),
         ("ids", 0.48516443),
-        ("isomorphic", 1.0480809),
+        ("node", 0.18228582),
+    ],
+    &[
+        ("four", 3.8733428),
+        ("get", 0.23645876),
+        ("sweep", 3.8733428),
+    ],
+    &[
+        ("diameter", 3.5508618),
+        ("get", 0.23645876),
+        ("naive", 3.8733428),
+    ],
+    &[("diameter", 5.480898), ("get", 0.3649836)],
+    &[
+        ("breadth", 0.7876151),
+        ("first", 0.7876151),
+        ("from", 0.18609911),
+        ("get", 0.06877131),
+        ("names", 0.37174237),
+        ("node", 0.106731884),
+        ("search", 0.7876151),
+    ],
+    &[
+        ("dijkstra", 1.5794643),
+        ("from", 0.31783593),
+        ("get", 0.11745351),
+        ("names", 0.6348933),
+        ("node", 0.18228582),
     ],
     &[("chains", 5.97866), ("get", 0.3649836)],
     &[("circles", 5.97866), ("get", 0.3649836)],
@@ -17976,6 +18278,24 @@ pub const GRAPH_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
         ("trees", 3.5508618),
     ],
     &[
+        ("closure", 3.8733428),
+        ("get", 0.23645876),
+        ("transitive", 3.8733428),
+    ],
+    &[
+        ("all", 1.7781887),
+        ("get", 0.16250157),
+        ("paths", 2.440259),
+        ("shortest", 1.6215653),
+    ],
+    &[
+        ("all", 1.285246),
+        ("get", 0.11745351),
+        ("paths", 1.7637798),
+        ("shortest", 1.1720412),
+        ("weighted", 0.9063495),
+    ],
+    &[
         ("degree", 0.7795558),
         ("distribution", 1.4483665),
         ("geometric", 1.4483665),
@@ -18017,6 +18337,13 @@ pub const GRAPH_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
         ("names", 0.87839997),
     ],
     &[("csv", 5.97866), ("from", 0.9876666)],
+    &[
+        ("edge", 0.41159865),
+        ("get", 0.11745351),
+        ("groups", 1.2349665),
+        ("ids", 0.48516443),
+        ("isomorphic", 1.0480809),
+    ],
     &[
         ("edge", 0.569463),
         ("get", 0.16250157),
@@ -21230,24 +21557,6 @@ pub const GRAPH_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
         ("structural", 1.7637798),
         ("to", 1.2349665),
     ],
-    &[
-        ("closure", 3.8733428),
-        ("get", 0.23645876),
-        ("transitive", 3.8733428),
-    ],
-    &[
-        ("all", 1.7781887),
-        ("get", 0.16250157),
-        ("paths", 2.440259),
-        ("shortest", 1.6215653),
-    ],
-    &[
-        ("all", 1.285246),
-        ("get", 0.11745351),
-        ("paths", 1.7637798),
-        ("shortest", 1.1720412),
-        ("weighted", 0.9063495),
-    ],
     &[("dot", 5.97866), ("to", 3.8376253)],
     &[("enable", 9.71492)],
     &[("all", 3.9938674), ("disable", 5.97866)],
@@ -21906,317 +22215,6 @@ pub const GRAPH_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
         ("node", 0.1372255),
         ("okapi", 1.3277806),
         ("propagation", 1.3277806),
-    ],
-    &[
-        ("breadth", 0.42658058),
-        ("first", 0.42658058),
-        ("from", 0.10079322),
-        ("get", 0.03724726),
-        ("id", 0.16912991),
-        ("node", 0.0578071),
-        ("parallel", 0.48093003),
-        ("predecessors", 0.61013347),
-        ("search", 0.42658058),
-        ("unchecked", 0.20925388),
-    ],
-    &[
-        ("breadth", 0.42658058),
-        ("distances", 0.5258764),
-        ("first", 0.42658058),
-        ("from", 0.10079322),
-        ("get", 0.03724726),
-        ("ids", 0.15385701),
-        ("node", 0.0578071),
-        ("parallel", 0.48093003),
-        ("search", 0.42658058),
-        ("unchecked", 0.20925388),
-    ],
-    &[
-        ("breadth", 0.42658058),
-        ("distances", 0.5258764),
-        ("first", 0.42658058),
-        ("from", 0.10079322),
-        ("get", 0.03724726),
-        ("id", 0.16912991),
-        ("node", 0.0578071),
-        ("parallel", 0.48093003),
-        ("search", 0.42658058),
-        ("unchecked", 0.20925388),
-    ],
-    &[
-        ("breadth", 0.42658058),
-        ("distances", 0.5258764),
-        ("first", 0.42658058),
-        ("from", 0.10079322),
-        ("get", 0.03724726),
-        ("id", 0.16912991),
-        ("node", 0.0578071),
-        ("search", 0.42658058),
-        ("sequential", 0.61013347),
-        ("unchecked", 0.20925388),
-    ],
-    &[
-        ("breadth", 0.6290026),
-        ("first", 0.6290026),
-        ("from", 0.14862186),
-        ("get", 0.054921914),
-        ("ids", 0.22686559),
-        ("node", 0.08523786),
-        ("search", 0.6290026),
-        ("unchecked", 0.30854952),
-    ],
-    &[
-        ("breadth", 0.6290026),
-        ("first", 0.6290026),
-        ("from", 0.14862186),
-        ("get", 0.054921914),
-        ("id", 0.24938583),
-        ("node", 0.08523786),
-        ("search", 0.6290026),
-        ("unchecked", 0.30854952),
-    ],
-    &[
-        ("from", 0.121294074),
-        ("get", 0.04482317),
-        ("ids", 0.35338593),
-        ("node", 0.13277404),
-        ("path", 0.4627425),
-        ("shortest", 0.44728),
-        ("unchecked", 0.2518151),
-    ],
-    &[
-        ("from", 0.121294074),
-        ("get", 0.04482317),
-        ("ids", 0.18515077),
-        ("names", 0.24229102),
-        ("node", 0.13277404),
-        ("path", 0.4627425),
-        ("shortest", 0.44728),
-        ("unchecked", 0.2518151),
-    ],
-    &[
-        ("from", 0.14862186),
-        ("get", 0.054921914),
-        ("ids", 0.42859343),
-        ("node", 0.16103098),
-        ("path", 0.56699926),
-        ("shortest", 0.548053),
-    ],
-    &[
-        ("from", 0.14862186),
-        ("get", 0.054921914),
-        ("ids", 0.22686559),
-        ("names", 0.29687965),
-        ("node", 0.16103098),
-        ("path", 0.56699926),
-        ("shortest", 0.548053),
-    ],
-    &[
-        ("from", 0.14862186),
-        ("get", 0.054921914),
-        ("names", 0.5608637),
-        ("node", 0.16103098),
-        ("path", 0.56699926),
-        ("shortest", 0.548053),
-    ],
-    &[
-        ("from", 0.10079322),
-        ("get", 0.03724726),
-        ("ids", 0.29594237),
-        ("k", 0.45008758),
-        ("node", 0.111191355),
-        ("path", 0.3845308),
-        ("shortest", 0.37168172),
-        ("unchecked", 0.20925388),
-    ],
-    &[
-        ("from", 0.121294074),
-        ("get", 0.04482317),
-        ("ids", 0.35338593),
-        ("k", 0.5416332),
-        ("node", 0.13277404),
-        ("path", 0.4627425),
-        ("shortest", 0.44728),
-    ],
-    &[
-        ("from", 0.121294074),
-        ("get", 0.04482317),
-        ("ids", 0.18515077),
-        ("k", 0.5416332),
-        ("names", 0.24229102),
-        ("node", 0.13277404),
-        ("path", 0.4627425),
-        ("shortest", 0.44728),
-    ],
-    &[
-        ("from", 0.121294074),
-        ("get", 0.04482317),
-        ("k", 0.5416332),
-        ("names", 0.462446),
-        ("node", 0.13277404),
-        ("path", 0.4627425),
-        ("shortest", 0.44728),
-    ],
-    &[
-        ("and", 0.31359226),
-        ("distant", 0.47191828),
-        ("eccentricity", 0.3917504),
-        ("from", 0.08504043),
-        ("get", 0.031425953),
-        ("id", 0.27612692),
-        ("most", 0.4226027),
-        ("node", 0.09437773),
-        ("unchecked", 0.17654997),
-    ],
-    &[
-        ("eccentricity", 0.8572911),
-        ("from", 0.18609911),
-        ("get", 0.06877131),
-        ("id", 0.31227225),
-        ("node", 0.106731884),
-        ("unchecked", 0.38635498),
-        ("weighted", 0.5306852),
-    ],
-    &[
-        ("and", 0.37168172),
-        ("distant", 0.5593359),
-        ("eccentricity", 0.4643178),
-        ("from", 0.10079322),
-        ("get", 0.03724726),
-        ("id", 0.32531962),
-        ("most", 0.5008851),
-        ("node", 0.111191355),
-    ],
-    &[
-        ("eccentricity", 1.1022217),
-        ("from", 0.23926818),
-        ("get", 0.088419475),
-        ("id", 0.40148938),
-        ("node", 0.1372255),
-        ("weighted", 0.68230355),
-    ],
-    &[
-        ("eccentricity", 1.4641548),
-        ("from", 0.31783593),
-        ("get", 0.11745351),
-        ("name", 0.74454236),
-        ("node", 0.18228582),
-    ],
-    &[
-        ("eccentricity", 1.1022217),
-        ("from", 0.23926818),
-        ("get", 0.088419475),
-        ("name", 0.56049454),
-        ("node", 0.1372255),
-        ("weighted", 0.68230355),
-    ],
-    &[
-        ("dijkstra", 1.1890272),
-        ("from", 0.23926818),
-        ("get", 0.088419475),
-        ("ids", 0.36523375),
-        ("node", 0.1372255),
-        ("unchecked", 0.49673775),
-    ],
-    &[
-        ("dijkstra", 1.1890272),
-        ("from", 0.23926818),
-        ("get", 0.088419475),
-        ("id", 0.40148938),
-        ("node", 0.1372255),
-        ("unchecked", 0.49673775),
-    ],
-    &[
-        ("from", 0.10079322),
-        ("get", 0.03724726),
-        ("ids", 0.29594237),
-        ("node", 0.111191355),
-        ("path", 0.3845308),
-        ("shortest", 0.37168172),
-        ("unchecked", 0.20925388),
-        ("weighted", 0.28742465),
-    ],
-    &[
-        ("from", 0.10079322),
-        ("get", 0.03724726),
-        ("ids", 0.15385701),
-        ("names", 0.20133954),
-        ("node", 0.111191355),
-        ("path", 0.3845308),
-        ("shortest", 0.37168172),
-        ("unchecked", 0.20925388),
-        ("weighted", 0.28742465),
-    ],
-    &[
-        ("from", 0.121294074),
-        ("get", 0.04482317),
-        ("ids", 0.35338593),
-        ("node", 0.13277404),
-        ("path", 0.4627425),
-        ("shortest", 0.44728),
-        ("weighted", 0.34588543),
-    ],
-    &[
-        ("from", 0.121294074),
-        ("get", 0.04482317),
-        ("ids", 0.18515077),
-        ("names", 0.24229102),
-        ("node", 0.13277404),
-        ("path", 0.4627425),
-        ("shortest", 0.44728),
-        ("weighted", 0.34588543),
-    ],
-    &[
-        ("from", 0.121294074),
-        ("get", 0.04482317),
-        ("names", 0.462446),
-        ("node", 0.13277404),
-        ("path", 0.4627425),
-        ("shortest", 0.44728),
-        ("weighted", 0.34588543),
-    ],
-    &[
-        ("breadth", 0.7876151),
-        ("first", 0.7876151),
-        ("from", 0.18609911),
-        ("get", 0.06877131),
-        ("ids", 0.2840732),
-        ("node", 0.106731884),
-        ("search", 0.7876151),
-    ],
-    &[
-        ("dijkstra", 1.5794643),
-        ("from", 0.31783593),
-        ("get", 0.11745351),
-        ("ids", 0.48516443),
-        ("node", 0.18228582),
-    ],
-    &[
-        ("four", 3.8733428),
-        ("get", 0.23645876),
-        ("sweep", 3.8733428),
-    ],
-    &[
-        ("diameter", 3.5508618),
-        ("get", 0.23645876),
-        ("naive", 3.8733428),
-    ],
-    &[("diameter", 5.480898), ("get", 0.3649836)],
-    &[
-        ("breadth", 0.7876151),
-        ("first", 0.7876151),
-        ("from", 0.18609911),
-        ("get", 0.06877131),
-        ("names", 0.37174237),
-        ("node", 0.106731884),
-        ("search", 0.7876151),
-    ],
-    &[
-        ("dijkstra", 1.5794643),
-        ("from", 0.31783593),
-        ("get", 0.11745351),
-        ("names", 0.6348933),
-        ("node", 0.18228582),
     ],
     &[
         ("default", 2.6618776),
