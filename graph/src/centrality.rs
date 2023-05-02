@@ -9,8 +9,8 @@ use parallel_frontier::Frontier;
 use rayon::iter::IndexedParallelIterator;
 use rayon::iter::IntoParallelRefIterator;
 use rayon::iter::{IntoParallelRefMutIterator, ParallelIterator};
-use std::sync::atomic::{AtomicU32, AtomicU64};
 use std::sync::atomic::Ordering;
+use std::sync::atomic::{AtomicU32, AtomicU64};
 
 #[inline(always)]
 unsafe fn non_temporal_store<T>(ptr: &mut T, value: T) {
@@ -129,20 +129,18 @@ impl Graph {
         if self.is_unchecked_disconnected_node_from_node_id(node_id) {
             return 0.0;
         }
-        let total_distance = self
-            .get_unchecked_dijkstra_from_node_id(
-                node_id,
-                None,
-                None,
-                Some(false),
-                None,
-                Some(use_edge_weights_as_probabilities),
-            )
-            .total_distance;
-        if use_edge_weights_as_probabilities {
-            total_distance
+        let dijkstra = self.get_unchecked_dijkstra_from_node_id(
+            node_id,
+            None,
+            None,
+            Some(false),
+            None,
+            Some(use_edge_weights_as_probabilities),
+        );
+        1.0 / if use_edge_weights_as_probabilities {
+            dijkstra.get_log_total_distance()
         } else {
-            1.0 / total_distance
+            dijkstra.get_total_distance()
         }
     }
 
