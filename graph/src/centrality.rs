@@ -9,8 +9,8 @@ use parallel_frontier::Frontier;
 use rayon::iter::IndexedParallelIterator;
 use rayon::iter::IntoParallelRefIterator;
 use rayon::iter::{IntoParallelRefMutIterator, ParallelIterator};
-use std::sync::atomic::{AtomicU32, AtomicU64};
 use std::sync::atomic::Ordering;
+use std::sync::atomic::{AtomicU32, AtomicU64};
 
 #[inline(always)]
 unsafe fn non_temporal_store<T>(ptr: &mut T, value: T) {
@@ -104,7 +104,39 @@ impl Graph {
     ///
     /// # Arguments
     /// * `node_id`: NodeT - The node ID whose closeness centrality is to be computed.
-    /// * `use_edge_weights_as_probabilities`: bool - Whether to treat the edge weights as probabilities.
+    ///
+    /// # References
+    /// The metric is described in [Centrality in Social Networks by Freeman](https://www.bebr.ufl.edu/sites/default/files/Centrality%20in%20Social%20Networks.pdf)
+    ///
+    /// # Safety
+    /// If the given node ID does not exist in the graph the method will panic.
+    pub unsafe fn get_unchecked_weighted_closeness_centrality_from_node_id(
+        &self,
+        node_id: NodeT,
+    ) -> f32 {
+        if self.is_unchecked_disconnected_node_from_node_id(node_id) {
+            return 0.0;
+        }
+        1.0_f32
+            / self
+                .get_unchecked_dijkstra_from_node_id::<f32>(
+                    node_id,
+                    None,
+                    None,
+                    Some(false),
+                    None,
+                    Some(false),
+                )
+                .total_distance
+    }
+
+    /// Return closeness centrality of the requested node.
+    ///
+    /// If the given node ID does not exist in the current graph the method
+    /// will panic.
+    ///
+    /// # Arguments
+    /// * `node_id`: NodeT - The node ID whose closeness centrality is to be computed.
     ///
     /// # References
     /// The metric is described in [Centrality in Social Networks by Freeman](https://www.bebr.ufl.edu/sites/default/files/Centrality%20in%20Social%20Networks.pdf)
@@ -121,29 +153,15 @@ impl Graph {
     ///
     /// # Safety
     /// If the given node ID does not exist in the graph the method will panic.
-    pub unsafe fn get_unchecked_weighted_closeness_centrality_from_node_id(
+    pub unsafe fn get_unchecked_probability_closeness_centrality_from_node_id(
         &self,
         node_id: NodeT,
-        use_edge_weights_as_probabilities: bool,
-    ) -> f32 {
+    ) -> f64 {
         if self.is_unchecked_disconnected_node_from_node_id(node_id) {
             return 0.0;
         }
-        let total_distance = self
-            .get_unchecked_dijkstra_from_node_id(
-                node_id,
-                None,
-                None,
-                Some(false),
-                None,
-                Some(use_edge_weights_as_probabilities),
-            )
-            .total_distance;
-        if use_edge_weights_as_probabilities {
-            total_distance
-        } else {
-            1.0 / total_distance
-        }
+        self.get_unchecked_dijkstra_from_node_id(node_id, None, None, Some(false), None, Some(true))
+            .total_distance
     }
 
     /// Return parallel iterator over closeness centrality for all nodes.
@@ -173,7 +191,40 @@ impl Graph {
     /// Return parallel iterator over closeness centrality for all nodes.
     ///
     /// # Arguments
-    /// * `use_edge_weights_as_probabilities`: bool - Whether to treat the edge weights as probabilities.
+    /// * `verbose`: Option<bool> - Whether to show an indicative progress bar.
+    ///
+    /// # References
+    /// The metric is described in [Centrality in Social Networks by Freeman](https://www.bebr.ufl.edu/sites/default/files/Centrality%20in%20Social%20Networks.pdf)
+    ///
+    /// # References
+    /// The metric is described in [Centrality in Social Networks by Freeman](https://www.bebr.ufl.edu/sites/default/files/Centrality%20in%20Social%20Networks.pdf)
+    ///
+    /// # Raises
+    /// * If the graph does not have weights.
+    /// * If the graph contains negative weights.
+    /// * If the user has asked for the weights to be treated as probabilities but the weights are not between 0 and 1.
+    pub fn par_iter_weighted_closeness_centrality(
+        &self,
+        verbose: Option<bool>,
+    ) -> Result<impl ParallelIterator<Item = f32> + '_> {
+        self.must_have_positive_edge_weights()?;
+        let verbose = verbose.unwrap_or(true);
+        let pb = get_loading_bar(
+            verbose,
+            "Computing closeness centrality",
+            self.get_number_of_nodes() as usize,
+        );
+        Ok(self
+            .par_iter_node_ids()
+            .progress_with(pb)
+            .map(move |node_id| unsafe {
+                self.get_unchecked_weighted_closeness_centrality_from_node_id(node_id)
+            }))
+    }
+
+    /// Return parallel iterator over closeness centrality for all nodes.
+    ///
+    /// # Arguments
     /// * `verbose`: Option<bool> - Whether to show an indicative progress bar.
     ///
     /// # References
@@ -196,16 +247,11 @@ impl Graph {
     /// * If the graph does not have weights.
     /// * If the graph contains negative weights.
     /// * If the user has asked for the weights to be treated as probabilities but the weights are not between 0 and 1.
-    pub fn par_iter_weighted_closeness_centrality(
+    pub fn par_iter_probability_closeness_centrality(
         &self,
-        use_edge_weights_as_probabilities: Option<bool>,
         verbose: Option<bool>,
-    ) -> Result<impl ParallelIterator<Item = f32> + '_> {
+    ) -> Result<impl ParallelIterator<Item = f64> + '_> {
         self.must_have_positive_edge_weights()?;
-        let use_edge_weights_as_probabilities = use_edge_weights_as_probabilities.unwrap_or(false);
-        if use_edge_weights_as_probabilities {
-            self.must_have_edge_weights_representing_probabilities()?;
-        }
         let verbose = verbose.unwrap_or(true);
         let pb = get_loading_bar(
             verbose,
@@ -216,10 +262,7 @@ impl Graph {
             .par_iter_node_ids()
             .progress_with(pb)
             .map(move |node_id| unsafe {
-                self.get_unchecked_weighted_closeness_centrality_from_node_id(
-                    node_id,
-                    use_edge_weights_as_probabilities,
-                )
+                self.get_unchecked_probability_closeness_centrality_from_node_id(node_id)
             }))
     }
 
@@ -237,7 +280,23 @@ impl Graph {
     /// Return closeness centrality for all nodes.
     ///
     /// # Arguments
-    /// * `use_edge_weights_as_probabilities`: bool - Whether to treat the edge weights as probabilities.
+    /// * `verbose`: Option<bool> - Whether to show an indicative progress bar.
+    ///
+    /// # References
+    /// The metric is described in [Centrality in Social Networks by Freeman](https://www.bebr.ufl.edu/sites/default/files/Centrality%20in%20Social%20Networks.pdf)
+    ///
+    /// # Raises
+    /// * If the graph does not have weights.
+    /// * If the graph contains negative weights.
+    /// * If the user has asked for the weights to be treated as probabilities but the weights are not between 0 and 1.
+    pub fn get_weighted_closeness_centrality(&self, verbose: Option<bool>) -> Result<Vec<f32>> {
+        self.par_iter_weighted_closeness_centrality(verbose)
+            .map(|x| x.collect())
+    }
+
+    /// Return closeness centrality for all nodes.
+    ///
+    /// # Arguments
     /// * `verbose`: Option<bool> - Whether to show an indicative progress bar.
     ///
     /// # References
@@ -257,12 +316,8 @@ impl Graph {
     /// * If the graph does not have weights.
     /// * If the graph contains negative weights.
     /// * If the user has asked for the weights to be treated as probabilities but the weights are not between 0 and 1.
-    pub fn get_weighted_closeness_centrality(
-        &self,
-        use_edge_weights_as_probabilities: Option<bool>,
-        verbose: Option<bool>,
-    ) -> Result<Vec<f32>> {
-        self.par_iter_weighted_closeness_centrality(use_edge_weights_as_probabilities, verbose)
+    pub fn get_probability_closeness_centrality(&self, verbose: Option<bool>) -> Result<Vec<f64>> {
+        self.par_iter_probability_closeness_centrality(verbose)
             .map(|x| x.collect())
     }
 
@@ -1209,14 +1264,16 @@ impl Graph {
                 // Increase the number of sampled nodes.
                 number_of_sampled_nodes += 1.0;
                 // Compute the SSSP starting from the samples node.
-                let sssp = self.get_unchecked_dijkstra_from_node_id(
-                    neighbour_node_id,
-                    None,
-                    None,
-                    Some(true),
-                    None,
-                    use_edge_weights_as_probabilities,
-                );
+                let sssp: ShortestPathsDjkstra = ShortestPathsDjkstra {
+                    inner: self.get_unchecked_dijkstra_from_node_id(
+                        neighbour_node_id,
+                        None,
+                        None,
+                        Some(true),
+                        None,
+                        use_edge_weights_as_probabilities,
+                    ),
+                };
                 // Compute the pair dependency.
                 let pair_dependency =
                     self.get_weighted_pair_dependency_from_node_id(node_id, &sssp)?;
@@ -1248,15 +1305,17 @@ impl Graph {
             // Increase the number of sampled nodes.
             number_of_sampled_nodes += 1.0;
             // Compute the SSSP starting from the samples node.
-            let sssp = unsafe {
-                self.get_unchecked_dijkstra_from_node_id(
-                    sampled_node_id,
-                    None,
-                    None,
-                    Some(true),
-                    None,
-                    use_edge_weights_as_probabilities,
-                )
+            let sssp: ShortestPathsDjkstra = ShortestPathsDjkstra {
+                inner: unsafe {
+                    self.get_unchecked_dijkstra_from_node_id(
+                        sampled_node_id,
+                        None,
+                        None,
+                        Some(true),
+                        None,
+                        use_edge_weights_as_probabilities,
+                    )
+                },
             };
             // Compute the pair dependency.
             let pair_dependency = self.get_weighted_pair_dependency_from_node_id(node_id, &sssp)?;
