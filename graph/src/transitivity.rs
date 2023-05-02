@@ -226,7 +226,7 @@ impl Graph {
                     .filter_map(|src_node_id| unsafe {
                         if self.is_unchecked_connected_from_node_id(src_node_id) {
                             Some(
-                                self.get_unchecked_dijkstra_from_node_id::<f32>(
+                                self.get_unchecked_dijkstra_from_node_id(
                                     src_node_id,
                                     None,
                                     None,

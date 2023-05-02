@@ -1,14 +1,12 @@
 use super::*;
 use indicatif::ParallelProgressIterator;
-use num_traits::{Float, PrimInt, Zero};
+use num_traits::{PrimInt, Zero};
 use parallel_frontier::Frontier;
 use rayon::prelude::*;
 use std::cmp::Ord;
 use std::collections::VecDeque;
 use std::convert::TryFrom;
-use std::fmt::Debug;
 use std::hash::{Hash, Hasher};
-use std::ops::AddAssign;
 use std::string::ToString;
 
 #[derive(Hash, Clone, Debug)]
@@ -437,19 +435,15 @@ impl ShortestPathsResultBFS {
 }
 
 #[derive(Clone, Debug)]
-pub(crate) struct GenericShortestPathsDjkstra<F> {
-    pub(crate) distances: Vec<F>,
+pub struct ShortestPathsDjkstra {
+    pub(crate) distances: Vec<f32>,
     most_distant_node: NodeT,
     pub(crate) predecessors: Option<Vec<Option<NodeT>>>,
-    pub(crate) dst_node_distance: Option<F>,
-    pub(crate) eccentricity: F,
-    pub(crate) total_distance: F,
-    pub(crate) total_harmonic_distance: F,
-}
-
-#[derive(Clone, Debug)]
-pub struct ShortestPathsDjkstra {
-    pub(crate) inner: GenericShortestPathsDjkstra<f32>,
+    pub(crate) dst_node_distance: Option<f32>,
+    pub(crate) eccentricity: f32,
+    total_distance: f32,
+    log_total_distance: f32,
+    pub(crate) total_harmonic_distance: f32,
 }
 
 impl ToString for ShortestPathsDjkstra {
@@ -460,41 +454,43 @@ impl ToString for ShortestPathsDjkstra {
 
 impl Hash for ShortestPathsDjkstra {
     fn hash<H: Hasher>(&self, state: &mut H) {
-        for d in &self.inner.distances {
+        for d in &self.distances {
             crate::hash::hash_f32(*d, state);
         }
-        self.inner.predecessors.hash(state);
+        self.predecessors.hash(state);
 
-        if let Some(d) = self.inner.dst_node_distance {
+        if let Some(d) = self.dst_node_distance {
             1.hash(state);
             crate::hash::hash_f32(d, state);
         } else {
             0.hash(state);
         }
 
-        crate::hash::hash_f32(self.inner.eccentricity, state);
-        crate::hash::hash_f32(self.inner.total_distance, state);
-        crate::hash::hash_f32(self.inner.total_harmonic_distance, state);
+        crate::hash::hash_f32(self.eccentricity, state);
+        crate::hash::hash_f32(self.total_distance, state);
+        crate::hash::hash_f32(self.total_harmonic_distance, state);
     }
 }
 
-impl<F: Float + Debug + Send + Sync> GenericShortestPathsDjkstra<F> {
+impl ShortestPathsDjkstra {
     pub(crate) fn new(
-        distances: Vec<F>,
+        distances: Vec<f32>,
         most_distant_node: NodeT,
         predecessors: Option<Vec<Option<NodeT>>>,
-        dst_node_distance: Option<F>,
-        eccentricity: F,
-        total_distance: F,
-        total_harmonic_distance: F,
-    ) -> Self {
-        Self {
+        dst_node_distance: Option<f32>,
+        eccentricity: f32,
+        total_distance: f32,
+        log_total_distance: f32,
+        total_harmonic_distance: f32,
+    ) -> ShortestPathsDjkstra {
+        ShortestPathsDjkstra {
             distances,
             most_distant_node,
             predecessors,
             dst_node_distance,
             eccentricity,
             total_distance,
+            log_total_distance,
             total_harmonic_distance,
         }
     }
@@ -514,7 +510,7 @@ impl<F: Float + Debug + Send + Sync> GenericShortestPathsDjkstra<F> {
         Ok(node_id)
     }
 
-    pub fn get_distance_from_node_id(&self, node_id: NodeT) -> Result<F> {
+    pub fn get_distance_from_node_id(&self, node_id: NodeT) -> Result<f32> {
         self.validate_node_id(node_id)
             .map(|node_id| self.distances[node_id as usize])
     }
@@ -535,14 +531,14 @@ impl<F: Float + Debug + Send + Sync> GenericShortestPathsDjkstra<F> {
     ///
     /// # Arguments
     /// * `dst_node_id`: NodeT - The node to start computing predecessors from.
-    /// * `distance`: F - The distance to aim for.
+    /// * `distance`: f32 - The distance to aim for.
     ///
     /// # Raises
     /// * If the predecessors vector was not requested.
     pub fn get_point_at_given_distance_on_shortest_path(
         &self,
         mut dst_node_id: NodeT,
-        distance: F,
+        distance: f32,
     ) -> Result<NodeT> {
         if !self.has_path_to_node_id(dst_node_id)? {
             return Err("There is no path to the given destination node.".to_string());
@@ -550,8 +546,8 @@ impl<F: Float + Debug + Send + Sync> GenericShortestPathsDjkstra<F> {
         if self.get_distance_from_node_id(dst_node_id)? < distance {
             return Err(format!(
                 concat!(
-                    "The path to the requested node {:?} has distance {:?}, ",
-                    "but the requested distance is {:?}."
+                    "The path to the requested node {} has distance {}, ",
+                    "but the requested distance is {}."
                 ),
                 dst_node_id,
                 self.get_eccentricity(),
@@ -575,12 +571,20 @@ impl<F: Float + Debug + Send + Sync> GenericShortestPathsDjkstra<F> {
         if !self.has_path_to_node_id(dst_node_id)? {
             return Err("There is no path to the given destination node.".to_string());
         }
-        let median_distance = self.get_distance_from_node_id(dst_node_id)? / (F::one() + F::one());
+        let median_distance = self.get_distance_from_node_id(dst_node_id)? / 2.0;
         self.get_point_at_given_distance_on_shortest_path(dst_node_id, median_distance)
     }
 
-    pub fn get_eccentricity(&self) -> F {
+    pub fn get_eccentricity(&self) -> f32 {
         self.eccentricity
+    }
+
+    pub fn get_total_distance(&self) -> f32 {
+        self.total_distance
+    }
+    
+    pub fn get_log_total_distance(&self) -> f32 {
+        self.log_total_distance
     }
 
     pub fn get_most_distant_node(&self) -> NodeT {
@@ -666,7 +670,7 @@ impl<F: Float + Debug + Send + Sync> GenericShortestPathsDjkstra<F> {
     }
 
     #[no_binding]
-    pub fn into_iter_finite_distances(self) -> impl Iterator<Item = F> {
+    pub fn into_iter_finite_distances(self) -> impl Iterator<Item = f32> {
         self.distances
             .into_iter()
             .filter(|&distance| distance.is_finite())
@@ -675,7 +679,7 @@ impl<F: Float + Debug + Send + Sync> GenericShortestPathsDjkstra<F> {
     #[no_binding]
     pub fn into_par_iter_node_ids_and_finite_distances(
         self,
-    ) -> impl ParallelIterator<Item = (NodeT, F)> {
+    ) -> impl ParallelIterator<Item = (NodeT, f32)> {
         self.distances
             .into_par_iter()
             .enumerate()
@@ -689,102 +693,8 @@ impl<F: Float + Debug + Send + Sync> GenericShortestPathsDjkstra<F> {
     }
 
     #[no_binding]
-    pub fn into_distances(self) -> Vec<F> {
-        self.distances
-    }
-}
-
-impl ShortestPathsDjkstra {
-
-    pub fn has_path_to_node_id(&self, node_id: NodeT) -> Result<bool> {
-        self.inner.has_path_to_node_id(node_id)
-    }
-
-    pub fn get_distance_from_node_id(&self, node_id: NodeT) -> Result<f32> {
-        self.inner.get_distance_from_node_id(node_id)
-    }
-
-    pub fn get_parent_from_node_id(&self, node_id: NodeT) -> Result<Option<NodeT>> {
-        self.inner.get_parent_from_node_id(node_id)
-    }
-
-    /// Returns node at just before given distance on minimum path to given destination node.
-    ///
-    /// # Arguments
-    /// * `dst_node_id`: NodeT - The node to start computing predecessors from.
-    /// * `distance`: F - The distance to aim for.
-    ///
-    /// # Raises
-    /// * If the predecessors vector was not requested.
-    pub fn get_point_at_given_distance_on_shortest_path(
-        &self,
-        dst_node_id: NodeT,
-        distance: f32,
-    ) -> Result<NodeT> {
-        self.inner.get_point_at_given_distance_on_shortest_path(dst_node_id, distance)
-    }
-
-    pub fn get_median_point(&self, dst_node_id: NodeT) -> Result<NodeT> {
-        self.inner.get_median_point(dst_node_id)
-    }
-
-    pub fn get_eccentricity(&self) -> f32 {
-        self.inner.get_eccentricity()
-    }
-
-    pub fn get_most_distant_node(&self) -> NodeT {
-        self.inner.get_most_distant_node()
-    }
-
-    /// Returns the number of shortest paths starting from the root node.
-    pub fn get_number_of_shortest_paths(&self) -> NodeT {
-        self.inner.get_number_of_shortest_paths()
-    }
-
-    /// Returns the number of shortest paths passing through the given node.
-    ///
-    /// # Arguments
-    /// * `node_id`: NodeT - The node id.
-    ///
-    /// # Raises
-    /// * If neither predecessors nor distances were computed for this BFS.
-    /// * If the given node ID does not exist in the current graph instance.
-    ///
-    /// # Returns
-    /// The number of nodes passing by the node ID.
-    pub fn get_number_of_shortest_paths_from_node_id(&self, node_id: NodeT) -> Result<NodeT> {
-        self.inner.get_number_of_shortest_paths_from_node_id(node_id)
-    }
-
-    /// Return list of successors of a given node.
-    ///
-    /// # Arguments
-    /// * `source_node_id`: NodeT - The node for which to return the successors.
-    ///
-    /// # Raises
-    /// * If the given node ID does not exist in the graph.
-    ///
-    /// # Returns
-    /// List of successors of the given node.
-    pub fn get_successors_from_node_id(&self, source_node_id: NodeT) -> Result<Vec<NodeT>> {
-        self.inner.get_successors_from_node_id(source_node_id)
-    }
-
-    #[no_binding]
-    pub fn into_iter_finite_distances(self) -> impl Iterator<Item = f32> {
-        self.inner.into_iter_finite_distances()
-    }
-
-    #[no_binding]
-    pub fn into_par_iter_node_ids_and_finite_distances(
-        self,
-    ) -> impl ParallelIterator<Item = (NodeT, f32)> {
-        self.inner.into_par_iter_node_ids_and_finite_distances()
-    }
-
-    #[no_binding]
     pub fn into_distances(self) -> Vec<f32> {
-        self.inner.into_distances()
+        self.distances
     }
 }
 
@@ -1586,9 +1496,7 @@ impl Graph {
     ///
     /// # Safety
     /// If any of the given node IDs does not exist in the graph the method will panic.
-    pub(crate) unsafe fn get_unchecked_dijkstra_from_node_ids<
-        F: Float + Debug + Send + Sync + AddAssign,
-    >(
+    pub unsafe fn get_unchecked_dijkstra_from_node_ids(
         &self,
         src_node_ids: Vec<NodeT>,
         maybe_dst_node_id: Option<NodeT>,
@@ -1596,16 +1504,16 @@ impl Graph {
         compute_predecessors: Option<bool>,
         maximal_depth: Option<NodeT>,
         use_edge_weights_as_probabilities: Option<bool>,
-    ) -> GenericShortestPathsDjkstra<F> {
+    ) -> ShortestPathsDjkstra {
         let compute_predecessors = compute_predecessors.unwrap_or(true);
         let nodes_number = self.get_number_of_nodes() as usize;
         let mut most_distant_node = src_node_ids[0];
         let use_edge_weights_as_probabilities = use_edge_weights_as_probabilities.unwrap_or(false);
         let mut dst_node_distance = maybe_dst_node_id.map(|_| {
             if use_edge_weights_as_probabilities {
-                F::zero()
+                0.0
             } else {
-                F::infinity()
+                f32::INFINITY
             }
         });
         let mut predecessors: Option<Vec<Option<NodeT>>> = if compute_predecessors {
@@ -1620,24 +1528,26 @@ impl Graph {
             .all(|src_node_id| self.is_unchecked_disconnected_node_from_node_id(src_node_id))
         {
             if use_edge_weights_as_probabilities {
-                return GenericShortestPathsDjkstra::new(
-                    vec![F::zero(); nodes_number],
+                return ShortestPathsDjkstra::new(
+                    vec![0.0; nodes_number],
                     most_distant_node,
                     predecessors,
                     dst_node_distance,
-                    F::zero(),
-                    F::zero(),
-                    F::zero(),
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
                 );
             } else {
-                return GenericShortestPathsDjkstra::new(
-                    vec![F::infinity(); nodes_number],
+                return ShortestPathsDjkstra::new(
+                    vec![f32::INFINITY; nodes_number],
                     most_distant_node,
                     predecessors,
                     dst_node_distance,
-                    F::infinity(),
-                    F::infinity(),
-                    F::zero(),
+                    f32::INFINITY,
+                    f32::INFINITY,
+                    f32::INFINITY,
+                    0.0,
                 );
             }
         }
@@ -1651,12 +1561,12 @@ impl Graph {
             )
         });
 
-        let mut distances = vec![F::max_value(); nodes_number];
-        let mut nodes_to_explore: DijkstraQueue<F> =
+        let mut distances = vec![f32::MAX; nodes_number];
+        let mut nodes_to_explore: DijkstraQueue<f32> =
             DijkstraQueue::with_capacity_from_roots(nodes_number, src_node_ids, &mut distances);
-        let mut eccentricity: F = F::zero();
-        let mut total_distance: F = F::zero();
-        let mut total_harmonic_distance: F = F::zero();
+        let mut eccentricity: f32 = 0.0;
+        let mut total_distance: f32 = 0.0;
+        let mut total_harmonic_distance: f32 = 0.0;
 
         while let Some(closest_node_id) = nodes_to_explore.pop() {
             // Update the distances metrics
@@ -1666,12 +1576,11 @@ impl Graph {
                 most_distant_node = closest_node_id as NodeT;
             }
             total_distance += nodes_to_explore[closest_node_id];
-
-            if nodes_to_explore[closest_node_id] > F::zero() {
+            if nodes_to_explore[closest_node_id] > 0.0 {
                 total_harmonic_distance += if use_edge_weights_as_probabilities {
                     (-nodes_to_explore[closest_node_id]).exp()
                 } else {
-                    F::one() / nodes_to_explore[closest_node_id]
+                    1.0 / nodes_to_explore[closest_node_id]
                 };
             }
             // If the closest node is the optional destination node, we have
@@ -1711,9 +1620,9 @@ impl Graph {
                     }
                     let new_neighbour_distance = nodes_to_explore[closest_node_id]
                         + if use_edge_weights_as_probabilities {
-                            -F::from(weight).unwrap().ln()
+                            -(weight as f32).ln()
                         } else {
-                            F::from(weight).unwrap()
+                            weight as f32
                         };
                     if new_neighbour_distance < nodes_to_explore[neighbour_node_id as usize] {
                         if let Some(predecessors) = &mut predecessors {
@@ -1727,21 +1636,26 @@ impl Graph {
 
         // If the edge weights are to be treated as probabilities
         // we need to adjust the distances back using the exponentiation.
-        if use_edge_weights_as_probabilities {
+        let log_total_distance = if use_edge_weights_as_probabilities {
             distances
                 .par_iter_mut()
                 .for_each(|distance| *distance = (-*distance).exp());
             eccentricity = (-eccentricity).exp();
+            let log_total_distance = total_distance;
             total_distance = (-total_distance).exp();
-        }
+            log_total_distance
+        } else {
+            total_distance.ln()
+        };
 
-        GenericShortestPathsDjkstra {
+        ShortestPathsDjkstra {
             distances,
             most_distant_node,
             predecessors,
             dst_node_distance,
             eccentricity,
             total_distance,
+            log_total_distance,
             total_harmonic_distance,
         }
     }
@@ -1758,9 +1672,7 @@ impl Graph {
     ///
     /// # Safety
     /// If any of the given node IDs does not exist in the graph the method will panic.
-    pub(crate) unsafe fn get_unchecked_dijkstra_from_node_id<
-        F: Float + Debug + Send + Sync + AddAssign,
-    >(
+    pub unsafe fn get_unchecked_dijkstra_from_node_id(
         &self,
         src_node_id: NodeT,
         maybe_dst_node_id: Option<NodeT>,
@@ -1768,7 +1680,7 @@ impl Graph {
         compute_predecessors: Option<bool>,
         maximal_depth: Option<NodeT>,
         use_edge_weights_as_probabilities: Option<bool>,
-    ) -> GenericShortestPathsDjkstra<F> {
+    ) -> ShortestPathsDjkstra {
         self.get_unchecked_dijkstra_from_node_ids(
             vec![src_node_id],
             maybe_dst_node_id,
@@ -1796,18 +1708,16 @@ impl Graph {
         use_edge_weights_as_probabilities: Option<bool>,
         maximal_depth: Option<NodeT>,
     ) -> (f32, Vec<NodeT>) {
-        let dijkstra: ShortestPathsDjkstra = ShortestPathsDjkstra {
-            inner: self.get_unchecked_dijkstra_from_node_id(
-                src_node_id,
-                Some(dst_node_id),
-                None,
-                Some(true),
-                maximal_depth,
-                use_edge_weights_as_probabilities,
-            ),
-        };
-        let predecessors = dijkstra.inner.predecessors.unwrap();
-        let path_length = dijkstra.inner.dst_node_distance.unwrap();
+        let dijkstra = self.get_unchecked_dijkstra_from_node_id(
+            src_node_id,
+            Some(dst_node_id),
+            None,
+            Some(true),
+            maximal_depth,
+            use_edge_weights_as_probabilities,
+        );
+        let predecessors = dijkstra.predecessors.unwrap();
+        let path_length = dijkstra.dst_node_distance.unwrap();
         if let Some(uewp) = use_edge_weights_as_probabilities {
             // If the path length is to be treated as a probability and the
             // resulting probability is 0, it means that it is impossible
@@ -2040,17 +1950,15 @@ impl Graph {
             Ok(Some(self.validate_node_ids(node_ids)?))
         })?;
 
-        Ok(ShortestPathsDjkstra {
-            inner: unsafe {
-                self.get_unchecked_dijkstra_from_node_id(
-                    src_node_id,
-                    maybe_dst_node_id,
-                    maybe_dst_node_ids,
-                    compute_predecessors,
-                    maximal_depth,
-                    use_edge_weights_as_probabilities,
-                )
-            },
+        Ok(unsafe {
+            self.get_unchecked_dijkstra_from_node_id(
+                src_node_id,
+                maybe_dst_node_id,
+                maybe_dst_node_ids,
+                compute_predecessors,
+                maximal_depth,
+                use_edge_weights_as_probabilities,
+            )
         })
     }
 
