@@ -1562,7 +1562,7 @@ impl Graph {
         });
 
         let mut distances = vec![f32::MAX; nodes_number];
-        let mut nodes_to_explore: DijkstraQueue =
+        let mut nodes_to_explore: DijkstraQueue<f32> =
             DijkstraQueue::with_capacity_from_roots(nodes_number, src_node_ids, &mut distances);
         let mut eccentricity: f32 = 0.0;
         let mut total_distance: f32 = 0.0;
