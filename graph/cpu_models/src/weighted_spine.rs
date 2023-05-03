@@ -101,7 +101,7 @@ impl WeightedSPINE {
             *distance = f32::MAX;
         });
 
-        let mut nodes_to_explore: DijkstraQueue = DijkstraQueue::with_capacity_from_roots(
+        let mut nodes_to_explore: DijkstraQueue<f32> = DijkstraQueue::with_capacity_from_roots(
             graph.get_number_of_nodes() as usize,
             bucket,
             distances,

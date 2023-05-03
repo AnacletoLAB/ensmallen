@@ -23542,6 +23542,20 @@ impl ShortestPathsDjkstra {
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     ///
+    pub fn get_total_distance(&self) -> f32 {
+        self.inner.get_total_distance().into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    ///
+    pub fn get_log_total_distance(&self) -> f32 {
+        self.inner.get_log_total_distance().into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    ///
     pub fn get_most_distant_node(&self) -> NodeT {
         self.inner.get_most_distant_node().into()
     }
@@ -23616,6 +23630,8 @@ pub const SHORTESTPATHSDJKSTRA_METHODS_NAMES: &[&str] = &[
     "get_point_at_given_distance_on_shortest_path",
     "get_median_point",
     "get_eccentricity",
+    "get_total_distance",
+    "get_log_total_distance",
     "get_most_distant_node",
     "get_number_of_shortest_paths",
     "get_number_of_shortest_paths_from_node_id",
@@ -23639,6 +23655,8 @@ pub const SHORTESTPATHSDJKSTRA_TERMS: &[&str] = &[
     "shortest",
     "median",
     "eccentricity",
+    "total",
+    "log",
     "most",
     "distant",
     "number",
@@ -23649,71 +23667,82 @@ pub const SHORTESTPATHSDJKSTRA_TERMS: &[&str] = &[
 
 pub const SHORTESTPATHSDJKSTRA_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
     &[
-        ("has", 0.58600885),
-        ("id", 0.20386681),
-        ("node", 0.15473326),
-        ("path", 0.435766),
-        ("to", 0.58600885),
+        ("has", 0.61376506),
+        ("id", 0.244485),
+        ("node", 0.19700517),
+        ("path", 0.46857908),
+        ("to", 0.61376506),
     ],
     &[
-        ("distance", 0.435766),
-        ("from", 0.2628876),
-        ("get", 0.043118663),
-        ("id", 0.20386681),
-        ("node", 0.15473326),
+        ("distance", 0.3015193),
+        ("from", 0.3015193),
+        ("get", 0.034845833),
+        ("id", 0.244485),
+        ("node", 0.19700517),
     ],
     &[
-        ("from", 0.2628876),
-        ("get", 0.043118663),
-        ("id", 0.20386681),
-        ("node", 0.15473326),
-        ("parent", 0.58600885),
+        ("from", 0.3015193),
+        ("get", 0.034845833),
+        ("id", 0.244485),
+        ("node", 0.19700517),
+        ("parent", 0.61376506),
     ],
     &[
-        ("at", 0.2707106),
-        ("distance", 0.20130494),
-        ("get", 0.019918947),
-        ("given", 0.2707106),
-        ("on", 0.2707106),
-        ("path", 0.20130494),
-        ("point", 0.20130494),
-        ("shortest", 0.15558861),
+        ("at", 0.2818008),
+        ("distance", 0.13843796),
+        ("get", 0.01599893),
+        ("given", 0.2818008),
+        ("on", 0.2818008),
+        ("path", 0.2151409),
+        ("point", 0.2151409),
+        ("shortest", 0.1712331),
     ],
     &[
-        ("get", 0.088315345),
-        ("median", 1.2002592),
-        ("point", 0.8925329),
+        ("get", 0.07200755),
+        ("median", 1.2683215),
+        ("point", 0.96830034),
     ],
-    &[("eccentricity", 1.8796511), ("get", 0.13830516)],
+    &[("eccentricity", 2.0014732), ("get", 0.11363142)],
     &[
-        ("distant", 0.81656975),
-        ("get", 0.060083386),
-        ("most", 0.81656975),
-        ("node", 0.21561193),
-    ],
-    &[
-        ("get", 0.043118663),
-        ("number", 0.435766),
-        ("of", 0.435766),
-        ("paths", 0.435766),
-        ("shortest", 0.3368036),
+        ("distance", 0.62307787),
+        ("get", 0.07200755),
+        ("total", 0.96830034),
     ],
     &[
-        ("from", 0.12144262),
-        ("get", 0.019918947),
-        ("id", 0.094177596),
-        ("node", 0.071480036),
-        ("number", 0.20130494),
-        ("of", 0.20130494),
-        ("paths", 0.20130494),
-        ("shortest", 0.15558861),
+        ("distance", 0.42168552),
+        ("get", 0.04873314),
+        ("log", 0.8583724),
+        ("total", 0.6553246),
     ],
     &[
-        ("from", 0.2628876),
-        ("get", 0.043118663),
-        ("id", 0.20386681),
-        ("node", 0.15473326),
-        ("successors", 0.58600885),
+        ("distant", 0.8583724),
+        ("get", 0.04873314),
+        ("most", 0.8583724),
+        ("node", 0.27551875),
+    ],
+    &[
+        ("get", 0.034845833),
+        ("number", 0.46857908),
+        ("of", 0.46857908),
+        ("paths", 0.46857908),
+        ("shortest", 0.37294748),
+    ],
+    &[
+        ("from", 0.13843796),
+        ("get", 0.01599893),
+        ("id", 0.11225154),
+        ("node", 0.090451896),
+        ("number", 0.2151409),
+        ("of", 0.2151409),
+        ("paths", 0.2151409),
+        ("shortest", 0.1712331),
+    ],
+    &[
+        ("from", 0.3015193),
+        ("get", 0.034845833),
+        ("id", 0.244485),
+        ("node", 0.19700517),
+        ("successors", 0.61376506),
     ],
 ];
 
