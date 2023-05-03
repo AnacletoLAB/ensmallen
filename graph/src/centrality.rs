@@ -9,8 +9,8 @@ use parallel_frontier::Frontier;
 use rayon::iter::IndexedParallelIterator;
 use rayon::iter::IntoParallelRefIterator;
 use rayon::iter::{IntoParallelRefMutIterator, ParallelIterator};
-use std::sync::atomic::{AtomicU32, AtomicU64};
 use std::sync::atomic::Ordering;
+use std::sync::atomic::{AtomicU32, AtomicU64};
 
 #[inline(always)]
 unsafe fn non_temporal_store<T>(ptr: &mut T, value: T) {
@@ -88,6 +88,9 @@ impl Graph {
     /// # Safety
     /// If the given node ID does not exist in the graph the method will panic.
     pub unsafe fn get_unchecked_closeness_centrality_from_node_id(&self, node_id: NodeT) -> f32 {
+        if self.is_unchecked_disconnected_node_from_node_id(node_id) {
+            return 0.0;
+        }
         1.0 / self
             .get_unchecked_breadth_first_search_from_node_id(node_id, None, None, None)
             .into_iter_finite_distances()
@@ -123,20 +126,21 @@ impl Graph {
         node_id: NodeT,
         use_edge_weights_as_probabilities: bool,
     ) -> f32 {
-        let total_distance = self
-            .get_unchecked_dijkstra_from_node_id(
-                node_id,
-                None,
-                None,
-                Some(false),
-                None,
-                Some(use_edge_weights_as_probabilities),
-            )
-            .total_distance;
-        if use_edge_weights_as_probabilities {
-            total_distance
+        if self.is_unchecked_disconnected_node_from_node_id(node_id) {
+            return 0.0;
+        }
+        let dijkstra = self.get_unchecked_dijkstra_from_node_id(
+            node_id,
+            None,
+            None,
+            Some(false),
+            None,
+            Some(use_edge_weights_as_probabilities),
+        );
+        1.0 / if use_edge_weights_as_probabilities {
+            dijkstra.get_log_total_distance()
         } else {
-            1.0 / total_distance
+            dijkstra.get_total_distance()
         }
     }
 
