@@ -29,7 +29,7 @@ impl Parse for TraitDefinition {
         } else  {
             None
         };
-        assert!(data.starts_with(b"{"));
+        assert!(data.starts_with(b"{"), );
         let (data, body) = get_next_matching(data, b'{', b'}');
         (
             data,

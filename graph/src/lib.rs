@@ -7,6 +7,7 @@
 //! * `singleton_with_selfloop`: A node which has only selfloops
 //! * `connected_node`: a node which is nor a `singleton` nor a `singleton_with_selfloops`.
 
+#![feature(return_position_impl_trait_in_trait)]
 #![feature(adt_const_params)]
 #![warn(unused_macros)]
 #![feature(drain_filter)]
@@ -81,7 +82,7 @@ mod hashes;
 mod holdouts;
 mod isomorphism;
 pub mod isomorphism_iter;
-mod edge_isomorphism;
+mod node_groups_isomorphism;
 mod iter_queries;
 mod iters;
 mod modifiers;
@@ -133,7 +134,7 @@ pub use self::types::*;
 pub use self::walks::*;
 pub use self::walks_parameters::*;
 pub use isomorphism::*;
-pub use edge_isomorphism::*;
+pub use node_groups_isomorphism::*;
 pub use preprocessing::*;
 pub use tfidf::*;
 

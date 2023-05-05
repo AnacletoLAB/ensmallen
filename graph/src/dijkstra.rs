@@ -441,7 +441,8 @@ pub struct ShortestPathsDjkstra {
     pub(crate) predecessors: Option<Vec<Option<NodeT>>>,
     pub(crate) dst_node_distance: Option<f32>,
     pub(crate) eccentricity: f32,
-    pub(crate) total_distance: f32,
+    total_distance: f32,
+    log_total_distance: f32,
     pub(crate) total_harmonic_distance: f32,
 }
 
@@ -479,6 +480,7 @@ impl ShortestPathsDjkstra {
         dst_node_distance: Option<f32>,
         eccentricity: f32,
         total_distance: f32,
+        log_total_distance: f32,
         total_harmonic_distance: f32,
     ) -> ShortestPathsDjkstra {
         ShortestPathsDjkstra {
@@ -488,6 +490,7 @@ impl ShortestPathsDjkstra {
             dst_node_distance,
             eccentricity,
             total_distance,
+            log_total_distance,
             total_harmonic_distance,
         }
     }
@@ -574,6 +577,14 @@ impl ShortestPathsDjkstra {
 
     pub fn get_eccentricity(&self) -> f32 {
         self.eccentricity
+    }
+
+    pub fn get_total_distance(&self) -> f32 {
+        self.total_distance
+    }
+    
+    pub fn get_log_total_distance(&self) -> f32 {
+        self.log_total_distance
     }
 
     pub fn get_most_distant_node(&self) -> NodeT {
@@ -1525,6 +1536,7 @@ impl Graph {
                     0.0,
                     0.0,
                     0.0,
+                    0.0,
                 );
             } else {
                 return ShortestPathsDjkstra::new(
@@ -1532,6 +1544,7 @@ impl Graph {
                     most_distant_node,
                     predecessors,
                     dst_node_distance,
+                    f32::INFINITY,
                     f32::INFINITY,
                     f32::INFINITY,
                     0.0,
@@ -1549,7 +1562,7 @@ impl Graph {
         });
 
         let mut distances = vec![f32::MAX; nodes_number];
-        let mut nodes_to_explore: DijkstraQueue =
+        let mut nodes_to_explore: DijkstraQueue<f32> =
             DijkstraQueue::with_capacity_from_roots(nodes_number, src_node_ids, &mut distances);
         let mut eccentricity: f32 = 0.0;
         let mut total_distance: f32 = 0.0;
@@ -1627,12 +1640,17 @@ impl Graph {
 
         // If the edge weights are to be treated as probabilities
         // we need to adjust the distances back using the exponentiation.
-        if use_edge_weights_as_probabilities {
+        let log_total_distance = if use_edge_weights_as_probabilities {
             distances
                 .par_iter_mut()
                 .for_each(|distance| *distance = (-*distance).exp());
             eccentricity = (-eccentricity).exp();
-        }
+            let log_total_distance = total_distance;
+            total_distance = (-total_distance).exp();
+            log_total_distance
+        } else {
+            total_distance.ln()
+        };
 
         ShortestPathsDjkstra {
             distances,
@@ -1641,6 +1659,7 @@ impl Graph {
             dst_node_distance,
             eccentricity,
             total_distance,
+            log_total_distance,
             total_harmonic_distance,
         }
     }

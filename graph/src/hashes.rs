@@ -1,4 +1,3 @@
-use super::*;
 use ahash::AHasher;
 use siphasher::sip::SipHasher24;
 use std::hash::Hasher as _;
@@ -7,6 +6,7 @@ use xxhash_rust::xxh3::Xxh3;
 #[derive(Clone)]
 pub enum Hasher {
     Simple(u64),
+    CommutativeSimple(u64),
     XorShift(u64),
     AHasher(AHasher),
     Xxh3(Xxh3),
@@ -14,29 +14,22 @@ pub enum Hasher {
 }
 
 impl Hasher {
-    pub fn new(hasher_name: &str) -> Result<Self> {
-        match hasher_name {
-            "simple" => Ok(Hasher::Simple(0x88b0fa3d8539f266)),
-            "xorshift" => Ok(Hasher::XorShift(0x88b0fa3d8539f266)),
-            "ahasher" => Ok(Hasher::AHasher(AHasher::default())),
-            "xxh3" => Ok(Hasher::Xxh3(Xxh3::new())),
-            "siphash" => Ok(Hasher::SipHash(SipHasher24::new())),
-            _ => Err(format!(
-                "The hasher name {} is not a valid one the available ones are: {:?}",
-                hasher_name,
-                &["simple", "xorshift", "ahasher", "xxh3", "siphash"],
-            )),
-        }
+    pub fn simple() -> Self {
+        Hasher::Simple(0x88b0fa3d8539f266)
     }
 
-    pub fn digest(self) -> u32 {
+    pub fn commutative_simple() -> Self {
+        Hasher::CommutativeSimple(0x88b0fa3d8539f266)
+    }
+
+    pub fn digest(self) -> u64 {
         match self {
-            Hasher::Simple(state) => state as u32,
-            Hasher::XorShift(state) => state as u32,
-            Hasher::Xxh3(hasher) => hasher.digest() as u32,
-            Hasher::SipHash(hasher) => hasher.finish() as u32,
-            Hasher::AHasher(hasher) => hasher.finish() as u32,
-            _ => todo!(),
+            Hasher::Simple(state) => state,
+            Hasher::CommutativeSimple(state) => state,
+            Hasher::XorShift(state) => state,
+            Hasher::Xxh3(hasher) => hasher.digest(),
+            Hasher::SipHash(hasher) => hasher.finish(),
+            Hasher::AHasher(hasher) => hasher.finish(),
         }
     }
 }
@@ -50,6 +43,9 @@ impl UpdateHash<u16> for Hasher {
         match self {
             Hasher::Simple(state) => {
                 *state = (*state ^ (*value as u64)).wrapping_add(0xed4e83c06c9fe588);
+            }
+            Hasher::CommutativeSimple(state) => {
+                *state = *state | 1 << (value % 64);
             }
             Hasher::XorShift(state) => {
                 *state = state.wrapping_mul(*value as u64 ^ 0x44d4c5a74c775ba0);
@@ -67,7 +63,6 @@ impl UpdateHash<u16> for Hasher {
             Hasher::AHasher(hasher) => {
                 hasher.write_u16(*value);
             }
-            _ => todo!(),
         }
     }
 }
@@ -77,6 +72,9 @@ impl UpdateHash<u32> for Hasher {
         match self {
             Hasher::Simple(state) => {
                 *state = (*state ^ (*value as u64)).wrapping_add(0xf01d12535da3ac14);
+            }
+            Hasher::CommutativeSimple(state) => {
+                *state = *state | 1 << (value % 64);
             }
             Hasher::XorShift(state) => {
                 *state = state.wrapping_mul(*value as u64 ^ 0x45dc0d8545fc1901);
@@ -94,7 +92,6 @@ impl UpdateHash<u32> for Hasher {
             Hasher::AHasher(hasher) => {
                 hasher.write_u32(*value);
             }
-            _ => todo!(),
         }
     }
 }
@@ -104,6 +101,9 @@ impl UpdateHash<u64> for Hasher {
         match self {
             Hasher::Simple(state) => {
                 *state = (*state ^ value).wrapping_add(0x5d3612daf380e1b7);
+            }
+            Hasher::CommutativeSimple(state) => {
+                *state = *state | 1 << (value % 64);
             }
             Hasher::XorShift(state) => {
                 *state = state.wrapping_mul(value ^ 0x0c72cf2867062df2);
@@ -121,7 +121,6 @@ impl UpdateHash<u64> for Hasher {
             Hasher::AHasher(hasher) => {
                 hasher.write_u64(*value);
             }
-            _ => todo!(),
         }
     }
 }

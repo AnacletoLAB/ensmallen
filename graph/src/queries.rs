@@ -733,7 +733,7 @@ impl Graph {
     ///
     /// # Safety
     /// If the given node ID does not exist in the current graph the method will raise a panic.
-    pub unsafe fn get_unchecked_selfloop_adjusted_node_degree_from_node_id(
+    pub unsafe fn get_unchecked_selfloop_excluded_node_degree_from_node_id(
         &self,
         node_id: NodeT,
     ) -> NodeT {
@@ -750,7 +750,7 @@ impl Graph {
     /// * ValueError - If the given node ID does not exist in the current graph the method will raise a panic.
     pub fn get_selfloop_adjusted_node_degree_from_node_id(&self, node_id: NodeT) -> Result<NodeT> {
         self.validate_node_id(node_id).map(|node_id| unsafe {
-            self.get_unchecked_selfloop_adjusted_node_degree_from_node_id(node_id)
+            self.get_unchecked_selfloop_excluded_node_degree_from_node_id(node_id)
         })
     }
 
@@ -767,7 +767,7 @@ impl Graph {
     ) -> Result<NodeT> {
         self.get_node_id_from_node_name(node_name)
             .map(|node_id| unsafe {
-                self.get_unchecked_selfloop_adjusted_node_degree_from_node_id(node_id)
+                self.get_unchecked_selfloop_excluded_node_degree_from_node_id(node_id)
             })
     }
 
