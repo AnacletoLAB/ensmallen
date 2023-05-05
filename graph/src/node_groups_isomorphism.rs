@@ -268,7 +268,7 @@ impl IsomorphicCandidateGenerator<WrapperIsomorphism<3>> for TriadIsomorphismsGe
                         });
                         second_hasher.update(&first_edge_type_ids.as_ref().and_then(|ids| ids[i]));
                         let (min_edge_id, max_edge_id) = unsafe {
-                            graph.get_unchecked_minmax_edge_ids_from_source_node_id(first)
+                            graph.get_unchecked_minmax_edge_ids_from_source_node_id(second)
                         };
                         let min_edge_id = min_edge_id as usize;
                         let max_edge_id = max_edge_id as usize;
