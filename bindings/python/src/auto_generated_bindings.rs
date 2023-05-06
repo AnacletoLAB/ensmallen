@@ -1197,6 +1197,502 @@ impl<'a> From<&'a Graph> for &'a graph::Graph {
 #[pymethods]
 impl Graph {
     #[automatically_generated_binding]
+    #[pyo3(
+        text_signature = "($self, node_ids_to_keep, node_ids_to_remove, node_names_to_keep_from_graph, node_names_to_remove_from_graph, node_prefixes_to_keep, node_prefixes_to_remove, node_type_ids_to_keep, node_type_ids_to_remove, node_type_id_to_keep, node_type_id_to_remove, source_node_ids_to_keep, source_node_ids_to_remove, source_node_names_to_keep_from_graph, source_node_names_to_remove_from_graph, source_node_prefixes_to_keep, source_node_prefixes_to_remove, source_node_type_ids_to_keep, source_node_type_ids_to_remove, source_node_type_id_to_keep, source_node_type_id_to_remove, destination_node_ids_to_keep, destination_node_ids_to_remove, destination_node_names_to_keep_from_graph, destination_node_names_to_remove_from_graph, destination_node_prefixes_to_keep, destination_node_prefixes_to_remove, destination_node_type_ids_to_keep, destination_node_type_ids_to_remove, destination_node_type_id_to_keep, destination_node_type_id_to_remove, edge_ids_to_keep, edge_ids_to_remove, edge_node_ids_to_keep, edge_node_ids_to_remove, edge_type_ids_to_keep, edge_type_ids_to_remove, min_edge_weight, max_edge_weight, min_node_degree, max_node_degree, filter_singleton_nodes, filter_singleton_nodes_with_selfloop, filter_selfloops, filter_parallel_edges)"
+    )]
+    /// Returns a **NEW** Graph that does not have the required attributes.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_ids_to_keep: Optional[List[int]]
+    ///     List of node IDs to keep during filtering.
+    /// node_ids_to_remove: Optional[List[int]]
+    ///     List of node IDs to remove during filtering.
+    /// node_names_to_keep_from_graph: Optional[&Graph]
+    ///     Graph whose nodes are to be kept.
+    /// node_names_to_remove_from_graph: Optional[&Graph]
+    ///     Graph whose nodes are to be removed.
+    /// node_prefixes_to_keep: Optional[List[str]]
+    ///     List of node prefixes to keep during filtering.
+    /// node_prefixes_to_remove: Optional[List[str]]
+    ///     List of node prefixes to remove during filtering.
+    /// node_type_ids_to_keep: Optional[List[Optional[List[int]]]]
+    ///     List of node type IDs to keep during filtering. The node types must match entirely the given node types vector provided.
+    /// node_type_ids_to_remove: Optional[List[Optional[List[int]]]]
+    ///     List of node type IDs to remove during filtering. The node types must match entirely the given node types vector provided.
+    /// node_type_id_to_keep: Optional[List[Optional[int]]]
+    ///     List of node type IDs to keep during filtering. Any of node types must match with one of the node types given.
+    /// node_type_id_to_remove: Optional[List[Optional[int]]]
+    ///     List of node type IDs to remove during filtering. Any of node types must match with one of the node types given.
+    /// source_node_ids_to_keep: Optional[List[int]]
+    ///     List of source node IDs to keep during filtering.
+    /// source_node_ids_to_remove: Optional[List[int]]
+    ///     List of source node IDs to remove during filtering.
+    /// source_node_names_to_keep_from_graph: Optional[&Graph]
+    ///     Graph whose nodes are to be kept when they are source nodes in this graph instance.
+    /// source_node_names_to_remove_from_graph: Optional[&Graph]
+    ///     Graph whose nodes are to be removed when they are source nodes in this graph instance.
+    /// source_node_prefixes_to_keep: Optional[List[str]]
+    ///     List of source node prefixes to keep during filtering.
+    /// source_node_prefixes_to_remove: Optional[List[str]]
+    ///     List of source node prefixes to remove during filtering.
+    /// source_node_type_ids_to_keep: Optional[List[Optional[List[int]]]]
+    ///     List of source node type IDs to keep during filtering. The node types must match entirely the given node types vector provided.
+    /// source_node_type_ids_to_remove: Optional[List[Optional[List[int]]]]
+    ///     List of source node type IDs to remove during filtering. The node types must match entirely the given node types vector provided.
+    /// source_node_type_id_to_keep: Optional[List[Optional[int]]]
+    ///     List of source node type IDs to keep during filtering. Any of source node types must match with one of the node types given.
+    /// source_node_type_id_to_remove: Optional[List[Optional[int]]]
+    ///     List of source node type IDs to remove during filtering. Any of source node types must match with one of the node types given.
+    /// destination_node_ids_to_keep: Optional[List[int]]
+    ///     List of destination node IDs to keep during filtering.
+    /// destination_node_ids_to_remove: Optional[List[int]]
+    ///     List of destination node IDs to remove during filtering.
+    /// destination_node_names_to_keep_from_graph: Optional[&Graph]
+    ///     Graph whose nodes are to be kept when they are destination nodes in this graph instance.
+    /// destination_node_names_to_remove_from_graph: Optional[&Graph]
+    ///     Graph whose nodes are to be removed when they are destination nodes in this graph instance.
+    /// destination_node_prefixes_to_keep: Optional[List[str]]
+    ///     List of destination node prefixes to keep during filtering.
+    /// destination_node_prefixes_to_remove: Optional[List[str]]
+    ///     List of destination node prefixes to remove during filtering.
+    /// destination_node_type_ids_to_keep: Optional[List[Optional[List[int]]]]
+    ///     List of destination node type IDs to keep during filtering. The node types must match entirely the given node types vector provided.
+    /// destination_node_type_ids_to_remove: Optional[List[Optional[List[int]]]]
+    ///     List of destination node type IDs to remove during filtering. The node types must match entirely the given node types vector provided.
+    /// destination_node_type_id_to_keep: Optional[List[Optional[int]]]
+    ///     List of destination node type IDs to keep during filtering. Any of destination node types must match with one of the node types given.
+    /// destination_node_type_id_to_remove: Optional[List[Optional[int]]]
+    ///     List of destination node type IDs to remove during filtering. Any of destination node types must match with one of the node types given.
+    /// edge_ids_to_keep: Optional[List[int]]
+    ///     List of edge IDs to keep during filtering.
+    /// edge_ids_to_remove: Optional[List[int]]
+    ///     List of edge IDs to remove during filtering.
+    /// edge_node_ids_to_keep: Optional[List[Tuple[int, int]]]
+    ///     List of tuple of node IDs to keep during filtering.
+    /// edge_node_ids_to_remove: Optional[List[Tuple[int, int]]]
+    ///     List of tuple of node IDs to remove during filtering.
+    /// edge_type_ids_to_keep: Optional[List[Optional[int]]]
+    ///     List of edge type IDs to keep during filtering.
+    /// edge_type_ids_to_remove: Optional[List[Optional[int]]]
+    ///     List of edge type IDs to remove during filtering.
+    /// min_edge_weight: Optional[float]
+    ///     Minimum edge weight. Values lower than this are removed.
+    /// max_edge_weight: Optional[float]
+    ///     Maximum edge weight. Values higher than this are removed.
+    /// min_node_degree: Optional[int]
+    ///     Minimum node degree. Values lower than this are removed.
+    /// max_node_degree: Optional[int]
+    ///     Maximum node degree. Values higher than this are removed.
+    /// filter_singleton_nodes: Optional[bool]
+    ///     Whether to filter out singleton nodes.
+    /// filter_singleton_nodes_with_selfloop: Optional[bool]
+    ///     Whether to filter out singleton nodes with selfloops.
+    /// filter_selfloops: Optional[bool]
+    ///     Whether to filter out selfloops.
+    /// filter_parallel_edges: Optional[bool]
+    ///     Whether to filter out parallel edges.
+    /// verbose: Optional[bool]
+    ///     Whether to show loading bar while building the graphs.
+    ///
+    pub fn filter_from_ids(
+        &self,
+        node_ids_to_keep: Option<Vec<NodeT>>,
+        node_ids_to_remove: Option<Vec<NodeT>>,
+        node_names_to_keep_from_graph: Option<&Graph>,
+        node_names_to_remove_from_graph: Option<&Graph>,
+        node_prefixes_to_keep: Option<Vec<String>>,
+        node_prefixes_to_remove: Option<Vec<String>>,
+        node_type_ids_to_keep: Option<Vec<Option<Vec<NodeTypeT>>>>,
+        node_type_ids_to_remove: Option<Vec<Option<Vec<NodeTypeT>>>>,
+        node_type_id_to_keep: Option<Vec<Option<NodeTypeT>>>,
+        node_type_id_to_remove: Option<Vec<Option<NodeTypeT>>>,
+        source_node_ids_to_keep: Option<Vec<NodeT>>,
+        source_node_ids_to_remove: Option<Vec<NodeT>>,
+        source_node_names_to_keep_from_graph: Option<&Graph>,
+        source_node_names_to_remove_from_graph: Option<&Graph>,
+        source_node_prefixes_to_keep: Option<Vec<String>>,
+        source_node_prefixes_to_remove: Option<Vec<String>>,
+        source_node_type_ids_to_keep: Option<Vec<Option<Vec<NodeTypeT>>>>,
+        source_node_type_ids_to_remove: Option<Vec<Option<Vec<NodeTypeT>>>>,
+        source_node_type_id_to_keep: Option<Vec<Option<NodeTypeT>>>,
+        source_node_type_id_to_remove: Option<Vec<Option<NodeTypeT>>>,
+        destination_node_ids_to_keep: Option<Vec<NodeT>>,
+        destination_node_ids_to_remove: Option<Vec<NodeT>>,
+        destination_node_names_to_keep_from_graph: Option<&Graph>,
+        destination_node_names_to_remove_from_graph: Option<&Graph>,
+        destination_node_prefixes_to_keep: Option<Vec<String>>,
+        destination_node_prefixes_to_remove: Option<Vec<String>>,
+        destination_node_type_ids_to_keep: Option<Vec<Option<Vec<NodeTypeT>>>>,
+        destination_node_type_ids_to_remove: Option<Vec<Option<Vec<NodeTypeT>>>>,
+        destination_node_type_id_to_keep: Option<Vec<Option<NodeTypeT>>>,
+        destination_node_type_id_to_remove: Option<Vec<Option<NodeTypeT>>>,
+        edge_ids_to_keep: Option<Vec<EdgeT>>,
+        edge_ids_to_remove: Option<Vec<EdgeT>>,
+        edge_node_ids_to_keep: Option<Vec<(NodeT, NodeT)>>,
+        edge_node_ids_to_remove: Option<Vec<(NodeT, NodeT)>>,
+        edge_type_ids_to_keep: Option<Vec<Option<EdgeTypeT>>>,
+        edge_type_ids_to_remove: Option<Vec<Option<EdgeTypeT>>>,
+        min_edge_weight: Option<WeightT>,
+        max_edge_weight: Option<WeightT>,
+        min_node_degree: Option<NodeT>,
+        max_node_degree: Option<NodeT>,
+        filter_singleton_nodes: Option<bool>,
+        filter_singleton_nodes_with_selfloop: Option<bool>,
+        filter_selfloops: Option<bool>,
+        filter_parallel_edges: Option<bool>,
+    ) -> PyResult<Graph> {
+        Ok(pe!(self.inner.filter_from_ids(
+            node_ids_to_keep,
+            node_ids_to_remove,
+            node_names_to_keep_from_graph.map(|sg| &sg.inner),
+            node_names_to_remove_from_graph.map(|sg| &sg.inner),
+            node_prefixes_to_keep,
+            node_prefixes_to_remove,
+            node_type_ids_to_keep,
+            node_type_ids_to_remove,
+            node_type_id_to_keep,
+            node_type_id_to_remove,
+            source_node_ids_to_keep,
+            source_node_ids_to_remove,
+            source_node_names_to_keep_from_graph.map(|sg| &sg.inner),
+            source_node_names_to_remove_from_graph.map(|sg| &sg.inner),
+            source_node_prefixes_to_keep,
+            source_node_prefixes_to_remove,
+            source_node_type_ids_to_keep,
+            source_node_type_ids_to_remove,
+            source_node_type_id_to_keep,
+            source_node_type_id_to_remove,
+            destination_node_ids_to_keep,
+            destination_node_ids_to_remove,
+            destination_node_names_to_keep_from_graph.map(|sg| &sg.inner),
+            destination_node_names_to_remove_from_graph.map(|sg| &sg.inner),
+            destination_node_prefixes_to_keep,
+            destination_node_prefixes_to_remove,
+            destination_node_type_ids_to_keep,
+            destination_node_type_ids_to_remove,
+            destination_node_type_id_to_keep,
+            destination_node_type_id_to_remove,
+            edge_ids_to_keep,
+            edge_ids_to_remove,
+            edge_node_ids_to_keep,
+            edge_node_ids_to_remove,
+            edge_type_ids_to_keep,
+            edge_type_ids_to_remove,
+            min_edge_weight,
+            max_edge_weight,
+            min_node_degree,
+            max_node_degree,
+            filter_singleton_nodes,
+            filter_singleton_nodes_with_selfloop,
+            filter_selfloops,
+            filter_parallel_edges
+        ))?
+        .into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(
+        text_signature = "($self, node_names_to_keep, node_names_to_remove, node_names_to_keep_from_graph, node_names_to_remove_from_graph, node_prefixes_to_keep, node_prefixes_to_remove, node_type_names_to_keep, node_type_names_to_remove, node_type_name_to_keep, node_type_name_to_remove, source_node_names_to_keep, source_node_names_to_remove, source_node_names_to_keep_from_graph, source_node_names_to_remove_from_graph, source_node_prefixes_to_keep, source_node_prefixes_to_remove, source_node_type_names_to_keep, source_node_type_names_to_remove, source_node_type_name_to_keep, source_node_type_name_to_remove, destination_node_names_to_keep, destination_node_names_to_remove, destination_node_names_to_keep_from_graph, destination_node_names_to_remove_from_graph, destination_node_prefixes_to_keep, destination_node_prefixes_to_remove, destination_node_type_names_to_keep, destination_node_type_names_to_remove, destination_node_type_name_to_keep, destination_node_type_name_to_remove, edge_node_names_to_keep, edge_node_names_to_remove, edge_type_names_to_keep, edge_type_names_to_remove, min_edge_weight, max_edge_weight, min_node_degree, max_node_degree, filter_singleton_nodes, filter_singleton_nodes_with_selfloop, filter_selfloops, filter_parallel_edges)"
+    )]
+    /// Returns a **NEW** Graph that does not have the required attributes.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_names_to_keep: Optional[List[&str]]
+    ///     List of node names to keep during filtering.
+    /// node_names_to_remove: Optional[List[&str]]
+    ///     List of node names to remove during filtering.
+    /// node_names_to_keep_from_graph: Optional[&Graph]
+    ///     Graph whose nodes are to be kept.
+    /// node_names_to_remove_from_graph: Optional[&Graph]
+    ///     Graph whose nodes are to be removed.
+    /// node_prefixes_to_keep: Optional[List[str]]
+    ///     List of node prefixes to keep during filtering.
+    /// node_prefixes_to_remove: Optional[List[str]]
+    ///     List of node prefixes to remove during filtering.
+    /// node_type_names_to_keep: Optional[List[Optional[List[&str]]]]
+    ///     List of node type names to keep during filtering. The node types must match entirely the given node types vector provided.
+    /// node_type_names_to_remove: Optional[List[Optional[List[&str]]]]
+    ///     List of node type names to remove during filtering. The node types must match entirely the given node types vector provided.
+    /// node_type_name_to_keep: Optional[&List[Optional[&str]]]
+    ///     List of node type name to keep during filtering. Any of node types must match with one of the node types given.
+    /// node_type_name_to_remove: Optional[&List[Optional[&str]]]
+    ///     List of node type name to remove during filtering. Any of node types must match with one of the node types given.
+    /// source_node_names_to_keep: Optional[List[&str]]
+    ///     List of source node names to keep during filtering.
+    /// source_node_names_to_remove: Optional[List[&str]]
+    ///     List of source node names to remove during filtering.
+    /// source_node_names_to_keep_from_graph: Optional[&Graph]
+    ///     Graph whose nodes are to be kept when they are source nodes.
+    /// source_node_names_to_remove_from_graph: Optional[&Graph]
+    ///     Graph whose nodes are to be removed when they are source nodes.
+    /// source_node_prefixes_to_keep: Optional[List[str]]
+    ///     List of source node prefixes to keep during filtering.
+    /// source_node_prefixes_to_remove: Optional[List[str]]
+    ///     List of source node prefixes to remove during filtering.
+    /// source_node_type_names_to_keep: Optional[List[Optional[List[&str]]]]
+    ///     List of node type names of source nodes to keep during filtering. The node types must match entirely the given node types vector provided.
+    /// source_node_type_names_to_remove: Optional[List[Optional[List[&str]]]]
+    ///     List of node type names of source nodes to remove during filtering. The node types must match entirely the given node types vector provided.
+    /// source_node_type_name_to_keep: Optional[&List[Optional[&str]]]
+    ///     List of node type name of source nodes to keep during filtering. Any of node types must match with one of the node types given.
+    /// source_node_type_name_to_remove: Optional[&List[Optional[&str]]]
+    ///     List of node type name of source nodes to remove during filtering. Any of node types must match with one of the node types given.
+    /// destination_node_names_to_keep: Optional[List[&str]]
+    ///     List of destination node names to keep during filtering.
+    /// destination_node_names_to_remove: Optional[List[&str]]
+    ///     List of destination node names to remove during filtering.
+    /// destination_node_names_to_keep_from_graph: Optional[&Graph]
+    ///     Graph whose nodes are to be kept when they are destination nodes.
+    /// destination_node_names_to_remove_from_graph: Optional[&Graph]
+    ///     Graph whose nodes are to be removed when they are destination nodes.
+    /// destination_node_prefixes_to_keep: Optional[List[str]]
+    ///     List of destination node prefixes to keep during filtering.
+    /// destination_node_prefixes_to_remove: Optional[List[str]]
+    ///     List of destination node prefixes to remove during filtering.
+    /// destination_node_type_names_to_keep: Optional[List[Optional[List[&str]]]]
+    ///     List of node type names of destination nodes to keep during filtering. The node types must match entirely the given node types vector provided.
+    /// destination_node_type_names_to_remove: Optional[List[Optional[List[&str]]]]
+    ///     List of node type names of destination nodes to remove during filtering. The node types must match entirely the given node types vector provided.
+    /// destination_node_type_name_to_keep: Optional[&List[Optional[&str]]]
+    ///     List of node type name of destination nodes to keep during filtering. Any of node types must match with one of the node types given.
+    /// destination_node_type_name_to_remove: Optional[&List[Optional[&str]]]
+    ///     List of node type name of destination nodes to remove during filtering. Any of node types must match with one of the node types given.
+    /// edge_node_names_to_keep: Optional[List[Tuple[str, str]]]
+    ///     List of tuple of node names to keep during filtering.
+    /// edge_node_names_to_remove: Optional[List[Tuple[str, str]]]
+    ///     List of tuple of node names to remove during filtering.
+    /// edge_type_names_to_keep: Optional[&List[Optional[&str]]]
+    ///     List of edge type names to keep during filtering.
+    /// edge_type_names_to_remove: Optional[&List[Optional[&str]]]
+    ///     List of edge type names to remove during filtering.
+    /// min_edge_weight: Optional[float]
+    ///     Minimum edge weight. Values lower than this are removed.
+    /// max_edge_weight: Optional[float]
+    ///     Maximum edge weight. Values higher than this are removed.
+    /// min_node_degree: Optional[int]
+    ///     Minimum node degree. Values lower than this are removed.
+    /// max_node_degree: Optional[int]
+    ///     Maximum node degree. Values higher than this are removed.
+    /// filter_singleton_nodes: Optional[bool]
+    ///     Whether to filter out singletons.
+    /// filter_singleton_nodes_with_selfloop: Optional[bool]
+    ///     Whether to filter out singleton nodes with selfloops.
+    /// filter_selfloops: Optional[bool]
+    ///     Whether to filter out selfloops.
+    /// filter_parallel_edges: Optional[bool]
+    ///     Whether to filter out parallel edges.
+    /// verbose: Optional[bool]
+    ///     Whether to show loading bar while building the graphs.
+    ///
+    pub fn filter_from_names(
+        &self,
+        node_names_to_keep: Option<Vec<&str>>,
+        node_names_to_remove: Option<Vec<&str>>,
+        node_names_to_keep_from_graph: Option<&Graph>,
+        node_names_to_remove_from_graph: Option<&Graph>,
+        node_prefixes_to_keep: Option<Vec<String>>,
+        node_prefixes_to_remove: Option<Vec<String>>,
+        node_type_names_to_keep: Option<Vec<Option<Vec<&str>>>>,
+        node_type_names_to_remove: Option<Vec<Option<Vec<&str>>>>,
+        node_type_name_to_keep: Option<Vec<Option<&str>>>,
+        node_type_name_to_remove: Option<Vec<Option<&str>>>,
+        source_node_names_to_keep: Option<Vec<&str>>,
+        source_node_names_to_remove: Option<Vec<&str>>,
+        source_node_names_to_keep_from_graph: Option<&Graph>,
+        source_node_names_to_remove_from_graph: Option<&Graph>,
+        source_node_prefixes_to_keep: Option<Vec<String>>,
+        source_node_prefixes_to_remove: Option<Vec<String>>,
+        source_node_type_names_to_keep: Option<Vec<Option<Vec<&str>>>>,
+        source_node_type_names_to_remove: Option<Vec<Option<Vec<&str>>>>,
+        source_node_type_name_to_keep: Option<Vec<Option<&str>>>,
+        source_node_type_name_to_remove: Option<Vec<Option<&str>>>,
+        destination_node_names_to_keep: Option<Vec<&str>>,
+        destination_node_names_to_remove: Option<Vec<&str>>,
+        destination_node_names_to_keep_from_graph: Option<&Graph>,
+        destination_node_names_to_remove_from_graph: Option<&Graph>,
+        destination_node_prefixes_to_keep: Option<Vec<String>>,
+        destination_node_prefixes_to_remove: Option<Vec<String>>,
+        destination_node_type_names_to_keep: Option<Vec<Option<Vec<&str>>>>,
+        destination_node_type_names_to_remove: Option<Vec<Option<Vec<&str>>>>,
+        destination_node_type_name_to_keep: Option<Vec<Option<&str>>>,
+        destination_node_type_name_to_remove: Option<Vec<Option<&str>>>,
+        edge_node_names_to_keep: Option<Vec<(&str, &str)>>,
+        edge_node_names_to_remove: Option<Vec<(&str, &str)>>,
+        edge_type_names_to_keep: Option<Vec<Option<&str>>>,
+        edge_type_names_to_remove: Option<Vec<Option<&str>>>,
+        min_edge_weight: Option<WeightT>,
+        max_edge_weight: Option<WeightT>,
+        min_node_degree: Option<NodeT>,
+        max_node_degree: Option<NodeT>,
+        filter_singleton_nodes: Option<bool>,
+        filter_singleton_nodes_with_selfloop: Option<bool>,
+        filter_selfloops: Option<bool>,
+        filter_parallel_edges: Option<bool>,
+    ) -> PyResult<Graph> {
+        Ok(pe!(self.inner.filter_from_names(
+            node_names_to_keep,
+            node_names_to_remove,
+            node_names_to_keep_from_graph.map(|sg| &sg.inner),
+            node_names_to_remove_from_graph.map(|sg| &sg.inner),
+            node_prefixes_to_keep,
+            node_prefixes_to_remove,
+            node_type_names_to_keep,
+            node_type_names_to_remove,
+            node_type_name_to_keep.as_ref().map(|x| x.as_slice()),
+            node_type_name_to_remove.as_ref().map(|x| x.as_slice()),
+            source_node_names_to_keep,
+            source_node_names_to_remove,
+            source_node_names_to_keep_from_graph.map(|sg| &sg.inner),
+            source_node_names_to_remove_from_graph.map(|sg| &sg.inner),
+            source_node_prefixes_to_keep,
+            source_node_prefixes_to_remove,
+            source_node_type_names_to_keep,
+            source_node_type_names_to_remove,
+            source_node_type_name_to_keep.as_ref().map(|x| x.as_slice()),
+            source_node_type_name_to_remove
+                .as_ref()
+                .map(|x| x.as_slice()),
+            destination_node_names_to_keep,
+            destination_node_names_to_remove,
+            destination_node_names_to_keep_from_graph.map(|sg| &sg.inner),
+            destination_node_names_to_remove_from_graph.map(|sg| &sg.inner),
+            destination_node_prefixes_to_keep,
+            destination_node_prefixes_to_remove,
+            destination_node_type_names_to_keep,
+            destination_node_type_names_to_remove,
+            destination_node_type_name_to_keep
+                .as_ref()
+                .map(|x| x.as_slice()),
+            destination_node_type_name_to_remove
+                .as_ref()
+                .map(|x| x.as_slice()),
+            edge_node_names_to_keep,
+            edge_node_names_to_remove,
+            edge_type_names_to_keep.as_ref().map(|x| x.as_slice()),
+            edge_type_names_to_remove.as_ref().map(|x| x.as_slice()),
+            min_edge_weight,
+            max_edge_weight,
+            min_node_degree,
+            max_node_degree,
+            filter_singleton_nodes,
+            filter_singleton_nodes_with_selfloop,
+            filter_selfloops,
+            filter_parallel_edges
+        ))?
+        .into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Returns new graph without unknown node types and relative nodes.
+    ///
+    /// Note that this method will remove ALL nodes labeled with unknown node
+    /// type!
+    pub fn remove_unknown_node_types(&self) -> Graph {
+        self.inner.remove_unknown_node_types().into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Returns new graph without unknown edge types and relative edges.
+    ///
+    /// Note that this method will remove ALL edges labeled with unknown edge
+    /// type!
+    pub fn remove_unknown_edge_types(&self) -> Graph {
+        self.inner.remove_unknown_edge_types().into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Returns new graph without singleton nodes.
+    ///
+    /// A node is singleton when does not have neither incoming or outgoing edges.
+    pub fn remove_singleton_nodes(&self) -> Graph {
+        self.inner.remove_singleton_nodes().into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Returns new graph without tendrils
+    pub fn remove_tendrils(&self) -> PyResult<Graph> {
+        Ok(pe!(self.inner.remove_tendrils())?.into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Returns new graph without tendrils
+    pub fn remove_dendritic_trees(&self) -> PyResult<Graph> {
+        Ok(pe!(self.inner.remove_dendritic_trees())?.into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(
+        text_signature = "($self, minimum_node_degree, hash_strategy, number_of_neighbours_for_hash, hash_name)"
+    )]
+    /// Returns new graph without isomorphic nodes, only keeping the smallest node ID of each group.
+    ///
+    /// Parameters
+    /// ----------
+    /// minimum_node_degree: Optional[int]
+    ///     Minimum node degree for the topological synonims. By default equal to 5.
+    /// hash_strategy: Optional[&str]
+    ///     The name of the hash to be used. By default, `general` is used.+
+    /// number_of_neighbours_for_hash: Optional[int]
+    ///     The number of neighbours to consider for the hash. By default 10.
+    /// hash_name: Optional[&str]
+    ///     The name of the hash to be used.
+    ///
+    pub fn remove_isomorphic_nodes(
+        &self,
+        minimum_node_degree: Option<NodeT>,
+        hash_strategy: Option<&str>,
+        number_of_neighbours_for_hash: Option<usize>,
+        hash_name: Option<&str>,
+    ) -> PyResult<Graph> {
+        Ok(pe!(self.inner.remove_isomorphic_nodes(
+            minimum_node_degree,
+            hash_strategy,
+            number_of_neighbours_for_hash,
+            hash_name
+        ))?
+        .into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Returns new graph without singleton nodes with selfloops.
+    ///
+    /// A node is singleton with selfloop when does not have neither incoming or outgoing edges.
+    pub fn remove_singleton_nodes_with_selfloops(&self) -> Graph {
+        self.inner.remove_singleton_nodes_with_selfloops().into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Returns new graph without disconnected nodes.
+    ///
+    /// A disconnected node is a node with no connection to any other node.
+    pub fn remove_disconnected_nodes(&self) -> Graph {
+        self.inner.remove_disconnected_nodes().into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Returns new graph without selfloops.
+    pub fn remove_selfloops(&self) -> Graph {
+        self.inner.remove_selfloops().into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Returns new graph without parallel edges
+    pub fn remove_parallel_edges(&self) -> Graph {
+        self.inner.remove_parallel_edges().into()
+    }
+
+    #[automatically_generated_binding]
     #[pyo3(text_signature = "($self, minimum_number_of_nodes_per_chain, compute_chain_nodes)")]
     /// Return vector of chains in the current graph instance.
     ///
@@ -8179,502 +8675,6 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[pyo3(
-        text_signature = "($self, node_ids_to_keep, node_ids_to_remove, node_names_to_keep_from_graph, node_names_to_remove_from_graph, node_prefixes_to_keep, node_prefixes_to_remove, node_type_ids_to_keep, node_type_ids_to_remove, node_type_id_to_keep, node_type_id_to_remove, source_node_ids_to_keep, source_node_ids_to_remove, source_node_names_to_keep_from_graph, source_node_names_to_remove_from_graph, source_node_prefixes_to_keep, source_node_prefixes_to_remove, source_node_type_ids_to_keep, source_node_type_ids_to_remove, source_node_type_id_to_keep, source_node_type_id_to_remove, destination_node_ids_to_keep, destination_node_ids_to_remove, destination_node_names_to_keep_from_graph, destination_node_names_to_remove_from_graph, destination_node_prefixes_to_keep, destination_node_prefixes_to_remove, destination_node_type_ids_to_keep, destination_node_type_ids_to_remove, destination_node_type_id_to_keep, destination_node_type_id_to_remove, edge_ids_to_keep, edge_ids_to_remove, edge_node_ids_to_keep, edge_node_ids_to_remove, edge_type_ids_to_keep, edge_type_ids_to_remove, min_edge_weight, max_edge_weight, min_node_degree, max_node_degree, filter_singleton_nodes, filter_singleton_nodes_with_selfloop, filter_selfloops, filter_parallel_edges)"
-    )]
-    /// Returns a **NEW** Graph that does not have the required attributes.
-    ///
-    /// Parameters
-    /// ----------
-    /// node_ids_to_keep: Optional[List[int]]
-    ///     List of node IDs to keep during filtering.
-    /// node_ids_to_remove: Optional[List[int]]
-    ///     List of node IDs to remove during filtering.
-    /// node_names_to_keep_from_graph: Optional[&Graph]
-    ///     Graph whose nodes are to be kept.
-    /// node_names_to_remove_from_graph: Optional[&Graph]
-    ///     Graph whose nodes are to be removed.
-    /// node_prefixes_to_keep: Optional[List[str]]
-    ///     List of node prefixes to keep during filtering.
-    /// node_prefixes_to_remove: Optional[List[str]]
-    ///     List of node prefixes to remove during filtering.
-    /// node_type_ids_to_keep: Optional[List[Optional[List[int]]]]
-    ///     List of node type IDs to keep during filtering. The node types must match entirely the given node types vector provided.
-    /// node_type_ids_to_remove: Optional[List[Optional[List[int]]]]
-    ///     List of node type IDs to remove during filtering. The node types must match entirely the given node types vector provided.
-    /// node_type_id_to_keep: Optional[List[Optional[int]]]
-    ///     List of node type IDs to keep during filtering. Any of node types must match with one of the node types given.
-    /// node_type_id_to_remove: Optional[List[Optional[int]]]
-    ///     List of node type IDs to remove during filtering. Any of node types must match with one of the node types given.
-    /// source_node_ids_to_keep: Optional[List[int]]
-    ///     List of source node IDs to keep during filtering.
-    /// source_node_ids_to_remove: Optional[List[int]]
-    ///     List of source node IDs to remove during filtering.
-    /// source_node_names_to_keep_from_graph: Optional[&Graph]
-    ///     Graph whose nodes are to be kept when they are source nodes in this graph instance.
-    /// source_node_names_to_remove_from_graph: Optional[&Graph]
-    ///     Graph whose nodes are to be removed when they are source nodes in this graph instance.
-    /// source_node_prefixes_to_keep: Optional[List[str]]
-    ///     List of source node prefixes to keep during filtering.
-    /// source_node_prefixes_to_remove: Optional[List[str]]
-    ///     List of source node prefixes to remove during filtering.
-    /// source_node_type_ids_to_keep: Optional[List[Optional[List[int]]]]
-    ///     List of source node type IDs to keep during filtering. The node types must match entirely the given node types vector provided.
-    /// source_node_type_ids_to_remove: Optional[List[Optional[List[int]]]]
-    ///     List of source node type IDs to remove during filtering. The node types must match entirely the given node types vector provided.
-    /// source_node_type_id_to_keep: Optional[List[Optional[int]]]
-    ///     List of source node type IDs to keep during filtering. Any of source node types must match with one of the node types given.
-    /// source_node_type_id_to_remove: Optional[List[Optional[int]]]
-    ///     List of source node type IDs to remove during filtering. Any of source node types must match with one of the node types given.
-    /// destination_node_ids_to_keep: Optional[List[int]]
-    ///     List of destination node IDs to keep during filtering.
-    /// destination_node_ids_to_remove: Optional[List[int]]
-    ///     List of destination node IDs to remove during filtering.
-    /// destination_node_names_to_keep_from_graph: Optional[&Graph]
-    ///     Graph whose nodes are to be kept when they are destination nodes in this graph instance.
-    /// destination_node_names_to_remove_from_graph: Optional[&Graph]
-    ///     Graph whose nodes are to be removed when they are destination nodes in this graph instance.
-    /// destination_node_prefixes_to_keep: Optional[List[str]]
-    ///     List of destination node prefixes to keep during filtering.
-    /// destination_node_prefixes_to_remove: Optional[List[str]]
-    ///     List of destination node prefixes to remove during filtering.
-    /// destination_node_type_ids_to_keep: Optional[List[Optional[List[int]]]]
-    ///     List of destination node type IDs to keep during filtering. The node types must match entirely the given node types vector provided.
-    /// destination_node_type_ids_to_remove: Optional[List[Optional[List[int]]]]
-    ///     List of destination node type IDs to remove during filtering. The node types must match entirely the given node types vector provided.
-    /// destination_node_type_id_to_keep: Optional[List[Optional[int]]]
-    ///     List of destination node type IDs to keep during filtering. Any of destination node types must match with one of the node types given.
-    /// destination_node_type_id_to_remove: Optional[List[Optional[int]]]
-    ///     List of destination node type IDs to remove during filtering. Any of destination node types must match with one of the node types given.
-    /// edge_ids_to_keep: Optional[List[int]]
-    ///     List of edge IDs to keep during filtering.
-    /// edge_ids_to_remove: Optional[List[int]]
-    ///     List of edge IDs to remove during filtering.
-    /// edge_node_ids_to_keep: Optional[List[Tuple[int, int]]]
-    ///     List of tuple of node IDs to keep during filtering.
-    /// edge_node_ids_to_remove: Optional[List[Tuple[int, int]]]
-    ///     List of tuple of node IDs to remove during filtering.
-    /// edge_type_ids_to_keep: Optional[List[Optional[int]]]
-    ///     List of edge type IDs to keep during filtering.
-    /// edge_type_ids_to_remove: Optional[List[Optional[int]]]
-    ///     List of edge type IDs to remove during filtering.
-    /// min_edge_weight: Optional[float]
-    ///     Minimum edge weight. Values lower than this are removed.
-    /// max_edge_weight: Optional[float]
-    ///     Maximum edge weight. Values higher than this are removed.
-    /// min_node_degree: Optional[int]
-    ///     Minimum node degree. Values lower than this are removed.
-    /// max_node_degree: Optional[int]
-    ///     Maximum node degree. Values higher than this are removed.
-    /// filter_singleton_nodes: Optional[bool]
-    ///     Whether to filter out singleton nodes.
-    /// filter_singleton_nodes_with_selfloop: Optional[bool]
-    ///     Whether to filter out singleton nodes with selfloops.
-    /// filter_selfloops: Optional[bool]
-    ///     Whether to filter out selfloops.
-    /// filter_parallel_edges: Optional[bool]
-    ///     Whether to filter out parallel edges.
-    /// verbose: Optional[bool]
-    ///     Whether to show loading bar while building the graphs.
-    ///
-    pub fn filter_from_ids(
-        &self,
-        node_ids_to_keep: Option<Vec<NodeT>>,
-        node_ids_to_remove: Option<Vec<NodeT>>,
-        node_names_to_keep_from_graph: Option<&Graph>,
-        node_names_to_remove_from_graph: Option<&Graph>,
-        node_prefixes_to_keep: Option<Vec<String>>,
-        node_prefixes_to_remove: Option<Vec<String>>,
-        node_type_ids_to_keep: Option<Vec<Option<Vec<NodeTypeT>>>>,
-        node_type_ids_to_remove: Option<Vec<Option<Vec<NodeTypeT>>>>,
-        node_type_id_to_keep: Option<Vec<Option<NodeTypeT>>>,
-        node_type_id_to_remove: Option<Vec<Option<NodeTypeT>>>,
-        source_node_ids_to_keep: Option<Vec<NodeT>>,
-        source_node_ids_to_remove: Option<Vec<NodeT>>,
-        source_node_names_to_keep_from_graph: Option<&Graph>,
-        source_node_names_to_remove_from_graph: Option<&Graph>,
-        source_node_prefixes_to_keep: Option<Vec<String>>,
-        source_node_prefixes_to_remove: Option<Vec<String>>,
-        source_node_type_ids_to_keep: Option<Vec<Option<Vec<NodeTypeT>>>>,
-        source_node_type_ids_to_remove: Option<Vec<Option<Vec<NodeTypeT>>>>,
-        source_node_type_id_to_keep: Option<Vec<Option<NodeTypeT>>>,
-        source_node_type_id_to_remove: Option<Vec<Option<NodeTypeT>>>,
-        destination_node_ids_to_keep: Option<Vec<NodeT>>,
-        destination_node_ids_to_remove: Option<Vec<NodeT>>,
-        destination_node_names_to_keep_from_graph: Option<&Graph>,
-        destination_node_names_to_remove_from_graph: Option<&Graph>,
-        destination_node_prefixes_to_keep: Option<Vec<String>>,
-        destination_node_prefixes_to_remove: Option<Vec<String>>,
-        destination_node_type_ids_to_keep: Option<Vec<Option<Vec<NodeTypeT>>>>,
-        destination_node_type_ids_to_remove: Option<Vec<Option<Vec<NodeTypeT>>>>,
-        destination_node_type_id_to_keep: Option<Vec<Option<NodeTypeT>>>,
-        destination_node_type_id_to_remove: Option<Vec<Option<NodeTypeT>>>,
-        edge_ids_to_keep: Option<Vec<EdgeT>>,
-        edge_ids_to_remove: Option<Vec<EdgeT>>,
-        edge_node_ids_to_keep: Option<Vec<(NodeT, NodeT)>>,
-        edge_node_ids_to_remove: Option<Vec<(NodeT, NodeT)>>,
-        edge_type_ids_to_keep: Option<Vec<Option<EdgeTypeT>>>,
-        edge_type_ids_to_remove: Option<Vec<Option<EdgeTypeT>>>,
-        min_edge_weight: Option<WeightT>,
-        max_edge_weight: Option<WeightT>,
-        min_node_degree: Option<NodeT>,
-        max_node_degree: Option<NodeT>,
-        filter_singleton_nodes: Option<bool>,
-        filter_singleton_nodes_with_selfloop: Option<bool>,
-        filter_selfloops: Option<bool>,
-        filter_parallel_edges: Option<bool>,
-    ) -> PyResult<Graph> {
-        Ok(pe!(self.inner.filter_from_ids(
-            node_ids_to_keep,
-            node_ids_to_remove,
-            node_names_to_keep_from_graph.map(|sg| &sg.inner),
-            node_names_to_remove_from_graph.map(|sg| &sg.inner),
-            node_prefixes_to_keep,
-            node_prefixes_to_remove,
-            node_type_ids_to_keep,
-            node_type_ids_to_remove,
-            node_type_id_to_keep,
-            node_type_id_to_remove,
-            source_node_ids_to_keep,
-            source_node_ids_to_remove,
-            source_node_names_to_keep_from_graph.map(|sg| &sg.inner),
-            source_node_names_to_remove_from_graph.map(|sg| &sg.inner),
-            source_node_prefixes_to_keep,
-            source_node_prefixes_to_remove,
-            source_node_type_ids_to_keep,
-            source_node_type_ids_to_remove,
-            source_node_type_id_to_keep,
-            source_node_type_id_to_remove,
-            destination_node_ids_to_keep,
-            destination_node_ids_to_remove,
-            destination_node_names_to_keep_from_graph.map(|sg| &sg.inner),
-            destination_node_names_to_remove_from_graph.map(|sg| &sg.inner),
-            destination_node_prefixes_to_keep,
-            destination_node_prefixes_to_remove,
-            destination_node_type_ids_to_keep,
-            destination_node_type_ids_to_remove,
-            destination_node_type_id_to_keep,
-            destination_node_type_id_to_remove,
-            edge_ids_to_keep,
-            edge_ids_to_remove,
-            edge_node_ids_to_keep,
-            edge_node_ids_to_remove,
-            edge_type_ids_to_keep,
-            edge_type_ids_to_remove,
-            min_edge_weight,
-            max_edge_weight,
-            min_node_degree,
-            max_node_degree,
-            filter_singleton_nodes,
-            filter_singleton_nodes_with_selfloop,
-            filter_selfloops,
-            filter_parallel_edges
-        ))?
-        .into())
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(
-        text_signature = "($self, node_names_to_keep, node_names_to_remove, node_names_to_keep_from_graph, node_names_to_remove_from_graph, node_prefixes_to_keep, node_prefixes_to_remove, node_type_names_to_keep, node_type_names_to_remove, node_type_name_to_keep, node_type_name_to_remove, source_node_names_to_keep, source_node_names_to_remove, source_node_names_to_keep_from_graph, source_node_names_to_remove_from_graph, source_node_prefixes_to_keep, source_node_prefixes_to_remove, source_node_type_names_to_keep, source_node_type_names_to_remove, source_node_type_name_to_keep, source_node_type_name_to_remove, destination_node_names_to_keep, destination_node_names_to_remove, destination_node_names_to_keep_from_graph, destination_node_names_to_remove_from_graph, destination_node_prefixes_to_keep, destination_node_prefixes_to_remove, destination_node_type_names_to_keep, destination_node_type_names_to_remove, destination_node_type_name_to_keep, destination_node_type_name_to_remove, edge_node_names_to_keep, edge_node_names_to_remove, edge_type_names_to_keep, edge_type_names_to_remove, min_edge_weight, max_edge_weight, min_node_degree, max_node_degree, filter_singleton_nodes, filter_singleton_nodes_with_selfloop, filter_selfloops, filter_parallel_edges)"
-    )]
-    /// Returns a **NEW** Graph that does not have the required attributes.
-    ///
-    /// Parameters
-    /// ----------
-    /// node_names_to_keep: Optional[List[&str]]
-    ///     List of node names to keep during filtering.
-    /// node_names_to_remove: Optional[List[&str]]
-    ///     List of node names to remove during filtering.
-    /// node_names_to_keep_from_graph: Optional[&Graph]
-    ///     Graph whose nodes are to be kept.
-    /// node_names_to_remove_from_graph: Optional[&Graph]
-    ///     Graph whose nodes are to be removed.
-    /// node_prefixes_to_keep: Optional[List[str]]
-    ///     List of node prefixes to keep during filtering.
-    /// node_prefixes_to_remove: Optional[List[str]]
-    ///     List of node prefixes to remove during filtering.
-    /// node_type_names_to_keep: Optional[List[Optional[List[&str]]]]
-    ///     List of node type names to keep during filtering. The node types must match entirely the given node types vector provided.
-    /// node_type_names_to_remove: Optional[List[Optional[List[&str]]]]
-    ///     List of node type names to remove during filtering. The node types must match entirely the given node types vector provided.
-    /// node_type_name_to_keep: Optional[&List[Optional[&str]]]
-    ///     List of node type name to keep during filtering. Any of node types must match with one of the node types given.
-    /// node_type_name_to_remove: Optional[&List[Optional[&str]]]
-    ///     List of node type name to remove during filtering. Any of node types must match with one of the node types given.
-    /// source_node_names_to_keep: Optional[List[&str]]
-    ///     List of source node names to keep during filtering.
-    /// source_node_names_to_remove: Optional[List[&str]]
-    ///     List of source node names to remove during filtering.
-    /// source_node_names_to_keep_from_graph: Optional[&Graph]
-    ///     Graph whose nodes are to be kept when they are source nodes.
-    /// source_node_names_to_remove_from_graph: Optional[&Graph]
-    ///     Graph whose nodes are to be removed when they are source nodes.
-    /// source_node_prefixes_to_keep: Optional[List[str]]
-    ///     List of source node prefixes to keep during filtering.
-    /// source_node_prefixes_to_remove: Optional[List[str]]
-    ///     List of source node prefixes to remove during filtering.
-    /// source_node_type_names_to_keep: Optional[List[Optional[List[&str]]]]
-    ///     List of node type names of source nodes to keep during filtering. The node types must match entirely the given node types vector provided.
-    /// source_node_type_names_to_remove: Optional[List[Optional[List[&str]]]]
-    ///     List of node type names of source nodes to remove during filtering. The node types must match entirely the given node types vector provided.
-    /// source_node_type_name_to_keep: Optional[&List[Optional[&str]]]
-    ///     List of node type name of source nodes to keep during filtering. Any of node types must match with one of the node types given.
-    /// source_node_type_name_to_remove: Optional[&List[Optional[&str]]]
-    ///     List of node type name of source nodes to remove during filtering. Any of node types must match with one of the node types given.
-    /// destination_node_names_to_keep: Optional[List[&str]]
-    ///     List of destination node names to keep during filtering.
-    /// destination_node_names_to_remove: Optional[List[&str]]
-    ///     List of destination node names to remove during filtering.
-    /// destination_node_names_to_keep_from_graph: Optional[&Graph]
-    ///     Graph whose nodes are to be kept when they are destination nodes.
-    /// destination_node_names_to_remove_from_graph: Optional[&Graph]
-    ///     Graph whose nodes are to be removed when they are destination nodes.
-    /// destination_node_prefixes_to_keep: Optional[List[str]]
-    ///     List of destination node prefixes to keep during filtering.
-    /// destination_node_prefixes_to_remove: Optional[List[str]]
-    ///     List of destination node prefixes to remove during filtering.
-    /// destination_node_type_names_to_keep: Optional[List[Optional[List[&str]]]]
-    ///     List of node type names of destination nodes to keep during filtering. The node types must match entirely the given node types vector provided.
-    /// destination_node_type_names_to_remove: Optional[List[Optional[List[&str]]]]
-    ///     List of node type names of destination nodes to remove during filtering. The node types must match entirely the given node types vector provided.
-    /// destination_node_type_name_to_keep: Optional[&List[Optional[&str]]]
-    ///     List of node type name of destination nodes to keep during filtering. Any of node types must match with one of the node types given.
-    /// destination_node_type_name_to_remove: Optional[&List[Optional[&str]]]
-    ///     List of node type name of destination nodes to remove during filtering. Any of node types must match with one of the node types given.
-    /// edge_node_names_to_keep: Optional[List[Tuple[str, str]]]
-    ///     List of tuple of node names to keep during filtering.
-    /// edge_node_names_to_remove: Optional[List[Tuple[str, str]]]
-    ///     List of tuple of node names to remove during filtering.
-    /// edge_type_names_to_keep: Optional[&List[Optional[&str]]]
-    ///     List of edge type names to keep during filtering.
-    /// edge_type_names_to_remove: Optional[&List[Optional[&str]]]
-    ///     List of edge type names to remove during filtering.
-    /// min_edge_weight: Optional[float]
-    ///     Minimum edge weight. Values lower than this are removed.
-    /// max_edge_weight: Optional[float]
-    ///     Maximum edge weight. Values higher than this are removed.
-    /// min_node_degree: Optional[int]
-    ///     Minimum node degree. Values lower than this are removed.
-    /// max_node_degree: Optional[int]
-    ///     Maximum node degree. Values higher than this are removed.
-    /// filter_singleton_nodes: Optional[bool]
-    ///     Whether to filter out singletons.
-    /// filter_singleton_nodes_with_selfloop: Optional[bool]
-    ///     Whether to filter out singleton nodes with selfloops.
-    /// filter_selfloops: Optional[bool]
-    ///     Whether to filter out selfloops.
-    /// filter_parallel_edges: Optional[bool]
-    ///     Whether to filter out parallel edges.
-    /// verbose: Optional[bool]
-    ///     Whether to show loading bar while building the graphs.
-    ///
-    pub fn filter_from_names(
-        &self,
-        node_names_to_keep: Option<Vec<&str>>,
-        node_names_to_remove: Option<Vec<&str>>,
-        node_names_to_keep_from_graph: Option<&Graph>,
-        node_names_to_remove_from_graph: Option<&Graph>,
-        node_prefixes_to_keep: Option<Vec<String>>,
-        node_prefixes_to_remove: Option<Vec<String>>,
-        node_type_names_to_keep: Option<Vec<Option<Vec<&str>>>>,
-        node_type_names_to_remove: Option<Vec<Option<Vec<&str>>>>,
-        node_type_name_to_keep: Option<Vec<Option<&str>>>,
-        node_type_name_to_remove: Option<Vec<Option<&str>>>,
-        source_node_names_to_keep: Option<Vec<&str>>,
-        source_node_names_to_remove: Option<Vec<&str>>,
-        source_node_names_to_keep_from_graph: Option<&Graph>,
-        source_node_names_to_remove_from_graph: Option<&Graph>,
-        source_node_prefixes_to_keep: Option<Vec<String>>,
-        source_node_prefixes_to_remove: Option<Vec<String>>,
-        source_node_type_names_to_keep: Option<Vec<Option<Vec<&str>>>>,
-        source_node_type_names_to_remove: Option<Vec<Option<Vec<&str>>>>,
-        source_node_type_name_to_keep: Option<Vec<Option<&str>>>,
-        source_node_type_name_to_remove: Option<Vec<Option<&str>>>,
-        destination_node_names_to_keep: Option<Vec<&str>>,
-        destination_node_names_to_remove: Option<Vec<&str>>,
-        destination_node_names_to_keep_from_graph: Option<&Graph>,
-        destination_node_names_to_remove_from_graph: Option<&Graph>,
-        destination_node_prefixes_to_keep: Option<Vec<String>>,
-        destination_node_prefixes_to_remove: Option<Vec<String>>,
-        destination_node_type_names_to_keep: Option<Vec<Option<Vec<&str>>>>,
-        destination_node_type_names_to_remove: Option<Vec<Option<Vec<&str>>>>,
-        destination_node_type_name_to_keep: Option<Vec<Option<&str>>>,
-        destination_node_type_name_to_remove: Option<Vec<Option<&str>>>,
-        edge_node_names_to_keep: Option<Vec<(&str, &str)>>,
-        edge_node_names_to_remove: Option<Vec<(&str, &str)>>,
-        edge_type_names_to_keep: Option<Vec<Option<&str>>>,
-        edge_type_names_to_remove: Option<Vec<Option<&str>>>,
-        min_edge_weight: Option<WeightT>,
-        max_edge_weight: Option<WeightT>,
-        min_node_degree: Option<NodeT>,
-        max_node_degree: Option<NodeT>,
-        filter_singleton_nodes: Option<bool>,
-        filter_singleton_nodes_with_selfloop: Option<bool>,
-        filter_selfloops: Option<bool>,
-        filter_parallel_edges: Option<bool>,
-    ) -> PyResult<Graph> {
-        Ok(pe!(self.inner.filter_from_names(
-            node_names_to_keep,
-            node_names_to_remove,
-            node_names_to_keep_from_graph.map(|sg| &sg.inner),
-            node_names_to_remove_from_graph.map(|sg| &sg.inner),
-            node_prefixes_to_keep,
-            node_prefixes_to_remove,
-            node_type_names_to_keep,
-            node_type_names_to_remove,
-            node_type_name_to_keep.as_ref().map(|x| x.as_slice()),
-            node_type_name_to_remove.as_ref().map(|x| x.as_slice()),
-            source_node_names_to_keep,
-            source_node_names_to_remove,
-            source_node_names_to_keep_from_graph.map(|sg| &sg.inner),
-            source_node_names_to_remove_from_graph.map(|sg| &sg.inner),
-            source_node_prefixes_to_keep,
-            source_node_prefixes_to_remove,
-            source_node_type_names_to_keep,
-            source_node_type_names_to_remove,
-            source_node_type_name_to_keep.as_ref().map(|x| x.as_slice()),
-            source_node_type_name_to_remove
-                .as_ref()
-                .map(|x| x.as_slice()),
-            destination_node_names_to_keep,
-            destination_node_names_to_remove,
-            destination_node_names_to_keep_from_graph.map(|sg| &sg.inner),
-            destination_node_names_to_remove_from_graph.map(|sg| &sg.inner),
-            destination_node_prefixes_to_keep,
-            destination_node_prefixes_to_remove,
-            destination_node_type_names_to_keep,
-            destination_node_type_names_to_remove,
-            destination_node_type_name_to_keep
-                .as_ref()
-                .map(|x| x.as_slice()),
-            destination_node_type_name_to_remove
-                .as_ref()
-                .map(|x| x.as_slice()),
-            edge_node_names_to_keep,
-            edge_node_names_to_remove,
-            edge_type_names_to_keep.as_ref().map(|x| x.as_slice()),
-            edge_type_names_to_remove.as_ref().map(|x| x.as_slice()),
-            min_edge_weight,
-            max_edge_weight,
-            min_node_degree,
-            max_node_degree,
-            filter_singleton_nodes,
-            filter_singleton_nodes_with_selfloop,
-            filter_selfloops,
-            filter_parallel_edges
-        ))?
-        .into())
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self)")]
-    /// Returns new graph without unknown node types and relative nodes.
-    ///
-    /// Note that this method will remove ALL nodes labeled with unknown node
-    /// type!
-    pub fn remove_unknown_node_types(&self) -> Graph {
-        self.inner.remove_unknown_node_types().into()
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self)")]
-    /// Returns new graph without unknown edge types and relative edges.
-    ///
-    /// Note that this method will remove ALL edges labeled with unknown edge
-    /// type!
-    pub fn remove_unknown_edge_types(&self) -> Graph {
-        self.inner.remove_unknown_edge_types().into()
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self)")]
-    /// Returns new graph without singleton nodes.
-    ///
-    /// A node is singleton when does not have neither incoming or outgoing edges.
-    pub fn remove_singleton_nodes(&self) -> Graph {
-        self.inner.remove_singleton_nodes().into()
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self)")]
-    /// Returns new graph without tendrils
-    pub fn remove_tendrils(&self) -> PyResult<Graph> {
-        Ok(pe!(self.inner.remove_tendrils())?.into())
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self)")]
-    /// Returns new graph without tendrils
-    pub fn remove_dendritic_trees(&self) -> PyResult<Graph> {
-        Ok(pe!(self.inner.remove_dendritic_trees())?.into())
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(
-        text_signature = "($self, minimum_node_degree, hash_strategy, number_of_neighbours_for_hash, hash_name)"
-    )]
-    /// Returns new graph without isomorphic nodes, only keeping the smallest node ID of each group.
-    ///
-    /// Parameters
-    /// ----------
-    /// minimum_node_degree: Optional[int]
-    ///     Minimum node degree for the topological synonims. By default equal to 5.
-    /// hash_strategy: Optional[&str]
-    ///     The name of the hash to be used. By default, `general` is used.+
-    /// number_of_neighbours_for_hash: Optional[int]
-    ///     The number of neighbours to consider for the hash. By default 10.
-    /// hash_name: Optional[&str]
-    ///     The name of the hash to be used.
-    ///
-    pub fn remove_isomorphic_nodes(
-        &self,
-        minimum_node_degree: Option<NodeT>,
-        hash_strategy: Option<&str>,
-        number_of_neighbours_for_hash: Option<usize>,
-        hash_name: Option<&str>,
-    ) -> PyResult<Graph> {
-        Ok(pe!(self.inner.remove_isomorphic_nodes(
-            minimum_node_degree,
-            hash_strategy,
-            number_of_neighbours_for_hash,
-            hash_name
-        ))?
-        .into())
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self)")]
-    /// Returns new graph without singleton nodes with selfloops.
-    ///
-    /// A node is singleton with selfloop when does not have neither incoming or outgoing edges.
-    pub fn remove_singleton_nodes_with_selfloops(&self) -> Graph {
-        self.inner.remove_singleton_nodes_with_selfloops().into()
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self)")]
-    /// Returns new graph without disconnected nodes.
-    ///
-    /// A disconnected node is a node with no connection to any other node.
-    pub fn remove_disconnected_nodes(&self) -> Graph {
-        self.inner.remove_disconnected_nodes().into()
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self)")]
-    /// Returns new graph without selfloops.
-    pub fn remove_selfloops(&self) -> Graph {
-        self.inner.remove_selfloops().into()
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self)")]
-    /// Returns new graph without parallel edges
-    pub fn remove_parallel_edges(&self) -> Graph {
-        self.inner.remove_parallel_edges().into()
-    }
-
-    #[automatically_generated_binding]
     #[pyo3(text_signature = "($self, verbose)")]
     /// Returns number a triple with (number of components, number of nodes of the smallest component, number of nodes of the biggest component )
     ///
@@ -14438,17 +14438,11 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self, verbose)")]
-    /// Return closeness centrality for all nodes.
-    ///
-    /// Parameters
-    /// ----------
-    /// verbose: Optional[bool]
-    ///     Whether to show an indicative progress bar.
-    ///
-    pub fn get_closeness_centrality(&self, verbose: Option<bool>) -> Py<PyArray1<f32>> {
+    #[pyo3(text_signature = "($self)")]
+    /// Return parallel iterator over closeness centrality for all nodes.
+    pub fn get_closeness_centrality(&self) -> Py<PyArray1<f32>> {
         let gil = pyo3::Python::acquire_gil();
-        to_ndarray_1d!(gil, self.inner.get_closeness_centrality(verbose), f32)
+        to_ndarray_1d!(gil, self.inner.get_closeness_centrality(), f32)
     }
 
     #[automatically_generated_binding]
@@ -15793,499 +15787,6 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self)")]
-    /// Return if graph has name that is not the default one.
-    ///
-    /// TODO: use a default for the default graph name
-    pub fn has_default_graph_name(&self) -> bool {
-        self.inner.has_default_graph_name().into()
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self)")]
-    /// Return if the graph has any nodes.
-    pub fn has_nodes(&self) -> bool {
-        self.inner.has_nodes().into()
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self)")]
-    /// Return if the graph has any edges.
-    pub fn has_edges(&self) -> bool {
-        self.inner.has_edges().into()
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self)")]
-    /// Return whether the graph has trap nodes.
-    pub fn has_trap_nodes(&self) -> bool {
-        self.inner.has_trap_nodes().into()
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self)")]
-    /// Returns boolean representing if graph is directed.
-    pub fn is_directed(&self) -> bool {
-        self.inner.is_directed().into()
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self)")]
-    /// Returns whether graph is a directed acyclic graph.
-    pub fn is_directed_acyclic(&self) -> bool {
-        self.inner.is_directed_acyclic().into()
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self)")]
-    /// Returns boolean representing whether graph has weights.
-    pub fn has_edge_weights(&self) -> bool {
-        self.inner.has_edge_weights().into()
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self)")]
-    /// Returns whether graph has weights that can represent probabilities
-    pub fn has_edge_weights_representing_probabilities(&self) -> PyResult<bool> {
-        Ok(pe!(self.inner.has_edge_weights_representing_probabilities())?.into())
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self)")]
-    /// Returns whether a graph has one or more weighted singleton nodes.
-    ///
-    /// A weighted singleton node is a node whose weighted node degree is 0.
-    ///
-    /// Raises
-    /// -------
-    /// ValueError
-    ///     If the graph does not contain edge weights.
-    ///
-    pub fn has_weighted_singleton_nodes(&self) -> PyResult<bool> {
-        Ok(pe!(self.inner.has_weighted_singleton_nodes())?.into())
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self)")]
-    /// Returns whether the graph has constant weights.
-    ///
-    /// Raises
-    /// -------
-    /// ValueError
-    ///     If the graph does not contain edge weights.
-    ///
-    pub fn has_constant_edge_weights(&self) -> PyResult<bool> {
-        Ok(pe!(self.inner.has_constant_edge_weights())?.into())
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self)")]
-    /// Returns boolean representing whether graph has negative weights.
-    ///
-    /// Raises
-    /// -------
-    /// ValueError
-    ///     If the graph does not contain weights.
-    ///
-    pub fn has_negative_edge_weights(&self) -> PyResult<bool> {
-        Ok(pe!(self.inner.has_negative_edge_weights())?.into())
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self)")]
-    /// Returns boolean representing whether graph has edge types.
-    pub fn has_edge_types(&self) -> bool {
-        self.inner.has_edge_types().into()
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self)")]
-    /// Returns boolean representing if graph has self-loops.
-    pub fn has_selfloops(&self) -> bool {
-        self.inner.has_selfloops().into()
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self)")]
-    /// Returns boolean representing if nodes which are nor singletons nor
-    /// singletons with selfloops.
-    pub fn has_disconnected_nodes(&self) -> bool {
-        self.inner.has_disconnected_nodes().into()
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self)")]
-    /// Returns boolean representing if graph has singletons.
-    pub fn has_singleton_nodes(&self) -> bool {
-        self.inner.has_singleton_nodes().into()
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self)")]
-    /// Returns boolean representing if graph has singletons
-    pub fn has_singleton_nodes_with_selfloops(&self) -> bool {
-        self.inner.has_singleton_nodes_with_selfloops().into()
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self, verbose)")]
-    /// Returns whether the graph is connected.
-    ///
-    /// Parameters
-    /// ----------
-    /// verbose: Optional[bool]
-    ///     Whether to show the loading bar while computing the connected components, if necessary.
-    ///
-    pub fn is_connected(&self, verbose: Option<bool>) -> bool {
-        self.inner.is_connected(verbose).into()
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self)")]
-    /// Returns boolean representing if graph has node types
-    pub fn has_node_types(&self) -> bool {
-        self.inner.has_node_types().into()
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self)")]
-    /// Returns boolean representing if graph has multilabel node types.
-    ///
-    /// Raises
-    /// -------
-    /// ValueError
-    ///     If the graph does not have node types.
-    ///
-    pub fn has_multilabel_node_types(&self) -> PyResult<bool> {
-        Ok(pe!(self.inner.has_multilabel_node_types())?.into())
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self)")]
-    /// Returns whether there are unknown node types.
-    ///
-    /// Raises
-    /// -------
-    /// ValueError
-    ///     If the graph does not have node types.
-    ///
-    pub fn has_unknown_node_types(&self) -> PyResult<bool> {
-        Ok(pe!(self.inner.has_unknown_node_types())?.into())
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self)")]
-    /// Returns whether there are known node types.
-    ///
-    /// Raises
-    /// -------
-    /// ValueError
-    ///     If the graph does not have node types.
-    ///
-    pub fn has_known_node_types(&self) -> PyResult<bool> {
-        Ok(pe!(self.inner.has_known_node_types())?.into())
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self)")]
-    /// Returns whether there are unknown edge types.
-    ///
-    /// Raises
-    /// -------
-    /// ValueError
-    ///     If the graph does not have node types.
-    ///
-    pub fn has_unknown_edge_types(&self) -> PyResult<bool> {
-        Ok(pe!(self.inner.has_unknown_edge_types())?.into())
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self)")]
-    /// Returns whether there are known edge types.
-    ///
-    /// Raises
-    /// -------
-    /// ValueError
-    ///     If the graph does not have edge types.
-    ///
-    pub fn has_known_edge_types(&self) -> PyResult<bool> {
-        Ok(pe!(self.inner.has_known_edge_types())?.into())
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self)")]
-    /// Returns whether the nodes have an homogenous node type.
-    ///
-    /// Raises
-    /// -------
-    /// ValueError
-    ///     If the graph does not have node types.
-    ///
-    pub fn has_homogeneous_node_types(&self) -> PyResult<bool> {
-        Ok(pe!(self.inner.has_homogeneous_node_types())?.into())
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self)")]
-    /// Returns whether the nodes have exclusively homogenous node types.
-    ///
-    /// Raises
-    /// -------
-    /// ValueError
-    ///     If the graph does not have node types.
-    ///
-    pub fn has_exclusively_homogeneous_node_types(&self) -> PyResult<bool> {
-        Ok(pe!(self.inner.has_exclusively_homogeneous_node_types())?.into())
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self)")]
-    /// Returns whether the nodes have an homogenous node ontology
-    pub fn has_homogeneous_node_ontologies(&self) -> PyResult<bool> {
-        Ok(pe!(self.inner.has_homogeneous_node_ontologies())?.into())
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self)")]
-    /// Returns whether the edges have an homogenous edge type.
-    ///
-    /// Raises
-    /// -------
-    /// ValueError
-    ///     If the graph does not have edge types.
-    ///
-    pub fn has_homogeneous_edge_types(&self) -> PyResult<bool> {
-        Ok(pe!(self.inner.has_homogeneous_edge_types())?.into())
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self)")]
-    /// Returns whether there is at least singleton node type, that is a node type that only appears once.
-    ///
-    /// Raises
-    /// -------
-    /// ValueError
-    ///     If the graph does not have node types.
-    ///
-    pub fn has_singleton_node_types(&self) -> PyResult<bool> {
-        Ok(pe!(self.inner.has_singleton_node_types())?.into())
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self)")]
-    /// Return whether the graph has any known node-related graph oddities
-    pub fn has_node_oddities(&self) -> bool {
-        self.inner.has_node_oddities().into()
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self)")]
-    /// Return whether the graph has any known node type-related graph oddities.
-    ///
-    /// Raises
-    /// -------
-    /// ValueError
-    ///     If the graph does not have node types.
-    ///
-    pub fn has_node_types_oddities(&self) -> PyResult<bool> {
-        Ok(pe!(self.inner.has_node_types_oddities())?.into())
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self)")]
-    /// Returns whether there is at least singleton edge type, that is a edge type that only appears once.
-    ///
-    /// Raises
-    /// -------
-    /// ValueError
-    ///     If the graph does not have edge types.
-    ///
-    pub fn has_singleton_edge_types(&self) -> PyResult<bool> {
-        Ok(pe!(self.inner.has_singleton_edge_types())?.into())
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self)")]
-    /// Return whether the graph has any known edge type-related graph oddities.
-    ///
-    /// Raises
-    /// -------
-    /// ValueError
-    ///     If the graph does not have edge types.
-    ///
-    pub fn has_edge_types_oddities(&self) -> PyResult<bool> {
-        Ok(pe!(self.inner.has_edge_types_oddities())?.into())
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self)")]
-    /// Return if there are multiple edges between two node
-    pub fn is_multigraph(&self) -> bool {
-        self.inner.is_multigraph().into()
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self)")]
-    /// Return whether at least a node has a known ontology
-    pub fn has_node_ontologies(&self) -> bool {
-        self.inner.has_node_ontologies().into()
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self)")]
-    /// Return whether at least a node has an unknown ontology
-    pub fn has_unknown_node_ontologies(&self) -> bool {
-        self.inner.has_unknown_node_ontologies().into()
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self)")]
-    /// Returns whether the node IDs are sorted by decreasing outbound node degree.
-    pub fn has_nodes_sorted_by_decreasing_outbound_node_degree(&self) -> bool {
-        self.inner
-            .has_nodes_sorted_by_decreasing_outbound_node_degree()
-            .into()
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self)")]
-    /// Returns whether the node IDs are sorted by decreasing outbound node degree.
-    pub fn has_nodes_sorted_by_lexicographic_order(&self) -> bool {
-        self.inner.has_nodes_sorted_by_lexicographic_order().into()
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self)")]
-    /// Returns whether the graph contains the identity matrix.
-    pub fn contains_identity_matrix(&self) -> bool {
-        self.inner.contains_identity_matrix().into()
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self)")]
-    /// Returns whether the node IDs are sorted by increasing outbound node degree.
-    pub fn has_nodes_sorted_by_increasing_outbound_node_degree(&self) -> bool {
-        self.inner
-            .has_nodes_sorted_by_increasing_outbound_node_degree()
-            .into()
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self)")]
-    /// Returns whether the sources time-memory tradeoff is enabled
-    pub fn has_sources_tradeoff_enabled(&self) -> bool {
-        self.inner.has_sources_tradeoff_enabled().into()
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self)")]
-    /// Returns whether the reciprocal_sqrt_degrees time-memory tradeoff is enabled
-    pub fn has_reciprocal_sqrt_degrees_tradeoff_enabled(&self) -> bool {
-        self.inner
-            .has_reciprocal_sqrt_degrees_tradeoff_enabled()
-            .into()
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self)")]
-    /// Returns a string describing the memory usage of all the fields of all the
-    /// structures used to store the current graph
-    pub fn get_memory_stats(&self) -> String {
-        self.inner.get_memory_stats().into()
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self)")]
-    /// Returns how many bytes are currently used to store the given graph
-    pub fn get_total_memory_used(&self) -> usize {
-        self.inner.get_total_memory_used().into()
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self)")]
-    /// Returns how many bytes are currently used to store the nodes
-    pub fn get_nodes_total_memory_requirement(&self) -> usize {
-        self.inner.get_nodes_total_memory_requirement().into()
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self)")]
-    /// Returns human readable amount of how many bytes are currently used to store the nodes
-    pub fn get_nodes_total_memory_requirement_human_readable(&self) -> String {
-        self.inner
-            .get_nodes_total_memory_requirement_human_readable()
-            .into()
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self)")]
-    /// Returns how many bytes are currently used to store the edges
-    pub fn get_edges_total_memory_requirement(&self) -> usize {
-        self.inner.get_edges_total_memory_requirement().into()
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self)")]
-    /// Returns human readable amount of how many bytes are currently used to store the edges
-    pub fn get_edges_total_memory_requirement_human_readable(&self) -> String {
-        self.inner
-            .get_edges_total_memory_requirement_human_readable()
-            .into()
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self)")]
-    /// Returns how many bytes are currently used to store the edge weights
-    pub fn get_edge_weights_total_memory_requirements(&self) -> usize {
-        self.inner
-            .get_edge_weights_total_memory_requirements()
-            .into()
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self)")]
-    /// Returns human readable amount of how many bytes are currently used to store the edge weights
-    pub fn get_edge_weights_total_memory_requirements_human_readable(&self) -> String {
-        self.inner
-            .get_edge_weights_total_memory_requirements_human_readable()
-            .into()
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self)")]
-    /// Returns how many bytes are currently used to store the node types
-    pub fn get_node_types_total_memory_requirements(&self) -> PyResult<usize> {
-        Ok(pe!(self.inner.get_node_types_total_memory_requirements())?.into())
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self)")]
-    /// Returns human readable amount of how many bytes are currently used to store the node types
-    pub fn get_node_types_total_memory_requirements_human_readable(&self) -> PyResult<String> {
-        Ok(pe!(self
-            .inner
-            .get_node_types_total_memory_requirements_human_readable())?
-        .into())
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self)")]
-    /// Returns how many bytes are currently used to store the edge types
-    pub fn get_edge_types_total_memory_requirements(&self) -> PyResult<usize> {
-        Ok(pe!(self.inner.get_edge_types_total_memory_requirements())?.into())
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self)")]
-    /// Returns human readable amount of how many bytes are currently used to store the edge types
-    pub fn get_edge_types_total_memory_requirements_human_readable(&self) -> PyResult<String> {
-        Ok(pe!(self
-            .inner
-            .get_edge_types_total_memory_requirements_human_readable())?
-        .into())
-    }
-
-    #[automatically_generated_binding]
     #[pyo3(text_signature = "($self, node_id)")]
     /// Returns boolean representing if given node is not a singleton nor a singleton with selfloop.
     ///
@@ -16794,9 +16295,514 @@ impl Graph {
             .has_unchecked_edge_from_node_id_and_edge_type_id(src.clone(), edge_type_id)
             .into()
     }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Return if graph has name that is not the default one.
+    ///
+    /// TODO: use a default for the default graph name
+    pub fn has_default_graph_name(&self) -> bool {
+        self.inner.has_default_graph_name().into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Return if the graph has any nodes.
+    pub fn has_nodes(&self) -> bool {
+        self.inner.has_nodes().into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Return if the graph has any edges.
+    pub fn has_edges(&self) -> bool {
+        self.inner.has_edges().into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Return whether the graph has trap nodes.
+    pub fn has_trap_nodes(&self) -> bool {
+        self.inner.has_trap_nodes().into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Returns boolean representing if graph is directed.
+    pub fn is_directed(&self) -> bool {
+        self.inner.is_directed().into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Returns whether graph is a directed acyclic graph.
+    pub fn is_directed_acyclic(&self) -> bool {
+        self.inner.is_directed_acyclic().into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Returns boolean representing whether graph has weights.
+    pub fn has_edge_weights(&self) -> bool {
+        self.inner.has_edge_weights().into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Returns whether graph has weights that can represent probabilities
+    pub fn has_edge_weights_representing_probabilities(&self) -> PyResult<bool> {
+        Ok(pe!(self.inner.has_edge_weights_representing_probabilities())?.into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Returns whether a graph has one or more weighted singleton nodes.
+    ///
+    /// A weighted singleton node is a node whose weighted node degree is 0.
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the graph does not contain edge weights.
+    ///
+    pub fn has_weighted_singleton_nodes(&self) -> PyResult<bool> {
+        Ok(pe!(self.inner.has_weighted_singleton_nodes())?.into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Returns whether the graph has constant weights.
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the graph does not contain edge weights.
+    ///
+    pub fn has_constant_edge_weights(&self) -> PyResult<bool> {
+        Ok(pe!(self.inner.has_constant_edge_weights())?.into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Returns boolean representing whether graph has negative weights.
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the graph does not contain weights.
+    ///
+    pub fn has_negative_edge_weights(&self) -> PyResult<bool> {
+        Ok(pe!(self.inner.has_negative_edge_weights())?.into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Returns boolean representing whether graph has edge types.
+    pub fn has_edge_types(&self) -> bool {
+        self.inner.has_edge_types().into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Returns boolean representing if graph has self-loops.
+    pub fn has_selfloops(&self) -> bool {
+        self.inner.has_selfloops().into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Returns boolean representing if nodes which are nor singletons nor
+    /// singletons with selfloops.
+    pub fn has_disconnected_nodes(&self) -> bool {
+        self.inner.has_disconnected_nodes().into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Returns boolean representing if graph has singletons.
+    pub fn has_singleton_nodes(&self) -> bool {
+        self.inner.has_singleton_nodes().into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Returns boolean representing if graph has singletons
+    pub fn has_singleton_nodes_with_selfloops(&self) -> bool {
+        self.inner.has_singleton_nodes_with_selfloops().into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, verbose)")]
+    /// Returns whether the graph is connected.
+    ///
+    /// Parameters
+    /// ----------
+    /// verbose: Optional[bool]
+    ///     Whether to show the loading bar while computing the connected components, if necessary.
+    ///
+    pub fn is_connected(&self, verbose: Option<bool>) -> bool {
+        self.inner.is_connected(verbose).into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Returns boolean representing if graph has node types
+    pub fn has_node_types(&self) -> bool {
+        self.inner.has_node_types().into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Returns boolean representing if graph has multilabel node types.
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the graph does not have node types.
+    ///
+    pub fn has_multilabel_node_types(&self) -> PyResult<bool> {
+        Ok(pe!(self.inner.has_multilabel_node_types())?.into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Returns whether there are unknown node types.
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the graph does not have node types.
+    ///
+    pub fn has_unknown_node_types(&self) -> PyResult<bool> {
+        Ok(pe!(self.inner.has_unknown_node_types())?.into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Returns whether there are known node types.
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the graph does not have node types.
+    ///
+    pub fn has_known_node_types(&self) -> PyResult<bool> {
+        Ok(pe!(self.inner.has_known_node_types())?.into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Returns whether there are unknown edge types.
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the graph does not have node types.
+    ///
+    pub fn has_unknown_edge_types(&self) -> PyResult<bool> {
+        Ok(pe!(self.inner.has_unknown_edge_types())?.into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Returns whether there are known edge types.
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the graph does not have edge types.
+    ///
+    pub fn has_known_edge_types(&self) -> PyResult<bool> {
+        Ok(pe!(self.inner.has_known_edge_types())?.into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Returns whether the nodes have an homogenous node type.
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the graph does not have node types.
+    ///
+    pub fn has_homogeneous_node_types(&self) -> PyResult<bool> {
+        Ok(pe!(self.inner.has_homogeneous_node_types())?.into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Returns whether the nodes have exclusively homogenous node types.
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the graph does not have node types.
+    ///
+    pub fn has_exclusively_homogeneous_node_types(&self) -> PyResult<bool> {
+        Ok(pe!(self.inner.has_exclusively_homogeneous_node_types())?.into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Returns whether the nodes have an homogenous node ontology
+    pub fn has_homogeneous_node_ontologies(&self) -> PyResult<bool> {
+        Ok(pe!(self.inner.has_homogeneous_node_ontologies())?.into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Returns whether the edges have an homogenous edge type.
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the graph does not have edge types.
+    ///
+    pub fn has_homogeneous_edge_types(&self) -> PyResult<bool> {
+        Ok(pe!(self.inner.has_homogeneous_edge_types())?.into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Returns whether there is at least singleton node type, that is a node type that only appears once.
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the graph does not have node types.
+    ///
+    pub fn has_singleton_node_types(&self) -> PyResult<bool> {
+        Ok(pe!(self.inner.has_singleton_node_types())?.into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Return whether the graph has any known node-related graph oddities
+    pub fn has_node_oddities(&self) -> bool {
+        self.inner.has_node_oddities().into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Return whether the graph has any known node type-related graph oddities.
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the graph does not have node types.
+    ///
+    pub fn has_node_types_oddities(&self) -> PyResult<bool> {
+        Ok(pe!(self.inner.has_node_types_oddities())?.into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Returns whether there is at least singleton edge type, that is a edge type that only appears once.
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the graph does not have edge types.
+    ///
+    pub fn has_singleton_edge_types(&self) -> PyResult<bool> {
+        Ok(pe!(self.inner.has_singleton_edge_types())?.into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Return whether the graph has any known edge type-related graph oddities.
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the graph does not have edge types.
+    ///
+    pub fn has_edge_types_oddities(&self) -> PyResult<bool> {
+        Ok(pe!(self.inner.has_edge_types_oddities())?.into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Return if there are multiple edges between two node
+    pub fn is_multigraph(&self) -> bool {
+        self.inner.is_multigraph().into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Return whether at least a node has a known ontology
+    pub fn has_node_ontologies(&self) -> bool {
+        self.inner.has_node_ontologies().into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Return whether at least a node has an unknown ontology
+    pub fn has_unknown_node_ontologies(&self) -> bool {
+        self.inner.has_unknown_node_ontologies().into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Returns whether the node IDs are sorted by decreasing outbound node degree.
+    pub fn has_nodes_sorted_by_decreasing_outbound_node_degree(&self) -> bool {
+        self.inner
+            .has_nodes_sorted_by_decreasing_outbound_node_degree()
+            .into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Returns whether the node IDs are sorted by decreasing outbound node degree.
+    pub fn has_nodes_sorted_by_lexicographic_order(&self) -> bool {
+        self.inner.has_nodes_sorted_by_lexicographic_order().into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Returns whether the graph contains the identity matrix.
+    pub fn contains_identity_matrix(&self) -> bool {
+        self.inner.contains_identity_matrix().into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Returns whether the node IDs are sorted by increasing outbound node degree.
+    pub fn has_nodes_sorted_by_increasing_outbound_node_degree(&self) -> bool {
+        self.inner
+            .has_nodes_sorted_by_increasing_outbound_node_degree()
+            .into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Returns whether the sources time-memory tradeoff is enabled
+    pub fn has_sources_tradeoff_enabled(&self) -> bool {
+        self.inner.has_sources_tradeoff_enabled().into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Returns whether the reciprocal_sqrt_degrees time-memory tradeoff is enabled
+    pub fn has_reciprocal_sqrt_degrees_tradeoff_enabled(&self) -> bool {
+        self.inner
+            .has_reciprocal_sqrt_degrees_tradeoff_enabled()
+            .into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Returns a string describing the memory usage of all the fields of all the
+    /// structures used to store the current graph
+    pub fn get_memory_stats(&self) -> String {
+        self.inner.get_memory_stats().into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Returns how many bytes are currently used to store the given graph
+    pub fn get_total_memory_used(&self) -> usize {
+        self.inner.get_total_memory_used().into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Returns how many bytes are currently used to store the nodes
+    pub fn get_nodes_total_memory_requirement(&self) -> usize {
+        self.inner.get_nodes_total_memory_requirement().into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Returns human readable amount of how many bytes are currently used to store the nodes
+    pub fn get_nodes_total_memory_requirement_human_readable(&self) -> String {
+        self.inner
+            .get_nodes_total_memory_requirement_human_readable()
+            .into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Returns how many bytes are currently used to store the edges
+    pub fn get_edges_total_memory_requirement(&self) -> usize {
+        self.inner.get_edges_total_memory_requirement().into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Returns human readable amount of how many bytes are currently used to store the edges
+    pub fn get_edges_total_memory_requirement_human_readable(&self) -> String {
+        self.inner
+            .get_edges_total_memory_requirement_human_readable()
+            .into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Returns how many bytes are currently used to store the edge weights
+    pub fn get_edge_weights_total_memory_requirements(&self) -> usize {
+        self.inner
+            .get_edge_weights_total_memory_requirements()
+            .into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Returns human readable amount of how many bytes are currently used to store the edge weights
+    pub fn get_edge_weights_total_memory_requirements_human_readable(&self) -> String {
+        self.inner
+            .get_edge_weights_total_memory_requirements_human_readable()
+            .into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Returns how many bytes are currently used to store the node types
+    pub fn get_node_types_total_memory_requirements(&self) -> PyResult<usize> {
+        Ok(pe!(self.inner.get_node_types_total_memory_requirements())?.into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Returns human readable amount of how many bytes are currently used to store the node types
+    pub fn get_node_types_total_memory_requirements_human_readable(&self) -> PyResult<String> {
+        Ok(pe!(self
+            .inner
+            .get_node_types_total_memory_requirements_human_readable())?
+        .into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Returns how many bytes are currently used to store the edge types
+    pub fn get_edge_types_total_memory_requirements(&self) -> PyResult<usize> {
+        Ok(pe!(self.inner.get_edge_types_total_memory_requirements())?.into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Returns human readable amount of how many bytes are currently used to store the edge types
+    pub fn get_edge_types_total_memory_requirements_human_readable(&self) -> PyResult<String> {
+        Ok(pe!(self
+            .inner
+            .get_edge_types_total_memory_requirements_human_readable())?
+        .into())
+    }
 }
 
 pub const GRAPH_METHODS_NAMES: &[&str] = &[
+    "filter_from_ids",
+    "filter_from_names",
+    "remove_unknown_node_types",
+    "remove_unknown_edge_types",
+    "remove_singleton_nodes",
+    "remove_tendrils",
+    "remove_dendritic_trees",
+    "remove_isomorphic_nodes",
+    "remove_singleton_nodes_with_selfloops",
+    "remove_disconnected_nodes",
+    "remove_selfloops",
+    "remove_parallel_edges",
     "get_chains",
     "get_circles",
     "get_approximated_cliques",
@@ -17075,18 +17081,6 @@ pub const GRAPH_METHODS_NAMES: &[&str] = &[
     "must_have_nodes",
     "must_be_connected",
     "must_share_node_vocabulary",
-    "filter_from_ids",
-    "filter_from_names",
-    "remove_unknown_node_types",
-    "remove_unknown_edge_types",
-    "remove_singleton_nodes",
-    "remove_tendrils",
-    "remove_dendritic_trees",
-    "remove_isomorphic_nodes",
-    "remove_singleton_nodes_with_selfloops",
-    "remove_disconnected_nodes",
-    "remove_selfloops",
-    "remove_parallel_edges",
     "get_number_of_connected_components",
     "get_number_of_connected_nodes",
     "get_number_of_singleton_nodes_with_selfloops",
@@ -17408,6 +17402,33 @@ pub const GRAPH_METHODS_NAMES: &[&str] = &[
     "get_edge_prediction_kfold",
     "get_okapi_bm25_node_feature_propagation",
     "get_okapi_bm25_node_label_propagation",
+    "is_unchecked_connected_from_node_id",
+    "is_connected_from_node_id",
+    "is_unchecked_disconnected_node_from_node_id",
+    "is_unchecked_singleton_from_node_id",
+    "is_singleton_from_node_id",
+    "is_unchecked_singleton_with_selfloops_from_node_id",
+    "is_singleton_with_selfloops_from_node_id",
+    "is_unchecked_singleton_from_node_name",
+    "is_singleton_from_node_name",
+    "has_node_name",
+    "has_node_type_id",
+    "has_node_type_name",
+    "has_edge_type_id",
+    "has_edge_type_name",
+    "has_edge_from_node_ids",
+    "has_selfloop_from_node_id",
+    "has_edge_from_node_ids_and_edge_type_id",
+    "is_unchecked_trap_node_from_node_id",
+    "is_trap_node_from_node_id",
+    "are_unchecked_isomorphic_from_node_ids",
+    "are_isomorphic_from_node_ids",
+    "are_isomorphic_from_node_names",
+    "has_node_name_and_node_type_name",
+    "has_edge_from_node_names",
+    "has_edge_from_node_names_and_edge_type_name",
+    "has_edge_from_node_id_and_edge_type_id",
+    "has_unchecked_edge_from_node_id_and_edge_type_id",
     "has_default_graph_name",
     "has_nodes",
     "has_edges",
@@ -17461,36 +17482,29 @@ pub const GRAPH_METHODS_NAMES: &[&str] = &[
     "get_node_types_total_memory_requirements_human_readable",
     "get_edge_types_total_memory_requirements",
     "get_edge_types_total_memory_requirements_human_readable",
-    "is_unchecked_connected_from_node_id",
-    "is_connected_from_node_id",
-    "is_unchecked_disconnected_node_from_node_id",
-    "is_unchecked_singleton_from_node_id",
-    "is_singleton_from_node_id",
-    "is_unchecked_singleton_with_selfloops_from_node_id",
-    "is_singleton_with_selfloops_from_node_id",
-    "is_unchecked_singleton_from_node_name",
-    "is_singleton_from_node_name",
-    "has_node_name",
-    "has_node_type_id",
-    "has_node_type_name",
-    "has_edge_type_id",
-    "has_edge_type_name",
-    "has_edge_from_node_ids",
-    "has_selfloop_from_node_id",
-    "has_edge_from_node_ids_and_edge_type_id",
-    "is_unchecked_trap_node_from_node_id",
-    "is_trap_node_from_node_id",
-    "are_unchecked_isomorphic_from_node_ids",
-    "are_isomorphic_from_node_ids",
-    "are_isomorphic_from_node_names",
-    "has_node_name_and_node_type_name",
-    "has_edge_from_node_names",
-    "has_edge_from_node_names_and_edge_type_name",
-    "has_edge_from_node_id_and_edge_type_id",
-    "has_unchecked_edge_from_node_id_and_edge_type_id",
 ];
 
 pub const GRAPH_TERMS: &[&str] = &[
+    "filter",
+    "from",
+    "ids",
+    "names",
+    "remove",
+    "unknown",
+    "node",
+    "types",
+    "edge",
+    "singleton",
+    "nodes",
+    "tendrils",
+    "dendritic",
+    "trees",
+    "isomorphic",
+    "with",
+    "selfloops",
+    "disconnected",
+    "parallel",
+    "edges",
     "get",
     "chains",
     "circles",
@@ -17516,35 +17530,26 @@ pub const GRAPH_TERMS: &[&str] = &[
     "normalized",
     "right",
     "symmetric",
-    "dendritic",
-    "trees",
     "transitive",
     "closure",
     "all",
     "shortest",
     "paths",
     "weighted",
-    "node",
     "degree",
     "geometric",
     "distribution",
     "threshold",
     "bipartite",
-    "edges",
-    "edge",
-    "names",
     "star",
-    "from",
     "csv",
     "unchecked",
     "breadth",
     "first",
     "search",
     "predecessors",
-    "parallel",
     "id",
     "distances",
-    "ids",
     "sequential",
     "path",
     "k",
@@ -17564,15 +17569,10 @@ pub const GRAPH_TERMS: &[&str] = &[
     "weight",
     "maximum",
     "minimum",
-    "singleton",
-    "nodes",
-    "selfloops",
     "unique",
     "build",
     "prefixes",
-    "types",
     "type",
-    "isomorphic",
     "groups",
     "has",
     "triangles",
@@ -17633,7 +17633,6 @@ pub const GRAPH_TERMS: &[&str] = &[
     "must",
     "not",
     "contain",
-    "unknown",
     "have",
     "ontologies",
     "be",
@@ -17643,11 +17642,6 @@ pub const GRAPH_TERMS: &[&str] = &[
     "connected",
     "share",
     "vocabulary",
-    "filter",
-    "remove",
-    "tendrils",
-    "with",
-    "disconnected",
     "components",
     "density",
     "rate",
@@ -17794,6 +17788,62 @@ pub const GRAPH_TERMS: &[&str] = &[
 ];
 
 pub const GRAPH_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
+    &[
+        ("filter", 3.5501735),
+        ("from", 0.6389996),
+        ("ids", 0.9801832),
+    ],
+    &[
+        ("filter", 3.5501735),
+        ("from", 0.6389996),
+        ("names", 1.2773432),
+    ],
+    &[
+        ("node", 0.25159243),
+        ("remove", 1.2648585),
+        ("types", 0.9072675),
+        ("unknown", 1.5268838),
+    ],
+    &[
+        ("edge", 0.5712128),
+        ("remove", 1.2648585),
+        ("types", 0.9072675),
+        ("unknown", 1.5268838),
+    ],
+    &[
+        ("nodes", 1.7324396),
+        ("remove", 1.8404913),
+        ("singleton", 1.9505663),
+    ],
+    &[("remove", 2.840816), ("tendrils", 5.4797273)],
+    &[
+        ("dendritic", 3.5501735),
+        ("remove", 1.8404913),
+        ("trees", 3.5501735),
+    ],
+    &[
+        ("isomorphic", 2.1355388),
+        ("nodes", 1.7324396),
+        ("remove", 1.8404913),
+    ],
+    &[
+        ("nodes", 0.8605559),
+        ("remove", 0.91422844),
+        ("selfloops", 1.1912966),
+        ("singleton", 0.9689061),
+        ("with", 1.0607876),
+    ],
+    &[
+        ("disconnected", 3.1790843),
+        ("nodes", 1.7324396),
+        ("remove", 1.8404913),
+    ],
+    &[("remove", 2.840816), ("selfloops", 3.7017603)],
+    &[
+        ("edges", 2.1355388),
+        ("parallel", 3.0523942),
+        ("remove", 1.8404913),
+    ],
     &[("chains", 5.977511), ("get", 0.3656394)],
     &[("circles", 5.977511), ("get", 0.3656394)],
     &[
@@ -19979,62 +20029,6 @@ pub const GRAPH_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
         ("vocabulary", 2.6614554),
     ],
     &[
-        ("filter", 3.5501735),
-        ("from", 0.6389996),
-        ("ids", 0.9801832),
-    ],
-    &[
-        ("filter", 3.5501735),
-        ("from", 0.6389996),
-        ("names", 1.2773432),
-    ],
-    &[
-        ("node", 0.25159243),
-        ("remove", 1.2648585),
-        ("types", 0.9072675),
-        ("unknown", 1.5268838),
-    ],
-    &[
-        ("edge", 0.5712128),
-        ("remove", 1.2648585),
-        ("types", 0.9072675),
-        ("unknown", 1.5268838),
-    ],
-    &[
-        ("nodes", 1.7324396),
-        ("remove", 1.8404913),
-        ("singleton", 1.9505663),
-    ],
-    &[("remove", 2.840816), ("tendrils", 5.4797273)],
-    &[
-        ("dendritic", 3.5501735),
-        ("remove", 1.8404913),
-        ("trees", 3.5501735),
-    ],
-    &[
-        ("isomorphic", 2.1355388),
-        ("nodes", 1.7324396),
-        ("remove", 1.8404913),
-    ],
-    &[
-        ("nodes", 0.8605559),
-        ("remove", 0.91422844),
-        ("selfloops", 1.1912966),
-        ("singleton", 0.9689061),
-        ("with", 1.0607876),
-    ],
-    &[
-        ("disconnected", 3.1790843),
-        ("nodes", 1.7324396),
-        ("remove", 1.8404913),
-    ],
-    &[("remove", 2.840816), ("selfloops", 3.7017603)],
-    &[
-        ("edges", 2.1355388),
-        ("parallel", 3.0523942),
-        ("remove", 1.8404913),
-    ],
-    &[
         ("components", 1.5791485),
         ("connected", 1.2849048),
         ("get", 0.11766968),
@@ -22181,6 +22175,207 @@ pub const GRAPH_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
         ("propagation", 1.3275645),
     ],
     &[
+        ("connected", 0.96728855),
+        ("from", 0.23894978),
+        ("id", 0.40118617),
+        ("is", 0.8820594),
+        ("node", 0.13689749),
+        ("unchecked", 0.4964435),
+    ],
+    &[
+        ("connected", 1.2849048),
+        ("from", 0.31741068),
+        ("id", 0.5329186),
+        ("is", 1.1716901),
+        ("node", 0.18184876),
+    ],
+    &[
+        ("disconnected", 0.9246339),
+        ("from", 0.18585248),
+        ("id", 0.31203815),
+        ("is", 0.686056),
+        ("node", 0.1983836),
+        ("unchecked", 0.38612825),
+    ],
+    &[
+        ("from", 0.23894978),
+        ("id", 0.40118617),
+        ("is", 0.8820594),
+        ("node", 0.13689749),
+        ("singleton", 0.7294017),
+        ("unchecked", 0.4964435),
+    ],
+    &[
+        ("from", 0.31741068),
+        ("id", 0.5329186),
+        ("is", 1.1716901),
+        ("node", 0.18184876),
+        ("singleton", 0.9689061),
+    ],
+    &[
+        ("from", 0.14842552),
+        ("id", 0.24919994),
+        ("is", 0.5478981),
+        ("node", 0.085034944),
+        ("selfloops", 0.5570664),
+        ("singleton", 0.4530736),
+        ("unchecked", 0.3083698),
+        ("with", 0.49603865),
+    ],
+    &[
+        ("from", 0.18585248),
+        ("id", 0.31203815),
+        ("is", 0.686056),
+        ("node", 0.10647734),
+        ("selfloops", 0.6975362),
+        ("singleton", 0.5673205),
+        ("with", 0.6211197),
+    ],
+    &[
+        ("from", 0.23894978),
+        ("is", 0.8820594),
+        ("name", 0.5602063),
+        ("node", 0.13689749),
+        ("singleton", 0.7294017),
+        ("unchecked", 0.4964435),
+    ],
+    &[
+        ("from", 0.31741068),
+        ("is", 1.1716901),
+        ("name", 0.7441541),
+        ("node", 0.18184876),
+        ("singleton", 0.9689061),
+    ],
+    &[("has", 1.581708), ("name", 1.4981039), ("node", 0.3660913)],
+    &[
+        ("has", 1.0870123),
+        ("id", 0.73730654),
+        ("node", 0.25159243),
+        ("type", 0.7271371),
+    ],
+    &[
+        ("has", 1.0870123),
+        ("name", 1.0295563),
+        ("node", 0.25159243),
+        ("type", 0.7271371),
+    ],
+    &[
+        ("edge", 0.5712128),
+        ("has", 1.0870123),
+        ("id", 0.73730654),
+        ("type", 0.7271371),
+    ],
+    &[
+        ("edge", 0.5712128),
+        ("has", 1.0870123),
+        ("name", 1.0295563),
+        ("type", 0.7271371),
+    ],
+    &[
+        ("edge", 0.41286755),
+        ("from", 0.31741068),
+        ("has", 0.7856828),
+        ("ids", 0.48688704),
+        ("node", 0.18184876),
+    ],
+    &[
+        ("from", 0.31741068),
+        ("has", 0.7856828),
+        ("id", 0.5329186),
+        ("node", 0.18184876),
+        ("selfloop", 1.5162177),
+    ],
+    &[
+        ("and", 0.44715515),
+        ("edge", 0.30073074),
+        ("from", 0.121134266),
+        ("has", 0.29984218),
+        ("id", 0.20337911),
+        ("ids", 0.18581197),
+        ("node", 0.069399424),
+        ("type", 0.20057397),
+    ],
+    &[
+        ("from", 0.18585248),
+        ("id", 0.31203815),
+        ("is", 0.686056),
+        ("node", 0.1983836),
+        ("trap", 0.83083475),
+        ("unchecked", 0.38612825),
+    ],
+    &[
+        ("from", 0.23894978),
+        ("id", 0.40118617),
+        ("is", 0.8820594),
+        ("node", 0.25017056),
+        ("trap", 1.0682008),
+    ],
+    &[
+        ("are", 1.1887981),
+        ("from", 0.23894978),
+        ("ids", 0.3665332),
+        ("isomorphic", 0.798571),
+        ("node", 0.13689749),
+        ("unchecked", 0.4964435),
+    ],
+    &[
+        ("are", 1.5791485),
+        ("from", 0.31741068),
+        ("ids", 0.48688704),
+        ("isomorphic", 1.0607876),
+        ("node", 0.18184876),
+    ],
+    &[
+        ("are", 1.5791485),
+        ("from", 0.31741068),
+        ("isomorphic", 1.0607876),
+        ("names", 0.6344955),
+        ("node", 0.18184876),
+    ],
+    &[
+        ("and", 0.686056),
+        ("has", 0.4600384),
+        ("name", 0.8118173),
+        ("node", 0.1983836),
+        ("type", 0.3077343),
+    ],
+    &[
+        ("edge", 0.41286755),
+        ("from", 0.31741068),
+        ("has", 0.7856828),
+        ("names", 0.6344955),
+        ("node", 0.18184876),
+    ],
+    &[
+        ("and", 0.44715515),
+        ("edge", 0.30073074),
+        ("from", 0.121134266),
+        ("has", 0.29984218),
+        ("name", 0.28399348),
+        ("names", 0.24214418),
+        ("node", 0.069399424),
+        ("type", 0.20057397),
+    ],
+    &[
+        ("and", 0.44715515),
+        ("edge", 0.30073074),
+        ("from", 0.121134266),
+        ("has", 0.29984218),
+        ("id", 0.38817534),
+        ("node", 0.069399424),
+        ("type", 0.20057397),
+    ],
+    &[
+        ("and", 0.37157905),
+        ("edge", 0.25184727),
+        ("from", 0.10066071),
+        ("has", 0.24916425),
+        ("id", 0.32507783),
+        ("node", 0.057669852),
+        ("type", 0.16667388),
+        ("unchecked", 0.20913331),
+    ],
+    &[
         ("default", 2.6614554),
         ("graph", 1.3269466),
         ("has", 1.0870123),
@@ -22485,207 +22680,6 @@ pub const GRAPH_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
         ("requirements", 0.6845063),
         ("total", 0.58861136),
         ("types", 0.30664453),
-    ],
-    &[
-        ("connected", 0.96728855),
-        ("from", 0.23894978),
-        ("id", 0.40118617),
-        ("is", 0.8820594),
-        ("node", 0.13689749),
-        ("unchecked", 0.4964435),
-    ],
-    &[
-        ("connected", 1.2849048),
-        ("from", 0.31741068),
-        ("id", 0.5329186),
-        ("is", 1.1716901),
-        ("node", 0.18184876),
-    ],
-    &[
-        ("disconnected", 0.9246339),
-        ("from", 0.18585248),
-        ("id", 0.31203815),
-        ("is", 0.686056),
-        ("node", 0.1983836),
-        ("unchecked", 0.38612825),
-    ],
-    &[
-        ("from", 0.23894978),
-        ("id", 0.40118617),
-        ("is", 0.8820594),
-        ("node", 0.13689749),
-        ("singleton", 0.7294017),
-        ("unchecked", 0.4964435),
-    ],
-    &[
-        ("from", 0.31741068),
-        ("id", 0.5329186),
-        ("is", 1.1716901),
-        ("node", 0.18184876),
-        ("singleton", 0.9689061),
-    ],
-    &[
-        ("from", 0.14842552),
-        ("id", 0.24919994),
-        ("is", 0.5478981),
-        ("node", 0.085034944),
-        ("selfloops", 0.5570664),
-        ("singleton", 0.4530736),
-        ("unchecked", 0.3083698),
-        ("with", 0.49603865),
-    ],
-    &[
-        ("from", 0.18585248),
-        ("id", 0.31203815),
-        ("is", 0.686056),
-        ("node", 0.10647734),
-        ("selfloops", 0.6975362),
-        ("singleton", 0.5673205),
-        ("with", 0.6211197),
-    ],
-    &[
-        ("from", 0.23894978),
-        ("is", 0.8820594),
-        ("name", 0.5602063),
-        ("node", 0.13689749),
-        ("singleton", 0.7294017),
-        ("unchecked", 0.4964435),
-    ],
-    &[
-        ("from", 0.31741068),
-        ("is", 1.1716901),
-        ("name", 0.7441541),
-        ("node", 0.18184876),
-        ("singleton", 0.9689061),
-    ],
-    &[("has", 1.581708), ("name", 1.4981039), ("node", 0.3660913)],
-    &[
-        ("has", 1.0870123),
-        ("id", 0.73730654),
-        ("node", 0.25159243),
-        ("type", 0.7271371),
-    ],
-    &[
-        ("has", 1.0870123),
-        ("name", 1.0295563),
-        ("node", 0.25159243),
-        ("type", 0.7271371),
-    ],
-    &[
-        ("edge", 0.5712128),
-        ("has", 1.0870123),
-        ("id", 0.73730654),
-        ("type", 0.7271371),
-    ],
-    &[
-        ("edge", 0.5712128),
-        ("has", 1.0870123),
-        ("name", 1.0295563),
-        ("type", 0.7271371),
-    ],
-    &[
-        ("edge", 0.41286755),
-        ("from", 0.31741068),
-        ("has", 0.7856828),
-        ("ids", 0.48688704),
-        ("node", 0.18184876),
-    ],
-    &[
-        ("from", 0.31741068),
-        ("has", 0.7856828),
-        ("id", 0.5329186),
-        ("node", 0.18184876),
-        ("selfloop", 1.5162177),
-    ],
-    &[
-        ("and", 0.44715515),
-        ("edge", 0.30073074),
-        ("from", 0.121134266),
-        ("has", 0.29984218),
-        ("id", 0.20337911),
-        ("ids", 0.18581197),
-        ("node", 0.069399424),
-        ("type", 0.20057397),
-    ],
-    &[
-        ("from", 0.18585248),
-        ("id", 0.31203815),
-        ("is", 0.686056),
-        ("node", 0.1983836),
-        ("trap", 0.83083475),
-        ("unchecked", 0.38612825),
-    ],
-    &[
-        ("from", 0.23894978),
-        ("id", 0.40118617),
-        ("is", 0.8820594),
-        ("node", 0.25017056),
-        ("trap", 1.0682008),
-    ],
-    &[
-        ("are", 1.1887981),
-        ("from", 0.23894978),
-        ("ids", 0.3665332),
-        ("isomorphic", 0.798571),
-        ("node", 0.13689749),
-        ("unchecked", 0.4964435),
-    ],
-    &[
-        ("are", 1.5791485),
-        ("from", 0.31741068),
-        ("ids", 0.48688704),
-        ("isomorphic", 1.0607876),
-        ("node", 0.18184876),
-    ],
-    &[
-        ("are", 1.5791485),
-        ("from", 0.31741068),
-        ("isomorphic", 1.0607876),
-        ("names", 0.6344955),
-        ("node", 0.18184876),
-    ],
-    &[
-        ("and", 0.686056),
-        ("has", 0.4600384),
-        ("name", 0.8118173),
-        ("node", 0.1983836),
-        ("type", 0.3077343),
-    ],
-    &[
-        ("edge", 0.41286755),
-        ("from", 0.31741068),
-        ("has", 0.7856828),
-        ("names", 0.6344955),
-        ("node", 0.18184876),
-    ],
-    &[
-        ("and", 0.44715515),
-        ("edge", 0.30073074),
-        ("from", 0.121134266),
-        ("has", 0.29984218),
-        ("name", 0.28399348),
-        ("names", 0.24214418),
-        ("node", 0.069399424),
-        ("type", 0.20057397),
-    ],
-    &[
-        ("and", 0.44715515),
-        ("edge", 0.30073074),
-        ("from", 0.121134266),
-        ("has", 0.29984218),
-        ("id", 0.38817534),
-        ("node", 0.069399424),
-        ("type", 0.20057397),
-    ],
-    &[
-        ("and", 0.37157905),
-        ("edge", 0.25184727),
-        ("from", 0.10066071),
-        ("has", 0.24916425),
-        ("id", 0.32507783),
-        ("node", 0.057669852),
-        ("type", 0.16667388),
-        ("unchecked", 0.20913331),
     ],
 ];
 

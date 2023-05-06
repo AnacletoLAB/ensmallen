@@ -1,14 +1,16 @@
 use super::*;
 use atomic_float::AtomicF32;
+use bitvec::prelude::*;
 use indicatif::ParallelProgressIterator;
 use indicatif::ProgressIterator;
 use itertools::Itertools;
 use num_traits::pow::Pow;
 use num_traits::Zero;
-use parallel_frontier::Frontier;
+use parallel_frontier::prelude::*;
 use rayon::iter::IndexedParallelIterator;
 use rayon::iter::IntoParallelRefIterator;
 use rayon::iter::{IntoParallelRefMutIterator, ParallelIterator};
+use std::cell::SyncUnsafeCell;
 use std::sync::atomic::Ordering;
 use std::sync::atomic::{AtomicU32, AtomicU64};
 
@@ -146,26 +148,55 @@ impl Graph {
 
     /// Return parallel iterator over closeness centrality for all nodes.
     ///
-    /// # Arguments
-    /// * `verbose`: Option<bool> - Whether to show an indicative progress bar.
-    ///
     /// # References
     /// The metric is described in [Centrality in Social Networks by Freeman](https://www.bebr.ufl.edu/sites/default/files/Centrality%20in%20Social%20Networks.pdf)
-    pub fn par_iter_closeness_centrality(
+    pub fn get_closeness_centrality(
         &self,
-        verbose: Option<bool>,
-    ) -> impl ParallelIterator<Item = f32> + '_ {
-        let verbose = verbose.unwrap_or(true);
-        let pb = get_loading_bar(
-            verbose,
-            "Computing closeness centrality",
-            self.get_number_of_nodes() as usize,
-        );
-        self.par_iter_node_ids()
-            .progress_with(pb)
-            .map(move |node_id| unsafe {
-                self.get_unchecked_closeness_centrality_from_node_id(node_id)
-            })
+    ) -> Vec<f32> {
+
+        let primary_frontier: SyncUnsafeCell<Vec<Vec<NodeT>>> = SyncUnsafeCell::from((0..rayon::current_num_threads().max(1)).map(|_| {
+            Vec::default()
+        }).collect::<Vec<Vec<NodeT>>>());
+        let secondary_frontier: SyncUnsafeCell<Vec<Vec<NodeT>>> = SyncUnsafeCell::from((0..rayon::current_num_threads().max(1)).map(|_| {
+            Vec::default()
+        }).collect::<Vec<Vec<NodeT>>>());
+        let visited: SyncUnsafeCell<Vec<BitVec<u64>>> = SyncUnsafeCell::from((0..rayon::current_num_threads().max(1)).map(|_| {
+            bitvec![u64, Lsb0; 0; self.get_number_of_nodes() as usize]
+        }).collect::<Vec<BitVec<u64>>>());
+        let mut centralities = vec![0.0; self.get_number_of_nodes() as usize];
+
+        centralities.par_iter_mut().enumerate()
+            .for_each(move |(root, centrality)| unsafe {
+                let mut current_depth = 0;
+                let mut total_distance = 0;
+                let thread_id = rayon::current_thread_index().unwrap_or(0);
+                let primary = &mut (*primary_frontier.get())[thread_id];
+                let secondary = &mut (*secondary_frontier.get())[thread_id];
+                let visited = &mut (*visited.get())[thread_id];
+                visited.fill(false);
+                primary.push(root as NodeT);
+                visited.set(root as usize, true);
+                while !primary.is_empty() {
+                    current_depth += 1;
+                    primary.iter().for_each(|src|{
+                        self.iter_unchecked_neighbour_node_ids_from_source_node_id(*src)
+                            .for_each(|dst| {
+                                // If the node was not previously visited
+                                if !visited.replace_unchecked(dst as usize, true) {
+                                    // add the node to the nodes to explore
+                                    secondary.push(dst);
+                                }
+                            });
+                    });
+
+                    total_distance += current_depth * secondary.len();
+
+                    primary.set_len(0);
+                    std::mem::swap(primary, secondary);
+                }
+                *centrality = 1.0 / total_distance as f32;
+            });
+            centralities
     }
 
     /// Return parallel iterator over closeness centrality for all nodes.
@@ -219,17 +250,6 @@ impl Graph {
                     use_edge_weights_as_probabilities,
                 )
             }))
-    }
-
-    /// Return closeness centrality for all nodes.
-    ///
-    /// # Arguments
-    /// * `verbose`: Option<bool> - Whether to show an indicative progress bar.
-    ///
-    /// # References
-    /// The metric is described in [Centrality in Social Networks by Freeman](https://www.bebr.ufl.edu/sites/default/files/Centrality%20in%20Social%20Networks.pdf)
-    pub fn get_closeness_centrality(&self, verbose: Option<bool>) -> Vec<f32> {
-        self.par_iter_closeness_centrality(verbose).collect()
     }
 
     /// Return closeness centrality for all nodes.

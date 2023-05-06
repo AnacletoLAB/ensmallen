@@ -1,8 +1,7 @@
 use super::*;
 use indicatif::ParallelProgressIterator;
 use num_traits::{PrimInt, Zero};
-use parallel_frontier::Frontier;
-use rayon::prelude::*;
+use parallel_frontier::prelude::*;
 use std::cmp::Ord;
 use std::collections::VecDeque;
 use std::convert::TryFrom;

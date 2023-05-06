@@ -14,6 +14,7 @@
 #![feature(string_remove_matches)]
 #![feature(exit_status_error)]
 #![feature(core_intrinsics)]
+#![feature(sync_unsafe_cell)]
 #![feature(pattern)]
 #![deny(unconditional_recursion)]
 #![type_length_limit = "3764086"]
