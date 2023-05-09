@@ -128,19 +128,19 @@ pub(crate) fn parse_types<TypeT: ToFromUsize>(
                     );
                 }
             }
-            let minimum_node_ids = minimum_type_id.unwrap_or(min);
+            let minimum_node_id = minimum_type_id.unwrap_or(min);
 
-            if min < minimum_node_ids {
+            if min < minimum_node_id {
                 return Err(format!(
                     concat!(
                         "The given minimum id {:?} is higher ",
                         "than the minimum id found in the iterator {:?}."
                     ),
-                    minimum_node_ids, min
+                    minimum_node_id, min
                 ));
             }
 
-            Ok(Some(Vocabulary::from_range(minimum_node_ids..TypeT::from_usize(TypeT::to_usize(max)+1))))
+            Ok(Some(Vocabulary::from_range(minimum_node_id..TypeT::from_usize(TypeT::to_usize(max)+1))))
         }
         (None, Some(ntn), true, None, _) => {
             Ok(Some(Vocabulary::from_range(TypeT::from_usize(0)..ntn)))

@@ -215,6 +215,7 @@ impl Graph {
             .iter_unchecked_neighbour_node_ids_from_source_node_id(src)
     }
 
+    #[inline(always)]
     /// Return iterator over edge type ids of the edges connected to the given source node id.
     ///
     /// # Arguments

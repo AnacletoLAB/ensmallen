@@ -15,11 +15,11 @@ pub(crate) fn parse_nodes(
     node_list_is_correct: bool,
     numeric_node_ids: bool,
     numeric_node_list_node_type_ids: bool,
-    minimum_node_ids: Option<NodeT>,
+    minimum_node_id: Option<NodeT>,
     skip_node_types_if_unavailable: Option<bool>,
 ) -> Result<(Vocabulary<NodeT>, Option<NodeTypeVocabulary>)> {
     let skip_node_types_if_unavailable = skip_node_types_if_unavailable.unwrap_or(false);
-    if !numeric_node_ids && minimum_node_ids.is_some() {
+    if !numeric_node_ids && minimum_node_id.is_some() {
         return Err(
             "Giving the minimum id is not meaningfull when numeric_ids is false.".to_string(),
         );
@@ -71,7 +71,7 @@ pub(crate) fn parse_nodes(
         nodes_iterator,
         nodes_number,
         numeric_node_ids,
-        minimum_node_ids,
+        minimum_node_id,
         node_list_is_correct,
     ) {
         // When the nodes iterator was provided, and the node IDs are expected
@@ -233,15 +233,15 @@ pub(crate) fn parse_nodes(
 
                 (min, max)
             };
-            let minimum_node_ids = minimum_node_ids.unwrap_or(min);
+            let minimum_node_id = minimum_node_id.unwrap_or(min);
 
-            if min < minimum_node_ids {
+            if min < minimum_node_id {
                 return Err(format!(
                     concat!(
                         "The given minimum id {:?} is higher ",
                         "than the minimum id found in the iterator {:?}."
                     ),
-                    minimum_node_ids, min
+                    minimum_node_id, min
                 ));
             }
 
@@ -251,7 +251,7 @@ pub(crate) fn parse_nodes(
             }
 
             Ok((
-                Vocabulary::from_range(min.min(minimum_node_ids)..(max + 1)),
+                Vocabulary::from_range(min.min(minimum_node_id)..(max + 1)),
                 None,
                 Some(node_type_vocabulary),
             ))
@@ -272,7 +272,7 @@ pub(crate) fn parse_nodes(
             Ok((Vocabulary::from_range(min_val..max), None, None))
         }
         (None, None, true, _, _) => {
-            let min = minimum_node_ids.unwrap_or(0);
+            let min = minimum_node_id.unwrap_or(0);
             Ok((Vocabulary::from_range(min..min), None, None))
         }
         (None, Some(ntn), false, None, _) => {

@@ -12,7 +12,7 @@ pub struct FromStringsParameters {
     pub nodes_number: Option<u8>,
     pub numeric_node_ids: bool,
     pub numeric_node_list_node_type_ids: bool,
-    pub minimum_node_ids: Option<NodeT>,
+    pub minimum_node_id: Option<NodeT>,
     pub edge_types_number: Option<u8>,
     pub numeric_edge_type_ids: Option<bool>,
     pub minimum_edge_type_id: Option<EdgeTypeT>,
@@ -72,7 +72,7 @@ pub fn build_graph_from_strings_harness(data: FromStringsParameters) -> Result<(
         nodes_number,
         numeric_node_ids,
         numeric_node_list_node_type_ids,
-        minimum_node_ids,
+        minimum_node_id,
         edge_types_number,
         numeric_edge_type_ids,
         minimum_edge_type_id,
@@ -144,7 +144,7 @@ pub fn build_graph_from_strings_harness(data: FromStringsParameters) -> Result<(
         false,
         numeric_node_ids,
         numeric_node_list_node_type_ids,
-        minimum_node_ids,
+        minimum_node_id,
         to_iter_wrapper!(
             edge_types_iterator_is_parallel,
             edge_types_iterator.map(|edge_types_iterator| edge_types_iterator

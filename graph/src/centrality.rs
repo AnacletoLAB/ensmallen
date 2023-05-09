@@ -13,6 +13,7 @@ use rayon::iter::{IntoParallelRefMutIterator, ParallelIterator};
 use std::cell::SyncUnsafeCell;
 use std::sync::atomic::Ordering;
 use std::sync::atomic::{AtomicU32, AtomicU64};
+use visited_rs::prelude::*;
 
 #[inline(always)]
 unsafe fn non_temporal_store<T>(ptr: &mut T, value: T) {
@@ -150,53 +151,42 @@ impl Graph {
     ///
     /// # References
     /// The metric is described in [Centrality in Social Networks by Freeman](https://www.bebr.ufl.edu/sites/default/files/Centrality%20in%20Social%20Networks.pdf)
-    pub fn get_closeness_centrality(
-        &self,
-    ) -> Vec<f32> {
-
-        let primary_frontier: SyncUnsafeCell<Vec<Vec<NodeT>>> = SyncUnsafeCell::from((0..rayon::current_num_threads().max(1)).map(|_| {
-            Vec::default()
-        }).collect::<Vec<Vec<NodeT>>>());
-        let secondary_frontier: SyncUnsafeCell<Vec<Vec<NodeT>>> = SyncUnsafeCell::from((0..rayon::current_num_threads().max(1)).map(|_| {
-            Vec::default()
-        }).collect::<Vec<Vec<NodeT>>>());
-        let visited: SyncUnsafeCell<Vec<BitVec<u64>>> = SyncUnsafeCell::from((0..rayon::current_num_threads().max(1)).map(|_| {
-            bitvec![u64, Lsb0; 0; self.get_number_of_nodes() as usize]
-        }).collect::<Vec<BitVec<u64>>>());
+    pub fn get_closeness_centrality(&self) -> Vec<f32> {
+        let visited: SyncUnsafeCell<Vec<Visited<u16>>> = SyncUnsafeCell::from(
+            (0..rayon::current_num_threads().max(1))
+                .map(|_| Visited::zero(self.get_number_of_nodes() as usize))
+                .collect::<Vec<Visited<u16>>>(),
+        );
         let mut centralities = vec![0.0; self.get_number_of_nodes() as usize];
 
-        centralities.par_iter_mut().enumerate()
-            .for_each(move |(root, centrality)| unsafe {
+        centralities
+            .par_iter_mut()
+            .enumerate()
+            .for_each(move |(root, centrality)| {
                 let mut current_depth = 0;
                 let mut total_distance = 0;
                 let thread_id = rayon::current_thread_index().unwrap_or(0);
-                let primary = &mut (*primary_frontier.get())[thread_id];
-                let secondary = &mut (*secondary_frontier.get())[thread_id];
-                let visited = &mut (*visited.get())[thread_id];
-                visited.fill(false);
-                primary.push(root as NodeT);
-                visited.set(root as usize, true);
-                while !primary.is_empty() {
+                let mut frontier = vec![root as NodeT];
+                let visited = unsafe { &mut (*visited.get())[thread_id] };
+                visited.set_visited(root);
+                while !frontier.is_empty() {
                     current_depth += 1;
-                    primary.iter().for_each(|src|{
-                        self.iter_unchecked_neighbour_node_ids_from_source_node_id(*src)
-                            .for_each(|dst| {
-                                // If the node was not previously visited
-                                if !visited.replace_unchecked(dst as usize, true) {
-                                    // add the node to the nodes to explore
-                                    secondary.push(dst);
-                                }
-                            });
-                    });
+                    frontier = frontier
+                        .into_iter()
+                        .flat_map(|src| unsafe {
+                            self.iter_unchecked_neighbour_node_ids_from_source_node_id(src)
+                        })
+                        .filter(|&dst| !visited.set_and_get_visited(dst))
+                        .collect::<Vec<NodeT>>();
 
-                    total_distance += current_depth * secondary.len();
-
-                    primary.set_len(0);
-                    std::mem::swap(primary, secondary);
+                    total_distance += current_depth * frontier.len();
                 }
-                *centrality = 1.0 / total_distance as f32;
+                if !total_distance.is_zero() {
+                    *centrality = 1.0 / total_distance as f32;
+                }
+                visited.clear();
             });
-            centralities
+        centralities
     }
 
     /// Return parallel iterator over closeness centrality for all nodes.
