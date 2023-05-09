@@ -2,7 +2,6 @@ use graph::{Graph, NodeT, NodeTypeT};
 use indicatif::{ParallelProgressIterator, ProgressBar, ProgressStyle};
 use num_traits::{AsPrimitive, Float};
 use parallel_frontier::prelude::*;
-use rayon::prelude::*;
 use std::{
     collections::HashMap,
     sync::atomic::{AtomicBool, Ordering},

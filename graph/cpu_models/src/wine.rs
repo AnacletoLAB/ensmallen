@@ -3,7 +3,6 @@ use core::sync::atomic::Ordering;
 use graph::{Graph, NodeT};
 use num_traits::Atomic;
 use parallel_frontier::prelude::*;
-use rayon::prelude::*;
 
 #[derive(Clone, Debug)]
 pub struct BasicWINE {

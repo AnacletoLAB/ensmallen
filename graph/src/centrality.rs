@@ -1,6 +1,5 @@
 use super::*;
 use atomic_float::AtomicF32;
-use bitvec::prelude::*;
 use indicatif::ParallelProgressIterator;
 use indicatif::ProgressIterator;
 use itertools::Itertools;
