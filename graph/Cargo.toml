@@ -72,8 +72,8 @@ windows = { version = "0.32.0", features = ["alloc",  "Win32_System_Memory", "Wi
 [profile.release]
 opt-level = 3
 lto = "fat"
-overflow-checks = true   # Disable integer overflow checks.
-debug = true            # Include debug info.
+overflow-checks = false   # Disable integer overflow checks.
+debug = false            # Include debug info.
 debug-assertions = false  # Enables debug assertions.
 
 [profile.test]

@@ -124,7 +124,7 @@ def compile_target(target_name, target_settings, WHEELS_FOLDER, settings):
     
     print(environment)
 
-    strip = ""# "--strip"
+    strip = "--strip"
 
     exec(
         "maturin build --release {strip} {zig} --out {target_dir}".format(
