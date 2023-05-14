@@ -153,8 +153,15 @@ impl Graph {
         // Use a Rayon thread pool to distribute the work across multiple threads
         pool.scope(|s| {
             // We spawn a thread for each bucket
-            (0..node_counters.len()).for_each(|thread_id| {
+            (0..node_counters.len()).for_each(|_| {
                 s.spawn(|_| {
+                    // We get the thread id
+                    let thread_id = rayon::current_thread_index().expect(concat!(
+                        "current_thread_id not called ",
+                        "from a rayon thread. ",
+                        "This should not be possible because ",
+                        "this is in a Rayon Thread Pool."
+                    ));
                     // Until we have not reached convergence
                     'outer: while !convergence_flag.load(Ordering::Relaxed) {
                         // We reset the convergence flag for this thread
