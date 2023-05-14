@@ -120,6 +120,14 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
         }
     }
 
+    /// Returns the minimum id of the vocabulary.
+    pub fn get_minimum_id(&self) -> Option<IndexT> {
+        match self {
+            Vocabulary::Numeric { range, .. } => Some(IndexT::from_usize(range.start)),
+            Vocabulary::String { map, .. } => map.values().min().cloned(),
+        }
+    }
+
     // TODO! properly extend Iterator
     pub fn iter(&self) -> impl Iterator<Item = (IndexT, String)> + '_ {
         self.iter_keys()
