@@ -5,7 +5,7 @@ use rayon::iter::ParallelIterator;
 impl Graph {
     /// Compute the maximum and minimum edge weight and cache it
     fn compute_edge_weights_properties(&self) {
-        let mut cache = unsafe { &mut (*self.cache.get()) };
+        let cache = unsafe { &mut (*self.cache.get()) };
 
         let (min, max, total) = match self.par_iter_directed_edge_weights() {
             Ok(iter) => {
@@ -78,7 +78,7 @@ impl Graph {
 
     /// Compute the maximum and minimum node degree and cache it
     fn compute_max_and_min_node_degree(&self) {
-        let mut cache = unsafe { &mut (*self.cache.get()) };
+        let cache = unsafe { &mut (*self.cache.get()) };
 
         let (min, max) = self.par_iter_node_degrees().map(|w| (w, w)).reduce(
             || (NodeT::MAX, 0),
@@ -111,7 +111,7 @@ impl Graph {
 
     /// Compute the maximum and minimum weighted node degree and cache it
     fn compute_max_and_min_weighted_node_degree(&self) {
-        let mut cache = unsafe { &mut (*self.cache.get()) };
+        let cache = unsafe { &mut (*self.cache.get()) };
 
         let (min, max, weighted_singleton_nodes_number) =
             match self.par_iter_weighted_node_degrees() {
@@ -195,7 +195,7 @@ impl Graph {
             })
             .reduce(Info::default, |a, b| a + b);
 
-        let mut cache = unsafe { &mut (*self.cache.get()) };
+        let cache = unsafe { &mut (*self.cache.get()) };
         cache.selfloops_number = Some(info.selfloops_number);
         cache.selfloops_number_unique = Some(info.selfloops_number_unique);
     }

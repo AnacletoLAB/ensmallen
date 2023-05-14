@@ -116,45 +116,77 @@ impl EdgeNodeNamesParser {
     ) -> Result<(usize, (NodeT, NodeT, E, W))> {
         let (line_number, (src_name, dst_name, edge_type_name, weight)) = value?;
         let vocabulary_length = self.get_immutable().len() as NodeT;
-        let src = match src_name.parse::<NodeT>() {
-            Ok(src) => {
-                if src >= vocabulary_length {
-                    Err(format!(
-                        concat!(
-                            "The provided source node {} is higher than the ",
-                            "number of nodes in the current node vocabulary {}.",
-                        ),
-                        src, vocabulary_length
-                    ))
-                } else {
-                    Ok(src)
+        let mut numeric_source_node = 0;
+        let mut numeric_destination_node = 0;
+        for (node_name, node_column, node_id) in [
+            (src_name, "source", &mut numeric_source_node),
+            (dst_name, "destination", &mut numeric_destination_node),
+        ] {
+            *node_id = match node_name.parse::<NodeT>() {
+                Ok(node_id) => {
+                    if node_id >= vocabulary_length {
+                        return Err(format!(
+                            concat!(
+                                "The provided {node_column} node '{node_name}' is being treated as the ",
+                                "number {node_id} since you requested the numeric conversion ",
+                                "of the nodes appearing within the edge list.\n",
+                                "However, the current node vocabulary has length {vocabulary_length}.\n",
+                                "It follows that the number of the node {node_id} is higher than the ",
+                                "number of nodes in the current node vocabulary {vocabulary_length}.\n",
+                                "One possible cause of this is that we are expecting a DENSE RANGE of node ids ",
+                                "for the edge list, starting from zero and ending at {vocabulary_length}.\n",
+                                "At this time, the minimum node ID in your vocabulary is {minimum_node_id}."
+                            ),
+                            node_column=node_column,
+                            node_name=node_name,
+                            node_id=node_id,
+                            vocabulary_length=vocabulary_length,
+                            minimum_node_id=match self.get_immutable().get_minimum_id() {
+                                Some(minimum_node_id) => if minimum_node_id > 0 {
+                                    format!(
+                                        concat!(
+                                            "equal to {minimum_node_id} (which is higher than zero).\n",
+                                            "Therefore your node vocabulary is not compatible ",
+                                            "with the DENSE numeric edge list loading. You likely ",
+                                            "want to densify your node ids in the edge list by shifting ",
+                                            "them by {minimum_node_id}, so to be able to densely load them."
+                                        ),
+                                        minimum_node_id=minimum_node_id
+                                    )
+                                } else {
+                                    format!(
+                                        concat!(
+                                            "already equal to zero, making this error peculiar. ",
+                                            "Please open an issue on the GRAPE GitHub repository."
+                                        ),
+                                    )
+                                },
+                                None => unreachable!(
+                                    "The node vocabulary should have a minimum node ID at this point."
+                                )
+                            }
+                        ));
+                    } else {
+                        node_id
+                    }
                 }
-            }
-            Err(_) => Err(format!(
-                "Unable to parse to integer the provided source node {}.",
-                src_name
-            )),
-        }?;
-        let dst = match dst_name.parse::<NodeT>() {
-            Ok(dst) => {
-                if dst >= vocabulary_length {
-                    Err(format!(
-                        concat!(
-                            "The provided destination node {} is higher than the ",
-                            "number of nodes in the current node vocabulary {}.",
-                        ),
-                        dst, vocabulary_length
+                Err(_) => {
+                    return Err(format!(
+                        "Unable to parse to integer the provided {} node {}.",
+                        node_name, node_id
                     ))
-                } else {
-                    Ok(dst)
                 }
-            }
-            Err(_) => Err(format!(
-                "Unable to parse to integer the provided destination node {}.",
-                dst_name
-            )),
-        }?;
-        Ok((line_number, (src, dst, edge_type_name, weight)))
+            };
+        }
+        Ok((
+            line_number,
+            (
+                numeric_source_node,
+                numeric_destination_node,
+                edge_type_name,
+                weight,
+            ),
+        ))
     }
 
     pub fn to_numeric_unchecked<E, W>(

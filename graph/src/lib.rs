@@ -8,6 +8,7 @@
 //! * `connected_node`: a node which is nor a `singleton` nor a `singleton_with_selfloops`.
 
 #![feature(adt_const_params)]
+#![feature(generic_const_exprs)]
 #![warn(unused_macros)]
 #![feature(drain_filter)]
 #![feature(is_sorted)]
@@ -68,6 +69,7 @@ pub use self::utils::*;
 
 mod bitmaps;
 mod centrality;
+mod hyperball;
 mod dense;
 mod distributions;
 mod edge_list_utils;

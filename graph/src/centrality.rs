@@ -1,6 +1,5 @@
 use super::*;
 use atomic_float::AtomicF32;
-use bitvec::prelude::*;
 use indicatif::ParallelProgressIterator;
 use indicatif::ProgressIterator;
 use itertools::Itertools;
@@ -16,7 +15,7 @@ use std::sync::atomic::{AtomicU32, AtomicU64};
 use visited_rs::prelude::*;
 
 #[inline(always)]
-unsafe fn non_temporal_store<T>(ptr: &mut T, value: T) {
+pub(crate) unsafe fn non_temporal_store<T>(ptr: &mut T, value: T) {
     #[cfg(feature = "nts")]
     std::intrinsics::nontemporal_store(ptr as *mut T, value);
 
