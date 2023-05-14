@@ -184,7 +184,7 @@ impl GraphBuilder {
             false, // node_list_is_correct
             false, // numeric_node_ids
             false, // numeric_node_list_node_type_ids
-            None, // minimum_node_ids
+            None, // minimum_node_id
             None::<ItersWrapper<_, SeqEmpty<_>, ParEmpty<_>>>, // edge_types_iterator
             None, // edge_types_number
             Some(false), // numeric_edge_type_ids

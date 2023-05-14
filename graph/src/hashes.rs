@@ -36,7 +36,6 @@ impl Hasher {
             Hasher::Xxh3(hasher) => hasher.digest() as u32,
             Hasher::SipHash(hasher) => hasher.finish() as u32,
             Hasher::AHasher(hasher) => hasher.finish() as u32,
-            _ => todo!(),
         }
     }
 }
@@ -67,7 +66,6 @@ impl UpdateHash<u16> for Hasher {
             Hasher::AHasher(hasher) => {
                 hasher.write_u16(*value);
             }
-            _ => todo!(),
         }
     }
 }
@@ -94,7 +92,6 @@ impl UpdateHash<u32> for Hasher {
             Hasher::AHasher(hasher) => {
                 hasher.write_u32(*value);
             }
-            _ => todo!(),
         }
     }
 }
@@ -121,7 +118,6 @@ impl UpdateHash<u64> for Hasher {
             Hasher::AHasher(hasher) => {
                 hasher.write_u64(*value);
             }
-            _ => todo!(),
         }
     }
 }
