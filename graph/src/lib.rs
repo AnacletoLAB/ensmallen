@@ -70,6 +70,7 @@ pub use self::utils::*;
 mod bitmaps;
 mod centrality;
 mod hyperball;
+mod hyper_edge_ball;
 mod dense;
 mod distributions;
 mod edge_list_utils;
