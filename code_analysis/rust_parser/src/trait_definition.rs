@@ -29,10 +29,10 @@ impl Parse for TraitDefinition {
         } else  {
             None
         };
-        while data[0] != b'{' {                                                                          
-            data = &data[1..];                                                                           
+        while data[0] != b'{' {
+            data = &data[1..];
         }
-        assert!(data.starts_with(b"{"), );
+        assert!(data.starts_with(b"{"));
         let (data, body) = get_next_matching(data, b'{', b'}');
         (
             data,

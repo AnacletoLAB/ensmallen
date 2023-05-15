@@ -2,8 +2,13 @@
 <head><title>Index of /wikidatawiki/entities/20230424/</title></head>
 <body>
 <h1>Index of /wikidatawiki/entities/20230424/</h1><hr><pre><a href="../">../</a>
+<a href="wikidata-20230424-all-BETA.nt.bz2">wikidata-20230424-all-BETA.nt.bz2</a>                  27-Apr-2023 06:43        158205725509
+<a href="wikidata-20230424-all-BETA.nt.gz">wikidata-20230424-all-BETA.nt.gz</a>                   26-Apr-2023 13:03        204920762168
+<a href="wikidata-20230424-all-BETA.ttl.bz2">wikidata-20230424-all-BETA.ttl.bz2</a>                 26-Apr-2023 18:01        101493522085
+<a href="wikidata-20230424-all-BETA.ttl.gz">wikidata-20230424-all-BETA.ttl.gz</a>                  26-Apr-2023 08:18        123942927864
+<a href="wikidata-20230424-all.json.bz2">wikidata-20230424-all.json.bz2</a>                     26-Apr-2023 15:48         81539742715
 <a href="wikidata-20230424-all.json.gz">wikidata-20230424-all.json.gz</a>                      26-Apr-2023 06:43        123717867013
-<a href="wikidata-20230424-md5sums.txt">wikidata-20230424-md5sums.txt</a>                      26-Apr-2023 08:32                  64
-<a href="wikidata-20230424-sha1sums.txt">wikidata-20230424-sha1sums.txt</a>                     26-Apr-2023 09:20                  72
+<a href="wikidata-20230424-md5sums.txt">wikidata-20230424-md5sums.txt</a>                      27-Apr-2023 08:08                 401
+<a href="wikidata-20230424-sha1sums.txt">wikidata-20230424-sha1sums.txt</a>                     27-Apr-2023 08:56                 449
 </pre><hr></body>
 </html>

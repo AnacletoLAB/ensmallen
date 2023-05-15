@@ -223,6 +223,7 @@ def KGPhenio(
 			- 20230302
 			- 20230307
 			- 20230313
+			- 20230502
 			- current
 			- kg-phenio_hp-vs-mp_semsim_$CUTOFF_VALUE.tar.gz	
 	

@@ -5,15 +5,17 @@ use indicatif::ProgressIterator;
 use itertools::Itertools;
 use num_traits::pow::Pow;
 use num_traits::Zero;
-use parallel_frontier::Frontier;
+use parallel_frontier::prelude::*;
 use rayon::iter::IndexedParallelIterator;
 use rayon::iter::IntoParallelRefIterator;
 use rayon::iter::{IntoParallelRefMutIterator, ParallelIterator};
+use std::cell::SyncUnsafeCell;
 use std::sync::atomic::Ordering;
 use std::sync::atomic::{AtomicU32, AtomicU64};
+use visited_rs::prelude::*;
 
 #[inline(always)]
-unsafe fn non_temporal_store<T>(ptr: &mut T, value: T) {
+pub(crate) unsafe fn non_temporal_store<T>(ptr: &mut T, value: T) {
     #[cfg(feature = "nts")]
     std::intrinsics::nontemporal_store(ptr as *mut T, value);
 
@@ -146,26 +148,44 @@ impl Graph {
 
     /// Return parallel iterator over closeness centrality for all nodes.
     ///
-    /// # Arguments
-    /// * `verbose`: Option<bool> - Whether to show an indicative progress bar.
-    ///
     /// # References
     /// The metric is described in [Centrality in Social Networks by Freeman](https://www.bebr.ufl.edu/sites/default/files/Centrality%20in%20Social%20Networks.pdf)
-    pub fn par_iter_closeness_centrality(
-        &self,
-        verbose: Option<bool>,
-    ) -> impl ParallelIterator<Item = f32> + '_ {
-        let verbose = verbose.unwrap_or(true);
-        let pb = get_loading_bar(
-            verbose,
-            "Computing closeness centrality",
-            self.get_number_of_nodes() as usize,
+    pub fn get_closeness_centrality(&self) -> Vec<f32> {
+        let visited: SyncUnsafeCell<Vec<Visited<u16>>> = SyncUnsafeCell::from(
+            (0..rayon::current_num_threads().max(1))
+                .map(|_| Visited::zero(self.get_number_of_nodes() as usize))
+                .collect::<Vec<Visited<u16>>>(),
         );
-        self.par_iter_node_ids()
-            .progress_with(pb)
-            .map(move |node_id| unsafe {
-                self.get_unchecked_closeness_centrality_from_node_id(node_id)
-            })
+        let mut centralities = vec![0.0; self.get_number_of_nodes() as usize];
+
+        centralities
+            .par_iter_mut()
+            .enumerate()
+            .for_each(move |(root, centrality)| {
+                let mut current_depth = 0;
+                let mut total_distance = 0;
+                let thread_id = rayon::current_thread_index().unwrap_or(0);
+                let mut frontier = vec![root as NodeT];
+                let visited = unsafe { &mut (*visited.get())[thread_id] };
+                visited.set_visited(root);
+                while !frontier.is_empty() {
+                    current_depth += 1;
+                    frontier = frontier
+                        .into_iter()
+                        .flat_map(|src| unsafe {
+                            self.iter_unchecked_neighbour_node_ids_from_source_node_id(src)
+                        })
+                        .filter(|&dst| !visited.set_and_get_visited(dst))
+                        .collect::<Vec<NodeT>>();
+
+                    total_distance += current_depth * frontier.len();
+                }
+                if !total_distance.is_zero() {
+                    *centrality = 1.0 / total_distance as f32;
+                }
+                visited.clear();
+            });
+        centralities
     }
 
     /// Return parallel iterator over closeness centrality for all nodes.
@@ -219,17 +239,6 @@ impl Graph {
                     use_edge_weights_as_probabilities,
                 )
             }))
-    }
-
-    /// Return closeness centrality for all nodes.
-    ///
-    /// # Arguments
-    /// * `verbose`: Option<bool> - Whether to show an indicative progress bar.
-    ///
-    /// # References
-    /// The metric is described in [Centrality in Social Networks by Freeman](https://www.bebr.ufl.edu/sites/default/files/Centrality%20in%20Social%20Networks.pdf)
-    pub fn get_closeness_centrality(&self, verbose: Option<bool>) -> Vec<f32> {
-        self.par_iter_closeness_centrality(verbose).collect()
     }
 
     /// Return closeness centrality for all nodes.

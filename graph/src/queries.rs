@@ -985,6 +985,34 @@ impl Graph {
             .and_then(|ets| ets.ids[edge_id as usize])
     }
 
+    /// Returns edge type name of given edge.
+    ///
+    /// This method will panic if the given edge ID is greater than
+    /// the number of edges in the graph.
+    /// Furthermore, if the graph does NOT have edge types, it will NOT
+    /// return neither an error or a panic.
+    ///
+    /// # Arguments
+    /// * `edge_id`: EdgeT - edge whose edge type is to be returned.
+    ///
+    /// # Example
+    /// ```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
+    ///
+    /// assert_eq!(unsafe{ graph.get_unchecked_edge_type_name_from_edge_id(0) }, Some(0));
+    /// ```
+    ///
+    /// # Safety
+    /// If the given edge ID does not exist in the current graph the method will raise a panic.
+    pub unsafe fn get_unchecked_edge_type_name_from_edge_id(
+        &self,
+        edge_id: EdgeT,
+    ) -> Option<String> {
+        self.get_unchecked_edge_type_name_from_edge_type_id(
+            self.get_unchecked_edge_type_id_from_edge_id(edge_id),
+        )
+    }
+
     /// Returns edge type of given edge.
     ///
     /// # Arguments
