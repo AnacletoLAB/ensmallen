@@ -1173,12 +1173,7 @@ impl Graph {
         };
 
         let mut isomorphic_node_groups: Vec<Vec<NodeT>> = self
-            .par_iter_isomorphic_node_group_ids(None, None, NodeIsomorphismsGenerator::default())
-            .map(|iter| iter.map(|ws| {
-                ws.into_iter().map(|w|{
-                    w.into()
-                }).collect()
-            }).collect())
+            .get_isomorphic_node_ids(None, None, Some("u32"))
             .unwrap_or_else(|_| Vec::new());
 
         isomorphic_node_groups.sort_unstable_by(|group1, group2| unsafe {

@@ -1076,16 +1076,10 @@ impl Graph {
         self.filter_from_ids(
             None,
             Some(
-                self.par_iter_isomorphic_node_group_ids(
+                self.get_flat_repeated_isomorphic_node_ids(
                     minimum_node_degree,
                     number_of_neighbours_for_hash,
-                    NodeIsomorphismsGenerator::default(),
                 )?
-                .flat_map(|mut group| {
-                    group.pop();
-                    group.into_par_iter().map(|w| w.into())
-                })
-                .collect(),
             ),
             None,
             None,

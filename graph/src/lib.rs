@@ -85,7 +85,7 @@ mod hashes;
 mod holdouts;
 mod isomorphism;
 pub mod isomorphism_iter;
-mod node_groups_isomorphism;
+mod edge_isomorphism;
 mod iter_queries;
 mod iters;
 mod modifiers;
@@ -137,7 +137,7 @@ pub use self::types::*;
 pub use self::walks::*;
 pub use self::walks_parameters::*;
 pub use isomorphism::*;
-pub use node_groups_isomorphism::*;
+pub use edge_isomorphism::*;
 pub use preprocessing::*;
 pub use tfidf::*;
 
