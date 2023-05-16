@@ -3,47 +3,27 @@ use crate::hashes::*;
 use crate::isomorphism_iter::EqualBucketsParIter;
 use core::ops::BitOr;
 use itertools::Itertools;
-use num_traits::{AsPrimitive, WrappingShl};
+use num_traits::{AsPrimitive, One, WrappingShl};
 use rayon::prelude::*;
 
 /// The `WordInteger` trait represents a word-sized integer type that satisfies various constraints.
 /// Types implementing this trait must be `Send`, `Sync`, `Eq`, `Copy`, `Ord`, and support the `BitOr` and `WrappingShl` operations.
-/// Additionally, the trait has an associated constant `ONE` representing the value of one for the implementing type.
-/// The `WordInteger` trait is meant to be used for word-sized integer types in a generic context.
 trait WordInteger:
-    Send + Sync + Eq + Copy + Ord + BitOr<Self, Output = Self> + WrappingShl + 'static
+    Send + Sync + Eq + Copy + One + Ord + BitOr<Self, Output = Self> + WrappingShl + 'static
 {
-    /// The value representing one for the implementing type.
-    const ONE: Self;
 }
 
 /// Implementation of the `WordInteger` trait for the `u8` type.
-/// The `u8` type is a word-sized integer with a size of 8 bits.
-impl WordInteger for u8 {
-    /// The value representing one for the `u8` type is 1.
-    const ONE: Self = 1_u8;
-}
+impl WordInteger for u8 {}
 
 /// Implementation of the `WordInteger` trait for the `u16` type.
-/// The `u16` type is a word-sized integer with a size of 16 bits.
-impl WordInteger for u16 {
-    /// The value representing one for the `u16` type is 1.
-    const ONE: Self = 1_u16;
-}
+impl WordInteger for u16 {}
 
 /// Implementation of the `WordInteger` trait for the `u32` type.
-/// The `u32` type is a word-sized integer with a size of 32 bits.
-impl WordInteger for u32 {
-    /// The value representing one for the `u32` type is 1.
-    const ONE: Self = 1_u32;
-}
+impl WordInteger for u32 {}
 
 /// Implementation of the `WordInteger` trait for the `u64` type.
-/// The `u64` type is a word-sized integer with a size of 64 bits.
-impl WordInteger for u64 {
-    /// The value representing one for the `u64` type is 1.
-    const ONE: Self = 1_64;
-}
+impl WordInteger for u64 {}
 
 /// The `ToNodeNames` trait represents a wrapper type that can be converted to isomorphism node names.
 /// Types implementing this trait provide a method `to_node_names` that takes a reference to a `Graph`
@@ -440,7 +420,7 @@ impl Graph {
         // Compute the hash value by folding over the filtered neighbor nodes.
         let hash = filtered_neighbors.fold(
             seed | (node_ids.get_selfloop_excluded_group_node_degree(&self) as u64).as_(),
-            |hash, node| hash | Word::ONE.wrapping_shl(node),
+            |hash, node| hash | Word::one().wrapping_shl(node),
         );
 
         hash
