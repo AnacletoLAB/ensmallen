@@ -19,7 +19,7 @@ impl Hasher {
     }
 
     pub fn commutative_simple() -> Self {
-        Hasher::CommutativeSimple(0x88b0fa3d8539f266)
+        Hasher::CommutativeSimple(0)
     }
 
     pub fn digest(self) -> u64 {
@@ -38,6 +38,35 @@ pub trait UpdateHash<T: ?Sized> {
     fn update(&mut self, value: &T);
 }
 
+impl UpdateHash<u8> for Hasher {
+    fn update(&mut self, value: &u8) {
+        match self {
+            Hasher::Simple(state) => {
+                *state = (*state ^ (*value as u64)).wrapping_add(0xed4e83c06c9fe588);
+            }
+            Hasher::CommutativeSimple(state) => {
+                *state = *state | (1 << (value % 64));
+            }
+            Hasher::XorShift(state) => {
+                *state = state.wrapping_mul(*value as u64 ^ 0x44d4c5a74c775ba0);
+                *state ^= *state << 13;
+                *state ^= *state >> 7;
+                *state ^= *state << 17;
+            }
+            Hasher::Xxh3(hasher) => {
+                hasher.update(&[0xe8, 0xa8, 0xef, 0x9d, 0xbe, 0xe1, 0x7c, 0x01]);
+                hasher.update(&value.to_le_bytes());
+            }
+            Hasher::SipHash(hasher) => {
+                hasher.write_u8(*value);
+            }
+            Hasher::AHasher(hasher) => {
+                hasher.write_u8(*value);
+            }
+        }
+    }
+}
+
 impl UpdateHash<u16> for Hasher {
     fn update(&mut self, value: &u16) {
         match self {
@@ -45,7 +74,7 @@ impl UpdateHash<u16> for Hasher {
                 *state = (*state ^ (*value as u64)).wrapping_add(0xed4e83c06c9fe588);
             }
             Hasher::CommutativeSimple(state) => {
-                *state = *state | 1 << (value % 64);
+                *state = *state | (1 << (value % 64));
             }
             Hasher::XorShift(state) => {
                 *state = state.wrapping_mul(*value as u64 ^ 0x44d4c5a74c775ba0);
@@ -74,7 +103,7 @@ impl UpdateHash<u32> for Hasher {
                 *state = (*state ^ (*value as u64)).wrapping_add(0xf01d12535da3ac14);
             }
             Hasher::CommutativeSimple(state) => {
-                *state = *state | 1 << (value % 64);
+                *state = *state | (1 << (value % 64));
             }
             Hasher::XorShift(state) => {
                 *state = state.wrapping_mul(*value as u64 ^ 0x45dc0d8545fc1901);
@@ -103,7 +132,7 @@ impl UpdateHash<u64> for Hasher {
                 *state = (*state ^ value).wrapping_add(0x5d3612daf380e1b7);
             }
             Hasher::CommutativeSimple(state) => {
-                *state = *state | 1 << (value % 64);
+                *state = *state | (1 << (value % 64));
             }
             Hasher::XorShift(state) => {
                 *state = state.wrapping_mul(value ^ 0x0c72cf2867062df2);

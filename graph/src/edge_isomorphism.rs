@@ -128,9 +128,10 @@ impl IsomorphicCandidateGenerator<NodeT> for NodeIsomorphismsGenerator {
         graph
             .par_iter_node_degrees()
             .enumerate()
+            // We only consider the nodes that have a degree higher than the provided one.
             .filter(move |(_, node_degree)| *node_degree >= minimum_node_degree)
             .map(move |(node_id, _)| {
-                let mut hasher = Hasher::commutative_simple();
+                let mut hasher = Hasher::simple();
                 hasher.update(&unsafe {
                     graph.get_unchecked_node_type_ids_from_node_id(node_id as NodeT)
                 });
@@ -151,6 +152,7 @@ impl IsomorphicCandidateGenerator<[NodeT; 2]> for EdgeIsomorphismsGenerator {
         graph
             .par_iter_node_ids()
             .zip(graph.par_iter_node_degrees())
+            // We only consider the nodes that have a degree higher than the provided one.
             .filter(move |(_, node_degree)| *node_degree > minimum_node_degree)
             .flat_map(move |(src, _src_node_degree)| {
                 let (min_edge_id, max_edge_id) =
@@ -162,12 +164,13 @@ impl IsomorphicCandidateGenerator<[NodeT; 2]> for EdgeIsomorphismsGenerator {
                     .as_ref()
                     .as_ref()
                     .map(|ets| &ets.ids[min_edge_id..max_edge_id]);
-                let mut first_hasher = Hasher::commutative_simple();
+                let mut first_hasher = Hasher::simple();
                 first_hasher.update(&unsafe {
                     graph.get_unchecked_node_type_ids_from_node_id(src as NodeT)
                 });
                 unsafe { graph.par_iter_unchecked_neighbour_node_ids_from_source_node_id(src) }
                     .enumerate()
+                    // We only consider the nodes that have a degree higher than the provided one.
                     .filter(move |(_i, dst)| {
                         src != *dst
                             && (graph.is_directed() || src < *dst)
@@ -180,7 +183,10 @@ impl IsomorphicCandidateGenerator<[NodeT; 2]> for EdgeIsomorphismsGenerator {
                             graph.get_unchecked_node_type_ids_from_node_id(dst as NodeT)
                         });
                         second_hasher.update(&src_edge_type_ids.as_ref().and_then(|ids| ids[i]));
-                        (second_hasher.digest().as_(), [src, dst].into())
+                        (
+                            second_hasher.digest().as_(),
+                            if src < dst { [src, dst] } else { [dst, src] },
+                        )
                     })
             })
     }
@@ -200,7 +206,7 @@ impl IsomorphicCandidateGenerator<[NodeT; 2]> for TupleIsomorphismsGenerator {
             .zip(graph.par_iter_node_degrees())
             .filter(move |(_, node_degree)| *node_degree > minimum_node_degree)
             .flat_map(move |(src, _src_node_degree)| {
-                let mut first_hasher = Hasher::commutative_simple();
+                let mut first_hasher = Hasher::simple();
                 first_hasher.update(&unsafe {
                     graph.get_unchecked_node_type_ids_from_node_id(src as NodeT)
                 });
@@ -322,7 +328,7 @@ impl<const N: usize> SelfloopExcludedGroupNodeDegree for [NodeT; N] {
     }
 
     fn intersects(&self, other: &Self) -> bool {
-        iter_set::intersection(self.iter(), other.iter()).count() == 0
+        iter_set::intersection(self.iter(), other.iter()).count() > 0
     }
 }
 
@@ -404,26 +410,28 @@ impl Graph {
     ) -> Word
     where
         u64: AsPrimitive<Word>,
+        Hasher: UpdateHash<Word>,
         Isomorphism: IterNeighbours + SelfloopExcludedGroupNodeDegree,
     {
-        // Get an iterator over the neighbors of the provided `node_ids`, excluding self-loops.
-        let neighbors = node_ids.iter_selfloop_excluded_neighbours(&self);
-
-        // Take only the specified number of neighbor nodes.
-        let selected_neighbors = neighbors.take(number_of_neighbours_for_hash);
-
         // Filter out neighbor nodes whose degree is less than the minimum node degree.
-        let filtered_neighbors = selected_neighbors.filter(|node_id| {
-            self.get_unchecked_node_degree_from_node_id(*node_id) < minimum_node_degree
-        });
+        // We do not need to use the method to exclude the selfloops,
+        // since we are already excluding them by definition by using the
+        // minimum node degree threshold.
+        let filtered_neighbors = node_ids
+            .iter_neighbours(&self)
+            .filter(|node_id| {
+                self.get_unchecked_node_degree_from_node_id(*node_id) < minimum_node_degree
+            })
+            .take(number_of_neighbours_for_hash);
 
-        // Compute the hash value by folding over the filtered neighbor nodes.
-        let hash = filtered_neighbors.fold(
-            seed | (node_ids.get_selfloop_excluded_group_node_degree(&self) as u64).as_(),
-            |hash, node| hash | Word::one().wrapping_shl(node),
+        let mut hasher = Hasher::simple();
+        hasher.update(&seed);
+        <Hasher as UpdateHash<u32>>::update(
+            &mut hasher,
+            &node_ids.get_selfloop_excluded_group_node_degree(&self),
         );
-
-        hash
+        filtered_neighbors.for_each(|node| <Hasher as UpdateHash<u32>>::update(&mut hasher, &node));
+        hasher.digest().as_()
     }
 
     /// Checks if two sets of node IDs are unchecked isomorphic in the context of a graph.
@@ -472,21 +480,23 @@ impl Graph {
         let mut first_to_second_connections = 0;
         let mut second_to_first_connections = 0;
 
-        'outer: while let (Some((first_node, first_edge_id)), Some((second_node, second_edge_id))) =
-            (first.peek(), second.peek())
+        'outer: while let (
+            Some((first_group_neighbour, first_edge_id)),
+            Some((second_group_neighbour, second_edge_id)),
+        ) = (first.peek(), second.peek())
         {
             // We start by evaluating whether we are dealing in either
             // the first or second isomorphic candidates with self-loops,
             // that is edges that go from any node in the isomorphic candidate
             // to any node in the SAME isomorphic candidate.
             // If so, we need to increase the relative counter and proceed onward.
-            if first_node_id_set.is_selfloop(first_node) {
+            if first_node_id_set.is_selfloop(first_group_neighbour) {
                 first_selfloops += 1;
                 first.advance_by(1).unwrap();
                 continue 'outer;
             }
 
-            if second_node_id_set.is_selfloop(second_node) {
+            if second_node_id_set.is_selfloop(second_group_neighbour) {
                 second_selfloops += 1;
                 second.advance_by(1).unwrap();
                 continue 'outer;
@@ -494,13 +504,13 @@ impl Graph {
 
             // Secondarily, we evaluate whether the first group
             // is connected to the second and viceversa.
-            if second_node_id_set.is_selfloop(first_node) {
+            if second_node_id_set.is_selfloop(first_group_neighbour) {
                 first_to_second_connections += 1;
                 first.advance_by(1).unwrap();
                 continue 'outer;
             }
 
-            if first_node_id_set.is_selfloop(second_node) {
+            if first_node_id_set.is_selfloop(second_group_neighbour) {
                 second_to_first_connections += 1;
                 second.advance_by(1).unwrap();
                 continue 'outer;
@@ -512,7 +522,7 @@ impl Graph {
             // are not equal, we found a difference between the
             // two neighbourhoods and therefore the two candidate
             // isomorphisms are NOT isomorphic.
-            if first_node != second_node {
+            if first_group_neighbour != second_group_neighbour {
                 return false;
             }
 
@@ -582,8 +592,8 @@ impl Graph {
         // We check that is one of the isomorphic groups
         // has self-loops, than the other one either has
         // self-loops or is connected to the first isomorphic group.
-        if first_selfloops > 0 && !(second_selfloops > 0 || first_to_second_connections > 0)
-            || second_selfloops > 0 && !(first_selfloops > 0 || second_to_first_connections > 0)
+        if first_selfloops > 0 && !(second_selfloops > 0 || second_to_first_connections > 0)
+            || second_selfloops > 0 && !(first_selfloops > 0 || first_to_second_connections > 0)
         {
             return false;
         }
@@ -604,6 +614,7 @@ impl Graph {
     ) -> Result<impl ParallelIterator<Item = Vec<Isomorphism>> + '_>
     where
         u64: AsPrimitive<Word>,
+        Hasher: UpdateHash<Word>,
         CandidatesGenerator: IsomorphicCandidateGenerator<Isomorphism>,
         Isomorphism: SelfloopExcludedGroupNodeDegree
             + IterNeighbours
@@ -661,7 +672,7 @@ impl Graph {
                     let mut empty_intersections: Vec<bool> = vec![];
                     let mut candidate_isomorphic_groups: Vec<Vec<_>> = vec![];
 
-                    for (_hash, other) in slice.iter().skip(1) {
+                    for (_hash, other) in slice.iter() {
                         // Then, since within the same hash there might be multiple isomorphic node groups in collision
                         // we need to identify which one of these groups is actually isomorphic with the current node.
                         if let Some((isomorphic_group, empty_intersection)) =
@@ -677,7 +688,7 @@ impl Graph {
                                     })
                         {
                             if !*empty_intersection {
-                                *empty_intersection |= isomorphic_group[0].intersects(other);
+                                *empty_intersection |= !isomorphic_group[0].intersects(other);
                             }
                             isomorphic_group.push(other.clone());
                         } else {
@@ -689,11 +700,9 @@ impl Graph {
                         }
                     }
 
-                    let mut i = 0;
-                    candidate_isomorphic_groups.retain(|_| {
-                        i += 1;
-                        empty_intersections[i - 1]
-                    });
+                    let mut empty_intersections_iter = empty_intersections.into_iter();
+                    candidate_isomorphic_groups
+                        .retain(|_| empty_intersections_iter.next().unwrap());
 
                     candidate_isomorphic_groups
                 },
@@ -721,6 +730,7 @@ impl Graph {
         u64: AsPrimitive<Word>,
         CandidatesGenerator: IsomorphicCandidateGenerator<Isomorphism>,
         IsomorphismNames: Send + Sync,
+        Hasher: UpdateHash<Word>,
         Isomorphism: SelfloopExcludedGroupNodeDegree
             + IterNeighbours
             + ToNodeNames<IsomorphismNames>
@@ -1004,7 +1014,6 @@ impl Graph {
     /// # Example
     ///
     /// ```
-    /// # use your_library::*;
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// let minimum_degree = Some(3);
     /// let num_neighbors_for_hash = Some(5);
@@ -1037,6 +1046,45 @@ impl Graph {
                 group
             })
             .collect())
+    }
+
+    /// Retrieves the isomorphic node hashes
+    ///
+    /// # Arguments
+    /// * `minimum_node_degree`: An optional value representing the minimum degree that a node must have to be considered in the hash computation. If `None`, all nodes will be considered.
+    /// * `number_of_neighbours_for_hash`: An optional value specifying the number of neighbor nodes to consider for the hash computation. If `None`, all neighbors will be considered.
+    /// * `dtype`: An optional string slice representing the data type of the resulting node hashes. If `None`, the default data type will be used.
+    ///
+    /// # Examples
+    ///
+    /// ```
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
+    /// let minimum_node_degree = Some(2);
+    /// let number_of_neighbours_for_hash = Some(5);
+    /// let dtype = Some("uint64");
+    ///
+    /// let isomorphic_hashes = graph.get_isomorphic_node_hashes(minimum_node_degree, number_of_neighbours_for_hash, dtype);
+    /// match isomorphic_hashes {
+    ///     Ok(hashes) => {
+    ///         // Handle the vector of isomorphic node hashes
+    ///     },
+    ///     Err(error) => {
+    ///         // Handle the error
+    ///     }
+    /// }
+    /// ```
+    pub fn get_isomorphic_node_hashes(
+        &self,
+        minimum_node_degree: Option<NodeT>,
+        number_of_neighbours_for_hash: Option<usize>,
+        dtype: Option<&str>,
+    ) -> Result<Vec<u64>> {
+        self.get_isomorphic_node_group_hashes(
+            minimum_node_degree,
+            number_of_neighbours_for_hash,
+            NodeIsomorphismsGenerator::default(),
+            dtype,
+        )
     }
 
     #[no_numpy_binding]
@@ -1081,6 +1129,45 @@ impl Graph {
             EdgeIsomorphismsGenerator::default(),
             dtype,
         )?)
+    }
+
+    /// Retrieves the isomorphic edge hashes
+    ///
+    /// # Arguments
+    /// * `minimum_node_degree`: An optional value representing the minimum degree that a node must have to be considered in the hash computation. If `None`, all nodes will be considered.
+    /// * `number_of_neighbours_for_hash`: An optional value specifying the number of neighbor nodes to consider for the hash computation. If `None`, all neighbors will be considered.
+    /// * `dtype`: An optional string slice representing the data type of the resulting edge hashes. If `None`, the default data type will be used.
+    ///
+    /// # Examples
+    ///
+    /// ```
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
+    /// let minimum_node_degree = Some(2);
+    /// let number_of_neighbours_for_hash = Some(5);
+    /// let dtype = Some("uint64");
+    ///
+    /// let isomorphic_hashes = graph.get_isomorphic_edge_hashes(minimum_node_degree, number_of_neighbours_for_hash, dtype);
+    /// match isomorphic_hashes {
+    ///     Ok(hashes) => {
+    ///         // Handle the vector of isomorphic edge hashes
+    ///     },
+    ///     Err(error) => {
+    ///         // Handle the error
+    ///     }
+    /// }
+    /// ```
+    pub fn get_isomorphic_edge_hashes(
+        &self,
+        minimum_node_degree: Option<NodeT>,
+        number_of_neighbours_for_hash: Option<usize>,
+        dtype: Option<&str>,
+    ) -> Result<Vec<u64>> {
+        self.get_isomorphic_node_group_hashes(
+            minimum_node_degree,
+            number_of_neighbours_for_hash,
+            EdgeIsomorphismsGenerator::default(),
+            dtype,
+        )
     }
 
     #[no_numpy_binding]
@@ -1128,6 +1215,45 @@ impl Graph {
             TupleIsomorphismsGenerator::default(),
             dtype,
         )?)
+    }
+
+    /// Retrieves the isomorphic tuple hashes
+    ///
+    /// # Arguments
+    /// * `minimum_node_degree`: An optional value representing the minimum degree that a node must have to be considered in the hash computation. If `None`, all nodes will be considered.
+    /// * `number_of_neighbours_for_hash`: An optional value specifying the number of neighbor nodes to consider for the hash computation. If `None`, all neighbors will be considered.
+    /// * `dtype`: An optional string slice representing the data type of the resulting tuple hashes. If `None`, the default data type will be used.
+    ///
+    /// # Examples
+    ///
+    /// ```
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
+    /// let minimum_node_degree = Some(2);
+    /// let number_of_neighbours_for_hash = Some(5);
+    /// let dtype = Some("uint64");
+    ///
+    /// let isomorphic_hashes = graph.get_isomorphic_tuple_hashes(minimum_node_degree, number_of_neighbours_for_hash, dtype);
+    /// match isomorphic_hashes {
+    ///     Ok(hashes) => {
+    ///         // Handle the vector of isomorphic tuple hashes
+    ///     },
+    ///     Err(error) => {
+    ///         // Handle the error
+    ///     }
+    /// }
+    /// ```
+    pub fn get_isomorphic_tuple_hashes(
+        &self,
+        minimum_node_degree: Option<NodeT>,
+        number_of_neighbours_for_hash: Option<usize>,
+        dtype: Option<&str>,
+    ) -> Result<Vec<u64>> {
+        self.get_isomorphic_node_group_hashes(
+            minimum_node_degree,
+            number_of_neighbours_for_hash,
+            TupleIsomorphismsGenerator::default(),
+            dtype,
+        )
     }
 
     #[no_numpy_binding]
