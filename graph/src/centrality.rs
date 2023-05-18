@@ -329,29 +329,46 @@ impl Graph {
         .total_harmonic_distance
     }
 
-    /// Return parallel iterator over harmonic centrality for all nodes.
-    ///
-    /// # Arguments
-    /// * `verbose`: Option<bool> - Whether to show an indicative progress bar.
+    /// Return vector of harmonic centrality for all nodes.
     ///
     /// # References
     /// The metric is described in [Axioms for centrality by Boldi and Vigna](https://www.tandfonline.com/doi/abs/10.1080/15427951.2013.865686).
     ///
-    pub fn par_iter_harmonic_centrality(
-        &self,
-        verbose: Option<bool>,
-    ) -> impl ParallelIterator<Item = f32> + '_ {
-        let verbose = verbose.unwrap_or(true);
-        let pb = get_loading_bar(
-            verbose,
-            "Computing harmonic centrality",
-            self.get_number_of_nodes() as usize,
+    pub fn get_harmonic_centrality(&self) -> Vec<f32> {
+        let visited: SyncUnsafeCell<Vec<Visited<u16>>> = SyncUnsafeCell::from(
+            (0..rayon::current_num_threads().max(1))
+                .map(|_| Visited::zero(self.get_number_of_nodes() as usize))
+                .collect::<Vec<Visited<u16>>>(),
         );
-        self.par_iter_node_ids()
-            .progress_with(pb)
-            .map(move |node_id| unsafe {
-                self.get_unchecked_harmonic_centrality_from_node_id(node_id)
-            })
+        let mut centralities = vec![0.0; self.get_number_of_nodes() as usize];
+
+        centralities
+            .par_iter_mut()
+            .enumerate()
+            .for_each(move |(root, centrality)| {
+                let mut current_depth = 0;
+                let mut total_reciprocal_distance: f32 = 0.0;
+                let thread_id = rayon::current_thread_index().unwrap_or(0);
+                let mut frontier = vec![root as NodeT];
+                let visited = unsafe { &mut (*visited.get())[thread_id] };
+                visited.set_visited(root);
+                while !frontier.is_empty() {
+                    current_depth += 1;
+                    frontier = frontier
+                        .into_iter()
+                        .flat_map(|src| unsafe {
+                            self.iter_unchecked_neighbour_node_ids_from_source_node_id(src)
+                        })
+                        .filter(|&dst| !visited.set_and_get_visited(dst))
+                        .collect::<Vec<NodeT>>();
+
+                    total_reciprocal_distance +=
+                        (current_depth as f32).recip() * (frontier.len() as f32);
+                }
+                *centrality = total_reciprocal_distance;
+                visited.clear();
+            });
+        centralities
     }
 
     /// Return parallel iterator over harmonic centrality for all nodes.
@@ -393,17 +410,6 @@ impl Graph {
                     use_edge_weights_as_probabilities,
                 )
             }))
-    }
-
-    /// Return harmonic centrality for all nodes.
-    ///
-    /// # Arguments
-    /// * `verbose`: Option<bool> - Whether to show an indicative progress bar.
-    ///
-    /// # References
-    /// The metric is described in [Axioms for centrality by Boldi and Vigna](https://www.tandfonline.com/doi/abs/10.1080/15427951.2013.865686).
-    pub fn get_harmonic_centrality(&self, verbose: Option<bool>) -> Vec<f32> {
-        self.par_iter_harmonic_centrality(verbose).collect()
     }
 
     /// Return harmonic centrality for all nodes.
