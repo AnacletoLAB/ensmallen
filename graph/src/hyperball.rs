@@ -2,8 +2,7 @@ use std::cell::SyncUnsafeCell;
 use std::sync::atomic::{AtomicBool, AtomicU32, AtomicUsize, Ordering};
 
 use super::*;
-use hyperloglog_rs::utils::ceil;
-use hyperloglog_rs::HyperLogLog;
+use hyperloglog_rs::prelude::*;
 use num_traits::Zero;
 use rayon::prelude::*;
 
@@ -140,7 +139,7 @@ impl Graph {
         // Create HyperLogLog counters for all nodes in the graph
         let mut counters: Vec<HyperLogLog<PRECISION, BITS>> = self
             .par_iter_node_ids()
-            .map(|node_id| HyperLogLog::from(node_id))
+            .map(|node_id| node_id.into())
             .collect::<Vec<_>>();
 
         // Create copies of the counters to keep track of the previous iteration's state
@@ -191,19 +190,16 @@ impl Graph {
                             );
 
                             // Iterate through each neighbor of the current node
-                            let new_counter = unsafe {
-                                self.iter_unchecked_neighbour_node_ids_from_source_node_id(
-                                    node_id as NodeT,
-                                )
-                            }
-                            .fold(
-                                // We initialize the counter with the current node
-                                previous_counter.clone(),
-                                |partial, dst| unsafe {
-                                    // We update the counter with the current destination node counter
-                                    partial | (*secondary_counters.get())[dst as usize].clone()
-                                },
-                            );
+                            let new_counter = previous_counter.clone()
+                                | unsafe {
+                                    self.iter_unchecked_neighbour_node_ids_from_source_node_id(
+                                        node_id as NodeT,
+                                    )
+                                }
+                                .map(|dst| unsafe {
+                                    (*secondary_counters.get())[dst as usize].clone()
+                                })
+                                .union();
 
                             // We check whether the counter has converged
                             // and we update the convergence flag accordingly
