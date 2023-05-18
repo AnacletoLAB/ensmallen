@@ -61,7 +61,7 @@ pub trait SelfloopExcludedGroupNodeDegree {
     ///
     /// # Returns
     /// `true` if the node ID represents a self-loop within the group, otherwise `false`.
-    fn is_selfloop(&self, node_id: &NodeT) -> bool;
+    fn is_selfloop(&self, node_id: NodeT) -> bool;
 
     /// Determines if the current group intersects with another group.
     ///
@@ -155,15 +155,6 @@ impl IsomorphicCandidateGenerator<[NodeT; 2]> for EdgeIsomorphismsGenerator {
             // We only consider the nodes that have a degree higher than the provided one.
             .filter(move |(_, node_degree)| *node_degree > minimum_node_degree)
             .flat_map(move |(src, _src_node_degree)| {
-                let (min_edge_id, max_edge_id) =
-                    unsafe { graph.get_unchecked_minmax_edge_ids_from_source_node_id(src) };
-                let min_edge_id = min_edge_id as usize;
-                let max_edge_id = max_edge_id as usize;
-                let src_edge_type_ids = graph
-                    .edge_types
-                    .as_ref()
-                    .as_ref()
-                    .map(|ets| &ets.ids[min_edge_id..max_edge_id]);
                 let mut first_hasher = Hasher::simple();
                 first_hasher.update(&unsafe {
                     graph.get_unchecked_node_type_ids_from_node_id(src as NodeT)
@@ -182,7 +173,6 @@ impl IsomorphicCandidateGenerator<[NodeT; 2]> for EdgeIsomorphismsGenerator {
                         second_hasher.update(&unsafe {
                             graph.get_unchecked_node_type_ids_from_node_id(dst as NodeT)
                         });
-                        second_hasher.update(&src_edge_type_ids.as_ref().and_then(|ids| ids[i]));
                         (
                             second_hasher.digest().as_(),
                             if src < dst { [src, dst] } else { [dst, src] },
@@ -260,31 +250,20 @@ pub trait IterNeighbours {
         &'a self,
         graph: &'a Graph,
     ) -> impl Iterator<Item = (NodeT, EdgeT)> + 'a;
-
-    /// Returns an iterator over the neighbors of the current element in the graph, excluding self-loops.
-    ///
-    /// # Arguments
-    /// * `graph`: A reference to the `Graph` from which the neighbors are iterated.
-    ///
-    /// # Returns
-    /// An iterator that yields `NodeT` values representing the neighbors of the current element, excluding self-loops.
-    fn iter_selfloop_excluded_neighbours<'a>(
-        &'a self,
-        graph: &'a Graph,
-    ) -> impl Iterator<Item = NodeT> + 'a {
-        iter_set::difference(self.iter_neighbours(&graph), self.iter_nodes())
-    }
 }
 
 impl IterNeighbours for u32 {
+    #[inline(always)]
     fn iter_nodes(&self) -> impl Iterator<Item = NodeT> + '_ {
         core::iter::once(*self as NodeT)
     }
 
+    #[inline(always)]
     fn iter_neighbours<'a>(&'a self, graph: &'a Graph) -> impl Iterator<Item = NodeT> + 'a {
         unsafe { graph.iter_unchecked_neighbour_node_ids_from_source_node_id(*self as NodeT) }
     }
 
+    #[inline(always)]
     fn iter_neighbours_and_edge_ids<'a>(
         &'a self,
         graph: &'a Graph,
@@ -300,20 +279,24 @@ impl IterNeighbours for u32 {
 }
 
 impl SelfloopExcludedGroupNodeDegree for u32 {
+    #[inline(always)]
     fn get_selfloop_excluded_group_node_degree(&self, graph: &Graph) -> u32 {
         unsafe { graph.get_unchecked_selfloop_excluded_node_degree_from_node_id(*self as NodeT) }
     }
 
-    fn is_selfloop(&self, node_id: &NodeT) -> bool {
-        self == node_id
+    #[inline(always)]
+    fn is_selfloop(&self, node_id: NodeT) -> bool {
+        *self == node_id
     }
 
+    #[inline(always)]
     fn intersects(&self, other: &Self) -> bool {
         self == other
     }
 }
 
-impl<const N: usize> SelfloopExcludedGroupNodeDegree for [NodeT; N] {
+impl SelfloopExcludedGroupNodeDegree for [NodeT; 2] {
+    #[inline(always)]
     fn get_selfloop_excluded_group_node_degree(&self, graph: &Graph) -> u32 {
         self.iter()
             .map(|node_id| unsafe {
@@ -323,22 +306,26 @@ impl<const N: usize> SelfloopExcludedGroupNodeDegree for [NodeT; N] {
             - (self.len() * (self.len() - 1)) as u32
     }
 
-    fn is_selfloop(&self, node_id: &NodeT) -> bool {
-        self.contains(node_id)
+    #[inline(always)]
+    fn is_selfloop(&self, node_id: NodeT) -> bool {
+        self[0] == node_id || self[1] == node_id
     }
 
+    #[inline(always)]
     fn intersects(&self, other: &Self) -> bool {
-        iter_set::intersection(self.iter(), other.iter()).count() > 0
+        self[0] == other[0] || self[1] == other[1] || self[0] == other[1] || self[1] == other[0]
     }
 }
 
 impl ToNodeNames<String> for u32 {
+    #[inline(always)]
     fn to_node_names(&self, graph: &Graph) -> String {
         unsafe { graph.get_unchecked_node_name_from_node_id(*self) }
     }
 }
 
 impl ToNodeNames<[String; 2]> for [NodeT; 2] {
+    #[inline(always)]
     fn to_node_names(&self, graph: &Graph) -> [String; 2] {
         [
             unsafe { graph.get_unchecked_node_name_from_node_id(self[0]) },
@@ -348,10 +335,12 @@ impl ToNodeNames<[String; 2]> for [NodeT; 2] {
 }
 
 impl IterNeighbours for [NodeT; 2] {
+    #[inline(always)]
     fn iter_nodes(&self) -> impl Iterator<Item = NodeT> + '_ {
         self.iter().copied()
     }
 
+    #[inline(always)]
     fn iter_neighbours<'a>(&'a self, graph: &'a Graph) -> impl Iterator<Item = NodeT> + 'a {
         iter_set::union(
             unsafe { graph.iter_unchecked_neighbour_node_ids_from_source_node_id(self[0]) },
@@ -359,6 +348,7 @@ impl IterNeighbours for [NodeT; 2] {
         )
     }
 
+    #[inline(always)]
     fn iter_neighbours_and_edge_ids<'a>(
         &'a self,
         graph: &'a Graph,
@@ -384,6 +374,7 @@ impl IterNeighbours for [NodeT; 2] {
 }
 
 impl Graph {
+    #[inline(always)]
     /// Computes a hash value based on a set of node IDs, excluding self-loops, and other parameters.
     ///
     /// # Safety
@@ -490,13 +481,13 @@ impl Graph {
             // that is edges that go from any node in the isomorphic candidate
             // to any node in the SAME isomorphic candidate.
             // If so, we need to increase the relative counter and proceed onward.
-            if first_node_id_set.is_selfloop(first_group_neighbour) {
+            if first_node_id_set.is_selfloop(*first_group_neighbour) {
                 first_selfloops += 1;
                 first.advance_by(1).unwrap();
                 continue 'outer;
             }
 
-            if second_node_id_set.is_selfloop(second_group_neighbour) {
+            if second_node_id_set.is_selfloop(*second_group_neighbour) {
                 second_selfloops += 1;
                 second.advance_by(1).unwrap();
                 continue 'outer;
@@ -504,13 +495,13 @@ impl Graph {
 
             // Secondarily, we evaluate whether the first group
             // is connected to the second and viceversa.
-            if second_node_id_set.is_selfloop(first_group_neighbour) {
+            if second_node_id_set.is_selfloop(*first_group_neighbour) {
                 first_to_second_connections += 1;
                 first.advance_by(1).unwrap();
                 continue 'outer;
             }
 
-            if first_node_id_set.is_selfloop(second_group_neighbour) {
+            if first_node_id_set.is_selfloop(*second_group_neighbour) {
                 second_to_first_connections += 1;
                 second.advance_by(1).unwrap();
                 continue 'outer;
@@ -555,13 +546,13 @@ impl Graph {
         // some nodes.
         for (first_node, _first_edge_id) in first {
             // If this is a selfloop.
-            if first_node_id_set.is_selfloop(&first_node) {
+            if first_node_id_set.is_selfloop(first_node) {
                 first_selfloops += 1;
                 continue;
             }
 
             // If this is an edge towards the other loop.
-            if second_node_id_set.is_selfloop(&first_node) {
+            if second_node_id_set.is_selfloop(first_node) {
                 first_to_second_connections += 1;
                 continue;
             }
@@ -573,13 +564,13 @@ impl Graph {
 
         for (second_node, _second_edge_id) in second {
             // If this is a selfloop.
-            if second_node_id_set.is_selfloop(&second_node) {
+            if second_node_id_set.is_selfloop(second_node) {
                 second_selfloops += 1;
                 continue;
             }
 
             // If this is an edge towards the other loop.
-            if first_node_id_set.is_selfloop(&second_node) {
+            if first_node_id_set.is_selfloop(second_node) {
                 second_to_first_connections += 1;
                 continue;
             }
