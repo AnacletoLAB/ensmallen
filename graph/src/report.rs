@@ -1173,7 +1173,7 @@ impl Graph {
         };
 
         let mut isomorphic_node_groups: Vec<Vec<NodeT>> = self
-            .get_isomorphic_node_ids(Some(10), None, Some("u32"))
+            .get_isomorphic_node_ids(None, None, None)
             .unwrap_or_else(|_| Vec::new());
 
         isomorphic_node_groups.sort_unstable_by(|group1, group2| unsafe {
@@ -1183,7 +1183,7 @@ impl Graph {
         });
 
         let mut isomorphic_edge_groups: Vec<Vec<[NodeT; 2]>> = self
-            .get_isomorphic_edge_node_ids(Some(10), None, Some("u32"))
+            .get_isomorphic_edge_node_ids(None, None, None)
             .unwrap_or_else(|_| Vec::new());
 
         isomorphic_edge_groups.sort_unstable_by(|group1, group2| unsafe {

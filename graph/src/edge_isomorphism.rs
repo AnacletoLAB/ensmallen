@@ -5,6 +5,7 @@ use core::ops::BitOr;
 use itertools::Itertools;
 use num_traits::{AsPrimitive, One, WrappingShl};
 use rayon::prelude::*;
+use std::cell::SyncUnsafeCell;
 
 /// The `WordInteger` trait represents a word-sized integer type that satisfies various constraints.
 /// Types implementing this trait must be `Send`, `Sync`, `Eq`, `Copy`, `Ord`, and support the `BitOr` and `WrappingShl` operations.
@@ -90,12 +91,14 @@ where
     /// A parallel iterator that yields tuples representing isomorphic candidates, where the first element of the tuple
     /// is of type `Word` (a generic type representing an integer), and the second element is of type `Candidate` (the isomorphic candidate type).
     ///
-    fn par_iter_isomorphic_candidates<'a, Word: WordInteger>(
+    fn par_iter_isomorphic_candidates<'a, F, Word: WordInteger>(
         &'a self,
         graph: &'a Graph,
         minimum_node_degree: NodeT,
+        deny_mask: &'a F,
     ) -> impl ParallelIterator<Item = (Word, Candidate)> + 'a
     where
+        F: Fn(NodeT) -> bool + Send + Sync + 'a,
         u64: AsPrimitive<Word>;
 }
 /// The `NodeIsomorphismsGenerator` struct represents a generator for node isomorphisms.
@@ -117,19 +120,23 @@ struct EdgeIsomorphismsGenerator;
 struct TupleIsomorphismsGenerator;
 
 impl IsomorphicCandidateGenerator<NodeT> for NodeIsomorphismsGenerator {
-    fn par_iter_isomorphic_candidates<'a, Word: WordInteger>(
+    fn par_iter_isomorphic_candidates<'a, F, Word: WordInteger>(
         &'a self,
         graph: &'a Graph,
         minimum_node_degree: NodeT,
+        deny_mask: &'a F,
     ) -> impl ParallelIterator<Item = (Word, NodeT)> + 'a
     where
+        F: Fn(NodeT) -> bool + Send + Sync + 'a,
         u64: AsPrimitive<Word>,
     {
         graph
             .par_iter_node_degrees()
             .enumerate()
             // We only consider the nodes that have a degree higher than the provided one.
-            .filter(move |(_, node_degree)| *node_degree >= minimum_node_degree)
+            .filter(move |(node_id, node_degree)| {
+                *node_degree >= minimum_node_degree && !deny_mask(*node_id as NodeT)
+            })
             .map(move |(node_id, _)| {
                 let mut hasher = Hasher::simple();
                 hasher.update(&unsafe {
@@ -141,19 +148,23 @@ impl IsomorphicCandidateGenerator<NodeT> for NodeIsomorphismsGenerator {
 }
 
 impl IsomorphicCandidateGenerator<[NodeT; 2]> for EdgeIsomorphismsGenerator {
-    fn par_iter_isomorphic_candidates<'a, Word: WordInteger>(
+    fn par_iter_isomorphic_candidates<'a, F, Word: WordInteger>(
         &'a self,
         graph: &'a Graph,
         minimum_node_degree: NodeT,
+        deny_mask: &'a F,
     ) -> impl ParallelIterator<Item = (Word, [NodeT; 2])> + 'a
     where
+        F: Fn(NodeT) -> bool + Send + Sync + 'a,
         u64: AsPrimitive<Word>,
     {
         graph
             .par_iter_node_ids()
             .zip(graph.par_iter_node_degrees())
             // We only consider the nodes that have a degree higher than the provided one.
-            .filter(move |(_, node_degree)| *node_degree > minimum_node_degree)
+            .filter(move |(src, node_degree): &(NodeT, NodeT)| {
+                *node_degree > minimum_node_degree && !deny_mask(*src)
+            })
             .flat_map(move |(src, _src_node_degree)| {
                 let mut first_hasher = Hasher::simple();
                 first_hasher.update(&unsafe {
@@ -162,13 +173,14 @@ impl IsomorphicCandidateGenerator<[NodeT; 2]> for EdgeIsomorphismsGenerator {
                 unsafe { graph.par_iter_unchecked_neighbour_node_ids_from_source_node_id(src) }
                     .enumerate()
                     // We only consider the nodes that have a degree higher than the provided one.
-                    .filter(move |(_i, dst)| {
+                    .filter(move |(_i, dst): &(usize, NodeT)| {
                         src != *dst
+                            && !deny_mask(*dst)
                             && (graph.is_directed() || src < *dst)
                             && unsafe { graph.get_unchecked_node_degree_from_node_id(*dst) }
                                 > minimum_node_degree
                     })
-                    .map(move |(i, dst)| {
+                    .map(move |(_i, dst)| {
                         let mut second_hasher = first_hasher.clone();
                         second_hasher.update(&unsafe {
                             graph.get_unchecked_node_type_ids_from_node_id(dst as NodeT)
@@ -183,18 +195,22 @@ impl IsomorphicCandidateGenerator<[NodeT; 2]> for EdgeIsomorphismsGenerator {
 }
 
 impl IsomorphicCandidateGenerator<[NodeT; 2]> for TupleIsomorphismsGenerator {
-    fn par_iter_isomorphic_candidates<'a, Word: WordInteger>(
+    fn par_iter_isomorphic_candidates<'a, F, Word: WordInteger>(
         &'a self,
         graph: &'a Graph,
         minimum_node_degree: NodeT,
+        deny_mask: &'a F,
     ) -> impl ParallelIterator<Item = (Word, [NodeT; 2])> + 'a
     where
+        F: Fn(NodeT) -> bool + Send + Sync + 'a,
         u64: AsPrimitive<Word>,
     {
         graph
             .par_iter_node_ids()
             .zip(graph.par_iter_node_degrees())
-            .filter(move |(_, node_degree)| *node_degree > minimum_node_degree)
+            .filter(move |(src, node_degree)| {
+                *node_degree > minimum_node_degree && !deny_mask(*src)
+            })
             .flat_map(move |(src, _src_node_degree)| {
                 let mut first_hasher = Hasher::simple();
                 first_hasher.update(&unsafe {
@@ -205,6 +221,7 @@ impl IsomorphicCandidateGenerator<[NodeT; 2]> for TupleIsomorphismsGenerator {
                     .zip(graph.par_iter_node_degrees())
                     .filter(move |(dst, node_degree)| {
                         src != *dst
+                            && !deny_mask(*dst)
                             && (graph.is_directed() || src < *dst)
                             && *node_degree > minimum_node_degree
                     })
@@ -374,6 +391,65 @@ impl IterNeighbours for [NodeT; 2] {
 }
 
 impl Graph {
+    /// Get a mask indicating the nodes that are isomorphic.
+    ///
+    /// This method identifies the nodes that are isomorphic based on their minimum
+    /// degree and the number of neighbors used for hashing. It populates a deny mask
+    /// where the nodes that are isomorphic are marked as `true`.
+    ///
+    /// # Arguments
+    /// * `minimum_node_degree` - The minimum degree a node must have to be considered.
+    /// * `number_of_neighbours_for_hash` - The number of neighbors used for hashing.
+    ///
+    /// # Returns
+    /// A `Result` containing a vector of booleans indicating the isomorphic nodes mask.
+    /// If successful, it will return `Ok` with the mask. Otherwise, it will return an
+    /// `Err` with an error message.
+    ///
+    /// # Example
+    ///
+    /// ```
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
+    ///
+    /// let isomorphic_nodes_mask = graph.get_isomorphic_nodes_mask(10, 10);
+    ///
+    /// match isomorphic_nodes_mask {
+    ///     Ok(mask) => {
+    ///         // Use the isomorphic nodes mask
+    ///         println!("{:?}", mask);
+    ///     }
+    ///     Err(err) => {
+    ///         // Handle the error
+    ///         eprintln!("Error: {}", err);
+    ///     }
+    /// }
+    /// ```
+    pub fn get_isomorphic_nodes_mask(
+        &self,
+        minimum_node_degree: NodeT,
+        number_of_neighbours_for_hash: usize,
+    ) -> Result<Vec<bool>> {
+        // We first need to identify the nodes that are isomorphic
+        // as they will surely form a ton of edge and tuple isomorphisms that
+        // are utterly not interesting.
+        let mut deny_mask: Vec<bool> = vec![false; self.get_number_of_nodes() as usize];
+        let shared_deny_mask: SyncUnsafeCell<&mut Vec<bool>> = SyncUnsafeCell::new(&mut deny_mask);
+
+        // We populate the deny mask with the nodes that are isomorphic.
+        self.par_iter_isomorphic_node_group_ids::<NodeIsomorphismsGenerator, NodeT, u8, _>(
+            Some(minimum_node_degree),
+            Some(number_of_neighbours_for_hash),
+            NodeIsomorphismsGenerator::default(),
+            &|_| false,
+        )?
+        .for_each(|group: Vec<NodeT>| {
+            group.into_iter().for_each(|isomorphic_node| unsafe {
+                (*shared_deny_mask.get())[isomorphic_node as usize] = true;
+            });
+        });
+        Ok(deny_mask)
+    }
+
     #[inline(always)]
     /// Computes a hash value based on a set of node IDs, excluding self-loops, and other parameters.
     ///
@@ -597,13 +673,21 @@ impl Graph {
     /// # Arguments
     /// * `minimum_node_degree`: Option<NodeT> - Minimum node degree for each of the two nodes involved in the edge isomorphism. By default, 10.
     /// * `number_of_neighbours_for_hash`: Option<usize> - The number of neighbours to consider for the hash. By default 10.
-    fn par_iter_isomorphic_node_group_ids<CandidatesGenerator, Isomorphism, Word: WordInteger>(
-        &self,
+    fn par_iter_isomorphic_node_group_ids<
+        'a,
+        CandidatesGenerator,
+        Isomorphism,
+        Word: WordInteger,
+        F,
+    >(
+        &'a self,
         minimum_node_degree: Option<NodeT>,
         number_of_neighbours_for_hash: Option<usize>,
         candidates_generator: CandidatesGenerator,
-    ) -> Result<impl ParallelIterator<Item = Vec<Isomorphism>> + '_>
+        deny_mask: &'a F,
+    ) -> Result<impl ParallelIterator<Item = Vec<Isomorphism>> + 'a>
     where
+        F: Fn(NodeT) -> bool + Send + Sync + 'a,
         u64: AsPrimitive<Word>,
         Hasher: UpdateHash<Word>,
         CandidatesGenerator: IsomorphicCandidateGenerator<Isomorphism>,
@@ -626,7 +710,7 @@ impl Graph {
 
         // We collect the node IDs that have degree higher than the provided one.
         let mut degree_bounded_hash_and_edge_ids: Vec<(Word, Isomorphism)> = candidates_generator
-            .par_iter_isomorphic_candidates(&self, minimum_node_degree)
+            .par_iter_isomorphic_candidates(&self, minimum_node_degree, deny_mask)
             .map(move |(seed, group)| {
                 (
                     unsafe {
@@ -641,18 +725,6 @@ impl Graph {
                 )
             })
             .collect::<Vec<(Word, Isomorphism)>>();
-
-        if degree_bounded_hash_and_edge_ids.len() <= 1 {
-            return Err(format!(
-                concat!(
-                    "The provided parametrization in the current graph, ",
-                    "including specifically minimum_node_degree=`{minimum_node_degree}`, ",
-                    "has caused the list of degree-bounded nodes to be empty. ",
-                    "Consider relaxing the constraints."
-                ),
-                minimum_node_degree = minimum_node_degree
-            ));
-        }
 
         degree_bounded_hash_and_edge_ids
             .par_sort_unstable_by(|(left, _), (right, _)| left.cmp(right));
@@ -704,20 +776,24 @@ impl Graph {
     /// Returns parallel iterator over isomorphic groups names.
     ///
     /// # Arguments
-    /// * `minimum_node_degree`: Option<NodeT> - Minimum node degree for the topological synonims. By default, 5.
+    /// * `minimum_node_degree`: Option<NodeT> - Minimum node degree for the topological synonims. By default, 10.
     /// * `number_of_neighbours_for_hash`: Option<usize> - The number of neighbours to consider for the hash. By default 10.
     fn par_iter_isomorphic_node_group_names<
+        'a,
         CandidatesGenerator,
         Isomorphism,
         IsomorphismNames,
         Word: WordInteger,
+        F,
     >(
-        &self,
+        &'a self,
         minimum_node_degree: Option<NodeT>,
         number_of_neighbours_for_hash: Option<usize>,
         candidates_generator: CandidatesGenerator,
-    ) -> Result<impl ParallelIterator<Item = Vec<IsomorphismNames>> + '_>
+        deny_mask: &'a F,
+    ) -> Result<impl ParallelIterator<Item = Vec<IsomorphismNames>> + 'a>
     where
+        F: Fn(NodeT) -> bool + Send + Sync + 'a,
         u64: AsPrimitive<Word>,
         CandidatesGenerator: IsomorphicCandidateGenerator<Isomorphism>,
         IsomorphismNames: Send + Sync,
@@ -733,10 +809,11 @@ impl Graph {
             + 'static,
     {
         Ok(self
-            .par_iter_isomorphic_node_group_ids::<CandidatesGenerator, Isomorphism, Word>(
+            .par_iter_isomorphic_node_group_ids::<CandidatesGenerator, Isomorphism, Word, F>(
                 minimum_node_degree,
                 number_of_neighbours_for_hash,
                 candidates_generator,
+                deny_mask,
             )?
             .map(move |ws| {
                 ws.into_iter()
@@ -748,18 +825,20 @@ impl Graph {
     /// Returns vector with isomorphic groups IDs.
     ///
     /// # Arguments
-    /// * `minimum_node_degree`: Option<NodeT> - Minimum node degree for the topological synonims. By default, 5.
+    /// * `minimum_node_degree`: Option<NodeT> - Minimum node degree for the topological synonims. By default, 10.
     /// * `number_of_neighbours_for_hash`: Option<usize> - The number of neighbours to consider for the hash. By default 10.
     /// * `dtype`: Option<&str> - The data type of the hash. By default, `&str`.
     ///
-    fn get_isomorphic_node_group_hashes<CandidatesGenerator, Isomorphism>(
+    fn get_isomorphic_node_group_hashes<CandidatesGenerator, Isomorphism, F>(
         &self,
         minimum_node_degree: Option<NodeT>,
         number_of_neighbours_for_hash: Option<usize>,
         candidates_generator: CandidatesGenerator,
         dtype: Option<&str>,
+        deny_mask: &F,
     ) -> Result<Vec<u64>>
     where
+        F: Fn(NodeT) -> bool + Send + Sync + 'static,
         CandidatesGenerator: IsomorphicCandidateGenerator<Isomorphism>,
         Isomorphism: SelfloopExcludedGroupNodeDegree
             + IterNeighbours
@@ -780,8 +859,8 @@ impl Graph {
 
         Ok(match dtype.unwrap_or("u32") {
             "u8" => candidates_generator
-                .par_iter_isomorphic_candidates::<u8>(&self, minimum_node_degree)
-                .map(move |(seed, group)| unsafe {
+                .par_iter_isomorphic_candidates(&self, minimum_node_degree, deny_mask)
+                .map(move |(seed, group): (u8, Isomorphism)| unsafe {
                     self.get_hash_from_node_ids(
                         &group,
                         minimum_node_degree,
@@ -791,8 +870,8 @@ impl Graph {
                 })
                 .collect::<Vec<u64>>(),
             "u16" => candidates_generator
-                .par_iter_isomorphic_candidates::<u16>(&self, minimum_node_degree)
-                .map(move |(seed, group)| unsafe {
+                .par_iter_isomorphic_candidates(&self, minimum_node_degree, deny_mask)
+                .map(move |(seed, group): (u16, Isomorphism)| unsafe {
                     self.get_hash_from_node_ids(
                         &group,
                         minimum_node_degree,
@@ -802,8 +881,8 @@ impl Graph {
                 })
                 .collect::<Vec<u64>>(),
             "u32" => candidates_generator
-                .par_iter_isomorphic_candidates::<u32>(&self, minimum_node_degree)
-                .map(move |(seed, group)| unsafe {
+                .par_iter_isomorphic_candidates(&self, minimum_node_degree, deny_mask)
+                .map(move |(seed, group): (u32, Isomorphism)| unsafe {
                     self.get_hash_from_node_ids(
                         &group,
                         minimum_node_degree,
@@ -813,8 +892,8 @@ impl Graph {
                 })
                 .collect::<Vec<u64>>(),
             "u64" => candidates_generator
-                .par_iter_isomorphic_candidates::<u64>(&self, minimum_node_degree)
-                .map(move |(seed, group)| unsafe {
+                .par_iter_isomorphic_candidates(&self, minimum_node_degree, deny_mask)
+                .map(move |(seed, group): (u64, Isomorphism)| unsafe {
                     self.get_hash_from_node_ids(
                         &group,
                         minimum_node_degree,
@@ -836,18 +915,20 @@ impl Graph {
     /// Returns vector with isomorphic groups IDs.
     ///
     /// # Arguments
-    /// * `minimum_node_degree`: Option<NodeT> - Minimum node degree for the topological synonims. By default, 5.
+    /// * `minimum_node_degree`: Option<NodeT> - Minimum node degree for the topological synonims. By default, 10.
     /// * `number_of_neighbours_for_hash`: Option<usize> - The number of neighbours to consider for the hash. By default 10.
     /// * `dtype`: Option<&str> - The data type of the hash. By default, `&str`.
     ///
-    fn get_isomorphic_group_ids<CandidatesGenerator, Isomorphism>(
+    fn get_isomorphic_group_ids<CandidatesGenerator, Isomorphism, F>(
         &self,
         minimum_node_degree: Option<NodeT>,
         number_of_neighbours_for_hash: Option<usize>,
         candidates_generator: CandidatesGenerator,
         dtype: Option<&str>,
+        deny_mask: &F,
     ) -> Result<Vec<Vec<Isomorphism>>>
     where
+        F: Fn(NodeT) -> bool + Send + Sync + 'static,
         CandidatesGenerator: IsomorphicCandidateGenerator<Isomorphism>,
         Isomorphism: SelfloopExcludedGroupNodeDegree
             + IterNeighbours
@@ -860,34 +941,38 @@ impl Graph {
     {
         Ok(match dtype.unwrap_or("u32") {
             "u8" => self
-                .par_iter_isomorphic_node_group_ids::<CandidatesGenerator, Isomorphism, u8>(
+                .par_iter_isomorphic_node_group_ids::<CandidatesGenerator, Isomorphism, u8, _>(
                     minimum_node_degree,
                     number_of_neighbours_for_hash,
                     candidates_generator,
+                    deny_mask,
                 )?
                 .map(|ws| ws.into_iter().map(|w| w.into()).collect())
                 .collect(),
             "u16" => self
-                .par_iter_isomorphic_node_group_ids::<CandidatesGenerator, Isomorphism, u16>(
+                .par_iter_isomorphic_node_group_ids::<CandidatesGenerator, Isomorphism, u16, _>(
                     minimum_node_degree,
                     number_of_neighbours_for_hash,
                     candidates_generator,
+                    deny_mask,
                 )?
                 .map(|ws| ws.into_iter().map(|w| w.into()).collect())
                 .collect(),
             "u32" => self
-                .par_iter_isomorphic_node_group_ids::<CandidatesGenerator, Isomorphism, u32>(
+                .par_iter_isomorphic_node_group_ids::<CandidatesGenerator, Isomorphism, u32, _>(
                     minimum_node_degree,
                     number_of_neighbours_for_hash,
                     candidates_generator,
+                    deny_mask,
                 )?
                 .map(|ws| ws.into_iter().map(|w| w.into()).collect())
                 .collect(),
             "u64" => self
-                .par_iter_isomorphic_node_group_ids::<CandidatesGenerator, Isomorphism, u64>(
+                .par_iter_isomorphic_node_group_ids::<CandidatesGenerator, Isomorphism, u64, _>(
                     minimum_node_degree,
                     number_of_neighbours_for_hash,
                     candidates_generator,
+                    deny_mask,
                 )?
                 .map(|ws| ws.into_iter().map(|w| w.into()).collect())
                 .collect(),
@@ -904,18 +989,20 @@ impl Graph {
     /// Returns vector with isomorphic groups names.
     ///
     /// # Arguments
-    /// * `minimum_node_degree`: Option<NodeT> - Minimum node degree for the topological synonims. By default, 5.
+    /// * `minimum_node_degree`: Option<NodeT> - Minimum node degree for the topological synonims. By default, 10.
     /// * `number_of_neighbours_for_hash`: Option<usize> - The number of neighbours to consider for the hash. By default 10.
     /// * `dtype`: Option<&str> - The data type of the hash. By default, `&str`.
     ///
-    fn get_isomorphic_group_names<CandidatesGenerator, Isomorphism, IsomorphismNames>(
+    fn get_isomorphic_group_names<CandidatesGenerator, Isomorphism, IsomorphismNames, F>(
         &self,
         minimum_node_degree: Option<NodeT>,
         number_of_neighbours_for_hash: Option<usize>,
         candidates_generator: CandidatesGenerator,
         dtype: Option<&str>,
+        deny_mask: &F,
     ) -> Result<Vec<Vec<IsomorphismNames>>>
     where
+        F: Fn(NodeT) -> bool + Send + Sync + 'static,
         CandidatesGenerator: IsomorphicCandidateGenerator<Isomorphism>,
         IsomorphismNames: Send + Sync,
         Isomorphism: SelfloopExcludedGroupNodeDegree
@@ -930,31 +1017,35 @@ impl Graph {
     {
         Ok(match dtype.unwrap_or("u32") {
             "u8" => self
-                .par_iter_isomorphic_node_group_names::<CandidatesGenerator, Isomorphism, IsomorphismNames, u8>(
+                .par_iter_isomorphic_node_group_names::<CandidatesGenerator, Isomorphism, IsomorphismNames, u8, _>(
                     minimum_node_degree,
                     number_of_neighbours_for_hash,
                     candidates_generator,
+                    deny_mask
                 )?
                 .collect(),
             "u16" => self
-                .par_iter_isomorphic_node_group_names::<CandidatesGenerator, Isomorphism, IsomorphismNames, u16>(
+                .par_iter_isomorphic_node_group_names::<CandidatesGenerator, Isomorphism, IsomorphismNames, u16, _>(
                     minimum_node_degree,
                     number_of_neighbours_for_hash,
                     candidates_generator,
+                    deny_mask
                 )?
                 .collect(),
             "u32" => self
-                .par_iter_isomorphic_node_group_names::<CandidatesGenerator, Isomorphism, IsomorphismNames, u32>(
+                .par_iter_isomorphic_node_group_names::<CandidatesGenerator, Isomorphism, IsomorphismNames, u32, _>(
                     minimum_node_degree,
                     number_of_neighbours_for_hash,
                     candidates_generator,
+                    deny_mask
                 )?
                 .collect(),
             "u64" => self
-                .par_iter_isomorphic_node_group_names::<CandidatesGenerator, Isomorphism, IsomorphismNames, u64>(
+                .par_iter_isomorphic_node_group_names::<CandidatesGenerator, Isomorphism, IsomorphismNames, u64, _>(
                     minimum_node_degree,
                     number_of_neighbours_for_hash,
                     candidates_generator,
+                    deny_mask
                 )?
                 .collect(),
             _ => Err(format!(
@@ -971,7 +1062,7 @@ impl Graph {
     /// Returns vector with isomorphic node groups IDs.
     ///
     /// # Arguments
-    /// * `minimum_node_degree`: Option<NodeT> - Minimum node degree for the topological synonims. By default, 5.
+    /// * `minimum_node_degree`: Option<NodeT> - Minimum node degree for the topological synonims. By default, 10.
     /// * `number_of_neighbours_for_hash`: Option<usize> - The number of neighbours to consider for the hash. By default 10.
     /// * `dtype`: Option<&str> - The data type of the hash. By default, `&str`.
     ///
@@ -986,6 +1077,7 @@ impl Graph {
             number_of_neighbours_for_hash,
             NodeIsomorphismsGenerator::default(),
             dtype,
+            &|_| false,
         )?)
     }
 
@@ -1027,10 +1119,11 @@ impl Graph {
         number_of_neighbours_for_hash: Option<usize>,
     ) -> Result<Vec<NodeT>> {
         Ok(self
-            .par_iter_isomorphic_node_group_ids::<NodeIsomorphismsGenerator, NodeT, u32>(
+            .par_iter_isomorphic_node_group_ids::<NodeIsomorphismsGenerator, NodeT, u32, _>(
                 minimum_node_degree,
                 number_of_neighbours_for_hash,
                 NodeIsomorphismsGenerator::default(),
+                &|_| false,
             )?
             .flat_map(|mut group| {
                 group.pop();
@@ -1075,6 +1168,7 @@ impl Graph {
             number_of_neighbours_for_hash,
             NodeIsomorphismsGenerator::default(),
             dtype,
+            &|_| false,
         )
     }
 
@@ -1082,7 +1176,7 @@ impl Graph {
     /// Returns vector with isomorphic node groups names.
     ///
     /// # Arguments
-    /// * `minimum_node_degree`: Option<NodeT> - Minimum node degree for the topological synonims. By default, 5.
+    /// * `minimum_node_degree`: Option<NodeT> - Minimum node degree for the topological synonims. By default, 10.
     /// * `number_of_neighbours_for_hash`: Option<usize> - The number of neighbours to consider for the hash. By default 10.
     /// * `dtype`: Option<&str> - The data type of the hash. By default, `&str`.
     ///
@@ -1097,6 +1191,7 @@ impl Graph {
             number_of_neighbours_for_hash,
             NodeIsomorphismsGenerator::default(),
             dtype,
+            &|_| false,
         )?)
     }
 
@@ -1104,7 +1199,7 @@ impl Graph {
     /// Returns vector with isomorphic edge groups IDs.
     ///
     /// # Arguments
-    /// * `minimum_node_degree`: Option<NodeT> - Minimum node degree for the topological synonims. By default, 5.
+    /// * `minimum_node_degree`: Option<NodeT> - Minimum node degree for the topological synonims. By default, 10.
     /// * `number_of_neighbours_for_hash`: Option<usize> - The number of neighbours to consider for the hash. By default 10.
     /// * `dtype`: Option<&str> - The data type of the hash. By default, `&str`.
     ///
@@ -1114,11 +1209,16 @@ impl Graph {
         number_of_neighbours_for_hash: Option<usize>,
         dtype: Option<&str>,
     ) -> Result<Vec<Vec<[NodeT; 2]>>> {
+        let isomorphic_nodes_mask = self.get_isomorphic_nodes_mask(
+            minimum_node_degree.unwrap_or(10),
+            number_of_neighbours_for_hash.unwrap_or(10),
+        )?;
         Ok(self.get_isomorphic_group_ids(
             minimum_node_degree,
             number_of_neighbours_for_hash,
             EdgeIsomorphismsGenerator::default(),
             dtype,
+            &move |node_id| isomorphic_nodes_mask[node_id as usize],
         )?)
     }
 
@@ -1153,11 +1253,16 @@ impl Graph {
         number_of_neighbours_for_hash: Option<usize>,
         dtype: Option<&str>,
     ) -> Result<Vec<u64>> {
+        let isomorphic_nodes_mask = self.get_isomorphic_nodes_mask(
+            minimum_node_degree.unwrap_or(10),
+            number_of_neighbours_for_hash.unwrap_or(10),
+        )?;
         self.get_isomorphic_node_group_hashes(
             minimum_node_degree,
             number_of_neighbours_for_hash,
             EdgeIsomorphismsGenerator::default(),
             dtype,
+            &move |node_id| isomorphic_nodes_mask[node_id as usize],
         )
     }
 
@@ -1165,7 +1270,7 @@ impl Graph {
     /// Returns vector with isomorphic edge groups names.
     ///
     /// # Arguments
-    /// * `minimum_node_degree`: Option<NodeT> - Minimum node degree for the topological synonims. By default, 5.
+    /// * `minimum_node_degree`: Option<NodeT> - Minimum node degree for the topological synonims. By default, 10.
     /// * `number_of_neighbours_for_hash`: Option<usize> - The number of neighbours to consider for the hash. By default 10.
     /// * `dtype`: Option<&str> - The data type of the hash. By default, `&str`.
     ///
@@ -1175,11 +1280,16 @@ impl Graph {
         number_of_neighbours_for_hash: Option<usize>,
         dtype: Option<&str>,
     ) -> Result<Vec<Vec<[String; 2]>>> {
+        let isomorphic_nodes_mask = self.get_isomorphic_nodes_mask(
+            minimum_node_degree.unwrap_or(10),
+            number_of_neighbours_for_hash.unwrap_or(10),
+        )?;
         Ok(self.get_isomorphic_group_names(
             minimum_node_degree,
             number_of_neighbours_for_hash,
             EdgeIsomorphismsGenerator::default(),
             dtype,
+            &move |node_id| isomorphic_nodes_mask[node_id as usize],
         )?)
     }
 
@@ -1187,7 +1297,7 @@ impl Graph {
     /// Returns vector with isomorphic tuple groups IDs.
     ///
     /// # Arguments
-    /// * `minimum_node_degree`: Option<NodeT> - Minimum node degree for the topological synonims. By default, 5.
+    /// * `minimum_node_degree`: Option<NodeT> - Minimum node degree for the topological synonims. By default, 10.
     /// * `number_of_neighbours_for_hash`: Option<usize> - The number of neighbours to consider for the hash. By default 10.
     /// * `dtype`: Option<&str> - The data type of the hash. By default, `&str`.
     ///
@@ -1200,11 +1310,16 @@ impl Graph {
         number_of_neighbours_for_hash: Option<usize>,
         dtype: Option<&str>,
     ) -> Result<Vec<Vec<[NodeT; 2]>>> {
+        let isomorphic_nodes_mask = self.get_isomorphic_nodes_mask(
+            minimum_node_degree.unwrap_or(10),
+            number_of_neighbours_for_hash.unwrap_or(10),
+        )?;
         Ok(self.get_isomorphic_group_ids(
             minimum_node_degree,
             number_of_neighbours_for_hash,
             TupleIsomorphismsGenerator::default(),
             dtype,
+            &move |node_id| isomorphic_nodes_mask[node_id as usize],
         )?)
     }
 
@@ -1239,11 +1354,16 @@ impl Graph {
         number_of_neighbours_for_hash: Option<usize>,
         dtype: Option<&str>,
     ) -> Result<Vec<u64>> {
+        let isomorphic_nodes_mask = self.get_isomorphic_nodes_mask(
+            minimum_node_degree.unwrap_or(10),
+            number_of_neighbours_for_hash.unwrap_or(10),
+        )?;
         self.get_isomorphic_node_group_hashes(
             minimum_node_degree,
             number_of_neighbours_for_hash,
             TupleIsomorphismsGenerator::default(),
             dtype,
+            &move |node_id| isomorphic_nodes_mask[node_id as usize],
         )
     }
 
@@ -1251,7 +1371,7 @@ impl Graph {
     /// Returns vector with isomorphic tuple groups names.
     ///
     /// # Arguments
-    /// * `minimum_node_degree`: Option<NodeT> - Minimum node degree for the topological synonims. By default, 5.
+    /// * `minimum_node_degree`: Option<NodeT> - Minimum node degree for the topological synonims. By default, 10.
     /// * `number_of_neighbours_for_hash`: Option<usize> - The number of neighbours to consider for the hash. By default 10.
     /// * `dtype`: Option<&str> - The data type of the hash. By default, `&str`.
     ///
@@ -1264,11 +1384,16 @@ impl Graph {
         number_of_neighbours_for_hash: Option<usize>,
         dtype: Option<&str>,
     ) -> Result<Vec<Vec<[String; 2]>>> {
+        let isomorphic_nodes_mask = self.get_isomorphic_nodes_mask(
+            minimum_node_degree.unwrap_or(10),
+            number_of_neighbours_for_hash.unwrap_or(10),
+        )?;
         Ok(self.get_isomorphic_group_names(
             minimum_node_degree,
             number_of_neighbours_for_hash,
             TupleIsomorphismsGenerator::default(),
             dtype,
+            &move |node_id| isomorphic_nodes_mask[node_id as usize],
         )?)
     }
 }
