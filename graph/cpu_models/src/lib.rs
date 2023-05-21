@@ -1,3 +1,4 @@
+#![feature(generic_const_exprs)]
 #![feature(impl_trait_in_assoc_type)]
 #![feature(adt_const_params)]
 #![feature(atomic_from_mut)]
@@ -17,6 +18,7 @@ mod distance_node_label_prediction_perceptron;
 mod edge_prediction_perceptron;
 mod first_order_line;
 mod glove;
+mod hyperball_jaccard;
 mod graph_embedder;
 mod node2vec;
 mod node_label_prediction_perceptron;
@@ -53,6 +55,7 @@ pub use edge_prediction_perceptron::*;
 pub use first_order_line::*;
 pub use glove::*;
 pub use graph_embedder::*;
+pub use hyperball_jaccard::*;
 pub use node2vec::*;
 pub use node_label_prediction_perceptron::*;
 pub use node_type_spine::*;

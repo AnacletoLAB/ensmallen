@@ -186,24 +186,22 @@ impl Graph {
                             // We get the current node counters
                             let (counter, previous_counter) = (
                                 unsafe { &mut (*primary_counters.get())[node_id as usize] },
-                                unsafe { (*secondary_counters.get())[node_id as usize].clone() },
+                                unsafe { &(*secondary_counters.get())[node_id as usize] },
                             );
 
                             // Iterate through each neighbor of the current node
-                            let new_counter = previous_counter.clone()
-                                | unsafe {
-                                    self.iter_unchecked_neighbour_node_ids_from_source_node_id(
-                                        node_id as NodeT,
-                                    )
-                                }
-                                .map(|dst| unsafe {
-                                    (*secondary_counters.get())[dst as usize].clone()
-                                })
-                                .union();
+                            let new_counter = unsafe {
+                                self.iter_unchecked_neighbour_node_ids_from_source_node_id(
+                                    node_id as NodeT,
+                                )
+                            }
+                            .map(|dst| unsafe { &(*secondary_counters.get())[dst as usize] })
+                            .union()
+                                | previous_counter;
 
                             // We check whether the counter has converged
                             // and we update the convergence flag accordingly
-                            convergence &= previous_counter == new_counter;
+                            convergence &= previous_counter == &new_counter;
 
                             // Update the centrality value for the current node
                             counters_ops(
