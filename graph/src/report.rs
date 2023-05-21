@@ -1429,11 +1429,11 @@ impl Graph {
         // --------------------------------
 
         let number_of_isomorphic_edge_groups = isomorphic_edge_groups.len() as NodeT;
-        let number_of_edges_involved_in_isomorphic_edge_groups = isomorphic_edge_groups
+        let number_of_nodes_involved_in_isomorphic_edge_groups = isomorphic_edge_groups
             .iter()
-            .map(|isomorphic_edge_group| isomorphic_edge_group.len() as NodeT)
+            .map(|isomorphic_edge_group| 2 * isomorphic_edge_group.len() as NodeT)
             .sum::<NodeT>();
-        let number_of_edges_connected_to_isomorphic_edge_groups = isomorphic_edge_groups
+        let number_of_edges_involved_in_isomorphic_edge_groups = isomorphic_edge_groups
             .iter()
             .map(|isomorphic_edge_group| unsafe {
                 ((self.get_unchecked_node_degree_from_node_id(isomorphic_edge_group[0][0])
@@ -1470,8 +1470,8 @@ impl Graph {
                 "that is swapping their ID would not change the graph topology."
             ),
             number_of_isomorphic_edge_groups,
+            number_of_nodes_involved_in_isomorphic_edge_groups,
             number_of_edges_involved_in_isomorphic_edge_groups,
-            number_of_edges_connected_to_isomorphic_edge_groups,
             maximum_number_of_edges_in_a_isomorphic_edge_group,
             maximum_number_of_edges_connected_to_a_isomorphic_edge_group,
             true,
