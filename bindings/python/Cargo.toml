@@ -36,6 +36,8 @@ markdown = "0.3"
 rayon = "1.6.0"
 indicatif = {version="0.17.0", features = ["rayon"]}
 ctrlc = "3.1.7"
+serde = "1.0"
+serde_json = "1.0"
 
 [profile.release]
 debug = false             # Include debug info.

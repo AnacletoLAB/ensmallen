@@ -385,77 +385,29 @@ impl Graph {
             .get_unchecked_neighbours_node_ids_from_src_node_id(destination_node_id);
 
         let mut intersection_count = 0;
-        let double_union = dst_neighbours.len() + src_neighbours.len();
+        let src_count = src_neighbours.len();
+        let dst_count = dst_neighbours.len();
 
         let mut dst_index = 0;
         let mut src_index = 0;
 
-        while dst_index < dst_neighbours.len() && src_index < src_neighbours.len() {
+        while dst_index < dst_count && src_index < src_count {
             let dst_neighbour = dst_neighbours[dst_index];
-
-            // If this is not an intersection, we march forward
             let src_neighbour = src_neighbours[src_index];
-            if dst_neighbour < src_neighbour {
-                dst_index += 1;
-                continue;
-            }
-            if dst_neighbour > src_neighbour {
-                src_index += 1;
-                continue;
-            }
-
-            // If we reach here, we are in an intersection.
-
-            let factor = if self.is_multigraph() {
-                let mut first_multi_edge_counter = 1;
-                let mut second_multi_edge_counter = 1;
-                    while dst_index + 1 < dst_neighbours.len() && dst_neighbour == dst_neighbours[dst_index + 1]
-                {
-                    first_multi_edge_counter += 1;
-                    dst_index += 1;
-                }
-
-                while src_index + 1 < src_neighbours.len() && src_neighbour == src_neighbours[src_index + 1]
-                {
-                    second_multi_edge_counter += 1;
-                    src_index += 1;
-                }
-
-                first_multi_edge_counter * second_multi_edge_counter
-            } else {
-                1
-            };
-
-            dst_index += 1;
-            src_index += 1;
-
-            intersection_count += factor;
+            // If this is not an intersection, we march forward
+            dst_index += (dst_neighbour <= src_neighbour) as usize;
+            src_index += (dst_neighbour >= src_neighbour) as usize;
+            // branchless update of equal nodes
+            intersection_count += (src_neighbour == dst_neighbour) as usize;
         }
 
-        let union_count = double_union - intersection_count;
+        let union_count = src_count + dst_count - intersection_count;
 
         if intersection_count == 0 {
             0.0
         } else {
             intersection_count as f32 / union_count as f32
         }
-
-        /*
-        let union = self
-            .iter_unchecked_neighbour_node_ids_union_from_source_node_ids(
-                source_node_id,
-                destination_node_id,
-            )
-            .count() as f32;
-        if union.is_zero() {
-            0.0
-        } else {
-            self.get_unchecked_neighbours_intersection_size_from_node_ids(
-                source_node_id,
-                destination_node_id,
-            ) / union
-        }
-        */
     }
 
     /// Returns the Jaccard index for the two given nodes from the given node IDs.
