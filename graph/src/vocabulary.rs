@@ -156,6 +156,14 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
         }
     }
 
+    /// Returns a vocabulary from a reverse map.
+    /// 
+    /// # Arguments
+    /// * `reverse_map`: Vec<String> - The reverse map to be used to build the vocabulary.
+    /// 
+    /// # Raises
+    /// * If the reverse map contains duplicated values.
+    /// * If the reverse map contains empty values.
     pub fn from_reverse_map(mut reverse_map: Vec<String>) -> Result<Vocabulary<IndexT>> {
         let map = reverse_map
             .iter()
@@ -163,7 +171,17 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
             .enumerate()
             .map(|(i, x)| {
                 if x.is_empty() {
-                    Err("The vocabulary cannot contain an empty term.".to_string())
+                    Err(format!(
+                        concat!(
+                            "An error was encountered while attempting to build a vocabulary. ",
+                            "The reverse map provided contains an empty string at index {} our of {}.\n",
+                            "This is not allowed since the reverse map is used to build the vocabulary. ",
+                            "Some other values that are present in the reverse map are {:?}."
+                        ),
+                        i,
+                        reverse_map.len(),
+                        reverse_map.iter().filter(|x| !x.is_empty()).take(10).collect::<Vec<_>>(),
+                    ))
                 } else {
                     Ok((compute_hash(&x), IndexT::from_usize(i)))
                 }
