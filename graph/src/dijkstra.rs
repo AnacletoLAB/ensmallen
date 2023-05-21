@@ -581,7 +581,7 @@ impl ShortestPathsDjkstra {
     pub fn get_total_distance(&self) -> f32 {
         self.total_distance
     }
-    
+
     pub fn get_log_total_distance(&self) -> f32 {
         self.log_total_distance
     }
@@ -1580,11 +1580,7 @@ impl Graph {
                 nodes_to_explore[closest_node_id]
             };
             if nodes_to_explore[closest_node_id] > 0.0 {
-                total_harmonic_distance += if use_edge_weights_as_probabilities {
-                    (-nodes_to_explore[closest_node_id]).exp()
-                } else {
-                    1.0 / nodes_to_explore[closest_node_id]
-                };
+                total_harmonic_distance += nodes_to_explore[closest_node_id].recip();
             }
             // If the closest node is the optional destination node, we have
             // completed what the user has required.
