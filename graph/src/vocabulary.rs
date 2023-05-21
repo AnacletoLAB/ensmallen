@@ -174,7 +174,7 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
                     Err(format!(
                         concat!(
                             "An error was encountered while attempting to build a vocabulary. ",
-                            "The reverse map provided contains an empty string at index {} our of {}.\n",
+                            "The reverse map provided contains an empty string at index {} out of {}.\n",
                             "This is not allowed since the reverse map is used to build the vocabulary. ",
                             "Some other values that are present in the reverse map are {:?}. ",
                             "{}"

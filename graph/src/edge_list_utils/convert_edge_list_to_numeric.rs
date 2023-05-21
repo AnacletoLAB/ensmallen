@@ -141,7 +141,7 @@ pub fn convert_edge_list_to_numeric(
     }
 
     let name = name.unwrap_or("Graph".to_owned());
-    let mut nodes: Vocabulary<NodeT> = if let Some(original_node_path) = &original_node_path {
+    let (mut nodes, writable): (Vocabulary<NodeT>, bool) = if let Some(original_node_path) = &original_node_path {
         let node_file_reader = NodeFileReader::new(Some(original_node_path.to_string()))?
             .set_comment_symbol(node_list_comment_symbol)?
             .set_header(original_node_list_header)?
@@ -168,9 +168,9 @@ pub fn convert_edge_list_to_numeric(
             node_file_reader.get_minimum_node_id(),
             None,
         )?;
-        nodes
+        (nodes, false)
     } else {
-        Vocabulary::new(false)
+        (Vocabulary::new(false), true)
     };
 
     let mut edge_types: Vocabulary<EdgeTypeT> =
@@ -230,6 +230,7 @@ pub fn convert_edge_list_to_numeric(
         // To avoid a duplicated loading bar.
         .set_verbose(verbose.map(|verbose| verbose && edges_number.is_none()))
         .set_graph_name(name);
+        
     let file_writer = EdgeFileWriter::new(target_edge_path)
         .set_destinations_column(target_destinations_column.or(original_destinations_column))
         .set_destinations_column_number(
@@ -292,6 +293,33 @@ pub fn convert_edge_list_to_numeric(
     {
         let (src_id, src_was_already_present) = nodes.insert(src_name.clone())?;
         let (dst_id, dst_was_already_present) = nodes.insert(dst_name.clone())?;
+
+        // If the node list was already provided as a file, it means that no further additions
+        // to the vocabulary derived from nodes present solely in the edge list are expected.
+        // We denote the case where the node list is writable with omonymous variable
+        // When we encounter a case where the node list is not writable, yet we have
+        // encountered some value that is not present in the node list, we must provide
+        // a meaningful and extensive error message to help them debug this situation.
+        if !writable && (src_was_already_present || dst_was_already_present) {
+            return Err(format!(
+                concat!(
+                    "The node list was provided as a file at the path {}, ",
+                    "and as such, the node list is not writable.\n",
+                    "This means that the node list is not expected to be modified ",
+                    "by this function.\n",
+                    "However, the node list is missing the following nodes that appear",
+                    "in the edge list provided at the path {}:\n",
+                    "Source: {}\n",
+                    "Destination: {}\n",
+                    "Please either provide a node list that contains all the nodes present in the edge list.\n",
+                    "If you are sure that the node list is correct, and we are mistaken, ",
+                    "please open an issue on the Ensmallen repository.\n",
+                    "Thanks!"
+                ),
+                original_node_path, original_edge_path,
+                src_name, dst_name
+            ));
+        }
         node_file_stream = node_file_stream.and_then(|mut nfs| {
             if let Some(node_file_writer) = &node_file_writer {
                 if !src_was_already_present {
