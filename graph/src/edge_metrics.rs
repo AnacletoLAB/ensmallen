@@ -385,41 +385,18 @@ impl Graph {
             .get_unchecked_neighbours_node_ids_from_src_node_id(destination_node_id);
 
         let mut intersection_count = 0;
-        let mut src_count = 0;
-        let mut dst_count = 0;
+        let src_count = src_neighbours.len();
+        let dst_count = dst_neighbours.len();
 
         let mut dst_index = 0;
         let mut src_index = 0;
 
-        while dst_index < dst_neighbours.len() && src_index < src_neighbours.len() {
+        while dst_index < dst_count && src_index < src_count {
             let dst_neighbour = dst_neighbours[dst_index];
             let src_neighbour = src_neighbours[src_index];
-
             // If this is not an intersection, we march forward
-            if dst_neighbour <= src_neighbour {
-                dst_count += 1;
-                dst_index += 1;
-                // on multigraph we ignore repeated edges
-                if self.is_multigraph() {
-                    while dst_index < dst_neighbours.len()
-                        && dst_neighbour == dst_neighbours[dst_index]
-                    {
-                        dst_index += 1;
-                    }
-                }
-            }
-            if dst_neighbour >= src_neighbour {
-                src_count += 1;
-                src_index += 1;
-                // on multigraph we ignore repeated edges
-                if self.is_multigraph() {
-                    while src_index < src_neighbours.len()
-                        && src_neighbour == src_neighbours[src_index]
-                    {
-                        src_index += 1;
-                    }
-                }
-            }
+            dst_index += (dst_neighbour <= src_neighbour) as usize;
+            src_index += (dst_neighbour >= src_neighbour) as usize;
             // branchless update of equal nodes
             intersection_count += (src_neighbour == dst_neighbour) as usize;
         }
