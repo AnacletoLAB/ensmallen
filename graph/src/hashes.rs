@@ -18,10 +18,6 @@ impl Hasher {
         Hasher::Simple(0x88b0fa3d8539f266)
     }
 
-    pub fn commutative_simple() -> Self {
-        Hasher::CommutativeSimple(0)
-    }
-
     pub fn digest(self) -> u64 {
         match self {
             Hasher::Simple(state) => state,
