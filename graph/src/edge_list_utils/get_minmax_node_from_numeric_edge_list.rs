@@ -6,6 +6,7 @@ use crate::{EdgeFileReader, EdgeT, Result};
 /// * `path`: &str - The path from where to load the edge list.
 /// * `separator`: Option<char> - The separator for the rows in the edge list.
 /// * `header`: Option<bool> - Whether the edge list has an header.
+/// * `support_balanced_quotes`: Option<bool> - Whether to support balanced quotes.
 /// * `sources_column`: Option<String> - The column name to use for the source nodes.
 /// * `sources_column_number`: Option<usize> - The column number to use for the source nodes.
 /// * `destinations_column`: Option<String> - The column name to use for the destination nodes.
@@ -28,6 +29,7 @@ pub fn get_minmax_node_from_numeric_edge_list(
     path: &str,
     separator: Option<char>,
     header: Option<bool>,
+    support_balanced_quotes: Option<bool>,
     sources_column: Option<String>,
     sources_column_number: Option<usize>,
     destinations_column: Option<String>,
@@ -46,6 +48,7 @@ pub fn get_minmax_node_from_numeric_edge_list(
     let file_reader = EdgeFileReader::new(path)?
         .set_comment_symbol(comment_symbol)?
         .set_header(header)?
+        .set_support_balanced_quotes(support_balanced_quotes)
         .set_max_rows_number(max_rows_number)?
         .set_rows_to_skip(rows_to_skip)?
         .set_separator(separator)?
@@ -69,12 +72,18 @@ pub fn get_minmax_node_from_numeric_edge_list(
                 Ok(src_id) => match dst_name.parse::<EdgeT>() {
                     Ok(dst_id) => Ok((dst_id.min(src_id), dst_id.max(src_id), 1)),
                     Err(_) => Err(format!(
-                        "Unable to convert given destination node ID {} to numeric.",
+                        concat!(
+                            "While searching for the minimum and maximum node ID, ",
+                            "we found a non-numeric destination node ID: {}."
+                        ),
                         dst_name
                     )),
                 },
                 Err(_) => Err(format!(
-                    "Unable to convert given source node ID {} to numeric.",
+                    concat!(
+                        "While searching for the minimum and maximum node ID, ",
+                        "we found a non-numeric source node ID: {}."
+                    ),
                     src_name
                 )),
             },

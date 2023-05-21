@@ -302,6 +302,7 @@ pub fn build_optimal_lists_files(
                     original_edge_path.as_ref(),
                     original_edge_list_separator.clone(),
                     original_edge_list_header,
+                    original_edge_list_support_balanced_quotes,
                     original_sources_column.clone(),
                     original_sources_column_number,
                     original_destinations_column.clone(),

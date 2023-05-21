@@ -26563,7 +26563,7 @@ pub fn convert_undirected_edge_list_to_directed(
 #[pyfunction]
 #[automatically_generated_binding]
 #[pyo3(
-    text_signature = "(path, separator, header, sources_column, sources_column_number, destinations_column, destinations_column_number, comment_symbol, max_rows_number, rows_to_skip, edges_number, load_edge_list_in_parallel, remove_chevrons, remove_spaces, verbose, name)"
+    text_signature = "(path, separator, header, support_balanced_quotes, sources_column, sources_column_number, destinations_column, destinations_column_number, comment_symbol, max_rows_number, rows_to_skip, edges_number, load_edge_list_in_parallel, remove_chevrons, remove_spaces, verbose, name)"
 )]
 /// Return minimum and maximum node number from given numeric edge list.
 ///
@@ -26575,6 +26575,8 @@ pub fn convert_undirected_edge_list_to_directed(
 ///     The separator for the rows in the edge list.
 /// header: Optional[bool]
 ///     Whether the edge list has an header.
+/// support_balanced_quotes: Optional[bool]
+///     Whether to support balanced quotes.
 /// sources_column: Optional[str]
 ///     The column name to use for the source nodes.
 /// sources_column_number: Optional[int]
@@ -26616,6 +26618,7 @@ pub fn get_minmax_node_from_numeric_edge_list(
     path: &str,
     separator: Option<char>,
     header: Option<bool>,
+    support_balanced_quotes: Option<bool>,
     sources_column: Option<String>,
     sources_column_number: Option<usize>,
     destinations_column: Option<String>,
@@ -26636,6 +26639,7 @@ pub fn get_minmax_node_from_numeric_edge_list(
                 path,
                 separator,
                 header,
+                support_balanced_quotes,
                 sources_column,
                 sources_column_number,
                 destinations_column,
@@ -26722,7 +26726,7 @@ pub fn parse_wikipedia_graph(
 #[pyo3(
     text_signature = "(path, separator, header, support_balanced_quotes, sources_column, sources_column_number, destinations_column, destinations_column_number, comment_symbol, max_rows_number, rows_to_skip, edges_number, load_edge_list_in_parallel, remove_chevrons, remove_spaces, verbose, name)"
 )]
-/// Return number of selfloops in the given edge list.
+/// Return whether the given edge list is numeric.
 ///
 /// Parameters
 /// ----------
