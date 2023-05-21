@@ -176,11 +176,31 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
                             "An error was encountered while attempting to build a vocabulary. ",
                             "The reverse map provided contains an empty string at index {} our of {}.\n",
                             "This is not allowed since the reverse map is used to build the vocabulary. ",
-                            "Some other values that are present in the reverse map are {:?}."
+                            "Some other values that are present in the reverse map are {:?}. ",
+                            "{}"
                         ),
                         i,
                         reverse_map.len(),
                         reverse_map.iter().filter(|x| !x.is_empty()).take(10).collect::<Vec<_>>(),
+                        // We check whether all values from i to the end are empty, as it may mean
+                        // that the reverse map was built from a provided number of nodes which resulted
+                        // wrong, as the actual number of nodes present in the graph is lower. For such
+                        // cases, the reverse map ends up being padded with empty strings.
+                        if reverse_map.iter().skip(i).all(|x| x.is_empty()) {
+                            format!(
+                                concat!(
+                                    "We have checked that all values from index {} to the end are empty. ",
+                                    "This may mean that the reverse map was built from a provided number of nodes ",
+                                    "which resulted wrong, as the actual number of nodes present in the graph is lower. ",
+                                ),
+                                i
+                            )
+                        } else {
+                            format!(
+                                "We have checked that all values from index {} to the end are not empty.",
+                                i
+                            )
+                        }
                     ))
                 } else {
                     Ok((compute_hash(&x), IndexT::from_usize(i)))
