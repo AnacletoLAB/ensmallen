@@ -300,7 +300,7 @@ pub fn convert_edge_list_to_numeric(
         // When we encounter a case where the node list is not writable, yet we have
         // encountered some value that is not present in the node list, we must provide
         // a meaningful and extensive error message to help them debug this situation.
-        if !writable && (src_was_already_present || dst_was_already_present) {
+        if !writable && (!src_was_already_present || !dst_was_already_present) {
             return Err(format!(
                 concat!(
                     "The node list was provided as a file at the path {:?}, ",
