@@ -190,10 +190,11 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
                             format!(
                                 concat!(
                                     "We have checked that all values from index {} to the end are empty. ",
-                                    "This may mean that the reverse map was built from a provided number of nodes ",
+                                    "This may mean that the reverse map was built from a provided number of nodes '{}' ",
                                     "which resulted wrong, as the actual number of nodes present in the graph is lower. ",
                                 ),
-                                i
+                                i,
+                                reverse_map.len()
                             )
                         } else {
                             format!(
