@@ -505,6 +505,7 @@ pub fn densify_sparse_numeric_edge_list(
     original_edge_list_edge_types_column_number: Option<usize>,
     original_weights_column: Option<String>,
     original_weights_column_number: Option<usize>,
+    original_edge_list_support_balanced_quotes: Option<bool>,
 
     original_edge_type_path: Option<String>,
     original_edge_types_column_number: Option<usize>,
@@ -514,6 +515,7 @@ pub fn densify_sparse_numeric_edge_list(
     original_minimum_edge_type_id: Option<EdgeTypeT>,
     original_edge_type_list_separator: Option<char>,
     original_edge_type_list_header: Option<bool>,
+    original_edge_type_list_support_balanced_quotes: Option<bool>,
     edge_type_list_rows_to_skip: Option<usize>,
     edge_type_list_is_correct: Option<bool>,
     edge_type_list_max_rows_number: Option<usize>,
@@ -592,6 +594,7 @@ pub fn densify_sparse_numeric_edge_list(
         if let Some(original_edge_type_path) = original_edge_type_path {
             let edge_type_file_reader = TypeFileReader::new(Some(original_edge_type_path))?
                 .set_comment_symbol(edge_type_list_comment_symbol)?
+                .set_support_balanced_quotes(original_edge_type_list_support_balanced_quotes)? 
                 .set_header(original_edge_type_list_header)?
                 .set_max_rows_number(edge_type_list_max_rows_number)?
                 .set_rows_to_skip(edge_type_list_rows_to_skip)?
@@ -618,6 +621,7 @@ pub fn densify_sparse_numeric_edge_list(
         };
     let file_reader = EdgeFileReader::new(original_edge_path)?
         .set_comment_symbol(comment_symbol)?
+        .set_support_balanced_quotes(original_edge_list_support_balanced_quotes)
         .set_max_rows_number(max_rows_number)?
         .set_rows_to_skip(rows_to_skip)?
         .set_header(original_edge_list_header)?
