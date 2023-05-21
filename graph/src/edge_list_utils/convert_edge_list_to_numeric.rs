@@ -307,7 +307,7 @@ pub fn convert_edge_list_to_numeric(
                     "and as such, the node list is not writable.\n",
                     "This means that the node list is not expected to be modified ",
                     "by this function.\n",
-                    "However, the node list is missing the following nodes that appear",
+                    "However, the node list is missing the following nodes that appear ",
                     "in the edge list provided at the path {:?}:\n",
                     "Source: {}\n",
                     "Destination: {}\n",
