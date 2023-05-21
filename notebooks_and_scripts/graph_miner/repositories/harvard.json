@@ -1,0 +1,30 @@
+{
+    "PrimeKG": {
+        "latest": {
+            "urls": [
+                "https://dataverse.harvard.edu/api/access/datafile/6180620",
+                "https://dataverse.harvard.edu/api/access/datafile/6180617"
+            ],
+            "paths": [
+                "edges.csv",
+                "nodes.tsv"
+            ],
+            "arguments": {
+                "name": "PrimeKG",
+                "node_path": "nodes.tsv",
+                "node_list_node_types_column": "node_type",
+                "nodes_column": "node_name",
+                "edge_path": "edges.csv",
+                "edge_list_separator": ",",
+                "node_list_separator": "\t",
+                "sources_column": "x_name",
+                "destinations_column": "y_name",
+                "edge_list_edge_types_column": "relation",
+                "edge_list_header": true,
+                "node_list_header": true,
+                "directed": false
+            }
+        }
+    }
+}
+

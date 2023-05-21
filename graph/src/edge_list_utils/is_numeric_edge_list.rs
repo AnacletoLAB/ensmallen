@@ -1,6 +1,6 @@
 use crate::{EdgeFileReader, EdgeT, Result};
 
-/// Return number of selfloops in the given edge list.
+/// Return whether the given edge list is numeric.
 ///
 /// # Arguments
 /// * `path`: &str - The path from where to load the edge list.

@@ -156,6 +156,14 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
         }
     }
 
+    /// Returns a vocabulary from a reverse map.
+    ///
+    /// # Arguments
+    /// * `reverse_map`: Vec<String> - The reverse map to be used to build the vocabulary.
+    ///
+    /// # Raises
+    /// * If the reverse map contains duplicated values.
+    /// * If the reverse map contains empty values.
     pub fn from_reverse_map(mut reverse_map: Vec<String>) -> Result<Vocabulary<IndexT>> {
         let map = reverse_map
             .iter()
@@ -163,7 +171,38 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
             .enumerate()
             .map(|(i, x)| {
                 if x.is_empty() {
-                    Err("The vocabulary cannot contain an empty term.".to_string())
+                    Err(format!(
+                        concat!(
+                            "An error was encountered while attempting to build a vocabulary. ",
+                            "The reverse map provided contains an empty string at index {} out of {}.\n",
+                            "This is not allowed since the reverse map is used to build the vocabulary. ",
+                            "Some other values that are present in the reverse map are {:?}. ",
+                            "{}"
+                        ),
+                        i,
+                        reverse_map.len(),
+                        reverse_map.iter().filter(|x| !x.is_empty()).take(10).collect::<Vec<_>>(),
+                        // We check whether all values from i to the end are empty, as it may mean
+                        // that the reverse map was built from a provided number of nodes which resulted
+                        // wrong, as the actual number of nodes present in the graph is lower. For such
+                        // cases, the reverse map ends up being padded with empty strings.
+                        if reverse_map.iter().skip(i).all(|x| x.is_empty()) {
+                            format!(
+                                concat!(
+                                    "We have checked that all values from index {} to the end are empty. ",
+                                    "This may mean that the reverse map was built from a provided number of nodes '{}' ",
+                                    "which resulted wrong, as the actual number of nodes present in the graph is lower. ",
+                                ),
+                                i,
+                                reverse_map.len()
+                            )
+                        } else {
+                            format!(
+                                "We have checked that all values from index {} to the end are not empty.",
+                                i
+                            )
+                        }
+                    ))
                 } else {
                     Ok((compute_hash(&x), IndexT::from_usize(i)))
                 }
