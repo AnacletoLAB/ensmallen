@@ -289,7 +289,7 @@ pub fn convert_edge_list_to_numeric(
 
     let mut edge_file_stream = file_writer.start_writer()?;
 
-    for (_, (src_name, dst_name, edge_type, weight)) in lines_iterator.filter_map(|line| line.ok())
+    for (line_number, (src_name, dst_name, edge_type, weight)) in lines_iterator.filter_map(|line| line.ok())
     {
         let (src_id, src_was_already_present) = nodes.insert(src_name.clone())?;
         let (dst_id, dst_was_already_present) = nodes.insert(dst_name.clone())?;
@@ -311,13 +311,16 @@ pub fn convert_edge_list_to_numeric(
                     "in the edge list provided at the path {:?}:\n",
                     "Source: {}\n",
                     "Destination: {}\n",
+                    "Edge type (if any): {:?}\n",
+                    "Edge weight (if any): {:?}\n",
+                    "Specifically, the malformed line was encountered at line number {}.",
                     "Please either provide a node list that contains all the nodes present in the edge list.\n",
                     "If you are sure that the node list is correct, and we are mistaken, ",
                     "please open an issue on the Ensmallen repository.\n",
                     "Thanks!"
                 ),
                 original_node_path, original_edge_path,
-                src_name, dst_name
+                src_name, dst_name, edge_type, weight, line_number,
             ));
         }
         node_file_stream = node_file_stream.and_then(|mut nfs| {
