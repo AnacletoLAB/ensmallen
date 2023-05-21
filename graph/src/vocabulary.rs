@@ -157,10 +157,10 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
     }
 
     /// Returns a vocabulary from a reverse map.
-    /// 
+    ///
     /// # Arguments
     /// * `reverse_map`: Vec<String> - The reverse map to be used to build the vocabulary.
-    /// 
+    ///
     /// # Raises
     /// * If the reverse map contains duplicated values.
     /// * If the reverse map contains empty values.
