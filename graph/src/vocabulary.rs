@@ -211,10 +211,9 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
 
         if map.len() != reverse_map.len() {
             let reverse_map_length = reverse_map.len();
-            let map_length = map.len();
             let expected_duplicates_number = reverse_map.len() - map.len();
             reverse_map.par_sort_unstable();
-            let duplicates = reverse_map
+            let up_to_ten_duplicates = reverse_map
                 .windows(2)
                 .filter_map(|a| {
                     if a[0] == a[1] {
@@ -224,17 +223,19 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
                     }
                 })
                 .unique()
+                .take(10)
                 .collect::<Vec<String>>();
+            // We need to provide a meaningful and extensive error message in the case
+            // of detected duplicates, providing the number of duplicates and up to
+            // 10 examples of the values we have identified as duplicates.
             return Err(format!(
                 concat!(
-                    "Duplicated values found while building the vocabulary!\n",
-                    "Specifically the duplicated values are:\n{:?}.\n",
-                    "The number of duplicates found is {}, as the length of the reverse map is {} and the length of the map is {}."
+                    "An error was encountered while attempting to build a vocabulary. ",
+                    "The reverse map provided contains {} duplicated values out of {}.\n",
+                    "This is not allowed since the reverse map is used to build the vocabulary. ",
+                    "Some of the duplicated values are {:?}.",
                 ),
-                duplicates,
-                expected_duplicates_number,
-                reverse_map_length,
-                map_length
+                expected_duplicates_number, reverse_map_length, up_to_ten_duplicates,
             ));
         }
 

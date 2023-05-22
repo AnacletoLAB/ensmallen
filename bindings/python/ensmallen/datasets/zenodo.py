@@ -2,147 +2,13 @@
 from ensmallen import Graph  # pylint: disable=import-error
 from .graph_retrieval import RetrievedGraph
 
-def WikiLinkIT(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2018", **kwargs
-) -> Graph:
-    """Return WikiLinkIT2001 graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2018"
-        Version to retrieve	
-		The available versions are:
-			- 2001
-			- 2002
-			- 2003
-			- 2004
-			- 2005
-			- 2006
-			- 2007
-			- 2008
-			- 2009
-			- 2010
-			- 2011
-			- 2012
-			- 2013
-			- 2014
-			- 2015
-			- 2016
-			- 2017
-			- 2018	
-	
-	References
-	----------
-	Please cite:
-	
-	```bib
-	@inproceedings{consonni2019wikilinkgraphs,
-	  title={WikiLinkGraphs: a complete, longitudinal and multi-language dataset of the Wikipedia link networks},
-	  author={Consonni, Cristian and Laniado, David and Montresor, Alberto},
-	  booktitle={Proceedings of the International AAAI Conference on Web and Social Media},
-	  volume={13},
-	  pages={598--607},
-	  year={2019}
-	}
-	```
-    """
-    return RetrievedGraph(
-        "WikiLinkIT", version, "zenodo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def WikiLinkFR(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2018", **kwargs
-) -> Graph:
-    """Return WikiLinkFR2001 graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2018"
-        Version to retrieve	
-		The available versions are:
-			- 2001
-			- 2002
-			- 2003
-			- 2004
-			- 2005
-			- 2006
-			- 2007
-			- 2008
-			- 2009
-			- 2010
-			- 2011
-			- 2012
-			- 2013
-			- 2014
-			- 2015
-			- 2016
-			- 2017
-			- 2018	
-	
-	References
-	----------
-	Please cite:
-	
-	```bib
-	@inproceedings{consonni2019wikilinkgraphs,
-	  title={WikiLinkGraphs: a complete, longitudinal and multi-language dataset of the Wikipedia link networks},
-	  author={Consonni, Cristian and Laniado, David and Montresor, Alberto},
-	  booktitle={Proceedings of the International AAAI Conference on Web and Social Media},
-	  volume={13},
-	  pages={598--607},
-	  year={2019}
-	}
-	```
-    """
-    return RetrievedGraph(
-        "WikiLinkFR", version, "zenodo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def NPKG(
+def FAVA(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
     cache_sys_var="GRAPH_CACHE_DIR", version="latest", **kwargs
 ) -> Graph:
-    """Return NPKG graph	
+    """Return FAVA graph	
 
     Parameters
     ----------
@@ -167,7 +33,42 @@ def NPKG(
 	
     """
     return RetrievedGraph(
-        "NPKG", version, "zenodo", directed, preprocess, bioregistry, load_nodes,
+        "FAVA", version, "zenodo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def GameOfThronesCharactersInteractions(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="latest", **kwargs
+) -> Graph:
+    """Return Game of Thrones Characters Interactions graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "latest"
+        Version to retrieve		
+	
+	
+    """
+    return RetrievedGraph(
+        "GameOfThronesCharactersInteractions", version, "zenodo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
@@ -218,6 +119,41 @@ def GiantTN(
     """
     return RetrievedGraph(
         "GiantTN", version, "zenodo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def NPKG(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="latest", **kwargs
+) -> Graph:
+    """Return NPKG graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "latest"
+        Version to retrieve		
+	
+	
+    """
+    return RetrievedGraph(
+        "NPKG", version, "zenodo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
@@ -358,13 +294,13 @@ def WikiLinkDE(
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
-def WikiLinkNL(
+def WikiLinkEN(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
     cache_sys_var="GRAPH_CACHE_DIR", version="2018", **kwargs
 ) -> Graph:
-    """Return WikiLinkNL2001 graph	
+    """Return WikiLinkEN2001 graph	
 
     Parameters
     ----------
@@ -421,141 +357,7 @@ def WikiLinkNL(
 	```
     """
     return RetrievedGraph(
-        "WikiLinkNL", version, "zenodo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def WikiLinkSV(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2018", **kwargs
-) -> Graph:
-    """Return WikiLinkSV2001 graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2018"
-        Version to retrieve	
-		The available versions are:
-			- 2001
-			- 2002
-			- 2003
-			- 2004
-			- 2005
-			- 2006
-			- 2007
-			- 2008
-			- 2009
-			- 2010
-			- 2011
-			- 2012
-			- 2013
-			- 2014
-			- 2015
-			- 2016
-			- 2017
-			- 2018	
-	
-	References
-	----------
-	Please cite:
-	
-	```bib
-	@inproceedings{consonni2019wikilinkgraphs,
-	  title={WikiLinkGraphs: a complete, longitudinal and multi-language dataset of the Wikipedia link networks},
-	  author={Consonni, Cristian and Laniado, David and Montresor, Alberto},
-	  booktitle={Proceedings of the International AAAI Conference on Web and Social Media},
-	  volume={13},
-	  pages={598--607},
-	  year={2019}
-	}
-	```
-    """
-    return RetrievedGraph(
-        "WikiLinkSV", version, "zenodo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def WikiLinkPL(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2018", **kwargs
-) -> Graph:
-    """Return WikiLinkPL2001 graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2018"
-        Version to retrieve	
-		The available versions are:
-			- 2001
-			- 2002
-			- 2003
-			- 2004
-			- 2005
-			- 2006
-			- 2007
-			- 2008
-			- 2009
-			- 2010
-			- 2011
-			- 2012
-			- 2013
-			- 2014
-			- 2015
-			- 2016
-			- 2017
-			- 2018	
-	
-	References
-	----------
-	Please cite:
-	
-	```bib
-	@inproceedings{consonni2019wikilinkgraphs,
-	  title={WikiLinkGraphs: a complete, longitudinal and multi-language dataset of the Wikipedia link networks},
-	  author={Consonni, Cristian and Laniado, David and Montresor, Alberto},
-	  booktitle={Proceedings of the International AAAI Conference on Web and Social Media},
-	  volume={13},
-	  pages={598--607},
-	  year={2019}
-	}
-	```
-    """
-    return RetrievedGraph(
-        "WikiLinkPL", version, "zenodo", directed, preprocess, bioregistry, load_nodes,
+        "WikiLinkEN", version, "zenodo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
@@ -626,48 +428,13 @@ def WikiLinkES(
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
-def GameOfThronesCharactersInteractions(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="latest", **kwargs
-) -> Graph:
-    """Return Game of Thrones Characters Interactions graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "latest"
-        Version to retrieve		
-	
-	
-    """
-    return RetrievedGraph(
-        "GameOfThronesCharactersInteractions", version, "zenodo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def WikiLinkEN(
+def WikiLinkFR(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
     cache_sys_var="GRAPH_CACHE_DIR", version="2018", **kwargs
 ) -> Graph:
-    """Return WikiLinkEN2001 graph	
+    """Return WikiLinkFR2001 graph	
 
     Parameters
     ----------
@@ -724,17 +491,17 @@ def WikiLinkEN(
 	```
     """
     return RetrievedGraph(
-        "WikiLinkEN", version, "zenodo", directed, preprocess, bioregistry, load_nodes,
+        "WikiLinkFR", version, "zenodo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
-def FAVA(
+def WikiLinkIT(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="latest", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="2018", **kwargs
 ) -> Graph:
-    """Return FAVA graph	
+    """Return WikiLinkIT2001 graph	
 
     Parameters
     ----------
@@ -753,13 +520,179 @@ def FAVA(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "latest"
-        Version to retrieve		
+    version = "2018"
+        Version to retrieve	
+		The available versions are:
+			- 2001
+			- 2002
+			- 2003
+			- 2004
+			- 2005
+			- 2006
+			- 2007
+			- 2008
+			- 2009
+			- 2010
+			- 2011
+			- 2012
+			- 2013
+			- 2014
+			- 2015
+			- 2016
+			- 2017
+			- 2018	
 	
+	References
+	----------
+	Please cite:
 	
+	```bib
+	@inproceedings{consonni2019wikilinkgraphs,
+	  title={WikiLinkGraphs: a complete, longitudinal and multi-language dataset of the Wikipedia link networks},
+	  author={Consonni, Cristian and Laniado, David and Montresor, Alberto},
+	  booktitle={Proceedings of the International AAAI Conference on Web and Social Media},
+	  volume={13},
+	  pages={598--607},
+	  year={2019}
+	}
+	```
     """
     return RetrievedGraph(
-        "FAVA", version, "zenodo", directed, preprocess, bioregistry, load_nodes,
+        "WikiLinkIT", version, "zenodo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def WikiLinkNL(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2018", **kwargs
+) -> Graph:
+    """Return WikiLinkNL2001 graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2018"
+        Version to retrieve	
+		The available versions are:
+			- 2001
+			- 2002
+			- 2003
+			- 2004
+			- 2005
+			- 2006
+			- 2007
+			- 2008
+			- 2009
+			- 2010
+			- 2011
+			- 2012
+			- 2013
+			- 2014
+			- 2015
+			- 2016
+			- 2017
+			- 2018	
+	
+	References
+	----------
+	Please cite:
+	
+	```bib
+	@inproceedings{consonni2019wikilinkgraphs,
+	  title={WikiLinkGraphs: a complete, longitudinal and multi-language dataset of the Wikipedia link networks},
+	  author={Consonni, Cristian and Laniado, David and Montresor, Alberto},
+	  booktitle={Proceedings of the International AAAI Conference on Web and Social Media},
+	  volume={13},
+	  pages={598--607},
+	  year={2019}
+	}
+	```
+    """
+    return RetrievedGraph(
+        "WikiLinkNL", version, "zenodo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def WikiLinkPL(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2018", **kwargs
+) -> Graph:
+    """Return WikiLinkPL2001 graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2018"
+        Version to retrieve	
+		The available versions are:
+			- 2001
+			- 2002
+			- 2003
+			- 2004
+			- 2005
+			- 2006
+			- 2007
+			- 2008
+			- 2009
+			- 2010
+			- 2011
+			- 2012
+			- 2013
+			- 2014
+			- 2015
+			- 2016
+			- 2017
+			- 2018	
+	
+	References
+	----------
+	Please cite:
+	
+	```bib
+	@inproceedings{consonni2019wikilinkgraphs,
+	  title={WikiLinkGraphs: a complete, longitudinal and multi-language dataset of the Wikipedia link networks},
+	  author={Consonni, Cristian and Laniado, David and Montresor, Alberto},
+	  booktitle={Proceedings of the International AAAI Conference on Web and Social Media},
+	  volume={13},
+	  pages={598--607},
+	  year={2019}
+	}
+	```
+    """
+    return RetrievedGraph(
+        "WikiLinkPL", version, "zenodo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
@@ -827,6 +760,73 @@ def WikiLinkRU(
     """
     return RetrievedGraph(
         "WikiLinkRU", version, "zenodo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def WikiLinkSV(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2018", **kwargs
+) -> Graph:
+    """Return WikiLinkSV2001 graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2018"
+        Version to retrieve	
+		The available versions are:
+			- 2001
+			- 2002
+			- 2003
+			- 2004
+			- 2005
+			- 2006
+			- 2007
+			- 2008
+			- 2009
+			- 2010
+			- 2011
+			- 2012
+			- 2013
+			- 2014
+			- 2015
+			- 2016
+			- 2017
+			- 2018	
+	
+	References
+	----------
+	Please cite:
+	
+	```bib
+	@inproceedings{consonni2019wikilinkgraphs,
+	  title={WikiLinkGraphs: a complete, longitudinal and multi-language dataset of the Wikipedia link networks},
+	  author={Consonni, Cristian and Laniado, David and Montresor, Alberto},
+	  booktitle={Proceedings of the International AAAI Conference on Web and Social Media},
+	  volume={13},
+	  pages={598--607},
+	  year={2019}
+	}
+	```
+    """
+    return RetrievedGraph(
+        "WikiLinkSV", version, "zenodo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
