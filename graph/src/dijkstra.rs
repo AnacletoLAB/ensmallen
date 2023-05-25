@@ -1,8 +1,7 @@
 use super::*;
 use indicatif::ParallelProgressIterator;
 use num_traits::{PrimInt, Zero};
-use parallel_frontier::Frontier;
-use rayon::prelude::*;
+use parallel_frontier::prelude::*;
 use std::cmp::Ord;
 use std::collections::VecDeque;
 use std::convert::TryFrom;
@@ -582,7 +581,6 @@ impl ShortestPathsDjkstra {
     pub fn get_total_distance(&self) -> f32 {
         self.total_distance
     }
-    
     pub fn get_log_total_distance(&self) -> f32 {
         self.log_total_distance
     }
@@ -1562,7 +1560,7 @@ impl Graph {
         });
 
         let mut distances = vec![f32::MAX; nodes_number];
-        let mut nodes_to_explore: DijkstraQueue =
+        let mut nodes_to_explore: DijkstraQueue<f32> =
             DijkstraQueue::with_capacity_from_roots(nodes_number, src_node_ids, &mut distances);
         let mut eccentricity: f32 = 0.0;
         let mut total_distance: f32 = 0.0;
@@ -1575,13 +1573,13 @@ impl Graph {
                 eccentricity = closest_node_id_distance;
                 most_distant_node = closest_node_id as NodeT;
             }
-            total_distance += nodes_to_explore[closest_node_id];
+            total_distance += if use_edge_weights_as_probabilities {
+                (-nodes_to_explore[closest_node_id]).exp()
+            } else {
+                nodes_to_explore[closest_node_id]
+            };
             if nodes_to_explore[closest_node_id] > 0.0 {
-                total_harmonic_distance += if use_edge_weights_as_probabilities {
-                    (-nodes_to_explore[closest_node_id]).exp()
-                } else {
-                    1.0 / nodes_to_explore[closest_node_id]
-                };
+                total_harmonic_distance += nodes_to_explore[closest_node_id].recip();
             }
             // If the closest node is the optional destination node, we have
             // completed what the user has required.

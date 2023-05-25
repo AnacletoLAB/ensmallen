@@ -120,6 +120,14 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
         }
     }
 
+    /// Returns the minimum id of the vocabulary.
+    pub fn get_minimum_id(&self) -> Option<IndexT> {
+        match self {
+            Vocabulary::Numeric { range, .. } => Some(IndexT::from_usize(range.start)),
+            Vocabulary::String { map, .. } => map.values().min().cloned(),
+        }
+    }
+
     // TODO! properly extend Iterator
     pub fn iter(&self) -> impl Iterator<Item = (IndexT, String)> + '_ {
         self.iter_keys()
@@ -148,6 +156,14 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
         }
     }
 
+    /// Returns a vocabulary from a reverse map.
+    ///
+    /// # Arguments
+    /// * `reverse_map`: Vec<String> - The reverse map to be used to build the vocabulary.
+    ///
+    /// # Raises
+    /// * If the reverse map contains duplicated values.
+    /// * If the reverse map contains empty values.
     pub fn from_reverse_map(mut reverse_map: Vec<String>) -> Result<Vocabulary<IndexT>> {
         let map = reverse_map
             .iter()
@@ -155,7 +171,38 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
             .enumerate()
             .map(|(i, x)| {
                 if x.is_empty() {
-                    Err("The vocabulary cannot contain an empty term.".to_string())
+                    Err(format!(
+                        concat!(
+                            "An error was encountered while attempting to build a vocabulary. ",
+                            "The reverse map provided contains an empty string at index {} out of {}.\n",
+                            "This is not allowed since the reverse map is used to build the vocabulary. ",
+                            "Some other values that are present in the reverse map are {:?}. ",
+                            "{}"
+                        ),
+                        i,
+                        reverse_map.len(),
+                        reverse_map.iter().filter(|x| !x.is_empty()).take(10).collect::<Vec<_>>(),
+                        // We check whether all values from i to the end are empty, as it may mean
+                        // that the reverse map was built from a provided number of nodes which resulted
+                        // wrong, as the actual number of nodes present in the graph is lower. For such
+                        // cases, the reverse map ends up being padded with empty strings.
+                        if reverse_map.iter().skip(i).all(|x| x.is_empty()) {
+                            format!(
+                                concat!(
+                                    "We have checked that all values from index {} to the end are empty. ",
+                                    "This may mean that the reverse map was built from a provided number of nodes '{}' ",
+                                    "which resulted wrong, as the actual number of nodes present in the graph is lower. ",
+                                ),
+                                i,
+                                reverse_map.len()
+                            )
+                        } else {
+                            format!(
+                                "We have checked that all values from index {} to the end are not empty.",
+                                i
+                            )
+                        }
+                    ))
                 } else {
                     Ok((compute_hash(&x), IndexT::from_usize(i)))
                 }
@@ -164,10 +211,9 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
 
         if map.len() != reverse_map.len() {
             let reverse_map_length = reverse_map.len();
-            let map_length = map.len();
             let expected_duplicates_number = reverse_map.len() - map.len();
             reverse_map.par_sort_unstable();
-            let duplicates = reverse_map
+            let up_to_ten_duplicates = reverse_map
                 .windows(2)
                 .filter_map(|a| {
                     if a[0] == a[1] {
@@ -177,17 +223,19 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
                     }
                 })
                 .unique()
+                .take(10)
                 .collect::<Vec<String>>();
+            // We need to provide a meaningful and extensive error message in the case
+            // of detected duplicates, providing the number of duplicates and up to
+            // 10 examples of the values we have identified as duplicates.
             return Err(format!(
                 concat!(
-                    "Duplicated values found while building the vocabulary!\n",
-                    "Specifically the duplicated values are:\n{:?}.\n",
-                    "The number of duplicates found is {}, as the length of the reverse map is {} and the length of the map is {}."
+                    "An error was encountered while attempting to build a vocabulary. ",
+                    "The reverse map provided contains {} duplicated values out of {}.\n",
+                    "This is not allowed since the reverse map is used to build the vocabulary. ",
+                    "Some of the duplicated values are {:?}.",
                 ),
-                duplicates,
-                expected_duplicates_number,
-                reverse_map_length,
-                map_length
+                expected_duplicates_number, reverse_map_length, up_to_ten_duplicates,
             ));
         }
 

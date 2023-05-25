@@ -141,37 +141,38 @@ pub fn convert_edge_list_to_numeric(
     }
 
     let name = name.unwrap_or("Graph".to_owned());
-    let mut nodes: Vocabulary<NodeT> = if let Some(original_node_path) = &original_node_path {
-        let node_file_reader = NodeFileReader::new(Some(original_node_path.to_string()))?
-            .set_comment_symbol(node_list_comment_symbol)?
-            .set_header(original_node_list_header)?
-            .set_support_balanced_quotes(original_node_list_support_balanced_quotes)?
-            .set_max_rows_number(node_list_max_rows_number)?
-            .set_rows_to_skip(node_list_rows_to_skip)?
-            .set_separator(original_node_list_separator)?
-            .set_nodes_column_number(original_nodes_column_number)?
-            .set_nodes_column(original_nodes_column)?
-            .set_minimum_node_id(original_minimum_node_id)
-            .set_numeric_node_ids(original_numeric_node_ids)
-            .set_csv_is_correct(node_list_is_correct)?
-            .set_number_of_nodes(nodes_number)
-            .set_parallel(original_load_node_list_in_parallel)?
-            .set_remove_chevrons(remove_chevrons)
-            .set_remove_spaces(remove_spaces);
-        let (nodes, _) = parse_nodes(
-            node_file_reader.read_lines().transpose()?,
-            node_file_reader.nodes_number.clone(),
-            None,
-            node_file_reader.is_csv_correct()?,
-            node_file_reader.has_numeric_node_ids(),
-            false,
-            node_file_reader.get_minimum_node_id(),
-            None,
-        )?;
-        nodes
-    } else {
-        Vocabulary::new(false)
-    };
+    let (mut nodes, writable): (Vocabulary<NodeT>, bool) =
+        if let Some(original_node_path) = &original_node_path {
+            let node_file_reader = NodeFileReader::new(Some(original_node_path.to_string()))?
+                .set_comment_symbol(node_list_comment_symbol)?
+                .set_header(original_node_list_header)?
+                .set_support_balanced_quotes(original_node_list_support_balanced_quotes)?
+                .set_max_rows_number(node_list_max_rows_number)?
+                .set_rows_to_skip(node_list_rows_to_skip)?
+                .set_separator(original_node_list_separator)?
+                .set_nodes_column_number(original_nodes_column_number)?
+                .set_nodes_column(original_nodes_column)?
+                .set_minimum_node_id(original_minimum_node_id)
+                .set_numeric_node_ids(original_numeric_node_ids)
+                .set_csv_is_correct(node_list_is_correct)?
+                .set_number_of_nodes(nodes_number)
+                .set_parallel(original_load_node_list_in_parallel)?
+                .set_remove_chevrons(remove_chevrons)
+                .set_remove_spaces(remove_spaces);
+            let (nodes, _) = parse_nodes(
+                node_file_reader.read_lines().transpose()?,
+                node_file_reader.nodes_number.clone(),
+                None,
+                node_file_reader.is_csv_correct()?,
+                node_file_reader.has_numeric_node_ids(),
+                false,
+                node_file_reader.get_minimum_node_id(),
+                None,
+            )?;
+            (nodes, false)
+        } else {
+            (Vocabulary::new(false), true)
+        };
 
     let mut edge_types: Vocabulary<EdgeTypeT> =
         if let Some(original_edge_type_path) = original_edge_type_path {
@@ -230,6 +231,7 @@ pub fn convert_edge_list_to_numeric(
         // To avoid a duplicated loading bar.
         .set_verbose(verbose.map(|verbose| verbose && edges_number.is_none()))
         .set_graph_name(name);
+
     let file_writer = EdgeFileWriter::new(target_edge_path)
         .set_destinations_column(target_destinations_column.or(original_destinations_column))
         .set_destinations_column_number(
@@ -288,10 +290,69 @@ pub fn convert_edge_list_to_numeric(
 
     let mut edge_file_stream = file_writer.start_writer()?;
 
-    for (_, (src_name, dst_name, edge_type, weight)) in lines_iterator.filter_map(|line| line.ok())
+    for (line_number, (src_name, dst_name, edge_type, weight)) in
+        lines_iterator.filter_map(|line| line.ok())
     {
         let (src_id, src_was_already_present) = nodes.insert(src_name.clone())?;
         let (dst_id, dst_was_already_present) = nodes.insert(dst_name.clone())?;
+
+        // If the node list was already provided as a file, it means that no further additions
+        // to the vocabulary derived from nodes present solely in the edge list are expected.
+        // We denote the case where the node list is writable with omonymous variable
+        // When we encounter a case where the node list is not writable, yet we have
+        // encountered some value that is not present in the node list, we must provide
+        // a meaningful and extensive error message to help them debug this situation.
+        if !writable && (!src_was_already_present || !dst_was_already_present) {
+            return Err(format!(
+                concat!(
+                    "The node list was provided as a file at the path {:?}, ",
+                    "and as such, the node list is not writable.\n",
+                    "This means that the node list is not expected to be modified ",
+                    "by this function.\n",
+                    "However, the node list is missing the following nodes that appear ",
+                    "in the edge list provided at the path {:?}:\n",
+                    "Source: {}\n",
+                    "Destination: {}\n",
+                    "Edge type (if any): {:?}\n",
+                    "Edge weight (if any): {:?}\n",
+                    "Specifically, the malformed line was encountered at line number {}.\n",
+                    "{}",
+                    "Please either provide a node list that contains all the nodes present in the edge list.\n",
+                    "If you are sure that the node list is correct, and we are mistaken, ",
+                    "please open an issue on the Ensmallen repository.\n",
+                    "Thanks!"
+                ),
+                original_node_path, original_edge_path,
+                src_name, dst_name, edge_type, weight, line_number,
+                // We need to check also whether either source, destination or edge type (if any)
+                // start or end with a quote \".
+                // Such cases may hint at a situation where the line in question contains, somewhat
+                // sanitized by quotes, the separator employed by the used to parse the
+                // current document. In such cases, columns that are not intended may appear and
+                // load as nodes portion of other columns that are not intended to be loaded as nodes.
+                if src_name.starts_with('"')
+                    || src_name.ends_with('"')
+                    || dst_name.starts_with('"')
+                    || dst_name.ends_with('"')
+                    || edge_type.as_ref().map_or(false, |edge_type| edge_type.starts_with('"') 
+                            || edge_type.ends_with('"'))
+                {
+                    concat!(
+                        "We have observed that there appears to be a quote or chevron at the terminus of ",
+                        "the parsed values. This may hint at a situation where the line in question contains, ",
+                        "somewhat sanitized by quotes or chevrons, the separator employed by the used to parse ",
+                        "the current document. In such cases, columns that are not intended may appear and load ",
+                        "as nodes portion of other columns that are not intended to be loaded as nodes.\n",
+                        "We have prepared for these situations the parameter edge_list_support_balanced_quotes.\n",
+                        "Please note that having to deal with quotes balancing will slow down the parsing - the ",
+                        "best solution is just to choose a separator for edge and node list that DO NOT appear in ",
+                        "none of the columns.\n",
+                    )
+                } else {
+                    ""
+                }
+            ));
+        }
         node_file_stream = node_file_stream.and_then(|mut nfs| {
             if let Some(node_file_writer) = &node_file_writer {
                 if !src_was_already_present {
@@ -444,6 +505,7 @@ pub fn densify_sparse_numeric_edge_list(
     original_edge_list_edge_types_column_number: Option<usize>,
     original_weights_column: Option<String>,
     original_weights_column_number: Option<usize>,
+    original_edge_list_support_balanced_quotes: Option<bool>,
 
     original_edge_type_path: Option<String>,
     original_edge_types_column_number: Option<usize>,
@@ -453,6 +515,7 @@ pub fn densify_sparse_numeric_edge_list(
     original_minimum_edge_type_id: Option<EdgeTypeT>,
     original_edge_type_list_separator: Option<char>,
     original_edge_type_list_header: Option<bool>,
+    original_edge_type_list_support_balanced_quotes: Option<bool>,
     edge_type_list_rows_to_skip: Option<usize>,
     edge_type_list_is_correct: Option<bool>,
     edge_type_list_max_rows_number: Option<usize>,
@@ -531,6 +594,7 @@ pub fn densify_sparse_numeric_edge_list(
         if let Some(original_edge_type_path) = original_edge_type_path {
             let edge_type_file_reader = TypeFileReader::new(Some(original_edge_type_path))?
                 .set_comment_symbol(edge_type_list_comment_symbol)?
+                .set_support_balanced_quotes(original_edge_type_list_support_balanced_quotes)? 
                 .set_header(original_edge_type_list_header)?
                 .set_max_rows_number(edge_type_list_max_rows_number)?
                 .set_rows_to_skip(edge_type_list_rows_to_skip)?
@@ -557,6 +621,7 @@ pub fn densify_sparse_numeric_edge_list(
         };
     let file_reader = EdgeFileReader::new(original_edge_path)?
         .set_comment_symbol(comment_symbol)?
+        .set_support_balanced_quotes(original_edge_list_support_balanced_quotes)
         .set_max_rows_number(max_rows_number)?
         .set_rows_to_skip(rows_to_skip)?
         .set_header(original_edge_list_header)?

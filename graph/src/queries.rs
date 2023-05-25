@@ -458,7 +458,8 @@ impl Graph {
     /// # Safety
     /// If any of the given node IDs do not exist in the graph the method will panic.
     pub unsafe fn get_unchecked_edge_id_from_node_ids(&self, src: NodeT, dst: NodeT) -> EdgeT {
-        self.edges.get_unchecked_edge_id_from_node_ids(src, dst, self.is_multigraph())
+        self.edges
+            .get_unchecked_edge_id_from_node_ids(src, dst, self.is_multigraph())
     }
 
     #[inline(always)]
@@ -732,7 +733,7 @@ impl Graph {
     ///
     /// # Safety
     /// If the given node ID does not exist in the current graph the method will raise a panic.
-    pub unsafe fn get_unchecked_selfloop_adjusted_node_degree_from_node_id(
+    pub unsafe fn get_unchecked_selfloop_excluded_node_degree_from_node_id(
         &self,
         node_id: NodeT,
     ) -> NodeT {
@@ -749,7 +750,7 @@ impl Graph {
     /// * ValueError - If the given node ID does not exist in the current graph the method will raise a panic.
     pub fn get_selfloop_adjusted_node_degree_from_node_id(&self, node_id: NodeT) -> Result<NodeT> {
         self.validate_node_id(node_id).map(|node_id| unsafe {
-            self.get_unchecked_selfloop_adjusted_node_degree_from_node_id(node_id)
+            self.get_unchecked_selfloop_excluded_node_degree_from_node_id(node_id)
         })
     }
 
@@ -766,7 +767,7 @@ impl Graph {
     ) -> Result<NodeT> {
         self.get_node_id_from_node_name(node_name)
             .map(|node_id| unsafe {
-                self.get_unchecked_selfloop_adjusted_node_degree_from_node_id(node_id)
+                self.get_unchecked_selfloop_excluded_node_degree_from_node_id(node_id)
             })
     }
 
@@ -954,6 +955,7 @@ impl Graph {
             .map(|node_id| unsafe { self.get_unchecked_node_type_ids_from_node_id(node_id) })
     }
 
+    #[inline(always)]
     /// Returns edge type of given edge.
     ///
     /// This method will panic if the given edge ID is greater than
@@ -967,7 +969,7 @@ impl Graph {
     /// # Example
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-
+    ///
     /// assert_eq!(unsafe{ graph.get_unchecked_edge_type_id_from_edge_id(0) }, Some(0));
     /// ```
     ///
@@ -981,6 +983,34 @@ impl Graph {
             .as_ref()
             .as_ref()
             .and_then(|ets| ets.ids[edge_id as usize])
+    }
+
+    /// Returns edge type name of given edge.
+    ///
+    /// This method will panic if the given edge ID is greater than
+    /// the number of edges in the graph.
+    /// Furthermore, if the graph does NOT have edge types, it will NOT
+    /// return neither an error or a panic.
+    ///
+    /// # Arguments
+    /// * `edge_id`: EdgeT - edge whose edge type is to be returned.
+    ///
+    /// # Example
+    /// ```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
+    ///
+    /// assert_eq!(unsafe{ graph.get_unchecked_edge_type_name_from_edge_id(0) }, Some(0));
+    /// ```
+    ///
+    /// # Safety
+    /// If the given edge ID does not exist in the current graph the method will raise a panic.
+    pub unsafe fn get_unchecked_edge_type_name_from_edge_id(
+        &self,
+        edge_id: EdgeT,
+    ) -> Option<String> {
+        self.get_unchecked_edge_type_name_from_edge_type_id(
+            self.get_unchecked_edge_type_id_from_edge_id(edge_id),
+        )
     }
 
     /// Returns edge type of given edge.
@@ -1516,7 +1546,11 @@ impl Graph {
     /// ```
     pub fn get_neighbour_node_ids_from_node_id(&self, node_id: NodeT) -> Result<Vec<NodeT>> {
         self.validate_node_id(node_id).map(|node_id| {
-            unsafe { self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id) }.collect()
+            unsafe {
+                self.edges
+                    .get_unchecked_neighbours_node_ids_from_src_node_id(node_id)
+            }
+            .to_vec()
         })
     }
 

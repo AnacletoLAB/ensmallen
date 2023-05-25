@@ -1,29 +1,30 @@
 use super::*;
+use num_traits::Float;
 use tags::*;
 
 #[derive(Debug)]
 /// Reference classic binary heap
 #[no_binding]
-pub struct DijkstraQueue<'a> {
+pub struct DijkstraQueue<'a, F> {
     /// This is the actual heap, it contains the node_ids and are ordered based on
     /// self.distances[id]
     heap: Vec<usize>,
 
     /// The distance of every node in the graph
-    distances: &'a mut [f32],
+    distances: &'a mut [F],
 
     /// The mapping from each node to its position in the heap.
     /// This is only needed because we don't want to insert duplicated nodes.
     map: Vec<usize>,
 }
 
-impl<'a> DijkstraQueue<'a> {
+impl<'a, F: Float> DijkstraQueue<'a, F> {
     /// Initialize the queue with the given root, in this case the capacity
     /// should always be equal to the number of nodes in the graph.
     pub fn with_capacity_from_roots(
         capacity: usize,
         root_node_ids: Vec<NodeT>,
-        distances: &'a mut [f32],
+        distances: &'a mut [F],
     ) -> Self {
         let mut res = DijkstraQueue {
             heap: Vec::with_capacity(capacity),
@@ -33,7 +34,7 @@ impl<'a> DijkstraQueue<'a> {
         for root_node_id in root_node_ids {
             res.heap.push(root_node_id as usize);
             res.map[root_node_id as usize] = 0;
-            res.distances[root_node_id as usize] = 0.0;
+            res.distances[root_node_id as usize] = F::zero();
         }
         res
     }
@@ -67,7 +68,7 @@ impl<'a> DijkstraQueue<'a> {
     }
 
     /// add a value to the heap
-    pub fn push(&mut self, node_id: usize, distance: f32) {
+    pub fn push(&mut self, node_id: usize, distance: F) {
         // If the distance is finite, the node **IS** already present,
         // we check if the new distance is smaller, in that case we have to
         // fix the heap.
@@ -89,9 +90,9 @@ impl<'a> DijkstraQueue<'a> {
     }
 
     // bubble up the value until the heap property holds
-    fn bubble_up(&mut self, mut idx: usize, distance: f32) {
+    fn bubble_up(&mut self, mut idx: usize, distance: F) {
         loop {
-            let parent_idx = DijkstraQueue::parent(idx);
+            let parent_idx = Self::parent(idx);
 
             if distance >= self.distances[self.heap[parent_idx] as usize] {
                 break;
@@ -133,22 +134,22 @@ impl<'a> DijkstraQueue<'a> {
         result
     }
 
-    fn bubble_down(&mut self, mut idx: usize, distance: f32) {
+    fn bubble_down(&mut self, mut idx: usize, distance: F) {
         // fix the heap by bubbling down the value
         loop {
             // get the indices of the right and left child
-            let left_i = DijkstraQueue::left(idx);
-            let right_i = DijkstraQueue::right(idx);
+            let left_i = Self::left(idx);
+            let right_i = Self::right(idx);
             let left_v = self
                 .heap
                 .get(left_i)
                 .map(|x| self.distances[*x])
-                .unwrap_or(f32::INFINITY);
+                .unwrap_or(F::infinity());
             let right_v = self
                 .heap
                 .get(right_i)
                 .map(|x| self.distances[*x])
-                .unwrap_or(f32::INFINITY);
+                .unwrap_or(F::infinity());
 
             // find the smallest child
             let (smallest_i, smallest_v) = if left_v > right_v {
@@ -174,14 +175,15 @@ impl<'a> DijkstraQueue<'a> {
 }
 
 use std::ops::{Index, IndexMut};
-impl<'a> Index<usize> for DijkstraQueue<'a> {
-    type Output = f32;
-    fn index(&self, node_id: usize) -> &f32 {
+impl<'a, F> Index<usize> for DijkstraQueue<'a, F> {
+    type Output = F;
+    fn index(&self, node_id: usize) -> &F {
         &self.distances[node_id]
     }
 }
-impl<'a> IndexMut<usize> for DijkstraQueue<'a> {
-    fn index_mut(&mut self, node_id: usize) -> &mut f32 {
+
+impl<'a, F> IndexMut<usize> for DijkstraQueue<'a, F> {
+    fn index_mut(&mut self, node_id: usize) -> &mut F {
         &mut self.distances[node_id]
     }
 }

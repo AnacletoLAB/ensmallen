@@ -26,6 +26,20 @@ impl Parse for Struct {
 
         let struct_type = parse!(data, Type);
 
+        if data[0] == b';' {
+            return (
+                &data[1..],
+                Struct{
+                    visibility,
+                    doc: "".into(),
+                    attributes: vec![],
+                    fields: vec![],
+                    struct_type,
+                    file_path: "".into(),
+                }
+            );
+        }
+        
         let (mut data, mut struct_body) = get_next_matching(data, b'{', b'}');
 
         let mut fields = Vec::new();

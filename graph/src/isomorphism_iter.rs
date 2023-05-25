@@ -1,21 +1,22 @@
-use super::*;
 use rayon::iter::plumbing::*;
 use rayon::prelude::*;
 
-pub struct EqualBucketsParIter<H> {
-    degree_bounded_hash_and_node_ids: Vec<(H, NodeT)>,
+pub struct EqualBucketsParIter<H, O> {
+    degree_bounded_hash_and_node_ids: Vec<(H, O)>,
 }
 
-impl<H> EqualBucketsParIter<H> {
-    pub unsafe fn new(degree_bounded_hash_and_node_ids: Vec<(H, NodeT)>) -> Self {
+impl<H, O> EqualBucketsParIter<H, O> {
+    pub unsafe fn new(degree_bounded_hash_and_node_ids: Vec<(H, O)>) -> Self {
         EqualBucketsParIter {
             degree_bounded_hash_and_node_ids,
         }
     }
 }
 
-impl<H: Send + Sync + Eq + Copy + 'static> ParallelIterator for EqualBucketsParIter<H> {
-    type Item = &'static [(H, NodeT)];
+impl<H: Send + Sync + Eq + Copy + 'static, O: Send + Sync + 'static> ParallelIterator
+    for EqualBucketsParIter<H, O>
+{
+    type Item = &'static [(H, O)];
 
     fn drive_unindexed<C>(self, consumer: C) -> C::Result
     where
@@ -34,14 +35,14 @@ impl<H: Send + Sync + Eq + Copy + 'static> ParallelIterator for EqualBucketsParI
 
 #[derive(Clone)]
 /// Iter over the slices of contiguos values
-pub struct EqualBucketsIter<'a, H> {
-    degree_bounded_hash_and_node_ids: &'a [(H, NodeT)],
+pub struct EqualBucketsIter<'a, H, O> {
+    degree_bounded_hash_and_node_ids: &'a [(H, O)],
 
     start: usize,
     end: usize,
 }
 
-impl<'a, H> core::fmt::Debug for EqualBucketsIter<'a, H> {
+impl<'a, H, O> core::fmt::Debug for EqualBucketsIter<'a, H, O> {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         f.debug_struct("EqualBucketsIter")
             .field("start", &self.start)
@@ -50,8 +51,8 @@ impl<'a, H> core::fmt::Debug for EqualBucketsIter<'a, H> {
     }
 }
 
-impl<'a, H> EqualBucketsIter<'a, H> {
-    pub fn new(degree_bounded_hash_and_node_ids: &'a [(H, NodeT)]) -> Self {
+impl<'a, H, O> EqualBucketsIter<'a, H, O> {
+    pub fn new(degree_bounded_hash_and_node_ids: &'a [(H, O)]) -> Self {
         EqualBucketsIter {
             degree_bounded_hash_and_node_ids,
 
@@ -65,8 +66,10 @@ impl<'a, H> EqualBucketsIter<'a, H> {
     }
 }
 
-impl<'a, H: Eq + Copy + 'static> core::iter::Iterator for EqualBucketsIter<'a, H> {
-    type Item = &'static [(H, NodeT)];
+impl<'a, H: Eq + Copy + 'static, O: Send + Sync + 'static> core::iter::Iterator
+    for EqualBucketsIter<'a, H, O>
+{
+    type Item = &'static [(H, O)];
 
     fn next(&mut self) -> Option<Self::Item> {
         if self.start >= self.end {
@@ -121,8 +124,10 @@ impl<'a, H: Eq + Copy + 'static> core::iter::Iterator for EqualBucketsIter<'a, H
     }
 }
 
-impl<'a, H: Send + Sync + Eq + Copy + 'static> UnindexedProducer for EqualBucketsIter<'a, H> {
-    type Item = &'static [(H, NodeT)];
+impl<'a, H: Send + Sync + Eq + Copy + 'static, O: Send + Sync + 'static> UnindexedProducer
+    for EqualBucketsIter<'a, H, O>
+{
+    type Item = &'static [(H, O)];
 
     /// Split the file in two approximately balanced streams
     fn split(mut self) -> (Self, Option<Self>) {

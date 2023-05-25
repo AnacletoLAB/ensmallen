@@ -7,13 +7,17 @@
 //! * `singleton_with_selfloop`: A node which has only selfloops
 //! * `connected_node`: a node which is nor a `singleton` nor a `singleton_with_selfloops`.
 
+#![feature(return_position_impl_trait_in_trait)]
 #![feature(adt_const_params)]
+#![feature(generic_const_exprs)]
 #![warn(unused_macros)]
 #![feature(drain_filter)]
+#![feature(iter_advance_by)]
 #![feature(is_sorted)]
 #![feature(string_remove_matches)]
 #![feature(exit_status_error)]
 #![feature(core_intrinsics)]
+#![feature(sync_unsafe_cell)]
 #![feature(pattern)]
 #![deny(unconditional_recursion)]
 #![type_length_limit = "3764086"]
@@ -67,6 +71,7 @@ pub use self::utils::*;
 
 mod bitmaps;
 mod centrality;
+mod hyperball;
 mod dense;
 mod distributions;
 mod edge_list_utils;
@@ -80,6 +85,7 @@ mod hashes;
 mod holdouts;
 mod isomorphism;
 pub mod isomorphism_iter;
+mod edge_isomorphism;
 mod iter_queries;
 mod iters;
 mod modifiers;
@@ -131,6 +137,7 @@ pub use self::types::*;
 pub use self::walks::*;
 pub use self::walks_parameters::*;
 pub use isomorphism::*;
+pub use edge_isomorphism::*;
 pub use preprocessing::*;
 pub use tfidf::*;
 

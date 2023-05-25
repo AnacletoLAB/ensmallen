@@ -1173,8 +1173,7 @@ impl Graph {
         };
 
         let mut isomorphic_node_groups: Vec<Vec<NodeT>> = self
-            .par_iter_isomorphic_node_ids_groups(None, None, None, None)
-            .map(|(iter, _)| iter.collect())
+            .get_isomorphic_node_ids(None, None, None)
             .unwrap_or_else(|_| Vec::new());
 
         isomorphic_node_groups.sort_unstable_by(|group1, group2| unsafe {
@@ -1183,8 +1182,24 @@ impl Graph {
             )
         });
 
+        let mut isomorphic_edge_groups: Vec<Vec<[NodeT; 2]>> = self
+            .get_isomorphic_edge_node_ids(None, None, None)
+            .unwrap_or_else(|_| Vec::new());
+
+        isomorphic_edge_groups.sort_unstable_by(|group1, group2| unsafe {
+            ((self.get_unchecked_node_degree_from_node_id(group2[0][0]) as usize
+                + self.get_unchecked_node_degree_from_node_id(group2[0][1]) as usize)
+                * group2.len())
+            .cmp(
+                &(self.get_unchecked_node_degree_from_node_id(group1[0][0]) as usize
+                    + self.get_unchecked_node_degree_from_node_id(group1[0][1]) as usize
+                        * group1.len()),
+            )
+        });
+
         // If the graph does not contain any oddity, we do not prepare a report.
-        if isomorphic_node_groups.is_empty()
+        if isomorphic_edge_groups.is_empty()
+            && isomorphic_node_groups.is_empty()
             && circles.is_empty()
             && chains.is_empty()
             && node_tuples.is_empty()
@@ -1330,6 +1345,13 @@ impl Graph {
             node_tuples.into_iter(),
         );
 
+        // ================================
+        // Isomorphisms
+        // ================================
+
+        // Isomorphic nodes
+        // --------------------------------
+
         let number_of_isomorphic_node_groups = isomorphic_node_groups.len() as NodeT;
         let number_of_nodes_involved_in_isomorphic_node_groups = isomorphic_node_groups
             .iter()
@@ -1360,8 +1382,8 @@ impl Graph {
             "Isomorphic node group",
             "Isomorphic node groups",
             concat!(
-                "Isomorphic groups are nodes with exactly the same ",
-                "neighbours and node types (if present in the graph). ",
+                "Isomorphic node groups are nodes with exactly the same ",
+                "neighbours, node types, edge types and weights (if present in the graph). ",
                 "Nodes in such groups are topologically indistinguishable, ",
                 "that is swapping their ID would not change the graph topology."
             ),
@@ -1394,6 +1416,102 @@ impl Graph {
                                         get_node_source_html_url_from_node_name(
                                             &self.get_unchecked_node_name_from_node_id(node_id),
                                         )
+                                    })
+                                    .collect::<Vec<String>>(),
+                                Some(5),
+                            )
+                        }
+                    )
+                }),
+        );
+
+        // Isomorphic edges
+        // --------------------------------
+
+        let number_of_isomorphic_edge_groups = isomorphic_edge_groups.len() as NodeT;
+        let number_of_nodes_involved_in_isomorphic_edge_groups = isomorphic_edge_groups
+            .iter()
+            .map(|isomorphic_edge_group| 2 * isomorphic_edge_group.len() as NodeT)
+            .sum::<NodeT>();
+        let number_of_edges_involved_in_isomorphic_edge_groups = isomorphic_edge_groups
+            .iter()
+            .map(|isomorphic_edge_group| unsafe {
+                ((self.get_unchecked_node_degree_from_node_id(isomorphic_edge_group[0][0])
+                    as usize
+                    + self.get_unchecked_node_degree_from_node_id(isomorphic_edge_group[0][1])
+                        as usize)
+                    * isomorphic_edge_group.len()) as EdgeT
+            })
+            .sum();
+        let maximum_number_of_edges_in_a_isomorphic_edge_group = isomorphic_edge_groups
+            .iter()
+            .map(|isomorphic_edge_group| isomorphic_edge_group.len() as NodeT)
+            .max()
+            .unwrap_or(0);
+        let maximum_number_of_edges_connected_to_a_isomorphic_edge_group = isomorphic_edge_groups
+            .iter()
+            .map(|isomorphic_edge_group| unsafe {
+                ((self.get_unchecked_node_degree_from_node_id(isomorphic_edge_group[0][0])
+                    as usize
+                    + self.get_unchecked_node_degree_from_node_id(isomorphic_edge_group[0][1])
+                        as usize)
+                    * isomorphic_edge_group.len()) as EdgeT
+            })
+            .max()
+            .unwrap_or(0);
+        let isomorphic_edge_groups_description = self.get_report_of_oddity(
+            "h4",
+            "Isomorphic edge group",
+            "Isomorphic edge groups",
+            concat!(
+                "Isomorphic edge groups are edges with exactly the same ",
+                "neighbours, node types, edge types and weights (if present in the graph). ",
+                "Edges in such groups are topologically indistinguishable, ",
+                "that is swapping their ID would not change the graph topology."
+            ),
+            number_of_isomorphic_edge_groups,
+            number_of_nodes_involved_in_isomorphic_edge_groups,
+            number_of_edges_involved_in_isomorphic_edge_groups,
+            maximum_number_of_edges_in_a_isomorphic_edge_group,
+            maximum_number_of_edges_connected_to_a_isomorphic_edge_group,
+            true,
+            Some(15),
+            Some(3),
+            isomorphic_edge_groups
+                .into_iter()
+                .map(|isomorphic_edge_group| {
+                    format!(
+                        concat!("<p>Group with {number_of_elements} edges (source {src_attribute}, destination {dst_attribute}): {elements}.</p>",),
+                        number_of_elements=to_human_readable_high_integer(isomorphic_edge_group.len() as usize),
+                        src_attribute=unsafe {
+                            self.get_unchecked_succinct_node_attributes_description(
+                                isomorphic_edge_group[0][0],
+                                0,
+                                true,
+                            )
+                        },
+                        dst_attribute=unsafe {
+                            self.get_unchecked_succinct_node_attributes_description(
+                                isomorphic_edge_group[0][1],
+                                0,
+                                true,
+                            )
+                        },
+                        elements=unsafe {
+                            get_unchecked_formatted_list(
+                                &isomorphic_edge_group
+                                    .into_iter()
+                                    .map(|[src, dst]| {
+                                        format!(
+                                            "({} -> {})",
+                                            get_node_source_html_url_from_node_name(
+                                                &self.get_unchecked_node_name_from_node_id(src),
+                                            ),
+                                            get_node_source_html_url_from_node_name(
+                                                &self.get_unchecked_node_name_from_node_id(dst),
+                                            )
+                                        )
+                                        
                                     })
                                     .collect::<Vec<String>>(),
                                 Some(5),
@@ -1545,11 +1663,12 @@ impl Graph {
                 "{chains_description}",
                 "{node_tuples_description}",
                 "{isomorphic_node_groups_description}",
+                "{isomorphic_edge_groups_description}",
                 "{tree_like_oddities_description}",
             ),
             circles_description = circles_description,
             directed_graph_note= if self.is_directed(){
-                "Note that in a directed graph we only support the detection of isomorphic nodes. "
+                "Note that in a directed graph we only support the detection of isomorphic nodes and edges. "
             } else {
                 ""
             },
@@ -1558,6 +1677,7 @@ impl Graph {
             chains_description = chains_description,
             node_tuples_description = node_tuples_description,
             isomorphic_node_groups_description = isomorphic_node_groups_description,
+            isomorphic_edge_groups_description = isomorphic_edge_groups_description,
             tree_like_oddities_description = tree_like_oddities_description,
         )))
     }

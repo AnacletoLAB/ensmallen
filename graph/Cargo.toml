@@ -53,6 +53,8 @@ mmap = {path = "./mmap"}
 express_measures = {path = "./express_measures"}
 roaring = { git = "https://github.com/zommiommy/roaring-rs", branch = "master" }
 vec_rand = { git = "https://github.com/zommiommy/vec_rand", branch = "master" }
+visited-rs = { git = "https://github.com/LucaCappelletti94/visited-rs", branch = "main" }
+hyperloglog-rs = "0.1"
 elias_fano_rust = "0.1.1"
 tags = {path="./tags/"}
 atoi_radix10 = { git = "https://github.com/gilescope/atoi_radix10"}
@@ -70,12 +72,12 @@ windows = { version = "0.32.0", features = ["alloc",  "Win32_System_Memory", "Wi
 [profile.release]
 opt-level = 3
 lto = "fat"
-overflow-checks = true   # Disable integer overflow checks.
+overflow-checks = false   # Disable integer overflow checks.
 debug = false            # Include debug info.
-debug-assertions = true  # Enables debug assertions.
+debug-assertions = false  # Enables debug assertions.
 
 [profile.test]
 overflow-checks = true   # Disable integer overflow checks.
-debug = false            # Include debug info.
+debug = true            # Include debug info.
 debug-assertions = true  # Enables debug assertions.
 opt-level = 3

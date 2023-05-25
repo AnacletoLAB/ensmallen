@@ -84,6 +84,10 @@ struct Class {
 }
 
 impl Class {
+    fn is_empty(&self) -> bool {
+        self.impls.is_empty()
+    }
+
     fn new(ztruct: Struct) -> Class {
         Class {
             ztruct,
@@ -93,6 +97,7 @@ impl Class {
 
     fn get_methods_names(&self) -> Vec<&str> {
         let mut result = Vec::new();
+        assert!(!self.impls.is_empty(), "The set of impls is empty!");
         for imp in &self.impls {
             for method in &imp.methods {
                 if is_to_bind(method) {
@@ -100,6 +105,7 @@ impl Class {
                 }
             }
         }
+        assert!(!result.is_empty(), "The set of methods is empty!");
         result
     }
 }
@@ -107,9 +113,12 @@ impl Class {
 impl GenBinding for Class {
     fn gen_python_binding(&self) -> String {
         let methods_names = self.get_methods_names();
+
+        assert!(!methods_names.is_empty(), "The method names are empty!");
+
         let (terms, tfidf) = tfidf_gen(&methods_names);
 
-        let derive = if self.ztruct.attributes.iter().any(|x| x.0.contains("Clone")){
+        let derive = if self.ztruct.attributes.iter().any(|x| x.0.contains("Clone")) {
             ", Clone"
         } else {
             ""
@@ -300,7 +309,7 @@ impl {struct_name} {{
                 .collect::<Vec<_>>()
                 .join("\n")
                 .trim(),
-            derive=derive,
+            derive = derive,
             struct_name = self.ztruct.struct_type.get_name().unwrap(),
             struct_name_upper = self.ztruct.struct_type.get_name().unwrap().to_uppercase(),
             methods = format_vec!(
@@ -333,6 +342,10 @@ struct BindingsModule {
 }
 
 impl BindingsModule {
+    fn is_empty(&self) -> bool {
+        self.structs.is_empty()
+    }
+
     fn push_class(&mut self, ztruct: Struct) {
         self.structs
             .insert(ztruct.struct_type.get_name().unwrap(), Class::new(ztruct));
@@ -428,6 +441,7 @@ pub fn register_{module_name}(_py: Python, _m:&PyModule) -> PyResult<()> {{
                     .filter(|c| {
                         !c.ztruct.attributes.iter().any(|x| x == "no_binding")
                             && c.ztruct.visibility == Visibility::Public
+                            && !c.is_empty()
                     })
                     .map(|c| {
                         println!(
@@ -496,18 +510,24 @@ fn group_data(modules: Vec<Module>) -> BindingsModule {
     // For each struct, collect all its implementaitons
     for module in &modules {
         for imp in &module.impls {
-            // find the correct submodule
-            if let Some(struct_module) =
-                struct_modules_map.get(&imp.struct_name.get_name().unwrap())
-            {
-                let struct_ref = bindings
-                    .get_submodule(struct_module.clone())
-                    .structs
-                    .get_mut(&imp.struct_name.get_name().unwrap());
+            if let Some(struct_name) = &imp.struct_name.get_name() {
+                // find the correct submodule
+                if let Some(struct_module) = struct_modules_map.get(struct_name) {
+                    let struct_ref = bindings
+                        .get_submodule(struct_module.clone())
+                        .structs
+                        .get_mut(&imp.struct_name.get_name().unwrap());
 
-                if let Some(struct_ref) = struct_ref {
-                    // add it to the impls
-                    struct_ref.impls.push(imp.clone());
+                    if let Some(struct_ref) = struct_ref {
+                        // add it to the impls
+                        struct_ref.impls.push(imp.clone());
+                    } else {
+                        println!(
+                            "Skipping impl for '{}' at '{}'.",
+                            imp.struct_name.get_name().unwrap(),
+                            imp.file_path
+                        );
+                    }
                 } else {
                     println!(
                         "Skipping impl for '{}' at '{}'.",
@@ -515,12 +535,6 @@ fn group_data(modules: Vec<Module>) -> BindingsModule {
                         imp.file_path
                     );
                 }
-            } else {
-                println!(
-                    "Skipping impl for '{}' at '{}'.",
-                    imp.struct_name.get_name().unwrap(),
-                    imp.file_path
-                );
             }
         }
     }

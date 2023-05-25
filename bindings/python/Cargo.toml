@@ -36,10 +36,12 @@ markdown = "0.3"
 rayon = "1.6.0"
 indicatif = {version="0.17.0", features = ["rayon"]}
 ctrlc = "3.1.7"
+serde = "1.0"
+serde_json = "1.0"
 
 [profile.release]
 debug = false             # Include debug info.
-overflow-checks = true # Provides panic messages in case of overflows
+overflow-checks = false # Provides panic messages in case of overflows
 # The opt-level setting controls the number of optimizations Rust will apply to 
 # your code, with a range of 0 to 3. Applying more optimizations extends 
 # compiling time, so if you’re in development and compiling your code often, 

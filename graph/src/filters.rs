@@ -1067,31 +1067,19 @@ impl Graph {
     ///
     /// # Arguments
     /// * `minimum_node_degree`: Option<NodeT> - Minimum node degree for the topological synonims. By default equal to 5.
-    /// * `hash_strategy`: Option<&str> - The name of the hash to be used. By default, `general` is used.+
     /// * `number_of_neighbours_for_hash`: Option<usize> - The number of neighbours to consider for the hash. By default 10.
-    /// * `hash_name`: Option<&str> - The name of the hash to be used.
     pub fn remove_isomorphic_nodes(
         &self,
         minimum_node_degree: Option<NodeT>,
-        hash_strategy: Option<&str>,
         number_of_neighbours_for_hash: Option<usize>,
-        hash_name: Option<&str>,
     ) -> Result<Graph> {
         self.filter_from_ids(
             None,
             Some(
-                self.par_iter_isomorphic_node_ids_groups(
+                self.get_flat_repeated_isomorphic_node_ids(
                     minimum_node_degree,
-                    hash_strategy,
                     number_of_neighbours_for_hash,
-                    hash_name,
                 )?
-                .0
-                .flat_map(|mut group| {
-                    group.pop();
-                    group.into_par_iter()
-                })
-                .collect(),
             ),
             None,
             None,

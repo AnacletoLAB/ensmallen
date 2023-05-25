@@ -25,6 +25,7 @@ impl CSR {
         }
     }
 
+    #[inline(always)]
     pub unsafe fn iter_unchecked_edge_ids_from_source_node_id(
         &self,
         src: NodeT,
@@ -34,15 +35,17 @@ impl CSR {
         min_edge_id as usize..max_edge_id as usize
     }
 
+    #[inline(always)]
     pub unsafe fn iter_unchecked_neighbour_node_ids_from_source_node_id(
         &self,
         src: NodeT,
     ) -> impl Iterator<Item = NodeT> + Send + '_ {
         self.get_unchecked_neighbours_node_ids_from_src_node_id(src)
             .iter()
-            .cloned()
+            .copied()
     }
 
+    #[inline(always)]
     pub fn iter_unique_edge_node_ids(
         &self,
         directed: bool,
