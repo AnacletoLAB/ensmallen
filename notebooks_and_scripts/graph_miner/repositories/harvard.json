@@ -13,7 +13,7 @@
                 "name": "PrimeKG",
                 "node_path": "nodes.tsv",
                 "node_list_node_types_column": "node_type",
-                "nodes_column": "node_id",
+                "nodes_column": "node_index",
                 "edge_path": "edges.csv",
                 "edge_list_separator": ",",
                 "node_list_separator": "\t",

@@ -236,6 +236,30 @@ pub fn convert_node_list_node_types_to_numeric(
         )?;
     }
 
+    // We verify that self-consistency is not violated by checking that if the node list
+    // seems to have node types, then there are node types in the node types vocabulary
+    // and viceversa.
+    if has_node_types && node_types.is_empty() {
+        return Err(concat!(
+            "The node list seems to have node types, but no node types were found in the ",
+            "node types vocabulary. This is likely due to a bug in the code. Please open ",
+            "an issue on the GRAPE GitHub repository with all the details."
+        ).to_string());
+    }
+
+    // We also validate the opposite case, where somehow the node list seems not
+    // to have any node types, yet there are node types in the node types vocabulary.
+    if !has_node_types && !node_types.is_empty() {
+        return Err(format!(
+            concat!(
+                "The node list seems not to have node types, but {} node types were found ",
+                "in the node types vocabulary. This is likely due to a bug in the code. ",
+                "Please open an issue on the GRAPE GitHub repository with all the details."
+            ),
+            node_types.len()
+        ));
+    }
+
     Ok((
         new_nodes_number,
         if original_node_list_node_types_column.is_some()

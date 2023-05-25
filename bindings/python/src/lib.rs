@@ -26,8 +26,8 @@ pub(crate) use edge_prediction_perceptron::*;
 mod node_label_prediction_perceptron;
 pub(crate) use node_label_prediction_perceptron::*;
 
-mod hyperball_jaccard;
-pub(crate) use hyperball_jaccard::*;
+mod hyper_jaccard;
+pub(crate) use hyper_jaccard::*;
 
 mod distance_node_label_prediction_perceptron;
 pub(crate) use distance_node_label_prediction_perceptron::*;
@@ -99,7 +99,7 @@ pub fn register_models(_py: Python, _m: &PyModule) -> PyResult<()> {
     _m.add_class::<NodeLabelPredictionPerceptron>()?;
     _m.add_class::<DistanceNodeLabelPredictionPerceptron>()?;
     _m.add_class::<DAGResnik>()?;
-    _m.add_class::<HyperBallJaccard>()?;
+    _m.add_class::<HyperJaccard>()?;
     Ok(())
 }
 

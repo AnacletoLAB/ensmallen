@@ -261,30 +261,32 @@ pub fn build_optimal_lists_files(
     // We always treat as non-numeric the nodes if the
     // node list vocabulary has been provided.
     info!("Computing whether the edge list has numeric node IDs.");
-    let numeric_edge_list_node_ids = original_edge_list_numeric_node_ids.map_or_else(
-        || {
-            is_numeric_edge_list(
-                original_edge_path.as_ref(),
-                original_edge_list_separator.clone(),
-                original_edge_list_header,
-                original_edge_list_support_balanced_quotes,
-                original_sources_column.clone(),
-                original_sources_column_number,
-                original_destinations_column.clone(),
-                original_destinations_column_number,
-                edge_list_comment_symbol.clone(),
-                edge_list_max_rows_number,
-                edge_list_rows_to_skip,
-                None,
-                load_edge_list_in_parallel,
-                remove_chevrons,
-                remove_spaces,
-                verbose,
-                name.clone(),
-            )
-        },
-        |value| Ok(value),
-    )?;
+    let numeric_edge_list_node_ids = node_types_number
+        .map_or(true, |node_types_number| node_types_number == 0)
+        && original_edge_list_numeric_node_ids.map_or_else(
+            || {
+                is_numeric_edge_list(
+                    original_edge_path.as_ref(),
+                    original_edge_list_separator.clone(),
+                    original_edge_list_header,
+                    original_edge_list_support_balanced_quotes,
+                    original_sources_column.clone(),
+                    original_sources_column_number,
+                    original_destinations_column.clone(),
+                    original_destinations_column_number,
+                    edge_list_comment_symbol.clone(),
+                    edge_list_max_rows_number,
+                    edge_list_rows_to_skip,
+                    None,
+                    load_edge_list_in_parallel,
+                    remove_chevrons,
+                    remove_spaces,
+                    verbose,
+                    name.clone(),
+                )
+            },
+            |value| Ok(value),
+        )?;
 
     // We identify if the edge list is meant to have edge types
     let has_edge_types = original_edge_list_edge_types_column.is_some()
