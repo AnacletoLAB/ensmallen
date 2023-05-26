@@ -107,7 +107,7 @@ pub fn build_graph_from_strings<S: Into<String>>(
     // we would be forced to collect all of the nodes in a single vector,
     // and then sort them by their ID, which is not feasible for large graphs.
     if numeric_edge_list_node_ids.unwrap_or(false)
-        && node_types_iterator
+        && nodes_iterator
             .as_ref()
             .map_or(false, |iter| iter.is_parallel())
         && number_of_nodes.is_none()
