@@ -94,7 +94,7 @@ impl Graph {
         // to actually return the requested number of nodes.
         // For instance, sampling of BFS nodes from a component
         // that does not contain the requested number of nodes.
-        let nodes_number = nodes.len();
+        let number_of_nodes = nodes.len();
 
         // Acquire the python gil.
         let gil = pyo3::Python::acquire_gil();
@@ -115,14 +115,14 @@ impl Graph {
                     // to zeros, so we initialize the vector as a matrix of zeros.
                     t: if edge_weighting_method == "weights" || edge_weighting_method == "laplacian"
                     {
-                        PyArray2::zeros(gil.python(), [nodes_number, nodes_number], false)
+                        PyArray2::zeros(gil.python(), [number_of_nodes, number_of_nodes], false)
                     } else {
                         // The same consideration does not apply to edge weighting methods that are fully
                         // defined for all the possible tuple of nodes that may be taken
                         // into consideration: in this case all the values will be provided
                         // by the iterator, and therefore there is no need to set beforehand
                         // a default value: doing so would only be a waste of time.
-                        PyArray2::new(gil.python(), [nodes_number, nodes_number], false)
+                        PyArray2::new(gil.python(), [number_of_nodes, number_of_nodes], false)
                     },
                 };
                 // In order to avoid repeating the same logic,
@@ -167,7 +167,7 @@ impl Graph {
 
         // We now convert the provided nodes into a numpy vector.
         let numpy_nodes = ThreadDataRaceAware {
-            t: unsafe { PyArray1::new(gil.python(), [nodes_number], false) },
+            t: unsafe { PyArray1::new(gil.python(), [number_of_nodes], false) },
         };
 
         // We consume the original vector to populate the numpy one.
@@ -218,10 +218,10 @@ impl Graph {
         .collect();
 
         edge_ids.par_sort_unstable();
-        let edges_number = edge_ids.len();
+        let number_of_edges = edge_ids.len();
 
         let edge_ids_vector = ThreadDataRaceAware {
-            t: unsafe { PyArray2::new(gil.python(), [edges_number, 2], false) },
+            t: unsafe { PyArray2::new(gil.python(), [number_of_edges, 2], false) },
         };
 
         edge_ids
@@ -324,7 +324,7 @@ impl Graph {
         // to actually return the requested number of nodes.
         // For instance, sampling of BFS nodes from a component
         // that does not contain the requested number of nodes.
-        let nodes_number = nodes.len();
+        let number_of_nodes = nodes.len();
 
         // Acquire the python gil.
         let gil = pyo3::Python::acquire_gil();
@@ -364,13 +364,13 @@ impl Graph {
                     |(src_a, dst_a, _), (src_b, dst_b, _)| (src_a, dst_a).cmp(&(src_b, dst_b)),
                 );
 
-                let edges_number = edge_node_ids_and_weights.len();
+                let number_of_edges = edge_node_ids_and_weights.len();
 
                 let edge_ids_vector = ThreadDataRaceAware {
-                    t: PyArray2::new(gil.python(), [edges_number, 2], false),
+                    t: PyArray2::new(gil.python(), [number_of_edges, 2], false),
                 };
                 let weights = ThreadDataRaceAware {
-                    t: PyArray1::new(gil.python(), [edges_number], false),
+                    t: PyArray1::new(gil.python(), [number_of_edges], false),
                 };
 
                 edge_node_ids_and_weights
@@ -390,7 +390,7 @@ impl Graph {
 
         // We now convert the provided nodes into a numpy vector.
         let numpy_nodes = ThreadDataRaceAware {
-            t: unsafe { PyArray1::new(gil.python(), [nodes_number], false) },
+            t: unsafe { PyArray1::new(gil.python(), [number_of_nodes], false) },
         };
 
         // We consume the original vector to populate the numpy one.
@@ -454,7 +454,7 @@ impl Graph {
         // to actually return the requested number of nodes.
         // For instance, sampling of BFS nodes from a component
         // that does not contain the requested number of nodes.
-        let nodes_number = nodes.len();
+        let number_of_nodes = nodes.len();
 
         // Acquire the python gil.
         let gil = pyo3::Python::acquire_gil();
@@ -468,13 +468,13 @@ impl Graph {
         })?
         .collect::<Vec<_>>();
 
-        let edges_number = sorted_edge_node_ids_and_weights.len();
+        let number_of_edges = sorted_edge_node_ids_and_weights.len();
 
         let edge_ids_vector = ThreadDataRaceAware {
-            t: unsafe { PyArray2::new(gil.python(), [edges_number, 2], false) },
+            t: unsafe { PyArray2::new(gil.python(), [number_of_edges, 2], false) },
         };
         let weights = ThreadDataRaceAware {
-            t: unsafe { PyArray1::new(gil.python(), [edges_number], false) },
+            t: unsafe { PyArray1::new(gil.python(), [number_of_edges], false) },
         };
 
         sorted_edge_node_ids_and_weights
@@ -488,7 +488,7 @@ impl Graph {
 
         // We now convert the provided nodes into a numpy vector.
         let numpy_nodes = ThreadDataRaceAware {
-            t: unsafe { PyArray1::new(gil.python(), [nodes_number], false) },
+            t: unsafe { PyArray1::new(gil.python(), [number_of_nodes], false) },
         };
 
         // We consume the original vector to populate the numpy one.
@@ -587,9 +587,9 @@ impl Graph {
         // to actually return the requested number of nodes.
         // For instance, sampling of BFS nodes from a component
         // that does not contain the requested number of nodes.
-        let nodes_number = source_nodes.len();
+        let number_of_nodes = source_nodes.len();
 
-        let mut remapping = (0..nodes_number).collect::<Vec<usize>>();
+        let mut remapping = (0..number_of_nodes).collect::<Vec<usize>>();
         let mut rng = SmallRng::seed_from_u64(splitmix64(random_state) as EdgeT);
         remapping.shuffle(&mut rng);
 
@@ -619,10 +619,10 @@ impl Graph {
                     // to zeros, so we initialize the vector as a matrix of zeros.
                     (
                         ThreadDataRaceAware {
-                            t: PyArray2::zeros(gil.python(), [nodes_number, nodes_number], false),
+                            t: PyArray2::zeros(gil.python(), [number_of_nodes, number_of_nodes], false),
                         },
                         ThreadDataRaceAware {
-                            t: PyArray2::zeros(gil.python(), [nodes_number, nodes_number], false),
+                            t: PyArray2::zeros(gil.python(), [number_of_nodes, number_of_nodes], false),
                         },
                     )
                 } else {
@@ -633,10 +633,10 @@ impl Graph {
                     // a default value: doing so would only be a waste of time.
                     (
                         ThreadDataRaceAware {
-                            t: PyArray2::new(gil.python(), [nodes_number, nodes_number], false),
+                            t: PyArray2::new(gil.python(), [number_of_nodes, number_of_nodes], false),
                         },
                         ThreadDataRaceAware {
-                            t: PyArray2::new(gil.python(), [nodes_number, nodes_number], false),
+                            t: PyArray2::new(gil.python(), [number_of_nodes, number_of_nodes], false),
                         },
                     )
                 };
@@ -691,7 +691,7 @@ impl Graph {
 
         // We now convert the provided nodes into a numpy vector.
         let numpy_labels = ThreadDataRaceAware {
-            t: unsafe { PyArray1::new(gil.python(), [nodes_number], false) },
+            t: unsafe { PyArray1::new(gil.python(), [number_of_nodes], false) },
         };
 
         // We consume the original vector to populate the numpy one.
@@ -705,7 +705,7 @@ impl Graph {
 
         // We now convert the provided nodes into a numpy vector.
         let numpy_source_nodes = ThreadDataRaceAware {
-            t: unsafe { PyArray1::new(gil.python(), [nodes_number], false) },
+            t: unsafe { PyArray1::new(gil.python(), [number_of_nodes], false) },
         };
 
         // We consume the original vector to populate the numpy one.
@@ -716,7 +716,7 @@ impl Graph {
 
         // We now convert the provided nodes into a numpy vector.
         let numpy_destination_nodes = ThreadDataRaceAware {
-            t: unsafe { PyArray1::new(gil.python(), [nodes_number], false) },
+            t: unsafe { PyArray1::new(gil.python(), [number_of_nodes], false) },
         };
 
         // We consume the original vector to populate the numpy one.

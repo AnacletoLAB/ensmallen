@@ -42,7 +42,7 @@ impl Graph {
     /// println!("The graph contains {} connected nodes", graph.get_number_of_connected_nodes());
     /// ```
     pub fn get_number_of_connected_nodes(&self) -> NodeT {
-        self.connected_nodes_number
+        self.connected_number_of_nodes
     }
 
     #[cache_property(singleton_nodes_with_selfloops_number)]
@@ -144,13 +144,13 @@ impl Graph {
         if !self.has_edges() {
             return Ok(0.0);
         }
-        let nodes_number = self.get_number_of_nodes() as EdgeT;
-        let total_nodes_number = nodes_number
+        let number_of_nodes = self.get_number_of_nodes() as EdgeT;
+        let total_number_of_nodes = number_of_nodes
             * match self.has_selfloops() {
-                true => nodes_number,
-                false => nodes_number - 1,
+                true => number_of_nodes,
+                false => number_of_nodes - 1,
             };
-        Ok(self.get_number_of_unique_directed_edges() as f64 / total_nodes_number as f64)
+        Ok(self.get_number_of_unique_directed_edges() as f64 / total_number_of_nodes as f64)
     }
     /// Returns the traps rate of the graph.
     ///
@@ -401,7 +401,7 @@ impl Graph {
         self.name.to_string()
     }
 
-    #[cache_property(trap_nodes_number)]
+    #[cache_property(trap_number_of_nodes)]
     /// Return the number of traps (nodes without any outgoing edges that are not singletons)
     /// This also includes nodes with only a self-loops, therefore singletons with
     /// only a self-loops are not considered traps because you could make a walk on them.
@@ -911,7 +911,7 @@ impl Graph {
             .map(|iter_unique_node_type_names| iter_unique_node_type_names.collect())
     }
 
-    #[cache_property(unique_directed_edges_number)]
+    #[cache_property(unique_directed_number_of_edges)]
     /// Return number of the unique edges in the graph.
     pub fn get_number_of_unique_directed_edges(&self) -> EdgeT {
         self.par_iter_node_ids()
@@ -1034,8 +1034,8 @@ impl Graph {
     /// * If there are no node types in the graph.
     pub fn get_unknown_node_types_rate(&self) -> Result<f64> {
         self.get_number_of_unknown_node_types()
-            .map(|unknown_node_types_number| {
-                unknown_node_types_number as f64 / self.get_number_of_nodes() as f64
+            .map(|unknown_number_of_node_types| {
+                unknown_number_of_node_types as f64 / self.get_number_of_nodes() as f64
             })
     }
 
@@ -1045,8 +1045,8 @@ impl Graph {
     /// * If there are no node types in the graph.
     pub fn get_known_node_types_rate(&self) -> Result<f64> {
         self.get_number_of_known_node_types()
-            .map(|known_node_types_number| {
-                known_node_types_number as f64 / self.get_number_of_nodes() as f64
+            .map(|known_number_of_node_types| {
+                known_number_of_node_types as f64 / self.get_number_of_nodes() as f64
             })
     }
 
@@ -1054,7 +1054,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If there are no node types in the graph.
-    pub fn get_minimum_node_types_number(&self) -> Result<NodeT> {
+    pub fn get_minimum_number_of_node_types(&self) -> Result<NodeT> {
         self.must_have_node_types()
             .map(|node_types| node_types.get_minimum_node_type_count())
     }
@@ -1063,7 +1063,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If there are no node types in the graph.
-    pub fn get_maximum_node_types_number(&self) -> Result<NodeT> {
+    pub fn get_maximum_number_of_node_types(&self) -> Result<NodeT> {
         self.must_have_node_types()
             .map(|node_types| node_types.get_maximum_node_type_count())
     }
@@ -1408,8 +1408,8 @@ impl Graph {
     /// * If there are no edge types in the graph.
     pub fn get_unknown_edge_types_rate(&self) -> Result<f64> {
         self.get_number_of_unknown_edge_types()
-            .map(|unknown_edge_types_number| {
-                unknown_edge_types_number as f64 / self.get_number_of_directed_edges() as f64
+            .map(|unknown_number_of_edge_types| {
+                unknown_number_of_edge_types as f64 / self.get_number_of_directed_edges() as f64
             })
     }
 
@@ -1419,8 +1419,8 @@ impl Graph {
     /// * If there are no edge types in the graph.
     pub fn get_known_edge_types_rate(&self) -> Result<f64> {
         self.get_number_of_known_edge_types()
-            .map(|known_edge_types_number| {
-                known_edge_types_number as f64 / self.get_number_of_directed_edges() as f64
+            .map(|known_number_of_edge_types| {
+                known_number_of_edge_types as f64 / self.get_number_of_directed_edges() as f64
             })
     }
 
@@ -1428,7 +1428,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If there are no edge types in the graph.
-    pub fn get_minimum_edge_types_number(&self) -> Result<EdgeT> {
+    pub fn get_minimum_number_of_edge_types(&self) -> Result<EdgeT> {
         self.must_have_edge_types()
             .map(|edge_types| edge_types.min_edge_type_count())
     }

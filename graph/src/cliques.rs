@@ -25,13 +25,13 @@ impl ToString for Clique {
         format!(
             concat!(
                 "<p>",
-                "Clique containing {nodes_number} nodes. ",
+                "Clique containing {number_of_nodes} nodes. ",
                 "Specifically, the nodes involved in the clique are: {nodes}.",
                 "{node_types_counts}",
                 "{edge_types_counts}",
                 "</p>",
             ),
-            nodes_number = to_human_readable_high_integer(self.len() as usize),
+            number_of_nodes = to_human_readable_high_integer(self.len() as usize),
             nodes = unsafe {
                 get_unchecked_formatted_list(
                     &self
@@ -200,14 +200,14 @@ impl Graph {
             })
             .collect::<Vec<NodeT>>();
         // Compute a small report.
-        let removed_nodes_number = self.get_number_of_nodes() as usize - node_ids.len();
+        let removed_number_of_nodes = self.get_number_of_nodes() as usize - node_ids.len();
         info!(
             concat!(
                 "The preliminary filtering has removed ",
-                "{removed_nodes_number} nodes ({percentage:.2})."
+                "{removed_number_of_nodes} nodes ({percentage:.2})."
             ),
-            removed_nodes_number = to_human_readable_high_integer(removed_nodes_number),
-            percentage = removed_nodes_number as f64 / self.get_number_of_nodes() as f64 * 100.0
+            removed_number_of_nodes = to_human_readable_high_integer(removed_number_of_nodes),
+            percentage = removed_number_of_nodes as f64 / self.get_number_of_nodes() as f64 * 100.0
         );
         // Start to iterate over the node degrees vector
         // and in every iteration remove the nodes with degree smaller than
@@ -217,7 +217,7 @@ impl Graph {
         let mut current_iteration = 0;
         let minimum_clique_size_minus_one = (minimum_clique_size - 1) as usize;
         loop {
-            let previous_nodes_number = node_ids.len();
+            let previous_number_of_nodes = node_ids.len();
             node_ids = node_ids
                 .into_par_iter()
                 .filter_map(|node_id| {
@@ -280,7 +280,7 @@ impl Graph {
                 })
                 .collect::<Vec<NodeT>>();
             // We check if we have to stop.
-            let currently_removed_nodes = previous_nodes_number - node_ids.len();
+            let currently_removed_nodes = previous_number_of_nodes - node_ids.len();
             if currently_removed_nodes == 0 {
                 break;
             }

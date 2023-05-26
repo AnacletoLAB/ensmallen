@@ -13,7 +13,7 @@ pub struct NodeFileReader {
     pub(crate) nodes_column_number: Option<usize>,
     pub(crate) node_types_separator: Option<char>,
     pub(crate) node_types_column_number: Option<usize>,
-    pub(crate) nodes_number: Option<NodeT>,
+    pub(crate) number_of_nodes: Option<NodeT>,
     pub(crate) minimum_node_id: Option<NodeT>,
     pub(crate) numeric_node_ids: bool,
     pub(crate) numeric_node_type_ids: bool,
@@ -39,7 +39,7 @@ impl NodeFileReader {
             nodes_column_number: None,
             node_types_separator: None,
             node_types_column_number: None,
-            nodes_number: None,
+            number_of_nodes: None,
             minimum_node_id: None,
             numeric_node_ids: !has_path,
             numeric_node_type_ids: false,
@@ -603,10 +603,10 @@ impl NodeFileReader {
     /// Set the total number of expected nodes.
     ///
     /// # Arguments
-    /// * nodes_number: Option<usize> - The number of nodes expected to be loaded.
+    /// * number_of_nodes: Option<usize> - The number of nodes expected to be loaded.
     ///
-    pub fn set_number_of_nodes(mut self, nodes_number: Option<NodeT>) -> NodeFileReader {
-        self.nodes_number = nodes_number;
+    pub fn set_number_of_nodes(mut self, number_of_nodes: Option<NodeT>) -> NodeFileReader {
+        self.number_of_nodes = number_of_nodes;
         self
     }
 

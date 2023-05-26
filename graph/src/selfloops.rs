@@ -33,7 +33,7 @@ impl Graph {
             .to_string());
         }
         let weight = weight.unwrap_or(WeightT::NAN);
-        let total_edges_number = self.get_number_of_directed_edges()
+        let total_number_of_edges = self.get_number_of_directed_edges()
             - self.get_number_of_selfloops()
             + self.get_number_of_nodes() as EdgeT;
 
@@ -60,7 +60,7 @@ impl Graph {
             Some(true),
             Some(false),
             Some(false),
-            Some(total_edges_number),
+            Some(total_number_of_edges),
             false,
             self.has_singleton_nodes_with_selfloops() || self.has_singleton_nodes(),
             self.get_name(),

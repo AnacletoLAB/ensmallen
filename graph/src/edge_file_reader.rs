@@ -21,7 +21,7 @@ pub struct EdgeFileReader {
     pub(crate) skip_edge_types_if_unavailable: bool,
     pub(crate) complete: Option<bool>,
     pub(crate) sorted: Option<bool>,
-    pub(crate) edges_number: Option<EdgeT>,
+    pub(crate) number_of_edges: Option<EdgeT>,
     pub(crate) node_name_tokens_remapping: Option<HashMap<String, String>>,
 }
 
@@ -47,7 +47,7 @@ impl EdgeFileReader {
             skip_edge_types_if_unavailable: false,
             complete: None,
             sorted: None,
-            edges_number: None,
+            number_of_edges: None,
             node_name_tokens_remapping: None,
         })
     }
@@ -621,10 +621,10 @@ impl EdgeFileReader {
     /// Set the total number of expected edges.
     ///
     /// # Arguments
-    /// * edges_number: Option<usize> - The number of edges expected to be loaded.
+    /// * number_of_edges: Option<usize> - The number of edges expected to be loaded.
     ///
-    pub fn set_number_of_edges(mut self, edges_number: Option<EdgeT>) -> EdgeFileReader {
-        self.edges_number = edges_number;
+    pub fn set_number_of_edges(mut self, number_of_edges: Option<EdgeT>) -> EdgeFileReader {
+        self.number_of_edges = number_of_edges;
         self
     }
 

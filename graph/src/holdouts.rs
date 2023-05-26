@@ -366,24 +366,24 @@ impl Graph {
 
         // Here we use unique edges number because on a multigraph the negative
         // edges cannot have an edge type.
-        let nodes_number = self.get_number_of_nodes() as EdgeT;
+        let number_of_nodes = self.get_number_of_nodes() as EdgeT;
 
         // whether to sample negative edges only from the same connected component.
-        let (node_components, mut complete_edges_number) = if only_from_same_component {
+        let (node_components, mut complete_number_of_edges) = if only_from_same_component {
             let node_components = support.get_node_connected_component_ids(Some(false));
-            let complete_edges_number: EdgeT = Counter::init(node_components.clone())
+            let complete_number_of_edges: EdgeT = Counter::init(node_components.clone())
                 .into_iter()
-                .map(|(_, nodes_number): (_, &usize)| {
-                    let mut edge_number = (*nodes_number * (*nodes_number - 1)) as EdgeT;
+                .map(|(_, number_of_nodes): (_, &usize)| {
+                    let mut edge_number = (*number_of_nodes * (*number_of_nodes - 1)) as EdgeT;
                     if !self.is_directed() {
                         edge_number /= 2;
                     }
                     edge_number
                 })
                 .sum();
-            (Some(node_components), complete_edges_number)
+            (Some(node_components), complete_number_of_edges)
         } else {
-            let mut edge_number = nodes_number * (nodes_number - 1);
+            let mut edge_number = number_of_nodes * (number_of_nodes - 1);
             if !self.is_directed() {
                 edge_number /= 2;
             }
@@ -394,11 +394,11 @@ impl Graph {
         // of the current graph. Moreover, the complete graph will have selfloops IFF the current graph has at
         // least one of them.
         if self.has_selfloops() {
-            complete_edges_number += nodes_number;
+            complete_number_of_edges += number_of_nodes;
         }
 
         // Now we compute the maximum number of negative edges that we can actually generate
-        let max_negative_edges = complete_edges_number - self.get_number_of_unique_edges();
+        let max_negative_edges = complete_number_of_edges - self.get_number_of_unique_edges();
 
         // We check that the number of requested negative edges is compatible with the
         // current graph instance.
@@ -791,7 +791,7 @@ impl Graph {
     ///
     /// # Arguments
     /// * `random_state`: Option<EdgeT> - The random state to reproduce the holdout.
-    /// * `validation_edges_number`: EdgeT - The number of edges to reserve for the validation graph.
+    /// * `validation_number_of_edges`: EdgeT - The number of edges to reserve for the validation graph.
     /// * `include_all_edge_types`: bool - Whether to include all the edge types in the graph, if the graph is a multigraph.
     /// * `user_condition_for_validation_edges`: impl Fn(EdgeT, NodeT, NodeT, Option<EdgeTypeT>) -> bool - The function to use to put edges in validation set.
     /// * `verbose`: Option<bool> - Whether to show the loading bar or not.
@@ -803,7 +803,7 @@ impl Graph {
     fn get_edge_holdout(
         &self,
         random_state: Option<EdgeT>,
-        validation_edges_number: EdgeT,
+        validation_number_of_edges: EdgeT,
         include_all_edge_types: bool,
         user_condition_for_validation_edges: impl Fn(EdgeT, NodeT, NodeT, Option<EdgeTypeT>) -> bool,
         verbose: Option<bool>,
@@ -813,7 +813,7 @@ impl Graph {
         let validation_edges_pb = get_loading_bar(
             verbose,
             "Picking validation edges",
-            validation_edges_number as usize,
+            validation_number_of_edges as usize,
         );
 
         // generate and shuffle the indices of the edges
@@ -864,21 +864,21 @@ impl Graph {
             }
 
             // We stop the iteration when we found all the edges.
-            if valid_edges_bitmap.len() >= validation_edges_number {
+            if valid_edges_bitmap.len() >= validation_number_of_edges {
                 break;
             }
         }
 
-        if valid_edges_bitmap.len() < validation_edges_number {
-            let actual_validation_edges_number = valid_edges_bitmap.len();
+        if valid_edges_bitmap.len() < validation_number_of_edges {
+            let actual_validation_number_of_edges = valid_edges_bitmap.len();
             return Err(format!(
                 concat!(
                     "With the given configuration for the holdout, it is not possible to ",
-                    "generate a validation set composed of {validation_edges_number} edges from the current graph.\n",
-                    "The validation set can be composed of at most {actual_validation_edges_number} edges.\n"
+                    "generate a validation set composed of {validation_number_of_edges} edges from the current graph.\n",
+                    "The validation set can be composed of at most {actual_validation_number_of_edges} edges.\n"
                 ),
-                validation_edges_number=validation_edges_number,
-                actual_validation_edges_number=actual_validation_edges_number,
+                validation_number_of_edges=validation_number_of_edges,
+                actual_validation_number_of_edges=actual_validation_number_of_edges,
             ));
         }
         let validation_edge_ids = (0..self.get_number_of_directed_edges())
@@ -891,8 +891,8 @@ impl Graph {
             .filter(|edge_id| !valid_edges_bitmap.contains(*edge_id))
             .collect::<Vec<_>>();
 
-        let train_edges_number = train_edge_ids.len();
-        let validation_edges_number = validation_edge_ids.len();
+        let train_number_of_edges = train_edge_ids.len();
+        let validation_number_of_edges = validation_edge_ids.len();
 
         Ok((
             build_graph_from_integers(
@@ -919,7 +919,7 @@ impl Graph {
                 Some(true),
                 Some(false),
                 Some(true),
-                Some(train_edges_number as EdgeT),
+                Some(train_number_of_edges as EdgeT),
                 true,
                 self.has_selfloops(),
                 format!("{} train", self.get_name()),
@@ -948,7 +948,7 @@ impl Graph {
                 Some(true),
                 Some(false),
                 Some(true),
-                Some(validation_edges_number as EdgeT),
+                Some(validation_number_of_edges as EdgeT),
                 true,
                 self.has_selfloops(),
                 format!("{} test", self.get_name()),
@@ -1019,12 +1019,12 @@ impl Graph {
 
         // We need to check if the connected holdout can actually be built with
         // the additional constraint of the edge types.
-        let validation_edges_number = if let Some(etis) = &edge_type_ids {
-            let selected_edges_number: EdgeT = etis
+        let validation_number_of_edges = if let Some(etis) = &edge_type_ids {
+            let selected_number_of_edges: EdgeT = etis
                 .iter()
                 .map(|et| unsafe { self.get_unchecked_edge_count_from_edge_type_id(*et) } as EdgeT)
                 .sum();
-            if selected_edges_number == 0 {
+            if selected_number_of_edges == 0 {
                 return Err(format!(
                     concat!(
                         "The provided list of edge type(s) ({}) do exist in the current graph ",
@@ -1040,13 +1040,13 @@ impl Graph {
                         .join(", ")
                 ));
             }
-            (selected_edges_number as f64 * (1.0 - train_size)) as EdgeT
+            (selected_number_of_edges as f64 * (1.0 - train_size)) as EdgeT
         } else {
             (self.get_number_of_directed_edges() as f64 * (1.0 - train_size)) as EdgeT
         };
-        let train_edges_number = self.get_number_of_directed_edges() - validation_edges_number;
+        let train_number_of_edges = self.get_number_of_directed_edges() - validation_number_of_edges;
 
-        if tree.len() * edge_factor > train_edges_number as usize {
+        if tree.len() * edge_factor > train_number_of_edges as usize {
             return Err(format!(
                 concat!(
                     "The given spanning tree of the graph contains {} edges ",
@@ -1058,8 +1058,8 @@ impl Graph {
                     "a train rate of {}."
                 ),
                 tree.len() * edge_factor,
-                train_edges_number,
-                validation_edges_number,
+                train_number_of_edges,
+                validation_number_of_edges,
                 train_size,
                 (tree.len() * edge_factor) as f64 / self.get_number_of_directed_edges() as f64
             ));
@@ -1067,7 +1067,7 @@ impl Graph {
 
         self.get_edge_holdout(
             random_state,
-            validation_edges_number,
+            validation_number_of_edges,
             include_all_edge_types,
             |_, src, dst, edge_type| {
                 let is_in_tree = tree.contains(&(src, dst));
@@ -1138,14 +1138,14 @@ impl Graph {
         if edge_types.is_some() {
             self.must_have_edge_types()?;
         }
-        let total_edges_number = if include_all_edge_types {
+        let total_number_of_edges = if include_all_edge_types {
             self.get_number_of_unique_edges()
         } else {
             self.get_number_of_directed_edges()
         };
 
-        let (_, validation_edges_number) =
-            self.get_holdouts_elements_number(train_size, total_edges_number as usize)?;
+        let (_, validation_number_of_edges) =
+            self.get_holdouts_elements_number(train_size, total_number_of_edges as usize)?;
         let edge_type_ids = edge_types.map_or(Ok::<_, String>(None), |ets| {
             Ok(Some(
                 self.get_edge_type_ids_from_edge_type_names(ets)?
@@ -1158,7 +1158,7 @@ impl Graph {
         }
         self.get_edge_holdout(
             random_state,
-            validation_edges_number as EdgeT,
+            validation_number_of_edges as EdgeT,
             include_all_edge_types,
             |_, src, dst, edge_type| {
                 // If a list of edge types was provided and the edge type
@@ -1226,7 +1226,7 @@ impl Graph {
 
         // Compute the vectors with the indices of the nodes which node type matches
         // therefore the expected shape is:
-        // (node_types_number, number of nodes of that node type)
+        // (number_of_node_types, number of nodes of that node type)
         let node_sets: Vec<Vec<NodeT>> = self
             .node_types
             .as_ref()
@@ -1437,7 +1437,7 @@ impl Graph {
 
         // Compute the vectors with the indices of the edges which edge type matches
         // therefore the expected shape is:
-        // (edge_types_number, number of edges of that edge type)
+        // (number_of_edge_types, number of edges of that edge type)
         let edge_sets: Vec<Vec<EdgeT>> = self
             .edge_types
             .as_ref()
@@ -1536,7 +1536,7 @@ impl Graph {
     /// It may also sample singleton nodes.
     ///
     /// # Arguments
-    /// * `nodes_number`: NodeT - Number of nodes to extract.
+    /// * `number_of_nodes`: NodeT - Number of nodes to extract.
     /// * `random_state`: Option<usize> - Random random_state to use.
     /// * `verbose`: Option<bool> - Whether to show the loading bar.
     ///
@@ -1552,28 +1552,28 @@ impl Graph {
     /// * If the graph has less than the requested number of nodes.
     pub fn get_random_subgraph(
         &self,
-        nodes_number: NodeT,
+        number_of_nodes: NodeT,
         random_state: Option<usize>,
         verbose: Option<bool>,
     ) -> Result<Graph> {
-        if nodes_number <= 1 {
+        if number_of_nodes <= 1 {
             return Err(String::from("Required nodes number must be more than 1."));
         }
         let verbose = verbose.unwrap_or(false);
         let random_state = random_state.unwrap_or(0xbadf00d);
-        let connected_nodes_number = self.get_number_of_connected_nodes();
-        if nodes_number > connected_nodes_number {
+        let connected_number_of_nodes = self.get_number_of_connected_nodes();
+        if number_of_nodes > connected_number_of_nodes {
             return Err(format!(
                 concat!(
                     "Required number of nodes ({}) is more than available ",
                     "number of nodes ({}) that have edges in current graph."
                 ),
-                nodes_number, connected_nodes_number
+                number_of_nodes, connected_number_of_nodes
             ));
         }
 
         // Creating the loading bars
-        let pb1 = get_loading_bar(verbose, "Sampling nodes subset", nodes_number as usize);
+        let pb1 = get_loading_bar(verbose, "Sampling nodes subset", number_of_nodes as usize);
         let pb2 = get_loading_bar(
             verbose,
             "Computing subgraph edges",
@@ -1614,7 +1614,7 @@ impl Graph {
                     pb1.inc(2);
 
                     // If we reach the desired number of unique nodes we can stop the iteration.
-                    if unique_nodes.len() as NodeT >= nodes_number {
+                    if unique_nodes.len() as NodeT >= number_of_nodes {
                         break 'outer;
                     }
                 }
@@ -1630,7 +1630,7 @@ impl Graph {
             .map(|(edge_id, _, _, _, _)| edge_id)
             .collect::<Vec<_>>();
 
-        let selected_edges_number = selected_edge_ids.len() as EdgeT;
+        let selected_number_of_edges = selected_edge_ids.len() as EdgeT;
 
         let pb3 = get_loading_bar(verbose, "Building subgraph", selected_edge_ids.len());
 
@@ -1659,7 +1659,7 @@ impl Graph {
             Some(true),
             Some(false),
             Some(true),
-            Some(selected_edges_number),
+            Some(selected_number_of_edges),
             true,
             self.has_selfloops(),
             format!("{} subgraph", self.get_name()),
@@ -1708,7 +1708,7 @@ impl Graph {
 
         // Compute the vectors with the indices of the nodes which node type matches
         // therefore the expected shape is:
-        // (node_types_number, number of nodes of that node type)
+        // (number_of_node_types, number of nodes of that node type)
         let node_sets: Vec<Vec<NodeT>> = self
             .node_types
             .as_ref()
@@ -1842,7 +1842,7 @@ impl Graph {
 
         // Compute the vectors with the indices of the nodes which node type matches
         // therefore the expected shape is:
-        // (node_types_number, number of nodes of that node type)
+        // (number_of_node_types, number of nodes of that node type)
         let node_sets: Vec<Vec<NodeT>> = self
             .node_types
             .as_ref()
@@ -1977,7 +1977,7 @@ impl Graph {
 
         // Compute the vectors with the indices of the edges which edge type matches
         // therefore the expected shape is:
-        // (edge_types_number, number of edges of that edge type)
+        // (number_of_edge_types, number of edges of that edge type)
         let edge_sets: Vec<Vec<EdgeT>> = self
             .edge_types
             .as_ref()
@@ -2110,7 +2110,7 @@ impl Graph {
 
         // Compute the vectors with the indices of the edges which edge type matches
         // therefore the expected shape is:
-        // (edge_types_number, number of edges of that edge type)
+        // (number_of_edge_types, number of edges of that edge type)
         let edge_sets: Vec<Vec<EdgeT>> = self
             .edge_types
             .as_ref()

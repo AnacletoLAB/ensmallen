@@ -23,12 +23,12 @@ impl Graph {
         add_selfloops_where_missing: Option<bool>,
         complete: Option<bool>,
     ) -> impl ParallelIterator<Item = (NodeT, usize, NodeT, usize)> + 'a {
-        let nodes_number = node_ids.len();
+        let number_of_nodes = node_ids.len();
         let complete = complete.unwrap_or(false);
         let add_selfloops_where_missing = add_selfloops_where_missing.unwrap_or(true);
-        (0..nodes_number)
+        (0..number_of_nodes)
             .into_par_iter()
-            .flat_map(move |src| (0..nodes_number).into_par_iter().map(move |dst| (src, dst)))
+            .flat_map(move |src| (0..number_of_nodes).into_par_iter().map(move |dst| (src, dst)))
             .map(move |(src, dst)| (node_ids[src], src, node_ids[dst], dst))
             .filter(move |&(src_node_id, src, dst_node_id, dst)| {
                 (self.is_directed() || complete || src <= dst)
@@ -91,8 +91,8 @@ impl Graph {
             .par_iter()
             .map(|&node_id| self.get_unchecked_node_degree_from_node_id(node_id) as f64)
             .collect::<Vec<_>>();
-        let nodes_number_usize = node_ids.len();
-        let nodes_number_float = nodes_number_usize as f64;
+        let number_of_nodes_usize = node_ids.len();
+        let number_of_nodes_float = number_of_nodes_usize as f64;
         let nodes_map: HashMap<NodeT, usize> = node_ids
             .iter()
             .cloned()
@@ -100,14 +100,14 @@ impl Graph {
             .map(|(i, node_id)| (node_id, i))
             .collect();
         let add_selfloops_where_missing = add_selfloops_where_missing.unwrap_or(true);
-        (0..nodes_number_usize)
+        (0..number_of_nodes_usize)
             .into_par_iter()
             .flat_map(move |src| {
                 let src_degree = degrees[src];
                 let src_node_id = node_ids[src];
-                let mut result: Vec<(usize, usize, WeightT)> = if src_degree > nodes_number_float {
+                let mut result: Vec<(usize, usize, WeightT)> = if src_degree > number_of_nodes_float {
                     let starting_index = if self.is_directed() { 0 } else { src };
-                    (starting_index..nodes_number_usize)
+                    (starting_index..number_of_nodes_usize)
                         .into_par_iter()
                         .filter(|&dst| {
                             !(add_selfloops_where_missing && src == dst)
@@ -190,20 +190,20 @@ impl Graph {
         let reciprocal_sqrt_degrees =
             Arc::new(self.get_unchecked_reciprocal_sqrt_degrees_from_node_ids(sorted_node_ids));
         //
-        let nodes_number_usize = sorted_node_ids.len();
-        Ok((0..nodes_number_usize)
+        let number_of_nodes_usize = sorted_node_ids.len();
+        Ok((0..number_of_nodes_usize)
             .into_par_iter()
             .flat_map_iter(move |src| {
                 let src_node_id = sorted_node_ids[src];
                 let local_reciprocal_sqrt_degrees = reciprocal_sqrt_degrees.clone();
                 let mut dst = 0;
                 self.iter_unchecked_neighbour_node_ids_from_source_node_id(src_node_id)
-                    .take_while(move |_| dst < nodes_number_usize)
+                    .take_while(move |_| dst < number_of_nodes_usize)
                     .filter_map(move |dst_node_id| {
                         if src_node_id == dst_node_id {
                             return Some((src, src, 1.0));
                         }
-                        while dst < nodes_number_usize {
+                        while dst < number_of_nodes_usize {
                             match dst_node_id.cmp(&sorted_node_ids[dst]) {
                                 std::cmp::Ordering::Equal => {
                                     return Some((
@@ -266,7 +266,7 @@ impl Graph {
         node_ids: &'a [NodeT],
         edge_weighting_method: &str,
     ) -> Result<impl ParallelIterator<Item = (NodeT, usize, NodeT, usize, WeightT)> + 'a> {
-        let nodes_number = node_ids.len();
+        let number_of_nodes = node_ids.len();
         let edge_weighting_method: Result<fn(&Graph, NodeT, NodeT) -> f32> = match edge_weighting_method {
             "unweighted_shortest_path" => {
                 self.must_be_connected()?;
@@ -340,9 +340,9 @@ impl Graph {
             )),
         };
         let edge_weighting_method = edge_weighting_method?;
-        Ok((0..nodes_number)
+        Ok((0..number_of_nodes)
             .into_par_iter()
-            .flat_map(move |src| (0..nodes_number).into_par_iter().map(move |dst| (src, dst)))
+            .flat_map(move |src| (0..number_of_nodes).into_par_iter().map(move |dst| (src, dst)))
             .filter(move |(src, dst)| self.is_directed() || src <= dst)
             .map(move |(src, dst)| {
                 let src_node_id = node_ids[src];

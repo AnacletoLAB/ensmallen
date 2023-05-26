@@ -29,7 +29,7 @@ pub fn convert_edge_list_to_numeric(
     node_list_comment_symbol: Option<String>,
     original_nodes_column_number: Option<usize>,
     original_nodes_column: Option<String>,
-    nodes_number: Option<NodeT>,
+    number_of_nodes: Option<NodeT>,
     original_minimum_node_id: Option<NodeT>,
     original_numeric_node_ids: Option<bool>,
     original_load_node_list_in_parallel: Option<bool>,
@@ -37,7 +37,7 @@ pub fn convert_edge_list_to_numeric(
     original_edge_type_path: Option<String>,
     original_edge_types_column_number: Option<usize>,
     original_edge_types_column: Option<String>,
-    edge_types_number: Option<EdgeTypeT>,
+    number_of_edge_types: Option<EdgeTypeT>,
     original_numeric_edge_type_ids: Option<bool>,
     original_minimum_edge_type_id: Option<EdgeTypeT>,
     original_edge_type_list_separator: Option<char>,
@@ -92,7 +92,7 @@ pub fn convert_edge_list_to_numeric(
     default_weight: Option<WeightT>,
     max_rows_number: Option<usize>,
     rows_to_skip: Option<usize>,
-    edges_number: Option<usize>,
+    number_of_edges: Option<usize>,
     skip_edge_types_if_unavailable: Option<bool>,
     skip_weights_if_unavailable: Option<bool>,
     numeric_rows_are_surely_smaller_than_original: Option<bool>,
@@ -126,7 +126,7 @@ pub fn convert_edge_list_to_numeric(
     }
 
     if original_node_path.is_some()
-        && (!node_list_is_correct.clone().unwrap_or(false) || nodes_number.is_none())
+        && (!node_list_is_correct.clone().unwrap_or(false) || number_of_nodes.is_none())
         && original_load_node_list_in_parallel.clone().unwrap_or(false)
     {
         return Err(concat!(
@@ -155,13 +155,13 @@ pub fn convert_edge_list_to_numeric(
                 .set_minimum_node_id(original_minimum_node_id)
                 .set_numeric_node_ids(original_numeric_node_ids)
                 .set_csv_is_correct(node_list_is_correct)?
-                .set_number_of_nodes(nodes_number)
+                .set_number_of_nodes(number_of_nodes)
                 .set_parallel(original_load_node_list_in_parallel)?
                 .set_remove_chevrons(remove_chevrons)
                 .set_remove_spaces(remove_spaces);
             let (nodes, _) = parse_nodes(
                 node_file_reader.read_lines().transpose()?,
-                node_file_reader.nodes_number.clone(),
+                node_file_reader.number_of_nodes.clone(),
                 None,
                 node_file_reader.is_csv_correct()?,
                 node_file_reader.has_numeric_node_ids(),
@@ -188,13 +188,13 @@ pub fn convert_edge_list_to_numeric(
                 .set_minimum_type_id(original_minimum_edge_type_id)
                 .set_numeric_type_ids(original_numeric_edge_type_ids)
                 .set_csv_is_correct(edge_type_list_is_correct)?
-                .set_types_number(edge_types_number)
+                .set_types_number(number_of_edge_types)
                 .set_parallel(load_edge_type_list_in_parallel)?
                 .set_remove_chevrons(remove_chevrons)
                 .set_remove_spaces(remove_spaces);
             let edge_types_vocabulary = parse_types(
                 edge_type_file_reader.read_lines().transpose()?,
-                edge_types_number,
+                number_of_edge_types,
                 Some(edge_type_file_reader.has_numeric_type_ids()),
                 edge_type_file_reader.get_minimum_type_id(),
                 true,
@@ -229,7 +229,7 @@ pub fn convert_edge_list_to_numeric(
         .set_remove_chevrons(remove_chevrons)
         .set_remove_spaces(remove_spaces)
         // To avoid a duplicated loading bar.
-        .set_verbose(verbose.map(|verbose| verbose && edges_number.is_none()))
+        .set_verbose(verbose.map(|verbose| verbose && number_of_edges.is_none()))
         .set_graph_name(name);
 
     let file_writer = EdgeFileWriter::new(target_edge_path)
@@ -482,7 +482,7 @@ pub fn convert_edge_list_to_numeric(
 /// * `default_weight`: Option<WeightT> - The default weight to use within the original edge list.
 /// * `max_rows_number`: Option<usize> - The amount of rows to load from the original edge list.
 /// * `rows_to_skip`: Option<usize> - The amount of rows to skip from the original edge list.
-/// * `edges_number`: Option<usize> - The expected number of edges. It will be used for the loading bar.
+/// * `number_of_edges`: Option<usize> - The expected number of edges. It will be used for the loading bar.
 /// * `skip_edge_types_if_unavailable`: Option<bool> - Whether to automatically skip the edge types if they are not available.
 /// * `skip_weights_if_unavailable`: Option<bool> - Whether to automatically skip the weights if they are not available.
 /// * `verbose`: Option<bool> - Whether to show the loading bar while processing the file.
@@ -510,7 +510,7 @@ pub fn densify_sparse_numeric_edge_list(
     original_edge_type_path: Option<String>,
     original_edge_types_column_number: Option<usize>,
     original_edge_types_column: Option<String>,
-    edge_types_number: Option<EdgeTypeT>,
+    number_of_edge_types: Option<EdgeTypeT>,
     original_numeric_edge_type_ids: Option<bool>,
     original_minimum_edge_type_id: Option<EdgeTypeT>,
     original_edge_type_list_separator: Option<char>,
@@ -550,7 +550,7 @@ pub fn densify_sparse_numeric_edge_list(
     default_weight: Option<WeightT>,
     max_rows_number: Option<usize>,
     rows_to_skip: Option<usize>,
-    edges_number: Option<usize>,
+    number_of_edges: Option<usize>,
     skip_edge_types_if_unavailable: Option<bool>,
     skip_weights_if_unavailable: Option<bool>,
     numeric_rows_are_surely_smaller_than_original: Option<bool>,
@@ -604,11 +604,11 @@ pub fn densify_sparse_numeric_edge_list(
                 .set_csv_is_correct(edge_type_list_is_correct)?
                 .set_minimum_type_id(original_minimum_edge_type_id)
                 .set_numeric_type_ids(original_numeric_edge_type_ids)
-                .set_types_number(edge_types_number)
+                .set_types_number(number_of_edge_types)
                 .set_parallel(load_edge_type_list_in_parallel)?;
             let edge_types_vocabulary = parse_types(
                 edge_type_file_reader.read_lines().transpose()?,
-                edge_types_number,
+                number_of_edge_types,
                 Some(edge_type_file_reader.has_numeric_type_ids()),
                 edge_type_file_reader.get_minimum_type_id(),
                 true,
@@ -640,7 +640,7 @@ pub fn densify_sparse_numeric_edge_list(
         .set_skip_edge_types_if_unavailable(skip_edge_types_if_unavailable)
         .set_skip_weights_if_unavailable(skip_weights_if_unavailable)
         // To avoid a duplicated loading bar.
-        .set_verbose(verbose.map(|verbose| verbose && edges_number.is_none()))
+        .set_verbose(verbose.map(|verbose| verbose && number_of_edges.is_none()))
         .set_graph_name(name);
 
     let file_writer = EdgeFileWriter::new(target_edge_path)
@@ -697,11 +697,11 @@ pub fn densify_sparse_numeric_edge_list(
     file_writer.dump_iterator(
         // We do not care to be exact here: if the graph does not contain
         // selfloops the value will be correct.
-        edges_number.map(|edges_number| {
+        number_of_edges.map(|number_of_edges| {
             if directed {
-                edges_number
+                number_of_edges
             } else {
-                edges_number * 2
+                number_of_edges * 2
             }
         }),
         lines_iterator

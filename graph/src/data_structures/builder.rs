@@ -7,11 +7,11 @@ pub(crate) struct ConcurrentCSRBuilder {
 }
 
 impl ConcurrentCSRBuilder {
-    pub fn new(edges_number: EdgeT, nodes_number: NodeT) -> Self {
-        let outbounds = vec![0; nodes_number as usize + 1];
+    pub fn new(number_of_edges: EdgeT, number_of_nodes: NodeT) -> Self {
+        let outbounds = vec![0; number_of_nodes as usize + 1];
 
-        let mut destinations = Vec::with_capacity(edges_number as usize);
-        unsafe { destinations.set_len(edges_number as usize) };
+        let mut destinations = Vec::with_capacity(number_of_edges as usize);
+        unsafe { destinations.set_len(number_of_edges as usize) };
 
         Self {
             outbounds: unsafe { core::mem::transmute::<Vec<EdgeT>, Vec<AtomicU64>>(outbounds) },

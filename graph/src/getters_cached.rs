@@ -113,7 +113,7 @@ impl Graph {
     fn compute_max_and_min_weighted_node_degree(&self) {
         let cache = unsafe { &mut (*self.cache.get()) };
 
-        let (min, max, weighted_singleton_nodes_number) =
+        let (min, max, weighted_singleton_number_of_nodes) =
             match self.par_iter_weighted_node_degrees() {
                 Ok(iter) => {
                     let (min, max, weighted_singletons) =
@@ -135,7 +135,7 @@ impl Graph {
 
         cache.min_weighted_node_degree = Some(min);
         cache.max_weighted_node_degree = Some(max);
-        cache.weighted_singleton_nodes_number = Some(weighted_singleton_nodes_number);
+        cache.weighted_singleton_number_of_nodes = Some(weighted_singleton_number_of_nodes);
     }
 
     cached_property!(get_weighted_maximum_node_degree, Result<f64>, compute_max_and_min_weighted_node_degree, max_weighted_node_degree,
@@ -146,7 +146,7 @@ impl Graph {
     /// Return the minimum weighted node degree.
     );
 
-    cached_property!(get_number_of_weighted_singleton_nodes, Result<NodeT>, compute_max_and_min_weighted_node_degree, weighted_singleton_nodes_number,
+    cached_property!(get_number_of_weighted_singleton_nodes, Result<NodeT>, compute_max_and_min_weighted_node_degree, weighted_singleton_number_of_nodes,
     /// Return the number of weighted singleton nodes, i.e. nodes with weighted node degree equal to zero.
     );
 

@@ -798,11 +798,11 @@ impl Graph {
     pub fn iter_one_hot_encoded_node_type_ids(
         &self,
     ) -> Result<impl Iterator<Item = Vec<bool>> + '_> {
-        let node_types_number = self.get_number_of_node_types()?;
+        let number_of_node_types = self.get_number_of_node_types()?;
         Ok(unsafe {
             self.iter_unchecked_node_type_ids()
                 .map(move |maybe_node_types| {
-                    let mut dummies = vec![false; node_types_number as usize];
+                    let mut dummies = vec![false; number_of_node_types as usize];
                     if let Some(node_types) = maybe_node_types {
                         node_types.iter().for_each(|&node_type| {
                             dummies[node_type as usize] = true;
@@ -820,12 +820,12 @@ impl Graph {
     pub fn par_iter_one_hot_encoded_known_node_type_ids(
         &self,
     ) -> Result<impl ParallelIterator<Item = Vec<bool>> + '_> {
-        let node_types_number = self.get_number_of_node_types()?;
+        let number_of_node_types = self.get_number_of_node_types()?;
         Ok(unsafe {
             self.par_iter_unchecked_node_type_ids()
                 .filter_map(move |maybe_node_types| {
                     if let Some(node_types) = maybe_node_types {
-                        let mut dummies = vec![false; node_types_number as usize];
+                        let mut dummies = vec![false; number_of_node_types as usize];
                         node_types.iter().for_each(|&node_type| {
                             dummies[node_type as usize] = true;
                         });
@@ -1049,12 +1049,12 @@ impl Graph {
     pub fn iter_one_hot_encoded_edge_type_ids(
         &self,
     ) -> Result<impl Iterator<Item = Vec<bool>> + '_> {
-        let edge_types_number = self.get_number_of_edge_types()?;
+        let number_of_edge_types = self.get_number_of_edge_types()?;
         Ok(self
             .get_directed_edge_type_ids()?
             .into_iter()
             .map(move |maybe_edge_type| {
-                let mut dummies = vec![false; edge_types_number as usize];
+                let mut dummies = vec![false; number_of_edge_types as usize];
                 if let Some(edge_type) = maybe_edge_type {
                     dummies[edge_type as usize] = true;
                 }
@@ -1069,13 +1069,13 @@ impl Graph {
     pub fn iter_one_hot_encoded_known_edge_type_ids(
         &self,
     ) -> Result<impl Iterator<Item = Vec<bool>> + '_> {
-        let edge_types_number = self.get_number_of_edge_types()?;
+        let number_of_edge_types = self.get_number_of_edge_types()?;
         Ok(self
             .get_directed_edge_type_ids()?
             .into_iter()
             .filter_map(move |maybe_edge_type| {
                 if let Some(edge_type) = maybe_edge_type {
-                    let mut dummies = vec![false; edge_types_number as usize];
+                    let mut dummies = vec![false; number_of_edge_types as usize];
                     dummies[edge_type as usize] = true;
                     Some(dummies)
                 } else {

@@ -259,9 +259,9 @@ impl ShortestPathsResultBFS {
                 return Ok(Vec::new());
             }
             // Get the number of nodes in the graph.
-            let nodes_number = predecessors.len() as NodeT;
+            let number_of_nodes = predecessors.len() as NodeT;
             // We iterate over the nodes in the graph.
-            return Ok((0..nodes_number)
+            return Ok((0..number_of_nodes)
                 // Convert to parallel iterator
                 .into_par_iter()
                 // Remove the nodes that do not have the
@@ -639,8 +639,8 @@ impl ShortestPathsDjkstra {
     pub fn get_successors_from_node_id(&self, source_node_id: NodeT) -> Result<Vec<NodeT>> {
         self.validate_node_id(source_node_id)?;
         if let Some(predecessors) = self.predecessors.as_ref() {
-            let nodes_number = predecessors.len() as NodeT;
-            return Ok((0..nodes_number)
+            let number_of_nodes = predecessors.len() as NodeT;
+            return Ok((0..number_of_nodes)
                 .into_par_iter()
                 .filter(move |&node_id| {
                     let mut node_id = node_id;
@@ -710,9 +710,9 @@ impl Graph {
         &self,
         src_node_id: NodeT,
     ) -> ShortestPathsResultBFS {
-        let nodes_number = self.get_number_of_nodes() as usize;
+        let number_of_nodes = self.get_number_of_nodes() as usize;
         let thread_shared_predecessors =
-            ThreadDataRaceAware::new(vec![NODE_NOT_PRESENT; nodes_number]);
+            ThreadDataRaceAware::new(vec![NODE_NOT_PRESENT; number_of_nodes]);
         (*thread_shared_predecessors.value.get())[src_node_id as usize] = src_node_id;
         let mut eccentricity = 0;
         let mut most_distant_node = src_node_id;
@@ -769,9 +769,9 @@ impl Graph {
         src_node_ids: Vec<NodeT>,
         maximal_depth: Option<T>,
     ) -> (Vec<T>, T, NodeT) {
-        let nodes_number = self.get_number_of_nodes() as usize;
+        let number_of_nodes = self.get_number_of_nodes() as usize;
         let node_not_present = T::max_value();
-        let mut distances = vec![node_not_present; nodes_number];
+        let mut distances = vec![node_not_present; number_of_nodes];
         let thread_shared_distances = ThreadDataRaceAware::new(&mut distances);
         for src_node_id in src_node_ids.iter().cloned() {
             (*thread_shared_distances.value.get())[src_node_id as usize] =
@@ -867,8 +867,8 @@ impl Graph {
         &self,
         src_node_id: NodeT,
     ) -> ShortestPathsResultBFS {
-        let nodes_number = self.get_number_of_nodes() as usize;
-        let mut distances = vec![NODE_NOT_PRESENT; nodes_number];
+        let number_of_nodes = self.get_number_of_nodes() as usize;
+        let mut distances = vec![NODE_NOT_PRESENT; number_of_nodes];
         distances[src_node_id as usize] = 0;
         let mut eccentricity = 0;
         let mut most_distant_node = src_node_id;
@@ -919,11 +919,11 @@ impl Graph {
     ) -> ShortestPathsResultBFS {
         let compute_predecessors = compute_predecessors.unwrap_or(true);
 
-        let nodes_number = self.get_number_of_nodes() as usize;
+        let number_of_nodes = self.get_number_of_nodes() as usize;
         let mut found_destination = false;
 
         let mut predecessors: Option<Vec<NodeT>> = if compute_predecessors {
-            let mut predecessors = vec![NODE_NOT_PRESENT; nodes_number];
+            let mut predecessors = vec![NODE_NOT_PRESENT; number_of_nodes];
             for src_node_id in src_node_ids.iter().cloned() {
                 predecessors[src_node_id as usize] = src_node_id;
             }
@@ -932,14 +932,14 @@ impl Graph {
             None
         };
 
-        let mut distances: Vec<NodeT> = vec![NODE_NOT_PRESENT; nodes_number];
+        let mut distances: Vec<NodeT> = vec![NODE_NOT_PRESENT; number_of_nodes];
         for src_node_id in src_node_ids.iter().cloned() {
             distances[src_node_id as usize] = 0;
         }
         let mut eccentricity = 0;
         let mut most_distant_node = src_node_ids[0];
 
-        let mut nodes_to_explore = VecDeque::with_capacity(nodes_number);
+        let mut nodes_to_explore = VecDeque::with_capacity(number_of_nodes);
         for src_node_id in src_node_ids.iter().cloned() {
             nodes_to_explore.push_back((src_node_id, 0));
         }
@@ -1189,11 +1189,11 @@ impl Graph {
         dst_node_id: NodeT,
         k: usize,
     ) -> Vec<Vec<NodeT>> {
-        let nodes_number = self.get_number_of_nodes() as usize;
-        let mut counts = vec![0; nodes_number];
+        let number_of_nodes = self.get_number_of_nodes() as usize;
+        let mut counts = vec![0; number_of_nodes];
         let mut paths = Vec::new();
 
-        let mut nodes_to_explore = VecDeque::with_capacity(nodes_number);
+        let mut nodes_to_explore = VecDeque::with_capacity(number_of_nodes);
         nodes_to_explore.push_back(vec![src_node_id]);
 
         while let Some(path) = nodes_to_explore.pop_front() {
@@ -1335,8 +1335,8 @@ impl Graph {
         &self,
         node_id: NodeT,
     ) -> (NodeT, NodeT) {
-        let nodes_number = self.get_number_of_nodes() as usize;
-        let thread_shared_visited = ThreadDataRaceAware::new(vec![false; nodes_number]);
+        let number_of_nodes = self.get_number_of_nodes() as usize;
+        let thread_shared_visited = ThreadDataRaceAware::new(vec![false; number_of_nodes]);
         (*thread_shared_visited.value.get())[node_id as usize] = true;
         let mut eccentricity = 0;
         let mut most_distant_node = node_id;
@@ -1505,7 +1505,7 @@ impl Graph {
         use_edge_weights_as_probabilities: Option<bool>,
     ) -> ShortestPathsDjkstra {
         let compute_predecessors = compute_predecessors.unwrap_or(true);
-        let nodes_number = self.get_number_of_nodes() as usize;
+        let number_of_nodes = self.get_number_of_nodes() as usize;
         let mut most_distant_node = src_node_ids[0];
         let use_edge_weights_as_probabilities = use_edge_weights_as_probabilities.unwrap_or(false);
         let mut dst_node_distance = maybe_dst_node_id.map(|_| {
@@ -1516,7 +1516,7 @@ impl Graph {
             }
         });
         let mut predecessors: Option<Vec<Option<NodeT>>> = if compute_predecessors {
-            Some(vec![None; nodes_number])
+            Some(vec![None; number_of_nodes])
         } else {
             None
         };
@@ -1528,7 +1528,7 @@ impl Graph {
         {
             if use_edge_weights_as_probabilities {
                 return ShortestPathsDjkstra::new(
-                    vec![0.0; nodes_number],
+                    vec![0.0; number_of_nodes],
                     most_distant_node,
                     predecessors,
                     dst_node_distance,
@@ -1539,7 +1539,7 @@ impl Graph {
                 );
             } else {
                 return ShortestPathsDjkstra::new(
-                    vec![f32::INFINITY; nodes_number],
+                    vec![f32::INFINITY; number_of_nodes],
                     most_distant_node,
                     predecessors,
                     dst_node_distance,
@@ -1560,9 +1560,9 @@ impl Graph {
             )
         });
 
-        let mut distances = vec![f32::MAX; nodes_number];
+        let mut distances = vec![f32::MAX; number_of_nodes];
         let mut nodes_to_explore: DijkstraQueue<f32> =
-            DijkstraQueue::with_capacity_from_roots(nodes_number, src_node_ids, &mut distances);
+            DijkstraQueue::with_capacity_from_roots(number_of_nodes, src_node_ids, &mut distances);
         let mut eccentricity: f32 = 0.0;
         let mut total_distance: f32 = 0.0;
         let mut total_harmonic_distance: f32 = 0.0;

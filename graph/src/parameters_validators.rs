@@ -151,7 +151,7 @@ impl Graph {
         &self,
         node_type_id: Option<NodeTypeT>,
     ) -> Result<Option<NodeTypeT>> {
-        self.get_number_of_node_types().and_then(|node_types_number| {
+        self.get_number_of_node_types().and_then(|number_of_node_types| {
             node_type_id.map_or_else( || if !self.has_unknown_node_types()?{
                 Err(
                     "An unknown node type was given but the graph does not contain unknown node types.".to_string()
@@ -159,11 +159,11 @@ impl Graph {
             } else {
                 Ok(None)
             }, |nti| {
-                if node_types_number <= nti {
+                if number_of_node_types <= nti {
                     Err(format!(
                         "Given node type ID {} is bigger than number of node types in the graph {}.",
                         nti,
-                        node_types_number
+                        number_of_node_types
                     ))
                 } else {
                     Ok(Some(nti))
@@ -210,7 +210,7 @@ impl Graph {
         &self,
         edge_type_id: Option<EdgeTypeT>,
     ) -> Result<Option<EdgeTypeT>> {
-        self.get_number_of_edge_types().and_then(|edge_types_number| {
+        self.get_number_of_edge_types().and_then(|number_of_edge_types| {
             edge_type_id.map_or_else( || if !self.has_unknown_edge_types()?{
                 Err(
                     "An unknown edge type was given but the graph does not contain unknown edge types.".to_string()
@@ -218,11 +218,11 @@ impl Graph {
             } else {
                 Ok(None)
             }, |eti| {
-                if edge_types_number <= eti {
+                if number_of_edge_types <= eti {
                     Err(format!(
                         "Given edge type ID {} is bigger than number of edge types in the graph {}.",
                         eti,
-                        edge_types_number
+                        number_of_edge_types
                     ))
                 } else {
                     Ok(Some(eti))

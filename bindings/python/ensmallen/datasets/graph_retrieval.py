@@ -273,30 +273,30 @@ class RetrievedGraph:
 
     def store_preprocessed_metadata(
         self,
-        node_types_number: Optional[int],
-        nodes_number: int,
-        edge_types_number: Optional[int],
-        edges_number: int,
+        number_of_node_types: Optional[int],
+        number_of_nodes: int,
+        number_of_edge_types: Optional[int],
+        number_of_edges: int,
     ):
         """Store the provided metadata.
 
         Parameters
         --------------------------------
-        node_types_number: Optional[int],
+        number_of_node_types: Optional[int],
             The number of unique node types existing in this graph.
-        nodes_number: int,
+        number_of_nodes: int,
             The number of unique nodes existing in this graph.
-        edge_types_number: Optional[int],
+        number_of_edge_types: Optional[int],
             The number of unique edge types existing in this graph.
-        edges_number: int,
+        number_of_edges: int,
             The number of edges existing in this graph.
         """
         compress_json.dump(
             dict(
-                node_types_number=node_types_number,
-                nodes_number=nodes_number,
-                edge_types_number=edge_types_number,
-                edges_number=edges_number
+                number_of_node_types=number_of_node_types,
+                number_of_nodes=number_of_nodes,
+                number_of_edge_types=number_of_edge_types,
+                number_of_edges=number_of_edges
             ),
             self.get_preprocessed_graph_metadata_path()
         )
@@ -412,10 +412,10 @@ class RetrievedGraph:
             if not self.is_preprocessed():
                 try:
                     (
-                        node_types_number,
-                        nodes_number,
-                        edge_types_number,
-                        edges_number
+                        number_of_node_types,
+                        number_of_nodes,
+                        number_of_edge_types,
+                        number_of_edges
                     ) = edge_list_utils.build_optimal_lists_files(
                         # NOTE: the following parameters are supported by the parser, but
                         # so far we have not encountered a single use case where we actually used them.
@@ -432,7 +432,7 @@ class RetrievedGraph:
                         # original_node_type_list_comment_symbol,
                         # original_load_node_type_list_in_parallel,
                         # original_node_type_list_is_correct,
-                        # node_types_number,
+                        # number_of_node_types,
                         target_node_type_list_path=target_node_type_list_path,
                         target_node_type_list_separator='\t',
                         target_node_type_list_node_types_column_number=0,
@@ -476,7 +476,7 @@ class RetrievedGraph:
                         original_node_list_node_types_column=graph_arguments.get(
                             "node_list_node_types_column"
                         ),
-                        nodes_number=graph_arguments.get("nodes_number"),
+                        number_of_nodes=graph_arguments.get("number_of_nodes"),
                         # original_minimum_node_id,
                         # original_numeric_node_ids,
                         # original_node_list_numeric_node_type_ids,
@@ -508,7 +508,7 @@ class RetrievedGraph:
                         # edge_type_list_comment_symbol,
                         # load_edge_type_list_in_parallel=True,
                         # edge_type_list_is_correct,
-                        # edge_types_number,
+                        # number_of_edge_types,
                         target_edge_type_list_path=target_edge_type_list_path,
                         target_edge_type_list_separator='\t',
                         target_edge_type_list_edge_types_column_number=0,
@@ -578,7 +578,7 @@ class RetrievedGraph:
                         remove_spaces=graph_arguments.get(
                             "remove_spaces"
                         ),
-                        edges_number=graph_arguments.get("edges_number"),
+                        number_of_edges=graph_arguments.get("number_of_edges"),
                         target_edge_path=target_edge_path,
                         target_edge_list_separator='\t',
                         sort_temporary_directory=self._sort_tmp_dir,
@@ -602,15 +602,15 @@ class RetrievedGraph:
                     ) from e
                 # Store the obtained metadata
                 self.store_preprocessed_metadata(
-                    node_types_number,
-                    nodes_number,
-                    edge_types_number,
-                    edges_number
+                    number_of_node_types,
+                    number_of_nodes,
+                    number_of_edge_types,
+                    number_of_edges
                 )
             # Load the stored metadata
             metadata = self.get_preprocessed_metadata()
             # If the node types are provided
-            has_node_types = metadata["node_types_number"] is not None
+            has_node_types = metadata["number_of_node_types"] is not None
             if has_node_types and self._load_node_types:
                 node_types_arguments = {
                     "node_type_path": target_node_type_list_path,
@@ -639,7 +639,7 @@ class RetrievedGraph:
                 }
 
             # If the edge types are provided
-            has_edge_types = metadata["edge_types_number"] is not None
+            has_edge_types = metadata["number_of_edge_types"] is not None
             if has_edge_types:
                 edge_types_arguments = {
                     "edge_type_path": target_edge_type_list_path,
@@ -663,7 +663,7 @@ class RetrievedGraph:
             )
             if has_edge_weights and self._load_edge_weights:
                 edge_weights_arguments = {
-                    "weights_column_number": 2 + int(metadata["edge_types_number"] is not None),
+                    "weights_column_number": 2 + int(metadata["number_of_edge_types"] is not None),
                     "skip_weights_if_unavailable": True,
                 }
             else:
@@ -686,8 +686,8 @@ class RetrievedGraph:
                     "edge_list_may_contain_duplicates": False,
                     "edge_list_is_sorted": True,
                     "edge_list_is_correct": True,
-                    "edges_number": metadata["edges_number"],
-                    "nodes_number": metadata["nodes_number"],
+                    "number_of_edges": metadata["number_of_edges"],
+                    "number_of_nodes": metadata["number_of_nodes"],
                     "may_have_singletons": may_have_singletons,
                     "verbose": self._verbose > 0,
                     "directed": self._directed,

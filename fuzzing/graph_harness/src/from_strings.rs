@@ -5,15 +5,15 @@ use rayon::iter::IntoParallelIterator;
 
 #[derive(Arbitrary, Debug, Clone)]
 pub struct FromStringsParameters {
-    pub node_types_number: Option<u8>,
+    pub number_of_node_types: Option<u8>,
     pub numeric_node_type_ids: Option<bool>,
     pub minimum_node_type_id: Option<NodeTypeT>,
     pub has_node_types: bool,
-    pub nodes_number: Option<u8>,
+    pub number_of_nodes: Option<u8>,
     pub numeric_node_ids: bool,
     pub numeric_node_list_node_type_ids: bool,
     pub minimum_node_id: Option<NodeT>,
-    pub edge_types_number: Option<u8>,
+    pub number_of_edge_types: Option<u8>,
     pub numeric_edge_type_ids: Option<bool>,
     pub minimum_edge_type_id: Option<EdgeTypeT>,
     pub has_edge_types: bool,
@@ -21,7 +21,7 @@ pub struct FromStringsParameters {
     pub directed: bool,
     pub complete: Option<bool>,
     pub sorted: Option<bool>,
-    pub edges_number: Option<u8>,
+    pub number_of_edges: Option<u8>,
     pub numeric_edge_list_node_ids: Option<bool>,
     pub numeric_edge_list_edge_type_ids: Option<bool>,
     pub skip_node_types_if_unavailable: Option<bool>,
@@ -65,15 +65,15 @@ pub fn build_graph_from_strings_harness(data: FromStringsParameters) -> Result<(
     }));
 
     let FromStringsParameters {
-        node_types_number,
+        number_of_node_types,
         numeric_node_type_ids,
         minimum_node_type_id,
         has_node_types,
-        nodes_number,
+        number_of_nodes,
         numeric_node_ids,
         numeric_node_list_node_type_ids,
         minimum_node_id,
-        edge_types_number,
+        number_of_edge_types,
         numeric_edge_type_ids,
         minimum_edge_type_id,
         has_edge_types,
@@ -81,7 +81,7 @@ pub fn build_graph_from_strings_harness(data: FromStringsParameters) -> Result<(
         directed,
         complete,
         sorted,
-        edges_number,
+        number_of_edges,
         numeric_edge_list_node_ids,
         numeric_edge_list_edge_type_ids,
         skip_node_types_if_unavailable,
@@ -110,7 +110,7 @@ pub fn build_graph_from_strings_harness(data: FromStringsParameters) -> Result<(
                 })
                 .collect::<Vec<_>>())
         ),
-        node_types_number.map(|x| x as NodeTypeT),
+        number_of_node_types.map(|x| x as NodeTypeT),
         numeric_node_type_ids,
         minimum_node_type_id,
         has_node_types,
@@ -140,7 +140,7 @@ pub fn build_graph_from_strings_harness(data: FromStringsParameters) -> Result<(
                 })
                 .collect::<Vec<_>>())
         ),
-        nodes_number.map(|x| x as NodeT),
+        number_of_nodes.map(|x| x as NodeT),
         false,
         numeric_node_ids,
         numeric_node_list_node_type_ids,
@@ -157,7 +157,7 @@ pub fn build_graph_from_strings_harness(data: FromStringsParameters) -> Result<(
                 })
                 .collect::<Vec<_>>())
         ),
-        edge_types_number.map(|x| x as EdgeTypeT),
+        number_of_edge_types.map(|x| x as EdgeTypeT),
         numeric_edge_type_ids,
         minimum_edge_type_id,
         has_edge_types,
@@ -189,7 +189,7 @@ pub fn build_graph_from_strings_harness(data: FromStringsParameters) -> Result<(
         complete,
         Some(true),
         sorted,
-        edges_number.map(|x| x as EdgeT),
+        number_of_edges.map(|x| x as EdgeT),
         numeric_edge_list_node_ids,
         numeric_edge_list_edge_type_ids,
         skip_node_types_if_unavailable,

@@ -33,7 +33,7 @@ use crate::{utils::ItersWrapper, EdgeFileReader, EdgeFileWriter, EdgeT, Result, 
 /// * `default_weight`: Option<WeightT> - The default weight to use within the original edge list.
 /// * `max_rows_number`: Option<usize> - The amount of rows to load from the original edge list.
 /// * `rows_to_skip`: Option<usize> - The amount of rows to skip from the original edge list.
-/// * `edges_number`: Option<usize> - The expected number of edges. It will be used for the loading bar.
+/// * `number_of_edges`: Option<usize> - The expected number of edges. It will be used for the loading bar.
 /// * `skip_edge_types_if_unavailable`: Option<bool> - Whether to automatically skip the edge types if they are not available.
 /// * `skip_weights_if_unavailable`: Option<bool> - Whether to automatically skip the weights if they are not available.
 /// * `verbose`: Option<bool> - Whether to show the loading bar while processing the file.
@@ -68,7 +68,7 @@ pub fn convert_undirected_edge_list_to_directed(
     default_weight: Option<WeightT>,
     max_rows_number: Option<usize>,
     rows_to_skip: Option<usize>,
-    edges_number: Option<usize>,
+    number_of_edges: Option<usize>,
     skip_edge_types_if_unavailable: Option<bool>,
     skip_weights_if_unavailable: Option<bool>,
     verbose: Option<bool>,
@@ -107,7 +107,7 @@ pub fn convert_undirected_edge_list_to_directed(
         .set_skip_edge_types_if_unavailable(skip_edge_types_if_unavailable)
         .set_skip_weights_if_unavailable(skip_weights_if_unavailable)
         // To avoid a duplicated loading bar.
-        .set_verbose(verbose.map(|verbose| verbose && edges_number.is_none()))
+        .set_verbose(verbose.map(|verbose| verbose && number_of_edges.is_none()))
         .set_graph_name(name);
     let file_writer = EdgeFileWriter::new(target_edge_path)
         .set_destinations_column(target_destinations_column.or(original_destinations_column))
@@ -139,11 +139,11 @@ pub fn convert_undirected_edge_list_to_directed(
         ItersWrapper::Parallel(_) => unreachable!("This is not meant to run in parallel."),
         ItersWrapper::Sequential(i) => i,
     };
-    let mut new_edges_number = 0;
+    let mut new_number_of_edges = 0;
     file_writer.dump_iterator(
         // We do not care to be exact here: if the graph does not contain
         // selfloops the value will be correct.
-        edges_number.map(|edges_number| edges_number * 2),
+        number_of_edges.map(|number_of_edges| number_of_edges * 2),
         lines_iterator
             // Removing eventual errors.
             .filter_map(|line| line.ok())
@@ -153,10 +153,10 @@ pub fn convert_undirected_edge_list_to_directed(
                 // In most well formed graphs, there should be a small
                 // percentage of selfloops
                 if unlikely(src_name == dst_name) {
-                    new_edges_number += 1;
+                    new_number_of_edges += 1;
                     vec![(0, 0, src_name, 0, dst_name, None, edge_type, weight)]
                 } else {
-                    new_edges_number += 2;
+                    new_number_of_edges += 2;
                     vec![
                         (
                             0,
@@ -173,5 +173,5 @@ pub fn convert_undirected_edge_list_to_directed(
                 }
             }),
     )?;
-    Ok(new_edges_number)
+    Ok(new_number_of_edges)
 }

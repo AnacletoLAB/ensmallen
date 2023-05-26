@@ -5211,7 +5211,7 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self, nodes_number, random_state, verbose)")]
+    #[pyo3(text_signature = "($self, number_of_nodes, random_state, verbose)")]
     /// Returns subgraph with given number of nodes.
     ///
     /// **This method creates a subset of the graph starting from a random node
@@ -5224,7 +5224,7 @@ impl Graph {
     ///
     /// Parameters
     /// ----------
-    /// nodes_number: int
+    /// number_of_nodes: int
     ///     Number of nodes to extract.
     /// random_state: Optional[int]
     ///     Random random_state to use.
@@ -5241,13 +5241,13 @@ impl Graph {
     ///
     pub fn get_random_subgraph(
         &self,
-        nodes_number: NodeT,
+        number_of_nodes: NodeT,
         random_state: Option<usize>,
         verbose: Option<bool>,
     ) -> PyResult<Graph> {
         Ok(pe!(self
             .inner
-            .get_random_subgraph(nodes_number.clone(), random_state, verbose))?
+            .get_random_subgraph(number_of_nodes.clone(), random_state, verbose))?
         .into())
     }
 
@@ -7693,8 +7693,8 @@ impl Graph {
     /// ValueError
     ///     If there are no node types in the graph.
     ///
-    pub fn get_minimum_node_types_number(&self) -> PyResult<NodeT> {
-        Ok(pe!(self.inner.get_minimum_node_types_number())?.into())
+    pub fn get_minimum_number_of_node_types(&self) -> PyResult<NodeT> {
+        Ok(pe!(self.inner.get_minimum_number_of_node_types())?.into())
     }
 
     #[automatically_generated_binding]
@@ -7706,8 +7706,8 @@ impl Graph {
     /// ValueError
     ///     If there are no node types in the graph.
     ///
-    pub fn get_maximum_node_types_number(&self) -> PyResult<NodeT> {
-        Ok(pe!(self.inner.get_maximum_node_types_number())?.into())
+    pub fn get_maximum_number_of_node_types(&self) -> PyResult<NodeT> {
+        Ok(pe!(self.inner.get_maximum_number_of_node_types())?.into())
     }
 
     #[automatically_generated_binding]
@@ -8389,8 +8389,8 @@ impl Graph {
     /// ValueError
     ///     If there are no edge types in the graph.
     ///
-    pub fn get_minimum_edge_types_number(&self) -> PyResult<EdgeT> {
-        Ok(pe!(self.inner.get_minimum_edge_types_number())?.into())
+    pub fn get_minimum_number_of_edge_types(&self) -> PyResult<EdgeT> {
+        Ok(pe!(self.inner.get_minimum_number_of_edge_types())?.into())
     }
 
     #[automatically_generated_binding]
@@ -9370,7 +9370,7 @@ impl Graph {
     #[staticmethod]
     #[automatically_generated_binding]
     #[pyo3(
-        text_signature = "(random_state, minimum_node_id, minimum_node_sampling, maximum_node_sampling, nodes_number, include_selfloops, node_type, edge_type, weight, directed, name)"
+        text_signature = "(random_state, minimum_node_id, minimum_node_sampling, maximum_node_sampling, number_of_nodes, include_selfloops, node_type, edge_type, weight, directed, name)"
     )]
     /// Creates new random connected graph with given sizes and types.
     ///
@@ -9384,7 +9384,7 @@ impl Graph {
     ///     The minimum amount of nodes to sample per node.
     /// maximum_node_sampling: int
     ///     The maximum amount of nodes to sample per node.
-    /// nodes_number: Optional[int]
+    /// number_of_nodes: Optional[int]
     ///     Number of nodes in the chain. By default 10.
     /// include_selfloops: Optional[bool]
     ///     Whether to include selfloops.
@@ -9404,7 +9404,7 @@ impl Graph {
         minimum_node_id: Option<NodeT>,
         minimum_node_sampling: Option<NodeT>,
         maximum_node_sampling: Option<NodeT>,
-        nodes_number: Option<NodeT>,
+        number_of_nodes: Option<NodeT>,
         include_selfloops: Option<bool>,
         node_type: Option<&str>,
         edge_type: Option<&str>,
@@ -9417,7 +9417,7 @@ impl Graph {
             minimum_node_id,
             minimum_node_sampling,
             maximum_node_sampling,
-            nodes_number,
+            number_of_nodes,
             include_selfloops,
             node_type,
             edge_type,
@@ -9431,7 +9431,7 @@ impl Graph {
     #[staticmethod]
     #[automatically_generated_binding]
     #[pyo3(
-        text_signature = "(random_state, minimum_node_id, nodes_number, include_selfloops, node_type, edge_type, weight, directed, name)"
+        text_signature = "(random_state, minimum_node_id, number_of_nodes, include_selfloops, node_type, edge_type, weight, directed, name)"
     )]
     /// Creates new random connected graph with given sizes and types.
     ///
@@ -9445,7 +9445,7 @@ impl Graph {
     ///     The minimum amount of nodes to sample per node.
     /// maximum_node_sampling: int
     ///     The maximum amount of nodes to sample per node.
-    /// nodes_number: Optional[int]
+    /// number_of_nodes: Optional[int]
     ///     Number of nodes in the chain. By default 10.
     /// include_selfloops: Optional[bool]
     ///     Whether to include selfloops.
@@ -9463,7 +9463,7 @@ impl Graph {
     pub fn generate_random_spanning_tree(
         random_state: Option<u64>,
         minimum_node_id: Option<NodeT>,
-        nodes_number: Option<NodeT>,
+        number_of_nodes: Option<NodeT>,
         include_selfloops: Option<bool>,
         node_type: Option<&str>,
         edge_type: Option<&str>,
@@ -9474,7 +9474,7 @@ impl Graph {
         Ok(pe!(graph::Graph::generate_random_spanning_tree(
             random_state,
             minimum_node_id,
-            nodes_number,
+            number_of_nodes,
             include_selfloops,
             node_type,
             edge_type,
@@ -9488,7 +9488,7 @@ impl Graph {
     #[staticmethod]
     #[automatically_generated_binding]
     #[pyo3(
-        text_signature = "(minimum_node_id, nodes_number, include_selfloops, node_type, edge_type, weight, directed, name)"
+        text_signature = "(minimum_node_id, number_of_nodes, include_selfloops, node_type, edge_type, weight, directed, name)"
     )]
     /// Creates new star graph with given sizes and types.
     ///
@@ -9496,7 +9496,7 @@ impl Graph {
     /// ----------
     /// minimum_node_id: Optional[int]
     ///     Minimum node ID to start with. May be needed when circleing graphs. By default 0.
-    /// nodes_number: Optional[int]
+    /// number_of_nodes: Optional[int]
     ///     Number of nodes in the star. By default 10.
     /// include_selfloops: Optional[bool]
     ///     Whether to include selfloops.
@@ -9513,7 +9513,7 @@ impl Graph {
     ///
     pub fn generate_star_graph(
         minimum_node_id: Option<NodeT>,
-        nodes_number: Option<NodeT>,
+        number_of_nodes: Option<NodeT>,
         include_selfloops: Option<bool>,
         node_type: Option<&str>,
         edge_type: Option<&str>,
@@ -9523,7 +9523,7 @@ impl Graph {
     ) -> PyResult<Graph> {
         Ok(pe!(graph::Graph::generate_star_graph(
             minimum_node_id,
-            nodes_number,
+            number_of_nodes,
             include_selfloops,
             node_type,
             edge_type,
@@ -9537,7 +9537,7 @@ impl Graph {
     #[staticmethod]
     #[automatically_generated_binding]
     #[pyo3(
-        text_signature = "(minimum_node_id, nodes_number, include_selfloops, node_type, edge_type, weight, directed, name)"
+        text_signature = "(minimum_node_id, number_of_nodes, include_selfloops, node_type, edge_type, weight, directed, name)"
     )]
     /// Creates new wheel graph with given sizes and types.
     ///
@@ -9545,7 +9545,7 @@ impl Graph {
     /// ----------
     /// minimum_node_id: Optional[int]
     ///     Minimum node ID to start with. May be needed when circleing graphs. By default 0.
-    /// nodes_number: Optional[int]
+    /// number_of_nodes: Optional[int]
     ///     Number of nodes in the wheel. By default 10.
     /// include_selfloops: Optional[bool]
     ///     Whether to include selfloops.
@@ -9562,7 +9562,7 @@ impl Graph {
     ///
     pub fn generate_wheel_graph(
         minimum_node_id: Option<NodeT>,
-        nodes_number: Option<NodeT>,
+        number_of_nodes: Option<NodeT>,
         include_selfloops: Option<bool>,
         node_type: Option<&str>,
         edge_type: Option<&str>,
@@ -9572,7 +9572,7 @@ impl Graph {
     ) -> PyResult<Graph> {
         Ok(pe!(graph::Graph::generate_wheel_graph(
             minimum_node_id,
-            nodes_number,
+            number_of_nodes,
             include_selfloops,
             node_type,
             edge_type,
@@ -9586,7 +9586,7 @@ impl Graph {
     #[staticmethod]
     #[automatically_generated_binding]
     #[pyo3(
-        text_signature = "(minimum_node_id, nodes_number, include_selfloops, node_type, edge_type, weight, directed, name)"
+        text_signature = "(minimum_node_id, number_of_nodes, include_selfloops, node_type, edge_type, weight, directed, name)"
     )]
     /// Creates new circle graph with given sizes and types.
     ///
@@ -9594,7 +9594,7 @@ impl Graph {
     /// ----------
     /// minimum_node_id: Optional[int]
     ///     Minimum node ID to start with. May be needed when circleing graphs. By default 0.
-    /// nodes_number: Optional[int]
+    /// number_of_nodes: Optional[int]
     ///     Number of nodes in the circle. By default 10.
     /// include_selfloops: Optional[bool]
     ///     Whether to include selfloops.
@@ -9611,7 +9611,7 @@ impl Graph {
     ///
     pub fn generate_circle_graph(
         minimum_node_id: Option<NodeT>,
-        nodes_number: Option<NodeT>,
+        number_of_nodes: Option<NodeT>,
         include_selfloops: Option<bool>,
         node_type: Option<&str>,
         edge_type: Option<&str>,
@@ -9621,7 +9621,7 @@ impl Graph {
     ) -> PyResult<Graph> {
         Ok(pe!(graph::Graph::generate_circle_graph(
             minimum_node_id,
-            nodes_number,
+            number_of_nodes,
             include_selfloops,
             node_type,
             edge_type,
@@ -9635,7 +9635,7 @@ impl Graph {
     #[staticmethod]
     #[automatically_generated_binding]
     #[pyo3(
-        text_signature = "(minimum_node_id, nodes_number, include_selfloops, node_type, edge_type, weight, directed, name)"
+        text_signature = "(minimum_node_id, number_of_nodes, include_selfloops, node_type, edge_type, weight, directed, name)"
     )]
     /// Creates new chain graph with given sizes and types.
     ///
@@ -9643,7 +9643,7 @@ impl Graph {
     /// ----------
     /// minimum_node_id: Optional[int]
     ///     Minimum node ID to start with. May be needed when chaining graphs. By default 0.
-    /// nodes_number: Optional[int]
+    /// number_of_nodes: Optional[int]
     ///     Number of nodes in the chain. By default 10.
     /// include_selfloops: Optional[bool]
     ///     Whether to include selfloops.
@@ -9660,7 +9660,7 @@ impl Graph {
     ///
     pub fn generate_chain_graph(
         minimum_node_id: Option<NodeT>,
-        nodes_number: Option<NodeT>,
+        number_of_nodes: Option<NodeT>,
         include_selfloops: Option<bool>,
         node_type: Option<&str>,
         edge_type: Option<&str>,
@@ -9670,7 +9670,7 @@ impl Graph {
     ) -> PyResult<Graph> {
         Ok(pe!(graph::Graph::generate_chain_graph(
             minimum_node_id,
-            nodes_number,
+            number_of_nodes,
             include_selfloops,
             node_type,
             edge_type,
@@ -9684,7 +9684,7 @@ impl Graph {
     #[staticmethod]
     #[automatically_generated_binding]
     #[pyo3(
-        text_signature = "(minimum_node_id, nodes_number, include_selfloops, node_type, edge_type, weight, directed, name)"
+        text_signature = "(minimum_node_id, number_of_nodes, include_selfloops, node_type, edge_type, weight, directed, name)"
     )]
     /// Creates new complete graph with given sizes and types.
     ///
@@ -9692,7 +9692,7 @@ impl Graph {
     /// ----------
     /// minimum_node_id: Optional[int]
     ///     Minimum node ID to start with. May be needed when combining graphs. By default 0.
-    /// nodes_number: Optional[int]
+    /// number_of_nodes: Optional[int]
     ///     Number of nodes in the chain. By default 10.
     /// include_selfloops: Optional[bool]
     ///     Whether to include selfloops.
@@ -9709,7 +9709,7 @@ impl Graph {
     ///
     pub fn generate_complete_graph(
         minimum_node_id: Option<NodeT>,
-        nodes_number: Option<NodeT>,
+        number_of_nodes: Option<NodeT>,
         include_selfloops: Option<bool>,
         node_type: Option<&str>,
         edge_type: Option<&str>,
@@ -9719,7 +9719,7 @@ impl Graph {
     ) -> PyResult<Graph> {
         Ok(pe!(graph::Graph::generate_complete_graph(
             minimum_node_id,
-            nodes_number,
+            number_of_nodes,
             include_selfloops,
             node_type,
             edge_type,
@@ -9733,7 +9733,7 @@ impl Graph {
     #[staticmethod]
     #[automatically_generated_binding]
     #[pyo3(
-        text_signature = "(minimum_node_id, left_clique_nodes_number, right_clique_nodes_number, chain_nodes_number, include_selfloops, left_clique_node_type, right_clique_node_type, chain_node_type, left_clique_edge_type, right_clique_edge_type, chain_edge_type, left_clique_weight, right_clique_weight, chain_weight, directed, name)"
+        text_signature = "(minimum_node_id, left_clique_number_of_nodes, right_clique_number_of_nodes, chain_number_of_nodes, include_selfloops, left_clique_node_type, right_clique_node_type, chain_node_type, left_clique_edge_type, right_clique_edge_type, chain_edge_type, left_clique_weight, right_clique_weight, chain_weight, directed, name)"
     )]
     /// Creates new barbell graph with given sizes and types.
     ///
@@ -9741,11 +9741,11 @@ impl Graph {
     /// ----------
     /// minimum_node_id: Optional[int]
     ///     Minimum node ID to start with. May be needed when chaining graphs. By default 0.
-    /// left_clique_nodes_number: Optional[int]
+    /// left_clique_number_of_nodes: Optional[int]
     ///     Number of nodes in the left clique. By default 10.
-    /// right_clique_nodes_number: Optional[int]
+    /// right_clique_number_of_nodes: Optional[int]
     ///      Number of nodes in the right clique. By default equal to the left clique.
-    /// chain_nodes_number: Optional[int]
+    /// chain_number_of_nodes: Optional[int]
     ///     Number of nodes in the chain. By default 10.
     /// include_selfloops: Optional[bool]
     ///     Whether to include selfloops.
@@ -9780,9 +9780,9 @@ impl Graph {
     ///
     pub fn generate_barbell_graph(
         minimum_node_id: Option<NodeT>,
-        left_clique_nodes_number: Option<NodeT>,
-        right_clique_nodes_number: Option<NodeT>,
-        chain_nodes_number: Option<NodeT>,
+        left_clique_number_of_nodes: Option<NodeT>,
+        right_clique_number_of_nodes: Option<NodeT>,
+        chain_number_of_nodes: Option<NodeT>,
         include_selfloops: Option<bool>,
         left_clique_node_type: Option<&str>,
         right_clique_node_type: Option<&str>,
@@ -9798,9 +9798,9 @@ impl Graph {
     ) -> PyResult<Graph> {
         Ok(pe!(graph::Graph::generate_barbell_graph(
             minimum_node_id,
-            left_clique_nodes_number,
-            right_clique_nodes_number,
-            chain_nodes_number,
+            left_clique_number_of_nodes,
+            right_clique_number_of_nodes,
+            chain_number_of_nodes,
             include_selfloops,
             left_clique_node_type,
             right_clique_node_type,
@@ -9820,7 +9820,7 @@ impl Graph {
     #[staticmethod]
     #[automatically_generated_binding]
     #[pyo3(
-        text_signature = "(minimum_node_id, clique_nodes_number, chain_nodes_number, include_selfloops, clique_node_type, chain_node_type, clique_edge_type, chain_edge_type, clique_weight, chain_weight, directed, name)"
+        text_signature = "(minimum_node_id, clique_number_of_nodes, chain_number_of_nodes, include_selfloops, clique_node_type, chain_node_type, clique_edge_type, chain_edge_type, clique_weight, chain_weight, directed, name)"
     )]
     /// Creates new lollipop graph with given sizes and types.
     ///
@@ -9828,9 +9828,9 @@ impl Graph {
     /// ----------
     /// minimum_node_id: Optional[int]
     ///     Minimum node ID to start with. May be needed when chaining graphs. By default 0.
-    /// clique_nodes_number: Optional[int]
+    /// clique_number_of_nodes: Optional[int]
     ///     Number of nodes in the left clique. By default 10.
-    /// chain_nodes_number: Optional[int]
+    /// chain_number_of_nodes: Optional[int]
     ///     Number of nodes in the chain. By default 10.
     /// include_selfloops: Optional[bool]
     ///     Whether to include selfloops.
@@ -9859,8 +9859,8 @@ impl Graph {
     ///
     pub fn generate_lollipop_graph(
         minimum_node_id: Option<NodeT>,
-        clique_nodes_number: Option<NodeT>,
-        chain_nodes_number: Option<NodeT>,
+        clique_number_of_nodes: Option<NodeT>,
+        chain_number_of_nodes: Option<NodeT>,
         include_selfloops: Option<bool>,
         clique_node_type: Option<&str>,
         chain_node_type: Option<&str>,
@@ -9873,8 +9873,8 @@ impl Graph {
     ) -> PyResult<Graph> {
         Ok(pe!(graph::Graph::generate_lollipop_graph(
             minimum_node_id,
-            clique_nodes_number,
-            chain_nodes_number,
+            clique_number_of_nodes,
+            chain_number_of_nodes,
             include_selfloops,
             clique_node_type,
             chain_node_type,
@@ -15034,7 +15034,7 @@ impl Graph {
     /// constant: Optional[float]
     ///     The constant factor to use to regulate the sampling. By default 2.0. It must be greater or equal than 2.0.
     /// maximum_samples_number: Optional[float]
-    ///     The maximum number of samples to sample. By default `nodes_number / 20`, as suggested in the paper.
+    ///     The maximum number of samples to sample. By default `number_of_nodes / 20`, as suggested in the paper.
     /// random_state: Optional[int]
     ///     The random state to use for the sampling. By default 42.
     ///
@@ -15073,7 +15073,7 @@ impl Graph {
     /// constant: Optional[float]
     ///     The constant factor to use to regulate the sampling. By default 2.0. It must be greater or equal than 2.0.
     /// maximum_samples_number: Optional[float]
-    ///     The maximum number of samples to sample. By default `nodes_number / 20`, as suggested in the paper.
+    ///     The maximum number of samples to sample. By default `number_of_nodes / 20`, as suggested in the paper.
     /// random_state: Optional[int]
     ///     The random state to use for the sampling. By default 42.
     ///
@@ -15116,7 +15116,7 @@ impl Graph {
     /// use_edge_weights_as_probabilities: Optional[bool]
     ///     Whether to consider the edge weights as probabilities.
     /// maximum_samples_number: Optional[float]
-    ///     The maximum number of samples to sample. By default `nodes_number / 20`, as suggested in the paper.
+    ///     The maximum number of samples to sample. By default `number_of_nodes / 20`, as suggested in the paper.
     /// random_state: Optional[int]
     ///     The random state to use for the sampling. By default 42.
     ///
@@ -15161,7 +15161,7 @@ impl Graph {
     /// use_edge_weights_as_probabilities: Optional[bool]
     ///     Whether to consider the edge weights as probabilities.
     /// maximum_samples_number: Optional[float]
-    ///     The maximum number of samples to sample. By default `nodes_number / 20`, as suggested in the paper.
+    ///     The maximum number of samples to sample. By default `number_of_nodes / 20`, as suggested in the paper.
     /// random_state: Optional[int]
     ///     The random state to use for the sampling. By default 42.
     ///
@@ -16784,7 +16784,7 @@ impl Graph {
     #[staticmethod]
     #[automatically_generated_binding]
     #[pyo3(
-        text_signature = "(directed, node_type_path, node_type_list_separator, node_types_column_number, node_types_column, node_types_ids_column_number, node_types_ids_column, node_types_number, numeric_node_type_ids, minimum_node_type_id, node_type_list_header, node_type_list_support_balanced_quotes, node_type_list_rows_to_skip, node_type_list_is_correct, node_type_list_max_rows_number, node_type_list_comment_symbol, load_node_type_list_in_parallel, node_path, node_list_separator, node_list_header, node_list_support_balanced_quotes, node_list_rows_to_skip, node_list_is_correct, node_list_max_rows_number, node_list_comment_symbol, default_node_type, nodes_column_number, nodes_column, node_types_separator, node_list_node_types_column_number, node_list_node_types_column, node_ids_column, node_ids_column_number, nodes_number, minimum_node_id, numeric_node_ids, node_list_numeric_node_type_ids, skip_node_types_if_unavailable, load_node_list_in_parallel, edge_type_path, edge_types_column_number, edge_types_column, edge_types_ids_column_number, edge_types_ids_column, edge_types_number, numeric_edge_type_ids, minimum_edge_type_id, edge_type_list_separator, edge_type_list_header, edge_type_list_support_balanced_quotes, edge_type_list_rows_to_skip, edge_type_list_is_correct, edge_type_list_max_rows_number, edge_type_list_comment_symbol, load_edge_type_list_in_parallel, edge_path, edge_list_separator, edge_list_header, edge_list_support_balanced_quotes, edge_list_rows_to_skip, sources_column_number, sources_column, destinations_column_number, destinations_column, edge_list_edge_types_column_number, edge_list_edge_types_column, default_edge_type, weights_column_number, weights_column, default_weight, edge_ids_column, edge_ids_column_number, edge_list_numeric_edge_type_ids, edge_list_numeric_node_ids, skip_weights_if_unavailable, skip_edge_types_if_unavailable, edge_list_is_complete, edge_list_may_contain_duplicates, edge_list_is_sorted, edge_list_is_correct, edge_list_max_rows_number, edge_list_comment_symbol, edges_number, load_edge_list_in_parallel, remove_chevrons, remove_spaces, verbose, may_have_singletons, may_have_singleton_with_selfloops, name)"
+        text_signature = "(directed, node_type_path, node_type_list_separator, node_types_column_number, node_types_column, node_types_ids_column_number, node_types_ids_column, number_of_node_types, numeric_node_type_ids, minimum_node_type_id, node_type_list_header, node_type_list_support_balanced_quotes, node_type_list_rows_to_skip, node_type_list_is_correct, node_type_list_max_rows_number, node_type_list_comment_symbol, load_node_type_list_in_parallel, node_path, node_list_separator, node_list_header, node_list_support_balanced_quotes, node_list_rows_to_skip, node_list_is_correct, node_list_max_rows_number, node_list_comment_symbol, default_node_type, nodes_column_number, nodes_column, node_types_separator, node_list_node_types_column_number, node_list_node_types_column, node_ids_column, node_ids_column_number, number_of_nodes, minimum_node_id, numeric_node_ids, node_list_numeric_node_type_ids, skip_node_types_if_unavailable, load_node_list_in_parallel, edge_type_path, edge_types_column_number, edge_types_column, edge_types_ids_column_number, edge_types_ids_column, number_of_edge_types, numeric_edge_type_ids, minimum_edge_type_id, edge_type_list_separator, edge_type_list_header, edge_type_list_support_balanced_quotes, edge_type_list_rows_to_skip, edge_type_list_is_correct, edge_type_list_max_rows_number, edge_type_list_comment_symbol, load_edge_type_list_in_parallel, edge_path, edge_list_separator, edge_list_header, edge_list_support_balanced_quotes, edge_list_rows_to_skip, sources_column_number, sources_column, destinations_column_number, destinations_column, edge_list_edge_types_column_number, edge_list_edge_types_column, default_edge_type, weights_column_number, weights_column, default_weight, edge_ids_column, edge_ids_column_number, edge_list_numeric_edge_type_ids, edge_list_numeric_node_ids, skip_weights_if_unavailable, skip_edge_types_if_unavailable, edge_list_is_complete, edge_list_may_contain_duplicates, edge_list_is_sorted, edge_list_is_correct, edge_list_max_rows_number, edge_list_comment_symbol, number_of_edges, load_edge_list_in_parallel, remove_chevrons, remove_spaces, verbose, may_have_singletons, may_have_singleton_with_selfloops, name)"
     )]
     /// Return graph renderized from given CSVs or TSVs-like files.
     ///
@@ -16798,7 +16798,7 @@ impl Graph {
     ///     The number of the column of the node types file from where to load the node types.
     /// node_types_column: Optional[str]
     ///     The name of the column of the node types file from where to load the node types.
-    /// node_types_number: Optional[int]
+    /// number_of_node_types: Optional[int]
     ///     The number of the unique node types. This will be used in order to allocate the correct size for the data structure.
     /// numeric_node_type_ids: Optional[bool]
     ///     Whether the node type names should be loaded as numeric values, i.e. casted from string to a numeric representation.
@@ -16850,7 +16850,7 @@ impl Graph {
     ///     The name of the column of the node file from where to load the node IDs.
     /// node_ids_column_number: Optional[int]
     ///     The number of the column of the node file from where to load the node IDs
-    /// nodes_number: Optional[int]
+    /// number_of_nodes: Optional[int]
     ///     The expected number of nodes. Note that this must be the EXACT number of nodes in the graph.
     /// minimum_node_id: Optional[int]
     ///     The minimum node ID to be used, when loading the node IDs as numerical.
@@ -16868,7 +16868,7 @@ impl Graph {
     ///     The number of the column of the edge types file from where to load the edge types.
     /// edge_types_column: Optional[str]
     ///     The name of the column of the edge types file from where to load the edge types.
-    /// edge_types_number: Optional[int]
+    /// number_of_edge_types: Optional[int]
     ///     The number of the unique edge types. This will be used in order to allocate the correct size for the data structure.
     /// numeric_edge_type_ids: Optional[bool]
     ///     Whether the edge type names should be loaded as numeric values, i.e. casted from string to a numeric representation.
@@ -16944,7 +16944,7 @@ impl Graph {
     ///     The maximum number of lines to be loaded from the edges file.
     /// edge_list_comment_symbol: Optional[str]
     ///     The comment symbol to skip lines in the edges file. Lines starting with this symbol will be skipped.
-    /// edges_number: Optional[int]
+    /// number_of_edges: Optional[int]
     ///     The expected number of edges. Note that this must be the EXACT number of edges in the graph.
     /// load_edge_list_in_parallel: Optional[bool]
     ///     Whether to load the edge list in parallel. Note that, if the edge IDs indices are not given, it is NOT possible to load a sorted edge list. Similarly, when loading in parallel, without edge IDs, the edges may not be loaded in a deterministic order.
@@ -16971,7 +16971,7 @@ impl Graph {
         node_types_column: Option<String>,
         node_types_ids_column_number: Option<usize>,
         node_types_ids_column: Option<String>,
-        node_types_number: Option<NodeTypeT>,
+        number_of_node_types: Option<NodeTypeT>,
         numeric_node_type_ids: Option<bool>,
         minimum_node_type_id: Option<NodeTypeT>,
         node_type_list_header: Option<bool>,
@@ -16997,7 +16997,7 @@ impl Graph {
         node_list_node_types_column: Option<String>,
         node_ids_column: Option<String>,
         node_ids_column_number: Option<usize>,
-        nodes_number: Option<NodeT>,
+        number_of_nodes: Option<NodeT>,
         minimum_node_id: Option<NodeT>,
         numeric_node_ids: Option<bool>,
         node_list_numeric_node_type_ids: Option<bool>,
@@ -17008,7 +17008,7 @@ impl Graph {
         edge_types_column: Option<String>,
         edge_types_ids_column_number: Option<usize>,
         edge_types_ids_column: Option<String>,
-        edge_types_number: Option<EdgeTypeT>,
+        number_of_edge_types: Option<EdgeTypeT>,
         numeric_edge_type_ids: Option<bool>,
         minimum_edge_type_id: Option<EdgeTypeT>,
         edge_type_list_separator: Option<char>,
@@ -17046,7 +17046,7 @@ impl Graph {
         edge_list_is_correct: Option<bool>,
         edge_list_max_rows_number: Option<usize>,
         edge_list_comment_symbol: Option<String>,
-        edges_number: Option<EdgeT>,
+        number_of_edges: Option<EdgeT>,
         load_edge_list_in_parallel: Option<bool>,
         remove_chevrons: Option<bool>,
         remove_spaces: Option<bool>,
@@ -17063,7 +17063,7 @@ impl Graph {
             node_types_column,
             node_types_ids_column_number,
             node_types_ids_column,
-            node_types_number,
+            number_of_node_types,
             numeric_node_type_ids,
             minimum_node_type_id,
             node_type_list_header,
@@ -17089,7 +17089,7 @@ impl Graph {
             node_list_node_types_column,
             node_ids_column,
             node_ids_column_number,
-            nodes_number,
+            number_of_nodes,
             minimum_node_id,
             numeric_node_ids,
             node_list_numeric_node_type_ids,
@@ -17100,7 +17100,7 @@ impl Graph {
             edge_types_column,
             edge_types_ids_column_number,
             edge_types_ids_column,
-            edge_types_number,
+            number_of_edge_types,
             numeric_edge_type_ids,
             minimum_edge_type_id,
             edge_type_list_separator,
@@ -17138,7 +17138,7 @@ impl Graph {
             edge_list_is_correct,
             edge_list_max_rows_number,
             edge_list_comment_symbol,
-            edges_number,
+            number_of_edges,
             load_edge_list_in_parallel,
             remove_chevrons,
             remove_spaces,
@@ -17458,8 +17458,8 @@ pub const GRAPH_METHODS_NAMES: &[&str] = &[
     "get_number_of_known_node_types",
     "get_unknown_node_types_rate",
     "get_known_node_types_rate",
-    "get_minimum_node_types_number",
-    "get_maximum_node_types_number",
+    "get_minimum_number_of_node_types",
+    "get_maximum_number_of_node_types",
     "get_maximum_multilabel_count",
     "get_number_of_singleton_node_types",
     "get_number_of_homogeneous_node_types",
@@ -17491,7 +17491,7 @@ pub const GRAPH_METHODS_NAMES: &[&str] = &[
     "get_number_of_known_edge_types",
     "get_unknown_edge_types_rate",
     "get_known_edge_types_rate",
-    "get_minimum_edge_types_number",
+    "get_minimum_number_of_edge_types",
     "get_number_of_singleton_edge_types",
     "get_singleton_edge_type_ids",
     "get_singleton_edge_type_names",
@@ -25355,7 +25355,7 @@ pub fn register_edge_list_utils(_py: Python, _m: &PyModule) -> PyResult<()> {
 #[pyfunction]
 #[automatically_generated_binding]
 #[pyo3(
-    text_signature = "(original_edge_path, target_edge_path, directed, original_node_path, original_node_list_separator, original_node_list_header, original_node_list_support_balanced_quotes, node_list_rows_to_skip, node_list_is_correct, node_list_max_rows_number, node_list_comment_symbol, original_nodes_column_number, original_nodes_column, nodes_number, original_minimum_node_id, original_numeric_node_ids, original_load_node_list_in_parallel, original_edge_type_path, original_edge_types_column_number, original_edge_types_column, edge_types_number, original_numeric_edge_type_ids, original_minimum_edge_type_id, original_edge_type_list_separator, original_edge_type_list_header, original_edge_type_list_support_balanced_quotes, edge_type_list_rows_to_skip, edge_type_list_is_correct, edge_type_list_max_rows_number, edge_type_list_comment_symbol, load_edge_type_list_in_parallel, original_edge_list_separator, original_edge_list_header, original_edge_list_support_balanced_quotes, original_sources_column_number, original_sources_column, original_destinations_column_number, original_destinations_column, original_edge_list_edge_types_column, original_edge_list_edge_types_column_number, original_weights_column, original_weights_column_number, target_edge_list_separator, target_edge_list_header, target_sources_column, target_sources_column_number, target_destinations_column, target_destinations_column_number, target_edge_list_edge_types_column, target_edge_list_edge_types_column_number, target_weights_column, target_weights_column_number, target_node_path, target_node_list_separator, target_node_list_header, target_nodes_column, target_nodes_column_number, target_edge_type_list_path, target_edge_type_list_separator, target_edge_type_list_header, target_edge_type_list_edge_types_column, target_edge_type_list_edge_types_column_number, remove_chevrons, remove_spaces, comment_symbol, default_edge_type, default_weight, max_rows_number, rows_to_skip, edges_number, skip_edge_types_if_unavailable, skip_weights_if_unavailable, numeric_rows_are_surely_smaller_than_original, verbose, name)"
+    text_signature = "(original_edge_path, target_edge_path, directed, original_node_path, original_node_list_separator, original_node_list_header, original_node_list_support_balanced_quotes, node_list_rows_to_skip, node_list_is_correct, node_list_max_rows_number, node_list_comment_symbol, original_nodes_column_number, original_nodes_column, number_of_nodes, original_minimum_node_id, original_numeric_node_ids, original_load_node_list_in_parallel, original_edge_type_path, original_edge_types_column_number, original_edge_types_column, number_of_edge_types, original_numeric_edge_type_ids, original_minimum_edge_type_id, original_edge_type_list_separator, original_edge_type_list_header, original_edge_type_list_support_balanced_quotes, edge_type_list_rows_to_skip, edge_type_list_is_correct, edge_type_list_max_rows_number, edge_type_list_comment_symbol, load_edge_type_list_in_parallel, original_edge_list_separator, original_edge_list_header, original_edge_list_support_balanced_quotes, original_sources_column_number, original_sources_column, original_destinations_column_number, original_destinations_column, original_edge_list_edge_types_column, original_edge_list_edge_types_column_number, original_weights_column, original_weights_column_number, target_edge_list_separator, target_edge_list_header, target_sources_column, target_sources_column_number, target_destinations_column, target_destinations_column_number, target_edge_list_edge_types_column, target_edge_list_edge_types_column_number, target_weights_column, target_weights_column_number, target_node_path, target_node_list_separator, target_node_list_header, target_nodes_column, target_nodes_column_number, target_edge_type_list_path, target_edge_type_list_separator, target_edge_type_list_header, target_edge_type_list_edge_types_column, target_edge_type_list_edge_types_column_number, remove_chevrons, remove_spaces, comment_symbol, default_edge_type, default_weight, max_rows_number, rows_to_skip, number_of_edges, skip_edge_types_if_unavailable, skip_weights_if_unavailable, numeric_rows_are_surely_smaller_than_original, verbose, name)"
 )]
 /// Create a new edge list starting from given one with node IDs densified.
 ///
@@ -25380,14 +25380,14 @@ pub fn convert_edge_list_to_numeric(
     node_list_comment_symbol: Option<String>,
     original_nodes_column_number: Option<usize>,
     original_nodes_column: Option<String>,
-    nodes_number: Option<NodeT>,
+    number_of_nodes: Option<NodeT>,
     original_minimum_node_id: Option<NodeT>,
     original_numeric_node_ids: Option<bool>,
     original_load_node_list_in_parallel: Option<bool>,
     original_edge_type_path: Option<String>,
     original_edge_types_column_number: Option<usize>,
     original_edge_types_column: Option<String>,
-    edge_types_number: Option<EdgeTypeT>,
+    number_of_edge_types: Option<EdgeTypeT>,
     original_numeric_edge_type_ids: Option<bool>,
     original_minimum_edge_type_id: Option<EdgeTypeT>,
     original_edge_type_list_separator: Option<char>,
@@ -25436,7 +25436,7 @@ pub fn convert_edge_list_to_numeric(
     default_weight: Option<WeightT>,
     max_rows_number: Option<usize>,
     rows_to_skip: Option<usize>,
-    edges_number: Option<usize>,
+    number_of_edges: Option<usize>,
     skip_edge_types_if_unavailable: Option<bool>,
     skip_weights_if_unavailable: Option<bool>,
     numeric_rows_are_surely_smaller_than_original: Option<bool>,
@@ -25458,14 +25458,14 @@ pub fn convert_edge_list_to_numeric(
             node_list_comment_symbol,
             original_nodes_column_number,
             original_nodes_column,
-            nodes_number,
+            number_of_nodes,
             original_minimum_node_id,
             original_numeric_node_ids,
             original_load_node_list_in_parallel,
             original_edge_type_path,
             original_edge_types_column_number,
             original_edge_types_column,
-            edge_types_number,
+            number_of_edge_types,
             original_numeric_edge_type_ids,
             original_minimum_edge_type_id,
             original_edge_type_list_separator,
@@ -25514,7 +25514,7 @@ pub fn convert_edge_list_to_numeric(
             default_weight,
             max_rows_number,
             rows_to_skip,
-            edges_number,
+            number_of_edges,
             skip_edge_types_if_unavailable,
             skip_weights_if_unavailable,
             numeric_rows_are_surely_smaller_than_original,
@@ -25529,7 +25529,7 @@ pub fn convert_edge_list_to_numeric(
 #[pyfunction]
 #[automatically_generated_binding]
 #[pyo3(
-    text_signature = "(original_edge_path, target_edge_path, directed, maximum_node_id, original_edge_list_separator, original_edge_list_header, original_sources_column, original_sources_column_number, original_destinations_column, original_destinations_column_number, original_edge_list_edge_types_column, original_edge_list_edge_types_column_number, original_weights_column, original_weights_column_number, original_edge_list_support_balanced_quotes, original_edge_type_path, original_edge_types_column_number, original_edge_types_column, edge_types_number, original_numeric_edge_type_ids, original_minimum_edge_type_id, original_edge_type_list_separator, original_edge_type_list_header, original_edge_type_list_support_balanced_quotes, edge_type_list_rows_to_skip, edge_type_list_is_correct, edge_type_list_max_rows_number, edge_type_list_comment_symbol, load_edge_type_list_in_parallel, target_edge_list_separator, target_edge_list_header, target_sources_column, target_sources_column_number, target_destinations_column, target_destinations_column_number, target_edge_list_edge_types_column, target_edge_list_edge_types_column_number, target_weights_column, target_weights_column_number, target_node_path, target_node_list_separator, target_node_list_header, target_nodes_column, target_nodes_column_number, target_edge_type_list_path, target_edge_type_list_separator, target_edge_type_list_header, target_edge_type_list_edge_types_column, target_edge_type_list_edge_types_column_number, comment_symbol, default_edge_type, default_weight, max_rows_number, rows_to_skip, edges_number, skip_edge_types_if_unavailable, skip_weights_if_unavailable, numeric_rows_are_surely_smaller_than_original, verbose, name)"
+    text_signature = "(original_edge_path, target_edge_path, directed, maximum_node_id, original_edge_list_separator, original_edge_list_header, original_sources_column, original_sources_column_number, original_destinations_column, original_destinations_column_number, original_edge_list_edge_types_column, original_edge_list_edge_types_column_number, original_weights_column, original_weights_column_number, original_edge_list_support_balanced_quotes, original_edge_type_path, original_edge_types_column_number, original_edge_types_column, number_of_edge_types, original_numeric_edge_type_ids, original_minimum_edge_type_id, original_edge_type_list_separator, original_edge_type_list_header, original_edge_type_list_support_balanced_quotes, edge_type_list_rows_to_skip, edge_type_list_is_correct, edge_type_list_max_rows_number, edge_type_list_comment_symbol, load_edge_type_list_in_parallel, target_edge_list_separator, target_edge_list_header, target_sources_column, target_sources_column_number, target_destinations_column, target_destinations_column_number, target_edge_list_edge_types_column, target_edge_list_edge_types_column_number, target_weights_column, target_weights_column_number, target_node_path, target_node_list_separator, target_node_list_header, target_nodes_column, target_nodes_column_number, target_edge_type_list_path, target_edge_type_list_separator, target_edge_type_list_header, target_edge_type_list_edge_types_column, target_edge_type_list_edge_types_column_number, comment_symbol, default_edge_type, default_weight, max_rows_number, rows_to_skip, number_of_edges, skip_edge_types_if_unavailable, skip_weights_if_unavailable, numeric_rows_are_surely_smaller_than_original, verbose, name)"
 )]
 /// Create a new edge list starting from given numeric one with node IDs densified and returns the number of unique nodes.
 ///
@@ -25599,7 +25599,7 @@ pub fn convert_edge_list_to_numeric(
 ///     The amount of rows to load from the original edge list.
 /// rows_to_skip: Optional[int]
 ///     The amount of rows to skip from the original edge list.
-/// edges_number: Optional[int]
+/// number_of_edges: Optional[int]
 ///     The expected number of edges. It will be used for the loading bar.
 /// skip_edge_types_if_unavailable: Optional[bool]
 ///     Whether to automatically skip the edge types if they are not available.
@@ -25629,7 +25629,7 @@ pub fn densify_sparse_numeric_edge_list(
     original_edge_type_path: Option<String>,
     original_edge_types_column_number: Option<usize>,
     original_edge_types_column: Option<String>,
-    edge_types_number: Option<EdgeTypeT>,
+    number_of_edge_types: Option<EdgeTypeT>,
     original_numeric_edge_type_ids: Option<bool>,
     original_minimum_edge_type_id: Option<EdgeTypeT>,
     original_edge_type_list_separator: Option<char>,
@@ -25665,7 +25665,7 @@ pub fn densify_sparse_numeric_edge_list(
     default_weight: Option<WeightT>,
     max_rows_number: Option<usize>,
     rows_to_skip: Option<usize>,
-    edges_number: Option<usize>,
+    number_of_edges: Option<usize>,
     skip_edge_types_if_unavailable: Option<bool>,
     skip_weights_if_unavailable: Option<bool>,
     numeric_rows_are_surely_smaller_than_original: Option<bool>,
@@ -25692,7 +25692,7 @@ pub fn densify_sparse_numeric_edge_list(
             original_edge_type_path,
             original_edge_types_column_number,
             original_edge_types_column,
-            edge_types_number,
+            number_of_edge_types,
             original_numeric_edge_type_ids,
             original_minimum_edge_type_id,
             original_edge_type_list_separator,
@@ -25728,7 +25728,7 @@ pub fn densify_sparse_numeric_edge_list(
             default_weight,
             max_rows_number,
             rows_to_skip,
-            edges_number,
+            number_of_edges,
             skip_edge_types_if_unavailable,
             skip_weights_if_unavailable,
             numeric_rows_are_surely_smaller_than_original,
@@ -25743,7 +25743,7 @@ pub fn densify_sparse_numeric_edge_list(
 #[pyfunction]
 #[automatically_generated_binding]
 #[pyo3(
-    text_signature = "(path, separator, header, sources_column, sources_column_number, destinations_column, destinations_column_number, comment_symbol, support_balanced_quotes, max_rows_number, rows_to_skip, edges_number, load_edge_list_in_parallel, verbose, name)"
+    text_signature = "(path, separator, header, sources_column, sources_column_number, destinations_column, destinations_column_number, comment_symbol, support_balanced_quotes, max_rows_number, rows_to_skip, number_of_edges, load_edge_list_in_parallel, verbose, name)"
 )]
 /// Return whether there are selfloops in the edge list.
 ///
@@ -25771,7 +25771,7 @@ pub fn densify_sparse_numeric_edge_list(
 ///     The number of rows to read at most. Note that this parameter is ignored when reading in parallel.
 /// rows_to_skip: Optional[int]
 ///     Number of rows to skip in the edge list.
-/// edges_number: Optional[int]
+/// number_of_edges: Optional[int]
 ///     Number of edges in the edge list.
 /// load_edge_list_in_parallel: Optional[bool]
 ///     Whether to execute the task in parallel or sequential. Generally, parallel is preferable.
@@ -25792,7 +25792,7 @@ pub fn are_there_selfloops_in_edge_list(
     support_balanced_quotes: Option<bool>,
     max_rows_number: Option<usize>,
     rows_to_skip: Option<usize>,
-    edges_number: Option<EdgeT>,
+    number_of_edges: Option<EdgeT>,
     load_edge_list_in_parallel: Option<bool>,
     verbose: Option<bool>,
     name: Option<String>,
@@ -25809,7 +25809,7 @@ pub fn are_there_selfloops_in_edge_list(
         support_balanced_quotes,
         max_rows_number,
         rows_to_skip,
-        edges_number,
+        number_of_edges,
         load_edge_list_in_parallel,
         verbose,
         name
@@ -25840,7 +25840,7 @@ pub fn get_rows_number(file_path: &str) -> PyResult<usize> {
 #[pyfunction]
 #[automatically_generated_binding]
 #[pyo3(
-    text_signature = "(original_edge_path, target_edge_path, original_edge_list_separator, original_edge_list_header, original_edge_list_support_balanced_quotes, original_sources_column, original_sources_column_number, original_destinations_column, original_destinations_column_number, original_edge_list_edge_type_column, original_edge_list_edge_type_column_number, original_weights_column, original_weights_column_number, target_edge_list_separator, target_edge_list_header, target_sources_column_number, target_sources_column, target_destinations_column_number, target_destinations_column, target_edge_list_edge_type_column, target_edge_list_edge_type_column_number, target_weights_column, target_weights_column_number, comment_symbol, default_edge_type, default_weight, max_rows_number, rows_to_skip, edges_number, skip_edge_types_if_unavailable, skip_weights_if_unavailable, verbose, name)"
+    text_signature = "(original_edge_path, target_edge_path, original_edge_list_separator, original_edge_list_header, original_edge_list_support_balanced_quotes, original_sources_column, original_sources_column_number, original_destinations_column, original_destinations_column_number, original_edge_list_edge_type_column, original_edge_list_edge_type_column_number, original_weights_column, original_weights_column_number, target_edge_list_separator, target_edge_list_header, target_sources_column_number, target_sources_column, target_destinations_column_number, target_destinations_column, target_edge_list_edge_type_column, target_edge_list_edge_type_column_number, target_weights_column, target_weights_column_number, comment_symbol, default_edge_type, default_weight, max_rows_number, rows_to_skip, number_of_edges, skip_edge_types_if_unavailable, skip_weights_if_unavailable, verbose, name)"
 )]
 /// Create a new undirected edge list from a given directed one by duplicating the undirected edges.
 ///
@@ -25902,7 +25902,7 @@ pub fn get_rows_number(file_path: &str) -> PyResult<usize> {
 ///     The amount of rows to load from the original edge list.
 /// rows_to_skip: Optional[int]
 ///     The amount of rows to skip from the original edge list.
-/// edges_number: Optional[int]
+/// number_of_edges: Optional[int]
 ///     The expected number of edges. It will be used for the loading bar.
 /// skip_edge_types_if_unavailable: Optional[bool]
 ///     Whether to automatically skip the edge types if they are not available.
@@ -25950,7 +25950,7 @@ pub fn convert_directed_edge_list_to_undirected(
     default_weight: Option<WeightT>,
     max_rows_number: Option<usize>,
     rows_to_skip: Option<usize>,
-    edges_number: Option<usize>,
+    number_of_edges: Option<usize>,
     skip_edge_types_if_unavailable: Option<bool>,
     skip_weights_if_unavailable: Option<bool>,
     verbose: Option<bool>,
@@ -25985,7 +25985,7 @@ pub fn convert_directed_edge_list_to_undirected(
         default_weight,
         max_rows_number,
         rows_to_skip,
-        edges_number,
+        number_of_edges,
         skip_edge_types_if_unavailable,
         skip_weights_if_unavailable,
         verbose,
@@ -26076,7 +26076,7 @@ pub fn add_numeric_id_to_csv(
 #[pyfunction]
 #[automatically_generated_binding]
 #[pyo3(
-    text_signature = "(original_edge_path, target_edge_path, directed, original_node_type_path, original_node_type_list_separator, original_node_types_column_number, original_node_types_column, original_numeric_node_type_ids, original_minimum_node_type_id, original_node_type_list_header, original_node_type_list_support_balanced_quotes, original_node_type_list_rows_to_skip, original_node_type_list_max_rows_number, original_node_type_list_comment_symbol, original_load_node_type_list_in_parallel, original_node_type_list_is_correct, node_types_number, target_node_type_list_path, target_node_type_list_separator, target_node_type_list_node_types_column_number, target_node_type_list_node_types_column, target_node_type_list_header, original_node_path, original_node_list_separator, original_node_list_header, original_node_list_support_balanced_quotes, node_list_rows_to_skip, node_list_is_correct, node_list_max_rows_number, node_list_comment_symbol, default_node_type, original_nodes_column_number, original_nodes_column, original_node_types_separator, original_node_list_node_types_column_number, original_node_list_node_types_column, nodes_number, original_minimum_node_id, original_numeric_node_ids, original_node_list_numeric_node_type_ids, original_skip_node_types_if_unavailable, original_load_node_list_in_parallel, maximum_node_id, target_node_path, target_node_list_separator, target_node_list_header, target_nodes_column, target_nodes_column_number, target_node_types_separator, target_node_list_node_types_column, target_node_list_node_types_column_number, original_edge_type_path, original_edge_type_list_separator, original_edge_types_column_number, original_edge_types_column, original_numeric_edge_type_ids, original_minimum_edge_type_id, original_edge_type_list_header, original_edge_type_list_support_balanced_quotes, edge_type_list_rows_to_skip, edge_type_list_max_rows_number, edge_type_list_comment_symbol, load_edge_type_list_in_parallel, edge_type_list_is_correct, edge_types_number, target_edge_type_list_path, target_edge_type_list_separator, target_edge_type_list_edge_types_column_number, target_edge_type_list_edge_types_column, target_edge_type_list_header, original_edge_list_separator, original_edge_list_header, original_edge_list_support_balanced_quotes, original_sources_column_number, original_sources_column, original_destinations_column_number, original_destinations_column, original_edge_list_edge_types_column_number, original_edge_list_edge_types_column, default_edge_type, original_weights_column_number, original_weights_column, default_weight, original_edge_list_numeric_node_ids, skip_weights_if_unavailable, skip_edge_types_if_unavailable, edge_list_comment_symbol, edge_list_max_rows_number, edge_list_rows_to_skip, load_edge_list_in_parallel, edges_number, target_edge_list_separator, remove_chevrons, remove_spaces, numeric_rows_are_surely_smaller_than_original, sort_temporary_directory, verbose, name)"
+    text_signature = "(original_edge_path, target_edge_path, directed, original_node_type_path, original_node_type_list_separator, original_node_types_column_number, original_node_types_column, original_numeric_node_type_ids, original_minimum_node_type_id, original_node_type_list_header, original_node_type_list_support_balanced_quotes, original_node_type_list_rows_to_skip, original_node_type_list_max_rows_number, original_node_type_list_comment_symbol, original_load_node_type_list_in_parallel, original_node_type_list_is_correct, number_of_node_types, target_node_type_list_path, target_node_type_list_separator, target_node_type_list_node_types_column_number, target_node_type_list_node_types_column, target_node_type_list_header, original_node_path, original_node_list_separator, original_node_list_header, original_node_list_support_balanced_quotes, node_list_rows_to_skip, node_list_is_correct, node_list_max_rows_number, node_list_comment_symbol, default_node_type, original_nodes_column_number, original_nodes_column, original_node_types_separator, original_node_list_node_types_column_number, original_node_list_node_types_column, number_of_nodes, original_minimum_node_id, original_numeric_node_ids, original_node_list_numeric_node_type_ids, original_skip_node_types_if_unavailable, original_load_node_list_in_parallel, maximum_node_id, target_node_path, target_node_list_separator, target_node_list_header, target_nodes_column, target_nodes_column_number, target_node_types_separator, target_node_list_node_types_column, target_node_list_node_types_column_number, original_edge_type_path, original_edge_type_list_separator, original_edge_types_column_number, original_edge_types_column, original_numeric_edge_type_ids, original_minimum_edge_type_id, original_edge_type_list_header, original_edge_type_list_support_balanced_quotes, edge_type_list_rows_to_skip, edge_type_list_max_rows_number, edge_type_list_comment_symbol, load_edge_type_list_in_parallel, edge_type_list_is_correct, number_of_edge_types, target_edge_type_list_path, target_edge_type_list_separator, target_edge_type_list_edge_types_column_number, target_edge_type_list_edge_types_column, target_edge_type_list_header, original_edge_list_separator, original_edge_list_header, original_edge_list_support_balanced_quotes, original_sources_column_number, original_sources_column, original_destinations_column_number, original_destinations_column, original_edge_list_edge_types_column_number, original_edge_list_edge_types_column, default_edge_type, original_weights_column_number, original_weights_column, default_weight, original_edge_list_numeric_node_ids, skip_weights_if_unavailable, skip_edge_types_if_unavailable, edge_list_comment_symbol, edge_list_max_rows_number, edge_list_rows_to_skip, load_edge_list_in_parallel, number_of_edges, target_edge_list_separator, remove_chevrons, remove_spaces, numeric_rows_are_surely_smaller_than_original, sort_temporary_directory, verbose, name)"
 )]
 /// TODO: write the docstrin
 pub fn build_optimal_lists_files(
@@ -26096,7 +26096,7 @@ pub fn build_optimal_lists_files(
     original_node_type_list_comment_symbol: Option<String>,
     original_load_node_type_list_in_parallel: Option<bool>,
     original_node_type_list_is_correct: Option<bool>,
-    node_types_number: Option<NodeTypeT>,
+    number_of_node_types: Option<NodeTypeT>,
     target_node_type_list_path: Option<String>,
     target_node_type_list_separator: Option<char>,
     target_node_type_list_node_types_column_number: Option<usize>,
@@ -26116,7 +26116,7 @@ pub fn build_optimal_lists_files(
     original_node_types_separator: Option<char>,
     original_node_list_node_types_column_number: Option<usize>,
     original_node_list_node_types_column: Option<String>,
-    nodes_number: Option<NodeT>,
+    number_of_nodes: Option<NodeT>,
     original_minimum_node_id: Option<NodeT>,
     original_numeric_node_ids: Option<bool>,
     original_node_list_numeric_node_type_ids: Option<bool>,
@@ -26144,7 +26144,7 @@ pub fn build_optimal_lists_files(
     edge_type_list_comment_symbol: Option<String>,
     load_edge_type_list_in_parallel: Option<bool>,
     edge_type_list_is_correct: Option<bool>,
-    edge_types_number: Option<EdgeTypeT>,
+    number_of_edge_types: Option<EdgeTypeT>,
     target_edge_type_list_path: Option<String>,
     target_edge_type_list_separator: Option<char>,
     target_edge_type_list_edge_types_column_number: Option<usize>,
@@ -26170,7 +26170,7 @@ pub fn build_optimal_lists_files(
     edge_list_max_rows_number: Option<usize>,
     edge_list_rows_to_skip: Option<usize>,
     load_edge_list_in_parallel: Option<bool>,
-    edges_number: Option<EdgeT>,
+    number_of_edges: Option<EdgeT>,
     target_edge_list_separator: Option<char>,
     remove_chevrons: Option<bool>,
     remove_spaces: Option<bool>,
@@ -26198,7 +26198,7 @@ pub fn build_optimal_lists_files(
                 original_node_type_list_comment_symbol,
                 original_load_node_type_list_in_parallel,
                 original_node_type_list_is_correct,
-                node_types_number,
+                number_of_node_types,
                 target_node_type_list_path,
                 target_node_type_list_separator,
                 target_node_type_list_node_types_column_number,
@@ -26218,7 +26218,7 @@ pub fn build_optimal_lists_files(
                 original_node_types_separator,
                 original_node_list_node_types_column_number,
                 original_node_list_node_types_column,
-                nodes_number,
+                number_of_nodes,
                 original_minimum_node_id,
                 original_numeric_node_ids,
                 original_node_list_numeric_node_type_ids,
@@ -26246,7 +26246,7 @@ pub fn build_optimal_lists_files(
                 edge_type_list_comment_symbol,
                 load_edge_type_list_in_parallel,
                 edge_type_list_is_correct,
-                edge_types_number,
+                number_of_edge_types,
                 target_edge_type_list_path,
                 target_edge_type_list_separator,
                 target_edge_type_list_edge_types_column_number,
@@ -26272,7 +26272,7 @@ pub fn build_optimal_lists_files(
                 edge_list_max_rows_number,
                 edge_list_rows_to_skip,
                 load_edge_list_in_parallel,
-                edges_number,
+                number_of_edges,
                 target_edge_list_separator,
                 remove_chevrons,
                 remove_spaces,
@@ -26294,7 +26294,7 @@ pub fn build_optimal_lists_files(
 #[pyfunction]
 #[automatically_generated_binding]
 #[pyo3(
-    text_signature = "(original_edge_path, target_edge_path, original_edge_list_separator, original_edge_list_header, original_edge_list_support_balanced_quotes, original_edge_list_sources_column, original_edge_list_sources_column_number, original_edge_list_destinations_column, original_edge_list_destinations_column_number, original_edge_list_edge_type_column, original_edge_list_edge_type_column_number, original_edge_list_weights_column, original_edge_list_weights_column_number, target_edge_list_separator, target_edge_list_header, target_edge_list_sources_column_number, target_edge_list_sources_column, target_edge_list_destinations_column_number, target_edge_list_destinations_column, target_edge_list_edge_type_column, target_edge_list_edge_type_column_number, target_edge_list_weights_column, target_edge_list_weights_column_number, comment_symbol, default_edge_type, default_weight, max_rows_number, rows_to_skip, edges_number, skip_edge_types_if_unavailable, skip_weights_if_unavailable, verbose, name)"
+    text_signature = "(original_edge_path, target_edge_path, original_edge_list_separator, original_edge_list_header, original_edge_list_support_balanced_quotes, original_edge_list_sources_column, original_edge_list_sources_column_number, original_edge_list_destinations_column, original_edge_list_destinations_column_number, original_edge_list_edge_type_column, original_edge_list_edge_type_column_number, original_edge_list_weights_column, original_edge_list_weights_column_number, target_edge_list_separator, target_edge_list_header, target_edge_list_sources_column_number, target_edge_list_sources_column, target_edge_list_destinations_column_number, target_edge_list_destinations_column, target_edge_list_edge_type_column, target_edge_list_edge_type_column_number, target_edge_list_weights_column, target_edge_list_weights_column_number, comment_symbol, default_edge_type, default_weight, max_rows_number, rows_to_skip, number_of_edges, skip_edge_types_if_unavailable, skip_weights_if_unavailable, verbose, name)"
 )]
 /// Create a new edge list from a given one filtering duplicates.
 ///
@@ -26356,7 +26356,7 @@ pub fn build_optimal_lists_files(
 ///     The amount of rows to load from the original edge list.
 /// rows_to_skip: Optional[int]
 ///     The amount of rows to skip from the original edge list.
-/// edges_number: Optional[int]
+/// number_of_edges: Optional[int]
 ///     The expected number of edges. It will be used for the loading bar.
 /// skip_edge_types_if_unavailable: Optional[bool]
 ///     Whether to automatically skip the edge types if they are not available.
@@ -26396,7 +26396,7 @@ pub fn filter_duplicates_from_edge_list(
     default_weight: Option<WeightT>,
     max_rows_number: Option<usize>,
     rows_to_skip: Option<usize>,
-    edges_number: Option<usize>,
+    number_of_edges: Option<usize>,
     skip_edge_types_if_unavailable: Option<bool>,
     skip_weights_if_unavailable: Option<bool>,
     verbose: Option<bool>,
@@ -26431,7 +26431,7 @@ pub fn filter_duplicates_from_edge_list(
         default_weight,
         max_rows_number,
         rows_to_skip,
-        edges_number,
+        number_of_edges,
         skip_edge_types_if_unavailable,
         skip_weights_if_unavailable,
         verbose,
@@ -26442,7 +26442,7 @@ pub fn filter_duplicates_from_edge_list(
 #[pyfunction]
 #[automatically_generated_binding]
 #[pyo3(
-    text_signature = "(original_edge_path, target_edge_path, original_edge_list_separator, original_edge_list_header, original_edge_list_support_balanced_quotes, original_sources_column, original_sources_column_number, original_destinations_column, original_destinations_column_number, original_edge_list_edge_type_column, original_edge_list_edge_type_column_number, original_weights_column, original_weights_column_number, target_edge_list_separator, target_edge_list_header, target_sources_column, target_sources_column_number, target_destinations_column, target_destinations_column_number, target_edge_list_edge_type_column, target_edge_list_edge_type_column_number, target_weights_column, target_weights_column_number, comment_symbol, default_edge_type, default_weight, max_rows_number, rows_to_skip, edges_number, skip_edge_types_if_unavailable, skip_weights_if_unavailable, verbose, name)"
+    text_signature = "(original_edge_path, target_edge_path, original_edge_list_separator, original_edge_list_header, original_edge_list_support_balanced_quotes, original_sources_column, original_sources_column_number, original_destinations_column, original_destinations_column_number, original_edge_list_edge_type_column, original_edge_list_edge_type_column_number, original_weights_column, original_weights_column_number, target_edge_list_separator, target_edge_list_header, target_sources_column, target_sources_column_number, target_destinations_column, target_destinations_column_number, target_edge_list_edge_type_column, target_edge_list_edge_type_column_number, target_weights_column, target_weights_column_number, comment_symbol, default_edge_type, default_weight, max_rows_number, rows_to_skip, number_of_edges, skip_edge_types_if_unavailable, skip_weights_if_unavailable, verbose, name)"
 )]
 /// Create a new directed edge list from a given undirected one by duplicating the undirected edges.
 ///
@@ -26504,7 +26504,7 @@ pub fn filter_duplicates_from_edge_list(
 ///     The amount of rows to load from the original edge list.
 /// rows_to_skip: Optional[int]
 ///     The amount of rows to skip from the original edge list.
-/// edges_number: Optional[int]
+/// number_of_edges: Optional[int]
 ///     The expected number of edges. It will be used for the loading bar.
 /// skip_edge_types_if_unavailable: Optional[bool]
 ///     Whether to automatically skip the edge types if they are not available.
@@ -26544,7 +26544,7 @@ pub fn convert_undirected_edge_list_to_directed(
     default_weight: Option<WeightT>,
     max_rows_number: Option<usize>,
     rows_to_skip: Option<usize>,
-    edges_number: Option<usize>,
+    number_of_edges: Option<usize>,
     skip_edge_types_if_unavailable: Option<bool>,
     skip_weights_if_unavailable: Option<bool>,
     verbose: Option<bool>,
@@ -26579,7 +26579,7 @@ pub fn convert_undirected_edge_list_to_directed(
         default_weight,
         max_rows_number,
         rows_to_skip,
-        edges_number,
+        number_of_edges,
         skip_edge_types_if_unavailable,
         skip_weights_if_unavailable,
         verbose,
@@ -26591,7 +26591,7 @@ pub fn convert_undirected_edge_list_to_directed(
 #[pyfunction]
 #[automatically_generated_binding]
 #[pyo3(
-    text_signature = "(path, separator, header, support_balanced_quotes, sources_column, sources_column_number, destinations_column, destinations_column_number, comment_symbol, max_rows_number, rows_to_skip, edges_number, load_edge_list_in_parallel, remove_chevrons, remove_spaces, verbose, name)"
+    text_signature = "(path, separator, header, support_balanced_quotes, sources_column, sources_column_number, destinations_column, destinations_column_number, comment_symbol, max_rows_number, rows_to_skip, number_of_edges, load_edge_list_in_parallel, remove_chevrons, remove_spaces, verbose, name)"
 )]
 /// Return minimum and maximum node number from given numeric edge list.
 ///
@@ -26619,7 +26619,7 @@ pub fn convert_undirected_edge_list_to_directed(
 ///     The number of rows to read at most. Note that this parameter is ignored when reading in parallel.
 /// rows_to_skip: Optional[int]
 ///     Number of rows to skip in the edge list.
-/// edges_number: Optional[int]
+/// number_of_edges: Optional[int]
 ///     Number of edges in the edge list.
 /// load_edge_list_in_parallel: Optional[bool]
 ///     Whether to execute the task in parallel or sequential. Generally, parallel is preferable.
@@ -26654,7 +26654,7 @@ pub fn get_minmax_node_from_numeric_edge_list(
     comment_symbol: Option<String>,
     max_rows_number: Option<usize>,
     rows_to_skip: Option<usize>,
-    edges_number: Option<EdgeT>,
+    number_of_edges: Option<EdgeT>,
     load_edge_list_in_parallel: Option<bool>,
     remove_chevrons: Option<bool>,
     remove_spaces: Option<bool>,
@@ -26675,7 +26675,7 @@ pub fn get_minmax_node_from_numeric_edge_list(
                 comment_symbol,
                 max_rows_number,
                 rows_to_skip,
-                edges_number,
+                number_of_edges,
                 load_edge_list_in_parallel,
                 remove_chevrons,
                 remove_spaces,
@@ -26752,7 +26752,7 @@ pub fn parse_wikipedia_graph(
 #[pyfunction]
 #[automatically_generated_binding]
 #[pyo3(
-    text_signature = "(path, separator, header, support_balanced_quotes, sources_column, sources_column_number, destinations_column, destinations_column_number, comment_symbol, max_rows_number, rows_to_skip, edges_number, load_edge_list_in_parallel, remove_chevrons, remove_spaces, verbose, name)"
+    text_signature = "(path, separator, header, support_balanced_quotes, sources_column, sources_column_number, destinations_column, destinations_column_number, comment_symbol, max_rows_number, rows_to_skip, number_of_edges, load_edge_list_in_parallel, remove_chevrons, remove_spaces, verbose, name)"
 )]
 /// Return whether the given edge list is numeric.
 ///
@@ -26780,7 +26780,7 @@ pub fn parse_wikipedia_graph(
 ///     The number of rows to read at most. Note that this parameter is ignored when reading in parallel.
 /// rows_to_skip: Optional[int]
 ///     Number of rows to skip in the edge list.
-/// edges_number: Optional[int]
+/// number_of_edges: Optional[int]
 ///     Number of edges in the edge list.
 /// load_edge_list_in_parallel: Optional[bool]
 ///     Whether to execute the task in parallel or sequential. Generally, parallel is preferable.
@@ -26805,7 +26805,7 @@ pub fn is_numeric_edge_list(
     comment_symbol: Option<String>,
     max_rows_number: Option<usize>,
     rows_to_skip: Option<usize>,
-    edges_number: Option<EdgeT>,
+    number_of_edges: Option<EdgeT>,
     load_edge_list_in_parallel: Option<bool>,
     remove_chevrons: Option<bool>,
     remove_spaces: Option<bool>,
@@ -26824,7 +26824,7 @@ pub fn is_numeric_edge_list(
         comment_symbol,
         max_rows_number,
         rows_to_skip,
-        edges_number,
+        number_of_edges,
         load_edge_list_in_parallel,
         remove_chevrons,
         remove_spaces,
@@ -26837,7 +26837,7 @@ pub fn is_numeric_edge_list(
 #[pyfunction]
 #[automatically_generated_binding]
 #[pyo3(
-    text_signature = "(original_node_path, target_node_path, original_node_type_path, original_node_type_list_separator, original_node_types_column_number, original_node_types_column, node_types_number, original_numeric_node_type_ids, original_minimum_node_type_id, original_node_type_list_header, original_node_type_list_support_balanced_quotes, original_node_type_list_rows_to_skip, original_node_type_list_is_correct, original_node_type_list_max_rows_number, original_node_type_list_comment_symbol, original_load_node_type_list_in_parallel, target_node_type_list_path, target_node_type_list_separator, target_node_type_list_header, target_node_type_list_node_types_column, target_node_type_list_node_types_column_number, original_node_list_separator, original_node_list_header, original_node_list_support_balanced_quotes, node_list_rows_to_skip, node_list_max_rows_number, node_list_comment_symbol, default_node_type, original_nodes_column_number, original_nodes_column, original_node_types_separator, original_node_list_node_types_column_number, original_node_list_node_types_column, original_minimum_node_id, original_numeric_node_ids, original_node_list_numeric_node_type_ids, original_skip_node_types_if_unavailable, remove_chevrons, remove_spaces, target_node_list_separator, target_node_list_header, target_nodes_column_number, target_nodes_column, target_node_types_separator, target_node_list_node_types_column_number, target_node_list_node_types_column, nodes_number)"
+    text_signature = "(original_node_path, target_node_path, original_node_type_path, original_node_type_list_separator, original_node_types_column_number, original_node_types_column, number_of_node_types, original_numeric_node_type_ids, original_minimum_node_type_id, original_node_type_list_header, original_node_type_list_support_balanced_quotes, original_node_type_list_rows_to_skip, original_node_type_list_is_correct, original_node_type_list_max_rows_number, original_node_type_list_comment_symbol, original_load_node_type_list_in_parallel, target_node_type_list_path, target_node_type_list_separator, target_node_type_list_header, target_node_type_list_node_types_column, target_node_type_list_node_types_column_number, original_node_list_separator, original_node_list_header, original_node_list_support_balanced_quotes, node_list_rows_to_skip, node_list_max_rows_number, node_list_comment_symbol, default_node_type, original_nodes_column_number, original_nodes_column, original_node_types_separator, original_node_list_node_types_column_number, original_node_list_node_types_column, original_minimum_node_id, original_numeric_node_ids, original_node_list_numeric_node_type_ids, original_skip_node_types_if_unavailable, remove_chevrons, remove_spaces, target_node_list_separator, target_node_list_header, target_nodes_column_number, target_nodes_column, target_node_types_separator, target_node_list_node_types_column_number, target_node_list_node_types_column, number_of_nodes)"
 )]
 /// Converts the node list at given path to numeric saving in stream to file. Furthermore, returns the number of nodes that were written and their node types if any.
 ///
@@ -26851,7 +26851,7 @@ pub fn is_numeric_edge_list(
 ///     Number of the node types column to be used for the original node types list.
 /// original_node_types_column: Optional[str]
 ///     Name of the node types column to be used for the original node types list.
-/// node_types_number: Optional[int]
+/// number_of_node_types: Optional[int]
 ///     Number of node types present in the provided original list of node types. If provided, it will allow to make assumptions and to load the node types faster.
 /// original_numeric_node_type_ids: Optional[bool]
 ///     Whether to load the node types as numeric.
@@ -26935,7 +26935,7 @@ pub fn is_numeric_edge_list(
 ///     Number for the column with the node type names within the target node list.
 /// target_node_list_node_types_column: Optional[str]
 ///     Name for the column with the node type names within the target node list.
-/// nodes_number: Optional[int]
+/// number_of_nodes: Optional[int]
 ///     Number of the nodes in the original node list.
 ///
 pub fn convert_node_list_node_types_to_numeric(
@@ -26945,7 +26945,7 @@ pub fn convert_node_list_node_types_to_numeric(
     original_node_type_list_separator: Option<char>,
     original_node_types_column_number: Option<usize>,
     original_node_types_column: Option<String>,
-    node_types_number: Option<NodeTypeT>,
+    number_of_node_types: Option<NodeTypeT>,
     original_numeric_node_type_ids: Option<bool>,
     original_minimum_node_type_id: Option<NodeTypeT>,
     original_node_type_list_header: Option<bool>,
@@ -26985,7 +26985,7 @@ pub fn convert_node_list_node_types_to_numeric(
     target_node_types_separator: Option<char>,
     target_node_list_node_types_column_number: Option<usize>,
     target_node_list_node_types_column: Option<String>,
-    nodes_number: Option<NodeT>,
+    number_of_nodes: Option<NodeT>,
 ) -> PyResult<(NodeT, Option<NodeTypeT>)> {
     Ok({
         let (subresult_0, subresult_1) = pe!(graph::convert_node_list_node_types_to_numeric(
@@ -26995,7 +26995,7 @@ pub fn convert_node_list_node_types_to_numeric(
             original_node_type_list_separator,
             original_node_types_column_number,
             original_node_types_column,
-            node_types_number,
+            number_of_node_types,
             original_numeric_node_type_ids,
             original_minimum_node_type_id,
             original_node_type_list_header,
@@ -27035,7 +27035,7 @@ pub fn convert_node_list_node_types_to_numeric(
             target_node_types_separator,
             target_node_list_node_types_column_number,
             target_node_list_node_types_column,
-            nodes_number
+            number_of_nodes
         ))?
         .into();
         (subresult_0.into(), subresult_1.map(|x| x.into()))
@@ -27045,7 +27045,7 @@ pub fn convert_node_list_node_types_to_numeric(
 #[pyfunction]
 #[automatically_generated_binding]
 #[pyo3(
-    text_signature = "(edge_path, edge_list_separator, edge_list_header, edge_list_support_balanced_quotes, edge_list_sources_column, edge_list_sources_column_number, edge_list_destinations_column, edge_list_destinations_column_number, edge_list_edge_type_column, edge_list_edge_type_column_number, edge_list_weights_column, edge_list_weights_column_number, comment_symbol, default_edge_type, default_weight, max_rows_number, rows_to_skip, edges_number, skip_edge_types_if_unavailable, skip_weights_if_unavailable, verbose, name)"
+    text_signature = "(edge_path, edge_list_separator, edge_list_header, edge_list_support_balanced_quotes, edge_list_sources_column, edge_list_sources_column_number, edge_list_destinations_column, edge_list_destinations_column_number, edge_list_edge_type_column, edge_list_edge_type_column_number, edge_list_weights_column, edge_list_weights_column_number, comment_symbol, default_edge_type, default_weight, max_rows_number, rows_to_skip, number_of_edges, skip_edge_types_if_unavailable, skip_weights_if_unavailable, verbose, name)"
 )]
 /// Return whether the provided edge list contains duplicated edges.
 ///
@@ -27085,7 +27085,7 @@ pub fn convert_node_list_node_types_to_numeric(
 ///     The amount of rows to load from the edge list.
 /// rows_to_skip: Optional[int]
 ///     The amount of rows to skip from the edge list.
-/// edges_number: Optional[int]
+/// number_of_edges: Optional[int]
 ///     The expected number of edges. It will be used for the loading bar.
 /// skip_edge_types_if_unavailable: Optional[bool]
 ///     Whether to automatically skip the edge types if they are not available.
@@ -27114,7 +27114,7 @@ pub fn has_duplicated_edges_in_edge_list(
     default_weight: Option<WeightT>,
     max_rows_number: Option<usize>,
     rows_to_skip: Option<usize>,
-    edges_number: Option<usize>,
+    number_of_edges: Option<usize>,
     skip_edge_types_if_unavailable: Option<bool>,
     skip_weights_if_unavailable: Option<bool>,
     verbose: Option<bool>,
@@ -27138,7 +27138,7 @@ pub fn has_duplicated_edges_in_edge_list(
         default_weight,
         max_rows_number,
         rows_to_skip,
-        edges_number,
+        number_of_edges,
         skip_edge_types_if_unavailable,
         skip_weights_if_unavailable,
         verbose,
@@ -27282,7 +27282,7 @@ pub fn sort_numeric_edge_list_inplace(
 #[pyfunction]
 #[automatically_generated_binding]
 #[pyo3(
-    text_signature = "(path, separator, header, support_balanced_quotes, sources_column, sources_column_number, destinations_column, destinations_column_number, comment_symbol, max_rows_number, rows_to_skip, edges_number, load_edge_list_in_parallel, verbose, name)"
+    text_signature = "(path, separator, header, support_balanced_quotes, sources_column, sources_column_number, destinations_column, destinations_column_number, comment_symbol, max_rows_number, rows_to_skip, number_of_edges, load_edge_list_in_parallel, verbose, name)"
 )]
 /// Return number of selfloops in the given edge list.
 ///
@@ -27310,7 +27310,7 @@ pub fn sort_numeric_edge_list_inplace(
 ///     The number of rows to read at most. Note that this parameter is ignored when reading in parallel.
 /// rows_to_skip: Optional[int]
 ///     Number of rows to skip in the edge list.
-/// edges_number: Optional[int]
+/// number_of_edges: Optional[int]
 ///     Number of edges in the edge list.
 /// load_edge_list_in_parallel: Optional[bool]
 ///     Whether to execute the task in parallel or sequential. Generally, parallel is preferable.
@@ -27331,7 +27331,7 @@ pub fn get_number_of_selfloops_from_edge_list(
     comment_symbol: Option<String>,
     max_rows_number: Option<usize>,
     rows_to_skip: Option<usize>,
-    edges_number: Option<EdgeT>,
+    number_of_edges: Option<EdgeT>,
     load_edge_list_in_parallel: Option<bool>,
     verbose: Option<bool>,
     name: Option<String>,
@@ -27348,7 +27348,7 @@ pub fn get_number_of_selfloops_from_edge_list(
         comment_symbol,
         max_rows_number,
         rows_to_skip,
-        edges_number,
+        number_of_edges,
         load_edge_list_in_parallel,
         verbose,
         name

@@ -145,12 +145,12 @@ impl Graph {
     /// anti-diagonal of the graph.
     ///
     pub fn to_anti_diagonal(&self) -> Graph {
-        let nodes_number = self.get_number_of_nodes();
+        let number_of_nodes = self.get_number_of_nodes();
         build_graph_from_integers(
             Some(
                 self.par_iter_directed_edge_node_ids_and_edge_type_id_and_edge_weight()
                     .filter_map(|(_, src, dst, edge_type, weight)| {
-                        if src == nodes_number - dst {
+                        if src == number_of_nodes - dst {
                             Some((0, (src, dst, edge_type, weight.unwrap_or(WeightT::NAN))))
                         } else {
                             None
@@ -184,12 +184,12 @@ impl Graph {
     /// the diagonal or anti-diagonal matrix.
     ///
     pub fn to_bidiagonal(&self) -> Graph {
-        let nodes_number = self.get_number_of_nodes();
+        let number_of_nodes = self.get_number_of_nodes();
         build_graph_from_integers(
             Some(
                 self.par_iter_directed_edge_node_ids_and_edge_type_id_and_edge_weight()
                     .filter_map(|(_, src, dst, edge_type, weight)| {
-                        if src == dst || src == nodes_number - dst {
+                        if src == dst || src == number_of_nodes - dst {
                             Some((0, (src, dst, edge_type, weight.unwrap_or(WeightT::NAN))))
                         } else {
                             None
@@ -503,7 +503,7 @@ impl Graph {
         let nodes = Vocabulary::from_range(0..number_of_layers as NodeT);
 
         // We compute the number of edges in the layer transition graph.
-        let edges_number = (number_of_layers + (number_of_layers - 1) * 2) as EdgeT;
+        let number_of_edges = (number_of_layers + (number_of_layers - 1) * 2) as EdgeT;
         let walk_parameters =
             WalksParameters::new(random_walk_length)?.set_iterations(iterations)?;
 
@@ -582,12 +582,12 @@ impl Graph {
                                     vec![
                                         // backward edge
                                         (
-                                            edges_number as usize - 2,
+                                            number_of_edges as usize - 2,
                                             (src, src - 1, None, forward_change_layer_probability),
                                         ),
                                         // selfloop
                                         (
-                                            edges_number as usize - 1,
+                                            number_of_edges as usize - 1,
                                             (
                                                 src,
                                                 src,
@@ -627,7 +627,7 @@ impl Graph {
                     Some(true),
                     Some(false),
                     Some(true),
-                    Some(edges_number),
+                    Some(number_of_edges),
                     false,
                     false,
                     "Layer Transition",

@@ -22,12 +22,12 @@ impl ToString for Tendril {
                     false,
                 )
             }),
-            nodes_number => format!(
+            number_of_nodes => format!(
                 concat!(
                     "<p>Tendril containing {} nodes and starts from the node {}. ",
                     "Specifically, the nodes involved in the Tendril are: {}.</p>",
                 ),
-                to_human_readable_high_integer(nodes_number as usize),
+                to_human_readable_high_integer(number_of_nodes as usize),
                 unsafe {
                     self.graph.get_unchecked_succinct_node_description(
                         self.get_root_node_id(),

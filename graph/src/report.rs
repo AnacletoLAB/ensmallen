@@ -57,9 +57,9 @@ impl Graph {
         // Adding the default metrics
         report.insert("name", (*self.name).clone());
         report.insert("directed", self.is_directed().to_string());
-        report.insert("nodes_number", self.get_number_of_nodes().to_string());
+        report.insert("number_of_nodes", self.get_number_of_nodes().to_string());
         report.insert(
-            "singleton_nodes_number",
+            "singleton_number_of_nodes",
             self.get_number_of_singleton_nodes().to_string(),
         );
         if self.has_nodes() {
@@ -78,7 +78,7 @@ impl Graph {
             );
         }
         report.insert(
-            "directed_edges_number",
+            "directed_number_of_edges",
             self.get_number_of_directed_edges().to_string(),
         );
         report.insert(
@@ -92,7 +92,7 @@ impl Graph {
         );
         report.insert("multigraph", self.is_multigraph().to_string());
         report.insert(
-            "parallel_edges_number",
+            "parallel_number_of_edges",
             self.get_number_of_parallel_edges().to_string(),
         );
         if self.has_edges() {
@@ -136,15 +136,15 @@ impl Graph {
                 self.has_singleton_node_types().unwrap().to_string(),
             );
             report.insert(
-                "node_types_number",
+                "number_of_node_types",
                 self.get_number_of_node_types().unwrap().to_string(),
             );
             report.insert(
-                "unknown_node_types_number",
+                "unknown_number_of_node_types",
                 self.get_number_of_unknown_node_types().unwrap().to_string(),
             );
             report.insert(
-                "known_node_types_number",
+                "known_number_of_node_types",
                 self.get_number_of_known_node_types().unwrap().to_string(),
             );
         }
@@ -155,15 +155,15 @@ impl Graph {
                 self.has_singleton_edge_types().unwrap().to_string(),
             );
             report.insert(
-                "edge_types_number",
+                "number_of_edge_types",
                 self.get_number_of_edge_types().unwrap().to_string(),
             );
             report.insert(
-                "unknown_edge_types_number",
+                "unknown_number_of_edge_types",
                 self.get_number_of_unknown_edge_types().unwrap().to_string(),
             );
             report.insert(
-                "known_edge_types_number",
+                "known_number_of_edge_types",
                 self.get_number_of_known_edge_types().unwrap().to_string(),
             );
         }
@@ -223,14 +223,14 @@ impl Graph {
         // Checking if overlap is allowed
         self.validate_operator_terms(other)?;
         // Get overlapping nodes
-        let overlapping_nodes_number = self
+        let overlapping_number_of_nodes = self
             .iter_node_names_and_node_type_names()
             .filter(|(_, node_name, _, node_type)| {
                 other.has_node_name_and_node_type_name(node_name, node_type.clone())
             })
             .count();
         // Get overlapping edges
-        let overlapping_edges_number = if other.has_edge_types() && self.has_edge_types() {
+        let overlapping_number_of_edges = if other.has_edge_types() && self.has_edge_types() {
             self.par_iter_directed_edge_node_names_and_edge_type_name()
                 .filter(|(_, _, src_name, _, dst_name, _, edge_type_name)| {
                     other.has_edge_from_node_names_and_edge_type_name(
@@ -273,16 +273,16 @@ impl Graph {
         // Building up the report
         Ok(format!(
             concat!(
-                "The graph {first_graph} and the graph {second_graph} share {nodes_number} nodes and {edges_number} edges. ",
-                "By percent, {first_graph} shares {first_node_percentage:.2}% ({nodes_number} out of {first_nodes}) of its nodes and {first_edge_percentage:.2}% ({edges_number} out of {first_edges}) of its edges with {second_graph}. ",
-                "{second_graph} shares {second_node_percentage:.2}% ({nodes_number} out of {second_nodes}) of its nodes and {second_edge_percentage:.2}% ({edges_number} out of {second_edges}) of its edges with {first_graph}. ",
+                "The graph {first_graph} and the graph {second_graph} share {number_of_nodes} nodes and {number_of_edges} edges. ",
+                "By percent, {first_graph} shares {first_node_percentage:.2}% ({number_of_nodes} out of {first_nodes}) of its nodes and {first_edge_percentage:.2}% ({number_of_edges} out of {first_edges}) of its edges with {second_graph}. ",
+                "{second_graph} shares {second_node_percentage:.2}% ({number_of_nodes} out of {second_nodes}) of its nodes and {second_edge_percentage:.2}% ({number_of_edges} out of {second_edges}) of its edges with {first_graph}. ",
                 "Nodes from {first_graph} appear in {first_components_statement} components of {second_graph}{first_merged_components_statement}. ",
                 "Similarly, nodes from {second_graph} appear in {second_components_statement} components of {first_graph}{second_merged_components_statement}. ",
             ),
             first_graph=self.get_name(),
             second_graph=other.get_name(),
-            nodes_number=overlapping_nodes_number,
-            edges_number=overlapping_edges_number,
+            number_of_nodes=overlapping_number_of_nodes,
+            number_of_edges=overlapping_number_of_edges,
             first_nodes=self.get_number_of_nodes(),
             second_nodes=other.get_number_of_nodes(),
             first_edges=first_edges,
@@ -306,9 +306,9 @@ impl Graph {
             first_merged_components_statement = match second_components_number > 1 {
                 false=>"".to_owned(),
                 true=>format!(
-                    ": of these, {edges_number} connected by edges of {first_graph}",
+                    ": of these, {number_of_edges} connected by edges of {first_graph}",
                     first_graph=self.name,
-                    edges_number= match second_merged_components_number {
+                    number_of_edges= match second_merged_components_number {
                         d if d==0=>"none are".to_owned(),
                         d if d==1=>"one is".to_owned(),
                         d if d==second_components_number=>"all components are".to_owned(),
@@ -318,19 +318,19 @@ impl Graph {
             second_merged_components_statement = match first_components_number > 1 {
                 false=>"".to_owned(),
                 true=>format!(
-                    ": of these, {edges_number} connected by edges of {second_graph}",
+                    ": of these, {number_of_edges} connected by edges of {second_graph}",
                     second_graph=other.name,
-                    edges_number= match first_merged_components_number {
+                    number_of_edges= match first_merged_components_number {
                         d if d==0=>"none are".to_owned(),
                         d if d==1=>"one is".to_owned(),
                         d if d==first_components_number=>"all components are".to_owned(),
                         _ => format!("{} components are", first_merged_components_number)
                     })
                 },
-            first_node_percentage=100.0*(overlapping_nodes_number as f64 / self.get_number_of_nodes() as f64),
-            second_node_percentage=100.0*(overlapping_nodes_number as f64 / other.get_number_of_nodes() as f64),
-            first_edge_percentage=100.0*(overlapping_edges_number as f64 / first_edges as f64),
-            second_edge_percentage=100.0*(overlapping_edges_number as f64 / second_edges as f64),
+            first_node_percentage=100.0*(overlapping_number_of_nodes as f64 / self.get_number_of_nodes() as f64),
+            second_node_percentage=100.0*(overlapping_number_of_nodes as f64 / other.get_number_of_nodes() as f64),
+            first_edge_percentage=100.0*(overlapping_number_of_edges as f64 / first_edges as f64),
+            second_edge_percentage=100.0*(overlapping_number_of_edges as f64 / second_edges as f64),
         ))
     }
 
@@ -353,10 +353,10 @@ impl Graph {
                         concat!("The given node {} is the only singleton node of the graph."),
                         node_name
                     ),
-                    singleton_nodes_number => {
+                    singleton_number_of_nodes => {
                         format!(
                             concat!("The given node {} is one of {} singleton nodes."),
-                            node_name, singleton_nodes_number
+                            node_name, singleton_number_of_nodes
                         )
                     }
                 }
@@ -383,10 +383,10 @@ impl Graph {
                         concat!("The given node {} is the only trap node in the graph."),
                         node_name
                     ),
-                    trap_nodes_number => {
+                    trap_number_of_nodes => {
                         format!(
                             concat!("The given node {} is one of {} trap nodes in the graph."),
-                            node_name, trap_nodes_number
+                            node_name, trap_number_of_nodes
                         )
                     }
                 }
@@ -739,16 +739,16 @@ impl Graph {
         }
 
         // Otherwise we compute a descriptor of the avilable nodes.
-        let nodes_number = unsafe {
+        let number_of_nodes = unsafe {
             match self.get_number_of_nodes() {
                 1 => format!(
                     "a single node called {node_name_description}",
                     node_name_description =
                         self.get_unchecked_succinct_node_description(0, 0, true),
                 ),
-                nodes_number => format!(
-                    "{nodes_number}{heterogeneous_nodes} nodes",
-                    nodes_number = to_human_readable_high_integer(nodes_number as usize),
+                number_of_nodes => format!(
+                    "{number_of_nodes}{heterogeneous_nodes} nodes",
+                    number_of_nodes = to_human_readable_high_integer(number_of_nodes as usize),
                     heterogeneous_nodes = match self.get_number_of_node_types() {
                         Ok(n) =>
                             if n == 1 {
@@ -767,27 +767,27 @@ impl Graph {
         if !self.has_edges() {
             report.push(format!(
                 concat!(
-                    "<p>The graph{name} contains {nodes_number} and no edges. ",
+                    "<p>The graph{name} contains {number_of_nodes} and no edges. ",
                     "If this is unexpected, it may have happened because of a ",
                     "mis-parametrization of a filter method uphill.</p>"
                 ),
                 name = name.unwrap_or_else(|| "".to_string()),
-                nodes_number = nodes_number
+                number_of_nodes = number_of_nodes
             ));
 
             return report.join("");
         }
 
         // Otherwise we compute a more comprehensive report of the edges.
-        let edges_number = unsafe {
+        let number_of_edges = unsafe {
             match self.get_number_of_edges() {
                 1 => format!(
                     "a single {edge_description}",
                     edge_description = self.get_unchecked_succinct_edge_description(0)
                 ),
-                edges_number => format!(
-                    "{edges_number}{heterogeneous_edges} edges",
-                    edges_number = to_human_readable_high_integer(edges_number as usize),
+                number_of_edges => format!(
+                    "{number_of_edges}{heterogeneous_edges} edges",
+                    number_of_edges = to_human_readable_high_integer(number_of_edges as usize),
                     heterogeneous_edges = match self.get_number_of_edge_types() {
                         Ok(n) =>
                             if n == 1 {
@@ -817,7 +817,7 @@ impl Graph {
         report.push(format!(
             concat!(
                 "<p>",
-                "The {directionality} {multigraph}graph{name} has {nodes_number} and {edges_number}. ",
+                "The {directionality} {multigraph}graph{name} has {number_of_nodes} and {number_of_edges}. ",
                 "{connected_components}",
                 "The RAM requirements for the nodes and edges data structures are {ram_nodes} and {ram_edges} respectively.",
                 "</p>"
@@ -833,8 +833,8 @@ impl Graph {
                 ""
             },
             name = name.unwrap_or_else(|| "".to_string()),
-            nodes_number = nodes_number,
-            edges_number = edges_number,
+            number_of_nodes = number_of_nodes,
+            number_of_edges = number_of_edges,
             connected_components=connected_components,
             ram_nodes = self.get_nodes_total_memory_requirement_human_readable(),
             ram_edges = self.get_edges_total_memory_requirement_human_readable()
@@ -892,9 +892,9 @@ impl Graph {
             to_human_readable_high_integer(components_number as usize),
             match self.get_number_of_disconnected_nodes() {
                 0 => "".to_string(),
-                disconnected_nodes_number => format!(
+                disconnected_number_of_nodes => format!(
                     " (of which {} are disconnected nodes)",
-                    to_human_readable_high_integer(disconnected_nodes_number as usize)
+                    to_human_readable_high_integer(disconnected_number_of_nodes as usize)
                 )
             },
             to_human_readable_high_integer(maximum_component_size as usize),
@@ -1428,98 +1428,104 @@ impl Graph {
         // Isomorphic edges
         // --------------------------------
 
-        let number_of_isomorphic_edge_groups = isomorphic_edge_groups.len() as NodeT;
-        let number_of_nodes_involved_in_isomorphic_edge_groups = isomorphic_edge_groups
-            .iter()
-            .map(|isomorphic_edge_group| 2 * isomorphic_edge_group.len() as NodeT)
-            .sum::<NodeT>();
-        let number_of_edges_involved_in_isomorphic_edge_groups = isomorphic_edge_groups
-            .iter()
-            .map(|isomorphic_edge_group| unsafe {
-                ((self.get_unchecked_node_degree_from_node_id(isomorphic_edge_group[0][0])
-                    as usize
-                    + self.get_unchecked_node_degree_from_node_id(isomorphic_edge_group[0][1])
-                        as usize)
-                    * isomorphic_edge_group.len()) as EdgeT
-            })
-            .sum();
-        let maximum_number_of_edges_in_a_isomorphic_edge_group = isomorphic_edge_groups
-            .iter()
-            .map(|isomorphic_edge_group| isomorphic_edge_group.len() as NodeT)
-            .max()
-            .unwrap_or(0);
-        let maximum_number_of_edges_connected_to_a_isomorphic_edge_group = isomorphic_edge_groups
-            .iter()
-            .map(|isomorphic_edge_group| unsafe {
-                ((self.get_unchecked_node_degree_from_node_id(isomorphic_edge_group[0][0])
-                    as usize
-                    + self.get_unchecked_node_degree_from_node_id(isomorphic_edge_group[0][1])
-                        as usize)
-                    * isomorphic_edge_group.len()) as EdgeT
-            })
-            .max()
-            .unwrap_or(0);
-        let isomorphic_edge_groups_description = self.get_report_of_oddity(
-            "h4",
-            "Isomorphic edge group",
-            "Isomorphic edge groups",
-            concat!(
-                "Isomorphic edge groups are edges with exactly the same ",
-                "neighbours, node types, edge types and weights (if present in the graph). ",
-                "Edges in such groups are topologically indistinguishable, ",
-                "that is swapping their ID would not change the graph topology."
-            ),
-            number_of_isomorphic_edge_groups,
-            number_of_nodes_involved_in_isomorphic_edge_groups,
-            number_of_edges_involved_in_isomorphic_edge_groups,
-            maximum_number_of_edges_in_a_isomorphic_edge_group,
-            maximum_number_of_edges_connected_to_a_isomorphic_edge_group,
-            true,
-            Some(15),
-            Some(3),
-            isomorphic_edge_groups
-                .into_iter()
-                .map(|isomorphic_edge_group| {
-                    format!(
-                        concat!("<p>Group with {number_of_elements} edges (source {src_attribute}, destination {dst_attribute}): {elements}.</p>",),
-                        number_of_elements=to_human_readable_high_integer(isomorphic_edge_group.len() as usize),
-                        src_attribute=unsafe {
-                            self.get_unchecked_succinct_node_attributes_description(
-                                isomorphic_edge_group[0][0],
-                                0,
-                                true,
-                            )
-                        },
-                        dst_attribute=unsafe {
-                            self.get_unchecked_succinct_node_attributes_description(
-                                isomorphic_edge_group[0][1],
-                                0,
-                                true,
-                            )
-                        },
-                        elements=unsafe {
-                            get_unchecked_formatted_list(
-                                &isomorphic_edge_group
-                                    .into_iter()
-                                    .map(|[src, dst]| {
-                                        format!(
-                                            "({} -> {})",
-                                            get_node_source_html_url_from_node_name(
-                                                &self.get_unchecked_node_name_from_node_id(src),
-                                            ),
-                                            get_node_source_html_url_from_node_name(
-                                                &self.get_unchecked_node_name_from_node_id(dst),
+        // For large graphs, we do not want to compute isomorphic edges, as it is too expensive.
+        let isomorphic_edge_groups_description = if self.get_number_of_edges() < 200_000 {
+            let number_of_isomorphic_edge_groups = isomorphic_edge_groups.len() as NodeT;
+            let number_of_nodes_involved_in_isomorphic_edge_groups = isomorphic_edge_groups
+                .iter()
+                .map(|isomorphic_edge_group| 2 * isomorphic_edge_group.len() as NodeT)
+                .sum::<NodeT>();
+            let number_of_edges_involved_in_isomorphic_edge_groups = isomorphic_edge_groups
+                .iter()
+                .map(|isomorphic_edge_group| unsafe {
+                    ((self.get_unchecked_node_degree_from_node_id(isomorphic_edge_group[0][0])
+                        as usize
+                        + self.get_unchecked_node_degree_from_node_id(isomorphic_edge_group[0][1])
+                            as usize)
+                        * isomorphic_edge_group.len()) as EdgeT
+                })
+                .sum();
+            let maximum_number_of_edges_in_a_isomorphic_edge_group = isomorphic_edge_groups
+                .iter()
+                .map(|isomorphic_edge_group| isomorphic_edge_group.len() as NodeT)
+                .max()
+                .unwrap_or(0);
+            let maximum_number_of_edges_connected_to_a_isomorphic_edge_group = isomorphic_edge_groups
+                .iter()
+                .map(|isomorphic_edge_group| unsafe {
+                    ((self.get_unchecked_node_degree_from_node_id(isomorphic_edge_group[0][0])
+                        as usize
+                        + self.get_unchecked_node_degree_from_node_id(isomorphic_edge_group[0][1])
+                            as usize)
+                        * isomorphic_edge_group.len()) as EdgeT
+                })
+                .max()
+                .unwrap_or(0);
+            let isomorphic_edge_groups_description = self.get_report_of_oddity(
+                "h4",
+                "Isomorphic edge group",
+                "Isomorphic edge groups",
+                concat!(
+                    "Isomorphic edge groups are edges with exactly the same ",
+                    "neighbours, node types, edge types and weights (if present in the graph). ",
+                    "Edges in such groups are topologically indistinguishable, ",
+                    "that is swapping their ID would not change the graph topology."
+                ),
+                number_of_isomorphic_edge_groups,
+                number_of_nodes_involved_in_isomorphic_edge_groups,
+                number_of_edges_involved_in_isomorphic_edge_groups,
+                maximum_number_of_edges_in_a_isomorphic_edge_group,
+                maximum_number_of_edges_connected_to_a_isomorphic_edge_group,
+                true,
+                Some(15),
+                Some(3),
+                isomorphic_edge_groups
+                    .into_iter()
+                    .map(|isomorphic_edge_group| {
+                        format!(
+                            concat!("<p>Group with {number_of_elements} edges (source {src_attribute}, destination {dst_attribute}): {elements}.</p>",),
+                            number_of_elements=to_human_readable_high_integer(isomorphic_edge_group.len() as usize),
+                            src_attribute=unsafe {
+                                self.get_unchecked_succinct_node_attributes_description(
+                                    isomorphic_edge_group[0][0],
+                                    0,
+                                    true,
+                                )
+                            },
+                            dst_attribute=unsafe {
+                                self.get_unchecked_succinct_node_attributes_description(
+                                    isomorphic_edge_group[0][1],
+                                    0,
+                                    true,
+                                )
+                            },
+                            elements=unsafe {
+                                get_unchecked_formatted_list(
+                                    &isomorphic_edge_group
+                                        .into_iter()
+                                        .map(|[src, dst]| {
+                                            format!(
+                                                "({} -> {})",
+                                                get_node_source_html_url_from_node_name(
+                                                    &self.get_unchecked_node_name_from_node_id(src),
+                                                ),
+                                                get_node_source_html_url_from_node_name(
+                                                    &self.get_unchecked_node_name_from_node_id(dst),
+                                                )
                                             )
-                                        )
-                                        
-                                    })
-                                    .collect::<Vec<String>>(),
-                                Some(5),
-                            )
-                        }
-                    )
-                }),
-        );
+                                            
+                                        })
+                                        .collect::<Vec<String>>(),
+                                    Some(5),
+                                )
+                            }
+                        )
+                    }),
+            );
+            isomorphic_edge_groups_description
+        } else {
+            "".to_string()
+        };
 
         // ================================
         // Trees and tree-like oddities
@@ -1719,9 +1725,9 @@ impl Graph {
                 "exclusively to a single node, making the node type ",
                 "relatively meaningless, as it adds no more information ",
                 "than the node name itself. ",
-                "The graph contains {singleton_node_types_number}.</p>"
+                "The graph contains {singleton_number_of_node_types}.</p>"
             ),
-            singleton_node_types_number = match self.get_number_of_singleton_node_types().unwrap() {
+            singleton_number_of_node_types = match self.get_number_of_singleton_node_types().unwrap() {
                 1 => {
                     let node_type_name = self
                         .iter_singleton_node_type_names()
@@ -1739,15 +1745,15 @@ impl Graph {
                         )
                     )
                 }
-                singleton_node_types_number => {
+                singleton_number_of_node_types => {
                     format!(
                         concat!(
-                            "{singleton_node_types_number} singleton node types, which are ",
+                            "{singleton_number_of_node_types} singleton node types, which are ",
                             "{singleton_node_types_list}",
                             "{additional_singleton_node_types}"
                         ),
-                        singleton_node_types_number =
-                            to_human_readable_high_integer(singleton_node_types_number as usize),
+                        singleton_number_of_node_types =
+                            to_human_readable_high_integer(singleton_number_of_node_types as usize),
                         singleton_node_types_list = get_unchecked_formatted_list(
                             self.iter_singleton_node_type_names()
                                 .unwrap()
@@ -1770,11 +1776,11 @@ impl Graph {
                                 .as_ref(),
                             None
                         ),
-                        additional_singleton_node_types = if singleton_node_types_number > 10 {
+                        additional_singleton_node_types = if singleton_number_of_node_types > 10 {
                             format!(
-                                ", plus other {singleton_node_types_number} singleton node types",
-                                singleton_node_types_number = to_human_readable_high_integer(
-                                    singleton_node_types_number as usize - 10
+                                ", plus other {singleton_number_of_node_types} singleton node types",
+                                singleton_number_of_node_types = to_human_readable_high_integer(
+                                    singleton_number_of_node_types as usize - 10
                                 )
                             )
                         } else {
@@ -1804,7 +1810,7 @@ impl Graph {
         if isomorphic_node_types.is_empty() {
             "".to_string()
         } else {
-            let isomorphic_node_types_number = isomorphic_node_types.len();
+            let isomorphic_number_of_node_types = isomorphic_node_types.len();
             format!(
                 concat!(
                     "<h4>{oddity_name}</h4>",
@@ -1812,7 +1818,7 @@ impl Graph {
                     "{oddity_name} groups are node types describing ",
                     "exactly the same set of nodes.{approximation_note} The presence of such duplicated ",
                     "node types suggests a potential modelling error in the pipeline ",
-                    "that has produced this graph. {isomorphic_node_types_number} isomorphic node types groups ",
+                    "that has produced this graph. {isomorphic_number_of_node_types} isomorphic node types groups ",
                     "were detected in this graph.",
                     "</p>",
                     "<ol>",
@@ -1864,13 +1870,13 @@ impl Graph {
                         }
                     )
                 }).join("\n"),
-                isomorphic_node_types_number = to_human_readable_high_integer(isomorphic_node_types_number),
+                isomorphic_number_of_node_types = to_human_readable_high_integer(isomorphic_number_of_node_types),
                 additional_isomorphic_node_types =
-                            if isomorphic_node_types_number > 10 {
+                            if isomorphic_number_of_node_types > 10 {
                                 format!(
-                                "<p>And other {isomorphic_node_types_number} isomorphic node types.</p>",
-                                isomorphic_node_types_number = to_human_readable_high_integer(
-                                    isomorphic_node_types_number as usize - 10
+                                "<p>And other {isomorphic_number_of_node_types} isomorphic node types.</p>",
+                                isomorphic_number_of_node_types = to_human_readable_high_integer(
+                                    isomorphic_number_of_node_types as usize - 10
                                 )
                             )
                             } else {
@@ -1891,7 +1897,7 @@ impl Graph {
         if isomorphic_edge_types.is_empty() {
             "".to_string()
         } else {
-            let isomorphic_edge_types_number = isomorphic_edge_types.len();
+            let isomorphic_number_of_edge_types = isomorphic_edge_types.len();
             format!(
                 concat!(
                     "<h4>Isomorphic edge types</h4>",
@@ -1899,7 +1905,7 @@ impl Graph {
                     "Isomorphic edge types groups are edge types describing ",
                     "exactly the same set of edges. The presence of such duplicated ",
                     "edge types suggests a potential modelling error in the pipeline ",
-                    "that has produced this graph. {isomorphic_edge_types_number} isomorphic edge types groups ",
+                    "that has produced this graph. {isomorphic_number_of_edge_types} isomorphic edge types groups ",
                     "were detected in this graph. ",
                     "We currently compute and display the isomorphic edge types with at least 20 edges.",
                     "</p>",
@@ -1929,13 +1935,13 @@ impl Graph {
                         }
                     )
                 }).join("\n"),
-                isomorphic_edge_types_number = to_human_readable_high_integer(isomorphic_edge_types_number),
+                isomorphic_number_of_edge_types = to_human_readable_high_integer(isomorphic_number_of_edge_types),
                 additional_isomorphic_edge_types =
-                            if isomorphic_edge_types_number > 10 {
+                            if isomorphic_number_of_edge_types > 10 {
                                 format!(
-                                "<p>And other {isomorphic_edge_types_number} isomorphic edge types.</p>",
-                                isomorphic_edge_types_number = to_human_readable_high_integer(
-                                    isomorphic_edge_types_number as usize - 10
+                                "<p>And other {isomorphic_number_of_edge_types} isomorphic edge types.</p>",
+                                isomorphic_number_of_edge_types = to_human_readable_high_integer(
+                                    isomorphic_number_of_edge_types as usize - 10
                                 )
                             )
                             } else {
@@ -1954,9 +1960,9 @@ impl Graph {
                 "to all the nodes in the graph, making the node type ",
                 "relatively meaningless, as it adds no more information ",
                 "than the fact that the node is in the graph. ",
-                "The graph contains {homogeneous_node_types_number}.</p>"
+                "The graph contains {homogeneous_number_of_node_types}.</p>"
             ),
-            homogeneous_node_types_number = match self
+            homogeneous_number_of_node_types = match self
                 .get_number_of_homogeneous_node_types()
                 .unwrap()
             {
@@ -1970,15 +1976,15 @@ impl Graph {
                             .as_ref()
                     )
                 ),
-                homogeneous_node_types_number => {
+                homogeneous_number_of_node_types => {
                     format!(
                         concat!(
-                            "{homogeneous_node_types_number} homogeneous node types, which are ",
+                            "{homogeneous_number_of_node_types} homogeneous node types, which are ",
                             "{homogeneous_node_types_list}",
                             "{additional_homogeneous_nodes_with_selfloop}"
                         ),
-                        homogeneous_node_types_number =
-                            to_human_readable_high_integer(homogeneous_node_types_number as usize),
+                        homogeneous_number_of_node_types =
+                            to_human_readable_high_integer(homogeneous_number_of_node_types as usize),
                         homogeneous_node_types_list = get_unchecked_formatted_list(
                             self.iter_homogeneous_node_type_names()
                                 .unwrap()
@@ -1993,11 +1999,11 @@ impl Graph {
                             None
                         ),
                         additional_homogeneous_nodes_with_selfloop =
-                            if homogeneous_node_types_number > 10 {
+                            if homogeneous_number_of_node_types > 10 {
                                 format!(
-                                ", plus other {homogeneous_node_types_number} homogeneous node types",
-                                homogeneous_node_types_number = to_human_readable_high_integer(
-                                    homogeneous_node_types_number as usize - 10
+                                ", plus other {homogeneous_number_of_node_types} homogeneous node types",
+                                homogeneous_number_of_node_types = to_human_readable_high_integer(
+                                    homogeneous_number_of_node_types as usize - 10
                                 )
                             )
                             } else {
@@ -2022,10 +2028,10 @@ impl Graph {
                 "node type that was not provided during the creation of ",
                 "the graph, which may be desired as the output of a ",
                 "node-label holdout. ",
-                "The graph contains {unknown_node_types_number}, making up {unknown_node_types_percentage:.2} of the nodes.</p>"
+                "The graph contains {unknown_number_of_node_types}, making up {unknown_node_types_percentage:.2} of the nodes.</p>"
             ),
             unknown_node_types_percentage = self.get_unknown_node_types_rate().unwrap() * 100.0,
-            unknown_node_types_number = match self.get_number_of_unknown_node_types().unwrap() {
+            unknown_number_of_node_types = match self.get_number_of_unknown_node_types().unwrap() {
                 1 => format!(
                     "a node with unknown node type, which is {}",
                     self.get_unchecked_succinct_node_description(
@@ -2035,14 +2041,14 @@ impl Graph {
                             .unwrap(), 0, false
                     )
                 ),
-                unknown_node_types_number => {
+                unknown_number_of_node_types => {
                     format!(
                         concat!(
-                            "{unknown_node_types_number} nodes with unknown node type, which are ",
+                            "{unknown_number_of_node_types} nodes with unknown node type, which are ",
                             "{unknown_node_types_list}",
                             "{additional_unknown_nodes}"
                         ),
-                        unknown_node_types_number = to_human_readable_high_integer(unknown_node_types_number as usize),
+                        unknown_number_of_node_types = to_human_readable_high_integer(unknown_number_of_node_types as usize),
                         unknown_node_types_list = get_unchecked_formatted_list(
                             self.iter_node_ids_with_unknown_node_types()
                                 .unwrap()
@@ -2054,10 +2060,10 @@ impl Graph {
                                 .as_ref(),
                                 None
                         ),
-                        additional_unknown_nodes = if unknown_node_types_number > 10 {
+                        additional_unknown_nodes = if unknown_number_of_node_types > 10 {
                             format!(
-                                ", plus other {unknown_node_types_number} nodes with unknown node types",
-                                unknown_node_types_number = to_human_readable_high_integer(unknown_node_types_number as usize - 10)
+                                ", plus other {unknown_number_of_node_types} nodes with unknown node types",
+                                unknown_number_of_node_types = to_human_readable_high_integer(unknown_number_of_node_types as usize - 10)
                             )
                         } else {
                             "".to_string()
@@ -2092,7 +2098,7 @@ impl Graph {
                         .as_ref()
                 )
             ),
-            node_types_number => {
+            number_of_node_types => {
                 let mut count = count.into_iter().collect::<Vec<(NodeTypeT, NodeT)>>();
                 count.sort_by(|(_, a), (_, b)| b.cmp(a));
                 let node_type_descriptions = get_unchecked_formatted_list(
@@ -2111,9 +2117,9 @@ impl Graph {
                     None,
                 );
                 format!(
-                    "{node_types_number} node types, {top_ten_caveat} {node_type_description}",
-                    node_types_number = to_human_readable_high_integer(node_types_number as usize),
-                    top_ten_caveat = if node_types_number > 10 {
+                    "{number_of_node_types} node types, {top_ten_caveat} {node_type_description}",
+                    number_of_node_types = to_human_readable_high_integer(number_of_node_types as usize),
+                    top_ten_caveat = if number_of_node_types > 10 {
                         "of which the 10 most common are"
                     } else {
                         "which are"
@@ -2199,9 +2205,9 @@ impl Graph {
                 "exclusively to a single edge, making the edge type ",
                 "relatively meaningless, as it adds no more information ",
                 "than the name of edge itself. ",
-                "The graph contains {singleton_edge_types_number}</p>"
+                "The graph contains {singleton_number_of_edge_types}</p>"
             ),
-            singleton_edge_types_number = match self.get_number_of_singleton_edge_types().unwrap() {
+            singleton_number_of_edge_types = match self.get_number_of_singleton_edge_types().unwrap() {
                 1 => format!(
                     "a edge with singleton edge type, which is {}.",
                     get_edge_type_source_html_url_from_edge_type_name(
@@ -2212,14 +2218,14 @@ impl Graph {
                             .as_ref()
                     )
                 ),
-                singleton_edge_types_number => {
+                singleton_number_of_edge_types => {
                     format!(
                         concat!(
-                            "{singleton_edge_types_number} edges with singleton edge types, which are ",
+                            "{singleton_number_of_edge_types} edges with singleton edge types, which are ",
                             "{singleton_edge_types_list}",
                             "{additional_edgges_with_singleton_edge_types}. "
                         ),
-                        singleton_edge_types_number = to_human_readable_high_integer(singleton_edge_types_number as usize),
+                        singleton_number_of_edge_types = to_human_readable_high_integer(singleton_number_of_edge_types as usize),
                         singleton_edge_types_list = get_unchecked_formatted_list(
                             self.iter_singleton_edge_type_names()
                                 .unwrap()
@@ -2234,10 +2240,10 @@ impl Graph {
                                 None
                         ),
                         additional_edgges_with_singleton_edge_types =
-                            if singleton_edge_types_number > 10 {
+                            if singleton_number_of_edge_types > 10 {
                                 format!(
-                                ", plus other {singleton_edge_types_number} edges with singleton edge types",
-                                singleton_edge_types_number = to_human_readable_high_integer(singleton_edge_types_number as usize - 10)
+                                ", plus other {singleton_number_of_edge_types} edges with singleton edge types",
+                                singleton_number_of_edge_types = to_human_readable_high_integer(singleton_number_of_edge_types as usize - 10)
                             )
                             } else {
                                 "".to_string()
@@ -2261,10 +2267,10 @@ impl Graph {
                 "edge type that was not provided during the creation of ",
                 "the graph, which may be desired as the output of a ",
                 "edge-label holdout. ",
-                "The graph contains {unknown_edge_types_number}, making up {unknown_edge_types_percentage:.2} of the edges.</p>"
+                "The graph contains {unknown_number_of_edge_types}, making up {unknown_edge_types_percentage:.2} of the edges.</p>"
             ),
             unknown_edge_types_percentage = self.get_unknown_edge_types_rate().unwrap() * 100.0,
-            unknown_edge_types_number = match self.get_number_of_unknown_edge_types().unwrap() {
+            unknown_number_of_edge_types = match self.get_number_of_unknown_edge_types().unwrap() {
                 1 => format!(
                     "a edge with unknown edge type, which is {}.",
                     self.get_unchecked_succinct_edge_description(
@@ -2329,13 +2335,13 @@ impl Graph {
                         .as_ref()
                 )
             ),
-            edge_types_number => {
+            number_of_edge_types => {
                 let mut edge_type_counts = count.into_iter().collect::<Vec<_>>();
                 edge_type_counts.par_sort_unstable_by(|(_, a), (_, b)| b.cmp(a));
                 let total_edges = Some(
                     edge_type_counts
                         .iter()
-                        .map(|(_, edges_number)| *edges_number)
+                        .map(|(_, number_of_edges)| *number_of_edges)
                         .sum(),
                 );
                 let edge_type_descriptions = get_unchecked_formatted_list(
@@ -2354,9 +2360,9 @@ impl Graph {
                     None,
                 );
                 format!(
-                    "{edge_types_number} edge types, {top_ten_caveat} {edge_type_description}",
-                    edge_types_number = to_human_readable_high_integer(edge_types_number as usize),
-                    top_ten_caveat = if edge_types_number > 10 {
+                    "{number_of_edge_types} edge types, {top_ten_caveat} {edge_type_description}",
+                    number_of_edge_types = to_human_readable_high_integer(number_of_edge_types as usize),
+                    top_ten_caveat = if number_of_edge_types > 10 {
                         "of which the 10 most common are"
                     } else {
                         "which are"
@@ -2382,11 +2388,11 @@ impl Graph {
             concat!(
                 "<h3>Edge types</h3>",
                 "<p>",
-                "The graph has {edge_types_number}. ",
+                "The graph has {number_of_edge_types}. ",
                 "The RAM requirement for the edge types data structure is {ram_edge_types}.",
                 "</p>",
             ),
-            edge_types_number = self.get_unchecked_edge_types_description_from_count(
+            number_of_edge_types = self.get_unchecked_edge_types_description_from_count(
                 self.get_edge_type_id_counts_hashmap().unwrap()
             ),
             ram_edge_types = self

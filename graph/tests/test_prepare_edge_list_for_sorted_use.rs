@@ -4,7 +4,7 @@ use graph::{build_optimal_lists_files, EdgeFileReader, Graph, NodeFileReader};
 
 #[test]
 fn test_prepare_edge_list_for_sorted_undirected_use() -> Result<(), String> {
-    let (_, nodes_number, _, edges_number) = build_optimal_lists_files(
+    let (_, number_of_nodes, _, number_of_edges) = build_optimal_lists_files(
         "tests/data/unsorted_macaque.tsv".to_string(),
         "tests/data/sorted_macaque.tsv".to_string(),
         false,
@@ -120,11 +120,11 @@ fn test_prepare_edge_list_for_sorted_undirected_use() -> Result<(), String> {
         .set_sources_column_number(Some(0))?
         .set_destinations_column_number(Some(1))?
         .set_csv_is_correct(Some(true))
-        .set_number_of_edges(Some(edges_number));
+        .set_number_of_edges(Some(number_of_edges));
 
     let nodes_reader = NodeFileReader::new(None)
         .unwrap()
-        .set_number_of_nodes(Some(nodes_number));
+        .set_number_of_nodes(Some(number_of_nodes));
 
     let mut g = Graph::from_file_readers(
         Some(edges_reader),
@@ -155,11 +155,11 @@ fn test_prepare_edge_list_for_sorted_undirected_use() -> Result<(), String> {
         .set_sources_column_number(Some(0))?
         .set_destinations_column_number(Some(1))?
         .set_csv_is_correct(Some(true))
-        .set_number_of_edges(Some(edges_number));
+        .set_number_of_edges(Some(number_of_edges));
 
     let nodes_reader = NodeFileReader::new(None)
         .unwrap()
-        .set_number_of_nodes(Some(nodes_number));
+        .set_number_of_nodes(Some(number_of_nodes));
 
     let mut g = Graph::from_file_readers(
         Some(edges_reader),
@@ -175,7 +175,7 @@ fn test_prepare_edge_list_for_sorted_undirected_use() -> Result<(), String> {
 
     let _ = graph::test_utilities::default_test_suite(&mut g, Some(false));
 
-    let (_, nodes_number, _, edges_number) = build_optimal_lists_files(
+    let (_, number_of_nodes, _, number_of_edges) = build_optimal_lists_files(
         "tests/data/unsorted_macaque.tsv".to_string(),
         "tests/data/sorted_macaque.tsv".to_string(),
         true,
@@ -291,11 +291,11 @@ fn test_prepare_edge_list_for_sorted_undirected_use() -> Result<(), String> {
         .set_sources_column_number(Some(0))?
         .set_destinations_column_number(Some(1))?
         .set_csv_is_correct(Some(true))
-        .set_number_of_edges(Some(edges_number));
+        .set_number_of_edges(Some(number_of_edges));
 
     let nodes_reader = NodeFileReader::new(None)
         .unwrap()
-        .set_number_of_nodes(Some(nodes_number));
+        .set_number_of_nodes(Some(number_of_nodes));
 
     let mut g = Graph::from_file_readers(
         Some(edges_reader),
@@ -326,11 +326,11 @@ fn test_prepare_edge_list_for_sorted_undirected_use() -> Result<(), String> {
         .set_sources_column_number(Some(0))?
         .set_destinations_column_number(Some(1))?
         .set_csv_is_correct(Some(true))
-        .set_number_of_edges(Some(edges_number));
+        .set_number_of_edges(Some(number_of_edges));
 
     let nodes_reader = NodeFileReader::new(None)
         .unwrap()
-        .set_number_of_nodes(Some(nodes_number));
+        .set_number_of_nodes(Some(number_of_nodes));
 
     let mut g = Graph::from_file_readers(
         Some(edges_reader),

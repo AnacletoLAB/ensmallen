@@ -20,7 +20,7 @@ use crate::{utils::ItersWrapper, EdgeFileReader, Result, WeightT};
 /// * `default_weight`: Option<WeightT> - The default weight to use within the edge list.
 /// * `max_rows_number`: Option<usize> - The amount of rows to load from the edge list.
 /// * `rows_to_skip`: Option<usize> - The amount of rows to skip from the edge list.
-/// * `edges_number`: Option<usize> - The expected number of edges. It will be used for the loading bar.
+/// * `number_of_edges`: Option<usize> - The expected number of edges. It will be used for the loading bar.
 /// * `skip_edge_types_if_unavailable`: Option<bool> - Whether to automatically skip the edge types if they are not available.
 /// * `skip_weights_if_unavailable`: Option<bool> - Whether to automatically skip the weights if they are not available.
 /// * `verbose`: Option<bool> - Whether to show the loading bar while processing the file.
@@ -43,7 +43,7 @@ pub fn has_duplicated_edges_in_edge_list(
     default_weight: Option<WeightT>,
     max_rows_number: Option<usize>,
     rows_to_skip: Option<usize>,
-    edges_number: Option<usize>,
+    number_of_edges: Option<usize>,
     skip_edge_types_if_unavailable: Option<bool>,
     skip_weights_if_unavailable: Option<bool>,
     verbose: Option<bool>,
@@ -71,7 +71,7 @@ pub fn has_duplicated_edges_in_edge_list(
         .set_skip_edge_types_if_unavailable(skip_edge_types_if_unavailable)
         .set_skip_weights_if_unavailable(skip_weights_if_unavailable)
         // To avoid a duplicated loading bar.
-        .set_verbose(verbose.map(|verbose| verbose && edges_number.is_none()))
+        .set_verbose(verbose.map(|verbose| verbose && number_of_edges.is_none()))
         .set_graph_name(name);
     let lines_iterator = file_reader.read_lines()?;
     let lines_iterator = match lines_iterator {

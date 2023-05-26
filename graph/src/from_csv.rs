@@ -61,7 +61,7 @@ impl Graph {
                 })?,
             node_file_reader
                 .as_ref()
-                .and_then(|ntf| ntf.nodes_number.clone()),
+                .and_then(|ntf| ntf.number_of_nodes.clone()),
             node_file_reader.as_ref().map_or(false, |nfr| {
                 nfr.reader
                     .as_ref()
@@ -115,7 +115,7 @@ impl Graph {
             edge_file_reader.as_ref().and_then(|efr| efr.sorted.clone()),
             edge_file_reader
                 .as_ref()
-                .and_then(|etr| etr.edges_number.clone()),
+                .and_then(|etr| etr.number_of_edges.clone()),
             edge_file_reader
                 .as_ref()
                 .map(|etr| etr.numeric_node_ids.clone()),
@@ -141,7 +141,7 @@ impl Graph {
     /// * `node_type_list_separator`: Option<char> - The separator to use for the node types file. Note that if this is not provided, one will be automatically detected among the following`: comma, semi-column, tab and space.
     /// * `node_types_column_number`: Option<usize> - The number of the column of the node types file from where to load the node types.
     /// * `node_types_column`: Option<String> - The name of the column of the node types file from where to load the node types.
-    /// * `node_types_number`: Option<NodeTypeT> - The number of the unique node types. This will be used in order to allocate the correct size for the data structure.
+    /// * `number_of_node_types`: Option<NodeTypeT> - The number of the unique node types. This will be used in order to allocate the correct size for the data structure.
     /// * `numeric_node_type_ids`: Option<bool> - Whether the node type names should be loaded as numeric values, i.e. casted from string to a numeric representation.
     /// * `minimum_node_type_id`: Option<NodeTypeT> - The minimum node type ID to be used when using numeric node type IDs.
     /// * `node_type_list_header`: Option<bool> - Whether the node type file has an header.
@@ -167,7 +167,7 @@ impl Graph {
     /// * `node_list_node_types_column`: Option<String> - The name of the column of the node file from where to load the node types.
     /// * `node_ids_column`: Option<String> - The name of the column of the node file from where to load the node IDs.
     /// * `node_ids_column_number`: Option<usize> - The number of the column of the node file from where to load the node IDs
-    /// * `nodes_number`: Option<NodeT> - The expected number of nodes. Note that this must be the EXACT number of nodes in the graph.
+    /// * `number_of_nodes`: Option<NodeT> - The expected number of nodes. Note that this must be the EXACT number of nodes in the graph.
     /// * `minimum_node_id`: Option<NodeT> - The minimum node ID to be used, when loading the node IDs as numerical.
     /// * `numeric_node_ids`: Option<bool> - Whether to load the numeric node IDs as numeric.
     /// * `node_list_numeric_node_type_ids`: Option<bool> - Whether to load the node types IDs in the node file to be numeric.
@@ -176,7 +176,7 @@ impl Graph {
     /// * `edge_type_path`: Option<String> - The path to the file with the unique edge type names.
     /// * `edge_types_column_number`: Option<usize> - The number of the column of the edge types file from where to load the edge types.
     /// * `edge_types_column`: Option<String> - The name of the column of the edge types file from where to load the edge types.
-    /// * `edge_types_number`: Option<EdgeTypeT> - The number of the unique edge types. This will be used in order to allocate the correct size for the data structure.
+    /// * `number_of_edge_types`: Option<EdgeTypeT> - The number of the unique edge types. This will be used in order to allocate the correct size for the data structure.
     /// * `numeric_edge_type_ids`: Option<bool> - Whether the edge type names should be loaded as numeric values, i.e. casted from string to a numeric representation.
     /// * `minimum_edge_type_id`: Option<EdgeTypeT> - The minimum edge type ID to be used when using numeric edge type IDs.
     /// * `edge_type_list_separator`: Option<char> - The separator to use for the edge type list. Note that, if None is provided, one will be attempted to be detected automatically between ';', ',', tab or space.
@@ -214,7 +214,7 @@ impl Graph {
     /// * `edge_list_is_correct`: Option<bool> - Whether the edges file can be assumed to be correct, i.e. does not have something wrong in it. If this parameter is passed as true on a malformed file, the constructor will crash.
     /// * `edge_list_max_rows_number`: Option<usize> - The maximum number of lines to be loaded from the edges file.
     /// * `edge_list_comment_symbol`: Option<String> - The comment symbol to skip lines in the edges file. Lines starting with this symbol will be skipped.
-    /// * `edges_number`: Option<EdgeT> - The expected number of edges. Note that this must be the EXACT number of edges in the graph.
+    /// * `number_of_edges`: Option<EdgeT> - The expected number of edges. Note that this must be the EXACT number of edges in the graph.
     /// * `load_edge_list_in_parallel`: Option<bool> - Whether to load the edge list in parallel. Note that, if the edge IDs indices are not given, it is NOT possible to load a sorted edge list. Similarly, when loading in parallel, without edge IDs, the edges may not be loaded in a deterministic order.
     /// * `remove_chevrons`: Option<bool> - Whether remove chevrons while reading elements.
     /// * `remove_spaces`: Option<bool> - Whether remove spaces while reading elements.
@@ -233,7 +233,7 @@ impl Graph {
         node_types_column: Option<String>,
         node_types_ids_column_number: Option<usize>,
         node_types_ids_column: Option<String>,
-        node_types_number: Option<NodeTypeT>,
+        number_of_node_types: Option<NodeTypeT>,
         numeric_node_type_ids: Option<bool>,
         minimum_node_type_id: Option<NodeTypeT>,
         node_type_list_header: Option<bool>,
@@ -260,7 +260,7 @@ impl Graph {
         node_list_node_types_column: Option<String>,
         node_ids_column: Option<String>,
         node_ids_column_number: Option<usize>,
-        nodes_number: Option<NodeT>,
+        number_of_nodes: Option<NodeT>,
         minimum_node_id: Option<NodeT>,
         numeric_node_ids: Option<bool>,
         node_list_numeric_node_type_ids: Option<bool>,
@@ -272,7 +272,7 @@ impl Graph {
         edge_types_column: Option<String>,
         edge_types_ids_column_number: Option<usize>,
         edge_types_ids_column: Option<String>,
-        edge_types_number: Option<EdgeTypeT>,
+        number_of_edge_types: Option<EdgeTypeT>,
         numeric_edge_type_ids: Option<bool>,
         minimum_edge_type_id: Option<EdgeTypeT>,
         edge_type_list_separator: Option<char>,
@@ -311,7 +311,7 @@ impl Graph {
         edge_list_is_correct: Option<bool>,
         edge_list_max_rows_number: Option<usize>,
         edge_list_comment_symbol: Option<String>,
-        edges_number: Option<EdgeT>,
+        number_of_edges: Option<EdgeT>,
         load_edge_list_in_parallel: Option<bool>,
 
         remove_chevrons: Option<bool>,
@@ -378,7 +378,7 @@ impl Graph {
 
         let name = name.unwrap_or("Graph".to_string());
         let node_type_file_reader: Option<TypeFileReader<NodeTypeT>> =
-            if node_type_path.is_some() || node_types_number.is_some() {
+            if node_type_path.is_some() || number_of_node_types.is_some() {
                 Some(
                     TypeFileReader::new(node_type_path)?
                         .set_comment_symbol(node_type_list_comment_symbol)?
@@ -394,7 +394,7 @@ impl Graph {
                         .set_minimum_type_id(minimum_node_type_id)
                         .set_numeric_type_ids(numeric_node_type_ids)
                         .set_csv_is_correct(node_type_list_is_correct)?
-                        .set_types_number(node_types_number)
+                        .set_types_number(number_of_node_types)
                         .set_parallel(load_node_type_list_in_parallel)?
                         .set_remove_chevrons(remove_chevrons)
                         .set_remove_spaces(remove_spaces)
@@ -459,7 +459,7 @@ impl Graph {
         }
         
         let edge_type_file_reader: Option<TypeFileReader<EdgeTypeT>> =
-            if edge_type_path.is_some() || edge_types_number.is_some() {
+            if edge_type_path.is_some() || number_of_edge_types.is_some() {
                 Some(
                     TypeFileReader::new(edge_type_path)?
                         .set_comment_symbol(edge_type_list_comment_symbol)?
@@ -475,7 +475,7 @@ impl Graph {
                         .set_minimum_type_id(minimum_edge_type_id)
                         .set_numeric_type_ids(numeric_edge_type_ids)
                         .set_csv_is_correct(edge_type_list_is_correct)?
-                        .set_types_number(edge_types_number)
+                        .set_types_number(number_of_edge_types)
                         .set_parallel(load_edge_type_list_in_parallel)?
                         .set_remove_chevrons(remove_chevrons)
                         .set_remove_spaces(remove_spaces)
@@ -485,7 +485,7 @@ impl Graph {
                 None
             };
 
-        let node_file_reader = if node_path.is_some() || nodes_number.is_some() {
+        let node_file_reader = if node_path.is_some() || number_of_nodes.is_some() {
             Some(
                 NodeFileReader::new(node_path)?
                     .set_comment_symbol(node_list_comment_symbol)?
@@ -507,7 +507,7 @@ impl Graph {
                     .set_numeric_node_ids(numeric_node_ids)
                     .set_numeric_node_type_ids(node_list_numeric_node_type_ids)?
                     .set_csv_is_correct(node_list_is_correct)?
-                    .set_number_of_nodes(nodes_number)
+                    .set_number_of_nodes(number_of_nodes)
                     .set_parallel(load_node_list_in_parallel)?
                     .set_remove_chevrons(remove_chevrons)
                     .set_remove_spaces(remove_spaces)
@@ -546,7 +546,7 @@ impl Graph {
                     .set_sorted(edge_list_is_sorted)
                     .set_may_have_duplicates(edge_list_may_contain_duplicates)
                     .set_csv_is_correct(edge_list_is_correct)
-                    .set_number_of_edges(edges_number)
+                    .set_number_of_edges(number_of_edges)
                     .set_parallel(load_edge_list_in_parallel)
                     .set_remove_chevrons(remove_chevrons)
                     .set_remove_spaces(remove_spaces)
