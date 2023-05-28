@@ -1,51 +1,52 @@
 use super::*;
 use serde::{Deserialize, Serialize};
 use serde_json;
+use cpu_models::HyperJaccard as HJ;
 
 #[derive(Serialize, Deserialize, Clone)]
 /// HyperJaccard models.
 enum InnerModel {
     /// HyperJaccard model.
-    /// HyperJaccard{precision}_{bits}(cpu_models::HyperJaccard<{precision}, {bits}>), {python_macro}
-    HyperJaccard4_4(cpu_models::HyperJaccard<4, 4>), // {python_generated}
-    HyperJaccard4_5(cpu_models::HyperJaccard<4, 5>), // {python_generated}
-    HyperJaccard4_6(cpu_models::HyperJaccard<4, 6>), // {python_generated}
-    HyperJaccard5_4(cpu_models::HyperJaccard<5, 4>), // {python_generated}
-    HyperJaccard5_5(cpu_models::HyperJaccard<5, 5>), // {python_generated}
-    HyperJaccard5_6(cpu_models::HyperJaccard<5, 6>), // {python_generated}
-    HyperJaccard6_4(cpu_models::HyperJaccard<6, 4>), // {python_generated}
-    HyperJaccard6_5(cpu_models::HyperJaccard<6, 5>), // {python_generated}
-    HyperJaccard6_6(cpu_models::HyperJaccard<6, 6>), // {python_generated}
-    HyperJaccard7_4(cpu_models::HyperJaccard<7, 4>), // {python_generated}
-    HyperJaccard7_5(cpu_models::HyperJaccard<7, 5>), // {python_generated}
-    HyperJaccard7_6(cpu_models::HyperJaccard<7, 6>), // {python_generated}
-    HyperJaccard8_4(cpu_models::HyperJaccard<8, 4>), // {python_generated}
-    HyperJaccard8_5(cpu_models::HyperJaccard<8, 5>), // {python_generated}
-    HyperJaccard8_6(cpu_models::HyperJaccard<8, 6>), // {python_generated}
-    HyperJaccard9_4(cpu_models::HyperJaccard<9, 4>), // {python_generated}
-    HyperJaccard9_5(cpu_models::HyperJaccard<9, 5>), // {python_generated}
-    HyperJaccard9_6(cpu_models::HyperJaccard<9, 6>), // {python_generated}
-    HyperJaccard10_4(cpu_models::HyperJaccard<10, 4>), // {python_generated}
-    HyperJaccard10_5(cpu_models::HyperJaccard<10, 5>), // {python_generated}
-    HyperJaccard10_6(cpu_models::HyperJaccard<10, 6>), // {python_generated}
-    HyperJaccard11_4(cpu_models::HyperJaccard<11, 4>), // {python_generated}
-    HyperJaccard11_5(cpu_models::HyperJaccard<11, 5>), // {python_generated}
-    HyperJaccard11_6(cpu_models::HyperJaccard<11, 6>), // {python_generated}
-    HyperJaccard12_4(cpu_models::HyperJaccard<12, 4>), // {python_generated}
-    HyperJaccard12_5(cpu_models::HyperJaccard<12, 5>), // {python_generated}
-    HyperJaccard12_6(cpu_models::HyperJaccard<12, 6>), // {python_generated}
-    HyperJaccard13_4(cpu_models::HyperJaccard<13, 4>), // {python_generated}
-    HyperJaccard13_5(cpu_models::HyperJaccard<13, 5>), // {python_generated}
-    HyperJaccard13_6(cpu_models::HyperJaccard<13, 6>), // {python_generated}
-    HyperJaccard14_4(cpu_models::HyperJaccard<14, 4>), // {python_generated}
-    HyperJaccard14_5(cpu_models::HyperJaccard<14, 5>), // {python_generated}
-    HyperJaccard14_6(cpu_models::HyperJaccard<14, 6>), // {python_generated}
-    HyperJaccard15_4(cpu_models::HyperJaccard<15, 4>), // {python_generated}
-    HyperJaccard15_5(cpu_models::HyperJaccard<15, 5>), // {python_generated}
-    HyperJaccard15_6(cpu_models::HyperJaccard<15, 6>), // {python_generated}
-    HyperJaccard16_4(cpu_models::HyperJaccard<16, 4>), // {python_generated}
-    HyperJaccard16_5(cpu_models::HyperJaccard<16, 5>), // {python_generated}
-    HyperJaccard16_6(cpu_models::HyperJaccard<16, 6>), // {python_generated}
+    /// HJ{precision}_{bits}(HJ<{precision}, {bits}>), {python_macro}
+    HJ4_4(HJ<4, 4>), // {python_generated}
+    HJ4_5(HJ<4, 5>), // {python_generated}
+    HJ4_6(HJ<4, 6>), // {python_generated}
+    HJ5_4(HJ<5, 4>), // {python_generated}
+    HJ5_5(HJ<5, 5>), // {python_generated}
+    HJ5_6(HJ<5, 6>), // {python_generated}
+    HJ6_4(HJ<6, 4>), // {python_generated}
+    HJ6_5(HJ<6, 5>), // {python_generated}
+    HJ6_6(HJ<6, 6>), // {python_generated}
+    HJ7_4(HJ<7, 4>), // {python_generated}
+    HJ7_5(HJ<7, 5>), // {python_generated}
+    HJ7_6(HJ<7, 6>), // {python_generated}
+    HJ8_4(HJ<8, 4>), // {python_generated}
+    HJ8_5(HJ<8, 5>), // {python_generated}
+    HJ8_6(HJ<8, 6>), // {python_generated}
+    HJ9_4(HJ<9, 4>), // {python_generated}
+    HJ9_5(HJ<9, 5>), // {python_generated}
+    HJ9_6(HJ<9, 6>), // {python_generated}
+    HJ10_4(HJ<10, 4>), // {python_generated}
+    HJ10_5(HJ<10, 5>), // {python_generated}
+    HJ10_6(HJ<10, 6>), // {python_generated}
+    HJ11_4(HJ<11, 4>), // {python_generated}
+    HJ11_5(HJ<11, 5>), // {python_generated}
+    HJ11_6(HJ<11, 6>), // {python_generated}
+    HJ12_4(HJ<12, 4>), // {python_generated}
+    HJ12_5(HJ<12, 5>), // {python_generated}
+    HJ12_6(HJ<12, 6>), // {python_generated}
+    HJ13_4(HJ<13, 4>), // {python_generated}
+    HJ13_5(HJ<13, 5>), // {python_generated}
+    HJ13_6(HJ<13, 6>), // {python_generated}
+    HJ14_4(HJ<14, 4>), // {python_generated}
+    HJ14_5(HJ<14, 5>), // {python_generated}
+    HJ14_6(HJ<14, 6>), // {python_generated}
+    HJ15_4(HJ<15, 4>), // {python_generated}
+    HJ15_5(HJ<15, 5>), // {python_generated}
+    HJ15_6(HJ<15, 6>), // {python_generated}
+    HJ16_4(HJ<16, 4>), // {python_generated}
+    HJ16_5(HJ<16, 5>), // {python_generated}
+    HJ16_6(HJ<16, 6>), // {python_generated}
 }
 
 impl InnerModel {
@@ -54,124 +55,46 @@ impl InnerModel {
         // for very hard to read code, we proceed instead with a Python script.
 
         match (precision, bits) {
-            // ({precision}, {bits}) => Ok(InnerModel::HyperJaccard{precision}_{bits}(cpu_models::HyperJaccard::new(number_of_hops)?)), {python_macro}
-            (4, 4) => Ok(InnerModel::HyperJaccard4_4(cpu_models::HyperJaccard::new(
-                number_of_hops,
-            )?)), // {python_generated}
-            (4, 5) => Ok(InnerModel::HyperJaccard4_5(cpu_models::HyperJaccard::new(
-                number_of_hops,
-            )?)), // {python_generated}
-            (4, 6) => Ok(InnerModel::HyperJaccard4_6(cpu_models::HyperJaccard::new(
-                number_of_hops,
-            )?)), // {python_generated}
-            (5, 4) => Ok(InnerModel::HyperJaccard5_4(cpu_models::HyperJaccard::new(
-                number_of_hops,
-            )?)), // {python_generated}
-            (5, 5) => Ok(InnerModel::HyperJaccard5_5(cpu_models::HyperJaccard::new(
-                number_of_hops,
-            )?)), // {python_generated}
-            (5, 6) => Ok(InnerModel::HyperJaccard5_6(cpu_models::HyperJaccard::new(
-                number_of_hops,
-            )?)), // {python_generated}
-            (6, 4) => Ok(InnerModel::HyperJaccard6_4(cpu_models::HyperJaccard::new(
-                number_of_hops,
-            )?)), // {python_generated}
-            (6, 5) => Ok(InnerModel::HyperJaccard6_5(cpu_models::HyperJaccard::new(
-                number_of_hops,
-            )?)), // {python_generated}
-            (6, 6) => Ok(InnerModel::HyperJaccard6_6(cpu_models::HyperJaccard::new(
-                number_of_hops,
-            )?)), // {python_generated}
-            (7, 4) => Ok(InnerModel::HyperJaccard7_4(cpu_models::HyperJaccard::new(
-                number_of_hops,
-            )?)), // {python_generated}
-            (7, 5) => Ok(InnerModel::HyperJaccard7_5(cpu_models::HyperJaccard::new(
-                number_of_hops,
-            )?)), // {python_generated}
-            (7, 6) => Ok(InnerModel::HyperJaccard7_6(cpu_models::HyperJaccard::new(
-                number_of_hops,
-            )?)), // {python_generated}
-            (8, 4) => Ok(InnerModel::HyperJaccard8_4(cpu_models::HyperJaccard::new(
-                number_of_hops,
-            )?)), // {python_generated}
-            (8, 5) => Ok(InnerModel::HyperJaccard8_5(cpu_models::HyperJaccard::new(
-                number_of_hops,
-            )?)), // {python_generated}
-            (8, 6) => Ok(InnerModel::HyperJaccard8_6(cpu_models::HyperJaccard::new(
-                number_of_hops,
-            )?)), // {python_generated}
-            (9, 4) => Ok(InnerModel::HyperJaccard9_4(cpu_models::HyperJaccard::new(
-                number_of_hops,
-            )?)), // {python_generated}
-            (9, 5) => Ok(InnerModel::HyperJaccard9_5(cpu_models::HyperJaccard::new(
-                number_of_hops,
-            )?)), // {python_generated}
-            (9, 6) => Ok(InnerModel::HyperJaccard9_6(cpu_models::HyperJaccard::new(
-                number_of_hops,
-            )?)), // {python_generated}
-            (10, 4) => Ok(InnerModel::HyperJaccard10_4(cpu_models::HyperJaccard::new(
-                number_of_hops,
-            )?)), // {python_generated}
-            (10, 5) => Ok(InnerModel::HyperJaccard10_5(cpu_models::HyperJaccard::new(
-                number_of_hops,
-            )?)), // {python_generated}
-            (10, 6) => Ok(InnerModel::HyperJaccard10_6(cpu_models::HyperJaccard::new(
-                number_of_hops,
-            )?)), // {python_generated}
-            (11, 4) => Ok(InnerModel::HyperJaccard11_4(cpu_models::HyperJaccard::new(
-                number_of_hops,
-            )?)), // {python_generated}
-            (11, 5) => Ok(InnerModel::HyperJaccard11_5(cpu_models::HyperJaccard::new(
-                number_of_hops,
-            )?)), // {python_generated}
-            (11, 6) => Ok(InnerModel::HyperJaccard11_6(cpu_models::HyperJaccard::new(
-                number_of_hops,
-            )?)), // {python_generated}
-            (12, 4) => Ok(InnerModel::HyperJaccard12_4(cpu_models::HyperJaccard::new(
-                number_of_hops,
-            )?)), // {python_generated}
-            (12, 5) => Ok(InnerModel::HyperJaccard12_5(cpu_models::HyperJaccard::new(
-                number_of_hops,
-            )?)), // {python_generated}
-            (12, 6) => Ok(InnerModel::HyperJaccard12_6(cpu_models::HyperJaccard::new(
-                number_of_hops,
-            )?)), // {python_generated}
-            (13, 4) => Ok(InnerModel::HyperJaccard13_4(cpu_models::HyperJaccard::new(
-                number_of_hops,
-            )?)), // {python_generated}
-            (13, 5) => Ok(InnerModel::HyperJaccard13_5(cpu_models::HyperJaccard::new(
-                number_of_hops,
-            )?)), // {python_generated}
-            (13, 6) => Ok(InnerModel::HyperJaccard13_6(cpu_models::HyperJaccard::new(
-                number_of_hops,
-            )?)), // {python_generated}
-            (14, 4) => Ok(InnerModel::HyperJaccard14_4(cpu_models::HyperJaccard::new(
-                number_of_hops,
-            )?)), // {python_generated}
-            (14, 5) => Ok(InnerModel::HyperJaccard14_5(cpu_models::HyperJaccard::new(
-                number_of_hops,
-            )?)), // {python_generated}
-            (14, 6) => Ok(InnerModel::HyperJaccard14_6(cpu_models::HyperJaccard::new(
-                number_of_hops,
-            )?)), // {python_generated}
-            (15, 4) => Ok(InnerModel::HyperJaccard15_4(cpu_models::HyperJaccard::new(
-                number_of_hops,
-            )?)), // {python_generated}
-            (15, 5) => Ok(InnerModel::HyperJaccard15_5(cpu_models::HyperJaccard::new(
-                number_of_hops,
-            )?)), // {python_generated}
-            (15, 6) => Ok(InnerModel::HyperJaccard15_6(cpu_models::HyperJaccard::new(
-                number_of_hops,
-            )?)), // {python_generated}
-            (16, 4) => Ok(InnerModel::HyperJaccard16_4(cpu_models::HyperJaccard::new(
-                number_of_hops,
-            )?)), // {python_generated}
-            (16, 5) => Ok(InnerModel::HyperJaccard16_5(cpu_models::HyperJaccard::new(
-                number_of_hops,
-            )?)), // {python_generated}
-            (16, 6) => Ok(InnerModel::HyperJaccard16_6(cpu_models::HyperJaccard::new(
-                number_of_hops,
-            )?)), // {python_generated}
+            // ({precision}, {bits}) => Ok(InnerModel::HJ{precision}_{bits}(HJ::new(number_of_hops)?)), {python_macro}
+            (4, 4) => Ok(InnerModel::HJ4_4(HJ::new(number_of_hops)?)), // {python_generated}
+            (4, 5) => Ok(InnerModel::HJ4_5(HJ::new(number_of_hops)?)), // {python_generated}
+            (4, 6) => Ok(InnerModel::HJ4_6(HJ::new(number_of_hops)?)), // {python_generated}
+            (5, 4) => Ok(InnerModel::HJ5_4(HJ::new(number_of_hops)?)), // {python_generated}
+            (5, 5) => Ok(InnerModel::HJ5_5(HJ::new(number_of_hops)?)), // {python_generated}
+            (5, 6) => Ok(InnerModel::HJ5_6(HJ::new(number_of_hops)?)), // {python_generated}
+            (6, 4) => Ok(InnerModel::HJ6_4(HJ::new(number_of_hops)?)), // {python_generated}
+            (6, 5) => Ok(InnerModel::HJ6_5(HJ::new(number_of_hops)?)), // {python_generated}
+            (6, 6) => Ok(InnerModel::HJ6_6(HJ::new(number_of_hops)?)), // {python_generated}
+            (7, 4) => Ok(InnerModel::HJ7_4(HJ::new(number_of_hops)?)), // {python_generated}
+            (7, 5) => Ok(InnerModel::HJ7_5(HJ::new(number_of_hops)?)), // {python_generated}
+            (7, 6) => Ok(InnerModel::HJ7_6(HJ::new(number_of_hops)?)), // {python_generated}
+            (8, 4) => Ok(InnerModel::HJ8_4(HJ::new(number_of_hops)?)), // {python_generated}
+            (8, 5) => Ok(InnerModel::HJ8_5(HJ::new(number_of_hops)?)), // {python_generated}
+            (8, 6) => Ok(InnerModel::HJ8_6(HJ::new(number_of_hops)?)), // {python_generated}
+            (9, 4) => Ok(InnerModel::HJ9_4(HJ::new(number_of_hops)?)), // {python_generated}
+            (9, 5) => Ok(InnerModel::HJ9_5(HJ::new(number_of_hops)?)), // {python_generated}
+            (9, 6) => Ok(InnerModel::HJ9_6(HJ::new(number_of_hops)?)), // {python_generated}
+            (10, 4) => Ok(InnerModel::HJ10_4(HJ::new(number_of_hops)?)), // {python_generated}
+            (10, 5) => Ok(InnerModel::HJ10_5(HJ::new(number_of_hops)?)), // {python_generated}
+            (10, 6) => Ok(InnerModel::HJ10_6(HJ::new(number_of_hops)?)), // {python_generated}
+            (11, 4) => Ok(InnerModel::HJ11_4(HJ::new(number_of_hops)?)), // {python_generated}
+            (11, 5) => Ok(InnerModel::HJ11_5(HJ::new(number_of_hops)?)), // {python_generated}
+            (11, 6) => Ok(InnerModel::HJ11_6(HJ::new(number_of_hops)?)), // {python_generated}
+            (12, 4) => Ok(InnerModel::HJ12_4(HJ::new(number_of_hops)?)), // {python_generated}
+            (12, 5) => Ok(InnerModel::HJ12_5(HJ::new(number_of_hops)?)), // {python_generated}
+            (12, 6) => Ok(InnerModel::HJ12_6(HJ::new(number_of_hops)?)), // {python_generated}
+            (13, 4) => Ok(InnerModel::HJ13_4(HJ::new(number_of_hops)?)), // {python_generated}
+            (13, 5) => Ok(InnerModel::HJ13_5(HJ::new(number_of_hops)?)), // {python_generated}
+            (13, 6) => Ok(InnerModel::HJ13_6(HJ::new(number_of_hops)?)), // {python_generated}
+            (14, 4) => Ok(InnerModel::HJ14_4(HJ::new(number_of_hops)?)), // {python_generated}
+            (14, 5) => Ok(InnerModel::HJ14_5(HJ::new(number_of_hops)?)), // {python_generated}
+            (14, 6) => Ok(InnerModel::HJ14_6(HJ::new(number_of_hops)?)), // {python_generated}
+            (15, 4) => Ok(InnerModel::HJ15_4(HJ::new(number_of_hops)?)), // {python_generated}
+            (15, 5) => Ok(InnerModel::HJ15_5(HJ::new(number_of_hops)?)), // {python_generated}
+            (15, 6) => Ok(InnerModel::HJ15_6(HJ::new(number_of_hops)?)), // {python_generated}
+            (16, 4) => Ok(InnerModel::HJ16_4(HJ::new(number_of_hops)?)), // {python_generated}
+            (16, 5) => Ok(InnerModel::HJ16_5(HJ::new(number_of_hops)?)), // {python_generated}
+            (16, 6) => Ok(InnerModel::HJ16_6(HJ::new(number_of_hops)?)), // {python_generated}
             _ => {
                 return Err(format!(
                     concat!(
@@ -193,46 +116,46 @@ impl InnerModel {
     ///    The graph whose topology is to be learned.
     fn fit(&mut self, graph: &graph::Graph) -> Result<()> {
         match self {
-            // InnerModel::HyperJaccard{precision}_{bits}(inner) => inner.fit(graph), {python_macro}
-            InnerModel::HyperJaccard4_4(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HyperJaccard4_5(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HyperJaccard4_6(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HyperJaccard5_4(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HyperJaccard5_5(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HyperJaccard5_6(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HyperJaccard6_4(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HyperJaccard6_5(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HyperJaccard6_6(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HyperJaccard7_4(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HyperJaccard7_5(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HyperJaccard7_6(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HyperJaccard8_4(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HyperJaccard8_5(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HyperJaccard8_6(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HyperJaccard9_4(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HyperJaccard9_5(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HyperJaccard9_6(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HyperJaccard10_4(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HyperJaccard10_5(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HyperJaccard10_6(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HyperJaccard11_4(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HyperJaccard11_5(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HyperJaccard11_6(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HyperJaccard12_4(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HyperJaccard12_5(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HyperJaccard12_6(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HyperJaccard13_4(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HyperJaccard13_5(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HyperJaccard13_6(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HyperJaccard14_4(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HyperJaccard14_5(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HyperJaccard14_6(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HyperJaccard15_4(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HyperJaccard15_5(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HyperJaccard15_6(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HyperJaccard16_4(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HyperJaccard16_5(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HyperJaccard16_6(inner) => inner.fit(graph), // {python_generated}
+            // InnerModel::HJ{precision}_{bits}(inner) => inner.fit(graph), {python_macro}
+            InnerModel::HJ4_4(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HJ4_5(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HJ4_6(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HJ5_4(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HJ5_5(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HJ5_6(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HJ6_4(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HJ6_5(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HJ6_6(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HJ7_4(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HJ7_5(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HJ7_6(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HJ8_4(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HJ8_5(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HJ8_6(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HJ9_4(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HJ9_5(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HJ9_6(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HJ10_4(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HJ10_5(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HJ10_6(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HJ11_4(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HJ11_5(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HJ11_6(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HJ12_4(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HJ12_5(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HJ12_6(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HJ13_4(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HJ13_5(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HJ13_6(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HJ14_4(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HJ14_5(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HJ14_6(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HJ15_4(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HJ15_5(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HJ15_6(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HJ16_4(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HJ16_5(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HJ16_6(inner) => inner.fit(graph), // {python_generated}
         }
     }
 
@@ -246,46 +169,46 @@ impl InnerModel {
     ///     The destination node of the edge.
     fn get_jaccard_from_node_ids(&self, src: usize, dst: usize) -> Result<f32> {
         match self {
-            // InnerModel::HyperJaccard{precision}_{bits}(inner) => inner.get_jaccard_from_node_ids(src, dst), {python_macro}
-            InnerModel::HyperJaccard4_4(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
-            InnerModel::HyperJaccard4_5(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
-            InnerModel::HyperJaccard4_6(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
-            InnerModel::HyperJaccard5_4(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
-            InnerModel::HyperJaccard5_5(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
-            InnerModel::HyperJaccard5_6(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
-            InnerModel::HyperJaccard6_4(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
-            InnerModel::HyperJaccard6_5(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
-            InnerModel::HyperJaccard6_6(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
-            InnerModel::HyperJaccard7_4(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
-            InnerModel::HyperJaccard7_5(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
-            InnerModel::HyperJaccard7_6(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
-            InnerModel::HyperJaccard8_4(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
-            InnerModel::HyperJaccard8_5(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
-            InnerModel::HyperJaccard8_6(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
-            InnerModel::HyperJaccard9_4(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
-            InnerModel::HyperJaccard9_5(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
-            InnerModel::HyperJaccard9_6(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
-            InnerModel::HyperJaccard10_4(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
-            InnerModel::HyperJaccard10_5(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
-            InnerModel::HyperJaccard10_6(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
-            InnerModel::HyperJaccard11_4(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
-            InnerModel::HyperJaccard11_5(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
-            InnerModel::HyperJaccard11_6(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
-            InnerModel::HyperJaccard12_4(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
-            InnerModel::HyperJaccard12_5(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
-            InnerModel::HyperJaccard12_6(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
-            InnerModel::HyperJaccard13_4(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
-            InnerModel::HyperJaccard13_5(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
-            InnerModel::HyperJaccard13_6(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
-            InnerModel::HyperJaccard14_4(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
-            InnerModel::HyperJaccard14_5(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
-            InnerModel::HyperJaccard14_6(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
-            InnerModel::HyperJaccard15_4(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
-            InnerModel::HyperJaccard15_5(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
-            InnerModel::HyperJaccard15_6(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
-            InnerModel::HyperJaccard16_4(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
-            InnerModel::HyperJaccard16_5(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
-            InnerModel::HyperJaccard16_6(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
+            // InnerModel::HJ{precision}_{bits}(inner) => inner.get_jaccard_from_node_ids(src, dst), {python_macro}
+            InnerModel::HJ4_4(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
+            InnerModel::HJ4_5(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
+            InnerModel::HJ4_6(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
+            InnerModel::HJ5_4(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
+            InnerModel::HJ5_5(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
+            InnerModel::HJ5_6(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
+            InnerModel::HJ6_4(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
+            InnerModel::HJ6_5(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
+            InnerModel::HJ6_6(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
+            InnerModel::HJ7_4(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
+            InnerModel::HJ7_5(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
+            InnerModel::HJ7_6(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
+            InnerModel::HJ8_4(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
+            InnerModel::HJ8_5(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
+            InnerModel::HJ8_6(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
+            InnerModel::HJ9_4(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
+            InnerModel::HJ9_5(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
+            InnerModel::HJ9_6(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
+            InnerModel::HJ10_4(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
+            InnerModel::HJ10_5(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
+            InnerModel::HJ10_6(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
+            InnerModel::HJ11_4(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
+            InnerModel::HJ11_5(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
+            InnerModel::HJ11_6(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
+            InnerModel::HJ12_4(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
+            InnerModel::HJ12_5(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
+            InnerModel::HJ12_6(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
+            InnerModel::HJ13_4(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
+            InnerModel::HJ13_5(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
+            InnerModel::HJ13_6(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
+            InnerModel::HJ14_4(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
+            InnerModel::HJ14_5(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
+            InnerModel::HJ14_6(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
+            InnerModel::HJ15_4(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
+            InnerModel::HJ15_5(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
+            InnerModel::HJ15_6(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
+            InnerModel::HJ16_4(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
+            InnerModel::HJ16_5(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
+            InnerModel::HJ16_6(inner) => inner.get_jaccard_from_node_ids(src, dst), // {python_generated}
         }
     }
 
@@ -299,46 +222,46 @@ impl InnerModel {
     ///     The destination node of the edge.
     fn get_union(&self, src: usize, dst: usize) -> Result<f32> {
         match self {
-            // InnerModel::HyperJaccard{precision}_{bits}(inner) => inner.get_union_cardinality(src, dst), {python_macro}
-            InnerModel::HyperJaccard4_4(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
-            InnerModel::HyperJaccard4_5(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
-            InnerModel::HyperJaccard4_6(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
-            InnerModel::HyperJaccard5_4(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
-            InnerModel::HyperJaccard5_5(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
-            InnerModel::HyperJaccard5_6(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
-            InnerModel::HyperJaccard6_4(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
-            InnerModel::HyperJaccard6_5(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
-            InnerModel::HyperJaccard6_6(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
-            InnerModel::HyperJaccard7_4(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
-            InnerModel::HyperJaccard7_5(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
-            InnerModel::HyperJaccard7_6(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
-            InnerModel::HyperJaccard8_4(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
-            InnerModel::HyperJaccard8_5(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
-            InnerModel::HyperJaccard8_6(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
-            InnerModel::HyperJaccard9_4(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
-            InnerModel::HyperJaccard9_5(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
-            InnerModel::HyperJaccard9_6(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
-            InnerModel::HyperJaccard10_4(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
-            InnerModel::HyperJaccard10_5(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
-            InnerModel::HyperJaccard10_6(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
-            InnerModel::HyperJaccard11_4(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
-            InnerModel::HyperJaccard11_5(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
-            InnerModel::HyperJaccard11_6(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
-            InnerModel::HyperJaccard12_4(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
-            InnerModel::HyperJaccard12_5(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
-            InnerModel::HyperJaccard12_6(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
-            InnerModel::HyperJaccard13_4(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
-            InnerModel::HyperJaccard13_5(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
-            InnerModel::HyperJaccard13_6(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
-            InnerModel::HyperJaccard14_4(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
-            InnerModel::HyperJaccard14_5(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
-            InnerModel::HyperJaccard14_6(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
-            InnerModel::HyperJaccard15_4(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
-            InnerModel::HyperJaccard15_5(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
-            InnerModel::HyperJaccard15_6(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
-            InnerModel::HyperJaccard16_4(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
-            InnerModel::HyperJaccard16_5(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
-            InnerModel::HyperJaccard16_6(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
+            // InnerModel::HJ{precision}_{bits}(inner) => inner.get_union_cardinality(src, dst), {python_macro}
+            InnerModel::HJ4_4(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
+            InnerModel::HJ4_5(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
+            InnerModel::HJ4_6(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
+            InnerModel::HJ5_4(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
+            InnerModel::HJ5_5(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
+            InnerModel::HJ5_6(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
+            InnerModel::HJ6_4(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
+            InnerModel::HJ6_5(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
+            InnerModel::HJ6_6(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
+            InnerModel::HJ7_4(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
+            InnerModel::HJ7_5(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
+            InnerModel::HJ7_6(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
+            InnerModel::HJ8_4(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
+            InnerModel::HJ8_5(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
+            InnerModel::HJ8_6(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
+            InnerModel::HJ9_4(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
+            InnerModel::HJ9_5(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
+            InnerModel::HJ9_6(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
+            InnerModel::HJ10_4(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
+            InnerModel::HJ10_5(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
+            InnerModel::HJ10_6(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
+            InnerModel::HJ11_4(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
+            InnerModel::HJ11_5(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
+            InnerModel::HJ11_6(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
+            InnerModel::HJ12_4(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
+            InnerModel::HJ12_5(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
+            InnerModel::HJ12_6(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
+            InnerModel::HJ13_4(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
+            InnerModel::HJ13_5(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
+            InnerModel::HJ13_6(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
+            InnerModel::HJ14_4(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
+            InnerModel::HJ14_5(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
+            InnerModel::HJ14_6(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
+            InnerModel::HJ15_4(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
+            InnerModel::HJ15_5(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
+            InnerModel::HJ15_6(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
+            InnerModel::HJ16_4(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
+            InnerModel::HJ16_5(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
+            InnerModel::HJ16_6(inner) => inner.get_union_cardinality(src, dst), // {python_generated}
         }
     }
 
@@ -356,46 +279,46 @@ impl InnerModel {
     ///     If the model has not been trained.
     fn get_neighbourhood_cardinality(&self, node: usize) -> Result<f32> {
         match self {
-            // InnerModel::HyperJaccard{precision}_{bits}(inner) => inner.get_neighbourhood_cardinality(node), {python_macro}
-            InnerModel::HyperJaccard4_4(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
-            InnerModel::HyperJaccard4_5(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
-            InnerModel::HyperJaccard4_6(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
-            InnerModel::HyperJaccard5_4(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
-            InnerModel::HyperJaccard5_5(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
-            InnerModel::HyperJaccard5_6(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
-            InnerModel::HyperJaccard6_4(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
-            InnerModel::HyperJaccard6_5(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
-            InnerModel::HyperJaccard6_6(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
-            InnerModel::HyperJaccard7_4(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
-            InnerModel::HyperJaccard7_5(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
-            InnerModel::HyperJaccard7_6(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
-            InnerModel::HyperJaccard8_4(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
-            InnerModel::HyperJaccard8_5(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
-            InnerModel::HyperJaccard8_6(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
-            InnerModel::HyperJaccard9_4(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
-            InnerModel::HyperJaccard9_5(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
-            InnerModel::HyperJaccard9_6(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
-            InnerModel::HyperJaccard10_4(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
-            InnerModel::HyperJaccard10_5(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
-            InnerModel::HyperJaccard10_6(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
-            InnerModel::HyperJaccard11_4(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
-            InnerModel::HyperJaccard11_5(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
-            InnerModel::HyperJaccard11_6(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
-            InnerModel::HyperJaccard12_4(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
-            InnerModel::HyperJaccard12_5(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
-            InnerModel::HyperJaccard12_6(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
-            InnerModel::HyperJaccard13_4(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
-            InnerModel::HyperJaccard13_5(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
-            InnerModel::HyperJaccard13_6(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
-            InnerModel::HyperJaccard14_4(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
-            InnerModel::HyperJaccard14_5(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
-            InnerModel::HyperJaccard14_6(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
-            InnerModel::HyperJaccard15_4(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
-            InnerModel::HyperJaccard15_5(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
-            InnerModel::HyperJaccard15_6(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
-            InnerModel::HyperJaccard16_4(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
-            InnerModel::HyperJaccard16_5(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
-            InnerModel::HyperJaccard16_6(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
+            // InnerModel::HJ{precision}_{bits}(inner) => inner.get_neighbourhood_cardinality(node), {python_macro}
+            InnerModel::HJ4_4(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
+            InnerModel::HJ4_5(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
+            InnerModel::HJ4_6(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
+            InnerModel::HJ5_4(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
+            InnerModel::HJ5_5(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
+            InnerModel::HJ5_6(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
+            InnerModel::HJ6_4(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
+            InnerModel::HJ6_5(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
+            InnerModel::HJ6_6(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
+            InnerModel::HJ7_4(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
+            InnerModel::HJ7_5(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
+            InnerModel::HJ7_6(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
+            InnerModel::HJ8_4(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
+            InnerModel::HJ8_5(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
+            InnerModel::HJ8_6(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
+            InnerModel::HJ9_4(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
+            InnerModel::HJ9_5(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
+            InnerModel::HJ9_6(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
+            InnerModel::HJ10_4(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
+            InnerModel::HJ10_5(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
+            InnerModel::HJ10_6(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
+            InnerModel::HJ11_4(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
+            InnerModel::HJ11_5(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
+            InnerModel::HJ11_6(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
+            InnerModel::HJ12_4(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
+            InnerModel::HJ12_5(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
+            InnerModel::HJ12_6(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
+            InnerModel::HJ13_4(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
+            InnerModel::HJ13_5(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
+            InnerModel::HJ13_6(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
+            InnerModel::HJ14_4(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
+            InnerModel::HJ14_5(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
+            InnerModel::HJ14_6(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
+            InnerModel::HJ15_4(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
+            InnerModel::HJ15_5(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
+            InnerModel::HJ15_6(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
+            InnerModel::HJ16_4(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
+            InnerModel::HJ16_5(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
+            InnerModel::HJ16_6(inner) => inner.get_neighbourhood_cardinality(node), // {python_generated}
         }
     }
 
@@ -414,124 +337,46 @@ impl InnerModel {
         graph: &graph::Graph,
     ) -> Result<()> {
         match self {
-            // InnerModel::HyperJaccard{precision}_{bits}(inner) => inner.get_jaccard_for_all_edges(predictions, graph), {python_macro}
-            InnerModel::HyperJaccard4_4(inner) => {
-                inner.get_jaccard_for_all_edges(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard4_5(inner) => {
-                inner.get_jaccard_for_all_edges(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard4_6(inner) => {
-                inner.get_jaccard_for_all_edges(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard5_4(inner) => {
-                inner.get_jaccard_for_all_edges(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard5_5(inner) => {
-                inner.get_jaccard_for_all_edges(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard5_6(inner) => {
-                inner.get_jaccard_for_all_edges(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard6_4(inner) => {
-                inner.get_jaccard_for_all_edges(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard6_5(inner) => {
-                inner.get_jaccard_for_all_edges(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard6_6(inner) => {
-                inner.get_jaccard_for_all_edges(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard7_4(inner) => {
-                inner.get_jaccard_for_all_edges(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard7_5(inner) => {
-                inner.get_jaccard_for_all_edges(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard7_6(inner) => {
-                inner.get_jaccard_for_all_edges(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard8_4(inner) => {
-                inner.get_jaccard_for_all_edges(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard8_5(inner) => {
-                inner.get_jaccard_for_all_edges(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard8_6(inner) => {
-                inner.get_jaccard_for_all_edges(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard9_4(inner) => {
-                inner.get_jaccard_for_all_edges(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard9_5(inner) => {
-                inner.get_jaccard_for_all_edges(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard9_6(inner) => {
-                inner.get_jaccard_for_all_edges(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard10_4(inner) => {
-                inner.get_jaccard_for_all_edges(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard10_5(inner) => {
-                inner.get_jaccard_for_all_edges(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard10_6(inner) => {
-                inner.get_jaccard_for_all_edges(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard11_4(inner) => {
-                inner.get_jaccard_for_all_edges(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard11_5(inner) => {
-                inner.get_jaccard_for_all_edges(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard11_6(inner) => {
-                inner.get_jaccard_for_all_edges(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard12_4(inner) => {
-                inner.get_jaccard_for_all_edges(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard12_5(inner) => {
-                inner.get_jaccard_for_all_edges(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard12_6(inner) => {
-                inner.get_jaccard_for_all_edges(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard13_4(inner) => {
-                inner.get_jaccard_for_all_edges(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard13_5(inner) => {
-                inner.get_jaccard_for_all_edges(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard13_6(inner) => {
-                inner.get_jaccard_for_all_edges(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard14_4(inner) => {
-                inner.get_jaccard_for_all_edges(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard14_5(inner) => {
-                inner.get_jaccard_for_all_edges(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard14_6(inner) => {
-                inner.get_jaccard_for_all_edges(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard15_4(inner) => {
-                inner.get_jaccard_for_all_edges(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard15_5(inner) => {
-                inner.get_jaccard_for_all_edges(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard15_6(inner) => {
-                inner.get_jaccard_for_all_edges(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard16_4(inner) => {
-                inner.get_jaccard_for_all_edges(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard16_5(inner) => {
-                inner.get_jaccard_for_all_edges(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard16_6(inner) => {
-                inner.get_jaccard_for_all_edges(predictions, graph)
-            } // {python_generated}
+            // InnerModel::HJ{precision}_{bits}(inner) => inner.get_jaccard_for_all_edges(predictions, graph), {python_macro}
+            InnerModel::HJ4_4(inner) => inner.get_jaccard_for_all_edges(predictions, graph), // {python_generated}
+            InnerModel::HJ4_5(inner) => inner.get_jaccard_for_all_edges(predictions, graph), // {python_generated}
+            InnerModel::HJ4_6(inner) => inner.get_jaccard_for_all_edges(predictions, graph), // {python_generated}
+            InnerModel::HJ5_4(inner) => inner.get_jaccard_for_all_edges(predictions, graph), // {python_generated}
+            InnerModel::HJ5_5(inner) => inner.get_jaccard_for_all_edges(predictions, graph), // {python_generated}
+            InnerModel::HJ5_6(inner) => inner.get_jaccard_for_all_edges(predictions, graph), // {python_generated}
+            InnerModel::HJ6_4(inner) => inner.get_jaccard_for_all_edges(predictions, graph), // {python_generated}
+            InnerModel::HJ6_5(inner) => inner.get_jaccard_for_all_edges(predictions, graph), // {python_generated}
+            InnerModel::HJ6_6(inner) => inner.get_jaccard_for_all_edges(predictions, graph), // {python_generated}
+            InnerModel::HJ7_4(inner) => inner.get_jaccard_for_all_edges(predictions, graph), // {python_generated}
+            InnerModel::HJ7_5(inner) => inner.get_jaccard_for_all_edges(predictions, graph), // {python_generated}
+            InnerModel::HJ7_6(inner) => inner.get_jaccard_for_all_edges(predictions, graph), // {python_generated}
+            InnerModel::HJ8_4(inner) => inner.get_jaccard_for_all_edges(predictions, graph), // {python_generated}
+            InnerModel::HJ8_5(inner) => inner.get_jaccard_for_all_edges(predictions, graph), // {python_generated}
+            InnerModel::HJ8_6(inner) => inner.get_jaccard_for_all_edges(predictions, graph), // {python_generated}
+            InnerModel::HJ9_4(inner) => inner.get_jaccard_for_all_edges(predictions, graph), // {python_generated}
+            InnerModel::HJ9_5(inner) => inner.get_jaccard_for_all_edges(predictions, graph), // {python_generated}
+            InnerModel::HJ9_6(inner) => inner.get_jaccard_for_all_edges(predictions, graph), // {python_generated}
+            InnerModel::HJ10_4(inner) => inner.get_jaccard_for_all_edges(predictions, graph), // {python_generated}
+            InnerModel::HJ10_5(inner) => inner.get_jaccard_for_all_edges(predictions, graph), // {python_generated}
+            InnerModel::HJ10_6(inner) => inner.get_jaccard_for_all_edges(predictions, graph), // {python_generated}
+            InnerModel::HJ11_4(inner) => inner.get_jaccard_for_all_edges(predictions, graph), // {python_generated}
+            InnerModel::HJ11_5(inner) => inner.get_jaccard_for_all_edges(predictions, graph), // {python_generated}
+            InnerModel::HJ11_6(inner) => inner.get_jaccard_for_all_edges(predictions, graph), // {python_generated}
+            InnerModel::HJ12_4(inner) => inner.get_jaccard_for_all_edges(predictions, graph), // {python_generated}
+            InnerModel::HJ12_5(inner) => inner.get_jaccard_for_all_edges(predictions, graph), // {python_generated}
+            InnerModel::HJ12_6(inner) => inner.get_jaccard_for_all_edges(predictions, graph), // {python_generated}
+            InnerModel::HJ13_4(inner) => inner.get_jaccard_for_all_edges(predictions, graph), // {python_generated}
+            InnerModel::HJ13_5(inner) => inner.get_jaccard_for_all_edges(predictions, graph), // {python_generated}
+            InnerModel::HJ13_6(inner) => inner.get_jaccard_for_all_edges(predictions, graph), // {python_generated}
+            InnerModel::HJ14_4(inner) => inner.get_jaccard_for_all_edges(predictions, graph), // {python_generated}
+            InnerModel::HJ14_5(inner) => inner.get_jaccard_for_all_edges(predictions, graph), // {python_generated}
+            InnerModel::HJ14_6(inner) => inner.get_jaccard_for_all_edges(predictions, graph), // {python_generated}
+            InnerModel::HJ15_4(inner) => inner.get_jaccard_for_all_edges(predictions, graph), // {python_generated}
+            InnerModel::HJ15_5(inner) => inner.get_jaccard_for_all_edges(predictions, graph), // {python_generated}
+            InnerModel::HJ15_6(inner) => inner.get_jaccard_for_all_edges(predictions, graph), // {python_generated}
+            InnerModel::HJ16_4(inner) => inner.get_jaccard_for_all_edges(predictions, graph), // {python_generated}
+            InnerModel::HJ16_5(inner) => inner.get_jaccard_for_all_edges(predictions, graph), // {python_generated}
+            InnerModel::HJ16_6(inner) => inner.get_jaccard_for_all_edges(predictions, graph), // {python_generated}
         }
     }
 
@@ -550,124 +395,46 @@ impl InnerModel {
         graph: &graph::Graph,
     ) -> Result<()> {
         match self {
-            // InnerModel::HyperJaccard{precision}_{bits}(inner) => inner.get_degree_for_all_nodes(predictions, graph), {python_macro}
-            InnerModel::HyperJaccard4_4(inner) => {
-                inner.get_degree_for_all_nodes(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard4_5(inner) => {
-                inner.get_degree_for_all_nodes(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard4_6(inner) => {
-                inner.get_degree_for_all_nodes(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard5_4(inner) => {
-                inner.get_degree_for_all_nodes(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard5_5(inner) => {
-                inner.get_degree_for_all_nodes(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard5_6(inner) => {
-                inner.get_degree_for_all_nodes(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard6_4(inner) => {
-                inner.get_degree_for_all_nodes(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard6_5(inner) => {
-                inner.get_degree_for_all_nodes(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard6_6(inner) => {
-                inner.get_degree_for_all_nodes(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard7_4(inner) => {
-                inner.get_degree_for_all_nodes(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard7_5(inner) => {
-                inner.get_degree_for_all_nodes(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard7_6(inner) => {
-                inner.get_degree_for_all_nodes(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard8_4(inner) => {
-                inner.get_degree_for_all_nodes(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard8_5(inner) => {
-                inner.get_degree_for_all_nodes(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard8_6(inner) => {
-                inner.get_degree_for_all_nodes(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard9_4(inner) => {
-                inner.get_degree_for_all_nodes(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard9_5(inner) => {
-                inner.get_degree_for_all_nodes(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard9_6(inner) => {
-                inner.get_degree_for_all_nodes(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard10_4(inner) => {
-                inner.get_degree_for_all_nodes(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard10_5(inner) => {
-                inner.get_degree_for_all_nodes(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard10_6(inner) => {
-                inner.get_degree_for_all_nodes(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard11_4(inner) => {
-                inner.get_degree_for_all_nodes(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard11_5(inner) => {
-                inner.get_degree_for_all_nodes(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard11_6(inner) => {
-                inner.get_degree_for_all_nodes(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard12_4(inner) => {
-                inner.get_degree_for_all_nodes(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard12_5(inner) => {
-                inner.get_degree_for_all_nodes(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard12_6(inner) => {
-                inner.get_degree_for_all_nodes(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard13_4(inner) => {
-                inner.get_degree_for_all_nodes(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard13_5(inner) => {
-                inner.get_degree_for_all_nodes(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard13_6(inner) => {
-                inner.get_degree_for_all_nodes(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard14_4(inner) => {
-                inner.get_degree_for_all_nodes(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard14_5(inner) => {
-                inner.get_degree_for_all_nodes(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard14_6(inner) => {
-                inner.get_degree_for_all_nodes(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard15_4(inner) => {
-                inner.get_degree_for_all_nodes(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard15_5(inner) => {
-                inner.get_degree_for_all_nodes(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard15_6(inner) => {
-                inner.get_degree_for_all_nodes(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard16_4(inner) => {
-                inner.get_degree_for_all_nodes(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard16_5(inner) => {
-                inner.get_degree_for_all_nodes(predictions, graph)
-            } // {python_generated}
-            InnerModel::HyperJaccard16_6(inner) => {
-                inner.get_degree_for_all_nodes(predictions, graph)
-            } // {python_generated}
+            // InnerModel::HJ{precision}_{bits}(inner) => inner.get_degree_for_all_nodes(predictions, graph), {python_macro}
+            InnerModel::HJ4_4(inner) => inner.get_degree_for_all_nodes(predictions, graph), // {python_generated}
+            InnerModel::HJ4_5(inner) => inner.get_degree_for_all_nodes(predictions, graph), // {python_generated}
+            InnerModel::HJ4_6(inner) => inner.get_degree_for_all_nodes(predictions, graph), // {python_generated}
+            InnerModel::HJ5_4(inner) => inner.get_degree_for_all_nodes(predictions, graph), // {python_generated}
+            InnerModel::HJ5_5(inner) => inner.get_degree_for_all_nodes(predictions, graph), // {python_generated}
+            InnerModel::HJ5_6(inner) => inner.get_degree_for_all_nodes(predictions, graph), // {python_generated}
+            InnerModel::HJ6_4(inner) => inner.get_degree_for_all_nodes(predictions, graph), // {python_generated}
+            InnerModel::HJ6_5(inner) => inner.get_degree_for_all_nodes(predictions, graph), // {python_generated}
+            InnerModel::HJ6_6(inner) => inner.get_degree_for_all_nodes(predictions, graph), // {python_generated}
+            InnerModel::HJ7_4(inner) => inner.get_degree_for_all_nodes(predictions, graph), // {python_generated}
+            InnerModel::HJ7_5(inner) => inner.get_degree_for_all_nodes(predictions, graph), // {python_generated}
+            InnerModel::HJ7_6(inner) => inner.get_degree_for_all_nodes(predictions, graph), // {python_generated}
+            InnerModel::HJ8_4(inner) => inner.get_degree_for_all_nodes(predictions, graph), // {python_generated}
+            InnerModel::HJ8_5(inner) => inner.get_degree_for_all_nodes(predictions, graph), // {python_generated}
+            InnerModel::HJ8_6(inner) => inner.get_degree_for_all_nodes(predictions, graph), // {python_generated}
+            InnerModel::HJ9_4(inner) => inner.get_degree_for_all_nodes(predictions, graph), // {python_generated}
+            InnerModel::HJ9_5(inner) => inner.get_degree_for_all_nodes(predictions, graph), // {python_generated}
+            InnerModel::HJ9_6(inner) => inner.get_degree_for_all_nodes(predictions, graph), // {python_generated}
+            InnerModel::HJ10_4(inner) => inner.get_degree_for_all_nodes(predictions, graph), // {python_generated}
+            InnerModel::HJ10_5(inner) => inner.get_degree_for_all_nodes(predictions, graph), // {python_generated}
+            InnerModel::HJ10_6(inner) => inner.get_degree_for_all_nodes(predictions, graph), // {python_generated}
+            InnerModel::HJ11_4(inner) => inner.get_degree_for_all_nodes(predictions, graph), // {python_generated}
+            InnerModel::HJ11_5(inner) => inner.get_degree_for_all_nodes(predictions, graph), // {python_generated}
+            InnerModel::HJ11_6(inner) => inner.get_degree_for_all_nodes(predictions, graph), // {python_generated}
+            InnerModel::HJ12_4(inner) => inner.get_degree_for_all_nodes(predictions, graph), // {python_generated}
+            InnerModel::HJ12_5(inner) => inner.get_degree_for_all_nodes(predictions, graph), // {python_generated}
+            InnerModel::HJ12_6(inner) => inner.get_degree_for_all_nodes(predictions, graph), // {python_generated}
+            InnerModel::HJ13_4(inner) => inner.get_degree_for_all_nodes(predictions, graph), // {python_generated}
+            InnerModel::HJ13_5(inner) => inner.get_degree_for_all_nodes(predictions, graph), // {python_generated}
+            InnerModel::HJ13_6(inner) => inner.get_degree_for_all_nodes(predictions, graph), // {python_generated}
+            InnerModel::HJ14_4(inner) => inner.get_degree_for_all_nodes(predictions, graph), // {python_generated}
+            InnerModel::HJ14_5(inner) => inner.get_degree_for_all_nodes(predictions, graph), // {python_generated}
+            InnerModel::HJ14_6(inner) => inner.get_degree_for_all_nodes(predictions, graph), // {python_generated}
+            InnerModel::HJ15_4(inner) => inner.get_degree_for_all_nodes(predictions, graph), // {python_generated}
+            InnerModel::HJ15_5(inner) => inner.get_degree_for_all_nodes(predictions, graph), // {python_generated}
+            InnerModel::HJ15_6(inner) => inner.get_degree_for_all_nodes(predictions, graph), // {python_generated}
+            InnerModel::HJ16_4(inner) => inner.get_degree_for_all_nodes(predictions, graph), // {python_generated}
+            InnerModel::HJ16_5(inner) => inner.get_degree_for_all_nodes(predictions, graph), // {python_generated}
+            InnerModel::HJ16_6(inner) => inner.get_degree_for_all_nodes(predictions, graph), // {python_generated}
         }
     }
 
