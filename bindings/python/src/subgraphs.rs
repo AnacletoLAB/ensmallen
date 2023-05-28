@@ -610,36 +610,51 @@ impl Graph {
             .map(|edge_weighting_method| unsafe {
                 // We create the kernel that we will populate
                 // with this particular iteration.
-                let (source_kernel, destination_kernel) = if edge_weighting_method == "weights"
-                    || edge_weighting_method == "laplacian"
-                {
-                    // If the edge weighting method for the kernel is either weights
-                    // or laplacian, that is edge weighting methods that are not fully defined for all
-                    // of the edges of the graph, we need to set the remaining values
-                    // to zeros, so we initialize the vector as a matrix of zeros.
-                    (
-                        ThreadDataRaceAware {
-                            t: PyArray2::zeros(gil.python(), [number_of_nodes, number_of_nodes], false),
-                        },
-                        ThreadDataRaceAware {
-                            t: PyArray2::zeros(gil.python(), [number_of_nodes, number_of_nodes], false),
-                        },
-                    )
-                } else {
-                    // The same consideration does not apply to edge weighting methods that are fully
-                    // defined for all the possible tuple of nodes that may be taken
-                    // into consideration: in this case all the values will be provided
-                    // by the iterator, and therefore there is no need to set beforehand
-                    // a default value: doing so would only be a waste of time.
-                    (
-                        ThreadDataRaceAware {
-                            t: PyArray2::new(gil.python(), [number_of_nodes, number_of_nodes], false),
-                        },
-                        ThreadDataRaceAware {
-                            t: PyArray2::new(gil.python(), [number_of_nodes, number_of_nodes], false),
-                        },
-                    )
-                };
+                let (source_kernel, destination_kernel) =
+                    if edge_weighting_method == "weights" || edge_weighting_method == "laplacian" {
+                        // If the edge weighting method for the kernel is either weights
+                        // or laplacian, that is edge weighting methods that are not fully defined for all
+                        // of the edges of the graph, we need to set the remaining values
+                        // to zeros, so we initialize the vector as a matrix of zeros.
+                        (
+                            ThreadDataRaceAware {
+                                t: PyArray2::zeros(
+                                    gil.python(),
+                                    [number_of_nodes, number_of_nodes],
+                                    false,
+                                ),
+                            },
+                            ThreadDataRaceAware {
+                                t: PyArray2::zeros(
+                                    gil.python(),
+                                    [number_of_nodes, number_of_nodes],
+                                    false,
+                                ),
+                            },
+                        )
+                    } else {
+                        // The same consideration does not apply to edge weighting methods that are fully
+                        // defined for all the possible tuple of nodes that may be taken
+                        // into consideration: in this case all the values will be provided
+                        // by the iterator, and therefore there is no need to set beforehand
+                        // a default value: doing so would only be a waste of time.
+                        (
+                            ThreadDataRaceAware {
+                                t: PyArray2::new(
+                                    gil.python(),
+                                    [number_of_nodes, number_of_nodes],
+                                    false,
+                                ),
+                            },
+                            ThreadDataRaceAware {
+                                t: PyArray2::new(
+                                    gil.python(),
+                                    [number_of_nodes, number_of_nodes],
+                                    false,
+                                ),
+                            },
+                        )
+                    };
                 // In order to avoid repeating the same logic,
                 // even though arguably small, we define a function
                 // that captures the kernel.

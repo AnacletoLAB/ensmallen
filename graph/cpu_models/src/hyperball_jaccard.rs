@@ -11,8 +11,6 @@ where
 {
     /// Vector of HyperLogLog counters
     counters: Vec<HyperLogLog<PRECISION, BITS>>,
-    /// Cached cardinalities of HyperLogLog counters
-    cardinalities: Vec<f32>,
     /// The number of hops to execute.
     number_of_hops: usize,
 }
@@ -30,7 +28,6 @@ where
 
         Ok(Self {
             counters: Vec::new(),
-            cardinalities: Vec::new(),
             number_of_hops,
         })
     }
