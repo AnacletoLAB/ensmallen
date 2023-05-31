@@ -688,14 +688,24 @@ impl CSVFileReader {
     pub fn get_column_number(&self, column_name: String) -> Result<usize> {
         let header = self.get_header()?;
 
+        // We get the position of the column of interest in the header
         match header.iter().position(|x| *x == column_name) {
+            // If the column is present we return its position
             Some(column_number) => Ok(column_number),
+            // If the column is not present we return an error
+            // We try to make the error as extensive as possible to help
+            // the user find the issue.
             None => Err(format!(
                 concat!(
-                    "The column '{}' is not present in the header:\n {:?}\n",
-                    "Note that the separator used was `{}`."
+                    "The column of interest \"{}\" is not present in the header ",
+                    "when using as separator \"{}\".",
+                    "The header is:\n{}",
+                    "The path to the CSV file is:\n{}"
                 ),
-                column_name, header, self.separator
+                column_name,
+                self.separator,
+                header.join(&self.separator.to_string()),
+                self.path
             )),
         }
     }

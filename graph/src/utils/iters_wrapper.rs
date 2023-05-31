@@ -53,6 +53,22 @@ where
         }
     }
 
+    /// Returns true if the iterator is sequential.
+    pub fn is_sequential(&self) -> bool {
+        match &self {
+            ItersWrapper::Parallel(_) => false,
+            ItersWrapper::Sequential(_) => true,
+        }
+    }
+
+    /// Returns true if the iterator is parallel.
+    pub fn is_parallel(&self) -> bool {
+        match &self {
+            ItersWrapper::Parallel(_) => true,
+            ItersWrapper::Sequential(_) => false,
+        }
+    }
+
     pub fn unwrap_parallel(self) -> P {
         match self {
             ItersWrapper::Sequential(_) => {
@@ -158,6 +174,14 @@ where
         match self {
             Self::Parallel(p) => ItersWrapper::Parallel(p.filter(op)),
             Self::Sequential(i) => ItersWrapper::Sequential(i.filter(op)),
+        }
+    }
+
+    /// Implements the `count` reduce method for the iterator.
+    pub fn count(self) -> usize {
+        match self {
+            Self::Parallel(p) => p.count(),
+            Self::Sequential(i) => i.count(),
         }
     }
 

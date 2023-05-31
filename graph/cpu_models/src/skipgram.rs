@@ -36,7 +36,7 @@ where
         let mut random_state = splitmix64(self.walk_parameters.get_random_state() as u64);
         let mut learning_rate = self.learning_rate.as_();
         let cv = self.clipping_value.as_();
-        let nodes_number = graph.get_number_of_nodes();
+        let number_of_nodes = graph.get_number_of_nodes();
 
         let shared_embedding = ThreadDataRaceAware::new(embedding);
 
@@ -112,7 +112,7 @@ where
                                 let seed = splitmix64(
                                     random_state + central_index as u64 + walk_number as u64,
                                 );
-                                degree < sample_uniform(nodes_number as _, seed) as _
+                                degree < sample_uniform(number_of_nodes as _, seed) as _
                             }
                         })
                         .map(|central_index| {

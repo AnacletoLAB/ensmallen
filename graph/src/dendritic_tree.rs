@@ -52,9 +52,9 @@ impl ToString for DendriticTree {
                         show_node_type,
                     )
                 }),
-                nodes_number => format!(
+                number_of_nodes => format!(
                     concat!("containing {} nodes, with a maximal depth of {}, which are {}"),
-                    to_human_readable_high_integer(nodes_number as usize),
+                    to_human_readable_high_integer(number_of_nodes as usize),
                     to_human_readable_high_integer(self.depth as usize),
                     unsafe {
                         get_unchecked_formatted_list(
@@ -300,8 +300,8 @@ impl Graph {
     /// Returns vector of detected dentritic trees.
     pub fn get_dendritic_trees(&self) -> Result<Vec<DendriticTree>> {
         self.must_be_undirected()?;
-        let nodes_number = self.get_number_of_nodes() as usize;
-        let leaf_nodes = ThreadDataRaceAware::new(vec![false; nodes_number]);
+        let number_of_nodes = self.get_number_of_nodes() as usize;
+        let leaf_nodes = ThreadDataRaceAware::new(vec![false; number_of_nodes]);
 
         // We initialize the initial frontier to the set of nodes with degree one.
         info!("Computing initial frontier.");

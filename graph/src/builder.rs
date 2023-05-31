@@ -174,19 +174,19 @@ impl GraphBuilder {
 
         build_graph_from_strings(
             None::<ItersWrapper<_, SeqEmpty<_>, ParEmpty<_>>>, // node_types_iterator
-            None, // node_types_number
+            None, // number_of_node_types
             Some(false), // numeric_node_type_ids
             None, // minimum_node_type_id
             self.has_node_types, // has_node_types
             Some(false), // node_types_list_is_correct
             nodes_iterator, // nodes_iterator
-            None, // nodes_number
+            None, // number_of_nodes
             false, // node_list_is_correct
             false, // numeric_node_ids
             false, // numeric_node_list_node_type_ids
             None, // minimum_node_id
             None::<ItersWrapper<_, SeqEmpty<_>, ParEmpty<_>>>, // edge_types_iterator
-            None, // edge_types_number
+            None, // number_of_edge_types
             Some(false), // numeric_edge_type_ids
             None, // minimum_edge_type_id
             self.has_edge_types, // has_edge_types
@@ -198,7 +198,7 @@ impl GraphBuilder {
             Some(false), // complete
             Some(false), // duplicates
             Some(false), // sorted
-            None, // edges_number
+            None, // number_of_edges
             Some(false), // numeric_edge_list_node_ids
             Some(false), // numeric_edge_list_edge_type_ids
             Some(true), // skip_node_types_if_unavailable

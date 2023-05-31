@@ -581,7 +581,7 @@ impl Graph {
         // Get the number of possible elements in the features vocabulary
         let features_number = features[0].len() as usize;
         // Get the number of 'documents'
-        let nodes_number = self.get_number_of_nodes() as usize;
+        let number_of_nodes = self.get_number_of_nodes() as usize;
         // Loading bar
         let iterations_progress_bar = get_loading_bar(
             verbose.unwrap_or(true) && iterations > 1,
@@ -599,7 +599,7 @@ impl Graph {
                         .sum::<NodeT>();
                     // Definition of the IDF from Okapi, generalized for the
                     // real frequencies.
-                    ((nodes_number as f64 - feature_sum as f64 + 0.5) / (feature_sum as f64 + 0.5)
+                    ((number_of_nodes as f64 - feature_sum as f64 + 0.5) / (feature_sum as f64 + 0.5)
                         + 1.0)
                         .ln()
                 })
@@ -609,7 +609,7 @@ impl Graph {
             let pb = get_loading_bar(
                 verbose.unwrap_or(true),
                 "Computing new co-occurrences",
-                nodes_number,
+                number_of_nodes,
             );
             // Update features
             features = self
@@ -617,11 +617,11 @@ impl Graph {
                 .progress_with(pb)
                 .map(|node_id| {
                     // Create a new empty queue.
-                    let mut neighbours_stack = VecDeque::with_capacity(nodes_number);
+                    let mut neighbours_stack = VecDeque::with_capacity(number_of_nodes);
                     // Put the distance of the original node as 0.
                     neighbours_stack.push_front((node_id, 0));
                     // Create a binary mask for the visited node.
-                    let mut visited = bitvec![u8, Lsb0; 0; nodes_number];
+                    let mut visited = bitvec![u8, Lsb0; 0; number_of_nodes];
                     // Initialize the sum of the features
                     let mut document_features_sum = 0.0;
                     // We set the current root node as visited
@@ -669,12 +669,12 @@ impl Graph {
             // Computing average document size
             let average_document_size = total_document_size
                 .load(std::sync::atomic::Ordering::Relaxed)
-                / nodes_number as f64;
+                / number_of_nodes as f64;
             // Creating loading bar
             let pb = get_loading_bar(
                 verbose.unwrap_or(true),
                 "Propagating features",
-                nodes_number,
+                number_of_nodes,
             );
             features
                 .par_iter_mut()

@@ -30,13 +30,13 @@ impl ToString for Chain {
         format!(
             concat!(
                 "<p>",
-                "Chain containing {nodes_number} nodes and starts from the node {root_node}. ",
+                "Chain containing {number_of_nodes} nodes and starts from the node {root_node}. ",
                 "Specifically, the nodes involved in the chain are: {chain_nodes}.",
                 "{node_types_counts}",
                 "{edge_types_counts}",
                 "</p>",
             ),
-            nodes_number = to_human_readable_high_integer(self.len() as usize),
+            number_of_nodes = to_human_readable_high_integer(self.len() as usize),
             root_node = unsafe {
                 self.graph.get_unchecked_succinct_node_description(
                     self.get_root_node_id(),

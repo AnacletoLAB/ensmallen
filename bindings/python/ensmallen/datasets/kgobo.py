@@ -17,13 +17,13 @@ Please cite:
 from ensmallen import Graph  # pylint: disable=import-error
 from .graph_retrieval import RetrievedGraph
 
-def ADO(
+def MOD(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2022-06-11", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="1.031.4", **kwargs
 ) -> Graph:
-    """Return ADO graph	
+    """Return MOD graph	
 
     Parameters
     ----------
@@ -42,2050 +42,15 @@ def ADO(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2022-06-11"
+    version = "1.031.4"
         Version to retrieve	
 		The available versions are:
-			- 2022-06-11
+			- 1.031.6
+			- 10-03-2021-14-36
+			- 1.031.4
     """
     return RetrievedGraph(
-        "ADO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def AEO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2014-12-05", **kwargs
-) -> Graph:
-    """Return AEO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2014-12-05"
-        Version to retrieve	
-		The available versions are:
-			- 2014-12-05
-    """
-    return RetrievedGraph(
-        "AEO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def AGRO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2021-11-05", **kwargs
-) -> Graph:
-    """Return AGRO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2021-11-05"
-        Version to retrieve	
-		The available versions are:
-			- 2022-11-02
-			- 2021-07-01
-			- 2021-11-05
-    """
-    return RetrievedGraph(
-        "AGRO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def AISM(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2023-02-06", **kwargs
-) -> Graph:
-    """Return AISM graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2023-02-06"
-        Version to retrieve	
-		The available versions are:
-			- 2023-04-14
-			- 2021-09-08
-			- 2021-11-19
-			- 2021-12-13
-			- 2022-03-17
-			- 2022-06-18
-			- 2022-06-27
-			- 2022-08-25
-			- 2022-10-08
-			- 2023-01-22
-			- 2023-02-06
-    """
-    return RetrievedGraph(
-        "AISM", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def AMPHX(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2020-12-18", **kwargs
-) -> Graph:
-    """Return AMPHX graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2020-12-18"
-        Version to retrieve	
-		The available versions are:
-			- 2020-12-18
-    """
-    return RetrievedGraph(
-        "AMPHX", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def APO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2023-01-30", **kwargs
-) -> Graph:
-    """Return APO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2023-01-30"
-        Version to retrieve	
-		The available versions are:
-			- 2023-04-27
-			- 2021-09-07
-			- 2021-10-07
-			- 2022-01-03
-			- 2022-02-08
-			- 2022-03-23
-			- 2022-04-19
-			- 2022-07-06
-			- 2022-08-29
-			- 2022-10-10
-			- 2022-11-14
-			- 2022-12-13
-			- 2023-01-30
-    """
-    return RetrievedGraph(
-        "APO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def APOLLO_SV(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="v2023-01-10", **kwargs
-) -> Graph:
-    """Return APOLLO_SV graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "v2023-01-10"
-        Version to retrieve	
-		The available versions are:
-			- 2023-05-05
-			- v4.1.1.
-			- 2022-11-25
-			- v2023-01-10
-    """
-    return RetrievedGraph(
-        "APOLLO_SV", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def ARO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="12-09-2022-11-38", **kwargs
-) -> Graph:
-    """Return ARO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "12-09-2022-11-38"
-        Version to retrieve	
-		The available versions are:
-			- 12-09-2022-11-38
-    """
-    return RetrievedGraph(
-        "ARO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def BCO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2020-03-27", **kwargs
-) -> Graph:
-    """Return BCO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2020-03-27"
-        Version to retrieve	
-		The available versions are:
-			- 2021-11-14
-			- 2020-03-27
-    """
-    return RetrievedGraph(
-        "BCO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def BFO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2019-08-26", **kwargs
-) -> Graph:
-    """Return BFO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2019-08-26"
-        Version to retrieve	
-		The available versions are:
-			- 2019-08-26
-    """
-    return RetrievedGraph(
-        "BFO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def BSPO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2022-10-07", **kwargs
-) -> Graph:
-    """Return BSPO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2022-10-07"
-        Version to retrieve	
-		The available versions are:
-			- 2022-11-16
-			- 2021-09-22
-			- 2021-10-13
-			- 2022-06-28
-			- 2022-10-07
-    """
-    return RetrievedGraph(
-        "BSPO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def BTO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2021-04-27", **kwargs
-) -> Graph:
-    """Return BTO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2021-04-27"
-        Version to retrieve	
-		The available versions are:
-			- 2021-10-26
-			- 2021-04-27
-    """
-    return RetrievedGraph(
-        "BTO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def CARO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2022-02-18", **kwargs
-) -> Graph:
-    """Return CARO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2022-02-18"
-        Version to retrieve	
-		The available versions are:
-			- 2023-03-15
-			- 2022-02-18
-    """
-    return RetrievedGraph(
-        "CARO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def CDAO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2019-06-26", **kwargs
-) -> Graph:
-    """Return CDAO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2019-06-26"
-        Version to retrieve	
-		The available versions are:
-			- 2022-11-30
-			- 2019-06-26
-    """
-    return RetrievedGraph(
-        "CDAO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def CDNO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2022-11-17", **kwargs
-) -> Graph:
-    """Return CDNO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2022-11-17"
-        Version to retrieve	
-		The available versions are:
-			- 2022-12-23
-			- 2021-10-20
-			- 2022-01-10
-			- 2022-04-06
-			- 2022-06-23
-			- 2022-09-20
-			- 2022-09-22
-			- 2022-11-17
-    """
-    return RetrievedGraph(
-        "CDNO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def CEPH(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2016-01-12", **kwargs
-) -> Graph:
-    """Return CEPH graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2016-01-12"
-        Version to retrieve	
-		The available versions are:
-			- 2016-01-12
-    """
-    return RetrievedGraph(
-        "CEPH", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def CHEBI(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="218", **kwargs
-) -> Graph:
-    """Return CHEBI graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "218"
-        Version to retrieve	
-		The available versions are:
-			- 221
-			- 203
-			- 204
-			- 205
-			- 206
-			- 207
-			- 208
-			- 209
-			- 210
-			- 211
-			- 213
-			- 214
-			- 219
-			- 217
-			- 218
-    """
-    return RetrievedGraph(
-        "CHEBI", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def CHEMINF(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2.0", **kwargs
-) -> Graph:
-    """Return CHEMINF graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2.0"
-        Version to retrieve	
-		The available versions are:
-			- 2.0
-    """
-    return RetrievedGraph(
-        "CHEMINF", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def CHIRO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2015-11-23", **kwargs
-) -> Graph:
-    """Return CHIRO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2015-11-23"
-        Version to retrieve	
-		The available versions are:
-			- 2015-11-23
-    """
-    return RetrievedGraph(
-        "CHIRO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def CHMO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2022-02-17", **kwargs
-) -> Graph:
-    """Return CHMO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2022-02-17"
-        Version to retrieve	
-		The available versions are:
-			- 2022-04-19
-			- no_version
-			- 2022-02-17
-    """
-    return RetrievedGraph(
-        "CHMO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def CIDO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="08-01-2022", **kwargs
-) -> Graph:
-    """Return CIDO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "08-01-2022"
-        Version to retrieve	
-		The available versions are:
-			- 08-01-2022
-    """
-    return RetrievedGraph(
-        "CIDO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def CIO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2015-03-10", **kwargs
-) -> Graph:
-    """Return CIO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2015-03-10"
-        Version to retrieve	
-		The available versions are:
-			- 2015-03-10
-    """
-    return RetrievedGraph(
-        "CIO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def CL(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2023-02-19", **kwargs
-) -> Graph:
-    """Return CL graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2023-02-19"
-        Version to retrieve	
-		The available versions are:
-			- 2023-04-20
-			- 2021-09-09
-			- 2021-11-25
-			- 2021-12-07
-			- 2021-12-16
-			- 2022-01-05
-			- 2022-02-16
-			- 2022-06-15
-			- 2022-06-18
-			- 2022-09-15
-			- 2022-10-28
-			- 2022-11-25
-			- 2023-01-09
-			- 2023-02-15
-			- 2023-02-19
-    """
-    return RetrievedGraph(
-        "CL", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def CLAO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2021-09-27", **kwargs
-) -> Graph:
-    """Return CLAO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2021-09-27"
-        Version to retrieve	
-		The available versions are:
-			- 2021-09-27
-    """
-    return RetrievedGraph(
-        "CLAO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def CLO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2019-02-10", **kwargs
-) -> Graph:
-    """Return CLO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2019-02-10"
-        Version to retrieve	
-		The available versions are:
-			- 2022-03-20
-			- 2019-02-10
-    """
-    return RetrievedGraph(
-        "CLO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def CLYH(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2020-05-29", **kwargs
-) -> Graph:
-    """Return CLYH graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2020-05-29"
-        Version to retrieve	
-		The available versions are:
-			- 2020-05-29
-    """
-    return RetrievedGraph(
-        "CLYH", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def CMO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2019-02-19", **kwargs
-) -> Graph:
-    """Return CMO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2019-02-19"
-        Version to retrieve	
-		The available versions are:
-			- 2019-02-19
-    """
-    return RetrievedGraph(
-        "CMO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def COB(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2022-11-02", **kwargs
-) -> Graph:
-    """Return COB graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2022-11-02"
-        Version to retrieve	
-		The available versions are:
-			- 2023-05-12
-			- 2021-09-13
-			- 2022-05-02
-			- 2022-11-02
-    """
-    return RetrievedGraph(
-        "COB", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def COLAO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2023-02-06", **kwargs
-) -> Graph:
-    """Return COLAO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2023-02-06"
-        Version to retrieve	
-		The available versions are:
-			- 2023-04-08
-			- 2021-12-14
-			- 2022-06-18
-			- 2022-08-25
-			- 2023-02-06
-    """
-    return RetrievedGraph(
-        "COLAO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def CRO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2019-12-11", **kwargs
-) -> Graph:
-    """Return CRO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2019-12-11"
-        Version to retrieve	
-		The available versions are:
-			- 2019-12-11
-    """
-    return RetrievedGraph(
-        "CRO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def CTENO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2016-10-19", **kwargs
-) -> Graph:
-    """Return CTENO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2016-10-19"
-        Version to retrieve	
-		The available versions are:
-			- 2016-10-19
-    """
-    return RetrievedGraph(
-        "CTENO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def CTO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="no_version", **kwargs
-) -> Graph:
-    """Return CTO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "no_version"
-        Version to retrieve	
-		The available versions are:
-			- no_version
-    """
-    return RetrievedGraph(
-        "CTO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def CVDO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2020-03-05", **kwargs
-) -> Graph:
-    """Return CVDO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2020-03-05"
-        Version to retrieve	
-		The available versions are:
-			- 2020-03-05
-    """
-    return RetrievedGraph(
-        "CVDO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def DDANAT(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2020-04-13", **kwargs
-) -> Graph:
-    """Return DDANAT graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2020-04-13"
-        Version to retrieve	
-		The available versions are:
-			- 2020-04-13
-    """
-    return RetrievedGraph(
-        "DDANAT", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def DDPHENO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2022-01-19", **kwargs
-) -> Graph:
-    """Return DDPHENO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2022-01-19"
-        Version to retrieve	
-		The available versions are:
-			- 2023-02-19
-			- 2020-06-19
-			- 2022-01-19
-    """
-    return RetrievedGraph(
-        "DDPHENO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def DIDEO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="release-version-2022-06-14", **kwargs
-) -> Graph:
-    """Return DIDEO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "release-version-2022-06-14"
-        Version to retrieve	
-		The available versions are:
-			- release-version-2022-06-14
-    """
-    return RetrievedGraph(
-        "DIDEO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def DISDRIV(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="no_version", **kwargs
-) -> Graph:
-    """Return DISDRIV graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "no_version"
-        Version to retrieve	
-		The available versions are:
-			- no_version
-    """
-    return RetrievedGraph(
-        "DISDRIV", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def DOID(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2023-02-27", **kwargs
-) -> Graph:
-    """Return DOID graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2023-02-27"
-        Version to retrieve	
-		The available versions are:
-			- 2023-03-31
-			- 2021-10-01
-			- 2021-10-12
-			- 2021-11-17
-			- 2021-12-15
-			- 2022-01-31
-			- 2022-02-21
-			- 2022-03-02
-			- 2022-04-01
-			- 2022-04-28
-			- 2022-06-07
-			- 2022-07-27
-			- 2022-08-29
-			- 2022-09-29
-			- 2022-11-01
-			- 2022-12-15
-			- 2023-01-30
-			- 2023-02-27
-    """
-    return RetrievedGraph(
-        "DOID", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def DPO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2023-02-09", **kwargs
-) -> Graph:
-    """Return DPO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2023-02-09"
-        Version to retrieve	
-		The available versions are:
-			- 2023-05-03
-			- 2021-09-02
-			- 2021-10-15
-			- 2021-12-10
-			- 2022-01-24
-			- 2022-02-24
-			- 2022-04-13
-			- 2022-06-09
-			- 2022-08-11
-			- 2022-10-20
-			- 2022-12-02
-			- 2023-02-09
-    """
-    return RetrievedGraph(
-        "DPO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def DRON(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2022-10-22", **kwargs
-) -> Graph:
-    """Return DRON graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2022-10-22"
-        Version to retrieve	
-		The available versions are:
-			- 2023-03-10
-			- 2021-08-12
-			- 2021-10-20
-			- 2022-01-28
-			- 2022-04-22
-			- 2022-10-02
-			- 2022-10-22
-    """
-    return RetrievedGraph(
-        "DRON", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def DUO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2021-02-23", **kwargs
-) -> Graph:
-    """Return DUO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2021-02-23"
-        Version to retrieve	
-		The available versions are:
-			- 2021-02-23
-    """
-    return RetrievedGraph(
-        "DUO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def ECAO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2020-05-22", **kwargs
-) -> Graph:
-    """Return ECAO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2020-05-22"
-        Version to retrieve	
-		The available versions are:
-			- 2020-05-22
-    """
-    return RetrievedGraph(
-        "ECAO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def ECO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2022-12-04", **kwargs
-) -> Graph:
-    """Return ECO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2022-12-04"
-        Version to retrieve	
-		The available versions are:
-			- 2023-04-07
-			- 2021-10-20
-			- 2021-12-03
-			- 2022-01-04
-			- 2022-02-09
-			- 2022-04-11
-			- 2022-05-27
-			- 2022-08-05
-			- 2022-10-10
-			- 2022-12-04
-    """
-    return RetrievedGraph(
-        "ECO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def ECOCORE(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2021-02-17", **kwargs
-) -> Graph:
-    """Return ECOCORE graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2021-02-17"
-        Version to retrieve	
-		The available versions are:
-			- 2022-03-09
-			- 2021-02-17
-    """
-    return RetrievedGraph(
-        "ECOCORE", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def ECTO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2022-12-12", **kwargs
-) -> Graph:
-    """Return ECTO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2022-12-12"
-        Version to retrieve	
-		The available versions are:
-			- 2023-02-14
-			- 2021-08-25
-			- 2022-03-09
-			- 2022-05-04
-			- 2022-05-12
-			- 2022-08-12
-			- 2022-12-12
-    """
-    return RetrievedGraph(
-        "ECTO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def EHDAA2(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2013-07-04", **kwargs
-) -> Graph:
-    """Return EHDAA2 graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2013-07-04"
-        Version to retrieve	
-		The available versions are:
-			- 2013-07-04
-    """
-    return RetrievedGraph(
-        "EHDAA2", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def EMAPA(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2022-11-04", **kwargs
-) -> Graph:
-    """Return EMAPA graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2022-11-04"
-        Version to retrieve	
-		The available versions are:
-			- 2023-05-05
-			- 2021-09-01
-			- 2022-07-14
-			- 2022-07-28
-			- 2022-08-26
-			- 2022-08-31
-			- 2022-11-04
-    """
-    return RetrievedGraph(
-        "EMAPA", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def ENVO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2021-05-14", **kwargs
-) -> Graph:
-    """Return ENVO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2021-05-14"
-        Version to retrieve	
-		The available versions are:
-			- 2023-02-13
-			- 2021-05-14
-    """
-    return RetrievedGraph(
-        "ENVO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def EPIO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2021-05-28", **kwargs
-) -> Graph:
-    """Return EPIO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2021-05-28"
-        Version to retrieve	
-		The available versions are:
-			- 2021-05-28
-    """
-    return RetrievedGraph(
-        "EPIO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def EPSO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="", **kwargs
-) -> Graph:
-    """Return EPSO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = ""
-        Version to retrieve	
-		The available versions are:
-			- 2021-05-28
-			- 
-    """
-    return RetrievedGraph(
-        "EPSO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def ERO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="no_version", **kwargs
-) -> Graph:
-    """Return ERO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "no_version"
-        Version to retrieve	
-		The available versions are:
-			- no_version
-    """
-    return RetrievedGraph(
-        "ERO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def EUPATH(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2023-01-19", **kwargs
-) -> Graph:
-    """Return EUPATH graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2023-01-19"
-        Version to retrieve	
-		The available versions are:
-			- 2023-03-20
-			- 2021-09-09
-			- 2022-02-15
-			- 2022-06-08
-			- 2022-08-12
-			- 2022-11-04
-			- 2023-01-19
-    """
-    return RetrievedGraph(
-        "EUPATH", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def EXO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2.1", **kwargs
-) -> Graph:
-    """Return EXO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2.1"
-        Version to retrieve	
-		The available versions are:
-			- 2022-06-29
-			- 2.1
-    """
-    return RetrievedGraph(
-        "EXO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def FAO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2020-05-07", **kwargs
-) -> Graph:
-    """Return FAO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2020-05-07"
-        Version to retrieve	
-		The available versions are:
-			- 2020-05-07
-    """
-    return RetrievedGraph(
-        "FAO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def FBBI(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2020-11-06", **kwargs
-) -> Graph:
-    """Return FBBI graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2020-11-06"
-        Version to retrieve	
-		The available versions are:
-			- 2020-11-06
-    """
-    return RetrievedGraph(
-        "FBBI", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        "MOD", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
@@ -2135,13 +100,13 @@ def FBBT(
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
-def FBCV(
+def BTO(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2023-02-09", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-04-27", **kwargs
 ) -> Graph:
-    """Return FBCV graph	
+    """Return BTO graph	
 
     Parameters
     ----------
@@ -2160,24 +125,234 @@ def FBCV(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2023-02-09"
+    version = "2021-04-27"
         Version to retrieve	
 		The available versions are:
-			- 2023-05-04
-			- 2021-09-02
-			- 2021-10-18
-			- 2021-12-13
-			- 2022-01-24
-			- 2022-02-24
-			- 2022-04-14
-			- 2022-06-09
-			- 2022-08-11
-			- 2022-10-20
-			- 2022-12-02
-			- 2023-02-09
+			- 2021-10-26
+			- 2021-04-27
     """
     return RetrievedGraph(
-        "FBCV", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        "BTO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def CHMO(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-02-17", **kwargs
+) -> Graph:
+    """Return CHMO graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2022-02-17"
+        Version to retrieve	
+		The available versions are:
+			- 2022-04-19
+			- no_version
+			- 2022-02-17
+    """
+    return RetrievedGraph(
+        "CHMO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def OBA(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2023-02-14", **kwargs
+) -> Graph:
+    """Return OBA graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2023-02-14"
+        Version to retrieve	
+		The available versions are:
+			- 2023-05-11
+			- 13-11-2015-10-21
+			- 2021-12-03
+			- 2022-01-19
+			- 2022-05-11
+			- 2022-08-03
+			- 2022-09-06
+			- 2022-12-21
+			- 2023-02-14
+    """
+    return RetrievedGraph(
+        "OBA", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def PSO(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2020-05-19", **kwargs
+) -> Graph:
+    """Return PSO graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2020-05-19"
+        Version to retrieve	
+		The available versions are:
+			- 2020-05-19
+    """
+    return RetrievedGraph(
+        "PSO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def OGSF(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="11-22-2014", **kwargs
+) -> Graph:
+    """Return OGSF graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "11-22-2014"
+        Version to retrieve	
+		The available versions are:
+			- 11-22-2014
+    """
+    return RetrievedGraph(
+        "OGSF", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def MCO(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2019-05-15", **kwargs
+) -> Graph:
+    """Return MCO graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2019-05-15"
+        Version to retrieve	
+		The available versions are:
+			- 2019-05-15
+    """
+    return RetrievedGraph(
+        "MCO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def OPMI(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="Vision-Release--1.0.161", **kwargs
+) -> Graph:
+    """Return OPMI graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "Vision-Release--1.0.161"
+        Version to retrieve	
+		The available versions are:
+			- Vision-Release--1.0.161
+    """
+    return RetrievedGraph(
+        "OPMI", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
@@ -2228,13 +403,13 @@ def FBDV(
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
-def FIDEO(
+def CEPH(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="DUMMY", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="2016-01-12", **kwargs
 ) -> Graph:
-    """Return FIDEO graph	
+    """Return CEPH graph	
 
     Parameters
     ----------
@@ -2253,23 +428,23 @@ def FIDEO(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "DUMMY"
+    version = "2016-01-12"
         Version to retrieve	
 		The available versions are:
-			- DUMMY
+			- 2016-01-12
     """
     return RetrievedGraph(
-        "FIDEO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        "CEPH", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
-def FIX(
+def MPATH(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2020-04-13", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="2020-05-19", **kwargs
 ) -> Graph:
-    """Return FIX graph	
+    """Return MPATH graph	
 
     Parameters
     ----------
@@ -2288,13 +463,153 @@ def FIX(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2020-04-13"
+    version = "2020-05-19"
         Version to retrieve	
 		The available versions are:
-			- 2020-04-13
+			- 2020-05-19
     """
     return RetrievedGraph(
-        "FIX", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        "MPATH", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def SPD(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="1.0", **kwargs
+) -> Graph:
+    """Return SPD graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "1.0"
+        Version to retrieve	
+		The available versions are:
+			- 1.0
+    """
+    return RetrievedGraph(
+        "SPD", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def OMIT(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="dev", **kwargs
+) -> Graph:
+    """Return OMIT graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "dev"
+        Version to retrieve	
+		The available versions are:
+			- dev
+    """
+    return RetrievedGraph(
+        "OMIT", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def VT(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="19-07-2022-13-21", **kwargs
+) -> Graph:
+    """Return VT graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "19-07-2022-13-21"
+        Version to retrieve	
+		The available versions are:
+			- 19-07-2022-13-21
+    """
+    return RetrievedGraph(
+        "VT", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def EHDAA2(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2013-07-04", **kwargs
+) -> Graph:
+    """Return EHDAA2 graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2013-07-04"
+        Version to retrieve	
+		The available versions are:
+			- 2013-07-04
+    """
+    return RetrievedGraph(
+        "EHDAA2", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
@@ -2333,13 +648,13 @@ def FLOPO(
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
-def FMA(
+def WBLS(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2020-04-13", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="2023-01-03", **kwargs
 ) -> Graph:
-    """Return FMA graph	
+    """Return WBLS graph	
 
     Parameters
     ----------
@@ -2358,23 +673,31 @@ def FMA(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2020-04-13"
+    version = "2023-01-03"
         Version to retrieve	
 		The available versions are:
-			- 2020-04-13
+			- 2023-05-17
+			- 2021-07-06
+			- 2021-12-08
+			- 2022-03-22
+			- 2022-06-21
+			- 2022-08-18
+			- 2022-09-22
+			- 2022-10-21
+			- 2023-01-03
     """
     return RetrievedGraph(
-        "FMA", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        "WBLS", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
-def FOBI(
+def RXNO(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="fobi", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-12-06", **kwargs
 ) -> Graph:
-    """Return FOBI graph	
+    """Return RXNO graph	
 
     Parameters
     ----------
@@ -2393,23 +716,26 @@ def FOBI(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "fobi"
+    version = "2021-12-06"
         Version to retrieve	
 		The available versions are:
-			- fobi
+			- 2021-12-16
+			- 2021-01-21
+			- 2021-11-15
+			- 2021-12-06
     """
     return RetrievedGraph(
-        "FOBI", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        "RXNO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
-def FOODON(
+def OMP(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2023-01-10", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-11-11", **kwargs
 ) -> Graph:
-    """Return FOODON graph	
+    """Return OMP graph	
 
     Parameters
     ----------
@@ -2428,30 +754,35 @@ def FOODON(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2023-01-10"
+    version = "2022-11-11"
         Version to retrieve	
 		The available versions are:
-			- 2023-02-17
-			- 2021-09-15
-			- 2021-11-25
-			- 2022-02-01
-			- 2022-08-12
-			- 2022-09-27
-			- 2022-10-22
-			- 2023-01-10
+			- 2022-12-04
+			- 2021-10-01
+			- 2021-12-03
+			- 2022-01-07
+			- 2022-02-08
+			- 2022-03-04
+			- 2022-04-11
+			- 2022-05-06
+			- 2022-06-03
+			- 2022-08-05
+			- 2022-09-02
+			- 2022-10-10
+			- 2022-11-11
     """
     return RetrievedGraph(
-        "FOODON", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        "OMP", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
-def FOVT(
+def ERO(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2021-10-29", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="no_version", **kwargs
 ) -> Graph:
-    """Return FOVT graph	
+    """Return ERO graph	
 
     Parameters
     ----------
@@ -2470,15 +801,299 @@ def FOVT(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2021-10-29"
+    version = "no_version"
         Version to retrieve	
 		The available versions are:
-			- 2021-11-10
-			- 2021-06-02
-			- 2021-10-29
+			- no_version
     """
     return RetrievedGraph(
-        "FOVT", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        "ERO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def MICRO(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="20ca3a0f90793de0c0f9b2ecbd186456e1393cdd0547b46f8eb2d466c6fa080a", **kwargs
+) -> Graph:
+    """Return MICRO graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "20ca3a0f90793de0c0f9b2ecbd186456e1393cdd0547b46f8eb2d466c6fa080a"
+        Version to retrieve	
+		The available versions are:
+			- 20ca3a0f90793de0c0f9b2ecbd186456e1393cdd0547b46f8eb2d466c6fa080a
+    """
+    return RetrievedGraph(
+        "MICRO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def GNO(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-12-20", **kwargs
+) -> Graph:
+    """Return GNO graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2022-12-20"
+        Version to retrieve	
+		The available versions are:
+			- 2023-05-08
+			- 2021-08-13
+			- 2022-02-23
+			- 2022-12-20
+    """
+    return RetrievedGraph(
+        "GNO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def XCO(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="4.46", **kwargs
+) -> Graph:
+    """Return XCO graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "4.46"
+        Version to retrieve	
+		The available versions are:
+			- 4.46
+    """
+    return RetrievedGraph(
+        "XCO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def RNAO(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="DUMMY", **kwargs
+) -> Graph:
+    """Return RNAO graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "DUMMY"
+        Version to retrieve	
+		The available versions are:
+			- DUMMY
+    """
+    return RetrievedGraph(
+        "RNAO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def AMPHX(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2020-12-18", **kwargs
+) -> Graph:
+    """Return AMPHX graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2020-12-18"
+        Version to retrieve	
+		The available versions are:
+			- 2020-12-18
+    """
+    return RetrievedGraph(
+        "AMPHX", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def EPIO(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-05-28", **kwargs
+) -> Graph:
+    """Return EPIO graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2021-05-28"
+        Version to retrieve	
+		The available versions are:
+			- 2021-05-28
+    """
+    return RetrievedGraph(
+        "EPIO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def CLYH(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2020-05-29", **kwargs
+) -> Graph:
+    """Return CLYH graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2020-05-29"
+        Version to retrieve	
+		The available versions are:
+			- 2020-05-29
+    """
+    return RetrievedGraph(
+        "CLYH", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def OOSTT(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-10-27", **kwargs
+) -> Graph:
+    """Return OOSTT graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2022-10-27"
+        Version to retrieve	
+		The available versions are:
+			- 2023-03-30
+			- 2021-01-08
+			- 2022-09-23
+			- 2022-10-27
+    """
+    return RetrievedGraph(
+        "OOSTT", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
@@ -2538,13 +1153,13 @@ def FYPO(
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
-def GAZ(
+def NCRO(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="no_version", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="2015-12-10", **kwargs
 ) -> Graph:
-    """Return GAZ graph	
+    """Return NCRO graph	
 
     Parameters
     ----------
@@ -2563,23 +1178,23 @@ def GAZ(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "no_version"
+    version = "2015-12-10"
         Version to retrieve	
 		The available versions are:
-			- no_version
+			- 2015-12-10
     """
     return RetrievedGraph(
-        "GAZ", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        "NCRO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
-def GECKO(
+def IAO(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2021-01-18", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="2020-12-09", **kwargs
 ) -> Graph:
-    """Return GECKO graph	
+    """Return IAO graph	
 
     Parameters
     ----------
@@ -2598,23 +1213,24 @@ def GECKO(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2021-01-18"
+    version = "2020-12-09"
         Version to retrieve	
 		The available versions are:
-			- 2021-01-18
+			- 2022-11-07
+			- 2020-12-09
     """
     return RetrievedGraph(
-        "GECKO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        "IAO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
-def GENEPIO(
+def GEO(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2022-11-23", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="production-version-2016-03-26", **kwargs
 ) -> Graph:
-    """Return GENEPIO graph	
+    """Return GEO graph	
 
     Parameters
     ----------
@@ -2633,17 +1249,1011 @@ def GENEPIO(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2022-11-23"
+    version = "production-version-2016-03-26"
         Version to retrieve	
 		The available versions are:
-			- 2023-01-26
-			- 2021-05-24
-			- 2022-01-26
-			- 2022-02-06
-			- 2022-11-23
+			- production-version-2016-03-26
     """
     return RetrievedGraph(
-        "GENEPIO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        "GEO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def EXO(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2.1", **kwargs
+) -> Graph:
+    """Return EXO graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2.1"
+        Version to retrieve	
+		The available versions are:
+			- 2022-06-29
+			- 2.1
+    """
+    return RetrievedGraph(
+        "EXO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def SWO(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-10-11", **kwargs
+) -> Graph:
+    """Return SWO graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2022-10-11"
+        Version to retrieve	
+		The available versions are:
+			- 2023-03-05
+			- 1.7
+			- 2022-10-11
+    """
+    return RetrievedGraph(
+        "SWO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def OBCS(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2018-02-22", **kwargs
+) -> Graph:
+    """Return OBCS graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2018-02-22"
+        Version to retrieve	
+		The available versions are:
+			- 2018-02-22
+    """
+    return RetrievedGraph(
+        "OBCS", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def ENVO(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-05-14", **kwargs
+) -> Graph:
+    """Return ENVO graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2021-05-14"
+        Version to retrieve	
+		The available versions are:
+			- 2023-02-13
+			- 2021-05-14
+    """
+    return RetrievedGraph(
+        "ENVO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def SYMP(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-10-20", **kwargs
+) -> Graph:
+    """Return SYMP graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2022-10-20"
+        Version to retrieve	
+		The available versions are:
+			- 2022-11-30
+			- 2020-08-04
+			- 2022-04-05
+			- 2022-05-10
+			- 2022-05-26
+			- 2022-06-22
+			- 2022-07-05
+			- 2022-07-12
+			- 2022-07-26
+			- 2022-08-16
+			- 2022-08-29
+			- 2022-09-06
+			- 2022-10-20
+    """
+    return RetrievedGraph(
+        "SYMP", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def TAXRANK(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2016-04-15", **kwargs
+) -> Graph:
+    """Return TAXRANK graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2016-04-15"
+        Version to retrieve	
+		The available versions are:
+			- 2016-04-15
+    """
+    return RetrievedGraph(
+        "TAXRANK", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def APO(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2023-01-30", **kwargs
+) -> Graph:
+    """Return APO graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2023-01-30"
+        Version to retrieve	
+		The available versions are:
+			- 2023-04-27
+			- 2021-09-07
+			- 2021-10-07
+			- 2022-01-03
+			- 2022-02-08
+			- 2022-03-23
+			- 2022-04-19
+			- 2022-07-06
+			- 2022-08-29
+			- 2022-10-10
+			- 2022-11-14
+			- 2022-12-13
+			- 2023-01-30
+    """
+    return RetrievedGraph(
+        "APO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def CLO(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2019-02-10", **kwargs
+) -> Graph:
+    """Return CLO graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2019-02-10"
+        Version to retrieve	
+		The available versions are:
+			- 2022-03-20
+			- 2019-02-10
+    """
+    return RetrievedGraph(
+        "CLO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def CMO(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2019-02-19", **kwargs
+) -> Graph:
+    """Return CMO graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2019-02-19"
+        Version to retrieve	
+		The available versions are:
+			- 2019-02-19
+    """
+    return RetrievedGraph(
+        "CMO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def OHMI(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2019-09-17", **kwargs
+) -> Graph:
+    """Return OHMI graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2019-09-17"
+        Version to retrieve	
+		The available versions are:
+			- 2019-09-17
+    """
+    return RetrievedGraph(
+        "OHMI", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def HSO(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2020-11-28", **kwargs
+) -> Graph:
+    """Return HSO graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2020-11-28"
+        Version to retrieve	
+		The available versions are:
+			- 2021-12-13
+			- 2020-11-28
+    """
+    return RetrievedGraph(
+        "HSO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def FBBI(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2020-11-06", **kwargs
+) -> Graph:
+    """Return FBBI graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2020-11-06"
+        Version to retrieve	
+		The available versions are:
+			- 2020-11-06
+    """
+    return RetrievedGraph(
+        "FBBI", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def OBI(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-12-14", **kwargs
+) -> Graph:
+    """Return OBI graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2022-12-14"
+        Version to retrieve	
+		The available versions are:
+			- 2023-03-10
+			- 2021-08-18
+			- 2022-01-03
+			- 2022-07-11
+			- 2022-12-14
+    """
+    return RetrievedGraph(
+        "OBI", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def CDAO(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2019-06-26", **kwargs
+) -> Graph:
+    """Return CDAO graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2019-06-26"
+        Version to retrieve	
+		The available versions are:
+			- 2022-11-30
+			- 2019-06-26
+    """
+    return RetrievedGraph(
+        "CDAO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def MFMO(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2013-11-16", **kwargs
+) -> Graph:
+    """Return MFMO graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2013-11-16"
+        Version to retrieve	
+		The available versions are:
+			- 2013-11-16
+    """
+    return RetrievedGraph(
+        "MFMO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def CRO(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2019-12-11", **kwargs
+) -> Graph:
+    """Return CRO graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2019-12-11"
+        Version to retrieve	
+		The available versions are:
+			- 2019-12-11
+    """
+    return RetrievedGraph(
+        "CRO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def CHEMINF(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2.0", **kwargs
+) -> Graph:
+    """Return CHEMINF graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2.0"
+        Version to retrieve	
+		The available versions are:
+			- 2.0
+    """
+    return RetrievedGraph(
+        "CHEMINF", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def MP(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-11-04", **kwargs
+) -> Graph:
+    """Return MP graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2021-11-04"
+        Version to retrieve	
+		The available versions are:
+			- releases
+			- 2021-09-21
+			- 2021-10-15
+			- 2021-10-26
+			- 2021-11-04
+    """
+    return RetrievedGraph(
+        "MP", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def DUO(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-02-23", **kwargs
+) -> Graph:
+    """Return DUO graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2021-02-23"
+        Version to retrieve	
+		The available versions are:
+			- 2021-02-23
+    """
+    return RetrievedGraph(
+        "DUO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def LABO(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-06-08", **kwargs
+) -> Graph:
+    """Return LABO graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2021-06-08"
+        Version to retrieve	
+		The available versions are:
+			- 2021-06-08
+    """
+    return RetrievedGraph(
+        "LABO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def FIDEO(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="DUMMY", **kwargs
+) -> Graph:
+    """Return FIDEO graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "DUMMY"
+        Version to retrieve	
+		The available versions are:
+			- DUMMY
+    """
+    return RetrievedGraph(
+        "FIDEO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def OLATDV(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2020-03-10", **kwargs
+) -> Graph:
+    """Return OLATDV graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2020-03-10"
+        Version to retrieve	
+		The available versions are:
+			- 2020-03-10
+    """
+    return RetrievedGraph(
+        "OLATDV", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def MPIO(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2019-01-30", **kwargs
+) -> Graph:
+    """Return MPIO graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2019-01-30"
+        Version to retrieve	
+		The available versions are:
+			- 2019-01-30
+    """
+    return RetrievedGraph(
+        "MPIO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def CHEBI(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="218", **kwargs
+) -> Graph:
+    """Return CHEBI graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "218"
+        Version to retrieve	
+		The available versions are:
+			- 221
+			- 203
+			- 204
+			- 205
+			- 206
+			- 207
+			- 208
+			- 209
+			- 210
+			- 211
+			- 213
+			- 214
+			- 219
+			- 217
+			- 218
+    """
+    return RetrievedGraph(
+        "CHEBI", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def AEO(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2014-12-05", **kwargs
+) -> Graph:
+    """Return AEO graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2014-12-05"
+        Version to retrieve	
+		The available versions are:
+			- 2014-12-05
+    """
+    return RetrievedGraph(
+        "AEO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def ADO(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-06-11", **kwargs
+) -> Graph:
+    """Return ADO graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2022-06-11"
+        Version to retrieve	
+		The available versions are:
+			- 2022-06-11
+    """
+    return RetrievedGraph(
+        "ADO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def FOBI(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="fobi", **kwargs
+) -> Graph:
+    """Return FOBI graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "fobi"
+        Version to retrieve	
+		The available versions are:
+			- fobi
+    """
+    return RetrievedGraph(
+        "FOBI", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
@@ -2685,13 +2295,13 @@ def GENO(
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
-def GEO(
+def SBO(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="production-version-2016-03-26", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="28-08-2021-03-13", **kwargs
 ) -> Graph:
-    """Return GEO graph	
+    """Return SBO graph	
 
     Parameters
     ----------
@@ -2710,23 +2320,23 @@ def GEO(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "production-version-2016-03-26"
+    version = "28-08-2021-03-13"
         Version to retrieve	
 		The available versions are:
-			- production-version-2016-03-26
+			- 28-08-2021-03-13
     """
     return RetrievedGraph(
-        "GEO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        "SBO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
-def GNO(
+def TO(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2022-12-20", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-03-09", **kwargs
 ) -> Graph:
-    """Return GNO graph	
+    """Return TO graph	
 
     Parameters
     ----------
@@ -2745,148 +2355,25 @@ def GNO(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2022-12-20"
+    version = "2022-03-09"
         Version to retrieve	
 		The available versions are:
-			- 2023-05-08
-			- 2021-08-13
-			- 2022-02-23
-			- 2022-12-20
+			- 2022-04-13
+			- 2021-04-06
+			- 2022-03-09
     """
     return RetrievedGraph(
-        "GNO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        "TO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
-def GO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2023-03-06", **kwargs
-) -> Graph:
-    """Return GO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2023-03-06"
-        Version to retrieve	
-		The available versions are:
-			- 2023-05-10
-			- 2021-09-01
-			- 2021-10-26
-			- 2021-11-16
-			- 2021-12-15
-			- 2022-01-13
-			- 2022-03-10
-			- 2022-03-22
-			- 2022-05-16
-			- 2022-06-15
-			- 2022-07-01
-			- 2022-09-19
-			- 2022-10-07
-			- 2022-11-03
-			- 2023-01-01
-			- 2023-03-06
-    """
-    return RetrievedGraph(
-        "GO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def GSSO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2.0.5", **kwargs
-) -> Graph:
-    """Return GSSO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2.0.5"
-        Version to retrieve	
-		The available versions are:
-			- 2.0.5
-    """
-    return RetrievedGraph(
-        "GSSO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def HANCESTRO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2022-05-12", **kwargs
-) -> Graph:
-    """Return HANCESTRO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2022-05-12"
-        Version to retrieve	
-		The available versions are:
-			- 2023-02-16
-			- 2020-12-18
-			- 2022-05-12
-    """
-    return RetrievedGraph(
-        "HANCESTRO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def HAO(
+def UO(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
     cache_sys_var="GRAPH_CACHE_DIR", version="no_version", **kwargs
 ) -> Graph:
-    """Return HAO graph	
+    """Return UO graph	
 
     Parameters
     ----------
@@ -2911,17 +2398,17 @@ def HAO(
 			- no_version
     """
     return RetrievedGraph(
-        "HAO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        "UO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
-def HOM(
+def MOP(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2015-01-07", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-02-01", **kwargs
 ) -> Graph:
-    """Return HOM graph	
+    """Return MOP graph	
 
     Parameters
     ----------
@@ -2940,23 +2427,25 @@ def HOM(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2015-01-07"
+    version = "2022-02-01"
         Version to retrieve	
 		The available versions are:
-			- 2015-01-07
+			- 2022-05-11
+			- 2014-09-03
+			- 2022-02-01
     """
     return RetrievedGraph(
-        "HOM", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        "MOP", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
-def HP(
+def CHIRO(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2023-01-27", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="2015-11-23", **kwargs
 ) -> Graph:
-    """Return HP graph	
+    """Return CHIRO graph	
 
     Parameters
     ----------
@@ -2975,30 +2464,249 @@ def HP(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2023-01-27"
+    version = "2015-11-23"
         Version to retrieve	
 		The available versions are:
-			- 2023-04-05
-			- 2021-08-02
-			- 2021-10-10
-			- 2022-02-14
-			- 2022-04-14
-			- 2022-06-11
+			- 2015-11-23
+    """
+    return RetrievedGraph(
+        "CHIRO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def OGMS(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-08-19", **kwargs
+) -> Graph:
+    """Return OGMS graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2021-08-19"
+        Version to retrieve	
+		The available versions are:
+			- 2021-08-19
+    """
+    return RetrievedGraph(
+        "OGMS", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def NCBITAXON(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-12-21", **kwargs
+) -> Graph:
+    """Return NCBITAXON graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2022-12-21"
+        Version to retrieve	
+		The available versions are:
+			- 2023-02-24
+			- 2021-06-10
+			- 2021-12-14
+			- 2022-02-21
+			- 2022-06-28
+			- 2022-08-18
 			- 2022-10-05
-			- 2023-01-27
+			- 2022-12-21
     """
     return RetrievedGraph(
-        "HP", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        "NCBITAXON", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
-def HSAPDV(
+def FOODON(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2023-01-10", **kwargs
+) -> Graph:
+    """Return FOODON graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2023-01-10"
+        Version to retrieve	
+		The available versions are:
+			- 2023-02-17
+			- 2021-09-15
+			- 2021-11-25
+			- 2022-02-01
+			- 2022-08-12
+			- 2022-09-27
+			- 2022-10-22
+			- 2023-01-10
+    """
+    return RetrievedGraph(
+        "FOODON", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def PW(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="7.52", **kwargs
+) -> Graph:
+    """Return PW graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "7.52"
+        Version to retrieve	
+		The available versions are:
+			- 7.52
+    """
+    return RetrievedGraph(
+        "PW", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def FOVT(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-10-29", **kwargs
+) -> Graph:
+    """Return FOVT graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2021-10-29"
+        Version to retrieve	
+		The available versions are:
+			- 2021-11-10
+			- 2021-06-02
+			- 2021-10-29
+    """
+    return RetrievedGraph(
+        "FOVT", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def XPO(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-09-15", **kwargs
+) -> Graph:
+    """Return XPO graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2022-09-15"
+        Version to retrieve	
+		The available versions are:
+			- 2022-09-15
+    """
+    return RetrievedGraph(
+        "XPO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def ZFS(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
     cache_sys_var="GRAPH_CACHE_DIR", version="2020-03-10", **kwargs
 ) -> Graph:
-    """Return HSAPDV graph	
+    """Return ZFS graph	
 
     Parameters
     ----------
@@ -3023,17 +2731,17 @@ def HSAPDV(
 			- 2020-03-10
     """
     return RetrievedGraph(
-        "HSAPDV", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        "ZFS", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
-def HSO(
+def RS(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2020-11-28", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="6.107", **kwargs
 ) -> Graph:
-    """Return HSO graph	
+    """Return RS graph	
 
     Parameters
     ----------
@@ -3052,24 +2760,23 @@ def HSO(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2020-11-28"
+    version = "6.107"
         Version to retrieve	
 		The available versions are:
-			- 2021-12-13
-			- 2020-11-28
+			- 6.107
     """
     return RetrievedGraph(
-        "HSO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        "RS", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
-def HTN(
+def CTO(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
     cache_sys_var="GRAPH_CACHE_DIR", version="no_version", **kwargs
 ) -> Graph:
-    """Return HTN graph	
+    """Return CTO graph	
 
     Parameters
     ----------
@@ -3094,17 +2801,17 @@ def HTN(
 			- no_version
     """
     return RetrievedGraph(
-        "HTN", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        "CTO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
-def IAO(
+def NGBO(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2020-12-09", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-10-05", **kwargs
 ) -> Graph:
-    """Return IAO graph	
+    """Return NGBO graph	
 
     Parameters
     ----------
@@ -3123,24 +2830,23 @@ def IAO(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2020-12-09"
+    version = "2022-10-05"
         Version to retrieve	
 		The available versions are:
-			- 2022-11-07
-			- 2020-12-09
+			- 2022-10-05
     """
     return RetrievedGraph(
-        "IAO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        "NGBO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
-def ICEO(
+def OMO(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2.1", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="2023-02-19", **kwargs
 ) -> Graph:
-    """Return ICEO graph	
+    """Return OMO graph	
 
     Parameters
     ----------
@@ -3159,23 +2865,26 @@ def ICEO(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2.1"
+    version = "2023-02-19"
         Version to retrieve	
 		The available versions are:
-			- 2.1
+			- 2023-05-15
+			- 2020-06-08
+			- 2022-04-27
+			- 2023-02-19
     """
     return RetrievedGraph(
-        "ICEO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        "OMO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
-def ICO(
+def FIX(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2021-04-21", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="2020-04-13", **kwargs
 ) -> Graph:
-    """Return ICO graph	
+    """Return FIX graph	
 
     Parameters
     ----------
@@ -3194,259 +2903,13 @@ def ICO(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2021-04-21"
+    version = "2020-04-13"
         Version to retrieve	
 		The available versions are:
-			- 2021-04-21
+			- 2020-04-13
     """
     return RetrievedGraph(
-        "ICO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def IDO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2017-11-03", **kwargs
-) -> Graph:
-    """Return IDO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2017-11-03"
-        Version to retrieve	
-		The available versions are:
-			- 2017-11-03
-    """
-    return RetrievedGraph(
-        "IDO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def IDOMAL(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2015-03-16", **kwargs
-) -> Graph:
-    """Return IDOMAL graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2015-03-16"
-        Version to retrieve	
-		The available versions are:
-			- 2015-03-16
-    """
-    return RetrievedGraph(
-        "IDOMAL", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def INO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="1.1.13", **kwargs
-) -> Graph:
-    """Return INO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "1.1.13"
-        Version to retrieve	
-		The available versions are:
-			- 1.1.13
-    """
-    return RetrievedGraph(
-        "INO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def KISAO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2.30", **kwargs
-) -> Graph:
-    """Return KISAO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2.30"
-        Version to retrieve	
-		The available versions are:
-			- 2.30
-    """
-    return RetrievedGraph(
-        "KISAO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def LABO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2021-06-08", **kwargs
-) -> Graph:
-    """Return LABO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2021-06-08"
-        Version to retrieve	
-		The available versions are:
-			- 2021-06-08
-    """
-    return RetrievedGraph(
-        "LABO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def LEPAO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2021-11-20", **kwargs
-) -> Graph:
-    """Return LEPAO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2021-11-20"
-        Version to retrieve	
-		The available versions are:
-			- 2023-02-18
-			- 2021-11-20
-    """
-    return RetrievedGraph(
-        "LEPAO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def MA(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2017-02-07", **kwargs
-) -> Graph:
-    """Return MA graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2017-02-07"
-        Version to retrieve	
-		The available versions are:
-			- 2017-02-07
-    """
-    return RetrievedGraph(
-        "MA", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        "FIX", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
@@ -3485,13 +2948,13 @@ def MAMO(
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
-def MAXO(
+def VTO(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2023-02-23", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="2020-11-13", **kwargs
 ) -> Graph:
-    """Return MAXO graph	
+    """Return VTO graph	
 
     Parameters
     ----------
@@ -3510,35 +2973,23 @@ def MAXO(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2023-02-23"
+    version = "2020-11-13"
         Version to retrieve	
 		The available versions are:
-			- 2023-05-17
-			- 2021-08-19
-			- 2022-03-23
-			- 2022-04-08
-			- 2022-04-11
-			- 2022-05-06
-			- 2022-06-01
-			- 2022-06-23
-			- 2022-08-22
-			- 2022-09-07
-			- 2022-11-21
-			- 2022-12-19
-			- 2023-02-23
+			- 2020-11-13
     """
     return RetrievedGraph(
-        "MAXO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        "VTO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
-def MCO(
+def UBERON(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2019-05-15", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="2023-02-14", **kwargs
 ) -> Graph:
-    """Return MCO graph	
+    """Return UBERON graph	
 
     Parameters
     ----------
@@ -3557,122 +3008,26 @@ def MCO(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2019-05-15"
+    version = "2023-02-14"
         Version to retrieve	
 		The available versions are:
-			- 2019-05-15
+			- 2023-04-19
+			- 2021-10-01
+			- 2021-11-28
+			- 2022-02-21
+			- 2022-04-05
+			- 2022-04-18
+			- 2022-05-17
+			- 2022-05-27
+			- 2022-06-20
+			- 2022-06-30
+			- 2022-08-19
+			- 2022-09-30
+			- 2023-01-09
+			- 2023-02-14
     """
     return RetrievedGraph(
-        "MCO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def MF(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2021-11-17", **kwargs
-) -> Graph:
-    """Return MF graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2021-11-17"
-        Version to retrieve	
-		The available versions are:
-			- 2022-07-19
-			- 2021-09-21
-			- 2021-11-17
-    """
-    return RetrievedGraph(
-        "MF", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def MFMO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2013-11-16", **kwargs
-) -> Graph:
-    """Return MFMO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2013-11-16"
-        Version to retrieve	
-		The available versions are:
-			- 2013-11-16
-    """
-    return RetrievedGraph(
-        "MFMO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def MFOEM(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2021-11-17", **kwargs
-) -> Graph:
-    """Return MFOEM graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2021-11-17"
-        Version to retrieve	
-		The available versions are:
-			- 2022-07-19
-			- 2021-09-21
-			- 2021-11-17
-    """
-    return RetrievedGraph(
-        "MFOEM", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        "UBERON", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
@@ -3711,13 +3066,13 @@ def MFOMD(
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
-def MI(
+def BFO(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2020-04-13", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="2019-08-26", **kwargs
 ) -> Graph:
-    """Return MI graph	
+    """Return BFO graph	
 
     Parameters
     ----------
@@ -3736,24 +3091,23 @@ def MI(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2020-04-13"
+    version = "2019-08-26"
         Version to retrieve	
 		The available versions are:
-			- 15-04-2021-22-57
-			- 2020-04-13
+			- 2019-08-26
     """
     return RetrievedGraph(
-        "MI", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        "BFO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
-def MIAPA(
+def HTN(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
     cache_sys_var="GRAPH_CACHE_DIR", version="no_version", **kwargs
 ) -> Graph:
-    """Return MIAPA graph	
+    """Return HTN graph	
 
     Parameters
     ----------
@@ -3778,17 +3132,17 @@ def MIAPA(
 			- no_version
     """
     return RetrievedGraph(
-        "MIAPA", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        "HTN", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
-def MICRO(
+def PORO(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="20ca3a0f90793de0c0f9b2ecbd186456e1393cdd0547b46f8eb2d466c6fa080a", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="2016-09-13", **kwargs
 ) -> Graph:
-    """Return MICRO graph	
+    """Return PORO graph	
 
     Parameters
     ----------
@@ -3807,23 +3161,24 @@ def MICRO(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "20ca3a0f90793de0c0f9b2ecbd186456e1393cdd0547b46f8eb2d466c6fa080a"
+    version = "2016-09-13"
         Version to retrieve	
 		The available versions are:
-			- 20ca3a0f90793de0c0f9b2ecbd186456e1393cdd0547b46f8eb2d466c6fa080a
+			- 2016-10-06
+			- 2016-09-13
     """
     return RetrievedGraph(
-        "MICRO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        "PORO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
-def MIRO(
+def PROCO(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2014-05-14", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-04-11", **kwargs
 ) -> Graph:
-    """Return MIRO graph	
+    """Return PROCO graph	
 
     Parameters
     ----------
@@ -3842,23 +3197,23 @@ def MIRO(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2014-05-14"
+    version = "2022-04-11"
         Version to retrieve	
 		The available versions are:
-			- 2014-05-14
+			- 2022-04-11
     """
     return RetrievedGraph(
-        "MIRO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        "PROCO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
-def MMO(
+def AISM(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2.39", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="2023-02-06", **kwargs
 ) -> Graph:
-    """Return MMO graph	
+    """Return AISM graph	
 
     Parameters
     ----------
@@ -3877,23 +3232,33 @@ def MMO(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2.39"
+    version = "2023-02-06"
         Version to retrieve	
 		The available versions are:
-			- 2.39
+			- 2023-04-14
+			- 2021-09-08
+			- 2021-11-19
+			- 2021-12-13
+			- 2022-03-17
+			- 2022-06-18
+			- 2022-06-27
+			- 2022-08-25
+			- 2022-10-08
+			- 2023-01-22
+			- 2023-02-06
     """
     return RetrievedGraph(
-        "MMO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        "AISM", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
-def MMUSDV(
+def WBBT(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2020-03-10", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="2023-01-03", **kwargs
 ) -> Graph:
-    """Return MMUSDV graph	
+    """Return WBBT graph	
 
     Parameters
     ----------
@@ -3912,23 +3277,28 @@ def MMUSDV(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2020-03-10"
+    version = "2023-01-03"
         Version to retrieve	
 		The available versions are:
-			- 2020-03-10
+			- 2023-04-07
+			- 2021-09-27
+			- 2021-12-14
+			- 2022-03-22
+			- 2022-06-13
+			- 2023-01-03
     """
     return RetrievedGraph(
-        "MMUSDV", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        "WBBT", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
-def MOD(
+def HAO(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="1.031.4", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="no_version", **kwargs
 ) -> Graph:
-    """Return MOD graph	
+    """Return HAO graph	
 
     Parameters
     ----------
@@ -3947,15 +3317,95 @@ def MOD(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "1.031.4"
+    version = "no_version"
         Version to retrieve	
 		The available versions are:
-			- 1.031.6
-			- 10-03-2021-14-36
-			- 1.031.4
+			- no_version
     """
     return RetrievedGraph(
-        "MOD", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        "HAO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def SO(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-07-12", **kwargs
+) -> Graph:
+    """Return SO graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2021-07-12"
+        Version to retrieve	
+		The available versions are:
+			- 2021-11-22
+			- 2021-07-12
+    """
+    return RetrievedGraph(
+        "SO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def RO(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2023-01-04", **kwargs
+) -> Graph:
+    """Return RO graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2023-01-04"
+        Version to retrieve	
+		The available versions are:
+			- 2023-02-22
+			- 2021-08-31
+			- 2021-10-27
+			- 2021-12-06
+			- 2022-01-20
+			- 2022-02-07
+			- 2022-04-25
+			- 2022-05-23
+			- 2022-07-19
+			- 2022-09-07
+			- 2022-10-26
+			- 2023-01-04
+    """
+    return RetrievedGraph(
+        "RO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
@@ -4013,13 +3463,13 @@ def MONDO(
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
-def MOP(
+def DDPHENO(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2022-02-01", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-01-19", **kwargs
 ) -> Graph:
-    """Return MOP graph	
+    """Return DDPHENO graph	
 
     Parameters
     ----------
@@ -4038,25 +3488,25 @@ def MOP(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2022-02-01"
+    version = "2022-01-19"
         Version to retrieve	
 		The available versions are:
-			- 2022-05-11
-			- 2014-09-03
-			- 2022-02-01
+			- 2023-02-19
+			- 2020-06-19
+			- 2022-01-19
     """
     return RetrievedGraph(
-        "MOP", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        "DDPHENO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
-def MP(
+def IDOMAL(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2021-11-04", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="2015-03-16", **kwargs
 ) -> Graph:
-    """Return MP graph	
+    """Return IDOMAL graph	
 
     Parameters
     ----------
@@ -4075,27 +3525,23 @@ def MP(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2021-11-04"
+    version = "2015-03-16"
         Version to retrieve	
 		The available versions are:
-			- releases
-			- 2021-09-21
-			- 2021-10-15
-			- 2021-10-26
-			- 2021-11-04
+			- 2015-03-16
     """
     return RetrievedGraph(
-        "MP", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        "IDOMAL", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
-def MPATH(
+def MAXO(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2020-05-19", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="2023-02-23", **kwargs
 ) -> Graph:
-    """Return MPATH graph	
+    """Return MAXO graph	
 
     Parameters
     ----------
@@ -4114,23 +3560,35 @@ def MPATH(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2020-05-19"
+    version = "2023-02-23"
         Version to retrieve	
 		The available versions are:
-			- 2020-05-19
+			- 2023-05-17
+			- 2021-08-19
+			- 2022-03-23
+			- 2022-04-08
+			- 2022-04-11
+			- 2022-05-06
+			- 2022-06-01
+			- 2022-06-23
+			- 2022-08-22
+			- 2022-09-07
+			- 2022-11-21
+			- 2022-12-19
+			- 2023-02-23
     """
     return RetrievedGraph(
-        "MPATH", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        "MAXO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
-def MPIO(
+def FBCV(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2019-01-30", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="2023-02-09", **kwargs
 ) -> Graph:
-    """Return MPIO graph	
+    """Return FBCV graph	
 
     Parameters
     ----------
@@ -4149,62 +3607,874 @@ def MPIO(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2019-01-30"
-        Version to retrieve	
-		The available versions are:
-			- 2019-01-30
-    """
-    return RetrievedGraph(
-        "MPIO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def MRO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2023-02-27", **kwargs
-) -> Graph:
-    """Return MRO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2023-02-27"
+    version = "2023-02-09"
         Version to retrieve	
 		The available versions are:
 			- 2023-05-04
-			- 2021-09-24
-			- 2021-10-15
-			- 2021-11-04
-			- 2021-11-29
-			- 2021-12-15
-			- 2022-01-13
-			- 2022-01-21
-			- 2022-03-14
-			- 2022-05-13
-			- 2022-06-17
-			- 2022-07-18
-			- 2022-08-18
-			- 2022-10-17
-			- 2023-02-27
+			- 2021-09-02
+			- 2021-10-18
+			- 2021-12-13
+			- 2022-01-24
+			- 2022-02-24
+			- 2022-04-14
+			- 2022-06-09
+			- 2022-08-11
+			- 2022-10-20
+			- 2022-12-02
+			- 2023-02-09
     """
     return RetrievedGraph(
-        "MRO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        "FBCV", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def TRANS(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2020-08-04", **kwargs
+) -> Graph:
+    """Return TRANS graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2020-08-04"
+        Version to retrieve	
+		The available versions are:
+			- 2022-10-10
+			- 2020-08-04
+    """
+    return RetrievedGraph(
+        "TRANS", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def PSDO(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2020-12-04", **kwargs
+) -> Graph:
+    """Return PSDO graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2020-12-04"
+        Version to retrieve	
+		The available versions are:
+			- 2022-02-23
+			- 2020-12-04
+    """
+    return RetrievedGraph(
+        "PSDO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def SCDO(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-04-15", **kwargs
+) -> Graph:
+    """Return SCDO graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2021-04-15"
+        Version to retrieve	
+		The available versions are:
+			- 2021-04-15
+    """
+    return RetrievedGraph(
+        "SCDO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def LEPAO(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-11-20", **kwargs
+) -> Graph:
+    """Return LEPAO graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2021-11-20"
+        Version to retrieve	
+		The available versions are:
+			- 2023-02-18
+			- 2021-11-20
+    """
+    return RetrievedGraph(
+        "LEPAO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def ONTONEO(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-04-29", **kwargs
+) -> Graph:
+    """Return ONTONEO graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2021-04-29"
+        Version to retrieve	
+		The available versions are:
+			- 2021-04-29
+    """
+    return RetrievedGraph(
+        "ONTONEO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def DRON(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-10-22", **kwargs
+) -> Graph:
+    """Return DRON graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2022-10-22"
+        Version to retrieve	
+		The available versions are:
+			- 2023-03-10
+			- 2021-08-12
+			- 2021-10-20
+			- 2022-01-28
+			- 2022-04-22
+			- 2022-10-02
+			- 2022-10-22
+    """
+    return RetrievedGraph(
+        "DRON", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def RBO(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-10-27", **kwargs
+) -> Graph:
+    """Return RBO graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2022-10-27"
+        Version to retrieve	
+		The available versions are:
+			- 2023-03-02
+			- 2021-08-30
+			- 2022-01-14
+			- 2022-04-16
+			- 2022-06-02
+			- 2022-08-11
+			- 2022-10-06
+			- 2022-10-20
+			- 2022-10-27
+    """
+    return RetrievedGraph(
+        "RBO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def NCIT(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-04-14", **kwargs
+) -> Graph:
+    """Return NCIT graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2022-04-14"
+        Version to retrieve	
+		The available versions are:
+			- 2022-08-19
+			- 2021-08-20
+			- 2021-12-17
+			- 2022-04-14
+    """
+    return RetrievedGraph(
+        "NCIT", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def FMA(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2020-04-13", **kwargs
+) -> Graph:
+    """Return FMA graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2020-04-13"
+        Version to retrieve	
+		The available versions are:
+			- 2020-04-13
+    """
+    return RetrievedGraph(
+        "FMA", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def REX(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2017-11-19", **kwargs
+) -> Graph:
+    """Return REX graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2017-11-19"
+        Version to retrieve	
+		The available versions are:
+			- 2017-11-19
+    """
+    return RetrievedGraph(
+        "REX", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def COB(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-11-02", **kwargs
+) -> Graph:
+    """Return COB graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2022-11-02"
+        Version to retrieve	
+		The available versions are:
+			- 2023-05-12
+			- 2021-09-13
+			- 2022-05-02
+			- 2022-11-02
+    """
+    return RetrievedGraph(
+        "COB", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def SIBO(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2015-06-15", **kwargs
+) -> Graph:
+    """Return SIBO graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2015-06-15"
+        Version to retrieve	
+		The available versions are:
+			- 2015-06-15
+    """
+    return RetrievedGraph(
+        "SIBO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def PDRO(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-06-08", **kwargs
+) -> Graph:
+    """Return PDRO graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2021-06-08"
+        Version to retrieve	
+		The available versions are:
+			- 2021-06-08
+    """
+    return RetrievedGraph(
+        "PDRO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def OGG(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="12-01-2016", **kwargs
+) -> Graph:
+    """Return OGG graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "12-01-2016"
+        Version to retrieve	
+		The available versions are:
+			- 12-01-2016
+    """
+    return RetrievedGraph(
+        "OGG", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def XLMOD(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2019-10-28", **kwargs
+) -> Graph:
+    """Return XLMOD graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2019-10-28"
+        Version to retrieve	
+		The available versions are:
+			- 2019-10-28
+    """
+    return RetrievedGraph(
+        "XLMOD", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def HANCESTRO(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-05-12", **kwargs
+) -> Graph:
+    """Return HANCESTRO graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2022-05-12"
+        Version to retrieve	
+		The available versions are:
+			- 2023-02-16
+			- 2020-12-18
+			- 2022-05-12
+    """
+    return RetrievedGraph(
+        "HANCESTRO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def GO(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2023-03-06", **kwargs
+) -> Graph:
+    """Return GO graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2023-03-06"
+        Version to retrieve	
+		The available versions are:
+			- 2023-05-10
+			- 2021-09-01
+			- 2021-10-26
+			- 2021-11-16
+			- 2021-12-15
+			- 2022-01-13
+			- 2022-03-10
+			- 2022-03-22
+			- 2022-05-16
+			- 2022-06-15
+			- 2022-07-01
+			- 2022-09-19
+			- 2022-10-07
+			- 2022-11-03
+			- 2023-01-01
+			- 2023-03-06
+    """
+    return RetrievedGraph(
+        "GO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def MF(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-11-17", **kwargs
+) -> Graph:
+    """Return MF graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2021-11-17"
+        Version to retrieve	
+		The available versions are:
+			- 2022-07-19
+			- 2021-09-21
+			- 2021-11-17
+    """
+    return RetrievedGraph(
+        "MF", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def GSSO(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2.0.5", **kwargs
+) -> Graph:
+    """Return GSSO graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2.0.5"
+        Version to retrieve	
+		The available versions are:
+			- 2.0.5
+    """
+    return RetrievedGraph(
+        "GSSO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def UPHENO(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="no_version", **kwargs
+) -> Graph:
+    """Return UPHENO graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "no_version"
+        Version to retrieve	
+		The available versions are:
+			- no_version
+    """
+    return RetrievedGraph(
+        "UPHENO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def PLANA(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-10-21", **kwargs
+) -> Graph:
+    """Return PLANA graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2021-10-21"
+        Version to retrieve	
+		The available versions are:
+			- releases
+			- 2021-09-29
+			- 2021-10-06
+			- 2021-10-21
+    """
+    return RetrievedGraph(
+        "PLANA", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def OAE(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="1.2.47", **kwargs
+) -> Graph:
+    """Return OAE graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "1.2.47"
+        Version to retrieve	
+		The available versions are:
+			- 1.2.47
+    """
+    return RetrievedGraph(
+        "OAE", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def MMUSDV(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2020-03-10", **kwargs
+) -> Graph:
+    """Return MMUSDV graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2020-03-10"
+        Version to retrieve	
+		The available versions are:
+			- 2020-03-10
+    """
+    return RetrievedGraph(
+        "MMUSDV", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
@@ -4271,13 +4541,13 @@ def MS(
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
-def NBO(
+def T4FS(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2023-02-21", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-12-05", **kwargs
 ) -> Graph:
-    """Return NBO graph	
+    """Return T4FS graph	
 
     Parameters
     ----------
@@ -4296,67 +4566,25 @@ def NBO(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2023-02-21"
+    version = "2022-12-05"
         Version to retrieve	
 		The available versions are:
-			- 2023-05-02
-			- 2021-02-15
-			- 2023-02-21
-    """
-    return RetrievedGraph(
-        "NBO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def NCBITAXON(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2022-12-21", **kwargs
-) -> Graph:
-    """Return NCBITAXON graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2022-12-21"
-        Version to retrieve	
-		The available versions are:
-			- 2023-02-24
-			- 2021-06-10
-			- 2021-12-14
-			- 2022-02-21
-			- 2022-06-28
-			- 2022-08-18
+			- 2023-03-02
 			- 2022-10-05
-			- 2022-12-21
+			- 2022-12-05
     """
     return RetrievedGraph(
-        "NCBITAXON", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        "T4FS", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
-def NCIT(
+def APOLLO_SV(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2022-04-14", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="v2023-01-10", **kwargs
 ) -> Graph:
-    """Return NCIT graph	
+    """Return APOLLO_SV graph	
 
     Parameters
     ----------
@@ -4375,26 +4603,26 @@ def NCIT(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2022-04-14"
+    version = "v2023-01-10"
         Version to retrieve	
 		The available versions are:
-			- 2022-08-19
-			- 2021-08-20
-			- 2021-12-17
-			- 2022-04-14
+			- 2023-05-05
+			- v4.1.1.
+			- 2022-11-25
+			- v2023-01-10
     """
     return RetrievedGraph(
-        "NCIT", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        "APOLLO_SV", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
-def NCRO(
+def HSAPDV(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2015-12-10", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="2020-03-10", **kwargs
 ) -> Graph:
-    """Return NCRO graph	
+    """Return HSAPDV graph	
 
     Parameters
     ----------
@@ -4413,23 +4641,23 @@ def NCRO(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2015-12-10"
+    version = "2020-03-10"
         Version to retrieve	
 		The available versions are:
-			- 2015-12-10
+			- 2020-03-10
     """
     return RetrievedGraph(
-        "NCRO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        "HSAPDV", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
-def NOMEN(
+def VO(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="no_version", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="September_18__2021", **kwargs
 ) -> Graph:
-    """Return NOMEN graph	
+    """Return VO graph	
 
     Parameters
     ----------
@@ -4448,23 +4676,23 @@ def NOMEN(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "no_version"
+    version = "September_18__2021"
         Version to retrieve	
 		The available versions are:
-			- no_version
+			- September_18__2021
     """
     return RetrievedGraph(
-        "NOMEN", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        "VO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
-def OAE(
+def MIRO(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="1.2.47", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="2014-05-14", **kwargs
 ) -> Graph:
-    """Return OAE graph	
+    """Return MIRO graph	
 
     Parameters
     ----------
@@ -4483,23 +4711,23 @@ def OAE(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "1.2.47"
+    version = "2014-05-14"
         Version to retrieve	
 		The available versions are:
-			- 1.2.47
+			- 2014-05-14
     """
     return RetrievedGraph(
-        "OAE", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        "MIRO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
-def OARCS(
+def EMAPA(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="no_version", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-11-04", **kwargs
 ) -> Graph:
-    """Return OARCS graph	
+    """Return EMAPA graph	
 
     Parameters
     ----------
@@ -4518,23 +4746,29 @@ def OARCS(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "no_version"
+    version = "2022-11-04"
         Version to retrieve	
 		The available versions are:
-			- no_version
+			- 2023-05-05
+			- 2021-09-01
+			- 2022-07-14
+			- 2022-07-28
+			- 2022-08-26
+			- 2022-08-31
+			- 2022-11-04
     """
     return RetrievedGraph(
-        "OARCS", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        "EMAPA", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
-def OBA(
+def GECKO(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2023-02-14", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-01-18", **kwargs
 ) -> Graph:
-    """Return OBA graph	
+    """Return GECKO graph	
 
     Parameters
     ----------
@@ -4553,31 +4787,23 @@ def OBA(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2023-02-14"
+    version = "2021-01-18"
         Version to retrieve	
 		The available versions are:
-			- 2023-05-11
-			- 13-11-2015-10-21
-			- 2021-12-03
-			- 2022-01-19
-			- 2022-05-11
-			- 2022-08-03
-			- 2022-09-06
-			- 2022-12-21
-			- 2023-02-14
+			- 2021-01-18
     """
     return RetrievedGraph(
-        "OBA", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        "GECKO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
-def OBCS(
+def CARO(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2018-02-22", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-02-18", **kwargs
 ) -> Graph:
-    """Return OBCS graph	
+    """Return CARO graph	
 
     Parameters
     ----------
@@ -4596,23 +4822,24 @@ def OBCS(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2018-02-22"
+    version = "2022-02-18"
         Version to retrieve	
 		The available versions are:
-			- 2018-02-22
+			- 2023-03-15
+			- 2022-02-18
     """
     return RetrievedGraph(
-        "OBCS", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        "CARO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
-def OBI(
+def GENEPIO(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2022-12-14", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-11-23", **kwargs
 ) -> Graph:
-    """Return OBI graph	
+    """Return GENEPIO graph	
 
     Parameters
     ----------
@@ -4631,27 +4858,27 @@ def OBI(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2022-12-14"
+    version = "2022-11-23"
         Version to retrieve	
 		The available versions are:
-			- 2023-03-10
-			- 2021-08-18
-			- 2022-01-03
-			- 2022-07-11
-			- 2022-12-14
+			- 2023-01-26
+			- 2021-05-24
+			- 2022-01-26
+			- 2022-02-06
+			- 2022-11-23
     """
     return RetrievedGraph(
-        "OBI", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        "GENEPIO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
-def OBIB(
+def TADS(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2021-11-12", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="2015-08-20", **kwargs
 ) -> Graph:
-    """Return OBIB graph	
+    """Return TADS graph	
 
     Parameters
     ----------
@@ -4670,25 +4897,23 @@ def OBIB(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2021-11-12"
+    version = "2015-08-20"
         Version to retrieve	
 		The available versions are:
-			- 2023-04-05
-			- 2021-02-02
-			- 2021-11-12
+			- 2015-08-20
     """
     return RetrievedGraph(
-        "OBIB", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        "TADS", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
-def OGG(
+def FAO(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="12-01-2016", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="2020-05-07", **kwargs
 ) -> Graph:
-    """Return OGG graph	
+    """Return FAO graph	
 
     Parameters
     ----------
@@ -4707,23 +4932,23 @@ def OGG(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "12-01-2016"
+    version = "2020-05-07"
         Version to retrieve	
 		The available versions are:
-			- 12-01-2016
+			- 2020-05-07
     """
     return RetrievedGraph(
-        "OGG", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        "FAO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
-def OGI(
+def CVDO(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="DUMMY", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="2020-03-05", **kwargs
 ) -> Graph:
-    """Return OGI graph	
+    """Return CVDO graph	
 
     Parameters
     ----------
@@ -4742,23 +4967,23 @@ def OGI(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "DUMMY"
+    version = "2020-03-05"
         Version to retrieve	
 		The available versions are:
-			- DUMMY
+			- 2020-03-05
     """
     return RetrievedGraph(
-        "OGI", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        "CVDO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
-def OGMS(
+def ECAO(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2021-08-19", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="2020-05-22", **kwargs
 ) -> Graph:
-    """Return OGMS graph	
+    """Return ECAO graph	
 
     Parameters
     ----------
@@ -4777,120 +5002,13 @@ def OGMS(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2021-08-19"
+    version = "2020-05-22"
         Version to retrieve	
 		The available versions are:
-			- 2021-08-19
+			- 2020-05-22
     """
     return RetrievedGraph(
-        "OGMS", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def OGSF(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="11-22-2014", **kwargs
-) -> Graph:
-    """Return OGSF graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "11-22-2014"
-        Version to retrieve	
-		The available versions are:
-			- 11-22-2014
-    """
-    return RetrievedGraph(
-        "OGSF", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def OHD(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2022-10-10", **kwargs
-) -> Graph:
-    """Return OHD graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2022-10-10"
-        Version to retrieve	
-		The available versions are:
-			- 2023-04-14
-			- 2016-06-27
-			- 2022-10-10
-    """
-    return RetrievedGraph(
-        "OHD", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def OHMI(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2019-09-17", **kwargs
-) -> Graph:
-    """Return OHMI graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2019-09-17"
-        Version to retrieve	
-		The available versions are:
-			- 2019-09-17
-    """
-    return RetrievedGraph(
-        "OHMI", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        "ECAO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
@@ -4929,13 +5047,227 @@ def OHPI(
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
-def OLATDV(
+def OPL(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-01-28", **kwargs
+) -> Graph:
+    """Return OPL graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2021-01-28"
+        Version to retrieve	
+		The available versions are:
+			- 2021-01-28
+    """
+    return RetrievedGraph(
+        "OPL", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def TGMA(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2013-06-03", **kwargs
+) -> Graph:
+    """Return TGMA graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2013-06-03"
+        Version to retrieve	
+		The available versions are:
+			- 2013-06-03
+    """
+    return RetrievedGraph(
+        "TGMA", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def BCO(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2020-03-27", **kwargs
+) -> Graph:
+    """Return BCO graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2020-03-27"
+        Version to retrieve	
+		The available versions are:
+			- 2021-11-14
+			- 2020-03-27
+    """
+    return RetrievedGraph(
+        "BCO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def ICO(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-04-21", **kwargs
+) -> Graph:
+    """Return ICO graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2021-04-21"
+        Version to retrieve	
+		The available versions are:
+			- 2021-04-21
+    """
+    return RetrievedGraph(
+        "ICO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def ZECO(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-06-04", **kwargs
+) -> Graph:
+    """Return ZECO graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2021-06-04"
+        Version to retrieve	
+		The available versions are:
+			- 2022-02-14
+			- 2021-06-04
+    """
+    return RetrievedGraph(
+        "ZECO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def PHIPO(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-07-29", **kwargs
+) -> Graph:
+    """Return PHIPO graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2022-07-29"
+        Version to retrieve	
+		The available versions are:
+			- 2022-11-23
+			- 2021-07-14
+			- 2022-07-29
+    """
+    return RetrievedGraph(
+        "PHIPO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def PDUMDV(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
     cache_sys_var="GRAPH_CACHE_DIR", version="2020-03-10", **kwargs
 ) -> Graph:
-    """Return OLATDV graph	
+    """Return PDUMDV graph	
 
     Parameters
     ----------
@@ -4960,17 +5292,17 @@ def OLATDV(
 			- 2020-03-10
     """
     return RetrievedGraph(
-        "OLATDV", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        "PDUMDV", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
-def OMIT(
+def ARO(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="dev", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="12-09-2022-11-38", **kwargs
 ) -> Graph:
-    """Return OMIT graph	
+    """Return ARO graph	
 
     Parameters
     ----------
@@ -4989,23 +5321,23 @@ def OMIT(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "dev"
+    version = "12-09-2022-11-38"
         Version to retrieve	
 		The available versions are:
-			- dev
+			- 12-09-2022-11-38
     """
     return RetrievedGraph(
-        "OMIT", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        "ARO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
-def OMO(
+def OARCS(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2023-02-19", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="no_version", **kwargs
 ) -> Graph:
-    """Return OMO graph	
+    """Return OARCS graph	
 
     Parameters
     ----------
@@ -5024,26 +5356,65 @@ def OMO(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2023-02-19"
+    version = "no_version"
         Version to retrieve	
 		The available versions are:
-			- 2023-05-15
-			- 2020-06-08
+			- no_version
+    """
+    return RetrievedGraph(
+        "OARCS", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def PCL(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-10-19", **kwargs
+) -> Graph:
+    """Return PCL graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2022-10-19"
+        Version to retrieve	
+		The available versions are:
+			- 2023-02-27
+			- 2022-01-24
+			- 2022-02-02
+			- 2022-02-09
+			- 2022-03-02
 			- 2022-04-27
-			- 2023-02-19
+			- 2022-09-02
+			- 2022-10-19
     """
     return RetrievedGraph(
-        "OMO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        "PCL", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
-def OMP(
+def CTENO(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2022-11-11", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="2016-10-19", **kwargs
 ) -> Graph:
-    """Return OMP graph	
+    """Return CTENO graph	
 
     Parameters
     ----------
@@ -5062,25 +5433,100 @@ def OMP(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2022-11-11"
+    version = "2016-10-19"
         Version to retrieve	
 		The available versions are:
-			- 2022-12-04
-			- 2021-10-01
-			- 2021-12-03
-			- 2022-01-07
-			- 2022-02-08
-			- 2022-03-04
-			- 2022-04-11
-			- 2022-05-06
-			- 2022-06-03
-			- 2022-08-05
-			- 2022-09-02
-			- 2022-10-10
-			- 2022-11-11
+			- 2016-10-19
     """
     return RetrievedGraph(
-        "OMP", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        "CTENO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def PLANP(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2020-03-28", **kwargs
+) -> Graph:
+    """Return PLANP graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2020-03-28"
+        Version to retrieve	
+		The available versions are:
+			- 2020-03-28
+    """
+    return RetrievedGraph(
+        "PLANP", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def DOID(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2023-02-27", **kwargs
+) -> Graph:
+    """Return DOID graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2023-02-27"
+        Version to retrieve	
+		The available versions are:
+			- 2023-03-31
+			- 2021-10-01
+			- 2021-10-12
+			- 2021-11-17
+			- 2021-12-15
+			- 2022-01-31
+			- 2022-02-21
+			- 2022-03-02
+			- 2022-04-01
+			- 2022-04-28
+			- 2022-06-07
+			- 2022-07-27
+			- 2022-08-29
+			- 2022-09-29
+			- 2022-11-01
+			- 2022-12-15
+			- 2023-01-30
+			- 2023-02-27
+    """
+    return RetrievedGraph(
+        "DOID", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
@@ -5123,6 +5569,147 @@ def OMRSE(
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
+def PPO(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2018-10-26", **kwargs
+) -> Graph:
+    """Return PPO graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2018-10-26"
+        Version to retrieve	
+		The available versions are:
+			- 2018-10-26
+    """
+    return RetrievedGraph(
+        "PPO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def OVAE(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="04-11-2016", **kwargs
+) -> Graph:
+    """Return OVAE graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "04-11-2016"
+        Version to retrieve	
+		The available versions are:
+			- 04-11-2016
+    """
+    return RetrievedGraph(
+        "OVAE", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def ZP(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-12-12", **kwargs
+) -> Graph:
+    """Return ZP graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2021-12-12"
+        Version to retrieve	
+		The available versions are:
+			- 2022-12-17
+			- 2021-12-12
+    """
+    return RetrievedGraph(
+        "ZP", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def STATO(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="RC1.4", **kwargs
+) -> Graph:
+    """Return STATO graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "RC1.4"
+        Version to retrieve	
+		The available versions are:
+			- RC1.4
+    """
+    return RetrievedGraph(
+        "STATO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
 def ONE(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
@@ -5155,6 +5742,1150 @@ def ONE(
     """
     return RetrievedGraph(
         "ONE", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def ECTO(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-12-12", **kwargs
+) -> Graph:
+    """Return ECTO graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2022-12-12"
+        Version to retrieve	
+		The available versions are:
+			- 2023-02-14
+			- 2021-08-25
+			- 2022-03-09
+			- 2022-05-04
+			- 2022-05-12
+			- 2022-08-12
+			- 2022-12-12
+    """
+    return RetrievedGraph(
+        "ECTO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def XAO(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-08-24", **kwargs
+) -> Graph:
+    """Return XAO graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2022-08-24"
+        Version to retrieve	
+		The available versions are:
+			- 2022-08-29
+			- 2021-03-04
+			- 2022-08-24
+    """
+    return RetrievedGraph(
+        "XAO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def MIAPA(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="no_version", **kwargs
+) -> Graph:
+    """Return MIAPA graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "no_version"
+        Version to retrieve	
+		The available versions are:
+			- no_version
+    """
+    return RetrievedGraph(
+        "MIAPA", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def MI(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2020-04-13", **kwargs
+) -> Graph:
+    """Return MI graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2020-04-13"
+        Version to retrieve	
+		The available versions are:
+			- 15-04-2021-22-57
+			- 2020-04-13
+    """
+    return RetrievedGraph(
+        "MI", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def ECOCORE(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-02-17", **kwargs
+) -> Graph:
+    """Return ECOCORE graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2021-02-17"
+        Version to retrieve	
+		The available versions are:
+			- 2022-03-09
+			- 2021-02-17
+    """
+    return RetrievedGraph(
+        "ECOCORE", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def MMO(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2.39", **kwargs
+) -> Graph:
+    """Return MMO graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2.39"
+        Version to retrieve	
+		The available versions are:
+			- 2.39
+    """
+    return RetrievedGraph(
+        "MMO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def EUPATH(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2023-01-19", **kwargs
+) -> Graph:
+    """Return EUPATH graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2023-01-19"
+        Version to retrieve	
+		The available versions are:
+			- 2023-03-20
+			- 2021-09-09
+			- 2022-02-15
+			- 2022-06-08
+			- 2022-08-12
+			- 2022-11-04
+			- 2023-01-19
+    """
+    return RetrievedGraph(
+        "EUPATH", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def OBIB(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-11-12", **kwargs
+) -> Graph:
+    """Return OBIB graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2021-11-12"
+        Version to retrieve	
+		The available versions are:
+			- 2023-04-05
+			- 2021-02-02
+			- 2021-11-12
+    """
+    return RetrievedGraph(
+        "OBIB", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def IDO(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2017-11-03", **kwargs
+) -> Graph:
+    """Return IDO graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2017-11-03"
+        Version to retrieve	
+		The available versions are:
+			- 2017-11-03
+    """
+    return RetrievedGraph(
+        "IDO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def SEPIO(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="no_version", **kwargs
+) -> Graph:
+    """Return SEPIO graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "no_version"
+        Version to retrieve	
+		The available versions are:
+			- 2023-02-21
+			- no_version
+    """
+    return RetrievedGraph(
+        "SEPIO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def TTO(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="19-07-2012-13-26", **kwargs
+) -> Graph:
+    """Return TTO graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "19-07-2012-13-26"
+        Version to retrieve	
+		The available versions are:
+			- 19-07-2012-13-26
+    """
+    return RetrievedGraph(
+        "TTO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def PR(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="67.0", **kwargs
+) -> Graph:
+    """Return PR graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "67.0"
+        Version to retrieve	
+		The available versions are:
+			- 68.0
+			- 63.0
+			- 64.0
+			- 65.0
+			- 66.0
+			- 67.0
+    """
+    return RetrievedGraph(
+        "PR", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def NBO(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2023-02-21", **kwargs
+) -> Graph:
+    """Return NBO graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2023-02-21"
+        Version to retrieve	
+		The available versions are:
+			- 2023-05-02
+			- 2021-02-15
+			- 2023-02-21
+    """
+    return RetrievedGraph(
+        "NBO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def WBPHENOTYPE(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2023-03-02", **kwargs
+) -> Graph:
+    """Return WBPHENOTYPE graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2023-03-02"
+        Version to retrieve	
+		The available versions are:
+			- 2023-05-18
+			- 2021-09-27
+			- 2021-10-25
+			- 2021-12-12
+			- 2021-12-20
+			- 2022-03-22
+			- 2022-06-21
+			- 2022-08-18
+			- 2022-09-21
+			- 2022-10-21
+			- 2023-01-03
+			- 2023-02-05
+			- 2023-03-02
+    """
+    return RetrievedGraph(
+        "WBPHENOTYPE", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def PECO(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2020-08-21", **kwargs
+) -> Graph:
+    """Return PECO graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2020-08-21"
+        Version to retrieve	
+		The available versions are:
+			- 2020-08-21
+    """
+    return RetrievedGraph(
+        "PECO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def GAZ(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="no_version", **kwargs
+) -> Graph:
+    """Return GAZ graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "no_version"
+        Version to retrieve	
+		The available versions are:
+			- no_version
+    """
+    return RetrievedGraph(
+        "GAZ", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def CIO(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2015-03-10", **kwargs
+) -> Graph:
+    """Return CIO graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2015-03-10"
+        Version to retrieve	
+		The available versions are:
+			- 2015-03-10
+    """
+    return RetrievedGraph(
+        "CIO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def INO(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="1.1.13", **kwargs
+) -> Graph:
+    """Return INO graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "1.1.13"
+        Version to retrieve	
+		The available versions are:
+			- 1.1.13
+    """
+    return RetrievedGraph(
+        "INO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def VBO(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2023-02-07", **kwargs
+) -> Graph:
+    """Return VBO graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2023-02-07"
+        Version to retrieve	
+		The available versions are:
+			- 2023-03-09
+			- 2022-05-06
+			- 2022-09-22
+			- 2022-10-31
+			- 2022-11-29
+			- 2023-02-07
+    """
+    return RetrievedGraph(
+        "VBO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def CLAO(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-09-27", **kwargs
+) -> Graph:
+    """Return CLAO graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2021-09-27"
+        Version to retrieve	
+		The available versions are:
+			- 2021-09-27
+    """
+    return RetrievedGraph(
+        "CLAO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def UPA(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2018-12-12", **kwargs
+) -> Graph:
+    """Return UPA graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2018-12-12"
+        Version to retrieve	
+		The available versions are:
+			- 2018-12-12
+    """
+    return RetrievedGraph(
+        "UPA", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def NOMEN(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="no_version", **kwargs
+) -> Graph:
+    """Return NOMEN graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "no_version"
+        Version to retrieve	
+		The available versions are:
+			- no_version
+    """
+    return RetrievedGraph(
+        "NOMEN", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def ONTOAVIDA(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-03-15", **kwargs
+) -> Graph:
+    """Return ONTOAVIDA graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2022-03-15"
+        Version to retrieve	
+		The available versions are:
+			- 2022-03-15
+    """
+    return RetrievedGraph(
+        "ONTOAVIDA", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def ZFA(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-03-15", **kwargs
+) -> Graph:
+    """Return ZFA graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2022-03-15"
+        Version to retrieve	
+		The available versions are:
+			- 2022-12-09
+			- 2020-04-14
+			- 2021-12-09
+			- 2022-02-15
+			- 2022-02-28
+			- 2022-03-15
+    """
+    return RetrievedGraph(
+        "ZFA", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def DISDRIV(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="no_version", **kwargs
+) -> Graph:
+    """Return DISDRIV graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "no_version"
+        Version to retrieve	
+		The available versions are:
+			- no_version
+    """
+    return RetrievedGraph(
+        "DISDRIV", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def CIDO(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="08-01-2022", **kwargs
+) -> Graph:
+    """Return CIDO graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "08-01-2022"
+        Version to retrieve	
+		The available versions are:
+			- 08-01-2022
+    """
+    return RetrievedGraph(
+        "CIDO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def COLAO(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2023-02-06", **kwargs
+) -> Graph:
+    """Return COLAO graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2023-02-06"
+        Version to retrieve	
+		The available versions are:
+			- 2023-04-08
+			- 2021-12-14
+			- 2022-06-18
+			- 2022-08-25
+			- 2023-02-06
+    """
+    return RetrievedGraph(
+        "COLAO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def KISAO(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2.30", **kwargs
+) -> Graph:
+    """Return KISAO graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2.30"
+        Version to retrieve	
+		The available versions are:
+			- 2.30
+    """
+    return RetrievedGraph(
+        "KISAO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def MA(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2017-02-07", **kwargs
+) -> Graph:
+    """Return MA graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2017-02-07"
+        Version to retrieve	
+		The available versions are:
+			- 2017-02-07
+    """
+    return RetrievedGraph(
+        "MA", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def PO(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-08-13", **kwargs
+) -> Graph:
+    """Return PO graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2021-08-13"
+        Version to retrieve	
+		The available versions are:
+			- 2021-08-13
+    """
+    return RetrievedGraph(
+        "PO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def CDNO(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-11-17", **kwargs
+) -> Graph:
+    """Return CDNO graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2022-11-17"
+        Version to retrieve	
+		The available versions are:
+			- 2022-12-23
+			- 2021-10-20
+			- 2022-01-10
+			- 2022-04-06
+			- 2022-06-23
+			- 2022-09-20
+			- 2022-09-22
+			- 2022-11-17
+    """
+    return RetrievedGraph(
+        "CDNO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
@@ -5194,13 +6925,13 @@ def ONS(
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
-def ONTONEO(
+def OHD(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2021-04-29", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-10-10", **kwargs
 ) -> Graph:
-    """Return ONTONEO graph	
+    """Return OHD graph	
 
     Parameters
     ----------
@@ -5219,23 +6950,25 @@ def ONTONEO(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2021-04-29"
+    version = "2022-10-10"
         Version to retrieve	
 		The available versions are:
-			- 2021-04-29
+			- 2023-04-14
+			- 2016-06-27
+			- 2022-10-10
     """
     return RetrievedGraph(
-        "ONTONEO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        "OHD", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
-def OOSTT(
+def VARIO(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2022-10-27", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="no_version", **kwargs
 ) -> Graph:
-    """Return OOSTT graph	
+    """Return VARIO graph	
 
     Parameters
     ----------
@@ -5254,26 +6987,23 @@ def OOSTT(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2022-10-27"
+    version = "no_version"
         Version to retrieve	
 		The available versions are:
-			- 2023-03-30
-			- 2021-01-08
-			- 2022-09-23
-			- 2022-10-27
+			- no_version
     """
     return RetrievedGraph(
-        "OOSTT", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        "VARIO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
-def OPL(
+def AGRO(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2021-01-28", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-11-05", **kwargs
 ) -> Graph:
-    """Return OPL graph	
+    """Return AGRO graph	
 
     Parameters
     ----------
@@ -5292,23 +7022,25 @@ def OPL(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2021-01-28"
+    version = "2021-11-05"
         Version to retrieve	
 		The available versions are:
-			- 2021-01-28
+			- 2022-11-02
+			- 2021-07-01
+			- 2021-11-05
     """
     return RetrievedGraph(
-        "OPL", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        "AGRO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
-def OPMI(
+def DIDEO(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="Vision-Release--1.0.161", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="release-version-2022-06-14", **kwargs
 ) -> Graph:
-    """Return OPMI graph	
+    """Return DIDEO graph	
 
     Parameters
     ----------
@@ -5327,23 +7059,23 @@ def OPMI(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "Vision-Release--1.0.161"
+    version = "release-version-2022-06-14"
         Version to retrieve	
 		The available versions are:
-			- Vision-Release--1.0.161
+			- release-version-2022-06-14
     """
     return RetrievedGraph(
-        "OPMI", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        "DIDEO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
-def ORNASEQ(
+def TXPO(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2019-07-08", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="2020-03-03", **kwargs
 ) -> Graph:
-    """Return ORNASEQ graph	
+    """Return TXPO graph	
 
     Parameters
     ----------
@@ -5362,48 +7094,14 @@ def ORNASEQ(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2019-07-08"
+    version = "2020-03-03"
         Version to retrieve	
 		The available versions are:
-			- 2019-07-08
+			- 2022-12-07
+			- 2020-03-03
     """
     return RetrievedGraph(
-        "ORNASEQ", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def OVAE(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="04-11-2016", **kwargs
-) -> Graph:
-    """Return OVAE graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "04-11-2016"
-        Version to retrieve	
-		The available versions are:
-			- 04-11-2016
-    """
-    return RetrievedGraph(
-        "OVAE", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        "TXPO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
@@ -5457,13 +7155,13 @@ def PATO(
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
-def PCL(
+def OGI(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2022-10-19", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="DUMMY", **kwargs
 ) -> Graph:
-    """Return PCL graph	
+    """Return OGI graph	
 
     Parameters
     ----------
@@ -5482,20 +7180,250 @@ def PCL(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2022-10-19"
+    version = "DUMMY"
         Version to retrieve	
 		The available versions are:
-			- 2023-02-27
-			- 2022-01-24
-			- 2022-02-02
-			- 2022-02-09
-			- 2022-03-02
-			- 2022-04-27
-			- 2022-09-02
-			- 2022-10-19
+			- DUMMY
     """
     return RetrievedGraph(
-        "PCL", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        "OGI", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def HOM(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2015-01-07", **kwargs
+) -> Graph:
+    """Return HOM graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2015-01-07"
+        Version to retrieve	
+		The available versions are:
+			- 2015-01-07
+    """
+    return RetrievedGraph(
+        "HOM", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def ECO(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-12-04", **kwargs
+) -> Graph:
+    """Return ECO graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2022-12-04"
+        Version to retrieve	
+		The available versions are:
+			- 2023-04-07
+			- 2021-10-20
+			- 2021-12-03
+			- 2022-01-04
+			- 2022-02-09
+			- 2022-04-11
+			- 2022-05-27
+			- 2022-08-05
+			- 2022-10-10
+			- 2022-12-04
+    """
+    return RetrievedGraph(
+        "ECO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def ICEO(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2.1", **kwargs
+) -> Graph:
+    """Return ICEO graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2.1"
+        Version to retrieve	
+		The available versions are:
+			- 2.1
+    """
+    return RetrievedGraph(
+        "ICEO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def DDANAT(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2020-04-13", **kwargs
+) -> Graph:
+    """Return DDANAT graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2020-04-13"
+        Version to retrieve	
+		The available versions are:
+			- 2020-04-13
+    """
+    return RetrievedGraph(
+        "DDANAT", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def BSPO(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-10-07", **kwargs
+) -> Graph:
+    """Return BSPO graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2022-10-07"
+        Version to retrieve	
+		The available versions are:
+			- 2022-11-16
+			- 2021-09-22
+			- 2021-10-13
+			- 2022-06-28
+			- 2022-10-07
+    """
+    return RetrievedGraph(
+        "BSPO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def MRO(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="2023-02-27", **kwargs
+) -> Graph:
+    """Return MRO graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "2023-02-27"
+        Version to retrieve	
+		The available versions are:
+			- 2023-05-04
+			- 2021-09-24
+			- 2021-10-15
+			- 2021-11-04
+			- 2021-11-29
+			- 2021-12-15
+			- 2022-01-13
+			- 2022-01-21
+			- 2022-03-14
+			- 2022-05-13
+			- 2022-06-17
+			- 2022-07-18
+			- 2022-08-18
+			- 2022-10-17
+			- 2023-02-27
+    """
+    return RetrievedGraph(
+        "MRO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
@@ -5534,13 +7462,13 @@ def PCO(
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
-def PDRO(
+def EPSO(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2021-06-08", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="", **kwargs
 ) -> Graph:
-    """Return PDRO graph	
+    """Return EPSO graph	
 
     Parameters
     ----------
@@ -5559,23 +7487,24 @@ def PDRO(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2021-06-08"
+    version = ""
         Version to retrieve	
 		The available versions are:
-			- 2021-06-08
+			- 2021-05-28
+			- 
     """
     return RetrievedGraph(
-        "PDRO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        "EPSO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
-def PDUMDV(
+def ORNASEQ(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2020-03-10", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="2019-07-08", **kwargs
 ) -> Graph:
-    """Return PDUMDV graph	
+    """Return ORNASEQ graph	
 
     Parameters
     ----------
@@ -5594,23 +7523,23 @@ def PDUMDV(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2020-03-10"
+    version = "2019-07-08"
         Version to retrieve	
 		The available versions are:
-			- 2020-03-10
+			- 2019-07-08
     """
     return RetrievedGraph(
-        "PDUMDV", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        "ORNASEQ", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
-def PECO(
+def HP(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2020-08-21", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="2023-01-27", **kwargs
 ) -> Graph:
-    """Return PECO graph	
+    """Return HP graph	
 
     Parameters
     ----------
@@ -5629,502 +7558,30 @@ def PECO(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2020-08-21"
+    version = "2023-01-27"
         Version to retrieve	
 		The available versions are:
-			- 2020-08-21
-    """
-    return RetrievedGraph(
-        "PECO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def PHIPO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2022-07-29", **kwargs
-) -> Graph:
-    """Return PHIPO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2022-07-29"
-        Version to retrieve	
-		The available versions are:
-			- 2022-11-23
-			- 2021-07-14
-			- 2022-07-29
-    """
-    return RetrievedGraph(
-        "PHIPO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def PLANA(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2021-10-21", **kwargs
-) -> Graph:
-    """Return PLANA graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2021-10-21"
-        Version to retrieve	
-		The available versions are:
-			- releases
-			- 2021-09-29
-			- 2021-10-06
-			- 2021-10-21
-    """
-    return RetrievedGraph(
-        "PLANA", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def PLANP(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2020-03-28", **kwargs
-) -> Graph:
-    """Return PLANP graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2020-03-28"
-        Version to retrieve	
-		The available versions are:
-			- 2020-03-28
-    """
-    return RetrievedGraph(
-        "PLANP", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def RNAO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="DUMMY", **kwargs
-) -> Graph:
-    """Return RNAO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "DUMMY"
-        Version to retrieve	
-		The available versions are:
-			- DUMMY
-    """
-    return RetrievedGraph(
-        "RNAO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def WBPHENOTYPE(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2023-03-02", **kwargs
-) -> Graph:
-    """Return WBPHENOTYPE graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2023-03-02"
-        Version to retrieve	
-		The available versions are:
-			- 2023-05-18
-			- 2021-09-27
-			- 2021-10-25
-			- 2021-12-12
-			- 2021-12-20
-			- 2022-03-22
-			- 2022-06-21
-			- 2022-08-18
-			- 2022-09-21
-			- 2022-10-21
-			- 2023-01-03
-			- 2023-02-05
-			- 2023-03-02
-    """
-    return RetrievedGraph(
-        "WBPHENOTYPE", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def XCO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="4.46", **kwargs
-) -> Graph:
-    """Return XCO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "4.46"
-        Version to retrieve	
-		The available versions are:
-			- 4.46
-    """
-    return RetrievedGraph(
-        "XCO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def XLMOD(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2019-10-28", **kwargs
-) -> Graph:
-    """Return XLMOD graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2019-10-28"
-        Version to retrieve	
-		The available versions are:
-			- 2019-10-28
-    """
-    return RetrievedGraph(
-        "XLMOD", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def XPO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2022-09-15", **kwargs
-) -> Graph:
-    """Return XPO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2022-09-15"
-        Version to retrieve	
-		The available versions are:
-			- 2022-09-15
-    """
-    return RetrievedGraph(
-        "XPO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def ZECO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2021-06-04", **kwargs
-) -> Graph:
-    """Return ZECO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2021-06-04"
-        Version to retrieve	
-		The available versions are:
+			- 2023-04-05
+			- 2021-08-02
+			- 2021-10-10
 			- 2022-02-14
-			- 2021-06-04
-    """
-    return RetrievedGraph(
-        "ZECO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def ZFA(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2022-03-15", **kwargs
-) -> Graph:
-    """Return ZFA graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2022-03-15"
-        Version to retrieve	
-		The available versions are:
-			- 2022-12-09
-			- 2020-04-14
-			- 2021-12-09
-			- 2022-02-15
-			- 2022-02-28
-			- 2022-03-15
-    """
-    return RetrievedGraph(
-        "ZFA", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def ZFS(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2020-03-10", **kwargs
-) -> Graph:
-    """Return ZFS graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2020-03-10"
-        Version to retrieve	
-		The available versions are:
-			- 2020-03-10
-    """
-    return RetrievedGraph(
-        "ZFS", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def ZP(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2021-12-12", **kwargs
-) -> Graph:
-    """Return ZP graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2021-12-12"
-        Version to retrieve	
-		The available versions are:
-			- 2022-12-17
-			- 2021-12-12
-    """
-    return RetrievedGraph(
-        "ZP", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def NGBO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2022-10-05", **kwargs
-) -> Graph:
-    """Return NGBO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2022-10-05"
-        Version to retrieve	
-		The available versions are:
+			- 2022-04-14
+			- 2022-06-11
 			- 2022-10-05
+			- 2023-01-27
     """
     return RetrievedGraph(
-        "NGBO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        "HP", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
-def ONTOAVIDA(
+def DPO(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2022-03-15", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="2023-02-09", **kwargs
 ) -> Graph:
-    """Return ONTOAVIDA graph	
+    """Return DPO graph	
 
     Parameters
     ----------
@@ -6143,1017 +7600,34 @@ def ONTOAVIDA(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2022-03-15"
+    version = "2023-02-09"
         Version to retrieve	
 		The available versions are:
-			- 2022-03-15
-    """
-    return RetrievedGraph(
-        "ONTOAVIDA", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def PO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2021-08-13", **kwargs
-) -> Graph:
-    """Return PO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2021-08-13"
-        Version to retrieve	
-		The available versions are:
-			- 2021-08-13
-    """
-    return RetrievedGraph(
-        "PO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def PORO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2016-09-13", **kwargs
-) -> Graph:
-    """Return PORO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2016-09-13"
-        Version to retrieve	
-		The available versions are:
-			- 2016-10-06
-			- 2016-09-13
-    """
-    return RetrievedGraph(
-        "PORO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def PPO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2018-10-26", **kwargs
-) -> Graph:
-    """Return PPO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2018-10-26"
-        Version to retrieve	
-		The available versions are:
-			- 2018-10-26
-    """
-    return RetrievedGraph(
-        "PPO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def PR(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="67.0", **kwargs
-) -> Graph:
-    """Return PR graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "67.0"
-        Version to retrieve	
-		The available versions are:
-			- 68.0
-			- 63.0
-			- 64.0
-			- 65.0
-			- 66.0
-			- 67.0
-    """
-    return RetrievedGraph(
-        "PR", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def PROCO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2022-04-11", **kwargs
-) -> Graph:
-    """Return PROCO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2022-04-11"
-        Version to retrieve	
-		The available versions are:
-			- 2022-04-11
-    """
-    return RetrievedGraph(
-        "PROCO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def PSDO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2020-12-04", **kwargs
-) -> Graph:
-    """Return PSDO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2020-12-04"
-        Version to retrieve	
-		The available versions are:
-			- 2022-02-23
-			- 2020-12-04
-    """
-    return RetrievedGraph(
-        "PSDO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def PSO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2020-05-19", **kwargs
-) -> Graph:
-    """Return PSO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2020-05-19"
-        Version to retrieve	
-		The available versions are:
-			- 2020-05-19
-    """
-    return RetrievedGraph(
-        "PSO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def PW(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="7.52", **kwargs
-) -> Graph:
-    """Return PW graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "7.52"
-        Version to retrieve	
-		The available versions are:
-			- 7.52
-    """
-    return RetrievedGraph(
-        "PW", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def RBO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2022-10-27", **kwargs
-) -> Graph:
-    """Return RBO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2022-10-27"
-        Version to retrieve	
-		The available versions are:
-			- 2023-03-02
-			- 2021-08-30
-			- 2022-01-14
-			- 2022-04-16
-			- 2022-06-02
-			- 2022-08-11
-			- 2022-10-06
-			- 2022-10-20
-			- 2022-10-27
-    """
-    return RetrievedGraph(
-        "RBO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def REX(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2017-11-19", **kwargs
-) -> Graph:
-    """Return REX graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2017-11-19"
-        Version to retrieve	
-		The available versions are:
-			- 2017-11-19
-    """
-    return RetrievedGraph(
-        "REX", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def RO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2023-01-04", **kwargs
-) -> Graph:
-    """Return RO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2023-01-04"
-        Version to retrieve	
-		The available versions are:
-			- 2023-02-22
-			- 2021-08-31
-			- 2021-10-27
-			- 2021-12-06
-			- 2022-01-20
-			- 2022-02-07
-			- 2022-04-25
-			- 2022-05-23
-			- 2022-07-19
-			- 2022-09-07
-			- 2022-10-26
-			- 2023-01-04
-    """
-    return RetrievedGraph(
-        "RO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def RS(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="6.107", **kwargs
-) -> Graph:
-    """Return RS graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "6.107"
-        Version to retrieve	
-		The available versions are:
-			- 6.107
-    """
-    return RetrievedGraph(
-        "RS", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def RXNO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2021-12-06", **kwargs
-) -> Graph:
-    """Return RXNO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2021-12-06"
-        Version to retrieve	
-		The available versions are:
-			- 2021-12-16
-			- 2021-01-21
-			- 2021-11-15
-			- 2021-12-06
-    """
-    return RetrievedGraph(
-        "RXNO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def SBO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="28-08-2021-03-13", **kwargs
-) -> Graph:
-    """Return SBO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "28-08-2021-03-13"
-        Version to retrieve	
-		The available versions are:
-			- 28-08-2021-03-13
-    """
-    return RetrievedGraph(
-        "SBO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def SCDO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2021-04-15", **kwargs
-) -> Graph:
-    """Return SCDO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2021-04-15"
-        Version to retrieve	
-		The available versions are:
-			- 2021-04-15
-    """
-    return RetrievedGraph(
-        "SCDO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def SEPIO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="no_version", **kwargs
-) -> Graph:
-    """Return SEPIO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "no_version"
-        Version to retrieve	
-		The available versions are:
-			- 2023-02-21
-			- no_version
-    """
-    return RetrievedGraph(
-        "SEPIO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def SIBO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2015-06-15", **kwargs
-) -> Graph:
-    """Return SIBO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2015-06-15"
-        Version to retrieve	
-		The available versions are:
-			- 2015-06-15
-    """
-    return RetrievedGraph(
-        "SIBO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def SO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2021-07-12", **kwargs
-) -> Graph:
-    """Return SO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2021-07-12"
-        Version to retrieve	
-		The available versions are:
-			- 2021-11-22
-			- 2021-07-12
-    """
-    return RetrievedGraph(
-        "SO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def SPD(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="1.0", **kwargs
-) -> Graph:
-    """Return SPD graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "1.0"
-        Version to retrieve	
-		The available versions are:
-			- 1.0
-    """
-    return RetrievedGraph(
-        "SPD", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def STATO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="RC1.4", **kwargs
-) -> Graph:
-    """Return STATO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "RC1.4"
-        Version to retrieve	
-		The available versions are:
-			- RC1.4
-    """
-    return RetrievedGraph(
-        "STATO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def SWO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2022-10-11", **kwargs
-) -> Graph:
-    """Return SWO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2022-10-11"
-        Version to retrieve	
-		The available versions are:
-			- 2023-03-05
-			- 1.7
-			- 2022-10-11
-    """
-    return RetrievedGraph(
-        "SWO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def SYMP(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2022-10-20", **kwargs
-) -> Graph:
-    """Return SYMP graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2022-10-20"
-        Version to retrieve	
-		The available versions are:
-			- 2022-11-30
-			- 2020-08-04
-			- 2022-04-05
-			- 2022-05-10
-			- 2022-05-26
-			- 2022-06-22
-			- 2022-07-05
-			- 2022-07-12
-			- 2022-07-26
-			- 2022-08-16
-			- 2022-08-29
-			- 2022-09-06
-			- 2022-10-20
-    """
-    return RetrievedGraph(
-        "SYMP", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def T4FS(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2022-12-05", **kwargs
-) -> Graph:
-    """Return T4FS graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2022-12-05"
-        Version to retrieve	
-		The available versions are:
-			- 2023-03-02
-			- 2022-10-05
-			- 2022-12-05
-    """
-    return RetrievedGraph(
-        "T4FS", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def TADS(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2015-08-20", **kwargs
-) -> Graph:
-    """Return TADS graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2015-08-20"
-        Version to retrieve	
-		The available versions are:
-			- 2015-08-20
-    """
-    return RetrievedGraph(
-        "TADS", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def TAXRANK(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2016-04-15", **kwargs
-) -> Graph:
-    """Return TAXRANK graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2016-04-15"
-        Version to retrieve	
-		The available versions are:
-			- 2016-04-15
-    """
-    return RetrievedGraph(
-        "TAXRANK", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def TGMA(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2013-06-03", **kwargs
-) -> Graph:
-    """Return TGMA graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2013-06-03"
-        Version to retrieve	
-		The available versions are:
-			- 2013-06-03
-    """
-    return RetrievedGraph(
-        "TGMA", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def TO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2022-03-09", **kwargs
-) -> Graph:
-    """Return TO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2022-03-09"
-        Version to retrieve	
-		The available versions are:
+			- 2023-05-03
+			- 2021-09-02
+			- 2021-10-15
+			- 2021-12-10
+			- 2022-01-24
+			- 2022-02-24
 			- 2022-04-13
-			- 2021-04-06
-			- 2022-03-09
+			- 2022-06-09
+			- 2022-08-11
+			- 2022-10-20
+			- 2022-12-02
+			- 2023-02-09
     """
     return RetrievedGraph(
-        "TO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        "DPO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
-def TRANS(
+def CL(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2020-08-04", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="2023-02-19", **kwargs
 ) -> Graph:
-    """Return TRANS graph	
+    """Return CL graph	
 
     Parameters
     ----------
@@ -7172,143 +7646,37 @@ def TRANS(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2020-08-04"
+    version = "2023-02-19"
         Version to retrieve	
 		The available versions are:
-			- 2022-10-10
-			- 2020-08-04
-    """
-    return RetrievedGraph(
-        "TRANS", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def TTO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="19-07-2012-13-26", **kwargs
-) -> Graph:
-    """Return TTO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "19-07-2012-13-26"
-        Version to retrieve	
-		The available versions are:
-			- 19-07-2012-13-26
-    """
-    return RetrievedGraph(
-        "TTO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def TXPO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2020-03-03", **kwargs
-) -> Graph:
-    """Return TXPO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2020-03-03"
-        Version to retrieve	
-		The available versions are:
-			- 2022-12-07
-			- 2020-03-03
-    """
-    return RetrievedGraph(
-        "TXPO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def UBERON(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2023-02-14", **kwargs
-) -> Graph:
-    """Return UBERON graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2023-02-14"
-        Version to retrieve	
-		The available versions are:
-			- 2023-04-19
-			- 2021-10-01
-			- 2021-11-28
-			- 2022-02-21
-			- 2022-04-05
-			- 2022-04-18
-			- 2022-05-17
-			- 2022-05-27
-			- 2022-06-20
-			- 2022-06-30
-			- 2022-08-19
-			- 2022-09-30
+			- 2023-04-20
+			- 2021-09-09
+			- 2021-11-25
+			- 2021-12-07
+			- 2021-12-16
+			- 2022-01-05
+			- 2022-02-16
+			- 2022-06-15
+			- 2022-06-18
+			- 2022-09-15
+			- 2022-10-28
+			- 2022-11-25
 			- 2023-01-09
-			- 2023-02-14
+			- 2023-02-15
+			- 2023-02-19
     """
     return RetrievedGraph(
-        "UBERON", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        "CL", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
-def UO(
+def MFOEM(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="no_version", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="2021-11-17", **kwargs
 ) -> Graph:
-    """Return UO graph	
+    """Return MFOEM graph	
 
     Parameters
     ----------
@@ -7327,383 +7695,15 @@ def UO(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "no_version"
+    version = "2021-11-17"
         Version to retrieve	
 		The available versions are:
-			- no_version
+			- 2022-07-19
+			- 2021-09-21
+			- 2021-11-17
     """
     return RetrievedGraph(
-        "UO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def UPA(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2018-12-12", **kwargs
-) -> Graph:
-    """Return UPA graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2018-12-12"
-        Version to retrieve	
-		The available versions are:
-			- 2018-12-12
-    """
-    return RetrievedGraph(
-        "UPA", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def UPHENO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="no_version", **kwargs
-) -> Graph:
-    """Return UPHENO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "no_version"
-        Version to retrieve	
-		The available versions are:
-			- no_version
-    """
-    return RetrievedGraph(
-        "UPHENO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def VARIO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="no_version", **kwargs
-) -> Graph:
-    """Return VARIO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "no_version"
-        Version to retrieve	
-		The available versions are:
-			- no_version
-    """
-    return RetrievedGraph(
-        "VARIO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def VBO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2023-02-07", **kwargs
-) -> Graph:
-    """Return VBO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2023-02-07"
-        Version to retrieve	
-		The available versions are:
-			- 2023-03-09
-			- 2022-05-06
-			- 2022-09-22
-			- 2022-10-31
-			- 2022-11-29
-			- 2023-02-07
-    """
-    return RetrievedGraph(
-        "VBO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def VO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="September_18__2021", **kwargs
-) -> Graph:
-    """Return VO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "September_18__2021"
-        Version to retrieve	
-		The available versions are:
-			- September_18__2021
-    """
-    return RetrievedGraph(
-        "VO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def VT(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="19-07-2022-13-21", **kwargs
-) -> Graph:
-    """Return VT graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "19-07-2022-13-21"
-        Version to retrieve	
-		The available versions are:
-			- 19-07-2022-13-21
-    """
-    return RetrievedGraph(
-        "VT", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def VTO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2020-11-13", **kwargs
-) -> Graph:
-    """Return VTO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2020-11-13"
-        Version to retrieve	
-		The available versions are:
-			- 2020-11-13
-    """
-    return RetrievedGraph(
-        "VTO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def WBBT(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2023-01-03", **kwargs
-) -> Graph:
-    """Return WBBT graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2023-01-03"
-        Version to retrieve	
-		The available versions are:
-			- 2023-04-07
-			- 2021-09-27
-			- 2021-12-14
-			- 2022-03-22
-			- 2022-06-13
-			- 2023-01-03
-    """
-    return RetrievedGraph(
-        "WBBT", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def WBLS(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2023-01-03", **kwargs
-) -> Graph:
-    """Return WBLS graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2023-01-03"
-        Version to retrieve	
-		The available versions are:
-			- 2023-05-17
-			- 2021-07-06
-			- 2021-12-08
-			- 2022-03-22
-			- 2022-06-21
-			- 2022-08-18
-			- 2022-09-22
-			- 2022-10-21
-			- 2023-01-03
-    """
-    return RetrievedGraph(
-        "WBLS", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def XAO(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2022-08-24", **kwargs
-) -> Graph:
-    """Return XAO graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2022-08-24"
-        Version to retrieve	
-		The available versions are:
-			- 2022-08-29
-			- 2021-03-04
-			- 2022-08-24
-    """
-    return RetrievedGraph(
-        "XAO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
+        "MFOEM", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()

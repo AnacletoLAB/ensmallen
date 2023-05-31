@@ -32,11 +32,11 @@ impl Graph {
         &self,
         random_state: u64,
     ) -> impl Iterator<Item = (EdgeT, NodeT, NodeT)> + '_ {
-        let edges_number = self.get_number_of_directed_edges();
+        let number_of_edges = self.get_number_of_directed_edges();
         // We execute two times the xorshift to improve the randomness of the seed.
         let updated_random_state = rand_u64(rand_u64(splitmix64(random_state)));
-        (updated_random_state..edges_number + updated_random_state).filter_map(move |i| {
-            let edge_id = i % edges_number;
+        (updated_random_state..number_of_edges + updated_random_state).filter_map(move |i| {
+            let edge_id = i % number_of_edges;
             let (src, dst) = unsafe { self.get_unchecked_node_ids_from_edge_id(edge_id) };
             match src == dst || !self.directed && src > dst {
                 true => None,
@@ -142,9 +142,9 @@ impl Graph {
             );
         }
 
-        let nodes_number = self.get_number_of_nodes() as usize;
+        let number_of_nodes = self.get_number_of_nodes() as usize;
         let mut tree = HashSet::with_capacity(self.get_number_of_nodes() as usize);
-        let mut components = vec![NODE_NOT_PRESENT; nodes_number];
+        let mut components = vec![NODE_NOT_PRESENT; number_of_nodes];
         let mut component_sizes: Vec<NodeT> = Vec::new();
         let mut components_remapping: Vec<NodeT> = Vec::new();
         let mut max_component_size: NodeT = 0;
@@ -424,15 +424,15 @@ impl Graph {
     pub fn get_random_spanning_tree(&self, verbose: Option<bool>) -> Result<Vec<NodeT>> {
         self.must_be_undirected()?;
         let verbose = verbose.unwrap_or(false);
-        let nodes_number = self.get_number_of_nodes() as usize;
-        let mut parents = vec![NODE_NOT_PRESENT; nodes_number];
+        let number_of_nodes = self.get_number_of_nodes() as usize;
+        let mut parents = vec![NODE_NOT_PRESENT; number_of_nodes];
         let (cpu_number, pool) = get_thread_pool()?;
         let shared_stacks: Arc<Vec<Mutex<Vec<NodeT>>>> = Arc::from(
             (0..std::cmp::max(cpu_number - 1, 1))
                 .map(|_| Mutex::from(Vec::new()))
                 .collect::<Vec<Mutex<Vec<NodeT>>>>(),
         );
-        let active_nodes_number = AtomicUsize::new(0);
+        let active_number_of_nodes = AtomicUsize::new(0);
         let completed = AtomicBool::new(false);
         let thread_safe_parents = ThreadDataRaceAware::new(&mut parents);
 
@@ -447,10 +447,10 @@ impl Graph {
                 let pb = get_loading_bar(
                     verbose,
                     format!("Computing spanning tree of graph {}", self.get_name()).as_ref(),
-                    nodes_number,
+                    number_of_nodes,
                 );
                 let parents = thread_safe_parents.value.get();
-                (0..nodes_number).progress_with(pb).for_each(|src| unsafe {
+                (0..number_of_nodes).progress_with(pb).for_each(|src| unsafe {
                     // If the node has already been explored we skip ahead.
                     if (*parents)[src] != NODE_NOT_PRESENT {
                         return;
@@ -466,7 +466,7 @@ impl Graph {
                         if (*parents)[src] != NODE_NOT_PRESENT {
                             break;
                         }
-                        if active_nodes_number.load(Ordering::SeqCst) == 0 {
+                        if active_number_of_nodes.load(Ordering::SeqCst) == 0 {
                             if (*parents)[src] != NODE_NOT_PRESENT {
                                 break;
                             }
@@ -474,7 +474,7 @@ impl Graph {
 
                             shared_stacks[0].lock().expect("The lock is poisoned from the panic of another thread")
                                 .push(src as NodeT);
-                            active_nodes_number.fetch_add(1, Ordering::SeqCst);
+                            active_number_of_nodes.fetch_add(1, Ordering::SeqCst);
                             break;
                         }
                     }
@@ -504,14 +504,14 @@ impl Graph {
                         .for_each(|dst| unsafe {
                             if (*parents)[dst as usize] == NODE_NOT_PRESENT {
                                 (*parents)[dst as usize] = src;
-                                active_nodes_number.fetch_add(1, Ordering::SeqCst);
+                                active_number_of_nodes.fetch_add(1, Ordering::SeqCst);
                                 shared_stacks[rand_u64(dst as u64) as usize % shared_stacks.len()]
                                     .lock()
                                     .expect("The lock is poisoned from the panic of another thread")
                                     .push(dst);
                             }
                         });
-                    active_nodes_number.fetch_sub(1, Ordering::SeqCst);
+                    active_number_of_nodes.fetch_sub(1, Ordering::SeqCst);
                 });
             });
         });
@@ -573,7 +573,7 @@ impl Graph {
                 .map(|_| Mutex::from(Vec::new()))
                 .collect::<Vec<Mutex<Vec<NodeT>>>>(),
         );
-        let active_nodes_number = AtomicUsize::new(0);
+        let active_number_of_nodes = AtomicUsize::new(0);
         let current_component_size = AtomicU32::new(0);
         let completed = AtomicBool::new(false);
         let thread_safe_min_component_size = ThreadDataRaceAware::new(&mut min_component_size);
@@ -636,7 +636,7 @@ impl Graph {
                             // and are all waiting for a new node to explore.
                             // In that case add the currently not explored node to the
                             // work stack of the first thread.
-                            if active_nodes_number.load(Ordering::Relaxed) == 0 {
+                            if active_number_of_nodes.load(Ordering::Relaxed) == 0 {
                                 // The check here might seems redundant but its' needed
                                 // to prevent data races.
                                 //
@@ -658,7 +658,7 @@ impl Graph {
                                         .store(**components_number, Ordering::Relaxed);
                                     **components_number += 1;
                                 }
-                                active_nodes_number.fetch_add(1, Ordering::Relaxed);
+                                active_number_of_nodes.fetch_add(1, Ordering::Relaxed);
                                 shared_stacks[0].lock().expect("The lock is poisoned from the panic of another thread").push(src);
                                 break;
                             }
@@ -698,7 +698,7 @@ impl Graph {
                             if components[dst as usize].swap(src_component, Ordering::SeqCst)
                                 == NODE_NOT_PRESENT
                             {
-                                active_nodes_number.fetch_add(1, Ordering::SeqCst);
+                                active_number_of_nodes.fetch_add(1, Ordering::SeqCst);
                                 current_component_size.fetch_add(1, Ordering::SeqCst);
                                 shared_stacks[rand_u64(dst as u64) as usize % shared_stacks.len()]
                                     .lock()
@@ -706,7 +706,7 @@ impl Graph {
                                     .push(dst);
                             }
                         });
-                    active_nodes_number.fetch_sub(1, Ordering::SeqCst);
+                    active_number_of_nodes.fetch_sub(1, Ordering::SeqCst);
                 });
             });
         });

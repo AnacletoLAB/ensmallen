@@ -294,8 +294,8 @@ unsafe fn get_squared_lattice_edges_iterator<'a>(
     impl ParallelIterator<Item = (usize, (NodeT, NodeT, Option<EdgeTypeT>, WeightT))> + 'a,
 ) {
     let dimensions = sides.len();
-    let nodes_number = sides.iter().cloned().reduce(|a, b| a * b).unwrap();
-    let edges_number = sides
+    let number_of_nodes = sides.iter().cloned().reduce(|a, b| a * b).unwrap();
+    let number_of_edges = sides
         .iter()
         .cloned()
         .enumerate()
@@ -317,9 +317,9 @@ unsafe fn get_squared_lattice_edges_iterator<'a>(
         })
         .sum::<EdgeT>();
     (
-        nodes_number,
-        edges_number,
-        (minimum_node_id..(minimum_node_id + nodes_number))
+        number_of_nodes,
+        number_of_edges,
+        (minimum_node_id..(minimum_node_id + number_of_nodes))
             .into_par_iter()
             .flat_map(move |src_node_id| {
                 let mut coordinates = multidimensional_decompose_node_id(src_node_id, sides);
@@ -689,7 +689,7 @@ impl Graph {
     /// * `minimum_node_id`: NodeT - The minimum node ID for the connected graph.
     /// * `minimum_node_sampling`: NodeT - The minimum amount of nodes to sample per node.
     /// * `maximum_node_sampling`: NodeT - The maximum amount of nodes to sample per node.
-    /// * `nodes_number`: Option<NodeT> - Number of nodes in the chain. By default 10.
+    /// * `number_of_nodes`: Option<NodeT> - Number of nodes in the chain. By default 10.
     /// * `include_selfloops`: Option<bool> - Whether to include selfloops.
     /// * `node_type`: Option<&str> - The node type to use for the chain. By default 'chain'.
     /// * `edge_type`: Option<&str> - The node type to use for the chain. By default 'chain'.
@@ -702,7 +702,7 @@ impl Graph {
         minimum_node_id: Option<NodeT>,
         minimum_node_sampling: Option<NodeT>,
         maximum_node_sampling: Option<NodeT>,
-        nodes_number: Option<NodeT>,
+        number_of_nodes: Option<NodeT>,
         include_selfloops: Option<bool>,
         node_type: Option<&str>,
         edge_type: Option<&str>,
@@ -711,7 +711,7 @@ impl Graph {
         name: Option<&str>,
     ) -> Result<Graph> {
         let random_state = random_state.unwrap_or(42);
-        let nodes_number = nodes_number.unwrap_or(10);
+        let number_of_nodes = number_of_nodes.unwrap_or(10);
         let minimum_node_sampling = minimum_node_sampling.unwrap_or(1);
         let maximum_node_sampling = maximum_node_sampling.unwrap_or(5);
         let minimum_node_id = minimum_node_id.unwrap_or(0);
@@ -719,14 +719,14 @@ impl Graph {
         let directed = directed.unwrap_or(false);
         let node_type = node_type.unwrap_or("connected");
         let node_types = NodeTypeVocabulary::from_structs(
-            vec![Some(vec![0]); nodes_number as usize],
+            vec![Some(vec![0]); number_of_nodes as usize],
             Vocabulary::from_reverse_map(vec![node_type.to_owned()])?,
         );
 
         let edge_type = edge_type.unwrap_or("connected");
         let edge_types_vocabulary: Vocabulary<EdgeTypeT> =
             Vocabulary::from_reverse_map(vec![edge_type.to_owned()])?;
-        let nodes = Vocabulary::from_range(minimum_node_id..(minimum_node_id + nodes_number));
+        let nodes = Vocabulary::from_range(minimum_node_id..(minimum_node_id + number_of_nodes));
         let name = name.unwrap_or("Connected");
         let has_edge_weights = weight.is_some();
 
@@ -735,7 +735,7 @@ impl Graph {
             get_random_connected_graph_edges_iterator(
                 random_state,
                 0,
-                nodes_number,
+                number_of_nodes,
                 include_selfloops,
                 minimum_node_sampling,
                 maximum_node_sampling,
@@ -768,7 +768,7 @@ impl Graph {
     /// * `minimum_node_id`: NodeT - The minimum node ID for the connected graph.
     /// * `minimum_node_sampling`: NodeT - The minimum amount of nodes to sample per node.
     /// * `maximum_node_sampling`: NodeT - The maximum amount of nodes to sample per node.
-    /// * `nodes_number`: Option<NodeT> - Number of nodes in the chain. By default 10.
+    /// * `number_of_nodes`: Option<NodeT> - Number of nodes in the chain. By default 10.
     /// * `include_selfloops`: Option<bool> - Whether to include selfloops.
     /// * `node_type`: Option<&str> - The node type to use for the chain. By default 'chain'.
     /// * `edge_type`: Option<&str> - The node type to use for the chain. By default 'chain'.
@@ -779,7 +779,7 @@ impl Graph {
     pub fn generate_random_spanning_tree(
         random_state: Option<u64>,
         minimum_node_id: Option<NodeT>,
-        nodes_number: Option<NodeT>,
+        number_of_nodes: Option<NodeT>,
         include_selfloops: Option<bool>,
         node_type: Option<&str>,
         edge_type: Option<&str>,
@@ -788,29 +788,29 @@ impl Graph {
         name: Option<&str>,
     ) -> Result<Graph> {
         let random_state = random_state.unwrap_or(42);
-        let nodes_number = nodes_number.unwrap_or(10);
+        let number_of_nodes = number_of_nodes.unwrap_or(10);
         let minimum_node_id = minimum_node_id.unwrap_or(0);
         let include_selfloops = include_selfloops.unwrap_or(false);
         let directed = directed.unwrap_or(false);
         let node_type = node_type.unwrap_or("tree");
         let node_types = NodeTypeVocabulary::from_structs(
-            vec![Some(vec![0]); nodes_number as usize],
+            vec![Some(vec![0]); number_of_nodes as usize],
             Vocabulary::from_reverse_map(vec![node_type.to_owned()])?,
         );
 
         let edge_type = edge_type.unwrap_or("tree");
         let edge_types_vocabulary: Vocabulary<EdgeTypeT> =
             Vocabulary::from_reverse_map(vec![edge_type.to_owned()])?;
-        let nodes = Vocabulary::from_range(minimum_node_id..(minimum_node_id + nodes_number));
+        let nodes = Vocabulary::from_range(minimum_node_id..(minimum_node_id + number_of_nodes));
         let name = name.unwrap_or("Tree");
         let has_edge_weights = weight.is_some();
 
         // Get the generator the chain in the middle of the two cliques
-        let (edges_number, edges_iterator) = unsafe {
+        let (number_of_edges, edges_iterator) = unsafe {
             get_random_spanning_tree_edges_iterator(
                 random_state,
                 0,
-                nodes_number,
+                number_of_nodes,
                 include_selfloops,
                 Some(0),
                 weight.unwrap_or(WeightT::NAN),
@@ -827,7 +827,7 @@ impl Graph {
             Some(true),
             Some(false),
             Some(false),
-            Some(edges_number),
+            Some(number_of_edges),
             false,
             false,
             name.to_string(),
@@ -838,7 +838,7 @@ impl Graph {
     ///
     /// # Arguments
     /// * `minimum_node_id`: Option<NodeT> - Minimum node ID to start with. May be needed when circleing graphs. By default 0.
-    /// * `nodes_number`: Option<NodeT> - Number of nodes in the star. By default 10.
+    /// * `number_of_nodes`: Option<NodeT> - Number of nodes in the star. By default 10.
     /// * `include_selfloops`: Option<bool> - Whether to include selfloops.
     /// * `node_type`: Option<&str> - The node type to use for the star. By default 'star'.
     /// * `edge_type`: Option<&str> - The node type to use for the star. By default 'star'.
@@ -848,7 +848,7 @@ impl Graph {
     ///
     pub fn generate_star_graph(
         minimum_node_id: Option<NodeT>,
-        nodes_number: Option<NodeT>,
+        number_of_nodes: Option<NodeT>,
         include_selfloops: Option<bool>,
         node_type: Option<&str>,
         edge_type: Option<&str>,
@@ -856,28 +856,28 @@ impl Graph {
         directed: Option<bool>,
         name: Option<&str>,
     ) -> Result<Graph> {
-        let nodes_number = nodes_number.unwrap_or(10);
+        let number_of_nodes = number_of_nodes.unwrap_or(10);
         let minimum_node_id = minimum_node_id.unwrap_or(0);
         let include_selfloops = include_selfloops.unwrap_or(false);
         let directed = directed.unwrap_or(false);
         let node_type = node_type.unwrap_or("star");
         let node_types = NodeTypeVocabulary::from_structs(
-            vec![Some(vec![0]); nodes_number as usize],
+            vec![Some(vec![0]); number_of_nodes as usize],
             Vocabulary::from_reverse_map(vec![node_type.to_owned()])?,
         );
 
         let edge_type = edge_type.unwrap_or("star");
         let edge_types_vocabulary: Vocabulary<EdgeTypeT> =
             Vocabulary::from_reverse_map(vec![edge_type.to_owned()])?;
-        let nodes = Vocabulary::from_range(minimum_node_id..(minimum_node_id + nodes_number));
+        let nodes = Vocabulary::from_range(minimum_node_id..(minimum_node_id + number_of_nodes));
         let name = name.unwrap_or("Star");
         let has_edge_weights = weight.is_some();
 
         // Get the generator the star in the middle of the two cliques
-        let (edges_number, edges_iterator) = unsafe {
+        let (number_of_edges, edges_iterator) = unsafe {
             get_star_edges_iterator(
                 0,
-                nodes_number,
+                number_of_nodes,
                 include_selfloops,
                 Some(0),
                 weight.unwrap_or(WeightT::NAN),
@@ -895,7 +895,7 @@ impl Graph {
             Some(true),
             Some(false),
             Some(true),
-            Some(edges_number),
+            Some(number_of_edges),
             false,
             false,
             name.to_string(),
@@ -906,7 +906,7 @@ impl Graph {
     ///
     /// # Arguments
     /// * `minimum_node_id`: Option<NodeT> - Minimum node ID to start with. May be needed when circleing graphs. By default 0.
-    /// * `nodes_number`: Option<NodeT> - Number of nodes in the wheel. By default 10.
+    /// * `number_of_nodes`: Option<NodeT> - Number of nodes in the wheel. By default 10.
     /// * `include_selfloops`: Option<bool> - Whether to include selfloops.
     /// * `node_type`: Option<&str> - The node type to use for the wheel. By default 'wheel'.
     /// * `edge_type`: Option<&str> - The node type to use for the wheel. By default 'wheel'.
@@ -916,7 +916,7 @@ impl Graph {
     ///
     pub fn generate_wheel_graph(
         minimum_node_id: Option<NodeT>,
-        nodes_number: Option<NodeT>,
+        number_of_nodes: Option<NodeT>,
         include_selfloops: Option<bool>,
         node_type: Option<&str>,
         edge_type: Option<&str>,
@@ -924,28 +924,28 @@ impl Graph {
         directed: Option<bool>,
         name: Option<&str>,
     ) -> Result<Graph> {
-        let nodes_number = nodes_number.unwrap_or(10);
+        let number_of_nodes = number_of_nodes.unwrap_or(10);
         let minimum_node_id = minimum_node_id.unwrap_or(0);
         let include_selfloops = include_selfloops.unwrap_or(false);
         let directed = directed.unwrap_or(false);
         let node_type = node_type.unwrap_or("wheel");
         let node_types = NodeTypeVocabulary::from_structs(
-            vec![Some(vec![0]); nodes_number as usize],
+            vec![Some(vec![0]); number_of_nodes as usize],
             Vocabulary::from_reverse_map(vec![node_type.to_owned()])?,
         );
 
         let edge_type = edge_type.unwrap_or("wheel");
         let edge_types_vocabulary: Vocabulary<EdgeTypeT> =
             Vocabulary::from_reverse_map(vec![edge_type.to_owned()])?;
-        let nodes = Vocabulary::from_range(minimum_node_id..(minimum_node_id + nodes_number));
+        let nodes = Vocabulary::from_range(minimum_node_id..(minimum_node_id + number_of_nodes));
         let name = name.unwrap_or("Wheel");
         let has_edge_weights = weight.is_some();
 
         // Get the generator the wheel in the middle of the two cliques
-        let (edges_number, edges_iterator) = unsafe {
+        let (number_of_edges, edges_iterator) = unsafe {
             get_wheel_edges_iterator(
                 0,
-                nodes_number,
+                number_of_nodes,
                 include_selfloops,
                 Some(0),
                 weight.unwrap_or(WeightT::NAN),
@@ -963,7 +963,7 @@ impl Graph {
             Some(true),
             Some(false),
             Some(true),
-            Some(edges_number),
+            Some(number_of_edges),
             false,
             false,
             name.to_string(),
@@ -974,7 +974,7 @@ impl Graph {
     ///
     /// # Arguments
     /// * `minimum_node_id`: Option<NodeT> - Minimum node ID to start with. May be needed when circleing graphs. By default 0.
-    /// * `nodes_number`: Option<NodeT> - Number of nodes in the circle. By default 10.
+    /// * `number_of_nodes`: Option<NodeT> - Number of nodes in the circle. By default 10.
     /// * `include_selfloops`: Option<bool> - Whether to include selfloops.
     /// * `node_type`: Option<&str> - The node type to use for the circle. By default 'circle'.
     /// * `edge_type`: Option<&str> - The node type to use for the circle. By default 'circle'.
@@ -984,7 +984,7 @@ impl Graph {
     ///
     pub fn generate_circle_graph(
         minimum_node_id: Option<NodeT>,
-        nodes_number: Option<NodeT>,
+        number_of_nodes: Option<NodeT>,
         include_selfloops: Option<bool>,
         node_type: Option<&str>,
         edge_type: Option<&str>,
@@ -992,28 +992,28 @@ impl Graph {
         directed: Option<bool>,
         name: Option<&str>,
     ) -> Result<Graph> {
-        let nodes_number = nodes_number.unwrap_or(10);
+        let number_of_nodes = number_of_nodes.unwrap_or(10);
         let minimum_node_id = minimum_node_id.unwrap_or(0);
         let include_selfloops = include_selfloops.unwrap_or(false);
         let directed = directed.unwrap_or(false);
         let node_type = node_type.unwrap_or("circle");
         let node_types = NodeTypeVocabulary::from_structs(
-            vec![Some(vec![0]); nodes_number as usize],
+            vec![Some(vec![0]); number_of_nodes as usize],
             Vocabulary::from_reverse_map(vec![node_type.to_owned()])?,
         );
 
         let edge_type = edge_type.unwrap_or("circle");
         let edge_types_vocabulary: Vocabulary<EdgeTypeT> =
             Vocabulary::from_reverse_map(vec![edge_type.to_owned()])?;
-        let nodes = Vocabulary::from_range(minimum_node_id..(minimum_node_id + nodes_number));
+        let nodes = Vocabulary::from_range(minimum_node_id..(minimum_node_id + number_of_nodes));
         let name = name.unwrap_or("Circle");
         let has_edge_weights = weight.is_some();
 
         // Get the generator the circle in the middle of the two cliques
-        let (edges_number, edges_iterator) = unsafe {
+        let (number_of_edges, edges_iterator) = unsafe {
             get_circle_edges_iterator(
                 0,
-                nodes_number,
+                number_of_nodes,
                 include_selfloops,
                 Some(0),
                 weight.unwrap_or(WeightT::NAN),
@@ -1031,7 +1031,7 @@ impl Graph {
             Some(true),
             Some(false),
             Some(true),
-            Some(edges_number),
+            Some(number_of_edges),
             false,
             false,
             name.to_string(),
@@ -1042,7 +1042,7 @@ impl Graph {
     ///
     /// # Arguments
     /// * `minimum_node_id`: Option<NodeT> - Minimum node ID to start with. May be needed when chaining graphs. By default 0.
-    /// * `nodes_number`: Option<NodeT> - Number of nodes in the chain. By default 10.
+    /// * `number_of_nodes`: Option<NodeT> - Number of nodes in the chain. By default 10.
     /// * `include_selfloops`: Option<bool> - Whether to include selfloops.
     /// * `node_type`: Option<&str> - The node type to use for the chain. By default 'chain'.
     /// * `edge_type`: Option<&str> - The node type to use for the chain. By default 'chain'.
@@ -1052,7 +1052,7 @@ impl Graph {
     ///
     pub fn generate_chain_graph(
         minimum_node_id: Option<NodeT>,
-        nodes_number: Option<NodeT>,
+        number_of_nodes: Option<NodeT>,
         include_selfloops: Option<bool>,
         node_type: Option<&str>,
         edge_type: Option<&str>,
@@ -1060,28 +1060,28 @@ impl Graph {
         directed: Option<bool>,
         name: Option<&str>,
     ) -> Result<Graph> {
-        let nodes_number = nodes_number.unwrap_or(10);
+        let number_of_nodes = number_of_nodes.unwrap_or(10);
         let minimum_node_id = minimum_node_id.unwrap_or(0);
         let include_selfloops = include_selfloops.unwrap_or(false);
         let directed = directed.unwrap_or(false);
         let node_type = node_type.unwrap_or("chain");
         let node_types = NodeTypeVocabulary::from_structs(
-            vec![Some(vec![0]); nodes_number as usize],
+            vec![Some(vec![0]); number_of_nodes as usize],
             Vocabulary::from_reverse_map(vec![node_type.to_owned()])?,
         );
 
         let edge_type = edge_type.unwrap_or("chain");
         let edge_types_vocabulary: Vocabulary<EdgeTypeT> =
             Vocabulary::from_reverse_map(vec![edge_type.to_owned()])?;
-        let nodes = Vocabulary::from_range(minimum_node_id..(minimum_node_id + nodes_number));
+        let nodes = Vocabulary::from_range(minimum_node_id..(minimum_node_id + number_of_nodes));
         let name = name.unwrap_or("Chain");
         let has_edge_weights = weight.is_some();
 
         // Get the generator the chain in the middle of the two cliques
-        let (edges_number, edges_iterator) = unsafe {
+        let (number_of_edges, edges_iterator) = unsafe {
             get_chain_edges_iterator_unchecked(
                 0,
-                nodes_number,
+                number_of_nodes,
                 include_selfloops,
                 Some(0),
                 weight.unwrap_or(WeightT::NAN),
@@ -1099,7 +1099,7 @@ impl Graph {
             Some(true),
             Some(false),
             Some(true),
-            Some(edges_number),
+            Some(number_of_edges),
             false,
             false,
             name.to_string(),
@@ -1110,7 +1110,7 @@ impl Graph {
     ///
     /// # Arguments
     /// * `minimum_node_id`: Option<NodeT> - Minimum node ID to start with. May be needed when combining graphs. By default 0.
-    /// * `nodes_number`: Option<NodeT> - Number of nodes in the chain. By default 10.
+    /// * `number_of_nodes`: Option<NodeT> - Number of nodes in the chain. By default 10.
     /// * `include_selfloops`: Option<bool> - Whether to include selfloops.
     /// * `node_type`: Option<&str> - The node type to use. By default 'complete'.
     /// * `edge_type`: Option<&str> - The node type to use. By default 'complete'.
@@ -1120,7 +1120,7 @@ impl Graph {
     ///
     pub fn generate_complete_graph(
         minimum_node_id: Option<NodeT>,
-        nodes_number: Option<NodeT>,
+        number_of_nodes: Option<NodeT>,
         include_selfloops: Option<bool>,
         node_type: Option<&str>,
         edge_type: Option<&str>,
@@ -1128,28 +1128,28 @@ impl Graph {
         directed: Option<bool>,
         name: Option<&str>,
     ) -> Result<Graph> {
-        let nodes_number = nodes_number.unwrap_or(10);
+        let number_of_nodes = number_of_nodes.unwrap_or(10);
         let minimum_node_id = minimum_node_id.unwrap_or(0);
         let include_selfloops = include_selfloops.unwrap_or(false);
         let directed = directed.unwrap_or(false);
         let node_type = node_type.unwrap_or("complete");
         let node_types = NodeTypeVocabulary::from_structs(
-            vec![Some(vec![0]); nodes_number as usize],
+            vec![Some(vec![0]); number_of_nodes as usize],
             Vocabulary::from_reverse_map(vec![node_type.to_owned()])?,
         );
 
         let edge_type = edge_type.unwrap_or("complete");
         let edge_types_vocabulary: Vocabulary<EdgeTypeT> =
             Vocabulary::from_reverse_map(vec![edge_type.to_owned()])?;
-        let nodes = Vocabulary::from_range(minimum_node_id..(minimum_node_id + nodes_number));
+        let nodes = Vocabulary::from_range(minimum_node_id..(minimum_node_id + number_of_nodes));
         let name = name.unwrap_or("Complete");
         let has_edge_weights = weight.is_some();
 
         // Get the generator the chain in the middle of the two cliques
-        let (edges_number, edges_iterator) = unsafe {
+        let (number_of_edges, edges_iterator) = unsafe {
             get_clique_edges_iterator_unchecked(
                 0,
-                nodes_number,
+                number_of_nodes,
                 include_selfloops,
                 Some(0),
                 weight.unwrap_or(WeightT::NAN),
@@ -1167,7 +1167,7 @@ impl Graph {
             Some(true),
             Some(false),
             Some(true),
-            Some(edges_number),
+            Some(number_of_edges),
             false,
             false,
             name.to_string(),
@@ -1178,9 +1178,9 @@ impl Graph {
     ///
     /// # Arguments
     /// * `minimum_node_id`: Option<NodeT> - Minimum node ID to start with. May be needed when chaining graphs. By default 0.
-    /// * `left_clique_nodes_number`: Option<NodeT> - Number of nodes in the left clique. By default 10.
-    /// * `right_clique_nodes_number`: Option<NodeT> -  Number of nodes in the right clique. By default equal to the left clique.
-    /// * `chain_nodes_number`: Option<NodeT> - Number of nodes in the chain. By default 10.
+    /// * `left_clique_number_of_nodes`: Option<NodeT> - Number of nodes in the left clique. By default 10.
+    /// * `right_clique_number_of_nodes`: Option<NodeT> -  Number of nodes in the right clique. By default equal to the left clique.
+    /// * `chain_number_of_nodes`: Option<NodeT> - Number of nodes in the chain. By default 10.
     /// * `include_selfloops`: Option<bool> - Whether to include selfloops.
     /// * `left_clique_node_type`: Option<&str> - The node type to use for the left clique. By default 'left_clique'.
     /// * `right_clique_node_type`: Option<&str> - The node type to use for the right clique. By default 'right_clique'.
@@ -1198,9 +1198,9 @@ impl Graph {
     /// * If the edge weights are provided only for a subset.
     pub fn generate_barbell_graph(
         minimum_node_id: Option<NodeT>,
-        left_clique_nodes_number: Option<NodeT>,
-        right_clique_nodes_number: Option<NodeT>,
-        chain_nodes_number: Option<NodeT>,
+        left_clique_number_of_nodes: Option<NodeT>,
+        right_clique_number_of_nodes: Option<NodeT>,
+        chain_number_of_nodes: Option<NodeT>,
         include_selfloops: Option<bool>,
         left_clique_node_type: Option<&str>,
         right_clique_node_type: Option<&str>,
@@ -1219,14 +1219,14 @@ impl Graph {
             _ => Err("The edge weights have been provided only for a subset of the graph sub-structures.".to_string())
         }?;
         let minimum_node_id = minimum_node_id.unwrap_or(0);
-        let left_clique_nodes_number = left_clique_nodes_number.unwrap_or(10);
-        let chain_nodes_number = chain_nodes_number.unwrap_or(10);
+        let left_clique_number_of_nodes = left_clique_number_of_nodes.unwrap_or(10);
+        let chain_number_of_nodes = chain_number_of_nodes.unwrap_or(10);
         let include_selfloops = include_selfloops.unwrap_or(false);
         let directed = directed.unwrap_or(false);
-        let right_clique_nodes_number =
-            right_clique_nodes_number.unwrap_or(left_clique_nodes_number);
-        let nodes_number =
-            left_clique_nodes_number + chain_nodes_number + right_clique_nodes_number;
+        let right_clique_number_of_nodes =
+            right_clique_number_of_nodes.unwrap_or(left_clique_number_of_nodes);
+        let number_of_nodes =
+            left_clique_number_of_nodes + chain_number_of_nodes + right_clique_number_of_nodes;
         let left_clique_node_type = left_clique_node_type.unwrap_or("left_clique");
         let right_clique_node_type = right_clique_node_type.unwrap_or("right_clique");
         let chain_node_type = chain_node_type.unwrap_or("chain");
@@ -1236,20 +1236,20 @@ impl Graph {
             right_clique_node_type.to_owned(),
         ])?;
         let mut node_type_ids: Vec<Option<Vec<NodeTypeT>>> = [
-            left_clique_nodes_number,
-            chain_nodes_number,
-            right_clique_nodes_number,
+            left_clique_number_of_nodes,
+            chain_number_of_nodes,
+            right_clique_number_of_nodes,
         ]
         .iter()
         .enumerate()
-        .flat_map(|(i, &subgraph_nodes_number)| {
-            vec![Some(vec![i as NodeTypeT]); subgraph_nodes_number as usize]
+        .flat_map(|(i, &subgraph_number_of_nodes)| {
+            vec![Some(vec![i as NodeTypeT]); subgraph_number_of_nodes as usize]
         })
         .collect();
-        node_type_ids[left_clique_nodes_number.saturating_sub(1) as usize]
+        node_type_ids[left_clique_number_of_nodes.saturating_sub(1) as usize]
             .as_mut()
             .map(|node_type_ids| node_type_ids.push(1));
-        node_type_ids[(left_clique_nodes_number + chain_nodes_number).saturating_sub(1) as usize]
+        node_type_ids[(left_clique_number_of_nodes + chain_number_of_nodes).saturating_sub(1) as usize]
             .as_mut()
             .map(|node_type_ids| node_type_ids.push(2));
 
@@ -1263,15 +1263,15 @@ impl Graph {
             chain_edge_type.to_owned(),
             right_clique_edge_type.to_owned(),
         ])?;
-        let nodes = Vocabulary::from_range(minimum_node_id..(minimum_node_id + nodes_number));
+        let nodes = Vocabulary::from_range(minimum_node_id..(minimum_node_id + number_of_nodes));
         let name = name.unwrap_or("Barbell");
         let has_edge_weights = left_clique_weight.is_some();
 
         // Get the generator for the left clique
-        let (left_edges_number, left_clique_edges_iterator) = unsafe {
+        let (left_number_of_edges, left_clique_edges_iterator) = unsafe {
             get_clique_edges_iterator_unchecked(
                 0,
-                left_clique_nodes_number,
+                left_clique_number_of_nodes,
                 include_selfloops,
                 Some(0),
                 left_clique_weight.unwrap_or(WeightT::NAN),
@@ -1279,31 +1279,31 @@ impl Graph {
             )
         };
         // Get the generator the chain in the middle of the two cliques
-        let (chain_edges_number, chain_edges_iterator) = unsafe {
+        let (chain_number_of_edges, chain_edges_iterator) = unsafe {
             get_chain_edges_iterator_unchecked(
-                left_clique_nodes_number.saturating_sub(1),
-                left_clique_nodes_number
-                    + chain_nodes_number
-                    + if right_clique_nodes_number > 0 { 1 } else { 0 },
+                left_clique_number_of_nodes.saturating_sub(1),
+                left_clique_number_of_nodes
+                    + chain_number_of_nodes
+                    + if right_clique_number_of_nodes > 0 { 1 } else { 0 },
                 include_selfloops,
                 Some(1),
                 chain_weight.unwrap_or(WeightT::NAN),
-                left_edges_number as usize,
+                left_number_of_edges as usize,
             )
         };
         // Get the generator for the right clique
-        let (right_edges_number, right_clique_edges_iterator) = unsafe {
+        let (right_number_of_edges, right_clique_edges_iterator) = unsafe {
             get_clique_edges_iterator_unchecked(
-                left_clique_nodes_number + chain_nodes_number,
-                left_clique_nodes_number + chain_nodes_number + right_clique_nodes_number,
+                left_clique_number_of_nodes + chain_number_of_nodes,
+                left_clique_number_of_nodes + chain_number_of_nodes + right_clique_number_of_nodes,
                 include_selfloops,
                 Some(2),
                 right_clique_weight.unwrap_or(WeightT::NAN),
-                (left_edges_number + chain_edges_number) as usize,
+                (left_number_of_edges + chain_number_of_edges) as usize,
             )
         };
 
-        let edges_number = left_edges_number + chain_edges_number + right_edges_number;
+        let number_of_edges = left_number_of_edges + chain_number_of_edges + right_number_of_edges;
 
         let edges_iterator = left_clique_edges_iterator
             .chain(chain_edges_iterator)
@@ -1319,7 +1319,7 @@ impl Graph {
             Some(true),
             Some(false),
             Some(true),
-            Some(edges_number),
+            Some(number_of_edges),
             false,
             false,
             name.to_string(),
@@ -1330,8 +1330,8 @@ impl Graph {
     ///
     /// # Arguments
     /// * `minimum_node_id`: Option<NodeT> - Minimum node ID to start with. May be needed when chaining graphs. By default 0.
-    /// * `clique_nodes_number`: Option<NodeT> - Number of nodes in the left clique. By default 10.
-    /// * `chain_nodes_number`: Option<NodeT> - Number of nodes in the chain. By default 10.
+    /// * `clique_number_of_nodes`: Option<NodeT> - Number of nodes in the left clique. By default 10.
+    /// * `chain_number_of_nodes`: Option<NodeT> - Number of nodes in the chain. By default 10.
     /// * `include_selfloops`: Option<bool> - Whether to include selfloops.
     /// * `clique_node_type`: Option<&str> - The node type to use for the left clique. By default 'clique'.
     /// * `chain_node_type`: Option<&str> - The node type to use for the chain. By default 'chain'.
@@ -1346,8 +1346,8 @@ impl Graph {
     /// * If the edge weights are provided only for a subset.
     pub fn generate_lollipop_graph(
         minimum_node_id: Option<NodeT>,
-        clique_nodes_number: Option<NodeT>,
-        chain_nodes_number: Option<NodeT>,
+        clique_number_of_nodes: Option<NodeT>,
+        chain_number_of_nodes: Option<NodeT>,
         include_selfloops: Option<bool>,
         clique_node_type: Option<&str>,
         chain_node_type: Option<&str>,
@@ -1360,9 +1360,9 @@ impl Graph {
     ) -> Result<Graph> {
         Graph::generate_barbell_graph(
             minimum_node_id,
-            clique_nodes_number,
+            clique_number_of_nodes,
             Some(0),
-            chain_nodes_number,
+            chain_number_of_nodes,
             include_selfloops,
             clique_node_type.or(Some("clique")),
             None,
@@ -1410,7 +1410,7 @@ impl Graph {
         let has_edge_weights = weight.is_some();
 
         // Get the generator the wheel in the middle of the two cliques
-        let (nodes_number, edges_number, edges_iterator) = unsafe {
+        let (number_of_nodes, number_of_edges, edges_iterator) = unsafe {
             get_squared_lattice_edges_iterator(
                 sides,
                 minimum_node_id,
@@ -1419,10 +1419,10 @@ impl Graph {
         };
 
         let node_types = NodeTypeVocabulary::from_structs(
-            vec![Some(vec![0]); nodes_number as usize],
+            vec![Some(vec![0]); number_of_nodes as usize],
             Vocabulary::from_reverse_map(vec![node_type.unwrap_or("squared_lattice").to_owned()])?,
         );
-        let nodes = Vocabulary::from_range(minimum_node_id..(minimum_node_id + nodes_number));
+        let nodes = Vocabulary::from_range(minimum_node_id..(minimum_node_id + number_of_nodes));
         let edge_types_vocabulary: Vocabulary<EdgeTypeT> = Vocabulary::from_reverse_map(
             (0..sides.len())
                 .map(|dimension| format!("Dimension_{}", dimension))
@@ -1440,7 +1440,7 @@ impl Graph {
             Some(true),
             Some(false),
             Some(false),
-            Some(edges_number),
+            Some(number_of_edges),
             false,
             false,
             name.to_string(),

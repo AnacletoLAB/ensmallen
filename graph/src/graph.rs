@@ -57,7 +57,7 @@ pub struct Graph {
     pub(crate) connected_nodes: Arc<Option<BitVec<u8, Lsb0>>>,
 
     /// Number of connected nodes in the graph.
-    pub(crate) connected_nodes_number: NodeT,
+    pub(crate) connected_number_of_nodes: NodeT,
 
     // /////////////////////////////////////////////////////////////////////////
     // Kernels Caching related attributes
@@ -100,7 +100,7 @@ impl Graph {
         may_have_singleton_with_selfloops: bool,
         name: S,
     ) -> Graph {
-        let nodes_number = nodes.len();
+        let number_of_nodes = nodes.len();
         let mut graph = Graph {
             directed,
             edges: edges,
@@ -112,18 +112,18 @@ impl Graph {
             cache: Arc::new(ClonableUnsafeCell::default()),
             unique_sources: Arc::new(None),
             connected_nodes: Arc::new(None),
-            connected_nodes_number: nodes_number as NodeT,
+            connected_number_of_nodes: number_of_nodes as NodeT,
             reciprocal_sqrt_degrees: Arc::new(None),
         };
         if may_have_singletons || may_have_singleton_with_selfloops {
             let connected_nodes =
                 graph.get_connected_nodes(may_have_singletons, may_have_singleton_with_selfloops);
-            let connected_nodes_number = connected_nodes.count_ones() as NodeT;
+            let connected_number_of_nodes = connected_nodes.count_ones() as NodeT;
             // If there are less connected nodes than the number of nodes
             // in the graph, it means that there must be some singleton or singleton with selfloops.
-            if connected_nodes_number < graph.get_number_of_nodes() {
+            if connected_number_of_nodes < graph.get_number_of_nodes() {
                 graph.connected_nodes = Arc::new(Some(connected_nodes));
-                graph.connected_nodes_number = connected_nodes_number;
+                graph.connected_number_of_nodes = connected_number_of_nodes;
                 graph.unique_sources = Arc::new(Some(graph.get_unique_sources()));
             }
         }
@@ -132,12 +132,12 @@ impl Graph {
 
     /// Returns Elias-Fano data structure with the source nodes.
     fn get_unique_sources(&self) -> EliasFano {
-        let unique_source_nodes_number = self.get_number_of_nodes()
+        let unique_source_number_of_nodes = self.get_number_of_nodes()
             - self.get_number_of_singleton_nodes()
             - self.get_number_of_trap_nodes();
         let mut elias_fano_unique_sources = EliasFano::new(
             self.get_number_of_nodes() as u64,
-            unique_source_nodes_number as usize,
+            unique_source_number_of_nodes as usize,
         )
         .unwrap();
         self.iter_node_ids()

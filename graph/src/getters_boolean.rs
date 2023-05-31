@@ -94,8 +94,8 @@ impl Graph {
             return false;
         }
         for root_node_id in self.get_root_node_ids() {
-            let nodes_number = self.get_number_of_nodes() as usize;
-            let thread_shared_visited = ThreadDataRaceAware::new(vec![NodeT::MAX; nodes_number]);
+            let number_of_nodes = self.get_number_of_nodes() as usize;
+            let thread_shared_visited = ThreadDataRaceAware::new(vec![NodeT::MAX; number_of_nodes]);
             unsafe {
                 (*thread_shared_visited.value.get())[root_node_id as usize] = root_node_id;
             }
@@ -399,7 +399,7 @@ impl Graph {
     /// # Raises
     /// * If the graph does not have node types.
     pub fn has_singleton_node_types(&self) -> Result<bool> {
-        Ok(self.get_minimum_node_types_number()? == 1)
+        Ok(self.get_minimum_number_of_node_types()? == 1)
     }
 
     /// Return whether the graph has any known node-related graph oddities.
@@ -431,7 +431,7 @@ impl Graph {
     /// # Raises
     /// * If the graph does not have edge types.
     pub fn has_singleton_edge_types(&self) -> Result<bool> {
-        Ok(self.get_minimum_edge_types_number()? == 1)
+        Ok(self.get_minimum_number_of_edge_types()? == 1)
     }
 
     /// Return whether the graph has any known edge type-related graph oddities.

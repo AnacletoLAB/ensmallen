@@ -374,15 +374,15 @@ impl Graph {
             weight.map_or(true, |weight| weight >= min_edge_weight && weight <= max_edge_weight)
         };
 
-        let mut edges_number = self.get_number_of_directed_edges();
+        let mut number_of_edges = self.get_number_of_directed_edges();
 
         if filter_parallel_edges {
-            edges_number -= self.get_number_of_parallel_edges();
+            number_of_edges -= self.get_number_of_parallel_edges();
             if filter_selfloops {
-                edges_number -= self.get_number_of_unique_selfloops() as EdgeT;
+                number_of_edges -= self.get_number_of_unique_selfloops() as EdgeT;
             }
         } else if filter_selfloops {
-            edges_number -= self.get_number_of_selfloops();
+            number_of_edges -= self.get_number_of_selfloops();
         }
 
         match (has_node_filters, has_edge_filters) {
@@ -422,7 +422,7 @@ impl Graph {
                 Some(true),
                 Some(false),
                 Some(false),
-                Some(edges_number),
+                Some(number_of_edges),
                 true,
                 self.has_selfloops(),
                 self.get_name(),

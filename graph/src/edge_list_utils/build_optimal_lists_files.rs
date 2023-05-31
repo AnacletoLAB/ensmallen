@@ -26,7 +26,7 @@ pub fn build_optimal_lists_files(
     original_node_type_list_comment_symbol: Option<String>,
     original_load_node_type_list_in_parallel: Option<bool>,
     original_node_type_list_is_correct: Option<bool>,
-    mut node_types_number: Option<NodeTypeT>,
+    mut number_of_node_types: Option<NodeTypeT>,
 
     target_node_type_list_path: Option<String>,
     target_node_type_list_separator: Option<char>,
@@ -48,7 +48,7 @@ pub fn build_optimal_lists_files(
     original_node_types_separator: Option<char>,
     original_node_list_node_types_column_number: Option<usize>,
     original_node_list_node_types_column: Option<String>,
-    mut nodes_number: Option<NodeT>,
+    mut number_of_nodes: Option<NodeT>,
     original_minimum_node_id: Option<NodeT>,
     original_numeric_node_ids: Option<bool>,
     original_node_list_numeric_node_type_ids: Option<bool>,
@@ -78,7 +78,7 @@ pub fn build_optimal_lists_files(
     edge_type_list_comment_symbol: Option<String>,
     load_edge_type_list_in_parallel: Option<bool>,
     edge_type_list_is_correct: Option<bool>,
-    edge_types_number: Option<EdgeTypeT>,
+    number_of_edge_types: Option<EdgeTypeT>,
 
     target_edge_type_list_path: Option<String>,
     target_edge_type_list_separator: Option<char>,
@@ -106,7 +106,7 @@ pub fn build_optimal_lists_files(
     edge_list_max_rows_number: Option<usize>,
     edge_list_rows_to_skip: Option<usize>,
     load_edge_list_in_parallel: Option<bool>,
-    mut edges_number: Option<EdgeT>,
+    mut number_of_edges: Option<EdgeT>,
 
     target_edge_list_separator: Option<char>,
     remove_chevrons: Option<bool>,
@@ -188,14 +188,14 @@ pub fn build_optimal_lists_files(
         }
 
         info!("Converting the node list node type names to numeric node type IDs.");
-        let (new_nodes_number, new_node_types_number) = convert_node_list_node_types_to_numeric(
+        let (new_number_of_nodes, new_number_of_node_types) = convert_node_list_node_types_to_numeric(
             original_node_path.clone(),
             target_node_path.clone().unwrap(),
             original_node_type_path,
             original_node_type_list_separator,
             original_node_types_column_number,
             original_node_types_column,
-            node_types_number,
+            number_of_node_types,
             original_numeric_node_type_ids,
             original_minimum_node_type_id,
             original_node_type_list_header,
@@ -235,13 +235,13 @@ pub fn build_optimal_lists_files(
             target_node_types_separator.clone(),
             target_node_list_node_types_column_number,
             target_node_list_node_types_column,
-            nodes_number,
+            number_of_nodes,
         )?;
         // Now we need to update the node list parameters
         // that should be used in the next step.
         // We do not update again the node types as it
         // is not needed after this step.
-        node_types_number = new_node_types_number;
+        number_of_node_types = new_number_of_node_types;
         *original_node_path = target_node_path.clone().unwrap();
         original_node_list_separator = target_node_list_separator;
         target_node_list_separator = None;
@@ -249,7 +249,7 @@ pub fn build_optimal_lists_files(
         original_nodes_column_number = target_nodes_column_number;
         original_nodes_column = None;
         // Now we know the number of nodes
-        nodes_number = Some(new_nodes_number);
+        number_of_nodes = Some(new_number_of_nodes);
         // And that the node list is correct
         node_list_is_correct = Some(true);
         // therefore we can now load this in parallel.
@@ -261,8 +261,8 @@ pub fn build_optimal_lists_files(
     // We always treat as non-numeric the nodes if the
     // node list vocabulary has been provided.
     info!("Computing whether the edge list has numeric node IDs.");
-    let numeric_edge_list_node_ids = node_types_number
-        .map_or(true, |node_types_number| node_types_number == 0)
+    let numeric_edge_list_node_ids = number_of_node_types
+        .map_or(true, |number_of_node_types| number_of_node_types == 0)
         && original_edge_list_numeric_node_ids.map_or_else(
             || {
                 is_numeric_edge_list(
@@ -296,10 +296,10 @@ pub fn build_optimal_lists_files(
         original_weights_column.is_some() || original_weights_column_number.is_some();
 
     // We convert the edge list to dense numeric
-    let (nodes_number, edge_types_number) = if numeric_edge_list_node_ids {
+    let (number_of_nodes, number_of_edge_types) = if numeric_edge_list_node_ids {
         info!("Computing maximum node ID from sparse numeric edge list.");
         if maximum_node_id.is_none() {
-            let (_, new_maximum_node_id, new_edges_number) =
+            let (_, new_maximum_node_id, new_number_of_edges) =
                 get_minmax_node_from_numeric_edge_list(
                     original_edge_path.as_ref(),
                     original_edge_list_separator.clone(),
@@ -320,7 +320,7 @@ pub fn build_optimal_lists_files(
                     name.clone(),
                 )?;
             maximum_node_id = Some(new_maximum_node_id);
-            edges_number = Some(new_edges_number);
+            number_of_edges = Some(new_number_of_edges);
         }
 
         info!("Converting sparse numeric edge list to dense numeric edge list.");
@@ -343,7 +343,7 @@ pub fn build_optimal_lists_files(
             original_edge_type_path,
             original_edge_types_column_number,
             original_edge_types_column,
-            edge_types_number,
+            number_of_edge_types,
             original_numeric_edge_type_ids,
             original_minimum_edge_type_id,
             original_edge_type_list_separator,
@@ -383,7 +383,7 @@ pub fn build_optimal_lists_files(
             default_weight,
             edge_list_max_rows_number,
             edge_list_rows_to_skip,
-            edges_number.map(|edges_number| edges_number as usize),
+            number_of_edges.map(|number_of_edges| number_of_edges as usize),
             skip_edge_types_if_unavailable,
             skip_weights_if_unavailable,
             numeric_rows_are_surely_smaller_than_original,
@@ -406,14 +406,14 @@ pub fn build_optimal_lists_files(
             node_list_comment_symbol,
             original_nodes_column_number,
             original_nodes_column,
-            nodes_number,
+            number_of_nodes,
             original_minimum_node_id,
             original_numeric_node_ids,
             original_load_node_list_in_parallel,
             original_edge_type_path,
             original_edge_types_column_number,
             original_edge_types_column,
-            edge_types_number,
+            number_of_edge_types,
             original_numeric_edge_type_ids,
             original_minimum_edge_type_id,
             original_edge_type_list_separator,
@@ -466,7 +466,7 @@ pub fn build_optimal_lists_files(
             default_weight,
             edge_list_max_rows_number,
             edge_list_rows_to_skip,
-            edges_number.map(|edges_number| edges_number as usize),
+            number_of_edges.map(|number_of_edges| number_of_edges as usize),
             skip_edge_types_if_unavailable,
             skip_weights_if_unavailable,
             numeric_rows_are_surely_smaller_than_original,
@@ -493,12 +493,12 @@ pub fn build_optimal_lists_files(
     )?;
 
     info!("Count the lines in the path, that match exactly with the number of edges.");
-    let edges_number = get_rows_number(target_edge_path.as_ref())? as EdgeT;
+    let number_of_edges = get_rows_number(target_edge_path.as_ref())? as EdgeT;
 
     Ok((
-        node_types_number,
-        nodes_number,
-        edge_types_number,
-        edges_number,
+        number_of_node_types,
+        number_of_nodes,
+        number_of_edge_types,
+        number_of_edges,
     ))
 }

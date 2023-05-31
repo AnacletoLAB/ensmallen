@@ -9,7 +9,7 @@ use std::sync::atomic::AtomicBool;
 macro_rules! parse_unsorted_edge_list {
     (
         $unsorted_edge_list:expr,
-        $nodes_number:expr,
+        $number_of_nodes:expr,
         ($($input_tuple:ident),*),
         ($($results:ident),*),
         ($($default:expr),*),
@@ -30,16 +30,16 @@ macro_rules! parse_unsorted_edge_list {
             });
         }
         // Get the number of nodes and edges.
-        let edges_number = $unsorted_edge_list.len();
+        let number_of_edges = $unsorted_edge_list.len();
         // We create the empty vectors for edge types and weights
         $(
-            let $results = ThreadDataRaceAware::new(vec![$default; edges_number]);
+            let $results = ThreadDataRaceAware::new(vec![$default; number_of_edges]);
         )*
         // We also create the builder for the elias fano
         let has_selfloops = AtomicBool::new(false);
         let csr_builder = ConcurrentCSRBuilder::new(
-            edges_number as EdgeT,
-            $nodes_number as NodeT
+            number_of_edges as EdgeT,
+            $number_of_nodes as NodeT
         );
         // Parsing and building edge list objects
         $unsorted_edge_list
@@ -160,8 +160,8 @@ macro_rules! parse_sorted_string_edge_list {
         $node_method:expr,
         $edge_types_vocabulary:expr,
         $edge_types_method:expr,
-        $nodes_number:expr,
-        $edges_number:expr,
+        $number_of_nodes:expr,
+        $number_of_edges:expr,
         ($($workaround:ident),*),
         ($($input_tuple:ident),*),
         ($($results:ident),*),
@@ -173,13 +173,13 @@ macro_rules! parse_sorted_string_edge_list {
         let mut node_parser = EdgeNodeNamesParser::new($nodes);
         // First we create the weights and edge types vectors
         $(
-            let $results = ThreadDataRaceAware::new(vec![$default; $edges_number as usize]);
+            let $results = ThreadDataRaceAware::new(vec![$default; $number_of_edges as usize]);
         )*
         // We also create the builder for the elias fano
         let has_selfloops = AtomicBool::new(false);
         let csr_builder = ConcurrentCSRBuilder::new(
-            $edges_number as EdgeT,
-            $nodes_number as NodeT
+            $number_of_edges as EdgeT,
+            $number_of_nodes as NodeT
         );
         $ei.method_caller($edge_types_method, $edge_types_method, &mut edge_type_parser).method_caller($node_method, $node_method, &mut node_parser).for_each(|line| {
             // There cannot be results when iterating on a sorted vector.
@@ -219,7 +219,7 @@ macro_rules! parse_sorted_string_edge_list {
 macro_rules! parse_unsorted_integer_edge_list {
     (
         $ei:expr,
-        $nodes_number:expr,
+        $number_of_nodes:expr,
         ($($workaround:ident),*),
         ($($input_tuple:ident),*),
         ($($results:ident),*),
@@ -253,7 +253,7 @@ macro_rules! parse_unsorted_integer_edge_list {
         // Build the actual numeric edge lists
         parse_unsorted_edge_list!(
             unsorted_edge_list,
-            $nodes_number,
+            $number_of_nodes,
             ($($input_tuple),*),
             ($($results),*),
             ($($default),*),
@@ -265,8 +265,8 @@ macro_rules! parse_unsorted_integer_edge_list {
 macro_rules! parse_sorted_integer_edge_list {
     (
         $ei:expr,
-        $nodes_number:expr,
-        $edges_number:expr,
+        $number_of_nodes:expr,
+        $number_of_edges:expr,
         ($($workaround:ident),*),
         ($($input_tuple:ident),*),
         ($($results:ident),*),
@@ -274,13 +274,13 @@ macro_rules! parse_sorted_integer_edge_list {
     ) => {{
         // First we create the weights and edge types vectors
         $(
-            let $results = ThreadDataRaceAware::new(vec![$default; $edges_number as usize]);
+            let $results = ThreadDataRaceAware::new(vec![$default; $number_of_edges as usize]);
         )*
         // We also create the builder for the elias fano
         let has_selfloops = AtomicBool::new(false);
         let csr_builder = ConcurrentCSRBuilder::new(
-            $edges_number as EdgeT,
-            $nodes_number as NodeT
+            $number_of_edges as EdgeT,
+            $number_of_nodes as NodeT
         );
         $ei.for_each(|(i, (src, dst, $($workaround),*))| {
             csr_builder.set(i as EdgeT, src, dst);
@@ -310,11 +310,11 @@ fn check_general_edge_constructor_parameters_consistency<I>(
     has_edge_types: bool,
     complete: bool,
     correct: bool,
-    edges_number: Option<EdgeT>,
-    nodes_number: NodeT,
+    number_of_edges: Option<EdgeT>,
+    number_of_nodes: NodeT,
     edges_iterator: &Option<I>,
 ) -> Result<()> {
-    if sorted && edges_number.is_none() {
+    if sorted && number_of_edges.is_none() {
         return Err(concat!(
             "It is not possible to build a sorted edge list ",
             "without knowing the ",
@@ -323,17 +323,17 @@ fn check_general_edge_constructor_parameters_consistency<I>(
         .to_string());
     }
 
-    if nodes_number.is_zero()
-        && edges_number
+    if number_of_nodes.is_zero()
+        && number_of_edges
             .as_ref()
-            .map_or(false, |&edges_number| edges_number > 0)
+            .map_or(false, |&number_of_edges| number_of_edges > 0)
     {
         return Err(format!(
             concat!(
                 "This graph was parametrized in an impossible way: ",
                 "a non zero number of edges {:?} and a zero nodes {:?}."
             ),
-            edges_number, nodes_number
+            number_of_edges, number_of_nodes
         ));
     }
 
@@ -381,8 +381,8 @@ pub(crate) fn parse_string_edges(
     complete: Option<bool>,
     duplicates: Option<bool>,
     sorted: Option<bool>,
-    nodes_number: Option<NodeT>,
-    edges_number: Option<EdgeT>,
+    number_of_nodes: Option<NodeT>,
+    number_of_edges: Option<EdgeT>,
     numeric_edge_list_node_ids: Option<bool>,
     numeric_edge_list_edge_type_ids: Option<bool>,
     skip_edge_types_if_unavailable: Option<bool>,
@@ -407,7 +407,7 @@ pub(crate) fn parse_string_edges(
         has_edge_types,
         complete,
         correct,
-        edges_number,
+        number_of_edges,
         nodes.len() as NodeT,
         &edges_iterator,
     )?;
@@ -479,8 +479,8 @@ pub(crate) fn parse_string_edges(
                 node_method,
                 edge_types_vocabulary,
                 edge_types_method,
-                nodes_number.unwrap(),
-                edges_number.unwrap(),
+                number_of_nodes.unwrap(),
+                number_of_edges.unwrap(),
                 (edge_type, weight),
                 (edge_type, weight),
                 (edge_types, weights),
@@ -503,8 +503,8 @@ pub(crate) fn parse_string_edges(
                 node_method,
                 edge_types_vocabulary,
                 edge_types_method,
-                nodes_number.unwrap(),
-                edges_number.unwrap(),
+                number_of_nodes.unwrap(),
+                number_of_edges.unwrap(),
                 (_edge_type, weight),
                 (weight),
                 (weights),
@@ -527,8 +527,8 @@ pub(crate) fn parse_string_edges(
                 node_method,
                 edge_types_vocabulary,
                 edge_types_method,
-                nodes_number.unwrap(),
-                edges_number.unwrap(),
+                number_of_nodes.unwrap(),
+                number_of_edges.unwrap(),
                 (edge_type, _weight),
                 (edge_type),
                 (edge_types),
@@ -551,8 +551,8 @@ pub(crate) fn parse_string_edges(
                 node_method,
                 edge_types_vocabulary,
                 edge_types_method,
-                nodes_number.unwrap(),
-                edges_number.unwrap(),
+                number_of_nodes.unwrap(),
+                number_of_edges.unwrap(),
                 (_edge_type, _weight),
                 (),
                 (),
@@ -720,14 +720,14 @@ pub(crate) fn parse_integer_edges(
     edges_iterator: Option<
         impl ParallelIterator<Item = (usize, (NodeT, NodeT, Option<EdgeTypeT>, WeightT))>,
     >,
-    nodes_number: NodeT,
+    number_of_nodes: NodeT,
     edge_types_vocabulary: Option<Vocabulary<EdgeTypeT>>,
     has_edge_weights: bool,
     directed: bool,
     complete: Option<bool>,
     duplicates: Option<bool>,
     sorted: Option<bool>,
-    edges_number: Option<EdgeT>,
+    number_of_edges: Option<EdgeT>,
 ) -> Result<(CSR, Option<EdgeTypeVocabulary>, Option<Vec<WeightT>>, bool)> {
     let complete = complete.unwrap_or(directed);
     let duplicates = duplicates.unwrap_or(true);
@@ -739,8 +739,8 @@ pub(crate) fn parse_integer_edges(
         has_edge_types,
         complete,
         true,
-        edges_number,
-        nodes_number,
+        number_of_edges,
+        number_of_nodes,
         &edges_iterator,
     )?;
 
@@ -761,8 +761,8 @@ pub(crate) fn parse_integer_edges(
         (Some(ei), true, true, true) => {
             let (edges, has_selfloops, edge_type_ids, weights) = parse_sorted_integer_edge_list!(
                 ei,
-                nodes_number,
-                edges_number.unwrap(),
+                number_of_nodes,
+                number_of_edges.unwrap(),
                 (edge_type, weight),
                 (edge_type, weight),
                 (edge_types, weights),
@@ -779,8 +779,8 @@ pub(crate) fn parse_integer_edges(
         (Some(ei), true, false, true) => {
             let (edges, has_selfloops, weights) = parse_sorted_integer_edge_list!(
                 ei,
-                nodes_number,
-                edges_number.unwrap(),
+                number_of_nodes,
+                number_of_edges.unwrap(),
                 (_edge_type, weight),
                 (weight),
                 (weights),
@@ -792,8 +792,8 @@ pub(crate) fn parse_integer_edges(
         (Some(ei), true, true, false) => {
             let (edges, has_selfloops, edge_type_ids) = parse_sorted_integer_edge_list!(
                 ei,
-                nodes_number,
-                edges_number.unwrap(),
+                number_of_nodes,
+                number_of_edges.unwrap(),
                 (edge_type, _weight),
                 (edge_type),
                 (edge_types),
@@ -805,8 +805,8 @@ pub(crate) fn parse_integer_edges(
         (Some(ei), true, false, false) => {
             let (edges, has_selfloops) = parse_sorted_integer_edge_list!(
                 ei,
-                nodes_number,
-                edges_number.unwrap(),
+                number_of_nodes,
+                number_of_edges.unwrap(),
                 (_edge_type, _weight),
                 (),
                 (),
@@ -819,7 +819,7 @@ pub(crate) fn parse_integer_edges(
             // Building the edge list
             let (edges, has_selfloops, edge_type_ids, weights) = parse_unsorted_integer_edge_list!(
                 ei,
-                nodes_number,
+                number_of_nodes,
                 (edge_type, weight),
                 (edge_type, weight),
                 (edge_types, weights),
@@ -840,7 +840,7 @@ pub(crate) fn parse_integer_edges(
             // Building the edge list
             let (edges, has_selfloops, edge_type_ids) = parse_unsorted_integer_edge_list!(
                 ei,
-                nodes_number,
+                number_of_nodes,
                 (edge_type, _weight),
                 (edge_type),
                 (edge_types),
@@ -856,7 +856,7 @@ pub(crate) fn parse_integer_edges(
             // Building the edge list
             let (edges, has_selfloops, weights) = parse_unsorted_integer_edge_list!(
                 ei,
-                nodes_number,
+                number_of_nodes,
                 (_edge_type, weight),
                 (weight),
                 (weights),
@@ -872,7 +872,7 @@ pub(crate) fn parse_integer_edges(
             // Building the edge list
             let (edges, has_selfloops) = parse_unsorted_integer_edge_list!(
                 ei,
-                nodes_number,
+                number_of_nodes,
                 (_edge_type, _weight),
                 (),
                 (),

@@ -158,9 +158,9 @@ class WikipediaRetrievedGraph(RetrievedGraph):
 
         if not self.is_preprocessed():
             (
-                node_types_number,
-                nodes_number,
-                edges_number
+                number_of_node_types,
+                number_of_nodes,
+                number_of_edges
             ) = edge_list_utils.parse_wikipedia_graph(
                 source_path=paths[0].replace(".bz2", ""),
                 edge_path=edge_path,
@@ -188,10 +188,10 @@ class WikipediaRetrievedGraph(RetrievedGraph):
             )
             # Store the obtained metadata
             self.store_preprocessed_metadata(
-                node_types_number,
-                nodes_number,
+                number_of_node_types,
+                number_of_nodes,
                 None,
-                edges_number
+                number_of_edges
             )
         # Load the stored metadata
         metadata = self.get_preprocessed_metadata()
@@ -199,7 +199,7 @@ class WikipediaRetrievedGraph(RetrievedGraph):
         if self._load_node_types:
             node_types_arguments = {
                 "node_type_path": node_type_list_path,
-                "node_types_number": metadata["node_types_number"],
+                "number_of_node_types": metadata["number_of_node_types"],
                 "node_types_column": "node_type_names",
                 "node_type_list_is_correct": True,
                 "node_type_list_separator": "\t",
@@ -226,7 +226,7 @@ class WikipediaRetrievedGraph(RetrievedGraph):
         # If the edge types are provided
         edge_types_arguments = {
             "edge_type_path": edge_type_list_path,
-            "edge_types_number": metadata["edge_types_number"],
+            "number_of_edge_types": metadata["number_of_edge_types"],
             "edge_types_column_number": 0,
             "edge_type_list_is_correct": True,
             "edge_type_list_separator": "\t",
@@ -250,8 +250,8 @@ class WikipediaRetrievedGraph(RetrievedGraph):
             "edge_list_may_contain_duplicates": False,
             "edge_list_is_sorted": True,
             "edge_list_is_correct": True,
-            "edges_number": metadata["edges_number"],
-            "nodes_number": metadata["nodes_number"],
+            "number_of_edges": metadata["number_of_edges"],
+            "number_of_nodes": metadata["number_of_nodes"],
             "may_have_singletons": True,
             "verbose": self._verbose > 0,
             "directed": self._directed,

@@ -31,13 +31,13 @@ impl ToString for Circle {
         format!(
             concat!(
                 "<p>",
-                "Circle containing {nodes_number} nodes. ",
+                "Circle containing {number_of_nodes} nodes. ",
                 "Specifically, the nodes involved in the circle are: {circle_nodes}.",
                 "{node_types_counts}",
                 "{edge_types_counts}",
                 "</p>",
             ),
-            nodes_number = to_human_readable_high_integer(self.len() as usize),
+            number_of_nodes = to_human_readable_high_integer(self.len() as usize),
             circle_nodes = unsafe {
                 get_unchecked_formatted_list(
                     &self
@@ -244,7 +244,7 @@ impl Graph {
     /// # Safety
     /// The node ID must be among the node IDs present in the graph, or the method will panic.
     /// Additionally, it must be the root node of a Circle.
-    unsafe fn get_circle_nodes_number_from_root_node_id(
+    unsafe fn get_circle_number_of_nodes_from_root_node_id(
         &self,
         root_node_id: NodeT,
     ) -> Option<NodeT> {
@@ -339,10 +339,10 @@ impl Graph {
                             }
                         })
                 } else {
-                    self.get_circle_nodes_number_from_root_node_id(node_id)
-                        .and_then(|nodes_number| {
-                            if nodes_number >= minimum_number_of_nodes_per_circle {
-                                Some(Circle::new(self, node_id, nodes_number))
+                    self.get_circle_number_of_nodes_from_root_node_id(node_id)
+                        .and_then(|number_of_nodes| {
+                            if number_of_nodes >= minimum_number_of_nodes_per_circle {
+                                Some(Circle::new(self, node_id, number_of_nodes))
                             } else {
                                 None
                             }

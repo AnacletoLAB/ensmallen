@@ -10,7 +10,7 @@ pub(crate) fn parse_nodes(
             impl ParallelIterator<Item = Result<(usize, (String, Option<Vec<String>>))>>,
         >,
     >,
-    nodes_number: Option<NodeT>,
+    number_of_nodes: Option<NodeT>,
     node_types_vocabulary: Option<Vocabulary<NodeTypeT>>,
     node_list_is_correct: bool,
     numeric_node_ids: bool,
@@ -59,6 +59,7 @@ pub(crate) fn parse_nodes(
         (true, _, true, true) => NodeTypeParser::to_numeric_unchecked,
         (true, _, false, true) => NodeTypeParser::to_numeric,
     };
+    
     let node_types_vocabulary = node_types_vocabulary.unwrap_or(Vocabulary::new(true));
 
     let mut node_type_parser = NodeTypeParser::new(node_types_vocabulary);
@@ -69,7 +70,7 @@ pub(crate) fn parse_nodes(
 
     let (nodes_vocabulary, node_types_ids, node_types_vocabulary) = match (
         nodes_iterator,
-        nodes_number,
+        number_of_nodes,
         numeric_node_ids,
         minimum_node_id,
         node_list_is_correct,
@@ -78,7 +79,7 @@ pub(crate) fn parse_nodes(
         // NOT to be numeric and a minimum node ID is therefore meaningless.
         // Note that this is the use case when the node list is ASSUMED TO BE CORRECT
         // and the total number of nodes is known and provided.
-        (Some(ni), Some(nodes_number), false, None, true) => {
+        (Some(ni), Some(number_of_nodes), false, None, true) => {
             let (node_names, node_types_ids): (Vec<String>, Option<Vec<Option<Vec<NodeTypeT>>>>) =
                 if has_node_types {
                     // If there are node types we need to collect them.
@@ -89,9 +90,9 @@ pub(crate) fn parse_nodes(
                     // is provided as correct, it is possible to pre-allocate the vectors
                     // and populate them with a foreach.
                     let node_names =
-                        ThreadDataRaceAware::new(vec!["".to_owned(); nodes_number as usize]);
+                        ThreadDataRaceAware::new(vec!["".to_owned(); number_of_nodes as usize]);
                     let node_types_ids =
-                        ThreadDataRaceAware::new(vec![None; nodes_number as usize]);
+                        ThreadDataRaceAware::new(vec![None; number_of_nodes as usize]);
                     ni.for_each(|line| unsafe {
                         // We can unwrap because the user tells us that this is surely
                         // a correct node list.
@@ -103,7 +104,7 @@ pub(crate) fn parse_nodes(
                     (node_names.value.into_inner(), optionify!(node_type_ids))
                 } else {
                     let node_names =
-                        ThreadDataRaceAware::new(vec!["".to_owned(); nodes_number as usize]);
+                        ThreadDataRaceAware::new(vec!["".to_owned(); number_of_nodes as usize]);
                     ni.for_each(|line| unsafe {
                         // We can unwrap because the user tells us that this is surely
                         // a correct node list.
@@ -137,8 +138,9 @@ pub(crate) fn parse_nodes(
                     let (node_names, node_types_ids) = match ni
                         .map(|line| line.map(|(_, node_and_node_type)| node_and_node_type))
                     {
-                        ItersWrapper::Parallel(ni_par) => ni_par
-                            .collect::<Result<(Vec<String>, Vec<Option<Vec<NodeTypeT>>>)>>()?,
+                        ItersWrapper::Parallel(ni_par) => {
+                            ni_par
+                            .collect::<Result<(Vec<String>, Vec<Option<Vec<NodeTypeT>>>)>>()?},
                         ItersWrapper::Sequential(ni_seq) => {
                             let mut node_names = Vec::new();
                             let mut node_types_ids = Vec::new();
@@ -172,7 +174,7 @@ pub(crate) fn parse_nodes(
         }
         // When the node iterator was provided, and the nodes number is not known
         // and the node IDs are expected to be numeric.
-        (Some(ni), maybe_nodes_number, true, _, _) => {
+        (Some(ni), maybe_number_of_nodes, true, _, _) => {
             // In case the node types are expected to exist.
             let (min, max) = if has_node_types {
                 return Err(concat!(
@@ -184,7 +186,7 @@ pub(crate) fn parse_nodes(
                 // Alternatively we can focus exclusively on the
                 // node IDs, which being numeric boil down to collecting
                 // the minimum and the maximum value.
-                let (mut min, mut max, actual_nodes_number): (NodeT, NodeT, NodeT) = ni
+                let (mut min, mut max, actual_number_of_nodes): (NodeT, NodeT, NodeT) = ni
                     .map(|line| match line {
                         Ok((line_number, (node_name, _))) => match node_name.parse::<NodeT>() {
                             Ok(node_id) => Ok(node_id),
@@ -217,16 +219,16 @@ pub(crate) fn parse_nodes(
                         },
                     )?;
 
-                if actual_nodes_number == 0 {
+                if actual_number_of_nodes == 0 {
                     min = 0;
                     max = 0;
                 }
 
-                if let Some(nn) = maybe_nodes_number {
+                if let Some(nn) = maybe_number_of_nodes {
                     if nn != max - min {
                         return Err(format!(
                                 "The given nodes number '{}' is different from the actual nodes number '{}'.",
-                                nn, actual_nodes_number,
+                                nn, actual_number_of_nodes,
                             ));
                     }
                 }

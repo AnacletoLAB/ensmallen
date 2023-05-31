@@ -590,11 +590,11 @@ pub fn parse_wikipedia_graph(
     )?;
 
     info!("Count the lines in the path, that match exactly with the number of edges.");
-    let edges_number = get_rows_number(edge_path.as_ref())? as EdgeT;
+    let number_of_edges = get_rows_number(edge_path.as_ref())? as EdgeT;
 
     Ok((
         node_types_vocabulary.len() as NodeTypeT,
         nodes_vocabulary.len() as NodeT,
-        edges_number,
+        number_of_edges,
     ))
 }

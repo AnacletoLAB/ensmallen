@@ -10,7 +10,7 @@ use crate::{
 /// * `original_node_type_list_separator`: Option<char> - Separator to be used for the original node type list.
 /// * `original_node_types_column_number`: Option<usize> - Number of the node types column to be used for the original node types list.
 /// * `original_node_types_column`: Option<String> - Name of the node types column to be used for the original node types list.
-/// * `node_types_number`: Option<NodeTypeT> - Number of node types present in the provided original list of node types. If provided, it will allow to make assumptions and to load the node types faster.
+/// * `number_of_node_types`: Option<NodeTypeT> - Number of node types present in the provided original list of node types. If provided, it will allow to make assumptions and to load the node types faster.
 /// * `original_numeric_node_type_ids`: Option<bool> - Whether to load the node types as numeric.
 /// * `original_minimum_node_type_id`: Option<NodeTypeT> - The minimum numeric node type ID. If provided, it will allow for additional assumptions in the creation of the node types vocabulary.
 /// * `original_node_type_list_header`: Option<bool> - Whether the provided node type list has a header.
@@ -52,7 +52,7 @@ use crate::{
 /// * `target_node_types_separator`: Option<char> - Separator to be used for the node types within the target node list.
 /// * `target_node_list_node_types_column_number`: Option<usize> - Number for the column with the node type names within the target node list.
 /// * `target_node_list_node_types_column`: Option<String> - Name for the column with the node type names within the target node list.
-/// * `nodes_number`: Option<NodeT> - Number of the nodes in the original node list.
+/// * `number_of_nodes`: Option<NodeT> - Number of the nodes in the original node list.
 ///
 pub fn convert_node_list_node_types_to_numeric(
     original_node_path: String,
@@ -62,7 +62,7 @@ pub fn convert_node_list_node_types_to_numeric(
     original_node_type_list_separator: Option<char>,
     original_node_types_column_number: Option<usize>,
     original_node_types_column: Option<String>,
-    node_types_number: Option<NodeTypeT>,
+    number_of_node_types: Option<NodeTypeT>,
     original_numeric_node_type_ids: Option<bool>,
     original_minimum_node_type_id: Option<NodeTypeT>,
     original_node_type_list_header: Option<bool>,
@@ -106,7 +106,7 @@ pub fn convert_node_list_node_types_to_numeric(
     target_node_types_separator: Option<char>,
     target_node_list_node_types_column_number: Option<usize>,
     target_node_list_node_types_column: Option<String>,
-    nodes_number: Option<NodeT>,
+    number_of_nodes: Option<NodeT>,
 ) -> Result<(NodeT, Option<NodeTypeT>)> {
     let mut node_types: Vocabulary<NodeTypeT> =
         if let Some(original_node_type_path) = original_node_type_path {
@@ -122,13 +122,13 @@ pub fn convert_node_list_node_types_to_numeric(
                 .set_minimum_type_id(original_minimum_node_type_id)
                 .set_numeric_type_ids(original_numeric_node_type_ids)
                 .set_csv_is_correct(original_node_type_list_is_correct)?
-                .set_types_number(node_types_number)
+                .set_types_number(number_of_node_types)
                 .set_parallel(original_load_node_type_list_in_parallel)?
                 .set_remove_chevrons(remove_chevrons)
                 .set_remove_spaces(remove_spaces);
             let node_types_vocabulary = parse_types(
                 node_type_file_reader.read_lines().transpose()?,
-                node_types_number,
+                number_of_node_types,
                 Some(node_type_file_reader.has_numeric_type_ids()),
                 node_type_file_reader.get_minimum_type_id(),
                 true,
@@ -157,7 +157,7 @@ pub fn convert_node_list_node_types_to_numeric(
         .set_default_node_type(default_node_type.clone())
         .set_numeric_node_ids(original_numeric_node_ids)
         .set_numeric_node_type_ids(original_node_list_numeric_node_type_ids)?
-        .set_number_of_nodes(nodes_number)
+        .set_number_of_nodes(number_of_nodes)
         .set_parallel(Some(false))?
         .set_remove_chevrons(remove_chevrons)
         .set_remove_spaces(remove_spaces);
@@ -195,13 +195,13 @@ pub fn convert_node_list_node_types_to_numeric(
         ItersWrapper::Sequential(i) => i,
     };
 
-    let mut new_nodes_number = 0;
+    let mut new_number_of_nodes = 0;
 
     nodes_writer.dump_iterator(
-        nodes_number.map(|nodes_number| nodes_number as usize),
+        number_of_nodes.map(|number_of_nodes| number_of_nodes as usize),
         lines_iterator.filter_map(|line| line.ok()).enumerate().map(
             |(line_number, (_, (node_name, maybe_node_type_names)))| {
-                new_nodes_number += 1;
+                new_number_of_nodes += 1;
                 (
                     line_number as NodeT,
                     node_name,
@@ -261,7 +261,7 @@ pub fn convert_node_list_node_types_to_numeric(
     }
 
     Ok((
-        new_nodes_number,
+        new_number_of_nodes,
         if original_node_list_node_types_column.is_some()
             || original_node_list_node_types_column_number.is_some()
         {

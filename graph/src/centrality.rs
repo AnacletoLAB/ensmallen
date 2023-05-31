@@ -954,7 +954,7 @@ impl Graph {
     /// # Arguments
     /// * `node_id`: NodeT - The node ID for which to compute the approximated betweenness centrality.
     /// * `constant`: Option<f32> - The constant factor to use to regulate the sampling. By default 2.0. It must be greater or equal than 2.0.
-    /// * `maximum_samples_number`: Option<f32> - The maximum number of samples to sample. By default `nodes_number / 20`, as suggested in the paper.
+    /// * `maximum_samples_number`: Option<f32> - The maximum number of samples to sample. By default `number_of_nodes / 20`, as suggested in the paper.
     /// * `random_state`: Option<u64> - The random state to use for the sampling. By default 42.
     ///
     /// # Raises
@@ -1003,10 +1003,10 @@ impl Graph {
         let mut number_of_sampled_nodes: f32 = 0.0;
         // The number of the nodes in the graph, which in the paper
         // is referred to as \(n\).
-        let nodes_number = self.get_number_of_nodes() as f32;
+        let number_of_nodes = self.get_number_of_nodes() as f32;
         // The random state to use to sample the nodes.
         let mut random_state = random_state.unwrap_or(42);
-        let maximum_samples_number = maximum_samples_number.unwrap_or(nodes_number / 20.0);
+        let maximum_samples_number = maximum_samples_number.unwrap_or(number_of_nodes / 20.0);
         // The factor for the convergence of the approximated sampling for the considered node.
         // In the paper it is referred to a \(c\), and must be at least \(2.0\).
         let constant = constant.unwrap_or(2.0);
@@ -1024,7 +1024,7 @@ impl Graph {
             for neighbour_node_id in
                 self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
             {
-                if running_sum >= nodes_number * constant
+                if running_sum >= number_of_nodes * constant
                     || number_of_sampled_nodes > maximum_samples_number
                 {
                     break;
@@ -1051,7 +1051,7 @@ impl Graph {
             return Ok(0.0);
         }
         // Repeatedly sample the vertices.
-        while running_sum < nodes_number * constant
+        while running_sum < number_of_nodes * constant
             && number_of_sampled_nodes < maximum_samples_number
         {
             // Sample random node.
@@ -1078,7 +1078,7 @@ impl Graph {
         }
         // Compute the approximated betweenness centrality from the considered samples
         let approximated_betweenness_centrality =
-            nodes_number / number_of_sampled_nodes * running_sum;
+            number_of_nodes / number_of_sampled_nodes * running_sum;
         // Return the computed betweenness centrality score
         Ok(approximated_betweenness_centrality)
     }
@@ -1088,7 +1088,7 @@ impl Graph {
     /// # Arguments
     /// * `node_name`: &str - The node name for which to compute the approximated betweenness centrality.
     /// * `constant`: Option<f32> - The constant factor to use to regulate the sampling. By default 2.0. It must be greater or equal than 2.0.
-    /// * `maximum_samples_number`: Option<f32> - The maximum number of samples to sample. By default `nodes_number / 20`, as suggested in the paper.
+    /// * `maximum_samples_number`: Option<f32> - The maximum number of samples to sample. By default `number_of_nodes / 20`, as suggested in the paper.
     /// * `random_state`: Option<u64> - The random state to use for the sampling. By default 42.
     ///
     /// # Raises
@@ -1142,7 +1142,7 @@ impl Graph {
     /// * `node_id`: NodeT - The node ID for which to compute the approximated betweenness centrality.
     /// * `constant`: Option<f32> - The constant factor to use to regulate the sampling. By default 2.0. It must be greater or equal than 2.0.
     /// * `use_edge_weights_as_probabilities`: Option<bool> - Whether to consider the edge weights as probabilities.
-    /// * `maximum_samples_number`: Option<f32> - The maximum number of samples to sample. By default `nodes_number / 20`, as suggested in the paper.
+    /// * `maximum_samples_number`: Option<f32> - The maximum number of samples to sample. By default `number_of_nodes / 20`, as suggested in the paper.
     /// * `random_state`: Option<u64> - The random state to use for the sampling. By default 42.
     ///
     /// # Raises
@@ -1193,8 +1193,8 @@ impl Graph {
         let mut number_of_sampled_nodes: f32 = 0.0;
         // The number of the nodes in the graph, which in the paper
         // is referred to as \(n\).
-        let nodes_number = self.get_number_of_nodes() as f32;
-        let maximum_samples_number = maximum_samples_number.unwrap_or(nodes_number / 20.0);
+        let number_of_nodes = self.get_number_of_nodes() as f32;
+        let maximum_samples_number = maximum_samples_number.unwrap_or(number_of_nodes / 20.0);
         // The random state to use to sample the nodes.
         let mut random_state = random_state.unwrap_or(42);
         // The factor for the convergence of the approximated sampling for the considered node.
@@ -1214,7 +1214,7 @@ impl Graph {
             for neighbour_node_id in
                 self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
             {
-                if running_sum >= nodes_number * constant
+                if running_sum >= number_of_nodes * constant
                     || number_of_sampled_nodes > maximum_samples_number
                 {
                     break;
@@ -1246,7 +1246,7 @@ impl Graph {
             return Ok(0.0);
         }
         // Repeatedly sample the vertices.
-        while running_sum < nodes_number * constant
+        while running_sum < number_of_nodes * constant
             && number_of_sampled_nodes < maximum_samples_number
         {
             // Sample random node.
@@ -1278,7 +1278,7 @@ impl Graph {
         }
         // Compute the approximated betweenness centrality from the considered samples
         let approximated_betweenness_centrality =
-            nodes_number / number_of_sampled_nodes * running_sum;
+            number_of_nodes / number_of_sampled_nodes * running_sum;
         // Return the computed betweenness centrality score
         Ok(approximated_betweenness_centrality)
     }
@@ -1289,7 +1289,7 @@ impl Graph {
     /// * `node_name`: &str - The node name for which to compute the approximated betweenness centrality.
     /// * `constant`: Option<f32> - The constant factor to use to regulate the sampling. By default 2.0. It must be greater or equal than 2.0.
     /// * `use_edge_weights_as_probabilities`: Option<bool> - Whether to consider the edge weights as probabilities.
-    /// * `maximum_samples_number`: Option<f32> - The maximum number of samples to sample. By default `nodes_number / 20`, as suggested in the paper.
+    /// * `maximum_samples_number`: Option<f32> - The maximum number of samples to sample. By default `number_of_nodes / 20`, as suggested in the paper.
     /// * `random_state`: Option<u64> - The random state to use for the sampling. By default 42.
     ///
     /// # Raises

@@ -81,9 +81,9 @@ impl Hash for Graph {
         // self.unique_sources.hash(state);
         // self.unique_selfloop_number.hash(state);
         // self.selfloop_number.hash(state);
-        // self.connected_nodes_number.hash(state);
+        // self.connected_number_of_nodes.hash(state);
         // self.singleton_nodes_with_selfloops_number.hash(state);
-        // self.unique_edges_number.hash(state);
+        // self.unique_number_of_edges.hash(state);
 
         // These fields are not meaningfull to hash imho
         // self.name.hash(state);
