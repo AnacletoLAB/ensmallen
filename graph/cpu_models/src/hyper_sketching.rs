@@ -55,7 +55,7 @@ where
     /// # Raises
     /// * The feature concatenation only makes sense if the normalization is enabled.
     /// * If none of the include parameters is set to true.
-    /// * If the edge ids are requested, but only one HOP is used, as the edge ids would surely be completely distinct for all edges.
+    /// * If the edge ids are requested, but only two HOPs is used, as the edge ids would surely be completely distinct for all edges.
     pub fn new(
         include_node_types: Option<bool>,
         include_edge_types: Option<bool>,

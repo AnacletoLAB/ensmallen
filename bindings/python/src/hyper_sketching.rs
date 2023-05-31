@@ -3584,6 +3584,7 @@ impl HyperSketching {
     ///     If the provided precision is not in the supported range.
     ///     If the provided bits is not in the supported range.
     ///     The feature concatenation only makes sense if the normalization is enabled.
+    ///     If edge ids are included in the sketches, but only two hops are used.
     ///
     pub fn new(py_kwargs: Option<&PyDict>) -> PyResult<HyperSketching> {
         let py = pyo3::Python::acquire_gil();
