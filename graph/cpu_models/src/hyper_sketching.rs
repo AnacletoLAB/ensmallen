@@ -94,7 +94,7 @@ where
             );
         }
 
-        if include_edge_ids.unwrap_or(false) && HOPS == 1 {
+        if include_edge_ids.unwrap_or(false) && HOPS == 2 {
             return Err(
                 concat!(
                     "You requested to include the edge ids in the sketch, ",
