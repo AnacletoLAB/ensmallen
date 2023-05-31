@@ -20,6 +20,16 @@ where
 {
     /// Vector of HyperLogLog counters
     counters: Vec<HyperLogLogArray<PRECISION, BITS, HOPS>>,
+    /// Whether to include the node types in the sketch
+    include_node_types: bool,
+    /// whether to include the edge types in the sketch
+    include_edge_types: bool,
+    /// whether to include the edge ids in the sketch
+    include_edge_ids: bool,
+    /// whether to include the node ids in the sketch
+    include_node_ids: bool,
+    /// whether to include the typed graphlets in the sketch
+    include_typed_graphlets: bool,
     /// Normalize by symmetric Laplacian
     normalize_by_symmetric_laplacian: bool,
     /// Concatenate the normalized and non-normalized features
@@ -34,12 +44,24 @@ where
     /// Creates a new HyperSketching model.
     ///
     /// # Arguments
+    /// * `include_node_types`: Option<bool> - Whether to include the node types in the sketch. By default, false.
+    /// * `include_edge_types`: Option<bool> - Whether to include the edge types in the sketch. By default, false.
+    /// * `include_edge_ids`: Option<bool> - Whether to include the edge ids in the sketch. By default, false.
+    /// * `include_node_ids`: Option<bool> - Whether to include the node ids in the sketch. By default, true.
+    /// * `include_typed_graphlets`: Option<bool> - Whether to include the typed graphlets in the sketch. By default, false.
     /// * `normalize_by_symmetric_laplacian`: Option<bool> - Whether to normalize the Sketching cardinalities by the symmetric Laplacian. By default, false.
     /// * `concatenate_features`: Option<bool> - Whether to concatenate the normalized and non-normalized features. By default, false.
     ///
     /// # Raises
     /// * The feature concatenation only makes sense if the normalization is enabled.
+    /// * If none of the include parameters is set to true.
+    /// * If the edge ids are requested, but only one HOP is used, as the edge ids would surely be completely distinct for all edges.
     pub fn new(
+        include_node_types: Option<bool>,
+        include_edge_types: Option<bool>,
+        include_edge_ids: Option<bool>,
+        include_node_ids: Option<bool>,
+        include_typed_graphlets: Option<bool>,
         normalize_by_symmetric_laplacian: Option<bool>,
         concatenate_features: Option<bool>,
     ) -> Result<Self, String> {
@@ -52,13 +74,50 @@ where
             );
         }
 
+        // Raise an error to warn the users that, at this time,
+        // the typed graphlets are not supported yet.
+        if include_typed_graphlets.unwrap_or(false) {
+            return Err(
+                "The typed graphlets are not supported yet.".to_string(),
+            );
+        }
+
+
+        if !include_node_types.unwrap_or(false)
+            && !include_edge_types.unwrap_or(false)
+            && !include_edge_ids.unwrap_or(false)
+            && !include_node_ids.unwrap_or(true)
+            && !include_typed_graphlets.unwrap_or(false)
+        {
+            return Err(
+                "At least one of the include parameters must be set to true.".to_string(),
+            );
+        }
+
+        if include_edge_ids.unwrap_or(false) && HOPS == 1 {
+            return Err(
+                concat!(
+                    "You requested to include the edge ids in the sketch, ",
+                    "but also built this model so that only one hop is used. ",
+                    "This means that the edge ids would surely be completely distinct for all nodes ",
+                    "as with a single hop there would be no overlap between the edges. ",
+                ).to_string(),
+            );
+        }
+
         Ok(Self {
             counters: Vec::new(),
+            include_node_types: include_node_types.unwrap_or(false),
+            include_edge_types: include_edge_types.unwrap_or(false),
+            include_edge_ids: include_edge_ids.unwrap_or(false),
+            include_node_ids: include_node_ids.unwrap_or(true),
+            include_typed_graphlets: include_typed_graphlets.unwrap_or(false),
             normalize_by_symmetric_laplacian: normalize_by_symmetric_laplacian.unwrap_or(false),
             concatenate_features: concatenate_features.unwrap_or(false),
         })
     }
 
+    /// Returns whether the model has been trained.
     fn must_be_trained(&self) -> Result<(), String> {
         if self.counters.is_empty() {
             return Err(concat!(
@@ -74,16 +133,90 @@ where
     ///
     /// # Arguments
     /// * `graph`: &Graph - The graph whose edges are to be learned.
+    ///
+    /// # Raises
+    /// * If the provided graph does not have node types but the model has been initialized with `include_node_types` set to true.
+    /// * If the provided graph does not have edge types but the model has been initialized with `include_edge_types` set to true.
     pub fn fit(&mut self, graph: &Graph) -> Result<(), String> {
+        // Check that the graph has node types if the model is initialized with `include_node_types` set to true
+        if self.include_node_types && !graph.has_node_types() {
+            return Err(
+                "The provided graph does not have node types but the model has been initialized with `include_node_types` set to true.".to_string(),
+            );
+        }
+
+        // Check that the graph has edge types if the model is initialized with `include_edge_types` set to true
+        if self.include_edge_types && !graph.has_edge_types() {
+            return Err(
+                "The provided graph does not have edge types but the model has been initialized with `include_edge_types` set to true.".to_string(),
+            );
+        }
+
+        // We add an offset to the node ids if they are requested.
+        let node_id_offset = if self.include_node_ids {
+            graph.get_number_of_nodes() as usize
+        } else {
+            0
+        };
+
+        // We add an offset to the edge ids if they are requested.
+        let edge_id_offset = node_id_offset + if self.include_edge_ids {
+            graph.get_number_of_edges() as usize
+        } else {
+            0
+        };
+
+        // We add an offset to the node types so that there won't be any collisions
+        // with the node ids or edge type ids.
+        let node_type_offset = edge_id_offset + if self.include_node_types {
+            graph.get_number_of_node_types()? as usize
+        } else {
+            0
+        };
+
+        // We add an offset to the edge types so that there won't be any collisions
+        // with the node ids or node type ids.
+        let edge_type_offset = node_type_offset + if self.include_edge_types {
+            graph.get_number_of_edge_types()? as usize
+        } else {
+            0
+        };
+
         // Create HyperLogLog counters for all nodes in the graph
         let mut counters = graph
             .par_iter_node_ids()
             .map(|node_id| {
                 let mut counters = HyperLogLogArray::<PRECISION, BITS, HOPS>::new();
                 unsafe {
-                    counters[0] = graph
-                        .iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
-                        .collect();
+                    if self.include_node_ids {
+                        counters[0] |= graph
+                            .iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
+                            .collect::<HyperLogLog<PRECISION, BITS>>();
+                    }
+                    if self.include_edge_ids {
+                        counters[0] |= graph
+                            .iter_unchecked_edge_ids_from_source_node_id(node_id)
+                            .map(|edge_id| edge_id as usize + node_id_offset)
+                            .collect::<HyperLogLog<PRECISION, BITS>>();
+                    }
+                    if self.include_node_types {
+                        counters[0] |= graph
+                            .iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
+                            .flat_map(|dst| {
+                                graph
+                                    .get_unchecked_node_type_ids_from_node_id(dst)
+                                    .unwrap_or(&[])
+                            })
+                            .map(|&node_type_id| node_type_id as usize + edge_id_offset)
+                            .collect::<HyperLogLog<PRECISION, BITS>>();
+                    }
+                    if self.include_edge_types {
+                        counters[0] |= graph
+                            .iter_unchecked_edge_type_id_from_source_node_id(node_id)
+                            .filter_map(|edge_type_id| edge_type_id)
+                            .map(|edge_type_id| edge_type_id as usize + node_id_offset)
+                            .collect::<HyperLogLog<PRECISION, BITS>>();
+                    }
                 }
                 counters
             })
@@ -319,47 +452,51 @@ where
     /// * If one of the provided slices does not have the expected size.
     /// * If the provided graph has a different number of nodes than the model.
     ///
-    pub fn get_sketching_for_all_edges(
+    pub fn get_sketching_for_all_edges<I>(
         &self,
         overlaps: &mut [f32],
         src_differences: &mut [f32],
         dst_differences: &mut [f32],
         graph: &Graph,
-    ) -> Result<(), String> {
+        edge_iterator: I,
+    ) -> Result<(), String>
+    where
+        I: IndexedParallelIterator<Item = (NodeT, NodeT)>,
+    {
         // Check that the model has been trained
         self.must_be_trained()?;
 
         // Check that the provided slices have the expected size
-        if overlaps.len() != graph.get_number_of_edges() as usize * HOPS * HOPS {
+        if overlaps.len() != edge_iterator.len() as usize * HOPS * HOPS {
             return Err(format!(
                 concat!(
                     "The provided `overlaps` slice has a length of `{}` ",
                     "but it should have a length of `{}`."
                 ),
                 overlaps.len(),
-                graph.get_number_of_edges() as usize * HOPS * HOPS
+                edge_iterator.len() as usize * HOPS * HOPS
             ));
         }
 
-        if src_differences.len() != graph.get_number_of_edges() as usize * HOPS {
+        if src_differences.len() != edge_iterator.len() as usize * HOPS {
             return Err(format!(
                 concat!(
                     "The provided `src_differences` slice has a length of `{}` ",
                     "but it should have a length of `{}`."
                 ),
                 src_differences.len(),
-                graph.get_number_of_edges() as usize * HOPS
+                edge_iterator.len() as usize * HOPS
             ));
         }
 
-        if dst_differences.len() != graph.get_number_of_edges() as usize * HOPS {
+        if dst_differences.len() != edge_iterator.len() as usize * HOPS {
             return Err(format!(
                 concat!(
                     "The provided `dst_differences` slice has a length of `{}` ",
                     "but it should have a length of `{}`."
                 ),
                 dst_differences.len(),
-                graph.get_number_of_edges() as usize * HOPS
+                edge_iterator.len() as usize * HOPS
             ));
         }
 
@@ -380,22 +517,33 @@ where
         // and we use copy non overlapping, which is an instruction to the
         // compiler to not assume that the slices are overlapping.
 
-        graph
-            .par_iter_directed_edge_node_ids()
-            .zip(overlaps.par_chunks_exact_mut(
-                HOPS * HOPS * (if self.concatenate_features { 2 } else { 1 }),
-            ))
-            .zip(
-                src_differences
-                    .par_chunks_exact_mut(HOPS * (if self.concatenate_features { 2 } else { 1 })),
-            )
-            .zip(
-                dst_differences
-                    .par_chunks_exact_mut(HOPS * (if self.concatenate_features { 2 } else { 1 })),
-            )
-            .for_each(
-                |((((_, src, dst), overlaps), src_differences), dst_differences)| unsafe {
-                    let (sketch_overlaps, sketch_src_differences, sketch_dst_differences) = self
+        let offset = if self.concatenate_features { 1 } else { 0 };
+        let factor = if self.concatenate_features { 2 } else { 1 };
+
+        edge_iterator
+            .zip(overlaps.par_chunks_exact_mut(HOPS * HOPS * factor))
+            .zip(src_differences.par_chunks_exact_mut(HOPS * factor))
+            .zip(dst_differences.par_chunks_exact_mut(HOPS * factor))
+            .map(
+                |((((src, dst), overlaps), src_differences), dst_differences)| unsafe {
+                    // If the source or destination node is not in the graph, we return an error:
+                    if src as usize >= self.counters.len() || dst as usize >= self.counters.len() {
+                        return Err(format!(
+                            concat!(
+                                "The provided nodes {} and {} are not lower than the ",
+                                "expected number of nodes in the graph `{}`."
+                            ),
+                            src,
+                            dst,
+                            self.counters.len()
+                        ));
+                    }
+
+                    let (
+                        mut sketch_overlaps,
+                        mut sketch_src_differences,
+                        mut sketch_dst_differences,
+                    ) = self
                         .get_subgraph_sketch_from_node_ids_unchecked(src as usize, dst as usize);
 
                     // Copy the estimated overlaps
@@ -418,48 +566,56 @@ where
                         dst_differences.as_mut_ptr(),
                         HOPS,
                     );
-                },
-            );
 
-        // Normalize the features by the symmetric Laplacian, which is defined as
-        // dividing all values in all edges by the square root of the product of the
-        // degrees of the two nodes.
-
-        if self.normalize_by_symmetric_laplacian {
-            graph
-                .par_iter_directed_edge_node_ids()
-                .zip(overlaps.par_chunks_exact_mut(
-                    HOPS * HOPS * (if self.concatenate_features { 2 } else { 1 }),
-                ))
-                .zip(
-                    src_differences.par_chunks_exact_mut(
-                        HOPS * (if self.concatenate_features { 2 } else { 1 }),
-                    ),
-                )
-                .zip(
-                    dst_differences.par_chunks_exact_mut(
-                        HOPS * (if self.concatenate_features { 2 } else { 1 }),
-                    ),
-                )
-                .for_each(
-                    |((((_, src, dst), overlaps), src_differences), dst_differences)| unsafe {
+                    if self.normalize_by_symmetric_laplacian {
                         let src_degree = graph.get_unchecked_node_degree_from_node_id(src) as f32;
                         let dst_degree = graph.get_unchecked_node_degree_from_node_id(dst) as f32;
 
                         let degree_sqrt_recip = (src_degree * dst_degree).sqrt().recip();
 
                         // Normalize the estimated overlaps
-                        for i in 0..HOPS {
-                            for j in 0..HOPS {
-                                overlaps[HOPS * HOPS + i * HOPS + j] =
-                                    overlaps[i * HOPS + j] * degree_sqrt_recip;
-                            }
-                            src_differences[HOPS + i] = src_differences[i] * degree_sqrt_recip;
-                            dst_differences[HOPS + i] = dst_differences[i] * degree_sqrt_recip;
-                        }
-                    },
-                );
-        }
+                        sketch_overlaps.iter_mut().for_each(|overlap| {
+                            overlap.iter_mut().for_each(|overlap| {
+                                *overlap *= degree_sqrt_recip;
+                            });
+                        });
+                        sketch_src_differences
+                            .iter_mut()
+                            .for_each(|src_difference| {
+                                *src_difference *= degree_sqrt_recip;
+                            });
+                        sketch_dst_differences
+                            .iter_mut()
+                            .for_each(|dst_difference| {
+                                *dst_difference *= degree_sqrt_recip;
+                            });
+
+                        // Copy the estimated overlaps
+                        std::ptr::copy_nonoverlapping(
+                            sketch_overlaps.as_ptr() as *const f32,
+                            overlaps[offset * HOPS * HOPS..].as_mut_ptr(),
+                            HOPS * HOPS,
+                        );
+
+                        // Copy the estimated src differences
+                        std::ptr::copy_nonoverlapping(
+                            sketch_src_differences.as_ptr(),
+                            src_differences[offset * HOPS..].as_mut_ptr(),
+                            HOPS,
+                        );
+
+                        // Copy the estimated dst differences
+                        std::ptr::copy_nonoverlapping(
+                            sketch_dst_differences.as_ptr(),
+                            dst_differences[offset * HOPS..].as_mut_ptr(),
+                            HOPS,
+                        );
+                    }
+
+                    Ok(())
+                },
+            )
+            .collect::<Result<(), String>>()?;
 
         Ok(())
     }
