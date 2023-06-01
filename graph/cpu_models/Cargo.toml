@@ -17,7 +17,8 @@ itertools = "0.10.5"
 strum = { version = "0.24", features = ["derive"] }
 serde = "1.0"
 serde_json = "1.0"
-hyperloglog-rs = "0.1"
+#hyperloglog-rs = "0.1"
+hyperloglog-rs = {git="https://github.com/LucaCappelletti94/hyperloglog-rs.git"}
 num-traits = {git="https://github.com/zommiommy/num-traits.git", features=["atomic_from_mut"]}
 parallel_frontier = {git="https://github.com/zommiommy/parallel_frontier"}
 file_progress = {git="https://github.com/LucaCappelletti94/rust_file_progress.git"}

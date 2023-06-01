@@ -171,7 +171,7 @@ pub fn convert_edge_list_to_numeric(
             )?;
             (nodes, false)
         } else {
-            (Vocabulary::new(false), true)
+            (Vocabulary::new(false, "Nodes".to_string()), true)
         };
 
     let mut edge_types: Vocabulary<EdgeTypeT> =
@@ -199,11 +199,12 @@ pub fn convert_edge_list_to_numeric(
                 edge_type_file_reader.get_minimum_type_id(),
                 true,
                 edge_type_list_is_correct,
+                "Edge types".to_string(),
             )?
             .unwrap();
             edge_types_vocabulary
         } else {
-            Vocabulary::new(true)
+            Vocabulary::new(true, "Edge types".to_string())
         };
 
     let file_reader = EdgeFileReader::new(original_edge_path)?
@@ -613,11 +614,12 @@ pub fn densify_sparse_numeric_edge_list(
                 edge_type_file_reader.get_minimum_type_id(),
                 true,
                 edge_type_list_is_correct,
+                "Edge types".to_string()
             )?
             .unwrap();
             edge_types_vocabulary
         } else {
-            Vocabulary::new(true)
+            Vocabulary::new(true, "Edge types".to_string())
         };
     let file_reader = EdgeFileReader::new(original_edge_path)?
         .set_comment_symbol(comment_symbol)?

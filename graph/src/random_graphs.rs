@@ -720,13 +720,16 @@ impl Graph {
         let node_type = node_type.unwrap_or("connected");
         let node_types = NodeTypeVocabulary::from_structs(
             vec![Some(vec![0]); number_of_nodes as usize],
-            Vocabulary::from_reverse_map(vec![node_type.to_owned()])?,
+            Vocabulary::from_reverse_map(vec![node_type.to_owned()], "Node types".to_string())?,
         );
 
         let edge_type = edge_type.unwrap_or("connected");
         let edge_types_vocabulary: Vocabulary<EdgeTypeT> =
-            Vocabulary::from_reverse_map(vec![edge_type.to_owned()])?;
-        let nodes = Vocabulary::from_range(minimum_node_id..(minimum_node_id + number_of_nodes));
+            Vocabulary::from_reverse_map(vec![edge_type.to_owned()], "Edge types".to_string())?;
+        let nodes = Vocabulary::from_range(
+            minimum_node_id..(minimum_node_id + number_of_nodes),
+            "Nodes".to_string(),
+        );
         let name = name.unwrap_or("Connected");
         let has_edge_weights = weight.is_some();
 
@@ -795,13 +798,16 @@ impl Graph {
         let node_type = node_type.unwrap_or("tree");
         let node_types = NodeTypeVocabulary::from_structs(
             vec![Some(vec![0]); number_of_nodes as usize],
-            Vocabulary::from_reverse_map(vec![node_type.to_owned()])?,
+            Vocabulary::from_reverse_map(vec![node_type.to_owned()], "Node types".to_string())?,
         );
 
         let edge_type = edge_type.unwrap_or("tree");
         let edge_types_vocabulary: Vocabulary<EdgeTypeT> =
-            Vocabulary::from_reverse_map(vec![edge_type.to_owned()])?;
-        let nodes = Vocabulary::from_range(minimum_node_id..(minimum_node_id + number_of_nodes));
+            Vocabulary::from_reverse_map(vec![edge_type.to_owned()], "Edge types".to_string())?;
+        let nodes = Vocabulary::from_range(
+            minimum_node_id..(minimum_node_id + number_of_nodes),
+            "Nodes".to_string(),
+        );
         let name = name.unwrap_or("Tree");
         let has_edge_weights = weight.is_some();
 
@@ -863,13 +869,16 @@ impl Graph {
         let node_type = node_type.unwrap_or("star");
         let node_types = NodeTypeVocabulary::from_structs(
             vec![Some(vec![0]); number_of_nodes as usize],
-            Vocabulary::from_reverse_map(vec![node_type.to_owned()])?,
+            Vocabulary::from_reverse_map(vec![node_type.to_owned()], "Node types".to_string())?,
         );
 
         let edge_type = edge_type.unwrap_or("star");
         let edge_types_vocabulary: Vocabulary<EdgeTypeT> =
-            Vocabulary::from_reverse_map(vec![edge_type.to_owned()])?;
-        let nodes = Vocabulary::from_range(minimum_node_id..(minimum_node_id + number_of_nodes));
+            Vocabulary::from_reverse_map(vec![edge_type.to_owned()], "Edge types".to_string())?;
+        let nodes = Vocabulary::from_range(
+            minimum_node_id..(minimum_node_id + number_of_nodes),
+            "Nodes".to_string(),
+        );
         let name = name.unwrap_or("Star");
         let has_edge_weights = weight.is_some();
 
@@ -931,13 +940,16 @@ impl Graph {
         let node_type = node_type.unwrap_or("wheel");
         let node_types = NodeTypeVocabulary::from_structs(
             vec![Some(vec![0]); number_of_nodes as usize],
-            Vocabulary::from_reverse_map(vec![node_type.to_owned()])?,
+            Vocabulary::from_reverse_map(vec![node_type.to_owned()], "Node types".to_string())?,
         );
 
         let edge_type = edge_type.unwrap_or("wheel");
         let edge_types_vocabulary: Vocabulary<EdgeTypeT> =
-            Vocabulary::from_reverse_map(vec![edge_type.to_owned()])?;
-        let nodes = Vocabulary::from_range(minimum_node_id..(minimum_node_id + number_of_nodes));
+            Vocabulary::from_reverse_map(vec![edge_type.to_owned()], "Edge types".to_string())?;
+        let nodes = Vocabulary::from_range(
+            minimum_node_id..(minimum_node_id + number_of_nodes),
+            "Nodes".to_string(),
+        );
         let name = name.unwrap_or("Wheel");
         let has_edge_weights = weight.is_some();
 
@@ -999,13 +1011,16 @@ impl Graph {
         let node_type = node_type.unwrap_or("circle");
         let node_types = NodeTypeVocabulary::from_structs(
             vec![Some(vec![0]); number_of_nodes as usize],
-            Vocabulary::from_reverse_map(vec![node_type.to_owned()])?,
+            Vocabulary::from_reverse_map(vec![node_type.to_owned()], "Node types".to_string())?,
         );
 
         let edge_type = edge_type.unwrap_or("circle");
         let edge_types_vocabulary: Vocabulary<EdgeTypeT> =
-            Vocabulary::from_reverse_map(vec![edge_type.to_owned()])?;
-        let nodes = Vocabulary::from_range(minimum_node_id..(minimum_node_id + number_of_nodes));
+            Vocabulary::from_reverse_map(vec![edge_type.to_owned()], "Edge types".to_string())?;
+        let nodes = Vocabulary::from_range(
+            minimum_node_id..(minimum_node_id + number_of_nodes),
+            "Nodes".to_string(),
+        );
         let name = name.unwrap_or("Circle");
         let has_edge_weights = weight.is_some();
 
@@ -1067,13 +1082,16 @@ impl Graph {
         let node_type = node_type.unwrap_or("chain");
         let node_types = NodeTypeVocabulary::from_structs(
             vec![Some(vec![0]); number_of_nodes as usize],
-            Vocabulary::from_reverse_map(vec![node_type.to_owned()])?,
+            Vocabulary::from_reverse_map(vec![node_type.to_owned()], "Node types".to_string())?,
         );
 
         let edge_type = edge_type.unwrap_or("chain");
         let edge_types_vocabulary: Vocabulary<EdgeTypeT> =
-            Vocabulary::from_reverse_map(vec![edge_type.to_owned()])?;
-        let nodes = Vocabulary::from_range(minimum_node_id..(minimum_node_id + number_of_nodes));
+            Vocabulary::from_reverse_map(vec![edge_type.to_owned()], "Edge types".to_string())?;
+        let nodes = Vocabulary::from_range(
+            minimum_node_id..(minimum_node_id + number_of_nodes),
+            "Nodes".to_string(),
+        );
         let name = name.unwrap_or("Chain");
         let has_edge_weights = weight.is_some();
 
@@ -1135,13 +1153,16 @@ impl Graph {
         let node_type = node_type.unwrap_or("complete");
         let node_types = NodeTypeVocabulary::from_structs(
             vec![Some(vec![0]); number_of_nodes as usize],
-            Vocabulary::from_reverse_map(vec![node_type.to_owned()])?,
+            Vocabulary::from_reverse_map(vec![node_type.to_owned()], "Node types".to_string())?,
         );
 
         let edge_type = edge_type.unwrap_or("complete");
         let edge_types_vocabulary: Vocabulary<EdgeTypeT> =
-            Vocabulary::from_reverse_map(vec![edge_type.to_owned()])?;
-        let nodes = Vocabulary::from_range(minimum_node_id..(minimum_node_id + number_of_nodes));
+            Vocabulary::from_reverse_map(vec![edge_type.to_owned()], "Edge types".to_string())?;
+        let nodes = Vocabulary::from_range(
+            minimum_node_id..(minimum_node_id + number_of_nodes),
+            "Nodes".to_string(),
+        );
         let name = name.unwrap_or("Complete");
         let has_edge_weights = weight.is_some();
 
@@ -1234,7 +1255,7 @@ impl Graph {
             left_clique_node_type.to_owned(),
             chain_node_type.to_owned(),
             right_clique_node_type.to_owned(),
-        ])?;
+        ], "Node types".to_string())?;
         let mut node_type_ids: Vec<Option<Vec<NodeTypeT>>> = [
             left_clique_number_of_nodes,
             chain_number_of_nodes,
@@ -1249,7 +1270,8 @@ impl Graph {
         node_type_ids[left_clique_number_of_nodes.saturating_sub(1) as usize]
             .as_mut()
             .map(|node_type_ids| node_type_ids.push(1));
-        node_type_ids[(left_clique_number_of_nodes + chain_number_of_nodes).saturating_sub(1) as usize]
+        node_type_ids
+            [(left_clique_number_of_nodes + chain_number_of_nodes).saturating_sub(1) as usize]
             .as_mut()
             .map(|node_type_ids| node_type_ids.push(2));
 
@@ -1262,8 +1284,11 @@ impl Graph {
             left_clique_edge_type.to_owned(),
             chain_edge_type.to_owned(),
             right_clique_edge_type.to_owned(),
-        ])?;
-        let nodes = Vocabulary::from_range(minimum_node_id..(minimum_node_id + number_of_nodes));
+        ], "Edge types".to_string())?;
+        let nodes = Vocabulary::from_range(
+            minimum_node_id..(minimum_node_id + number_of_nodes),
+            "Nodes".to_string(),
+        );
         let name = name.unwrap_or("Barbell");
         let has_edge_weights = left_clique_weight.is_some();
 
@@ -1284,7 +1309,11 @@ impl Graph {
                 left_clique_number_of_nodes.saturating_sub(1),
                 left_clique_number_of_nodes
                     + chain_number_of_nodes
-                    + if right_clique_number_of_nodes > 0 { 1 } else { 0 },
+                    + if right_clique_number_of_nodes > 0 {
+                        1
+                    } else {
+                        0
+                    },
                 include_selfloops,
                 Some(1),
                 chain_weight.unwrap_or(WeightT::NAN),
@@ -1420,13 +1449,17 @@ impl Graph {
 
         let node_types = NodeTypeVocabulary::from_structs(
             vec![Some(vec![0]); number_of_nodes as usize],
-            Vocabulary::from_reverse_map(vec![node_type.unwrap_or("squared_lattice").to_owned()])?,
+            Vocabulary::from_reverse_map(vec![node_type.unwrap_or("squared_lattice").to_owned()], "Node types".to_string())?,
         );
-        let nodes = Vocabulary::from_range(minimum_node_id..(minimum_node_id + number_of_nodes));
+        let nodes = Vocabulary::from_range(
+            minimum_node_id..(minimum_node_id + number_of_nodes),
+            "Nodes".to_string(),
+        );
         let edge_types_vocabulary: Vocabulary<EdgeTypeT> = Vocabulary::from_reverse_map(
             (0..sides.len())
                 .map(|dimension| format!("Dimension_{}", dimension))
                 .collect::<Vec<String>>(),
+                "Edge types".to_string()
         )?;
         let name = name.unwrap_or("SquaredLattice");
 

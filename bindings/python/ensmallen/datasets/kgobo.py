@@ -2395,6 +2395,7 @@ def UO(
     version = "no_version"
         Version to retrieve	
 		The available versions are:
+			- 2023-05-25
 			- no_version
     """
     return RetrievedGraph(
@@ -2987,7 +2988,7 @@ def UBERON(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2023-02-14", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="2023-04-19", **kwargs
 ) -> Graph:
     """Return UBERON graph	
 
@@ -3008,10 +3009,10 @@ def UBERON(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2023-02-14"
+    version = "2023-04-19"
         Version to retrieve	
 		The available versions are:
-			- 2023-04-19
+			- 2023-05-23
 			- 2021-10-01
 			- 2021-11-28
 			- 2022-02-21
@@ -3025,6 +3026,7 @@ def UBERON(
 			- 2022-09-30
 			- 2023-01-09
 			- 2023-02-14
+			- 2023-04-19
     """
     return RetrievedGraph(
         "UBERON", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
@@ -3810,7 +3812,7 @@ def DRON(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2022-10-22", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="2023-03-10", **kwargs
 ) -> Graph:
     """Return DRON graph	
 
@@ -3831,16 +3833,17 @@ def DRON(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2022-10-22"
+    version = "2023-03-10"
         Version to retrieve	
 		The available versions are:
-			- 2023-03-10
+			- 2023-05-19
 			- 2021-08-12
 			- 2021-10-20
 			- 2022-01-28
 			- 2022-04-22
 			- 2022-10-02
 			- 2022-10-22
+			- 2023-03-10
     """
     return RetrievedGraph(
         "DRON", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
@@ -7343,7 +7346,7 @@ def BSPO(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2022-10-07", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="2022-11-16", **kwargs
 ) -> Graph:
     """Return BSPO graph	
 
@@ -7364,14 +7367,15 @@ def BSPO(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2022-10-07"
+    version = "2022-11-16"
         Version to retrieve	
 		The available versions are:
-			- 2022-11-16
+			- 2023-05-27
 			- 2021-09-22
 			- 2021-10-13
 			- 2022-06-28
 			- 2022-10-07
+			- 2022-11-16
     """
     return RetrievedGraph(
         "BSPO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
@@ -7625,7 +7629,7 @@ def CL(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2023-02-19", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="2023-04-20", **kwargs
 ) -> Graph:
     """Return CL graph	
 
@@ -7646,10 +7650,10 @@ def CL(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2023-02-19"
+    version = "2023-04-20"
         Version to retrieve	
 		The available versions are:
-			- 2023-04-20
+			- 2023-05-22
 			- 2021-09-09
 			- 2021-11-25
 			- 2021-12-07
@@ -7664,6 +7668,7 @@ def CL(
 			- 2023-01-09
 			- 2023-02-15
 			- 2023-02-19
+			- 2023-04-20
     """
     return RetrievedGraph(
         "CL", version, "kgobo", directed, preprocess, bioregistry, load_nodes,

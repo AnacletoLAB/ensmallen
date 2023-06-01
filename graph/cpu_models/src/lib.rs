@@ -1,7 +1,7 @@
-#![feature(generic_const_exprs)]
 #![feature(impl_trait_in_assoc_type)]
 #![feature(adt_const_params)]
 #![feature(atomic_from_mut)]
+#![feature(sync_unsafe_cell)]
 #![feature(associated_type_defaults)]
 #![feature(associated_type_bounds)]
 #![feature(type_alias_impl_trait)]
@@ -18,7 +18,8 @@ mod distance_node_label_prediction_perceptron;
 mod edge_prediction_perceptron;
 mod first_order_line;
 mod glove;
-mod hyperball_jaccard;
+mod hyper_jaccard;
+mod hyper_sketching;
 mod graph_embedder;
 mod node2vec;
 mod node_label_prediction_perceptron;
@@ -55,7 +56,8 @@ pub use edge_prediction_perceptron::*;
 pub use first_order_line::*;
 pub use glove::*;
 pub use graph_embedder::*;
-pub use hyperball_jaccard::*;
+pub use hyper_jaccard::*;
+pub use hyper_sketching::*;
 pub use node2vec::*;
 pub use node_label_prediction_perceptron::*;
 pub use node_type_spine::*;

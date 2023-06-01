@@ -113,6 +113,7 @@ pub enum MatrixShape {
     OneDimensional(usize),
     BiDimensional(usize, usize),
     ThreeDimensional(usize, usize, usize),
+    FourDimensional(usize, usize, usize, usize),
 }
 
 impl MatrixShape {
@@ -121,6 +122,7 @@ impl MatrixShape {
             MatrixShape::OneDimensional(one) => one,
             MatrixShape::BiDimensional(one, two) => one * two,
             MatrixShape::ThreeDimensional(one, two, three) => one * two * three,
+            MatrixShape::FourDimensional(one, two, three, four) => one * two * three * four,
         }
     }
 
@@ -129,6 +131,7 @@ impl MatrixShape {
             MatrixShape::OneDimensional(_) => 1,
             MatrixShape::BiDimensional(_, _) => 2,
             MatrixShape::ThreeDimensional(_, _, _) => 3,
+            MatrixShape::FourDimensional(_, _, _, _) => 4,
         }
     }
 }
@@ -145,6 +148,7 @@ impl Into<Vec<usize>> for MatrixShape {
             MatrixShape::OneDimensional(one) => vec![one],
             MatrixShape::BiDimensional(one, two) => vec![one, two],
             MatrixShape::ThreeDimensional(one, two, three) => vec![one, two, three],
+            MatrixShape::FourDimensional(one, two, three, four) => vec![one, two, three, four],
         }
     }
 }
@@ -197,6 +201,13 @@ impl core::ops::Index<isize> for MatrixShape {
                 1 => two,
                 2 => three,
                 _ => unreachable!("The shape is 3D."),
+            },
+            MatrixShape::FourDimensional(one, two, three, four) => match index {
+                0 => one,
+                1 => two,
+                2 => three,
+                3 => four,
+                _ => unreachable!("The shape is 4D."),
             },
         }
     }
