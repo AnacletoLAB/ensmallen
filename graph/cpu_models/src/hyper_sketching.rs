@@ -1,6 +1,5 @@
 use std::cell::SyncUnsafeCell;
 
-use express_measures::ThreadFloat;
 use graph::{Graph, NodeT};
 use hyperloglog_rs::prelude::*;
 use num_traits::Float;
@@ -27,6 +26,8 @@ pub struct HyperSketching<PRECISION: Precision<BITS>, const BITS: usize, const H
     include_edge_ids: bool,
     /// whether to include the node ids in the sketch
     include_node_ids: bool,
+    /// whether to include self-loops.
+    include_selfloops: bool,
     /// whether to include the typed graphlets in the sketch
     include_typed_graphlets: bool,
     /// Normalize by symmetric Laplacian
@@ -47,6 +48,7 @@ impl<PRECISION: Precision<BITS> + DeserializeOwned, const BITS: usize, const HOP
     /// * `include_edge_types`: Option<bool> - Whether to include the edge types in the sketch. By default, false.
     /// * `include_edge_ids`: Option<bool> - Whether to include the edge ids in the sketch. By default, false.
     /// * `include_node_ids`: Option<bool> - Whether to include the node ids in the sketch. By default, true.
+    /// * `include_selfloops`: Option<bool> - Whether to include self-loops. By default, false.
     /// * `include_typed_graphlets`: Option<bool> - Whether to include the typed graphlets in the sketch. By default, false.
     /// * `normalize_by_symmetric_laplacian`: Option<bool> - Whether to normalize the Sketching cardinalities by the symmetric Laplacian. By default, false.
     /// * `concatenate_features`: Option<bool> - Whether to concatenate the normalized and non-normalized features. By default, false.
@@ -62,10 +64,11 @@ impl<PRECISION: Precision<BITS> + DeserializeOwned, const BITS: usize, const HOP
         include_edge_types: Option<bool>,
         include_edge_ids: Option<bool>,
         include_node_ids: Option<bool>,
+        include_selfloops: Option<bool>,
         include_typed_graphlets: Option<bool>,
         normalize_by_symmetric_laplacian: Option<bool>,
         concatenate_features: Option<bool>,
-        dtype: Option<String>
+        dtype: Option<String>,
     ) -> Result<Self, String> {
         if concatenate_features.unwrap_or(false)
             && !normalize_by_symmetric_laplacian.unwrap_or(false)
@@ -86,6 +89,7 @@ impl<PRECISION: Precision<BITS> + DeserializeOwned, const BITS: usize, const HOP
             && !include_edge_types.unwrap_or(false)
             && !include_edge_ids.unwrap_or(false)
             && !include_node_ids.unwrap_or(true)
+            && !include_selfloops.unwrap_or(false)
             && !include_typed_graphlets.unwrap_or(false)
         {
             return Err("At least one of the include parameters must be set to true.".to_string());
@@ -117,6 +121,7 @@ impl<PRECISION: Precision<BITS> + DeserializeOwned, const BITS: usize, const HOP
             include_edge_types: include_edge_types.unwrap_or(false),
             include_edge_ids: include_edge_ids.unwrap_or(false),
             include_node_ids: include_node_ids.unwrap_or(true),
+            include_selfloops: include_selfloops.unwrap_or(false),
             include_typed_graphlets: include_typed_graphlets.unwrap_or(false),
             normalize_by_symmetric_laplacian: normalize_by_symmetric_laplacian.unwrap_or(false),
             concatenate_features: concatenate_features.unwrap_or(false),
@@ -197,36 +202,42 @@ impl<PRECISION: Precision<BITS> + DeserializeOwned, const BITS: usize, const HOP
             .par_iter_node_ids()
             .map(|node_id| {
                 let mut counters = HyperLogLogArray::<PRECISION, BITS, HOPS>::new();
-                unsafe {
-                    if self.include_node_ids {
-                        counters[0] |= graph
-                            .iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
-                            .collect::<HyperLogLog<PRECISION, BITS>>();
+                // If the self-loops are requested, we add the node id itself to the counter.
+                // It may happen that the node id ALSO has actual self-loop, but as the counter
+                // counts the unique appereaances, it will not be a problem.
+                if self.include_selfloops {
+                    counters[0].insert(node_id);
+                }
+                // If the node neighbours are requested, we add the node neighbour node ids.
+                if self.include_node_ids {
+                    counters[0] |= unsafe {
+                        graph.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
                     }
-                    if self.include_edge_ids {
-                        counters[0] |= graph
-                            .iter_unchecked_edge_ids_from_source_node_id(node_id)
+                    .collect::<HyperLogLog<PRECISION, BITS>>();
+                }
+                if self.include_edge_ids {
+                    counters[0] |=
+                        unsafe { graph.iter_unchecked_edge_ids_from_source_node_id(node_id) }
                             .map(|edge_id| edge_id as usize + node_id_offset)
                             .collect::<HyperLogLog<PRECISION, BITS>>();
+                }
+                if self.include_node_types {
+                    counters[0] |= unsafe {
+                        graph.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
                     }
-                    if self.include_node_types {
-                        counters[0] |= graph
-                            .iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
-                            .flat_map(|dst| {
-                                graph
-                                    .get_unchecked_node_type_ids_from_node_id(dst)
-                                    .unwrap_or(&[])
-                            })
-                            .map(|&node_type_id| node_type_id as usize + edge_id_offset)
-                            .collect::<HyperLogLog<PRECISION, BITS>>();
-                    }
-                    if self.include_edge_types {
-                        counters[0] |= graph
-                            .iter_unchecked_edge_type_id_from_source_node_id(node_id)
+                    .flat_map(|dst| {
+                        unsafe { graph.get_unchecked_node_type_ids_from_node_id(dst) }
+                            .unwrap_or(&[])
+                    })
+                    .map(|&node_type_id| node_type_id as usize + edge_id_offset)
+                    .collect::<HyperLogLog<PRECISION, BITS>>();
+                }
+                if self.include_edge_types {
+                    counters[0] |=
+                        unsafe { graph.iter_unchecked_edge_type_id_from_source_node_id(node_id) }
                             .filter_map(|edge_type_id| edge_type_id)
                             .map(|edge_type_id| edge_type_id as usize + node_id_offset)
                             .collect::<HyperLogLog<PRECISION, BITS>>();
-                    }
                 }
                 counters
             })
@@ -583,10 +594,16 @@ impl<PRECISION: Precision<BITS> + DeserializeOwned, const BITS: usize, const HOP
                     );
 
                     if self.normalize_by_symmetric_laplacian {
-                        let src_degree: F =
-                            F::reverse(graph.get_unchecked_node_degree_from_node_id(src) as f32);
-                        let dst_degree: F =
-                            F::reverse(graph.get_unchecked_node_degree_from_node_id(dst) as f32);
+                        let src_degree: F = F::reverse(
+                            1.0 + graph
+                                .get_unchecked_selfloop_excluded_node_degree_from_node_id(src)
+                                as f32,
+                        );
+                        let dst_degree: F = F::reverse(
+                            1.0 + graph
+                                .get_unchecked_selfloop_excluded_node_degree_from_node_id(dst)
+                                as f32,
+                        );
 
                         let degree_sqrt_recip = (src_degree * dst_degree).sqrt().recip();
 
