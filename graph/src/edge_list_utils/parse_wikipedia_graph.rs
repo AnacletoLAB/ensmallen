@@ -209,8 +209,8 @@ pub fn parse_wikipedia_graph(
     let keep_nodes_without_categories = keep_nodes_without_categories.unwrap_or(true);
     let mut redirect_hashmap: HashMap<u64, String> = HashMap::new();
     let verbose = verbose.unwrap_or(true);
-    let mut node_types_vocabulary: Vocabulary<NodeTypeT> = Vocabulary::new(false);
-    let mut nodes_vocabulary: Vocabulary<NodeT> = Vocabulary::new(false);
+    let mut node_types_vocabulary: Vocabulary<NodeTypeT> = Vocabulary::new(false, "Node types".to_string());
+    let mut nodes_vocabulary: Vocabulary<NodeT> = Vocabulary::new(false, "Nodes".to_string());
     let edge_types = ["internal_wiki_link", "external_wiki_link", "websites_link"];
     let node_types = ["internal_wiki", "external_wiki", "websites"];
     let nodes_writer: NodeFileWriter = NodeFileWriter::new(node_path)

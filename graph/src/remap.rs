@@ -179,6 +179,7 @@ impl Graph {
                 .into_par_iter()
                 .map(|node_id| self.get_unchecked_node_name_from_node_id(node_id))
                 .collect(),
+                "Nodes".to_string()
         )
         .unwrap();
         let positions = self
@@ -312,7 +313,7 @@ impl Graph {
             }).collect::<Result<()>>()?;
 
         let new_nodes_vocabulary: Vocabulary<NodeT> =
-            Vocabulary::from_reverse_map(node_names_map.values().cloned().unique().collect())
+            Vocabulary::from_reverse_map(node_names_map.values().cloned().unique().collect(), "Nodes".to_string())
                 .unwrap();
         let positions = self
             .par_iter_node_names()

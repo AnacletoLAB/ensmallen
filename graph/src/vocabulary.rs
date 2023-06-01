@@ -28,6 +28,7 @@ pub enum Vocabulary<IndexT: ToFromUsize + Sync + Debug> {
         // TODO: is there a way to have a fast compressed mapping between
         // integers?, specifically the output is dense from 0 to n
         map: HashMap<HashType, IndexT>,
+        name: String,
         reverse_map: Option<Vec<String>>,
     },
 
@@ -35,6 +36,7 @@ pub enum Vocabulary<IndexT: ToFromUsize + Sync + Debug> {
     Numeric {
         range: Range<usize>,
         count: usize,
+        name: String,
     },
 }
 
@@ -69,7 +71,9 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
         use std::mem::size_of;
 
         match self {
-            Vocabulary::String { map, reverse_map } => {
+            Vocabulary::String {
+                map, reverse_map, ..
+            } => {
                 VocabularyMemoryStats::String {
                     // https://github.com/servo/servo/issues/6908
                     map: (map.capacity() as f64 * 1.1) as usize
@@ -93,17 +97,12 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
     }
 }
 
-impl<IndexT: ToFromUsize + Sync + Debug> Default for Vocabulary<IndexT> {
-    fn default() -> Self {
-        Self::new(true)
-    }
-}
-
 /// # Constructors
 impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
-    pub fn new(use_reverse_map: bool) -> Vocabulary<IndexT> {
+    pub fn new(use_reverse_map: bool, name: String) -> Vocabulary<IndexT> {
         Vocabulary::String {
             map: HashMap::new(),
+            name,
             reverse_map: if use_reverse_map {
                 Some(Vec::new())
             } else {
@@ -135,9 +134,20 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
             .map(|(i, name)| (IndexT::from_usize(i), name))
     }
 
-    pub fn with_capacity(capacity: usize, use_reverse_map: bool) -> Vocabulary<IndexT> {
+    /// Returns new STRING Vocabulary with given capacity.
+    ///
+    /// # Arguments
+    /// * `capacity`: usize - The capacity of the vocabulary.
+    /// * `use_reverse_map`: bool - Whether we expect to use the reverse map or not.
+    /// * `name`: String - The name of the vocabulary.
+    pub fn with_capacity(
+        capacity: usize,
+        use_reverse_map: bool,
+        name: String,
+    ) -> Vocabulary<IndexT> {
         Vocabulary::String {
             map: HashMap::with_capacity(capacity),
+            name,
             reverse_map: if use_reverse_map {
                 Some(Vec::with_capacity(capacity))
             } else {
@@ -146,12 +156,13 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
         }
     }
 
-    pub fn from_range(range: Range<IndexT>) -> Vocabulary<IndexT> {
+    pub fn from_range(range: Range<IndexT>, name: String) -> Vocabulary<IndexT> {
         Vocabulary::Numeric {
             range: Range {
                 start: IndexT::to_usize(range.start),
                 end: IndexT::to_usize(range.end),
             },
+            name,
             count: 0,
         }
     }
@@ -160,11 +171,15 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
     ///
     /// # Arguments
     /// * `reverse_map`: Vec<String> - The reverse map to be used to build the vocabulary.
+    /// * `name`: String - The name of the vocabulary.
     ///
     /// # Raises
     /// * If the reverse map contains duplicated values.
     /// * If the reverse map contains empty values.
-    pub fn from_reverse_map(mut reverse_map: Vec<String>) -> Result<Vocabulary<IndexT>> {
+    pub fn from_reverse_map(
+        mut reverse_map: Vec<String>,
+        name: String,
+    ) -> Result<Vocabulary<IndexT>> {
         let map = reverse_map
             .iter()
             .cloned()
@@ -173,12 +188,13 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
                 if x.is_empty() {
                     Err(format!(
                         concat!(
-                            "An error was encountered while attempting to build a vocabulary. ",
+                            "An error was encountered while attempting to build a vocabulary called '{}'. ",
                             "The reverse map provided contains an empty string at index {} out of {}.\n",
                             "This is not allowed since the reverse map is used to build the vocabulary. ",
                             "Some other values that are present in the reverse map are {:?}. ",
                             "{}"
                         ),
+                        name,
                         i,
                         reverse_map.len(),
                         reverse_map.iter().filter(|x| !x.is_empty()).take(10).collect::<Vec<_>>(),
@@ -230,17 +246,19 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
             // 10 examples of the values we have identified as duplicates.
             return Err(format!(
                 concat!(
-                    "An error was encountered while attempting to build a vocabulary. ",
+                    "An error was encountered while attempting to build a vocabulary called '{}'. ",
                     "The reverse map provided contains {} duplicated values out of {}.\n",
                     "This is not allowed since the reverse map is used to build the vocabulary. ",
                     "Some of the duplicated values are {:?}.",
                 ),
+                name,
                 expected_duplicates_number, reverse_map_length, up_to_ten_duplicates,
             ));
         }
 
         Ok(Vocabulary::String {
             map,
+            name,
             reverse_map: Some(reverse_map),
         })
     }
@@ -312,7 +330,9 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
     /// * `value`: String - The value to be inserted.
     pub unsafe fn unchecked_insert(&mut self, value: String) -> IndexT {
         match self {
-            Vocabulary::String { map, reverse_map } => {
+            Vocabulary::String {
+                map, reverse_map, ..
+            } => {
                 let current_length = map.len();
                 match map.entry(compute_hash(&value)) {
                     Entry::Occupied(index) => *index.get(),
@@ -325,7 +345,7 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
                 }
             }
 
-            Vocabulary::Numeric { range, count } => {
+            Vocabulary::Numeric { range, count, .. } => {
                 let value = value.parse::<usize>().unwrap();
                 range.end = std::cmp::max(range.end, value);
                 *count += 1;
@@ -353,18 +373,18 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
         let (normalized_value, index) = self.normalize_value(value)?;
 
         match self {
-            Vocabulary::String { map, reverse_map } => {
-                Ok(match map.entry(compute_hash(&normalized_value)) {
-                    Entry::Occupied(extracted_index) => (*extracted_index.get(), true),
-                    Entry::Vacant(vacant_entry) => {
-                        if let Some(reverse_map) = reverse_map {
-                            reverse_map.push(value.to_string());
-                        }
-                        (*vacant_entry.insert(index), false)
+            Vocabulary::String {
+                map, reverse_map, ..
+            } => Ok(match map.entry(compute_hash(&normalized_value)) {
+                Entry::Occupied(extracted_index) => (*extracted_index.get(), true),
+                Entry::Vacant(vacant_entry) => {
+                    if let Some(reverse_map) = reverse_map {
+                        reverse_map.push(value.to_string());
                     }
-                })
-            }
-            Vocabulary::Numeric { range, count } => {
+                    (*vacant_entry.insert(index), false)
+                }
+            }),
+            Vocabulary::Numeric { range, count, .. } => {
                 let value = { value.parse::<usize>().unwrap() };
                 if value < range.start {
                     return Err(
@@ -384,7 +404,7 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
     /// Compute the reverse mapping vector for fast decoding
     pub fn build(&mut self) -> Result<()> {
         match self {
-            Vocabulary::Numeric { range, count } => {
+            Vocabulary::Numeric { range, count, .. } => {
                 let len = range.end - range.start;
                 if len == *count {
                     Ok(())
@@ -565,7 +585,9 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
         }
         let id = self.get(&original).unwrap();
         match self {
-            Vocabulary::String { map, reverse_map } => {
+            Vocabulary::String {
+                map, reverse_map, ..
+            } => {
                 map.remove(&compute_hash(&original));
                 map.insert(compute_hash(&replace), id);
                 if let Some(reverse_map) = reverse_map {
@@ -585,12 +607,13 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
     pub fn to_string_vocabulary(&mut self) {
         match self {
             Vocabulary::String { .. } => {}
-            Vocabulary::Numeric { range, .. } => {
+            Vocabulary::Numeric { range, name, .. } => {
                 *self = Vocabulary::String {
                     map: range
                         .map(|i| (compute_hash(&format!("{}", i)), IndexT::from_usize(i)))
                         .collect(),
                     reverse_map: Some(range.map(|i| format!("{}", i)).collect()),
+                    name: name.clone(),
                 }
             }
         }
@@ -609,7 +632,7 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
         mut type_ids_to_remove: Vec<IndexT>,
     ) -> Vec<Option<usize>> {
         let result = match self {
-            Vocabulary::Numeric { range, .. } => {
+            Vocabulary::Numeric { range, name, .. } => {
                 type_ids_to_remove.sort();
 
                 // scan from the left to remove all the extremants ids
@@ -646,6 +669,7 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
                     *self = Vocabulary::Numeric {
                         range: new_range,
                         count: max - min,
+                        name: name.clone(),
                     };
                     result
                 } else {
@@ -653,7 +677,9 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
                     self.unchecked_remove_values(type_ids_to_remove)
                 }
             }
-            Vocabulary::String { map, reverse_map } => {
+            Vocabulary::String {
+                map, reverse_map, ..
+            } => {
                 // compute the new dense mapping of the indices
                 let new_type_ids_map = (0..map.len())
                     .scan(0, |offset, type_id| {

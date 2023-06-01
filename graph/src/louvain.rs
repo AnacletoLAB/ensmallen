@@ -340,7 +340,7 @@ impl Graph {
                         }
                     }),
             ),
-            Arc::new(Vocabulary::from_range(0..communities_number)),
+            Arc::new(Vocabulary::from_range(0..communities_number, "Nodes".to_string())),
             Arc::new(None),
             None,
             true,

@@ -1,9 +1,9 @@
-use half::f16;
-use num_traits::{Float, Num, NumCast, One, ToPrimitive, Zero};
-use core::ops::{Add, AddAssign, Div, DivAssign, Mul, MulAssign, Neg, Rem, Sub, SubAssign};
 use core::iter::Sum;
 use core::num::FpCategory;
+use core::ops::{Add, AddAssign, Div, DivAssign, Mul, MulAssign, Neg, Rem, Sub, SubAssign};
+use half::f16;
 use hyperloglog_rs::prelude::*;
+use num_traits::{Float, Num, NumCast, One, ToPrimitive, Zero};
 
 // We make this type fully transparent.
 #[repr(transparent)]

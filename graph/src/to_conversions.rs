@@ -500,7 +500,7 @@ impl Graph {
 
         // We create the dictionary of nodes we will be using for
         // constructing the graph to compute the stationary distribution.
-        let nodes = Vocabulary::from_range(0..number_of_layers as NodeT);
+        let nodes = Vocabulary::from_range(0..number_of_layers as NodeT, "Nodes".to_string());
 
         // We compute the number of edges in the layer transition graph.
         let number_of_edges = (number_of_layers + (number_of_layers - 1) * 2) as EdgeT;
