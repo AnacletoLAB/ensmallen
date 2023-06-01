@@ -2,22 +2,18 @@ use crate::must_not_be_zero;
 use graph::{Graph, NodeT};
 use hyperloglog_rs::prelude::*;
 use rayon::prelude::*;
-use serde::{Deserialize, Serialize};
+use serde::{Deserialize, Serialize, de::DeserializeOwned};
 
 #[derive(Clone, Deserialize, Serialize)]
-pub struct HyperJaccard<const PRECISION: usize, const BITS: usize>
-where
-    [(); ceil(1 << PRECISION, 32 / BITS)]:,
-{
+pub struct HyperJaccard<PRECISION: Precision<BITS>, const BITS: usize> {
     /// Vector of HyperLogLog counters
     counters: Vec<HyperLogLog<PRECISION, BITS>>,
     /// The number of hops to execute.
     number_of_hops: usize,
 }
 
-impl<const PRECISION: usize, const BITS: usize> HyperJaccard<PRECISION, BITS>
-where
-    [(); ceil(1 << PRECISION, 32 / BITS)]:,
+impl<PRECISION: Precision<BITS> + DeserializeOwned, const BITS: usize>
+    HyperJaccard<PRECISION, BITS>
 {
     /// Creates a new HyperJaccard model.
     ///
@@ -335,8 +331,8 @@ where
     }
 
     pub fn load(path: &str) -> Result<Self, String> {
-        serde_json::from_reader(std::fs::File::open(path).map_err(|e| e.to_string())?)
-            .map_err(|e| e.to_string())
+        serde_json::from_reader(std::fs::File::open(path).map_err(move |e| e.to_string())?)
+            .map_err(move |e| e.to_string())
     }
 
     pub fn loads(json: &str) -> Result<Self, String> {

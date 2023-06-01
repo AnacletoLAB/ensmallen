@@ -34,8 +34,12 @@ impl GraphEmbedder for Unstructured {
         self.model.get_dtype()
     }
 
-    fn get_number_of_epochs(&self) -> usize {
+    fn get_number_of_steps(&self) -> usize {
         self.model.get_number_of_epochs()
+    }
+
+    fn requires_random_initialization(&self) -> bool {
+        true
     }
 
     fn get_embedding_shapes(&self, graph: &Graph) -> Result<Vec<MatrixShape>, String> {
@@ -70,7 +74,7 @@ impl GraphEmbedder for Unstructured {
         let two: F = (2.0).as_();
 
         // We start to loop over the required amount of epochs.
-        (0..self.get_number_of_epochs())
+        (0..self.get_number_of_steps())
             .progress_with(pb)
             .for_each(|_| {
                 // We update the random state used to generate the random walks

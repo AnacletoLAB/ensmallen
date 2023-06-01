@@ -34,8 +34,12 @@ impl GraphEmbedder for Walklets {
         self.node2vec.get_dtype()
     }
 
-    fn get_number_of_epochs(&self) -> usize {
-        self.node2vec.get_number_of_epochs()
+    fn get_number_of_steps(&self) -> usize {
+        self.node2vec.get_number_of_steps()
+    }
+
+    fn requires_random_initialization(&self) -> bool {
+        self.node2vec.requires_random_initialization()
     }
 
     fn get_embedding_shapes(&self, graph: &graph::Graph) -> Result<Vec<MatrixShape>, String> {

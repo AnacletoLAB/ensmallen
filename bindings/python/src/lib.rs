@@ -1,12 +1,10 @@
 #![feature(adt_const_params)]
-#![feature(generic_const_exprs)]
 use numpy::{PyArray, PyArray1, PyArray2, PyArray3, PyArray4};
 use pyo3::exceptions::{PyAttributeError, PyTypeError, PyValueError};
 use pyo3::prelude::*;
 use pyo3::types::PyDict;
 use std::collections::{HashMap, HashSet};
 
-#[allow(unused_imports)]
 use graph::{EdgeT, EdgeTypeT, NodeT, NodeTypeT, Result, WeightT};
 use tags::*;
 
@@ -53,6 +51,7 @@ pub use dense::*;
 mod graph_embedder;
 pub use graph_embedder::*;
 
+mod primitive_f16;
 mod edge_file_writer;
 mod hash;
 mod node_file_writer;

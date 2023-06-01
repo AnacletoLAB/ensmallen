@@ -47,7 +47,7 @@ where
             ThreadDataRaceAware::new(vec![F::zero(); graph.get_number_of_nodes() as usize]);
 
         // We start to loop over the required amount of epochs.
-        for _ in (0..self.get_number_of_epochs()).progress_with(self.get_loading_bar()) {
+        for _ in (0..self.get_number_of_steps()).progress_with(self.get_loading_bar()) {
             // We update the random state used to generate the random walks
             // and the negative samples.
             random_state = splitmix64(random_state);

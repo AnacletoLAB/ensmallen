@@ -1,5 +1,6 @@
 use super::*;
 use cpu_models::HyperJaccard as HJ;
+use hyperloglog_rs::prelude::*;
 use serde::{Deserialize, Serialize};
 use serde_json;
 
@@ -7,34 +8,34 @@ use serde_json;
 /// HyperJaccard models.
 enum InnerModel {
     /// HyperJaccard model.
-    /// HJ{precision}_{bits}(HJ<{precision}, {bits}>), {python_macro}
-    HJ4_4(HJ<4, 4>), // {python_generated}
-    HJ4_5(HJ<4, 5>),   // {python_generated}
-    HJ4_6(HJ<4, 6>),   // {python_generated}
-    HJ5_4(HJ<5, 4>),   // {python_generated}
-    HJ5_5(HJ<5, 5>),   // {python_generated}
-    HJ5_6(HJ<5, 6>),   // {python_generated}
-    HJ6_4(HJ<6, 4>),   // {python_generated}
-    HJ6_5(HJ<6, 5>),   // {python_generated}
-    HJ6_6(HJ<6, 6>),   // {python_generated}
-    HJ7_4(HJ<7, 4>),   // {python_generated}
-    HJ7_5(HJ<7, 5>),   // {python_generated}
-    HJ7_6(HJ<7, 6>),   // {python_generated}
-    HJ8_4(HJ<8, 4>),   // {python_generated}
-    HJ8_5(HJ<8, 5>),   // {python_generated}
-    HJ8_6(HJ<8, 6>),   // {python_generated}
-    HJ9_4(HJ<9, 4>),   // {python_generated}
-    HJ9_5(HJ<9, 5>),   // {python_generated}
-    HJ9_6(HJ<9, 6>),   // {python_generated}
-    HJ10_4(HJ<10, 4>), // {python_generated}
-    HJ10_5(HJ<10, 5>), // {python_generated}
-    HJ10_6(HJ<10, 6>), // {python_generated}
-    HJ11_4(HJ<11, 4>), // {python_generated}
-    HJ11_5(HJ<11, 5>), // {python_generated}
-    HJ11_6(HJ<11, 6>), // {python_generated}
-    HJ12_4(HJ<12, 4>), // {python_generated}
-    HJ12_5(HJ<12, 5>), // {python_generated}
-    HJ12_6(HJ<12, 6>), // {python_generated}
+    /// HJ{precision}_{bits}(HJ<Precision{precision}, {bits}>), {python_macro}
+    HJ4_4(HJ<Precision4, 4>), // {python_generated}
+    HJ4_5(HJ<Precision4, 5>),   // {python_generated}
+    HJ4_6(HJ<Precision4, 6>),   // {python_generated}
+    HJ5_4(HJ<Precision5, 4>),   // {python_generated}
+    HJ5_5(HJ<Precision5, 5>),   // {python_generated}
+    HJ5_6(HJ<Precision5, 6>),   // {python_generated}
+    HJ6_4(HJ<Precision6, 4>),   // {python_generated}
+    HJ6_5(HJ<Precision6, 5>),   // {python_generated}
+    HJ6_6(HJ<Precision6, 6>),   // {python_generated}
+    HJ7_4(HJ<Precision7, 4>),   // {python_generated}
+    HJ7_5(HJ<Precision7, 5>),   // {python_generated}
+    HJ7_6(HJ<Precision7, 6>),   // {python_generated}
+    HJ8_4(HJ<Precision8, 4>),   // {python_generated}
+    HJ8_5(HJ<Precision8, 5>),   // {python_generated}
+    HJ8_6(HJ<Precision8, 6>),   // {python_generated}
+    HJ9_4(HJ<Precision9, 4>),   // {python_generated}
+    HJ9_5(HJ<Precision9, 5>),   // {python_generated}
+    HJ9_6(HJ<Precision9, 6>),   // {python_generated}
+    HJ10_4(HJ<Precision10, 4>), // {python_generated}
+    HJ10_5(HJ<Precision10, 5>), // {python_generated}
+    HJ10_6(HJ<Precision10, 6>), // {python_generated}
+    HJ11_4(HJ<Precision11, 4>), // {python_generated}
+    HJ11_5(HJ<Precision11, 5>), // {python_generated}
+    HJ11_6(HJ<Precision11, 6>), // {python_generated}
+    HJ12_4(HJ<Precision12, 4>), // {python_generated}
+    HJ12_5(HJ<Precision12, 5>), // {python_generated}
+    HJ12_6(HJ<Precision12, 6>), // {python_generated}
 }
 
 impl InnerModel {

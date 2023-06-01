@@ -65,7 +65,9 @@ pub trait GraphEmbedder {
             .map(|shape| shape[-1])
             .collect::<Vec<usize>>();
 
-        populate_vectors(embedding, &embedding_dimensions, self.get_random_state());
+        if self.requires_random_initialization(){
+            populate_vectors(embedding, &embedding_dimensions, self.get_random_state());
+        }
         self._fit_transform(graph, embedding)
     }
 
@@ -74,7 +76,7 @@ pub trait GraphEmbedder {
         // we create or not a visible progress bar to show the progress
         // in the training epochs.
         if self.is_verbose() {
-            let pb = ProgressBar::new(self.get_number_of_epochs() as u64);
+            let pb = ProgressBar::new(self.get_number_of_steps() as u64);
             pb.set_style(
                 ProgressStyle::default_bar()
                     .template(&format!(
@@ -93,6 +95,9 @@ pub trait GraphEmbedder {
         }
     }
 
+    /// Returns whether the model requires random initialization.
+    fn requires_random_initialization(&self) -> bool;
+
     /// Returns whether to show the loading bar.
     fn is_verbose(&self) -> bool;
 
@@ -102,12 +107,15 @@ pub trait GraphEmbedder {
     /// Returns the embedding data type.
     fn get_dtype(&self) -> String;
 
-    /// Returns the number of epochs.
-    fn get_number_of_epochs(&self) -> usize;
+    /// Returns the number of principal model steps.
+    fn get_number_of_steps(&self) -> usize;
 
     /// Returns the initial random state of the model.
     fn get_random_state(&self) -> u64;
 
     /// Returns the shapes of the embeddings given the graph.
+    /// 
+    /// # Arguments
+    /// * `graph`: &Graph - The graph to embed.
     fn get_embedding_shapes(&self, graph: &Graph) -> Result<Vec<MatrixShape>, String>;
 }
