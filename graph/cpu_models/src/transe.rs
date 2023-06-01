@@ -22,8 +22,12 @@ impl GraphEmbedder for TransE {
         "TransE".to_string()
     }
 
-    fn get_number_of_epochs(&self) -> usize {
+    fn get_number_of_steps(&self) -> usize {
         self.model.get_number_of_epochs()
+    }
+
+    fn requires_random_initialization(&self) -> bool {
+        true
     }
 
     fn is_verbose(&self) -> bool {
@@ -73,7 +77,7 @@ impl GraphEmbedder for TransE {
         let pb = self.get_loading_bar();
 
         // We start to loop over the required amount of epochs.
-        (0..self.get_number_of_epochs())
+        (0..self.get_number_of_steps())
             .progress_with(pb)
             .for_each(|_| {
                 // We update the random state used to generate the random walks

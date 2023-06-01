@@ -8,8 +8,6 @@
 //! * `connected_node`: a node which is nor a `singleton` nor a `singleton_with_selfloops`.
 
 #![feature(return_position_impl_trait_in_trait)]
-#![feature(adt_const_params)]
-#![feature(generic_const_exprs)]
 #![warn(unused_macros)]
 #![feature(drain_filter)]
 #![feature(iter_advance_by)]

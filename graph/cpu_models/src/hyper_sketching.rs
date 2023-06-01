@@ -1,9 +1,11 @@
 use std::cell::SyncUnsafeCell;
 
+use express_measures::ThreadFloat;
 use graph::{Graph, NodeT};
 use hyperloglog_rs::prelude::*;
+use num_traits::Float;
 use rayon::prelude::*;
-use serde::{Deserialize, Serialize};
+use serde::{de::DeserializeOwned, Deserialize, Serialize};
 
 #[derive(Clone, Deserialize, Serialize)]
 /// Struct implementing Hyper Subgraph Sketching.
@@ -14,10 +16,7 @@ use serde::{Deserialize, Serialize};
 /// The original paper describing this approach for edge prediction
 /// feature mining is "Graph Neural Networks for Link Prediction with Subgraph sketching"
 ///
-pub struct HyperSketching<const PRECISION: usize, const BITS: usize, const HOPS: usize>
-where
-    [(); ceil(1 << PRECISION, 32 / BITS)]:,
-{
+pub struct HyperSketching<PRECISION: Precision<BITS>, const BITS: usize, const HOPS: usize> {
     /// Vector of HyperLogLog counters
     counters: Vec<HyperLogLogArray<PRECISION, BITS, HOPS>>,
     /// Whether to include the node types in the sketch
@@ -34,12 +33,12 @@ where
     normalize_by_symmetric_laplacian: bool,
     /// Concatenate the normalized and non-normalized features
     concatenate_features: bool,
+    /// The embedding data type.
+    dtype: String,
 }
 
-impl<const PRECISION: usize, const BITS: usize, const HOPS: usize>
+impl<PRECISION: Precision<BITS> + DeserializeOwned, const BITS: usize, const HOPS: usize>
     HyperSketching<PRECISION, BITS, HOPS>
-where
-    [(); ceil(1 << PRECISION, 32 / BITS)]:,
 {
     /// Creates a new HyperSketching model.
     ///
@@ -51,11 +50,13 @@ where
     /// * `include_typed_graphlets`: Option<bool> - Whether to include the typed graphlets in the sketch. By default, false.
     /// * `normalize_by_symmetric_laplacian`: Option<bool> - Whether to normalize the Sketching cardinalities by the symmetric Laplacian. By default, false.
     /// * `concatenate_features`: Option<bool> - Whether to concatenate the normalized and non-normalized features. By default, false.
+    /// * `dtype`: Option<String> - The data type to be employed, by default f32.
     ///
     /// # Raises
     /// * The feature concatenation only makes sense if the normalization is enabled.
     /// * If none of the include parameters is set to true.
     /// * If the edge ids are requested, but only two HOPs is used, as the edge ids would surely be completely distinct for all edges.
+    /// * The data type is not supported. Supported data types are f16, f32 and f64.
     pub fn new(
         include_node_types: Option<bool>,
         include_edge_types: Option<bool>,
@@ -64,6 +65,7 @@ where
         include_typed_graphlets: Option<bool>,
         normalize_by_symmetric_laplacian: Option<bool>,
         concatenate_features: Option<bool>,
+        dtype: Option<String>
     ) -> Result<Self, String> {
         if concatenate_features.unwrap_or(false)
             && !normalize_by_symmetric_laplacian.unwrap_or(false)
@@ -77,11 +79,8 @@ where
         // Raise an error to warn the users that, at this time,
         // the typed graphlets are not supported yet.
         if include_typed_graphlets.unwrap_or(false) {
-            return Err(
-                "The typed graphlets are not supported yet.".to_string(),
-            );
+            return Err("The typed graphlets are not supported yet.".to_string());
         }
-
 
         if !include_node_types.unwrap_or(false)
             && !include_edge_types.unwrap_or(false)
@@ -89,20 +88,27 @@ where
             && !include_node_ids.unwrap_or(true)
             && !include_typed_graphlets.unwrap_or(false)
         {
-            return Err(
-                "At least one of the include parameters must be set to true.".to_string(),
-            );
+            return Err("At least one of the include parameters must be set to true.".to_string());
         }
 
         if include_edge_ids.unwrap_or(false) && HOPS == 2 {
-            return Err(
+            return Err(concat!(
+                "You requested to include the edge ids in the sketch, ",
+                "but also built this model so that only one hop is used. ",
+                "This means that the edge ids would surely be completely distinct for all nodes ",
+                "as with a single hop there would be no overlap between the edges. ",
+            )
+            .to_string());
+        }
+
+        if !["f16", "f32", "f64"].contains(&dtype.as_ref().unwrap_or(&"f32".to_string()).as_str()) {
+            return Err(format!(
                 concat!(
-                    "You requested to include the edge ids in the sketch, ",
-                    "but also built this model so that only one hop is used. ",
-                    "This means that the edge ids would surely be completely distinct for all nodes ",
-                    "as with a single hop there would be no overlap between the edges. ",
-                ).to_string(),
-            );
+                    "The data type `{}` is not supported. ",
+                    "Supported data types are f16, f32 and f64."
+                ),
+                dtype.as_ref().unwrap_or(&"f32".to_string())
+            ));
         }
 
         Ok(Self {
@@ -114,6 +120,7 @@ where
             include_typed_graphlets: include_typed_graphlets.unwrap_or(false),
             normalize_by_symmetric_laplacian: normalize_by_symmetric_laplacian.unwrap_or(false),
             concatenate_features: concatenate_features.unwrap_or(false),
+            dtype: dtype.unwrap_or("f32".to_string()),
         })
     }
 
@@ -160,27 +167,30 @@ where
         };
 
         // We add an offset to the edge ids if they are requested.
-        let edge_id_offset = node_id_offset + if self.include_edge_ids {
-            graph.get_number_of_edges() as usize
-        } else {
-            0
-        };
+        let edge_id_offset = node_id_offset
+            + if self.include_edge_ids {
+                graph.get_number_of_edges() as usize
+            } else {
+                0
+            };
 
         // We add an offset to the node types so that there won't be any collisions
         // with the node ids or edge type ids.
-        let node_type_offset = edge_id_offset + if self.include_node_types {
-            graph.get_number_of_node_types()? as usize
-        } else {
-            0
-        };
+        let node_type_offset = edge_id_offset
+            + if self.include_node_types {
+                graph.get_number_of_node_types()? as usize
+            } else {
+                0
+            };
 
         // We add an offset to the edge types so that there won't be any collisions
         // with the node ids or node type ids.
-        let edge_type_offset = node_type_offset + if self.include_edge_types {
-            graph.get_number_of_edge_types()? as usize
-        } else {
-            0
-        };
+        let edge_type_offset = node_type_offset
+            + if self.include_edge_types {
+                graph.get_number_of_edge_types()? as usize
+            } else {
+                0
+            };
 
         // Create HyperLogLog counters for all nodes in the graph
         let mut counters = graph
@@ -364,11 +374,11 @@ where
     /// This method is unsafe because it does not check that the provided nodes are lower
     /// than the expected number of nodes in the graph.
     ///
-    pub unsafe fn get_subgraph_sketch_from_node_ids_unchecked(
+    pub unsafe fn get_subgraph_sketch_from_node_ids_unchecked<F: Primitive<f32>>(
         &self,
         src: usize,
         dst: usize,
-    ) -> ([[f32; HOPS]; HOPS], [f32; HOPS], [f32; HOPS]) {
+    ) -> ([[F; HOPS]; HOPS], [F; HOPS], [F; HOPS]) {
         self.counters[src]
             .estimated_overlap_and_differences_cardinality_matrices(&self.counters[dst])
     }
@@ -389,11 +399,11 @@ where
     /// * If the model has not been trained yet.
     /// * If the provided nodes are not lower than the expected number of nodes in the graph.
     ///
-    pub fn get_subgraph_sketch_from_node_ids(
+    pub fn get_subgraph_sketch_from_node_ids<F: Primitive<f32>>(
         &self,
         src: usize,
         dst: usize,
-    ) -> Result<([[f32; HOPS]; HOPS], [f32; HOPS], [f32; HOPS]), String> {
+    ) -> Result<([[F; HOPS]; HOPS], [F; HOPS], [F; HOPS]), String> {
         // Check that the model has been trained
         self.must_be_trained()?;
 
@@ -431,12 +441,17 @@ where
 
     /// Return the precision used for the HyperLogLog counters.
     pub fn get_precision(&self) -> usize {
-        PRECISION
+        PRECISION::EXPONENT
     }
 
     /// Return the number of bits used for the HyperLogLog counters.
     pub fn get_bits(&self) -> usize {
         BITS
+    }
+
+    /// Returns the dtype.
+    pub fn get_dtype(&self) -> &str {
+        &self.dtype
     }
 
     /// Returns the estimated Sketching for all edges.
@@ -452,11 +467,11 @@ where
     /// * If one of the provided slices does not have the expected size.
     /// * If the provided graph has a different number of nodes than the model.
     ///
-    pub fn get_sketching_for_all_edges<I>(
+    pub fn get_sketching_for_all_edges<I, F: Primitive<f32> + Float>(
         &self,
-        overlaps: &mut [f32],
-        src_differences: &mut [f32],
-        dst_differences: &mut [f32],
+        overlaps: &mut [F],
+        src_differences: &mut [F],
+        dst_differences: &mut [F],
         graph: &Graph,
         edge_iterator: I,
     ) -> Result<(), String>
@@ -548,7 +563,7 @@ where
 
                     // Copy the estimated overlaps
                     std::ptr::copy_nonoverlapping(
-                        sketch_overlaps.as_ptr() as *const f32,
+                        sketch_overlaps.as_ptr() as *const F,
                         overlaps.as_mut_ptr(),
                         HOPS * HOPS,
                     );
@@ -568,8 +583,10 @@ where
                     );
 
                     if self.normalize_by_symmetric_laplacian {
-                        let src_degree = graph.get_unchecked_node_degree_from_node_id(src) as f32;
-                        let dst_degree = graph.get_unchecked_node_degree_from_node_id(dst) as f32;
+                        let src_degree: F =
+                            F::reverse(graph.get_unchecked_node_degree_from_node_id(src) as f32);
+                        let dst_degree: F =
+                            F::reverse(graph.get_unchecked_node_degree_from_node_id(dst) as f32);
 
                         let degree_sqrt_recip = (src_degree * dst_degree).sqrt().recip();
 
@@ -592,7 +609,7 @@ where
 
                         // Copy the estimated overlaps
                         std::ptr::copy_nonoverlapping(
-                            sketch_overlaps.as_ptr() as *const f32,
+                            sketch_overlaps.as_ptr() as *const F,
                             overlaps[offset * HOPS * HOPS..].as_mut_ptr(),
                             HOPS * HOPS,
                         );
@@ -634,8 +651,8 @@ where
     }
 
     pub fn load(path: &str) -> Result<Self, String> {
-        serde_json::from_reader(std::fs::File::open(path).map_err(|e| e.to_string())?)
-            .map_err(|e| e.to_string())
+        serde_json::from_reader(std::fs::File::open(path).map_err(move |e| e.to_string())?)
+            .map_err(move |e| e.to_string())
     }
 
     pub fn loads(json: &str) -> Result<Self, String> {

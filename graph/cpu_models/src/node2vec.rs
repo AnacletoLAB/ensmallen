@@ -164,8 +164,12 @@ where
         ])
     }
 
-    fn get_number_of_epochs(&self) -> usize {
+    fn get_number_of_steps(&self) -> usize {
         self.epochs
+    }
+
+    fn requires_random_initialization(&self) -> bool {
+        true
     }
 
     fn get_dtype(&self) -> String {

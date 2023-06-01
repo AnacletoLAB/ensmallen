@@ -59,13 +59,10 @@ impl Graph {
     /// # Returns
     /// A vector containing the computed centrality scores for each node in the graph.
     ///
-    fn hyperball<const PRECISION: usize, const BITS: usize, F: Default + Copy + Send + Sync>(
+    fn hyperball<PRECISION: Precision<BITS>, const BITS: usize, F: Default + Copy + Send + Sync>(
         &self,
         counters_ops: fn(&mut F, f32, f32, usize),
     ) -> Result<Vec<F>>
-    where
-        [(); ceil(1 << PRECISION, 32 / BITS)]:,
-        [(); 1 << PRECISION]:,
     {
         // Create a mutable vector called centralities to store the centrality values for each node.
         // The size of the vector is set to the number of nodes in the graph using the get_number_of_nodes() method of self.
@@ -276,45 +273,45 @@ impl Graph {
         counters_ops: fn(&mut F, f32, f32, usize),
     ) -> Result<Vec<F>> {
         Ok(match (precision.unwrap_or(6), bits.unwrap_or(6)) {
-            (4, 4) => self.hyperball::<4, 4, F>(counters_ops)?,
-            (5, 4) => self.hyperball::<5, 4, F>(counters_ops)?,
-            (6, 4) => self.hyperball::<6, 4, F>(counters_ops)?,
-            (7, 4) => self.hyperball::<7, 4, F>(counters_ops)?,
-            (8, 4) => self.hyperball::<8, 4, F>(counters_ops)?,
-            (9, 4) => self.hyperball::<9, 4, F>(counters_ops)?,
-            (10, 4) => self.hyperball::<10, 4, F>(counters_ops)?,
-            (11, 4) => self.hyperball::<11, 4, F>(counters_ops)?,
-            (12, 4) => self.hyperball::<12, 4, F>(counters_ops)?,
-            (13, 4) => self.hyperball::<13, 4, F>(counters_ops)?,
-            (14, 4) => self.hyperball::<14, 4, F>(counters_ops)?,
-            (15, 4) => self.hyperball::<15, 4, F>(counters_ops)?,
-            (16, 4) => self.hyperball::<16, 4, F>(counters_ops)?,
-            (4, 5) => self.hyperball::<4, 5, F>(counters_ops)?,
-            (5, 5) => self.hyperball::<5, 5, F>(counters_ops)?,
-            (6, 5) => self.hyperball::<6, 5, F>(counters_ops)?,
-            (7, 5) => self.hyperball::<7, 5, F>(counters_ops)?,
-            (8, 5) => self.hyperball::<8, 5, F>(counters_ops)?,
-            (9, 5) => self.hyperball::<9, 5, F>(counters_ops)?,
-            (10, 5) => self.hyperball::<10, 5, F>(counters_ops)?,
-            (11, 5) => self.hyperball::<11, 5, F>(counters_ops)?,
-            (12, 5) => self.hyperball::<12, 5, F>(counters_ops)?,
-            (13, 5) => self.hyperball::<13, 5, F>(counters_ops)?,
-            (14, 5) => self.hyperball::<14, 5, F>(counters_ops)?,
-            (15, 5) => self.hyperball::<15, 5, F>(counters_ops)?,
-            (16, 5) => self.hyperball::<16, 5, F>(counters_ops)?,
-            (4, 6) => self.hyperball::<4, 6, F>(counters_ops)?,
-            (5, 6) => self.hyperball::<5, 6, F>(counters_ops)?,
-            (6, 6) => self.hyperball::<6, 6, F>(counters_ops)?,
-            (7, 6) => self.hyperball::<7, 6, F>(counters_ops)?,
-            (8, 6) => self.hyperball::<8, 6, F>(counters_ops)?,
-            (9, 6) => self.hyperball::<9, 6, F>(counters_ops)?,
-            (10, 6) => self.hyperball::<10, 6, F>(counters_ops)?,
-            (11, 6) => self.hyperball::<11, 6, F>(counters_ops)?,
-            (12, 6) => self.hyperball::<12, 6, F>(counters_ops)?,
-            (13, 6) => self.hyperball::<13, 6, F>(counters_ops)?,
-            (14, 6) => self.hyperball::<14, 6, F>(counters_ops)?,
-            (15, 6) => self.hyperball::<15, 6, F>(counters_ops)?,
-            (16, 6) => self.hyperball::<16, 6, F>(counters_ops)?,
+            (4, 4) => self.hyperball::<Precision4, 4, F>(counters_ops)?,
+            (5, 4) => self.hyperball::<Precision5, 4, F>(counters_ops)?,
+            (6, 4) => self.hyperball::<Precision6, 4, F>(counters_ops)?,
+            (7, 4) => self.hyperball::<Precision7, 4, F>(counters_ops)?,
+            (8, 4) => self.hyperball::<Precision8, 4, F>(counters_ops)?,
+            (9, 4) => self.hyperball::<Precision9, 4, F>(counters_ops)?,
+            (10, 4) => self.hyperball::<Precision10, 4, F>(counters_ops)?,
+            (11, 4) => self.hyperball::<Precision11, 4, F>(counters_ops)?,
+            (12, 4) => self.hyperball::<Precision12, 4, F>(counters_ops)?,
+            (13, 4) => self.hyperball::<Precision13, 4, F>(counters_ops)?,
+            (14, 4) => self.hyperball::<Precision14, 4, F>(counters_ops)?,
+            (15, 4) => self.hyperball::<Precision15, 4, F>(counters_ops)?,
+            (16, 4) => self.hyperball::<Precision16, 4, F>(counters_ops)?,
+            (4, 5) => self.hyperball::<Precision4, 5, F>(counters_ops)?,
+            (5, 5) => self.hyperball::<Precision5, 5, F>(counters_ops)?,
+            (6, 5) => self.hyperball::<Precision6, 5, F>(counters_ops)?,
+            (7, 5) => self.hyperball::<Precision7, 5, F>(counters_ops)?,
+            (8, 5) => self.hyperball::<Precision8, 5, F>(counters_ops)?,
+            (9, 5) => self.hyperball::<Precision9, 5, F>(counters_ops)?,
+            (10, 5) => self.hyperball::<Precision10, 5, F>(counters_ops)?,
+            (11, 5) => self.hyperball::<Precision11, 5, F>(counters_ops)?,
+            (12, 5) => self.hyperball::<Precision12, 5, F>(counters_ops)?,
+            (13, 5) => self.hyperball::<Precision13, 5, F>(counters_ops)?,
+            (14, 5) => self.hyperball::<Precision14, 5, F>(counters_ops)?,
+            (15, 5) => self.hyperball::<Precision15, 5, F>(counters_ops)?,
+            (16, 5) => self.hyperball::<Precision16, 5, F>(counters_ops)?,
+            (4, 6) => self.hyperball::<Precision4, 6, F>(counters_ops)?,
+            (5, 6) => self.hyperball::<Precision5, 6, F>(counters_ops)?,
+            (6, 6) => self.hyperball::<Precision6, 6, F>(counters_ops)?,
+            (7, 6) => self.hyperball::<Precision7, 6, F>(counters_ops)?,
+            (8, 6) => self.hyperball::<Precision8, 6, F>(counters_ops)?,
+            (9, 6) => self.hyperball::<Precision9, 6, F>(counters_ops)?,
+            (10, 6) => self.hyperball::<Precision10, 6, F>(counters_ops)?,
+            (11, 6) => self.hyperball::<Precision11, 6, F>(counters_ops)?,
+            (12, 6) => self.hyperball::<Precision12, 6, F>(counters_ops)?,
+            (13, 6) => self.hyperball::<Precision13, 6, F>(counters_ops)?,
+            (14, 6) => self.hyperball::<Precision14, 6, F>(counters_ops)?,
+            (15, 6) => self.hyperball::<Precision15, 6, F>(counters_ops)?,
+            (16, 6) => self.hyperball::<Precision16, 6, F>(counters_ops)?,
             _ => {
                 return Err(format!(
                     concat!(
@@ -471,7 +468,7 @@ impl Graph {
                 self.dispatch_hyperball(
                     precision,
                     bits,
-                    |diameter_candidate: &mut u8, current_count, previous_count, iteration| {
+                    |diameter_candidate: &mut u8, _current_count, _previous_count, iteration| {
                         *diameter_candidate = iteration as u8;
                     },
                 )?
@@ -484,7 +481,7 @@ impl Graph {
                 self.dispatch_hyperball(
                     precision,
                     bits,
-                    |diameter_candidate: &mut u16, current_count, previous_count, iteration| {
+                    |diameter_candidate: &mut u16, _current_count, _previous_count, iteration| {
                         *diameter_candidate = iteration as u16;
                     },
                 )?
@@ -497,7 +494,7 @@ impl Graph {
                 self.dispatch_hyperball(
                     precision,
                     bits,
-                    |diameter_candidate: &mut u32, current_count, previous_count, iteration| {
+                    |diameter_candidate: &mut u32, _current_count, _previous_count, iteration| {
                         *diameter_candidate = iteration as u32;
                     },
                 )?
@@ -510,7 +507,7 @@ impl Graph {
                 self.dispatch_hyperball(
                     precision,
                     bits,
-                    |diameter_candidate: &mut u64, current_count, previous_count, iteration| {
+                    |diameter_candidate: &mut u64, _current_count, _previous_count, iteration| {
                         *diameter_candidate = iteration as u64;
                     },
                 )?
