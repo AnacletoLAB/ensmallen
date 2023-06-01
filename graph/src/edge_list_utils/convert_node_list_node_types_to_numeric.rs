@@ -133,11 +133,12 @@ pub fn convert_node_list_node_types_to_numeric(
                 node_type_file_reader.get_minimum_type_id(),
                 true,
                 original_node_type_list_is_correct,
+                "Node types".to_string()
             )?
             .unwrap();
             node_types_vocabulary
         } else {
-            Vocabulary::new(true)
+            Vocabulary::new(true, "Node types".to_string())
         };
 
     let nodes_reader: NodeFileReader = NodeFileReader::new(Some(original_node_path))?

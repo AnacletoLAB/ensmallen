@@ -22,8 +22,12 @@ impl GraphEmbedder for FirstOrderLINE {
         "First-order LINE".to_string()
     }
 
-    fn get_number_of_epochs(&self) -> usize {
+    fn get_number_of_steps(&self) -> usize {
         self.model.get_number_of_epochs()
+    }
+
+    fn requires_random_initialization(&self) -> bool {
+        true
     }
 
     fn is_verbose(&self) -> bool {

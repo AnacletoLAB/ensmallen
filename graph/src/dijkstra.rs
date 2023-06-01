@@ -581,7 +581,6 @@ impl ShortestPathsDjkstra {
     pub fn get_total_distance(&self) -> f32 {
         self.total_distance
     }
-
     pub fn get_log_total_distance(&self) -> f32 {
         self.log_total_distance
     }

@@ -14,6 +14,7 @@ pub(crate) fn parse_types<TypeT: ToFromUsize>(
     minimum_type_id: Option<TypeT>,
     has_types: bool,
     type_list_is_correct: Option<bool>,
+    name: String
 ) -> Result<Option<Vocabulary<TypeT>>> {
     let numeric_type_ids = numeric_type_ids.unwrap_or(false);
     let type_list_is_correct = type_list_is_correct.unwrap_or(false);
@@ -50,7 +51,7 @@ pub(crate) fn parse_types<TypeT: ToFromUsize>(
                 let (line_number, type_name) = line.unwrap();
                 (*types.value.get())[line_number] = type_name;
             });
-            Ok(Some(Vocabulary::from_reverse_map(types.value.into_inner())?))
+            Ok(Some(Vocabulary::from_reverse_map(types.value.into_inner(), name)?))
         }
         // If the types (either node types or edge types) are not numeric,
         // we collect them.
@@ -58,6 +59,7 @@ pub(crate) fn parse_types<TypeT: ToFromUsize>(
             let types_vocabulary = Vocabulary::from_reverse_map(
                 nti.map(|line| line.map(|(_, type_name)| type_name))
                     .collect::<Result<Vec<String>>>()?,
+                    name
             )?;
             if let Some(types_number) = types_number{
                 if TypeT::to_usize(types_number) != types_vocabulary.len(){
@@ -140,10 +142,10 @@ pub(crate) fn parse_types<TypeT: ToFromUsize>(
                 ));
             }
 
-            Ok(Some(Vocabulary::from_range(minimum_node_id..TypeT::from_usize(TypeT::to_usize(max)+1))))
+            Ok(Some(Vocabulary::from_range(minimum_node_id..TypeT::from_usize(TypeT::to_usize(max)+1), name)))
         }
         (None, Some(ntn), true, None, _) => {
-            Ok(Some(Vocabulary::from_range(TypeT::from_usize(0)..ntn)))
+            Ok(Some(Vocabulary::from_range(TypeT::from_usize(0)..ntn, name)))
         }
         (None, Some(ntn), true, Some(min_val), _) => {
             Ok(Some(Vocabulary::from_range(min_val..(
@@ -152,14 +154,14 @@ pub(crate) fn parse_types<TypeT: ToFromUsize>(
                         "Error while building a numeric vocabulary, you are trying to build a range",
                         " with minimum {} and max {} + {} but the max overflows the current type.",
                     ), min_val, ntn, min_val))?
-            ))))
+            ), name)))
         }
         (None, None, true, _, _) => {
             let min = minimum_type_id.unwrap_or(TypeT::from_usize(0));
-            Ok(Some(Vocabulary::from_range(min..min)))
+            Ok(Some(Vocabulary::from_range(min..min, name)))
         }
-        (None, Some(ntn), false, None, _) => Ok(Some(Vocabulary::with_capacity(TypeT::to_usize(ntn), true))),
-        (None, None, false, None, _) => Ok(Some(Vocabulary::new(true))),
+        (None, Some(ntn), false, None, _) => Ok(Some(Vocabulary::with_capacity(TypeT::to_usize(ntn), true, name))),
+        (None, None, false, None, _) => Ok(Some(Vocabulary::new(true, name))),
         all_others => unreachable!(
             "All other cases must be explictily handled. Specifically, this case was composed of: {:?}.",
             all_others

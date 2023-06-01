@@ -456,7 +456,7 @@ pub(crate) fn parse_string_edges(
         (false, false, true) => EdgeNodeNamesParser::to_numeric_checked,
     };
 
-    let edge_types_vocabulary = edge_types_vocabulary.unwrap_or(Vocabulary::new(true));
+    let edge_types_vocabulary = edge_types_vocabulary.unwrap_or(Vocabulary::new(true, "Edge types".to_string()));
 
     // Here we handle the collection of the iterator
     // in a way to collect only non-None values and hence avoid

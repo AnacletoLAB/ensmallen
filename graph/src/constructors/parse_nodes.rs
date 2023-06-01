@@ -60,7 +60,7 @@ pub(crate) fn parse_nodes(
         (true, _, false, true) => NodeTypeParser::to_numeric,
     };
     
-    let node_types_vocabulary = node_types_vocabulary.unwrap_or(Vocabulary::new(true));
+    let node_types_vocabulary = node_types_vocabulary.unwrap_or(Vocabulary::new(true, "Node types".to_string()));
 
     let mut node_type_parser = NodeTypeParser::new(node_types_vocabulary);
     let nodes_iterator: Option<
@@ -119,7 +119,7 @@ pub(crate) fn parse_nodes(
             }
 
             Ok::<_, String>((
-                Vocabulary::from_reverse_map(node_names)?,
+                Vocabulary::from_reverse_map(node_names, "Nodes".to_string())?,
                 node_types_ids,
                 Some(node_type_vocabulary),
             ))
@@ -167,7 +167,7 @@ pub(crate) fn parse_nodes(
             }
 
             Ok::<_, String>((
-                Vocabulary::from_reverse_map(node_names)?,
+                Vocabulary::from_reverse_map(node_names, "Nodes".to_string())?,
                 node_types_ids,
                 Some(node_type_vocabulary),
             ))
@@ -253,12 +253,12 @@ pub(crate) fn parse_nodes(
             }
 
             Ok((
-                Vocabulary::from_range(min.min(minimum_node_id)..(max + 1)),
+                Vocabulary::from_range(min.min(minimum_node_id)..(max + 1), "Nodes".to_string()),
                 None,
                 Some(node_type_vocabulary),
             ))
         }
-        (None, Some(ntn), true, None, _) => Ok((Vocabulary::from_range(0..ntn), None, None)),
+        (None, Some(ntn), true, None, _) => Ok((Vocabulary::from_range(0..ntn, "Node types".to_string()), None, None)),
         (None, Some(ntn), true, Some(min_val), _) => {
             let max = match min_val.checked_add(ntn){
                 Some(max) => Ok(max),
@@ -271,16 +271,16 @@ pub(crate) fn parse_nodes(
                     min_val, ntn
                 ))
             }?;
-            Ok((Vocabulary::from_range(min_val..max), None, None))
+            Ok((Vocabulary::from_range(min_val..max, "Node types".to_string()), None, None))
         }
         (None, None, true, _, _) => {
             let min = minimum_node_id.unwrap_or(0);
-            Ok((Vocabulary::from_range(min..min), None, None))
+            Ok((Vocabulary::from_range(min..min, "Node types".to_string()), None, None))
         }
         (None, Some(ntn), false, None, _) => {
-            Ok((Vocabulary::with_capacity(ntn as usize, true), None, None))
+            Ok((Vocabulary::with_capacity(ntn as usize, true, "Node types".to_string()), None, None))
         }
-        (None, None, false, None, _) => Ok((Vocabulary::new(true), None, None)),
+        (None, None, false, None, _) => Ok((Vocabulary::new(true, "Node types".to_string()), None, None)),
         // TODO! improve error
         _ => unreachable!("All other cases must be explicitly handled."),
     }?;

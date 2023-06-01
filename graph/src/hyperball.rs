@@ -59,17 +59,14 @@ impl Graph {
     /// # Returns
     /// A vector containing the computed centrality scores for each node in the graph.
     ///
-    fn hyperball<const PRECISION: usize, const BITS: usize>(
+    fn hyperball<PRECISION: Precision<BITS>, const BITS: usize, F: Default + Copy + Send + Sync>(
         &self,
-        counters_ops: fn(&mut f32, f32, f32, usize),
-    ) -> Result<Vec<f32>>
-    where
-        [(); ceil(1 << PRECISION, 32 / BITS)]:,
-        [(); 1 << PRECISION]:,
+        counters_ops: fn(&mut F, f32, f32, usize),
+    ) -> Result<Vec<F>>
     {
         // Create a mutable vector called centralities to store the centrality values for each node.
         // The size of the vector is set to the number of nodes in the graph using the get_number_of_nodes() method of self.
-        let mut centralities = vec![0.0; self.get_number_of_nodes() as usize];
+        let mut centralities = vec![F::default(); self.get_number_of_nodes() as usize];
         // Create a SyncUnsafeCell to share centralities between threads.
         let shared_centralities = SyncUnsafeCell::new(&mut centralities);
 
@@ -269,39 +266,52 @@ impl Graph {
     /// # Returns
     /// A `Result<Vec<f32>>` containing a vector with the approximated closeness centrality for each
     /// node in the graph. If the provided precision is not supported, an error message is returned.
-    fn dispatch_hyperball(
+    fn dispatch_hyperball<F: Default + Copy + Send + Sync>(
         &self,
         precision: Option<u8>,
         bits: Option<u8>,
-        counters_ops: fn(&mut f32, f32, f32, usize),
-    ) -> Result<Vec<f32>> {
+        counters_ops: fn(&mut F, f32, f32, usize),
+    ) -> Result<Vec<F>> {
         Ok(match (precision.unwrap_or(6), bits.unwrap_or(6)) {
-            (4, 5) => self.hyperball::<4, 5>(counters_ops)?,
-            (5, 5) => self.hyperball::<5, 5>(counters_ops)?,
-            (6, 5) => self.hyperball::<6, 5>(counters_ops)?,
-            (7, 5) => self.hyperball::<7, 5>(counters_ops)?,
-            (8, 5) => self.hyperball::<8, 5>(counters_ops)?,
-            (9, 5) => self.hyperball::<9, 5>(counters_ops)?,
-            (10, 5) => self.hyperball::<10, 5>(counters_ops)?,
-            (11, 5) => self.hyperball::<11, 5>(counters_ops)?,
-            (12, 5) => self.hyperball::<12, 5>(counters_ops)?,
-            (13, 5) => self.hyperball::<13, 5>(counters_ops)?,
-            (14, 5) => self.hyperball::<14, 5>(counters_ops)?,
-            (15, 5) => self.hyperball::<15, 5>(counters_ops)?,
-            (16, 5) => self.hyperball::<16, 5>(counters_ops)?,
-            (4, 6) => self.hyperball::<4, 6>(counters_ops)?,
-            (5, 6) => self.hyperball::<5, 6>(counters_ops)?,
-            (6, 6) => self.hyperball::<6, 6>(counters_ops)?,
-            (7, 6) => self.hyperball::<7, 6>(counters_ops)?,
-            (8, 6) => self.hyperball::<8, 6>(counters_ops)?,
-            (9, 6) => self.hyperball::<9, 6>(counters_ops)?,
-            (10, 6) => self.hyperball::<10, 6>(counters_ops)?,
-            (11, 6) => self.hyperball::<11, 6>(counters_ops)?,
-            (12, 6) => self.hyperball::<12, 6>(counters_ops)?,
-            (13, 6) => self.hyperball::<13, 6>(counters_ops)?,
-            (14, 6) => self.hyperball::<14, 6>(counters_ops)?,
-            (15, 6) => self.hyperball::<15, 6>(counters_ops)?,
-            (16, 6) => self.hyperball::<16, 6>(counters_ops)?,
+            (4, 4) => self.hyperball::<Precision4, 4, F>(counters_ops)?,
+            (5, 4) => self.hyperball::<Precision5, 4, F>(counters_ops)?,
+            (6, 4) => self.hyperball::<Precision6, 4, F>(counters_ops)?,
+            (7, 4) => self.hyperball::<Precision7, 4, F>(counters_ops)?,
+            (8, 4) => self.hyperball::<Precision8, 4, F>(counters_ops)?,
+            (9, 4) => self.hyperball::<Precision9, 4, F>(counters_ops)?,
+            (10, 4) => self.hyperball::<Precision10, 4, F>(counters_ops)?,
+            (11, 4) => self.hyperball::<Precision11, 4, F>(counters_ops)?,
+            (12, 4) => self.hyperball::<Precision12, 4, F>(counters_ops)?,
+            (13, 4) => self.hyperball::<Precision13, 4, F>(counters_ops)?,
+            (14, 4) => self.hyperball::<Precision14, 4, F>(counters_ops)?,
+            (15, 4) => self.hyperball::<Precision15, 4, F>(counters_ops)?,
+            (16, 4) => self.hyperball::<Precision16, 4, F>(counters_ops)?,
+            (4, 5) => self.hyperball::<Precision4, 5, F>(counters_ops)?,
+            (5, 5) => self.hyperball::<Precision5, 5, F>(counters_ops)?,
+            (6, 5) => self.hyperball::<Precision6, 5, F>(counters_ops)?,
+            (7, 5) => self.hyperball::<Precision7, 5, F>(counters_ops)?,
+            (8, 5) => self.hyperball::<Precision8, 5, F>(counters_ops)?,
+            (9, 5) => self.hyperball::<Precision9, 5, F>(counters_ops)?,
+            (10, 5) => self.hyperball::<Precision10, 5, F>(counters_ops)?,
+            (11, 5) => self.hyperball::<Precision11, 5, F>(counters_ops)?,
+            (12, 5) => self.hyperball::<Precision12, 5, F>(counters_ops)?,
+            (13, 5) => self.hyperball::<Precision13, 5, F>(counters_ops)?,
+            (14, 5) => self.hyperball::<Precision14, 5, F>(counters_ops)?,
+            (15, 5) => self.hyperball::<Precision15, 5, F>(counters_ops)?,
+            (16, 5) => self.hyperball::<Precision16, 5, F>(counters_ops)?,
+            (4, 6) => self.hyperball::<Precision4, 6, F>(counters_ops)?,
+            (5, 6) => self.hyperball::<Precision5, 6, F>(counters_ops)?,
+            (6, 6) => self.hyperball::<Precision6, 6, F>(counters_ops)?,
+            (7, 6) => self.hyperball::<Precision7, 6, F>(counters_ops)?,
+            (8, 6) => self.hyperball::<Precision8, 6, F>(counters_ops)?,
+            (9, 6) => self.hyperball::<Precision9, 6, F>(counters_ops)?,
+            (10, 6) => self.hyperball::<Precision10, 6, F>(counters_ops)?,
+            (11, 6) => self.hyperball::<Precision11, 6, F>(counters_ops)?,
+            (12, 6) => self.hyperball::<Precision12, 6, F>(counters_ops)?,
+            (13, 6) => self.hyperball::<Precision13, 6, F>(counters_ops)?,
+            (14, 6) => self.hyperball::<Precision14, 6, F>(counters_ops)?,
+            (15, 6) => self.hyperball::<Precision15, 6, F>(counters_ops)?,
+            (16, 6) => self.hyperball::<Precision16, 6, F>(counters_ops)?,
             _ => {
                 return Err(format!(
                     concat!(
@@ -322,7 +332,7 @@ impl Graph {
     ///
     /// # Arguments
     /// * `precision`: Option<u8> - The number of bits to use to represent the HyperLogLog registers. By default 6.
-    /// * `bits`: Option<u8> - The number of bits to use for the HyperLogLog counters. It must be either 5 or 6, and by default 6.
+    /// * `bits`: Option<u8> - The number of bits to use for the HyperLogLog counters. It must be either 4, 5 or 6, and by default 6.
     ///
     /// # Returns
     /// A vector of f32 values containing the approximated total distances for each node.
@@ -361,7 +371,7 @@ impl Graph {
     ///
     /// # Arguments
     /// * `precision`: Option<u8> - The number of bits to use to represent the HyperLogLog registers. By default 6.
-    /// * `bits`: Option<u8> - The number of bits to use for the HyperLogLog counters. It must be either 5 or 6, and by default 6.
+    /// * `bits`: Option<u8> - The number of bits to use for the HyperLogLog counters. It must be either 4, 5 or 6, and by default 6.
     ///
     /// # Returns
     /// A vector of f32 values containing the approximated closeness centrality for each node.
@@ -405,7 +415,7 @@ impl Graph {
     ///
     /// # Arguments
     /// * `precision`: Option<u8> - The number of bits to use to represent the HyperLogLog registers. By default 6.
-    /// * `bits`: Option<u8> - The number of bits to use for the HyperLogLog counters. It must be either 5 or 6, and by default 6.
+    /// * `bits`: Option<u8> - The number of bits to use for the HyperLogLog counters. It must be either 4, 5 or 6, and by default 6.
     ///
     /// # Returns
     /// A vector of f32 values containing the approximated harmonic centrality for each node.
@@ -422,5 +432,117 @@ impl Graph {
                 *centrality += (iteration_number as f32).recip() * (current_count - previous_count);
             },
         )
+    }
+
+    /// Returns an approximation of the graph diameter.
+    ///
+    /// # Arguments
+    /// * `precision`: Option<u8> - The number of bits to use to represent the HyperLogLog registers. By default 6.
+    /// * `bits`: Option<u8> - The number of bits to use for the HyperLogLog counters. It must be either 4, 5 or 6, and by default 6.
+    /// * `dtype`: Option<&str> - The data type to use for the HyperLogLog counters. It must be either "u8", "u16", "u32" or "u64" and by default "u16".
+    ///
+    /// # Raises
+    /// * If the data type is not supported.
+    /// * If the combination of precision and bits is not supported.
+    ///
+    /// # Implementation details
+    /// This approach supports both directed and undirected graphs. It is based on the HyperBall
+    /// algorithm, which makes use of the HyperLogLog algorithm to estimate the number of
+    /// distinct nodes at a given distance from a given node. The algorithm is iterative and
+    /// requires a number of iterations equal to the diameter of the graph. At each iteration,
+    /// the algorithm computes the number of distinct nodes at a given distance from each node
+    /// in the graph. The algorithm terminates when the number of distinct nodes at a given
+    /// distance from each node is equal to the number of distinct nodes at the previous
+    /// distance from each node. The diameter of the graph is then equal to the number of
+    /// iterations required for the algorithm to terminate.
+    ///
+    /// # Returns
+    pub fn get_approximated_diameter(
+        &self,
+        precision: Option<u8>,
+        bits: Option<u8>,
+        dtype: Option<&str>,
+    ) -> Result<usize> {
+        let (approximated_diameter, maximal_value): (usize, usize) = match dtype.unwrap_or("u16") {
+            "u8" => (
+                self.dispatch_hyperball(
+                    precision,
+                    bits,
+                    |diameter_candidate: &mut u8, _current_count, _previous_count, iteration| {
+                        *diameter_candidate = iteration as u8;
+                    },
+                )?
+                .into_par_iter()
+                .max()
+                .unwrap_or(0) as usize,
+                u8::MAX as usize,
+            ),
+            "u16" => (
+                self.dispatch_hyperball(
+                    precision,
+                    bits,
+                    |diameter_candidate: &mut u16, _current_count, _previous_count, iteration| {
+                        *diameter_candidate = iteration as u16;
+                    },
+                )?
+                .into_par_iter()
+                .max()
+                .unwrap_or(0) as usize,
+                u16::MAX as usize,
+            ),
+            "u32" => (
+                self.dispatch_hyperball(
+                    precision,
+                    bits,
+                    |diameter_candidate: &mut u32, _current_count, _previous_count, iteration| {
+                        *diameter_candidate = iteration as u32;
+                    },
+                )?
+                .into_par_iter()
+                .max()
+                .unwrap_or(0) as usize,
+                u32::MAX as usize,
+            ),
+            "u64" => (
+                self.dispatch_hyperball(
+                    precision,
+                    bits,
+                    |diameter_candidate: &mut u64, _current_count, _previous_count, iteration| {
+                        *diameter_candidate = iteration as u64;
+                    },
+                )?
+                .into_par_iter()
+                .max()
+                .unwrap_or(0) as usize,
+                u64::MAX as usize,
+            ),
+            _ => {
+                return Err(format!(
+                "The provided dtype '{}' is not supported. Please use one of the following: u8, u16, u32, u64.",
+                dtype.unwrap_or("u16")
+            ));
+            }
+        };
+
+        // We check whether the approximated diameter results equal to the
+        // maximal value of the provided dtype. If so, we cannot be sure whether
+        // the obtained value is correct or simply reaches saturation of the
+        // current dtype. In this case, we return a proper error message that
+        // warns the user about the error and that they may want to rerun the
+        // algorithm with a larger dtype.
+
+        if approximated_diameter == maximal_value {
+            return Err(format!(
+                concat!(
+                    "The obtained approximated diameter is equal to the ",
+                    "maximal value of the provided dtype '{}'. ",
+                    "This may indicate that the obtained value is incorrect. ",
+                    "Please rerun the algorithm with a larger dtype.",
+                ),
+                dtype.unwrap_or("u16")
+            ));
+        }
+
+        Ok(approximated_diameter)
     }
 }

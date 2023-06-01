@@ -23,8 +23,12 @@ impl GraphEmbedder for SecondOrderLINE {
         "Second-order LINE".to_string()
     }
 
-    fn get_number_of_epochs(&self) -> usize {
+    fn get_number_of_steps(&self) -> usize {
         self.model.get_number_of_epochs()
+    }
+
+    fn requires_random_initialization(&self) -> bool {
+        true
     }
 
     fn get_dtype(&self) -> String {
@@ -73,7 +77,7 @@ impl GraphEmbedder for SecondOrderLINE {
         let pb = self.get_loading_bar();
 
         // We start to loop over the required amount of epochs.
-        for _ in (0..self.get_number_of_epochs()).progress_with(pb) {
+        for _ in (0..self.get_number_of_steps()).progress_with(pb) {
             // We update the random state used to generate the random walks
             // and the negative samples.
             random_state = splitmix64(random_state);

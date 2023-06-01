@@ -51,6 +51,7 @@ where
                     let mut array1d_references = Vec::new();
                     let mut array2d_references = Vec::new();
                     let mut array3d_references = Vec::new();
+                    let mut array4d_references = Vec::new();
                     let mut embedding_slices = Vec::new();
 
                     for (embedding, shape) in embeddings.iter().zip(embedding_shapes.into_iter()) {
@@ -68,6 +69,11 @@ where
                             MatrixShape::ThreeDimensional(_, _, _) => {
                                 let embedding_reference = embedding.cast_as::<PyArray3<$dtype>>(gil.python())?;
                                 array3d_references.push(embedding_reference);
+                                embedding_slices.push(unsafe { embedding_reference.as_slice_mut()? });
+                            }
+                            MatrixShape::FourDimensional(_, _, _, _) => {
+                                let embedding_reference = embedding.cast_as::<PyArray4<$dtype>>(gil.python())?;
+                                array4d_references.push(embedding_reference);
                                 embedding_slices.push(unsafe { embedding_reference.as_slice_mut()? });
                             }
                         }

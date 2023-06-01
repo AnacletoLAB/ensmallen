@@ -246,6 +246,7 @@ pub fn build_graph_from_strings<S: Into<String>>(
         minimum_node_type_id,
         has_node_types,
         node_types_list_is_correct,
+        "Node types".to_string()
     )?;
 
     let nodes_iterator_was_provided = nodes_iterator.is_some();
@@ -281,6 +282,7 @@ pub fn build_graph_from_strings<S: Into<String>>(
         minimum_edge_type_id,
         has_edge_types,
         edge_types_list_is_correct,
+        "Edge types".to_string()
     )?;
 
     let (nodes, edges, edge_types, weights, has_selfloops) = parse_string_edges(

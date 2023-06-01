@@ -308,9 +308,23 @@ class RetrievedGraph:
         --------------------------------
         Dictionary with the metadata.
         """
-        return compress_json.load(
+        metadata = compress_json.load(
             self.get_preprocessed_graph_metadata_path()
         )
+
+        # We have update the metadata format since last version,
+        # so we add this normalization step to ensure that the
+        # possible old metadata are still compatible.
+        if "node_types_number" in metadata:
+            metadata["number_of_node_types"] = metadata["node_types_number"]
+        if "nodes_number" in metadata:
+            metadata["number_of_nodes"] = metadata["nodes_number"]
+        if "edge_types_number" in metadata:
+            metadata["number_of_edge_types"] = metadata["edge_types_number"]
+        if "edges_number" in metadata:
+            metadata["number_of_edges"] = metadata["edges_number"]
+
+        return metadata
 
     def get_graph_arguments(self) -> Dict:
         """Return the dictionary of arguments of the Graph."""

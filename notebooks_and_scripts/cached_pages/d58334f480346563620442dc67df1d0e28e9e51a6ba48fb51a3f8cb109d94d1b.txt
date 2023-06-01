@@ -259,11 +259,6 @@
   </nav>
 
 
-  
-  
-  <div class="alert alert-info">
-    <div class="container">Celebrating our 10th anniversary! Send us your birthday greeting <a href="/10years" target="_blank" rel="noopener noreferrer">here</a>. 🎉</div>
-  </div>
 </header>
 <div class="container record-detail">
   <div class="row">
@@ -1819,7 +1814,7 @@ Open Access
   <div id="accordion">
     <!-- Banner --><div class="row">
       <div class="col-sm-6">
-        <span class="stats-data">2,837</span>
+        <span class="stats-data">2,898</span>
       </div>
       <div class="col-sm-6">
         <span class="stats-data">10,680</span>
@@ -1849,7 +1844,7 @@ Open Access
           <th>All versions</th>
           <th>This version</th>
         </tr><tr>
-          <td>Views <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="Total views." data-original-title="Total views."></i></td><td>2,837</td><td>2,838</td>
+          <td>Views <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="Total views." data-original-title="Total views."></i></td><td>2,898</td><td>2,899</td>
         </tr>
         <tr>
           <td>Downloads <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="Total downloads." data-original-title="Total downloads."></i></td><td>10,680</td><td>10,680</td>
@@ -1858,7 +1853,7 @@ Open Access
           <td>Data volume <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="Total download volume." data-original-title="Total download volume."></i></td><td>6.7 TB</td><td>6.7 TB</td>
         </tr>
         <tr>
-          <td>Unique views <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="Views in one hour user-sessions are counted only once." data-original-title="Views in one hour user-sessions are counted only once."></i></td><td>2,517</td><td>2,518</td>
+          <td>Unique views <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="Views in one hour user-sessions are counted only once." data-original-title="Views in one hour user-sessions are counted only once."></i></td><td>2,576</td><td>2,577</td>
         </tr>
         <tr>
           <td>Unique downloads <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="Downloads in one hour user-sessions are counted only once." data-original-title="Downloads in one hour user-sessions are counted only once."></i></td><td>1,570</td><td>1,570</td>

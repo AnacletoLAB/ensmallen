@@ -1,12 +1,10 @@
 #![feature(adt_const_params)]
-#![feature(generic_const_exprs)]
-use numpy::{PyArray, PyArray1, PyArray2, PyArray3};
+use numpy::{PyArray, PyArray1, PyArray2, PyArray3, PyArray4};
 use pyo3::exceptions::{PyAttributeError, PyTypeError, PyValueError};
 use pyo3::prelude::*;
 use pyo3::types::PyDict;
 use std::collections::{HashMap, HashSet};
 
-#[allow(unused_imports)]
 use graph::{EdgeT, EdgeTypeT, NodeT, NodeTypeT, Result, WeightT};
 use tags::*;
 
@@ -28,6 +26,9 @@ pub(crate) use node_label_prediction_perceptron::*;
 
 mod hyper_jaccard;
 pub(crate) use hyper_jaccard::*;
+
+mod hyper_sketching;
+pub(crate) use hyper_sketching::*;
 
 mod distance_node_label_prediction_perceptron;
 pub(crate) use distance_node_label_prediction_perceptron::*;
@@ -54,6 +55,7 @@ mod edge_file_writer;
 mod hash;
 mod node_file_writer;
 mod preprocessing;
+mod primitive_f16;
 mod subgraphs;
 mod utilities;
 pub(crate) use crate::preprocessing::*;
@@ -100,6 +102,7 @@ pub fn register_models(_py: Python, _m: &PyModule) -> PyResult<()> {
     _m.add_class::<DistanceNodeLabelPredictionPerceptron>()?;
     _m.add_class::<DAGResnik>()?;
     _m.add_class::<HyperJaccard>()?;
+    _m.add_class::<HyperSketching>()?;
     Ok(())
 }
 
