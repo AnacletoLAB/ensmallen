@@ -5131,7 +5131,7 @@ impl HyperSketching {
     }
 
     #[pyo3(
-        text_signature = "($self, graph, overlap_path, left_difference_path, right_difference_path)"
+        text_signature = "($self, graph, support, overlap_path, left_difference_path, right_difference_path)"
     )]
     /// Return numpy array with sketches for each edge in the graph.
     ///
@@ -5139,6 +5139,8 @@ impl HyperSketching {
     /// ----------------
     /// graph: Graph
     ///     The graph whose sketches are to be computed.
+    /// support: Graph
+    ///     The graph whose topology is to be employed.
     /// overlap_path: Optional[str]
     ///     The path where to store the estimated overlaps.
     /// left_difference_path: Optional[str]
@@ -5154,12 +5156,13 @@ impl HyperSketching {
     fn get_sketching_for_all_edges(
         &self,
         graph: &Graph,
+        support: &Graph,
         overlap_path: Option<String>,
         left_difference_path: Option<String>,
         right_difference_path: Option<String>,
     ) -> PyResult<(Py<PyAny>, Py<PyAny>, Py<PyAny>)> {
         pe!(self.inner.get_sketching_from_iterator(
-            &graph.inner,
+            &support.inner,
             overlap_path.as_deref(),
             left_difference_path.as_deref(),
             right_difference_path.as_deref(),
