@@ -20,9 +20,17 @@
 #![deny(unconditional_recursion)]
 #![type_length_limit = "3764086"]
 #![feature(exclusive_range_pattern)]
+
 use std::sync::Arc;
 
-pub mod data_structures;
+mod types;
+pub use types::*;
+
+pub(crate) use csr::*;
+
+pub mod utils;
+use tags::*;
+pub use utils::*;
 
 mod vocabulary;
 pub use self::vocabulary::*;
@@ -64,14 +72,11 @@ pub use self::coo::*;
 mod constructors;
 pub use constructors::*;
 
-pub mod utils;
-pub use self::utils::*;
-
 mod bitmaps;
 mod centrality;
-mod hyperball;
 mod dense;
 mod distributions;
+mod edge_isomorphism;
 mod edge_list_utils;
 mod edge_lists;
 mod edge_metrics;
@@ -81,9 +86,9 @@ mod graph;
 mod hash;
 mod hashes;
 mod holdouts;
+mod hyperball;
 mod isomorphism;
 pub mod isomorphism_iter;
-mod edge_isomorphism;
 mod iter_queries;
 mod iters;
 mod modifiers;
@@ -103,7 +108,6 @@ mod to_conversions;
 mod transitivity;
 mod trees;
 mod triad_census;
-mod types;
 mod url_utilities;
 mod vertex_cover;
 mod walks;
@@ -131,11 +135,10 @@ pub use self::operators::*;
 pub use self::setters::*;
 pub use self::tarjan::*;
 pub use self::trees::*;
-pub use self::types::*;
 pub use self::walks::*;
 pub use self::walks_parameters::*;
-pub use isomorphism::*;
 pub use edge_isomorphism::*;
+pub use isomorphism::*;
 pub use preprocessing::*;
 pub use tfidf::*;
 
@@ -143,8 +146,6 @@ mod dijkstra_queue;
 pub use dijkstra_queue::*;
 
 use vec_rand::splitmix64;
-
-use tags::*;
 
 mod cache;
 use cache::*;

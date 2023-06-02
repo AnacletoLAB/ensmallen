@@ -141,7 +141,7 @@ impl<'a> Producer for EdgesIter<'a> {
     }
 
     fn split_at(mut self, split_idx: usize) -> (Self, Self) {
-        let split_idx = split_idx as EdgeT;
+        let split_idx = self.start_edge_id + split_idx as EdgeT;
         // check that we are in a reasonable state
         debug_assert!(split_idx < self.end_edge_id);
         debug_assert!(self.start_edge_id < self.end_edge_id);

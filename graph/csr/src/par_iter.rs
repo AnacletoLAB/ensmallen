@@ -37,8 +37,13 @@ impl CSR {
     pub fn par_iter_directed_edge_node_ids(
         &self,
     ) -> impl IndexedParallelIterator<Item = (EdgeT, NodeT, NodeT)> + '_ {
-        //EdgesParIter::new(self)
-        self.par_iter_directed_edge_node_ids_naive()
+        EdgesParIter::new(self)
+    }
+
+    pub fn par_iter_undirected_edge_node_ids(
+        &self,
+    ) -> impl IndexedParallelIterator<Item = (NodeT, NodeT)> + '_ {
+        EdgesUndirectedParIter::new(self)
     }
 }
 
@@ -85,5 +90,53 @@ impl<'a> IndexedParallelIterator for EdgesParIter<'a> {
     {
         // Drain every item, and then the vector only needs to free its buffer.
         callback.callback(EdgesIter::new(self.father))
+    }
+}
+
+pub(crate) struct EdgesUndirectedParIter<'a> {
+    pub(crate) iter: EdgesIterUndirected<'a>,
+}
+
+impl<'a> EdgesUndirectedParIter<'a> {
+    pub(crate) fn new(father: &'a CSR) -> Self {
+        EdgesUndirectedParIter {
+            iter: EdgesIterUndirected::new(father),
+        }
+    }
+}
+
+impl<'a> ParallelIterator for EdgesUndirectedParIter<'a> {
+    type Item = (NodeT, NodeT);
+
+    fn drive_unindexed<C>(self, consumer: C) -> C::Result
+    where
+        C: rayon::iter::plumbing::UnindexedConsumer<Self::Item>,
+    {
+        bridge_unindexed(self.iter, consumer)
+    }
+
+    fn opt_len(&self) -> Option<usize> {
+        None
+    }
+}
+
+impl<'a> IndexedParallelIterator for EdgesUndirectedParIter<'a> {
+    fn drive<C>(self, consumer: C) -> C::Result
+    where
+        C: Consumer<Self::Item>,
+    {
+        bridge(self, consumer)
+    }
+
+    fn len(&self) -> usize {
+        self.iter.len() as usize
+    }
+
+    fn with_producer<CB>(self, callback: CB) -> CB::Output
+    where
+        CB: ProducerCallback<Self::Item>,
+    {
+        // Drain every item, and then the vector only needs to free its buffer.
+        callback.callback(self.iter)
     }
 }

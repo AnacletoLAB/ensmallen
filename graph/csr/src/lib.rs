@@ -1,12 +1,19 @@
-use crate::types::*;
+#![feature(core_intrinsics)]
 use std::hash::{Hash, Hasher};
 use std::intrinsics::unlikely;
 
+type EdgeT = u64;
+type NodeT = u32;
+type Result<T> = std::result::Result<T, String>;
+
 mod builder;
-pub(crate) use builder::*;
+pub use builder::*;
 
 mod iter;
 pub use iter::*;
+
+mod edges_iter_undirected;
+pub use edges_iter_undirected::*;
 
 mod edges_iter;
 pub use edges_iter::*;
@@ -15,8 +22,8 @@ mod par_iter;
 
 #[derive(Debug)]
 pub struct CSR {
-    pub(crate) outbounds_degrees: Vec<EdgeT>,
-    pub(crate) destinations: Vec<NodeT>,
+    pub outbounds_degrees: Vec<EdgeT>,
+    pub destinations: Vec<NodeT>,
     /// Vector of sources to execute fast link prediction sequences if required.
     sources: Option<Vec<NodeT>>,
 }
