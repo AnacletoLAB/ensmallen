@@ -491,38 +491,39 @@ impl<PRECISION: Precision<BITS> + DeserializeOwned, const BITS: usize, const HOP
     {
         // Check that the model has been trained
         self.must_be_trained()?;
+        let factor = if self.concatenate_features { 2 } else { 1 };
 
         // Check that the provided slices have the expected size
-        if overlaps.len() != edge_iterator.len() as usize * HOPS * HOPS {
+        if overlaps.len() != edge_iterator.len() as usize * factor * HOPS * HOPS {
             return Err(format!(
                 concat!(
                     "The provided `overlaps` slice has a length of `{}` ",
                     "but it should have a length of `{}`."
                 ),
                 overlaps.len(),
-                edge_iterator.len() as usize * HOPS * HOPS
+                edge_iterator.len() as usize * factor * HOPS * HOPS
             ));
         }
 
-        if src_differences.len() != edge_iterator.len() as usize * HOPS {
+        if src_differences.len() != edge_iterator.len() as usize * factor * HOPS {
             return Err(format!(
                 concat!(
                     "The provided `src_differences` slice has a length of `{}` ",
                     "but it should have a length of `{}`."
                 ),
                 src_differences.len(),
-                edge_iterator.len() as usize * HOPS
+                edge_iterator.len() as usize * factor *  HOPS
             ));
         }
 
-        if dst_differences.len() != edge_iterator.len() as usize * HOPS {
+        if dst_differences.len() != edge_iterator.len() as usize * factor * HOPS {
             return Err(format!(
                 concat!(
                     "The provided `dst_differences` slice has a length of `{}` ",
                     "but it should have a length of `{}`."
                 ),
                 dst_differences.len(),
-                edge_iterator.len() as usize * HOPS
+                edge_iterator.len() as usize * factor * HOPS
             ));
         }
 
@@ -544,7 +545,6 @@ impl<PRECISION: Precision<BITS> + DeserializeOwned, const BITS: usize, const HOP
         // compiler to not assume that the slices are overlapping.
 
         let offset = if self.concatenate_features { 1 } else { 0 };
-        let factor = if self.concatenate_features { 2 } else { 1 };
 
         edge_iterator
             .zip(overlaps.par_chunks_exact_mut(HOPS * HOPS * factor))
