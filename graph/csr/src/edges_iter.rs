@@ -143,7 +143,16 @@ impl<'a> Producer for EdgesIter<'a> {
     fn split_at(mut self, split_idx: usize) -> (Self, Self) {
         let split_idx = self.start_edge_id + split_idx as EdgeT;
         // check that we are in a reasonable state
-        debug_assert!(split_idx < self.end_edge_id);
+        debug_assert!(
+            split_idx < self.end_edge_id,
+            concat!(
+                "We expected the split index to be smaller than the end index, ",
+                "but it was not. start_idx: {} end_idx: {} split_idx: {}"
+            ),
+            self.start_edge_id,
+            self.end_edge_id,
+            split_idx
+        );
         debug_assert!(self.start_edge_id < self.end_edge_id);
         debug_assert!(
             split_idx < self.father.get_number_of_directed_edges(),

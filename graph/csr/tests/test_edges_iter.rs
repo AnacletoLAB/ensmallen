@@ -1,8 +1,8 @@
 use csr::*;
 use rayon::prelude::*;
 
-const NODES: u32 = 5;
-const EDGES: &[(u32, u32)] = &[(0, 0), (0, 1), (1, 2), (1, 3), (2, 3), (3, 4)];
+const NODES: u32 = 10;
+const EDGES: &[(u32, u32)] = &[(0, 0), (0, 1), (1, 2), (1, 3), (2, 3), (3, 4), (4, 4)];
 
 #[test]
 fn test_edges_iter() -> Result<(), String> {
