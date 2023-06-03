@@ -53,6 +53,13 @@ fuzz_target!(|data: FuzzCase| {
             csrb.set(i as u64, src as u32, dst as u32);
         });
 
+    let undirected_edges = edges
+        .iter()
+        .copied()
+        .map(|(src, dst)| (src as u32, dst as u32))
+        .filter(|(src, dst)| src >= dst)
+        .collect::<Vec<_>>();
+
     let csr = csrb.build();
 
     // Check that the number of nodes is correct
@@ -61,7 +68,12 @@ fuzz_target!(|data: FuzzCase| {
     // Check that the number of edges is correct
     assert_eq!(csr.get_number_of_directed_edges(), edges.len() as u64);
 
-    assert_eq!(edges, EdgesIterUndirected::new(&csr).collect::<Vec<_>>());
+    assert_eq!(
+        undirected_edges,
+        EdgesIterUndirected::new(&csr)
+            .map(|(src, dst)| (src as _, dst as _))
+            .collect::<Vec<_>>()
+    );
 
     // Check that the directed edges are correct
     assert_eq!(
@@ -78,11 +90,6 @@ fuzz_target!(|data: FuzzCase| {
     // Check that the undirected edges are correct
     assert_eq!(
         csr.par_iter_undirected_edge_node_ids().collect::<Vec<_>>(),
-        edges
-            .iter()
-            .copied()
-            .map(|(src, dst)| (src as u32, dst as u32))
-            .filter(|(src, dst)| src >= dst)
-            .collect::<Vec<_>>()
+        undirected_edges,
     );
 });
