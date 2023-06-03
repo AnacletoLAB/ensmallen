@@ -540,7 +540,7 @@ impl Graph {
                 source_node_ids
                     [sample_f32_from_cumsum(&source_node_degrees_cumsum, random_state) as usize]
             } else {
-                self.get_random_outbounds_scale_free_node(random_state)
+                support.get_random_outbounds_scale_free_node(random_state)
             }
         };
 
@@ -554,7 +554,7 @@ impl Graph {
                     random_state,
                 ) as usize]
             } else {
-                self.get_random_inbounds_scale_free_node(random_state)
+                support.get_random_inbounds_scale_free_node(random_state)
             }
         };
 
