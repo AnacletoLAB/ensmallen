@@ -946,6 +946,14 @@ impl Graph {
         self.edges.par_iter_directed_edge_node_ids()
     }
 
+    #[inline(always)]
+    /// Return iterator on the undirected edges of the graph.
+    pub fn par_iter_undirected_edge_node_ids(
+        &self,
+    ) -> impl IndexedParallelIterator<Item = (NodeT, NodeT)> + '_ {
+        self.edges.par_iter_undirected_edge_node_ids()
+    }
+
     /// Return iterator on the edges of the graph with the string name.
     ///
     /// # Arguments
