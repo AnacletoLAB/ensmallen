@@ -56,13 +56,12 @@ fuzz_target!(|data: FuzzCase| {
     let csr = csrb.build();
 
     // Check that the number of nodes is correct
-    assert_eq!(
-        csr.get_number_of_nodes(),
-        number_of_nodes as u32
-    );
+    assert_eq!(csr.get_number_of_nodes(), number_of_nodes as u32);
 
     // Check that the number of edges is correct
     assert_eq!(csr.get_number_of_directed_edges(), edges.len() as u64);
+
+    assert_eq!(edges, EdgesIterUndirected::new(&csr).collect::<Vec<_>>());
 
     // Check that the directed edges are correct
     assert_eq!(
@@ -78,8 +77,7 @@ fuzz_target!(|data: FuzzCase| {
 
     // Check that the undirected edges are correct
     assert_eq!(
-        csr.par_iter_undirected_edge_node_ids()
-            .collect::<Vec<_>>(),
+        csr.par_iter_undirected_edge_node_ids().collect::<Vec<_>>(),
         edges
             .iter()
             .copied()

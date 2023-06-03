@@ -146,10 +146,10 @@ impl<'a> UnindexedProducer for EdgesIterUndirected<'a> {
             return (self, None);
         }
 
-        let split_idx = (self.start_edge_id + self.end_edge_id) / 2;
+        let split_idx = self.len() / 2;
 
-        let (high, low) = self.split_at(split_idx as _);
-        (high, Some(low))
+        let (low, high) = self.split_at(split_idx as _);
+        (low, Some(high))
     }
 
     fn fold_with<F>(self, folder: F) -> F
@@ -169,12 +169,10 @@ impl<'a> Producer for EdgesIterUndirected<'a> {
     }
 
     fn split_at(mut self, split_idx: usize) -> (Self, Self) {
-        debug_assert!(self.start_edge_id < self.end_edge_id);
         // debug_assert!(split_idx < self.len(), "{} {}", split_idx, self.len());
-        //let split_idx = self.start_edge_id + split_idx as EdgeT;
-        // TODO! CHECK THE FOLLOWING!!
-        let split_idx = split_idx as EdgeT; //self.start_edge_id + split_idx as EdgeT;
-                                            // check that we are in a reasonable state
+        let split_idx = self.start_edge_id + split_idx as EdgeT;
+        //let split_idx = split_idx as EdgeT; //self.start_edge_id + split_idx as EdgeT;
+        // check that we are in a reasonable state
         debug_assert!(
             split_idx < self.end_edge_id,
             "{} {} < {}",

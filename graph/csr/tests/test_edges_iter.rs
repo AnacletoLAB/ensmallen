@@ -17,6 +17,13 @@ fn test_edges_iter() -> Result<(), String> {
     assert_eq!(csr.get_number_of_nodes(), NODES);
     assert_eq!(csr.get_number_of_directed_edges(), EDGES.len() as u64);
 
+    assert_eq!(
+        EDGES,
+        EdgesIter::new(&csr)
+            .map(|(_, src, dst)| (src, dst))
+            .collect::<Vec<_>>()
+    );
+
     unsafe {
         for (i, (src, _)) in EDGES.iter().enumerate() {
             assert_eq!(csr.get_unchecked_source_node_id_from_edge_id(i as _), *src);
