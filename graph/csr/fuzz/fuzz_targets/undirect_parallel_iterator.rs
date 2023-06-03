@@ -84,7 +84,7 @@ fuzz_target!(|data: FuzzCase| {
             .iter()
             .copied()
             .map(|(src, dst)| (src as u32, dst as u32))
-            .filter(|(src, dst)| src <= dst)
+            .filter(|(src, dst)| src >= dst)
             .collect::<Vec<_>>()
     );
 });

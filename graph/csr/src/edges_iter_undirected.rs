@@ -1,5 +1,6 @@
 use super::*;
-use rayon::iter::plumbing::*;
+use rayon::prelude::*;
+use rayon::{iter::plumbing::*, prelude::IntoParallelRefMutIterator};
 use std::sync::Arc;
 
 #[derive(Clone)]
@@ -21,19 +22,18 @@ impl<'a> EdgesIterUndirected<'a> {
     pub fn new(father: &'a CSR) -> Self {
         // compute the outdegrees of the graph after removing the undirected edges
         // keeping only the lower triangular matrix
-        let mut outbounds = (0..father.get_number_of_nodes() + 1)
-            .map(|mut node_id| unsafe {
-                if node_id == 0 {
-                    return 0;
+        let mut outbounds = vec![0; (father.get_number_of_nodes() + 1) as usize];
+        outbounds[1..]
+            .par_iter_mut()
+            .enumerate()
+            .for_each(|(node_id, outdegree)| {
+                *outdegree = unsafe {
+                    father.get_unchecked_neighbours_node_ids_from_src_node_id(node_id as NodeT)
                 }
-                node_id -= 1;
-                father
-                    .get_unchecked_neighbours_node_ids_from_src_node_id(node_id)
-                    .iter()
-                    .filter(|neighbour_id| **neighbour_id <= node_id)
-                    .count() as u64
-            })
-            .collect::<Vec<u64>>();
+                .iter()
+                .filter(|neighbour_id| **neighbour_id <= node_id as NodeT)
+                .count() as u64
+            });
 
         // comptue the cumulative sum
         let mut prefix_sum = 0;
@@ -170,9 +170,11 @@ impl<'a> Producer for EdgesIterUndirected<'a> {
 
     fn split_at(mut self, split_idx: usize) -> (Self, Self) {
         debug_assert!(self.start_edge_id < self.end_edge_id);
-        debug_assert!(split_idx < self.len(), "{} {}", split_idx, self.len());
-        let split_idx = self.start_edge_id + split_idx as EdgeT;
-        // check that we are in a reasonable state
+        // debug_assert!(split_idx < self.len(), "{} {}", split_idx, self.len());
+        //let split_idx = self.start_edge_id + split_idx as EdgeT;
+        // TODO! CHECK THE FOLLOWING!!
+        let split_idx = split_idx as EdgeT; //self.start_edge_id + split_idx as EdgeT;
+                                            // check that we are in a reasonable state
         debug_assert!(
             split_idx < self.end_edge_id,
             "{} {} < {}",
