@@ -26,9 +26,9 @@ fuzz_target!(|data: FuzzCase| {
         .copied()
         .map(|(src, dst)| src.max(dst))
         .max()
-        .unwrap_or(0)
+        .unwrap_or(0) as usize
         + 1)
-    .max(data.number_of_nodes);
+    .max(data.number_of_nodes as usize);
 
     // Build the CSR
     let csrb = ConcurrentCSRBuilder::new(edges.len() as u64, number_of_nodes as u32);
