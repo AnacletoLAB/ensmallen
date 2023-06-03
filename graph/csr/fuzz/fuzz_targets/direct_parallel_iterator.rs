@@ -8,10 +8,10 @@ use rayon::prelude::*;
 
 #[derive(Arbitrary, Debug)]
 struct FuzzCase {
-    // We use u16 so it cannot create
+    // We use u8 so it cannot create
     // an object that is too big
-    edges: Vec<(u16, u16)>,
-    number_of_nodes: u16,
+    edges: Vec<(u8, u8)>,
+    number_of_nodes: u8,
 }
 
 fuzz_target!(|data: FuzzCase| {
