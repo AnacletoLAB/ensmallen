@@ -33,3 +33,15 @@ impl MemoryMappedReadOnlyImpl for MemoryMappedReadOnly {}
 
 impl MemoryMappedImpl for MemoryMapped {}
 impl MemoryMappedReadOnlyImpl for MemoryMapped {}
+
+use std::ffi::CString;
+#[cfg(not(target_os = "windows"))]
+fn errno() -> String {
+    unsafe {
+        let errno = *libc::__errno_location();
+        let err = libc::strerror(errno);
+        CString::from_raw(err)
+    }
+    .into_string()
+    .unwrap()
+}
