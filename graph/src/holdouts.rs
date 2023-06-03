@@ -367,7 +367,9 @@ impl Graph {
                 let mut node_degrees = source_node_ids
                     .par_iter()
                     .copied()
-                    .map(|src| unsafe { self.get_unchecked_node_degree_from_node_id(src) as f32 })
+                    .map(|src| unsafe {
+                        support.get_unchecked_node_degree_from_node_id(src) as f32
+                    })
                     .collect::<Vec<f32>>();
                 cumsum_f32(&mut node_degrees);
                 Some(node_degrees)
@@ -440,7 +442,8 @@ impl Graph {
                                 vec![0.0; destination_node_ids.len()],
                             )
                         };
-                    self.par_iter_directed_edge_node_ids()
+                    support
+                        .par_iter_directed_edge_node_ids()
                         .for_each(|(_, _, dst)| {
                             if let Ok(index) = destination_node_ids.binary_search(&dst) {
                                 inbound_node_degrees[index]
@@ -453,7 +456,7 @@ impl Graph {
                         .par_iter()
                         .copied()
                         .map(|dst| unsafe {
-                            self.get_unchecked_node_degree_from_node_id(dst) as f32
+                            support.get_unchecked_node_degree_from_node_id(dst) as f32
                         })
                         .collect::<Vec<f32>>()
                 };
@@ -609,8 +612,12 @@ impl Graph {
             let sampled_edge_ids = (0..number_of_negative_samples)
                 .into_par_iter()
                 .filter_map(|i| {
-                    let src = sample_source_node(src_random_state.wrapping_add(src_random_state + i as u64));
-                    let dst = sample_destination_node(dst_random_state.wrapping_add(dst_random_state + i as u64));
+                    let src = sample_source_node(
+                        src_random_state.wrapping_add(src_random_state + i as u64),
+                    );
+                    let dst = sample_destination_node(
+                        dst_random_state.wrapping_add(dst_random_state + i as u64),
+                    );
                     sampling_filter_map(src, dst)
                 })
                 .collect::<Vec<(NodeT, NodeT)>>();
