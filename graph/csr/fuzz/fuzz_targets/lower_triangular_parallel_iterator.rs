@@ -17,6 +17,18 @@ struct FuzzCase {
 fuzz_target!(|data: FuzzCase| {
     let mut edges = data.edges.clone();
 
+    let mut new_edges = edges.clone();
+
+    for (src, dst) in edges.iter() {
+        // If the edge list does not contain this
+        // edge, add it to the new edge list
+        if !edges.contains(&(*dst, *src)) {
+            new_edges.push((*dst, *src));
+        }
+    }
+
+    edges = new_edges;
+
     // sort edges
     edges.sort_unstable();
 
@@ -41,6 +53,13 @@ fuzz_target!(|data: FuzzCase| {
             csrb.set(i as u64, src as u32, dst as u32);
         });
 
+    let lower_triangular_edges = edges
+        .iter()
+        .copied()
+        .map(|(src, dst)| (src as u32, dst as u32))
+        .filter(|(src, dst)| src >= dst)
+        .collect::<Vec<_>>();
+
     let csr = csrb.build();
 
     // Check that the number of nodes is correct
@@ -50,19 +69,13 @@ fuzz_target!(|data: FuzzCase| {
     assert_eq!(csr.get_number_of_directed_edges(), edges.len() as u64);
 
     assert_eq!(
-        edges,
-        EdgesIter::new(&csr)
-            .map(|(_, src, dst)| (src as u8, dst as u8))
+        lower_triangular_edges,
+        EdgesIterLowerTriangular::new(&csr)
+            .map(|(src, dst)| (src as _, dst as _))
             .collect::<Vec<_>>()
     );
-    assert_eq!(
-        edges.iter().rev().copied().collect::<Vec<_>>(),
-        EdgesIter::new(&csr)
-            .rev()
-            .map(|(_, src, dst)| (src as u8, dst as u8))
-            .collect::<Vec<_>>()
-    );
-    // Check that the edges are correct
+
+    // Check that the directed edges are correct
     assert_eq!(
         csr.par_iter_directed_edge_node_ids()
             .map(|(_, src, dst)| (src, dst))
@@ -72,5 +85,12 @@ fuzz_target!(|data: FuzzCase| {
             .copied()
             .map(|(src, dst)| (src as u32, dst as u32))
             .collect::<Vec<_>>()
+    );
+
+    // Check that the lower_triangular edges are correct
+    assert_eq!(
+        csr.par_iter_lower_triangular_edge_node_ids()
+            .collect::<Vec<_>>(),
+        lower_triangular_edges,
     );
 });

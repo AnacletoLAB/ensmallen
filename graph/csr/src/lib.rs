@@ -12,8 +12,11 @@ pub use builder::*;
 mod iter;
 pub use iter::*;
 
-mod edges_iter_undirected;
-pub use edges_iter_undirected::*;
+mod edges_iter_upper_triangular;
+pub use edges_iter_upper_triangular::*;
+
+mod edges_iter_lower_triangular;
+pub use edges_iter_lower_triangular::*;
 
 mod edges_iter;
 pub use edges_iter::*;

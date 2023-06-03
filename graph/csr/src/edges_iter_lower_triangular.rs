@@ -4,7 +4,7 @@ use rayon::{iter::plumbing::*, prelude::IntoParallelRefMutIterator};
 use std::sync::Arc;
 
 #[derive(Clone)]
-pub struct EdgesIterUndirected<'a> {
+pub struct EdgesIterLowerTriangular<'a> {
     father: &'a CSR,
 
     outbounds: Arc<Vec<u64>>,
@@ -18,9 +18,9 @@ pub struct EdgesIterUndirected<'a> {
     end_edge_id: EdgeT,
 }
 
-impl<'a> EdgesIterUndirected<'a> {
+impl<'a> EdgesIterLowerTriangular<'a> {
     pub fn new(father: &'a CSR) -> Self {
-        // compute the outdegrees of the graph after removing the undirected edges
+        // compute the outdegrees of the graph after removing the LowerTriangular edges
         // keeping only the lower triangular matrix
         let mut outbounds = vec![0; (father.get_number_of_nodes() + 1) as usize];
         outbounds[1..]
@@ -43,7 +43,7 @@ impl<'a> EdgesIterUndirected<'a> {
             prefix_sum += tmp;
         });
 
-        EdgesIterUndirected {
+        EdgesIterLowerTriangular {
             father,
             outbounds: Arc::new(outbounds),
 
@@ -60,9 +60,9 @@ impl<'a> EdgesIterUndirected<'a> {
     }
 }
 
-impl<'a> core::iter::ExactSizeIterator for EdgesIterUndirected<'a> {}
+impl<'a> core::iter::ExactSizeIterator for EdgesIterLowerTriangular<'a> {}
 
-impl<'a> core::iter::Iterator for EdgesIterUndirected<'a> {
+impl<'a> core::iter::Iterator for EdgesIterLowerTriangular<'a> {
     type Item = (NodeT, NodeT);
 
     fn next(&mut self) -> Option<Self::Item> {
@@ -82,7 +82,7 @@ impl<'a> core::iter::Iterator for EdgesIterUndirected<'a> {
 
             break;
         }
-        // convert undirected edge id to directed edge id
+        // convert LowerTriangular edge id to directed edge id
         let src_start = self.outbounds[self.start_src as usize];
         let edge_id =
             self.start_edge_id - src_start + self.father.outbounds_degrees[self.start_src as usize];
@@ -103,7 +103,7 @@ impl<'a> core::iter::Iterator for EdgesIterUndirected<'a> {
     }
 }
 
-impl<'a> core::iter::DoubleEndedIterator for EdgesIterUndirected<'a> {
+impl<'a> core::iter::DoubleEndedIterator for EdgesIterLowerTriangular<'a> {
     fn next_back(&mut self) -> Option<Self::Item> {
         // end condition
         if self.start_edge_id >= self.end_edge_id {
@@ -125,7 +125,7 @@ impl<'a> core::iter::DoubleEndedIterator for EdgesIterUndirected<'a> {
             break;
         }
 
-        // convert undirected edge id to directed edge id
+        // convert LowerTriangular edge id to directed edge id
         let edge_id =
             self.end_edge_id - src_start + self.father.outbounds_degrees[self.end_src as usize];
 
@@ -136,7 +136,7 @@ impl<'a> core::iter::DoubleEndedIterator for EdgesIterUndirected<'a> {
     }
 }
 
-impl<'a> UnindexedProducer for EdgesIterUndirected<'a> {
+impl<'a> UnindexedProducer for EdgesIterLowerTriangular<'a> {
     type Item = (NodeT, NodeT);
 
     /// Split the file in two approximately balanced streams
@@ -160,7 +160,7 @@ impl<'a> UnindexedProducer for EdgesIterUndirected<'a> {
     }
 }
 
-impl<'a> Producer for EdgesIterUndirected<'a> {
+impl<'a> Producer for EdgesIterLowerTriangular<'a> {
     type Item = (NodeT, NodeT);
     type IntoIter = Self;
 

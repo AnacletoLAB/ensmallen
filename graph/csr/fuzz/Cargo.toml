@@ -29,7 +29,13 @@ test = false
 doc = false
 
 [[bin]]
-name = "undirect_parallel_iterator"
-path = "fuzz_targets/undirect_parallel_iterator.rs"
+name = "lower_triangular_parallel_iterator"
+path = "fuzz_targets/lower_triangular_parallel_iterator.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "upper_triangular_parallel_iterator"
+path = "fuzz_targets/upper_triangular_parallel_iterator.rs"
 test = false
 doc = false

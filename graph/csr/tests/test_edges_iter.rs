@@ -23,6 +23,13 @@ fn test_edges_iter() -> Result<(), String> {
             .map(|(_, src, dst)| (src, dst))
             .collect::<Vec<_>>()
     );
+    assert_eq!(
+        EDGES.iter().rev().copied().collect::<Vec<_>>(),
+        EdgesIter::new(&csr)
+            .rev()
+            .map(|(_, src, dst)| (src, dst))
+            .collect::<Vec<_>>()
+    );
 
     unsafe {
         for (i, (src, _)) in EDGES.iter().enumerate() {

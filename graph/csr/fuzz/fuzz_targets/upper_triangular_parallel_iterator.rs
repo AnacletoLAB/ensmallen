@@ -53,11 +53,11 @@ fuzz_target!(|data: FuzzCase| {
             csrb.set(i as u64, src as u32, dst as u32);
         });
 
-    let undirected_edges = edges
+    let upper_triangular_edges = edges
         .iter()
         .copied()
         .map(|(src, dst)| (src as u32, dst as u32))
-        .filter(|(src, dst)| src >= dst)
+        .filter(|(src, dst)| src <= dst)
         .collect::<Vec<_>>();
 
     let csr = csrb.build();
@@ -69,8 +69,8 @@ fuzz_target!(|data: FuzzCase| {
     assert_eq!(csr.get_number_of_directed_edges(), edges.len() as u64);
 
     assert_eq!(
-        undirected_edges,
-        EdgesIterUndirected::new(&csr)
+        upper_triangular_edges,
+        EdgesIterUpperTriangular::new(&csr)
             .map(|(src, dst)| (src as _, dst as _))
             .collect::<Vec<_>>()
     );
@@ -87,9 +87,10 @@ fuzz_target!(|data: FuzzCase| {
             .collect::<Vec<_>>()
     );
 
-    // Check that the undirected edges are correct
+    // Check that the upper_triangular edges are correct
     assert_eq!(
-        csr.par_iter_undirected_edge_node_ids().collect::<Vec<_>>(),
-        undirected_edges,
+        csr.par_iter_upper_triangular_edge_node_ids()
+            .collect::<Vec<_>>(),
+        upper_triangular_edges,
     );
 });
