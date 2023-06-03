@@ -1,6 +1,7 @@
 use crate::constructors::build_graph_from_integers;
 
 use super::*;
+use atomic_float::AtomicF32;
 use counter::Counter;
 use indicatif::ParallelProgressIterator;
 use rand::rngs::SmallRng;
@@ -14,7 +15,6 @@ use roaring::{RoaringBitmap, RoaringTreemap};
 use std::collections::HashSet;
 use vec_rand::cumsum_f32::cumsum_f32;
 use vec_rand::sample_f32_from_cumsum;
-use vec_rand::sample_uniform;
 use vec_rand::xorshift::xorshift as rand_u64;
 
 /// Returns roaring tree map with the validation indices.
@@ -320,36 +320,148 @@ impl Graph {
         let only_from_same_component = only_from_same_component.unwrap_or(false);
         let mut random_state = random_state.unwrap_or(0xbadf00d);
 
-        let source_node_ids = self
+        let number_of_filtered_source_nodes = self
             .par_iter_node_ids()
             .filter(|node_id| source_node_filter(*node_id))
-            .collect::<Vec<NodeT>>();
+            .count();
 
-        let source_node_degrees_cumsum = if use_scale_free_distribution {
-            let mut node_degrees = source_node_ids
-                .par_iter()
-                .copied()
-                .map(|src| unsafe { self.get_unchecked_node_degree_from_node_id(src) as f32 })
-                .collect::<Vec<f32>>();
-            cumsum_f32(&mut node_degrees);
-            Some(node_degrees)
+        // If more than 80% of the source node ids is filtered out, we need to collect
+        // them into a vector in order to make it feaseable to sample from them without
+        // risking functional deadlocks. The limit is set at 80/100 as it seems a sensible
+        // tradeoff: it means that without collecting the source node ids, we will expect
+        // to have to discard 4 out of 5 sampled nodes.
+        //
+        // The reason for not collecting the filtered nodes in all cases, is that in the
+        // case of a graph with a large number of nodes, collecting them may be
+        // computationally expensive to prohibitive - I am looking at you WikiData.
+        let source_node_ids: Option<Vec<u32>> = if number_of_filtered_source_nodes
+            < (self.get_number_of_nodes() as f64 * 0.2) as usize
+        {
+            Some(
+                self.par_iter_node_ids()
+                    .filter(|node_id| source_node_filter(*node_id))
+                    .collect::<Vec<NodeT>>(),
+            )
         } else {
             None
         };
 
-        let destination_node_ids = self
+        // Secondarily, we may have to sample the source node IDs using the scale free distribution
+        // of the OUTBOUND node ids. This parameter may be requested in order to sample negative
+        // edges that are more similar to the positive edges, and less trivial to predict. For
+        // instance, suppose your graph is a star: in this case, if the negative edges were not
+        // sampled using the scale free distribution but a uniform, it would be unlikely for any
+        // of them to start from the center node. On the other hand, if the negative edges are
+        // sampled using the scale free distribution, it is more likely that some of them will
+        // start from the center node, making much less trivial to predict whether an edge is
+        // real or not.
+        //
+        // When we are not applying any filter, and thefore the number_of_filtered_source_nodes
+        // is equal to the number of nodes, we can rely on the existing outbound node degrees
+        // from the CSR data structure and we do not need to re-allocate again the source node
+        // degrees, which would be a waste of memory.
+        let source_node_degrees_cumsum = if use_scale_free_distribution {
+            // We use a vector of f32 instead of EdgeT (u64) so to use half of the memory,
+            // and we do not need to be exact.
+            if let Some(source_node_ids) = source_node_ids.as_ref() {
+                let mut node_degrees = source_node_ids
+                    .par_iter()
+                    .copied()
+                    .map(|src| unsafe { self.get_unchecked_node_degree_from_node_id(src) as f32 })
+                    .collect::<Vec<f32>>();
+                cumsum_f32(&mut node_degrees);
+                Some(node_degrees)
+            } else {
+                None
+            }
+        } else {
+            None
+        };
+
+        // If more than 80% of the destination node ids is filtered out, we need to collect
+        // them into a vector in order to make it feaseable to sample from them without
+        // risking functional deadlocks. The limit is set at 80/100 as it seems a sensible
+        // tradeoff: it means that without collecting the destination node ids, we will expect
+        // to have to discard 4 out of 5 sampled nodes.
+
+        let number_of_filtered_destination_nodes = self
             .par_iter_node_ids()
             .filter(|node_id| destination_node_filter(*node_id))
-            .collect::<Vec<NodeT>>();
+            .count();
+
+        let destination_node_ids: Option<Vec<u32>> = if number_of_filtered_destination_nodes
+            < (self.get_number_of_nodes() as f64 * 0.2) as usize
+        {
+            Some(
+                self.par_iter_node_ids()
+                    .filter(|node_id| destination_node_filter(*node_id))
+                    .collect::<Vec<NodeT>>(),
+            )
+        } else {
+            None
+        };
+
+        // Secondarily, we may have to sample the destination node IDs using the scale free distribution
+        // of the INBOUND node ids. This parameter may be requested in order to sample negative
+        // edges that are more similar to the positive edges, and less trivial to predict. For
+        // instance, suppose your graph is a star: in this case, if the negative edges were not
+        // sampled using the scale free distribution but a uniform, it would be unlikely for any
+        // of them to end in the center node. On the other hand, if the negative edges are
+        // sampled using the scale free distribution, it is more likely that some of them will
+        // end in the center node, making much less trivial to predict whether an edge is
+        // real or not.
+
+        // Now, when we are sampling across ALL destination nodes, we can rely on the existing
+        // destinations vector from the CSR, as sampling uniformely an element from that vector
+        // is equal to sample a destination node using the scale free distribution of the
+        // inbound node degrees. However, when we are sampling only from a very reduced subset
+        // of destination nodes, we need to re-allocate the destination node degrees vector
+        // and use it to sample the destination nodes using the scale free distribution.
+
+        // The complexity here derives from the need to sample the destination nodes using the
+        // INBOUND node degree, which in directed graph is not trivial. While in an undirected
+        // graph OUTBOUND and INBOUND node degrees are the same, in a directed graph they are
+        // not. To compute the INBOUND node degrees of the destination nodes, we allocate a vector
+        // of AtomicF32, and we iterate over the edges in parallel. For each edge, we execute a
+        // binary search to find the destination node id in the destination node ids vector, and
+        // we increment the corresponding AtomicF32. Of course, all of this is solely necessary
+        // if the graph we are currently processing is directed.
+        // After this is done, we can transmute the AtomicF32 vector into a f32 vector, and
+        // execute the comulative sum on it.
 
         let destination_node_degrees_cumsum = if use_scale_free_distribution {
-            let mut node_degrees = destination_node_ids
-                .par_iter()
-                .copied()
-                .map(|src| unsafe { self.get_unchecked_node_degree_from_node_id(src) as f32 })
-                .collect::<Vec<f32>>();
-            cumsum_f32(&mut node_degrees);
-            Some(node_degrees)
+            // We use a vector of f32 instead of EdgeT (u64) so to use half of the memory,
+            // and we do not need to be exact.
+            if let Some(destination_node_ids) = destination_node_ids.as_ref() {
+                let mut inbound_node_degrees = if self.is_directed() {
+                    let inbound_node_degrees =
+                        unsafe {
+                            std::mem::transmute::<Vec<f32>, Vec<AtomicF32>>(
+                                vec![0.0; destination_node_ids.len()],
+                            )
+                        };
+                    self.par_iter_directed_edge_node_ids()
+                        .for_each(|(_, _, dst)| {
+                            if let Ok(index) = destination_node_ids.binary_search(&dst) {
+                                inbound_node_degrees[index]
+                                    .fetch_add(1.0, core::sync::atomic::Ordering::Relaxed);
+                            }
+                        });
+                    unsafe { std::mem::transmute::<Vec<AtomicF32>, Vec<f32>>(inbound_node_degrees) }
+                } else {
+                    destination_node_ids
+                        .par_iter()
+                        .copied()
+                        .map(|dst| unsafe {
+                            self.get_unchecked_node_degree_from_node_id(dst) as f32
+                        })
+                        .collect::<Vec<f32>>()
+                };
+                cumsum_f32(&mut inbound_node_degrees);
+                Some(inbound_node_degrees)
+            } else {
+                None
+            }
         } else {
             None
         };
@@ -417,6 +529,32 @@ impl Graph {
         let mut sampling_round: usize = 0;
         let mut last_size = 0;
 
+        let sample_source_node = |random_state: EdgeT| -> NodeT {
+            if let (Some(source_node_ids), Some(source_node_degrees_cumsum)) = (
+                source_node_ids.as_ref(),
+                source_node_degrees_cumsum.as_ref(),
+            ) {
+                source_node_ids
+                    [sample_f32_from_cumsum(&source_node_degrees_cumsum, random_state) as usize]
+            } else {
+                self.get_random_outbounds_scale_free_node(random_state)
+            }
+        };
+
+        let sample_destination_node = |random_state: EdgeT| -> NodeT {
+            if let (Some(destination_node_ids), Some(destination_node_degrees_cumsum)) = (
+                destination_node_ids.as_ref(),
+                destination_node_degrees_cumsum.as_ref(),
+            ) {
+                destination_node_ids[sample_f32_from_cumsum(
+                    &destination_node_degrees_cumsum,
+                    random_state,
+                ) as usize]
+            } else {
+                self.get_random_inbounds_scale_free_node(random_state)
+            }
+        };
+
         // randomly extract negative edges until we have the choosen number
         while negative_edges_hashset.len() < number_of_negative_samples as usize {
             // generate two random_states for reproducibility porpouses
@@ -433,6 +571,10 @@ impl Graph {
                 }
 
                 if !self.has_selfloops() && src == dst {
+                    return None;
+                }
+
+                if !source_node_filter(src) || !destination_node_filter(dst) {
                     return None;
                 }
 
@@ -464,49 +606,14 @@ impl Graph {
             };
 
             // generate the random edge-sources
-            let sampled_edge_ids = if let (
-                Some(source_node_degrees_cumsum),
-                Some(destination_node_degrees_cumsum),
-            ) = (
-                source_node_degrees_cumsum.as_ref(),
-                destination_node_degrees_cumsum.as_ref(),
-            ) {
-                (0..number_of_negative_samples)
-                    .into_par_iter()
-                    .map(|i| {
-                        (
-                            source_node_ids[sample_f32_from_cumsum(
-                                &source_node_degrees_cumsum,
-                                src_random_state.wrapping_add(i.wrapping_mul(src_random_state)),
-                            ) as usize
-                                % source_node_ids.len()],
-                            destination_node_ids[sample_f32_from_cumsum(
-                                &destination_node_degrees_cumsum,
-                                dst_random_state.wrapping_add(i.wrapping_mul(dst_random_state)),
-                            ) as usize
-                                % destination_node_ids.len()],
-                        )
-                    })
-                    .filter_map(|(src, dst)| sampling_filter_map(src, dst))
-                    .collect::<Vec<(NodeT, NodeT)>>()
-            } else {
-                (0..number_of_negative_samples)
-                    .into_par_iter()
-                    .map(|i| {
-                        (
-                            source_node_ids[sample_uniform(
-                                source_node_ids.len() as u64,
-                                src_random_state.wrapping_add(i.wrapping_mul(src_random_state)),
-                            ) as usize],
-                            destination_node_ids[sample_uniform(
-                                destination_node_ids.len() as u64,
-                                dst_random_state.wrapping_add(i.wrapping_mul(dst_random_state)),
-                            ) as usize],
-                        )
-                    })
-                    .filter_map(|(src, dst)| sampling_filter_map(src, dst))
-                    .collect::<Vec<(NodeT, NodeT)>>()
-            };
+            let sampled_edge_ids = (0..number_of_negative_samples)
+                .into_par_iter()
+                .filter_map(|i| {
+                    let src = sample_source_node(src_random_state.wrapping_add(src_random_state + i as u64));
+                    let dst = sample_destination_node(dst_random_state.wrapping_add(dst_random_state + i as u64));
+                    sampling_filter_map(src, dst)
+                })
+                .collect::<Vec<(NodeT, NodeT)>>();
 
             for edge_id in sampled_edge_ids.iter() {
                 if negative_edges_hashset.len() >= number_of_negative_samples as usize {
@@ -1044,7 +1151,8 @@ impl Graph {
         } else {
             (self.get_number_of_directed_edges() as f64 * (1.0 - train_size)) as EdgeT
         };
-        let train_number_of_edges = self.get_number_of_directed_edges() - validation_number_of_edges;
+        let train_number_of_edges =
+            self.get_number_of_directed_edges() - validation_number_of_edges;
 
         if tree.len() * edge_factor > train_number_of_edges as usize {
             return Err(format!(
