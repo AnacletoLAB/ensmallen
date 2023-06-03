@@ -27,3 +27,9 @@ name = "direct_parallel_iterator"
 path = "fuzz_targets/direct_parallel_iterator.rs"
 test = false
 doc = false
+
+[[bin]]
+name = "undirect_parallel_iterator"
+path = "fuzz_targets/undirect_parallel_iterator.rs"
+test = false
+doc = false

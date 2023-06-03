@@ -118,7 +118,11 @@ impl<'a> UnindexedProducer for EdgesIter<'a> {
             return (self, None);
         }
 
+        debug_assert!(self.start_edge_id < self.end_edge_id);
+
         let split_idx = (self.start_edge_id + self.end_edge_id) / 2;
+
+        debug_assert!(split_idx < self.end_edge_id);
 
         let (high, low) = self.split_at(split_idx as _);
         (high, Some(low))
@@ -141,7 +145,7 @@ impl<'a> Producer for EdgesIter<'a> {
     }
 
     fn split_at(mut self, split_idx: usize) -> (Self, Self) {
-        let split_idx = self.start_edge_id + split_idx as EdgeT;
+        let split_idx = split_idx as EdgeT ;// self.start_edge_id + split_idx as EdgeT;
         // check that we are in a reasonable state
         debug_assert!(
             split_idx < self.end_edge_id,
@@ -156,7 +160,10 @@ impl<'a> Producer for EdgesIter<'a> {
         debug_assert!(self.start_edge_id < self.end_edge_id);
         debug_assert!(
             split_idx < self.father.get_number_of_directed_edges(),
-            "start_idx: {} end_idx: {} split_idx: {} father len:{}",
+            concat!(
+                "We expected the split index to be smaller than the number of edges, ",
+                "but it was not. start_idx: {} end_idx: {} split_idx: {} number_of_edges: {}"
+            ),
             self.start_edge_id,
             self.end_edge_id,
             split_idx,
