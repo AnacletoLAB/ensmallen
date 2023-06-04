@@ -292,7 +292,7 @@ impl GraphConvolution {
                         }
 
                         // We compute the degree of the current node.
-                        let mut degree = F2::zero();
+                        let mut degree = F2::one();
 
                         // Next, we sum to this memory area the features of the neighbours.
                         unsafe {
