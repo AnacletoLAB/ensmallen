@@ -66,6 +66,9 @@ mod alpine;
 mod operators;
 pub(crate) use alpine::*;
 
+mod graph_convolution;
+pub use graph_convolution::*;
+
 mod weighted_spine;
 pub(crate) use weighted_spine::*;
 mod walks;
@@ -103,6 +106,7 @@ pub fn register_models(_py: Python, _m: &PyModule) -> PyResult<()> {
     _m.add_class::<DAGResnik>()?;
     _m.add_class::<HyperJaccard>()?;
     _m.add_class::<HyperSketching>()?;
+    _m.add_class::<GraphConvolution>()?;
     Ok(())
 }
 

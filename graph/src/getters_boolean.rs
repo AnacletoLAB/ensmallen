@@ -431,7 +431,10 @@ impl Graph {
     /// # Raises
     /// * If the graph does not have edge types.
     pub fn has_singleton_edge_types(&self) -> Result<bool> {
-        Ok(self.get_minimum_number_of_edge_types()? == 1)
+        Ok(
+            self.get_minimum_number_of_edge_types()? == 1 && self.is_directed() ||
+            self.get_minimum_number_of_edge_types()? == 2 && !self.is_directed()
+        )
     }
 
     /// Return whether the graph has any known edge type-related graph oddities.

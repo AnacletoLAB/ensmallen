@@ -314,7 +314,7 @@ impl Graph {
                     Option<Vec<NodeTypeT>>,
                     NodeT,
                     Option<Vec<NodeTypeT>>,
-                    Option<Vec<f32>>,
+                    Option<[f32; 4]>,
                     bool,
                 ),
             > + 'a,
@@ -477,7 +477,7 @@ impl Graph {
                     NodeT,
                     Option<Vec<NodeTypeT>>,
                     Option<EdgeTypeT>,
-                    Option<Vec<f32>>,
+                    Option<[f32; 4]>,
                 ),
             > + 'a,
     > {

@@ -125,31 +125,17 @@ impl TranslateType for Type {
                     format!("{{{})}}", result_call),
                 )
             }
-            x if x.cmp_str_without_modifiers("Option<&[_]>") => {
-                (
-                    format!("Option<Vec<{}>>", x[0][0].to_string()),
-                    format!("{}.as_ref().map(|x| x.as_slice())", call),
-                )
-            }
+            x if x.cmp_str_without_modifiers("Option<&[_]>") => (
+                format!("Option<Vec<{}>>", x[0][0].to_string()),
+                format!("{}.as_ref().map(|x| x.as_slice())", call),
+            ),
             x @ Type::SimpleType { name, generics, .. } => {
                 if name == "Vec" {
                     if self[0] == "& Primitive" {
-                        return (
-                            self.to_string(),
-                            format!(
-                                "{}",
-                                call,
-                            ),
-                        );
+                        return (self.to_string(), format!("{}", call,));
                     } else {
                         let (sub_type_str, sub_call) = self[0].to_python_bindings_arg("x");
-                        return (
-                            format!("Vec<{}>", sub_type_str),
-                            format!(
-                                "{}",
-                                call,
-                            ),
-                        );
+                        return (format!("Vec<{}>", sub_type_str), format!("{}", call,));
                     }
                 }
                 if name == "HashSet" {
@@ -164,22 +150,13 @@ impl TranslateType for Type {
                 }
                 if name == "Option" {
                     let (sub_type_str, sub_call) = self[0].to_python_bindings_arg("x");
-                    return (
-                        format!("Option<{}>", sub_type_str),
-                        format!("{}", call),
-                    );
+                    return (format!("Option<{}>", sub_type_str), format!("{}", call));
                 }
                 if name == "str" {
-                    return (
-                        "&str".to_string(), 
-                        call.to_string(),
-                    );
+                    return ("&str".to_string(), call.to_string());
                 }
                 if self == "Primitive" {
-                    return (
-                        self.to_string(),
-                        format!("{}.clone()", call),
-                    );
+                    return (self.to_string(), format!("{}.clone()", call));
                 }
 
                 let mut result = name.clone();
@@ -492,15 +469,16 @@ impl TranslateType for Type {
             }
 
             Type::SliceType(sub_type) => {
-                let (inner_body, inner_return_type) = sub_type.to_python_bindings_return_type_inner(
-                    attributes,
-                    "x".to_string(),
-                    this_struct,
-                    is_static,
-                    is_self_ref,
-                    is_self_mut,
-                    depth + 1,
-                );
+                let (inner_body, inner_return_type) = sub_type
+                    .to_python_bindings_return_type_inner(
+                        attributes,
+                        "x".to_string(),
+                        this_struct,
+                        is_static,
+                        is_self_ref,
+                        is_self_mut,
+                        depth + 1,
+                    );
                 (
                     format!(
                         "{}.into_iter().cloned().map(|x| {{{}}}).collect::<Vec<_>>()",
@@ -591,7 +569,9 @@ impl TranslateType for Type {
             }
 
             // handle 1d numpy arrays
-            x if x.cmp_without_modifiers(&Type::parse_lossy_str("Vec<Primitive>")) && !attributes.iter().any(|x| x == "no_numpy_binding") => {
+            x if x.cmp_without_modifiers(&Type::parse_lossy_str("Vec<Primitive>"))
+                && !attributes.iter().any(|x| x == "no_numpy_binding") =>
+            {
                 let inner_type = self[0].to_string();
 
                 if body.ends_with(".into()") {
@@ -615,7 +595,13 @@ impl TranslateType for Type {
             }
 
             // handle 2d numpy arrays
-            x if x.cmp_without_modifiers(&Type::parse_lossy_str("Vec<Vec<Primitive>>"))
+            x if (x.cmp_without_modifiers(&Type::parse_lossy_str("Vec<Vec<Primitive>>"))
+                || x.cmp_without_modifiers(&Type::parse_lossy_str("Vec<[Primitive; 1]>"))
+                || x.cmp_without_modifiers(&Type::parse_lossy_str("Vec<[Primitive; 2]>"))
+                || x.cmp_without_modifiers(&Type::parse_lossy_str("Vec<[Primitive; 3]>"))
+                || x.cmp_without_modifiers(&Type::parse_lossy_str("Vec<[Primitive; 4]>"))
+                || x.cmp_without_modifiers(&Type::parse_lossy_str("Vec<[Primitive; 5]>"))
+                || x.cmp_without_modifiers(&Type::parse_lossy_str("Vec<[Primitive; 6]>")))
                 && !attributes.iter().any(|x| x == "no_numpy_binding") =>
             {
                 let inner_type = self[0][0].to_string();
@@ -641,7 +627,7 @@ impl TranslateType for Type {
             }
 
             // handle other vec with maybe complex types
-            x if x.cmp_without_modifiers(&Type::parse_lossy_str("Vec<_>")) =>  {
+            x if x.cmp_without_modifiers(&Type::parse_lossy_str("Vec<_>")) => {
                 let inner_type = &x[0];
 
                 match inner_type {
@@ -687,8 +673,7 @@ impl TranslateType for Type {
                 }
                 let body = body.strip_suffix(".into()").unwrap_or(&body);
 
-
-               let (inner_body, inner_type) = self[0].to_python_bindings_return_type_inner(
+                let (inner_body, inner_type) = self[0].to_python_bindings_return_type_inner(
                     attributes,
                     "x".to_string(),
                     this_struct,
@@ -706,46 +691,41 @@ impl TranslateType for Type {
             }
 
             // we don't have special rules so we can just use the default case
-            x => {
-                match x {
-                    Type::SimpleType {
-                        name,
-                        modifiers,
-                        generics,
-                        traits,
-                    } => {
-                        if name == "str" {
-                            return (
-                                format!("{}.to_string()", body), 
-                                Some("String".to_string()),
-                            )
-                        }
-
-                        if modifiers.reference && name != "str" {
-                            let mut new_modifiers = modifiers.clone();
-                            new_modifiers.reference = false;
-
-                            Type::SimpleType {
-                                name: name.clone(),
-                                modifiers: new_modifiers,
-                                generics: generics.clone(),
-                                traits: traits.clone(),
-                            }
-                            .to_python_bindings_return_type_inner(
-                                attributes,
-                                format!("{{{}}}.clone()", body),
-                                this_struct,
-                                is_static,
-                                is_self_ref,
-                                is_self_mut,
-                                depth + 1,
-                            )
-                        } else {
-                            (format!("{}.into()", body), Some(self.to_string()))
-                        }
+            x => match x {
+                Type::SimpleType {
+                    name,
+                    modifiers,
+                    generics,
+                    traits,
+                } => {
+                    if name == "str" {
+                        return (format!("{}.to_string()", body), Some("String".to_string()));
                     }
-                    _ => (format!("{}.into()", body), Some(self.to_string())),
+
+                    if modifiers.reference && name != "str" {
+                        let mut new_modifiers = modifiers.clone();
+                        new_modifiers.reference = false;
+
+                        Type::SimpleType {
+                            name: name.clone(),
+                            modifiers: new_modifiers,
+                            generics: generics.clone(),
+                            traits: traits.clone(),
+                        }
+                        .to_python_bindings_return_type_inner(
+                            attributes,
+                            format!("{{{}}}.clone()", body),
+                            this_struct,
+                            is_static,
+                            is_self_ref,
+                            is_self_mut,
+                            depth + 1,
+                        )
+                    } else {
+                        (format!("{}.into()", body), Some(self.to_string()))
+                    }
                 }
+                _ => (format!("{}.into()", body), Some(self.to_string())),
             },
         };
 

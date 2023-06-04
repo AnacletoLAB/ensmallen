@@ -5178,7 +5178,7 @@ impl HyperSketching {
                 overlap_path.as_deref(),
                 left_difference_path.as_deref(),
                 right_difference_path.as_deref(),
-                graph.inner.par_iter_undirected_edge_node_ids()
+                graph.inner.par_iter_upper_triangular_edge_node_ids()
             ))
         }
     }

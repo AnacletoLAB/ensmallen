@@ -12,6 +12,7 @@ use rayon::iter::IntoParallelIterator;
 use rayon::iter::ParallelIterator;
 use rayon::prelude::IntoParallelRefIterator;
 use roaring::{RoaringBitmap, RoaringTreemap};
+use std::cell::SyncUnsafeCell;
 use std::collections::HashSet;
 use vec_rand::cumsum_f32::cumsum_f32;
 use vec_rand::sample_f32_from_cumsum;
@@ -1533,6 +1534,7 @@ impl Graph {
     /// ```
     ///
     /// # Raises
+    /// * If the graph is a multigraph.
     /// * If the graph does not have edge types.
     /// * If stratification is required but the graph has singleton edge types.
     pub fn get_edge_label_holdout_graphs(
@@ -1541,6 +1543,7 @@ impl Graph {
         use_stratification: Option<bool>,
         random_state: Option<EdgeT>,
     ) -> Result<(Graph, Graph)> {
+        self.must_not_be_multigraph()?;
         if self.get_number_of_known_edge_types()? < 2 {
             return Err("It is not possible to create a edge label holdout when the number of edges with known edge type is less than two.".to_string());
         }
@@ -1557,35 +1560,44 @@ impl Graph {
             .edge_types
             .as_ref()
             .as_ref()
-            .map(|nts| {
+            .map(|ets| {
                 if use_stratification {
                     // Initialize the vectors for each edge type
                     let mut edge_sets: Vec<Vec<EdgeT>> =
                         vec![Vec::new(); self.get_number_of_edge_types().unwrap() as usize];
                     // itering over the indices and adding each edge to the
                     // vector of the corresponding edge type.
-                    nts.ids.iter().enumerate().for_each(|(edge_id, edge_type)| {
-                        // if the edge has a edge_type
-                        if let Some(et) = edge_type {
-                            // Get the index of the correct edge type vector.
-                            edge_sets[*et as usize].push(edge_id as EdgeT);
-                        };
-                    });
+                    ets.ids
+                        .iter()
+                        .zip(self.iter_directed_edge_node_ids())
+                        .for_each(|(edge_type, (edge_id, src, dst))| {
+                            // If this is an undirected graph and the source is
+                            // greater than the destination, i.e. this is an edge
+                            // from the lower triangular matrix, we skip it so to
+                            // avoid leaking information from the test set to the
+                            // training set.
+                            if !self.is_directed() && src > dst {
+                                return;
+                            }
+                            // if the edge has a edge_type
+                            if let Some(et) = edge_type {
+                                // Get the index of the correct edge type vector.
+                                edge_sets[*et as usize].push(edge_id as EdgeT);
+                            };
+                        });
 
-                    edge_sets
+                    Ok::<Vec<_>, String>(edge_sets)
                 } else {
                     // just compute a vector with a single vector of the indices
-                    //  of the edges with edge
-                    vec![nts
-                        .ids
-                        .iter()
-                        .enumerate()
-                        .filter_map(|(edge_id, edge_type)| {
-                            edge_type.as_ref().map(|_| edge_id as EdgeT)
-                        })
-                        .collect()]
+                    // of the edges with edge types
+                    Ok(vec![if self.is_directed() {
+                        self.get_directed_edge_ids_with_known_edge_types()?
+                    } else {
+                        self.get_upper_triangular_edge_ids_with_known_edge_types()?
+                    }])
                 }
             })
+            .transpose()?
             .unwrap();
 
         // initialize the seed for a re-producible shuffle
@@ -1595,19 +1607,43 @@ impl Graph {
         let mut train_edge_types = vec![None; self.get_number_of_directed_edges() as usize];
         let mut test_edge_types = vec![None; self.get_number_of_directed_edges() as usize];
 
+        let train_edge_types_shared = SyncUnsafeCell::new(&mut train_edge_types);
+        let test_edge_types_shared = SyncUnsafeCell::new(&mut test_edge_types);
+
         for mut edge_set in edge_sets {
             // Shuffle in a reproducible way the edges of the current edge_type
             edge_set.shuffle(&mut rnd);
             // Compute how many of these edges belongs to the training set
             let (train_size, _) = self.get_holdouts_elements_number(train_size, edge_set.len())?;
+
+            let (train, test) = edge_set.split_at(train_size);
+
             // add the edges to the relative vectors
-            edge_set[..train_size].iter().for_each(|edge_id| {
-                train_edge_types[*edge_id as usize] =
-                    unsafe { self.get_unchecked_edge_type_id_from_edge_id(*edge_id) }
+            train.par_iter().for_each(|edge_id| unsafe {
+                (*train_edge_types_shared.get())[*edge_id as usize] =
+                    self.get_unchecked_edge_type_id_from_edge_id(*edge_id);
+                // If this is an undirected graph we also need to add the
+                // corresponding edge from the lower triangular matrix.
+                if !self.is_directed() {
+                    let (src, dst) = self.get_unchecked_node_ids_from_edge_id(*edge_id);
+                    let lower_triangular_edge_id =
+                        self.get_unchecked_edge_id_from_node_ids(dst, src);
+                    (*train_edge_types_shared.get())[lower_triangular_edge_id as usize] =
+                        self.get_unchecked_edge_type_id_from_edge_id(lower_triangular_edge_id);
+                }
             });
-            edge_set[train_size..].iter().for_each(|edge_id| {
-                test_edge_types[*edge_id as usize] =
-                    unsafe { self.get_unchecked_edge_type_id_from_edge_id(*edge_id) }
+            test.par_iter().for_each(|edge_id| unsafe {
+                (*test_edge_types_shared.get())[*edge_id as usize] =
+                    self.get_unchecked_edge_type_id_from_edge_id(*edge_id);
+                // If this is an undirected graph we also need to add the
+                // corresponding edge from the lower triangular matrix.
+                if !self.is_directed() {
+                    let (src, dst) = self.get_unchecked_node_ids_from_edge_id(*edge_id);
+                    let lower_triangular_edge_id =
+                        self.get_unchecked_edge_id_from_node_ids(dst, src);
+                    (*train_edge_types_shared.get())[lower_triangular_edge_id as usize] =
+                        self.get_unchecked_edge_type_id_from_edge_id(lower_triangular_edge_id);
+                }
             });
         }
 
@@ -2049,137 +2085,6 @@ impl Graph {
         Ok((train_graph, test_graph))
     }
 
-    /// Returns edge-label holdout for training ML algorithms on the graph edge labels.
-    /// This is commonly used for edge type prediction tasks.
-    ///
-    /// This method returns two graphs, the train and the test one.
-    /// The edges of the graph will be splitted in the train and test graphs according
-    /// to the `train_size` argument.
-    ///
-    /// If stratification is enabled, the train and test will have the same ratios of
-    /// edge types.
-    ///
-    /// # Arguments
-    /// * `train_size`: f64 - rate target to reserve for training,
-    /// * `use_stratification`: Option<bool> - Whether to use edge-label stratification,
-    /// * `random_state`: Option<EdgeT> - The random_state to use for the holdout,
-    ///
-    /// # Example
-    /// This example creates an 80-20 split of the edges mantaining the edge label ratios
-    /// in train and test.
-    /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    ///   let (train, test) = graph.get_edge_label_random_holdout(0.8, Some(true), None).unwrap();
-    /// ```
-    ///
-    /// # Raises
-    /// * If the graph does not have edge types.
-    /// * If stratification is required but the graph has singleton edge types.
-    pub fn get_edge_label_random_holdout(
-        &self,
-        train_size: f64,
-        use_stratification: Option<bool>,
-        random_state: Option<EdgeT>,
-    ) -> Result<(Graph, Graph)> {
-        if self.get_number_of_known_edge_types()? < 2 {
-            return Err("It is not possible to create a edge label holdout when the number of edges with known edge type is less than two.".to_string());
-        }
-        let use_stratification = use_stratification.unwrap_or(false);
-        let random_state = random_state.unwrap_or(0xbadf00d);
-        if use_stratification && self.has_singleton_edge_types()? {
-            return Err("It is impossible to create a stratified holdout when the graph has edge types with cardinality one.".to_string());
-        }
-
-        // Compute the vectors with the indices of the edges which edge type matches
-        // therefore the expected shape is:
-        // (number_of_edge_types, number of edges of that edge type)
-        let edge_sets: Vec<Vec<EdgeT>> = self
-            .edge_types
-            .as_ref()
-            .as_ref()
-            .map(|nts| {
-                if use_stratification {
-                    // Initialize the vectors for each edge type
-                    let mut edge_sets: Vec<Vec<EdgeT>> =
-                        vec![Vec::new(); self.get_number_of_edge_types().unwrap() as usize];
-                    // itering over the indices and adding each edge to the
-                    // vector of the corresponding edge type.
-                    nts.ids.iter().enumerate().for_each(|(edge_id, edge_type)| {
-                        // if the edge has a edge_type
-                        if let Some(et) = edge_type {
-                            // Get the index of the correct edge type vector.
-                            edge_sets[*et as usize].push(edge_id as EdgeT);
-                        };
-                    });
-
-                    edge_sets
-                } else {
-                    // just compute a vector with a single vector of the indices
-                    //  of the edges with edge
-                    vec![nts
-                        .ids
-                        .iter()
-                        .enumerate()
-                        .filter_map(|(edge_id, edge_type)| {
-                            edge_type.as_ref().map(|_| edge_id as EdgeT)
-                        })
-                        .collect()]
-                }
-            })
-            .unwrap();
-
-        // initialize the seed for a re-producible shuffle
-        let mut rnd = SmallRng::seed_from_u64(splitmix64(random_state as u64));
-
-        // Allocate the vectors for the edges of each
-        let mut train_edge_types = vec![None; self.get_number_of_directed_edges() as usize];
-        let mut test_edge_types = vec![None; self.get_number_of_directed_edges() as usize];
-
-        for mut edge_set in edge_sets {
-            // Shuffle in a reproducible way the edges of the current edge_type
-            edge_set.shuffle(&mut rnd);
-            // Compute how many of these edges belongs to the training set
-            let (train_size, _) = self.get_holdouts_elements_number(train_size, edge_set.len())?;
-            // add the edges to the relative vectors
-            edge_set[..train_size].iter().for_each(|edge_id| {
-                train_edge_types[*edge_id as usize] =
-                    unsafe { self.get_unchecked_edge_type_id_from_edge_id(*edge_id) }
-            });
-            edge_set[train_size..].iter().for_each(|edge_id| {
-                test_edge_types[*edge_id as usize] =
-                    unsafe { self.get_unchecked_edge_type_id_from_edge_id(*edge_id) }
-            });
-        }
-
-        // Clone the current graph
-        // here we could manually initialize the clones so that we don't waste
-        // time and memory cloning the edge_types which will be immediately
-        // overwrite. We argue that this should not be impactfull so we prefer
-        // to prioritze the simplicity of the code
-        let mut train_graph = self.clone();
-        let mut test_graph = self.clone();
-
-        // Replace the edge_types with the one computes above
-        train_graph.edge_types = Arc::new(Some(EdgeTypeVocabulary::from_structs(
-            train_edge_types,
-            self.edge_types
-                .as_ref()
-                .as_ref()
-                .map(|etv| etv.vocabulary.clone())
-                .unwrap(),
-        )));
-        test_graph.edge_types = Arc::new(Some(EdgeTypeVocabulary::from_structs(
-            test_edge_types,
-            self.edge_types
-                .as_ref()
-                .as_ref()
-                .map(|etv| etv.vocabulary.clone())
-                .unwrap(),
-        )));
-
-        Ok((train_graph, test_graph))
-    }
-
     /// Returns edge-label kfold for training ML algorithms on the graph edge labels.
     /// This is commonly used for edge type prediction tasks.
     ///
@@ -2214,11 +2119,12 @@ impl Graph {
         use_stratification: Option<bool>,
         random_state: Option<EdgeT>,
     ) -> Result<(Graph, Graph)> {
+        self.must_not_be_multigraph()?;
         if self.get_number_of_known_edge_types()? < 2 {
             return Err("It is not possible to create a edge label holdout when the number of edges with known edge type is less than two.".to_string());
         }
         let use_stratification = use_stratification.unwrap_or(false);
-        let mut random_state = random_state.unwrap_or(0xbadf00d);
+        let random_state = splitmix64(random_state.unwrap_or(0xbadf00d));
         if use_stratification && self.has_singleton_edge_types()? {
             return Err("It is impossible to create a stratified holdout when the graph has edge types with cardinality one.".to_string());
         }
@@ -2230,35 +2136,44 @@ impl Graph {
             .edge_types
             .as_ref()
             .as_ref()
-            .map(|nts| {
+            .map(|ets| {
                 if use_stratification {
                     // Initialize the vectors for each edge type
                     let mut edge_sets: Vec<Vec<EdgeT>> =
                         vec![Vec::new(); self.get_number_of_edge_types().unwrap() as usize];
                     // itering over the indices and adding each edge to the
                     // vector of the corresponding edge type.
-                    nts.ids.iter().enumerate().for_each(|(edge_id, edge_type)| {
-                        // if the edge has a edge_type
-                        if let Some(et) = edge_type {
-                            // Get the index of the correct edge type vector.
-                            edge_sets[*et as usize].push(edge_id as EdgeT);
-                        };
-                    });
+                    ets.ids
+                        .iter()
+                        .zip(self.iter_directed_edge_node_ids())
+                        .for_each(|(edge_type, (edge_id, src, dst))| {
+                            // If this is an undirected graph and the source is
+                            // greater than the destination, i.e. this is an edge
+                            // from the lower triangular matrix, we skip it so to
+                            // avoid leaking information from the test set to the
+                            // training set.
+                            if !self.is_directed() && src > dst {
+                                return;
+                            }
+                            // if the edge has a edge_type
+                            if let Some(et) = edge_type {
+                                // Get the index of the correct edge type vector.
+                                edge_sets[*et as usize].push(edge_id as EdgeT);
+                            };
+                        });
 
-                    edge_sets
+                    Ok::<Vec<_>, String>(edge_sets)
                 } else {
                     // just compute a vector with a single vector of the indices
-                    //  of the edges with edge
-                    vec![nts
-                        .ids
-                        .iter()
-                        .enumerate()
-                        .filter_map(|(edge_id, edge_type)| {
-                            edge_type.as_ref().map(|_| edge_id as EdgeT)
-                        })
-                        .collect()]
+                    // of the edges with edge types
+                    Ok(vec![if self.is_directed() {
+                        self.get_directed_edge_ids_with_known_edge_types()?
+                    } else {
+                        self.get_upper_triangular_edge_ids_with_known_edge_types()?
+                    }])
                 }
             })
+            .transpose()?
             .unwrap();
 
         // Allocate the vectors for the edges of each
@@ -2270,19 +2185,43 @@ impl Graph {
             .unwrap();
         let mut test_edge_types = vec![None; self.get_number_of_directed_edges() as usize];
 
-        for mut edge_set in edge_sets {
-            random_state = splitmix64(random_state);
-            // Shuffle in a reproducible way the edges of the current edge_type
-            let validation_chunk = kfold(k, k_index, &mut edge_set, random_state)?;
-            // Iterate of edge ids
-            for edge_id in validation_chunk {
-                let edge_type = unsafe { self.get_unchecked_edge_type_id_from_edge_id(*edge_id) };
-                if validation_chunk.contains(edge_id) {
-                    test_edge_types[*edge_id as usize] = edge_type;
-                    train_edge_types[*edge_id as usize] = None;
+        let train_edge_types_shared = SyncUnsafeCell::new(&mut train_edge_types);
+        let test_edge_types_shared = SyncUnsafeCell::new(&mut test_edge_types);
+
+        edge_sets
+            .into_par_iter()
+            .enumerate()
+            .map(|(i, mut edge_set)| {
+                let random_state = splitmix64(random_state.wrapping_mul(i as u64 + 1));
+                // Shuffle in a reproducible way the edges of the current edge_type
+                let validation_chunk = kfold(k, k_index, &mut edge_set, random_state)?;
+                // Iterate of edge ids
+                for edge_id in validation_chunk {
+                    let edge_type =
+                        unsafe { self.get_unchecked_edge_type_id_from_edge_id(*edge_id) };
+                    if validation_chunk.contains(edge_id) {
+                        unsafe {
+                            (*test_edge_types_shared.get())[*edge_id as usize] = edge_type;
+                            (*train_edge_types_shared.get())[*edge_id as usize] = None;
+
+                            // If this is an undirected graph we also need to add the
+                            // corresponding edge from the lower triangular matrix.
+                            if !self.is_directed() {
+                                let (src, dst) = self.get_unchecked_node_ids_from_edge_id(*edge_id);
+                                let lower_triangular_edge_id =
+                                    self.get_unchecked_edge_id_from_node_ids(dst, src);
+                                (*train_edge_types_shared.get())
+                                    [lower_triangular_edge_id as usize] = self
+                                    .get_unchecked_edge_type_id_from_edge_id(
+                                        lower_triangular_edge_id,
+                                    );
+                            }
+                        }
+                    }
                 }
-            }
-        }
+                Ok(())
+            })
+            .collect::<Result<()>>()?;
 
         // Clone the current graph
         // here we could manually initialize the clones so that we don't waste

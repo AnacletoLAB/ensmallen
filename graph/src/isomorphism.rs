@@ -244,7 +244,7 @@ impl Graph {
                             .iter_mut()
                             .find(|candidate_isomorphic_group| {
                                 let edge_type_id = candidate_isomorphic_group[0];
-                                !self.par_iter_edge_ids_with_known_edge_types().unwrap().any(
+                                !self.par_iter_directed_edge_ids_with_known_edge_types().unwrap().any(
                                     |edge_id| {
                                         let edge_type_ids = self
                                             .iter_unchecked_edge_type_ids_from_edge_id(edge_id)

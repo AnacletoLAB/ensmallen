@@ -617,7 +617,7 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<()>
             assert!(graph
                 .iter_edge_node_ids_and_edge_type_id(true)
                 .any(|(_, _, _, edge_type)| edge_type.is_none()));
-            assert!(graph.get_edge_ids_with_unknown_edge_types().unwrap().len() > 0);
+            assert!(graph.get_directed_edge_ids_with_unknown_edge_types().unwrap().len() > 0);
         }
         if graph.has_known_edge_types().unwrap() {
             assert!(
@@ -633,7 +633,7 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<()>
                 graph.get_number_of_directed_edges(),
                 graph.get_number_of_known_edge_types().unwrap()
             );
-            assert!(graph.get_edge_ids_with_known_edge_types().unwrap().len() > 0);
+            assert!(graph.get_directed_edge_ids_with_known_edge_types().unwrap().len() > 0);
         }
     }
 

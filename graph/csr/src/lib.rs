@@ -16,7 +16,8 @@ mod edges_iter_upper_triangular;
 pub use edges_iter_upper_triangular::*;
 
 mod edges_iter_lower_triangular;
-pub use edges_iter_lower_triangular::*;
+
+mod trait_triple_to_item;
 
 mod edges_iter;
 pub use edges_iter::*;

@@ -1,10 +1,12 @@
 use super::*;
+use crate::trait_triple_to_item::TripleToItem;
 use rayon::prelude::*;
 use rayon::{iter::plumbing::*, prelude::IntoParallelRefMutIterator};
+use std::marker::PhantomData;
 use std::sync::Arc;
 
 #[derive(Clone)]
-pub struct EdgesIterLowerTriangular<'a> {
+pub(crate) struct EdgesIterLowerTriangular<'a, Item> {
     father: &'a CSR,
 
     outbounds: Arc<Vec<u64>>,
@@ -16,9 +18,11 @@ pub struct EdgesIterLowerTriangular<'a> {
     end_src: NodeT,
     // exclusive
     end_edge_id: EdgeT,
+
+    phantom: PhantomData<Item>,
 }
 
-impl<'a> EdgesIterLowerTriangular<'a> {
+impl<'a, Item: Send + Sync> EdgesIterLowerTriangular<'a, Item> {
     pub fn new(father: &'a CSR) -> Self {
         // compute the outdegrees of the graph after removing the LowerTriangular edges
         // keeping only the lower triangular matrix
@@ -52,6 +56,8 @@ impl<'a> EdgesIterLowerTriangular<'a> {
 
             end_src: father.get_number_of_nodes().saturating_sub(1),
             end_edge_id: prefix_sum,
+
+            phantom: PhantomData::default(),
         }
     }
 
@@ -60,10 +66,16 @@ impl<'a> EdgesIterLowerTriangular<'a> {
     }
 }
 
-impl<'a> core::iter::ExactSizeIterator for EdgesIterLowerTriangular<'a> {}
+impl<'a, Item: Send + Sync> core::iter::ExactSizeIterator for EdgesIterLowerTriangular<'a, Item> where
+    edges_iter_lower_triangular::EdgesIterLowerTriangular<'a, Item>: TripleToItem<Item>
+{
+}
 
-impl<'a> core::iter::Iterator for EdgesIterLowerTriangular<'a> {
-    type Item = (NodeT, NodeT);
+impl<'a, Item: Send + Sync> core::iter::Iterator for EdgesIterLowerTriangular<'a, Item>
+where
+    edges_iter_lower_triangular::EdgesIterLowerTriangular<'a, Item>: TripleToItem<Item>,
+{
+    type Item = Item;
 
     fn next(&mut self) -> Option<Self::Item> {
         // end condition
@@ -89,9 +101,9 @@ impl<'a> core::iter::Iterator for EdgesIterLowerTriangular<'a> {
 
         // return the result
         let dst = self.father.destinations[edge_id as usize];
-        let result = (self.start_src, dst);
+        let result = (edge_id, self.start_src, dst);
         self.start_edge_id += 1;
-        Some(result)
+        Some(Self::triple_to_item(result))
     }
 
     fn count(self) -> usize {
@@ -103,7 +115,10 @@ impl<'a> core::iter::Iterator for EdgesIterLowerTriangular<'a> {
     }
 }
 
-impl<'a> core::iter::DoubleEndedIterator for EdgesIterLowerTriangular<'a> {
+impl<'a, Item: Send + Sync> core::iter::DoubleEndedIterator for EdgesIterLowerTriangular<'a, Item>
+where
+    edges_iter_lower_triangular::EdgesIterLowerTriangular<'a, Item>: TripleToItem<Item>,
+{
     fn next_back(&mut self) -> Option<Self::Item> {
         // end condition
         if self.start_edge_id >= self.end_edge_id {
@@ -131,13 +146,15 @@ impl<'a> core::iter::DoubleEndedIterator for EdgesIterLowerTriangular<'a> {
 
         // return the result
         let dst = self.father.destinations[edge_id as usize];
-        let result = (self.end_src, dst);
-        Some(result)
+        Some(Self::triple_to_item((edge_id, self.end_src, dst)))
     }
 }
 
-impl<'a> UnindexedProducer for EdgesIterLowerTriangular<'a> {
-    type Item = (NodeT, NodeT);
+impl<'a, Item: Send + Sync> UnindexedProducer for EdgesIterLowerTriangular<'a, Item>
+where
+    edges_iter_lower_triangular::EdgesIterLowerTriangular<'a, Item>: TripleToItem<Item>,
+{
+    type Item = Item;
 
     /// Split the file in two approximately balanced streams
     fn split(self) -> (Self, Option<Self>) {
@@ -160,8 +177,11 @@ impl<'a> UnindexedProducer for EdgesIterLowerTriangular<'a> {
     }
 }
 
-impl<'a> Producer for EdgesIterLowerTriangular<'a> {
-    type Item = (NodeT, NodeT);
+impl<'a, Item: Send + Sync> Producer for EdgesIterLowerTriangular<'a, Item>
+where
+    edges_iter_lower_triangular::EdgesIterLowerTriangular<'a, Item>: TripleToItem<Item>,
+{
+    type Item = Item;
     type IntoIter = Self;
 
     fn into_iter(self) -> Self::IntoIter {
@@ -201,6 +221,8 @@ impl<'a> Producer for EdgesIterLowerTriangular<'a> {
 
             end_src: self.end_src,
             end_edge_id: self.end_edge_id,
+
+            phantom: PhantomData::default(),
         };
 
         // low part

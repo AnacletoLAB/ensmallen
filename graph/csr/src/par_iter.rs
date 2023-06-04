@@ -1,6 +1,8 @@
 use super::*;
 use rayon::iter::plumbing::*;
 use rayon::prelude::*;
+use crate::edges_iter_lower_triangular::EdgesIterLowerTriangular;
+use crate::edges_iter_upper_triangular::EdgesIterUpperTriangular;
 
 impl CSR {
     pub unsafe fn par_iter_unchecked_neighbour_node_ids_from_source_node_id(
@@ -51,6 +53,18 @@ impl CSR {
     ) -> impl IndexedParallelIterator<Item = (NodeT, NodeT)> + '_ {
         EdgesLowerTriangularParIter::new(self)
     }
+
+    pub fn par_iter_upper_triangular_edge_node_ids_with_index(
+        &self,
+    ) -> impl IndexedParallelIterator<Item = (EdgeT, NodeT, NodeT)> + '_ {
+        EdgesUpperTriangularParIterWithIndex::new(self)
+    }
+
+    pub fn par_iter_lower_triangular_edge_node_ids_with_index(
+        &self,
+    ) -> impl IndexedParallelIterator<Item = (EdgeT, NodeT, NodeT)> + '_ {
+        EdgesLowerTriangularParIterWithIndex::new(self)
+    }
 }
 
 pub(crate) struct EdgesParIter<'a> {
@@ -100,7 +114,7 @@ impl<'a> IndexedParallelIterator for EdgesParIter<'a> {
 }
 
 pub(crate) struct EdgesLowerTriangularParIter<'a> {
-    pub(crate) iter: EdgesIterLowerTriangular<'a>,
+    pub(crate) iter: EdgesIterLowerTriangular<'a, (NodeT, NodeT)>,
 }
 
 impl<'a> EdgesLowerTriangularParIter<'a> {
@@ -148,7 +162,7 @@ impl<'a> IndexedParallelIterator for EdgesLowerTriangularParIter<'a> {
 }
 
 pub(crate) struct EdgesUpperTriangularParIter<'a> {
-    pub(crate) iter: EdgesIterUpperTriangular<'a>,
+    pub(crate) iter: EdgesIterUpperTriangular<'a, (NodeT, NodeT)>,
 }
 
 impl<'a> EdgesUpperTriangularParIter<'a> {
@@ -175,6 +189,103 @@ impl<'a> ParallelIterator for EdgesUpperTriangularParIter<'a> {
 }
 
 impl<'a> IndexedParallelIterator for EdgesUpperTriangularParIter<'a> {
+    fn drive<C>(self, consumer: C) -> C::Result
+    where
+        C: Consumer<Self::Item>,
+    {
+        bridge(self, consumer)
+    }
+
+    fn len(&self) -> usize {
+        self.iter.len() as usize
+    }
+
+    fn with_producer<CB>(self, callback: CB) -> CB::Output
+    where
+        CB: ProducerCallback<Self::Item>,
+    {
+        // Drain every item, and then the vector only needs to free its buffer.
+        callback.callback(self.iter)
+    }
+}
+
+
+pub(crate) struct EdgesLowerTriangularParIterWithIndex<'a> {
+    pub(crate) iter: EdgesIterLowerTriangular<'a, (EdgeT, NodeT, NodeT)>,
+}
+
+impl<'a> EdgesLowerTriangularParIterWithIndex<'a> {
+    pub(crate) fn new(father: &'a CSR) -> Self {
+        EdgesLowerTriangularParIterWithIndex {
+            iter: EdgesIterLowerTriangular::new(father),
+        }
+    }
+}
+
+impl<'a> ParallelIterator for EdgesLowerTriangularParIterWithIndex<'a> {
+    type Item = (EdgeT, NodeT, NodeT);
+
+    fn drive_unindexed<C>(self, consumer: C) -> C::Result
+    where
+        C: rayon::iter::plumbing::UnindexedConsumer<Self::Item>,
+    {
+        bridge_unindexed(self.iter, consumer)
+    }
+
+    fn opt_len(&self) -> Option<usize> {
+        None
+    }
+}
+
+impl<'a> IndexedParallelIterator for EdgesLowerTriangularParIterWithIndex<'a> {
+    fn drive<C>(self, consumer: C) -> C::Result
+    where
+        C: Consumer<Self::Item>,
+    {
+        bridge(self, consumer)
+    }
+
+    fn len(&self) -> usize {
+        self.iter.len() as usize
+    }
+
+    fn with_producer<CB>(self, callback: CB) -> CB::Output
+    where
+        CB: ProducerCallback<Self::Item>,
+    {
+        // Drain every item, and then the vector only needs to free its buffer.
+        callback.callback(self.iter)
+    }
+}
+
+pub(crate) struct EdgesUpperTriangularParIterWithIndex<'a> {
+    pub(crate) iter: EdgesIterUpperTriangular<'a, (EdgeT, NodeT, NodeT)>,
+}
+
+impl<'a> EdgesUpperTriangularParIterWithIndex<'a> {
+    pub(crate) fn new(father: &'a CSR) -> Self {
+        EdgesUpperTriangularParIterWithIndex {
+            iter: EdgesIterUpperTriangular::new(father),
+        }
+    }
+}
+
+impl<'a> ParallelIterator for EdgesUpperTriangularParIterWithIndex<'a> {
+    type Item = (EdgeT, NodeT, NodeT);
+
+    fn drive_unindexed<C>(self, consumer: C) -> C::Result
+    where
+        C: rayon::iter::plumbing::UnindexedConsumer<Self::Item>,
+    {
+        bridge_unindexed(self.iter, consumer)
+    }
+
+    fn opt_len(&self) -> Option<usize> {
+        None
+    }
+}
+
+impl<'a> IndexedParallelIterator for EdgesUpperTriangularParIterWithIndex<'a> {
     fn drive<C>(self, consumer: C) -> C::Result
     where
         C: Consumer<Self::Item>,
