@@ -558,13 +558,11 @@ impl Graph {
                         );
                     }
                     if let Some(edges_metrics) = edges_metrics.as_ref() {
-                        edge_features
-                            .unwrap()
-                            .into_iter()
-                            .enumerate()
-                            .for_each(|(j, metric)| {
+                        edge_features.unwrap().iter().copied().enumerate().for_each(
+                            |(j, metric)| {
                                 *(edges_metrics.t.uget_mut([i, j])) = metric;
-                            });
+                            },
+                        );
                     }
                     *(labels.t.uget_mut([i])) = label;
                 },
@@ -849,13 +847,11 @@ impl Graph {
                         *(edge_types.t.uget_mut([i])) = edge_type.unwrap_or(0);
                     }
                     if let Some(edges_metrics) = edges_metrics.as_ref() {
-                        edge_features
-                            .unwrap()
-                            .into_iter()
-                            .enumerate()
-                            .for_each(|(j, metric)| {
+                        edge_features.unwrap().iter().copied().enumerate().for_each(
+                            |(j, metric)| {
                                 *(edges_metrics.t.uget_mut([i, j])) = metric;
-                            });
+                            },
+                        );
                     }
                 },
             );

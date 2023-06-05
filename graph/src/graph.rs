@@ -1,8 +1,8 @@
 use std::{intrinsics::unlikely, sync::atomic::AtomicU8};
 
 use super::*;
-use crate::data_structures::CSR;
 use bitvec::prelude::*;
+use csr::CSR;
 use elias_fano_rust::EliasFano;
 use rayon::prelude::*;
 use std::sync::Arc;

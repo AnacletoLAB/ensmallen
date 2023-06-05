@@ -316,13 +316,13 @@ class RetrievedGraph:
         # so we add this normalization step to ensure that the
         # possible old metadata are still compatible.
         if "node_types_number" in metadata:
-            metadata["number_of_node_types"] = metadata["node_types_number"]
+            metadata["number_of_node_types"] = metadata.pop("node_types_number")
         if "nodes_number" in metadata:
-            metadata["number_of_nodes"] = metadata["nodes_number"]
+            metadata["number_of_nodes"] = metadata.pop("nodes_number")
         if "edge_types_number" in metadata:
-            metadata["number_of_edge_types"] = metadata["edge_types_number"]
+            metadata["number_of_edge_types"] = metadata.pop("edge_types_number")
         if "edges_number" in metadata:
-            metadata["number_of_edges"] = metadata["edges_number"]
+            metadata["number_of_edges"] = metadata.pop("edges_number")
 
         return metadata
 

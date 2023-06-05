@@ -50,6 +50,7 @@ hashbrown = {version="0.12.1", features=["rayon"]}
 indicatif = {version="0.16.0", features = ["rayon"]}
 arbitrary = { version = "0.4.5", features = ["derive"] }
 mmap = {path = "./mmap"}
+csr = {path = "./csr"}
 express_measures = {path = "./express_measures"}
 roaring = { git = "https://github.com/zommiommy/roaring-rs", branch = "master" }
 vec_rand = { git = "https://github.com/zommiommy/vec_rand", branch = "master" }

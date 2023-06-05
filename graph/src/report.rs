@@ -2274,7 +2274,7 @@ impl Graph {
                 1 => format!(
                     "a edge with unknown edge type, which is {}.",
                     self.get_unchecked_succinct_edge_description(
-                        self.iter_edge_ids_with_unknown_edge_types()
+                        self.iter_directed_edge_ids_with_unknown_edge_types()
                             .unwrap()
                             .next()
                             .unwrap()
@@ -2289,7 +2289,7 @@ impl Graph {
                         ),
                         unknown_types_number = unknown_types_number,
                         unknown_edge_types_list = get_unchecked_formatted_list(
-                            self.iter_edge_ids_with_unknown_edge_types()
+                            self.iter_directed_edge_ids_with_unknown_edge_types()
                                 .unwrap()
                                 .take(10)
                                 .map(|edge_id| {

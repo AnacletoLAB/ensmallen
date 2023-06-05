@@ -48,7 +48,7 @@ impl<PRECISION: Precision<BITS> + DeserializeOwned, const BITS: usize, const HOP
     /// * `include_edge_types`: Option<bool> - Whether to include the edge types in the sketch. By default, false.
     /// * `include_edge_ids`: Option<bool> - Whether to include the edge ids in the sketch. By default, false.
     /// * `include_node_ids`: Option<bool> - Whether to include the node ids in the sketch. By default, true.
-    /// * `include_selfloops`: Option<bool> - Whether to include self-loops. By default, false.
+    /// * `include_selfloops`: Option<bool> - Whether to include self-loops. By default, true.
     /// * `include_typed_graphlets`: Option<bool> - Whether to include the typed graphlets in the sketch. By default, false.
     /// * `normalize_by_symmetric_laplacian`: Option<bool> - Whether to normalize the Sketching cardinalities by the symmetric Laplacian. By default, false.
     /// * `concatenate_features`: Option<bool> - Whether to concatenate the normalized and non-normalized features. By default, false.
@@ -89,7 +89,7 @@ impl<PRECISION: Precision<BITS> + DeserializeOwned, const BITS: usize, const HOP
             && !include_edge_types.unwrap_or(false)
             && !include_edge_ids.unwrap_or(false)
             && !include_node_ids.unwrap_or(true)
-            && !include_selfloops.unwrap_or(false)
+            && !include_selfloops.unwrap_or(true)
             && !include_typed_graphlets.unwrap_or(false)
         {
             return Err("At least one of the include parameters must be set to true.".to_string());
@@ -121,7 +121,7 @@ impl<PRECISION: Precision<BITS> + DeserializeOwned, const BITS: usize, const HOP
             include_edge_types: include_edge_types.unwrap_or(false),
             include_edge_ids: include_edge_ids.unwrap_or(false),
             include_node_ids: include_node_ids.unwrap_or(true),
-            include_selfloops: include_selfloops.unwrap_or(false),
+            include_selfloops: include_selfloops.unwrap_or(true),
             include_typed_graphlets: include_typed_graphlets.unwrap_or(false),
             normalize_by_symmetric_laplacian: normalize_by_symmetric_laplacian.unwrap_or(false),
             concatenate_features: concatenate_features.unwrap_or(false),
@@ -491,38 +491,39 @@ impl<PRECISION: Precision<BITS> + DeserializeOwned, const BITS: usize, const HOP
     {
         // Check that the model has been trained
         self.must_be_trained()?;
+        let factor = if self.concatenate_features { 2 } else { 1 };
 
         // Check that the provided slices have the expected size
-        if overlaps.len() != edge_iterator.len() as usize * HOPS * HOPS {
+        if overlaps.len() != edge_iterator.len() as usize * factor * HOPS * HOPS {
             return Err(format!(
                 concat!(
                     "The provided `overlaps` slice has a length of `{}` ",
                     "but it should have a length of `{}`."
                 ),
                 overlaps.len(),
-                edge_iterator.len() as usize * HOPS * HOPS
+                edge_iterator.len() as usize * factor * HOPS * HOPS
             ));
         }
 
-        if src_differences.len() != edge_iterator.len() as usize * HOPS {
+        if src_differences.len() != edge_iterator.len() as usize * factor * HOPS {
             return Err(format!(
                 concat!(
                     "The provided `src_differences` slice has a length of `{}` ",
                     "but it should have a length of `{}`."
                 ),
                 src_differences.len(),
-                edge_iterator.len() as usize * HOPS
+                edge_iterator.len() as usize * factor *  HOPS
             ));
         }
 
-        if dst_differences.len() != edge_iterator.len() as usize * HOPS {
+        if dst_differences.len() != edge_iterator.len() as usize * factor * HOPS {
             return Err(format!(
                 concat!(
                     "The provided `dst_differences` slice has a length of `{}` ",
                     "but it should have a length of `{}`."
                 ),
                 dst_differences.len(),
-                edge_iterator.len() as usize * HOPS
+                edge_iterator.len() as usize * factor * HOPS
             ));
         }
 
@@ -544,7 +545,6 @@ impl<PRECISION: Precision<BITS> + DeserializeOwned, const BITS: usize, const HOP
         // compiler to not assume that the slices are overlapping.
 
         let offset = if self.concatenate_features { 1 } else { 0 };
-        let factor = if self.concatenate_features { 2 } else { 1 };
 
         edge_iterator
             .zip(overlaps.par_chunks_exact_mut(HOPS * HOPS * factor))

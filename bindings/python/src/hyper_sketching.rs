@@ -4924,7 +4924,7 @@ impl InnerModel {
 #[pyclass]
 #[derive(Clone)]
 #[pyo3(
-    text_signature = "(*, number_of_hops=2, precision=6, bits=5, include_node_types=False, include_edge_types=False, include_edge_ids=False, include_node_ids=True, include_selfloops=False, include_typed_graphlets=False, normalize_by_symmetric_laplacian=False, concatenate_features=False, dtype=str)"
+    text_signature = "(*, number_of_hops=2, precision=6, bits=5, include_node_types=False, include_edge_types=False, include_edge_ids=False, include_node_ids=True, include_selfloops=True, include_typed_graphlets=False, normalize_by_symmetric_laplacian=False, concatenate_features=False, dtype=str)"
 )]
 pub struct HyperSketching {
     inner: InnerModel,
@@ -4958,7 +4958,7 @@ impl HyperSketching {
     /// include_node_id: bool = True
     ///     Whether to include the node id in the sketches.
     ///     By default, `true`.
-    /// include_selfloops: bool = False
+    /// include_selfloops: bool = True
     ///     Whether to include the selfloops in the sketches.
     ///     By default, `false`.
     /// include_typed_graphlets: bool = False
@@ -5161,16 +5161,26 @@ impl HyperSketching {
         left_difference_path: Option<String>,
         right_difference_path: Option<String>,
     ) -> PyResult<(Py<PyAny>, Py<PyAny>, Py<PyAny>)> {
-        pe!(self.inner.get_sketching_from_iterator(
-            &support.inner,
-            overlap_path.as_deref(),
-            left_difference_path.as_deref(),
-            right_difference_path.as_deref(),
-            graph
-                .inner
-                .par_iter_directed_edge_node_ids()
-                .map(|(_, src, dst)| { (src, dst) }),
-        ))
+        if graph.is_directed() {
+            pe!(self.inner.get_sketching_from_iterator(
+                &support.inner,
+                overlap_path.as_deref(),
+                left_difference_path.as_deref(),
+                right_difference_path.as_deref(),
+                graph
+                    .inner
+                    .par_iter_directed_edge_node_ids()
+                    .map(|(_, src, dst)| { (src, dst) }),
+            ))
+        } else {
+            pe!(self.inner.get_sketching_from_iterator(
+                &support.inner,
+                overlap_path.as_deref(),
+                left_difference_path.as_deref(),
+                right_difference_path.as_deref(),
+                graph.inner.par_iter_upper_triangular_edge_node_ids()
+            ))
+        }
     }
 
     #[pyo3(

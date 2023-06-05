@@ -1,0 +1,41 @@
+[package]
+name = "csr-fuzz"
+version = "0.0.0"
+publish = false
+edition = "2021"
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+libfuzzer-sys = "0.4"
+arbitrary = { version = "1", features = ["derive"] }
+rayon = "1.6"
+
+[dependencies.csr]
+path = ".."
+
+# Prevent this from interfering with workspaces
+[workspace]
+members = ["."]
+
+[profile.release]
+debug = 1
+
+[[bin]]
+name = "direct_parallel_iterator"
+path = "fuzz_targets/direct_parallel_iterator.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "lower_triangular_parallel_iterator"
+path = "fuzz_targets/lower_triangular_parallel_iterator.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "upper_triangular_parallel_iterator"
+path = "fuzz_targets/upper_triangular_parallel_iterator.rs"
+test = false
+doc = false
