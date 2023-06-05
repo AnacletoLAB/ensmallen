@@ -2,6 +2,7 @@ use crate::*;
 use graph::{EdgeT, Graph, NodeT};
 use indicatif::{ProgressBar, ProgressIterator, ProgressStyle};
 use num_traits::AsPrimitive;
+use core::marker::ConstParamTy;
 use rayon::prelude::*;
 
 #[derive(Clone, Debug)]
@@ -37,7 +38,7 @@ impl BasicALPINE {
     }
 }
 
-#[derive(PartialEq, Eq)]
+#[derive(PartialEq, Eq, ConstParamTy)]
 pub enum LandmarkFeatureType {
     Windows,
     ShortestPaths,
@@ -56,7 +57,7 @@ pub trait LandmarkBasedFeature<const LFT: LandmarkFeatureType> {
         u64: AsPrimitive<Feature>;
 }
 
-#[derive(PartialEq, Eq)]
+#[derive(PartialEq, Eq, ConstParamTy)]
 pub enum LandmarkType {
     Degrees,
     NodeTypes,
