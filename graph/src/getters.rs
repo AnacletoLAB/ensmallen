@@ -612,6 +612,74 @@ impl Graph {
         })
     }
 
+    /// Return the inputed directed edge types of the edges.
+    ///
+    /// # Arguments
+    /// * `imputation_edge_type_id`: EdgeTypeT - The edge type id value to impute with.
+    pub fn get_impputed_directed_edge_type_ids(
+        &self,
+        imputation_edge_type_id: EdgeTypeT,
+    ) -> Result<Vec<EdgeTypeT>> {
+        self.must_have_edge_types().map(|_| {
+            self.edge_types
+                .as_ref()
+                .as_ref()
+                .map(|ets| {
+                    ets.ids
+                        .par_iter()
+                        .map(|edge_type_id| edge_type_id.unwrap_or(imputation_edge_type_id))
+                        .collect::<Vec<EdgeTypeT>>()
+                })
+                .unwrap()
+        })
+    }
+
+    /// Return the imputed upper triangular edge types of the edges.
+    ///
+    /// # Arguments
+    /// * `imputation_edge_type_id`: EdgeTypeT - The edge type id value to impute with.
+    pub fn get_imputed_upper_triangular_edge_type_ids(
+        &self,
+        imputation_edge_type_id: EdgeTypeT,
+    ) -> Result<Vec<EdgeTypeT>> {
+        self.must_have_edge_types().map(|_| {
+            self.edge_types
+                .as_ref()
+                .as_ref()
+                .map(|ets| {
+                    self.par_iter_upper_triangular_edge_node_ids_with_index()
+                        .map(|(edge_id, _, _)| {
+                            ets.ids[edge_id as usize].unwrap_or(imputation_edge_type_id)
+                        })
+                        .collect()
+                })
+                .unwrap()
+        })
+    }
+
+    /// Return the imputed lower triangular edge types of the edges.
+    ///
+    /// # Arguments
+    /// * `imputation_edge_type_id`: EdgeTypeT - The edge type id value to impute with.
+    pub fn get_imputed_lower_triangular_edge_type_ids(
+        &self,
+        imputation_edge_type_id: EdgeTypeT,
+    ) -> Result<Vec<EdgeTypeT>> {
+        self.must_have_edge_types().map(|_| {
+            self.edge_types
+                .as_ref()
+                .as_ref()
+                .map(|ets| {
+                    self.par_iter_lower_triangular_edge_node_ids_with_index()
+                        .map(|(edge_id, _, _)| {
+                            ets.ids[edge_id as usize].unwrap_or(imputation_edge_type_id)
+                        })
+                        .collect()
+                })
+                .unwrap()
+        })
+    }
+
     /// Return the directed known edge types of the edges, dropping unknown ones.
     pub fn get_directed_known_edge_type_ids(&self) -> Result<Vec<EdgeTypeT>> {
         self.must_have_edge_types().map(|_| {
@@ -1262,7 +1330,7 @@ impl Graph {
         self.iter_edge_node_ids_with_known_edge_types(directed)
             .map(|x| x.collect())
     }
-    
+
     /// Returns edge node names of the edges with known edge types
     ///
     /// # Arguments
