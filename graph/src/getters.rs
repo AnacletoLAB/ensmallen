@@ -616,7 +616,7 @@ impl Graph {
     ///
     /// # Arguments
     /// * `imputation_edge_type_id`: EdgeTypeT - The edge type id value to impute with.
-    pub fn get_impputed_directed_edge_type_ids(
+    pub fn get_imputed_directed_edge_type_ids(
         &self,
         imputation_edge_type_id: EdgeTypeT,
     ) -> Result<Vec<EdgeTypeT>> {
