@@ -522,31 +522,6 @@ impl Graph {
         })
     }
 
-    /// Return iterator on the directed edges type IDs of the graph.
-    pub fn par_iter_directed_edge_type_ids(
-        &self,
-    ) -> Result<impl IndexedParallelIterator<Item = Option<EdgeTypeT>> + '_> {
-        self.must_have_edge_types()
-            .map(|edge_types_vocabulary| edge_types_vocabulary.ids.par_iter().copied())
-    }
-
-    /// Return parallel iterator on the undirected edges' types.
-    pub fn par_iter_undirected_edge_type_ids(
-        &self,
-    ) -> Result<impl ParallelIterator<Item = Option<EdgeTypeT>> + '_> {
-        self.par_iter_directed_edge_type_ids().map(|iter| {
-            iter.zip(self.par_iter_directed_edge_node_ids()).filter_map(
-                |(weight, (_, src, dst))| {
-                    if src <= dst {
-                        Some(weight)
-                    } else {
-                        None
-                    }
-                },
-            )
-        })
-    }
-
     /// Return parallel iterator on the (non unique) source nodes of the graph.
     ///
     /// # Arguments
@@ -782,13 +757,22 @@ impl Graph {
     /// Return parallel indexed iterator on the edge type IDs.
     ///
     /// # Safety
-    /// If the graph does not contain edge types, this iterator will be an
-    /// iterator over None values.
+    /// If the graph does not contain edge types, this iterator will panic.
     pub unsafe fn par_iter_unchecked_edge_type_ids(
         &self,
     ) -> impl IndexedParallelIterator<Item = Option<EdgeTypeT>> + '_ {
-        self.par_iter_directed_edge_ids()
-            .map(move |edge_id| self.get_unchecked_edge_type_id_from_edge_id(edge_id))
+        self.par_iter_directed_edge_type_ids().unwrap()
+    }
+
+    /// Return parallel indexed iterator on the edge type IDs.
+    ///
+    /// # Raises
+    /// * If the graph does not contain edge types.
+    pub fn par_iter_directed_edge_type_ids(
+        &self,
+    ) -> Result<impl IndexedParallelIterator<Item = Option<EdgeTypeT>> + '_> {
+        self.must_have_edge_types()
+            .map(|edge_types_vocabulary| edge_types_vocabulary.ids.par_iter().copied())
     }
 
     /// Return iterator on the one-hot encoded node type IDs.
@@ -944,6 +928,40 @@ impl Graph {
         &self,
     ) -> impl IndexedParallelIterator<Item = (EdgeT, NodeT, NodeT)> + '_ {
         self.edges.par_iter_directed_edge_node_ids()
+    }
+
+    #[inline(always)]
+    /// Return iterator on the upper triangular edges of the graph.
+    pub fn par_iter_upper_triangular_edge_node_ids(
+        &self,
+    ) -> impl IndexedParallelIterator<Item = (NodeT, NodeT)> + '_ {
+        self.edges.par_iter_upper_triangular_edge_node_ids()
+    }
+
+    #[inline(always)]
+    /// Return iterator on the lower triangular edges of the graph.
+    pub fn par_iter_lower_triangular_edge_node_ids(
+        &self,
+    ) -> impl IndexedParallelIterator<Item = (NodeT, NodeT)> + '_ {
+        self.edges.par_iter_lower_triangular_edge_node_ids()
+    }
+
+    #[inline(always)]
+    /// Return iterator on the upper triangular edges of the graph with their index.
+    pub fn par_iter_upper_triangular_edge_node_ids_with_index(
+        &self,
+    ) -> impl IndexedParallelIterator<Item = (EdgeT, NodeT, NodeT)> + '_ {
+        self.edges
+            .par_iter_upper_triangular_edge_node_ids_with_index()
+    }
+
+    #[inline(always)]
+    /// Return iterator on the lower triangular edges of the graph with their index.
+    pub fn par_iter_lower_triangular_edge_node_ids_with_index(
+        &self,
+    ) -> impl IndexedParallelIterator<Item = (EdgeT, NodeT, NodeT)> + '_ {
+        self.edges
+            .par_iter_lower_triangular_edge_node_ids_with_index()
     }
 
     /// Return iterator on the edges of the graph with the string name.
@@ -1425,7 +1443,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If there are no edge types in the graph.
-    pub fn iter_edge_ids_with_unknown_edge_types(
+    pub fn iter_directed_edge_ids_with_unknown_edge_types(
         &self,
     ) -> Result<impl Iterator<Item = EdgeT> + '_> {
         self.must_have_edge_types().map(|edge_types| {
@@ -1443,11 +1461,13 @@ impl Graph {
         })
     }
 
-    /// Returns iterator over edge IDs of the edges with known edge types
+    /// Returns iterator over directed edge IDs of the edges with known edge types
     ///
     /// # Raises
     /// * If there are no edge types in the graph.
-    pub fn iter_edge_ids_with_known_edge_types(&self) -> Result<impl Iterator<Item = EdgeT> + '_> {
+    pub fn iter_directed_edge_ids_with_known_edge_types(
+        &self,
+    ) -> Result<impl Iterator<Item = EdgeT> + '_> {
         self.must_have_edge_types().map(|edge_types| {
             edge_types
                 .ids
@@ -1463,27 +1483,92 @@ impl Graph {
         })
     }
 
-    /// Returns iterator over edge node IDs of the edges with unknown edge types
-    ///
-    /// # Arguments
-    /// * `directed`: bool - Whether to load the edges as directed or undirected.
+    /// Returns iterator over upper triangular edge IDs of the edges with known edge types
     ///
     /// # Raises
     /// * If there are no edge types in the graph.
-    pub fn iter_edge_node_ids_with_unknown_edge_types(
+    pub fn iter_upper_triangular_edge_ids_with_known_edge_types(
         &self,
-        directed: bool,
-    ) -> Result<impl Iterator<Item = (NodeT, NodeT)> + '_> {
-        self.must_have_edge_types()?;
-        Ok(self
-            .iter_edge_node_ids_and_edge_type_id(directed)
-            .filter_map(|(_, src, dst, edge_type)| {
-                if edge_type.is_none() {
-                    Some((src, dst))
-                } else {
-                    None
-                }
-            }))
+    ) -> Result<impl Iterator<Item = EdgeT> + '_> {
+        self.must_have_edge_types().map(|edge_types| {
+            edge_types
+                .ids
+                .iter()
+                .zip(self.iter_directed_edge_node_ids())
+                .filter_map(|(edge_type_id, (edge_id, src, dst))| {
+                    if src > dst || edge_type_id.is_none(){
+                        None
+                    } else {
+                        Some(edge_id)
+                    }
+                })
+        })
+    }
+
+    /// Returns iterator over lower triangular edge IDs of the edges with known edge types
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    pub fn iter_lower_triangular_edge_ids_with_known_edge_types(
+        &self,
+    ) -> Result<impl Iterator<Item = EdgeT> + '_> {
+        self.must_have_edge_types().map(|edge_types| {
+            edge_types
+                .ids
+                .iter()
+                .zip(self.iter_directed_edge_node_ids())
+                .filter_map(|(edge_type_id, (edge_id, src, dst))| {
+                    if src < dst || edge_type_id.is_none(){
+                        None
+                    } else {
+                        Some(edge_id)
+                    }
+                })
+        })
+    }
+
+    /// Returns iterator over upper triangular edge IDs of the edges with unknown edge types
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    pub fn iter_upper_triangular_edge_ids_with_unknown_edge_types(
+        &self,
+    ) -> Result<impl Iterator<Item = EdgeT> + '_> {
+        self.must_have_edge_types().map(|edge_types| {
+            edge_types
+                .ids
+                .iter()
+                .zip(self.iter_directed_edge_node_ids())
+                .filter_map(|(edge_type_id, (edge_id, src, dst))| {
+                    if src > dst || edge_type_id.is_some(){
+                        None
+                    } else {
+                        Some(edge_id)
+                    }
+                })
+        })
+    }
+
+    /// Returns iterator over lower triangular edge IDs of the edges with unknown edge types
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    pub fn iter_lower_triangular_edge_ids_with_unknown_edge_types(
+        &self,
+    ) -> Result<impl Iterator<Item = EdgeT> + '_> {
+        self.must_have_edge_types().map(|edge_types| {
+            edge_types
+                .ids
+                .iter()
+                .zip(self.iter_directed_edge_node_ids())
+                .filter_map(|(edge_type_id, (edge_id, src, dst))| {
+                    if src < dst || edge_type_id.is_some(){
+                        None
+                    } else {
+                        Some(edge_id)
+                    }
+                })
+        })
     }
 
     /// Returns iterator over edge node IDs of the edges with known edge types
@@ -1789,28 +1874,6 @@ impl Graph {
         })
     }
 
-    /// Returns iterator over edge node names of the edges with unknown edge types
-    ///
-    /// # Arguments
-    /// * `directed`: bool - Whether to load the edges as directed or undirected.
-    ///
-    /// # Raises
-    /// * If there are no edge types in the graph.
-    pub fn iter_edge_node_names_with_unknown_edge_types(
-        &self,
-        directed: bool,
-    ) -> Result<impl Iterator<Item = (String, String)> + '_> {
-        self.iter_edge_node_ids_with_unknown_edge_types(directed)
-            .map(|x| {
-                x.map(move |(src, dst)| unsafe {
-                    (
-                        self.get_unchecked_node_name_from_node_id(src),
-                        self.get_unchecked_node_name_from_node_id(dst),
-                    )
-                })
-            })
-    }
-
     /// Returns iterator over edge node names of the edges with known edge types
     ///
     /// # Arguments
@@ -1883,7 +1946,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If there are no edge types in the graph.
-    pub fn par_iter_edge_ids_with_known_edge_types(
+    pub fn par_iter_directed_edge_ids_with_known_edge_types(
         &self,
     ) -> Result<impl ParallelIterator<Item = EdgeT> + '_> {
         self.must_have_edge_types().map(|edge_types| {

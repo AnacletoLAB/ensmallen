@@ -41,6 +41,7 @@ mod walk_transformer;
 mod walklets;
 mod weighted_spine;
 mod wine;
+mod graph_convolution;
 
 pub use alpine::*;
 pub use basic_embedding_model::*;
@@ -77,3 +78,4 @@ pub use walk_transformer::*;
 pub use walklets::*;
 pub use weighted_spine::*;
 pub use wine::*;
+pub use graph_convolution::*;

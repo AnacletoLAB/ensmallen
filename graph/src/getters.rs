@@ -582,19 +582,141 @@ impl Graph {
         })
     }
 
-    /// Return the undirected edge types of the edges.
-    pub fn get_undirected_edge_type_ids(&self) -> Result<Vec<Option<EdgeTypeT>>> {
-        self.par_iter_undirected_edge_type_ids()
-            .map(|iter| iter.collect())
+    /// Return the upper triangular edge types of the edges.
+    pub fn get_upper_triangular_edge_type_ids(&self) -> Result<Vec<Option<EdgeTypeT>>> {
+        self.must_have_edge_types().map(|_| {
+            self.edge_types
+                .as_ref()
+                .as_ref()
+                .map(|ets| {
+                    self.par_iter_upper_triangular_edge_node_ids_with_index()
+                        .map(|(edge_id, _, _)| ets.ids[edge_id as usize])
+                        .collect()
+                })
+                .unwrap()
+        })
     }
 
-    /// Return the known edge types of the edges, dropping unknown ones.
-    pub fn get_known_edge_type_ids(&self) -> Result<Vec<EdgeTypeT>> {
+    /// Return the lower triangular edge types of the edges.
+    pub fn get_lower_triangular_edge_type_ids(&self) -> Result<Vec<Option<EdgeTypeT>>> {
+        self.must_have_edge_types().map(|_| {
+            self.edge_types
+                .as_ref()
+                .as_ref()
+                .map(|ets| {
+                    self.par_iter_lower_triangular_edge_node_ids_with_index()
+                        .map(|(edge_id, _, _)| ets.ids[edge_id as usize])
+                        .collect()
+                })
+                .unwrap()
+        })
+    }
+
+    /// Return the inputed directed edge types of the edges.
+    ///
+    /// # Arguments
+    /// * `imputation_edge_type_id`: EdgeTypeT - The edge type id value to impute with.
+    pub fn get_imputed_directed_edge_type_ids(
+        &self,
+        imputation_edge_type_id: EdgeTypeT,
+    ) -> Result<Vec<EdgeTypeT>> {
+        self.must_have_edge_types().map(|_| {
+            self.edge_types
+                .as_ref()
+                .as_ref()
+                .map(|ets| {
+                    ets.ids
+                        .par_iter()
+                        .map(|edge_type_id| edge_type_id.unwrap_or(imputation_edge_type_id))
+                        .collect::<Vec<EdgeTypeT>>()
+                })
+                .unwrap()
+        })
+    }
+
+    /// Return the imputed upper triangular edge types of the edges.
+    ///
+    /// # Arguments
+    /// * `imputation_edge_type_id`: EdgeTypeT - The edge type id value to impute with.
+    pub fn get_imputed_upper_triangular_edge_type_ids(
+        &self,
+        imputation_edge_type_id: EdgeTypeT,
+    ) -> Result<Vec<EdgeTypeT>> {
+        self.must_have_edge_types().map(|_| {
+            self.edge_types
+                .as_ref()
+                .as_ref()
+                .map(|ets| {
+                    self.par_iter_upper_triangular_edge_node_ids_with_index()
+                        .map(|(edge_id, _, _)| {
+                            ets.ids[edge_id as usize].unwrap_or(imputation_edge_type_id)
+                        })
+                        .collect()
+                })
+                .unwrap()
+        })
+    }
+
+    /// Return the imputed lower triangular edge types of the edges.
+    ///
+    /// # Arguments
+    /// * `imputation_edge_type_id`: EdgeTypeT - The edge type id value to impute with.
+    pub fn get_imputed_lower_triangular_edge_type_ids(
+        &self,
+        imputation_edge_type_id: EdgeTypeT,
+    ) -> Result<Vec<EdgeTypeT>> {
+        self.must_have_edge_types().map(|_| {
+            self.edge_types
+                .as_ref()
+                .as_ref()
+                .map(|ets| {
+                    self.par_iter_lower_triangular_edge_node_ids_with_index()
+                        .map(|(edge_id, _, _)| {
+                            ets.ids[edge_id as usize].unwrap_or(imputation_edge_type_id)
+                        })
+                        .collect()
+                })
+                .unwrap()
+        })
+    }
+
+    /// Return the directed known edge types of the edges, dropping unknown ones.
+    pub fn get_directed_known_edge_type_ids(&self) -> Result<Vec<EdgeTypeT>> {
         self.must_have_edge_types().map(|_| {
             self.edge_types
                 .as_ref()
                 .as_ref()
                 .map(|ets| ets.ids.par_iter().copied().filter_map(|et| et).collect())
+                .unwrap()
+        })
+    }
+
+    /// Return the upper triangular known edge types of the edges, dropping unknown ones.
+    pub fn get_upper_triangular_known_edge_type_ids(&self) -> Result<Vec<EdgeTypeT>> {
+        self.must_have_edge_types().map(|_| {
+            self.edge_types
+                .as_ref()
+                .as_ref()
+                .map(|ets| {
+                    self.par_iter_upper_triangular_edge_node_ids_with_index()
+                        .filter_map(|(edge_id, _, _)| ets.ids[edge_id as usize])
+                        .collect()
+                })
+                .unwrap()
+        })
+    }
+
+    /// Return the lower triangular known edge types of the edges, dropping unknown ones.
+    pub fn get_lower_triangular_known_edge_type_ids(&self) -> Result<Vec<EdgeTypeT>> {
+        self.must_have_edge_types().map(|_| {
+            self.edge_types
+                .as_ref()
+                .as_ref()
+                .map(|ets| {
+                    self.par_iter_lower_triangular_edge_node_ids_with_index()
+                        .filter_map(|(edge_id, _, _)| ets.ids[edge_id as usize])
+                        .collect()
+                })
                 .unwrap()
         })
     }
@@ -1140,12 +1262,30 @@ impl Graph {
             .map(|edge_types| edge_types.get_unknown_count())
     }
 
-    /// Returns edge IDs of the edges with unknown edge types
+    /// Returns directed edge IDs of the edges with unknown edge types
     ///
     /// # Raises
     /// * If there are no edge types in the graph.
-    pub fn get_edge_ids_with_unknown_edge_types(&self) -> Result<Vec<EdgeT>> {
-        self.iter_edge_ids_with_unknown_edge_types()
+    pub fn get_directed_edge_ids_with_unknown_edge_types(&self) -> Result<Vec<EdgeT>> {
+        self.iter_directed_edge_ids_with_unknown_edge_types()
+            .map(|x| x.collect())
+    }
+
+    /// Returns upper triangular edge IDs of the edges with unknown edge types
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    pub fn get_upper_triangular_edge_ids_with_unknown_edge_types(&self) -> Result<Vec<EdgeT>> {
+        self.iter_upper_triangular_edge_ids_with_unknown_edge_types()
+            .map(|x| x.collect())
+    }
+
+    /// Returns lower triangular edge IDs of the edges with unknown edge types
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    pub fn get_lower_triangular_edge_ids_with_unknown_edge_types(&self) -> Result<Vec<EdgeT>> {
+        self.iter_lower_triangular_edge_ids_with_unknown_edge_types()
             .map(|x| x.collect())
     }
 
@@ -1153,23 +1293,26 @@ impl Graph {
     ///
     /// # Raises
     /// * If there are no edge types in the graph.
-    pub fn get_edge_ids_with_known_edge_types(&self) -> Result<Vec<EdgeT>> {
-        self.iter_edge_ids_with_known_edge_types()
+    pub fn get_directed_edge_ids_with_known_edge_types(&self) -> Result<Vec<EdgeT>> {
+        self.iter_directed_edge_ids_with_known_edge_types()
             .map(|x| x.collect())
     }
 
-    /// Returns edge node IDs of the edges with unknown edge types
-    ///
-    /// # Arguments
-    /// * `directed`: bool - Whether to iterated the edges as a directed or undirected edge list.
+    /// Returns upper triangular edge IDs of the edges with known edge types
     ///
     /// # Raises
     /// * If there are no edge types in the graph.
-    pub fn get_edge_node_ids_with_unknown_edge_types(
-        &self,
-        directed: bool,
-    ) -> Result<Vec<(NodeT, NodeT)>> {
-        self.iter_edge_node_ids_with_unknown_edge_types(directed)
+    pub fn get_upper_triangular_edge_ids_with_known_edge_types(&self) -> Result<Vec<EdgeT>> {
+        self.iter_upper_triangular_edge_ids_with_known_edge_types()
+            .map(|x| x.collect())
+    }
+
+    /// Returns lower triangular edge IDs of the edges with known edge types
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    pub fn get_lower_triangular_edge_ids_with_known_edge_types(&self) -> Result<Vec<EdgeT>> {
+        self.iter_lower_triangular_edge_ids_with_known_edge_types()
             .map(|x| x.collect())
     }
 
@@ -1185,21 +1328,6 @@ impl Graph {
         directed: bool,
     ) -> Result<Vec<(NodeT, NodeT)>> {
         self.iter_edge_node_ids_with_known_edge_types(directed)
-            .map(|x| x.collect())
-    }
-
-    /// Returns edge node names of the edges with unknown edge types
-    ///
-    /// # Arguments
-    /// * `directed`: bool - Whether to iterated the edges as a directed or undirected edge list.
-    ///
-    /// # Raises
-    /// * If there are no edge types in the graph.
-    pub fn get_edge_node_names_with_unknown_edge_types(
-        &self,
-        directed: bool,
-    ) -> Result<Vec<(String, String)>> {
-        self.iter_edge_node_names_with_unknown_edge_types(directed)
             .map(|x| x.collect())
     }
 
@@ -1219,33 +1347,73 @@ impl Graph {
     }
 
     /// Returns a boolean vector that for each node contains whether it has an
-    /// unknown node type.
-    ///
-    /// # Raises
-    /// * If there are no edge types in the graph.
-    pub fn get_edges_with_unknown_edge_types_mask(&self) -> Result<Vec<bool>> {
-        self.iter_edge_ids_with_unknown_edge_types().map(|x| {
-            let mut mask = vec![false; self.get_number_of_directed_edges() as usize];
-            x.for_each(|id| {
-                mask[id as usize] = true;
-            });
-            mask
-        })
-    }
-
-    /// Returns a boolean vector that for each node contains whether it has an
     /// unknown edge type.
     ///
     /// # Raises
     /// * If there are no edge types in the graph.
-    pub fn get_edges_with_known_edge_types_mask(&self) -> Result<Vec<bool>> {
-        self.iter_edge_ids_with_known_edge_types().map(|x| {
+    pub fn get_edges_with_unknown_edge_types_mask(&self) -> Result<Vec<bool>> {
+        self.par_iter_directed_edge_type_ids().map(|x| {
             let mut mask = vec![false; self.get_number_of_directed_edges() as usize];
-            x.for_each(|id| {
-                mask[id as usize] = true;
-            });
+            x.zip(mask.par_iter_mut())
+                .for_each(|(edge_type, mask_mut)| {
+                    *mask_mut = edge_type.is_none();
+                });
             mask
         })
+    }
+
+    /// Returns a boolean vector that for each directed edge contains whether it has an
+    /// unknown edge type.
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    pub fn get_directed_edges_with_known_edge_types_mask(&self) -> Result<Vec<bool>> {
+        self.par_iter_directed_edge_type_ids().map(|x| {
+            let mut mask = vec![false; self.get_number_of_directed_edges() as usize];
+            x.zip(mask.par_iter_mut())
+                .for_each(|(edge_type, mask_mut)| {
+                    *mask_mut = edge_type.is_some();
+                });
+            mask
+        })
+    }
+
+    /// Returns a boolean vector with known edge types from the upper triangular matrix.
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    /// * If the graph is not undirected.
+    pub fn get_upper_triangular_known_edge_types_mask(&self) -> Result<Vec<bool>> {
+        self.must_be_undirected()?;
+        self.must_have_edge_types()?;
+        let mut mask = vec![false; self.get_number_of_undirected_edges() as usize];
+        self.par_iter_upper_triangular_edge_node_ids_with_index()
+            .zip(mask.par_iter_mut())
+            .for_each(|((edge_id, _, _), mask_mut)| unsafe {
+                *mask_mut = self
+                    .get_unchecked_edge_type_id_from_edge_id(edge_id)
+                    .is_some();
+            });
+        Ok(mask)
+    }
+
+    /// Returns a boolean vector with known edge types from the lower triangular matrix.
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    /// * If the graph is not undirected.
+    pub fn get_lower_triangular_known_edge_types_mask(&self) -> Result<Vec<bool>> {
+        self.must_be_undirected()?;
+        self.must_have_edge_types()?;
+        let mut mask = vec![false; self.get_number_of_undirected_edges() as usize];
+        self.par_iter_lower_triangular_edge_node_ids_with_index()
+            .zip(mask.par_iter_mut())
+            .for_each(|((edge_id, _, _), mask_mut)| unsafe {
+                *mask_mut = self
+                    .get_unchecked_edge_type_id_from_edge_id(edge_id)
+                    .is_some();
+            });
+        Ok(mask)
     }
 
     /// Returns node IDs of the nodes with unknown node types

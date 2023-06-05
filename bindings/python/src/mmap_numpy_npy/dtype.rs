@@ -38,6 +38,33 @@ impl ToString for Dtype {
     }
 }
 
+impl TryFrom<&str> for Dtype {
+    type Error = String;
+
+    fn try_from(dtype: &str) -> Result<Dtype, String> {
+        Ok(match dtype {
+            "bool" => Dtype::Bool,
+            "i8" => Dtype::I8,
+            "u8" => Dtype::U8,
+            "i16" => Dtype::I16,
+            "u16" => Dtype::U16,
+            "i32" => Dtype::I32,
+            "u32" => Dtype::U32,
+            "f16" => Dtype::F16,
+            "f32" => Dtype::F32,
+            "i64" => Dtype::I64,
+            "u64" => Dtype::U64,
+            "f64" => Dtype::F64,
+            _ => {
+                return Err(format!(
+                    "The provided type {:?} is not supported!",
+                    dtype.to_string()
+                ))
+            }
+        })
+    }
+}
+
 impl TryFrom<NPY_TYPES> for Dtype {
     type Error = String;
 

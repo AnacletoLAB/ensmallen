@@ -5161,16 +5161,26 @@ impl HyperSketching {
         left_difference_path: Option<String>,
         right_difference_path: Option<String>,
     ) -> PyResult<(Py<PyAny>, Py<PyAny>, Py<PyAny>)> {
-        pe!(self.inner.get_sketching_from_iterator(
-            &support.inner,
-            overlap_path.as_deref(),
-            left_difference_path.as_deref(),
-            right_difference_path.as_deref(),
-            graph
-                .inner
-                .par_iter_directed_edge_node_ids()
-                .map(|(_, src, dst)| { (src, dst) }),
-        ))
+        if graph.is_directed() {
+            pe!(self.inner.get_sketching_from_iterator(
+                &support.inner,
+                overlap_path.as_deref(),
+                left_difference_path.as_deref(),
+                right_difference_path.as_deref(),
+                graph
+                    .inner
+                    .par_iter_directed_edge_node_ids()
+                    .map(|(_, src, dst)| { (src, dst) }),
+            ))
+        } else {
+            pe!(self.inner.get_sketching_from_iterator(
+                &support.inner,
+                overlap_path.as_deref(),
+                left_difference_path.as_deref(),
+                right_difference_path.as_deref(),
+                graph.inner.par_iter_upper_triangular_edge_node_ids()
+            ))
+        }
     }
 
     #[pyo3(

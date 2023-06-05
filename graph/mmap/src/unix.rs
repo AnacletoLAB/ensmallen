@@ -2,7 +2,7 @@ use super::*;
 use core::fmt::Debug;
 use libc::*;
 
-const MAP_HUGE_2MB: i32 = 1_409_286_144i32;
+//const MAP_HUGE_2MB: i32 = 1_409_286_144i32;
 
 /// A read-only memory mapped file,
 /// this should be equivalent to read-only slice that
@@ -53,12 +53,12 @@ impl MemoryMapReadOnlyCore for MemoryMapped {
         }
         // Try to mmap the file into memory
 
-        let mut flags = libc::MAP_PRIVATE;
+        let flags = libc::MAP_PRIVATE;
 
-        if cfg!(target_os = "linux") {
-            flags |= MAP_HUGE_2MB;
-        }
-        
+        //if cfg!(target_os = "linux") {
+        //    flags |= MAP_HUGE_2MB;
+        //}
+
         let addr = unsafe {
             mmap(
                 // we don't want a specific address
@@ -82,10 +82,15 @@ impl MemoryMapReadOnlyCore for MemoryMapped {
             return Err(format!(
                 concat!(
                     "Cannot mmap the file '{}' with file descriptor '{}'. ",
+                    "The mmap was called with len '{}' and offset: '{}'",
                     "https://man7.org/linux/man-pages/man2/mmap.2.html",
-                    " or the equivalent manual for your POSIX OS.",
+                    " or the equivalent manual for your POSIX OS. ERRNO: {}",
                 ),
-                path, fd
+                path,
+                fd,
+                len,
+                offset.unwrap_or(0),
+                errno(),
             ));
         }
 
@@ -112,15 +117,17 @@ impl MemoryMapReadOnlyCore for MemoryMapped {
 
 impl MemoryMapCore for MemoryMapped {
     /// Memory map the file with mutability permissions
-    fn new_mut<S: AsRef<str> + Debug>(path: Option<S>, len: Option<usize>, offset: Option<usize>) 
-        -> Result<Self, String> {
+    fn new_mut<S: AsRef<str> + Debug>(
+        path: Option<S>,
+        len: Option<usize>,
+        offset: Option<usize>,
+    ) -> Result<Self, String> {
+        let flags = libc::MAP_SHARED;
 
-        let mut flags = libc::MAP_SHARED;
+        //if cfg!(target_os = "linux") {
+        //    flags |= MAP_HUGE_2MB;
+        //}
 
-        if cfg!(target_os = "linux") {
-            flags |= MAP_HUGE_2MB;
-        }
-        
         let (addr, fd, len) = match (path.as_ref(), len) {
             // New file / expand file
             (Some(path), maybe_len) => {
@@ -219,11 +226,16 @@ impl MemoryMapCore for MemoryMapped {
         if addr == usize::MAX as *mut c_void {
             return Err(format!(
                 concat!(
-                    "Cannot mmap the file '{:?}' with file descriptor '{:?}'. ",
+                    "Cannot mmap the file '{:?}' with file descriptor '{:?}' .",
+                    "The mmap was called with len '{}' and offset: '{}'",
                     "https://man7.org/linux/man-pages/man2/mmap.2.html",
-                    " or the equivalent manual for your POSIX OS.",
+                    " or the equivalent manual for your POSIX OS. ERRNO: {}",
                 ),
-                path, fd
+                path,
+                fd,
+                len,
+                offset.unwrap_or(0),
+                errno(),
             ));
         }
 

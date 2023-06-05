@@ -808,8 +808,8 @@ impl Graph {
         source_node_id: NodeT,
         destination_node_id: NodeT,
         normalize: bool,
-    ) -> Vec<f32> {
-        vec![
+    ) -> [f32; 4] {
+        [
             self.get_unchecked_adamic_adar_index_from_node_ids(source_node_id, destination_node_id),
             self.get_unchecked_jaccard_coefficient_from_node_ids(
                 source_node_id,
@@ -847,7 +847,7 @@ impl Graph {
         source_node_id: NodeT,
         destination_node_id: NodeT,
         normalize: bool,
-    ) -> Result<Vec<f32>> {
+    ) -> Result<[f32; 4]> {
         Ok(unsafe {
             self.get_unchecked_all_edge_metrics_from_node_ids_tuple(
                 self.validate_node_id(source_node_id)?,
@@ -885,7 +885,7 @@ impl Graph {
                 self.validate_node_id(src)?;
                 self.validate_node_id(dst)?;
                 Ok(unsafe {
-                    self.get_unchecked_all_edge_metrics_from_node_ids_tuple(src, dst, normalize)
+                    self.get_unchecked_all_edge_metrics_from_node_ids_tuple(src, dst, normalize).to_vec()
                 })
             })
             .collect::<Result<Vec<Vec<f32>>>>()
@@ -1084,34 +1084,30 @@ impl Graph {
     ///
     /// # Arguments
     /// `normalize`: Option<bool> - Whether to normalize the edge prediction metrics. By default, true.
-    /// `subgraph`: Option<&Graph> - Optional subgraph whose edges are to be used when computing the metrics.
     ///
     /// # Raises
     /// * If the provided subgraph graph does not share a compatible vocabulary with the current graph instance.
-    pub fn par_iter_all_edge_metrics<'a>(
+    pub fn par_iter_all_edge_metrics<'a, I>(
         &'a self,
         normalize: Option<bool>,
-        subgraph: Option<&'a Graph>,
-    ) -> Result<impl IndexedParallelIterator<Item = Vec<f32>> + 'a> {
+        edge_node_ids_iterator: I,
+    ) -> Result<impl IndexedParallelIterator<Item = [f32; 4]> + 'a>
+    where
+        I: IndexedParallelIterator<Item = (NodeT, NodeT)> + 'a,
+    {
         let normalize = normalize.unwrap_or(true);
-        let subgraph = if let Some(subgraph) = subgraph {
-            self.must_share_node_vocabulary(subgraph)?;
-            subgraph
-        } else {
-            &self
-        };
-        Ok(subgraph.par_iter_directed_edge_node_ids().map(
-            move |(_, source_node_id, destination_node_id)| unsafe {
+        Ok(
+            edge_node_ids_iterator.map(move |(source_node_id, destination_node_id)| unsafe {
                 self.get_unchecked_all_edge_metrics_from_node_ids_tuple(
                     source_node_id,
                     destination_node_id,
                     normalize,
                 )
-            },
-        ))
+            }),
+        )
     }
 
-    /// Returns all available edge metrics for all edges.
+    /// Returns all available edge metrics for all edges, dispatching to the correct implementation based on the graph directionality.
     ///
     /// The metrics returned are, in order:
     /// - Adamic-Adar
@@ -1125,16 +1121,126 @@ impl Graph {
     ///
     /// # Raises
     /// * If the provided subgraph graph does not share a compatible vocabulary with the current graph instance.
+    /// 
+    /// # Implementation details
+    /// This method dispatches to either `get_all_directed_edge_metrics` or `get_all_upper_triangular_edge_metrics`
+    /// depending on the graph directionality.
     pub fn get_all_edge_metrics(
         &self,
         normalize: Option<bool>,
         subgraph: Option<&Graph>,
     ) -> Result<Vec<Vec<f32>>> {
-        self.par_iter_all_edge_metrics(normalize, subgraph)
-            .map(|iter| {
-                let mut result = Vec::with_capacity(iter.len());
-                iter.collect_into_vec(&mut result);
-                result
-            })
+        if subgraph.unwrap_or(&self).is_directed() {
+            self.get_all_directed_edge_metrics(normalize, subgraph)
+        } else {
+            self.get_all_upper_triangular_edge_metrics(normalize, subgraph)
+        }
+    }
+    
+    /// Returns all available edge metrics for all directed edges.
+    ///
+    /// The metrics returned are, in order:
+    /// - Adamic-Adar
+    /// - Jaccard Coefficient
+    /// - Resource Allocation index
+    /// - Preferential attachment score
+    ///
+    /// # Arguments
+    /// `normalize`: Option<bool> - Whether to normalize the edge prediction metrics. By default, true.
+    /// `subgraph`: Option<&Graph> - Optional subgraph whose edges are to be used when computing the metrics.
+    ///
+    /// # Raises
+    /// * If the provided subgraph graph does not share a compatible vocabulary with the current graph instance.
+    pub fn get_all_directed_edge_metrics(
+        &self,
+        normalize: Option<bool>,
+        subgraph: Option<&Graph>,
+    ) -> Result<Vec<Vec<f32>>> {
+        self.par_iter_all_edge_metrics(
+            normalize,
+            subgraph
+                .unwrap_or(&self)
+                .par_iter_directed_edge_node_ids()
+                .map(|(_, src, dst)| (src, dst)),
+        )
+        .map(|iter| {
+            let mut result = Vec::with_capacity(iter.len());
+            iter.map(|metric| metric.to_vec()).collect_into_vec(&mut result);
+            result
+        })
+    }
+
+    /// Returns all available edge metrics for all edges in the triangular upper part of the adjacency matrix.
+    /// 
+    /// The metrics returned are, in order:
+    /// - Adamic-Adar
+    /// - Jaccard Coefficient
+    /// - Resource Allocation index
+    /// - Preferential attachment score
+    /// 
+    /// # Arguments
+    /// `normalize`: Option<bool> - Whether to normalize the edge prediction metrics. By default, true.
+    /// `subgraph`: Option<&Graph> - Optional subgraph whose edges are to be used when computing the metrics.
+    /// 
+    /// # Raises
+    /// * If the provided subgraph graph does not share a compatible vocabulary with the current graph instance.
+    /// 
+    /// # Note
+    /// A triangular upper part of the adjacency matrix is the part of the adjacency matrix that is above the diagonal.
+    /// The set of edges in the upper triangular matrix are characterized by a source node ID that is lower or equal to
+    /// the destination node ID.
+    pub fn get_all_upper_triangular_edge_metrics(
+        &self,
+        normalize: Option<bool>,
+        subgraph: Option<&Graph>,
+    ) -> Result<Vec<Vec<f32>>> {
+        self.par_iter_all_edge_metrics(
+            normalize,
+            subgraph
+                .unwrap_or(&self)
+                .par_iter_upper_triangular_edge_node_ids()
+        )
+        .map(|iter| {
+            let mut result = Vec::with_capacity(iter.len());
+            iter.map(|metric| metric.to_vec()).collect_into_vec(&mut result);
+            result
+        })
+    }
+
+    /// Returns all available edge metrics for all edges in the triangular lower part of the adjacency matrix.
+    /// 
+    /// The metrics returned are, in order:
+    /// - Adamic-Adar
+    /// - Jaccard Coefficient
+    /// - Resource Allocation index
+    /// - Preferential attachment score
+    /// 
+    /// # Arguments
+    /// `normalize`: Option<bool> - Whether to normalize the edge prediction metrics. By default, true.
+    /// `subgraph`: Option<&Graph> - Optional subgraph whose edges are to be used when computing the metrics.
+    /// 
+    /// # Raises
+    /// * If the provided subgraph graph does not share a compatible vocabulary with the current graph instance.
+    /// 
+    /// # Note
+    /// A triangular lower part of the adjacency matrix is the part of the adjacency matrix that is below the diagonal.
+    /// The set of edges in the lower triangular matrix are characterized by a source node ID that is higher or equal to
+    /// the destination node ID.
+    pub fn get_all_lower_triangular_edge_metrics(
+        &self,
+        normalize: Option<bool>,
+        subgraph: Option<&Graph>,
+    ) -> Result<Vec<Vec<f32>>> {
+        self.par_iter_all_edge_metrics(
+            normalize,
+            subgraph
+                .unwrap_or(&self)
+                .par_iter_lower_triangular_edge_node_ids()
+        )
+        .map(|iter| {
+            let mut result = Vec::with_capacity(iter.len());
+            iter.map(|metric| metric.to_vec()).collect_into_vec(&mut result);
+            result
+        })
     }
 }

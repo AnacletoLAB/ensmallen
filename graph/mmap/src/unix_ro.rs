@@ -1,8 +1,8 @@
-use super::MemoryMapReadOnlyCore;
+use super::{errno, MemoryMapReadOnlyCore};
 use core::fmt::Debug;
 use libc::*;
 
-const MAP_HUGE_2MB: i32 = 1_409_286_144i32;
+//const MAP_HUGE_2MB: i32 = 1_409_286_144i32;
 
 /// A read-only memory mapped file,
 /// this should be equivalent to read-only slice that
@@ -44,12 +44,12 @@ impl MemoryMapReadOnlyCore for MemoryMappedReadOnly {
         }
         // Try to mmap the file into memory
 
-        let mut flags = libc::MAP_PRIVATE;
+        let flags = libc::MAP_PRIVATE;
 
-        if cfg!(target_os = "linux") {
-            flags |= MAP_HUGE_2MB;
-        }
-        
+        //if cfg!(target_os = "linux") {
+        //    flags |= MAP_HUGE_2MB;
+        //}
+
         let addr = unsafe {
             mmap(
                 // we don't want a specific address
@@ -73,10 +73,15 @@ impl MemoryMapReadOnlyCore for MemoryMappedReadOnly {
             return Err(format!(
                 concat!(
                     "Cannot mmap the file '{}' with file descriptor '{}'. ",
+                    "The mmap was called with len '{}' and offset: '{}'",
                     "https://man7.org/linux/man-pages/man2/mmap.2.html",
-                    " or the equivalent manual for your POSIX OS.",
+                    " or the equivalent manual for your POSIX OS. ERRNO: {}",
                 ),
-                path, fd
+                path,
+                fd,
+                len,
+                offset.unwrap_or(0),
+                errno(),
             ));
         }
 

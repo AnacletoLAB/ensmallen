@@ -1,7 +1,7 @@
 use super::*;
 use core::sync::atomic::{AtomicU32, AtomicU64, Ordering};
 
-pub(crate) struct ConcurrentCSRBuilder {
+pub struct ConcurrentCSRBuilder {
     outbounds: Vec<AtomicU64>,
     destinations: Vec<AtomicU32>,
 }
