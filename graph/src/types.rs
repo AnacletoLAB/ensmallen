@@ -9,7 +9,7 @@ use std::str::FromStr;
 /// Type used to index the Nodes.
 pub type NodeT = u32;
 /// Type used to index the Node Types.
-pub type NodeTypeT = u16;
+pub type NodeTypeT = u32;
 /// Type used to index the Edges.
 pub type EdgeT = u64;
 /// Type used to index the Edge Types.
