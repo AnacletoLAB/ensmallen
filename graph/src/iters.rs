@@ -343,11 +343,22 @@ impl Graph {
     ///
     /// # Raises
     /// * If there are no edge types in the graph.
+    /// 
+    /// # Implementation details
+    /// A singleton edge type is characterized by having only one edge of that type.
+    /// This means that if the graph is undirected, then the edge type is singleton
+    /// if it has only one edge (two total directed edges), while if the graph is directed,
+    /// then the edge type is singleton if it has only one edge in one direction.
     pub fn iter_singleton_edge_type_ids(&self) -> Result<impl Iterator<Item = EdgeTypeT> + '_> {
+        let singleton_count = if self.is_directed() {
+            1
+        } else {
+            2
+        };
         self.iter_unique_edge_type_ids_and_counts()
-            .map(|iter_unique_edge_type_ids_and_counts| {
-                iter_unique_edge_type_ids_and_counts.filter_map(|(edge_type_id, count)| {
-                    if count == 1 {
+            .map(move |iter_unique_edge_type_ids_and_counts| {
+                iter_unique_edge_type_ids_and_counts.filter_map(move |(edge_type_id, count)| {
+                    if singleton_count == count {
                         Some(edge_type_id)
                     } else {
                         None
@@ -379,17 +390,10 @@ impl Graph {
     /// # Raises
     /// * If there are no edge types in the graph.
     pub fn iter_singleton_edge_type_names(&self) -> Result<impl Iterator<Item = String> + '_> {
-        self.iter_unique_edge_type_names_and_counts().map(
-            |iter_unique_edge_type_names_and_counts| {
-                iter_unique_edge_type_names_and_counts.filter_map(|(edge_type_id, count)| {
-                    if count == 1 {
-                        Some(edge_type_id)
-                    } else {
-                        None
-                    }
-                })
-            },
-        )
+        Ok(self.iter_singleton_edge_type_ids()?
+            .map(move |edge_type_id| unsafe {
+                self.get_unchecked_edge_type_name_from_edge_type_id(Some(edge_type_id)).unwrap()
+            }))
     }
 
     /// Return iterator on the homogeneous node type ids.
@@ -1496,7 +1500,7 @@ impl Graph {
                 .iter()
                 .zip(self.iter_directed_edge_node_ids())
                 .filter_map(|(edge_type_id, (edge_id, src, dst))| {
-                    if src > dst || edge_type_id.is_none(){
+                    if src > dst || edge_type_id.is_none() {
                         None
                     } else {
                         Some(edge_id)
@@ -1518,7 +1522,7 @@ impl Graph {
                 .iter()
                 .zip(self.iter_directed_edge_node_ids())
                 .filter_map(|(edge_type_id, (edge_id, src, dst))| {
-                    if src < dst || edge_type_id.is_none(){
+                    if src < dst || edge_type_id.is_none() {
                         None
                     } else {
                         Some(edge_id)
@@ -1540,7 +1544,7 @@ impl Graph {
                 .iter()
                 .zip(self.iter_directed_edge_node_ids())
                 .filter_map(|(edge_type_id, (edge_id, src, dst))| {
-                    if src > dst || edge_type_id.is_some(){
+                    if src > dst || edge_type_id.is_some() {
                         None
                     } else {
                         Some(edge_id)
@@ -1562,7 +1566,7 @@ impl Graph {
                 .iter()
                 .zip(self.iter_directed_edge_node_ids())
                 .filter_map(|(edge_type_id, (edge_id, src, dst))| {
-                    if src < dst || edge_type_id.is_some(){
+                    if src < dst || edge_type_id.is_some() {
                         None
                     } else {
                         Some(edge_id)

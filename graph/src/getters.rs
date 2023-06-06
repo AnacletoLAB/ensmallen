@@ -1605,12 +1605,16 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph does not have edge types.
+    /// 
+    /// # Implementation notes
+    /// This method is implemented by counting the number of edge types that appear
+    /// only once in the graph. This is done by iterating over the edge type counts
+    /// and counting the number of edge types that appear only once.
+    /// Specifically, an edge type is considered singleton if its count is equal to 1
+    /// in the case of a directed graph, or if its count is equal to 2 in the case of
+    /// an undirected graph.
     pub fn get_number_of_singleton_edge_types(&self) -> Result<EdgeTypeT> {
-        self.iter_edge_type_counts().map(|iter_edge_type_counts| {
-            iter_edge_type_counts
-                .map(|edge_type_count| (edge_type_count == 1) as EdgeTypeT)
-                .sum()
-        })
+        Ok(self.iter_singleton_edge_type_ids()?.count() as EdgeTypeT)
     }
 
     /// Returns vector of singleton edge types IDs.

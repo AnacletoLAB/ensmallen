@@ -7221,7 +7221,7 @@ impl Graph {
     /// imputation_edge_type_id: int
     ///     The edge type id value to impute with.
     ///
-    pub fn get_impputed_directed_edge_type_ids(
+    pub fn get_imputed_directed_edge_type_ids(
         &self,
         imputation_edge_type_id: EdgeTypeT,
     ) -> PyResult<Py<PyArray1<EdgeTypeT>>> {
@@ -7231,7 +7231,7 @@ impl Graph {
                 gil,
                 pe!(self
                     .inner
-                    .get_impputed_directed_edge_type_ids(imputation_edge_type_id.clone()))?,
+                    .get_imputed_directed_edge_type_ids(imputation_edge_type_id.clone()))?,
                 EdgeTypeT
             )
         })
@@ -17710,7 +17710,7 @@ pub const GRAPH_METHODS_NAMES: &[&str] = &[
     "get_directed_edge_type_ids",
     "get_upper_triangular_edge_type_ids",
     "get_lower_triangular_edge_type_ids",
-    "get_impputed_directed_edge_type_ids",
+    "get_imputed_directed_edge_type_ids",
     "get_imputed_upper_triangular_edge_type_ids",
     "get_imputed_lower_triangular_edge_type_ids",
     "get_directed_known_edge_type_ids",
@@ -18321,7 +18321,6 @@ pub const GRAPH_TERMS: &[&str] = &[
     "upper",
     "triangular",
     "lower",
-    "impputed",
     "imputed",
     "known",
     "indegrees",
@@ -20337,14 +20336,14 @@ pub const GRAPH_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
         ("edge", 0.30034217),
         ("get", 0.08505839),
         ("ids", 0.35713986),
-        ("impputed", 1.4598707),
+        ("imputed", 1.2593807),
         ("type", 0.39249837),
     ],
     &[
         ("edge", 0.23363417),
         ("get", 0.066166356),
         ("ids", 0.2778167),
-        ("imputed", 1.0415974),
+        ("imputed", 0.9796639),
         ("triangular", 0.6942496),
         ("type", 0.30532187),
         ("upper", 0.8163403),
@@ -20353,7 +20352,7 @@ pub const GRAPH_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
         ("edge", 0.23363417),
         ("get", 0.066166356),
         ("ids", 0.2778167),
-        ("imputed", 1.0415974),
+        ("imputed", 0.9796639),
         ("lower", 0.8163403),
         ("triangular", 0.6942496),
         ("type", 0.30532187),
