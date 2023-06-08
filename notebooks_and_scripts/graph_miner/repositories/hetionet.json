@@ -1,5 +1,5 @@
 {
-    "Isopret": {
+    "Hetionet": {
         "latest": {
             "urls": [
                 "https://github.com/hetio/hetionet/raw/main/hetnet/tsv/hetionet-v1.0-edges.sif.gz",
