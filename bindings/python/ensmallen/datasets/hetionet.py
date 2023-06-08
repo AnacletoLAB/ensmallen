@@ -2,7 +2,7 @@
 from ensmallen import Graph  # pylint: disable=import-error
 from .graph_retrieval import RetrievedGraph
 
-def Isopret(
+def Hetionet(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
@@ -33,7 +33,7 @@ def Isopret(
 	
     """
     return RetrievedGraph(
-        "Isopret", version, "hetionet", directed, preprocess, bioregistry, load_nodes,
+        "Hetionet", version, "hetionet", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
