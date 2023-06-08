@@ -205,7 +205,7 @@ impl GraphConvolution {
         } else {
             pe!(Err(concat!(
                 "The provided node features are not a supported type. ",
-                "We expected a 2D numpy array of type f16, f32 or f64, or "
+                "We expected a 2D numpy array of type f16, f32 or f64, or ",
                 "u8, u16, u32, u64, i8, i16, i32 or i64."
             )))
         }
