@@ -4,7 +4,7 @@ from .repositories import (JAXGraphRepository, KGHubGraphRepository,
                            MonarchInitiativeGraphRepository,
                            NetworkRepositoryGraphRepository,
                            PheKnowLatorKGGraphrepository,
-                           HarvardGraphRepository,
+                           HarvardGraphRepository, HetionetGraphRepository,
                            StringGraphRepository, YueGraphRepository,
                            FreebaseGraphRepository, PubMedGraphRepository,
                            ZenodoGraphRepository, WikiDataGraphRepository,
@@ -26,5 +26,6 @@ __all__ = [
     "WikiDataGraphRepository",
     "FreebaseGraphRepository",
     "WikipediaGraphRepository",
-    "CTDGraphRepository"
+    "CTDGraphRepository",
+    "HetionetGraphRepository"
 ]

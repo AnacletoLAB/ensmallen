@@ -1,0 +1,27 @@
+{
+    "Isopret": {
+        "latest": {
+            "urls": [
+                "https://github.com/hetio/hetionet/raw/main/hetnet/tsv/hetionet-v1.0-edges.sif.gz",
+                "https://github.com/hetio/hetionet/raw/main/hetnet/tsv/hetionet-v1.0-nodes.tsv"
+            ],
+            "paths": [
+                "hetionet_edges.sif.gz",
+                "hetionet_nodes.tsv"
+            ],
+            "arguments": {
+                "node_path": "hetionet_nodes.tsv",
+                "nodes_column": "id",
+                "node_list_node_types_column": "kind",
+                "edge_path": "hetionet_edges.sif",
+                "sources_column": "source",
+                "destinations_column": "target",
+                "edge_list_edge_types_column": "metaedge",
+                "edge_list_separator": "\t",
+                "node_list_separator": "\t",
+                "directed": false,
+                "name": "Hetionet"
+            }
+        }
+    }
+}

@@ -2,10 +2,13 @@
 <head><title>Index of /wikidatawiki/entities/20230529/</title></head>
 <body>
 <h1>Index of /wikidatawiki/entities/20230529/</h1><hr><pre><a href="../">../</a>
+<a href="wikidata-20230529-all-BETA.nt.bz2">wikidata-20230529-all-BETA.nt.bz2</a>                  01-Jun-2023 19:45        159916510061
+<a href="wikidata-20230529-all-BETA.nt.gz">wikidata-20230529-all-BETA.nt.gz</a>                   01-Jun-2023 02:11        207643957372
+<a href="wikidata-20230529-all-BETA.ttl.bz2">wikidata-20230529-all-BETA.ttl.bz2</a>                 01-Jun-2023 06:59        102640000687
 <a href="wikidata-20230529-all-BETA.ttl.gz">wikidata-20230529-all-BETA.ttl.gz</a>                  31-May-2023 21:24        125457857327
 <a href="wikidata-20230529-all.json.bz2">wikidata-20230529-all.json.bz2</a>                     31-May-2023 22:37         82229902015
 <a href="wikidata-20230529-all.json.gz">wikidata-20230529-all.json.gz</a>                      31-May-2023 15:00        124757706224
-<a href="wikidata-20230529-md5sums.txt">wikidata-20230529-md5sums.txt</a>                      01-Jun-2023 03:19                 197
-<a href="wikidata-20230529-sha1sums.txt">wikidata-20230529-sha1sums.txt</a>                     01-Jun-2023 03:56                 221
+<a href="wikidata-20230529-md5sums.txt">wikidata-20230529-md5sums.txt</a>                      01-Jun-2023 21:11                 401
+<a href="wikidata-20230529-sha1sums.txt">wikidata-20230529-sha1sums.txt</a>                     01-Jun-2023 21:57                 449
 </pre><hr></body>
 </html>

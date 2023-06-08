@@ -1,0 +1,10 @@
+<html>
+<head><title>Index of /wikidatawiki/entities/20230607/</title></head>
+<body>
+<h1>Index of /wikidatawiki/entities/20230607/</h1><hr><pre><a href="../">../</a>
+<a href="wikidata-20230607-lexemes.json.bz2">wikidata-20230607-lexemes.json.bz2</a>                 07-Jun-2023 03:53           310442072
+<a href="wikidata-20230607-lexemes.json.gz">wikidata-20230607-lexemes.json.gz</a>                  07-Jun-2023 03:52           422689231
+<a href="wikidata-20230607-md5sums.txt">wikidata-20230607-md5sums.txt</a>                      07-Jun-2023 03:54                 137
+<a href="wikidata-20230607-sha1sums.txt">wikidata-20230607-sha1sums.txt</a>                     07-Jun-2023 03:54                 153
+</pre><hr></body>
+</html>

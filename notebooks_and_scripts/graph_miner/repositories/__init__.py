@@ -15,6 +15,8 @@ from .wikipedia_graph_repository import WikipediaGraphRepository
 from .ctd_graph_repositories import CTDGraphRepository
 from .harvard_graph_repository import HarvardGraphRepository
 from .pubmed_graph_repository import PubMedGraphRepository
+from .hetionet_graph_repository import HetionetGraphRepository
+
 
 __all__ = [
     "StringGraphRepository",
@@ -32,5 +34,6 @@ __all__ = [
     "WikipediaGraphRepository",
     "CTDGraphRepository",
     "PubMedGraphRepository",
-    "HarvardGraphRepository"
+    "HarvardGraphRepository",
+    "HetionetGraphRepository"
 ]
