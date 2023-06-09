@@ -174,7 +174,7 @@ impl Graph {
         use_scale_free_distribution: Option<bool>,
         support: Option<&'a Graph>,
         graph_to_avoid: Option<&'a Graph>,
-    ) -> Result<impl IndexedParallelIterator<Item = (NodeT, NodeT, bool)> + 'a> {
+    ) -> Result<impl IndexedParallelIterator<Item = (Option<EdgeT>, NodeT, NodeT, bool)> + 'a> {
         let support = support.unwrap_or(&self);
         let avoid_false_negatives = avoid_false_negatives.unwrap_or(false);
         let maximal_sampling_attempts = maximal_sampling_attempts.unwrap_or(10_000);
@@ -227,9 +227,9 @@ impl Graph {
             let mut random_state = splitmix64(random_state + i as u64);
             if random_state > negative_samples_threshold {
                 random_state = splitmix64(random_state);
-                let (src, dst) =
-                    self.get_unchecked_node_ids_from_edge_id(self.get_random_edge_id(random_state));
-                return (src, dst, true);
+                let edge_id = self.get_random_edge_id(random_state);
+                let (src, dst) = self.get_unchecked_node_ids_from_edge_id(edge_id);
+                return (Some(edge_id), src, dst, true);
             }
 
             for _ in 0..maximal_sampling_attempts {
@@ -259,7 +259,7 @@ impl Graph {
                     continue;
                 }
 
-                return (src, dst, false);
+                return (None, src, dst, false);
             }
 
             panic!(
@@ -280,6 +280,7 @@ impl Graph {
     /// * `random_state`: u64 - Random state of the batch to generate.
     /// * `batch_size`: usize - The maximal size of the batch to generate,
     /// * `return_node_types`: bool - Whether to return the source and destination nodes node types.
+    /// * `return_edge_types`: bool - Whether to return the edge types.
     /// * `return_edge_metrics`: bool - Whether to return the edge metrics available for both positive and negative edges.
     /// * `sample_only_edges_with_heterogeneous_node_types`: bool - Whether to sample negative edges only with source and destination nodes that have different node types.
     /// * `negative_samples_rate`: Option<f64> - The component of netagetive samples to use.
@@ -292,6 +293,8 @@ impl Graph {
     /// # Raises
     /// * If the given amount of negative samples is not a positive finite real value.
     /// * If node types are requested but the graph does not contain any.
+    /// * If the edge types are requested but the graph does not contain any.
+    /// * If the edge types are requested but the graph is a multigraph.
     /// * If the `sample_only_edges_with_heterogeneous_node_types` argument is provided as true, but the graph does not have node types.
     ///
     pub fn par_iter_attributed_edge_prediction_mini_batch<'a>(
@@ -299,6 +302,7 @@ impl Graph {
         random_state: u64,
         batch_size: usize,
         return_node_types: bool,
+        return_edge_types: bool,
         return_edge_metrics: bool,
         sample_only_edges_with_heterogeneous_node_types: bool,
         negative_samples_rate: Option<f64>,
@@ -314,11 +318,22 @@ impl Graph {
                     Option<Vec<NodeTypeT>>,
                     NodeT,
                     Option<Vec<NodeTypeT>>,
+                    Option<EdgeTypeT>,
                     Option<[f32; 4]>,
                     bool,
                 ),
             > + 'a,
     > {
+        if return_edge_types {
+            self.must_have_edge_types()?;
+            self.must_not_be_multigraph()?;
+            self.must_not_have_unknown_edge_types()?;
+        }
+
+        if return_node_types {
+            self.must_not_have_unknown_node_types()?;
+        }
+
         let support = support.unwrap_or(&self);
 
         Ok(self
@@ -333,7 +348,7 @@ impl Graph {
                 Some(&support),
                 graph_to_avoid,
             )?
-            .map(move |(src, dst, label)| {
+            .map(move |(edge_id, src, dst, label)| {
                 (
                     src,
                     if return_node_types {
@@ -344,6 +359,24 @@ impl Graph {
                     dst,
                     if return_node_types {
                         unsafe { self.get_unchecked_edge_prediction_node_type_ids(dst) }
+                    } else {
+                        None
+                    },
+                    if return_edge_types {
+                        match edge_id {
+                            Some(edge_id) => unsafe {
+                                self.get_unchecked_edge_type_id_from_edge_id(edge_id)
+                            },
+                            None => unsafe {
+                                self.get_unchecked_edge_type_id_from_edge_id(
+                                    self.get_random_edge_id(
+                                        random_state
+                                            .wrapping_mul(1 + src as u64)
+                                            .wrapping_mul(1 + dst as u64),
+                                    ),
+                                )
+                            },
+                        }
                     } else {
                         None
                     },
@@ -599,7 +632,8 @@ impl Graph {
                         .sum::<NodeT>();
                     // Definition of the IDF from Okapi, generalized for the
                     // real frequencies.
-                    ((number_of_nodes as f64 - feature_sum as f64 + 0.5) / (feature_sum as f64 + 0.5)
+                    ((number_of_nodes as f64 - feature_sum as f64 + 0.5)
+                        / (feature_sum as f64 + 0.5)
                         + 1.0)
                         .ln()
                 })

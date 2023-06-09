@@ -94,7 +94,7 @@ impl GraphEmbedder for SecondOrderLINE {
                     None,
                     None,
                 )?
-                .map(|(src, dst, label)| (src as usize, dst as usize, label))
+                .map(|(_, src, dst, label)| (src as usize, dst as usize, label))
                 .for_each(|(src, dst, label)| {
                     let src_embedding = unsafe {
                         &mut (*shared_node_embedding.get())[0]

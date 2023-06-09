@@ -790,7 +790,7 @@ where
                             Some(support),
                             graph_to_avoid,
                         )?
-                        .map(|(src, dst, label)| {
+                        .map(|(_, src, dst, label)| {
                             let (mut edge_embedding, prediction) = unsafe {
                                 self.get_unsafe_prediction(
                                     src,

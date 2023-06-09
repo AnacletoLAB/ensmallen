@@ -486,6 +486,21 @@ impl Graph {
     }
 
     #[no_binding]
+    /// Raises an error if the graph does has unknown node types.
+    ///
+    /// # Raises
+    /// * If the graph does not contain any unknown node types.
+    pub fn must_not_have_unknown_node_types(&self) -> Result<()> {
+        if self.has_unknown_node_types()? {
+            return Err(concat!(
+                "The current graph instance does contain some unknown node type.",
+            )
+            .to_string());
+        }
+        Ok(())
+    }
+
+    #[no_binding]
     /// Raises an error if the graph does not have known edge types.
     ///
     /// # Raises
@@ -507,6 +522,21 @@ impl Graph {
             return Err(concat!(
                 "The current graph instance does contain any unknown edge type.\n",
                 "Possibly you have forgotten to execute a edge-label holdout?"
+            )
+            .to_string());
+        }
+        Ok(())
+    }
+
+    #[no_binding]
+    /// Raises an error if the graph has unknown edge types.
+    ///
+    /// # Raises
+    /// * If the graph does not contain any unknown edge types.
+    pub fn must_not_have_unknown_edge_types(&self) -> Result<()> {
+        if self.has_unknown_edge_types()? {
+            return Err(concat!(
+                "The current graph instance contains unknown edge type.",
             )
             .to_string());
         }
