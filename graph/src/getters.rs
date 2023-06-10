@@ -784,8 +784,8 @@ impl Graph {
             .map(|edge_type_ids| edge_type_ids.collect())
     }
 
-    /// Return the edge types names.
-    pub fn get_edge_type_names(&self) -> Result<Vec<Option<String>>> {
+    /// Return the directed edge types names.
+    pub fn get_directed_edge_type_names(&self) -> Result<Vec<Option<String>>> {
         self.must_have_edge_types().map(|_| {
             self.edge_types
                 .as_ref()
@@ -795,6 +795,44 @@ impl Graph {
                         .iter()
                         .map(|edge_type_id| unsafe {
                             self.get_unchecked_edge_type_name_from_edge_type_id(*edge_type_id)
+                        })
+                        .collect()
+                })
+                .unwrap()
+        })
+    }
+
+    /// Return the upper triangular edge type names of the edges.
+    pub fn get_upper_triangular_edge_type_names(&self) -> Result<Vec<Option<String>>> {
+        self.must_have_edge_types().map(|_| {
+            self.edge_types
+                .as_ref()
+                .as_ref()
+                .map(|ets| {
+                    self.par_iter_upper_triangular_edge_node_ids_with_index()
+                        .map(|(edge_id, _, _)| unsafe {
+                            self.get_unchecked_edge_type_name_from_edge_type_id(
+                                ets.ids[edge_id as usize],
+                            )
+                        })
+                        .collect()
+                })
+                .unwrap()
+        })
+    }
+
+    /// Return the lower triangular edge type names of the edges.
+    pub fn get_lower_triangular_edge_type_names(&self) -> Result<Vec<Option<String>>> {
+        self.must_have_edge_types().map(|_| {
+            self.edge_types
+                .as_ref()
+                .as_ref()
+                .map(|ets| {
+                    self.par_iter_lower_triangular_edge_node_ids_with_index()
+                        .map(|(edge_id, _, _)| unsafe {
+                            self.get_unchecked_edge_type_name_from_edge_type_id(
+                                ets.ids[edge_id as usize],
+                            )
                         })
                         .collect()
                 })
@@ -1605,7 +1643,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph does not have edge types.
-    /// 
+    ///
     /// # Implementation notes
     /// This method is implemented by counting the number of edge types that appear
     /// only once in the graph. This is done by iterating over the edge type counts
