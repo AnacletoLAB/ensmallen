@@ -15,6 +15,8 @@ pub struct GraphConvolution {
     number_of_convolutions: usize,
     /// Concatenate the normalized and non-normalized features
     concatenate_features: bool,
+    /// Whether to normalize the rows between convolutions.
+    normalize_rows: bool,
     /// The embedding data type.
     dtype: String,
 }
@@ -25,22 +27,17 @@ impl GraphConvolution {
     /// # Arguments
     /// * `number_of_convolutions`: Option<usize> - The number of hops to use. Default is 2.
     /// * `concatenate_features`: Option<bool> - Whether to concatenate the normalized and non-normalized features.
+    /// * `normalize_rows`: Option<bool> - Whether to normalize the rows between convolutions.
     /// * `dtype`: Option<String> - The embedding data type.
     ///
     /// # Raises
     /// * If the provided data type is not supported.
-    /// * If the number of convolutions is not greater than 0 - while this operation is not strictly necessary, it is
-    ///   practically necessary to avoid executing this preprocessing step as the only result would be to duplicate
-    ///   the node features memory allocation.
     pub fn new(
         number_of_convolutions: Option<usize>,
         concatenate_features: Option<bool>,
+        normalize_rows: Option<bool>,
         dtype: Option<String>,
     ) -> Result<Self, String> {
-        if number_of_convolutions.unwrap_or(2) == 0 {
-            return Err("The number of convolutions must be greater than 0.".to_string());
-        }
-
         if !["f16", "f32", "f64"].contains(&dtype.as_ref().unwrap_or(&"f32".to_string()).as_str()) {
             return Err(format!(
                 concat!(
@@ -54,6 +51,7 @@ impl GraphConvolution {
         Ok(Self {
             number_of_convolutions: number_of_convolutions.unwrap_or(2),
             concatenate_features: concatenate_features.unwrap_or(true),
+            normalize_rows: normalize_rows.unwrap_or(true),
             dtype: dtype.unwrap_or("f32".to_string()),
         })
     }
@@ -168,24 +166,45 @@ impl GraphConvolution {
         convolved_node_features
             .par_chunks_exact_mut(convolved_node_features_row_size)
             .zip(node_features.par_chunks_exact(dimensionality))
-            .for_each(|(convoluted_row, original_row)| unsafe {
-                // If the source and target features have the same type, we can use a copy
-                // non-overlapping avoiding any iterative operation.
-                if TypeId::of::<F1>() == TypeId::of::<F2>() {
-                    // Copy the estimated overlaps
-                    std::ptr::copy_nonoverlapping(
-                        original_row.as_ptr() as *const F2,
-                        convoluted_row.as_mut_ptr(),
-                        dimensionality,
-                    );
-                }
-                // Otherwise, we need to iterate over the elements.
-                else {
-                    for (source, target) in original_row.iter().zip(convoluted_row.iter_mut()) {
-                        *target = source.as_();
+            .for_each(
+                |(convoluted_row, original_row): (&mut [F2], &[F1])| unsafe {
+                    // If the source and target features have the same type, we can use a copy
+                    // non-overlapping avoiding any iterative operation.
+                    if TypeId::of::<F1>() == TypeId::of::<F2>() {
+                        // Copy the estimated overlaps
+                        std::ptr::copy_nonoverlapping(
+                            original_row.as_ptr() as *const F2,
+                            convoluted_row.as_mut_ptr(),
+                            dimensionality,
+                        );
                     }
-                }
-            });
+                    // Otherwise, we need to iterate over the elements.
+                    else {
+                        for (source, target) in original_row.iter().zip(convoluted_row.iter_mut()) {
+                            *target = source.as_();
+                        }
+                    }
+                },
+            );
+
+        // If requested, we normalize the features associated to the 0-th iteration.
+        if self.normalize_rows {
+            convolved_node_features
+                .par_chunks_exact_mut(convolved_node_features_row_size)
+                .for_each(|convoluted_row| {
+                    // We compute the norm of the current row.
+                    let norm = convoluted_row
+                        .iter()
+                        .take(dimensionality)
+                        .fold(F2::zero(), |acc, x| acc + x.powi(2))
+                        .sqrt();
+
+                    // We normalize the convolved node features by the degree.
+                    convoluted_row.iter_mut().take(dimensionality).for_each(|node_feature| {
+                        *node_feature /= norm;
+                    });
+                });
+        }
 
         // We start the convolutions process.
         if self.concatenate_features {
@@ -215,7 +234,7 @@ impl GraphConvolution {
                             convoluted_row
                                 .as_mut_ptr()
                                 .add(dimensionality * (convolution_number + 1)),
-                            dimensionality * factor,
+                            dimensionality,
                         );
                     }
                     // We get the area of the convolved node features where we will store the
@@ -262,6 +281,30 @@ impl GraphConvolution {
                             *node_feature /= degree;
                         });
                 });
+
+                // If requested, we normalize the features associated to the i-th iteration.
+                if self.normalize_rows {
+                    unsafe {
+                        (*convolved_node_features.get())
+                            .par_chunks_exact_mut(convolved_node_features_row_size)
+                    }
+                    .for_each(|convoluted_row| {
+                        // We compute the norm of the current row.
+                        let norm = convoluted_row
+                            .iter()
+                            .skip(dimensionality * (convolution_number + 1))
+                            .fold(F2::zero(), |acc, x| acc + x.powi(2))
+                            .sqrt();
+
+                        // We normalize the convolved node features by the degree.
+                        convoluted_row
+                            .iter_mut()
+                            .skip(dimensionality * (convolution_number + 1))
+                            .for_each(|node_feature| {
+                                *node_feature /= norm;
+                            });
+                    });
+                }
             });
         } else {
             // Now, if we are not concatenating the features, in order to execute the convolutions without
@@ -322,6 +365,24 @@ impl GraphConvolution {
                             *node_feature /= degree;
                         });
                     });
+
+                // If requested, we normalize the features associated to the i-th iteration.
+                if self.normalize_rows {
+                    convolved_node_features_ref
+                        .par_chunks_exact_mut(dimensionality)
+                        .for_each(|convoluted_row| {
+                            // We compute the norm of the current row.
+                            let norm = convoluted_row
+                                .iter()
+                                .fold(F2::zero(), |acc, x| acc + x.powi(2))
+                                .sqrt();
+
+                            // We normalize the convolved node features by the degree.
+                            convoluted_row.iter_mut().for_each(|node_feature| {
+                                *node_feature /= norm;
+                            });
+                        });
+                }
 
                 // We swap the two memory areas.
                 std::mem::swap(

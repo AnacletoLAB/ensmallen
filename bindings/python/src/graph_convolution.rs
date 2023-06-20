@@ -29,6 +29,9 @@ impl GraphConvolution {
     /// concatenate_features: bool = False
     ///     Whether to concatenate the features at each convolution.
     ///     By default, `false`.
+    /// normalize_rows: bool = True
+    ///     Whether to normalize the rows between different convolutions.
+    ///     By default, `true`.
     /// dtype: str = "f32"
     ///     The data type to use for the convolved features.
     ///     The supported values are `f16`, `f32` and `f64`.
@@ -39,13 +42,14 @@ impl GraphConvolution {
 
         pe!(validate_kwargs(
             kwargs,
-            &["number_of_convolutions", "concatenate_features", "dtype"],
+            &["number_of_convolutions", "concatenate_features",  "normalize_rows", "dtype"],
         ))?;
 
         Ok(Self {
             inner: pe!(GC::new(
                 extract_value_rust_result!(kwargs, "number_of_convolutions", usize),
                 extract_value_rust_result!(kwargs, "concatenate_features", bool),
+                extract_value_rust_result!(kwargs, "normalize_rows", bool),
                 extract_value_rust_result!(kwargs, "dtype", String),
             ))?,
         })
