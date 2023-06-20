@@ -241,8 +241,8 @@ impl GraphConvolution {
                         };
 
                         let previous_dst_convolution: &[F2] = &dst_feature_row[dimensionality
-                            * (convolution_number + 1)
-                            ..dimensionality * (convolution_number + 2)];
+                            * (convolution_number)
+                            ..dimensionality * (convolution_number + 1)];
 
                         // We sum the feature associated to the current neighbour to the
                         // convolved node features.
