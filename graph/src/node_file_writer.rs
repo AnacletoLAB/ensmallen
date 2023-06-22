@@ -453,6 +453,25 @@ impl NodeFileWriter {
             "Writing to node list",
             lines_number.unwrap_or(0),
         );
+        if self.node_types_column.is_some() && self.node_types_column_number.is_none() {
+            return Err(format!(
+                concat!(
+                    "The node types column number was not provided but ",
+                    "the node types column name was provided as {:?}.",
+                ),
+                self.node_types_column
+            ));
+        }
+        if self.node_descriptions_column.is_some() && self.node_descriptions_column_number.is_none()
+        {
+            return Err(format!(
+                concat!(
+                    "The node descriptions column number was not provided but ",
+                    "the node descriptions column name was provided as {:?}.",
+                ),
+                self.node_descriptions_column
+            ));
+        }
         let mut stream = self.start_writer()?;
         for (node_id, node_name, node_type_ids, node_type_names) in iterator.progress_with(pb) {
             self.write_line(

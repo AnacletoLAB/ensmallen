@@ -473,6 +473,27 @@ impl EdgeFileWriter {
             "Writing to edge list",
             lines_number.unwrap_or(0),
         );
+
+        if self.edge_types_column.is_some() && self.edge_types_column_number.is_none()
+        {
+            return Err(format!(
+                concat!(
+                    "The edge types column number was not provided but ",
+                    "the edge types column name was provided as {:?}.",
+                ),
+                self.edge_types_column
+            ));
+        }
+        if self.weights_column.is_some() && self.weights_column_number.is_none() {
+            return Err(format!(
+                concat!(
+                    "The weights column number was not provided but ",
+                    "the weights column name was provided as {:?}.",
+                ),
+                self.weights_column
+            ));
+        }
+
         let mut stream = self.start_writer()?;
         for (edge_id, src, src_name, dst, dst_name, edge_type, edge_type_name, weight) in
             iterator.progress_with(pb)

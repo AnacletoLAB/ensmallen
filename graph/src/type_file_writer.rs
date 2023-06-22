@@ -226,6 +226,7 @@ impl TypeFileWriter {
             "Writing to type list",
             lines_number.unwrap_or(0),
         );
+        
         let mut stream = self.start_writer()?;
         for (type_id, type_name) in iterator.progress_with(pb) {
             self.write_line(&mut stream, type_id, type_name)?;
