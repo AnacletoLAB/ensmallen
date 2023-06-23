@@ -44,6 +44,7 @@ iter-set = "2.0.1"
 memchr = "2.4.1"
 atomic_float = "0.1.0"
 num-traits = "0.2.14"
+heterogeneous_graphlets = {git = "https://github.com/LucaCappelletti94/heterogeneous_graphlets"}
 v_htmlescape = "0.13.1"
 linked_hash_set = "0.1.4"
 hashbrown = {version="0.12.1", features=["rayon"]}

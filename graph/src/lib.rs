@@ -11,6 +11,7 @@
 #![warn(unused_macros)]
 #![feature(drain_filter)]
 #![feature(iter_advance_by)]
+#![feature(impl_trait_in_assoc_type)]
 #![feature(is_sorted)]
 #![feature(string_remove_matches)]
 #![feature(exit_status_error)]
@@ -66,6 +67,9 @@ pub use self::dijkstra::*;
 
 mod coo;
 pub use self::coo::*;
+
+mod heterogeneous_graphlets;
+pub use self::heterogeneous_graphlets::*;
 
 mod constructors;
 pub use constructors::*;

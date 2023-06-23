@@ -1,10 +1,13 @@
 use std::cell::SyncUnsafeCell;
 
+use core::sync::atomic::{AtomicU32, Ordering};
 use graph::{Graph, NodeT};
+use heterogeneous_graphlets::prelude::*;
 use hyperloglog_rs::prelude::*;
 use num_traits::Float;
 use rayon::prelude::*;
 use serde::{de::DeserializeOwned, Deserialize, Serialize};
+use std::collections::HashMap;
 
 #[derive(Clone, Deserialize, Serialize)]
 /// Struct implementing Hyper Subgraph Sketching.
@@ -15,7 +18,11 @@ use serde::{de::DeserializeOwned, Deserialize, Serialize};
 /// The original paper describing this approach for edge prediction
 /// feature mining is "Graph Neural Networks for Link Prediction with Subgraph sketching"
 ///
-pub struct HyperSketching<PRECISION: Precision<BITS>, const BITS: usize, const HOPS: usize> {
+pub struct HyperSketching<PRECISION: Precision<BITS>, const BITS: usize, const HOPS: usize>
+where
+    <<PRECISION as hyperloglog_rs::prelude::Precision<BITS>>::Words as AtomicAlias>::Alias:
+        hyperloglog_rs::prelude::ArrayIter<AtomicU32>,
+{
     /// Vector of HyperLogLog counters
     counters: Vec<HyperLogLogArray<PRECISION, BITS, HOPS>>,
     /// Whether to include the node types in the sketch
@@ -40,6 +47,9 @@ pub struct HyperSketching<PRECISION: Precision<BITS>, const BITS: usize, const H
 
 impl<PRECISION: Precision<BITS> + DeserializeOwned, const BITS: usize, const HOPS: usize>
     HyperSketching<PRECISION, BITS, HOPS>
+where
+    <<PRECISION as hyperloglog_rs::prelude::Precision<BITS>>::Words as AtomicAlias>::Alias:
+        hyperloglog_rs::prelude::ArrayIter<AtomicU32>,
 {
     /// Creates a new HyperSketching model.
     ///
@@ -77,12 +87,6 @@ impl<PRECISION: Precision<BITS> + DeserializeOwned, const BITS: usize, const HOP
                 "The feature concatenation only makes sense if the normalization is enabled."
                     .to_string(),
             );
-        }
-
-        // Raise an error to warn the users that, at this time,
-        // the typed graphlets are not supported yet.
-        if include_typed_graphlets.unwrap_or(false) {
-            return Err("The typed graphlets are not supported yet.".to_string());
         }
 
         if !include_node_types.unwrap_or(false)
@@ -197,51 +201,97 @@ impl<PRECISION: Precision<BITS> + DeserializeOwned, const BITS: usize, const HOP
                 0
             };
 
+        let mut counters = vec![
+            HyperLogLogArray::<PRECISION, BITS, HOPS>::new();
+            graph.get_number_of_nodes() as usize
+        ];
+
         // Create HyperLogLog counters for all nodes in the graph
-        let mut counters = graph
-            .par_iter_node_ids()
-            .map(|node_id| {
-                let mut counters = HyperLogLogArray::<PRECISION, BITS, HOPS>::new();
+        counters
+            .par_iter()
+            .enumerate()
+            .for_each(|(node_id, node_counters)| unsafe {
                 // If the self-loops are requested, we add the node id itself to the counter.
                 // It may happen that the node id ALSO has actual self-loop, but as the counter
                 // counts the unique appereaances, it will not be a problem.
                 if self.include_selfloops {
-                    counters[0].insert(node_id);
+                    node_counters[0].fetch_bitor_assign_ignoring_number_of_zeros(
+                        &HyperLogLog::from(node_id),
+                        Ordering::Relaxed,
+                    );
                 }
                 // If the node neighbours are requested, we add the node neighbour node ids.
                 if self.include_node_ids {
-                    counters[0] |= unsafe {
-                        graph.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
-                    }
-                    .collect::<HyperLogLog<PRECISION, BITS>>();
+                    node_counters[0].fetch_bitor_assign_ignoring_number_of_zeros(
+                        &graph
+                            .iter_unchecked_neighbour_node_ids_from_source_node_id(node_id as NodeT)
+                            .collect::<HyperLogLog<PRECISION, BITS>>(),
+                        Ordering::Relaxed,
+                    );
                 }
                 if self.include_edge_ids {
-                    counters[0] |=
-                        unsafe { graph.iter_unchecked_edge_ids_from_source_node_id(node_id) }
+                    node_counters[0].fetch_bitor_assign_ignoring_number_of_zeros(
+                        &graph
+                            .iter_unchecked_edge_ids_from_source_node_id(node_id as NodeT)
                             .map(|edge_id| edge_id as usize + node_id_offset)
-                            .collect::<HyperLogLog<PRECISION, BITS>>();
+                            .collect::<HyperLogLog<PRECISION, BITS>>(),
+                        Ordering::Relaxed,
+                    );
                 }
                 if self.include_node_types {
-                    counters[0] |= unsafe {
-                        graph.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
-                    }
-                    .flat_map(|dst| {
-                        unsafe { graph.get_unchecked_node_type_ids_from_node_id(dst) }
-                            .unwrap_or(&[])
-                    })
-                    .map(|&node_type_id| node_type_id as usize + edge_id_offset)
-                    .collect::<HyperLogLog<PRECISION, BITS>>();
+                    node_counters[0].fetch_bitor_assign_ignoring_number_of_zeros(
+                        &graph
+                            .iter_unchecked_neighbour_node_ids_from_source_node_id(node_id as NodeT)
+                            .flat_map(|dst| {
+                                graph
+                                    .get_unchecked_node_type_ids_from_node_id(dst)
+                                    .unwrap_or(&[])
+                            })
+                            .map(|&node_type_id| node_type_id as usize + edge_id_offset)
+                            .collect::<HyperLogLog<PRECISION, BITS>>(),
+                        Ordering::Relaxed,
+                    );
                 }
                 if self.include_edge_types {
-                    counters[0] |=
-                        unsafe { graph.iter_unchecked_edge_type_id_from_source_node_id(node_id) }
+                    node_counters[0].fetch_bitor_assign_ignoring_number_of_zeros(
+                        &graph
+                            .iter_unchecked_edge_type_id_from_source_node_id(node_id as NodeT)
                             .filter_map(|edge_type_id| edge_type_id)
                             .map(|edge_type_id| edge_type_id as usize + node_id_offset)
-                            .collect::<HyperLogLog<PRECISION, BITS>>();
+                            .collect::<HyperLogLog<PRECISION, BITS>>(),
+                        Ordering::Relaxed,
+                    );
                 }
-                counters
-            })
-            .collect::<Vec<_>>();
+                if self.include_typed_graphlets {
+                    node_counters[0].fetch_bitor_assign_ignoring_number_of_zeros(
+                        &graph
+                            .iter_unchecked_neighbour_node_ids_from_source_node_id(node_id as NodeT)
+                            .map(|dst| {
+                                let graphlets: HashMap<u16, u32> =
+                                    graph.get_heterogeneous_graphlet(node_id, dst as usize);
+                                let counter = graphlets
+                                    .into_keys()
+                                    .map(|node_type_id| node_type_id as usize + edge_type_offset)
+                                    .collect::<HyperLogLog<PRECISION, BITS>>();
+                                counters[dst as usize][0]
+                                    .fetch_bitor_assign_ignoring_number_of_zeros(
+                                        &counter,
+                                        Ordering::Relaxed,
+                                    );
+
+                                counter
+                            })
+                            .union(),
+                        Ordering::Relaxed,
+                    );
+                }
+            });
+
+        // We now update the number of zeros, which have been left unchanged
+        // by using the unsafe method `fetch_bitor_assign_ignoring_number_of_zeros`.
+        counters.par_iter_mut().for_each(|node_counters| {
+            node_counters[0].update_number_of_zeros();
+        });
 
         let shared_counters = SyncUnsafeCell::new(&mut counters);
 
@@ -512,7 +562,7 @@ impl<PRECISION: Precision<BITS> + DeserializeOwned, const BITS: usize, const HOP
                     "but it should have a length of `{}`."
                 ),
                 src_differences.len(),
-                edge_iterator.len() as usize * factor *  HOPS
+                edge_iterator.len() as usize * factor * HOPS
             ));
         }
 
