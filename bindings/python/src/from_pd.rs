@@ -124,7 +124,7 @@ impl Graph {
         
         let kwargs = match py_kwargs {
             Some(v) => v,
-            None => PyDict::new($py),
+            None => PyDict::new(py),
         }
 
         let name = extract_value!(kwargs, "name", String);
