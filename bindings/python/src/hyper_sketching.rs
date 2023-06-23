@@ -2327,7 +2327,7 @@ impl HyperSketching {
                 extract_value_rust_result!(kwargs, "include_node_ids", bool),
                 extract_value_rust_result!(kwargs, "include_selfloops", bool),
                 extract_value_rust_result!(kwargs, "include_typed_graphlets", bool),
-                extract_value_rust_result!(kwargs, "random_state", usize),
+                extract_value_rust_result!(kwargs, "random_state", u64),
                 extract_value_rust_result!(kwargs, "number_of_random_integers", usize),
                 extract_value_rust_result!(kwargs, "normalize_by_symmetric_laplacian", bool),
                 extract_value_rust_result!(kwargs, "concatenate_features", bool),
