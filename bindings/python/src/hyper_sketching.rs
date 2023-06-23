@@ -214,6 +214,10 @@ impl InnerModel {
     /// include_typed_graphlets: Option<bool>
     ///     Whether to include the typed graphlets in the sketches.
     ///     By default, `false`.
+    /// random_state: Option<u64>
+    ///    The random state to be employed.
+    /// number_of_random_integers: Option<usize>
+    ///    The number of random integers to be employed.
     /// normalize_by_symmetric_laplacian: Option<bool>
     ///     Whether to normalize the adjacency matrix by the symmetric Laplacian.
     ///     By default, `false`.
@@ -242,6 +246,8 @@ impl InnerModel {
         include_node_ids: Option<bool>,
         include_selfloops: Option<bool>,
         include_typed_graphlets: Option<bool>,
+        random_state: Option<u64>,
+        number_of_random_integers: Option<usize>,
         normalize_by_symmetric_laplacian: Option<bool>,
         concatenate_features: Option<bool>,
         dtype: Option<String>,
@@ -250,7 +256,7 @@ impl InnerModel {
         // for very hard to read code, we proceed instead with a Python script.
 
         match (precision, bits, number_of_hops.unwrap_or(2)) {
-            // ({precision}, {bits}, {hops}) => Ok(InnerModel::HS{precision}_{bits}_{hops}(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), {python_macro}
+            // ({precision}, {bits}, {hops}) => Ok(InnerModel::HS{precision}_{bits}_{hops}(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), {python_macro}
             (4, 4, 2) => Ok(InnerModel::HS4_4_2(HS::new(
                 include_node_types,
                 include_edge_types,
@@ -4964,6 +4970,10 @@ impl HyperSketching {
     /// include_typed_graphlets: bool = False
     ///     Whether to include the typed graphlets in the sketches.
     ///     By default, `false`.
+    /// random_state: int = 42
+    ///     The random state to use.
+    /// number_of_random_integers: usize = 0
+    ///     The number of random integers to use.
     /// normalize_by_symmetric_laplacian: bool = False
     ///     Whether to normalize the adjacency matrix by the symmetric Laplacian.
     ///     By default, `false`.
@@ -4998,6 +5008,8 @@ impl HyperSketching {
                 "include_node_ids",
                 "include_selfloops",
                 "include_typed_graphlets",
+                "random_state",
+                "number_of_random_integers",
                 "normalize_by_symmetric_laplacian",
                 "concatenate_features",
                 "dtype"
@@ -5015,6 +5027,8 @@ impl HyperSketching {
                 extract_value_rust_result!(kwargs, "include_node_ids", bool),
                 extract_value_rust_result!(kwargs, "include_selfloops", bool),
                 extract_value_rust_result!(kwargs, "include_typed_graphlets", bool),
+                extract_value_rust_result!(kwargs, "random_state", usize),
+                extract_value_rust_result!(kwargs, "number_of_random_integers", usize),
                 extract_value_rust_result!(kwargs, "normalize_by_symmetric_laplacian", bool),
                 extract_value_rust_result!(kwargs, "concatenate_features", bool),
                 extract_value_rust_result!(kwargs, "dtype", String),

@@ -7,6 +7,7 @@ use num_traits::Float;
 use rayon::prelude::*;
 use serde::{de::DeserializeOwned, Deserialize, Serialize};
 use std::collections::HashMap;
+use vec_rand::{splitmix64, xorshift};
 
 #[derive(Clone, Deserialize, Serialize)]
 /// Struct implementing Hyper Subgraph Sketching.
@@ -32,6 +33,10 @@ pub struct HyperSketching<PRECISION: Precision<BITS>, const BITS: usize, const H
     include_selfloops: bool,
     /// whether to include the typed graphlets in the sketch
     include_typed_graphlets: bool,
+    /// Random state for random integers, if requested.
+    random_state: u64,
+    /// Number of random integers to add per node - by default 0.
+    number_of_random_integers: usize,
     /// Normalize by symmetric Laplacian
     normalize_by_symmetric_laplacian: bool,
     /// Concatenate the normalized and non-normalized features
@@ -52,6 +57,8 @@ impl<PRECISION: Precision<BITS> + DeserializeOwned, const BITS: usize, const HOP
     /// * `include_node_ids`: Option<bool> - Whether to include the node ids in the sketch. By default, true.
     /// * `include_selfloops`: Option<bool> - Whether to include self-loops. By default, true.
     /// * `include_typed_graphlets`: Option<bool> - Whether to include the typed graphlets in the sketch. By default, false.
+    /// * `random_state`: Option<u64> - Random state for random integers, if requested. By default, 42.
+    /// * `number_of_random_integers`: Option<usize> - Number of random integers to add per node - by default 0.
     /// * `normalize_by_symmetric_laplacian`: Option<bool> - Whether to normalize the Sketching cardinalities by the symmetric Laplacian. By default, false.
     /// * `concatenate_features`: Option<bool> - Whether to concatenate the normalized and non-normalized features. By default, false.
     /// * `dtype`: Option<String> - The data type to be employed, by default f32.
@@ -68,6 +75,8 @@ impl<PRECISION: Precision<BITS> + DeserializeOwned, const BITS: usize, const HOP
         include_node_ids: Option<bool>,
         include_selfloops: Option<bool>,
         include_typed_graphlets: Option<bool>,
+        random_state: Option<u64>,
+        number_of_random_integers: Option<usize>,
         normalize_by_symmetric_laplacian: Option<bool>,
         concatenate_features: Option<bool>,
         dtype: Option<String>,
@@ -86,6 +95,7 @@ impl<PRECISION: Precision<BITS> + DeserializeOwned, const BITS: usize, const HOP
             && !include_edge_ids.unwrap_or(false)
             && !include_node_ids.unwrap_or(true)
             && !include_selfloops.unwrap_or(true)
+            && number_of_random_integers.unwrap_or(0) == 0
             && !include_typed_graphlets.unwrap_or(false)
         {
             return Err("At least one of the include parameters must be set to true.".to_string());
@@ -119,6 +129,8 @@ impl<PRECISION: Precision<BITS> + DeserializeOwned, const BITS: usize, const HOP
             include_node_ids: include_node_ids.unwrap_or(true),
             include_selfloops: include_selfloops.unwrap_or(true),
             include_typed_graphlets: include_typed_graphlets.unwrap_or(false),
+            random_state: random_state.unwrap_or(42),
+            number_of_random_integers: number_of_random_integers.unwrap_or(0),
             normalize_by_symmetric_laplacian: normalize_by_symmetric_laplacian.unwrap_or(false),
             concatenate_features: concatenate_features.unwrap_or(false),
             dtype: dtype.unwrap_or("f32".to_string()),
@@ -159,6 +171,8 @@ impl<PRECISION: Precision<BITS> + DeserializeOwned, const BITS: usize, const HOP
                 "The provided graph does not have edge types but the model has been initialized with `include_edge_types` set to true.".to_string(),
             );
         }
+
+        let random_state = splitmix64(self.random_state);
 
         // We add an offset to the node ids if they are requested.
         let node_id_offset = if self.include_node_ids {
@@ -256,6 +270,17 @@ impl<PRECISION: Precision<BITS> + DeserializeOwned, const BITS: usize, const HOP
                     })
                     .map(|node_type_id| node_type_id as usize + edge_type_offset)
                     .collect::<HyperLogLog<PRECISION, BITS>>();
+                }
+                if self.number_of_random_integers {
+                    let mut random_state =
+                        splitmix64(random_state.wrapping_mul(node_id as u64 + 1));
+                    counters[0] |= (0..self.number_of_random_integers)
+                        .iter()
+                        .map(|&random_integer| {
+                            random_state = xorshift(random_state);
+                            random_state
+                        })
+                        .collect::<HyperLogLog<PRECISION, BITS>>();
                 }
             });
 
