@@ -275,7 +275,6 @@ impl<PRECISION: Precision<BITS> + DeserializeOwned, const BITS: usize, const HOP
                     let mut random_state =
                         splitmix64(random_state.wrapping_mul(node_id as u64 + 1));
                     counters[0] |= (0..self.number_of_random_integers)
-                        .iter()
                         .map(|&random_integer| {
                             random_state = xorshift(random_state);
                             random_state
