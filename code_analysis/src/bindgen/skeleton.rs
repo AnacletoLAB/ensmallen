@@ -6,6 +6,7 @@ use std::path::Path;
 /// nor we care about.
 const DENY_LIST: &[&str] = &[
     "lib.rs",    // mod
+    "heterogeneous_graphlets.rs", 
     "macros.rs", // macro calls
 ];
 

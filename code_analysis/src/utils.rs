@@ -16,6 +16,7 @@ pub const DENY_LIST: &[&str] = &[
     "parallel_lines_reader.rs",
     "iters_wrapper.rs",
     "parallel_lines_reader_with_index.rs",
+    "heterogeneous_graphlets.rs",
     "url_utilities",
     "constructors",
     "argmax_argmin.rs",
