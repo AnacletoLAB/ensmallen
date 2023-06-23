@@ -47,95 +47,95 @@ enum InnerModel {
     /// HyperSketching model.
     /// HS{precision}_{bits}_{hops}(HS<Precision{precision}, {bits}, {hops}>), {python_macro}
     HS4_4_2(HS<Precision4, 4, 2>), // {python_generated}
-    HS4_4_3(HS<Precision4, 4, 3>),   // {python_generated}
-    HS4_4_4(HS<Precision4, 4, 4>),   // {python_generated}
-    HS4_4_5(HS<Precision4, 4, 5>),   // {python_generated}
-    HS4_4_6(HS<Precision4, 4, 6>),   // {python_generated}
-    HS4_5_2(HS<Precision4, 5, 2>),   // {python_generated}
-    HS4_5_3(HS<Precision4, 5, 3>),   // {python_generated}
-    HS4_5_4(HS<Precision4, 5, 4>),   // {python_generated}
-    HS4_5_5(HS<Precision4, 5, 5>),   // {python_generated}
-    HS4_5_6(HS<Precision4, 5, 6>),   // {python_generated}
-    HS4_6_2(HS<Precision4, 6, 2>),   // {python_generated}
-    HS4_6_3(HS<Precision4, 6, 3>),   // {python_generated}
-    HS4_6_4(HS<Precision4, 6, 4>),   // {python_generated}
-    HS4_6_5(HS<Precision4, 6, 5>),   // {python_generated}
-    HS4_6_6(HS<Precision4, 6, 6>),   // {python_generated}
-    HS5_4_2(HS<Precision5, 4, 2>),   // {python_generated}
-    HS5_4_3(HS<Precision5, 4, 3>),   // {python_generated}
-    HS5_4_4(HS<Precision5, 4, 4>),   // {python_generated}
-    HS5_4_5(HS<Precision5, 4, 5>),   // {python_generated}
-    HS5_4_6(HS<Precision5, 4, 6>),   // {python_generated}
-    HS5_5_2(HS<Precision5, 5, 2>),   // {python_generated}
-    HS5_5_3(HS<Precision5, 5, 3>),   // {python_generated}
-    HS5_5_4(HS<Precision5, 5, 4>),   // {python_generated}
-    HS5_5_5(HS<Precision5, 5, 5>),   // {python_generated}
-    HS5_5_6(HS<Precision5, 5, 6>),   // {python_generated}
-    HS5_6_2(HS<Precision5, 6, 2>),   // {python_generated}
-    HS5_6_3(HS<Precision5, 6, 3>),   // {python_generated}
-    HS5_6_4(HS<Precision5, 6, 4>),   // {python_generated}
-    HS5_6_5(HS<Precision5, 6, 5>),   // {python_generated}
-    HS5_6_6(HS<Precision5, 6, 6>),   // {python_generated}
-    HS6_4_2(HS<Precision6, 4, 2>),   // {python_generated}
-    HS6_4_3(HS<Precision6, 4, 3>),   // {python_generated}
-    HS6_4_4(HS<Precision6, 4, 4>),   // {python_generated}
-    HS6_4_5(HS<Precision6, 4, 5>),   // {python_generated}
-    HS6_4_6(HS<Precision6, 4, 6>),   // {python_generated}
-    HS6_5_2(HS<Precision6, 5, 2>),   // {python_generated}
-    HS6_5_3(HS<Precision6, 5, 3>),   // {python_generated}
-    HS6_5_4(HS<Precision6, 5, 4>),   // {python_generated}
-    HS6_5_5(HS<Precision6, 5, 5>),   // {python_generated}
-    HS6_5_6(HS<Precision6, 5, 6>),   // {python_generated}
-    HS6_6_2(HS<Precision6, 6, 2>),   // {python_generated}
-    HS6_6_3(HS<Precision6, 6, 3>),   // {python_generated}
-    HS6_6_4(HS<Precision6, 6, 4>),   // {python_generated}
-    HS6_6_5(HS<Precision6, 6, 5>),   // {python_generated}
-    HS6_6_6(HS<Precision6, 6, 6>),   // {python_generated}
-    HS7_4_2(HS<Precision7, 4, 2>),   // {python_generated}
-    HS7_4_3(HS<Precision7, 4, 3>),   // {python_generated}
-    HS7_4_4(HS<Precision7, 4, 4>),   // {python_generated}
-    HS7_4_5(HS<Precision7, 4, 5>),   // {python_generated}
-    HS7_4_6(HS<Precision7, 4, 6>),   // {python_generated}
-    HS7_5_2(HS<Precision7, 5, 2>),   // {python_generated}
-    HS7_5_3(HS<Precision7, 5, 3>),   // {python_generated}
-    HS7_5_4(HS<Precision7, 5, 4>),   // {python_generated}
-    HS7_5_5(HS<Precision7, 5, 5>),   // {python_generated}
-    HS7_5_6(HS<Precision7, 5, 6>),   // {python_generated}
-    HS7_6_2(HS<Precision7, 6, 2>),   // {python_generated}
-    HS7_6_3(HS<Precision7, 6, 3>),   // {python_generated}
-    HS7_6_4(HS<Precision7, 6, 4>),   // {python_generated}
-    HS7_6_5(HS<Precision7, 6, 5>),   // {python_generated}
-    HS7_6_6(HS<Precision7, 6, 6>),   // {python_generated}
-    HS8_4_2(HS<Precision8, 4, 2>),   // {python_generated}
-    HS8_4_3(HS<Precision8, 4, 3>),   // {python_generated}
-    HS8_4_4(HS<Precision8, 4, 4>),   // {python_generated}
-    HS8_4_5(HS<Precision8, 4, 5>),   // {python_generated}
-    HS8_4_6(HS<Precision8, 4, 6>),   // {python_generated}
-    HS8_5_2(HS<Precision8, 5, 2>),   // {python_generated}
-    HS8_5_3(HS<Precision8, 5, 3>),   // {python_generated}
-    HS8_5_4(HS<Precision8, 5, 4>),   // {python_generated}
-    HS8_5_5(HS<Precision8, 5, 5>),   // {python_generated}
-    HS8_5_6(HS<Precision8, 5, 6>),   // {python_generated}
-    HS8_6_2(HS<Precision8, 6, 2>),   // {python_generated}
-    HS8_6_3(HS<Precision8, 6, 3>),   // {python_generated}
-    HS8_6_4(HS<Precision8, 6, 4>),   // {python_generated}
-    HS8_6_5(HS<Precision8, 6, 5>),   // {python_generated}
-    HS8_6_6(HS<Precision8, 6, 6>),   // {python_generated}
-    HS9_4_2(HS<Precision9, 4, 2>),   // {python_generated}
-    HS9_4_3(HS<Precision9, 4, 3>),   // {python_generated}
-    HS9_4_4(HS<Precision9, 4, 4>),   // {python_generated}
-    HS9_4_5(HS<Precision9, 4, 5>),   // {python_generated}
-    HS9_4_6(HS<Precision9, 4, 6>),   // {python_generated}
-    HS9_5_2(HS<Precision9, 5, 2>),   // {python_generated}
-    HS9_5_3(HS<Precision9, 5, 3>),   // {python_generated}
-    HS9_5_4(HS<Precision9, 5, 4>),   // {python_generated}
-    HS9_5_5(HS<Precision9, 5, 5>),   // {python_generated}
-    HS9_5_6(HS<Precision9, 5, 6>),   // {python_generated}
-    HS9_6_2(HS<Precision9, 6, 2>),   // {python_generated}
-    HS9_6_3(HS<Precision9, 6, 3>),   // {python_generated}
-    HS9_6_4(HS<Precision9, 6, 4>),   // {python_generated}
-    HS9_6_5(HS<Precision9, 6, 5>),   // {python_generated}
-    HS9_6_6(HS<Precision9, 6, 6>),   // {python_generated}
+    HS4_4_3(HS<Precision4, 4, 3>), // {python_generated}
+    HS4_4_4(HS<Precision4, 4, 4>), // {python_generated}
+    HS4_4_5(HS<Precision4, 4, 5>), // {python_generated}
+    HS4_4_6(HS<Precision4, 4, 6>), // {python_generated}
+    HS4_5_2(HS<Precision4, 5, 2>), // {python_generated}
+    HS4_5_3(HS<Precision4, 5, 3>), // {python_generated}
+    HS4_5_4(HS<Precision4, 5, 4>), // {python_generated}
+    HS4_5_5(HS<Precision4, 5, 5>), // {python_generated}
+    HS4_5_6(HS<Precision4, 5, 6>), // {python_generated}
+    HS4_6_2(HS<Precision4, 6, 2>), // {python_generated}
+    HS4_6_3(HS<Precision4, 6, 3>), // {python_generated}
+    HS4_6_4(HS<Precision4, 6, 4>), // {python_generated}
+    HS4_6_5(HS<Precision4, 6, 5>), // {python_generated}
+    HS4_6_6(HS<Precision4, 6, 6>), // {python_generated}
+    HS5_4_2(HS<Precision5, 4, 2>), // {python_generated}
+    HS5_4_3(HS<Precision5, 4, 3>), // {python_generated}
+    HS5_4_4(HS<Precision5, 4, 4>), // {python_generated}
+    HS5_4_5(HS<Precision5, 4, 5>), // {python_generated}
+    HS5_4_6(HS<Precision5, 4, 6>), // {python_generated}
+    HS5_5_2(HS<Precision5, 5, 2>), // {python_generated}
+    HS5_5_3(HS<Precision5, 5, 3>), // {python_generated}
+    HS5_5_4(HS<Precision5, 5, 4>), // {python_generated}
+    HS5_5_5(HS<Precision5, 5, 5>), // {python_generated}
+    HS5_5_6(HS<Precision5, 5, 6>), // {python_generated}
+    HS5_6_2(HS<Precision5, 6, 2>), // {python_generated}
+    HS5_6_3(HS<Precision5, 6, 3>), // {python_generated}
+    HS5_6_4(HS<Precision5, 6, 4>), // {python_generated}
+    HS5_6_5(HS<Precision5, 6, 5>), // {python_generated}
+    HS5_6_6(HS<Precision5, 6, 6>), // {python_generated}
+    HS6_4_2(HS<Precision6, 4, 2>), // {python_generated}
+    HS6_4_3(HS<Precision6, 4, 3>), // {python_generated}
+    HS6_4_4(HS<Precision6, 4, 4>), // {python_generated}
+    HS6_4_5(HS<Precision6, 4, 5>), // {python_generated}
+    HS6_4_6(HS<Precision6, 4, 6>), // {python_generated}
+    HS6_5_2(HS<Precision6, 5, 2>), // {python_generated}
+    HS6_5_3(HS<Precision6, 5, 3>), // {python_generated}
+    HS6_5_4(HS<Precision6, 5, 4>), // {python_generated}
+    HS6_5_5(HS<Precision6, 5, 5>), // {python_generated}
+    HS6_5_6(HS<Precision6, 5, 6>), // {python_generated}
+    HS6_6_2(HS<Precision6, 6, 2>), // {python_generated}
+    HS6_6_3(HS<Precision6, 6, 3>), // {python_generated}
+    HS6_6_4(HS<Precision6, 6, 4>), // {python_generated}
+    HS6_6_5(HS<Precision6, 6, 5>), // {python_generated}
+    HS6_6_6(HS<Precision6, 6, 6>), // {python_generated}
+    HS7_4_2(HS<Precision7, 4, 2>), // {python_generated}
+    HS7_4_3(HS<Precision7, 4, 3>), // {python_generated}
+    HS7_4_4(HS<Precision7, 4, 4>), // {python_generated}
+    HS7_4_5(HS<Precision7, 4, 5>), // {python_generated}
+    HS7_4_6(HS<Precision7, 4, 6>), // {python_generated}
+    HS7_5_2(HS<Precision7, 5, 2>), // {python_generated}
+    HS7_5_3(HS<Precision7, 5, 3>), // {python_generated}
+    HS7_5_4(HS<Precision7, 5, 4>), // {python_generated}
+    HS7_5_5(HS<Precision7, 5, 5>), // {python_generated}
+    HS7_5_6(HS<Precision7, 5, 6>), // {python_generated}
+    HS7_6_2(HS<Precision7, 6, 2>), // {python_generated}
+    HS7_6_3(HS<Precision7, 6, 3>), // {python_generated}
+    HS7_6_4(HS<Precision7, 6, 4>), // {python_generated}
+    HS7_6_5(HS<Precision7, 6, 5>), // {python_generated}
+    HS7_6_6(HS<Precision7, 6, 6>), // {python_generated}
+    HS8_4_2(HS<Precision8, 4, 2>), // {python_generated}
+    HS8_4_3(HS<Precision8, 4, 3>), // {python_generated}
+    HS8_4_4(HS<Precision8, 4, 4>), // {python_generated}
+    HS8_4_5(HS<Precision8, 4, 5>), // {python_generated}
+    HS8_4_6(HS<Precision8, 4, 6>), // {python_generated}
+    HS8_5_2(HS<Precision8, 5, 2>), // {python_generated}
+    HS8_5_3(HS<Precision8, 5, 3>), // {python_generated}
+    HS8_5_4(HS<Precision8, 5, 4>), // {python_generated}
+    HS8_5_5(HS<Precision8, 5, 5>), // {python_generated}
+    HS8_5_6(HS<Precision8, 5, 6>), // {python_generated}
+    HS8_6_2(HS<Precision8, 6, 2>), // {python_generated}
+    HS8_6_3(HS<Precision8, 6, 3>), // {python_generated}
+    HS8_6_4(HS<Precision8, 6, 4>), // {python_generated}
+    HS8_6_5(HS<Precision8, 6, 5>), // {python_generated}
+    HS8_6_6(HS<Precision8, 6, 6>), // {python_generated}
+    HS9_4_2(HS<Precision9, 4, 2>), // {python_generated}
+    HS9_4_3(HS<Precision9, 4, 3>), // {python_generated}
+    HS9_4_4(HS<Precision9, 4, 4>), // {python_generated}
+    HS9_4_5(HS<Precision9, 4, 5>), // {python_generated}
+    HS9_4_6(HS<Precision9, 4, 6>), // {python_generated}
+    HS9_5_2(HS<Precision9, 5, 2>), // {python_generated}
+    HS9_5_3(HS<Precision9, 5, 3>), // {python_generated}
+    HS9_5_4(HS<Precision9, 5, 4>), // {python_generated}
+    HS9_5_5(HS<Precision9, 5, 5>), // {python_generated}
+    HS9_5_6(HS<Precision9, 5, 6>), // {python_generated}
+    HS9_6_2(HS<Precision9, 6, 2>), // {python_generated}
+    HS9_6_3(HS<Precision9, 6, 3>), // {python_generated}
+    HS9_6_4(HS<Precision9, 6, 4>), // {python_generated}
+    HS9_6_5(HS<Precision9, 6, 5>), // {python_generated}
+    HS9_6_6(HS<Precision9, 6, 6>), // {python_generated}
     HS10_4_2(HS<Precision10, 4, 2>), // {python_generated}
     HS10_4_3(HS<Precision10, 4, 3>), // {python_generated}
     HS10_4_4(HS<Precision10, 4, 4>), // {python_generated}
@@ -257,1491 +257,141 @@ impl InnerModel {
 
         match (precision, bits, number_of_hops.unwrap_or(2)) {
             // ({precision}, {bits}, {hops}) => Ok(InnerModel::HS{precision}_{bits}_{hops}(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), {python_macro}
-            (4, 4, 2) => Ok(InnerModel::HS4_4_2(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (4, 4, 3) => Ok(InnerModel::HS4_4_3(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (4, 4, 4) => Ok(InnerModel::HS4_4_4(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (4, 4, 5) => Ok(InnerModel::HS4_4_5(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (4, 4, 6) => Ok(InnerModel::HS4_4_6(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (4, 5, 2) => Ok(InnerModel::HS4_5_2(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (4, 5, 3) => Ok(InnerModel::HS4_5_3(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (4, 5, 4) => Ok(InnerModel::HS4_5_4(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (4, 5, 5) => Ok(InnerModel::HS4_5_5(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (4, 5, 6) => Ok(InnerModel::HS4_5_6(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (4, 6, 2) => Ok(InnerModel::HS4_6_2(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (4, 6, 3) => Ok(InnerModel::HS4_6_3(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (4, 6, 4) => Ok(InnerModel::HS4_6_4(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (4, 6, 5) => Ok(InnerModel::HS4_6_5(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (4, 6, 6) => Ok(InnerModel::HS4_6_6(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (5, 4, 2) => Ok(InnerModel::HS5_4_2(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (5, 4, 3) => Ok(InnerModel::HS5_4_3(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (5, 4, 4) => Ok(InnerModel::HS5_4_4(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (5, 4, 5) => Ok(InnerModel::HS5_4_5(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (5, 4, 6) => Ok(InnerModel::HS5_4_6(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (5, 5, 2) => Ok(InnerModel::HS5_5_2(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (5, 5, 3) => Ok(InnerModel::HS5_5_3(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (5, 5, 4) => Ok(InnerModel::HS5_5_4(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (5, 5, 5) => Ok(InnerModel::HS5_5_5(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (5, 5, 6) => Ok(InnerModel::HS5_5_6(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (5, 6, 2) => Ok(InnerModel::HS5_6_2(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (5, 6, 3) => Ok(InnerModel::HS5_6_3(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (5, 6, 4) => Ok(InnerModel::HS5_6_4(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (5, 6, 5) => Ok(InnerModel::HS5_6_5(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (5, 6, 6) => Ok(InnerModel::HS5_6_6(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (6, 4, 2) => Ok(InnerModel::HS6_4_2(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (6, 4, 3) => Ok(InnerModel::HS6_4_3(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (6, 4, 4) => Ok(InnerModel::HS6_4_4(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (6, 4, 5) => Ok(InnerModel::HS6_4_5(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (6, 4, 6) => Ok(InnerModel::HS6_4_6(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (6, 5, 2) => Ok(InnerModel::HS6_5_2(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (6, 5, 3) => Ok(InnerModel::HS6_5_3(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (6, 5, 4) => Ok(InnerModel::HS6_5_4(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (6, 5, 5) => Ok(InnerModel::HS6_5_5(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (6, 5, 6) => Ok(InnerModel::HS6_5_6(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (6, 6, 2) => Ok(InnerModel::HS6_6_2(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (6, 6, 3) => Ok(InnerModel::HS6_6_3(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (6, 6, 4) => Ok(InnerModel::HS6_6_4(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (6, 6, 5) => Ok(InnerModel::HS6_6_5(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (6, 6, 6) => Ok(InnerModel::HS6_6_6(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (7, 4, 2) => Ok(InnerModel::HS7_4_2(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (7, 4, 3) => Ok(InnerModel::HS7_4_3(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (7, 4, 4) => Ok(InnerModel::HS7_4_4(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (7, 4, 5) => Ok(InnerModel::HS7_4_5(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (7, 4, 6) => Ok(InnerModel::HS7_4_6(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (7, 5, 2) => Ok(InnerModel::HS7_5_2(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (7, 5, 3) => Ok(InnerModel::HS7_5_3(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (7, 5, 4) => Ok(InnerModel::HS7_5_4(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (7, 5, 5) => Ok(InnerModel::HS7_5_5(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (7, 5, 6) => Ok(InnerModel::HS7_5_6(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (7, 6, 2) => Ok(InnerModel::HS7_6_2(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (7, 6, 3) => Ok(InnerModel::HS7_6_3(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (7, 6, 4) => Ok(InnerModel::HS7_6_4(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (7, 6, 5) => Ok(InnerModel::HS7_6_5(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (7, 6, 6) => Ok(InnerModel::HS7_6_6(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (8, 4, 2) => Ok(InnerModel::HS8_4_2(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (8, 4, 3) => Ok(InnerModel::HS8_4_3(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (8, 4, 4) => Ok(InnerModel::HS8_4_4(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (8, 4, 5) => Ok(InnerModel::HS8_4_5(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (8, 4, 6) => Ok(InnerModel::HS8_4_6(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (8, 5, 2) => Ok(InnerModel::HS8_5_2(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (8, 5, 3) => Ok(InnerModel::HS8_5_3(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (8, 5, 4) => Ok(InnerModel::HS8_5_4(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (8, 5, 5) => Ok(InnerModel::HS8_5_5(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (8, 5, 6) => Ok(InnerModel::HS8_5_6(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (8, 6, 2) => Ok(InnerModel::HS8_6_2(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (8, 6, 3) => Ok(InnerModel::HS8_6_3(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (8, 6, 4) => Ok(InnerModel::HS8_6_4(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (8, 6, 5) => Ok(InnerModel::HS8_6_5(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (8, 6, 6) => Ok(InnerModel::HS8_6_6(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (9, 4, 2) => Ok(InnerModel::HS9_4_2(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (9, 4, 3) => Ok(InnerModel::HS9_4_3(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (9, 4, 4) => Ok(InnerModel::HS9_4_4(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (9, 4, 5) => Ok(InnerModel::HS9_4_5(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (9, 4, 6) => Ok(InnerModel::HS9_4_6(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (9, 5, 2) => Ok(InnerModel::HS9_5_2(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (9, 5, 3) => Ok(InnerModel::HS9_5_3(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (9, 5, 4) => Ok(InnerModel::HS9_5_4(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (9, 5, 5) => Ok(InnerModel::HS9_5_5(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (9, 5, 6) => Ok(InnerModel::HS9_5_6(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (9, 6, 2) => Ok(InnerModel::HS9_6_2(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (9, 6, 3) => Ok(InnerModel::HS9_6_3(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (9, 6, 4) => Ok(InnerModel::HS9_6_4(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (9, 6, 5) => Ok(InnerModel::HS9_6_5(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (9, 6, 6) => Ok(InnerModel::HS9_6_6(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (10, 4, 2) => Ok(InnerModel::HS10_4_2(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (10, 4, 3) => Ok(InnerModel::HS10_4_3(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (10, 4, 4) => Ok(InnerModel::HS10_4_4(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (10, 4, 5) => Ok(InnerModel::HS10_4_5(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (10, 4, 6) => Ok(InnerModel::HS10_4_6(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (10, 5, 2) => Ok(InnerModel::HS10_5_2(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (10, 5, 3) => Ok(InnerModel::HS10_5_3(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (10, 5, 4) => Ok(InnerModel::HS10_5_4(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (10, 5, 5) => Ok(InnerModel::HS10_5_5(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (10, 5, 6) => Ok(InnerModel::HS10_5_6(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (10, 6, 2) => Ok(InnerModel::HS10_6_2(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (10, 6, 3) => Ok(InnerModel::HS10_6_3(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (10, 6, 4) => Ok(InnerModel::HS10_6_4(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (10, 6, 5) => Ok(InnerModel::HS10_6_5(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (10, 6, 6) => Ok(InnerModel::HS10_6_6(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (11, 4, 2) => Ok(InnerModel::HS11_4_2(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (11, 4, 3) => Ok(InnerModel::HS11_4_3(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (11, 4, 4) => Ok(InnerModel::HS11_4_4(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (11, 4, 5) => Ok(InnerModel::HS11_4_5(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (11, 4, 6) => Ok(InnerModel::HS11_4_6(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (11, 5, 2) => Ok(InnerModel::HS11_5_2(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (11, 5, 3) => Ok(InnerModel::HS11_5_3(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (11, 5, 4) => Ok(InnerModel::HS11_5_4(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (11, 5, 5) => Ok(InnerModel::HS11_5_5(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (11, 5, 6) => Ok(InnerModel::HS11_5_6(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (11, 6, 2) => Ok(InnerModel::HS11_6_2(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (11, 6, 3) => Ok(InnerModel::HS11_6_3(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (11, 6, 4) => Ok(InnerModel::HS11_6_4(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (11, 6, 5) => Ok(InnerModel::HS11_6_5(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (11, 6, 6) => Ok(InnerModel::HS11_6_6(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (12, 4, 2) => Ok(InnerModel::HS12_4_2(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (12, 4, 3) => Ok(InnerModel::HS12_4_3(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (12, 4, 4) => Ok(InnerModel::HS12_4_4(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (12, 4, 5) => Ok(InnerModel::HS12_4_5(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (12, 4, 6) => Ok(InnerModel::HS12_4_6(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (12, 5, 2) => Ok(InnerModel::HS12_5_2(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (12, 5, 3) => Ok(InnerModel::HS12_5_3(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (12, 5, 4) => Ok(InnerModel::HS12_5_4(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (12, 5, 5) => Ok(InnerModel::HS12_5_5(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (12, 5, 6) => Ok(InnerModel::HS12_5_6(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (12, 6, 2) => Ok(InnerModel::HS12_6_2(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (12, 6, 3) => Ok(InnerModel::HS12_6_3(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (12, 6, 4) => Ok(InnerModel::HS12_6_4(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (12, 6, 5) => Ok(InnerModel::HS12_6_5(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
-            (12, 6, 6) => Ok(InnerModel::HS12_6_6(HS::new(
-                include_node_types,
-                include_edge_types,
-                include_edge_ids,
-                include_node_ids,
-                include_selfloops,
-                include_typed_graphlets,
-                normalize_by_symmetric_laplacian,
-                concatenate_features,
-                dtype,
-            )?)), // {python_generated}
+            (4, 4, 2) => Ok(InnerModel::HS4_4_2(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (4, 4, 3) => Ok(InnerModel::HS4_4_3(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (4, 4, 4) => Ok(InnerModel::HS4_4_4(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (4, 4, 5) => Ok(InnerModel::HS4_4_5(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (4, 4, 6) => Ok(InnerModel::HS4_4_6(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (4, 5, 2) => Ok(InnerModel::HS4_5_2(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (4, 5, 3) => Ok(InnerModel::HS4_5_3(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (4, 5, 4) => Ok(InnerModel::HS4_5_4(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (4, 5, 5) => Ok(InnerModel::HS4_5_5(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (4, 5, 6) => Ok(InnerModel::HS4_5_6(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (4, 6, 2) => Ok(InnerModel::HS4_6_2(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (4, 6, 3) => Ok(InnerModel::HS4_6_3(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (4, 6, 4) => Ok(InnerModel::HS4_6_4(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (4, 6, 5) => Ok(InnerModel::HS4_6_5(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (4, 6, 6) => Ok(InnerModel::HS4_6_6(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (5, 4, 2) => Ok(InnerModel::HS5_4_2(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (5, 4, 3) => Ok(InnerModel::HS5_4_3(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (5, 4, 4) => Ok(InnerModel::HS5_4_4(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (5, 4, 5) => Ok(InnerModel::HS5_4_5(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (5, 4, 6) => Ok(InnerModel::HS5_4_6(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (5, 5, 2) => Ok(InnerModel::HS5_5_2(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (5, 5, 3) => Ok(InnerModel::HS5_5_3(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (5, 5, 4) => Ok(InnerModel::HS5_5_4(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (5, 5, 5) => Ok(InnerModel::HS5_5_5(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (5, 5, 6) => Ok(InnerModel::HS5_5_6(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (5, 6, 2) => Ok(InnerModel::HS5_6_2(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (5, 6, 3) => Ok(InnerModel::HS5_6_3(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (5, 6, 4) => Ok(InnerModel::HS5_6_4(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (5, 6, 5) => Ok(InnerModel::HS5_6_5(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (5, 6, 6) => Ok(InnerModel::HS5_6_6(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (6, 4, 2) => Ok(InnerModel::HS6_4_2(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (6, 4, 3) => Ok(InnerModel::HS6_4_3(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (6, 4, 4) => Ok(InnerModel::HS6_4_4(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (6, 4, 5) => Ok(InnerModel::HS6_4_5(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (6, 4, 6) => Ok(InnerModel::HS6_4_6(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (6, 5, 2) => Ok(InnerModel::HS6_5_2(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (6, 5, 3) => Ok(InnerModel::HS6_5_3(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (6, 5, 4) => Ok(InnerModel::HS6_5_4(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (6, 5, 5) => Ok(InnerModel::HS6_5_5(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (6, 5, 6) => Ok(InnerModel::HS6_5_6(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (6, 6, 2) => Ok(InnerModel::HS6_6_2(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (6, 6, 3) => Ok(InnerModel::HS6_6_3(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (6, 6, 4) => Ok(InnerModel::HS6_6_4(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (6, 6, 5) => Ok(InnerModel::HS6_6_5(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (6, 6, 6) => Ok(InnerModel::HS6_6_6(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (7, 4, 2) => Ok(InnerModel::HS7_4_2(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (7, 4, 3) => Ok(InnerModel::HS7_4_3(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (7, 4, 4) => Ok(InnerModel::HS7_4_4(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (7, 4, 5) => Ok(InnerModel::HS7_4_5(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (7, 4, 6) => Ok(InnerModel::HS7_4_6(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (7, 5, 2) => Ok(InnerModel::HS7_5_2(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (7, 5, 3) => Ok(InnerModel::HS7_5_3(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (7, 5, 4) => Ok(InnerModel::HS7_5_4(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (7, 5, 5) => Ok(InnerModel::HS7_5_5(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (7, 5, 6) => Ok(InnerModel::HS7_5_6(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (7, 6, 2) => Ok(InnerModel::HS7_6_2(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (7, 6, 3) => Ok(InnerModel::HS7_6_3(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (7, 6, 4) => Ok(InnerModel::HS7_6_4(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (7, 6, 5) => Ok(InnerModel::HS7_6_5(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (7, 6, 6) => Ok(InnerModel::HS7_6_6(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (8, 4, 2) => Ok(InnerModel::HS8_4_2(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (8, 4, 3) => Ok(InnerModel::HS8_4_3(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (8, 4, 4) => Ok(InnerModel::HS8_4_4(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (8, 4, 5) => Ok(InnerModel::HS8_4_5(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (8, 4, 6) => Ok(InnerModel::HS8_4_6(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (8, 5, 2) => Ok(InnerModel::HS8_5_2(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (8, 5, 3) => Ok(InnerModel::HS8_5_3(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (8, 5, 4) => Ok(InnerModel::HS8_5_4(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (8, 5, 5) => Ok(InnerModel::HS8_5_5(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (8, 5, 6) => Ok(InnerModel::HS8_5_6(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (8, 6, 2) => Ok(InnerModel::HS8_6_2(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (8, 6, 3) => Ok(InnerModel::HS8_6_3(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (8, 6, 4) => Ok(InnerModel::HS8_6_4(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (8, 6, 5) => Ok(InnerModel::HS8_6_5(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (8, 6, 6) => Ok(InnerModel::HS8_6_6(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (9, 4, 2) => Ok(InnerModel::HS9_4_2(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (9, 4, 3) => Ok(InnerModel::HS9_4_3(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (9, 4, 4) => Ok(InnerModel::HS9_4_4(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (9, 4, 5) => Ok(InnerModel::HS9_4_5(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (9, 4, 6) => Ok(InnerModel::HS9_4_6(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (9, 5, 2) => Ok(InnerModel::HS9_5_2(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (9, 5, 3) => Ok(InnerModel::HS9_5_3(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (9, 5, 4) => Ok(InnerModel::HS9_5_4(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (9, 5, 5) => Ok(InnerModel::HS9_5_5(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (9, 5, 6) => Ok(InnerModel::HS9_5_6(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (9, 6, 2) => Ok(InnerModel::HS9_6_2(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (9, 6, 3) => Ok(InnerModel::HS9_6_3(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (9, 6, 4) => Ok(InnerModel::HS9_6_4(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (9, 6, 5) => Ok(InnerModel::HS9_6_5(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (9, 6, 6) => Ok(InnerModel::HS9_6_6(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (10, 4, 2) => Ok(InnerModel::HS10_4_2(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (10, 4, 3) => Ok(InnerModel::HS10_4_3(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (10, 4, 4) => Ok(InnerModel::HS10_4_4(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (10, 4, 5) => Ok(InnerModel::HS10_4_5(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (10, 4, 6) => Ok(InnerModel::HS10_4_6(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (10, 5, 2) => Ok(InnerModel::HS10_5_2(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (10, 5, 3) => Ok(InnerModel::HS10_5_3(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (10, 5, 4) => Ok(InnerModel::HS10_5_4(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (10, 5, 5) => Ok(InnerModel::HS10_5_5(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (10, 5, 6) => Ok(InnerModel::HS10_5_6(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (10, 6, 2) => Ok(InnerModel::HS10_6_2(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (10, 6, 3) => Ok(InnerModel::HS10_6_3(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (10, 6, 4) => Ok(InnerModel::HS10_6_4(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (10, 6, 5) => Ok(InnerModel::HS10_6_5(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (10, 6, 6) => Ok(InnerModel::HS10_6_6(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (11, 4, 2) => Ok(InnerModel::HS11_4_2(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (11, 4, 3) => Ok(InnerModel::HS11_4_3(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (11, 4, 4) => Ok(InnerModel::HS11_4_4(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (11, 4, 5) => Ok(InnerModel::HS11_4_5(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (11, 4, 6) => Ok(InnerModel::HS11_4_6(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (11, 5, 2) => Ok(InnerModel::HS11_5_2(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (11, 5, 3) => Ok(InnerModel::HS11_5_3(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (11, 5, 4) => Ok(InnerModel::HS11_5_4(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (11, 5, 5) => Ok(InnerModel::HS11_5_5(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (11, 5, 6) => Ok(InnerModel::HS11_5_6(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (11, 6, 2) => Ok(InnerModel::HS11_6_2(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (11, 6, 3) => Ok(InnerModel::HS11_6_3(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (11, 6, 4) => Ok(InnerModel::HS11_6_4(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (11, 6, 5) => Ok(InnerModel::HS11_6_5(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (11, 6, 6) => Ok(InnerModel::HS11_6_6(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (12, 4, 2) => Ok(InnerModel::HS12_4_2(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (12, 4, 3) => Ok(InnerModel::HS12_4_3(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (12, 4, 4) => Ok(InnerModel::HS12_4_4(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (12, 4, 5) => Ok(InnerModel::HS12_4_5(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (12, 4, 6) => Ok(InnerModel::HS12_4_6(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (12, 5, 2) => Ok(InnerModel::HS12_5_2(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (12, 5, 3) => Ok(InnerModel::HS12_5_3(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (12, 5, 4) => Ok(InnerModel::HS12_5_4(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (12, 5, 5) => Ok(InnerModel::HS12_5_5(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (12, 5, 6) => Ok(InnerModel::HS12_5_6(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (12, 6, 2) => Ok(InnerModel::HS12_6_2(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (12, 6, 3) => Ok(InnerModel::HS12_6_3(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (12, 6, 4) => Ok(InnerModel::HS12_6_4(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (12, 6, 5) => Ok(InnerModel::HS12_6_5(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (12, 6, 6) => Ok(InnerModel::HS12_6_6(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             _ => {
                 return Err(format!(
                     concat!(
@@ -2775,411 +1425,141 @@ impl InnerModel {
     ) -> Result<Py<PyArray2<f32>>> {
         match self {
             // InnerModel::HS{precision}_{bits}_{hops}(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), {python_macro}
-            InnerModel::HS4_4_2(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS4_4_3(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS4_4_4(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS4_4_5(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS4_4_6(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS4_5_2(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS4_5_3(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS4_5_4(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS4_5_5(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS4_5_6(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS4_6_2(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS4_6_3(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS4_6_4(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS4_6_5(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS4_6_6(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS5_4_2(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS5_4_3(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS5_4_4(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS5_4_5(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS5_4_6(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS5_5_2(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS5_5_3(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS5_5_4(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS5_5_5(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS5_5_6(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS5_6_2(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS5_6_3(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS5_6_4(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS5_6_5(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS5_6_6(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS6_4_2(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS6_4_3(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS6_4_4(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS6_4_5(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS6_4_6(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS6_5_2(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS6_5_3(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS6_5_4(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS6_5_5(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS6_5_6(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS6_6_2(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS6_6_3(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS6_6_4(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS6_6_5(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS6_6_6(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS7_4_2(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS7_4_3(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS7_4_4(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS7_4_5(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS7_4_6(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS7_5_2(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS7_5_3(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS7_5_4(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS7_5_5(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS7_5_6(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS7_6_2(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS7_6_3(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS7_6_4(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS7_6_5(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS7_6_6(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS8_4_2(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS8_4_3(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS8_4_4(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS8_4_5(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS8_4_6(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS8_5_2(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS8_5_3(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS8_5_4(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS8_5_5(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS8_5_6(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS8_6_2(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS8_6_3(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS8_6_4(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS8_6_5(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS8_6_6(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS9_4_2(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS9_4_3(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS9_4_4(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS9_4_5(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS9_4_6(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS9_5_2(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS9_5_3(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS9_5_4(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS9_5_5(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS9_5_6(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS9_6_2(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS9_6_3(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS9_6_4(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS9_6_5(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS9_6_6(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS10_4_2(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS10_4_3(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS10_4_4(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS10_4_5(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS10_4_6(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS10_5_2(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS10_5_3(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS10_5_4(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS10_5_5(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS10_5_6(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS10_6_2(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS10_6_3(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS10_6_4(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS10_6_5(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS10_6_6(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS11_4_2(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS11_4_3(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS11_4_4(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS11_4_5(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS11_4_6(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS11_5_2(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS11_5_3(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS11_5_4(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS11_5_5(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS11_5_6(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS11_6_2(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS11_6_3(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS11_6_4(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS11_6_5(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS11_6_6(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS12_4_2(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS12_4_3(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS12_4_4(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS12_4_5(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS12_4_6(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS12_5_2(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS12_5_3(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS12_5_4(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS12_5_5(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS12_5_6(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS12_6_2(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS12_6_3(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS12_6_4(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS12_6_5(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS12_6_6(inner) => {
-                matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
+            InnerModel::HS4_4_2(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS4_4_3(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS4_4_4(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS4_4_5(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS4_4_6(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS4_5_2(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS4_5_3(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS4_5_4(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS4_5_5(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS4_5_6(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS4_6_2(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS4_6_3(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS4_6_4(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS4_6_5(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS4_6_6(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS5_4_2(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS5_4_3(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS5_4_4(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS5_4_5(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS5_4_6(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS5_5_2(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS5_5_3(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS5_5_4(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS5_5_5(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS5_5_6(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS5_6_2(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS5_6_3(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS5_6_4(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS5_6_5(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS5_6_6(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS6_4_2(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS6_4_3(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS6_4_4(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS6_4_5(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS6_4_6(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS6_5_2(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS6_5_3(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS6_5_4(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS6_5_5(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS6_5_6(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS6_6_2(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS6_6_3(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS6_6_4(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS6_6_5(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS6_6_6(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS7_4_2(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS7_4_3(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS7_4_4(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS7_4_5(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS7_4_6(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS7_5_2(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS7_5_3(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS7_5_4(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS7_5_5(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS7_5_6(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS7_6_2(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS7_6_3(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS7_6_4(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS7_6_5(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS7_6_6(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS8_4_2(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS8_4_3(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS8_4_4(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS8_4_5(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS8_4_6(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS8_5_2(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS8_5_3(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS8_5_4(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS8_5_5(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS8_5_6(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS8_6_2(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS8_6_3(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS8_6_4(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS8_6_5(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS8_6_6(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS9_4_2(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS9_4_3(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS9_4_4(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS9_4_5(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS9_4_6(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS9_5_2(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS9_5_3(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS9_5_4(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS9_5_5(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS9_5_6(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS9_6_2(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS9_6_3(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS9_6_4(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS9_6_5(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS9_6_6(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS10_4_2(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS10_4_3(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS10_4_4(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS10_4_5(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS10_4_6(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS10_5_2(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS10_5_3(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS10_5_4(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS10_5_5(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS10_5_6(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS10_6_2(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS10_6_3(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS10_6_4(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS10_6_5(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS10_6_6(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS11_4_2(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS11_4_3(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS11_4_4(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS11_4_5(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS11_4_6(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS11_5_2(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS11_5_3(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS11_5_4(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS11_5_5(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS11_5_6(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS11_6_2(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS11_6_3(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS11_6_4(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS11_6_5(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS11_6_6(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS12_4_2(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS12_4_3(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS12_4_4(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS12_4_5(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS12_4_6(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS12_5_2(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS12_5_3(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS12_5_4(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS12_5_5(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS12_5_6(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS12_6_2(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS12_6_3(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS12_6_4(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS12_6_5(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS12_6_6(inner) => matrix_to_numpy_array2d(inner.get_overlap_cardinalities_from_node_ids(src, dst)?), // {python_generated}
         }
     }
 
@@ -3205,411 +1585,141 @@ impl InnerModel {
     ) -> Result<Py<PyArray1<f32>>> {
         match self {
             // InnerModel::HS{precision}_{bits}_{hops}(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), {python_macro}
-            InnerModel::HS4_4_2(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS4_4_3(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS4_4_4(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS4_4_5(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS4_4_6(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS4_5_2(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS4_5_3(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS4_5_4(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS4_5_5(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS4_5_6(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS4_6_2(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS4_6_3(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS4_6_4(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS4_6_5(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS4_6_6(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS5_4_2(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS5_4_3(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS5_4_4(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS5_4_5(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS5_4_6(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS5_5_2(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS5_5_3(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS5_5_4(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS5_5_5(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS5_5_6(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS5_6_2(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS5_6_3(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS5_6_4(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS5_6_5(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS5_6_6(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS6_4_2(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS6_4_3(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS6_4_4(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS6_4_5(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS6_4_6(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS6_5_2(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS6_5_3(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS6_5_4(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS6_5_5(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS6_5_6(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS6_6_2(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS6_6_3(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS6_6_4(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS6_6_5(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS6_6_6(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS7_4_2(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS7_4_3(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS7_4_4(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS7_4_5(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS7_4_6(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS7_5_2(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS7_5_3(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS7_5_4(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS7_5_5(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS7_5_6(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS7_6_2(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS7_6_3(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS7_6_4(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS7_6_5(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS7_6_6(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS8_4_2(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS8_4_3(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS8_4_4(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS8_4_5(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS8_4_6(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS8_5_2(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS8_5_3(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS8_5_4(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS8_5_5(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS8_5_6(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS8_6_2(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS8_6_3(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS8_6_4(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS8_6_5(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS8_6_6(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS9_4_2(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS9_4_3(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS9_4_4(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS9_4_5(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS9_4_6(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS9_5_2(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS9_5_3(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS9_5_4(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS9_5_5(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS9_5_6(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS9_6_2(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS9_6_3(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS9_6_4(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS9_6_5(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS9_6_6(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS10_4_2(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS10_4_3(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS10_4_4(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS10_4_5(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS10_4_6(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS10_5_2(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS10_5_3(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS10_5_4(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS10_5_5(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS10_5_6(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS10_6_2(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS10_6_3(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS10_6_4(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS10_6_5(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS10_6_6(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS11_4_2(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS11_4_3(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS11_4_4(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS11_4_5(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS11_4_6(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS11_5_2(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS11_5_3(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS11_5_4(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS11_5_5(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS11_5_6(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS11_6_2(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS11_6_3(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS11_6_4(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS11_6_5(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS11_6_6(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS12_4_2(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS12_4_3(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS12_4_4(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS12_4_5(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS12_4_6(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS12_5_2(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS12_5_3(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS12_5_4(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS12_5_5(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS12_5_6(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS12_6_2(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS12_6_3(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS12_6_4(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS12_6_5(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
-            InnerModel::HS12_6_6(inner) => {
-                array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?)
-            } // {python_generated}
+            InnerModel::HS4_4_2(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS4_4_3(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS4_4_4(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS4_4_5(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS4_4_6(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS4_5_2(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS4_5_3(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS4_5_4(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS4_5_5(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS4_5_6(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS4_6_2(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS4_6_3(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS4_6_4(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS4_6_5(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS4_6_6(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS5_4_2(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS5_4_3(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS5_4_4(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS5_4_5(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS5_4_6(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS5_5_2(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS5_5_3(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS5_5_4(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS5_5_5(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS5_5_6(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS5_6_2(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS5_6_3(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS5_6_4(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS5_6_5(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS5_6_6(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS6_4_2(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS6_4_3(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS6_4_4(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS6_4_5(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS6_4_6(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS6_5_2(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS6_5_3(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS6_5_4(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS6_5_5(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS6_5_6(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS6_6_2(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS6_6_3(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS6_6_4(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS6_6_5(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS6_6_6(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS7_4_2(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS7_4_3(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS7_4_4(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS7_4_5(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS7_4_6(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS7_5_2(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS7_5_3(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS7_5_4(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS7_5_5(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS7_5_6(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS7_6_2(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS7_6_3(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS7_6_4(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS7_6_5(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS7_6_6(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS8_4_2(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS8_4_3(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS8_4_4(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS8_4_5(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS8_4_6(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS8_5_2(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS8_5_3(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS8_5_4(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS8_5_5(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS8_5_6(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS8_6_2(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS8_6_3(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS8_6_4(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS8_6_5(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS8_6_6(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS9_4_2(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS9_4_3(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS9_4_4(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS9_4_5(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS9_4_6(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS9_5_2(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS9_5_3(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS9_5_4(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS9_5_5(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS9_5_6(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS9_6_2(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS9_6_3(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS9_6_4(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS9_6_5(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS9_6_6(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS10_4_2(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS10_4_3(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS10_4_4(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS10_4_5(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS10_4_6(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS10_5_2(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS10_5_3(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS10_5_4(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS10_5_5(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS10_5_6(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS10_6_2(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS10_6_3(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS10_6_4(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS10_6_5(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS10_6_6(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS11_4_2(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS11_4_3(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS11_4_4(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS11_4_5(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS11_4_6(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS11_5_2(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS11_5_3(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS11_5_4(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS11_5_5(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS11_5_6(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS11_6_2(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS11_6_3(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS11_6_4(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS11_6_5(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS11_6_6(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS12_4_2(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS12_4_3(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS12_4_4(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS12_4_5(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS12_4_6(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS12_5_2(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS12_5_3(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS12_5_4(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS12_5_5(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS12_5_6(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS12_6_2(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS12_6_3(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS12_6_4(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS12_6_5(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
+            InnerModel::HS12_6_6(inner) => array_to_numpy_array1d(inner.get_difference_cardinalities_from_node_ids(src, dst)?), // {python_generated}
         }
     }
 
@@ -3645,951 +1755,141 @@ impl InnerModel {
     {
         match self {
             // InnerModel::HS{precision}_{bits}_{hops}(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), {python_macro}
-            InnerModel::HS4_4_2(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS4_4_3(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS4_4_4(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS4_4_5(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS4_4_6(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS4_5_2(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS4_5_3(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS4_5_4(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS4_5_5(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS4_5_6(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS4_6_2(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS4_6_3(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS4_6_4(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS4_6_5(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS4_6_6(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS5_4_2(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS5_4_3(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS5_4_4(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS5_4_5(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS5_4_6(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS5_5_2(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS5_5_3(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS5_5_4(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS5_5_5(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS5_5_6(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS5_6_2(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS5_6_3(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS5_6_4(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS5_6_5(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS5_6_6(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS6_4_2(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS6_4_3(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS6_4_4(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS6_4_5(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS6_4_6(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS6_5_2(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS6_5_3(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS6_5_4(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS6_5_5(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS6_5_6(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS6_6_2(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS6_6_3(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS6_6_4(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS6_6_5(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS6_6_6(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS7_4_2(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS7_4_3(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS7_4_4(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS7_4_5(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS7_4_6(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS7_5_2(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS7_5_3(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS7_5_4(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS7_5_5(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS7_5_6(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS7_6_2(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS7_6_3(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS7_6_4(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS7_6_5(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS7_6_6(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS8_4_2(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS8_4_3(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS8_4_4(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS8_4_5(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS8_4_6(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS8_5_2(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS8_5_3(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS8_5_4(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS8_5_5(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS8_5_6(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS8_6_2(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS8_6_3(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS8_6_4(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS8_6_5(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS8_6_6(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS9_4_2(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS9_4_3(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS9_4_4(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS9_4_5(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS9_4_6(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS9_5_2(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS9_5_3(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS9_5_4(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS9_5_5(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS9_5_6(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS9_6_2(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS9_6_3(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS9_6_4(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS9_6_5(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS9_6_6(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS10_4_2(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS10_4_3(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS10_4_4(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS10_4_5(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS10_4_6(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS10_5_2(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS10_5_3(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS10_5_4(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS10_5_5(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS10_5_6(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS10_6_2(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS10_6_3(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS10_6_4(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS10_6_5(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS10_6_6(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS11_4_2(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS11_4_3(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS11_4_4(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS11_4_5(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS11_4_6(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS11_5_2(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS11_5_3(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS11_5_4(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS11_5_5(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS11_5_6(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS11_6_2(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS11_6_3(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS11_6_4(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS11_6_5(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS11_6_6(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS12_4_2(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS12_4_3(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS12_4_4(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS12_4_5(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS12_4_6(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS12_5_2(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS12_5_3(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS12_5_4(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS12_5_5(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS12_5_6(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS12_6_2(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS12_6_3(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS12_6_4(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS12_6_5(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS12_6_6(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
+            InnerModel::HS4_4_2(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS4_4_3(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS4_4_4(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS4_4_5(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS4_4_6(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS4_5_2(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS4_5_3(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS4_5_4(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS4_5_5(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS4_5_6(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS4_6_2(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS4_6_3(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS4_6_4(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS4_6_5(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS4_6_6(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS5_4_2(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS5_4_3(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS5_4_4(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS5_4_5(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS5_4_6(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS5_5_2(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS5_5_3(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS5_5_4(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS5_5_5(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS5_5_6(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS5_6_2(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS5_6_3(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS5_6_4(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS5_6_5(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS5_6_6(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS6_4_2(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS6_4_3(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS6_4_4(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS6_4_5(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS6_4_6(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS6_5_2(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS6_5_3(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS6_5_4(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS6_5_5(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS6_5_6(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS6_6_2(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS6_6_3(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS6_6_4(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS6_6_5(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS6_6_6(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS7_4_2(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS7_4_3(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS7_4_4(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS7_4_5(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS7_4_6(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS7_5_2(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS7_5_3(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS7_5_4(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS7_5_5(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS7_5_6(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS7_6_2(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS7_6_3(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS7_6_4(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS7_6_5(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS7_6_6(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS8_4_2(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS8_4_3(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS8_4_4(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS8_4_5(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS8_4_6(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS8_5_2(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS8_5_3(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS8_5_4(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS8_5_5(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS8_5_6(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS8_6_2(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS8_6_3(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS8_6_4(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS8_6_5(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS8_6_6(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS9_4_2(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS9_4_3(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS9_4_4(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS9_4_5(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS9_4_6(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS9_5_2(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS9_5_3(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS9_5_4(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS9_5_5(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS9_5_6(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS9_6_2(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS9_6_3(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS9_6_4(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS9_6_5(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS9_6_6(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS10_4_2(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS10_4_3(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS10_4_4(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS10_4_5(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS10_4_6(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS10_5_2(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS10_5_3(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS10_5_4(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS10_5_5(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS10_5_6(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS10_6_2(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS10_6_3(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS10_6_4(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS10_6_5(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS10_6_6(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS11_4_2(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS11_4_3(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS11_4_4(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS11_4_5(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS11_4_6(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS11_5_2(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS11_5_3(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS11_5_4(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS11_5_5(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS11_5_6(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS11_6_2(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS11_6_3(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS11_6_4(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS11_6_5(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS11_6_6(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS12_4_2(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS12_4_3(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS12_4_4(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS12_4_5(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS12_4_6(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS12_5_2(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS12_5_3(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS12_5_4(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS12_5_5(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS12_5_6(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS12_6_2(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS12_6_3(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS12_6_4(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS12_6_5(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS12_6_6(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
         }
     }
 
