@@ -271,11 +271,11 @@ impl<PRECISION: Precision<BITS> + DeserializeOwned, const BITS: usize, const HOP
                     .map(|node_type_id| node_type_id as usize + edge_type_offset)
                     .collect::<HyperLogLog<PRECISION, BITS>>();
                 }
-                if self.number_of_random_integers {
+                if self.number_of_random_integers > 0 {
                     let mut random_state =
                         splitmix64(random_state.wrapping_mul(node_id as u64 + 1));
                     counters[0] |= (0..self.number_of_random_integers)
-                        .map(|&random_integer| {
+                        .map(|random_integer| {
                             random_state = xorshift(random_state);
                             random_state
                         })
