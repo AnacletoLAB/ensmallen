@@ -73,18 +73,19 @@ macro_rules! check_df {
 #[pymethods]
 impl Graph {
     #[staticmethod]
+    #[args(py_kwargs = "**")]
     #[pyo3(
-        text_signature = "($self, edges_df, nodes_ds, node_name_column, node_type_column, edge_src_column, edge_dst_column, edge_weight_column, edge_type_column, directed, name)"
+        text_signature = "(directed, edges_df, *, nodes_ds, node_name_column, node_type_column, edge_src_column, edge_dst_column, edge_weight_column, edge_type_column, name)"
     )]
     /// Create a new graph from pandas dataframes.
     ///
     /// # Arguments
     /// * `edges_df` - The dataframe containing the edges.
     /// * `nodes_df` - The dataframe containing the nodes.
-    /// * `node_name_column` - The name of the column containing the node names.
+    /// * `node_name_column` - The name of the column containing the node names. Default: "name".
     /// * `node_type_column` - The name of the column containing the node types.
-    /// * `edge_src_column` - The name of the column containing the source nodes.
-    /// * `edge_dst_column` - The name of the column containing the destination nodes.
+    /// * `edge_src_column` - The name of the column containing the source nodes. Default: "subject".
+    /// * `edge_dst_column` - The name of the column containing the destination nodes. Default: "object".
     /// * `edge_weight_column` - The name of the column containing the edge weights.
     ///
     /// # Example
@@ -115,24 +116,30 @@ impl Graph {
     /// ```
     fn from_pd(
         py: Python<'_>,
-        edges_df: Py<PyAny>,
-        nodes_df: Option<Py<PyAny>>,
-        node_name_column: Option<String>,
-        node_type_column: Option<String>,
-        edge_src_column: Option<String>,
-        edge_dst_column: Option<String>,
-        edge_weight_column: Option<String>,
-        edge_type_column: Option<String>,
-        node_types_separator: Option<String>,
         directed: bool,
-        name: String,
+        edges_df: Py<PyAny>,
+        py_kwargs: Option<&PyDict>,
     ) -> PyResult<Graph> {
         let edges_df = edges_df.as_ref(py);
-        let nodes_df = nodes_df.as_ref().map(|x| x.as_ref(py));
+        
+        let kwargs = match py_kwargs {
+            Some(v) => v,
+            None => PyDict::new($py),
+        }
 
-        let edge_src_column = edge_src_column.unwrap_or("subject".to_string());
-        let edge_dst_column = edge_dst_column.unwrap_or("object".to_string());
-        let node_name_column = node_name_column.unwrap_or("name".to_string());
+        let name = extract_value!(kwargs, "name", String);
+        let nodes_df = extract_value!(kwargs, "nodes_df", Option<Py<PyAny>>);
+
+        let node_name_column = extract_value!(kwargs, "node_name_column", Option<String>).unwrap_or("name".to_string());
+        let edge_src_column = extract_value!(kwargs, "edge_src_column", Option<String>).unwrap_or("subject".to_string());
+        let edge_dst_column = extract_value!(kwargs, "edge_dst_column", Option<String>).unwrap_or("object".to_string());
+
+        let node_type_column = extract_value!(kwargs, "node_type_column", Option<String>);
+        let edge_weight_column = extract_value!(kwargs, "edge_weight_column", Option<String>);
+        let edge_type_column = extract_value!(kwargs, "edge_type_column", Option<String>);
+        let node_types_separator = extract_value!(kwargs, "node_types_separator", Option<String>);
+
+        let nodes_df = nodes_df.as_ref().map(|x| x.as_ref(py));
 
         check_df!(py, edges_df);
 
