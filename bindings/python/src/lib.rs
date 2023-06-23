@@ -10,6 +10,8 @@ use tags::*;
 
 pub(crate) mod mmap_numpy_npy;
 
+mod from_pd;
+
 mod macros;
 pub(crate) use crate::macros::*;
 mod express_measures;

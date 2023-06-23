@@ -1,6 +1,5 @@
 use super::*;
 use num_traits::Float;
-use tags::*;
 
 #[derive(Debug)]
 /// Reference classic binary heap
