@@ -9,13 +9,15 @@ RUN apt-get install -qyy \
     build-essential \
     cmake \
     git \
-    libssl-dev \
     python3 \
     python3-dev \
-	python3-pip \
+    python3-pip \
     python3-setuptools \
     wget \
-	curl \
+    curl \
+    pkg-config \
+    libssl-dev \
+    librust-openssl-sys-dev \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
@@ -25,4 +27,5 @@ RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh /dev/stdin -y
 RUN . $HOME/.cargo/env && rustup default nightly
 RUN pip3 install "maturin[zig]"
 
+ENV PKG_CONFIG_PATH /usr/lib/aarch64-linux-gnu/pkgconfig/
 
