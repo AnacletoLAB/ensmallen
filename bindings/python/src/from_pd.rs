@@ -1,5 +1,7 @@
+use crate::extract_value;
 use crate::pe;
 use crate::Graph;
+use crate::*;
 use graph::WeightT;
 use numpy::array::PyArray1;
 use numpy::convert::*;
@@ -121,23 +123,23 @@ impl Graph {
         py_kwargs: Option<&PyDict>,
     ) -> PyResult<Graph> {
         let edges_df = edges_df.as_ref(py);
-        
-        let kwargs = match py_kwargs {
-            Some(v) => v,
-            None => PyDict::new(py),
-        }
 
-        let name = extract_value!(kwargs, "name", String);
-        let nodes_df = extract_value!(kwargs, "nodes_df", Option<Py<PyAny>>);
+        let kwargs = py_kwargs.unwrap_or_else(|| PyDict::new(py));
 
-        let node_name_column = extract_value!(kwargs, "node_name_column", Option<String>).unwrap_or("name".to_string());
-        let edge_src_column = extract_value!(kwargs, "edge_src_column", Option<String>).unwrap_or("subject".to_string());
-        let edge_dst_column = extract_value!(kwargs, "edge_dst_column", Option<String>).unwrap_or("object".to_string());
+        let name = extract_value!(kwargs, "name", String).unwrap_or_else(|| "Graph".to_string());
+        let nodes_df = extract_value!(kwargs, "nodes_df", Py<PyAny>);
 
-        let node_type_column = extract_value!(kwargs, "node_type_column", Option<String>);
-        let edge_weight_column = extract_value!(kwargs, "edge_weight_column", Option<String>);
-        let edge_type_column = extract_value!(kwargs, "edge_type_column", Option<String>);
-        let node_types_separator = extract_value!(kwargs, "node_types_separator", Option<String>);
+        let node_name_column =
+            extract_value!(kwargs, "node_name_column", String).unwrap_or("name".to_string());
+        let edge_src_column =
+            extract_value!(kwargs, "edge_src_column", String).unwrap_or("subject".to_string());
+        let edge_dst_column =
+            extract_value!(kwargs, "edge_dst_column", String).unwrap_or("object".to_string());
+
+        let node_type_column = extract_value!(kwargs, "node_type_column", String);
+        let edge_weight_column = extract_value!(kwargs, "edge_weight_column", String);
+        let edge_type_column = extract_value!(kwargs, "edge_type_column", String);
+        let node_types_separator = extract_value!(kwargs, "node_types_separator", String);
 
         let nodes_df = nodes_df.as_ref().map(|x| x.as_ref(py));
 
@@ -149,9 +151,9 @@ impl Graph {
 
         let nodes_iterator: Option<
             graph::ItersWrapper<
-                Result<(usize, (String, Option<Vec<String>>)), String>,
-                Box<dyn Iterator<Item = Result<(usize, (String, Option<Vec<String>>)), String>>>,
-                ParEmpty<Result<(usize, (String, Option<Vec<String>>)), String>>,
+                Result<(usize, (String, Option<Vec<String>>))>,
+                Box<dyn Iterator<Item = Result<(usize, (String, Option<Vec<String>>))>>>,
+                ParEmpty<Result<(usize, (String, Option<Vec<String>>))>>,
             >,
         > = if let Some(nodes_df) = nodes_df {
             check_df!(py, nodes_df);
@@ -206,7 +208,7 @@ impl Graph {
         );
 
         let edges_iterator: Box<
-            dyn Iterator<Item = Result<(usize, (String, String, Option<String>, WeightT)), String>>,
+            dyn Iterator<Item = Result<(usize, (String, String, Option<String>, WeightT))>>,
         > = match (edge_type_column, edge_weight_column) {
             (Some(et), Some(ew)) => {
                 let et_iter = get_str_columun_iter!(edges_df, et).map(|x| x.unwrap().to_string());
