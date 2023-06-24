@@ -27,5 +27,8 @@ RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh /dev/stdin -y
 RUN . $HOME/.cargo/env && rustup default nightly
 RUN pip3 install "maturin[zig]"
 
+# Configure stuff otherwise openssl wont compile :) I hate C
+RUN cp /usr/include/aarch64-linux-gnu/openssl/* /usr/include/openssl/
 ENV PKG_CONFIG_PATH /usr/lib/aarch64-linux-gnu/pkgconfig/
-
+ENV OPENSSL_INCLUDE_DIR /usr/include
+ENV OPENSSL_LIB_DIR /usr/lib/aarch64-linux-gnu/
