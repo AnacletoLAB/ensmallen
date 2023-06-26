@@ -1,4 +1,7 @@
 use super::*;
+use ::heterogeneous_graphlets::prelude::{
+    GraphLetCounter, HeterogeneousGraphlets, ReducedGraphletType,
+};
 use rayon::prelude::*;
 use std::collections::HashMap;
 
@@ -2338,5 +2341,37 @@ impl Graph {
                 )
             })
             .collect()
+    }
+
+    pub fn get_heterogeneous_graphlet_ids_from_edge_node_ids(
+        &self,
+        src: NodeT,
+        dst: NodeT,
+    ) -> Result<HashMap<u16, u32>> {
+        Ok(self.get_heterogeneous_graphlet(
+            self.validate_node_id(src)? as usize,
+            self.validate_node_id(dst)? as usize,
+        ))
+    }
+
+    pub fn get_heterogeneous_graphlet_names_from_edge_node_ids(
+        &self,
+        src: NodeT,
+        dst: NodeT,
+    ) -> Result<HashMap<String, u32>> {
+        let number_of_node_types = self.get_number_of_node_types()?;
+        self.get_heterogeneous_graphlet_ids_from_edge_node_ids(src, dst)
+            .map(|graphlet| graphlet.to_graphlet_names::<ReducedGraphletType, NodeTypeT>(number_of_node_types))
+    }
+
+    pub fn get_heterogeneous_graphlet_names_from_edge_node_names(
+        &self,
+        src: &str,
+        dst: &str,
+    ) -> Result<HashMap<String, u32>> {
+        self.get_heterogeneous_graphlet_names_from_edge_node_ids(
+            self.get_node_id_from_node_name(src)?,
+            self.get_node_id_from_node_name(dst)?,
+        )
     }
 }

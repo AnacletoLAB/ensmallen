@@ -9,7 +9,6 @@
 
 #![feature(return_position_impl_trait_in_trait)]
 #![warn(unused_macros)]
-#![feature(drain_filter)]
 #![feature(iter_advance_by)]
 #![feature(impl_trait_in_assoc_type)]
 #![feature(is_sorted)]

@@ -35,6 +35,14 @@
                 "rustflags":"-C target-cpu=core2"
             }
         },
+		// Cross compile linux for docker on mac M1
+		"aarch64":{
+			"default":{
+				"build_dir":"build_aarch64_default",
+				"rustflags":"-C target-cpu=apple-m1"
+			}
+		},
+		// mac M1
         "arm64":{
             "default":{
                 "build_dir":"build_arm_default",
