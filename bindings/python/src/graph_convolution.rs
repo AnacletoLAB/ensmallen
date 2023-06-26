@@ -42,7 +42,12 @@ impl GraphConvolution {
 
         pe!(validate_kwargs(
             kwargs,
-            &["number_of_convolutions", "concatenate_features",  "normalize_rows", "dtype"],
+            &[
+                "number_of_convolutions",
+                "concatenate_features",
+                "normalize_rows",
+                "dtype"
+            ],
         ))?;
 
         Ok(Self {

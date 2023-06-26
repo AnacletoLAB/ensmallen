@@ -10,23 +10,23 @@ enum InnerModel {
     /// HyperJaccard model.
     /// HJ{precision}_{bits}(HJ<Precision{precision}, {bits}>), {python_macro}
     HJ4_4(HJ<Precision4, 4>), // {python_generated}
-    HJ4_5(HJ<Precision4, 5>), // {python_generated}
-    HJ4_6(HJ<Precision4, 6>), // {python_generated}
-    HJ5_4(HJ<Precision5, 4>), // {python_generated}
-    HJ5_5(HJ<Precision5, 5>), // {python_generated}
-    HJ5_6(HJ<Precision5, 6>), // {python_generated}
-    HJ6_4(HJ<Precision6, 4>), // {python_generated}
-    HJ6_5(HJ<Precision6, 5>), // {python_generated}
-    HJ6_6(HJ<Precision6, 6>), // {python_generated}
-    HJ7_4(HJ<Precision7, 4>), // {python_generated}
-    HJ7_5(HJ<Precision7, 5>), // {python_generated}
-    HJ7_6(HJ<Precision7, 6>), // {python_generated}
-    HJ8_4(HJ<Precision8, 4>), // {python_generated}
-    HJ8_5(HJ<Precision8, 5>), // {python_generated}
-    HJ8_6(HJ<Precision8, 6>), // {python_generated}
-    HJ9_4(HJ<Precision9, 4>), // {python_generated}
-    HJ9_5(HJ<Precision9, 5>), // {python_generated}
-    HJ9_6(HJ<Precision9, 6>), // {python_generated}
+    HJ4_5(HJ<Precision4, 5>),   // {python_generated}
+    HJ4_6(HJ<Precision4, 6>),   // {python_generated}
+    HJ5_4(HJ<Precision5, 4>),   // {python_generated}
+    HJ5_5(HJ<Precision5, 5>),   // {python_generated}
+    HJ5_6(HJ<Precision5, 6>),   // {python_generated}
+    HJ6_4(HJ<Precision6, 4>),   // {python_generated}
+    HJ6_5(HJ<Precision6, 5>),   // {python_generated}
+    HJ6_6(HJ<Precision6, 6>),   // {python_generated}
+    HJ7_4(HJ<Precision7, 4>),   // {python_generated}
+    HJ7_5(HJ<Precision7, 5>),   // {python_generated}
+    HJ7_6(HJ<Precision7, 6>),   // {python_generated}
+    HJ8_4(HJ<Precision8, 4>),   // {python_generated}
+    HJ8_5(HJ<Precision8, 5>),   // {python_generated}
+    HJ8_6(HJ<Precision8, 6>),   // {python_generated}
+    HJ9_4(HJ<Precision9, 4>),   // {python_generated}
+    HJ9_5(HJ<Precision9, 5>),   // {python_generated}
+    HJ9_6(HJ<Precision9, 6>),   // {python_generated}
     HJ10_4(HJ<Precision10, 4>), // {python_generated}
     HJ10_5(HJ<Precision10, 5>), // {python_generated}
     HJ10_6(HJ<Precision10, 6>), // {python_generated}
