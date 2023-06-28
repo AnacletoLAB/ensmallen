@@ -437,7 +437,7 @@ impl Graph {
         // was given for the edge file.
         if edge_type_path.is_some()
             && [
-                edge_list_edge_types_column.is_none() &&  edge_list_edge_types_column_number.is_none(),
+                edge_list_edge_types_column.is_none() && edge_list_edge_types_column_number.is_none(),
             ]
             .iter()
             .any(|&x| x)

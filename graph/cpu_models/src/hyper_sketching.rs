@@ -18,7 +18,7 @@ use vec_rand::{splitmix64, xorshift};
 /// The original paper describing this approach for edge prediction
 /// feature mining is "Graph Neural Networks for Link Prediction with Subgraph sketching"
 ///
-pub struct HyperSketching<PRECISION: Precision<BITS>, const BITS: usize, const HOPS: usize> {
+pub struct HyperSketching<PRECISION: Precision + WordType<BITS>, const BITS: usize, const HOPS: usize> {
     /// Vector of HyperLogLog counters
     counters: Vec<HyperLogLogArray<PRECISION, BITS, HOPS>>,
     /// Whether to include the node types in the sketch
@@ -45,7 +45,7 @@ pub struct HyperSketching<PRECISION: Precision<BITS>, const BITS: usize, const H
     dtype: String,
 }
 
-impl<PRECISION: Precision<BITS> + DeserializeOwned, const BITS: usize, const HOPS: usize>
+impl<PRECISION: Precision + WordType<BITS> + DeserializeOwned, const BITS: usize, const HOPS: usize>
     HyperSketching<PRECISION, BITS, HOPS>
 {
     /// Creates a new HyperSketching model.

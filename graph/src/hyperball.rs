@@ -59,7 +59,7 @@ impl Graph {
     /// # Returns
     /// A vector containing the computed centrality scores for each node in the graph.
     ///
-    fn hyperball<PRECISION: Precision<BITS>, const BITS: usize, F: Default + Copy + Send + Sync>(
+    fn hyperball<PRECISION: Precision + WordType<BITS>, const BITS: usize, F: Default + Copy + Send + Sync>(
         &self,
         counters_ops: fn(&mut F, f32, f32, usize),
     ) -> Result<Vec<F>>
