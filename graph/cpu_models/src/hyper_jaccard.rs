@@ -5,14 +5,14 @@ use rayon::prelude::*;
 use serde::{Deserialize, Serialize, de::DeserializeOwned};
 
 #[derive(Clone, Deserialize, Serialize)]
-pub struct HyperJaccard<PRECISION: Precision<BITS>, const BITS: usize> {
+pub struct HyperJaccard<PRECISION: Precision + WordType<BITS>, const BITS: usize> {
     /// Vector of HyperLogLog counters
     counters: Vec<HyperLogLog<PRECISION, BITS>>,
     /// The number of hops to execute.
     number_of_hops: usize,
 }
 
-impl<PRECISION: Precision<BITS> + DeserializeOwned, const BITS: usize>
+impl<PRECISION: Precision + WordType<BITS> + DeserializeOwned, const BITS: usize>
     HyperJaccard<PRECISION, BITS>
 {
     /// Creates a new HyperJaccard model.
