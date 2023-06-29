@@ -294,7 +294,7 @@ impl GraphConvolution {
                             .iter()
                             .skip(dimensionality * (convolution_number + 1))
                             .fold(F2::zero(), |acc, x| acc + x.powi(2))
-                            .sqrt();
+                            .sqrt().min(F2::epsilon());
 
                         // We normalize the convolved node features by the degree.
                         convoluted_row
