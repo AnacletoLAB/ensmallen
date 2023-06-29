@@ -375,7 +375,7 @@ impl GraphConvolution {
                             let norm = convoluted_row
                                 .iter()
                                 .fold(F2::zero(), |acc, x| acc + x.powi(2))
-                                .sqrt();
+                                .sqrt().min(F2::epsilon());
 
                             // We normalize the convolved node features by the degree.
                             convoluted_row.iter_mut().for_each(|node_feature| {
