@@ -77,7 +77,7 @@ impl Graph {
     #[staticmethod]
     #[args(py_kwargs = "**")]
     #[pyo3(
-        text_signature = "(directed, edges_df, *, nodes_ds, node_name_column, node_type_column, edge_src_column, edge_dst_column, edge_weight_column, edge_type_column, name)"
+        text_signature = "(directed, edges_df, *, nodes_df, node_name_column, node_type_column, edge_src_column, edge_dst_column, edge_weight_column, edge_type_column, name)"
     )]
     /// Create a new graph from pandas dataframes.
     ///
@@ -125,6 +125,21 @@ impl Graph {
         let edges_df = edges_df.as_ref(py);
 
         let kwargs = py_kwargs.unwrap_or_else(|| PyDict::new(py));
+
+        pe!(validate_kwargs(
+            kwargs,
+            &[
+                "name",
+                "nodes_df",
+                "node_name_column",
+                "edge_src_column",
+                "edge_dst_column",
+                "node_type_column",
+                "edge_weight_column",
+                "edge_type_column",
+                "node_types_separator"
+            ],
+        ))?;
 
         let name = extract_value!(kwargs, "name", String).unwrap_or_else(|| "Graph".to_string());
         let nodes_df = extract_value!(kwargs, "nodes_df", Py<PyAny>);
@@ -289,7 +304,7 @@ impl Graph {
             directed,         // directed
             Some(false),      // correct
             Some(false),      // complete
-            Some(false),      // duplicates
+            Some(true),       // duplicates
             Some(false),      // sorted
             None,             // number_of_edges
             Some(false),      // numeric_edge_list_node_ids
