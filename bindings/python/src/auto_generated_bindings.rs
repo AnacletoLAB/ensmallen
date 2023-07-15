@@ -9339,7 +9339,9 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self, minimum_node_degree, number_of_neighbours_for_hash, dtype)")]
+    #[pyo3(
+        text_signature = "($self, minimum_node_degree, number_of_neighbours_for_hash, ignore_edges_including_isomorphic_nodes, dtype)"
+    )]
     /// Returns vector with isomorphic edge groups IDs.
     ///
     /// Parameters
@@ -9348,6 +9350,8 @@ impl Graph {
     ///     Minimum node degree for the topological synonims. By default, 10.
     /// number_of_neighbours_for_hash: Optional[int]
     ///     The number of neighbours to consider for the hash. By default 10.
+    /// ignore_edges_including_isomorphic_nodes: Optional[bool]
+    ///     Whether to ignore edges including isomorphic nodes. By default, true.
     /// dtype: Optional[&str]
     ///     The data type of the hash. By default, `&str`.
     ///
@@ -9355,11 +9359,13 @@ impl Graph {
         &self,
         minimum_node_degree: Option<NodeT>,
         number_of_neighbours_for_hash: Option<usize>,
+        ignore_edges_including_isomorphic_nodes: Option<bool>,
         dtype: Option<&str>,
     ) -> PyResult<Vec<Vec<Py<PyArray1<NodeT>>>>> {
         Ok(pe!(self.inner.get_isomorphic_edge_node_ids(
             minimum_node_degree,
             number_of_neighbours_for_hash,
+            ignore_edges_including_isomorphic_nodes,
             dtype
         ))?
         .into_iter()
@@ -9375,7 +9381,9 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self, minimum_node_degree, number_of_neighbours_for_hash, dtype)")]
+    #[pyo3(
+        text_signature = "($self, minimum_node_degree, number_of_neighbours_for_hash, ignore_edges_including_isomorphic_nodes, dtype)"
+    )]
     /// Retrieves the isomorphic edge hashes
     ///
     /// Parameters
@@ -9385,6 +9393,7 @@ impl Graph {
         &self,
         minimum_node_degree: Option<NodeT>,
         number_of_neighbours_for_hash: Option<usize>,
+        ignore_edges_including_isomorphic_nodes: Option<bool>,
         dtype: Option<&str>,
     ) -> PyResult<Py<PyArray1<u64>>> {
         Ok({
@@ -9394,6 +9403,7 @@ impl Graph {
                 pe!(self.inner.get_isomorphic_edge_hashes(
                     minimum_node_degree,
                     number_of_neighbours_for_hash,
+                    ignore_edges_including_isomorphic_nodes,
                     dtype
                 ))?,
                 u64
@@ -9402,7 +9412,9 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self, minimum_node_degree, number_of_neighbours_for_hash, dtype)")]
+    #[pyo3(
+        text_signature = "($self, minimum_node_degree, number_of_neighbours_for_hash, ignore_edges_including_isomorphic_nodes, dtype)"
+    )]
     /// Returns vector with isomorphic edge groups names.
     ///
     /// Parameters
@@ -9411,6 +9423,8 @@ impl Graph {
     ///     Minimum node degree for the topological synonims. By default, 10.
     /// number_of_neighbours_for_hash: Optional[int]
     ///     The number of neighbours to consider for the hash. By default 10.
+    /// ignore_edges_including_isomorphic_nodes: Optional[bool]
+    ///     Whether to ignore edges including isomorphic nodes. By default, true.
     /// dtype: Optional[&str]
     ///     The data type of the hash. By default, `&str`.
     ///
@@ -9418,11 +9432,13 @@ impl Graph {
         &self,
         minimum_node_degree: Option<NodeT>,
         number_of_neighbours_for_hash: Option<usize>,
+        ignore_edges_including_isomorphic_nodes: Option<bool>,
         dtype: Option<&str>,
     ) -> PyResult<Vec<Vec<Vec<String>>>> {
         Ok(pe!(self.inner.get_isomorphic_edge_node_names(
             minimum_node_degree,
             number_of_neighbours_for_hash,
+            ignore_edges_including_isomorphic_nodes,
             dtype
         ))?
         .into_iter()

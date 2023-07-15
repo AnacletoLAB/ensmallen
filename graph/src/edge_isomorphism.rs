@@ -1201,25 +1201,37 @@ impl Graph {
     /// # Arguments
     /// * `minimum_node_degree`: Option<NodeT> - Minimum node degree for the topological synonims. By default, 10.
     /// * `number_of_neighbours_for_hash`: Option<usize> - The number of neighbours to consider for the hash. By default 10.
+    /// * `ignore_edges_including_isomorphic_nodes`: Option<bool> - Whether to ignore edges including isomorphic nodes. By default, true.
     /// * `dtype`: Option<&str> - The data type of the hash. By default, `&str`.
     ///
     pub fn get_isomorphic_edge_node_ids(
         &self,
         minimum_node_degree: Option<NodeT>,
         number_of_neighbours_for_hash: Option<usize>,
+        ignore_edges_including_isomorphic_nodes: Option<bool>,
         dtype: Option<&str>,
     ) -> Result<Vec<Vec<[NodeT; 2]>>> {
         let isomorphic_nodes_mask = self.get_isomorphic_nodes_mask(
             minimum_node_degree.unwrap_or(10),
             number_of_neighbours_for_hash.unwrap_or(10),
         )?;
-        Ok(self.get_isomorphic_group_ids(
-            minimum_node_degree,
-            number_of_neighbours_for_hash,
-            EdgeIsomorphismsGenerator::default(),
-            dtype,
-            &move |node_id| isomorphic_nodes_mask[node_id as usize],
-        )?)
+        if ignore_edges_including_isomorphic_nodes.unwrap_or(true) {
+            Ok(self.get_isomorphic_group_ids(
+                minimum_node_degree,
+                number_of_neighbours_for_hash,
+                EdgeIsomorphismsGenerator::default(),
+                dtype,
+                &move |node_id| isomorphic_nodes_mask[node_id as usize],
+            )?)
+        } else {
+            Ok(self.get_isomorphic_group_ids(
+                minimum_node_degree,
+                number_of_neighbours_for_hash,
+                EdgeIsomorphismsGenerator::default(),
+                dtype,
+                &move |node_id| false,
+            )?)
+        }
     }
 
     /// Retrieves the isomorphic edge hashes
@@ -1227,6 +1239,7 @@ impl Graph {
     /// # Arguments
     /// * `minimum_node_degree`: An optional value representing the minimum degree that a node must have to be considered in the hash computation. If `None`, all nodes will be considered.
     /// * `number_of_neighbours_for_hash`: An optional value specifying the number of neighbor nodes to consider for the hash computation. If `None`, all neighbors will be considered.
+    /// * `ignore_edges_including_isomorphic_nodes`: An optional boolean value specifying whether to ignore edges including isomorphic nodes. If `None`, the default value will be used.
     /// * `dtype`: An optional string slice representing the data type of the resulting edge hashes. If `None`, the default data type will be used.
     ///
     /// # Examples
@@ -1237,7 +1250,7 @@ impl Graph {
     /// let number_of_neighbours_for_hash = Some(5);
     /// let dtype = Some("uint64");
     ///
-    /// let isomorphic_hashes = graph.get_isomorphic_edge_hashes(minimum_node_degree, number_of_neighbours_for_hash, dtype);
+    /// let isomorphic_hashes = graph.get_isomorphic_edge_hashes(minimum_node_degree, number_of_neighbours_for_hash, Some(true), dtype);
     /// match isomorphic_hashes {
     ///     Ok(hashes) => {
     ///         // Handle the vector of isomorphic edge hashes
@@ -1251,19 +1264,30 @@ impl Graph {
         &self,
         minimum_node_degree: Option<NodeT>,
         number_of_neighbours_for_hash: Option<usize>,
+        ignore_edges_including_isomorphic_nodes: Option<bool>,
         dtype: Option<&str>,
     ) -> Result<Vec<u64>> {
         let isomorphic_nodes_mask = self.get_isomorphic_nodes_mask(
             minimum_node_degree.unwrap_or(10),
             number_of_neighbours_for_hash.unwrap_or(10),
         )?;
-        self.get_isomorphic_node_group_hashes(
-            minimum_node_degree,
-            number_of_neighbours_for_hash,
-            EdgeIsomorphismsGenerator::default(),
-            dtype,
-            &move |node_id| isomorphic_nodes_mask[node_id as usize],
-        )
+        if ignore_edges_including_isomorphic_nodes.unwrap_or(true) {
+            Ok(self.get_isomorphic_node_group_hashes(
+                minimum_node_degree,
+                number_of_neighbours_for_hash,
+                EdgeIsomorphismsGenerator::default(),
+                dtype,
+                &move |node_id| isomorphic_nodes_mask[node_id as usize],
+            )?)
+        } else {
+            Ok(self.get_isomorphic_node_group_hashes(
+                minimum_node_degree,
+                number_of_neighbours_for_hash,
+                EdgeIsomorphismsGenerator::default(),
+                dtype,
+                &move |node_id| false,
+            )?)
+        }
     }
 
     #[no_numpy_binding]
@@ -1272,25 +1296,37 @@ impl Graph {
     /// # Arguments
     /// * `minimum_node_degree`: Option<NodeT> - Minimum node degree for the topological synonims. By default, 10.
     /// * `number_of_neighbours_for_hash`: Option<usize> - The number of neighbours to consider for the hash. By default 10.
+    /// * `ignore_edges_including_isomorphic_nodes`: Option<bool> - Whether to ignore edges including isomorphic nodes. By default, true.
     /// * `dtype`: Option<&str> - The data type of the hash. By default, `&str`.
     ///
     pub fn get_isomorphic_edge_node_names(
         &self,
         minimum_node_degree: Option<NodeT>,
         number_of_neighbours_for_hash: Option<usize>,
+        ignore_edges_including_isomorphic_nodes: Option<bool>,
         dtype: Option<&str>,
     ) -> Result<Vec<Vec<[String; 2]>>> {
         let isomorphic_nodes_mask = self.get_isomorphic_nodes_mask(
             minimum_node_degree.unwrap_or(10),
             number_of_neighbours_for_hash.unwrap_or(10),
         )?;
-        Ok(self.get_isomorphic_group_names(
-            minimum_node_degree,
-            number_of_neighbours_for_hash,
-            EdgeIsomorphismsGenerator::default(),
-            dtype,
-            &move |node_id| isomorphic_nodes_mask[node_id as usize],
-        )?)
+        if ignore_edges_including_isomorphic_nodes.unwrap_or(true) {
+            Ok(self.get_isomorphic_group_names(
+                minimum_node_degree,
+                number_of_neighbours_for_hash,
+                EdgeIsomorphismsGenerator::default(),
+                dtype,
+                &move |node_id| isomorphic_nodes_mask[node_id as usize],
+            )?)
+        } else {
+            Ok(self.get_isomorphic_group_names(
+                minimum_node_degree,
+                number_of_neighbours_for_hash,
+                EdgeIsomorphismsGenerator::default(),
+                dtype,
+                &move |node_id| false,
+            )?)
+        }
     }
 
     #[no_numpy_binding]

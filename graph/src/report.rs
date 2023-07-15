@@ -1183,7 +1183,7 @@ impl Graph {
         });
 
         let mut isomorphic_edge_groups: Vec<Vec<[NodeT; 2]>> = self
-            .get_isomorphic_edge_node_ids(None, None, None)
+            .get_isomorphic_edge_node_ids(None, None, None, None)
             .unwrap_or_else(|_| Vec::new());
 
         isomorphic_edge_groups.sort_unstable_by(|group1, group2| unsafe {
