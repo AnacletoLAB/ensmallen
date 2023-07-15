@@ -82,6 +82,7 @@ impl Graph {
     /// Create a new graph from pandas dataframes.
     ///
     /// # Arguments
+    /// * `directed` - Whether the graph is directed or not.
     /// * `edges_df` - The dataframe containing the edges.
     /// * `nodes_df` - The dataframe containing the nodes.
     /// * `node_name_column` - The name of the column containing the node names. Default: "name".
@@ -89,6 +90,8 @@ impl Graph {
     /// * `edge_src_column` - The name of the column containing the source nodes. Default: "subject".
     /// * `edge_dst_column` - The name of the column containing the destination nodes. Default: "object".
     /// * `edge_weight_column` - The name of the column containing the edge weights.
+    /// * `edge_type_column` - The name of the column containing the edge types.
+    /// * `name` - The name of the graph. Default: "Graph".
     ///
     /// # Example
     ///
