@@ -1612,7 +1612,7 @@ pub fn test_remove_components(graph: &mut Graph, verbose: Option<bool>) -> Resul
             without_selfloops.get_edge_node_ids(true),
         );
 
-        let single_component = graph.remove_components(None, None, None, None, Some(1), verbose);
+        let single_component = graph.remove_components(None, None, None, None, Some(1));
         assert!(
             single_component.is_ok(),
             concat!(
@@ -1643,7 +1643,6 @@ pub fn test_remove_components(graph: &mut Graph, verbose: Option<bool>) -> Resul
             None,
             None,
             None,
-            verbose,
         )?;
         let without_selfloops = test.remove_selfloops();
         assert_eq!(
@@ -1669,13 +1668,12 @@ pub fn test_remove_components(graph: &mut Graph, verbose: Option<bool>) -> Resul
                     None,
                     None,
                     None,
-                    verbose
                 )
                 .is_ok());
         }
         if graph.has_unknown_node_types()? {
             let without_unknowns =
-                graph.remove_components(None, Some(&[None]), None, None, None, verbose);
+                graph.remove_components(None, Some(&[None]), None, None, None);
             assert!(
                 without_unknowns.is_ok(),
                 "Could not remove components without node type None.\nThe error is {:?}\nThe graph report is {:?}",
@@ -1690,19 +1688,18 @@ pub fn test_remove_components(graph: &mut Graph, verbose: Option<bool>) -> Resul
                     Some(&[Some(edge_type_name.as_str())]),
                     None,
                     None,
-                    verbose
                 )
                 .is_ok());
         }
         if graph.has_unknown_edge_types()? {
             assert!(graph
-                .remove_components(None, None, Some(&[None]), None, None, verbose)
+                .remove_components(None, None, Some(&[None]), None, None)
                 .is_ok());
         }
     } else {
         assert!(
             graph
-                .remove_components(None, None, None, None, None, verbose)
+                .remove_components(None, None, None, None, None)
                 .is_ok(),
             "We expect it to be possible, now, to create empty graphs."
         );

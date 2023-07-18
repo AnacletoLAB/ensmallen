@@ -9,8 +9,7 @@ use std::collections::HashSet;
 
 /// # remove.
 impl Graph {
-    /// remove all the components that are not connected to interesting
-    /// nodes and edges.
+    /// Return a new graph with solely the requested connected components.
     ///
     /// # Arguments
     /// * `node_names`: Option<Vec<String>> - The name of the nodes of which components to keep.
@@ -18,7 +17,6 @@ impl Graph {
     /// * `edge_types`: Option<&[Option<&str>]> - The types of the edges of which components to keep.
     /// * `minimum_component_size`: Option<NodeT> - Optional, Minimum size of the components to keep.
     /// * `top_k_components`: Option<NodeT> - Optional, number of components to keep sorted by number of nodes.
-    /// * `verbose`: Option<bool> - Whether to show the loading bar.
     pub fn remove_components(
         &self,
         node_names: Option<Vec<String>>,
@@ -26,11 +24,9 @@ impl Graph {
         edge_types: Option<&[Option<&str>]>,
         minimum_component_size: Option<NodeT>,
         top_k_components: Option<NodeT>,
-        verbose: Option<bool>,
     ) -> Result<Graph> {
-        let verbose = verbose.unwrap_or(false);
         let mut keep_components = RoaringBitmap::new();
-        let components_vector = self.get_node_connected_component_ids(Some(verbose));
+        let components_vector = self.get_node_connected_component_ids(None);
 
         let number_of_components = components_vector.par_iter().copied().max().unwrap_or(0);
 
@@ -50,17 +46,7 @@ impl Graph {
                 .into_iter()
                 .collect();
 
-            let pb = get_loading_bar(
-                verbose,
-                &format!(
-                    "Computing which components are to keep for the graph {}",
-                    &self.name
-                ),
-                self.get_number_of_directed_edges() as usize,
-            );
-
             self.iter_edge_node_ids_and_edge_type_id(self.directed)
-                .progress_with(pb)
                 .for_each(|(_, src, dst, edge_type)| {
                     if edge_types_ids.contains(&edge_type) {
                         keep_components.insert(components_vector[src as usize]);
@@ -102,68 +88,58 @@ impl Graph {
                 });
         }
 
-        let nodes_iterator: ItersWrapper<_, _, rayon::iter::Empty<_>> =
-            ItersWrapper::Sequential(self.iter_node_names_and_node_type_names().filter_map(
-                |(node_id, node_name, _, node_type_names)| {
-                    match keep_components.contains(components_vector[node_id as usize]) {
-                        // We put as row 0 as it will not be dense because of the filter
-                        // It may be possible to get it to be dense with the proper offsets
-                        true => Some(Ok((0, (node_name, node_type_names)))),
-                        false => None,
-                    }
-                },
-            ));
+        let node_ids_to_keep: Vec<NodeT> = components_vector
+            .into_par_iter()
+            .enumerate()
+            .filter(|(_, component_id)| keep_components.contains(*component_id))
+            .map(|(node_id, _)| node_id as NodeT)
+            .collect();
 
-        let edges_iterator: ItersWrapper<_, std::iter::Empty<_>, _> = ItersWrapper::Parallel(
-            self.par_iter_directed_edge_node_names_and_edge_type_name_and_edge_weight()
-                .filter_map(
-                    |(_, src, src_name, _, dst_name, _, edge_type_name, weight)| {
-                        // we just check src because dst is trivially in the same component as src
-                        match keep_components.contains(components_vector[src as usize]) {
-                            true => Some(Ok((
-                                0,
-                                (
-                                    src_name,
-                                    dst_name,
-                                    edge_type_name,
-                                    weight.unwrap_or(WeightT::NAN),
-                                ),
-                            ))),
-                            false => None,
-                        }
-                    },
-                ),
-        );
-
-        build_graph_from_strings_without_type_iterators(
-            self.has_node_types(),
-            Some(nodes_iterator),
-            None,
-            true,
-            false,
-            false,
-            None,
-            self.has_edge_types(),
-            Some(edges_iterator),
-            self.has_edge_weights(),
-            self.is_directed(),
-            Some(true),
-            Some(true),
-            Some(false),
-            // Even though the edges are sortof
-            // sorted, the filtering procedure makes
-            // it impossible to actually know the edge ID
-            // of each edge, and therefore it is not possible
-            // to construct the graph in parallel directly.
-            Some(false),
+        self.filter_from_ids(
+            Some(node_ids_to_keep),
             None,
             None,
             None,
             None,
             None,
-            true,
-            self.has_singleton_nodes_with_selfloops(),
-            self.get_name(),
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
         )
     }
 }
