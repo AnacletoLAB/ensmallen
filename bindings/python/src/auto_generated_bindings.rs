@@ -9015,109 +9015,6 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self)")]
-    /// Returns report relative to the graph metrics
-    ///
-    /// The report includes the following metrics by default:
-    /// * Name of the graph
-    /// * Whether the graph is directed or undirected
-    /// * Number of singleton nodes
-    /// * Number of nodes
-    /// - If the graph has nodes, we also compute:
-    /// * Minimum unweighted node degree
-    /// * Maximum unweighted node degree
-    /// * Unweighted node degree mean
-    /// * Number of edges
-    /// * Number of self-loops
-    /// * Number of singleton with self-loops
-    /// * Whether the graph is a multigraph
-    /// * Number of parallel edges
-    /// * Number of directed edges
-    /// - If the graph has edges, we also compute:
-    /// * Rate of self-loops
-    /// * Whether the graph has weighted edges
-    /// - If the graph has weights, we also compute:
-    /// * Minimum weighted node degree
-    /// * Maximum weighted node degree
-    /// * Weighted node degree mean
-    /// * The total edge weights
-    /// * Whether the graph has node types
-    /// - If the graph has node types, we also compute:
-    /// * Whether the graph has singleton node types
-    /// * The number of node types
-    /// * The number of nodes with unknown node types
-    /// * The number of nodes with known node types
-    /// * Whether the graph has edge types
-    /// - If the graph has edge types, we also compute:
-    /// * Whether the graph has singleton edge types
-    /// * The number of edge types
-    /// * The number of edges with unknown edge types
-    /// * The number of edges with known edge types
-    ///
-    /// On request, since it takes more time to compute it, the method also provides:
-    pub fn report(&self) -> HashMap<&'static str, String> {
-        self.inner.report().into()
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self, other, verbose)")]
-    /// Return rendered textual report about the graph overlaps.
-    ///
-    /// Parameters
-    /// ----------
-    /// other: Graph
-    ///     graph to create overlap report with.
-    /// verbose: Optional[bool]
-    ///     Whether to shor the loading bars.
-    ///
-    pub fn overlap_textual_report(&self, other: &Graph, verbose: Option<bool>) -> PyResult<String> {
-        Ok(pe!(self.inner.overlap_textual_report(&other.inner, verbose))?.into())
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self, node_id)")]
-    /// Return human-readable html report of the given node.
-    ///
-    /// The report, by default, is rendered using html.
-    ///
-    /// Parameters
-    /// ----------
-    /// node_id: int
-    ///     Whether to show a loading bar in graph operations.
-    ///
-    pub fn get_node_report_from_node_id(&self, node_id: NodeT) -> PyResult<String> {
-        Ok(pe!(self.inner.get_node_report_from_node_id(node_id.clone()))?.into())
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self, node_name)")]
-    /// Return human-readable html report of the given node.
-    ///
-    /// The report, by default, is rendered using html.
-    ///
-    /// Parameters
-    /// ----------
-    /// node_name: str
-    ///     Whether to show a loading bar in graph operations.
-    ///
-    pub fn get_node_report_from_node_name(&self, node_name: &str) -> PyResult<String> {
-        Ok(pe!(self.inner.get_node_report_from_node_name(node_name))?.into())
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self)")]
-    /// Return html short textual report of the graph.
-    ///
-    /// TODO! Add reports on various node metrics
-    /// TODO! Add reports on various edge metrics
-    /// NOTE! Most of the above TODOs will require first to implement the
-    /// support for the fast computation of the inbound edges in a directed
-    /// graphs
-    pub fn textual_report(&self) -> String {
-        self.inner.textual_report().into()
-    }
-
-    #[automatically_generated_binding]
     #[pyo3(text_signature = "($self, name)")]
     /// Set the name of the graph.
     ///
@@ -11044,339 +10941,6 @@ impl Graph {
             .inner
             .get_edge_types_total_memory_requirements_human_readable())?
         .into())
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self, minimum_node_degree, number_of_neighbours_for_hash)")]
-    /// Get a mask indicating the nodes that are isomorphic.
-    ///
-    /// This method identifies the nodes that are isomorphic based on their minimum
-    /// degree and the number of neighbors used for hashing. It populates a deny mask
-    /// where the nodes that are isomorphic are marked as `true`.
-    ///
-    /// Parameters
-    /// ----------
-    ///
-    pub fn get_isomorphic_nodes_mask(
-        &self,
-        minimum_node_degree: NodeT,
-        number_of_neighbours_for_hash: usize,
-    ) -> PyResult<Py<PyArray1<bool>>> {
-        Ok({
-            let gil = pyo3::Python::acquire_gil();
-            to_ndarray_1d!(
-                gil,
-                pe!(self.inner.get_isomorphic_nodes_mask(
-                    minimum_node_degree.clone(),
-                    number_of_neighbours_for_hash.clone()
-                ))?,
-                bool
-            )
-        })
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self, minimum_node_degree, number_of_neighbours_for_hash, dtype)")]
-    /// Returns vector with isomorphic node groups IDs.
-    ///
-    /// Parameters
-    /// ----------
-    /// minimum_node_degree: Optional[int]
-    ///     Minimum node degree for the topological synonims. By default, 10.
-    /// number_of_neighbours_for_hash: Optional[int]
-    ///     The number of neighbours to consider for the hash. By default 10.
-    /// dtype: Optional[&str]
-    ///     The data type of the hash. By default, `&str`.
-    ///
-    pub fn get_isomorphic_node_ids(
-        &self,
-        minimum_node_degree: Option<NodeT>,
-        number_of_neighbours_for_hash: Option<usize>,
-        dtype: Option<&str>,
-    ) -> PyResult<Vec<Vec<NodeT>>> {
-        Ok(pe!(self.inner.get_isomorphic_node_ids(
-            minimum_node_degree,
-            number_of_neighbours_for_hash,
-            dtype
-        ))?
-        .into_iter()
-        .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>())
-        .collect::<Vec<_>>())
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self, minimum_node_degree, number_of_neighbours_for_hash)")]
-    /// Retrieves a vector of flattened and repeated isomorphic node IDs, that is by removing one per group.
-    ///
-    /// Parameters
-    /// ----------
-    /// minimum_node_degree: Optional[int]
-    ///     An optional parameter specifying the minimum degree a node must have to be included
-    ///
-    pub fn get_flat_repeated_isomorphic_node_ids(
-        &self,
-        minimum_node_degree: Option<NodeT>,
-        number_of_neighbours_for_hash: Option<usize>,
-    ) -> PyResult<Py<PyArray1<NodeT>>> {
-        Ok({
-            let gil = pyo3::Python::acquire_gil();
-            to_ndarray_1d!(
-                gil,
-                pe!(self.inner.get_flat_repeated_isomorphic_node_ids(
-                    minimum_node_degree,
-                    number_of_neighbours_for_hash
-                ))?,
-                NodeT
-            )
-        })
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self, minimum_node_degree, number_of_neighbours_for_hash, dtype)")]
-    /// Retrieves the isomorphic node hashes
-    ///
-    /// Parameters
-    /// ----------
-    ///
-    pub fn get_isomorphic_node_hashes(
-        &self,
-        minimum_node_degree: Option<NodeT>,
-        number_of_neighbours_for_hash: Option<usize>,
-        dtype: Option<&str>,
-    ) -> PyResult<Py<PyArray1<u64>>> {
-        Ok({
-            let gil = pyo3::Python::acquire_gil();
-            to_ndarray_1d!(
-                gil,
-                pe!(self.inner.get_isomorphic_node_hashes(
-                    minimum_node_degree,
-                    number_of_neighbours_for_hash,
-                    dtype
-                ))?,
-                u64
-            )
-        })
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self, minimum_node_degree, number_of_neighbours_for_hash, dtype)")]
-    /// Returns vector with isomorphic node groups names.
-    ///
-    /// Parameters
-    /// ----------
-    /// minimum_node_degree: Optional[int]
-    ///     Minimum node degree for the topological synonims. By default, 10.
-    /// number_of_neighbours_for_hash: Optional[int]
-    ///     The number of neighbours to consider for the hash. By default 10.
-    /// dtype: Optional[&str]
-    ///     The data type of the hash. By default, `&str`.
-    ///
-    pub fn get_isomorphic_node_names(
-        &self,
-        minimum_node_degree: Option<NodeT>,
-        number_of_neighbours_for_hash: Option<usize>,
-        dtype: Option<&str>,
-    ) -> PyResult<Vec<Vec<String>>> {
-        Ok(pe!(self.inner.get_isomorphic_node_names(
-            minimum_node_degree,
-            number_of_neighbours_for_hash,
-            dtype
-        ))?
-        .into_iter()
-        .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>())
-        .collect::<Vec<_>>())
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self, minimum_node_degree, number_of_neighbours_for_hash, dtype)")]
-    /// Returns vector with isomorphic edge groups IDs.
-    ///
-    /// Parameters
-    /// ----------
-    /// minimum_node_degree: Optional[int]
-    ///     Minimum node degree for the topological synonims. By default, 10.
-    /// number_of_neighbours_for_hash: Optional[int]
-    ///     The number of neighbours to consider for the hash. By default 10.
-    /// dtype: Optional[&str]
-    ///     The data type of the hash. By default, `&str`.
-    ///
-    pub fn get_isomorphic_edge_node_ids(
-        &self,
-        minimum_node_degree: Option<NodeT>,
-        number_of_neighbours_for_hash: Option<usize>,
-        dtype: Option<&str>,
-    ) -> PyResult<Vec<Vec<Py<PyArray1<NodeT>>>>> {
-        Ok(pe!(self.inner.get_isomorphic_edge_node_ids(
-            minimum_node_degree,
-            number_of_neighbours_for_hash,
-            dtype
-        ))?
-        .into_iter()
-        .map(|x| {
-            x.into_iter()
-                .map(|x| {
-                    let gil = pyo3::Python::acquire_gil();
-                    to_ndarray_1d!(gil, x.to_vec(), NodeT)
-                })
-                .collect::<Vec<_>>()
-        })
-        .collect::<Vec<_>>())
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self, minimum_node_degree, number_of_neighbours_for_hash, dtype)")]
-    /// Retrieves the isomorphic edge hashes
-    ///
-    /// Parameters
-    /// ----------
-    ///
-    pub fn get_isomorphic_edge_hashes(
-        &self,
-        minimum_node_degree: Option<NodeT>,
-        number_of_neighbours_for_hash: Option<usize>,
-        dtype: Option<&str>,
-    ) -> PyResult<Py<PyArray1<u64>>> {
-        Ok({
-            let gil = pyo3::Python::acquire_gil();
-            to_ndarray_1d!(
-                gil,
-                pe!(self.inner.get_isomorphic_edge_hashes(
-                    minimum_node_degree,
-                    number_of_neighbours_for_hash,
-                    dtype
-                ))?,
-                u64
-            )
-        })
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self, minimum_node_degree, number_of_neighbours_for_hash, dtype)")]
-    /// Returns vector with isomorphic edge groups names.
-    ///
-    /// Parameters
-    /// ----------
-    /// minimum_node_degree: Optional[int]
-    ///     Minimum node degree for the topological synonims. By default, 10.
-    /// number_of_neighbours_for_hash: Optional[int]
-    ///     The number of neighbours to consider for the hash. By default 10.
-    /// dtype: Optional[&str]
-    ///     The data type of the hash. By default, `&str`.
-    ///
-    pub fn get_isomorphic_edge_node_names(
-        &self,
-        minimum_node_degree: Option<NodeT>,
-        number_of_neighbours_for_hash: Option<usize>,
-        dtype: Option<&str>,
-    ) -> PyResult<Vec<Vec<Vec<String>>>> {
-        Ok(pe!(self.inner.get_isomorphic_edge_node_names(
-            minimum_node_degree,
-            number_of_neighbours_for_hash,
-            dtype
-        ))?
-        .into_iter()
-        .map(|x| {
-            x.into_iter()
-                .map(|x| x.into_iter().cloned().map(|x| x.into()).collect::<Vec<_>>())
-                .collect::<Vec<_>>()
-        })
-        .collect::<Vec<_>>())
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self, minimum_node_degree, number_of_neighbours_for_hash, dtype)")]
-    /// Returns vector with isomorphic tuple groups IDs.
-    ///
-    /// Parameters
-    /// ----------
-    /// minimum_node_degree: Optional[int]
-    ///     Minimum node degree for the topological synonims. By default, 10.
-    /// number_of_neighbours_for_hash: Optional[int]
-    ///     The number of neighbours to consider for the hash. By default 10.
-    /// dtype: Optional[&str]
-    ///     The data type of the hash. By default, `&str`.
-    ///
-    pub fn get_isomorphic_tuple_node_ids(
-        &self,
-        minimum_node_degree: Option<NodeT>,
-        number_of_neighbours_for_hash: Option<usize>,
-        dtype: Option<&str>,
-    ) -> PyResult<Vec<Vec<Py<PyArray1<NodeT>>>>> {
-        Ok(pe!(self.inner.get_isomorphic_tuple_node_ids(
-            minimum_node_degree,
-            number_of_neighbours_for_hash,
-            dtype
-        ))?
-        .into_iter()
-        .map(|x| {
-            x.into_iter()
-                .map(|x| {
-                    let gil = pyo3::Python::acquire_gil();
-                    to_ndarray_1d!(gil, x.to_vec(), NodeT)
-                })
-                .collect::<Vec<_>>()
-        })
-        .collect::<Vec<_>>())
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self, minimum_node_degree, number_of_neighbours_for_hash, dtype)")]
-    /// Retrieves the isomorphic tuple hashes
-    ///
-    /// Parameters
-    /// ----------
-    ///
-    pub fn get_isomorphic_tuple_hashes(
-        &self,
-        minimum_node_degree: Option<NodeT>,
-        number_of_neighbours_for_hash: Option<usize>,
-        dtype: Option<&str>,
-    ) -> PyResult<Py<PyArray1<u64>>> {
-        Ok({
-            let gil = pyo3::Python::acquire_gil();
-            to_ndarray_1d!(
-                gil,
-                pe!(self.inner.get_isomorphic_tuple_hashes(
-                    minimum_node_degree,
-                    number_of_neighbours_for_hash,
-                    dtype
-                ))?,
-                u64
-            )
-        })
-    }
-
-    #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self, minimum_node_degree, number_of_neighbours_for_hash, dtype)")]
-    /// Returns vector with isomorphic tuple groups names.
-    ///
-    /// Parameters
-    /// ----------
-    /// minimum_node_degree: Optional[int]
-    ///     Minimum node degree for the topological synonims. By default, 10.
-    /// number_of_neighbours_for_hash: Optional[int]
-    ///     The number of neighbours to consider for the hash. By default 10.
-    /// dtype: Optional[&str]
-    ///     The data type of the hash. By default, `&str`.
-    ///
-    pub fn get_isomorphic_tuple_node_names(
-        &self,
-        minimum_node_degree: Option<NodeT>,
-        number_of_neighbours_for_hash: Option<usize>,
-        dtype: Option<&str>,
-    ) -> PyResult<Vec<Vec<Vec<String>>>> {
-        Ok(pe!(self.inner.get_isomorphic_tuple_node_names(
-            minimum_node_degree,
-            number_of_neighbours_for_hash,
-            dtype
-        ))?
-        .into_iter()
-        .map(|x| {
-            x.into_iter()
-                .map(|x| x.into_iter().cloned().map(|x| x.into()).collect::<Vec<_>>())
-                .collect::<Vec<_>>()
-        })
-        .collect::<Vec<_>>())
     }
 
     #[automatically_generated_binding]
@@ -17491,6 +17055,458 @@ impl Graph {
     pub fn remove_parallel_edges(&self) -> Graph {
         self.inner.remove_parallel_edges().into()
     }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, minimum_node_degree, number_of_neighbours_for_hash)")]
+    /// Get a mask indicating the nodes that are isomorphic.
+    ///
+    /// This method identifies the nodes that are isomorphic based on their minimum
+    /// degree and the number of neighbors used for hashing. It populates a deny mask
+    /// where the nodes that are isomorphic are marked as `true`.
+    ///
+    /// Parameters
+    /// ----------
+    ///
+    pub fn get_isomorphic_nodes_mask(
+        &self,
+        minimum_node_degree: NodeT,
+        number_of_neighbours_for_hash: usize,
+    ) -> PyResult<Py<PyArray1<bool>>> {
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(
+                gil,
+                pe!(self.inner.get_isomorphic_nodes_mask(
+                    minimum_node_degree.clone(),
+                    number_of_neighbours_for_hash.clone()
+                ))?,
+                bool
+            )
+        })
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, minimum_node_degree, number_of_neighbours_for_hash, dtype)")]
+    /// Returns vector with isomorphic node groups IDs.
+    ///
+    /// Parameters
+    /// ----------
+    /// minimum_node_degree: Optional[int]
+    ///     Minimum node degree for the topological synonims. By default, 10.
+    /// number_of_neighbours_for_hash: Optional[int]
+    ///     The number of neighbours to consider for the hash. By default 10.
+    /// dtype: Optional[&str]
+    ///     The data type of the hash. By default, `&str`.
+    ///
+    pub fn get_isomorphic_node_ids(
+        &self,
+        minimum_node_degree: Option<NodeT>,
+        number_of_neighbours_for_hash: Option<usize>,
+        dtype: Option<&str>,
+    ) -> PyResult<Vec<Vec<NodeT>>> {
+        Ok(pe!(self.inner.get_isomorphic_node_ids(
+            minimum_node_degree,
+            number_of_neighbours_for_hash,
+            dtype
+        ))?
+        .into_iter()
+        .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>())
+        .collect::<Vec<_>>())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, minimum_node_degree, number_of_neighbours_for_hash)")]
+    /// Retrieves a vector of flattened and repeated isomorphic node IDs, that is by removing one per group.
+    ///
+    /// Parameters
+    /// ----------
+    /// minimum_node_degree: Optional[int]
+    ///     An optional parameter specifying the minimum degree a node must have to be included
+    ///
+    pub fn get_flat_repeated_isomorphic_node_ids(
+        &self,
+        minimum_node_degree: Option<NodeT>,
+        number_of_neighbours_for_hash: Option<usize>,
+    ) -> PyResult<Py<PyArray1<NodeT>>> {
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(
+                gil,
+                pe!(self.inner.get_flat_repeated_isomorphic_node_ids(
+                    minimum_node_degree,
+                    number_of_neighbours_for_hash
+                ))?,
+                NodeT
+            )
+        })
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, minimum_node_degree, number_of_neighbours_for_hash, dtype)")]
+    /// Retrieves the isomorphic node hashes
+    ///
+    /// Parameters
+    /// ----------
+    ///
+    pub fn get_isomorphic_node_hashes(
+        &self,
+        minimum_node_degree: Option<NodeT>,
+        number_of_neighbours_for_hash: Option<usize>,
+        dtype: Option<&str>,
+    ) -> PyResult<Py<PyArray1<u64>>> {
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(
+                gil,
+                pe!(self.inner.get_isomorphic_node_hashes(
+                    minimum_node_degree,
+                    number_of_neighbours_for_hash,
+                    dtype
+                ))?,
+                u64
+            )
+        })
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, minimum_node_degree, number_of_neighbours_for_hash, dtype)")]
+    /// Returns vector with isomorphic node groups names.
+    ///
+    /// Parameters
+    /// ----------
+    /// minimum_node_degree: Optional[int]
+    ///     Minimum node degree for the topological synonims. By default, 10.
+    /// number_of_neighbours_for_hash: Optional[int]
+    ///     The number of neighbours to consider for the hash. By default 10.
+    /// dtype: Optional[&str]
+    ///     The data type of the hash. By default, `&str`.
+    ///
+    pub fn get_isomorphic_node_names(
+        &self,
+        minimum_node_degree: Option<NodeT>,
+        number_of_neighbours_for_hash: Option<usize>,
+        dtype: Option<&str>,
+    ) -> PyResult<Vec<Vec<String>>> {
+        Ok(pe!(self.inner.get_isomorphic_node_names(
+            minimum_node_degree,
+            number_of_neighbours_for_hash,
+            dtype
+        ))?
+        .into_iter()
+        .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>())
+        .collect::<Vec<_>>())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(
+        text_signature = "($self, minimum_node_degree, number_of_neighbours_for_hash, ignore_edges_including_isomorphic_nodes, dtype)"
+    )]
+    /// Returns vector with isomorphic edge groups IDs.
+    ///
+    /// Parameters
+    /// ----------
+    /// minimum_node_degree: Optional[int]
+    ///     Minimum node degree for the topological synonims. By default, 10.
+    /// number_of_neighbours_for_hash: Optional[int]
+    ///     The number of neighbours to consider for the hash. By default 10.
+    /// ignore_edges_including_isomorphic_nodes: Optional[bool]
+    ///     Whether to ignore edges including isomorphic nodes. By default, true.
+    /// dtype: Optional[&str]
+    ///     The data type of the hash. By default, `&str`.
+    ///
+    pub fn get_isomorphic_edge_node_ids(
+        &self,
+        minimum_node_degree: Option<NodeT>,
+        number_of_neighbours_for_hash: Option<usize>,
+        ignore_edges_including_isomorphic_nodes: Option<bool>,
+        dtype: Option<&str>,
+    ) -> PyResult<Vec<Vec<Py<PyArray1<NodeT>>>>> {
+        Ok(pe!(self.inner.get_isomorphic_edge_node_ids(
+            minimum_node_degree,
+            number_of_neighbours_for_hash,
+            ignore_edges_including_isomorphic_nodes,
+            dtype
+        ))?
+        .into_iter()
+        .map(|x| {
+            x.into_iter()
+                .map(|x| {
+                    let gil = pyo3::Python::acquire_gil();
+                    to_ndarray_1d!(gil, x.to_vec(), NodeT)
+                })
+                .collect::<Vec<_>>()
+        })
+        .collect::<Vec<_>>())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(
+        text_signature = "($self, minimum_node_degree, number_of_neighbours_for_hash, ignore_edges_including_isomorphic_nodes, dtype)"
+    )]
+    /// Retrieves the isomorphic edge hashes
+    ///
+    /// Parameters
+    /// ----------
+    ///
+    pub fn get_isomorphic_edge_hashes(
+        &self,
+        minimum_node_degree: Option<NodeT>,
+        number_of_neighbours_for_hash: Option<usize>,
+        ignore_edges_including_isomorphic_nodes: Option<bool>,
+        dtype: Option<&str>,
+    ) -> PyResult<Py<PyArray1<u64>>> {
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(
+                gil,
+                pe!(self.inner.get_isomorphic_edge_hashes(
+                    minimum_node_degree,
+                    number_of_neighbours_for_hash,
+                    ignore_edges_including_isomorphic_nodes,
+                    dtype
+                ))?,
+                u64
+            )
+        })
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(
+        text_signature = "($self, minimum_node_degree, number_of_neighbours_for_hash, ignore_edges_including_isomorphic_nodes, dtype)"
+    )]
+    /// Returns vector with isomorphic edge groups names.
+    ///
+    /// Parameters
+    /// ----------
+    /// minimum_node_degree: Optional[int]
+    ///     Minimum node degree for the topological synonims. By default, 10.
+    /// number_of_neighbours_for_hash: Optional[int]
+    ///     The number of neighbours to consider for the hash. By default 10.
+    /// ignore_edges_including_isomorphic_nodes: Optional[bool]
+    ///     Whether to ignore edges including isomorphic nodes. By default, true.
+    /// dtype: Optional[&str]
+    ///     The data type of the hash. By default, `&str`.
+    ///
+    pub fn get_isomorphic_edge_node_names(
+        &self,
+        minimum_node_degree: Option<NodeT>,
+        number_of_neighbours_for_hash: Option<usize>,
+        ignore_edges_including_isomorphic_nodes: Option<bool>,
+        dtype: Option<&str>,
+    ) -> PyResult<Vec<Vec<Vec<String>>>> {
+        Ok(pe!(self.inner.get_isomorphic_edge_node_names(
+            minimum_node_degree,
+            number_of_neighbours_for_hash,
+            ignore_edges_including_isomorphic_nodes,
+            dtype
+        ))?
+        .into_iter()
+        .map(|x| {
+            x.into_iter()
+                .map(|x| x.into_iter().cloned().map(|x| x.into()).collect::<Vec<_>>())
+                .collect::<Vec<_>>()
+        })
+        .collect::<Vec<_>>())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, minimum_node_degree, number_of_neighbours_for_hash, dtype)")]
+    /// Returns vector with isomorphic tuple groups IDs.
+    ///
+    /// Parameters
+    /// ----------
+    /// minimum_node_degree: Optional[int]
+    ///     Minimum node degree for the topological synonims. By default, 10.
+    /// number_of_neighbours_for_hash: Optional[int]
+    ///     The number of neighbours to consider for the hash. By default 10.
+    /// dtype: Optional[&str]
+    ///     The data type of the hash. By default, `&str`.
+    ///
+    pub fn get_isomorphic_tuple_node_ids(
+        &self,
+        minimum_node_degree: Option<NodeT>,
+        number_of_neighbours_for_hash: Option<usize>,
+        dtype: Option<&str>,
+    ) -> PyResult<Vec<Vec<Py<PyArray1<NodeT>>>>> {
+        Ok(pe!(self.inner.get_isomorphic_tuple_node_ids(
+            minimum_node_degree,
+            number_of_neighbours_for_hash,
+            dtype
+        ))?
+        .into_iter()
+        .map(|x| {
+            x.into_iter()
+                .map(|x| {
+                    let gil = pyo3::Python::acquire_gil();
+                    to_ndarray_1d!(gil, x.to_vec(), NodeT)
+                })
+                .collect::<Vec<_>>()
+        })
+        .collect::<Vec<_>>())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, minimum_node_degree, number_of_neighbours_for_hash, dtype)")]
+    /// Retrieves the isomorphic tuple hashes
+    ///
+    /// Parameters
+    /// ----------
+    ///
+    pub fn get_isomorphic_tuple_hashes(
+        &self,
+        minimum_node_degree: Option<NodeT>,
+        number_of_neighbours_for_hash: Option<usize>,
+        dtype: Option<&str>,
+    ) -> PyResult<Py<PyArray1<u64>>> {
+        Ok({
+            let gil = pyo3::Python::acquire_gil();
+            to_ndarray_1d!(
+                gil,
+                pe!(self.inner.get_isomorphic_tuple_hashes(
+                    minimum_node_degree,
+                    number_of_neighbours_for_hash,
+                    dtype
+                ))?,
+                u64
+            )
+        })
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, minimum_node_degree, number_of_neighbours_for_hash, dtype)")]
+    /// Returns vector with isomorphic tuple groups names.
+    ///
+    /// Parameters
+    /// ----------
+    /// minimum_node_degree: Optional[int]
+    ///     Minimum node degree for the topological synonims. By default, 10.
+    /// number_of_neighbours_for_hash: Optional[int]
+    ///     The number of neighbours to consider for the hash. By default 10.
+    /// dtype: Optional[&str]
+    ///     The data type of the hash. By default, `&str`.
+    ///
+    pub fn get_isomorphic_tuple_node_names(
+        &self,
+        minimum_node_degree: Option<NodeT>,
+        number_of_neighbours_for_hash: Option<usize>,
+        dtype: Option<&str>,
+    ) -> PyResult<Vec<Vec<Vec<String>>>> {
+        Ok(pe!(self.inner.get_isomorphic_tuple_node_names(
+            minimum_node_degree,
+            number_of_neighbours_for_hash,
+            dtype
+        ))?
+        .into_iter()
+        .map(|x| {
+            x.into_iter()
+                .map(|x| x.into_iter().cloned().map(|x| x.into()).collect::<Vec<_>>())
+                .collect::<Vec<_>>()
+        })
+        .collect::<Vec<_>>())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Returns report relative to the graph metrics
+    ///
+    /// The report includes the following metrics by default:
+    /// * Name of the graph
+    /// * Whether the graph is directed or undirected
+    /// * Number of singleton nodes
+    /// * Number of nodes
+    /// - If the graph has nodes, we also compute:
+    /// * Minimum unweighted node degree
+    /// * Maximum unweighted node degree
+    /// * Unweighted node degree mean
+    /// * Number of edges
+    /// * Number of self-loops
+    /// * Number of singleton with self-loops
+    /// * Whether the graph is a multigraph
+    /// * Number of parallel edges
+    /// * Number of directed edges
+    /// - If the graph has edges, we also compute:
+    /// * Rate of self-loops
+    /// * Whether the graph has weighted edges
+    /// - If the graph has weights, we also compute:
+    /// * Minimum weighted node degree
+    /// * Maximum weighted node degree
+    /// * Weighted node degree mean
+    /// * The total edge weights
+    /// * Whether the graph has node types
+    /// - If the graph has node types, we also compute:
+    /// * Whether the graph has singleton node types
+    /// * The number of node types
+    /// * The number of nodes with unknown node types
+    /// * The number of nodes with known node types
+    /// * Whether the graph has edge types
+    /// - If the graph has edge types, we also compute:
+    /// * Whether the graph has singleton edge types
+    /// * The number of edge types
+    /// * The number of edges with unknown edge types
+    /// * The number of edges with known edge types
+    ///
+    /// On request, since it takes more time to compute it, the method also provides:
+    pub fn report(&self) -> HashMap<&'static str, String> {
+        self.inner.report().into()
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, other, verbose)")]
+    /// Return rendered textual report about the graph overlaps.
+    ///
+    /// Parameters
+    /// ----------
+    /// other: Graph
+    ///     graph to create overlap report with.
+    /// verbose: Optional[bool]
+    ///     Whether to shor the loading bars.
+    ///
+    pub fn overlap_textual_report(&self, other: &Graph, verbose: Option<bool>) -> PyResult<String> {
+        Ok(pe!(self.inner.overlap_textual_report(&other.inner, verbose))?.into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, node_id)")]
+    /// Return human-readable html report of the given node.
+    ///
+    /// The report, by default, is rendered using html.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_id: int
+    ///     Whether to show a loading bar in graph operations.
+    ///
+    pub fn get_node_report_from_node_id(&self, node_id: NodeT) -> PyResult<String> {
+        Ok(pe!(self.inner.get_node_report_from_node_id(node_id.clone()))?.into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self, node_name)")]
+    /// Return human-readable html report of the given node.
+    ///
+    /// The report, by default, is rendered using html.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_name: str
+    ///     Whether to show a loading bar in graph operations.
+    ///
+    pub fn get_node_report_from_node_name(&self, node_name: &str) -> PyResult<String> {
+        Ok(pe!(self.inner.get_node_report_from_node_name(node_name))?.into())
+    }
+
+    #[automatically_generated_binding]
+    #[pyo3(text_signature = "($self)")]
+    /// Return html short textual report of the graph.
+    ///
+    /// TODO! Add reports on various node metrics
+    /// TODO! Add reports on various edge metrics
+    /// NOTE! Most of the above TODOs will require first to implement the
+    /// support for the fast computation of the inbound edges in a directed
+    /// graphs
+    pub fn textual_report(&self) -> String {
+        self.inner.textual_report().into()
+    }
 }
 
 pub const GRAPH_METHODS_NAMES: &[&str] = &[
@@ -17822,11 +17838,6 @@ pub const GRAPH_METHODS_NAMES: &[&str] = &[
     "get_base_13_triad_census",
     "get_base_30_triad_census",
     "get_vertex_cover",
-    "report",
-    "overlap_textual_report",
-    "get_node_report_from_node_id",
-    "get_node_report_from_node_name",
-    "textual_report",
     "set_name",
     "set_inplace_all_edge_types",
     "set_all_edge_types",
@@ -17912,17 +17923,6 @@ pub const GRAPH_METHODS_NAMES: &[&str] = &[
     "get_node_types_total_memory_requirements_human_readable",
     "get_edge_types_total_memory_requirements",
     "get_edge_types_total_memory_requirements_human_readable",
-    "get_isomorphic_nodes_mask",
-    "get_isomorphic_node_ids",
-    "get_flat_repeated_isomorphic_node_ids",
-    "get_isomorphic_node_hashes",
-    "get_isomorphic_node_names",
-    "get_isomorphic_edge_node_ids",
-    "get_isomorphic_edge_hashes",
-    "get_isomorphic_edge_node_names",
-    "get_isomorphic_tuple_node_ids",
-    "get_isomorphic_tuple_hashes",
-    "get_isomorphic_tuple_node_names",
     "get_number_of_connected_components",
     "get_number_of_connected_nodes",
     "get_number_of_singleton_nodes_with_selfloops",
@@ -18215,6 +18215,22 @@ pub const GRAPH_METHODS_NAMES: &[&str] = &[
     "remove_disconnected_nodes",
     "remove_selfloops",
     "remove_parallel_edges",
+    "get_isomorphic_nodes_mask",
+    "get_isomorphic_node_ids",
+    "get_flat_repeated_isomorphic_node_ids",
+    "get_isomorphic_node_hashes",
+    "get_isomorphic_node_names",
+    "get_isomorphic_edge_node_ids",
+    "get_isomorphic_edge_hashes",
+    "get_isomorphic_edge_node_names",
+    "get_isomorphic_tuple_node_ids",
+    "get_isomorphic_tuple_hashes",
+    "get_isomorphic_tuple_node_names",
+    "report",
+    "overlap_textual_report",
+    "get_node_report_from_node_id",
+    "get_node_report_from_node_name",
+    "textual_report",
 ];
 
 pub const GRAPH_TERMS: &[&str] = &[
@@ -18451,9 +18467,6 @@ pub const GRAPH_TERMS: &[&str] = &[
     "census",
     "vertex",
     "cover",
-    "report",
-    "overlap",
-    "textual",
     "set",
     "replace",
     "divide",
@@ -18480,10 +18493,6 @@ pub const GRAPH_TERMS: &[&str] = &[
     "human",
     "readable",
     "requirements",
-    "mask",
-    "flat",
-    "repeated",
-    "hashes",
     "density",
     "rate",
     "mean",
@@ -18496,6 +18505,7 @@ pub const GRAPH_TERMS: &[&str] = &[
     "ontology",
     "imputed",
     "indegrees",
+    "mask",
     "one",
     "hot",
     "encoded",
@@ -18525,6 +18535,12 @@ pub const GRAPH_TERMS: &[&str] = &[
     "graphlet",
     "csv",
     "filter",
+    "flat",
+    "repeated",
+    "hashes",
+    "report",
+    "overlap",
+    "textual",
 ];
 
 pub const GRAPH_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
@@ -20746,27 +20762,6 @@ pub const GRAPH_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
         ("get", 0.22564268),
         ("vertex", 3.9096355),
     ],
-    &[("report", 7.7283106)],
-    &[
-        ("overlap", 3.9096355),
-        ("report", 3.0872161),
-        ("textual", 3.5862935),
-    ],
-    &[
-        ("from", 0.24620146),
-        ("get", 0.084486865),
-        ("id", 0.41094506),
-        ("node", 0.26278502),
-        ("report", 1.1559391),
-    ],
-    &[
-        ("from", 0.24620146),
-        ("get", 0.084486865),
-        ("name", 0.5688061),
-        ("node", 0.26278502),
-        ("report", 1.1559391),
-    ],
-    &[("report", 4.7612505), ("textual", 5.530951)],
     &[("name", 2.3428817), ("set", 4.7612505)],
     &[
         ("all", 1.2299341),
@@ -21330,78 +21325,6 @@ pub const GRAPH_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
         ("requirements", 0.6937099),
         ("total", 0.5860666),
         ("types", 0.307484),
-    ],
-    &[
-        ("get", 0.15516034),
-        ("isomorphic", 1.3632517),
-        ("mask", 1.8018376),
-        ("nodes", 1.2031957),
-    ],
-    &[
-        ("get", 0.15516034),
-        ("ids", 0.65451455),
-        ("isomorphic", 1.3632517),
-        ("node", 0.2641787),
-    ],
-    &[
-        ("flat", 1.4638757),
-        ("get", 0.084486865),
-        ("ids", 0.35639185),
-        ("isomorphic", 0.7423086),
-        ("node", 0.14384879),
-        ("repeated", 1.4638757),
-    ],
-    &[
-        ("get", 0.15516034),
-        ("hashes", 2.3196163),
-        ("isomorphic", 1.3632517),
-        ("node", 0.2641787),
-    ],
-    &[
-        ("get", 0.15516034),
-        ("isomorphic", 1.3632517),
-        ("names", 0.8759536),
-        ("node", 0.2641787),
-    ],
-    &[
-        ("edge", 0.3939579),
-        ("get", 0.112194784),
-        ("ids", 0.47327244),
-        ("isomorphic", 0.9857527),
-        ("node", 0.19102477),
-    ],
-    &[
-        ("edge", 0.5448261),
-        ("get", 0.15516034),
-        ("hashes", 2.3196163),
-        ("isomorphic", 1.3632517),
-    ],
-    &[
-        ("edge", 0.3939579),
-        ("get", 0.112194784),
-        ("isomorphic", 0.9857527),
-        ("names", 0.6333927),
-        ("node", 0.19102477),
-    ],
-    &[
-        ("get", 0.112194784),
-        ("ids", 0.47327244),
-        ("isomorphic", 0.9857527),
-        ("node", 0.19102477),
-        ("tuple", 1.5350355),
-    ],
-    &[
-        ("get", 0.15516034),
-        ("hashes", 2.3196163),
-        ("isomorphic", 1.3632517),
-        ("tuple", 2.1228852),
-    ],
-    &[
-        ("get", 0.112194784),
-        ("isomorphic", 0.9857527),
-        ("names", 0.6333927),
-        ("node", 0.19102477),
-        ("tuple", 1.5350355),
     ],
     &[
         ("components", 1.5981929),
@@ -23676,6 +23599,99 @@ pub const GRAPH_TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
         ("parallel", 3.0872161),
         ("remove", 1.8721534),
     ],
+    &[
+        ("get", 0.15516034),
+        ("isomorphic", 1.3632517),
+        ("mask", 1.8018376),
+        ("nodes", 1.2031957),
+    ],
+    &[
+        ("get", 0.15516034),
+        ("ids", 0.65451455),
+        ("isomorphic", 1.3632517),
+        ("node", 0.2641787),
+    ],
+    &[
+        ("flat", 1.4638757),
+        ("get", 0.084486865),
+        ("ids", 0.35639185),
+        ("isomorphic", 0.7423086),
+        ("node", 0.14384879),
+        ("repeated", 1.4638757),
+    ],
+    &[
+        ("get", 0.15516034),
+        ("hashes", 2.3196163),
+        ("isomorphic", 1.3632517),
+        ("node", 0.2641787),
+    ],
+    &[
+        ("get", 0.15516034),
+        ("isomorphic", 1.3632517),
+        ("names", 0.8759536),
+        ("node", 0.2641787),
+    ],
+    &[
+        ("edge", 0.3939579),
+        ("get", 0.112194784),
+        ("ids", 0.47327244),
+        ("isomorphic", 0.9857527),
+        ("node", 0.19102477),
+    ],
+    &[
+        ("edge", 0.5448261),
+        ("get", 0.15516034),
+        ("hashes", 2.3196163),
+        ("isomorphic", 1.3632517),
+    ],
+    &[
+        ("edge", 0.3939579),
+        ("get", 0.112194784),
+        ("isomorphic", 0.9857527),
+        ("names", 0.6333927),
+        ("node", 0.19102477),
+    ],
+    &[
+        ("get", 0.112194784),
+        ("ids", 0.47327244),
+        ("isomorphic", 0.9857527),
+        ("node", 0.19102477),
+        ("tuple", 1.5350355),
+    ],
+    &[
+        ("get", 0.15516034),
+        ("hashes", 2.3196163),
+        ("isomorphic", 1.3632517),
+        ("tuple", 2.1228852),
+    ],
+    &[
+        ("get", 0.112194784),
+        ("isomorphic", 0.9857527),
+        ("names", 0.6333927),
+        ("node", 0.19102477),
+        ("tuple", 1.5350355),
+    ],
+    &[("report", 7.7283106)],
+    &[
+        ("overlap", 3.9096355),
+        ("report", 3.0872161),
+        ("textual", 3.5862935),
+    ],
+    &[
+        ("from", 0.24620146),
+        ("get", 0.084486865),
+        ("id", 0.41094506),
+        ("node", 0.26278502),
+        ("report", 1.1559391),
+    ],
+    &[
+        ("from", 0.24620146),
+        ("get", 0.084486865),
+        ("name", 0.5688061),
+        ("node", 0.26278502),
+        ("report", 1.1559391),
+    ],
+    &[("report", 4.7612505), ("textual", 5.530951)],
 ];
 
 #[pymethods]

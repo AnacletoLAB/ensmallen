@@ -77,11 +77,12 @@ impl Graph {
     #[staticmethod]
     #[args(py_kwargs = "**")]
     #[pyo3(
-        text_signature = "(directed, edges_df, *, nodes_ds, node_name_column, node_type_column, edge_src_column, edge_dst_column, edge_weight_column, edge_type_column, name)"
+        text_signature = "(directed, edges_df, *, nodes_df, node_name_column, node_type_column, edge_src_column, edge_dst_column, edge_weight_column, edge_type_column, name)"
     )]
     /// Create a new graph from pandas dataframes.
     ///
     /// # Arguments
+    /// * `directed` - Whether the graph is directed or not.
     /// * `edges_df` - The dataframe containing the edges.
     /// * `nodes_df` - The dataframe containing the nodes.
     /// * `node_name_column` - The name of the column containing the node names. Default: "name".
@@ -89,6 +90,8 @@ impl Graph {
     /// * `edge_src_column` - The name of the column containing the source nodes. Default: "subject".
     /// * `edge_dst_column` - The name of the column containing the destination nodes. Default: "object".
     /// * `edge_weight_column` - The name of the column containing the edge weights.
+    /// * `edge_type_column` - The name of the column containing the edge types.
+    /// * `name` - The name of the graph. Default: "Graph".
     ///
     /// # Example
     ///
@@ -125,6 +128,21 @@ impl Graph {
         let edges_df = edges_df.as_ref(py);
 
         let kwargs = py_kwargs.unwrap_or_else(|| PyDict::new(py));
+
+        pe!(validate_kwargs(
+            kwargs,
+            &[
+                "name",
+                "nodes_df",
+                "node_name_column",
+                "edge_src_column",
+                "edge_dst_column",
+                "node_type_column",
+                "edge_weight_column",
+                "edge_type_column",
+                "node_types_separator"
+            ],
+        ))?;
 
         let name = extract_value!(kwargs, "name", String).unwrap_or_else(|| "Graph".to_string());
         let nodes_df = extract_value!(kwargs, "nodes_df", Py<PyAny>);
@@ -289,7 +307,7 @@ impl Graph {
             directed,         // directed
             Some(false),      // correct
             Some(false),      // complete
-            Some(false),      // duplicates
+            Some(true),       // duplicates
             Some(false),      // sorted
             None,             // number_of_edges
             Some(false),      // numeric_edge_list_node_ids
