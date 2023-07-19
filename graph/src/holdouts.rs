@@ -837,11 +837,16 @@ impl Graph {
             }
 
             if sampling_round > number_of_sampling_attempts {
-                return Err(format!(concat!(
-                    "Using the provided filters on the current graph instance it ",
-                    "was not possible to sample a new negative edge after {number_of_sampling_attempts} sampling ",
-                    "rounds."
-                ), number_of_sampling_attempts=number_of_sampling_attempts));
+                return Err(format!(
+                    concat!(
+                        "Using the provided filters on the current graph instance it ",
+                        "was not possible to sample a new positive edge after {number_of_sampling_attempts} sampling ",
+                        "rounds. We have found {number_of_edges} edges out of {number_of_samples} samples."
+                    ),
+                    number_of_sampling_attempts=number_of_sampling_attempts,
+                    number_of_edges=edges_hashset.len(),
+                    number_of_samples=number_of_samples
+                ));
             }
         }
 
