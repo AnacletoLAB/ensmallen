@@ -138,10 +138,15 @@ impl Graph {
         };
 
         Ok(move |node_id: NodeT| {
+            // If the user has provided a set of the node types to sample, we check
+            // whether the current node has a node type among those to keep.
             if let Some(node_types_ids) = &node_types_ids {
+                // We retrieve the node node types.
                 if let Some(node_type) =
                     unsafe { self.get_unchecked_node_type_ids_from_node_id(node_id) }
                 {
+                    // If none of the node types allowed appear in the current node,
+                    // we discard it.
                     if !node_types_ids
                         .iter()
                         .any(|node_type_id| node_type.contains(node_type_id))
@@ -818,6 +823,11 @@ impl Graph {
                 .par_iter_random_uniform_edge_ids(number_of_samples as usize, random_state)
                 .filter_map(|edge_id| sampling_filter_map(edge_id))
                 .collect::<Vec<EdgeT>>();
+
+            // If we have found at least one edge, we can reset the sampling round counter.
+            if !sampled_edge_ids.is_empty() {
+                sampling_round = 0;
+            }
 
             for edge_id in sampled_edge_ids.iter() {
                 if edges_hashset.len() >= number_of_samples as usize {
