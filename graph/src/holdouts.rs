@@ -790,10 +790,10 @@ impl Graph {
                     return None;
                 }
 
-                if !(source_node_filter(src)
-                    && destination_node_filter(dst)
-                    && (self.is_directed()
-                        || source_node_filter(dst) && destination_node_filter(src)))
+                if !(source_node_filter(src) && destination_node_filter(dst)
+                    || !self.is_directed()
+                        && source_node_filter(dst)
+                        && destination_node_filter(src))
                 {
                     return None;
                 }
