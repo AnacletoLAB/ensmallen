@@ -104,7 +104,7 @@ impl Graph {
     ) -> Result<impl Fn(NodeT) -> bool + '_> {
         let minimum_node_degree = minimum_node_degree.unwrap_or(0);
         let maximum_node_degree = maximum_node_degree.unwrap_or(NodeT::MAX);
-        let node_types_ids = if let Some(node_types_names) = node_types_names {
+        let allowed_node_types_ids = if let Some(node_types_names) = node_types_names {
             if node_types_names.is_empty() {
                 return Err("The provided vector `node_types_names` is empty!".to_string());
             }
@@ -140,16 +140,16 @@ impl Graph {
         Ok(move |node_id: NodeT| {
             // If the user has provided a set of the node types to sample, we check
             // whether the current node has a node type among those to keep.
-            if let Some(node_types_ids) = &node_types_ids {
+            if let Some(allowed_node_types_ids) = &allowed_node_types_ids {
                 // We retrieve the node node types.
                 if let Some(node_type) =
                     unsafe { self.get_unchecked_node_type_ids_from_node_id(node_id) }
                 {
                     // If none of the node types allowed appear in the current node,
                     // we discard it.
-                    if !node_types_ids
+                    if allowed_node_types_ids
                         .iter()
-                        .any(|node_type_id| node_type.contains(node_type_id))
+                        .all(|allowed_node_type_id| !node_type.contains(allowed_node_type_id))
                     {
                         return false;
                     }
@@ -785,17 +785,22 @@ impl Graph {
 
             let sampling_filter_map = |edge_id| {
                 let (src, dst) = unsafe { self.get_unchecked_node_ids_from_edge_id(edge_id) };
-                let edge_type_id = unsafe { self.get_unchecked_edge_type_id_from_edge_id(edge_id) };
-
-                if !source_node_filter(src) || !destination_node_filter(dst) {
-                    return None;
-                }
 
                 if !self.is_directed() && src > dst {
                     return None;
                 }
 
+                if !(source_node_filter(src)
+                    && destination_node_filter(dst)
+                    && (self.is_directed()
+                        || source_node_filter(dst) && destination_node_filter(src)))
+                {
+                    return None;
+                }
+
                 if edge_type_ids.as_ref().map_or(false, |edge_type_ids| {
+                    let edge_type_id =
+                        unsafe { self.get_unchecked_edge_type_id_from_edge_id(edge_id) };
                     !edge_type_ids.iter().any(|this_edge_type_id| {
                         match (this_edge_type_id, edge_type_id) {
                             (None, None) => true,
