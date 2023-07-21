@@ -351,13 +351,16 @@ impl Graph {
         // case of a graph with a large number of nodes, collecting them may be
         // computationally expensive to prohibitive - I am looking at you WikiData.
         let source_node_ids: Option<Vec<u32>> = if number_of_filtered_source_nodes
-            < (self.get_number_of_nodes() as f64 * subgraph_rasterization_threshold) as usize
+            < (self.get_number_of_nodes() as f32 * subgraph_rasterization_threshold) as usize
         {
             Some(
                 self.par_iter_node_ids()
                     .filter(|node_id| {
                         source_node_filter(*node_id)
-                            && node_degree_distribution_graph.is_connected_from_node_id(*node_id)
+                            && unsafe {
+                                node_degree_distribution_graph
+                                    .is_unchecked_connected_from_node_id(*node_id)
+                            }
                     })
                     .collect::<Vec<NodeT>>(),
             )
@@ -410,12 +413,14 @@ impl Graph {
             .par_iter_node_ids()
             .filter(|node_id| {
                 destination_node_filter(*node_id)
-                    && node_degree_distribution_graph.is_connected_from_node_id(*node_id)
+                    && unsafe {
+                        node_degree_distribution_graph.is_unchecked_connected_from_node_id(*node_id)
+                    }
             })
             .count();
 
         let destination_node_ids: Option<Vec<u32>> = if number_of_filtered_destination_nodes
-            < (self.get_number_of_nodes() as f64 * subgraph_rasterization_threshold) as usize
+            < (self.get_number_of_nodes() as f32 * subgraph_rasterization_threshold) as usize
         {
             Some(
                 self.par_iter_node_ids()

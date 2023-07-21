@@ -4713,7 +4713,7 @@ impl Graph {
 
     #[automatically_generated_binding]
     #[pyo3(
-        text_signature = "($self, number_of_negative_samples, random_state, only_from_same_component, sample_only_edges_with_heterogeneous_node_types, minimum_node_degree, maximum_node_degree, source_node_types_names, destination_node_types_names, source_edge_types_names, destination_edge_types_names, source_nodes_prefixes, destination_nodes_prefixes, graph_to_avoid, support, node_degree_distribution_graph, use_scale_free_distribution, sample_edge_types, number_of_sampling_attempts)"
+        text_signature = "($self, number_of_negative_samples, random_state, only_from_same_component, sample_only_edges_with_heterogeneous_node_types, minimum_node_degree, maximum_node_degree, source_node_types_names, destination_node_types_names, source_edge_types_names, destination_edge_types_names, source_nodes_prefixes, destination_nodes_prefixes, graph_to_avoid, support, node_degree_distribution_graph, use_scale_free_distribution, sample_edge_types, subgraph_rasterization_threshold, number_of_sampling_attempts)"
     )]
     /// Returns Graph with given amount of negative edges as positive edges.
     ///
@@ -4755,6 +4755,8 @@ impl Graph {
     ///     Whether to sample the nodes using scale_free distribution. By default True. Not using this may cause significant biases.
     /// sample_edge_types: Optional[bool]
     ///     Whether to sample edge types, following the edge type counts distribution. By default it is true only when the current graph instance has edge types.
+    /// subgraph_rasterization_threshold: Optional[float]
+    ///     The threshold to use to rasterize the subgraph. By default 0.1
     /// number_of_sampling_attempts: Optional[int]
     ///     Number of times to attempt to sample edges before giving up.
     ///
@@ -4783,6 +4785,7 @@ impl Graph {
         node_degree_distribution_graph: Option<&Graph>,
         use_scale_free_distribution: Option<bool>,
         sample_edge_types: Option<bool>,
+        subgraph_rasterization_threshold: Option<f32>,
         number_of_sampling_attempts: Option<usize>,
     ) -> PyResult<Graph> {
         Ok(pe!(self.inner.sample_negative_graph(
@@ -4803,6 +4806,7 @@ impl Graph {
             node_degree_distribution_graph.map(|sg| &sg.inner),
             use_scale_free_distribution,
             sample_edge_types,
+            subgraph_rasterization_threshold,
             number_of_sampling_attempts
         ))?
         .into())
