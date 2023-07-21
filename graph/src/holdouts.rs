@@ -258,6 +258,7 @@ impl Graph {
     /// * `node_degree_distribution_graph`: Option<&Graph> - Graph to be used for the node degree distribution when sampling negative edges when scale free distribution is required. By default, the current graph instance.
     /// * `use_scale_free_distribution`: Option<bool> - Whether to sample the nodes using scale_free distribution. By default True. Not using this may cause significant biases.
     /// * `sample_edge_types`: Option<bool> - Whether to sample edge types, following the edge type counts distribution. By default it is true only when the current graph instance has edge types.
+    /// * `subgraph_rasterization_threshold`: Option<f32> - The threshold to use to rasterize the subgraph. By default 0.1
     /// * `number_of_sampling_attempts`: Option<usize> - Number of times to attempt to sample edges before giving up.
     ///
     /// # Raises
@@ -281,6 +282,7 @@ impl Graph {
         node_degree_distribution_graph: Option<&Graph>,
         use_scale_free_distribution: Option<bool>,
         sample_edge_types: Option<bool>,
+        subgraph_rasterization_threshold: Option<f32>,
         number_of_sampling_attempts: Option<usize>,
     ) -> Result<Graph> {
         let number_of_sampling_attempts = number_of_sampling_attempts.unwrap_or(100_000);
@@ -303,6 +305,7 @@ impl Graph {
         }
 
         let sample_edge_types = sample_edge_types.unwrap_or(self.has_edge_types());
+        let subgraph_rasterization_threshold = subgraph_rasterization_threshold.unwrap_or(0.1);
 
         if sample_edge_types {
             self.must_have_edge_types()?;
@@ -348,11 +351,14 @@ impl Graph {
         // case of a graph with a large number of nodes, collecting them may be
         // computationally expensive to prohibitive - I am looking at you WikiData.
         let source_node_ids: Option<Vec<u32>> = if number_of_filtered_source_nodes
-            < (self.get_number_of_nodes() as f64 * 0.2) as usize
+            < (self.get_number_of_nodes() as f64 * subgraph_rasterization_threshold) as usize
         {
             Some(
                 self.par_iter_node_ids()
-                    .filter(|node_id| source_node_filter(*node_id))
+                    .filter(|node_id| {
+                        source_node_filter(*node_id)
+                            && node_degree_distribution_graph.is_connected_from_node_id(*node_id)
+                    })
                     .collect::<Vec<NodeT>>(),
             )
         } else {
@@ -402,11 +408,14 @@ impl Graph {
 
         let number_of_filtered_destination_nodes = self
             .par_iter_node_ids()
-            .filter(|node_id| destination_node_filter(*node_id))
+            .filter(|node_id| {
+                destination_node_filter(*node_id)
+                    && node_degree_distribution_graph.is_connected_from_node_id(*node_id)
+            })
             .count();
 
         let destination_node_ids: Option<Vec<u32>> = if number_of_filtered_destination_nodes
-            < (self.get_number_of_nodes() as f64 * 0.2) as usize
+            < (self.get_number_of_nodes() as f64 * subgraph_rasterization_threshold) as usize
         {
             Some(
                 self.par_iter_node_ids()
@@ -548,7 +557,11 @@ impl Graph {
         let mut sampling_round: usize = 0;
         let mut last_size = 0;
 
+        // Method to sample a source node dispatching the proper approach depending
+        // on the graph size and filter size requirements.
         let sample_source_node = |random_state: EdgeT| -> NodeT {
+            // If the source node ids and source node degree comulative sum are not None and
+            // therefore we are in a situation of heavy filtration
             if let (Some(source_node_ids), Some(source_node_degrees_cumsum)) = (
                 source_node_ids.as_ref(),
                 source_node_degrees_cumsum.as_ref(),
@@ -556,6 +569,7 @@ impl Graph {
                 source_node_ids
                     [sample_f32_from_cumsum(&source_node_degrees_cumsum, random_state) as usize]
             } else if use_scale_free_distribution {
+                // If we are not in a
                 node_degree_distribution_graph.get_random_outbounds_scale_free_node(random_state)
             } else {
                 node_degree_distribution_graph.get_random_node(random_state)
