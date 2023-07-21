@@ -4713,7 +4713,7 @@ impl Graph {
 
     #[automatically_generated_binding]
     #[pyo3(
-        text_signature = "($self, number_of_negative_samples, random_state, only_from_same_component, sample_only_edges_with_heterogeneous_node_types, minimum_node_degree, maximum_node_degree, source_node_types_names, destination_node_types_names, source_edge_types_names, destination_edge_types_names, source_nodes_prefixes, destination_nodes_prefixes, graph_to_avoid, support, use_scale_free_distribution, sample_edge_types, number_of_sampling_attempts)"
+        text_signature = "($self, number_of_negative_samples, random_state, only_from_same_component, sample_only_edges_with_heterogeneous_node_types, minimum_node_degree, maximum_node_degree, source_node_types_names, destination_node_types_names, source_edge_types_names, destination_edge_types_names, source_nodes_prefixes, destination_nodes_prefixes, graph_to_avoid, support, node_degree_distribution_graph, use_scale_free_distribution, sample_edge_types, number_of_sampling_attempts)"
     )]
     /// Returns Graph with given amount of negative edges as positive edges.
     ///
@@ -4749,6 +4749,8 @@ impl Graph {
     ///     Compatible graph whose edges are not to be sampled.
     /// support: Optional[&Graph]
     ///     Parent graph of this subgraph, defining the `true` topology of the graph. Node degrees and connected components are sampled from this support graph when provided. Useful when sampling negative edges for a test graph. In this latter case, the support graph should be the training graph.
+    /// node_degree_distribution_graph: Optional[&Graph]
+    ///     Graph to be used for the node degree distribution when sampling negative edges when scale free distribution is required. By default, the current graph instance.
     /// use_scale_free_distribution: Optional[bool]
     ///     Whether to sample the nodes using scale_free distribution. By default True. Not using this may cause significant biases.
     /// sample_edge_types: Optional[bool]
@@ -4778,6 +4780,7 @@ impl Graph {
         destination_nodes_prefixes: Option<Vec<String>>,
         graph_to_avoid: Option<&Graph>,
         support: Option<&Graph>,
+        node_degree_distribution_graph: Option<&Graph>,
         use_scale_free_distribution: Option<bool>,
         sample_edge_types: Option<bool>,
         number_of_sampling_attempts: Option<usize>,
@@ -4797,6 +4800,7 @@ impl Graph {
             destination_nodes_prefixes,
             graph_to_avoid.map(|sg| &sg.inner),
             support.map(|sg| &sg.inner),
+            node_degree_distribution_graph.map(|sg| &sg.inner),
             use_scale_free_distribution,
             sample_edge_types,
             number_of_sampling_attempts
