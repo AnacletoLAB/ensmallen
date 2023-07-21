@@ -255,6 +255,7 @@ impl Graph {
     /// * `destination_nodes_prefixes`: Option<Vec<String>> - Prefixes of the nodes names to be samples as destinations. If a node starts with any of the provided prefixes, it can be sampled as a destinations node.
     /// * `graph_to_avoid`: Option<&Graph> - Compatible graph whose edges are not to be sampled.
     /// * `support`: Option<&Graph> - Parent graph of this subgraph, defining the `true` topology of the graph. Node degrees and connected components are sampled from this support graph when provided. Useful when sampling negative edges for a test graph. In this latter case, the support graph should be the training graph.
+    /// * `node_degree_distribution_graph`: Option<&Graph> - Graph to be used for the node degree distribution when sampling negative edges when scale free distribution is required. By default, the current graph instance.
     /// * `use_scale_free_distribution`: Option<bool> - Whether to sample the nodes using scale_free distribution. By default True. Not using this may cause significant biases.
     /// * `sample_edge_types`: Option<bool> - Whether to sample edge types, following the edge type counts distribution. By default it is true only when the current graph instance has edge types.
     /// * `number_of_sampling_attempts`: Option<usize> - Number of times to attempt to sample edges before giving up.
@@ -277,6 +278,7 @@ impl Graph {
         destination_nodes_prefixes: Option<Vec<String>>,
         graph_to_avoid: Option<&Graph>,
         support: Option<&Graph>,
+        node_degree_distribution_graph: Option<&Graph>,
         use_scale_free_distribution: Option<bool>,
         sample_edge_types: Option<bool>,
         number_of_sampling_attempts: Option<usize>,
@@ -296,6 +298,10 @@ impl Graph {
             self.must_share_node_vocabulary(support)?;
         }
 
+        if let Some(node_degree_distribution_graph) = node_degree_distribution_graph.as_ref() {
+            self.must_share_node_vocabulary(node_degree_distribution_graph)?;
+        }
+
         let sample_edge_types = sample_edge_types.unwrap_or(self.has_edge_types());
 
         if sample_edge_types {
@@ -303,6 +309,7 @@ impl Graph {
         }
 
         let support = support.unwrap_or(&self);
+        let node_degree_distribution_graph = node_degree_distribution_graph.unwrap_or(&support);
 
         let source_node_filter = self.get_graph_sampling_node_filter(
             minimum_node_degree,
@@ -374,7 +381,8 @@ impl Graph {
                     .par_iter()
                     .copied()
                     .map(|src| unsafe {
-                        support.get_unchecked_node_degree_from_node_id(src) as f32
+                        node_degree_distribution_graph.get_unchecked_node_degree_from_node_id(src)
+                            as f32
                     })
                     .collect::<Vec<f32>>();
                 cumsum_f32(&mut node_degrees);
@@ -448,7 +456,7 @@ impl Graph {
                                 vec![0.0; destination_node_ids.len()],
                             )
                         };
-                    support
+                    node_degree_distribution_graph
                         .par_iter_directed_edge_node_ids()
                         .for_each(|(_, _, dst)| {
                             if let Ok(index) = destination_node_ids.binary_search(&dst) {
@@ -462,7 +470,9 @@ impl Graph {
                         .par_iter()
                         .copied()
                         .map(|dst| unsafe {
-                            support.get_unchecked_node_degree_from_node_id(dst) as f32
+                            node_degree_distribution_graph
+                                .get_unchecked_node_degree_from_node_id(dst)
+                                as f32
                         })
                         .collect::<Vec<f32>>()
                 };
@@ -546,9 +556,9 @@ impl Graph {
                 source_node_ids
                     [sample_f32_from_cumsum(&source_node_degrees_cumsum, random_state) as usize]
             } else if use_scale_free_distribution {
-                support.get_random_outbounds_scale_free_node(random_state)
+                node_degree_distribution_graph.get_random_outbounds_scale_free_node(random_state)
             } else {
-                support.get_random_node(random_state)
+                node_degree_distribution_graph.get_random_node(random_state)
             }
         };
 
@@ -562,9 +572,9 @@ impl Graph {
                     random_state,
                 ) as usize]
             } else if use_scale_free_distribution {
-                support.get_random_inbounds_scale_free_node(random_state)
+                node_degree_distribution_graph.get_random_inbounds_scale_free_node(random_state)
             } else {
-                support.get_random_node(random_state)
+                node_degree_distribution_graph.get_random_node(random_state)
             }
         };
 
