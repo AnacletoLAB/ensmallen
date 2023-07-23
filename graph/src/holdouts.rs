@@ -15,7 +15,7 @@ use roaring::{RoaringBitmap, RoaringTreemap};
 use std::cell::SyncUnsafeCell;
 use std::collections::HashSet;
 use vec_rand::cumsum_f32::cumsum_f32;
-use vec_rand::sample_f32_from_cumsum;
+use vec_rand::sample_from_cumsum;
 use vec_rand::xorshift::xorshift as rand_u64;
 
 /// Returns roaring tree map with the validation indices.
@@ -572,7 +572,7 @@ impl Graph {
                 source_node_degrees_cumsum.as_ref(),
             ) {
                 source_node_ids
-                    [sample_f32_from_cumsum(&source_node_degrees_cumsum, random_state) as usize]
+                    [sample_from_cumsum(&source_node_degrees_cumsum, random_state) as usize]
             } else if use_scale_free_distribution {
                 // If we are not in a
                 node_degree_distribution_graph.get_random_outbounds_scale_free_node(random_state)
@@ -586,7 +586,7 @@ impl Graph {
                 destination_node_ids.as_ref(),
                 destination_node_degrees_cumsum.as_ref(),
             ) {
-                destination_node_ids[sample_f32_from_cumsum(
+                destination_node_ids[sample_from_cumsum(
                     &destination_node_degrees_cumsum,
                     random_state,
                 ) as usize]
