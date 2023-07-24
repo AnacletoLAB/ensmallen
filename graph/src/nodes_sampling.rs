@@ -54,6 +54,32 @@ impl Graph {
             .map(|_| unsafe { self.get_unchecked_random_scale_free_edge_type(random_state) })
     }
 
+    /// Return random scale free edge weight.
+    ///
+    /// # Arguments
+    /// * `random_state`: u64 - The random state to use to reproduce the sampling.
+    ///
+    /// # Safety
+    /// * If the graph does not have edge types, the method will always return None.
+    pub unsafe fn get_unchecked_random_scale_free_edge_weight(
+        &self,
+        random_state: u64,
+    ) -> Option<WeightT> {
+        self.get_unchecked_edge_weight_from_edge_id(self.get_random_edge_id(random_state))
+    }
+
+    /// Return random scale free edge weight.
+    ///
+    /// # Arguments
+    /// * `random_state`: u64 - The random state to use to reproduce the sampling.
+    ///
+    /// # Raises
+    /// * If the graph does not have edge types.
+    pub fn get_random_scale_free_edge_weight(&self, random_state: u64) -> Result<Option<WeightT>> {
+        self.must_have_edge_weights()
+            .map(|_| unsafe { self.get_unchecked_random_scale_free_edge_weight(random_state) })
+    }
+
     /// Return random node ID.
     ///
     /// # Arguments
