@@ -1,8 +1,6 @@
-use crate::constructors::build_graph_from_strings_without_type_iterators;
 
 use super::*;
 use counter::Counter;
-use indicatif::ProgressIterator;
 use rayon::prelude::*;
 use roaring::RoaringBitmap;
 use std::collections::HashSet;
