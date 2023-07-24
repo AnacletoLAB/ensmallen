@@ -402,9 +402,7 @@ impl Graph {
     }
 
     #[cache_property(trap_number_of_nodes)]
-    /// Return the number of traps (nodes without any outgoing edges that are not singletons)
-    /// This also includes nodes with only a self-loops, therefore singletons with
-    /// only a self-loops are not considered traps because you could make a walk on them.
+    /// Return the number of traps nodes (nodes without any outgoing edges that are not singletons)
     ///
     /// # Example
     /// ```rust
@@ -413,8 +411,31 @@ impl Graph {
     /// ```
     ///
     pub fn get_number_of_trap_nodes(&self) -> NodeT {
-        self.iter_connected_node_ids()
-            .filter(|&node_id| unsafe { self.get_unchecked_node_degree_from_node_id(node_id) == 0 })
+        if !self.is_directed() {
+            return 0;
+        }
+        self.par_iter_node_ids()
+            .filter(|node_id| unsafe { self.is_unchecked_trap_node_from_node_id(*node_id) })
+            .count() as NodeT
+    }
+
+    #[cache_property(trap_selfloop_number_of_nodes)]
+    /// Return the number of traps nodes with selfloops (nodes without any outgoing edges that are not singletons)
+    ///
+    /// # Example
+    /// ```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
+    /// println!("There are {} trap nodes in the current graph.", graph.get_number_of_trap_nodes());
+    /// ```
+    ///
+    pub fn get_number_of_trap_nodes_with_selfloops(&self) -> NodeT {
+        if !self.is_directed() {
+            return 0;
+        }
+        self.par_iter_node_ids()
+            .filter(|node_id| unsafe {
+                self.is_unchecked_trap_node_with_selfloops_from_node_id(*node_id)
+            })
             .count() as NodeT
     }
 
@@ -2038,5 +2059,4 @@ impl Graph {
             .map(|node_id| unsafe { self.get_unchecked_node_name_from_node_id(node_id) })
             .collect()
     }
-
 }

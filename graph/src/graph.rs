@@ -158,56 +158,57 @@ impl Graph {
         may_have_singletons: bool,
         may_have_singleton_with_selfloops: bool,
     ) -> BitVec<u8, Lsb0> {
-        let connected_nodes = if may_have_singletons && self.is_directed() {
-            let mut connected_nodes =
-                bitvec![AtomicU8, Lsb0; 0; self.get_number_of_nodes() as usize];
-            let thread_shared_connected_nodes = ThreadDataRaceAware::new(&mut connected_nodes);
-            // If the graph may contain singletons, we need to iterate on all
-            // the nodes neighbours in order to find if whether a node is a singleton or
-            // if it is a trap node.
-            // Compute in parallel the bitvector of all the nodes that have incoming edges
-            self.par_iter_node_ids().for_each(|node_id| unsafe {
-                let connected_nodes = thread_shared_connected_nodes.value.get();
-                let mut is_connected = false;
-                self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
-                    .filter(|&dst_id| node_id != dst_id)
-                    .for_each(|dst_id| {
-                        is_connected = true;
-                        *(*connected_nodes).get_unchecked_mut(dst_id as usize) = true;
-                    });
-                if is_connected {
-                    *(*connected_nodes).get_unchecked_mut(node_id as usize) = true;
-                }
-            });
-            connected_nodes
-        } else {
-            let mut connected_nodes =
-                bitvec![AtomicU8, Lsb0; 1; self.get_number_of_nodes() as usize];
-            let thread_shared_connected_nodes = ThreadDataRaceAware::new(&mut connected_nodes);
-            self.par_iter_node_degrees()
-                .enumerate()
-                .for_each(|(node_id, node_degree)| unsafe {
-                    // If this node is a singleton we mark it as disconnected.
-                    // We use the unlikely directive to tell the compiler that this
-                    // should be a rare occurrence: in a well formed graph
-                    // there should be only a small amount of singletons.
-                    // The same applies also to singletons with selfloops.
-                    if unlikely(
-                        may_have_singletons && node_degree == 0
-                            || may_have_singleton_with_selfloops
-                                && node_degree > 0
-                                && self
-                                    .iter_unchecked_neighbour_node_ids_from_source_node_id(
-                                        node_id as NodeT,
-                                    )
-                                    .all(|dst_id| node_id as NodeT == dst_id),
-                    ) {
-                        let connected_nodes = thread_shared_connected_nodes.value.get();
-                        *(*connected_nodes).get_unchecked_mut(node_id) = false;
+        let connected_nodes =
+            if (may_have_singletons || may_have_singleton_with_selfloops) && self.is_directed() {
+                let mut connected_nodes =
+                    bitvec![AtomicU8, Lsb0; 0; self.get_number_of_nodes() as usize];
+                let thread_shared_connected_nodes = ThreadDataRaceAware::new(&mut connected_nodes);
+                // If the graph may contain singletons, we need to iterate on all
+                // the nodes neighbours in order to find if whether a node is a singleton or
+                // if it is a trap node.
+                // Compute in parallel the bitvector of all the nodes that have incoming edges
+                self.par_iter_node_ids().for_each(|node_id| unsafe {
+                    let connected_nodes = thread_shared_connected_nodes.value.get();
+                    let mut is_connected = false;
+                    self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
+                        .filter(|&dst_id| node_id != dst_id)
+                        .for_each(|dst_id| {
+                            is_connected = true;
+                            *(*connected_nodes).get_unchecked_mut(dst_id as usize) = true;
+                        });
+                    if is_connected {
+                        *(*connected_nodes).get_unchecked_mut(node_id as usize) = true;
                     }
                 });
-            connected_nodes
-        };
+                connected_nodes
+            } else {
+                let mut connected_nodes =
+                    bitvec![AtomicU8, Lsb0; 1; self.get_number_of_nodes() as usize];
+                let thread_shared_connected_nodes = ThreadDataRaceAware::new(&mut connected_nodes);
+                self.par_iter_node_degrees().enumerate().for_each(
+                    |(node_id, node_degree)| unsafe {
+                        // If this node is a singleton we mark it as disconnected.
+                        // We use the unlikely directive to tell the compiler that this
+                        // should be a rare occurrence: in a well formed graph
+                        // there should be only a small amount of singletons.
+                        // The same applies also to singletons with selfloops.
+                        if unlikely(
+                            may_have_singletons && node_degree == 0
+                                || may_have_singleton_with_selfloops
+                                    && node_degree > 0
+                                    && self
+                                        .iter_unchecked_neighbour_node_ids_from_source_node_id(
+                                            node_id as NodeT,
+                                        )
+                                        .all(|dst_id| node_id as NodeT == dst_id),
+                        ) {
+                            let connected_nodes = thread_shared_connected_nodes.value.get();
+                            *(*connected_nodes).get_unchecked_mut(node_id) = false;
+                        }
+                    },
+                );
+                connected_nodes
+            };
         unsafe { std::mem::transmute::<BitVec<AtomicU8, Lsb0>, BitVec<u8, Lsb0>>(connected_nodes) }
     }
 

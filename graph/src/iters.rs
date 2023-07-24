@@ -292,6 +292,22 @@ impl Graph {
             .filter(move |&node_id| unsafe { self.is_unchecked_trap_node_from_node_id(node_id) })
     }
 
+    /// Return iterator on the trap nodes with selfloops IDs of the graph.
+    pub fn iter_trap_node_with_selfloops_ids(&self) -> impl Iterator<Item = NodeT> + '_ {
+        self.iter_node_ids().filter(move |&node_id| unsafe {
+            self.is_unchecked_trap_node_with_selfloops_from_node_id(node_id)
+        })
+    }
+
+    /// Return parallel iterator on the trap nodes with selfloops IDs of the graph.
+    pub fn par_iter_trap_node_with_selfloops_ids(
+        &self,
+    ) -> impl ParallelIterator<Item = NodeT> + '_ {
+        self.par_iter_node_ids().filter(move |&node_id| unsafe {
+            self.is_unchecked_trap_node_with_selfloops_from_node_id(node_id)
+        })
+    }
+
     /// Return iterator on the singleton nodes names of the graph.
     pub fn iter_singleton_node_names(&self) -> impl Iterator<Item = String> + '_ {
         self.iter_singleton_node_ids()
@@ -343,20 +359,16 @@ impl Graph {
     ///
     /// # Raises
     /// * If there are no edge types in the graph.
-    /// 
+    ///
     /// # Implementation details
     /// A singleton edge type is characterized by having only one edge of that type.
     /// This means that if the graph is undirected, then the edge type is singleton
     /// if it has only one edge (two total directed edges), while if the graph is directed,
     /// then the edge type is singleton if it has only one edge in one direction.
     pub fn iter_singleton_edge_type_ids(&self) -> Result<impl Iterator<Item = EdgeTypeT> + '_> {
-        let singleton_count = if self.is_directed() {
-            1
-        } else {
-            2
-        };
-        self.iter_unique_edge_type_ids_and_counts()
-            .map(move |iter_unique_edge_type_ids_and_counts| {
+        let singleton_count = if self.is_directed() { 1 } else { 2 };
+        self.iter_unique_edge_type_ids_and_counts().map(
+            move |iter_unique_edge_type_ids_and_counts| {
                 iter_unique_edge_type_ids_and_counts.filter_map(move |(edge_type_id, count)| {
                     if singleton_count == count {
                         Some(edge_type_id)
@@ -364,7 +376,8 @@ impl Graph {
                         None
                     }
                 })
-            })
+            },
+        )
     }
 
     /// Return iterator on the singleton node type names of the graph.
@@ -390,9 +403,11 @@ impl Graph {
     /// # Raises
     /// * If there are no edge types in the graph.
     pub fn iter_singleton_edge_type_names(&self) -> Result<impl Iterator<Item = String> + '_> {
-        Ok(self.iter_singleton_edge_type_ids()?
+        Ok(self
+            .iter_singleton_edge_type_ids()?
             .map(move |edge_type_id| unsafe {
-                self.get_unchecked_edge_type_name_from_edge_type_id(Some(edge_type_id)).unwrap()
+                self.get_unchecked_edge_type_name_from_edge_type_id(Some(edge_type_id))
+                    .unwrap()
             }))
     }
 

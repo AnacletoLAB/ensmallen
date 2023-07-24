@@ -65,6 +65,22 @@ impl Graph {
         self.get_number_of_trap_nodes() > 0
     }
 
+    /// Return whether the graph has trap nodes with self-loops.
+    ///
+    /// # Example
+    /// ```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
+    /// if graph.has_trap_nodes(){
+    ///     println!("There are {} trap nodes with selfloop in the current graph.", graph.get_number_of_trap_nodes());
+    /// } else {
+    ///     println!("There are no trap nodes with selfloop in the current graph.");
+    /// }
+    /// ```
+    ///
+    pub fn has_trap_nodes_with_selfloops(&self) -> bool {
+        self.get_number_of_trap_nodes_with_selfloops() > 0
+    }
+
     /// Returns boolean representing if graph is directed.
     ///
     /// # Example

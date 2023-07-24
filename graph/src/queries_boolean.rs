@@ -295,12 +295,8 @@ impl Graph {
     /// # Safety
     /// If the given node ID does not exists in the graph this method will panic.
     pub unsafe fn is_unchecked_trap_node_from_node_id(&self, node_id: NodeT) -> bool {
-        self.connected_nodes
-            .as_ref()
-            .as_ref()
-            .map_or(!self.has_singleton_nodes(), |connected_nodes| {
-                connected_nodes[node_id as usize]
-            })
+        self.is_directed()
+            && self.is_unchecked_connected_from_node_id(node_id)
             && self.get_unchecked_node_degree_from_node_id(node_id) == 0
     }
 
@@ -313,6 +309,41 @@ impl Graph {
     pub fn is_trap_node_from_node_id(&self, node_id: NodeT) -> Result<bool> {
         self.validate_node_id(node_id)
             .map(|node_id| unsafe { self.is_unchecked_trap_node_from_node_id(node_id) })
+    }
+
+    /// Returns boolean representing if given node is a trap.
+    ///
+    /// If the provided node_id is higher than the number of nodes in the graph,
+    /// the method will panic.
+    ///
+    /// # Arguments
+    ///
+    /// * `node_id`: NodeT - Integer ID of the node, if this is bigger that the number of nodes it will panic.
+    ///
+    /// # Safety
+    /// If the given node ID does not exists in the graph this method will panic.
+    pub unsafe fn is_unchecked_trap_node_with_selfloops_from_node_id(
+        &self,
+        node_id: NodeT,
+    ) -> bool {
+        self.is_directed()
+            && self.is_unchecked_connected_from_node_id(node_id)
+            && self.get_unchecked_node_degree_from_node_id(node_id) > 0
+            && self
+                .iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
+                .all(|dst| node_id == dst)
+    }
+
+    /// Returns boolean representing if given node is a trap with selfloops.
+    ///
+    /// # Arguments
+    ///
+    /// * `node_id`: NodeT - Integer ID of the node, if this is bigger that the number of nodes it will panic.
+    ///
+    pub fn is_trap_node_with_selfloops_from_node_id(&self, node_id: NodeT) -> Result<bool> {
+        self.validate_node_id(node_id).map(|node_id| unsafe {
+            self.is_unchecked_trap_node_with_selfloops_from_node_id(node_id)
+        })
     }
 
     /// Returns whether two provided nodes IDs are isomorphic to one another.

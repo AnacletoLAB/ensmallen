@@ -1268,6 +1268,71 @@ impl Graph {
                 }),
         );
 
+        let trap_nodes_description = if self.has_trap_nodes() {
+            self.get_report_of_oddity(
+                "h4",
+                "Trap node",
+                "Trap nodes",
+                concat!(
+                    "In a directed graph, a trap node is a node that blocks ",
+                    "a random walk, having a some inbound edges and no outbound edges."
+                ),
+                self.get_number_of_trap_nodes(),
+                self.get_number_of_trap_nodes(),
+                self.par_iter_directed_edge_node_ids()
+                    .filter(|(_, src, dst)| unsafe{
+                    self.is_unchecked_trap_node_from_node_id(*dst)
+                }).count() as EdgeT,
+                1,
+                0,
+                false,
+                Some(15),
+                Some(4),
+                self.iter_trap_node_ids()
+                    .map(|node_id| unsafe {
+                        format!(
+                            "<p>{}</p>",
+                            self.get_unchecked_succinct_node_description(node_id, 1, true)
+                        )
+                    }),
+            )
+        } else {
+            "".to_string()
+        };
+
+        let trap_nodes_with_selfloop_description = if self.has_trap_nodes() {
+            self.get_report_of_oddity(
+                "h4",
+                "Singleton node with self-loops",
+                "Singleton nodes with self-loops",
+                concat!(
+                    "In a directed graph, a trap node with selfloops is a node that traps ",
+                    "a random walk, having a some inbound edges and only outbound edges to itself. ",
+                    "Therefore, the random walk can continue ad infinitum, but forever trapped in the same node."
+                ),
+                self.get_number_of_trap_nodes(),
+                self.get_number_of_trap_nodes(),
+                self.par_iter_directed_edge_node_ids()
+                    .filter(|(_, src, dst)| unsafe{
+                    self.is_unchecked_trap_node_with_selfloops_from_node_id(*dst)
+                }).count() as EdgeT,
+                1,
+                0,
+                false,
+                Some(15),
+                Some(4),
+                self.iter_trap_node_with_selfloops_ids()
+                    .map(|node_id| unsafe {
+                        format!(
+                            "<p>{}</p>",
+                            self.get_unchecked_succinct_node_description(node_id, 1, true)
+                        )
+                    }),
+            )
+        } else {
+            "".to_string()
+        };
+
         let number_of_circles = circles.len() as NodeT;
         let number_of_nodes_involved_in_circles = circles.iter().map(|circle| circle.len()).sum();
         let number_of_edges_involved_in_circles =
@@ -1666,6 +1731,8 @@ impl Graph {
                 "{circles_description}",
                 "{singleton_nodes_description}",
                 "{singleton_nodes_with_selfloops_description}",
+                "{trap_nodes_description}",
+                "{trap_nodes_with_selfloop_description}",
                 "{chains_description}",
                 "{node_tuples_description}",
                 "{isomorphic_node_groups_description}",
@@ -1680,6 +1747,8 @@ impl Graph {
             },
             singleton_nodes_description = singleton_nodes_description,
             singleton_nodes_with_selfloops_description = singleton_nodes_with_selfloops_description,
+            trap_nodes_description = trap_nodes_description,
+            trap_nodes_with_selfloop_description = trap_nodes_with_selfloop_description,
             chains_description = chains_description,
             node_tuples_description = node_tuples_description,
             isomorphic_node_groups_description = isomorphic_node_groups_description,
