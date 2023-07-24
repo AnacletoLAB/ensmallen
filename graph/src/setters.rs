@@ -346,7 +346,7 @@ impl Graph {
         // an error.
         if self.is_multigraph() {
             self.par_iter_directed_edge_node_ids_and_edge_type_id().zip(self.par_iter_directed_edge_node_ids_and_edge_type_id().skip(1)).map(
-                |((_, (src1, dst1, edge_type1)), (_, (src2, dst2, edge_type2)))|{
+                |((_, src1, dst1, edge_type1), (_, src2, dst2, edge_type2))|{
                     if src1 == src2 && dst1 == dst2 && edge_type1 == edge_type2 {
                         Err(format!(
                             concat!(
@@ -357,18 +357,10 @@ impl Graph {
                                 "This lead to a corrupted graph data structure, as the graph is a multigraph ",
                                 "and it should have multiple edges between the same pair of nodes characterized ",
                                 "by different edge types. ",
-                                "The source node {src_name} has node type(s) {src_node_type_names} ",
-                                "and the destination node {dst_name} has node type(s) {dst_node_type_names}. ",
-                                "The provided source node type(s) are {provided_src_node_type_names} ",
-                                "and the provided destination node type(s) are {provided_dst_node_type_names}."
                             ),
                             src_name=unsafe{self.get_unchecked_node_name_from_node_id(src1)},
                             dst_name=unsafe{self.get_unchecked_node_name_from_node_id(dst1)},
-                            edge_type_name=unsafe{self.get_edge_type_name_from_edge_type_id(edge_type1)},
-                            src_node_type_names=unsafe{self.get_node_type_names_from_node_type_ids(self.get_unchecked_node_type_ids_from_node_id(src1).unwrap())?.join(", ")},
-                            dst_node_type_names=unsafe{self.get_node_type_names_from_node_type_ids(self.get_unchecked_node_type_ids_from_node_id(dst1).unwrap())?.join(", ")},
-                            provided_src_node_type_names=unsafe{self.get_node_type_names_from_node_type_ids(source_node_type_ids)?.join(", ")},
-                            provided_dst_node_type_names=unsafe{self.get_node_type_names_from_node_type_ids(destination_node_type_ids)?.join(", ")},
+                            edge_type_name=unsafe{self.get_unchecked_edge_type_name_from_edge_type_id(edge_type1).unwrap_or_else(||"Unknown".to_string())},
                         ))
                     } else {
                         Ok(())
