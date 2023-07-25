@@ -291,26 +291,26 @@ impl Graph {
                 .ids
                 .par_iter_mut()
                 .zip(self2.par_iter_directed_edges())
-                .for_each(|(old_edge_type_id, (_, src, _, dst, _))| unsafe {
-                    let src_node_type_ids = self2.get_unchecked_node_type_ids_from_node_id(src);
-                    let dst_node_type_ids = self2.get_unchecked_node_type_ids_from_node_id(dst);
-                    let found_source = match src_node_type_ids {
+                .for_each(|(old_edge_type_id, (_, src, _, dst, _))| {
+                    let src_node_type_ids = unsafe{self2.get_unchecked_node_type_ids_from_node_id(src)};
+                    let dst_node_type_ids = unsafe{self2.get_unchecked_node_type_ids_from_node_id(dst)};
+                    let found_source = match src_node_type_ids.as_ref() {
                         Some(src_node_type_ids) => src_node_type_ids.iter().any(|node_type_id| {
                             source_node_type_ids.contains(&Some(*node_type_id))
                         }),
                         None => source_node_type_ids.contains(&None),
                     };
-                    let found_destination = match dst_node_type_ids {
+                    let found_destination = match dst_node_type_ids.as_ref() {
                         Some(dst_node_type_ids) => dst_node_type_ids.iter().any(|node_type_id| {
                             destination_node_type_ids.contains(&Some(*node_type_id))
                         }),
                         None => destination_node_type_ids.contains(&None),
                     };
 
-                    let reversed = if self.is_directed() {
+                    let reversed = if self2.is_directed() {
                         false
                     } else {
-                        let found_source = match dst_node_type_ids {
+                        let found_source = match dst_node_type_ids.as_ref() {
                             Some(dst_node_type_ids) => {
                                 dst_node_type_ids.iter().any(|node_type_id| {
                                     source_node_type_ids.contains(&Some(*node_type_id))
@@ -318,7 +318,7 @@ impl Graph {
                             }
                             None => source_node_type_ids.contains(&None),
                         };
-                        let found_destination = match src_node_type_ids {
+                        let found_destination = match src_node_type_ids.as_ref() {
                             Some(src_node_type_ids) => {
                                 src_node_type_ids.iter().any(|node_type_id| {
                                     destination_node_type_ids.contains(&Some(*node_type_id))
