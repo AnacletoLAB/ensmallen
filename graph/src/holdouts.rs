@@ -421,8 +421,8 @@ impl Graph {
         let sample_edge_weights = sample_edge_weights.unwrap_or(self.has_edge_weights());
         let use_scale_free_distribution = use_scale_free_distribution.unwrap_or(true);
         let only_from_same_component = only_from_same_component.unwrap_or(false);
-        let enforce_node_type_connection_consistency =
-            enforce_node_type_connection_consistency.unwrap_or(self.has_node_types());
+        let enforce_node_type_connection_consistency = enforce_node_type_connection_consistency
+            .unwrap_or(self.has_node_types() && !self.has_homogeneous_node_types().unwrap());
         let mut random_state = random_state.unwrap_or(0xbadf00d);
 
         if sample_edge_types {
