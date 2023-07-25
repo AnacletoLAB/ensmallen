@@ -292,18 +292,8 @@ impl Graph {
                 .par_iter_mut()
                 .zip(self2.par_iter_directed_edges())
                 .for_each(|(old_edge_type_id, (_, src, _, dst, _))| unsafe {
-                    let (src_node_type_ids, dst_node_type_ids) =
-                        if self2.is_directed() || src <= dst {
-                            (
-                                self2.get_unchecked_node_type_ids_from_node_id(src),
-                                self2.get_unchecked_node_type_ids_from_node_id(dst),
-                            )
-                        } else {
-                            (
-                                self2.get_unchecked_node_type_ids_from_node_id(dst),
-                                self2.get_unchecked_node_type_ids_from_node_id(src),
-                            )
-                        };
+                    let src_node_type_ids = self2.get_unchecked_node_type_ids_from_node_id(src);
+                    let dst_node_type_ids = self2.get_unchecked_node_type_ids_from_node_id(dst);
                     let found_source = match src_node_type_ids {
                         Some(src_node_type_ids) => src_node_type_ids.iter().any(|node_type_id| {
                             source_node_type_ids.contains(&Some(*node_type_id))
@@ -316,7 +306,30 @@ impl Graph {
                         }),
                         None => destination_node_type_ids.contains(&None),
                     };
-                    if found_source && found_destination {
+
+                    let reversed = if self.is_directed() {
+                        false
+                    } else {
+                        let found_source = match dst_node_type_ids {
+                            Some(dst_node_type_ids) => {
+                                dst_node_type_ids.iter().any(|node_type_id| {
+                                    source_node_type_ids.contains(&Some(*node_type_id))
+                                })
+                            }
+                            None => source_node_type_ids.contains(&None),
+                        };
+                        let found_destination = match src_node_type_ids {
+                            Some(src_node_type_ids) => {
+                                src_node_type_ids.iter().any(|node_type_id| {
+                                    destination_node_type_ids.contains(&Some(*node_type_id))
+                                })
+                            }
+                            None => destination_node_type_ids.contains(&None),
+                        };
+                        found_source && found_destination
+                    };
+
+                    if found_source && found_destination || reversed {
                         count_changes[edge_type_id as usize].fetch_add(1, Ordering::SeqCst);
                         match old_edge_type_id {
                             Some(old_edge_type_id) => {
