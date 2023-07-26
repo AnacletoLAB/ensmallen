@@ -1,7 +1,8 @@
 {
     "RUSTFLAGS": "-C inline-threshold=1000",
     "build_dir": "/tmp/ensmallen_build",
-    "build_command": "cargo zigbuild --manifest-path=bindings/python/Cargo.toml",
+    "manifest_path": "bindings/python/Cargo.toml",
+    "build_command": "cargo zigbuild",
     "archs": [
         {
             "triple": "x86_64-unknown-linux-gnu.2.16",

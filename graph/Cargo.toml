@@ -71,15 +71,3 @@ nix = "0.22.0"
 [target.'cfg(windows)'.dependencies]
 windows = { version = "0.32.0", features = ["alloc",  "Win32_System_Memory", "Win32_Storage_FileSystem", "Win32_Foundation", "Win32_Security"]}
 
-[profile.release]
-opt-level = 3
-lto = "fat"
-overflow-checks = false   # Disable integer overflow checks.
-debug = false            # Include debug info.
-debug-assertions = false  # Enables debug assertions.
-
-[profile.test]
-overflow-checks = true   # Disable integer overflow checks.
-debug = true            # Include debug info.
-debug-assertions = true  # Enables debug assertions.
-opt-level = 3
