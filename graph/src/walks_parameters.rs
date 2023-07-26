@@ -474,13 +474,6 @@ impl WalksParameters {
     /// ```
     ///
     pub fn validate(&self, graph: &Graph) -> Result<()> {
-        if self.is_node2vec_walk() && graph.is_directed() {
-            return Err(concat!(
-                "The walk is a Node2Vec walk and ",
-                "the graph is directed, which is not yet supported."
-            )
-            .to_string());
-        }
         if graph.has_trap_nodes() {
             return Err(concat!(
                 "The graph is directed with trap nodes which is not yet supported."
