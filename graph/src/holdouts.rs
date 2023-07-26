@@ -729,9 +729,6 @@ impl Graph {
                     break;
                 }
                 negative_edges_hashset.insert((*src, *dst));
-                if src != dst && !self.is_directed() {
-                    negative_edges_hashset.insert((*dst, *src));
-                }
             }
 
             if sampling_round > number_of_sampling_attempts {
@@ -749,17 +746,6 @@ impl Graph {
                 sampling_round += 1;
             }
         }
-
-        // We convert the edges into a vector of tuples, so that we may be
-        // able to sort them.
-        let mut negative_edges_hashset: Vec<(NodeT, NodeT)> =
-            negative_edges_hashset.into_iter().collect();
-
-        // We sort in parallel the negative edges, so that we may be able
-        // to build the graph more efficiently afterwards.
-        negative_edges_hashset.par_sort_unstable();
-
-        let number_of_edges = negative_edges_hashset.len();
 
         // At this point, if the graph has node types and edge types are requested
         // to be sampled, we need to bias the sampling of the edge types according
@@ -846,10 +832,10 @@ impl Graph {
         // need to sample them from the original graph.
 
         build_graph_from_integers(
-            Some(negative_edges_hashset.into_par_iter().enumerate().map(
-                |(edge_id, (src, dst))| unsafe {
+            Some(negative_edges_hashset.into_par_iter().map(
+                |(src, dst)| unsafe {
                     (
-                        edge_id,
+                        0,
                         (
                             src,
                             dst,
@@ -962,10 +948,10 @@ impl Graph {
             // are complete as is, meaning we do not need to
             // add the reverse edges as we would need to do in the
             // case of an undirected graph.
-            Some(true),
             Some(false),
-            Some(true),
-            Some(number_of_edges as EdgeT),
+            Some(false),
+            Some(false),
+            None,
             true,
             self.has_selfloops(),
             format!("Negative {}", self.get_name()),

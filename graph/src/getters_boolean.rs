@@ -407,7 +407,16 @@ impl Graph {
     /// # Raises
     /// * If the graph does not have edge types.
     pub fn has_homogeneous_edge_types(&self) -> Result<bool> {
-        Ok(self.get_number_of_edge_types()? == 1)
+        Ok(self
+            .edge_types
+            .as_ref()
+            .as_ref()
+            .map_or(false, |edge_type_ids| {
+                edge_type_ids
+                    .counts
+                    .iter()
+                    .any(|&edge_type_count| edge_type_count == self.get_number_of_directed_edges())
+            }))
     }
 
     /// Returns whether there is at least singleton node type, that is a node type that only appears once.
