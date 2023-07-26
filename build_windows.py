@@ -1,7 +1,7 @@
 import os, re, json, subprocess
 
 with open("build_settings.json") as f:
-    settings = json.read(f)
+    settings = json.load(f)
 
 os.makedirs(settings["build_dir"], exist_ok=True)
 
