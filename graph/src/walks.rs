@@ -80,6 +80,7 @@ fn rust_update_explore_weight_transition(
     }
 }
 
+/*
 #[inline(always)]
 fn update_explore_weight_transition_directed(
     graph: &Graph,
@@ -103,7 +104,7 @@ fn update_explore_weight_transition_directed(
             *trans_value *= explore_weight;
         }
     }
-}
+} */
 
 #[inline(always)]
 fn rust_update_return_explore_weight_transition(
@@ -511,44 +512,45 @@ impl Graph {
         //###############################################################
         //# Handling of the P & Q parameters: the node2vec coefficients #
         //###############################################################
-        if !self.is_directed() {
-            match (
-                not_one(walk_weights.return_weight),
-                not_one(walk_weights.explore_weight),
-            ) {
-                (false, false) => {}
-                (false, true) => {
-                    update_explore_weight_transition(
-                        &mut transition,
-                        destinations,
-                        previous_destinations,
-                        walk_weights.explore_weight,
-                        src,
-                        dst,
-                    );
-                }
-                (true, false) => {
-                    update_return_weight_transition(
-                        &mut transition,
-                        destinations,
-                        src,
-                        dst,
-                        walk_weights.return_weight,
-                        has_selfloop,
-                    );
-                }
-                (true, true) => {
-                    update_return_explore_weight_transition(
-                        &mut transition,
-                        destinations,
-                        previous_destinations,
-                        walk_weights.return_weight,
-                        walk_weights.explore_weight,
-                        src,
-                        dst,
-                    );
-                }
+        //if !self.is_directed() {
+        match (
+            not_one(walk_weights.return_weight),
+            not_one(walk_weights.explore_weight),
+        ) {
+            (false, false) => {}
+            (false, true) => {
+                update_explore_weight_transition(
+                    &mut transition,
+                    destinations,
+                    previous_destinations,
+                    walk_weights.explore_weight,
+                    src,
+                    dst,
+                );
             }
+            (true, false) => {
+                update_return_weight_transition(
+                    &mut transition,
+                    destinations,
+                    src,
+                    dst,
+                    walk_weights.return_weight,
+                    has_selfloop,
+                );
+            }
+            (true, true) => {
+                update_return_explore_weight_transition(
+                    &mut transition,
+                    destinations,
+                    previous_destinations,
+                    walk_weights.return_weight,
+                    walk_weights.explore_weight,
+                    src,
+                    dst,
+                );
+            }
+        }
+        /*
         } else {
             if not_one(walk_weights.return_weight) {
                 update_return_weight_transition(
@@ -571,7 +573,7 @@ impl Graph {
                     dst,
                 );
             }
-        }
+        }*/
 
         (transition, min_edge_id)
     }
