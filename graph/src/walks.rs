@@ -81,7 +81,33 @@ fn rust_update_explore_weight_transition(
 }
 
 #[inline(always)]
-fn rust_update_return_explore_weight_transition(
+fn rust_update_explore_weight_transition_directed(
+    graph: &Graph,
+    transition: &mut Vec<WeightT>,
+    destinations: &[NodeT],
+    previous_destinations: &[NodeT],
+    explore_weight: ParamsT,
+    src: NodeT,
+    dst: NodeT,
+) {
+    for (trans_node, trans_value) in destinations.iter().zip(transition.iter_mut()) {
+        // first check if the prev node has the edge to this transition node
+        if previous_destinations.binary_search(trans_node).is_ok() {
+            *trans_value *= explore_weight;
+            continue;
+        }
+        // otherwise we have to check the neighours of this node
+        if unsafe { graph.get_unchecked_destinations_from_source_node_id(trans_node) }
+            .binary_search(trans_node)
+            .is_ok()
+        {
+            *trans_value *= explore_weight;
+        }
+    }
+}
+
+#[inline(always)]
+fn update_explore_weight_transition_directed(
     transition: &mut Vec<WeightT>,
     destinations: &[NodeT],
     previous_destinations: &[NodeT],
@@ -486,22 +512,46 @@ impl Graph {
         //###############################################################
         //# Handling of the P & Q parameters: the node2vec coefficients #
         //###############################################################
-        match (
-            not_one(walk_weights.return_weight),
-            not_one(walk_weights.explore_weight),
-        ) {
-            (false, false) => {}
-            (false, true) => {
-                update_explore_weight_transition(
-                    &mut transition,
-                    destinations,
-                    previous_destinations,
-                    walk_weights.explore_weight,
-                    src,
-                    dst,
-                );
+        if !self.is_directed() {
+            match (
+                not_one(walk_weights.return_weight),
+                not_one(walk_weights.explore_weight),
+            ) {
+                (false, false) => {}
+                (false, true) => {
+                    update_explore_weight_transition(
+                        &mut transition,
+                        destinations,
+                        previous_destinations,
+                        walk_weights.explore_weight,
+                        src,
+                        dst,
+                    );
+                }
+                (true, false) => {
+                    update_return_weight_transition(
+                        &mut transition,
+                        destinations,
+                        src,
+                        dst,
+                        walk_weights.return_weight,
+                        has_selfloop,
+                    );
+                }
+                (true, true) => {
+                    update_return_explore_weight_transition(
+                        &mut transition,
+                        destinations,
+                        previous_destinations,
+                        walk_weights.return_weight,
+                        walk_weights.explore_weight,
+                        src,
+                        dst,
+                    );
+                }
             }
-            (true, false) => {
+        } else {
+            if not_one(walk_weights.return_weight) {
                 update_return_weight_transition(
                     &mut transition,
                     destinations,
@@ -511,12 +561,12 @@ impl Graph {
                     has_selfloop,
                 );
             }
-            (true, true) => {
-                update_return_explore_weight_transition(
+            if not_one(walk_weights.return_weight) {
+                update_explore_weight_transition_directed(
+                    &self,
                     &mut transition,
                     destinations,
                     previous_destinations,
-                    walk_weights.return_weight,
                     walk_weights.explore_weight,
                     src,
                     dst,
