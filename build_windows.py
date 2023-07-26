@@ -1,15 +1,25 @@
-import os, subprocess
+import os, re, json, subprocess
 
-env = os.environ
-env["PYO3_CROSS_INCLUDE_DIR"] = "/dfd/python_cross/windows/Python37/include"
-env["PYO3_CROSS_LIB_DIR"] = "/dfd/python_cross/windows/Python37/libs"
-#env["CC"] = "zig cc -target x86_64-windows"
-#env["CXX"] = "zig c++ -target x86_64-windows"
-#env["AR"] = "zig ar"
-#env["RUSTFLAGS"] = "-Clinker=/bin/ziglib"
+with open("build_settings.json") as f:
+    settings = json.read(f)
 
-subprocess.check_call(
-    "cargo zigbuild --target x86_64-pc-windows-gnu --release --manifest-path=bindings/python/Cargo.toml",
-    env=env,
-    shell=True,
-)
+os.makedirs(settings["build_dir"], exist_ok=True)
+
+for rec in settings["archs"]:
+    for target in rec["targets"]:
+        env = {
+            **os.environ,
+            **rec.get("env", {}),
+        }
+        env["RUSTFLAGS"] = " ".join([
+            os.environ.get("RUSTLFLAGS", ""), 
+            settings.get("RUSTFLAGS", ""), 
+            rec.get("RUSTFLAGS", ""),
+            target.get("RUSTFLAGS", ""),
+        ])
+
+        subprocess.check_call(
+            f"{settings['build_command']} --target {rec['triple']} --release ",
+            env=env,
+            shell=True,
+        )

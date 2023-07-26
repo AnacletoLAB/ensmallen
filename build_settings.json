@@ -1,0 +1,108 @@
+{
+    "RUSTFLAGS": "-C inline-threshold=1000",
+    "build_dir": "/tmp/ensmallen_build",
+    "build_command": "cargo zigbuild --release --manifest-path=bindings/python/Cargo.toml",
+    "archs": [
+        {
+            "triple": "x86_64-unknown-linux-gnu.2.16",
+            "build_tag": "-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64",
+            "targets": {
+                "x86-64-v4": {
+                    "RUSTFLAGS": "-C target-cpu=x86-64-v4"
+                },
+                "x86-64-v3": {
+                    "RUSTFLAGS": "-C target-cpu=x86-64-v3"
+                },
+                "x86-64-v2": {
+                    "RUSTFLAGS": "-C target-cpu=x86-64-v2"
+                }
+            },
+            "env": {
+                "PYO3_CROSS_INCLUDE_DIR": "/dfd/python_cross/linux/x86_64/Python37/include",
+                "PYO3_CROSS_LIB_DIR": "/dfd/python_cross/linux/x86_64/Python37/lib",
+                "CC": "zig cc -target x86_64-linux-gnu.2.16",
+                "CXX": "zig c++ -target x86_64-linux-gnu.2.16",
+                "AR": "zig ar"
+            }
+        },
+        {
+            "triple": "aarch64-unknown-linux-gnu.2.16",
+            "build_tag": "-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64",
+            "RUSTFLAGS": "-C link-args=-L/dfd/python_cross/linux/aarch64/lib",
+            "targets": {
+                "m1": {
+                    "RUSTFLAGS": "-C target-cpu=apple-m1"
+                },
+                "generic": {
+                    "RUSTFLAGS": "-C target-cpu=generic"
+                }
+            },
+            "env": {
+                "PYO3_CROSS_INCLUDE_DIR": "/dfd/python_cross/linux/aarch64/Python37/include",
+                "PYO3_CROSS_LIB_DIR": "/dfd/python_cross/linux/aarch64/Python37/lib",
+                "OPENSSL_INCLUDE_DIR": "/dfd/python_cross/linux/aarch64/openssl/include",
+                "OPENSSL_LIB_DIR": "/dfd/python_cross/linux/aarch64/openssl/lib",
+                "OPENSSL_STATIC": "0",
+                "CC": "zig cc -target aarch64-linux-gnu.2.16",
+                "CXX": "zig c++ -target aarch64-linux-gnu.2.16",
+                "AR": "zig ar"
+            }
+        },
+        {
+            "triple": "x86_64-pc-windows-gnu",
+            "build_tag": "-abi3-win_amd64",
+            "targets": {
+                "x86-64-v3": {
+                    "RUSTFLAGS": "-C target-cpu=x86-64-v3"
+                },
+                "x86-64-v2": {
+                    "RUSTFLAGS": "-C target-cpu=x86-64-v2"
+                }
+            },
+            "env": {
+                "PYO3_CROSS_INCLUDE_DIR": "/dfd/python_cross/windows/x86_64/Python37/include",
+                "PYO3_CROSS_LIB_DIR": "/dfd/python_cross/windows/x86_64/Python37/lib",
+                "CC": "zig cc -target x86_64-windows",
+                "CXX": "zig c++ -target x86_64-windows",
+                "AR": "zig ar"
+            }
+        },
+        {
+            "enabled": false,
+            "triple": "x86_64-apple-darwin",
+            "build_tag": "-abi3-macosx_10_7_x86_64",
+            "targets": {
+                "x86-64-v3": {
+                    "RUSTFLAGS": "-C target-cpu=x86-64-v3"
+                },
+                "x86-64-v2": {
+                    "RUSTFLAGS": "-C target-cpu=x86-64-v2"
+                }
+            },
+            "env": {
+                "PYO3_CROSS_INCLUDE_DIR": "/dfd/python_cross/windows/Python37/include",
+                "PYO3_CROSS_LIB_DIR": "/dfd/python_cross/windows/Python37/lib",
+                "CC": "zig cc -target x86_64-macos",
+                "CXX": "zig c++ -target x86_64-macos",
+                "AR": "zig ar"
+            }
+        },
+        {
+            "enabled": false,
+            "triple": "aarch64-apple-darwin",
+            "build_tag": "-abi3-macosx_11_0_arm64",
+            "targets": {
+                "m1": {
+                    "RUSTFLAGS": "-C target-cpu=apple-m1"
+                }
+            },
+            "env": {
+                "PYO3_CROSS_INCLUDE_DIR": "/dfd/python_cross/windows/Python37/include",
+                "PYO3_CROSS_LIB_DIR": "/dfd/python_cross/windows/Python37/lib",
+                "CC": "zig cc -target aarch64-macos",
+                "CXX": "zig c++ -target aarch64-macos",
+                "AR": "zig ar"
+            }
+        }
+    ]
+}
