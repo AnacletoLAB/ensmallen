@@ -9,7 +9,7 @@
             "build_tag": "-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64",
             "targets": {
                 "x86-64-v4": {
-                    "RUSTFLAGS": "-C target-cpu=x86-64-v4"
+		    "cpu":"x86-64-v4"
 		}
             },
             "env": {
@@ -24,7 +24,7 @@
             "RUSTFLAGS": "-C link-args=-L/dfd/python_cross/linux/aarch64/lib",
             "targets": {
                 "m1": {
-                    "RUSTFLAGS": "-C target-cpu=apple-m1"
+                    "cpu":"apple-m1"
                 }
             },
             "env": {
@@ -43,7 +43,7 @@
             "build_tag": "-abi3-win_amd64",
             "targets": {
                 "x86-64-v3": {
-                    "RUSTFLAGS": "-C target-cpu=x86-64-v3"
+                    "cpu":"x86-64-v3"
                 }
             },
             "env": {
@@ -60,10 +60,10 @@
             "build_tag": "-abi3-macosx_10_7_x86_64",
             "targets": {
                 "x86-64-v3": {
-                    "RUSTFLAGS": "-C target-cpu=x86-64-v3"
+                    "cpu":"x86-64-v3"
                 },
                 "x86-64-v2": {
-                    "RUSTFLAGS": "-C target-cpu=x86-64-v2"
+                    "cpu": "x86-64-v2"
                 }
             },
             "env": {
@@ -80,7 +80,7 @@
             "build_tag": "-abi3-macosx_11_0_arm64",
             "targets": {
                 "m1": {
-                    "RUSTFLAGS": "-C target-cpu=apple-m1"
+                    "cpu": "apple-m1"
                 }
             },
             "env": {
