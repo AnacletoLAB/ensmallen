@@ -81,33 +81,32 @@ fn rust_update_explore_weight_transition(
 }
 
 #[inline(always)]
-fn rust_update_explore_weight_transition_directed(
+fn update_explore_weight_transition_directed(
     graph: &Graph,
     transition: &mut Vec<WeightT>,
     destinations: &[NodeT],
     previous_destinations: &[NodeT],
     explore_weight: ParamsT,
     src: NodeT,
-    dst: NodeT,
+    _dst: NodeT,
 ) {
     for (trans_node, trans_value) in destinations.iter().zip(transition.iter_mut()) {
         // first check if the prev node has the edge to this transition node
-        if previous_destinations.binary_search(trans_node).is_ok() {
+        // check src -> trans_node
+        if previous_destinations.binary_search(&trans_node).is_ok() {
             *trans_value *= explore_weight;
             continue;
         }
         // otherwise we have to check the neighours of this node
-        if unsafe { graph.get_unchecked_destinations_from_source_node_id(trans_node) }
-            .binary_search(trans_node)
-            .is_ok()
-        {
+        // check trans_node -> src
+        if graph.has_edge_from_node_ids(*trans_node, src) {
             *trans_value *= explore_weight;
         }
     }
 }
 
 #[inline(always)]
-fn update_explore_weight_transition_directed(
+fn rust_update_return_explore_weight_transition(
     transition: &mut Vec<WeightT>,
     destinations: &[NodeT],
     previous_destinations: &[NodeT],
@@ -563,7 +562,7 @@ impl Graph {
             }
             if not_one(walk_weights.return_weight) {
                 update_explore_weight_transition_directed(
-                    &self,
+                    self,
                     &mut transition,
                     destinations,
                     previous_destinations,
