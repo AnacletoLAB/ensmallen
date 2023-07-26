@@ -6,7 +6,7 @@ with open("build_settings.json") as f:
 os.makedirs(settings["build_dir"], exist_ok=True)
 
 for rec in settings["archs"]:
-    for target in rec["targets"]:
+    for name, target in rec["targets"].items():
         env = {
             **os.environ,
             **rec.get("env", {}),
@@ -19,7 +19,7 @@ for rec in settings["archs"]:
         ])
 
         subprocess.check_call(
-            f"{settings['build_command']} --target {rec['triple']} --release ",
+            f"{settings['build_command']} --target {rec['triple']}",
             env=env,
             shell=True,
         )

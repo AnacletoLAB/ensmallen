@@ -45,7 +45,7 @@ impl MemoryMapReadOnlyCore for MemoryMapped {
         let mut c_string = path.to_string();
         c_string.push('\0');
         // Get a file descriptor to the file
-        let fd = unsafe { open(c_string.as_ptr() as *const i8, O_RDONLY) };
+        let fd = unsafe { open(c_string.as_ptr() as *const _, O_RDONLY) };
 
         // check that it was successful
         if fd == -1 {
