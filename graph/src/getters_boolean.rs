@@ -379,6 +379,10 @@ impl Graph {
     }
 
     /// Returns whether the nodes have exclusively homogenous node types.
+    /// 
+    /// # Implentative details
+    /// This method differs from `has_homogeneous_node_types` in that it
+    /// checks whether all other node types are 0.
     ///
     /// # Raises
     /// * If the graph does not have node types.
@@ -419,12 +423,45 @@ impl Graph {
             }))
     }
 
+    /// Returns whether the edges have exclusively homogeneous edge type.
+    ///
+    /// # Implentative details
+    /// This method differs from `has_homogeneous_edge_types` in that it
+    /// checks whether all other edge types are 0.
+    ///
+    /// # Raises
+    /// * If the graph does not have edge types.
+    pub fn has_exclusively_homogeneous_edge_types(&self) -> Result<bool> {
+        Ok(self
+            .edge_types
+            .as_ref()
+            .as_ref()
+            .map_or(false, |edge_type_ids| {
+                edge_type_ids.counts.iter().all(|&edge_type_count| {
+                    edge_type_count == 0 || edge_type_count == self.get_number_of_directed_edges()
+                })
+            }))
+    }
+
     /// Returns whether there is at least singleton node type, that is a node type that only appears once.
     ///
     /// # Raises
     /// * If the graph does not have node types.
     pub fn has_singleton_node_types(&self) -> Result<bool> {
         Ok(self.get_minimum_number_of_node_types()? == 1)
+    }
+
+    /// Returns whether the graph has exclusively singleton node types.
+    /// 
+    /// # Implentative details
+    /// This method differs from `has_singleton_node_types` in that it
+    /// checks whether all the node types are singletons, not whether
+    /// there is at least one singleton.
+    /// 
+    /// # Raises
+    /// * If the graph does not have node types.
+    pub fn has_exclusively_singleton_node_types(&self) -> Result<bool> {
+        Ok(self.get_maximum_number_of_node_types()? == 1)
     }
 
     /// Return whether the graph has any known node-related graph oddities.
@@ -457,6 +494,19 @@ impl Graph {
     /// * If the graph does not have edge types.
     pub fn has_singleton_edge_types(&self) -> Result<bool> {
         Ok(self.iter_singleton_edge_type_ids()?.next().is_some())
+    }
+
+    /// Returns whether the graph has exclusively singleton edge types.
+    /// 
+    /// # Implentative details
+    /// This method differs from `has_singleton_edge_types` in that it
+    /// checks whether all the edge types are singletons, not whether
+    /// there is at least one singleton.
+    /// 
+    /// # Raises
+    /// * If the graph does not have edge types.
+    pub fn has_exclusively_singleton_edge_types(&self) -> Result<bool> {
+        Ok(self.get_maximum_number_of_edge_types()? == 1)
     }
 
     /// Return whether the graph has any known edge type-related graph oddities.
