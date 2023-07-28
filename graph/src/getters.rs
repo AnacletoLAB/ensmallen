@@ -1660,6 +1660,15 @@ impl Graph {
             .map(|edge_types| edge_types.min_edge_type_count())
     }
 
+    /// Returns maximum number of edge types.
+    /// 
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    pub fn get_maximum_number_of_edge_types(&self) -> Result<EdgeT> {
+        self.must_have_edge_types()
+            .map(|edge_types| edge_types.max_edge_type_count())
+    }
+
     /// Returns number of singleton edge types.
     ///
     /// # Raises

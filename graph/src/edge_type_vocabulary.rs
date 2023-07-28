@@ -151,6 +151,12 @@ impl EdgeTypeVocabulary {
         *self.counts.iter().min().unwrap_or(&0)
     }
 
+    /// Returns number of maximum edge-count.
+    /// 
+    pub fn max_edge_type_count(&self) -> EdgeT {
+        *self.counts.iter().max().unwrap_or(&0)
+    }
+
     /// Remove a edge type from the vocabulary
     ///
     /// # Safety
