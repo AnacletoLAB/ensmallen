@@ -1,4 +1,5 @@
 import os, re, json, subprocess
+import 
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 
@@ -7,10 +8,6 @@ with open("build_settings.json") as f:
 
 # Make sure that the building dir exsits
 os.makedirs(settings["build_dir"], exist_ok=True)
-# Clear out the features list
-features_file = os.path.join(settings["build_dir"], "features.csv")
-with open(features_file, "w"):
-    pass
 
 with open(settings["manifest_path"]) as f:
     cargo = f.read()
@@ -26,6 +23,7 @@ subprocess.check_call(
 )
 
 for rec in settings["archs"]:
+    rec_features = {}
     for name, target in rec["targets"].items():
         # Compute the env vars
         env = {
@@ -61,10 +59,7 @@ for rec in settings["archs"]:
         features = list(sorted(set(features)))
         print(f"target: {rec['triple']} arch: {target['cpu']} has features {features}")
         # Track the features required for this target
-        with open(features_file, "a") as f:
-            f.write("{},{}\n".format(
-                name, ",".join(features),    
-            ))
+        rec_features[name] = features
 
         #subprocess.check_call(
         #    f"{settings['build_command']} --target {rec['triple']} --manifest-path={settings['manifest_path']}",

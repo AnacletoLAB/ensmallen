@@ -1,6 +1,6 @@
 {
     "RUSTFLAGS": "-C inline-threshold=1000",
-    "build_dir": "/tmp/ensmallen_build",
+    "build_dir": "/dfd/ensmallen_build",
     "manifest_path": "bindings/python/Cargo.toml",
     "build_command": "cargo zigbuild",
     "archs": [
@@ -8,8 +8,11 @@
             "triple": "x86_64-unknown-linux-gnu.2.16",
             "build_tag": "-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64",
             "targets": {
-                "x86-64-v4": {
-		    "cpu":"x86-64-v4"
+                "x86-64-v3": {
+		    "cpu":"x86-64-v3"
+		},
+                "x86-64-v2": {
+		    "cpu":"x86-64-v2"
 		}
             },
             "env": {
@@ -44,7 +47,10 @@
             "targets": {
                 "x86-64-v3": {
                     "cpu":"x86-64-v3"
-                }
+                },
+		"x86-64-v2":{
+		    "cpu":"x86-64-v2"
+		}
             },
             "env": {
                 "PYO3_CROSS_INCLUDE_DIR": "/dfd/python_cross/windows/x86_64/Python37/include",
