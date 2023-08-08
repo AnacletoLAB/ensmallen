@@ -34,7 +34,10 @@ fn generic_string_operator(
         .unwrap_or_else(|_| Vec::new());
 
     if let Ok(other_node_types_iter) = other.iter_unique_node_type_names() {
-        combined_node_type_names.extend(other_node_types_iter);
+        combined_node_type_names.extend(
+            other_node_types_iter
+                .filter(|node_type_name| main.has_node_type_name(node_type_name)),
+        );
     }
 
     // We need to sort the node type names so to avoid having different
@@ -55,7 +58,7 @@ fn generic_string_operator(
         .unwrap_or_else(|_| Vec::new());
 
     if let Ok(other_edge_types_iter) = other.iter_unique_edge_type_names() {
-        combined_edge_type_names.extend(other_edge_types_iter);
+        combined_edge_type_names.extend(other_edge_types_iter.filter(|edge_type_name|main.has_edge_type_name(edge_type_name)));
     }
 
     // We need to sort the edge type names so to avoid having different
