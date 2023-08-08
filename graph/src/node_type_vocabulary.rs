@@ -1,6 +1,5 @@
 use super::*;
-use rayon::iter::IntoParallelRefIterator;
-use rayon::iter::ParallelIterator;
+use rayon::prelude::*;
 use std::collections::hash_map::DefaultHasher;
 use std::hash::{Hash, Hasher};
 
@@ -353,5 +352,13 @@ impl NodeTypeVocabulary {
         self.update_min_max_count();
         self.vocabulary
             .unchecked_remove_values(node_type_ids_to_remove)
+    }
+
+    pub fn par_iter_keys(&self) -> impl IndexedParallelIterator<Item = String> + '_ {
+        self.vocabulary.par_iter_keys()
+    }
+
+    pub fn iter_keys(&self) -> impl Iterator<Item = String> + '_ {
+        self.vocabulary.iter_keys()
     }
 }

@@ -89,6 +89,50 @@ impl Graph {
         Ok((0..self.get_number_of_node_types()?).into_par_iter())
     }
 
+    /// Return parallel iterator on the unique node type names of the graph.
+    ///
+    /// # Raises
+    /// * If the graph does not contain node types.
+    pub fn par_iter_unique_node_type_names(
+        &self,
+    ) -> Result<impl IndexedParallelIterator<Item = String> + '_> {
+        self.must_have_node_types()
+            .map(|node_types| node_types.par_iter_keys())
+    }
+
+    /// Return iterator on the unique node type names of the graph.
+    ///
+    /// # Raises
+    /// * If the graph does not contain node types.
+    pub fn iter_unique_node_type_names(
+        &self,
+    ) -> Result<impl Iterator<Item = String> + '_> {
+        self.must_have_node_types()
+            .map(|node_types| node_types.iter_keys())
+    }
+
+    /// Return parallel iterator on the unique edge type names of the graph.
+    ///
+    /// # Raises
+    /// * If the graph does not contain edge types.
+    pub fn par_iter_unique_edge_type_names(
+        &self,
+    ) -> Result<impl IndexedParallelIterator<Item = String> + '_> {
+        self.must_have_edge_types()
+            .map(|edge_types| edge_types.par_iter_keys())
+    }
+
+    /// Return iterator on the unique edge type names of the graph.
+    ///
+    /// # Raises
+    /// * If the graph does not contain edge types.
+    pub fn iter_unique_edge_type_names(
+        &self,
+    ) -> Result<impl Iterator<Item = String> + '_> {
+        self.must_have_edge_types()
+            .map(|edge_types| edge_types.iter_keys())
+    }
+
     /// Return iterator on the unique node type IDs counts of the graph.
     ///
     /// # Raises
@@ -105,12 +149,6 @@ impl Graph {
         Ok(self
             .iter_unique_node_type_ids()?
             .zip(self.iter_node_type_counts()?))
-    }
-
-    /// Return iterator on the unique node type names of the graph.
-    pub fn iter_unique_node_type_names(&self) -> Result<impl Iterator<Item = String> + '_> {
-        self.must_have_node_types()
-            .map(|node_types| node_types.vocabulary.iter_keys())
     }
 
     /// Return iterator on the unique node type names and their counts of the graph.
@@ -159,12 +197,6 @@ impl Graph {
         Ok(self
             .iter_unique_edge_type_names()?
             .zip(self.iter_edge_type_counts()?))
-    }
-
-    /// Return iterator on the unique edge type names of the graph.
-    pub fn iter_unique_edge_type_names(&self) -> Result<impl Iterator<Item = String> + '_> {
-        self.must_have_edge_types()
-            .map(|edge_types| edge_types.vocabulary.iter_keys())
     }
 
     /// Return iterator on the unweighted node degrees of the graph.

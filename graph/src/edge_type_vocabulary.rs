@@ -1,5 +1,6 @@
 use super::*;
 
+use rayon::prelude::*;
 use std::collections::hash_map::DefaultHasher;
 use std::hash::{Hash, Hasher};
 
@@ -152,7 +153,7 @@ impl EdgeTypeVocabulary {
     }
 
     /// Returns number of maximum edge-count.
-    /// 
+    ///
     pub fn max_edge_type_count(&self) -> EdgeT {
         *self.counts.iter().max().unwrap_or(&0)
     }
@@ -196,5 +197,13 @@ impl EdgeTypeVocabulary {
         self.counts.push(0);
 
         Ok(edge_type_id)
+    }
+
+    pub fn par_iter_keys(&self) -> impl IndexedParallelIterator<Item = String> + '_ {
+        self.vocabulary.par_iter_keys()
+    }
+
+    pub fn iter_keys(&self) -> impl Iterator<Item = String> + '_ {
+        self.vocabulary.iter_keys()
     }
 }

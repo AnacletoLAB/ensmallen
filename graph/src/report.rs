@@ -1280,7 +1280,7 @@ impl Graph {
                 self.get_number_of_trap_nodes(),
                 self.get_number_of_trap_nodes(),
                 self.par_iter_directed_edge_node_ids()
-                    .filter(|(_, src, dst)| unsafe{
+                    .filter(|(_, _src, dst)| unsafe{
                     self.is_unchecked_trap_node_from_node_id(*dst)
                 }).count() as EdgeT,
                 1,
@@ -1313,7 +1313,7 @@ impl Graph {
                 self.get_number_of_trap_nodes(),
                 self.get_number_of_trap_nodes(),
                 self.par_iter_directed_edge_node_ids()
-                    .filter(|(_, src, dst)| unsafe{
+                    .filter(|(_, _src, dst)| unsafe{
                     self.is_unchecked_trap_node_with_selfloops_from_node_id(*dst)
                 }).count() as EdgeT,
                 1,

@@ -1229,7 +1229,7 @@ impl Graph {
                 number_of_neighbours_for_hash,
                 EdgeIsomorphismsGenerator::default(),
                 dtype,
-                &move |node_id| false,
+                &move |_node_id| false,
             )?)
         }
     }
@@ -1285,7 +1285,7 @@ impl Graph {
                 number_of_neighbours_for_hash,
                 EdgeIsomorphismsGenerator::default(),
                 dtype,
-                &move |node_id| false,
+                &move |_node_id| false,
             )?)
         }
     }
@@ -1324,7 +1324,7 @@ impl Graph {
                 number_of_neighbours_for_hash,
                 EdgeIsomorphismsGenerator::default(),
                 dtype,
-                &move |node_id| false,
+                &move |_node_id| false,
             )?)
         }
     }
