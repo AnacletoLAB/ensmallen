@@ -242,7 +242,7 @@ class GraphRepository:
             "The method get_graph_versions must be implemented in child classes."
         )
 
-    def get_graph_urls(self, graph_name: str) -> List[str]:
+    def get_graph_urls(self, graph_name: str, version: str) -> List[str]:
         """Return urls for the given graph.
 
         Parameters
@@ -500,14 +500,15 @@ class GraphRepository:
         try:
             callbacks = self.get_callbacks(graph_name, version)
             callbacks_data = self.get_callbacks_arguments(graph_name, version)
+            json_formatted = json.dumps(
+                callbacks_data,
+                indent=4
+            )
             return ",\n" + self.add_tabs(self.add_tabs("\n".join((
                 "callbacks=[\n{}\n],".format(self.add_tabs("\n".join(
                     callbacks
                 ))),
-                "callbacks_arguments={}".format(json.dumps(
-                    callbacks_data,
-                    indent=4
-                )),
+                f"callbacks_arguments={json_formatted}",
             ))))
         except NotImplementedError:
             return ""

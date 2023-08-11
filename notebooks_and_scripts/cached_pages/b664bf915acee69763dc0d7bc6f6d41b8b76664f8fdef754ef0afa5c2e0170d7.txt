@@ -100,6 +100,15 @@
 	<a href="https://kg-hub.berkeleybop.io/kg-phenio/20230623">20230623</a>
       </li>
       <li>
+	<a href="https://kg-hub.berkeleybop.io/kg-phenio/20230712">20230712</a>
+      </li>
+      <li>
+	<a href="https://kg-hub.berkeleybop.io/kg-phenio/20230803">20230803</a>
+      </li>
+      <li>
+	<a href="https://kg-hub.berkeleybop.io/kg-phenio/20230808">20230808</a>
+      </li>
+      <li>
 	<a href="https://kg-hub.berkeleybop.io/kg-phenio/current">current</a>
       </li>
     </ul>

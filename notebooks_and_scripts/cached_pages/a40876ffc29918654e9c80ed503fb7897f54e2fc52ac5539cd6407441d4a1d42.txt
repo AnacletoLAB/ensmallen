@@ -73,6 +73,9 @@
 	<a href="https://kg-hub.berkeleybop.io/kg-microbe/20230616/index.html">20230616</a>
       </li>
       <li>
+	<a href="https://kg-hub.berkeleybop.io/kg-microbe/20230716/index.html">20230716</a>
+      </li>
+      <li>
 	<a href="https://kg-hub.berkeleybop.io/kg-microbe/current/index.html">current</a>
       </li>
     </ul>

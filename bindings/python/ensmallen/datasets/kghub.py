@@ -2,13 +2,13 @@
 from ensmallen import Graph  # pylint: disable=import-error
 from .graph_retrieval import RetrievedGraph
 
-def EcoKG(
+def SLDB(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="20211102", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="20220522", **kwargs
 ) -> Graph:
-    """Return eco-kg graph	
+    """Return sldb graph	
 
     Parameters
     ----------
@@ -27,16 +27,220 @@ def EcoKG(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "20211102"
+    version = "20220522"
         Version to retrieve	
 		The available versions are:
-			- 20211025
-			- 20211102	
+			- 20220522	
 	
 	
     """
     return RetrievedGraph(
-        "EcoKG", version, "kghub", directed, preprocess, bioregistry, load_nodes,
+        "SLDB", version, "kghub", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def KGMicrobe(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="current", **kwargs
+) -> Graph:
+    """Return kg-microbe graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "current"
+        Version to retrieve	
+		The available versions are:
+			- 20210422
+			- 20210517
+			- 20210608
+			- 20210615
+			- 20210617
+			- 20210622
+			- 20210715
+			- 20230109
+			- 20230116
+			- 20230206
+			- 20230216
+			- 20230303
+			- 20230310
+			- 20230316
+			- 20230416
+			- 20230516
+			- 20230616
+			- 20230716
+			- current	
+	
+	References
+	----------
+	Please cite:
+	
+	```bib
+	@article{joachimiakkg,
+	  title={KG-Microbe: a reference knowledge-graph and platform for harmonized microbial information},
+	  author={Joachimiak, Marcin P and Reese, Justin T and Hegde, Harshad and Cappelletti, Luca and Mungall, Christopher J and Duncan, William D and Thessen, Anne E}
+	}
+	```
+    """
+    return RetrievedGraph(
+        "KGMicrobe", version, "kghub", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def KGIDG(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="current", **kwargs
+) -> Graph:
+    """Return KG-IDG graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "current"
+        Version to retrieve	
+		The available versions are:
+			- 20211029
+			- 20211101
+			- 20211112
+			- 20211123
+			- 20211201
+			- 20211202
+			- 20211207
+			- 20211210
+			- 20211213
+			- 20211215
+			- 20211221
+			- 20211223
+			- 20220101
+			- 20220106
+			- 20220107
+			- 20220119
+			- 20220201
+			- 20220203
+			- 20220204
+			- 20220216
+			- 20220223
+			- 20220303
+			- 20220325
+			- 20220329
+			- 20220401
+			- 20220501
+			- 20220512
+			- 20220525
+			- 20220601
+			- 20220606
+			- 20220701
+			- 20220722
+			- 20221209
+			- 20230101
+			- 20230530
+			- 20230601
+			- 20230701
+			- 20230801
+			- current	
+	
+	
+    """
+    return RetrievedGraph(
+        "KGIDG", version, "kghub", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
+    )()
+def KGPhenio(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="current", **kwargs
+) -> Graph:
+    """Return kg-phenio graph	
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "current"
+        Version to retrieve	
+		The available versions are:
+			- 20220304
+			- 20220414
+			- 20220428
+			- 20220429
+			- 20220504
+			- 20220506
+			- 20220511
+			- 20220513
+			- 20220516
+			- 20220525
+			- 20220601
+			- 20220606
+			- 20220607
+			- 20220623
+			- 20220722
+			- 20220819
+			- 20220930
+			- 20221006
+			- 20221027
+			- 20221215
+			- 20230210
+			- 20230302
+			- 20230307
+			- 20230313
+			- 20230502
+			- 20230623
+			- 20230712
+			- 20230803
+			- 20230808
+			- current	
+	
+	
+    """
+    return RetrievedGraph(
+        "KGPhenio", version, "kghub", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
@@ -129,13 +333,13 @@ def KGCOVID19(
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()
-def KGIDG(
+def EcoKG(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="current", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="20211102", **kwargs
 ) -> Graph:
-    """Return KG-IDG graph	
+    """Return eco-kg graph	
 
     Parameters
     ----------
@@ -154,214 +358,16 @@ def KGIDG(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "current"
+    version = "20211102"
         Version to retrieve	
 		The available versions are:
-			- 20211029
-			- 20211101
-			- 20211112
-			- 20211123
-			- 20211201
-			- 20211202
-			- 20211207
-			- 20211210
-			- 20211213
-			- 20211215
-			- 20211221
-			- 20211223
-			- 20220101
-			- 20220106
-			- 20220107
-			- 20220119
-			- 20220201
-			- 20220203
-			- 20220204
-			- 20220216
-			- 20220223
-			- 20220303
-			- 20220325
-			- 20220329
-			- 20220401
-			- 20220501
-			- 20220512
-			- 20220525
-			- 20220601
-			- 20220606
-			- 20220701
-			- 20220722
-			- 20221209
-			- 20230101
-			- 20230530
-			- 20230601
-			- current	
+			- 20211025
+			- 20211102	
 	
 	
     """
     return RetrievedGraph(
-        "KGIDG", version, "kghub", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def KGMicrobe(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="current", **kwargs
-) -> Graph:
-    """Return kg-microbe graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "current"
-        Version to retrieve	
-		The available versions are:
-			- 20210422
-			- 20210517
-			- 20210608
-			- 20210615
-			- 20210617
-			- 20210622
-			- 20210715
-			- 20230109
-			- 20230116
-			- 20230206
-			- 20230216
-			- 20230303
-			- 20230310
-			- 20230316
-			- 20230416
-			- 20230516
-			- 20230616
-			- current	
-	
-	References
-	----------
-	Please cite:
-	
-	```bib
-	@article{joachimiakkg,
-	  title={KG-Microbe: a reference knowledge-graph and platform for harmonized microbial information},
-	  author={Joachimiak, Marcin P and Reese, Justin T and Hegde, Harshad and Cappelletti, Luca and Mungall, Christopher J and Duncan, William D and Thessen, Anne E}
-	}
-	```
-    """
-    return RetrievedGraph(
-        "KGMicrobe", version, "kghub", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def KGPhenio(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="current", **kwargs
-) -> Graph:
-    """Return kg-phenio graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "current"
-        Version to retrieve	
-		The available versions are:
-			- 20220304
-			- 20220414
-			- 20220428
-			- 20220429
-			- 20220504
-			- 20220506
-			- 20220511
-			- 20220513
-			- 20220516
-			- 20220525
-			- 20220601
-			- 20220606
-			- 20220607
-			- 20220623
-			- 20220722
-			- 20220819
-			- 20220930
-			- 20221006
-			- 20221027
-			- 20221215
-			- 20230210
-			- 20230302
-			- 20230307
-			- 20230313
-			- 20230502
-			- 20230623
-			- current	
-	
-	
-    """
-    return RetrievedGraph(
-        "KGPhenio", version, "kghub", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
-    )()
-def SLDB(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="20220522", **kwargs
-) -> Graph:
-    """Return sldb graph	
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "20220522"
-        Version to retrieve	
-		The available versions are:
-			- 20220522	
-	
-	
-    """
-    return RetrievedGraph(
-        "SLDB", version, "kghub", directed, preprocess, bioregistry, load_nodes,
+        "EcoKG", version, "kghub", directed, preprocess, bioregistry, load_nodes,
         load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
         verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs
     )()

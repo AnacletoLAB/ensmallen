@@ -17,7 +17,7 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/static/apple-touch-icon-72-precomposed.png"/>
     <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/static/apple-touch-icon-57-precomposed.png"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,100,italic" rel="stylesheet">
-<link href="/static/gen/zenodo.5fb6164a.css" rel="stylesheet">
+<link href="/static/gen/zenodo.092db7c7.css" rel="stylesheet">
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>
   <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -1814,10 +1814,10 @@ Open Access
   <div id="accordion">
     <!-- Banner --><div class="row">
       <div class="col-sm-6">
-        <span class="stats-data">2,940</span>
+        <span class="stats-data">3,217</span>
       </div>
       <div class="col-sm-6">
-        <span class="stats-data">10,692</span>
+        <span class="stats-data">11,025</span>
       </div>
     </div>
     <div class="row">
@@ -1844,19 +1844,19 @@ Open Access
           <th>All versions</th>
           <th>This version</th>
         </tr><tr>
-          <td>Views <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="Total views." data-original-title="Total views."></i></td><td>2,940</td><td>2,941</td>
+          <td>Views <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="Total views." data-original-title="Total views."></i></td><td>3,217</td><td>3,218</td>
         </tr>
         <tr>
-          <td>Downloads <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="Total downloads." data-original-title="Total downloads."></i></td><td>10,692</td><td>10,692</td>
+          <td>Downloads <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="Total downloads." data-original-title="Total downloads."></i></td><td>11,025</td><td>11,025</td>
         </tr>
         <tr>
           <td>Data volume <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="Total download volume." data-original-title="Total download volume."></i></td><td>6.7 TB</td><td>6.7 TB</td>
         </tr>
         <tr>
-          <td>Unique views <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="Views in one hour user-sessions are counted only once." data-original-title="Views in one hour user-sessions are counted only once."></i></td><td>2,617</td><td>2,618</td>
+          <td>Unique views <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="Views in one hour user-sessions are counted only once." data-original-title="Views in one hour user-sessions are counted only once."></i></td><td>2,861</td><td>2,862</td>
         </tr>
         <tr>
-          <td>Unique downloads <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="Downloads in one hour user-sessions are counted only once." data-original-title="Downloads in one hour user-sessions are counted only once."></i></td><td>1,577</td><td>1,577</td>
+          <td>Unique downloads <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="Downloads in one hour user-sessions are counted only once." data-original-title="Downloads in one hour user-sessions are counted only once."></i></td><td>1,827</td><td>1,827</td>
         </tr>
       </table>
       <div class="row">
@@ -2056,10 +2056,12 @@ Open Access
               <h5>About</h5>
               <ul class="list-unstyled">
                 <li><a href="http://about.zenodo.org">About</a></li>
-                <li><a href="http://about.zenodo.org/policies">Policies</a></li>
-                <li><a href="http://about.zenodo.org/infrastructure">Infrastructure</a></li>
-                <li><a href="http://about.zenodo.org/principles">Principles</a></li>
-                <li><a href="http://about.zenodo.org/contact">Contact</a></li>
+                <li><a href="http://about.zenodo.org/policies/">Policies</a></li>
+                <li><a href="http://about.zenodo.org/infrastructure/">Infrastructure</a></li>
+                <li><a href="http://about.zenodo.org/principles/">Principles</a></li>
+                <li><a href="http://about.zenodo.org/roadmap/">Roadmap</a></li>
+                <li><a href="http://about.zenodo.org/projects/">Projects</a></li>
+                <li><a href="http://about.zenodo.org/contact/">Contact</a></li>
               </ul>
             </div>
             <div class="col-xs-2 col-md-2">
@@ -2071,8 +2073,9 @@ Open Access
             <div class="col-xs-2 col-md-2">
               <h5>Help</h5>
               <ul class="list-unstyled">
-                <li><a href="http://help.zenodo.org">FAQ</a></li>
-                <li><a href="http://help.zenodo.org/features">Features</a></li>
+                <li><a href="http://help.zenodo.org/">Overview</a></li>
+                <li><a href="http://help.zenodo.org/faq">FAQ</a></li>
+                <li><a href="http://help.zenodo.org/guides">Guides</a></li>
                 <li><a href="/support">Support</a></li>
               </ul>
             </div>
