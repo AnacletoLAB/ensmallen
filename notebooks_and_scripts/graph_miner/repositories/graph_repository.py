@@ -1,13 +1,16 @@
 """Class providing an abstract graph repository."""
-from typing import List, Dict, Set
-import os
 import json
-import compress_json
+import os
 from glob import glob
+from typing import Dict, List, Set
+
+import compress_json
 from tqdm.auto import tqdm
 
 
 class GraphRepository:
+    """Class representing an abstract graph repository."""
+
     def __init__(self):
         """Create new Graph Repository object."""
         with open(
@@ -499,6 +502,8 @@ class GraphRepository:
         """
         try:
             callbacks = self.get_callbacks(graph_name, version)
+            if callbacks is None:
+                return ""
             callbacks_data = self.get_callbacks_arguments(graph_name, version)
             json_formatted = json.dumps(
                 callbacks_data,
@@ -615,7 +620,7 @@ class GraphRepository:
             "../bindings/python/ensmallen/datasets",
             self.repository_package_name,
         )
-        file_path = "{}.py".format(target_directory_path)
+        file_path = f"{target_directory_path}.py"
 
         imports = []
 
@@ -626,10 +631,14 @@ class GraphRepository:
                 self.get_formatted_repository_name(),
                 "*.json.gz"
             )),
-            desc="Building graph retrieval methods for {}".format(self.name),
+            desc=f"Building graph retrieval methods for {self.name}",
             leave=False
         ):
             graph_data = compress_json.load(graph_data_path)
+            if len(list(graph_data.values())) == 0:
+                raise ValueError(
+                    f"The graph {graph_data_path} has no versions."
+                )
             first_graph_version_data = list(graph_data.values())[0]
             graph_name = first_graph_version_data["graph_name"]
             packages_to_import = self.get_imports(
