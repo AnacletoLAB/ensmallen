@@ -492,6 +492,7 @@ impl Graph {
 
         let mut negative_edges_hashset: HashSet<(NodeT, NodeT)> =
             HashSet::with_capacity(number_of_negative_samples as usize);
+        let mut number_of_sampled_edges = 0;
         let mut sampling_round: usize = 0;
         let mut last_size = 0;
 
@@ -704,7 +705,7 @@ impl Graph {
             };
 
         // randomly extract negative edges until we have the choosen number
-        while negative_edges_hashset.len() < number_of_negative_samples as usize {
+        while number_of_sampled_edges < number_of_negative_samples as usize {
             // generate two random_states for reproducibility porpouses
             random_state = splitmix64(random_state as u64) as EdgeT;
             let src_random_state = rand_u64(random_state);
@@ -725,25 +726,37 @@ impl Graph {
                 .collect::<Vec<(NodeT, NodeT)>>();
 
             for (src, dst) in sampled_edge_node_ids.iter() {
-                if negative_edges_hashset.len() >= number_of_negative_samples as usize {
+                if negative_edges_hashset.insert((*src, *dst)) {
+                    // Inserted a new edge
+                    number_of_sampled_edges += if src == dst || self.is_directed() {
+                        1
+                    } else {
+                        2
+                    }
+                }
+                if number_of_sampled_edges >= number_of_negative_samples as usize {
                     break;
                 }
-                negative_edges_hashset.insert((*src, *dst));
+            }
+
+            if number_of_sampled_edges > last_size {
+                last_size = number_of_sampled_edges;
+                sampling_round = 0;
+            } else {
+                sampling_round += 1;
             }
 
             if sampling_round > number_of_sampling_attempts {
                 return Err(format!(concat!(
                     "Using the provided filters on the current graph instance it ",
                     "was not possible to sample a new negative edge after {number_of_sampling_attempts} sampling ",
-                    "rounds."
-                ), number_of_sampling_attempts=number_of_sampling_attempts));
-            }
-
-            if negative_edges_hashset.len() > last_size {
-                last_size = negative_edges_hashset.len();
-                sampling_round = 0;
-            } else {
-                sampling_round += 1;
+                    "rounds. So far, we have sampled {number_of_sampled_edges} negative edges out of the ",
+                    "requested {number_of_negative_samples} negative edges.",
+                ),
+                number_of_sampling_attempts=number_of_sampling_attempts,
+                number_of_sampled_edges=number_of_sampled_edges,
+                number_of_negative_samples=number_of_negative_samples
+                ));
             }
         }
 
@@ -832,44 +845,47 @@ impl Graph {
         // need to sample them from the original graph.
 
         build_graph_from_integers(
-            Some(negative_edges_hashset.into_par_iter().map(
-                |(src, dst)| unsafe {
-                    (
-                        0,
+            Some(
+                negative_edges_hashset
+                    .into_par_iter()
+                    .map(|(src, dst)| unsafe {
                         (
-                            src,
-                            dst,
-                            if sample_edge_types {
-                                let mut random_state = random_state
-                                    .wrapping_mul(src as u64 + 1)
-                                    .wrapping_mul(dst as u64 + 2);
-                                let mut edge_type =
-                                    self.get_unchecked_random_scale_free_edge_type(random_state);
-                                if let Some(node_type_specific_edge_type_counts) =
-                                    node_type_specific_edge_type_counts.as_ref()
-                                {
-                                    // We retrieve the node types associated to the source and destination nodes.
-                                    let source_node_types =
-                                        self.get_unchecked_node_type_ids_from_node_id(src);
-                                    let destination_node_types =
-                                        self.get_unchecked_node_type_ids_from_node_id(dst);
+                            0,
+                            (
+                                src,
+                                dst,
+                                if sample_edge_types {
+                                    let mut random_state = random_state
+                                        .wrapping_mul(src as u64 + 1)
+                                        .wrapping_mul(dst as u64 + 2);
+                                    let mut edge_type = self
+                                        .get_unchecked_random_scale_free_edge_type(random_state);
+                                    if let Some(node_type_specific_edge_type_counts) =
+                                        node_type_specific_edge_type_counts.as_ref()
+                                    {
+                                        // We retrieve the node types associated to the source and destination nodes.
+                                        let source_node_types =
+                                            self.get_unchecked_node_type_ids_from_node_id(src);
+                                        let destination_node_types =
+                                            self.get_unchecked_node_type_ids_from_node_id(dst);
 
-                                    // Until we do not have an edge type that is acceptable given the
-                                    // node types of the source and destination nodes,
-                                    // we keep sampling a new edge type.
+                                        // Until we do not have an edge type that is acceptable given the
+                                        // node types of the source and destination nodes,
+                                        // we keep sampling a new edge type.
 
-                                    loop {
-                                        // Similarly to what we did for checking whether an edge is
-                                        // admissible, we check whether the edge type is admissible
-                                        // for the provide source and destination node types.
-                                        let is_valid = if let Some(source_node_types) =
-                                            source_node_types
-                                        {
-                                            if let Some(destination_node_types) =
-                                                destination_node_types
+                                        loop {
+                                            // Similarly to what we did for checking whether an edge is
+                                            // admissible, we check whether the edge type is admissible
+                                            // for the provide source and destination node types.
+                                            let is_valid = if let Some(source_node_types) =
+                                                source_node_types
                                             {
-                                                source_node_types.iter().all(|source_node_type| {
-                                                    destination_node_types.iter().all(
+                                                if let Some(destination_node_types) =
+                                                    destination_node_types
+                                                {
+                                                    source_node_types.iter().all(
+                                                        |source_node_type| {
+                                                            destination_node_types.iter().all(
                                                         |destination_node_type| {
                                                             node_type_specific_edge_type_counts
                                                                 .contains(&(
@@ -879,75 +895,76 @@ impl Graph {
                                                                 ))
                                                         },
                                                     )
-                                                })
+                                                        },
+                                                    )
+                                                } else {
+                                                    source_node_types.iter().all(
+                                                        |source_node_type| {
+                                                            node_type_specific_edge_type_counts
+                                                                .contains(&(
+                                                                    Some(*source_node_type),
+                                                                    None,
+                                                                    edge_type,
+                                                                ))
+                                                        },
+                                                    )
+                                                }
                                             } else {
-                                                source_node_types.iter().all(|source_node_type| {
-                                                    node_type_specific_edge_type_counts.contains(&(
-                                                        Some(*source_node_type),
-                                                        None,
-                                                        edge_type,
-                                                    ))
-                                                })
+                                                if let Some(destination_node_types) =
+                                                    destination_node_types
+                                                {
+                                                    destination_node_types.iter().all(
+                                                        |destination_node_type| {
+                                                            node_type_specific_edge_type_counts
+                                                                .contains(&(
+                                                                    None,
+                                                                    Some(*destination_node_type),
+                                                                    edge_type,
+                                                                ))
+                                                        },
+                                                    )
+                                                } else {
+                                                    node_type_specific_edge_type_counts
+                                                        .contains(&(None, None, edge_type))
+                                                }
+                                            };
+                                            if is_valid {
+                                                break;
                                             }
-                                        } else {
-                                            if let Some(destination_node_types) =
-                                                destination_node_types
-                                            {
-                                                destination_node_types.iter().all(
-                                                    |destination_node_type| {
-                                                        node_type_specific_edge_type_counts
-                                                            .contains(&(
-                                                                None,
-                                                                Some(*destination_node_type),
-                                                                edge_type,
-                                                            ))
-                                                    },
-                                                )
-                                            } else {
-                                                node_type_specific_edge_type_counts
-                                                    .contains(&(None, None, edge_type))
-                                            }
-                                        };
-                                        if is_valid {
-                                            break;
+                                            // If the edge is not valid, we need to update the random state and sample it again.
+                                            random_state = splitmix64(random_state) as EdgeT;
+                                            edge_type = self
+                                                .get_unchecked_random_scale_free_edge_type(
+                                                    random_state,
+                                                );
                                         }
-                                        // If the edge is not valid, we need to update the random state and sample it again.
-                                        random_state = splitmix64(random_state) as EdgeT;
-                                        edge_type = self.get_unchecked_random_scale_free_edge_type(
-                                            random_state,
-                                        );
                                     }
-                                }
-                                edge_type
-                            } else {
-                                None
-                            },
-                            if sample_edge_weights {
-                                self.get_unchecked_random_scale_free_edge_weight(
-                                    random_state
-                                        .wrapping_mul(src as u64 + 1)
-                                        .wrapping_mul(dst as u64 + 2),
-                                )
-                                .unwrap_or(WeightT::NAN)
-                            } else {
-                                WeightT::NAN
-                            },
-                        ),
-                    )
-                },
-            )),
+                                    edge_type
+                                } else {
+                                    None
+                                },
+                                if sample_edge_weights {
+                                    self.get_unchecked_random_scale_free_edge_weight(
+                                        random_state
+                                            .wrapping_mul(src as u64 + 1)
+                                            .wrapping_mul(dst as u64 + 2),
+                                    )
+                                    .unwrap_or(WeightT::NAN)
+                                } else {
+                                    WeightT::NAN
+                                },
+                            ),
+                        )
+                    }),
+            ),
             self.nodes.clone(),
             self.node_types.clone(),
             self.edge_types
                 .as_ref()
                 .as_ref()
                 .map(|ets| ets.vocabulary.clone()),
-            false,
+            sample_edge_weights,
             self.is_directed(),
-            // If the graph is directed, then the negative edges
-            // are complete as is, meaning we do not need to
-            // add the reverse edges as we would need to do in the
-            // case of an undirected graph.
             Some(false),
             Some(false),
             Some(false),
