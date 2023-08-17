@@ -87,8 +87,9 @@ impl CSVFileReader {
     /// * path: String - Path where to store/load the file.
     /// * list_name: String - Name of the list that is being loaded.
     ///
-    pub fn new<S: Into<String>>(path: S, list_name: String) -> Result<CSVFileReader> {
+    pub fn new<S1: Into<String>, S2: Into<String>>(path: S1, list_name: S2) -> Result<CSVFileReader> {
         let path = path.into();
+        let list_name = list_name.into();
         // check file existance
         match File::open(&path) {
             Ok(_) => Ok({

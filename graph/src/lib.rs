@@ -67,6 +67,9 @@ pub use self::dijkstra::*;
 mod coo;
 pub use self::coo::*;
 
+mod edge_prediction_analysis;
+pub use self::edge_prediction_analysis::*;
+
 mod heterogeneous_graphlets;
 pub use self::heterogeneous_graphlets::*;
 
