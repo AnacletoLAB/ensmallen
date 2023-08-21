@@ -351,8 +351,8 @@ impl Graph {
     ) -> Result<(Vec<usize>, Vec<usize>)> {
         let bins = bins.unwrap_or(100);
 
-        let existing_edges_histograms: Vec<AtomicUsize> = unsafe { transmute(vec![0; bins]) };
-        let non_existing_edges_histograms: Vec<AtomicUsize> = unsafe { transmute(vec![0; bins]) };
+        let existing_edges_histograms: Vec<AtomicUsize> = unsafe { transmute(vec![0_usize; bins]) };
+        let non_existing_edges_histograms: Vec<AtomicUsize> = unsafe { transmute(vec![0_usize; bins]) };
 
         self.get_predictions_reader(
             path,
@@ -376,7 +376,7 @@ impl Graph {
         )?
         .map(|line| match line {
             Ok((line_number, (src_name, dst_name, prediction))) => {
-                let prediction_bin = (prediction * bins as f32) as usize;
+                let prediction_bin = ((prediction * bins as f32) as usize).max(bins - 1);
 
                 if self.has_edge_from_node_names(&src_name, &dst_name) {
                     existing_edges_histograms[prediction_bin].fetch_add(1, Ordering::Relaxed);

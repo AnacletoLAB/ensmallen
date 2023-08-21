@@ -1,5 +1,5 @@
 use super::*;
-use indicatif::ParallelProgressIterator;
+use indicatif::{ParallelProgressIterator, ProgressIterator};
 use num_traits::{PrimInt, Zero};
 use parallel_frontier::prelude::*;
 use std::cmp::Ord;
@@ -2232,6 +2232,190 @@ impl Graph {
             compute_predecessors,
             maximal_depth,
             use_edge_weights_as_probabilities,
+        )
+    }
+
+    /// Returns histogram of distances between the given node IDs filters.
+    ///
+    /// # Arguments
+    /// * `src_callable`: impl Fn(NodeT) -> bool - Source node filter.
+    /// * `dst_callable`: impl Fn(NodeT) -> bool - Destination node filter.
+    /// * `verbose`: Option<bool> - Whether to show a loading bar.
+    ///
+    fn get_distances_histogram_between_callables(
+        &self,
+        src_callable: impl Fn(NodeT) -> bool,
+        dst_callable: impl Fn(NodeT) -> bool,
+        verbose: Option<bool>,
+    ) -> Result<Vec<usize>> {
+        self.must_have_node_types()?;
+        let mut distances = Vec::new();
+
+        let progress_bar = get_loading_bar(
+            verbose.unwrap_or(true),
+            "Computing distances histogram",
+            self.get_number_of_nodes() as usize,
+        );
+
+        self.iter_node_ids()
+            .progress_with(progress_bar)
+            .filter(|src| src_callable(*src))
+            .for_each(|src| {
+                let bfs = unsafe {
+                    self.get_unchecked_breadth_first_search_distances_parallel_from_node_id(
+                        src, None,
+                    )
+                };
+                let maximal_distance = bfs.get_eccentricity();
+
+                // If the distances length is less than the maximal distance,
+                // we need to extend it.
+                if distances.len() < maximal_distance as usize {
+                    distances.resize(maximal_distance as usize, 0);
+                }
+
+                bfs.get_distances()
+                    .unwrap()
+                    .into_iter()
+                    .enumerate()
+                    .for_each(|(dst, distance)| {
+                        if dst_callable(dst as NodeT) && distance != NODE_NOT_PRESENT {
+                            distances[distance as usize] += 1;
+                        }
+                    });
+            });
+
+        Ok(distances)
+    }
+
+    /// Returns histogram of distances between the given source node type ids and the given destination node type ids.
+    ///
+    /// # Arguments
+    /// * `src_node_type_ids`: Option<Vec<NodeTypeT>> - Source node types ids. If None, the nodes with unknown node type will be used.
+    /// * `dst_node_type_ids`: Option<Vec<NodeTypeT>> - Destination node types ids. If None, the nodes with unknown node type will be used.
+    /// * `verbose`: Option<bool> - Whether to show a loading bar.
+    ///
+    pub fn get_distances_histogram_between_node_type_ids(
+        &self,
+        src_node_type_ids: Option<Vec<NodeTypeT>>,
+        dst_node_type_ids: Option<Vec<NodeTypeT>>,
+        verbose: Option<bool>,
+    ) -> Result<Vec<usize>> {
+        self.must_have_node_types()?;
+
+        self.get_distances_histogram_between_callables(
+            |node_id| {
+                if let Some(node_type_ids) =
+                    unsafe { self.get_unchecked_node_type_ids_from_node_id(node_id) }
+                {
+                    if let Some(src_node_type_ids) = &src_node_type_ids {
+                        node_type_ids
+                            .iter()
+                            .any(|node_type_id| src_node_type_ids.contains(node_type_id))
+                    } else {
+                        false
+                    }
+                } else {
+                    src_node_type_ids.is_none()
+                }
+            },
+            |node_id| {
+                if let Some(node_type_ids) =
+                    unsafe { self.get_unchecked_node_type_ids_from_node_id(node_id) }
+                {
+                    if let Some(dst_node_type_ids) = &dst_node_type_ids {
+                        node_type_ids
+                            .iter()
+                            .any(|node_type_id| dst_node_type_ids.contains(node_type_id))
+                    } else {
+                        false
+                    }
+                } else {
+                    dst_node_type_ids.is_none()
+                }
+            },
+            verbose,
+        )
+    }
+
+    /// Returns histogram of distances between the given source node type names and the given destination node type names.
+    ///
+    /// # Arguments
+    /// * `src_node_type_names`: Option<Vec<&str>> - Source node types names. If None, the nodes with unknown node type will be used.
+    /// * `dst_node_type_names`: Option<Vec<&str>> - Destination node types names. If None, the nodes with unknown node type will be used.
+    /// * `verbose`: Option<bool> - Whether to show a loading bar.
+    ///
+    pub fn get_distances_histogram_between_node_type_names(
+        &self,
+        src_node_type_names: Option<Vec<&str>>,
+        dst_node_type_names: Option<Vec<&str>>,
+        verbose: Option<bool>,
+    ) -> Result<Vec<usize>> {
+        let src_node_type_ids = if let Some(src_node_type_names) = src_node_type_names {
+            Some(
+                src_node_type_names
+                    .iter()
+                    .map(|src_node_type_name| {
+                        self.get_node_type_id_from_node_type_name(src_node_type_name)
+                    })
+                    .collect::<Result<Vec<NodeTypeT>>>()?,
+            )
+        } else {
+            None
+        };
+        let dst_node_type_ids = if let Some(dst_node_type_names) = dst_node_type_names {
+            Some(
+                dst_node_type_names
+                    .iter()
+                    .map(|dst_node_type_name| {
+                        self.get_node_type_id_from_node_type_name(dst_node_type_name)
+                    })
+                    .collect::<Result<Vec<NodeTypeT>>>()?,
+            )
+        } else {
+            None
+        };
+
+        self.get_distances_histogram_between_node_type_ids(
+            src_node_type_ids,
+            dst_node_type_ids,
+            verbose,
+        )
+    }
+
+    /// Returns histogram of distances between the given source prefixes and the given destination prefixes.
+    ///
+    /// # Arguments
+    /// * `src_prefixes`: Vec<String> - Allowed source node prefixes.
+    /// * `dst_prefixes`: Vec<String> - Allowed destination node prefixes.
+    /// * `verbose`: Option<bool> - Whether to show a loading bar.
+    ///
+    pub fn get_distances_histogram_between_prefixes(
+        &self,
+        src_prefixes: Vec<String>,
+        dst_prefixes: Vec<String>,
+        verbose: Option<bool>,
+    ) -> Result<Vec<usize>> {
+        if src_prefixes.is_empty() || dst_prefixes.is_empty() {
+            return Err("Both source and destination prefixes must be non-empty"
+                .to_string()
+                .into());
+        }
+
+        self.get_distances_histogram_between_callables(
+            |node_id| {
+                let node_name = unsafe { self.get_unchecked_node_name_from_node_id(node_id) };
+                src_prefixes
+                    .iter()
+                    .any(|prefix| node_name.starts_with(prefix))
+            },
+            |node_id| {
+                let node_name = unsafe { self.get_unchecked_node_name_from_node_id(node_id) };
+                dst_prefixes
+                    .iter()
+                    .any(|prefix| node_name.starts_with(prefix))
+            },
+            verbose,
         )
     }
 }
