@@ -144,7 +144,7 @@ where
     learning_rate: F,
     first_order_decay_factor: F,
     second_order_decay_factor: F,
-    time: F,
+    time: i32,
     first_moment: V,
     second_moment: V,
 }
@@ -177,7 +177,7 @@ where
             learning_rate: learning_rate.unwrap_or(F::from(0.001).unwrap()),
             first_order_decay_factor: first_order_decay_factor.unwrap_or(F::from(0.9).unwrap()),
             second_order_decay_factor: second_order_decay_factor.unwrap_or(F::from(0.999).unwrap()),
-            time: F::zero(),
+            time: 0,
             first_moment: V::default(),
             second_moment: V::default(),
         }
@@ -190,12 +190,12 @@ where
         first_order_decay_factor: F,
         second_order_decay_factor: F,
         learning_rate: F,
-        time: F,
+        time: i32,
     ) {
         *first_moment = first_order_decay_factor * (*first_moment)
             + (F::one() - first_order_decay_factor) * (*variation);
         *second_moment = second_order_decay_factor * (*second_moment)
-            + (F::one() - second_order_decay_factor) * (*variation).powi(F::one() + F::one());
+            + (F::one() - second_order_decay_factor) * (*variation).powi(2);
         let alpha = learning_rate * (F::one() - second_order_decay_factor.powi(time)).sqrt()
             / (F::one() - first_order_decay_factor.powi(time));
         *variation = alpha * (*first_moment) / (F::epsilon() + (*second_moment).sqrt());
@@ -219,7 +219,7 @@ where
     }
 
     fn get_update(&mut self, variation: &mut Self::T) {
-        self.time += F::one();
+        self.time += 1;
         Self::get_elementwise_update(
             variation,
             &mut self.first_moment,
@@ -245,7 +245,7 @@ where
     }
 
     fn get_update(&mut self, variations: &mut Self::T) {
-        self.time += F::one();
+        self.time += 1;
         variations
             .iter_mut()
             .zip(

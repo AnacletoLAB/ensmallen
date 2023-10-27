@@ -306,109 +306,6 @@ impl<PRECISION: Precision + WordType<BITS> + DeserializeOwned, const BITS: usize
         Ok(())
     }
 
-    /// Returns the estimated exclusive overlap cardinality between two nodes.
-    ///
-    /// # Arguments
-    /// * `src`: NodeT - The source node.
-    /// * `dst`: NodeT - The destination node.
-    ///
-    /// # Safety
-    /// This method is unsafe because it does not check that the provided nodes are lower
-    /// than the expected number of nodes in the graph.
-    pub unsafe fn get_overlap_cardinalities_from_node_ids_unchecked(
-        &self,
-        src: usize,
-        dst: usize,
-    ) -> [[f32; HOPS]; HOPS] {
-        self.counters[src].estimate_overlap_cardinalities(&self.counters[dst])
-    }
-
-    /// Returns the estimated exclusive overlap cardinality between two nodes.
-    ///
-    /// # Arguments
-    /// * `src`: NodeT - The source node.
-    /// * `dst`: NodeT - The destination node.
-    ///
-    /// # Raises
-    /// * If the model has not been trained yet.
-    /// * If the provided nodes are not lower than the expected number of nodes in the graph.
-    pub fn get_overlap_cardinalities_from_node_ids(
-        &self,
-        src: usize,
-        dst: usize,
-    ) -> Result<[[f32; HOPS]; HOPS], String> {
-        // Check that the model has been trained
-        self.must_be_trained()?;
-
-        // We check whether the two provided nodes are lower
-        // than the expected number of nodes in the graph
-        if src >= self.counters.len() || dst >= self.counters.len() {
-            return Err(format!(
-                concat!(
-                    "The provided nodes {} and {} are not lower than the ",
-                    "expected number of nodes in the graph `{}`."
-                ),
-                src,
-                dst,
-                self.counters.len()
-            ));
-        }
-
-        Ok(unsafe { self.get_overlap_cardinalities_from_node_ids_unchecked(src, dst) })
-    }
-
-    /// Returns the estimated exclusive differences cardinality between two nodes.
-    ///
-    /// # Arguments
-    /// * `src`: NodeT - The source node.
-    /// * `dst`: NodeT - The destination node.
-    ///
-    /// # Safety
-    /// This method is unsafe because it does not check that the provided nodes are lower
-    /// than the expected number of nodes in the graph.
-    pub unsafe fn get_difference_cardinalities_from_node_ids_unchecked(
-        &self,
-        src: usize,
-        dst: usize,
-    ) -> [f32; HOPS] {
-        self.counters[src].estimated_difference_cardinality_vector(&self.counters[dst][HOPS - 1])
-    }
-
-    /// Returns the estimated exclusive differences cardinality between two nodes.
-    ///
-    /// # Arguments
-    /// * `src`: NodeT - The source node.
-    /// * `dst`: NodeT - The destination node.
-    ///
-    /// # Raises
-    /// * If the model has not been trained yet.
-    /// * If the provided nodes are not lower than the expected number of nodes in the graph.
-    ///
-    pub fn get_difference_cardinalities_from_node_ids(
-        &self,
-        src: usize,
-        dst: usize,
-    ) -> Result<[f32; HOPS], String> {
-        // Check that the model has been trained
-        self.must_be_trained()?;
-
-        // We check whether the two provided nodes are lower
-        // than the expected number of nodes in the graph
-        if src >= self.counters.len() || dst >= self.counters.len() {
-            return Err(format!(
-                concat!(
-                    "The provided nodes {} and {} are not lower than the ",
-                    "expected number of nodes in the graph `{}`."
-                ),
-                src,
-                dst,
-                self.counters.len()
-            ));
-        }
-
-        Ok(unsafe { self.get_difference_cardinalities_from_node_ids_unchecked(src, dst) })
-    }
-
     /// Returns the subgraph sketch associates with the two provided nodes.
     ///
     /// # Arguments
@@ -431,7 +328,7 @@ impl<PRECISION: Precision + WordType<BITS> + DeserializeOwned, const BITS: usize
         dst: usize,
     ) -> ([[F; HOPS]; HOPS], [F; HOPS], [F; HOPS]) {
         self.counters[src]
-            .estimated_overlap_and_differences_cardinality_matrices(&self.counters[dst])
+            .overlap_and_differences_cardinality_matrices(&self.counters[dst])
     }
 
     /// Returns the subgraph sketch associates with the two provided nodes.
