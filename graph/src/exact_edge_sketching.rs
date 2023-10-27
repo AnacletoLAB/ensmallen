@@ -1,6 +1,6 @@
 use super::*;
-use hyperloglog_rs::prelude::*;
 use core::mem::MaybeUninit;
+use hyperloglog_rs::prelude::*;
 use std::collections::HashSet;
 
 // Method to allocate an array of HashSets using maybe uninitialized memory,
@@ -87,16 +87,16 @@ impl Graph {
         src: NodeT,
         dst: NodeT,
     ) -> ([[usize; N]; N], [usize; N], [usize; N]) {
-        let mut src_neighbour_hyperspheres = allocate_array_of_hashsets::<N>();
-        let mut dst_neighbour_hyperspheres = allocate_array_of_hashsets::<N>();
+        let mut src_neighbour_hypersphere = allocate_array_of_hashsets::<N>();
+        let mut dst_neighbour_hypersphere = allocate_array_of_hashsets::<N>();
 
         for (node, hypersphere) in [
-            (src, &mut src_neighbour_hyperspheres[0]),
-            (dst, &mut dst_neighbour_hyperspheres[0]),
+            (src, &mut src_neighbour_hypersphere[0]),
+            (dst, &mut dst_neighbour_hypersphere[0]),
         ] {
-            // We insert the nodes themselves in the hyperspheres.
+            // We insert the nodes themselves in the hypersphere.
             hypersphere.insert(node as usize);
-            // First, we populate the hyperspheres of neighbours.
+            // First, we populate the hypersphere of neighbours.
             for neighbour in
                 unsafe { self.iter_unchecked_neighbour_node_ids_from_source_node_id(node) }
             {
@@ -104,38 +104,40 @@ impl Graph {
             }
         }
 
-        // Then, we populate the hyperspheres of neighbours up to the given number of hops.
+        // Then, we populate the hypersphere of neighbours up to the given number of hops.
         for i in 1..N {
-            for (node, hypersphere) in [
-                (src, &mut src_neighbour_hyperspheres[i as usize]),
-                (dst, &mut dst_neighbour_hyperspheres[i as usize]),
+            for (previous_sphere, hypersphere) in [
+                src_neighbour_hypersphere.as_mut().split_at_mut(i),
+                dst_neighbour_hypersphere.as_mut().split_at_mut(i),
             ] {
-                for neighbour in
-                    unsafe { self.iter_unchecked_neighbour_node_ids_from_source_node_id(node) }
-                {
-                    hypersphere.insert(neighbour as usize);
+                for node in &previous_sphere[0] {
+                    for neighbour in unsafe {
+                        self.iter_unchecked_neighbour_node_ids_from_source_node_id(*node as u32)
+                    } {
+                        hypersphere[0].insert(neighbour as usize);
+                    }
                 }
             }
         }
 
-        // At this point, we need to merge the hyperspheres of neighbours, so that
+        // At this point, we need to merge the hypersphere of neighbours, so that
         // the second hop hypersphere contains the first hop hypersphere, the third
-        // hop hypersphere contains the second and first hop hyperspheres, and so on.
+        // hop hypersphere contains the second and first hop hypersphere, and so on.
         for i in 1..N {
-            src_neighbour_hyperspheres[i as usize] = src_neighbour_hyperspheres[i as usize]
-                .union(&src_neighbour_hyperspheres[(i - 1) as usize])
+            src_neighbour_hypersphere[i as usize] = src_neighbour_hypersphere[i as usize]
+                .union(&src_neighbour_hypersphere[(i - 1) as usize])
                 .cloned()
                 .collect();
-            dst_neighbour_hyperspheres[i as usize] = dst_neighbour_hyperspheres[i as usize]
-                .union(&dst_neighbour_hyperspheres[(i - 1) as usize])
+            dst_neighbour_hypersphere[i as usize] = dst_neighbour_hypersphere[i as usize]
+                .union(&dst_neighbour_hypersphere[(i - 1) as usize])
                 .cloned()
                 .collect();
         }
 
         // Now, we can compute the overlap matrix.
         HashSet::overlap_and_differences_cardinality_matrices(
-            &src_neighbour_hyperspheres,
-            &dst_neighbour_hyperspheres,
+            &src_neighbour_hypersphere,
+            &dst_neighbour_hypersphere,
         )
     }
 
