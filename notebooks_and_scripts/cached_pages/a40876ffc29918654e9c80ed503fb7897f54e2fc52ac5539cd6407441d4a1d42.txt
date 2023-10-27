@@ -76,6 +76,24 @@
 	<a href="https://kg-hub.berkeleybop.io/kg-microbe/20230716/index.html">20230716</a>
       </li>
       <li>
+	<a href="https://kg-hub.berkeleybop.io/kg-microbe/20230816/index.html">20230816</a>
+      </li>
+      <li>
+	<a href="https://kg-hub.berkeleybop.io/kg-microbe/20230914/index.html">20230914</a>
+      </li>
+      <li>
+	<a href="https://kg-hub.berkeleybop.io/kg-microbe/20230916/index.html">20230916</a>
+      </li>
+      <li>
+	<a href="https://kg-hub.berkeleybop.io/kg-microbe/20230919/index.html">20230919</a>
+      </li>
+      <li>
+	<a href="https://kg-hub.berkeleybop.io/kg-microbe/20231016/index.html">20231016</a>
+      </li>
+      <li>
+	<a href="https://kg-hub.berkeleybop.io/kg-microbe/20231024/index.html">20231024</a>
+      </li>
+      <li>
 	<a href="https://kg-hub.berkeleybop.io/kg-microbe/current/index.html">current</a>
       </li>
     </ul>

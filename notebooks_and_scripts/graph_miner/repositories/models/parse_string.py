@@ -25,9 +25,6 @@ def create_species_tree_node_and_edge_list(
     tree.loc[metadata.index, "domain"] = metadata.domain
     tree.loc[tree.parent_taxon_id == 1, "domain"] = "Ancestral"
     tree.loc[tree.domain == "Eukaryotes", "domain"] = "Eukaryota"
-    tree = pd.concat(
-        [tree, pd.DataFrame(dict(parent_taxon_id=1, taxon_name="LUCA"), index=[1])]
-    )
 
     while tree.domain.isna().any():
         child_nodes = tree[

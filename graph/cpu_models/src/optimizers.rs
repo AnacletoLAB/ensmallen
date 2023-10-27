@@ -195,9 +195,9 @@ where
         *first_moment = first_order_decay_factor * (*first_moment)
             + (F::one() - first_order_decay_factor) * (*variation);
         *second_moment = second_order_decay_factor * (*second_moment)
-            + (F::one() - second_order_decay_factor) * (*variation).powf(F::one() + F::one());
-        let alpha = learning_rate * (F::one() - second_order_decay_factor.powf(time)).sqrt()
-            / (F::one() - first_order_decay_factor.powf(time));
+            + (F::one() - second_order_decay_factor) * (*variation).powi(F::one() + F::one());
+        let alpha = learning_rate * (F::one() - second_order_decay_factor.powi(time)).sqrt()
+            / (F::one() - first_order_decay_factor.powi(time));
         *variation = alpha * (*first_moment) / (F::epsilon() + (*second_moment).sqrt());
     }
 }

@@ -197,3 +197,6 @@ pub use graphs_from_edge_lists::*;
 
 mod builder;
 pub use builder::*;
+
+mod exact_edge_sketching;
+pub use exact_edge_sketching::*;

@@ -1,0 +1,264 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
+	  "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html lang="en">
+  <head profile="http://www.w3.org/1999/xhtml/vocab">
+
+    <meta charset="utf-8">
+
+    <title>Directory index for https://data.monarchinitiative.org/monarch-kg-dev</title>
+
+  </head>
+
+  <body>
+
+    <h5>Parent</h5>
+    <ul>
+      <li>
+	<a href="https://data.monarchinitiative.org/index.html">..</a>
+      </li>
+    </ul>
+
+    <h5>Directories</h5>
+    <ul>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2022-02-10/index.html">2022-02-10</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2022-03-07/index.html">2022-03-07</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2022-03-15/index.html">2022-03-15</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2022-03-30/index.html">2022-03-30</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2022-04-11/index.html">2022-04-11</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2022-04-13/index.html">2022-04-13</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2022-04-18/index.html">2022-04-18</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2022-04-20/index.html">2022-04-20</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2022-04-29/index.html">2022-04-29</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2022-05-05/index.html">2022-05-05</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2022-05-07/index.html">2022-05-07</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2022-05-10/index.html">2022-05-10</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2022-05-17/index.html">2022-05-17</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2022-05-23/index.html">2022-05-23</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2022-05-24/index.html">2022-05-24</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2022-05-26/index.html">2022-05-26</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2022-05-27/index.html">2022-05-27</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2022-06-02/index.html">2022-06-02</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2022-06-07/index.html">2022-06-07</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2022-06-08/index.html">2022-06-08</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2022-06-28/index.html">2022-06-28</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2022-06-30/index.html">2022-06-30</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2022-07-27/index.html">2022-07-27</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2022-09-27/index.html">2022-09-27</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2022-10-05/index.html">2022-10-05</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2022-10-07/index.html">2022-10-07</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2022-10-11/index.html">2022-10-11</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2022-10-14/index.html">2022-10-14</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2022-10-16/index.html">2022-10-16</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2022-11-16/index.html">2022-11-16</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2022-12-06/index.html">2022-12-06</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2022-12-11/index.html">2022-12-11</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2023-01-06/index.html">2023-01-06</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2023-01-08/index.html">2023-01-08</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2023-01-15/index.html">2023-01-15</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2023-01-22/index.html">2023-01-22</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2023-01-31/index.html">2023-01-31</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2023-02-05/index.html">2023-02-05</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2023-02-12/index.html">2023-02-12</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2023-02-19/index.html">2023-02-19</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2023-02-28/index.html">2023-02-28</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2023-03-05/index.html">2023-03-05</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2023-03-08/index.html">2023-03-08</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2023-03-09/index.html">2023-03-09</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2023-03-10/index.html">2023-03-10</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2023-03-12/index.html">2023-03-12</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2023-03-14/index.html">2023-03-14</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2023-03-16/index.html">2023-03-16</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2023-03-17/index.html">2023-03-17</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2023-03-22/index.html">2023-03-22</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2023-04-02/index.html">2023-04-02</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2023-04-15/index.html">2023-04-15</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2023-04-16/index.html">2023-04-16</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2023-04-25/index.html">2023-04-25</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2023-04-27/index.html">2023-04-27</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2023-05-03/index.html">2023-05-03</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2023-05-14/index.html">2023-05-14</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2023-05-21/index.html">2023-05-21</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2023-05-25/index.html">2023-05-25</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2023-05-31/index.html">2023-05-31</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2023-06-01/index.html">2023-06-01</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2023-06-04/index.html">2023-06-04</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2023-06-08/index.html">2023-06-08</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2023-06-11/index.html">2023-06-11</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2023-06-18/index.html">2023-06-18</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2023-06-25/index.html">2023-06-25</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2023-06-27/index.html">2023-06-27</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2023-07-08/index.html">2023-07-08</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2023-07-09/index.html">2023-07-09</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2023-07-13/index.html">2023-07-13</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2023-08-24/index.html">2023-08-24</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2023-09-15/index.html">2023-09-15</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2023-09-28/index.html">2023-09-28</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2023-10-13-failed/index.html">2023-10-13-failed</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2023-10-17/index.html">2023-10-17</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/kgx/index.html">kgx</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/latest/index.html">latest</a>
+      </li>
+    </ul>
+
+    <h5>Files</h5>
+    <ul>
+      <li>
+	No files in this directory.
+      </li>
+    </ul>
+
+  </body>
+</html>

@@ -1,0 +1,12 @@
+<html>
+<head><title>Index of /wikidatawiki/entities/20230913/</title></head>
+<body>
+<h1>Index of /wikidatawiki/entities/20230913/</h1><hr><pre><a href="../">../</a>
+<a href="wikidata-20230913-lexemes.json.bz2">wikidata-20230913-lexemes.json.bz2</a>                 13-Sep-2023 03:55           290617042
+<a href="wikidata-20230913-lexemes.json.gz">wikidata-20230913-lexemes.json.gz</a>                  13-Sep-2023 03:54           397450414
+<a href="wikidata-20230913-md5sums.txt">wikidata-20230913-md5sums.txt</a>                      16-Sep-2023 03:16                 278
+<a href="wikidata-20230913-sha1sums.txt">wikidata-20230913-sha1sums.txt</a>                     16-Sep-2023 03:25                 310
+<a href="wikidata-20230913-truthy-BETA.nt.bz2">wikidata-20230913-truthy-BETA.nt.bz2</a>               16-Sep-2023 03:06         37416970645
+<a href="wikidata-20230913-truthy-BETA.nt.gz">wikidata-20230913-truthy-BETA.nt.gz</a>                16-Sep-2023 00:00         62059732722
+</pre><hr></body>
+</html>

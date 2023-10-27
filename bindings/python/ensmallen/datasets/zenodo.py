@@ -429,9 +429,9 @@ def WikiLinkSV(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2018", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="2005", **kwargs
 ) -> Graph:
-    """Return WikiLinkSV2001 graph	
+    """Return WikiLinkSV2006 graph	
 
     Parameters
     ----------
@@ -450,27 +450,27 @@ def WikiLinkSV(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2018"
+    version = "2005"
         Version to retrieve	
 		The available versions are:
+			- 2006
+			- 2018
+			- 2017
+			- 2016
+			- 2015
+			- 2014
+			- 2013
+			- 2012
+			- 2011
+			- 2010
+			- 2009
 			- 2001
 			- 2002
 			- 2003
-			- 2004
-			- 2005
-			- 2006
-			- 2007
 			- 2008
-			- 2009
-			- 2010
-			- 2011
-			- 2012
-			- 2013
-			- 2014
-			- 2015
-			- 2016
-			- 2017
-			- 2018	
+			- 2007
+			- 2004
+			- 2005	
 	
 	References
 	----------

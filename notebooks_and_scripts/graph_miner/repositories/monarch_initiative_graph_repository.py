@@ -1,20 +1,27 @@
 """Sub-module handling the retrieval and building of graphs from MonarchInitiative."""
-from typing import List, Dict
+from typing import List
 import os
-import requests
 from bs4 import BeautifulSoup
-import pandas as pd
 import compress_json
 from .graph_repository import GraphRepository
+from ..utils import get_cached_page
 
 
 class MonarchInitiativeGraphRepository(GraphRepository):
+    """Class representing the MonarchInitiative Graph Repository."""
 
     def __init__(self):
         """Create new String Graph Repository object."""
         super().__init__()
         # We load the data that cannot be automatically scraped
         self._data = compress_json.local_load("monarch_initiative.json")
+
+        # The header of the edge list is:
+        # id	original_subject	predicate	original_object	category	aggregator_knowledge_source	primary_knowledge_source	provided_by	publications	qualifiers	frequency_qualifier	has_evidence	negated	onset_qualifier	sex_qualifier	stage_qualifier	relation	subject	object
+
+        # The header of the node list is:
+        # id	category	name	xref	provided_by	synonym	full_name	in_taxon	in_taxon_label	symbol	description
+
         # The arguments keys used to load this graph
         general_kwargs = {
             "sources_column": "subject",
@@ -23,23 +30,40 @@ class MonarchInitiativeGraphRepository(GraphRepository):
             "nodes_column": "id",
             "node_list_node_types_column": "category",
             "node_types_separator": "|",
-            "name": "Monarch"
+            "name": "Monarch",
         }
         # We extend the data through scraping the Google Bucket
-        base_url = "https://storage.googleapis.com/monarch-ingest/"
-        xml = pd.read_xml(base_url).fillna("NaN")
-        xml = xml[xml.Key.str.endswith("/monarch-kg.tar.gz")]
-        for path in xml.Key:
-            version = path.split("/")[0]
+        url = "https://data.monarchinitiative.org/monarch-kg-dev/index.html"
+
+        url_pattern = "https://data.monarchinitiative.org/monarch-kg-dev/{version}/monarch-kg.tar.gz"
+
+        anchors = BeautifulSoup(get_cached_page(url), "lxml").find_all("a")
+
+        for anchor in anchors:
+            # The text in the anchors that we are interested in
+            # is of the form:
+            # 2021-04-02
+            # 2021-04-15
+            # 2022-04-16
+            # 2022-04-25
+            # 2022-04-27
+            # 2023-05-03
+            # 2023-05-14
+            # 2023-05-21
+            # 2023-05-25
+            version = anchor.text
+            if len(version) != 10 or version[4] != "-" or version[7] != "-":
+                continue
+
+            url = url_pattern.format(version=version)
+
             self._data["Monarch"][version] = {
-                "urls": [
-                    base_url + path
-                ],
+                "urls": [url],
                 "arguments": {
                     "edge_path": "monarch-kg/monarch-kg_edges.tsv",
                     "node_path": "monarch-kg/monarch-kg_nodes.tsv",
-                    **general_kwargs
-                }
+                    **general_kwargs,
+                },
             }
 
     def build_stored_graph_name(self, partial_graph_name: str) -> str:
@@ -60,11 +84,7 @@ class MonarchInitiativeGraphRepository(GraphRepository):
         """Return formatted repository name."""
         return "MonarchInitiative"
 
-    def get_graph_arguments(
-        self,
-        graph_name: str,
-        version: str
-    ) -> List[str]:
+    def get_graph_arguments(self, graph_name: str, version: str) -> List[str]:
         """Return arguments for the given graph and version.
 
         Parameters
@@ -97,11 +117,7 @@ class MonarchInitiativeGraphRepository(GraphRepository):
         """
         return list(self._data[graph_name].keys())
 
-    def get_graph_urls(
-        self,
-        graph_name: str,
-        version: str
-    ) -> List[str]:
+    def get_graph_urls(self, graph_name: str, version: str) -> List[str]:
         """Return urls for the given graph and version.
 
         Parameters
@@ -136,7 +152,7 @@ class MonarchInitiativeGraphRepository(GraphRepository):
                 "{}/models/MonarchInitiative.bib".format(
                     os.path.dirname(os.path.abspath(__file__))
                 ),
-                "r"
+                "r",
             ).read()
         ]
 
