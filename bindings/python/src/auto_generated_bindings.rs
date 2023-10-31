@@ -10445,38 +10445,44 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self, src, dst, number_of_hops)")]
+    #[pyo3(text_signature = "($self, src, dst, include_selfloops, number_of_hops)")]
+    /// Get the exact edge sketching from a given edge.
+    ///
+    /// Parameters
+    /// ----------
     ///
     pub fn get_exact_edge_sketching_from_edge_node_ids(
         &self,
         src: NodeT,
         dst: NodeT,
+        include_selfloops: Option<bool>,
         number_of_hops: Option<NodeT>,
     ) -> PyResult<(
-        Py<PyArray2<usize>>,
-        Py<PyArray1<usize>>,
-        Py<PyArray1<usize>>,
+        Py<PyArray2<NodeT>>,
+        Py<PyArray1<NodeT>>,
+        Py<PyArray1<NodeT>>,
     )> {
         Ok({
             let (subresult_0, subresult_1, subresult_2) =
                 pe!(self.inner.get_exact_edge_sketching_from_edge_node_ids(
                     src.clone(),
                     dst.clone(),
+                    include_selfloops,
                     number_of_hops
                 ))?
                 .into();
             (
                 {
                     let gil = pyo3::Python::acquire_gil();
-                    to_ndarray_2d!(gil, subresult_0, usize)
+                    to_ndarray_2d!(gil, subresult_0, NodeT)
                 },
                 {
                     let gil = pyo3::Python::acquire_gil();
-                    to_ndarray_1d!(gil, subresult_1, usize)
+                    to_ndarray_1d!(gil, subresult_1, NodeT)
                 },
                 {
                     let gil = pyo3::Python::acquire_gil();
-                    to_ndarray_1d!(gil, subresult_2, usize)
+                    to_ndarray_1d!(gil, subresult_2, NodeT)
                 },
             )
         })

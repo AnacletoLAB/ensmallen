@@ -216,12 +216,14 @@ impl<PRECISION: Precision + WordType<BITS> + DeserializeOwned, const BITS: usize
         counters
             .par_iter_mut()
             .enumerate()
-            .for_each(|(node_id, counters)| {
+            .for_each(|(node_id, counters): (usize, &mut HyperLogLogArray::<PRECISION, BITS, HOPS>)| {
                 // If the self-loops are requested, we add the node id itself to the counter.
                 // It may happen that the node id ALSO has actual self-loop, but as the counter
                 // counts the unique appereaances, it will not be a problem.
                 if self.include_selfloops {
-                    counters[0].insert(node_id);
+                    // The conversion to NodeT is essential, as the hash of the node id
+                    // as usize and as NodeT is different.
+                    counters[0].insert(node_id as NodeT);
                 }
                 // If the node neighbours are requested, we add the node neighbour node ids.
                 if self.include_node_ids {
@@ -291,7 +293,7 @@ impl<PRECISION: Precision + WordType<BITS> + DeserializeOwned, const BITS: usize
             (*shared_counters.get())
                 .par_iter_mut()
                 .enumerate()
-                .for_each(|(node_id, counters)| {
+                .for_each(|(node_id, counters): (usize, &mut HyperLogLogArray::<PRECISION, BITS, HOPS>)| {
                     // Iterate over all neighbors of the current node
                     counters[k] = graph
                         .iter_unchecked_neighbour_node_ids_from_source_node_id(node_id as NodeT)

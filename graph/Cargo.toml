@@ -56,7 +56,7 @@ express_measures = {path = "./express_measures"}
 roaring = { git = "https://github.com/zommiommy/roaring-rs", branch = "master" }
 vec_rand = { git = "https://github.com/zommiommy/vec_rand", branch = "master" }
 visited-rs = { git = "https://github.com/LucaCappelletti94/visited-rs", branch = "main" }
-hyperloglog-rs = {version="0.1.41", features=["std"]}
+hyperloglog-rs = {version="0.1.44", features=["std"]}
 elias_fano_rust = "0.1.1"
 tags = {path="./tags/"}
 atoi_radix10 = { git = "https://github.com/gilescope/atoi_radix10"}

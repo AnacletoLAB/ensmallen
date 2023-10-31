@@ -5,9 +5,9 @@ use std::collections::HashSet;
 
 // Method to allocate an array of HashSets using maybe uninitialized memory,
 // so to circumvent the fact that HashSet does not implement Copy.
-fn allocate_array_of_hashsets<const N: usize>() -> [HashSet<usize>; N] {
+fn allocate_array_of_hashsets<const N: usize>() -> [HashSet<NodeT>; N] {
     unsafe {
-        let mut array: [HashSet<usize>; N] = MaybeUninit::uninit().assume_init();
+        let mut array: [HashSet<NodeT>; N] = MaybeUninit::uninit().assume_init();
         for i in 0..N {
             // We replace the previosly initialized value with an hashset
             // and we forget the previous value.
@@ -23,7 +23,7 @@ impl Graph {
     /// # Arguments
     /// * `src` - The source node of the edge.
     /// * `dst` - The destination node of the edge.
-    /// * `number_of_hops` - The number of hops to consider. By default, 2.
+    /// * `include_selfloops` - Whether to include selfloops in the sketching.
     ///
     /// # Raises
     /// * If the source node does not exist.
@@ -86,7 +86,8 @@ impl Graph {
         &self,
         src: NodeT,
         dst: NodeT,
-    ) -> ([[usize; N]; N], [usize; N], [usize; N]) {
+        include_selfloops: bool,
+    ) -> ([[NodeT; N]; N], [NodeT; N], [NodeT; N]) {
         let mut src_neighbour_hypersphere = allocate_array_of_hashsets::<N>();
         let mut dst_neighbour_hypersphere = allocate_array_of_hashsets::<N>();
 
@@ -95,12 +96,14 @@ impl Graph {
             (dst, &mut dst_neighbour_hypersphere[0]),
         ] {
             // We insert the nodes themselves in the hypersphere.
-            hypersphere.insert(node as usize);
+            if include_selfloops {
+                hypersphere.insert(node as NodeT);
+            }
             // First, we populate the hypersphere of neighbours.
             for neighbour in
                 unsafe { self.iter_unchecked_neighbour_node_ids_from_source_node_id(node) }
             {
-                hypersphere.insert(neighbour as usize);
+                hypersphere.insert(neighbour as NodeT);
             }
         }
 
@@ -110,28 +113,31 @@ impl Graph {
                 src_neighbour_hypersphere.as_mut().split_at_mut(i),
                 dst_neighbour_hypersphere.as_mut().split_at_mut(i),
             ] {
-                for node in &previous_sphere[0] {
+                // We initialize the current hypersphere as a copy of the previous one.
+                hypersphere[0] = previous_sphere[i - 1].clone();
+                let previous_previous_sphere: Option<&HashSet<NodeT>> = if i > 1 {
+                    Some(&previous_sphere[i - 2])
+                } else {
+                    None
+                };
+                // We want to iterate on the elements of the previous hypersphere.
+                for node in &previous_sphere[i - 1] {
+                    // We want to skip the nodes that were in the previous previous hypersphere,
+                    // as the neighbours of the nodes contained therein were already inserted in
+                    // the previous hypersphere.
+                    if let Some(previous_previous_sphere) = previous_previous_sphere {
+                        if previous_previous_sphere.contains(node) {
+                            continue;
+                        }
+                    }
                     for neighbour in unsafe {
                         self.iter_unchecked_neighbour_node_ids_from_source_node_id(*node as u32)
                     } {
-                        hypersphere[0].insert(neighbour as usize);
+                        // And we insert the neighbours in the current hypersphere.
+                        hypersphere[0].insert(neighbour as NodeT);
                     }
                 }
             }
-        }
-
-        // At this point, we need to merge the hypersphere of neighbours, so that
-        // the second hop hypersphere contains the first hop hypersphere, the third
-        // hop hypersphere contains the second and first hop hypersphere, and so on.
-        for i in 1..N {
-            src_neighbour_hypersphere[i as usize] = src_neighbour_hypersphere[i as usize]
-                .union(&src_neighbour_hypersphere[(i - 1) as usize])
-                .cloned()
-                .collect();
-            dst_neighbour_hypersphere[i as usize] = dst_neighbour_hypersphere[i as usize]
-                .union(&dst_neighbour_hypersphere[(i - 1) as usize])
-                .cloned()
-                .collect();
         }
 
         // Now, we can compute the overlap matrix.
@@ -141,20 +147,35 @@ impl Graph {
         )
     }
 
+    /// Get the exact edge sketching from a given edge.
+    ///
+    /// # Arguments
+    /// * `src` - The source node of the edge.
+    /// * `dst` - The destination node of the edge.
+    /// * `include_selfloops` - Whether to include selfloops in the sketching. By default, it is true.
+    /// * `number_of_hops` - The number of hops to consider.
+    ///
     pub fn get_exact_edge_sketching_from_edge_node_ids(
         &self,
         src: NodeT,
         dst: NodeT,
+        include_selfloops: Option<bool>,
         number_of_hops: Option<NodeT>,
-    ) -> Result<(Vec<Vec<usize>>, Vec<usize>, Vec<usize>)> {
+    ) -> Result<(Vec<Vec<NodeT>>, Vec<NodeT>, Vec<NodeT>)> {
         self.validate_node_id(src)?;
         self.validate_node_id(dst)?;
+
+        let include_selfloops = include_selfloops.unwrap_or(true);
 
         let number_of_hops = number_of_hops.unwrap_or(2);
         match number_of_hops {
             1 => {
-                let (overlap_matrix, left_subtraction_vector, right_subtraction_vector) =
-                    self.get_exact_edge_sketching_from_edge_node_ids_with_constant::<1>(src, dst);
+                let (overlap_matrix, left_subtraction_vector, right_subtraction_vector) = self
+                    .get_exact_edge_sketching_from_edge_node_ids_with_constant::<1>(
+                        src,
+                        dst,
+                        include_selfloops,
+                    );
                 Ok((
                     vec![overlap_matrix[0].to_vec()],
                     vec![left_subtraction_vector[0]],
@@ -162,8 +183,12 @@ impl Graph {
                 ))
             }
             2 => {
-                let (overlap_matrix, left_subtraction_vector, right_subtraction_vector) =
-                    self.get_exact_edge_sketching_from_edge_node_ids_with_constant::<2>(src, dst);
+                let (overlap_matrix, left_subtraction_vector, right_subtraction_vector) = self
+                    .get_exact_edge_sketching_from_edge_node_ids_with_constant::<2>(
+                        src,
+                        dst,
+                        include_selfloops,
+                    );
                 Ok((
                     overlap_matrix.iter().map(|row| row.to_vec()).collect(),
                     left_subtraction_vector.to_vec(),
@@ -171,8 +196,12 @@ impl Graph {
                 ))
             }
             3 => {
-                let (overlap_matrix, left_subtraction_vector, right_subtraction_vector) =
-                    self.get_exact_edge_sketching_from_edge_node_ids_with_constant::<3>(src, dst);
+                let (overlap_matrix, left_subtraction_vector, right_subtraction_vector) = self
+                    .get_exact_edge_sketching_from_edge_node_ids_with_constant::<3>(
+                        src,
+                        dst,
+                        include_selfloops,
+                    );
                 Ok((
                     overlap_matrix.iter().map(|row| row.to_vec()).collect(),
                     left_subtraction_vector.to_vec(),
@@ -180,8 +209,12 @@ impl Graph {
                 ))
             }
             4 => {
-                let (overlap_matrix, left_subtraction_vector, right_subtraction_vector) =
-                    self.get_exact_edge_sketching_from_edge_node_ids_with_constant::<4>(src, dst);
+                let (overlap_matrix, left_subtraction_vector, right_subtraction_vector) = self
+                    .get_exact_edge_sketching_from_edge_node_ids_with_constant::<4>(
+                        src,
+                        dst,
+                        include_selfloops,
+                    );
                 Ok((
                     overlap_matrix.iter().map(|row| row.to_vec()).collect(),
                     left_subtraction_vector.to_vec(),
