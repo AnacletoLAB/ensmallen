@@ -10,7 +10,6 @@ mod builder;
 pub use builder::*;
 
 mod iter;
-pub use iter::*;
 
 mod edges_iter_upper_triangular;
 pub use edges_iter_upper_triangular::*;

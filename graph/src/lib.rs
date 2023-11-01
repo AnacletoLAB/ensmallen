@@ -7,7 +7,6 @@
 //! * `singleton_with_selfloop`: A node which has only selfloops
 //! * `connected_node`: a node which is nor a `singleton` nor a `singleton_with_selfloops`.
 
-#![feature(return_position_impl_trait_in_trait)]
 #![warn(unused_macros)]
 #![feature(iter_advance_by)]
 #![feature(impl_trait_in_assoc_type)]
@@ -57,21 +56,16 @@ pub use self::type_file_writer::TypeFileWriter;
 mod from_csv;
 
 mod parameters_validators;
-pub use self::parameters_validators::*;
 mod getters_boolean;
-pub use self::getters_boolean::*;
 
 mod dijkstra;
 pub use self::dijkstra::*;
 
 mod coo;
-pub use self::coo::*;
 
 mod edge_prediction_analysis;
-pub use self::edge_prediction_analysis::*;
 
 mod heterogeneous_graphlets;
-pub use self::heterogeneous_graphlets::*;
 
 mod constructors;
 pub use constructors::*;
@@ -119,30 +113,17 @@ pub mod walks_parameters;
 pub use edge_list_utils::*;
 
 mod report;
-pub use self::report::*;
 
 mod queries;
 mod queries_boolean;
 mod queries_walk;
-pub use self::queries::*;
-pub use self::queries_boolean::*;
-pub use self::triad_census::*;
 pub use self::url_utilities::*;
 
 pub mod test_utilities;
 
-pub use self::edge_metrics::*;
-pub use self::getters::*;
 pub use self::graph::Graph;
-pub use self::holdouts::*;
-pub use self::operators::*;
-pub use self::setters::*;
-pub use self::tarjan::*;
-pub use self::trees::*;
-pub use self::walks::*;
 pub use self::walks_parameters::*;
 pub use edge_isomorphism::*;
-pub use isomorphism::*;
 pub use preprocessing::*;
 pub use tfidf::*;
 
@@ -155,21 +136,15 @@ mod cache;
 use cache::*;
 
 mod getters_cached;
-pub use getters_cached::*;
-
 mod visualizations;
-pub use visualizations::*;
 
 mod memory;
 pub use memory::*;
 
 mod louvain;
-pub use louvain::*;
 mod nodes_sampling;
-pub use nodes_sampling::*;
 
 mod subgraphs;
-pub use subgraphs::*;
 
 mod chains;
 pub use chains::*;
@@ -193,10 +168,8 @@ mod cliques;
 pub use cliques::*;
 
 mod graphs_from_edge_lists;
-pub use graphs_from_edge_lists::*;
 
 mod builder;
 pub use builder::*;
 
 mod exact_edge_sketching;
-pub use exact_edge_sketching::*;

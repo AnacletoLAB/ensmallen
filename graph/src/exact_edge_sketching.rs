@@ -2,6 +2,7 @@ use super::*;
 use core::mem::MaybeUninit;
 use hyperloglog_rs::prelude::*;
 use std::collections::HashSet;
+use rayon::prelude::*;
 
 // Method to allocate an array of HashSets using maybe uninitialized memory,
 // so to circumvent the fact that HashSet does not implement Copy.
@@ -145,6 +146,80 @@ impl Graph {
             &src_neighbour_hypersphere,
             &dst_neighbour_hypersphere,
         )
+    }
+
+    /// Get the exact edge sketching from a given edge.
+    ///
+    /// # Arguments
+    /// * `subgraph` - The subgraph to consider.
+    /// * `include_selfloops` - Whether to include selfloops in the sketching. By default, it is true.
+    /// * `number_of_hops` - The number of hops to consider.
+    ///
+    pub fn get_exact_edge_sketching_from_graph(
+        &self,
+        subgraph: &Self,
+        include_selfloops: Option<bool>,
+        number_of_hops: Option<NodeT>,
+    ) -> Result<(Vec<Vec<Vec<NodeT>>>, Vec<Vec<NodeT>>, Vec<Vec<NodeT>>)> {
+        // The subgraph provided must be compatible with the current graph.
+        self.must_share_node_vocabulary(subgraph)?;
+        let number_of_edges: usize = self.get_number_of_directed_edges() as usize;
+        let number_of_hops = number_of_hops.unwrap_or(2);
+        let mut overlap_matrices: Vec<Vec<Vec<NodeT>>> =
+            vec![vec![vec![0; number_of_hops as usize]; number_of_hops as usize]; number_of_edges];
+        let mut left_subtraction_vectors: Vec<Vec<NodeT>> =
+            vec![vec![0; number_of_hops as usize]; number_of_edges];
+        let mut right_subtraction_vectors: Vec<Vec<NodeT>> =
+            vec![vec![0; number_of_hops as usize]; number_of_edges];
+
+        // We start to iterate in parallel using Rayon over the edges of the subgraph, zipped with the overlap matrices and the subtraction vectors.
+        // For each edge, we compute the exact edge sketching and we store it in the corresponding position of the overlap matrices and the subtraction vectors.
+
+        subgraph
+            .par_iter_directed_edge_node_ids()
+            .zip(overlap_matrices.par_iter_mut())
+            .zip(left_subtraction_vectors.par_iter_mut())
+            .zip(right_subtraction_vectors.par_iter_mut())
+            .try_for_each(
+                |((((_, src, dst), target_overlap_matrix), target_left_subtraction_vector),
+                 target_right_subtraction_vector)| {
+                    let (overlap_matrix, left_subtraction_vector, right_subtraction_vector) = self
+                        .get_exact_edge_sketching_from_edge_node_ids(
+                            src,
+                            dst,
+                            include_selfloops,
+                            Some(number_of_hops),
+                        )?;
+                    
+                    target_overlap_matrix.iter_mut().zip(overlap_matrix.iter()).for_each(|(target_row, row)| {
+                        target_row.iter_mut().zip(row.iter()).for_each(|(target_value, value)| {
+                            *target_value = *value;
+                        })
+                    });
+
+                    target_left_subtraction_vector
+                        .iter_mut()
+                        .zip(left_subtraction_vector.iter())
+                        .for_each(|(target_value, value)| {
+                            *target_value = *value;
+                        });
+
+                    target_right_subtraction_vector
+                        .iter_mut()
+                        .zip(right_subtraction_vector.iter())
+                        .for_each(|(target_value, value)| {
+                            *target_value = *value;
+                        });
+                    
+                    Ok::<(), String>(())
+                },
+            )?;
+
+        Ok((
+            overlap_matrices,
+            left_subtraction_vectors,
+            right_subtraction_vectors,
+        ))
     }
 
     /// Get the exact edge sketching from a given edge.
