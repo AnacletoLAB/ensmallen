@@ -1,8 +1,8 @@
 use super::*;
 use core::mem::MaybeUninit;
 use hyperloglog_rs::prelude::*;
-use std::collections::HashSet;
 use rayon::prelude::*;
+use std::collections::HashSet;
 
 // Method to allocate an array of HashSets using maybe uninitialized memory,
 // so to circumvent the fact that HashSet does not implement Copy.
@@ -181,8 +181,10 @@ impl Graph {
             .zip(left_subtraction_vectors.par_iter_mut())
             .zip(right_subtraction_vectors.par_iter_mut())
             .try_for_each(
-                |((((_, src, dst), target_overlap_matrix), target_left_subtraction_vector),
-                 target_right_subtraction_vector)| {
+                |(
+                    (((_, src, dst), target_overlap_matrix), target_left_subtraction_vector),
+                    target_right_subtraction_vector,
+                )| {
                     let (overlap_matrix, left_subtraction_vector, right_subtraction_vector) = self
                         .get_exact_edge_sketching_from_edge_node_ids(
                             src,
@@ -190,12 +192,17 @@ impl Graph {
                             include_selfloops,
                             Some(number_of_hops),
                         )?;
-                    
-                    target_overlap_matrix.iter_mut().zip(overlap_matrix.iter()).for_each(|(target_row, row)| {
-                        target_row.iter_mut().zip(row.iter()).for_each(|(target_value, value)| {
-                            *target_value = *value;
-                        })
-                    });
+
+                    target_overlap_matrix
+                        .iter_mut()
+                        .zip(overlap_matrix.iter())
+                        .for_each(|(target_row, row)| {
+                            target_row.iter_mut().zip(row.iter()).for_each(
+                                |(target_value, value)| {
+                                    *target_value = *value;
+                                },
+                            )
+                        });
 
                     target_left_subtraction_vector
                         .iter_mut()
@@ -210,7 +217,7 @@ impl Graph {
                         .for_each(|(target_value, value)| {
                             *target_value = *value;
                         });
-                    
+
                     Ok::<(), String>(())
                 },
             )?;
@@ -219,6 +226,25 @@ impl Graph {
             overlap_matrices,
             left_subtraction_vectors,
             right_subtraction_vectors,
+        ))
+    }
+
+    fn get_exact_edge_sketching_from_edge_node_ids_to_vec<const N: usize>(
+        &self,
+        src: NodeT,
+        dst: NodeT,
+        include_selfloops: bool,
+    ) -> Result<(Vec<Vec<NodeT>>, Vec<NodeT>, Vec<NodeT>)> {
+        let (overlap_matrix, left_subtraction_vector, right_subtraction_vector) = self
+            .get_exact_edge_sketching_from_edge_node_ids_with_constant::<N>(
+                src,
+                dst,
+                include_selfloops,
+            );
+        Ok((
+            overlap_matrix.iter().map(|row| row.to_vec()).collect(),
+            left_subtraction_vector.to_vec(),
+            right_subtraction_vector.to_vec(),
         ))
     }
 
@@ -244,61 +270,59 @@ impl Graph {
 
         let number_of_hops = number_of_hops.unwrap_or(2);
         match number_of_hops {
-            1 => {
-                let (overlap_matrix, left_subtraction_vector, right_subtraction_vector) = self
-                    .get_exact_edge_sketching_from_edge_node_ids_with_constant::<1>(
-                        src,
-                        dst,
-                        include_selfloops,
-                    );
-                Ok((
-                    vec![overlap_matrix[0].to_vec()],
-                    vec![left_subtraction_vector[0]],
-                    vec![right_subtraction_vector[0]],
-                ))
-            }
-            2 => {
-                let (overlap_matrix, left_subtraction_vector, right_subtraction_vector) = self
-                    .get_exact_edge_sketching_from_edge_node_ids_with_constant::<2>(
-                        src,
-                        dst,
-                        include_selfloops,
-                    );
-                Ok((
-                    overlap_matrix.iter().map(|row| row.to_vec()).collect(),
-                    left_subtraction_vector.to_vec(),
-                    right_subtraction_vector.to_vec(),
-                ))
-            }
-            3 => {
-                let (overlap_matrix, left_subtraction_vector, right_subtraction_vector) = self
-                    .get_exact_edge_sketching_from_edge_node_ids_with_constant::<3>(
-                        src,
-                        dst,
-                        include_selfloops,
-                    );
-                Ok((
-                    overlap_matrix.iter().map(|row| row.to_vec()).collect(),
-                    left_subtraction_vector.to_vec(),
-                    right_subtraction_vector.to_vec(),
-                ))
-            }
-            4 => {
-                let (overlap_matrix, left_subtraction_vector, right_subtraction_vector) = self
-                    .get_exact_edge_sketching_from_edge_node_ids_with_constant::<4>(
-                        src,
-                        dst,
-                        include_selfloops,
-                    );
-                Ok((
-                    overlap_matrix.iter().map(|row| row.to_vec()).collect(),
-                    left_subtraction_vector.to_vec(),
-                    right_subtraction_vector.to_vec(),
-                ))
-            }
+            1 => self.get_exact_edge_sketching_from_edge_node_ids_to_vec::<1>(
+                src,
+                dst,
+                include_selfloops,
+            ),
+            2 => self.get_exact_edge_sketching_from_edge_node_ids_to_vec::<2>(
+                src,
+                dst,
+                include_selfloops,
+            ),
+            3 => self.get_exact_edge_sketching_from_edge_node_ids_to_vec::<3>(
+                src,
+                dst,
+                include_selfloops,
+            ),
+            4 => self.get_exact_edge_sketching_from_edge_node_ids_to_vec::<4>(
+                src,
+                dst,
+                include_selfloops,
+            ),
+            5 => self.get_exact_edge_sketching_from_edge_node_ids_to_vec::<5>(
+                src,
+                dst,
+                include_selfloops,
+            ),
+            6 => self.get_exact_edge_sketching_from_edge_node_ids_to_vec::<6>(
+                src,
+                dst,
+                include_selfloops,
+            ),
+            7 => self.get_exact_edge_sketching_from_edge_node_ids_to_vec::<7>(
+                src,
+                dst,
+                include_selfloops,
+            ),
+            8 => self.get_exact_edge_sketching_from_edge_node_ids_to_vec::<8>(
+                src,
+                dst,
+                include_selfloops,
+            ),
+            9 => self.get_exact_edge_sketching_from_edge_node_ids_to_vec::<9>(
+                src,
+                dst,
+                include_selfloops,
+            ),
+            10 => self.get_exact_edge_sketching_from_edge_node_ids_to_vec::<10>(
+                src,
+                dst,
+                include_selfloops,
+            ),
             _ => {
                 return Err(format!(
-                    concat!("The number of hops must be less than 5, ", "but it is {}."),
+                    concat!("The number of hops can at most be 10, ", "but it is {}."),
                     number_of_hops
                 ))
             }
