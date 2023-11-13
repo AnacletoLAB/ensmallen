@@ -142,6 +142,9 @@
 	<a href="https://kg-hub.berkeleybop.io/kg-idg/20231001">20231001</a>
       </li>
       <li>
+	<a href="https://kg-hub.berkeleybop.io/kg-idg/20231101">20231101</a>
+      </li>
+      <li>
 	<a href="https://kg-hub.berkeleybop.io/kg-idg/current">current</a>
       </li>
     </ul>

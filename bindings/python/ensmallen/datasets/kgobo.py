@@ -251,6 +251,7 @@ def PSO(
     version = "2020-05-19"
         Version to retrieve	
 		The available versions are:
+			- 2023-10-19
 			- 2020-05-19
     """
     return RetrievedGraph(
@@ -906,7 +907,7 @@ def XCO(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="4.140", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="4.141", **kwargs
 ) -> Graph:
     """Return XCO graph	
 
@@ -927,13 +928,14 @@ def XCO(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "4.140"
+    version = "4.141"
         Version to retrieve	
 		The available versions are:
-			- 4.141
+			- 4.142
 			- 4.46
 			- 4.139
 			- 4.140
+			- 4.141
     """
     return RetrievedGraph(
         "XCO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
@@ -1605,7 +1607,7 @@ def CMO(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2.194", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="2.195", **kwargs
 ) -> Graph:
     """Return CMO graph	
 
@@ -1626,10 +1628,10 @@ def CMO(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2.194"
+    version = "2.195"
         Version to retrieve	
 		The available versions are:
-			- 2.195
+			- 2.196
 			- 2019-02-19
 			- 2.184
 			- 2.185
@@ -1642,6 +1644,7 @@ def CMO(
 			- 2.192
 			- 2.193
 			- 2.194
+			- 2.195
     """
     return RetrievedGraph(
         "CMO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
@@ -2155,7 +2158,7 @@ def CHEBI(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="225", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="226", **kwargs
 ) -> Graph:
     """Return CHEBI graph	
 
@@ -2176,10 +2179,10 @@ def CHEBI(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "225"
+    version = "226"
         Version to retrieve	
 		The available versions are:
-			- 226
+			- 227
 			- 203
 			- 204
 			- 205
@@ -2199,6 +2202,7 @@ def CHEBI(
 			- 223
 			- 224
 			- 225
+			- 226
     """
     return RetrievedGraph(
         "CHEBI", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
@@ -2804,7 +2808,7 @@ def RS(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="6.207", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="6.208", **kwargs
 ) -> Graph:
     """Return RS graph	
 
@@ -2825,16 +2829,17 @@ def RS(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "6.207"
+    version = "6.208"
         Version to retrieve	
 		The available versions are:
-			- 6.208
+			- 6.209
 			- 6.107
 			- 6.203
 			- 6.204
 			- 6.205
 			- 6.206
 			- 6.207
+			- 6.208
     """
     return RetrievedGraph(
         "RS", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
@@ -2915,7 +2920,7 @@ def OMO(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2023-08-23", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="2023-10-12", **kwargs
 ) -> Graph:
     """Return OMO graph	
 
@@ -2936,10 +2941,10 @@ def OMO(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2023-08-23"
+    version = "2023-10-12"
         Version to retrieve	
 		The available versions are:
-			- 2023-10-12
+			- 2023-11-02
 			- 2020-06-08
 			- 2022-04-27
 			- 2023-02-19
@@ -2947,6 +2952,7 @@ def OMO(
 			- 2023-06-09
 			- 2023-07-28
 			- 2023-08-23
+			- 2023-10-12
     """
     return RetrievedGraph(
         "OMO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
@@ -4589,7 +4595,7 @@ def MS(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="4.1.130", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="4.1.131", **kwargs
 ) -> Graph:
     """Return MS graph	
 
@@ -4610,10 +4616,10 @@ def MS(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "4.1.130"
+    version = "4.1.131"
         Version to retrieve	
 		The available versions are:
-			- 4.1.131
+			- 4.1.134
 			- 4.1.35
 			- 4.1.62
 			- 4.1.64
@@ -4647,6 +4653,7 @@ def MS(
 			- 4.1.127
 			- 4.1.129
 			- 4.1.130
+			- 4.1.131
     """
     return RetrievedGraph(
         "MS", version, "kgobo", directed, preprocess, bioregistry, load_nodes,
@@ -6069,7 +6076,7 @@ def MMO(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
     sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="2.116", **kwargs
+    cache_sys_var="GRAPH_CACHE_DIR", version="2.117", **kwargs
 ) -> Graph:
     """Return MMO graph	
 
@@ -6090,15 +6097,16 @@ def MMO(
         Path to store graphs
         Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
     cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "2.116"
+    version = "2.117"
         Version to retrieve	
 		The available versions are:
-			- 2.117
+			- 2.118
 			- 2.39
 			- 2.113
 			- 2.114
 			- 2.115
 			- 2.116
+			- 2.117
     """
     return RetrievedGraph(
         "MMO", version, "kgobo", directed, preprocess, bioregistry, load_nodes,

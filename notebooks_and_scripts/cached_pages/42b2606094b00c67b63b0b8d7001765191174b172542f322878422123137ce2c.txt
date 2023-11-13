@@ -240,10 +240,10 @@
 	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2023-09-28/index.html">2023-09-28</a>
       </li>
       <li>
-	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2023-10-13-failed/index.html">2023-10-13-failed</a>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2023-10-17/index.html">2023-10-17</a>
       </li>
       <li>
-	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2023-10-17/index.html">2023-10-17</a>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2023-10-28/index.html">2023-10-28</a>
       </li>
       <li>
 	<a href="https://data.monarchinitiative.org/monarch-kg-dev/kgx/index.html">kgx</a>

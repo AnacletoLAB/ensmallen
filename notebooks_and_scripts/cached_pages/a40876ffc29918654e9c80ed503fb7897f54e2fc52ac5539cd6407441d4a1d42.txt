@@ -94,6 +94,15 @@
 	<a href="https://kg-hub.berkeleybop.io/kg-microbe/20231024/index.html">20231024</a>
       </li>
       <li>
+	<a href="https://kg-hub.berkeleybop.io/kg-microbe/20231027/index.html">20231027</a>
+      </li>
+      <li>
+	<a href="https://kg-hub.berkeleybop.io/kg-microbe/20231103/index.html">20231103</a>
+      </li>
+      <li>
+	<a href="https://kg-hub.berkeleybop.io/kg-microbe/20231104/index.html">20231104</a>
+      </li>
+      <li>
 	<a href="https://kg-hub.berkeleybop.io/kg-microbe/current/index.html">current</a>
       </li>
     </ul>
