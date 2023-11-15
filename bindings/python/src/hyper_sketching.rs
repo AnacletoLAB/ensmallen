@@ -46,6 +46,7 @@ fn matrix_to_numpy_array2d<const N: usize>(matrix: [[f32; N]; N]) -> Result<Py<P
 enum InnerModel {
     /// HyperSketching model.
     /// HS{precision}_{bits}_{hops}(HS<Precision{precision}, {bits}, {hops}>), {python_macro}
+    HS4_4_1(HS<Precision4, 4, 1>), // {python_generated}
     HS4_4_2(HS<Precision4, 4, 2>), // {python_generated}
     HS4_4_3(HS<Precision4, 4, 3>), // {python_generated}
     HS4_4_4(HS<Precision4, 4, 4>), // {python_generated}
@@ -55,6 +56,7 @@ enum InnerModel {
     HS4_4_8(HS<Precision4, 4, 8>), // {python_generated}
     HS4_4_9(HS<Precision4, 4, 9>), // {python_generated}
     HS4_4_10(HS<Precision4, 4, 10>), // {python_generated}
+    HS4_5_1(HS<Precision4, 5, 1>), // {python_generated}
     HS4_5_2(HS<Precision4, 5, 2>), // {python_generated}
     HS4_5_3(HS<Precision4, 5, 3>), // {python_generated}
     HS4_5_4(HS<Precision4, 5, 4>), // {python_generated}
@@ -64,6 +66,7 @@ enum InnerModel {
     HS4_5_8(HS<Precision4, 5, 8>), // {python_generated}
     HS4_5_9(HS<Precision4, 5, 9>), // {python_generated}
     HS4_5_10(HS<Precision4, 5, 10>), // {python_generated}
+    HS4_6_1(HS<Precision4, 6, 1>), // {python_generated}
     HS4_6_2(HS<Precision4, 6, 2>), // {python_generated}
     HS4_6_3(HS<Precision4, 6, 3>), // {python_generated}
     HS4_6_4(HS<Precision4, 6, 4>), // {python_generated}
@@ -73,6 +76,7 @@ enum InnerModel {
     HS4_6_8(HS<Precision4, 6, 8>), // {python_generated}
     HS4_6_9(HS<Precision4, 6, 9>), // {python_generated}
     HS4_6_10(HS<Precision4, 6, 10>), // {python_generated}
+    HS5_4_1(HS<Precision5, 4, 1>), // {python_generated}
     HS5_4_2(HS<Precision5, 4, 2>), // {python_generated}
     HS5_4_3(HS<Precision5, 4, 3>), // {python_generated}
     HS5_4_4(HS<Precision5, 4, 4>), // {python_generated}
@@ -82,6 +86,7 @@ enum InnerModel {
     HS5_4_8(HS<Precision5, 4, 8>), // {python_generated}
     HS5_4_9(HS<Precision5, 4, 9>), // {python_generated}
     HS5_4_10(HS<Precision5, 4, 10>), // {python_generated}
+    HS5_5_1(HS<Precision5, 5, 1>), // {python_generated}
     HS5_5_2(HS<Precision5, 5, 2>), // {python_generated}
     HS5_5_3(HS<Precision5, 5, 3>), // {python_generated}
     HS5_5_4(HS<Precision5, 5, 4>), // {python_generated}
@@ -91,6 +96,7 @@ enum InnerModel {
     HS5_5_8(HS<Precision5, 5, 8>), // {python_generated}
     HS5_5_9(HS<Precision5, 5, 9>), // {python_generated}
     HS5_5_10(HS<Precision5, 5, 10>), // {python_generated}
+    HS5_6_1(HS<Precision5, 6, 1>), // {python_generated}
     HS5_6_2(HS<Precision5, 6, 2>), // {python_generated}
     HS5_6_3(HS<Precision5, 6, 3>), // {python_generated}
     HS5_6_4(HS<Precision5, 6, 4>), // {python_generated}
@@ -100,6 +106,7 @@ enum InnerModel {
     HS5_6_8(HS<Precision5, 6, 8>), // {python_generated}
     HS5_6_9(HS<Precision5, 6, 9>), // {python_generated}
     HS5_6_10(HS<Precision5, 6, 10>), // {python_generated}
+    HS6_4_1(HS<Precision6, 4, 1>), // {python_generated}
     HS6_4_2(HS<Precision6, 4, 2>), // {python_generated}
     HS6_4_3(HS<Precision6, 4, 3>), // {python_generated}
     HS6_4_4(HS<Precision6, 4, 4>), // {python_generated}
@@ -109,6 +116,7 @@ enum InnerModel {
     HS6_4_8(HS<Precision6, 4, 8>), // {python_generated}
     HS6_4_9(HS<Precision6, 4, 9>), // {python_generated}
     HS6_4_10(HS<Precision6, 4, 10>), // {python_generated}
+    HS6_5_1(HS<Precision6, 5, 1>), // {python_generated}
     HS6_5_2(HS<Precision6, 5, 2>), // {python_generated}
     HS6_5_3(HS<Precision6, 5, 3>), // {python_generated}
     HS6_5_4(HS<Precision6, 5, 4>), // {python_generated}
@@ -118,6 +126,7 @@ enum InnerModel {
     HS6_5_8(HS<Precision6, 5, 8>), // {python_generated}
     HS6_5_9(HS<Precision6, 5, 9>), // {python_generated}
     HS6_5_10(HS<Precision6, 5, 10>), // {python_generated}
+    HS6_6_1(HS<Precision6, 6, 1>), // {python_generated}
     HS6_6_2(HS<Precision6, 6, 2>), // {python_generated}
     HS6_6_3(HS<Precision6, 6, 3>), // {python_generated}
     HS6_6_4(HS<Precision6, 6, 4>), // {python_generated}
@@ -127,6 +136,7 @@ enum InnerModel {
     HS6_6_8(HS<Precision6, 6, 8>), // {python_generated}
     HS6_6_9(HS<Precision6, 6, 9>), // {python_generated}
     HS6_6_10(HS<Precision6, 6, 10>), // {python_generated}
+    HS7_4_1(HS<Precision7, 4, 1>), // {python_generated}
     HS7_4_2(HS<Precision7, 4, 2>), // {python_generated}
     HS7_4_3(HS<Precision7, 4, 3>), // {python_generated}
     HS7_4_4(HS<Precision7, 4, 4>), // {python_generated}
@@ -136,6 +146,7 @@ enum InnerModel {
     HS7_4_8(HS<Precision7, 4, 8>), // {python_generated}
     HS7_4_9(HS<Precision7, 4, 9>), // {python_generated}
     HS7_4_10(HS<Precision7, 4, 10>), // {python_generated}
+    HS7_5_1(HS<Precision7, 5, 1>), // {python_generated}
     HS7_5_2(HS<Precision7, 5, 2>), // {python_generated}
     HS7_5_3(HS<Precision7, 5, 3>), // {python_generated}
     HS7_5_4(HS<Precision7, 5, 4>), // {python_generated}
@@ -145,6 +156,7 @@ enum InnerModel {
     HS7_5_8(HS<Precision7, 5, 8>), // {python_generated}
     HS7_5_9(HS<Precision7, 5, 9>), // {python_generated}
     HS7_5_10(HS<Precision7, 5, 10>), // {python_generated}
+    HS7_6_1(HS<Precision7, 6, 1>), // {python_generated}
     HS7_6_2(HS<Precision7, 6, 2>), // {python_generated}
     HS7_6_3(HS<Precision7, 6, 3>), // {python_generated}
     HS7_6_4(HS<Precision7, 6, 4>), // {python_generated}
@@ -154,6 +166,7 @@ enum InnerModel {
     HS7_6_8(HS<Precision7, 6, 8>), // {python_generated}
     HS7_6_9(HS<Precision7, 6, 9>), // {python_generated}
     HS7_6_10(HS<Precision7, 6, 10>), // {python_generated}
+    HS8_4_1(HS<Precision8, 4, 1>), // {python_generated}
     HS8_4_2(HS<Precision8, 4, 2>), // {python_generated}
     HS8_4_3(HS<Precision8, 4, 3>), // {python_generated}
     HS8_4_4(HS<Precision8, 4, 4>), // {python_generated}
@@ -163,6 +176,7 @@ enum InnerModel {
     HS8_4_8(HS<Precision8, 4, 8>), // {python_generated}
     HS8_4_9(HS<Precision8, 4, 9>), // {python_generated}
     HS8_4_10(HS<Precision8, 4, 10>), // {python_generated}
+    HS8_5_1(HS<Precision8, 5, 1>), // {python_generated}
     HS8_5_2(HS<Precision8, 5, 2>), // {python_generated}
     HS8_5_3(HS<Precision8, 5, 3>), // {python_generated}
     HS8_5_4(HS<Precision8, 5, 4>), // {python_generated}
@@ -172,6 +186,7 @@ enum InnerModel {
     HS8_5_8(HS<Precision8, 5, 8>), // {python_generated}
     HS8_5_9(HS<Precision8, 5, 9>), // {python_generated}
     HS8_5_10(HS<Precision8, 5, 10>), // {python_generated}
+    HS8_6_1(HS<Precision8, 6, 1>), // {python_generated}
     HS8_6_2(HS<Precision8, 6, 2>), // {python_generated}
     HS8_6_3(HS<Precision8, 6, 3>), // {python_generated}
     HS8_6_4(HS<Precision8, 6, 4>), // {python_generated}
@@ -181,6 +196,7 @@ enum InnerModel {
     HS8_6_8(HS<Precision8, 6, 8>), // {python_generated}
     HS8_6_9(HS<Precision8, 6, 9>), // {python_generated}
     HS8_6_10(HS<Precision8, 6, 10>), // {python_generated}
+    HS9_4_1(HS<Precision9, 4, 1>), // {python_generated}
     HS9_4_2(HS<Precision9, 4, 2>), // {python_generated}
     HS9_4_3(HS<Precision9, 4, 3>), // {python_generated}
     HS9_4_4(HS<Precision9, 4, 4>), // {python_generated}
@@ -190,6 +206,7 @@ enum InnerModel {
     HS9_4_8(HS<Precision9, 4, 8>), // {python_generated}
     HS9_4_9(HS<Precision9, 4, 9>), // {python_generated}
     HS9_4_10(HS<Precision9, 4, 10>), // {python_generated}
+    HS9_5_1(HS<Precision9, 5, 1>), // {python_generated}
     HS9_5_2(HS<Precision9, 5, 2>), // {python_generated}
     HS9_5_3(HS<Precision9, 5, 3>), // {python_generated}
     HS9_5_4(HS<Precision9, 5, 4>), // {python_generated}
@@ -199,6 +216,7 @@ enum InnerModel {
     HS9_5_8(HS<Precision9, 5, 8>), // {python_generated}
     HS9_5_9(HS<Precision9, 5, 9>), // {python_generated}
     HS9_5_10(HS<Precision9, 5, 10>), // {python_generated}
+    HS9_6_1(HS<Precision9, 6, 1>), // {python_generated}
     HS9_6_2(HS<Precision9, 6, 2>), // {python_generated}
     HS9_6_3(HS<Precision9, 6, 3>), // {python_generated}
     HS9_6_4(HS<Precision9, 6, 4>), // {python_generated}
@@ -208,6 +226,7 @@ enum InnerModel {
     HS9_6_8(HS<Precision9, 6, 8>), // {python_generated}
     HS9_6_9(HS<Precision9, 6, 9>), // {python_generated}
     HS9_6_10(HS<Precision9, 6, 10>), // {python_generated}
+    HS10_4_1(HS<Precision10, 4, 1>), // {python_generated}
     HS10_4_2(HS<Precision10, 4, 2>), // {python_generated}
     HS10_4_3(HS<Precision10, 4, 3>), // {python_generated}
     HS10_4_4(HS<Precision10, 4, 4>), // {python_generated}
@@ -217,6 +236,7 @@ enum InnerModel {
     HS10_4_8(HS<Precision10, 4, 8>), // {python_generated}
     HS10_4_9(HS<Precision10, 4, 9>), // {python_generated}
     HS10_4_10(HS<Precision10, 4, 10>), // {python_generated}
+    HS10_5_1(HS<Precision10, 5, 1>), // {python_generated}
     HS10_5_2(HS<Precision10, 5, 2>), // {python_generated}
     HS10_5_3(HS<Precision10, 5, 3>), // {python_generated}
     HS10_5_4(HS<Precision10, 5, 4>), // {python_generated}
@@ -226,6 +246,7 @@ enum InnerModel {
     HS10_5_8(HS<Precision10, 5, 8>), // {python_generated}
     HS10_5_9(HS<Precision10, 5, 9>), // {python_generated}
     HS10_5_10(HS<Precision10, 5, 10>), // {python_generated}
+    HS10_6_1(HS<Precision10, 6, 1>), // {python_generated}
     HS10_6_2(HS<Precision10, 6, 2>), // {python_generated}
     HS10_6_3(HS<Precision10, 6, 3>), // {python_generated}
     HS10_6_4(HS<Precision10, 6, 4>), // {python_generated}
@@ -235,6 +256,7 @@ enum InnerModel {
     HS10_6_8(HS<Precision10, 6, 8>), // {python_generated}
     HS10_6_9(HS<Precision10, 6, 9>), // {python_generated}
     HS10_6_10(HS<Precision10, 6, 10>), // {python_generated}
+    HS11_4_1(HS<Precision11, 4, 1>), // {python_generated}
     HS11_4_2(HS<Precision11, 4, 2>), // {python_generated}
     HS11_4_3(HS<Precision11, 4, 3>), // {python_generated}
     HS11_4_4(HS<Precision11, 4, 4>), // {python_generated}
@@ -244,6 +266,7 @@ enum InnerModel {
     HS11_4_8(HS<Precision11, 4, 8>), // {python_generated}
     HS11_4_9(HS<Precision11, 4, 9>), // {python_generated}
     HS11_4_10(HS<Precision11, 4, 10>), // {python_generated}
+    HS11_5_1(HS<Precision11, 5, 1>), // {python_generated}
     HS11_5_2(HS<Precision11, 5, 2>), // {python_generated}
     HS11_5_3(HS<Precision11, 5, 3>), // {python_generated}
     HS11_5_4(HS<Precision11, 5, 4>), // {python_generated}
@@ -253,6 +276,7 @@ enum InnerModel {
     HS11_5_8(HS<Precision11, 5, 8>), // {python_generated}
     HS11_5_9(HS<Precision11, 5, 9>), // {python_generated}
     HS11_5_10(HS<Precision11, 5, 10>), // {python_generated}
+    HS11_6_1(HS<Precision11, 6, 1>), // {python_generated}
     HS11_6_2(HS<Precision11, 6, 2>), // {python_generated}
     HS11_6_3(HS<Precision11, 6, 3>), // {python_generated}
     HS11_6_4(HS<Precision11, 6, 4>), // {python_generated}
@@ -262,6 +286,7 @@ enum InnerModel {
     HS11_6_8(HS<Precision11, 6, 8>), // {python_generated}
     HS11_6_9(HS<Precision11, 6, 9>), // {python_generated}
     HS11_6_10(HS<Precision11, 6, 10>), // {python_generated}
+    HS12_4_1(HS<Precision12, 4, 1>), // {python_generated}
     HS12_4_2(HS<Precision12, 4, 2>), // {python_generated}
     HS12_4_3(HS<Precision12, 4, 3>), // {python_generated}
     HS12_4_4(HS<Precision12, 4, 4>), // {python_generated}
@@ -271,6 +296,7 @@ enum InnerModel {
     HS12_4_8(HS<Precision12, 4, 8>), // {python_generated}
     HS12_4_9(HS<Precision12, 4, 9>), // {python_generated}
     HS12_4_10(HS<Precision12, 4, 10>), // {python_generated}
+    HS12_5_1(HS<Precision12, 5, 1>), // {python_generated}
     HS12_5_2(HS<Precision12, 5, 2>), // {python_generated}
     HS12_5_3(HS<Precision12, 5, 3>), // {python_generated}
     HS12_5_4(HS<Precision12, 5, 4>), // {python_generated}
@@ -280,6 +306,7 @@ enum InnerModel {
     HS12_5_8(HS<Precision12, 5, 8>), // {python_generated}
     HS12_5_9(HS<Precision12, 5, 9>), // {python_generated}
     HS12_5_10(HS<Precision12, 5, 10>), // {python_generated}
+    HS12_6_1(HS<Precision12, 6, 1>), // {python_generated}
     HS12_6_2(HS<Precision12, 6, 2>), // {python_generated}
     HS12_6_3(HS<Precision12, 6, 3>), // {python_generated}
     HS12_6_4(HS<Precision12, 6, 4>), // {python_generated}
@@ -289,6 +316,7 @@ enum InnerModel {
     HS12_6_8(HS<Precision12, 6, 8>), // {python_generated}
     HS12_6_9(HS<Precision12, 6, 9>), // {python_generated}
     HS12_6_10(HS<Precision12, 6, 10>), // {python_generated}
+    HS13_4_1(HS<Precision13, 4, 1>), // {python_generated}
     HS13_4_2(HS<Precision13, 4, 2>), // {python_generated}
     HS13_4_3(HS<Precision13, 4, 3>), // {python_generated}
     HS13_4_4(HS<Precision13, 4, 4>), // {python_generated}
@@ -298,6 +326,7 @@ enum InnerModel {
     HS13_4_8(HS<Precision13, 4, 8>), // {python_generated}
     HS13_4_9(HS<Precision13, 4, 9>), // {python_generated}
     HS13_4_10(HS<Precision13, 4, 10>), // {python_generated}
+    HS13_5_1(HS<Precision13, 5, 1>), // {python_generated}
     HS13_5_2(HS<Precision13, 5, 2>), // {python_generated}
     HS13_5_3(HS<Precision13, 5, 3>), // {python_generated}
     HS13_5_4(HS<Precision13, 5, 4>), // {python_generated}
@@ -307,6 +336,7 @@ enum InnerModel {
     HS13_5_8(HS<Precision13, 5, 8>), // {python_generated}
     HS13_5_9(HS<Precision13, 5, 9>), // {python_generated}
     HS13_5_10(HS<Precision13, 5, 10>), // {python_generated}
+    HS13_6_1(HS<Precision13, 6, 1>), // {python_generated}
     HS13_6_2(HS<Precision13, 6, 2>), // {python_generated}
     HS13_6_3(HS<Precision13, 6, 3>), // {python_generated}
     HS13_6_4(HS<Precision13, 6, 4>), // {python_generated}
@@ -316,6 +346,7 @@ enum InnerModel {
     HS13_6_8(HS<Precision13, 6, 8>), // {python_generated}
     HS13_6_9(HS<Precision13, 6, 9>), // {python_generated}
     HS13_6_10(HS<Precision13, 6, 10>), // {python_generated}
+    HS14_4_1(HS<Precision14, 4, 1>), // {python_generated}
     HS14_4_2(HS<Precision14, 4, 2>), // {python_generated}
     HS14_4_3(HS<Precision14, 4, 3>), // {python_generated}
     HS14_4_4(HS<Precision14, 4, 4>), // {python_generated}
@@ -325,6 +356,7 @@ enum InnerModel {
     HS14_4_8(HS<Precision14, 4, 8>), // {python_generated}
     HS14_4_9(HS<Precision14, 4, 9>), // {python_generated}
     HS14_4_10(HS<Precision14, 4, 10>), // {python_generated}
+    HS14_5_1(HS<Precision14, 5, 1>), // {python_generated}
     HS14_5_2(HS<Precision14, 5, 2>), // {python_generated}
     HS14_5_3(HS<Precision14, 5, 3>), // {python_generated}
     HS14_5_4(HS<Precision14, 5, 4>), // {python_generated}
@@ -334,6 +366,7 @@ enum InnerModel {
     HS14_5_8(HS<Precision14, 5, 8>), // {python_generated}
     HS14_5_9(HS<Precision14, 5, 9>), // {python_generated}
     HS14_5_10(HS<Precision14, 5, 10>), // {python_generated}
+    HS14_6_1(HS<Precision14, 6, 1>), // {python_generated}
     HS14_6_2(HS<Precision14, 6, 2>), // {python_generated}
     HS14_6_3(HS<Precision14, 6, 3>), // {python_generated}
     HS14_6_4(HS<Precision14, 6, 4>), // {python_generated}
@@ -343,6 +376,7 @@ enum InnerModel {
     HS14_6_8(HS<Precision14, 6, 8>), // {python_generated}
     HS14_6_9(HS<Precision14, 6, 9>), // {python_generated}
     HS14_6_10(HS<Precision14, 6, 10>), // {python_generated}
+    HS15_4_1(HS<Precision15, 4, 1>), // {python_generated}
     HS15_4_2(HS<Precision15, 4, 2>), // {python_generated}
     HS15_4_3(HS<Precision15, 4, 3>), // {python_generated}
     HS15_4_4(HS<Precision15, 4, 4>), // {python_generated}
@@ -352,6 +386,7 @@ enum InnerModel {
     HS15_4_8(HS<Precision15, 4, 8>), // {python_generated}
     HS15_4_9(HS<Precision15, 4, 9>), // {python_generated}
     HS15_4_10(HS<Precision15, 4, 10>), // {python_generated}
+    HS15_5_1(HS<Precision15, 5, 1>), // {python_generated}
     HS15_5_2(HS<Precision15, 5, 2>), // {python_generated}
     HS15_5_3(HS<Precision15, 5, 3>), // {python_generated}
     HS15_5_4(HS<Precision15, 5, 4>), // {python_generated}
@@ -361,6 +396,7 @@ enum InnerModel {
     HS15_5_8(HS<Precision15, 5, 8>), // {python_generated}
     HS15_5_9(HS<Precision15, 5, 9>), // {python_generated}
     HS15_5_10(HS<Precision15, 5, 10>), // {python_generated}
+    HS15_6_1(HS<Precision15, 6, 1>), // {python_generated}
     HS15_6_2(HS<Precision15, 6, 2>), // {python_generated}
     HS15_6_3(HS<Precision15, 6, 3>), // {python_generated}
     HS15_6_4(HS<Precision15, 6, 4>), // {python_generated}
@@ -370,6 +406,7 @@ enum InnerModel {
     HS15_6_8(HS<Precision15, 6, 8>), // {python_generated}
     HS15_6_9(HS<Precision15, 6, 9>), // {python_generated}
     HS15_6_10(HS<Precision15, 6, 10>), // {python_generated}
+    HS16_4_1(HS<Precision16, 4, 1>), // {python_generated}
     HS16_4_2(HS<Precision16, 4, 2>), // {python_generated}
     HS16_4_3(HS<Precision16, 4, 3>), // {python_generated}
     HS16_4_4(HS<Precision16, 4, 4>), // {python_generated}
@@ -379,6 +416,7 @@ enum InnerModel {
     HS16_4_8(HS<Precision16, 4, 8>), // {python_generated}
     HS16_4_9(HS<Precision16, 4, 9>), // {python_generated}
     HS16_4_10(HS<Precision16, 4, 10>), // {python_generated}
+    HS16_5_1(HS<Precision16, 5, 1>), // {python_generated}
     HS16_5_2(HS<Precision16, 5, 2>), // {python_generated}
     HS16_5_3(HS<Precision16, 5, 3>), // {python_generated}
     HS16_5_4(HS<Precision16, 5, 4>), // {python_generated}
@@ -388,6 +426,7 @@ enum InnerModel {
     HS16_5_8(HS<Precision16, 5, 8>), // {python_generated}
     HS16_5_9(HS<Precision16, 5, 9>), // {python_generated}
     HS16_5_10(HS<Precision16, 5, 10>), // {python_generated}
+    HS16_6_1(HS<Precision16, 6, 1>), // {python_generated}
     HS16_6_2(HS<Precision16, 6, 2>), // {python_generated}
     HS16_6_3(HS<Precision16, 6, 3>), // {python_generated}
     HS16_6_4(HS<Precision16, 6, 4>), // {python_generated}
@@ -473,6 +512,7 @@ impl InnerModel {
 
         match (precision, bits, number_of_hops.unwrap_or(2)) {
             // ({precision}, {bits}, {hops}) => Ok(InnerModel::HS{precision}_{bits}_{hops}(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), {python_macro}
+            (4, 4, 1) => Ok(InnerModel::HS4_4_1(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (4, 4, 2) => Ok(InnerModel::HS4_4_2(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (4, 4, 3) => Ok(InnerModel::HS4_4_3(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (4, 4, 4) => Ok(InnerModel::HS4_4_4(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
@@ -482,6 +522,7 @@ impl InnerModel {
             (4, 4, 8) => Ok(InnerModel::HS4_4_8(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (4, 4, 9) => Ok(InnerModel::HS4_4_9(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (4, 4, 10) => Ok(InnerModel::HS4_4_10(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (4, 5, 1) => Ok(InnerModel::HS4_5_1(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (4, 5, 2) => Ok(InnerModel::HS4_5_2(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (4, 5, 3) => Ok(InnerModel::HS4_5_3(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (4, 5, 4) => Ok(InnerModel::HS4_5_4(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
@@ -491,6 +532,7 @@ impl InnerModel {
             (4, 5, 8) => Ok(InnerModel::HS4_5_8(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (4, 5, 9) => Ok(InnerModel::HS4_5_9(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (4, 5, 10) => Ok(InnerModel::HS4_5_10(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (4, 6, 1) => Ok(InnerModel::HS4_6_1(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (4, 6, 2) => Ok(InnerModel::HS4_6_2(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (4, 6, 3) => Ok(InnerModel::HS4_6_3(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (4, 6, 4) => Ok(InnerModel::HS4_6_4(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
@@ -500,6 +542,7 @@ impl InnerModel {
             (4, 6, 8) => Ok(InnerModel::HS4_6_8(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (4, 6, 9) => Ok(InnerModel::HS4_6_9(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (4, 6, 10) => Ok(InnerModel::HS4_6_10(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (5, 4, 1) => Ok(InnerModel::HS5_4_1(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (5, 4, 2) => Ok(InnerModel::HS5_4_2(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (5, 4, 3) => Ok(InnerModel::HS5_4_3(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (5, 4, 4) => Ok(InnerModel::HS5_4_4(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
@@ -509,6 +552,7 @@ impl InnerModel {
             (5, 4, 8) => Ok(InnerModel::HS5_4_8(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (5, 4, 9) => Ok(InnerModel::HS5_4_9(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (5, 4, 10) => Ok(InnerModel::HS5_4_10(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (5, 5, 1) => Ok(InnerModel::HS5_5_1(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (5, 5, 2) => Ok(InnerModel::HS5_5_2(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (5, 5, 3) => Ok(InnerModel::HS5_5_3(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (5, 5, 4) => Ok(InnerModel::HS5_5_4(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
@@ -518,6 +562,7 @@ impl InnerModel {
             (5, 5, 8) => Ok(InnerModel::HS5_5_8(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (5, 5, 9) => Ok(InnerModel::HS5_5_9(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (5, 5, 10) => Ok(InnerModel::HS5_5_10(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (5, 6, 1) => Ok(InnerModel::HS5_6_1(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (5, 6, 2) => Ok(InnerModel::HS5_6_2(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (5, 6, 3) => Ok(InnerModel::HS5_6_3(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (5, 6, 4) => Ok(InnerModel::HS5_6_4(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
@@ -527,6 +572,7 @@ impl InnerModel {
             (5, 6, 8) => Ok(InnerModel::HS5_6_8(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (5, 6, 9) => Ok(InnerModel::HS5_6_9(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (5, 6, 10) => Ok(InnerModel::HS5_6_10(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (6, 4, 1) => Ok(InnerModel::HS6_4_1(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (6, 4, 2) => Ok(InnerModel::HS6_4_2(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (6, 4, 3) => Ok(InnerModel::HS6_4_3(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (6, 4, 4) => Ok(InnerModel::HS6_4_4(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
@@ -536,6 +582,7 @@ impl InnerModel {
             (6, 4, 8) => Ok(InnerModel::HS6_4_8(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (6, 4, 9) => Ok(InnerModel::HS6_4_9(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (6, 4, 10) => Ok(InnerModel::HS6_4_10(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (6, 5, 1) => Ok(InnerModel::HS6_5_1(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (6, 5, 2) => Ok(InnerModel::HS6_5_2(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (6, 5, 3) => Ok(InnerModel::HS6_5_3(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (6, 5, 4) => Ok(InnerModel::HS6_5_4(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
@@ -545,6 +592,7 @@ impl InnerModel {
             (6, 5, 8) => Ok(InnerModel::HS6_5_8(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (6, 5, 9) => Ok(InnerModel::HS6_5_9(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (6, 5, 10) => Ok(InnerModel::HS6_5_10(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (6, 6, 1) => Ok(InnerModel::HS6_6_1(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (6, 6, 2) => Ok(InnerModel::HS6_6_2(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (6, 6, 3) => Ok(InnerModel::HS6_6_3(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (6, 6, 4) => Ok(InnerModel::HS6_6_4(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
@@ -554,6 +602,7 @@ impl InnerModel {
             (6, 6, 8) => Ok(InnerModel::HS6_6_8(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (6, 6, 9) => Ok(InnerModel::HS6_6_9(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (6, 6, 10) => Ok(InnerModel::HS6_6_10(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (7, 4, 1) => Ok(InnerModel::HS7_4_1(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (7, 4, 2) => Ok(InnerModel::HS7_4_2(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (7, 4, 3) => Ok(InnerModel::HS7_4_3(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (7, 4, 4) => Ok(InnerModel::HS7_4_4(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
@@ -563,6 +612,7 @@ impl InnerModel {
             (7, 4, 8) => Ok(InnerModel::HS7_4_8(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (7, 4, 9) => Ok(InnerModel::HS7_4_9(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (7, 4, 10) => Ok(InnerModel::HS7_4_10(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (7, 5, 1) => Ok(InnerModel::HS7_5_1(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (7, 5, 2) => Ok(InnerModel::HS7_5_2(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (7, 5, 3) => Ok(InnerModel::HS7_5_3(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (7, 5, 4) => Ok(InnerModel::HS7_5_4(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
@@ -572,6 +622,7 @@ impl InnerModel {
             (7, 5, 8) => Ok(InnerModel::HS7_5_8(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (7, 5, 9) => Ok(InnerModel::HS7_5_9(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (7, 5, 10) => Ok(InnerModel::HS7_5_10(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (7, 6, 1) => Ok(InnerModel::HS7_6_1(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (7, 6, 2) => Ok(InnerModel::HS7_6_2(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (7, 6, 3) => Ok(InnerModel::HS7_6_3(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (7, 6, 4) => Ok(InnerModel::HS7_6_4(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
@@ -581,6 +632,7 @@ impl InnerModel {
             (7, 6, 8) => Ok(InnerModel::HS7_6_8(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (7, 6, 9) => Ok(InnerModel::HS7_6_9(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (7, 6, 10) => Ok(InnerModel::HS7_6_10(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (8, 4, 1) => Ok(InnerModel::HS8_4_1(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (8, 4, 2) => Ok(InnerModel::HS8_4_2(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (8, 4, 3) => Ok(InnerModel::HS8_4_3(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (8, 4, 4) => Ok(InnerModel::HS8_4_4(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
@@ -590,6 +642,7 @@ impl InnerModel {
             (8, 4, 8) => Ok(InnerModel::HS8_4_8(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (8, 4, 9) => Ok(InnerModel::HS8_4_9(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (8, 4, 10) => Ok(InnerModel::HS8_4_10(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (8, 5, 1) => Ok(InnerModel::HS8_5_1(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (8, 5, 2) => Ok(InnerModel::HS8_5_2(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (8, 5, 3) => Ok(InnerModel::HS8_5_3(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (8, 5, 4) => Ok(InnerModel::HS8_5_4(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
@@ -599,6 +652,7 @@ impl InnerModel {
             (8, 5, 8) => Ok(InnerModel::HS8_5_8(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (8, 5, 9) => Ok(InnerModel::HS8_5_9(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (8, 5, 10) => Ok(InnerModel::HS8_5_10(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (8, 6, 1) => Ok(InnerModel::HS8_6_1(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (8, 6, 2) => Ok(InnerModel::HS8_6_2(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (8, 6, 3) => Ok(InnerModel::HS8_6_3(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (8, 6, 4) => Ok(InnerModel::HS8_6_4(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
@@ -608,6 +662,7 @@ impl InnerModel {
             (8, 6, 8) => Ok(InnerModel::HS8_6_8(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (8, 6, 9) => Ok(InnerModel::HS8_6_9(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (8, 6, 10) => Ok(InnerModel::HS8_6_10(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (9, 4, 1) => Ok(InnerModel::HS9_4_1(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (9, 4, 2) => Ok(InnerModel::HS9_4_2(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (9, 4, 3) => Ok(InnerModel::HS9_4_3(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (9, 4, 4) => Ok(InnerModel::HS9_4_4(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
@@ -617,6 +672,7 @@ impl InnerModel {
             (9, 4, 8) => Ok(InnerModel::HS9_4_8(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (9, 4, 9) => Ok(InnerModel::HS9_4_9(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (9, 4, 10) => Ok(InnerModel::HS9_4_10(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (9, 5, 1) => Ok(InnerModel::HS9_5_1(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (9, 5, 2) => Ok(InnerModel::HS9_5_2(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (9, 5, 3) => Ok(InnerModel::HS9_5_3(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (9, 5, 4) => Ok(InnerModel::HS9_5_4(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
@@ -626,6 +682,7 @@ impl InnerModel {
             (9, 5, 8) => Ok(InnerModel::HS9_5_8(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (9, 5, 9) => Ok(InnerModel::HS9_5_9(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (9, 5, 10) => Ok(InnerModel::HS9_5_10(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (9, 6, 1) => Ok(InnerModel::HS9_6_1(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (9, 6, 2) => Ok(InnerModel::HS9_6_2(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (9, 6, 3) => Ok(InnerModel::HS9_6_3(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (9, 6, 4) => Ok(InnerModel::HS9_6_4(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
@@ -635,6 +692,7 @@ impl InnerModel {
             (9, 6, 8) => Ok(InnerModel::HS9_6_8(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (9, 6, 9) => Ok(InnerModel::HS9_6_9(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (9, 6, 10) => Ok(InnerModel::HS9_6_10(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (10, 4, 1) => Ok(InnerModel::HS10_4_1(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (10, 4, 2) => Ok(InnerModel::HS10_4_2(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (10, 4, 3) => Ok(InnerModel::HS10_4_3(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (10, 4, 4) => Ok(InnerModel::HS10_4_4(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
@@ -644,6 +702,7 @@ impl InnerModel {
             (10, 4, 8) => Ok(InnerModel::HS10_4_8(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (10, 4, 9) => Ok(InnerModel::HS10_4_9(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (10, 4, 10) => Ok(InnerModel::HS10_4_10(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (10, 5, 1) => Ok(InnerModel::HS10_5_1(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (10, 5, 2) => Ok(InnerModel::HS10_5_2(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (10, 5, 3) => Ok(InnerModel::HS10_5_3(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (10, 5, 4) => Ok(InnerModel::HS10_5_4(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
@@ -653,6 +712,7 @@ impl InnerModel {
             (10, 5, 8) => Ok(InnerModel::HS10_5_8(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (10, 5, 9) => Ok(InnerModel::HS10_5_9(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (10, 5, 10) => Ok(InnerModel::HS10_5_10(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (10, 6, 1) => Ok(InnerModel::HS10_6_1(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (10, 6, 2) => Ok(InnerModel::HS10_6_2(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (10, 6, 3) => Ok(InnerModel::HS10_6_3(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (10, 6, 4) => Ok(InnerModel::HS10_6_4(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
@@ -662,6 +722,7 @@ impl InnerModel {
             (10, 6, 8) => Ok(InnerModel::HS10_6_8(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (10, 6, 9) => Ok(InnerModel::HS10_6_9(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (10, 6, 10) => Ok(InnerModel::HS10_6_10(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (11, 4, 1) => Ok(InnerModel::HS11_4_1(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (11, 4, 2) => Ok(InnerModel::HS11_4_2(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (11, 4, 3) => Ok(InnerModel::HS11_4_3(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (11, 4, 4) => Ok(InnerModel::HS11_4_4(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
@@ -671,6 +732,7 @@ impl InnerModel {
             (11, 4, 8) => Ok(InnerModel::HS11_4_8(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (11, 4, 9) => Ok(InnerModel::HS11_4_9(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (11, 4, 10) => Ok(InnerModel::HS11_4_10(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (11, 5, 1) => Ok(InnerModel::HS11_5_1(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (11, 5, 2) => Ok(InnerModel::HS11_5_2(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (11, 5, 3) => Ok(InnerModel::HS11_5_3(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (11, 5, 4) => Ok(InnerModel::HS11_5_4(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
@@ -680,6 +742,7 @@ impl InnerModel {
             (11, 5, 8) => Ok(InnerModel::HS11_5_8(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (11, 5, 9) => Ok(InnerModel::HS11_5_9(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (11, 5, 10) => Ok(InnerModel::HS11_5_10(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (11, 6, 1) => Ok(InnerModel::HS11_6_1(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (11, 6, 2) => Ok(InnerModel::HS11_6_2(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (11, 6, 3) => Ok(InnerModel::HS11_6_3(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (11, 6, 4) => Ok(InnerModel::HS11_6_4(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
@@ -689,6 +752,7 @@ impl InnerModel {
             (11, 6, 8) => Ok(InnerModel::HS11_6_8(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (11, 6, 9) => Ok(InnerModel::HS11_6_9(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (11, 6, 10) => Ok(InnerModel::HS11_6_10(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (12, 4, 1) => Ok(InnerModel::HS12_4_1(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (12, 4, 2) => Ok(InnerModel::HS12_4_2(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (12, 4, 3) => Ok(InnerModel::HS12_4_3(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (12, 4, 4) => Ok(InnerModel::HS12_4_4(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
@@ -698,6 +762,7 @@ impl InnerModel {
             (12, 4, 8) => Ok(InnerModel::HS12_4_8(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (12, 4, 9) => Ok(InnerModel::HS12_4_9(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (12, 4, 10) => Ok(InnerModel::HS12_4_10(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (12, 5, 1) => Ok(InnerModel::HS12_5_1(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (12, 5, 2) => Ok(InnerModel::HS12_5_2(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (12, 5, 3) => Ok(InnerModel::HS12_5_3(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (12, 5, 4) => Ok(InnerModel::HS12_5_4(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
@@ -707,6 +772,7 @@ impl InnerModel {
             (12, 5, 8) => Ok(InnerModel::HS12_5_8(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (12, 5, 9) => Ok(InnerModel::HS12_5_9(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (12, 5, 10) => Ok(InnerModel::HS12_5_10(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (12, 6, 1) => Ok(InnerModel::HS12_6_1(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (12, 6, 2) => Ok(InnerModel::HS12_6_2(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (12, 6, 3) => Ok(InnerModel::HS12_6_3(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (12, 6, 4) => Ok(InnerModel::HS12_6_4(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
@@ -716,6 +782,7 @@ impl InnerModel {
             (12, 6, 8) => Ok(InnerModel::HS12_6_8(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (12, 6, 9) => Ok(InnerModel::HS12_6_9(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (12, 6, 10) => Ok(InnerModel::HS12_6_10(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (13, 4, 1) => Ok(InnerModel::HS13_4_1(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (13, 4, 2) => Ok(InnerModel::HS13_4_2(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (13, 4, 3) => Ok(InnerModel::HS13_4_3(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (13, 4, 4) => Ok(InnerModel::HS13_4_4(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
@@ -725,6 +792,7 @@ impl InnerModel {
             (13, 4, 8) => Ok(InnerModel::HS13_4_8(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (13, 4, 9) => Ok(InnerModel::HS13_4_9(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (13, 4, 10) => Ok(InnerModel::HS13_4_10(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (13, 5, 1) => Ok(InnerModel::HS13_5_1(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (13, 5, 2) => Ok(InnerModel::HS13_5_2(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (13, 5, 3) => Ok(InnerModel::HS13_5_3(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (13, 5, 4) => Ok(InnerModel::HS13_5_4(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
@@ -734,6 +802,7 @@ impl InnerModel {
             (13, 5, 8) => Ok(InnerModel::HS13_5_8(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (13, 5, 9) => Ok(InnerModel::HS13_5_9(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (13, 5, 10) => Ok(InnerModel::HS13_5_10(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (13, 6, 1) => Ok(InnerModel::HS13_6_1(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (13, 6, 2) => Ok(InnerModel::HS13_6_2(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (13, 6, 3) => Ok(InnerModel::HS13_6_3(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (13, 6, 4) => Ok(InnerModel::HS13_6_4(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
@@ -743,6 +812,7 @@ impl InnerModel {
             (13, 6, 8) => Ok(InnerModel::HS13_6_8(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (13, 6, 9) => Ok(InnerModel::HS13_6_9(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (13, 6, 10) => Ok(InnerModel::HS13_6_10(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (14, 4, 1) => Ok(InnerModel::HS14_4_1(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (14, 4, 2) => Ok(InnerModel::HS14_4_2(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (14, 4, 3) => Ok(InnerModel::HS14_4_3(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (14, 4, 4) => Ok(InnerModel::HS14_4_4(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
@@ -752,6 +822,7 @@ impl InnerModel {
             (14, 4, 8) => Ok(InnerModel::HS14_4_8(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (14, 4, 9) => Ok(InnerModel::HS14_4_9(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (14, 4, 10) => Ok(InnerModel::HS14_4_10(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (14, 5, 1) => Ok(InnerModel::HS14_5_1(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (14, 5, 2) => Ok(InnerModel::HS14_5_2(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (14, 5, 3) => Ok(InnerModel::HS14_5_3(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (14, 5, 4) => Ok(InnerModel::HS14_5_4(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
@@ -761,6 +832,7 @@ impl InnerModel {
             (14, 5, 8) => Ok(InnerModel::HS14_5_8(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (14, 5, 9) => Ok(InnerModel::HS14_5_9(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (14, 5, 10) => Ok(InnerModel::HS14_5_10(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (14, 6, 1) => Ok(InnerModel::HS14_6_1(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (14, 6, 2) => Ok(InnerModel::HS14_6_2(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (14, 6, 3) => Ok(InnerModel::HS14_6_3(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (14, 6, 4) => Ok(InnerModel::HS14_6_4(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
@@ -770,6 +842,7 @@ impl InnerModel {
             (14, 6, 8) => Ok(InnerModel::HS14_6_8(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (14, 6, 9) => Ok(InnerModel::HS14_6_9(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (14, 6, 10) => Ok(InnerModel::HS14_6_10(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (15, 4, 1) => Ok(InnerModel::HS15_4_1(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (15, 4, 2) => Ok(InnerModel::HS15_4_2(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (15, 4, 3) => Ok(InnerModel::HS15_4_3(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (15, 4, 4) => Ok(InnerModel::HS15_4_4(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
@@ -779,6 +852,7 @@ impl InnerModel {
             (15, 4, 8) => Ok(InnerModel::HS15_4_8(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (15, 4, 9) => Ok(InnerModel::HS15_4_9(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (15, 4, 10) => Ok(InnerModel::HS15_4_10(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (15, 5, 1) => Ok(InnerModel::HS15_5_1(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (15, 5, 2) => Ok(InnerModel::HS15_5_2(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (15, 5, 3) => Ok(InnerModel::HS15_5_3(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (15, 5, 4) => Ok(InnerModel::HS15_5_4(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
@@ -788,6 +862,7 @@ impl InnerModel {
             (15, 5, 8) => Ok(InnerModel::HS15_5_8(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (15, 5, 9) => Ok(InnerModel::HS15_5_9(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (15, 5, 10) => Ok(InnerModel::HS15_5_10(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (15, 6, 1) => Ok(InnerModel::HS15_6_1(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (15, 6, 2) => Ok(InnerModel::HS15_6_2(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (15, 6, 3) => Ok(InnerModel::HS15_6_3(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (15, 6, 4) => Ok(InnerModel::HS15_6_4(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
@@ -797,6 +872,7 @@ impl InnerModel {
             (15, 6, 8) => Ok(InnerModel::HS15_6_8(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (15, 6, 9) => Ok(InnerModel::HS15_6_9(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (15, 6, 10) => Ok(InnerModel::HS15_6_10(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (16, 4, 1) => Ok(InnerModel::HS16_4_1(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (16, 4, 2) => Ok(InnerModel::HS16_4_2(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (16, 4, 3) => Ok(InnerModel::HS16_4_3(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (16, 4, 4) => Ok(InnerModel::HS16_4_4(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
@@ -806,6 +882,7 @@ impl InnerModel {
             (16, 4, 8) => Ok(InnerModel::HS16_4_8(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (16, 4, 9) => Ok(InnerModel::HS16_4_9(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (16, 4, 10) => Ok(InnerModel::HS16_4_10(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (16, 5, 1) => Ok(InnerModel::HS16_5_1(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (16, 5, 2) => Ok(InnerModel::HS16_5_2(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (16, 5, 3) => Ok(InnerModel::HS16_5_3(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (16, 5, 4) => Ok(InnerModel::HS16_5_4(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
@@ -815,6 +892,7 @@ impl InnerModel {
             (16, 5, 8) => Ok(InnerModel::HS16_5_8(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (16, 5, 9) => Ok(InnerModel::HS16_5_9(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (16, 5, 10) => Ok(InnerModel::HS16_5_10(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
+            (16, 6, 1) => Ok(InnerModel::HS16_6_1(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (16, 6, 2) => Ok(InnerModel::HS16_6_2(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (16, 6, 3) => Ok(InnerModel::HS16_6_3(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
             (16, 6, 4) => Ok(InnerModel::HS16_6_4(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), // {python_generated}
@@ -828,7 +906,7 @@ impl InnerModel {
                 return Err(format!(
                     concat!(
                         "The HyperSketching model supports precisions ranging from 4 ",
-                        "to 16 and bits ranging from 4 to 6, and hops from 2 to 7. ",
+                        "to 16 and bits ranging from 4 to 6, and hops from 1 to 10. ",
                         "Provided precision: {}, bits: {}."
                     ),
                     precision, bits
@@ -841,6 +919,7 @@ impl InnerModel {
     fn get_dtype(&self) -> &str {
         match self {
             // InnerModel::HS{precision}_{bits}_{hops}(inner) => inner.get_dtype(), {python_macro}
+            InnerModel::HS4_4_1(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS4_4_2(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS4_4_3(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS4_4_4(inner) => inner.get_dtype(), // {python_generated}
@@ -850,6 +929,7 @@ impl InnerModel {
             InnerModel::HS4_4_8(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS4_4_9(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS4_4_10(inner) => inner.get_dtype(), // {python_generated}
+            InnerModel::HS4_5_1(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS4_5_2(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS4_5_3(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS4_5_4(inner) => inner.get_dtype(), // {python_generated}
@@ -859,6 +939,7 @@ impl InnerModel {
             InnerModel::HS4_5_8(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS4_5_9(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS4_5_10(inner) => inner.get_dtype(), // {python_generated}
+            InnerModel::HS4_6_1(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS4_6_2(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS4_6_3(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS4_6_4(inner) => inner.get_dtype(), // {python_generated}
@@ -868,6 +949,7 @@ impl InnerModel {
             InnerModel::HS4_6_8(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS4_6_9(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS4_6_10(inner) => inner.get_dtype(), // {python_generated}
+            InnerModel::HS5_4_1(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS5_4_2(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS5_4_3(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS5_4_4(inner) => inner.get_dtype(), // {python_generated}
@@ -877,6 +959,7 @@ impl InnerModel {
             InnerModel::HS5_4_8(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS5_4_9(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS5_4_10(inner) => inner.get_dtype(), // {python_generated}
+            InnerModel::HS5_5_1(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS5_5_2(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS5_5_3(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS5_5_4(inner) => inner.get_dtype(), // {python_generated}
@@ -886,6 +969,7 @@ impl InnerModel {
             InnerModel::HS5_5_8(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS5_5_9(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS5_5_10(inner) => inner.get_dtype(), // {python_generated}
+            InnerModel::HS5_6_1(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS5_6_2(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS5_6_3(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS5_6_4(inner) => inner.get_dtype(), // {python_generated}
@@ -895,6 +979,7 @@ impl InnerModel {
             InnerModel::HS5_6_8(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS5_6_9(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS5_6_10(inner) => inner.get_dtype(), // {python_generated}
+            InnerModel::HS6_4_1(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS6_4_2(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS6_4_3(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS6_4_4(inner) => inner.get_dtype(), // {python_generated}
@@ -904,6 +989,7 @@ impl InnerModel {
             InnerModel::HS6_4_8(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS6_4_9(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS6_4_10(inner) => inner.get_dtype(), // {python_generated}
+            InnerModel::HS6_5_1(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS6_5_2(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS6_5_3(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS6_5_4(inner) => inner.get_dtype(), // {python_generated}
@@ -913,6 +999,7 @@ impl InnerModel {
             InnerModel::HS6_5_8(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS6_5_9(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS6_5_10(inner) => inner.get_dtype(), // {python_generated}
+            InnerModel::HS6_6_1(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS6_6_2(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS6_6_3(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS6_6_4(inner) => inner.get_dtype(), // {python_generated}
@@ -922,6 +1009,7 @@ impl InnerModel {
             InnerModel::HS6_6_8(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS6_6_9(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS6_6_10(inner) => inner.get_dtype(), // {python_generated}
+            InnerModel::HS7_4_1(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS7_4_2(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS7_4_3(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS7_4_4(inner) => inner.get_dtype(), // {python_generated}
@@ -931,6 +1019,7 @@ impl InnerModel {
             InnerModel::HS7_4_8(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS7_4_9(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS7_4_10(inner) => inner.get_dtype(), // {python_generated}
+            InnerModel::HS7_5_1(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS7_5_2(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS7_5_3(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS7_5_4(inner) => inner.get_dtype(), // {python_generated}
@@ -940,6 +1029,7 @@ impl InnerModel {
             InnerModel::HS7_5_8(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS7_5_9(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS7_5_10(inner) => inner.get_dtype(), // {python_generated}
+            InnerModel::HS7_6_1(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS7_6_2(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS7_6_3(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS7_6_4(inner) => inner.get_dtype(), // {python_generated}
@@ -949,6 +1039,7 @@ impl InnerModel {
             InnerModel::HS7_6_8(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS7_6_9(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS7_6_10(inner) => inner.get_dtype(), // {python_generated}
+            InnerModel::HS8_4_1(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS8_4_2(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS8_4_3(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS8_4_4(inner) => inner.get_dtype(), // {python_generated}
@@ -958,6 +1049,7 @@ impl InnerModel {
             InnerModel::HS8_4_8(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS8_4_9(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS8_4_10(inner) => inner.get_dtype(), // {python_generated}
+            InnerModel::HS8_5_1(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS8_5_2(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS8_5_3(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS8_5_4(inner) => inner.get_dtype(), // {python_generated}
@@ -967,6 +1059,7 @@ impl InnerModel {
             InnerModel::HS8_5_8(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS8_5_9(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS8_5_10(inner) => inner.get_dtype(), // {python_generated}
+            InnerModel::HS8_6_1(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS8_6_2(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS8_6_3(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS8_6_4(inner) => inner.get_dtype(), // {python_generated}
@@ -976,6 +1069,7 @@ impl InnerModel {
             InnerModel::HS8_6_8(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS8_6_9(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS8_6_10(inner) => inner.get_dtype(), // {python_generated}
+            InnerModel::HS9_4_1(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS9_4_2(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS9_4_3(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS9_4_4(inner) => inner.get_dtype(), // {python_generated}
@@ -985,6 +1079,7 @@ impl InnerModel {
             InnerModel::HS9_4_8(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS9_4_9(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS9_4_10(inner) => inner.get_dtype(), // {python_generated}
+            InnerModel::HS9_5_1(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS9_5_2(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS9_5_3(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS9_5_4(inner) => inner.get_dtype(), // {python_generated}
@@ -994,6 +1089,7 @@ impl InnerModel {
             InnerModel::HS9_5_8(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS9_5_9(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS9_5_10(inner) => inner.get_dtype(), // {python_generated}
+            InnerModel::HS9_6_1(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS9_6_2(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS9_6_3(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS9_6_4(inner) => inner.get_dtype(), // {python_generated}
@@ -1003,6 +1099,7 @@ impl InnerModel {
             InnerModel::HS9_6_8(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS9_6_9(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS9_6_10(inner) => inner.get_dtype(), // {python_generated}
+            InnerModel::HS10_4_1(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS10_4_2(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS10_4_3(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS10_4_4(inner) => inner.get_dtype(), // {python_generated}
@@ -1012,6 +1109,7 @@ impl InnerModel {
             InnerModel::HS10_4_8(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS10_4_9(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS10_4_10(inner) => inner.get_dtype(), // {python_generated}
+            InnerModel::HS10_5_1(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS10_5_2(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS10_5_3(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS10_5_4(inner) => inner.get_dtype(), // {python_generated}
@@ -1021,6 +1119,7 @@ impl InnerModel {
             InnerModel::HS10_5_8(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS10_5_9(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS10_5_10(inner) => inner.get_dtype(), // {python_generated}
+            InnerModel::HS10_6_1(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS10_6_2(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS10_6_3(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS10_6_4(inner) => inner.get_dtype(), // {python_generated}
@@ -1030,6 +1129,7 @@ impl InnerModel {
             InnerModel::HS10_6_8(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS10_6_9(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS10_6_10(inner) => inner.get_dtype(), // {python_generated}
+            InnerModel::HS11_4_1(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS11_4_2(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS11_4_3(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS11_4_4(inner) => inner.get_dtype(), // {python_generated}
@@ -1039,6 +1139,7 @@ impl InnerModel {
             InnerModel::HS11_4_8(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS11_4_9(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS11_4_10(inner) => inner.get_dtype(), // {python_generated}
+            InnerModel::HS11_5_1(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS11_5_2(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS11_5_3(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS11_5_4(inner) => inner.get_dtype(), // {python_generated}
@@ -1048,6 +1149,7 @@ impl InnerModel {
             InnerModel::HS11_5_8(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS11_5_9(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS11_5_10(inner) => inner.get_dtype(), // {python_generated}
+            InnerModel::HS11_6_1(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS11_6_2(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS11_6_3(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS11_6_4(inner) => inner.get_dtype(), // {python_generated}
@@ -1057,6 +1159,7 @@ impl InnerModel {
             InnerModel::HS11_6_8(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS11_6_9(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS11_6_10(inner) => inner.get_dtype(), // {python_generated}
+            InnerModel::HS12_4_1(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS12_4_2(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS12_4_3(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS12_4_4(inner) => inner.get_dtype(), // {python_generated}
@@ -1066,6 +1169,7 @@ impl InnerModel {
             InnerModel::HS12_4_8(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS12_4_9(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS12_4_10(inner) => inner.get_dtype(), // {python_generated}
+            InnerModel::HS12_5_1(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS12_5_2(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS12_5_3(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS12_5_4(inner) => inner.get_dtype(), // {python_generated}
@@ -1075,6 +1179,7 @@ impl InnerModel {
             InnerModel::HS12_5_8(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS12_5_9(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS12_5_10(inner) => inner.get_dtype(), // {python_generated}
+            InnerModel::HS12_6_1(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS12_6_2(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS12_6_3(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS12_6_4(inner) => inner.get_dtype(), // {python_generated}
@@ -1084,6 +1189,7 @@ impl InnerModel {
             InnerModel::HS12_6_8(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS12_6_9(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS12_6_10(inner) => inner.get_dtype(), // {python_generated}
+            InnerModel::HS13_4_1(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS13_4_2(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS13_4_3(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS13_4_4(inner) => inner.get_dtype(), // {python_generated}
@@ -1093,6 +1199,7 @@ impl InnerModel {
             InnerModel::HS13_4_8(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS13_4_9(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS13_4_10(inner) => inner.get_dtype(), // {python_generated}
+            InnerModel::HS13_5_1(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS13_5_2(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS13_5_3(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS13_5_4(inner) => inner.get_dtype(), // {python_generated}
@@ -1102,6 +1209,7 @@ impl InnerModel {
             InnerModel::HS13_5_8(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS13_5_9(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS13_5_10(inner) => inner.get_dtype(), // {python_generated}
+            InnerModel::HS13_6_1(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS13_6_2(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS13_6_3(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS13_6_4(inner) => inner.get_dtype(), // {python_generated}
@@ -1111,6 +1219,7 @@ impl InnerModel {
             InnerModel::HS13_6_8(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS13_6_9(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS13_6_10(inner) => inner.get_dtype(), // {python_generated}
+            InnerModel::HS14_4_1(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS14_4_2(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS14_4_3(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS14_4_4(inner) => inner.get_dtype(), // {python_generated}
@@ -1120,6 +1229,7 @@ impl InnerModel {
             InnerModel::HS14_4_8(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS14_4_9(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS14_4_10(inner) => inner.get_dtype(), // {python_generated}
+            InnerModel::HS14_5_1(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS14_5_2(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS14_5_3(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS14_5_4(inner) => inner.get_dtype(), // {python_generated}
@@ -1129,6 +1239,7 @@ impl InnerModel {
             InnerModel::HS14_5_8(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS14_5_9(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS14_5_10(inner) => inner.get_dtype(), // {python_generated}
+            InnerModel::HS14_6_1(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS14_6_2(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS14_6_3(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS14_6_4(inner) => inner.get_dtype(), // {python_generated}
@@ -1138,6 +1249,7 @@ impl InnerModel {
             InnerModel::HS14_6_8(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS14_6_9(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS14_6_10(inner) => inner.get_dtype(), // {python_generated}
+            InnerModel::HS15_4_1(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS15_4_2(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS15_4_3(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS15_4_4(inner) => inner.get_dtype(), // {python_generated}
@@ -1147,6 +1259,7 @@ impl InnerModel {
             InnerModel::HS15_4_8(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS15_4_9(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS15_4_10(inner) => inner.get_dtype(), // {python_generated}
+            InnerModel::HS15_5_1(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS15_5_2(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS15_5_3(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS15_5_4(inner) => inner.get_dtype(), // {python_generated}
@@ -1156,6 +1269,7 @@ impl InnerModel {
             InnerModel::HS15_5_8(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS15_5_9(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS15_5_10(inner) => inner.get_dtype(), // {python_generated}
+            InnerModel::HS15_6_1(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS15_6_2(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS15_6_3(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS15_6_4(inner) => inner.get_dtype(), // {python_generated}
@@ -1165,6 +1279,7 @@ impl InnerModel {
             InnerModel::HS15_6_8(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS15_6_9(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS15_6_10(inner) => inner.get_dtype(), // {python_generated}
+            InnerModel::HS16_4_1(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS16_4_2(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS16_4_3(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS16_4_4(inner) => inner.get_dtype(), // {python_generated}
@@ -1174,6 +1289,7 @@ impl InnerModel {
             InnerModel::HS16_4_8(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS16_4_9(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS16_4_10(inner) => inner.get_dtype(), // {python_generated}
+            InnerModel::HS16_5_1(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS16_5_2(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS16_5_3(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS16_5_4(inner) => inner.get_dtype(), // {python_generated}
@@ -1183,6 +1299,7 @@ impl InnerModel {
             InnerModel::HS16_5_8(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS16_5_9(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS16_5_10(inner) => inner.get_dtype(), // {python_generated}
+            InnerModel::HS16_6_1(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS16_6_2(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS16_6_3(inner) => inner.get_dtype(), // {python_generated}
             InnerModel::HS16_6_4(inner) => inner.get_dtype(), // {python_generated}
@@ -1199,6 +1316,7 @@ impl InnerModel {
     fn get_bits(&self) -> usize {
         match self {
             // InnerModel::HS{precision}_{bits}_{hops}(inner) => inner.get_bits(), {python_macro}
+            InnerModel::HS4_4_1(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS4_4_2(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS4_4_3(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS4_4_4(inner) => inner.get_bits(), // {python_generated}
@@ -1208,6 +1326,7 @@ impl InnerModel {
             InnerModel::HS4_4_8(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS4_4_9(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS4_4_10(inner) => inner.get_bits(), // {python_generated}
+            InnerModel::HS4_5_1(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS4_5_2(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS4_5_3(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS4_5_4(inner) => inner.get_bits(), // {python_generated}
@@ -1217,6 +1336,7 @@ impl InnerModel {
             InnerModel::HS4_5_8(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS4_5_9(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS4_5_10(inner) => inner.get_bits(), // {python_generated}
+            InnerModel::HS4_6_1(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS4_6_2(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS4_6_3(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS4_6_4(inner) => inner.get_bits(), // {python_generated}
@@ -1226,6 +1346,7 @@ impl InnerModel {
             InnerModel::HS4_6_8(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS4_6_9(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS4_6_10(inner) => inner.get_bits(), // {python_generated}
+            InnerModel::HS5_4_1(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS5_4_2(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS5_4_3(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS5_4_4(inner) => inner.get_bits(), // {python_generated}
@@ -1235,6 +1356,7 @@ impl InnerModel {
             InnerModel::HS5_4_8(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS5_4_9(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS5_4_10(inner) => inner.get_bits(), // {python_generated}
+            InnerModel::HS5_5_1(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS5_5_2(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS5_5_3(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS5_5_4(inner) => inner.get_bits(), // {python_generated}
@@ -1244,6 +1366,7 @@ impl InnerModel {
             InnerModel::HS5_5_8(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS5_5_9(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS5_5_10(inner) => inner.get_bits(), // {python_generated}
+            InnerModel::HS5_6_1(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS5_6_2(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS5_6_3(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS5_6_4(inner) => inner.get_bits(), // {python_generated}
@@ -1253,6 +1376,7 @@ impl InnerModel {
             InnerModel::HS5_6_8(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS5_6_9(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS5_6_10(inner) => inner.get_bits(), // {python_generated}
+            InnerModel::HS6_4_1(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS6_4_2(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS6_4_3(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS6_4_4(inner) => inner.get_bits(), // {python_generated}
@@ -1262,6 +1386,7 @@ impl InnerModel {
             InnerModel::HS6_4_8(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS6_4_9(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS6_4_10(inner) => inner.get_bits(), // {python_generated}
+            InnerModel::HS6_5_1(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS6_5_2(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS6_5_3(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS6_5_4(inner) => inner.get_bits(), // {python_generated}
@@ -1271,6 +1396,7 @@ impl InnerModel {
             InnerModel::HS6_5_8(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS6_5_9(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS6_5_10(inner) => inner.get_bits(), // {python_generated}
+            InnerModel::HS6_6_1(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS6_6_2(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS6_6_3(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS6_6_4(inner) => inner.get_bits(), // {python_generated}
@@ -1280,6 +1406,7 @@ impl InnerModel {
             InnerModel::HS6_6_8(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS6_6_9(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS6_6_10(inner) => inner.get_bits(), // {python_generated}
+            InnerModel::HS7_4_1(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS7_4_2(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS7_4_3(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS7_4_4(inner) => inner.get_bits(), // {python_generated}
@@ -1289,6 +1416,7 @@ impl InnerModel {
             InnerModel::HS7_4_8(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS7_4_9(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS7_4_10(inner) => inner.get_bits(), // {python_generated}
+            InnerModel::HS7_5_1(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS7_5_2(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS7_5_3(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS7_5_4(inner) => inner.get_bits(), // {python_generated}
@@ -1298,6 +1426,7 @@ impl InnerModel {
             InnerModel::HS7_5_8(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS7_5_9(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS7_5_10(inner) => inner.get_bits(), // {python_generated}
+            InnerModel::HS7_6_1(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS7_6_2(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS7_6_3(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS7_6_4(inner) => inner.get_bits(), // {python_generated}
@@ -1307,6 +1436,7 @@ impl InnerModel {
             InnerModel::HS7_6_8(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS7_6_9(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS7_6_10(inner) => inner.get_bits(), // {python_generated}
+            InnerModel::HS8_4_1(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS8_4_2(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS8_4_3(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS8_4_4(inner) => inner.get_bits(), // {python_generated}
@@ -1316,6 +1446,7 @@ impl InnerModel {
             InnerModel::HS8_4_8(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS8_4_9(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS8_4_10(inner) => inner.get_bits(), // {python_generated}
+            InnerModel::HS8_5_1(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS8_5_2(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS8_5_3(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS8_5_4(inner) => inner.get_bits(), // {python_generated}
@@ -1325,6 +1456,7 @@ impl InnerModel {
             InnerModel::HS8_5_8(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS8_5_9(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS8_5_10(inner) => inner.get_bits(), // {python_generated}
+            InnerModel::HS8_6_1(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS8_6_2(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS8_6_3(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS8_6_4(inner) => inner.get_bits(), // {python_generated}
@@ -1334,6 +1466,7 @@ impl InnerModel {
             InnerModel::HS8_6_8(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS8_6_9(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS8_6_10(inner) => inner.get_bits(), // {python_generated}
+            InnerModel::HS9_4_1(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS9_4_2(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS9_4_3(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS9_4_4(inner) => inner.get_bits(), // {python_generated}
@@ -1343,6 +1476,7 @@ impl InnerModel {
             InnerModel::HS9_4_8(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS9_4_9(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS9_4_10(inner) => inner.get_bits(), // {python_generated}
+            InnerModel::HS9_5_1(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS9_5_2(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS9_5_3(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS9_5_4(inner) => inner.get_bits(), // {python_generated}
@@ -1352,6 +1486,7 @@ impl InnerModel {
             InnerModel::HS9_5_8(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS9_5_9(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS9_5_10(inner) => inner.get_bits(), // {python_generated}
+            InnerModel::HS9_6_1(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS9_6_2(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS9_6_3(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS9_6_4(inner) => inner.get_bits(), // {python_generated}
@@ -1361,6 +1496,7 @@ impl InnerModel {
             InnerModel::HS9_6_8(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS9_6_9(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS9_6_10(inner) => inner.get_bits(), // {python_generated}
+            InnerModel::HS10_4_1(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS10_4_2(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS10_4_3(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS10_4_4(inner) => inner.get_bits(), // {python_generated}
@@ -1370,6 +1506,7 @@ impl InnerModel {
             InnerModel::HS10_4_8(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS10_4_9(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS10_4_10(inner) => inner.get_bits(), // {python_generated}
+            InnerModel::HS10_5_1(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS10_5_2(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS10_5_3(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS10_5_4(inner) => inner.get_bits(), // {python_generated}
@@ -1379,6 +1516,7 @@ impl InnerModel {
             InnerModel::HS10_5_8(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS10_5_9(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS10_5_10(inner) => inner.get_bits(), // {python_generated}
+            InnerModel::HS10_6_1(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS10_6_2(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS10_6_3(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS10_6_4(inner) => inner.get_bits(), // {python_generated}
@@ -1388,6 +1526,7 @@ impl InnerModel {
             InnerModel::HS10_6_8(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS10_6_9(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS10_6_10(inner) => inner.get_bits(), // {python_generated}
+            InnerModel::HS11_4_1(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS11_4_2(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS11_4_3(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS11_4_4(inner) => inner.get_bits(), // {python_generated}
@@ -1397,6 +1536,7 @@ impl InnerModel {
             InnerModel::HS11_4_8(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS11_4_9(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS11_4_10(inner) => inner.get_bits(), // {python_generated}
+            InnerModel::HS11_5_1(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS11_5_2(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS11_5_3(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS11_5_4(inner) => inner.get_bits(), // {python_generated}
@@ -1406,6 +1546,7 @@ impl InnerModel {
             InnerModel::HS11_5_8(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS11_5_9(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS11_5_10(inner) => inner.get_bits(), // {python_generated}
+            InnerModel::HS11_6_1(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS11_6_2(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS11_6_3(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS11_6_4(inner) => inner.get_bits(), // {python_generated}
@@ -1415,6 +1556,7 @@ impl InnerModel {
             InnerModel::HS11_6_8(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS11_6_9(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS11_6_10(inner) => inner.get_bits(), // {python_generated}
+            InnerModel::HS12_4_1(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS12_4_2(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS12_4_3(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS12_4_4(inner) => inner.get_bits(), // {python_generated}
@@ -1424,6 +1566,7 @@ impl InnerModel {
             InnerModel::HS12_4_8(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS12_4_9(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS12_4_10(inner) => inner.get_bits(), // {python_generated}
+            InnerModel::HS12_5_1(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS12_5_2(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS12_5_3(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS12_5_4(inner) => inner.get_bits(), // {python_generated}
@@ -1433,6 +1576,7 @@ impl InnerModel {
             InnerModel::HS12_5_8(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS12_5_9(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS12_5_10(inner) => inner.get_bits(), // {python_generated}
+            InnerModel::HS12_6_1(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS12_6_2(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS12_6_3(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS12_6_4(inner) => inner.get_bits(), // {python_generated}
@@ -1442,6 +1586,7 @@ impl InnerModel {
             InnerModel::HS12_6_8(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS12_6_9(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS12_6_10(inner) => inner.get_bits(), // {python_generated}
+            InnerModel::HS13_4_1(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS13_4_2(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS13_4_3(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS13_4_4(inner) => inner.get_bits(), // {python_generated}
@@ -1451,6 +1596,7 @@ impl InnerModel {
             InnerModel::HS13_4_8(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS13_4_9(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS13_4_10(inner) => inner.get_bits(), // {python_generated}
+            InnerModel::HS13_5_1(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS13_5_2(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS13_5_3(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS13_5_4(inner) => inner.get_bits(), // {python_generated}
@@ -1460,6 +1606,7 @@ impl InnerModel {
             InnerModel::HS13_5_8(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS13_5_9(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS13_5_10(inner) => inner.get_bits(), // {python_generated}
+            InnerModel::HS13_6_1(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS13_6_2(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS13_6_3(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS13_6_4(inner) => inner.get_bits(), // {python_generated}
@@ -1469,6 +1616,7 @@ impl InnerModel {
             InnerModel::HS13_6_8(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS13_6_9(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS13_6_10(inner) => inner.get_bits(), // {python_generated}
+            InnerModel::HS14_4_1(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS14_4_2(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS14_4_3(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS14_4_4(inner) => inner.get_bits(), // {python_generated}
@@ -1478,6 +1626,7 @@ impl InnerModel {
             InnerModel::HS14_4_8(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS14_4_9(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS14_4_10(inner) => inner.get_bits(), // {python_generated}
+            InnerModel::HS14_5_1(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS14_5_2(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS14_5_3(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS14_5_4(inner) => inner.get_bits(), // {python_generated}
@@ -1487,6 +1636,7 @@ impl InnerModel {
             InnerModel::HS14_5_8(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS14_5_9(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS14_5_10(inner) => inner.get_bits(), // {python_generated}
+            InnerModel::HS14_6_1(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS14_6_2(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS14_6_3(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS14_6_4(inner) => inner.get_bits(), // {python_generated}
@@ -1496,6 +1646,7 @@ impl InnerModel {
             InnerModel::HS14_6_8(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS14_6_9(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS14_6_10(inner) => inner.get_bits(), // {python_generated}
+            InnerModel::HS15_4_1(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS15_4_2(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS15_4_3(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS15_4_4(inner) => inner.get_bits(), // {python_generated}
@@ -1505,6 +1656,7 @@ impl InnerModel {
             InnerModel::HS15_4_8(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS15_4_9(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS15_4_10(inner) => inner.get_bits(), // {python_generated}
+            InnerModel::HS15_5_1(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS15_5_2(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS15_5_3(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS15_5_4(inner) => inner.get_bits(), // {python_generated}
@@ -1514,6 +1666,7 @@ impl InnerModel {
             InnerModel::HS15_5_8(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS15_5_9(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS15_5_10(inner) => inner.get_bits(), // {python_generated}
+            InnerModel::HS15_6_1(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS15_6_2(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS15_6_3(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS15_6_4(inner) => inner.get_bits(), // {python_generated}
@@ -1523,6 +1676,7 @@ impl InnerModel {
             InnerModel::HS15_6_8(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS15_6_9(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS15_6_10(inner) => inner.get_bits(), // {python_generated}
+            InnerModel::HS16_4_1(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS16_4_2(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS16_4_3(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS16_4_4(inner) => inner.get_bits(), // {python_generated}
@@ -1532,6 +1686,7 @@ impl InnerModel {
             InnerModel::HS16_4_8(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS16_4_9(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS16_4_10(inner) => inner.get_bits(), // {python_generated}
+            InnerModel::HS16_5_1(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS16_5_2(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS16_5_3(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS16_5_4(inner) => inner.get_bits(), // {python_generated}
@@ -1541,6 +1696,7 @@ impl InnerModel {
             InnerModel::HS16_5_8(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS16_5_9(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS16_5_10(inner) => inner.get_bits(), // {python_generated}
+            InnerModel::HS16_6_1(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS16_6_2(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS16_6_3(inner) => inner.get_bits(), // {python_generated}
             InnerModel::HS16_6_4(inner) => inner.get_bits(), // {python_generated}
@@ -1557,6 +1713,7 @@ impl InnerModel {
     fn get_precision(&self) -> usize {
         match self {
             // InnerModel::HS{precision}_{bits}_{hops}(inner) => inner.get_precision(), {python_macro}
+            InnerModel::HS4_4_1(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS4_4_2(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS4_4_3(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS4_4_4(inner) => inner.get_precision(), // {python_generated}
@@ -1566,6 +1723,7 @@ impl InnerModel {
             InnerModel::HS4_4_8(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS4_4_9(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS4_4_10(inner) => inner.get_precision(), // {python_generated}
+            InnerModel::HS4_5_1(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS4_5_2(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS4_5_3(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS4_5_4(inner) => inner.get_precision(), // {python_generated}
@@ -1575,6 +1733,7 @@ impl InnerModel {
             InnerModel::HS4_5_8(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS4_5_9(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS4_5_10(inner) => inner.get_precision(), // {python_generated}
+            InnerModel::HS4_6_1(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS4_6_2(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS4_6_3(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS4_6_4(inner) => inner.get_precision(), // {python_generated}
@@ -1584,6 +1743,7 @@ impl InnerModel {
             InnerModel::HS4_6_8(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS4_6_9(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS4_6_10(inner) => inner.get_precision(), // {python_generated}
+            InnerModel::HS5_4_1(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS5_4_2(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS5_4_3(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS5_4_4(inner) => inner.get_precision(), // {python_generated}
@@ -1593,6 +1753,7 @@ impl InnerModel {
             InnerModel::HS5_4_8(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS5_4_9(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS5_4_10(inner) => inner.get_precision(), // {python_generated}
+            InnerModel::HS5_5_1(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS5_5_2(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS5_5_3(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS5_5_4(inner) => inner.get_precision(), // {python_generated}
@@ -1602,6 +1763,7 @@ impl InnerModel {
             InnerModel::HS5_5_8(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS5_5_9(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS5_5_10(inner) => inner.get_precision(), // {python_generated}
+            InnerModel::HS5_6_1(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS5_6_2(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS5_6_3(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS5_6_4(inner) => inner.get_precision(), // {python_generated}
@@ -1611,6 +1773,7 @@ impl InnerModel {
             InnerModel::HS5_6_8(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS5_6_9(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS5_6_10(inner) => inner.get_precision(), // {python_generated}
+            InnerModel::HS6_4_1(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS6_4_2(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS6_4_3(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS6_4_4(inner) => inner.get_precision(), // {python_generated}
@@ -1620,6 +1783,7 @@ impl InnerModel {
             InnerModel::HS6_4_8(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS6_4_9(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS6_4_10(inner) => inner.get_precision(), // {python_generated}
+            InnerModel::HS6_5_1(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS6_5_2(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS6_5_3(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS6_5_4(inner) => inner.get_precision(), // {python_generated}
@@ -1629,6 +1793,7 @@ impl InnerModel {
             InnerModel::HS6_5_8(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS6_5_9(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS6_5_10(inner) => inner.get_precision(), // {python_generated}
+            InnerModel::HS6_6_1(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS6_6_2(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS6_6_3(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS6_6_4(inner) => inner.get_precision(), // {python_generated}
@@ -1638,6 +1803,7 @@ impl InnerModel {
             InnerModel::HS6_6_8(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS6_6_9(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS6_6_10(inner) => inner.get_precision(), // {python_generated}
+            InnerModel::HS7_4_1(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS7_4_2(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS7_4_3(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS7_4_4(inner) => inner.get_precision(), // {python_generated}
@@ -1647,6 +1813,7 @@ impl InnerModel {
             InnerModel::HS7_4_8(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS7_4_9(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS7_4_10(inner) => inner.get_precision(), // {python_generated}
+            InnerModel::HS7_5_1(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS7_5_2(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS7_5_3(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS7_5_4(inner) => inner.get_precision(), // {python_generated}
@@ -1656,6 +1823,7 @@ impl InnerModel {
             InnerModel::HS7_5_8(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS7_5_9(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS7_5_10(inner) => inner.get_precision(), // {python_generated}
+            InnerModel::HS7_6_1(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS7_6_2(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS7_6_3(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS7_6_4(inner) => inner.get_precision(), // {python_generated}
@@ -1665,6 +1833,7 @@ impl InnerModel {
             InnerModel::HS7_6_8(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS7_6_9(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS7_6_10(inner) => inner.get_precision(), // {python_generated}
+            InnerModel::HS8_4_1(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS8_4_2(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS8_4_3(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS8_4_4(inner) => inner.get_precision(), // {python_generated}
@@ -1674,6 +1843,7 @@ impl InnerModel {
             InnerModel::HS8_4_8(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS8_4_9(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS8_4_10(inner) => inner.get_precision(), // {python_generated}
+            InnerModel::HS8_5_1(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS8_5_2(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS8_5_3(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS8_5_4(inner) => inner.get_precision(), // {python_generated}
@@ -1683,6 +1853,7 @@ impl InnerModel {
             InnerModel::HS8_5_8(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS8_5_9(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS8_5_10(inner) => inner.get_precision(), // {python_generated}
+            InnerModel::HS8_6_1(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS8_6_2(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS8_6_3(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS8_6_4(inner) => inner.get_precision(), // {python_generated}
@@ -1692,6 +1863,7 @@ impl InnerModel {
             InnerModel::HS8_6_8(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS8_6_9(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS8_6_10(inner) => inner.get_precision(), // {python_generated}
+            InnerModel::HS9_4_1(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS9_4_2(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS9_4_3(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS9_4_4(inner) => inner.get_precision(), // {python_generated}
@@ -1701,6 +1873,7 @@ impl InnerModel {
             InnerModel::HS9_4_8(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS9_4_9(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS9_4_10(inner) => inner.get_precision(), // {python_generated}
+            InnerModel::HS9_5_1(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS9_5_2(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS9_5_3(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS9_5_4(inner) => inner.get_precision(), // {python_generated}
@@ -1710,6 +1883,7 @@ impl InnerModel {
             InnerModel::HS9_5_8(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS9_5_9(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS9_5_10(inner) => inner.get_precision(), // {python_generated}
+            InnerModel::HS9_6_1(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS9_6_2(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS9_6_3(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS9_6_4(inner) => inner.get_precision(), // {python_generated}
@@ -1719,6 +1893,7 @@ impl InnerModel {
             InnerModel::HS9_6_8(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS9_6_9(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS9_6_10(inner) => inner.get_precision(), // {python_generated}
+            InnerModel::HS10_4_1(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS10_4_2(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS10_4_3(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS10_4_4(inner) => inner.get_precision(), // {python_generated}
@@ -1728,6 +1903,7 @@ impl InnerModel {
             InnerModel::HS10_4_8(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS10_4_9(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS10_4_10(inner) => inner.get_precision(), // {python_generated}
+            InnerModel::HS10_5_1(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS10_5_2(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS10_5_3(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS10_5_4(inner) => inner.get_precision(), // {python_generated}
@@ -1737,6 +1913,7 @@ impl InnerModel {
             InnerModel::HS10_5_8(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS10_5_9(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS10_5_10(inner) => inner.get_precision(), // {python_generated}
+            InnerModel::HS10_6_1(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS10_6_2(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS10_6_3(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS10_6_4(inner) => inner.get_precision(), // {python_generated}
@@ -1746,6 +1923,7 @@ impl InnerModel {
             InnerModel::HS10_6_8(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS10_6_9(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS10_6_10(inner) => inner.get_precision(), // {python_generated}
+            InnerModel::HS11_4_1(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS11_4_2(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS11_4_3(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS11_4_4(inner) => inner.get_precision(), // {python_generated}
@@ -1755,6 +1933,7 @@ impl InnerModel {
             InnerModel::HS11_4_8(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS11_4_9(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS11_4_10(inner) => inner.get_precision(), // {python_generated}
+            InnerModel::HS11_5_1(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS11_5_2(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS11_5_3(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS11_5_4(inner) => inner.get_precision(), // {python_generated}
@@ -1764,6 +1943,7 @@ impl InnerModel {
             InnerModel::HS11_5_8(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS11_5_9(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS11_5_10(inner) => inner.get_precision(), // {python_generated}
+            InnerModel::HS11_6_1(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS11_6_2(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS11_6_3(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS11_6_4(inner) => inner.get_precision(), // {python_generated}
@@ -1773,6 +1953,7 @@ impl InnerModel {
             InnerModel::HS11_6_8(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS11_6_9(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS11_6_10(inner) => inner.get_precision(), // {python_generated}
+            InnerModel::HS12_4_1(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS12_4_2(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS12_4_3(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS12_4_4(inner) => inner.get_precision(), // {python_generated}
@@ -1782,6 +1963,7 @@ impl InnerModel {
             InnerModel::HS12_4_8(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS12_4_9(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS12_4_10(inner) => inner.get_precision(), // {python_generated}
+            InnerModel::HS12_5_1(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS12_5_2(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS12_5_3(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS12_5_4(inner) => inner.get_precision(), // {python_generated}
@@ -1791,6 +1973,7 @@ impl InnerModel {
             InnerModel::HS12_5_8(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS12_5_9(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS12_5_10(inner) => inner.get_precision(), // {python_generated}
+            InnerModel::HS12_6_1(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS12_6_2(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS12_6_3(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS12_6_4(inner) => inner.get_precision(), // {python_generated}
@@ -1800,6 +1983,7 @@ impl InnerModel {
             InnerModel::HS12_6_8(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS12_6_9(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS12_6_10(inner) => inner.get_precision(), // {python_generated}
+            InnerModel::HS13_4_1(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS13_4_2(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS13_4_3(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS13_4_4(inner) => inner.get_precision(), // {python_generated}
@@ -1809,6 +1993,7 @@ impl InnerModel {
             InnerModel::HS13_4_8(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS13_4_9(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS13_4_10(inner) => inner.get_precision(), // {python_generated}
+            InnerModel::HS13_5_1(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS13_5_2(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS13_5_3(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS13_5_4(inner) => inner.get_precision(), // {python_generated}
@@ -1818,6 +2003,7 @@ impl InnerModel {
             InnerModel::HS13_5_8(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS13_5_9(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS13_5_10(inner) => inner.get_precision(), // {python_generated}
+            InnerModel::HS13_6_1(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS13_6_2(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS13_6_3(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS13_6_4(inner) => inner.get_precision(), // {python_generated}
@@ -1827,6 +2013,7 @@ impl InnerModel {
             InnerModel::HS13_6_8(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS13_6_9(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS13_6_10(inner) => inner.get_precision(), // {python_generated}
+            InnerModel::HS14_4_1(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS14_4_2(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS14_4_3(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS14_4_4(inner) => inner.get_precision(), // {python_generated}
@@ -1836,6 +2023,7 @@ impl InnerModel {
             InnerModel::HS14_4_8(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS14_4_9(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS14_4_10(inner) => inner.get_precision(), // {python_generated}
+            InnerModel::HS14_5_1(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS14_5_2(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS14_5_3(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS14_5_4(inner) => inner.get_precision(), // {python_generated}
@@ -1845,6 +2033,7 @@ impl InnerModel {
             InnerModel::HS14_5_8(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS14_5_9(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS14_5_10(inner) => inner.get_precision(), // {python_generated}
+            InnerModel::HS14_6_1(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS14_6_2(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS14_6_3(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS14_6_4(inner) => inner.get_precision(), // {python_generated}
@@ -1854,6 +2043,7 @@ impl InnerModel {
             InnerModel::HS14_6_8(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS14_6_9(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS14_6_10(inner) => inner.get_precision(), // {python_generated}
+            InnerModel::HS15_4_1(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS15_4_2(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS15_4_3(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS15_4_4(inner) => inner.get_precision(), // {python_generated}
@@ -1863,6 +2053,7 @@ impl InnerModel {
             InnerModel::HS15_4_8(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS15_4_9(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS15_4_10(inner) => inner.get_precision(), // {python_generated}
+            InnerModel::HS15_5_1(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS15_5_2(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS15_5_3(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS15_5_4(inner) => inner.get_precision(), // {python_generated}
@@ -1872,6 +2063,7 @@ impl InnerModel {
             InnerModel::HS15_5_8(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS15_5_9(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS15_5_10(inner) => inner.get_precision(), // {python_generated}
+            InnerModel::HS15_6_1(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS15_6_2(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS15_6_3(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS15_6_4(inner) => inner.get_precision(), // {python_generated}
@@ -1881,6 +2073,7 @@ impl InnerModel {
             InnerModel::HS15_6_8(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS15_6_9(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS15_6_10(inner) => inner.get_precision(), // {python_generated}
+            InnerModel::HS16_4_1(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS16_4_2(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS16_4_3(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS16_4_4(inner) => inner.get_precision(), // {python_generated}
@@ -1890,6 +2083,7 @@ impl InnerModel {
             InnerModel::HS16_4_8(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS16_4_9(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS16_4_10(inner) => inner.get_precision(), // {python_generated}
+            InnerModel::HS16_5_1(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS16_5_2(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS16_5_3(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS16_5_4(inner) => inner.get_precision(), // {python_generated}
@@ -1899,6 +2093,7 @@ impl InnerModel {
             InnerModel::HS16_5_8(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS16_5_9(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS16_5_10(inner) => inner.get_precision(), // {python_generated}
+            InnerModel::HS16_6_1(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS16_6_2(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS16_6_3(inner) => inner.get_precision(), // {python_generated}
             InnerModel::HS16_6_4(inner) => inner.get_precision(), // {python_generated}
@@ -1915,6 +2110,7 @@ impl InnerModel {
     fn get_number_of_hops(&self) -> usize {
         match self {
             // InnerModel::HS{precision}_{bits}_{hops}(inner) => inner.get_number_of_hops(), {python_macro}
+            InnerModel::HS4_4_1(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS4_4_2(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS4_4_3(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS4_4_4(inner) => inner.get_number_of_hops(), // {python_generated}
@@ -1924,6 +2120,7 @@ impl InnerModel {
             InnerModel::HS4_4_8(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS4_4_9(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS4_4_10(inner) => inner.get_number_of_hops(), // {python_generated}
+            InnerModel::HS4_5_1(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS4_5_2(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS4_5_3(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS4_5_4(inner) => inner.get_number_of_hops(), // {python_generated}
@@ -1933,6 +2130,7 @@ impl InnerModel {
             InnerModel::HS4_5_8(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS4_5_9(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS4_5_10(inner) => inner.get_number_of_hops(), // {python_generated}
+            InnerModel::HS4_6_1(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS4_6_2(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS4_6_3(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS4_6_4(inner) => inner.get_number_of_hops(), // {python_generated}
@@ -1942,6 +2140,7 @@ impl InnerModel {
             InnerModel::HS4_6_8(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS4_6_9(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS4_6_10(inner) => inner.get_number_of_hops(), // {python_generated}
+            InnerModel::HS5_4_1(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS5_4_2(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS5_4_3(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS5_4_4(inner) => inner.get_number_of_hops(), // {python_generated}
@@ -1951,6 +2150,7 @@ impl InnerModel {
             InnerModel::HS5_4_8(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS5_4_9(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS5_4_10(inner) => inner.get_number_of_hops(), // {python_generated}
+            InnerModel::HS5_5_1(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS5_5_2(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS5_5_3(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS5_5_4(inner) => inner.get_number_of_hops(), // {python_generated}
@@ -1960,6 +2160,7 @@ impl InnerModel {
             InnerModel::HS5_5_8(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS5_5_9(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS5_5_10(inner) => inner.get_number_of_hops(), // {python_generated}
+            InnerModel::HS5_6_1(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS5_6_2(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS5_6_3(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS5_6_4(inner) => inner.get_number_of_hops(), // {python_generated}
@@ -1969,6 +2170,7 @@ impl InnerModel {
             InnerModel::HS5_6_8(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS5_6_9(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS5_6_10(inner) => inner.get_number_of_hops(), // {python_generated}
+            InnerModel::HS6_4_1(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS6_4_2(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS6_4_3(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS6_4_4(inner) => inner.get_number_of_hops(), // {python_generated}
@@ -1978,6 +2180,7 @@ impl InnerModel {
             InnerModel::HS6_4_8(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS6_4_9(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS6_4_10(inner) => inner.get_number_of_hops(), // {python_generated}
+            InnerModel::HS6_5_1(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS6_5_2(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS6_5_3(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS6_5_4(inner) => inner.get_number_of_hops(), // {python_generated}
@@ -1987,6 +2190,7 @@ impl InnerModel {
             InnerModel::HS6_5_8(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS6_5_9(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS6_5_10(inner) => inner.get_number_of_hops(), // {python_generated}
+            InnerModel::HS6_6_1(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS6_6_2(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS6_6_3(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS6_6_4(inner) => inner.get_number_of_hops(), // {python_generated}
@@ -1996,6 +2200,7 @@ impl InnerModel {
             InnerModel::HS6_6_8(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS6_6_9(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS6_6_10(inner) => inner.get_number_of_hops(), // {python_generated}
+            InnerModel::HS7_4_1(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS7_4_2(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS7_4_3(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS7_4_4(inner) => inner.get_number_of_hops(), // {python_generated}
@@ -2005,6 +2210,7 @@ impl InnerModel {
             InnerModel::HS7_4_8(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS7_4_9(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS7_4_10(inner) => inner.get_number_of_hops(), // {python_generated}
+            InnerModel::HS7_5_1(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS7_5_2(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS7_5_3(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS7_5_4(inner) => inner.get_number_of_hops(), // {python_generated}
@@ -2014,6 +2220,7 @@ impl InnerModel {
             InnerModel::HS7_5_8(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS7_5_9(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS7_5_10(inner) => inner.get_number_of_hops(), // {python_generated}
+            InnerModel::HS7_6_1(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS7_6_2(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS7_6_3(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS7_6_4(inner) => inner.get_number_of_hops(), // {python_generated}
@@ -2023,6 +2230,7 @@ impl InnerModel {
             InnerModel::HS7_6_8(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS7_6_9(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS7_6_10(inner) => inner.get_number_of_hops(), // {python_generated}
+            InnerModel::HS8_4_1(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS8_4_2(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS8_4_3(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS8_4_4(inner) => inner.get_number_of_hops(), // {python_generated}
@@ -2032,6 +2240,7 @@ impl InnerModel {
             InnerModel::HS8_4_8(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS8_4_9(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS8_4_10(inner) => inner.get_number_of_hops(), // {python_generated}
+            InnerModel::HS8_5_1(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS8_5_2(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS8_5_3(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS8_5_4(inner) => inner.get_number_of_hops(), // {python_generated}
@@ -2041,6 +2250,7 @@ impl InnerModel {
             InnerModel::HS8_5_8(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS8_5_9(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS8_5_10(inner) => inner.get_number_of_hops(), // {python_generated}
+            InnerModel::HS8_6_1(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS8_6_2(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS8_6_3(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS8_6_4(inner) => inner.get_number_of_hops(), // {python_generated}
@@ -2050,6 +2260,7 @@ impl InnerModel {
             InnerModel::HS8_6_8(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS8_6_9(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS8_6_10(inner) => inner.get_number_of_hops(), // {python_generated}
+            InnerModel::HS9_4_1(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS9_4_2(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS9_4_3(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS9_4_4(inner) => inner.get_number_of_hops(), // {python_generated}
@@ -2059,6 +2270,7 @@ impl InnerModel {
             InnerModel::HS9_4_8(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS9_4_9(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS9_4_10(inner) => inner.get_number_of_hops(), // {python_generated}
+            InnerModel::HS9_5_1(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS9_5_2(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS9_5_3(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS9_5_4(inner) => inner.get_number_of_hops(), // {python_generated}
@@ -2068,6 +2280,7 @@ impl InnerModel {
             InnerModel::HS9_5_8(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS9_5_9(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS9_5_10(inner) => inner.get_number_of_hops(), // {python_generated}
+            InnerModel::HS9_6_1(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS9_6_2(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS9_6_3(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS9_6_4(inner) => inner.get_number_of_hops(), // {python_generated}
@@ -2077,6 +2290,7 @@ impl InnerModel {
             InnerModel::HS9_6_8(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS9_6_9(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS9_6_10(inner) => inner.get_number_of_hops(), // {python_generated}
+            InnerModel::HS10_4_1(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS10_4_2(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS10_4_3(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS10_4_4(inner) => inner.get_number_of_hops(), // {python_generated}
@@ -2086,6 +2300,7 @@ impl InnerModel {
             InnerModel::HS10_4_8(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS10_4_9(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS10_4_10(inner) => inner.get_number_of_hops(), // {python_generated}
+            InnerModel::HS10_5_1(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS10_5_2(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS10_5_3(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS10_5_4(inner) => inner.get_number_of_hops(), // {python_generated}
@@ -2095,6 +2310,7 @@ impl InnerModel {
             InnerModel::HS10_5_8(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS10_5_9(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS10_5_10(inner) => inner.get_number_of_hops(), // {python_generated}
+            InnerModel::HS10_6_1(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS10_6_2(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS10_6_3(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS10_6_4(inner) => inner.get_number_of_hops(), // {python_generated}
@@ -2104,6 +2320,7 @@ impl InnerModel {
             InnerModel::HS10_6_8(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS10_6_9(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS10_6_10(inner) => inner.get_number_of_hops(), // {python_generated}
+            InnerModel::HS11_4_1(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS11_4_2(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS11_4_3(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS11_4_4(inner) => inner.get_number_of_hops(), // {python_generated}
@@ -2113,6 +2330,7 @@ impl InnerModel {
             InnerModel::HS11_4_8(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS11_4_9(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS11_4_10(inner) => inner.get_number_of_hops(), // {python_generated}
+            InnerModel::HS11_5_1(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS11_5_2(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS11_5_3(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS11_5_4(inner) => inner.get_number_of_hops(), // {python_generated}
@@ -2122,6 +2340,7 @@ impl InnerModel {
             InnerModel::HS11_5_8(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS11_5_9(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS11_5_10(inner) => inner.get_number_of_hops(), // {python_generated}
+            InnerModel::HS11_6_1(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS11_6_2(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS11_6_3(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS11_6_4(inner) => inner.get_number_of_hops(), // {python_generated}
@@ -2131,6 +2350,7 @@ impl InnerModel {
             InnerModel::HS11_6_8(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS11_6_9(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS11_6_10(inner) => inner.get_number_of_hops(), // {python_generated}
+            InnerModel::HS12_4_1(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS12_4_2(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS12_4_3(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS12_4_4(inner) => inner.get_number_of_hops(), // {python_generated}
@@ -2140,6 +2360,7 @@ impl InnerModel {
             InnerModel::HS12_4_8(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS12_4_9(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS12_4_10(inner) => inner.get_number_of_hops(), // {python_generated}
+            InnerModel::HS12_5_1(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS12_5_2(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS12_5_3(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS12_5_4(inner) => inner.get_number_of_hops(), // {python_generated}
@@ -2149,6 +2370,7 @@ impl InnerModel {
             InnerModel::HS12_5_8(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS12_5_9(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS12_5_10(inner) => inner.get_number_of_hops(), // {python_generated}
+            InnerModel::HS12_6_1(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS12_6_2(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS12_6_3(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS12_6_4(inner) => inner.get_number_of_hops(), // {python_generated}
@@ -2158,6 +2380,7 @@ impl InnerModel {
             InnerModel::HS12_6_8(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS12_6_9(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS12_6_10(inner) => inner.get_number_of_hops(), // {python_generated}
+            InnerModel::HS13_4_1(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS13_4_2(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS13_4_3(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS13_4_4(inner) => inner.get_number_of_hops(), // {python_generated}
@@ -2167,6 +2390,7 @@ impl InnerModel {
             InnerModel::HS13_4_8(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS13_4_9(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS13_4_10(inner) => inner.get_number_of_hops(), // {python_generated}
+            InnerModel::HS13_5_1(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS13_5_2(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS13_5_3(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS13_5_4(inner) => inner.get_number_of_hops(), // {python_generated}
@@ -2176,6 +2400,7 @@ impl InnerModel {
             InnerModel::HS13_5_8(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS13_5_9(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS13_5_10(inner) => inner.get_number_of_hops(), // {python_generated}
+            InnerModel::HS13_6_1(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS13_6_2(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS13_6_3(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS13_6_4(inner) => inner.get_number_of_hops(), // {python_generated}
@@ -2185,6 +2410,7 @@ impl InnerModel {
             InnerModel::HS13_6_8(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS13_6_9(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS13_6_10(inner) => inner.get_number_of_hops(), // {python_generated}
+            InnerModel::HS14_4_1(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS14_4_2(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS14_4_3(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS14_4_4(inner) => inner.get_number_of_hops(), // {python_generated}
@@ -2194,6 +2420,7 @@ impl InnerModel {
             InnerModel::HS14_4_8(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS14_4_9(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS14_4_10(inner) => inner.get_number_of_hops(), // {python_generated}
+            InnerModel::HS14_5_1(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS14_5_2(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS14_5_3(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS14_5_4(inner) => inner.get_number_of_hops(), // {python_generated}
@@ -2203,6 +2430,7 @@ impl InnerModel {
             InnerModel::HS14_5_8(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS14_5_9(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS14_5_10(inner) => inner.get_number_of_hops(), // {python_generated}
+            InnerModel::HS14_6_1(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS14_6_2(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS14_6_3(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS14_6_4(inner) => inner.get_number_of_hops(), // {python_generated}
@@ -2212,6 +2440,7 @@ impl InnerModel {
             InnerModel::HS14_6_8(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS14_6_9(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS14_6_10(inner) => inner.get_number_of_hops(), // {python_generated}
+            InnerModel::HS15_4_1(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS15_4_2(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS15_4_3(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS15_4_4(inner) => inner.get_number_of_hops(), // {python_generated}
@@ -2221,6 +2450,7 @@ impl InnerModel {
             InnerModel::HS15_4_8(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS15_4_9(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS15_4_10(inner) => inner.get_number_of_hops(), // {python_generated}
+            InnerModel::HS15_5_1(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS15_5_2(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS15_5_3(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS15_5_4(inner) => inner.get_number_of_hops(), // {python_generated}
@@ -2230,6 +2460,7 @@ impl InnerModel {
             InnerModel::HS15_5_8(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS15_5_9(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS15_5_10(inner) => inner.get_number_of_hops(), // {python_generated}
+            InnerModel::HS15_6_1(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS15_6_2(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS15_6_3(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS15_6_4(inner) => inner.get_number_of_hops(), // {python_generated}
@@ -2239,6 +2470,7 @@ impl InnerModel {
             InnerModel::HS15_6_8(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS15_6_9(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS15_6_10(inner) => inner.get_number_of_hops(), // {python_generated}
+            InnerModel::HS16_4_1(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS16_4_2(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS16_4_3(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS16_4_4(inner) => inner.get_number_of_hops(), // {python_generated}
@@ -2248,6 +2480,7 @@ impl InnerModel {
             InnerModel::HS16_4_8(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS16_4_9(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS16_4_10(inner) => inner.get_number_of_hops(), // {python_generated}
+            InnerModel::HS16_5_1(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS16_5_2(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS16_5_3(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS16_5_4(inner) => inner.get_number_of_hops(), // {python_generated}
@@ -2257,6 +2490,7 @@ impl InnerModel {
             InnerModel::HS16_5_8(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS16_5_9(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS16_5_10(inner) => inner.get_number_of_hops(), // {python_generated}
+            InnerModel::HS16_6_1(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS16_6_2(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS16_6_3(inner) => inner.get_number_of_hops(), // {python_generated}
             InnerModel::HS16_6_4(inner) => inner.get_number_of_hops(), // {python_generated}
@@ -2273,6 +2507,7 @@ impl InnerModel {
     fn get_normalize_by_symmetric_laplacian(&self) -> bool {
         match self {
             // InnerModel::HS{precision}_{bits}_{hops}(inner) => inner.get_normalize_by_symmetric_laplacian(), {python_macro}
+            InnerModel::HS4_4_1(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS4_4_2(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS4_4_3(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS4_4_4(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
@@ -2282,6 +2517,7 @@ impl InnerModel {
             InnerModel::HS4_4_8(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS4_4_9(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS4_4_10(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
+            InnerModel::HS4_5_1(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS4_5_2(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS4_5_3(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS4_5_4(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
@@ -2291,6 +2527,7 @@ impl InnerModel {
             InnerModel::HS4_5_8(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS4_5_9(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS4_5_10(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
+            InnerModel::HS4_6_1(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS4_6_2(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS4_6_3(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS4_6_4(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
@@ -2300,6 +2537,7 @@ impl InnerModel {
             InnerModel::HS4_6_8(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS4_6_9(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS4_6_10(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
+            InnerModel::HS5_4_1(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS5_4_2(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS5_4_3(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS5_4_4(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
@@ -2309,6 +2547,7 @@ impl InnerModel {
             InnerModel::HS5_4_8(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS5_4_9(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS5_4_10(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
+            InnerModel::HS5_5_1(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS5_5_2(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS5_5_3(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS5_5_4(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
@@ -2318,6 +2557,7 @@ impl InnerModel {
             InnerModel::HS5_5_8(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS5_5_9(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS5_5_10(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
+            InnerModel::HS5_6_1(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS5_6_2(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS5_6_3(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS5_6_4(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
@@ -2327,6 +2567,7 @@ impl InnerModel {
             InnerModel::HS5_6_8(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS5_6_9(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS5_6_10(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
+            InnerModel::HS6_4_1(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS6_4_2(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS6_4_3(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS6_4_4(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
@@ -2336,6 +2577,7 @@ impl InnerModel {
             InnerModel::HS6_4_8(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS6_4_9(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS6_4_10(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
+            InnerModel::HS6_5_1(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS6_5_2(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS6_5_3(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS6_5_4(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
@@ -2345,6 +2587,7 @@ impl InnerModel {
             InnerModel::HS6_5_8(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS6_5_9(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS6_5_10(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
+            InnerModel::HS6_6_1(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS6_6_2(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS6_6_3(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS6_6_4(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
@@ -2354,6 +2597,7 @@ impl InnerModel {
             InnerModel::HS6_6_8(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS6_6_9(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS6_6_10(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
+            InnerModel::HS7_4_1(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS7_4_2(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS7_4_3(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS7_4_4(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
@@ -2363,6 +2607,7 @@ impl InnerModel {
             InnerModel::HS7_4_8(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS7_4_9(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS7_4_10(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
+            InnerModel::HS7_5_1(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS7_5_2(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS7_5_3(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS7_5_4(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
@@ -2372,6 +2617,7 @@ impl InnerModel {
             InnerModel::HS7_5_8(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS7_5_9(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS7_5_10(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
+            InnerModel::HS7_6_1(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS7_6_2(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS7_6_3(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS7_6_4(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
@@ -2381,6 +2627,7 @@ impl InnerModel {
             InnerModel::HS7_6_8(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS7_6_9(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS7_6_10(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
+            InnerModel::HS8_4_1(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS8_4_2(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS8_4_3(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS8_4_4(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
@@ -2390,6 +2637,7 @@ impl InnerModel {
             InnerModel::HS8_4_8(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS8_4_9(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS8_4_10(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
+            InnerModel::HS8_5_1(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS8_5_2(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS8_5_3(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS8_5_4(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
@@ -2399,6 +2647,7 @@ impl InnerModel {
             InnerModel::HS8_5_8(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS8_5_9(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS8_5_10(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
+            InnerModel::HS8_6_1(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS8_6_2(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS8_6_3(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS8_6_4(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
@@ -2408,6 +2657,7 @@ impl InnerModel {
             InnerModel::HS8_6_8(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS8_6_9(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS8_6_10(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
+            InnerModel::HS9_4_1(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS9_4_2(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS9_4_3(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS9_4_4(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
@@ -2417,6 +2667,7 @@ impl InnerModel {
             InnerModel::HS9_4_8(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS9_4_9(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS9_4_10(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
+            InnerModel::HS9_5_1(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS9_5_2(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS9_5_3(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS9_5_4(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
@@ -2426,6 +2677,7 @@ impl InnerModel {
             InnerModel::HS9_5_8(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS9_5_9(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS9_5_10(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
+            InnerModel::HS9_6_1(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS9_6_2(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS9_6_3(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS9_6_4(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
@@ -2435,6 +2687,7 @@ impl InnerModel {
             InnerModel::HS9_6_8(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS9_6_9(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS9_6_10(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
+            InnerModel::HS10_4_1(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS10_4_2(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS10_4_3(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS10_4_4(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
@@ -2444,6 +2697,7 @@ impl InnerModel {
             InnerModel::HS10_4_8(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS10_4_9(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS10_4_10(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
+            InnerModel::HS10_5_1(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS10_5_2(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS10_5_3(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS10_5_4(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
@@ -2453,6 +2707,7 @@ impl InnerModel {
             InnerModel::HS10_5_8(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS10_5_9(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS10_5_10(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
+            InnerModel::HS10_6_1(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS10_6_2(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS10_6_3(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS10_6_4(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
@@ -2462,6 +2717,7 @@ impl InnerModel {
             InnerModel::HS10_6_8(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS10_6_9(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS10_6_10(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
+            InnerModel::HS11_4_1(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS11_4_2(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS11_4_3(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS11_4_4(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
@@ -2471,6 +2727,7 @@ impl InnerModel {
             InnerModel::HS11_4_8(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS11_4_9(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS11_4_10(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
+            InnerModel::HS11_5_1(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS11_5_2(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS11_5_3(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS11_5_4(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
@@ -2480,6 +2737,7 @@ impl InnerModel {
             InnerModel::HS11_5_8(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS11_5_9(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS11_5_10(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
+            InnerModel::HS11_6_1(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS11_6_2(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS11_6_3(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS11_6_4(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
@@ -2489,6 +2747,7 @@ impl InnerModel {
             InnerModel::HS11_6_8(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS11_6_9(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS11_6_10(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
+            InnerModel::HS12_4_1(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS12_4_2(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS12_4_3(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS12_4_4(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
@@ -2498,6 +2757,7 @@ impl InnerModel {
             InnerModel::HS12_4_8(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS12_4_9(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS12_4_10(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
+            InnerModel::HS12_5_1(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS12_5_2(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS12_5_3(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS12_5_4(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
@@ -2507,6 +2767,7 @@ impl InnerModel {
             InnerModel::HS12_5_8(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS12_5_9(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS12_5_10(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
+            InnerModel::HS12_6_1(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS12_6_2(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS12_6_3(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS12_6_4(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
@@ -2516,6 +2777,7 @@ impl InnerModel {
             InnerModel::HS12_6_8(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS12_6_9(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS12_6_10(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
+            InnerModel::HS13_4_1(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS13_4_2(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS13_4_3(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS13_4_4(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
@@ -2525,6 +2787,7 @@ impl InnerModel {
             InnerModel::HS13_4_8(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS13_4_9(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS13_4_10(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
+            InnerModel::HS13_5_1(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS13_5_2(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS13_5_3(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS13_5_4(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
@@ -2534,6 +2797,7 @@ impl InnerModel {
             InnerModel::HS13_5_8(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS13_5_9(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS13_5_10(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
+            InnerModel::HS13_6_1(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS13_6_2(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS13_6_3(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS13_6_4(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
@@ -2543,6 +2807,7 @@ impl InnerModel {
             InnerModel::HS13_6_8(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS13_6_9(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS13_6_10(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
+            InnerModel::HS14_4_1(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS14_4_2(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS14_4_3(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS14_4_4(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
@@ -2552,6 +2817,7 @@ impl InnerModel {
             InnerModel::HS14_4_8(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS14_4_9(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS14_4_10(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
+            InnerModel::HS14_5_1(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS14_5_2(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS14_5_3(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS14_5_4(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
@@ -2561,6 +2827,7 @@ impl InnerModel {
             InnerModel::HS14_5_8(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS14_5_9(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS14_5_10(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
+            InnerModel::HS14_6_1(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS14_6_2(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS14_6_3(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS14_6_4(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
@@ -2570,6 +2837,7 @@ impl InnerModel {
             InnerModel::HS14_6_8(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS14_6_9(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS14_6_10(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
+            InnerModel::HS15_4_1(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS15_4_2(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS15_4_3(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS15_4_4(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
@@ -2579,6 +2847,7 @@ impl InnerModel {
             InnerModel::HS15_4_8(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS15_4_9(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS15_4_10(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
+            InnerModel::HS15_5_1(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS15_5_2(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS15_5_3(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS15_5_4(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
@@ -2588,6 +2857,7 @@ impl InnerModel {
             InnerModel::HS15_5_8(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS15_5_9(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS15_5_10(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
+            InnerModel::HS15_6_1(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS15_6_2(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS15_6_3(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS15_6_4(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
@@ -2597,6 +2867,7 @@ impl InnerModel {
             InnerModel::HS15_6_8(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS15_6_9(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS15_6_10(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
+            InnerModel::HS16_4_1(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS16_4_2(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS16_4_3(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS16_4_4(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
@@ -2606,6 +2877,7 @@ impl InnerModel {
             InnerModel::HS16_4_8(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS16_4_9(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS16_4_10(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
+            InnerModel::HS16_5_1(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS16_5_2(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS16_5_3(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS16_5_4(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
@@ -2615,6 +2887,7 @@ impl InnerModel {
             InnerModel::HS16_5_8(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS16_5_9(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS16_5_10(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
+            InnerModel::HS16_6_1(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS16_6_2(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS16_6_3(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
             InnerModel::HS16_6_4(inner) => inner.get_normalize_by_symmetric_laplacian(), // {python_generated}
@@ -2631,6 +2904,7 @@ impl InnerModel {
     fn get_concatenate_features(&self) -> bool {
         match self {
             // InnerModel::HS{precision}_{bits}_{hops}(inner) => inner.get_concatenate_features(), {python_macro}
+            InnerModel::HS4_4_1(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS4_4_2(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS4_4_3(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS4_4_4(inner) => inner.get_concatenate_features(), // {python_generated}
@@ -2640,6 +2914,7 @@ impl InnerModel {
             InnerModel::HS4_4_8(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS4_4_9(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS4_4_10(inner) => inner.get_concatenate_features(), // {python_generated}
+            InnerModel::HS4_5_1(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS4_5_2(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS4_5_3(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS4_5_4(inner) => inner.get_concatenate_features(), // {python_generated}
@@ -2649,6 +2924,7 @@ impl InnerModel {
             InnerModel::HS4_5_8(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS4_5_9(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS4_5_10(inner) => inner.get_concatenate_features(), // {python_generated}
+            InnerModel::HS4_6_1(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS4_6_2(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS4_6_3(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS4_6_4(inner) => inner.get_concatenate_features(), // {python_generated}
@@ -2658,6 +2934,7 @@ impl InnerModel {
             InnerModel::HS4_6_8(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS4_6_9(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS4_6_10(inner) => inner.get_concatenate_features(), // {python_generated}
+            InnerModel::HS5_4_1(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS5_4_2(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS5_4_3(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS5_4_4(inner) => inner.get_concatenate_features(), // {python_generated}
@@ -2667,6 +2944,7 @@ impl InnerModel {
             InnerModel::HS5_4_8(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS5_4_9(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS5_4_10(inner) => inner.get_concatenate_features(), // {python_generated}
+            InnerModel::HS5_5_1(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS5_5_2(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS5_5_3(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS5_5_4(inner) => inner.get_concatenate_features(), // {python_generated}
@@ -2676,6 +2954,7 @@ impl InnerModel {
             InnerModel::HS5_5_8(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS5_5_9(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS5_5_10(inner) => inner.get_concatenate_features(), // {python_generated}
+            InnerModel::HS5_6_1(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS5_6_2(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS5_6_3(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS5_6_4(inner) => inner.get_concatenate_features(), // {python_generated}
@@ -2685,6 +2964,7 @@ impl InnerModel {
             InnerModel::HS5_6_8(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS5_6_9(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS5_6_10(inner) => inner.get_concatenate_features(), // {python_generated}
+            InnerModel::HS6_4_1(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS6_4_2(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS6_4_3(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS6_4_4(inner) => inner.get_concatenate_features(), // {python_generated}
@@ -2694,6 +2974,7 @@ impl InnerModel {
             InnerModel::HS6_4_8(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS6_4_9(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS6_4_10(inner) => inner.get_concatenate_features(), // {python_generated}
+            InnerModel::HS6_5_1(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS6_5_2(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS6_5_3(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS6_5_4(inner) => inner.get_concatenate_features(), // {python_generated}
@@ -2703,6 +2984,7 @@ impl InnerModel {
             InnerModel::HS6_5_8(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS6_5_9(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS6_5_10(inner) => inner.get_concatenate_features(), // {python_generated}
+            InnerModel::HS6_6_1(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS6_6_2(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS6_6_3(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS6_6_4(inner) => inner.get_concatenate_features(), // {python_generated}
@@ -2712,6 +2994,7 @@ impl InnerModel {
             InnerModel::HS6_6_8(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS6_6_9(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS6_6_10(inner) => inner.get_concatenate_features(), // {python_generated}
+            InnerModel::HS7_4_1(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS7_4_2(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS7_4_3(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS7_4_4(inner) => inner.get_concatenate_features(), // {python_generated}
@@ -2721,6 +3004,7 @@ impl InnerModel {
             InnerModel::HS7_4_8(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS7_4_9(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS7_4_10(inner) => inner.get_concatenate_features(), // {python_generated}
+            InnerModel::HS7_5_1(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS7_5_2(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS7_5_3(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS7_5_4(inner) => inner.get_concatenate_features(), // {python_generated}
@@ -2730,6 +3014,7 @@ impl InnerModel {
             InnerModel::HS7_5_8(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS7_5_9(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS7_5_10(inner) => inner.get_concatenate_features(), // {python_generated}
+            InnerModel::HS7_6_1(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS7_6_2(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS7_6_3(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS7_6_4(inner) => inner.get_concatenate_features(), // {python_generated}
@@ -2739,6 +3024,7 @@ impl InnerModel {
             InnerModel::HS7_6_8(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS7_6_9(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS7_6_10(inner) => inner.get_concatenate_features(), // {python_generated}
+            InnerModel::HS8_4_1(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS8_4_2(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS8_4_3(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS8_4_4(inner) => inner.get_concatenate_features(), // {python_generated}
@@ -2748,6 +3034,7 @@ impl InnerModel {
             InnerModel::HS8_4_8(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS8_4_9(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS8_4_10(inner) => inner.get_concatenate_features(), // {python_generated}
+            InnerModel::HS8_5_1(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS8_5_2(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS8_5_3(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS8_5_4(inner) => inner.get_concatenate_features(), // {python_generated}
@@ -2757,6 +3044,7 @@ impl InnerModel {
             InnerModel::HS8_5_8(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS8_5_9(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS8_5_10(inner) => inner.get_concatenate_features(), // {python_generated}
+            InnerModel::HS8_6_1(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS8_6_2(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS8_6_3(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS8_6_4(inner) => inner.get_concatenate_features(), // {python_generated}
@@ -2766,6 +3054,7 @@ impl InnerModel {
             InnerModel::HS8_6_8(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS8_6_9(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS8_6_10(inner) => inner.get_concatenate_features(), // {python_generated}
+            InnerModel::HS9_4_1(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS9_4_2(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS9_4_3(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS9_4_4(inner) => inner.get_concatenate_features(), // {python_generated}
@@ -2775,6 +3064,7 @@ impl InnerModel {
             InnerModel::HS9_4_8(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS9_4_9(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS9_4_10(inner) => inner.get_concatenate_features(), // {python_generated}
+            InnerModel::HS9_5_1(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS9_5_2(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS9_5_3(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS9_5_4(inner) => inner.get_concatenate_features(), // {python_generated}
@@ -2784,6 +3074,7 @@ impl InnerModel {
             InnerModel::HS9_5_8(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS9_5_9(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS9_5_10(inner) => inner.get_concatenate_features(), // {python_generated}
+            InnerModel::HS9_6_1(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS9_6_2(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS9_6_3(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS9_6_4(inner) => inner.get_concatenate_features(), // {python_generated}
@@ -2793,6 +3084,7 @@ impl InnerModel {
             InnerModel::HS9_6_8(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS9_6_9(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS9_6_10(inner) => inner.get_concatenate_features(), // {python_generated}
+            InnerModel::HS10_4_1(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS10_4_2(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS10_4_3(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS10_4_4(inner) => inner.get_concatenate_features(), // {python_generated}
@@ -2802,6 +3094,7 @@ impl InnerModel {
             InnerModel::HS10_4_8(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS10_4_9(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS10_4_10(inner) => inner.get_concatenate_features(), // {python_generated}
+            InnerModel::HS10_5_1(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS10_5_2(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS10_5_3(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS10_5_4(inner) => inner.get_concatenate_features(), // {python_generated}
@@ -2811,6 +3104,7 @@ impl InnerModel {
             InnerModel::HS10_5_8(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS10_5_9(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS10_5_10(inner) => inner.get_concatenate_features(), // {python_generated}
+            InnerModel::HS10_6_1(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS10_6_2(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS10_6_3(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS10_6_4(inner) => inner.get_concatenate_features(), // {python_generated}
@@ -2820,6 +3114,7 @@ impl InnerModel {
             InnerModel::HS10_6_8(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS10_6_9(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS10_6_10(inner) => inner.get_concatenate_features(), // {python_generated}
+            InnerModel::HS11_4_1(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS11_4_2(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS11_4_3(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS11_4_4(inner) => inner.get_concatenate_features(), // {python_generated}
@@ -2829,6 +3124,7 @@ impl InnerModel {
             InnerModel::HS11_4_8(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS11_4_9(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS11_4_10(inner) => inner.get_concatenate_features(), // {python_generated}
+            InnerModel::HS11_5_1(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS11_5_2(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS11_5_3(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS11_5_4(inner) => inner.get_concatenate_features(), // {python_generated}
@@ -2838,6 +3134,7 @@ impl InnerModel {
             InnerModel::HS11_5_8(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS11_5_9(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS11_5_10(inner) => inner.get_concatenate_features(), // {python_generated}
+            InnerModel::HS11_6_1(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS11_6_2(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS11_6_3(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS11_6_4(inner) => inner.get_concatenate_features(), // {python_generated}
@@ -2847,6 +3144,7 @@ impl InnerModel {
             InnerModel::HS11_6_8(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS11_6_9(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS11_6_10(inner) => inner.get_concatenate_features(), // {python_generated}
+            InnerModel::HS12_4_1(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS12_4_2(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS12_4_3(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS12_4_4(inner) => inner.get_concatenate_features(), // {python_generated}
@@ -2856,6 +3154,7 @@ impl InnerModel {
             InnerModel::HS12_4_8(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS12_4_9(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS12_4_10(inner) => inner.get_concatenate_features(), // {python_generated}
+            InnerModel::HS12_5_1(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS12_5_2(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS12_5_3(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS12_5_4(inner) => inner.get_concatenate_features(), // {python_generated}
@@ -2865,6 +3164,7 @@ impl InnerModel {
             InnerModel::HS12_5_8(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS12_5_9(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS12_5_10(inner) => inner.get_concatenate_features(), // {python_generated}
+            InnerModel::HS12_6_1(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS12_6_2(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS12_6_3(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS12_6_4(inner) => inner.get_concatenate_features(), // {python_generated}
@@ -2874,6 +3174,7 @@ impl InnerModel {
             InnerModel::HS12_6_8(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS12_6_9(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS12_6_10(inner) => inner.get_concatenate_features(), // {python_generated}
+            InnerModel::HS13_4_1(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS13_4_2(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS13_4_3(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS13_4_4(inner) => inner.get_concatenate_features(), // {python_generated}
@@ -2883,6 +3184,7 @@ impl InnerModel {
             InnerModel::HS13_4_8(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS13_4_9(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS13_4_10(inner) => inner.get_concatenate_features(), // {python_generated}
+            InnerModel::HS13_5_1(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS13_5_2(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS13_5_3(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS13_5_4(inner) => inner.get_concatenate_features(), // {python_generated}
@@ -2892,6 +3194,7 @@ impl InnerModel {
             InnerModel::HS13_5_8(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS13_5_9(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS13_5_10(inner) => inner.get_concatenate_features(), // {python_generated}
+            InnerModel::HS13_6_1(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS13_6_2(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS13_6_3(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS13_6_4(inner) => inner.get_concatenate_features(), // {python_generated}
@@ -2901,6 +3204,7 @@ impl InnerModel {
             InnerModel::HS13_6_8(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS13_6_9(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS13_6_10(inner) => inner.get_concatenate_features(), // {python_generated}
+            InnerModel::HS14_4_1(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS14_4_2(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS14_4_3(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS14_4_4(inner) => inner.get_concatenate_features(), // {python_generated}
@@ -2910,6 +3214,7 @@ impl InnerModel {
             InnerModel::HS14_4_8(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS14_4_9(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS14_4_10(inner) => inner.get_concatenate_features(), // {python_generated}
+            InnerModel::HS14_5_1(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS14_5_2(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS14_5_3(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS14_5_4(inner) => inner.get_concatenate_features(), // {python_generated}
@@ -2919,6 +3224,7 @@ impl InnerModel {
             InnerModel::HS14_5_8(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS14_5_9(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS14_5_10(inner) => inner.get_concatenate_features(), // {python_generated}
+            InnerModel::HS14_6_1(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS14_6_2(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS14_6_3(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS14_6_4(inner) => inner.get_concatenate_features(), // {python_generated}
@@ -2928,6 +3234,7 @@ impl InnerModel {
             InnerModel::HS14_6_8(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS14_6_9(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS14_6_10(inner) => inner.get_concatenate_features(), // {python_generated}
+            InnerModel::HS15_4_1(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS15_4_2(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS15_4_3(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS15_4_4(inner) => inner.get_concatenate_features(), // {python_generated}
@@ -2937,6 +3244,7 @@ impl InnerModel {
             InnerModel::HS15_4_8(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS15_4_9(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS15_4_10(inner) => inner.get_concatenate_features(), // {python_generated}
+            InnerModel::HS15_5_1(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS15_5_2(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS15_5_3(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS15_5_4(inner) => inner.get_concatenate_features(), // {python_generated}
@@ -2946,6 +3254,7 @@ impl InnerModel {
             InnerModel::HS15_5_8(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS15_5_9(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS15_5_10(inner) => inner.get_concatenate_features(), // {python_generated}
+            InnerModel::HS15_6_1(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS15_6_2(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS15_6_3(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS15_6_4(inner) => inner.get_concatenate_features(), // {python_generated}
@@ -2955,6 +3264,7 @@ impl InnerModel {
             InnerModel::HS15_6_8(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS15_6_9(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS15_6_10(inner) => inner.get_concatenate_features(), // {python_generated}
+            InnerModel::HS16_4_1(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS16_4_2(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS16_4_3(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS16_4_4(inner) => inner.get_concatenate_features(), // {python_generated}
@@ -2964,6 +3274,7 @@ impl InnerModel {
             InnerModel::HS16_4_8(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS16_4_9(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS16_4_10(inner) => inner.get_concatenate_features(), // {python_generated}
+            InnerModel::HS16_5_1(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS16_5_2(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS16_5_3(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS16_5_4(inner) => inner.get_concatenate_features(), // {python_generated}
@@ -2973,6 +3284,7 @@ impl InnerModel {
             InnerModel::HS16_5_8(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS16_5_9(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS16_5_10(inner) => inner.get_concatenate_features(), // {python_generated}
+            InnerModel::HS16_6_1(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS16_6_2(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS16_6_3(inner) => inner.get_concatenate_features(), // {python_generated}
             InnerModel::HS16_6_4(inner) => inner.get_concatenate_features(), // {python_generated}
@@ -2994,6 +3306,7 @@ impl InnerModel {
     fn fit(&mut self, graph: &graph::Graph) -> Result<()> {
         match self {
             // InnerModel::HS{precision}_{bits}_{hops}(inner) => inner.fit(graph), {python_macro}
+            InnerModel::HS4_4_1(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS4_4_2(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS4_4_3(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS4_4_4(inner) => inner.fit(graph), // {python_generated}
@@ -3003,6 +3316,7 @@ impl InnerModel {
             InnerModel::HS4_4_8(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS4_4_9(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS4_4_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS4_5_1(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS4_5_2(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS4_5_3(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS4_5_4(inner) => inner.fit(graph), // {python_generated}
@@ -3012,6 +3326,7 @@ impl InnerModel {
             InnerModel::HS4_5_8(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS4_5_9(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS4_5_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS4_6_1(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS4_6_2(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS4_6_3(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS4_6_4(inner) => inner.fit(graph), // {python_generated}
@@ -3021,6 +3336,7 @@ impl InnerModel {
             InnerModel::HS4_6_8(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS4_6_9(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS4_6_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS5_4_1(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS5_4_2(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS5_4_3(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS5_4_4(inner) => inner.fit(graph), // {python_generated}
@@ -3030,6 +3346,7 @@ impl InnerModel {
             InnerModel::HS5_4_8(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS5_4_9(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS5_4_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS5_5_1(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS5_5_2(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS5_5_3(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS5_5_4(inner) => inner.fit(graph), // {python_generated}
@@ -3039,6 +3356,7 @@ impl InnerModel {
             InnerModel::HS5_5_8(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS5_5_9(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS5_5_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS5_6_1(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS5_6_2(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS5_6_3(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS5_6_4(inner) => inner.fit(graph), // {python_generated}
@@ -3048,6 +3366,7 @@ impl InnerModel {
             InnerModel::HS5_6_8(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS5_6_9(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS5_6_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS6_4_1(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS6_4_2(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS6_4_3(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS6_4_4(inner) => inner.fit(graph), // {python_generated}
@@ -3057,6 +3376,7 @@ impl InnerModel {
             InnerModel::HS6_4_8(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS6_4_9(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS6_4_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS6_5_1(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS6_5_2(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS6_5_3(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS6_5_4(inner) => inner.fit(graph), // {python_generated}
@@ -3066,6 +3386,7 @@ impl InnerModel {
             InnerModel::HS6_5_8(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS6_5_9(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS6_5_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS6_6_1(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS6_6_2(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS6_6_3(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS6_6_4(inner) => inner.fit(graph), // {python_generated}
@@ -3075,6 +3396,7 @@ impl InnerModel {
             InnerModel::HS6_6_8(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS6_6_9(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS6_6_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS7_4_1(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS7_4_2(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS7_4_3(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS7_4_4(inner) => inner.fit(graph), // {python_generated}
@@ -3084,6 +3406,7 @@ impl InnerModel {
             InnerModel::HS7_4_8(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS7_4_9(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS7_4_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS7_5_1(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS7_5_2(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS7_5_3(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS7_5_4(inner) => inner.fit(graph), // {python_generated}
@@ -3093,6 +3416,7 @@ impl InnerModel {
             InnerModel::HS7_5_8(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS7_5_9(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS7_5_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS7_6_1(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS7_6_2(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS7_6_3(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS7_6_4(inner) => inner.fit(graph), // {python_generated}
@@ -3102,6 +3426,7 @@ impl InnerModel {
             InnerModel::HS7_6_8(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS7_6_9(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS7_6_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS8_4_1(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS8_4_2(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS8_4_3(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS8_4_4(inner) => inner.fit(graph), // {python_generated}
@@ -3111,6 +3436,7 @@ impl InnerModel {
             InnerModel::HS8_4_8(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS8_4_9(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS8_4_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS8_5_1(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS8_5_2(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS8_5_3(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS8_5_4(inner) => inner.fit(graph), // {python_generated}
@@ -3120,6 +3446,7 @@ impl InnerModel {
             InnerModel::HS8_5_8(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS8_5_9(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS8_5_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS8_6_1(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS8_6_2(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS8_6_3(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS8_6_4(inner) => inner.fit(graph), // {python_generated}
@@ -3129,6 +3456,7 @@ impl InnerModel {
             InnerModel::HS8_6_8(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS8_6_9(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS8_6_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS9_4_1(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS9_4_2(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS9_4_3(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS9_4_4(inner) => inner.fit(graph), // {python_generated}
@@ -3138,6 +3466,7 @@ impl InnerModel {
             InnerModel::HS9_4_8(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS9_4_9(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS9_4_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS9_5_1(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS9_5_2(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS9_5_3(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS9_5_4(inner) => inner.fit(graph), // {python_generated}
@@ -3147,6 +3476,7 @@ impl InnerModel {
             InnerModel::HS9_5_8(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS9_5_9(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS9_5_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS9_6_1(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS9_6_2(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS9_6_3(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS9_6_4(inner) => inner.fit(graph), // {python_generated}
@@ -3156,6 +3486,7 @@ impl InnerModel {
             InnerModel::HS9_6_8(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS9_6_9(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS9_6_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS10_4_1(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS10_4_2(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS10_4_3(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS10_4_4(inner) => inner.fit(graph), // {python_generated}
@@ -3165,6 +3496,7 @@ impl InnerModel {
             InnerModel::HS10_4_8(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS10_4_9(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS10_4_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS10_5_1(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS10_5_2(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS10_5_3(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS10_5_4(inner) => inner.fit(graph), // {python_generated}
@@ -3174,6 +3506,7 @@ impl InnerModel {
             InnerModel::HS10_5_8(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS10_5_9(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS10_5_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS10_6_1(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS10_6_2(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS10_6_3(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS10_6_4(inner) => inner.fit(graph), // {python_generated}
@@ -3183,6 +3516,7 @@ impl InnerModel {
             InnerModel::HS10_6_8(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS10_6_9(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS10_6_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS11_4_1(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS11_4_2(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS11_4_3(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS11_4_4(inner) => inner.fit(graph), // {python_generated}
@@ -3192,6 +3526,7 @@ impl InnerModel {
             InnerModel::HS11_4_8(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS11_4_9(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS11_4_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS11_5_1(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS11_5_2(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS11_5_3(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS11_5_4(inner) => inner.fit(graph), // {python_generated}
@@ -3201,6 +3536,7 @@ impl InnerModel {
             InnerModel::HS11_5_8(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS11_5_9(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS11_5_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS11_6_1(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS11_6_2(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS11_6_3(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS11_6_4(inner) => inner.fit(graph), // {python_generated}
@@ -3210,6 +3546,7 @@ impl InnerModel {
             InnerModel::HS11_6_8(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS11_6_9(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS11_6_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS12_4_1(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS12_4_2(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS12_4_3(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS12_4_4(inner) => inner.fit(graph), // {python_generated}
@@ -3219,6 +3556,7 @@ impl InnerModel {
             InnerModel::HS12_4_8(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS12_4_9(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS12_4_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS12_5_1(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS12_5_2(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS12_5_3(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS12_5_4(inner) => inner.fit(graph), // {python_generated}
@@ -3228,6 +3566,7 @@ impl InnerModel {
             InnerModel::HS12_5_8(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS12_5_9(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS12_5_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS12_6_1(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS12_6_2(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS12_6_3(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS12_6_4(inner) => inner.fit(graph), // {python_generated}
@@ -3237,6 +3576,7 @@ impl InnerModel {
             InnerModel::HS12_6_8(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS12_6_9(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS12_6_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS13_4_1(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS13_4_2(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS13_4_3(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS13_4_4(inner) => inner.fit(graph), // {python_generated}
@@ -3246,6 +3586,7 @@ impl InnerModel {
             InnerModel::HS13_4_8(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS13_4_9(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS13_4_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS13_5_1(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS13_5_2(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS13_5_3(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS13_5_4(inner) => inner.fit(graph), // {python_generated}
@@ -3255,6 +3596,7 @@ impl InnerModel {
             InnerModel::HS13_5_8(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS13_5_9(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS13_5_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS13_6_1(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS13_6_2(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS13_6_3(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS13_6_4(inner) => inner.fit(graph), // {python_generated}
@@ -3264,6 +3606,7 @@ impl InnerModel {
             InnerModel::HS13_6_8(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS13_6_9(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS13_6_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS14_4_1(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS14_4_2(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS14_4_3(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS14_4_4(inner) => inner.fit(graph), // {python_generated}
@@ -3273,6 +3616,7 @@ impl InnerModel {
             InnerModel::HS14_4_8(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS14_4_9(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS14_4_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS14_5_1(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS14_5_2(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS14_5_3(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS14_5_4(inner) => inner.fit(graph), // {python_generated}
@@ -3282,6 +3626,7 @@ impl InnerModel {
             InnerModel::HS14_5_8(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS14_5_9(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS14_5_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS14_6_1(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS14_6_2(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS14_6_3(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS14_6_4(inner) => inner.fit(graph), // {python_generated}
@@ -3291,6 +3636,7 @@ impl InnerModel {
             InnerModel::HS14_6_8(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS14_6_9(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS14_6_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS15_4_1(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS15_4_2(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS15_4_3(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS15_4_4(inner) => inner.fit(graph), // {python_generated}
@@ -3300,6 +3646,7 @@ impl InnerModel {
             InnerModel::HS15_4_8(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS15_4_9(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS15_4_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS15_5_1(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS15_5_2(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS15_5_3(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS15_5_4(inner) => inner.fit(graph), // {python_generated}
@@ -3309,6 +3656,7 @@ impl InnerModel {
             InnerModel::HS15_5_8(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS15_5_9(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS15_5_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS15_6_1(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS15_6_2(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS15_6_3(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS15_6_4(inner) => inner.fit(graph), // {python_generated}
@@ -3318,6 +3666,7 @@ impl InnerModel {
             InnerModel::HS15_6_8(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS15_6_9(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS15_6_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS16_4_1(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS16_4_2(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS16_4_3(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS16_4_4(inner) => inner.fit(graph), // {python_generated}
@@ -3327,6 +3676,7 @@ impl InnerModel {
             InnerModel::HS16_4_8(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS16_4_9(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS16_4_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS16_5_1(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS16_5_2(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS16_5_3(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS16_5_4(inner) => inner.fit(graph), // {python_generated}
@@ -3336,6 +3686,7 @@ impl InnerModel {
             InnerModel::HS16_5_8(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS16_5_9(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS16_5_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS16_6_1(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS16_6_2(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS16_6_3(inner) => inner.fit(graph), // {python_generated}
             InnerModel::HS16_6_4(inner) => inner.fit(graph), // {python_generated}
@@ -3380,6 +3731,7 @@ impl InnerModel {
     {
         match self {
             // InnerModel::HS{precision}_{bits}_{hops}(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), {python_macro}
+            InnerModel::HS4_4_1(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS4_4_2(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS4_4_3(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS4_4_4(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
@@ -3389,6 +3741,7 @@ impl InnerModel {
             InnerModel::HS4_4_8(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS4_4_9(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS4_4_10(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS4_5_1(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS4_5_2(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS4_5_3(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS4_5_4(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
@@ -3398,6 +3751,7 @@ impl InnerModel {
             InnerModel::HS4_5_8(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS4_5_9(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS4_5_10(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS4_6_1(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS4_6_2(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS4_6_3(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS4_6_4(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
@@ -3407,6 +3761,7 @@ impl InnerModel {
             InnerModel::HS4_6_8(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS4_6_9(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS4_6_10(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS5_4_1(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS5_4_2(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS5_4_3(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS5_4_4(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
@@ -3416,6 +3771,7 @@ impl InnerModel {
             InnerModel::HS5_4_8(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS5_4_9(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS5_4_10(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS5_5_1(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS5_5_2(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS5_5_3(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS5_5_4(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
@@ -3425,6 +3781,7 @@ impl InnerModel {
             InnerModel::HS5_5_8(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS5_5_9(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS5_5_10(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS5_6_1(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS5_6_2(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS5_6_3(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS5_6_4(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
@@ -3434,6 +3791,7 @@ impl InnerModel {
             InnerModel::HS5_6_8(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS5_6_9(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS5_6_10(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS6_4_1(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS6_4_2(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS6_4_3(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS6_4_4(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
@@ -3443,6 +3801,7 @@ impl InnerModel {
             InnerModel::HS6_4_8(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS6_4_9(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS6_4_10(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS6_5_1(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS6_5_2(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS6_5_3(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS6_5_4(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
@@ -3452,6 +3811,7 @@ impl InnerModel {
             InnerModel::HS6_5_8(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS6_5_9(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS6_5_10(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS6_6_1(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS6_6_2(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS6_6_3(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS6_6_4(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
@@ -3461,6 +3821,7 @@ impl InnerModel {
             InnerModel::HS6_6_8(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS6_6_9(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS6_6_10(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS7_4_1(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS7_4_2(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS7_4_3(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS7_4_4(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
@@ -3470,6 +3831,7 @@ impl InnerModel {
             InnerModel::HS7_4_8(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS7_4_9(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS7_4_10(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS7_5_1(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS7_5_2(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS7_5_3(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS7_5_4(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
@@ -3479,6 +3841,7 @@ impl InnerModel {
             InnerModel::HS7_5_8(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS7_5_9(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS7_5_10(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS7_6_1(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS7_6_2(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS7_6_3(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS7_6_4(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
@@ -3488,6 +3851,7 @@ impl InnerModel {
             InnerModel::HS7_6_8(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS7_6_9(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS7_6_10(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS8_4_1(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS8_4_2(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS8_4_3(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS8_4_4(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
@@ -3497,6 +3861,7 @@ impl InnerModel {
             InnerModel::HS8_4_8(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS8_4_9(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS8_4_10(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS8_5_1(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS8_5_2(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS8_5_3(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS8_5_4(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
@@ -3506,6 +3871,7 @@ impl InnerModel {
             InnerModel::HS8_5_8(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS8_5_9(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS8_5_10(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS8_6_1(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS8_6_2(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS8_6_3(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS8_6_4(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
@@ -3515,6 +3881,7 @@ impl InnerModel {
             InnerModel::HS8_6_8(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS8_6_9(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS8_6_10(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS9_4_1(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS9_4_2(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS9_4_3(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS9_4_4(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
@@ -3524,6 +3891,7 @@ impl InnerModel {
             InnerModel::HS9_4_8(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS9_4_9(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS9_4_10(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS9_5_1(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS9_5_2(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS9_5_3(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS9_5_4(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
@@ -3533,6 +3901,7 @@ impl InnerModel {
             InnerModel::HS9_5_8(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS9_5_9(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS9_5_10(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS9_6_1(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS9_6_2(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS9_6_3(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS9_6_4(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
@@ -3542,6 +3911,7 @@ impl InnerModel {
             InnerModel::HS9_6_8(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS9_6_9(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS9_6_10(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS10_4_1(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS10_4_2(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS10_4_3(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS10_4_4(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
@@ -3551,6 +3921,7 @@ impl InnerModel {
             InnerModel::HS10_4_8(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS10_4_9(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS10_4_10(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS10_5_1(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS10_5_2(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS10_5_3(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS10_5_4(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
@@ -3560,6 +3931,7 @@ impl InnerModel {
             InnerModel::HS10_5_8(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS10_5_9(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS10_5_10(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS10_6_1(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS10_6_2(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS10_6_3(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS10_6_4(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
@@ -3569,6 +3941,7 @@ impl InnerModel {
             InnerModel::HS10_6_8(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS10_6_9(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS10_6_10(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS11_4_1(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS11_4_2(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS11_4_3(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS11_4_4(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
@@ -3578,6 +3951,7 @@ impl InnerModel {
             InnerModel::HS11_4_8(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS11_4_9(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS11_4_10(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS11_5_1(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS11_5_2(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS11_5_3(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS11_5_4(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
@@ -3587,6 +3961,7 @@ impl InnerModel {
             InnerModel::HS11_5_8(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS11_5_9(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS11_5_10(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS11_6_1(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS11_6_2(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS11_6_3(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS11_6_4(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
@@ -3596,6 +3971,7 @@ impl InnerModel {
             InnerModel::HS11_6_8(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS11_6_9(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS11_6_10(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS12_4_1(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS12_4_2(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS12_4_3(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS12_4_4(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
@@ -3605,6 +3981,7 @@ impl InnerModel {
             InnerModel::HS12_4_8(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS12_4_9(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS12_4_10(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS12_5_1(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS12_5_2(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS12_5_3(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS12_5_4(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
@@ -3614,6 +3991,7 @@ impl InnerModel {
             InnerModel::HS12_5_8(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS12_5_9(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS12_5_10(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS12_6_1(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS12_6_2(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS12_6_3(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS12_6_4(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
@@ -3623,6 +4001,7 @@ impl InnerModel {
             InnerModel::HS12_6_8(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS12_6_9(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS12_6_10(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS13_4_1(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS13_4_2(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS13_4_3(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS13_4_4(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
@@ -3632,6 +4011,7 @@ impl InnerModel {
             InnerModel::HS13_4_8(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS13_4_9(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS13_4_10(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS13_5_1(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS13_5_2(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS13_5_3(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS13_5_4(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
@@ -3641,6 +4021,7 @@ impl InnerModel {
             InnerModel::HS13_5_8(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS13_5_9(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS13_5_10(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS13_6_1(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS13_6_2(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS13_6_3(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS13_6_4(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
@@ -3650,6 +4031,7 @@ impl InnerModel {
             InnerModel::HS13_6_8(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS13_6_9(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS13_6_10(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS14_4_1(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS14_4_2(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS14_4_3(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS14_4_4(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
@@ -3659,6 +4041,7 @@ impl InnerModel {
             InnerModel::HS14_4_8(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS14_4_9(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS14_4_10(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS14_5_1(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS14_5_2(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS14_5_3(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS14_5_4(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
@@ -3668,6 +4051,7 @@ impl InnerModel {
             InnerModel::HS14_5_8(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS14_5_9(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS14_5_10(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS14_6_1(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS14_6_2(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS14_6_3(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS14_6_4(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
@@ -3677,6 +4061,7 @@ impl InnerModel {
             InnerModel::HS14_6_8(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS14_6_9(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS14_6_10(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS15_4_1(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS15_4_2(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS15_4_3(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS15_4_4(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
@@ -3686,6 +4071,7 @@ impl InnerModel {
             InnerModel::HS15_4_8(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS15_4_9(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS15_4_10(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS15_5_1(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS15_5_2(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS15_5_3(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS15_5_4(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
@@ -3695,6 +4081,7 @@ impl InnerModel {
             InnerModel::HS15_5_8(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS15_5_9(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS15_5_10(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS15_6_1(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS15_6_2(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS15_6_3(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS15_6_4(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
@@ -3704,6 +4091,7 @@ impl InnerModel {
             InnerModel::HS15_6_8(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS15_6_9(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS15_6_10(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS16_4_1(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS16_4_2(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS16_4_3(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS16_4_4(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
@@ -3713,6 +4101,7 @@ impl InnerModel {
             InnerModel::HS16_4_8(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS16_4_9(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS16_4_10(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS16_5_1(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS16_5_2(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS16_5_3(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS16_5_4(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
@@ -3722,6 +4111,7 @@ impl InnerModel {
             InnerModel::HS16_5_8(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS16_5_9(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS16_5_10(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
+            InnerModel::HS16_6_1(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS16_6_2(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS16_6_3(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
             InnerModel::HS16_6_4(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), // {python_generated}
