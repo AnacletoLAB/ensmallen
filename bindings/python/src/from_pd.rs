@@ -3,11 +3,7 @@ use crate::pe;
 use crate::Graph;
 use crate::*;
 use graph::WeightT;
-use numpy::array::PyArray1;
-use numpy::convert::*;
-use pyo3::conversion::*;
 use pyo3::exceptions::PyValueError;
-use pyo3::prelude::*;
 use rayon::iter::Empty as ParEmpty;
 use std::iter::Empty as SeqEmpty;
 trait Dtype {

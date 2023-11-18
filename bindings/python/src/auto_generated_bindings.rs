@@ -4656,9 +4656,9 @@ impl Graph {
     /// Parameters
     /// ----------
     /// approach: Optional[&str]
-    ///     The approach name to be used. By default, the edge list order is used.
+    ///     The approach name to be used. By default, the increasing node degree order is used.
     /// insert_only_source: Optional[bool]
-    ///     Whether to insert only the source node or both source and destination.
+    ///     Whether to insert only the source node or both source and destination. By default only the source is inserted.
     /// verbose: Optional[bool]
     ///     Whether to show a loading bar. By default, True.
     ///
@@ -4681,9 +4681,9 @@ impl Graph {
     /// Parameters
     /// ----------
     /// approach: Optional[&str]
-    ///     The approach name to be used. By default, the edge list order is used.
+    ///     The approach name to be used. By default, the increasing node degree order is used.
     /// insert_only_source: Optional[bool]
-    ///     Whether to insert only the source node or both source and destination.
+    ///     Whether to insert only the source node or both source and destination. By default only the source is inserted.
     /// verbose: Optional[bool]
     ///     Whether to show a loading bar. By default, True.
     ///
@@ -4706,9 +4706,9 @@ impl Graph {
     /// Parameters
     /// ----------
     /// approach: Optional[&str]
-    ///     The approach name to be used. By default, the edge list order is used.
+    ///     The approach name to be used. By default, the increasing node degree order is used.
     /// insert_only_source: Optional[bool]
-    ///     Whether to insert only the source node or both source and destination.
+    ///     Whether to insert only the source node or both source and destination. By default only the source is inserted.
     /// verbose: Optional[bool]
     ///     Whether to show a loading bar. By default, True.
     ///
@@ -4766,9 +4766,9 @@ impl Graph {
     /// Parameters
     /// ----------
     /// approach: Optional[&str]
-    ///     The approach name to be used. By default, the edge list order is used.
+    ///     The approach name to be used. By default, the increasing node degree order is used.
     /// insert_only_source: Optional[bool]
-    ///     Whether to insert only the source node or both source and destination.
+    ///     Whether to insert only the source node or both source and destination. By default only the source is inserted.
     /// verbose: Optional[bool]
     ///     Whether to show a loading bar. By default, True.
     ///
@@ -4793,50 +4793,78 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self, verbose)")]
+    #[pyo3(text_signature = "($self, approach, insert_only_source, verbose)")]
     /// Returns clustering coefficients for all nodes in the graph.
     ///
     /// Parameters
     /// ----------
-    /// low_centrality: Optional[int]
-    ///     The threshold over which to switch to parallel matryoshka. By default 50.
+    /// approach: Optional[&str]
+    ///     The approach name to be used. By default, the increasing node degree order is used.
+    /// insert_only_source: Optional[bool]
+    ///     Whether to insert only the source node or both source and destination. By default only the source is inserted.
     /// verbose: Optional[bool]
     ///     Whether to show a loading bar.
     ///
-    pub fn get_clustering_coefficient_per_node(&self, verbose: Option<bool>) -> Py<PyArray1<f64>> {
+    pub fn get_clustering_coefficient_per_node(
+        &self,
+        approach: Option<&str>,
+        insert_only_source: Option<bool>,
+        verbose: Option<bool>,
+    ) -> Py<PyArray1<f64>> {
         let gil = pyo3::Python::acquire_gil();
         to_ndarray_1d!(
             gil,
-            self.inner.get_clustering_coefficient_per_node(verbose),
+            self.inner
+                .get_clustering_coefficient_per_node(approach, insert_only_source, verbose),
             f64
         )
     }
 
     #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self, verbose)")]
+    #[pyo3(text_signature = "($self, approach, insert_only_source, verbose)")]
     /// Returns the graph clustering coefficient.
     ///
     /// Parameters
     /// ----------
+    /// approach: Optional[&str]
+    ///     The approach name to be used. By default, the increasing node degree order is used.
+    /// insert_only_source: Optional[bool]
+    ///     Whether to insert only the source node or both source and destination. By default only the source is inserted.
     /// verbose: Optional[bool]
     ///     Whether to show a loading bar.
     ///
-    pub fn get_clustering_coefficient(&self, verbose: Option<bool>) -> f64 {
-        self.inner.get_clustering_coefficient(verbose).into()
+    pub fn get_clustering_coefficient(
+        &self,
+        approach: Option<&str>,
+        insert_only_source: Option<bool>,
+        verbose: Option<bool>,
+    ) -> f64 {
+        self.inner
+            .get_clustering_coefficient(approach, insert_only_source, verbose)
+            .into()
     }
 
     #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self, verbose)")]
+    #[pyo3(text_signature = "($self, approach, insert_only_source, verbose)")]
     /// Returns the graph average clustering coefficient.
     ///
     /// Parameters
     /// ----------
+    /// approach: Optional[&str]
+    ///     The approach name to be used. By default, the increasing node degree order is used.
+    /// insert_only_source: Optional[bool]
+    ///     Whether to insert only the source node or both source and destination. By default only the source is inserted.
     /// verbose: Optional[bool]
     ///     Whether to show a loading bar.
     ///
-    pub fn get_average_clustering_coefficient(&self, verbose: Option<bool>) -> f64 {
+    pub fn get_average_clustering_coefficient(
+        &self,
+        approach: Option<&str>,
+        insert_only_source: Option<bool>,
+        verbose: Option<bool>,
+    ) -> f64 {
         self.inner
-            .get_average_clustering_coefficient(verbose)
+            .get_average_clustering_coefficient(approach, insert_only_source, verbose)
             .into()
     }
 

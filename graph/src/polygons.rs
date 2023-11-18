@@ -8,12 +8,12 @@ impl Graph {
     /// Returns number of triangles in the graph.
     ///
     /// # Arguments
-    /// * `approach`: Option<&str> - The approach name to be used. By default, the edge list order is used.
-    /// * `insert_only_source`: Option<bool> - Whether to insert only the source node or both source and destination.
+    /// * `approach`: Option<&str> - The approach name to be used. By default, the increasing node degree order is used.
+    /// * `insert_only_source`: Option<bool> - Whether to insert only the source node or both source and destination. By default only the source is inserted.
     /// * `verbose`: Option<bool> - Whether to show a loading bar. By default, True.
     ///
     /// # References
-    /// This implementation is described in ["Faster Clustering Coefficient Using Vertex Covers"](https://ieeexplore.ieee.org/document/6693348).
+    /// This implementation is described in ["Parallel Triangles and Squares Count for Multigraphs Using Vertex Covers"](https://davidbader.net/publication/2023-cfgb/2023-cfgb.pdf).
     ///
     pub fn get_number_of_triangles(
         &self,
@@ -25,7 +25,12 @@ impl Graph {
 
         // First, we compute the set of nodes composing a vertex cover set.
         // This vertex cover is NOT minimal, but is a 2-approximation.
-        let vertex_cover = self.get_vertex_cover(approach, Some(true), insert_only_source, None)?;
+        let vertex_cover = self.get_vertex_cover(
+            Some(approach.unwrap_or("increasing_node_degree")), 
+            Some(true),
+            Some(insert_only_source.unwrap_or(true)), 
+            None
+        )?;
 
         let vertex_cover_size = vertex_cover.iter().filter(|cover| **cover).count();
 
@@ -155,8 +160,8 @@ impl Graph {
     /// Returns number of squares in the graph.
     ///
     /// # Arguments
-    /// * `approach`: Option<&str> - The approach name to be used. By default, the edge list order is used.
-    /// * `insert_only_source`: Option<bool> - Whether to insert only the source node or both source and destination.
+    /// * `approach`: Option<&str> - The approach name to be used. By default, the increasing node degree order is used.
+    /// * `insert_only_source`: Option<bool> - Whether to insert only the source node or both source and destination. By default only the source is inserted.
     /// * `verbose`: Option<bool> - Whether to show a loading bar. By default, True.
     ///
     pub fn get_number_of_squares(
@@ -312,8 +317,8 @@ impl Graph {
     /// Returns number of squares in the graph.
     ///
     /// # Arguments
-    /// * `approach`: Option<&str> - The approach name to be used. By default, the edge list order is used.
-    /// * `insert_only_source`: Option<bool> - Whether to insert only the source node or both source and destination.
+    /// * `approach`: Option<&str> - The approach name to be used. By default, the increasing node degree order is used.
+    /// * `insert_only_source`: Option<bool> - Whether to insert only the source node or both source and destination. By default only the source is inserted.
     /// * `verbose`: Option<bool> - Whether to show a loading bar. By default, True.
     ///
     pub fn get_number_of_squares_per_node(
@@ -568,12 +573,12 @@ impl Graph {
     /// Returns number of triangles for all nodes in the graph.
     ///
     /// # Arguments
-    /// * `approach`: Option<&str> - The approach name to be used. By default, the edge list order is used.
-    /// * `insert_only_source`: Option<bool> - Whether to insert only the source node or both source and destination.
+    /// * `approach`: Option<&str> - The approach name to be used. By default, the increasing node degree order is used.
+    /// * `insert_only_source`: Option<bool> - Whether to insert only the source node or both source and destination. By default only the source is inserted.
     /// * `verbose`: Option<bool> - Whether to show a loading bar. By default, True.
     ///
     /// # References
-    /// This implementation is described in ["Faster Clustering Coefficient Using Vertex Covers"](https://ieeexplore.ieee.org/document/6693348).
+    /// This implementation is described in ["Parallel Triangles and Squares Count for Multigraphs Using Vertex Covers"](https://davidbader.net/publication/2023-cfgb/2023-cfgb.pdf).
     ///
     pub fn get_number_of_triangles_per_node(
         &self,
@@ -732,15 +737,19 @@ impl Graph {
     /// Returns iterator over the clustering coefficients for all nodes in the graph.
     ///
     /// # Arguments
+    /// * `approach`: Option<&str> - The approach name to be used. By default, the increasing node degree order is used.
+    /// * `insert_only_source`: Option<bool> - Whether to insert only the source node or both source and destination. By default only the source is inserted.
     /// * `verbose`: Option<bool> - Whether to show a loading bar.
     ///
     /// # References
-    /// This implementation is described in ["Faster Clustering Coefficient Using Vertex Covers"](https://ieeexplore.ieee.org/document/6693348).
+    /// This implementation is described in ["Parallel Triangles and Squares Count for Multigraphs Using Vertex Covers"](https://davidbader.net/publication/2023-cfgb/2023-cfgb.pdf).
     pub fn par_iter_clustering_coefficient_per_node(
         &self,
+        approach: Option<&str>,
+        insert_only_source: Option<bool>,
         verbose: Option<bool>,
     ) -> impl IndexedParallelIterator<Item = f64> + '_ {
-        self.get_number_of_triangles_per_node(None, None, verbose)
+        self.get_number_of_triangles_per_node(approach, insert_only_source, verbose)
             .unwrap()
             .into_par_iter()
             .zip(self.par_iter_node_degrees())
@@ -756,35 +765,63 @@ impl Graph {
     /// Returns clustering coefficients for all nodes in the graph.
     ///
     /// # Arguments
-    /// * `low_centrality`: Option<usize> - The threshold over which to switch to parallel matryoshka. By default 50.
+    /// * `approach`: Option<&str> - The approach name to be used. By default, the increasing node degree order is used.
+    /// * `insert_only_source`: Option<bool> - Whether to insert only the source node or both source and destination. By default only the source is inserted.
     /// * `verbose`: Option<bool> - Whether to show a loading bar.
     ///
     /// # References
-    /// This implementation is described in ["Faster Clustering Coefficient Using Vertex Covers"](https://ieeexplore.ieee.org/document/6693348).
-    pub fn get_clustering_coefficient_per_node(&self, verbose: Option<bool>) -> Vec<f64> {
-        self.par_iter_clustering_coefficient_per_node(verbose)
+    /// This implementation is described in ["Parallel Triangles and Squares Count for Multigraphs Using Vertex Covers"](https://davidbader.net/publication/2023-cfgb/2023-cfgb.pdf).
+    pub fn get_clustering_coefficient_per_node(
+        &self, 
+        approach: Option<&str>,
+        insert_only_source: Option<bool>,
+        verbose: Option<bool>
+    ) -> Vec<f64> {
+        self.par_iter_clustering_coefficient_per_node(approach, insert_only_source, verbose)
             .collect()
     }
 
     /// Returns the graph clustering coefficient.
     ///
     /// # Arguments
+    /// * `approach`: Option<&str> - The approach name to be used. By default, the increasing node degree order is used.
+    /// * `insert_only_source`: Option<bool> - Whether to insert only the source node or both source and destination. By default only the source is inserted.
     /// * `verbose`: Option<bool> - Whether to show a loading bar.
     ///
     /// # References
-    /// This implementation is described in ["Faster Clustering Coefficient Using Vertex Covers"](https://ieeexplore.ieee.org/document/6693348).
-    pub fn get_clustering_coefficient(&self, verbose: Option<bool>) -> f64 {
-        self.par_iter_clustering_coefficient_per_node(verbose).sum()
+    /// This implementation is described in ["Parallel Triangles and Squares Count for Multigraphs Using Vertex Covers"](https://davidbader.net/publication/2023-cfgb/2023-cfgb.pdf).
+    pub fn get_clustering_coefficient(
+        &self,
+        approach: Option<&str>,
+        insert_only_source: Option<bool>,
+        verbose: Option<bool>
+    ) -> f64 {
+        self.par_iter_clustering_coefficient_per_node(
+            approach,
+            insert_only_source,
+            verbose
+        ).sum()
     }
 
     /// Returns the graph average clustering coefficient.
     ///
     /// # Arguments
+    /// * `approach`: Option<&str> - The approach name to be used. By default, the increasing node degree order is used.
+    /// * `insert_only_source`: Option<bool> - Whether to insert only the source node or both source and destination. By default only the source is inserted.
     /// * `verbose`: Option<bool> - Whether to show a loading bar.
     ///
     /// # References
-    /// This implementation is described in ["Faster Clustering Coefficient Using Vertex Covers"](https://ieeexplore.ieee.org/document/6693348).
-    pub fn get_average_clustering_coefficient(&self, verbose: Option<bool>) -> f64 {
-        self.get_clustering_coefficient(verbose) / self.get_number_of_nodes() as f64
+    /// This implementation is described in ["Parallel Triangles and Squares Count for Multigraphs Using Vertex Covers"](https://davidbader.net/publication/2023-cfgb/2023-cfgb.pdf).
+    pub fn get_average_clustering_coefficient(
+        &self,
+        approach: Option<&str>,
+        insert_only_source: Option<bool>,
+        verbose: Option<bool>
+    ) -> f64 {
+        self.get_clustering_coefficient(
+            approach,
+            insert_only_source,
+            verbose
+        ) / self.get_number_of_nodes() as f64
     }
 }

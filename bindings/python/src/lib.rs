@@ -39,7 +39,6 @@ mod dag_resnik;
 pub use dag_resnik::*;
 
 mod triad_census;
-pub use triad_census::*;
 
 mod basic_embedding_model_binding;
 pub(crate) use basic_embedding_model_binding::*;
@@ -48,7 +47,6 @@ mod basic_siamese_model_binding;
 pub(crate) use basic_siamese_model_binding::*;
 
 mod dense;
-pub use dense::*;
 
 mod graph_embedder;
 pub use graph_embedder::*;
