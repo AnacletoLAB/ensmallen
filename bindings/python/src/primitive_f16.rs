@@ -3,7 +3,7 @@ use core::num::FpCategory;
 use core::ops::{Add, AddAssign, Div, DivAssign, Mul, MulAssign, Neg, Rem, Sub, SubAssign};
 use half::f16;
 use hyperloglog_rs::prelude::*;
-use num_traits::{Float, Num, NumCast, One, ToPrimitive, Zero};
+use num_traits::{Float, Num, NumCast, ToPrimitive, Zero};
 
 // We make this type fully transparent.
 #[repr(transparent)]
@@ -148,7 +148,7 @@ impl Zero for PrimitiveF16 {
     }
 }
 
-impl One for PrimitiveF16 {
+impl num_traits::One for PrimitiveF16 {
     #[inline(always)]
     fn one() -> Self {
         Self {
@@ -157,6 +157,14 @@ impl One for PrimitiveF16 {
     }
 
     #[inline(always)]
+    fn is_one(&self) -> bool {
+        self.value == f16::from_f32(1.0)
+    }
+}
+
+impl hyperloglog_rs::prelude::One for PrimitiveF16 {
+    const ONE: Self = Self { value: f16::ONE };
+
     fn is_one(&self) -> bool {
         self.value == f16::from_f32(1.0)
     }
