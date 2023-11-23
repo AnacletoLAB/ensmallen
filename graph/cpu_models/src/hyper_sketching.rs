@@ -18,7 +18,11 @@ use vec_rand::{splitmix64, xorshift};
 /// The original paper describing this approach for edge prediction
 /// feature mining is "Graph Neural Networks for Link Prediction with Subgraph sketching"
 ///
-pub struct HyperSketching<PRECISION: Precision + WordType<BITS>, const BITS: usize, const HOPS: usize> {
+pub struct HyperSketching<
+    PRECISION: Precision + WordType<BITS>,
+    const BITS: usize,
+    const HOPS: usize,
+> {
     /// Vector of HyperLogLog counters
     counters: Vec<HyperLogLogArray<PRECISION, BITS, HOPS>>,
     /// Whether to include the node types in the sketch
@@ -31,6 +35,8 @@ pub struct HyperSketching<PRECISION: Precision + WordType<BITS>, const BITS: usi
     include_node_ids: bool,
     /// whether to include self-loops.
     include_selfloops: bool,
+    /// whether to use MLE to estimate the cardinalities
+    use_mle_estimation: bool,
     /// whether to include the typed graphlets in the sketch
     include_typed_graphlets: bool,
     /// Random state for random integers, if requested.
@@ -45,8 +51,11 @@ pub struct HyperSketching<PRECISION: Precision + WordType<BITS>, const BITS: usi
     dtype: String,
 }
 
-impl<PRECISION: Precision + WordType<BITS> + DeserializeOwned, const BITS: usize, const HOPS: usize>
-    HyperSketching<PRECISION, BITS, HOPS>
+impl<
+        PRECISION: Precision + WordType<BITS> + DeserializeOwned,
+        const BITS: usize,
+        const HOPS: usize,
+    > HyperSketching<PRECISION, BITS, HOPS>
 {
     /// Creates a new HyperSketching model.
     ///
@@ -56,6 +65,7 @@ impl<PRECISION: Precision + WordType<BITS> + DeserializeOwned, const BITS: usize
     /// * `include_edge_ids`: Option<bool> - Whether to include the edge ids in the sketch. By default, false.
     /// * `include_node_ids`: Option<bool> - Whether to include the node ids in the sketch. By default, true.
     /// * `include_selfloops`: Option<bool> - Whether to include self-loops. By default, true.
+    /// * `use_mle_estimation`: Option<bool> - Whether to use MLE to estimate the cardinalities. By default, false.
     /// * `include_typed_graphlets`: Option<bool> - Whether to include the typed graphlets in the sketch. By default, false.
     /// * `random_state`: Option<u64> - Random state for random integers, if requested. By default, 42.
     /// * `number_of_random_integers`: Option<usize> - Number of random integers to add per node - by default 0.
@@ -74,6 +84,7 @@ impl<PRECISION: Precision + WordType<BITS> + DeserializeOwned, const BITS: usize
         include_edge_ids: Option<bool>,
         include_node_ids: Option<bool>,
         include_selfloops: Option<bool>,
+        use_mle_estimation: Option<bool>,
         include_typed_graphlets: Option<bool>,
         random_state: Option<u64>,
         number_of_random_integers: Option<usize>,
@@ -128,6 +139,7 @@ impl<PRECISION: Precision + WordType<BITS> + DeserializeOwned, const BITS: usize
             include_edge_ids: include_edge_ids.unwrap_or(false),
             include_node_ids: include_node_ids.unwrap_or(true),
             include_selfloops: include_selfloops.unwrap_or(true),
+            use_mle_estimation: use_mle_estimation.unwrap_or(false),
             include_typed_graphlets: include_typed_graphlets.unwrap_or(false),
             random_state: random_state.unwrap_or(42),
             number_of_random_integers: number_of_random_integers.unwrap_or(0),
@@ -213,10 +225,8 @@ impl<PRECISION: Precision + WordType<BITS> + DeserializeOwned, const BITS: usize
         ];
 
         // Create HyperLogLog counters for all nodes in the graph
-        counters
-            .par_iter_mut()
-            .enumerate()
-            .for_each(|(node_id, counters): (usize, &mut HyperLogLogArray::<PRECISION, BITS, HOPS>)| {
+        counters.par_iter_mut().enumerate().for_each(
+            |(node_id, counters): (usize, &mut HyperLogLogArray<PRECISION, BITS, HOPS>)| {
                 // If the self-loops are requested, we add the node id itself to the counter.
                 // It may happen that the node id ALSO has actual self-loop, but as the counter
                 // counts the unique appereaances, it will not be a problem.
@@ -283,7 +293,8 @@ impl<PRECISION: Precision + WordType<BITS> + DeserializeOwned, const BITS: usize
                         })
                         .collect::<HyperLogLog<PRECISION, BITS>>();
                 }
-            });
+            },
+        );
 
         let shared_counters = SyncUnsafeCell::new(&mut counters);
 
@@ -293,14 +304,16 @@ impl<PRECISION: Precision + WordType<BITS> + DeserializeOwned, const BITS: usize
             (*shared_counters.get())
                 .par_iter_mut()
                 .enumerate()
-                .for_each(|(node_id, counters): (usize, &mut HyperLogLogArray::<PRECISION, BITS, HOPS>)| {
-                    // Iterate over all neighbors of the current node
-                    counters[k] = graph
-                        .iter_unchecked_neighbour_node_ids_from_source_node_id(node_id as NodeT)
-                        .map(|dst| &(*shared_counters.get())[dst as usize][k - 1])
-                        .union()
-                        | counters[k - 1];
-                });
+                .for_each(
+                    |(node_id, counters): (usize, &mut HyperLogLogArray<PRECISION, BITS, HOPS>)| {
+                        // Iterate over all neighbors of the current node
+                        counters[k] = graph
+                            .iter_unchecked_neighbour_node_ids_from_source_node_id(node_id as NodeT)
+                            .map(|dst| &(*shared_counters.get())[dst as usize][k - 1])
+                            .union()
+                            | counters[k - 1];
+                    },
+                );
         });
 
         self.counters = counters;
@@ -329,8 +342,20 @@ impl<PRECISION: Precision + WordType<BITS> + DeserializeOwned, const BITS: usize
         src: usize,
         dst: usize,
     ) -> ([[F; HOPS]; HOPS], [F; HOPS], [F; HOPS]) {
-        self.counters[src]
-            .overlap_and_differences_cardinality_matrices(&self.counters[dst])
+        let src_counter = &self.counters[src];
+        let dst_counter = &self.counters[dst];
+
+        if self.use_mle_estimation {
+            let mle_src_counter: &[MLE<3, _>; HOPS] = src_counter.as_ref();
+            let mle_dst_counter: &[MLE<3, _>; HOPS] = dst_counter.as_ref();
+
+            <MLE<3, _>>::overlap_and_differences_cardinality_matrices(
+                mle_src_counter,
+                mle_dst_counter,
+            )
+        } else {
+            self.counters[src].overlap_and_differences_cardinality_matrices(&self.counters[dst])
+        }
     }
 
     /// Returns the subgraph sketch associates with the two provided nodes.

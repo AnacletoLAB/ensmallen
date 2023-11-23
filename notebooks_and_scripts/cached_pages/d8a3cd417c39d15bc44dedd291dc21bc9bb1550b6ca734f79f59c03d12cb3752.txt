@@ -1,0 +1,14 @@
+<html>
+<head><title>Index of /wikidatawiki/entities/20231120/</title></head>
+<body>
+<h1>Index of /wikidatawiki/entities/20231120/</h1><hr><pre><a href="../">../</a>
+<a href="wikidata-20231120-all-BETA.nt.bz2">wikidata-20231120-all-BETA.nt.bz2</a>                  23-Nov-2023 07:52        165997488955
+<a href="wikidata-20231120-all-BETA.nt.gz">wikidata-20231120-all-BETA.nt.gz</a>                   22-Nov-2023 15:09        215492337251
+<a href="wikidata-20231120-all-BETA.ttl.bz2">wikidata-20231120-all-BETA.ttl.bz2</a>                 22-Nov-2023 19:47        106702879981
+<a href="wikidata-20231120-all-BETA.ttl.gz">wikidata-20231120-all-BETA.ttl.gz</a>                  22-Nov-2023 10:03        130495478072
+<a href="wikidata-20231120-all.json.bz2">wikidata-20231120-all.json.bz2</a>                     22-Nov-2023 18:19         85531259613
+<a href="wikidata-20231120-all.json.gz">wikidata-20231120-all.json.gz</a>                      22-Nov-2023 10:04        129585179699
+<a href="wikidata-20231120-md5sums.txt">wikidata-20231120-md5sums.txt</a>                      23-Nov-2023 08:38                 401
+<a href="wikidata-20231120-sha1sums.txt">wikidata-20231120-sha1sums.txt</a>                     23-Nov-2023 09:26                 449
+</pre><hr></body>
+</html>

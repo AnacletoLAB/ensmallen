@@ -2,10 +2,6 @@
 <head><title>Index of /wikidatawiki/entities/</title></head>
 <body>
 <h1>Index of /wikidatawiki/entities/</h1><hr><pre><a href="../">../</a>
-<a href="20230929/">20230929/</a>                                          29-Sep-2023 23:37                   -
-<a href="20231002/">20231002/</a>                                          05-Oct-2023 13:59                   -
-<a href="20231004/">20231004/</a>                                          06-Oct-2023 19:47                   -
-<a href="20231006/">20231006/</a>                                          06-Oct-2023 23:37                   -
 <a href="20231009/">20231009/</a>                                          12-Oct-2023 10:14                   -
 <a href="20231011/">20231011/</a>                                          13-Oct-2023 21:59                   -
 <a href="20231013/">20231013/</a>                                          13-Oct-2023 23:38                   -
@@ -21,21 +17,25 @@
 <a href="20231106/">20231106/</a>                                          09-Nov-2023 08:41                   -
 <a href="20231108/">20231108/</a>                                          11-Nov-2023 00:02                   -
 <a href="20231110/">20231110/</a>                                          10-Nov-2023 23:40                   -
-<a href="20231113/">20231113/</a>                                          13-Nov-2023 03:15                   -
-<a href="dcatap.rdf">dcatap.rdf</a>                                         11-Nov-2023 00:21               84753
-<a href="latest-all.json.bz2">latest-all.json.bz2</a>                                08-Nov-2023 18:59         85367231513
-<a href="latest-all.json.gz">latest-all.json.gz</a>                                 08-Nov-2023 10:54        129341768411
-<a href="latest-all.nt.bz2">latest-all.nt.bz2</a>                                  09-Nov-2023 08:41        165678425502
-<a href="latest-all.nt.gz">latest-all.nt.gz</a>                                   08-Nov-2023 15:57        215078995261
-<a href="latest-all.ttl.bz2">latest-all.ttl.bz2</a>                                 08-Nov-2023 20:35        106491502447
-<a href="latest-all.ttl.gz">latest-all.ttl.gz</a>                                  08-Nov-2023 10:54        130227171311
-<a href="latest-lexemes.json.bz2">latest-lexemes.json.bz2</a>                            08-Nov-2023 03:53           299860068
-<a href="latest-lexemes.json.gz">latest-lexemes.json.gz</a>                             08-Nov-2023 03:52           410859000
-<a href="latest-lexemes.nt.bz2">latest-lexemes.nt.bz2</a>                              10-Nov-2023 23:40           771917718
-<a href="latest-lexemes.nt.gz">latest-lexemes.nt.gz</a>                               10-Nov-2023 23:34          1028890106
-<a href="latest-lexemes.ttl.bz2">latest-lexemes.ttl.bz2</a>                             10-Nov-2023 23:35           436869853
-<a href="latest-lexemes.ttl.gz">latest-lexemes.ttl.gz</a>                              10-Nov-2023 23:31           551368342
-<a href="latest-truthy.nt.bz2">latest-truthy.nt.bz2</a>                               11-Nov-2023 00:02         37800017467
-<a href="latest-truthy.nt.gz">latest-truthy.nt.gz</a>                                10-Nov-2023 20:48         62701906081
+<a href="20231113/">20231113/</a>                                          16-Nov-2023 10:15                   -
+<a href="20231115/">20231115/</a>                                          17-Nov-2023 18:10                   -
+<a href="20231117/">20231117/</a>                                          17-Nov-2023 23:32                   -
+<a href="20231120/">20231120/</a>                                          23-Nov-2023 07:52                   -
+<a href="20231122/">20231122/</a>                                          22-Nov-2023 03:54                   -
+<a href="dcatap.rdf">dcatap.rdf</a>                                         23-Nov-2023 09:26               84753
+<a href="latest-all.json.bz2">latest-all.json.bz2</a>                                22-Nov-2023 18:19         85531259613
+<a href="latest-all.json.gz">latest-all.json.gz</a>                                 22-Nov-2023 10:04        129585179699
+<a href="latest-all.nt.bz2">latest-all.nt.bz2</a>                                  23-Nov-2023 07:52        165997488955
+<a href="latest-all.nt.gz">latest-all.nt.gz</a>                                   22-Nov-2023 15:09        215492337251
+<a href="latest-all.ttl.bz2">latest-all.ttl.bz2</a>                                 22-Nov-2023 19:47        106702879981
+<a href="latest-all.ttl.gz">latest-all.ttl.gz</a>                                  22-Nov-2023 10:03        130495478072
+<a href="latest-lexemes.json.bz2">latest-lexemes.json.bz2</a>                            22-Nov-2023 03:54           300738826
+<a href="latest-lexemes.json.gz">latest-lexemes.json.gz</a>                             22-Nov-2023 03:52           412003029
+<a href="latest-lexemes.nt.bz2">latest-lexemes.nt.bz2</a>                              17-Nov-2023 23:32           772697874
+<a href="latest-lexemes.nt.gz">latest-lexemes.nt.gz</a>                               17-Nov-2023 23:27          1029834805
+<a href="latest-lexemes.ttl.bz2">latest-lexemes.ttl.bz2</a>                             17-Nov-2023 23:28           437446414
+<a href="latest-lexemes.ttl.gz">latest-lexemes.ttl.gz</a>                              17-Nov-2023 23:24           552000144
+<a href="latest-truthy.nt.bz2">latest-truthy.nt.bz2</a>                               17-Nov-2023 18:10         37839213593
+<a href="latest-truthy.nt.gz">latest-truthy.nt.gz</a>                                17-Nov-2023 15:00         62766684395
 </pre><hr></body>
 </html>

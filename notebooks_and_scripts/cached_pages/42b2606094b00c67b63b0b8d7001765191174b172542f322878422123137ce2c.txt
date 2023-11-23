@@ -246,6 +246,9 @@
 	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2023-10-28/index.html">2023-10-28</a>
       </li>
       <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2023-11-16/index.html">2023-11-16</a>
+      </li>
+      <li>
 	<a href="https://data.monarchinitiative.org/monarch-kg-dev/kgx/index.html">kgx</a>
       </li>
       <li>

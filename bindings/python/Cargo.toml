@@ -33,7 +33,7 @@ rand = {version="0.7", features = ["small_rng"] }
 strsim = "0.10.0"
 file_progress = {git="https://github.com/LucaCappelletti94/rust_file_progress.git"}
 num-traits = {git="https://github.com/zommiommy/num-traits.git", features=["atomic_from_mut"]}
-hyperloglog-rs = {version="0.1.44", features=["std"]}
+hyperloglog-rs = {version="0.1.46", features=["std"]}
 markdown = "0.3"
 rayon = "1.6.0"
 indicatif = {version="0.17.0", features = ["rayon"]}
