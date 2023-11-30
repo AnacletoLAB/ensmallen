@@ -10473,7 +10473,9 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self, subgraph, include_selfloops, number_of_hops)")]
+    #[pyo3(
+        text_signature = "($self, subgraph, remove_edge_bias, include_selfloops, number_of_hops)"
+    )]
     /// Get the exact edge sketching from a given edge.
     ///
     /// Parameters
@@ -10482,6 +10484,7 @@ impl Graph {
     pub fn get_exact_edge_sketching_from_graph(
         &self,
         subgraph: &Self,
+        remove_edge_bias: Option<bool>,
         include_selfloops: Option<bool>,
         number_of_hops: Option<NodeT>,
     ) -> PyResult<(
@@ -10493,6 +10496,7 @@ impl Graph {
             let (subresult_0, subresult_1, subresult_2) =
                 pe!(self.inner.get_exact_edge_sketching_from_graph(
                     subgraph.into(),
+                    remove_edge_bias,
                     include_selfloops,
                     number_of_hops
                 ))?
@@ -10518,7 +10522,9 @@ impl Graph {
     }
 
     #[automatically_generated_binding]
-    #[pyo3(text_signature = "($self, src, dst, include_selfloops, number_of_hops)")]
+    #[pyo3(
+        text_signature = "($self, src, dst, remove_edge_bias, include_selfloops, number_of_hops)"
+    )]
     /// Get the exact edge sketching from a given edge.
     ///
     /// Parameters
@@ -10528,6 +10534,7 @@ impl Graph {
         &self,
         src: NodeT,
         dst: NodeT,
+        remove_edge_bias: Option<bool>,
         include_selfloops: Option<bool>,
         number_of_hops: Option<NodeT>,
     ) -> PyResult<(
@@ -10540,6 +10547,7 @@ impl Graph {
                 pe!(self.inner.get_exact_edge_sketching_from_edge_node_ids(
                     src.clone(),
                     dst.clone(),
+                    remove_edge_bias,
                     include_selfloops,
                     number_of_hops
                 ))?

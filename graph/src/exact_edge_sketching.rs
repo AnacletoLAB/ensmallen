@@ -24,6 +24,7 @@ impl Graph {
     /// # Arguments
     /// * `src` - The source node of the edge.
     /// * `dst` - The destination node of the edge.
+    /// * `remove_edge_bias` - Whether to remove the edge bias from the sketching.
     /// * `include_selfloops` - Whether to include selfloops in the sketching.
     ///
     /// # Raises
@@ -87,6 +88,7 @@ impl Graph {
         &self,
         src: NodeT,
         dst: NodeT,
+        remove_edge_bias: bool,
         include_selfloops: bool,
     ) -> ([[NodeT; N]; N], [NodeT; N], [NodeT; N]) {
         let mut src_neighbour_hypersphere = allocate_array_of_hashsets::<N>();
@@ -104,6 +106,18 @@ impl Graph {
             for neighbour in
                 unsafe { self.iter_unchecked_neighbour_node_ids_from_source_node_id(node) }
             {
+                // If requested, in order to remove the edge bias we need to ignore the node whose source node id
+                // is equal to src and the destination node id is equal to dst. We need to check also the opposite
+                // case i.e. when the source node id is equal to dst and the destination node id is equal to src only
+                // when the graph is undirected and therefore the edge is bidirectional.
+
+                if remove_edge_bias
+                    && ((node == src && neighbour == dst)
+                        || (node == dst && neighbour == src && !self.is_directed()))
+                {
+                    continue;
+                }
+
                 hypersphere.insert(neighbour as NodeT);
             }
         }
@@ -122,18 +136,29 @@ impl Graph {
                     None
                 };
                 // We want to iterate on the elements of the previous hypersphere.
-                for node in &previous_sphere[i - 1] {
+                for &node in &previous_sphere[i - 1] {
                     // We want to skip the nodes that were in the previous previous hypersphere,
                     // as the neighbours of the nodes contained therein were already inserted in
                     // the previous hypersphere.
                     if let Some(previous_previous_sphere) = previous_previous_sphere {
-                        if previous_previous_sphere.contains(node) {
+                        if previous_previous_sphere.contains(&node) {
                             continue;
                         }
                     }
                     for neighbour in unsafe {
-                        self.iter_unchecked_neighbour_node_ids_from_source_node_id(*node as u32)
+                        self.iter_unchecked_neighbour_node_ids_from_source_node_id(node as u32)
                     } {
+                        // If requested, in order to remove the edge bias we need to ignore the node whose source node id
+                        // is equal to src and the destination node id is equal to dst. We need to check also the opposite
+                        // case i.e. when the source node id is equal to dst and the destination node id is equal to src only
+                        // when the graph is undirected and therefore the edge is bidirectional.
+                        if remove_edge_bias
+                            && ((node == src && neighbour == dst)
+                                || (node == dst && neighbour == src && !self.is_directed()))
+                        {
+                            continue;
+                        }
+
                         // And we insert the neighbours in the current hypersphere.
                         hypersphere[0].insert(neighbour as NodeT);
                     }
@@ -152,12 +177,14 @@ impl Graph {
     ///
     /// # Arguments
     /// * `subgraph` - The subgraph to consider.
+    /// * `remove_edge_bias` - Whether to remove the edge bias from the sketching. By default, it is true.
     /// * `include_selfloops` - Whether to include selfloops in the sketching. By default, it is true.
     /// * `number_of_hops` - The number of hops to consider.
     ///
     pub fn get_exact_edge_sketching_from_graph(
         &self,
         subgraph: &Self,
+        remove_edge_bias: Option<bool>,
         include_selfloops: Option<bool>,
         number_of_hops: Option<NodeT>,
     ) -> Result<(Vec<Vec<Vec<NodeT>>>, Vec<Vec<NodeT>>, Vec<Vec<NodeT>>)> {
@@ -189,6 +216,7 @@ impl Graph {
                         .get_exact_edge_sketching_from_edge_node_ids(
                             src,
                             dst,
+                            remove_edge_bias,
                             include_selfloops,
                             Some(number_of_hops),
                         )?;
@@ -233,12 +261,14 @@ impl Graph {
         &self,
         src: NodeT,
         dst: NodeT,
+        remove_edge_bias: bool,
         include_selfloops: bool,
     ) -> Result<(Vec<Vec<NodeT>>, Vec<NodeT>, Vec<NodeT>)> {
         let (overlap_matrix, left_subtraction_vector, right_subtraction_vector) = self
             .get_exact_edge_sketching_from_edge_node_ids_with_constant::<N>(
                 src,
                 dst,
+                remove_edge_bias,
                 include_selfloops,
             );
         Ok((
@@ -253,6 +283,7 @@ impl Graph {
     /// # Arguments
     /// * `src` - The source node of the edge.
     /// * `dst` - The destination node of the edge.
+    /// * `remove_edge_bias` - Whether to remove the edge bias from the sketching. By default, it is true.
     /// * `include_selfloops` - Whether to include selfloops in the sketching. By default, it is true.
     /// * `number_of_hops` - The number of hops to consider.
     ///
@@ -260,12 +291,14 @@ impl Graph {
         &self,
         src: NodeT,
         dst: NodeT,
+        remove_edge_bias: Option<bool>,
         include_selfloops: Option<bool>,
         number_of_hops: Option<NodeT>,
     ) -> Result<(Vec<Vec<NodeT>>, Vec<NodeT>, Vec<NodeT>)> {
         self.validate_node_id(src)?;
         self.validate_node_id(dst)?;
 
+        let remove_edge_bias = remove_edge_bias.unwrap_or(true);
         let include_selfloops = include_selfloops.unwrap_or(true);
 
         let number_of_hops = number_of_hops.unwrap_or(2);
@@ -273,51 +306,61 @@ impl Graph {
             1 => self.get_exact_edge_sketching_from_edge_node_ids_to_vec::<1>(
                 src,
                 dst,
+                remove_edge_bias,
                 include_selfloops,
             ),
             2 => self.get_exact_edge_sketching_from_edge_node_ids_to_vec::<2>(
                 src,
                 dst,
+                remove_edge_bias,
                 include_selfloops,
             ),
             3 => self.get_exact_edge_sketching_from_edge_node_ids_to_vec::<3>(
                 src,
                 dst,
+                remove_edge_bias,
                 include_selfloops,
             ),
             4 => self.get_exact_edge_sketching_from_edge_node_ids_to_vec::<4>(
                 src,
                 dst,
+                remove_edge_bias,
                 include_selfloops,
             ),
             5 => self.get_exact_edge_sketching_from_edge_node_ids_to_vec::<5>(
                 src,
                 dst,
+                remove_edge_bias,
                 include_selfloops,
             ),
             6 => self.get_exact_edge_sketching_from_edge_node_ids_to_vec::<6>(
                 src,
                 dst,
+                remove_edge_bias,
                 include_selfloops,
             ),
             7 => self.get_exact_edge_sketching_from_edge_node_ids_to_vec::<7>(
                 src,
                 dst,
+                remove_edge_bias,
                 include_selfloops,
             ),
             8 => self.get_exact_edge_sketching_from_edge_node_ids_to_vec::<8>(
                 src,
                 dst,
+                remove_edge_bias,
                 include_selfloops,
             ),
             9 => self.get_exact_edge_sketching_from_edge_node_ids_to_vec::<9>(
                 src,
                 dst,
+                remove_edge_bias,
                 include_selfloops,
             ),
             10 => self.get_exact_edge_sketching_from_edge_node_ids_to_vec::<10>(
                 src,
                 dst,
+                remove_edge_bias,
                 include_selfloops,
             ),
             _ => {
