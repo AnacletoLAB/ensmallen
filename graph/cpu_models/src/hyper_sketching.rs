@@ -1,13 +1,66 @@
 use std::cell::SyncUnsafeCell;
 
+use core::hash::Hash;
+use core::mem::MaybeUninit;
 use graph::{Graph, NodeT};
 use heterogeneous_graphlets::prelude::*;
 use hyperloglog_rs::prelude::*;
 use num_traits::Float;
 use rayon::prelude::*;
 use serde::{de::DeserializeOwned, Deserialize, Serialize};
-use std::collections::HashMap;
+use std::collections::{HashMap, HashSet};
 use vec_rand::{splitmix64, xorshift};
+
+struct Offsets {
+    node_id_offset: usize,
+    edge_id_offset: usize,
+    node_type_offset: usize,
+    edge_type_offset: usize,
+}
+
+// Method to allocate an array of HashSets using maybe uninitialized memory,
+// so to circumvent the fact that HashSet does not implement Copy.
+fn allocate_array_of_hashsets<const N: usize, T>() -> [HashSet<T>; N] {
+    unsafe {
+        let mut array: [HashSet<T>; N] = MaybeUninit::uninit().assume_init();
+        for i in 0..N {
+            // We replace the previosly initialized value with an hashset
+            // and we forget the previous value.
+            std::mem::forget(std::mem::replace(&mut array[i], HashSet::new()));
+        }
+        array
+    }
+}
+
+trait MutableSetLike<T>: Sized {
+    fn array<const HOPS: usize>() -> [Self; HOPS];
+    fn insert(&mut self, value: T) -> bool;
+}
+
+impl<T: Hash + Eq> MutableSetLike<T> for HashSet<T> {
+    fn array<const HOPS: usize>() -> [Self; HOPS] {
+        allocate_array_of_hashsets()
+    }
+
+    fn insert(&mut self, value: T) -> bool {
+        HashSet::insert(self, value)
+    }
+}
+
+impl<T: Hash + Eq, P, const BITS: usize> MutableSetLike<T> for HyperLogLog<P, BITS>
+where
+    P: Precision + WordType<BITS>,
+{
+    fn array<const HOPS: usize>() -> [Self; HOPS] {
+        [HyperLogLog::default(); HOPS]
+    }
+
+    fn insert(&mut self, value: T) -> bool {
+        let contained_before = HyperLogLog::may_contain(self, &value);
+        HyperLogLog::insert(self, value);
+        !contained_before
+    }
+}
 
 #[derive(Clone, Deserialize, Serialize)]
 /// Struct implementing Hyper Subgraph Sketching.
@@ -25,6 +78,10 @@ pub struct HyperSketching<
 > {
     /// Vector of HyperLogLog counters
     counters: Vec<HyperLogLogArray<PRECISION, BITS, HOPS>>,
+    /// Whether to use the unbiased version for the algorithm.
+    unbiased: bool,
+    /// Whether to use the exact version for the algorithm.
+    exact: bool,
     /// Whether to include the node types in the sketch
     include_node_types: bool,
     /// whether to include the edge types in the sketch
@@ -35,8 +92,6 @@ pub struct HyperSketching<
     include_node_ids: bool,
     /// whether to include self-loops.
     include_selfloops: bool,
-    /// whether to use MLE to estimate the cardinalities
-    use_mle_estimation: bool,
     /// whether to include the typed graphlets in the sketch
     include_typed_graphlets: bool,
     /// Random state for random integers, if requested.
@@ -60,12 +115,13 @@ impl<
     /// Creates a new HyperSketching model.
     ///
     /// # Arguments
+    /// * `unbiased`: Option<bool> - Whether to use the unbiased version for the algorithm. By default, false.
+    /// * `exact`: Option<bool> - Whether to use the exact version for the algorithm. By default, false.
     /// * `include_node_types`: Option<bool> - Whether to include the node types in the sketch. By default, false.
     /// * `include_edge_types`: Option<bool> - Whether to include the edge types in the sketch. By default, false.
     /// * `include_edge_ids`: Option<bool> - Whether to include the edge ids in the sketch. By default, false.
     /// * `include_node_ids`: Option<bool> - Whether to include the node ids in the sketch. By default, true.
     /// * `include_selfloops`: Option<bool> - Whether to include self-loops. By default, true.
-    /// * `use_mle_estimation`: Option<bool> - Whether to use MLE to estimate the cardinalities. By default, false.
     /// * `include_typed_graphlets`: Option<bool> - Whether to include the typed graphlets in the sketch. By default, false.
     /// * `random_state`: Option<u64> - Random state for random integers, if requested. By default, 42.
     /// * `number_of_random_integers`: Option<usize> - Number of random integers to add per node - by default 0.
@@ -79,12 +135,13 @@ impl<
     /// * If the edge ids are requested, but only two HOPs is used, as the edge ids would surely be completely distinct for all edges.
     /// * The data type is not supported. Supported data types are f16, f32 and f64.
     pub fn new(
+        unbiased: Option<bool>,
+        exact: Option<bool>,
         include_node_types: Option<bool>,
         include_edge_types: Option<bool>,
         include_edge_ids: Option<bool>,
         include_node_ids: Option<bool>,
         include_selfloops: Option<bool>,
-        use_mle_estimation: Option<bool>,
         include_typed_graphlets: Option<bool>,
         random_state: Option<u64>,
         number_of_random_integers: Option<usize>,
@@ -132,14 +189,36 @@ impl<
             ));
         }
 
+        let unbiased = unbiased.unwrap_or(false);
+        let exact = exact.unwrap_or(false);
+
+        // At this time, we do not support the exact or unbiased version of the algorithm
+        // that uses the node types, edge types, edge ids or graphlets. The node ids MUST
+        // be included, as otherwise the algorithm would not make sense.
+
+        if (unbiased || exact)
+            && (include_node_types.unwrap_or(false)
+                || include_edge_types.unwrap_or(false)
+                || include_edge_ids.unwrap_or(false)
+                || include_typed_graphlets.unwrap_or(false))
+        {
+            return Err(concat!(
+                "At this time, we do not support the exact or unbiased version of the algorithm ",
+                "that uses the node types, edge types, edge ids or graphlets. ",
+                "The node ids MUST be included, as otherwise the algorithm would not make sense."
+            )
+            .to_string());
+        }
+
         Ok(Self {
             counters: Vec::new(),
+            unbiased,
+            exact,
             include_node_types: include_node_types.unwrap_or(false),
             include_edge_types: include_edge_types.unwrap_or(false),
             include_edge_ids: include_edge_ids.unwrap_or(false),
             include_node_ids: include_node_ids.unwrap_or(true),
             include_selfloops: include_selfloops.unwrap_or(true),
-            use_mle_estimation: use_mle_estimation.unwrap_or(false),
             include_typed_graphlets: include_typed_graphlets.unwrap_or(false),
             random_state: random_state.unwrap_or(42),
             number_of_random_integers: number_of_random_integers.unwrap_or(0),
@@ -151,7 +230,7 @@ impl<
 
     /// Returns whether the model has been trained.
     fn must_be_trained(&self) -> Result<(), String> {
-        if self.counters.is_empty() {
+        if !(self.unbiased || self.exact) && self.counters.is_empty() {
             return Err(concat!(
                 "This model has not been trained yet. ",
                 "You should call the `.fit` method first."
@@ -161,34 +240,10 @@ impl<
         Ok(())
     }
 
-    /// Fit the HyperBall model to the provided graph.
-    ///
-    /// # Arguments
-    /// * `graph`: &Graph - The graph whose edges are to be learned.
-    ///
-    /// # Raises
-    /// * If the provided graph does not have node types but the model has been initialized with `include_node_types` set to true.
-    /// * If the provided graph does not have edge types but the model has been initialized with `include_edge_types` set to true.
-    pub fn fit(&mut self, graph: &Graph) -> Result<(), String> {
-        // Check that the graph has node types if the model is initialized with `include_node_types` set to true
-        if self.include_node_types && !graph.has_node_types() {
-            return Err(
-                "The provided graph does not have node types but the model has been initialized with `include_node_types` set to true.".to_string(),
-            );
-        }
-
-        // Check that the graph has edge types if the model is initialized with `include_edge_types` set to true
-        if self.include_edge_types && !graph.has_edge_types() {
-            return Err(
-                "The provided graph does not have edge types but the model has been initialized with `include_edge_types` set to true.".to_string(),
-            );
-        }
-
-        let random_state = splitmix64(self.random_state);
-
+    fn get_offsets(&self, support: &Graph) -> Result<Offsets, String> {
         // We add an offset to the node ids if they are requested.
         let node_id_offset = if self.include_node_ids {
-            graph.get_number_of_nodes() as usize
+            support.get_number_of_nodes() as usize
         } else {
             0
         };
@@ -196,7 +251,7 @@ impl<
         // We add an offset to the edge ids if they are requested.
         let edge_id_offset = node_id_offset
             + if self.include_edge_ids {
-                graph.get_number_of_edges() as usize
+                support.get_number_of_edges() as usize
             } else {
                 0
             };
@@ -205,7 +260,7 @@ impl<
         // with the node ids or edge type ids.
         let node_type_offset = edge_id_offset
             + if self.include_node_types {
-                graph.get_number_of_node_types()? as usize
+                support.get_number_of_node_types()? as usize
             } else {
                 0
             };
@@ -214,14 +269,55 @@ impl<
         // with the node ids or node type ids.
         let edge_type_offset = node_type_offset
             + if self.include_edge_types {
-                graph.get_number_of_edge_types()? as usize
+                support.get_number_of_edge_types()? as usize
             } else {
                 0
             };
 
+        Ok(Offsets {
+            node_id_offset,
+            edge_id_offset,
+            node_type_offset,
+            edge_type_offset,
+        })
+    }
+
+    /// Fit the HyperBall model to the provided support.
+    ///
+    /// # Arguments
+    /// * `support`: &Graph - The graph whose edges are to be learned.
+    ///
+    /// # Raises
+    /// * If the provided graph does not have node types but the model has been initialized with `include_node_types` set to true.
+    /// * If the provided graph does not have edge types but the model has been initialized with `include_edge_types` set to true.
+    pub fn fit(&mut self, support: &Graph) -> Result<(), String> {
+        // The unbiased and exact versions of the algorithm do not require training
+        // as they are necessarily computed on the fly.
+        if self.unbiased || self.exact {
+            return Ok(());
+        }
+
+        // Check that the graph has node types if the model is initialized with `include_node_types` set to true
+        if self.include_node_types && !support.has_node_types() {
+            return Err(
+                "The provided graph does not have node types but the model has been initialized with `include_node_types` set to true.".to_string(),
+            );
+        }
+
+        // Check that the graph has edge types if the model is initialized with `include_edge_types` set to true
+        if self.include_edge_types && !support.has_edge_types() {
+            return Err(
+                "The provided graph does not have edge types but the model has been initialized with `include_edge_types` set to true.".to_string(),
+            );
+        }
+
+        let random_state = splitmix64(self.random_state);
+
+        let offsets = self.get_offsets(support)?;
+
         let mut counters = vec![
             HyperLogLogArray::<PRECISION, BITS, HOPS>::new();
-            graph.get_number_of_nodes() as usize
+            support.get_number_of_nodes() as usize
         ];
 
         // Create HyperLogLog counters for all nodes in the graph
@@ -238,49 +334,49 @@ impl<
                 // If the node neighbours are requested, we add the node neighbour node ids.
                 if self.include_node_ids {
                     counters[0] |= unsafe {
-                        graph
+                        support
                             .iter_unchecked_neighbour_node_ids_from_source_node_id(node_id as NodeT)
                     }
                     .collect::<HyperLogLog<PRECISION, BITS>>();
                 }
                 if self.include_edge_ids {
                     counters[0] |= unsafe {
-                        graph.iter_unchecked_edge_ids_from_source_node_id(node_id as NodeT)
+                        support.iter_unchecked_edge_ids_from_source_node_id(node_id as NodeT)
                     }
-                    .map(|edge_id| edge_id as usize + node_id_offset)
+                    .map(|edge_id| edge_id as usize + offsets.node_id_offset)
                     .collect::<HyperLogLog<PRECISION, BITS>>();
                 }
                 if self.include_node_types {
                     counters[0] |= unsafe {
-                        graph
+                        support
                             .iter_unchecked_neighbour_node_ids_from_source_node_id(node_id as NodeT)
                     }
                     .flat_map(|dst| {
-                        unsafe { graph.get_unchecked_node_type_ids_from_node_id(dst) }
+                        unsafe { support.get_unchecked_node_type_ids_from_node_id(dst) }
                             .unwrap_or(&[])
                     })
-                    .map(|&node_type_id| node_type_id as usize + edge_id_offset)
+                    .map(|&node_type_id| node_type_id as usize + offsets.edge_id_offset)
                     .collect::<HyperLogLog<PRECISION, BITS>>();
                 }
                 if self.include_edge_types {
                     counters[0] |= unsafe {
-                        graph.iter_unchecked_edge_type_id_from_source_node_id(node_id as NodeT)
+                        support.iter_unchecked_edge_type_id_from_source_node_id(node_id as NodeT)
                     }
                     .filter_map(|edge_type_id| edge_type_id)
-                    .map(|edge_type_id| edge_type_id as usize + node_id_offset)
+                    .map(|edge_type_id| edge_type_id as usize + offsets.node_type_offset)
                     .collect::<HyperLogLog<PRECISION, BITS>>();
                 }
                 if self.include_typed_graphlets {
                     counters[0] |= unsafe {
-                        graph
+                        support
                             .iter_unchecked_neighbour_node_ids_from_source_node_id(node_id as NodeT)
                     }
                     .flat_map(|dst| {
                         let graphlets: HashMap<u16, u32> =
-                            graph.get_heterogeneous_graphlet(node_id, dst as usize);
+                            support.get_heterogeneous_graphlet(node_id, dst as usize);
                         graphlets.into_keys()
                     })
-                    .map(|node_type_id| node_type_id as usize + edge_type_offset)
+                    .map(|node_type_id| node_type_id as usize + offsets.edge_type_offset)
                     .collect::<HyperLogLog<PRECISION, BITS>>();
                 }
                 if self.number_of_random_integers > 0 {
@@ -307,7 +403,7 @@ impl<
                 .for_each(
                     |(node_id, counters): (usize, &mut HyperLogLogArray<PRECISION, BITS, HOPS>)| {
                         // Iterate over all neighbors of the current node
-                        counters[k] = graph
+                        counters[k] = support
                             .iter_unchecked_neighbour_node_ids_from_source_node_id(node_id as NodeT)
                             .map(|dst| &(*shared_counters.get())[dst as usize][k - 1])
                             .union()
@@ -335,27 +431,71 @@ impl<
     ///
     /// # Safety
     /// This method is unsafe because it does not check that the provided nodes are lower
-    /// than the expected number of nodes in the graph.
+    /// than the expected number of nodes in the support.
     ///
     pub unsafe fn get_subgraph_sketch_from_node_ids_unchecked<F: Primitive<f32>>(
         &self,
         src: usize,
         dst: usize,
     ) -> ([[F; HOPS]; HOPS], [F; HOPS], [F; HOPS]) {
-        let src_counter = &self.counters[src];
-        let dst_counter = &self.counters[dst];
+        self.counters[src].overlap_and_differences_cardinality_matrices(&self.counters[dst])
+    }
 
-        if self.use_mle_estimation {
-            let mle_src_counter: &[MLE<3, _>; HOPS] = src_counter.as_ref();
-            let mle_dst_counter: &[MLE<3, _>; HOPS] = dst_counter.as_ref();
+    /// Returns the unbiased exact subgraph sketch associates with the two provided nodes.
+    ///
+    /// # Arguments
+    /// * `src`: NodeT - The source node.
+    /// * `dst`: NodeT - The destination node.
+    /// * `support`: &Graph - The support graph from which to extract the topology.
+    ///
+    fn get_unbiased_edge_sketching_from_edge_node_ids<
+        F: Primitive<f32>,
+        S: HyperSpheresSketch<F> + MutableSetLike<NodeT> + Clone,
+    >(
+        &self,
+        src: NodeT,
+        dst: NodeT,
+        support: &Graph,
+    ) -> ([[F; HOPS]; HOPS], [F; HOPS], [F; HOPS]) {
+        let mut src_array: [S; HOPS] = S::array::<HOPS>();
+        let mut dst_array: [S; HOPS] = S::array::<HOPS>();
 
-            <MLE<3, _>>::overlap_and_differences_cardinality_matrices(
-                mle_src_counter,
-                mle_dst_counter,
-            )
-        } else {
-            self.counters[src].overlap_and_differences_cardinality_matrices(&self.counters[dst])
+        for (root, array) in [(src, &mut src_array), (dst, &mut dst_array)] {
+            if self.include_selfloops {
+                array[0].insert(root);
+            }
+
+            let mut frontier: Vec<NodeT> = vec![root];
+
+            // Then, we populate the hypersphere of neighbours up to the given number of hops.
+            for i in 0..HOPS {
+                if i > 0 {
+                    array[i] = array[i - 1].clone();
+                }
+
+                let mut temporary_frontier = Vec::new();
+
+                for node in frontier.drain(..) {
+                    for neighbour in unsafe {
+                        support.iter_unchecked_neighbour_node_ids_from_source_node_id(node)
+                    } {
+                        if self.unbiased && (node == src && neighbour == dst)
+                            || (node == dst && neighbour == src && !support.is_directed())
+                        {
+                            continue;
+                        }
+
+                        if !array[i].insert(neighbour) {
+                            temporary_frontier.push(neighbour);
+                        }
+                    }
+                }
+                frontier = temporary_frontier;
+            }
         }
+
+        // Now, we can compute the overlap matrix.
+        S::overlap_and_differences_cardinality_matrices(&src_array, &dst_array)
     }
 
     /// Returns the subgraph sketch associates with the two provided nodes.
@@ -372,7 +512,7 @@ impl<
     ///
     /// # Raises
     /// * If the model has not been trained yet.
-    /// * If the provided nodes are not lower than the expected number of nodes in the graph.
+    /// * If the provided nodes are not lower than the expected number of nodes in the support.
     ///
     pub fn get_subgraph_sketch_from_node_ids<F: Primitive<f32>>(
         &self,
@@ -432,22 +572,24 @@ impl<
     /// Returns the estimated Sketching for all edges.
     ///
     /// # Arguments
-    /// * `overlaps`: &mut [f32] - Area where to write the estimated overlaps, which is expected to be a flattened version of the 3d matrix with shape `(number_of_edges, HOPS, HOPS)`.
-    /// * `src_differences`: &mut [f32] - Area where to write the estimated src differences, which is expected to be a flattened version of the 2d matrix with shape `(number_of_edges, HOPS)`.
-    /// * `dst_differences`: &mut [f32] - Area where to write the estimated dst differences, which is expected to be a flattened version of the 2d matrix with shape `(number_of_edges, HOPS)`.
-    /// * `graph`: &Graph - The graph whose edges are to be learned.
+    /// * `features`: &mut [f32] - Area where to write the estimated overlaps, which is expected to be a flat array.
+    /// * `support`: &Graph - The support graph from which to extract the topology.
+    /// * `edge_iterator`: I - The iterator over the edges for which to compute the Sketching.
     ///
     /// # Raises
     /// * If the model has not been trained yet.
     /// * If one of the provided slices does not have the expected size.
     /// * If the provided graph has a different number of nodes than the model.
     ///
-    pub fn get_sketching_for_all_edges<I, F: Primitive<f32> + Float>(
+    /// # Safety
+    /// The source and destination nodes are not checked to be lower than the expected number of nodes in the graph
+    /// because it would slow down the computation too much without significant benefits. Please do this check BEFORE
+    /// calling this method.
+    ///
+    pub unsafe fn get_sketching_for_all_edges_unchecked<I, F: Primitive<f32> + Float>(
         &self,
-        overlaps: &mut [F],
-        src_differences: &mut [F],
-        dst_differences: &mut [F],
-        graph: &Graph,
+        features: &mut [F],
+        support: &Graph,
         edge_iterator: I,
     ) -> Result<(), String>
     where
@@ -458,162 +600,102 @@ impl<
         let factor = if self.concatenate_features { 2 } else { 1 };
 
         // Check that the provided slices have the expected size
-        if overlaps.len() != edge_iterator.len() as usize * factor * HOPS * HOPS {
+        if features.len() != edge_iterator.len() as usize * factor * (HOPS * HOPS + HOPS + HOPS) {
             return Err(format!(
                 concat!(
-                    "The provided `overlaps` slice has a length of `{}` ",
+                    "The provided `features` slice has a length of `{}` ",
                     "but it should have a length of `{}`."
                 ),
-                overlaps.len(),
-                edge_iterator.len() as usize * factor * HOPS * HOPS
-            ));
-        }
-
-        if src_differences.len() != edge_iterator.len() as usize * factor * HOPS {
-            return Err(format!(
-                concat!(
-                    "The provided `src_differences` slice has a length of `{}` ",
-                    "but it should have a length of `{}`."
-                ),
-                src_differences.len(),
-                edge_iterator.len() as usize * factor * HOPS
-            ));
-        }
-
-        if dst_differences.len() != edge_iterator.len() as usize * factor * HOPS {
-            return Err(format!(
-                concat!(
-                    "The provided `dst_differences` slice has a length of `{}` ",
-                    "but it should have a length of `{}`."
-                ),
-                dst_differences.len(),
-                edge_iterator.len() as usize * factor * HOPS
+                features.len(),
+                edge_iterator.len() as usize * factor * (HOPS * HOPS + HOPS + HOPS)
             ));
         }
 
         // Check that the graph has the same number of nodes as the model
-        if graph.get_number_of_nodes() as usize != self.counters.len() {
+        if self.get_normalize_by_symmetric_laplacian()
+            && support.get_number_of_nodes() as usize != self.counters.len()
+        {
             return Err(format!(
                 concat!(
                     "The provided graph has `{}` nodes ",
                     "but the model has been trained on a graph with `{}` nodes."
                 ),
-                graph.get_number_of_nodes(),
+                support.get_number_of_nodes(),
                 self.counters.len()
             ));
         }
 
-        // Iterate over all edges in the graph and compute the sketches
-        // We zip the three slices together to have better cache locality
-        // and we use copy non overlapping, which is an instruction to the
-        // compiler to not assume that the slices are overlapping.
-
-        let offset = if self.concatenate_features { 1 } else { 0 };
-
         edge_iterator
-            .zip(overlaps.par_chunks_exact_mut(HOPS * HOPS * factor))
-            .zip(src_differences.par_chunks_exact_mut(HOPS * factor))
-            .zip(dst_differences.par_chunks_exact_mut(HOPS * factor))
-            .map(
-                |((((src, dst), overlaps), src_differences), dst_differences)| unsafe {
-                    // If the source or destination node is not in the graph, we return an error:
-                    if src as usize >= self.counters.len() || dst as usize >= self.counters.len() {
-                        return Err(format!(
-                            concat!(
-                                "The provided nodes {} and {} are not lower than the ",
-                                "expected number of nodes in the graph `{}`."
-                            ),
-                            src,
-                            dst,
-                            self.counters.len()
-                        ));
-                    }
+            .zip(features.par_chunks_exact_mut((HOPS * HOPS + HOPS + HOPS) * factor))
+            .for_each(|((src, dst), edge_feature)| unsafe {
+                let (sketch_overlaps, sketch_src_differences, sketch_dst_differences) =
+                    if self.unbiased {
+                        if self.exact {
+                            self.get_unbiased_edge_sketching_from_edge_node_ids::<F, HashSet<NodeT>>(src, dst, support)
+                        } else {
+                            self.get_unbiased_edge_sketching_from_edge_node_ids::<F, HyperLogLog<PRECISION, BITS>>(src, dst, support)
+                        }
+                    } else {
+                        self.get_subgraph_sketch_from_node_ids_unchecked(src as usize, dst as usize)
+                    };
 
-                    let (
-                        mut sketch_overlaps,
-                        mut sketch_src_differences,
-                        mut sketch_dst_differences,
-                    ) = self
-                        .get_subgraph_sketch_from_node_ids_unchecked(src as usize, dst as usize);
+                // Copy the estimated overlaps
+                std::ptr::copy_nonoverlapping(
+                    sketch_overlaps.as_ptr() as *const F,
+                    edge_feature[..HOPS * HOPS].as_mut_ptr(),
+                    HOPS * HOPS,
+                );
+
+                // Copy the estimated src differences
+                std::ptr::copy_nonoverlapping(
+                    sketch_src_differences.as_ptr(),
+                    edge_feature[HOPS * HOPS..HOPS * HOPS + HOPS].as_mut_ptr(),
+                    HOPS,
+                );
+
+                // Copy the estimated dst differences
+                std::ptr::copy_nonoverlapping(
+                    sketch_dst_differences.as_ptr(),
+                    edge_feature[HOPS * HOPS + HOPS..].as_mut_ptr(),
+                    HOPS,
+                );
+
+                if self.concatenate_features {
+                    let (left, right) = edge_feature.split_at_mut(HOPS * HOPS + HOPS + HOPS);
 
                     // Copy the estimated overlaps
                     std::ptr::copy_nonoverlapping(
-                        sketch_overlaps.as_ptr() as *const F,
-                        overlaps.as_mut_ptr(),
-                        HOPS * HOPS,
+                        left.as_ptr(),
+                        right.as_mut_ptr(),
+                        HOPS * HOPS + HOPS + HOPS,
+                    );
+                }
+
+                if self.normalize_by_symmetric_laplacian {
+                    let src_degree: F = F::reverse(
+                        1.0 + support.get_unchecked_selfloop_excluded_node_degree_from_node_id(src)
+                            as f32,
+                    );
+                    let dst_degree: F = F::reverse(
+                        1.0 + support.get_unchecked_selfloop_excluded_node_degree_from_node_id(dst)
+                            as f32,
                     );
 
-                    // Copy the estimated src differences
-                    std::ptr::copy_nonoverlapping(
-                        sketch_src_differences.as_ptr(),
-                        src_differences.as_mut_ptr(),
-                        HOPS,
-                    );
+                    let degree_sqrt_recip = (src_degree * dst_degree).sqrt().recip();
 
-                    // Copy the estimated dst differences
-                    std::ptr::copy_nonoverlapping(
-                        sketch_dst_differences.as_ptr(),
-                        dst_differences.as_mut_ptr(),
-                        HOPS,
-                    );
+                    // We iterate over the last HOPS^2 + 2*HOPS elements of the edge feature
+                    // and we normalize them by the symmetric Laplacian
+                    let offset = if self.concatenate_features {
+                        HOPS * HOPS + HOPS + HOPS
+                    } else {
+                        0
+                    };
 
-                    if self.normalize_by_symmetric_laplacian {
-                        let src_degree: F = F::reverse(
-                            1.0 + graph
-                                .get_unchecked_selfloop_excluded_node_degree_from_node_id(src)
-                                as f32,
-                        );
-                        let dst_degree: F = F::reverse(
-                            1.0 + graph
-                                .get_unchecked_selfloop_excluded_node_degree_from_node_id(dst)
-                                as f32,
-                        );
-
-                        let degree_sqrt_recip = (src_degree * dst_degree).sqrt().recip();
-
-                        // Normalize the estimated overlaps
-                        sketch_overlaps.iter_mut().for_each(|overlap| {
-                            overlap.iter_mut().for_each(|overlap| {
-                                *overlap *= degree_sqrt_recip;
-                            });
-                        });
-                        sketch_src_differences
-                            .iter_mut()
-                            .for_each(|src_difference| {
-                                *src_difference *= degree_sqrt_recip;
-                            });
-                        sketch_dst_differences
-                            .iter_mut()
-                            .for_each(|dst_difference| {
-                                *dst_difference *= degree_sqrt_recip;
-                            });
-
-                        // Copy the estimated overlaps
-                        std::ptr::copy_nonoverlapping(
-                            sketch_overlaps.as_ptr() as *const F,
-                            overlaps[offset * HOPS * HOPS..].as_mut_ptr(),
-                            HOPS * HOPS,
-                        );
-
-                        // Copy the estimated src differences
-                        std::ptr::copy_nonoverlapping(
-                            sketch_src_differences.as_ptr(),
-                            src_differences[offset * HOPS..].as_mut_ptr(),
-                            HOPS,
-                        );
-
-                        // Copy the estimated dst differences
-                        std::ptr::copy_nonoverlapping(
-                            sketch_dst_differences.as_ptr(),
-                            dst_differences[offset * HOPS..].as_mut_ptr(),
-                            HOPS,
-                        );
-                    }
-
-                    Ok(())
-                },
-            )
-            .collect::<Result<(), String>>()?;
+                    edge_feature[offset..]
+                        .iter_mut()
+                        .for_each(|feature| *feature *= degree_sqrt_recip);
+                }
+            });
 
         Ok(())
     }

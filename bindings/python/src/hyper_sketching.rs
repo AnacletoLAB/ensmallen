@@ -443,6 +443,16 @@ impl InnerModel {
     ///
     /// Parameters
     /// ------------------------
+    /// unbiased: Option<bool>
+    ///     Whether to use the unbiased algorithm for the sketching,
+    ///     which is slower but does not leak the information of whether
+    ///     an edge is present or not to the sketch.
+    ///     By default, `false`.
+    /// exact: Option<bool>
+    ///     Whether to use the exact algorithm for the sketching,
+    ///     which is slower and requires more memory but is more accurate
+    ///     as uses Sets instead of HyperLogLog counters.
+    ///     By default, `false`.
     /// number_of_hops: Option<usize>
     ///     The number of hops for the Sketches. By default, `2`.
     /// precision: usize
@@ -465,9 +475,6 @@ impl InnerModel {
     ///     By default, `true`.
     /// include_selfloops: Option<bool>
     ///     Whether to include the selfloops in the sketches.
-    ///     By default, `false`.
-    /// use_mle_estimation: Option<bool>
-    ///     Whether to use the MLE estimation for the HyperLogLog counters.
     ///     By default, `false`.
     /// include_typed_graphlets: Option<bool>
     ///     Whether to include the typed graphlets in the sketches.
@@ -495,6 +502,8 @@ impl InnerModel {
     ///     If the edge ids are requested but the number of HOPS is only one.
     ///     If none of the include flags is enabled.
     fn new(
+        unbiased: Option<bool>,
+        exact: Option<bool>,
         number_of_hops: Option<usize>,
         precision: usize,
         bits: usize,
@@ -503,7 +512,6 @@ impl InnerModel {
         include_edge_ids: Option<bool>,
         include_node_ids: Option<bool>,
         include_selfloops: Option<bool>,
-        use_mle_estimation: Option<bool>,
         include_typed_graphlets: Option<bool>,
         random_state: Option<u64>,
         number_of_random_integers: Option<usize>,
@@ -515,14 +523,15 @@ impl InnerModel {
         // for very hard to read code, we proceed instead with a Python script.
 
         match (precision, bits, number_of_hops.unwrap_or(2)) {
-            // ({precision}, {bits}, {hops}) => Ok(InnerModel::HS{precision}_{bits}_{hops}(HS::new(include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, use_mle_estimation, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), {python_macro}
+            // ({precision}, {bits}, {hops}) => Ok(InnerModel::HS{precision}_{bits}_{hops}(HS::new(unbiased, exact, include_node_types, include_edge_types, include_edge_ids, include_node_ids, include_selfloops, include_typed_graphlets, random_state, number_of_random_integers, normalize_by_symmetric_laplacian, concatenate_features, dtype)?)), {python_macro}
             (4, 4, 1) => Ok(InnerModel::HS4_4_1(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -531,12 +540,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (4, 4, 2) => Ok(InnerModel::HS4_4_2(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -545,12 +555,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (4, 4, 3) => Ok(InnerModel::HS4_4_3(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -559,12 +570,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (4, 4, 4) => Ok(InnerModel::HS4_4_4(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -573,12 +585,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (4, 4, 5) => Ok(InnerModel::HS4_4_5(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -587,12 +600,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (4, 4, 6) => Ok(InnerModel::HS4_4_6(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -601,12 +615,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (4, 4, 7) => Ok(InnerModel::HS4_4_7(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -615,12 +630,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (4, 4, 8) => Ok(InnerModel::HS4_4_8(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -629,12 +645,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (4, 4, 9) => Ok(InnerModel::HS4_4_9(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -643,12 +660,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (4, 4, 10) => Ok(InnerModel::HS4_4_10(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -657,12 +675,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (4, 5, 1) => Ok(InnerModel::HS4_5_1(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -671,12 +690,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (4, 5, 2) => Ok(InnerModel::HS4_5_2(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -685,12 +705,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (4, 5, 3) => Ok(InnerModel::HS4_5_3(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -699,12 +720,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (4, 5, 4) => Ok(InnerModel::HS4_5_4(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -713,12 +735,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (4, 5, 5) => Ok(InnerModel::HS4_5_5(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -727,12 +750,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (4, 5, 6) => Ok(InnerModel::HS4_5_6(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -741,12 +765,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (4, 5, 7) => Ok(InnerModel::HS4_5_7(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -755,12 +780,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (4, 5, 8) => Ok(InnerModel::HS4_5_8(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -769,12 +795,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (4, 5, 9) => Ok(InnerModel::HS4_5_9(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -783,12 +810,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (4, 5, 10) => Ok(InnerModel::HS4_5_10(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -797,12 +825,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (4, 6, 1) => Ok(InnerModel::HS4_6_1(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -811,12 +840,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (4, 6, 2) => Ok(InnerModel::HS4_6_2(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -825,12 +855,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (4, 6, 3) => Ok(InnerModel::HS4_6_3(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -839,12 +870,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (4, 6, 4) => Ok(InnerModel::HS4_6_4(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -853,12 +885,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (4, 6, 5) => Ok(InnerModel::HS4_6_5(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -867,12 +900,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (4, 6, 6) => Ok(InnerModel::HS4_6_6(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -881,12 +915,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (4, 6, 7) => Ok(InnerModel::HS4_6_7(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -895,12 +930,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (4, 6, 8) => Ok(InnerModel::HS4_6_8(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -909,12 +945,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (4, 6, 9) => Ok(InnerModel::HS4_6_9(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -923,12 +960,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (4, 6, 10) => Ok(InnerModel::HS4_6_10(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -937,12 +975,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (5, 4, 1) => Ok(InnerModel::HS5_4_1(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -951,12 +990,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (5, 4, 2) => Ok(InnerModel::HS5_4_2(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -965,12 +1005,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (5, 4, 3) => Ok(InnerModel::HS5_4_3(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -979,12 +1020,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (5, 4, 4) => Ok(InnerModel::HS5_4_4(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -993,12 +1035,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (5, 4, 5) => Ok(InnerModel::HS5_4_5(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -1007,12 +1050,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (5, 4, 6) => Ok(InnerModel::HS5_4_6(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -1021,12 +1065,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (5, 4, 7) => Ok(InnerModel::HS5_4_7(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -1035,12 +1080,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (5, 4, 8) => Ok(InnerModel::HS5_4_8(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -1049,12 +1095,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (5, 4, 9) => Ok(InnerModel::HS5_4_9(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -1063,12 +1110,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (5, 4, 10) => Ok(InnerModel::HS5_4_10(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -1077,12 +1125,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (5, 5, 1) => Ok(InnerModel::HS5_5_1(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -1091,12 +1140,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (5, 5, 2) => Ok(InnerModel::HS5_5_2(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -1105,12 +1155,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (5, 5, 3) => Ok(InnerModel::HS5_5_3(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -1119,12 +1170,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (5, 5, 4) => Ok(InnerModel::HS5_5_4(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -1133,12 +1185,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (5, 5, 5) => Ok(InnerModel::HS5_5_5(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -1147,12 +1200,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (5, 5, 6) => Ok(InnerModel::HS5_5_6(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -1161,12 +1215,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (5, 5, 7) => Ok(InnerModel::HS5_5_7(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -1175,12 +1230,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (5, 5, 8) => Ok(InnerModel::HS5_5_8(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -1189,12 +1245,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (5, 5, 9) => Ok(InnerModel::HS5_5_9(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -1203,12 +1260,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (5, 5, 10) => Ok(InnerModel::HS5_5_10(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -1217,12 +1275,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (5, 6, 1) => Ok(InnerModel::HS5_6_1(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -1231,12 +1290,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (5, 6, 2) => Ok(InnerModel::HS5_6_2(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -1245,12 +1305,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (5, 6, 3) => Ok(InnerModel::HS5_6_3(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -1259,12 +1320,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (5, 6, 4) => Ok(InnerModel::HS5_6_4(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -1273,12 +1335,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (5, 6, 5) => Ok(InnerModel::HS5_6_5(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -1287,12 +1350,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (5, 6, 6) => Ok(InnerModel::HS5_6_6(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -1301,12 +1365,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (5, 6, 7) => Ok(InnerModel::HS5_6_7(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -1315,12 +1380,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (5, 6, 8) => Ok(InnerModel::HS5_6_8(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -1329,12 +1395,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (5, 6, 9) => Ok(InnerModel::HS5_6_9(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -1343,12 +1410,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (5, 6, 10) => Ok(InnerModel::HS5_6_10(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -1357,12 +1425,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (6, 4, 1) => Ok(InnerModel::HS6_4_1(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -1371,12 +1440,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (6, 4, 2) => Ok(InnerModel::HS6_4_2(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -1385,12 +1455,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (6, 4, 3) => Ok(InnerModel::HS6_4_3(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -1399,12 +1470,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (6, 4, 4) => Ok(InnerModel::HS6_4_4(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -1413,12 +1485,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (6, 4, 5) => Ok(InnerModel::HS6_4_5(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -1427,12 +1500,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (6, 4, 6) => Ok(InnerModel::HS6_4_6(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -1441,12 +1515,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (6, 4, 7) => Ok(InnerModel::HS6_4_7(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -1455,12 +1530,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (6, 4, 8) => Ok(InnerModel::HS6_4_8(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -1469,12 +1545,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (6, 4, 9) => Ok(InnerModel::HS6_4_9(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -1483,12 +1560,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (6, 4, 10) => Ok(InnerModel::HS6_4_10(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -1497,12 +1575,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (6, 5, 1) => Ok(InnerModel::HS6_5_1(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -1511,12 +1590,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (6, 5, 2) => Ok(InnerModel::HS6_5_2(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -1525,12 +1605,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (6, 5, 3) => Ok(InnerModel::HS6_5_3(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -1539,12 +1620,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (6, 5, 4) => Ok(InnerModel::HS6_5_4(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -1553,12 +1635,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (6, 5, 5) => Ok(InnerModel::HS6_5_5(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -1567,12 +1650,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (6, 5, 6) => Ok(InnerModel::HS6_5_6(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -1581,12 +1665,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (6, 5, 7) => Ok(InnerModel::HS6_5_7(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -1595,12 +1680,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (6, 5, 8) => Ok(InnerModel::HS6_5_8(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -1609,12 +1695,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (6, 5, 9) => Ok(InnerModel::HS6_5_9(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -1623,12 +1710,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (6, 5, 10) => Ok(InnerModel::HS6_5_10(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -1637,12 +1725,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (6, 6, 1) => Ok(InnerModel::HS6_6_1(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -1651,12 +1740,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (6, 6, 2) => Ok(InnerModel::HS6_6_2(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -1665,12 +1755,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (6, 6, 3) => Ok(InnerModel::HS6_6_3(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -1679,12 +1770,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (6, 6, 4) => Ok(InnerModel::HS6_6_4(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -1693,12 +1785,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (6, 6, 5) => Ok(InnerModel::HS6_6_5(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -1707,12 +1800,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (6, 6, 6) => Ok(InnerModel::HS6_6_6(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -1721,12 +1815,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (6, 6, 7) => Ok(InnerModel::HS6_6_7(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -1735,12 +1830,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (6, 6, 8) => Ok(InnerModel::HS6_6_8(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -1749,12 +1845,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (6, 6, 9) => Ok(InnerModel::HS6_6_9(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -1763,12 +1860,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (6, 6, 10) => Ok(InnerModel::HS6_6_10(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -1777,12 +1875,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (7, 4, 1) => Ok(InnerModel::HS7_4_1(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -1791,12 +1890,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (7, 4, 2) => Ok(InnerModel::HS7_4_2(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -1805,12 +1905,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (7, 4, 3) => Ok(InnerModel::HS7_4_3(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -1819,12 +1920,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (7, 4, 4) => Ok(InnerModel::HS7_4_4(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -1833,12 +1935,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (7, 4, 5) => Ok(InnerModel::HS7_4_5(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -1847,12 +1950,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (7, 4, 6) => Ok(InnerModel::HS7_4_6(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -1861,12 +1965,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (7, 4, 7) => Ok(InnerModel::HS7_4_7(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -1875,12 +1980,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (7, 4, 8) => Ok(InnerModel::HS7_4_8(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -1889,12 +1995,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (7, 4, 9) => Ok(InnerModel::HS7_4_9(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -1903,12 +2010,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (7, 4, 10) => Ok(InnerModel::HS7_4_10(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -1917,12 +2025,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (7, 5, 1) => Ok(InnerModel::HS7_5_1(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -1931,12 +2040,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (7, 5, 2) => Ok(InnerModel::HS7_5_2(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -1945,12 +2055,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (7, 5, 3) => Ok(InnerModel::HS7_5_3(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -1959,12 +2070,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (7, 5, 4) => Ok(InnerModel::HS7_5_4(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -1973,12 +2085,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (7, 5, 5) => Ok(InnerModel::HS7_5_5(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -1987,12 +2100,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (7, 5, 6) => Ok(InnerModel::HS7_5_6(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2001,12 +2115,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (7, 5, 7) => Ok(InnerModel::HS7_5_7(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2015,12 +2130,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (7, 5, 8) => Ok(InnerModel::HS7_5_8(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2029,12 +2145,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (7, 5, 9) => Ok(InnerModel::HS7_5_9(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2043,12 +2160,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (7, 5, 10) => Ok(InnerModel::HS7_5_10(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2057,12 +2175,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (7, 6, 1) => Ok(InnerModel::HS7_6_1(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2071,12 +2190,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (7, 6, 2) => Ok(InnerModel::HS7_6_2(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2085,12 +2205,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (7, 6, 3) => Ok(InnerModel::HS7_6_3(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2099,12 +2220,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (7, 6, 4) => Ok(InnerModel::HS7_6_4(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2113,12 +2235,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (7, 6, 5) => Ok(InnerModel::HS7_6_5(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2127,12 +2250,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (7, 6, 6) => Ok(InnerModel::HS7_6_6(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2141,12 +2265,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (7, 6, 7) => Ok(InnerModel::HS7_6_7(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2155,12 +2280,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (7, 6, 8) => Ok(InnerModel::HS7_6_8(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2169,12 +2295,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (7, 6, 9) => Ok(InnerModel::HS7_6_9(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2183,12 +2310,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (7, 6, 10) => Ok(InnerModel::HS7_6_10(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2197,12 +2325,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (8, 4, 1) => Ok(InnerModel::HS8_4_1(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2211,12 +2340,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (8, 4, 2) => Ok(InnerModel::HS8_4_2(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2225,12 +2355,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (8, 4, 3) => Ok(InnerModel::HS8_4_3(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2239,12 +2370,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (8, 4, 4) => Ok(InnerModel::HS8_4_4(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2253,12 +2385,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (8, 4, 5) => Ok(InnerModel::HS8_4_5(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2267,12 +2400,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (8, 4, 6) => Ok(InnerModel::HS8_4_6(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2281,12 +2415,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (8, 4, 7) => Ok(InnerModel::HS8_4_7(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2295,12 +2430,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (8, 4, 8) => Ok(InnerModel::HS8_4_8(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2309,12 +2445,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (8, 4, 9) => Ok(InnerModel::HS8_4_9(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2323,12 +2460,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (8, 4, 10) => Ok(InnerModel::HS8_4_10(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2337,12 +2475,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (8, 5, 1) => Ok(InnerModel::HS8_5_1(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2351,12 +2490,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (8, 5, 2) => Ok(InnerModel::HS8_5_2(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2365,12 +2505,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (8, 5, 3) => Ok(InnerModel::HS8_5_3(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2379,12 +2520,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (8, 5, 4) => Ok(InnerModel::HS8_5_4(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2393,12 +2535,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (8, 5, 5) => Ok(InnerModel::HS8_5_5(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2407,12 +2550,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (8, 5, 6) => Ok(InnerModel::HS8_5_6(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2421,12 +2565,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (8, 5, 7) => Ok(InnerModel::HS8_5_7(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2435,12 +2580,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (8, 5, 8) => Ok(InnerModel::HS8_5_8(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2449,12 +2595,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (8, 5, 9) => Ok(InnerModel::HS8_5_9(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2463,12 +2610,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (8, 5, 10) => Ok(InnerModel::HS8_5_10(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2477,12 +2625,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (8, 6, 1) => Ok(InnerModel::HS8_6_1(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2491,12 +2640,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (8, 6, 2) => Ok(InnerModel::HS8_6_2(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2505,12 +2655,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (8, 6, 3) => Ok(InnerModel::HS8_6_3(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2519,12 +2670,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (8, 6, 4) => Ok(InnerModel::HS8_6_4(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2533,12 +2685,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (8, 6, 5) => Ok(InnerModel::HS8_6_5(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2547,12 +2700,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (8, 6, 6) => Ok(InnerModel::HS8_6_6(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2561,12 +2715,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (8, 6, 7) => Ok(InnerModel::HS8_6_7(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2575,12 +2730,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (8, 6, 8) => Ok(InnerModel::HS8_6_8(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2589,12 +2745,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (8, 6, 9) => Ok(InnerModel::HS8_6_9(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2603,12 +2760,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (8, 6, 10) => Ok(InnerModel::HS8_6_10(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2617,12 +2775,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (9, 4, 1) => Ok(InnerModel::HS9_4_1(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2631,12 +2790,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (9, 4, 2) => Ok(InnerModel::HS9_4_2(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2645,12 +2805,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (9, 4, 3) => Ok(InnerModel::HS9_4_3(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2659,12 +2820,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (9, 4, 4) => Ok(InnerModel::HS9_4_4(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2673,12 +2835,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (9, 4, 5) => Ok(InnerModel::HS9_4_5(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2687,12 +2850,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (9, 4, 6) => Ok(InnerModel::HS9_4_6(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2701,12 +2865,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (9, 4, 7) => Ok(InnerModel::HS9_4_7(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2715,12 +2880,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (9, 4, 8) => Ok(InnerModel::HS9_4_8(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2729,12 +2895,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (9, 4, 9) => Ok(InnerModel::HS9_4_9(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2743,12 +2910,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (9, 4, 10) => Ok(InnerModel::HS9_4_10(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2757,12 +2925,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (9, 5, 1) => Ok(InnerModel::HS9_5_1(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2771,12 +2940,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (9, 5, 2) => Ok(InnerModel::HS9_5_2(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2785,12 +2955,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (9, 5, 3) => Ok(InnerModel::HS9_5_3(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2799,12 +2970,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (9, 5, 4) => Ok(InnerModel::HS9_5_4(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2813,12 +2985,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (9, 5, 5) => Ok(InnerModel::HS9_5_5(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2827,12 +3000,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (9, 5, 6) => Ok(InnerModel::HS9_5_6(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2841,12 +3015,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (9, 5, 7) => Ok(InnerModel::HS9_5_7(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2855,12 +3030,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (9, 5, 8) => Ok(InnerModel::HS9_5_8(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2869,12 +3045,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (9, 5, 9) => Ok(InnerModel::HS9_5_9(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2883,12 +3060,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (9, 5, 10) => Ok(InnerModel::HS9_5_10(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2897,12 +3075,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (9, 6, 1) => Ok(InnerModel::HS9_6_1(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2911,12 +3090,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (9, 6, 2) => Ok(InnerModel::HS9_6_2(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2925,12 +3105,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (9, 6, 3) => Ok(InnerModel::HS9_6_3(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2939,12 +3120,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (9, 6, 4) => Ok(InnerModel::HS9_6_4(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2953,12 +3135,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (9, 6, 5) => Ok(InnerModel::HS9_6_5(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2967,12 +3150,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (9, 6, 6) => Ok(InnerModel::HS9_6_6(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2981,12 +3165,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (9, 6, 7) => Ok(InnerModel::HS9_6_7(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -2995,12 +3180,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (9, 6, 8) => Ok(InnerModel::HS9_6_8(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -3009,12 +3195,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (9, 6, 9) => Ok(InnerModel::HS9_6_9(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -3023,12 +3210,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (9, 6, 10) => Ok(InnerModel::HS9_6_10(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -3037,12 +3225,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (10, 4, 1) => Ok(InnerModel::HS10_4_1(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -3051,12 +3240,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (10, 4, 2) => Ok(InnerModel::HS10_4_2(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -3065,12 +3255,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (10, 4, 3) => Ok(InnerModel::HS10_4_3(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -3079,12 +3270,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (10, 4, 4) => Ok(InnerModel::HS10_4_4(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -3093,12 +3285,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (10, 4, 5) => Ok(InnerModel::HS10_4_5(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -3107,12 +3300,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (10, 4, 6) => Ok(InnerModel::HS10_4_6(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -3121,12 +3315,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (10, 4, 7) => Ok(InnerModel::HS10_4_7(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -3135,12 +3330,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (10, 4, 8) => Ok(InnerModel::HS10_4_8(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -3149,12 +3345,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (10, 4, 9) => Ok(InnerModel::HS10_4_9(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -3163,12 +3360,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (10, 4, 10) => Ok(InnerModel::HS10_4_10(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -3177,12 +3375,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (10, 5, 1) => Ok(InnerModel::HS10_5_1(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -3191,12 +3390,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (10, 5, 2) => Ok(InnerModel::HS10_5_2(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -3205,12 +3405,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (10, 5, 3) => Ok(InnerModel::HS10_5_3(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -3219,12 +3420,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (10, 5, 4) => Ok(InnerModel::HS10_5_4(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -3233,12 +3435,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (10, 5, 5) => Ok(InnerModel::HS10_5_5(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -3247,12 +3450,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (10, 5, 6) => Ok(InnerModel::HS10_5_6(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -3261,12 +3465,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (10, 5, 7) => Ok(InnerModel::HS10_5_7(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -3275,12 +3480,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (10, 5, 8) => Ok(InnerModel::HS10_5_8(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -3289,12 +3495,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (10, 5, 9) => Ok(InnerModel::HS10_5_9(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -3303,12 +3510,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (10, 5, 10) => Ok(InnerModel::HS10_5_10(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -3317,12 +3525,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (10, 6, 1) => Ok(InnerModel::HS10_6_1(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -3331,12 +3540,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (10, 6, 2) => Ok(InnerModel::HS10_6_2(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -3345,12 +3555,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (10, 6, 3) => Ok(InnerModel::HS10_6_3(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -3359,12 +3570,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (10, 6, 4) => Ok(InnerModel::HS10_6_4(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -3373,12 +3585,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (10, 6, 5) => Ok(InnerModel::HS10_6_5(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -3387,12 +3600,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (10, 6, 6) => Ok(InnerModel::HS10_6_6(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -3401,12 +3615,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (10, 6, 7) => Ok(InnerModel::HS10_6_7(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -3415,12 +3630,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (10, 6, 8) => Ok(InnerModel::HS10_6_8(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -3429,12 +3645,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (10, 6, 9) => Ok(InnerModel::HS10_6_9(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -3443,12 +3660,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (10, 6, 10) => Ok(InnerModel::HS10_6_10(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -3457,12 +3675,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (11, 4, 1) => Ok(InnerModel::HS11_4_1(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -3471,12 +3690,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (11, 4, 2) => Ok(InnerModel::HS11_4_2(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -3485,12 +3705,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (11, 4, 3) => Ok(InnerModel::HS11_4_3(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -3499,12 +3720,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (11, 4, 4) => Ok(InnerModel::HS11_4_4(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -3513,12 +3735,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (11, 4, 5) => Ok(InnerModel::HS11_4_5(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -3527,12 +3750,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (11, 4, 6) => Ok(InnerModel::HS11_4_6(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -3541,12 +3765,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (11, 4, 7) => Ok(InnerModel::HS11_4_7(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -3555,12 +3780,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (11, 4, 8) => Ok(InnerModel::HS11_4_8(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -3569,12 +3795,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (11, 4, 9) => Ok(InnerModel::HS11_4_9(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -3583,12 +3810,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (11, 4, 10) => Ok(InnerModel::HS11_4_10(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -3597,12 +3825,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (11, 5, 1) => Ok(InnerModel::HS11_5_1(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -3611,12 +3840,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (11, 5, 2) => Ok(InnerModel::HS11_5_2(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -3625,12 +3855,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (11, 5, 3) => Ok(InnerModel::HS11_5_3(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -3639,12 +3870,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (11, 5, 4) => Ok(InnerModel::HS11_5_4(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -3653,12 +3885,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (11, 5, 5) => Ok(InnerModel::HS11_5_5(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -3667,12 +3900,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (11, 5, 6) => Ok(InnerModel::HS11_5_6(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -3681,12 +3915,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (11, 5, 7) => Ok(InnerModel::HS11_5_7(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -3695,12 +3930,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (11, 5, 8) => Ok(InnerModel::HS11_5_8(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -3709,12 +3945,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (11, 5, 9) => Ok(InnerModel::HS11_5_9(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -3723,12 +3960,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (11, 5, 10) => Ok(InnerModel::HS11_5_10(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -3737,12 +3975,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (11, 6, 1) => Ok(InnerModel::HS11_6_1(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -3751,12 +3990,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (11, 6, 2) => Ok(InnerModel::HS11_6_2(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -3765,12 +4005,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (11, 6, 3) => Ok(InnerModel::HS11_6_3(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -3779,12 +4020,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (11, 6, 4) => Ok(InnerModel::HS11_6_4(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -3793,12 +4035,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (11, 6, 5) => Ok(InnerModel::HS11_6_5(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -3807,12 +4050,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (11, 6, 6) => Ok(InnerModel::HS11_6_6(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -3821,12 +4065,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (11, 6, 7) => Ok(InnerModel::HS11_6_7(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -3835,12 +4080,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (11, 6, 8) => Ok(InnerModel::HS11_6_8(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -3849,12 +4095,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (11, 6, 9) => Ok(InnerModel::HS11_6_9(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -3863,12 +4110,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (11, 6, 10) => Ok(InnerModel::HS11_6_10(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -3877,12 +4125,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (12, 4, 1) => Ok(InnerModel::HS12_4_1(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -3891,12 +4140,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (12, 4, 2) => Ok(InnerModel::HS12_4_2(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -3905,12 +4155,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (12, 4, 3) => Ok(InnerModel::HS12_4_3(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -3919,12 +4170,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (12, 4, 4) => Ok(InnerModel::HS12_4_4(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -3933,12 +4185,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (12, 4, 5) => Ok(InnerModel::HS12_4_5(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -3947,12 +4200,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (12, 4, 6) => Ok(InnerModel::HS12_4_6(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -3961,12 +4215,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (12, 4, 7) => Ok(InnerModel::HS12_4_7(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -3975,12 +4230,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (12, 4, 8) => Ok(InnerModel::HS12_4_8(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -3989,12 +4245,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (12, 4, 9) => Ok(InnerModel::HS12_4_9(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4003,12 +4260,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (12, 4, 10) => Ok(InnerModel::HS12_4_10(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4017,12 +4275,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (12, 5, 1) => Ok(InnerModel::HS12_5_1(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4031,12 +4290,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (12, 5, 2) => Ok(InnerModel::HS12_5_2(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4045,12 +4305,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (12, 5, 3) => Ok(InnerModel::HS12_5_3(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4059,12 +4320,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (12, 5, 4) => Ok(InnerModel::HS12_5_4(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4073,12 +4335,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (12, 5, 5) => Ok(InnerModel::HS12_5_5(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4087,12 +4350,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (12, 5, 6) => Ok(InnerModel::HS12_5_6(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4101,12 +4365,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (12, 5, 7) => Ok(InnerModel::HS12_5_7(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4115,12 +4380,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (12, 5, 8) => Ok(InnerModel::HS12_5_8(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4129,12 +4395,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (12, 5, 9) => Ok(InnerModel::HS12_5_9(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4143,12 +4410,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (12, 5, 10) => Ok(InnerModel::HS12_5_10(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4157,12 +4425,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (12, 6, 1) => Ok(InnerModel::HS12_6_1(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4171,12 +4440,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (12, 6, 2) => Ok(InnerModel::HS12_6_2(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4185,12 +4455,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (12, 6, 3) => Ok(InnerModel::HS12_6_3(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4199,12 +4470,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (12, 6, 4) => Ok(InnerModel::HS12_6_4(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4213,12 +4485,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (12, 6, 5) => Ok(InnerModel::HS12_6_5(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4227,12 +4500,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (12, 6, 6) => Ok(InnerModel::HS12_6_6(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4241,12 +4515,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (12, 6, 7) => Ok(InnerModel::HS12_6_7(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4255,12 +4530,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (12, 6, 8) => Ok(InnerModel::HS12_6_8(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4269,12 +4545,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (12, 6, 9) => Ok(InnerModel::HS12_6_9(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4283,12 +4560,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (12, 6, 10) => Ok(InnerModel::HS12_6_10(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4297,12 +4575,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (13, 4, 1) => Ok(InnerModel::HS13_4_1(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4311,12 +4590,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (13, 4, 2) => Ok(InnerModel::HS13_4_2(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4325,12 +4605,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (13, 4, 3) => Ok(InnerModel::HS13_4_3(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4339,12 +4620,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (13, 4, 4) => Ok(InnerModel::HS13_4_4(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4353,12 +4635,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (13, 4, 5) => Ok(InnerModel::HS13_4_5(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4367,12 +4650,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (13, 4, 6) => Ok(InnerModel::HS13_4_6(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4381,12 +4665,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (13, 4, 7) => Ok(InnerModel::HS13_4_7(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4395,12 +4680,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (13, 4, 8) => Ok(InnerModel::HS13_4_8(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4409,12 +4695,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (13, 4, 9) => Ok(InnerModel::HS13_4_9(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4423,12 +4710,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (13, 4, 10) => Ok(InnerModel::HS13_4_10(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4437,12 +4725,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (13, 5, 1) => Ok(InnerModel::HS13_5_1(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4451,12 +4740,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (13, 5, 2) => Ok(InnerModel::HS13_5_2(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4465,12 +4755,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (13, 5, 3) => Ok(InnerModel::HS13_5_3(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4479,12 +4770,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (13, 5, 4) => Ok(InnerModel::HS13_5_4(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4493,12 +4785,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (13, 5, 5) => Ok(InnerModel::HS13_5_5(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4507,12 +4800,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (13, 5, 6) => Ok(InnerModel::HS13_5_6(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4521,12 +4815,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (13, 5, 7) => Ok(InnerModel::HS13_5_7(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4535,12 +4830,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (13, 5, 8) => Ok(InnerModel::HS13_5_8(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4549,12 +4845,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (13, 5, 9) => Ok(InnerModel::HS13_5_9(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4563,12 +4860,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (13, 5, 10) => Ok(InnerModel::HS13_5_10(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4577,12 +4875,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (13, 6, 1) => Ok(InnerModel::HS13_6_1(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4591,12 +4890,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (13, 6, 2) => Ok(InnerModel::HS13_6_2(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4605,12 +4905,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (13, 6, 3) => Ok(InnerModel::HS13_6_3(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4619,12 +4920,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (13, 6, 4) => Ok(InnerModel::HS13_6_4(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4633,12 +4935,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (13, 6, 5) => Ok(InnerModel::HS13_6_5(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4647,12 +4950,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (13, 6, 6) => Ok(InnerModel::HS13_6_6(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4661,12 +4965,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (13, 6, 7) => Ok(InnerModel::HS13_6_7(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4675,12 +4980,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (13, 6, 8) => Ok(InnerModel::HS13_6_8(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4689,12 +4995,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (13, 6, 9) => Ok(InnerModel::HS13_6_9(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4703,12 +5010,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (13, 6, 10) => Ok(InnerModel::HS13_6_10(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4717,12 +5025,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (14, 4, 1) => Ok(InnerModel::HS14_4_1(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4731,12 +5040,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (14, 4, 2) => Ok(InnerModel::HS14_4_2(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4745,12 +5055,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (14, 4, 3) => Ok(InnerModel::HS14_4_3(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4759,12 +5070,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (14, 4, 4) => Ok(InnerModel::HS14_4_4(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4773,12 +5085,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (14, 4, 5) => Ok(InnerModel::HS14_4_5(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4787,12 +5100,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (14, 4, 6) => Ok(InnerModel::HS14_4_6(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4801,12 +5115,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (14, 4, 7) => Ok(InnerModel::HS14_4_7(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4815,12 +5130,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (14, 4, 8) => Ok(InnerModel::HS14_4_8(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4829,12 +5145,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (14, 4, 9) => Ok(InnerModel::HS14_4_9(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4843,12 +5160,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (14, 4, 10) => Ok(InnerModel::HS14_4_10(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4857,12 +5175,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (14, 5, 1) => Ok(InnerModel::HS14_5_1(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4871,12 +5190,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (14, 5, 2) => Ok(InnerModel::HS14_5_2(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4885,12 +5205,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (14, 5, 3) => Ok(InnerModel::HS14_5_3(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4899,12 +5220,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (14, 5, 4) => Ok(InnerModel::HS14_5_4(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4913,12 +5235,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (14, 5, 5) => Ok(InnerModel::HS14_5_5(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4927,12 +5250,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (14, 5, 6) => Ok(InnerModel::HS14_5_6(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4941,12 +5265,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (14, 5, 7) => Ok(InnerModel::HS14_5_7(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4955,12 +5280,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (14, 5, 8) => Ok(InnerModel::HS14_5_8(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4969,12 +5295,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (14, 5, 9) => Ok(InnerModel::HS14_5_9(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4983,12 +5310,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (14, 5, 10) => Ok(InnerModel::HS14_5_10(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -4997,12 +5325,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (14, 6, 1) => Ok(InnerModel::HS14_6_1(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -5011,12 +5340,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (14, 6, 2) => Ok(InnerModel::HS14_6_2(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -5025,12 +5355,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (14, 6, 3) => Ok(InnerModel::HS14_6_3(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -5039,12 +5370,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (14, 6, 4) => Ok(InnerModel::HS14_6_4(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -5053,12 +5385,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (14, 6, 5) => Ok(InnerModel::HS14_6_5(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -5067,12 +5400,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (14, 6, 6) => Ok(InnerModel::HS14_6_6(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -5081,12 +5415,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (14, 6, 7) => Ok(InnerModel::HS14_6_7(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -5095,12 +5430,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (14, 6, 8) => Ok(InnerModel::HS14_6_8(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -5109,12 +5445,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (14, 6, 9) => Ok(InnerModel::HS14_6_9(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -5123,12 +5460,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (14, 6, 10) => Ok(InnerModel::HS14_6_10(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -5137,12 +5475,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (15, 4, 1) => Ok(InnerModel::HS15_4_1(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -5151,12 +5490,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (15, 4, 2) => Ok(InnerModel::HS15_4_2(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -5165,12 +5505,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (15, 4, 3) => Ok(InnerModel::HS15_4_3(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -5179,12 +5520,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (15, 4, 4) => Ok(InnerModel::HS15_4_4(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -5193,12 +5535,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (15, 4, 5) => Ok(InnerModel::HS15_4_5(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -5207,12 +5550,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (15, 4, 6) => Ok(InnerModel::HS15_4_6(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -5221,12 +5565,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (15, 4, 7) => Ok(InnerModel::HS15_4_7(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -5235,12 +5580,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (15, 4, 8) => Ok(InnerModel::HS15_4_8(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -5249,12 +5595,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (15, 4, 9) => Ok(InnerModel::HS15_4_9(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -5263,12 +5610,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (15, 4, 10) => Ok(InnerModel::HS15_4_10(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -5277,12 +5625,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (15, 5, 1) => Ok(InnerModel::HS15_5_1(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -5291,12 +5640,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (15, 5, 2) => Ok(InnerModel::HS15_5_2(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -5305,12 +5655,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (15, 5, 3) => Ok(InnerModel::HS15_5_3(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -5319,12 +5670,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (15, 5, 4) => Ok(InnerModel::HS15_5_4(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -5333,12 +5685,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (15, 5, 5) => Ok(InnerModel::HS15_5_5(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -5347,12 +5700,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (15, 5, 6) => Ok(InnerModel::HS15_5_6(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -5361,12 +5715,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (15, 5, 7) => Ok(InnerModel::HS15_5_7(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -5375,12 +5730,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (15, 5, 8) => Ok(InnerModel::HS15_5_8(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -5389,12 +5745,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (15, 5, 9) => Ok(InnerModel::HS15_5_9(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -5403,12 +5760,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (15, 5, 10) => Ok(InnerModel::HS15_5_10(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -5417,12 +5775,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (15, 6, 1) => Ok(InnerModel::HS15_6_1(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -5431,12 +5790,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (15, 6, 2) => Ok(InnerModel::HS15_6_2(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -5445,12 +5805,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (15, 6, 3) => Ok(InnerModel::HS15_6_3(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -5459,12 +5820,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (15, 6, 4) => Ok(InnerModel::HS15_6_4(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -5473,12 +5835,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (15, 6, 5) => Ok(InnerModel::HS15_6_5(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -5487,12 +5850,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (15, 6, 6) => Ok(InnerModel::HS15_6_6(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -5501,12 +5865,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (15, 6, 7) => Ok(InnerModel::HS15_6_7(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -5515,12 +5880,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (15, 6, 8) => Ok(InnerModel::HS15_6_8(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -5529,12 +5895,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (15, 6, 9) => Ok(InnerModel::HS15_6_9(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -5543,12 +5910,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (15, 6, 10) => Ok(InnerModel::HS15_6_10(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -5557,12 +5925,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (16, 4, 1) => Ok(InnerModel::HS16_4_1(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -5571,12 +5940,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (16, 4, 2) => Ok(InnerModel::HS16_4_2(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -5585,12 +5955,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (16, 4, 3) => Ok(InnerModel::HS16_4_3(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -5599,12 +5970,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (16, 4, 4) => Ok(InnerModel::HS16_4_4(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -5613,12 +5985,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (16, 4, 5) => Ok(InnerModel::HS16_4_5(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -5627,12 +6000,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (16, 4, 6) => Ok(InnerModel::HS16_4_6(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -5641,12 +6015,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (16, 4, 7) => Ok(InnerModel::HS16_4_7(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -5655,12 +6030,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (16, 4, 8) => Ok(InnerModel::HS16_4_8(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -5669,12 +6045,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (16, 4, 9) => Ok(InnerModel::HS16_4_9(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -5683,12 +6060,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (16, 4, 10) => Ok(InnerModel::HS16_4_10(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -5697,12 +6075,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (16, 5, 1) => Ok(InnerModel::HS16_5_1(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -5711,12 +6090,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (16, 5, 2) => Ok(InnerModel::HS16_5_2(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -5725,12 +6105,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (16, 5, 3) => Ok(InnerModel::HS16_5_3(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -5739,12 +6120,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (16, 5, 4) => Ok(InnerModel::HS16_5_4(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -5753,12 +6135,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (16, 5, 5) => Ok(InnerModel::HS16_5_5(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -5767,12 +6150,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (16, 5, 6) => Ok(InnerModel::HS16_5_6(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -5781,12 +6165,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (16, 5, 7) => Ok(InnerModel::HS16_5_7(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -5795,12 +6180,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (16, 5, 8) => Ok(InnerModel::HS16_5_8(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -5809,12 +6195,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (16, 5, 9) => Ok(InnerModel::HS16_5_9(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -5823,12 +6210,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (16, 5, 10) => Ok(InnerModel::HS16_5_10(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -5837,12 +6225,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (16, 6, 1) => Ok(InnerModel::HS16_6_1(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -5851,12 +6240,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (16, 6, 2) => Ok(InnerModel::HS16_6_2(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -5865,12 +6255,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (16, 6, 3) => Ok(InnerModel::HS16_6_3(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -5879,12 +6270,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (16, 6, 4) => Ok(InnerModel::HS16_6_4(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -5893,12 +6285,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (16, 6, 5) => Ok(InnerModel::HS16_6_5(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -5907,12 +6300,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (16, 6, 6) => Ok(InnerModel::HS16_6_6(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -5921,12 +6315,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (16, 6, 7) => Ok(InnerModel::HS16_6_7(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -5935,12 +6330,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (16, 6, 8) => Ok(InnerModel::HS16_6_8(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -5949,12 +6345,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (16, 6, 9) => Ok(InnerModel::HS16_6_9(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -5963,12 +6360,13 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             (16, 6, 10) => Ok(InnerModel::HS16_6_10(HS::new(
+                unbiased,
+                exact,
                 include_node_types,
                 include_edge_types,
                 include_edge_ids,
                 include_node_ids,
                 include_selfloops,
-                use_mle_estimation,
                 include_typed_graphlets,
                 random_state,
                 number_of_random_integers,
@@ -5986,6 +6384,2389 @@ impl InnerModel {
                     precision, bits
                 ))
             }
+        }
+    }
+
+    /// Fit the HyperSketching model to the provided graph.
+    ///
+    /// Parameters
+    /// ------------------------
+    /// graph: &Graph
+    ///    The graph whose topology is to be learned.
+    fn fit(&mut self, graph: &graph::Graph) -> Result<()> {
+        match self {
+            // InnerModel::HS{precision}_{bits}_{hops}(inner) => inner.fit(graph), {python_macro}
+            InnerModel::HS4_4_1(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS4_4_2(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS4_4_3(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS4_4_4(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS4_4_5(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS4_4_6(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS4_4_7(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS4_4_8(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS4_4_9(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS4_4_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS4_5_1(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS4_5_2(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS4_5_3(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS4_5_4(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS4_5_5(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS4_5_6(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS4_5_7(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS4_5_8(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS4_5_9(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS4_5_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS4_6_1(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS4_6_2(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS4_6_3(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS4_6_4(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS4_6_5(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS4_6_6(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS4_6_7(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS4_6_8(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS4_6_9(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS4_6_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS5_4_1(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS5_4_2(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS5_4_3(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS5_4_4(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS5_4_5(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS5_4_6(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS5_4_7(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS5_4_8(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS5_4_9(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS5_4_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS5_5_1(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS5_5_2(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS5_5_3(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS5_5_4(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS5_5_5(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS5_5_6(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS5_5_7(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS5_5_8(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS5_5_9(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS5_5_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS5_6_1(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS5_6_2(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS5_6_3(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS5_6_4(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS5_6_5(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS5_6_6(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS5_6_7(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS5_6_8(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS5_6_9(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS5_6_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS6_4_1(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS6_4_2(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS6_4_3(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS6_4_4(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS6_4_5(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS6_4_6(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS6_4_7(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS6_4_8(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS6_4_9(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS6_4_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS6_5_1(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS6_5_2(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS6_5_3(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS6_5_4(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS6_5_5(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS6_5_6(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS6_5_7(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS6_5_8(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS6_5_9(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS6_5_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS6_6_1(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS6_6_2(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS6_6_3(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS6_6_4(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS6_6_5(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS6_6_6(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS6_6_7(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS6_6_8(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS6_6_9(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS6_6_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS7_4_1(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS7_4_2(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS7_4_3(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS7_4_4(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS7_4_5(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS7_4_6(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS7_4_7(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS7_4_8(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS7_4_9(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS7_4_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS7_5_1(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS7_5_2(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS7_5_3(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS7_5_4(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS7_5_5(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS7_5_6(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS7_5_7(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS7_5_8(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS7_5_9(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS7_5_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS7_6_1(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS7_6_2(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS7_6_3(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS7_6_4(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS7_6_5(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS7_6_6(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS7_6_7(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS7_6_8(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS7_6_9(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS7_6_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS8_4_1(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS8_4_2(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS8_4_3(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS8_4_4(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS8_4_5(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS8_4_6(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS8_4_7(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS8_4_8(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS8_4_9(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS8_4_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS8_5_1(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS8_5_2(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS8_5_3(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS8_5_4(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS8_5_5(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS8_5_6(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS8_5_7(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS8_5_8(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS8_5_9(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS8_5_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS8_6_1(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS8_6_2(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS8_6_3(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS8_6_4(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS8_6_5(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS8_6_6(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS8_6_7(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS8_6_8(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS8_6_9(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS8_6_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS9_4_1(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS9_4_2(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS9_4_3(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS9_4_4(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS9_4_5(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS9_4_6(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS9_4_7(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS9_4_8(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS9_4_9(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS9_4_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS9_5_1(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS9_5_2(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS9_5_3(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS9_5_4(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS9_5_5(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS9_5_6(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS9_5_7(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS9_5_8(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS9_5_9(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS9_5_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS9_6_1(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS9_6_2(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS9_6_3(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS9_6_4(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS9_6_5(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS9_6_6(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS9_6_7(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS9_6_8(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS9_6_9(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS9_6_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS10_4_1(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS10_4_2(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS10_4_3(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS10_4_4(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS10_4_5(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS10_4_6(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS10_4_7(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS10_4_8(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS10_4_9(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS10_4_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS10_5_1(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS10_5_2(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS10_5_3(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS10_5_4(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS10_5_5(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS10_5_6(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS10_5_7(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS10_5_8(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS10_5_9(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS10_5_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS10_6_1(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS10_6_2(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS10_6_3(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS10_6_4(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS10_6_5(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS10_6_6(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS10_6_7(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS10_6_8(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS10_6_9(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS10_6_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS11_4_1(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS11_4_2(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS11_4_3(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS11_4_4(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS11_4_5(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS11_4_6(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS11_4_7(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS11_4_8(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS11_4_9(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS11_4_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS11_5_1(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS11_5_2(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS11_5_3(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS11_5_4(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS11_5_5(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS11_5_6(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS11_5_7(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS11_5_8(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS11_5_9(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS11_5_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS11_6_1(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS11_6_2(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS11_6_3(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS11_6_4(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS11_6_5(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS11_6_6(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS11_6_7(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS11_6_8(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS11_6_9(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS11_6_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS12_4_1(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS12_4_2(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS12_4_3(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS12_4_4(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS12_4_5(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS12_4_6(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS12_4_7(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS12_4_8(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS12_4_9(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS12_4_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS12_5_1(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS12_5_2(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS12_5_3(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS12_5_4(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS12_5_5(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS12_5_6(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS12_5_7(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS12_5_8(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS12_5_9(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS12_5_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS12_6_1(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS12_6_2(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS12_6_3(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS12_6_4(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS12_6_5(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS12_6_6(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS12_6_7(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS12_6_8(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS12_6_9(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS12_6_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS13_4_1(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS13_4_2(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS13_4_3(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS13_4_4(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS13_4_5(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS13_4_6(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS13_4_7(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS13_4_8(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS13_4_9(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS13_4_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS13_5_1(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS13_5_2(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS13_5_3(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS13_5_4(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS13_5_5(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS13_5_6(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS13_5_7(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS13_5_8(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS13_5_9(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS13_5_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS13_6_1(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS13_6_2(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS13_6_3(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS13_6_4(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS13_6_5(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS13_6_6(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS13_6_7(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS13_6_8(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS13_6_9(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS13_6_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS14_4_1(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS14_4_2(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS14_4_3(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS14_4_4(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS14_4_5(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS14_4_6(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS14_4_7(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS14_4_8(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS14_4_9(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS14_4_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS14_5_1(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS14_5_2(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS14_5_3(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS14_5_4(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS14_5_5(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS14_5_6(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS14_5_7(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS14_5_8(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS14_5_9(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS14_5_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS14_6_1(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS14_6_2(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS14_6_3(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS14_6_4(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS14_6_5(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS14_6_6(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS14_6_7(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS14_6_8(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS14_6_9(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS14_6_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS15_4_1(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS15_4_2(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS15_4_3(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS15_4_4(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS15_4_5(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS15_4_6(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS15_4_7(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS15_4_8(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS15_4_9(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS15_4_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS15_5_1(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS15_5_2(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS15_5_3(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS15_5_4(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS15_5_5(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS15_5_6(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS15_5_7(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS15_5_8(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS15_5_9(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS15_5_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS15_6_1(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS15_6_2(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS15_6_3(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS15_6_4(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS15_6_5(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS15_6_6(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS15_6_7(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS15_6_8(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS15_6_9(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS15_6_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS16_4_1(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS16_4_2(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS16_4_3(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS16_4_4(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS16_4_5(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS16_4_6(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS16_4_7(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS16_4_8(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS16_4_9(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS16_4_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS16_5_1(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS16_5_2(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS16_5_3(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS16_5_4(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS16_5_5(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS16_5_6(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS16_5_7(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS16_5_8(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS16_5_9(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS16_5_10(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS16_6_1(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS16_6_2(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS16_6_3(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS16_6_4(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS16_6_5(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS16_6_6(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS16_6_7(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS16_6_8(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS16_6_9(inner) => inner.fit(graph), // {python_generated}
+            InnerModel::HS16_6_10(inner) => inner.fit(graph), // {python_generated}
+        }
+    }
+
+    /// Returns the estimated Sketching for all edges.
+    ///
+    /// Parameters
+    /// ------------------------
+    /// edge_features: &mut [f32]
+    ///     The array where to store the estimated Sketching for all edges.
+    /// support: &Graph
+    ///     The graph whose topology is to be learned.
+    /// edge_iterator: I
+    ///    The iterator over the edges whose Sketching is to be estimated.
+    ///
+    /// Raises
+    /// ------------------------
+    /// ValueError
+    ///     If the provided arrays are not of the right size.
+    ///     If the model has not been trained.
+    ///
+    unsafe fn compute_sketching_from_iterator<I, F: Float + Primitive<f32>>(
+        &self,
+        edge_features: &mut [F],
+        support: &graph::Graph,
+        edge_iterator: I,
+    ) -> Result<()>
+    where
+        I: IndexedParallelIterator<Item = (NodeT, NodeT)>,
+    {
+        match self {
+            // InnerModel::HS{precision}_{bits}_{hops}(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(edge_features, support, edge_iterator), {python_macro}
+            InnerModel::HS4_4_1(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS4_4_2(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS4_4_3(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS4_4_4(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS4_4_5(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS4_4_6(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS4_4_7(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS4_4_8(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS4_4_9(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS4_4_10(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS4_5_1(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS4_5_2(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS4_5_3(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS4_5_4(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS4_5_5(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS4_5_6(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS4_5_7(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS4_5_8(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS4_5_9(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS4_5_10(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS4_6_1(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS4_6_2(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS4_6_3(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS4_6_4(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS4_6_5(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS4_6_6(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS4_6_7(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS4_6_8(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS4_6_9(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS4_6_10(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS5_4_1(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS5_4_2(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS5_4_3(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS5_4_4(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS5_4_5(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS5_4_6(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS5_4_7(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS5_4_8(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS5_4_9(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS5_4_10(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS5_5_1(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS5_5_2(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS5_5_3(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS5_5_4(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS5_5_5(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS5_5_6(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS5_5_7(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS5_5_8(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS5_5_9(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS5_5_10(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS5_6_1(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS5_6_2(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS5_6_3(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS5_6_4(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS5_6_5(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS5_6_6(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS5_6_7(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS5_6_8(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS5_6_9(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS5_6_10(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS6_4_1(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS6_4_2(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS6_4_3(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS6_4_4(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS6_4_5(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS6_4_6(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS6_4_7(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS6_4_8(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS6_4_9(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS6_4_10(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS6_5_1(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS6_5_2(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS6_5_3(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS6_5_4(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS6_5_5(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS6_5_6(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS6_5_7(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS6_5_8(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS6_5_9(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS6_5_10(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS6_6_1(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS6_6_2(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS6_6_3(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS6_6_4(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS6_6_5(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS6_6_6(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS6_6_7(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS6_6_8(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS6_6_9(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS6_6_10(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS7_4_1(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS7_4_2(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS7_4_3(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS7_4_4(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS7_4_5(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS7_4_6(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS7_4_7(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS7_4_8(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS7_4_9(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS7_4_10(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS7_5_1(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS7_5_2(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS7_5_3(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS7_5_4(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS7_5_5(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS7_5_6(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS7_5_7(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS7_5_8(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS7_5_9(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS7_5_10(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS7_6_1(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS7_6_2(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS7_6_3(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS7_6_4(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS7_6_5(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS7_6_6(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS7_6_7(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS7_6_8(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS7_6_9(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS7_6_10(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS8_4_1(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS8_4_2(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS8_4_3(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS8_4_4(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS8_4_5(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS8_4_6(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS8_4_7(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS8_4_8(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS8_4_9(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS8_4_10(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS8_5_1(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS8_5_2(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS8_5_3(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS8_5_4(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS8_5_5(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS8_5_6(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS8_5_7(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS8_5_8(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS8_5_9(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS8_5_10(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS8_6_1(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS8_6_2(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS8_6_3(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS8_6_4(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS8_6_5(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS8_6_6(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS8_6_7(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS8_6_8(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS8_6_9(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS8_6_10(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS9_4_1(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS9_4_2(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS9_4_3(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS9_4_4(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS9_4_5(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS9_4_6(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS9_4_7(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS9_4_8(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS9_4_9(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS9_4_10(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS9_5_1(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS9_5_2(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS9_5_3(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS9_5_4(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS9_5_5(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS9_5_6(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS9_5_7(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS9_5_8(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS9_5_9(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS9_5_10(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS9_6_1(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS9_6_2(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS9_6_3(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS9_6_4(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS9_6_5(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS9_6_6(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS9_6_7(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS9_6_8(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS9_6_9(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS9_6_10(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS10_4_1(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS10_4_2(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS10_4_3(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS10_4_4(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS10_4_5(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS10_4_6(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS10_4_7(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS10_4_8(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS10_4_9(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS10_4_10(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS10_5_1(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS10_5_2(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS10_5_3(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS10_5_4(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS10_5_5(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS10_5_6(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS10_5_7(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS10_5_8(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS10_5_9(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS10_5_10(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS10_6_1(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS10_6_2(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS10_6_3(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS10_6_4(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS10_6_5(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS10_6_6(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS10_6_7(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS10_6_8(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS10_6_9(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS10_6_10(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS11_4_1(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS11_4_2(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS11_4_3(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS11_4_4(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS11_4_5(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS11_4_6(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS11_4_7(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS11_4_8(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS11_4_9(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS11_4_10(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS11_5_1(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS11_5_2(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS11_5_3(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS11_5_4(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS11_5_5(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS11_5_6(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS11_5_7(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS11_5_8(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS11_5_9(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS11_5_10(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS11_6_1(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS11_6_2(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS11_6_3(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS11_6_4(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS11_6_5(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS11_6_6(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS11_6_7(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS11_6_8(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS11_6_9(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS11_6_10(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS12_4_1(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS12_4_2(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS12_4_3(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS12_4_4(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS12_4_5(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS12_4_6(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS12_4_7(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS12_4_8(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS12_4_9(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS12_4_10(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS12_5_1(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS12_5_2(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS12_5_3(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS12_5_4(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS12_5_5(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS12_5_6(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS12_5_7(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS12_5_8(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS12_5_9(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS12_5_10(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS12_6_1(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS12_6_2(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS12_6_3(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS12_6_4(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS12_6_5(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS12_6_6(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS12_6_7(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS12_6_8(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS12_6_9(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS12_6_10(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS13_4_1(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS13_4_2(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS13_4_3(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS13_4_4(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS13_4_5(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS13_4_6(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS13_4_7(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS13_4_8(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS13_4_9(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS13_4_10(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS13_5_1(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS13_5_2(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS13_5_3(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS13_5_4(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS13_5_5(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS13_5_6(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS13_5_7(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS13_5_8(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS13_5_9(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS13_5_10(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS13_6_1(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS13_6_2(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS13_6_3(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS13_6_4(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS13_6_5(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS13_6_6(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS13_6_7(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS13_6_8(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS13_6_9(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS13_6_10(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS14_4_1(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS14_4_2(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS14_4_3(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS14_4_4(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS14_4_5(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS14_4_6(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS14_4_7(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS14_4_8(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS14_4_9(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS14_4_10(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS14_5_1(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS14_5_2(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS14_5_3(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS14_5_4(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS14_5_5(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS14_5_6(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS14_5_7(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS14_5_8(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS14_5_9(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS14_5_10(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS14_6_1(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS14_6_2(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS14_6_3(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS14_6_4(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS14_6_5(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS14_6_6(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS14_6_7(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS14_6_8(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS14_6_9(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS14_6_10(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS15_4_1(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS15_4_2(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS15_4_3(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS15_4_4(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS15_4_5(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS15_4_6(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS15_4_7(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS15_4_8(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS15_4_9(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS15_4_10(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS15_5_1(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS15_5_2(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS15_5_3(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS15_5_4(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS15_5_5(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS15_5_6(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS15_5_7(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS15_5_8(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS15_5_9(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS15_5_10(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS15_6_1(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS15_6_2(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS15_6_3(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS15_6_4(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS15_6_5(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS15_6_6(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS15_6_7(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS15_6_8(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS15_6_9(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS15_6_10(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS16_4_1(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS16_4_2(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS16_4_3(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS16_4_4(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS16_4_5(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS16_4_6(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS16_4_7(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS16_4_8(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS16_4_9(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS16_4_10(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS16_5_1(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS16_5_2(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS16_5_3(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS16_5_4(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS16_5_5(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS16_5_6(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS16_5_7(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS16_5_8(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS16_5_9(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS16_5_10(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS16_6_1(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS16_6_2(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS16_6_3(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS16_6_4(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS16_6_5(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS16_6_6(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS16_6_7(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS16_6_8(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS16_6_9(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
+            InnerModel::HS16_6_10(inner) => inner.get_sketching_for_all_edges_unchecked::<I, F>(
+                edge_features,
+                support,
+                edge_iterator,
+            ), // {python_generated}
         }
     }
 
@@ -8371,3185 +11152,24 @@ impl InnerModel {
         }
     }
 
-    /// Fit the HyperSketching model to the provided graph.
-    ///
-    /// Parameters
-    /// ------------------------
-    /// graph: &Graph
-    ///    The graph whose topology is to be learned.
-    fn fit(&mut self, graph: &graph::Graph) -> Result<()> {
-        match self {
-            // InnerModel::HS{precision}_{bits}_{hops}(inner) => inner.fit(graph), {python_macro}
-            InnerModel::HS4_4_1(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS4_4_2(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS4_4_3(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS4_4_4(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS4_4_5(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS4_4_6(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS4_4_7(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS4_4_8(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS4_4_9(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS4_4_10(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS4_5_1(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS4_5_2(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS4_5_3(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS4_5_4(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS4_5_5(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS4_5_6(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS4_5_7(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS4_5_8(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS4_5_9(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS4_5_10(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS4_6_1(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS4_6_2(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS4_6_3(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS4_6_4(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS4_6_5(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS4_6_6(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS4_6_7(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS4_6_8(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS4_6_9(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS4_6_10(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS5_4_1(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS5_4_2(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS5_4_3(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS5_4_4(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS5_4_5(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS5_4_6(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS5_4_7(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS5_4_8(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS5_4_9(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS5_4_10(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS5_5_1(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS5_5_2(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS5_5_3(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS5_5_4(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS5_5_5(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS5_5_6(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS5_5_7(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS5_5_8(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS5_5_9(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS5_5_10(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS5_6_1(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS5_6_2(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS5_6_3(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS5_6_4(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS5_6_5(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS5_6_6(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS5_6_7(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS5_6_8(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS5_6_9(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS5_6_10(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS6_4_1(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS6_4_2(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS6_4_3(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS6_4_4(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS6_4_5(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS6_4_6(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS6_4_7(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS6_4_8(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS6_4_9(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS6_4_10(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS6_5_1(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS6_5_2(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS6_5_3(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS6_5_4(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS6_5_5(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS6_5_6(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS6_5_7(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS6_5_8(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS6_5_9(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS6_5_10(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS6_6_1(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS6_6_2(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS6_6_3(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS6_6_4(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS6_6_5(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS6_6_6(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS6_6_7(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS6_6_8(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS6_6_9(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS6_6_10(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS7_4_1(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS7_4_2(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS7_4_3(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS7_4_4(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS7_4_5(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS7_4_6(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS7_4_7(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS7_4_8(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS7_4_9(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS7_4_10(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS7_5_1(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS7_5_2(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS7_5_3(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS7_5_4(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS7_5_5(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS7_5_6(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS7_5_7(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS7_5_8(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS7_5_9(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS7_5_10(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS7_6_1(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS7_6_2(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS7_6_3(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS7_6_4(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS7_6_5(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS7_6_6(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS7_6_7(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS7_6_8(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS7_6_9(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS7_6_10(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS8_4_1(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS8_4_2(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS8_4_3(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS8_4_4(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS8_4_5(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS8_4_6(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS8_4_7(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS8_4_8(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS8_4_9(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS8_4_10(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS8_5_1(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS8_5_2(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS8_5_3(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS8_5_4(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS8_5_5(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS8_5_6(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS8_5_7(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS8_5_8(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS8_5_9(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS8_5_10(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS8_6_1(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS8_6_2(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS8_6_3(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS8_6_4(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS8_6_5(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS8_6_6(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS8_6_7(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS8_6_8(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS8_6_9(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS8_6_10(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS9_4_1(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS9_4_2(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS9_4_3(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS9_4_4(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS9_4_5(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS9_4_6(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS9_4_7(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS9_4_8(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS9_4_9(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS9_4_10(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS9_5_1(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS9_5_2(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS9_5_3(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS9_5_4(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS9_5_5(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS9_5_6(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS9_5_7(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS9_5_8(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS9_5_9(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS9_5_10(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS9_6_1(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS9_6_2(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS9_6_3(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS9_6_4(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS9_6_5(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS9_6_6(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS9_6_7(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS9_6_8(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS9_6_9(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS9_6_10(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS10_4_1(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS10_4_2(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS10_4_3(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS10_4_4(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS10_4_5(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS10_4_6(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS10_4_7(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS10_4_8(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS10_4_9(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS10_4_10(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS10_5_1(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS10_5_2(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS10_5_3(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS10_5_4(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS10_5_5(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS10_5_6(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS10_5_7(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS10_5_8(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS10_5_9(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS10_5_10(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS10_6_1(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS10_6_2(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS10_6_3(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS10_6_4(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS10_6_5(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS10_6_6(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS10_6_7(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS10_6_8(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS10_6_9(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS10_6_10(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS11_4_1(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS11_4_2(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS11_4_3(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS11_4_4(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS11_4_5(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS11_4_6(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS11_4_7(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS11_4_8(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS11_4_9(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS11_4_10(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS11_5_1(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS11_5_2(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS11_5_3(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS11_5_4(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS11_5_5(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS11_5_6(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS11_5_7(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS11_5_8(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS11_5_9(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS11_5_10(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS11_6_1(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS11_6_2(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS11_6_3(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS11_6_4(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS11_6_5(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS11_6_6(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS11_6_7(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS11_6_8(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS11_6_9(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS11_6_10(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS12_4_1(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS12_4_2(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS12_4_3(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS12_4_4(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS12_4_5(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS12_4_6(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS12_4_7(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS12_4_8(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS12_4_9(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS12_4_10(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS12_5_1(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS12_5_2(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS12_5_3(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS12_5_4(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS12_5_5(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS12_5_6(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS12_5_7(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS12_5_8(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS12_5_9(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS12_5_10(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS12_6_1(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS12_6_2(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS12_6_3(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS12_6_4(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS12_6_5(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS12_6_6(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS12_6_7(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS12_6_8(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS12_6_9(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS12_6_10(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS13_4_1(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS13_4_2(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS13_4_3(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS13_4_4(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS13_4_5(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS13_4_6(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS13_4_7(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS13_4_8(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS13_4_9(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS13_4_10(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS13_5_1(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS13_5_2(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS13_5_3(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS13_5_4(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS13_5_5(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS13_5_6(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS13_5_7(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS13_5_8(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS13_5_9(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS13_5_10(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS13_6_1(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS13_6_2(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS13_6_3(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS13_6_4(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS13_6_5(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS13_6_6(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS13_6_7(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS13_6_8(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS13_6_9(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS13_6_10(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS14_4_1(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS14_4_2(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS14_4_3(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS14_4_4(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS14_4_5(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS14_4_6(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS14_4_7(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS14_4_8(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS14_4_9(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS14_4_10(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS14_5_1(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS14_5_2(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS14_5_3(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS14_5_4(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS14_5_5(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS14_5_6(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS14_5_7(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS14_5_8(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS14_5_9(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS14_5_10(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS14_6_1(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS14_6_2(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS14_6_3(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS14_6_4(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS14_6_5(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS14_6_6(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS14_6_7(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS14_6_8(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS14_6_9(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS14_6_10(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS15_4_1(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS15_4_2(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS15_4_3(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS15_4_4(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS15_4_5(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS15_4_6(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS15_4_7(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS15_4_8(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS15_4_9(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS15_4_10(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS15_5_1(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS15_5_2(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS15_5_3(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS15_5_4(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS15_5_5(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS15_5_6(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS15_5_7(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS15_5_8(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS15_5_9(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS15_5_10(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS15_6_1(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS15_6_2(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS15_6_3(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS15_6_4(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS15_6_5(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS15_6_6(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS15_6_7(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS15_6_8(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS15_6_9(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS15_6_10(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS16_4_1(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS16_4_2(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS16_4_3(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS16_4_4(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS16_4_5(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS16_4_6(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS16_4_7(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS16_4_8(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS16_4_9(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS16_4_10(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS16_5_1(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS16_5_2(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS16_5_3(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS16_5_4(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS16_5_5(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS16_5_6(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS16_5_7(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS16_5_8(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS16_5_9(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS16_5_10(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS16_6_1(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS16_6_2(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS16_6_3(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS16_6_4(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS16_6_5(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS16_6_6(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS16_6_7(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS16_6_8(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS16_6_9(inner) => inner.fit(graph), // {python_generated}
-            InnerModel::HS16_6_10(inner) => inner.fit(graph), // {python_generated}
-        }
+    /// Returns the number of features that are used to represent each edge.
+    fn get_number_of_features(&self) -> usize {
+        (self.get_number_of_hops() * self.get_number_of_hops() + self.get_number_of_hops() * 2)
+            * if self.get_concatenate_features() {
+                2
+            } else {
+                1
+            }
     }
 
     /// Returns the estimated Sketching for all edges.
     ///
     /// Parameters
     /// ------------------------
-    /// overlaps: &mut [f32]
-    ///     The array where to store the estimated overlaps.
-    /// src_differences: &mut [f32]
-    ///     The array where to store the estimated source differences.
-    /// dst_differences: &mut [f32]
-    ///     The array where to store the estimated destination differences.
-    /// graph: &Graph
+    /// support: &Graph
     ///     The graph whose topology is to be learned.
-    ///
-    /// Raises
-    /// ------------------------
-    /// ValueError
-    ///     If the provided arrays are not of the right size.
-    ///     If the model has not been trained.
-    ///
-    fn compute_sketching_from_iterator<I, F: Float + Primitive<f32>>(
-        &self,
-        overlaps: &mut [F],
-        src_differences: &mut [F],
-        dst_differences: &mut [F],
-        graph: &graph::Graph,
-        edge_iterator: I,
-    ) -> Result<()>
-    where
-        I: IndexedParallelIterator<Item = (NodeT, NodeT)>,
-    {
-        match self {
-            // InnerModel::HS{precision}_{bits}_{hops}(inner) => inner.get_sketching_for_all_edges::<I, F>(overlaps, src_differences, dst_differences, graph, edge_iterator), {python_macro}
-            InnerModel::HS4_4_1(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS4_4_2(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS4_4_3(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS4_4_4(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS4_4_5(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS4_4_6(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS4_4_7(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS4_4_8(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS4_4_9(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS4_4_10(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS4_5_1(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS4_5_2(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS4_5_3(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS4_5_4(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS4_5_5(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS4_5_6(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS4_5_7(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS4_5_8(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS4_5_9(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS4_5_10(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS4_6_1(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS4_6_2(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS4_6_3(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS4_6_4(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS4_6_5(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS4_6_6(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS4_6_7(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS4_6_8(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS4_6_9(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS4_6_10(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS5_4_1(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS5_4_2(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS5_4_3(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS5_4_4(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS5_4_5(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS5_4_6(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS5_4_7(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS5_4_8(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS5_4_9(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS5_4_10(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS5_5_1(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS5_5_2(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS5_5_3(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS5_5_4(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS5_5_5(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS5_5_6(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS5_5_7(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS5_5_8(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS5_5_9(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS5_5_10(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS5_6_1(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS5_6_2(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS5_6_3(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS5_6_4(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS5_6_5(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS5_6_6(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS5_6_7(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS5_6_8(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS5_6_9(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS5_6_10(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS6_4_1(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS6_4_2(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS6_4_3(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS6_4_4(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS6_4_5(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS6_4_6(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS6_4_7(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS6_4_8(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS6_4_9(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS6_4_10(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS6_5_1(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS6_5_2(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS6_5_3(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS6_5_4(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS6_5_5(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS6_5_6(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS6_5_7(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS6_5_8(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS6_5_9(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS6_5_10(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS6_6_1(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS6_6_2(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS6_6_3(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS6_6_4(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS6_6_5(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS6_6_6(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS6_6_7(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS6_6_8(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS6_6_9(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS6_6_10(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS7_4_1(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS7_4_2(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS7_4_3(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS7_4_4(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS7_4_5(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS7_4_6(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS7_4_7(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS7_4_8(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS7_4_9(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS7_4_10(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS7_5_1(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS7_5_2(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS7_5_3(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS7_5_4(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS7_5_5(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS7_5_6(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS7_5_7(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS7_5_8(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS7_5_9(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS7_5_10(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS7_6_1(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS7_6_2(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS7_6_3(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS7_6_4(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS7_6_5(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS7_6_6(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS7_6_7(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS7_6_8(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS7_6_9(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS7_6_10(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS8_4_1(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS8_4_2(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS8_4_3(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS8_4_4(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS8_4_5(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS8_4_6(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS8_4_7(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS8_4_8(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS8_4_9(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS8_4_10(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS8_5_1(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS8_5_2(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS8_5_3(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS8_5_4(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS8_5_5(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS8_5_6(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS8_5_7(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS8_5_8(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS8_5_9(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS8_5_10(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS8_6_1(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS8_6_2(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS8_6_3(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS8_6_4(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS8_6_5(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS8_6_6(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS8_6_7(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS8_6_8(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS8_6_9(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS8_6_10(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS9_4_1(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS9_4_2(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS9_4_3(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS9_4_4(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS9_4_5(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS9_4_6(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS9_4_7(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS9_4_8(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS9_4_9(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS9_4_10(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS9_5_1(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS9_5_2(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS9_5_3(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS9_5_4(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS9_5_5(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS9_5_6(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS9_5_7(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS9_5_8(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS9_5_9(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS9_5_10(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS9_6_1(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS9_6_2(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS9_6_3(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS9_6_4(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS9_6_5(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS9_6_6(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS9_6_7(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS9_6_8(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS9_6_9(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS9_6_10(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS10_4_1(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS10_4_2(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS10_4_3(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS10_4_4(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS10_4_5(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS10_4_6(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS10_4_7(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS10_4_8(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS10_4_9(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS10_4_10(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS10_5_1(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS10_5_2(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS10_5_3(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS10_5_4(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS10_5_5(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS10_5_6(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS10_5_7(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS10_5_8(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS10_5_9(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS10_5_10(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS10_6_1(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS10_6_2(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS10_6_3(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS10_6_4(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS10_6_5(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS10_6_6(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS10_6_7(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS10_6_8(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS10_6_9(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS10_6_10(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS11_4_1(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS11_4_2(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS11_4_3(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS11_4_4(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS11_4_5(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS11_4_6(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS11_4_7(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS11_4_8(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS11_4_9(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS11_4_10(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS11_5_1(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS11_5_2(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS11_5_3(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS11_5_4(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS11_5_5(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS11_5_6(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS11_5_7(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS11_5_8(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS11_5_9(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS11_5_10(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS11_6_1(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS11_6_2(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS11_6_3(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS11_6_4(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS11_6_5(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS11_6_6(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS11_6_7(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS11_6_8(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS11_6_9(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS11_6_10(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS12_4_1(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS12_4_2(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS12_4_3(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS12_4_4(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS12_4_5(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS12_4_6(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS12_4_7(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS12_4_8(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS12_4_9(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS12_4_10(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS12_5_1(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS12_5_2(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS12_5_3(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS12_5_4(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS12_5_5(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS12_5_6(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS12_5_7(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS12_5_8(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS12_5_9(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS12_5_10(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS12_6_1(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS12_6_2(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS12_6_3(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS12_6_4(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS12_6_5(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS12_6_6(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS12_6_7(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS12_6_8(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS12_6_9(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS12_6_10(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS13_4_1(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS13_4_2(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS13_4_3(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS13_4_4(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS13_4_5(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS13_4_6(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS13_4_7(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS13_4_8(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS13_4_9(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS13_4_10(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS13_5_1(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS13_5_2(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS13_5_3(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS13_5_4(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS13_5_5(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS13_5_6(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS13_5_7(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS13_5_8(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS13_5_9(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS13_5_10(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS13_6_1(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS13_6_2(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS13_6_3(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS13_6_4(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS13_6_5(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS13_6_6(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS13_6_7(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS13_6_8(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS13_6_9(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS13_6_10(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS14_4_1(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS14_4_2(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS14_4_3(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS14_4_4(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS14_4_5(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS14_4_6(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS14_4_7(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS14_4_8(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS14_4_9(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS14_4_10(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS14_5_1(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS14_5_2(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS14_5_3(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS14_5_4(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS14_5_5(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS14_5_6(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS14_5_7(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS14_5_8(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS14_5_9(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS14_5_10(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS14_6_1(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS14_6_2(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS14_6_3(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS14_6_4(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS14_6_5(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS14_6_6(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS14_6_7(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS14_6_8(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS14_6_9(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS14_6_10(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS15_4_1(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS15_4_2(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS15_4_3(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS15_4_4(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS15_4_5(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS15_4_6(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS15_4_7(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS15_4_8(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS15_4_9(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS15_4_10(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS15_5_1(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS15_5_2(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS15_5_3(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS15_5_4(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS15_5_5(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS15_5_6(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS15_5_7(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS15_5_8(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS15_5_9(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS15_5_10(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS15_6_1(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS15_6_2(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS15_6_3(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS15_6_4(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS15_6_5(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS15_6_6(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS15_6_7(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS15_6_8(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS15_6_9(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS15_6_10(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS16_4_1(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS16_4_2(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS16_4_3(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS16_4_4(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS16_4_5(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS16_4_6(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS16_4_7(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS16_4_8(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS16_4_9(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS16_4_10(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS16_5_1(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS16_5_2(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS16_5_3(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS16_5_4(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS16_5_5(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS16_5_6(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS16_5_7(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS16_5_8(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS16_5_9(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS16_5_10(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS16_6_1(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS16_6_2(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS16_6_3(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS16_6_4(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS16_6_5(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS16_6_6(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS16_6_7(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS16_6_8(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS16_6_9(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-            InnerModel::HS16_6_10(inner) => inner.get_sketching_for_all_edges::<I, F>(
-                overlaps,
-                src_differences,
-                dst_differences,
-                graph,
-                edge_iterator,
-            ), // {python_generated}
-        }
-    }
-
-    /// Returns the estimated Sketching for all edges.
-    ///
-    /// Parameters
-    /// ------------------------
-    /// graph: &Graph
-    ///     The graph whose topology is to be learned.
-    /// overlap_path: Option<&str>
-    ///     The path where to store the estimated overlaps.
-    /// left_difference_path: Option<&str>
-    ///     The path where to store the estimated source differences.
-    /// right_difference_path: Option<&str>
-    ///     The path where to store the estimated destination differences.
+    /// edge_features_path: Option<&str>
+    ///     The path where to store the estimated edge features.
     /// edge_iterator: I
     ///     The iterator over the edges to be considered.
     ///
@@ -11559,289 +11179,73 @@ impl InnerModel {
     ///     If the provided arrays are not of the right size.
     ///     If the model has not been trained.
     ///
-    fn get_sketching_from_iterator<I>(
+    unsafe fn get_sketching_from_iterator<I>(
         &self,
-        graph: &graph::Graph,
-        overlap_path: Option<&str>,
-        left_difference_path: Option<&str>,
-        right_difference_path: Option<&str>,
+        support: &graph::Graph,
+        edge_features_path: Option<&str>,
         edge_iterator: I,
-    ) -> PyResult<(Py<PyAny>, Py<PyAny>, Py<PyAny>)>
+    ) -> PyResult<Py<PyAny>>
     where
         I: IndexedParallelIterator<Item = (NodeT, NodeT)>,
     {
         let gil = Python::acquire_gil();
 
-        let [overlap_shape, left_diff_shape, right_diff_shape] = if self.get_concatenate_features()
-        {
-            [
-                MatrixShape::FourDimensional(
-                    edge_iterator.len(),
-                    2,
-                    self.get_number_of_hops(),
-                    self.get_number_of_hops(),
-                ),
-                MatrixShape::ThreeDimensional(edge_iterator.len(), 2, self.get_number_of_hops()),
-                MatrixShape::ThreeDimensional(edge_iterator.len(), 2, self.get_number_of_hops()),
-            ]
-        } else {
-            [
-                MatrixShape::ThreeDimensional(
-                    edge_iterator.len(),
-                    self.get_number_of_hops(),
-                    self.get_number_of_hops(),
-                ),
-                MatrixShape::BiDimensional(edge_iterator.len(), self.get_number_of_hops()),
-                MatrixShape::BiDimensional(edge_iterator.len(), self.get_number_of_hops()),
-            ]
-        };
+        let edge_feature_shape =
+            MatrixShape::BiDimensional(edge_iterator.len(), self.get_number_of_features());
 
         match self.get_dtype() {
             "f16" => {
-                let overlaps = create_memory_mapped_numpy_array(
+                let edge_features = create_memory_mapped_numpy_array(
                     gil.python(),
-                    overlap_path,
+                    edge_features_path,
                     Dtype::F16,
-                    &<MatrixShape as Into<Vec<isize>>>::into(overlap_shape),
+                    &<MatrixShape as Into<Vec<isize>>>::into(edge_feature_shape),
                     false,
                 );
 
-                let left_difference = create_memory_mapped_numpy_array(
-                    gil.python(),
-                    left_difference_path,
-                    Dtype::F16,
-                    &<MatrixShape as Into<Vec<isize>>>::into(left_diff_shape),
-                    false,
-                );
+                let array = edge_features.cast_as::<PyArray2<f16>>(gil.python())?;
+                let edge_features_ref = unsafe { array.as_slice_mut()? };
 
-                let right_difference = create_memory_mapped_numpy_array(
-                    gil.python(),
-                    right_difference_path,
-                    Dtype::F16,
-                    &<MatrixShape as Into<Vec<isize>>>::into(right_diff_shape),
-                    false,
-                );
-
-                let mut array2d = Vec::new();
-                let mut array3d = Vec::new();
-                let mut array4d = Vec::new();
-
-                let overlaps_ref = if self.get_concatenate_features() {
-                    let array = overlaps.cast_as::<PyArray4<f16>>(gil.python())?;
-                    let array_ref = unsafe { array.as_slice_mut()? };
-                    array4d.push(array);
-                    array_ref
-                } else {
-                    let array = overlaps.cast_as::<PyArray3<f16>>(gil.python())?;
-                    let array_ref = unsafe { array.as_slice_mut()? };
-                    array3d.push(array);
-                    array_ref
+                let edge_features_ref = unsafe {
+                    core::mem::transmute::<&mut [f16], &mut [PrimitiveF16]>(edge_features_ref)
                 };
-
-                let left_ref = if self.get_concatenate_features() {
-                    let array = left_difference.cast_as::<PyArray3<f16>>(gil.python())?;
-                    let array_ref = unsafe { array.as_slice_mut()? };
-                    array3d.push(array);
-                    array_ref
-                } else {
-                    let array = left_difference.cast_as::<PyArray2<f16>>(gil.python())?;
-                    let array_ref = unsafe { array.as_slice_mut()? };
-                    array2d.push(array);
-                    array_ref
-                };
-
-                let right_ref = if self.get_concatenate_features() {
-                    let array = right_difference.cast_as::<PyArray3<f16>>(gil.python())?;
-                    let array_ref = unsafe { array.as_slice_mut()? };
-                    array3d.push(array);
-                    array_ref
-                } else {
-                    let array = right_difference.cast_as::<PyArray2<f16>>(gil.python())?;
-                    let array_ref = unsafe { array.as_slice_mut()? };
-                    array2d.push(array);
-                    array_ref
-                };
-
-                let overlaps_ref = unsafe {
-                    core::mem::transmute::<&mut [f16], &mut [PrimitiveF16]>(overlaps_ref)
-                };
-
-                let left_ref =
-                    unsafe { core::mem::transmute::<&mut [f16], &mut [PrimitiveF16]>(left_ref) };
-
-                let right_ref =
-                    unsafe { core::mem::transmute::<&mut [f16], &mut [PrimitiveF16]>(right_ref) };
 
                 // We always use the racing version of the fit transfor
                 // as we generally do not care about memory collisions.
                 pe!(self.compute_sketching_from_iterator::<I, PrimitiveF16>(
-                    overlaps_ref,
-                    left_ref,
-                    right_ref,
-                    &graph,
+                    edge_features_ref,
+                    &support,
                     edge_iterator
                 ))?;
 
-                Ok((overlaps, left_difference, right_difference))
+                Ok(edge_features)
             }
             "f32" => {
-                let overlaps = create_memory_mapped_numpy_array(
+                let edge_features = create_memory_mapped_numpy_array(
                     gil.python(),
-                    overlap_path,
+                    edge_features_path,
                     Dtype::F32,
-                    &<MatrixShape as Into<Vec<isize>>>::into(overlap_shape),
+                    &<MatrixShape as Into<Vec<isize>>>::into(edge_feature_shape),
                     false,
                 );
 
-                let left_difference = create_memory_mapped_numpy_array(
-                    gil.python(),
-                    left_difference_path,
-                    Dtype::F32,
-                    &<MatrixShape as Into<Vec<isize>>>::into(left_diff_shape),
-                    false,
-                );
-
-                let right_difference = create_memory_mapped_numpy_array(
-                    gil.python(),
-                    right_difference_path,
-                    Dtype::F32,
-                    &<MatrixShape as Into<Vec<isize>>>::into(right_diff_shape),
-                    false,
-                );
-
-                let mut array2d = Vec::new();
-                let mut array3d = Vec::new();
-                let mut array4d = Vec::new();
-
-                let overlaps_ref = if self.get_concatenate_features() {
-                    let array = overlaps.cast_as::<PyArray4<f32>>(gil.python())?;
-                    let array_ref = unsafe { array.as_slice_mut()? };
-                    array4d.push(array);
-                    array_ref
-                } else {
-                    let array = overlaps.cast_as::<PyArray3<f32>>(gil.python())?;
-                    let array_ref = unsafe { array.as_slice_mut()? };
-                    array3d.push(array);
-                    array_ref
-                };
-
-                let left_ref = if self.get_concatenate_features() {
-                    let array = left_difference.cast_as::<PyArray3<f32>>(gil.python())?;
-                    let array_ref = unsafe { array.as_slice_mut()? };
-                    array3d.push(array);
-                    array_ref
-                } else {
-                    let array = left_difference.cast_as::<PyArray2<f32>>(gil.python())?;
-                    let array_ref = unsafe { array.as_slice_mut()? };
-                    array2d.push(array);
-                    array_ref
-                };
-
-                let right_ref = if self.get_concatenate_features() {
-                    let array = right_difference.cast_as::<PyArray3<f32>>(gil.python())?;
-                    let array_ref = unsafe { array.as_slice_mut()? };
-                    array3d.push(array);
-                    array_ref
-                } else {
-                    let array = right_difference.cast_as::<PyArray2<f32>>(gil.python())?;
-                    let array_ref = unsafe { array.as_slice_mut()? };
-                    array2d.push(array);
-                    array_ref
-                };
+                let array = edge_features.cast_as::<PyArray2<f32>>(gil.python())?;
+                let edge_features_ref = unsafe { array.as_slice_mut()? };
 
                 // We always use the racing version of the fit transfor
                 // as we generally do not care about memory collisions.
-                pe!(self.compute_sketching_from_iterator(
-                    overlaps_ref,
-                    left_ref,
-                    right_ref,
-                    &graph,
+                pe!(self.compute_sketching_from_iterator::<I, f32>(
+                    edge_features_ref,
+                    &support,
                     edge_iterator
                 ))?;
 
-                Ok((overlaps, left_difference, right_difference))
-            }
-            "f64" => {
-                let overlaps = create_memory_mapped_numpy_array(
-                    gil.python(),
-                    overlap_path,
-                    Dtype::F64,
-                    &<MatrixShape as Into<Vec<isize>>>::into(overlap_shape),
-                    false,
-                );
-
-                let left_difference = create_memory_mapped_numpy_array(
-                    gil.python(),
-                    left_difference_path,
-                    Dtype::F64,
-                    &<MatrixShape as Into<Vec<isize>>>::into(left_diff_shape),
-                    false,
-                );
-
-                let right_difference = create_memory_mapped_numpy_array(
-                    gil.python(),
-                    right_difference_path,
-                    Dtype::F64,
-                    &<MatrixShape as Into<Vec<isize>>>::into(right_diff_shape),
-                    false,
-                );
-
-                let mut array2d = Vec::new();
-                let mut array3d = Vec::new();
-                let mut array4d = Vec::new();
-
-                let overlaps_ref = if self.get_concatenate_features() {
-                    let array = overlaps.cast_as::<PyArray4<f64>>(gil.python())?;
-                    let array_ref = unsafe { array.as_slice_mut()? };
-                    array4d.push(array);
-                    array_ref
-                } else {
-                    let array = overlaps.cast_as::<PyArray3<f64>>(gil.python())?;
-                    let array_ref = unsafe { array.as_slice_mut()? };
-                    array3d.push(array);
-                    array_ref
-                };
-
-                let left_ref = if self.get_concatenate_features() {
-                    let array = left_difference.cast_as::<PyArray3<f64>>(gil.python())?;
-                    let array_ref = unsafe { array.as_slice_mut()? };
-                    array3d.push(array);
-                    array_ref
-                } else {
-                    let array = left_difference.cast_as::<PyArray2<f64>>(gil.python())?;
-                    let array_ref = unsafe { array.as_slice_mut()? };
-                    array2d.push(array);
-                    array_ref
-                };
-
-                let right_ref = if self.get_concatenate_features() {
-                    let array = right_difference.cast_as::<PyArray3<f64>>(gil.python())?;
-                    let array_ref = unsafe { array.as_slice_mut()? };
-                    array3d.push(array);
-                    array_ref
-                } else {
-                    let array = right_difference.cast_as::<PyArray2<f64>>(gil.python())?;
-                    let array_ref = unsafe { array.as_slice_mut()? };
-                    array2d.push(array);
-                    array_ref
-                };
-
-                // We always use the racing version of the fit transfor
-                // as we generally do not care about memory collisions.
-                pe!(self.compute_sketching_from_iterator(
-                    overlaps_ref,
-                    left_ref,
-                    right_ref,
-                    &graph,
-                    edge_iterator
-                ))?;
-
-                Ok((overlaps, left_difference, right_difference))
+                Ok(edge_features)
             }
             dtype => pe!(Err(format!(
                 concat!(
                     "The provided dtype {} is not supported. The supported ",
-                    "data types are `f16`, `f32` and `f64`."
+                    "data types are `f16` or `f32`."
                 ),
                 dtype
             ))),
@@ -11875,7 +11279,7 @@ impl InnerModel {
 #[pyclass]
 #[derive(Clone)]
 #[pyo3(
-    text_signature = "(*, number_of_hops=2, precision=6, bits=5, include_node_types=False, include_edge_types=False, include_edge_ids=False, include_node_ids=True, include_selfloops=True, include_typed_graphlets=False, normalize_by_symmetric_laplacian=False, concatenate_features=False, dtype=str)"
+    text_signature = "(*, unbiased=False, exact=False, number_of_hops=2, precision=6, bits=5, include_node_types=False, include_edge_types=False, include_edge_ids=False, include_node_ids=True, include_selfloops=True, include_typed_graphlets=False, normalize_by_symmetric_laplacian=False, concatenate_features=False, dtype=str)"
 )]
 pub struct HyperSketching {
     inner: InnerModel,
@@ -11889,6 +11293,12 @@ impl HyperSketching {
     ///
     /// Parameters
     /// ------------------------
+    /// unbiased: bool = False
+    ///     Whether to use the unbiased algorithm.
+    ///     By default, `false`.
+    /// exact: bool = False
+    ///     Whether to use the exact algorithm.
+    ///     By default, `false`.
     /// number_of_hops: int = 2
     ///     The number of hops for the Sketches.
     /// precision: int = 6
@@ -11911,9 +11321,6 @@ impl HyperSketching {
     ///     By default, `true`.
     /// include_selfloops: bool = True
     ///     Whether to include the selfloops in the sketches.
-    ///     By default, `false`.
-    /// use_mle_estimation: bool = False
-    ///     Whether to use the MLE estimation for the HyperLogLog counters.
     ///     By default, `false`.
     /// include_typed_graphlets: bool = False
     ///     Whether to include the typed graphlets in the sketches.
@@ -11947,6 +11354,8 @@ impl HyperSketching {
         pe!(validate_kwargs(
             kwargs,
             &[
+                "unbiased",
+                "exact",
                 "number_of_hops",
                 "precision",
                 "bits",
@@ -11955,7 +11364,6 @@ impl HyperSketching {
                 "include_edge_ids",
                 "include_node_ids",
                 "include_selfloops",
-                "use_mle_estimation",
                 "include_typed_graphlets",
                 "random_state",
                 "number_of_random_integers",
@@ -11967,6 +11375,8 @@ impl HyperSketching {
 
         Ok(Self {
             inner: pe!(InnerModel::new(
+                extract_value_rust_result!(kwargs, "unbiased", bool),
+                extract_value_rust_result!(kwargs, "exact", bool),
                 extract_value_rust_result!(kwargs, "number_of_hops", usize),
                 extract_value_rust_result!(kwargs, "precision", usize).unwrap_or(6),
                 extract_value_rust_result!(kwargs, "bits", usize).unwrap_or(5),
@@ -11975,7 +11385,6 @@ impl HyperSketching {
                 extract_value_rust_result!(kwargs, "include_edge_ids", bool),
                 extract_value_rust_result!(kwargs, "include_node_ids", bool),
                 extract_value_rust_result!(kwargs, "include_selfloops", bool),
-                extract_value_rust_result!(kwargs, "use_mle_estimation", bool),
                 extract_value_rust_result!(kwargs, "include_typed_graphlets", bool),
                 extract_value_rust_result!(kwargs, "random_state", u64),
                 extract_value_rust_result!(kwargs, "number_of_random_integers", usize),
@@ -12043,7 +11452,7 @@ impl HyperSketching {
     }
 
     #[pyo3(
-        text_signature = "($self, graph, support, overlap_path, left_difference_path, right_difference_path)"
+        text_signature = "($self, graph, support, edge_features, follow_graph_directionality=True)"
     )]
     /// Return numpy array with sketches for each edge in the graph.
     ///
@@ -12053,12 +11462,11 @@ impl HyperSketching {
     ///     The graph whose sketches are to be computed.
     /// support: Graph
     ///     The graph whose topology is to be employed.
-    /// overlap_path: Optional[str]
-    ///     The path where to store the estimated overlaps.
-    /// left_difference_path: Optional[str]
-    ///     The path where to store the estimated source differences.
-    /// right_difference_path: Optional[str]
-    ///     The path where to store the estimated destination differences.
+    /// edge_features_path: Optional[str]
+    ///     The path where to store the estimated edge features.
+    /// follow_graph_directionality: bool = True
+    ///     Whether to follow the graph directionality.
+    ///     This means that if the graph is directed, the edges will be considered in the direction of the graph.
     ///
     /// Raises
     /// ----------------
@@ -12069,35 +11477,33 @@ impl HyperSketching {
         &self,
         graph: &Graph,
         support: &Graph,
-        overlap_path: Option<String>,
-        left_difference_path: Option<String>,
-        right_difference_path: Option<String>,
-    ) -> PyResult<(Py<PyAny>, Py<PyAny>, Py<PyAny>)> {
-        if graph.is_directed() {
-            pe!(self.inner.get_sketching_from_iterator(
-                &support.inner,
-                overlap_path.as_deref(),
-                left_difference_path.as_deref(),
-                right_difference_path.as_deref(),
-                graph
-                    .inner
-                    .par_iter_directed_edge_node_ids()
-                    .map(|(_, src, dst)| { (src, dst) }),
-            ))
+        edge_features_path: Option<String>,
+        follow_graph_directionality: Option<bool>,
+    ) -> PyResult<Py<PyAny>> {
+        let follow_graph_directionality = follow_graph_directionality.unwrap_or(true);
+        if graph.is_directed() || !follow_graph_directionality {
+            pe!(unsafe {
+                self.inner.get_sketching_from_iterator(
+                    &support.inner,
+                    edge_features_path.as_deref(),
+                    graph
+                        .inner
+                        .par_iter_directed_edge_node_ids()
+                        .map(|(_, src, dst)| (src, dst)),
+                )
+            })
         } else {
-            pe!(self.inner.get_sketching_from_iterator(
-                &support.inner,
-                overlap_path.as_deref(),
-                left_difference_path.as_deref(),
-                right_difference_path.as_deref(),
-                graph.inner.par_iter_upper_triangular_edge_node_ids()
-            ))
+            pe!(unsafe {
+                self.inner.get_sketching_from_iterator(
+                    &support.inner,
+                    edge_features_path.as_deref(),
+                    graph.inner.par_iter_upper_triangular_edge_node_ids(),
+                )
+            })
         }
     }
 
-    #[pyo3(
-        text_signature = "($self, graph, sources, destinations, overlap_path, left_difference_path, right_difference_path)"
-    )]
+    #[pyo3(text_signature = "($self, graph, sources, destinations, edge_features)")]
     /// Return numpy array with sketches for each edge in the graph.
     ///
     /// Parameters
@@ -12108,12 +11514,8 @@ impl HyperSketching {
     ///     The source nodes.
     /// destinations: np.ndarray[NodeT]
     ///     The destination nodes.
-    /// overlap_path: Optional[str]
-    ///     The path where to store the estimated overlaps.
-    /// left_difference_path: Optional[str]
-    ///     The path where to store the estimated source differences.
-    /// right_difference_path: Optional[str]
-    ///     The path where to store the estimated destination differences.
+    /// edge_features: Optional[str]
+    ///     The path where to store the estimated edge features.
     ///
     /// Raises
     /// ----------------
@@ -12127,10 +11529,8 @@ impl HyperSketching {
         graph: &Graph,
         sources: Py<PyArray1<NodeT>>,
         destinations: Py<PyArray1<NodeT>>,
-        overlap_path: Option<String>,
-        left_difference_path: Option<String>,
-        right_difference_path: Option<String>,
-    ) -> PyResult<(Py<PyAny>, Py<PyAny>, Py<PyAny>)> {
+        edge_features: Option<String>,
+    ) -> PyResult<Py<PyAny>> {
         let gil = pyo3::Python::acquire_gil();
         let sources = sources.as_ref(gil.python());
         let sources_ref = unsafe {
@@ -12157,16 +11557,36 @@ impl HyperSketching {
             )));
         }
 
-        pe!(self.inner.get_sketching_from_iterator(
-            &graph.inner,
-            overlap_path.as_deref(),
-            left_difference_path.as_deref(),
-            right_difference_path.as_deref(),
-            sources_ref
-                .par_iter()
-                .copied()
-                .zip(destinations_ref.par_iter().copied()),
-        ))
+        // We check that all the provided sources are in the graph.
+        if sources_ref
+            .par_iter()
+            .any(|&node| node >= graph.inner.get_number_of_nodes())
+        {
+            return Err(PyValueError::new_err(
+                "Some of the provided sources are not in the graph.",
+            ));
+        }
+
+        // We check that all the provided destinations are in the graph.
+        if destinations_ref
+            .par_iter()
+            .any(|&node| node >= graph.inner.get_number_of_nodes())
+        {
+            return Err(PyValueError::new_err(
+                "Some of the provided destinations are not in the graph.",
+            ));
+        }
+
+        pe!(unsafe {
+            self.inner.get_sketching_from_iterator(
+                &graph.inner,
+                edge_features.as_deref(),
+                sources_ref
+                    .par_iter()
+                    .copied()
+                    .zip(destinations_ref.par_iter().copied()),
+            )
+        })
     }
 
     #[staticmethod]
