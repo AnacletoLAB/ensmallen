@@ -11514,7 +11514,7 @@ impl HyperSketching {
     ///     The source nodes.
     /// destinations: np.ndarray[NodeT]
     ///     The destination nodes.
-    /// edge_features: Optional[str]
+    /// edge_features_path: Optional[str]
     ///     The path where to store the estimated edge features.
     ///
     /// Raises
@@ -11529,7 +11529,7 @@ impl HyperSketching {
         graph: &Graph,
         sources: Py<PyArray1<NodeT>>,
         destinations: Py<PyArray1<NodeT>>,
-        edge_features: Option<String>,
+        edge_features_path: Option<String>,
     ) -> PyResult<Py<PyAny>> {
         let gil = pyo3::Python::acquire_gil();
         let sources = sources.as_ref(gil.python());
@@ -11580,7 +11580,7 @@ impl HyperSketching {
         pe!(unsafe {
             self.inner.get_sketching_from_iterator(
                 &graph.inner,
-                edge_features.as_deref(),
+                edge_features_path.as_deref(),
                 sources_ref
                     .par_iter()
                     .copied()

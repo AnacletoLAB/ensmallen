@@ -479,8 +479,9 @@ impl<
                     for neighbour in unsafe {
                         support.iter_unchecked_neighbour_node_ids_from_source_node_id(node)
                     } {
-                        if self.unbiased && (node == src && neighbour == dst)
-                            || (node == dst && neighbour == src && !support.is_directed())
+                        if self.unbiased
+                            && ((node == src && neighbour == dst)
+                                || (node == dst && neighbour == src && !support.is_directed()))
                         {
                             continue;
                         }
