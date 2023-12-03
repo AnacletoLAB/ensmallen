@@ -80,6 +80,8 @@ pub struct HyperSketching<
     counters: Vec<HyperLogLogArray<PRECISION, BITS, HOPS>>,
     /// Whether to use the unbiased version for the algorithm.
     unbiased: bool,
+    /// Whether to use the on-demand version for the algorithm.
+    on_demand: bool,
     /// Whether to use the exact version for the algorithm.
     exact: bool,
     /// Whether to include the node types in the sketch
@@ -98,10 +100,8 @@ pub struct HyperSketching<
     random_state: u64,
     /// Number of random integers to add per node - by default 0.
     number_of_random_integers: usize,
-    /// Normalize by symmetric Laplacian
-    normalize_by_symmetric_laplacian: bool,
-    /// Concatenate the normalized and non-normalized features
-    concatenate_features: bool,
+    /// Whether to normalize the Sketching cardinalities.
+    normalize: bool,
     /// The embedding data type.
     dtype: String,
 }
@@ -116,6 +116,7 @@ impl<
     ///
     /// # Arguments
     /// * `unbiased`: Option<bool> - Whether to use the unbiased version for the algorithm. By default, false.
+    /// * `on_demand`: Option<bool> - Whether to use the on-demand version for the algorithm. By default, false.
     /// * `exact`: Option<bool> - Whether to use the exact version for the algorithm. By default, false.
     /// * `include_node_types`: Option<bool> - Whether to include the node types in the sketch. By default, false.
     /// * `include_edge_types`: Option<bool> - Whether to include the edge types in the sketch. By default, false.
@@ -125,17 +126,16 @@ impl<
     /// * `include_typed_graphlets`: Option<bool> - Whether to include the typed graphlets in the sketch. By default, false.
     /// * `random_state`: Option<u64> - Random state for random integers, if requested. By default, 42.
     /// * `number_of_random_integers`: Option<usize> - Number of random integers to add per node - by default 0.
-    /// * `normalize_by_symmetric_laplacian`: Option<bool> - Whether to normalize the Sketching cardinalities by the symmetric Laplacian. By default, false.
-    /// * `concatenate_features`: Option<bool> - Whether to concatenate the normalized and non-normalized features. By default, false.
+    /// * `normalize`: Option<bool> - Whether to normalize the Sketching cardinalities. By default, false.
     /// * `dtype`: Option<String> - The data type to be employed, by default f32.
     ///
     /// # Raises
-    /// * The feature concatenation only makes sense if the normalization is enabled.
     /// * If none of the include parameters is set to true.
     /// * If the edge ids are requested, but only two HOPs is used, as the edge ids would surely be completely distinct for all edges.
     /// * The data type is not supported. Supported data types are f16, f32 and f64.
     pub fn new(
         unbiased: Option<bool>,
+        on_demand: Option<bool>,
         exact: Option<bool>,
         include_node_types: Option<bool>,
         include_edge_types: Option<bool>,
@@ -145,19 +145,9 @@ impl<
         include_typed_graphlets: Option<bool>,
         random_state: Option<u64>,
         number_of_random_integers: Option<usize>,
-        normalize_by_symmetric_laplacian: Option<bool>,
-        concatenate_features: Option<bool>,
+        normalize: Option<bool>,
         dtype: Option<String>,
     ) -> Result<Self, String> {
-        if concatenate_features.unwrap_or(false)
-            && !normalize_by_symmetric_laplacian.unwrap_or(false)
-        {
-            return Err(
-                "The feature concatenation only makes sense if the normalization is enabled."
-                    .to_string(),
-            );
-        }
-
         if !include_node_types.unwrap_or(false)
             && !include_edge_types.unwrap_or(false)
             && !include_edge_ids.unwrap_or(false)
@@ -191,19 +181,28 @@ impl<
 
         let unbiased = unbiased.unwrap_or(false);
         let exact = exact.unwrap_or(false);
+        let on_demand = on_demand.unwrap_or_else(|| unbiased || exact);
+
+        if (unbiased || exact) && !on_demand {
+            return Err(concat!(
+                "The unbiased and exact versions of the algorithm ",
+                "can only be used with the on-demand version of the algorithm."
+            )
+            .to_string());
+        }
 
         // At this time, we do not support the exact or unbiased version of the algorithm
         // that uses the node types, edge types, edge ids or graphlets. The node ids MUST
         // be included, as otherwise the algorithm would not make sense.
 
-        if (unbiased || exact)
+        if on_demand
             && (include_node_types.unwrap_or(false)
                 || include_edge_types.unwrap_or(false)
                 || include_edge_ids.unwrap_or(false)
                 || include_typed_graphlets.unwrap_or(false))
         {
             return Err(concat!(
-                "At this time, we do not support the exact or unbiased version of the algorithm ",
+                "At this time, we do not support the on-demand version of the algorithm ",
                 "that uses the node types, edge types, edge ids or graphlets. ",
                 "The node ids MUST be included, as otherwise the algorithm would not make sense."
             )
@@ -212,6 +211,7 @@ impl<
 
         Ok(Self {
             counters: Vec::new(),
+            on_demand,
             unbiased,
             exact,
             include_node_types: include_node_types.unwrap_or(false),
@@ -222,15 +222,14 @@ impl<
             include_typed_graphlets: include_typed_graphlets.unwrap_or(false),
             random_state: random_state.unwrap_or(42),
             number_of_random_integers: number_of_random_integers.unwrap_or(0),
-            normalize_by_symmetric_laplacian: normalize_by_symmetric_laplacian.unwrap_or(false),
-            concatenate_features: concatenate_features.unwrap_or(false),
+            normalize: normalize.unwrap_or(false),
             dtype: dtype.unwrap_or("f32".to_string()),
         })
     }
 
     /// Returns whether the model has been trained.
     fn must_be_trained(&self) -> Result<(), String> {
-        if !(self.unbiased || self.exact) && self.counters.is_empty() {
+        if !self.on_demand && self.counters.is_empty() {
             return Err(concat!(
                 "This model has not been trained yet. ",
                 "You should call the `.fit` method first."
@@ -438,17 +437,22 @@ impl<
         src: usize,
         dst: usize,
     ) -> ([[F; HOPS]; HOPS], [F; HOPS], [F; HOPS]) {
-        self.counters[src].overlap_and_differences_cardinality_matrices(&self.counters[dst])
+        if self.normalize {
+            self.counters[src]
+                .normalized_overlap_and_differences_cardinality_matrices(&self.counters[dst])
+        } else {
+            self.counters[src].overlap_and_differences_cardinality_matrices(&self.counters[dst])
+        }
     }
 
-    /// Returns the unbiased exact subgraph sketch associates with the two provided nodes.
+    /// Returns the on-demand exact subgraph sketch associates with the two provided nodes.
     ///
     /// # Arguments
     /// * `src`: NodeT - The source node.
     /// * `dst`: NodeT - The destination node.
     /// * `support`: &Graph - The support graph from which to extract the topology.
     ///
-    fn get_unbiased_edge_sketching_from_edge_node_ids<
+    fn get_on_demand_edge_sketching_from_edge_node_ids<
         F: Primitive<f32>,
         S: HyperSpheresSketch<F> + MutableSetLike<NodeT> + Clone,
     >(
@@ -496,7 +500,11 @@ impl<
         }
 
         // Now, we can compute the overlap matrix.
-        S::overlap_and_differences_cardinality_matrices(&src_array, &dst_array)
+        if self.normalize {
+            S::normalized_overlap_and_differences_cardinality_matrices(&src_array, &dst_array)
+        } else {
+            S::overlap_and_differences_cardinality_matrices(&src_array, &dst_array)
+        }
     }
 
     /// Returns the subgraph sketch associates with the two provided nodes.
@@ -538,16 +546,6 @@ impl<
         }
 
         Ok(unsafe { self.get_subgraph_sketch_from_node_ids_unchecked(src, dst) })
-    }
-
-    /// Returns whether the features will be normalized using the symmetric Laplacian.
-    pub fn get_normalize_by_symmetric_laplacian(&self) -> bool {
-        self.normalize_by_symmetric_laplacian
-    }
-
-    /// Returns whether the features will be concatenated.
-    pub fn get_concatenate_features(&self) -> bool {
-        self.concatenate_features
     }
 
     /// Return the number of hops.
@@ -598,47 +596,38 @@ impl<
     {
         // Check that the model has been trained
         self.must_be_trained()?;
-        let factor = if self.concatenate_features { 2 } else { 1 };
 
         // Check that the provided slices have the expected size
-        if features.len() != edge_iterator.len() as usize * factor * (HOPS * HOPS + HOPS + HOPS) {
+        if features.len() != edge_iterator.len() as usize * (HOPS * HOPS + HOPS + HOPS) {
             return Err(format!(
                 concat!(
                     "The provided `features` slice has a length of `{}` ",
                     "but it should have a length of `{}`."
                 ),
                 features.len(),
-                edge_iterator.len() as usize * factor * (HOPS * HOPS + HOPS + HOPS)
-            ));
-        }
-
-        // Check that the graph has the same number of nodes as the model
-        if self.get_normalize_by_symmetric_laplacian()
-            && support.get_number_of_nodes() as usize != self.counters.len()
-        {
-            return Err(format!(
-                concat!(
-                    "The provided graph has `{}` nodes ",
-                    "but the model has been trained on a graph with `{}` nodes."
-                ),
-                support.get_number_of_nodes(),
-                self.counters.len()
+                edge_iterator.len() as usize * (HOPS * HOPS + HOPS + HOPS)
             ));
         }
 
         edge_iterator
-            .zip(features.par_chunks_exact_mut((HOPS * HOPS + HOPS + HOPS) * factor))
+            .zip(features.par_chunks_exact_mut(HOPS * HOPS + HOPS + HOPS))
             .for_each(|((src, dst), edge_feature)| unsafe {
-                let (sketch_overlaps, sketch_src_differences, sketch_dst_differences) =
-                    if self.unbiased {
-                        if self.exact {
-                            self.get_unbiased_edge_sketching_from_edge_node_ids::<F, HashSet<NodeT>>(src, dst, support)
-                        } else {
-                            self.get_unbiased_edge_sketching_from_edge_node_ids::<F, HyperLogLog<PRECISION, BITS>>(src, dst, support)
-                        }
+                let (sketch_overlaps, sketch_src_differences, sketch_dst_differences) = if self
+                    .on_demand
+                {
+                    if self.exact {
+                        self.get_on_demand_edge_sketching_from_edge_node_ids::<F, HashSet<NodeT>>(
+                            src, dst, support,
+                        )
                     } else {
-                        self.get_subgraph_sketch_from_node_ids_unchecked(src as usize, dst as usize)
-                    };
+                        self.get_on_demand_edge_sketching_from_edge_node_ids::<
+                                F,
+                                HyperLogLog<PRECISION, BITS>,
+                            >(src, dst, support)
+                    }
+                } else {
+                    self.get_subgraph_sketch_from_node_ids_unchecked(src as usize, dst as usize)
+                };
 
                 // Copy the estimated overlaps
                 std::ptr::copy_nonoverlapping(
@@ -660,42 +649,6 @@ impl<
                     edge_feature[HOPS * HOPS + HOPS..].as_mut_ptr(),
                     HOPS,
                 );
-
-                if self.concatenate_features {
-                    let (left, right) = edge_feature.split_at_mut(HOPS * HOPS + HOPS + HOPS);
-
-                    // Copy the estimated overlaps
-                    std::ptr::copy_nonoverlapping(
-                        left.as_ptr(),
-                        right.as_mut_ptr(),
-                        HOPS * HOPS + HOPS + HOPS,
-                    );
-                }
-
-                if self.normalize_by_symmetric_laplacian {
-                    let src_degree: F = F::reverse(
-                        1.0 + support.get_unchecked_selfloop_excluded_node_degree_from_node_id(src)
-                            as f32,
-                    );
-                    let dst_degree: F = F::reverse(
-                        1.0 + support.get_unchecked_selfloop_excluded_node_degree_from_node_id(dst)
-                            as f32,
-                    );
-
-                    let degree_sqrt_recip = (src_degree * dst_degree).sqrt().recip();
-
-                    // We iterate over the last HOPS^2 + 2*HOPS elements of the edge feature
-                    // and we normalize them by the symmetric Laplacian
-                    let offset = if self.concatenate_features {
-                        HOPS * HOPS + HOPS + HOPS
-                    } else {
-                        0
-                    };
-
-                    edge_feature[offset..]
-                        .iter_mut()
-                        .for_each(|feature| *feature *= degree_sqrt_recip);
-                }
             });
 
         Ok(())

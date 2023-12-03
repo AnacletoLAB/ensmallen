@@ -7,7 +7,7 @@ use num_traits::{Float, Num, NumCast, ToPrimitive, Zero};
 
 // We make this type fully transparent.
 #[repr(transparent)]
-#[derive(Clone, Copy)]
+#[derive(Clone, Copy, Debug)]
 pub(crate) struct PrimitiveF16 {
     value: f16,
 }
@@ -273,6 +273,13 @@ impl MaxMin for PrimitiveF16 {
     fn get_min(self, other: Self) -> Self {
         Self {
             value: self.value.min(other.value),
+        }
+    }
+
+    #[inline(always)]
+    fn non_zero_positive_min_value() -> Self {
+        Self {
+            value: f16::from_f32(f32::MIN_POSITIVE),
         }
     }
 }

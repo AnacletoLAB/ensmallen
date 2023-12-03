@@ -104,9 +104,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph does not contain node types.
-    pub fn iter_unique_node_type_names(
-        &self,
-    ) -> Result<impl Iterator<Item = String> + '_> {
+    pub fn iter_unique_node_type_names(&self) -> Result<impl Iterator<Item = String> + '_> {
         self.must_have_node_types()
             .map(|node_types| node_types.iter_keys())
     }
@@ -126,9 +124,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph does not contain edge types.
-    pub fn iter_unique_edge_type_names(
-        &self,
-    ) -> Result<impl Iterator<Item = String> + '_> {
+    pub fn iter_unique_edge_type_names(&self) -> Result<impl Iterator<Item = String> + '_> {
         self.must_have_edge_types()
             .map(|edge_types| edge_types.iter_keys())
     }
@@ -2195,5 +2191,18 @@ impl Graph {
                 None
             }
         }))
+    }
+
+    /// Returns indexed parallel iterator over all the graph node id tuples.
+    pub fn par_iter_node_id_tuples(
+        &self,
+    ) -> impl IndexedParallelIterator<Item = (NodeT, NodeT)> + '_ {
+        (0..(self.get_number_of_nodes() * self.get_number_of_nodes()))
+            .into_par_iter()
+            .map(move |edge_tuple_number| {
+                let src = edge_tuple_number / self.get_number_of_nodes();
+                let dst = edge_tuple_number % self.get_number_of_nodes();
+                (src as NodeT, dst as NodeT)
+            })
     }
 }
