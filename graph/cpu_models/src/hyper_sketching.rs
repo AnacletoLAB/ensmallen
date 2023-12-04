@@ -115,8 +115,8 @@ impl<
     /// Creates a new HyperSketching model.
     ///
     /// # Arguments
-    /// * `unbiased`: Option<bool> - Whether to use the unbiased version for the algorithm. By default, false.
     /// * `on_demand`: Option<bool> - Whether to use the on-demand version for the algorithm. By default, false.
+    /// * `unbiased`: Option<bool> - Whether to use the unbiased version for the algorithm. By default, false.
     /// * `exact`: Option<bool> - Whether to use the exact version for the algorithm. By default, false.
     /// * `include_node_types`: Option<bool> - Whether to include the node types in the sketch. By default, false.
     /// * `include_edge_types`: Option<bool> - Whether to include the edge types in the sketch. By default, false.
@@ -134,8 +134,8 @@ impl<
     /// * If the edge ids are requested, but only two HOPs is used, as the edge ids would surely be completely distinct for all edges.
     /// * The data type is not supported. Supported data types are f16, f32 and f64.
     pub fn new(
-        unbiased: Option<bool>,
         on_demand: Option<bool>,
+        unbiased: Option<bool>,
         exact: Option<bool>,
         include_node_types: Option<bool>,
         include_edge_types: Option<bool>,
