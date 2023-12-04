@@ -490,7 +490,7 @@ impl<
                             continue;
                         }
 
-                        if !array[i].insert(neighbour) {
+                        if array[i].insert(neighbour) {
                             temporary_frontier.push(neighbour);
                         }
                     }
