@@ -47,21 +47,6 @@ impl<T: Hash + Eq> MutableSetLike<T> for HashSet<T> {
     }
 }
 
-impl<T: Hash + Eq, P, const BITS: usize> MutableSetLike<T> for HyperLogLog<P, BITS>
-where
-    P: Precision + WordType<BITS>,
-{
-    fn array<const HOPS: usize>() -> [Self; HOPS] {
-        [HyperLogLog::default(); HOPS]
-    }
-
-    fn insert(&mut self, value: T) -> bool {
-        let contained_before = HyperLogLog::may_contain(self, &value);
-        HyperLogLog::insert(self, value);
-        !contained_before
-    }
-}
-
 #[derive(Clone, Deserialize, Serialize)]
 /// Struct implementing Hyper Subgraph Sketching.
 ///
@@ -80,8 +65,6 @@ pub struct HyperSketching<
     counters: Vec<HyperLogLogArray<PRECISION, BITS, HOPS>>,
     /// Whether to use the unbiased version for the algorithm.
     unbiased: bool,
-    /// Whether to use the on-demand version for the algorithm.
-    on_demand: bool,
     /// Whether to use the exact version for the algorithm.
     exact: bool,
     /// Whether to include the node types in the sketch
@@ -115,7 +98,6 @@ impl<
     /// Creates a new HyperSketching model.
     ///
     /// # Arguments
-    /// * `on_demand`: Option<bool> - Whether to use the on-demand version for the algorithm. By default, false.
     /// * `unbiased`: Option<bool> - Whether to use the unbiased version for the algorithm. By default, false.
     /// * `exact`: Option<bool> - Whether to use the exact version for the algorithm. By default, false.
     /// * `include_node_types`: Option<bool> - Whether to include the node types in the sketch. By default, false.
@@ -134,7 +116,6 @@ impl<
     /// * If the edge ids are requested, but only two HOPs is used, as the edge ids would surely be completely distinct for all edges.
     /// * The data type is not supported. Supported data types are f16, f32 and f64.
     pub fn new(
-        on_demand: Option<bool>,
         unbiased: Option<bool>,
         exact: Option<bool>,
         include_node_types: Option<bool>,
@@ -181,28 +162,28 @@ impl<
 
         let unbiased = unbiased.unwrap_or(false);
         let exact = exact.unwrap_or(false);
-        let on_demand = on_demand.unwrap_or_else(|| unbiased || exact);
 
-        if (unbiased || exact) && !on_demand {
-            return Err(concat!(
-                "The unbiased and exact versions of the algorithm ",
-                "can only be used with the on-demand version of the algorithm."
-            )
-            .to_string());
+
+        // The unbiased version is only available for the exact version of the algorithm.
+        if unbiased && !exact {
+            return Err(
+                "The unbiased version is only available for the exact version of the algorithm."
+                    .to_string(),
+            );
         }
-
+        
         // At this time, we do not support the exact or unbiased version of the algorithm
         // that uses the node types, edge types, edge ids or graphlets. The node ids MUST
         // be included, as otherwise the algorithm would not make sense.
 
-        if on_demand
+        if exact
             && (include_node_types.unwrap_or(false)
                 || include_edge_types.unwrap_or(false)
                 || include_edge_ids.unwrap_or(false)
                 || include_typed_graphlets.unwrap_or(false))
         {
             return Err(concat!(
-                "At this time, we do not support the on-demand version of the algorithm ",
+                "At this time, we do not support the exact version of the algorithm ",
                 "that uses the node types, edge types, edge ids or graphlets. ",
                 "The node ids MUST be included, as otherwise the algorithm would not make sense."
             )
@@ -211,7 +192,6 @@ impl<
 
         Ok(Self {
             counters: Vec::new(),
-            on_demand,
             unbiased,
             exact,
             include_node_types: include_node_types.unwrap_or(false),
@@ -229,7 +209,7 @@ impl<
 
     /// Returns whether the model has been trained.
     fn must_be_trained(&self) -> Result<(), String> {
-        if !self.on_demand && self.counters.is_empty() {
+        if !self.exact && self.counters.is_empty() {
             return Err(concat!(
                 "This model has not been trained yet. ",
                 "You should call the `.fit` method first."
@@ -612,19 +592,10 @@ impl<
         edge_iterator
             .zip(features.par_chunks_exact_mut(HOPS * HOPS + HOPS + HOPS))
             .for_each(|((src, dst), edge_feature)| unsafe {
-                let (sketch_overlaps, sketch_src_differences, sketch_dst_differences) = if self
-                    .on_demand
-                {
-                    if self.exact {
-                        self.get_on_demand_edge_sketching_from_edge_node_ids::<F, HashSet<NodeT>>(
-                            src, dst, support,
-                        )
-                    } else {
-                        self.get_on_demand_edge_sketching_from_edge_node_ids::<
-                                F,
-                                HyperLogLog<PRECISION, BITS>,
-                            >(src, dst, support)
-                    }
+                let (sketch_overlaps, sketch_src_differences, sketch_dst_differences) = if self.exact {
+                    self.get_on_demand_edge_sketching_from_edge_node_ids::<F, HashSet<NodeT>>(
+                        src, dst, support,
+                    )
                 } else {
                     self.get_subgraph_sketch_from_node_ids_unchecked(src as usize, dst as usize)
                 };
