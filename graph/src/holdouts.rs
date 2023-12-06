@@ -1730,14 +1730,12 @@ impl Graph {
         train_node_indices.into_iter().for_each(|node_id| unsafe {
             train_node_types[node_id as usize] = self
                 .get_unchecked_node_type_ids_from_node_id(node_id)
-                .map(|x| x.clone())
         });
         // For the test node types
         let mut test_node_types = vec![None; self.get_number_of_nodes() as usize];
         test_node_indices.into_iter().for_each(|node_id| unsafe {
             test_node_types[node_id as usize] = self
                 .get_unchecked_node_type_ids_from_node_id(node_id)
-                .map(|x| x.clone())
         });
 
         Ok((

@@ -617,7 +617,13 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<()>
             assert!(graph
                 .iter_edge_node_ids_and_edge_type_id(true)
                 .any(|(_, _, _, edge_type)| edge_type.is_none()));
-            assert!(graph.get_directed_edge_ids_with_unknown_edge_types().unwrap().len() > 0);
+            assert!(
+                graph
+                    .get_directed_edge_ids_with_unknown_edge_types()
+                    .unwrap()
+                    .len()
+                    > 0
+            );
         }
         if graph.has_known_edge_types().unwrap() {
             assert!(
@@ -633,7 +639,13 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<()>
                 graph.get_number_of_directed_edges(),
                 graph.get_number_of_known_edge_types().unwrap()
             );
-            assert!(graph.get_directed_edge_ids_with_known_edge_types().unwrap().len() > 0);
+            assert!(
+                graph
+                    .get_directed_edge_ids_with_known_edge_types()
+                    .unwrap()
+                    .len()
+                    > 0
+            );
         }
     }
 
@@ -1015,7 +1027,9 @@ pub fn test_node_centralities(graph: &mut Graph, verbose: Option<bool>) -> Resul
         );
     }
 
-    let node_betweenness_centralities = graph.get_betweenness_centrality(None, None, verbose).unwrap();
+    let node_betweenness_centralities = graph
+        .get_betweenness_centrality(None, None, verbose)
+        .unwrap();
     assert_eq!(
         node_betweenness_centralities.len(),
         graph.get_number_of_nodes() as usize
@@ -1199,7 +1213,8 @@ pub fn test_polygons(graph: &mut Graph, verbose: Option<bool>) -> Result<()> {
             .get_number_of_triangles_per_node(None, None, verbose)
             .unwrap()
             .into_iter()
-            .sum::<EdgeT>() / 3,
+            .sum::<EdgeT>()
+            / 3,
         graph.get_number_of_triangles(None, None, None).unwrap()
     );
     Ok(())
@@ -1672,8 +1687,7 @@ pub fn test_remove_components(graph: &mut Graph, verbose: Option<bool>) -> Resul
                 .is_ok());
         }
         if graph.has_unknown_node_types()? {
-            let without_unknowns =
-                graph.remove_components(None, Some(&[None]), None, None, None);
+            let without_unknowns = graph.remove_components(None, Some(&[None]), None, None, None);
             assert!(
                 without_unknowns.is_ok(),
                 "Could not remove components without node type None.\nThe error is {:?}\nThe graph report is {:?}",
@@ -1884,7 +1898,7 @@ pub fn test_embiggen_preprocessing(graph: &mut Graph, _verbose: Option<bool>) ->
     if graph.has_edges() {
         graph
             .par_iter_attributed_edge_prediction_mini_batch(
-                0, 256, true, true, true, true, false, None, None, None, None, None, None,
+                0, 256, true, true, true, false, None, None, None, None, None, None,
             )
             .unwrap()
             .collect::<Vec<_>>();

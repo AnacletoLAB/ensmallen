@@ -17,7 +17,7 @@ pub struct ParallelLines<'a> {
 
 impl<'a> ParallelLines<'a> {
     pub fn new(path: &str) -> Result<ParallelLines> {
-        match File::open(path.clone()) {
+        match File::open(path) {
             Ok(_) => Ok(()),
             Err(_) => Err(format!("Cannot open file {}", path)),
         }?;
@@ -31,7 +31,7 @@ impl<'a> ParallelLines<'a> {
     }
 
     pub fn with_capacity(path: &str, number_of_lines: usize) -> Result<ParallelLines> {
-        match File::open(path.clone()) {
+        match File::open(path) {
             Ok(_) => Ok(()),
             Err(_) => Err(format!("Cannot open file {}", path)),
         }?;
@@ -60,7 +60,7 @@ impl<'a> ParallelIterator for ParallelLines<'a> {
     where
         C: rayon::iter::plumbing::UnindexedConsumer<Self::Item>,
     {
-        let file = File::open(self.path.clone()).unwrap();
+        let file = File::open(self.path).unwrap();
 
         let file_len = file.metadata().unwrap().len();
         let mut buff_reader = BufReader::with_capacity(READER_CAPACITY, file);
@@ -149,7 +149,7 @@ impl<'a> UnindexedProducer for ParallelLinesProducer<'a> {
         let mid = (self.max - pos) / 2 + pos;
         // Create a new file pointer
         let mut new_file_ptr =
-            BufReader::with_capacity(READER_CAPACITY, File::open(self.path.clone()).unwrap());
+            BufReader::with_capacity(READER_CAPACITY, File::open(self.path).unwrap());
         // skip to the guessed position
         new_file_ptr.seek(SeekFrom::Start(mid)).unwrap();
         // get to the next line start

@@ -1,4 +1,4 @@
-use graph::{Graph, NodeT};
+use graph::{EdgeT, Graph, NodeT};
 use num_traits::{AsPrimitive, Float, One};
 use rayon::prelude::*;
 use serde::{Deserialize, Serialize};
@@ -78,6 +78,7 @@ impl GraphConvolution {
     /// * `node_features`: &[F1] - The node features to convolve.
     /// * `dimensionality`: usize - The dimensionality of the node features.
     /// * `convolved_node_features`: &mut [F2] - The memory area where to store the convolved node features.
+    /// * `edge_ids_mask`: Option<&[EdgeT]> - Optional vector of edge ids to mask the convolutions.
     ///
     /// # Raises
     /// * If the provided node features slice has a length different than the number of nodes in the support.
@@ -92,6 +93,7 @@ impl GraphConvolution {
         node_features: &[F1],
         dimensionality: usize,
         convolved_node_features: &mut [F2],
+        edge_ids_mask: Option<&[EdgeT]>,
     ) -> Result<(), String> {
         // Check whether the provided node features is divisible exactly by the provided dimensionality.
         if node_features.len() % dimensionality != 0 {
@@ -118,6 +120,34 @@ impl GraphConvolution {
                 support.get_number_of_nodes()
             ));
         }
+
+        let mut sorted_edge_ids_mask = edge_ids_mask;
+
+        // If the edge IDS mask is provided, we make sure that the provided edge ids are sorted.
+        // If they are not, we populate a vector with the sorted edge ids, and update the reference
+        // to the edge ids mask to point to the newly created vector. This is done to avoid
+        // duplicating the memory area of the edge ids mask when it is already sorted.
+        let sorted_edge_ids = edge_ids_mask.and_then(|edge_ids_mask| {
+            if edge_ids_mask.is_sorted() {
+                None
+            } else {
+                let mut sorted_edge_ids_vec: Vec<EdgeT> = edge_ids_mask.to_vec();
+                sorted_edge_ids_vec.par_sort_unstable();
+                Some(sorted_edge_ids_vec)
+            }
+        });
+
+        if sorted_edge_ids.is_some() {
+            sorted_edge_ids_mask = sorted_edge_ids.as_deref();
+        }
+
+        // We allocate a vector of counters per thread to keep track of their position in the
+        // edge ids mask. The convolution is executed in parallel, and in order of the edge ids,
+        // so by having the edge ids mask sorted, we can avoid having to iterate over the whole
+        // edge ids mask for each thread for each edge.
+        let mut counters: Vec<usize> = vec![0; rayon::current_num_threads()];
+        let edge_ids_mask_counters: SyncUnsafeCell<&mut [usize]> =
+            SyncUnsafeCell::new(counters.as_mut());
 
         // The user may choose to concatenate the features obtained at all the different
         // convolution steps. We need to check that the provided convolved node features
@@ -222,12 +252,26 @@ impl GraphConvolution {
             let convolved_node_features = SyncUnsafeCell::new(convolved_node_features);
 
             (0..self.number_of_convolutions).for_each(|convolution_number| {
+                // We reset the edge_ids_mask_counters.
+                unsafe {
+                    (*edge_ids_mask_counters.get())
+                        .iter_mut()
+                        .for_each(|counter| {
+                            *counter = 0;
+                        });
+                }
+
                 unsafe {
                     (*convolved_node_features.get())
                         .par_chunks_exact_mut(convolved_node_features_row_size)
                 }
                 .enumerate()
                 .for_each(|(node_id, convoluted_row)| {
+                    // We retrieve the thread id for the current thread.
+                    let thread_id = rayon::current_thread_index().unwrap();
+                    let edge_id_counter: &mut usize =
+                        unsafe { (*edge_ids_mask_counters.get()).get_unchecked_mut(thread_id) };
+
                     // First of all, we copy the previously computed convolved node features into the
                     // next convolution memory area.
                     unsafe {
@@ -254,9 +298,23 @@ impl GraphConvolution {
                     unsafe {
                         support
                             .iter_unchecked_neighbour_node_ids_from_source_node_id(node_id as NodeT)
+                            .zip(
+                                support
+                                    .iter_unchecked_edge_ids_from_source_node_id(node_id as NodeT),
+                            )
                     }
-                    .filter(|&dst| dst != node_id as NodeT)
-                    .for_each(|dst| {
+                    .filter(|&(dst, edge_id)| {
+                        dst != node_id as NodeT
+                            && sorted_edge_ids_mask.map_or(true, |sorted_edge_ids_mask| {
+                                while edge_id as u64 > sorted_edge_ids_mask[*edge_id_counter]
+                                    && *edge_id_counter < sorted_edge_ids_mask.len() - 1
+                                {
+                                    *edge_id_counter += 1;
+                                }
+                                edge_id as u64 != sorted_edge_ids_mask[*edge_id_counter]
+                            })
+                    })
+                    .for_each(|(dst, _)| {
                         let dst_feature_row: &[F2] = unsafe {
                             &(*convolved_node_features.get())[(dst as usize)
                                 * convolved_node_features_row_size
@@ -324,11 +382,25 @@ impl GraphConvolution {
                 temporary_convolved_node_features.as_mut();
 
             (0..self.number_of_convolutions).for_each(|_| {
+                // We reset the edge_ids_mask_counters.
+                unsafe {
+                    (*edge_ids_mask_counters.get())
+                        .iter_mut()
+                        .for_each(|counter| {
+                            *counter = 0;
+                        });
+                }
+
                 convolved_node_features_ref
                     .par_chunks_exact_mut(dimensionality)
                     .zip(temporary_convolved_node_features_ref.par_chunks_exact(dimensionality))
                     .enumerate()
                     .for_each(|(node_id, (convoluted_row, temporary_convoluted_row))| {
+                        // We retrieve the thread id for the current thread.
+                        let thread_id = rayon::current_thread_index().unwrap();
+                        let edge_id_counter: &mut usize =
+                            unsafe { (*edge_ids_mask_counters.get()).get_unchecked_mut(thread_id) };
+
                         // First of all, we copy the previously computed convolved node features into the
                         // next convolution memory area.
                         unsafe {
@@ -344,12 +416,28 @@ impl GraphConvolution {
 
                         // Next, we sum to this memory area the features of the neighbours.
                         unsafe {
-                            support.iter_unchecked_neighbour_node_ids_from_source_node_id(
-                                node_id as NodeT,
-                            )
+                            support
+                                .iter_unchecked_neighbour_node_ids_from_source_node_id(
+                                    node_id as NodeT,
+                                )
+                                .zip(
+                                    support.iter_unchecked_edge_ids_from_source_node_id(
+                                        node_id as NodeT,
+                                    ),
+                                )
                         }
-                        .filter(|&dst| dst != node_id as NodeT)
-                        .for_each(|dst| {
+                        .filter(|&(dst, edge_id)| {
+                            (dst != node_id as NodeT)
+                                && sorted_edge_ids_mask.map_or(true, |sorted_edge_ids_mask| {
+                                    while edge_id as u64 > sorted_edge_ids_mask[*edge_id_counter]
+                                        && *edge_id_counter < sorted_edge_ids_mask.len() - 1
+                                    {
+                                        *edge_id_counter += 1;
+                                    }
+                                    edge_id as u64 != sorted_edge_ids_mask[*edge_id_counter]
+                                })
+                        })
+                        .for_each(|(dst, _)| {
                             let dst_feature_row: &[F2] = &temporary_convolved_node_features_ref[(dst
                                 as usize)
                                 * convolved_node_features_row_size

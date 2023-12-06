@@ -69,13 +69,25 @@ impl GraphConvolution {
         support: &Graph,
         node_features: &PyArray2<F1>,
         path: Option<&str>,
+        edge_ids_mask: Option<&PyArray1<EdgeT>>,
     ) -> PyResult<Py<PyAny>> {
         let gil = Python::acquire_gil();
         if !node_features.is_c_contiguous() {
             return pe!(Err(concat!(
-                "The provided node features is not a contiguos vector in ",
-                "C orientation."
+                "The provided node features is not a contiguos matrix in ",
+                "C orientation. Most likely you want to call np.ascontiguousarray ",
+                "to ensure that the matrix is in C orientation.",
             )));
+        }
+
+        if let Some(edge_ids_mask) = edge_ids_mask {
+            if !edge_ids_mask.is_c_contiguous() {
+                return pe!(Err(concat!(
+                    "The provided edge ids mask is not a contiguos vector in ",
+                    "C orientation. Most likely you want to call np.ascontiguousarray ",
+                    "to ensure that the vector is in C orientation.",
+                )));
+            }
         }
 
         let dimensionality = node_features.shape()[1];
@@ -99,6 +111,10 @@ impl GraphConvolution {
         );
 
         let node_features_ref = unsafe { node_features.as_slice()? };
+        let edge_ids_mask_ref = match edge_ids_mask {
+            Some(edge_ids_mask) => Some(unsafe { edge_ids_mask.as_slice()? }),
+            None => None,
+        };
         match data_type {
             Dtype::F16 => {
                 let convoluted_features_array =
@@ -109,6 +125,7 @@ impl GraphConvolution {
                     node_features_ref,
                     dimensionality,
                     convoluted_features_ref,
+                    edge_ids_mask_ref
                 ))?;
             }
             Dtype::F32 => {
@@ -120,6 +137,7 @@ impl GraphConvolution {
                     node_features_ref,
                     dimensionality,
                     convoluted_features_ref,
+                    edge_ids_mask_ref
                 ))?;
             }
             Dtype::F64 => {
@@ -131,6 +149,7 @@ impl GraphConvolution {
                     node_features_ref,
                     dimensionality,
                     convoluted_features_ref,
+                    edge_ids_mask_ref
                 ))?;
             }
             this_type => {
@@ -163,7 +182,7 @@ impl GraphConvolution {
         self.inner.get_number_of_convolutions()
     }
 
-    #[pyo3(text_signature = "($self, support, node_features, path)")]
+    #[pyo3(text_signature = "($self, support, node_features, path, edge_ids_mask)")]
     /// Returns the convolved features.
     ///
     /// Parameters
@@ -172,8 +191,10 @@ impl GraphConvolution {
     ///     The graph whose topology is to be learned.
     /// node_features: np.ndarray
     ///     The node features.
-    /// path: Option<&str>
+    /// path: Option[str]
     ///     The path where to mmap to the convolved features.
+    /// edge_ids_mask: Optional[np.ndarray]
+    ///     Optional vector of edge ids to mask the convolutions.
     ///
     /// Raises
     /// ------------------------
@@ -185,32 +206,33 @@ impl GraphConvolution {
         support: &Graph,
         node_features: Py<PyAny>,
         path: Option<&str>,
+        edge_ids_mask: Option<&PyArray1<EdgeT>>,
     ) -> PyResult<Py<PyAny>> {
         let gil = Python::acquire_gil();
 
         let node_features = node_features.as_ref(gil.python());
         if let Ok(node_features) = <&PyArray2<f16>>::extract(&node_features) {
-            self._transform::<f16>(support, node_features, path)
+            self._transform::<f16>(support, node_features, path, edge_ids_mask)
         } else if let Ok(node_features) = <&PyArray2<f32>>::extract(&node_features) {
-            self._transform::<f32>(support, node_features, path)
+            self._transform::<f32>(support, node_features, path, edge_ids_mask)
         } else if let Ok(node_features) = <&PyArray2<f64>>::extract(&node_features) {
-            self._transform::<f64>(support, node_features, path)
+            self._transform::<f64>(support, node_features, path, edge_ids_mask)
         } else if let Ok(node_features) = <&PyArray2<u8>>::extract(&node_features) {
-            self._transform::<u8>(support, node_features, path)
+            self._transform::<u8>(support, node_features, path, edge_ids_mask)
         } else if let Ok(node_features) = <&PyArray2<u16>>::extract(&node_features) {
-            self._transform::<u16>(support, node_features, path)
+            self._transform::<u16>(support, node_features, path, edge_ids_mask)
         } else if let Ok(node_features) = <&PyArray2<u32>>::extract(&node_features) {
-            self._transform::<u32>(support, node_features, path)
+            self._transform::<u32>(support, node_features, path, edge_ids_mask)
         } else if let Ok(node_features) = <&PyArray2<u64>>::extract(&node_features) {
-            self._transform::<u64>(support, node_features, path)
+            self._transform::<u64>(support, node_features, path, edge_ids_mask)
         } else if let Ok(node_features) = <&PyArray2<i8>>::extract(&node_features) {
-            self._transform::<i8>(support, node_features, path)
+            self._transform::<i8>(support, node_features, path, edge_ids_mask)
         } else if let Ok(node_features) = <&PyArray2<i16>>::extract(&node_features) {
-            self._transform::<i16>(support, node_features, path)
+            self._transform::<i16>(support, node_features, path, edge_ids_mask)
         } else if let Ok(node_features) = <&PyArray2<i32>>::extract(&node_features) {
-            self._transform::<i32>(support, node_features, path)
+            self._transform::<i32>(support, node_features, path, edge_ids_mask)
         } else if let Ok(node_features) = <&PyArray2<i64>>::extract(&node_features) {
-            self._transform::<i64>(support, node_features, path)
+            self._transform::<i64>(support, node_features, path, edge_ids_mask)
         } else {
             pe!(Err(concat!(
                 "The provided node features are not a supported type. ",

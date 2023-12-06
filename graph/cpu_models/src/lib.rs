@@ -1,6 +1,7 @@
 #![feature(impl_trait_in_assoc_type)]
 #![feature(adt_const_params)]
 #![feature(atomic_from_mut)]
+#![feature(is_sorted)]
 #![feature(sync_unsafe_cell)]
 #![feature(associated_type_defaults)]
 #![feature(associated_type_bounds)]

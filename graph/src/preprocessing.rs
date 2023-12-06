@@ -279,7 +279,6 @@ impl Graph {
     /// # Arguments
     /// * `random_state`: u64 - Random state of the batch to generate.
     /// * `batch_size`: usize - The maximal size of the batch to generate,
-    /// * `return_edge_ids`: bool - Whether to return the edge IDs.
     /// * `return_node_types`: bool - Whether to return the source and destination nodes node types.
     /// * `return_edge_types`: bool - Whether to return the edge types.
     /// * `return_edge_metrics`: bool - Whether to return the edge metrics available for both positive and negative edges.
@@ -302,7 +301,6 @@ impl Graph {
         &'a self,
         random_state: u64,
         batch_size: usize,
-        return_edge_ids: bool,
         return_node_types: bool,
         return_edge_types: bool,
         return_edge_metrics: bool,

@@ -501,7 +501,6 @@ impl Graph {
         let par_iter = pe!(self.inner.par_iter_attributed_edge_prediction_mini_batch(
             random_state,
             batch_size,
-            return_edge_ids,
             return_node_types,
             return_edge_types,
             return_edge_metrics,
