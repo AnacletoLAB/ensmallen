@@ -197,12 +197,16 @@ impl GraphConvolution {
                         .iter()
                         .take(dimensionality)
                         .fold(F2::zero(), |acc, x| acc + x.powi(2))
-                        .sqrt();
+                        .sqrt()
+                        .max(F2::epsilon());
 
                     // We normalize the convolved node features by the degree.
-                    convoluted_row.iter_mut().take(dimensionality).for_each(|node_feature| {
-                        *node_feature /= norm;
-                    });
+                    convoluted_row
+                        .iter_mut()
+                        .take(dimensionality)
+                        .for_each(|node_feature| {
+                            *node_feature /= norm;
+                        });
                 });
         }
 
@@ -294,7 +298,8 @@ impl GraphConvolution {
                             .iter()
                             .skip(dimensionality * (convolution_number + 1))
                             .fold(F2::zero(), |acc, x| acc + x.powi(2))
-                            .sqrt().min(F2::epsilon());
+                            .sqrt()
+                            .max(F2::epsilon());
 
                         // We normalize the convolved node features by the degree.
                         convoluted_row
@@ -375,7 +380,8 @@ impl GraphConvolution {
                             let norm = convoluted_row
                                 .iter()
                                 .fold(F2::zero(), |acc, x| acc + x.powi(2))
-                                .sqrt().min(F2::epsilon());
+                                .sqrt()
+                                .max(F2::epsilon());
 
                             // We normalize the convolved node features by the degree.
                             convoluted_row.iter_mut().for_each(|node_feature| {

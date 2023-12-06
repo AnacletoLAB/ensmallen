@@ -279,6 +279,7 @@ impl Graph {
     /// # Arguments
     /// * `random_state`: u64 - Random state of the batch to generate.
     /// * `batch_size`: usize - The maximal size of the batch to generate,
+    /// * `return_edge_ids`: bool - Whether to return the edge IDs.
     /// * `return_node_types`: bool - Whether to return the source and destination nodes node types.
     /// * `return_edge_types`: bool - Whether to return the edge types.
     /// * `return_edge_metrics`: bool - Whether to return the edge metrics available for both positive and negative edges.
@@ -301,6 +302,7 @@ impl Graph {
         &'a self,
         random_state: u64,
         batch_size: usize,
+        return_edge_ids: bool,
         return_node_types: bool,
         return_edge_types: bool,
         return_edge_metrics: bool,
@@ -314,6 +316,7 @@ impl Graph {
     ) -> Result<
         impl IndexedParallelIterator<
                 Item = (
+                    Option<EdgeT>,
                     NodeT,
                     Option<Vec<NodeTypeT>>,
                     NodeT,
@@ -350,6 +353,7 @@ impl Graph {
             )?
             .map(move |(edge_id, src, dst, label)| {
                 (
+                    edge_id,
                     src,
                     if return_node_types {
                         unsafe { self.get_unchecked_edge_prediction_node_type_ids(src) }

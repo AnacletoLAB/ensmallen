@@ -425,7 +425,7 @@ impl Graph {
     }
 
     #[pyo3(
-        text_signature = "($self, random_state, batch_size, return_node_types, return_edge_types, return_edge_metrics, sample_only_edges_with_heterogeneous_node_types, negative_samples_rate, avoid_false_negatives, maximal_sampling_attempts, shuffle, use_scale_free_distribution, graph_to_avoid)"
+        text_signature = "($self, random_state, batch_size, return_edge_ids, return_node_types, return_edge_types, return_edge_metrics, sample_only_edges_with_heterogeneous_node_types, negative_samples_rate, avoid_false_negatives, maximal_sampling_attempts, shuffle, use_scale_free_distribution, graph_to_avoid)"
     )]
     /// Returns n-ple with index to build numpy array, source node, source node type, destination node, destination node type, edge type and whether this edge is real or artificial.
     ///
@@ -435,6 +435,8 @@ impl Graph {
     ///     The index of the batch to generate, behaves like a random random_state,
     /// batch_size: int
     ///     The maximal size of the batch to generate,
+    /// return_edge_ids: bool
+    ///     Whether to return the edge ids.
     /// return_node_types: bool
     ///     Whether to return the source and destination nodes node types.
     /// return_edge_types: bool
@@ -470,6 +472,7 @@ impl Graph {
         &self,
         random_state: u64,
         batch_size: usize,
+        return_edge_ids: bool,
         return_node_types: bool,
         return_edge_types: bool,
         return_edge_metrics: bool,
@@ -481,6 +484,7 @@ impl Graph {
         support: Option<&Graph>,
         graph_to_avoid: Option<&Graph>,
     ) -> PyResult<(
+        Option<Py<PyArray1<EdgeT>>>,
         Py<PyArray1<NodeT>>,
         Option<Py<PyArray2<NodeTypeT>>>,
         Py<PyArray1<NodeT>>,
@@ -497,6 +501,7 @@ impl Graph {
         let par_iter = pe!(self.inner.par_iter_attributed_edge_prediction_mini_batch(
             random_state,
             batch_size,
+            return_edge_ids,
             return_node_types,
             return_edge_types,
             return_edge_metrics,
@@ -509,6 +514,13 @@ impl Graph {
             graph_to_avoid,
         ))?;
 
+        let edge_ids = if return_edge_ids {
+            Some(ThreadDataRaceAware {
+                t: unsafe { PyArray1::new(gil.python(), [batch_size], false) },
+            })
+        } else {
+            None
+        };
         let srcs = ThreadDataRaceAware {
             t: unsafe { PyArray1::new(gil.python(), [batch_size], false) },
         };
@@ -552,9 +564,24 @@ impl Graph {
 
         unsafe {
             par_iter.enumerate().for_each(
-                |(i, (src, src_node_type, dst, dst_node_type, edge_type, edge_features, label))| {
+                |(
+                    i,
+                    (
+                        edge_id,
+                        src,
+                        src_node_type,
+                        dst,
+                        dst_node_type,
+                        edge_type,
+                        edge_features,
+                        label,
+                    ),
+                )| {
                     *(dsts.t.uget_mut([i])) = src;
                     *(srcs.t.uget_mut([i])) = dst;
+                    if let Some(edge_ids) = edge_ids.as_ref() {
+                        *(edge_ids.t.uget_mut([i])) = edge_id.unwrap_or(EdgeT::MAX);
+                    }
                     if let (Some(src_node_type_ids), Some(dst_node_type_ids)) =
                         (src_node_type_ids.as_ref(), dst_node_type_ids.as_ref())
                     {
@@ -585,6 +612,7 @@ impl Graph {
         }
 
         Ok((
+            edge_ids.map(|x| x.t.to_owned()),
             srcs.t.to_owned(),
             src_node_type_ids.map(|x| x.t.to_owned()),
             dsts.t.to_owned(),
