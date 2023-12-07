@@ -6,7 +6,10 @@ from environments_utils import is_x86_64, is_arm, is_macos_rosetta, get_macos_av
 
 if is_x86_64():
     if is_macos_rosetta():
-        available_flags = set(get_macos_available_instructions())
+        available_flags = set([
+            flag.lower()
+            for flag in get_macos_available_instructions()
+        ])
         FLAGS_WARNING_MESSAGE = (
             " Please be advised that you are currently executing ensmallen within "
             "the Rosetta Translation Environment. This means that the performance "
@@ -17,7 +20,10 @@ if is_x86_64():
         try:
             import cpuinfo
             FLAGS_WARNING_MESSAGE = ""
-            available_flags = set(cpuinfo.get_cpu_info().get("flags", []))
+            available_flags = set([
+                flag.lower()
+                for flag in cpuinfo.get_cpu_info().get("flags", [])
+            ])
             del cpuinfo
         except Exception as exception: # pylint: disable=broad-except
             FLAGS_WARNING_MESSAGE = (
@@ -87,6 +93,7 @@ if is_x86_64():
                     f"On the current machine, the flags '{unavailable_flags}' are not available.\n"
                     "This library was compiled assuming that the following instruction "
                     f"sets are available: {REQUIRED_FLAGS}\n"
+                    f"The set of available flags is: {available_flags}\n"
                     "You can solve this issue by manually compiling ensmallen tailoring"
                     " it to your hardware following the guides on our Github repository."
                     " Ensmallen has no strict dependancy on any flag or cpu_arch as it "
