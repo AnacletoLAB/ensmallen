@@ -5,10 +5,10 @@ use pyo3::prelude::*;
 use pyo3::types::PyDict;
 use std::collections::{HashMap, HashSet};
 
-use graph::{EdgeT, EdgeTypeT, NodeT, NodeTypeT, Result, WeightT};
+pub use graph::{EdgeT, EdgeTypeT, NodeT, NodeTypeT, Result, WeightT};
 use tags::*;
 
-pub(crate) mod mmap_numpy_npy;
+pub mod mmap_numpy_npy;
 
 mod from_pd;
 
@@ -73,6 +73,7 @@ mod weighted_spine;
 pub(crate) use weighted_spine::*;
 mod walks;
 
+#[cfg(feature = "register_pymodule")]
 #[pymodule]
 pub fn ensmallen(py: Python, m: &PyModule) -> PyResult<()> {
     register_ensmallen(py, m)?;

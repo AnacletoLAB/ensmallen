@@ -10,6 +10,12 @@ use std::collections::HashMap;
 /// * `/get_(.+?)_from_(.+)/`
 /// * `/get_(.+?)_from_(.+)_unchecked/`
 impl Graph {
+    pub fn get_unchecked_neighbours_node_ids_from_src_node_id(&self, node_id: NodeT) -> &[NodeT] {
+        unsafe {
+            self.edges
+                .get_unchecked_neighbours_node_ids_from_src_node_id(node_id)
+        }
+    }
     #[no_inverse_method]
     /// Returns option with the weight of the given edge id.
     ///

@@ -10,11 +10,15 @@ authors = [
 
 [lib]
 name = "ensmallen"
-crate-type = ["cdylib"]
+crate-type = ["cdylib", "rlib"]
 
 [dependencies.pyo3]
 version = "0.16"
 features = ["extension-module", "abi3", "abi3-py37", "macros", "multiple-pymethods"]
+
+[features]
+default = ["register_pymodule"]
+register_pymodule = []
 
 [dependencies]
 env_logger = "0.8.1"
