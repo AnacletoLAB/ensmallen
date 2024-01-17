@@ -1,4 +1,5 @@
 #![feature(adt_const_params)]
+#![feature(impl_trait_in_assoc_type)]
 use numpy::{PyArray, PyArray1, PyArray2, PyArray3, PyArray4};
 use pyo3::exceptions::{PyAttributeError, PyTypeError, PyValueError};
 use pyo3::prelude::*;
@@ -31,9 +32,6 @@ pub(crate) use hyper_jaccard::*;
 
 mod hyper_sketching;
 pub(crate) use hyper_sketching::*;
-
-mod distance_node_label_prediction_perceptron;
-pub(crate) use distance_node_label_prediction_perceptron::*;
 
 mod dag_resnik;
 pub use dag_resnik::*;
@@ -102,7 +100,6 @@ pub fn register_models(_py: Python, _m: &PyModule) -> PyResult<()> {
     _m.add_class::<WeightedSPINE>()?;
     _m.add_class::<EdgePredictionPerceptron>()?;
     _m.add_class::<NodeLabelPredictionPerceptron>()?;
-    _m.add_class::<DistanceNodeLabelPredictionPerceptron>()?;
     _m.add_class::<DAGResnik>()?;
     _m.add_class::<HyperJaccard>()?;
     _m.add_class::<HyperSketching>()?;

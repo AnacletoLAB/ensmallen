@@ -1557,6 +1557,13 @@ impl Graph {
         })
     }
 
+    pub fn get_unchecked_neighbours_node_ids_from_src_node_id(&self, node_id: NodeT) -> &[NodeT] {
+        unsafe {
+            self.edges
+                .get_unchecked_neighbours_node_ids_from_src_node_id(node_id)
+        }
+    }
+
     /// Return vector of destinations for the given source node name.
     ///
     /// # Arguments
@@ -2361,7 +2368,9 @@ impl Graph {
     ) -> Result<HashMap<String, u32>> {
         let number_of_node_types = self.get_number_of_node_types()?;
         self.get_heterogeneous_graphlet_ids_from_edge_node_ids(src, dst)
-            .map(|graphlet| graphlet.to_graphlet_names::<ReducedGraphletType, NodeTypeT>(number_of_node_types))
+            .map(|graphlet| {
+                graphlet.to_graphlet_names::<ReducedGraphletType, NodeTypeT>(number_of_node_types)
+            })
     }
 
     pub fn get_heterogeneous_graphlet_names_from_edge_node_names(
