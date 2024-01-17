@@ -1563,13 +1563,6 @@ impl Graph {
         })
     }
 
-    pub fn get_unchecked_neighbours_node_ids_from_src_node_id(&self, node_id: NodeT) -> &[NodeT] {
-        unsafe {
-            self.edges
-                .get_unchecked_neighbours_node_ids_from_src_node_id(node_id)
-        }
-    }
-
     /// Return vector of destinations for the given source node name.
     ///
     /// # Arguments
