@@ -1,4 +1,3 @@
-use half::f16;
 use numpy::npyffi::NPY_TYPES;
 use std::convert::TryFrom;
 
@@ -11,7 +10,6 @@ pub enum Dtype {
     U16,
     I32,
     U32,
-    F16,
     F32,
     I64,
     U64,
@@ -28,7 +26,6 @@ impl ToString for Dtype {
             Dtype::U16 => "u16",
             Dtype::I32 => "i32",
             Dtype::U32 => "u32",
-            Dtype::F16 => "f16",
             Dtype::F32 => "f32",
             Dtype::I64 => "i64",
             Dtype::U64 => "u64",
@@ -50,7 +47,6 @@ impl TryFrom<&str> for Dtype {
             "u16" => Dtype::U16,
             "i32" => Dtype::I32,
             "u32" => Dtype::U32,
-            "f16" => Dtype::F16,
             "f32" => Dtype::F32,
             "i64" => Dtype::I64,
             "u64" => Dtype::U64,
@@ -78,7 +74,6 @@ impl TryFrom<NPY_TYPES> for Dtype {
             NPY_USHORT => Dtype::U16,
             NPY_INT => Dtype::I32,
             NPY_UINT => Dtype::U32,
-            NPY_HALF => Dtype::F16,
             NPY_FLOAT => Dtype::F32,
             NPY_LONGLONG => Dtype::I64,
             NPY_ULONGLONG => Dtype::U64,
@@ -104,7 +99,6 @@ impl Into<NPY_TYPES> for Dtype {
             Dtype::U16 => NPY_USHORT,
             Dtype::I32 => NPY_INT,
             Dtype::U32 => NPY_UINT,
-            Dtype::F16 => NPY_HALF,
             Dtype::F32 => NPY_FLOAT,
             Dtype::I64 => NPY_LONGLONG,
             Dtype::U64 => NPY_ULONGLONG,
@@ -135,7 +129,6 @@ impl_to_numpy_dtype! {
     i32 => I32,
     u64 => U64,
     i64 => I64,
-    f16 => F16,
     f32 => F32,
     f64 => F64
 }

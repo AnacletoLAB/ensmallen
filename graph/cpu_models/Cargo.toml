@@ -21,5 +21,4 @@ hyperloglog-rs = {version="0.1.51", features=["std"]}
 heterogeneous_graphlets = {git = "https://github.com/LucaCappelletti94/heterogeneous_graphlets"}
 num-traits = {git="https://github.com/zommiommy/num-traits.git", features=["atomic_from_mut"]}
 parallel_frontier = {git="https://github.com/zommiommy/parallel_frontier"}
-file_progress = {git="https://github.com/LucaCappelletti94/rust_file_progress.git"}
-half = {git="https://github.com/LucaCappelletti94/half-rs.git", features=["use-intrinsics", "num-traits"]}
+half = {version = "2.4", features = ["use-intrinsics", "num-traits"]}

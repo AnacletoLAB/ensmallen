@@ -1,10 +1,8 @@
 use super::*;
 use crate::mmap_numpy_npy::create_memory_mapped_numpy_array;
 use crate::mmap_numpy_npy::Dtype;
-use crate::primitive_f16::PrimitiveF16;
 use cpu_models::HyperSketching as HS;
 use cpu_models::MatrixShape;
-use half::f16;
 use hyperloglog_rs::prelude::*;
 use num_traits::Float;
 use rayon::prelude::*;
@@ -332,7 +330,7 @@ impl InnerModel {
     ///     By default, `false`.
     /// dtype: Option<String>
     ///     The data type to be employed, by default f32.
-    ///     The supported values are f16, f32 and f64.
+    ///     The supported values are f32 and f64.
     ///
     /// Raises
     /// ------------------------
@@ -6101,32 +6099,6 @@ impl InnerModel {
             MatrixShape::BiDimensional(edge_iterator.len(), self.get_number_of_features());
 
         match self.get_dtype() {
-            "f16" => {
-                let edge_features = create_memory_mapped_numpy_array(
-                    gil.python(),
-                    edge_features_path,
-                    Dtype::F16,
-                    &<MatrixShape as Into<Vec<isize>>>::into(edge_feature_shape),
-                    false,
-                );
-
-                let array = edge_features.cast_as::<PyArray2<f16>>(gil.python())?;
-                let edge_features_ref = unsafe { array.as_slice_mut()? };
-
-                let edge_features_ref = unsafe {
-                    core::mem::transmute::<&mut [f16], &mut [PrimitiveF16]>(edge_features_ref)
-                };
-
-                // We always use the racing version of the fit transfor
-                // as we generally do not care about memory collisions.
-                pe!(self.compute_sketching_from_iterator::<I, PrimitiveF16>(
-                    edge_features_ref,
-                    &support,
-                    edge_iterator
-                ))?;
-
-                Ok(edge_features)
-            }
             "f32" => {
                 let edge_features = create_memory_mapped_numpy_array(
                     gil.python(),
@@ -6152,7 +6124,7 @@ impl InnerModel {
             dtype => pe!(Err(format!(
                 concat!(
                     "The provided dtype {} is not supported. The supported ",
-                    "data types are `f16` or `f32`."
+                    "data types are `f32`."
                 ),
                 dtype
             ))),
@@ -6241,7 +6213,7 @@ impl HyperSketching {
     ///     By default, `false`.
     /// dtype: str = "f32"
     ///     The data type to use for the sketches.
-    ///     The supported values are `f16`, `f32`.
+    ///     The supported values are `f32`.
     ///
     /// Raises
     /// ------------------------

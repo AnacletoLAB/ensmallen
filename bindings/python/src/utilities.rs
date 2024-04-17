@@ -1,7 +1,6 @@
 use super::*;
 use cpu_models::FeatureSlice;
 use graph::{NodeT, WalksParameters, WeightT};
-use half::f16;
 use numpy::PyArray2;
 
 /// Return new walk parameters object from provided kwargs.
@@ -95,7 +94,6 @@ impl_normalize_features! {
     i16 : I16,
     i32 : I32,
     i64 : I64,
-    f16 : F16,
     f32 : F32,
     f64 : F64
 }

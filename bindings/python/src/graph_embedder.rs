@@ -1,7 +1,6 @@
 use super::mmap_numpy_npy::{create_memory_mapped_numpy_array, Dtype};
 use super::*;
 use cpu_models::MatrixShape;
-use half::f16;
 use numpy::{PyArray1, PyArray2, PyArray3};
 
 macro_rules! impl_graph_embedder {
@@ -91,7 +90,7 @@ where
             dtype => pe!(Err(format!(
                 concat!(
                     "The provided dtype {} is not supported. The supported ",
-                    "data types are `f16`, `f32` and `f64`."
+                    "data types are `f32` and `f64`."
                 ),
                 dtype
             ))),
@@ -116,7 +115,6 @@ where
 }};}
 
 impl_graph_embedder! {
-    f16: Dtype::F16,
     f32: Dtype::F32,
     f64: Dtype::F64
 }

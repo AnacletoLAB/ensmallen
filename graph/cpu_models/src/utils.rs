@@ -1,6 +1,5 @@
 use express_measures::ThreadFloat;
 use graph::{EdgeT, EdgeTypeT, Graph, NodeT};
-use half::f16;
 use num_traits::{AsPrimitive, Float, IntoAtomic, Zero, PrimInt};
 use rayon::prelude::*;
 use vec_rand::{random_f32, splitmix64};
@@ -250,7 +249,6 @@ impl IntegerFeatureType for u16 {}
 impl IntegerFeatureType for u8 {}
 
 pub enum FeatureSlice<'a> {
-    F16(&'a [f16]),
     F32(&'a [f32]),
     F64(&'a [f64]),
     U8(&'a [u8]),
@@ -266,7 +264,6 @@ pub enum FeatureSlice<'a> {
 impl<'a> FeatureSlice<'a> {
     pub fn len(&self) -> usize {
         match self {
-            Self::F16(feature) => feature.len(),
             Self::F32(feature) => feature.len(),
             Self::F64(feature) => feature.len(),
             Self::U8(feature) => feature.len(),

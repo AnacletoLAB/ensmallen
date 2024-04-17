@@ -1,7 +1,6 @@
 use crate::Optimizer;
 use crate::{get_random_weight, must_not_be_zero, FeatureSlice};
 use graph::Graph;
-use half::f16;
 use indicatif::ProgressIterator;
 use indicatif::{ProgressBar, ProgressStyle};
 use num_traits::AsPrimitive;
@@ -104,7 +103,6 @@ where
             .flat_map(move |(node_feature, dimension)| {
                 let offset = node_id * dimension;
                 (0..dimension).map(move |position| match node_feature {
-                    F16(feature) => <f16 as AsPrimitive<f32>>::as_(feature[offset + position]),
                     F32(feature) => <f32 as AsPrimitive<f32>>::as_(feature[offset + position]),
                     F64(feature) => <f64 as AsPrimitive<f32>>::as_(feature[offset + position]),
                     U8(feature) => <u8 as AsPrimitive<f32>>::as_(feature[offset + position]),

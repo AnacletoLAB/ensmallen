@@ -3,7 +3,6 @@ use crate::mmap_numpy_npy::create_memory_mapped_numpy_array;
 use crate::mmap_numpy_npy::Dtype;
 use cpu_models::GraphConvolution as GC;
 use cpu_models::MatrixShape;
-use half::f16;
 use num_traits::AsPrimitive;
 use numpy::Element;
 use std::convert::TryInto;
@@ -34,7 +33,7 @@ impl GraphConvolution {
     ///     By default, `true`.
     /// dtype: str = "f32"
     ///     The data type to use for the convolved features.
-    ///     The supported values are `f16`, `f32` and `f64`.
+    ///     The supported values are `f32` and `f64`.
     ///
     pub fn new(py_kwargs: Option<&PyDict>) -> PyResult<GraphConvolution> {
         let py = pyo3::Python::acquire_gil();
@@ -63,7 +62,7 @@ impl GraphConvolution {
 
 impl GraphConvolution {
     fn _transform<
-        F1: Send + Sync + Copy + Element + AsPrimitive<f64> + AsPrimitive<f32> + AsPrimitive<f16>,
+        F1: Send + Sync + Copy + Element + AsPrimitive<f64> + AsPrimitive<f32>,
     >(
         &self,
         support: &Graph,
@@ -116,18 +115,6 @@ impl GraphConvolution {
             None => None,
         };
         match data_type {
-            Dtype::F16 => {
-                let convoluted_features_array =
-                    convoluted_features.cast_as::<PyArray2<f16>>(gil.python())?;
-                let convoluted_features_ref = unsafe { convoluted_features_array.as_slice_mut()? };
-                pe!(self.inner.transform::<F1, f16>(
-                    &support.inner,
-                    node_features_ref,
-                    dimensionality,
-                    convoluted_features_ref,
-                    edge_ids_mask_ref
-                ))?;
-            }
             Dtype::F32 => {
                 let convoluted_features_array =
                     convoluted_features.cast_as::<PyArray2<f32>>(gil.python())?;
@@ -156,7 +143,7 @@ impl GraphConvolution {
                 return pe!(Err(format!(
                     concat!(
                         "The provided data type {:?} is not supported. ",
-                        "We expected f16, f32 or f64."
+                        "We expected f32 or f64."
                     ),
                     this_type
                 )));
@@ -211,9 +198,7 @@ impl GraphConvolution {
         let gil = Python::acquire_gil();
 
         let node_features = node_features.as_ref(gil.python());
-        if let Ok(node_features) = <&PyArray2<f16>>::extract(&node_features) {
-            self._transform::<f16>(support, node_features, path, edge_ids_mask)
-        } else if let Ok(node_features) = <&PyArray2<f32>>::extract(&node_features) {
+        if let Ok(node_features) = <&PyArray2<f32>>::extract(&node_features) {
             self._transform::<f32>(support, node_features, path, edge_ids_mask)
         } else if let Ok(node_features) = <&PyArray2<f64>>::extract(&node_features) {
             self._transform::<f64>(support, node_features, path, edge_ids_mask)
@@ -236,7 +221,7 @@ impl GraphConvolution {
         } else {
             pe!(Err(concat!(
                 "The provided node features are not a supported type. ",
-                "We expected a 2D numpy array of type f16, f32 or f64, or ",
+                "We expected a 2D numpy array of type f32 or f64, or ",
                 "u8, u16, u32, u64, i8, i16, i32 or i64."
             )))
         }

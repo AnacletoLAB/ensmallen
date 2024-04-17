@@ -1,4 +1,3 @@
-use ahash::AHasher;
 use siphasher::sip::SipHasher24;
 use std::hash::Hasher as _;
 use xxhash_rust::xxh3::Xxh3;
@@ -8,7 +7,6 @@ pub enum Hasher {
     Simple(u64),
     CommutativeSimple(u64),
     XorShift(u64),
-    AHasher(AHasher),
     Xxh3(Xxh3),
     SipHash(SipHasher24),
 }
@@ -25,7 +23,6 @@ impl Hasher {
             Hasher::XorShift(state) => state,
             Hasher::Xxh3(hasher) => hasher.digest(),
             Hasher::SipHash(hasher) => hasher.finish(),
-            Hasher::AHasher(hasher) => hasher.finish(),
         }
     }
 }
@@ -56,9 +53,6 @@ impl UpdateHash<u8> for Hasher {
             Hasher::SipHash(hasher) => {
                 hasher.write_u8(*value);
             }
-            Hasher::AHasher(hasher) => {
-                hasher.write_u8(*value);
-            }
         }
     }
 }
@@ -83,9 +77,6 @@ impl UpdateHash<u16> for Hasher {
                 hasher.update(&value.to_le_bytes());
             }
             Hasher::SipHash(hasher) => {
-                hasher.write_u16(*value);
-            }
-            Hasher::AHasher(hasher) => {
                 hasher.write_u16(*value);
             }
         }
@@ -114,9 +105,6 @@ impl UpdateHash<u32> for Hasher {
             Hasher::SipHash(hasher) => {
                 hasher.write_u32(*value);
             }
-            Hasher::AHasher(hasher) => {
-                hasher.write_u32(*value);
-            }
         }
     }
 }
@@ -141,9 +129,6 @@ impl UpdateHash<u64> for Hasher {
                 hasher.update(&value.to_le_bytes());
             }
             Hasher::SipHash(hasher) => {
-                hasher.write_u64(*value);
-            }
-            Hasher::AHasher(hasher) => {
                 hasher.write_u64(*value);
             }
         }

@@ -579,10 +579,6 @@ where
             let dimension = dimensions[0];
             let edge_embedding = self.edge_embeddings[0];
             return match node_features[0] {
-                F16(feature) => edge_embedding.get_method()(
-                    &feature[(src as usize) * dimension..((src as usize) + 1) * dimension],
-                    &feature[(dst as usize) * dimension..((dst as usize) + 1) * dimension],
-                ),
                 F32(feature) => edge_embedding.get_method()(
                     &feature[(src as usize) * dimension..((src as usize) + 1) * dimension],
                     &feature[(dst as usize) * dimension..((dst as usize) + 1) * dimension],
@@ -633,10 +629,6 @@ where
                 self.edge_embeddings
                     .iter()
                     .flat_map(move |edge_embedding| match node_feature {
-                        F16(feature) => edge_embedding.get_method()(
-                            &feature[(src as usize) * dimension..((src as usize) + 1) * dimension],
-                            &feature[(dst as usize) * dimension..((dst as usize) + 1) * dimension],
-                        ),
                         F32(feature) => edge_embedding.get_method()(
                             &feature[(src as usize) * dimension..((src as usize) + 1) * dimension],
                             &feature[(dst as usize) * dimension..((dst as usize) + 1) * dimension],

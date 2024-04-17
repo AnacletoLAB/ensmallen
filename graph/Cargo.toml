@@ -47,7 +47,7 @@ num-traits = "0.2.14"
 heterogeneous_graphlets = {git = "https://github.com/LucaCappelletti94/heterogeneous_graphlets"}
 v_htmlescape = "0.13.1"
 linked_hash_set = "0.1.4"
-hashbrown = {version="0.12.1", features=["rayon"]}
+hashbrown = {version="0.14", features=["rayon"]}
 indicatif = {version="0.16.0", features = ["rayon"]}
 arbitrary = { version = "0.4.5", features = ["derive"] }
 mmap = {path = "./mmap"}
@@ -63,7 +63,6 @@ atoi_radix10 = { git = "https://github.com/gilescope/atoi_radix10"}
 parallel_frontier = {git="https://github.com/zommiommy/parallel_frontier"}
 xxhash-rust = {version ="0.8.6", features=["xxh3"]}
 siphasher = "0.3"
-ahash = "0.8.2"
 
 [target.'cfg(unix)'.dependencies]
 nix = "0.22.0"

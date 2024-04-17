@@ -1,5 +1,4 @@
 use core::fmt::Debug;
-use half::f16;
 use num_traits::{AsPrimitive, Float, Unsigned, One, Zero};
 use std::ops::{AddAssign, DivAssign, MulAssign, SubAssign};
 
@@ -17,7 +16,6 @@ pub trait ThreadFloat:
     + DivAssign<Self>
     + Default
     + AsPrimitive<Self>
-    + AsPrimitive<f16>
     + AsPrimitive<f32>
     + AsPrimitive<f64>
 {
@@ -36,7 +34,6 @@ impl<T> ThreadFloat for T where
         + DivAssign<Self>
         + Default
         + AsPrimitive<Self>
-        + AsPrimitive<f16>
         + AsPrimitive<f32>
         + AsPrimitive<f64>
 {

@@ -31,11 +31,10 @@ express_measures = { path = "../../graph/express_measures" }
 tags = { path = "../../graph/tags" }
 vec_rand = { git = "https://github.com/zommiommy/vec_rand", branch = "master" }
 roaring = { git = "https://github.com/zommiommy/roaring-rs", branch = "master" }
-numpy = {git = "https://github.com/LucaCappelletti94/rust-numpy.git", features = ["half"] }
-half = {git = "https://github.com/LucaCappelletti94/half-rs.git", features = ["use-intrinsics", "num-traits"]}
+numpy = {version = "0.16"}
+half = {version = "2.4", features = ["use-intrinsics", "num-traits"]}
 rand = {version="0.7", features = ["small_rng"] }
 strsim = "0.10.0"
-file_progress = {git="https://github.com/LucaCappelletti94/rust_file_progress.git"}
 num-traits = {git="https://github.com/zommiommy/num-traits.git", features=["atomic_from_mut"]}
 hyperloglog-rs = {version="0.1.51", features=["std"]}
 markdown = "0.3"

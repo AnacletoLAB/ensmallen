@@ -1,5 +1,4 @@
 use super::{Dtype, ToNumpyDtype};
-use half::f16;
 use numpy::npyffi::*;
 use numpy::*;
 use pyo3::*;
@@ -56,7 +55,6 @@ impl Drop for PySliceContainer {
             i32,
             u64,
             i64,
-            f16,
             f32,
             f64
         }
