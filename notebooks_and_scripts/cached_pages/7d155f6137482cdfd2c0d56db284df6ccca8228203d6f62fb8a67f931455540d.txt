@@ -1,0 +1,12 @@
+<html>
+<head><title>Index of /wikidatawiki/entities/20240426/</title></head>
+<body>
+<h1>Index of /wikidatawiki/entities/20240426/</h1><hr><pre><a href="../">../</a>
+<a href="wikidata-20240426-lexemes-BETA.nt.bz2">wikidata-20240426-lexemes-BETA.nt.bz2</a>              26-Apr-2024 23:51           826780662
+<a href="wikidata-20240426-lexemes-BETA.nt.gz">wikidata-20240426-lexemes-BETA.nt.gz</a>               26-Apr-2024 23:44          1094986357
+<a href="wikidata-20240426-lexemes-BETA.ttl.bz2">wikidata-20240426-lexemes-BETA.ttl.bz2</a>             26-Apr-2024 23:46           470330416
+<a href="wikidata-20240426-lexemes-BETA.ttl.gz">wikidata-20240426-lexemes-BETA.ttl.gz</a>              26-Apr-2024 23:42           591961033
+<a href="wikidata-20240426-md5sums.txt">wikidata-20240426-md5sums.txt</a>                      26-Apr-2024 23:51                 288
+<a href="wikidata-20240426-sha1sums.txt">wikidata-20240426-sha1sums.txt</a>                     26-Apr-2024 23:51                 320
+</pre><hr></body>
+</html>

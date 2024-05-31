@@ -2,68 +2,6 @@
 from ensmallen import Graph  # pylint: disable=import-error
 from .graph_retrieval import RetrievedGraph
 
-def PubMedDiabetes(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="latest", **kwargs
-) -> Graph:
-    """Return PubMedDiabetes graph	The Pubmed Diabetes dataset consists of 19717 scientific publications from
-	PubMed database pertaining to diabetes classified into one of three classes.
-	The citation network consists of 44338 links. Each publication in the dataset
-	is described by a TF/IDF weighted word vector from a dictionary which consists
-	of 500 unique words.
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "latest"
-        Version to retrieve		
-	
-	References
-	----------
-	Please cite:
-	
-	```bib
-	@inproceedings{namata2012query,
-	  title={Query-driven active surveying for collective classification},
-	  author={Namata, Galileo and London, Ben and Getoor, Lise and Huang, Bert and EDU, UMD},
-	  booktitle={10th International Workshop on Mining and Learning with Graphs},
-	  volume={8},
-	  year={2012}
-	}
-	```
-    """
-    return RetrievedGraph(
-        "PubMedDiabetes", version, "linqs", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs,
-		callbacks=[
-			parse_linqs_pubmed_incidence_matrix
-		],
-		callbacks_arguments=[
-		    {
-		        "cites_path": "Pubmed-Diabetes/Pubmed-Diabetes/data/Pubmed-Diabetes.DIRECTED.cites.tab",
-		        "content_path": "Pubmed-Diabetes/Pubmed-Diabetes/data/Pubmed-Diabetes.NODE.paper.tab",
-		        "node_path": "nodes.tsv",
-		        "edge_path": "edges.tsv"
-		    }
-		]
-    )()
 def Cora(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
@@ -205,6 +143,68 @@ def CiteSeer(
 		    {
 		        "cites_path": "citeseer/citeseer/citeseer.cites",
 		        "content_path": "citeseer/citeseer/citeseer.content",
+		        "node_path": "nodes.tsv",
+		        "edge_path": "edges.tsv"
+		    }
+		]
+    )()
+def PubMedDiabetes(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="latest", **kwargs
+) -> Graph:
+    """Return PubMedDiabetes graph	The Pubmed Diabetes dataset consists of 19717 scientific publications from
+	PubMed database pertaining to diabetes classified into one of three classes.
+	The citation network consists of 44338 links. Each publication in the dataset
+	is described by a TF/IDF weighted word vector from a dictionary which consists
+	of 500 unique words.
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "latest"
+        Version to retrieve		
+	
+	References
+	----------
+	Please cite:
+	
+	```bib
+	@inproceedings{namata2012query,
+	  title={Query-driven active surveying for collective classification},
+	  author={Namata, Galileo and London, Ben and Getoor, Lise and Huang, Bert and EDU, UMD},
+	  booktitle={10th International Workshop on Mining and Learning with Graphs},
+	  volume={8},
+	  year={2012}
+	}
+	```
+    """
+    return RetrievedGraph(
+        "PubMedDiabetes", version, "linqs", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs,
+		callbacks=[
+			parse_linqs_pubmed_incidence_matrix
+		],
+		callbacks_arguments=[
+		    {
+		        "cites_path": "Pubmed-Diabetes/Pubmed-Diabetes/data/Pubmed-Diabetes.DIRECTED.cites.tab",
+		        "content_path": "Pubmed-Diabetes/Pubmed-Diabetes/data/Pubmed-Diabetes.NODE.paper.tab",
 		        "node_path": "nodes.tsv",
 		        "edge_path": "edges.tsv"
 		    }

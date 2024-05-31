@@ -249,6 +249,51 @@
 	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2023-11-16/index.html">2023-11-16</a>
       </li>
       <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2023-12-14/index.html">2023-12-14</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2023-12-16/index.html">2023-12-16</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2024-01-09/index.html">2024-01-09</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2024-01-12/index.html">2024-01-12</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2024-01-13/index.html">2024-01-13</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2024-01-27/index.html">2024-01-27</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2024-02-13/index.html">2024-02-13</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2024-03-07/index.html">2024-03-07</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2024-03-08/index.html">2024-03-08</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2024-03-13/index.html">2024-03-13</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2024-03-17/index.html">2024-03-17</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2024-03-18/index.html">2024-03-18</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2024-04-18/index.html">2024-04-18</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2024-05-17/index.html">2024-05-17</a>
+      </li>
+      <li>
+	<a href="https://data.monarchinitiative.org/monarch-kg-dev/2024-05-22/index.html">2024-05-22</a>
+      </li>
+      <li>
 	<a href="https://data.monarchinitiative.org/monarch-kg-dev/kgx/index.html">kgx</a>
       </li>
       <li>

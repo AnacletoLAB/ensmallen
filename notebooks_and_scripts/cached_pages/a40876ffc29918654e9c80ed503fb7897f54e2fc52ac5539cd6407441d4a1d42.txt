@@ -112,6 +112,9 @@
 	<a href="https://kg-hub.berkeleybop.io/kg-microbe/20231116/index.html">20231116</a>
       </li>
       <li>
+	<a href="https://kg-hub.berkeleybop.io/kg-microbe/20231216/index.html">20231216</a>
+      </li>
+      <li>
 	<a href="https://kg-hub.berkeleybop.io/kg-microbe/current/index.html">current</a>
       </li>
     </ul>
