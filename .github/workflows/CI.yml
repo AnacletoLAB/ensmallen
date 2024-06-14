@@ -24,15 +24,18 @@ jobs:
     steps:
       # setup env
       - uses: actions/checkout@v4
+      - name: Install Openssl
+        run: apk add openssl-dev
       - uses: actions/setup-python@v5
         with:
           python-version: '3.10'
-      - uses: actions-rust-lang/setup-rust-toolchain@v1
-        with:
-          toolchain: nightly-2024-06-13
       - uses: korandoru/setup-zig@v1
         with:
           zig-version: 0.13.0
+      - uses: actions-rust-lang/setup-rust-toolchain@v1
+        with:
+          toolchain: nightly-2024-06-13
+        working-directory: bindings/python/
       # Check
       - name: Check that the package compiles
         run: cargo check --manifest-path=bindings/python/Cargo.toml
