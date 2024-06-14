@@ -31,6 +31,8 @@ jobs:
         with:
           toolchain: nightly-2024-06-13
       - uses: korandoru/setup-zig@v1
+        with:
+          zig-version: 0.13.0
       # Check
       - name: Check that the package compiles
         run: cargo check --manifest-path=bindings/python/Cargo.toml
