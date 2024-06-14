@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     #if: "startsWith(github.ref, 'refs/tags/')"
     container:
-      image: quay.io/pypa/musllinux_1_1_x86_64
+      image: quay.io/pypa/manylinux2014_x86_64
     env:
       RUSTFLAGS: "" # for some reason it has -D warnings by default
     steps:

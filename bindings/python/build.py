@@ -98,7 +98,7 @@ def compile_target(target_name, target_settings, WHEELS_FOLDER, settings):
     os_name = platform.system().strip().lower()
     print(os_name)
     if os_name == "linux":
-        zig = "--compatibility manylinux_1_1"
+        zig = "--compatibility manylinux2014"
         env = {
             #"CXXFLAGS": "-stdlib=libc++",
             #"CFLAGS": "-stdlib=libc++"
