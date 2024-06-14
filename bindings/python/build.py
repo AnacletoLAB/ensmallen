@@ -100,7 +100,7 @@ def compile_target(target_name, target_settings, WHEELS_FOLDER, settings):
     if os_name == "linux":
         zig = "--compatibility manylinux_1_1"
         env = {
-            "CXXFLAGS": "-stdlib=libc++",
+            #"CXXFLAGS": "-stdlib=libc++",
             #"CFLAGS": "-stdlib=libc++"
         }
     elif os_name == "windows":
