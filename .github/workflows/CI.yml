@@ -37,7 +37,7 @@ jobs:
           components: rustfmt
           cache-workspaces: bindings/python/
       - name: Install Maturin
-        run: python -m pip install 'maturin[zig]'
+        run: python3 -m pip install 'maturin[zig]'
       # Check
       - name: Check that the package compiles
         run: cargo check --manifest-path=bindings/python/Cargo.toml
