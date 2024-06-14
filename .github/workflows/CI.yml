@@ -16,7 +16,6 @@ jobs:
   # platforms, otherwise we want to break early
   canary_build:
     runs-on: ubuntu-latest
-    if: "startsWith(github.ref, 'refs/tags/')"
     container:
       image: quay.io/pypa/musllinux_1_1_x86_64
     env:
