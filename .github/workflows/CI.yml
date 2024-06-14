@@ -39,6 +39,8 @@ jobs:
       # Check
       - name: Check that the package compiles
         run: cargo check --manifest-path=bindings/python/Cargo.toml
+        env:
+          RUSTFLAGS: -A warnings
       # actually build
       - name: Build the package
         run: python3 build.py
