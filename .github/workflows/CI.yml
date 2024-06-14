@@ -35,7 +35,7 @@ jobs:
           cache-workspaces: bindings/python/
       - uses: actions/setup-python@v5
         with:
-          python-version: '3.8'
+          python-version: '3.10'
           cache: 'pip'
       - name: Install Maturin
         run: python3 -m pip install 'maturin[zig]'
