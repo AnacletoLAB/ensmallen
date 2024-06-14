@@ -1,3 +1,4 @@
+#![allow(internal_features)]
 #![feature(core_intrinsics)]
 use std::hash::{Hash, Hasher};
 use std::intrinsics::unlikely;
