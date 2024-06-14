@@ -37,6 +37,7 @@ jobs:
       - uses: actions-rust-lang/setup-rust-toolchain@v1
         with:
           toolchain: nightly-2024-06-13
+          components: rustfmt
           cache-workspaces: bindings/python/
       # Check
       - name: Check that the package compiles
