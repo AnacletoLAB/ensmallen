@@ -31,6 +31,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.10'
+          cache: 'pip' # caching pip dependencies
       - uses: korandoru/setup-zig@v1
         with:
           zig-version: 0.13.0
@@ -40,7 +41,7 @@ jobs:
           components: rustfmt
           cache-workspaces: bindings/python/
       - name: Install Maturin
-        run: python3 -m pip install 'maturin[zig]'
+        run: pip install 'maturin[zig]'
       # Check
       - name: Check that the package compiles
         run: cargo check --manifest-path=bindings/python/Cargo.toml
