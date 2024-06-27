@@ -6,8 +6,44 @@ use std::io::{BufWriter, Write};
 use std::fs::File;
 
 #[derive(Clone, Debug)]
+pub struct Edge{
+    pub src: String, 
+    pub dst: String, 
+    pub edge_type: Option<String>, 
+    pub weight: Option<WeightT>,
+};
+
+impl PartialEq for Edge {
+    fn eq(&self, other: &Self) -> bool {
+        (self.src == other.src) && (self.dst == other.dst) && (self.edge_type == other.edge_type) && (self.weight.zip(other.weight).map(|(a, b)| a == b).unwrap_or(true))
+    }
+}
+
+impl Eq for Edge {}
+
+impl PartialOrd for Edge {
+    fn partial_cmp(&self, other: &Self) -> Option<core::cmp::Ordering> {
+        Some(
+            self.src.partial_cmp(&other.src)?
+                .then(self.dst.partial_cmp(&other.dst)?)
+                .then(self.edge_type.partial_cmp(&other.edge_type)?)
+                .then(self.weight.zip(other.weight).map(|(a, b)| a.total_cmp(&b)).unwrap_or(core::cmp::Ordering::Equal))
+        )
+    }
+}
+
+impl Ord for Edge {
+    fn cmp(&self, other: &Self) -> core::cmp::Ordering {
+        self.src.cmp(&other.src)
+            .then(self.dst.cmp(&other.dst))
+            .then(self.edge_type.cmp(&other.edge_type))
+            .then(self.weight.zip(other.weight).map(|(a, b)| a.total_cmp(&b)).unwrap_or(core::cmp::Ordering::Equal))
+    }
+}
+
+#[derive(Clone, Debug)]
 pub struct GraphBuilder {
-    pub(crate) edges: BTreeSet<EdgeQuadruple>,
+    pub(crate) edges: BTreeSet<Edge>,
     pub(crate) nodes: BTreeMap<String, Option<Vec<String>>>,
 
     pub(crate) has_node_types: bool,
@@ -105,7 +141,7 @@ impl GraphBuilder {
         if edge_type.is_some() {
             self.has_edge_types = true;
         }
-        self.edges.insert(EdgeQuadruple(src, dst, edge_type, weight.unwrap_or(self.default_weight)));
+        self.edges.insert(Edge{src, dst, edge_type, weight});
         Ok(())
     }
 
@@ -128,7 +164,7 @@ impl GraphBuilder {
                 return Err(format!("The weight {} is not a finite numnber!", w));
             }
         }
-        self.edges.remove(&EdgeQuadruple(src, dst, edge_type, weight.unwrap_or(self.default_weight)));
+        self.edges.remove(&Edge{src, dst, edge_type, weight});
         Ok(())
     }
 
@@ -156,7 +192,7 @@ impl GraphBuilder {
     }
 
     /// Get a sorted iterator over the edges of the graph
-    pub fn iter_edges(&self) -> impl Iterator<Item=EdgeQuadruple> + '_ {
+    pub fn iter_edges(&self) -> impl Iterator<Item=Edge> + '_ {
         self.edges.iter().cloned()
     }
 
@@ -178,7 +214,7 @@ impl GraphBuilder {
 
         let edges_iterator = ItersWrapper::Sequential::<_, _, ParEmpty<_>>(
             edges.into_iter().enumerate().map(|(idx, x)| 
-                Result::Ok((idx, (x.0, x.1, x.2, x.3)))
+                Result::Ok((idx, (x.src, x.dst, x.edge_type, x.weight.unwrap_or(self.default_weight))))
             )
         );
 
@@ -220,10 +256,10 @@ impl GraphBuilder {
     }
 }
 
-impl core::iter::Extend<EdgeQuadruple> for GraphBuilder {
-    fn extend<T: IntoIterator<Item=EdgeQuadruple>>(&mut self, iter: T) {
+impl core::iter::Extend<Edge> for GraphBuilder {
+    fn extend<T: IntoIterator<Item=Edge>>(&mut self, iter: T) {
         for edge in iter {
-            let _ = self.add_edge(edge.0, edge.1, edge.2, Some(edge.3));
+            let _ = self.add_edge(edge.src, edge.dst, edge.edge_type, edge.weight);
         }
     }
 }
@@ -238,13 +274,11 @@ impl core::iter::Extend<(String, Option<Vec<String>>)> for GraphBuilder {
 
 impl core::ops::AddAssign<Self> for GraphBuilder {
     fn add_assign(&mut self, other: Self) {
+        assert_eq!(self.directed, other.directed, "The graphs must have the same directedness to be added!");
+
         self.extend(other.iter_edges());
         self.extend(other.iter_nodes());
 
-        self.has_node_types |= other.has_node_types;
-        self.has_edge_types |= other.has_edge_types;
-        self.has_edge_weights |= other.has_edge_weights;
-        self.directed |= other.directed;
         self.name = format!("{} | {}", self.name, other.name);
     }
 }
