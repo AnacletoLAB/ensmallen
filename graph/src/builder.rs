@@ -155,6 +155,16 @@ impl GraphBuilder {
         Ok(())
     }
 
+    /// Get a sorted iterator over the edges of the graph
+    pub fn iter_edges(&self) -> impl Iterator<Item=EdgeQuadruple> + '_ {
+        self.edges.iter().cloned()
+    }
+
+    /// Get a sorted iterator over the nodes of the graph
+    pub fn iter_nodes(&self) -> impl Iterator<Item=(String, Option<Vec<String>>)> + '_ {
+        self.nodes.iter().map(|(k, v)| (k.clone(), v.clone()))
+    }
+
     /// Consume the edges and nodes to create a new graph.
     pub fn build(&mut self) -> Result<Graph> {
         let nodes = core::mem::replace(&mut self.nodes, BTreeMap::new());
@@ -210,6 +220,48 @@ impl GraphBuilder {
     }
 }
 
+impl core::iter::Extend<EdgeQuadruple> for GraphBuilder {
+    fn extend<T: IntoIterator<Item=EdgeQuadruple>>(&mut self, iter: T) {
+        for edge in iter {
+            let _ = self.add_edge(edge.0, edge.1, edge.2, Some(edge.3));
+        }
+    }
+}
+
+impl core::iter::Extend<(String, Option<Vec<String>>)> for GraphBuilder {
+    fn extend<T: IntoIterator<Item=(String, Option<Vec<String>>)>>(&mut self, iter: T) {
+        for edge in iter {
+            let _ = self.add_node(edge.0, edge.1);
+        }
+    }
+}
+
+impl core::ops::AddAssign<Self> for GraphBuilder {
+    fn add_assign(&mut self, other: Self) {
+        self.extend(other.iter_edges());
+        self.extend(other.iter_nodes());
+
+        self.has_node_types |= other.has_node_types;
+        self.has_edge_types |= other.has_edge_types;
+        self.has_edge_weights |= other.has_edge_weights;
+        self.directed |= other.directed;
+        self.name = format!("{} | {}", self.name, other.name);
+    }
+}
+
+impl core::iter::Sum for GraphBuilder {
+    fn sum<I: Iterator<Item=Self>>(mut iter: I) -> Self {
+        let first = iter.next();
+        if first.is_none() {
+            return Self::new(None, None);
+        }
+        let mut res = first.unwrap();
+        for i in iter {
+            res += i;
+        }
+        res
+    }
+}
 
 #[derive(Debug)]
 pub struct GraphCSVBuilder {
