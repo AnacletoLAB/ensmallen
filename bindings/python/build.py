@@ -98,11 +98,11 @@ def compile_target(target_name, target_settings, WHEELS_FOLDER, settings):
     os_name = platform.system().strip().lower()
     print(os_name)
     if os_name == "linux":
-        zig = "--zig --compatibility manylinux2014"
+        zig = "--compatibility manylinux2014"
         env = {
-            "CXXFLAGS": "-stdlib=libc++",
-            "CXX": "zig c++ -target x86_64-linux-gnu.2.16",
-            "CC":  "zig cc -target x86_64-linux-gnu.2.16",
+            #"CXXFLAGS": "-stdlib=libc++",
+            #"CXX": "zig c++ -target x86_64-linux-gnu.2.16",
+            #"CC":  "zig cc -target x86_64-linux-gnu.2.16",
             #"CFLAGS": "-stdlib=libc++"
         }
     elif os_name == "windows":
