@@ -1,0 +1,22 @@
+FROM quay.io/pypa/manylinux2014_aarch64
+
+# Otherwise `cargo new` errors
+RUN yum install -y openssl-devel clang curl
+
+RUN curl https://sh.rustup.rs -sSf | bash -s -- -y 
+
+RUN echo '. "$HOME/.cargo/env"' >> $HOME/.bashrc
+
+# Install the required rust version
+RUN . "$HOME/.cargo/env" && rustup default nightly
+
+# Add all supported python versions
+ENV PATH /opt/python/cp37-cp37m/bin/:$PATH
+
+RUN python -m pip install --no-cache-dir cffi
+RUN pip install twine "maturin[zig]"
+
+RUN mkdir /io
+WORKDIR /io
+
+ENV LD_LIBRARY_PATH="/opt/_internal/openssl-3.0/"
