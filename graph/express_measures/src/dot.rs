@@ -1,10 +1,10 @@
 use crate::types::*;
 use crate::validation::*;
 use core::fmt::Debug;
-use core::intrinsics::unlikely;
 use core::ops::Mul;
 use rayon::prelude::*;
 use std::iter::Sum;
+use core::intrinsics::unlikely;
 
 #[inline(always)]
 /// Returns the dot product between the two provided vectors computed sequentially.
