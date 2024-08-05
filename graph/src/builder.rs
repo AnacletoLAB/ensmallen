@@ -11,11 +11,37 @@ pub struct Edge{
     pub dst: String, 
     pub edge_type: Option<String>, 
     pub weight: Option<WeightT>,
-};
+}
+
+impl Edge {
+    // dummy method so the code analysis don't break because no methods for this struct
+    pub fn is_selfloop(&self) -> bool {
+        self.src == self.dst
+    }
+}
 
 impl PartialEq for Edge {
     fn eq(&self, other: &Self) -> bool {
         (self.src == other.src) && (self.dst == other.dst) && (self.edge_type == other.edge_type) && (self.weight.zip(other.weight).map(|(a, b)| a == b).unwrap_or(true))
+    }
+}
+
+impl core::hash::Hash for Edge {
+    fn hash<H: core::hash::Hasher>(&self, state: &mut H) {
+        self.src.hash(state);
+        self.dst.hash(state);
+        self.edge_type.hash(state);
+        if let Some(x) = self.weight {
+            crate::hash::hash_f32(x, state);
+        } else {
+            None::<usize>.hash(state);
+        }
+    }
+}
+
+impl std::string::ToString for Edge {
+    fn to_string(&self) -> String {
+        format!("{} -> {} (type: {:?}, weight: {:?})", self.src, self.dst, self.edge_type, self.weight)
     }
 }
 

@@ -10,7 +10,6 @@
 #![warn(unused_macros)]
 #![feature(iter_advance_by)]
 #![feature(impl_trait_in_assoc_type)]
-#![feature(is_sorted)]
 #![feature(string_remove_matches)]
 #![feature(exit_status_error)]
 #![feature(core_intrinsics)]
@@ -18,7 +17,6 @@
 #![feature(pattern)]
 #![deny(unconditional_recursion)]
 #![type_length_limit = "3764086"]
-#![feature(exclusive_range_pattern)]
 
 use std::sync::Arc;
 
