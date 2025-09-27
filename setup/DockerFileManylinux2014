@@ -1,22 +1,29 @@
+# Use the official manylinux2014 image as the base
 FROM quay.io/pypa/manylinux2014_x86_64
 
-# Otherwise `cargo new` errors
+# Install system dependencies required for building
 RUN yum install -y openssl-devel clang curl
 
-RUN curl https://sh.rustup.rs -sSf | bash -s -- -y 
+# Install Rust using the official rustup script
+RUN curl https://sh.rustup.rs -sSf | bash -s -- -y
 
-RUN echo '. "$HOME/.cargo/env"' >> $HOME/.bashrc
+# --- FIX ---
+# Add Rust's cargo and the desired Python version to the PATH environment variable.
+# The `ENV` instruction makes these tools available to all subsequent commands in the Dockerfile.
+ENV PATH="/root/.cargo/bin:${PATH}"
 
-# Install the required rust version
-RUN . "$HOME/.cargo/env" && rustup default nightly
+# Set the default Rust toolchain to nightly
+RUN rustup default nightly
 
-# Add all supported python versions
-ENV PATH /opt/python/cp37-cp37m/bin/:$PATH
+ENV PATH="/opt/python/cp38-cp38/bin:${PATH}"
 
-RUN python -m pip install --no-cache-dir cffi
-RUN pip install twine "maturin[zig]"
+# Upgrade pip and install Python dependencies in a single layer to reduce image size
+RUN python3 -m pip install --upgrade pip && \
+   python3 -m pip install --no-cache-dir cffi twine "maturin[zig]"
 
+# Set up the working directory for the project
 RUN mkdir /io
 WORKDIR /io
 
+# Set the library path, if required by your project
 ENV LD_LIBRARY_PATH="/opt/_internal/openssl-3.0/"

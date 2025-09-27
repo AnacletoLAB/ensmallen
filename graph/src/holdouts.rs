@@ -1915,7 +1915,7 @@ impl Graph {
 
             // add the edges to the relative vectors
             train.par_iter().for_each(|edge_id| unsafe {
-                (*train_edge_types_shared.get())[*edge_id as usize] =
+                (&mut (*train_edge_types_shared.get()))[*edge_id as usize] =
                     self.get_unchecked_edge_type_id_from_edge_id(*edge_id);
                 // If this is an undirected graph we also need to add the
                 // corresponding edge from the lower triangular matrix.
@@ -1923,12 +1923,12 @@ impl Graph {
                     let (src, dst) = self.get_unchecked_node_ids_from_edge_id(*edge_id);
                     let lower_triangular_edge_id =
                         self.get_unchecked_edge_id_from_node_ids(dst, src);
-                    (*train_edge_types_shared.get())[lower_triangular_edge_id as usize] =
+                    (&mut (*train_edge_types_shared.get()))[lower_triangular_edge_id as usize] =
                         self.get_unchecked_edge_type_id_from_edge_id(lower_triangular_edge_id);
                 }
             });
             test.par_iter().for_each(|edge_id| unsafe {
-                (*test_edge_types_shared.get())[*edge_id as usize] =
+                (&mut (*test_edge_types_shared.get()))[*edge_id as usize] =
                     self.get_unchecked_edge_type_id_from_edge_id(*edge_id);
                 // If this is an undirected graph we also need to add the
                 // corresponding edge from the lower triangular matrix.
@@ -1936,7 +1936,7 @@ impl Graph {
                     let (src, dst) = self.get_unchecked_node_ids_from_edge_id(*edge_id);
                     let lower_triangular_edge_id =
                         self.get_unchecked_edge_id_from_node_ids(dst, src);
-                    (*train_edge_types_shared.get())[lower_triangular_edge_id as usize] =
+                    (&mut (*train_edge_types_shared.get()))[lower_triangular_edge_id as usize] =
                         self.get_unchecked_edge_type_id_from_edge_id(lower_triangular_edge_id);
                 }
             });
@@ -2496,8 +2496,8 @@ impl Graph {
                         unsafe { self.get_unchecked_edge_type_id_from_edge_id(*edge_id) };
                     if validation_chunk.contains(edge_id) {
                         unsafe {
-                            (*test_edge_types_shared.get())[*edge_id as usize] = edge_type;
-                            (*train_edge_types_shared.get())[*edge_id as usize] = None;
+                            (&mut (*test_edge_types_shared.get()))[*edge_id as usize] = edge_type;
+                            (&mut (*train_edge_types_shared.get()))[*edge_id as usize] = None;
 
                             // If this is an undirected graph we also need to add the
                             // corresponding edge from the lower triangular matrix.
@@ -2505,7 +2505,7 @@ impl Graph {
                                 let (src, dst) = self.get_unchecked_node_ids_from_edge_id(*edge_id);
                                 let lower_triangular_edge_id =
                                     self.get_unchecked_edge_id_from_node_ids(dst, src);
-                                (*train_edge_types_shared.get())
+                                (&mut (*train_edge_types_shared.get()))
                                     [lower_triangular_edge_id as usize] = self
                                     .get_unchecked_edge_type_id_from_edge_id(
                                         lower_triangular_edge_id,

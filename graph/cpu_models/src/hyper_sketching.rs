@@ -384,7 +384,7 @@ impl<
                         // Iterate over all neighbors of the current node
                         counters[k] = support
                             .iter_unchecked_neighbour_node_ids_from_source_node_id(node_id as NodeT)
-                            .map(|dst| &(*shared_counters.get())[dst as usize][k - 1])
+                            .map(|dst| &(&(*shared_counters.get()))[dst as usize][k - 1])
                             .union()
                             | counters[k - 1];
                     },

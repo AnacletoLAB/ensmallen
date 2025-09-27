@@ -60,7 +60,7 @@ hyperloglog-rs = {version="0.1.51", features=["std"]}
 elias_fano_rust = "0.1.1"
 tags = {path="./tags/"}
 atoi_radix10 = { git = "https://github.com/gilescope/atoi_radix10"}
-parallel_frontier = {git="https://github.com/zommiommy/parallel_frontier"}
+parallel_frontier = {git="https://github.com/zommiommy/parallel_frontier", rev="decf217972fe541f0707f3956e5c1487ad3f06dc"}
 xxhash-rust = {version ="0.8.6", features=["xxh3"]}
 siphasher = "0.3"
 

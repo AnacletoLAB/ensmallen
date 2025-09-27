@@ -97,11 +97,11 @@ impl GraphEmbedder for SecondOrderLINE {
                 .map(|(_, src, dst, label)| (src as usize, dst as usize, label))
                 .for_each(|(src, dst, label)| {
                     let src_embedding = unsafe {
-                        &mut (*shared_node_embedding.get())[0]
+                        &mut (&mut (*shared_node_embedding.get())[0])
                             [(src * embedding_size)..((src + 1) * embedding_size)]
                     };
                     let dst_embedding = unsafe {
-                        &mut (*shared_node_embedding.get())[1]
+                        &mut (&mut (*shared_node_embedding.get())[1])
                             [(dst * embedding_size)..((dst + 1) * embedding_size)]
                     };
 

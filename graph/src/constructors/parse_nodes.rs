@@ -97,8 +97,8 @@ pub(crate) fn parse_nodes(
                         // We can unwrap because the user tells us that this is surely
                         // a correct node list.
                         let (line_number, (node_name, node_type_ids)) = line.unwrap();
-                        (*node_names.value.get())[line_number] = node_name;
-                        (*node_types_ids.value.get())[line_number] = node_type_ids;
+                        (&mut (*node_names.value.get()))[line_number] = node_name;
+                        (&mut (*node_types_ids.value.get()))[line_number] = node_type_ids;
                     });
                     let node_type_ids = node_types_ids.value.into_inner();
                     (node_names.value.into_inner(), optionify!(node_type_ids))
@@ -109,7 +109,7 @@ pub(crate) fn parse_nodes(
                         // We can unwrap because the user tells us that this is surely
                         // a correct node list.
                         let (line_number, (node_name, _)) = line.unwrap();
-                        (*node_names.value.get())[line_number] = node_name;
+                        (&mut (*node_names.value.get()))[line_number] = node_name;
                     });
                     (node_names.value.into_inner(), None)
                 };

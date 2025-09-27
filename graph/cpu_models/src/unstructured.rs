@@ -93,19 +93,19 @@ impl GraphEmbedder for Unstructured {
                         let not_src = not_src as usize;
                         let not_dst = not_dst as usize;
                         let src_embedding = unsafe {
-                            &mut (*shared_node_embedding.get())
+                            &mut (&mut (*shared_node_embedding.get()))
                                 [(src * embedding_size)..((src + 1) * embedding_size)]
                         };
                         let not_src_embedding = unsafe {
-                            &mut (*shared_node_embedding.get())
+                            &mut (&mut (*shared_node_embedding.get()))
                                 [(not_src * embedding_size)..((not_src + 1) * embedding_size)]
                         };
                         let dst_embedding = unsafe {
-                            &mut (*shared_node_embedding.get())
+                            &mut (&mut (*shared_node_embedding.get()))
                                 [(dst * embedding_size)..((dst + 1) * embedding_size)]
                         };
                         let not_dst_embedding = unsafe {
-                            &mut (*shared_node_embedding.get())
+                            &mut (&mut (*shared_node_embedding.get()))
                                 [(not_dst * embedding_size)..((not_dst + 1) * embedding_size)]
                         };
 

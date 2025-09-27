@@ -7,6 +7,7 @@ use std::collections::VecDeque;
 use std::convert::TryFrom;
 use std::hash::{Hash, Hasher};
 use std::string::ToString;
+use rayon::prelude::*;
 
 #[derive(Hash, Clone, Debug)]
 pub struct ShortestPathsResultBFS {
@@ -712,7 +713,7 @@ impl Graph {
         let number_of_nodes = self.get_number_of_nodes() as usize;
         let thread_shared_predecessors =
             ThreadDataRaceAware::new(vec![NODE_NOT_PRESENT; number_of_nodes]);
-        (*thread_shared_predecessors.value.get())[src_node_id as usize] = src_node_id;
+    (&mut (*thread_shared_predecessors.value.get()))[src_node_id as usize] = src_node_id;
         let mut eccentricity = 0;
         let mut most_distant_node = src_node_id;
 
@@ -726,11 +727,11 @@ impl Graph {
             frontier.par_iter().for_each(|node_id| {
                 self.iter_unchecked_neighbour_node_ids_from_source_node_id(*node_id)
                     .for_each(|neighbour_node_id| {
-                        if (*thread_shared_predecessors.value.get())[neighbour_node_id as usize]
+                        if (&(*thread_shared_predecessors.value.get()))[neighbour_node_id as usize]
                             == NODE_NOT_PRESENT
                         {
                             // Set it's distance
-                            (*thread_shared_predecessors.value.get())[neighbour_node_id as usize] =
+                            (&mut (*thread_shared_predecessors.value.get()))[neighbour_node_id as usize] =
                                 *node_id;
                             // add the node to the nodes to explore
                             frontier_new.push(neighbour_node_id);
@@ -773,7 +774,7 @@ impl Graph {
         let mut distances = vec![node_not_present; number_of_nodes];
         let thread_shared_distances = ThreadDataRaceAware::new(&mut distances);
         for src_node_id in src_node_ids.iter().cloned() {
-            (*thread_shared_distances.value.get())[src_node_id as usize] =
+            (&mut (*thread_shared_distances.value.get()))[src_node_id as usize] =
                 T::try_from(0).ok().unwrap();
         }
         let mut eccentricity: T = T::try_from(0).ok().unwrap();
@@ -792,11 +793,11 @@ impl Graph {
             frontier.par_iter().for_each(|node_id| {
                 self.iter_unchecked_neighbour_node_ids_from_source_node_id(*node_id)
                     .for_each(|neighbour_node_id| {
-                        if (*thread_shared_distances.value.get())[neighbour_node_id as usize]
+                        if (&(*thread_shared_distances.value.get()))[neighbour_node_id as usize]
                             == node_not_present
                         {
                             // Set it's distance
-                            (*thread_shared_distances.value.get())[neighbour_node_id as usize] =
+                            (&mut (*thread_shared_distances.value.get()))[neighbour_node_id as usize] =
                                 eccentricity;
                             // add the node to the nodes to explore
                             frontier_new.push(neighbour_node_id);
@@ -1336,7 +1337,7 @@ impl Graph {
     ) -> (NodeT, NodeT) {
         let number_of_nodes = self.get_number_of_nodes() as usize;
         let thread_shared_visited = ThreadDataRaceAware::new(vec![false; number_of_nodes]);
-        (*thread_shared_visited.value.get())[node_id as usize] = true;
+    (&mut (*thread_shared_visited.value.get()))[node_id as usize] = true;
         let mut eccentricity = 0;
         let mut most_distant_node = node_id;
 
@@ -1350,9 +1351,9 @@ impl Graph {
             frontier.par_iter().for_each(|node_id| {
                 self.iter_unchecked_neighbour_node_ids_from_source_node_id(*node_id)
                     .for_each(|neighbour_node_id| {
-                        if !(*thread_shared_visited.value.get())[neighbour_node_id as usize] {
+                        if !(&(*thread_shared_visited.value.get()))[neighbour_node_id as usize] {
                             // Set it's distance
-                            (*thread_shared_visited.value.get())[neighbour_node_id as usize] = true;
+                            (&mut (*thread_shared_visited.value.get()))[neighbour_node_id as usize] = true;
                             // add the node to the nodes to explore
                             frontier_new.push(neighbour_node_id);
                         }

@@ -11,4 +11,4 @@ unzip-n = "0.1"
 indicatif = {version="0.17.0", features = ["rayon"]}
 num-traits = {git="https://github.com/zommiommy/num-traits.git"}
 half = {version = "2.4", features = ["use-intrinsics", "num-traits"]}
-parallel_frontier = {git="https://github.com/zommiommy/parallel_frontier"}
+parallel_frontier = {git="https://github.com/zommiommy/parallel_frontier", rev="decf217972fe541f0707f3956e5c1487ad3f06dc"}

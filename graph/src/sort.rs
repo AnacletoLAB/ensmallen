@@ -132,7 +132,7 @@ impl Graph {
             .into_par_iter()
             .enumerate()
             .for_each(|(i, node_id)| unsafe {
-                (*reversed_bfs_topological_sorting.value.get())[node_id as usize] = i as NodeT;
+                (&mut (*reversed_bfs_topological_sorting.value.get()))[node_id as usize] = i as NodeT;
             });
 
         Ok(reversed_bfs_topological_sorting.value.into_inner())

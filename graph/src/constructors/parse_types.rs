@@ -49,7 +49,7 @@ pub(crate) fn parse_types<TypeT: ToFromUsize>(
                 // We can unwrap because the user tells us that this is surely
                 // a correct node list.
                 let (line_number, type_name) = line.unwrap();
-                (*types.value.get())[line_number] = type_name;
+                (&mut (*types.value.get()))[line_number] = type_name;
             });
             Ok(Some(Vocabulary::from_reverse_map(types.value.into_inner(), name)?))
         }

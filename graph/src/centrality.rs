@@ -166,7 +166,7 @@ impl Graph {
                 let mut total_distance = 0;
                 let thread_id = rayon::current_thread_index().unwrap_or(0);
                 let mut frontier = vec![root as NodeT];
-                let visited = unsafe { &mut (*visited.get())[thread_id] };
+                let visited = unsafe { &mut (&mut (*visited.get()))[thread_id] };
                 visited.set_visited(root);
                 while !frontier.is_empty() {
                     current_depth += 1;
@@ -350,7 +350,7 @@ impl Graph {
                 let mut total_reciprocal_distance: f32 = 0.0;
                 let thread_id = rayon::current_thread_index().unwrap_or(0);
                 let mut frontier = vec![root as NodeT];
-                let visited = unsafe { &mut (*visited.get())[thread_id] };
+                let visited = unsafe { &mut (&mut (*visited.get()))[thread_id] };
                 visited.set_visited(root);
                 while !frontier.is_empty() {
                     current_depth += 1;
@@ -516,7 +516,7 @@ impl Graph {
                         let source_paths =
                             shortest_path_counts[src as usize].load(Ordering::Relaxed);
                         let current_number_of_successors =
-                            &mut (*shared_successor_counts.get())[src as usize];
+                            &mut (&mut (*shared_successor_counts.get()))[src as usize];
                         let mut number_of_successors = *current_number_of_successors;
                         let mut offset = self
                             .edges
@@ -525,7 +525,7 @@ impl Graph {
                             + number_of_successors as usize;
                         self.iter_unchecked_neighbour_node_ids_from_source_node_id(src)
                             .for_each(|dst: u32| {
-                                let status_ref = &mut (*shared_visited_status.get())[dst as usize];
+                                let status_ref = &mut (&mut (*shared_visited_status.get()))[dst as usize];
                                 let status = *status_ref;
 
                                 // If the node was not yet visited
@@ -548,7 +548,7 @@ impl Graph {
                                     shortest_path_counts[dst as usize]
                                         .fetch_add(source_paths, Ordering::Relaxed);
                                     non_temporal_store(
-                                        &mut (*shared_successors.get())[offset],
+                                        &mut (&mut (*shared_successors.get()))[offset],
                                         dst,
                                     );
                                     offset += 1;
@@ -594,7 +594,7 @@ impl Graph {
                         let path_counts =
                             shortest_path_counts[src as usize].load(Ordering::Relaxed) as f32;
                         unsafe {
-                            (*shared_visited_status.get())[src as usize] = UNVISITED;
+                            (&mut (*shared_visited_status.get()))[src as usize] = UNVISITED;
                         }
                         let offset = unsafe {
                             self.edges
@@ -602,7 +602,7 @@ impl Graph {
                                 .0
                         };
                         let number_of_successors =
-                            unsafe { &mut (*shared_successor_counts.get())[src as usize] };
+                            unsafe { &mut (&mut (*shared_successor_counts.get()))[src as usize] };
                         let dependency: f32 = path_counts
                             * if current_depth == depth + 1 {
                                 // If this is the leafs, these nodes do not have any dependency.
@@ -615,17 +615,17 @@ impl Graph {
                                     ..(offset as usize + *number_of_successors as usize)]
                                     .iter()
                                     .map(|&dst| {
-                                        1.0 + unsafe { (*shared_dependencies.get())[dst as usize] }
+                                        1.0 + unsafe { (&(*shared_dependencies.get()))[dst as usize] }
                                     })
                                     .sum::<f32>()
                             };
                         *number_of_successors = 0;
                         // Since we are always setting the dependency of the previous
                         // layer before reading them, we do not need to reset them.
-                        unsafe { (*shared_dependencies.get())[src as usize] = dependency };
+                        unsafe { (&mut (*shared_dependencies.get()))[src as usize] = dependency };
                         // Similarly, since the node `src` by design can only appear once
                         // in the frontier, we do not need an atomic check using fetch-add.
-                        unsafe { (*shared_centralities.get())[src as usize] += dependency };
+                        unsafe { (&mut (*shared_centralities.get()))[src as usize] += dependency };
                     });
                 });
         });
@@ -735,7 +735,7 @@ impl Graph {
                         let source_paths =
                             shortest_path_counts[src as usize].load(Ordering::Relaxed);
                         let current_number_of_successors =
-                            &mut (*shared_successor_counts.get())[src as usize];
+                            &mut (&mut (*shared_successor_counts.get()))[src as usize];
                         let mut number_of_successors = *current_number_of_successors;
                         let mut offset = self
                             .edges
@@ -744,7 +744,7 @@ impl Graph {
                             + number_of_successors as usize;
                         self.iter_unchecked_neighbour_node_ids_from_source_node_id(src)
                             .for_each(|dst: u32| {
-                                let status_ref = &mut (*shared_visited_status.get())[dst as usize];
+                                let status_ref = &mut (&mut (*shared_visited_status.get()))[dst as usize];
                                 let status = *status_ref;
 
                                 // If the node was not yet visited
@@ -767,7 +767,7 @@ impl Graph {
                                     shortest_path_counts[dst as usize]
                                         .fetch_add(source_paths, Ordering::Relaxed);
                                     non_temporal_store(
-                                        &mut (*shared_successors.get())[offset],
+                                        &mut (&mut (*shared_successors.get()))[offset],
                                         dst,
                                     );
                                     offset += 1;
@@ -813,7 +813,7 @@ impl Graph {
                         let path_counts =
                             shortest_path_counts[src as usize].load(Ordering::Relaxed) as f32;
                         unsafe {
-                            (*shared_visited_status.get())[src as usize] = UNVISITED;
+                            (&mut (*shared_visited_status.get()))[src as usize] = UNVISITED;
                         }
                         let offset = unsafe {
                             self.edges
@@ -821,7 +821,7 @@ impl Graph {
                                 .0
                         };
                         let number_of_successors =
-                            unsafe { &mut (*shared_successor_counts.get())[src as usize] };
+                            unsafe { &mut (&mut (*shared_successor_counts.get()))[src as usize] };
                         let dependency: f32 = path_counts
                             * if current_depth == depth + 1 {
                                 // If this is the leafs, these nodes do not have any dependency.
@@ -843,7 +843,7 @@ impl Graph {
                                     .iter()
                                     .map(|&dst| {
                                         (1.0 + unsafe {
-                                            (*shared_dependencies.get())[dst as usize]
+                                            (&(*shared_dependencies.get()))[dst as usize]
                                         }) / shortest_path_counts[dst as usize]
                                             .load(Ordering::Relaxed)
                                             as f32
@@ -853,10 +853,10 @@ impl Graph {
                         *number_of_successors = 0;
                         // Since we are always setting the dependency of the previous
                         // layer before reading them, we do not need to reset them.
-                        unsafe { (*shared_dependencies.get())[src as usize] = dependency };
+                        unsafe { (&mut (*shared_dependencies.get()))[src as usize] = dependency };
                         // Similarly, since the node `src` by design can only appear once
                         // in the frontier, we do not need an atomic check using fetch-add.
-                        unsafe { (*shared_centralities.get())[src as usize] += dependency };
+                        unsafe { (&mut (*shared_centralities.get()))[src as usize] += dependency };
                     });
                 });
         });

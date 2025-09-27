@@ -426,7 +426,7 @@ impl Graph {
             .copied()
             .enumerate()
             .for_each(|(i, node_id)| unsafe {
-                *(*positions.get()).get_unchecked_mut(node_id as usize) = i as NodeT;
+                *(&mut (*positions.get())).get_unchecked_mut(node_id as usize) = i as NodeT;
             });
         let positions = positions.into_inner();
 

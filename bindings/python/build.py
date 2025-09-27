@@ -268,7 +268,7 @@ if __name__ == "__main__":
     # Generating the bindings
     ################################################################################
     logging.info("Generating the bindings")
-    exec("cargo run --release --bin bindgen", cwd=join("..", "..", "code_analysis"))
+    #exec("cargo run --release --bin bindgen", cwd=join("..", "..", "code_analysis"))
 
     ################################################################################
     # Clean the folders and prepare them to be compiled

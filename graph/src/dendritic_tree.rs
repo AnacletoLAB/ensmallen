@@ -314,7 +314,7 @@ impl Graph {
                     .count()
                     == 1
                 {
-                    (*leaf_nodes.value.get())[node_id as usize] = true;
+                    (&mut *leaf_nodes.value.get())[node_id as usize] = true;
                     Some(node_id)
                 } else {
                     None
@@ -332,13 +332,13 @@ impl Graph {
                     // If this is a candidate root, we pass it without further exploring
                     // its neighbouring nodes in order to not expand further the
                     let iterator: Box<dyn Iterator<Item = NodeT>> =
-                        if (*leaf_nodes.value.get())[node_id as usize] {
+                        if (&(*leaf_nodes.value.get()))[node_id as usize] {
                             Box::new(
                                 self.iter_unchecked_unique_neighbour_node_ids_from_source_node_id(
                                     node_id,
                                 )
                                 .filter(|&neighbour_node_id| {
-                                    !(*leaf_nodes.value.get())[neighbour_node_id as usize]
+                                    !(&(*leaf_nodes.value.get()))[neighbour_node_id as usize]
                                 }),
                             )
                         } else {
@@ -355,13 +355,13 @@ impl Graph {
                             neighbour_node_id,
                         )
                         .filter(|&farther_node_id| {
-                            !(*leaf_nodes.value.get())[farther_node_id as usize]
+                            !(&mut (*leaf_nodes.value.get()))[farther_node_id as usize]
                         })
                         .take(2)
                         .count();
                     if unexplored_neighbours == 1 {
                         // Set the neighbouring node as a dentritic tree leaf.
-                        (*leaf_nodes.value.get())[neighbour_node_id as usize] = true;
+                        (&mut (*leaf_nodes.value.get()))[neighbour_node_id as usize] = true;
                         expanded_frontier.store(true, Ordering::Relaxed);
                     }
                     Some(neighbour_node_id)
@@ -388,7 +388,7 @@ impl Graph {
                 let number_of_non_leafs_at_root = self
                     .iter_unchecked_unique_neighbour_node_ids_from_source_node_id(root_node_id)
                     .filter(|&neighbour_node_id| {
-                        !(*leaf_nodes.value.get())[neighbour_node_id as usize]
+                        !(&mut (*leaf_nodes.value.get()))[neighbour_node_id as usize]
                     })
                     .count() as NodeT;
                 while !stack.is_empty() {
@@ -400,11 +400,11 @@ impl Graph {
                                 node_id,
                             )
                             .filter(|&neighbour_node_id| {
-                                (*leaf_nodes.value.get())[neighbour_node_id as usize]
+                                (&mut (*leaf_nodes.value.get()))[neighbour_node_id as usize]
                             })
                         })
                         .map(|neighbour_node_id| {
-                            (*leaf_nodes.value.get())[neighbour_node_id as usize] = false;
+                            (&mut (*leaf_nodes.value.get()))[neighbour_node_id as usize] = false;
                             neighbour_node_id
                         })
                         .collect::<Vec<NodeT>>();

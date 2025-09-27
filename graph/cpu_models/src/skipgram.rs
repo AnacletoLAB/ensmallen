@@ -51,7 +51,7 @@ where
                                        label: F,
                                        learning_rate: F| {
             let node_hidden = unsafe {
-                &mut (*shared_embedding.get())[1][(contextual_node_id as usize
+                &mut (&mut (*shared_embedding.get())[1])[(contextual_node_id as usize
                     * self.embedding_size)
                     ..((contextual_node_id as usize + 1) * self.embedding_size)]
             };
@@ -127,7 +127,7 @@ where
                             let mut cumulative_central_node_gradient =
                                 vec![F::zero(); self.get_embedding_size()];
                             let central_node_embedding = unsafe {
-                                &mut (*shared_embedding.get())[0][central_node_id as usize
+                                &mut (&mut (*shared_embedding.get())[0])[central_node_id as usize
                                     * self.embedding_size
                                     ..(central_node_id as usize + 1) * self.embedding_size]
                             };

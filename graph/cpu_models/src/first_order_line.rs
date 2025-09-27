@@ -89,12 +89,12 @@ impl GraphEmbedder for FirstOrderLINE {
                     .map(|(_, src, dst, label)| (src as usize, dst as usize, label))
                     .for_each(|(src, dst, label)| {
                         let src_embedding = unsafe {
-                            &mut (*shared_node_embedding.get())[(src
+                            &mut (&mut (*shared_node_embedding.get()))[(src
                                 * self.model.get_embedding_size())
                                 ..((src + 1) * self.model.get_embedding_size())]
                         };
                         let dst_embedding = unsafe {
-                            &mut (*shared_node_embedding.get())[(dst
+                            &mut (&mut (*shared_node_embedding.get()))[(dst
                                 * self.model.get_embedding_size())
                                 ..((dst + 1) * self.model.get_embedding_size())]
                         };

@@ -97,23 +97,23 @@ impl GraphEmbedder for TransE {
                         let not_dst = not_dst as usize;
                         let edge_type = edge_type.unwrap() as usize;
                         let src_embedding = unsafe {
-                            &mut (*shared_embedding.get())[0]
+                            &mut (&mut (*shared_embedding.get())[0])
                                 [(src * embedding_size)..((src + 1) * embedding_size)]
                         };
                         let not_src_embedding = unsafe {
-                            &mut (*shared_embedding.get())[0]
+                            &mut (&mut (*shared_embedding.get())[0])
                                 [(not_src * embedding_size)..((not_src + 1) * embedding_size)]
                         };
                         let dst_embedding = unsafe {
-                            &mut (*shared_embedding.get())[0]
+                            &mut (&mut (*shared_embedding.get())[0])
                                 [(dst * embedding_size)..((dst + 1) * embedding_size)]
                         };
                         let not_dst_embedding = unsafe {
-                            &mut (*shared_embedding.get())[0]
+                            &mut (&mut (*shared_embedding.get())[0])
                                 [(not_dst * embedding_size)..((not_dst + 1) * embedding_size)]
                         };
                         let edge_type_embedding = unsafe {
-                            &mut (*shared_embedding.get())[1]
+                            &mut (&mut (*shared_embedding.get())[1])
                                 [(edge_type * embedding_size)..((edge_type + 1) * embedding_size)]
                         };
 

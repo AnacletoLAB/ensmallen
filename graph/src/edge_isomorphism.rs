@@ -444,7 +444,7 @@ impl Graph {
         )?
         .for_each(|group: Vec<NodeT>| {
             group.into_iter().for_each(|isomorphic_node| unsafe {
-                (*shared_deny_mask.get())[isomorphic_node as usize] = true;
+                (&mut (*shared_deny_mask.get()))[isomorphic_node as usize] = true;
             });
         });
         Ok(deny_mask)

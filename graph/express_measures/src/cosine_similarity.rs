@@ -5,6 +5,7 @@ use core::fmt::Debug;
 use indicatif::{ParallelProgressIterator, ProgressBar, ProgressStyle};
 use num_traits::{AsPrimitive, Float};
 use parallel_frontier::prelude::*;
+use rayon::prelude::*;
 use std::iter::Sum;
 
 #[inline(always)]

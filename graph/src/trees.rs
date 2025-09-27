@@ -452,25 +452,25 @@ impl Graph {
                 let parents = thread_safe_parents.value.get();
                 (0..number_of_nodes).progress_with(pb).for_each(|src| unsafe {
                     // If the node has already been explored we skip ahead.
-                    if (*parents)[src] != NODE_NOT_PRESENT {
+                    if (&(*parents))[src] != NODE_NOT_PRESENT {
                         return;
                     }
 
                     // find the first not explored node (this is guardanteed to be in a new component)
                     if self.is_unchecked_singleton_from_node_id(src as NodeT) {
                         // We set singletons as self-loops for now.
-                        (*parents)[src] = src as NodeT;
+                        (&mut (*parents))[src] = src as NodeT;
                         return;
                     }
                     loop {
-                        if (*parents)[src] != NODE_NOT_PRESENT {
+                        if (&(*parents))[src] != NODE_NOT_PRESENT {
                             break;
                         }
                         if active_number_of_nodes.load(Ordering::SeqCst) == 0 {
-                            if (*parents)[src] != NODE_NOT_PRESENT {
+                            if (&(*parents))[src] != NODE_NOT_PRESENT {
                                 break;
                             }
-                            (*parents)[src] = src as NodeT;
+                            (&mut (*parents))[src] = src as NodeT;
 
                             shared_stacks[0].lock().expect("The lock is poisoned from the panic of another thread")
                                 .push(src as NodeT);
@@ -502,8 +502,8 @@ impl Graph {
                     let parents = thread_safe_parents.value.get();
                     unsafe{self.iter_unchecked_neighbour_node_ids_from_source_node_id(src)}
                         .for_each(|dst| unsafe {
-                            if (*parents)[dst as usize] == NODE_NOT_PRESENT {
-                                (*parents)[dst as usize] = src;
+                            if (&(*parents))[dst as usize] == NODE_NOT_PRESENT {
+                                (&mut (*parents))[dst as usize] = src;
                                 active_number_of_nodes.fetch_add(1, Ordering::SeqCst);
                                 shared_stacks[rand_u64(dst as u64) as usize % shared_stacks.len()]
                                     .lock()

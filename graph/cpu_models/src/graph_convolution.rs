@@ -270,7 +270,7 @@ impl GraphConvolution {
                     // We retrieve the thread id for the current thread.
                     let thread_id = rayon::current_thread_index().unwrap();
                     let edge_id_counter: &mut usize =
-                        unsafe { (*edge_ids_mask_counters.get()).get_unchecked_mut(thread_id) };
+                        unsafe { (&mut (*edge_ids_mask_counters.get())).get_unchecked_mut(thread_id) };
 
                     // First of all, we copy the previously computed convolved node features into the
                     // next convolution memory area.
@@ -316,7 +316,7 @@ impl GraphConvolution {
                     })
                     .for_each(|(dst, _)| {
                         let dst_feature_row: &[F2] = unsafe {
-                            &(*convolved_node_features.get())[(dst as usize)
+                            &(&(*convolved_node_features.get()))[(dst as usize)
                                 * convolved_node_features_row_size
                                 ..(dst as usize + 1) * convolved_node_features_row_size]
                         };
@@ -399,7 +399,7 @@ impl GraphConvolution {
                         // We retrieve the thread id for the current thread.
                         let thread_id = rayon::current_thread_index().unwrap();
                         let edge_id_counter: &mut usize =
-                            unsafe { (*edge_ids_mask_counters.get()).get_unchecked_mut(thread_id) };
+                            unsafe { (&mut (*edge_ids_mask_counters.get())).get_unchecked_mut(thread_id) };
 
                         // First of all, we copy the previously computed convolved node features into the
                         // next convolution memory area.

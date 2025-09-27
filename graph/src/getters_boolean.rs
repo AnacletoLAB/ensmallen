@@ -113,7 +113,7 @@ impl Graph {
             let number_of_nodes = self.get_number_of_nodes() as usize;
             let thread_shared_visited = ThreadDataRaceAware::new(vec![NodeT::MAX; number_of_nodes]);
             unsafe {
-                (*thread_shared_visited.value.get())[root_node_id as usize] = root_node_id;
+                (&mut (*thread_shared_visited.value.get()))[root_node_id as usize] = root_node_id;
             }
 
             let loop_found = AtomicBool::new(false);
@@ -130,11 +130,11 @@ impl Graph {
                             .map(move |neighbour_node_id| (node_id, neighbour_node_id))
                     })
                     .filter_map(|(src, dst)| {
-                        if unsafe { (*thread_shared_visited.value.get())[dst as usize] }
+                        if unsafe { (&(*thread_shared_visited.value.get()))[dst as usize] }
                             == NodeT::MAX
                         {
                             unsafe {
-                                (*thread_shared_visited.value.get())[dst as usize] = src;
+                                (&mut (*thread_shared_visited.value.get()))[dst as usize] = src;
                             }
                             // add the node to the nodes to explore
                             Some(dst)
@@ -149,7 +149,7 @@ impl Graph {
                                 // we find this destination node `dst` again.
                                 let mut source_predecessor = src;
                                 while unsafe {
-                                    (*thread_shared_visited.value.get())
+                                    (&(*thread_shared_visited.value.get()))
                                         [source_predecessor as usize]
                                         != root_node_id
                                 } {
@@ -162,7 +162,7 @@ impl Graph {
                                         break;
                                     }
                                     unsafe {
-                                        source_predecessor = (*thread_shared_visited.value.get())
+                                        source_predecessor = (&(*thread_shared_visited.value.get()))
                                             [source_predecessor as usize];
                                     }
                                 }

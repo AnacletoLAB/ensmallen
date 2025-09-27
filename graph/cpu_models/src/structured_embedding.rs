@@ -108,27 +108,27 @@ impl GraphEmbedder for StructuredEmbedding {
                 })
                 .for_each(|(src, dst, not_src, not_dst, edge_type_id)| unsafe {
                     let src_embedding = {
-                        &mut (*shared_embedding.get())[0]
+                        &mut (&mut (*shared_embedding.get())[0])
                             [(src * embedding_size)..((src + 1) * embedding_size)]
                     };
                     let not_src_embedding = {
-                        &mut (*shared_embedding.get())[0]
+                        &mut (&mut (*shared_embedding.get())[0])
                             [(not_src * embedding_size)..((not_src + 1) * embedding_size)]
                     };
                     let dst_embedding = {
-                        &mut (*shared_embedding.get())[0]
+                        &mut (&mut (*shared_embedding.get())[0])
                             [(dst * embedding_size)..((dst + 1) * embedding_size)]
                     };
                     let not_dst_embedding = {
-                        &mut (*shared_embedding.get())[0]
+                        &mut (&mut (*shared_embedding.get())[0])
                             [(not_dst * embedding_size)..((not_dst + 1) * embedding_size)]
                     };
                     let src_edge_type_matrix = {
-                        &mut (*shared_embedding.get())[1][(edge_type_id * edge_matrix_size)
+                        &mut (&mut (*shared_embedding.get())[1])[(edge_type_id * edge_matrix_size)
                             ..((edge_type_id + 1) * edge_matrix_size)]
                     };
                     let dst_edge_type_matrix = {
-                        &mut (*shared_embedding.get())[2][(edge_type_id * edge_matrix_size)
+                        &mut (&mut (*shared_embedding.get())[2])[(edge_type_id * edge_matrix_size)
                             ..((edge_type_id + 1) * edge_matrix_size)]
                     };
 

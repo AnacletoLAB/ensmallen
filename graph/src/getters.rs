@@ -2037,14 +2037,14 @@ impl Graph {
                 if node_degree > 0 {
                     Some(node_id)
                 } else {
-                    (*root_nodes.value.get())[node_id as usize] = false;
+                    (&mut (*root_nodes.value.get()))[node_id as usize] = false;
                     None
                 }
             })
             .for_each(|node_id| unsafe {
                 self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
                     .for_each(|dst| {
-                        (*root_nodes.value.get())[dst as usize] = false;
+                        (&mut (*root_nodes.value.get()))[dst as usize] = false;
                     });
             });
         root_nodes

@@ -207,7 +207,7 @@ impl Graph {
             .progress_with(pb)
             .map(|(first, first_order_neighbours)|{
                 let thread_id = rayon::current_thread_index().expect("current_thread_id not called from a rayon thread. This should not be possible because this is in a Rayon Thread Pool.");
-                let bitvec = unsafe{&mut (*bitvecs.get())[thread_id]};
+                let bitvec = unsafe{&mut (&mut (*bitvecs.get()))[thread_id]};
                 let mut partial_squares_number = 0;
                 bitvec.fill(false);
 
@@ -372,7 +372,7 @@ impl Graph {
             .progress_with(pb)
             .for_each(|(first, first_order_neighbours)|{
                 let thread_id = rayon::current_thread_index().expect("current_thread_id not called from a rayon thread. This should not be possible because this is in a Rayon Thread Pool.");
-                let bitvec = unsafe{&mut (*bitvecs.get())[thread_id]};
+                let bitvec = unsafe{&mut (&mut (*bitvecs.get()))[thread_id]};
                 bitvec.fill(false);
 
                 let mut first_node_squares = 0;

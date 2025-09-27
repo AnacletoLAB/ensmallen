@@ -51,7 +51,7 @@ macro_rules! parse_unsorted_edge_list {
                     has_selfloops.store(true, std::sync::atomic::Ordering::Relaxed);
                 }
                 $(
-                    unsafe{(*$results.value.get())[i] = $input_tuple};
+                    unsafe{(&mut (*$results.value.get()))[i] = $input_tuple};
                 )*
             });
         // Finalizing the edges structure constructor
@@ -189,7 +189,7 @@ macro_rules! parse_sorted_string_edge_list {
             }
             csr_builder.set(i as EdgeT, src, dst);
             $(
-                unsafe{(*$results.value.get())[i] = $input_tuple};
+                unsafe{(&mut (*$results.value.get()))[i] = $input_tuple};
             )*
         });
 
@@ -288,7 +288,7 @@ macro_rules! parse_sorted_integer_edge_list {
                 has_selfloops.store(true, std::sync::atomic::Ordering::Relaxed);
             }
             $(
-                unsafe{(*$results.value.get())[i] = $input_tuple};
+                unsafe{(&mut (*$results.value.get()))[i] = $input_tuple};
             )*
         });
 
