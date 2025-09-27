@@ -1,9 +1,0 @@
-<html>
-<head><title>Index of /mswikisource/</title></head>
-<body>
-<h1>Index of /mswikisource/</h1><hr><pre><a href="../">../</a>
-<a href="20240501/">20240501/</a>                                          31-May-2024 15:20                   -
-<a href="20240520/">20240520/</a>                                          30-May-2024 15:35                   -
-<a href="latest/">latest/</a>                                            31-May-2024 15:20                   -
-</pre><hr></body>
-</html>

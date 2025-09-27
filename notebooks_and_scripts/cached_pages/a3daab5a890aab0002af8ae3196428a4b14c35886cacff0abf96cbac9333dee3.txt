@@ -1,9 +1,0 @@
-<html>
-<head><title>Index of /wikidatawiki/entities/20230220/</title></head>
-<body>
-<h1>Index of /wikidatawiki/entities/20230220/</h1><hr><pre><a href="../">../</a>
-<a href="wikidata-20230220-all.json.gz">wikidata-20230220-all.json.gz</a>                      22-Feb-2023 12:10        121942139085
-<a href="wikidata-20230220-md5sums.txt">wikidata-20230220-md5sums.txt</a>                      22-Feb-2023 13:17                  64
-<a href="wikidata-20230220-sha1sums.txt">wikidata-20230220-sha1sums.txt</a>                     22-Feb-2023 13:53                  72
-</pre><hr></body>
-</html>

@@ -2,79 +2,6 @@
 from ensmallen import Graph  # pylint: disable=import-error
 from .graph_retrieval import RetrievedGraph
 
-def Cora(
-    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
-    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
-    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
-    cache_sys_var="GRAPH_CACHE_DIR", version="latest", **kwargs
-) -> Graph:
-    """Return Cora graph	The Cora dataset consists of 2708 scientific publications classified into
-	one of seven classes. The citation network consists of 5429 links. Each
-	publication in the dataset is described by a 0/1-valued word vector indicating
-	the absence/presence of the corresponding word from the dictionary. The
-	dictionary consists of 1433 unique words.
-
-    Parameters
-    ----------
-    directed = False
-    preprocess = "auto"
-        Preprocess for optimal load time & memory peak.
-        Will preprocess in Linux/macOS but not Windows.
-    bioregistry=False
-    load_nodes = True
-        Load node names or use numeric range
-    load_node_types = True
-    load_edge_types = True
-    auto_enable_tradeoffs = True
-        Enable when graph has < 50M edges
-    cache_path = None
-        Path to store graphs
-        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
-    cache_sys_var = "GRAPH_CACHE_DIR"
-    version = "latest"
-        Version to retrieve		
-	
-	References
-	----------
-	Please cite:
-	
-	```bib
-	@incollection{getoor2005link,
-	  title={Link-based classification},
-	  author={Getoor, Lise},
-	  booktitle={Advanced methods for knowledge discovery from complex data},
-	  pages={189--207},
-	  year={2005},
-	  publisher={Springer}
-	}
-	
-	@article{sen2008collective,
-	  title={Collective classification in network data},
-	  author={Sen, Prithviraj and Namata, Galileo and Bilgic, Mustafa and Getoor, Lise and Galligher, Brian and Eliassi-Rad, Tina},
-	  journal={AI magazine},
-	  volume={29},
-	  number={3},
-	  pages={93--93},
-	  year={2008}
-	}
-	```
-    """
-    return RetrievedGraph(
-        "Cora", version, "linqs", directed, preprocess, bioregistry, load_nodes,
-        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
-        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs,
-		callbacks=[
-			parse_linqs_incidence_matrix
-		],
-		callbacks_arguments=[
-		    {
-		        "cites_path": "cora/cora/cora.cites",
-		        "content_path": "cora/cora/cora.content",
-		        "node_path": "nodes.tsv",
-		        "edge_path": "edges.tsv"
-		    }
-		]
-    )()
 def CiteSeer(
     directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
     load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
@@ -143,6 +70,79 @@ def CiteSeer(
 		    {
 		        "cites_path": "citeseer/citeseer/citeseer.cites",
 		        "content_path": "citeseer/citeseer/citeseer.content",
+		        "node_path": "nodes.tsv",
+		        "edge_path": "edges.tsv"
+		    }
+		]
+    )()
+def Cora(
+    directed=False, preprocess="auto", bioregistry=False, load_nodes=True, load_node_types=True,
+    load_edge_types=True, load_edge_weights=True, auto_enable_tradeoffs=True,
+    sort_tmp_dir=None, verbose=2, ring_bell=False, cache=True, cache_path=None,
+    cache_sys_var="GRAPH_CACHE_DIR", version="latest", **kwargs
+) -> Graph:
+    """Return Cora graph	The Cora dataset consists of 2708 scientific publications classified into
+	one of seven classes. The citation network consists of 5429 links. Each
+	publication in the dataset is described by a 0/1-valued word vector indicating
+	the absence/presence of the corresponding word from the dictionary. The
+	dictionary consists of 1433 unique words.
+
+    Parameters
+    ----------
+    directed = False
+    preprocess = "auto"
+        Preprocess for optimal load time & memory peak.
+        Will preprocess in Linux/macOS but not Windows.
+    bioregistry=False
+    load_nodes = True
+        Load node names or use numeric range
+    load_node_types = True
+    load_edge_types = True
+    auto_enable_tradeoffs = True
+        Enable when graph has < 50M edges
+    cache_path = None
+        Path to store graphs
+        Defaults either to `GRAPH_CACHE_DIR` sys var or `graphs`
+    cache_sys_var = "GRAPH_CACHE_DIR"
+    version = "latest"
+        Version to retrieve		
+	
+	References
+	----------
+	Please cite:
+	
+	```bib
+	@incollection{getoor2005link,
+	  title={Link-based classification},
+	  author={Getoor, Lise},
+	  booktitle={Advanced methods for knowledge discovery from complex data},
+	  pages={189--207},
+	  year={2005},
+	  publisher={Springer}
+	}
+	
+	@article{sen2008collective,
+	  title={Collective classification in network data},
+	  author={Sen, Prithviraj and Namata, Galileo and Bilgic, Mustafa and Getoor, Lise and Galligher, Brian and Eliassi-Rad, Tina},
+	  journal={AI magazine},
+	  volume={29},
+	  number={3},
+	  pages={93--93},
+	  year={2008}
+	}
+	```
+    """
+    return RetrievedGraph(
+        "Cora", version, "linqs", directed, preprocess, bioregistry, load_nodes,
+        load_node_types, load_edge_types, load_edge_weights, auto_enable_tradeoffs, sort_tmp_dir,
+        verbose, ring_bell, cache, cache_path, cache_sys_var, kwargs,
+		callbacks=[
+			parse_linqs_incidence_matrix
+		],
+		callbacks_arguments=[
+		    {
+		        "cites_path": "cora/cora/cora.cites",
+		        "content_path": "cora/cora/cora.content",
 		        "node_path": "nodes.tsv",
 		        "edge_path": "edges.tsv"
 		    }
