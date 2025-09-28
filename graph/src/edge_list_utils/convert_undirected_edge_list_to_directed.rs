@@ -1,5 +1,3 @@
-use std::intrinsics::unlikely;
-
 use crate::{utils::ItersWrapper, EdgeFileReader, EdgeFileWriter, EdgeT, Result, WeightT};
 
 /// Create a new directed edge list from a given undirected one by duplicating the undirected edges.
@@ -152,7 +150,7 @@ pub fn convert_undirected_edge_list_to_directed(
                 let weight = if weight.is_nan() { None } else { Some(weight) };
                 // In most well formed graphs, there should be a small
                 // percentage of selfloops
-                if unlikely(src_name == dst_name) {
+                if src_name == dst_name {
                     new_number_of_edges += 1;
                     vec![(0, 0, src_name, 0, dst_name, None, edge_type, weight)]
                 } else {

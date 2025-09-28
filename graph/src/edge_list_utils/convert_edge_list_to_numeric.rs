@@ -1,5 +1,3 @@
-use std::intrinsics::unlikely;
-
 use crate::{
     parse_nodes, parse_types, utils::ItersWrapper, EdgeFileReader, EdgeFileWriter, EdgeT,
     EdgeTypeT, NodeFileReader, NodeFileWriter, NodeT, Result, TypeFileReader, TypeFileWriter,
@@ -684,7 +682,7 @@ pub fn densify_sparse_numeric_edge_list(
         // We use the unlikely directive to specify to the compiler
         // that this branch should not be visited often during the
         // execution of this script, except for pathological cases.
-        if unlikely(nodes.len() <= numeric_node_name) {
+        if nodes.len() <= numeric_node_name {
             nodes.extend((nodes.len()..=numeric_node_name).map(|_| NODE_NOT_PRESENT));
         }
         // If the ID for the current source node was not already provided

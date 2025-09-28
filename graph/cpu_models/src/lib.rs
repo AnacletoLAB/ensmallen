@@ -3,7 +3,6 @@
 #![feature(atomic_from_mut)]
 #![feature(sync_unsafe_cell)]
 #![feature(associated_type_defaults)]
-#![feature(associated_type_bounds)]
 #![feature(type_alias_impl_trait)]
 #![allow(incomplete_features)]
 

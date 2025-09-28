@@ -1,4 +1,4 @@
-#![feature(abi_ptx, core_intrinsics)]
+#![feature(abi_ptx)]
 #![no_std]
 #![feature(asm_experimental_arch)]
 

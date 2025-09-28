@@ -7,7 +7,6 @@ use std::collections::VecDeque;
 use std::convert::TryFrom;
 use std::hash::{Hash, Hasher};
 use std::string::ToString;
-use rayon::prelude::*;
 
 #[derive(Hash, Clone, Debug)]
 pub struct ShortestPathsResultBFS {

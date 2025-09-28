@@ -4,7 +4,6 @@ use core::fmt::Debug;
 use core::ops::Mul;
 use rayon::prelude::*;
 use std::iter::Sum;
-use core::intrinsics::unlikely;
 
 #[inline(always)]
 /// Returns the dot product between the two provided vectors computed sequentially.
@@ -127,7 +126,7 @@ where
             let src: usize = src.try_into().unwrap();
             let dst: usize = dst.try_into().unwrap();
 
-            if unlikely(src == dst) {
+            if src == dst {
                 *similarity = F::one();
             }
 

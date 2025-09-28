@@ -1,7 +1,5 @@
 #![allow(internal_features)]
-#![feature(core_intrinsics)]
 use std::hash::{Hash, Hasher};
-use std::intrinsics::unlikely;
 
 type EdgeT = u64;
 type NodeT = u32;
@@ -168,10 +166,10 @@ impl CSR {
     }
 
     pub fn get_edge_id_from_node_ids(&self, src: NodeT, dst: NodeT) -> Result<EdgeT> {
-        if unlikely(src >= self.get_number_of_nodes()) {
+        if src >= self.get_number_of_nodes() {
             return Err("".into());
         }
-        if unlikely(dst >= self.get_number_of_nodes()) {
+        if dst >= self.get_number_of_nodes() {
             return Err("".into());
         }
         let (min_edge_id, max_edge_id) =

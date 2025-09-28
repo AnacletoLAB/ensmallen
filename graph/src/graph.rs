@@ -1,4 +1,4 @@
-use std::{intrinsics::unlikely, sync::atomic::AtomicU8};
+use std::sync::atomic::AtomicU8;
 
 use super::*;
 use bitvec::prelude::*;
@@ -192,16 +192,15 @@ impl Graph {
                         // should be a rare occurrence: in a well formed graph
                         // there should be only a small amount of singletons.
                         // The same applies also to singletons with selfloops.
-                        if unlikely(
-                            may_have_singletons && node_degree == 0
-                                || may_have_singleton_with_selfloops
-                                    && node_degree > 0
-                                    && self
-                                        .iter_unchecked_neighbour_node_ids_from_source_node_id(
-                                            node_id as NodeT,
-                                        )
-                                        .all(|dst_id| node_id as NodeT == dst_id),
-                        ) {
+                        if may_have_singletons && node_degree == 0
+                            || may_have_singleton_with_selfloops
+                                && node_degree > 0
+                                && self
+                                    .iter_unchecked_neighbour_node_ids_from_source_node_id(
+                                        node_id as NodeT,
+                                    )
+                                    .all(|dst_id| node_id as NodeT == dst_id)
+                        {
                             let connected_nodes = thread_shared_connected_nodes.value.get();
                             *(*connected_nodes).get_unchecked_mut(node_id) = false;
                         }

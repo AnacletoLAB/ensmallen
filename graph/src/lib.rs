@@ -12,7 +12,6 @@
 #![feature(impl_trait_in_assoc_type)]
 #![feature(string_remove_matches)]
 #![feature(exit_status_error)]
-#![feature(core_intrinsics)]
 #![feature(sync_unsafe_cell)]
 #![feature(pattern)]
 #![deny(unconditional_recursion)]

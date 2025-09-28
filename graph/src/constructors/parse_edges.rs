@@ -3,7 +3,6 @@ use csr::{ConcurrentCSRBuilder, CSR};
 use num_traits::Zero;
 use rayon::prelude::*;
 use std::cmp::Ordering;
-use std::intrinsics::unlikely;
 use std::sync::atomic::AtomicBool;
 
 macro_rules! parse_unsorted_edge_list {
@@ -47,7 +46,7 @@ macro_rules! parse_unsorted_edge_list {
             .enumerate()
             .for_each(|(i, (src, dst, $($input_tuple),*))|  {
                 csr_builder.set(i as EdgeT, src, dst);
-                if unlikely(src == dst) {
+                if src == dst {
                     has_selfloops.store(true, std::sync::atomic::Ordering::Relaxed);
                 }
                 $(
@@ -100,7 +99,7 @@ macro_rules! parse_unsorted_string_edge_list {
         } else {
             $ei.map($edge_weights_method).method_caller($edge_types_method, $edge_types_method, &mut edge_type_parser).method_caller($node_method, $node_method, &mut node_parser).flat_map_iter(|line| match line {
                 Ok((_, (src, dst, $($workaround,)*))) => {
-                    if unlikely(src == dst) {
+                    if src == dst {
                         vec![Ok((src, dst, $($input_tuple,)*))]
                     } else {
                         vec![
@@ -184,7 +183,7 @@ macro_rules! parse_sorted_string_edge_list {
         $ei.method_caller($edge_types_method, $edge_types_method, &mut edge_type_parser).method_caller($node_method, $node_method, &mut node_parser).for_each(|line| {
             // There cannot be results when iterating on a sorted vector.
             let (i, (src, dst, $($workaround),*)) = line.unwrap();
-            if unlikely(src == dst) {
+            if src == dst {
                 has_selfloops.store(true, std::sync::atomic::Ordering::Relaxed);
             }
             csr_builder.set(i as EdgeT, src, dst);
@@ -284,7 +283,7 @@ macro_rules! parse_sorted_integer_edge_list {
         );
         $ei.for_each(|(i, (src, dst, $($workaround),*))| {
             csr_builder.set(i as EdgeT, src, dst);
-            if unlikely(src == dst) {
+            if src == dst {
                 has_selfloops.store(true, std::sync::atomic::Ordering::Relaxed);
             }
             $(
