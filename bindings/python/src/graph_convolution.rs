@@ -198,25 +198,25 @@ impl GraphConvolution {
         let gil = Python::acquire_gil();
 
         let node_features = node_features.as_ref(gil.python());
-        if let Ok(node_features) = <&PyArray2<f32>>::extract(&node_features) {
+        if let Ok(node_features) = <&PyArray2<f32>>::extract(node_features) {
             self._transform::<f32>(support, node_features, path, edge_ids_mask)
-        } else if let Ok(node_features) = <&PyArray2<f64>>::extract(&node_features) {
+        } else if let Ok(node_features) = <&PyArray2<f64>>::extract(node_features) {
             self._transform::<f64>(support, node_features, path, edge_ids_mask)
-        } else if let Ok(node_features) = <&PyArray2<u8>>::extract(&node_features) {
+        } else if let Ok(node_features) = <&PyArray2<u8>>::extract(node_features) {
             self._transform::<u8>(support, node_features, path, edge_ids_mask)
-        } else if let Ok(node_features) = <&PyArray2<u16>>::extract(&node_features) {
+        } else if let Ok(node_features) = <&PyArray2<u16>>::extract(node_features) {
             self._transform::<u16>(support, node_features, path, edge_ids_mask)
-        } else if let Ok(node_features) = <&PyArray2<u32>>::extract(&node_features) {
+        } else if let Ok(node_features) = <&PyArray2<u32>>::extract(node_features) {
             self._transform::<u32>(support, node_features, path, edge_ids_mask)
-        } else if let Ok(node_features) = <&PyArray2<u64>>::extract(&node_features) {
+        } else if let Ok(node_features) = <&PyArray2<u64>>::extract(node_features) {
             self._transform::<u64>(support, node_features, path, edge_ids_mask)
-        } else if let Ok(node_features) = <&PyArray2<i8>>::extract(&node_features) {
+        } else if let Ok(node_features) = <&PyArray2<i8>>::extract(node_features) {
             self._transform::<i8>(support, node_features, path, edge_ids_mask)
-        } else if let Ok(node_features) = <&PyArray2<i16>>::extract(&node_features) {
+        } else if let Ok(node_features) = <&PyArray2<i16>>::extract(node_features) {
             self._transform::<i16>(support, node_features, path, edge_ids_mask)
-        } else if let Ok(node_features) = <&PyArray2<i32>>::extract(&node_features) {
+        } else if let Ok(node_features) = <&PyArray2<i32>>::extract(node_features) {
             self._transform::<i32>(support, node_features, path, edge_ids_mask)
-        } else if let Ok(node_features) = <&PyArray2<i64>>::extract(&node_features) {
+        } else if let Ok(node_features) = <&PyArray2<i64>>::extract(node_features) {
             self._transform::<i64>(support, node_features, path, edge_ids_mask)
         } else {
             pe!(Err(concat!(

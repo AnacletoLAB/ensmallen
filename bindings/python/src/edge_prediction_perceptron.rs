@@ -90,7 +90,7 @@ impl EdgePredictionPerceptron {
                             .collect::<Result<Vec<_>>>())
                         .transpose()
                 )?
-                .unwrap_or_else(|| Vec::new()),
+                .unwrap_or_else(Vec::new),
                 pe!(
                     extract_value_rust_result!(kwargs, "edge_features", Vec<String>)
                         .map(|names| {
@@ -101,7 +101,7 @@ impl EdgePredictionPerceptron {
                         })
                         .transpose()
                 )?
-                .unwrap_or_else(|| Vec::new()),
+                .unwrap_or_else(Vec::new),
                 cpu_models::Adam::new(
                     extract_value_rust_result!(kwargs, "learning_rate", f32),
                     extract_value_rust_result!(kwargs, "first_order_decay_factor", f32),

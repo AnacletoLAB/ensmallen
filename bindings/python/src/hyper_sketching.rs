@@ -7,7 +7,6 @@ use hyperloglog_rs::prelude::*;
 use num_traits::Float;
 use rayon::prelude::*;
 use serde::{Deserialize, Serialize};
-use serde_json;
 
 fn array_to_numpy_array1d<const N: usize>(array: [f32; N]) -> Result<Py<PyArray1<f32>>> {
     let gil = pyo3::Python::acquire_gil();
@@ -3639,7 +3638,7 @@ impl InnerModel {
                 dtype,
             )?)), // {python_generated}
             _ => {
-                return Err(format!(
+                Err(format!(
                     concat!(
                         "The HyperSketching model supports precisions ranging from 4 ",
                         "to 16 and bits ranging from 4 to 6, and hops from 1 to 10. ",
@@ -6115,7 +6114,7 @@ impl InnerModel {
                 // as we generally do not care about memory collisions.
                 pe!(self.compute_sketching_from_iterator::<I, f32>(
                     edge_features_ref,
-                    &support,
+                    support,
                     edge_iterator
                 ))?;
 

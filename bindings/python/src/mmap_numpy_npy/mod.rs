@@ -40,7 +40,7 @@ pub fn create_memory_mapped_numpy_array(
 ) -> Py<PyAny> {
     let dtype = dtype.into();
 
-    let num_of_elements = shape.iter().fold(1, |a, b| a * b);
+    let num_of_elements = shape.iter().product::<isize>();
     let data_size = num_of_elements * npy_type_to_bytes_size(dtype) as isize;
 
     #[cfg(target_endian = "little")]
@@ -67,7 +67,7 @@ pub fn create_memory_mapped_numpy_array(
     let aligned_len = offset + padding_size;
 
     assert!(
-        aligned_len % ARRAY_ALIGN == 0,
+        aligned_len.is_multiple_of(ARRAY_ALIGN),
         "Error in the computation of the alignement of the npy header {} % {}",
         aligned_len,
         ARRAY_ALIGN,
@@ -99,7 +99,9 @@ pub fn create_memory_mapped_numpy_array(
         .expect("Failed to create slice container");
 
     // do the magic
-    let result = unsafe {
+    
+
+    unsafe {
         use numpy::npyffi::*;
 
         let mut flags = NPY_ARRAY_WRITEABLE | NPY_ARRAY_ALIGNED;
@@ -131,9 +133,7 @@ pub fn create_memory_mapped_numpy_array(
             panic!("Cant set base object")
         }
         Py::from_owned_ptr(py, ptr)
-    };
-
-    result
+    }
 }
 
 pub fn load_memory_mapped_numpy_array(

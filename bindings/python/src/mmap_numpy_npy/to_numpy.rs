@@ -67,7 +67,7 @@ pub fn to_numpy_array<'py, T: ToNumpyDtype>(
     shape: &[usize],
     fortran_order: bool,
 ) -> Result<Py<PyAny>, String> {
-    let num_of_elements = shape.iter().fold(1, |a, b| a * b);
+    let num_of_elements = shape.iter().product::<usize>();
 
     if data.len() != num_of_elements {
         return Err(format!(

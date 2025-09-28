@@ -95,21 +95,21 @@ impl Chain {
     #[pyo3(text_signature = "($self)")]
     /// Return the first node ID of the chain
     pub fn get_root_node_id(&self) -> NodeT {
-        self.inner.get_root_node_id().into()
+        self.inner.get_root_node_id()
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Return the first node name of the chain
     pub fn get_root_node_name(&self) -> String {
-        self.inner.get_root_node_name().into()
+        self.inner.get_root_node_name()
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Return length of the chain
     pub fn len(&self) -> NodeT {
-        self.inner.len().into()
+        self.inner.len()
     }
 
     #[automatically_generated_binding]
@@ -129,7 +129,7 @@ impl Chain {
     ///
     pub fn get_first_k_chain_node_ids(&self, k: usize) -> Py<PyArray1<NodeT>> {
         let gil = pyo3::Python::acquire_gil();
-        to_ndarray_1d!(gil, self.inner.get_first_k_chain_node_ids(k.clone()), NodeT)
+        to_ndarray_1d!(gil, self.inner.get_first_k_chain_node_ids(k), NodeT)
     }
 
     #[automatically_generated_binding]
@@ -141,9 +141,8 @@ impl Chain {
     ///
     pub fn get_first_k_chain_node_names(&self, k: usize) -> Vec<String> {
         self.inner
-            .get_first_k_chain_node_names(k.clone())
+            .get_first_k_chain_node_names(k)
             .into_iter()
-            .map(|x| x.into())
             .collect::<Vec<_>>()
     }
 
@@ -154,7 +153,6 @@ impl Chain {
         self.inner
             .get_chain_node_names()
             .into_iter()
-            .map(|x| x.into())
             .collect::<Vec<_>>()
     }
 }
@@ -257,17 +255,16 @@ impl Chain {
         // compute the similarities between all the terms and tokens
         let tokens_expanded = tokens
             .iter()
-            .map(|token| {
+            .flat_map(|token| {
                 let mut similarities = CHAIN_TERMS
                     .iter()
-                    .map(move |term| (*term, jaro_winkler(token, term) as f64))
+                    .map(move |term| (*term, jaro_winkler(token, term)))
                     .collect::<Vec<(&str, f64)>>();
 
                 similarities.sort_by(|(_, a), (_, b)| b.partial_cmp(a).unwrap());
 
                 similarities.into_iter().take(1)
             })
-            .flatten()
             .collect::<Vec<(&str, f64)>>();
 
         // Compute the weighted ranking of each method ("document")
@@ -303,7 +300,7 @@ impl Chain {
             doc_scores
                 .iter()
                 .map(|(method_id, _)| {
-                    format!("* `{}`", CHAIN_METHODS_NAMES[*method_id].to_string())
+                    format!("* `{}`", CHAIN_METHODS_NAMES[*method_id])
                 })
                 .take(10)
                 .collect::<Vec<String>>()
@@ -343,21 +340,21 @@ impl Circle {
     #[pyo3(text_signature = "($self)")]
     /// Return the first node ID of the Circle
     pub fn get_root_node_id(&self) -> NodeT {
-        self.inner.get_root_node_id().into()
+        self.inner.get_root_node_id()
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Return the first node name of the circle
     pub fn get_root_node_name(&self) -> String {
-        self.inner.get_root_node_name().into()
+        self.inner.get_root_node_name()
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Return length of the Circle
     pub fn len(&self) -> NodeT {
-        self.inner.len().into()
+        self.inner.len()
     }
 
     #[automatically_generated_binding]
@@ -379,7 +376,7 @@ impl Circle {
         let gil = pyo3::Python::acquire_gil();
         to_ndarray_1d!(
             gil,
-            self.inner.get_first_k_circle_node_ids(k.clone()),
+            self.inner.get_first_k_circle_node_ids(k),
             NodeT
         )
     }
@@ -393,9 +390,8 @@ impl Circle {
     ///
     pub fn get_first_k_circle_node_names(&self, k: usize) -> Vec<String> {
         self.inner
-            .get_first_k_circle_node_names(k.clone())
+            .get_first_k_circle_node_names(k)
             .into_iter()
-            .map(|x| x.into())
             .collect::<Vec<_>>()
     }
 
@@ -406,7 +402,6 @@ impl Circle {
         self.inner
             .get_circle_node_names()
             .into_iter()
-            .map(|x| x.into())
             .collect::<Vec<_>>()
     }
 }
@@ -509,17 +504,16 @@ impl Circle {
         // compute the similarities between all the terms and tokens
         let tokens_expanded = tokens
             .iter()
-            .map(|token| {
+            .flat_map(|token| {
                 let mut similarities = CIRCLE_TERMS
                     .iter()
-                    .map(move |term| (*term, jaro_winkler(token, term) as f64))
+                    .map(move |term| (*term, jaro_winkler(token, term)))
                     .collect::<Vec<(&str, f64)>>();
 
                 similarities.sort_by(|(_, a), (_, b)| b.partial_cmp(a).unwrap());
 
                 similarities.into_iter().take(1)
             })
-            .flatten()
             .collect::<Vec<(&str, f64)>>();
 
         // Compute the weighted ranking of each method ("document")
@@ -555,7 +549,7 @@ impl Circle {
             doc_scores
                 .iter()
                 .map(|(method_id, _)| {
-                    format!("* `{}`", CIRCLE_METHODS_NAMES[*method_id].to_string())
+                    format!("* `{}`", CIRCLE_METHODS_NAMES[*method_id])
                 })
                 .take(10)
                 .collect::<Vec<String>>()
@@ -595,7 +589,7 @@ impl Clique {
     #[pyo3(text_signature = "($self)")]
     /// Return length of the Clique
     pub fn len(&self) -> NodeT {
-        self.inner.len().into()
+        self.inner.len()
     }
 
     #[automatically_generated_binding]
@@ -613,7 +607,6 @@ impl Clique {
         self.inner
             .get_node_names()
             .into_iter()
-            .map(|x| x.into())
             .collect::<Vec<_>>()
     }
 }
@@ -676,17 +669,16 @@ impl Clique {
         // compute the similarities between all the terms and tokens
         let tokens_expanded = tokens
             .iter()
-            .map(|token| {
+            .flat_map(|token| {
                 let mut similarities = CLIQUE_TERMS
                     .iter()
-                    .map(move |term| (*term, jaro_winkler(token, term) as f64))
+                    .map(move |term| (*term, jaro_winkler(token, term)))
                     .collect::<Vec<(&str, f64)>>();
 
                 similarities.sort_by(|(_, a), (_, b)| b.partial_cmp(a).unwrap());
 
                 similarities.into_iter().take(1)
             })
-            .flatten()
             .collect::<Vec<(&str, f64)>>();
 
         // Compute the weighted ranking of each method ("document")
@@ -722,7 +714,7 @@ impl Clique {
             doc_scores
                 .iter()
                 .map(|(method_id, _)| {
-                    format!("* `{}`", CLIQUE_METHODS_NAMES[*method_id].to_string())
+                    format!("* `{}`", CLIQUE_METHODS_NAMES[*method_id])
                 })
                 .take(10)
                 .collect::<Vec<String>>()
@@ -769,91 +761,91 @@ impl DendriticTree {
     #[pyo3(text_signature = "($self)")]
     /// Return the root node ID of the dendritic tree
     pub fn get_root_node_id(&self) -> NodeT {
-        self.inner.get_root_node_id().into()
+        self.inner.get_root_node_id()
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Return whether the current dendritic tree is actually a tree
     pub fn is_tree(&self) -> bool {
-        self.inner.is_tree().into()
+        self.inner.is_tree()
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Return whether the current dendritic tree is actually a tendril
     pub fn is_tendril(&self) -> bool {
-        self.inner.is_tendril().into()
+        self.inner.is_tendril()
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Return whether the current dendritic tree is a proper dentritic tree
     pub fn is_dendritic_tree(&self) -> bool {
-        self.inner.is_dendritic_tree().into()
+        self.inner.is_dendritic_tree()
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Return whether the current dendritic tree is actually a free-floating chain
     pub fn is_free_floating_chain(&self) -> bool {
-        self.inner.is_free_floating_chain().into()
+        self.inner.is_free_floating_chain()
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Return whether the current dendritic tree is actually a star
     pub fn is_star(&self) -> bool {
-        self.inner.is_star().into()
+        self.inner.is_star()
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Return whether the current dendritic tree is actually a star of tendrils
     pub fn is_tendril_star(&self) -> bool {
-        self.inner.is_tendril_star().into()
+        self.inner.is_tendril_star()
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Return whether the current dendritic tree is actually a dendritic star
     pub fn is_dendritic_star(&self) -> bool {
-        self.inner.is_dendritic_star().into()
+        self.inner.is_dendritic_star()
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Return whether the current dendritic tree is actually a dendritic tendril star
     pub fn is_dendritic_tendril_star(&self) -> bool {
-        self.inner.is_dendritic_tendril_star().into()
+        self.inner.is_dendritic_tendril_star()
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Return the depth of the dentritic tree
     pub fn get_depth(&self) -> NodeT {
-        self.inner.get_depth().into()
+        self.inner.get_depth()
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Return the root node name of the DendriticTree
     pub fn get_root_node_name(&self) -> String {
-        self.inner.get_root_node_name().into()
+        self.inner.get_root_node_name()
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Return number of nodes involved in the dendritic tree
     pub fn get_number_of_involved_nodes(&self) -> NodeT {
-        self.inner.get_number_of_involved_nodes().into()
+        self.inner.get_number_of_involved_nodes()
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Return number of edges involved in the dendritic tree
     pub fn get_number_of_involved_edges(&self) -> EdgeT {
-        self.inner.get_number_of_involved_edges().into()
+        self.inner.get_number_of_involved_edges()
     }
 
     #[automatically_generated_binding]
@@ -875,7 +867,7 @@ impl DendriticTree {
         let gil = pyo3::Python::acquire_gil();
         to_ndarray_1d!(
             gil,
-            self.inner.get_first_k_dentritic_trees_node_ids(k.clone()),
+            self.inner.get_first_k_dentritic_trees_node_ids(k),
             NodeT
         )
     }
@@ -889,9 +881,8 @@ impl DendriticTree {
     ///
     pub fn get_first_k_dentritic_trees_node_names(&self, k: usize) -> Vec<String> {
         self.inner
-            .get_first_k_dentritic_trees_node_names(k.clone())
+            .get_first_k_dentritic_trees_node_names(k)
             .into_iter()
-            .map(|x| x.into())
             .collect::<Vec<_>>()
     }
 
@@ -902,7 +893,6 @@ impl DendriticTree {
         self.inner
             .get_dentritic_trees_node_names()
             .into_iter()
-            .map(|x| x.into())
             .collect::<Vec<_>>()
     }
 }
@@ -1095,17 +1085,16 @@ impl DendriticTree {
         // compute the similarities between all the terms and tokens
         let tokens_expanded = tokens
             .iter()
-            .map(|token| {
+            .flat_map(|token| {
                 let mut similarities = DENDRITICTREE_TERMS
                     .iter()
-                    .map(move |term| (*term, jaro_winkler(token, term) as f64))
+                    .map(move |term| (*term, jaro_winkler(token, term)))
                     .collect::<Vec<(&str, f64)>>();
 
                 similarities.sort_by(|(_, a), (_, b)| b.partial_cmp(a).unwrap());
 
                 similarities.into_iter().take(1)
             })
-            .flatten()
             .collect::<Vec<(&str, f64)>>();
 
         // Compute the weighted ranking of each method ("document")
@@ -1143,7 +1132,7 @@ impl DendriticTree {
                 .map(|(method_id, _)| {
                     format!(
                         "* `{}`",
-                        DENDRITICTREE_METHODS_NAMES[*method_id].to_string()
+                        DENDRITICTREE_METHODS_NAMES[*method_id]
                     )
                 })
                 .take(10)
@@ -1211,8 +1200,7 @@ impl Graph {
     /// If the given node ID does not exists in the graph this method will panic.
     pub unsafe fn is_unchecked_connected_from_node_id(&self, node_id: NodeT) -> bool {
         self.inner
-            .is_unchecked_connected_from_node_id(node_id.clone())
-            .into()
+            .is_unchecked_connected_from_node_id(node_id)
     }
 
     #[automatically_generated_binding]
@@ -1229,7 +1217,7 @@ impl Graph {
     /// -------
     ///
     pub fn is_connected_from_node_id(&self, node_id: NodeT) -> PyResult<bool> {
-        Ok(pe!(self.inner.is_connected_from_node_id(node_id.clone()))?.into())
+        Ok(pe!(self.inner.is_connected_from_node_id(node_id))?)
     }
 
     #[automatically_generated_binding]
@@ -1247,8 +1235,7 @@ impl Graph {
     /// If the given node ID does not exists in the graph this method will panic.
     pub unsafe fn is_unchecked_disconnected_node_from_node_id(&self, node_id: NodeT) -> bool {
         self.inner
-            .is_unchecked_disconnected_node_from_node_id(node_id.clone())
-            .into()
+            .is_unchecked_disconnected_node_from_node_id(node_id)
     }
 
     #[automatically_generated_binding]
@@ -1266,8 +1253,7 @@ impl Graph {
     /// If the given node ID does not exists in the graph this method will panic.
     pub unsafe fn is_unchecked_singleton_from_node_id(&self, node_id: NodeT) -> bool {
         self.inner
-            .is_unchecked_singleton_from_node_id(node_id.clone())
-            .into()
+            .is_unchecked_singleton_from_node_id(node_id)
     }
 
     #[automatically_generated_binding]
@@ -1280,7 +1266,7 @@ impl Graph {
     ///     The node to be checked for.
     ///
     pub fn is_singleton_from_node_id(&self, node_id: NodeT) -> PyResult<bool> {
-        Ok(pe!(self.inner.is_singleton_from_node_id(node_id.clone()))?.into())
+        Ok(pe!(self.inner.is_singleton_from_node_id(node_id))?)
     }
 
     #[automatically_generated_binding]
@@ -1297,8 +1283,7 @@ impl Graph {
         node_id: NodeT,
     ) -> bool {
         self.inner
-            .is_unchecked_singleton_with_selfloops_from_node_id(node_id.clone())
-            .into()
+            .is_unchecked_singleton_with_selfloops_from_node_id(node_id)
     }
 
     #[automatically_generated_binding]
@@ -1313,8 +1298,7 @@ impl Graph {
     pub fn is_singleton_with_selfloops_from_node_id(&self, node_id: NodeT) -> PyResult<bool> {
         Ok(pe!(self
             .inner
-            .is_singleton_with_selfloops_from_node_id(node_id.clone()))?
-        .into())
+            .is_singleton_with_selfloops_from_node_id(node_id))?)
     }
 
     #[automatically_generated_binding]
@@ -1336,7 +1320,6 @@ impl Graph {
     pub unsafe fn is_unchecked_singleton_from_node_name(&self, node_name: &str) -> bool {
         self.inner
             .is_unchecked_singleton_from_node_name(node_name)
-            .into()
     }
 
     #[automatically_generated_binding]
@@ -1349,7 +1332,7 @@ impl Graph {
     ///     The node name to be checked for.
     ///
     pub fn is_singleton_from_node_name(&self, node_name: &str) -> PyResult<bool> {
-        Ok(pe!(self.inner.is_singleton_from_node_name(node_name))?.into())
+        Ok(pe!(self.inner.is_singleton_from_node_name(node_name))?)
     }
 
     #[automatically_generated_binding]
@@ -1362,7 +1345,7 @@ impl Graph {
     ///     Name of the node.
     ///
     pub fn has_node_name(&self, node_name: &str) -> bool {
-        self.inner.has_node_name(node_name).into()
+        self.inner.has_node_name(node_name)
     }
 
     #[automatically_generated_binding]
@@ -1375,7 +1358,7 @@ impl Graph {
     ///     id of the node.
     ///
     pub fn has_node_type_id(&self, node_type_id: NodeTypeT) -> bool {
-        self.inner.has_node_type_id(node_type_id.clone()).into()
+        self.inner.has_node_type_id(node_type_id)
     }
 
     #[automatically_generated_binding]
@@ -1388,7 +1371,7 @@ impl Graph {
     ///     Name of the node.
     ///
     pub fn has_node_type_name(&self, node_type_name: &str) -> bool {
-        self.inner.has_node_type_name(node_type_name).into()
+        self.inner.has_node_type_name(node_type_name)
     }
 
     #[automatically_generated_binding]
@@ -1401,7 +1384,7 @@ impl Graph {
     ///     id of the edge.
     ///
     pub fn has_edge_type_id(&self, edge_type_id: EdgeTypeT) -> bool {
-        self.inner.has_edge_type_id(edge_type_id.clone()).into()
+        self.inner.has_edge_type_id(edge_type_id)
     }
 
     #[automatically_generated_binding]
@@ -1414,7 +1397,7 @@ impl Graph {
     ///     Name of the edge.
     ///
     pub fn has_edge_type_name(&self, edge_type_name: &str) -> bool {
-        self.inner.has_edge_type_name(edge_type_name).into()
+        self.inner.has_edge_type_name(edge_type_name)
     }
 
     #[automatically_generated_binding]
@@ -1430,8 +1413,7 @@ impl Graph {
     ///
     pub fn has_edge_from_node_ids(&self, src: NodeT, dst: NodeT) -> bool {
         self.inner
-            .has_edge_from_node_ids(src.clone(), dst.clone())
-            .into()
+            .has_edge_from_node_ids(src, dst)
     }
 
     #[automatically_generated_binding]
@@ -1444,7 +1426,7 @@ impl Graph {
     ///     Source node id.
     ///
     pub fn has_selfloop_from_node_id(&self, node_id: NodeT) -> bool {
-        self.inner.has_selfloop_from_node_id(node_id.clone()).into()
+        self.inner.has_selfloop_from_node_id(node_id)
     }
 
     #[automatically_generated_binding]
@@ -1467,8 +1449,7 @@ impl Graph {
         edge_type: Option<EdgeTypeT>,
     ) -> bool {
         self.inner
-            .has_edge_from_node_ids_and_edge_type_id(src.clone(), dst.clone(), edge_type)
-            .into()
+            .has_edge_from_node_ids_and_edge_type_id(src, dst, edge_type)
     }
 
     #[automatically_generated_binding]
@@ -1489,8 +1470,7 @@ impl Graph {
     /// If the given node ID does not exists in the graph this method will panic.
     pub unsafe fn is_unchecked_trap_node_from_node_id(&self, node_id: NodeT) -> bool {
         self.inner
-            .is_unchecked_trap_node_from_node_id(node_id.clone())
-            .into()
+            .is_unchecked_trap_node_from_node_id(node_id)
     }
 
     #[automatically_generated_binding]
@@ -1503,7 +1483,7 @@ impl Graph {
     ///     Integer ID of the node, if this is bigger that the number of nodes it will panic.
     ///
     pub fn is_trap_node_from_node_id(&self, node_id: NodeT) -> PyResult<bool> {
-        Ok(pe!(self.inner.is_trap_node_from_node_id(node_id.clone()))?.into())
+        Ok(pe!(self.inner.is_trap_node_from_node_id(node_id))?)
     }
 
     #[automatically_generated_binding]
@@ -1527,8 +1507,7 @@ impl Graph {
         node_id: NodeT,
     ) -> bool {
         self.inner
-            .is_unchecked_trap_node_with_selfloops_from_node_id(node_id.clone())
-            .into()
+            .is_unchecked_trap_node_with_selfloops_from_node_id(node_id)
     }
 
     #[automatically_generated_binding]
@@ -1543,8 +1522,7 @@ impl Graph {
     pub fn is_trap_node_with_selfloops_from_node_id(&self, node_id: NodeT) -> PyResult<bool> {
         Ok(pe!(self
             .inner
-            .is_trap_node_with_selfloops_from_node_id(node_id.clone()))?
-        .into())
+            .is_trap_node_with_selfloops_from_node_id(node_id))?)
     }
 
     #[automatically_generated_binding]
@@ -1570,8 +1548,7 @@ impl Graph {
         second_node_id: NodeT,
     ) -> bool {
         self.inner
-            .are_unchecked_isomorphic_from_node_ids(first_node_id.clone(), second_node_id.clone())
-            .into()
+            .are_unchecked_isomorphic_from_node_ids(first_node_id, second_node_id)
     }
 
     #[automatically_generated_binding]
@@ -1598,8 +1575,7 @@ impl Graph {
     ) -> PyResult<bool> {
         Ok(pe!(self
             .inner
-            .are_isomorphic_from_node_ids(first_node_id.clone(), second_node_id.clone()))?
-        .into())
+            .are_isomorphic_from_node_ids(first_node_id, second_node_id))?)
     }
 
     #[automatically_generated_binding]
@@ -1626,8 +1602,7 @@ impl Graph {
     ) -> PyResult<bool> {
         Ok(pe!(self
             .inner
-            .are_isomorphic_from_node_names(first_node_name, second_node_name))?
-        .into())
+            .are_isomorphic_from_node_names(first_node_name, second_node_name))?)
     }
 
     #[automatically_generated_binding]
@@ -1648,7 +1623,6 @@ impl Graph {
     ) -> bool {
         self.inner
             .has_node_name_and_node_type_name(node_name, node_type_name)
-            .into()
     }
 
     #[automatically_generated_binding]
@@ -1665,7 +1639,6 @@ impl Graph {
     pub fn has_edge_from_node_names(&self, src_name: &str, dst_name: &str) -> bool {
         self.inner
             .has_edge_from_node_names(src_name, dst_name)
-            .into()
     }
 
     #[automatically_generated_binding]
@@ -1689,7 +1662,6 @@ impl Graph {
     ) -> bool {
         self.inner
             .has_edge_from_node_names_and_edge_type_name(src_name, dst_name, edge_type_name)
-            .into()
     }
 
     #[automatically_generated_binding]
@@ -1718,8 +1690,7 @@ impl Graph {
     ) -> PyResult<bool> {
         Ok(pe!(self
             .inner
-            .has_edge_from_node_id_and_edge_type_id(src.clone(), edge_type_id))?
-        .into())
+            .has_edge_from_node_id_and_edge_type_id(src, edge_type_id))?)
     }
 
     #[automatically_generated_binding]
@@ -1743,8 +1714,7 @@ impl Graph {
         edge_type_id: Option<EdgeTypeT>,
     ) -> bool {
         self.inner
-            .has_unchecked_edge_from_node_id_and_edge_type_id(src.clone(), edge_type_id)
-            .into()
+            .has_unchecked_edge_from_node_id_and_edge_type_id(src, edge_type_id)
     }
 
     #[automatically_generated_binding]
@@ -1756,7 +1726,6 @@ impl Graph {
         self.inner
             .strongly_connected_components()
             .into_iter()
-            .map(|x| x.into())
             .collect::<Vec<_>>()
     }
 
@@ -2180,7 +2149,7 @@ impl Graph {
                 gil,
                 pe!(self
                     .inner
-                    .get_bfs_topological_sorting_from_node_id(root_node_id.clone()))?,
+                    .get_bfs_topological_sorting_from_node_id(root_node_id))?,
                 NodeT
             )
         })
@@ -2211,7 +2180,7 @@ impl Graph {
                 gil,
                 pe!(self
                     .inner
-                    .get_reversed_bfs_topological_sorting_from_node_id(root_node_id.clone()))?,
+                    .get_reversed_bfs_topological_sorting_from_node_id(root_node_id))?,
                 NodeT
             )
         })
@@ -2238,7 +2207,7 @@ impl Graph {
     ) -> PyResult<Graph> {
         Ok(pe!(self
             .inner
-            .sort_by_bfs_topological_sorting_from_node_id(root_node_id.clone()))?
+            .sort_by_bfs_topological_sorting_from_node_id(root_node_id))?
         .into())
     }
 
@@ -2307,7 +2276,7 @@ impl Graph {
     ) -> PyResult<(Py<PyArray1<usize>>, Py<PyArray1<usize>>)> {
         Ok({
             let (subresult_0, subresult_1) = pe!(self.inner.get_predictions_histograms(
-                path.into(),
+                path,
                 source_column_name,
                 destination_column_name,
                 prediction_column_name,
@@ -2324,8 +2293,7 @@ impl Graph {
                 support_balanced_quotes,
                 comment_symbol,
                 max_rows_number
-            ))?
-            .into();
+            ))?;
             (
                 {
                     let gil = pyo3::Python::acquire_gil();
@@ -2406,7 +2374,7 @@ impl Graph {
         max_rows_number: Option<usize>,
     ) -> PyResult<Vec<(String, String, f32)>> {
         Ok(pe!(self.inner.get_filtered_predictions(
-            path.into(),
+            path,
             source_column_name,
             destination_column_name,
             prediction_column_name,
@@ -2428,7 +2396,7 @@ impl Graph {
         .into_iter()
         .map(|x| {
             let (subresult_0, subresult_1, subresult_2) = x;
-            (subresult_0.into(), subresult_1.into(), subresult_2.into())
+            (subresult_0, subresult_1, subresult_2)
         })
         .collect::<Vec<_>>())
     }
@@ -2462,8 +2430,8 @@ impl Graph {
     ) -> PyResult<Graph> {
         Ok(pe!(self.inner.remove_components(
             node_names,
-            node_types.as_ref().map(|x| x.as_slice()),
-            edge_types.as_ref().map(|x| x.as_slice()),
+            node_types.as_deref(),
+            edge_types.as_deref(),
             minimum_component_size,
             top_k_components
         ))?
@@ -2492,7 +2460,7 @@ impl Graph {
     ///     If one of the two graphs has edge types and the other does not.
     ///
     pub fn overlaps(&self, other: &Graph) -> PyResult<bool> {
-        Ok(pe!(self.inner.overlaps(&other.inner))?.into())
+        Ok(pe!(self.inner.overlaps(&other.inner))?)
     }
 
     #[automatically_generated_binding]
@@ -2517,7 +2485,7 @@ impl Graph {
     ///     If one of the two graphs has edge types and the other does not.
     ///
     pub fn contains(&self, other: &Graph) -> PyResult<bool> {
-        Ok(pe!(self.inner.contains(&other.inner))?.into())
+        Ok(pe!(self.inner.contains(&other.inner))?)
     }
 
     #[automatically_generated_binding]
@@ -2598,7 +2566,7 @@ impl Graph {
             second_node_types_set
         ))?
         .into_iter()
-        .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>())
+        .map(|x| x.into_iter().collect::<Vec<_>>())
         .collect::<Vec<_>>())
     }
 
@@ -2631,7 +2599,7 @@ impl Graph {
             to_ndarray_2d!(
                 gil,
                 pe!(self.inner.get_star_edges(
-                    central_node.into(),
+                    central_node,
                     removed_existing_edges,
                     star_points_nodes_set,
                     star_points_node_types_set
@@ -2666,13 +2634,13 @@ impl Graph {
         star_points_node_types_set: Option<HashSet<String>>,
     ) -> PyResult<Vec<Vec<String>>> {
         Ok(pe!(self.inner.get_star_edge_names(
-            central_node.into(),
+            central_node,
             removed_existing_edges,
             star_points_nodes_set,
             star_points_node_types_set
         ))?
         .into_iter()
-        .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>())
+        .map(|x| x.into_iter().collect::<Vec<_>>())
         .collect::<Vec<_>>())
     }
 
@@ -2753,7 +2721,7 @@ impl Graph {
                 allow_node_set,
             )
             .into_iter()
-            .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>())
+            .map(|x| x.into_iter().collect::<Vec<_>>())
             .collect::<Vec<_>>()
     }
 
@@ -2773,7 +2741,7 @@ impl Graph {
     ///     If the given node ID does not exists in the graph.
     ///
     pub fn validate_node_id(&self, node_id: NodeT) -> PyResult<NodeT> {
-        Ok(pe!(self.inner.validate_node_id(node_id.clone()))?.into())
+        Ok(pe!(self.inner.validate_node_id(node_id))?)
     }
 
     #[automatically_generated_binding]
@@ -2814,7 +2782,7 @@ impl Graph {
     ///     If the given edge ID does not exists in the graph.
     ///
     pub fn validate_edge_id(&self, edge_id: EdgeT) -> PyResult<EdgeT> {
-        Ok(pe!(self.inner.validate_edge_id(edge_id.clone()))?.into())
+        Ok(pe!(self.inner.validate_edge_id(edge_id))?)
     }
 
     #[automatically_generated_binding]
@@ -2888,7 +2856,7 @@ impl Graph {
         &self,
         node_type_id: Option<NodeTypeT>,
     ) -> PyResult<Option<NodeTypeT>> {
-        Ok(pe!(self.inner.validate_node_type_id(node_type_id))?.map(|x| x.into()))
+        Ok(pe!(self.inner.validate_node_type_id(node_type_id))?.map(|x| x))
     }
 
     #[automatically_generated_binding]
@@ -2912,7 +2880,7 @@ impl Graph {
     ) -> PyResult<Vec<Option<NodeTypeT>>> {
         Ok(pe!(self.inner.validate_node_type_ids(&node_type_ids))?
             .into_iter()
-            .map(|x| x.map(|x| x.into()))
+            .map(|x| x.map(|x| x))
             .collect::<Vec<_>>())
     }
 
@@ -2935,7 +2903,7 @@ impl Graph {
         &self,
         edge_type_id: Option<EdgeTypeT>,
     ) -> PyResult<Option<EdgeTypeT>> {
-        Ok(pe!(self.inner.validate_edge_type_id(edge_type_id))?.map(|x| x.into()))
+        Ok(pe!(self.inner.validate_edge_type_id(edge_type_id))?.map(|x| x))
     }
 
     #[automatically_generated_binding]
@@ -2959,7 +2927,7 @@ impl Graph {
     ) -> PyResult<Vec<Option<EdgeTypeT>>> {
         Ok(pe!(self.inner.validate_edge_type_ids(edge_type_ids))?
             .into_iter()
-            .map(|x| x.map(|x| x.into()))
+            .map(|x| x.map(|x| x))
             .collect::<Vec<_>>())
     }
 
@@ -3129,7 +3097,7 @@ impl Graph {
     ///     If the graph does not contain edge weights.
     ///
     pub fn get_total_edge_weights(&self) -> PyResult<f64> {
-        Ok(pe!(self.inner.get_total_edge_weights())?.into())
+        Ok(pe!(self.inner.get_total_edge_weights())?)
     }
 
     #[automatically_generated_binding]
@@ -3142,7 +3110,7 @@ impl Graph {
     ///     If the graph does not contain edge weights.
     ///
     pub fn get_mininum_edge_weight(&self) -> PyResult<WeightT> {
-        Ok(pe!(self.inner.get_mininum_edge_weight())?.into())
+        Ok(pe!(self.inner.get_mininum_edge_weight())?)
     }
 
     #[automatically_generated_binding]
@@ -3155,7 +3123,7 @@ impl Graph {
     ///     If the graph does not contain edge weights.
     ///
     pub fn get_maximum_edge_weight(&self) -> PyResult<WeightT> {
-        Ok(pe!(self.inner.get_maximum_edge_weight())?.into())
+        Ok(pe!(self.inner.get_maximum_edge_weight())?)
     }
 
     #[automatically_generated_binding]
@@ -3168,7 +3136,7 @@ impl Graph {
     /// does not contain nodes. In those cases the value is not properly
     /// defined.
     pub unsafe fn get_unchecked_maximum_node_degree(&self) -> NodeT {
-        self.inner.get_unchecked_maximum_node_degree().into()
+        self.inner.get_unchecked_maximum_node_degree()
     }
 
     #[automatically_generated_binding]
@@ -3181,42 +3149,42 @@ impl Graph {
     /// does not contain nodes. In those cases the value is not properly
     /// defined.
     pub unsafe fn get_unchecked_minimum_node_degree(&self) -> NodeT {
-        self.inner.get_unchecked_minimum_node_degree().into()
+        self.inner.get_unchecked_minimum_node_degree()
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Return the maximum weighted node degree
     pub fn get_weighted_maximum_node_degree(&self) -> PyResult<f64> {
-        Ok(pe!(self.inner.get_weighted_maximum_node_degree())?.into())
+        Ok(pe!(self.inner.get_weighted_maximum_node_degree())?)
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Return the minimum weighted node degree
     pub fn get_weighted_minimum_node_degree(&self) -> PyResult<f64> {
-        Ok(pe!(self.inner.get_weighted_minimum_node_degree())?.into())
+        Ok(pe!(self.inner.get_weighted_minimum_node_degree())?)
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Return the number of weighted singleton nodes, i.e. nodes with weighted node degree equal to zero
     pub fn get_number_of_weighted_singleton_nodes(&self) -> PyResult<NodeT> {
-        Ok(pe!(self.inner.get_number_of_weighted_singleton_nodes())?.into())
+        Ok(pe!(self.inner.get_number_of_weighted_singleton_nodes())?)
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Returns number of self-loops, including also those in eventual multi-edges.
     pub fn get_number_of_selfloops(&self) -> EdgeT {
-        self.inner.get_number_of_selfloops().into()
+        self.inner.get_number_of_selfloops()
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Returns number of unique self-loops, excluding those in eventual multi-edges.
     pub fn get_number_of_unique_selfloops(&self) -> NodeT {
-        self.inner.get_number_of_unique_selfloops().into()
+        self.inner.get_number_of_unique_selfloops()
     }
 
     #[automatically_generated_binding]
@@ -3281,7 +3249,7 @@ impl Graph {
     ///     Name of the graph.
     ///
     pub fn set_name(&mut self, name: String) {
-        self.inner.set_name(name.into());
+        self.inner.set_name(name);
     }
 
     #[automatically_generated_binding]
@@ -3304,10 +3272,11 @@ impl Graph {
     ///     If the graph is a multigraph.
     ///
     pub fn set_inplace_all_edge_types(&mut self, edge_type: String) -> PyResult<()> {
-        Ok({
+        let _: () = {
             pe!(self.inner.set_inplace_all_edge_types(edge_type))?;
-            ()
-        })
+            
+        };
+        Ok(())
     }
 
     #[automatically_generated_binding]
@@ -3335,10 +3304,11 @@ impl Graph {
     ///     The node type to assing to all the nodes.
     ///
     pub fn set_inplace_all_node_types(&mut self, node_type: String) -> PyResult<()> {
-        Ok({
+        let _: () = {
             pe!(self.inner.set_inplace_all_node_types(node_type))?;
-            ()
-        })
+            
+        };
+        Ok(())
     }
 
     #[automatically_generated_binding]
@@ -3380,12 +3350,13 @@ impl Graph {
         &mut self,
         node_type_ids_to_remove: Vec<NodeTypeT>,
     ) -> PyResult<()> {
-        Ok({
+        let _: () = {
             pe!(self
                 .inner
                 .remove_inplace_node_type_ids(node_type_ids_to_remove))?;
-            ()
-        })
+            
+        };
+        Ok(())
     }
 
     #[automatically_generated_binding]
@@ -3401,10 +3372,11 @@ impl Graph {
     ///     If the graph does not have node types.
     ///
     pub fn remove_inplace_singleton_node_types(&mut self) -> PyResult<()> {
-        Ok({
+        let _: () = {
             pe!(self.inner.remove_inplace_singleton_node_types())?;
-            ()
-        })
+            
+        };
+        Ok(())
     }
 
     #[automatically_generated_binding]
@@ -3431,10 +3403,10 @@ impl Graph {
     ) -> PyResult<()> {
         Ok({
             pe!(self.inner.add_node_type_id_from_node_name_prefixes_inplace(
-                node_type_id.clone(),
+                node_type_id,
                 node_name_prefixes
             ))?;
-            ()
+            
         })
     }
 
@@ -3469,11 +3441,11 @@ impl Graph {
             pe!(self
                 .inner
                 .replace_edge_type_id_from_edge_node_type_ids_inplace(
-                    edge_type_id.clone(),
+                    edge_type_id,
                     &source_node_type_ids,
                     &destination_node_type_ids
                 ))?;
-            ()
+            
         })
     }
 
@@ -3506,11 +3478,11 @@ impl Graph {
     ) -> PyResult<()> {
         Ok({
             pe!(self.inner.replace_edge_type_id_from_edge_node_type_ids(
-                edge_type_id.clone(),
+                edge_type_id,
                 &source_node_type_ids,
                 &destination_node_type_ids
             ))?;
-            ()
+            
         })
     }
 
@@ -3538,7 +3510,7 @@ impl Graph {
     ) -> PyResult<Graph> {
         Ok(pe!(self
             .inner
-            .add_node_type_id_from_node_name_prefixes(node_type_id.clone(), node_name_prefixes))?
+            .add_node_type_id_from_node_name_prefixes(node_type_id, node_name_prefixes))?
         .into())
     }
 
@@ -3558,7 +3530,7 @@ impl Graph {
     ///     If the given node type name already exists in the graph.
     ///
     pub fn add_node_type_name_inplace(&mut self, node_type_name: String) -> PyResult<NodeTypeT> {
-        Ok(pe!(self.inner.add_node_type_name_inplace(node_type_name.into()))?.into())
+        Ok(pe!(self.inner.add_node_type_name_inplace(node_type_name))?)
     }
 
     #[automatically_generated_binding]
@@ -3587,10 +3559,10 @@ impl Graph {
             pe!(self
                 .inner
                 .add_node_type_name_from_node_name_prefixes_inplace(
-                    node_type_name.into(),
+                    node_type_name,
                     node_name_prefixes
                 ))?;
-            ()
+            
         })
     }
 
@@ -3610,7 +3582,7 @@ impl Graph {
     ///     If the given edge type name already exists in the graph.
     ///
     pub fn add_edge_type_name_inplace(&mut self, edge_type_name: String) -> PyResult<EdgeTypeT> {
-        Ok(pe!(self.inner.add_edge_type_name_inplace(edge_type_name.into()))?.into())
+        Ok(pe!(self.inner.add_edge_type_name_inplace(edge_type_name))?)
     }
 
     #[automatically_generated_binding]
@@ -3644,11 +3616,11 @@ impl Graph {
             pe!(self
                 .inner
                 .replace_edge_type_name_from_edge_node_type_names_inplace(
-                    edge_type_name.into(),
+                    edge_type_name,
                     &source_node_type_names,
                     &destination_node_type_names
                 ))?;
-            ()
+            
         })
     }
 
@@ -3681,11 +3653,11 @@ impl Graph {
     ) -> PyResult<()> {
         Ok({
             pe!(self.inner.replace_edge_type_name_from_edge_node_type_names(
-                edge_type_name.into(),
+                edge_type_name,
                 &source_node_type_names,
                 &destination_node_type_names
             ))?;
-            ()
+            
         })
     }
 
@@ -3712,7 +3684,7 @@ impl Graph {
         node_name_prefixes: Vec<String>,
     ) -> PyResult<Graph> {
         Ok(pe!(self.inner.add_node_type_name_from_node_name_prefixes(
-            node_type_name.into(),
+            node_type_name,
             node_name_prefixes
         ))?
         .into())
@@ -3731,10 +3703,11 @@ impl Graph {
     ///     If the graph does not have node types.
     ///
     pub fn remove_inplace_homogeneous_node_types(&mut self) -> PyResult<()> {
-        Ok({
+        let _: () = {
             pe!(self.inner.remove_inplace_homogeneous_node_types())?;
-            ()
-        })
+            
+        };
+        Ok(())
     }
 
     #[automatically_generated_binding]
@@ -3760,12 +3733,13 @@ impl Graph {
         &mut self,
         edge_type_ids_to_remove: Vec<EdgeTypeT>,
     ) -> PyResult<()> {
-        Ok({
+        let _: () = {
             pe!(self
                 .inner
                 .remove_inplace_edge_type_ids(edge_type_ids_to_remove))?;
-            ()
-        })
+            
+        };
+        Ok(())
     }
 
     #[automatically_generated_binding]
@@ -3781,10 +3755,11 @@ impl Graph {
     ///     If the graph does not have edge types.
     ///
     pub fn remove_inplace_singleton_edge_types(&mut self) -> PyResult<()> {
-        Ok({
+        let _: () = {
             pe!(self.inner.remove_inplace_singleton_edge_types())?;
-            ()
-        })
+            
+        };
+        Ok(())
     }
 
     #[automatically_generated_binding]
@@ -3808,10 +3783,11 @@ impl Graph {
     ///     If the given node type name does not exists in the graph.
     ///
     pub fn remove_inplace_node_type_names(&mut self, node_type_names: Vec<&str>) -> PyResult<()> {
-        Ok({
+        let _: () = {
             pe!(self.inner.remove_inplace_node_type_names(node_type_names))?;
-            ()
-        })
+            
+        };
+        Ok(())
     }
 
     #[automatically_generated_binding]
@@ -3835,10 +3811,11 @@ impl Graph {
     ///     If the given node type name does not exists in the graph.
     ///
     pub fn remove_inplace_node_type_name(&mut self, node_type_name: &str) -> PyResult<()> {
-        Ok({
+        let _: () = {
             pe!(self.inner.remove_inplace_node_type_name(node_type_name))?;
-            ()
-        })
+            
+        };
+        Ok(())
     }
 
     #[automatically_generated_binding]
@@ -3862,7 +3839,7 @@ impl Graph {
     ///     If the given node type ID does not exists in the graph.
     ///
     pub fn remove_node_type_id(&self, node_type_id: NodeTypeT) -> PyResult<Graph> {
-        Ok(pe!(self.inner.remove_node_type_id(node_type_id.clone()))?.into())
+        Ok(pe!(self.inner.remove_node_type_id(node_type_id))?.into())
     }
 
     #[automatically_generated_binding]
@@ -3912,10 +3889,11 @@ impl Graph {
     ///     If the graph does not have node types.
     ///
     pub fn remove_inplace_isomorphic_node_types(&mut self) -> PyResult<()> {
-        Ok({
+        let _: () = {
             pe!(self.inner.remove_inplace_isomorphic_node_types())?;
-            ()
-        })
+            
+        };
+        Ok(())
     }
 
     #[automatically_generated_binding]
@@ -3960,12 +3938,13 @@ impl Graph {
         &mut self,
         minimum_number_of_edges: Option<EdgeT>,
     ) -> PyResult<()> {
-        Ok({
+        let _: () = {
             pe!(self
                 .inner
                 .remove_inplace_isomorphic_edge_types(minimum_number_of_edges))?;
-            ()
-        })
+            
+        };
+        Ok(())
     }
 
     #[automatically_generated_binding]
@@ -4067,10 +4046,11 @@ impl Graph {
     ///     If the given edge type name does not exists in the graph.
     ///
     pub fn remove_inplace_edge_type_name(&mut self, edge_type_name: &str) -> PyResult<()> {
-        Ok({
+        let _: () = {
             pe!(self.inner.remove_inplace_edge_type_name(edge_type_name))?;
-            ()
-        })
+            
+        };
+        Ok(())
     }
 
     #[automatically_generated_binding]
@@ -4094,7 +4074,7 @@ impl Graph {
     ///     If the given edge type ID does not exists in the graph.
     ///
     pub fn remove_edge_type_id(&self, edge_type_id: EdgeTypeT) -> PyResult<Graph> {
-        Ok(pe!(self.inner.remove_edge_type_id(edge_type_id.clone()))?.into())
+        Ok(pe!(self.inner.remove_edge_type_id(edge_type_id))?.into())
     }
 
     #[automatically_generated_binding]
@@ -4149,10 +4129,11 @@ impl Graph {
     ///     If the graph does not have node types.
     ///
     pub fn remove_inplace_node_types(&mut self) -> PyResult<()> {
-        Ok({
+        let _: () = {
             pe!(self.inner.remove_inplace_node_types())?;
-            ()
-        })
+            
+        };
+        Ok(())
     }
 
     #[automatically_generated_binding]
@@ -4184,10 +4165,11 @@ impl Graph {
     ///     If the graph is a multigraph.
     ///
     pub fn remove_inplace_edge_types(&mut self) -> PyResult<()> {
-        Ok({
+        let _: () = {
             pe!(self.inner.remove_inplace_edge_types())?;
-            ()
-        })
+            
+        };
+        Ok(())
     }
 
     #[automatically_generated_binding]
@@ -4217,10 +4199,11 @@ impl Graph {
     ///     If the graph does not have edge weights.
     ///
     pub fn remove_inplace_edge_weights(&mut self) -> PyResult<()> {
-        Ok({
+        let _: () = {
             pe!(self.inner.remove_inplace_edge_weights())?;
-            ()
-        })
+            
+        };
+        Ok(())
     }
 
     #[automatically_generated_binding]
@@ -4252,7 +4235,7 @@ impl Graph {
     pub fn divide_edge_weights_inplace(&mut self, denominator: WeightT) -> PyResult<()> {
         Ok(pe!(self
             .inner
-            .divide_edge_weights_inplace(denominator.clone()))?)
+            .divide_edge_weights_inplace(denominator))?)
     }
 
     #[automatically_generated_binding]
@@ -4267,7 +4250,7 @@ impl Graph {
     ///     If the graph does not have edge weights.
     ///
     pub fn divide_edge_weights(&self, denominator: WeightT) -> PyResult<Graph> {
-        Ok(pe!(self.inner.divide_edge_weights(denominator.clone()))?.into())
+        Ok(pe!(self.inner.divide_edge_weights(denominator))?.into())
     }
 
     #[automatically_generated_binding]
@@ -4314,7 +4297,7 @@ impl Graph {
     pub fn multiply_edge_weights_inplace(&mut self, denominator: WeightT) -> PyResult<()> {
         Ok(pe!(self
             .inner
-            .multiply_edge_weights_inplace(denominator.clone()))?)
+            .multiply_edge_weights_inplace(denominator))?)
     }
 
     #[automatically_generated_binding]
@@ -4329,7 +4312,7 @@ impl Graph {
     ///     If the graph does not have edge weights.
     ///
     pub fn multiply_edge_weights(&self, denominator: WeightT) -> PyResult<Graph> {
-        Ok(pe!(self.inner.multiply_edge_weights(denominator.clone()))?.into())
+        Ok(pe!(self.inner.multiply_edge_weights(denominator))?.into())
     }
 
     #[automatically_generated_binding]
@@ -4354,7 +4337,7 @@ impl Graph {
         Ok(pe!(self.inner.build_bipartite_graph_from_edge_node_ids(
             source_node_ids,
             destination_node_ids,
-            directed.clone()
+            directed
         ))?
         .into())
     }
@@ -4377,7 +4360,7 @@ impl Graph {
     ) -> PyResult<Graph> {
         Ok(pe!(self
             .inner
-            .build_clique_graph_from_node_ids(node_ids, directed.clone()))?
+            .build_clique_graph_from_node_ids(node_ids, directed))?
         .into())
     }
 
@@ -4403,7 +4386,7 @@ impl Graph {
         Ok(pe!(self.inner.build_bipartite_graph_from_edge_node_names(
             source_node_names,
             destination_node_names,
-            directed.clone()
+            directed
         ))?
         .into())
     }
@@ -4426,7 +4409,7 @@ impl Graph {
     ) -> PyResult<Graph> {
         Ok(pe!(self
             .inner
-            .build_clique_graph_from_node_names(node_names, directed.clone()))?
+            .build_clique_graph_from_node_names(node_names, directed))?
         .into())
     }
 
@@ -4453,7 +4436,7 @@ impl Graph {
             pe!(self.inner.build_bipartite_graph_from_edge_node_prefixes(
                 &source_node_prefixes,
                 &destination_node_prefixes,
-                directed.clone()
+                directed
             ))?
             .into(),
         )
@@ -4477,7 +4460,7 @@ impl Graph {
     ) -> PyResult<Graph> {
         Ok(pe!(self
             .inner
-            .build_clique_graph_from_node_prefixes(&node_prefixes, directed.clone()))?
+            .build_clique_graph_from_node_prefixes(&node_prefixes, directed))?
         .into())
     }
 
@@ -4503,7 +4486,7 @@ impl Graph {
         Ok(pe!(self.inner.build_bipartite_graph_from_edge_node_types(
             &source_node_types,
             &destination_node_types,
-            directed.clone()
+            directed
         ))?
         .into())
     }
@@ -4526,7 +4509,7 @@ impl Graph {
     ) -> PyResult<Graph> {
         Ok(pe!(self
             .inner
-            .build_clique_graph_from_node_type_names(&node_type_names, directed.clone()))?
+            .build_clique_graph_from_node_type_names(&node_type_names, directed))?
         .into())
     }
 
@@ -4555,21 +4538,21 @@ impl Graph {
     /// Returns a string describing the memory usage of all the fields of all the
     /// structures used to store the current graph
     pub fn get_memory_stats(&self) -> String {
-        self.inner.get_memory_stats().into()
+        self.inner.get_memory_stats()
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Returns how many bytes are currently used to store the given graph
     pub fn get_total_memory_used(&self) -> usize {
-        self.inner.get_total_memory_used().into()
+        self.inner.get_total_memory_used()
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Returns how many bytes are currently used to store the nodes
     pub fn get_nodes_total_memory_requirement(&self) -> usize {
-        self.inner.get_nodes_total_memory_requirement().into()
+        self.inner.get_nodes_total_memory_requirement()
     }
 
     #[automatically_generated_binding]
@@ -4578,14 +4561,13 @@ impl Graph {
     pub fn get_nodes_total_memory_requirement_human_readable(&self) -> String {
         self.inner
             .get_nodes_total_memory_requirement_human_readable()
-            .into()
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Returns how many bytes are currently used to store the edges
     pub fn get_edges_total_memory_requirement(&self) -> usize {
-        self.inner.get_edges_total_memory_requirement().into()
+        self.inner.get_edges_total_memory_requirement()
     }
 
     #[automatically_generated_binding]
@@ -4594,7 +4576,6 @@ impl Graph {
     pub fn get_edges_total_memory_requirement_human_readable(&self) -> String {
         self.inner
             .get_edges_total_memory_requirement_human_readable()
-            .into()
     }
 
     #[automatically_generated_binding]
@@ -4603,7 +4584,6 @@ impl Graph {
     pub fn get_edge_weights_total_memory_requirements(&self) -> usize {
         self.inner
             .get_edge_weights_total_memory_requirements()
-            .into()
     }
 
     #[automatically_generated_binding]
@@ -4612,14 +4592,13 @@ impl Graph {
     pub fn get_edge_weights_total_memory_requirements_human_readable(&self) -> String {
         self.inner
             .get_edge_weights_total_memory_requirements_human_readable()
-            .into()
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Returns how many bytes are currently used to store the node types
     pub fn get_node_types_total_memory_requirements(&self) -> PyResult<usize> {
-        Ok(pe!(self.inner.get_node_types_total_memory_requirements())?.into())
+        Ok(pe!(self.inner.get_node_types_total_memory_requirements())?)
     }
 
     #[automatically_generated_binding]
@@ -4628,15 +4607,14 @@ impl Graph {
     pub fn get_node_types_total_memory_requirements_human_readable(&self) -> PyResult<String> {
         Ok(pe!(self
             .inner
-            .get_node_types_total_memory_requirements_human_readable())?
-        .into())
+            .get_node_types_total_memory_requirements_human_readable())?)
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Returns how many bytes are currently used to store the edge types
     pub fn get_edge_types_total_memory_requirements(&self) -> PyResult<usize> {
-        Ok(pe!(self.inner.get_edge_types_total_memory_requirements())?.into())
+        Ok(pe!(self.inner.get_edge_types_total_memory_requirements())?)
     }
 
     #[automatically_generated_binding]
@@ -4645,8 +4623,7 @@ impl Graph {
     pub fn get_edge_types_total_memory_requirements_human_readable(&self) -> PyResult<String> {
         Ok(pe!(self
             .inner
-            .get_edge_types_total_memory_requirements_human_readable())?
-        .into())
+            .get_edge_types_total_memory_requirements_human_readable())?)
     }
 
     #[automatically_generated_binding]
@@ -4670,8 +4647,7 @@ impl Graph {
     ) -> PyResult<EdgeT> {
         Ok(pe!(self
             .inner
-            .get_number_of_triangles(approach, insert_only_source, verbose))?
-        .into())
+            .get_number_of_triangles(approach, insert_only_source, verbose))?)
     }
 
     #[automatically_generated_binding]
@@ -4695,8 +4671,7 @@ impl Graph {
     ) -> PyResult<EdgeT> {
         Ok(pe!(self
             .inner
-            .get_number_of_squares(approach, insert_only_source, verbose))?
-        .into())
+            .get_number_of_squares(approach, insert_only_source, verbose))?)
     }
 
     #[automatically_generated_binding]
@@ -4736,14 +4711,14 @@ impl Graph {
     #[pyo3(text_signature = "($self)")]
     /// Returns total number of triads in the graph without taking into account weights
     pub fn get_number_of_triads(&self) -> EdgeT {
-        self.inner.get_number_of_triads().into()
+        self.inner.get_number_of_triads()
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Returns total number of triads in the weighted graph
     pub fn get_number_of_weighted_triads(&self) -> PyResult<f64> {
-        Ok(pe!(self.inner.get_number_of_weighted_triads())?.into())
+        Ok(pe!(self.inner.get_number_of_weighted_triads())?)
     }
 
     #[automatically_generated_binding]
@@ -4756,7 +4731,7 @@ impl Graph {
     ///     Whether to show a loading bar.
     ///
     pub fn get_transitivity(&self, verbose: Option<bool>) -> f64 {
-        self.inner.get_transitivity(verbose).into()
+        self.inner.get_transitivity(verbose)
     }
 
     #[automatically_generated_binding]
@@ -4841,7 +4816,6 @@ impl Graph {
     ) -> f64 {
         self.inner
             .get_clustering_coefficient(approach, insert_only_source, verbose)
-            .into()
     }
 
     #[automatically_generated_binding]
@@ -4865,7 +4839,6 @@ impl Graph {
     ) -> f64 {
         self.inner
             .get_average_clustering_coefficient(approach, insert_only_source, verbose)
-            .into()
     }
 
     #[automatically_generated_binding]
@@ -4878,7 +4851,7 @@ impl Graph {
     ///     graph towards remap the nodes to.
     ///
     pub fn are_nodes_remappable(&self, other: &Graph) -> bool {
-        self.inner.are_nodes_remappable(&other.inner).into()
+        self.inner.are_nodes_remappable(&other.inner)
     }
 
     #[automatically_generated_binding]
@@ -4955,7 +4928,7 @@ impl Graph {
         &self,
         node_names_map: HashMap<String, String>,
     ) -> PyResult<Graph> {
-        Ok(pe!(self.inner.remap_from_node_names_map(node_names_map.into()))?.into())
+        Ok(pe!(self.inner.remap_from_node_names_map(node_names_map))?.into())
     }
 
     #[automatically_generated_binding]
@@ -5040,7 +5013,7 @@ impl Graph {
         number_of_sampling_attempts: Option<usize>,
     ) -> PyResult<Graph> {
         Ok(pe!(self.inner.sample_negative_graph(
-            number_of_negative_samples.clone(),
+            number_of_negative_samples,
             random_state,
             only_from_same_component,
             minimum_node_degree,
@@ -5112,7 +5085,7 @@ impl Graph {
         number_of_sampling_attempts: Option<usize>,
     ) -> PyResult<Graph> {
         Ok(pe!(self.inner.sample_positive_graph(
-            number_of_samples.clone(),
+            number_of_samples,
             random_state,
             minimum_node_degree,
             maximum_node_degree,
@@ -5122,7 +5095,7 @@ impl Graph {
             destination_edge_types_names,
             source_nodes_prefixes,
             destination_nodes_prefixes,
-            edge_type_names.as_ref().map(|x| x.as_slice()),
+            edge_type_names.as_deref(),
             support.map(|sg| &sg.inner),
             number_of_sampling_attempts
         ))?
@@ -5185,15 +5158,14 @@ impl Graph {
     ) -> PyResult<(Graph, Graph)> {
         Ok({
             let (subresult_0, subresult_1) = pe!(self.inner.connected_holdout(
-                train_size.clone(),
+                train_size,
                 random_state,
-                edge_types.as_ref().map(|x| x.as_slice()),
+                edge_types.as_deref(),
                 include_all_edge_types,
                 minimum_node_degree,
                 maximum_node_degree,
                 verbose
-            ))?
-            .into();
+            ))?;
             (subresult_0.into(), subresult_1.into())
         })
     }
@@ -5244,14 +5216,13 @@ impl Graph {
     ) -> PyResult<(Graph, Graph)> {
         Ok({
             let (subresult_0, subresult_1) = pe!(self.inner.random_holdout(
-                train_size.clone(),
+                train_size,
                 random_state,
                 include_all_edge_types,
-                edge_types.as_ref().map(|x| x.as_slice()),
+                edge_types.as_deref(),
                 min_number_overlaps,
                 verbose
-            ))?
-            .into();
+            ))?;
             (subresult_0.into(), subresult_1.into())
         })
     }
@@ -5287,11 +5258,10 @@ impl Graph {
     ) -> PyResult<(Py<PyArray1<NodeT>>, Py<PyArray1<NodeT>>)> {
         Ok({
             let (subresult_0, subresult_1) = pe!(self.inner.get_node_label_holdout_indices(
-                train_size.clone(),
+                train_size,
                 use_stratification,
                 random_state
-            ))?
-            .into();
+            ))?;
             (
                 {
                     let gil = pyo3::Python::acquire_gil();
@@ -5339,11 +5309,10 @@ impl Graph {
     )> {
         Ok({
             let (subresult_0, subresult_1) = pe!(self.inner.get_node_label_holdout_labels(
-                train_size.clone(),
+                train_size,
                 use_stratification,
                 random_state
-            ))?
-            .into();
+            ))?;
             (
                 subresult_0
                     .into_iter()
@@ -5398,11 +5367,10 @@ impl Graph {
     ) -> PyResult<(Graph, Graph)> {
         Ok({
             let (subresult_0, subresult_1) = pe!(self.inner.get_node_label_holdout_graphs(
-                train_size.clone(),
+                train_size,
                 use_stratification,
                 random_state
-            ))?
-            .into();
+            ))?;
             (subresult_0.into(), subresult_1.into())
         })
     }
@@ -5446,11 +5414,10 @@ impl Graph {
     ) -> PyResult<(Graph, Graph)> {
         Ok({
             let (subresult_0, subresult_1) = pe!(self.inner.get_edge_label_holdout_graphs(
-                train_size.clone(),
+                train_size,
                 use_stratification,
                 random_state
-            ))?
-            .into();
+            ))?;
             (subresult_0.into(), subresult_1.into())
         })
     }
@@ -5492,7 +5459,7 @@ impl Graph {
     ) -> PyResult<Graph> {
         Ok(pe!(self
             .inner
-            .get_random_subgraph(number_of_nodes.clone(), random_state, verbose))?
+            .get_random_subgraph(number_of_nodes, random_state, verbose))?
         .into())
     }
 
@@ -5527,11 +5494,10 @@ impl Graph {
     ) -> PyResult<(Graph, Graph)> {
         Ok({
             let (subresult_0, subresult_1) = pe!(self.inner.get_node_label_random_holdout(
-                train_size.clone(),
+                train_size,
                 use_stratification,
                 random_state
-            ))?
-            .into();
+            ))?;
             (subresult_0.into(), subresult_1.into())
         })
     }
@@ -5570,12 +5536,11 @@ impl Graph {
     ) -> PyResult<(Graph, Graph)> {
         Ok({
             let (subresult_0, subresult_1) = pe!(self.inner.get_node_label_kfold(
-                k.clone(),
-                k_index.clone(),
+                k,
+                k_index,
                 use_stratification,
                 random_state
-            ))?
-            .into();
+            ))?;
             (subresult_0.into(), subresult_1.into())
         })
     }
@@ -5620,12 +5585,11 @@ impl Graph {
     ) -> PyResult<(Graph, Graph)> {
         Ok({
             let (subresult_0, subresult_1) = pe!(self.inner.get_edge_label_kfold(
-                k.clone(),
-                k_index.clone(),
+                k,
+                k_index,
                 use_stratification,
                 random_state
-            ))?
-            .into();
+            ))?;
             (subresult_0.into(), subresult_1.into())
         })
     }
@@ -5672,13 +5636,12 @@ impl Graph {
     ) -> PyResult<(Graph, Graph)> {
         Ok({
             let (subresult_0, subresult_1) = pe!(self.inner.get_edge_prediction_kfold(
-                k.clone(),
-                k_index.clone(),
-                edge_types.as_ref().map(|x| x.as_slice()),
+                k,
+                k_index,
+                edge_types.as_deref(),
                 random_state,
                 verbose
-            ))?
-            .into();
+            ))?;
             (subresult_0.into(), subresult_1.into())
         })
     }
@@ -5732,7 +5695,7 @@ impl Graph {
     ) -> ShortestPathsResultBFS {
         self.inner
             .get_unchecked_breadth_first_search_predecessors_parallel_from_node_id(
-                src_node_id.clone(),
+                src_node_id,
             )
             .into()
     }
@@ -5788,7 +5751,7 @@ impl Graph {
     ) -> ShortestPathsResultBFS {
         self.inner
             .get_unchecked_breadth_first_search_distances_parallel_from_node_id(
-                src_node_id.clone(),
+                src_node_id,
                 maximal_depth,
             )
             .into()
@@ -5815,7 +5778,7 @@ impl Graph {
     ) -> ShortestPathsResultBFS {
         self.inner
             .get_unchecked_breadth_first_search_distances_sequential_from_node_id(
-                src_node_id.clone(),
+                src_node_id,
             )
             .into()
     }
@@ -5888,7 +5851,7 @@ impl Graph {
     ) -> ShortestPathsResultBFS {
         self.inner
             .get_unchecked_breadth_first_search_from_node_id(
-                src_node_id.clone(),
+                src_node_id,
                 dst_node_id,
                 compute_predecessors,
                 maximal_depth,
@@ -5934,8 +5897,8 @@ impl Graph {
                 pe!(self
                     .inner
                     .get_unchecked_shortest_path_node_ids_from_node_ids(
-                        src_node_id.clone(),
-                        dst_node_id.clone(),
+                        src_node_id,
+                        dst_node_id,
                         maximal_depth
                     ))?,
                 NodeT
@@ -5969,12 +5932,11 @@ impl Graph {
         Ok(pe!(self
             .inner
             .get_unchecked_shortest_path_node_names_from_node_ids(
-                src_node_id.clone(),
-                dst_node_id.clone(),
+                src_node_id,
+                dst_node_id,
                 maximal_depth
             ))?
         .into_iter()
-        .map(|x| x.into())
         .collect::<Vec<_>>())
     }
 
@@ -6008,8 +5970,8 @@ impl Graph {
             to_ndarray_1d!(
                 gil,
                 pe!(self.inner.get_shortest_path_node_ids_from_node_ids(
-                    src_node_id.clone(),
-                    dst_node_id.clone(),
+                    src_node_id,
+                    dst_node_id,
                     maximal_depth
                 ))?,
                 NodeT
@@ -6087,7 +6049,6 @@ impl Graph {
             maximal_depth
         ))?
         .into_iter()
-        .map(|x| x.into())
         .collect::<Vec<_>>())
     }
 
@@ -6116,12 +6077,12 @@ impl Graph {
     ) -> Vec<Vec<NodeT>> {
         self.inner
             .get_unchecked_k_shortest_path_node_ids_from_node_ids(
-                src_node_id.clone(),
-                dst_node_id.clone(),
-                k.clone(),
+                src_node_id,
+                dst_node_id,
+                k,
             )
             .into_iter()
-            .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>())
+            .map(|x| x.into_iter().collect::<Vec<_>>())
             .collect::<Vec<_>>()
     }
 
@@ -6153,12 +6114,12 @@ impl Graph {
         k: usize,
     ) -> PyResult<Vec<Vec<NodeT>>> {
         Ok(pe!(self.inner.get_k_shortest_path_node_ids_from_node_ids(
-            src_node_id.clone(),
-            dst_node_id.clone(),
-            k.clone()
+            src_node_id,
+            dst_node_id,
+            k
         ))?
         .into_iter()
-        .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>())
+        .map(|x| x.into_iter().collect::<Vec<_>>())
         .collect::<Vec<_>>())
     }
 
@@ -6190,10 +6151,10 @@ impl Graph {
         Ok(pe!(self.inner.get_k_shortest_path_node_ids_from_node_names(
             src_node_name,
             dst_node_name,
-            k.clone()
+            k
         ))?
         .into_iter()
-        .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>())
+        .map(|x| x.into_iter().collect::<Vec<_>>())
         .collect::<Vec<_>>())
     }
 
@@ -6226,10 +6187,10 @@ impl Graph {
             pe!(self.inner.get_k_shortest_path_node_names_from_node_names(
                 src_node_name,
                 dst_node_name,
-                k.clone()
+                k
             ))?
             .into_iter()
-            .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>())
+            .map(|x| x.into_iter().collect::<Vec<_>>())
             .collect::<Vec<_>>(),
         )
     }
@@ -6255,8 +6216,8 @@ impl Graph {
     ) -> (NodeT, NodeT) {
         let (subresult_0, subresult_1) = self
             .inner
-            .get_unchecked_eccentricity_and_most_distant_node_id_from_node_id(node_id.clone());
-        (subresult_0.into(), subresult_1.into())
+            .get_unchecked_eccentricity_and_most_distant_node_id_from_node_id(node_id);
+        (subresult_0, subresult_1)
     }
 
     #[automatically_generated_binding]
@@ -6283,10 +6244,9 @@ impl Graph {
     ) -> f32 {
         self.inner
             .get_unchecked_weighted_eccentricity_from_node_id(
-                node_id.clone(),
+                node_id,
                 use_edge_weights_as_probabilities,
             )
-            .into()
     }
 
     #[automatically_generated_binding]
@@ -6313,9 +6273,8 @@ impl Graph {
         Ok({
             let (subresult_0, subresult_1) = pe!(self
                 .inner
-                .get_eccentricity_and_most_distant_node_id_from_node_id(node_id.clone()))?
-            .into();
-            (subresult_0.into(), subresult_1.into())
+                .get_eccentricity_and_most_distant_node_id_from_node_id(node_id))?;
+            (subresult_0, subresult_1)
         })
     }
 
@@ -6346,10 +6305,9 @@ impl Graph {
         use_edge_weights_as_probabilities: Option<bool>,
     ) -> PyResult<f32> {
         Ok(pe!(self.inner.get_weighted_eccentricity_from_node_id(
-            node_id.clone(),
+            node_id,
             use_edge_weights_as_probabilities
-        ))?
-        .into())
+        ))?)
     }
 
     #[automatically_generated_binding]
@@ -6368,7 +6326,7 @@ impl Graph {
     ///     If the given node name does not exist in the current graph instance.
     ///
     pub fn get_eccentricity_from_node_name(&self, node_name: &str) -> PyResult<NodeT> {
-        Ok(pe!(self.inner.get_eccentricity_from_node_name(node_name))?.into())
+        Ok(pe!(self.inner.get_eccentricity_from_node_name(node_name))?)
     }
 
     #[automatically_generated_binding]
@@ -6400,8 +6358,7 @@ impl Graph {
         Ok(pe!(self.inner.get_weighted_eccentricity_from_node_name(
             node_name,
             use_edge_weights_as_probabilities
-        ))?
-        .into())
+        ))?)
     }
 
     #[automatically_generated_binding]
@@ -6486,7 +6443,7 @@ impl Graph {
     ) -> ShortestPathsDjkstra {
         self.inner
             .get_unchecked_dijkstra_from_node_id(
-                src_node_id.clone(),
+                src_node_id,
                 maybe_dst_node_id,
                 maybe_dst_node_ids,
                 compute_predecessors,
@@ -6527,12 +6484,12 @@ impl Graph {
         let (subresult_0, subresult_1) = self
             .inner
             .get_unchecked_weighted_shortest_path_node_ids_from_node_ids(
-                src_node_id.clone(),
-                dst_node_id.clone(),
+                src_node_id,
+                dst_node_id,
                 use_edge_weights_as_probabilities,
                 maximal_depth,
             );
-        (subresult_0.into(), {
+        (subresult_0, {
             let gil = pyo3::Python::acquire_gil();
             to_ndarray_1d!(gil, subresult_1, NodeT)
         })
@@ -6569,16 +6526,15 @@ impl Graph {
         let (subresult_0, subresult_1) = self
             .inner
             .get_unchecked_weighted_shortest_path_node_names_from_node_ids(
-                src_node_id.clone(),
-                dst_node_id.clone(),
+                src_node_id,
+                dst_node_id,
                 use_edge_weights_as_probabilities,
                 maximal_depth,
             );
         (
-            subresult_0.into(),
+            subresult_0,
             subresult_1
                 .into_iter()
-                .map(|x| x.into())
                 .collect::<Vec<_>>(),
         )
     }
@@ -6617,13 +6573,12 @@ impl Graph {
             let (subresult_0, subresult_1) = pe!(self
                 .inner
                 .get_weighted_shortest_path_node_ids_from_node_ids(
-                    src_node_id.clone(),
-                    dst_node_id.clone(),
+                    src_node_id,
+                    dst_node_id,
                     use_edge_weights_as_probabilities,
                     maximal_depth
-                ))?
-            .into();
-            (subresult_0.into(), {
+                ))?;
+            (subresult_0, {
                 let gil = pyo3::Python::acquire_gil();
                 to_ndarray_1d!(gil, subresult_1, NodeT)
             })
@@ -6668,9 +6623,8 @@ impl Graph {
                     dst_node_name,
                     use_edge_weights_as_probabilities,
                     maximal_depth
-                ))?
-            .into();
-            (subresult_0.into(), {
+                ))?;
+            (subresult_0, {
                 let gil = pyo3::Python::acquire_gil();
                 to_ndarray_1d!(gil, subresult_1, NodeT)
             })
@@ -6715,13 +6669,11 @@ impl Graph {
                     dst_node_name,
                     use_edge_weights_as_probabilities,
                     maximal_depth
-                ))?
-            .into();
+                ))?;
             (
-                subresult_0.into(),
+                subresult_0,
                 subresult_1
                     .into_iter()
-                    .map(|x| x.into())
                     .collect::<Vec<_>>(),
             )
         })
@@ -6758,7 +6710,7 @@ impl Graph {
         maximal_depth: Option<NodeT>,
     ) -> PyResult<ShortestPathsResultBFS> {
         Ok(pe!(self.inner.get_breadth_first_search_from_node_ids(
-            src_node_id.clone(),
+            src_node_id,
             dst_node_id,
             compute_predecessors,
             maximal_depth
@@ -6811,7 +6763,7 @@ impl Graph {
         use_edge_weights_as_probabilities: Option<bool>,
     ) -> PyResult<ShortestPathsDjkstra> {
         Ok(pe!(self.inner.get_dijkstra_from_node_ids(
-            src_node_id.clone(),
+            src_node_id,
             maybe_dst_node_id,
             maybe_dst_node_ids,
             compute_predecessors,
@@ -6836,7 +6788,7 @@ impl Graph {
     /// This basically creates a "cross" that spans the graph
     pub fn get_four_sweep(&self) -> (NodeT, NodeT) {
         let (subresult_0, subresult_1) = self.inner.get_four_sweep();
-        (subresult_0.into(), subresult_1.into())
+        (subresult_0, subresult_1)
     }
 
     #[automatically_generated_binding]
@@ -6866,7 +6818,7 @@ impl Graph {
         ignore_infinity: Option<bool>,
         verbose: Option<bool>,
     ) -> PyResult<f32> {
-        Ok(pe!(self.inner.get_diameter_naive(ignore_infinity, verbose))?.into())
+        Ok(pe!(self.inner.get_diameter_naive(ignore_infinity, verbose))?)
     }
 
     #[automatically_generated_binding]
@@ -6891,7 +6843,7 @@ impl Graph {
         ignore_infinity: Option<bool>,
         verbose: Option<bool>,
     ) -> PyResult<f32> {
-        Ok(pe!(self.inner.get_diameter(ignore_infinity, verbose))?.into())
+        Ok(pe!(self.inner.get_diameter(ignore_infinity, verbose))?)
     }
 
     #[automatically_generated_binding]
@@ -7102,14 +7054,14 @@ impl Graph {
     ) -> (NodeT, NodeT, NodeT) {
         let (subresult_0, subresult_1, subresult_2) =
             self.inner.get_number_of_connected_components(verbose);
-        (subresult_0.into(), subresult_1.into(), subresult_2.into())
+        (subresult_0, subresult_1, subresult_2)
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Returns number of connected nodes in the graph.
     pub fn get_number_of_connected_nodes(&self) -> NodeT {
-        self.inner.get_number_of_connected_nodes().into()
+        self.inner.get_number_of_connected_nodes()
     }
 
     #[automatically_generated_binding]
@@ -7118,14 +7070,13 @@ impl Graph {
     pub fn get_number_of_singleton_nodes_with_selfloops(&self) -> NodeT {
         self.inner
             .get_number_of_singleton_nodes_with_selfloops()
-            .into()
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Returns number of singleton nodes within the graph.
     pub fn get_number_of_singleton_nodes(&self) -> NodeT {
-        self.inner.get_number_of_singleton_nodes().into()
+        self.inner.get_number_of_singleton_nodes()
     }
 
     #[automatically_generated_binding]
@@ -7134,7 +7085,7 @@ impl Graph {
     /// A Disconnected node is a node which is nor a singleton nor a singleton
     /// with selfloops.
     pub fn get_number_of_disconnected_nodes(&self) -> NodeT {
-        self.inner.get_number_of_disconnected_nodes().into()
+        self.inner.get_number_of_disconnected_nodes()
     }
 
     #[automatically_generated_binding]
@@ -7152,7 +7103,6 @@ impl Graph {
         self.inner
             .get_singleton_node_names()
             .into_iter()
-            .map(|x| x.into())
             .collect::<Vec<_>>()
     }
 
@@ -7175,7 +7125,6 @@ impl Graph {
         self.inner
             .get_singleton_with_selfloops_node_names()
             .into_iter()
-            .map(|x| x.into())
             .collect::<Vec<_>>()
     }
 
@@ -7183,7 +7132,7 @@ impl Graph {
     #[pyo3(text_signature = "($self)")]
     /// Returns density of the graph.
     pub fn get_density(&self) -> PyResult<f64> {
-        Ok(pe!(self.inner.get_density())?.into())
+        Ok(pe!(self.inner.get_density())?)
     }
 
     #[automatically_generated_binding]
@@ -7192,7 +7141,7 @@ impl Graph {
     ///
     /// THIS IS EXPERIMENTAL AND MUST BE PROVEN!
     pub fn get_trap_nodes_rate(&self) -> f64 {
-        self.inner.get_trap_nodes_rate().into()
+        self.inner.get_trap_nodes_rate()
     }
 
     #[automatically_generated_binding]
@@ -7207,56 +7156,56 @@ impl Graph {
     #[pyo3(text_signature = "($self)")]
     /// Returns unweighted mean node degree of the graph.
     pub fn get_node_degrees_mean(&self) -> PyResult<f64> {
-        Ok(pe!(self.inner.get_node_degrees_mean())?.into())
+        Ok(pe!(self.inner.get_node_degrees_mean())?)
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Returns weighted mean node degree of the graph.
     pub fn get_weighted_node_degrees_mean(&self) -> PyResult<f64> {
-        Ok(pe!(self.inner.get_weighted_node_degrees_mean())?.into())
+        Ok(pe!(self.inner.get_weighted_node_degrees_mean())?)
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Returns number of undirected edges of the graph.
     pub fn get_number_of_undirected_edges(&self) -> EdgeT {
-        self.inner.get_number_of_undirected_edges().into()
+        self.inner.get_number_of_undirected_edges()
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Returns number of undirected edges of the graph.
     pub fn get_number_of_unique_undirected_edges(&self) -> EdgeT {
-        self.inner.get_number_of_unique_undirected_edges().into()
+        self.inner.get_number_of_unique_undirected_edges()
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Returns number of edges of the graph.
     pub fn get_number_of_edges(&self) -> EdgeT {
-        self.inner.get_number_of_edges().into()
+        self.inner.get_number_of_edges()
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Returns number of unique edges of the graph.
     pub fn get_number_of_unique_edges(&self) -> EdgeT {
-        self.inner.get_number_of_unique_edges().into()
+        self.inner.get_number_of_unique_edges()
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Returns unweighted median node degree of the graph
     pub fn get_node_degrees_median(&self) -> PyResult<NodeT> {
-        Ok(pe!(self.inner.get_node_degrees_median())?.into())
+        Ok(pe!(self.inner.get_node_degrees_median())?)
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Returns weighted median node degree of the graph
     pub fn get_weighted_node_degrees_median(&self) -> PyResult<f64> {
-        Ok(pe!(self.inner.get_weighted_node_degrees_median())?.into())
+        Ok(pe!(self.inner.get_weighted_node_degrees_median())?)
     }
 
     #[automatically_generated_binding]
@@ -7269,7 +7218,7 @@ impl Graph {
     ///     If the graph does not contain any node (is an empty graph).
     ///
     pub fn get_maximum_node_degree(&self) -> PyResult<NodeT> {
-        Ok(pe!(self.inner.get_maximum_node_degree())?.into())
+        Ok(pe!(self.inner.get_maximum_node_degree())?)
     }
 
     #[automatically_generated_binding]
@@ -7280,14 +7229,14 @@ impl Graph {
     /// ------
     /// This method fails with a panic if the graph does not have any node.
     pub unsafe fn get_unchecked_most_central_node_id(&self) -> NodeT {
-        self.inner.get_unchecked_most_central_node_id().into()
+        self.inner.get_unchecked_most_central_node_id()
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Returns maximum node degree of the graph.
     pub fn get_most_central_node_id(&self) -> PyResult<NodeT> {
-        Ok(pe!(self.inner.get_most_central_node_id())?.into())
+        Ok(pe!(self.inner.get_most_central_node_id())?)
     }
 
     #[automatically_generated_binding]
@@ -7300,42 +7249,42 @@ impl Graph {
     ///     If the graph does not contain any node (is an empty graph).
     ///
     pub fn get_minimum_node_degree(&self) -> PyResult<NodeT> {
-        Ok(pe!(self.inner.get_minimum_node_degree())?.into())
+        Ok(pe!(self.inner.get_minimum_node_degree())?)
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Returns mode node degree of the graph.
     pub fn get_node_degrees_mode(&self) -> PyResult<NodeT> {
-        Ok(pe!(self.inner.get_node_degrees_mode())?.into())
+        Ok(pe!(self.inner.get_node_degrees_mode())?)
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Returns rate of self-loops.
     pub fn get_selfloop_nodes_rate(&self) -> PyResult<f64> {
-        Ok(pe!(self.inner.get_selfloop_nodes_rate())?.into())
+        Ok(pe!(self.inner.get_selfloop_nodes_rate())?)
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Return name of the graph.
     pub fn get_name(&self) -> String {
-        self.inner.get_name().into()
+        self.inner.get_name()
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Return the number of traps nodes (nodes without any outgoing edges that are not singletons)
     pub fn get_number_of_trap_nodes(&self) -> NodeT {
-        self.inner.get_number_of_trap_nodes().into()
+        self.inner.get_number_of_trap_nodes()
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Return the number of traps nodes with selfloops (nodes without any outgoing edges that are not singletons)
     pub fn get_number_of_trap_nodes_with_selfloops(&self) -> NodeT {
-        self.inner.get_number_of_trap_nodes_with_selfloops().into()
+        self.inner.get_number_of_trap_nodes_with_selfloops()
     }
 
     #[automatically_generated_binding]
@@ -7349,7 +7298,7 @@ impl Graph {
     ///
     pub fn get_source_node_ids(&self, directed: bool) -> Py<PyArray1<NodeT>> {
         let gil = pyo3::Python::acquire_gil();
-        to_ndarray_1d!(gil, self.inner.get_source_node_ids(directed.clone()), NodeT)
+        to_ndarray_1d!(gil, self.inner.get_source_node_ids(directed), NodeT)
     }
 
     #[automatically_generated_binding]
@@ -7371,9 +7320,8 @@ impl Graph {
     ///
     pub fn get_source_names(&self, directed: bool) -> Vec<String> {
         self.inner
-            .get_source_names(directed.clone())
+            .get_source_names(directed)
             .into_iter()
-            .map(|x| x.into())
             .collect::<Vec<_>>()
     }
 
@@ -7390,7 +7338,7 @@ impl Graph {
         let gil = pyo3::Python::acquire_gil();
         to_ndarray_1d!(
             gil,
-            self.inner.get_destination_node_ids(directed.clone()),
+            self.inner.get_destination_node_ids(directed),
             NodeT
         )
     }
@@ -7414,9 +7362,8 @@ impl Graph {
     ///
     pub fn get_destination_names(&self, directed: bool) -> Vec<String> {
         self.inner
-            .get_destination_names(directed.clone())
+            .get_destination_names(directed)
             .into_iter()
-            .map(|x| x.into())
             .collect::<Vec<_>>()
     }
 
@@ -7427,7 +7374,6 @@ impl Graph {
         self.inner
             .get_node_names()
             .into_iter()
-            .map(|x| x.into())
             .collect::<Vec<_>>()
     }
 
@@ -7438,7 +7384,6 @@ impl Graph {
         self.inner
             .get_node_urls()
             .into_iter()
-            .map(|x| x.map(|x| x.into()))
             .collect::<Vec<_>>()
     }
 
@@ -7449,7 +7394,6 @@ impl Graph {
         self.inner
             .get_node_ontologies()
             .into_iter()
-            .map(|x| x.map(|x| x.into()))
             .collect::<Vec<_>>()
     }
 
@@ -7465,7 +7409,6 @@ impl Graph {
     pub unsafe fn get_unchecked_ontology_from_node_name(&self, node_name: &str) -> Option<String> {
         self.inner
             .get_unchecked_ontology_from_node_name(node_name)
-            .map(|x| x.into())
     }
 
     #[automatically_generated_binding]
@@ -7479,8 +7422,7 @@ impl Graph {
     ///
     pub unsafe fn get_unchecked_ontology_from_node_id(&self, node_id: NodeT) -> Option<String> {
         self.inner
-            .get_unchecked_ontology_from_node_id(node_id.clone())
-            .map(|x| x.into())
+            .get_unchecked_ontology_from_node_id(node_id)
     }
 
     #[automatically_generated_binding]
@@ -7499,7 +7441,7 @@ impl Graph {
     ///     If the provided node name does not exist in the current graph.
     ///
     pub fn get_ontology_from_node_name(&self, node_name: &str) -> PyResult<Option<String>> {
-        Ok(pe!(self.inner.get_ontology_from_node_name(node_name))?.map(|x| x.into()))
+        Ok(pe!(self.inner.get_ontology_from_node_name(node_name))?)
     }
 
     #[automatically_generated_binding]
@@ -7518,7 +7460,7 @@ impl Graph {
     ///     If the provided node ID does not exist in the current graph.
     ///
     pub fn get_ontology_from_node_id(&self, node_id: NodeT) -> PyResult<Option<String>> {
-        Ok(pe!(self.inner.get_ontology_from_node_id(node_id.clone()))?.map(|x| x.into()))
+        Ok(pe!(self.inner.get_ontology_from_node_id(node_id))?)
     }
 
     #[automatically_generated_binding]
@@ -7535,7 +7477,7 @@ impl Graph {
     pub fn get_directed_edge_type_ids(&self) -> PyResult<Vec<Option<EdgeTypeT>>> {
         Ok(pe!(self.inner.get_directed_edge_type_ids())?
             .into_iter()
-            .map(|x| x.map(|x| x.into()))
+            .map(|x| x.map(|x| x))
             .collect::<Vec<_>>())
     }
 
@@ -7545,7 +7487,7 @@ impl Graph {
     pub fn get_upper_triangular_edge_type_ids(&self) -> PyResult<Vec<Option<EdgeTypeT>>> {
         Ok(pe!(self.inner.get_upper_triangular_edge_type_ids())?
             .into_iter()
-            .map(|x| x.map(|x| x.into()))
+            .map(|x| x.map(|x| x))
             .collect::<Vec<_>>())
     }
 
@@ -7555,7 +7497,7 @@ impl Graph {
     pub fn get_lower_triangular_edge_type_ids(&self) -> PyResult<Vec<Option<EdgeTypeT>>> {
         Ok(pe!(self.inner.get_lower_triangular_edge_type_ids())?
             .into_iter()
-            .map(|x| x.map(|x| x.into()))
+            .map(|x| x.map(|x| x))
             .collect::<Vec<_>>())
     }
 
@@ -7578,7 +7520,7 @@ impl Graph {
                 gil,
                 pe!(self
                     .inner
-                    .get_imputed_directed_edge_type_ids(imputation_edge_type_id.clone()))?,
+                    .get_imputed_directed_edge_type_ids(imputation_edge_type_id))?,
                 EdgeTypeT
             )
         })
@@ -7603,7 +7545,7 @@ impl Graph {
                 gil,
                 pe!(self
                     .inner
-                    .get_imputed_upper_triangular_edge_type_ids(imputation_edge_type_id.clone()))?,
+                    .get_imputed_upper_triangular_edge_type_ids(imputation_edge_type_id))?,
                 EdgeTypeT
             )
         })
@@ -7628,7 +7570,7 @@ impl Graph {
                 gil,
                 pe!(self
                     .inner
-                    .get_imputed_lower_triangular_edge_type_ids(imputation_edge_type_id.clone()))?,
+                    .get_imputed_lower_triangular_edge_type_ids(imputation_edge_type_id))?,
                 EdgeTypeT
             )
         })
@@ -7724,7 +7666,6 @@ impl Graph {
     pub fn get_directed_edge_type_names(&self) -> PyResult<Vec<Option<String>>> {
         Ok(pe!(self.inner.get_directed_edge_type_names())?
             .into_iter()
-            .map(|x| x.map(|x| x.into()))
             .collect::<Vec<_>>())
     }
 
@@ -7734,7 +7675,6 @@ impl Graph {
     pub fn get_upper_triangular_edge_type_names(&self) -> PyResult<Vec<Option<String>>> {
         Ok(pe!(self.inner.get_upper_triangular_edge_type_names())?
             .into_iter()
-            .map(|x| x.map(|x| x.into()))
             .collect::<Vec<_>>())
     }
 
@@ -7744,7 +7684,6 @@ impl Graph {
     pub fn get_lower_triangular_edge_type_names(&self) -> PyResult<Vec<Option<String>>> {
         Ok(pe!(self.inner.get_lower_triangular_edge_type_names())?
             .into_iter()
-            .map(|x| x.map(|x| x.into()))
             .collect::<Vec<_>>())
     }
 
@@ -7754,7 +7693,6 @@ impl Graph {
     pub fn get_unique_edge_type_names(&self) -> PyResult<Vec<String>> {
         Ok(pe!(self.inner.get_unique_edge_type_names())?
             .into_iter()
-            .map(|x| x.into())
             .collect::<Vec<_>>())
     }
 
@@ -7793,7 +7731,7 @@ impl Graph {
     /// Return the node types of the graph nodes.
     pub fn get_node_type_ids(&self) -> PyResult<Vec<Option<Py<PyArray1<NodeTypeT>>>>> {
         Ok(pe!(self.inner.get_node_type_ids())?
-            .into_iter()
+            .iter()
             .cloned()
             .map(|x| {
                 x.map(|x| {
@@ -7946,7 +7884,7 @@ impl Graph {
     pub fn get_node_type_names(&self) -> PyResult<Vec<Option<Vec<String>>>> {
         Ok(pe!(self.inner.get_node_type_names())?
             .into_iter()
-            .map(|x| x.map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>()))
+            .map(|x| x.map(|x| x.into_iter().collect::<Vec<_>>()))
             .collect::<Vec<_>>())
     }
 
@@ -7966,7 +7904,6 @@ impl Graph {
     pub fn get_unique_node_type_names(&self) -> PyResult<Vec<String>> {
         Ok(pe!(self.inner.get_unique_node_type_names())?
             .into_iter()
-            .map(|x| x.into())
             .collect::<Vec<_>>())
     }
 
@@ -7974,14 +7911,14 @@ impl Graph {
     #[pyo3(text_signature = "($self)")]
     /// Return number of the unique edges in the graph
     pub fn get_number_of_unique_directed_edges(&self) -> EdgeT {
-        self.inner.get_number_of_unique_directed_edges().into()
+        self.inner.get_number_of_unique_directed_edges()
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Return the nodes mapping
     pub fn get_nodes_mapping(&self) -> HashMap<String, NodeT> {
-        self.inner.get_nodes_mapping().into()
+        self.inner.get_nodes_mapping()
     }
 
     #[automatically_generated_binding]
@@ -7995,7 +7932,7 @@ impl Graph {
     ///
     pub fn get_edge_node_ids(&self, directed: bool) -> Py<PyArray2<NodeT>> {
         let gil = pyo3::Python::acquire_gil();
-        to_ndarray_2d!(gil, self.inner.get_edge_node_ids(directed.clone()), NodeT)
+        to_ndarray_2d!(gil, self.inner.get_edge_node_ids(directed), NodeT)
     }
 
     #[automatically_generated_binding]
@@ -8033,11 +7970,11 @@ impl Graph {
     ///
     pub fn get_edge_node_names(&self, directed: bool) -> Vec<(String, String)> {
         self.inner
-            .get_edge_node_names(directed.clone())
+            .get_edge_node_names(directed)
             .into_iter()
             .map(|x| {
                 let (subresult_0, subresult_1) = x;
-                (subresult_0.into(), subresult_1.into())
+                (subresult_0, subresult_1)
             })
             .collect::<Vec<_>>()
     }
@@ -8051,7 +7988,7 @@ impl Graph {
             .into_iter()
             .map(|x| {
                 let (subresult_0, subresult_1) = x;
-                (subresult_0.into(), subresult_1.into())
+                (subresult_0, subresult_1)
             })
             .collect::<Vec<_>>()
     }
@@ -8068,7 +8005,7 @@ impl Graph {
     pub fn get_directed_edge_triples_names(&self) -> PyResult<Vec<Vec<String>>> {
         Ok(pe!(self.inner.get_directed_edge_triples_names())?
             .into_iter()
-            .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>())
+            .map(|x| x.into_iter().collect::<Vec<_>>())
             .collect::<Vec<_>>())
     }
 
@@ -8082,7 +8019,7 @@ impl Graph {
     ///     If there are no node types in the graph.
     ///
     pub fn get_number_of_unknown_node_types(&self) -> PyResult<NodeT> {
-        Ok(pe!(self.inner.get_number_of_unknown_node_types())?.into())
+        Ok(pe!(self.inner.get_number_of_unknown_node_types())?)
     }
 
     #[automatically_generated_binding]
@@ -8095,7 +8032,7 @@ impl Graph {
     ///     If there are no node types in the graph.
     ///
     pub fn get_number_of_known_node_types(&self) -> PyResult<NodeT> {
-        Ok(pe!(self.inner.get_number_of_known_node_types())?.into())
+        Ok(pe!(self.inner.get_number_of_known_node_types())?)
     }
 
     #[automatically_generated_binding]
@@ -8108,7 +8045,7 @@ impl Graph {
     ///     If there are no node types in the graph.
     ///
     pub fn get_unknown_node_types_rate(&self) -> PyResult<f64> {
-        Ok(pe!(self.inner.get_unknown_node_types_rate())?.into())
+        Ok(pe!(self.inner.get_unknown_node_types_rate())?)
     }
 
     #[automatically_generated_binding]
@@ -8121,7 +8058,7 @@ impl Graph {
     ///     If there are no node types in the graph.
     ///
     pub fn get_known_node_types_rate(&self) -> PyResult<f64> {
-        Ok(pe!(self.inner.get_known_node_types_rate())?.into())
+        Ok(pe!(self.inner.get_known_node_types_rate())?)
     }
 
     #[automatically_generated_binding]
@@ -8134,7 +8071,7 @@ impl Graph {
     ///     If there are no node types in the graph.
     ///
     pub fn get_minimum_number_of_node_types(&self) -> PyResult<NodeT> {
-        Ok(pe!(self.inner.get_minimum_number_of_node_types())?.into())
+        Ok(pe!(self.inner.get_minimum_number_of_node_types())?)
     }
 
     #[automatically_generated_binding]
@@ -8147,7 +8084,7 @@ impl Graph {
     ///     If there are no node types in the graph.
     ///
     pub fn get_maximum_number_of_node_types(&self) -> PyResult<NodeT> {
-        Ok(pe!(self.inner.get_maximum_number_of_node_types())?.into())
+        Ok(pe!(self.inner.get_maximum_number_of_node_types())?)
     }
 
     #[automatically_generated_binding]
@@ -8157,7 +8094,7 @@ impl Graph {
     /// This value is the maximum number of multilabel counts
     /// that appear in any given node in the graph
     pub fn get_maximum_multilabel_count(&self) -> PyResult<NodeTypeT> {
-        Ok(pe!(self.inner.get_maximum_multilabel_count())?.into())
+        Ok(pe!(self.inner.get_maximum_multilabel_count())?)
     }
 
     #[automatically_generated_binding]
@@ -8170,7 +8107,7 @@ impl Graph {
     ///     If the graph does not have node types.
     ///
     pub fn get_number_of_singleton_node_types(&self) -> PyResult<NodeTypeT> {
-        Ok(pe!(self.inner.get_number_of_singleton_node_types())?.into())
+        Ok(pe!(self.inner.get_number_of_singleton_node_types())?)
     }
 
     #[automatically_generated_binding]
@@ -8183,7 +8120,7 @@ impl Graph {
     ///     If the graph does not have node types.
     ///
     pub fn get_number_of_homogeneous_node_types(&self) -> PyResult<NodeTypeT> {
-        Ok(pe!(self.inner.get_number_of_homogeneous_node_types())?.into())
+        Ok(pe!(self.inner.get_number_of_homogeneous_node_types())?)
     }
 
     #[automatically_generated_binding]
@@ -8218,7 +8155,6 @@ impl Graph {
     pub fn get_homogeneous_node_type_names(&self) -> PyResult<Vec<String>> {
         Ok(pe!(self.inner.get_homogeneous_node_type_names())?
             .into_iter()
-            .map(|x| x.into())
             .collect::<Vec<_>>())
     }
 
@@ -8254,7 +8190,6 @@ impl Graph {
     pub fn get_singleton_node_type_names(&self) -> PyResult<Vec<String>> {
         Ok(pe!(self.inner.get_singleton_node_type_names())?
             .into_iter()
-            .map(|x| x.into())
             .collect::<Vec<_>>())
     }
 
@@ -8268,7 +8203,7 @@ impl Graph {
     ///     If there are no edge types in the graph.
     ///
     pub fn get_number_of_unknown_edge_types(&self) -> PyResult<EdgeT> {
-        Ok(pe!(self.inner.get_number_of_unknown_edge_types())?.into())
+        Ok(pe!(self.inner.get_number_of_unknown_edge_types())?)
     }
 
     #[automatically_generated_binding]
@@ -8433,7 +8368,7 @@ impl Graph {
             let gil = pyo3::Python::acquire_gil();
             let body = pe!(self
                 .inner
-                .get_edge_node_ids_with_known_edge_types(directed.clone()))?;
+                .get_edge_node_ids_with_known_edge_types(directed))?;
             let result_array = ThreadDataRaceAware {
                 t: unsafe { PyArray2::<NodeT>::new(gil.python(), [body.len(), 2], false) },
             };
@@ -8468,11 +8403,11 @@ impl Graph {
     ) -> PyResult<Vec<(String, String)>> {
         Ok(pe!(self
             .inner
-            .get_edge_node_names_with_known_edge_types(directed.clone()))?
+            .get_edge_node_names_with_known_edge_types(directed))?
         .into_iter()
         .map(|x| {
             let (subresult_0, subresult_1) = x;
-            (subresult_0.into(), subresult_1.into())
+            (subresult_0, subresult_1)
         })
         .collect::<Vec<_>>())
     }
@@ -8615,7 +8550,6 @@ impl Graph {
     pub fn get_node_names_with_unknown_node_types(&self) -> PyResult<Vec<String>> {
         Ok(pe!(self.inner.get_node_names_with_unknown_node_types())?
             .into_iter()
-            .map(|x| x.into())
             .collect::<Vec<_>>())
     }
 
@@ -8644,7 +8578,7 @@ impl Graph {
                 gil,
                 pe!(self
                     .inner
-                    .get_node_ids_from_node_type_id(node_type_id.clone()))?,
+                    .get_node_ids_from_node_type_id(node_type_id))?,
                 NodeT
             )
         })
@@ -8731,9 +8665,8 @@ impl Graph {
     ) -> PyResult<Vec<String>> {
         Ok(pe!(self
             .inner
-            .get_node_names_from_node_type_id(node_type_id.clone()))?
+            .get_node_names_from_node_type_id(node_type_id))?
         .into_iter()
-        .map(|x| x.into())
         .collect::<Vec<_>>())
     }
 
@@ -8789,7 +8722,6 @@ impl Graph {
             .inner
             .get_node_names_from_node_type_name(node_type_name))?
         .into_iter()
-        .map(|x| x.into())
         .collect::<Vec<_>>())
     }
 
@@ -8805,7 +8737,6 @@ impl Graph {
     pub fn get_node_names_with_known_node_types(&self) -> PyResult<Vec<String>> {
         Ok(pe!(self.inner.get_node_names_with_known_node_types())?
             .into_iter()
-            .map(|x| x.into())
             .collect::<Vec<_>>())
     }
 
@@ -8861,7 +8792,7 @@ impl Graph {
     ///     If there are no edge types in the graph.
     ///
     pub fn get_number_of_known_edge_types(&self) -> PyResult<EdgeT> {
-        Ok(pe!(self.inner.get_number_of_known_edge_types())?.into())
+        Ok(pe!(self.inner.get_number_of_known_edge_types())?)
     }
 
     #[automatically_generated_binding]
@@ -8874,7 +8805,7 @@ impl Graph {
     ///     If there are no edge types in the graph.
     ///
     pub fn get_unknown_edge_types_rate(&self) -> PyResult<f64> {
-        Ok(pe!(self.inner.get_unknown_edge_types_rate())?.into())
+        Ok(pe!(self.inner.get_unknown_edge_types_rate())?)
     }
 
     #[automatically_generated_binding]
@@ -8887,7 +8818,7 @@ impl Graph {
     ///     If there are no edge types in the graph.
     ///
     pub fn get_known_edge_types_rate(&self) -> PyResult<f64> {
-        Ok(pe!(self.inner.get_known_edge_types_rate())?.into())
+        Ok(pe!(self.inner.get_known_edge_types_rate())?)
     }
 
     #[automatically_generated_binding]
@@ -8900,7 +8831,7 @@ impl Graph {
     ///     If there are no edge types in the graph.
     ///
     pub fn get_minimum_number_of_edge_types(&self) -> PyResult<EdgeT> {
-        Ok(pe!(self.inner.get_minimum_number_of_edge_types())?.into())
+        Ok(pe!(self.inner.get_minimum_number_of_edge_types())?)
     }
 
     #[automatically_generated_binding]
@@ -8913,7 +8844,7 @@ impl Graph {
     ///     If there are no edge types in the graph.
     ///
     pub fn get_maximum_number_of_edge_types(&self) -> PyResult<EdgeT> {
-        Ok(pe!(self.inner.get_maximum_number_of_edge_types())?.into())
+        Ok(pe!(self.inner.get_maximum_number_of_edge_types())?)
     }
 
     #[automatically_generated_binding]
@@ -8926,7 +8857,7 @@ impl Graph {
     ///     If the graph does not have edge types.
     ///
     pub fn get_number_of_singleton_edge_types(&self) -> PyResult<EdgeTypeT> {
-        Ok(pe!(self.inner.get_number_of_singleton_edge_types())?.into())
+        Ok(pe!(self.inner.get_number_of_singleton_edge_types())?)
     }
 
     #[automatically_generated_binding]
@@ -8961,7 +8892,6 @@ impl Graph {
     pub fn get_singleton_edge_type_names(&self) -> PyResult<Vec<String>> {
         Ok(pe!(self.inner.get_singleton_edge_type_names())?
             .into_iter()
-            .map(|x| x.into())
             .collect::<Vec<_>>())
     }
 
@@ -8969,7 +8899,7 @@ impl Graph {
     #[pyo3(text_signature = "($self)")]
     /// Returns number of nodes in the graph
     pub fn get_number_of_nodes(&self) -> NodeT {
-        self.inner.get_number_of_nodes().into()
+        self.inner.get_number_of_nodes()
     }
 
     #[automatically_generated_binding]
@@ -8997,7 +8927,7 @@ impl Graph {
     #[pyo3(text_signature = "($self)")]
     /// Returns number of directed edges in the graph
     pub fn get_number_of_directed_edges(&self) -> EdgeT {
-        self.inner.get_number_of_directed_edges().into()
+        self.inner.get_number_of_directed_edges()
     }
 
     #[automatically_generated_binding]
@@ -9010,7 +8940,7 @@ impl Graph {
     ///     If there are no edge types in the current graph.
     ///
     pub fn get_number_of_edge_types(&self) -> PyResult<EdgeTypeT> {
-        Ok(pe!(self.inner.get_number_of_edge_types())?.into())
+        Ok(pe!(self.inner.get_number_of_edge_types())?)
     }
 
     #[automatically_generated_binding]
@@ -9023,7 +8953,7 @@ impl Graph {
     ///     If there are no node types in the current graph.
     ///
     pub fn get_number_of_node_types(&self) -> PyResult<NodeTypeT> {
-        Ok(pe!(self.inner.get_number_of_node_types())?.into())
+        Ok(pe!(self.inner.get_number_of_node_types())?)
     }
 
     #[automatically_generated_binding]
@@ -9064,14 +8994,14 @@ impl Graph {
     #[pyo3(text_signature = "($self)")]
     /// Return mapping from instance not trap nodes to dense nodes
     pub fn get_dense_nodes_mapping(&self) -> HashMap<NodeT, NodeT> {
-        self.inner.get_dense_nodes_mapping().into()
+        self.inner.get_dense_nodes_mapping()
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Return number of edges that have multigraph syblings
     pub fn get_number_of_parallel_edges(&self) -> EdgeT {
-        self.inner.get_number_of_parallel_edges().into()
+        self.inner.get_number_of_parallel_edges()
     }
 
     #[automatically_generated_binding]
@@ -9098,7 +9028,7 @@ impl Graph {
     #[pyo3(text_signature = "($self)")]
     /// Returns number of the source nodes.
     pub fn get_number_of_unique_source_nodes(&self) -> NodeT {
-        self.inner.get_number_of_unique_source_nodes().into()
+        self.inner.get_number_of_unique_source_nodes()
     }
 
     #[automatically_generated_binding]
@@ -9111,7 +9041,7 @@ impl Graph {
     ///     If there are no edge types in the current graph instance.
     ///
     pub fn get_edge_type_id_counts_hashmap(&self) -> PyResult<HashMap<EdgeTypeT, EdgeT>> {
-        Ok(pe!(self.inner.get_edge_type_id_counts_hashmap())?.into())
+        Ok(pe!(self.inner.get_edge_type_id_counts_hashmap())?)
     }
 
     #[automatically_generated_binding]
@@ -9124,7 +9054,7 @@ impl Graph {
     ///     If there are no edge types in the current graph instance.
     ///
     pub fn get_edge_type_names_counts_hashmap(&self) -> PyResult<HashMap<String, EdgeT>> {
-        Ok(pe!(self.inner.get_edge_type_names_counts_hashmap())?.into())
+        Ok(pe!(self.inner.get_edge_type_names_counts_hashmap())?)
     }
 
     #[automatically_generated_binding]
@@ -9137,7 +9067,7 @@ impl Graph {
     ///     If there are no node types in the current graph instance.
     ///
     pub fn get_node_type_id_counts_hashmap(&self) -> PyResult<HashMap<NodeTypeT, NodeT>> {
-        Ok(pe!(self.inner.get_node_type_id_counts_hashmap())?.into())
+        Ok(pe!(self.inner.get_node_type_id_counts_hashmap())?)
     }
 
     #[automatically_generated_binding]
@@ -9150,7 +9080,7 @@ impl Graph {
     ///     If there are no node types in the current graph instance.
     ///
     pub fn get_node_type_names_counts_hashmap(&self) -> PyResult<HashMap<String, NodeT>> {
-        Ok(pe!(self.inner.get_node_type_names_counts_hashmap())?.into())
+        Ok(pe!(self.inner.get_node_type_names_counts_hashmap())?)
     }
 
     #[automatically_generated_binding]
@@ -9231,7 +9161,7 @@ impl Graph {
                 gil,
                 pe!(self
                     .inner
-                    .get_known_boolean_node_type_ids(target_value.clone()))?,
+                    .get_known_boolean_node_type_ids(target_value))?,
                 bool
             )
         })
@@ -9252,7 +9182,6 @@ impl Graph {
         self.inner
             .get_root_node_names()
             .into_iter()
-            .map(|x| x.into())
             .collect::<Vec<_>>()
     }
 
@@ -9261,7 +9190,7 @@ impl Graph {
     /// Convert inplace the graph to directed.
     pub fn to_directed_inplace(&mut self) {
         self.inner.to_directed_inplace();
-        ()
+        
     }
 
     #[automatically_generated_binding]
@@ -9450,8 +9379,7 @@ impl Graph {
             minimum_clique_size,
             clique_per_node,
             verbose
-        ))?
-        .into())
+        ))?)
     }
 
     #[automatically_generated_binding]
@@ -9496,7 +9424,7 @@ impl Graph {
     ///
     /// On request, since it takes more time to compute it, the method also provides:
     pub fn report(&self) -> HashMap<&'static str, String> {
-        self.inner.report().into()
+        self.inner.report()
     }
 
     #[automatically_generated_binding]
@@ -9511,7 +9439,7 @@ impl Graph {
     ///     Whether to shor the loading bars.
     ///
     pub fn overlap_textual_report(&self, other: &Graph, verbose: Option<bool>) -> PyResult<String> {
-        Ok(pe!(self.inner.overlap_textual_report(&other.inner, verbose))?.into())
+        Ok(pe!(self.inner.overlap_textual_report(&other.inner, verbose))?)
     }
 
     #[automatically_generated_binding]
@@ -9526,7 +9454,7 @@ impl Graph {
     ///     Whether to show a loading bar in graph operations.
     ///
     pub fn get_node_report_from_node_id(&self, node_id: NodeT) -> PyResult<String> {
-        Ok(pe!(self.inner.get_node_report_from_node_id(node_id.clone()))?.into())
+        Ok(pe!(self.inner.get_node_report_from_node_id(node_id))?)
     }
 
     #[automatically_generated_binding]
@@ -9541,7 +9469,7 @@ impl Graph {
     ///     Whether to show a loading bar in graph operations.
     ///
     pub fn get_node_report_from_node_name(&self, node_name: &str) -> PyResult<String> {
-        Ok(pe!(self.inner.get_node_report_from_node_name(node_name))?.into())
+        Ok(pe!(self.inner.get_node_report_from_node_name(node_name))?)
     }
 
     #[automatically_generated_binding]
@@ -9554,7 +9482,7 @@ impl Graph {
     /// support for the fast computation of the inbound edges in a directed
     /// graphs
     pub fn textual_report(&self) -> String {
-        self.inner.textual_report().into()
+        self.inner.textual_report()
     }
 
     #[automatically_generated_binding]
@@ -9578,8 +9506,8 @@ impl Graph {
             to_ndarray_1d!(
                 gil,
                 pe!(self.inner.get_isomorphic_nodes_mask(
-                    minimum_node_degree.clone(),
-                    number_of_neighbours_for_hash.clone()
+                    minimum_node_degree,
+                    number_of_neighbours_for_hash
                 ))?,
                 bool
             )
@@ -9611,7 +9539,7 @@ impl Graph {
             dtype
         ))?
         .into_iter()
-        .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>())
+        .map(|x| x.into_iter().collect::<Vec<_>>())
         .collect::<Vec<_>>())
     }
 
@@ -9694,7 +9622,7 @@ impl Graph {
             dtype
         ))?
         .into_iter()
-        .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>())
+        .map(|x| x.into_iter().collect::<Vec<_>>())
         .collect::<Vec<_>>())
     }
 
@@ -9804,7 +9732,7 @@ impl Graph {
         .into_iter()
         .map(|x| {
             x.into_iter()
-                .map(|x| x.into_iter().cloned().map(|x| x.into()).collect::<Vec<_>>())
+                .map(|x| x.to_vec())
                 .collect::<Vec<_>>()
         })
         .collect::<Vec<_>>())
@@ -9900,7 +9828,7 @@ impl Graph {
         .into_iter()
         .map(|x| {
             x.into_iter()
-                .map(|x| x.into_iter().cloned().map(|x| x.into()).collect::<Vec<_>>())
+                .map(|x| x.to_vec())
                 .collect::<Vec<_>>()
         })
         .collect::<Vec<_>>())
@@ -10816,8 +10744,8 @@ impl Graph {
             node_prefixes_to_remove,
             node_type_names_to_keep,
             node_type_names_to_remove,
-            node_type_name_to_keep.as_ref().map(|x| x.as_slice()),
-            node_type_name_to_remove.as_ref().map(|x| x.as_slice()),
+            node_type_name_to_keep.as_deref(),
+            node_type_name_to_remove.as_deref(),
             source_node_names_to_keep,
             source_node_names_to_remove,
             source_node_names_to_keep_from_graph.map(|sg| &sg.inner),
@@ -10826,10 +10754,8 @@ impl Graph {
             source_node_prefixes_to_remove,
             source_node_type_names_to_keep,
             source_node_type_names_to_remove,
-            source_node_type_name_to_keep.as_ref().map(|x| x.as_slice()),
-            source_node_type_name_to_remove
-                .as_ref()
-                .map(|x| x.as_slice()),
+            source_node_type_name_to_keep.as_deref(),
+            source_node_type_name_to_remove.as_deref(),
             destination_node_names_to_keep,
             destination_node_names_to_remove,
             destination_node_names_to_keep_from_graph.map(|sg| &sg.inner),
@@ -10838,16 +10764,12 @@ impl Graph {
             destination_node_prefixes_to_remove,
             destination_node_type_names_to_keep,
             destination_node_type_names_to_remove,
-            destination_node_type_name_to_keep
-                .as_ref()
-                .map(|x| x.as_slice()),
-            destination_node_type_name_to_remove
-                .as_ref()
-                .map(|x| x.as_slice()),
+            destination_node_type_name_to_keep.as_deref(),
+            destination_node_type_name_to_remove.as_deref(),
             edge_node_names_to_keep,
             edge_node_names_to_remove,
-            edge_type_names_to_keep.as_ref().map(|x| x.as_slice()),
-            edge_type_names_to_remove.as_ref().map(|x| x.as_slice()),
+            edge_type_names_to_keep.as_deref(),
+            edge_type_names_to_remove.as_deref(),
             min_edge_weight,
             max_edge_weight,
             min_node_degree,
@@ -11000,14 +10922,14 @@ impl Graph {
             .inner
             .random_spanning_arborescence_kruskal(random_state, undesired_edge_types, verbose);
         (
-            subresult_0.into(),
+            subresult_0,
             {
                 let gil = pyo3::Python::acquire_gil();
                 to_ndarray_1d!(gil, subresult_1, NodeT)
             },
-            subresult_2.into(),
-            subresult_3.into(),
-            subresult_4.into(),
+            subresult_2,
+            subresult_3,
+            subresult_4,
         )
     }
 
@@ -11042,14 +10964,14 @@ impl Graph {
         let (subresult_0, subresult_1, subresult_2, subresult_3, subresult_4) =
             self.inner.spanning_arborescence_kruskal(verbose);
         (
-            subresult_0.into(),
+            subresult_0,
             {
                 let gil = pyo3::Python::acquire_gil();
                 to_ndarray_1d!(gil, subresult_1, NodeT)
             },
-            subresult_2.into(),
-            subresult_3.into(),
-            subresult_4.into(),
+            subresult_2,
+            subresult_3,
+            subresult_4,
         )
     }
 
@@ -11118,15 +11040,15 @@ impl Graph {
     ) -> PyResult<(Py<PyArray1<NodeT>>, NodeT, NodeT, NodeT)> {
         Ok({
             let (subresult_0, subresult_1, subresult_2, subresult_3) =
-                pe!(self.inner.get_connected_components(verbose))?.into();
+                pe!(self.inner.get_connected_components(verbose))?;
             (
                 {
                     let gil = pyo3::Python::acquire_gil();
                     to_ndarray_1d!(gil, subresult_0, NodeT)
                 },
-                subresult_1.into(),
-                subresult_2.into(),
-                subresult_3.into(),
+                subresult_1,
+                subresult_2,
+                subresult_3,
             )
         })
     }
@@ -11306,7 +11228,7 @@ impl Graph {
         bits: Option<u8>,
         dtype: Option<&str>,
     ) -> PyResult<usize> {
-        Ok(pe!(self.inner.get_approximated_diameter(precision, bits, dtype))?.into())
+        Ok(pe!(self.inner.get_approximated_diameter(precision, bits, dtype))?)
     }
 
     #[automatically_generated_binding]
@@ -11321,7 +11243,6 @@ impl Graph {
     pub fn has_compatible_node_vocabularies(&self, other: &Graph) -> bool {
         self.inner
             .has_compatible_node_vocabularies(&other.inner)
-            .into()
     }
 
     #[automatically_generated_binding]
@@ -11336,7 +11257,6 @@ impl Graph {
     pub fn has_compatible_node_types_vocabularies(&self, other: &Graph) -> bool {
         self.inner
             .has_compatible_node_types_vocabularies(&other.inner)
-            .into()
     }
 
     #[automatically_generated_binding]
@@ -11351,7 +11271,6 @@ impl Graph {
     pub fn has_compatible_edge_types_vocabularies(&self, other: &Graph) -> bool {
         self.inner
             .has_compatible_edge_types_vocabularies(&other.inner)
-            .into()
     }
 
     #[automatically_generated_binding]
@@ -11376,7 +11295,7 @@ impl Graph {
     ///     If one of the two graphs has edge types and the other does not.
     ///
     pub fn is_compatible(&self, other: &Graph) -> PyResult<bool> {
-        Ok(pe!(self.inner.is_compatible(&other.inner))?.into())
+        Ok(pe!(self.inner.is_compatible(&other.inner))?)
     }
 
     #[automatically_generated_binding]
@@ -11389,7 +11308,7 @@ impl Graph {
     ///     The other graph.
     ///
     pub fn has_same_adjacency_matrix(&self, other: &Graph) -> PyResult<bool> {
-        Ok(pe!(self.inner.has_same_adjacency_matrix(&other.inner))?.into())
+        Ok(pe!(self.inner.has_same_adjacency_matrix(&other.inner))?)
     }
 
     #[automatically_generated_binding]
@@ -11439,7 +11358,7 @@ impl Graph {
     ///     The random state to use to reproduce the sampling.
     ///
     pub fn get_random_node_type(&self, random_state: u64) -> PyResult<NodeTypeT> {
-        Ok(pe!(self.inner.get_random_node_type(random_state.clone()))?.into())
+        Ok(pe!(self.inner.get_random_node_type(random_state))?)
     }
 
     #[automatically_generated_binding]
@@ -11452,7 +11371,7 @@ impl Graph {
     ///     The random state to use to reproduce the sampling.
     ///
     pub fn get_random_edge_type(&self, random_state: u64) -> PyResult<EdgeTypeT> {
-        Ok(pe!(self.inner.get_random_edge_type(random_state.clone()))?.into())
+        Ok(pe!(self.inner.get_random_edge_type(random_state))?)
     }
 
     #[automatically_generated_binding]
@@ -11473,8 +11392,8 @@ impl Graph {
         random_state: u64,
     ) -> Option<EdgeTypeT> {
         self.inner
-            .get_unchecked_random_scale_free_edge_type(random_state.clone())
-            .map(|x| x.into())
+            .get_unchecked_random_scale_free_edge_type(random_state)
+            .map(|x| x)
     }
 
     #[automatically_generated_binding]
@@ -11498,8 +11417,8 @@ impl Graph {
     ) -> PyResult<Option<EdgeTypeT>> {
         Ok(pe!(self
             .inner
-            .get_random_scale_free_edge_type(random_state.clone()))?
-        .map(|x| x.into()))
+            .get_random_scale_free_edge_type(random_state))?
+        .map(|x| x))
     }
 
     #[automatically_generated_binding]
@@ -11520,8 +11439,8 @@ impl Graph {
         random_state: u64,
     ) -> Option<WeightT> {
         self.inner
-            .get_unchecked_random_scale_free_edge_weight(random_state.clone())
-            .map(|x| x.into())
+            .get_unchecked_random_scale_free_edge_weight(random_state)
+            .map(|x| x)
     }
 
     #[automatically_generated_binding]
@@ -11545,8 +11464,8 @@ impl Graph {
     ) -> PyResult<Option<WeightT>> {
         Ok(pe!(self
             .inner
-            .get_random_scale_free_edge_weight(random_state.clone()))?
-        .map(|x| x.into()))
+            .get_random_scale_free_edge_weight(random_state))?
+        .map(|x| x))
     }
 
     #[automatically_generated_binding]
@@ -11559,7 +11478,7 @@ impl Graph {
     ///     The random state to use to reproduce the sampling.
     ///
     pub fn get_random_node(&self, random_state: u64) -> NodeT {
-        self.inner.get_random_node(random_state.clone()).into()
+        self.inner.get_random_node(random_state)
     }
 
     #[automatically_generated_binding]
@@ -11572,7 +11491,7 @@ impl Graph {
     ///     The random state to use to reproduce the sampling.
     ///
     pub fn get_random_edge_id(&self, random_state: u64) -> EdgeT {
-        self.inner.get_random_edge_id(random_state.clone()).into()
+        self.inner.get_random_edge_id(random_state)
     }
 
     #[automatically_generated_binding]
@@ -11586,8 +11505,7 @@ impl Graph {
     ///
     pub fn get_random_outbounds_scale_free_node(&self, random_state: u64) -> NodeT {
         self.inner
-            .get_random_outbounds_scale_free_node(random_state.clone())
-            .into()
+            .get_random_outbounds_scale_free_node(random_state)
     }
 
     #[automatically_generated_binding]
@@ -11601,8 +11519,7 @@ impl Graph {
     ///
     pub fn get_random_inbounds_scale_free_node(&self, random_state: u64) -> NodeT {
         self.inner
-            .get_random_inbounds_scale_free_node(random_state.clone())
-            .into()
+            .get_random_inbounds_scale_free_node(random_state)
     }
 
     #[automatically_generated_binding]
@@ -11626,8 +11543,8 @@ impl Graph {
             to_ndarray_1d!(
                 gil,
                 pe!(self.inner.get_sorted_unique_random_nodes(
-                    number_of_nodes_to_sample.clone(),
-                    random_state.clone()
+                    number_of_nodes_to_sample,
+                    random_state
                 ))?,
                 NodeT
             )
@@ -11663,8 +11580,8 @@ impl Graph {
             to_ndarray_1d!(
                 gil,
                 pe!(self.inner.get_breadth_first_search_random_nodes(
-                    number_of_nodes_to_sample.clone(),
-                    root_node.clone()
+                    number_of_nodes_to_sample,
+                    root_node
                 ))?,
                 NodeT
             )
@@ -11704,9 +11621,9 @@ impl Graph {
             to_ndarray_1d!(
                 gil,
                 pe!(self.inner.get_uniform_random_walk_random_nodes(
-                    node.clone(),
-                    random_state.clone(),
-                    walk_length.clone(),
+                    node,
+                    random_state,
+                    walk_length,
                     unique
                 ))?,
                 NodeT
@@ -11763,8 +11680,8 @@ impl Graph {
             to_ndarray_1d!(
                 gil,
                 pe!(self.inner.get_subsampled_nodes(
-                    number_of_nodes_to_sample.clone(),
-                    random_state.clone(),
+                    number_of_nodes_to_sample,
+                    random_state,
                     node_sampling_method,
                     root_node,
                     unique
@@ -11884,63 +11801,63 @@ impl Graph {
     ///
     /// TODO: use a default for the default graph name
     pub fn has_default_graph_name(&self) -> bool {
-        self.inner.has_default_graph_name().into()
+        self.inner.has_default_graph_name()
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Return if the graph has any nodes.
     pub fn has_nodes(&self) -> bool {
-        self.inner.has_nodes().into()
+        self.inner.has_nodes()
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Return if the graph has any edges.
     pub fn has_edges(&self) -> bool {
-        self.inner.has_edges().into()
+        self.inner.has_edges()
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Return whether the graph has trap nodes.
     pub fn has_trap_nodes(&self) -> bool {
-        self.inner.has_trap_nodes().into()
+        self.inner.has_trap_nodes()
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Return whether the graph has trap nodes with self-loops.
     pub fn has_trap_nodes_with_selfloops(&self) -> bool {
-        self.inner.has_trap_nodes_with_selfloops().into()
+        self.inner.has_trap_nodes_with_selfloops()
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Returns boolean representing if graph is directed.
     pub fn is_directed(&self) -> bool {
-        self.inner.is_directed().into()
+        self.inner.is_directed()
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Returns whether graph is a directed acyclic graph.
     pub fn is_directed_acyclic(&self) -> bool {
-        self.inner.is_directed_acyclic().into()
+        self.inner.is_directed_acyclic()
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Returns boolean representing whether graph has weights.
     pub fn has_edge_weights(&self) -> bool {
-        self.inner.has_edge_weights().into()
+        self.inner.has_edge_weights()
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Returns whether graph has weights that can represent probabilities
     pub fn has_edge_weights_representing_probabilities(&self) -> PyResult<bool> {
-        Ok(pe!(self.inner.has_edge_weights_representing_probabilities())?.into())
+        Ok(pe!(self.inner.has_edge_weights_representing_probabilities())?)
     }
 
     #[automatically_generated_binding]
@@ -11955,7 +11872,7 @@ impl Graph {
     ///     If the graph does not contain edge weights.
     ///
     pub fn has_weighted_singleton_nodes(&self) -> PyResult<bool> {
-        Ok(pe!(self.inner.has_weighted_singleton_nodes())?.into())
+        Ok(pe!(self.inner.has_weighted_singleton_nodes())?)
     }
 
     #[automatically_generated_binding]
@@ -11968,7 +11885,7 @@ impl Graph {
     ///     If the graph does not contain edge weights.
     ///
     pub fn has_constant_edge_weights(&self) -> PyResult<bool> {
-        Ok(pe!(self.inner.has_constant_edge_weights())?.into())
+        Ok(pe!(self.inner.has_constant_edge_weights())?)
     }
 
     #[automatically_generated_binding]
@@ -11981,21 +11898,21 @@ impl Graph {
     ///     If the graph does not contain weights.
     ///
     pub fn has_negative_edge_weights(&self) -> PyResult<bool> {
-        Ok(pe!(self.inner.has_negative_edge_weights())?.into())
+        Ok(pe!(self.inner.has_negative_edge_weights())?)
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Returns boolean representing whether graph has edge types.
     pub fn has_edge_types(&self) -> bool {
-        self.inner.has_edge_types().into()
+        self.inner.has_edge_types()
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Returns boolean representing if graph has self-loops.
     pub fn has_selfloops(&self) -> bool {
-        self.inner.has_selfloops().into()
+        self.inner.has_selfloops()
     }
 
     #[automatically_generated_binding]
@@ -12003,21 +11920,21 @@ impl Graph {
     /// Returns boolean representing if nodes which are nor singletons nor
     /// singletons with selfloops.
     pub fn has_disconnected_nodes(&self) -> bool {
-        self.inner.has_disconnected_nodes().into()
+        self.inner.has_disconnected_nodes()
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Returns boolean representing if graph has singletons.
     pub fn has_singleton_nodes(&self) -> bool {
-        self.inner.has_singleton_nodes().into()
+        self.inner.has_singleton_nodes()
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Returns boolean representing if graph has singletons
     pub fn has_singleton_nodes_with_selfloops(&self) -> bool {
-        self.inner.has_singleton_nodes_with_selfloops().into()
+        self.inner.has_singleton_nodes_with_selfloops()
     }
 
     #[automatically_generated_binding]
@@ -12030,14 +11947,14 @@ impl Graph {
     ///     Whether to show the loading bar while computing the connected components, if necessary.
     ///
     pub fn is_connected(&self, verbose: Option<bool>) -> bool {
-        self.inner.is_connected(verbose).into()
+        self.inner.is_connected(verbose)
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Returns boolean representing if graph has node types
     pub fn has_node_types(&self) -> bool {
-        self.inner.has_node_types().into()
+        self.inner.has_node_types()
     }
 
     #[automatically_generated_binding]
@@ -12050,7 +11967,7 @@ impl Graph {
     ///     If the graph does not have node types.
     ///
     pub fn has_multilabel_node_types(&self) -> PyResult<bool> {
-        Ok(pe!(self.inner.has_multilabel_node_types())?.into())
+        Ok(pe!(self.inner.has_multilabel_node_types())?)
     }
 
     #[automatically_generated_binding]
@@ -12063,7 +11980,7 @@ impl Graph {
     ///     If the graph does not have node types.
     ///
     pub fn has_unknown_node_types(&self) -> PyResult<bool> {
-        Ok(pe!(self.inner.has_unknown_node_types())?.into())
+        Ok(pe!(self.inner.has_unknown_node_types())?)
     }
 
     #[automatically_generated_binding]
@@ -12076,7 +11993,7 @@ impl Graph {
     ///     If the graph does not have node types.
     ///
     pub fn has_known_node_types(&self) -> PyResult<bool> {
-        Ok(pe!(self.inner.has_known_node_types())?.into())
+        Ok(pe!(self.inner.has_known_node_types())?)
     }
 
     #[automatically_generated_binding]
@@ -12089,7 +12006,7 @@ impl Graph {
     ///     If the graph does not have node types.
     ///
     pub fn has_unknown_edge_types(&self) -> PyResult<bool> {
-        Ok(pe!(self.inner.has_unknown_edge_types())?.into())
+        Ok(pe!(self.inner.has_unknown_edge_types())?)
     }
 
     #[automatically_generated_binding]
@@ -12102,7 +12019,7 @@ impl Graph {
     ///     If the graph does not have edge types.
     ///
     pub fn has_known_edge_types(&self) -> PyResult<bool> {
-        Ok(pe!(self.inner.has_known_edge_types())?.into())
+        Ok(pe!(self.inner.has_known_edge_types())?)
     }
 
     #[automatically_generated_binding]
@@ -12115,7 +12032,7 @@ impl Graph {
     ///     If the graph does not have node types.
     ///
     pub fn has_homogeneous_node_types(&self) -> PyResult<bool> {
-        Ok(pe!(self.inner.has_homogeneous_node_types())?.into())
+        Ok(pe!(self.inner.has_homogeneous_node_types())?)
     }
 
     #[automatically_generated_binding]
@@ -12128,14 +12045,14 @@ impl Graph {
     ///     If the graph does not have node types.
     ///
     pub fn has_exclusively_homogeneous_node_types(&self) -> PyResult<bool> {
-        Ok(pe!(self.inner.has_exclusively_homogeneous_node_types())?.into())
+        Ok(pe!(self.inner.has_exclusively_homogeneous_node_types())?)
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Returns whether the nodes have an homogenous node ontology
     pub fn has_homogeneous_node_ontologies(&self) -> PyResult<bool> {
-        Ok(pe!(self.inner.has_homogeneous_node_ontologies())?.into())
+        Ok(pe!(self.inner.has_homogeneous_node_ontologies())?)
     }
 
     #[automatically_generated_binding]
@@ -12148,7 +12065,7 @@ impl Graph {
     ///     If the graph does not have edge types.
     ///
     pub fn has_homogeneous_edge_types(&self) -> PyResult<bool> {
-        Ok(pe!(self.inner.has_homogeneous_edge_types())?.into())
+        Ok(pe!(self.inner.has_homogeneous_edge_types())?)
     }
 
     #[automatically_generated_binding]
@@ -12161,7 +12078,7 @@ impl Graph {
     ///     If the graph does not have edge types.
     ///
     pub fn has_exclusively_homogeneous_edge_types(&self) -> PyResult<bool> {
-        Ok(pe!(self.inner.has_exclusively_homogeneous_edge_types())?.into())
+        Ok(pe!(self.inner.has_exclusively_homogeneous_edge_types())?)
     }
 
     #[automatically_generated_binding]
@@ -12174,7 +12091,7 @@ impl Graph {
     ///     If the graph does not have node types.
     ///
     pub fn has_singleton_node_types(&self) -> PyResult<bool> {
-        Ok(pe!(self.inner.has_singleton_node_types())?.into())
+        Ok(pe!(self.inner.has_singleton_node_types())?)
     }
 
     #[automatically_generated_binding]
@@ -12187,14 +12104,14 @@ impl Graph {
     ///     If the graph does not have node types.
     ///
     pub fn has_exclusively_singleton_node_types(&self) -> PyResult<bool> {
-        Ok(pe!(self.inner.has_exclusively_singleton_node_types())?.into())
+        Ok(pe!(self.inner.has_exclusively_singleton_node_types())?)
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Return whether the graph has any known node-related graph oddities
     pub fn has_node_oddities(&self) -> bool {
-        self.inner.has_node_oddities().into()
+        self.inner.has_node_oddities()
     }
 
     #[automatically_generated_binding]
@@ -12207,7 +12124,7 @@ impl Graph {
     ///     If the graph does not have node types.
     ///
     pub fn has_node_types_oddities(&self) -> PyResult<bool> {
-        Ok(pe!(self.inner.has_node_types_oddities())?.into())
+        Ok(pe!(self.inner.has_node_types_oddities())?)
     }
 
     #[automatically_generated_binding]
@@ -12220,7 +12137,7 @@ impl Graph {
     ///     If the graph does not have edge types.
     ///
     pub fn has_singleton_edge_types(&self) -> PyResult<bool> {
-        Ok(pe!(self.inner.has_singleton_edge_types())?.into())
+        Ok(pe!(self.inner.has_singleton_edge_types())?)
     }
 
     #[automatically_generated_binding]
@@ -12233,7 +12150,7 @@ impl Graph {
     ///     If the graph does not have edge types.
     ///
     pub fn has_exclusively_singleton_edge_types(&self) -> PyResult<bool> {
-        Ok(pe!(self.inner.has_exclusively_singleton_edge_types())?.into())
+        Ok(pe!(self.inner.has_exclusively_singleton_edge_types())?)
     }
 
     #[automatically_generated_binding]
@@ -12246,28 +12163,28 @@ impl Graph {
     ///     If the graph does not have edge types.
     ///
     pub fn has_edge_types_oddities(&self) -> PyResult<bool> {
-        Ok(pe!(self.inner.has_edge_types_oddities())?.into())
+        Ok(pe!(self.inner.has_edge_types_oddities())?)
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Return if there are multiple edges between two node
     pub fn is_multigraph(&self) -> bool {
-        self.inner.is_multigraph().into()
+        self.inner.is_multigraph()
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Return whether at least a node has a known ontology
     pub fn has_node_ontologies(&self) -> bool {
-        self.inner.has_node_ontologies().into()
+        self.inner.has_node_ontologies()
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Return whether at least a node has an unknown ontology
     pub fn has_unknown_node_ontologies(&self) -> bool {
-        self.inner.has_unknown_node_ontologies().into()
+        self.inner.has_unknown_node_ontologies()
     }
 
     #[automatically_generated_binding]
@@ -12276,21 +12193,20 @@ impl Graph {
     pub fn has_nodes_sorted_by_decreasing_outbound_node_degree(&self) -> bool {
         self.inner
             .has_nodes_sorted_by_decreasing_outbound_node_degree()
-            .into()
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Returns whether the node IDs are sorted by decreasing outbound node degree.
     pub fn has_nodes_sorted_by_lexicographic_order(&self) -> bool {
-        self.inner.has_nodes_sorted_by_lexicographic_order().into()
+        self.inner.has_nodes_sorted_by_lexicographic_order()
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Returns whether the graph contains the identity matrix.
     pub fn contains_identity_matrix(&self) -> bool {
-        self.inner.contains_identity_matrix().into()
+        self.inner.contains_identity_matrix()
     }
 
     #[automatically_generated_binding]
@@ -12299,14 +12215,13 @@ impl Graph {
     pub fn has_nodes_sorted_by_increasing_outbound_node_degree(&self) -> bool {
         self.inner
             .has_nodes_sorted_by_increasing_outbound_node_degree()
-            .into()
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Returns whether the sources time-memory tradeoff is enabled
     pub fn has_sources_tradeoff_enabled(&self) -> bool {
-        self.inner.has_sources_tradeoff_enabled().into()
+        self.inner.has_sources_tradeoff_enabled()
     }
 
     #[automatically_generated_binding]
@@ -12315,7 +12230,6 @@ impl Graph {
     pub fn has_reciprocal_sqrt_degrees_tradeoff_enabled(&self) -> bool {
         self.inner
             .has_reciprocal_sqrt_degrees_tradeoff_enabled()
-            .into()
     }
 
     #[automatically_generated_binding]
@@ -12430,8 +12344,8 @@ impl Graph {
     /// If the given edge ID does not exists in the graph this method will panic.
     pub unsafe fn get_unchecked_edge_weight_from_edge_id(&self, edge_id: EdgeT) -> Option<WeightT> {
         self.inner
-            .get_unchecked_edge_weight_from_edge_id(edge_id.clone())
-            .map(|x| x.into())
+            .get_unchecked_edge_weight_from_edge_id(edge_id)
+            .map(|x| x)
     }
 
     #[automatically_generated_binding]
@@ -12458,8 +12372,7 @@ impl Graph {
         dst: NodeT,
     ) -> WeightT {
         self.inner
-            .get_unchecked_edge_weight_from_node_ids(src.clone(), dst.clone())
-            .into()
+            .get_unchecked_edge_weight_from_node_ids(src, dst)
     }
 
     #[automatically_generated_binding]
@@ -12478,7 +12391,6 @@ impl Graph {
     pub unsafe fn get_unchecked_node_id_from_node_name(&self, node_name: &str) -> NodeT {
         self.inner
             .get_unchecked_node_id_from_node_name(node_name)
-            .into()
     }
 
     #[automatically_generated_binding]
@@ -12500,7 +12412,7 @@ impl Graph {
     ) -> Option<EdgeTypeT> {
         self.inner
             .get_unchecked_edge_type_id_from_edge_type_name(edge_type_name)
-            .map(|x| x.into())
+            .map(|x| x)
     }
 
     #[automatically_generated_binding]
@@ -12523,7 +12435,6 @@ impl Graph {
     ) -> Option<String> {
         self.inner
             .get_unchecked_edge_type_name_from_edge_type_id(edge_type_id)
-            .map(|x| x.into())
     }
 
     #[automatically_generated_binding]
@@ -12545,7 +12456,6 @@ impl Graph {
     ) -> EdgeT {
         self.inner
             .get_unchecked_edge_count_from_edge_type_id(edge_type)
-            .into()
     }
 
     #[automatically_generated_binding]
@@ -12566,7 +12476,6 @@ impl Graph {
     ) -> NodeT {
         self.inner
             .get_unchecked_node_count_from_node_type_id(node_type)
-            .into()
     }
 
     #[automatically_generated_binding]
@@ -12594,11 +12503,10 @@ impl Graph {
     ) -> EdgeT {
         self.inner
             .get_unchecked_edge_id_from_node_ids_and_edge_type_id(
-                src.clone(),
-                dst.clone(),
+                src,
+                dst,
                 edge_type,
             )
-            .into()
     }
 
     #[automatically_generated_binding]
@@ -12625,8 +12533,8 @@ impl Graph {
     ) -> (EdgeT, EdgeT) {
         let (subresult_0, subresult_1) = self
             .inner
-            .get_unchecked_minmax_edge_ids_from_node_ids(src.clone(), dst.clone());
-        (subresult_0.into(), subresult_1.into())
+            .get_unchecked_minmax_edge_ids_from_node_ids(src, dst);
+        (subresult_0, subresult_1)
     }
 
     #[automatically_generated_binding]
@@ -12648,8 +12556,8 @@ impl Graph {
     pub unsafe fn get_unchecked_node_ids_from_edge_id(&self, edge_id: EdgeT) -> (NodeT, NodeT) {
         let (subresult_0, subresult_1) = self
             .inner
-            .get_unchecked_node_ids_from_edge_id(edge_id.clone());
-        (subresult_0.into(), subresult_1.into())
+            .get_unchecked_node_ids_from_edge_id(edge_id);
+        (subresult_0, subresult_1)
     }
 
     #[automatically_generated_binding]
@@ -12668,8 +12576,8 @@ impl Graph {
     pub unsafe fn get_unchecked_node_names_from_edge_id(&self, edge_id: EdgeT) -> (String, String) {
         let (subresult_0, subresult_1) = self
             .inner
-            .get_unchecked_node_names_from_edge_id(edge_id.clone());
-        (subresult_0.into(), subresult_1.into())
+            .get_unchecked_node_names_from_edge_id(edge_id);
+        (subresult_0, subresult_1)
     }
 
     #[automatically_generated_binding]
@@ -12687,8 +12595,7 @@ impl Graph {
     /// If the given edge ID does not exist in the current graph the method will cause an out of bounds.
     pub unsafe fn get_unchecked_source_node_id_from_edge_id(&self, edge_id: EdgeT) -> NodeT {
         self.inner
-            .get_unchecked_source_node_id_from_edge_id(edge_id.clone())
-            .into()
+            .get_unchecked_source_node_id_from_edge_id(edge_id)
     }
 
     #[automatically_generated_binding]
@@ -12706,8 +12613,7 @@ impl Graph {
     /// If the given edge ID does not exist in the current graph the method will cause an out of bounds.
     pub unsafe fn get_unchecked_destination_node_id_from_edge_id(&self, edge_id: EdgeT) -> NodeT {
         self.inner
-            .get_unchecked_destination_node_id_from_edge_id(edge_id.clone())
-            .into()
+            .get_unchecked_destination_node_id_from_edge_id(edge_id)
     }
 
     #[automatically_generated_binding]
@@ -12726,7 +12632,7 @@ impl Graph {
     ///     If the given edge ID does not exist in the current graph.
     ///
     pub fn get_source_node_id_from_edge_id(&self, edge_id: EdgeT) -> PyResult<NodeT> {
-        Ok(pe!(self.inner.get_source_node_id_from_edge_id(edge_id.clone()))?.into())
+        Ok(pe!(self.inner.get_source_node_id_from_edge_id(edge_id))?)
     }
 
     #[automatically_generated_binding]
@@ -12747,8 +12653,7 @@ impl Graph {
     pub fn get_destination_node_id_from_edge_id(&self, edge_id: EdgeT) -> PyResult<NodeT> {
         Ok(pe!(self
             .inner
-            .get_destination_node_id_from_edge_id(edge_id.clone()))?
-        .into())
+            .get_destination_node_id_from_edge_id(edge_id))?)
     }
 
     #[automatically_generated_binding]
@@ -12767,8 +12672,7 @@ impl Graph {
     ///  the number of nodes in the graph.
     pub unsafe fn get_unchecked_number_of_selfloops_from_node_id(&self, node_id: NodeT) -> NodeT {
         self.inner
-            .get_unchecked_number_of_selfloops_from_node_id(node_id.clone())
-            .into()
+            .get_unchecked_number_of_selfloops_from_node_id(node_id)
     }
 
     #[automatically_generated_binding]
@@ -12787,8 +12691,7 @@ impl Graph {
     pub fn get_number_of_selfloops_from_node_id(&self, node_id: NodeT) -> PyResult<NodeT> {
         Ok(pe!(self
             .inner
-            .get_number_of_selfloops_from_node_id(node_id.clone()))?
-        .into())
+            .get_number_of_selfloops_from_node_id(node_id))?)
     }
 
     #[automatically_generated_binding]
@@ -12805,7 +12708,7 @@ impl Graph {
     /// -------
     ///
     pub fn get_number_of_selfloops_from_node_name(&self, node_name: &str) -> PyResult<NodeT> {
-        Ok(pe!(self.inner.get_number_of_selfloops_from_node_name(node_name))?.into())
+        Ok(pe!(self.inner.get_number_of_selfloops_from_node_name(node_name))?)
     }
 
     #[automatically_generated_binding]
@@ -12823,8 +12726,7 @@ impl Graph {
     /// If the given edge ID does not exist in the current graph the method will raise a panic.
     pub unsafe fn get_unchecked_source_node_name_from_edge_id(&self, edge_id: EdgeT) -> String {
         self.inner
-            .get_unchecked_source_node_name_from_edge_id(edge_id.clone())
-            .into()
+            .get_unchecked_source_node_name_from_edge_id(edge_id)
     }
 
     #[automatically_generated_binding]
@@ -12845,8 +12747,7 @@ impl Graph {
         edge_id: EdgeT,
     ) -> String {
         self.inner
-            .get_unchecked_destination_node_name_from_edge_id(edge_id.clone())
-            .into()
+            .get_unchecked_destination_node_name_from_edge_id(edge_id)
     }
 
     #[automatically_generated_binding]
@@ -12865,8 +12766,7 @@ impl Graph {
     pub fn get_source_node_name_from_edge_id(&self, edge_id: EdgeT) -> PyResult<String> {
         Ok(pe!(self
             .inner
-            .get_source_node_name_from_edge_id(edge_id.clone()))?
-        .into())
+            .get_source_node_name_from_edge_id(edge_id))?)
     }
 
     #[automatically_generated_binding]
@@ -12885,8 +12785,7 @@ impl Graph {
     pub fn get_destination_node_name_from_edge_id(&self, edge_id: EdgeT) -> PyResult<String> {
         Ok(pe!(self
             .inner
-            .get_destination_node_name_from_edge_id(edge_id.clone()))?
-        .into())
+            .get_destination_node_name_from_edge_id(edge_id))?)
     }
 
     #[automatically_generated_binding]
@@ -12901,8 +12800,8 @@ impl Graph {
     pub fn get_node_names_from_edge_id(&self, edge_id: EdgeT) -> PyResult<(String, String)> {
         Ok({
             let (subresult_0, subresult_1) =
-                pe!(self.inner.get_node_names_from_edge_id(edge_id.clone()))?.into();
-            (subresult_0.into(), subresult_1.into())
+                pe!(self.inner.get_node_names_from_edge_id(edge_id))?;
+            (subresult_0, subresult_1)
         })
     }
 
@@ -12918,8 +12817,8 @@ impl Graph {
     pub fn get_node_ids_from_edge_id(&self, edge_id: EdgeT) -> PyResult<(NodeT, NodeT)> {
         Ok({
             let (subresult_0, subresult_1) =
-                pe!(self.inner.get_node_ids_from_edge_id(edge_id.clone()))?.into();
-            (subresult_0.into(), subresult_1.into())
+                pe!(self.inner.get_node_ids_from_edge_id(edge_id))?;
+            (subresult_0, subresult_1)
         })
     }
 
@@ -12943,8 +12842,7 @@ impl Graph {
     /// If any of the given node IDs do not exist in the graph the method will panic.
     pub unsafe fn get_unchecked_edge_id_from_node_ids(&self, src: NodeT, dst: NodeT) -> EdgeT {
         self.inner
-            .get_unchecked_edge_id_from_node_ids(src.clone(), dst.clone())
-            .into()
+            .get_unchecked_edge_id_from_node_ids(src, dst)
     }
 
     #[automatically_generated_binding]
@@ -12961,8 +12859,7 @@ impl Graph {
     pub fn get_edge_id_from_node_ids(&self, src: NodeT, dst: NodeT) -> PyResult<EdgeT> {
         Ok(pe!(self
             .inner
-            .get_edge_id_from_node_ids(src.clone(), dst.clone()))?
-        .into())
+            .get_edge_id_from_node_ids(src, dst))?)
     }
 
     #[automatically_generated_binding]
@@ -12980,8 +12877,7 @@ impl Graph {
     /// If the given source node ID does not exist in the current graph the method will panic.
     pub unsafe fn get_unchecked_unique_source_node_id(&self, source_id: NodeT) -> NodeT {
         self.inner
-            .get_unchecked_unique_source_node_id(source_id.clone())
-            .into()
+            .get_unchecked_unique_source_node_id(source_id)
     }
 
     #[automatically_generated_binding]
@@ -13005,11 +12901,11 @@ impl Graph {
     ) -> (NodeT, NodeT, Option<EdgeTypeT>) {
         let (subresult_0, subresult_1, subresult_2) = self
             .inner
-            .get_unchecked_node_ids_and_edge_type_id_from_edge_id(edge_id.clone());
+            .get_unchecked_node_ids_and_edge_type_id_from_edge_id(edge_id);
         (
-            subresult_0.into(),
-            subresult_1.into(),
-            subresult_2.map(|x| x.into()),
+            subresult_0,
+            subresult_1,
+            subresult_2.map(|x| x),
         )
     }
 
@@ -13029,12 +12925,11 @@ impl Graph {
         Ok({
             let (subresult_0, subresult_1, subresult_2) = pe!(self
                 .inner
-                .get_node_ids_and_edge_type_id_from_edge_id(edge_id.clone()))?
-            .into();
+                .get_node_ids_and_edge_type_id_from_edge_id(edge_id))?;
             (
-                subresult_0.into(),
-                subresult_1.into(),
-                subresult_2.map(|x| x.into()),
+                subresult_0,
+                subresult_1,
+                subresult_2.map(|x| x),
             )
         })
     }
@@ -13060,12 +12955,12 @@ impl Graph {
     ) -> (NodeT, NodeT, Option<EdgeTypeT>, Option<WeightT>) {
         let (subresult_0, subresult_1, subresult_2, subresult_3) = self
             .inner
-            .get_unchecked_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(edge_id.clone());
+            .get_unchecked_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(edge_id);
         (
-            subresult_0.into(),
-            subresult_1.into(),
-            subresult_2.map(|x| x.into()),
-            subresult_3.map(|x| x.into()),
+            subresult_0,
+            subresult_1,
+            subresult_2.map(|x| x),
+            subresult_3.map(|x| x),
         )
     }
 
@@ -13085,13 +12980,12 @@ impl Graph {
         Ok({
             let (subresult_0, subresult_1, subresult_2, subresult_3) = pe!(self
                 .inner
-                .get_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(edge_id.clone()))?
-            .into();
+                .get_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(edge_id))?;
             (
-                subresult_0.into(),
-                subresult_1.into(),
-                subresult_2.map(|x| x.into()),
-                subresult_3.map(|x| x.into()),
+                subresult_0,
+                subresult_1,
+                subresult_2.map(|x| x),
+                subresult_3.map(|x| x),
             )
         })
     }
@@ -13121,7 +13015,7 @@ impl Graph {
             let gil = pyo3::Python::acquire_gil();
             to_ndarray_1d!(
                 gil,
-                pe!(self.inner.get_top_k_central_node_ids(k.clone()))?,
+                pe!(self.inner.get_top_k_central_node_ids(k))?,
                 NodeT
             )
         })
@@ -13152,7 +13046,7 @@ impl Graph {
             let gil = pyo3::Python::acquire_gil();
             to_ndarray_1d!(
                 gil,
-                pe!(self.inner.get_weighted_top_k_central_node_ids(k.clone()))?,
+                pe!(self.inner.get_weighted_top_k_central_node_ids(k))?,
                 NodeT
             )
         })
@@ -13173,8 +13067,7 @@ impl Graph {
     /// If the given node ID does not exist in the current graph the method will raise a panic.
     pub unsafe fn get_unchecked_node_degree_from_node_id(&self, node_id: NodeT) -> NodeT {
         self.inner
-            .get_unchecked_node_degree_from_node_id(node_id.clone())
-            .into()
+            .get_unchecked_node_degree_from_node_id(node_id)
     }
 
     #[automatically_generated_binding]
@@ -13195,8 +13088,7 @@ impl Graph {
         node_id: NodeT,
     ) -> NodeT {
         self.inner
-            .get_unchecked_selfloop_excluded_node_degree_from_node_id(node_id.clone())
-            .into()
+            .get_unchecked_selfloop_excluded_node_degree_from_node_id(node_id)
     }
 
     #[automatically_generated_binding]
@@ -13220,8 +13112,7 @@ impl Graph {
     ) -> PyResult<NodeT> {
         Ok(pe!(self
             .inner
-            .get_selfloop_adjusted_node_degree_from_node_id(node_id.clone()))?
-        .into())
+            .get_selfloop_adjusted_node_degree_from_node_id(node_id))?)
     }
 
     #[automatically_generated_binding]
@@ -13245,8 +13136,7 @@ impl Graph {
     ) -> PyResult<NodeT> {
         Ok(pe!(self
             .inner
-            .get_selfloop_adjusted_node_degree_from_node_name(node_name))?
-        .into())
+            .get_selfloop_adjusted_node_degree_from_node_name(node_name))?)
     }
 
     #[automatically_generated_binding]
@@ -13267,8 +13157,7 @@ impl Graph {
     /// If the given node ID does not exist in the current graph the method will raise a panic.
     pub unsafe fn get_unchecked_weighted_node_degree_from_node_id(&self, node_id: NodeT) -> f64 {
         self.inner
-            .get_unchecked_weighted_node_degree_from_node_id(node_id.clone())
-            .into()
+            .get_unchecked_weighted_node_degree_from_node_id(node_id)
     }
 
     #[automatically_generated_binding]
@@ -13281,7 +13170,7 @@ impl Graph {
     ///     Integer ID of the node.
     ///
     pub fn get_node_degree_from_node_id(&self, node_id: NodeT) -> PyResult<NodeT> {
-        Ok(pe!(self.inner.get_node_degree_from_node_id(node_id.clone()))?.into())
+        Ok(pe!(self.inner.get_node_degree_from_node_id(node_id))?)
     }
 
     #[automatically_generated_binding]
@@ -13302,8 +13191,7 @@ impl Graph {
         node_id: NodeT,
     ) -> EdgeT {
         self.inner
-            .get_unchecked_comulative_node_degree_from_node_id(node_id.clone())
-            .into()
+            .get_unchecked_comulative_node_degree_from_node_id(node_id)
     }
 
     #[automatically_generated_binding]
@@ -13318,8 +13206,7 @@ impl Graph {
     pub fn get_comulative_node_degree_from_node_id(&self, node_id: NodeT) -> PyResult<EdgeT> {
         Ok(pe!(self
             .inner
-            .get_comulative_node_degree_from_node_id(node_id.clone()))?
-        .into())
+            .get_comulative_node_degree_from_node_id(node_id))?)
     }
 
     #[automatically_generated_binding]
@@ -13340,8 +13227,7 @@ impl Graph {
         node_id: NodeT,
     ) -> WeightT {
         self.inner
-            .get_unchecked_reciprocal_sqrt_degree_from_node_id(node_id.clone())
-            .into()
+            .get_unchecked_reciprocal_sqrt_degree_from_node_id(node_id)
     }
 
     #[automatically_generated_binding]
@@ -13356,8 +13242,7 @@ impl Graph {
     pub fn get_reciprocal_sqrt_degree_from_node_id(&self, node_id: NodeT) -> PyResult<WeightT> {
         Ok(pe!(self
             .inner
-            .get_reciprocal_sqrt_degree_from_node_id(node_id.clone()))?
-        .into())
+            .get_reciprocal_sqrt_degree_from_node_id(node_id))?)
     }
 
     #[automatically_generated_binding]
@@ -13399,8 +13284,7 @@ impl Graph {
     pub fn get_weighted_node_degree_from_node_id(&self, node_id: NodeT) -> PyResult<f64> {
         Ok(pe!(self
             .inner
-            .get_weighted_node_degree_from_node_id(node_id.clone()))?
-        .into())
+            .get_weighted_node_degree_from_node_id(node_id))?)
     }
 
     #[automatically_generated_binding]
@@ -13419,7 +13303,7 @@ impl Graph {
     ///     If the given node name does not exist in the graph.
     ///
     pub fn get_node_degree_from_node_name(&self, node_name: &str) -> PyResult<NodeT> {
-        Ok(pe!(self.inner.get_node_degree_from_node_name(node_name))?.into())
+        Ok(pe!(self.inner.get_node_degree_from_node_name(node_name))?)
     }
 
     #[automatically_generated_binding]
@@ -13432,9 +13316,8 @@ impl Graph {
     ///     Number of central nodes to extract.
     ///
     pub fn get_top_k_central_node_names(&self, k: NodeT) -> PyResult<Vec<String>> {
-        Ok(pe!(self.inner.get_top_k_central_node_names(k.clone()))?
+        Ok(pe!(self.inner.get_top_k_central_node_names(k))?
             .into_iter()
-            .map(|x| x.into())
             .collect::<Vec<_>>())
     }
 
@@ -13462,7 +13345,7 @@ impl Graph {
         node_id: NodeT,
     ) -> Option<Py<PyArray1<NodeTypeT>>> {
         self.inner
-            .get_unchecked_node_type_ids_from_node_id(node_id.clone())
+            .get_unchecked_node_type_ids_from_node_id(node_id)
             .map(|x| {
                 let gil = pyo3::Python::acquire_gil();
                 to_ndarray_1d!(gil, x.to_vec(), NodeTypeT)
@@ -13483,7 +13366,7 @@ impl Graph {
         node_id: NodeT,
     ) -> PyResult<Option<Py<PyArray1<NodeTypeT>>>> {
         Ok(
-            pe!(self.inner.get_node_type_ids_from_node_id(node_id.clone()))?.map(|x| {
+            pe!(self.inner.get_node_type_ids_from_node_id(node_id))?.map(|x| {
                 let gil = pyo3::Python::acquire_gil();
                 to_ndarray_1d!(gil, x.to_vec(), NodeTypeT)
             }),
@@ -13513,8 +13396,8 @@ impl Graph {
         edge_id: EdgeT,
     ) -> Option<EdgeTypeT> {
         self.inner
-            .get_unchecked_edge_type_id_from_edge_id(edge_id.clone())
-            .map(|x| x.into())
+            .get_unchecked_edge_type_id_from_edge_id(edge_id)
+            .map(|x| x)
     }
 
     #[automatically_generated_binding]
@@ -13540,8 +13423,7 @@ impl Graph {
         edge_id: EdgeT,
     ) -> Option<String> {
         self.inner
-            .get_unchecked_edge_type_name_from_edge_id(edge_id.clone())
-            .map(|x| x.into())
+            .get_unchecked_edge_type_name_from_edge_id(edge_id)
     }
 
     #[automatically_generated_binding]
@@ -13554,7 +13436,7 @@ impl Graph {
     ///     edge whose edge type is to be returned.
     ///
     pub fn get_edge_type_id_from_edge_id(&self, edge_id: EdgeT) -> PyResult<Option<EdgeTypeT>> {
-        Ok(pe!(self.inner.get_edge_type_id_from_edge_id(edge_id.clone()))?.map(|x| x.into()))
+        Ok(pe!(self.inner.get_edge_type_id_from_edge_id(edge_id))?.map(|x| x))
     }
 
     #[automatically_generated_binding]
@@ -13581,8 +13463,8 @@ impl Graph {
     ) -> PyResult<Option<EdgeTypeT>> {
         Ok(pe!(self
             .inner
-            .get_edge_type_id_from_edge_node_ids(src.clone(), dst.clone()))?
-        .map(|x| x.into()))
+            .get_edge_type_id_from_edge_node_ids(src, dst))?
+        .map(|x| x))
     }
 
     #[automatically_generated_binding]
@@ -13604,8 +13486,8 @@ impl Graph {
         node_id: NodeT,
     ) -> Option<Vec<String>> {
         self.inner
-            .get_unchecked_node_type_names_from_node_id(node_id.clone())
-            .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>())
+            .get_unchecked_node_type_names_from_node_id(node_id)
+            .map(|x| x.into_iter().collect::<Vec<_>>())
     }
 
     #[automatically_generated_binding]
@@ -13628,8 +13510,8 @@ impl Graph {
         node_id: NodeT,
     ) -> PyResult<Option<Vec<String>>> {
         Ok(
-            pe!(self.inner.get_node_type_names_from_node_id(node_id.clone()))?
-                .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>()),
+            pe!(self.inner.get_node_type_names_from_node_id(node_id))?
+                .map(|x| x.into_iter().collect::<Vec<_>>()),
         )
     }
 
@@ -13648,7 +13530,7 @@ impl Graph {
     ) -> PyResult<Option<Vec<String>>> {
         Ok(
             pe!(self.inner.get_node_type_names_from_node_name(node_name))?
-                .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>()),
+                .map(|x| x.into_iter().collect::<Vec<_>>()),
         )
     }
 
@@ -13662,7 +13544,7 @@ impl Graph {
     ///     The edge ID whose edge type is to be returned.
     ///
     pub fn get_edge_type_name_from_edge_id(&self, edge_id: EdgeT) -> PyResult<Option<String>> {
-        Ok(pe!(self.inner.get_edge_type_name_from_edge_id(edge_id.clone()))?.map(|x| x.into()))
+        Ok(pe!(self.inner.get_edge_type_name_from_edge_id(edge_id))?)
     }
 
     #[automatically_generated_binding]
@@ -13680,8 +13562,7 @@ impl Graph {
     ) -> PyResult<String> {
         Ok(pe!(self
             .inner
-            .get_edge_type_name_from_edge_type_id(edge_type_id.clone()))?
-        .into())
+            .get_edge_type_name_from_edge_type_id(edge_type_id))?)
     }
 
     #[automatically_generated_binding]
@@ -13694,7 +13575,7 @@ impl Graph {
     ///     The edge ID whose weight is to be returned.
     ///
     pub fn get_edge_weight_from_edge_id(&self, edge_id: EdgeT) -> PyResult<WeightT> {
-        Ok(pe!(self.inner.get_edge_weight_from_edge_id(edge_id.clone()))?.into())
+        Ok(pe!(self.inner.get_edge_weight_from_edge_id(edge_id))?)
     }
 
     #[automatically_generated_binding]
@@ -13711,8 +13592,7 @@ impl Graph {
     pub fn get_edge_weight_from_node_ids(&self, src: NodeT, dst: NodeT) -> PyResult<WeightT> {
         Ok(pe!(self
             .inner
-            .get_edge_weight_from_node_ids(src.clone(), dst.clone()))?
-        .into())
+            .get_edge_weight_from_node_ids(src, dst))?)
     }
 
     #[automatically_generated_binding]
@@ -13736,11 +13616,10 @@ impl Graph {
     ) -> PyResult<WeightT> {
         Ok(
             pe!(self.inner.get_edge_weight_from_node_ids_and_edge_type_id(
-                src.clone(),
-                dst.clone(),
+                src,
+                dst,
                 edge_type
-            ))?
-            .into(),
+            ))?,
         )
     }
 
@@ -13765,8 +13644,7 @@ impl Graph {
     ) -> PyResult<WeightT> {
         Ok(pe!(self
             .inner
-            .get_edge_weight_from_node_names_and_edge_type_name(src, dst, edge_type))?
-        .into())
+            .get_edge_weight_from_node_names_and_edge_type_name(src, dst, edge_type))?)
     }
 
     #[automatically_generated_binding]
@@ -13787,8 +13665,7 @@ impl Graph {
     ) -> PyResult<WeightT> {
         Ok(pe!(self
             .inner
-            .get_edge_weight_from_node_names(src_name, dst_name))?
-        .into())
+            .get_edge_weight_from_node_names(src_name, dst_name))?)
     }
 
     #[automatically_generated_binding]
@@ -13806,8 +13683,7 @@ impl Graph {
     /// If the given node ID does not exist in the current graph the method will raise a panic.
     pub unsafe fn get_unchecked_node_name_from_node_id(&self, node_id: NodeT) -> String {
         self.inner
-            .get_unchecked_node_name_from_node_id(node_id.clone())
-            .into()
+            .get_unchecked_node_name_from_node_id(node_id)
     }
 
     #[automatically_generated_binding]
@@ -13820,7 +13696,7 @@ impl Graph {
     ///     The node ID whose name is to be returned.
     ///
     pub fn get_node_name_from_node_id(&self, node_id: NodeT) -> PyResult<String> {
-        Ok(pe!(self.inner.get_node_name_from_node_id(node_id.clone()))?.into())
+        Ok(pe!(self.inner.get_node_name_from_node_id(node_id))?)
     }
 
     #[automatically_generated_binding]
@@ -13839,7 +13715,7 @@ impl Graph {
     ///     When the given node name does not exists in the current graph.
     ///
     pub fn get_node_id_from_node_name(&self, node_name: &str) -> PyResult<NodeT> {
-        Ok(pe!(self.inner.get_node_id_from_node_name(node_name))?.into())
+        Ok(pe!(self.inner.get_node_id_from_node_name(node_name))?)
     }
 
     #[automatically_generated_binding]
@@ -13889,7 +13765,6 @@ impl Graph {
     pub fn get_node_names_from_node_ids(&self, node_ids: Vec<NodeT>) -> PyResult<Vec<String>> {
         Ok(pe!(self.inner.get_node_names_from_node_ids(node_ids))?
             .into_iter()
-            .map(|x| x.into())
             .collect::<Vec<_>>())
     }
 
@@ -13958,7 +13833,7 @@ impl Graph {
         .into_iter()
         .map(|x| {
             let (subresult_0, subresult_1) = x;
-            (subresult_0.into(), subresult_1.into())
+            (subresult_0, subresult_1)
         })
         .collect::<Vec<_>>())
     }
@@ -13999,7 +13874,7 @@ impl Graph {
     ) -> PyResult<Option<Vec<String>>> {
         Ok(
             pe!(self.inner.get_node_type_name_from_node_name(node_name))?
-                .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>()),
+                .map(|x| x.into_iter().collect::<Vec<_>>()),
         )
     }
 
@@ -14019,7 +13894,7 @@ impl Graph {
         &self,
         edge_type_id: Option<EdgeTypeT>,
     ) -> PyResult<EdgeT> {
-        Ok(pe!(self.inner.get_edge_count_from_edge_type_id(edge_type_id))?.into())
+        Ok(pe!(self.inner.get_edge_count_from_edge_type_id(edge_type_id))?)
     }
 
     #[automatically_generated_binding]
@@ -14040,7 +13915,7 @@ impl Graph {
         Ok(pe!(self
             .inner
             .get_edge_type_id_from_edge_type_name(edge_type_name))?
-        .map(|x| x.into()))
+        .map(|x| x))
     }
 
     #[automatically_generated_binding]
@@ -14061,8 +13936,7 @@ impl Graph {
     ) -> PyResult<EdgeT> {
         Ok(pe!(self
             .inner
-            .get_edge_count_from_edge_type_name(edge_type_name))?
-        .into())
+            .get_edge_count_from_edge_type_name(edge_type_name))?)
     }
 
     #[automatically_generated_binding]
@@ -14080,8 +13954,7 @@ impl Graph {
     ) -> PyResult<NodeTypeT> {
         Ok(pe!(self
             .inner
-            .get_node_type_id_from_node_type_name(node_type_name))?
-        .into())
+            .get_node_type_id_from_node_type_name(node_type_name))?)
     }
 
     #[automatically_generated_binding]
@@ -14100,7 +13973,7 @@ impl Graph {
         &self,
         node_type_id: Option<NodeTypeT>,
     ) -> PyResult<NodeT> {
-        Ok(pe!(self.inner.get_node_count_from_node_type_id(node_type_id))?.into())
+        Ok(pe!(self.inner.get_node_count_from_node_type_id(node_type_id))?)
     }
 
     #[automatically_generated_binding]
@@ -14121,8 +13994,7 @@ impl Graph {
     ) -> PyResult<NodeT> {
         Ok(pe!(self
             .inner
-            .get_node_count_from_node_type_name(node_type_name))?
-        .into())
+            .get_node_count_from_node_type_name(node_type_name))?)
     }
 
     #[automatically_generated_binding]
@@ -14144,7 +14016,7 @@ impl Graph {
                 gil,
                 pe!(self
                     .inner
-                    .get_neighbour_node_ids_from_node_id(node_id.clone()))?,
+                    .get_neighbour_node_ids_from_node_id(node_id))?,
                 NodeT
             )
         })
@@ -14190,7 +14062,6 @@ impl Graph {
             .inner
             .get_neighbour_node_names_from_node_name(node_name))?
         .into_iter()
-        .map(|x| x.into())
         .collect::<Vec<_>>())
     }
 
@@ -14215,9 +14086,8 @@ impl Graph {
         Ok({
             let (subresult_0, subresult_1) = pe!(self
                 .inner
-                .get_minmax_edge_ids_from_node_ids(src.clone(), dst.clone()))?
-            .into();
-            (subresult_0.into(), subresult_1.into())
+                .get_minmax_edge_ids_from_node_ids(src, dst))?;
+            (subresult_0, subresult_1)
         })
     }
 
@@ -14244,11 +14114,10 @@ impl Graph {
         edge_type: Option<EdgeTypeT>,
     ) -> PyResult<EdgeT> {
         Ok(pe!(self.inner.get_edge_id_from_node_ids_and_edge_type_id(
-            src.clone(),
-            dst.clone(),
+            src,
+            dst,
             edge_type
-        ))?
-        .into())
+        ))?)
     }
 
     #[automatically_generated_binding]
@@ -14266,7 +14135,7 @@ impl Graph {
     ///     Destination node name of the edge.
     ///
     pub fn get_edge_id_from_node_names(&self, src_name: &str, dst_name: &str) -> PyResult<EdgeT> {
-        Ok(pe!(self.inner.get_edge_id_from_node_names(src_name, dst_name))?.into())
+        Ok(pe!(self.inner.get_edge_id_from_node_names(src_name, dst_name))?)
     }
 
     #[automatically_generated_binding]
@@ -14296,8 +14165,7 @@ impl Graph {
                 src_name,
                 dst_name,
                 edge_type_name
-            ))?
-            .into(),
+            ))?,
         )
     }
 
@@ -14318,7 +14186,7 @@ impl Graph {
             .inner
             .get_edge_type_ids_from_edge_type_names(&edge_type_names))?
         .into_iter()
-        .map(|x| x.map(|x| x.into()))
+        .map(|x| x.map(|x| x))
         .collect::<Vec<_>>())
     }
 
@@ -14339,7 +14207,7 @@ impl Graph {
             .inner
             .get_node_type_ids_from_node_type_names(&node_type_names))?
         .into_iter()
-        .map(|x| x.map(|x| x.into()))
+        .map(|x| x.map(|x| x))
         .collect::<Vec<_>>())
     }
 
@@ -14399,8 +14267,8 @@ impl Graph {
     ) -> (EdgeT, EdgeT) {
         let (subresult_0, subresult_1) = self
             .inner
-            .get_unchecked_minmax_edge_ids_from_source_node_id(src.clone());
-        (subresult_0.into(), subresult_1.into())
+            .get_unchecked_minmax_edge_ids_from_source_node_id(src);
+        (subresult_0, subresult_1)
     }
 
     #[automatically_generated_binding]
@@ -14416,9 +14284,8 @@ impl Graph {
         Ok({
             let (subresult_0, subresult_1) = pe!(self
                 .inner
-                .get_minmax_edge_ids_from_source_node_id(src.clone()))?
-            .into();
-            (subresult_0.into(), subresult_1.into())
+                .get_minmax_edge_ids_from_source_node_id(src))?;
+            (subresult_0, subresult_1)
         })
     }
 
@@ -14440,8 +14307,7 @@ impl Graph {
     ) -> PyResult<String> {
         Ok(pe!(self
             .inner
-            .get_node_type_name_from_node_type_id(node_type_id.clone()))?
-        .into())
+            .get_node_type_name_from_node_type_id(node_type_id))?)
     }
 
     #[automatically_generated_binding]
@@ -14464,7 +14330,6 @@ impl Graph {
         self.inner
             .get_unchecked_node_type_names_from_node_type_ids(&node_type_ids)
             .into_iter()
-            .map(|x| x.into())
             .collect::<Vec<_>>()
     }
 
@@ -14487,8 +14352,7 @@ impl Graph {
         node_type_id: NodeTypeT,
     ) -> NodeT {
         self.inner
-            .get_unchecked_number_of_nodes_from_node_type_id(node_type_id.clone())
-            .into()
+            .get_unchecked_number_of_nodes_from_node_type_id(node_type_id)
     }
 
     #[automatically_generated_binding]
@@ -14514,8 +14378,7 @@ impl Graph {
     ) -> PyResult<NodeT> {
         Ok(pe!(self
             .inner
-            .get_number_of_nodes_from_node_type_id(node_type_id.clone()))?
-        .into())
+            .get_number_of_nodes_from_node_type_id(node_type_id))?)
     }
 
     #[automatically_generated_binding]
@@ -14538,8 +14401,7 @@ impl Graph {
     pub fn get_number_of_nodes_from_node_type_name(&self, node_type_name: &str) -> PyResult<NodeT> {
         Ok(pe!(self
             .inner
-            .get_number_of_nodes_from_node_type_name(node_type_name))?
-        .into())
+            .get_number_of_nodes_from_node_type_name(node_type_name))?)
     }
 
     #[automatically_generated_binding]
@@ -14561,8 +14423,7 @@ impl Graph {
         edge_type_id: EdgeTypeT,
     ) -> EdgeT {
         self.inner
-            .get_unchecked_number_of_edges_from_edge_type_id(edge_type_id.clone())
-            .into()
+            .get_unchecked_number_of_edges_from_edge_type_id(edge_type_id)
     }
 
     #[automatically_generated_binding]
@@ -14588,8 +14449,7 @@ impl Graph {
     ) -> PyResult<EdgeT> {
         Ok(pe!(self
             .inner
-            .get_number_of_edges_from_edge_type_id(edge_type_id.clone()))?
-        .into())
+            .get_number_of_edges_from_edge_type_id(edge_type_id))?)
     }
 
     #[automatically_generated_binding]
@@ -14612,8 +14472,7 @@ impl Graph {
     pub fn get_number_of_edges_from_edge_type_name(&self, edge_type_name: &str) -> PyResult<EdgeT> {
         Ok(pe!(self
             .inner
-            .get_number_of_edges_from_edge_type_name(edge_type_name))?
-        .into())
+            .get_number_of_edges_from_edge_type_name(edge_type_name))?)
     }
 
     #[automatically_generated_binding]
@@ -14636,8 +14495,7 @@ impl Graph {
     ) -> PyResult<HashMap<NodeTypeT, NodeT>> {
         Ok(pe!(self
             .inner
-            .get_unchecked_node_type_id_counts_hashmap_from_node_ids(&node_ids))?
-        .into())
+            .get_unchecked_node_type_id_counts_hashmap_from_node_ids(&node_ids))?)
     }
 
     #[automatically_generated_binding]
@@ -14660,8 +14518,7 @@ impl Graph {
     ) -> PyResult<HashMap<EdgeTypeT, EdgeT>> {
         Ok(pe!(self
             .inner
-            .get_unchecked_edge_type_id_counts_hashmap_from_node_ids(&node_ids))?
-        .into())
+            .get_unchecked_edge_type_id_counts_hashmap_from_node_ids(&node_ids))?)
     }
 
     #[automatically_generated_binding]
@@ -14695,7 +14552,7 @@ impl Graph {
             let gil = pyo3::Python::acquire_gil();
             let body = pe!(self
                 .inner
-                .get_edge_node_ids_from_edge_type_id(directed.clone(), edge_type_id))?;
+                .get_edge_node_ids_from_edge_type_id(directed, edge_type_id))?;
             let result_array = ThreadDataRaceAware {
                 t: unsafe { PyArray2::<NodeT>::new(gil.python(), [body.len(), 2], false) },
             };
@@ -14778,7 +14635,7 @@ impl Graph {
         .into_iter()
         .map(|x| {
             let (subresult_0, subresult_1) = x;
-            (subresult_0.into(), subresult_1.into())
+            (subresult_0, subresult_1)
         })
         .collect::<Vec<_>>())
     }
@@ -14810,7 +14667,7 @@ impl Graph {
         .into_iter()
         .map(|x| {
             let (subresult_0, subresult_1) = x;
-            (subresult_0.into(), subresult_1.into())
+            (subresult_0, subresult_1)
         })
         .collect::<Vec<_>>())
     }
@@ -14879,7 +14736,7 @@ impl Graph {
             let gil = pyo3::Python::acquire_gil();
             let body = pe!(self
                 .inner
-                .get_edge_node_ids_from_edge_type_name(directed.clone(), edge_type_name))?;
+                .get_edge_node_ids_from_edge_type_name(directed, edge_type_name))?;
             let result_array = ThreadDataRaceAware {
                 t: unsafe { PyArray2::<NodeT>::new(gil.python(), [body.len(), 2], false) },
             };
@@ -14992,7 +14849,7 @@ impl Graph {
             .into_iter()
             .map(|x| {
                 let (subresult_0, subresult_1) = x;
-                (subresult_0.into(), subresult_1.into())
+                (subresult_0, subresult_1)
             })
             .collect::<Vec<_>>()
     }
@@ -15083,7 +14940,6 @@ impl Graph {
                 src_node_name_prefixes,
                 dst_node_name_prefixes,
             )
-            .into()
     }
 
     #[automatically_generated_binding]
@@ -15124,7 +14980,6 @@ impl Graph {
         self.inner
             .get_node_names_from_node_curie_prefixes(curie_prefixes)
             .into_iter()
-            .map(|x| x.into())
             .collect::<Vec<_>>()
     }
 
@@ -15140,7 +14995,6 @@ impl Graph {
     pub fn get_number_of_nodes_from_node_curie_prefixes(&self, curie_prefixes: Vec<&str>) -> NodeT {
         self.inner
             .get_number_of_nodes_from_node_curie_prefixes(&curie_prefixes)
-            .into()
     }
 
     #[automatically_generated_binding]
@@ -15161,7 +15015,6 @@ impl Graph {
     pub fn get_node_names_prefixes(&self, separator: Option<&str>) -> PyResult<Vec<String>> {
         Ok(pe!(self.inner.get_node_names_prefixes(separator))?
             .into_iter()
-            .map(|x| x.into())
             .collect::<Vec<_>>())
     }
 
@@ -15232,7 +15085,7 @@ impl Graph {
                 gil,
                 pe!(self
                     .inner
-                    .get_multigraph_edge_ids_from_node_ids(src.clone(), dst.clone()))?,
+                    .get_multigraph_edge_ids_from_node_ids(src, dst))?,
                 EdgeT
             )
         })
@@ -15256,8 +15109,7 @@ impl Graph {
     ) -> PyResult<usize> {
         Ok(pe!(self
             .inner
-            .get_number_of_multigraph_edges_from_node_ids(src.clone(), dst.clone()))?
-        .into())
+            .get_number_of_multigraph_edges_from_node_ids(src, dst))?)
     }
 
     #[automatically_generated_binding]
@@ -15336,8 +15188,7 @@ impl Graph {
     ) -> PyResult<HashMap<u16, u32>> {
         Ok(pe!(self
             .inner
-            .get_heterogeneous_graphlet_ids_from_edge_node_ids(src.clone(), dst.clone()))?
-        .into())
+            .get_heterogeneous_graphlet_ids_from_edge_node_ids(src, dst))?)
     }
 
     #[automatically_generated_binding]
@@ -15350,8 +15201,7 @@ impl Graph {
     ) -> PyResult<HashMap<String, u32>> {
         Ok(pe!(self
             .inner
-            .get_heterogeneous_graphlet_names_from_edge_node_ids(src.clone(), dst.clone()))?
-        .into())
+            .get_heterogeneous_graphlet_names_from_edge_node_ids(src, dst))?)
     }
 
     #[automatically_generated_binding]
@@ -15364,8 +15214,7 @@ impl Graph {
     ) -> PyResult<HashMap<String, u32>> {
         Ok(pe!(self
             .inner
-            .get_heterogeneous_graphlet_names_from_edge_node_names(src, dst))?
-        .into())
+            .get_heterogeneous_graphlet_names_from_edge_node_names(src, dst))?)
     }
 
     #[automatically_generated_binding]
@@ -15403,9 +15252,8 @@ impl Graph {
     ) -> f64 {
         self.inner
             .get_node_degree_geometric_distribution_threshold(
-                number_of_nodes_above_threshold.clone(),
+                number_of_nodes_above_threshold,
             )
-            .into()
     }
 
     #[automatically_generated_binding]
@@ -15495,8 +15343,7 @@ impl Graph {
     /// If the given node ID does not exist in the graph the method will panic.
     pub unsafe fn get_unchecked_closeness_centrality_from_node_id(&self, node_id: NodeT) -> f32 {
         self.inner
-            .get_unchecked_closeness_centrality_from_node_id(node_id.clone())
-            .into()
+            .get_unchecked_closeness_centrality_from_node_id(node_id)
     }
 
     #[automatically_generated_binding]
@@ -15524,10 +15371,9 @@ impl Graph {
     ) -> f32 {
         self.inner
             .get_unchecked_weighted_closeness_centrality_from_node_id(
-                node_id.clone(),
-                use_edge_weights_as_probabilities.clone(),
+                node_id,
+                use_edge_weights_as_probabilities,
             )
-            .into()
     }
 
     #[automatically_generated_binding]
@@ -15595,8 +15441,7 @@ impl Graph {
     /// If the given node ID does not exist in the graph the method will panic.
     pub unsafe fn get_unchecked_harmonic_centrality_from_node_id(&self, node_id: NodeT) -> f32 {
         self.inner
-            .get_unchecked_harmonic_centrality_from_node_id(node_id.clone())
-            .into()
+            .get_unchecked_harmonic_centrality_from_node_id(node_id)
     }
 
     #[automatically_generated_binding]
@@ -15624,10 +15469,9 @@ impl Graph {
     ) -> f32 {
         self.inner
             .get_unchecked_weighted_harmonic_centrality_from_node_id(
-                node_id.clone(),
-                use_edge_weights_as_probabilities.clone(),
+                node_id,
+                use_edge_weights_as_probabilities,
             )
-            .into()
     }
 
     #[automatically_generated_binding]
@@ -15758,12 +15602,11 @@ impl Graph {
         Ok(pe!(self
             .inner
             .get_approximated_betweenness_centrality_from_node_id(
-                node_id.clone(),
+                node_id,
                 ant,
                 maximum_samples_number,
                 random_state
-            ))?
-        .into())
+            ))?)
     }
 
     #[automatically_generated_binding]
@@ -15801,8 +15644,7 @@ impl Graph {
                 ant,
                 maximum_samples_number,
                 random_state
-            ))?
-        .into())
+            ))?)
     }
 
     #[automatically_generated_binding]
@@ -15841,13 +15683,12 @@ impl Graph {
         Ok(pe!(self
             .inner
             .get_weighted_approximated_betweenness_centrality_from_node_id(
-                node_id.clone(),
+                node_id,
                 ant,
                 use_edge_weights_as_probabilities,
                 maximum_samples_number,
                 random_state
-            ))?
-        .into())
+            ))?)
     }
 
     #[automatically_generated_binding]
@@ -15891,8 +15732,7 @@ impl Graph {
                 use_edge_weights_as_probabilities,
                 maximum_samples_number,
                 random_state
-            ))?
-        .into())
+            ))?)
     }
 
     #[automatically_generated_binding]
@@ -15955,7 +15795,7 @@ impl Graph {
     #[pyo3(text_signature = "($self)")]
     /// Print the current graph in a format compatible with Graphviz dot's format
     pub fn to_dot(&self) -> String {
-        self.inner.to_dot().into()
+        self.inner.to_dot()
     }
 
     #[automatically_generated_binding]
@@ -15984,9 +15824,8 @@ impl Graph {
         Ok({
             let (subresult_0, subresult_1, subresult_2) = pe!(self
                 .inner
-                .get_base_16_tricodes_from_node_ids(first.clone(), second.clone(), third.clone()))?
-            .into();
-            (subresult_0.into(), subresult_1.into(), subresult_2.into())
+                .get_base_16_tricodes_from_node_ids(first, second, third))?;
+            (subresult_0, subresult_1, subresult_2)
         })
     }
 
@@ -16016,9 +15855,8 @@ impl Graph {
         Ok({
             let (subresult_0, subresult_1, subresult_2) = pe!(self
                 .inner
-                .get_base_13_tricodes_from_node_ids(first.clone(), second.clone(), third.clone()))?
-            .into();
-            (subresult_0.into(), subresult_1.into(), subresult_2.into())
+                .get_base_13_tricodes_from_node_ids(first, second, third))?;
+            (subresult_0, subresult_1, subresult_2)
         })
     }
 
@@ -16048,9 +15886,8 @@ impl Graph {
         Ok({
             let (subresult_0, subresult_1, subresult_2) = pe!(self
                 .inner
-                .get_base_30_tricodes_from_node_ids(first.clone(), second.clone(), third.clone()))?
-            .into();
-            (subresult_0.into(), subresult_1.into(), subresult_2.into())
+                .get_base_30_tricodes_from_node_ids(first, second, third))?;
+            (subresult_0, subresult_1, subresult_2)
         })
     }
 
@@ -16080,9 +15917,8 @@ impl Graph {
         Ok({
             let (subresult_0, subresult_1, subresult_2) = pe!(self
                 .inner
-                .get_base_64_tricodes_from_node_ids(first.clone(), second.clone(), third.clone()))?
-            .into();
-            (subresult_0.into(), subresult_1.into(), subresult_2.into())
+                .get_base_64_tricodes_from_node_ids(first, second, third))?;
+            (subresult_0, subresult_1, subresult_2)
         })
     }
 
@@ -16112,9 +15948,8 @@ impl Graph {
         Ok({
             let (subresult_0, subresult_1, subresult_2) = pe!(self
                 .inner
-                .get_base_16_tricodes_from_node_names(first, second, third))?
-            .into();
-            (subresult_0.into(), subresult_1.into(), subresult_2.into())
+                .get_base_16_tricodes_from_node_names(first, second, third))?;
+            (subresult_0, subresult_1, subresult_2)
         })
     }
 
@@ -16144,9 +15979,8 @@ impl Graph {
         Ok({
             let (subresult_0, subresult_1, subresult_2) = pe!(self
                 .inner
-                .get_base_13_tricodes_from_node_names(first, second, third))?
-            .into();
-            (subresult_0.into(), subresult_1.into(), subresult_2.into())
+                .get_base_13_tricodes_from_node_names(first, second, third))?;
+            (subresult_0, subresult_1, subresult_2)
         })
     }
 
@@ -16176,9 +16010,8 @@ impl Graph {
         Ok({
             let (subresult_0, subresult_1, subresult_2) = pe!(self
                 .inner
-                .get_base_30_tricodes_from_node_names(first, second, third))?
-            .into();
-            (subresult_0.into(), subresult_1.into(), subresult_2.into())
+                .get_base_30_tricodes_from_node_names(first, second, third))?;
+            (subresult_0, subresult_1, subresult_2)
         })
     }
 
@@ -16208,9 +16041,8 @@ impl Graph {
         Ok({
             let (subresult_0, subresult_1, subresult_2) = pe!(self
                 .inner
-                .get_base_64_tricodes_from_node_names(first, second, third))?
-            .into();
-            (subresult_0.into(), subresult_1.into(), subresult_2.into())
+                .get_base_64_tricodes_from_node_names(first, second, third))?;
+            (subresult_0, subresult_1, subresult_2)
         })
     }
 
@@ -16296,7 +16128,7 @@ impl Graph {
             random_state
         ))?
         .into_iter()
-        .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>())
+        .map(|x| x.into_iter().collect::<Vec<_>>())
         .collect::<Vec<_>>())
     }
 
@@ -16319,8 +16151,7 @@ impl Graph {
     ) -> PyResult<f64> {
         Ok(pe!(self
             .inner
-            .get_directed_modularity_from_node_community_memberships(&node_community_memberships))?
-        .into())
+            .get_directed_modularity_from_node_community_memberships(&node_community_memberships))?)
     }
 
     #[automatically_generated_binding]
@@ -16344,8 +16175,7 @@ impl Graph {
             .inner
             .get_undirected_modularity_from_node_community_memberships(
                 &node_community_memberships
-            ))?
-        .into())
+            ))?)
     }
 
     #[automatically_generated_binding]
@@ -16376,9 +16206,9 @@ impl Graph {
         to_ndarray_1d!(
             gil,
             self.inner.get_unchecked_structural_distance_from_node_ids(
-                source_node_id.clone(),
-                destination_node_id.clone(),
-                maximal_hop_distance.clone()
+                source_node_id,
+                destination_node_id,
+                maximal_hop_distance
             ),
             f32
         )
@@ -16394,7 +16224,6 @@ impl Graph {
     pub unsafe fn get_unchecked_minimum_preferential_attachment(&self) -> f32 {
         self.inner
             .get_unchecked_minimum_preferential_attachment()
-            .into()
     }
 
     #[automatically_generated_binding]
@@ -16407,7 +16236,6 @@ impl Graph {
     pub unsafe fn get_unchecked_maximum_preferential_attachment(&self) -> f32 {
         self.inner
             .get_unchecked_maximum_preferential_attachment()
-            .into()
     }
 
     #[automatically_generated_binding]
@@ -16420,7 +16248,6 @@ impl Graph {
     pub unsafe fn get_unchecked_weighted_minimum_preferential_attachment(&self) -> f32 {
         self.inner
             .get_unchecked_weighted_minimum_preferential_attachment()
-            .into()
     }
 
     #[automatically_generated_binding]
@@ -16433,7 +16260,6 @@ impl Graph {
     pub unsafe fn get_unchecked_weighted_maximum_preferential_attachment(&self) -> f32 {
         self.inner
             .get_unchecked_weighted_maximum_preferential_attachment()
-            .into()
     }
 
     #[automatically_generated_binding]
@@ -16462,11 +16288,10 @@ impl Graph {
     ) -> f32 {
         self.inner
             .get_unchecked_preferential_attachment_from_node_ids(
-                source_node_id.clone(),
-                destination_node_id.clone(),
-                normalize.clone(),
+                source_node_id,
+                destination_node_id,
+                normalize,
             )
-            .into()
     }
 
     #[automatically_generated_binding]
@@ -16495,11 +16320,10 @@ impl Graph {
         normalize: bool,
     ) -> PyResult<f32> {
         Ok(pe!(self.inner.get_preferential_attachment_from_node_ids(
-            source_node_id.clone(),
-            destination_node_id.clone(),
-            normalize.clone()
-        ))?
-        .into())
+            source_node_id,
+            destination_node_id,
+            normalize
+        ))?)
     }
 
     #[automatically_generated_binding]
@@ -16530,9 +16354,8 @@ impl Graph {
         Ok(pe!(self.inner.get_preferential_attachment_from_node_names(
             first_node_name,
             second_node_name,
-            normalize.clone()
-        ))?
-        .into())
+            normalize
+        ))?)
     }
 
     #[automatically_generated_binding]
@@ -16561,11 +16384,10 @@ impl Graph {
     ) -> f32 {
         self.inner
             .get_unchecked_weighted_preferential_attachment_from_node_ids(
-                source_node_id.clone(),
-                destination_node_id.clone(),
-                normalize.clone(),
+                source_node_id,
+                destination_node_id,
+                normalize,
             )
-            .into()
     }
 
     #[automatically_generated_binding]
@@ -16596,11 +16418,10 @@ impl Graph {
         Ok(pe!(self
             .inner
             .get_weighted_preferential_attachment_from_node_ids(
-                source_node_id.clone(),
-                destination_node_id.clone(),
-                normalize.clone()
-            ))?
-        .into())
+                source_node_id,
+                destination_node_id,
+                normalize
+            ))?)
     }
 
     #[automatically_generated_binding]
@@ -16633,9 +16454,8 @@ impl Graph {
             .get_weighted_preferential_attachment_from_node_names(
                 first_node_name,
                 second_node_name,
-                normalize.clone()
-            ))?
-        .into())
+                normalize
+            ))?)
     }
 
     #[automatically_generated_binding]
@@ -16661,10 +16481,9 @@ impl Graph {
     ) -> f32 {
         self.inner
             .get_unchecked_neighbours_intersection_size_from_node_ids(
-                source_node_id.clone(),
-                destination_node_id.clone(),
+                source_node_id,
+                destination_node_id,
             )
-            .into()
     }
 
     #[automatically_generated_binding]
@@ -16690,10 +16509,9 @@ impl Graph {
     ) -> f32 {
         self.inner
             .get_unchecked_jaccard_coefficient_from_node_ids(
-                source_node_id.clone(),
-                destination_node_id.clone(),
+                source_node_id,
+                destination_node_id,
             )
-            .into()
     }
 
     #[automatically_generated_binding]
@@ -16719,10 +16537,9 @@ impl Graph {
         destination_node_id: NodeT,
     ) -> PyResult<f32> {
         Ok(pe!(self.inner.get_jaccard_coefficient_from_node_ids(
-            source_node_id.clone(),
-            destination_node_id.clone()
-        ))?
-        .into())
+            source_node_id,
+            destination_node_id
+        ))?)
     }
 
     #[automatically_generated_binding]
@@ -16749,8 +16566,7 @@ impl Graph {
     ) -> PyResult<f32> {
         Ok(pe!(self
             .inner
-            .get_jaccard_coefficient_from_node_names(first_node_name, second_node_name))?
-        .into())
+            .get_jaccard_coefficient_from_node_names(first_node_name, second_node_name))?)
     }
 
     #[automatically_generated_binding]
@@ -16776,10 +16592,9 @@ impl Graph {
     ) -> f32 {
         self.inner
             .get_unchecked_adamic_adar_index_from_node_ids(
-                source_node_id.clone(),
-                destination_node_id.clone(),
+                source_node_id,
+                destination_node_id,
             )
-            .into()
     }
 
     #[automatically_generated_binding]
@@ -16805,10 +16620,9 @@ impl Graph {
         destination_node_id: NodeT,
     ) -> PyResult<f32> {
         Ok(pe!(self.inner.get_adamic_adar_index_from_node_ids(
-            source_node_id.clone(),
-            destination_node_id.clone()
-        ))?
-        .into())
+            source_node_id,
+            destination_node_id
+        ))?)
     }
 
     #[automatically_generated_binding]
@@ -16835,8 +16649,7 @@ impl Graph {
     ) -> PyResult<f32> {
         Ok(pe!(self
             .inner
-            .get_adamic_adar_index_from_node_names(first_node_name, second_node_name))?
-        .into())
+            .get_adamic_adar_index_from_node_names(first_node_name, second_node_name))?)
     }
 
     #[automatically_generated_binding]
@@ -16862,10 +16675,9 @@ impl Graph {
     ) -> f32 {
         self.inner
             .get_unchecked_resource_allocation_index_from_node_ids(
-                source_node_id.clone(),
-                destination_node_id.clone(),
+                source_node_id,
+                destination_node_id,
             )
-            .into()
     }
 
     #[automatically_generated_binding]
@@ -16891,10 +16703,9 @@ impl Graph {
     ) -> f32 {
         self.inner
             .get_unchecked_weighted_resource_allocation_index_from_node_ids(
-                source_node_id.clone(),
-                destination_node_id.clone(),
+                source_node_id,
+                destination_node_id,
             )
-            .into()
     }
 
     #[automatically_generated_binding]
@@ -16920,10 +16731,9 @@ impl Graph {
         destination_node_id: NodeT,
     ) -> PyResult<f32> {
         Ok(pe!(self.inner.get_resource_allocation_index_from_node_ids(
-            source_node_id.clone(),
-            destination_node_id.clone()
-        ))?
-        .into())
+            source_node_id,
+            destination_node_id
+        ))?)
     }
 
     #[automatically_generated_binding]
@@ -16950,8 +16760,7 @@ impl Graph {
     ) -> PyResult<f32> {
         Ok(pe!(self
             .inner
-            .get_resource_allocation_index_from_node_names(first_node_name, second_node_name))?
-        .into())
+            .get_resource_allocation_index_from_node_names(first_node_name, second_node_name))?)
     }
 
     #[automatically_generated_binding]
@@ -16979,10 +16788,9 @@ impl Graph {
         Ok(pe!(self
             .inner
             .get_weighted_resource_allocation_index_from_node_ids(
-                source_node_id.clone(),
-                destination_node_id.clone()
-            ))?
-        .into())
+                source_node_id,
+                destination_node_id
+            ))?)
     }
 
     #[automatically_generated_binding]
@@ -17012,15 +16820,14 @@ impl Graph {
             .get_weighted_resource_allocation_index_from_node_names(
                 first_node_name,
                 second_node_name
-            ))?
-        .into())
+            ))?)
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Returns number of currently subgraphed edge metrics
     pub fn get_number_of_available_edge_metrics(&self) -> usize {
-        self.inner.get_number_of_available_edge_metrics().into()
+        self.inner.get_number_of_available_edge_metrics()
     }
 
     #[automatically_generated_binding]
@@ -17068,9 +16875,9 @@ impl Graph {
             gil,
             self.inner
                 .get_unchecked_all_edge_metrics_from_node_ids_tuple(
-                    source_node_id.clone(),
-                    destination_node_id.clone(),
-                    normalize.clone()
+                    source_node_id,
+                    destination_node_id,
+                    normalize
                 )
                 .to_vec(),
             f32
@@ -17113,9 +16920,9 @@ impl Graph {
             to_ndarray_1d!(
                 gil,
                 pe!(self.inner.get_all_edge_metrics_from_node_ids_tuple(
-                    source_node_id.clone(),
-                    destination_node_id.clone(),
-                    normalize.clone()
+                    source_node_id,
+                    destination_node_id,
+                    normalize
                 ))?
                 .to_vec(),
                 f32
@@ -17159,7 +16966,7 @@ impl Graph {
                 pe!(self.inner.get_all_edge_metrics_from_node_ids(
                     source_node_ids,
                     destination_node_ids,
-                    normalize.clone()
+                    normalize
                 ))?,
                 f32
             )
@@ -17432,7 +17239,7 @@ impl Graph {
     pub fn get_isomorphic_node_type_ids_groups(&self) -> PyResult<Vec<Vec<NodeTypeT>>> {
         Ok(pe!(self.inner.get_isomorphic_node_type_ids_groups())?
             .into_iter()
-            .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>())
+            .map(|x| x.into_iter().collect::<Vec<_>>())
             .collect::<Vec<_>>())
     }
 
@@ -17442,7 +17249,7 @@ impl Graph {
     pub fn get_isomorphic_node_type_names_groups(&self) -> PyResult<Vec<Vec<String>>> {
         Ok(pe!(self.inner.get_isomorphic_node_type_names_groups())?
             .into_iter()
-            .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>())
+            .map(|x| x.into_iter().collect::<Vec<_>>())
             .collect::<Vec<_>>())
     }
 
@@ -17450,7 +17257,7 @@ impl Graph {
     #[pyo3(text_signature = "($self)")]
     /// Returns number of isomorphic node type groups
     pub fn get_number_of_isomorphic_node_type_groups(&self) -> PyResult<NodeTypeT> {
-        Ok(pe!(self.inner.get_number_of_isomorphic_node_type_groups())?.into())
+        Ok(pe!(self.inner.get_number_of_isomorphic_node_type_groups())?)
     }
 
     #[automatically_generated_binding]
@@ -17463,7 +17270,7 @@ impl Graph {
             .inner
             .get_approximated_isomorphic_node_type_ids_groups())?
         .into_iter()
-        .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>())
+        .map(|x| x.into_iter().collect::<Vec<_>>())
         .collect::<Vec<_>>())
     }
 
@@ -17475,7 +17282,7 @@ impl Graph {
             .inner
             .get_approximated_isomorphic_node_type_names_groups())?
         .into_iter()
-        .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>())
+        .map(|x| x.into_iter().collect::<Vec<_>>())
         .collect::<Vec<_>>())
     }
 
@@ -17485,8 +17292,7 @@ impl Graph {
     pub fn get_number_of_approximated_isomorphic_node_type_groups(&self) -> PyResult<NodeTypeT> {
         Ok(pe!(self
             .inner
-            .get_number_of_approximated_isomorphic_node_type_groups())?
-        .into())
+            .get_number_of_approximated_isomorphic_node_type_groups())?)
     }
 
     #[automatically_generated_binding]
@@ -17524,7 +17330,7 @@ impl Graph {
             .inner
             .get_isomorphic_edge_type_names_groups(minimum_number_of_edges))?
         .into_iter()
-        .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>())
+        .map(|x| x.into_iter().collect::<Vec<_>>())
         .collect::<Vec<_>>())
     }
 
@@ -17543,8 +17349,7 @@ impl Graph {
     ) -> PyResult<EdgeTypeT> {
         Ok(pe!(self
             .inner
-            .get_number_of_isomorphic_edge_type_groups(minimum_number_of_edges))?
-        .into())
+            .get_number_of_isomorphic_edge_type_groups(minimum_number_of_edges))?)
     }
 
     #[automatically_generated_binding]
@@ -17557,7 +17362,7 @@ impl Graph {
     ///     Minimum node degree for the topological synonims.
     ///
     pub fn has_isomorphic_nodes(&self, minimum_node_degree: Option<NodeT>) -> bool {
-        self.inner.has_isomorphic_nodes(minimum_node_degree).into()
+        self.inner.has_isomorphic_nodes(minimum_node_degree)
     }
 
     #[automatically_generated_binding]
@@ -17575,7 +17380,6 @@ impl Graph {
     ) -> bool {
         self.inner
             .has_unchecked_isomorphic_node_types_from_node_ids(&node_ids)
-            .into()
     }
 
     #[automatically_generated_binding]
@@ -17590,8 +17394,7 @@ impl Graph {
     pub fn has_isomorphic_node_types_from_node_ids(&self, node_ids: Vec<NodeT>) -> PyResult<bool> {
         Ok(pe!(self
             .inner
-            .has_isomorphic_node_types_from_node_ids(&node_ids))?
-        .into())
+            .has_isomorphic_node_types_from_node_ids(&node_ids))?)
     }
 
     #[staticmethod]
@@ -17869,7 +17672,7 @@ impl Graph {
         name: Option<String>,
     ) -> PyResult<Graph> {
         Ok(pe!(graph::Graph::from_csv(
-            directed.clone(),
+            directed,
             node_type_path,
             node_type_list_separator,
             node_types_column_number,
@@ -24310,17 +24113,16 @@ impl Graph {
         // compute the similarities between all the terms and tokens
         let tokens_expanded = tokens
             .iter()
-            .map(|token| {
+            .flat_map(|token| {
                 let mut similarities = GRAPH_TERMS
                     .iter()
-                    .map(move |term| (*term, jaro_winkler(token, term) as f64))
+                    .map(move |term| (*term, jaro_winkler(token, term)))
                     .collect::<Vec<(&str, f64)>>();
 
                 similarities.sort_by(|(_, a), (_, b)| b.partial_cmp(a).unwrap());
 
                 similarities.into_iter().take(1)
             })
-            .flatten()
             .collect::<Vec<(&str, f64)>>();
 
         // Compute the weighted ranking of each method ("document")
@@ -24356,7 +24158,7 @@ impl Graph {
             doc_scores
                 .iter()
                 .map(|(method_id, _)| {
-                    format!("* `{}`", GRAPH_METHODS_NAMES[*method_id].to_string())
+                    format!("* `{}`", GRAPH_METHODS_NAMES[*method_id])
                 })
                 .take(10)
                 .collect::<Vec<String>>()
@@ -24436,7 +24238,7 @@ impl GraphBuilder {
     ///     the generated graph will be directed if this is true
     ///
     pub fn set_directed(&mut self, is_directed: bool) {
-        self.inner.set_directed(is_directed.clone());
+        self.inner.set_directed(is_directed);
     }
 
     #[automatically_generated_binding]
@@ -24449,7 +24251,7 @@ impl GraphBuilder {
     ///     set the weight to assign by default at edges
     ///
     pub fn set_default_weight(&mut self, default_weight: WeightT) {
-        self.inner.set_default_weight(default_weight.clone());
+        self.inner.set_default_weight(default_weight);
     }
 
     #[automatically_generated_binding]
@@ -24475,8 +24277,8 @@ impl GraphBuilder {
         weight: Option<WeightT>,
     ) -> PyResult<()> {
         Ok(pe!(self.inner.add_edge(
-            src.into(),
-            dst.into(),
+            src,
+            dst,
             edge_type,
             weight
         ))?)
@@ -24505,8 +24307,8 @@ impl GraphBuilder {
         weight: Option<WeightT>,
     ) -> PyResult<()> {
         Ok(pe!(self.inner.remove_edge(
-            src.into(),
-            dst.into(),
+            src,
+            dst,
             edge_type,
             weight
         ))?)
@@ -24524,7 +24326,7 @@ impl GraphBuilder {
     ///     List of node type names, if present
     ///
     pub fn add_node(&mut self, name: String, node_type: Option<Vec<String>>) -> PyResult<()> {
-        Ok(pe!(self.inner.add_node(name.into(), node_type))?)
+        Ok(pe!(self.inner.add_node(name, node_type))?)
     }
 
     #[automatically_generated_binding]
@@ -24537,7 +24339,7 @@ impl GraphBuilder {
     ///     The name of the node
     ///
     pub fn remove_node(&mut self, name: String) -> PyResult<()> {
-        Ok(pe!(self.inner.remove_node(name.into()))?)
+        Ok(pe!(self.inner.remove_node(name))?)
     }
 
     #[automatically_generated_binding]
@@ -24609,17 +24411,16 @@ impl GraphBuilder {
         // compute the similarities between all the terms and tokens
         let tokens_expanded = tokens
             .iter()
-            .map(|token| {
+            .flat_map(|token| {
                 let mut similarities = GRAPHBUILDER_TERMS
                     .iter()
-                    .map(move |term| (*term, jaro_winkler(token, term) as f64))
+                    .map(move |term| (*term, jaro_winkler(token, term)))
                     .collect::<Vec<(&str, f64)>>();
 
                 similarities.sort_by(|(_, a), (_, b)| b.partial_cmp(a).unwrap());
 
                 similarities.into_iter().take(1)
             })
-            .flatten()
             .collect::<Vec<(&str, f64)>>();
 
         // Compute the weighted ranking of each method ("document")
@@ -24655,7 +24456,7 @@ impl GraphBuilder {
             doc_scores
                 .iter()
                 .map(|(method_id, _)| {
-                    format!("* `{}`", GRAPHBUILDER_METHODS_NAMES[*method_id].to_string())
+                    format!("* `{}`", GRAPHBUILDER_METHODS_NAMES[*method_id])
                 })
                 .take(10)
                 .collect::<Vec<String>>()
@@ -24730,8 +24531,8 @@ impl GraphCSVBuilder {
         weight: Option<WeightT>,
     ) -> PyResult<()> {
         Ok(pe!(self.inner.add_edge(
-            src.into(),
-            dst.into(),
+            src,
+            dst,
             edge_type,
             weight
         ))?)
@@ -24749,7 +24550,7 @@ impl GraphCSVBuilder {
     ///     List of node type names, if present
     ///
     pub fn add_node(&mut self, name: String, node_type: Option<Vec<String>>) -> PyResult<()> {
-        Ok(pe!(self.inner.add_node(name.into(), node_type))?)
+        Ok(pe!(self.inner.add_node(name, node_type))?)
     }
 
     #[automatically_generated_binding]
@@ -24757,7 +24558,7 @@ impl GraphCSVBuilder {
     /// Flush the changes to the files and print the example code on how the
     /// graph can be loaded using `Graph.from_csv
     pub fn finish(&mut self) -> PyResult<String> {
-        Ok(pe!(self.inner.finish())?.into())
+        Ok(pe!(self.inner.finish())?)
     }
 }
 
@@ -24801,17 +24602,16 @@ impl GraphCSVBuilder {
         // compute the similarities between all the terms and tokens
         let tokens_expanded = tokens
             .iter()
-            .map(|token| {
+            .flat_map(|token| {
                 let mut similarities = GRAPHCSVBUILDER_TERMS
                     .iter()
-                    .map(move |term| (*term, jaro_winkler(token, term) as f64))
+                    .map(move |term| (*term, jaro_winkler(token, term)))
                     .collect::<Vec<(&str, f64)>>();
 
                 similarities.sort_by(|(_, a), (_, b)| b.partial_cmp(a).unwrap());
 
                 similarities.into_iter().take(1)
             })
-            .flatten()
             .collect::<Vec<(&str, f64)>>();
 
         // Compute the weighted ranking of each method ("document")
@@ -24849,7 +24649,7 @@ impl GraphCSVBuilder {
                 .map(|(method_id, _)| {
                     format!(
                         "* `{}`",
-                        GRAPHCSVBUILDER_METHODS_NAMES[*method_id].to_string()
+                        GRAPHCSVBUILDER_METHODS_NAMES[*method_id]
                     )
                 })
                 .take(10)
@@ -24890,21 +24690,21 @@ impl NodeTuple {
     #[pyo3(text_signature = "($self)")]
     /// Return the first node ID of the tuple
     pub fn get_root_node_id(&self) -> NodeT {
-        self.inner.get_root_node_id().into()
+        self.inner.get_root_node_id()
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Return the first node name of the tuple
     pub fn get_root_node_name(&self) -> String {
-        self.inner.get_root_node_name().into()
+        self.inner.get_root_node_name()
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Return length of the tuple
     pub fn len(&self) -> NodeT {
-        self.inner.len().into()
+        self.inner.len()
     }
 
     #[automatically_generated_binding]
@@ -24986,17 +24786,16 @@ impl NodeTuple {
         // compute the similarities between all the terms and tokens
         let tokens_expanded = tokens
             .iter()
-            .map(|token| {
+            .flat_map(|token| {
                 let mut similarities = NODETUPLE_TERMS
                     .iter()
-                    .map(move |term| (*term, jaro_winkler(token, term) as f64))
+                    .map(move |term| (*term, jaro_winkler(token, term)))
                     .collect::<Vec<(&str, f64)>>();
 
                 similarities.sort_by(|(_, a), (_, b)| b.partial_cmp(a).unwrap());
 
                 similarities.into_iter().take(1)
             })
-            .flatten()
             .collect::<Vec<(&str, f64)>>();
 
         // Compute the weighted ranking of each method ("document")
@@ -25032,7 +24831,7 @@ impl NodeTuple {
             doc_scores
                 .iter()
                 .map(|(method_id, _)| {
-                    format!("* `{}`", NODETUPLE_METHODS_NAMES[*method_id].to_string())
+                    format!("* `{}`", NODETUPLE_METHODS_NAMES[*method_id])
                 })
                 .take(10)
                 .collect::<Vec<String>>()
@@ -25072,21 +24871,21 @@ impl ShortestPathsDjkstra {
     #[pyo3(text_signature = "($self, node_id)")]
     ///
     pub fn has_path_to_node_id(&self, node_id: NodeT) -> PyResult<bool> {
-        Ok(pe!(self.inner.has_path_to_node_id(node_id.clone()))?.into())
+        Ok(pe!(self.inner.has_path_to_node_id(node_id))?)
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self, node_id)")]
     ///
     pub fn get_distance_from_node_id(&self, node_id: NodeT) -> PyResult<f32> {
-        Ok(pe!(self.inner.get_distance_from_node_id(node_id.clone()))?.into())
+        Ok(pe!(self.inner.get_distance_from_node_id(node_id))?)
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self, node_id)")]
     ///
     pub fn get_parent_from_node_id(&self, node_id: NodeT) -> PyResult<Option<NodeT>> {
-        Ok(pe!(self.inner.get_parent_from_node_id(node_id.clone()))?.map(|x| x.into()))
+        Ok(pe!(self.inner.get_parent_from_node_id(node_id))?.map(|x| x))
     }
 
     #[automatically_generated_binding]
@@ -25113,50 +24912,49 @@ impl ShortestPathsDjkstra {
     ) -> PyResult<NodeT> {
         Ok(pe!(self
             .inner
-            .get_point_at_given_distance_on_shortest_path(dst_node_id.clone(), distance.clone()))?
-        .into())
+            .get_point_at_given_distance_on_shortest_path(dst_node_id, distance))?)
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self, dst_node_id)")]
     ///
     pub fn get_median_point(&self, dst_node_id: NodeT) -> PyResult<NodeT> {
-        Ok(pe!(self.inner.get_median_point(dst_node_id.clone()))?.into())
+        Ok(pe!(self.inner.get_median_point(dst_node_id))?)
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     ///
     pub fn get_eccentricity(&self) -> f32 {
-        self.inner.get_eccentricity().into()
+        self.inner.get_eccentricity()
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     ///
     pub fn get_total_distance(&self) -> f32 {
-        self.inner.get_total_distance().into()
+        self.inner.get_total_distance()
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     ///
     pub fn get_log_total_distance(&self) -> f32 {
-        self.inner.get_log_total_distance().into()
+        self.inner.get_log_total_distance()
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     ///
     pub fn get_most_distant_node(&self) -> NodeT {
-        self.inner.get_most_distant_node().into()
+        self.inner.get_most_distant_node()
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Returns the number of shortest paths starting from the root node
     pub fn get_number_of_shortest_paths(&self) -> NodeT {
-        self.inner.get_number_of_shortest_paths().into()
+        self.inner.get_number_of_shortest_paths()
     }
 
     #[automatically_generated_binding]
@@ -25179,8 +24977,7 @@ impl ShortestPathsDjkstra {
     pub fn get_number_of_shortest_paths_from_node_id(&self, node_id: NodeT) -> PyResult<NodeT> {
         Ok(pe!(self
             .inner
-            .get_number_of_shortest_paths_from_node_id(node_id.clone()))?
-        .into())
+            .get_number_of_shortest_paths_from_node_id(node_id))?)
     }
 
     #[automatically_generated_binding]
@@ -25208,7 +25005,7 @@ impl ShortestPathsDjkstra {
                 gil,
                 pe!(self
                     .inner
-                    .get_successors_from_node_id(source_node_id.clone()))?,
+                    .get_successors_from_node_id(source_node_id))?,
                 NodeT
             )
         })
@@ -25367,17 +25164,16 @@ impl ShortestPathsDjkstra {
         // compute the similarities between all the terms and tokens
         let tokens_expanded = tokens
             .iter()
-            .map(|token| {
+            .flat_map(|token| {
                 let mut similarities = SHORTESTPATHSDJKSTRA_TERMS
                     .iter()
-                    .map(move |term| (*term, jaro_winkler(token, term) as f64))
+                    .map(move |term| (*term, jaro_winkler(token, term)))
                     .collect::<Vec<(&str, f64)>>();
 
                 similarities.sort_by(|(_, a), (_, b)| b.partial_cmp(a).unwrap());
 
                 similarities.into_iter().take(1)
             })
-            .flatten()
             .collect::<Vec<(&str, f64)>>();
 
         // Compute the weighted ranking of each method ("document")
@@ -25415,7 +25211,7 @@ impl ShortestPathsDjkstra {
                 .map(|(method_id, _)| {
                     format!(
                         "* `{}`",
-                        SHORTESTPATHSDJKSTRA_METHODS_NAMES[*method_id].to_string()
+                        SHORTESTPATHSDJKSTRA_METHODS_NAMES[*method_id]
                     )
                 })
                 .take(10)
@@ -25456,21 +25252,21 @@ impl ShortestPathsResultBFS {
     #[pyo3(text_signature = "($self, node_id)")]
     ///
     pub fn has_path_to_node_id(&self, node_id: NodeT) -> PyResult<bool> {
-        Ok(pe!(self.inner.has_path_to_node_id(node_id.clone()))?.into())
+        Ok(pe!(self.inner.has_path_to_node_id(node_id))?)
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self, node_id)")]
     ///
     pub fn get_distance_from_node_id(&self, node_id: NodeT) -> PyResult<NodeT> {
-        Ok(pe!(self.inner.get_distance_from_node_id(node_id.clone()))?.into())
+        Ok(pe!(self.inner.get_distance_from_node_id(node_id))?)
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self, node_id)")]
     ///
     pub fn get_parent_from_node_id(&self, node_id: NodeT) -> PyResult<NodeT> {
-        Ok(pe!(self.inner.get_parent_from_node_id(node_id.clone()))?.into())
+        Ok(pe!(self.inner.get_parent_from_node_id(node_id))?)
     }
 
     #[automatically_generated_binding]
@@ -25497,8 +25293,7 @@ impl ShortestPathsResultBFS {
     ) -> PyResult<NodeT> {
         Ok(pe!(self
             .inner
-            .get_unchecked_kth_point_on_shortest_path(dst_node_id.clone(), k.clone()))?
-        .into())
+            .get_unchecked_kth_point_on_shortest_path(dst_node_id, k))?)
     }
 
     #[automatically_generated_binding]
@@ -25521,36 +25316,35 @@ impl ShortestPathsResultBFS {
     pub fn get_kth_point_on_shortest_path(&self, dst_node_id: NodeT, k: NodeT) -> PyResult<NodeT> {
         Ok(pe!(self
             .inner
-            .get_kth_point_on_shortest_path(dst_node_id.clone(), k.clone()))?
-        .into())
+            .get_kth_point_on_shortest_path(dst_node_id, k))?)
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self, dst_node_id)")]
     ///
     pub fn get_median_point(&self, dst_node_id: NodeT) -> PyResult<NodeT> {
-        Ok(pe!(self.inner.get_median_point(dst_node_id.clone()))?.into())
+        Ok(pe!(self.inner.get_median_point(dst_node_id))?)
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     ///
     pub fn get_median_point_to_most_distant_node(&self) -> PyResult<NodeT> {
-        Ok(pe!(self.inner.get_median_point_to_most_distant_node())?.into())
+        Ok(pe!(self.inner.get_median_point_to_most_distant_node())?)
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     ///
     pub fn get_eccentricity(&self) -> NodeT {
-        self.inner.get_eccentricity().into()
+        self.inner.get_eccentricity()
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     ///
     pub fn get_most_distant_node(&self) -> NodeT {
-        self.inner.get_most_distant_node().into()
+        self.inner.get_most_distant_node()
     }
 
     #[automatically_generated_binding]
@@ -25563,7 +25357,7 @@ impl ShortestPathsResultBFS {
     ///     If neither predecessors nor distances were computed for this BFS.
     ///
     pub fn get_number_of_shortest_paths(&self) -> PyResult<NodeT> {
-        Ok(pe!(self.inner.get_number_of_shortest_paths())?.into())
+        Ok(pe!(self.inner.get_number_of_shortest_paths())?)
     }
 
     #[automatically_generated_binding]
@@ -25586,8 +25380,7 @@ impl ShortestPathsResultBFS {
     pub fn get_number_of_shortest_paths_from_node_id(&self, node_id: NodeT) -> PyResult<NodeT> {
         Ok(pe!(self
             .inner
-            .get_number_of_shortest_paths_from_node_id(node_id.clone()))?
-        .into())
+            .get_number_of_shortest_paths_from_node_id(node_id))?)
     }
 
     #[automatically_generated_binding]
@@ -25615,7 +25408,7 @@ impl ShortestPathsResultBFS {
                 gil,
                 pe!(self
                     .inner
-                    .get_successors_from_node_id(source_node_id.clone()))?,
+                    .get_successors_from_node_id(source_node_id))?,
                 NodeT
             )
         })
@@ -25646,7 +25439,7 @@ impl ShortestPathsResultBFS {
                 gil,
                 pe!(self
                     .inner
-                    .get_predecessors_from_node_id(source_node_id.clone()))?,
+                    .get_predecessors_from_node_id(source_node_id))?,
                 NodeT
             )
         })
@@ -25676,8 +25469,7 @@ impl ShortestPathsResultBFS {
     ) -> PyResult<f32> {
         Ok(pe!(self
             .inner
-            .get_shared_ancestors_size(first_node_id.clone(), second_node_id.clone()))?
-        .into())
+            .get_shared_ancestors_size(first_node_id, second_node_id))?)
     }
 
     #[automatically_generated_binding]
@@ -25704,8 +25496,7 @@ impl ShortestPathsResultBFS {
     ) -> PyResult<f32> {
         Ok(pe!(self
             .inner
-            .get_ancestors_jaccard_index(first_node_id.clone(), second_node_id.clone()))?
-        .into())
+            .get_ancestors_jaccard_index(first_node_id, second_node_id))?)
     }
 
     #[automatically_generated_binding]
@@ -25917,17 +25708,16 @@ impl ShortestPathsResultBFS {
         // compute the similarities between all the terms and tokens
         let tokens_expanded = tokens
             .iter()
-            .map(|token| {
+            .flat_map(|token| {
                 let mut similarities = SHORTESTPATHSRESULTBFS_TERMS
                     .iter()
-                    .map(move |term| (*term, jaro_winkler(token, term) as f64))
+                    .map(move |term| (*term, jaro_winkler(token, term)))
                     .collect::<Vec<(&str, f64)>>();
 
                 similarities.sort_by(|(_, a), (_, b)| b.partial_cmp(a).unwrap());
 
                 similarities.into_iter().take(1)
             })
-            .flatten()
             .collect::<Vec<(&str, f64)>>();
 
         // Compute the weighted ranking of each method ("document")
@@ -25965,7 +25755,7 @@ impl ShortestPathsResultBFS {
                 .map(|(method_id, _)| {
                     format!(
                         "* `{}`",
-                        SHORTESTPATHSRESULTBFS_METHODS_NAMES[*method_id].to_string()
+                        SHORTESTPATHSRESULTBFS_METHODS_NAMES[*method_id]
                     )
                 })
                 .take(10)
@@ -26006,21 +25796,21 @@ impl Star {
     #[pyo3(text_signature = "($self)")]
     /// Return the central node ID of the Star
     pub fn get_root_node_id(&self) -> NodeT {
-        self.inner.get_root_node_id().into()
+        self.inner.get_root_node_id()
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Return the central node name of the star
     pub fn get_root_node_name(&self) -> String {
-        self.inner.get_root_node_name().into()
+        self.inner.get_root_node_name()
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Return length of the Star
     pub fn len(&self) -> NodeT {
-        self.inner.len().into()
+        self.inner.len()
     }
 
     #[automatically_generated_binding]
@@ -26040,7 +25830,7 @@ impl Star {
     ///
     pub fn get_first_k_star_node_ids(&self, k: usize) -> Py<PyArray1<NodeT>> {
         let gil = pyo3::Python::acquire_gil();
-        to_ndarray_1d!(gil, self.inner.get_first_k_star_node_ids(k.clone()), NodeT)
+        to_ndarray_1d!(gil, self.inner.get_first_k_star_node_ids(k), NodeT)
     }
 
     #[automatically_generated_binding]
@@ -26052,9 +25842,8 @@ impl Star {
     ///
     pub fn get_first_k_star_node_names(&self, k: usize) -> Vec<String> {
         self.inner
-            .get_first_k_star_node_names(k.clone())
+            .get_first_k_star_node_names(k)
             .into_iter()
-            .map(|x| x.into())
             .collect::<Vec<_>>()
     }
 
@@ -26065,7 +25854,6 @@ impl Star {
         self.inner
             .get_star_node_names()
             .into_iter()
-            .map(|x| x.into())
             .collect::<Vec<_>>()
     }
 }
@@ -26168,17 +25956,16 @@ impl Star {
         // compute the similarities between all the terms and tokens
         let tokens_expanded = tokens
             .iter()
-            .map(|token| {
+            .flat_map(|token| {
                 let mut similarities = STAR_TERMS
                     .iter()
-                    .map(move |term| (*term, jaro_winkler(token, term) as f64))
+                    .map(move |term| (*term, jaro_winkler(token, term)))
                     .collect::<Vec<(&str, f64)>>();
 
                 similarities.sort_by(|(_, a), (_, b)| b.partial_cmp(a).unwrap());
 
                 similarities.into_iter().take(1)
             })
-            .flatten()
             .collect::<Vec<(&str, f64)>>();
 
         // Compute the weighted ranking of each method ("document")
@@ -26214,7 +26001,7 @@ impl Star {
             doc_scores
                 .iter()
                 .map(|(method_id, _)| {
-                    format!("* `{}`", STAR_METHODS_NAMES[*method_id].to_string())
+                    format!("* `{}`", STAR_METHODS_NAMES[*method_id])
                 })
                 .take(10)
                 .collect::<Vec<String>>()
@@ -26254,21 +26041,21 @@ impl Tendril {
     #[pyo3(text_signature = "($self)")]
     /// Return the first node ID of the Tendril
     pub fn get_root_node_id(&self) -> NodeT {
-        self.inner.get_root_node_id().into()
+        self.inner.get_root_node_id()
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Return the first node name of the Tendril
     pub fn get_root_node_name(&self) -> String {
-        self.inner.get_root_node_name().into()
+        self.inner.get_root_node_name()
     }
 
     #[automatically_generated_binding]
     #[pyo3(text_signature = "($self)")]
     /// Return length of the Tendril
     pub fn len(&self) -> NodeT {
-        self.inner.len().into()
+        self.inner.len()
     }
 
     #[automatically_generated_binding]
@@ -26290,7 +26077,7 @@ impl Tendril {
         let gil = pyo3::Python::acquire_gil();
         to_ndarray_1d!(
             gil,
-            self.inner.get_first_k_tendril_node_ids(k.clone()),
+            self.inner.get_first_k_tendril_node_ids(k),
             NodeT
         )
     }
@@ -26304,9 +26091,8 @@ impl Tendril {
     ///
     pub fn get_first_k_tendril_node_names(&self, k: usize) -> Vec<String> {
         self.inner
-            .get_first_k_tendril_node_names(k.clone())
+            .get_first_k_tendril_node_names(k)
             .into_iter()
-            .map(|x| x.into())
             .collect::<Vec<_>>()
     }
 
@@ -26317,7 +26103,6 @@ impl Tendril {
         self.inner
             .get_tendril_node_names()
             .into_iter()
-            .map(|x| x.into())
             .collect::<Vec<_>>()
     }
 }
@@ -26420,17 +26205,16 @@ impl Tendril {
         // compute the similarities between all the terms and tokens
         let tokens_expanded = tokens
             .iter()
-            .map(|token| {
+            .flat_map(|token| {
                 let mut similarities = TENDRIL_TERMS
                     .iter()
-                    .map(move |term| (*term, jaro_winkler(token, term) as f64))
+                    .map(move |term| (*term, jaro_winkler(token, term)))
                     .collect::<Vec<(&str, f64)>>();
 
                 similarities.sort_by(|(_, a), (_, b)| b.partial_cmp(a).unwrap());
 
                 similarities.into_iter().take(1)
             })
-            .flatten()
             .collect::<Vec<(&str, f64)>>();
 
         // Compute the weighted ranking of each method ("document")
@@ -26466,7 +26250,7 @@ impl Tendril {
             doc_scores
                 .iter()
                 .map(|(method_id, _)| {
-                    format!("* `{}`", TENDRIL_METHODS_NAMES[*method_id].to_string())
+                    format!("* `{}`", TENDRIL_METHODS_NAMES[*method_id])
                 })
                 .take(10)
                 .collect::<Vec<String>>()
@@ -26591,7 +26375,7 @@ pub fn convert_edge_list_to_numeric(
         let (subresult_0, subresult_1) = pe!(graph::convert_edge_list_to_numeric(
             original_edge_path,
             target_edge_path,
-            directed.clone(),
+            directed,
             original_node_path,
             original_node_list_separator,
             original_node_list_header,
@@ -26664,9 +26448,8 @@ pub fn convert_edge_list_to_numeric(
             numeric_rows_are_surely_smaller_than_original,
             verbose,
             name
-        ))?
-        .into();
-        (subresult_0.into(), subresult_1.map(|x| x.into()))
+        ))?;
+        (subresult_0, subresult_1.map(|x| x))
     })
 }
 
@@ -26820,7 +26603,7 @@ pub fn densify_sparse_numeric_edge_list(
         let (subresult_0, subresult_1) = pe!(graph::densify_sparse_numeric_edge_list(
             original_edge_path,
             target_edge_path,
-            directed.clone(),
+            directed,
             maximum_node_id,
             original_edge_list_separator,
             original_edge_list_header,
@@ -26878,9 +26661,8 @@ pub fn densify_sparse_numeric_edge_list(
             numeric_rows_are_surely_smaller_than_original,
             verbose,
             name
-        ))?
-        .into();
-        (subresult_0.into(), subresult_1.map(|x| x.into()))
+        ))?;
+        (subresult_0, subresult_1.map(|x| x))
     })
 }
 
@@ -26957,8 +26739,7 @@ pub fn are_there_selfloops_in_edge_list(
         load_edge_list_in_parallel,
         verbose,
         name
-    ))?
-    .into())
+    ))?)
 }
 
 #[pyfunction]
@@ -26978,7 +26759,7 @@ pub fn are_there_selfloops_in_edge_list(
 ///     If there are problems with opening the file.
 ///
 pub fn get_rows_number(file_path: &str) -> PyResult<usize> {
-    Ok(pe!(graph::get_rows_number(file_path))?.into())
+    Ok(pe!(graph::get_rows_number(file_path))?)
 }
 
 #[pyfunction]
@@ -27134,8 +26915,7 @@ pub fn convert_directed_edge_list_to_undirected(
         skip_weights_if_unavailable,
         verbose,
         name
-    ))?
-    .into())
+    ))?)
 }
 
 #[pyfunction]
@@ -27213,8 +26993,7 @@ pub fn add_numeric_id_to_csv(
         rows_to_skip,
         lines_number,
         verbose
-    ))?
-    .into())
+    ))?)
 }
 
 #[pyfunction]
@@ -27326,9 +27105,9 @@ pub fn build_optimal_lists_files(
     Ok({
         let (subresult_0, subresult_1, subresult_2, subresult_3) =
             pe!(graph::build_optimal_lists_files(
-                original_edge_path.into(),
-                target_edge_path.into(),
-                directed.clone(),
+                original_edge_path,
+                target_edge_path,
+                directed,
                 original_node_type_path,
                 original_node_type_list_separator,
                 original_node_types_column_number,
@@ -27424,13 +27203,12 @@ pub fn build_optimal_lists_files(
                 sort_temporary_directory,
                 verbose,
                 name
-            ))?
-            .into();
+            ))?;
         (
-            subresult_0.map(|x| x.into()),
-            subresult_1.into(),
-            subresult_2.map(|x| x.into()),
-            subresult_3.into(),
+            subresult_0.map(|x| x),
+            subresult_1,
+            subresult_2.map(|x| x),
+            subresult_3,
         )
     })
 }
@@ -27728,8 +27506,7 @@ pub fn convert_undirected_edge_list_to_directed(
         skip_weights_if_unavailable,
         verbose,
         name
-    ))?
-    .into())
+    ))?)
 }
 
 #[pyfunction]
@@ -27825,9 +27602,8 @@ pub fn get_minmax_node_from_numeric_edge_list(
                 remove_spaces,
                 verbose,
                 name
-            ))?
-            .into();
-        (subresult_0.into(), subresult_1.into(), subresult_2.into())
+            ))?;
+        (subresult_0, subresult_1, subresult_2)
     })
 }
 
@@ -27869,17 +27645,17 @@ pub fn parse_wikipedia_graph(
             node_path,
             node_type_path,
             edge_type_path,
-            node_list_separator.clone(),
-            node_type_list_separator.clone(),
-            edge_type_list_separator.clone(),
+            node_list_separator,
+            node_type_list_separator,
+            edge_type_list_separator,
             node_types_separator,
             nodes_column,
             node_types_column,
             node_list_node_types_column,
             edge_types_column,
             node_descriptions_column,
-            edge_list_separator.clone(),
-            directed.clone(),
+            edge_list_separator,
+            directed,
             sort_temporary_directory,
             compute_node_description,
             keep_nodes_without_descriptions,
@@ -27887,9 +27663,8 @@ pub fn parse_wikipedia_graph(
             keep_interwikipedia_nodes,
             keep_external_nodes,
             verbose
-        ))?
-        .into();
-        (subresult_0.into(), subresult_1.into(), subresult_2.into())
+        ))?;
+        (subresult_0, subresult_1, subresult_2)
     })
 }
 
@@ -27974,8 +27749,7 @@ pub fn is_numeric_edge_list(
         remove_spaces,
         verbose,
         name
-    ))?
-    .into())
+    ))?)
 }
 
 #[pyfunction]
@@ -28133,8 +27907,8 @@ pub fn convert_node_list_node_types_to_numeric(
 ) -> PyResult<(NodeT, Option<NodeTypeT>)> {
     Ok({
         let (subresult_0, subresult_1) = pe!(graph::convert_node_list_node_types_to_numeric(
-            original_node_path.into(),
-            target_node_path.into(),
+            original_node_path,
+            target_node_path,
             original_node_type_path,
             original_node_type_list_separator,
             original_node_types_column_number,
@@ -28180,9 +27954,8 @@ pub fn convert_node_list_node_types_to_numeric(
             target_node_list_node_types_column_number,
             target_node_list_node_types_column,
             number_of_nodes
-        ))?
-        .into();
-        (subresult_0.into(), subresult_1.map(|x| x.into()))
+        ))?;
+        (subresult_0, subresult_1.map(|x| x))
     })
 }
 
@@ -28287,8 +28060,7 @@ pub fn has_duplicated_edges_in_edge_list(
         skip_weights_if_unavailable,
         verbose,
         name
-    ))?
-    .into())
+    ))?)
 }
 
 #[pyfunction]
@@ -28496,8 +28268,7 @@ pub fn get_number_of_selfloops_from_edge_list(
         load_edge_list_in_parallel,
         verbose,
         name
-    ))?
-    .into())
+    ))?)
 }
 
 pub fn register_utils(_py: Python, _m: &PyModule) -> PyResult<()> {

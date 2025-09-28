@@ -88,10 +88,10 @@ impl TryFrom<NPY_TYPES> for Dtype {
     }
 }
 
-impl Into<NPY_TYPES> for Dtype {
-    fn into(self) -> NPY_TYPES {
+impl From<Dtype> for NPY_TYPES {
+    fn from(val: Dtype) -> Self {
         use NPY_TYPES::*;
-        match self {
+        match val {
             Dtype::Bool => NPY_BOOL,
             Dtype::I8 => NPY_BYTE,
             Dtype::U8 => NPY_UBYTE,

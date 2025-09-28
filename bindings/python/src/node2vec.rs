@@ -593,7 +593,7 @@ impl WalkletsCBOW {
     /// graph: Graph
     ///     The graph to embed.
     fn fit_transform(&self, graph: &Graph) -> PyResult<Vec<Py<PyAny>>> {
-        Ok(self.inner.fit_transform(graph)?)
+        self.inner.fit_transform(graph)
     }
 }
 
@@ -704,7 +704,7 @@ impl WalkletsSkipGram {
     /// graph: Graph
     ///     The graph to embed.
     fn fit_transform(&self, graph: &Graph) -> PyResult<Vec<Py<PyAny>>> {
-        Ok(self.inner.fit_transform(graph)?)
+        self.inner.fit_transform(graph)
     }
 }
 
@@ -815,6 +815,6 @@ impl WalkletsGloVe {
     /// graph: Graph
     ///     The graph to embed.
     fn fit_transform(&self, graph: &Graph) -> PyResult<Vec<Py<PyAny>>> {
-        Ok(self.inner.fit_transform(graph)?)
+        self.inner.fit_transform(graph)
     }
 }

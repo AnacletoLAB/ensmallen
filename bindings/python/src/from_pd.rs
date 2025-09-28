@@ -191,14 +191,14 @@ impl Graph {
                                     )
                                 }))
                                 .enumerate()
-                                .map(|x| Ok(x)),
+                                .map(Ok),
                         )
                     } else {
                         Box::new(
                             nodes_iterator
                                 .zip(node_type_iterator.map(|x| Some(vec![x.unwrap().to_string()])))
                                 .enumerate()
-                                .map(|x| Ok(x)),
+                                .map(Ok),
                         )
                     }
                 } else {
@@ -206,7 +206,7 @@ impl Graph {
                         nodes_iterator
                             .zip(std::iter::repeat(None))
                             .enumerate()
-                            .map(|x| Ok(x)),
+                            .map(Ok),
                     )
                 },
             ))
@@ -241,7 +241,7 @@ impl Graph {
                             )
                         })
                         .enumerate()
-                        .map(|x| Ok(x)),
+                        .map(Ok),
                 )
             }
             (Some(et), None) => {
@@ -252,7 +252,7 @@ impl Graph {
                         .zip(et_iter)
                         .map(|((src, dst), edge_type)| (src, dst, Some(edge_type), 1.0))
                         .enumerate()
-                        .map(|x| Ok(x)),
+                        .map(Ok),
                 )
             }
             (None, Some(ew)) => {
@@ -265,7 +265,7 @@ impl Graph {
                             (src, dst, None, weight.parse::<WeightT>().unwrap())
                         })
                         .enumerate()
-                        .map(|x| Ok(x)),
+                        .map(Ok),
                 )
             }
             (None, None) => Box::new(
@@ -273,7 +273,7 @@ impl Graph {
                     .zip(dst_iterator)
                     .map(|(src, dst)| (src, dst, None, 1.0))
                     .enumerate()
-                    .map(|x| Ok(x)),
+                    .map(Ok),
             ),
         };
 

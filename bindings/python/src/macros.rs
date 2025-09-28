@@ -109,9 +109,8 @@ pub fn build_walk_parameters_list<'a>(parameters: &[&'a str]) -> Vec<&'a str> {
         "walk_length",
     ];
     default
-        .into_iter()
-        .chain(parameters.into_iter())
-        .map(|x| *x)
+        .iter()
+        .chain(parameters).copied()
         .collect()
 }
 
@@ -122,7 +121,7 @@ pub fn validate_kwargs(kwargs: &PyDict, columns: &[&str]) -> Result<(), String> 
         .iter()
         .map(|v| v.extract::<String>().unwrap())
         .collect();
-    let columns: HashSet<String> = columns.into_iter().map(|x| x.to_string()).collect();
+    let columns: HashSet<String> = columns.iter().map(|x| x.to_string()).collect();
     if keys.is_subset(&columns) {
         return Ok(());
     }

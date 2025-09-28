@@ -1,6 +1,6 @@
 #![feature(adt_const_params)]
 #![feature(impl_trait_in_assoc_type)]
-use numpy::{PyArray, PyArray1, PyArray2, PyArray3, PyArray4};
+use numpy::{PyArray, PyArray1, PyArray2, PyArray4};
 use pyo3::exceptions::{PyAttributeError, PyTypeError, PyValueError};
 use pyo3::prelude::*;
 use pyo3::types::PyDict;

@@ -2,7 +2,6 @@ use super::*;
 use cpu_models::HyperJaccard as HJ;
 use hyperloglog_rs::prelude::*;
 use serde::{Deserialize, Serialize};
-use serde_json;
 
 #[derive(Serialize, Deserialize, Clone)]
 /// HyperJaccard models.
@@ -73,7 +72,7 @@ impl InnerModel {
             (12, 5) => Ok(InnerModel::HJ12_5(HJ::new(number_of_hops)?)), // {python_generated}
             (12, 6) => Ok(InnerModel::HJ12_6(HJ::new(number_of_hops)?)), // {python_generated}
             _ => {
-                return Err(format!(
+                Err(format!(
                     concat!(
                         "The HyperJaccard model supports precisions ranging from 4 ",
                         "to 16 and bits ranging from 4 to 6. ",

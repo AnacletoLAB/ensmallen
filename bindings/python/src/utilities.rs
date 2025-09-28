@@ -9,7 +9,7 @@ pub(crate) fn build_walk_parameters(kwargs: &PyDict) -> PyResult<WalksParameters
     Ok(pe!(pe!(pe!(pe!(pe!(pe!(pe!(walk_length
         .map_or_else(
             || Ok(WalksParameters::default()),
-            |walk_length| WalksParameters::new(walk_length),
+            WalksParameters::new,
         ))?
     .set_change_edge_type_weight(
         extract_value_rust_result!(kwargs, "change_edge_type_weight", WeightT)
