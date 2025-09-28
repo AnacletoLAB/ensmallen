@@ -17506,8 +17506,8 @@ impl Graph {
             .inner
             .get_isomorphic_edge_type_ids_groups(minimum_number_of_edges))?
         .into_iter()
-        .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<_>>())
-        .collect::<Vec<_>>())
+        .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<EdgeTypeT>>())
+        .collect::<Vec<Vec<EdgeTypeT>>>())
     }
 
     #[automatically_generated_binding]
