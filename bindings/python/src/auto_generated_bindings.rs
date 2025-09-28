@@ -17504,10 +17504,7 @@ impl Graph {
     ) -> PyResult<Vec<Vec<EdgeTypeT>>> {
         Ok(pe!(self
             .inner
-            .get_isomorphic_edge_type_ids_groups(minimum_number_of_edges))?
-        .into_iter()
-        .map(|x| x.into_iter().map(|x| x.into()).collect::<Vec<EdgeTypeT>>())
-        .collect::<Vec<Vec<EdgeTypeT>>>())
+            .get_isomorphic_edge_type_ids_groups(minimum_number_of_edges))?)
     }
 
     #[automatically_generated_binding]
