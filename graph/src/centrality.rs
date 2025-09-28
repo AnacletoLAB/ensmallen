@@ -16,10 +16,6 @@ use visited_rs::prelude::*;
 
 #[inline(always)]
 pub(crate) unsafe fn non_temporal_store<T>(ptr: &mut T, value: T) {
-    #[cfg(feature = "nts")]
-    std::intrinsics::nontemporal_store(ptr as *mut T, value);
-
-    #[cfg(not(feature = "nts"))]
     std::ptr::write(ptr as *mut T, value)
 }
 
@@ -558,9 +554,6 @@ impl Graph {
                         non_temporal_store(current_number_of_successors, number_of_successors);
                     });
 
-                #[cfg(feature = "nts")]
-                sfence();
-
                 frontiers[current_depth].clear();
 
                 visited_status
@@ -776,9 +769,6 @@ impl Graph {
                             });
                         non_temporal_store(current_number_of_successors, number_of_successors);
                     });
-
-                #[cfg(feature = "nts")]
-                sfence();
 
                 frontiers[current_depth].clear();
 
