@@ -1191,8 +1191,8 @@ impl Graph {
                 + self.get_unchecked_node_degree_from_node_id(group2[0][1]) as usize)
                 * group2.len())
             .cmp(
-                &(self.get_unchecked_node_degree_from_node_id(group1[0][0]) as usize
-                    + self.get_unchecked_node_degree_from_node_id(group1[0][1]) as usize
+                &((self.get_unchecked_node_degree_from_node_id(group1[0][0]) as usize
+                    + self.get_unchecked_node_degree_from_node_id(group1[0][1]) as usize)
                         * group1.len()),
             )
         });
