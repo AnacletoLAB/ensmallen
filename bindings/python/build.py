@@ -345,8 +345,8 @@ if __name__ == "__main__":
     # Compile all the targets
     ################################################################################
     if args.sequential:
-        for args in settings["targets"].items():
-            compile_target(*args, WHEELS_FOLDER, settings)
+        for args_compile in settings["targets"].items():
+            compile_target(*args_compile, WHEELS_FOLDER, settings)
     else:
         with mp.Pool(mp.cpu_count()) as pool:
             list(pool.imap(
